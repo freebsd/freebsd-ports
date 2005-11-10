@@ -6,6 +6,7 @@
 
 PORTNAME=	conglomerate
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/enchant.pc) || defined(WITH_ENCHANT)
-LIB_DEPENDS+=	enchant.2:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 .endif
 
 post-install:

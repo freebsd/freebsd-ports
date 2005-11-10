@@ -8,6 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=	--enable-debug \
 .endif
 
 .ifndef(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=		enchant.1:${PORTSDIR}/textproc/enchant
 PLIST_SUB+=		DICT:="@comment "
 .else
 CONFIGURE_ARGS+=	--disable-enchant
