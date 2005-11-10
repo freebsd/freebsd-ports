@@ -117,7 +117,6 @@ PGSQL81_LIBVER=		4
 .if exists(${LOCALBASE}/bin/pg_config)
 _PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
 .endif
-.endif
 
 .if defined(WANT_PGSQL_VER) && defined(_PGSQL_VER) && ${WANT_PGSQL_VER} != ${_PGSQL_VER}
 BROKEN=		the port wants postgresql${WANT_PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed
