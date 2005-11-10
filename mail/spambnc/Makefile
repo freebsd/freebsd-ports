@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20051030
+PORTVERSION=	20051109
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/dist/sb/:tarball	\
 		http://www.spambouncer.org/configure/:doc
@@ -24,43 +24,36 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/.pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-SUB_DIRS=	functions docs data auxiliary
+SUB_FILES=	pkg-message
 
 .if !defined(NOPORTDOCS)
 MASTER_SITES+=	http://www.spambouncer.org/configure/:upg
 DISTFILES+=	upgrading.shtml:upg
 IGNOREFILES+=	upgrading.shtml
+PORTDOCS=	documentation.html upgrading.html loglevels.txt
 .endif
 
 pre-install:
-	@${RM} -f ${PLIST}
-	@(cd ${WRKDIR} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." | \
-		${SED} -e 's,.,%%DATADIR%%,1' >> ${PLIST})
-.for dd in ${SUB_DIRS}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%/${dd}" >> ${PLIST}
-.endfor
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
-.if !defined(NOPORTDOCS)
-	@${ECHO_CMD} "%%DOCSDIR%%/documentation.html" >> ${PLIST}
-	@${ECHO_CMD} "%%DOCSDIR%%/upgrading.html" >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}
-.endif
+	@(cd ${WRKSRC} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." |	\
+		${GREP} -v docs | ${SED} -e 's,.,%%DATADIR%%,1' > ${PLIST})
+	@(cd ${WRKSRC} && ${FIND} -s . -type d | ${GREP} -v docs | ${SORT} -r |	\
+		${SED} -e 's,.,@dirrm %%DATADIR%%,' >> ${PLIST})
 
 do-install:
 	${MKDIR} ${DATADIR}
-	cd ${WRKDIR} && ${CP} -Rv * ${DATADIR}
+	cd ${WRKSRC} && ${CP} -Rv * ${DATADIR}
+	@${RM} -rf ${DATADIR}/docs
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickstart.shtml \
 		${DOCSDIR}/documentation.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/upgrading.shtml \
 		${DOCSDIR}/upgrading.html
+	@${INSTALL_DATA} ${WRKSRC}/docs/loglevels.txt ${DOCSDIR}
 .endif
 
 post-install:
-	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},;s,%%DATADIR%%,${DATADIR},' \
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
