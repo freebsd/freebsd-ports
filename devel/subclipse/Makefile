@@ -16,6 +16,7 @@ MAINTAINER=	tux@pinguru.net
 COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	phpeclipse-[0-9]*
 
@@ -30,10 +31,13 @@ SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		plugins/${SUBCLIPSE}.ui_${PORTVERSION} \
 		plugins/${SUBCLIPSE}_${PORTVERSION}
 
+WGET?=		${LOCALBASE}/bin/wget
+
 .include <bsd.port.pre.mk>
 
+do-fetch:
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip)
-IGNORE=		Due to the behaviour of the webserver subclipse is hosted on, you have to download the file yourself as ${MASTER_SITES}/${DISTNAME}.zip and place it in ${DISTDIR}/${DIST_SUBDIR}
+	${WGET} -P${DISTDIR}/${DIST_SUBDIR} ${MASTER_SITES}/${DISTNAME}.zip
 .endif
 
 post-extract:
