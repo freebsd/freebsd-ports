@@ -1,0 +1,12 @@
+--- ../docbook-utils-0.6.14.orig/doc/man/Makefile.in	Wed Feb 11 14:16:08 2004
++++ doc/man/Makefile.in	Mon May  3 20:13:13 2004
+@@ -356,7 +356,7 @@
+ 
+ $(man1_MANS) $(man7_MANS): $(top_srcdir)/doc/docbook-utils.sgml \
+ 		$(top_srcdir)/helpers/docbook2man-spec.pl
+-	SGML_CATALOG_FILES=/etc/sgml/catalog \
++	SGML_CATALOG_FILES=$(prefix)/share/sgml/catalog \
+ 	SGML_SEARCH_PATH=$(top_srcdir)/doc:.. \
+ 		nsgmls $< | \
+ 		sgmlspl $(top_srcdir)/helpers/docbook2man-spec.pl
+diff -uNr ../docbook-utils-0.6.14.orig/doc/refentry/frontend-spec.sgml ./doc/refentry/frontend-spec.sgml
