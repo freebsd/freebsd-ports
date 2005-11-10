@@ -2,13 +2,13 @@
 # Date created:				20040812
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.12 2005/06/22 03:28:22 tmclau02 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.19 2005/11/06 07:17:04 tmclau02 Exp $
 #
 
 PORTNAME=	blam
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
@@ -34,7 +34,7 @@ MOZILLA=	mozilla
 USE_GNOME=	gnomeprefix gnomehack intlhack intltool libgnomeui
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -50,4 +50,5 @@ pre-everything::
 	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} ""
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
