@@ -7,7 +7,7 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+
 DIST_SUBDIR=	hylafax
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
@@ -29,7 +31,8 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
-		--with-DIR_HTML="${DOCSDIR}"
+		--with-DIR_HTML="${DOCSDIR}" \
+		--with-AWK="${LOCALBASE}/bin/gawk"
 
 SUB_FILES=	pkg-message hylafax.sh.sample
 
