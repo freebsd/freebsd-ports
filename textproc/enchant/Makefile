@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	abiword
+MASTER_SITES=	http://www.abisource.com/downloads/enchant/${PORTVERSION}/
+#		${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	abiword
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnometarget glib20
+USE_GNOME=	gnomehack gnometarget glib20 ltverhack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
