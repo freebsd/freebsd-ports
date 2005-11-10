@@ -1,4 +1,6 @@
 lib/mono/dbus-sharp/dbus-sharp.dll
+lib/mono/dbus-sharp/dbus-sharp.dll.config
+lib/mono/dbus-sharp/dbus-sharp.dll.mdb
 lib/mono/gac/dbus-sharp/0.50.0.0__9eef2692033670f5/dbus-sharp.dll
 lib/mono/gac/dbus-sharp/0.50.0.0__9eef2692033670f5/dbus-sharp.dll.config
 lib/mono/gac/dbus-sharp/0.50.0.0__9eef2692033670f5/dbus-sharp.dll.mdb
