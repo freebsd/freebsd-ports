@@ -1,7 +1,5 @@
-Index: t_lpback.sh
-===================================================================
---- t_lpback.sh	(revision 774)
-+++ t_lpback.sh	(working copy)
+--- t_lpback.sh~
++++ t_lpback.sh
 @@ -19,11 +19,13 @@
  # 02110-1301, USA.
  
@@ -18,15 +16,12 @@ Index: t_lpback.sh
 +rm key.$$ log.$$
 +trap 0
  exit $e
-Index: t_cltsrv.sh
-===================================================================
---- t_cltsrv.sh	(revision 774)
-+++ t_cltsrv.sh	(working copy)
-@@ -20,19 +20,33 @@
+--- t_cltsrv.sh~
++++ t_cltsrv.sh
+@@ -19,20 +19,41 @@
+ # 02110-1301, USA.
  
  set -e
- echo "the following test will run about two minutes..." >&2
--trap "rm -f log.$$ ; false" 1 2 3 15
 +trap "rm -f log.$$ log.$$.signal ; trap 0 ; exit 77" 1 2 15
 +trap "rm -f log.$$ log.$$.signal ; exit 1" 0 3
 +addopts=
@@ -34,11 +29,20 @@ Index: t_cltsrv.sh
 +    FreeBSD)
 +    # FreeBSD jails map the outgoing IP to the jail IP - we need to
 +    # allow the real IP unless we want the test to run forever.
-+    if test `sysctl -n security.jail.jailed` != 0 ; then
++    if test "`sysctl 2>/dev/null -n security.jail.jailed`" = 1 \
++    || `ps -ostate $$ | tail -n1 | grep >/dev/null J` ; then
 +	addopts="--float"
++	if test "x`ifconfig | grep inet`" = x ; then
++	    echo "###"
++	    echo "### To run the test in a FreeBSD jail, you MUST add an IP alias for the jail's IP."
++	    echo "###"
++	    exit 1
++	fi
 +    fi
 +    ;;
 +esac
+ echo "the following test will run about two minutes..." >&2
+-trap "rm -f log.$$ ; false" 1 2 3 15
  set +e
  (
 -./openvpn --cd "${srcdir}" --config sample-config-files/loopback-server &

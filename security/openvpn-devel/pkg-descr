@@ -1,10 +1,10 @@
-OpenVPN is a robust and highly configurable VPN (Virtual Private
-Network) daemon which can be used to securely link two or more private
-networks using an encrypted tunnel over the internet. It uses UDP as its
-transport, avoiding TCP-over-TCP retransmission congestion. SSL can be
-used to authenticate the sites, or they can use a pre-shared secret.
+OpenVPN is a robust, scalable and highly configurable VPN (Virtual Private
+Network) daemon which can be used to securely link two or more private networks
+using an encrypted tunnel over the internet. It can operate over UDP or TCP,
+can use SSL or a pre-shared secret to authenticate peers, and in SSL mode, one
+server can handle many clients.
 
-WWW: http://openvpn.sourceforge.net/
+WWW: http://openvpn.net/
 
 - Matthias Andree
 matthias.andree@gmx.de
