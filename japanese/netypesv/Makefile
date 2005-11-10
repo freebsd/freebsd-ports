@@ -7,7 +7,7 @@
 
 PORTNAME=	netypesv
 PORTVERSION=	0.1.0
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese
 MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	netypesv-${PORTVERSION}
 EXTRACT_SUFX=	.jar

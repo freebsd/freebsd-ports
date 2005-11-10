@@ -8,7 +8,7 @@
 PORTNAME=		mapserver
 PORTVERSION=		4.4.1
 PORTREVISION=		0
-CATEGORIES=		graphics www misc
+CATEGORIES=		graphics www
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
 MAINTAINER=		mharo@FreeBSD.org

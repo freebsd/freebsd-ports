@@ -8,7 +8,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.11b
-CATEGORIES+=	misc
+CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 MAINTAINER?=	mita@FreeBSD.org

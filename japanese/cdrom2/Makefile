@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrom2
 PORTVERSION=	1996.06.16
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese
 MASTER_SITES=	http://www.nerimadors.or.jp/~jiro/cdrom2/
 DISTNAME=	euc
 

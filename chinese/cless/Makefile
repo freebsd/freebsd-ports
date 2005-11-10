@@ -8,7 +8,7 @@
 
 PORTNAME=	cless
 PORTVERSION=	290
-CATEGORIES=	chinese misc
+CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=	ports@FreeBSD.org
