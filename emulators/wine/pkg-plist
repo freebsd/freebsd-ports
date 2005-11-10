@@ -456,6 +456,7 @@ lib/wine/dpnet.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dxdiagn.dll.so
+lib/wine/eject.exe.so
 lib/wine/expand.exe.so
 lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
@@ -682,7 +683,7 @@ lib/wine/shell32.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
-lib/wine/sound.dll.so
+lib/wine/sound.drv.so
 lib/wine/start.exe.so
 lib/wine/stdole2.tlb.so
 lib/wine/stdole32.tlb.so
@@ -742,7 +743,6 @@ lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 lib/wine/wineps16.drv.so
 lib/wine/winetest.exe.so
-lib/wine/winetty.drv.so
 lib/wine/winevdm.exe.so
 lib/wine/winex11.drv.so
 lib/wine/wing.dll.so
