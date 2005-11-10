@@ -3,11 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-# $Id: Makefile,v 1.26 2005/06/30 01:05:54 tmclau02 Exp $
+#   $Id: Makefile,v 1.39 2005/11/06 06:58:39 tmclau02 Exp $
+#
 
 PORTNAME=	muine
 PORTVERSION=	0.8.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
@@ -25,7 +26,7 @@ RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-faad2
 .endif
 
 .if defined (WITH_XINE)
-CONFIGURE_ARGS+= --enable-xine=yes
+CONFIGURE_ARGS+=	--enable-xine=yes
 LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
 .else
 USE_GSTREAMER+=	gconf
@@ -62,4 +63,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/plugins/${_plugin} ${PREFIX}/lib/muine/plugins
 .endfor
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.post.mk>

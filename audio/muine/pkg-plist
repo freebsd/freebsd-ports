@@ -2,7 +2,11 @@ bin/muine
 lib/mono/gac/muine-dbus/1.0.0.0__e6bf890338fa2913/muine-dbus.dll
 lib/mono/gac/muine-plugin/1.0.0.0__e6bf890338fa2913/muine-plugin.dll
 lib/mono/muine/muine-dbus.dll
+lib/mono/muine/muine-dbus.dll.config
+lib/mono/muine/muine-dbus.dll.mdb
 lib/mono/muine/muine-plugin.dll
+lib/mono/muine/muine-plugin.dll.config
+lib/mono/muine/muine-plugin.dll.mdb
 lib/monodoc/sources/muine-docs.source
 lib/monodoc/sources/muine-docs.tree
 lib/monodoc/sources/muine-docs.zip
