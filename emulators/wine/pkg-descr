@@ -1,7 +1,7 @@
 Wine is a Microsoft Windows compatibility layer running under Unix-like
 systems on i386 (and compatible) CPUs.
 
-It is still alpha quality, but is definitely making progress. Most
+It is still beta quality, but is definitely making progress. Most
 applications already work, more or less, including several games.
 
 WWW: http://www.winehq.com/
