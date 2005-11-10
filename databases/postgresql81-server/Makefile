@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.0.3
+PORTVERSION?=	8.1.0
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -20,8 +20,6 @@ COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]*
-
-BROKEN=		Work in progress, nothing to see, please move along...
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
@@ -97,24 +95,25 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
 # See http://gppl.moonbone.ru/ for more info
-OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
+#OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if defined(SERVER_ONLY) && defined(WITH_HIER)
+BROKEN=		no HIER patch for 8.1 series exists
 PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
 PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
 USE_BISON=	yes
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
-USE_AUTOCONF_VER=253
+USE_AUTOCONF_VER=259
 CONFIGURE_ARGS+=--with-icu
-LIB_DEPENDS=	icudata.32:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	icudata.34:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-803-icu-2005-08-16.diff.gz:icu
+PATCHFILES+=	pg-810-icu-34-2005-11-09.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
@@ -152,6 +151,9 @@ INSTALL_TARGET=	install-strip
 .  endif
 
 .  if defined(WITH_MIT_KRB5)
+.    if exists(/usr/lib/libkrb5.so)
+BROKEN=		"You must remove heimdal's /usr/lib/libkrb5.so* to build successfully with MIT-KRB"
+.    endif
 WITH_KRB5=	yes
 KRB5_HOME?=	${LOCALBASE}
 KRB5CONF=	${KRB5_HOME}/bin/krb5-config
@@ -160,20 +162,17 @@ LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 
 .  if defined(WITH_HEIMDAL_KRB5)
 WITH_KRB5=	yes
-.    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-KRB5CONF=	${HEIMDAL_HOME}/bin/krb5-config
-.    elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
-KRB5CONF=	${DESTDIR}/usr/bin/krb5-config
-.    else
+# Base heimdal in /usr will not link properly with postgresql, we must
+# use the port. See
+# http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
-.    endif
 .  endif
 
 .  if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--with-krb5
-LDFLAGS+=	`${KRB5CONF} --libs krb5`
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+LIBS=		`${KRB5CONF} --libs krb5`
+CONFIGURE_ENV+=	LIBS="${LIBS}"
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
@@ -196,19 +195,22 @@ MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
 		ipcclean.1 pg_config.1 pg_controldata.1 pg_ctl.1   \
 		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
-		postgres.1 postmaster.1 psql.1 vacuumdb.1
+		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
 
 MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		alter_domain.7 alter_function.7 alter_group.7		      \
 		alter_index.7 alter_language.7 alter_operator_class.7	      \
+		alter_role.7						      \
 		alter_schema.7 alter_sequence.7 alter_table.7		      \
 		alter_trigger.7 alter_user.7 analyze.7 begin.7		      \
 		checkpoint.7 close.7 cluster.7 comment.7 commit.7	      \
+		commit_prepared.7					      \
 		copy.7 create_aggregate.7 create_cast.7			      \
 		create_constraint_trigger.7 create_conversion.7		      \
 		create_database.7 create_domain.7 create_function.7	      \
 		create_group.7 create_index.7 create_language.7		      \
 		create_operator.7 create_operator_class.7		      \
+		create_role.7						      \
 		create_rule.7 create_schema.7 create_sequence.7		      \
 		create_table.7 create_table_as.7 create_trigger.7	      \
 		create_type.7 create_user.7 create_view.7 deallocate.7	      \
@@ -216,25 +218,17 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
 		drop_database.7 drop_domain.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
-		drop_operator.7 drop_operator_class.7 drop_rule.7	      \
+		drop_operator.7 drop_operator_class.7 drop_role.7	      \
+		drop_rule.7						      \
 		drop_schema.7 drop_sequence.7 drop_table.7 drop_trigger.7     \
 		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
-		lock.7 move.7 notify.7 prepare.7 reindex.7 reset.7	      \
-		revoke.7 rollback.7 select.7 select_into.7 set.7	      \
-		set_constraints.7 set_transaction.7 show.7		      \
+		lock.7 move.7 notify.7 prepare.7 prepare_transaction.7	      \
+		reindex.7 reset.7					      \
+		revoke.7 rollback.7 rollback_prepared.7 select.7	      \
+		select_into.7 set.7					      \
+		set_constraints.7 set_role.7 set_transaction.7 show.7	      \
 		set_session_authorization.7 start_transaction.7		      \
-		spi_connect.7 spi_copytuple.7 spi_cursor_close.7	      \
-		spi_cursor_fetch.7 spi_cursor_find.7 spi_cursor_move.7	      \
-		spi_cursor_open.7 spi_exec.7 spi_execp.7 spi_execute.7	      \
-		spi_execute_plan.7					      \
-		spi_finish.7 spi_fname.7 spi_fnumber.7 spi_freeplan.7	      \
-		spi_freetuple.7 spi_freetuptable.7 spi_getargcount.7	      \
-		spi_getargtypeid.7 spi_getbinval.7 spi_getrelname.7	      \
-		spi_gettype.7 spi_gettypeid.7 spi_getvalue.7		      \
-		spi_is_cursor_plan.7 spi_modifytuple.7 spi_palloc.7	      \
-		spi_pfree.7 spi_pop.7 spi_prepare.7 spi_push.7		      \
-		spi_repalloc.7 spi_returntuple.7 spi_saveplan.7		      \
 		truncate.7 unlisten.7 update.7 vacuum.7			      \
 		alter_operator.7 alter_tablespace.7 alter_type.7	      \
 		create_tablespace.7 drop_tablespace.7			      \

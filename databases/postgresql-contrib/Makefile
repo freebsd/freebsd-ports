@@ -25,7 +25,7 @@ SED?=		/usr/bin/sed
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
 .else
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
@@ -39,10 +39,12 @@ SLAVE_ONLY=	yes
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 post-install:
+.if ${PGSQL_VER} < 81
 	@- ${INSTALL_SCRIPT} ${WRKSRC}/contrib/ipc_check/ipc_check.pl ${PREFIX}/bin/ipc_check ;\
 	  ${INSTALL_DATA} ${WRKSRC}/contrib/ipc_check/README ${DOCSDIR}/contrib/README.ipc_check ;\
 	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/reindexdb/reindexdb ${PREFIX}/bin/reindexdb ;\
 	  ${INSTALL_DATA} ${WRKSRC}/contrib/reindexdb/README ${DOCSDIR}/contrib/README.reindexdb
+.endif
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
 
 .include "${MASTERDIR}/Makefile"
