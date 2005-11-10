@@ -116,6 +116,7 @@
     SUBDIR += nautilus-sendto
     SUBDIR += notification-daemon
     SUBDIR += offix-trash
+    SUBDIR += p5-Data-ICal
     SUBDIR += pal
     SUBDIR += phpgroupware
     SUBDIR += phpicalendar
