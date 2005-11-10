@@ -11,6 +11,7 @@ share/scim/tables/Jyutping.bin
 share/scim/tables/Quick.bin
 share/scim/tables/Simplex.bin
 share/scim/tables/Stroke5.bin
+share/scim/tables/Wu.bin
 share/scim/tables/Wubi.bin
 share/scim/tables/ZhuYin.bin
 share/scim/tables/Ziranma.bin
@@ -27,6 +28,7 @@ share/scim/icons/Jyutping.png
 share/scim/icons/Quick.png
 share/scim/icons/Simplex.png
 share/scim/icons/Stroke5.png
+share/scim/icons/Wu.png
 share/scim/icons/Wubi.png
 share/scim/icons/ZhuYin.png
 share/scim/icons/Ziranma.png

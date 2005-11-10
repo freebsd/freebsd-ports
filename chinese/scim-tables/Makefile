@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-tables
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-BROKEN=		No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details
+BROKEN=		"No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details"
 .endif
 
 post-install:
