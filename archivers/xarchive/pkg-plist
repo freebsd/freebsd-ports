@@ -1,0 +1,16 @@
+bin/xarchive
+lib/xarchive/wrappers/7za-wrap.sh
+lib/xarchive/wrappers/arj-wrap.sh
+lib/xarchive/wrappers/deb-wrap.sh
+lib/xarchive/wrappers/rar-wrap.sh
+lib/xarchive/wrappers/rpm-wrap.sh
+lib/xarchive/wrappers/tar-wrap.sh
+lib/xarchive/wrappers/zip-wrap.sh
+share/applications/xarchive.desktop
+share/doc/xarchive/xarchive.1.html
+share/doc/xarchive/xarchive.1.txt
+share/pixmaps/xarchive.xpm
+@dirrm share/doc/xarchive
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrm lib/xarchive/wrappers
+@dirrm lib/xarchive

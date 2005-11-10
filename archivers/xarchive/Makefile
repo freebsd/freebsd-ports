@@ -1,0 +1,61 @@
+# New ports collection makefile for:	xarchive
+# Date created:				09 November 2005
+# Whom:					Mark Kane <mark@mkproductions.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xarchive
+PORTVERSION=	0.2.6.3
+CATEGORIES=	archivers
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-0.2.6-3
+
+MAINTAINER=	mark@mkproductions.org
+COMMENT=	A GTK+ front end for archiving tools
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+MAN1=		xarchive.1
+
+GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
+
+OPTIONS=	7ZIP "Support for 7zip archives" off \
+		ARJ "Support for ARJ archives" off \
+		ACE "Support for ACE archives" off \
+		RAR "Support for RAR archives" off \
+		RPM "Support for RPM archives" off \
+		ZIP "Support for ZIP archives" off
+
+.include <bsd.port.pre.mk>
+
+.if defined (WITH_7ZIP)
+RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+.endif
+
+.if defined (WITH_ARJ)
+RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
+.endif
+
+.if defined (WITH_ACE)
+RUN_DEPENDS+=	unace:${PORTSDIR}/archivers/unace
+.endif
+
+.if defined (WITH_RAR)
+RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar \
+		unrar:${PORTSDIR}/archivers/unrar
+.endif
+
+.if defined (WITH_RPM)
+RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm4
+.endif
+
+.if defined (WITH_ZIP)
+RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip
+.endif
+
+.include <bsd.port.post.mk>
