@@ -4,7 +4,6 @@
 %%RUBY_SITELIBDIR%%/aswiki/config.rb
 %%RUBY_SITELIBDIR%%/aswiki/exception.rb
 %%RUBY_SITELIBDIR%%/aswiki/handler.rb
-%%RUBY_SITELIBDIR%%/aswiki/i18n
 %%RUBY_SITELIBDIR%%/aswiki/interwiki.rb
 %%RUBY_SITELIBDIR%%/aswiki/merge.rb
 %%RUBY_SITELIBDIR%%/aswiki/node.rb
@@ -28,6 +27,7 @@
 %%DATADIR%%/plugin/attach.rb
 %%DATADIR%%/plugin/core.rb
 %%DATADIR%%/plugin/demo.rb
+%%DATADIR%%/plugin/search.rb
 %%DATADIR%%/template/Node.html
 %%DATADIR%%/template/PageBase.html
 %%DATADIR%%/template/RSS.xml
@@ -47,6 +47,7 @@
 %%DATADIR%%/template/plugin/pluginlist.html
 %%DATADIR%%/template/plugin/recentpages.html
 %%DATADIR%%/template/plugin/reverselinklist.html
+%%DATADIR%%/template/plugin/search.html
 @dirrm %%DATADIR%%/template/plugin
 @dirrm %%DATADIR%%/template/Page
 @dirrm %%DATADIR%%/template
