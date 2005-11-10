@@ -8,10 +8,10 @@ PORTNAME=	opengroupware
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	misc www linux
-MASTER_SITES=	http://download.opengroupware.org/packages/freebsd/linux-opengroupware/RPMS/:ogo \
-		http://download.opengroupware.org/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
+MASTER_SITES=	http://download.opengroupware.org/nightly/packages/freebsd/linux-opengroupware/RPMS/:ogo \
+		http://download.opengroupware.org/nightly/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
 		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR= updates/8.0/en/os/${MACHINE_ARCH}
+MASTER_SITE_SUBDIR=	updates/8.0/en/os/${MACHINE_ARCH}
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${SET1} \
 		${SET2} \
@@ -104,7 +104,7 @@ SET3=		postgresql-libs-7.2.4-5.80.i386.rpm \
 		pam-0.75-46.8.0.i386.rpm \
 		krb5-libs-1.2.5-15.i386.rpm
 
-NGOBJWEB_ADAPTOR= opengroupware.org-mod_ngobjweb-200407092000.tar.gz
+NGOBJWEB_ADAPTOR=	opengroupware.org-mod_ngobjweb-200407092000.tar.gz
 PATCHDIR?=	${MASTERDIR}/files
 USE_LINUX=	yes
 USE_GMAKE=	yes
@@ -112,9 +112,6 @@ MAKEFILE=	${WRKSRC}/opengroupware.org-mod_ngobjweb/GNUmakefile
 BUILD_WRKSRC?=	${WRKSRC}/opengroupware.org-mod_ngobjweb
 NGWEB_ADAP_DIR=	opengroupware.org-mod_ngobjweb
 PKGNAME_PREFIX=	linux-
-
-#CONFLICTS=	${PORTSDIR}/www/apache2 \
-#		${PORTSDIR}/databases/postgresql7
 
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	We dont really build anything ...
@@ -204,6 +201,8 @@ post-install:
 	@${ECHO} '/opt/opengroupware.org/Libraries/ix86/linux-gnu/gnu-fd-nil' >>${LINUXBASE}/etc/ld.so.conf
 	@${ECHO} '/usr/kerberos/lib' >>${LINUXBASE}/etc/ld.so.conf
 	@${LN} -sf ${LINUXBASE}/usr/lib/libpq.so.2 ${LINUXBASE}/usr/lib/libpq.so.3
+	@${LN} -sf ${LINUXBASE}/lib/libssl.so.0.9.6b ${LINUXBASE}/lib/libssl.so.9.6
+	@${LN} -sf ${LINUXBASE}/lib/ibcrypto.so.0.9.6b ${LINUXBASE}/lib/libcrypto.so.2
 	@${PREFIX}/sbin/ldconfig
 	@${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CHOWN} -Rh ogo:skyrix ${LINUXBASE}/opt/skyrix
