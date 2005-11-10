@@ -25,7 +25,8 @@ start)
 
 	[ -x ${OGO_BIN} ] && {
 		su -l ${OGO_USER} -c \
-			"./WOApps/OpenGroupware.woa/ix86/linux-gnu/gnu-fd-nil/OpenGroupware >>${LOG} 2>&1 &"
+# the next line must be comment out and modified to reflect your configuration in order to start OpenGroupware
+#			"./WOApps/OpenGroupware.woa/ix86/linux-gnu/gnu-fd-nil/OpenGroupware -WOHttpAllowHost '(localhost, you.yourdomain.org)' >>${LOG} 2>&1 &"
 		echo 'OpenGroupware started.'
 		echo "**** RECEIVED 'start' from STARTSCRIPT at `date` ****" >>${LOG}
 	}

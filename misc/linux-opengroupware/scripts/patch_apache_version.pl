@@ -38,6 +38,12 @@ if ( ! -e '/compat/linux/opt/opengroupware.org/OpenGroupware.org.apacheinclude' 
 	print AI "</LocationMatch>\n";
 	print AI "\n";
 	print AI "Alias /OpenGroupware.woa/WebServerResources/ \"/compat/linux/opt/opengroupware.org/WebServerResources/\"\n";
+	print AI "<Directory \"/compat/linux/opt/opengroupware.org/WebServerResources/\">\n";
+	print AI "\tOptions Indexes Multiviews\n";
+	print AI "\tAllowOverride None\n";
+	print AI "\tOrder allow,deny\n";
+	print AI "\tAllow from all\n";
+	print AI "</Directory>\n";
 		print AI "Alias /ArticleImages \"/compat/linux/opt/opengroupware.org/news\"\n";
 	close(AI);
 } else {
