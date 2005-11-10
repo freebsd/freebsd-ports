@@ -1,0 +1,29 @@
+************************************************************************
+If you have build/runtime errors with Mono and Gtk# apps please try the
+following first:
+
+* Build Mono and gtk+ (x11-toolkits/gtk20) without CPUTYPE and with the
+  default FreeBSD CFLAGS as Mono has been known to expose compiler bugs.
+  - 5.x:		'-O -pipe'
+  - 6.x and higher:	'-O2 -fno-strict-aliasing -pipe'
+
+* Try building and running Mono with the GENERIC kernel.
+  - Mono requires SYSVSHM, SYSVMSG, and SYSVSEM which are part of the
+    GENERIC kernel.
+  - Removing kernel options or changing defaults to use experimental
+    options can adversely affect Mono's ability to build and run.
+
+* Remove leftover semaphores / increase semaphore limits.
+  - Close apps which use Mono and run `ipcs -sbt`.  Remove the
+    semaphores with MODE "--rw-------" and NSEMS "8"
+  - _OR_ simply reboot which is the safest method.
+  - On multi-user systems the semaphore limits may need to be increased
+    from the FreeBSD default of 10 identifiers and 60 total semaphores.
+    The following should comfortably support 30 users.
+
+    # echo "kern.ipc.semmni=40" >> /boot/loader.conf
+    # echo "kern.ipc.semmns=300" >> /boot/loader.conf
+
+    By users we mean local users.  XSP can serve multiple clients but
+    would count as only one user, the user running XSP.
+************************************************************************
