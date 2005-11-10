@@ -27,8 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DNDEBUG" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}=="alpha"
-BROKEN=	Does not compile on ${ARCH}
+.if ${ARCH}=="alpha" || ${OSVERSION} < 500000
+BROKEN=	Does not compile
 .endif
 
 post-patch:
