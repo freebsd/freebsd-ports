@@ -37,6 +37,7 @@
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
     SUBDIR += dedit
+    SUBDIR += doxymacs
     SUBDIR += dte
     SUBDIR += e3
     SUBDIR += e93

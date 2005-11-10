@@ -1,0 +1,5 @@
+bin/doxymacs_parser
+%%EMACS_SITE_LISPDIR%%/doxymacs.el
+%%EMACS_SITE_LISPDIR%%/doxymacs.elc
+%%EMACS_SITE_LISPDIR%%/xml-parse.el
+%%EMACS_SITE_LISPDIR%%/xml-parse.elc
