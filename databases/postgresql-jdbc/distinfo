@@ -1,2 +1,3 @@
-MD5 (postgresql/postgresql-jdbc-8.0-311.src.tar.gz) = e31b6e68141883e5c89a3a9b0fb95c02
-SIZE (postgresql/postgresql-jdbc-8.0-311.src.tar.gz) = 389944
+MD5 (postgresql/postgresql-jdbc-8.1-404.src.tar.gz) = 8e400d091086adf4b40419e6e7be2740
+SHA256 (postgresql/postgresql-jdbc-8.1-404.src.tar.gz) = db11ec57331ab005162b01cfb9caf16b7cfa78c9d1540ae8a11afb72293246f8
+SIZE (postgresql/postgresql-jdbc-8.1-404.src.tar.gz) = 474266
