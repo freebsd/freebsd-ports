@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	1.3
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +15,7 @@ PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
+BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.4:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		faad.0:${PORTSDIR}/audio/faad \
 		mp3lame.0:${PORTSDIR}/audio/lame \
@@ -55,35 +55,33 @@ PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 MAN1=	gmp4player.1 mp4creator.1 mp4encode.1 mp4live.1
 MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 	MP4AddRtpESConfigurationPacket.3 MP4AddRtpHint.3 MP4AddRtpImmediateData.3 \
-	MP4AddRtpPacket.3 MP4AddRtpSampleData.3 MP4AddRtpVideoHint.3 \
-	MP4AddSceneTrack.3 \
+	MP4AddRtpPacket.3 MP4AddRtpSampleData.3 MP4AddRtpVideoHint.3 MP4AddSceneTrack.3 \
 	MP4AddSystemsTrack.3 MP4AddTrack.3 MP4AddTrackEdit.3 MP4AddVideoTrack.3 \
-	MP4AppendHintTrackSdp.3 MP4AppendSessionSdp.3 MP4BinaryToBase16.3 \
-	MP4BinaryToBase64.3 MP4CloneTrack.3 MP4Close.3 MP4ConvertFromMovieDuration.3 \
-	MP4ConvertFromTrackDuration.3 MP4ConvertFromTrackTimestamp.3 MP4ConvertToTrackDuration.3 \
-	MP4ConvertToTrackTimestamp.3 MP4CopySample.3 MP4CopyTrack.3 MP4Create.3 \
-	MP4DeleteTrack.3 MP4DeleteTrackEdit.3 MP4Dump.3 MP4FileInfo.3 MP4FindTrackId.3 \
-	MP4FindTrackIndex.3 MP4GetAudioProfileLevel.3 MP4GetDuration.3 MP4GetGraphicsProfileLevel.3 \
-	MP4GetHintTrackReferenceTrackId.3 MP4GetHintTrackRtpPayload.3 MP4GetHintTrackSdp.3 \
-	MP4GetNumberOfTracks.3 MP4GetODProfileLevel.3 MP4GetRtpHintNumberOfPackets.3 \
+	MP4AppendHintTrackSdp.3 MP4AppendSessionSdp.3 MP4BinaryToBase16.3 MP4BinaryToBase64.3 \
+	MP4CloneTrack.3 MP4Close.3 MP4ConvertFromMovieDuration.3 MP4ConvertFromTrackDuration.3 \
+	MP4ConvertFromTrackTimestamp.3 MP4ConvertToTrackDuration.3 MP4ConvertToTrackTimestamp.3  \
+	MP4CopySample.3 MP4CopyTrack.3 MP4Create.3 MP4DeleteTrack.3 MP4DeleteTrackEdit.3 \
+	MP4Dump.3 MP4FileInfo.3 MP4FindTrackId.3 MP4FindTrackIndex.3 MP4GetAudioProfileLevel.3 \
+	MP4GetDuration.3 MP4GetGraphicsProfileLevel.3 MP4GetHintTrackReferenceTrackId.3 MP4GetHintTrackRtpPayload.3 \
+	MP4GetHintTrackSdp.3 MP4GetNumberOfTracks.3 MP4GetODProfileLevel.3 MP4GetRtpHintNumberOfPackets.3 \
 	MP4GetRtpPacketBFrame.3 MP4GetRtpPacketTransmitOffset.3 MP4GetRtpTimestampStart.3 \
 	MP4GetSampleDuration.3 MP4GetSampleIdFromEditTime.3 MP4GetSampleIdFromTime.3 \
 	MP4GetSampleRenderingOffset.3 MP4GetSampleSize.3 MP4GetSampleSync.3 MP4GetSampleTime.3 \
 	MP4GetSceneProfileLevel.3 MP4GetSessionSdp.3 MP4GetTimeScale.3 MP4GetTrackAudioMpeg4Type.3 \
 	MP4GetTrackAudioType.3 MP4GetTrackBitRate.3 MP4GetTrackDuration.3 MP4GetTrackESConfiguration.3 \
-	MP4GetTrackEditDuration.3 MP4GetTrackEditDwell.3 MP4GetTrackEditMediaStart.3 \
-	MP4GetTrackEditStart.3 MP4GetTrackEditTotalDuration.3 MP4GetTrackFixedSampleDuration.3 \
-	MP4GetTrackMaxSampleSize.3 MP4GetTrackNumberOfEdits.3 MP4GetTrackNumberOfSamples.3 \
-	MP4GetTrackTimeScale.3 MP4GetTrackType.3 MP4GetTrackVideoFrameRate.3 MP4GetTrackVideoHeight.3 \
-	MP4GetTrackVideoType.3 MP4GetTrackVideoWidth.3 MP4GetVerbosity.3 MP4GetVideoProfileLevel.3 \
-	MP4Info.3 MP4MakeIsmaCompliant.3 MP4Modify.3 MP4Optimize.3 MP4Read.3 MP4ReadRtpHint.3 \
-	MP4ReadRtpPacket.3 MP4ReadSample.3 MP4ReadSampleFromEditTime.3 MP4ReadSampleFromTime.3 \
-	MP4SetAudioProfileLevel.3 MP4SetGraphicsProfileLevel.3 MP4SetHintTrackRtpPayload.3 \
-	MP4SetHintTrackSdp.3 MP4SetODProfileLevel.3 MP4SetRtpTimestampStart.3 MP4SetSampleRenderingOffset.3 \
+	MP4GetTrackEditDuration.3 MP4GetTrackEditDwell.3 MP4GetTrackEditMediaStart.3 MP4GetTrackEditStart.3 \
+	MP4GetTrackEditTotalDuration.3 MP4GetTrackFixedSampleDuration.3 MP4GetTrackMaxSampleSize.3 \
+	MP4GetTrackNumberOfEdits.3 MP4GetTrackNumberOfSamples.3 MP4GetTrackTimeScale.3 MP4GetTrackType.3 \
+	MP4GetTrackVideoFrameRate.3 MP4GetTrackVideoHeight.3 MP4GetTrackVideoType.3 MP4GetTrackVideoWidth.3 \
+	MP4GetVerbosity.3 MP4GetVideoProfileLevel.3 MP4Info.3 MP4MakeIsmaCompliant.3 \
+	MP4Modify.3 MP4Optimize.3 MP4Read.3 MP4ReadRtpHint.3 MP4ReadRtpPacket.3 \
+	MP4ReadSample.3 MP4ReadSampleFromEditTime.3 MP4ReadSampleFromTime.3 MP4SetAudioProfileLevel.3 \
+	MP4SetGraphicsProfileLevel.3 MP4SetHintTrackRtpPayload.3 MP4SetHintTrackSdp.3 \
+	MP4SetODProfileLevel.3 MP4SetRtpTimestampStart.3 MP4SetSampleRenderingOffset.3 \
 	MP4SetSceneProfileLevel.3 MP4SetSessionSdp.3 MP4SetTimeScale.3 MP4SetTrackESConfiguration.3 \
 	MP4SetTrackEditDuration.3 MP4SetTrackEditDwell.3 MP4SetTrackEditMediaStart.3 \
-	MP4SetTrackTimeScale.3 MP4SetVerbosity.3 MP4SetVideoProfileLevel.3 MP4WriteRtpHint.3 \
-	MP4WriteSample.3
+	MP4SetTrackTimeScale.3 MP4SetVerbosity.3 MP4SetVideoProfileLevel.3 \
+	MP4WriteRtpHint.3 MP4WriteSample.3
 
 .include <bsd.port.pre.mk>
 

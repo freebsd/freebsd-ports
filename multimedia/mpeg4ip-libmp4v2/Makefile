@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,10 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/systems.h)
-BROKEN=	"Please remove older version of faad before attempting to build ${PORTNAME}"
-.endif
 
 .if ${OSVERSION} < 500000
 CFLAGS+=	-O2
