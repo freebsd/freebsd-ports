@@ -1,4 +1,5 @@
 bin/tomboy
+lib/tomboy/Plugins/ExportToHTML.dll
 lib/tomboy/Plugins/PrintNotes.dll
 lib/tomboy/Tomboy.exe
 lib/tomboy/Tomboy.exe.config
@@ -16,6 +17,7 @@ share/locale/de/LC_MESSAGES/tomboy.mo
 share/locale/en_CA/LC_MESSAGES/tomboy.mo
 share/locale/en_GB/LC_MESSAGES/tomboy.mo
 share/locale/es/LC_MESSAGES/tomboy.mo
+share/locale/eu/LC_MESSAGES/tomboy.mo
 share/locale/fr/LC_MESSAGES/tomboy.mo
 share/locale/hu/LC_MESSAGES/tomboy.mo
 share/locale/is/LC_MESSAGES/tomboy.mo
@@ -32,6 +34,8 @@ share/locale/pt_BR/LC_MESSAGES/tomboy.mo
 share/locale/rw/LC_MESSAGES/tomboy.mo
 share/locale/sq/LC_MESSAGES/tomboy.mo
 share/locale/sv/LC_MESSAGES/tomboy.mo
+share/locale/tr/LC_MESSAGES/tomboy.mo
+share/locale/uk/LC_MESSAGES/tomboy.mo
 share/locale/zh_CN/LC_MESSAGES/tomboy.mo
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true

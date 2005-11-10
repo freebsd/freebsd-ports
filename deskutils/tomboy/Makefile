@@ -2,13 +2,13 @@
 # Date created:					20041011
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
-# $Id: Makefile,v 1.9 2005/06/21 22:32:11 mezz7 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.17 2005/10/23 20:57:55 tmclau02 Exp $
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	0.3.2
-PORTREVISION=	5
+PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
@@ -37,4 +37,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/dbus-1.0|(prefix)/share/dbus-1|g' \
 		${WRKSRC}/data/Makefile.in
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
