@@ -8,7 +8,7 @@
 PORTNAME=	megarc
 PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=
+MASTER_SITES=	http://www.lsilogic.com/files/support/rsa/beta/drivers/
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
 MAINTAINER=	tux@pinguru.net
@@ -18,21 +18,14 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ONLY_FOR_ARCHS=	i386
-RESTRICTED=	"Restrictive license"
-DOWNLOAD_URL=	http://www.lsilogic.com/products/megaraid/
+ONLY_FOR_ARCHS=	i386 amd64 ia64
+RESTRICTED=	Must be downloaded directly from the manufacturer
 
 PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		can not be automatically fetched due to licensing restrictions. You must manually fetch the distribution files from ${DOWNLOAD_URL} (Support -> Downloads -> freebsd151), place it in ${DISTDIR} and run make again
-.endif
-
 post-extract:
-	@cd ${WRKSRC} && ${UNZIP_CMD} -qo 'MegaRC 1.04.zip'
+	@cd ${WRKSRC} && ${UNZIP_CMD} -aqo 'MegaRC 1.04.zip'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/megarc ${PREFIX}/sbin
@@ -41,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Release\ History.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
