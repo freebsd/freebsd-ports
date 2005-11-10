@@ -1,0 +1,15 @@
+Doxymacs is Doxygen + {X}Emacs.
+
+The purpose of the doxymacs project is to create a LISP package that
+will make using Doxygen from within {X}Emacs easier.
+
+It has the following features:
+
+    * ability to look up documentation for symbols from {X}Emacs in
+      the browser of your choice.
+    * easily insert Doxygen style comments into source.
+    * optionally use an "external" (i.e. written in C) XML parser to
+      speed up building the completion list.
+    * fontify Doxygen keywords.
+
+WWW: http://doxymacs.sourceforge.net/
