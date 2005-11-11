@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	http://flyspray.rocks.cc/files/
 
@@ -21,38 +21,49 @@ WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 
+FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
+ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
 DBDIR=		/var/db
 
-DOC_FILES=	AUTHORS.txt BUGS.txt CHANGELOG.txt INSTALL.txt README.txt \
-		TODO.txt UPGRADING.txt README.FreeBSD \
+DOC_FILES=	AUTHORS.txt BUGS.txt CHANGELOG.txt INSTALL.txt \
+		QA_CHECKLIST.txt README.txt TODO.txt UPGRADING.txt \
+		README.FreeBSD \
 		licences/ADOdb.licence.txt \
 		licences/Flyspray.licence.txt \
 		licences/NuvolaIcons.licence.txt \
+		licences/class.jabber.php.licence.txt \
 		licences/jsCalendar.licence.txt \
-		licences/phpMarkdown.licence.txt
+		licences/phpMarkdown.licence.txt \
+		licences/phpmailer.licence.txt \
 
-FLYSPRAY_FILES=	favicon.ico header.php includes index.php lang scripts sql themes
+FLYSPRAY_FILES=	.htaccess favicon.ico header.php index.php \
+		remote-client.php remote.php docs/licences/gnu_lgpl.html \
+		includes lang scripts setup sql themes
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 post-patch:
 	@${CP} ${PKGDIR}/files/README.FreeBSD ${WRKSRC}/docs/
-	@${REINPLACE_CMD} -e "s|realpath('../')|'${PREFIX}/share'|g" \
-		${WRKSRC}/sql/install-${PORTVERSION}.php
-	@${RM} ${WRKSRC}/sql/install-${PORTVERSION}.php.bak
+	@${REINPLACE_CMD} -e "s|%%FLYSPRAYDIR%%|"${FLYSPRAYDIR}"|g" \
+		-e "s|%%DOCSDIR%%|"${DOCSDIR}"|g" \
+		${WRKSRC}/docs/README.FreeBSD
+	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} '{}' ';'
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${CHMOD} 755 ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/header.php ${PREFIX}/share/${PORTNAME}/header.php-dist
+	@${MKDIR} ${FLYSPRAYDIR}
+	${CHMOD} 755 ${FLYSPRAYDIR}
+	${INSTALL_DATA} ${WRKSRC}/flyspray.conf.php \
+		${FLYSPRAYDIR}/flyspray.conf.php-dist
+	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
 		tar cf - ${FLYSPRAY_FILES} | \
-		(cd ${PREFIX}/share/${PORTNAME} && tar -xf -)
-	${LN} -s ${DBDIR}/${PORTNAME}/attachments ${PREFIX}/share/${PORTNAME}/attachments
-	@${MKDIR} ${DBDIR}/${PORTNAME}/attachments
-	${CHMOD} 750 ${DBDIR}/${PORTNAME}/attachments
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${DBDIR}/${PORTNAME}/attachments
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/share/${PORTNAME}
+		(cd ${FLYSPRAYDIR} && tar -xf -)
+	${LN} -s ${ATTACHMENTDIR} ${FLYSPRAYDIR}/attachments
+	${LN} -s ${PREFIX}/share/adodb ${FLYSPRAYDIR}
+	@${MKDIR} ${ATTACHMENTDIR}
+	${CHMOD} 750 ${ATTACHMENTDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${ATTACHMENTDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/flyspray.conf.php
 
 post-install: install-doc
 	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' pkg-message > ${PKGMESSAGE}
