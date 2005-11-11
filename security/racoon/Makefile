@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon
 
+CONFLICTS=	ipsec-tools-[0-9]*
+
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
