@@ -1,0 +1,7 @@
+Netdump-server listens on the network for connections from linux kernels
+using the netconsole/netdump module. When such a machine crashes it
+contacts the netdump-server on the specified ip/port. The server then
+proceeds to log console messages, including the oops message, and a
+kernel memory dump in a specified directory, and then reboots the machine.
+
+WWW: http://www.redhat.com

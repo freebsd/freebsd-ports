@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+@exec if ! pw groupshow %%NETDUMP_GRP%% 2>/dev/null; then pw groupadd -n %%NETDUMP_GRP%%; fi
+@exec if ! pw usershow %%NETDUMP_OWN%% 2>/dev/null; then pw useradd -n %%NETDUMP_OWN%% -g %%NETDUMP_GRP%% -d /nonexistent -s /sbin/nologin -c "Netdump-server pseudo user"; fi
+@exec mkdir -p /var/spool/netdump
+@exec chown %%NETDUMP_OWN%%:%%NETDUMP_GRP%% /var/spool/netdump
+@exec chmod 700 /var/spool/netdump
+@unexec rmdir /var/spool/netdump 2>/dev/null || true
+@unexec pw userdel %%NETDUMP_OWN%%
+bin/netdump-server
+etc/netdump.conf.sample
+%%EXAMPLESDIR%%/netdump-crash
+%%EXAMPLESDIR%%/netdump-nospace
+%%EXAMPLESDIR%%/netdump-reboot
+%%EXAMPLESDIR%%/netdump-start
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.client
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

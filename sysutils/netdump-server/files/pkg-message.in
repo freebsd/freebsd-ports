@@ -1,0 +1,17 @@
+=============================================================================
+
+This port installed sample config script '%%PREFIX%%/etc/netdump.conf.sample'.
+Rename it to '%%PREFIX%%/etc/netdump.conf' and edit to suit your needs.
+
+Dumps will be stored in /var/spool/netdump. You can change it in config or
+using runtime options.
+
+In order to enable logging add '!netdump' part to syslog.conf.
+
+If you want to use netdump-server in secure way set password for netdump
+account and change 'secure' config option to 1.
+
+To run netdump-server from startup, add netdump_server_enable="YES"
+in your /etc/rc.conf.
+
+=============================================================================
