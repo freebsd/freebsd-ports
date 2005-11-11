@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.02.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/stable/1_0x/
 

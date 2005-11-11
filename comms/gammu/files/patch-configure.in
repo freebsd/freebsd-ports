@@ -1,10 +1,12 @@
---- ../gammu-1.01.0.orig/cfg/autoconf/configure.in	Tue Mar  8 19:16:22 2005
-+++ cfg/autoconf/configure.in	Sat Jul  9 12:51:12 2005
-@@ -185,17 +185,17 @@
+--- cfg/autoconf/configure.in.orig	Tue Mar  8 19:16:22 2005
++++ cfg/autoconf/configure.in	Fri Nov 11 21:09:43 2005
+@@ -184,18 +184,18 @@
+          fi
       fi
       if test "$gsm_blue_stack" = unknown ; then
-          AC_CHECK_HEADERS(bluetooth/bluetooth.h, 
+-         AC_CHECK_HEADERS(bluetooth/bluetooth.h, 
 -                 [gsm_blue_stack=Bluez
++         AC_CHECK_HEADERS(bluetooth.h, 
 +                 [gsm_blue_stack=FreeBSD
                   LDLIBS="$LDLIBS -lbluetooth"
                   AC_CHECK_LIB(sdp, sdp_list_append, LDLIBS="$LDLIBS -lsdp")
