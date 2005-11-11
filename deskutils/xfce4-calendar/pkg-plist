@@ -4,6 +4,7 @@ share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
 share/icons/hicolor/48x48/apps/xfcalendar.png
 share/icons/hicolor/scalable/apps/xfcalendar.svg
+share/locale/af/LC_MESSAGES/xfcalendar.mo
 share/locale/ar/LC_MESSAGES/xfcalendar.mo
 share/locale/az/LC_MESSAGES/xfcalendar.mo
 share/locale/be/LC_MESSAGES/xfcalendar.mo
@@ -15,6 +16,7 @@ share/locale/da/LC_MESSAGES/xfcalendar.mo
 share/locale/de/LC_MESSAGES/xfcalendar.mo
 share/locale/el/LC_MESSAGES/xfcalendar.mo
 share/locale/en_GB/LC_MESSAGES/xfcalendar.mo
+share/locale/eo/LC_MESSAGES/xfcalendar.mo
 share/locale/es/LC_MESSAGES/xfcalendar.mo
 share/locale/et/LC_MESSAGES/xfcalendar.mo
 share/locale/eu/LC_MESSAGES/xfcalendar.mo
@@ -25,9 +27,11 @@ share/locale/gu/LC_MESSAGES/xfcalendar.mo
 share/locale/he/LC_MESSAGES/xfcalendar.mo
 share/locale/hi/LC_MESSAGES/xfcalendar.mo
 share/locale/hu/LC_MESSAGES/xfcalendar.mo
+share/locale/hy/LC_MESSAGES/xfcalendar.mo
 share/locale/it/LC_MESSAGES/xfcalendar.mo
 share/locale/ja/LC_MESSAGES/xfcalendar.mo
 share/locale/ko/LC_MESSAGES/xfcalendar.mo
+share/locale/ku/LC_MESSAGES/xfcalendar.mo
 share/locale/lt/LC_MESSAGES/xfcalendar.mo
 share/locale/mr/LC_MESSAGES/xfcalendar.mo
 share/locale/ms/LC_MESSAGES/xfcalendar.mo
@@ -40,6 +44,7 @@ share/locale/pt_PT/LC_MESSAGES/xfcalendar.mo
 share/locale/ro/LC_MESSAGES/xfcalendar.mo
 share/locale/ru/LC_MESSAGES/xfcalendar.mo
 share/locale/sk/LC_MESSAGES/xfcalendar.mo
+share/locale/sl/LC_MESSAGES/xfcalendar.mo
 share/locale/sv/LC_MESSAGES/xfcalendar.mo
 share/locale/ta/LC_MESSAGES/xfcalendar.mo
 share/locale/tr/LC_MESSAGES/xfcalendar.mo
