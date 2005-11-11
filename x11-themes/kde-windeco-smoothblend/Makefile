@@ -1,6 +1,6 @@
 # New ports collection makefile for:   smoothblend
-# Date created:        March 18th, 2005
-# Whom:                decept
+# Date created:                        18th March, 2005
+# Whom:                                decept
 #
 # $FreeBSD$
 #
@@ -18,7 +18,6 @@ COMMENT=	A window decoration for KDE
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/smooth-blend-${PORTVERSION}
 
