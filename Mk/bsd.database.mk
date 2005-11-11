@@ -173,7 +173,7 @@ _DB_42P=	42 43
 _WANT_BDB_VER=	${USE_BDB}
 
 # Assume the default bdb version as 41
-.if ${USE_BDB} == "yes"
+.if ${USE_BDB:L} == "yes"
 _WANT_BDB_VER=	41+
 .endif
 
@@ -204,7 +204,7 @@ _FOUND=	yes
 .endif
 .endfor
 
-# USE_BDB is specified incorrectly, so mark this as BROKEN
+# USE_BDB is specified incorrectly, so mark this as IGNORE
 .if ${_FOUND} == "no"
 IGNORE=	"Unknown bdb version: ${USE_BDB}"
 .endif
@@ -214,17 +214,20 @@ IGNORE=	"Unknown bdb version: ${USE_BDB}"
 # Handling sqlite dependency
 .if defined(USE_SQLITE)
 
-.if ${USE_SQLITE} == "yes"
+.if ${USE_SQLITE:L} == "yes"
 _SQLITE_VER=	3
 .else
 _SQLITE_VER=	${USE_SQLITE}
 .endif
 
-.if ${_SQLITE_VER} != "3" && ${_SQLITE_VER} != "2"
+# USE_SQLITE is specified incorrectly, so mark this as IGNORE
+.if ${_SQLITE_VER} == "3"
+LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+.elif ${_SQLITE_VER} == "2"
+LIB_DEPENDS+=	sqlite.${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+.else
 IGNORE=	"Unknown sqlite version: ${_SQLITE_VER}"
 .endif
-
-LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 
 .endif # defined(USE_SQLITE)
 
