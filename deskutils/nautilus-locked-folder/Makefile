@@ -27,5 +27,10 @@ PLIST_FILES=	lib/nautilus/extensions-1.0/libnautilus-locked-folder.so
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/icons/hicolor/32x32/stock/data/|${X11BASE}/share/icons/hicolor/32x32/stock/data/|' \
 		${WRKSRC}/src/lockedfolder-extension.c
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+BROKEN="Does not build"
+.endif
+
+.include <bsd.port.post.mk>
