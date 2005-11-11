@@ -1,0 +1,36 @@
+%%BAN%%%%INSTALL_DIR%%/banlists/banners/pcre
+%%BAN%%%%INSTALL_DIR%%/banlists/banners/urls
+%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/banners
+%%BAN%%%%INSTALL_DIR%%/banlists/js/urls
+%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/js
+%%BAN%%%%INSTALL_DIR%%/banlists/mp3/pcre
+%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/mp3
+%%BAN%%%%INSTALL_DIR%%/banlists/porno/urls
+%%BAN%%@dirrm %%INSTALL_DIR%%/banlists/porno
+%%BAN%%@dirrm %%INSTALL_DIR%%/banlists
+%%DBL%%%%INSTALL_DIR%%/dbl/FAST
+%%DBL%%%%INSTALL_DIR%%/dbl/FULL
+%%DBL%%@dirrm %%INSTALL_DIR%%/dbl/NEW
+%%DBL%%%%INSTALL_DIR%%/dbl/Update
+%%DBL%%%%INSTALL_DIR%%/dbl/Update.Fast
+%%DBL%%%%INSTALL_DIR%%/dbl/dbl_expand
+%%DBL%%%%INSTALL_DIR%%/dbl/dbl_stat
+%%DBL%%@dirrm %%INSTALL_DIR%%/dbl/lists
+%%DBL%%@dirrm %%INSTALL_DIR%%/dbl
+%%INSTALL_DIR%%/make-cache
+%%INSTALL_DIR%%/redirector
+%%INSTALL_DIR%%/redirector.conf.dist
+%%INSTALL_DIR%%/tools/IN.gz
+%%INSTALL_DIR%%/tools/benchmark
+%%INSTALL_DIR%%/tools/check-redirector
+%%INSTALL_DIR%%/tools/kill-cache
+%%INSTALL_DIR%%/tools/set-permissions
+@dirrm %%INSTALL_DIR%%/tools
+@dirrm %%INSTALL_DIR%%
+%%WWW%%%%WWW_DIR%%/ban/1x1.gif
+%%WWW%%%%WWW_DIR%%/ban/audio-video.html
+%%WWW%%%%WWW_DIR%%/ban/js.js
+%%WWW%%%%WWW_DIR%%/ban/mp3.html
+%%WWW%%%%WWW_DIR%%/ban/porno.html
+%%WWW%%%%WWW_DIR%%/ban/warez.html
+%%WWW%%@dirrm %%WWW_DIR%%/ban
