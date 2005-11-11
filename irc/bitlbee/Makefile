@@ -6,76 +6,83 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.92
-PORTREVISION=	3
+PORTVERSION=	0.99
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
-		http://www.bitlbee.be/andy/:msn6 \
-		http://www.il.fontys.nl/~rink/patches/:ldap
+		http://www.bitlbee.be/andy/:msn6
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:bitlbee
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	http://get.bitlbee.org/patches/
+PATCHFILES=	${DISTNAME}-bsd-install.diff
 
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
 
 .if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
-DISTFILES+=	${DISTNAME}-msn6.akke.patch:msn6
+# don't use DISTNAME as old patch applies fine to new release
+DISTFILES+=	${PORTNAME}-0.92-msn6.akke.patch:msn6
 .endif
+
 .if defined(WITH_LDAP)
-DISTFILES+=	${DISTNAME}-ldap.diff:ldap
+PATCHFILES+=	${DISTNAME}-ldap.diff
 .endif
 
 MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 USE_GMAKE=	yes
 USE_GNOME=	glib20
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=yes
-.endif
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
 .if defined(WITH_MSN)
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--msn=1
-pre-configure:
-	@${ECHO_CMD} "MSN and Jabber/SSL support will be enabled."
+CONFIGURE_ARGS+=--msn=1
 .else
-CONFIGURE_ARGS+=	--msn=0 --ssl=bogus
-pre-configure:
-	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN and Jabber/SSL support."
-.endif
-
-.if !defined(WITH_MSN6_FEATURES)
-	@${ECHO_CMD} "Type \"make -DWITH_MSN6_FEATURES\" if you want to enable MSN 6 features, like buddy icons"
-.else
-	@${ECHO_CMD} "MSN 6 features will be enabled."
+CONFIGURE_ARGS+=--msn=0 --ssl=bogus
 .endif
 
 .if defined(WITH_FLOOD)
-CONFIGURE_ARGS+=	--flood=1
-.else
-	@${ECHO_CMD} "Type \"make -DWITH_FLOOD\" if you want to enable flood protection."
+CONFIGURE_ARGS+=--flood=1
 .endif
 
-.if ! defined(WITH_LDAP)
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--ldap=${LOCALBASE}
+.endif
+
+pre-configure:
+.if !defined(WITH_MSN)
+	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN and Jabber/SSL support."
+.else
+	@${ECHO_CMD} "MSN and Jabber/SSL support will be enabled."
+
+. if !defined(WITH_MSN6_FEATURES)
+	@${ECHO_CMD} "Type \"make -DWITH_MSN6_FEATURES\" if you want to enable MSN 6 features, like buddy icons"
+. else
+	@${ECHO_CMD} "MSN 6 features will be enabled."
+. endif
+.endif
+
+.if !defined(WITH_FLOOD)
+	@${ECHO_CMD} "Type \"make -DWITH_FLOOD\" if you want to enable flood protection."
+.else
+	@${ECHO_CMD} "Flood protection will be enabled."
+.endif
+
+.if !defined(WITH_LDAP)
 	@${ECHO_CMD} "Type \"make -DWITH_LDAP\" if you want to enable LDAP authentication."
 .else
-CONFIGURE_ARGS+=	--ldap=${LOCALBASE}
-#	@${ECHO_CMD} "LDAP authentication will be enabled."
+	@${ECHO_CMD} "LDAP authentication will be enabled."
 .endif
 
 post-patch:
 .if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
-	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${DISTNAME}-msn6.akke.patch
-.endif
-
-.if defined(WITH_LDAP)
-	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${DISTNAME}-ldap.diff
+	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${PORTNAME}-0.92-msn6.akke.patch
 .endif
 
 post-build:
