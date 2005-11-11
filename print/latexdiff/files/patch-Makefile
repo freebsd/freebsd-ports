@@ -1,0 +1,49 @@
+--- Makefile.orig	Tue Oct  4 04:36:54 2005
++++ Makefile	Fri Nov 11 15:00:19 2005
+@@ -2,7 +2,7 @@
+ # For the current setting you will need root permission but 
+ # it is perfectly acceptable to choose user directories 
+ #
+-INSTALLPATH = /usr/local
++INSTALLPATH = ${PREFIX}
+ INSTALLMANPATH = $(INSTALLPATH)/man
+ INSTALLEXECPATH = $(INSTALLPATH)/bin
+ 
+@@ -15,28 +15,31 @@
+ 	@echo "To install the version which uses the system Algorithm::Diff package type: make install-ext"
+ 	@echo " "
+ 
++dirs:
++	mkdir -p $(INSTALLMANPATH)/man1 $(INSTALLEXECPATH)
++
+ install: install-so
+ 
+ install-ext: install-latexdiff install-latexrevise install-latexdiff-cvs install-man
+ 
+-install-so: install-latexdiff-so install-latexrevise install-latexdiff-cvs install-man
++install-so: dirs install-latexdiff-so install-latexrevise install-latexdiff-cvs install-man
+ 
+ install-man:
+-	install latexrevise.1 latexdiff.1 $(INSTALLMANPATH)/man1
++	${BSD_INSTALL_MAN} latexrevise.1 latexdiff.1 $(INSTALLMANPATH)/man1
+ 
+ install-latexdiff:
+-	install latexdiff $(INSTALLEXECPATH)
++	${BSD_INSTALL_SCRIPT} latexdiff $(INSTALLEXECPATH)
+ 
+ install-latexdiff-so:
+ 	if [ -e $(INSTALLEXECPATH)/latexdiff ]; then rm $(INSTALLEXECPATH)/latexdiff; fi
+-	install latexdiff-so $(INSTALLEXECPATH)
++	${BSD_INSTALL_SCRIPT} latexdiff-so $(INSTALLEXECPATH)
+ 	cd $(INSTALLEXECPATH); ln -s latexdiff-so latexdiff
+ 
+ install-latexrevise:
+-	install latexrevise $(INSTALLEXECPATH)
++	${BSD_INSTALL_SCRIPT} latexrevise $(INSTALLEXECPATH)
+ 
+ install-latexdiff-cvs:
+-	install latexdiff-cvs $(INSTALLEXECPATH)
++	${BSD_INSTALL_SCRIPT} latexdiff-cvs $(INSTALLEXECPATH)
+ 
+ test: test-so
+ 
