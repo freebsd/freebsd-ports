@@ -31,6 +31,8 @@ XINSTALL_MAN_DIRS=	programs/Xserver/hw/vfb
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86-4
+IGNORE=	is part of XFree86 and you have ${X_WINDOW_SYSTEM} set for X11\
+	distribution. See The X Window System and Virtual Consoles chapter\
+	of FAQ for more information
 .endif
 .include <bsd.port.post.mk>

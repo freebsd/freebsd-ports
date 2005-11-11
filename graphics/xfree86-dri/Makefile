@@ -30,7 +30,9 @@ XINSTALL_DIRS=		lib/GL/mesa/drivers/dri
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86. For X.Org use graphics/dri port. See ports/UPDATING entry 20040723 for further information.
+IGNORE=	is part of XFree86 and you have ${X_WINDOW_SYSTEM} set for X11\
+	distribution. See The X Window System and Virtual Consoles chapter\
+	of FAQ for more information
 .endif
 
 .if ${ARCH} == i386

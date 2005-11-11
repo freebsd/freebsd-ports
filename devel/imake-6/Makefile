@@ -55,7 +55,9 @@ pre-configure:
 		${WRKSRC}/cf/FreeBSD.cf
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=		is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
+IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
+	distribution. See The X Window System and Virtual Consoles chapter\
+	of FAQ for more information
 .endif
 
 .include <bsd.port.post.mk>

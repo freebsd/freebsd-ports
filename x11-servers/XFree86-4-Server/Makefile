@@ -102,7 +102,9 @@ NOT_FOR_ARCHS=		ia64
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
-IGNORE= is part of XFree86-4
+IGNORE=	is part of XFree86 and you have ${X_WINDOW_SYSTEM} set for X11\
+	distribution. See The X Window System and Virtual Consoles chapter\
+	of FAQ for more information
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == alpha || ${ARCH} == amd64
