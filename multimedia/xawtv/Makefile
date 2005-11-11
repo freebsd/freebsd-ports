@@ -28,7 +28,8 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+		DLFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	verbose=yes
 INSTALLS_SHLIB=	yes
 
@@ -112,9 +113,11 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g" \
-		-e "s|/usr/local|${LOCALBASE}|g" \
-		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
+		s|/usr/local|${LOCALBASE}|g; \
+		s|-lpthread|${PTHREAD_LIBS}|g; \
+		s|-lquicktime|-L${LOCALBASE}/lib &|g' \
+		 ${WRKSRC}/configure
 
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
