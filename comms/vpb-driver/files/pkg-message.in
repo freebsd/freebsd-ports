@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+IMPORTANT INFORMATION!
+
+To load(use) the driver, run (as root):
+
+	# kldload %%PREFIX%%/lib/vpb.ko
+
+To unload it:
+
+	# kldunload vpb
+
+Alternatively you can copy the provided sample script
+
+	%%PREFIX%%/etc/rc.d/vpb.sh.sample
+
+to
+
+	%%PREFIX%%/etc/rc.d/vpb.sh
+
+and add
+
+	vpb_driver_enable="YES"
+
+to your /etc/rc.conf file.
+
+This port is based on the original driver for FreeBSD RELENG_4 by Voicetronix.
+I have updated the driver to compile as a kernel loadable module and added
+the port infrastructure. Should you have issues with the above, please report
+them to me. Problems related to the driver itself (vpb.c) and or the library
+(libvpb.a) should also be directed to Voicetronix as the original authors
+and code owners.
+
+-Chris
+-------------------------------------------------------------------------------

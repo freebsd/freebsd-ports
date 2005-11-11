@@ -102,6 +102,7 @@
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += viewfax
+    SUBDIR += vpb-driver
     SUBDIR += vpb2
     SUBDIR += vrflash
     SUBDIR += wwl

@@ -1,0 +1,9 @@
+A device-driver for the Voicetronix OpenLine4 PCI telephony card.
+The OpenLine4 PCI telephony card can be used in conjunction with
+asterisk (http://www.asterisk.org) to create a PC based PBX (private
+branch exchange).
+
+WWW: http://www.voicetronix.com.au/vpb4_v4pci.htm
+
+- Chris Forkin
+chris@forkin.com

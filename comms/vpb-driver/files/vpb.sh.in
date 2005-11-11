@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: vpb-driver
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+#	we load the vpb-driver after the network is fully loaded
+#       (for VOIP?)
+
+#
+# Add the following lines to /etc/rc.conf to enable exim:
+#
+#vpb_driver_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=vpb_driver
+rcvar=`set_rcvar`
+
+required_dirs=
+vpb_module=%%PREFIX%%/lib/vpb.ko
+required_files=${vpb_module}
+
+start_cmd=start_cmd
+stop_cmd=stop_cmd
+
+extra_commands="reload"
+
+start_cmd()
+{
+  kldload ${vpb_module}
+}
+
+stop_cmd()
+{
+  kldunload vpb
+}
+
+# read settings, set default values
+load_rc_config $name
+: ${vpb_driver_enable="NO"}
+
+run_rc_command "$1"
