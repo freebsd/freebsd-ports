@@ -8,7 +8,7 @@
 PORTNAME=	xengine
 PORTVERSION=	1.0.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.sunsite.org.uk/usenet/comp.sources.x/volume9/xengine/
+MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTFILES=	part01.gz patch1.gz
 
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
@@ -17,9 +17,6 @@ MAINTAINER=	kazu@jp.freebsd.org
 COMMENT=	Reciprocating engine for X
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
-
-DEPRECATED=	"mastersite disappeared, no longer maintained by author"
-EXPIRATION_DATE=	2005-12-31
 
 DIST_SUBDIR=	xengine
 NO_WRKSUBDIR=	yes
