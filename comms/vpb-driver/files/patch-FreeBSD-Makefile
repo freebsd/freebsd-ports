@@ -1,0 +1,8 @@
+--- FreeBSD/Makefile	Thu Jan  1 10:00:00 1970
++++ FreeBSD/Makefile	Fri Feb 11 16:21:52 2005
+@@ -0,0 +1,5 @@
++SRCS=vpb.c
++SRCS+=bus_if.h device_if.h pci_if.h
++KMOD=vpb
++
++.include <bsd.kmod.mk>

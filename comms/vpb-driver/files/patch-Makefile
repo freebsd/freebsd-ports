@@ -1,0 +1,48 @@
+--- Makefile	Thu Nov  4 07:33:22 2004
++++ Makefile	Fri Feb 11 16:55:17 2005
+@@ -26,8 +26,8 @@
+ KERNEL_OLD := $(shell if [ -f $(KERNEL_LOCATION)/Rules.make ]; then echo 1; else echo 0; fi)
+ 
+ # FreeBSD users: Please change this line to 'OS = FreeBSD'
+-OS = linux
+-#OS = FreeBSD
++#OS = linux
++OS = FreeBSD
+ export OS
+ 
+ all:
+@@ -37,20 +37,29 @@
+ 	cd vpb-detect; make
+ else
+ 	echo FREEBSD
+-	cd src; gmake
++	cd src && gmake
++	cd FreeBSD && make
+ endif
+ 
+ install: all
++ifeq ($(OS),linux)
+ 	mkdir -p $(root)/etc/vpb
+ 	cp -f firmware/vpbmain_isa.out $(root)/etc/vpb
+ 	cp -f firmware/vpbmain_pci.out $(root)/etc/vpb
+ 	cp -f firmware/vlcmain.out $(root)/etc/vpb
+ 	cp -f src/libvpb.a $(root)/usr/local/lib
+ 	cp -f src/vpbapi.h $(root)/usr/include
+-ifneq ($(OS),linux)
+-	cp -f FreeBSD/vpb.c /sys/pci
+-	cp -f FreeBSD/vpbio.h /sys/sys
+-else
++endif
++ifeq ($(OS),FreeBSD)
++	mkdir -p $(PREFIX)/etc/vpb
++	cp -f firmware/vpbmain_isa.out $(PREFIX)/etc/vpb
++	cp -f firmware/vpbmain_pci.out $(PREFIX)/etc/vpb
++	cp -f firmware/vlcmain.out $(PREFIX)/etc/vpb
++	cp -f src/libvpb.a $(PREFIX)/lib
++	cp -f src/vpbapi.h $(PREFIX)/include
++	cd FreeBSD && make install
++endif
++ifeq ($(OS),linux)
+ 	cp -f vpb-detect/vpbscan /usr/sbin
+ 	cp -f vpb-detect/vpbconf /usr/sbin	
+ ifeq ($(KERNEL_OLD), 1)
