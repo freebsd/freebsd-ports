@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	lsdvd
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	acidrip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_REINPLACE=	yes
 PLIST_FILES=	bin/lsdvd
 
@@ -37,14 +38,5 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${WITH_DVD_DEVICE}|' \
 		${WRKSRC}/lsdvd.c
-
-do-build:
-	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -DPACKAGE=\"${PORTNAME}\" -DVERSION=\"${PORTVERSION}\" \
-	-DHAVE_LIBDVDREAD=1 -I. -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-ldvdread lsdvd.c -o lsdvd
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lsdvd ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
