@@ -90,6 +90,7 @@
     SUBDIR += civ2demo
     SUBDIR += clanbomber
     SUBDIR += columns
+    SUBDIR += concentration
     SUBDIR += connect4
     SUBDIR += connectfive
     SUBDIR += conquest
