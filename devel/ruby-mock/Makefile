@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RUnit extention that makes it very easy to implement Mock Objects
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-01-10
+
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	runit
