@@ -12,6 +12,29 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+###########################################################################
+# dspam-devel-3.6.1
+#
+
+!!! WARNING: Both dspam 3.6.0 and 3.6.1 have a memory leak !!!
+Watch the size and res (top -o size or top -o res) of dspam process and
+restart it (/usr/local/etc/rc.d/dspam-devel.sh restart) when it gets to big.
+
+BUGFIX: ParseToHeaders can segfault on malformatted To header
+BUGFIX: TrackSources does not correctly parse messages with QMail Received
+headers
+BUGFIX: Missing check for existing strcasestr
+BUGFIX: X-DSPAM-Reclassified heading appears blank
+BUGFIX: Plused-Detail support does not work with domains
+BUGFIX: Hash databases are not 8-byte aligned (do not work with 64-bit systems)
+use cssconvert to convert your hash file
+BUGFIX: Certain daemon-mode operations append a trailing period
+BUGFIX: DataSource 'document' option causes improper processing
+BUGFIX: Segfaults occur on malformed Content-Type header
+BUGFIX: History appears blank in dspam.cgi
+
+- WITH_TRAIN_SCRIPT for an example training script dspam_train
+
 
 ###########################################################################
 # dspam-devel-3.6.0

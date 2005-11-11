@@ -1,6 +1,7 @@
 %%HASH%%bin/cssstat
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssclean
+%%HASH%%bin/cssconvert
 bin/dspam
 bin/dspamc
 bin/dspam_2sql
@@ -14,6 +15,7 @@ bin/dspam_logrotate
 bin/dspam_merge
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
+%%TRAIN_SCRIPT%%bin/dspam_train
 @unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
 include/dspam/buffer.h

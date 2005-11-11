@@ -12,14 +12,13 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.0
+PORTVER_MAJ=	3.6.1
 #SNAP_DATE=	.20051016.2141
 
 .ifdef(SNAP_DATE)
@@ -87,6 +86,7 @@ OPTIONS+=	POSTFIX_MBC "Dspam as mailbox_command in Postfix" off
 OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
+OPTIONS+=	TRAIN_SCRIPT "Install trainning script (needs perl)" off
 
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
@@ -106,7 +106,7 @@ STRIP=
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-_UPD_LINE_NO=	16
+_UPD_LINE_NO=	23
 
 CONFLICTS=	dspam-[0-9]*
 
@@ -227,7 +227,8 @@ _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
 .endif
 
 .if defined(WITH_BDB4)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+# change me when we have BDB_VERSOIN in bsd.databases.mk
+USE_BDB=	41
 CONFIGURE_ARGS+=	--with-db4-includes=${LOCALBASE}/include/db41
 PLIST_SUB+=	DB4=""
 #PKGNAMESUFFIX=	-bdb41
@@ -238,22 +239,20 @@ PLIST_SUB+=	DB4="@comment "
 .endif
 
 .if defined(WITH_SQLITE3)
-HAVE_SQLITE=	yes
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=	3
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite3_drv,//}
 .endif
 
 .if defined(WITH_SQLITE2)
-HAVE_SQLITE=	yes
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+USE_SQLITE=	2
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .else
 _DBDRV:=	${_DBDRV:S/sqlite_drv,//}
 .endif
 
-.if defined(HAVE_SQLITE)
+.if defined(USE_SQLITE)
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE=""
@@ -402,7 +401,7 @@ RUN_DEPENDS+=	${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d
 RUN_DEPENDS+=	${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 CONFIGURE_ARGS+=--enable-logging
 CONFIGURE_ARGS+=--enable-user-logging
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
 _SED_SCRIPT+=	-e 's/%%CGI%%//g'
@@ -412,6 +411,13 @@ _SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
 .else
 PLIST_SUB+=	CGI="@comment "
 _SED_SCRIPT+=	-e '/%%CGI%%/D'
+.endif
+
+.ifdef(WITH_TRAIN_SCRIPT)
+USE_PERL5=	yes
+PLIST_SUB+=	TRAIN_SCRIPT=""
+.else
+PLIST_SUB+=	TRAIN_SCRIPT="@comment "
 .endif
 
 MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
@@ -463,7 +469,6 @@ pre-extract:
 		@${ECHO_CMD} "installed in other place that this installation's default"
 		@${ECHO_CMD} "${PREFIX}/www/vhosts/dspam"
 .	endif
-	@${ECHO_CMD} "Define WITHOUT_DAEMON if not using OPTIONS and do not want daemon."
 	@${ECHO_CMD} ""
 	@sleep 5
 
@@ -501,11 +506,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
-	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|'  ${WRKSRC}/src/tools.mysql_drv/purge.sql
-	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.pgsql_drv/purge.sql
-	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|'  ${WRKSRC}/src/tools.ora_drv/purge.sql
-	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
-	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|"  ${WRKSRC}/src/tools.sqlite_drv/purge-3.sql
+	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
+		${WRKSRC}/src/tools.mysql_drv/purge.sql
+	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
+		${WRKSRC}/src/tools.mysql_drv/purge-4.1.sql
+	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|' \
+		${WRKSRC}/src/tools.pgsql_drv/purge.sql
+	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|' \
+		${WRKSRC}/src/tools.ora_drv/purge.sql
+	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|" \
+		${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
+	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|" \
+		 ${WRKSRC}/src/tools.sqlite_drv/purge-3.sql
+
+.ifdef(WITH_TRAIN_SCRIPT)
+	 @${REINPLACE_CMD} -e "s^%%PERL%%^${PERL}^; s^%%DSPAM_PATH%%^${PREFIX}/bin^" ${WRKSRC}/scripts/train.pl
+.endif
 
 pre-configure:
 	@${ECHO_CMD}
@@ -544,7 +560,7 @@ pre-configure:
 	@${FALSE}
 .endif
 .if defined(WITH_LDAP) && !( defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL) || defined(HAVE_SQLITE) )
+	defined(WITH_POSTGRESQL) || defined(USE_SQLITE) )
 	@${ECHO_CMD} "You need MySQL, Postgres or SQLITE for LDAP."
 	@${FALSE}
 .endif
@@ -588,7 +604,7 @@ post-install:
 	@cd  ${WRKSRC}/src/tools.pgsql_drv && \
 		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/pgsql
 .endif
-.ifdef(HAVE_SQLITE)
+.ifdef(USE_SQLITE)
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/sqlite
@@ -601,7 +617,7 @@ post-install:
 
 .ifdef(WITH_CGI)
 .	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi
-		@${SED} -i '' -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/webui/cgi-bin/${I}
+		@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/webui/cgi-bin/${I}
 .	endfor
 	cd ${WRKSRC}/webui/cgi-bin && ${MV} configure.pl configure.pl.sample
 	cd ${WRKSRC}/webui/cgi-bin && ${MKDIR} ${CGI_PATH} && \
@@ -616,6 +632,11 @@ post-install:
 		${INSTALL_DATA} admins ${CGI_PATH}/admins.sample
 	@${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
+.endif
+
+.ifdef(WITH_TRAIN_SCRIPT)
+	cd ${WRKSRC}/scripts && \
+		${INSTALL_SCRIPT} train.pl ${PREFIX}/bin/dspam_train
 .endif
 
 	@${SED} ${_SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
