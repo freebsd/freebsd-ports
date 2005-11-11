@@ -1,6 +1,6 @@
 # New ports collection makefile for:   tiblit
-# Date created:        March 13th, 2005
-# Whom:                decept
+# Date created:                        13th March, 2005
+# Whom:                                decept
 #
 # $FreeBSD$
 #
@@ -18,7 +18,6 @@ COMMENT=	KDE style focused on customization
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
