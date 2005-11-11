@@ -16,7 +16,7 @@ DISTNAME=	tn3270
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen remote login to IBM VM/CMS
 
-BROKEN=		Dumps core. Please use net/c3270 instead
+IGNORE=		dumps core. Please use net/c3270 instead
 
 MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5
