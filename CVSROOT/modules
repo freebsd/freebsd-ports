@@ -12872,6 +12872,7 @@ xanim		ports/multimedia/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm
 xaos		ports/graphics/xaos
+xapian-core	ports/databases/xapian-core
 xapply		ports/sysutils/xapply
 xaraya		ports/www/xaraya
 xarchie		ports/net/xarchie
