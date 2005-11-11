@@ -34,7 +34,6 @@
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
-    SUBDIR += gdesklets-gnomebar
     SUBDIR += gdesklets-ltvariations
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
