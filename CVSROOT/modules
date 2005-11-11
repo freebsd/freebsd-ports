@@ -12516,6 +12516,7 @@ vor		ports/games/vor
 vorbis-tools	ports/audio/vorbis-tools
 vorbisgain	ports/audio/vorbisgain
 vp		ports/graphics/vp
+vpb-driver	ports/comms/vpb-driver
 vpb2		ports/comms/vpb2
 vpce		ports/emulators/vpce
 vpnc		ports/security/vpnc
