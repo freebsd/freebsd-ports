@@ -1,0 +1,20 @@
+bin/hangman
+%%DATADIR%%/fonts/washing.ttf
+%%DATADIR%%/pics/background.png
+%%DATADIR%%/pics/background2.png
+%%DATADIR%%/pics/noose.png
+%%DATADIR%%/pics/sg_icon.png
+%%DATADIR%%/pics/shiftygames.png
+%%DATADIR%%/pics/sound_high.png
+%%DATADIR%%/pics/sound_low.png
+%%DATADIR%%/pics/sound_medium.png
+%%DATADIR%%/sounds/click.ogg
+%%DATADIR%%/sounds/letterSelectSound.ogg
+%%DATADIR%%/sounds/nooseDropSound.ogg
+%%DATADIR%%/sounds/over.ogg
+%%DATADIR%%/sounds/wordHitSound.ogg
+%%DATADIR%%/sounds/wordMissSound.ogg
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/pics
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%

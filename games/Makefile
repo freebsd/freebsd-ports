@@ -242,6 +242,7 @@
     SUBDIR += gtypist
     SUBDIR += gweled
     SUBDIR += halflifeserver
+    SUBDIR += hangman
     SUBDIR += hattrickorganizer
     SUBDIR += heretic
     SUBDIR += heroes
