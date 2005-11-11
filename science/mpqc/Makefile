@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.0
 CATEGORIES=	science parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpqc
-DISTFILES=	mpqc-${PORTVERSION}.tar.bz2 mpqc-val-${PORTVERSION}.tar.bz2
+DISTFILES=	mpqc-${PORTVERSION}.tar.bz2 mpqc-val-${OLDDISTVERSION}.tar.bz2
 .if !defined(NOPORTDOCS)
-DISTFILES+=	mpqc-man-${PORTVERSION}.tar.bz2 mpqc-html-${PORTVERSION}.tar.bz2
+DISTFILES+=	mpqc-man-${OLDDISTVERSION}.tar.bz2 mpqc-html-${OLDDISTVERSION}.tar.bz2
 .endif
 
 MAINTAINER=	maho@FreeBSD.org
@@ -34,6 +34,7 @@ CXXFLAGS=	-O3 -tpp7 -xMKW -Vaxlib
 .endif
 BLAS=		-lf77blas -latlas
 LAPACK=		-lalapack -lcblas
+OLDDISTVERSION=	2.2.3
 
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
@@ -70,7 +71,7 @@ pre-configure:
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
 	@cd ${WRKSRC} ; ${GMAKE} install_devel
-	@cd ${WRKDIR}/${PORTNAME}-man-${PORTVERSION}/man3/ ; \
+	@cd ${WRKDIR}/${PORTNAME}-man-${OLDDISTVERSION}/man3/ ; \
 	${INSTALL_MAN} * ${PREFIX}/man/man3
 	@${MKDIR} ${PREFIX}/share/mpqc/ref
 	@cd ${WRKDIR}/ref/ ; ${TAR} -chf - . | \
@@ -81,7 +82,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/${PORTNAME}-html-${PORTVERSION} && ${TAR} -chf - . | \
+	@cd ${WRKDIR}/${PORTNAME}-html-${OLDDISTVERSION} && ${TAR} -chf - . | \
 		${TAR} -xf - -C ${DOCSDIR}
 	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}

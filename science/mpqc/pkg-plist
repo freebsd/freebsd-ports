@@ -1,7 +1,9 @@
+bin/ccarun
 bin/chkmpqcout
 bin/sc-libtool
 bin/molrender
 bin/mpqc
+bin/mpqcrun
 bin/sc-config
 bin/sc-mkf77sym
 bin/scls
@@ -13,27 +15,18 @@ include/util/ref/LIBS.h
 include/util/ref/identity.h
 include/util/ref/ref.h
 include/util/ref/reftestx.h
+include/util/class/scexception.h
 include/util/container/LIBS.h
-include/util/container/ar2mac.h
-include/util/container/ar2tem.h
-include/util/container/armac.h
-include/util/container/array.h
-include/util/container/artem.h
 include/util/container/avlmap.h
 include/util/container/avlset.h
 include/util/container/bitarray.h
 include/util/container/carray.h
 include/util/container/compare.h
 include/util/container/eavlmmap.h
-include/util/container/ssar2mac.h
-include/util/container/ssar2tem.h
-include/util/container/ssarmac.h
-include/util/container/ssartem.h
 include/util/class/LIBS.h
 include/util/class/class.h
 include/util/class/proxy.h
 include/util/state/LIBS.h
-include/util/state/array.h
 include/util/state/linkage.h
 include/util/state/proxy.h
 include/util/state/state.h
@@ -47,6 +40,7 @@ include/util/state/translate.h
 include/util/misc/LIBS.h
 include/util/misc/autovec.h
 include/util/misc/bug.h
+include/util/misc/ccaenv.h
 include/util/misc/comptmpl.h
 include/util/misc/compute.h
 include/util/misc/exenv.h
@@ -110,8 +104,6 @@ include/util/render/render.h
 include/util/render/sphere.h
 include/util/render/stack.h
 include/util/render/transform.h
-include/math/linpackd/LIBS.h
-include/math/linpackd/linpackd.h
 include/math/scmat/LIBS.h
 include/math/scmat/abstract.h
 include/math/scmat/blkiter.h
@@ -185,6 +177,7 @@ include/chemistry/qc/basis/LIBS.h
 include/chemistry/qc/basis/basis.h
 include/chemistry/qc/basis/cartiter.h
 include/chemistry/qc/basis/dercent.h
+include/chemistry/qc/basis/distshpair.h
 include/chemistry/qc/basis/extent.h
 include/chemistry/qc/basis/f77sym.h
 include/chemistry/qc/basis/files.h
@@ -268,7 +261,6 @@ include/chemistry/qc/mbpt/bzerofast.h
 include/chemistry/qc/mbpt/csgrad34qb.h
 include/chemistry/qc/mbpt/csgrade12.h
 include/chemistry/qc/mbpt/csgrads2pdm.h
-include/chemistry/qc/mbpt/distsh.h
 include/chemistry/qc/mbpt/hsosv1e1.h
 include/chemistry/qc/mbpt/linkage.h
 include/chemistry/qc/mbpt/mbpt.h
@@ -295,7 +287,6 @@ include/scdirlist.h
 @dirrm include/math/symmetry
 @dirrm include/math/scmat
 @dirrm include/math/optimize
-@dirrm include/math/linpackd
 @dirrm include/math/isosurf
 @dirrm include/math
 @dirrm include/chemistry/solvent
@@ -318,7 +309,6 @@ lib/libSCgroup.a
 lib/libSCintv3.a
 lib/libSCisosurf.a
 lib/libSCkeyval.a
-lib/libSClinpackd.a
 lib/libSCmbpt.a
 lib/libSCmisc.a
 lib/libSCmolecule.a
@@ -340,8 +330,6 @@ share/mpqc/%%VERSION%%/basis/3-21PPgS.kv
 share/mpqc/%%VERSION%%/basis/3-21g.kv
 share/mpqc/%%VERSION%%/basis/3-21gS.kv
 share/mpqc/%%VERSION%%/basis/4-31g.kv
-share/mpqc/%%VERSION%%/basis/4-31gS.kv
-share/mpqc/%%VERSION%%/basis/4-31gSS.kv
 share/mpqc/%%VERSION%%/basis/6-311PPgL2d_2pR.kv
 share/mpqc/%%VERSION%%/basis/6-311PPgL3df_3pdR.kv
 share/mpqc/%%VERSION%%/basis/6-311PPgSS.kv
@@ -381,6 +369,16 @@ share/mpqc/%%VERSION%%/basis/midi_LhuzinagaR.kv
 share/mpqc/%%VERSION%%/basis/mini_LhuzinagaR.kv
 share/mpqc/%%VERSION%%/basis/mini_LscaledR.kv
 share/mpqc/%%VERSION%%/basis/nasa_ames_ano.kv
+share/mpqc/%%VERSION%%/basis/pc-0-aug.kv
+share/mpqc/%%VERSION%%/basis/pc-0.kv
+share/mpqc/%%VERSION%%/basis/pc-1-aug.kv
+share/mpqc/%%VERSION%%/basis/pc-1.kv
+share/mpqc/%%VERSION%%/basis/pc-2-aug.kv
+share/mpqc/%%VERSION%%/basis/pc-2.kv
+share/mpqc/%%VERSION%%/basis/pc-3-aug.kv
+share/mpqc/%%VERSION%%/basis/pc-3.kv
+share/mpqc/%%VERSION%%/basis/pc-4-aug.kv
+share/mpqc/%%VERSION%%/basis/pc-4.kv
 share/mpqc/%%VERSION%%/basis/sto-2g.kv
 share/mpqc/%%VERSION%%/basis/sto-3g.kv
 share/mpqc/%%VERSION%%/basis/sto-3gS.kv
@@ -390,11 +388,15 @@ share/mpqc/%%VERSION%%/elisp/SC.el
 share/mpqc/%%VERSION%%/elisp/compile.el
 share/mpqc/%%VERSION%%/elisp/keyval.el
 share/mpqc/%%VERSION%%/elisp/mpqc.el
+share/mpqc/%%VERSION%%/perl/AtomicBases.pm
+share/mpqc/%%VERSION%%/perl/AtomicBasis.pm
 share/mpqc/%%VERSION%%/perl/Molecule.pm
 share/mpqc/%%VERSION%%/perl/QCParse.pm
 share/mpqc/%%VERSION%%/perl/QCResult.pm
 share/mpqc/%%VERSION%%/atominfo.kv
+share/mpqc/%%VERSION%%/ccarunproc
 share/mpqc/%%VERSION%%/magic
+share/mpqc/%%VERSION%%/mpqcrunproc
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/classsc_1_1R12IntEval__abs__A.html
 %%PORTDOCS%%%%DOCSDIR%%/classsc_1_1R12IntEval__abs__A-members.html
