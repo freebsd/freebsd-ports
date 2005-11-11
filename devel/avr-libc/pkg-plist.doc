@@ -178,7 +178,6 @@ share/doc/avr-libc/man/man3/bsearch.3
 share/doc/avr-libc/man/man3/calloc.3
 share/doc/avr-libc/man/man3/ceil.3
 share/doc/avr-libc/man/man3/clearerr.3
-share/doc/avr-libc/man/man3/cli.3
 share/doc/avr-libc/man/man3/cos.3
 share/doc/avr-libc/man/man3/cosh.3
 share/doc/avr-libc/man/man3/ctype.3
@@ -224,8 +223,6 @@ share/doc/avr-libc/man/man3/getchar.3
 share/doc/avr-libc/man/man3/gets.3
 share/doc/avr-libc/man/man3/inline_asm.3
 share/doc/avr-libc/man/man3/install_tools.3
-share/doc/avr-libc/man/man3/int16_t.3
-share/doc/avr-libc/man/man3/int32_t.3
 share/doc/avr-libc/man/man3/int64_t.3
 share/doc/avr-libc/man/man3/int8_t.3
 share/doc/avr-libc/man/man3/intptr_t.3
@@ -294,7 +291,6 @@ share/doc/avr-libc/man/man3/release_method.3
 share/doc/avr-libc/man/man3/rem.3
 share/doc/avr-libc/man/man3/scanf.3
 share/doc/avr-libc/man/man3/scanf_P.3
-share/doc/avr-libc/man/man3/sei.3
 share/doc/avr-libc/man/man3/set_sleep_mode.3
 share/doc/avr-libc/man/man3/setjmp.3
 share/doc/avr-libc/man/man3/sin.3
@@ -356,8 +352,6 @@ share/doc/avr-libc/man/man3/todo.3
 share/doc/avr-libc/man/man3/tolower.3
 share/doc/avr-libc/man/man3/toupper.3
 share/doc/avr-libc/man/man3/twi_demo.3
-share/doc/avr-libc/man/man3/uint16_t.3
-share/doc/avr-libc/man/man3/uint32_t.3
 share/doc/avr-libc/man/man3/uint64_t.3
 share/doc/avr-libc/man/man3/uint8_t.3
 share/doc/avr-libc/man/man3/uintptr_t.3
