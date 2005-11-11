@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -38,12 +37,17 @@ CONFIGURE_ARGS=	--with-prefix=${PREFIX} --with-bindir=/bin \
 		--with-portsdir=${PORTSDIR} --with-sharedir=/share/portmanager \
 		--with-tempdir=/tmp
 
-OPTIONS=	DEBUG	"Enables debug support and all compile warning"	off
+OPTIONS=	DEBUG "Enable debug support and warnings" off	\
+		BUILD_DEPENDS_ARE_LEAVES "Treat build dependencies as leaves" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debug=yes
+.endif
+
+.if defined(WITH_BUILD_DEPENDS_ARE_LEAVES)
+CONFIGURE_ARGS+=	--with-treatBuildDependsAsLeaves=yes
 .endif
 
 # Keep this in post-configure. After run configure, he change this value.
