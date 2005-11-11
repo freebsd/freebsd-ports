@@ -2,10 +2,21 @@ Need a bug tracking system for your programming project? Having trouble
 finding something that suits your needs? Tried installing Bugzilla, but
 found it too complex?
 
-Flyspray is an easy to use bug tracking system for those who don't require
-all the complexities of something like Bugzilla.
+Flyspray is a power but easy to use bug tracking system for those who don't
+require all the complexities of something like Bugzilla.
 
-Initially developed for the Psi project, Flyspray is now available for
-everyone to download and use for their own projects.
+Features include:
+
+    * Web-based, platform-independent
+    * Multiple database support (through the ADOdb database abstraction
+      layer)
+    * Easy installation
+    * Easy to use
+    * Multiple projects
+    * Permissions-based user groups
+    * 'Watching' tasks, with notification of changes (email or Jabber)
+    * Comprehensive task history
+    * File attachments
+    * CSS themes
 
 WWW: http://flyspray.rocks.cc/
