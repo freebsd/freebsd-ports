@@ -1,0 +1,7 @@
+This module provides a convenient, object-oriented interface to
+Apache-style .htpasswd files.  It supports passwords encrypted via MD5,
+SHA1, and crypt, as well as plain (cleartext) passwords.  Additional
+fields after username and password, if present, are accessible via the
+extra_info array.
+
+WWW: http://search.cpan.org/dist/Authen-Htpasswd/
