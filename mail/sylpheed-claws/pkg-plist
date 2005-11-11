@@ -210,6 +210,7 @@ libdata/pkgconfig/sylpheed-claws.pc
 @dirrm include/sylpheed-claws
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
+%%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.deps
 %%GPGME%%lib/sylpheed-claws/plugins/pgpcore.so
 %%GPGME%%lib/sylpheed-claws/plugins/pgpmime.deps
 %%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
