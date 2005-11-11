@@ -2,4 +2,4 @@ MetaRuby is a reimplementations of some Ruby parts in Ruby; equivalent
 of Perl's tie command.
 
 Author:	matju (Mathieu Bouchard) <matju@sympatico.ca>
-WWW:	http://hostname.2y.net/~matju/MetaRuby/
+WWW:	http://raa.ruby-lang.org/project/metaruby/
