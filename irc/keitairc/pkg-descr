@@ -1,0 +1,10 @@
+Keitairc is an simple IRC client that have a web interface designed for
+not-so-rich web client such as mobilephone.  There are several features
+for mobilephone access:
+
+	- Quick: web accesskeys.
+	- Link: Convert PSID and URL strings to a link.
+	- Security: user/pass and "EZweb ID" authentication.
+	- Convenient: cookie authentication for next use.
+
+WWW: http://keitairc.sourceforge.jp/
