@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the internal structure of a parsed Ruby program
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2006-01-10
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
