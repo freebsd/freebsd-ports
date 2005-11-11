@@ -7,7 +7,7 @@
 
 PORTNAME=	miracl
 DISTVERSION=	4.85
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/
 DISTNAME=	${PORTNAME}
