@@ -18,6 +18,9 @@ COMMENT=	A collection of sensors and displays
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
+DEPRECATED=	Project is dead and unfetchable since 2004
+EXPIRATION_DATE=2005-12-31
+
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 

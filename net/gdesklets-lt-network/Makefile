@@ -19,6 +19,9 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Network/__init__.py:${PORTSDIR}/net/gdesklets-sensor-psi_network \
 		${X11BASE}/share/gnome/gdesklets/Sensors/LTVBorder/__init__.py:${PORTSDIR}/deskutils/gdesklets-ltvariations
 
+DEPRECATED=	Project is dead and unfetchable since 2004
+EXPIRATION_DATE=2005-12-31
+
 USE_X_PREFIX=	yes
 
 DATADIR=	${PREFIX}/share/gnome
