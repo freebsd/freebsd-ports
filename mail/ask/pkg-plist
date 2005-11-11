@@ -1,0 +1,52 @@
+ask/COPYING
+ask/ChangeLog
+ask/TODO
+ask/ask.py
+ask/askconfig.py
+ask/ask-2.4.1-1.spec
+ask/asklock.py
+ask/asklog.py
+ask/askmail.py
+ask/askmain.py
+ask/askmessage.py
+ask/askremote.py
+ask/asksetup.py
+ask/askversion.py
+ask/templates/blacklist_da.txt
+ask/templates/blacklist_de.txt
+ask/templates/blacklist_en.txt
+ask/templates/blacklist_es.txt
+ask/templates/blacklist_fr.txt
+ask/templates/blacklist_it.txt
+ask/templates/blacklist_nl.txt
+ask/templates/blacklist_ptbr.txt
+ask/templates/blacklist_fi.txt
+ask/templates/confirm_da.txt
+ask/templates/confirm_de.txt
+ask/templates/confirm_en.txt
+ask/templates/confirm_es.txt
+ask/templates/confirm_fi.txt
+ask/templates/confirm_fr.txt
+ask/templates/confirm_it.txt
+ask/templates/confirm_nl.txt
+ask/templates/confirm_ptbr.txt
+%%PORTDOCS%%%%DOCSDIR%%/utils/asksenders.py
+%%PORTDOCS%%%%DOCSDIR%%/docs/ask.py.1
+%%PORTDOCS%%%%DOCSDIR%%/docs/ask_doc.css
+%%PORTDOCS%%%%DOCSDIR%%/docs/ask_doc.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/ask_doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/docs/ask_doc.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/asksenders.py.1
+%%PORTDOCS%%%%DOCSDIR%%/docs/asksetup.py.1
+%%PORTDOCS%%%%DOCSDIR%%/docs/askversion.py.1
+ask/samples/blacklist.txt
+ask/samples/ignorelist.txt
+ask/samples/sample_askrc
+ask/samples/whitelist.txt
+
+@dirrm %%DOCSDIR%%/docs
+@dirrm %%DOCSDIR%%/utils
+@dirrm %%DOCSDIR%%
+@dirrm ask/samples
+@dirrm ask/templates
+@dirrm ask
