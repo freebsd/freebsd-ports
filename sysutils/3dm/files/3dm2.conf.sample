@@ -11,5 +11,8 @@ Language 0
 Logger 0
 Refresh 5
 BGRate 3333333333333333
-MsgPath /var/log/3dm2.log
+MsgPath %%PREFIX%%/etc/3dm2/msg
 Help %%PREFIX%%/share/3dm2
+OEM 0
+AutoLogout 0
+CommandLog 0
