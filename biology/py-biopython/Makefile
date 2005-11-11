@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.30
+PORTVERSION=	1.41
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauricio@arareko.net
 COMMENT=	A collection of Python modules for bioinformatics
-
-CONFLICTS=	py*-martel-*
 
 BUILD_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.2+
+CONFLICTS=	py*-martel-[0-9]*
+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 
 .if !defined(WITHOUT_REPORTLAB)

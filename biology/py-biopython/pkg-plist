@@ -4,7 +4,6 @@
 %%PYTHON_SITELIBDIR%%/Bio/Affy/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Affy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Affy/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/Affy/_cel.so
 %%PYTHON_SITELIBDIR%%/Bio/Ais/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Ais/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Ais/__init__.pyo
@@ -29,6 +28,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Applications.py
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Applications.pyc
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Applications.pyo
+%%PYTHON_SITELIBDIR%%/Bio/AlignAce/CompareAceStandalone.py
+%%PYTHON_SITELIBDIR%%/Bio/AlignAce/CompareAceStandalone.pyc
+%%PYTHON_SITELIBDIR%%/Bio/AlignAce/CompareAceStandalone.pyo
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Motif.py
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Motif.pyc
 %%PYTHON_SITELIBDIR%%/Bio/AlignAce/Motif.pyo
@@ -74,6 +76,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/Blast/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Blast/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Blast/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/CAPS/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/CAPS/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/CAPS/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/CDD/Record.py
 %%PYTHON_SITELIBDIR%%/Bio/CDD/Record.pyc
 %%PYTHON_SITELIBDIR%%/Bio/CDD/Record.pyo
@@ -390,16 +395,6 @@
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.py
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.py
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/_CKDTree.so
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.py
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyo
@@ -442,6 +437,15 @@
 %%PYTHON_SITELIBDIR%%/Bio/LogisticRegression.py
 %%PYTHON_SITELIBDIR%%/Bio/LogisticRegression.pyc
 %%PYTHON_SITELIBDIR%%/Bio/LogisticRegression.pyo
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Motif.py
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Motif.pyc
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Motif.pyo
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Parser.py
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Parser.pyc
+%%PYTHON_SITELIBDIR%%/Bio/MEME/Parser.pyo
+%%PYTHON_SITELIBDIR%%/Bio/MEME/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/MEME/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/MEME/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/MarkovModel.py
 %%PYTHON_SITELIBDIR%%/Bio/MarkovModel.pyc
 %%PYTHON_SITELIBDIR%%/Bio/MarkovModel.pyo
@@ -466,6 +470,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_011101_format.py
 %%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_011101_format.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_011101_format.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_031101_format.py
+%%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_031101_format.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Medline/nlmmedline_031101_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/MetaTool/Input.py
 %%PYTHON_SITELIBDIR%%/Bio/MetaTool/Input.pyc
 %%PYTHON_SITELIBDIR%%/Bio/MetaTool/Input.pyo
@@ -577,6 +584,22 @@
 %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nexus.py
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nexus.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nexus.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nodes.py
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nodes.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Nodes.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Trees.py
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Trees.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/Trees.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Nexus/cnexus.so
+%%PYTHON_SITELIBDIR%%/Bio/PDB/AbstractPropertyMap.py
+%%PYTHON_SITELIBDIR%%/Bio/PDB/AbstractPropertyMap.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PDB/AbstractPropertyMap.pyo
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Atom.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Atom.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Atom.pyo
@@ -586,6 +609,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/PDB/DSSP.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/DSSP.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/DSSP.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PDB/Dice.py
+%%PYTHON_SITELIBDIR%%/Bio/PDB/Dice.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PDB/Dice.pyo
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Entity.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Entity.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Entity.pyo
@@ -604,6 +630,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Model.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Model.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Model.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PDB/NACCESS.py
+%%PYTHON_SITELIBDIR%%/Bio/PDB/NACCESS.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PDB/NACCESS.pyo
 %%PYTHON_SITELIBDIR%%/Bio/PDB/NeighborSearch.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/NeighborSearch.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/NeighborSearch.pyo
@@ -704,6 +733,31 @@
 %%PYTHON_SITELIBDIR%%/Bio/ReseekFile.py
 %%PYTHON_SITELIBDIR%%/Bio/ReseekFile.pyc
 %%PYTHON_SITELIBDIR%%/Bio/ReseekFile.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/DNAUtils.so
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/PrintFormat.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/PrintFormat.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/PrintFormat.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/RanaConfig.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/RanaConfig.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/RanaConfig.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction_Dictionary.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction_Dictionary.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/Restriction_Dictionary.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/RestrictionCompiler.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/RestrictionCompiler.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/RestrictionCompiler.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/Update.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/Update.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/Update.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Restriction/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/SCOP/Cla.py
 %%PYTHON_SITELIBDIR%%/Bio/SCOP/Cla.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SCOP/Cla.pyo
@@ -988,6 +1042,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/ipi.py
+%%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/ipi.pyc
+%%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/ipi.pyo
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/speclist.py
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/speclist.pyc
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/speclist.pyo
@@ -997,6 +1054,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/sprot40.py
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/sprot40.pyc
 %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot/sprot40.pyo
+%%PYTHON_SITELIBDIR%%/Bio/expressions/transfac.py
+%%PYTHON_SITELIBDIR%%/Bio/expressions/transfac.pyc
+%%PYTHON_SITELIBDIR%%/Bio/expressions/transfac.pyo
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/__init__.pyo
@@ -1049,6 +1109,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/embl.py
+%%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/embl.pyc
+%%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/embl.pyo
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/empty.py
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/empty.pyc
 %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord/empty.pyo
@@ -1128,6 +1191,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Alphabet
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Application
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Blast
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/CAPS
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/CDD
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Clustalw
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Cluster
@@ -1155,13 +1219,13 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/HMM
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/IntelliGenetics
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/InterPro
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/KDTree
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Kabat
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/LocusLink
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/MEME
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Medline
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/MetaTool
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Mindy
@@ -1172,6 +1236,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/BackPropagation
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/Gene
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Nexus
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB/mmCIF
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Parsers
@@ -1179,6 +1244,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Prosite
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Rebase
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/SCOP
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/SVDSuperimposer
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Saf
