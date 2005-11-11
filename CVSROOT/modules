@@ -489,6 +489,7 @@ asfsm		ports/sysutils/asfsm
 ashe		ports/www/ashe
 asir2000	ports/math/asir2000
 asis		ports/devel/asis
+ask		ports/mail/ask
 asl		ports/devel/asl
 aslookup	ports/net/aslookup
 asm2html	ports/textproc/asm2html
