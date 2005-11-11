@@ -1,12 +1,12 @@
 bin/uqm
 lib/uqm/uqm
-share/uqm/content/packages/uqm-0.4.0-content.uqm
-share/uqm/content/version
-%%VOICEADDON%%share/uqm/content/packages/uqm-0.4.0-voice.uqm
-%%MUSICADDON%%share/uqm/content/packages/uqm-0.4.0-3domusic.uqm
-@dirrm share/uqm/content/packages
-@dirrm share/uqm/content
-@dirrm share/uqm
+%%DATADIR%%/content/packages/uqm-0.4.0-content.uqm
+%%DATADIR%%/content/version
+%%VOICEADDON%%%%DATADIR%%/content/packages/uqm-0.4.0-voice.uqm
+%%MUSICADDON%%%%DATADIR%%/content/packages/uqm-0.4.0-3domusic.uqm
+@dirrm %%DATADIR%%/content/packages
+@dirrm %%DATADIR%%/content
+@dirrm %%DATADIR%%
 @dirrm lib/uqm
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
