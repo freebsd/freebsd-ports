@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20050927
+PORTVERSION=	20051110
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
@@ -39,6 +39,10 @@ PLIST_SUB+=	NLS="@comment "
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ARGS+=	--disable-iconv
+.endif
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
 .endif
 
 OPTIONS=	POP "Enable pop3 support" on \
