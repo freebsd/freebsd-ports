@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		8.0
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
@@ -41,7 +41,6 @@ ONLY_FOR_ARCHS=		i386 amd64
 CONFLICTS=		linux_devtools-*
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
 NO_BUILD=		yes
-PLIST=			${WRKDIR}/pkg-plist
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
@@ -66,22 +65,6 @@ RPMFLAGS+=		--ignorearch
 
 do-patch:
 	@${DO_NADA}
-
-pre-install:
-	${RM} -rf ${WRKSRC}/tmp
-	${MKDIR} ${WRKSRC}/tmp
-.for ii in ${DISTFILES} ${PATCHFILES}
-	cd ${WRKSRC}/tmp; rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${ii} | \
-		${CPIO} -id
-.endfor
-	cd ${WRKSRC}/tmp; ${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d | \
-		${GREP} -vwE "(bin$$|X11R6/include$$|lib$$|man$$|src$$)" | \
-		${SED} -e 's:^:@dirrm :' >> ${PLIST}
-.for dir in lib/gcc-lib src X11R6/bin X11R6/include X11R6/lib X11R6/man X11R6
-	${ECHO_CMD} "@unexec rmdir %D/usr/${dir} >/dev/null 2>&1 || true" >> ${PLIST}
-.endfor
-	${RM} -rf ${WRKSRC}/tmp
 
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
