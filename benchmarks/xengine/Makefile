@@ -18,6 +18,9 @@ COMMENT=	Reciprocating engine for X
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 DIST_SUBDIR=	xengine
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
