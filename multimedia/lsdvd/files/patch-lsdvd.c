@@ -1,5 +1,5 @@
 --- lsdvd.c.orig	Wed Apr 13 23:34:34 2005
-+++ lsdvd.c	Fri Nov 11 09:55:57 2005
++++ lsdvd.c	Fri Nov 11 11:41:05 2005
 @@ -124,19 +124,26 @@
  		return -1;
  	}
@@ -29,12 +29,7 @@
  
  	fclose (filehandle);
  
-@@ -189,10 +196,11 @@
- 	pgc_t *pgc;
- 	int i, j, c, titles, cell, vts_ttn, title_set_nr;
-  	char lang_code[3];
--	char *dvd_device = "/dev/dvd";
-+	char *dvd_device = "/dev/acd0";
+@@ -193,6 +200,7 @@
  	int has_title = 0, ret = 0;
  	int max_length = 0, max_track = 0;
  	struct stat dvd_stat;
