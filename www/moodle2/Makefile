@@ -14,11 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
-BROKEN=		Modifies ports tree at build time
-
-WRKSRC=		${WRKDIR}/moodle
-
 USE_PHP=	session gd pcre
+WRKSRC=		${WRKDIR}/moodle
 
 .if defined(WITH_MYSQL)
 USE_PHP+=	mysql
@@ -31,6 +28,7 @@ USE_PHP+=	pgsql
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
 
 MOODLEDIR?=	www/data/moodle
 MOODLEDATADIR?=	www/data/moodledata
@@ -45,6 +43,8 @@ pre-everything::
 post-patch:
 ####This is an old patched file.
 	@${RM} -f ${WRKSRC}/lang/es_es/moodle.php.orig
+
+pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${MOODLEDIR}?g" >> ${PLIST}
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
