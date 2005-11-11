@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
@@ -31,11 +31,11 @@ RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
-.	if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-.		for f in ${PORTDOCS}
-			${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.		endfor
-.	endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
