@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	acidrip
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print information about the contents and structure of a DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
