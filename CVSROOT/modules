@@ -1588,6 +1588,7 @@ demoroniser	ports/www/demoroniser
 denature	ports/textproc/denature
 denemo		ports/audio/denemo
 deng		ports/games/deng
+denyhosts	ports/security/denyhosts
 deskbar-applet	ports/deskutils/deskbar-applet
 deskmenu	ports/x11/deskmenu
 desktop-file-utils	ports/devel/desktop-file-utils
