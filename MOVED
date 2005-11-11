@@ -1936,3 +1936,4 @@ misc/gaim-guifications|net-im/gaim-guifications|2005-11-10|Moved to a new net-im
 misc/gaim-ignorance|net-im/gaim-ignorace|2005-11-10|Moved to a new net-im category
 net/eva|net-im/eva|2005-11-11|Moved to a new net-im category
 astro/gdesklets-goodweather-psi||2005-11-11|Deleted because of removed dependency
+deskutils/gdesklets-calendar||2005-11-11|Deleted because of removed dependency
