@@ -1,0 +1,4 @@
+Lingua::Identify identifies the language a given string or file is
+written in.
+
+WWW: http://search.cpan.org/dist/Lingua-Identify/
