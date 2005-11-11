@@ -1420,6 +1420,7 @@ cvstrac		ports/devel/cvstrac
 cvsup		ports/net/cvsup
 cvsup-mirror	ports/net/cvsup-mirror
 cvsup-without-gui	ports/net/cvsup-without-gui
+cvsupchk	ports/net/cvsupchk
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
 cvsweb-converters	ports/sysutils/cvsweb-converters
