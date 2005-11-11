@@ -558,6 +558,7 @@ lib/octave-%%OCTAVE_VERSION%%/liboctave.so.%%OCTAVE_VERSION%%
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.so.%%OCTAVE_VERSION%%
+lib/octave-%%OCTAVE_VERSION%%/octave-%%OCTAVE_VERSION%%
 @unexec rm -f %D/lib/octave
 @exec ln -sf octave-%%OCTAVE_VERSION%% %D/lib/octave
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/info-emacs-info
