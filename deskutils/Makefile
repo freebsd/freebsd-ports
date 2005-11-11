@@ -38,8 +38,6 @@
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-displayconstraints
-    SUBDIR += gdesklets-sensor-psi_iconbutton
-    SUBDIR += gdesklets-sensor-psi_theme
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
