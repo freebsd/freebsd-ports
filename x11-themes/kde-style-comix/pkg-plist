@@ -6,6 +6,6 @@ lib/kde3/kwin_comix_config.la
 lib/kde3/kwin_comix_config.so
 lib/kde3/plugins/styles/comix.la
 lib/kde3/plugins/styles/comix.so
-share/apps/kdisplay/color-schemes/comix.kcsrc
-share/apps/kstyle/themes/comix.themerc
+share/apps/kdisplay/color-schemes/Comix.kcsrc
+share/apps/kstyle/themes/Comix.themerc
 share/apps/kwin/comix.desktop
