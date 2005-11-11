@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	8.4
-PORTREVISION=	1
+PORTVERSION=	9.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -15,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
+RESTRICTED=	"free for non-commercial use."
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_BUILD=	yes
@@ -27,21 +27,16 @@ SUB_LIST+=	DISLIN_DIR=${DISLIN_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DISLIN_DIR=	${PREFIX}/dislin
 PROGRAMS=	clink disaps disdrv disdrv_nw disdrv_w disgcl disgif dishlp	\
-		dishpj disimg disman dismov disprv distif dlink f2clink gclhelp	\
-		gclhlp gclman
+		disimg disman dismov distif dlink f2clink gclhelp gclhlp gclman
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BINVER=		-5.1
-.endif
-
-.if ${OSVERSION} >= 501111
-LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} > 500000 && ${OSVERSION} < 600000
+BINVER=		-5.4
 .endif
 
 .if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+BINVER=		-6.0
 .endif
 
 do-install:
