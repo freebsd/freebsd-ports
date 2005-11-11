@@ -7,7 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.47
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -21,7 +21,8 @@ RUN_DEPENDS=	streamdvd:${PORTSDIR}/multimedia/streamdvd \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		mpgtx:${PORTSDIR}/multimedia/mpgtx
+		mpgtx:${PORTSDIR}/multimedia/mpgtx \
+		dvdbackup:${PORTSDIR}/sysutils/dvdbackup
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

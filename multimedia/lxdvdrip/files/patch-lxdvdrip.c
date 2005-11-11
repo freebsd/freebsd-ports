@@ -38,3 +38,12 @@
    fclose (filehandle);
  
    title[32] = '\0';
+@@ -7633,7 +7637,7 @@
+ 	    strcat (szFilmVerzeichnis, "/");
+ 	  strcat (szFilmVerzeichnis, szDVDName);
+ 	  // Verzeichnis AUDIO_TS anlegen
+-	  sprintf (szBefehl, "mkdir %s/AUDIO_TS -m 0777", szFilmVerzeichnis);
++	  sprintf (szBefehl, "mkdir -m 0777 %s/AUDIO_TS", szFilmVerzeichnis);
+ 	  printf ("%s\n", szBefehl);
+ 	  system (szBefehl);
+ 	}
