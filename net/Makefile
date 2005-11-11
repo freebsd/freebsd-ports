@@ -86,6 +86,7 @@
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
     SUBDIR += cvsup-without-gui
+    SUBDIR += cvsupchk
     SUBDIR += cvsync
     SUBDIR += cyphesis
     SUBDIR += danamics
