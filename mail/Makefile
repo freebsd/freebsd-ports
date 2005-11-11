@@ -111,8 +111,6 @@
     SUBDIR += freepops
     SUBDIR += ftrack
     SUBDIR += gbuffy
-    SUBDIR += gdesklets-enhallmail
-    SUBDIR += gdesklets-imapmail
     SUBDIR += gensig
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch

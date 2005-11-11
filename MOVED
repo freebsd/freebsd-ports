@@ -1937,3 +1937,5 @@ misc/gaim-ignorance|net-im/gaim-ignorace|2005-11-10|Moved to a new net-im catego
 net/eva|net-im/eva|2005-11-11|Moved to a new net-im category
 astro/gdesklets-goodweather-psi||2005-11-11|Deleted because of removed dependency
 deskutils/gdesklets-calendar||2005-11-11|Deleted because of removed dependency
+mail/gdesklets-enhallmail||2005-11-11|Deleted because of removed dependency
+mail/gdesklets-imapmail||2005-11-11|Dleted because of removed dependency
