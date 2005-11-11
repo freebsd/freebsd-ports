@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- daemon-control-dist.orig
++++ daemon-control-dist
+@@ -11,9 +11,9 @@
+ #### Edit these to suit your configuration ####
+ ###############################################
+ 
+-DENYHOSTS_BIN   = "/usr/bin/denyhosts.py"
+-DENYHOSTS_LOCK  = "/var/lock/subsys/denyhosts"
+-DENYHOSTS_CFG   = "/usr/share/denyhosts/denyhosts.cfg"
++DENYHOSTS_BIN   = "%%PREFIX%%/bin/denyhosts.py"
++DENYHOSTS_LOCK  = "/var/run/denyhosts"
++DENYHOSTS_CFG   = "%%PREFIX%%/share/denyhosts/denyhosts.cfg"
+ 
+ 
+ ###############################################
