@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	AI script based strategy game
 
-LIB_DEPENDS=	boost_filesystem.2:${PORTSDIR}/devel/boost \
+LIB_DEPENDS=	boost_filesystem.3:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/src
