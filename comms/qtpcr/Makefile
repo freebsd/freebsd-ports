@@ -15,6 +15,9 @@ DISTNAME=	qtpcr-${PORTVERSION}
 MAINTAINER=	esn@x123.info
 COMMENT=	Software that controls the ICOM PCR-1000 Receiver
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 WRKSRC=		${WRKDIR}/qtpcr-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes
