@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	1.9.100
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -167,7 +168,7 @@ post-patch:
 		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
-	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@SYLPHEED_GNOME:#@SYLPHEED_GNOME:g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@SYLPHEED_GNOME:#@SYLPHEED_GNOME:g ; s:-Wno-unused-function::" ${WRKSRC}/Makefile.in
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 #	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
