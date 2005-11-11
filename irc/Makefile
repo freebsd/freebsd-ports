@@ -54,6 +54,7 @@
     SUBDIR += irssi-fish
     SUBDIR += irssi-scripts
     SUBDIR += irssistats
+    SUBDIR += keitairc
     SUBDIR += kmyirc
     SUBDIR += konversation
     SUBDIR += kvirc
