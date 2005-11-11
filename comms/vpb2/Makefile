@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://www.voxilla.org/pub/vpb/
 MAINTAINER=	dyfet@gnu.org
 COMMENT=	User mode API for Voicetronix 4 port analog DSP telephony cards
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13
 USE_AUTOCONF_VER=	213
