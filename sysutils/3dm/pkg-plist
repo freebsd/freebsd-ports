@@ -1,7 +1,9 @@
-etc/rc.d/3dm2.sh
-@unexec if cmp -s %D/etc/3dm2.conf.sample %D/etc/3dm2.conf; then rm -f %D/etc/3dm2.conf; fi
-etc/3dm2.conf.sample
-@exec [ -f %B/3dm2.conf ] || cp %B/%f %B/3dm2.conf
+@unexec %D/etc/rc.d/3dm2.sh stop > /dev/null 2>&1 || true
+@unexec if cmp -s %D/etc/3dm2/3dm2.conf.sample %D/etc/3dm2/3dm2.conf; then rm -f %D/etc/3dm2/3dm2.conf; fi
+etc/3dm2/3dm2.conf.sample
+@exec [ -f %B/3dm2.conf ] || cp -p %B/%f %B/3dm2.conf
+etc/3dm2/msg/tdm_msg_en
+etc/3dm2/msg/tw_msg_en
 sbin/3dm2
 share/3dm2/en/3DM_2_OLH-1-01.html
 share/3dm2/en/3DM_2_OLH-1-02.html
@@ -136,4 +138,5 @@ share/3dm2/en/scripts/expand.js
 share/3dm2/en/scripts/seealso.js
 @unexec unlink /etc/3dm2/3dm2.conf
 @unexec unlink /etc/3dm2/3dm2.pem
-@unexec rmdir %D/share/3dm2/en/scripts %D/share/3dm2/en/images %D/share/3dm2/en %D/share/3dm2 /etc/3dm2 || true
+@unexec unlink /etc/3dm2/msg
+@unexec rmdir %D/share/3dm2/en/scripts %D/share/3dm2/en/images %D/share/3dm2/en %D/share/3dm2 /etc/3dm2 %D/etc/3dm2/msg %D/etc/3dm2 2>/dev/null || true

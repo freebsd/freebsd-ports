@@ -3,24 +3,24 @@
 # $FreeBSD$
 #
 
-# PROVIDE: %%NAME%%
+# PROVIDE: 3dm2
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
 # KEYWORD: FreeBSD shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable %%NAME%%:
+# Add the following lines to /etc/rc.conf to enable 3dm2:
 # twdm2_enable="YES"
 #
 
-. "%%RC_SUBR%%" 
+. %%RC_SUBR%%
 
 name=twdm2
 rcvar=`set_rcvar`
 
-start_precmd="twdm2_precmd"
+start_precmd=twdm2_precmd
 command="%%PREFIX%%/sbin/3dm2"
-required_files="%%PREFIX%%/etc/3dm2.conf"
+required_files=%%PREFIX%%/etc/3dm2/3dm2.conf
 
 twdm2_precmd()
 {
