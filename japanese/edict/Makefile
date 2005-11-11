@@ -7,7 +7,7 @@
 
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
@@ -149,7 +149,7 @@ do-install:
 	# @${ECHO_CMD} dicfile findic >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile mktdic >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile compverb >> ${DATADIR}/.xjdicrc
-	@${ECHO_CMD} dicfile 4jword2 >> ${DATADIR}/.xjdicrc
+	@${ECHO_CMD} dicfile 4jword3_edict.euc >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile lingdic >> ${DATADIR}/.xjdicrc
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}/.xjdicrc
