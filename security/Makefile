@@ -75,6 +75,7 @@
     SUBDIR += dazuko
     SUBDIR += dcetest
     SUBDIR += ddos_scan
+    SUBDIR += denyhosts
     SUBDIR += destroy
     SUBDIR += didentd
     SUBDIR += digest

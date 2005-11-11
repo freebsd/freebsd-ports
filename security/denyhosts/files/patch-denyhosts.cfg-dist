@@ -1,0 +1,45 @@
+
+$FreeBSD$
+
+--- denyhosts.cfg-dist.orig
++++ denyhosts.cfg-dist
+@@ -9,10 +9,10 @@
+ # argument
+ #
+ # Redhat:
+-SECURE_LOG = /var/log/secure
++#SECURE_LOG = /var/log/secure
+ #
+ # Mandrake or FreeBSD: 
+-#SECURE_LOG = /var/log/auth.log
++SECURE_LOG = /var/log/auth.log
+ #
+ # SuSE:
+ #SECURE_LOG = /var/log/messages
+@@ -23,10 +23,10 @@
+ # HOSTS_DENY: the file which contains restricted host access information
+ #
+ # Most operating systems:
+-HOSTS_DENY = /etc/hosts.deny
++#HOSTS_DENY = /etc/hosts.deny
+ #
+ # Some BSD (FreeBSD) Unixes:
+-#HOSTS_DENY = /etc/hosts.allow
++HOSTS_DENY = /etc/hosts.allow
+ #
+ # Another possibility (also see the next option):
+ #HOSTS_DENY = /etc/hosts.evil
+@@ -157,10 +157,10 @@
+ # running at a time.
+ #
+ # Redhat/Fedora:
+-LOCK_FILE = /var/lock/subsys/denyhosts
++#LOCK_FILE = /var/lock/subsys/denyhosts
+ #
+-# Debian
+-#LOCK_FILE = /var/run/denyhosts.pid
++# Debian (and FreeBSD)
++LOCK_FILE = /var/run/denyhosts.pid
+ #
+ # Misc
+ #LOCK_FILE = /tmp/denyhosts.lock
