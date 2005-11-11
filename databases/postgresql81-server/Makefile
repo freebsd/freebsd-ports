@@ -102,10 +102,9 @@ OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if defined(SERVER_ONLY) && defined(WITH_HIER)
-BROKEN=		no HIER patch for 8.1 series exists
-PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
-PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
-USE_BISON=	yes
+#PATCH_SITES+=	http://gppl.moonbone.ru/:hier801054
+#PATCHFILES+=	hier-Pg8.0.1-0.5.4.diff.gz:hier801054
+#USE_BISON=	yes
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
