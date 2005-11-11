@@ -11211,6 +11211,7 @@ scponly		ports/shells/scponly
 scr2png		ports/graphics/scr2png
 scr2txt		ports/textproc/scr2txt
 scr_ipfm	ports/net/scr_ipfm
+scramble	ports/games/scramble
 screamer	ports/lang/screamer
 screem		ports/www/screem
 screen		ports/sysutils/screen
