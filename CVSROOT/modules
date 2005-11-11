@@ -4863,6 +4863,7 @@ kdirstat	ports/sysutils/kdirstat
 kdissert	ports/deskutils/kdissert
 kdmtheme	ports/x11-themes/kdmtheme
 keepalived	ports/net/keepalived
+keitairc	ports/irc/keitairc
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 kexchange	ports/finance/kexchange
