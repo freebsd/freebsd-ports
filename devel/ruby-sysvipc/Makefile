@@ -9,7 +9,7 @@ PORTNAME=	sysvipc
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://deisui.bug.org/~ueno/ruby/
+MASTER_SITES=	http://deisui.org/~ueno/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
