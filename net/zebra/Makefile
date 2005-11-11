@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
+CONFLICTS=	openbgpd-[0-9]* quagga-[0-9]*
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_SUBMAKE=	yes
