@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Density functional molecular orbital calculation
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 USE_REINPLACE=	yes
 
