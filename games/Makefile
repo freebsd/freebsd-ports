@@ -491,6 +491,7 @@
     SUBDIR += scid
     SUBDIR += scorched3d
     SUBDIR += scourge
+    SUBDIR += scramble
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
     SUBDIR += sdb
