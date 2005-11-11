@@ -1243,6 +1243,7 @@ compat5x	ports/misc/compat5x
 compositeext	ports/x11/compositeext
 compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
+concentration	ports/games/concentration
 concorde	ports/math/concorde
 cone		ports/mail/cone
 configgen	ports/devel/configgen
