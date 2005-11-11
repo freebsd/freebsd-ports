@@ -1260,11 +1260,21 @@ share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
 share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/ls-R
-@dirrm share/octave/site/m/startup
-@dirrm share/octave/site/m
-@dirrm share/octave/site/api-v13/m
-@dirrm share/octave/site/api-v13
-@dirrm share/octave/site
+@exec mkdir -p %D/share/octave/site/api-v13/m 2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/m 2>/dev/null || true
+@exec mkdir -p %D/share/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/api-v13/m 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/api-v13 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/exec 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/share/octave/site/oct 2>/dev/null || true
+@unexec rmdir %D/share/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/share/octave/%%OCTAVE_VERSION%%/site/exec 2>/dev/null || true
+@unexec rmdir %D/share/octave/%%OCTAVE_VERSION%%/site/m 2>/dev/null || true
+@dirrm share/octave/%%OCTAVE_VERSION%%/site
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/base
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/hinf
@@ -1296,28 +1306,39 @@ share/octave/ls-R
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/time
 @dirrm share/octave/%%OCTAVE_VERSION%%/m
-@dirrm share/octave/%%OCTAVE_VERSION%%/site/m
-@dirrm share/octave/%%OCTAVE_VERSION%%/site
 @dirrm share/octave/%%OCTAVE_VERSION%%/imagelib
 @dirrm share/octave/%%OCTAVE_VERSION%%
+@dirrm share/octave/site/m/startup
+@dirrm share/octave/site/m
+@dirrm share/octave/site
 @dirrm share/octave
+@exec mkdir -p %D/libexec/octave/site/api-v13/m 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/m 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
+@exec mkdir -p %D/libexec/octave/site/oct 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/api-v13/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/api-v13/m 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/api-v13 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/exec 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/oct/api-v13/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/oct/api-v13/m 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/oct/api-v13 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/m 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/site/oct 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/exec 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/oct 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%% 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct 2>/dev/null || true
+@unexec rmdir %D/libexec/octave/%%OCTAVE_VERSION%%/site 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/exec
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct
-@dirrm libexec/octave/%%OCTAVE_VERSION%%/site
 @dirrm libexec/octave/%%OCTAVE_VERSION%%
-@dirrm libexec/octave/site/exec/%%GNU_HOST%%
-@dirrm libexec/octave/site/exec
-@dirrm libexec/octave/site/oct/api-v13/%%GNU_HOST%%
-@dirrm libexec/octave/site/oct/api-v13
-@dirrm libexec/octave/site/oct/%%GNU_HOST%%
-@dirrm libexec/octave/site/oct
 @dirrm libexec/octave/site
 @dirrm libexec/octave
 @dirrm lib/octave-%%OCTAVE_VERSION%%
