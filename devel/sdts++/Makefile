@@ -15,7 +15,7 @@ MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
 
-LIB_DEPENDS=	boost_thread.so.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
