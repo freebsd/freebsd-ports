@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.irori.org/dl/tool/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.gz
 EXTRACT_ONLY=	${DISTFILES}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A handy utility to show codepoint information of given characters
 
 RUN_DEPENDS=	${_RUN_DEPENDS}

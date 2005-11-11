@@ -13,7 +13,7 @@ MASTER_SITES=	http://deisui.bug.org/~ueno/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to use System V IPC system calls
 
 USE_RUBY=	yes

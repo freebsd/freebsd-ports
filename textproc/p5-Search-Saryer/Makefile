@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	ftp://ftp.namazu.org/sary/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to the Sary library
 
 LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary

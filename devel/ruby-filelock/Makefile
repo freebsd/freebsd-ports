@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	contrib
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module which provides file locking mechanism
 
 USE_RUBY=	yes

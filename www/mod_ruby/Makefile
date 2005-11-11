@@ -11,7 +11,7 @@ CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
 LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby

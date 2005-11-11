@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 #PATCHFILES=	RMagick-${PORTVERSION}.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
 BUILD_DEPENDS=	wmf2eps:${PORTSDIR}/graphics/libwmf

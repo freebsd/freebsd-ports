@@ -11,7 +11,7 @@ CATEGORIES=	converters ruby
 MASTER_SITES=	${REAL_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An iconv wrapper class for Ruby
 
 USE_ICONV=	yes

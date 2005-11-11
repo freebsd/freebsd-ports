@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
 CONFIGURE_DEPENDS=	${BUILD_DEPENDS}

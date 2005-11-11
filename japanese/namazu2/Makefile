@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	2
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 
 LIB_DEPENDS=	nmz.7:${PORTSDIR}/databases/namazu2

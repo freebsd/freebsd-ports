@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mag.keio.ac.jp/~hiroya/ruby/rreadline/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure Ruby implementation of the Readline library
 
 USE_RUBY=	yes

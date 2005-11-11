@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high level library to use SDL from Ruby
 
 USE_SDL=	gfx image mixer ttf sdl

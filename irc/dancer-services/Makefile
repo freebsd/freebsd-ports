@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
 WANT_AUTOMAKE_VER=15

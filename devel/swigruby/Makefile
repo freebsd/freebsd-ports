@@ -12,7 +12,7 @@ CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby module for SWIG 1.1
 
 BUILD_DEPENDS=	swig1.1:${PORTSDIR}/devel/swig11

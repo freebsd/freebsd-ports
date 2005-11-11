@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}\?tarball=1\&only_with_tag=ruby-${PORTNAME}-${PORTVERSION:S/./_/g}\&cvsroot=ruby\&
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to provide a high level interface to a CVS repository
 
 # optional, but strongly suggested

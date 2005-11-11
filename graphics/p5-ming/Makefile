@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Ming which allows you to create Flash 4/5 movies
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch

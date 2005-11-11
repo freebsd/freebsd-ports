@@ -14,7 +14,7 @@ DISTNAME=	nodeDump-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the internal structure of a parsed Ruby program
 
 USE_RUBY=	yes

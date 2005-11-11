@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
 LIB_DEPENDS=	db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}

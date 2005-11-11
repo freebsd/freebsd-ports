@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	contrib
 DISTNAME=	onigd${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

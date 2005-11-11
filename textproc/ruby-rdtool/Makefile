@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 
 BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \

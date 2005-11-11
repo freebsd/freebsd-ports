@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	esecanna
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
 
 USE_RC_SUBR=	yes

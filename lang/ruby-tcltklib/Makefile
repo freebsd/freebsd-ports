@@ -11,7 +11,7 @@ CATEGORIES+=	lang x11-toolkits ruby tcl${TCL_VERSION} tk${TK_VERSION}
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER?=	knu@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A Ruby interface to Tcl/Tk libraries
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch

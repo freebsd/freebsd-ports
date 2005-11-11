@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	http://chasen.org/~taku/software/mecab/bindings/
 DISTNAME=	${PORTNAME:L}-perl-${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}

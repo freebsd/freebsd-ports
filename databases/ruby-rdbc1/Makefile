@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby Database Connectivity
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/postgres.so:${.CURDIR}/../ruby-postgres

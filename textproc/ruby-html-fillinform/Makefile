@@ -12,7 +12,7 @@ MASTER_SITES=	http://shebang.jp/src/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library that automatically inserts form data into HTML
 
 USE_RUBY=	yes

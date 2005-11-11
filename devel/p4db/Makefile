@@ -11,7 +11,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/p4db/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web/Perforce Browser
 
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce

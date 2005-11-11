@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.iDaemons.org/pub/distfiles/
 MASTER_SITE_SUBDIR=	knu
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS utilities which facilitate working with local working directories
 
 USE_BZIP2=	yes

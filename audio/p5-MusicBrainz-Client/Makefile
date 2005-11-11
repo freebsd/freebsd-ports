@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
 DISTFILES=	# none
 
-MAINTAINER=	knu@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl module that provides access to the musicbrainz client API
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${LIBMUSICBRAINZ_PORTDIR}:patch

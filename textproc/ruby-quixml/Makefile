@@ -13,7 +13,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/89/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fast XML API for Ruby written in C
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2

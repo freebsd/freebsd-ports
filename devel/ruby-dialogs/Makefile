@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	contrib
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Ruby interface to dialog(1)
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	editors ruby
 PKGNAMESUFFIX=	+ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi IMproved version 6 with embedded Ruby interpreter
 
 #EXTRA_PATCHES=	${.CURDIR}/files/patch-*

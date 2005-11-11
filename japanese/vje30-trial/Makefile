@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-delta-${PORTVERSION}t-ELF
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	vje30
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern intelligent Japanese input engine (trial version)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x

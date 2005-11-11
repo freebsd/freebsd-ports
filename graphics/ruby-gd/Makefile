@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

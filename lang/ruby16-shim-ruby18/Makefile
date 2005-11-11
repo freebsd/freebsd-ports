@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	shim-ruby16_18-1.8.1-preview3
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of Ruby modules to provide Ruby 1.8 functionalities
 
 USE_BZIP2=	yes

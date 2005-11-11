@@ -11,7 +11,7 @@ CATEGORIES=	lang ruby elisp
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for the Ruby language
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch

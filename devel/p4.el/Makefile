@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p4el
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce-Emacs Integration
 
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce

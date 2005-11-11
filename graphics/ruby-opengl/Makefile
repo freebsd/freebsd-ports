@@ -15,7 +15,7 @@ DISTNAME=	rbogl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
 
 USE_RUBY=	yes

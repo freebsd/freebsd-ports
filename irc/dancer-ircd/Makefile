@@ -21,7 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dancer-user-guide.txt:doc2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daemon based on hybrid ircd
 
 IGNOREFILES=	dancer-oper-guide.txt \

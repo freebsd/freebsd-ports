@@ -12,7 +12,7 @@ MASTER_SITES=	http://tach.arege.net/software/pdumpfs-rsync/
 DISTFILES=	${PROG}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to back up remote files with pdumpfs and rsync
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/pdumpfs:${PORTSDIR}/sysutils/pdumpfs \
