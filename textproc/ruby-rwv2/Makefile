@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.ywesee.com/ruby/rwv2/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around wv2
 
 LIB_DEPENDS=	wv2.1:${PORTSDIR}/textproc/wv2

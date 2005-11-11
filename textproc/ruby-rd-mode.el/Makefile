@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	ruby-	# not ${RUBY_PKGNAMEPREFIX} since this is not version specific
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs lisp module for editing RD files
 
 BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../ruby-rdtool:patch

@@ -11,7 +11,7 @@ CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system intended for easy use
 
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic

@@ -23,7 +23,7 @@ PATCH_SITES=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20010418.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient with Japanese support
 
 USE_BZIP2=	yes

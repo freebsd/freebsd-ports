@@ -12,7 +12,7 @@ MASTER_SITES=	http://grub.ath.cx/formvalidator/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module to validate data coming in from HTML forms
 
 USE_RUBY=	yes

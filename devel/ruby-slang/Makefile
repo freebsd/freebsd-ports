@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	contrib
 DISTNAME=	${PORTNAME}lib-${PORTVERSION:}-1m
 DIST_SUBDIR=	ruby
 
-MAINTAINER?=	knu@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	S-Lang extension module for Ruby
 
 .if defined(WITH_JAPANESE)

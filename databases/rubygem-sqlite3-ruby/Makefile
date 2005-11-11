@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13

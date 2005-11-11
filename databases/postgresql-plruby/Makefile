@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
 BUILD_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bit set library for Ruby
 
 USE_RUBY=	yes

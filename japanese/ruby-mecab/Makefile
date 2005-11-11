@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	http://chasen.org/~taku/software/mecab/bindings/
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MeCab library module for Ruby
 
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}

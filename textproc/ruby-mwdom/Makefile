@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOM level2 module, XMLWriter and XHTMLWriter for Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old

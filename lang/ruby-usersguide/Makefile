@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rubyist.net/~slagell/ruby/
 DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby users guide, in HTML format
 
 USE_RUBY=	yes

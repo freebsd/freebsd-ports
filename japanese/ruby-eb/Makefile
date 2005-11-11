@@ -15,7 +15,7 @@ MASTER_SITES=	http://ruby${PORTNAME}.sourceforge.net/
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bind of EB library
 
 LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb

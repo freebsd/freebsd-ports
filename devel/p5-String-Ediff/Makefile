@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to produce common sub-string indices for two strings
 
 PERL_CONFIGURE=	yes

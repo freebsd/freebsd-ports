@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
 BUILD_DEPENDS=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \

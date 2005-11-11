@@ -12,7 +12,7 @@ MASTER_SITES=	http://tach.arege.net/software/pdumpfs-clean/
 DISTFILES=	${PROG}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to clean up old backup files of a pdumpfs archive
 
 USE_RUBY=	yes

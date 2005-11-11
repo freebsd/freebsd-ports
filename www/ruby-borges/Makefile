@@ -12,7 +12,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/574/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web application framework for Ruby that allows linear programming
 
 USE_RUBY=	yes

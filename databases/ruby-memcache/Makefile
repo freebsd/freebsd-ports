@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	Ruby-MemCache-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A memcached client library for Ruby
 
 BUILD_DEPENDS=	${RUBY_SITELIBDIR}/io/reactor.rb:${PORTSDIR}/devel/ruby-io-reactor

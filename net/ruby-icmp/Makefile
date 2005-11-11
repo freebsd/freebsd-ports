@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby module for handling ICMP packets
 
 USE_RUBY=	yes

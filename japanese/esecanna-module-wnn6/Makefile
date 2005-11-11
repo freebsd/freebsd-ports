@@ -14,7 +14,7 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for Wnn6
 
 LIB_DEPENDS=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib

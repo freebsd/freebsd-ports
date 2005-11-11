@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../../lang/ruby-man
 
 CATEGORIES=	japanese
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby reference manual (Japanese version), in HTML format
 
 MD5_FILE=	${.CURDIR}/distinfo

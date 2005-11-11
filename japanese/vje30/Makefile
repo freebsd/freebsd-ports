@@ -19,7 +19,7 @@ DISTFILES=	${MAINDIST} \
 		vje-delta-3.0-source-update-2002.05.31.tgz:update
 DIST_SUBDIR=	vje30
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern intelligent Japanese input engine (purchase version)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x

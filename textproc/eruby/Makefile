@@ -11,7 +11,7 @@ CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interprets Ruby code embedded in a text file like PHP/ePerl/ASP/JSP
 
 USE_RUBY=	yes

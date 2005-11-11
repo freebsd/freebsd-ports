@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}-picard
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MusicBrainz bindings for Python
 
 BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes

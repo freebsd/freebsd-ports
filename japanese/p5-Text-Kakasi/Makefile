@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	http://www.daionet.gr.jp/~knok/kakasi/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kakasi library module for Perl5
 
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi

@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../zsh
 
 PKGNAMESUFFIX=	+euc_hack
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Z shell with EUC encoding support
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*

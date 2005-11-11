@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to Japanized Tcl/Tk libraries
 
 TCL_VERSION?=	80

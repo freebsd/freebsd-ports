@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to manipulate HTML/XML tree data structure
 
 USE_RUBY=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	http://www.notwork.org/~gotoken/ruby/p/kakasi/
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KAKASI module for Ruby
 
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi

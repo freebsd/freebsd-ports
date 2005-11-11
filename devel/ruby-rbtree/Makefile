@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-PaloAlto/3388/rbtree/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of Red-Black Tree for Ruby
 
 USE_RUBY=	yes

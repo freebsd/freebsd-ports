@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}++
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby API for automated unit testing of web sites
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-parser \

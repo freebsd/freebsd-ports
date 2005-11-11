@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	TZFile-${PORTVERSION}${EXTRACT_SUFX}\?tarball=1\&only_with_tag=${PORTNAME}-${PORTVERSION:S/./_/g}\&cvsroot=ruby\&
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TZFile handling library for Ruby
 
 USE_RUBY=	yes

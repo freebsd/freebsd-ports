@@ -14,7 +14,7 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 3.0
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna

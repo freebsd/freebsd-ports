@@ -13,7 +13,7 @@ MASTER_SITES=	http://chasen.org/~taku/software/mecab/src/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${IPADIC_DISTNAME}${EXTRACT_SUFX}:ipadic
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 IPADIC_DISTNAME=	ipadic-2.5.1

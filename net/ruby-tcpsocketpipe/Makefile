@@ -15,7 +15,7 @@ EXTRACT_SUFX=	# none
 DIST_SUBDIR=	ruby
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to create I/O pipes for TCP socket tunneling
 
 USE_RUBY=	yes

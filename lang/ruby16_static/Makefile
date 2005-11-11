@@ -12,7 +12,7 @@ CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binary with some modules compiled in (in case of emergency)
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch

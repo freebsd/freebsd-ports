@@ -13,7 +13,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 #		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
 DISTNAME=	FD-${PORTVERSION}
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CUI-based file and directory management tool
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby module to access James Clark's XML Parser ToolKit ("expat")
 
 BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser

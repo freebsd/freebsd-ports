@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bundle to install all modules used for Sledge
 
 BUILD_DEPENDS=	${PM_DEPENDS}

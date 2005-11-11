@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome DOM Engine
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

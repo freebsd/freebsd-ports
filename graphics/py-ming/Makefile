@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch

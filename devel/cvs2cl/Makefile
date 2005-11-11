@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	knu
 DISTFILES=	${PORTNAME}.pl-${PORTVERSION}.gz
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
 USE_PERL5=	yes

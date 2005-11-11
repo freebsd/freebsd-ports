@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.b13media.com/dev/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RUnit extention that makes it very easy to implement Mock Objects
 
 USE_BZIP2=	yes

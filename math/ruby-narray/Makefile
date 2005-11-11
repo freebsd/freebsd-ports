@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Numerical N-dimensional array library for Ruby
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw

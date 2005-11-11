@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	knu
 DISTNAME=	jconv
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts JFile database to CSV, and vice versa
 
 ALL_TARGET=	# none

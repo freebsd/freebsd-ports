@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../irc/slirc
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 # Feel free to update this port when the CPAN module is updated
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines and Constants common for XML::LibXML and XML::GDOME
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

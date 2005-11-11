@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:U}Ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to the Perforce API
 
 EXTRACT_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
