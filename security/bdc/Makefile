@@ -7,6 +7,7 @@
 
 PORTNAME=	bdc
 PORTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/beta/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd${BDREL}
@@ -15,6 +16,9 @@ MAINTAINER=	apircalabu@bitdefender.com
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=   c.5:${PORTSDIR}/misc/compat5x
+.endif
 .if ${OSVERSION} < 490000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502001
 IGNORE=		"requires FreeBSD-STABLE \(4.9 or later\), or FreeBSD-CURRENT \(5.2.1 or later\)"
 .elif ${OSVERSION} < 500000
