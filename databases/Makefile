@@ -393,6 +393,7 @@
     SUBDIR += usogres
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
+    SUBDIR += xapian-core
     SUBDIR += xbase
     SUBDIR += xbsql
     SUBDIR += xmbase-grok
