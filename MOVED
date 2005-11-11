@@ -1942,3 +1942,4 @@ mail/gdesklets-imapmail||2005-11-11|Deleted because of removed dependency
 deskutils/gdesklets-gnomebar||2005-11-11|Deleted because of removed dependency
 deskutils/gdesklets-sensor-psi_iconbutton||2005-11-11|Deleted; dead and unfetchable
 deskutils/gdesklets-sensor-psi_theme||2005-11-11|Deleted; dead and unfetchable
+deskutils/gdesklets-psi_themes||2005-11-11|Deleted; dead and unfetchable
