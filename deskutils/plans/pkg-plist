@@ -327,6 +327,6 @@
 @dirrm %%DIR%%/theme/icons
 @dirrm %%DIR%%/theme/graphics
 @dirrm %%DIR%%/theme
-@dirrm %%DIR%%/sessions
-@dirrm %%DIR%%/data
-@dirrm %%DIR%%/
+@unexec rmdir %D/%%DIR%%/sessions 2>/dev/null || true
+@unexec rmdir %D/%%DIR%%/data 2>/dev/null || true
+@unexec rmdir %D/%%DIR%% 2>/dev/null || echo "Note: %D/%%DIR%% not empty -- not deleted!"
