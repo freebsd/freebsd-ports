@@ -1,0 +1,24 @@
+==================================================================
+Tatter-Tools is now installed. If you intall it for the first time,
+you may have to follow this steps to make it work correctly.
+
+1. Create the MySQL database:
+
+  # mysqladmin --user=root -p create tatter
+
+2. Create a mysql user/password for tatter(database):
+  (change user and/or password if requered)
+
+  # mysql -u root -p
+  mysql> GRANT ALL ON tatter.* TO ttuser@localhost 
+	 IDENTIFIED BY 'tt_password';
+  mysql> FLUSH PRIVILEGES;
+  mysql> QUIT;
+
+3.Open Tatter-Tools installation page in your web browser 
+  and fill with ttuser/tt_password
+
+  http://%%HOSTNAME%%/%%TT_URL%%/install.php
+
+  Have fun!
+==================================================================

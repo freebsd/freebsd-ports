@@ -114,6 +114,7 @@
     SUBDIR += srecite
     SUBDIR += stardict2-dict-zh_CN
     SUBDIR += stardict2-dict-zh_TW
+    SUBDIR += tatter-tools
     SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
