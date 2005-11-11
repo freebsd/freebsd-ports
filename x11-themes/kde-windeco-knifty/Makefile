@@ -1,6 +1,6 @@
 # New ports collection makefile for:   knifty
-# Date created:        February 22th, 2005
-# Whom:                decept
+# Date created:                        22nd February, 2005
+# Whom:                                decept
 #
 # $FreeBSD$
 #
@@ -8,7 +8,7 @@
 PORTNAME=	knifty
 PORTVERSION=	0.4.2
 PORTREVISION=	1
-CATEGORIES=	x11-themes
+CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://kde-look.org/content/files/
 DISTNAME=	8841-${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,6 @@ COMMENT=	Lightweight KDE window decoration
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
