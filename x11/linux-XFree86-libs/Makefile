@@ -7,7 +7,7 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.99.902
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		x11 linux
 MASTER_SITES=	${MASTER_SITE_SUSE} \
 		ftp://ftp.in2p3.fr/pub/linux/suse/update/9.1/rpm/i586/ \
@@ -33,10 +33,7 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST=		${WRKDIR}/plist
-PLIST_DIRS=	usr/X11R6/lib/X11 \
-		usr/X11R6/lib \
-		usr/X11R6/bin \
-		usr/X11R6
+PLIST_DIRS=	usr/X11R6/lib/X11
 
 pre-install:
 	@${RM} -f ${PLIST}
