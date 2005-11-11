@@ -37,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
+BROKEN=		Does not compile on 4.x
 .endif
 
 post-install:
