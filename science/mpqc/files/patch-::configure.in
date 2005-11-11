@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Apr 21 11:36:19 2002
-+++ configure.in	Tue Jul 16 06:44:27 2002
-@@ -334,6 +334,31 @@
+--- configure.in.orig	Mon Oct 17 02:37:39 2005
++++ configure.in	Fri Nov 11 13:14:10 2005
+@@ -349,6 +349,31 @@
  
  ac_default_prefix="/usr/local/mpqc/$SC_VERSION"
  
@@ -32,7 +32,7 @@
  AC_ARG_WITH(cc,
  [  --with-cc               Gives the name of the C compiler to use.],
  CC=$withval
-@@ -636,6 +661,23 @@
+@@ -736,6 +761,23 @@
    ;;
  esac
  
@@ -55,21 +55,16 @@
 +
  dnl -- special architecture options --
  
- AC_MSG_CHECKING([for special architecture options])
-@@ -839,10 +881,12 @@
+ case $target_cpu in
+@@ -969,6 +1011,7 @@
  elif test $DEBUG = opt; then
    CFLAGS="$COPTIONS_DBG $COPTIONS_OPT $COPTIONS_MISC"
-   CXXFLAGS="$CXXOPTIONS_DBG $COPTIONS_OPT $CXXOPTIONS_MISC"
+   CXXFLAGS="$CXXOPTIONS_DBG $CXXOPTIONS_OPT $CXXOPTIONS_MISC"
 +  FFLAGS="$F77OPTIONS_OPT"
    LDFLAGS="$LDFLAGS -g"
  else
    CFLAGS="$COPTIONS_OPT $COPTIONS_MISC"
-   CXXFLAGS="$CXXOPTIONS_OPT $CXXOPTIONS_MISC"
-+  FFLAGS="$F77OPTIONS_OPT"
- fi
- 
- AC_SUBST(EXTRAINCLUDE)
-@@ -979,6 +1023,19 @@
+@@ -1109,6 +1152,19 @@
  AC_LANG_RESTORE
  fi
  
@@ -89,7 +84,7 @@
  AC_MSG_RESULT($HAVE_PTHREAD)
  fi
  if test X$HAVE_PTHREAD = Xyes; then
-@@ -1280,18 +1337,26 @@
+@@ -1488,18 +1544,26 @@
  LIBS="$LIBSSAV $FLIBS"
  
  LIBBLAS=""
@@ -126,7 +121,7 @@
  AC_SUBST(HAVE_BLAS)
  if test X$HAVE_BLAS != Xyes; then
    echo "WARNING: Could not link to the BLAS library.  It can be obtained at"
-@@ -1304,10 +1369,17 @@
+@@ -1512,10 +1576,17 @@
  
  LIBLAPACK=""
  F77_DGESVD=`$PERL $srcdir/bin/mkf77sym.pl.in -method $F77_SYMBOLS DGESVD`
