@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVD's
 
 BUILD_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd \
