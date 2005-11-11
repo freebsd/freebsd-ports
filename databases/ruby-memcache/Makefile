@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.4
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.deveiate.org/code/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
