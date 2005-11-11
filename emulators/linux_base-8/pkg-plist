@@ -10126,6 +10126,7 @@ var/mail
 @dirrm usr/lib/gcc-lib
 @exec /bin/mkdir -p %D/usr/lib/games
 @dirrm usr/lib/games
+@exec /bin/mkdir -p %D/usr/lib/bash
 @dirrm usr/lib/bash
 @dirrm usr/lib
 @dirrm usr/include
@@ -10149,6 +10150,7 @@ var/mail
 @dirrm usr/X11R6
 @dirrm usr
 @dirrm sbin
+@exec /bin/mkdir -p %D/proc
 @dirrm proc
 @exec /bin/mkdir -p %D/opt
 @dirrm opt
