@@ -1,5 +1,5 @@
---- build/unix/config_proginfo_host.orig	Sun Jul  3 17:23:50 2005
-+++ build/unix/config_proginfo_host	Sun Jul  3 17:24:43 2005
+--- build/unix/config_proginfo_host.orig	Fri May 13 17:22:09 2005
++++ build/unix/config_proginfo_host	Mon Oct 24 23:26:50 2005
 @@ -80,7 +80,7 @@
  LIB_openal_CFLAGS=""
  case "$HOST_SYSTEM" in
@@ -9,6 +9,27 @@
  		;;
  	MINGW32*)
  		LIB_openal_LDFLAGS="-lopenal32"
+@@ -94,16 +94,16 @@
+ 		;;
+ esac
+ LIB_openal_VERSION=""
+-LIB_openal_DETECT="try_pkgconfig_lib openal openal"
+-LIB_openal_DEPEND_DETECT_BIN="pkgconfig"
++#LIB_openal_DETECT="try_pkgconfig_lib openal openal"
++#LIB_openal_DEPEND_DETECT_BIN="pkgconfig"
+ 
+ 
+ ### OpenGL ###
+ LIB_opengl_NAME="OpenGL"
+ case "$HOST_SYSTEM" in
+ 	FreeBSD|OpenBSD)
+-		LIB_opengl_CFLAGS="-I/usr/X11R6/include -D_THREAD_SAFE"
+-		LIB_opengl_LDFLAGS="-L/usr/X11R6/lib -lX11 -lXext -pthread -lGL"
++		LIB_opengl_CFLAGS="-I${X11BASE}/include -D_THREAD_SAFE"
++		LIB_opengl_LDFLAGS="-L${X11BASE}/lib -lX11 -lXext -pthread -lGL"
+ 		;;
+ 	MINGW32*)
+ 		LIB_opengl_CFLAGS=""
 @@ -132,8 +132,8 @@
  LIB_vorbisfile_NAME="vorbisfile"
  case "$HOST_SYSTEM" in
