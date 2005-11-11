@@ -3588,6 +3588,7 @@ hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
 handbrake	ports/multimedia/handbrake
+hangman		ports/games/hangman
 happydoc	ports/devel/happydoc
 happystats	ports/net/happystats
 haproxy		ports/net/haproxy
