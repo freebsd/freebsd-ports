@@ -1,0 +1,12 @@
+--- Makefile.orig	Tue Mar  1 20:33:03 2005
++++ Makefile	Sat Mar 19 16:53:49 2005
+@@ -1,7 +1,7 @@
+ DEBUG_FLAGS=-Wall -g
+ 
+-CFLAGS=`glib-config --cflags` $(DEBUG_FLAGS) -D_FILE_OFFSET_BITS=64
+-LDFLAGS=`glib-config --libs` -lpopt
++CFLAGS += `pkg-config --cflags glib-2.0` $(DEBUG_FLAGS) -D_FILE_OFFSET_BITS=64 -I /usr/local/include
++LDFLAGS += `pkg-config --libs glib-2.0` -L/usr/local/lib -lpopt
+ 
+ VERSION=$(shell awk '/Version:/ { print $$2 }' netdump.spec)
+ # Used to append this to CVSTAG: _$(subst .,-,$(RELEASE)), but now that

@@ -1,0 +1,3 @@
+daemon=true
+secure=0
+dumpdirprefix="/var/spool/netdump"

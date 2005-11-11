@@ -327,6 +327,7 @@
     SUBDIR += nagios-statd
     SUBDIR += nautilus-cd-burner
     SUBDIR += ndir
+    SUBDIR += netdump-server
     SUBDIR += newportsversioncheck
     SUBDIR += no-login
     SUBDIR += npadmin

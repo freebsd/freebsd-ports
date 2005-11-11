@@ -1,0 +1,21 @@
+--- netdump-server.8.orig	Sat Mar 19 16:56:34 2005
++++ netdump-server.8	Sat Mar 19 16:58:00 2005
+@@ -50,6 +50,9 @@
+ Store a pidfile.  The default service uses /var/run/netdump-server.pid.
+ The default is not to write a pidfile.
+ .TP
++--dumpdirprefix \fIpath\fP
++The directory in which to save dumps. The default - /var/spool/netdump.
++.TP
+ --daemon
+ netdump-server should background itself and run as a daemon.
+ .TP
+@@ -76,7 +79,7 @@
+ /etc/netdump.conf
+ A configuration file read by netdump-server on startup. It is a
+ "key=value" style file. Currently it supports the options:
+-port, max_concurrent_dumps, daemon and pidfile.
++port, max_concurrent_dumps, daemon, pidfile and dumpdirprefix.
+ .TP
+ /etc/init.d/netdump-server
+ An init script to start a default system installation of netdump-server.

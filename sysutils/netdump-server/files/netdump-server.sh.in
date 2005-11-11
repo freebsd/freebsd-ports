@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+
+# PROVIDE: netdump_server
+# REQUIRE:
+# BEFORE:
+# KEYWORD: FreeBSD shutdown
+
+# Add the following line to /etc/rc.conf to enable mpd:
+#
+#netdump_server_enable="YES"
+
+. %%RC_SUBR%%
+
+load_rc_config netdump_server
+
+netdump_server_enable=${netdump_server_enable-"NO"}
+netdump_server_flags=${netdump_server_flags-"--daemon --secure 0"}
+
+name=netdump_server
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/netdump-server
+pidfile=/var/run/netdump-server.pid
+start_cmd=start_cmd
+stop_cmd=stop_cmd
+
+start_cmd()
+{
+	if [ -r ${pidfile} ]; then
+		echo "netdump_server already runned"
+		exit 1
+	fi
+
+	touch $pidfile
+	chown netdump $pidfile
+
+	su -m netdump -c "${command} --pidfile ${pidfile} ${netdump_server_flags}"
+}
+
+stop_cmd()
+{
+	if [ -r ${pidfile} ]; then
+		pid=`cat ${pidfile}`
+		kill -TERM ${pid}
+		wait_for_pids ${pid}
+		
+		rm -rf ${pidfile}
+	else
+		echo "netdump-server not runned"
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
