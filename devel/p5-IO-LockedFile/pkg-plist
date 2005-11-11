@@ -1,0 +1,7 @@
+%%SITE_PERL%%/IO/LockedFile.pm
+%%SITE_PERL%%/IO/LockedFile/Flock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/LockedFile/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/LockedFile 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO/LockedFile 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
