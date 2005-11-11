@@ -14,6 +14,9 @@ DISTNAME=	chemeq-V110-1
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Outputs LaTeX code for chemical reaction
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BISON=	yes
