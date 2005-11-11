@@ -734,6 +734,7 @@
     SUBDIR += qdecoder
     SUBDIR += quixote
     SUBDIR += raqdevil
+    SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += resin2
     SUBDIR += resin3
