@@ -1,6 +1,16 @@
---- programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c.orig	Thu Feb 17 13:15:22 2005
-+++ programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c	Thu Feb 17 13:21:09 2005
-@@ -2501,6 +2501,7 @@
+--- programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c.orig	Tue Nov  8 01:15:59 2005
++++ programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c	Tue Nov  8 01:15:37 2005
+@@ -938,6 +938,9 @@ static RADEONMonitorType RADEONDisplayDD
+ 	MonType = MT_NONE;
+     }
+ 
++    OUTREG(info->DDCReg, INREG(info->DDCReg) &
++	   ~(RADEON_GPIO_EN_0 | RADEON_GPIO_EN_1));
++
+     if (*MonInfo) {
+ 	if ((*MonInfo)->rawData[0x14] & 0x80) {
+ 	    /* Note some laptops have a DVI output that uses internal TMDS,
+@@ -2284,6 +2287,7 @@ static Bool RADEONPreInitConfig(ScrnInfo
      case PCI_CHIP_RV370_5464:
          info->IsMobility = TRUE;
      case PCI_CHIP_RV370_5B60:
@@ -8,7 +18,7 @@
      case PCI_CHIP_RV370_5B64:
      case PCI_CHIP_RV370_5B65:
          info->ChipFamily = CHIP_FAMILY_RV380;
-@@ -7159,7 +7159,6 @@
+@@ -7159,7 +7163,6 @@ void RADEONAdjustFrame(int scrnIndex, in
  	RADEONDoAdjustFrame(pScrn, x, y, FALSE);
      }
  
