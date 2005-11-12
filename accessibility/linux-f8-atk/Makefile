@@ -9,6 +9,8 @@ PORTNAME=	atk
 PORTVERSION=	1.2.0
 PORTREVISION=	3
 CATEGORIES=	accessibility
+MASTER_SITES=	http://download.fedora.us/fedora/redhat/9/i386/RPMS.os/ \
+		ftp://fr2.rpmfind.net/linux/redhat-archive/9/en/os/i386/RedHat/RPMS/
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
