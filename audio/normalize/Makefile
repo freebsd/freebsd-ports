@@ -29,6 +29,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .if defined(WITH_XMMS)
 PLIST_SUB+=	XMMS=""
+PLIST_SUB+=	X11BASE="${X11BASE}"
 .else
 CONFIGURE_ARGS=	--disable-xmms
 PLIST_SUB+=	XMMS="@comment "

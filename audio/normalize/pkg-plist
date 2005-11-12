@@ -1,6 +1,7 @@
 bin/normalize
 bin/normalize-mp3
 bin/normalize-ogg
-%%XMMS%%lib/xmms/Effect/librva.so
 %%NLS%%share/locale/en_GB/LC_MESSAGES/normalize.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/normalize.mo
+@cwd %%X11BASE%%
+%%XMMS%%lib/xmms/Effect/librva.so
