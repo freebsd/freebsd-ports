@@ -26,7 +26,7 @@ DISTFILES=	andale32.exe:group1  arial32.exe:group1 arialb32.exe:group1 \
 		impact32.exe:group1  times32.exe:group1 trebuc32.exe:group1 \
 		verdan32.exe:group1 webdin32.exe:group1
 
-.if defined(HAVE_MSWINDOWS_LICENSE)
+.if defined(WITH_MSWINDOWS_LICENSE)
 DISTFILES+=	ielpkth.cab:group2
 .endif
 
@@ -91,7 +91,7 @@ post-patch:
 	${SED}	-e 's|%%FONTSDIR%%|${FONTSDIR}|g' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
 		${MSG_FILE} > ${PKGMESSAGE}
-.if defined(HAVE_MSWINDOWS_LICENSE)
+.if defined(WITH_MSWINDOWS_LICENSE)
 	${SORT} ${FILESDIR}/fonts.dir ${FILESDIR}/tahoma.dir > ${FONTS_FILE}
 .else
 	${CP} ${FILESDIR}/fonts.dir ${FONTS_FILE}
@@ -103,7 +103,7 @@ post-patch:
 # Pre-install
 #
 pre-install:
-.if defined(HAVE_MSWINDOWS_LICENSE)
+.if defined(WITH_MSWINDOWS_LICENSE)
 PLIST_SUB+=	EXTRAFONTS=""
 .else
 PLIST_SUB+=	EXTRAFONTS="@comment "
