@@ -1670,6 +1670,8 @@ interchange/src/tlink.pl
 interchange/src/vlink.c
 interchange/src/vlink.pl
 interchange/locale.error
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 %%SITE_PERL%%/Vend/SQL_Parser.pm
 %%SITE_PERL%%/Vend/UserDB.pm
 %%SITE_PERL%%/Vend/Glimpse.pm
@@ -1743,9 +1745,11 @@ interchange/locale.error
 %%SITE_PERL%%/Vend/Options/Old48.pm
 %%SITE_PERL%%/Vend/SOAP/Transport.pm
 %%SITE_PERL%%/Business/Fedex.pm
+%%SITE_PERL%%/Business/UPS.pm
 %%SITE_PERL%%/Tie/ShadowHash.pm
 %%SITE_PERL%%/auto/Vend/Tags/autosplit.ix
 %%SITE_PERL%%/auto/Vend/SOAP/autosplit.ix
+%%SITE_PERL%%/auto/Business/UPS/autosplit.ix
 %%SITE_PERL%%/relocate.pl
 %%SITE_PERL%%/install_lsb.pl
 %%SITE_PERL%%/hints.pl
@@ -1756,6 +1760,8 @@ interchange/locale.error
 @dirrm %%SITE_PERL%%/auto/Vend/Tags
 @dirrm %%SITE_PERL%%/auto/Vend/SOAP
 @dirrm %%SITE_PERL%%/auto/Vend
+@dirrm %%SITE_PERL%%/auto/Business/UPS
+@dirrm %%SITE_PERL%%/auto/Business
 @dirrm %%SITE_PERL%%/Tie
 @dirrm %%SITE_PERL%%/Vend/Accounting
 @dirrm %%SITE_PERL%%/Vend/SOAP
@@ -1763,7 +1769,8 @@ interchange/locale.error
 @dirrm %%SITE_PERL%%/Vend/Table
 @dirrm %%SITE_PERL%%/Vend/Payment
 @dirrm %%SITE_PERL%%/Vend/Ship
-@dirrm %%SITE_PERL%%/Vend/
+@dirrm %%SITE_PERL%%/Vend
+@dirrm %%SITE_PERL%%/Business
 @dirrm interchange/src/mod_perl2/Interchange
 @dirrm interchange/src/mod_perl2
 @dirrm interchange/src/mod_interchange
