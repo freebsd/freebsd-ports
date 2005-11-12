@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	xqf
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Find quake servers
+COMMENT=	A server browser for many popular 3D action games
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gnometarget intlhack
+USE_GNOME=	intlhack
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -31,10 +29,15 @@ MAN6=		xqf.6
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+OPTIONS=	GTK2 "GTK+ 2.0 support" on \
+		GEOIP "GeoIP support" on \
+		BZIP2 "bzip2 compression" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2
-PKGNAMESUFFIX=	-gtk2
 .else
 USE_GNOME+=	gdkpixbuf
 .endif
@@ -52,19 +55,10 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|: install-desktopDATA|:|g ; \
-		 s|$$(datadir)/pixmaps|$$(pkgdatadir)/pixmaps|g'
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/xqf.desktop \
-		${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/xqf_32x32.png \
-		${PREFIX}/share/gnome/pixmaps
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/xqfdocs.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
