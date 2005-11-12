@@ -22,6 +22,12 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+OPTIONS=	AA		"Enable AA support" on \
+		DV		"Enable reading/writing raw dv files" off \
+		QUICKTIME	"Enable quicktime support" off \
+		ZVBI		"Enable libzvbi support" off \
+		MMX		"Enable mmx support (only for i386)" off
+
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -58,7 +64,7 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	AA=""
 .endif
 
-.if defined(WITH_LIBZVBI)
+.if defined(WITH_ZVBI)
 LIB_DEPENDS+=	zvbi.8:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 .if ${OSVERSION} > 500000
@@ -71,7 +77,7 @@ CONFIGURE_ARGS+=--enable-zvbi=no
 PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
 .endif
 
-.if defined(WITH_LIBDV)
+.if defined(WITH_DV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
 PLIST_SUB+=	DV=
@@ -89,7 +95,7 @@ BROKEN=		MMX support only works on i386, and you are running ${ARCH}
 .endif
 .endif
 
-.if defined(WITH_LIBQTIME)
+.if defined(WITH_QUICKTIME)
 CONFIGURE_ARGS+=--enable-quicktime
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 PLIST_SUB+=	QT=
@@ -100,23 +106,12 @@ PLIST_SUB+=	QT="@comment "
 
 PLIST_SUB+=	X11PREFIX=${X11BASE}
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_LIBDV=yes    Enable reading/writing raw dv files"
-	@${ECHO} "	WITH_LIBQTIME=yes Enable quicktime support"
-	@${ECHO} "	WITH_LIBZVBI=yes  Enable libzvbi support"
-	@${ECHO} "	                  (You wont get station names)"
-	@${ECHO} "	WITH_MMX=yes      Enable mmx support"
-	@${ECHO} ""
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|-lquicktime|-L${LOCALBASE}/lib &|g' \
-		 ${WRKSRC}/configure
+		${WRKSRC}/configure
 
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
