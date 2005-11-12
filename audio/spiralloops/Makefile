@@ -8,7 +8,7 @@
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.pawfal.org/SpiralLoops/dload/
+MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
 DISTNAME=	SpiralLoops-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
