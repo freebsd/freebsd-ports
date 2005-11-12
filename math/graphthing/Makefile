@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
 LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
