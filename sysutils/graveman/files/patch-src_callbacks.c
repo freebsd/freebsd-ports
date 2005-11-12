@@ -1,23 +1,24 @@
---- src/callbacks.c.orig	Sat Feb 12 17:41:07 2005
-+++ src/callbacks.c	Mon Apr 18 11:13:00 2005
-@@ -392,6 +392,14 @@
+--- src/callbacks.c.orig	Mon May 30 23:53:06 2005
++++ src/callbacks.c	Sat Nov 12 18:15:45 2005
+@@ -416,6 +416,15 @@
  /* enlever des fichiers a graver */
  void gtk_data_removefiles(GtkWidget *Abtn, gpointer Adata)
  {
 +  GtkTreeModel *Ltreedata;
 +  GtkTreeSelection *Lselection;
-+  GList *Lfiles, *Lrefs, *Lnode;
++  GList *Lfiles;
++  GList *Lrefs;
++  GList *Lnode;
 +  gint Ltype;
 +  guint32 Lsizenbr = 0;
 +  GtkTreeIter Liter;
 +  gpointer Lproxy;
-+
-   GHashTable *Lhash = (GHashTable *)Adata;
-   GtkTreeView *Lliste = GTK_TREE_VIEW(g_hash_table_lookup(Lhash, "_current_list"));
- //  gchar *Lprefix = (!strcmp(glade_get_widget_name(Lliste), "LISTEDATA") ? "data" : "dvddata");
-@@ -405,15 +413,12 @@
+   Tgrave *Lg = (Tgrave *)Adata;
+   GtkTreeView *Lliste = GTK_TREE_VIEW(sc_grave_get_data(Lg, "_current_list"));
+   GtkProgressBar *Lcontenance;
+@@ -428,15 +437,12 @@
  #if 0  
-   GtkTreeIter *Literboot = g_hash_table_lookup(Lhash, "file_imageboot");
+   GtkTreeIter *Literboot = sc_grave_get_data(Lg, "file_imageboot");
  #endif
 -  GtkTreeModel *Ltreedata = gtk_tree_view_get_model(GTK_TREE_VIEW(Lliste));
 -  GtkTreeSelection *Lselection = gtk_tree_view_get_selection(GTK_TREE_VIEW(Lliste));
@@ -37,12 +38,11 @@
  
    for (Lnode = Lfiles; Lnode; Lnode = Lnode->next) {
      Lrefs = g_list_append(Lrefs, gtk_tree_row_reference_new_proxy(Lproxy, Ltreedata, Lnode->data));
-@@ -860,11 +865,12 @@
-   GHashTable *Lhash = (GHashTable *) Adata;
-   gboolean *Labort = (gboolean *)g_hash_table_lookup(Lhash, "gabort");
-   GtkWidget *Lwindow = GTK_WIDGET(g_hash_table_lookup(Lhash, "window_burn"));
-+  GtkWidget *Lconfirm;
+@@ -883,10 +889,11 @@
+   gboolean *Labort = (gboolean *)sc_grave_get_data(Lg, "gabort");
+   GtkWidget *Lwindow = GTK_WIDGET(sc_grave_get_widget(Lg, "window_burn"));
    gint Lret;
++  GtkWidget *Lconfirm;
  
    g_assert(Labort);
  
