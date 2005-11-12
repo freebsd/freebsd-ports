@@ -6707,6 +6707,7 @@ nethack34-nox11	ports/games/nethack34-nox11
 nethack34-qt	ports/games/nethack34-qt
 nethirc		ports/irc/nethirc
 netio		ports/benchmarks/netio
+netleak		ports/net-mgmt/netleak
 netmap		ports/net/netmap
 netmask		ports/net-mgmt/netmask
 netmond		ports/net-mgmt/netmond
