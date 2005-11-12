@@ -1,4 +1,3 @@
-bin/fcrondyn
 bin/fcronsighup
 bin/fcrontab
 etc/fcron.allow.dist
