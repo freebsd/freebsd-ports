@@ -8,6 +8,7 @@
 
 PORTNAME=	oinkmaster
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +34,9 @@ PORTDOCS=	README
 IGNORE=		needs at least perl 5.6.1
 .endif
 
+MAN1=		oinkmaster.1
+MANCOMPRESSED=	no
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
 		-e 's,"tPf","tf",' \
@@ -41,9 +45,10 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster.pl ${PREFIX}/bin/oinkmaster
 	${INSTALL_DATA} ${WRKSRC}/oinkmaster.conf ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
