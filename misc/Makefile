@@ -289,6 +289,7 @@
     SUBDIR += linux-opengroupware
     SUBDIR += localedata
     SUBDIR += logsurfer
+    SUBDIR += loop
     SUBDIR += lr
     SUBDIR += lv
     SUBDIR += magicpoint
