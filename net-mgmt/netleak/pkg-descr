@@ -1,0 +1,9 @@
+Network Leak Finder is a collection of small perlscripts that detects
+connectivity between network segments. It is mostly useful to detect "leaks" in
+large organizations that have private network segments physically separated
+from the Internet.
+
+WWW: http://netleak.sourceforge.net/
+
+- Vaida Bogdan
+vaida.bogdan@gmail.com
