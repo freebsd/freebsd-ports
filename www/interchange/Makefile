@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	interchange
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.2/tar/
 
@@ -15,7 +15,6 @@ COMMENT=	RedHat's database-enabled e-commerce server
 
 BUILD_DEPENDS=	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Business/UPS.pm:${PORTSDIR}/misc/p5-Business-UPS \
 		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	yes
@@ -68,6 +67,7 @@ MAN3=		Vend::UserDB.3 \
 		Vend::Payment::PSiGate.3 \
 		IniConf.3 \
 		Business::Fedex.3 \
+		Business::UPS.3 \
 		Vend::Payment::AuthorizeNet.3 \
 		Vend::Payment::EFSNet.3 \
 		Vend::Payment::BoA.3 \
