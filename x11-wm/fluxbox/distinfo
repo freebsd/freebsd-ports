@@ -1,6 +1,3 @@
 MD5 (fluxbox-0.1.14.tar.gz) = f097b97127461fa3f6f4af4048c75cfc
+SHA256 (fluxbox-0.1.14.tar.gz) = 4fefa4f5c848e3b36b4eeb8bc9a6dd1b8bd67a028db3d965cd647aac6e9f00fb
 SIZE (fluxbox-0.1.14.tar.gz) = 504047
-MD5 (remember-0.1.14-7.gz) = b947ac97404d000377cac7ff35a7979e
-SIZE (remember-0.1.14-7.gz) = 10054
-MD5 (winsnap-0.1.14.patch) = 519a70da183a23ed88bab2f95ee07505
-SIZE (winsnap-0.1.14.patch) = 8965

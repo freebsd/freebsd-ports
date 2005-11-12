@@ -12,11 +12,11 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-.if defined(WITH_REMEMBER)
-PATCH_SITES=		http://www.bugfactory.org/~gav/fluxbox/
-PATCHFILES=		remember-0.1.14-7.gz
-PATCH_DIST_STRIP=	-p1
-.endif
+#.if defined(WITH_REMEMBER)
+#PATCH_SITES=		http://www.bugfactory.org/~gav/fluxbox/
+#PATCHFILES=		remember-0.1.14-7.gz
+#PATCH_DIST_STRIP=	-p1
+#.endif
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
@@ -35,11 +35,11 @@ MAN1=		fluxbox.1
 CONFIGURE_ARGS+=	--enable-kde
 .endif
 
-.if defined(WITH_REMEMBER)
-USE_GMAKE=		yes
-WANT_AUTOMAKE_VER=	14
-CONFIGURE_ENV=		AUTOMAKE=automake14
-.endif
+#.if defined(WITH_REMEMBER)
+#USE_GMAKE=		yes
+#WANT_AUTOMAKE_VER=	14
+#CONFIGURE_ENV=		AUTOMAKE=automake14
+#.endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xinerama
@@ -47,15 +47,15 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-.undef WITH_WINSNAP
-.endif
-
-.if defined(WITH_WINSNAP)
-PATCH_SITES+=		http://www.raisdorf.net/files/FreeBSD/
-PATCHFILES+=		winsnap-0.1.14.patch
-PATCH_DIST_STRIP=	-p1
-.endif
+#.if ${OSVERSION} >= 500000
+#.undef WITH_WINSNAP
+#.endif
+#
+#.if defined(WITH_WINSNAP)
+#PATCH_SITES+=		http://www.raisdorf.net/files/FreeBSD/
+#PATCHFILES+=		winsnap-0.1.14.patch
+#PATCH_DIST_STRIP=	-p1
+#.endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
@@ -68,30 +68,30 @@ pre-everything::
 .if !defined(WITH_KDE)
 	@${ECHO_CMD} "WITH_KDE	- Enable KDE slit support"
 .endif
-.if !defined(WITH_REMEMBER)
-	@${ECHO_CMD} "WITH_REMEMBER	- Enable the unofficial remember patch"
-.endif
-.if !defined(WITH_WINSNAP)
-	@${ECHO_CMD} "WITH_WINSNAP	- Enable the unofficial window snapping patch"
-	@${ECHO_CMD} "            	  (does not work on -current)"
-.endif
+#.if !defined(WITH_REMEMBER)
+#	@${ECHO_CMD} "WITH_REMEMBER	- Enable the unofficial remember patch"
+#.endif
+#.if !defined(WITH_WINSNAP)
+#	@${ECHO_CMD} "WITH_WINSNAP	- Enable the unofficial window snapping patch"
+#	@${ECHO_CMD} "            	  (does not work on -current)"
+#.endif
 .if !defined(WITH_XINERAMA)
 	@${ECHO_CMD} "WITH_XINERAMA	- Enable Xinerama support"
 .endif
 	@${ECHO_CMD} ""
 
-post-install:
-.if defined(WITH_WINSNAP)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The window snapping patch from Shawn Singh requires some"
-	@${ECHO_CMD} "changes to your ~/.fluxbox/init file:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "    session.screen0.edgeSnapThreshold: 10"
-	@${ECHO_CMD} "    session.screen0.edgeResistThreshold: 10"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "The values can be changed to mimic the behavior of Enlightenment:"
-	@${ECHO_CMD} "snap: 3, resist: 15"
-	@${ECHO_CMD} ""
-.endif
+#post-install:
+#.if defined(WITH_WINSNAP)
+#	@${ECHO_CMD} ""
+#	@${ECHO_CMD} "The window snapping patch from Shawn Singh requires some"
+#	@${ECHO_CMD} "changes to your ~/.fluxbox/init file:"
+#	@${ECHO_CMD} ""
+#	@${ECHO_CMD} "    session.screen0.edgeSnapThreshold: 10"
+#	@${ECHO_CMD} "    session.screen0.edgeResistThreshold: 10"
+#	@${ECHO_CMD} ""
+#	@${ECHO_CMD} "The values can be changed to mimic the behavior of Enlightenment:"
+#	@${ECHO_CMD} "snap: 3, resist: 15"
+#	@${ECHO_CMD} ""
+#.endif
 
 .include <bsd.port.post.mk>
