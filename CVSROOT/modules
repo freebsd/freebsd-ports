@@ -5404,7 +5404,7 @@ libicq2000	ports/net-im/libicq2000
 libid3tag	ports/audio/libid3tag
 libidea		ports/security/libidea
 libident	ports/security/libident
-libidn		ports/devel/libidn
+libidn		ports/dns/libidn
 libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
@@ -8253,7 +8253,7 @@ p5-Net-IPv4Addr	ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-Ident	ports/net/p5-Net-Ident
 p5-Net-Jabber	ports/net-im/p5-Net-Jabber
-p5-Net-LibIDN	ports/devel/p5-Net-LibIDN
+p5-Net-LibIDN	ports/dns/p5-Net-LibIDN
 p5-Net-MSN	ports/net-im/p5-Net-MSN
 p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-NetSend	ports/net-im/p5-Net-NetSend
