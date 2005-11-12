@@ -524,6 +524,7 @@
     SUBDIR += strobe
     SUBDIR += stunnel
     SUBDIR += subweb
+    SUBDIR += sud
     SUBDIR += sudo
     SUBDIR += sudoscript
     SUBDIR += sudosh

@@ -1,0 +1,8 @@
+bin/suz
+etc/issue.suz
+etc/motd.suz
+@unexec if cmp -s %D/etc/sud.conf.sample %D/etc/sud.conf; then rm -f %D/etc/sud.conf; fi
+etc/sud.conf.sample
+@exec if [ ! -f %D/etc/sud.conf ] ; then cp -p %D/%F %B/sud.conf; fi
+sbin/ilogin
+sbin/sud
