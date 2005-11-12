@@ -95,8 +95,7 @@ CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
-#USE_SQLITE=	2
+USE_SQLITE=	2
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-sqlite
