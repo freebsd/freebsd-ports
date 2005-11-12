@@ -42,9 +42,32 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm
 
+USE_REINPLACE=	yes
+USE_PERL5=	yes
+ALL_TARGETS=	testdeps fixdeps
+
 WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
 RT_VERSION=	${PORTVERSION:C/\./-/g}
+RT_PATH?=	${PREFIX}/rt2
 DB_TYPE?=	mysql
+DB_DBA_PASSWORDD?=
+DB_HOST?=	localhost
+DB_RT_PASS=	rt_pass
+
+MAN3=		RT::Links.3 RT::Watchers.3 RT::Group.3 RT::Keyword.3 \
+		RT::Record.3 RT::ScripConditions.3 RT::Action::Generic.3 \
+		RT::Transaction.3 RT::Interface::Email.3 RT::Link.3 \
+		RT.3 RT::Watcher.3 RT::ObjectKeywords.3 RT::EasySearch.3 \
+		RT::ScripActions.3 RT::Scrip.3 RT::GroupMembers.3 \
+		RT::Action::SendPasswordEmail.3 RT::Transactions.3 \
+		RT::Scrips.3 RT::Action::SendEmail.3 RT::User.3 \
+		RT::ScripCondition.3 RT::Users.3 RT::Ticket.3 \
+		RT::ACE.3 RT::Queue.3 RT::Interface::CLI.3 RT::Tickets.3 \
+		RT::GroupMember.3 RT::Template.3 RT::Templates.3 \
+		RT::Queues.3 RT::Date.3 RT::CurrentUser.3 RT::ScripAction.3 \
+		RT::Keywords.3 RT::ObjectKeyword.3 RT::Attachment.3 \
+		RT::Groups.3 RT::KeywordSelect.3 RT::Condition::Generic.3 \
+		RT::Handle.3 RT::ACL.3 RT::Attachments.3
 
 .include <bsd.port.pre.mk>
 
@@ -59,61 +82,16 @@ DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server
 .endif
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_REINPLACE=	yes
-USE_PERL5=	yes
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAKE_ENV=	MAN3PREFIX=${MAN3PREFIX}
 
-RT_PATH?=	${PREFIX}/rt2
-DB_DBA_PASSWORDD?=
-DB_HOST?=	localhost
-DB_RT_PASS=	rt_pass
-
-MAN3=		RT::Links.3 \
-		RT::Watchers.3 \
-		RT::Group.3 \
-		RT::Keyword.3 \
-		RT::Record.3 \
-		RT::ScripConditions.3 \
-		RT::Action::Generic.3 \
-		RT::Transaction.3 \
-		RT::Interface::Email.3 \
-		RT::Link.3 \
-		RT.3 \
-		RT::Watcher.3 \
-		RT::ObjectKeywords.3 \
-		RT::EasySearch.3 \
-		RT::ScripActions.3 \
-		RT::Scrip.3 \
-		RT::GroupMembers.3 \
-		RT::Action::SendPasswordEmail.3 \
-		RT::Transactions.3 \
-		RT::Scrips.3 \
-		RT::Action::SendEmail.3 \
-		RT::User.3 \
-		RT::ScripCondition.3 \
-		RT::Users.3 \
-		RT::Ticket.3 \
-		RT::ACE.3 \
-		RT::Queue.3 \
-		RT::Interface::CLI.3 \
-		RT::Tickets.3 \
-		RT::GroupMember.3 \
-		RT::Template.3 \
-		RT::Templates.3 \
-		RT::Queues.3 \
-		RT::Date.3 \
-		RT::CurrentUser.3 \
-		RT::ScripAction.3 \
-		RT::Keywords.3 \
-		RT::ObjectKeyword.3 \
-		RT::Attachment.3 \
-		RT::Groups.3 \
-		RT::KeywordSelect.3 \
-		RT::Condition::Generic.3 \
-		RT::Handle.3 \
-		RT::ACL.3 \
-		RT::Attachments.3
+.if defined(INSTALL_NEW)
+INSTALL_TARGET=	dropdb install
+.else
+INSTALL_TARGET=	upgrade
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -133,26 +111,16 @@ post-patch:
 	${REINPLACE_CMD} 's,/usr/bin/perl,${PERL},' ${WRKSRC}/${_FILE}
 	${CHMOD} +x ${WRKSRC}/${_FILE}
 .endfor
-
-do-build:
 .for _NAME in RT_PATH DB_DBA_PASSWORD DB_HOST DB_RT_PASS DB_TYPE
 	@${REINPLACE_CMD} "s!%%${_NAME}%%!${${_NAME}}!g" ${WRKSRC}/Makefile
 .endfor
-	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile testdeps
-	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile fixdeps
 
-do-install:
+pre-install:
 	@${MKDIR} /var/log/rt2
-.if defined(INSTALL_NEW)
-	-@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile dropdb
-	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile install
-.else
-	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile upgrade
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/rt2/README
-	@${CHOWN} -R www /var/log/rt2
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/rt2/README
+	@${CHOWN} -R www /var/log/rt2
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

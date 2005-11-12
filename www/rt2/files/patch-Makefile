@@ -23,7 +23,7 @@
  RT_CONFIG_PATH		=	$(RT_ETC_PATH)
  RT_BIN_PATH		=	$(RT_PATH)/bin
 -RT_MAN_PATH		=	$(RT_PATH)/man
-+RT_MAN_PATH		=	/usr/local/man
++RT_MAN_PATH		=	$(MAN3PREFIX)/man
  MASON_HTML_PATH		=	$(RT_PATH)/WebRT/html
  
  
@@ -48,7 +48,7 @@
  # "/usr/local/mysql/bin/mysql", $DB_HOME should be "/usr/local/mysql"
  
 -DB_HOME			= /usr
-+DB_HOME			=	/usr/local
++DB_HOME			=	$(LOCALBASE)
  
  # Set DBA to the name of a unix account with the proper permissions and 
  # environment to run your commandline SQL tools
