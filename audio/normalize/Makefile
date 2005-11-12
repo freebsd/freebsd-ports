@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www1.cs.columbia.edu/~cvaill/normalize/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
