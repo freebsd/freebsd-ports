@@ -44,6 +44,11 @@ LDFLAGS=	-L${LOCALBASE}/lib
 BROKEN=		"Does not compile on sparc64 or ia64"
 .endif
 
+pre-build:
+.if exists(${LOCALBASE}/lib/libcln.so.3)
+BROKEN=		"Does not compile when older version is installed. Please pkg_delete old cln first"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/dvi
