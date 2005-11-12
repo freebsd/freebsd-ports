@@ -574,6 +574,7 @@
     SUBDIR += print-n-times
     SUBDIR += prosper
     SUBDIR += py-4suite
+    SUBDIR += py-4suite-xml
     SUBDIR += py-HyperText
     SUBDIR += py-asv
     SUBDIR += py-csv
