@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: dkfilter_in
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkfilter.in:
+#
+# dkfilter_in_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=dkfilter_in
+rcvar=`set_rcvar`
+
+# set defaults
+
+dkfilter_in_enable=${dkfilter_in_enable:-"NO"}
+dkfilter_in_flags=${dkfilter_in_flags:-"127.0.0.1:10025 127.0.0.1:10026"}
+dkfilter_in_pidfile=${dkfilter_in_pidfile:-"/var/run/dkfilter_in.pid"}
+dkfilter_in_user=${dkfilter_user:-"dkfilter"}
+
+start_cmd="dkfilter_in_start"
+stop_cmd="dkfilter_in_stop"
+
+dkfilter_in_start()
+{
+	if [ -f ${dkfilter_in_pidfile} ]; then
+		echo "${name} already running?"
+		exit 1
+	fi
+	touch ${dkfilter_in_pidfile}
+	chown ${dkfilter_in_user} ${dkfilter_in_pidfile}
+	su -m ${dkfilter_in_user} -c "daemon -p ${dkfilter_in_pidfile} \
+		%%PREFIX%%/bin/dkfilter.in ${dkfilter_in_flags}"
+	echo "Starting ${name}"
+}
+
+dkfilter_in_stop()
+{
+	if [ ! -f ${dkfilter_in_pidfile} ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	kill `cat ${dkfilter_in_pidfile}`
+	rm -f ${dkfilter_in_pidfile}
+	echo "Stopping ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"
