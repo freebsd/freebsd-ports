@@ -19,6 +19,8 @@
 %%FONTSDIR%%/georgiai.ttf
 %%FONTSDIR%%/georgiaz.ttf
 %%FONTSDIR%%/impact.ttf
+%%EXTRAFONTS%%%%FONTSDIR%%/tahoma.ttf
+%%EXTRAFONTS%%%%FONTSDIR%%/tahomabd.ttf
 %%FONTSDIR%%/times.ttf
 %%FONTSDIR%%/timesbd.ttf
 %%FONTSDIR%%/timesbi.ttf

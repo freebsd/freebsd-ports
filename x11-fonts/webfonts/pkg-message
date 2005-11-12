@@ -1,7 +1,7 @@
 IMPORTANT - READ CAREFULLY: You may not use these fonts if you do not agree to
 the terms of the Microsoft End-User License Agreement ("EULA").  You will find
-the EULA at %%FONTSDIR%%/LICENSE.  If you read and agree
-to the EULA, you can start using the fonts by following these insructions:
+the EULA at %%DOCSDIR%%/LICENSE.  If you read and agree
+to the EULA, you can start using the fonts by following these instructions:
 
 --- XFree86 4.x.x (using the freetype module)
 
