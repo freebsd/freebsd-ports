@@ -47,7 +47,6 @@ lib/TenDRA/env/Z-p
 lib/TenDRA/env/Z-p1
 lib/TenDRA/env/Z-p2
 lib/TenDRA/env/Z-p4
-lib/TenDRA/env/aes
 lib/TenDRA/env/alloca
 lib/TenDRA/env/ansi
 lib/TenDRA/env/bsd_extn
@@ -59,16 +58,12 @@ lib/TenDRA/env/common
 lib/TenDRA/env/compact
 lib/TenDRA/env/cose
 lib/TenDRA/env/default
-lib/TenDRA/env/default-build
-lib/TenDRA/env/default.extra
 lib/TenDRA/env/gcc
 lib/TenDRA/env/iso
 lib/TenDRA/env/longlong
 lib/TenDRA/env/makelib
-lib/TenDRA/env/motif_1_1
 lib/TenDRA/env/motif_1_2
 lib/TenDRA/env/motif_private
-lib/TenDRA/env/mse
 lib/TenDRA/env/pl_tdf
 lib/TenDRA/env/posix
 lib/TenDRA/env/posix1
@@ -403,6 +398,20 @@ lib/TenDRA/include/shared/unix95.api/siginfo_.h
 lib/TenDRA/include/shared/unix95.api/st_proto.h
 lib/TenDRA/include/shared/unix95.api/timeval.h
 lib/TenDRA/include/shared/unix95.api/useconds.h
+lib/TenDRA/include/shared/xpg3.api/caddr_t.h
+lib/TenDRA/include/shared/xpg3.api/enums.h
+lib/TenDRA/include/shared/xpg3.api/expg4.h
+lib/TenDRA/include/shared/xpg3.api/key_t.h
+lib/TenDRA/include/shared/xpg3.api/o_sync.h
+lib/TenDRA/include/shared/xpg3.api/putenv.h
+lib/TenDRA/include/shared/xpg3.api/rand48.h
+lib/TenDRA/include/shared/xpg3.api/s_isvtx.h
+lib/TenDRA/include/shared/xpg3.api/sem_prot.h
+lib/TenDRA/include/shared/xpg3.api/shm_prot.h
+lib/TenDRA/include/shared/xpg3.api/srch_pro.h
+lib/TenDRA/include/shared/xpg3.api/st_proto.h
+lib/TenDRA/include/shared/xpg3.api/u_plus.h
+lib/TenDRA/include/shared/xpg3.api/values.h
 lib/TenDRA/include/shared/xpg4.api/optopt.h
 lib/TenDRA/include/svid3.api/acl.h
 lib/TenDRA/include/svid3.api/assert.h
@@ -567,6 +576,45 @@ lib/TenDRA/include/unix95.api/varargs.h
 lib/TenDRA/include/unix95.api/wchar.h
 lib/TenDRA/include/unix95.api/wordexp.h
 lib/TenDRA/include/unix95.api/xti.h
+lib/TenDRA/include/xpg3.api/assert.h
+lib/TenDRA/include/xpg3.api/ctype.h
+lib/TenDRA/include/xpg3.api/dirent.h
+lib/TenDRA/include/xpg3.api/errno.h
+lib/TenDRA/include/xpg3.api/fcntl.h
+lib/TenDRA/include/xpg3.api/float.h
+lib/TenDRA/include/xpg3.api/ftw.h
+lib/TenDRA/include/xpg3.api/grp.h
+lib/TenDRA/include/xpg3.api/langinfo.h
+lib/TenDRA/include/xpg3.api/limits.h
+lib/TenDRA/include/xpg3.api/locale.h
+lib/TenDRA/include/xpg3.api/math.h
+lib/TenDRA/include/xpg3.api/nl_types.h
+lib/TenDRA/include/xpg3.api/pwd.h
+lib/TenDRA/include/xpg3.api/regexp.h
+lib/TenDRA/include/xpg3.api/search.h
+lib/TenDRA/include/xpg3.api/setjmp.h
+lib/TenDRA/include/xpg3.api/signal.h
+lib/TenDRA/include/xpg3.api/stdarg.h
+lib/TenDRA/include/xpg3.api/stddef.h
+lib/TenDRA/include/xpg3.api/stdio.h
+lib/TenDRA/include/xpg3.api/stdlib.h
+lib/TenDRA/include/xpg3.api/string.h
+lib/TenDRA/include/xpg3.api/sys/ipc.h
+lib/TenDRA/include/xpg3.api/sys/msg.h
+lib/TenDRA/include/xpg3.api/sys/sem.h
+lib/TenDRA/include/xpg3.api/sys/shm.h
+lib/TenDRA/include/xpg3.api/sys/stat.h
+lib/TenDRA/include/xpg3.api/sys/times.h
+lib/TenDRA/include/xpg3.api/sys/types.h
+lib/TenDRA/include/xpg3.api/sys/utsname.h
+lib/TenDRA/include/xpg3.api/sys/wait.h
+lib/TenDRA/include/xpg3.api/termios.h
+lib/TenDRA/include/xpg3.api/time.h
+lib/TenDRA/include/xpg3.api/ulimit.h
+lib/TenDRA/include/xpg3.api/unistd.h
+lib/TenDRA/include/xpg3.api/utime.h
+lib/TenDRA/include/xpg3.api/varargs.h
+lib/TenDRA/include/xpg3.api/xti.h
 lib/TenDRA/include/xpg4.api/assert.h
 lib/TenDRA/include/xpg4.api/cpio.h
 lib/TenDRA/include/xpg4.api/ctype.h
@@ -630,6 +678,7 @@ lib/TenDRA/lib/diag/posix1.tl
 lib/TenDRA/lib/diag/posix2.tl
 lib/TenDRA/lib/diag/svid3.tl
 lib/TenDRA/lib/diag/unix95.tl
+lib/TenDRA/lib/diag/xpg3.tl
 lib/TenDRA/lib/diag/xpg4.tl
 lib/TenDRA/lib/gcc.tl
 lib/TenDRA/lib/iso.tl
@@ -641,20 +690,7 @@ lib/TenDRA/lib/machines/include/sys/param.h
 lib/TenDRA/lib/machines/include/sys/shm.h
 lib/TenDRA/lib/machines/include/unistd.h
 lib/TenDRA/lib/machines/include/xti.h
-lib/TenDRA/lib/machines/startup/ansi.h
-lib/TenDRA/lib/machines/startup/bsd_extn.h
-lib/TenDRA/lib/machines/startup/cpp.h
-lib/TenDRA/lib/machines/startup/gcc.h
-lib/TenDRA/lib/machines/startup/iso.h
-lib/TenDRA/lib/machines/startup/iso99.h
-lib/TenDRA/lib/machines/startup/posix.h
-lib/TenDRA/lib/machines/startup/posix1.h
-lib/TenDRA/lib/machines/startup/posix2.h
-lib/TenDRA/lib/machines/startup/svid3.h
 lib/TenDRA/lib/machines/startup/system.h
-lib/TenDRA/lib/machines/startup/unix95.h
-lib/TenDRA/lib/machines/startup/xpg3.h
-lib/TenDRA/lib/machines/startup/xpg4.h
 lib/TenDRA/lib/posix.tl
 lib/TenDRA/lib/posix1.tl
 lib/TenDRA/lib/posix2.tl
@@ -667,7 +703,6 @@ lib/TenDRA/lib/startup/Literal/c99.pf
 lib/TenDRA/lib/startup/Literal/trad.pf
 lib/TenDRA/lib/startup/Modes/Xa
 lib/TenDRA/lib/startup/Modes/Xc
-lib/TenDRA/lib/startup/Modes/Xc99
 lib/TenDRA/lib/startup/Modes/Xp
 lib/TenDRA/lib/startup/Modes/Xs
 lib/TenDRA/lib/startup/Modes/Xsystem
@@ -675,6 +710,15 @@ lib/TenDRA/lib/startup/Modes/Xt
 lib/TenDRA/lib/startup/Modes/Xw
 lib/TenDRA/lib/startup/Modes/nepc
 lib/TenDRA/lib/startup/Modes/not_ansi
+lib/TenDRA/lib/startup/Modes.c99/Xa
+lib/TenDRA/lib/startup/Modes.c99/Xc
+lib/TenDRA/lib/startup/Modes.c99/Xp
+lib/TenDRA/lib/startup/Modes.c99/Xs
+lib/TenDRA/lib/startup/Modes.c99/Xsystem
+lib/TenDRA/lib/startup/Modes.c99/Xt
+lib/TenDRA/lib/startup/Modes.c99/Xw
+lib/TenDRA/lib/startup/Modes.c99/nepc
+lib/TenDRA/lib/startup/Modes.c99/not_ansi
 lib/TenDRA/lib/startup/Modes.cpp/Xa
 lib/TenDRA/lib/startup/Modes.cpp/Xc
 lib/TenDRA/lib/startup/Modes.cpp/Xp
@@ -691,6 +735,7 @@ lib/TenDRA/lib/sys/libtdf.a
 lib/TenDRA/lib/sys/libten.a
 lib/TenDRA/lib/target_tok.tl
 lib/TenDRA/lib/unix95.tl
+lib/TenDRA/lib/xpg3.tl
 lib/TenDRA/lib/xpg4.tl
 @dirrm lib/TenDRA/bin
 @dirrm lib/TenDRA/env
@@ -720,6 +765,7 @@ lib/TenDRA/lib/xpg4.tl
 @dirrm lib/TenDRA/include/shared/posix1.api
 @dirrm lib/TenDRA/include/shared/svid3.api
 @dirrm lib/TenDRA/include/shared/unix95.api
+@dirrm lib/TenDRA/include/shared/xpg3.api
 @dirrm lib/TenDRA/include/shared/xpg4.api
 @dirrm lib/TenDRA/include/shared
 @dirrm lib/TenDRA/include/svid3.api/rpc
@@ -729,6 +775,8 @@ lib/TenDRA/lib/xpg4.tl
 @dirrm lib/TenDRA/include/unix95.api/netinet
 @dirrm lib/TenDRA/include/unix95.api/sys
 @dirrm lib/TenDRA/include/unix95.api
+@dirrm lib/TenDRA/include/xpg3.api/sys
+@dirrm lib/TenDRA/include/xpg3.api
 @dirrm lib/TenDRA/include/xpg4.api/sys
 @dirrm lib/TenDRA/include/xpg4.api
 @dirrm lib/TenDRA/include
@@ -741,6 +789,7 @@ lib/TenDRA/lib/xpg4.tl
 @dirrm lib/TenDRA/lib/startup/Bounds.ansi
 @dirrm lib/TenDRA/lib/startup/Literal
 @dirrm lib/TenDRA/lib/startup/Modes
+@dirrm lib/TenDRA/lib/startup/Modes.c99
 @dirrm lib/TenDRA/lib/startup/Modes.cpp
 @dirrm lib/TenDRA/lib/startup/Promotion
 @dirrm lib/TenDRA/lib/startup
