@@ -89,3 +89,4 @@ X11			Support for X11
 X264			H.264/AVC (MPEG4 part 10) multimedia codec
 XINE			XINE multimedia support
 XVID			XVID multimedia mpeg4 codec support
+ZVBI			Adds support to access raw VBI capture devices
