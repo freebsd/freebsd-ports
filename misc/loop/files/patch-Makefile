@@ -1,0 +1,13 @@
+--- Makefile.orig	Wed Nov  2 01:23:17 2005
++++ Makefile	Wed Nov  2 01:18:17 2005
+@@ -1,7 +1,7 @@
+ 
+-CC = gcc
+-CFLAGS = -Wall -O
+-DESTDIR = /usr/local
++CC ?= gcc
++CFLAGS += -Wall
++DESTDIR = ${PREFIX}
+ 
+ loop:
+ 	${CC} ${CFLAGS} -o loop loop.c
