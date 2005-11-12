@@ -12,8 +12,7 @@ PORTVERSION=	3.0.6
 PORTREVISION=	2
 PORTEPOCH=	0
 CATEGORIES=	devel kde
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.uwyn.com/download/tinyq/
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A stripped down version of Qt 3 for use as a utility library
