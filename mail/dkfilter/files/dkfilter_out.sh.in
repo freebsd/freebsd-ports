@@ -1,0 +1,62 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: dkfilter_out
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkfilter.out:
+#
+# dkfilter_out_enable="YES"
+#
+# Before you enable dkfilter.out, you also need to make your domainkey to
+# set it to DNS and configurate dkfilter_flags.
+#
+
+. %%RC_SUBR%%
+
+name="dkfilter_out"
+rcvar=`set_rcvar`
+
+# set defaults
+
+dkfilter_out_enable=${dkfilter_out_enable:-"NO"}
+dkfilter_out_flags=${dkfilter_out_flags:-" --header \
+	--keyfile=%%PREFIX%%/etc/dkfilter/private.key \
+	--selector=selector1 --domain=example.org --method=nofws \
+	127.0.0.1:10027 127.0.0.1:10028"}
+dkfilter_out_pidfile=${dkfilter_out_pidfile:-"/var/run/dkfilter_out.pid"}
+dkfilter_out_user=${dkfilter_user:-"dkfilter"}
+
+start_cmd="dkfilter_out_start"
+stop_cmd="dkfilter_out_stop"
+
+dkfilter_out_start()
+{
+	if [ -f ${dkfilter_out_pidfile} ]; then
+		echo "${name} already running?"
+		exit 1
+	fi 
+	touch ${dkfilter_out_pidfile}
+	chown ${dkfilter_out_user} ${dkfilter_out_pidfile}
+	su -m ${dkfilter_out_user} -c "daemon -p ${dkfilter_out_pidfile} \
+		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}"
+	echo "Starting ${name}."
+}
+
+dkfilter_out_stop()
+{
+	if [ ! -f ${dkfilter_out_pidfile} ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	kill `cat ${dkfilter_out_pidfile}`
+	rm -f ${dkfilter_out_pidfile}
+	echo "Stopping ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

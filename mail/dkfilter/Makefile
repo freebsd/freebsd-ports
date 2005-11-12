@@ -7,6 +7,7 @@
 
 PORTNAME=	dkfilter
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkfilter/
 DISTNAME=	${PORTNAME}
@@ -23,6 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/securi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	dkfilter_in.sh dkfilter_out.sh
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
