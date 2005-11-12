@@ -29,7 +29,7 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 .include <bsd.port.pre.mk>
 
 .if !exists(/usr/src/sys)
-IGNORE=		Requires kernel source (/usr/src/sys) to build
+IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 
 .if ${OSVERSION} < 502000 || ${OSVERSION} >= 600000
