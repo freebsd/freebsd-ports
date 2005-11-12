@@ -36,6 +36,7 @@ NO_PO=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|prefix\=/usr/local|prefix\=${PREFIX}|g ; \
+		s|/usr/local|${LOCALBASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/po/Makefile
 	@if [ -n "${NO_PO}" ]; \
