@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Template-Plugin-MP3
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	www textproc audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT Plugin that wraps around the MP3::Info module
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Template::Plugin::MP3.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
