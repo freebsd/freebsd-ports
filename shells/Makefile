@@ -13,6 +13,7 @@
     SUBDIR += fd
     SUBDIR += flash
     SUBDIR += gscommander
+    SUBDIR += ibsh
     SUBDIR += ksh93
     SUBDIR += mudsh
     SUBDIR += nologinmsg

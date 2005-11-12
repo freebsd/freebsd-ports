@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Jun  3 15:47:32 2005
++++ Makefile	Sat Nov 12 13:47:53 2005
+@@ -30,12 +30,12 @@
+ 	${CC} -c delbadfiles.c
+ 
+ ibsh_install:
+-	cp ./ibsh /bin/
+-	mkdir /etc/ibsh
+-	mkdir /etc/ibsh/cmds
+-	mkdir /etc/ibsh/xtns
+-	cp ./globals.cmds /etc/ibsh/
+-	cp ./globals.xtns /etc/ibsh/
++	cp ./ibsh ${PREFIX}/bin/
++	mkdir ${PREFIX}/etc/ibsh
++	mkdir ${PREFIX}/etc/ibsh/cmds
++	mkdir ${PREFIX}/etc/ibsh/xtns
++	cp ./globals.cmds ${PREFIX}/etc/ibsh/
++	cp ./globals.xtns ${PREFIX}/etc/ibsh/
+ 
+ ibsh_uninstall:
+ 	rm -rf /etc/ibsh/globals.cmds
