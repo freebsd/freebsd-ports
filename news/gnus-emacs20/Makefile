@@ -7,7 +7,7 @@
 
 PORTNAME=	gnus
 PORTVERSION=	5.8.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news mail elisp
 MASTER_SITES=	ftp://ftp.monash.edu.au/pub/gnus/ \
 		ftp://ftp.kreonet.re.kr/pub/tools/emacs/gnus/ \
@@ -34,6 +34,12 @@ DOCS=		ChangeLog GNUS-NEWS README
 PLIST_SUB+=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
 		INFODIR=${INFODIR:S/${PREFIX}\///}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+INFO+=		gnus-4
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${PORTDOCDIR}
@@ -42,4 +48,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
