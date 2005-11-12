@@ -1,0 +1,9 @@
+Sud is a daemon to execute interactive and non-interactive 
+processes with special (and customizable) privileges in a 
+nosuid environment. It is based on a client/server model 
+and on the ability to pass file descriptors between processes.
+
+WWW: http://sourceforge.net/projects/sud/
+
+- bugghy
+bugghy@SAFe-mail.net
