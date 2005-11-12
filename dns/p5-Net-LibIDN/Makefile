@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.08
-CATEGORIES=	devel perl5
+CATEGORIES=	dns perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TH/THOR
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	domi@saargate.de
 COMMENT=	This module provides access to the libidn library
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include

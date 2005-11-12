@@ -49,6 +49,7 @@
     SUBDIR += ipcheck
     SUBDIR += ldapdns
     SUBDIR += libdjbdns
+    SUBDIR += libidn
     SUBDIR += maradns
     SUBDIR += mdnsd
     SUBDIR += mydns
@@ -67,6 +68,7 @@
     SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-DNS-ZoneFile-Fast
     SUBDIR += p5-Net-Domain-ExpireDate
+    SUBDIR += p5-Net-LibIDN
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-Stanford-DNSserver

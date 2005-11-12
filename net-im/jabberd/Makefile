@@ -15,7 +15,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	kirk@strauser.com
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 OPTIONS=	POSTGRESQL "Use PostgreSQL for storage and authentication" off \
 		MYSQL "Use MySQL for storage and authentication" off \

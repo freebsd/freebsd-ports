@@ -84,7 +84,7 @@ CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
 .if !defined(WITHOUT_LIBIDN) && (defined(WITH_LIBIDN) || exists(${LOCALBASE}/lib/libidn.so))
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libidn

@@ -36,7 +36,7 @@ USE_GETTEXT=	yes
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(WITH_MUTT_IDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 .endif
 
 .if defined(WITH_MUTT_HEADER_CACHE)

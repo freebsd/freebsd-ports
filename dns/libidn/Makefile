@@ -7,7 +7,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	0.5.20
-CATEGORIES=	devel
+CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}

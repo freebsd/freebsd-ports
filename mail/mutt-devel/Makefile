@@ -289,7 +289,7 @@ CFLAGS+=	-I${LOCALBASE}/include/db42
 WITH_MUTT_IDN=	yes
 .endif
 .if defined(WITH_MUTT_IDN)
-LIB_DEPENDS+=	idn:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 post-patch::
