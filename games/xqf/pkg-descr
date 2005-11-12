@@ -1,7 +1,5 @@
-XQF is a 3D action game (such as Quake, sequels and derivatives)
-server browser. It uses X and is written using the GIMP Tool Kit.
-
-XQF is a front-end to QStat, a program by Steve Jankowsk which is
-used to retrieve server info.
+XQF is a game server browser and launcher for Unix/X11 for many popular games
+such as the Quake series, Unreal Tournament series, Half-Life etc. XQF is a
+front-end to QStat, a program by Steve Jankowski and uses the GTK+ toolkit.
 
 WWW: http://www.linuxgames.com/xqf/

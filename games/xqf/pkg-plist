@@ -6,10 +6,14 @@ share/locale/ca/LC_MESSAGES/xqf.mo
 share/locale/da/LC_MESSAGES/xqf.mo
 share/locale/de/LC_MESSAGES/xqf.mo
 share/locale/es/LC_MESSAGES/xqf.mo
+share/locale/fi/LC_MESSAGES/xqf.mo
 share/locale/fr/LC_MESSAGES/xqf.mo
 share/locale/ru/LC_MESSAGES/xqf.mo
-share/gnome/applications/xqf.desktop
-share/gnome/pixmaps/xqf_32x32.png
+share/applications/xqf.desktop
+share/pixmaps/xqf_22x22.png
+share/pixmaps/xqf_32x32.png
+share/pixmaps/xqf_48x48.png
+share/pixmaps/xqf_48x48_2.png
 %%DATADIR%%/default/flags/ae.png
 %%DATADIR%%/default/flags/ag.png
 %%DATADIR%%/default/flags/ar.png
@@ -125,15 +129,11 @@ share/gnome/pixmaps/xqf_32x32.png
 %%DATADIR%%/default/trayicon/ready.ani
 %%DATADIR%%/default/trayicon/red_frame_4_4.png
 %%DATADIR%%/default/xqf_48x48.png
-%%DATADIR%%/pixmaps/xqf_22x22.png
-%%DATADIR%%/pixmaps/xqf_32x32.png
-%%DATADIR%%/pixmaps/xqf_48x48.png
-%%DATADIR%%/pixmaps/xqf_48x48_2.png
 %%DATADIR%%/qstat.cfg
 @dirrm lib/xqf
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/default/trayicon
 @dirrm %%DATADIR%%/default/flags
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/applications 2>/dev/null || true
