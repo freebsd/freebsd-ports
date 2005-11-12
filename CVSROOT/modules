@@ -3801,6 +3801,7 @@ i960-rtems-gdb	ports/devel/i960-rtems-gdb
 iSiloXC		ports/palm/iSiloXC
 ia-aspell	ports/textproc/ia-aspell
 ia64sim		ports/emulators/ia64sim
+ibsh		ports/shells/ibsh
 ical		ports/deskutils/ical
 ical2html	ports/converters/ical2html
 icb		ports/net-im/icb
