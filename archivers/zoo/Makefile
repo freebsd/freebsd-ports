@@ -7,6 +7,7 @@
 
 PORTNAME=	zoo
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	zoo-2.10pl1
