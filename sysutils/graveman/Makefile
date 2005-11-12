@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	graveman
-PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTVERSION=	0.3.12
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nongnu.org/${PORTNAME}/
+MASTER_SITES=	http://graveman.tuxfamily.org/sources/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-4
 
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd and sox
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
+LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -24,8 +25,11 @@ USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+MAN1=		graveman.1
+
 OPTIONS=	MP3 "MP3 Support" off \
-		OGG "OGG Support" off
+		OGG "OGG Support" off \
+		DVD "DVD+RW Support" off
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +46,10 @@ LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-ogg
+.endif
+
+.if defined(WITH_DVD)
+RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 
 .include <bsd.port.post.mk>
