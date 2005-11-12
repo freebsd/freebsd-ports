@@ -18,7 +18,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Must be downloaded directly from the manufacturer
 
 PLIST_FILES=	sbin/megarc
