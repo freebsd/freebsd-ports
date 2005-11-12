@@ -8,7 +8,7 @@
 
 PORTNAME=	fcron
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/
@@ -20,17 +20,17 @@ COMMENT=	A periodic command scheduler
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
-		--with-docdir=${DOCSDIR}
+		--with-docdir=${DOCSDIR} --with-fcrondyn=no
 
 WRKSRC=		${WRKDIR}/fcron-${PORTVERSION}
 
 USE_RC_SUBR=	fcron
 SUB_FILES=	pkg-message
 
-MAN1=		fcrondyn.1 fcrontab.1
+MAN1=		fcrontab.1
 MAN5=		fcron.conf.5 fcrontab.5
 MAN8=		fcron.8
 
@@ -43,7 +43,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcron ${PREFIX}/sbin
 	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrontab ${PREFIX}/bin
 	${INSTALL_PROGRAM} -g fcron -m 4110 ${WRKSRC}/fcronsighup ${PREFIX}/bin
-	${INSTALL_PROGRAM} -g fcron -o fcron -m 6111 ${WRKSRC}/fcrondyn ${PREFIX}/bin
 .for f in fcron.allow fcron.conf fcron.deny
 	${INSTALL_DATA} -g fcron -m 640 ${WRKSRC}/files/${f} ${PREFIX}/etc/${f}.dist
 .endfor
