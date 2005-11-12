@@ -247,6 +247,7 @@
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += keepalived
+    SUBDIR += kiax
     SUBDIR += kissd
     SUBDIR += kmldonkey
     SUBDIR += knemo
