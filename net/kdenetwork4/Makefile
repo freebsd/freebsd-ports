@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Network-related programs and modules for KDE
 
-LIB_DEPENDS=	idn:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
 		slp:${PORTSDIR}/net/openslp
 RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 

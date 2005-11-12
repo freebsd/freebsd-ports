@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=		${PORTNAME}
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A ping-like program that uses tcp and/or http
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

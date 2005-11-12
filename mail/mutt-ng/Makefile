@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=	--with-libesmtp=${LOCALBASE}
 .endif
 
 .if defined(WITH_LIBIDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-idn=${LOCALBASE}
 .endif
 

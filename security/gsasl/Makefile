@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	GNU SASL Library
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
