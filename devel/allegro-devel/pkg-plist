@@ -1,14 +1,14 @@
 bin/allegro-config
-%%FULL%%bin/colormap
-%%FULL%%bin/dat
-%%FULL%%bin/dat2c
-%%FULL%%bin/dat2s
-%%FULL%%bin/exedat
-%%FULL%%bin/grabber
-%%FULL%%bin/pack
-%%FULL%%bin/pat2dat
-%%FULL%%bin/rgbmap
-%%FULL%%bin/textconv
+%%DEV_UTILS%%bin/colormap
+%%DEV_UTILS%%bin/dat
+%%DEV_UTILS%%bin/dat2c
+%%DEV_UTILS%%bin/dat2s
+%%DEV_UTILS%%bin/exedat
+%%DEV_UTILS%%bin/grabber
+%%DEV_UTILS%%bin/pack
+%%DEV_UTILS%%bin/pat2dat
+%%DEV_UTILS%%bin/rgbmap
+%%DEV_UTILS%%bin/textconv
 include/allegro.h
 include/allegro/3d.h
 include/allegro/3dmaths.h
@@ -28,6 +28,7 @@ include/allegro/fix.h
 include/allegro/fixed.h
 include/allegro/fli.h
 include/allegro/fmaths.h
+include/allegro/font.h
 include/allegro/gfx.h
 include/allegro/graphics.h
 include/allegro/gui.h
@@ -47,6 +48,7 @@ include/allegro/internal/aintvga.h
 include/allegro/internal/alconfig.h
 include/allegro/joystick.h
 include/allegro/keyboard.h
+include/allegro/lzss.h
 include/allegro/matrix.h
 include/allegro/midi.h
 include/allegro/mouse.h
@@ -81,6 +83,7 @@ include/allegro/platform/alunix.h
 include/allegro/platform/alunixac.h
 include/allegro/platform/alwatcom.h
 include/allegro/platform/alwin.h
+include/allegro/platform/astdint.h
 include/allegro/platform/macdef.h
 include/allegro/quat.h
 include/allegro/rle.h
@@ -96,9 +99,16 @@ include/xalleg.h
 lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
 %%ESOUND%%lib/allegro/%%SHLIB_VER%%/alleg-esddigi.so
 lib/allegro/%%SHLIB_VER%%/modules.lst
-lib/liballeg_unsharable.a
+%%DEBUG_LIB%%lib/liballd.so
+%%DEBUG_LIB%%lib/liballd.so.%%SHLIB_VER%%
+%%DEBUG_LIB%%lib/liballd_unsharable.a
 lib/liballeg.so
 lib/liballeg.so.%%SHLIB_VER%%
+lib/liballeg_unsharable.a
+%%PROFILE_LIB%%lib/liballp.so
+%%PROFILE_LIB%%lib/liballp.so.%%SHLIB_VER%%
+%%PROFILE_LIB%%lib/liballp_unsharable.a
+share/aclocal/allegro.m4
 %%PORTDOCS%%%%DOCSDIR%%/abi.html
 %%PORTDOCS%%%%DOCSDIR%%/ahack.html
 %%PORTDOCS%%%%DOCSDIR%%/alleg000.html
@@ -147,13 +157,26 @@ lib/liballeg.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/alleg043.html
 %%PORTDOCS%%%%DOCSDIR%%/alleg044.html
 %%PORTDOCS%%%%DOCSDIR%%/alleg045.html
+%%PORTDOCS%%%%DOCSDIR%%/alleg046.html
+%%PORTDOCS%%%%DOCSDIR%%/alleg047.html
+%%PORTDOCS%%%%DOCSDIR%%/alleg048.html
+%%PORTDOCS%%%%DOCSDIR%%/alleg049.html
 %%PORTDOCS%%%%DOCSDIR%%/allegro.css
 %%PORTDOCS%%%%DOCSDIR%%/allegro.html
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/const.html
+%%PORTDOCS%%%%DOCSDIR%%/dat.html
+%%PORTDOCS%%%%DOCSDIR%%/dat2c.html
+%%PORTDOCS%%%%DOCSDIR%%/dat2s.html
+%%PORTDOCS%%%%DOCSDIR%%/datafile.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/grabber.html
 %%PORTDOCS%%%%DOCSDIR%%/help.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/makedoc.html
+%%PORTDOCS%%%%DOCSDIR%%/mistakes.html
 %%PORTDOCS%%%%DOCSDIR%%/packfile.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/thanks.html
@@ -163,8 +186,8 @@ lib/liballeg.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/music.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/allegro/%%SHLIB_VER%%
 @dirrm lib/allegro
 @dirrm include/allegro/platform

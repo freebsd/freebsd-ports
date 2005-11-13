@@ -1,5 +1,5 @@
---- makefile.in.orig	Sun Nov  9 19:43:06 2003
-+++ makefile.in	Thu Dec 11 22:25:58 2003
+--- makefile.in.orig	Sat Sep 10 17:17:51 2005
++++ makefile.in	Sat Nov 12 19:41:57 2005
 @@ -20,7 +20,7 @@
  mandir = @mandir@
  libdir = @libdir@
@@ -26,8 +26,8 @@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_INFO = @INSTALL_INFO@
  
-@@ -325,6 +326,11 @@
- full-build: lib modules programs docs
+@@ -354,6 +355,11 @@
+ endif
  
  lib: $(ALLEGRO_LIB_TARGETS)
 +	@for l in alleg alld allp; do \
@@ -38,29 +38,20 @@
  
  modules: $(ALLEGRO_MODULE_TARGETS)
  
-@@ -436,35 +442,37 @@
+@@ -465,9 +471,9 @@
  	  fi; \
  	done
  	@for l in alleg alld allp; do \
 -	  if test -f $(LIBDIR)/lib$${l}-$(shared_version).so; then \
 -	    echo Installing $(LIBDIR)/lib$${l}-$(shared_version).so to $(DESTDIR)$(libdir); \
--	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}-$(shared_version).so $(DESTDIR)$(libdir)/; \
+-	    $(INSTALL_PROGRAM) $(LIBDIR)/lib$${l}-$(shared_version).so $(DESTDIR)$(libdir)/; \
 +	  if test -f $(LIBDIR)/lib$${l}.so.$(shared_version); then \
 +	    echo Installing $(LIBDIR)/lib$${l}.so.$(shared_version) to $(libdir); \
 +	    $(INSTALL_PROGRAM) $(LIBDIR)/lib$${l}.so.$(shared_version) $(libdir)/; \
  	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
  	  fi; \
  	done
- 	@if test -n "$(ALLEGRO_MODULE_TARGETS)"; then \
- 	  $(mkinstalldirs) $(DESTDIR)$(moduledir); \
--	  for m in $(ALLEGRO_MODULE_TARGETS) modules.lst; do \
-+	  for m in $(ALLEGRO_MODULE_TARGETS); do \
- 	   echo Installing $$m to $(DESTDIR)$(moduledir); \
--	   $(INSTALL_DATA) $$m $(DESTDIR)$(moduledir)/; \
-+	   $(INSTALL_PROGRAM) $$m $(DESTDIR)$(moduledir)/; \
- 	  done; \
-+	  echo Installing modules.lst to $(DESTDIR)$(moduledir); \
-+	  $(INSTALL_DATA) modules.lst $(DESTDIR)$(moduledir)/; \
+@@ -481,20 +487,10 @@
  	fi
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@echo Installing allegro-config to $(DESTDIR)$(bindir)
@@ -76,21 +67,11 @@
 -		) ; \
 -	fi
 +	@$(INSTALL_SCRIPT) allegro-config $(DESTDIR)$(bindir)
-+#	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
-+#		(cat /etc/ld.so.conf | grep $(libdir) >/dev/null || \
-+#		 test $(libdir) = /lib || test $(libdir) = /usr/lib) \
-+#		&& ($(LDCONFIG) $(libdir) || true) || (\
-+#			echo "" ; \
-+#			echo "Warning: shared library destination $(libdir) is not in ldd search path." ; \
-+#			echo "Unless you add it to /etc/ld.so.conf, you must set LD_LIBRARY_PATH to include"; \
-+#			echo "$(libdir) each time you want to run an Allegro program." ; \
-+#		) ; \
-+#	fi
  	@for l in alleg alld allp; do \
 -	  if test -f $(DESTDIR)$(libdir)/lib$${l}-$(shared_version).so -a \! -h $(DESTDIR)$(libdir)/lib$${l}.so.${shared_major_minor}; then \
 -	    (cd $(DESTDIR)$(libdir); ln -s lib$${l}-$(shared_version).so lib$${l}.so.${shared_major_minor}); \
-+	  if test -f $(libdir)/lib$${l}.so.$(shared_version) -a \! -L $(libdir)/lib$${l}.so; then \
-+	    (cd $(libdir); ln -s lib$${l}.so.$(shared_version) lib$${l}.so); \
++	  if test -f $(DESTDIR)$(libdir)/lib$${l}.so.$(shared_version) -a \! -h $(DESTDIR)$(libdir)/lib$${l}.so; then \
++	    (cd $(DESTDIR)$(libdir); ln -s lib$${l}.so.$(shared_version) lib$${l}.so); \
  	  fi; \
  	done
- 
+ 	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/aclocal
