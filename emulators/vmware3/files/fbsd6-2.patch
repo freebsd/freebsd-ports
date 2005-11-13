@@ -1,0 +1,36 @@
+--- vmmon-only/freebsd/hostif.c.orig	Sun Nov 13 04:02:43 2005
++++ vmmon-only/freebsd/hostif.c	Sun Nov 13 04:04:38 2005
+@@ -319,7 +319,7 @@
+ 
+ 	if (!(val & mask)) { 
+ 		val = val | mask;
+-		outb(val,0xA1);
++		outbv(val,0xA1);
+ 	}
+ }
+ 
+@@ -943,7 +943,6 @@
+ #if defined(SMP)
+ #if __FreeBSD_version >= 501113
+ /* XXX This is temporary till SMP issues are solved out */
+-#warning XXX SMP support is BROKEN and module will not load.
+ 	return 0; 
+ #else
+   return cpu_apic_address;
+@@ -977,7 +976,6 @@
+ #if defined(SMP)
+ #if __FreeBSD_version >= 501113
+ /* XXX This is temporary till SMP issues are solved out */
+-#warning XXX SMP support is BROKEN and module will not load.
+ 	return 0; 
+ #else
+ 	return io_apic_address[0]; /* XXX How about another APIC's */
+@@ -1075,7 +1073,7 @@
+ 	rc = vm_fault_quick(addr, VM_PROT_READ|VM_PROT_WRITE);
+ 	if (rc<0) { /* page don't present in map */
+ 		Warning("KernelAddr_Get!!! Addr %p not present\n", addr);
+-		return NULL;
++		return 0;
+ 	}
+ 	paddr = vtophys(addr);
+ #if __FreeBSD_version >= 500038

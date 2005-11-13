@@ -129,6 +129,10 @@ post-patch:
 .if ${OSVERSION} < 500000
 	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
 .endif
+.if ${OSVERSION} > 600000
+	${CAT} ${FILESDIR}/fbsd6-1.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/fbsd6-2.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
