@@ -1,0 +1,9 @@
+
+*******************************************************************
+
+ Enable amavisd-milter in /etc/rc.conf with the following line:
+
+	amavisd_milter_enable="YES"
+
+*******************************************************************
+

@@ -1,0 +1,7 @@
+amavisd-milter is a sendmail milter for amavisd-new version 2.2.0 and above
+which use the new AM.PDP protocol. Full amavisd-new functionality is
+available, including adding spam and virus information header fields,
+modifying Subject, adding address extensions and removing certain recipients
+from delivery while delivering the same message to the rest.
+
+WWW: http://sourceforge.net/projects/amavisd-milter/ 
