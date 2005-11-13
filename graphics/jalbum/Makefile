@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	5.2
+PORTVERSION=	6.0
 CATEGORIES=	graphics java
-MASTER_SITES=	ftp://ftp.i-scream.org/pub/jalbum.net/download/ \
-		http://www.i-scream.org/pub/jalbum.net/download/
-DISTNAME=	JAlbum-${PORTVERSION}
+MASTER_SITES=	http://jalbum.net/download/
+DISTNAME=	JAlbum${PORTVERSION}
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Web photo album generator
@@ -23,7 +22,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
