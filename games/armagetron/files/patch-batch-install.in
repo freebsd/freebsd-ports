@@ -1,0 +1,36 @@
+--- batch/install.in.orig	Sat Feb 19 17:54:22 2005
++++ batch/install.in	Sun Nov 13 01:26:26 2005
+@@ -8,7 +8,7 @@
+ 
+ #find old configuration
+ if test @enable_etc@ = yes ; then
+-    CONFIG=@rpmroot@/etc/@prognamebase@
++    CONFIG=@rpmroot@@prefix@/etc/@prognamebase@
+ else
+     CONFIG=$INSTALL/config
+ fi
+@@ -114,10 +114,6 @@
+     cp $INSTALL/config/* $CONFIG
+ fi
+ 
+-rm -rf $CONFIG_NEW
+-mkdir $CONFIG_NEW
+-cp $CONFIG/* $CONFIG_NEW
+-
+ if test "$UPDATE" = "yes" && test -d $CONFIG_ORIG; then
+     echo "Integrating user changes..." #"from $CONFIG_USER to $CONFIG_ORIG and $CONFIG..."
+ 	test -r $CONFIG_USER || mkdir $CONFIG_USER
+@@ -140,13 +136,6 @@
+     done
+     cd $PWD_OLD
+ fi
+-
+-rm -rf $CONFIG_ORIG
+-rm -rf $NEW_CONFIG_ORIG
+-mv $CONFIG_NEW $NEW_CONFIG_ORIG
+-chmod 755 $NEW_CONFIG_ORIG
+-chmod 400 $NEW_CONFIG_ORIG/*
+-echo -e "Don't change anything in this directory; it will be needed exactly as it is now\nwhen you upgrate to a new version." >> $NEW_CONFIG_ORIG/README
+ 
+ #delete obsolete configuration
+ if test @enable_etc@ = yes ; then

@@ -38,6 +38,7 @@
     SUBDIR += antipolix
     SUBDIR += aop
     SUBDIR += apoolGL
+    SUBDIR += armagetron
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += atitd

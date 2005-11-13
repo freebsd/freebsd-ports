@@ -1,0 +1,79 @@
+bin/armagetronad
+bin/armagetronad-stat
+etc/armagetronad/aiplayers.cfg
+etc/armagetronad/default.cfg
+etc/armagetronad/master.srv
+etc/armagetronad/rc.config
+etc/armagetronad/settings.cfg
+etc/armagetronad/settings_dedicated.cfg
+@dirrm etc/armagetronad
+%%DATADIR%%/COPYING.txt
+%%DATADIR%%/arenas/basic.aar
+%%DATADIR%%/bin/armagetronad
+%%DATADIR%%/bin/armagetronad-stat
+%%DATADIR%%/bin/pushscores
+%%DATADIR%%/bin/rcd_config
+%%DATADIR%%/bin/rcd_master
+%%DATADIR%%/bin/rcd_server
+%%DATADIR%%/bin/rcd_startstop
+%%DATADIR%%/bin/uninstall
+%%DATADIR%%/doc/COPYING.txt
+%%DATADIR%%/doc/artr.cfg
+%%DATADIR%%/doc/bugs.html
+%%DATADIR%%/doc/changelog.html
+%%DATADIR%%/doc/commands.html
+%%DATADIR%%/doc/commands.txt
+%%DATADIR%%/doc/compile.html
+%%DATADIR%%/doc/config.html
+%%DATADIR%%/doc/faq.html
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/install_linux.html
+%%DATADIR%%/doc/install_macosx.html
+%%DATADIR%%/doc/install_windows.html
+%%DATADIR%%/doc/net/index.html
+%%DATADIR%%/doc/net/lower.html
+%%DATADIR%%/doc/net/middle.html
+%%DATADIR%%/doc/net/upper.html
+%%DATADIR%%/doc/network.html
+%%DATADIR%%/doc/readme_linux.html
+%%DATADIR%%/doc/readme_macosx.html
+%%DATADIR%%/doc/readme_windows.html
+%%DATADIR%%/doc/todo.html
+%%DATADIR%%/doc/versions.html
+%%DATADIR%%/language/.tag
+%%DATADIR%%/language/deutsch.txt
+%%DATADIR%%/language/english.txt
+%%DATADIR%%/language/languages.txt
+%%DATADIR%%/language/new.txt
+%%DATADIR%%/models/cycle_body.mod
+%%DATADIR%%/models/cycle_front.mod
+%%DATADIR%%/models/cycle_rear.mod
+%%DATADIR%%/sound/cyclrun.wav
+%%DATADIR%%/sound/expl.wav
+%%DATADIR%%/textures/KGN_logo.png
+%%DATADIR%%/textures/cycle_body.png
+%%DATADIR%%/textures/cycle_wheel.png
+%%DATADIR%%/textures/dir_wall.png
+%%DATADIR%%/textures/floor.png
+%%DATADIR%%/textures/floor_a.png
+%%DATADIR%%/textures/floor_b.png
+%%DATADIR%%/textures/font.png
+%%DATADIR%%/textures/font_extra.png
+%%DATADIR%%/textures/font_s.png
+%%DATADIR%%/textures/icon.png
+%%DATADIR%%/textures/rim_wall.png
+%%DATADIR%%/textures/shadow.png
+%%DATADIR%%/textures/sky.png
+%%DATADIR%%/textures/title.jpg
+%%DATADIR%%/textures/wrap.png
+@dirrm %%DATADIR%%/arenas
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/doc/net
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/language
+@dirrm %%DATADIR%%/log
+@dirrm %%DATADIR%%/models
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%
