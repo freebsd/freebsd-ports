@@ -7,6 +7,7 @@
 
 PORTNAME=		o2em
 PORTVERSION=		1.17
+PORTREVISION=		1
 CATEGORIES=		emulators games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/o2em/:S/$/:1/} \
 			http://o2em.sourceforge.net/files/:2
@@ -16,7 +17,7 @@ DISTFILES=		o2em117src.zip:1 \
 MAINTAINER=		techgunter@yahoo.com
 COMMENT=		An Odyssey2 / Videopac console emulator
 
-LIB_DEPENDS=		alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=		alleg.42:${PORTSDIR}/devel/allegro
 
 WRKSRC=			${WRKDIR}/o2em117src
 MAKEFILE=		Makefile.freebsd

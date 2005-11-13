@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SDL_CONFIG}:${PORTSDIR}/devel/sdl12
 .else
 BROKEN=		"support with Allegro is (temporarily) broken as of version 0.3.1"
 BUILD_DEPENDS=	${ALLEGRO_CONFIG}:${PORTSDIR}/devel/allegro
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 .endif
 
 USE_SDL=	image mixer sdl

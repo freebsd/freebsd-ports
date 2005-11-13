@@ -7,7 +7,7 @@
 
 PORTNAME=	fargoal
 PORTVERSION=	20030731b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squidfighter
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of classic roguelike game "Sword of Fargoal"
 
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 WRKSRC=		${WRKDIR}/fargoal/src
 USE_X_PREFIX=	yes
