@@ -18,6 +18,7 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
+# I will remove WITH_PLUGINS knob.
 .if		defined(WITH_PLUGINS)
 RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 RUN_DEPENDS+=	${X11BASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
@@ -28,7 +29,7 @@ USE_MOTIF=	yes
 .endif
 
 ONLY_FOR_ARCHS=	i386
-MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}"
+MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR} INSTALL_DATA="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 CONFLICTS=	flashpluginwrapper-*
 USE_XLIB=	yes
@@ -91,18 +92,18 @@ post-build:
 .endif
 
 pre-install:
-	@${MKDIR} ${X11BASE}/lib/browser_plugins
+	@${MKDIR} ${X11BASE}/lib/browser_linux_plugins
 .if		defined(WITH_PLUGINS)
 	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
-		${X11BASE}/lib/browser_plugins/
+		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
-		${X11BASE}/lib/browser_plugins/
+		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/libflashplayer.so \
-		${X11BASE}/lib/browser_plugins/
+		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.so \
-		${X11BASE}/lib/browser_plugins/
+		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-mozilla/plugins/nphelix.xpt \
-		${X11BASE}/lib/browser_plugins/
+		${X11BASE}/lib/browser_linux_plugins/
 .endif
 
 post-install:
