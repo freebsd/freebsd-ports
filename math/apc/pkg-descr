@@ -1,58 +1,17 @@
         the Auto Payment Calculator V1.0 Release
 	Copyright (C) 1997  Eric A. Griff
-	
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation; either version 2 or (at your option)
-	any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-
-	*This program makes use of the xforms-0.86 library, which is
-    Copright (C) 1996-1997 by T.C. Zhao and Mark Overmars.
-
-        *The GNU Public License version 2 may be found in the file
-    COPYING that was origionally included in this distribution
-
-      For any, and all comment on the Auto Payment Calculator, I can be
-    Contacted by email at eagriff@global2000.net, or snail mail:
-
-
-			Eric A. Griff
-			RD#1 Box 372
-			Oneida, NY 13421
-			USA
-
-      And by voice at (315) 495-2385.
-
-
-  Auto Payment Calculator is a simple, xforms based, application for 
+Auto Payment Calculator is a simple, xforms based, application for 
 use under the X-windows system, that calculates auto loan payments.
-  As it is free software, it comes with NO WARRANTIES of any kind. 
-  
-  It is pretty straight forward. You enter the Principal (Amount),
+
+It is pretty straight forward. You enter the Principal (Amount),
 Term (in months), and Rate, and then with either [RETURN] 
 (or [enter] or whatever your keyboard equivelent is),  (ALT-C), or 
 clicking the calculate button; you will have the payment in months,
 as well as number of weeks, and weekly payment.
 
-  You may also [TAB] through the Amount, Term, and Rate, as well as
+You may also [TAB] through the Amount, Term, and Rate, as well as
 hold down ALT and press the character in its Name that is underlined
 to go do that function. As long as all three are filled in, you may
 hit [ENTER] to Calculate right there. This makes it easy to cycle
 quickly through numerous terms, amounts, and rates.
-
-  Should there be any comment on this software desireing future
-enhancements, they will likely occur. Otherwise, It will likely 
-stay as it is.. It now belongs to the world for use, and is at 
-their mercy :)
-
-Eric A. Griff
-October 13, 1997

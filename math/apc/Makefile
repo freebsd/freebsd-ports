@@ -8,14 +8,11 @@
 PORTNAME=	apc
 PORTVERSION=	1.0
 CATEGORIES=	math
-MASTER_SITES= 	#
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xforms based Auto Payment Calculator
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-09
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
