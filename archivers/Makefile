@@ -41,7 +41,7 @@
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += libunrar
-    SUBDIR += linux-linunace
+    SUBDIR += linux-unace
     SUBDIR += lzma
     SUBDIR += lzo
     SUBDIR += lzo2
