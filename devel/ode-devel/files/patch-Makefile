@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jun  9 16:12:12 2004
-+++ Makefile	Wed Jun  9 16:13:39 2004
-@@ -329,13 +329,13 @@
+--- Makefile	Sun Nov  6 22:34:29 2005
++++ Makefile	Sun Nov  6 22:37:04 2005
+@@ -332,13 +332,13 @@
  	-$(DEL_CMD) OPCODE/*.obj OPCODE/*.o OPCODE/Ice/*.obj OPCODE/Ice/*.o
  
  %$(OBJ): %.c
@@ -17,7 +17,7 @@
  
  
  # windows specific rules
-@@ -357,7 +357,7 @@
+@@ -360,7 +360,7 @@
  
  # unix-gcc specific dependency making
  

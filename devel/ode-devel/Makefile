@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.5
-PORTREVISION=	1
-PORTEPOCH=	1
+DISTVERSION=	${ODEVER}-051009
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	opende
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://opende.sourceforge.net/snapshots/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/${ODEVER}-//}
 
-MAINTAINER=	dyeske@yahoo.com
-COMMENT=	Articulated rigid body dynamics library
+MAINTAINER=	acardenas@bsd.org.pe
+COMMENT=	Articulated rigid body dynamics library (devel)
+
+ODEVER=		0.5
+
+CONFLICTS=	ode-[0-9].*
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
@@ -26,28 +28,16 @@ OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|malloc.h|stdlib.h|g' \
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/configurator.c
 
-	@${REINPLACE_CMD} -e \
-		's|g++|${CXX}|; \
-		s|-Wall||g; \
-		s|-L/usr/X11/lib|-lXext|; \
-		s|-L/usr/lib/X11R6||; \
-		s|-L/usr/lib/X11||; \
-		s|-L/usr/X11R6/lib|-L${X11BASE}/lib|; \
-		s|-fno-rtti||; \
-		s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|-Wall||g; s|-L/usr/X11/lib|-lXext|; \
+		s|-L/usr/lib/X11R6||; s|-L/usr/lib/X11||; s|-L/usr/X11R6/lib|-L${X11BASE}/lib|; \
+		s|-fno-rtti||; s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
 		${WRKSRC}/config/makefile.unix-gcc
 .if !defined(WITHOUT_OPCODE)
-	@${REINPLACE_CMD} -e \
-		's/^#OPCODE_DIRECTORY/OPCODE_DIRECTORY/' \
+	@${REINPLACE_CMD} -e 's/^#OPCODE_DIRECTORY/OPCODE_DIRECTORY/' \
 		${WRKSRC}/config/user-settings
 .endif
 

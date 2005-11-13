@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Articulated rigid body dynamics library
 
+CONFLICTS=	ode-devel-[0-9].*
+
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes

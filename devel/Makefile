@@ -634,6 +634,7 @@
     SUBDIR += ocaml-ulex
     SUBDIR += ocamlweb
     SUBDIR += ode
+    SUBDIR += ode-devel
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += oniguruma
