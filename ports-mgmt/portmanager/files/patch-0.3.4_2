@@ -1,0 +1,77 @@
+diff -ruN ../0.3.4_1/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.4_1/libMGPM/src/MGPMrController.c	Sat Nov 12 15:33:52 2005
++++ ./libMGPM/src/MGPMrController.c	Sat Nov 12 18:57:48 2005
+@@ -428,6 +428,24 @@
+ 		 */
+ 		if( property->resume == 0 ) /* skip this if --resume  */
+ 		{
++			if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
++			{
++				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
++				free( command );
++				free( oldPortDir );
++				free( oldPortName );
++				free( xtermTitle );
++				if( property->log )
++				{
++					strcpy( command, "echo \" end of log \" " );
++					strcat( command, " >> /var/log/portmanager.log" );
++					system( command );
++					strcpy( command, "date >> /var/log/portmanager.log" );
++					system( command );
++				}
++				return( 1 );
++			}
++
+ 			if( ( errorCode	= MGPMrSinglePortCreateStatusDb( property, path ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrSinglePortCreateStatusDb", errorCode );
+diff -ruN ../0.3.4_1/portmanager/portmanager.1 ./portmanager/portmanager.1
+--- ../0.3.4_1/portmanager/portmanager.1	Sat Nov 12 15:33:52 2005
++++ ./portmanager/portmanager.1	Sun Nov 13 08:08:10 2005
+@@ -198,6 +198,33 @@
+  #START\&|/mail/postfix /usr/local/sbin/postfix start\&|
+ .sp
+ .\"=======================================================================
++.Sh KNOBS
++.sp
++Portmanager may be built in various configurations by setting certain
++\&"knobs\&" on or off.
++.sp
++WITH_DEBUG 
++.sp
++ a)  set with either make config from sysutils/portmanager or
++by adding \fBsysutils/portmanager|WITH_DEBUG=1|\fR to pm-020.conf
++.sp
++ b)  effects: when portmanager is built all warnings are enabled
++and is built with -ggdb option so symbols may be seen with gdb debugger.
++.sp
++WITH_BUILD_DEPENDS_ARE_LEAVES
++.sp
++ a) portmanager normally tries to keep ports that are only build dependencies
++for other ports installed and current, some people have expressed a dislike
++of tracking build dependencies this close. By setting 
++WITH_BUILD_DEPENDS_ARE_LEAVES=1 in pm-020.conf or through make config, build
++dependencies that are missing won't be tracked and -sl -slid will list these
++type of ports as leaves.
++.sp
++ b) ports/java, ports in this category are allowed to build even if build
++dependencies are missing in normal mode, all though in normal mode build
++dependencies will still get identified as missing.
++.sp
++.\"=======================================================================
+ .Sh DIAGNOSTICS
+ Detail of how portmanager upgrade cycle works:
+ .sp
+Binary files ../0.3.4_1/portmanager-0.3.5.tar.gz and ./portmanager-0.3.5.tar.gz differ
+diff -ruN ../0.3.4_1/programmer-notes.txt ./programmer-notes.txt
+--- ../0.3.4_1/programmer-notes.txt	Sat Nov 12 15:33:53 2005
++++ ./programmer-notes.txt	Sun Nov 13 03:05:41 2005
+@@ -2,6 +2,7 @@
+ 
+ TODO list
+ 
++	PICK up all paths through make -V's if possible
+ 	add pkgtools-to-portmanager.rb to tarball
+ 	move MGPMrGetPortName from MGPMrCreateAllUpdateStatusDb.c next new tarball to its own file
+ 	move database files to /var/db/portmanager
