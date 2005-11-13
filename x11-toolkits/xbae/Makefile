@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbae
 DISTNAME=	Xbae-${PORTVERSION}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
 USE_LIBTOOL_VER=13

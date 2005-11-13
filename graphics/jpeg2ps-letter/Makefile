@@ -12,7 +12,7 @@ CATEGORIES=	graphics converters
 MASTER_SITES=	http://www.pdflib.com/products/more/jpeg2ps/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Converter for JPEG compressed images to PostScript Level 2
 
 PAPERSIZE?=	letter

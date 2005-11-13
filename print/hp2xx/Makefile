@@ -11,7 +11,7 @@ CATEGORIES=	print x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A HPGL to vector- and raster formats converter and previewer for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
