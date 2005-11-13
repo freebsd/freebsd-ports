@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/te.dat
+lib/aspell-%%VER%%/u-telu.cmap
+lib/aspell-%%VER%%/u-telu.cset
+share/aspell/te.multi
+share/aspell/te.rws
+share/aspell/telugu.alias

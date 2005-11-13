@@ -7,6 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.60.4
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -74,8 +75,8 @@ CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
 AVAIL_DICT=	af am az be bg bn br ca cs csb cy da de de-alt el en eo es et fa fi fo	\
 		fr ga gd gl gv he hi hil hr hsb hu ia id is it la lt lv mi mk mn mr ms	\
-		mt nb nds nl nn ny or pa pl pt qu ro ru rw sc sk sl sv sw ta tet tl tn	\
-		tr uk uz vi wa yi zu
+		mt nb nds nl nn ny or pa pl pt qu ro ru rw sc sk sl sr sv sw ta te tet	\
+		tl tn tr uk uz vi wa yi zu
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -168,6 +169,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Russian                      ASPELL_RU=yes         *'
 	@${ECHO_MSG} '*  - Sardinian                    ASPELL_SC=yes         *'
 	@${ECHO_MSG} '*  - Scottish Gaelic              ASPELL_GD=yes         *'
+	@${ECHO_MSG} '*  - Serbian                      ASPELL_SR=yes         *'
 	@${ECHO_MSG} '*  - Slovak                       ASPELL_SK=yes         *'
 	@${ECHO_MSG} '*  - Slovenian                    ASPELL_SL=yes         *'
 	@${ECHO_MSG} '*  - Swahili                      ASPELL_SW=yes         *'
@@ -175,6 +177,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Swedish                      ASPELL_SV=yes         *'
 	@${ECHO_MSG} '*  - Tagalog                      ASPELL_TL=yes         *'
 	@${ECHO_MSG} '*  - Tamil                        ASPELL_TA=yes         *'
+	@${ECHO_MSG} '*  - Telugu                       ASPELL_TE=yes         *'
 	@${ECHO_MSG} '*  - Tetum                        ASPELL_TET=yes        *'
 	@${ECHO_MSG} '*  - Tswana                       ASPELL_TN=yes         *'
 	@${ECHO_MSG} '*  - Turkish                      ASPELL_TR=yes         *'
