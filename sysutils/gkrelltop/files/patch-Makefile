@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 11 12:50:39 2004
-+++ Makefile	Sat Dec 25 23:35:53 2004
+--- Makefile.orig	Fri Dec 10 19:50:39 2004
++++ Makefile	Mon Jun 13 08:29:12 2005
 @@ -28,9 +28,9 @@
  OSFLAG = `uname | tr '[:lower:]' '[:upper:]'`
  SHELL=/bin/sh
@@ -17,12 +17,12 @@
  
  ifeq ($(WANT_GLIB12),yes)
 -CFLAGSD = -I/usr/X11R6/include -D$(OSFLAG) -fPIC -Wall `glib-config --cflags`
-+CFLAGSD = -I${X11BASE}/include -D$(OSFLAG) -fPIC -Wall `glib-config --cflags`
++CFLAGSD = -I${PREFIX}/include -D$(OSFLAG) -fPIC -Wall `glib-config --cflags`
  LIBSD = `glib-config --libs`
  CONFIGURE_ARGS += --with-glib12
  else
 -CFLAGSD = -D$(OSFLAG) -fPIC -Wall `pkg-config glib-2.0 --cflags`
-+CFLAGSD = -D$(OSFLAG) -I${X11BASE}/include -fPIC -Wall `pkg-config glib-2.0 --cflags`
++CFLAGSD = -D$(OSFLAG) -I${PREFIX}/include -fPIC -Wall `pkg-config glib-2.0 --cflags`
  LIBSD = `pkg-config glib-2.0 --libs`
  endif
  INSTALLDIRD=$(HOME)/.gkrellm2/plugins-gkrellmd
