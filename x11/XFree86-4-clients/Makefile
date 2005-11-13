@@ -7,6 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR= ${PORTVERSION}
@@ -19,7 +20,7 @@ DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
 
-RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	xterm>0:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
@@ -69,15 +70,27 @@ pre-everything::
 .endif
 
 post-install:
-	@${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
-	@${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
-	@${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static \
-		   ${X11BASE}/lib/X11/app-defaults/UXTerm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static \
-		   ${X11BASE}/lib/X11/app-defaults/XTerm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static \
-		   ${X11BASE}/lib/X11/app-defaults/XTerm-color
+	if [ ! -e ${X11BASE}/bin/resize ]; then \
+		${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize; \
+	fi
+	if [ ! -e ${X11BASE}/bin/xterm ]; then \
+		${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm; \
+	fi
+	if [ ! -e ${X11BASE}/bin/uxterm ]; then \
+		${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/UXTerm ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static \
+		${X11BASE}/lib/X11/app-defaults/UXTerm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/XTerm ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static \
+		${X11BASE}/lib/X11/app-defaults/XTerm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/XTerm-color ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static \
+		${X11BASE}/lib/X11/app-defaults/XTerm-color; \
+	fi
 .if defined(WITH_SETUID_LUIT)
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
 	${CHMOD} 04711 ${PREFIX}/bin/luit

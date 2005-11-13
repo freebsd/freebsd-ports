@@ -36,7 +36,6 @@ bin/mkfontdir
 bin/mkfontscale
 bin/oclock
 bin/proxymngr
-bin/resize
 bin/rstart
 bin/rstartd
 bin/sessreg
@@ -49,7 +48,6 @@ bin/sxpm
 bin/texteroids
 bin/twm
 bin/ucs2any
-bin/uxterm
 bin/viewres
 bin/x11perf
 bin/x11perfcomp
@@ -105,7 +103,6 @@ bin/xsetpointer
 bin/xsetroot
 bin/xsm
 bin/xstdcmap
-bin/xterm
 bin/xtrapchar
 bin/xtrapin
 bin/xtrapinfo
@@ -142,7 +139,6 @@ lib/X11/app-defaults/Chooser
 lib/X11/app-defaults/Clock-color
 lib/X11/app-defaults/Editres
 lib/X11/app-defaults/Editres-color
-lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/Viewres
 lib/X11/app-defaults/XCalc
 lib/X11/app-defaults/XCalc-color
@@ -155,8 +151,6 @@ lib/X11/app-defaults/XLoad
 lib/X11/app-defaults/XLogo
 lib/X11/app-defaults/XLogo-color
 lib/X11/app-defaults/XSm
-lib/X11/app-defaults/XTerm
-lib/X11/app-defaults/XTerm-color
 lib/X11/app-defaults/Xditview
 lib/X11/app-defaults/Xditview-chrtr
 lib/X11/app-defaults/Xedit
@@ -756,6 +750,19 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
+@comment xterm workaround
+@exec [ ! -e %D/bin/resize ] && ln -sf %D/bin/resize-static %D/bin/resize
+@exec [ ! -e %D/bin/uxterm ] && ln -sf %D/bin/uxterm-static %D/bin/uxterm
+@exec [ ! -e %D/bin/xterm ] && ln -sf %D/bin/xterm-static %D/bin/xterm
+@exec [ ! -e %D/lib/X11/app-defaults/UXTerm ] && ln -sf %D/lib/X11/app-defaults/UXTerm-static %D/lib/X11/app-defaults/UXTerm
+@exec [ ! -e %D/lib/X11/app-defaults/XTerm-color ] && ln -sf %D/lib/X11/app-defaults/XTerm-color-static %D/lib/X11/app-defaults/XTerm-color
+@exec [ ! -e %D/lib/X11/app-defaults/XTerm ] && ln -s %D/lib/X11/app-defaults/XTerm-static %D/lib/X11/app-defaults/XTerm
+@unexec [ -L %D/bin/resize ] && rm %D/bin/resize
+@unexec [ -L %D/bin/uxterm ] && rm %D/bin/uxterm
+@unexec [ -L %D/bin/xterm ] && rm %D/bin/xterm
+@unexec [ -L %D/lib/X11/app-defaults/UXTerm ] && rm %D/lib/X11/app-defaults/UXTerm
+@unexec [ -L %D/lib/X11/app-defaults/XTerm-color ] && rm %D/lib/X11/app-defaults/XTerm-color
+@unexec [ -L %D/lib/X11/app-defaults/XTerm ] && rm %D/lib/X11/app-defaults/XTerm
 @dirrm lib/X11/fonts/util
 @dirrm lib/X11/icons/default
 @dirrm lib/X11/icons/handhelds/cursors

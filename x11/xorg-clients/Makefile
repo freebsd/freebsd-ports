@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-clients
 PORTVERSION=	6.8.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -17,7 +18,7 @@ DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client programs and related files from X.Org
 
-RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	xterm>0:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
@@ -42,12 +43,27 @@ pre-everything::
 .endif
 
 post-install:
-	@${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
-	@${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
-	@${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static ${X11BASE}/lib/X11/app-defaults/UXTerm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static ${X11BASE}/lib/X11/app-defaults/XTerm
-	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static ${X11BASE}/lib/X11/app-defaults/XTerm-color
+	if [ ! -e ${X11BASE}/bin/resize ]; then \
+		${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize; \
+	fi
+	if [ ! -e ${X11BASE}/bin/xterm ]; then \
+		${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm; \
+	fi
+	if [ ! -e ${X11BASE}/bin/uxterm ]; then \
+		${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/UXTerm ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static \
+		${X11BASE}/lib/X11/app-defaults/UXTerm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/XTerm ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static \
+		${X11BASE}/lib/X11/app-defaults/XTerm; \
+	fi
+	if [ ! -e ${X11BASE}/lib/X11/app-defaults/XTerm-color ]; then \
+		${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static \
+		${X11BASE}/lib/X11/app-defaults/XTerm-color; \
+	fi
 
 .if defined(WITH_SETUID_LUIT)
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
