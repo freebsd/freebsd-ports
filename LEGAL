@@ -556,7 +556,7 @@ texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 timidity-*		audio/timidity		Uses copyrighted patches
 tinker*			biology/tinker		Distribution is prohibited
 tkman-2.*		misc/tkman		Do not sell for profit
-tolkien-ttf-*		x11-fonts/tolkien-ttf	Shareware.  Commercial usage 
+tolkien-ttf-*		x11-fonts/tolkien-ttf	Shareware.  Commercial usage
 						or redistribution requires
 						license.
 tools-for-freebsd-*	emulators/vmware-tools2	Not sure if we can
@@ -570,7 +570,7 @@ Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed
 tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for
 						more than the cost of
 						duplication
-ttf30.exe		japanese/epson-ttfonts	Cannot be redistributed, 
+ttf30.exe		japanese/epson-ttfonts	Cannot be redistributed,
 						cannot fetch outside from
 						Japan, user must have
 						Japanese version of Windows

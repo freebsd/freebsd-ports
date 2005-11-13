@@ -28,7 +28,7 @@ The following changes were introduced:
 
   * Add bsd.tcl.mk
     It introduces USE_TCL/USE_TCL_BUILD knobs to support various
-    version of tcl (8.0 -> 8.4) 
+    version of tcl (8.0 -> 8.4)
 
   * Fix cosmetic bugs in security-check target
 
@@ -44,7 +44,7 @@ The following changes were introduced:
     It introduces DESKTOPDIR and DESKTOP_ENTRIES knobs
 
   * Add SHA256 support to "*checksum" targets
-  
+
   * Fix USE_PYTHON with OPTIONS
 
   * Force NO_LINT to MAKE_ENV to avoid library breaks

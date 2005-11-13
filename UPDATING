@@ -10,11 +10,11 @@ upgrades.
   AFFECTS: users of x11-toolkits/qt33
   AUTHOR: kde@FreeBSD.org
 
-  If the compilation of qt fails due to uic segfaulting 
- 
+  If the compilation of qt fails due to uic segfaulting
+
   (example:
-  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/bin/uic -L 
-  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/plugins 
+  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/bin/uic -L
+  /usr/ports/x11-toolkits/qt33/work/qt-x11-free-3.3.5/plugins
   listboxeditor.ui -i listboxeditor.h -o listboxeditor.cpp
   *** Signal 11)
 
@@ -122,7 +122,7 @@ upgrades.
   rdiff-backup will need to redo their initial seed.
 
   rdiff-backup-devel has been removed.  Users of rdiff-backup-devel
-  should now use rdiff-backup instead.  In this case there is no need 
+  should now use rdiff-backup instead.  In this case there is no need
   to redo the initial seed.
 
 20051006:
