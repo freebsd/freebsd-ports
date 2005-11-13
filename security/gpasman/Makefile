@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpasman
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://gpasman.sourceforge.net/files/
 
