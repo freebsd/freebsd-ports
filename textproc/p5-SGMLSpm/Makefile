@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}ii
 MAINTAINER=	B.Candler@pobox.com
 COMMENT=	Perl module for postprocessing the output from sgmls and nsgmls
 
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
