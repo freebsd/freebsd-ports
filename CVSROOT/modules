@@ -11653,6 +11653,7 @@ squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
 sqwebmail	ports/mail/sqwebmail
 sr		ports/lang/sr
+sr-aspell	ports/textproc/sr-aspell
 sredird		ports/comms/sredird
 srg		ports/www/srg
 srilm		ports/textproc/srilm
@@ -11931,6 +11932,7 @@ tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
 tdom		ports/www/tdom
 tdtd.el		ports/textproc/tdtd.el
+te-aspell	ports/textproc/te-aspell
 teTeX		ports/print/teTeX
 teTeX-base	ports/print/teTeX-base
 teTeX-texmf	ports/print/teTeX-texmf
