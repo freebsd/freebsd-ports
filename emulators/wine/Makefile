@@ -39,18 +39,6 @@ USE_XPM=	yes
 IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
 .endif
 
-.if defined(DEBUG)
-STRIP=
-.else
-CFLAGS+=	-O2
-
-pre-extract:
-	@${ECHO} "DEBUG has not been set, building without debug info."
-	@${ECHO} "This makes the disk footprint and packages much smaller,"
-	@${ECHO} "but debugging harder. If Wine crashes and you need to"
-	@${ECHO} "generate a backtrace, please rebuild with DEBUG defined."
-.endif
-
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/wine.sh \
 		> ${WRKSRC}/wine.sh
