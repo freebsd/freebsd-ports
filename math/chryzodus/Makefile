@@ -7,6 +7,7 @@
 
 PORTNAME=	chryzodus
 PORTVERSION=	0.32
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@email.it
 COMMENT=	A chryzode (http//www.chryzode.org) explorer
 
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile.unx

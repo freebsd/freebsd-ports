@@ -7,6 +7,7 @@
 
 PORTNAME=	allegrogl
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	alleggl-${PORTVERSION}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	OpenGL inteface for Allegro library
 
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

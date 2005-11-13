@@ -7,6 +7,7 @@
 
 PORTNAME=	adime
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Generate Allegro dialogs in a very simple way
 
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

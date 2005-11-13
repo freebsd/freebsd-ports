@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ALLEGRO)
-LIB_DEPENDS+=	alleg.41:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 .else
