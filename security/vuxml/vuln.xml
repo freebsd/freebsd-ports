@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c1cea79-548a-11da-b53f-0004614cc33d">
+    <topic>phpSysInfo -- "register_globals" emulation layer overwrite vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpSysInfo</name>
+	<range><lt>2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17441/">
+	  <p>Christopher Kunz has reported a vulnerability in
+	    phpSysInfo, which can be exploited by malicious people
+	    to manipulate certain information.</p>
+	  <p>The vulnerability is caused due to an error in
+	    the "register_globals" emulation layer where certain
+	    arrays used by the system can be overwritten. This can be
+	    exploited to execute arbitrary HTML and script code in
+	    a user's browser session and include arbitrary files from
+	    local resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hardened-php.net/advisory_222005.81.html</url>
+      <url>http://secunia.com/advisories/17441/</url>
+    </references>
+    <dates>
+      <discovery>2005-11-10</discovery>
+      <entry>2005-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aed343b4-5480-11da-b579-001125afbed7">
     <topic>Micromedia flash player -- swf file handling arbitrary code</topic>
     <affects>
