@@ -101,8 +101,8 @@ post-patch:
 .endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
-        @${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
-                ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
+		${WRKSRC}/configure
 
 post-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
