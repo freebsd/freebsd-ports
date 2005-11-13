@@ -7,7 +7,7 @@
 
 PORTNAME=	libpcap
 PORTVERSION=	0.8.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,13 +15,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN3=		pcap.3
 
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 
 .if defined(LIBPCAP_OVERWRITE_BASE)
 PREFIX=		/usr
@@ -50,4 +49,10 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
