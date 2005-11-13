@@ -13,7 +13,7 @@ CATEGORIES=	math print
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/stable/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A powerful plotting tool (successor of xmgr)
 
 LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\

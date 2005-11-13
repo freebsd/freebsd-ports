@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 PKGNAMESUFFIX=	${FFTW_PKGNAMESUFFIX}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
 # current flavors: default, float

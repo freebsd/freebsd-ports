@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A Motif widget set for displaying HTML 3.2 documents
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

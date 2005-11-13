@@ -11,7 +11,7 @@ CATEGORIES=	games
 # No external mirror available anymore
 #MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/misc/smiley/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A "server" to print out a smiley with it's explanation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
