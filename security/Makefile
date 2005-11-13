@@ -16,6 +16,7 @@
     SUBDIR += amavis-perl
     SUBDIR += amavis-stats
     SUBDIR += amavisd
+    SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += antivir-milter
     SUBDIR += apg

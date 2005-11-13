@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+@unexec %%RC_DIR%%/etc/rc.d/amavisd-milter%%RC_SUFX%% stop 2>&1 >/dev/null || true
+sbin/amavisd-milter
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
