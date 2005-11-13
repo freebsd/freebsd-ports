@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A daemon for controlling APC UPS
 
 USE_GETTEXT=	yes
