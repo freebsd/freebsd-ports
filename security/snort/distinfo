@@ -1,4 +1,6 @@
 MD5 (snort-2.4.3.tar.gz) = 5c3c8c69f2459bbe0c1f2057966c88a7
+SHA256 (snort-2.4.3.tar.gz) = 4f3aa911234a9fc4beb5ba9b0fe88f1e3af0fcbfe84d4448415f049b9791bc65
 SIZE (snort-2.4.3.tar.gz) = 2733590
 MD5 (snort-2.4.3.tar.gz.sig) = 680b271bb3fe67bd28d41d5a3886865a
+SHA256 (snort-2.4.3.tar.gz.sig) = a7fa680662124e6f95eb87b88e09a0ec7ae394f6845f4a1eada4626066da12d0
 SIZE (snort-2.4.3.tar.gz.sig) = 65
