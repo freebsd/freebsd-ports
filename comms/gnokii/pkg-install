@@ -5,7 +5,11 @@ PATH=/bin:/usr/bin:/usr/sbin
 GROUP=gnokii
 
 SUIDBINS="${PKG_PREFIX}/sbin/gnokiid ${PKG_PREFIX}/sbin/mgnokiidev"
-BINS="${PKG_PREFIX}/bin/gnokii ${PKG_PREFIX}/bin/xgnokii ${SUIDBINS}"
+BINS="${PKG_PREFIX}/bin/gnokii ${SUIDBINS}"
+
+if [ -e ${PKG_PREFIX}/bin/xgnokii ]; then
+	BINS="$BINS ${PKG_PREFIX}/bin/xgnokii"
+fi
 
 case "$2" in
 "PRE-INSTALL")

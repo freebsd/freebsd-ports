@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.6.10
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -80,10 +79,10 @@ WITH_PGSQL=	yes
 .else
 PLIST_SUB+=	PGM='@comment '
 .endif
-.if defined(SMSD_WITH_GLIB2)
-USE_GNOME+=	glib20
-.else
+.if defined(SMSD_WITH_GLIB1)
 USE_GNOME+=	glib12
+.else
+USE_GNOME+=	glib20
 .endif
 .endif
 
@@ -92,7 +91,7 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
 USE_XPM=	yes
-USE_GNOME+=	gtk12
+USE_GNOME+=	gtk20 gnomelibs
 PLIST_SUB+=	X11=''
 MAN1+=	xgnokii.1
 .endif
@@ -116,10 +115,10 @@ pre-fetch:
 	@${ECHO} "always compiled in."
 	@${ECHO}
 .endif
-.if !defined(SMSD_WITH_GLIB2)
+.if !defined(SMSD_WITH_GLIB1)
 	@${ECHO}
-	@${ECHO} "smsd defaults to using glib1, if you'd rather link with glib2
-	@${ECHO} "define SMSD_WITH_GLIB2=yes"
+	@${ECHO} "smsd defaults to using glib2, if you'd rather link with glib1
+	@${ECHO} "define SMSD_WITH_GLIB1=yes"
 	@${ECHO}
 .endif
 
@@ -138,7 +137,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|<stdint.h>|<inttypes.h>|'
 .endif
-.if defined(SMSD_WITH_GLIB2)
+.if defined(SMSD_WITH_GLIB1)
 	@cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/smsd-Makefile-WITH_GLIB.diff
 .endif
 
