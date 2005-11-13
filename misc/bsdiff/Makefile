@@ -16,4 +16,10 @@ COMMENT=	Generates and applies patches to binary files
 MAN1=		bsdiff.1 bspatch.1
 PLIST_FILES=	bin/bsdiff bin/bspatch
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600033 || ( ${OSVERSION} > 504103 && ${OSVERSION} < 600000 )
+IGNORE=		bsdiff now contained in the base system
+.endif
+
+.include <bsd.port.post.mk>
