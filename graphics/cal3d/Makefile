@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-full-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Skeletal based 3d character animation library written in C++
 
+CONFLICTS=	cal3d-devel-[0-9]*
+
 USE_BZIP2=		yes
 USE_GNOME=		pkgconfig
 USE_AUTOMAKE_VER=	19
