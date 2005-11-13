@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	rand
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/
 
 MAINTAINER=	domi@saargate.de
 COMMENT=	Utility to display files or streams in random order
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 MAN1=		rand.1
 PLIST_FILES=	bin/rand
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rand ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/rand.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/rand.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
