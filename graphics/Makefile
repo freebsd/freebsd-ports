@@ -40,6 +40,7 @@
     SUBDIR += cairo
     SUBDIR += cairo-java
     SUBDIR += cal3d
+    SUBDIR += cal3d-devel
     SUBDIR += camediaplay
     SUBDIR += cbrpager
     SUBDIR += cbview

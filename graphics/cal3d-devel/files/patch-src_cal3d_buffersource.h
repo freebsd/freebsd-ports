@@ -5,7 +5,7 @@
  #include "cal3d/global.h"
  #include "cal3d/datasource.h"
 -#include <istream>
-+#include <istream.h>
++#include <iostream>
  
  /**
   * CalBufferSource class.

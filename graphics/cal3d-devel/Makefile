@@ -6,29 +6,39 @@
 #
 
 PORTNAME=	cal3d
-PORTVERSION=	0.10.0
+DISTVERSION=	${CAL3DVER}_pre20050823
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-full-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	sw@gegenunendlich.de
-COMMENT=	Skeletal based 3d character animation library written in C++
+MAINTAINER=	acardenas@bsd.org.pe
+COMMENT=	Skeletal based 3d character animation library written in C++ (devel)
+
+CAL3DVER=	0.11.0
+
+CONFLICTS=	cal3d-[0-9]*
 
 USE_BZIP2=		yes
 USE_GNOME=		pkgconfig
+USE_GCC=		3.2+
 USE_AUTOMAKE_VER=	19
 AUTOMAKE_ARGS=		"--add-missing"
 USE_AUTOHEADER_VER=	259
 USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
-CONFIGURE_ARGS+=	--disable-static
-
-.include <bsd.port.pre.mk>
+CPPFLAGS+=		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--disable-static
+MAKE_ARGS=		CC="${CC}" CFLAGS="${CFLAGS} ${CXX}"
+WRKSRC=			${WRKDIR}/${PORTNAME}
 
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 	cd ${WRKSRC} && ${AUTOHEADER}
 	cd ${WRKSRC} && ${LIBTOOLIZE} --automake --force
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
