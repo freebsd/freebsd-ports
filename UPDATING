@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051113:
+  AFFECTS: users of x11/xterm, x11/xorg-clients, x11/XFree86-4-clients
+  AUTHOR: x11@FreeBSD.org
+
+  Xterm no longer installs with '-static' prefix. Users should upgrade
+  XFree86-clients to 4.5.0_1 or xorg-clients to 6.8.2_1 or newer before
+  attempting upgrade of xterm to 206_1 or newer. Previous versions remove
+  xterm on deinstall so CONFLICTS have been set accordingly.
+
 20051105:
   AFFECTS: users of x11-toolkits/qt33
   AUTHOR: kde@FreeBSD.org
