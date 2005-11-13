@@ -1292,6 +1292,7 @@ courier-authlib-vchkpw	ports/mail/courier-authlib-vchkpw
 courier-imap	ports/mail/courier-imap
 courierpassd	ports/security/courierpassd
 coverhunter	ports/audio/coverhunter
+cowbell		ports/audio/cowbell
 cowsay		ports/games/cowsay
 cp2fwb		ports/security/cp2fwb
 cpan-upload	ports/devel/cpan-upload
