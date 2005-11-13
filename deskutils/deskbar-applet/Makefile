@@ -31,6 +31,10 @@ OPTIONS=	EVO "Enable evolution support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 .if !defined(WITHOUT_EVO)
 USE_GNOME+=	evolutiondataserver
 PLIST_SUB+=	EVO=""
