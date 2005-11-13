@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linunace
+PORTNAME=	unace
 PORTVERSION=	2.5
 CATEGORIES=	archivers linux
 MASTER_SITES=	http://www.winace.com/files/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	lin${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@gmail.com
