@@ -1391,7 +1391,7 @@ curly		ports/sysutils/curly
 cursive		ports/games/cursive
 cursor-bluecurve-theme	ports/x11-themes/cursor-bluecurve-theme
 cursor-jimmac-theme	ports/x11-themes/cursor-jimmac-theme
-cursor-polar-theme	ports/x11-themes/curosr-polar-theme
+cursor-polar-theme	ports/x11-themes/cursor-polar-theme
 custom-emacs	ports/editors/custom-emacs
 custom-mule	ports/editors/custom-mule
 cutecom		ports/comms/cutecom
