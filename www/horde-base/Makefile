@@ -96,16 +96,16 @@ CONFLICTS=	horde-2.*
 NO_BUILD=	yes
 USE_PHP=	ctype gettext session
 USE_REINPLACE=	yes
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 WANT_PHP_CGI=	yes
 HORDEADMUSR?=	horde
-PKGINSTALL=	${WRKDIR}/pkg-install
-SUB_FILES+=	pkg-install
+SUB_LIST=	WITH_SUPHP=yes
 .else
 WANT_PHP_MOD=	yes
 .endif
@@ -222,7 +222,7 @@ LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
-SUB_LIST=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}	\
+SUB_LIST+=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}	\
 		HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
@@ -356,9 +356,7 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITH_SUPHP)
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
