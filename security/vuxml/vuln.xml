@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aed343b4-5480-11da-b579-001125afbed7">
+    <topic>Micromedia flash player -- swf file handling arbitrary code</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin6</name>
+	<range><le>6.0r79_3</le></range>
+      </package>
+      <package>
+	<name>linux-flashplugin7</name>
+	<range><lt>7.0r61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17430/">
+	  <p>A vulnerability has been reported in Macromedia
+	    Flash Player, which can be exploited by malicious
+	    people to compromise a user's system.</p>
+	  <p>The vulnerability is caused due to missing validation
+	    of the frame type identifier that is read from
+	    a SWF file. This value is used as an index in Flash.ocx
+	    to reference an array of function pointers. This can be
+	    exploited via a specially crafted SWF file to cause
+	    the index to reference memory that is under the attacker's
+	    control, which causes Flash Player to use attacker
+	    supplied values as function pointers.</p>
+	  <p>Successful exploitation allows execution of arbitrary
+	    code..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.macromedia.com/devnet/security/security_zone/mpsb05-07.html</url>
+      <url>http://secunia.com/advisories/17430/</url>
+      <url>http://www.eeye.com/html/research/advisories/AD20051104.html</url>
+    </references>
+    <dates>
+      <discovery>2005-06-27</discovery>
+      <entry>2005-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4b95430-51d8-11da-8e93-0010dc4afb40">
     <topic>flyspray -- cross-site scripting vulnerabilities</topic>
     <affects>
