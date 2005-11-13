@@ -704,6 +704,7 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += spellutils
+    SUBDIR += sr-aspell
     SUBDIR += srilm
     SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
@@ -715,6 +716,7 @@
     SUBDIR += ta-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
+    SUBDIR += te-aspell
     SUBDIR += tei-guidelines-p3
     SUBDIR += tei-guidelines-p4
     SUBDIR += tei-lite
