@@ -180,6 +180,17 @@ sbin/mgnokiidev
 %%X11%%share/xgnokii/xpm/Preview_6210.xpm
 %%X11%%share/xgnokii/xpm/Preview_6250.xpm
 %%X11%%share/xgnokii/xpm/Preview_7110.xpm
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/calendar
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/contacts
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/dtmf
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/main
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/netmon/gsm
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/sms
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/speeddial
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/xkeyb
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/cables
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/irda
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows
 %%X11%%@dirrm share/xgnokii/help/en_US/cables
 %%X11%%@dirrm share/xgnokii/help/en_US/calendar
 %%X11%%@dirrm share/xgnokii/help/en_US/contacts
@@ -209,11 +220,3 @@ sbin/mgnokiidev
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii/xpm
 %%X11%%@dirrm share/xgnokii
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/calendar
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/contacts
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/dtmf
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/main
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/netmon/gsm
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/sms
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/speeddial
-%%X11%%@exec mkdir -m 755 %D/share/xgnokii/help/en_US/xkeyb
