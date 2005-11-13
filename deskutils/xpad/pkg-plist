@@ -1,9 +1,22 @@
 bin/xpad
+share/applications/xpad.desktop
 share/icons/hicolor/48x48/apps/xpad.png
 share/icons/hicolor/scalable/apps/xpad.svg
-@unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+share/pixmaps/xpad.png
+share/locale/af/LC_MESSAGES/xpad.mo
+share/locale/bg/LC_MESSAGES/xpad.mo
+share/locale/es/LC_MESSAGES/xpad.mo
+share/locale/fr/LC_MESSAGES/xpad.mo
+share/locale/ga/LC_MESSAGES/xpad.mo
+share/locale/hu/LC_MESSAGES/xpad.mo
+share/locale/it/LC_MESSAGES/xpad.mo
+share/locale/ms/LC_MESSAGES/xpad.mo
+share/locale/nl/LC_MESSAGES/xpad.mo
+share/locale/ro/LC_MESSAGES/xpad.mo
+share/locale/ru/LC_MESSAGES/xpad.mo
+share/locale/rw/LC_MESSAGES/xpad.mo
+share/locale/sk/LC_MESSAGES/xpad.mo
+share/locale/sl/LC_MESSAGES/xpad.mo
+share/locale/vi/LC_MESSAGES/xpad.mo
+share/locale/zh_TW/LC_MESSAGES/xpad.mo
+@unexec rmdir %D/share/applications 2>/dev/null || true
