@@ -18,7 +18,7 @@ COMMENT=	WAEIJIRO English - Japanese Dictionary (EPWING V1 format)
 
 EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
-		${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
 NO_PACKAGE=	"The original dictionary is not free"
@@ -29,6 +29,13 @@ SRCFILE?=	waeiji52.txt
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
+
 DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
 .if exists(${DICT_ARCHIVE})
 EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha

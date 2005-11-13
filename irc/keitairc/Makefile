@@ -15,7 +15,7 @@ EXTRACT_SUFX=	#empty
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
 
-RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
+RUN_DEPENDS=	${JCODE}:${PORTSDIR}/japanese/p5-Jcode \
 		${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
@@ -36,4 +36,12 @@ do-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
+
+.include <bsd.port.post.mk>
