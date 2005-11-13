@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.96.5
+PORTVERSION=	0.96.6
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
+LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
+
 OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
 OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
-
-LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 
 CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
