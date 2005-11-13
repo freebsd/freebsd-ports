@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	xdoclet
-PORTVERSION=	1.2b3
+PORTVERSION=	1.2.3
+PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,7 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-XJAVADOC_VER=	1.0
+XJAVADOC_VER=	1.1
 
 PLIST_SUB+=	XJAVADOC_VER="${XJAVADOC_VER}"
 
@@ -32,23 +33,20 @@ PLIST_SUB+=	XJAVADOC_VER="${XJAVADOC_VER}"
 PORTDOCS=	*
 .endif
 
-post-extract:
-	${RMDIR} ${WRKSRC}/docs/stylesheets
-
 do-install:
-	cd ${WRKSRC} && ${FIND} lib -name '*xdoclet*' -exec \
+	cd ${WRKSRC}/xdoclet-${PORTVERSION} && ${FIND} lib -name '*xdoclet*' -exec \
 	    ${INSTALL_DATA} \{} ${JAVAJARDIR} \;
-	cd ${WRKSRC}/samples && ${FIND} . -type d -exec \
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/samples && ${FIND} . -type d -exec \
 	    ${MKDIR} ${EXAMPLESDIR}/\{} \;
-	cd ${WRKSRC}/samples && ${FIND} . -type f -exec \
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/samples && ${FIND} . -type f -exec \
 	    ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
 	${INSTALL_DATA} \
 	    ${WRKSRC}/xjavadoc-${XJAVADOC_VER}/xjavadoc-${XJAVADOC_VER}.jar \
 	    ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && ${FIND} . -type d -exec \
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/docs && ${FIND} . -type d -exec \
 	    ${MKDIR} ${DOCSDIR}/\{} \;
-	cd ${WRKSRC}/docs && ${FIND} . -type f -exec \
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/docs && ${FIND} . -type f -exec \
 	    ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endif
 
