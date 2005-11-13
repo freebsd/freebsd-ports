@@ -1,5 +1,5 @@
---- ext.c.orig	Wed Oct 12 18:22:46 2005
-+++ ext.c	Wed Oct 12 18:22:22 2005
+--- ext.c.orig	Sun Nov 13 12:52:16 2005
++++ ext.c	Sun Nov 13 12:52:57 2005
 @@ -123,11 +123,12 @@
    HANDLE2(*p != '\0', "Error converting arg to int");
  
@@ -7,11 +7,12 @@
 +  time_s->tm_year = 1900 + time_s->tm_year;
    if (dateformat)
 -    sprintf(interp->result, "%02d%02d%02d %02d:%02d:%02d", time_s->tm_mday, time_s->tm_mon+1,
+-          time_s->tm_year % 100, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
 +    sprintf(interp->result, "%02d%02d%04d %02d:%02d:%02d", time_s->tm_mday, time_s->tm_mon+1,
-           time_s->tm_year % 100, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
++          time_s->tm_year, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
    else
 -    sprintf(interp->result, "%02d%02d%02d %02d:%02d:%02d", time_s->tm_year % 100, time_s->tm_mon+1,
-+    sprintf(interp->result, "%04d%02d%02d %02d:%02d:%02d", time_s->tm_year % 100, time_s->tm_mon+1,
++    sprintf(interp->result, "%04d%02d%02d %02d:%02d:%02d", time_s->tm_year, time_s->tm_mon+1,
            time_s->tm_mday, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
    return TCL_OK;
  }
