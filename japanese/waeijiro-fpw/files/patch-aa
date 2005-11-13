@@ -1,5 +1,5 @@
 --- Makefile.orig	Sun Jun  8 22:30:55 2003
-+++ Makefile	Sat Aug  2 18:13:46 2003
++++ Makefile	Sun Nov 13 20:03:33 2005
 @@ -1,4 +1,7 @@
 -SRC_DICT=/home/tf/tmp/WAEIJI52.TXT
 +ifeq (,${SRC_DICT})
@@ -9,11 +9,3 @@
  INSTALLDIR=/home/dict
  DIR=WAEIJIRO
  # Define Kanji-code on the terminal (jis/euc/sjis)
-@@ -7,6 +10,6 @@
- # don't modify below
- 
- FPWPARSER = waeijiro-fpw.pl
--FPWPARSERFLAGS = $(LOG_CODE) $(SRC_DICT)
-+FPWPARSERFLAGS = -- $(LOG_CODE) $(SRC_DICT)
- 
- include fpwutils.mk
