@@ -7,6 +7,7 @@
 
 PORTNAME=	filerunner
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm tk84
 MASTER_SITES=	${MASTER_SITE_NETBSD} \
 		http://www.cd.chalmers.se/~hch/
