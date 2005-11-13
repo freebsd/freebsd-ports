@@ -14,7 +14,7 @@ MAINTAINER=	dodell@offmyserver.com
 COMMENT=	A port of the Sun Cobalt RaQ550 software to FreeBSD
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}	\
-		${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode			\
+		${JCODE}:${PORTSDIR}/japanese/p5-Jcode			\
 		${SITE_PERL}/mach/Quota.pm:${PORTSDIR}/sysutils/p5-Quota		\
 		${SITE_PERL}/mach/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext	\
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph		\
@@ -46,6 +46,12 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/raqdevil/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
 
 .if !defined(SENDMAIL_MILTER_PORT)
 SENDMAIL_MILTER_PORT?=	sendmail-sasl

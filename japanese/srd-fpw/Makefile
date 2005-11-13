@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A English - Japanese Dictionary "Random House" (EPWING V1 format)
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
 RESTRICTED=	"The original dictionary is not free"
@@ -59,4 +59,12 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
+.else
+JCODE=	${SITE_PERL}/Jcode.pm
+.endif
+
+.include <bsd.port.post.mk>
