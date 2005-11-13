@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTNAME=	xperfmon++
 EXTRACT_SUFX=	v1.1.tar.Z
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Xperfmon++ : A graphical X11 system performance monitor
 
 LATEST_LINK=	xperfmon3
