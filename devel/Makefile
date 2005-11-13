@@ -1241,6 +1241,7 @@
     SUBDIR += pear-HTML_QuickForm
     SUBDIR += pear-HTML_QuickForm_Controller
     SUBDIR += pear-HTML_QuickForm_SelectFilter
+    SUBDIR += pear-HTML_QuickForm_advmultiselect
     SUBDIR += pear-HTML_Select
     SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-HTML_Table
