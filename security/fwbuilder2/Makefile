@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -16,8 +16,9 @@ COMMENT=	Firewall Builder GUI and policy compilers
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	fwbuilder.6:${PORTSDIR}/security/libfwbuilder
+
 .if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=	yes
 .endif
 
 USE_QT_VER=	3
@@ -31,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS+=	QTDIR="${QTDIR}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 INSTALLS_SHLIB=	yes

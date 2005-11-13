@@ -34,6 +34,10 @@ bin/fwbuilder
 %%DOCSDIR%%/ReleaseNotes_2.0.7.txt
 %%DOCSDIR%%/ReleaseNotes_2.0.8.html
 %%DOCSDIR%%/ReleaseNotes_2.0.8.txt
+%%DOCSDIR%%/ReleaseNotes_2.0.9.html
+%%DOCSDIR%%/ReleaseNotes_2.0.9.txt
+%%DOCSDIR%%/ReleaseNotes_2.0.10.html
+%%DOCSDIR%%/ReleaseNotes_2.0.10.txt
 %%DOCSDIR%%/PatchAcceptancePolicy.txt
 %%DATADIR%%/objects_init.xml
 %%DATADIR%%/templates.xml
@@ -43,6 +47,7 @@ bin/fwbuilder
 %%DATADIR%%/platform/pf.xml
 %%DATADIR%%/platform/ipfw.xml
 %%DATADIR%%/platform/pix.xml
+%%DATADIR%%/platform/fwsm.xml
 %%DATADIR%%/platform/unknown.xml
 %%DATADIR%%/os/linux24.xml
 %%DATADIR%%/os/linksys.xml
@@ -51,8 +56,10 @@ bin/fwbuilder
 %%DATADIR%%/os/openbsd.xml
 %%DATADIR%%/os/solaris.xml
 %%DATADIR%%/os/pix_os.xml
+%%DATADIR%%/os/fwsm_os.xml
 %%DATADIR%%/os/unknown_os.xml
 %%DATADIR%%/locale/fwbuilder_de.qm
+%%DATADIR%%/locale/fwbuilder_es.qm
 %%DATADIR%%/locale/fwbuilder_fr.qm
 %%DATADIR%%/locale/fwbuilder_ja.qm
 %%DATADIR%%/locale/fwbuilder_ru.qm
