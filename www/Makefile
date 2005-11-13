@@ -772,6 +772,7 @@
     SUBDIR += script4rss
     SUBDIR += selenium
     SUBDIR += servlet-api
+    SUBDIR += session2
     SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog
