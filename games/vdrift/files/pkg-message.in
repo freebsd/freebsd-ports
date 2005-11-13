@@ -1,0 +1,2 @@
+ * Set write permissions on ~/.vdrift/VDrift.config
+ * Run vdrift -datadir %%DATADIR%%
