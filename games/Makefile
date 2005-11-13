@@ -583,6 +583,7 @@
     SUBDIR += utserver
     SUBDIR += vamos
     SUBDIR += vavoom
+    SUBDIR += vdrift
     SUBDIR += vectoroids
     SUBDIR += virt
     SUBDIR += viruskiller
