@@ -1,4 +1,6 @@
 MD5 (openssl-0.9.8a.tar.gz) = 1d16c727c10185e4d694f87f5e424ee1
+SHA256 (openssl-0.9.8a.tar.gz) = 30f8f61fb1316f4fb51410c740b4879b8e26b417c8d870e486144b10b8041c73
 SIZE (openssl-0.9.8a.tar.gz) = 3271435
 MD5 (openssl-0.9.7i.tar.gz) = f69d82b206ff8bff9d0e721f97380b9e
+SHA256 (openssl-0.9.7i.tar.gz) = 2fdd9235fc08c4353875d0981741947f2fa9f8835f04d97c30461cc14a986dd0
 SIZE (openssl-0.9.7i.tar.gz) = 3280907
