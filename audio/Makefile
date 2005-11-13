@@ -74,6 +74,7 @@
     SUBDIR += cmt
     SUBDIR += cmus
     SUBDIR += coverhunter
+    SUBDIR += cowbell
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += crip
