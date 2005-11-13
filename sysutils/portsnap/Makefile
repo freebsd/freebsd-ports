@@ -21,6 +21,10 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
 .endif
 
+.if ${OSVERSION} > 600033 || ( ${OSVERSION} > 504103 && ${OSVERSION} < 600000 )
+IGNORE=		portsnap now contained in the base system
+.endif
+
 MAN5=		portsnap.conf.5
 MAN8=		portsnap.8
 PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap		\
