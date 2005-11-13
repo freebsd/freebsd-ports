@@ -949,6 +949,7 @@ cairo		ports/graphics/cairo
 cairo-java	ports/graphics/cairo-java
 cake		ports/games/cake
 cal3d		ports/graphics/cal3d
+cal3d-devel	ports/graphics/cal3d-devel
 calamaris	ports/www/calamaris
 calc		ports/math/calc
 calcoo		ports/math/calcoo
