@@ -8,7 +8,9 @@
 PORTNAME=	artwiz-ru
 PORTVERSION=	20041031
 CATEGORIES=	russian x11-fonts
-MASTER_SITES=	http://dev.gentoo.org/~sergey/
+MASTER_SITES=	http://dev.gentoo.org/~sergey/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 DISTNAME=	artwiz_ru
 
 MAINTAINER=	novel@FreeBSD.org
