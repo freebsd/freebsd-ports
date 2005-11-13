@@ -1,0 +1,18 @@
+selenium
+========
+
+Edit your apache configuration file.
+
+	% vi %%LOCALBASE%%/etc/apache*/httpd.conf
+
+Add the following line.
+
+	Alias   /selenium/      "%%PREFIX%%/www/selenium"
+
+Run selenium.
+
+	http://localhost/selenium/
+
+Documentation.
+
+	http://localhost/selenium/doc/
