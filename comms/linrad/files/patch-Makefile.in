@@ -1,8 +1,8 @@
 --- Makefile.in.orig	Tue May 18 09:43:30 2004
-+++ Makefile.in	Fri Jul  9 00:43:44 2004
++++ Makefile.in	Sat Nov 12 11:41:30 2005
 @@ -1,11 +1,14 @@
-+INCLUDE=	/usr/local/include
-+LIBS=		/usr/local/lib
++INCLUDE=	%%LOCALBASE%%/include
++LIBS=		%%LOCALBASE%%/lib
 +
  
  .c.o:
