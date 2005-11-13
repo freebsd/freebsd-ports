@@ -16,17 +16,16 @@ COMMENT=	Experimental HTML 3 browser, supports math and style sheets
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
-USE_GCC=	2.95
+
+IGNORE=		does not work with libpng 1.2.x
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2005-11-30
 
 PLIST_FILES=	bin/arena
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/WWW
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 do-build:
 	cd ${WRKSRC}/Library/freebsd; ${SETENV} ${MAKE_ENV} ${MAKE}
