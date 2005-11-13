@@ -51,7 +51,7 @@ Note:  Please add new entries to the beginning of this file.
 	    to manipulate certain information.</p>
 	  <p>The vulnerability is caused due to an error in
 	    the "register_globals" emulation layer where certain
-	    arrays used by the system can be overwritten. This can be
+	    arrays used by the system can be overwritten.  This can be
 	    exploited to execute arbitrary HTML and script code in
 	    a user's browser session and include arbitrary files from
 	    local resources.</p>
@@ -69,7 +69,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="aed343b4-5480-11da-b579-001125afbed7">
-    <topic>Micromedia flash player -- swf file handling arbitrary code</topic>
+    <topic>Macromedia flash player -- swf file handling arbitrary code</topic>
     <affects>
       <package>
 	<name>linux-flashplugin6</name>
@@ -89,14 +89,14 @@ Note:  Please add new entries to the beginning of this file.
 	    people to compromise a user's system.</p>
 	  <p>The vulnerability is caused due to missing validation
 	    of the frame type identifier that is read from
-	    a SWF file. This value is used as an index in Flash.ocx
-	    to reference an array of function pointers. This can be
+	    a SWF file.  This value is used as an index in Flash.ocx
+	    to reference an array of function pointers.  This can be
 	    exploited via a specially crafted SWF file to cause
 	    the index to reference memory that is under the attacker's
 	    control, which causes Flash Player to use attacker
 	    supplied values as function pointers.</p>
 	  <p>Successful exploitation allows execution of arbitrary
-	    code..</p>
+	    code.</p>
 	</blockquote>
       </body>
     </description>
@@ -127,7 +127,7 @@ Note:  Please add new entries to the beginning of this file.
 	    which can be exploited by malicious people to conduct
 	    cross-site scripting attacks.</p>
     	  <p>Some input isn't properly sanitised before being
-	    returned to the user. This can be exploited to execute
+	    returned to the user.  This can be exploited to execute
 	    arbitrary HTML and script code in a user's browser
 	    session in context of an affected site.</p>
 	</blockquote>
