@@ -5705,6 +5705,7 @@ linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libmng	ports/graphics/linux-libmng
 linux-libxml	ports/textproc/linux-libxml
+linux-linunace	ports/archivers/linux-linunace
 linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
