@@ -6957,6 +6957,7 @@ ocrad		ports/graphics/ocrad
 octave		ports/math/octave
 octave-forge	ports/math/octave-forge
 ode		ports/devel/ode
+ode-devel	ports/devel/ode-devel
 odsclient	ports/dns/odsclient
 offix-clipboard	ports/x11/offix-clipboard
 offix-editor	ports/editors/offix-editor
