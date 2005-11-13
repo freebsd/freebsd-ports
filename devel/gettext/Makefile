@@ -26,7 +26,8 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOHEADER="${TRUE}" \
 		MAKEINFO="makeinfo --no-split" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		EMACS="no"
 CONFIGURE_ARGS=	--disable-csharp \
 		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
