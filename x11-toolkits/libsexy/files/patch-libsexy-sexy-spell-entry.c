@@ -1,6 +1,23 @@
 --- libsexy/sexy-spell-entry.c.orig	Fri Oct 14 20:20:45 2005
-+++ libsexy/sexy-spell-entry.c	Tue Nov  8 22:13:53 2005
-@@ -866,13 +866,15 @@
++++ libsexy/sexy-spell-entry.c	Sun Nov 13 13:21:06 2005
+@@ -799,12 +799,14 @@
+ GSList *
+ sexy_spell_entry_get_languages(const SexySpellEntry *entry)
+ {
++#ifdef HAVE_ENCHANT_BROKER_LIST_DICTS
++	GSList *langs = NULL;
++#endif
++
+ 	g_return_val_if_fail(entry != NULL, NULL);
+ 	g_return_val_if_fail(SEXY_IS_SPELL_ENTRY(entry), NULL);
+ 
+ #ifdef HAVE_ENCHANT_BROKER_LIST_DICTS
+-	GSList *langs = NULL;
+-
+ 	if (!entry->priv->broker)
+ 		return NULL;
+ 
+@@ -866,13 +868,15 @@
  gboolean
  sexy_spell_entry_activate_language(SexySpellEntry *entry, const gchar *lang, GError **error)
  {
