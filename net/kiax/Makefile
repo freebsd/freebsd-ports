@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_QT_VER=	3
+USE_REINPLACE=	yes
 
 CONFIGURE_ENV+=	QTDIR=${X11BASE} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
@@ -29,4 +30,11 @@ CONFIGURE_ENV+=	QTDIR=${X11BASE} \
 MAKE_ARGS+=	QTDIR=${X11BASE} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} 's/stdint\.h/inttypes.h/' ${WRKSRC}/lib/spandsp/plc.h
+.endif
+
+.include <bsd.port.post.mk>
