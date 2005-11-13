@@ -7,28 +7,19 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.31
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
+MASTER_SITES=	http://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTFILES=	zip23${EXTRACT_SUFX} ${ZCRYPT_SRC}
-EXTRACT_ONLY=	zip23${EXTRACT_SUFX}
+DISTFILES=	zip231${EXTRACT_SUFX}
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with pkzip
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-
-ZCRYPT_SRC=	zcrypt29-exportable.zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
-MAKE_FLAGS=	LOCAL_ZIP="-DUSE_CRYPT" -f
 ALL_TARGET=	generic
 MAN1=		zip.1
-
-post-extract:
-	unzip -q -aa -o ${_DISTDIR}${ZCRYPT_SRC} -d ${WRKSRC} -x WHERE
 
 do-install:
 .for file in zip zipcloak zipnote zipsplit
