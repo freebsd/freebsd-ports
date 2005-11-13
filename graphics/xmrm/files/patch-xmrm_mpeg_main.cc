@@ -1,5 +1,5 @@
---- xmrm_mpeg_main.cc.orig	Tue Mar 10 00:00:00 1998
-+++ xmrm_mpeg_main.cc	Fri Nov 29 15:06:47 2002
+--- xmrm_mpeg_main.cc.orig	Tue Mar 10 07:00:00 1998
++++ xmrm_mpeg_main.cc	Sun Nov 13 16:25:33 2005
 @@ -8,6 +8,7 @@
  #include <forms.h>
  #include <unistd.h>
@@ -8,6 +8,22 @@
  
  #define MAX_PIC_NUM 999
  #define BORDER_WIDTH -1
+@@ -50,11 +51,11 @@
+ //------------------------------
+ names_n_numbers::names_n_numbers()
+ {
+-  START_Frame = NULL;
+-  START_fname_only = NULL;
+-  END_Frame = NULL;
++  START_Frame = (char*)NULL;
++  START_fname_only = (char*)NULL;
++  END_Frame = (char*)NULL;
+   
+-  filename_ppm = filename_yuv = extension = NULL;
++  filename_ppm = filename_yuv = extension = (char*)NULL;
+ 
+   abs_count = first_width = first_height = start_number = 0;
+   end_number = MAX_PIC_NUM;
 @@ -68,7 +69,7 @@
  {
    int count = 0;
@@ -35,3 +51,25 @@
          if ( Even_Size( tif, tif_w, tif_h) )
            return 1;
        }
+@@ -713,8 +714,8 @@
+       break;
+       
+     case 2: // Choose Start/Stop Frame
+-      backup_class->START_Frame = NULL;
+-      backup_class->END_Frame = NULL;
++      backup_class->START_Frame = (char*)NULL;
++      backup_class->END_Frame = (char*)NULL;
+ 
+       fl_hide_object(fd_CREATE_MPEG->BT_Go);
+ 
+@@ -786,8 +787,8 @@
+     }
+ 
+   // redirect TIFF-Error- and Warnig-Handler
+-  (void) TIFFSetErrorHandler(NULL);
+-  (void) TIFFSetWarningHandler(NULL);
++  (TIFFErrorHandler) TIFFSetErrorHandler((TIFFErrorHandler)NULL);
++  (TIFFErrorHandler) TIFFSetWarningHandler((TIFFErrorHandler)NULL);
+   
+   // show the first form
+   fl_hide_object(fd_CREATE_MPEG->BT_Go);

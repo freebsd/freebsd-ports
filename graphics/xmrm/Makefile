@@ -28,12 +28,6 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.else
-BROKEN=		"Does not compile on i386"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm_mpeg ${PREFIX}/bin
