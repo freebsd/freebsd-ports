@@ -391,6 +391,7 @@ bin/acroread
 %%ACRODIR%%/Browser/install_browser_plugin
 %%ACRODIR%%/Browser/Browser_Plugin_HowTo.txt
 %%PLUGINDIR%%/nppdf.so
+@unexec /bin/rmdir %D/%%PLUGINDIR%% 2> /dev/null || true
 @dirrm %%ACRODIR%%/bin
 @dirrm %%ACRODIR%%/Resource/Support
 @dirrm %%ACRODIR%%/Resource/Linguistics/Providers/Proximity
