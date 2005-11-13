@@ -1,6 +1,9 @@
 ************************************************************************
 Horde has been installed in %%HORDEDIR%% with your blank
-configuration files.
+configuration files. After a reinstallation, you have to explicitely
+merge your files %%HORDEDIR%%/config/conf.php.new
+and %%HORDEDIR%%/config/conf.php.previous
+into %%HORDEDIR%%/config/conf.php .
 
 If you want Horde to access a database, you have to run the
 appropriate scripts located in %%HORDEDIR%%/scripts/sql.

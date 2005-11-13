@@ -7,6 +7,8 @@
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
 
+WITH_SUPHP=%%WITH_SUPHP%%
+
 hordedir=%%HORDEDIR%%
 hordeusr=%%HORDEADMUSR%%
 hordegrp=%%HORDEGRP%%
@@ -74,6 +76,10 @@ create_user() {
 case $2 in
     PRE-INSTALL)
 
+        if [ $WITH_SUPHP != "yes" ]; then
+            exit 0
+        fi
+
         # Create the horde user and group if they do not already exist
 
         if pw user show -n $hordeusr >/dev/null 2>&1 ; then
@@ -88,9 +94,24 @@ case $2 in
 	;;
     POST-INSTALL)
 
-    	# Change ownership of the Horde directory
+        if [ $WITH_SUPHP = "yes" ]; then
+    	    # Change ownership of the Horde directory
 
-        echo "===> Adjusting file ownership in $hordedir"
-        chown -R $hordeusr:$hordegrp $hordedir || exit 1
+            echo "===> Adjusting file ownership in $hordedir"
+            chown -R $hordeusr:$hordegrp $hordedir || exit 1
+        fi
+
+        if [ -z "${PACKAGE_BUILDING}" ]; then
+            # Don't reset the config to default (PR ports/88621)
+
+            for cf in `ls %%HORDEDIR%%/config/*php`; do
+                if [ -f $cf.previous ]; then
+                    mv $cf $cf.new
+                    echo "--->   $cf not installed ***"
+                    echo "--->       please copy from $cf.previous ***"
+                    echo "--->                or from $cf.new      ***"
+                fi
+            done
+        fi
 	;;
 esac
