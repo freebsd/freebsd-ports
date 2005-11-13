@@ -54,6 +54,10 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does nto build on 4.X"
+.endif
+
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 WITH_GSTREAMER=	yes
 WITH_DBUS=	yes
