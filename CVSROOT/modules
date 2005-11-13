@@ -11309,6 +11309,7 @@ serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
 servlet-api	ports/www/servlet-api
 ses		ports/math/ses
+session2	ports/www/session2
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
 seti_applet	ports/astro/seti_applet
