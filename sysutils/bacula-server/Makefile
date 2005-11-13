@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.36.3
+PORTVERSION=	1.38.0
 #PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
 PKGNAMESUFFIX?=	-server
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-doc-${PORTVERSION}.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT?=	The network backup solution (server)
@@ -42,7 +42,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL MTX
+ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -58,10 +58,13 @@ IS_INTERACTIVE=	yes
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
 .else
-OPTIONS=	MYSQL "Use MySQL database instead of SqLite" off
+OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
+OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
+
+OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
 # Prepare if gnome-console is selected this must be happen before
 # include of bsd.port.pre.mk!
@@ -70,15 +73,15 @@ WANT_GNOME=	yes
 USE_GNOME=	libgnome
 .endif
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
+
+.include <bsd.port.pre.mk>
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
 CONFIGURE_ARGS+=	--enable-client-only
-PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo html-manual web-manual
+PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build gnome-console
@@ -114,6 +117,10 @@ DBTYPE=			mysql
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
+.elif defined(WITH_SQLITE3)
+CONFIGURE_ARGS+=	--with-sqlite3=yes
+LIB_DEPENDS+=		sqlite.3:${PORTSDIR}/databases/sqlite3
+DBTYPE=			sqlite
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
@@ -124,6 +131,14 @@ PLIST_SUB+=		DBTYPE=${DBTYPE}
 .if defined(WITH_MTX)
 RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=	--with-openssl
+.endif
+
+.if defined(WITH_CLIENT_ONLY)
+MAN8=bacula.8
 .endif
 
 pre-everything::
@@ -139,6 +154,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes	if you only want a GNOME based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
+	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SqLite-3 instead of SqLite-2 as the database."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
 	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."
@@ -202,17 +218,23 @@ post-install:
 		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
+
+#	@${CHMOD} a+x ${WRKSRC}/scripts/bacula.man
+.if defined(WITH_CLIENT_ONLY)
+	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
+.endif
+
 # Documentaion is only installed in -client port
 .if !defined(NOPORTDOCS)
-	for na in html-manual web-manual; do \
+	for na in manual bacula-web; do \
 		${MKDIR} ${DOCSDIR}/$$na ;\
-		cd ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION} && ${FIND} $$na | \
+		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
 			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
 	done
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/developers.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-doc-${PORTVERSION}/kernstodo ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manual/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/developers/developers.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
 .endif
 .else
 # 	Extend /etc/services and install UID/GID

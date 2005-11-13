@@ -28,6 +28,8 @@ sbin/bsmtp
 %%DATADIR%%/update_%%DBTYPE%%_tables
 %%DATADIR%%/delete_catalog_backup
 %%DATADIR%%/make_catalog_backup
+%%DATADIR%%/dvd-handler
+
 @dirrm %%DATADIR%%
 @unexec /usr/bin/killall badula-sd > /dev/null 2>&1 || true
 @unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
