@@ -1,0 +1,24 @@
+--- vmmon-only/freebsd/driver.c.orig	Sun Nov 13 04:05:25 2005
++++ vmmon-only/freebsd/driver.c	Sun Nov 13 04:06:41 2005
+@@ -166,10 +166,11 @@
+ #if __FreeBSD_version >= 500104
+ #if __FreeBSD_version >= 502103
+ 	.d_version =    D_VERSION,
++#else
++	.d_maj =        CDEV_MAJOR
+ #endif
+ 	.d_open =       FreeBSD_Driver_Open,
+ 	.d_name =       DEVICE_NAME,
+-	.d_maj =        CDEV_MAJOR
+ #else
+         /* open */      FreeBSD_Driver_Open,
+         /* close */     noclose,
+@@ -400,7 +401,7 @@
+ 	fp->f_data = data;
+ 	fp->f_flag = flags & FMASK;
+ 	fp->f_ops = &vmmon_fileops;
+-	fp->f_type = DTYPE_VNODE;
++	fp->f_type = DTYPE_SOCKET;
+ 	FILEDESC_UNLOCK(p->p_fd);
+ 
+ #if __FreeBSD_version >= 501111
