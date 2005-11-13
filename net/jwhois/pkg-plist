@@ -23,3 +23,5 @@ etc/jwhois.conf.sample
 @unexec rmdir %D/var 2>/dev/null || true
 @unexec rmdir %D/man/sv/man1 2>/dev/null || true
 @unexec rmdir %D/man/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES
+@unexec rmdir %D/share/locale/rw
