@@ -4,6 +4,4 @@ side program which will send/receive data. Both sides measure the time
 and number of bytes transfered. The local side will print the measures.
 The format of the output can be specified on the commandline.
 
-WWW: http://www.leo.org/~bartel/nttcp/
-
 Bill Fumerola <billf@chc-chimes.com>

@@ -9,9 +9,9 @@ PORTNAME=	nttcp
 PORTVERSION=	1.47
 PORTREVISION=	1
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://home.leo.org/~bartel/nttcp/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	billf
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/ \
+		http://freeware.sgi.com/source/nttcp/ \
+		http://reality.sgiweb.org/freeware/source/nttcp/
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	A client/server program for testing network performance
