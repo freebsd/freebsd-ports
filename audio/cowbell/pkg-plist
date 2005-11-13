@@ -1,0 +1,6 @@
+bin/cowbell
+lib/cowbell/cowbell.exe
+lib/cowbell/cowbell.exe.config
+share/gnome/applications/cowbell.desktop
+share/gnome/pixmaps/cowbell.png
+@dirrm lib/cowbell
