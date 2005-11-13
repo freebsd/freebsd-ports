@@ -100,6 +100,8 @@ lib/libfwbuilder.so
 %%DATADIR%%/migration/FWObjectDatabase_2.0.5.xslt
 %%DATADIR%%/migration/FWObjectDatabase_2.0.6.xslt
 %%DATADIR%%/migration/FWObjectDatabase_2.0.7.xslt
+%%DATADIR%%/migration/FWObjectDatabase_2.0.8.xslt
+%%DATADIR%%/migration/FWObjectDatabase_2.0.9.xslt
 %%DATADIR%%/fwbuilder.dtd
 @dirrm %%DATADIR%%/migration
 @dirrm %%DATADIR%%
