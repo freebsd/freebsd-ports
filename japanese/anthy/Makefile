@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/17231
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	anthy
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
@@ -28,41 +29,41 @@ PLIST_SUB=	ELISPDIR=${ELISPDIR}
 .if defined(WITH_2CHDIC)
 MASTER_SITES+=	http://omaemona.sourceforge.net/packages/Zisyo/:2chdic
 DISTFILES+=	2ch.t:2chdic
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 .if defined(WITH_ODIC)
 MASTER_SITES+=	http://www.ofug.net/~yamajun/files/:odic
-DISTFILES+=	okinawa-20050410.t:odic
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${ODIC_SRCS}
+DISTFILES+=	${ODIC_SRCS}:odic
+ODIC_SRCS=	${ODIC_VERS}.tar.gz
+ODIC_VERS=	okinawa-20051104
 .endif
 
 .if defined(WITH_GSKKDIC)
 MASTER_SITES+=	http://www.ohnolab.org/~kimoto/:gskk
-DISTFILES+=	gskk-20041208.t.gz:gskk
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${GSKK_SRCS}:gskk
+GSKK_SRCS=	${GSKK_VERS}.t.gz
+GSKK_VERS=	gskk-20041208
 .endif
 
 post-extract:
 .if defined(WITH_2CHDIC)
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
-	${REINPLACE_CMD} -e 's/base.t extra.t/base.t extra.t 2ch.t/' \
-		${WRKSRC}/mkanthydic/Makefile.in
+	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/2ch.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
 .endif
 
 .if defined(WITH_ODIC)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20050410.t ${WRKSRC}/mkanthydic
-	${REINPLACE_CMD} -e \
-		's/base.t extra.t/base.t extra.t okinawa-20050410.t/' \
-		${WRKSRC}/mkanthydic/Makefile.in
+	${CP} ${WRKDIR}/${ODIC_VERS}/okinawa.t ${WRKSRC}/mkanthydic
+	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/okinawa.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
 .endif
 
 .if defined(WITH_GSKKDIC)
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/gskk-20041208.t.gz ${WRKSRC}/mkanthydic
-	${GUNZIP_CMD} ${WRKSRC}/mkanthydic/gskk-20041208.t.gz
-	${REINPLACE_CMD} \
-		-e 's/base.t extra.t/base.t extra.t gskk-20041208.t/' \
-		${WRKSRC}/mkanthydic/Makefile.in
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${GSKK_SRCS} ${WRKSRC}/mkanthydic
+	${GUNZIP_CMD} ${WRKSRC}/mkanthydic/${GSKK_SRCS}
+	${PRINTF} "/mkanthydic\\\\/placename.t/a\\\\\\nread @top_srcdir@/mkanthydic/${GSKK_VERS}.t\\n" | \
+	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkanthydic/dict.args.in
 .endif
 
 post-patch:
