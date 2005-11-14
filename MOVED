@@ -1945,3 +1945,5 @@ deskutils/gdesklets-sensor-psi_theme||2005-11-11|Deleted; dead and unfetchable
 deskutils/gdesklets-psi_themes||2005-11-11|Deleted; dead and unfetchable
 devel/libidn|dns/libidn|2005-11-12|Moved to a better category
 devel/p5-Net-LibIDN|dns/p5-Net-LibIDN|2005-11-12|Moved to a better category
+net/libnet|net/libnet10|2005-11-14|Moved
+net/libnet-devel/net/libnet|2005-11-14|Moved

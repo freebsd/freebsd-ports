@@ -7,6 +7,7 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +16,9 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly
 
 .if defined(WITH_LIBNET_DEVEL)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .else
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 .endif
 
 GNU_CONFIGURE=	yes

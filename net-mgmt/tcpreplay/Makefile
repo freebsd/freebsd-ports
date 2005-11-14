@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpreplay
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel \
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet \
 		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
 GNU_CONFIGURE=	yes

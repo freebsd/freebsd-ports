@@ -7,14 +7,14 @@
 
 PORTNAME=	dnshijacker
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns security
 MASTER_SITES=	http://pedram.redhive.com/downloads/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A tool to hijack DNS requests
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	-lpcap -lnet
 

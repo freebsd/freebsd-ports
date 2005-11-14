@@ -8,7 +8,7 @@
 PORTNAME=		ettercap
 PORTVERSION=		0.7.3
 DISTVERSIONPREFIX=	NG-
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		net-mgmt security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 		ICONV	"Build with support for UTF-8"	on \

@@ -7,6 +7,7 @@
 
 PORTNAME=	snort_inline
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/snort_inline/
 DISTNAME=	snort_inline-2.3.0-RC1
@@ -26,7 +27,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-inline --enable-ipfw
 
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS+=		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 CONFIGURE_ARGS+=	--with-libnet-includes=${LOCALBASE}/include \
 			--with-libnet-libraries=${LOCALBASE}/lib
 

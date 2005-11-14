@@ -7,7 +7,7 @@
 
 PORTNAME=	nast
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
 		http://voodoo.bawue.com/download/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nast is a packet sniffer
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 

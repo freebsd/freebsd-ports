@@ -7,13 +7,14 @@
 
 PORTNAME=	dsniff
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
 
 GNU_CONFIGURE=	yes

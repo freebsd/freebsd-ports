@@ -7,6 +7,7 @@
 
 PORTNAME=	nemesis
 PORTVERSION=	1.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	molter@tin.it
 COMMENT=	Command-line network packet creation and injection suite
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet-includes="${LOCALBASE}/include" \

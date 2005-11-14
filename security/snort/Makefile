@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -41,7 +42,7 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FLEXRESP)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS+=		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 CONFIGURE_ARGS+=	--enable-flexresp \
 			--with-libnet-includes=${LOCALBASE}/include \
 			--with-libnet-libraries=${LOCALBASE}/lib

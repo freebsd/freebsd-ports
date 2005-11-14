@@ -7,6 +7,7 @@
 
 PORTNAME=	packit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network auditing tool
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 MAN8=		packit.8
@@ -36,7 +37,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""#######################################################
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You need ${PORTSDIR}/net/libnet-devel to build this port
+	@${ECHO_MSG} "You need ${PORTSDIR}/net/libnet to build this port
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} ""#######################################################
 	@${ECHO_MSG} ""

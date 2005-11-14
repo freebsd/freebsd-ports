@@ -7,14 +7,17 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.0.2a
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
+PKGNAMESUFFIX=	10
 
 MAINTAINER=	shipley@dis.org
 COMMENT=	A C library for creating IP packets
 
-CONFLICTS=	libnet-devel-1.1.*
+CONFLICTS=	libnet-devel-1.1.*\
+		libnet-1.1.*
 
 USE_AUTOCONF_VER=	213
 

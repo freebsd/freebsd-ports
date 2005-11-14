@@ -7,7 +7,7 @@
 
 PORTNAME=	despoof
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	http://razor.bindview.com/tools/files/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Command-line anti-spoofing detection utility
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/despoof ${PREFIX}/bin

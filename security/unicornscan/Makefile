@@ -7,14 +7,14 @@
 
 PORTNAME=	unicornscan
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.dyadsecurity.com/unicornscan/
 
 MAINTAINER=	cykyc@yahoo.com
 COMMENT=	Next-generation of udpscan plus a high-speed TCP scanner
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
