@@ -30,7 +30,7 @@ privoxy_start()
 		echo "${name} is already running"
 	else
 		echo "Starting ${name}."
-        	${command} ${privoxy_flags} ${configfile} --pidfile ${pidfile} \
+        	su -m privoxy -c '${command} ${privoxy_flags} ${configfile} --pidfile ${pidfile}' \
 		1>/dev/null 2>&1
 	fi
 }
