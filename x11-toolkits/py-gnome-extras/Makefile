@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -24,7 +25,7 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
 		gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
 		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
 		gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
-		gksuui1.0.0:${PORTSDIR}/sysutils/libgksuui \
+		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnomemedia2 \
 		gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
