@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	htree
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to manipulate HTML/XML tree data structure
 
 USE_RUBY=	yes
