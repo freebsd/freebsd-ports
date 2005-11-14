@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/:fetchmail_site,fetchmailconf_site \
 		http://www.catb.org/~esr/%SUBDIR%/:fetchmail_site \
