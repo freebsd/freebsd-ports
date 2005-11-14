@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jacob@dominoid.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple but effective csv to xml converter
 
 USE_BZIP2=	yes
