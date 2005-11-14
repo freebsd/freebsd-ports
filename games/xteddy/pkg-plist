@@ -1,15 +1,16 @@
 bin/xteddy
-%%DATADIR%%/pixmaps/teddy_bw.xbm
-%%DATADIR%%/pixmaps/teddy_color.xpm
-%%DATADIR%%/pixmaps/teddy_icon.xbm
-%%DATADIR%%/pixmaps/teddy_mask.xbm
-%%DATADIR%%/pixmaps/xpenguin_bw.xbm
-%%DATADIR%%/pixmaps/xpenguin_color.xpm
-%%DATADIR%%/pixmaps/xpenguin_icon.xbm
-%%DATADIR%%/pixmaps/xpenguin_mask.xbm
-%%DATADIR%%/pixmaps/xteddy_bw.xbm
-%%DATADIR%%/pixmaps/xteddy_color.xpm
-%%DATADIR%%/pixmaps/xteddy_icon.xbm
-%%DATADIR%%/pixmaps/xteddy_mask.xbm
-@dirrm %%DATADIR%%/pixmaps
+bin/xtoys
+bin/xteddy_test
+%%DATADIR%%/teddy.png
+%%DATADIR%%/xteddy.png
+%%DATADIR%%/xpenguin.png
+%%DATADIR%%/xduck.png
+%%DATADIR%%/xtuxxy.png
+%%DATADIR%%/xalex.png
+%%DATADIR%%/xbobo.png
+%%DATADIR%%/xklitze.png
+%%DATADIR%%/xruessel.png
+%%DATADIR%%/xnamu.png
+%%DATADIR%%/xbrummi.png
+%%DATADIR%%/xorca.png
 @dirrm %%DATADIR%%
