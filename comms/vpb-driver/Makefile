@@ -40,7 +40,6 @@ do-configure:
 	@${REINPLACE_CMD} -E ${SED_SCRIPT} ${WRKSRC}/src/vpbreg.cpp
 
 post-install:
-	@${RM} -f ${PREFIX}/etc/rc.d/vpb.sh.sample.bak 2>/dev/null
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
