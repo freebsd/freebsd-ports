@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	mapchan
-PORTVERSION=	1.4
+PORTVERSION=	2.0
 CATEGORIES=	sysutils converters
 MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	Implementation of the utility "mapchan" from SCO Unix
-
-BROKEN=		"1.4 is unfetchable but 2.0 is available from the site"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-09
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAKE_ENV=	MAPDIR=${PREFIX}/etc/${PORTNAME}
 
 ETCDAT=		*.map default.sample
 
@@ -28,20 +26,19 @@ MAN8=		mapchan.8
 
 PORTDOCS=	README
 
-pre-patch:
+post-extract:
 	@${CP} ${WRKSRC}/doc/mapchan.F ${WRKSRC}/doc/mapchan.8
-	@${CP} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
 
-pre-build:
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+	@${CP} ${WRKSRC}/examples/default ${WRKSRC}/examples/default.sample
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/mapchan.c
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${ETCDAT:S|^|${WRKSRC}/examples/|} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${INSTALL_MAN} ${WRKSRC}/doc/mapchan.8 ${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
