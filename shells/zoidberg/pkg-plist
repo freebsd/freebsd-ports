@@ -6,7 +6,6 @@ etc/zoidrc
 %%SITE_PERL%%/Zoidberg.pm
 %%SITE_PERL%%/Zoidberg/Contractor.pm
 %%SITE_PERL%%/Zoidberg/DispatchTable.pm
-%%SITE_PERL%%/Zoidberg/Eval.pm
 %%SITE_PERL%%/Zoidberg/Fish.pm
 %%SITE_PERL%%/Zoidberg/Fish/Commands.pm
 %%SITE_PERL%%/Zoidberg/Fish/Intel.pm
@@ -39,6 +38,7 @@ etc/zoidrc
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/pushd.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/pwd.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/read.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/reload.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/set.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/setenv.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/source.al
@@ -50,7 +50,6 @@ etc/zoidrc
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/unsetenv.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/wait.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Commands/which.al
-%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/_subs.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Intel/autosplit.ix
 %%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i__zoid.al
 %%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_cdpath.al

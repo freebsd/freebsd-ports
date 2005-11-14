@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	zoidberg
-PORTVERSION=	0.90
+PORTVERSION=	0.95
 CATEGORIES=	shells perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://zoidberg.student.utwente.nl/downloads/Zoidberg/
@@ -30,12 +30,11 @@ CONFIGURE_ARGS=	install_path=doc="${DOCSDIR}" \
 
 PORTDOCS=	*
 
-MAN1=	zoid.1 zoiddevel.1 zoidfaq.1 zoiduser.1
+MAN1=	zoid.1 zoiddevel.1 zoidfaq.1 zoiduser.1 zoidbuiltins.1
 MAN3=	Bundle::Zoidberg.3 \
 	Zoidberg.3 \
 	Zoidberg::Contractor.3 \
 	Zoidberg::DispatchTable.3 \
-	Zoidberg::Eval.3 \
 	Zoidberg::Fish.3 \
 	Zoidberg::Fish::Commands.3 \
 	Zoidberg::Fish::Intel.3 \
