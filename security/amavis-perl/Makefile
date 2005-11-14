@@ -33,9 +33,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 .if !defined(WITHOUT_AMAVIS_VSCAN)
 BUILD_DEPENDS+= ${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan
 .endif
-.if !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
-.endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

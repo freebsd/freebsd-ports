@@ -15,9 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 CONFLICTS=	rpm-4.*
 

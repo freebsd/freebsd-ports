@@ -17,9 +17,6 @@ COMMENT=	Dynamic Adaptive Compression Tool
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		lzo.1:${PORTSDIR}/archivers/lzo
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

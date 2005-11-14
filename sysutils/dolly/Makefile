@@ -42,10 +42,6 @@ do-install:
 
 # Correctly depend upon bzip2 if necessary
 .ifdef(WITH_BZIP2)
-. if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-. endif
-
 EXTRA_PATCHES+=	${FILESDIR}/extra-bzip2-patch-dolly.c
 .endif
 

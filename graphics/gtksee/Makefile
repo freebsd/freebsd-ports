@@ -16,10 +16,6 @@ COMMENT=	Image viewer
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_GNOME=	gtk12 gnometarget
 USE_REINPLACE=	yes
