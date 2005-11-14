@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ilia@cgu.chel.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
 .include <bsd.port.pre.mk>
