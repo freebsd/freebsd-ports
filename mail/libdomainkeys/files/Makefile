@@ -9,7 +9,7 @@ SHLIB_MAJOR=	%%SHLIB_MAJOR%%
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 CFLAGS+=	-DBIND_8_COMPAT -I${OPENSSLBASE}/include
-#LIBS+=		-lcrypto -L${OPENSSLBASE}/lib
+LDFLAGS+=	-lcrypto -L${OPENSSLBASE}/lib
 
 makeheader: makeheader.c
 
