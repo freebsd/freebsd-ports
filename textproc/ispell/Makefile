@@ -89,9 +89,6 @@ EXTRA_DICT+=	${BRDISTFILE}:br
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
-.if !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 DENEUDISTFILE=	igerman98-20001109.tar.bz2
 MASTER_SITES+=	http://j3e.de/ispell/igerman98/dict/:denu
 EXTRA_DICT+=	${DENEUDISTFILE}:denu
