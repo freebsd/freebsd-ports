@@ -116,28 +116,29 @@ INSTALL_TARGET=	install-strip
 .  endif
 
 .  if defined(WITH_MIT_KRB5)
-WITH_KRB5=	yes
-KRB5_HOME?=	${LOCALBASE}
-KRB5CONF=	${KRB5_HOME}/bin/krb5-config
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
-.  endif
-
-.  if defined(WITH_HEIMDAL_KRB5)
-WITH_KRB5=	yes
-.    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-KRB5CONF=	${HEIMDAL_HOME}/bin/krb5-config
-.    elif ( ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
-KRB5CONF=	${DESTDIR}/usr/bin/krb5-config
+.    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
+BROKEN=		"You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB"
+.    endif
+# Allow defining a home built MIT Kerberos by setting KRB5_HOME
+.    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
+CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 .    else
-LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
-KRB5CONF=	${LOCALBASE}/bin/krb5-config
+LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 .    endif
 .  endif
 
-.  if defined(WITH_KRB5)
-CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
-LDFLAGS+=	`${KRB5CONF} --libs krb5`
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+.  if defined(WITH_HEIMDAL_KRB5)
+# Allow defining a home built Heimdal Kerberos by setting HEIMDAL_HOME
+.    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a) && exists(${HEIMDAL_HOME}/bin/krb5-config)
+CONFIGURE_ARGS+=--with-krb5=${HEIMDAL_HOME}
+.    else
+# Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
+# so we always use the heimdal port. See
+# http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
+LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
+.    endif
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
