@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
 DISTNAME=	BASS-CD
 
-MAINTAINER=	alexander@trull.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm

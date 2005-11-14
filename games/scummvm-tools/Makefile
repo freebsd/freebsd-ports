@@ -11,7 +11,7 @@ CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
 
-MAINTAINER=	alexander@trull.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
