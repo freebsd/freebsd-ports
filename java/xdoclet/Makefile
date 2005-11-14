@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip xjavadoc-${XJAVADOC_VER}.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lxv@omut.org
 COMMENT=	Java attribute-oriented code generation engine
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
