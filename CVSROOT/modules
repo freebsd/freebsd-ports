@@ -5454,6 +5454,7 @@ libmusicbrainz	ports/audio/libmusicbrainz
 libnaji		ports/devel/libnaji
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
+libnet10	ports/net/libnet10
 libnetdude	ports/net/libnetdude
 libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
