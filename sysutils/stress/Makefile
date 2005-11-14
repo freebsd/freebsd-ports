@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	stress
-PORTVERSION=	0.18.6
+PORTVERSION=	0.18.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://weather.ou.edu/~apw/projects/stress/
+MASTER_SITES=	http://weather.ou.edu/~apw/projects/stress/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Tool to impose load on and stress test Unix-like systems
