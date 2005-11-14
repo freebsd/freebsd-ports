@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xteddy
-PORTVERSION=	1.1
+PORTVERSION=	2.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.itn.liu.se/~stegu/xteddy/
 
@@ -20,15 +20,13 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
+USE_GNOME=	imlib
 
 MAN1=		xteddy.1
 
 post-patch:
-.for file in configure Makefile.in xteddy.1
-	@${REINPLACE_CMD} -e 's|include/X11|share/xteddy|g' ${WRKSRC}/${file}
+.for f in xteddy.c Makefile.in xteddy_test
+	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' ${WRKSRC}/${f}
 .endfor
-
-pre-install:
-	@${MKDIR} ${DATADIR}/pixmaps
 
 .include <bsd.port.mk>
