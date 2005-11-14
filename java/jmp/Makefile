@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.47
-PORTREVISION=	1
+PORTVERSION=	0.48
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
 MAINTAINER=	ronald@cs.vu.nl
 COMMENT=	Java Memory Profiler
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 OPTIONS=	X11 "Enable X11 support" on
 OPTIONS+=	DEBUG "Enable extra debug output" off
@@ -23,6 +20,7 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Compile with -O3" off
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include" \
 		--with-libintl-prefix="${LOCALBASE}"
 
+USE_BISON=	yes
 USE_GETTEXT=	yes
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--enable-noui
