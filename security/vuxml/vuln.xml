@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>phpSysInfo</name>
-	<range><lt>2.4</lt></range>
+	<range><gt>0</gt></range>
       </package>
     </affects>
     <description>
@@ -65,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-11-10</discovery>
       <entry>2005-11-13</entry>
+      <modified>2005-11-14</modified>
     </dates>
   </vuln>
 
