@@ -5,22 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	1.74
+PORTVERSION=	1.82
 CATEGORIES=	textproc
-MASTER_SITES=	http://ietf.levkowetz.com/tools/idnits/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
-EXTRACT_SUFX=
+MASTER_SITES=	http://tools.ietf.org/tools/idnits/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	Looks for problems in internet draft formatting
 
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	${WRKSRC}
-NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/idnits
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
