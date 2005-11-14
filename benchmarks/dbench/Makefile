@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbench
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
 
@@ -15,14 +15,12 @@ COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 GNU_CONFIGURE=	yes
 
+NOT_FOR_ARCHS=	amd64
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 BROKEN=	"Doesn't build on FreeBSD < 5.x"
-.endif
-
-.if ${ARCH} == amd64
-BROKEN=	"Doesn't build on arch amd64"
 .endif
 
 .include <bsd.port.post.mk>
