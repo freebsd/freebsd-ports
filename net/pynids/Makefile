@@ -7,6 +7,7 @@
 
 PORTNAME=	pynids
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://pilcrow.madison.wi.us/pynids/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Python interface to libnids
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

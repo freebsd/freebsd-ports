@@ -7,13 +7,14 @@
 
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traceroute implementation using TCP packets
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpwrite.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 MAN8=	tcptraceroute.8
 

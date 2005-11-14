@@ -7,13 +7,14 @@
 
 PORTNAME=	ipguard
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/
 
 MAINTAINER=	sead@mail.ru
 COMMENT=	Tool designed to protect LAN IP adress space by ARP spoofing
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 MAN8=		ipguard.8
 

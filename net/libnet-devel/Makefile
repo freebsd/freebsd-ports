@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libnet
-PORTVERSION=	1.1.2.1
+PORTVERSION=	1.1.3.r1
 CATEGORIES=	net
-MASTER_SITES=	http://voodoo.bawue.com/download/
+MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r1$//}-RC-01
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
 
-CONFLICTS=	libnet-1.*
+CONFLICTS=	libnet*-1.*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -23,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
-		doc/RAWSOCKET_NON_SEQUITUR doc/TODO doc/html/*
+		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
 EXAMPLES=	sample/*.c
 
 post-install:

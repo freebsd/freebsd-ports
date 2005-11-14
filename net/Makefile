@@ -276,6 +276,7 @@
     SUBDIR += libmms
     SUBDIR += libnet
     SUBDIR += libnet-devel
+    SUBDIR += libnet10
     SUBDIR += libnetdude
     SUBDIR += libnids
     SUBDIR += libnss-mysql

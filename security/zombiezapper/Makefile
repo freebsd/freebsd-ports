@@ -7,6 +7,7 @@
 
 PORTNAME=	zombiezapper
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://razor.bindview.com/tools/files/
 DISTNAME=	zombie-${PORTVERSION}
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Send a terminate command to Trinoo/TFN/Stacheldracht DDoS agents
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/libnet-config:${PORTSDIR}/net/libnet/
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10/
 
 LIBNETCONF=	${LOCALBASE}/bin/libnet-config
 

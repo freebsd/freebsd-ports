@@ -6,7 +6,7 @@
 
 PORTNAME=	pixilate
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	winfingerprint
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	winfingerprint
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate
 

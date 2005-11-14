@@ -7,7 +7,7 @@
 
 PORTNAME=	olsrd
 PORTVERSION=	0.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.olsr.org/releases/0.4/
 
@@ -17,7 +17,7 @@ COMMENT=	OLSR routing daemon
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 .if defined(WITH_MULTI_IF)
-BUILD_DEPENDS+=	libnet-config:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
 USE_BISON=	yes

@@ -8,6 +8,7 @@
 
 PORTNAME=	ttlscan
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.wormulon.net/files/ttlscan/
 
@@ -15,7 +16,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A tcp based scanner, showing ttl responses
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
-		${LOCALBASE}/include/libnet.h:${PORTSDIR}/net/libnet
+		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	-lpcap -ldnet
 

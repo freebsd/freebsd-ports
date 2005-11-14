@@ -7,6 +7,7 @@
 
 PORTNAME=	yersinia
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -14,10 +15,11 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
+USE_GETOPT_LONG=	yes
+
 .include <bsd.port.pre.mk>
 
-# Dependency on file that is not also installed by libnet (1.0.2) port!
-BUILD_DEPENDS=	${LOCALBASE}/share/examples/libnet/ip_raw.c:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 .if ${OSVERSION} < 500000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap

@@ -7,13 +7,14 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux-ha.org/download/
 
 MAINTAINER=	scott-ports@tummy.com
 COMMENT=	Subsystem for High-Availability Clustering
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libnet.h:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

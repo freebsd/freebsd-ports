@@ -7,13 +7,14 @@
 
 PORTNAME=	vida
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://vidatapipe.sourceforge.net/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Vida is a multi-datapipe handler
 
-BUILD_DEPENDS=	${LOCALBASE}/include/libnet.h:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	-pthread -lncurses -lpcap -lnet
 

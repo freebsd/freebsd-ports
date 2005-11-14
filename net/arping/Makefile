@@ -7,13 +7,14 @@
 
 PORTNAME=	arping
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	-lpcap
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://gps.sourceforge.net/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-FRC
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghost Port Scan
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

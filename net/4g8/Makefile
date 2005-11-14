@@ -7,6 +7,7 @@
 
 PORTNAME=	4g8
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://forgate.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +18,7 @@ COMMENT=	4g8 is a tool that allows you to capture traffic
 DEPRECATED=	"no longer actively maintained, author suggests ettercap instead"
 EXPIRATION_DATE=	2006-01-12
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

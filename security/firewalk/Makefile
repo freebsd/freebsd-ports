@@ -7,7 +7,7 @@
 
 PORTNAME=	firewalk
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A remote firewall auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet	\
-		${LOCALBASE}/include/libnet/libnet-types.h:${PORTSDIR}/net/libnet-devel
+ 		libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/Firewalk
