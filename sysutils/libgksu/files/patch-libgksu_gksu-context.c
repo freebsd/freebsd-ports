@@ -1,6 +1,6 @@
 --- libgksu/gksu-context.c.orig	Sun Oct 17 21:43:32 2004
 +++ libgksu/gksu-context.c	Fri Nov  5 01:01:45 2004
-@@ -23,9 +23,13 @@
+@@ -23,9 +24,14 @@
  #include <unistd.h>
  #include <string.h>
  #include <fcntl.h>
@@ -11,6 +11,7 @@
 +#include <sys/ioctl.h>
 +#include <termios.h>
 +#include <libutil.h>
++#include <signal.h>
 +
 +#include <pwd.h>
  #include <sys/wait.h>

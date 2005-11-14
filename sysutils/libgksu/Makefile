@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libgksu
-PORTVERSION=	1.2.5a
-PORTREVISION=	3
+PORTVERSION=	1.3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/libgksu1.2/
 DISTNAME=	${PORTNAME}1.2-${PORTVERSION}
 
-MAINTAINER=	troplosti@orcaweb.cjb.net
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	Library providing su and sudo functionality
 
 RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
