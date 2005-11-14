@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.7.2s.20051030
+PORTVERSION=	0.7.2s.20051112
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
+		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://qemu.dad-answers.com/download/qemu/:snapshot
-DISTNAME=	${PORTNAME}-snapshot-2005-10-30_23
+DISTNAME=	${PORTNAME}-snapshot-2005-11-12_23
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@jelal.kn-bremen.de
