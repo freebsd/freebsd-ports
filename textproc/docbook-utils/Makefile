@@ -23,6 +23,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/texmf/tex/jadetex/dsssl.def:${PORTSDIR}/print/j
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
 
 MAN1=		jw.1 sgmldiff.1 docbook2man-spec.pl.1 docbook2texi-spec.pl.1
 MAN7=		backend-spec.7 frontend-spec.7
