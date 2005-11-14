@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.berlios.de/gtksee/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer
 
+RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
