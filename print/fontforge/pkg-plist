@@ -1,4 +1,5 @@
 bin/fontforge
+bin/pfaedit
 bin/sfddiff
 lib/libgdraw.a
 lib/libgdraw.la
