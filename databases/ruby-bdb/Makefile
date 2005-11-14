@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.7
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
 LIB_DEPENDS=	db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}

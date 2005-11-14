@@ -35,8 +35,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/bdb.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Btree.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Btree.src/M000206.html
@@ -226,9 +224,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000227.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000228.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000229.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000230.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000231.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000250.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000251.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000252.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000220.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000221.html
@@ -286,6 +284,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000214.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000215.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000229.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000230.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000231.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000232.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000233.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000234.html
@@ -304,9 +305,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000247.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000248.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000249.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000250.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000251.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000252.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/bdb_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/common_rb.html
@@ -331,6 +329,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/lock.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/log.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
