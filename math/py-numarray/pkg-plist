@@ -294,10 +294,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/README
 %%PORTDOCS%%%%DOCSDIR%%/manual/StyleGuide
 %%PORTDOCS%%%%DOCSDIR%%/manual/TODO
-%%PORTDOCS%%%%DOCSDIR%%/manual/arrayindexing.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arrayattributes.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arraybasics.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arrayfunctions.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/arrayindexing.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arraymethods.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/chararray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/convolve.tex
@@ -340,9 +340,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.1
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.2.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.3
-%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.3.~1.4.~
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.4
 %%PORTDOCS%%%%DOCSDIR%%/sitecustomize.py
-%%PORTDOCS%%%%DOCSDIR%%/unittest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/__init__.py
@@ -359,6 +358,8 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/numpy_compatmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/one_dimensionalmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/testlite.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/dimsdata/dimsdata.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/dimsdata/setup.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/f2py/f2py_tests.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/f2py/master_test.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/obench.py
@@ -378,13 +379,13 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/const.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/Src/polevl.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_rzero.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ufunc/setup_special.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Src
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/RipNumeric
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc/Lib
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ufunc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/f2py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dimsdata
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/convolve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/release_notes
