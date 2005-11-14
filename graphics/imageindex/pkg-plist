@@ -1,4 +1,0 @@
-bin/imageindex
-bin/autocaption
-%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm share/doc/imageindex

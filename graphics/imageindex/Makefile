@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imageindex
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
@@ -20,16 +20,19 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
 
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+MAKE_ARGS+=	PERLPATH=${PERL}
+
+PLIST_FILES=	bin/imageindex bin/autocaption %%DOCSDIR%%/README
+PLIST_DIRS=	%%DOCSDIR%%
 
 MAN1=	imageindex.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|share/man|man| ;' ${WRKSRC}/Makefile
 
-.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
