@@ -119,6 +119,7 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/NCSA_logger.html
 %%PORTDOCS%%%%DOCSDIR%%/PHP_execution.html
 %%PORTDOCS%%%%DOCSDIR%%/Redirections.html
+%%PORTDOCS%%%%DOCSDIR%%/Request_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/Server-conf-small.png
 %%PORTDOCS%%%%DOCSDIR%%/Server_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/U-Cherokee.html
