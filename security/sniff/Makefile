@@ -11,8 +11,8 @@ CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=		veraldi@cs.unibo.it
-COMMENT=	Program to sniff logins and passwords
+MAINTAINER=		ports@FreeBSD.org
+COMMENT=		Program to sniff logins and passwords
 
 MAN1=			sniff.1
 PLIST_FILES=		sbin/sniff
