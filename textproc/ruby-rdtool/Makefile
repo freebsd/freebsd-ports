@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.16
-PORTREVISION=	1
+PORTVERSION=	0.6.20
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 
 BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
