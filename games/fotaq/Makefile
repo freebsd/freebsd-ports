@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
 DISTNAME=	FOTAQ_Talkie
 
-MAINTAINER=	alexander@trull.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
