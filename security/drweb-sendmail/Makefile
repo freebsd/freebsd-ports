@@ -70,7 +70,7 @@ do-install:
 		-e s#___T_FILTER_PARAMS___##g \
 		< ${WRKSRC}${LOCALBASE}/drweb/doc/sendmail/template.initscript > \
 		${PREFIX}/etc/rc.d/002.drweb-smf.sh
-	${CHMOD} +x ${PREFIX}/etc/rc.d/002.drweb-smf.sh
+	${CHMOD} 750 ${PREFIX}/etc/rc.d/002.drweb-smf.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
