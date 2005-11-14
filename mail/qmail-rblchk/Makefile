@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail-rblchk
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://morettoni.net/qmail/
 
@@ -32,7 +32,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 MAN1=		qmail-rblchk.1
 
 post-patch:
-	@${REINPLACE_CMD} 's|02755|0755|g; /"cat/d' ${WRKSRC}/hier.c
+	@${REINPLACE_CMD} '/"cat/d' ${WRKSRC}/hier.c
 
 do-configure:
 	${PRINTF}   "${PREFIX}\n\n.../bin.\n"	> ${WRKSRC}/conf-home
