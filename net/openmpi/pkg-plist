@@ -3,8 +3,6 @@
 %%MPIDIR%%/bin/mpif77
 %%MPIDIR%%/bin/mpif90
 %%MPIDIR%%/bin/ompi_info
-%%MPIDIR%%/bin/openmpi
-%%MPIDIR%%/bin/orteconsole
 %%MPIDIR%%/bin/orted
 %%MPIDIR%%/bin/orteprobe
 %%MPIDIR%%/bin/orterun
@@ -108,8 +106,6 @@
 %%MPIDIR%%/lib/openmpi/mca_pml_ob1.so
 %%MPIDIR%%/lib/openmpi/mca_pml_teg.la
 %%MPIDIR%%/lib/openmpi/mca_pml_teg.so
-%%MPIDIR%%/lib/openmpi/mca_pml_uniq.la
-%%MPIDIR%%/lib/openmpi/mca_pml_uniq.so
 %%MPIDIR%%/lib/openmpi/mca_ptl_self.la
 %%MPIDIR%%/lib/openmpi/mca_ptl_self.so
 %%MPIDIR%%/lib/openmpi/mca_ptl_sm.la
@@ -160,7 +156,6 @@
 %%MPIDIR%%/share/openmpi/help-orte-pls-fork.txt
 %%MPIDIR%%/share/openmpi/help-orte-rmaps-rr.txt
 %%MPIDIR%%/share/openmpi/help-orte-runtime.txt
-%%MPIDIR%%/share/openmpi/help-orteconsole.txt
 %%MPIDIR%%/share/openmpi/help-orted.txt
 %%MPIDIR%%/share/openmpi/help-orteprobe.txt
 %%MPIDIR%%/share/openmpi/help-orterun.txt

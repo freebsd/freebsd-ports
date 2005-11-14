@@ -10,7 +10,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.0rc4
+DISTVERSION=	1.0rc7
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/v${DISTVERSION:C/rc[0-9]*//}/downloads/
 
