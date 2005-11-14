@@ -8,7 +8,7 @@
 PORTNAME=	xbloody
 PORTVERSION=	1.00
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1994/oct/
+MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kazu@jp.freebsd.org

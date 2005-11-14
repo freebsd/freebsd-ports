@@ -9,7 +9,7 @@ PORTNAME=	xloadface
 PORTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/X11others/
+MASTER_SITES=	http://www.kazu.kz/freebsd/
 
 MAINTAINER=	kazu@jp.freebsd.org
 COMMENT=	Network load monitor for X11
