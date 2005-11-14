@@ -3,4 +3,4 @@ language tcl. The primary purpose of the package is to facilitate the
 interactive script development by the means of word and file name completion
 as well as history expansion (well known from shells like bash).
 
-WWW: http://www.zellner.org/tclreadline/
+WWW: http://tclreadline.sourceforget.net
