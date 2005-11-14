@@ -5,10 +5,21 @@ share/gnome/applications/gksu.desktop
 share/gnome/applications/gksuexec.desktop
 share/gnome/pixmaps/gksu-icon.png
 share/gnome/pixmaps/gksu-root-terminal.png
+share/gnome/gksu/gksu-migrate-conf.sh
 share/locale/ca/LC_MESSAGES/gksu.mo
 share/locale/da/LC_MESSAGES/gksu.mo
 share/locale/de/LC_MESSAGES/gksu.mo
 share/locale/es/LC_MESSAGES/gksu.mo
-share/locale/no_NB/LC_MESSAGES/gksu.mo
 share/locale/pt_BR/LC_MESSAGES/gksu.mo
 share/locale/ru/LC_MESSAGES/gksu.mo
+share/locale/cs/LC_MESSAGES/gksu.mo
+share/locale/fr/LC_MESSAGES/gksu.mo
+share/locale/hu/LC_MESSAGES/gksu.mo
+share/locale/nb/LC_MESSAGES/gksu.mo
+share/locale/nl/LC_MESSAGES/gksu.mo
+share/locale/pl/LC_MESSAGES/gksu.mo
+share/locale/pt/LC_MESSAGES/gksu.mo
+share/locale/ro/LC_MESSAGES/gksu.mo
+share/locale/sk/LC_MESSAGES/gksu.mo
+share/locale/xh/LC_MESSAGES/gksu.mo
+@dirrm share/gnome/gksu
