@@ -9,7 +9,7 @@
 #        databases/unixODBC.
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.2
+PORTVERSION=	3.52.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,7 @@ COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
 CONFLICTS=	unixODBC-*
 
-USE_GNOME=	gnometarget
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -48,18 +48,20 @@ post-patch:
 		's|$$CFLAGS -pthread|$$CFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|samples||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-ldl||g' ${WRKSRC}/admin/libiodbc.pc.in
 
 post-install:
 	@${MKDIR} ${INIDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/odbc*.ini.sample ${INIDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in Makefile iodbctest.c
-	${INSTALL_DATA} ${WRKSRC}/samples/${file} ${EXAMPLESDIR}
+.for f in Makefile iodbctest.c
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${EXAMPLESDIR}
 .endfor
 .endif
 
