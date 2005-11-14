@@ -1,8 +1,8 @@
 bin/wmconfig
-bin/wmconfig_launcher
 etc/wmconfig/Applications
 etc/wmconfig/Astronomy
 etc/wmconfig/Desktop
+etc/wmconfig/Development
 etc/wmconfig/Editors
 etc/wmconfig/Edutainment
 etc/wmconfig/Funcs
@@ -16,29 +16,4 @@ etc/wmconfig/Office_Viewers
 etc/wmconfig/Shells
 etc/wmconfig/System
 etc/wmconfig/Utilities
-etc/wmconfig/confs/aewmrc
-etc/wmconfig/confs/aftersteprc
-etc/wmconfig/confs/amiwmrc
-etc/wmconfig/confs/blackboxrc
-etc/wmconfig/confs/ctwmrc
-etc/wmconfig/confs/epiwmrc
-etc/wmconfig/confs/fluxboxrc
-etc/wmconfig/confs/fvwm2rc
-etc/wmconfig/confs/fvwm95rc
-etc/wmconfig/confs/fvwmrc
-etc/wmconfig/confs/golemrc
-etc/wmconfig/confs/icewmrc
-etc/wmconfig/confs/mlvwmrc
-etc/wmconfig/confs/mwmrc
-etc/wmconfig/confs/openboxmenu
-etc/wmconfig/confs/openboxrc
-etc/wmconfig/confs/pekwmrc
-etc/wmconfig/confs/piewmrc
-etc/wmconfig/confs/pwmrc
-etc/wmconfig/confs/qvwmrc
-etc/wmconfig/confs/twmrc
-etc/wmconfig/confs/uderc
-etc/wmconfig/confs/vtwmrc
-etc/wmconfig/confs/xfcerc
-@dirrm etc/wmconfig/confs
 @dirrm etc/wmconfig
