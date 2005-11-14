@@ -7,6 +7,7 @@
 
 PORTNAME=	unace
 PORTVERSION=	2.5
+PORTEPOCH=	1
 CATEGORIES=	archivers linux
 MASTER_SITES=	http://www.winace.com/files/
 PKGNAMEPREFIX=	linux-
