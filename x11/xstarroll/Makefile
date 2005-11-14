@@ -6,20 +6,31 @@
 #
 
 PORTNAME=	xstarroll
-PORTVERSION=	1.04
+PORTVERSION=	1.1b
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
+MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Letters fly to far, far, far away
 
-ALL_TARGET=	xstarroll
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
+ALL_TARGET=	xstarroll
 
 MAN1=		xstarroll.1
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/xstarroll
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g ; \
+		 s|gcc |$${CC} |g ; \
+		 s|-O |$${CFLAGS} |g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xstarroll ${PREFIX}/bin/xstarroll
+	${INSTALL_MAN} ${WRKSRC}/xstarroll.man ${MANPREFIX}/man/man1/xstarroll.1
 
 .include <bsd.port.mk>
