@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	blackbox
-PORTVERSION=	0.70.0
-PORTREVISION=	1
+PORTVERSION=	0.70.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blackboxwm
@@ -40,6 +39,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
