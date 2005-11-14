@@ -1,0 +1,22 @@
+
+* WWWDOCROOT [www/data]
+  The DocumentRoot of your webserver under ${PREFIX}
+
+* PHPBBURL [phpBB2]
+  The base URL of phpBB2 on your webserver
+
+    phpBB2 will be installed under ${PREFIX}/${WWWDOCROOT}/${PHPBBURL},
+    and will be visible as http://<hostname>/${PHPBBURL}/
+
+* WWWOWN [www]
+  The user ID under which your webserver executes
+
+    It is recommended that you do not change this option unless you're
+    REALLY sure what you're doing.
+
+* WWWGRP [www]
+  The group ID under which your webserver executes
+
+    It is recommended that you do not change this option unless you're
+    REALLY sure what you're doing.
+

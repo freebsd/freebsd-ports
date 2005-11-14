@@ -103,6 +103,7 @@
     SUBDIR += php_doc-hk
     SUBDIR += php_doc-tw
     SUBDIR += php_doc-zh
+    SUBDIR += phpbb-tw
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += qe
