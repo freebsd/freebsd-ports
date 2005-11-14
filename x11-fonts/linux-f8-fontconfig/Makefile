@@ -7,9 +7,10 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts linux
-MASTER_SITES=	ftp://rpmfind.net/linux/fedora/core/3/x86_64/os/Fedora/RPMS/
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=3/x86_64/os/Fedora/RPMS
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary of Fontconfig
@@ -21,6 +22,7 @@ USE_REINPLACE=	yes
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
 RPM_SET=	fontconfig-2.2.3-5.i386.rpm
+PLIST=		${PKGDIR}/pkg-plist
 
 #PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -28,7 +30,7 @@ do-extract:
 	@${RM} -rf ${WRKSRC}/tmp
 	@${MKDIR} ${WRKSRC}/tmp
 	@cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id;
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | ${CPIO} -id;
 
 post-patch:
 	@${REINPLACE_CMD} -i ""  -e 's:/usr/share/fonts:${X11BASE}/lib/X11/fonts:g ; \
