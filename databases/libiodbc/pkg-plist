@@ -8,6 +8,7 @@ include/iodbcunix.h
 include/isql.h
 include/isqlext.h
 include/isqltypes.h
+include/odbcinst.h
 include/sql.h
 include/sqlext.h
 include/sqltypes.h
@@ -30,6 +31,7 @@ lib/libiodbcinst.so
 lib/libiodbcinst.so.3
 lib/libodbc.a
 lib/libodbc.so
+libdata/pkgconfig/libiodbc.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
