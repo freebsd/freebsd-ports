@@ -17,6 +17,8 @@ COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
+CONFLICTS=	phpbb-tw-[0-9]*
+
 USE_BZIP2=	yes
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
