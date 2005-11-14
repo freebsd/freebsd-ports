@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	gksu
-PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTVERSION=	1.3.6
 CATEGORIES=	sysutils
-MASTER_SITES=	#http://people.debian.org/~kov/gksu/gksu/
+MASTER_SITES=	http://people.debian.org/~kov/gksu/gksu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
 LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
-		gksuui1.0.0:${PORTSDIR}/sysutils/libgksuui
-
-BROKEN=		Port is unfetchable, needs an update to the latest version
+		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
+		gnome-keyring.0:${PORTSDIR}/security/gnomekeyring
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack
+USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack gconf2 intlhack
 USE_LIBTOOL_VER=15
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	gksu.schemas
 MAN1=		gksu.1 gksuexec.1
+MLINKS=		gksu.1 gksudo.1
 
 .include <bsd.port.mk>

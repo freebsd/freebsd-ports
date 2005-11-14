@@ -1,11 +1,37 @@
---- gksu/Makefile.in.orig	Fri Nov  5 00:55:23 2004
-+++ gksu/Makefile.in	Fri Nov  5 00:55:33 2004
-@@ -167,7 +167,7 @@
+--- gksu/Makefile.in.orig	Mon Nov 14 19:40:58 2005
++++ gksu/Makefile.in	Mon Nov 14 19:48:36 2005
+@@ -266,7 +266,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -AM_CFLAGS = -g -O2 -Wall
 +AM_CFLAGS = $(CFLAGS)
- INCLUDES = `pkg-config --cflags gtk+-2.0 libgksu1.2 libgksuui1.0`
+ INCLUDES = @GKSU_CFLAGS@
  AM_CPPFLAGS = -DLOCALEDIR=\"$(prefix)/share/locale\" -DDATA_DIR=\"$(datadir)\" -DPREFIX=\"$(prefix)\"
+ schemasdir = $(GCONF_SCHEMA_FILE_DIR)
+@@ -577,18 +577,19 @@
+ 	uninstall-am uninstall-binPROGRAMS uninstall-info-am \
+ 	uninstall-schemasDATA
  
+-@INTLTOOL_SCHEMAS_RULE@
++gksu.schemas:
++	LC_ALL=C $(INTLTOOL_MERGE) -s -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $@.in $@
+ 
+ install-exec-hook:
+ 	cd $(DESTDIR)$(bindir) && \
+ 		$(LN_S) -f gksu gksudo
+ 
+ @GCONF_SCHEMAS_INSTALL_TRUE@install-data-local:
+-@GCONF_SCHEMAS_INSTALL_TRUE@        if test -z "$(DESTDIR)" ; then \
+-@GCONF_SCHEMAS_INSTALL_TRUE@          for p in $(schemas_DATA) ; do \
+-@GCONF_SCHEMAS_INSTALL_TRUE@            GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
+-@GCONF_SCHEMAS_INSTALL_TRUE@          done \
+-@GCONF_SCHEMAS_INSTALL_TRUE@        fi
++@GCONF_SCHEMAS_INSTALL_TRUE@	if test -z "$(DESTDIR)" ; then \
++@GCONF_SCHEMAS_INSTALL_TRUE@	  for p in $(schemas_DATA) ; do \
++@GCONF_SCHEMAS_INSTALL_TRUE@	    GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
++@GCONF_SCHEMAS_INSTALL_TRUE@	  done \
++@GCONF_SCHEMAS_INSTALL_TRUE@	fi
+ @GCONF_SCHEMAS_INSTALL_FALSE@install-data-local:
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
