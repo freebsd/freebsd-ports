@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	2.06a
+PORTVERSION=	2.07b
 CATEGORIES=	shells
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.unixusers.net/src/fdclone/
 #		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
 DISTNAME=	FD-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A CUI-based file and directory management tool
 
 USE_REINPLACE=	yes
@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 MANLANG=	"" ja
 MAN1=		fd.1
 MAKE_ENV=	LANG=ja
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" CONFDIR="${PREFIX}/etc"
 
 DOCS_EN=	FAQ.eng \
 		LICENSES.eng \
