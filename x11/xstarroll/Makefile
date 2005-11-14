@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
 
-MAINTAINER=	sakai@miya.ee.kagu.tus.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Letters fly to far, far, far away
 
 ALL_TARGET=	xstarroll
