@@ -1,6 +1,6 @@
 # Ports collection makefile for:  authforce
 # Date created:                   08.05.2002
-# Whom:                           Andrey A. Chernov <ache@freebsd.org>
+# Whom:                           ache
 #
 # $FreeBSD$
 #
@@ -9,7 +9,7 @@ PORTNAME=	authforce
 PORTVERSION=	0.9.6
 PORTREVISION=	4
 CATEGORIES=	security www
-MASTER_SITES=	http://kapheine.hypa.net/authforce/
+MASTER_SITES=	http://www.divineinvasion.net/authforce/
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
