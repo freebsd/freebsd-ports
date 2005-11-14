@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fhist
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel
-MASTER_SITES=	http://fhist.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Utilities to maintain file history, do file comparisions and merges
