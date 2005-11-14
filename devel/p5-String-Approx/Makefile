@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ilia@cgu.chel.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for approximate matching (fuzzy matching)
 
 PERL_CONFIGURE=	YES
