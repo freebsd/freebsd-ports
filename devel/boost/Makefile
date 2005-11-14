@@ -161,7 +161,7 @@ BOOST_LIBS+=	thread
 .endif
 
 .if defined (WITH_ICU)
-LIB_DEPENDS+=	icuuc.32:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icuuc.34:${PORTSDIR}/devel/icu
 BOOST_ICU_OPTS=	"-sICU_PATH=${LOCALBASE}"
 .endif
 
