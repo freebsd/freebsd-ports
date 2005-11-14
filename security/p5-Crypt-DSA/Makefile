@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-DSA
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random 
 		${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERLBASE}/Convert/PEM.pm:${PORTSDIR}/converters/p5-Convert-PEM \
-		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer
+		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
+	 	${PERLBASE}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
