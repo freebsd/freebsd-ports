@@ -1,0 +1,27 @@
+----------------------------------------------------------------------------
+phpBB2 has been installed, but is not quite ready to be used yet!
+
+You have to ensure that you have a database server (or ODBC access to a
+remote database) installed and configured, and you have to ensure that your
+PHP installation has been compiled with support for your database or
+database access method.  You have to create a database for phpBB2 to use,
+and ensure that this database may be accessed and changed by the user id
+under which your web server executes.  Further information on these
+installation procedures may be found in:
+
+  %%DOCSDIR%%/README.html
+
+Once these steps have been taken, you may connect to the following URL to
+configure your installation of phpBB2:
+
+  http://localhost/%%PHPBBURL%%/
+
+After configuring phpBB2 and ensuring that it is operational, you MUST
+delete the following files manually for security purposes from
+%%PREFIX%%/%%PHPBBDIR%%:
+
+  %%DELETEFILES%%
+
+Duplicates of these files have been installed to %%DATADIR%%.
+%%DATADIR%%/contrib contains contributed software for phpBB2.
+----------------------------------------------------------------------------
