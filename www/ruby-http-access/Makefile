@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rrr.jin.gr.jp/download/
+MASTER_SITES=	http://dev.ctor.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to access the Internet via HTTP
 
 USE_RUBY=	yes
