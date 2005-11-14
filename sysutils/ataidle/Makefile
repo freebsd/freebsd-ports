@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
@@ -28,11 +28,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501105
-IGNORE=		"requires ATAng, available in 5.1-CURRENT or newer"
-.endif
-
-.if ${OSVERSION} > 600028
-BROKEN=		"Does not compile on FreeBSD >= 6.0"
+IGNORE=		requires ATAng, available in 5.1-CURRENT or newer
 .endif
 
 .include <bsd.port.post.mk>
