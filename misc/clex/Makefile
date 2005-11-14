@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clex
-PORTVERSION=	3.13
+PORTVERSION=	3.14
 CATEGORIES=	misc
 MASTER_SITES=	http://www.clex.sk/download/ \
 		http://freebsdcluster.org/~mich/software/
