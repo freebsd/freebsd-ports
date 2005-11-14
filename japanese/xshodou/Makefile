@@ -8,19 +8,25 @@
 PORTNAME=	xshodou
 PORTVERSION=	1.11
 CATEGORIES=	japanese tk80
-MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
+MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese shodou program for X based on Tcl/Tk
 
-RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
 MAN1=		xshodou.1
 MANCOMPRESSED=	yes
 
+WISH=		${LOCALBASE}/bin/wish8.0
+
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/xshodou
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/bin/wish|${WISH}|g' ${WRKSRC}/xshodou
 
 .include <bsd.port.mk>
