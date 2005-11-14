@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
