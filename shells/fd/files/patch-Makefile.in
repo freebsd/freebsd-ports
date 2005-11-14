@@ -1,20 +1,13 @@
---- Makefile.in.orig	Tue Apr 15 00:00:00 2003
-+++ Makefile.in	Sat Apr 19 21:17:22 2003
-@@ -4,7 +4,7 @@
- 
+--- Makefile.in.orig	Wed Sep 14 00:00:00 2005
++++ Makefile.in	Tue Nov  8 11:27:52 2005
+@@ -5,8 +5,8 @@
  TITLE	= FD-
+ VERMAJ	= __VERMAJ__
  VERSION	= __VERSION__
 -PREFIX	= __PREFIX__
+-CONFDIR	= __CONFDIR__
 +PREFIX	?= __PREFIX__
++CONFDIR	?= __CONFDIR__
  BUILD	=
  MANSEC	= 1
  TOPDIR	= $(BUILD)$(PREFIX)
-@@ -16,7 +16,7 @@
- ECATDIR	= $(TOPDIR)/man/cat$(MANSEC)
- IPKWDIR	= ./ipk.work
- IPKTDIR	= ./ipk.tmp
--DEFRC	= $(BUILD)/etc/fd__RCVERSION__rc
-+DEFRC	= $(TOPDIR)/etc/fd__RCVERSION__rc
- DOSRC	= ~FD\\fd__RCVERSION__rc
- UNITBL	= fd-unicd.tbl
- INSTALL	= __INSTALL__
