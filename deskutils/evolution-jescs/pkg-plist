@@ -37,3 +37,4 @@ share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 @unexec rmdir %D/share/locale/zh_HK 2> /dev/null || true
 @dirrm share/gnome/evolution-jescs/glade
 @dirrm share/gnome/evolution-jescs
+@dirrm libexec/evolution/%%EVO_VERSION%%/evolution-jescs
