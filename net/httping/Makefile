@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +20,7 @@ CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 LDFLAGS+=	-lssl -lcrypto
 
 SRC=		http io str error utils main tcp mssl res
+MAN1=		httping.1
 PLIST_FILES=	bin/httping
 
 do-build:
@@ -31,5 +32,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
