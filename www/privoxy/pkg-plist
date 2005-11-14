@@ -36,7 +36,6 @@ etc/privoxy/templates/show-version
 etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
-etc/rc.d/privoxy.sh
 %%PORTDOCS%%share/doc/privoxy-manual/actions-file.html
 %%PORTDOCS%%share/doc/privoxy-manual/configuration.html
 %%PORTDOCS%%share/doc/privoxy-manual/filter-file.html

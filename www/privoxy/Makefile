@@ -7,7 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -18,21 +18,16 @@ COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} # stolen from net/nylon
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
 USE_REINPLACE=	yes
 
+USE_RC_SUBR=	privoxy.sh
+SUB_FILES=	pkg-message
+
 MAKEFILE=	GNUmakefile
 
 MAN1=		privoxy.1
-
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/privoxy.sh.in > ${WRKSRC}/privoxy.sh
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -46,8 +41,8 @@ pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
 
 pre-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${PKGDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
@@ -65,7 +60,12 @@ do-install:
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/privoxy.sh ${PREFIX}/etc/rc.d/
+	${TOUCH} /var/log/privoxy
+	${CHOWN} privoxy:privoxy /var/log/privoxy
+	${CHMOD} 0640 /var/log/privoxy
+	${TOUCH} /var/log/jarfile
+	${CHOWN} privoxy:privoxy /var/log/jarfile
+	${CHMOD} 0600 /var/log/jarfile
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
