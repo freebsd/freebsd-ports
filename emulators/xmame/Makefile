@@ -10,6 +10,7 @@ PORTVERSION?=	0.101
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
+		http://www.energyhq.es.eu.org/files/:history \
 		http://www.mameworld.net/highscore/:highscore \
 		http://cheat.retrogames.com/:cheat
 DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
