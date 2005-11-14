@@ -15,7 +15,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	chinsan.tw@gmail.com
 
-LATEST_LINK=	${PKGNAMEPREFIX}joe
+LATEST_LINK=	${PKGNAMEPREFIX}joe2
 
 MASTERDIR=	${.CURDIR}/../../editors/joe2
 MD5_FILE=	${.CURDIR}/distinfo
