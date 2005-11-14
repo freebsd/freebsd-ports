@@ -6,4 +6,4 @@ include/sdb.h
 lib/libsdb.a
 lib/libsdb.so
 lib/libsdb.so.0
-lib/libsdb.so.0.6.1
+lib/libsdb.so.%%VERSION%%
