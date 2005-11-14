@@ -17,9 +17,6 @@ COMMENT=	The RPM Package Manager
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
 		popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
