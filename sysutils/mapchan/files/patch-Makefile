@@ -1,11 +1,23 @@
---- Makefile.orig Sat Dec 23 09:47:25 2000
-+++ Makefile Thu Aug  7 00:43:27 2003
-@@ -11,7 +11,7 @@
- # (2) If your system has not basename() function - uncomment next string
- #DEFS+=-DNOBASENAME
-
--BINDIR=/bin
-+BINDIR=$(PREFIX)/bin
- LDFLAGS=-lutil
+--- Makefile.orig	Wed Jul  6 00:16:36 2005
++++ Makefile	Mon Nov 14 22:52:35 2005
+@@ -1,6 +1,6 @@
+ #
+ #
+-CFLAGS=-O2
++CFLAGS?=$(CFLAGS)
+ # 
+ # Defines:
+ #DEFS=
+@@ -14,9 +14,9 @@
+ # (3) If need call /bin/sh for parsing argument of option -s
+ DEFS+=-DEXEC_SHELL
+ 
+-BINDIR ?= /bin
+-MAPDIR ?= /etc/mapchan
+-LDFLAGS=-s
++BINDIR?=$(PREFIX)/bin
++MAPDIR?=$(PREFIX)/mapchan
++LDFLAGS=-s -lutil
+ LOADLIBES=-lutil
  #--------------------------------------------------------------
  CFLAGS += $(DEFS)
