@@ -17,9 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server framework
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 

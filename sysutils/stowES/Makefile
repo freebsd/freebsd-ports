@@ -16,9 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	stow Enhancement Script
 
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

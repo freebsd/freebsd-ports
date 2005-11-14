@@ -29,10 +29,6 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/nctoh5 bin/ptdump bin/ptrepack
 
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/setup.py
 

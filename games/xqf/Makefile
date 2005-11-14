@@ -50,9 +50,6 @@ CONFIGURE_ARGS+=	--disable-geoip
 
 .if !defined(WITHOUT_BZIP2)
 CONFIGURE_ARGS+=	--enable-bzip2
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 .endif
 
 post-install:

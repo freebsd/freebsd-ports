@@ -16,9 +16,6 @@ COMMENT=	A configuration tool for Window Maker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnometarget gtk20
