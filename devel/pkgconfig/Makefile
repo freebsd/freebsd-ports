@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pkgconfig
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 DISTNAME=	pkg-config-${PORTVERSION}
