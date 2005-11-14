@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
 
-MAINTAINER=	sakai@miya.ee.kagu.tus.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Balloons move on root window
 
 ALL_TARGET=	xballoon
