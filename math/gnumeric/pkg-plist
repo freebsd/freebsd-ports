@@ -66,6 +66,8 @@ lib/gnumeric/%%VERSION%%/plugins/openoffice/plugin.xml
 %%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/psiconv/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
@@ -86,7 +88,7 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
 lib/libspreadsheet.a
-lib/libspreadsheet-1.6.0.so
+lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.so
 libdata/bonobo/servers/GNOME_Gnumeric.server
 @exec update-desktop-database > /dev/null || /usr/bin/true
@@ -734,6 +736,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/qpro
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
+@dirrm lib/gnumeric/%%VERSION%%/plugins/psiconv
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
 %%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-loader
 %%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-func
