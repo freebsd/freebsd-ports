@@ -7,14 +7,19 @@
 
 PORTNAME=	freebsd-update
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.daemonology.net/freebsd-update/
 
 MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Fetches and installs binary updates to FreeBSD
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600034 && ( ${OSVERSION} < 504104 || ${OSVERSION} > 599999 )
 RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
+.endif
+
 # This is a critical security port.  If it breaks, Bad Things will happen.
 # Under no circumstances should this port ever be modified without approval
 # from the maintainer or security-officer, even for "cosmetic" fixes.
@@ -48,4 +53,4 @@ post-extract:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
