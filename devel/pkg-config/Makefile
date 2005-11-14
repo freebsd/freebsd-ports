@@ -19,15 +19,20 @@ COMMENT=	A utility to retrieve information about installed libraries
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
-LIBTOOLFILES=	glib-1.2.8/configure
-LIBTOOLFLAGS=	--disable-ltlibs \
-		--disable-shared
 
 MAN1=		pkg-config.1
 
 .include <bsd.port.pre.mk>
 
+PC_PATH=${PREFIX}/libdata/pkgconfig
+.if ${LOCALBASE} != ${PREFIX}
+PC_PATH:=	${PC_PATH}:${LOCALBASE}/libdata/pkgconfig
+.endif 
+.if ${X11BASE} != ${PREFIX}
+PC_PATH:=	${PC_PATH}:${X11BASE}/libdata/pkgconfig
+.endif 
+
 CONFIGURE_ARGS=	--disable-threads \
-		--with-pc-path="${PREFIX}/libdata/pkgconfig:${LOCALBASE}/libdata/pkgconfig:${X11BASE}/libdata/pkgconfig"
+		--with-pc-path="${PC_PATH}"
 
 .include <bsd.port.post.mk>
