@@ -60,3 +60,4 @@ share/icons/crystalsvg/64x64/apps/baghira_grey.png
 share/icons/crystalsvg/64x64/apps/baghira_yellow.png
 share/icons/crystalsvg/32x32/apps/baghira_grey.png
 share/icons/crystalsvg/32x32/apps/baghira_yellow.png
+@dirrm share/apps/baghira
