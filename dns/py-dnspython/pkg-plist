@@ -208,6 +208,7 @@
 %%PYTHON_SITELIBDIR%%/dns/zone.py
 %%PYTHON_SITELIBDIR%%/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/dns/zone.pyo
+%%EXAMPLESDIR%%/ddns.py
 %%EXAMPLESDIR%%/mx.py
 %%EXAMPLESDIR%%/name.py
 %%EXAMPLESDIR%%/reverse.py
