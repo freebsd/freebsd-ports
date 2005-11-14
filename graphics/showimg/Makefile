@@ -20,6 +20,8 @@ COMMENT=	A picture viewer designed to run under KDE 3.x
 LIB_DEPENDS=	kipi:${PORTSDIR}/graphics/libkipi \
 		kexif:${PORTSDIR}/graphics/libkexif
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes

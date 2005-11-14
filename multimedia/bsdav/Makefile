@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.jakemsr.com/bsdav/ \
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	BSD native set of programs for audio and video reading and writing
 
+BROKEN=		Does not compile
+
 INSTALLS_SHLIB=	yes
 
 MAN1=	audiorec.1 bktrrec.1 bsdavdemux.1 bsdavrec.1 btv.1 tunerctl.1 avplay.1 \
