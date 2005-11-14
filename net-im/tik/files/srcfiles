@@ -31,7 +31,7 @@ SRCFILES=	media/AOL.gif media/Admin.gif media/Away.gif media/DT.gif  \
 		packages/control.tcl packages/mynews.tcl		   \
 		strs/English.strs sflap.tcl balloonhelp.tcl		   \
 		buddylist.tcl buddymgmt.tcl callbacks.tcl chat.tcl	   \
-		configandpkg.tcl im.tcl info.tcl popup.tcl preproc.tcl	   \
+		configandpkg.tcl im.tcl info.tcl popup.tcl 		   \
 		protocol.tcl proxy.tcl ui.tcl util.tcl version.tcl	   \
 		configTool.tcl toc.tcl tik.tcl sag.tcl			   \
 		configdir.tcl prefs.tcl 

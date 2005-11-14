@@ -100,7 +100,6 @@ share/tik/packages/control.tcl
 share/tik/packages/mynews.tcl
 share/tik/popup.tcl
 share/tik/prefs.tcl
-share/tik/preproc.tcl
 share/tik/protocol.tcl
 share/tik/proxy.tcl
 share/tik/sag.tcl
