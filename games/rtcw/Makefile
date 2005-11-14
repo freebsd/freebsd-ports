@@ -8,14 +8,17 @@
 PORTNAME=	rtcw
 DISTVERSION=	1.41-3
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/
+MASTER_SITES=	http://public.planetmirror.com/pub/idgames2/idstuff/wolf/linux/ \
+		http://ftp.games.skynet.be/pub/ftp.idsoftware.com/wolf/linux/ \
+	        ftp://ftp.chg.ru/.3/games/idgames/idstuff/wolf/linux/ \
+	        http://kh.spoonix.com/game/ \
+	        http://www.ftp-sunet-se.lkams.kernel.org/idgames2/idstuff/wolf/linux/ \
+	        ftp://ftp.idsoftware.com/idstuff/wolf/linux/
 DISTNAME=	wolf-linux-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
-
-BROKEN=		Unfetchable
 
 ONLY_FOR_ARCHS=	i386
 
