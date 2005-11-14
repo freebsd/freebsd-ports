@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-sexypsf
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/
 DISTNAME=	sexypsf-${PORTVERSION}
@@ -20,8 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-
-WRKSRC=		${WRKDIR}/sexypsf
 
 CFLAGS+=	-I${WRKSRC} -fPIC
 DEFINES=	-DSPSFVERSION=\""${PORTVERSION}\"" -DPSS_STYLE=1
