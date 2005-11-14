@@ -1,6 +1,8 @@
-Blackbox is Yet Another Window Manager for X11R6 that arose primarily
-out of the curiosity of the authors.  It's small, fast, has built-in
-rendering code, does image dithering at 8, 15 and 16 bits per pixel
-and colour icon support.  Blackbox is [mostly] ICCCM compliant.
+Blackbox is that fast, lightweight window manager for the X Window System, you
+have been looking for without all those annoying library dependencies. Blackbox
+is built with C++ and contains completely original code.
+
+Blackbox is written to the NetWM specification, which allows integration with
+modern desktop managers including KDE and Gnome.
 
 WWW: http://blackboxwm.sourceforge.net/
