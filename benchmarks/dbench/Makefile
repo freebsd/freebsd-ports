@@ -15,8 +15,6 @@ COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 GNU_CONFIGURE=	yes
 
-NOT_FOR_ARCHS=	amd64
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
