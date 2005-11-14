@@ -17,10 +17,6 @@ EXTRACT_ONLY=	aspell-0.60.4.tar.gz
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
 
-.if !exists(/usr/bin/bzip2)
-BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
-
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
