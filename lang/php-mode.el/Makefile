@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	php-mode.el
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	lang elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=php-mode
-DISTNAME=	php-mode-1.1.0
+DISTNAME=	${PORTNAME:S/.el$//}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Emacs lisp module for the PHP language
 
 NO_BUILD=	yes
