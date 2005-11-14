@@ -3,17 +3,22 @@ include/libgksuui1.0/gksuui-dialog.h
 include/libgksuui1.0/gksuui-convenience.h
 lib/libgksuui1.0.a
 lib/libgksuui1.0.so
-lib/libgksuui1.0.so.0
+lib/libgksuui1.0.so.1
 libdata/pkgconfig/libgksuui1.0.pc
 share/libgksuui1.0/gksu-auth.png
 share/locale/ca/LC_MESSAGES/libgksuui1.0.mo
 share/locale/da/LC_MESSAGES/libgksuui1.0.mo
 share/locale/de/LC_MESSAGES/libgksuui1.0.mo
 share/locale/es/LC_MESSAGES/libgksuui1.0.mo
-share/locale/no_NB/LC_MESSAGES/libgksuui1.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgksuui1.0.mo
 share/locale/ru/LC_MESSAGES/libgksuui1.0.mo
-@unexec rmdir %D/share/locale/no_NB/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/no_NB 2> /dev/null || true
+share/locale/cs/LC_MESSAGES/libgksuui1.0.mo
+share/locale/nl/LC_MESSAGES/libgksuui1.0.mo
+share/locale/fr/LC_MESSAGES/libgksuui1.0.mo
+share/locale/pl/LC_MESSAGES/libgksuui1.0.mo
+share/locale/hu/LC_MESSAGES/libgksuui1.0.mo
+share/locale/ro/LC_MESSAGES/libgksuui1.0.mo
+share/locale/nb/LC_MESSAGES/libgksuui1.0.mo
+share/locale/sk/LC_MESSAGES/libgksuui1.0.mo
 @dirrm share/libgksuui1.0
 @dirrm include/libgksuui1.0

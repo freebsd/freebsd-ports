@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libgksuui
-PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/libgksuui1.0/
 DISTNAME=	${PORTNAME}1.0-${PORTVERSION}
 
-MAINTAINER=	troplosti@orcaweb.cjb.net
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	A graphical fronted to su library
 
 USE_X_PREFIX=	yes
