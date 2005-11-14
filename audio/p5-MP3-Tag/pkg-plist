@@ -1,3 +1,5 @@
+bin/typeset_audio_dir
+bin/mp3info2
 %%SITE_PERL%%/MP3/Tag.pm
 %%SITE_PERL%%/MP3/Tag/CDDB_File.pm
 %%SITE_PERL%%/MP3/Tag/ParseData.pm
