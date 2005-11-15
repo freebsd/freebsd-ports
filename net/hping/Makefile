@@ -8,12 +8,15 @@
 PORTNAME=	hping
 PORTVERSION=	2.0.0r3
 PORTEPOCH=	1
-CATEGORIES=	security net
-MASTER_SITES=	http://www.hping.org/
+CATEGORIES=	net security
+MASTER_SITES=	http://www.hping.org/ \
+		http://ipv42.net/distfiles/hping/
 DISTNAME=	hping2.0.0-rc3
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Network auditing tool
+
+#CONFLICTS=	hping-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/hping2-rc3
 GNU_CONFIGURE=	yes
