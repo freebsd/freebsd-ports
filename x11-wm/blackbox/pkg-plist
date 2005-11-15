@@ -21,6 +21,7 @@ include/bt/Texture.hh
 include/bt/Timer.hh
 include/bt/Unicode.hh
 include/bt/Util.hh
+include/bt/XDG.hh
 %%DATADIR%%/styles/Blue
 %%DATADIR%%/styles/Gray
 %%DATADIR%%/styles/Green
