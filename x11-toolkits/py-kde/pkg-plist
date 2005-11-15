@@ -9,7 +9,6 @@ bin/kdepyuic
 %%PYTHON_SITELIBDIR%%/kdecore.so
 %%PYTHON_SITELIBDIR%%/kdefx.so
 %%PYTHON_SITELIBDIR%%/kdeprint.so
-%%PYTHON_SITELIBDIR%%/kdesu.so
 %%PYTHON_SITELIBDIR%%/kdeui.so
 %%PYTHON_SITELIBDIR%%/kfile.so
 %%PYTHON_SITELIBDIR%%/khtml.so
@@ -210,14 +209,6 @@ bin/kdepyuic
 %%DOCS%%%%DOCSDIR%%/classref/kdeprint/KPrinter.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeprint/index.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeprint/kdeprint-globals.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/KCookie.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/KDEsuClient.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/PTY.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/PtyProcess.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/SshProcess.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/StubProcess.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/SuProcess.html
-%%DOCS%%%%DOCSDIR%%/classref/kdesu/index.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KAboutApplication.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KAboutContainer.html
 %%DOCS%%%%DOCSDIR%%/classref/kdeui/KAboutContributor.html
@@ -972,15 +963,6 @@ bin/kdepyuic
 %%DATADIR%%/kdeprint/kprintdialog.sip
 %%DATADIR%%/kdeprint/kprintdialogpage.sip
 %%DATADIR%%/kdeprint/kprinter.sip
-%%DATADIR%%/kdesu/client.sip
-%%DATADIR%%/kdesu/defaults.sip
-%%DATADIR%%/kdesu/kcookie.sip
-%%DATADIR%%/kdesu/kdesu_pty.sip
-%%DATADIR%%/kdesu/kdesumod.sip
-%%DATADIR%%/kdesu/process.sip
-%%DATADIR%%/kdesu/ssh.sip
-%%DATADIR%%/kdesu/stub.sip
-%%DATADIR%%/kdesu/su.sip
 %%DATADIR%%/kdeui/kaboutapplication.sip
 %%DATADIR%%/kdeui/kaboutdialog.sip
 %%DATADIR%%/kdeui/kaboutkde.sip
@@ -1262,6 +1244,7 @@ bin/kdepyuic
 %%DATADIR%%/kparts/factory.sip
 %%DATADIR%%/kparts/genericfactory.sip
 %%DATADIR%%/kparts/historyprovider.sip
+%%DATADIR%%/kparts/konsole_part.sip
 %%DATADIR%%/kparts/kpartsmod.sip
 %%DATADIR%%/kparts/mainwindow.sip
 %%DATADIR%%/kparts/part.sip
@@ -1289,7 +1272,6 @@ bin/kdepyuic
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/kdecore
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/kdefx
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/kdeprint
-%%DOCS%%@dirrm %%DOCSDIR%%/classref/kdesu
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/kdeui
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/kfile
 %%DOCS%%@dirrm %%DOCSDIR%%/classref/khtml
@@ -1311,7 +1293,6 @@ bin/kdepyuic
 @dirrm %%DATADIR%%/kdecore
 @dirrm %%DATADIR%%/kdefx
 @dirrm %%DATADIR%%/kdeprint
-@dirrm %%DATADIR%%/kdesu
 @dirrm %%DATADIR%%/kdeui
 @dirrm %%DATADIR%%/kfile
 @dirrm %%DATADIR%%/khtml
