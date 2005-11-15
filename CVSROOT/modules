@@ -5490,7 +5490,6 @@ libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdtp		ports/net/libpdtp
 libpeak		ports/devel/libpeak
-libpixman	ports/graphics/libpixman
 libppd		ports/print/libppd
 libprelude	ports/security/libprelude
 libpreludedb	ports/security/libpreludedb
