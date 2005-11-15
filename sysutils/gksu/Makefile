@@ -10,7 +10,7 @@ PORTVERSION=	1.3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/gksu/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	Graphical frontend to su
 
 LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
