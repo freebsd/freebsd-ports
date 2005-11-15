@@ -1,3 +1,3 @@
 bin/dumpasn1
-share/dumpasn1/dumpasn1.cfg
-@dirrm share/dumpasn1
+%%DATADIR%%/dumpasn1.cfg
+@dirrm %%DATADIR%%

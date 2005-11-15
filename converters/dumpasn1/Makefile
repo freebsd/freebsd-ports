@@ -11,14 +11,10 @@ CATEGORIES=	converters security
 MASTER_SITES=	http://www.cs.auckland.ac.nz/~pgut001/
 DISTFILES=	dumpasn1.c dumpasn1.cfg
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=
+EXTRACT_ONLY=	yes
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
-
-BROKEN=		Size mismatch
-
-.include <bsd.port.pre.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -33,4 +29,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dumpasn1 ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dumpasn1.cfg ${PREFIX}/share/dumpasn1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
