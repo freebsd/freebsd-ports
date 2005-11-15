@@ -65,6 +65,7 @@ share/locale/pl/LC_MESSAGES/guikachu.mo
 share/locale/pt/LC_MESSAGES/guikachu.mo
 share/locale/pt_BR/LC_MESSAGES/guikachu.mo
 share/locale/ru/LC_MESSAGES/guikachu.mo
+share/locale/rw/LC_MESSAGES/guikachu.mo
 share/locale/sr/LC_MESSAGES/guikachu.mo
 share/locale/sr@Latn/LC_MESSAGES/guikachu.mo
 share/locale/sv/LC_MESSAGES/guikachu.mo
@@ -72,9 +73,7 @@ share/locale/tr/LC_MESSAGES/guikachu.mo
 share/locale/uk/LC_MESSAGES/guikachu.mo
 share/locale/wa/LC_MESSAGES/guikachu.mo
 share/locale/zh_CN/LC_MESSAGES/guikachu.mo
-share/mime/application/x-guikachu.xml
 share/mime/packages/guikachu.mime.xml
-share/mime/text/x-rcp.xml
 @dirrm share/gnome/help/guikachu/C/pictures
 @dirrm share/gnome/help/guikachu/C
 @dirrm share/gnome/help/guikachu
