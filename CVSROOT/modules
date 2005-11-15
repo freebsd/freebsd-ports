@@ -3692,6 +3692,7 @@ hp2xx		ports/print/hp2xx
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/net/hping
+hping-devel	ports/net/hping-devel
 hpl		ports/benchmarks/hpl
 hpn-ssh		ports/security/hpn-ssh
 hpoj		ports/graphics/hpoj
