@@ -39,6 +39,8 @@ etc/freepops/config.lua.sample
 %%DATADIR%%/lua/netscape.lua
 %%DATADIR%%/lua/mail2world.lua
 %%DATADIR%%/lua/juno.lua
+%%DATADIR%%/lua/fastmail.lua
+%%DATADIR%%/lua/criticalpath.lua
 @dirrm %%DATADIR%%/lua_unofficial
 @dirrm %%DATADIR%%/lua
 @dirrm %%DATADIR%%

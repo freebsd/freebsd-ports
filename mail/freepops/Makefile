@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.0.31
+PORTVERSION=	0.0.95
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -29,6 +29,7 @@ CFLAGS+=	-I${OPENSSLBASE}/include ${PTHREAD_CFLAGS}
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\(WHERE=\)/usr/local|\1${PREFIX}|; \
+		 s|^#!/bin/bash|#!/bin/sh|; \
 		 s|/usr/local|${LOCALBASE}|; \
 		 s|^CC=gcc||; \
 		 s|-O2 -g3 -march=i486|${CFLAGS}|' \
@@ -41,6 +42,12 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS}|g'\
+		${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^#!/bin/bash|#!/bin/sh|' \
+		${WRKSRC}/modules/src/curl_lua/find_curl.sh
+	@${REINPLACE_CMD} -e \
+		's|^#CURL_LD_FLAGS|CURL_LD_FLAGS|' \
 		${WRKSRC}/src/Makefile
 
 post-install:
