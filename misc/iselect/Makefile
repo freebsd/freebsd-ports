@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iselect
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/iselect/
 
