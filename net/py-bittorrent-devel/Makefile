@@ -20,13 +20,13 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_SITELIBDIR}/twisted/plugins/__init__.py:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
+USE_TWISTED_RUN=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
