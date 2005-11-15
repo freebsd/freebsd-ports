@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Unicode-String
-PORTVERSION=	2.07
-PORTREVISION=	1
+PORTVERSION=	2.09
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	These are experimental Perl5 modules to handle various Unicode issues
 
 .include <bsd.port.pre.mk>
