@@ -1,5 +1,5 @@
---- deskbar/deskbar-applet.orig	Mon Oct 31 02:44:59 2005
-+++ deskbar/deskbar-applet	Mon Oct 31 02:45:06 2005
+--- deskbar/deskbar-applet.py.orig	Mon Oct 31 02:44:59 2005
++++ deskbar/deskbar-applet.py	Mon Oct 31 02:45:06 2005
 @@ -28,8 +28,8 @@
  gettext.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
  gettext.textdomain('deskbar-applet')
