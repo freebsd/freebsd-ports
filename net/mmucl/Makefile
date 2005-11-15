@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mmucl
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/mmucl/
 
@@ -17,14 +16,14 @@ COMMENT=	Powerful GUI MUD client written in TCL
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_GMAKE=	YES
+USE_GMAKE=	yes
+MAKE_ARGS=	BASE_DIR=${PREFIX} TCLSH=tclsh8.4 INFO_DIR=${PREFIX}/info \
+		INSTALL_INFO=/usr/bin/install-info
 INFO=		mmucl
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/${DISTNAME}
-	${MKDIR} ${PREFIX}/share/doc/${DISTNAME}/examples
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${DISTNAME}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/${DISTNAME}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/doc/${DISTNAME}/examples
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 
 .include <bsd.port.mk>
