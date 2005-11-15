@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
 .elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
-LIB_DEPENDS+=		sqlite.3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 DBTYPE=			sqlite
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
