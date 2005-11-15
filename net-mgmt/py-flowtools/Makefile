@@ -8,7 +8,7 @@
 PORTNAME=	flowtools
 PORTVERSION=	0.3
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	http://mail.net.informatik.tu-muenchen.de/~robin/flowtools/
+MASTER_SITES=	http://www.icir.org/robin/flowtools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflowtools-${PORTVERSION}
 
