@@ -31,7 +31,6 @@
     SUBDIR += cu-prolog
     SUBDIR += cyclone
     SUBDIR += dice
-    SUBDIR += dis
     SUBDIR += diveintopython
     SUBDIR += drscheme
     SUBDIR += dylan
@@ -131,7 +130,6 @@
     SUBDIR += lua4
     SUBDIR += lush
     SUBDIR += m3gdb
-    SUBDIR += malbolge
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += metaocaml
