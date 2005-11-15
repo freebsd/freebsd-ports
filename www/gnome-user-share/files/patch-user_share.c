@@ -10,11 +10,3 @@
  
  	if (sw_discovery_salt (session, &salt) == SW_OKAY) {
  		sw_salt_lock (salt);
-@@ -301,7 +301,6 @@ publish_service (int port)
- 								   /* TODO: should be u=guest */
- 								   /* text */ (unsigned char *) "", 0,
- 								   publish_reply, NULL, &published_id);
--    g_free (share_name);
-     if (result != SW_OKAY) {
- 		return FALSE;
-     }
