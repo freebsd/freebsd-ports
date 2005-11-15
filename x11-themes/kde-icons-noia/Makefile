@@ -7,8 +7,8 @@
 
 PORTNAME=	noia
 PORTVERSION=	1.00
-MASTER_SITES=	http://es.kde.org/downloads/
-DISTNAME=	${PORTNAME}-kde-icons-${PORTVERSION}
+MASTER_SITES=	http://files.deviantart.com/f/2003/37/1/0/
+DISTNAME=	noiakdeicon100
 EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE Noia complete iconset
