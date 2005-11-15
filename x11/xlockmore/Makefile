@@ -7,6 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.20.1
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -47,6 +48,10 @@ MESALIB=${PTHREAD_LIBS}
 USE_GL=	yes
 .else
 CONFIGURE_ARGS+=	--without-mesa --without-opengl
+.endif
+
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--enable-pam
 .endif
 
 .if defined(WITH_MB)
