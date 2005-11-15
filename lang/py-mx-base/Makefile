@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.egenix.com/files/python/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.egenix.com/files/python/
 MASTER_SITE_SUBDIR=	tg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
@@ -17,6 +16,7 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	The eGenix mx-Extension Series for Python
 
+FETCH_CMD=	/usr/bin/fetch -ar
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 .if defined(WITH_ZOPE)
