@@ -1,0 +1,11 @@
+--- main.c.orig	Mon Nov  7 17:22:39 2005
++++ main.c	Mon Nov  7 17:22:56 2005
+@@ -419,7 +419,7 @@
+ 			if (! (strlen((char *)tmp->data) > 0))
+ 				continue;
+ 
+-			deliver_to_user_t dsnuser;
++			//deliver_to_user_t dsnuser;
+ 			dsnuser_init(&dsnuser);
+ 			dsnuser.address = dm_strdup((char *) tmp->data);
+ 
