@@ -1,14 +1,14 @@
 bin/pth-config
-bin/pthread-config
+%%PTHREAD%%bin/pthread-config
 etc/rc.d/000.pth.sh
 include/pth/pth.h
-include/pth/pthread.h
+%%PTHREAD%%include/pth/pthread.h
 lib/pth/libpth.a
 lib/pth/libpth.so
 lib/pth/libpth.so.20
-lib/pth/libpthread.a
-lib/pth/libpthread.so
-lib/pth/libpthread.so.20
+%%PTHREAD%%lib/pth/libpthread.a
+%%PTHREAD%%lib/pth/libpthread.so
+%%PTHREAD%%lib/pth/libpthread.so.20
 share/aclocal/pth.m4
 @dirrm include/pth
 @dirrm lib/pth

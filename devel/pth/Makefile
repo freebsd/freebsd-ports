@@ -7,6 +7,7 @@
 
 PORTNAME=	pth
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	pth
@@ -25,8 +26,8 @@ CONFIGURE_ARGS=	--enable-optimize \
 
 USE_REINPLACE=	yes
 
-MAN1=		pth-config.1 pthread-config.1
-MAN3=		pth.3 pthread.3
+MAN1=		pth-config.1
+MAN3=		pth.3
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on \
 		SYSCALL_HARD "Build with hard syscalls" off
@@ -35,8 +36,12 @@ OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on \
 
 .if defined(WITH_SYSCALL_HARD)
 CONFIGURE_ARGS+=	--enable-syscall-hard --disable-syscall-soft
+PLIST_SUB=	PTHREAD="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-syscall-soft --enable-pthread
+PLIST_SUB=	PTHREAD=""
+MAN1+=		pthread-config.1
+MAN3+=		pthread.3
 .endif
 
 post-patch:
