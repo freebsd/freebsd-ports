@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GCC=	2.95
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \

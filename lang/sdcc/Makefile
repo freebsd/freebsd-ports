@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-pic16-port
 PLIST_SUB+=		PIC16="@comment "
 .else
 BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 PLIST_SUB+=		PIC16=""
 .endif
 
@@ -89,7 +89,6 @@ PLIST_SUB+=		HC08=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_LIBTOOL_VER=	15
 LIBTOOLFILES=		sim/ucsim/aclocal.m4
 PLIST_SUB+=		UCSIM=""
 .endif

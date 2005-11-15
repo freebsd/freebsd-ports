@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	GRand Unified Bootloader
 
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19 autoconf:259
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-freebsd-freebsd${OSREL}

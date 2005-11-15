@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 PLIST_FILES=	lib/xmms/Effect/libeq.so
 

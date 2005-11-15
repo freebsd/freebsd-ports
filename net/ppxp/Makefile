@@ -43,7 +43,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 USE_PERL5_BUILD=yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 .if defined(WITH_TCLJP)
 CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.0jp \
 		--with-wish=${PREFIX}/bin/wish8.0jp \

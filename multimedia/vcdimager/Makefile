@@ -17,7 +17,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		cdio.6:${PORTSDIR}/sysutils/libcdio
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

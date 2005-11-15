@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-font --without-examples
 INSTALLS_SHLIB=	yes

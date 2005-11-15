@@ -19,7 +19,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 
 USE_GL=		yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \
 		--enable-3ds-import --enable-sound

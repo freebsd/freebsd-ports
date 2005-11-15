@@ -17,7 +17,7 @@ COMMENT=	A utility C++ class library for daemons, clients, servers and more
 USE_GNOME=		pkgconfig
 USE_GMAKE=		yes
 USE_OPENSSL=		yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=		--with-ssl-includes=-I${OPENSSLBASE}/include \
 			--with-ssl-libs=-L${OPENSSLBASE}/lib --disable-pcre
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

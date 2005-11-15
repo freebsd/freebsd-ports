@@ -20,7 +20,7 @@ PLIST_FILES=	lib/xmms/Input/xmms-mpegplus-1.8.0.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>

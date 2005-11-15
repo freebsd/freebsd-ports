@@ -17,8 +17,7 @@ COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 

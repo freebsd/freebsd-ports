@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

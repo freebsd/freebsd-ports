@@ -22,7 +22,7 @@ USE_GNOME=	gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure libgphoto2_port/configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes

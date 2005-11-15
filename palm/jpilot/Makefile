@@ -19,7 +19,7 @@ LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 CFLAGS+=	-I${LOCALBASE}/include

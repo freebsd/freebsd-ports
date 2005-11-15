@@ -21,7 +21,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so
 USE_GNOME=	gtk12
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 

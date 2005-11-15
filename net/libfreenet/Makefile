@@ -18,7 +18,7 @@ COMMENT=	Freenet library written in C
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 INSTALLS_SHLIB=	yes
 

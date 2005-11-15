@@ -16,7 +16,7 @@ COMMENT=	OpenGL extension library
 
 USE_SDL=	sdl
 USE_GL=		yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack

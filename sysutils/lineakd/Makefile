@@ -37,7 +37,7 @@ USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ltmain.sh
 .else
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 .endif
 
 post-patch:

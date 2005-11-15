@@ -20,8 +20,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_KDELIBS_VER=	3
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
-WANT_AUTOMAKE_VER=	19
-WANT_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qhacc-config=${X11BASE}/bin

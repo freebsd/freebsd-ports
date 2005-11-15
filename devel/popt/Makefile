@@ -21,7 +21,7 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

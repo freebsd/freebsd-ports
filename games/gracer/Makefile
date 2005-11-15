@@ -23,7 +23,7 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 
 USE_MESA=	YES
 USE_PERL5_BUILD=yes
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/tcl8.2 \
 			  -I${X11BASE}/include" \

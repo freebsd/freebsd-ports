@@ -17,9 +17,8 @@ COMMENT=	Generic mail checking library
 LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

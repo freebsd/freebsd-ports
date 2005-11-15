@@ -17,7 +17,7 @@ EXTRACT_ONLY=	aspell-0.60.4.tar.gz
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Spelling checker with better suggestion logic than ispell
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\

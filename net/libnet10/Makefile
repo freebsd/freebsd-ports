@@ -19,7 +19,7 @@ COMMENT=	A C library for creating IP packets
 CONFLICTS=	libnet-devel-1.1.*\
 		libnet-1.1.*
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 MAN3=		libnet.3

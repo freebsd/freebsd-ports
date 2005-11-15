@@ -26,7 +26,7 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \

@@ -21,7 +21,7 @@ LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack librsvg2 pygnomeextras

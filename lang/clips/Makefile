@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@dougdidit.com
 COMMENT=	CLIPS is a productive development and delivery expert system tool
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

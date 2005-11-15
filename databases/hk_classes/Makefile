@@ -27,7 +27,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-pythondir=${PYTHONBASE}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 
 OPTIONS=	MYSQL "Build MySQL driver" on \

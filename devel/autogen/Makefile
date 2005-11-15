@@ -22,7 +22,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
 INSTALLS_SHLIB=	yes
 

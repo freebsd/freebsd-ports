@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
 
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 
 .include "Makefile.man"
 

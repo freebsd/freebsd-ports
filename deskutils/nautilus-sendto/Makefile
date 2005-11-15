@@ -22,7 +22,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2 gnomehack
 

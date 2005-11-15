@@ -22,7 +22,7 @@ RUN_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack libxml2 gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

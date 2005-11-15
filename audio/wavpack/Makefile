@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	kwm
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

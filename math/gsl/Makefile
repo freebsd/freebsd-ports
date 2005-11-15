@@ -19,7 +19,7 @@ MAINTAINER=	jon.drews@gmail.com
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'

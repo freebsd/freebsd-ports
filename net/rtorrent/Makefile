@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 
 SUB_FILES=	pkg-message
 

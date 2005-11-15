@@ -20,7 +20,7 @@ USE_GL=		yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl
 
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 
 PLIST_FILES=	lib/xmms/Visualization/libplazma.so
 

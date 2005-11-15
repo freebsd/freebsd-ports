@@ -66,7 +66,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .if defined(WITH_RCORDER)
 USE_RCORDER=	courier.sh

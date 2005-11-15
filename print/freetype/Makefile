@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	freetype1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 USE_REINPLACE=	yes

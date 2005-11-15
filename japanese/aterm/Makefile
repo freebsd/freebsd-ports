@@ -21,7 +21,7 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253:env
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

@@ -21,8 +21,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/emacs/site-lisp/init-mell.el:${PORTSDIR}/japane
 		prime:${PORTSDIR}/japanese/prime
 
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19 autoconf:259
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

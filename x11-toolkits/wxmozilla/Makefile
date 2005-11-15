@@ -24,7 +24,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnometarget
 WXGTK_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
 INSTALLS_SHLIB=	yes
 

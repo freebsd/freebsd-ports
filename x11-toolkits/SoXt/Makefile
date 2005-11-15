@@ -17,7 +17,7 @@ LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
 USE_GL=		yes
 USE_MOTIF=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
 # avoid renaming of soxt-config and soxt-config.1

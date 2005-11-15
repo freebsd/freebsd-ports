@@ -22,7 +22,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 libgnome
 INSTALLS_OMF=	yes
 

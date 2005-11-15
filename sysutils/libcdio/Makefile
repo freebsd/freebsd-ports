@@ -16,7 +16,7 @@ COMMENT=	Compact Disc Input and Control Library
 LIB_DEPENDS=	cddb.3:${PORTSDIR}/audio/libcddb \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes

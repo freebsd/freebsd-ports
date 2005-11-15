@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 

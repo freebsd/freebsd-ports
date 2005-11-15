@@ -19,7 +19,7 @@ COMMENT=	Dictionary Server Protocol (RFC2229) client
 
 USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

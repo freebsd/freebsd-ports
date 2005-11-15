@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gtk20
 USE_BZIP2=	yes
 USE_GL=		yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 

@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
-WANT_AUTOMAKE_VER=15
+USE_AUTOTOOLS=	automake:15:env
 
 .if defined(WITH_LDAP) || defined(WITH_LDAP2)
 USE_OPENLDAP=	yes

@@ -15,8 +15,7 @@ COMMENT=	A library required by smssend (same author)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOCONF_VER=	259
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	autoconf:259 libtool:13:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

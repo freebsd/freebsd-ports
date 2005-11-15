@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstract Large File
 
 USE_PYTHON=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

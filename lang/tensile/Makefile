@@ -18,10 +18,9 @@ COMMENT=	Programming language designed for especially complex processing texts
 
 LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

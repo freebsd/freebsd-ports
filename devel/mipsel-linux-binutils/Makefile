@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --with-gnu-ld --with-gnu-as \
 		--with-gcc --without-x11
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure ld/configure opcodes/configure
 MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \

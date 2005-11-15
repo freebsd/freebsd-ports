@@ -18,7 +18,7 @@ COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	without_doc
 INSTALLS_SHLIB=	yes

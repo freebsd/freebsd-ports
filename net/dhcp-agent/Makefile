@@ -18,7 +18,7 @@ COMMENT=	A portable UNIX Dynamic Host Configuration suite
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 
 INSTALLS_SHLIB=	yes

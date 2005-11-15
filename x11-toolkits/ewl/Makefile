@@ -21,7 +21,7 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		ecore.1:${PORTSDIR}/x11/ecore
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes

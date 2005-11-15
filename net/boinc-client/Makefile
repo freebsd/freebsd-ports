@@ -32,10 +32,7 @@ LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv \
 USE_XLIBS=	yes
 .endif
 
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259 libtool:15
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

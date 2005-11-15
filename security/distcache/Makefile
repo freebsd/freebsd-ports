@@ -19,7 +19,7 @@ CONFLICTS=	distcache-devel-*
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	dc_server.sh
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

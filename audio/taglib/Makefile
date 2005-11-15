@@ -16,7 +16,7 @@ COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

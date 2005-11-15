@@ -19,7 +19,7 @@ LIB_DEPENDS?=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes

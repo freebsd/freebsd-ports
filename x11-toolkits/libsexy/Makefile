@@ -19,7 +19,7 @@ LIB_DEPENDS=		enchant:${PORTSDIR}/textproc/enchant
 RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_GNOME=		gnomehack lthack gtk20 libxml2
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 USE_X_PREFIX=		yes
 

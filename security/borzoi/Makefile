@@ -18,7 +18,7 @@ COMMENT=	An Elliptic Curve Cryptography Library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP

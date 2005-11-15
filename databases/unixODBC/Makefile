@@ -17,7 +17,7 @@ CONFLICTS=	libiodbc-*
 
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		--with-libiconv-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes

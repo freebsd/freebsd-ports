@@ -18,10 +18,9 @@ COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 USE_REINPLACE=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	elfrink@introweb.nl
 COMMENT=	Generates ASCII tractors
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 
 MAN6=		tractorgen.6
 PLIST_FILES=	bin/tractorgen

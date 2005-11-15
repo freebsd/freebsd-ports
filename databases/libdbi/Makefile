@@ -16,7 +16,7 @@ MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 
 post-patch:

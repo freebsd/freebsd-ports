@@ -19,7 +19,7 @@ LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
 USE_GL=		yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 LIBTOOLFILES=	configure vx68k-gtk/configure
 #LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

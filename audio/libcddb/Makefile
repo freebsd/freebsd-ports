@@ -16,7 +16,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-cdio

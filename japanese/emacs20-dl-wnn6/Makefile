@@ -20,7 +20,7 @@ BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 		${NONEXISTENT}:${EMACSDL_DIR}:configure
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253:env
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wnn6 \
@@ -38,7 +38,6 @@ EMACSDL_SRCDIR=	${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
 # hack to allow parallel build to work
 .if defined(PARALLEL_PACKAGE_BUILD)
 USE_GMAKE=	yes
-WANT_AUTOCONF_VER=253
 .endif
 
 post-install:

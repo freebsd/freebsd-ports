@@ -18,7 +18,7 @@ COMMENT=	Light-weight GNOME based financial management program
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

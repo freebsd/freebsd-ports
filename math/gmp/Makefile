@@ -17,7 +17,7 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-cxx
 INSTALLS_SHLIB=	yes

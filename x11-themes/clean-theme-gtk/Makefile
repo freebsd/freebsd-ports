@@ -19,7 +19,7 @@ COMMENT=	The Clean GTK theme engine
 WRKSRC=		${WRKDIR}/gtk-clean-theme
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

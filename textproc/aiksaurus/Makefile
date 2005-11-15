@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_GNOME?=	gnomehack gnometarget
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=--without-gtk
 
 .include <bsd.port.mk>

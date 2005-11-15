@@ -18,7 +18,7 @@ COMMENT=	A circuit simulator derived from spice3f5
 
 WRKSRC=		${WRKDIR}/ng-spice-rework-${PORTVERSION}
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER?=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 .ifndef PACKAGE_BUILDING

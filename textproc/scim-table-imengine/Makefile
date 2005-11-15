@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	intlhack
 
 .include <bsd.port.pre.mk>

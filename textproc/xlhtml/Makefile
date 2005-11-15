@@ -18,8 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	automake:14 autoconf:213
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ppthtml.1 xlhtml.1

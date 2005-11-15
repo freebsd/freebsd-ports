@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/zenith-1.0
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

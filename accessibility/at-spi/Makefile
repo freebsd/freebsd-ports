@@ -22,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo \
 		intlhack
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

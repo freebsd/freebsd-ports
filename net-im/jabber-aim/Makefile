@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}
 PLIST_FILES=	lib/jabber/aimtrans.so
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 USE_ICONV=	yes
 
 CONFIGURE_ARGS+=--with-jabberd=${LOCALBASE}/include/jabber

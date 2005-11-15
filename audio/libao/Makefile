@@ -15,7 +15,7 @@ COMMENT=	Portable audio output library
 
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

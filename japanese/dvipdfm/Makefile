@@ -30,7 +30,7 @@ BROKEN=			Incorrect pkg-plist
 MAN1=			dvipdfm.1
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib

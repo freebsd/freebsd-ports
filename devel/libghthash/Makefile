@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

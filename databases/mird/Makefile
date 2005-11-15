@@ -19,7 +19,7 @@ COMMENT=	A free database library with transaction support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253:env
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

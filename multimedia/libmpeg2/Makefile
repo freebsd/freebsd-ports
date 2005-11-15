@@ -17,7 +17,7 @@ COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
 USE_GNOME=	lthack
 USE_XLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

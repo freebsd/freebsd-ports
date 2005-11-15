@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 
 PLIST_FILES=	bin/glade-- bin/glademm-embed

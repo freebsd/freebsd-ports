@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 
 MAN1=		hdup.1
 MAN5=		hdup.conf.5

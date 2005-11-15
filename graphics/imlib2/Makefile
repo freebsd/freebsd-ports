@@ -20,12 +20,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_LIBLTDL=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 INSTALLS_SHLIB=	yes
 

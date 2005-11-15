@@ -20,7 +20,7 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		evas.1:${PORTSDIR}/graphics/evas \
 		ecore.1:${PORTSDIR}/x11/ecore
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes

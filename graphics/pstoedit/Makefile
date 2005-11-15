@@ -22,7 +22,7 @@ OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GHOSTSCRIPT=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 

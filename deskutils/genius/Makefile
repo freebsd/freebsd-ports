@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
 		libgnomeui vte
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure mpfr/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

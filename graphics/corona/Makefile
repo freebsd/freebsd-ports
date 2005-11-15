@@ -19,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget lthack
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

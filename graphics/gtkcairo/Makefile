@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A Real-time Transport Protocol (RTP) stack
 
 USE_GNOME=	glib20
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 INSTALLS_SHLIB=	yes
 

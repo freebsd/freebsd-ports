@@ -22,7 +22,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 
 USE_BZIP2=	yes
 USE_GNOME=	glib12 glib20 gnomehack gnometarget
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libwww

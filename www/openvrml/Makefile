@@ -29,7 +29,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gtk20
 USE_SDL=	sdl
 USE_GCC=	3.4
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -largp -Wl,--rpath -Wl,${X11BASE}/lib/mozilla -L${X11BASE}/lib -lXext" \
 		XPIDLFLAGS="-I${X11BASE}/share/idl/mozilla"

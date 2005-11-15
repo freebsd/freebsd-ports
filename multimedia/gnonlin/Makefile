@@ -22,7 +22,7 @@ CONFLICTS=	pitivi-0.1.1*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

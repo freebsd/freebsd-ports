@@ -22,9 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
-WANT_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	213
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	automake:15:env autoconf:213 libtool:13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \

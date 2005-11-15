@@ -17,7 +17,7 @@ COMMENT=		A programmer's text editor for GTK+ 2.0
 
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=		yes
 USE_GNOME=		gnomehack gnomeprefix gtk20 gtksourceview lthack
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

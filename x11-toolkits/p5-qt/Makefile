@@ -23,7 +23,7 @@ COMMENT=	A set of Perl bindings for the Qt toolkit
 
 USE_GL=		yes
 USE_QT_VER=	3
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

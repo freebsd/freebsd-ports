@@ -16,7 +16,7 @@ MAINTAINER=	asa@gascom.ru
 COMMENT=	ID3 tags library (part of MAD project)
 
 USE_GNOME=	pkgconfig
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 
 post-build:

@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 

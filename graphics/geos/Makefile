@@ -16,7 +16,7 @@ COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	YES
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	YES
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

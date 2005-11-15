@@ -20,10 +20,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 # port don't strictly need it, but Wesnoth use it so must we
 USE_GCC=	3.4
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	automake:19:env libtool:15:inc
 CONFIGURE_ARGS+=--disable-static
 USE_REINPLACE=	yes
-WANT_AUTOMAKE_VER=19
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}+cvs.2004.02.07
 

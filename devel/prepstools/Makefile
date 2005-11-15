@@ -20,7 +20,7 @@ USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

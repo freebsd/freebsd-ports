@@ -22,7 +22,7 @@ DISTNAME=	rxvt-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes

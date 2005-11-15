@@ -20,7 +20,7 @@ NO_CDROM=	CSS code may violate the DMCA
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

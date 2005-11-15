@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.opensc.org/files/ \
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A middleware framework for smart card terminals
 
-USE_LIBTOOL_VER=	15
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes

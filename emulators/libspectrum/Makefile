@@ -17,7 +17,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 USE_PERL5_BUILD=	yes
 WANT_GNOME=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN3=		libspectrum.3

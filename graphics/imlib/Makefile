@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnomehack
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules

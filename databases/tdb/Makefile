@@ -16,9 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trivial Database
 
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
 INSTALLS_SHLIB=		yes
 
 MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \

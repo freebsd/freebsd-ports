@@ -17,7 +17,7 @@ COMMENT=	A tool to add reactivity to the edges and corners of the GNOME desktop
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack libwnck libgnomeui
 CONFIGURE_ARGS=	--enable-tray-icon
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

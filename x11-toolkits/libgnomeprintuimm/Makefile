@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeprintui
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.5" API_VERSION="2.6"

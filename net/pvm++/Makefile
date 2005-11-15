@@ -19,7 +19,7 @@ COMMENT=	A C++-Library for PVM
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-pvm-incs=${LOCALBASE}/include \
 		--with-pvm-libs=${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes

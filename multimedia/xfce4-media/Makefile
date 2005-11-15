@@ -23,7 +23,7 @@ LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_GNOME=	libxml2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 

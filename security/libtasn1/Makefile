@@ -20,7 +20,7 @@ COMMENT=	ASN.1 structure parser library
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

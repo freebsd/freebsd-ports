@@ -14,7 +14,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Lightweight C library that eases the writing of UNIX daemons
 
 CONFIGURE_ARGS=	--disable-lynx
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 

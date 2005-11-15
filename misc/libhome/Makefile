@@ -21,7 +21,7 @@ OPTIONS+=	DB4 "Support for DB4" off
 OPTIONS+=	PAM "Support for PAM (Experimental)" off
 OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 INSTALLS_SHLIB=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	ebrandi@fugspbr.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0

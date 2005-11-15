@@ -17,7 +17,7 @@ DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes

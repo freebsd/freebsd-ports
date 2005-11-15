@@ -18,7 +18,7 @@ COMMENT=	Generic configuration management library
 LIB_DEPENDS=	strfunc.9:${PORTSDIR}/devel/libstrfunc
 
 INSTALLS_SHLIB=	YES
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	YES
 
 post-patch:

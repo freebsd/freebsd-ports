@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2.6.2
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 
 .if !defined(NOPORTDOCS)
 MAN1=		electricsheep.1

@@ -18,7 +18,7 @@ COMMENT=	A turn-based strategy game for GNOME
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

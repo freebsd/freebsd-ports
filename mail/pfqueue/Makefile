@@ -15,7 +15,7 @@ MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS}"
 

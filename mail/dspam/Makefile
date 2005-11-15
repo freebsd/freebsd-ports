@@ -90,7 +90,7 @@ OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

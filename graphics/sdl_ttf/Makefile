@@ -20,7 +20,7 @@ USE_SDL=	sdl
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

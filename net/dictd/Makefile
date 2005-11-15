@@ -22,7 +22,7 @@ MAN8=		dictd.8
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

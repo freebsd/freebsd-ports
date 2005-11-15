@@ -18,7 +18,7 @@ COMMENT=	Shows information about Java class, dependencies and more
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	pkgconfig gnomehack
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

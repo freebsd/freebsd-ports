@@ -21,7 +21,7 @@ USE_GCC=	3.4
 USE_GNOME=	gnomeprefix gnometarget libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-WANT_AUTOMAKE_VER=	19
+USE_AUTOTOOLS=	automake:19:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

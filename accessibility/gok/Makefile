@@ -24,7 +24,7 @@ INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

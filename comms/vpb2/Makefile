@@ -18,8 +18,7 @@ DEPRECATED=	"mastersite disappeared, no longer maintained by author"
 EXPIRATION_DATE=	2005-12-31
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213 libtool:13:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

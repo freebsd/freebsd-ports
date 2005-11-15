@@ -17,7 +17,7 @@ COMMENT=	A set of useful GNU autoconf macros
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

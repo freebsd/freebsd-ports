@@ -17,7 +17,7 @@ COMMENT=	A Motif widget set for displaying HTML 3.2 documents
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WANT_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:env
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

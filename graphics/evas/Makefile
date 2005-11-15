@@ -18,7 +18,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		eet.9:${PORTSDIR}/devel/eet
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_FREETYPE2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget

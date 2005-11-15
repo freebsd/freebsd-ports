@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehier libgnomeprint
 STRIP=

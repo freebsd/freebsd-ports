@@ -32,7 +32,7 @@ USE_PERL5_BUILD=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-clanJavaScript --disable-docs

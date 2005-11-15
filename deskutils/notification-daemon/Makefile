@@ -18,7 +18,7 @@ LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
 USE_GNOME=	gnomehack gnometarget intlhack gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services
 

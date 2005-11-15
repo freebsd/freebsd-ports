@@ -20,7 +20,7 @@ LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_XLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

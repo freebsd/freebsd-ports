@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 CONFLICTS=	mldonkey-devel-[0-9]*
 
 USE_BZIP2=	yes
-WANT_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259:env
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes

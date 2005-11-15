@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

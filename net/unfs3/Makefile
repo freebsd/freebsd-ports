@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 USE_BISON=		YES
 
 MAN7=		tags.7

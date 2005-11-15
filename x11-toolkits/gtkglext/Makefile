@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_GL=		yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

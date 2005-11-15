@@ -23,11 +23,8 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOME=	libxml2
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
+USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
-USE_AUTOMAKE_VER=	19
-USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 do-extract:

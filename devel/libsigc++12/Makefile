@@ -23,6 +23,6 @@ USE_GMAKE=	yes
 LATEST_LINK=	libsigc++12
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ CONFLICTS=	musicbrainz-*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	net-snmp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	autoconf:213 libtool:13:inc
 USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CFLAGS+=	-fPIC

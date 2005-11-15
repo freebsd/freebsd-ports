@@ -15,7 +15,7 @@ COMMENT=	CVS clone
 
 CONFLICTS=	cvs-1*
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_RC_SUBR=	cvslockd.sh
 CONFIGURE_ARGS=	--enable-fork\
 		--disable-odbc --disable-postgres\

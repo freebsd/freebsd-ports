@@ -16,7 +16,7 @@ COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 GNU_CONFIGURE=	yes
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-static
 INSTALLS_SHLIB=	yes

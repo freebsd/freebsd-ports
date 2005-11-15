@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"

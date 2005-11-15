@@ -28,7 +28,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
 .endif
 
 USE_RUBY=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 USE_RC_SUBR=	rskkserv.sh
 

@@ -16,7 +16,7 @@ COMMENT=	GtkAtlantic is a game like Monopoly(tm)
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

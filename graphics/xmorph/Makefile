@@ -23,7 +23,7 @@ CONFLICTS=	libmorph*
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes

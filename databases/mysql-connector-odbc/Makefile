@@ -17,7 +17,7 @@ COMMENT=	ODBC driver for MySQL
 
 USE_MYSQL=		yes
 USE_GMAKE=		yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-mysql-path=${LOCALBASE} --without-samples \
 			--disable-gui --enable-test=no

@@ -22,7 +22,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 NO_MTREE=	yes
 INSTALLS_SHLIB=	yes	# Not really useful, but pet portlint

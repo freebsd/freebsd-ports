@@ -17,9 +17,7 @@ COMMENT=	Advanced AES file encryption tool
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE_VER=	19
-USE_ACLOCAL_VER=	19
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
 
 PLIST_FILES=	bin/ncrypt bin/nrm
 

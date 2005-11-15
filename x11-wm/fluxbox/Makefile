@@ -37,8 +37,7 @@ CONFIGURE_ARGS+=	--enable-kde
 
 #.if defined(WITH_REMEMBER)
 #USE_GMAKE=		yes
-#WANT_AUTOMAKE_VER=	14
-#CONFIGURE_ENV=		AUTOMAKE=automake14
+#USE_AUTOTOOLS=		automake:14:env
 #.endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)

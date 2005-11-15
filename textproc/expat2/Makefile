@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	expat
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	XML 1.0 parser written in C
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 INSTALLS_SHLIB=	yes

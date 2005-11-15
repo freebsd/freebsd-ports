@@ -24,7 +24,7 @@ RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WANT_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:env
 MAKE_ENV=	LOCALBASE=${LOCALBASE}
 
 PLIST_FILES=	lib/gaim/festival.so

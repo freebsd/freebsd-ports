@@ -15,7 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
 USE_GNOME=	gnometarget
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 

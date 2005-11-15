@@ -20,7 +20,7 @@ MAN5=		indexer.conf.5
 INSTALLS_SHLIB=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

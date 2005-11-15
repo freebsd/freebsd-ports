@@ -19,7 +19,7 @@ BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-g
 
 USE_GNOME=		pygtk2
 USE_GMAKE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=		2.4+
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes

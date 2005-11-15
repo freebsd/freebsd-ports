@@ -15,7 +15,7 @@ COMMENT=	A free AFS client implementation
 
 USE_XLIB=	yes
 USE_RC_SUBR=	arla.sh
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

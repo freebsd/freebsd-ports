@@ -14,7 +14,7 @@ MAINTAINER=	kcwu@csie.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
 USE_GNOME=	gnomehack pkgconfig
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 

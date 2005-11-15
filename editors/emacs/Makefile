@@ -35,7 +35,7 @@ PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd

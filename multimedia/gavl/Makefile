@@ -18,7 +18,7 @@ COMMENT=	A library for handling uncompressed video and audio data
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

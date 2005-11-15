@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 PORTDOCS=	AUTHORS COPYING BUGS FAQ NEWS README.attrcache
 

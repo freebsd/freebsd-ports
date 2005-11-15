@@ -23,7 +23,7 @@ INSTALLS_SHLIB=	yes
 GCONF_SCHEMAS=	gchempaint-arrows.schemas
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-help-dir=${PREFIX}/share/gnome/help

@@ -17,7 +17,7 @@ COMMENT=	Secure HTTP Proxy
 
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 
 do-install:
 	@${INSTALL_PROGRAM} -o root -g wheel -m 0755 ${WRKSRC}/twhttpd ${PREFIX}/sbin/twhttpd

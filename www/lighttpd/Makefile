@@ -17,10 +17,9 @@ COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_REINPLACE=		yes
 USE_RC_SUBR=		lighttpd.sh
-USE_LIBTOOL_VER=	15
 USE_GNOME=		lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd

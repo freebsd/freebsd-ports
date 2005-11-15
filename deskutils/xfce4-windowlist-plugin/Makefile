@@ -24,7 +24,7 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

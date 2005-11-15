@@ -24,7 +24,7 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 USE_GPG=	yes
 SIG_SUFFIX=	.sig.asc
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}

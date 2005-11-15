@@ -18,7 +18,7 @@ COMMENT=	Quickly search documents
 LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_FAM=	yes
 INSTALLS_SHLIB=	yes

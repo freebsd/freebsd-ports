@@ -16,7 +16,7 @@ COMMENT=	Simple/powerful/lightweight/secure/embed-able HTTP server
 USE_BZIP2=		yes
 USE_OPENSSL=		yes
 USE_GMAKE=		yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 
 NO_MTREE=		yes
 

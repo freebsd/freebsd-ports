@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
 
 USE_GNOME=	gnomehack gnometarget
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 

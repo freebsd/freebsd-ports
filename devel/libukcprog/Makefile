@@ -24,7 +24,7 @@ MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	gnomehack gnometarget pkgconfig lthack
 
 .include <bsd.port.mk>

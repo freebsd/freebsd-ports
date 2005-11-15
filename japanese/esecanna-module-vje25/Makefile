@@ -19,7 +19,7 @@ COMMENT=	Esecanna module for VJE-Delta 2.5
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 
 DIST_SUBDIR=    esecanna

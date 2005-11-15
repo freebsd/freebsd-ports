@@ -86,7 +86,7 @@ PLIST_SUB+=		HC08=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=		sim/ucsim/aclocal.m4
 PLIST_SUB+=		UCSIM=""
 .endif

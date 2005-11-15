@@ -22,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to add ICQ communication support to your software
 
 USE_GNOME=	glib12
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

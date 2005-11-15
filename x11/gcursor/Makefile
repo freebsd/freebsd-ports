@@ -19,7 +19,7 @@ RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/fileroller
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

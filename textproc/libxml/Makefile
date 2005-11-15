@@ -18,7 +18,7 @@ COMMENT=	XML parser library for GNOME
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 pre-patch:

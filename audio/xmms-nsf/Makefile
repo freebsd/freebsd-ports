@@ -17,7 +17,7 @@ COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 

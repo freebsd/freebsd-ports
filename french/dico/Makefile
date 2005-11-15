@@ -28,8 +28,7 @@ USE_REINPLACE=	true
 USE_ZIP=	true
 EXTRACT_CMD=	UNZIP= unzip
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOMAKE_VER=14
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	automake:14 autoconf:213
 USE_GMAKE=	true
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}

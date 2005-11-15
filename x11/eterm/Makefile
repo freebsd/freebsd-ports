@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		ast.2:${PORTSDIR}/devel/libast
 
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \

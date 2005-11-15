@@ -17,7 +17,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql40-client
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 .if ${PKGNAMESUFFIX} == "-server"

@@ -18,7 +18,7 @@ COMMENT=	Open source search engine for Internet and Intranet sites
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -21,7 +21,7 @@ LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 .endif
 
 USE_ICONV=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--disable-nls
 CFLAGS+=	-I${WRKSRC}/src

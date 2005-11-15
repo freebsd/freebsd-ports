@@ -16,7 +16,7 @@ COMMENT=	Convert, change and calculate with IPv6 addresses
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin

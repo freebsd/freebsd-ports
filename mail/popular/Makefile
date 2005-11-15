@@ -16,7 +16,7 @@ COMMENT=	Suite of programs for setting up large POP3 server systems
 BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 PDM_MODULES=	any master

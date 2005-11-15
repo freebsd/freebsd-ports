@@ -23,7 +23,7 @@ USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>
 

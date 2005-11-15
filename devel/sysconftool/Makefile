@@ -18,9 +18,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 
-USE_AUTOMAKE_VER=	19
-USE_ACLOCAL_VER=	19
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
 
 MAN1=	sysconftool.1 sysconftoolcheck.1
 MAN7=	sysconftool.7

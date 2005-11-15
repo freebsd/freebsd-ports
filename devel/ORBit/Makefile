@@ -21,7 +21,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12 gnometarget
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFILES=	configure popt/configure libIDL/configure
 CONFIGURE_ARGS= --disable-indent
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

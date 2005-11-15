@@ -24,7 +24,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 USE_XLIB=	yes

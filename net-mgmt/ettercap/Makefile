@@ -28,7 +28,7 @@ OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_REINPLACE=	yes
 
 MAN5=		etter.conf.5
@@ -72,7 +72,6 @@ CONFIGURE_ARGS+=	--without-libpcre
 .endif
 
 .if !defined(WITHOUT_PLUGINS)
-USE_LIBLTDL=		yes
 MAN8+=			ettercap_plugins.8
 DOCS+=			doc/plugins
 CONFIGURE_ARGS+=	--enable-plugins

@@ -24,7 +24,7 @@ COMMENT=	IJG's jpeg compression utilities
 
 WRKSRC=		${WRKDIR}/jpeg-6b
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 

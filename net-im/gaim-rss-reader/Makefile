@@ -25,7 +25,7 @@ IGNORE=	Requires update to work with Gaim 0.82.1
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxml2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	"--with-gaim=${X11BASE}/include/gaim"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

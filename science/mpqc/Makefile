@@ -24,7 +24,7 @@ BUILD_DEPENDS+=  ${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc

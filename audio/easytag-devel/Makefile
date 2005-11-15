@@ -27,7 +27,7 @@ CONFLICTS=	easytag-[0-9]*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

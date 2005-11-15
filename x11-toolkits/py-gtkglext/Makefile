@@ -25,7 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

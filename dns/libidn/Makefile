@@ -18,7 +18,7 @@ COMMENT=	Internationalized Domain Names command line tool
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 

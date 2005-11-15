@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc

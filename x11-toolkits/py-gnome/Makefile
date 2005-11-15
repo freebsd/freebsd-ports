@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gtkhtml gnometarget
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFILES=	configure pygtk/configure
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gnome-config=${X11BASE}/bin/gnome-config		\

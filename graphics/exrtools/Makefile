@@ -18,7 +18,7 @@ LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes

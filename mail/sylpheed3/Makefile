@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 # Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)

@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

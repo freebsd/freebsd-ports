@@ -25,7 +25,7 @@ PATCH_SITES+=   http://installation.openoffice.org/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
 

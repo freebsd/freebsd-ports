@@ -18,7 +18,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget lthack pkgconfig
 

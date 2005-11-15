@@ -17,7 +17,7 @@ COMMENT=	A terminal emulator for the X11
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib  `${IMLIB_CONFIG} --libs`"
 ALL_TARGET=	${PORTNAME}

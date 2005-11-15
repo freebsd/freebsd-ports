@@ -18,7 +18,7 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \
 		--with-libiconv-prefix="${LOCALBASE}" \

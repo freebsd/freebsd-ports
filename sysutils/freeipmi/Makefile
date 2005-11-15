@@ -20,7 +20,7 @@ LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

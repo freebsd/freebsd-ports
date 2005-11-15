@@ -27,7 +27,6 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		nova-0.11.0:${PORTSDIR}/astro/libnova
 RUN_DEPENDS=	${LOCALBASE}/share/nova/catalogs/sky2000.ncd:${PORTSDIR}/astro/sky2000
 
-#USE_AUTOMAKE_VER=17
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

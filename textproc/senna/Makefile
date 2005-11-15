@@ -16,9 +16,7 @@ COMMENT=	Embeddable Fulltext Search Engine
 
 LIB_DEPENDS=	mecab-razil:${PORTSDIR}/japanese/mecab-razil
 
-USE_LIBTOOL_VER=15
-USE_AUTOCONF_VER=	259
-USE_AUTOMAKE_VER=	14
+USE_AUTOTOOLS=	automake:14 autoconf:259 libtool:15
 USE_GMAKE=	YES
 INSTALLS_SHLIB=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}

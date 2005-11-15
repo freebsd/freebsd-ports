@@ -24,7 +24,7 @@ USE_XLIB=	yes
 .endif
 
 USE_GCC=	3.4
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_NLS)

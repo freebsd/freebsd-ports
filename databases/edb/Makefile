@@ -13,7 +13,7 @@ MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 post-patch:

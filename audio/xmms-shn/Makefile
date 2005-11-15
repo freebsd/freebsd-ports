@@ -18,7 +18,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 
 post-install:
 .if !defined(NOPORTDOCS)

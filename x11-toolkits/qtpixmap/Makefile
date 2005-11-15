@@ -16,7 +16,7 @@ COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
 
 .if !defined(WITHOUT_GTK1)

@@ -15,7 +15,7 @@ DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	lthack
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ COMMENT=	C++ wrapper for GTK+ toolkit
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 INSTALLS_SHLIB=	yes

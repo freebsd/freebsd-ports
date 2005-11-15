@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

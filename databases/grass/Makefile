@@ -44,7 +44,7 @@ USE_GL=		yes
 USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \

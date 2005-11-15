@@ -17,7 +17,7 @@ COMMENT=	A XMMS plugin to hide the player
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 

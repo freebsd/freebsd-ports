@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \

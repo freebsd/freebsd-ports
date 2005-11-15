@@ -16,7 +16,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack libgsf
 INSTALLS_SHLIB=	yes
 

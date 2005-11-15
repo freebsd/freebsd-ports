@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.crevola.com/about/current/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Display the contents of your Netscape cache
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

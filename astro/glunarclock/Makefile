@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_OMF=	yes

@@ -15,12 +15,11 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
-WANT_AUTOMAKE_VER=15
+USE_AUTOTOOLS=	automake:15:env libtool:15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

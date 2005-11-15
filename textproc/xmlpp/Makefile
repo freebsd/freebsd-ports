@@ -18,7 +18,7 @@ COMMENT=	XML Parser and Validator
 USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

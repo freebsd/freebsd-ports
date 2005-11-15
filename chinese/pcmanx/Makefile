@@ -18,7 +18,7 @@ COMMENT=	BBS client using GTK+ 2.x
 
 USE_GNOME=	gtk20 intlhack
 USE_GCC=	3.3+
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

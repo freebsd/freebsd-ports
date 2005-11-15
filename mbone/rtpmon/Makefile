@@ -16,7 +16,7 @@ COMMENT=	A program to montior loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253:env
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		rtpmon.1

@@ -27,7 +27,7 @@ RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

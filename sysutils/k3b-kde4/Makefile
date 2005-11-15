@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3

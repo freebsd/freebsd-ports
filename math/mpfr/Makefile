@@ -15,7 +15,7 @@ COMMENT=	A library for multiple-precision floating-point computations
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
 		--enable-shared
 INSTALLS_SHLIB=	yes

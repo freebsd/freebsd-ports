@@ -17,7 +17,7 @@ COMMENT=	Multi-platform helper library for networking and security applications
 OPTIONS=	SSLDEBUG "Enable gwenhywfar SSL debug (if SSL enabled)" off \
 		MEMDEBUG "Enable memory debugger statistic" off
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

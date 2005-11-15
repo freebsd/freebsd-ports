@@ -109,7 +109,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER= 253
+USE_AUTOTOOLS=	autoconf:253
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh

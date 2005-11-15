@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Binary I/O stream class library
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GCC=	3.4+
 

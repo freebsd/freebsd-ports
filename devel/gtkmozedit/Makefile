@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 WITH_MOZILLA?=	firefox
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
 
 .include <bsd.port.pre.mk>

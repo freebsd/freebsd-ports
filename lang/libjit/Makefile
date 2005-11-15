@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes

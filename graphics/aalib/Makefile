@@ -18,7 +18,7 @@ COMMENT=	An ascii art library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_X11)

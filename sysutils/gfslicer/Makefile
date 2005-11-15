@@ -18,7 +18,7 @@ COMMENT=	A utility to split and join files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-WANT_AUTOMAKE_VER=14
+USE_AUTOTOOLS=	automake:14:env
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes

@@ -21,7 +21,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-libgmp-prefix=${LOCALBASE} --without-howl
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

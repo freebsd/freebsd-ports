@@ -20,8 +20,7 @@ COMMENT=	The system Risa/Asir is a general computer algebra system
 LIB_DEPENDS=	pari-2.2:${PORTSDIR}/math/pari-devel
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
-USE_AUTOMAKE_VER=	15
+USE_AUTOTOOLS=	automake:15 autoconf:253
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
 ASIR_SRC_VERSION= 20051010

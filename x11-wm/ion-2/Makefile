@@ -18,8 +18,7 @@ LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
-USE_LIBLTDL=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	DEFINES="${IONDEFINES}"

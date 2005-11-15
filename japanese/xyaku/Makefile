@@ -19,8 +19,7 @@ RUN_DEPENDS=	${EDICT_FILE}:${PORTSDIR}/japanese/edict \
 
 USE_X_PREFIX=	yes
 USE_RUBY=	yes
-USE_AUTOCONF_VER=	213
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	autoconf:213 libtool:13
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
 		--with-ruby="${RUBY}" \
 		--with-netscape="${LOCALBASE}/bin/netscape"

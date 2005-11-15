@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier glibwww libghttp libcapplet gal
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS=	--with-gconf=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

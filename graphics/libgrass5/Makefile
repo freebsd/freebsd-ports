@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of functions from the GRASS GIS application for use by non-GRASS programs
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 INSTALLS_SHLIB=	yes

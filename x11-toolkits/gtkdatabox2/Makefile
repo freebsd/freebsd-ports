@@ -18,7 +18,7 @@ COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 CONFLICTS=	gtkdatabox-0.1.*

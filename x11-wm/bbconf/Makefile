@@ -17,7 +17,7 @@ COMMENT=	Configurator for the Blackbox window manager
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbconf.1

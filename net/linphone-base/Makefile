@@ -26,7 +26,7 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure oRTP/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

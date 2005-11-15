@@ -20,7 +20,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

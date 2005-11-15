@@ -23,14 +23,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_CDROM=	"Restrictive copyright (do not sell for profit)"
 
-USE_AUTOMAKE_VER=	15
-USE_AUTOHEADER_VER=	259
+USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:13:inc
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-drm

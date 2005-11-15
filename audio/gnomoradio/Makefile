@@ -27,7 +27,7 @@ USE_GCC=		3.4+
 USE_GNOME=		gnomehack gnomeprefix
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

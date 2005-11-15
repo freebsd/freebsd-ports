@@ -29,7 +29,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.4:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \

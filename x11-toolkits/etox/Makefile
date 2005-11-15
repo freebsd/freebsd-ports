@@ -19,7 +19,7 @@ LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas \
 		edb.1:${PORTSDIR}/databases/edb
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

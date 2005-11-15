@@ -34,7 +34,7 @@ USE_GNOME+=	gnomehack \
 		gnometarget \
 		pkgconfig
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GST_PLUGIN?=	base
 
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \

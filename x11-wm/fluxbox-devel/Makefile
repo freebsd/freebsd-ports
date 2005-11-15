@@ -26,7 +26,7 @@ USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \

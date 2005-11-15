@@ -22,7 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libglade2
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
