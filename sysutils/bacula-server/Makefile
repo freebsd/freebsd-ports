@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.38.0
-PORTREVISION=	1
+PORTVERSION=	1.38.1
+#PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -159,7 +159,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
 	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The default DB is SQLite!"
+	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
@@ -309,6 +309,13 @@ post-install:
 	@${ECHO_MSG} "It is also important that all the scripts accessed"
 	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob can be executed by"
 	@${ECHO_MSG} "the user bacula."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
+	@${ECHO_MSG} "to configure/compile a new kernel!"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Look at $PREFIX/share/bacula/update_bacula_tables for"
+	@${ECHO_MSG} "database update procedure. Details can be found in the"
+	@${ECHO_MSG} "ReleaseNotes"
 .endif
 	@${ECHO_MSG} "*********************************************************************"
 
