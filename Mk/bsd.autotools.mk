@@ -75,6 +75,7 @@ USE_AUTOTOOLS_COMPAT+=	libtool:${WANT_LIBTOOL_VER}:env
 # Ensure that we're not mixing and matching old and new systems
 #
 .if ${USE_AUTOTOOLS_COMPAT}!=""
+.warning "Old autotools variables detected.  Replace with USE_AUTOTOOLS= ${USE_AUTOTOOLS_COMPAT}"
 . if defined(USE_AUTOTOOLS)
 BROKEN+=	"Mix and match of old and new autotools system prohibited"
 . else
