@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
+BROKEN=		Size mismatch
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out

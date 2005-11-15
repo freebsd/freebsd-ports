@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio analysis toolkit
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
