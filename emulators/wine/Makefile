@@ -18,7 +18,6 @@ COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
-WRKSRC=		${WRKDIR}/wine-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
@@ -43,11 +42,10 @@ post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/wine.sh \
 		> ${WRKSRC}/wine.sh
 
-post-configure:
+pre-build:
 	cd ${WRKSRC} && make depend
 
-do-install:
-	cd ${WRKSRC} && ${GMAKE} install
+post-install:
 	-@${MKDIR} ${PREFIX}/etc/rc.d
 	${RM} ${PREFIX}/man/man1/wineg++.1
 .if !defined(NOPORTDOCS)
@@ -60,11 +58,9 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
+	@${INSTALL_SCRIPT} ${WRKSRC}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
 
 .include <bsd.port.post.mk>

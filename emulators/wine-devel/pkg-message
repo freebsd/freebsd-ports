@@ -1,13 +1,6 @@
 Wine should build on FreeBSD 4.x and FreeBSD 5.x, but versions before
 FreeBSD 5.3 will generally not work properly.
 
-Wine requires a configuration file .wine/config in the home directory of
-every user, where assignments of Unix directories to DOS drive letters and
-other options can be set (see "man wine" for details). You may want to copy
-  %%PREFIX%%/etc/wine.conf
-and tweak it accordingly or edit this file and make .wine/config a symlink   
-there.
-
 The port also installs some of Wine's doc files which describe additional
 things that are not in the manual pages, see:
   %%PREFIX%%/share/doc/wine
