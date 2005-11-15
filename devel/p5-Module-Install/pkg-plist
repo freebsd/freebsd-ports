@@ -29,9 +29,12 @@
 %%SITE_PERL%%/Module/Install/Makefile/Version.pm
 %%SITE_PERL%%/Module/Install/Makefile/Name.pm
 %%SITE_PERL%%/inc/Module/Install.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install
 @dirrm %%SITE_PERL%%/Module/Install/Makefile
 @dirrm %%SITE_PERL%%/Module/Install/Admin
 @dirrm %%SITE_PERL%%/Module/Install
 @dirrm %%SITE_PERL%%/inc/Module
 @unexec rmdir %D/%%SITE_PERL%%/inc 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
