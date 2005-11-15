@@ -3691,7 +3691,7 @@ hoz		ports/sysutils/hoz
 hp2xx		ports/print/hp2xx
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
-hping		ports/security/hping
+hping		ports/net/hping
 hpl		ports/benchmarks/hpl
 hpn-ssh		ports/security/hpn-ssh
 hpoj		ports/graphics/hpoj
