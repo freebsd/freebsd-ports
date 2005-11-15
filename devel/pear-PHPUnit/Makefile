@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tux@pinguru.net
