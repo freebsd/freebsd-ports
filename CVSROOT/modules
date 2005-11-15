@@ -1626,6 +1626,7 @@ dhcp-agent	ports/net/dhcp-agent
 dhcp6		ports/net/dhcp6
 dhcpdump	ports/net/dhcpdump
 dhcping		ports/net/dhcping
+dhcprelay	ports/net/dhcprelay
 dhid		ports/dns/dhid
 dhisd		ports/dns/dhisd
 dhttpd		ports/www/dhttpd
