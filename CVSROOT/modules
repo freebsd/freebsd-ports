@@ -1669,7 +1669,6 @@ directfb	ports/devel/directfb
 dirmngr		ports/security/dirmngr
 dirtree		ports/misc/dirtree
 dirvish		ports/sysutils/dirvish
-dis		ports/lang/dis
 discid		ports/audio/discid
 disco		ports/net-mgmt/disco
 diskcheckd	ports/sysutils/diskcheckd
@@ -5947,7 +5946,6 @@ makeself	ports/archivers/makeself
 maketeidtd	ports/textproc/maketeidtd
 maketool	ports/devel/maketool
 makeztxt	ports/palm/makeztxt
-malbolge	ports/lang/malbolge
 malint		ports/audio/malint
 malsync		ports/palm/malsync
 mambo		ports/www/mambo
