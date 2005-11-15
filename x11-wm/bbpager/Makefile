@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bbpager
-PORTVERSION=	0.4.0
+DISTVERSION=	0.4.1beta1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://halplant.com:88/software/src/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-cvs.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bbtools
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A pager for the Blackbox window manager
@@ -26,7 +26,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README.bbpager
 PLIST_FILES=	bin/bbpager %%DATADIR%%/bbpager.rc
-PLIST_DIRS=	%%DATADIR%% %%DOCSDIR%%
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/bbpager ${PREFIX}/bin
@@ -40,6 +40,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DOCSDIR}/
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
