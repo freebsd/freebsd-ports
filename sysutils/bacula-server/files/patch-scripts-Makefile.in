@@ -21,7 +21,7 @@
 ! #	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
 ! #	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
 ! #	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
-! 	$(INSTALL_SCRIPT) bacula (DESTDIR)$(sysconfdir)/rc.d/z-bacula.sh.sample
+! 	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/z-bacula.sh.sample
   	@if  test -f ${DESTDIR}${scriptdir}/mtx-changer; then \
   	   echo "  ==> Saving existing mtx-changer to mtx-changer.old"; \
   	   $(MV) -f ${DESTDIR}${scriptdir}/mtx-changer ${DESTDIR}${scriptdir}/mtx-changer.old; \
