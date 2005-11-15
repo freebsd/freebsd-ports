@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby-mode.el
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTEPOCH=	1
 CATEGORIES=	lang ruby elisp
 MASTER_SITES=	# none
 DISTFILES=	# none
