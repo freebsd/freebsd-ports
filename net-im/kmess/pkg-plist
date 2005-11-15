@@ -1,5 +1,38 @@
 bin/kmess
-share/applnk/Internet/kmess.desktop
+share/applications/kde/kmess.desktop
+share/apps/kmess/emoticons/airplane.png
+share/apps/kmess/emoticons/automobile.png
+share/apps/kmess/emoticons/baringteeth.png
+share/apps/kmess/emoticons/bowl.png
+share/apps/kmess/emoticons/brb.png
+share/apps/kmess/emoticons/cigarette.png
+share/apps/kmess/emoticons/computer.png
+share/apps/kmess/emoticons/eyeroll.png
+share/apps/kmess/emoticons/fingerscrossed.png
+share/apps/kmess/emoticons/gameconsole.png
+share/apps/kmess/emoticons/highfive.png
+share/apps/kmess/emoticons/huh.png
+share/apps/kmess/emoticons/island.png
+share/apps/kmess/emoticons/lightning.png
+share/apps/kmess/emoticons/mobilephone.png
+share/apps/kmess/emoticons/money.png
+share/apps/kmess/emoticons/nerd.png
+share/apps/kmess/emoticons/party.png
+share/apps/kmess/emoticons/pizza.png
+share/apps/kmess/emoticons/plate.png
+share/apps/kmess/emoticons/sarcastic.png
+share/apps/kmess/emoticons/secret.png
+share/apps/kmess/emoticons/sheep.png
+share/apps/kmess/emoticons/sick.png
+share/apps/kmess/emoticons/sleepy.png
+share/apps/kmess/emoticons/snail.png
+share/apps/kmess/emoticons/soccer.png
+share/apps/kmess/emoticons/sshh.png
+share/apps/kmess/emoticons/storm.png
+share/apps/kmess/emoticons/thinking.png
+share/apps/kmess/emoticons/turtle.png
+share/apps/kmess/emoticons/umbrella.png
+share/apps/kmess/emoticons/unhappy.png
 share/apps/kmess/emoticons/angel.png
 share/apps/kmess/emoticons/angry.png
 share/apps/kmess/emoticons/arrogant.png
@@ -53,7 +86,7 @@ share/apps/kmess/emoticons/unlove.png
 share/apps/kmess/emoticons/wilted_rose.png
 share/apps/kmess/emoticons/wink.png
 share/apps/kmess/eventsrc
-share/apps/kmess/icons/hicolor/16x16/apps/gnomemeeting.png
+share/apps/kmess/pics/kmesspic.png
 share/apps/kmess/pics/away.png
 share/apps/kmess/pics/background.png
 share/apps/kmess/pics/berightback.png
@@ -85,12 +118,16 @@ share/doc/HTML/en/kmess/kmesspopupbaloon.png
 share/doc/HTML/en/kmess/kmessrightclickmenucontact.png
 share/doc/HTML/en/kmess/kmessstartupscreen.png
 share/doc/HTML/en/kmess/kmesstimestamp.png
+share/apps/kmess/icons/hicolor/16x16/apps/gnomemeeting.png
 share/icons/hicolor/16x16/apps/kmess.png
 share/icons/hicolor/32x32/apps/kmess.png
 share/icons/hicolor/48x48/apps/kmess.png
 share/icons/locolor/16x16/apps/kmess.png
 share/icons/locolor/32x32/apps/kmess.png
-share/icons/locolor/48x48/apps/kmess.png
+share/icons/hicolor/128x128/apps/kmess.png
+share/icons/hicolor/22x22/apps/kmess.png
+share/icons/hicolor/64x64/apps/kmess.png
+share/icons/locolor/22x22/apps/kmess.png
 share/locale/ar/LC_MESSAGES/kmess.mo
 share/locale/ca/LC_MESSAGES/kmess.mo
 share/locale/de/LC_MESSAGES/kmess.mo
@@ -103,6 +140,9 @@ share/locale/ko/LC_MESSAGES/kmess.mo
 share/locale/nb/LC_MESSAGES/kmess.mo
 share/locale/nl/LC_MESSAGES/kmess.mo
 share/locale/pt_BR/LC_MESSAGES/kmess.mo
+share/locale/sv/LC_MESSAGES/kmess.mo
+share/locale/sl/LC_MESSAGES/kmess.mo
+share/locale/zh_TW/LC_MESSAGES/kmess.mo
 share/locale/th/LC_MESSAGES/kmess.mo
 share/locale/tr/LC_MESSAGES/kmess.mo
 share/locale/zh_CN.GB18030/LC_MESSAGES/kmess.mo
@@ -112,9 +152,9 @@ share/sounds/kmess_chat.ogg
 share/sounds/kmess_logoff.ogg
 share/sounds/kmess_logon.ogg
 share/sounds/kmess_msg.ogg
-@unexec rmdir %D/share/locale/zh_CN.GB18030/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zh_CN.GB18030 2> /dev/null || true
 @dirrm share/doc/HTML/en/kmess
+@dirrm share/locale/zh_CN.GB18030/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB18030
 @dirrm share/apps/kmess/pics
 @dirrm share/apps/kmess/icons/hicolor/16x16/apps
 @dirrm share/apps/kmess/icons/hicolor/16x16
