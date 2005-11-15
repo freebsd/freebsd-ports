@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-SQLite
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,7 +18,8 @@ COMMENT=	Extension to Class::DBI for sqlite
 RUN_DEPENDS=	${SITE_PERL}/Ima/DBI.pm:${PORTSDIR}/databases/p5-Ima-DBI \
 		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/SQL/Parser.pm:${PORTSDIR}/databases/p5-SQL-Statement
+		${SITE_PERL}/SQL/Parser.pm:${PORTSDIR}/databases/p5-SQL-Statement \
+		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
