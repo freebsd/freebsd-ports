@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fast-user-switch-applet
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.2.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://ignore-your.tv/downloads/fusa/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}
@@ -19,7 +18,7 @@ COMMENT=	Fast user switching applet for GNOME
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-gdm-config=${X11BASE}/etc/gdm/gdm.conf
 USE_REINPLACE=	yes
 
