@@ -208,6 +208,7 @@
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += howl
+    SUBDIR += hping
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping
