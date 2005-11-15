@@ -11,7 +11,7 @@
 #
 privoxy_enable=${privoxy_enable-"NO"}
 privoxy_flags=${privoxy_flags-""}
-privoxy_pidfile=${privoxy_pidfile-"/var/run/privoxy.pid"}
+privoxy_pidfile=${privoxy_pidfile-"/var/run/privoxy/privoxy.pid"}
 
 . %%RC_SUBR%%
 
@@ -30,7 +30,7 @@ privoxy_start()
 		echo "${name} is already running"
 	else
 		echo "Starting ${name}."
-        	su -m privoxy -c '${command} ${privoxy_flags} ${configfile} --pidfile ${pidfile}' \
+        	su -m privoxy -c "${command} ${privoxy_flags} ${configfile} --pidfile ${pidfile}" \
 		1>/dev/null 2>&1
 	fi
 }
