@@ -7,7 +7,7 @@
 
 PORTNAME=	kool-gorilla
 PORTVERSION=	1.3.5
-MASTER_SITES=	http://gorillaonkde.home.comcast.net/korilla/
+MASTER_SITES=	http://home.comcast.net/~gorillaonkde/gorilla/
 DISTNAME=	Korilla_Icons-v${PORTVERSION}
 
 COMMENT=	KDE Kool Gorilla iconset
