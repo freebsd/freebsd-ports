@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
-DISTNAME=	${PORTNAME}-2.6.2
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
@@ -26,12 +25,10 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.6.2
-
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13
+USE_LIBTOOL_VER=13
 
 .if !defined(NOPORTDOCS)
 MAN1=		electricsheep.1
