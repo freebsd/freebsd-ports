@@ -7,38 +7,35 @@
 
 PORTNAME=	jpeg2ps
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics converters
 MASTER_SITES=	http://www.pdflib.com/products/more/jpeg2ps/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter for JPEG compressed images to PostScript Level 2
+
+MAKE_ARGS+=	CFLAGS="-c ${CFLAGS}" LD="${CC}"
+
+MAN1=		jpeg2ps.1
+PLIST_FILES=	bin/jpeg2ps
 
 PAPERSIZE?=	letter
 
-INSTALL_TARGET=
-
-MAN1=           jpeg2ps.1
-
-PLIST_FILES=	bin/jpeg2ps %%DOCSDIR%%/jpeg2ps.txt
-PLIST_DIRS=	%%DOCSDIR%%
-
-.include <bsd.port.pre.mk>
-
-.if ${PAPERSIZE} == a4
-post-patch:
-	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.input
-	${SED} "s%CCFLAGS=-O -c%CCFLAGS=-O -c -DA4%" ${WRKSRC}/Makefile.input > ${WRKSRC}/Makefile
-	${RM} -f ${WRKSRC}/Makefile.input
+.if !defined(NOPORTDOCS)
+PORTDOCS=	jpeg2ps.txt
 .endif
 
-post-install:
+.if ${PAPERSIZE} == a4
+CFLAGS+=	-DA4
+.endif
+
+do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jpeg2ps ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/jpeg2ps.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/jpeg2ps.txt ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/jpeg2ps.1 ${MANPREFIX}/man/man1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
