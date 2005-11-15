@@ -7,7 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -32,7 +32,7 @@ MAN1=		privoxy.1
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,^\(confdir\) \.,\1 ${PREFIX}/etc/privoxy,' \
-		-e 's,^\(logdir\) \.,\1 /tmp,' \
+		-e 's,^\(logdir\) \.,\1 /var/log/privoxy,' \
 		-e 's,^\(actionsfile standard\),#\1,' \
 		-e 's,^\(actionsfile user\),#\1,' \
 	${WRKSRC}/config
@@ -66,6 +66,9 @@ post-install:
 	${TOUCH} /var/log/jarfile
 	${CHOWN} privoxy:privoxy /var/log/jarfile
 	${CHMOD} 0600 /var/log/jarfile
+	${TOUCH} /var/run/privoxy
+	${CHOWN} privoxy:privoxy /var/run/privoxy
+	${CHMOD} 0600 /var/run/privoxy
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
