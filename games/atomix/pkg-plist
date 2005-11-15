@@ -3,11 +3,11 @@ share/gnome/applications/atomix.desktop
 share/gnome/atomix/atomix-logo.png
 share/gnome/atomix/level/aceticacid.atomix.xml
 share/gnome/atomix/level/acetone.atomix.xml
-share/gnome/atomix/level/buthanol.atomix.xml
-share/gnome/atomix/level/cyclo-buthane.atomix.xml
+share/gnome/atomix/level/butanol.atomix.xml
+share/gnome/atomix/level/cyclobutane.atomix.xml
 share/gnome/atomix/level/dimethylether.atomix.xml
-share/gnome/atomix/level/ethan.atomix.xml
 share/gnome/atomix/level/ethanal.atomix.xml
+share/gnome/atomix/level/ethane.atomix.xml
 share/gnome/atomix/level/ethanol.atomix.xml
 share/gnome/atomix/level/ethylene.atomix.xml
 share/gnome/atomix/level/glycerin.atomix.xml
@@ -16,7 +16,7 @@ share/gnome/atomix/level/methanal.atomix.xml
 share/gnome/atomix/level/methane.atomix.xml
 share/gnome/atomix/level/methanol.atomix.xml
 share/gnome/atomix/level/propanal.atomix.xml
-share/gnome/atomix/level/propylen.atomix.xml
+share/gnome/atomix/level/propylene.atomix.xml
 share/gnome/atomix/level/pyran.atomix.xml
 share/gnome/atomix/level/sequence
 share/gnome/atomix/level/transbutylen.atomix.xml
