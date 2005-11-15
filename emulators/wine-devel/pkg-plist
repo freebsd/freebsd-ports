@@ -766,8 +766,8 @@ lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 share/aclocal/wine.m4
 share/applications/wine.desktop
-share/wine/wine.inf
-share/wine/generic.ppd
+%%DATADIR%%/wine.inf
+%%DATADIR%%/generic.ppd
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
