@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTVERSION=	0.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
