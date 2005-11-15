@@ -20,6 +20,7 @@ CONFIGURE_ENV=	MATHLIB="-lm"
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		mawk.1
+PLIST_FILES=	bin/mawk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mawk ${PREFIX}/bin
