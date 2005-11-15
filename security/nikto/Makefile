@@ -17,6 +17,8 @@ MASTER_SITES=	http://www.cirt.net/nikto/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
