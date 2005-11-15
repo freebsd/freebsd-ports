@@ -7,7 +7,7 @@ pxtools consists of the following:
   Paradox-database.  The output is an SQL-/CSV-dump that can be
   used to recreate the database in an SQL-enviroment.
 
-WWW: http://www.kneschke.de/projekte/pxtools/
+WWW: http://jan.kneschke.de/projects/pxtools/
 
 - Chris D. Faulhaber
 jedgar@FreeBSD.org
