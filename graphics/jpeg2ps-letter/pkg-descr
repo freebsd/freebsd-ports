@@ -8,3 +8,5 @@ file. Decompression is done by the PostScript interpreter (only PostScript
 Level 2 and 3 interpreters support JPEG compression and decompression).
 If you have a slow communication channel and a fast printer, sending
 compressed image data is a big win.
+
+WWW: http://www.pdflib.com/products/more/jpeg2ps.html
