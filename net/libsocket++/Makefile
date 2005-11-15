@@ -17,9 +17,7 @@ COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15:inc
 SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
 
 INFO=	socket++

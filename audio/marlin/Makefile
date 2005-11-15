@@ -22,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnomeui nautiluscdburne
 USE_GSTREAMER=	flac gconf mad vorbis
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lcam"
 

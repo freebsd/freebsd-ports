@@ -16,7 +16,7 @@ COMMENT=	Audio compression codec library
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALLS_SHLIB=	yes

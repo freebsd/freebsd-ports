@@ -16,7 +16,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	The GNU database manager
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

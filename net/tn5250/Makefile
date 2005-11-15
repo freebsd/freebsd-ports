@@ -17,7 +17,7 @@ COMMENT=	5250 Telnet protocol and Terminal
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-os-dir=no --with-ssl=${OPENSSLBASE}

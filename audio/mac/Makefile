@@ -19,7 +19,7 @@ COMMENT=	Monkey's Audio lossless audio (de)compressor
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--enable-backward
 
 WRKSRC=		${WRKDIR}/mac-3.99-u4

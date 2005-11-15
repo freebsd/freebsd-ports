@@ -17,7 +17,7 @@ COMMENT?=	The XSLT C library for GNOME
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_GNOME?=	gnomehack gnometarget libxml2
 USE_REINPLACE=	yes

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.3/-3/}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A library providing routines for paper size management
 
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	Yes
 USE_GETOPT_LONG=Yes
 CONFIGURE_ARGS=	--build=${CONFIGURE_TARGET}

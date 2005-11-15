@@ -18,7 +18,7 @@ COMMENT=	Use OpenGL to play around with three dimensional scenes
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
 INSTALLS_SHLIB=	yes

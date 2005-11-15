@@ -17,7 +17,7 @@ DEPRECATED=	mastersite disappeared, no longer maintained by author
 EXPIRATION_DATE=2005-12-31
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 INSTALLS_SHLIB=	yes

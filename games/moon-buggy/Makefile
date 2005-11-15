@@ -23,7 +23,7 @@ COMMENT=	Drive a buggy across the moons surface
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
 .endif
 
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games\
 		--with-setgid=games

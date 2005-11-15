@@ -108,7 +108,7 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata.34:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

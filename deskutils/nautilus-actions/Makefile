@@ -16,7 +16,7 @@ COMMENT=	Extension for Nautilus to configure programs to launch on files
 
 USE_GNOME=	nautilus2 intlhack pygtk2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

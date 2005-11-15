@@ -16,7 +16,7 @@ COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

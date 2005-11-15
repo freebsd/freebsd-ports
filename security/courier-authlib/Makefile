@@ -37,8 +37,7 @@ OPTIONS+=	GDBM	"Use gdbm instead of system bdb"	off
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBLTDL=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_SUBMAKE=	yes

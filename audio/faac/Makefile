@@ -18,11 +18,9 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 NO_PACKAGE=	Distribution in binary form is prohibited
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOMAKE_VER=15
-USE_AUTOHEADER_VER=259
+USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:13
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

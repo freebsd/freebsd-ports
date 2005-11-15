@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
 		libwnck
 WANT_GNOME=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_GCC=	3.4+

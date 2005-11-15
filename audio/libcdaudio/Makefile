@@ -15,7 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

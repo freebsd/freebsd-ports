@@ -39,7 +39,7 @@ LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 IGNORE=		requires newer version of perl
 .endif
 
-WANT_AUTOCONF_VER=259	# Need this to regenerate patched configure in OpenAL
+USE_AUTOTOOLS=	autoconf:259:env
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		glut.3:${PORTSDIR}/graphics/libglut \
 		openal.0:${PORTSDIR}/audio/openal \

@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--with-png=${LOCALBASE}
 PATCH_SITES=		http://www.bmsc.washington.edu/people/merritt/gnuplot/
 PATCHFILES=		datastrings_4.0.patch histograms_4.0.patch
 PATCH_DIST_STRIP=	-p1
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=		autoconf:259
 CONFIGURE_ARGS+=	--enable-datastrings \
 			--enable-histograms
 PLIST_SUB+=		HISTOGRAMS=""

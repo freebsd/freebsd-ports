@@ -19,7 +19,7 @@ COMMENT=	AdLib emulator library supporting many formats
 LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GCC=	3.4+
 

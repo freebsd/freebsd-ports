@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	C-language sources to HTML converter
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 
 MAN1=			c2html.1
 

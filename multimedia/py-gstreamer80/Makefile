@@ -28,7 +28,7 @@ USE_GNOME=	pygtk2 \
 		gnomehack \
 		pkgconfig
 USE_GSTREAMER=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"

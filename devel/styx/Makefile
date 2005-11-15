@@ -17,7 +17,7 @@ COMMENT=	A scanner/parser generator
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}

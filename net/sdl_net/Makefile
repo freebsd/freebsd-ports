@@ -20,7 +20,7 @@ LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 

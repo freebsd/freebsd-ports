@@ -18,7 +18,7 @@ COMMENT=	A library for manipulating Unicode characters and strings
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome

@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+ 2.0
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 gnomehack
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

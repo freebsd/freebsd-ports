@@ -26,7 +26,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 
 MAN1=	pdnmesh.1
 MAN5=	pdnmesh_input.5

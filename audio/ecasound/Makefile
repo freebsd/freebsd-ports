@@ -15,9 +15,7 @@ MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Multitrack audio processing software
 
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=14
-USE_AUTOCONF_VER=213
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

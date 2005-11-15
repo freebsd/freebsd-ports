@@ -17,7 +17,7 @@ MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	World wide web server benchmarking with SSL support
 
 USE_OPENSSL=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 ALL_TARGET=	install

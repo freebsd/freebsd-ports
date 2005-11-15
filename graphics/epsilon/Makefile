@@ -16,7 +16,7 @@ COMMENT=	A small, display independent, and quick thumbnailing library
 LIB_DEPENDS=	epeg.9:${PORTSDIR}/graphics/epeg \
 		edje.5:${PORTSDIR}/graphics/edje
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -17,7 +17,7 @@ COMMENT=	A puzzle game, somewhat like Tetris
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 

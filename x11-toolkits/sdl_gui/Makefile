@@ -18,7 +18,7 @@ COMMENT=	A Graphical User Interface library for SDL
 
 USE_SDL=	sdl image ttf
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 

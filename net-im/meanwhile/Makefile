@@ -20,7 +20,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-doxygen=no \
 		--with-gmp-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

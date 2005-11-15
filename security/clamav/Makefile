@@ -26,7 +26,7 @@ OPTIONS=	MILTER "Compile the milter interface" Off \
 		LIBUNRAR "Support for external Unrar library" Off
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes

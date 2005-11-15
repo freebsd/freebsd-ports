@@ -19,8 +19,7 @@ BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr-svn \
 		${SVNDEP}:${PORTSDIR}/devel/subversion
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 CONFIGURE_ARGS=	--with-wx-config=${WXCONFIG} \
 	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config

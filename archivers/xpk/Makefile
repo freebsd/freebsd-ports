@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

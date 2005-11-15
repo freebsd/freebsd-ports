@@ -15,7 +15,7 @@ MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cxx --enable-production \

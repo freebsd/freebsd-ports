@@ -17,7 +17,7 @@ COMMENT=	A KDE frontend to the Ogle DVD player
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

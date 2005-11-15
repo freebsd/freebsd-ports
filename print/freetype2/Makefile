@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP=""
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget pkgconfig
 USE_REINPLACE=	yes
 LIBTOOLFILES=	builds/unix/configure

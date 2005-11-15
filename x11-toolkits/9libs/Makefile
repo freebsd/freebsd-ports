@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan9 compatibility libraries
 
 USE_XLIB=	YES
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/9libs
 

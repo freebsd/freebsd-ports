@@ -20,7 +20,7 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${SITE_PERL}/Frontier/Client.pm:${PORTSDIR}/net/p5-Frontier-RPC
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

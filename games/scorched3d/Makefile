@@ -32,8 +32,7 @@ USE_SDL=		mixer net sdl
 GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
-USE_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	automake:15 autoconf:253
 USE_REINPLACE=		yes
 
 WRKSRC=			${WRKDIR}/scorched

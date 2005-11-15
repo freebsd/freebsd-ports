@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 USE_RC_SUBR=	yes
 USE_PERL5_BUILD=yes
 

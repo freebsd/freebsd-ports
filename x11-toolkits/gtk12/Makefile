@@ -19,7 +19,7 @@ COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GNOME=	glib12
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \

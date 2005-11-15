@@ -22,7 +22,7 @@ USE_GETTEXT=	yes
 USE_GCC=	3.4+
 USE_GNOME=	glib20 gtk20 atk pango pkgconfig libglade2 gnomehack
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \

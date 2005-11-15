@@ -17,7 +17,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
 USE_GNOME=	gnomehack gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

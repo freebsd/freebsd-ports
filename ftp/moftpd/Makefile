@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	clement
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
 USE_RC_SUBR=	yes
 USE_PERL5_BUILD=yes

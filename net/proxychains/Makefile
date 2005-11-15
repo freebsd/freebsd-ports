@@ -14,8 +14,7 @@ COMMENT=	Multi-proxifier
 
 USE_REINPLACE=	yes
 
-USE_AUTOCONF_VER=	213
-USE_AUTOMAKE_VER=	14
+USE_AUTOTOOLS=	automake:14 autoconf:213
 
 INSTALLS_SHLIB=	yes
 

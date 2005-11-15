@@ -17,7 +17,7 @@ COMMENT=	A simple network library built upon Glib-2
 
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack glib20
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-glib2
 

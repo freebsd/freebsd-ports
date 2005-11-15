@@ -20,7 +20,7 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		CLI "Enable to build the management CLI" off
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>

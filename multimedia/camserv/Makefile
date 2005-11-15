@@ -24,9 +24,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 ONLY_FOR_ARCHS=	i386 alpha
 
 USE_X_LIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=259
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \

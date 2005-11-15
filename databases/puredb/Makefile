@@ -14,7 +14,7 @@ DISTNAME=	pure-db-${PORTVERSION}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 DOCS=		AUTHORS FORMAT_DESCR NEWS README

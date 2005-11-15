@@ -18,7 +18,7 @@ COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack gnometarget lthack
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--without-jpeg --without-tiff
 INSTALLS_SHLIB=	yes
 

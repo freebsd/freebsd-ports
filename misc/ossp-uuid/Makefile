@@ -18,7 +18,7 @@ COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 CONFLICTS=	e2fsprogs-[0-9]*
 
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 

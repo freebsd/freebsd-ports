@@ -19,7 +19,7 @@ COMMENT=	A static source code checker for C++
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
 

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	openexr
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A high dynamic-range (HDR) image file format
 
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	YES
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

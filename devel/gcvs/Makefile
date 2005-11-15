@@ -32,8 +32,7 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-WANT_AUTOMAKE_VER=	14
-WANT_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	automake:14:env autoconf:213:env
 
 post-install:
 	install-info ${PREFIX}/info/cvs.info ${PREFIX}/info/dir

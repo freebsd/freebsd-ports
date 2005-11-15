@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

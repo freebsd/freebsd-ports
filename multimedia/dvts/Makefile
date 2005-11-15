@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p4
 MAINTAINER=	simokawa@FreeBSD.org
 COMMENT=	An implementation of Digital Video Transport System
 
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 
 MAN1=		dvts.1 dvsend.1 dvrecv.1
 

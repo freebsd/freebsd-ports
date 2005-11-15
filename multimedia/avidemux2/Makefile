@@ -16,16 +16,14 @@ DISTNAME=	avidemux-${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
-PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake${WANT_AUTOMAKE_VER}
+PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-WANT_AUTOCONF_VER=259
-WANT_AUTOMAKE_VER=19
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \

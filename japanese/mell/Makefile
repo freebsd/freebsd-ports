@@ -14,9 +14,8 @@ MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	Emacs Lisp for taiyaki-elisp, especially for the prime
 
 GNU_CONFIGURE=		yes
-USE_AUTOMAKE_VER=	19
+USE_AUTOTOOLS=	automake:19 autoconf:259
 AUTOMAKE_ARGS=		-af
-USE_AUTOCONF_VER=	259
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

@@ -22,7 +22,7 @@ LIB_DEPENDS=	zzip.10:${PORTSDIR}/devel/zziplib \
 WRKSRC=		${WRKDIR}/ogrenew
 CONFIGURE_ARGS=	--disable-cg --program-transform-name=
 USE_REINPLACE=	YES
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4

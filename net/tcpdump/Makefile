@@ -68,7 +68,7 @@ PLIST_SUB+=	NOTBASE=""
 CONFIGURE_ARGS+=	--without-crypto
 .else
 USE_OPENSSL=		defined
-USE_AUTOCONF_VER?=	253
+USE_AUTOTOOLS=		autoconf:253
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-openssl-configure.in
 .endif
 

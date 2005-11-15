@@ -17,7 +17,7 @@ COMMENT=	Dock any application with no native tray icon
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"

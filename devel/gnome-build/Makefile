@@ -21,7 +21,7 @@ LIB_DEPENDS=	gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack gnometarget libgnomeui gnomevfs2
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no

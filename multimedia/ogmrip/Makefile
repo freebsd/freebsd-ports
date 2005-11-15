@@ -28,7 +28,7 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 gconf2 libglade2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

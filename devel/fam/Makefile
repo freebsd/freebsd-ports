@@ -20,9 +20,7 @@ COMMENT=	A file alteration monitor
 
 CFLAGS+=		-Wno-deprecated
 
-USE_AUTOMAKE_VER=15
-USE_AUTOCONF_VER=253
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:13:inc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

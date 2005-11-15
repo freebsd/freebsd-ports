@@ -74,7 +74,7 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 .if defined(WITH_IPV6)
-USE_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253
 .endif
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64"

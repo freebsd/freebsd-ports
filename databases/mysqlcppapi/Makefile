@@ -17,7 +17,7 @@ COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 

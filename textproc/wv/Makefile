@@ -25,7 +25,7 @@ RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-ssl
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnometarget pkgconfig glib20
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-exporter \
 		--with-glib=glib2 \

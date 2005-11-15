@@ -16,9 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.9.tar.gz
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Modular Calendar Access Library
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:13
 HAS_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \

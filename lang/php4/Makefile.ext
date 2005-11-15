@@ -177,7 +177,7 @@ LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15
 .endif
 
 .if ${PHP_MODNAME} == "mcve"

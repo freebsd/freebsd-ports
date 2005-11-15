@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	automake:14 autoconf:253
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${LOCALBASE}/bin/wish8.4 \

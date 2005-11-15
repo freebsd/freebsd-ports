@@ -22,7 +22,7 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>
 

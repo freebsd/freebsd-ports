@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \

@@ -19,7 +19,7 @@ LIB_DEPENDS=	cgi.1:${PORTSDIR}/devel/cgilib \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_PERL5=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-perl-site-install --disable-python

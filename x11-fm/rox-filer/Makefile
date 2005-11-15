@@ -22,7 +22,7 @@ PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 USE_XLIB=	yes
 USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1

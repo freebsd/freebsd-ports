@@ -20,7 +20,7 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		mp3lame:${PORTSDIR}/audio/lame
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/streamTranscoder

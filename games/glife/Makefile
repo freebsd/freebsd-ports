@@ -18,7 +18,7 @@ COMMENT=	Conway's Game of Life for GNOME
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack libglade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

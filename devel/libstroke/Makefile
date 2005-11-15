@@ -16,7 +16,7 @@ COMMENT=	A stroke translation library
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

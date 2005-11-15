@@ -15,7 +15,7 @@ COMMENT=	A library for loading (and saving) 3d modeller object files
 
 CONFLICTS=	xmorph*
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

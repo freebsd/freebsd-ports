@@ -17,8 +17,7 @@ COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
-USE_AUTOCONF_VER=	213
-USE_AUTOMAKE_VER=	14
+USE_AUTOTOOLS=	automake:14 autoconf:213
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 MAN1=		blwm.1x

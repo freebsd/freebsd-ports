@@ -32,7 +32,7 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ARGS=	--with-frontend=qt \
 		--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"

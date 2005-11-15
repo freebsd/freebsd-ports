@@ -20,7 +20,7 @@ COMMENT=	Japanized TK (Tcl Tool Kit)
 LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared

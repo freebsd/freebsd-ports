@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 NO_LATEST_LINK=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

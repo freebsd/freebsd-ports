@@ -19,7 +19,7 @@ CONFLICTS=	e-uae-*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOME=	gtk20

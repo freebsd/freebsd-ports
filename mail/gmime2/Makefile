@@ -18,7 +18,7 @@ CONFLICTS=	gmime-1.0.*
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no

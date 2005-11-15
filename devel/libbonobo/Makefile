@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 USE_GNOME=	gnomehack intlhack libxml2 orbit2
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

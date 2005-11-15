@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

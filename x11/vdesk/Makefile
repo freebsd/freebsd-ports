@@ -22,7 +22,7 @@ PLIST_FILES+=	share/doc/vdesk/${ii}
 .endfor
 .endif
 USE_X_PREFIX=		yes
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259
 
 post-extract:
 # Avoid having to read this lengthy file.

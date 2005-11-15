@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

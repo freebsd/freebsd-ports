@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--enable-muscledropdir=${LOCALBASE}/lib/pcsc/services
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 MAN8=		bundleTool.8
 

@@ -24,7 +24,7 @@ USE_APACHE=	yes
 APACHE_PORT=	www/apache2
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

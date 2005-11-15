@@ -45,7 +45,7 @@ PLIST_SUB+=		TIMELORD=""
 .else
 PLIST_SUB+=		TIMELORD="@comment "
 .endif
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes

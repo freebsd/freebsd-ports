@@ -19,7 +19,7 @@ LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GCC=	3.4
 INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes

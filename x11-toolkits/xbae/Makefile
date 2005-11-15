@@ -17,7 +17,7 @@ DISTNAME=	Xbae-${PORTVERSION}
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A Motif-based widget which displays a grid of cells as a spreadsheet
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

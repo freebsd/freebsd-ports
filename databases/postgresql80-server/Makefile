@@ -108,7 +108,7 @@ USE_BISON=	yes
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
-USE_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata.34:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

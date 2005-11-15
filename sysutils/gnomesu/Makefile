@@ -17,7 +17,7 @@ COMMENT=	A gtk frontend to su
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libzvt
 
 MAN1=		gnomesu.1

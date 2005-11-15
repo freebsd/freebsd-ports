@@ -27,7 +27,7 @@ SAMBA_JA_VERSION=	1.0beta1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 
 # directories
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)

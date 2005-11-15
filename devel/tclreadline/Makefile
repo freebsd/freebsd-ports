@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tclreadline
 MAINTAINER=	darius@dons.net.au
 COMMENT=	GNU readline for TCL
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 MANN=		tclreadline.n
 

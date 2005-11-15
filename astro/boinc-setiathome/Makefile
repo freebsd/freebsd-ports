@@ -32,10 +32,7 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
 .endif
 
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	automake:19 autoheader:259 autoconf:259 libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -79,7 +76,7 @@ FIND_SETI_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_PROG)
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/missing
-	cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/libtool${USE_LIBTOOL_VER}/libltdl -I m4
+	cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/libtool${LIBTOOL_VERSION}/libltdl -I m4
 
 do-install:
 	${MKDIR} ${BOINC_HOME}/projects/${SETI_SITE}

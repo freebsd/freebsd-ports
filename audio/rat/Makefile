@@ -19,7 +19,7 @@ COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 TCLTK_VERSION=	8.3
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 MAN1=		rat.1
 MANCOMPRESSED=	no

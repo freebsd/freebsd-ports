@@ -25,7 +25,7 @@ WANT_GNOME=	yes
 USE_GNOME=	lthack gnometarget glib20
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim

@@ -18,7 +18,7 @@ COMMENT=	A small application for preview your theme widgets in one small window
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-WANT_AUTOMAKE_VER=	19
+USE_AUTOTOOLS=	automake:19:env
 
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/ThemePreview-2

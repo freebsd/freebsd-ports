@@ -23,7 +23,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave

@@ -18,7 +18,7 @@ LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 
 USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE}
 

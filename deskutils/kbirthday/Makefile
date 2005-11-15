@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 # may or may not solve the alpha compilation issue....
 CONFIGURE_ARGS=	--with-pic
 

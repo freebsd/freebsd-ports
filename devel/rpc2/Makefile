@@ -15,7 +15,7 @@ COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes

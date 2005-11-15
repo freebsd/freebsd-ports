@@ -16,12 +16,9 @@ COMMENT=	A function library for begemot tools
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env libltdl:15 libtool:15:env
 INSTALLS_SHLIB=	yes
 
-WANT_AUTOCONF_VER=	259
-WANT_AUTOMAKE_VER=	19
-WANT_LIBTOOL_VER=	15
 
 MAN1=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
 		rpoll.1 strnchr.1 strnlen.1 strsave.1 strtrimsp.1 verb.1 xalloc.1

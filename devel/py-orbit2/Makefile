@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
 
 .include <bsd.port.mk>

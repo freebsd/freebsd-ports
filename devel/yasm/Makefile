@@ -16,8 +16,7 @@ COMMENT=	A complete rewrite of the NASM assembler
 
 USE_REINPLACE=	yes
 USE_ICONV=	yes
-USE_LIBLTDL=	yes
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259 libltdl:15
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

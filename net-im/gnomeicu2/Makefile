@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel lthack libxml2
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 
 GCONF_SCHEMAS=	gnomeicu.schemas

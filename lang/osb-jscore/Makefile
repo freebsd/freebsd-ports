@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	gtk-webcore
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes

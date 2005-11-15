@@ -16,7 +16,7 @@ COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef* filters-*
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

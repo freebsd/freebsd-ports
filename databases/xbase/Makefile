@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xbase (i.e. dBase, FoxPro, etc.) compatible C++ class library
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
 INSTALLS_SHLIB=	yes
 

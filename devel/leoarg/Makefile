@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class for parsing command lines
 
 USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 LIBTOOLFLAGS=	--disable-ltlibs --disable-static
 INSTALLS_SHLIB=	yes
 

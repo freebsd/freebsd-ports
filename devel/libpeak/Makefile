@@ -18,7 +18,7 @@ COMMENT=	Parallel Events and Asynchronous tasKing Library
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CFLAGS="${CFLAGS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"

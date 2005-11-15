@@ -20,7 +20,7 @@ RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 USE_GSTREAMER=	gconf
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 pre-configure:
 	@${RM} -f \

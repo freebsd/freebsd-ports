@@ -17,7 +17,7 @@ COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 lthack
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \

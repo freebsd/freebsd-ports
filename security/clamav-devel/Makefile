@@ -30,9 +30,7 @@ OPTIONS=	MILTER "Compile the milter interface" Off \
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOCONF_VER=259
-USE_AUTOMAKE_VER=19
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15
 LIBTOOLFILES=	acinclude.m4
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes

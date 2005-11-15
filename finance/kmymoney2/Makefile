@@ -20,7 +20,7 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_PERL5=		yes
 USE_BZIP2=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=		yes
 
 MAN1=			kmymoney2.1

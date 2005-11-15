@@ -18,7 +18,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 COMMENT=	Japanized Tcl (Tool Command Language)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}

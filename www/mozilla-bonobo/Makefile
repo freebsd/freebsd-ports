@@ -36,7 +36,7 @@ HEADERS_SUFX=
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix libgnomeui libgnomeprint
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=		yes
 
 CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \

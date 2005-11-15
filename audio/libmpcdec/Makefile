@@ -16,7 +16,7 @@ COMMENT=	High quality audio compression format
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

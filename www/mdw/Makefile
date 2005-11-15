@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.redbrick.dcu.ie/~colmmacc/mdw/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A utility to check the MD5 sum of a webpage
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_REINPLACE=	yes
 
 MAN1=	mdw.1

@@ -17,7 +17,7 @@ COMMENT=	An image viewer written using libraries for Enlightenment 0.17 developm
 LIB_DEPENDS=	esmart_thumb.0:${PORTSDIR}/graphics/esmart
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

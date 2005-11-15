@@ -17,8 +17,7 @@ COMMENT=	Evas smart objects development libraries
 LIB_DEPENDS=	epsilon.0:${PORTSDIR}/graphics/epsilon
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

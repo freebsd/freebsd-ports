@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}.orig/src/src
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
 		--with-doc-dir=none \

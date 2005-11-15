@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quine-McCluskey Logic Simplifier
 
 PLIST_FILES=	bin/qmls
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

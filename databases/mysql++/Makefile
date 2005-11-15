@@ -14,7 +14,7 @@ MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL
 
 USE_MYSQL=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --includedir=${PREFIX}/include/mysql++
 CONFIGURE_ARGS+=	--disable-examples
 INSTALLS_SHLIB=	yes

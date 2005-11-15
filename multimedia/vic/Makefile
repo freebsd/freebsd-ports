@@ -17,7 +17,7 @@ COMMENT=	MBONE video tool
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		uclmmbase:${PORTSDIR}/devel/uclmmbase
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_X_PREFIX=	yes
 CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-x-includes=${PREFIX}/include \

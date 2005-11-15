@@ -22,7 +22,7 @@ LIB_DEPENDS=	shout.4:${PORTSDIR}/audio/libshout2 \
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 
 .include <bsd.port.mk>

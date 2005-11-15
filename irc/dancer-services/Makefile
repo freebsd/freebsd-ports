@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
-WANT_AUTOMAKE_VER=15
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	automake:15:env autoconf:253:env
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

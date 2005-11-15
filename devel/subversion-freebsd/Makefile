@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 INSTALLS_SHLIB=	yes
 
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl

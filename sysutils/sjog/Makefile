@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland daemon for Sony Vaio Jog Dial
 
 ONLY_FOR_ARCHS=	i386
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	automake:14 autoconf:213
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

@@ -20,7 +20,7 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GL=		yes
 USE_X_PREFIX=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ids.org.au/~jam6/locked-folders/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	nautilus2

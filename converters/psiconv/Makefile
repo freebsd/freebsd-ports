@@ -16,7 +16,7 @@ COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-imagemagick=no
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 

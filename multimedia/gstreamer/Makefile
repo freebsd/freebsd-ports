@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack \
 		gnomeprefix \
 		glib20 \
 		libxml2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \

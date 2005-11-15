@@ -21,7 +21,7 @@ INFO=		sfs
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs \

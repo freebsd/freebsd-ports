@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygnomeextras
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

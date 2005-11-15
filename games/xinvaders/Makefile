@@ -21,8 +21,7 @@ NO_CDROM=	"don't sell for profit"
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	automake:14 autoconf:213
 AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"

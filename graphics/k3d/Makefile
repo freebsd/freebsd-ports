@@ -29,7 +29,7 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
 
 CONFLICTS=	atlas-3* superlu-3*
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12 libxslt
 GNU_CONFIGURE=	yes

@@ -25,7 +25,7 @@ PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 USE_FREETYPE=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	autoconf:213
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \

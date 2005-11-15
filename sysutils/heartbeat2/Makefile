@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings
 

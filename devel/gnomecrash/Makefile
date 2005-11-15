@@ -19,7 +19,7 @@ COMMENT=	A small coredump analysis tool for GNOME
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade gnomeprint
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

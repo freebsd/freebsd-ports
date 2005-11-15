@@ -18,8 +18,7 @@ COMMENT=	The portable OTR Messaging Library and toolkit
 LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOCONF_VER=259
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN1=		otr_toolkit.1

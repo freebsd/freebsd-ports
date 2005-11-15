@@ -18,7 +18,7 @@ COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
 PLIST_FILES=	bin/edonkey-tool-hash
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 
 WRKSRC=	${WRKDIR}/ed2k_hash-${PORTVERSION}

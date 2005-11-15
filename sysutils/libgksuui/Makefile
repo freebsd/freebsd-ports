@@ -16,7 +16,7 @@ COMMENT=	A graphical fronted to su library
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

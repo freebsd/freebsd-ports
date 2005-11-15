@@ -26,7 +26,7 @@ COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
 
-WANT_AUTOCONF_VER=253
+USE_AUTOTOOLS=	autoconf:253:env
 USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES

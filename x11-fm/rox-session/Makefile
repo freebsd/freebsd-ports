@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
 
 USE_GNOME=	gtk20 pkgconfig libxml2
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

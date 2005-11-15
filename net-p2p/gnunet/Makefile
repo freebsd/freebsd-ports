@@ -20,13 +20,12 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:13:inc
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 lthack
-USE_INC_LIBTOOL_VER=13
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 

@@ -30,7 +30,7 @@ WADFILE=	quakesw-1.0.6.tar.gz
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
 SKINFILES=	skinbase.zip qw_skins.zip
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes

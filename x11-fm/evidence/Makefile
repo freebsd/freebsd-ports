@@ -30,7 +30,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-dbus \
 		--disable-dcop \
 		--enable-ecore-ipc \

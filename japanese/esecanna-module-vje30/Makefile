@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly
 CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"

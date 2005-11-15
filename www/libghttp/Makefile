@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/libghttp/1.0
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME http client library
 
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

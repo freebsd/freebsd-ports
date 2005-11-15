@@ -29,7 +29,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config

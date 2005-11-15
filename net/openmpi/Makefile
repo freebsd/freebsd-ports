@@ -24,7 +24,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 # Can't use until does not imply GNU_CONFIGURE or there's a sane way
 # to change the prefix for configure.
-#USE_LIBTOOL_VER=15
+#USE_AUTOTOOLS=	libtool:15
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}

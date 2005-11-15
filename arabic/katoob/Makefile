@@ -20,7 +20,7 @@ MAN1=		katoob.1
 USE_GMAKE=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack gtk20
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

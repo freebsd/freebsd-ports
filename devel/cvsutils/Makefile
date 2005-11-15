@@ -19,8 +19,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOMAKE_VER=15
-USE_AUTOCONF_VER=253
+USE_AUTOTOOLS=	automake:15 autoconf:253
 AUTOMAKE_ARGS=	--add-missing
 
 MAN1=		cvsutils.1

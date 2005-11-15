@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	WXWINDOWS="yes"
 
 PLIST_FILES=	bin/klassmodeler

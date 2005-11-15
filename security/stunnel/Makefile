@@ -18,7 +18,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_RC_SUBR=	YES
 
 GNU_CONFIGURE=	yes

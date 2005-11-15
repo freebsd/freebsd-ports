@@ -29,7 +29,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 MAN1=		scribus.1

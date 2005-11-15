@@ -16,7 +16,7 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN3=		tap.3

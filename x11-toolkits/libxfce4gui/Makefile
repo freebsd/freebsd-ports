@@ -25,7 +25,7 @@ LIB_DEPENDS=	dbh-1.0.1:${PORTSDIR}/databases/dbh \
 USE_GNOME=	gtk20 gnomehack
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-xinerama
 INSTALLS_SHLIB=	yes

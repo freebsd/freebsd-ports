@@ -17,7 +17,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget lthack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ENV=	SHELL=/bin/sh
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,7 @@ COMMENT=	Exif and Iptc metadata manipulation library and tools
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

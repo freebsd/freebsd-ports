@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_OPENSSL=	yes
 USE_GNOME=	gnomehack lthack libxslt gnometarget
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 PLIST_FILES=	bin/xmlsec1 bin/xmlsec1-config etc/xmlsec1Conf.sh
 

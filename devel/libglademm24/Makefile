@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_REINPLACE=  yes
 USE_GNOME=	gnomehack libglade2
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 

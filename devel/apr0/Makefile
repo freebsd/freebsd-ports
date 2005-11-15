@@ -28,9 +28,7 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-WANT_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15:env
 USE_REINPLACE=		yes
 USE_PERL5=		yes
 USE_GMAKE=		yes

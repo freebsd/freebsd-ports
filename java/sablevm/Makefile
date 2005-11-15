@@ -23,11 +23,9 @@ LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
 		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 #GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
-USE_LIBLTDL=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib"

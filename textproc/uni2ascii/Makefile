@@ -13,7 +13,7 @@ MASTER_SITES=	http://critical.ch/distfiles/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert between UTF-8 Unicode and 7-bit ASCII equivalents
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=		uni2ascii.1 ascii2uni.1

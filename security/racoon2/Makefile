@@ -22,7 +22,7 @@ BROKEN=		"Kerberos5 is required in the system"
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc

@@ -26,7 +26,7 @@ USE_GNOME=	libglade2 esound
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} \
 		--with-vorbis=${LOCALBASE}

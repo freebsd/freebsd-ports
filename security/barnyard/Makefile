@@ -20,8 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 OPTIONS=	MYSQL "Enable MySQL support" off \
 		POSTGRESQL "Enable PostgreSQL support" off
 
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
+USE_AUTOTOOLS=	autoheader:259 autoconf:259
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}

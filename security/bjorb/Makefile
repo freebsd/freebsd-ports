@@ -20,7 +20,7 @@ USE_PERL5=	yes
 INSTALL_TARGET=		install certificate
 .endif
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 CFLAGS+=	-I${OPENSSLINC}/openssl
 CONFIGURE_ARGS=	--with-ssltop=${OPENSSLBASE} --with-ssllib=${OPENSSLLIB}
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}

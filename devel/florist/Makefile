@@ -18,7 +18,7 @@ COMMENT=	FSU implementation of POSIX.5, the POSIX Ada binding
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-threads
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \

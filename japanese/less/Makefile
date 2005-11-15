@@ -26,7 +26,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
 MAN1=		jless.1 jlesskey.1

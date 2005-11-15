@@ -14,7 +14,7 @@ MAINTAINER=	esn@x123.info
 COMMENT=	A multi terminal based on aterm
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

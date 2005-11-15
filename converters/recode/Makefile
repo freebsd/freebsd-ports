@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
 USE_GETTEXT=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext

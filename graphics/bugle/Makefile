@@ -25,7 +25,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15
 
 .include <bsd.port.pre.mk>
 

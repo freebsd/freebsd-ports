@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnometarget gnomehack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=yes
 
 CONFLICTS=	py*-ro-[0-9]*

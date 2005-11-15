@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs gnomehack gnomeprefix
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 

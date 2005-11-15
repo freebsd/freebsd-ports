@@ -25,7 +25,7 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		openal.0:${PORTSDIR}/audio/openal
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES

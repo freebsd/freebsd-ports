@@ -15,7 +15,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \

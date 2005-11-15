@@ -19,7 +19,7 @@ COMMENT=	A GNU implementation of multicast DNS, part of Zeroconf
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

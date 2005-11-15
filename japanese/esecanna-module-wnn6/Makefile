@@ -20,7 +20,7 @@ COMMENT=	Esecanna module for Wnn6
 LIB_DEPENDS=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include/wnn6" \
 		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"

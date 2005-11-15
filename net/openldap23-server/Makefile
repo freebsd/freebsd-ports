@@ -98,7 +98,7 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 
 USE_OPENSSL=		yes
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
@@ -156,7 +156,7 @@ USE_RC_SUBR=		yes
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 .if defined(WITH_MODULES) || !defined(WITHOUT_DYNAMIC_BACKENDS) || defined(WITH_SLAPI)
-USE_LIBLTDL=		yes
+USE_AUTOTOOLS+=		libltdl:15
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else

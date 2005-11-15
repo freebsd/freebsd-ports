@@ -20,7 +20,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 PLIST_FILES=	lib/xmms/Input/libahx.so
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

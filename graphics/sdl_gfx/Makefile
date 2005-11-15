@@ -19,7 +19,7 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/SDL11 \
 		--disable-mmx

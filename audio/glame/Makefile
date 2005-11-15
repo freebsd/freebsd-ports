@@ -24,9 +24,8 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GCC=	3.4
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 

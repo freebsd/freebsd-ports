@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtk2
 .endif
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

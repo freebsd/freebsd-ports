@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gc4.14.tar.gz
 MAINTAINER=	ob@breuninger.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		oo2c.1 oob.1 ooef.1 oocn.1 oowhereis.1
 

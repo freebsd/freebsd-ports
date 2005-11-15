@@ -23,7 +23,7 @@ COMMENT=	Replacement for crypt(1)
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/
 
-WANT_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259:env
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets

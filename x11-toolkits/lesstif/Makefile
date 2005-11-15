@@ -19,11 +19,9 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-WANT_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	automake:19:env autoconf:259 libtool:15:inc
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	15
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-maintainer-mode

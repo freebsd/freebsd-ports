@@ -19,7 +19,7 @@ RUN_DEPENDS=	graph:${PORTSDIR}/graphics/plotutils
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

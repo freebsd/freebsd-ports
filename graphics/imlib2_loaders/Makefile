@@ -18,7 +18,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb \
 		eet.9:${PORTSDIR}/devel/eet
 
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 		LIBS="-L${PREFIX}/lib"

@@ -19,10 +19,8 @@ CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_BZIP2=		yes
 USE_GNOME=		pkgconfig
-USE_AUTOMAKE_VER=	19
+USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15:inc
 AUTOMAKE_ARGS=		"--add-missing"
-USE_AUTOHEADER_VER=	259
-USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--disable-static
 

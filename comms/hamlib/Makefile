@@ -16,7 +16,7 @@ MAINTAINER=	esn@x123.info
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 USE_PERL5=	yes
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15:inc
 USE_GNOME=	pkgconfig gnomehack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"

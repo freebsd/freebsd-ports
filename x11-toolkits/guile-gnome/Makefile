@@ -19,7 +19,7 @@ COMMENT=	Guile binding library for GNOME
 LIB_DEPENDS=	guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	gnomeprefix bonobo gtkhtml libglade
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-bonobo --with-gtkhtml --without-gal \

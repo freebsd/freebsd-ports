@@ -16,11 +16,10 @@ COMMENT=		Gambas Almost Means BASic
 LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl	\
 			ml.0:${PORTSDIR}/math/ldouble
 
-USE_LIBLTDL=		yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes
-USE_LIBTOOL_VER=	15
 LIBTOOLFILES=		configure libltdl/configure
 LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes

@@ -16,7 +16,7 @@ COMMENT=	Library and frontend for running commands as root
 
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 CONFIGURE_ARGS+=--disable-install-pam

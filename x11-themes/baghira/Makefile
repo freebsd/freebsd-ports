@@ -24,7 +24,7 @@ USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 
 # XXX - Workaround for a badly rolled tarball.
 #pre-configure:

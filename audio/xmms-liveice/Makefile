@@ -23,6 +23,6 @@ WRKSRC=		${WRKDIR}/LiveIce-1.0.0
 PLIST_FILES=	lib/xmms/Effect/libliveice.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 
 .include <bsd.port.mk>

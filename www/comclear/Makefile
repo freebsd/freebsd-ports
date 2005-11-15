@@ -17,8 +17,7 @@ COMMENT=	A history cleaner for Netscape Navigator and Communicator
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOTOOLS=	automake:14 autoconf:213
 
 .include <bsd.port.pre.mk>
 

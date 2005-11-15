@@ -17,7 +17,7 @@ COMMENT=	Default plugins for lineakd
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

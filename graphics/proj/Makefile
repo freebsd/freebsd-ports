@@ -17,7 +17,7 @@ COMMENT=	Cartographic Projections library
 
 NADFILES=	proj-nad27-1.2.tar.gz
 
-USE_INC_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

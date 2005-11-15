@@ -15,7 +15,7 @@ DISTNAME=	fuse-${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	FUSE allows filesystem implementation in userspace
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin \
 		PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"

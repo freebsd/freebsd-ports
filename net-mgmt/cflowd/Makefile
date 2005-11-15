@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_AUTOTOOLS=	libtool:13
 USE_GCC=	2.95
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}

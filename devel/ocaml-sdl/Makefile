@@ -22,7 +22,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 
 USE_SDL=	sdl ttf image mixer
-USE_AUTOCONF_VER=259
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-findlib
 USE_GMAKE=	yes

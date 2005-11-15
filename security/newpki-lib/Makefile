@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
-USE_INC_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 
 patch-autotools:
 	@(cd ${PATCH_WRKSRC}; \
@@ -49,7 +49,7 @@ patch-autotools:
 	done);
 
 .else
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 .endif
 
 pre-patch:

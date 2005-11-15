@@ -32,8 +32,7 @@ USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
 		gtkhtml3
 USE_REINPLACE=	yes
 USE_GCC=	3.4+
-USE_LIBTOOL_VER=15
-USE_LIBLTDL=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \

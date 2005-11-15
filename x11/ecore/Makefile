@@ -17,7 +17,7 @@ COMMENT=	A core event abstraction library
 LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes

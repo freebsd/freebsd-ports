@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	buddy
 MAINTAINER=	llwang@infor.org
 COMMENT=	A Binary Decision Diagram library
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

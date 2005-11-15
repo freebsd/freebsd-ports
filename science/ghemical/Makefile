@@ -26,7 +26,7 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mpqc
 
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 
 .include <bsd.port.pre.mk>
 

@@ -18,7 +18,7 @@ COMMENT=	A simple network library built upon Glib-2
 USE_GNOME=	gnomehack glib20
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Libmad library (part of MAD project)
 
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debugging \

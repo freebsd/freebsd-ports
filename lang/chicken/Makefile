@@ -16,7 +16,7 @@ COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN1=		chicken-config.1 chicken-profile.1 chicken-setup.1 chicken.1 \

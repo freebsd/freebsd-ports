@@ -19,7 +19,7 @@ COMMENT=		Window manager based on evilwm
 DOCDIR=			share/doc/${PORTNAME}
 DOCS=		AUTHORS COPYING ChangeLog INSTALL LICENSE README THANKS TODO
 PLIST=			${WRKDIR}/pkg-plist
-USE_AUTOCONF_VER=	253
+USE_AUTOTOOLS=	autoconf:253
 USE_GMAKE=		y
 USE_X_PREFIX=		y
 

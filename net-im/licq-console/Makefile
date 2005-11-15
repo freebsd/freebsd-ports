@@ -15,7 +15,7 @@ LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"

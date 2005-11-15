@@ -19,10 +19,7 @@ COMMENT=	Library & tools for converting wbxml<->xml
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_LIBTOOL_VER=	15
-USE_AUTOMAKE_VER=	19
-USE_AUTOCONF_VER=	259
-USE_AUTOMAKE_VER=	19
+USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15
 AUTOMAKE_ARGS=		-acf
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes

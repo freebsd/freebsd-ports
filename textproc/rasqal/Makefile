@@ -39,7 +39,7 @@ USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15:inc
 LIBTOOLFLAGS=	--enable-ltlibs
 LIBTOOLFILES=	configure rasqal/configure
 

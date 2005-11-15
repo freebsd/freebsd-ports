@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_DJBFFT) && !defined(PACKAGE_BUILDING)

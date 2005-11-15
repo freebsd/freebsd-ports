@@ -23,7 +23,7 @@ MAN1=		gdamcli.1 gdamladspapluginscanner.1 gdam123.1 gdam-launcher.1 gdam-server
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade
-USE_INC_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13:inc
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

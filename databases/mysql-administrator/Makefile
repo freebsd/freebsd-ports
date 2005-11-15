@@ -25,7 +25,7 @@ COMMENT=	Powerful visual administration console for MySQL environment
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-WANT_AUTOCONF_VER=	259
+USE_AUTOTOOLS=	autoconf:259:env
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome

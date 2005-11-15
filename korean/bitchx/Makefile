@@ -22,7 +22,7 @@ COMMENT=	An alternative ircII color client support patched for korean
 
 WRKSRC=		${WRKDIR}/BitchX
 
-USE_AUTOCONF_VER=213
+USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-plugins \
 		--exec-prefix="${PREFIX}/share"	\

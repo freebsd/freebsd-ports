@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net-im/licq-qt-gui
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 LICQ_PORT?=	net-im/licq
 

@@ -17,7 +17,7 @@ COMMENT=	"XMMS plugin, that plays a sound on incoming mail and opens the MUA"
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=	13
+USE_AUTOTOOLS=	libtool:13
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

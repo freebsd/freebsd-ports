@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

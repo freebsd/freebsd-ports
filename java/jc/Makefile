@@ -19,7 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 MAN1=		jc.1
 
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_JAVA=	yes
 USE_GMAKE=	yes
 JAVA_BUILD=	jre

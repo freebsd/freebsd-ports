@@ -24,6 +24,6 @@ PLIST_FILES=	lib/xmms/Input/openspc.so
 
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

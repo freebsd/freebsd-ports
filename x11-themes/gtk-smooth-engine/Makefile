@@ -16,7 +16,7 @@ MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Flexible GTK Theme Engine
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ENV=	X11BASE="${X11BASE}"

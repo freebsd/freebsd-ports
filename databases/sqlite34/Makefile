@@ -20,7 +20,7 @@ COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
 USE_GMAKE=		YES
 USE_GNOME=		pkgconfig
-USE_LIBTOOL_VER=	15
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=		YES
 USE_REINPLACE=		YES
 INSTALLS_SHLIB=		YES
