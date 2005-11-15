@@ -8,6 +8,7 @@
 MASTERDIR=	${.CURDIR}/../ruby16_static
 
 PORTREVISION=	0
+PORTEPOCH=	1
 
 RUBY_VER=	1.8
 

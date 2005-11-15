@@ -7,6 +7,7 @@
 
 PORTNAME=	tcltklib
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTEPOCH=	1
 CATEGORIES+=	lang x11-toolkits ruby tcl${TCL_VERSION} tk${TK_VERSION}
 MASTER_SITES=	# none
 DISTFILES=	# none
