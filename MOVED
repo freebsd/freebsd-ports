@@ -1947,3 +1947,4 @@ devel/libidn|dns/libidn|2005-11-12|Moved to a better category
 devel/p5-Net-LibIDN|dns/p5-Net-LibIDN|2005-11-12|Moved to a better category
 net/libnet|net/libnet10|2005-11-14|Moved
 net/libnet-devel/net/libnet|2005-11-14|Moved
+graphics/libpixman||2005-11-14|Project merged into cairo

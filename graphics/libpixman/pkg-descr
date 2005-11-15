@@ -1,4 +1,0 @@
-A generic library for manipulating pixel regions. A PixRegion is a set of
-Y-X banded rectangles that cover the desired region.
-
-WWW:	http://cairographics.org/

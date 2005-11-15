@@ -308,7 +308,6 @@
     SUBDIR += libmorph
     SUBDIR += libpano12
     SUBDIR += libpcd
-    SUBDIR += libpixman
     SUBDIR += libqglviewer
     SUBDIR += librsvg
     SUBDIR += librsvg2
