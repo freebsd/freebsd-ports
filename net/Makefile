@@ -107,6 +107,7 @@
     SUBDIR += dhcp6
     SUBDIR += dhcpdump
     SUBDIR += dhcping
+    SUBDIR += dhcprelay
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += diradmin
