@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	guikachu
-PORTVERSION=	1.5.4
-PORTREVISION=	3
+PORTVERSION=	1.5.6
 PORTEPOCH=	1
 CATEGORIES=	devel palm gnome
 MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
