@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
 
+BROKEN=		Size mismatch
+
 .include <bsd.port.pre.mk>
 
 do-extract:

@@ -14,6 +14,8 @@ DISTNAME=	dt-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/dt.d
