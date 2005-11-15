@@ -79,6 +79,8 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/dirx.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/dirx.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/fastcgi.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/hosts.py
