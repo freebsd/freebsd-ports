@@ -7,7 +7,7 @@
 
 PORTNAME=	binkd
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/ \
 		ftp://ftp.rsu.ru/pub/FreeBSD/ports/distfiles/
