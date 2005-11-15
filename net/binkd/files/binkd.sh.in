@@ -20,6 +20,7 @@ binkd_user=${binkd_user:-"fido"}
 binkd_pidfile=${binkd_pidfile:-"/var/run/binkd/binkd.pid"}
 
 . %%RC_SUBR%%
+load_rc_config binkd 
 
 name="binkd"
 rcvar=`set_rcvar`
@@ -28,5 +29,4 @@ command_args="${binkd_config}"
 required_files="${binkd_config}"
 pidfile="${binkd_pidfile}"
 
-load_rc_config binkd 
 run_rc_command "$1"
