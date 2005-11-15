@@ -7,6 +7,7 @@
 
 PORTNAME=	dnspython
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	http://www.dnspython.org/kits/stable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,5 +42,8 @@ post-install:
 .for file in ${EXAMPLE_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
+# permission safeness
+	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/dns/*
+	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/dns/*
 
 .include <bsd.port.mk>
