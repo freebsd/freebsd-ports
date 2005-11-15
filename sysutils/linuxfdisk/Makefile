@@ -8,7 +8,9 @@
 PORTNAME=	linuxfdisk
 PORTVERSION=	2.11z
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.kernel.org/pub/linux/utils/util-linux/
+MASTER_SITES=	ftp://ftp.kernel.org/pub/linux/utils/util-linux/ \
+		ftp://ftp.kernel.org/pub/linux/utils/util-linux/old/ \
+		ftp://segfault.kiev.ua/pub/
 DISTNAME=	util-linux-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
