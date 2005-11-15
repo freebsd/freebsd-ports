@@ -16,7 +16,7 @@ DISTNAME=	hping2.0.0-rc3
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Network auditing tool
 
-#CONFLICTS=	hping-devel-[0-9]*
+CONFLICTS=	hping-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/hping2-rc3
 GNU_CONFIGURE=	yes
