@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.coralys.com/pub/free/
 DISTNAME=	${PORTNAME}-1.7-2
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
 
 NO_BUILD=	yes
