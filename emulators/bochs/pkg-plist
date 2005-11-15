@@ -29,17 +29,16 @@ bin/bximage
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
-%%DOCSDIR%%/biossums.txt
 %%DOCSDIR%%/bochsrc-sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/biossums.txt
 %%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
-%%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/codingguidelines.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/iodebug.html
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
-%%PORTDOCS%%@dirrm share/doc/bochs/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
