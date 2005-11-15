@@ -1,0 +1,9 @@
+Tie::Hash::TwoWay will take a list of one-way associations and
+transparently create their reverse.  For instance, say you have a list
+of machines, and a list of classes that each machine belongs to.
+Tie::Hash::TwoWay will take the machines, one by one, with an associated
+array reference of class names, and build the reverse mapping of classes
+to machines.  All the mappings are stored as hashes.  You can access the
+secondary mappings as if they were hash keys in their own right.
+
+WWW: http://search.cpan.org/dist/Tie-Hash-TwoWay/
