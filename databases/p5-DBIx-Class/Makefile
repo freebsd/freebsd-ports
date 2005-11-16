@@ -6,21 +6,27 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.02
+PORTVERSION=	0.03003
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
-COMMENT=	SQL to OOP mapper, replacement for Class::DBI
+COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/NEXT.pm:${PORTSDIR}/devel/p5-NEXT \
-		${SITE_PERL}/SQL/Abstract/Limit.pm:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
-		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-exports
+BUILD_DEPENDS=	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT \
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
+		p5-DBD-SQLite>=1.08:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -44,7 +50,16 @@ MAN3=		DBIx::Class::Storage::DBI.3 \
 		DBIx::Class::Schema.3 \
 		DBIx::Class::PK::Auto::SQLite.3 \
 		DBIx::Class::Test::SQLite.3 \
-		DBIx::Class::Row.3
+		DBIx::Class::Row.3 \
+		DBIx::Class::Manual.3 \
+		DBIx::Class::Manual::Cookbook.3 \
+		DBIx::Class::Manual::FAQ.3 \
+		DBIx::Class::Manual::Intro.3 \
+		DBIx::Class::Manual::Troubleshooting.3 \
+		DBIx::Class::ResultSet.3 \
+		DBIx::Class::UUIDColumns.3 \
+		DBIx::Class::Relationship::BelongsTo.3 \
+		DBIx::Class::ObjectCache.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
