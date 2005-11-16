@@ -1611,6 +1611,7 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += upnp
+    SUBDIR += uppaal
     SUBDIR += ups-debug
     SUBDIR += ustl
     SUBDIR += valgrind
