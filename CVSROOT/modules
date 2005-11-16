@@ -12359,6 +12359,7 @@ upclient	ports/misc/upclient
 updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
 upnp		ports/devel/upnp
+uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
