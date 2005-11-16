@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-kqemu
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-ARCH=		x86_64
+MAKE_ARGS+=	ARCH=x86_64
 .endif
 USE_GCC=	3.4
 
