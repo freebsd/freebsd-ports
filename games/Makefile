@@ -302,6 +302,7 @@
     SUBDIR += kpuzzle
     SUBDIR += krosswordplayer
     SUBDIR += kslide
+    SUBDIR += ksudoku
     SUBDIR += ktritoc
     SUBDIR += kwappen
     SUBDIR += ladder

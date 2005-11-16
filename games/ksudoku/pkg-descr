@@ -1,0 +1,13 @@
+KSudoku is a 2D and 3D Sudoku puzzle generator and solver for KDE.
+
+Among its features are:
+
+* Supported board sizes (2D): 9x9, 16x16, 25x25
+* Supported board sizes (3D): 3x3x3, 4x4x4, 5x5x5
+* GUI for playing, saving, printing, solving and dubbing puzzles
+* Automatic solver that can provide hints should you get stuck
+
+For more information on Sudoku puzzles in general, see:
+http://en.wikipedia.org/wiki/Sudoku
+
+WWW: http://ksudoku.sourceforge.net/
