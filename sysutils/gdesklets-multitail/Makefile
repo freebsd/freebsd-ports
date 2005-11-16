@@ -18,7 +18,7 @@ COMMENT=	Displays multiple log files in one gDesklets display
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-BROKEN=		"Not running with latest gdesklets-port and no update available since May 3 2004"
+IGNORE=		Not running with latest gdesklets-port and no update available since May 3 2004
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_X_PREFIX=	yes
