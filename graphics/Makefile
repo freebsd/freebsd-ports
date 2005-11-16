@@ -45,6 +45,7 @@
     SUBDIR += cbrpager
     SUBDIR += cbview
     SUBDIR += cegui
+    SUBDIR += cenon
     SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
