@@ -8,7 +8,7 @@
 PORTNAME=	9wm
 PORTVERSION=	1.1
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	http://sources.isc.org/X/window-managers/
+MASTER_SITES=	http://www.isc.org/sources/X/window-managers/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An 8 1/2-like Window Manager for X
