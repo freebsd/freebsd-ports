@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnome-osd
-DISTVERSION=	0.8.0-1
+DISTVERSION=	0.9.1-1
 CATEGORIES=	misc
-MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/
+MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -21,24 +21,20 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	gnome-osd.schemas
+PORTDOCS=	AUTHORS NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|' \
+	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|; \
+		s|$$(datadir)/dbus-1|$$(prefix)/share/dbus-1|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/AUTHORS \
-		${WRKSRC}/NEWS \
-		${WRKSRC}/README \
-		${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
