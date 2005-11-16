@@ -8,7 +8,7 @@
 PORTNAME=	Shape
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.water.hut.fi/pub/Grid/
+MASTER_SITES=	http://users.tkk.fi/~jolma/pub/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pedersen@meridian-enviro.com
