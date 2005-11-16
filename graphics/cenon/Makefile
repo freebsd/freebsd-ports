@@ -50,9 +50,9 @@ post-install:
 .if defined(WITH_FULL_LIBRARY)
 	${TAR} xyvf ${_DISTDIR}/CenonLibrary-${PORTVERSION}-1${EXTRACT_SUFX} \
 		-C ${PREFIX}/Local/Library --exclude COPYING
-	${CHOWN} -R root:wheel ${PREFIX}/Local/Library/Cenon
-	${CHMOD} -R u=rwX,go=rX ${PREFIX}/Local/Library/Cenon
-	${CHMOD} 444 ${PREFIX}/Local/Library/Cenon/INSTALL
+	@${CHOWN} -R root:wheel ${PREFIX}/Local/Library/Cenon
+	@${CHMOD} -R u=rwX,go=rX ${PREFIX}/Local/Library/Cenon
+	@${CHMOD} 444 ${PREFIX}/Local/Library/Cenon/INSTALL
 	${INSTALL_DATA} ${WRKSRC}/Library/Cenon/README ${PREFIX}/Local/Library/Cenon
 .else
 	${CP} -R ${WRKSRC}/Library/Cenon ${PREFIX}/Local/Library
