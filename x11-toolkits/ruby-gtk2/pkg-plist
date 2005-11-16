@@ -84,6 +84,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dialog2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dnd.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dndtreeview.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/drag-move.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/drawing.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/entry.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/entrycompletion.rb
@@ -95,6 +96,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gdkscreen.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gnome-logo-icon.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/helloworld.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/iconview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/image.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/itemfactory.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/itemfactory2.rb
@@ -103,6 +105,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/listview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/menu.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/misc_button.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/mouse-gesture.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/pangorenderer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/pointer_grab.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/properties.rb
@@ -119,6 +122,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/to_drawable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/tree_combo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/tree_progress.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treemodelfilter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treeview.rb
