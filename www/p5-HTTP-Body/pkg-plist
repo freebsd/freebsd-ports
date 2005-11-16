@@ -1,0 +1,9 @@
+%%SITE_PERL%%/HTTP/Body.pm
+%%SITE_PERL%%/HTTP/Body/MultiPart.pm
+%%SITE_PERL%%/HTTP/Body/OctetStream.pm
+%%SITE_PERL%%/HTTP/Body/UrlEncoded.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Body/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/HTTP/Body 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Body 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
