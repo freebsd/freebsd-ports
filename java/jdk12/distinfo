@@ -1,4 +1,6 @@
 MD5 (jdk1_2_2-src.tar.gz) = 84a81b3e5f56f73bd4cbee57f895dba7
+SHA256 (jdk1_2_2-src.tar.gz) = 5b545c6d2903619848ce53911a9481b0c3adbf2858a4f930ec990a15835daa88
 SIZE (jdk1_2_2-src.tar.gz) = 19742229
 MD5 (bsd-jdk122-patches-11.tar.gz) = 7a883419c5193278443d60f67a99a72c
+SHA256 (bsd-jdk122-patches-11.tar.gz) = 2f2981fac24b745d827ab00d06aa9baf16841d6071fe8b7a386b07fa8964cfe5
 SIZE (bsd-jdk122-patches-11.tar.gz) = 727940
