@@ -8,7 +8,9 @@
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://download.berlios.de/gbsplay/
+MASTER_SITES=	http://download.berlios.de/gbsplay/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org
