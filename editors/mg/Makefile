@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mg
-PORTVERSION=	20010514
+PORTVERSION=	20050820
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITE_SUBDIR=	lawrance
 
 MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	A small, fast Emacs-like editor
@@ -44,10 +44,11 @@ do-install:
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.
 #
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Mon May 14 17:41:46 PDT 2001
+CVS_DATE=	Sat Aug 20 21:22:23 UTC 2005
 CVS_SITES?=	anoncvs@anoncvs3.usa.openbsd.org:/cvs \
 		anoncvs@anoncvs1.ca.openbsd.org:/cvs
 CVS_MODULE=	src/usr.bin/mg
+CVS_STRTONUM=	src/lib/libc/stdlib/strtonum.c
 
 #
 # CVS checkout stuff mostly stolen from security/openssh-askpass port by
@@ -59,11 +60,13 @@ tarball:
 	for CVS_SITE in ${CVS_SITES}; do \
 		${ECHO_MSG} ">> Attempting to check out from $${CVS_SITE}."; \
 		if ${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
-		    ${CVS_MODULE}; then \
+		    ${CVS_MODULE} ${CVS_STRTONUM}; then \
 			cd ${DISTDIR}; \
 			${ECHO_MSG} ">> Creating dist tarball in ${DISTDIR}"; \
 			${ECHO_MSG} ">> \"${PKGNAME}.tar.gz\"."; \
 			${MV} ${PKGNAME}/${CVS_MODULE} \
+				${PKGNAME}/${CVS_MODULE:H}/${PKGNAME}; \
+			${MV} ${PKGNAME}/${CVS_STRTONUM} \
 				${PKGNAME}/${CVS_MODULE:H}/${PKGNAME}; \
 			${TAR} -cz \
 				-X ${FILESDIR}/tarignore \

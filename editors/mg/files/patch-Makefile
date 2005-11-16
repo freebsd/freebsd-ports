@@ -1,0 +1,10 @@
+diff -u -x _darcs -ur _darcs/current/Makefile ./Makefile
+--- _darcs/current/Makefile	Thu Mar 10 19:27:47 2005
++++ ./Makefile	Sun Aug 21 02:41:52 2005
+@@ -29,4 +29,6 @@
+ #
+ SRCS+=	grep.c theo.c mail.c
+ 
++SRCS+=	strtonum.c
++
+ .include <bsd.prog.mk>
