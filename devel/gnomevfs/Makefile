@@ -17,10 +17,6 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Virtual File System
 
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
-
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
