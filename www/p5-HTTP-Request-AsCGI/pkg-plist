@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTTP/Request/AsCGI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/AsCGI/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/HTTP/Request 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/AsCGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true

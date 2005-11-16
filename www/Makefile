@@ -554,6 +554,7 @@
     SUBDIR += p5-HTTP-MobileAgent
     SUBDIR += p5-HTTP-Proxy
     SUBDIR += p5-HTTP-Recorder
+    SUBDIR += p5-HTTP-Request-AsCGI
     SUBDIR += p5-HTTP-Server-Simple
     SUBDIR += p5-HTTP-Server-Simple-Mason
     SUBDIR += p5-HTTP-Server-Simple-Static
