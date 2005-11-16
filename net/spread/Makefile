@@ -8,7 +8,8 @@
 PORTNAME=	spread
 PORTVERSION=	3.17.3
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.roughtrade.net/distfiles/
+MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/ \
+		http://www.roughtrade.net/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	joshua@roughtrade.net
