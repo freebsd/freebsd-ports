@@ -9,7 +9,7 @@ PORTNAME=	txt2pdbdoc
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	palm converters
-MASTER_SITES=	http://tirian.magd.ox.ac.uk/~dom/palm/files/
+MASTER_SITES=	http://www.larted.org.uk/~dom/misc/palm/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain text and HTML files to Palm Pilot Doc formats
