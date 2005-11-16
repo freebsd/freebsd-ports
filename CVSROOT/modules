@@ -1036,6 +1036,7 @@ cedet		ports/devel/cedet
 cedet-emacs20	ports/devel/cedet-emacs20
 cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
+cenon		ports/graphics/cenon
 centericq	ports/net-im/centericq
 cfengine2	ports/sysutils/cfengine2
 cfgstoragemk	ports/net-mgmt/cfgstoragemk
