@@ -8,7 +8,8 @@
 PORTNAME=	mod_dosevasive20
 PORTVERSION=	1.10
 CATEGORIES=	www security
-MASTER_SITES=	http://www.nuclearelephant.com/projects/dosevasive/
+MASTER_SITES=	http://www.nuclearelephant.com/projects/dosevasive/ \
+		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 DISTNAME=	mod_dosevasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
