@@ -1,5 +1,5 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Math/Currency.pm
-%%SITE_PERL%%/Math/Currency/EUR.pm
 %%SITE_PERL%%/Math/Currency/GBP.pm
 %%SITE_PERL%%/Math/Currency/JPY.pm
 @dirrm %%SITE_PERL%%/Math/Currency
