@@ -9,12 +9,11 @@ PORTNAME=	wmii
 DISTVERSION=	2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wmi.modprobe.de/download/
+MASTER_SITES=	http://wmii.de/download/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The next generation of WMI window manager
 
-USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
