@@ -1953,3 +1953,6 @@ lang/dis||2005-11-15|Master site has vanished
 lang/malbolge||2005-11-15|Master site has vanished
 x11-themes/kde-icons-crystalcurve||2005-11-15|Distfile vanished
 x11-themes/kde-icons-crystalosx||2005-11-15|Distfile vanished
+net/gdesklets-sensor-psi_network||2005-11-16|Dead and unfetchable
+net/gdesklets-networkinfo||2005-11-16|Deleted because of removed dependency
+net/gdesklets-lt-network||2005-11-16|Deleted because of removed dependency
