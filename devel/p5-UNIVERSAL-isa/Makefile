@@ -1,0 +1,29 @@
+# New ports collection makefile for:	p5-UNIVERSAL-isa
+# Date Created:				16 Nov, 2005
+# Whom:					Lars Balker Rasmussen <lars@balker.dk>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	UNIVERSAL-isa
+PORTVERSION=	0.05
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/N/NU/NUFFIN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	lars@balker.dk
+COMMENT=	Hack around people calling UNIVERSAL::isa() as a function
+
+BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_MODBUILD=	yes
+
+MAN3=		UNIVERSAL::isa.3
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires Perl 5.8 or newer. Install lang/perl5.8 and try again
+.endif
+.include <bsd.port.post.mk>

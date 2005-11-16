@@ -1,0 +1,2 @@
+%%SITE_PERL%%/UNIVERSAL/isa.pm
+@unexec rmdir %D/%%SITE_PERL%%/UNIVERSAL 2>/dev/null || true
