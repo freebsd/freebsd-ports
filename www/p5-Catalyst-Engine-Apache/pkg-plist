@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Catalyst/Engine/Apache.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache/MP13.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2/MP19.pm
+%%SITE_PERL%%/Catalyst/Engine/Apache2/MP20.pm
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache2 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine 2>/dev/null || true

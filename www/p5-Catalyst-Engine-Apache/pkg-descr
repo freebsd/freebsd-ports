@@ -1,0 +1,5 @@
+Catalyst::Engine::Apache - Catalyst Apache Engines
+
+These classes provide mod_perl support for Catalyst.
+
+WWW: http://search.cpan.org/dist/Catalyst-Engine-Apache/
