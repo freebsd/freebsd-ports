@@ -1,0 +1,8 @@
+------------------------------------------------------------------------
+NOTE!
+
+The Apache engines have been moved to a separate package.
+
+Please install www/p5-Catalyst-Engine-Apache if you need Apache/mod_perl
+support.
+------------------------------------------------------------------------
