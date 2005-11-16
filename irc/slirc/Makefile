@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 PORTREVISION=	1
 # Assign with += for slave ports
 CATEGORIES+=	irc
-MASTER_SITES=	http://www.megsinet.com/~stabro/
+MASTER_SITES=	http://members.core.com/~stabro/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
