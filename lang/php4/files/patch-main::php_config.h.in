@@ -1,12 +1,12 @@
---- main/php_config.h.in.orig	Tue Dec 14 18:55:22 2004
-+++ main/php_config.h.in	Thu Dec 16 09:52:53 2004
-@@ -2455,6 +2455,9 @@
+--- main/php_config.h.in.orig	Sun Oct 30 12:06:40 2005
++++ main/php_config.h.in	Wed Nov 16 09:18:14 2005
+@@ -2606,6 +2606,9 @@
  /* Whether to build zip as dynamic module */
  #undef COMPILE_DL_ZIP
  
 +/* Include external shared modules configurations */
 +#include "ext/php_config.h"
 +
- /* whether floatingpoint.h defines fp_except */
- #undef HAVE_FP_EXCEPT
+ /* Define if int32_t type is present.  */
+ #undef HAVE_INT32_T
  

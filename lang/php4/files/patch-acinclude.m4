@@ -1,7 +1,7 @@
---- acinclude.m4.orig	Mon Apr  4 10:30:15 2005
-+++ acinclude.m4	Mon Apr  4 10:33:00 2005
-@@ -1685,9 +1685,9 @@
-   unset OPENSSL_LIBDIR
+--- acinclude.m4.orig	Fri Sep 23 11:20:22 2005
++++ acinclude.m4	Tue Nov 15 23:25:54 2005
+@@ -1709,9 +1709,9 @@
+   test -z "$PHP_IMAP_SSL" && PHP_IMAP_SSL=no
  
    dnl Fallbacks for different configure options
 -  if test "$PHP_OPENSSL" != "no"; then

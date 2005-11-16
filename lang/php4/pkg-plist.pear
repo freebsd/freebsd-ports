@@ -1,5 +1,14 @@
 bin/pear
-@exec mkdir -p %D/lib/php/pear/.registry
+@exec mkdir -p %D/lib/php/pear/.channels/.alias
+@exec mkdir -p %D/lib/php/pear/.registry/.channel.__uri
+@exec mkdir -p %D/lib/php/pear/.registry/.channel.pecl.php.net
+@exec touch %D/lib/php/pear/.channels/.alias/pear.txt
+@exec touch %D/lib/php/pear/.channels/.alias/pecl.txt
+@exec touch %D/lib/php/pear/.channels/__uri.reg
+@exec touch %D/lib/php/pear/.channels/pear.php.net.reg
+@exec touch %D/lib/php/pear/.channels/pecl.php.net.reg
+@exec touch %D/lib/php/pear/.depdb
+@exec touch %D/lib/php/pear/.depdblock
 @exec touch %D/lib/php/pear/.filemap
 @exec touch %D/lib/php/pear/.lock
 share/pear/bootstrap/Archive/Tar.php
@@ -7,6 +16,9 @@ share/pear/bootstrap/PEAR.php
 share/pear/bootstrap/System.php
 share/pear/bootstrap/Console/Getopt.php
 share/pear/bootstrap/OS/Guess.php
+share/pear/bootstrap/PEAR/Autoloader.php
+share/pear/bootstrap/PEAR/Builder.php
+share/pear/bootstrap/PEAR/Command.php
 share/pear/bootstrap/PEAR/Command/Auth.php
 share/pear/bootstrap/PEAR/Command/Build.php
 share/pear/bootstrap/PEAR/Command/Common.php
@@ -16,9 +28,6 @@ share/pear/bootstrap/PEAR/Command/Mirror.php
 share/pear/bootstrap/PEAR/Command/Package.php
 share/pear/bootstrap/PEAR/Command/Registry.php
 share/pear/bootstrap/PEAR/Command/Remote.php
-share/pear/bootstrap/PEAR/Autoloader.php
-share/pear/bootstrap/PEAR/Builder.php
-share/pear/bootstrap/PEAR/Command.php
 share/pear/bootstrap/PEAR/Common.php
 share/pear/bootstrap/PEAR/Config.php
 share/pear/bootstrap/PEAR/Dependency.php
@@ -33,8 +42,19 @@ share/pear/bootstrap/PEAR/Remote.php
 share/pear/bootstrap/PEAR/RunTest.php
 share/pear/bootstrap/XML/RPC.php
 share/pear/bootstrap/XML/RPC/Server.php
+@unexec rm %D/lib/php/pear/.channels/.alias/pear.txt 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.channels/.alias/pecl.txt 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.channels/__uri.reg 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.channels/pear.php.net.reg 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.channels/pecl.php.net.reg 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.depdb 2> /dev/null || true
+@unexec rm %D/lib/php/pear/.depdblock 2> /dev/null || true
 @unexec rm %D/lib/php/pear/.filemap 2> /dev/null || true
 @unexec rm %D/lib/php/pear/.lock 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear/.channels/.alias 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear/.channels 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear/.registry/.channel.__uri 2> /dev/null || true
+@unexec rmdir %D/lib/php/pear/.registry/.channel.pecl.php.net 2> /dev/null || true
 @unexec rmdir %D/lib/php/pear/.registry 2> /dev/null || true
 @unexec rmdir %D/lib/php/pear 2> /dev/null || true
 @unexec rmdir %D/lib/php 2> /dev/null || true
