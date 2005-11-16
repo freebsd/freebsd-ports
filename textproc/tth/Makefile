@@ -12,7 +12,7 @@ MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	A TeX to HTML translator
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
