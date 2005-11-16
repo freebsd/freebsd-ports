@@ -1,0 +1,25 @@
+bin/uppaal
+bin/verifyta
+%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal2k.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jhbasic.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jlfgr-1_0.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xalan.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xercesImpl.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xmlParserAPIs.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/server.exe
+%%JAVASHAREDIR%%/%%PORTNAME%%/socketserver.exe
+%%JAVASHAREDIR%%/%%PORTNAME%%/verifyta
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/2doors.xml
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/2doors.q
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/bridge.xml
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/bridge.q
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/fischer.xml
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/fischer.q
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/train-gate.xml
+%%JAVASHAREDIR%%/%%PORTNAME%%/demo/train-gate.q
+%%DOCSDIR%%/README
+%%DOCSDIR%%/License-ASF
+@dirrm %%JAVASHAREDIR%%/%%PORTNAME%%/demo
+@dirrm %%JAVASHAREDIR%%/%%PORTNAME%%/lib
+@dirrm %%JAVASHAREDIR%%/%%PORTNAME%%
+@dirrm %%DOCSDIR%%

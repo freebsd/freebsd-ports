@@ -1,0 +1,11 @@
+--- uppaal.orig	Tue Aug 16 10:56:11 2005
++++ uppaal	Tue Aug 16 10:56:19 2005
+@@ -6,7 +6,7 @@
+ 
+ HERE=`dirname $0`
+ JAR=$HERE/uppaal2k.jar
+-ENGINE=$HERE/bin-`uname`
++ENGINE=$HERE/bin-Linux
+ if [ "$DISPLAY" = ":0.0" ]; then 
+   java -jar $JAR -enginePath $ENGINE $* 
+ else
