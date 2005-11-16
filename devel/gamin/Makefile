@@ -25,9 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFLICTS=	fam-[0-9]*
 
 .if defined(GAMIN_SLAVE)
-USE_AUTOTOOLS=	libtool:15:inc
-.else
 USE_AUTOTOOLS=	libtool:15
+.else
+USE_AUTOTOOLS=	libtool:15:inc
 .endif
 
 post-patch:
