@@ -8770,6 +8770,7 @@ p5-Tree-Simple-View	ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory	ports/devel/p5-Tree-Simple-VisitorFactory
 p5-UML-Sequence	ports/textproc/p5-UML-Sequence
 p5-UML-State	ports/textproc/p5-UML-State
+p5-UNIVERSAL-can	ports/devel/p5-UNIVERSAL-can
 p5-UNIVERSAL-exports	ports/devel/p5-UNIVERSAL-exports
 p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
