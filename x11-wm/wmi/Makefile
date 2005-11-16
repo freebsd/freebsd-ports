@@ -8,7 +8,7 @@
 PORTNAME=	wmi
 PORTVERSION=	10
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.berlios.de/wmi/
+MASTER_SITES=	http://wmii.de/download/
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A window manager designed to be like Ion and LarsWM
