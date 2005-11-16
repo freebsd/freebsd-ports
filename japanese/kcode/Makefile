@@ -32,7 +32,7 @@ MANCOMPRESSED=	no
 IGNORE=		This port requires perl 5.6.0 or later
 .elif ${PERL_LEVEL} < 500800
 _RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-else
+.else
 _RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 .endif
 
