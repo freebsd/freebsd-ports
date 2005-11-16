@@ -18,6 +18,8 @@ COMMENT=	Graph plotting and data analysis program using OpenLook
 BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.cknudsen.com/gtimer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A timer for your personal activities
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

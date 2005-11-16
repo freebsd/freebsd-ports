@@ -18,6 +18,8 @@ COMMENT=	The EZ Widget and Graphics Library
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Size mismatch
+
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
