@@ -7,7 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -60,15 +60,15 @@ do-install:
 .endif
 
 post-install:
-	${TOUCH} /var/log/privoxy
+	${MKDIR} /var/log/privoxy
 	${CHOWN} privoxy:privoxy /var/log/privoxy
-	${CHMOD} 0640 /var/log/privoxy
+	${CHMOD} 0750 /var/log/privoxy
 	${TOUCH} /var/log/jarfile
 	${CHOWN} privoxy:privoxy /var/log/jarfile
 	${CHMOD} 0600 /var/log/jarfile
-	${TOUCH} /var/run/privoxy
+	${MKDIR} /var/run/privoxy
 	${CHOWN} privoxy:privoxy /var/run/privoxy
-	${CHMOD} 0600 /var/run/privoxy
+	${CHMOD} 0750 /var/run/privoxy
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
