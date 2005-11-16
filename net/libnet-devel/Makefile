@@ -17,6 +17,7 @@ COMMENT=	A C library for creating IP packets (development version)
 
 CONFLICTS=	libnet*-1.*
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -27,6 +28,16 @@ DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
 EXAMPLES=	sample/*.c
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|g" \
+		${WRKSRC}/include/libnet/libnet-types.h
+.else
+	${DO_NADA}
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
@@ -36,4 +47,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
