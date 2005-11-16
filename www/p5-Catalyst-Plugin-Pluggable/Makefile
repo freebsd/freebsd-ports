@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Pluggable
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	A plugin for pluggable Catalyst applications
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst
+BUILD_DEPENDS=	p5-Catalyst>=5.50:${PORTSDIR}/www/p5-Catalyst
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -25,7 +25,7 @@ MAN3=		Catalyst::Plugin::Pluggable.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500801
-IGNORE= requires at least Perl 5.8.1. Install lang/perl5.8 and try again
+IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
