@@ -1,0 +1,93 @@
+diff -ruN ../0.3.5/libMGPM/src/MGPMlogAdd.c ./libMGPM/src/MGPMlogAdd.c
+--- ../0.3.5/libMGPM/src/MGPMlogAdd.c	Mon Nov 14 13:55:34 2005
++++ ./libMGPM/src/MGPMlogAdd.c	Mon Nov 14 23:17:47 2005
+@@ -48,7 +48,7 @@
+ 	}
+ 
+ 	logFileStream	= fopen(  property->logFile->parent.path, "a" );
+-	fprintf( logFileStream, "%-25s %-25s\n\t%-25s %-25s %-25s\n", victemName, victemDir, crime, suspectName, suspectDir );
++	fprintf( logFileStream, "%-35s %-30s\n    %-35s %-35s %-30s\n\n", victemName, victemDir, crime, suspectName, suspectDir );
+ 	fclose( logFileStream );
+ 	return( 0 );
+ }
+diff -ruN ../0.3.5/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.5/libMGPM/src/MGPMrController.c	Mon Nov 14 14:46:52 2005
++++ ./libMGPM/src/MGPMrController.c	Tue Nov 15 10:04:32 2005
+@@ -270,6 +270,46 @@
+ 
+ 	if( path && ( strcmp( path, "PMSTATUS" ) == 0 ) )
+ 	{
++		property->pmMode	= 1; /* fake like we are in single port update */
++		if( property->resume == 0 )
++		{
++			property->cacheDb	= MGdbCreate(
++							property->cacheDbFileName,
++							property->fieldCacheDbPortDir,
++							property->fieldCacheDbAvailablePortName,
++							property->fieldCacheDbMakeFileSize,
++							property->fieldCacheDbMakeFileTime,
++							NULL );
++			MGdbDestroy( property->cacheDb );
++			if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
++			{
++				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
++					"MGPMrCreateInstalledDb", errorCode );
++				return( 1 );
++			}
++			if( ( errorCode	= MGPMrCreateAllUpdateStatusDb( property ) ) )
++			{
++				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
++					"MGPMrCreateAllUpdateStatusDb", errorCode );
++				return( 1 );
++			}
++		}
++		if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
++		{
++			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
++			return( 1 );
++		}
++
++		if( ( errorCode	= MGPMrSinglePortStatus( property ) ) )
++		{
++			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrSinglePortStatus", errorCode );
++			return( 1 );
++		}
++		return( 0 );
++	}
++/*
++ * old way of doing things
++ *
+ 		if( ( errorCode	= MGPMrCreateInstalledDb( property ) ) )
+ 		{
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrCreateStatusDb", errorCode );
+@@ -308,7 +348,7 @@
+ 		free( xtermTitle );
+ 		MGPMlogDestroy( property );
+ 		return(0);
+-	}
++*/
+ 
+ 	if( path && strcmp( path, "PMUPGRADE" ) == 0 )
+ 	{
+diff -ruN ../0.3.5/libMGPM/src/MGPMrSinglePortStatus.c ./libMGPM/src/MGPMrSinglePortStatus.c
+--- ../0.3.5/libMGPM/src/MGPMrSinglePortStatus.c	Mon Nov 14 14:54:02 2005
++++ ./libMGPM/src/MGPMrSinglePortStatus.c	Mon Nov 14 19:10:08 2005
+@@ -159,7 +159,7 @@
+ 				MGdbAdd( property->oldPortsDb,
+ 					installedPortsDbPortDir,
+ 					installedPortsDbPortName,
+-					"1 built with OLD dependency",
++					"built with OLD dependency",
+ 					oldDependencyName,
+ 					oldDependencyDir,
+ 					NULL );
+@@ -226,7 +226,7 @@
+ 							MGdbAdd( property->oldPortsDb,
+ 								installedPortsDbPortDir,
+ 								installedPortsDbPortName,
+-								"2 built with OLD dependency",
++								"built with OLD dependency",
+ 								MGdbGet( property->dependencyPortsDb,
+ 									MGdbGetRecno( property->dependencyPortsDb ) - 1,
+ 									property->fieldDependencyDbDependencyPortName ),
+Binary files ../0.3.5/portmanager-0.3.6.tar.gz and ./portmanager-0.3.6.tar.gz differ
