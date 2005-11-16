@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Catalyst/Helper/View/TT.pm
+%%SITE_PERL%%/Catalyst/Helper/View/TTSite.pm
 %%SITE_PERL%%/Catalyst/View/TT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT
