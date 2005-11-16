@@ -7,7 +7,7 @@
 
 PORTNAME=	foremost
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/pkg/
 
