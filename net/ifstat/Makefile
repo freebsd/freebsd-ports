@@ -18,6 +18,8 @@ COMMENT=	Network interface statistics monitoring tool
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
+OPTIONS=	SNMP "SNMP support" off
+
 MAN1=		ifstat.1
 PLIST_FILES=	bin/ifstat
 
