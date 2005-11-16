@@ -5,6 +5,7 @@
 
     SUBDIR += abacus
     SUBDIR += adesklets
+    SUBDIR += alacarte
     SUBDIR += alexandria
     SUBDIR += aspostit
     SUBDIR += autocutsel
@@ -129,7 +130,6 @@
     SUBDIR += rox-memo
     SUBDIR += rubrica
     SUBDIR += sliderule
-    SUBDIR += smeg
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
     SUBDIR += superkaramba

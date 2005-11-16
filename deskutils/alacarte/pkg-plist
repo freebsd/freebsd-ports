@@ -1,12 +1,38 @@
-bin/smeg
-share/applications/smeg-kde.desktop
-share/applications/smeg.desktop
-%%DATADIR%%/DialogHandler.py
-%%DATADIR%%/DialogHandler.pyc
-%%DATADIR%%/MenuHandler.py
-%%DATADIR%%/MenuHandler.pyc
-%%DATADIR%%/config.py
-%%DATADIR%%/config.pyc
-%%DATADIR%%/smeg.glade
-@dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+bin/alacarte
+share/locale/de/LC_MESSAGES/alacarte.mo
+share/locale/es/LC_MESSAGES/alacarte.mo
+share/locale/fr/LC_MESSAGES/alacarte.mo
+share/locale/nb/LC_MESSAGES/alacarte.mo
+share/locale/nl/LC_MESSAGES/alacarte.mo
+share/locale/no/LC_MESSAGES/alacarte.mo
+share/applications/alacarte.desktop
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@cwd %%LOCALBASE%%
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.py
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.py
+%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/config.py
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.py
+%%PYTHON_SITELIBDIR%%/Alacarte/alacarte.glade
+%%PYTHON_SITELIBDIR%%/Alacarte/images/alacarte.svg
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/config.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.pyc
+%%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeFront.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/IconHandler.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/PyXDGIconHandler.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/config.pyo
+%%PYTHON_SITELIBDIR%%/Alacarte/GnomeDialogHandler.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Alacarte/images
+@dirrm %%PYTHON_SITELIBDIR%%/Alacarte
