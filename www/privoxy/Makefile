@@ -63,9 +63,6 @@ post-install:
 	${MKDIR} /var/log/privoxy
 	${CHOWN} privoxy:privoxy /var/log/privoxy
 	${CHMOD} 0750 /var/log/privoxy
-	${TOUCH} /var/log/jarfile
-	${CHOWN} privoxy:privoxy /var/log/jarfile
-	${CHMOD} 0600 /var/log/jarfile
 	${MKDIR} /var/run/privoxy
 	${CHOWN} privoxy:privoxy /var/run/privoxy
 	${CHMOD} 0750 /var/run/privoxy
