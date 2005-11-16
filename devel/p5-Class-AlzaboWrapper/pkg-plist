@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Class/AlzaboWrapper.pm
 %%SITE_PERL%%/Class/AlzaboWrapper/Cursor.pm
 @dirrm %%SITE_PERL%%/Class/AlzaboWrapper
