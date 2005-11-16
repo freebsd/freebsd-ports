@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	icon-bluecurve-theme
-PORTREVISION=	1
 
 COMMENT=	The Bluecurve icon set
 
@@ -20,10 +19,6 @@ INSTALLS_ICONS=	yes
 BUILD_WRKSRC=	${WRKSRC}/art/icon/Bluecurve/sheets
 BC_HIERS=	${BUILD_WRKSRC}/Bluecurve:${PREFIX}/share/icons/Bluecurve
 
-post-extract:
-	@cd ${WRKDIR} && \
-	${TAR} -zxf WeatherIcons.tar.gz && ${TAR} -zxf volume.tar.gz
-
 do-build:
 	${MKDIR} ${BUILD_WRKSRC}/Bluecurve
 .for t in added apps dialogs emblems files stock ooo
@@ -35,12 +30,6 @@ do-build:
 	${MKDIR} ${BUILD_WRKSRC}/Bluecurve/36x36/apps
 	${MV} -f ${BUILD_WRKSRC}/gnome-spinner*.png ${BUILD_WRKSRC}/Bluecurve/36x36/apps
 	${MV} -f ${WRKSRC}/art/icon/Bluecurve/index.theme ${BUILD_WRKSRC}/Bluecurve
-.for d in 16x16 20x20 24x24 32x32 48x48
-	${MV} -f ${WRKDIR}/WeatherIcons/${d}/* ${BUILD_WRKSRC}/Bluecurve/${d}/stock
-	${MV} -f ${WRKDIR}/volume/${d}/* ${BUILD_WRKSRC}/Bluecurve/${d}/stock
-.endfor
-	cd ${BUILD_WRKSRC}/Bluecurve/48x48/apps && \
-	${LN} -sf gnome-main-menu.png gnome-logo-icon-transparent.png
 .for d in 16x16 24x24 32x32 48x48
 	cd ${BUILD_WRKSRC}/Bluecurve/${d}/apps && \
 	${LN} -sf icon-db-user.png openofficeorg-base.png && \
