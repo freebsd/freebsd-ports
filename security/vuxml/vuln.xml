@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c55f9ed0-56a7-11da-a3f0-00123ffe8333">
+    <topic>phpmyadmin -- HTTP Response Splitting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.6.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security advisory reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-6">
+	  <p>Some scripts in phpMyAdmin are vulnerable to an
+	    HTTP Response Splitting attack.</p>
+	  <p>Severity:</p>
+	  <p>We consider these vulnerabilities to be serious.
+	    However, they can only be triggered on systems running
+	    with register_globals = on.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-6</url>
+      <url>http://secunia.com/advisories/17578/</url>
+      <url>http://www.fitsec.com/advisories/FS-05-02.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-11-15</discovery>
+      <entry>2005-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c1cea79-548a-11da-b53f-0004614cc33d">
     <topic>phpSysInfo -- "register_globals" emulation layer overwrite vulnerability</topic>
     <affects>
