@@ -114,8 +114,8 @@ share/sgml/gconf/gconf-1.0.dtd
 @unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @dirrm share/doc/gconf
-@dirrm share/GConf/schema
-@dirrm share/GConf
+%%LDAP%%@dirrm share/GConf/schema
+%%LDAP%%@dirrm share/GConf
 @dirrm lib/GConf/2
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
