@@ -1,32 +1,24 @@
 bin/catalyst.pl
 %%SITE_PERL%%/Catalyst.pm
+%%SITE_PERL%%/Catalyst/Action.pm
+%%SITE_PERL%%/Catalyst/ActionContainer.pm
+%%SITE_PERL%%/Catalyst/AttrContainer.pm
 %%SITE_PERL%%/Catalyst/Base.pm
 %%SITE_PERL%%/Catalyst/Build.pm
+%%SITE_PERL%%/Catalyst/Component.pm
+%%SITE_PERL%%/Catalyst/Controller.pm
 %%SITE_PERL%%/Catalyst/Dispatcher.pm
+%%SITE_PERL%%/Catalyst/DispatchType.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Default.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Index.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Path.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/Base.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP13.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP13/Apreq.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP13/Base.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP19.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP19/Apreq.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP19/Base.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP20.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP20/Apreq.pm
-%%SITE_PERL%%/Catalyst/Engine/Apache/MP20/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/CGI.pm
-%%SITE_PERL%%/Catalyst/Engine/CGI/APR.pm
-%%SITE_PERL%%/Catalyst/Engine/CGI/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
-%%SITE_PERL%%/Catalyst/Engine/FastCGI/APR.pm
-%%SITE_PERL%%/Catalyst/Engine/FastCGI/Base.pm
 %%SITE_PERL%%/Catalyst/Engine/HTTP.pm
-%%SITE_PERL%%/Catalyst/Engine/HTTP/Base.pm
-%%SITE_PERL%%/Catalyst/Engine/HTTP/Daemon.pm
-%%SITE_PERL%%/Catalyst/Engine/SpeedyCGI.pm
-%%SITE_PERL%%/Catalyst/Engine/SpeedyCGI/Base.pm
-%%SITE_PERL%%/Catalyst/Engine/Test.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Log.pm
@@ -36,26 +28,22 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Manual/Internals.pod
 %%SITE_PERL%%/Catalyst/Manual/Intro.pod
 %%SITE_PERL%%/Catalyst/Manual/Plugins.pod
-%%SITE_PERL%%/Catalyst/Manual/SuccessStories.pod
-%%SITE_PERL%%/Catalyst/Manual/Troubleshooting.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
+%%SITE_PERL%%/Catalyst/Model.pm
+%%SITE_PERL%%/Catalyst/Plugin/Static/Simple.pm
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
-%%SITE_PERL%%/Catalyst/Setup.pm
 %%SITE_PERL%%/Catalyst/Test.pm
 %%SITE_PERL%%/Catalyst/Utils.pm
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache/MP13 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache/MP19 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache/MP20 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/CGI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/FastCGI 2>/dev/null || true
+%%SITE_PERL%%/Catalyst/View.pm
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/DispatchType 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/SpeedyCGI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Manual 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Static 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Request 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2>/dev/null || true
