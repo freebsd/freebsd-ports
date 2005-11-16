@@ -10,6 +10,7 @@
 @unexec if cmp -s %D/etc/postfix/generic %D/etc/postfix/dist/generic; then rm -f %D/etc/postfix/generic; fi
 etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
+etc/postfix/bounce.cf.default
 etc/postfix/main.cf.default
 etc/postfix/makedefs.out
 etc/postfix/post-install
@@ -62,6 +63,7 @@ sbin/postmap
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
+%%SUB_TEST%%sbin/qmqp-sink
 %%SUB_TEST%%sbin/qmqp-source
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source
@@ -165,6 +167,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/aliases.5.html
 %%PORTDOCS%%%%DOCSDIR%%/anvil.8.html
 %%PORTDOCS%%%%DOCSDIR%%/body_checks.5.html
+%%PORTDOCS%%%%DOCSDIR%%/bounce.5.html
 %%PORTDOCS%%%%DOCSDIR%%/bounce.8.html
 %%PORTDOCS%%%%DOCSDIR%%/canonical.5.html
 %%PORTDOCS%%%%DOCSDIR%%/cidr_table.5.html
