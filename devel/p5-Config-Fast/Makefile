@@ -22,7 +22,7 @@ MAN3=		Config::Fast.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Need at least perl 5.6 to build
+IGNORE=		needs at least perl 5.6 to build
 .endif
 
 .include <bsd.port.post.mk>
