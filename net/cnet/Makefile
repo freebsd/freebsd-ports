@@ -16,6 +16,8 @@ COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		Size mismatch
+
 USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes

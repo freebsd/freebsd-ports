@@ -17,6 +17,8 @@ COMMENT=	A free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
+BROKEN=		Size mismatch
+
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_REINPLACE=	yes
