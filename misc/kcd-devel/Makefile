@@ -1,11 +1,11 @@
-# New ports collection makefile for:	kcd
+# New ports collection makefile for:	kcd-devel
 # Date created:				5 May 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-PORTNAME=	kcd
+PORTNAME=	kcd-devel
 PORTVERSION=	7.11.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
