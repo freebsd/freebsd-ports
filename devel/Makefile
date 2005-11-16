@@ -1197,6 +1197,7 @@
     SUBDIR += p5-Tree-Simple-VisitorFactory
     SUBDIR += p5-UNIVERSAL-can
     SUBDIR += p5-UNIVERSAL-exports
+    SUBDIR += p5-UNIVERSAL-isa
     SUBDIR += p5-UNIVERSAL-moniker
     SUBDIR += p5-UNIVERSAL-require
     SUBDIR += p5-Unix-Statgrab
