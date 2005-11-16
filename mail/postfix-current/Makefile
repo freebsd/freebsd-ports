@@ -8,7 +8,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20051109
+DISTVERSION=	2.3-20051114
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -28,6 +28,7 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.2.* \
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+USE_PERL5_BUILD=yes
 
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions" on \
 		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)" off \
@@ -50,10 +51,10 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions" on \
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
 
-MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 generic.5 header_checks.5 \
-	ldap_table.5 master.5 mysql_table.5 nisplus_table.5 pcre_table.5 \
-	pgsql_table.5 postconf.5 regexp_table.5 relocated.5 tcp_table.5 \
-	transport.5 virtual.5
+MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
+	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
+	pcre_table.5 pgsql_table.5 postconf.5 regexp_table.5 relocated.5 \
+	tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 lmtp.8 \
 	local.8 master.8 oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 \
@@ -214,7 +215,9 @@ POSTFIX_CCARGS+=	 -DHAS_NIS
 .endif
 
 .if defined(WITH_TEST)
-BINTEST=	smtp-sink smtp-source qmqp-source
+BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
+MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
+MAN1+=		${MANTEST}
 PLIST_SUB+=	SUB_TEST=""
 .else
 PLIST_SUB+=	SUB_TEST="@comment "
@@ -280,6 +283,7 @@ post-patch:
 # All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
 	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
 		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+	@${REINPLACE_CMD} -e "s|perl|${PERL}|" ${WRKSRC}/src/bounce/Makefile.in
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
@@ -300,7 +304,7 @@ do-install:
 	mailq_path=${PREFIX}/bin/mailq \
 	mail_owner=postfix \
 	setgid_group=maildrop \
-	manpage_directory=${PREFIX}/man \
+	manpage_directory=${MANPREFIX}/man \
 	sample_directory=${PREFIX}/etc/postfix \
 	readme_directory=${READMEDIR}
 
@@ -308,6 +312,9 @@ do-install:
 
 .	for f in ${BINTEST}
 		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
+.	endfor
+.	for f in ${MANTEST}
+		@${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
 .	endfor
 
 	@${MKDIR} ${PREFIX}/etc/postfix/dist
