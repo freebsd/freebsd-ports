@@ -20,10 +20,14 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/gosd.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/gosd.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/gosd.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.pyo
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.pyo
 libexec/gnome-osd-server
+share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.service
 share/gnome/applications/gnome-osd-properties.desktop
 share/gnome/gnome-osd/xchatosd.py
 share/gnome/pixmaps/gnome-osd.png
@@ -33,7 +37,5 @@ share/locale/pt/LC_MESSAGES/gnome-osd.mo
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@comment only remove the dbus directories if dbus is not installed
+@unexec if ! [ -e %%LOCALBASE%%/bin/dbus-daemon ]; then rmdir %D/share/dbus-1/services 2>/dev/null; rmdir %D/share/dbus-1 2>/dev/null; fi
