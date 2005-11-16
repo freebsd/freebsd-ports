@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -31,6 +32,8 @@ PLIST_DIRS=	lib/weechat/plugins lib/weechat
 PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/weechat.mo
 .endfor
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -39,13 +42,16 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-#Tempory disable due problems with perl < 5.6 (4.x)
-#.if defined(WITH_PERL)
-#CONFIGURE_ARGS+=--enable-perl
-#USE_PERL=	yes
-#PLIST_FILES+=	lib/weechat/plugins/libperl.a lib/weechat/plugins/libperl.la \
-#		lib/weechat/plugins/libperl.so lib/weechat/plugins/libperl.so.0
-#.endif
+.if defined(WITH_PERL)
+.if ${PERL_LEVEL} < 500600
+IGNORE=	This port requires perl 5.6.0 or later, Install lang/perl5 then try again
+.else
+CONFIGURE_ARGS+=--enable-perl
+USE_PERL5=	yes
+PLIST_FILES+=	lib/weechat/plugins/libperl.a lib/weechat/plugins/libperl.la \
+		lib/weechat/plugins/libperl.so lib/weechat/plugins/libperl.so.0
+.endif
+.endif
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=--enable-python
@@ -57,4 +63,4 @@ PLIST_FILES+=	lib/weechat/plugins/libpython.a lib/weechat/plugins/libpython.la \
 pre-configure:
 	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
