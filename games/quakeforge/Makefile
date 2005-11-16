@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
 USE_AUTOTOOLS=	libtool:15
