@@ -1,11 +1,11 @@
---- src/killall.c.orig	Fri Dec 10 13:31:29 2004
-+++ src/killall.c	Wed Oct  5 09:16:10 2005
-@@ -39,35 +39,31 @@
+--- src/killall.c.orig	Tue Sep 20 05:31:38 2005
++++ src/killall.c	Wed Nov 16 17:40:13 2005
+@@ -59,35 +59,31 @@
             quiet = 0, wait_until_dead = 0, process_group = 0,
             ignore_case = 0, pidof;
  
 +/*
-+ * This is the implementation from 21.5, as the one in 21.6 uses
++ * This is the implementation from 21.5, as the one in 21.6 and newer uses
 + * Linux specific functions getline() and rpmatch()
 + */
  static int
@@ -14,8 +14,7 @@
 -  int res;
 -  size_t len;
 -  char *line;
-+  int ch, c;
- 
+-
 -  line = NULL;
 -  len = 0;
 -
@@ -35,6 +34,8 @@
 -    if (res >= 0) {
 -      free(line);
 -      return res;
++  int ch, c;
++
 +  do
 +    {
 +      printf (_("Kill %s(%s%d) ? (y/n) "), name, process_group ? "pgid " : "",
@@ -55,29 +56,20 @@
 +  return ch == 'y' || ch == 'Y';
  }
  
- #ifdef FLASK_LINUX
-@@ -82,7 +78,7 @@
-   struct dirent *de;
-   FILE *file;
-   struct stat st, sts[MAX_NAMES];
--  int *name_len;
-+  int *name_len = 0;
-   char *path, comm[COMM_LEN];
-   char *command_buf;
-   char *command;
-@@ -173,7 +169,7 @@
-     }
-   for (i = 0; i < pids; i++)
-     {
+ static int
+@@ -267,7 +263,7 @@
+         }
+ #endif /*WITH_SELINUX*/
+       /* load process name */
 -      if (asprintf (&path, PROC_BASE "/%d/stat", pid_table[i]) < 0)
 +      if (asprintf (&path, PROC_BASE "/%d/status", pid_table[i]) < 0)
  	continue;
        if (!(file = fopen (path, "r"))) 
  	{
-@@ -182,72 +178,13 @@
+@@ -275,72 +271,13 @@
+ 	  continue;
  	}
        free (path);
-       empty = 0;
 -      okay = fscanf (file, "%*d (%[^)]", comm) == 1;
 +      okay = fscanf (file, "%s", comm) == 1;
        (void) fclose (file);
@@ -145,23 +137,24 @@
 -	    }
 -	  got_long = okay;
 -	}
+       /* mach by process name */
        for (j = 0; j < names; j++)
  	{
- 	  pid_t id;
-@@ -281,7 +218,7 @@
- 	    }
- 	  else
- 	    {
--	      if (asprintf (&path, PROC_BASE "/%d/exe", pid_table[i]) < 0)
-+	      if (asprintf (&path, PROC_BASE "/%d/file", pid_table[i]) < 0)
- 		continue;
- #ifdef FLASK_LINUX
-           if (stat_secure(path,&st,&lsid) < 0) {
-@@ -357,6 +294,7 @@
- 	fprintf (stderr, _("%s: no process killed\n"), namelist[i]);
-   if (pidof)
-     putchar ('\n');
-+    return 0;
-   error = found == ((1 << (names - 1)) | ((1 << (names - 1)) - 1)) ? 0 : 1;
-   /*
-    * We scan all (supposedly) killed processes every second to detect dead
+@@ -372,7 +309,7 @@
+ 	        }
+ 	      else
+ 	        {
+-	          if (asprintf (&path, PROC_BASE "/%d/exe", pid_table[i]) < 0)
++	          if (asprintf (&path, PROC_BASE "/%d/file", pid_table[i]) < 0)
+ 		    continue;
+ 
+ 	          if (stat (path, &st) < 0) 
+@@ -697,7 +634,7 @@
+       fprintf (stderr, _("Maximum number of names is %d\n"), MAX_NAMES);
+       exit (1);
+     }
+-  if (stat("/proc/self/stat", &isproc)==-1)
++  if (stat("/proc/curproc/status", &isproc)==-1)
+     {
+       fprintf (stderr, _("%s is empty (not mounted ?)\n"), PROC_BASE);
+       exit (1);

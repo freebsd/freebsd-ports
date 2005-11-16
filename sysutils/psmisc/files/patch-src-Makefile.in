@@ -1,47 +1,49 @@
---- src/Makefile.in.orig	Wed Oct  5 08:53:13 2005
-+++ src/Makefile.in	Wed Oct  5 08:59:34 2005
+--- src/Makefile.in.orig	Sat Nov  5 05:18:47 2005
++++ src/Makefile.in	Wed Nov 16 17:34:55 2005
 @@ -14,7 +14,7 @@
  
  @SET_MAKE@
  
--SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
+-SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(oldfuser_SOURCES) $(pstree_SOURCES)
 +SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
  
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
-@@ -38,7 +38,7 @@
+@@ -38,8 +38,7 @@
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
--bin_PROGRAMS = fuser$(EXEEXT) killall$(EXEEXT) pstree$(EXEEXT)
+-bin_PROGRAMS = fuser$(EXEEXT) killall$(EXEEXT) pstree$(EXEEXT) \
+-	oldfuser$(EXEEXT)
 +bin_PROGRAMS = killall$(EXEEXT) pstree$(EXEEXT)
  subdir = src
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -71,8 +71,8 @@
+@@ -75,10 +74,8 @@
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
--SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
--DIST_SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(pstree_SOURCES)
+-SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(oldfuser_SOURCES) \
+-	$(pstree_SOURCES)
+-DIST_SOURCES = $(fuser_SOURCES) $(killall_SOURCES) $(oldfuser_SOURCES) \
+-	$(pstree_SOURCES)
 +SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
 +DIST_SOURCES = $(killall_SOURCES) $(pstree_SOURCES)
  ETAGS = etags
  CTAGS = ctags
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -174,9 +174,9 @@
- AM_CFLAGS = -Wall -DLOCALEDIR=\"/usr/share/locale\"
- fuser_SOURCES = fuser.c comm.h signals.c signals.h loop.h i18n.h
+@@ -181,9 +178,8 @@
+ oldfuser_SOURCES = oldfuser.c comm.h signals.c signals.h loop.h i18n.h
+ fuser_SOURCES = fuser.c comm.h signals.c signals.h i18n.h fuser.h
  killall_SOURCES = killall.c comm.h signals.c signals.h i18n.h
--killall_LDADD = @FLASK_LIB@
-+killall_LDADD = @FLASK_LIB@ $(LIBINTL)
+-killall_LDADD = @SELINUX_LIB@
  pstree_SOURCES = pstree.c comm.h i18n.h
--pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@
-+pstree_LDADD = @TERMCAP_LIB@ @FLASK_LIB@ $(LIBINTL)
+-pstree_LDADD = @TERMCAP_LIB@ @SELINUX_LIB@
++pstree_LDADD = @TERMCAP_LIB@
  BUILT_SOURCES = signames.h
  EXTRA_DIST = signames.c 
  CLEANFILES = signames.h
-@@ -449,12 +449,11 @@
+@@ -460,12 +456,11 @@
  
  signames.h: signames.c Makefile
  		@CPP@ -dM $< |\
