@@ -17,6 +17,7 @@
 %%SITE_PERL%%/DBIx/Class/CDBICompat/LiveObjectIndex.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/MightHave.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/ObjIndexStubs.pm
+%%SITE_PERL%%/DBIx/Class/CDBICompat/Pager.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/ReadOnly.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/Retrieve.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/Stringify.pm
@@ -29,6 +30,12 @@
 %%SITE_PERL%%/DBIx/Class/DB.pm
 %%SITE_PERL%%/DBIx/Class/Exception.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn.pm
+%%SITE_PERL%%/DBIx/Class/Manual.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
+%%SITE_PERL%%/DBIx/Class/Manual/FAQ.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Cookbook.pod
+%%SITE_PERL%%/DBIx/Class/ObjectCache.pm
 %%SITE_PERL%%/DBIx/Class/PK.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto/MSSQL.pm
@@ -39,7 +46,10 @@
 %%SITE_PERL%%/DBIx/Class/Relationship.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/Accessor.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/Base.pm
+%%SITE_PERL%%/DBIx/Class/Relationship/BelongsTo.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/CascadeActions.pm
+%%SITE_PERL%%/DBIx/Class/Relationship/HasMany.pm
+%%SITE_PERL%%/DBIx/Class/Relationship/HasOne.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/ProxyMethods.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet.pm
 %%SITE_PERL%%/DBIx/Class/Row.pm
@@ -48,12 +58,14 @@
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Table.pm
 %%SITE_PERL%%/DBIx/Class/Test/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/UUIDColumns.pm
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/Test 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/Storage/DBI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/Storage 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/Relationship 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/PK/Auto 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/PK 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/Manual 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/ClassResolver 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class/CDBICompat 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DBIx/Class 2>/dev/null || true
