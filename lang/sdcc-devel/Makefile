@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.5.2.2005.09.03
+PORTVERSION=	2.5.4.2005.11.15
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://www.kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20050903
+DISTNAME=	${PORTNAME}-src-20051115
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -61,6 +61,9 @@ PLIST_SUB+=		DS390=""
 
 .if defined(WITHOUT_PIC)
 CONFIGURE_ARGS+=	--disable-pic-port
+PLIST_SUB+=		PIC="@comment "
+.else
+PLIST_SUB+=		PIC=""
 .endif
 
 .if defined(WITHOUT_PIC16)
@@ -86,7 +89,7 @@ PLIST_SUB+=		HC08=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=		libtool:15
 LIBTOOLFILES=		sim/ucsim/aclocal.m4
 PLIST_SUB+=		UCSIM=""
 .endif

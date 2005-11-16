@@ -1,6 +1,6 @@
---- device/lib/Makefile.in.orig	Sat Sep  3 21:35:14 2005
-+++ device/lib/Makefile.in	Sat Sep  3 21:35:45 2005
-@@ -280,8 +280,6 @@
+--- device/lib/Makefile.in.orig	Tue Nov 15 18:23:59 2005
++++ device/lib/Makefile.in	Tue Nov 15 18:24:18 2005
+@@ -285,8 +285,6 @@
  # ---------------------------------------------------
  install: all installdirs
  	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
@@ -9,7 +9,7 @@
  
  # Deleting all the installed files
  # --------------------------------
-@@ -302,15 +300,6 @@
+@@ -307,16 +305,6 @@
  # ---------------------------------
  installdirs:
  	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)
@@ -21,6 +21,7 @@
 -	[ -d $(sdcc_libdir)/ds400 ] || mkdir -p $(sdcc_libdir)/ds400
 -	[ -d $(sdcc_libdir)/hc08 ] || mkdir -p $(sdcc_libdir)/hc08
 -	[ -d $(sdcc_libdir)/pic16 ] || mkdir -p $(sdcc_libdir)/pic16
+-	[ -d $(sdcc_libdir)/pic ] || mkdir -p $(sdcc_libdir)/pic
 -	mkdir -p $(sdcc_libdir)/src
  
  # Creating dependencies
