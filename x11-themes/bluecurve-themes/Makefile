@@ -31,11 +31,12 @@ do-install:	# empty
 
 .else					# master port
 
-PORTVERSION=	0.129
+PORTVERSION=	0.131
+RPMREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	development/SRPMS
-DISTFILES=	redhat-artwork-${PORTVERSION}-3.src.rpm
+DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm
 
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
