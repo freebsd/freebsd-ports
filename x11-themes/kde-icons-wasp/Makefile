@@ -7,7 +7,7 @@
 
 PORTNAME=	wasp
 PORTVERSION=	2.6.1
-MASTER_SITES=	http://pyavitz.home.comcast.net/kde/
+MASTER_SITES=	http://steflo.dk/kde-look/
 DISTNAME=	Wasp.SVG.Icons-v${PORTVERSION}
 
 COMMENT=	KDE Wasp SVG iconset
