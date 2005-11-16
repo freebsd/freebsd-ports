@@ -1637,7 +1637,6 @@ dia2code	ports/devel/dia2code
 diablo		ports/news/diablo
 diablo-jdk13	ports/java/diablo-jdk13
 diablo-jre13	ports/java/diablo-jre13
-diacanvas	ports/graphics/diacanvas
 diacanvas2	ports/graphics/diacanvas2
 dialyzer	ports/devel/dialyzer
 dice		ports/lang/dice
@@ -6543,7 +6542,6 @@ mupen64-sdlinput	ports/emulators/mupen64-sdlinput
 mupen64-sound	ports/emulators/mupen64-sound
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
-musicbox	ports/audio/musicbox
 musicbox-tag-editor	ports/audio/musicbox-tag-editor
 musicbrainz	ports/audio/musicbrainz
 musiccontrol	ports/audio/musiccontrol
@@ -9867,8 +9865,6 @@ postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-relay	ports/databases/postgresql-relay
 postgresql-tcltk	ports/databases/postgresql-tcltk
-postgresql7	ports/databases/postgresql7
-postgresql73	ports/databases/postgresql73
 postgresql73-client	ports/databases/postgresql73-client
 postgresql73-server	ports/databases/postgresql73-server
 postgresql74-client	ports/databases/postgresql74-client
@@ -9899,7 +9895,6 @@ powerpc-rtems-gdb	ports/devel/powerpc-rtems-gdb
 powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
 powwow		ports/games/powwow
-pp		ports/games/pp
 pp3		ports/astro/pp3
 ppantsfonts	ports/x11-fonts/ppantsfonts
 ppars		ports/security/ppars
@@ -10907,7 +10902,6 @@ ruby-freedb	ports/audio/ruby-freedb
 ruby-gconf2	ports/devel/ruby-gconf2
 ruby-gd		ports/graphics/ruby-gd
 ruby-gdbm	ports/databases/ruby-gdbm
-ruby-gdk_pixbuf	ports/graphics/ruby-gdk_pixbuf
 ruby-gdk_pixbuf2	ports/graphics/ruby-gdk_pixbuf2
 ruby-gdome	ports/textproc/ruby-gdome
 ruby-gemfinder	ports/devel/ruby-gemfinder
@@ -10915,7 +10909,6 @@ ruby-gems	ports/devel/ruby-gems
 ruby-gettext	ports/devel/ruby-gettext
 ruby-glib2	ports/devel/ruby-glib2
 ruby-gmp	ports/math/ruby-gmp
-ruby-gnome	ports/x11/ruby-gnome
 ruby-gnome2	ports/x11/ruby-gnome2
 ruby-gnome2-all	ports/x11/ruby-gnome2-all
 ruby-gnomecanvas2	ports/graphics/ruby-gnomecanvas2
@@ -10959,10 +10952,8 @@ ruby-irc	ports/irc/ruby-irc
 ruby-js		ports/lang/ruby-js
 ruby-jttui	ports/devel/ruby-jttui
 ruby-ldap	ports/net/ruby-ldap
-ruby-libart	ports/graphics/ruby-libart
 ruby-libart2	ports/graphics/ruby-libart2
 ruby-libgda	ports/databases/ruby-libgda
-ruby-libglade	ports/devel/ruby-libglade
 ruby-libglade2	ports/devel/ruby-libglade2
 ruby-libpng	ports/graphics/ruby-libpng
 ruby-libxml	ports/textproc/ruby-libxml
@@ -13440,7 +13431,6 @@ xsmbrowser	ports/net/xsmbrowser
 xsnow		ports/x11/xsnow
 xsok		ports/games/xsok
 xsokoban	ports/games/xsokoban
-xsol		ports/games/xsol
 xsoldier	ports/games/xsoldier
 xspacewarp	ports/games/xspacewarp
 xspeakfree	ports/mbone/xspeakfree
@@ -13615,7 +13605,6 @@ zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
 zh-cdict5	ports/chinese/cdict5
 zh-celvis	ports/chinese/celvis
-zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
 zh-chinput3	ports/chinese/chinput3
 zh-chm2html	ports/chinese/chm2html
