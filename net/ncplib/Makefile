@@ -10,7 +10,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bp@FreeBSD.org
 COMMENT=	Client for Novell NetWare servers
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
