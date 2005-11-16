@@ -8,9 +8,9 @@
 PORTNAME=	ncplib
 PORTVERSION=	1.3.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.butya.kz/pub/nwlib/
+MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 
-MAINTAINER=	bp@butya.kz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Novell NetWare servers
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
