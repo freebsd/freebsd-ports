@@ -40,6 +40,10 @@ SUB_FILES=	pkg-message
 BROKEN=		"Does not build on amd64"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=		"Can't build on 4.x"
 .endif
