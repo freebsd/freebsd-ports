@@ -49,6 +49,7 @@ PHP_EXT_DIR=	20020429
 PHP_EXT_DIR=	20041030
 .endif
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
+APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_MPM!=	${APXS} -q MPM_NAME
 .if ${APACHE_MPM} == "worker"
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
