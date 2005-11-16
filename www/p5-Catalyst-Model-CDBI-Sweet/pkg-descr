@@ -1,5 +1,4 @@
-Catalyst::Model::CDBI::Sweet provides convenient count, search, page, and cache
-functions in a sweet package. It integrates these functions with Class::DBI in
-a convenient and efficient way.
+This model is a thin wrapper around Class::DBI::Sweet to let you use it as
+a Catalyst Model easily. It's similar to Catalyst::Model::CDBI::Plain.
 
 WWW: http://search.cpan.org/dist/Catalyst-Model-CDBI-Sweet/
