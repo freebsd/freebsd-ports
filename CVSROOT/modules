@@ -11483,6 +11483,7 @@ smarteiffel	ports/lang/smarteiffel
 smartmontools	ports/sysutils/smartmontools
 smarty		ports/www/smarty
 smb2www		ports/www/smb2www
+smb4k		ports/net/smb4k
 smb_auth	ports/www/smb_auth
 smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
