@@ -7,7 +7,7 @@
 
 PORTNAME=	migemo
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://namazu.org/~satoru/migemo/ \
