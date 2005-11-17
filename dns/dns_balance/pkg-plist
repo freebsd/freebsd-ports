@@ -6,7 +6,6 @@ etc/dns_balance/addrdb.rb-dist
 etc/dns_balance/namespace.rb-dist
 @exec [ ! -f %B/namespace.rb ] && cp %B/%f %B/namespace.rb
 @dirrm etc/dns_balance
-etc/rc.d/dns_balance.sh
 lib/dns_balance/as_search.rb
 lib/dns_balance/cache.rb
 lib/dns_balance/datatype.rb

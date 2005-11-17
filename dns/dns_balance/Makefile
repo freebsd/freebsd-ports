@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dynamic load-balancing DNS server
 
 USE_RUBY=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	dns_balance.sh
 
 NO_BUILD=	yes
 
@@ -50,7 +50,6 @@ SUBST=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 post-patch:
 	${SED} ${SUBST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${WRKSRC}/dns_balance.rb > ${WRKSRC}/dns_balance
-	${SED} ${SUBST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/dns_balance.sh > ${WRKSRC}/dns_balance.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dns_balance ${PREFIX}/sbin/
@@ -63,7 +62,6 @@ do-install:
 .for f in ${LIBS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/${PORTNAME}/
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/dns_balance.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES_EXEC}
