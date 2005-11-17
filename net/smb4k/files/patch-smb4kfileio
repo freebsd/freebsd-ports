@@ -1,0 +1,11 @@
+--- smb4k/core/smb4kfileio.cpp.bak	Mon Oct 31 17:09:18 2005
++++ smb4k/core/smb4kfileio.cpp	Mon Oct 31 17:09:18 2005
+@@ -221,7 +221,7 @@
+         contents.append( "smb4k_mount\t"+m_config->readPathEntry( "smb4k_mount" )+"\t$(Smb4KUsers)\tuid=root\tgid=root\tenv=PASSWD,USER" );
+ #else
+         contents.append( "smb4k_kill\t"+m_config->readPathEntry( "smb4k_kill" )+"\t$(Smb4KUsers)\tuid=root\tgid=wheel" );
+-        contents.append( "smb4k_umount\t"+m_config->readPathEntry( "smb4k_umount" )+"\t$(Smb4KUsers)\tuid=root\tgid=wheel" );item
++        contents.append( "smb4k_umount\t"+m_config->readPathEntry( "smb4k_umount" )+"\t$(Smb4KUsers)\tuid=root\tgid=wheel" );
+         contents.append( "smb4k_mount\t"+m_config->readPathEntry( "smb4k_mount" )+"\t$(Smb4KUsers)\tuid=root\tgid=wheel\tsetenv=HOME=$CALLER_HOME\tenv=PASSWD,USER" );
+ #endif
+         contents.append( "# End of Smb4K user entries." );

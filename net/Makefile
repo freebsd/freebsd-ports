@@ -702,6 +702,7 @@
     SUBDIR += sl2tps
     SUBDIR += slirp
     SUBDIR += slurm
+    SUBDIR += smb4k
     SUBDIR += smbfs
     SUBDIR += smbldap-tools
     SUBDIR += smm++
