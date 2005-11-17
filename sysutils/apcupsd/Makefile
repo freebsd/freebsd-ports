@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon for controlling APC UPS
 
 USE_GETTEXT=	yes
@@ -32,8 +32,13 @@ OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
 OPTIONS+=	CGI "Compile with CGI programms to show status" off
 OPTIONS+=	USB "Compile with USB Support (READ MANUAL!!!)" off
 OPTIONS+=	SNMP "Compile with SNMP Support (READ MANUAL!!!)" off
+OPTIONS+=	NOPTHREADS "Compile without pthreads support (READ MANUAL!!!)" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_NOPTHREADS)
+CONFIGURE_ARGS+=--disable-pthreads
+.endif
 
 .if defined(WITH_USB)
 CONFIGURE_ARGS+=--enable-usb
@@ -82,6 +87,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want a network client."
 	@${ECHO_MSG} "  WITH_USB=yes		to compile with USB support (READ MANUAL!!!)"
 	@${ECHO_MSG} "  WITH_SNMP=yes		to compile with SNMP support (READ MANUAL!!!)"
+	@${ECHO_MSG} "  WITH_NOPTHREADS=yes	to compile without pthreads support (READ MANUAL!!!)"
 	@${ECHO_MSG} ""
 .if defined(WITH_CGI)
 	@${ECHO_MSG} "===> Building with CGI support."
