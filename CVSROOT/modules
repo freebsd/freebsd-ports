@@ -13077,6 +13077,7 @@ xfed		ports/x11-fonts/xfed
 xfedor		ports/x11/xfedor
 xferstats	ports/net/xferstats
 xfig		ports/graphics/xfig
+xfig-devel	ports/graphics/xfig-devel
 xfireworks	ports/games/xfireworks
 xfishtank	ports/x11/xfishtank
 xflame		ports/games/xflame
