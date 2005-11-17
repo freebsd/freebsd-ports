@@ -7,6 +7,7 @@
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
@@ -18,9 +19,9 @@ COMMENT=	Quake 1 source port with advanced graphics
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_XLIB=	yes
 USE_SDL=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -30,6 +31,8 @@ BUILD_WRKSRC=	${WRKSRC}/linux
 MAKE_ENV=	DATADIR="${DATADIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		SDL_CONFIG="${SDL_CONFIG}"
+
+.include "${.CURDIR}/../quake-data/Makefile.include"
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|$$(${PRINTF} '\r')||g" `${FIND} ${WRKSRC} -type f`
@@ -50,6 +53,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's|%%DATADIR%%|${DATADIR}|' <${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
