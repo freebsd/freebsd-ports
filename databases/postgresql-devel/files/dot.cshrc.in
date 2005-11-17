@@ -1,7 +1,0 @@
-set path = ( %%PREFIX%%/bin $path )
-
-# note: PGDATA can be overridden by the -D startup option
-setenv PGDATA $HOME/data
-
-#You might want to set some locale stuff here
-#setenv LC_ALL sv_SE.ISO_8859-1
