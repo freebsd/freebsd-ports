@@ -5136,6 +5136,7 @@ latex-bibunits	ports/print/latex-bibunits
 latex-booktabs	ports/print/latex-booktabs
 latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
+latex-circ	ports/print/latex-circ
 latex-feynmf	ports/print/latex-feynmf
 latex-index	ports/print/latex-index
 latex-keystroke	ports/print/latex-keystroke
