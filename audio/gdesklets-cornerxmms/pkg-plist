@@ -1,3 +1,15 @@
+share/gnome/gdesklets/Controls/KIconAnim/IKIconAnim.py
+share/gnome/gdesklets/Controls/KIconAnim/IKIconAnim.pyc
+share/gnome/gdesklets/Controls/KIconAnim/IKIconAnim.pyo
+share/gnome/gdesklets/Controls/KIconAnim/__init__.py
+share/gnome/gdesklets/Controls/KIconAnim/__init__.pyc
+share/gnome/gdesklets/Controls/KIconAnim/__init__.pyo
+share/gnome/gdesklets/Controls/KXmms/IKXmms.py
+share/gnome/gdesklets/Controls/KXmms/IKXmms.pyc
+share/gnome/gdesklets/Controls/KXmms/IKXmms.pyo
+share/gnome/gdesklets/Controls/KXmms/__init__.py
+share/gnome/gdesklets/Controls/KXmms/__init__.pyc
+share/gnome/gdesklets/Controls/KXmms/__init__.pyo
 share/gnome/gdesklets/Displays/CornerXMMS/cornerxmms-bottomright.display
 share/gnome/gdesklets/Displays/CornerXMMS/gfx/bar0.png
 share/gnome/gdesklets/Displays/CornerXMMS/gfx/bar1.png
@@ -24,10 +36,8 @@ share/gnome/gdesklets/Displays/CornerXMMS/gfx/rnd1.png
 share/gnome/gdesklets/Displays/CornerXMMS/gfx/stop0.png
 share/gnome/gdesklets/Displays/CornerXMMS/gfx/textmask-br0.png
 share/gnome/gdesklets/Displays/CornerXMMS/gfx/textmask-br1.png
-share/gnome/gdesklets/Sensors/CornerXMMS/__init__.py
-share/gnome/gdesklets/Sensors/CornerXMMS/__init__.pyc
-share/gnome/gdesklets/Sensors/CornerXMMS/__init__.pyo
-share/gnome/gdesklets/Sensors/CornerXMMS/README
-@dirrm share/gnome/gdesklets/Sensors/CornerXMMS
+@dirrm share/gnome/gdesklets/Controls/KIconAnim
+@dirrm share/gnome/gdesklets/Controls/KXmms
 @dirrm share/gnome/gdesklets/Displays/CornerXMMS/gfx
 @dirrm share/gnome/gdesklets/Displays/CornerXMMS
+@unexec rmdir %D/share/gnome/gdesklets/Controls 2>/dev/null || true

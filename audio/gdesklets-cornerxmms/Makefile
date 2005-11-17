@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cornerxmms
-PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTVERSION=	0.1.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -19,7 +18,6 @@ COMMENT=	A fancy desklet that allows you to control XMMS from the desktop
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
@@ -28,21 +26,17 @@ DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}
 
 do-build:
-	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${MKDIR} ${DATADIR}/gdesklets/Controls/KIconAnim
+	@${MKDIR} ${DATADIR}/gdesklets/Controls/KXmms
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
-
-post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKSRC}/Controls/KIconAnim/* ${DATADIR}/gdesklets/Controls/KIconAnim/
+	@${INSTALL_DATA} ${WRKSRC}/Controls/KXmms/* ${DATADIR}/gdesklets/Controls/KXmms/
+	@${INSTALL_DATA} ${WRKSRC}/Displays/${NAME}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/Displays/${NAME}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
 
 .include <bsd.port.mk>
