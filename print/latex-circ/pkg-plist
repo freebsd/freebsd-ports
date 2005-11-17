@@ -1,0 +1,43 @@
+@comment $FreeBSD$
+%%PORTDOCS%%share/texmf-local/doc/circ/circ.dvi
+share/texmf-local/fonts/pk/circ/cibimos.600pk
+share/texmf-local/fonts/pk/circ/cicirc.600pk
+share/texmf-local/fonts/pk/circ/cidiod.600pk
+share/texmf-local/fonts/pk/circ/cioptic.600pk
+share/texmf-local/fonts/pk/circ/ciphysic.600pk
+share/texmf-local/fonts/pk/circ/cirest.600pk
+share/texmf-local/fonts/pk/circ/cisym.600pk
+share/texmf-local/fonts/pk/circ/ciwidko.600pk
+share/texmf-local/fonts/source/circ/cibimos.mf
+share/texmf-local/fonts/source/circ/cicirc.mf
+share/texmf-local/fonts/source/circ/cidiod.mf
+share/texmf-local/fonts/source/circ/cioptic.mf
+share/texmf-local/fonts/source/circ/ciphysic.mf
+share/texmf-local/fonts/source/circ/cirest.mf
+share/texmf-local/fonts/source/circ/cisym.mf
+share/texmf-local/fonts/source/circ/ciwidko.mf
+share/texmf-local/fonts/source/circ/csym.mf
+share/texmf-local/fonts/source/circ/defcirc.mf
+share/texmf-local/fonts/tfm/circ/cibimos.tfm
+share/texmf-local/fonts/tfm/circ/cicirc.tfm
+share/texmf-local/fonts/tfm/circ/cidiod.tfm
+share/texmf-local/fonts/tfm/circ/cioptic.tfm
+share/texmf-local/fonts/tfm/circ/ciphysic.tfm
+share/texmf-local/fonts/tfm/circ/cirest.tfm
+share/texmf-local/fonts/tfm/circ/cisym.tfm
+share/texmf-local/fonts/tfm/circ/ciwidko.tfm
+share/texmf-local/tex/latex/circ/circ.sty
+share/texmf-local/tex/latex/circ/ic.def
+share/texmf-local/tex/latex/circ/gate.def
+share/texmf-local/tex/latex/circ/oldgate.def
+share/texmf-local/tex/latex/circ/box.def
+share/texmf-local/tex/latex/circ/basic.def
+share/texmf-local/tex/latex/circ/optics.def
+share/texmf-local/tex/latex/circ/physics.def
+%%PORTDOCS%%@dirrm share/texmf-local/doc/circ
+@dirrm share/texmf-local/fonts/pk/circ
+@dirrm share/texmf-local/fonts/source/circ
+@dirrm share/texmf-local/fonts/tfm/circ
+@dirrm share/texmf-local/tex/latex/circ
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
