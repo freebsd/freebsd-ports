@@ -7,10 +7,10 @@
 
 PORTNAME=	ftrack
 PORTVERSION=	3.1
-PORTEPOCH=	1
 PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://ufm.kgb.ru/files/ \
+MASTER_SITES=	http://www.ibch.ru/forsite/ports/ \
 		http://forsite.ibch.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}sr
 
@@ -32,7 +32,9 @@ PORTDOCS=	ftrack.faq readme report.err
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; \
-			s@-L../../../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
+			s@-L../../../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g; \
+			s@\$$(CC) \$$(LFLAGS) -o ftrack@\$$(CXX) \$$(LFLAGS) -o ftrack@g; \
+			s@-o ftrack \$$(OBJS) -L/usr/local/lib -lsmapi@-o ftrack \$$(OBJS) -L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
 	${REINPLACE_CMD} -e "s@ftrack.cfg@${PREFIX}/etc/ftrack/ftrack.cfg@g" ${WRKSRC}/hpp/constant.hpp
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
 	for FILE in ${WRKSRC}/${DIR}/*; do \

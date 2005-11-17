@@ -1,13 +1,14 @@
 --- MakeFiles/FreeBSD/Makefile.orig	Fri Aug 19 17:20:22 2005
 +++ MakeFiles/FreeBSD/Makefile	Fri Aug 19 17:20:23 2005
-@@ -1,5 +1,4 @@
+@@ -1,5 +1,5 @@
 -CC=	cc
++CC=	g++
 -CFLAGS=	-Wall -W -fno-rtti `perl -MExtUtils::Embed -e ccopts`
 +CFLAGS+=-Wall -W -fno-rtti `perl -MExtUtils::Embed -e ccopts`
  CDEFS=	-DUNIX
  COPT=	-Ihpp -I/usr/local/include -O -pipe 
  LFLAGS= -s
-@@ -34,23 +33,53 @@
+@@ -34,20 +33,50 @@
  	utils.o \
  	mask.o \
  	script.o \
@@ -63,8 +64,3 @@
  
  
  ftrack: $(OBJS)
--	$(CC) $(LFLAGS) -o ftrack $(OBJS) -L/usr/local/lib -lsmapi `perl -MExtUtils::Embed -e ccopts -e ldopts`
-+	$(CXX) $(LFLAGS) -o ftrack $(OBJS) -L/usr/local/lib -lsmapi `perl -MExtUtils::Embed -e ccopts -e ldopts`
- 
- clean:
- 	-rm -f *.o
