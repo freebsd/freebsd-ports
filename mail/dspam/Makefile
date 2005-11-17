@@ -36,6 +36,8 @@ FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .	endif
 .endif
 
+_UPD_LINE_NO=	22
+
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
@@ -103,8 +105,6 @@ STRIP=
 .endif
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
-
-_UPD_LINE_NO=	10
 
 CONFLICTS=	dspam-devel-[0-9]*
 
@@ -414,8 +414,8 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .endif
 
 .if defined(WITH_CGI)
+USE_APACHE=	1.3+
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS+=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS+=	${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d
