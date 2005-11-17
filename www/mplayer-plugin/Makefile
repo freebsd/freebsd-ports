@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.11
-PORTREVISION=	3
+PORTVERSION=	3.15
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -74,7 +73,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|make|${GMAKE}|g' \
 		${WRKSRC}/Makefile.in
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+.if !defined(WITH_MOZILLA) || ${WITH_MOZILLA}=="firefox"
 	@${REINPLACE_CMD} -e 's|mozilla-|firefox-|g' ${WRKSRC}/configure
 .else
 	@${REINPLACE_CMD} -e 's|mozilla-plugin|mozilla-plugin${HEADERS_SUFX}|g' \
