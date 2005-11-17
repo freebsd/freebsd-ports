@@ -14,8 +14,8 @@ PKGMESSAGE=     ${MASTERDIR}/pkg-message
 
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME} \
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages \
 		migemo:${PORTSDIR}/japanese/migemo
 
 HAS_CONFIGURE=	yes
