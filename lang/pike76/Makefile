@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.48
+PORTVERSION=	7.6.50
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -240,8 +240,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/hilfe ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/pike.1 ${MAN1PREFIX}/man/man1
 
-#verify:
-#	@(cd ${WRKSRC}; make verify)
+verify:
+	@(cd ${WRKSRC}; make verify)
 
 # Autodocs is currently b0rken.... :/
 #doc:
