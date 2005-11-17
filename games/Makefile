@@ -124,6 +124,7 @@
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doom-data
+    SUBDIR += doom-hacx
     SUBDIR += doomlegacy
     SUBDIR += dopewars
     SUBDIR += drm
