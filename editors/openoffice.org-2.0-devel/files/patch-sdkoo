@@ -1,0 +1,19 @@
+building sdk is broken at the moment.
+
+Index: instsetoo_native/util/makefile.mk
+===================================================================
+RCS file: /cvs/installation/instsetoo_native/util/makefile.mk,v
+retrieving revision 1.47
+diff -u -r1.47 makefile.mk
+--- instsetoo_native/util/makefile.mk	11 Nov 2005 10:39:44 -0000	1.47
++++ instsetoo_native/util/makefile.mk	17 Nov 2005 00:11:06 -0000
+@@ -96,7 +96,8 @@
+ 	@echo "No EPM: do no packaging at this stage"
+ .ELSE			# "$(GUI)"!="WNT" && "$(EPM)"=="NO" && "$(USE_PACKAGER)"==""
+ .IF "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
+-ALLTAR : openoffice sdkoo ure_en-US
++#ALLTAR : openoffice sdkoo ure_en-US
++ALLTAR : openoffice
+ .ELSE			# "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""
+ ALLTAR : updatepack
+ .ENDIF			# "$(UPDATER)"=="" || "$(USE_PACKAGER)"==""

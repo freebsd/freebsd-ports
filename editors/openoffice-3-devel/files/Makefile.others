@@ -22,8 +22,14 @@ package-canonical:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org2.0_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
+	@${RM} -fr ${WRKDIR}/sdk_tmp
+	@${MKDIR} ${WRKDIR}/sdk_tmp
+	@cd ${WRKDIR}/sdk_tmp ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd.pro/SDK/bsd/install/${LOCALIZED_LANG}/freebsd-*/openoffice*.tgz
+	@cd ${WRKDIR}/sdk_tmp/opt/openoffice* ; \
+		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
+		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_SDK.tar.bz2 ${INSTALLATION_BASEDIR}
 
 ure:
 	@${ECHO_MSG} "===>   Make Uno Runtime Environment of OpenOffice.org"
