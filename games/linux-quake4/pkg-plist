@@ -375,8 +375,8 @@ bin/quake4
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%Q4DIR%%pb/htm
 @dirrm %%Q4DIR%%pb
-@dirrm %%Q4DIR%%q4base
-@dirrm %%Q4DIR%%
+@unexec rmdir %D/%%Q4DIR%%q4base 2>/dev/null || true
+@unexec rmdir %D/%%Q4DIR%% 2>/dev/null || echo "Note: %D/%%Q4DIR%% not empty -- not deleted!"
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG/htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ENG
