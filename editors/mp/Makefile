@@ -6,28 +6,68 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	3.2.9
-PORTREVISION=	1
+PORTVERSION=	3.3.16
 CATEGORIES=	editors
-MASTER_SITES=	http://triptico.dhis.org/download/
+MASTER_SITES=	http://www.triptico.com/download/
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	A programming text editor
 
-USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	config.sh
+CONFIGURE_ARGS=	--prefix=${PREFIX} --without-win32
 USE_REINPLACE=	yes
-MAKE_ARGS+=	PREFIX="${PREFIX}"
-MAKEFILE=	makefile
 
-post-patch:
-	${REINPLACE_CMD} "s/gcc -g -Wall/${CC} ${CFLAGS} -Wall/g; \
-		s/mp gmp/mp/g" ${WRKSRC}/makefile
+OPTIONS=	CURSES	"Build with ncurses support"	on \
+		NLS	"Native language support"	on \
+		GTK1	"Build with GTK1 support"	off \
+		GTK2	"Build with GTK2 support"	off \
+		PCRE	"Build with PCRE support"	on
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mp ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
+MAN1=	mp.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CURSES)
+.if ${OSVERSION} < 400010
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+.else
+CONFIGURE_ARGS+=	--without-curses
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_GTK1) || defined(WITH_GTK2)
+.include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.if defined(WITH_GTK1) && !defined(WITH_GTK2)
+USE_GNOME+=	gtk12
+.else
+CONFIGURE_ARGS+=	--without-gtk1
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+.else
+CONFIGURE_ARGS+=	--without-gtk2
+.endif
+.else
+CONFIGURE_ARGS+=	--without-gtk
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--without-gettext
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.else
+CONFIGURE_ARGS+=	--without-pcre
+.endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/makefile.in
+
+.include <bsd.port.post.mk>
