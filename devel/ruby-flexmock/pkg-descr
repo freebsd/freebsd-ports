@@ -1,0 +1,9 @@
+sqlite3-ruby provides an interface for the SQLite DB engine version 3.
+This differs from the DBD::SQLite module in that it is more complete,
+and from the ruby DBI version of SQLite in that it is SQLite specific,
+so you can do things that would otherwise be more difficult via DBI.
+If you want portability between backends, use DBI.  If you want ease
+of use with SQLite, use this.
+
+Author:	Jamis Buck (minam) <jgb3@email.byu.edu>
+WWW:	http://sqlite-ruby.rubyforge.org
