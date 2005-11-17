@@ -13,7 +13,6 @@
     SUBDIR += apel-emacs19
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
-    SUBDIR += apel-xemacs21-mule
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
@@ -53,12 +52,10 @@
     SUBDIR += fb
     SUBDIR += flim
     SUBDIR += flim-emacs20
-    SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
     SUBDIR += flim113-emacs19
     SUBDIR += flim113-emacs20
     SUBDIR += flim113-mule
-    SUBDIR += flim113-xemacs21-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
@@ -128,7 +125,6 @@
     SUBDIR += psgml-emacs19
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
-    SUBDIR += psgml-xemacs21-mule
     SUBDIR += puff
     SUBDIR += qemacs
     SUBDIR += rox-edit
@@ -136,12 +132,10 @@
     SUBDIR += scite
     SUBDIR += semi
     SUBDIR += semi-emacs20
-    SUBDIR += semi-xemacs21-mule
     SUBDIR += semi113
     SUBDIR += semi113-emacs19
     SUBDIR += semi113-emacs20
     SUBDIR += semi113-mule
-    SUBDIR += semi113-xemacs21-mule
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += speedbar
