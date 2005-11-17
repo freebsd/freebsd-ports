@@ -68,6 +68,7 @@
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gnuserv-emacs20
+    SUBDIR += gobby
     SUBDIR += gphpedit
     SUBDIR += hexcurse
     SUBDIR += hexedit
