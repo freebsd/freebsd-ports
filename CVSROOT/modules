@@ -743,8 +743,8 @@ bird		ports/net/bird
 birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
+bison2		ports/devel/bison2
 bison-devel	ports/devel/bison-devel
-bison1875	ports/devel/bison1875
 bisongen	ports/devel/bisongen
 bitchx		ports/irc/bitchx
 bitedit		ports/editors/bitedit
