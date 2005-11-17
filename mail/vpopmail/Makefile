@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,6 +64,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
 # WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
 # WITH_SMTP_AUTH_PATCH	- apply an SMTP authentcation fix
+# WITHOUT_FPIC		- do not add -fPIC to the C compiler flags
 #
 # Set these to the values you'd prefer
 #
@@ -131,6 +132,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
+
+.if !defined(WITHOUT_FPIC)
+CFLAGS+=	-fPIC
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
