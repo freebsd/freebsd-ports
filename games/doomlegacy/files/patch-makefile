@@ -1,15 +1,19 @@
---- makefile.orig	Fri Oct  3 15:11:05 2003
-+++ makefile	Sun Mar 28 17:15:39 2004
-@@ -260,7 +260,7 @@
+--- makefile.orig	Sun Apr 18 18:02:24 2004
++++ makefile	Mon Sep 19 20:44:29 2005
+@@ -260,12 +260,10 @@
  
  # gcc or g++
  #CC=@gcc
 -CC=gcc
-+CC?=gcc
  
  #if use PGCC or EGCS
  PGCC=1
-@@ -407,7 +407,8 @@
+ 
+-WFLAGS=-Wall # -W -Wno-unused -Wno-sign-compare
+ 
+ #uncomment if you want to use the POLL_POINTER hack
+ #POLL_POINTER=-DPOLL_POINTER
+@@ -407,7 +405,8 @@
  
  	    OPTS := $(OPTS) -DVID_X11 $(POLL_POINTER) -I. -I/usr/X11R6/include
  	    LDFLAGS=-L/usr/X11R6/lib
@@ -19,7 +23,16 @@
  	    # name of the exefile
  	    EXENAME=llxdoom
  	    SFLAGS=-g $(OPTS)
-@@ -428,7 +429,8 @@
+@@ -418,7 +417,7 @@
+ 	else #ifdef X
+ 	ifdef FBSD_SDL
+             INTERFACE=sdl
+-	    OPTS := -DLINUX -DFREEBSD -DHWRENDER -DDIRECTFULLSCREEN -DHAVE_MIXER -DSDL -DVID_X11 $(POLL_POINTER) -I. -I/usr/local/include/SDL11 -I/usr/X11R6/include -Wall
++	    OPTS := -DLINUX -DFREEBSD -DHWRENDER -DDIRECTFULLSCREEN -DHAVE_MIXER -DSDL -DVID_X11 $(POLL_POINTER) -I. -I/usr/local/include/SDL11 -I/usr/X11R6/include
+ 	    SFLAGS=-g $(OPTS)
+ 	    OBJS=$(O)/i_video.o $(O)/dosstr.o $(O)/endtxt.o \
+ 		 $(O)/hw_bsp.o $(O)/hw_draw.o $(O)/hw_light.o $(O)/hw_main.o \
+@@ -428,7 +427,8 @@
  	    DEBUGLIBS=$(LIBS)
  
  	    LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib
@@ -29,37 +42,58 @@
  	    DEBUGLIBS=$(LIBS)
  
  	    # name of the exefile
-@@ -555,13 +557,13 @@
+@@ -533,11 +533,7 @@
+ 
+ ifndef SOLARIS
+ ifdef GCC30
+-	M5=-march=pentium
+-	M4=-march=486
+ else
+-	M5=-mpentium
+-	M4=-m486
+ endif
+ endif
+ 
+@@ -555,13 +551,13 @@
  
  	# build a normal optimised version
  	ifdef PGCC
 -		CFLAGS = $(OPTS) $(M5) -O6 -ffast-math -fomit-frame-pointer -fwritable-strings
-+		CFLAGS += $(OPTS) -fwritable-strings
++		CFLAGS += $(OPTS)
  		# -fgcse -fcse-follow-jumps -fcse-skip-blocks -frerun-cse-after-loop -ffunction-cse \
  		# -fexpensive-optimizations -fforce-mem -fstrength-reduce -fthread-jumps  \
  		# -fregmove -fschedule-insns -fschedule-insns2 -fmove-all-movables \
  		# -fcaller-saves -finline-functions -mieee-fp -mfp-ret-in-387 -m80387 -mhard-float -finline
  	else
 -		CFLAGS = $(M4) -O3 -ffast-math -fomit-frame-pointer -fwritable-strings $(OPTS)
-+		CFLAGS += -fwritable-strings $(OPTS)
++		CFLAGS += $(OPTS)
  	endif
  endif
  
-@@ -735,7 +737,7 @@
+@@ -735,7 +731,7 @@
  
  #dll
  dll : $(O)/r_opengl.o $(O)/ogl_x11.o
 -	$(CC) $(M5) -O6 -o $(BIN)/r_opengl.so -shared -nostartfiles $(O)/r_opengl.o $(O)/ogl_x11.o -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lGL -lGLU -lm
-+	$(CC) ${CFLAGS} -o $(BIN)/r_opengl.so -shared -nostartfiles $(O)/r_opengl.o $(O)/ogl_x11.o -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lGL -lGLU -lm
++	$(CC) $(CFLAGS) -o $(BIN)/r_opengl.so -shared -nostartfiles $(O)/r_opengl.o $(O)/ogl_x11.o -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -lGL -lGLU -lm
  
  musserv:
  	@mkdir -p $(MUSSERV)/linux
-@@ -763,7 +765,7 @@
- 	$(CC) $(CFLAGS) $(LDFLAGS) $(WFLAGS) -I/usr/X11R6/include -c $< -o $@
+@@ -760,7 +756,7 @@
+ ifdef FREEBSD
+ ifdef FBSD_SDL
+ $(O)/r_opengl.o:	hardware/r_opengl/r_opengl.c hardware/r_opengl/r_opengl.h
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(WFLAGS) -I/usr/X11R6/include -c $< -o $@
++	$(CC) -fPIC $(CFLAGS) $(LDFLAGS) $(WFLAGS) -I/usr/X11R6/include -c $< -o $@
  else  #FBSD_SDL
  $(O)/r_opengl.o:	hardware/r_opengl/r_opengl.c hardware/r_opengl/r_opengl.h
--	$(CC) $(M5) -O6 -o $(O)/r_opengl.o	-DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/r_opengl.c
-+	$(CC) ${CFLAGS} -o $(O)/r_opengl.o	-DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/r_opengl.c
- endif #FBSD_SDL
- endif #FREEBSD
+ 	$(CC) $(M5) -O6 -o $(O)/r_opengl.o	-DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/r_opengl.c
+@@ -777,7 +773,7 @@
+ 	$(CC) $(M5) -O6 -o $(O)/ogl_x11.o -DHWRENDER -DVID_X11 -DLINUX $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/ogl_x11.c
+ else
+ $(O)/ogl_x11.o:  hardware/r_opengl/ogl_x11.c hardware/r_opengl/r_opengl.h
+-	$(CC) $(M5) -O6 -o $(O)/ogl_x11.o -DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/ogl_x11.c
++	$(CC) -fPIC $(CFLAGS) -o $(O)/ogl_x11.o -DHWRENDER -DVID_X11 -DLINUX -DFREEBSD $(POLL_POINTER) -shared -nostartfiles -I/usr/X11R6/include -c hardware/r_opengl/ogl_x11.c
+ endif
+ 
  

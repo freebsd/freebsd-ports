@@ -1,9 +1,8 @@
 bin/legacy
-doomlegacy/legacy.dat
-doomlegacy/legacy.sh
-doomlegacy/llsndserv
-doomlegacy/lsdldoom
-doomlegacy/r_opengl.so
+%%DATADIR%%/legacy.dat
+%%DATADIR%%/llsndserv
+%%DATADIR%%/lsdldoom
+%%DATADIR%%/r_opengl.so
 %%PORTDOCS%%%%DOCSDIR%%/3dfloors.html
 %%PORTDOCS%%%%DOCSDIR%%/Doublescan.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_SDL
@@ -24,5 +23,5 @@ doomlegacy/r_opengl.so
 %%PORTDOCS%%%%DOCSDIR%%/sound.cfg
 %%PORTDOCS%%%%DOCSDIR%%/source.html
 %%PORTDOCS%%%%DOCSDIR%%/Whatsnew.html
-@dirrm share/doc/doomlegacy
-@dirrm doomlegacy
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
