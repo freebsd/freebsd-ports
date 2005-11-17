@@ -1,0 +1,21 @@
+diff -ruN ./code/unix/cons ../quake3-1.32b-BUILT/./code/unix/cons
+--- ./code/unix/cons	Fri Jun 14 15:01:32 2002
++++ ../quake3-1.32b-BUILT/./code/unix/cons	Tue Aug 23 14:21:45 2005
+@@ -271,7 +271,7 @@
+      # Defaults for a typical (?) UNIX platform.
+      # Your mileage may vary.
+      'unix' => [
+-		'CC'             => 'cc',
++		'CC'             => 'gcc',
+ 		'CFLAGS'         => '',
+ 		'CCCOM'          => '%CC %CFLAGS %_IFLAGS -c %< -o %>',
+ 		'CXX'            => '%CC',
+@@ -294,7 +294,7 @@
+ 		'LD'             => 'ld',
+ 		'LDFLAGS'        => '',
+ 		'PREFLIB'        => 'lib',
+-		'ENV'            => { 'PATH' => '/bin:/usr/bin' },
++		'ENV'            => { 'PATH' => '/bin:/usr/bin:/usr/local/bin' },
+ 		],
+      );
+ 
