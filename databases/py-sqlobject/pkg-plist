@@ -107,41 +107,6 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.py
 %%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyc
 %%PYTHON_SITELIBDIR%%/sqlobject/util/threadinglocal.pyo
-%%PORTDOCS%%%%DOCSDIR%%/Authors.txt
-%%PORTDOCS%%%%DOCSDIR%%/DeveloperGuide.txt
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/Inheritance.txt
-%%PORTDOCS%%%%DOCSDIR%%/News.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/SQLBuilder.txt
-%%PORTDOCS%%%%DOCSDIR%%/SQLObject.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/community.txt
-%%PORTDOCS%%%%DOCSDIR%%/default.css
-%%PORTDOCS%%%%DOCSDIR%%/download.txt
-%%PORTDOCS%%%%DOCSDIR%%/europython/europython_sqlobj.py
-%%PORTDOCS%%%%DOCSDIR%%/europython/main.css
-%%PORTDOCS%%%%DOCSDIR%%/europython/person.py
-%%PORTDOCS%%%%DOCSDIR%%/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/interface.py
-%%PORTDOCS%%%%DOCSDIR%%/links.txt
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/sqlobject-and-database-programming.html
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/bodybg.gif
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/custom.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/framing.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/opera.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/pretty.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/print.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/s5-core.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/slides.css
-%%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui/slides.js
-%%PORTDOCS%%%%DOCSDIR%%/rebuild
-%%PORTDOCS%%%%DOCSDIR%%/sqlobject-admin.txt
-%%PORTDOCS%%%%DOCSDIR%%/test.py
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11/ui
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/presentation-2004-11
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/europython
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/util
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/sqlobject/sqlite
