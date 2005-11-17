@@ -59,8 +59,8 @@ CONFIGURE_ARGS+=--with-pgsql
 .endif
 
 .if defined(WITH_SQLITE3)
+USE_SQLITE=	yes
 CONFIGURE_ARGS+=--with-sqlite3
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if defined(WITHOUT_D2)
