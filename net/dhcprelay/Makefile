@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcprelay
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
