@@ -123,6 +123,7 @@
     SUBDIR += dodgindiamond2
     SUBDIR += dontspace
     SUBDIR += doom
+    SUBDIR += doom-data
     SUBDIR += doomlegacy
     SUBDIR += dopewars
     SUBDIR += drm

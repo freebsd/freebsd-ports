@@ -1,0 +1,42 @@
+# Makefile for defining variables used by other Doom related ports.
+
+# Determine if the port is a Doom engine.
+
+DMENGINES=	deng doom doomlegacy prboom vavoom
+
+.for f in ${DMENGINES}
+.   if ${PORTNAME} == ${f}
+ENGINE=		yes
+.   endif
+.endfor
+
+# Package name prefix.
+
+DMPKGNAMEPREFIX=doom-
+
+.if !defined(ENGINE)
+PKGNAMEPREFIX?=	${DMPKGNAMEPREFIX}
+.endif
+
+# Dependency to "games/doom-data".
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${DMDIR}:${PORTSDIR}/games/doom-data
+.endif
+
+# Installation directories.
+
+DMDIR=		${PREFIX}/share/doom
+
+.if ${PORTNAME} == "data"
+DATADIR?=	${DMDIR}
+.endif
+
+.if ${PORTNAME} != "data" && !defined(ENGINE)
+DATADIR?=	${DMDIR}/${PORTNAME}
+.endif
+
+DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+PLIST_SUB+=	DMDIR="${DMDIR:S/${PREFIX}\///}"
+SUB_LIST+=	DMDIR="${DMDIR}"
