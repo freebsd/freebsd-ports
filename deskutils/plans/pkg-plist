@@ -323,10 +323,9 @@
 %%DIR%%/theme/upcoming_events.css
 %%DIR%%/theme/upcoming_events.js
 %%DIR%%/us_english.pl
-
 @dirrm %%DIR%%/theme/icons
 @dirrm %%DIR%%/theme/graphics
-@dirrm %%DIR%%/theme
+@unexec rmdir %D/%%DIR%%/theme 2>/dev/null || true
 @unexec rmdir %D/%%DIR%%/sessions 2>/dev/null || true
 @unexec rmdir %D/%%DIR%%/data 2>/dev/null || true
 @unexec rmdir %D/%%DIR%% 2>/dev/null || echo "Note: %D/%%DIR%% not empty -- not deleted!"
