@@ -7,6 +7,7 @@
 
 PORTNAME=	deng
 PORTVERSION=	1.8.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
 
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -26,9 +26,12 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 USE_SDL=	sdl mixer net
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
-NOT_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	i386
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	"PREFIX=${PREFIX}" "DOCSDIR=${DOCSDIR}"
+
+.include "${.CURDIR}/../doom-data/Makefile.include"
 
 .if exists(${LOCALBASE}/lib/libopenal.so.0) || defined(WITH_OPENAL)
 WITH_OPENAL=	yes
@@ -41,12 +44,6 @@ PLIST_SUB=	WITH_OPENAL="@comment "
 PLIST_SUB=	WITH_OPENAL=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64" || ${ARCH} == "alpha"
-BROKEN=		"Does not build on ia64, sparc64 or alpha"
-.endif
-
 .ifndef (WITH_OPENAL)
 pre-everything::
 	@${ECHO_CMD} ""
@@ -55,21 +52,20 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's/-Wunused-.+ / /g; \
+	@${REINPLACE_CMD} -E -i '' -e 's/-Wunused-.+ / /g; \
 				 s/SDL(\\|\/)//g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name '*.[ch]' | \
-		${XARGS} ${REINPLACE_CMD} -E -e 's/SDL(\\|\/)//g'
+		${XARGS} ${REINPLACE_CMD} -i '' -E -e 's/SDL(\\|\/)//g'
 
 post-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}
-.for i in jDoom jHeretic jHexen
-	@${MKDIR} ${DOCSDIR}/${i}
-	${INSTALL_DATA} ${WRKSRC}/Doc/${i}/*.txt ${DOCSDIR}/${i}
-.endfor
+.	for i in jDoom jHeretic jHexen
+		@${MKDIR} ${DOCSDIR}/${i}
+		${INSTALL_DATA} ${WRKSRC}/Doc/${i}/*.txt ${DOCSDIR}/${i}
+.	endfor
 .endif
-	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%DOCSDIR%%|${DOCSDIR}|' \
-		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
