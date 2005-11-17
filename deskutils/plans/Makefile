@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.4.7
-PORTREVISION=	1
+PORTVERSION=	7.4.8
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.freebsd.org/gifs/:logo
@@ -25,10 +24,13 @@ USE_PERL5_RUN=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-DIR=		www/data/plans
-PLIST_SUB+=	DIR=${DIR}
+WWWDOCROOT?=	www/data
+PLANSSUBDIR?=	plans
+PLANSDIR?=	${WWWDOCROOT}/${PLANSSUBDIR}
+PLIST_SUB+=	DIR=${PLANSDIR}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+DIR=		${PREFIX}/${PLANSDIR}
 
 post-extract:
 	${CP} ${DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
@@ -37,12 +39,12 @@ post-patch:
 	@${RM} -f ${WRKSRC}/theme/plans.template.orig
 
 do-install:
-	@${MKDIR} ${PREFIX}/${DIR}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/${DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DIR}
-	@${FIND} ${PREFIX}/${DIR} -type f -exec ${CHMOD} 644 {} \;
-	@${FIND} ${PREFIX}/${DIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
-	@${FIND} ${PREFIX}/${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
+	@${INSTALL} -d ${DIR}
+	@${CP} -nR ${WRKSRC}/ ${DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}
+	@${FIND} ${DIR} -type f -exec ${CHMOD} 644 {} \;
+	@${FIND} ${DIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
+	@${FIND} ${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
