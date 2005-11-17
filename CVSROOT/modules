@@ -1767,6 +1767,7 @@ doom-data	ports/games/doom-data
 doom-hacx	ports/games/doom-hacx
 doom-hr		ports/games/doom-hr
 doom-hr2	ports/games/doom-hr2
+doom-wolfendoom	ports/games/doom-wolfendoom
 doomlegacy	ports/games/doomlegacy
 doorman		ports/security/doorman
 dopewars	ports/games/dopewars
