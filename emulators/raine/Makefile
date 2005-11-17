@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	raine
-PORTVERSION=	0.42.3
+PORTVERSION=	0.43.2
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
