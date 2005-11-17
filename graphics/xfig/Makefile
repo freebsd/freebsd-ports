@@ -22,6 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
+CONFLICTS=	xfig-3.2.5*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_REINPLACE=	yes
