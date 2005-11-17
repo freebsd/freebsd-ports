@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for dynamic control of xterm properties
 
-RUN_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
+RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
