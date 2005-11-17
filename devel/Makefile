@@ -1165,6 +1165,7 @@
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-WWW-Mechanize
+    SUBDIR += p5-Test-WWW-Mechanize-Catalyst
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Text-LevenshteinXS

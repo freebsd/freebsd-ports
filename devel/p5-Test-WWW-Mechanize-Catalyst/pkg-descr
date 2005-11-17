@@ -1,0 +1,13 @@
+Test::WWW::Mechanize is a subclass of WWW::Mechanize that incorporates
+features for web application testing. The Test::WWW::Mechanize::Catalyst
+module meshes the two to allow easy testing of Catalyst applications
+without starting up a web server.
+
+Testing web applications has always been a bit tricky, normally starting
+a web server for your application and making real HTTP requests to it.
+This module allows you to test Catalyst web applications but does not
+start a server or issue HTTP requests. Instead, it passes the HTTP
+request object directly to Catalyst. Thus you do not need to use a real
+hostname: "http://localhost/" will do.
+
+WWW: http://search.cpan.org/dist/Test-WWW-Mechanize-Catalyst/
