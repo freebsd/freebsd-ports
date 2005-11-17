@@ -36,18 +36,26 @@ MAKE_ARGS=	"USE_SDL=1"
 MAKE_ARGS+=	"USE_AL=1"
 .endif
 
+.ifdef (WITH_OPTIMIZED_CFLAGS)
+MAKE_ARGS+=	OPT_CFLAGS="-O3 -ffast-math -fomit-frame-pointer"
+.endif
+
+SUB_FILES=	pkg-message vavoom
+SUB_LIST=	"PREFIX=${PREFIX}" "PORTSDIR=${PORTSDIR}"
+
+.include "${.CURDIR}/../doom-data/Makefile.include"
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		Does not build on FreeBSD 6.X
-.endif
-
-.ifndef (WITH_OPENAL)
 pre-everything::
-	@${ECHO_CMD} "********************************************************************"
-	@${ECHO_CMD} "You can define WITH_OPENAL=yes to build Vavoom with 3D sound support"
-	@${ECHO_CMD} "********************************************************************"
+	@${ECHO_CMD} ""
+.ifndef (WITH_OPENAL)
+	@${ECHO_CMD} "Define WITH_OPENAL=yes to build Vavoom with 3D sound support"
 .endif
+.ifndef (WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_CMD} "Define WITH_OPTIMIZED_CFLAGS=yes to build Vavoom optimized for speed"
+.endif
+	@${ECHO_CMD} ""
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
@@ -59,6 +67,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Vavoom ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/VavoomSV ${PREFIX}/bin
+
+# install wrapper script
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/basev
@@ -80,9 +91,18 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/vavmref.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
-post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%DATADIR%%|${DATADIR}|' \
-		<${PKGMESSAGE}
+# Run this target as a user from which you will play Vavoom. It will create
+# required symlinks in users home directory. This should be done only once.
+installuser:
+	cd ${DATADIR} && \
+	${FIND} . -type d -exec ${MKDIR} -p ~/.${PORTNAME}/{} \; && \
+	${FIND} . -type f -exec ${LN} -sf ${DATADIR}/{} ~/.${PORTNAME}/{} \;
+.if exists(${DMDIR})
+	cd ${DMDIR} && \
+	${FIND} . -type d -exec ${MKDIR} -p ~/.${PORTNAME}/{} \; && \
+	${FIND} . -type f -exec ${LN} -sf ${DMDIR}/{} ~/.${PORTNAME}/{} \;
+.endif
 
 .include <bsd.port.post.mk>

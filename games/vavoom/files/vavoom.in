@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if test $# = 1 && test $1 = "-s"; then
+	EXE="VavoomSV"
+	shift
+else
+	EXE="Vavoom"
+fi
+
+cd ~/.vavoom && %%PREFIX%%/bin/${EXE} $*

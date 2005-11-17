@@ -1,0 +1,19 @@
+*****************************************************************************
+* In order to run Vavoom you will need original IWAD file from either:
+* 	Doom, Doom II, TNT, Plutonia, Heretic, Hexen or Strife.
+* You should install any of them using games/doom-data meta port.
+*
+* Vavoom needs to be run from a directory containing its data files and
+* IWAD files taken from original games. So before starting to play Vavoom
+* you should create required symlinks in users home directory.
+* This process is automated by 'installuser' target in vavoom port makefile.
+* You can run something like this after installing the port:
+*	cd %%PORTSDIR%%/games/vavoom && make installuser
+* This should be done only once on per user basis.
+*
+* Once done you are ready to play Vavoom. Run it as
+*	%%PREFIX%%/bin/vavoom ...
+* or as
+*	%%PREFIX%%/bin/vavoom -s ...
+* to start its dedicated server.
+*****************************************************************************
