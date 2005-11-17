@@ -1,10 +1,12 @@
 %%WITH_X11%%bin/floppyd
 %%WITH_X11%%bin/floppyd_installtest
+bin/amuFormat.sh
 bin/mattrib
 bin/mbadblocks
 bin/mcat
 bin/mcd
 bin/mcheck
+bin/mclasserase
 bin/mcomp
 bin/mcopy
 bin/mdel
