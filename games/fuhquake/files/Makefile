@@ -13,11 +13,6 @@
 
 DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -I${X11BASE}/include
 
-.if make(svga)
-DO_CFLAGS +=	-DNO_WINDOWED_MOUSE
-.undef WITHOUT_X86_ASM
-.endif
-
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
 .endif
@@ -27,10 +22,10 @@ DO_CFLAGS +=	-DWITH_ZLIB -DWITH_PNG -DWITH_JPEG -DGLQUAKE -DWITH_DGA -DWITH_VMOD
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-DO_CFLAGS +=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+DO_CFLAGS +=	-O3 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 .endif
 
-.if defined(WITH_XMMS) && !make(svga)
+.if defined(WITH_XMMS)
 XMMS_CFLAGS !=	glib-config --cflags
 DO_CFLAGS +=	-D__XMMS__ ${XMMS_CFLAGS} ${PTHREAD_CFLAGS}
 XMMS_LIBS = -L${X11BASE}/lib -lxmms ${PTHREAD_LIBS}
@@ -190,15 +185,8 @@ CL_GLX_OBJS = \
 		vid_common_gl.o \
 		vid_glx.o
 
-CL_SVGA_OBJS = vid_svgalib.o
-
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
-CL_SVGA_AS_OBJS = d_copy.o
-.endif
-
 CL_COMMON_LIBS = -lm
 CL_X11_LIBS = -L${X11BASE}/lib -lX11 -lXext
-CL_SVGA_LIBS = -L${LOCALBASE}/lib -lvga
 CL_GLX_LIBS = -L${LOCALBASE}/lib -lpng -ljpeg -L${X11BASE}/lib -lGL -lXxf86dga -lXxf86vm
 
 .c.o:
@@ -218,13 +206,6 @@ glx:	${CL_COMMON_OBJS} ${CL_COMMON_AS_OBJS} ${CL_GLX_OBJS}
 		${CC} ${CFLAGS} -o fuhquake-glx \
 			${CL_COMMON_OBJS} ${CL_COMMON_AS_OBJS} ${CL_GLX_OBJS} \
 			${CL_COMMON_LIBS} ${CL_GLX_LIBS} ${XMMS_LIBS}
-
-svga:	${CL_COMMON_OBJS} ${CL_COMMON_AS_OBJS} \
-	${CL_SOFT_OBJS} ${CL_SOFT_AS_OBJS} ${CL_SVGA_OBJS} ${CL_SVGA_AS_OBJS}
-		${CC} ${DO_CFLAGS} -o fuhquake-svga \
-			${CL_COMMON_OBJS} ${CL_COMMON_AS_OBJS} ${CL_SOFT_OBJS} \
-			${CL_SOFT_AS_OBJS} ${CL_SVGA_OBJS} ${CL_SVGA_AS_OBJS} \
-			${CL_COMMON_LIBS} ${CL_SVGA_LIBS} ${XMMS_LIBS}
 
 clean:
 		-rm -f *.o *.core
