@@ -1,0 +1,4 @@
+This is the "DBIx::Class" model class. It's built on top 
+"DBIx::Class::Loader".
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-DBIC/
