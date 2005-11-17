@@ -587,6 +587,7 @@
     SUBDIR += xenomorph
     SUBDIR += xface.el
     SUBDIR += xfig
+    SUBDIR += xfig-devel
     SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xfree86-dri
