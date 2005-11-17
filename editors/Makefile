@@ -52,6 +52,7 @@
     SUBDIR += fb
     SUBDIR += flim
     SUBDIR += flim-emacs20
+    SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
     SUBDIR += flim113-emacs19
     SUBDIR += flim113-emacs20
@@ -133,6 +134,7 @@
     SUBDIR += scite
     SUBDIR += semi
     SUBDIR += semi-emacs20
+    SUBDIR += semi-xemacs21-mule
     SUBDIR += semi113
     SUBDIR += semi113-emacs19
     SUBDIR += semi113-emacs20

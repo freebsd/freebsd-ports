@@ -1960,10 +1960,8 @@ deskutils/smeg|deskutils/alacarte|2005-11-16|Now project name is alacarte
 devel/bison1875||2005-11-16|No longer needed
 databases/postgresql-devel||2005-11-16|PostgreSQL 8.1 has landed
 editors/apel-xemacs21-mule||2005-11-17|Deleted from ports collection
-editors/flim-xemacs21-mule||2005-11-17|Deleted from ports collection
 editors/flim113-xemacs21-mule||2005-11-17|Deleted from ports collection
 editors/psgml-xemacs21-mule||2005-11-17|Deleted from ports collection
-editors/semi-xemacs21-mule||2005-11-17|Deleted from ports collection
 editors/semi113-xemacs21-mule||2005-11-17|Deleted from ports collection
 mail/mew-xemacs21-mule||2005-11-17|Deleted from ports collection
 mail/mew2-xemacs21-mule||2005-11-17|Deleted from ports collection
