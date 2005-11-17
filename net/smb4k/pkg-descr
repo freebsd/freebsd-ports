@@ -1,0 +1,18 @@
+Smb4K is an SMB share browser for KDE. Its features are inspired by Komba2
+by Frank Schwanz. It uses the Samba software suite for an easy access
+to the SMB shares of your local network neighborhood.
+
+Features so far:
+
+- Scanning for (active) workgroups, hosts, and shares
+- Mounting and unmounting of SMB shares, including unmounting all shares at once
+- Access to the files of a mounted SMB share using Konqueror
+- Auto-detection of external mounts/unmounts
+- Mounting of recently used shares on start-up
+- Miscellaneous infos about the SMB shares
+- Basic network search
+- WINS server support
+- Preview of SMB shares
+- Selectable look-up method
+
+WWW: http://smb4k.berlios.de
