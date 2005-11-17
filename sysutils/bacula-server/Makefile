@@ -75,6 +75,8 @@ USE_GNOME=	libgnome
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
+MAN8=           "bacula.8"
+
 .include <bsd.port.pre.mk>
 
 # Client only or full server version
