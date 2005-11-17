@@ -19,14 +19,20 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 
+PLIST_FILES=	bin/qcc
+PORTDOCS=	readme.txt
+
 post-extract:
 		@${REINPLACE_CMD} -E '/^CFLAGS/d; s/cc( -c)? \$$\(C/$$(CC)\1 \$$\(C/' \
 			${WRKSRC}/makefile
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
-		@${MKDIR} ${PREFIX}/share/qcc/v101qc
-		${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcc
-		${INSTALL_DATA} ${WRKSRC}/v101qc/* ${PREFIX}/share/qcc/v101qc
+.if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
+
+.include "${.CURDIR}/../quake-source/Makefile.include"
 
 .include <bsd.port.mk>
