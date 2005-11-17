@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4util
-PORTVERSION=	4.2.3.1
+PORTVERSION=	4.2.3.2
 PORTREVISION=	0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
