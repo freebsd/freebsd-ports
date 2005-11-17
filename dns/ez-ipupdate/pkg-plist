@@ -1,6 +1,5 @@
 bin/ez-ipupdate
 etc/ez-ipupdate.conf.sample
-etc/rc.d/ez-ipupdate.sh
 share/examples/ez-ipupdate/example-dhs.conf
 share/examples/ez-ipupdate/example-dyndns.conf
 share/examples/ez-ipupdate/example-dyns.conf
