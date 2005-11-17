@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.4
-PORTREVISION=	3
+PORTVERSION=	3.2.5.a5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xfig.org/xfigdist/ \
-		ftp://www-epb.lbl.gov/xfig/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. previous_versions
-DISTNAME=	${PORTNAME}.${PORTVERSION}.full
+MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
+DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A drawing program for X11
+MAINTAINER=	lesi@FreeBSD.org
+COMMENT=	A drawing program for X11 (Alpha version)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
+CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:S,.a,-alpha,}
+
+LATEST_LINK=	xfig-devel
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xfig.1
+
+MAKE_ENV+=	DOCSDIR=${DOCSDIR}
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install.all
@@ -44,5 +46,6 @@ post-patch:
 .if defined(WITHOUT_GHOSTSCRIPT)
 	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
+	echo "NOPORTDOCS=${NOPORTDOCS}"
 
 .include <bsd.port.post.mk>

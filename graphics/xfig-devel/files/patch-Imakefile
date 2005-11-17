@@ -1,35 +1,50 @@
---- Imakefile.orig	Thu Dec 19 18:57:11 2002
-+++ Imakefile	Wed Aug 31 09:58:41 2005
-@@ -48,8 +48,8 @@
- XCOMM Redefine the following if your PNG library and/or include file
+--- Imakefile.orig	Mon Nov 14 15:30:02 2005
++++ Imakefile	Mon Nov 14 15:56:59 2005
+@@ -49,16 +49,16 @@
+ XCOMM Uncomment the following definition for XAW3D if you want to use
+ XCOMM the 3d Athena Widget Set (highly recommended!)
+ 
+-XCOMM #define XAW3D
++#define XAW3D
+ 
+ XCOMM Uncomment the following if you have David Hawkey's Xaw3D version 1.5E which has
+ XCOMM some new features, including "Tips", which replace xfig's "help balloons"
+ 
+-XCOMM #define XAW3D1_5E
++#define XAW3D1_5E
+ 
+ #ifdef XAW3D1_5E
+     DUSEXAW3D = -DXAW3D -DXAW3D1_5E
+-    XAWLIB = -lXaw3d15e
++    XAWLIB = -lXaw3d
+ #else
+     XAW_SRC = w_menuentry.c SmeCascade.c SmeBSB.c SimpleMenu.c
+     XAW_OBJ = w_menuentry.o SmeCascade.o SmeBSB.o SimpleMenu.o
+@@ -71,9 +71,9 @@
+ XCOMM Redefine the following if your PNG library, zlib library and/or include file
  XCOMM are in different places
  
 -PNGLIBDIR = $(USRLIBDIR)
 -PNGINC = -I/usr/local/include
-+PNGLIBDIR = ${LOCALBASE}/lib
-+PNGINC = -I${LOCALBASE}/include/libpng
+-ZLIBDIR = $(USRLIBDIR)
++PNGLIBDIR = $(LOCALBASE)/lib
++PNGINC = -I$(LOCALBASE)/include
++/* ZLIBDIR = $(USRLIBDIR) */
  
  XCOMM If don't want JPEG support, comment out the #define USEJPEG line
  XCOMM Uncomment the #define for USEJPEG if you want to be able to import
-@@ -68,8 +68,8 @@
+@@ -92,8 +92,8 @@
  
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
 -JPEGLIBDIR = /usr/local/lib
 -JPEGINC = -I/usr/include/X11
-+JPEGLIBDIR = ${LOCALBASE}/lib
-+JPEGINC = -I${LOCALBASE}/include
++JPEGLIBDIR = $(LOCALBASE)/lib
++JPEGINC = -I$(LOCALBASE)/X11
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINC = -I$(JPEGLIBDIR)
-@@ -87,12 +87,12 @@
- XCOMM Change XPMLIBDIR if necessary to point to the xpm library (libXpm)
- XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
- 
--XCOMM #define USEXPM
--XCOMM #define USEXPM_ICON
-+#define USEXPM
-+#define USEXPM_ICON
+@@ -116,7 +116,7 @@
  
  #ifdef USEXPM
  XPMLIBDIR = $(USRLIBDIR)
@@ -38,31 +53,7 @@
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
-@@ -105,17 +105,20 @@
- XCOMM Then be sure to change the XAW3DINC to point to the directory where your
- XCOMM 3D Athena widget headers are located
- 
--XCOMM #define XAW3D
-+#define XAW3D
- 
- #ifdef XAW3D
--XAW3DINC = -I/usr/include/X11/Xaw3d
-+XAW3DINC = -I$(INCDIR)/X11/Xaw3d
- DUSEXAW3D = -DXAW3D
- XAWLIB = -lXaw3d
-+#else
-+XAW_SRC = w_menuentry.c SmeCascade.c SmeBSB.c SimpleMenu.c
-+XAW_OBJ = w_menuentry.o SmeCascade.o SmeBSB.o SimpleMenu.o
- #endif
- 
- XCOMM Uncomment the following if you have a wheel mouse.  See docs for description.
- 
--XCOMM #define WHEELMOUSE
-+#define WHEELMOUSE
- 
- #ifdef WHEELMOUSE
- DUSEWHEELMOUSE = -DWHEELMOUSE
-@@ -154,7 +157,7 @@
+@@ -157,7 +157,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -71,25 +62,25 @@
  
  XCOMM use (and change) the following if you want the multi-key data base file
  XCOMM somewhere other than the standard X11 library directory
-@@ -166,7 +169,7 @@
+@@ -169,7 +169,7 @@
  
  XCOMM XFIGDOCDIR tells where the html and pdf documentation should go
  XCOMM XFIGDOCDIR = $(DOCDIR)/xfig
 -XFIGDOCDIR = /usr/share/doc/xfig
-+XFIGDOCDIR = $(LIBDIR)/xfig
++XFIGDOCDIR = $(DOCSDIR)
  
  XCOMM MANDIR tells where the standard man pages should go (no need to change it
  XCOMM if you want the man pages installed in the standard place on your system
-@@ -234,7 +237,7 @@
+@@ -239,7 +239,7 @@
  #endif /* USEJPEG */
  
  #ifdef I18N
 -I18N_DEFS = -DI18N -DSETLOCALE
-+I18N_DEFS = -DI18N #-DSETLOCALE
++I18N_DEFS = -DI18N /* -DSETLOCALE */
  I18N_SRC = w_i18n.c
  I18N_OBJ = w_i18n.o
  #endif
-@@ -251,11 +254,13 @@
+@@ -256,11 +256,13 @@
  		$(HAVE_NO_STRCASECMP) \
  		$(NEED_STRERROR)
  
@@ -103,48 +94,21 @@
  
  #ifdef USESMALLICONS
  DUSESMALLICONS = -DUSE_SMALL_ICONS
-@@ -299,12 +304,12 @@
- 		u_elastic.c u_error.c u_fonts.c u_free.c u_geom.c \
- 		u_list.c u_markers.c u_pan.c u_print.c u_redraw.c u_scale.c u_search.c \
- 		u_smartsearch.c u_translate.c u_undo.c w_digitize.c w_listwidget.c \
--		w_browse.c w_capture.c w_srchrepl.c w_help.c w_layers.c w_menuentry.c \
-+		w_browse.c w_capture.c w_srchrepl.c w_help.c w_layers.c \
- 		w_canvas.c w_cmdpanel.c w_color.c w_cursor.c w_dir.c w_drawprim.c \
- 		w_export.c w_file.c w_fontbits.c w_fontpanel.c w_grid.c w_icons.c \
- 		w_indpanel.c w_library.c w_modepanel.c w_mousefun.c w_msgpanel.c \
- 		w_print.c w_rottext.c w_rulers.c w_setup.c w_style.c w_util.c w_zoom.c \
--		$(I18N_SRC) SmeCascade.c SmeBSB.c SimpleMenu.c
-+		$(I18N_SRC) $(XAW_SRC)
- 
- XFIGOBJ =	d_arc.o d_arcbox.o d_box.o d_ellipse.o d_picobj.o \
- 		d_subspline.o d_line.o d_regpoly.o d_spline.o d_text.o \
-@@ -321,12 +326,12 @@
- 		u_elastic.o u_error.o u_fonts.o u_free.o u_geom.o \
- 		u_list.o u_markers.o u_pan.o u_print.o u_redraw.o u_scale.o u_search.o \
- 		u_smartsearch.o u_translate.o u_undo.o w_digitize.o w_listwidget.o \
--		w_browse.o w_capture.o w_srchrepl.o w_help.o w_layers.o w_menuentry.o \
-+		w_browse.o w_capture.o w_srchrepl.o w_help.o w_layers.o \
- 		w_canvas.o w_cmdpanel.o w_color.o w_cursor.o w_dir.o w_drawprim.o \
- 		w_export.o w_file.o w_fontbits.o w_fontpanel.o w_grid.o w_icons.o \
- 		w_indpanel.o w_library.o w_modepanel.o w_mousefun.o w_msgpanel.o \
- 		w_print.o w_rottext.o w_rulers.o w_setup.o w_style.o w_util.o w_zoom.o \
--		$(I18N_OBJ) SmeCascade.o SmeBSB.o SimpleMenu.o
-+		$(I18N_OBJ) $(XAW_OBJ)
- 
- XCOMM Other dependencies should be handled by "make depend"
- 
-@@ -541,11 +546,13 @@
- SpecialObjectRule(w_grid.o, w_grid.c  mode.h, )
- SpecialObjectRule(w_indpanel.o, w_indpanel.c  mode.h w_indpanel.h object.h, )
- SpecialObjectRule(w_library.o, w_library.c  mode.h, )
--SpecialObjectRule(w_menuentry.o, w_menuentry.c  w_menuentry.h w_menuentryP.h, )
- SpecialObjectRule(w_modepanel.o, w_modepanel.c  mode.h w_indpanel.h w_icons.h object.h, $(DUSESMALLICONS))
- SpecialObjectRule(w_msgpanel.o, w_msgpanel.c  mode.h, )
- SpecialObjectRule(w_rulers.o, w_rulers.c  mode.h, )
- SpecialObjectRule(w_zoom.o, w_zoom.c  mode.h, )
-+#ifndef XAW3D
-+SpecialObjectRule(w_menuentry.o, w_menuentry.c  w_menuentry.h w_menuentryP.h, )
-+#endif
- 
- #ifdef USEJPEG
- #ifndef USEINSTALLEDJPEG
+@@ -469,13 +471,13 @@
+ 						else (set -x; $(MKDIRHIER) $(DESTDIR)$(OBJLIBDIR)/$$d/$$f/$$dd/$$l ); fi ; \
+ 					    (cd $$l ; \
+ 						for m in * ; do \
+-						    $(INSTALL) -m 644 -c $$m $(DESTDIR)$(OBJLIBDIR)/$$d/$$f/$$dd/$$l ; \
++						    $(INSTALL) -m 644 -c -- $$m $(DESTDIR)$(OBJLIBDIR)/$$d/$$f/$$dd/$$l ; \
+ 						done ) ) ; \
+-					else ( $(INSTALL) -m 644 -c $$l $(DESTDIR)$(OBJLIBDIR)/$$d/$$f/$$dd ) ; fi ; \
++					else ( $(INSTALL) -m 644 -c -- $$l $(DESTDIR)$(OBJLIBDIR)/$$d/$$f/$$dd ) ; fi ; \
+ 				done) ) ; \
+-			    else ( $(INSTALL) -m 644 -c $$dd $(DESTDIR)$(OBJLIBDIR)/$$d/$$f ) ; fi ; \
++			    else ( $(INSTALL) -m 644 -c -- $$dd $(DESTDIR)$(OBJLIBDIR)/$$d/$$f ) ; fi ; \
+ 			done) ); \
+-		else ($(INSTALL) -m 644 -c $$f $(DESTDIR)$(OBJLIBDIR)/$$d ) ; fi ; \
++		else ($(INSTALL) -m 644 -c -- $$f $(DESTDIR)$(OBJLIBDIR)/$$d ) ; fi ; \
+ 	    done ) ; \
+ 	done ; ) ; \
+ 	else echo No Object Libraries to install ; \
