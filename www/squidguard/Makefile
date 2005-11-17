@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
 		--with-sg-logdir=${LOGDIR} \
 		--exec-prefix=${PREFIX}
 
-CFGINPUT=	files/sgcfg.in
+CFGINPUT=	${.CURDIR}/files/sgcfg.in
 
 SQUID_UID?=	nobody
 SQUID_GID?=	nogroup
