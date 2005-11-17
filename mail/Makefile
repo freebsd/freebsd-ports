@@ -519,6 +519,7 @@
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += sympa5
+    SUBDIR += synonym
     SUBDIR += t-prot
     SUBDIR += teapop
     SUBDIR += teapop-devel
