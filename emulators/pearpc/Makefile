@@ -28,8 +28,7 @@ PLIST_DIRS=	%%DATADIR%%
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .else
-CONFIGURE_ARGS+=	--disable-fpo \
-			--disable-release
+CONFIGURE_ARGS+=	--disable-fpo
 .endif
 
 # GTK and QT ui are broken in this version
@@ -85,6 +84,9 @@ pre-everything::
 	@${ECHO_MSG} "You can do optimized build defining WITH_OPTIMIZED_CFLAGS=yes."
 	@${ECHO_MSG} ""
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|-g -O2||;s|-O2||' ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
