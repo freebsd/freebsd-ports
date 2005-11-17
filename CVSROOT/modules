@@ -407,7 +407,6 @@ apel		ports/editors/apel
 apel-emacs19	ports/editors/apel-emacs19
 apel-emacs20	ports/editors/apel-emacs20
 apel-mule	ports/editors/apel-mule
-apel-xemacs21-mule	ports/editors/apel-xemacs21-mule
 apg		ports/security/apg
 apinger		ports/net/apinger
 apollon		ports/net/apollon
@@ -2359,12 +2358,10 @@ flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
 flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
-flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flim113		ports/editors/flim113
 flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
 flim113-mule	ports/editors/flim113-mule
-flim113-xemacs21-mule	ports/editors/flim113-xemacs21-mule
 flip		ports/graphics/flip
 flite		ports/audio/flite
 floatator	ports/misc/floatator
@@ -6087,13 +6084,10 @@ metromap	ports/misc/metromap
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
 mew-mule	ports/mail/mew-mule
-mew-xemacs21-mule	ports/mail/mew-xemacs21-mule
 mew2		ports/mail/mew2
 mew2-emacs20	ports/mail/mew2-emacs20
-mew2-xemacs21-mule	ports/mail/mew2-xemacs21-mule
 mew3		ports/mail/mew3
 mew3-emacs20	ports/mail/mew3-emacs20
-mew3-xemacs21-mule	ports/mail/mew3-xemacs21-mule
 mftrace		ports/print/mftrace
 mg		ports/editors/mg
 mga_hal		ports/x11-servers/mga_hal
@@ -9987,7 +9981,6 @@ psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
-psgml-xemacs21-mule	ports/editors/psgml-xemacs21-mule
 psi		ports/net-im/psi
 psi3		ports/science/psi3
 psi88		ports/biology/psi88
@@ -11285,12 +11278,10 @@ semantic	ports/devel/semantic
 semantic-emacs20	ports/devel/semantic-emacs20
 semi		ports/editors/semi
 semi-emacs20	ports/editors/semi-emacs20
-semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
 semi113		ports/editors/semi113
 semi113-emacs19	ports/editors/semi113-emacs19
 semi113-emacs20	ports/editors/semi113-emacs20
 semi113-mule	ports/editors/semi113-mule
-semi113-xemacs21-mule	ports/editors/semi113-xemacs21-mule
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
