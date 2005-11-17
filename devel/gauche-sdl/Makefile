@@ -8,7 +8,7 @@
 PORTNAME=	gauche-sdl
 PORTVERSION=	0.5.1
 CATEGORIES=	devel scheme
-MASTER_SITES=	http://www.michaelvess.com/text/code/
+MASTER_SITES=	http://www.michaelvess.com/code/
 DISTNAME=	${PORTFAKENAME}-${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
