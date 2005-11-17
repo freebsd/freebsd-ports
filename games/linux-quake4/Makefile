@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	quake4
-PORTVERSION=	1.0.2147.12
+PORTVERSION=	1.0.5
+PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake4/linux/old/
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake4/linux/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
