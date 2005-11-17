@@ -1763,6 +1763,7 @@ donkey		ports/security/donkey
 dontspace	ports/games/dontspace
 doodle		ports/deskutils/doodle
 doom		ports/games/doom
+doom-data	ports/games/doom-data
 doomlegacy	ports/games/doomlegacy
 doorman		ports/security/doorman
 dopewars	ports/games/dopewars
