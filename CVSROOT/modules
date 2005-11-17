@@ -12143,6 +12143,7 @@ toppler		ports/games/toppler
 tor		ports/security/tor
 torcs		ports/games/torcs
 tornado		ports/games/tornado
+torrent		ports/games/torrent
 torrentflux	ports/net/torrentflux
 torrentsniff	ports/net/torrentsniff
 torrentzip	ports/archivers/torrentzip
