@@ -10,8 +10,8 @@ include/estnode.h
 include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
-lib/libestraier.so.6
-lib/libestraier.so.6.5.0
+lib/libestraier.so.7
+lib/libestraier.so.7.0.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
