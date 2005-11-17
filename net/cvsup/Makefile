@@ -43,6 +43,9 @@ BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ez
 PKGNAMESUFFIX=	-without-gui
 COMMENT=	General network file distribution system optimized for CVS (non-GUI version)
 DESCR=		${PKGDIR}/pkg-descr.nogui
+.if !defined(WITHOUT_X11) && ${ARCH} == "amd64"
+NO_LATEST_LINK=	yes
+.endif
 .else
 USE_XLIB=	yes
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
