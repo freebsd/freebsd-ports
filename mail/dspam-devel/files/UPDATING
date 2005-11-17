@@ -13,7 +13,7 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
-# dspam-devel-3.6.1_1
+# dspam-devel-3.6.1 (2005/11/17)
 #
 
 fix RUN_DEPENDS for WITH_CGI=on by USE_APACHE=1.3+, no need to upgrade if
