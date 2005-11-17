@@ -8,7 +8,7 @@
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
 CATEGORIES=	palm graphics
-MASTER_SITES=	http://www.linuxmafia.com/pub/palmos/other-os/
+MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Palm Pilot Image Viewer to PGM Converter
