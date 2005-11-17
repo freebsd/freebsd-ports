@@ -47,6 +47,7 @@ lib/libextractor/libextractor_translit.so
 lib/libextractor/libextractor_wav.so
 lib/libextractor/libextractor_zip.so
 share/locale/de/LC_MESSAGES/libextractor.mo
+share/locale/ga/LC_MESSAGES/libextractor.mo
 share/locale/ro/LC_MESSAGES/libextractor.mo
 share/locale/rw/LC_MESSAGES/libextractor.mo
 @dirrm lib/libextractor
