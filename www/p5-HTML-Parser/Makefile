@@ -28,4 +28,10 @@ MAN3=		HTML::Entities.3 \
 		HTML::PullParser.3 \
 		HTML::TokeParser.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Requires Perl version 5.6 or above
+.endif
+
+.include <bsd.port.post.mk>
