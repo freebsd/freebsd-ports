@@ -21,7 +21,7 @@ COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX?=	yes
 USE_ZIP=	yes
 USE_X_PREFIX=	yes
