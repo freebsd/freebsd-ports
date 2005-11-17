@@ -722,6 +722,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-fcgi
     SUBDIR += py-forgethtml
+    SUBDIR += py-formencode
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
