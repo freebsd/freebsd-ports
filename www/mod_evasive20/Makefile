@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_dosevasive20
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dosevasive/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
@@ -18,6 +19,7 @@ COMMENT=	An Apache 2 module to try to protect HTTP DoS or DDoS attacks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_REINPLACE=	yes
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
@@ -27,6 +29,11 @@ PORTDOCS=	LICENSE README test.pl
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \
+		${WRKSRC}/mod_dosevasive.c ${WRKSRC}/mod_dosevasive20.c \
+		${WRKSRC}/mod_dosevasiveNSAPI.c
 
 post-install:
 .if !defined (NOPORTDOCS)
