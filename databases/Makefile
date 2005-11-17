@@ -295,7 +295,6 @@
     SUBDIR += postgis
     SUBDIR += postgis-jdbc
     SUBDIR += postgresql-contrib
-    SUBDIR += postgresql-devel
     SUBDIR += postgresql-docs
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
