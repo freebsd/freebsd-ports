@@ -7,10 +7,10 @@
 
 PORTNAME=		mt_dolphin_ia
 PORTVERSION=		0.1.98
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	maitretarot/${PORTNAME}.pkg/${PORTVERSION}
+MASTER_SITE_SUBDIR=	maitretarot
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A basic AI for MaitreTarot, a Tarot card game

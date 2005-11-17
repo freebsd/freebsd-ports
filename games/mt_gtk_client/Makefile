@@ -7,10 +7,10 @@
 
 PORTNAME=		mt_gtk_client
 PORTVERSION=		0.1.98
-PORTREVISION=	3
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	maitretarot/${PORTNAME}.pkg/${PORTVERSION}
+MASTER_SITE_SUBDIR=	maitretarot
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		GTK+ client for MaitreTarot, a Tarot card game
