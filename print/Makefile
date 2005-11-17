@@ -48,6 +48,7 @@
     SUBDIR += cups-pdf
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
+    SUBDIR += cups-smb-backend
     SUBDIR += detex
     SUBDIR += dk-acroread
     SUBDIR += dvi2tty
