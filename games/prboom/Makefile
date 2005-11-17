@@ -16,30 +16,36 @@ COMMENT=	A multiplayer-capable and modified version of ID's classic doom game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-USE_SDL=	mixer net sdl
 USE_GMAKE=	yes
+USE_SDL=	mixer net sdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--disable-cpu-opt
 
+OPTIONS=	GL "Enable OpenGL support" off
+
 MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
 
-.if defined(WITH_GL)
-CONFIGURE_ARGS+=--enable-gl
-USE_GL= 	yes
-.endif
+DATADIR=	${DMDIR}
+
+.include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_GL)
+CONFIGURE_ARGS+=--enable-gl
+USE_GL=		yes
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/prboom
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/prboom
-	${INSTALL_DATA} ${WRKSRC}/doc/README.compat ${PREFIX}/share/doc/prboom
-	${INSTALL_DATA} ${WRKSRC}/doc/README.demos ${PREFIX}/share/doc/prboom
-	${INSTALL_DATA} ${WRKSRC}/doc/boom.txt ${PREFIX}/share/doc/prboom
+	${MKDIR} ${DOCSDIR}
+.   for f in README doc/README.compat doc/README.demos doc/boom.txt
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.   endfor
 .endif
 
 .include <bsd.port.post.mk>

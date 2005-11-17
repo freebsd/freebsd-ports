@@ -1,9 +1,8 @@
 bin/prboom
 bin/prboom-game-server
-share/doom/prboom.wad
-@dirrm share/doom
-%%PORTDOCS%%share/doc/prboom/README
-%%PORTDOCS%%share/doc/prboom/README.compat
-%%PORTDOCS%%share/doc/prboom/README.demos
-%%PORTDOCS%%share/doc/prboom/boom.txt
-%%PORTDOCS%%@dirrm share/doc/prboom
+%%DATADIR%%/prboom.wad
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.compat
+%%PORTDOCS%%%%DOCSDIR%%/README.demos
+%%PORTDOCS%%%%DOCSDIR%%/boom.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
