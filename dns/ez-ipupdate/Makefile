@@ -7,7 +7,7 @@
 
 PORTNAME=	ez-ipupdate
 PORTVERSION=	3.0.11b8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://dyn.pl/client/UNIX/ez-ipupdate/ \
 		http://www.yi.org/help/software/ \
@@ -16,13 +16,8 @@ MASTER_SITES=	http://dyn.pl/client/UNIX/ez-ipupdate/ \
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Update your host name on any dynamic DNS service
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	ez-ipupdate.sh
 GNU_CONFIGURE=	yes
-
-post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
@@ -32,6 +27,5 @@ post-install:
 	done
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
 			${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
