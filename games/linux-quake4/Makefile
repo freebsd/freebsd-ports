@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	Quake 4 for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
