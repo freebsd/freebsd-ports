@@ -1,6 +1,5 @@
-%%X11%%bin/fuhquake-x11
 %%GLX%%bin/fuhquake-glx
-%%SVGA%%bin/fuhquake-svga
+%%X11%%bin/fuhquake-x11
 %%PORTDOCS%%%%DOCSDIR%%/FAQ-v0.30-b585.txt
 %%PORTDOCS%%%%DOCSDIR%%/FuhQuake-v0.31-FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/benchmark.txt
@@ -15,14 +14,49 @@
 %%PORTDOCS%%%%DOCSDIR%%/pointing.txt
 %%PORTDOCS%%%%DOCSDIR%%/rulesets.txt
 %%PORTDOCS%%%%DOCSDIR%%/track.txt
+%%DATADIR%%/fuhquake/fragfile.dat
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm1.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm2.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm3.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm4.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm5.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/dm6.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m1.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m2.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m3.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m4.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m5.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m6.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e1m7.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m1.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m2.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m3.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m4.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m5.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m6.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e2m7.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m1.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m2.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m3.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m4.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m5.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m6.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e3m7.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m1.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m2.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m3.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m4.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m5.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m6.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m7.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/e4m8.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/end.lit
+%%LITS%%%%DATADIR%%/fuhquake/lits/start.lit
+%%DATADIR%%/fuhquake/pak0.pak
+%%SKYBOXES%%%%DATADIR%%/fuhquake/pak1.pak
+%%DATADIR%%/fuhquake/qwprogs.dat
+%%DATADIR%%/fuhquake/spprogs.dat
+%%LITS%%@dirrm %%DATADIR%%/fuhquake/lits
+@dirrm %%DATADIR%%/fuhquake
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/fuhquake/fuhquake/pak0.pak
-%%SHAREWARE%%share/fuhquake/id1/pak0.pak
-share/fuhquake/qw/fragfile.dat
-share/fuhquake/qw/qwprogs.dat
-share/fuhquake/qw/spprogs.dat
-%%SKYBOXES%%share/fuhquake/qw/pak0.pak
-@dirrm share/fuhquake/qw
-%%SHAREWARE%%@dirrm share/fuhquake/id1
-@dirrm share/fuhquake/fuhquake
-@dirrm share/fuhquake
