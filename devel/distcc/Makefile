@@ -7,7 +7,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -28,22 +28,37 @@ SUB_LIST=	DISTCCD_PIDFILE=${DISTCCD_PIDFILE}
 
 OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 		GTK	"Build GUI monitor based on GTK"	Off \
-		IPV6	"Enable IPV6 (not available on 4.X)"	Off
+		IPV6	"Enable IPV6 (not available on 4.X)"	Off \
+		COMPILER_LINKS	"Create symlinks to distcc"	Off
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_COMPILER_LINKS)
+CCLINKDIR?=		libexec/distcc
+PLIST_DIRS=		${CCLINKDIR}
+GNU_COMPILERS=		295 32 33 34 35 40 41
+DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
+.if ${ARCH} == "i386"
+DISTCC_COMPILERS+=	icc icpc
+.endif
+.if defined(EXTRA_COMPILERS)
+DISTCC_COMPILERS+=	${EXTRA_COMPILERS}
+.endif
+PLIST_FILES+=		${DISTCC_COMPILERS:S|^|${CCLINKDIR}/|}
+.endif
+
 .if defined(WITH_GNOME)
-USE_GNOME=	libgnomeui
+USE_GNOME=		libgnomeui
 CONFIGURE_ARGS+=	--with-gnome
-PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	WITH_GNOME=""
+PKGNAMESUFFIX=		-gnome
+PLIST_SUB+=		WITH_GNOME=""
 .elif defined(WITH_GTK)
-USE_GNOME=	gtk20
+USE_GNOME=		gtk20
 CONFIGURE_ARGS+=	--with-gtk
-PKGNAMESUFFIX=	-gtk
-PLIST_SUB+=	WITH_GNOME=""
+PKGNAMESUFFIX=		-gtk
+PLIST_SUB+=		WITH_GNOME=""
 .else
-PLIST_SUB+=	WITH_GNOME="@comment "
+PLIST_SUB+=		WITH_GNOME="@comment "
 .endif
 
 .if ( ${OSVERSION} >= 500000 ) && defined(WITH_IPV6)
@@ -70,6 +85,12 @@ do-install:
 post-install: install-doc install-man
 	@${TOUCH} ${DISTCCD_PIDFILE}
 	@${CHOWN} distcc:distcc ${DISTCCD_PIDFILE}
+.if defined(WITH_COMPILER_LINKS)
+	@${MKDIR} ${PREFIX}/${CCLINKDIR}
+.for link in ${DISTCC_COMPILERS}
+	${LN} -sf ${PREFIX}/bin/distcc ${PREFIX}/${CCLINKDIR}/${link}
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 install-doc:
