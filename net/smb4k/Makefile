@@ -14,7 +14,7 @@ MAINTAINER=		shelton@granch.ru
 COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
-			smbstatus:/${PORTSDIR}/net/samba3
+			smbstatus:${PORTSDIR}/net/samba3
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
