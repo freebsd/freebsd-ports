@@ -10532,6 +10532,7 @@ quake2-data	ports/games/quake2-data
 quake2-source	ports/games/quake2-source
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
+quake3		ports/games/quake3
 quake3-data	ports/games/quake3-data
 quakeforge	ports/games/quakeforge
 quantlib	ports/finance/quantlib
