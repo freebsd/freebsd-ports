@@ -331,6 +331,7 @@
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-quake3-demo
+    SUBDIR += linux-quake4
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
     SUBDIR += linux-ut2003-demo
