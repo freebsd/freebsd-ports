@@ -7384,6 +7384,7 @@ p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-Pluggable	ports/www/p5-Catalyst-Plugin-Pluggable
 p5-Catalyst-Plugin-Prototype	ports/www/p5-Catalyst-Plugin-Prototype
 p5-Catalyst-Plugin-Session-FastMmap	ports/www/p5-Catalyst-Plugin-Session-FastMmap
+p5-Catalyst-Plugin-Singleton	ports/www/p5-Catalyst-Plugin-Singleton
 p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
 p5-Catalyst-Plugin-SubRequest	ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile	ports/www/p5-Catalyst-Plugin-Textile
