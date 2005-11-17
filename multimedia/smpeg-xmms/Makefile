@@ -10,8 +10,7 @@ PORTVERSION=	0.3.5
 PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.xmms.org/files/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/sound/xmms/%SUBDIR%/
+		ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/
 MASTER_SITE_SUBDIR=	plugins/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
