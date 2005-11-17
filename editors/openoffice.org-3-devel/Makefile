@@ -7,7 +7,6 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	2.0.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
@@ -60,8 +59,8 @@ IGNORE=		Install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE=		138
-SNAPDATE=		20051104
+MILESTONE=		140
+SNAPDATE=		20051116
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0
@@ -110,7 +109,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bison-devel:${PORTSDIR}/devel/bison-devel \
+		bison2:${PORTSDIR}/devel/bison2 \
 		imake:${X_IMAKE_PORT}
 .if !defined(WITHOUT_JAVA)
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
