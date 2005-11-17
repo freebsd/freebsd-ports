@@ -1,0 +1,5 @@
+This Latex package contains macros for typesetting circuit diagrams.
+Several electrical symbols like resistor, capacitor, transistors etc.,
+are defined. The symbols can be connected with wires.
+
+Author:	Simon Law, Andreas Tille and Tanner

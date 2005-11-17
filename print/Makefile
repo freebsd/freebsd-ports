@@ -123,6 +123,7 @@
     SUBDIR += latex-booktabs
     SUBDIR += latex-bytefield
     SUBDIR += latex-caption
+    SUBDIR += latex-circ
     SUBDIR += latex-feynmf
     SUBDIR += latex-index
     SUBDIR += latex-keystroke
