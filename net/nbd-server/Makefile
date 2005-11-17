@@ -25,7 +25,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 PLIST_FILES=	bin/nbd-server
 MAN1=		nbd-server.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		"GCC fails on FreeBSD >= 7.0"
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/nbd.h ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
