@@ -8,7 +8,7 @@
 -CFLAGS=-O3 -Wall -DGLBSP_PLUGIN -DUNIX -DINLINE_G=inline
 -AR=ar rc
 +#CC=gcc
-+CFLAGS+=-O3 -Wall -DGLBSP_PLUGIN -DUNIX -DINLINE_G=inline
++CFLAGS+=${OPT_CFLAGS} -Wall -DGLBSP_PLUGIN -DUNIX -DINLINE_G=inline
 +#AR=ar rc
  RANLIB=ranlib
  

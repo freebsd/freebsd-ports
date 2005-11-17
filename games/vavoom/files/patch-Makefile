@@ -38,12 +38,23 @@
 -ASM_ARGS = -c -W -Wall $(ARCH) -x assembler-with-cpp
 +#ARCH	?= -march=pentiumpro
 +#export ARCH
-+C_ARGS   = -c ${CFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall -ffast-math
-+CPP_ARGS = -c ${CXXFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall -ffast-math
++C_ARGS   = -c ${CFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall
++CPP_ARGS = -c ${CXXFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall
 +ASM_ARGS = -c ${CFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall -x assembler-with-cpp
  LINK_ARGS = -Wall
  
  ifdef DEBUG
+@@ -333,8 +333,8 @@
+ 
+ else
+ 
+-C_ARGS   += -O3 -fomit-frame-pointer
+-CPP_ARGS += -O3 -fomit-frame-pointer
++C_ARGS   += ${OPT_CFLAGS}
++CPP_ARGS += ${OPT_CFLAGS}
+ LINK_ARGS += -s
+ 
+ endif
 @@ -350,7 +350,7 @@
  exe: Vavoom$(EXE)
  

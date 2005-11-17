@@ -5,7 +5,7 @@
  endif
  
 -CFLAGS = -Wall -O3 -ffast-math -fomit-frame-pointer -march=pentiumpro
-+CFLAGS += -Wall -O3 -ffast-math -fomit-frame-pointer
++CFLAGS += -Wall ${OPT_CFLAGS}
  LIB_OBJS = cmdlib.o wadlib.o level.o flow.o
  OBJS = glvis.o
  LIBS += -lm
