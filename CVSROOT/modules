@@ -10146,6 +10146,7 @@ py-fngrab	ports/net/py-fngrab
 py-fonttools	ports/print/py-fonttools
 py-forgethtml	ports/www/py-forgethtml
 py-forgetsql	ports/databases/py-forgetsql
+py-formencode	ports/www/py-formencode
 py-fortran	ports/devel/py-fortran
 py-fox		ports/x11-toolkits/py-fox
 py-fpconst	ports/math/py-fpconst
