@@ -2,4 +2,4 @@ include/opennet.h
 lib/libopennet.a
 lib/libopennet.so
 lib/libopennet.so.0
-lib/libopennet.so.0.8.10
+lib/libopennet.so.0.9.3

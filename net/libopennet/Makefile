@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libopennet
-PORTVERSION=	0.8.10
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/
 
@@ -21,7 +21,6 @@ MAN3=		fopen_net.3 \
 		lseek_net.3 \
 		open_net.3 \
 		opennet.3 \
-		opennet_init.3 \
 		read_net.3
 
 .include <bsd.port.mk>
