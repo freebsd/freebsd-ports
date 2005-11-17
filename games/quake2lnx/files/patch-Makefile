@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Oct 10 01:08:21 2002
-+++ Makefile	Tue Jun 17 22:23:11 2003
+--- Makefile.orig	Fri Sep 24 19:06:52 2004
++++ Makefile	Fri Oct  7 17:37:25 2005
 @@ -12,30 +12,30 @@
  # (Note: not all options are available for all platforms).
  # quake2 (uses OSS for sound, cdrom ioctls for cd audio) is automatically built.
@@ -51,7 +51,7 @@
  
  # (hopefully) end of configurable options
  
-@@ -52,55 +52,11 @@
+@@ -52,60 +52,16 @@
  endif
  endif
  
@@ -110,12 +110,19 @@
  
  MOUNT_DIR=src
  
+-BUILD_DEBUG_DIR=debug$(ARCH)
+-BUILD_RELEASE_DIR=release$(ARCH)
++BUILD_DEBUG_DIR=debug
++BUILD_RELEASE_DIR=release
+ CLIENT_DIR=$(MOUNT_DIR)/client
+ SERVER_DIR=$(MOUNT_DIR)/server
+ REF_SOFT_DIR=$(MOUNT_DIR)/ref_soft
 @@ -118,7 +74,7 @@
  ROGUE_DIR=$(MOUNT_DIR)/rogue
  NULL_DIR=$(MOUNT_DIR)/null
  
 -BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp
-+BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp $(CFLAGS)
++BASE_CFLAGS=-pipe -Dstricmp=strcasecmp -DDATADIR='\"${DATADIR}\"' -DLIBDIR='\"${LIBDIR}\"' $(CFLAGS)
  ifeq ($(HAVE_IPV6),YES)
  BASE_CFLAGS+= -DHAVE_IPV6
  ifeq ($(OSTYPE),FreeBSD)
@@ -151,7 +158,7 @@
 +AALDFLAGS=-L${PREFIX}/lib -laa
  
 -SDLCFLAGS=$(shell sdl-config --cflags)
-+SDLCFLAGS=$(shell sdl11-config --cflags)
++SDLCFLAGS=$(shell ${SDL_CONFIG} --cflags)
  ifeq ($(strip $(STATICSDL)),YES)
 -	SDLLDFLAGS += -L/usr/X11R6/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
 +	SDLLDFLAGS += -L${X11BASE}/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
@@ -160,7 +167,7 @@
  		-lXinerama
  else
 -	SDLLDFLAGS=$(shell sdl-config --libs)
-+	SDLLDFLAGS=$(shell sdl11-config --libs)
++	SDLLDFLAGS=$(shell ${SDL_CONFIG} --libs)
  endif
  
  ifeq ($(strip $(BUILD_JOYSTICK)),YES)
@@ -194,7 +201,7 @@
  DO_AS=$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  DO_SHLIB_AS=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  
-@@ -224,10 +189,42 @@
+@@ -224,168 +189,54 @@
  
  .PHONY : targets build_debug build_release clean clean-debug clean-release clean2
  
@@ -232,14 +239,22 @@
  endif
 +
 +ifeq ($(strip $(BUILD_GAME)),YES)
-+ TARGETS += $(BUILDDIR)/game$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/game.$(SHLIBEXT)
 +endif
 +
  ifeq ($(strip $(BUILD_CTFDLL)),YES)
-  TARGETS += $(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT)
+- TARGETS += $(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/ctf/game.$(SHLIBEXT)
  endif
-@@ -240,152 +237,6 @@
-  TARGETS += $(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT)
+ 
+ ifeq ($(strip $(BUILD_XATRIX)),YES)
+- TARGETS += $(BUILDDIR)/xatrix/game$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/xatrix/game.$(SHLIBEXT)
+ endif
+ 
+ ifeq ($(strip $(BUILD_ROGUE)),YES)
+- TARGETS += $(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/rogue/game.$(SHLIBEXT)
  endif
  
 -ifeq ($(ARCH),axp)
@@ -404,6 +419,42 @@
  endif
  
  $(BUILDDIR)/quake2 : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
+@@ -821,7 +673,7 @@
+ 	$(BUILDDIR)/game/q_shared.o \
+ 	$(BUILDDIR)/game/m_flash.o
+ 
+-$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
++$(BUILDDIR)/game.$(SHLIBEXT) : $(GAME_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
+ 
+ $(BUILDDIR)/game/g_ai.o :        $(GAME_DIR)/g_ai.c
+@@ -1000,7 +852,7 @@
+ 	$(BUILDDIR)/ctf/p_weapon.o \
+ 	$(BUILDDIR)/ctf/q_shared.o
+ 
+-$(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT) : $(CTF_OBJS)
++$(BUILDDIR)/ctf/game.$(SHLIBEXT) : $(CTF_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(CTF_OBJS)
+ 
+ $(BUILDDIR)/ctf/g_ai.o :       $(CTF_DIR)/g_ai.c
+@@ -1139,7 +991,7 @@
+ 	$(BUILDDIR)/xatrix/p_weapon.o \
+ 	$(BUILDDIR)/xatrix/q_shared.o
+ 
+-$(BUILDDIR)/xatrix/game$(ARCH).$(SHLIBEXT) : $(XATRIX_OBJS)
++$(BUILDDIR)/xatrix/game.$(SHLIBEXT) : $(XATRIX_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(XATRIX_OBJS)
+ 
+ $(BUILDDIR)/xatrix/g_ai.o :        $(XATRIX_DIR)/g_ai.c
+@@ -1367,7 +1219,7 @@
+ 	$(BUILDDIR)/rogue/q_shared.o
+ 
+ 
+-$(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT) : $(ROGUE_OBJS)
++$(BUILDDIR)/rogue/game.$(SHLIBEXT) : $(ROGUE_OBJS)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(ROGUE_OBJS)
+ 
+ $(BUILDDIR)/rogue/dm_ball.o :      $(ROGUE_DIR)/dm_ball.c
 @@ -1588,6 +1440,7 @@
  endif
  
