@@ -1,0 +1,23 @@
+%%DATADIR%%/2nd_enc.wad
+%%DATADIR%%/arctic/arctgfx1.wad
+%%DATADIR%%/arctic/arctgfx2.wad
+%%DATADIR%%/arctic/arctic.wad
+%%DATADIR%%/arctic/arctlev.wad
+%%DATADIR%%/astro.wad
+%%DATADIR%%/astro2.wad
+%%DATADIR%%/astro3.wad
+%%DATADIR%%/die.wad
+%%DATADIR%%/eisen.wad
+%%DATADIR%%/halten.wad
+%%DATADIR%%/hunt.wad
+%%DATADIR%%/noct.wad
+%%DATADIR%%/noct15.wad
+%%DATADIR%%/orig15.wad
+%%DATADIR%%/original.wad
+%%DATADIR%%/portal.wad
+%%DATADIR%%/rhein1.wad
+%%DATADIR%%/rhein2.wad
+%%DATADIR%%/sod.wad
+%%DATADIR%%/toten.wad
+@dirrm %%DATADIR%%/arctic
+@dirrm %%DATADIR%%
