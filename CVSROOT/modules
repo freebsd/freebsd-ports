@@ -1764,6 +1764,7 @@ dontspace	ports/games/dontspace
 doodle		ports/deskutils/doodle
 doom		ports/games/doom
 doom-data	ports/games/doom-data
+doom-hacx	ports/games/doom-hacx
 doomlegacy	ports/games/doomlegacy
 doorman		ports/security/doorman
 dopewars	ports/games/dopewars
