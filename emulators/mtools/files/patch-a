@@ -1,14 +1,14 @@
---- Makefile.in~	Tue Mar  6 17:25:13 2001
-+++ Makefile.in	Tue Mar  6 17:27:00 2001
+--- Makefile.in.orig	Wed Nov 16 12:38:06 2005
++++ Makefile.in	Wed Nov 16 12:40:28 2005
 @@ -116,7 +116,7 @@
  xdf_io.c mkmanifest.c
  
  
--SCRIPTS = mcheck mxtar uz tgz mcomp
-+SCRIPTS = mcheck mxtar mcomp
+-SCRIPTS = mcheck mxtar uz tgz mcomp amuFormat.sh
++SCRIPTS = mcheck mxtar mcomp amuFormat.sh
  
- LINKS=mattrib mcat mcd mcopy mdel mdeltree mdir mdu mformat minfo mlabel \
- mmd mmount mmove mpartition mrd mread mren mtype mtoolstest mshowfat \
+ LINKS=mattrib mcat mcd mclasserase mcopy mdel mdeltree mdir mdu mformat minfo \
+ mlabel mmd mmount mmove mpartition mrd mren mtype mtoolstest mshowfat \
 @@ -258,11 +258,11 @@
  install-scripts: $(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(bindir)

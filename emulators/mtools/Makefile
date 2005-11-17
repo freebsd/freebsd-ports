@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mtools
-PORTVERSION=	3.9.8
-PORTREVISION=	4
+PORTVERSION=	3.9.9
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
 
 PATCH_SITES=	http://mtools.linux.lu/
-PATCHFILES=	mtools-3.9.8-20011127.diff.gz
+PATCHFILES=	mtools-3.9.9-20050228.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
@@ -31,7 +30,7 @@ PLIST_SUB=	WITH_X11="@comment "
 
 USE_GMAKE=	yes
 
-MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
+MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mclasserase mcopy.1 mdel.1 mdeltree.1 \
 		mdir.1 mdu.1 mformat.1 mkmanifest.1 minfo.1 mlabel.1 mmd.1 mmount.1 \
 		mmove.1 mpartition.1 mrd.1 mren.1 mshowfat.1 \
 		mtoolstest.1 mtools.1 mtype.1 mzip.1
@@ -43,7 +42,7 @@ MAN1+=		floppyd.1 floppyd_installtest.1
 
 post-patch:
 	@cd ${WRKSRC}; for f in config.c mformat.c mtools.5 mtools.texi; do \
-	 ${MV} $$f $$f.orig; \
+	 ${MV} -f $$f $$f.orig; \
 	 ${SED} -e s:/etc/mtools.conf:${PREFIX}/etc/mtools.conf: \
 	 < $$f.orig > $$f; done
 	@cd ${WRKSRC}/scripts; for f in ocopy xcopy; do \
