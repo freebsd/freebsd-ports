@@ -14,7 +14,6 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 smartd_enable="NO"
-smartd_flags=""
 smartd_pidfile="/var/run/smartd.pid"
 
 . %%RC_SUBR%%
@@ -22,11 +21,14 @@ smartd_pidfile="/var/run/smartd.pid"
 name="smartd"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/smartd"
-required_files="%%PREFIX%%/etc/smartd.conf"
 
 load_rc_config $name
 
+: ${smartd_config="%%PREFIX%%/etc/smartd.conf"}
+: ${smartd_flags="--configfile=${smartd_config}"}
+
 pidfile="${smartd_pidfile}"
+required_files="${smartd_config}"
 
 case "${smartd_flags}" in
 *-p\ *)
