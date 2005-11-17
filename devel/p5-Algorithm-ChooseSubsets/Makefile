@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-ChooseSubsets
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -22,7 +22,7 @@ MAN3=		Algorithm::ChooseSubsets.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"Needs perl 5.6.0 or higher, install lang/perl5.6 and try again"
+IGNORE=		needs perl 5.6.0 or higher, install lang/perl5.6 and try again
 .endif
 
 .include <bsd.port.post.mk>
