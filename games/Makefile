@@ -559,6 +559,7 @@
     SUBDIR += toppler
     SUBDIR += torcs
     SUBDIR += tornado
+    SUBDIR += torrent
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
