@@ -26,4 +26,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin
 .endfor
 
+.include "${.CURDIR}/../quake-source/Makefile.include"
+
 .include <bsd.port.mk>
