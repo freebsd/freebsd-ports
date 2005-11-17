@@ -1,0 +1,19 @@
+bin/q3ded
+bin/quake3
+lib/quake3/baseq3/cgamei386.so
+lib/quake3/baseq3/qagamei386.so
+lib/quake3/baseq3/uii386.so
+lib/quake3/baseq3/vm/cgame.qvm
+lib/quake3/baseq3/vm/qagame.qvm
+lib/quake3/baseq3/vm/ui.qvm
+lib/quake3/missionpack/cgamei386.so
+lib/quake3/missionpack/qagamei386.so
+lib/quake3/missionpack/uii386.so
+lib/quake3/missionpack/vm/cgame.qvm
+lib/quake3/missionpack/vm/qagame.qvm
+lib/quake3/missionpack/vm/ui.qvm
+@dirrm lib/quake3/baseq3/vm
+@dirrm lib/quake3/baseq3
+@dirrm lib/quake3/missionpack/vm
+@dirrm lib/quake3/missionpack
+@dirrm lib/quake3

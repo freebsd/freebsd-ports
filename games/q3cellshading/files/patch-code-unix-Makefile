@@ -1,0 +1,99 @@
+--- code/unix/Makefile	Sun May  5 12:21:10 2002
++++ ../../work/quake3-1.32b/code/unix/Makefile	Sun Aug 28 23:16:03 2005
+@@ -136,7 +136,7 @@
+     ifeq ($(ARCH),ppc)
+       NEWPGCC=/loki/global/ppc/bin/gcc
+       CC=$(NEWPGCC)
+-      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
+     else
+       #NEWPGCC=/usr/local/gcc-2.95.2/bin/gcc # bk001205
+       #NEWPGCC=/loki/global/x86/bin/gcc
+@@ -146,9 +146,9 @@
+ # TTimo: legacy RELEASE_CFLAGS
+ # NOTE: the -fomit-frame-pointer option leads to an unstable binary on my test box if it was built on the main box
+ #   but building on the Mdk 7.2 baseline seems to work
+-      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
++      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -march=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
+ # TTimo: use this for building on P3 gcc 2.95.3 libc2.2 for all targets (experimental! -fomit-fram-pointer removed)
+-#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce
++#      RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -march=pentiumpro -march=pentium -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
+     endif
+   endif
+ 
+@@ -162,7 +162,7 @@
+   RANLIB=ranlib
+ 
+   THREAD_LDFLAGS=-lpthread
+-  LDFLAGS=-ldl -lm
++  LDFLAGS=-lm
+   GLLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
+ 
+   ifeq ($(ARCH),axp)
+@@ -223,7 +223,7 @@
+ #NEWPGCC=/usr/local/gcc-2.95.2/bin/gcc
+ NEWPGCC=/home/raistllin/src/gcc/build/install/bin/gcc
+ CC=$(shell if [ -f $(NEWPGCC) ]; then echo $(NEWPGCC); else echo pgcc; fi )
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing - fstrength-reduce
++RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O6 -march=pentiumpro -march=pentium -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing - fstrength-reduce
+ endif
+ 
+ LIBEXT=a
+@@ -283,7 +283,7 @@
+ ARFLAGS=ar rv
+ RANLIB=ranlib
+ 
+-LDFLAGS=-ldl -lm
++LDFLAGS=-lm
+ GLLDFLAGS=-L/usr/X11/lib -lGL -lX11 -lXext -lm
+ 
+ TARGETS=$(B)/sgiquake3 \
+@@ -312,7 +312,7 @@
+ ifeq ($(PLATFORM),freebsd)
+ LDFLAGS=-lm
+ else
+-LDFLAGS=-ldl -lm
++LDFLAGS=-lm
+ endif # ifeq freebsd
+ 
+ TARGETS=\
+@@ -578,7 +578,6 @@
+ 		$(B)/client/linux_common.o \
+ 		$(B)/client/linux_qgl.o \
+ 		$(B)/client/linux_glimp.o \
+-		$(B)/client/linux_joystick.o \
+ 		$(B)/client/linux_snd.o \
+ 		$(B)/client/snd_mixa.o \
+ 		$(B)/client/matha.o \
+@@ -587,7 +586,6 @@
+ 		$(B)/client/linux_common.o \
+ 		$(B)/client/linux_qgl.o \
+ 		$(B)/client/linux_glimp_smp.o \
+-		$(B)/client/linux_joystick.o \
+ 		$(B)/client/linux_snd.o \
+ 		$(B)/client/snd_mixa.o \
+ 		$(B)/client/matha.o
+@@ -754,7 +752,6 @@
+ $(B)/client/linux_common.o : $(UDIR)/linux_common.c; $(DO_CC)
+ $(B)/client/linux_glimp.o : $(UDIR)/linux_glimp.c; $(DO_CC)  $(GL_CFLAGS) 
+ $(B)/client/linux_glimp_smp.o : $(UDIR)/linux_glimp.c; $(DO_SMP_CC)  $(GL_CFLAGS) 
+-$(B)/client/linux_joystick.o : $(UDIR)/linux_joystick.c; $(DO_CC)  
+ $(B)/client/linux_qgl.o : $(UDIR)/linux_qgl.c; $(DO_CC)  $(GL_CFLAGS) 
+ $(B)/client/linux_input.o : $(UDIR)/linux_input.c; $(DO_CC) 
+ $(B)/client/linux_snd.o : $(UDIR)/linux_snd.c; $(DO_CC) 
+@@ -1629,7 +1626,6 @@
+ 	\
+ 	$(B)/q3static/linux_qgl.o \
+ 	$(B)/q3static/linux_glimp.o \
+-	$(B)/q3static/linux_joystick.o \
+ 	$(B)/q3static/linux_snd.o \
+ 	$(B)/q3static/snd_mixa.o \
+ 	$(B)/q3static/matha.o
+@@ -1779,7 +1775,6 @@
+ $(B)/q3static/unix_net.o : $(UDIR)/unix_net.c; $(DO_CC) -DQ3_STATIC 
+ $(B)/q3static/unix_shared.o : $(UDIR)/unix_shared.c; $(DO_CC) -DQ3_STATIC 
+ $(B)/q3static/linux_glimp.o : $(UDIR)/linux_glimp.c; $(DO_CC) -DQ3_STATIC 
+-$(B)/q3static/linux_joystick.o : $(UDIR)/linux_joystick.c; $(DO_CC) -DQ3_STATIC  
+ $(B)/q3static/linux_qgl.o : $(UDIR)/linux_qgl.c; $(DO_CC) -DQ3_STATIC 
+ $(B)/q3static/linux_input.o : $(UDIR)/linux_input.c; $(DO_CC) -DQ3_STATIC 
+ $(B)/q3static/linux_snd.o : $(UDIR)/linux_snd.c; $(DO_CC) -DQ3_STATIC 

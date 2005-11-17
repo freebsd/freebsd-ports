@@ -471,6 +471,7 @@
     SUBDIR += quake2-source
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
+    SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quakeforge
     SUBDIR += quit
