@@ -14,4 +14,4 @@ it can be accessed using a dictionary abstraction.  Despite it's name,
 libdict can be used to store any kind of data and any kind of key (provided
 it fits into a 'void' pointer on your system).
 
-WWW: http://home.earthlink.net/~smela1/libdict.html
+WWW: http://www.crazycoder.org/libdict.html

@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	libdict
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://home.earthlink.net/~smela1/libdict/  \
-		http://home.earthlink.net/~smela1/	    \
-		http://home.earthlink.net/~smela1/libdict/algorithms/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.html \
-		treap_insert.dvi treap_insert.pdf	    \
-		avl_insert.dvi avl_insert.pdf		    \
-		empty.dvi empty.pdf
+MASTER_SITES=	http://www.crazycoder.org/libdict/:source \
+		http://www.crazycoder.org/libdict/algorithms/:doc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source treap_insert.pdf:doc \
+		avl_insert.pdf:doc empty.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alexs@snark.rinet.ru
@@ -26,8 +22,7 @@ MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 
 post-extract:
-	@${CP} ${DISTDIR}/${PORTNAME}.html ${WRKSRC}/
-.	for ___f in avl_insert.dvi avl_insert.pdf empty.dvi empty.pdf treap_insert.dvi treap_insert.pdf
+.	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${DISTDIR}/${___f} ${WRKSRC}/
 .	endfor
 
@@ -37,7 +32,7 @@ pre-install:
 	-@${MKDIR} ${DOCSDIR}
 
 post-install:
-.	for ___f in avl_insert.dvi avl_insert.pdf empty.dvi empty.pdf treap_insert.dvi treap_insert.pdf ${PORTNAME}.html
+.	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${WRKSRC}/${___f} ${DOCSDIR}
 .	endfor
 

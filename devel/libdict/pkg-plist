@@ -10,12 +10,8 @@ include/dict/rb_tree.h
 include/dict/sp_tree.h
 include/dict/tr_tree.h
 include/dict/wb_tree.h
-%%PORTDOCS%%%%DOCSDIR%%/avl_insert.dvi
 %%PORTDOCS%%%%DOCSDIR%%/avl_insert.pdf
-%%PORTDOCS%%%%DOCSDIR%%/empty.dvi
 %%PORTDOCS%%%%DOCSDIR%%/empty.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libdict.html
-%%PORTDOCS%%%%DOCSDIR%%/treap_insert.dvi
 %%PORTDOCS%%%%DOCSDIR%%/treap_insert.pdf
 @dirrm include/dict
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
