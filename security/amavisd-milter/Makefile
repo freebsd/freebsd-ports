@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amavisd-milter
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,22 +25,20 @@ USE_RCORDER=	${PORTNAME}.sh
 
 SUB_FILES=	pkg-message
 SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
-		AMAVISDIR=${AMAVISDIR} \
+		AMAVISDIR=${AMAVISDIR}
 
-DOCS=		AUTHORS CHANGES INSTALL LICENSE README TODO
+PORTDOCS=	AUTHORS CHANGES INSTALL LICENSE README TODO
 
-.include <bsd.port.pre.mk>
-
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX} \
+PLIST_SUB=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

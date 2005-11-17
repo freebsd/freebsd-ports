@@ -14,19 +14,20 @@
 #amavisd_milter_enable="YES"
 #
 
-# Set defaults
-amavisd_milter_enable="NO"
-amavisd_milter_flags=""
-amavisd_milter_pidfile="%%AMAVISGROUP%%/amavisd-milter.pid"
-amavisd_milter_user="%%AMAVISUSER%%"
-
 . %%RC_SUBR%%
 
 name="amavisd_milter"
 rcvar=`set_rcvar`
 
+load_rc_config $name
+
+# Set defaults
+: ${amavisd_milter_enable:="NO"}
+: ${amavisd_milter_flags:=""}
+: ${amavisd_milter_pidfile:="%%AMAVISDIR%%/amavisd-milter.pid"}
+: ${amavisd_milter_user:="%%AMAVISUSER%%"}
+
 command="%%PREFIX%%/sbin/amavisd-milter"
 required_files="%%PREFIX%%/etc/amavisd.conf"
 
-load_rc_config $name
 run_rc_command "$1"
