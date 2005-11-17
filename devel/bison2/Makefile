@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bison
-PORTVERSION=	1.875
-PORTREVISION=	4
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=	bison-1.7[0-9]* bison-2.[0-9]*
+CONFLICTS=	bison-1.*
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
@@ -47,6 +46,6 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/bison ${PREFIX}/bin/bison1875
+	${LN} -sf ${PREFIX}/bin/bison ${PREFIX}/bin/bison2
 
 .include <bsd.port.mk>
