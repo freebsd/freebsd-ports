@@ -24,7 +24,10 @@ bin/raine
 %%DATADIR%%/languages/turkish.cfg
 %%DATADIR%%/languages/galego.cfg
 %%DATADIR%%/raine.dat
-@exec mkdir -p %D/%%DATADIR%%/roms
+share/gnome/applications/raine.desktop
+share/gnome/pixmaps/raine.png
 @unexec rmdir %D/%%DATADIR%%/roms 2> /dev/null || true
+@unexec rmdir %D/%%DATADIR%%/emudx 2> /dev/null || true
+@unexec rmdir %D/%%DATADIR%%/artwork 2> /dev/null || true
 @dirrm %%DATADIR%%/languages
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
