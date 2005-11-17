@@ -1,3 +1,21 @@
 bin/mp
-%%PORTDOCS%%share/doc/mp/README.html
-%%PORTDOCS%%@dirrm share/doc/mp
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/Changelog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.IRIX
+%%DOCSDIR%%/README.mingw32
+%%DOCSDIR%%/README.solaris
+%%DOCSDIR%%/README.zaurus
+%%DOCSDIR%%/RELEASE_NOTES
+%%DOCSDIR%%/mprc-win32.sample
+%%DOCSDIR%%/mprc.sample
+%%NLS%%share/locale/de/LC_MESSAGES/minimum-profit.mo
+%%NLS%%share/locale/es/LC_MESSAGES/minimum-profit.mo
+%%NLS%%share/locale/it/LC_MESSAGES/minimum-profit.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/minimum-profit.mo
+%%NLS%%@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@dirrm %%DOCSDIR%%
