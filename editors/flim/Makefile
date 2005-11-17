@@ -7,6 +7,7 @@
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
+PORTREVISION?=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.14/ \
 		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/ \
@@ -50,8 +51,8 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
 .else
 # depends on apel (case of gnu emacsen etc...)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
