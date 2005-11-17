@@ -125,6 +125,7 @@
     SUBDIR += doom
     SUBDIR += doom-data
     SUBDIR += doom-hacx
+    SUBDIR += doom-hr
     SUBDIR += doomlegacy
     SUBDIR += dopewars
     SUBDIR += drm
