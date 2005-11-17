@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# The executable needs to run from a directory with the Doom Legacy data
+# files, libraries and executables, and Doom WAD files. So we mirror the Doom
+# Legacy and Doom (WAD files) data directory to ~/.legacy, and create symlinks
+# to the data files.
+
+cd %%DATADIR%% || exit 1
+
+mkdir -p ~/.legacy
+find * -type f -exec ln -sf %%DATADIR%%/{} ~/.legacy/{} \; || exit 1
+
+cd %%DMDIR%% || exit 1
+
+find * -type d -exec mkdir -p ~/.legacy/{} \; || exit 1
+find * -type f -exec ln -sf %%DMDIR%%/{} ~/.legacy/{} \; || exit 1
+
+cd ~/.legacy || exit 1
+
+exec ./lsdldoom -nocheckwadversion $*
