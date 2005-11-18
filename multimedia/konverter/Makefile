@@ -16,7 +16,7 @@ COMMENT=	KDE MEncoder frontend
 
 BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
 		mencoder:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	xine.13:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.14:${PORTSDIR}/multimedia/libxine
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
