@@ -165,9 +165,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed/Hue.pm
 %%SITE_PERL%%/PDF/API2/Resource/unicolor.txt
 %%SITE_PERL%%/PDF/API2/Resource/unipaper.txt
-%%SITE_PERL%%/PDF/API2/Content/symbols.pm
 %%SITE_PERL%%/PDF/API2/Content/Text.pm
-%%SITE_PERL%%/PDF/API2/Content/Text/Markup.pm
 @dirrm %%SITE_PERL%%/mach/auto/PDF/API2
 @unexec rmdir %D/%%SITE_PERL%%/mach/auto/PDF 2>/dev/null || true
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
@@ -188,7 +186,6 @@
 @dirrm %%SITE_PERL%%/PDF/API2/Resource/ColorSpace/Indexed
 @dirrm %%SITE_PERL%%/PDF/API2/Resource/ColorSpace
 @dirrm %%SITE_PERL%%/PDF/API2/Resource
-@dirrm %%SITE_PERL%%/PDF/API2/Content/Text
 @dirrm %%SITE_PERL%%/PDF/API2/Content
 @dirrm %%SITE_PERL%%/PDF/API2
 @unexec rmdir %D/%%SITE_PERL%%/PDF 2>/dev/null || true
