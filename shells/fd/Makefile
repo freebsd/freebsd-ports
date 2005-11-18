@@ -7,6 +7,7 @@
 
 PORTNAME=	fd
 PORTVERSION=	2.07b
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.unixusers.net/src/fdclone/
@@ -19,7 +20,7 @@ COMMENT=	A CUI-based file and directory management tool
 USE_REINPLACE=	yes
 
 MANLANG=	"" ja
-MAN1=		fd.1
+MAN1=		fd.1 fdsh.1
 MAKE_ENV=	LANG=ja
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" CONFDIR="${PREFIX}/etc"
 
