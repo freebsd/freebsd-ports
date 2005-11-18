@@ -1,3 +1,4 @@
+bin/any2djvu
 bin/bzz
 bin/c44
 bin/cjb2
@@ -18,9 +19,11 @@ bin/djvutoxml
 bin/djvutxt
 bin/djvuxmlparser
 include/libdjvu/ddjvuapi.h
-%%X11%%lib/browser_plugins/nsdejavu.so
+include/libdjvu/miniexp.h
+%%X11%%lib/djvulibre/plugins/nsdejavu.so
+lib/libdjvulibre.a
 lib/libdjvulibre.so
-lib/libdjvulibre.so.%%MAJOR_VERSION%%
+lib/libdjvulibre.so.16
 share/djvu/languages.xml
 %%X11%%share/djvu/osi/de/djview.qm
 share/djvu/osi/de/libdjvu++.xml
@@ -44,6 +47,9 @@ share/djvu/osi/zh/messages.xml
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
+%%X11%%@exec mkdir -p %%X11BASE%%/lib/browser_plugins
+%%X11%%@exec ln -sf %D/lib/djvulibre/plugins/nsdejavu.so %%X11BASE%%/lib/browser_plugins/nsdejavu.so
+%%X11%%@unexec rm -f %%X11BASE%%/lib/browser_plugins/nsdejavu.so
 @dirrm share/djvu/pubtext
 @dirrm share/djvu/osi/zh
 @dirrm share/djvu/osi/ja
@@ -52,9 +58,11 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm share/djvu/osi/de
 @dirrm share/djvu/osi
 @dirrm share/djvu
+@dirrm lib/djvulibre/plugins
+@dirrm lib/djvulibre
 @dirrm include/libdjvu
 @unexec rmdir %D/man/fr/man1 2>/dev/null || true
 @unexec rmdir %D/man/fr 2>/dev/null || true
 @unexec rmdir %D/man/de/man1 2>/dev/null || true
 @unexec rmdir %D/man/de 2>/dev/null || true
-@unexec rmdir %D/lib/browser_plugins 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.15
+PORTVERSION=	3.5.16
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -14,69 +14,59 @@ MASTER_SITE_SUBDIR=	djvu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	DjVu viewers, encoders, browser plugin, and utilities
 
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg	\
-		tiff:${PORTSDIR}/graphics/tiff
-
-.if !defined(WITHOUT_X11)
-USE_X_PREFIX=	yes
-USE_QT_VER=	3
-.else
-PKGNAMESUFFIX=	-nox11
-.endif
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_ICONV=	yes
-USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15:inc
-INSTALLS_SHLIB=	yes
-DATADIR=	${PREFIX}/share/djvu
+USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
-		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
-CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared --prefix="${PREFIX}"
-
-.if !defined(WITHOUT_X11)
-CONFIGURE_ENV+=	CXX=${CXX} \
+		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		QTLIBS="-L${X11BASE}/lib -lqt-mt"
-.else
-CONFIGURE_ARGS+=--disable-djview --without-x
-.endif
+		CXX="${CXX}"
+CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
+INSTALLS_SHLIB=	yes
 
-.if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
-pre-configure:
-	${PERL5} -pi -e 's,/usr/local,${LOCALBASE},g' `${FIND} ${WRKSRC} \
-		-type f -print0 | ${XARGS} -0 ${GREP} -Fl --mmap /usr/local`
-.endif
-
-patch-autotools:
-	@cd ${PATCH_WRKSRC}; ${LIBTOOLIZE} -f >/dev/null
-
-post-patch:
-	@${RM} ${WRKSRC}/tools/any2djvu.*
-
-post-configure:
-	${PERL5} -pi -e 's,-O3,,;' -e 's,-m.+=i386,,;' \
-		-e 's|^(OPTS =.*)|\1 ${CFLAGS}|' \
-		${WRKSRC}/*/Makefile ${WRKSRC}/*/*/Makefile
-
-PORTDOCS=	djvu2spec.djvu djvu3changes.txt lizard2002.djvu	\
-		lizard2003-navm.djvu lizard2005-antz.djvu
-MANLANG="" ja
-MAN1=	bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 djvmcvt.1 djvu.1 \
-	djvudump.1 djvuextract.1 djvumake.1 djvups.1 djvused.1 djvuserve.1 djvutxt.1
-
-MAN1EXTRA=	djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
+MANLANG=	"" ja
+MAN1=		bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 \
+		djvmcvt.1 djvu.1 djvudump.1 djvuextract.1 djvumake.1 djvups.1 \
+		djvused.1 djvuserve.1 djvutxt.1
+MAN1EXTRA=	any2djvu.1 djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
 MAN1+=		${MAN1EXTRA}
 
-PLIST_SUB+=	MAJOR_VERSION=${PORTVERSION:E}
+PORTDOCS=	djvu2spec.djvu djvu3changes.txt lizard2002.djvu \
+		lizard2003-navm.djvu lizard2005-antz.djvu
+
 .if !defined(WITHOUT_X11)
-MAN1+=	djview.1 nsdejavu.1
+USE_QT_VER=	3
+CONFIGURE_ENV+=	QTLIBS="-L${X11BASE}/lib -lqt-mt"
+MAN1+=		djview.1 nsdejavu.1
 PLIST_SUB+=	X11=''
 .else
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--disable-djview --without-x
 PLIST_SUB+=	X11='@comment '
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/-O\*/d ; \
+		 s|$$OPTS -O3|$$OPTS|g ; \
+		 s|$$OPTS -O2|$$OPTS|g ; \
+		 s|$$OPTS $$opt|$$OPTS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^#! /bin/bash|#! ${LOCALBASE}/bin/bash|g ; \
+		 s|any2djvu\.sh|any2djvu|g' ${WRKSRC}/tools/any2djvu
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|= @CPPFLAGS|= $${FLAGS} @CPPFLAGS|g ; \
+		 s|@ $${FLAGS}|@|g ; \
+		 s|} $${FLAGS}|}|g ; \
+		 s|/netscape/|/djvulibre/|g ; \
+		 s|eucjp|eucJP|g ; \
+		 s|_PROGRAM} -m|} -m|g'
 
 post-install:
 .for man1 in ${MAN1EXTRA}
@@ -84,9 +74,16 @@ post-install:
 	${TOUCH} ${MAN1PREFIX}/man/${manlang}/man1/${man1}
 .endfor
 .endfor
+.if !defined(WITHOUT_X11)
+	@${MKDIR} ${X11BASE}/lib/browser_plugins
+	${LN} -sf ${PREFIX}/lib/djvulibre/plugins/nsdejavu.so \
+		${X11BASE}/lib/browser_plugins/nsdejavu.so
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

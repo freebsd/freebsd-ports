@@ -1,9 +1,0 @@
---- gsfiles/Makefile.in	Tue Aug 24 13:58:55 2004
-+++ gsfiles/Makefile.in	Tue Oct 18 18:36:57 2005
-@@ -43,5 +43,5 @@
- install-bin: djvudigital FORCE
- 	${INSTALL} -d ${DESTDIR}${bindir}
--	${INSTALL_PROGRAM} -m 0755 ${srcdir}/djvudigital ${DESTDIR}${bindir}
-+	${BSD_INSTALL_SCRIPT} -m 0755 ${srcdir}/djvudigital ${DESTDIR}${bindir}
- 
- install-man: FORCE
