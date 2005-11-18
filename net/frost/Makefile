@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.20050203
+PORTVERSION=	1.2.0.20051020
 PORTEPOCH=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-03-Feb-2005-java14
+DISTNAME=	${PORTNAME}-20-Oct-2005-java${JAVA_VERSION:S/.//}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_RUN=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
-#WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+.ifdef(WITH_JDK15)
+JAVA_VERSION=	1.5
+.else
+JAVA_VERSION=	1.4
+.endif
 
-VERSION_DATE=	090603
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
@@ -35,7 +38,6 @@ JAR_FILES=	frost.jar lib/fecImpl.jar \
 		lib/BCastle.jar \
 		lib/fec-native.jar \
 		lib/genChkImpl.jar lib/xercesImpl.jar \
-		lib/jocache.jar \
 		lib/mailapi.jar lib/smtp.jar \
 		lib/skinlf.jar lib/skinlfFix.jar \
 		lib/xml-apis.jar
@@ -47,7 +49,6 @@ DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
 DATA_FILES=	config/boards.xml.default \
-		themes/aquathemepack.zip \
 		themes/themepack.zip
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -63,6 +64,11 @@ PLIST_FILES+=	%%DATADIR%%/${file}
 PLIST_DIRS+=	\
 		%%JAR_DIR%% \
 		%%DATADIR%%
+
+pre-everything::
+.ifndef(WITH_JDK15)
+	@${ECHO_MSG} '===> Define WITH_JDK15 to use jdk 1.5 instead of jdk 1.4'
+.endif
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
