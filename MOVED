@@ -1967,3 +1967,5 @@ mail/mew-xemacs21-mule||2005-11-17|Deleted from ports collection
 mail/mew2-xemacs21-mule||2005-11-17|Deleted from ports collection
 mail/mew3-xemacs21-mule||2005-11-17|Deleted from ports collection
 security/racoon||2005-11-18|removed, successor is ipsec-tools
+x11-themes/metacity-theme-6nome||2005-11-18|Deleted; unfetchable
+x11-themes/metacity-theme-aero||2005-11-18|Deleted; unfetchable
