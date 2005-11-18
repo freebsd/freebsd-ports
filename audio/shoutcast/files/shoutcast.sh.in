@@ -15,7 +15,7 @@ stop_cmd="shoutcast_stopcmd"
 
 shoutcast_startcmd ()
 {
-%%PREFIX%%/sbin/sc_serv %%PREFIX%%/etc/sc_serv.conf
+su shoutcast -c '%%PREFIX%%/sbin/sc_serv %%PREFIX%%/etc/shoutcast/sc_serv.conf & >/dev/null 2>&1'
 }
 
 shoutcast_stopcmd ()

@@ -1,4 +1,6 @@
 MD5 (shoutcast-1-9-5-freebsd5-elf.tar.gz) = 8471ee4c9cb02d6eb01d9871f3fe07a9
+SHA256 (shoutcast-1-9-5-freebsd5-elf.tar.gz) = 9054ed47ea73301ae3c31cc9e4807927c7d2abadd8c8165cfb8e230e24b7ed1c
 SIZE (shoutcast-1-9-5-freebsd5-elf.tar.gz) = 60080
 MD5 (shoutcast-1-9-5-freebsd4-elf.tar.gz) = 2d3af62f2fda9ddc68116f15c3674df4
+SHA256 (shoutcast-1-9-5-freebsd4-elf.tar.gz) = 69ec4d494eb96f66b47e3ed2411c1c25164e38a0444eea7e2ac3ef6ef252c31c
 SIZE (shoutcast-1-9-5-freebsd4-elf.tar.gz) = 55818

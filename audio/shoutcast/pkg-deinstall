@@ -1,0 +1,12 @@
+#!/bin/sh
+
+SC_GROUP=shoutcast
+SC_USER=shoutcast
+SC_SHELL=/bin/sh
+SC_HOME=/nonexistent
+PW=/usr/sbin/pw
+
+pw groupdel shoutcast >/dev/null 2>&1
+pw userdel shoutcast >/dev/null 2>&1
+
+exit 0

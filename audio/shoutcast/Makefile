@@ -6,7 +6,7 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-5/
 
@@ -15,13 +15,15 @@ COMMENT=	Nullsoft's streaming audio server (binary port)
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
-NO_PACKAGE=	Redistribution of the software isn't allowed
+NO_PACKAGE=	"Redistribution of the software isn\'t allowed"
 
 USE_RC_SUBR=	shoutcast.sh
-PLIST_FILES=	sbin/sc_serv etc/shoutcast/sc_serv.conf
+PLIST_FILES=	sbin/sc_serv etc/shoutcast/sc_serv.conf.sample
 PLIST_DIRS=	etc/shoutcast
 PORTDOCS=	README.TXT
-PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_REINPLACE=	YES
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -37,18 +39,26 @@ BROKEN=		"unsupported FreeBSD version"
 .endif
 
 post-patch:
-	@${CAT} ${PKGDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
+	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+		-e 's|=sc_serv.log|=/var/log/sc_serv.log|' \
+		-e 's|=sc_w3c.log|=/var/log/sc_w3c.log|' \
+		-e 's|ScreenLog=1|ScreenLog=0|' \
+		-e 's|RealTime=1|RealTime=0|' \
+		-e 's|=sc_serv.ban|=${PREFIX}/etc/shoutcast/sc_serv.ban|' \
+		-e 's|=sc_serv.rip|=${PREFIX}/etc/shoutcast/sc_serv.rip|' \
+		${WRKSRC}/sc_serv.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/etc/shoutcast
-	${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast
+	${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
 .endif
 
 post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
