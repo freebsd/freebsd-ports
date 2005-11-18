@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	1.5rc2
+DISTVERSION=	1.5rc3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -20,7 +20,9 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		Xft.2:${PORTSDIR}/x11-fonts/libXft \
+		nspr4:${PORTSDIR}/devel/nspr \
+		nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 
@@ -60,7 +62,7 @@ FIREFOX_ICON=		${FF}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${FF}/icons/default.xpm
 
 PKGCONFIG_FILES=firefox-gtkmozembed firefox-js firefox-xpcom \
-		firefox-nspr firefox-nss firefox-plugin
+		firefox-plugin
 
 JPI_LIST?=\
 	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
