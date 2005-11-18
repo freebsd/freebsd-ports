@@ -323,25 +323,52 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # run-autotools
 #
 # Part of the configure set - run appropriate programs prior to
-# the actual configure target if autotools are in use
-#
+# the actual configure target if autotools are in use.
+# If needed, this target can be overridden, for example to change
+# the order of autotools running.
+
 .if !target(run-autotools)
-run-autotools:
+run-autotools:: run-autotools-aclocal run-autotools-automake \
+		run-autotools-autoconf run-autotools-autoheader
+.endif
+
+.if !target(run-autotools-aclocal)
+run-autotools-aclocal:
 . if defined(AUTOTOOL_aclocal)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
 		${ACLOCAL_ARGS})
+. else
+	@${DO_NADA}
 . endif
+.endif
+
+.if !target(run-autotools-automake)
+run-autotools-automake:
 . if defined(AUTOTOOL_automake)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
+. else
+	@${DO_NADA}
 . endif
+.endif
+
+.if !target(run-autotools-autoconf)
+run-autotools-autoconf:
 . if defined(AUTOTOOL_autoconf)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
+. else
+	@${DO_NADA}
 . endif
+.endif
+
+.if !target(run-autotools-autoheader)
+run-autotools-autoheader:
 . if defined(AUTOTOOL_autoheader)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
+. else
+	@${DO_NADA}
 . endif
 .endif
 
@@ -349,7 +376,7 @@ run-autotools:
 #
 # Special target to automatically make libtool using ports use the
 # libtool port.  See above for default values of LIBTOOLFILES.
-#
+
 .if !target(patch-autotools)
 patch-autotools:
 . if defined(AUTOTOOL_libtool_inc)
