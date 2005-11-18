@@ -25,7 +25,7 @@ command="%%PREFIX%%/sbin/smartd"
 load_rc_config $name
 
 : ${smartd_config="%%PREFIX%%/etc/smartd.conf"}
-: ${smartd_flags="--configfile=${smartd_config}"}
+: ${smartd_flags="-c ${smartd_config}"}
 
 pidfile="${smartd_pidfile}"
 required_files="${smartd_config}"
