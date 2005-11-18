@@ -1,4 +1,4 @@
-bin/Sk
+bin/sk
 bin/sketchy
 %%DATADIR%%/lib/abs.l
 %%DATADIR%%/lib/anyp.l
@@ -7,11 +7,9 @@ bin/sketchy
 %%DATADIR%%/lib/assq.l
 %%DATADIR%%/lib/booleanp.l
 %%DATADIR%%/lib/c-alphabeticp.l
-%%DATADIR%%/lib/c-cieqp.l
 %%DATADIR%%/lib/c-cigep.l
 %%DATADIR%%/lib/c-cigtp.l
 %%DATADIR%%/lib/c-cilep.l
-%%DATADIR%%/lib/c-ciltp.l
 %%DATADIR%%/lib/c-downcase.l
 %%DATADIR%%/lib/c-lower-casep.l
 %%DATADIR%%/lib/c-numericp.l
@@ -21,11 +19,9 @@ bin/sketchy
 %%DATADIR%%/lib/caaaar.l
 %%DATADIR%%/lib/caaar.l
 %%DATADIR%%/lib/caar.l
-%%DATADIR%%/lib/ceqp.l
 %%DATADIR%%/lib/cgep.l
 %%DATADIR%%/lib/cgtp.l
 %%DATADIR%%/lib/clep.l
-%%DATADIR%%/lib/cltp.l
 %%DATADIR%%/lib/count.l
 %%DATADIR%%/lib/depth.l
 %%DATADIR%%/lib/digits.l
@@ -81,17 +77,15 @@ bin/sketchy
 %%DATADIR%%/lib/neqp.l
 %%DATADIR%%/lib/negate.l
 %%DATADIR%%/lib/negativep.l
+%%DATADIR%%/lib/newline.l
 %%DATADIR%%/lib/nexpt.l
 %%DATADIR%%/lib/ngreater.l
 %%DATADIR%%/lib/ngteq.l
-%%DATADIR%%/lib/nless.l
 %%DATADIR%%/lib/nlteq.l
-%%DATADIR%%/lib/nminus.l
 %%DATADIR%%/lib/non-negativep.l
 %%DATADIR%%/lib/normalize.l
 %%DATADIR%%/lib/not-equalp.l
 %%DATADIR%%/lib/not.l
-%%DATADIR%%/lib/nplus.l
 %%DATADIR%%/lib/nquotient.l
 %%DATADIR%%/lib/nremainder.l
 %%DATADIR%%/lib/ntimes.l
@@ -106,6 +100,7 @@ bin/sketchy
 %%DATADIR%%/lib/product.l
 %%DATADIR%%/lib/quicksort.l
 %%DATADIR%%/lib/quotient.l
+%%DATADIR%%/lib/read-line.l
 %%DATADIR%%/lib/reduce.l
 %%DATADIR%%/lib/remainder.l
 %%DATADIR%%/lib/remove.l
@@ -144,6 +139,7 @@ bin/sketchy
 %%DATADIR%%/src/bubblesort.l
 %%DATADIR%%/src/date.l
 %%DATADIR%%/src/evaluate.l
+%%DATADIR%%/src/gen-bottles.l
 %%DATADIR%%/src/hanoi.l
 %%DATADIR%%/src/infix.l
 %%DATADIR%%/src/lvrename.l
@@ -152,6 +148,7 @@ bin/sketchy
 %%DATADIR%%/src/queens.l
 %%DATADIR%%/src/tree.l
 %%DATADIR%%/src/unlabel.l
+%%DATADIR%%/src/vqueens.l
 %%DATADIR%%/src/xeval.l
 %%DATADIR%%/sketchy.image
 %%DATADIR%%/LICENSE
@@ -162,11 +159,9 @@ bin/sketchy
 %%DOCSDIR%%/library/assq.html
 %%DOCSDIR%%/library/booleanp.html
 %%DOCSDIR%%/library/c-alphabeticp.html
-%%DOCSDIR%%/library/c-cieqp.html
 %%DOCSDIR%%/library/c-cigep.html
 %%DOCSDIR%%/library/c-cigtp.html
 %%DOCSDIR%%/library/c-cilep.html
-%%DOCSDIR%%/library/c-ciltp.html
 %%DOCSDIR%%/library/c-downcase.html
 %%DOCSDIR%%/library/c-lower-casep.html
 %%DOCSDIR%%/library/c-numericp.html
@@ -176,11 +171,9 @@ bin/sketchy
 %%DOCSDIR%%/library/caaaar.html
 %%DOCSDIR%%/library/caaar.html
 %%DOCSDIR%%/library/caar.html
-%%DOCSDIR%%/library/ceqp.html
 %%DOCSDIR%%/library/cgep.html
 %%DOCSDIR%%/library/cgtp.html
 %%DOCSDIR%%/library/clep.html
-%%DOCSDIR%%/library/cltp.html
 %%DOCSDIR%%/library/count.html
 %%DOCSDIR%%/library/depth.html
 %%DOCSDIR%%/library/digits.html
@@ -237,17 +230,15 @@ bin/sketchy
 %%DOCSDIR%%/library/negate.html
 %%DOCSDIR%%/library/negativep.html
 %%DOCSDIR%%/library/neqp.html
+%%DOCSDIR%%/library/newline.html
 %%DOCSDIR%%/library/nexpt.html
 %%DOCSDIR%%/library/ngreater.html
 %%DOCSDIR%%/library/ngteq.html
-%%DOCSDIR%%/library/nless.html
 %%DOCSDIR%%/library/nlteq.html
-%%DOCSDIR%%/library/nminus.html
 %%DOCSDIR%%/library/non-negativep.html
 %%DOCSDIR%%/library/normalize.html
 %%DOCSDIR%%/library/not-equalp.html
 %%DOCSDIR%%/library/not.html
-%%DOCSDIR%%/library/nplus.html
 %%DOCSDIR%%/library/nquotient.html
 %%DOCSDIR%%/library/nremainder.html
 %%DOCSDIR%%/library/ntimes.html
@@ -262,6 +253,7 @@ bin/sketchy
 %%DOCSDIR%%/library/product.html
 %%DOCSDIR%%/library/quicksort.html
 %%DOCSDIR%%/library/quotient.html
+%%DOCSDIR%%/library/read-line.html
 %%DOCSDIR%%/library/reduce.html
 %%DOCSDIR%%/library/remainder.html
 %%DOCSDIR%%/library/remove.html
@@ -308,8 +300,9 @@ bin/sketchy
 %%DOCSDIR%%/sk07.html
 %%DOCSDIR%%/sk08.html
 %%DOCSDIR%%/sk09.html
+%%DOCSDIR%%/toc-c.html
 %%DOCSDIR%%/toc.html
-%%DOCSDIR%%/retro.css
+%%DOCSDIR%%/sketchy.css
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%
