@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -51,7 +50,7 @@ CONFIGURE_ARGS+=	--with-debug=yes
 CONFIGURE_ARGS+=	--with-treatBuildDependsAsLeaves=yes
 .endif
 
-# Keep this in post-configure. After run configure, he change this value.
+# Keep this in post-configure. After run configure, this value is changed.
 post-configure:
 	@${REINPLACE_CMD} -e    \
 		's|PACKAGE_VERSION "${PORTVERSION}"|PACKAGE_VERSION "${PORTVERSION}_${PORTREVISION}"|g' \
