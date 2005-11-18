@@ -25,7 +25,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The NeXTSTEP clone window manager with Fontset support
+COMMENT=	The NeXTstep clone window manager with Fontset support
 
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
