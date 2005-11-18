@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	finance german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check bank codes of German banks
 
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_PYTHON=	2.3+
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 MAN1=		ktoblzcheck.1
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|_EFFECTIVE=.*$$|_EFFECTIVE=1|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
