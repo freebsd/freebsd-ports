@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.1/ \
@@ -41,7 +41,8 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		COMPFACE	"Enable X-Face support." off \
 		JPILOT		"Enable JPilot support." off \
 		LDAP		"Enable LDAP support." off \
-		SSL		"Enable OpenSSL support." on
+		SSL		"Enable OpenSSL support." on \
+		GTKSPELL	"Enable Spell checking support" on
 
 .include <bsd.port.pre.mk>
 
@@ -81,6 +82,13 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
+.endif
+
+.if defined(WITH_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+CONFIGURE_ARGS+=--enable-gtkspell
+.else
+CONFIGURE_ARGS+=--disable-gtkspell
 .endif
 
 .if defined(WITH_GNOME)
