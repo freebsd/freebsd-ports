@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.4p1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.4
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 
