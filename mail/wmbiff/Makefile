@@ -5,34 +5,43 @@
 # $FreeBSD$
 #
 
-PORTNAME=		wmbiff
-PORTVERSION=		0.4.26
-PORTREVISION=		1
-CATEGORIES=		mail windowmaker afterstep
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	wmbiff
+PORTVERSION=	0.4.27
+CATEGORIES=	mail windowmaker afterstep
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		An xbiff-like Window Maker dock app
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An xbiff-like Window Maker dock app
 
-USE_X_PREFIX=		yes
+OPTIONS=	GNUTLS "Support for SSL" off
 
-OPTIONS=		GNUTLS "Support for SSL" off
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=		wmbiff.1
+MAN5=		wmbiffrc.5
+PLIST_FILES=	bin/wmbiff \
+		lib/wmbiff/security.debian.rb \
+		%%DATADIR%%/sample.wmbiffrc \
+		%%DATADIR%%/skins/wmbiff-master-contrast.xpm \
+		%%DATADIR%%/skins/wmbiff-master-led.xpm
+PLIST_DIRS=	%%DATADIR%%/skins \
+		%%DATADIR%% \
+		lib/wmbiff
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_GNUTLS
-LIB_DEPENDS+=		gcrypt.13:${PORTSDIR}/security/libgcrypt \
-			gnutls.12:${PORTSDIR}/security/gnutls
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+		gnutls.12:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
+			--with-libgcrypt-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-crypto
 .endif
-
-USE_XPM=		yes
-GNU_CONFIGURE=		yes
-
-MAN1=			wmbiff.1
-MAN5=			wmbiffrc.5
 
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"

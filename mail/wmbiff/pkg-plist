@@ -1,8 +1,0 @@
-bin/wmbiff
-lib/wmbiff/security.debian.rb
-share/wmbiff/sample.wmbiffrc
-share/wmbiff/skins/wmbiff-master-led.xpm
-share/wmbiff/skins/wmbiff-master-contrast.xpm
-@dirrm lib/wmbiff
-@dirrm share/wmbiff/skins
-@dirrm share/wmbiff
