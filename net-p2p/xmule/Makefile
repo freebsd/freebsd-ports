@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	xmule
-DISTVERSION=	1.10.0a
+DISTVERSION=	1.12.0
 CATEGORIES=	net
-#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	xmule
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+		wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GETTEXT=	yes
@@ -44,7 +43,7 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 # for debugging purposes
 STRIP=
 
-WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
+WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.6-config
 
 FILES_ATOLL_PATCH=	src/Preferences.cpp \
 			src/otherfunctions.cpp
@@ -71,7 +70,7 @@ post-patch:
 # update documentation with correct prefix
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr/X11R6/(bin/${PORTNAME}-ed2k-handler)|${PREFIX}/\1|' \
-		${WRKSRC}/ED2K-Links.HOWTO
+		${WRKSRC}/docs/ED2K-Links.HOWTO
 # use BSD_INSTALL_* macros
 	@${REINPLACE_CMD} -E \
 		-e 's|cp -f|${INSTALL_DATA}|' \
@@ -108,6 +107,9 @@ pre-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CXXFLAGS.*)$$|\1 -I${LOCALBASE}/include|' \
 		${WRKSRC}/xLibs/xrc/xrc.make.in
+
+pre-install:
+	@${CHMOD} a=rx ${WRKSRC}/mkinstalldirs
 
 post-install:
 # install xmule binary
