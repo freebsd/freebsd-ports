@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 CGI script providing an LDAP addressbook web interface
 
+FORBIDDEN=	Arbitrary command execution vulnerability in CGI script
+
 RUN_DEPENDS=	${SITE_PERL}/AddressBook.pm:${PORTSDIR}/net/p5-AddressBook \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
