@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-DISTVERSION=	1-09
-PORTREVISION=	4
+DISTVERSION=	1-10
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/CImg
 BUILD_WRKSRC=	${WRKSRC}/examples
 MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="${LDFLAGS} ${LAPACK_LIB} ${PTHREAD_LIBS}"	\
@@ -29,6 +27,9 @@ USE_GCC=	3.4
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 DOCBASE=	CHANGES.txt README.txt
+DOCREFS=	download.shtml favicon.ico favicon.png foot_reference.html	\
+		head.html head_reference.html img index.shtml news.html		\
+		reference screenshots.shtml
 .else
 NOBUILD=	yes
 .endif
@@ -52,13 +53,20 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|img/|${EXAMPLESDIR}/img/|g'
 .endif
 
+.if !defined(NOPORTDOCS)
+post-build:
+	cd ${WRKSRC}/documentation && doxygen CImg.doxygen
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/CImg_test ${PREFIX}/bin
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/documentation/* ${DOCSDIR}
+. for doc in ${DOCREFS}
+	${CP} -R ${WRKSRC}/documentation/${doc} ${DOCSDIR}
+. endfor
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@(cd ${EXAMPLESDIR} && ${MAKE} clean)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} ${EXAMPLESDIR}
