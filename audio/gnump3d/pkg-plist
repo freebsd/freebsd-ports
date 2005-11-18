@@ -15,6 +15,7 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/files.pm
 %%SITE_PERL%%/gnump3d/lang/de.pm
 %%SITE_PERL%%/gnump3d/lang/en.pm
+%%SITE_PERL%%/gnump3d/lang/es.pm
 %%SITE_PERL%%/gnump3d/lang/fr.pm
 %%SITE_PERL%%/gnump3d/lang/lookup.pm
 %%SITE_PERL%%/gnump3d/mp3info.pm
@@ -37,6 +38,30 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/sorting.pm
 %%SITE_PERL%%/gnump3d/tagcache.pm
 %%SITE_PERL%%/gnump3d/url.pm
+%%DATADIR%%/Avalon/AUTHOR
+%%DATADIR%%/Avalon/COPYING.html
+%%DATADIR%%/Avalon/base.css
+%%DATADIR%%/Avalon/bug.html
+%%DATADIR%%/Avalon/config.ini
+%%DATADIR%%/Avalon/error.html
+%%DATADIR%%/Avalon/gnump3d-logo.jpg
+%%DATADIR%%/Avalon/html_footer.tmpl
+%%DATADIR%%/Avalon/html_header.tmpl
+%%DATADIR%%/Avalon/index.html
+%%DATADIR%%/Avalon/info.html
+%%DATADIR%%/Avalon/now.html
+%%DATADIR%%/Avalon/page_footer.tmpl
+%%DATADIR%%/Avalon/page_header.tmpl
+%%DATADIR%%/Avalon/playlist.html
+%%DATADIR%%/Avalon/prefs.html
+%%DATADIR%%/Avalon/random.html
+%%DATADIR%%/Avalon/readme.txt
+%%DATADIR%%/Avalon/recent.html
+%%DATADIR%%/Avalon/results.html
+%%DATADIR%%/Avalon/search.html
+%%DATADIR%%/Avalon/size.html
+%%DATADIR%%/Avalon/stats.html
+%%DATADIR%%/Avalon/tagbrowse.html
 %%DATADIR%%/BlueBox/AUTHOR
 %%DATADIR%%/BlueBox/BlueBox.css
 %%DATADIR%%/BlueBox/COPYING.html
@@ -373,6 +398,7 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%/BlueBox
+@dirrm %%DATADIR%%/Avalon
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/gnump3d/plugins
 @dirrm %%SITE_PERL%%/gnump3d/lang
