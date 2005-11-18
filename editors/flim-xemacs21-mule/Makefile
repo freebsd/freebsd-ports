@@ -29,7 +29,7 @@ INSTALL_TARGET=	install-package
 # whether building info files by emacs or makeinfo
 BUILD_INFO_BY_EMACS=	YES
 # texinfo packages
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
 
 # package info manifest
 MANIFEST=	MANIFEST.flim
