@@ -1,10 +1,13 @@
 include/vmime/address.hpp
 include/vmime/addressList.hpp
 include/vmime/attachment.hpp
+include/vmime/attachmentHelper.hpp
 include/vmime/base.hpp
 include/vmime/body.hpp
 include/vmime/bodyPart.hpp
+include/vmime/bodyPartAttachment.hpp
 include/vmime/charset.hpp
+include/vmime/charsetConverter.hpp
 include/vmime/component.hpp
 include/vmime/config.hpp
 include/vmime/constants.hpp
@@ -14,7 +17,6 @@ include/vmime/contentHandler.hpp
 include/vmime/contentTypeField.hpp
 include/vmime/dateTime.hpp
 include/vmime/defaultAttachment.hpp
-include/vmime/defaultParameter.hpp
 include/vmime/disposition.hpp
 include/vmime/emptyContentHandler.hpp
 include/vmime/encoder.hpp
@@ -29,11 +31,10 @@ include/vmime/encoderUUE.hpp
 include/vmime/encoding.hpp
 include/vmime/exception.hpp
 include/vmime/fileAttachment.hpp
-include/vmime/genericField.hpp
-include/vmime/genericParameter.hpp
 include/vmime/header.hpp
 include/vmime/headerField.hpp
 include/vmime/headerFieldFactory.hpp
+include/vmime/headerFieldValue.hpp
 include/vmime/htmlTextPart.hpp
 include/vmime/mailbox.hpp
 include/vmime/mailboxField.hpp
@@ -49,42 +50,47 @@ include/vmime/messageBuilder.hpp
 include/vmime/messageId.hpp
 include/vmime/messageIdSequence.hpp
 include/vmime/messageParser.hpp
-include/vmime/messaging/authHelper.hpp
-include/vmime/messaging/authenticationInfos.hpp
-include/vmime/messaging/authenticator.hpp
-include/vmime/messaging/defaultAuthenticator.hpp
-include/vmime/messaging/events.hpp
-include/vmime/messaging/folder.hpp
-include/vmime/messaging/imap/IMAPConnection.hpp
-include/vmime/messaging/imap/IMAPFolder.hpp
-include/vmime/messaging/imap/IMAPMessage.hpp
-include/vmime/messaging/imap/IMAPParser.hpp
-include/vmime/messaging/imap/IMAPStore.hpp
-include/vmime/messaging/imap/IMAPTag.hpp
-include/vmime/messaging/imap/IMAPUtils.hpp
-include/vmime/messaging/maildir/maildirFolder.hpp
-include/vmime/messaging/maildir/maildirMessage.hpp
-include/vmime/messaging/maildir/maildirStore.hpp
-include/vmime/messaging/maildir/maildirUtils.hpp
-include/vmime/messaging/message.hpp
-include/vmime/messaging/pop3/POP3Folder.hpp
-include/vmime/messaging/pop3/POP3Message.hpp
-include/vmime/messaging/pop3/POP3Store.hpp
-include/vmime/messaging/sendmail/sendmailTransport.hpp
-include/vmime/messaging/service.hpp
-include/vmime/messaging/serviceFactory.hpp
-include/vmime/messaging/serviceInfos.hpp
-include/vmime/messaging/session.hpp
-include/vmime/messaging/simpleAuthenticator.hpp
-include/vmime/messaging/smtp/SMTPTransport.hpp
-include/vmime/messaging/socket.hpp
-include/vmime/messaging/store.hpp
-include/vmime/messaging/timeoutHandler.hpp
-include/vmime/messaging/transport.hpp
 include/vmime/misc/importanceHelper.hpp
+include/vmime/net/events.hpp
+include/vmime/net/folder.hpp
+include/vmime/net/imap/IMAPConnection.hpp
+include/vmime/net/imap/IMAPFolder.hpp
+include/vmime/net/imap/IMAPMessage.hpp
+include/vmime/net/imap/IMAPParser.hpp
+include/vmime/net/imap/IMAPSStore.hpp
+include/vmime/net/imap/IMAPServiceInfos.hpp
+include/vmime/net/imap/IMAPStore.hpp
+include/vmime/net/imap/IMAPTag.hpp
+include/vmime/net/imap/IMAPUtils.hpp
+include/vmime/net/maildir/maildirFolder.hpp
+include/vmime/net/maildir/maildirMessage.hpp
+include/vmime/net/maildir/maildirServiceInfos.hpp
+include/vmime/net/maildir/maildirStore.hpp
+include/vmime/net/maildir/maildirUtils.hpp
+include/vmime/net/message.hpp
+include/vmime/net/pop3/POP3Folder.hpp
+include/vmime/net/pop3/POP3Message.hpp
+include/vmime/net/pop3/POP3SStore.hpp
+include/vmime/net/pop3/POP3ServiceInfos.hpp
+include/vmime/net/pop3/POP3Store.hpp
+include/vmime/net/sendmail/sendmailServiceInfos.hpp
+include/vmime/net/sendmail/sendmailTransport.hpp
+include/vmime/net/service.hpp
+include/vmime/net/serviceFactory.hpp
+include/vmime/net/serviceInfos.hpp
+include/vmime/net/session.hpp
+include/vmime/net/smtp/SMTPSTransport.hpp
+include/vmime/net/smtp/SMTPServiceInfos.hpp
+include/vmime/net/smtp/SMTPTransport.hpp
+include/vmime/net/socket.hpp
+include/vmime/net/store.hpp
+include/vmime/net/timeoutHandler.hpp
+include/vmime/net/tls/TLSSession.hpp
+include/vmime/net/tls/TLSSocket.hpp
+include/vmime/net/transport.hpp
+include/vmime/object.hpp
 include/vmime/options.hpp
 include/vmime/parameter.hpp
-include/vmime/parameterFactory.hpp
 include/vmime/parameterizedHeaderField.hpp
 include/vmime/parserHelpers.hpp
 include/vmime/path.hpp
@@ -99,22 +105,37 @@ include/vmime/platforms/windows/windowsHandler.hpp
 include/vmime/platforms/windows/windowsSocket.hpp
 include/vmime/propertySet.hpp
 include/vmime/relay.hpp
-include/vmime/standardFields.hpp
-include/vmime/standardParams.hpp
+include/vmime/security/authenticator.hpp
+include/vmime/security/cert/X509Certificate.hpp
+include/vmime/security/cert/certificate.hpp
+include/vmime/security/cert/certificateChain.hpp
+include/vmime/security/cert/certificateVerifier.hpp
+include/vmime/security/cert/defaultCertificateVerifier.hpp
+include/vmime/security/defaultAuthenticator.hpp
+include/vmime/security/digest/md5/md5MessageDigest.hpp
+include/vmime/security/digest/messageDigest.hpp
+include/vmime/security/digest/messageDigestFactory.hpp
+include/vmime/security/digest/sha1/sha1MessageDigest.hpp
+include/vmime/security/sasl/SASLAuthenticator.hpp
+include/vmime/security/sasl/SASLContext.hpp
+include/vmime/security/sasl/SASLMechanism.hpp
+include/vmime/security/sasl/SASLMechanismFactory.hpp
+include/vmime/security/sasl/SASLSession.hpp
+include/vmime/security/sasl/SASLSocket.hpp
+include/vmime/security/sasl/builtinSASLMechanism.hpp
+include/vmime/security/sasl/defaultSASLAuthenticator.hpp
 include/vmime/streamContentHandler.hpp
 include/vmime/stringContentHandler.hpp
 include/vmime/text.hpp
 include/vmime/textPart.hpp
 include/vmime/textPartFactory.hpp
-include/vmime/typeAdapter.hpp
 include/vmime/types.hpp
 include/vmime/utility/childProcess.hpp
 include/vmime/utility/datetimeUtils.hpp
 include/vmime/utility/file.hpp
 include/vmime/utility/filteredStream.hpp
-include/vmime/utility/md5.hpp
 include/vmime/utility/path.hpp
-include/vmime/utility/progressionListener.hpp
+include/vmime/utility/progressListener.hpp
 include/vmime/utility/random.hpp
 include/vmime/utility/smartPtr.hpp
 include/vmime/utility/stream.hpp
@@ -126,7 +147,7 @@ include/vmime/vmime.hpp
 include/vmime/word.hpp
 lib/libvmime.a
 lib/libvmime.so
-lib/libvmime.so.7
+lib/libvmime.so.0
 libdata/pkgconfig/vmime.pc
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
@@ -136,15 +157,22 @@ libdata/pkgconfig/vmime.pc
 %%DOCSDIR%%/README
 @dirrm %%DOCSDIR%%
 @dirrm include/vmime/utility
+@dirrm include/vmime/security/sasl
+@dirrm include/vmime/security/digest/sha1
+@dirrm include/vmime/security/digest/md5
+@dirrm include/vmime/security/digest
+@dirrm include/vmime/security/cert
+@dirrm include/vmime/security
 @dirrm include/vmime/platforms/windows
 @dirrm include/vmime/platforms/posix
 @dirrm include/vmime/platforms
+@dirrm include/vmime/net/tls
+@dirrm include/vmime/net/smtp
+@dirrm include/vmime/net/sendmail
+@dirrm include/vmime/net/pop3
+@dirrm include/vmime/net/maildir
+@dirrm include/vmime/net/imap
+@dirrm include/vmime/net
 @dirrm include/vmime/misc
-@dirrm include/vmime/messaging/smtp
-@dirrm include/vmime/messaging/sendmail
-@dirrm include/vmime/messaging/pop3
-@dirrm include/vmime/messaging/maildir
-@dirrm include/vmime/messaging/imap
-@dirrm include/vmime/messaging
 @dirrm include/vmime/mdn
 @dirrm include/vmime
