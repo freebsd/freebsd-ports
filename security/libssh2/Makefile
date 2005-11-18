@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	include/libssh2.h \
+		include/libssh2_publickey.h \
 		include/libssh2_sftp.h \
 		lib/libssh2.so \
 		lib/libssh2.so.0
