@@ -451,7 +451,6 @@
     SUBDIR += qident
     SUBDIR += qtfw
     SUBDIR += quintuple-agent
-    SUBDIR += racoon
     SUBDIR += racoon2
     SUBDIR += radiusniff
     SUBDIR += rain
