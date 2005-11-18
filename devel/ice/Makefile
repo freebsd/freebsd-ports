@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	2.1.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/2.1/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.0/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
