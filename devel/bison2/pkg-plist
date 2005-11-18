@@ -53,6 +53,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/tr/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bison-runtime.mo
+%%NLS%%@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%
 @unexec rmdir %D/share/aclocal 2>/dev/null || true
