@@ -23,27 +23,27 @@ COMMENT=	Cleaned up copy of the original Quake II source code
 USE_GMAKE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AA "Build ASCII software renderer" off \
-		ARTS "Enable support for aRts sound daemon" off \
-		CLIENT "Build client executable" on \
-		CTF "Build Capture The Flag mod" off \
-		EYECANDY "Build executable with fancier GL graphics" off \
-		GAME "Build a main game .so file" on \
-		GLX "Build GLX driver" on \
-		IPV6 "Enable experimental IPv6 support" off \
-		JOYSTICK "Enable joystick support" off \
+OPTIONS=	AA		"Build ASCII software renderer" off \
+		ARTS		"Enable support for aRts sound daemon" off \
+		CLIENT		"Build client executable" on \
+		CTF		"Build Capture The Flag mod" off \
+		EYECANDY	"Build executable with fancier GL graphics" off \
+		GAME		"Build a main game .so file" on \
+		GLX		"Build GLX driver" on \
+		IPV6		"Enable experimental IPv6 support" off \
+		JOYSTICK	"Enable joystick support" off \
 		OPTIMIZED_CFLAGS "Enable extra optimization options" off \
-		REDBLUE "Enable 3D glasses rendering" off \
-		RETEXTURE "Enable support of retextured graphics" off \
-		ROGUE "Build Ground Zero (Rogue) mission pack" off \
-		SDL "Build SDL software driver" off \
-		SDLCLIENT "Build executable that uses SDL" off \
-		SDLGL "Build SDL OpenGL driver" off \
-		SERVER "Build dedicated server executable" on \
-		SVGA "Build SVGA driver" off \
-		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
-		X11 "Build X11 software driver" on \
-		X86_ASM "Enable use of x86 assembly code" on
+		REDBLUE		"Enable 3D glasses rendering" off \
+		RETEXTURE	"Enable support of retextured graphics" off \
+		ROGUE		"Build Ground Zero (Rogue) mission pack" off \
+		SDL		"Build SDL software driver" off \
+		SDLCLIENT	"Build executable that uses SDL" off \
+		SDLGL		"Build SDL OpenGL driver" off \
+		SERVER		"Build dedicated server executable" on \
+		SVGA		"Build SVGA driver" off \
+		XATRIX		"Build The Reckoning (Xatrix) mission pack" off \
+		X11		"Build X11 software driver" on \
+		X86_ASM		"Enable use of x86 assembly code" on
 
 ALL_TARGET=	build_release
 MAKE_ENV=	DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
@@ -228,19 +228,19 @@ do-install:
 .for tgt in ${EXE_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/${tgt} ${PREFIX}/bin
 .endfor
-	${MKDIR} ${LIBDIR}
+	@${MKDIR} ${LIBDIR}
 .for tgt in ${REF_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/ref_${tgt}.so ${LIBDIR}
 .endfor
 .if defined(WITH_CTF)
-	${MKDIR} ${LIBDIR}/ctf
+	@${MKDIR} ${LIBDIR}/ctf
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game.so ${LIBDIR}/ctf
 .endif
 .if defined(WITH_EYECANDY)
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${DATADIR}/baseq2
 .endif
 .if defined(WITH_GAME)
-	${MKDIR} ${LIBDIR}/baseq2
+	@${MKDIR} ${LIBDIR}/baseq2
 	${INSTALL_PROGRAM} ${TGTDIR}/game.so ${LIBDIR}/baseq2
 .endif
 .if defined(WITH_RETEXTURE)
@@ -249,7 +249,7 @@ do-install:
 .   endfor
 .endif
 .for mp in ${Q2MP}
-	${MKDIR} ${LIBDIR}/${mp}
+	@${MKDIR} ${LIBDIR}/${mp}
 	${INSTALL_PROGRAM} ${TGTDIR}/${mp}/game.so ${LIBDIR}/${mp}
 .endfor
 .if !defined(NOPORTDOCS)
