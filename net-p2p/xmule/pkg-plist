@@ -2,15 +2,15 @@ bin/xmule
 bin/xmule-ed2k-handler
 share/gnome/applications/xmule.desktop
 share/gnome/pixmaps/xmule.xpm
-share/locale/de/LC_MESSAGES/xMule.mo
-share/locale/ee/LC_MESSAGES/xMule.mo
-share/locale/es/LC_MESSAGES/xMule.mo
-share/locale/es_MX/LC_MESSAGES/xMule.mo
-share/locale/fr/LC_MESSAGES/xMule.mo
-share/locale/it/LC_MESSAGES/xMule.mo
-share/locale/ko/LC_MESSAGES/xMule.mo
-share/locale/pl/LC_MESSAGES/xMule.mo
-share/locale/tr/LC_MESSAGES/xMule.mo
+share/locale/de/LC_MESSAGES/xmule.mo
+share/locale/ee/LC_MESSAGES/xmule.mo
+share/locale/es/LC_MESSAGES/xmule.mo
+share/locale/es_MX/LC_MESSAGES/xmule.mo
+share/locale/fr/LC_MESSAGES/xmule.mo
+share/locale/it/LC_MESSAGES/xmule.mo
+share/locale/ko/LC_MESSAGES/xmule.mo
+share/locale/pl/LC_MESSAGES/xmule.mo
+share/locale/tr/LC_MESSAGES/xmule.mo
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
