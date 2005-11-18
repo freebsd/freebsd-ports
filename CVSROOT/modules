@@ -5610,6 +5610,7 @@ libxfce4util	ports/x11/libxfce4util
 libxine		ports/multimedia/libxine
 libxkbfile	ports/x11/libxkbfile
 libxklavier	ports/x11/libxklavier
+libx3dtk	ports/graphics/libx3dtk
 libxml		ports/textproc/libxml
 libxml++	ports/textproc/libxml++
 libxml++26	ports/textproc/libxml++26
