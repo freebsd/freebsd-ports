@@ -1,12 +1,11 @@
-$FreeBSD$
---- Makefile.in	Mon Sep 26 07:45:47 2005
-+++ Makefile.in.port	Sun Oct  2 15:01:32 2005
+--- Makefile.in	Thu Oct 20 09:36:42 2005
++++ Makefile.in.port	Mon Oct 24 11:00:23 2005
 @@ -36,7 +36,7 @@
  mandir = @mandir@
  datadir = @datadir@
  asydir = $(datadir)/asymptote
 -exampledir = $(datadir)/doc/asymptote
 +exampledir = $(datadir)/examples/asymptote
+ animationsdir = $(exampledir)/animations
  latexdir = @latexdir@
  INSTALL = @INSTALL@
- ASYMPTOTE_DIR = ../base

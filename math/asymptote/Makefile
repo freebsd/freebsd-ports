@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.92
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@email.it
 COMMENT=	A powerful script-based vector graphics language
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
-		fftw3.3:${PORTSDIR}/math/fftw3
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${NOEXISTENT}:${PORTSDIR}/devel/boehm-gc:fetch \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		latex:${PORTSDIR}/print/teTeX \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
 		${MKTEXLSR}:${PORTSDIR}/print/teTeX \
@@ -35,7 +34,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gc=system \
+CONFIGURE_ARGS=	--enable-gc=${GCVERSION} \
 		--with-latex=${LOCALBASE}/share/texmf-local/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
@@ -55,6 +54,11 @@ ALL_TARGET+=	doc
 INSTALL_TARGET+=	install-doc
 .endif
 
+LN_OPTS=	-sf
+
+GCVERSION=	6.6
+GC_DISTNAME=	gc${GCVERSION}.tar.gz
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
@@ -63,5 +67,9 @@ post-install:
 .if ${OSVERSION} < 500000
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
+
+pre-configure:
+	@cd ${WRKSRC}; \
+	${LN} ${LN_OPTS} ${DISTDIR}/${GC_DISTNAME} ${GC_DISTNAME}
 
 .include <bsd.port.post.mk>

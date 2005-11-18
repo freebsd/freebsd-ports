@@ -20,15 +20,19 @@ bin/xasy
 %%DATADIR%%/three.asy
 %%DATADIR%%/tree.asy
 %%DATADIR%%/unicode.asy
+%%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
+%%EXAMPLESDIR%%/animations/cube.asy
+%%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/asy-mode.el
 %%EXAMPLESDIR%%/asy.vim
 %%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
 %%EXAMPLESDIR%%/bigsquare.asy
+%%EXAMPLESDIR%%/brokenaxis.asy
 %%EXAMPLESDIR%%/cardiod.asy
 %%EXAMPLESDIR%%/centroidfg.asy
 %%EXAMPLESDIR%%/circles.asy
@@ -47,6 +51,7 @@ bin/xasy
 %%EXAMPLESDIR%%/dragon.asy
 %%EXAMPLESDIR%%/eetomumu.asy
 %%EXAMPLESDIR%%/elliptic.asy
+%%EXAMPLESDIR%%/epix.asy
 %%EXAMPLESDIR%%/equilateral.asy
 %%EXAMPLESDIR%%/equilchord.asy
 %%EXAMPLESDIR%%/errorbars.asy
@@ -69,9 +74,11 @@ bin/xasy
 %%EXAMPLESDIR%%/join3.asy
 %%EXAMPLESDIR%%/labelbox.asy
 %%EXAMPLESDIR%%/labelsquare.asy
+%%EXAMPLESDIR%%/laserlattice.asy
 %%PORTDOCS%%%%EXAMPLESDIR%%/latexusage.asy
 %%EXAMPLESDIR%%/latexusage.tex
 %%EXAMPLESDIR%%/latticeshading.asy
+%%EXAMPLESDIR%%/leastsquares.asy
 %%EXAMPLESDIR%%/lever.asy
 %%EXAMPLESDIR%%/limit.asy
 %%EXAMPLESDIR%%/lineargraph.asy
@@ -112,6 +119,7 @@ bin/xasy
 %%EXAMPLESDIR%%/sqrtx01.asy
 %%EXAMPLESDIR%%/sqrtx01y1.asy
 %%EXAMPLESDIR%%/square.asy
+%%EXAMPLESDIR%%/star.asy
 %%EXAMPLESDIR%%/subpictures.asy
 %%EXAMPLESDIR%%/superpath.asy
 %%EXAMPLESDIR%%/surface.asy
@@ -127,16 +135,15 @@ bin/xasy
 %%EXAMPLESDIR%%/wedge.asy
 %%EXAMPLESDIR%%/westnile.asy
 %%EXAMPLESDIR%%/westnile.csv
-%%EXAMPLESDIR%%/wheelanimation.asy
 %%EXAMPLESDIR%%/workcone.asy
 %%EXAMPLESDIR%%/xsin1x.asy
 %%EXAMPLESDIR%%/xxsq01.asy
 %%EXAMPLESDIR%%/yingyang.asy
-%%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+@dirrm %%EXAMPLESDIR%%/animations
+@dirrm %%EXAMPLESDIR%%
 share/texmf-local/tex/latex/asymptote/asymptote.sty
 @dirrm share/texmf-local/tex/latex/asymptote
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/
 @unexec %%MKTEXLSR%%
 @exec %%MKTEXLSR%%
