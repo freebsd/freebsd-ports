@@ -125,8 +125,6 @@
     SUBDIR += metacity-bluecurve-theme
     SUBDIR += metacity-longhorninspirat-theme
     SUBDIR += metacity-milk-theme
-    SUBDIR += metacity-theme-6nome
-    SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
     SUBDIR += metacity-theme-hacked-2
     SUBDIR += metacity-theme-iridium-rounded

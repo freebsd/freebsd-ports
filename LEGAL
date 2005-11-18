@@ -252,14 +252,12 @@ gibi-*			french/gibi		Only free for use in conjunction with
 						you have to acquire a license
 giftool-*		graphics/giftool	Do not redistribute for profit
 glimpse-*		textproc/glimpse	Do not sell for profit
-gnome2/MCity-6nome-*	x11-themes/metacity-theme-6nome Themes may contain artwork not
+gnome2/MCity-Alloy-*    x11-themes/metacity-theme-alloy-c Themes may contain artwork not
 						done by the author.  Keep FreeBSD safe
 						if the theme author violated copyrights
-gnome2/MCity-Aero-*     x11-themes/metacity-theme-aero See x11-themes/metacity-theme-6nome
-gnome2/MCity-Alloy-*    x11-themes/metacity-theme-alloy-c See x11-themes/metacity-theme-6nome
-gnome2/MCity-Hacked-2*	x11-themes/metacity-theme-hacked-2 See x11-themes/metacity-theme-6nome
-gnome2/MCity-Iridium-rounded* x11-themes/metacity-theme-iridium-rounded See x11-themes/metacity-theme-6nome
-gnome2/MCity-microGUI*	x11-themes/metacity-theme-microgui See x11-themes/metacity-theme-6nome
+gnome2/MCity-Hacked-2*	x11-themes/metacity-theme-hacked-2 See x11-themes/metacity-theme-alloy-c
+gnome2/MCity-Iridium-rounded* x11-themes/metacity-theme-iridium-rounded See x11-themes/metacity-theme-alloy-c
+gnome2/MCity-microGUI*	x11-themes/metacity-theme-microgui See x11-themes/metacity-theme-alloy-c
 gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
