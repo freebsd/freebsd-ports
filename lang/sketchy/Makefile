@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20050807
+PORTVERSION=	20051118
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.t3x.org/sketchy/
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	An interpreter for a purely applicative dialect of Scheme
+COMMENT=	An interpreter for purely applicative Scheme
 
 MAN7=		sketchy.7
 
