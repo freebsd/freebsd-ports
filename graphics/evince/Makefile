@@ -74,7 +74,7 @@ DJVU_DIR?=	-nox11
 .endif
 
 .if defined(WITH_DJVU)
-LIB_DEPENDS+=		djvulibre.15:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
+LIB_DEPENDS+=		djvulibre.16:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 .else
