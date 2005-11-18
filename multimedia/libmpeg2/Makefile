@@ -66,7 +66,9 @@ pre-everything::
 	@${ECHO_MSG} "====>"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
+	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' \
+		${WRKSRC}/src/* \
+		${WRKSRC}/libvo/*
 	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
 # AMD64 prefers position independent code
 .if ${ARCH:L} == "amd64"
