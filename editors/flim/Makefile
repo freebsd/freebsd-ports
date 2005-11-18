@@ -51,8 +51,8 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
 .else
 # depends on apel (case of gnu emacsen etc...)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
