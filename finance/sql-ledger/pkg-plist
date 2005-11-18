@@ -26,6 +26,7 @@ sql-ledger/admin.pl
 sql-ledger/am.pl
 sql-ledger/ap.pl
 sql-ledger/ar.pl
+sql-ledger/bin/lynx/aa.pl
 sql-ledger/bin/lynx/admin.pl
 sql-ledger/bin/lynx/am.pl
 sql-ledger/bin/lynx/ap.pl
@@ -42,6 +43,7 @@ sql-ledger/bin/lynx/ic.pl
 sql-ledger/bin/lynx/io.pl
 sql-ledger/bin/lynx/ir.pl
 sql-ledger/bin/lynx/is.pl
+sql-ledger/bin/lynx/jc.pl
 sql-ledger/bin/lynx/login.pl
 sql-ledger/bin/lynx/menu.pl
 sql-ledger/bin/lynx/oe.pl
@@ -107,7 +109,7 @@ sql-ledger/doc/UPGRADE-2.4.0-2.4.2
 sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
-sql-ledger/doc/UPGRADE-2.6.0-2.6.2
+sql-ledger/doc/UPGRADE-2.6.0-2.6-3
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -593,37 +595,37 @@ sql-ledger/locale/ee/ps
 sql-ledger/locale/ee/pw
 sql-ledger/locale/ee/rc
 sql-ledger/locale/ee/rp
-sql-ledger/locale/eg/COPYING
-sql-ledger/locale/eg/LANGUAGE
-sql-ledger/locale/eg/aa
-sql-ledger/locale/eg/admin
-sql-ledger/locale/eg/all
-sql-ledger/locale/eg/am
-sql-ledger/locale/eg/ap
-sql-ledger/locale/eg/ar
-sql-ledger/locale/eg/arap
-sql-ledger/locale/eg/arapprn
-sql-ledger/locale/eg/bp
-sql-ledger/locale/eg/ca
-sql-ledger/locale/eg/cp
-sql-ledger/locale/eg/ct
-sql-ledger/locale/eg/gl
-sql-ledger/locale/eg/hr
-sql-ledger/locale/eg/ic
-sql-ledger/locale/eg/io
-sql-ledger/locale/eg/ir
-sql-ledger/locale/eg/is
-sql-ledger/locale/eg/jc
-sql-ledger/locale/eg/locales.pl
-sql-ledger/locale/eg/login
-sql-ledger/locale/eg/menu
-sql-ledger/locale/eg/oe
-sql-ledger/locale/eg/pe
-sql-ledger/locale/eg/pos
-sql-ledger/locale/eg/ps
-sql-ledger/locale/eg/pw
-sql-ledger/locale/eg/rc
-sql-ledger/locale/eg/rp
+sql-ledger/locale/eg_utf/COPYING
+sql-ledger/locale/eg_utf/LANGUAGE
+sql-ledger/locale/eg_utf/aa
+sql-ledger/locale/eg_utf/admin
+sql-ledger/locale/eg_utf/all
+sql-ledger/locale/eg_utf/am
+sql-ledger/locale/eg_utf/ap
+sql-ledger/locale/eg_utf/ar
+sql-ledger/locale/eg_utf/arap
+sql-ledger/locale/eg_utf/arapprn
+sql-ledger/locale/eg_utf/bp
+sql-ledger/locale/eg_utf/ca
+sql-ledger/locale/eg_utf/cp
+sql-ledger/locale/eg_utf/ct
+sql-ledger/locale/eg_utf/gl
+sql-ledger/locale/eg_utf/hr
+sql-ledger/locale/eg_utf/ic
+sql-ledger/locale/eg_utf/io
+sql-ledger/locale/eg_utf/ir
+sql-ledger/locale/eg_utf/is
+sql-ledger/locale/eg_utf/jc
+sql-ledger/locale/eg_utf/locales.pl
+sql-ledger/locale/eg_utf/login
+sql-ledger/locale/eg_utf/menu
+sql-ledger/locale/eg_utf/oe
+sql-ledger/locale/eg_utf/pe
+sql-ledger/locale/eg_utf/pos
+sql-ledger/locale/eg_utf/ps
+sql-ledger/locale/eg_utf/pw
+sql-ledger/locale/eg_utf/rc
+sql-ledger/locale/eg_utf/rp
 sql-ledger/locale/en_GB/COPYING
 sql-ledger/locale/en_GB/LANGUAGE
 sql-ledger/locale/en_GB/aa
@@ -1553,7 +1555,8 @@ sql-ledger/setup.pl
 sql-ledger/sql-ledger.conf.default
 sql-ledger/sql-ledger.gif
 sql-ledger/sql-ledger.png
-sql-ledger/sql/Australia_General-chart.sql
+sql-ledger/sql/Australia_General_0000-chart.sql
+sql-ledger/sql/Australia_General_00000-chart.sql
 sql-ledger/sql/Austria-chart.sql
 sql-ledger/sql/Austria-gifi.sql
 sql-ledger/sql/Bahasa-Indonesia_Default-chart.sql
@@ -1633,12 +1636,14 @@ sql-ledger/sql/Pg-upgrade-2.5.0-2.5.2.sql
 sql-ledger/sql/Pg-upgrade-2.5.2-2.6.0.sql
 sql-ledger/sql/Pg-upgrade-2.6.0-2.6.1.sql
 sql-ledger/sql/Pg-upgrade-2.6.1-2.6.2.sql
+sql-ledger/sql/Pg-upgrade-2.6.2-2.6.3.sql
 sql-ledger/sql/Poland-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
 sql-ledger/sql/Spain-ISO-chart.sql
 sql-ledger/sql/Spain-UTF8-chart.sql
 sql-ledger/sql/Swedish-chart.sql
+sql-ledger/sql/Swedish-gifi.sql
 sql-ledger/sql/Swiss-German-chart.sql
 sql-ledger/sql/Swiss-German-gifi.sql
 sql-ledger/sql/Traditional-Chinese_Default-UTF8-chart.sql
@@ -1659,6 +1664,8 @@ sql-ledger/templates/Brazilian_Portuguese-check.tex
 sql-ledger/templates/Brazilian_Portuguese-income_statement.html
 sql-ledger/templates/Brazilian_Portuguese-invoice.html
 sql-ledger/templates/Brazilian_Portuguese-invoice.tex
+sql-ledger/templates/Brazilian_Portuguese-logo.eps
+sql-ledger/templates/Brazilian_Portuguese-logo.png
 sql-ledger/templates/Brazilian_Portuguese-packing_list.html
 sql-ledger/templates/Brazilian_Portuguese-packing_list.tex
 sql-ledger/templates/Brazilian_Portuguese-pick_list.html
@@ -1690,6 +1697,8 @@ sql-ledger/templates/Danish-check.tex
 sql-ledger/templates/Danish-income_statement.html
 sql-ledger/templates/Danish-invoice.html
 sql-ledger/templates/Danish-invoice.tex
+sql-ledger/templates/Danish-logo.eps
+sql-ledger/templates/Danish-logo.png
 sql-ledger/templates/Danish-packing_list.html
 sql-ledger/templates/Danish-packing_list.tex
 sql-ledger/templates/Danish-pick_list.html
@@ -1721,6 +1730,10 @@ sql-ledger/templates/Default-check.tex
 sql-ledger/templates/Default-income_statement.html
 sql-ledger/templates/Default-invoice.html
 sql-ledger/templates/Default-invoice.tex
+sql-ledger/templates/Default-letterhead.html
+sql-ledger/templates/Default-letterhead.tex
+sql-ledger/templates/Default-logo.eps
+sql-ledger/templates/Default-logo.png
 sql-ledger/templates/Default-packing_list.html
 sql-ledger/templates/Default-packing_list.tex
 sql-ledger/templates/Default-pick_list.html
@@ -1752,6 +1765,8 @@ sql-ledger/templates/Dutch-check.tex
 sql-ledger/templates/Dutch-income_statement.html
 sql-ledger/templates/Dutch-invoice.html
 sql-ledger/templates/Dutch-invoice.tex
+sql-ledger/templates/Dutch-logo.eps
+sql-ledger/templates/Dutch-logo.png
 sql-ledger/templates/Dutch-packing_list.html
 sql-ledger/templates/Dutch-packing_list.tex
 sql-ledger/templates/Dutch-pick_list.html
@@ -1783,6 +1798,8 @@ sql-ledger/templates/Estonian-check.tex
 sql-ledger/templates/Estonian-income_statement.html
 sql-ledger/templates/Estonian-invoice.html
 sql-ledger/templates/Estonian-invoice.tex
+sql-ledger/templates/Estonian-logo.eps
+sql-ledger/templates/Estonian-logo.png
 sql-ledger/templates/Estonian-packing_list.html
 sql-ledger/templates/Estonian-packing_list.tex
 sql-ledger/templates/Estonian-pick_list.html
@@ -1812,6 +1829,8 @@ sql-ledger/templates/French-check.tex
 sql-ledger/templates/French-income_statement.html
 sql-ledger/templates/French-invoice.html
 sql-ledger/templates/French-invoice.tex
+sql-ledger/templates/French-logo.eps
+sql-ledger/templates/French-logo.png
 sql-ledger/templates/French-packing_list.html
 sql-ledger/templates/French-packing_list.tex
 sql-ledger/templates/French-pick_list.html
@@ -1843,6 +1862,8 @@ sql-ledger/templates/German-check.tex
 sql-ledger/templates/German-income_statement.html
 sql-ledger/templates/German-invoice.html
 sql-ledger/templates/German-invoice.tex
+sql-ledger/templates/German-logo.eps
+sql-ledger/templates/German-logo.png
 sql-ledger/templates/German-packing_list.html
 sql-ledger/templates/German-packing_list.tex
 sql-ledger/templates/German-pick_list.html
@@ -1874,6 +1895,8 @@ sql-ledger/templates/Hungarian-check.tex
 sql-ledger/templates/Hungarian-income_statement.html
 sql-ledger/templates/Hungarian-invoice.html
 sql-ledger/templates/Hungarian-invoice.tex
+sql-ledger/templates/Hungarian-logo.eps
+sql-ledger/templates/Hungarian-logo.png
 sql-ledger/templates/Hungarian-packing_list.html
 sql-ledger/templates/Hungarian-packing_list.tex
 sql-ledger/templates/Hungarian-pick_list.html
@@ -1905,6 +1928,8 @@ sql-ledger/templates/Italian-check.tex
 sql-ledger/templates/Italian-income_statement.html
 sql-ledger/templates/Italian-invoice.html
 sql-ledger/templates/Italian-invoice.tex
+sql-ledger/templates/Italian-logo.eps
+sql-ledger/templates/Italian-logo.png
 sql-ledger/templates/Italian-packing_list.html
 sql-ledger/templates/Italian-packing_list.tex
 sql-ledger/templates/Italian-pick_list.html
@@ -1936,6 +1961,8 @@ sql-ledger/templates/Norwegian-check.tex
 sql-ledger/templates/Norwegian-income_statement.html
 sql-ledger/templates/Norwegian-invoice.html
 sql-ledger/templates/Norwegian-invoice.tex
+sql-ledger/templates/Norwegian-logo.eps
+sql-ledger/templates/Norwegian-logo.png
 sql-ledger/templates/Norwegian-packing_list.html
 sql-ledger/templates/Norwegian-packing_list.tex
 sql-ledger/templates/Norwegian-pick_list.html
@@ -1967,6 +1994,8 @@ sql-ledger/templates/Russian-check.tex
 sql-ledger/templates/Russian-income_statement.html
 sql-ledger/templates/Russian-invoice.html
 sql-ledger/templates/Russian-invoice.tex
+sql-ledger/templates/Russian-logo.eps
+sql-ledger/templates/Russian-logo.png
 sql-ledger/templates/Russian-packing_list.html
 sql-ledger/templates/Russian-packing_list.tex
 sql-ledger/templates/Russian-pick_list.html
@@ -1998,6 +2027,8 @@ sql-ledger/templates/Service-check.tex
 sql-ledger/templates/Service-income_statement.html
 sql-ledger/templates/Service-invoice.html
 sql-ledger/templates/Service-invoice.tex
+sql-ledger/templates/Service-logo.eps
+sql-ledger/templates/Service-logo.png
 sql-ledger/templates/Service-packing_list.html
 sql-ledger/templates/Service-packing_list.tex
 sql-ledger/templates/Service-pick_list.html
@@ -2029,6 +2060,8 @@ sql-ledger/templates/Spanish_A4-check.tex
 sql-ledger/templates/Spanish_A4-income_statement.html
 sql-ledger/templates/Spanish_A4-invoice.html
 sql-ledger/templates/Spanish_A4-invoice.tex
+sql-ledger/templates/Spanish_A4-logo.eps
+sql-ledger/templates/Spanish_A4-logo.png
 sql-ledger/templates/Spanish_A4-packing_list.html
 sql-ledger/templates/Spanish_A4-packing_list.tex
 sql-ledger/templates/Spanish_A4-pick_list.html
@@ -2060,6 +2093,8 @@ sql-ledger/templates/Spanish_Letter-check.tex
 sql-ledger/templates/Spanish_Letter-income_statement.html
 sql-ledger/templates/Spanish_Letter-invoice.html
 sql-ledger/templates/Spanish_Letter-invoice.tex
+sql-ledger/templates/Spanish_Letter-logo.eps
+sql-ledger/templates/Spanish_Letter-logo.png
 sql-ledger/templates/Spanish_Letter-packing_list.html
 sql-ledger/templates/Spanish_Letter-packing_list.tex
 sql-ledger/templates/Spanish_Letter-pick_list.html
@@ -2116,7 +2151,7 @@ etc/sql-ledger-httpd.conf
 @dirrm sql-ledger/locale/es_utf
 @dirrm sql-ledger/locale/es
 @dirrm sql-ledger/locale/en_GB
-@dirrm sql-ledger/locale/eg
+@dirrm sql-ledger/locale/eg_utf
 @dirrm sql-ledger/locale/ee
 @dirrm sql-ledger/locale/ec
 @dirrm sql-ledger/locale/dk
