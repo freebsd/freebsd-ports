@@ -320,6 +320,7 @@
     SUBDIR += libvisual-plugins
     SUBDIR += libwmf
     SUBDIR += libwpcg
+    SUBDIR += libx3dtk
     SUBDIR += linplasma
     SUBDIR += linux-ac3d
     SUBDIR += linux-bmrt
