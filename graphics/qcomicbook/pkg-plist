@@ -1,5 +1,6 @@
 bin/qcomicbook
 share/qcomicbook/bestfit.png
+share/qcomicbook/bookmark.png
 share/qcomicbook/fbackward.png
 share/qcomicbook/fforward.png
 share/qcomicbook/fitheight.png
@@ -12,13 +13,17 @@ share/qcomicbook/help/en/menu.html
 share/qcomicbook/info.png
 share/qcomicbook/japanese.png
 share/qcomicbook/nextpage.png
+share/qcomicbook/openarch.png
+share/qcomicbook/opendir.png
 share/qcomicbook/orgsize.png
 share/qcomicbook/pagebottom.png
 share/qcomicbook/pagetop.png
 share/qcomicbook/prevpage.png
+share/qcomicbook/qcomicbook-splash.png
 share/qcomicbook/qcomicbook.png
 share/qcomicbook/rleft.png
 share/qcomicbook/rright.png
+share/qcomicbook/settings.png
 share/qcomicbook/thumbnails.png
 share/qcomicbook/twopages.png
 share/qcomicbook/wholepage.png
