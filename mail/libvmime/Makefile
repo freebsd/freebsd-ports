@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	libvmime
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vmime
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An all-in-one Internet mail library
+
+# XXX Need a newer gnutls version before enabling this
+#LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -22,7 +26,17 @@ USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--disable-debug
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.ifndef	DEBUG
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+# XXX Need a newer gnutls version
+CONFIGURE_ARGS+=--disable-tls
+
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 DOCSDIR=	${PREFIX}/share/doc/vmime
 
