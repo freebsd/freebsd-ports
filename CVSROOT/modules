@@ -36,6 +36,7 @@ world		-a .
 # CVSROOT support
 CVSROOT		CVSROOT
 access		CVSROOT access
+avahi		ports/net/avahi
 avail		CVSROOT avail
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
