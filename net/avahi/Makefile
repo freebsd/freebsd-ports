@@ -7,6 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.freedesktop.org/~lennart/
 
