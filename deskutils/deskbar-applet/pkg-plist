@@ -130,6 +130,7 @@ share/locale/zh_CN/LC_MESSAGES/deskbar-applet.mo
 @dirrm share/gnome/deskbar-applet
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/iconentry
+@dirrm %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop
 %%EVO%%@dirrm %%PYTHON_SITELIBDIR%%/deskbar/evolution
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
