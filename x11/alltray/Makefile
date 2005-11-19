@@ -34,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|liballtray\.so\.0\.0\.0|liballtray.so.0|; \
 		s|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c
 
-patch-autotools:
+patch-autotools::
 	@for file in ${LIBTOOLFILES}; do \
 		${REINPLACE_CMD} -e \
 			'/^ltmain=/ s|$$ac_aux_dir/ltmain\.sh|${LTMAIN}|g' \

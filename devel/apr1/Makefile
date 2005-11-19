@@ -136,7 +136,7 @@ pre-configure:
 .endfor
 .endfor
 
-run-autotools:
+run-autotools::
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
 	${RM} -fr xml/expat

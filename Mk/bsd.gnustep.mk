@@ -191,7 +191,7 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=cairo
 # source GNUstep.sh
 #
 .if defined(USE_GNUSTEP_CONFIGURE)
-run-autotools:
+run-autotools::
 	@${DO_NADA}
 
 do-configure:

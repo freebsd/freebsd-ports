@@ -40,7 +40,7 @@ MAN1=		inkscape.1 inkview.1
 IGNORE=	Requires symbols not present on 4.X
 .endif
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \

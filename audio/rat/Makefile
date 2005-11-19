@@ -52,7 +52,7 @@ do-build:
 	cd ${WRKSRC}/common/src && ${GMAKE}
 	cd ${WRKSRC}/rat && ${GMAKE}
 
-run-autotools:
+run-autotools::
 	@${DO_NADA}
 
 do-configure:

@@ -44,7 +44,7 @@ post-configure:
 	@${TOUCH} ${WRKSRC}/docs/reference/${PORTVERSION:R}/html/index.html
 .endif
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \

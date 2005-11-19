@@ -59,7 +59,7 @@ post-patch:
 	@${CP} -R -f ${WRKSRC}/build/gnuauto/* ${WRKSRC}
 .endif
 
-patch-autotools:
+patch-autotools::
 .if defined(WITH_SHLIB)
 	@(cd ${WRKSRC}				\
 	&& ${LIBTOOLIZE} --force --copy		\

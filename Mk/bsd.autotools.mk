@@ -378,7 +378,7 @@ run-autotools-autoheader:
 # libtool port.  See above for default values of LIBTOOLFILES.
 
 .if !target(patch-autotools)
-patch-autotools:
+patch-autotools::
 . if defined(AUTOTOOL_libtool_inc)
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \

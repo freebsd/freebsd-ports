@@ -24,11 +24,8 @@ WRKSRC=		${WRKDIR}/trrntzip
 PLIST_FILES=	bin/trrntzip
 PORTDOCS=	README
 
-run-autotools:
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} ${ACLOCAL_ARGS})
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} ${AUTOHEADER_ARGS})
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} ${AUTOCONF_ARGS})
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS})
+run-autotools:: run-autotools-aclocal run-autotools-autoheader \
+		run-autotools-autoconf run-autotools-automake
 
 .if !defined(NOPORTDOCS)
 pre-install:

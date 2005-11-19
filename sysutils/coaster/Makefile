@@ -37,7 +37,7 @@ GCONF_SCHEMAS=	coaster.schemas
 
 BROKEN=	"Broken with new nautilus-cd-burner"
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
