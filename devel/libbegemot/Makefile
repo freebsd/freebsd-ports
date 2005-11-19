@@ -24,10 +24,9 @@ MAN1=	cstrc.1 frame.1 getfields.1 intro.1 panic.1 prstat.1 readline.1 \
 		rpoll.1 strnchr.1 strnlen.1 strsave.1 strtrimsp.1 verb.1 xalloc.1
 MLINKS=	xalloc.1 xrealloc.1
 
-run-autotools:
-	@(cd ${CONFIGURE_WRKSRC} && ${PREFIX}/bin/aclocal19 \
-		-I ${PREFIX}/share/libtool15/libltdl/ )
-	@(cd ${CONFIGURE_WRKSRC} && ${PREFIX}/bin/autoconf259 )
+run-autotools::
+	@(cd ${CONFIGURE_WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl/)
+	@(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
 
 post-install:
 .for i in ${MAN1}

@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \

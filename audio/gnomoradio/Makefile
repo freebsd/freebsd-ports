@@ -36,7 +36,7 @@ post-patch:
 		s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
 
-patch-autotools:
+patch-autotools::
 	@for file in ${LIBTOOLFILES}; do \
 		${REINPLACE_CMD} -e \
 			'/^ltmain=/ s|$$ac_aux_dir/ltmain\.sh|${LTMAIN}|g' \

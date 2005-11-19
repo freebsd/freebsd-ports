@@ -51,7 +51,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \

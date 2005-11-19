@@ -38,9 +38,7 @@ MAN3=	asn1.3 bsnmplib.3 bsnmpclient.3 bsnmpagent.3 snmpmod.3 \
 IGNORE=	bsnmpd already in base system
 .endif
 
-run-autotools:
-	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/aclocal19 )
-	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/autoconf259 )
+run-autotools:: run-autotools-aclocal run-autotools-autoconf
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc

@@ -24,7 +24,7 @@ INSTALLS_SHLIB=		yes
 USE_X_PREFIX=		yes
 USE_GCC=		3.4
 
-patch-autotools:
+patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
