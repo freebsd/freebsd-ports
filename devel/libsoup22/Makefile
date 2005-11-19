@@ -36,10 +36,16 @@ LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--disable-ssl
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "libsoup has the following configurable option(s):"
 	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
