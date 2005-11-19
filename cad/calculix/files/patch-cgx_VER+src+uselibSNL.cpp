@@ -1,6 +1,7 @@
---- cgx_1.3/src/uselibSNL.cpp.orig	Sat Dec 25 01:43:08 2004
-+++ cgx_1.3/src/uselibSNL.cpp	Sat Dec 25 01:47:02 2004
-@@ -1,6 +1,6 @@
+--- cgx_1.4/src/uselibSNL.cpp.orig	Tue Sep 13 06:34:28 2005
++++ cgx_1.4/src/uselibSNL.cpp	Mon Oct 10 16:05:10 2005
+@@ -26,7 +26,7 @@
+ 
  #include <extUtil.h>
  #include <snlCtrlPoint.h>
 -#include <iostream.h>
