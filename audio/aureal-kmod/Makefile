@@ -9,14 +9,11 @@ PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://home.columbus.rr.com/amatey/au88x0/
+MASTER_SITES=	http://www.matey.org/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${DISTREVISION}
 
 MAINTAINER=	ports@matey.org
 COMMENT=	A FreeBSD Driver for Aureal Vortex based soundcards
-
-DEPRECATED=	"mastersite disappeared"
-EXPIRATION_DATE=	2005-12-31
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
