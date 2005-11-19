@@ -95,6 +95,7 @@ WITH_DIALOGS=	--enable-dialogs=athena
 
 .if defined(WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+CONFIGURE_ARGS+=	--with-athena=3d
 .endif
 
 #.if defined(WANT_GTK)
