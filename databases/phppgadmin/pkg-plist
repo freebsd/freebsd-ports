@@ -8,25 +8,10 @@
 %%PGADMDIR%%/TRANSLATORS
 %%PGADMDIR%%/aggregates.php
 %%PGADMDIR%%/all_db.php
-%%PGADMDIR%%/bottombar.php
 %%PGADMDIR%%/browser.php
 %%PGADMDIR%%/casts.php
+%%PGADMDIR%%/classes/ArrayRecordSet.php
 %%PGADMDIR%%/classes/Gui.php
-%%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.js
-%%PGADMDIR%%/classes/HTML_TreeMenu/TreeMenu.php
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/branch.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/branchbottom.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/branchtop.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/folder-expanded.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/folder.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/line.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/linebottom.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/minus.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/minusbottom.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/minustop.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/plus.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/plusbottom.gif
-%%PGADMDIR%%/classes/HTML_TreeMenu/images/plustop.gif
 %%PGADMDIR%%/classes/Misc.php
 %%PGADMDIR%%/classes/Reports.php
 %%PGADMDIR%%/classes/class.select.php
@@ -38,6 +23,10 @@
 %%PGADMDIR%%/classes/database/Postgres73.php
 %%PGADMDIR%%/classes/database/Postgres74.php
 %%PGADMDIR%%/classes/database/Postgres80.php
+%%PGADMDIR%%/classes/database/Postgres81.php
+%%PGADMDIR%%/classes/database/Postgres82.php
+%%PGADMDIR%%/classes/plugins/Plugin.php
+%%PGADMDIR%%/classes/plugins/Slony.php
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
@@ -58,15 +47,35 @@
 %%PGADMDIR%%/help/PostgresDoc73.php
 %%PGADMDIR%%/help/PostgresDoc74.php
 %%PGADMDIR%%/help/PostgresDoc80.php
+%%PGADMDIR%%/help/PostgresDoc81.php
+%%PGADMDIR%%/help/PostgresDoc82.php
+%%PGADMDIR%%/images/themes/default/I.png
+%%PGADMDIR%%/images/themes/default/L.png
+%%PGADMDIR%%/images/themes/default/Lminus.png
+%%PGADMDIR%%/images/themes/default/Lplus.png
+%%PGADMDIR%%/images/themes/default/T.png
+%%PGADMDIR%%/images/themes/default/Tminus.png
+%%PGADMDIR%%/images/themes/default/Tplus.png
+%%PGADMDIR%%/images/themes/default/blank.png
+%%PGADMDIR%%/images/themes/default/error.png
 %%PGADMDIR%%/images/themes/default/database.png
 %%PGADMDIR%%/images/themes/default/domains.png
+%%PGADMDIR%%/images/themes/default/file.png
 %%PGADMDIR%%/images/themes/default/functions.png
+%%PGADMDIR%%/images/themes/default/folder.png
+%%PGADMDIR%%/images/themes/default/folderOpen.png
+%%PGADMDIR%%/images/themes/default/group.png
+%%PGADMDIR%%/images/themes/default/loading.gif
 %%PGADMDIR%%/images/themes/default/operators.png
+%%PGADMDIR%%/images/themes/default/root.png
 %%PGADMDIR%%/images/themes/default/sequences.png
+%%PGADMDIR%%/images/themes/default/server.png
+%%PGADMDIR%%/images/themes/default/serverOut.png
 %%PGADMDIR%%/images/themes/default/tables.png
 %%PGADMDIR%%/images/themes/default/title.png
 %%PGADMDIR%%/images/themes/default/triggers.png
 %%PGADMDIR%%/images/themes/default/types.png
+%%PGADMDIR%%/images/themes/default/user.png
 %%PGADMDIR%%/images/themes/default/views.png
 %%PGADMDIR%%/index.php
 %%PGADMDIR%%/indexes.js
@@ -128,57 +137,50 @@
 %%PGADMDIR%%/lang/spanish.php
 %%PGADMDIR%%/lang/swedish.php
 %%PGADMDIR%%/lang/synch
+%%PGADMDIR%%/lang/translations.php
 %%PGADMDIR%%/lang/turkish.php
 %%PGADMDIR%%/lang/ukrainian.php
 %%PGADMDIR%%/languages.php
-%%PGADMDIR%%/libraries/adodb/adodb-connection.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-cryptsession.php
 %%PGADMDIR%%/libraries/adodb/adodb-csvlib.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-datadict.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-error.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-errorhandler.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-errorpear.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-exceptions.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-iterator.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-lib.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-pager.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-pear.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-recordset.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-session.php
+%%PGADMDIR%%/libraries/adodb/adodb-perf.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-php4.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-time.inc.php
+%%PGADMDIR%%/libraries/adodb/adodb-xmlschema.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb.inc.php
-%%PGADMDIR%%/libraries/adodb/crypt.inc.php
-%%PGADMDIR%%/libraries/adodb/datadict/datadict-mssql.inc.php
-%%PGADMDIR%%/libraries/adodb/datadict/datadict-mysql.inc.php
-%%PGADMDIR%%/libraries/adodb/datadict/datadict-oci8.inc.php
-%%PGADMDIR%%/libraries/adodb/datadict/datadict-postgres.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-access.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado_access.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-ado_mssql.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-borland_ibase.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-csv.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-db2.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-fbsql.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-firebird.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-ibase.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-informix.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-informix72.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-mssql.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-mssqlpo.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-mysql.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-mysqlt.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci8.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci805.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-oci8po.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc_mssql.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-odbc_oracle.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-oracle.inc.php
 %%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres.inc.php
 %%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres64.inc.php
 %%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres7.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-proxy.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-sqlanywhere.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-sybase.inc.php
-%%PGADMDIR%%/libraries/adodb/drivers/adodb-vfp.inc.php
+%%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres8.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-ar.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-bg.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-bgutf8.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-ca.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-cn.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-cz.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-da.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-de.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-en.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-es.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-esperanto.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-fr.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-hu.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-it.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-nl.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-pl.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-pt-br.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-ro.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-ru1251.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-sv.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-uk1251.inc.php
 %%PGADMDIR%%/libraries/adodb/license.txt
 %%PGADMDIR%%/libraries/adodb/pivottable.inc.php
 %%PGADMDIR%%/libraries/adodb/readme.txt
@@ -186,6 +188,8 @@
 %%PGADMDIR%%/libraries/adodb/server.php
 %%PGADMDIR%%/libraries/adodb/toexport.inc.php
 %%PGADMDIR%%/libraries/adodb/tohtml.inc.php
+%%PGADMDIR%%/libraries/adodb/xmlschema.dtd
+%%PGADMDIR%%/libraries/decorator.inc.php
 %%PGADMDIR%%/libraries/errorhandler.inc.php
 %%PGADMDIR%%/libraries/highlight.php
 %%PGADMDIR%%/libraries/lib.inc.php
@@ -194,12 +198,15 @@
 %%PGADMDIR%%/logout.php
 %%PGADMDIR%%/opclasses.php
 %%PGADMDIR%%/operators.php
+%%PGADMDIR%%/plugin_slony.php
 %%PGADMDIR%%/privileges.php
 %%PGADMDIR%%/redirect.php
 %%PGADMDIR%%/reports.php
 %%PGADMDIR%%/robots.txt
 %%PGADMDIR%%/rules.php
+%%PGADMDIR%%/schemas.php
 %%PGADMDIR%%/sequences.php
+%%PGADMDIR%%/servers.php
 %%PGADMDIR%%/sql.php
 %%PGADMDIR%%/sql/reports-pgsql.sql
 %%PGADMDIR%%/sqledit.php
@@ -207,17 +214,19 @@
 %%PGADMDIR%%/tablespaces.php
 %%PGADMDIR%%/tblproperties.php
 %%PGADMDIR%%/themes/default/global.css
-%%PGADMDIR%%/topbar.php
 %%PGADMDIR%%/triggers.php
 %%PGADMDIR%%/types.php
 %%PGADMDIR%%/users.php
 %%PGADMDIR%%/viewproperties.php
 %%PGADMDIR%%/views.php
+%%PGADMDIR%%/xloadtree/xloadtree2.js
+%%PGADMDIR%%/xloadtree/xtree2.js
+@dirrm %%PGADMDIR%%/xloadtree
 @dirrm %%PGADMDIR%%/themes/default
 @dirrm %%PGADMDIR%%/themes
 @dirrm %%PGADMDIR%%/sql
+@dirrm %%PGADMDIR%%/libraries/adodb/lang
 @dirrm %%PGADMDIR%%/libraries/adodb/drivers
-@dirrm %%PGADMDIR%%/libraries/adodb/datadict
 @dirrm %%PGADMDIR%%/libraries/adodb
 @dirrm %%PGADMDIR%%/libraries
 @dirrm %%PGADMDIR%%/lang/recoded
@@ -227,8 +236,7 @@
 @dirrm %%PGADMDIR%%/images
 @dirrm %%PGADMDIR%%/help
 @dirrm %%PGADMDIR%%/conf
+@dirrm %%PGADMDIR%%/classes/plugins
 @dirrm %%PGADMDIR%%/classes/database
-@dirrm %%PGADMDIR%%/classes/HTML_TreeMenu/images
-@dirrm %%PGADMDIR%%/classes/HTML_TreeMenu
 @dirrm %%PGADMDIR%%/classes
 @dirrm %%PGADMDIR%%
