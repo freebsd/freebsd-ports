@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-distro=freebsd \
-		--disable-gtk \
 		--disable-qt3 \
 		--disable-qt4 \
 		--disable-python \
@@ -44,6 +43,18 @@ MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
 MAN5=	avahi-daemon.conf.5 avahi.service.5
 MAN8=	avahi-daemon.8 avahi-dnsconfd.8 avahi-dnsconfd.action.8
 
+OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	libglade2
+PLIST_SUB+=	GTK=""
+.else
+CONFIGURE_ARGS+=--disable-gtk
+PLIST_SUB+=	GTK="@comment "
+.endif
+
 post-configure:
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/avahi-daemon.sh > ${WRKDIR}/avahi-daemon.sh
@@ -57,4 +68,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/avahi-daemon.sh ${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/avahi-dnsconfd.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
