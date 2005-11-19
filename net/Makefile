@@ -33,6 +33,7 @@
     SUBDIR += asterisk
     SUBDIR += asterisk-oh323
     SUBDIR += atmsupport
+    SUBDIR += avahi
     SUBDIR += azureus
     SUBDIR += b2bua
     SUBDIR += balance
