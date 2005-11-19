@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: avahi_dnsconfd
-# REQUIRE: DAEMON dbus avahi-daemon
+# REQUIRE: DAEMON dbus avahi_daemon
 # KEYWORD: FreeBSD
 #
 # avahi-dnsconfd connects to a running avahi-daemon and runs  the script
