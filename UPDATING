@@ -72,7 +72,7 @@ upgrades.
   www/mediawiki has now version 1.5. 1.4 version was preserved on
   www/mediawiki14 port.
 
-  If you want to preserver your 1.4 installation, run this:
+  If you want to preserve your 1.4 installation, run this:
 
   # portupgrade -o www/mediawiki14 -f mediawiki
 
