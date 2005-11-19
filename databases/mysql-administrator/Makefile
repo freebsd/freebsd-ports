@@ -53,7 +53,7 @@ MAIN_DIR=	${WRKSRC}/mysql-administrator
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		can not build on 4.x
+BROKEN=		"can not build on 4.x"
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
