@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -56,6 +56,12 @@ BLAS_LIBS=	-lf77blas -latlas
 BROWSER?=	mozilla
 PSVIEWER?=	gv
 
+.include <bsd.port.pre.mk>
+
+.if ${OSREL} < 5.0
+USE_GCC=	3.4
+.endif
+
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
@@ -82,6 +88,20 @@ pre-build:
 	s+"mozilla"+"${BROWSER}"+ ; \
 	s+"ghostview"+"${PSVIEWER}"+ ;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
+# This fixes bugs in ccx 1.4
+	@${REINPLACE_CMD} -e 's+description[12]+description[13]+g;' \
+		${WRKSRC}/ccx_1.4/src/arpackbu.c	\
+		${WRKSRC}/ccx_1.4/src/arpack.c	\
+		${WRKSRC}/ccx_1.4/src/arpackcs.c	\
+		${WRKSRC}/ccx_1.4/src/dyna.c		\
+		${WRKSRC}/ccx_1.4/src/frdcyc.c	\
+		${WRKSRC}/ccx_1.4/src/nonlingeo.c	\
+		${WRKSRC}/ccx_1.4/src/prespooles.c	\
+		${WRKSRC}/ccx_1.4/src/profile.c	\
+		${WRKSRC}/ccx_1.4/src/sensitivity.c	\
+		${WRKSRC}/ccx_1.4/src/steadystate.c
+	@${REINPLACE_CMD} -e 's+output[3]+output[4]+g;' \
+		${WRKSRC}/ccx_1.4/src/ccx_1.4.c
 
 do-build:
 	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
@@ -116,4 +136,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
