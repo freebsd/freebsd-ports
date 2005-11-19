@@ -262,6 +262,7 @@
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
+    SUBDIR += pgadmin3-12
     SUBDIR += pgbash
     SUBDIR += pgcluster
     SUBDIR += pgpool
