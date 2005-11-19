@@ -79,6 +79,16 @@ USE_AUTOTOOLS_COMPAT+=	libtool:${WANT_LIBTOOL_VER}:env
 BROKEN+=	"Mix and match of old and new autotools system prohibited"
 . else
 USE_AUTOTOOLS=	${USE_AUTOTOOLS_COMPAT}
+_AUTOTOOLS_PN=	${.CURDIR:C/${PORTSDIR}\///}
+pre-everything::
+	@${ECHO} "*** AUTOTOOLS WARNING for ${_AUTOTOOLS_PN}"
+	@${ECHO} This port is using old autotools constructs which wil be"
+	@${ECHO} "disappearing on 1st January 2006"
+	@${ECHO} ""
+	@${ECHO} "In most cases, this warning can be fixed by removing"
+	@${ECHO} "all the old constructs and replacing them with:"
+	@${ECHO} "  USE_AUTOTOOLS= ${USE_AUTOTOOLS_COMPAT}"
+	@${ECHO} ""
 . endif
 .endif
 
