@@ -5,11 +5,6 @@ in order to provide portable performance.
 At present, it provides C and Fortran77 interfaces to a
 portably efficient BLAS implementation, as well as a few routines from LAPACK.
 
-PLEASE REBUILD YOUR KERNEL WITH 
-options         CPU_ENABLE_SSE
-TO ENABLE SSE1/SSE2 SUPPORT BEFORE MAKING ATLAS!
-IT SIGNIFICANTLY IMPROVES PERFORMANCE. 
-
 If you use blas, you can simply change flags when linking,
 from -lblas to -lf77blas -latlas (order is important).
 
