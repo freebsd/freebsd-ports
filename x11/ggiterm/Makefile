@@ -7,6 +7,7 @@
 
 PORTNAME=	ggiterm
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggiterm
@@ -17,13 +18,12 @@ COMMENT=	A terminal emulator for GGI
 
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 
-USE_GMAKE=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ggi-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+SUB_FILES=	pkg-message
 
 OPTIONS=	FREETYPE "Build with Freetype support" on
 
@@ -40,10 +40,12 @@ CONFIGURE_ARGS+=--without-freetype
 MAN1=		ggiterm.1
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/ggiterm.termcap ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

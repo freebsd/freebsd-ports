@@ -1,7 +1,8 @@
 bin/ggiterm
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/README
-share/ggiterm/ggiterm.png
-share/ggiterm/ggiterm.svg
+%%DATADIR%%/ggiterm.png
+%%DATADIR%%/ggiterm.svg
+%%DATADIR%%/ggiterm.termcap
 @dirrm %%DOCSDIR%%
-@dirrm share/ggiterm
+@dirrm %%DATADIR%%
