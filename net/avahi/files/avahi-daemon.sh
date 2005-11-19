@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: avahi_daemon
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON dbus
 # KEYWORD: FreeBSD
 #
 # Avahi's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
