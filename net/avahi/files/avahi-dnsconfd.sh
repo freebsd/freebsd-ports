@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: avahi_dnsconfd
-# REQUIRE: DAEMON dbus
+# REQUIRE: DAEMON dbus avahi-daemon
 # KEYWORD: FreeBSD
 #
 # avahi-dnsconfd connects to a running avahi-daemon and runs  the script
@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 start_cmd=avahi_dnsconfd_start
 stop_cmd=avahi_dnsconfd_stop
 
-avahi_dnsconfd_bin=%%PREFIX%%/sbin/avahi-daemon
+avahi_dnsconfd_bin=%%PREFIX%%/sbin/avahi-dnsconfd
 
 avahi_dnsconfd_start() {
     checkyesno avahi_dnsconfd_enable && echo "Starting avahi-dnsconfd." && \
