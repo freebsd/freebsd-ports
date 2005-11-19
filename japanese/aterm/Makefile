@@ -7,12 +7,16 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES+=	japanese x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://wakaba.com/~tsann/aterm/
-PATCHFILES=	${DISTNAME}-ja.patch
+PATCH_SITES=	http://www.jaist.ac.jp/~amatsus/linux/src/xfree86/aterm/
+PATCHFILES=	${DISTNAME}-xim.patch.gz \
+		${DISTNAME}-compoundtext.patch.gz \
+		${DISTNAME}-linespace.patch.gz
+
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
@@ -38,8 +42,7 @@ MAN1=		aterm.1
 
 pre-configure:
 	@(cd ${WRKSRC}; \
-	${AUTOHEADER} --localdir=autoconf autoconf/configure.in > autoconf/config.h.in; \
-	${AUTOCONF} --localdir=autoconf autoconf/configure.in > configure)
+	${AUTOCONF} --include=autoconf autoconf/configure.in > configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aterm ${PREFIX}/bin
