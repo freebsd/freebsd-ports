@@ -1,5 +1,6 @@
 bin/avahi-browse
 bin/avahi-browse-domains
+%%GTK%%bin/avahi-discover-standalone
 bin/avahi-publish
 bin/avahi-publish-address
 bin/avahi-publish-service
@@ -56,6 +57,7 @@ libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
 %%DATADIR%%/avahi-service.dtd
+%%GTK%%%%DATADIR%%/interfaces/avahi-discover.glade
 %%DATADIR%%/introspection/AddressResolver.introspect
 %%DATADIR%%/introspection/DomainBrowser.introspect
 %%DATADIR%%/introspection/EntryGroup.introspect
@@ -67,6 +69,7 @@ sbin/avahi-dnsconfd
 %%DATADIR%%/introspection/ServiceTypeBrowser.introspect
 %%DATADIR%%/service-types
 @dirrm %%DATADIR%%/introspection
+%%GTK%%@dirrm %%DATADIR%%/interfaces
 @dirrm %%DATADIR%%
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
