@@ -967,6 +967,7 @@ callid		ports/misc/callid
 cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
 caml-light	ports/lang/caml-light
+campsite	ports/www/campsite
 camserv		ports/multimedia/camserv
 cantus		ports/audio/cantus
 cantus_3	ports/audio/cantus_3
