@@ -53,7 +53,6 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH} \
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-system-malloc --pdump
-BROKEN=		"Incomplete pkg-plist"
 .endif
 
 .if !defined(WITHOUT_XEMACS_PACKAGES)
@@ -136,6 +135,6 @@ post-install::
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
-	${RM} -f ${PREFIX}/bin/send-pr
+	${RM} -f ${PREFIX}/bin/send-pr ${PREFIX}/bin/xemacs-${XEMACS_VER}-*.dmp
 
 .include <bsd.port.post.mk>
