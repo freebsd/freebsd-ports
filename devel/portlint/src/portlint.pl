@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.90 2005/10/25 04:46:34 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.91 2005/11/19 20:34:31 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -39,8 +39,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 7;
-my $micro = 5;
+my $minor = 8;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -174,7 +174,7 @@ my @varlist =  qw(
 	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
 	WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
-	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
+	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 	PLIST_FILES OPTIONS INSTALLS_OMF
 );
@@ -669,9 +669,9 @@ sub checkplist {
 				"for more details.");
 		}
 
-		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL_VER} eq '') {
+		if ($_ =~ /\.la$/ && $makevar{USE_AUTOTOOLS} =~ 'libtool') {
 			&perror("WARN: $file [$.]: installing libtool archives, ".
-				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
+				"please use USE_AUTOTOOLS in Makefile if possible.  ".
 				"See http://www.FreeBSD.org/gnome/docs/porting.html ".
 				"for a way to completely eliminate .la files.");
 		}
@@ -935,7 +935,9 @@ sub checkmakefile {
 	my(@mopt, @oopt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
+	my %autotools_deprecated = ();
 	my %deprecated = ();
+	my @deplist = ();
 	my %autocmdnames = ();
 	my $pre_mk_line = 0;
 
@@ -1083,7 +1085,6 @@ sub checkmakefile {
 		$pre_mk_line = &linenumber($`) + 1;
 		print "OK: checking for USE_* used too late.\n" if ($verbose);
 		my @use_early = qw(
-			APACHE
 			BZIP2
 			GNUSTEP
 			IMAKE
@@ -1093,6 +1094,7 @@ sub checkmakefile {
 			LINUX_PREFIX
 			OPENSSL
 			PHP
+			PYTHON
 			QT2?
 			QT_VER
 			X_PREFIX
@@ -1236,6 +1238,13 @@ sub checkmakefile {
 			"be quoted.");
 	}
 
+	if ($whole =~ /\nIGNORE[+?]?=[ \t]+[^a-z \t]/ ||
+		$whole =~ /^IGNORE[+?]?=[ \t]+.*\.$/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: IGNORE messages should begin ".
+			"with a lowercase letter and end without a period.");
+	}
+
 	#
 	# whole file: PKGNAME
 	#
@@ -1284,20 +1293,43 @@ sub checkmakefile {
 	# whole file: check for deprecated commands
 	#
 	print "OK: checking for deprecated macros.\n" if $verbose;
+	%autotools_deprecated = (
+			USE_LIBTOOL			=> 'USE_AUTOTOOLS',
+			USE_AUTOCONF		=> 'USE_AUTOTOOLS',
+			USE_AUTOMAKE		=> 'USE_AUTOTOOLS',
+			WANT_LIBTOOL		=> 'USE_AUTOTOOLS',
+			WANT_AUTOCONF		=> 'USE_AUTOTOOLS',
+			WANT_AUTOMAKE		=> 'USE_AUTOTOOLS',
+			USE_LIBLTDL			=> 'USE_AUTOTOOLS',
+			USE_LIBTOOL_VER		=> 'USE_AUTOTOOLS',
+			WANT_LIBTOOL_VER	=> 'USE_AUTOTOOLS',
+			USE_INC_LIBTOOL_VER	=> 'USE_AUTOTOOLS',
+			WANT_AUTOMAKE_VER	=> 'USE_AUTOTOOLS',
+			USE_AUTOMAKE_VER	=> 'USE_AUTOTOOLS',
+			USE_ACLOCAL_VER		=> 'USE_AUTOTOOLS',
+			USE_AUTOHEADER_VER	=> 'USE_AUTOTOOLS',
+			USE_AUTOCONF_VER	=> 'USE_AUTOTOOLS',
+			WANT_AUTOCONF_VER	=> 'USE_AUTOTOOLS',
+			__HELP__			=> 'http://people.freebsd.org/~ade/autotools.txt',
+	);
+
 	%deprecated = (
-			USE_LIBTOOL		=> 'USE_LIBTOOL_VER',
-			USE_AUTOCONF	=> 'USE_AUTOHEADER_VER',
-			USE_AUTOMAKE	=> 'USE_AUTOMAKE_VER',
-			WANT_LIBTOOL	=> 'WANT_LIBTOOL_VER',
-			WANT_AUTOCONF	=> 'WANT_AUTOCONF_VER',
-			WANT_AUTOMAKE	=> 'WANT_AUTOMAKE_VER',
 			USE_MESA		=> 'USE_GL',
 	);
 
-	for my $depmacro (keys %deprecated) {
-		if ($whole =~ /\n($depmacro)[+?:!]?=/) {
-			&perror("FATAL: $file: $depmacro is ".
-				"deprecated, use $deprecated{$1} instead");
+	@deplist = (\%autotools_deprecated, \%deprecated);
+
+	for my $dlst (@deplist) {
+		my $hurl = $dlst->{'__HELP__'};
+		foreach my $depmacro (keys %{$dlst}) {
+		    if ($whole =~ /\n($depmacro)[+?:!]?=/) {
+				my $derror = "FATAL: $file: $depmacro is ".
+					"deprecated, use $dlst->{$1} instead";
+				if (defined($hurl)) {
+					$derror .= " (see $hurl for more details)";
+				}
+				&perror($derror);
+			}
 		}
 	}
 
