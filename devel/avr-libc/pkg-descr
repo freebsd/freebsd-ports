@@ -7,13 +7,4 @@ EEPROM etc.), as well as a 32-bit floating point math library (-lm).
 Everything is designed and implemented to cooperate with avr-gcc and
 avr-binutils.
 
-Please note that this is currently work-in-progress.  Documentation
-is becoming embedded into the source code which will hopefully get
-it more complete and up-to-date.  Some parts of the current library
-have proven to be not all that useful (e. g. timer_enable_int())
-so they might be removed in a future version.
-
-The port is currently taken from the avr-libc-1_0-branch which will
-eventually become version 1.0.
-
 WWW: http://savannah.nongnu.org/projects/avr-libc
