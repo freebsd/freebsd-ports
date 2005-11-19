@@ -42,6 +42,10 @@ OPTIONS=	IPOD "Enable iPod support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 .ifdef (WITH_IPOD)
 CONFIGURE_ARGS+=	--enable-ipod
 .endif
