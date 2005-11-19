@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgnomecups
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.2.2
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -19,9 +18,8 @@ COMMENT=	Support library for gnome cups admistration
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack glib20
+USE_GNOME=	gnomehack intlhack ltverhack glib20
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
