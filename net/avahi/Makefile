@@ -47,6 +47,10 @@ OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	Does not work on FreeBSD 4.X
+.endif
+
 .if defined(WITH_GTK2)
 USE_GNOME+=	libglade2
 PLIST_SUB+=	GTK=""
