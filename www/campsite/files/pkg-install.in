@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+POST-INSTALL)
+  echo "---> Starting post-install script:"
+
+  echo "---> Checking crontab(5) file for user \"root\""
+
+  if /usr/bin/crontab -u root -l >/tmp/csctab$$ 2>&1 ; then
+      if test -s /tmp/csctab$$; then
+          echo "---> \"root\" already has a crontab.  Not overwriting it"
+          echo "---> Please merge any changes from the standard crontab file"
+          echo "--->     %%PREFIX%%/campsite/etc/crontab.in"
+      else
+          echo "---> Installing crontab(5) file for user \"root\""
+          /usr/bin/crontab -u root "%%PREFIX%%/campsite/etc/crontab.in" || exit 1
+      fi
+  else
+      echo "---> Creating crontab(5) file for user \"root\""
+      /usr/bin/crontab -u root "%%PREFIX%%/campsite/etc/crontab.in" || exit 1
+  fi
+  rm -f /tmp/csctab$$
+  ;;
+
+esac

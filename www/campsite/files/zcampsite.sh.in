@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: campsite
+# REQUIRE: DAEMON mysqld
+# KEYWORD: FreeBSD
+#
+# Add the following lines to /etc/rc.conf to enable campsite
+# campsite_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable campsite
+
+
+. %%RC_SUBR%%
+
+name="campsite"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${campsite_enable="NO"}
+
+command="%%PREFIX%%/campsite/bin/campsite_server"
+
+run_rc_command "$1"

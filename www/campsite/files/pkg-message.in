@@ -1,0 +1,14 @@
+
+---------------------------------------------------------------------------------
+   Good. Now you have installed campsite. Continue by reading documentation,
+            specialy the section how to create new instance:
+	     %%PREFIX%%/campsite/bin/create_instance --help
+
+---------------------------------------------------------------------------------
+         !!! Note, that campsite schedules its periodic jobs. 
+                    See /var/cron/tabs/root for details
+		    
+---------------------------------------------------------------------------------
+        This ports requires pear libraries properly set in PHP
+                    See include_path in php.ini
+

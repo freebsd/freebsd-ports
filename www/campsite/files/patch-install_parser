@@ -1,0 +1,29 @@
+--- implementation/parser/parser/install_parser.orig	Sat Nov 19 20:46:16 2005
++++ implementation/parser/parser/install_parser	Sat Nov 19 20:50:16 2005
+@@ -39,26 +39,4 @@
+ 
+ if $USER_INSTALL; then exit 0; fi
+ 
+-RC_INIT=/etc/init.d
+-if [ -d "$RC_INIT" ]; then
+-	cp -f "$CAMPSITEINIT" "$RC_INIT"
+-	chown ${ROOT_USER}:${ROOT_GROUP} $"${RC_INIT}/$CAMPSITEINIT"
+-	[ $? -ne 0 ] && echo "ERROR installing start/stop script" && exit 1
+-	chmod 755 "$RC_INIT/$CAMPSITEINIT"
+-	ln -s "$RC_INIT/$CAMPSITEINIT" "/etc/rc2.d/S95$CAMPSITEINIT"
+-	ln -s "$RC_INIT/$CAMPSITEINIT" "/etc/rc3.d/S95$CAMPSITEINIT"
+-	ln -s "$RC_INIT/$CAMPSITEINIT" "/etc/rc5.d/S95$CAMPSITEINIT"
+-	ln -s "$RC_INIT/$CAMPSITEINIT" "/etc/rc0.d/K50$CAMPSITEINIT"
+-	ln -s "$RC_INIT/$CAMPSITEINIT" "/etc/rc6.d/K50$CAMPSITEINIT"
+-elif [ -d /etc/rc.d ]; then
+-	if [ ! -f /etc/rc.d/rc.local ]; then
+-		echo -e "#!/bin/bash\n" > /etc/rc.d/rc.local
+-	fi
+-	grep -w $CAMPSITECTL /etc/rc.d/rc.local > /dev/null
+-	if [ "$?" != "0" ]; then
+-		echo "$BIN_DIR/$CAMPSITECTL start" >> /etc/rc.d/rc.local
+-		[ $? -ne 0 ] && echo "ERROR installing start/stop script" && exit 1
+-	fi
+-fi
+-
+ exit 0
