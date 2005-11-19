@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
-#MASTER_SITES=	${MASTER_SITE_LOCAL}
-#MASTER_SITE_SUBDIR=	mezz
 DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -18,6 +16,7 @@ COMMENT=	A free BitTorrent client written from scratch in C
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
+CFLAGS+=	-Wall -W
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
@@ -32,8 +31,7 @@ PORTDOCS=	AUTHORS LICENSE NEWS README
 CONFIGURE_ARGS+=--disable-openssl
 .else
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--openssl-include=${OPENSSLINC} \
-		--openssl-lib=${OPENSSLLIB}
+CONFIGURE_ARGS+=--openssl-prefix=${OPENSSLBASE}
 .endif
 
 pre-everything::
@@ -42,13 +40,11 @@ pre-everything::
 	@${ECHO_MSG} " "
 .endif
 .if !defined(WITHOUT_OPENSSL)
-	@${ECHO_MSG} "WITHOUT_OPENSSL=yes to disable OpenSSL support, using built-in SHA1 implementation. Warning, it is a bit slower if you use this option." | /usr/bin/fmt 75 75
+	@${ECHO_MSG} "WITHOUT_OPENSSL=yes to disable OpenSSL support, using built-in SHA1 implementation. Warning, it is a bit slower if you use this option." | ${FMT} 75 75
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|cc|${CC}|g ; \
-		s|-g |${CFLAGS} ${CPPFLAGS} ${PTHREAD_CFLAGS} |g ; \
-		s|-pthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g' \
@@ -56,7 +52,7 @@ post-patch:
 
 # jam -dx, it will giving a verbose of build.
 do-build:
-	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} jam)
+	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} jam -dx)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/transmissioncli ${PREFIX}/bin/
