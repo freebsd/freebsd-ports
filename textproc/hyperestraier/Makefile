@@ -31,5 +31,6 @@ MAN3=	estnode.3 estraier.3
 post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
+	${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
 
 .include <bsd.port.mk>
