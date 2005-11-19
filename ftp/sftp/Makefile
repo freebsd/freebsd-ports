@@ -8,11 +8,12 @@
 PORTNAME=	sftp
 PORTVERSION=	0.9.9
 CATEGORIES=	ftp security
-MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/old/ \
-		http://www.komquats.com/distfiles/
+MASTER_SITES=	http://www.komquats.com/distfiles/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	An ftp replacement that runs over an ssh tunnel
+DEPRECATED=	yes
+EXPIRATION_DATE=	2006-03-01
 
 .include <bsd.port.pre.mk>
 
