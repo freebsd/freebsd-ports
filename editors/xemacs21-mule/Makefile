@@ -80,11 +80,6 @@ ALL_TARGET=	all dist
 .if defined(PKGNAMEPREFIX)
 INSTALL_TARGET=	install-arch-dep
 PLIST=		${PKGDIR}/pkg-plist.arch-dep
-.if ${PKGNAMEPREFIX} == "ja-"
-DESCR=		${PKGDIR}/pkg-descr.ja
-MANLANG=	ja
-MAN1=		xemacs.1
-.endif
 .else
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
@@ -172,6 +167,15 @@ CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
 SITE_INCLUDES+=		${LOCALBASE}/include
 SITE_LIBRARIES+=	${LOCALBASE}/lib
+
+.if defined(CANNA)
+PLIST_FILES+=		lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
+.endif
+.if defined(PKGNAMEPREFIX)
+.if ${PKGNAMEPREFIX} == "ja-"
+PLIST_FILES+=		man/ja/man1/xemacs.1
+.endif
+.endif
 
 # fix .so references in a few man pages
 pre-configure::
