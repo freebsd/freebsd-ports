@@ -47,6 +47,13 @@ SUB_LIST=	"PREFIX=${PREFIX}" "PORTSDIR=${PORTSDIR}"
 
 .include <bsd.port.pre.mk>
 
+# -fno-strict-aliasing (default on FreeBSD 6.0+) produces run-working
+#  code for `vcc', so use a more conservative setting here
+.if (${OSVERSION} >= 600000)
+CFLAGS=		-O -pipe
+CXXFLAGS=	-O -pipe
+.endif
+
 pre-everything::
 	@${ECHO_CMD} ""
 .ifndef (WITH_OPENAL)
