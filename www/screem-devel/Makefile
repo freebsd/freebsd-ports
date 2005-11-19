@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice GNOME/GTK-based HTML editor
 
-LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus \
-		croco-0.6.3:${PORTSDIR}/textproc/libcroco
+LIB_DEPENDS=	croco-0.6.3:${PORTSDIR}/textproc/libcroco
 
 USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomehack gnomemenus gnomeprefix gnometarget \
@@ -26,10 +25,23 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-enchant
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	screem.schemas
+
+.if defined(WITHOUT_DBUS)
+CONFIGURE_ARGS+=	--disable-dbus
+.else
+LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus
+.endif
+
+.if defined(WITHOUT_ENCHANT)
+CONFIGURE_ARGS+=	--disable-enchant
+.else
+LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
+CONFIGURE_ARGS+=	--enable-enchant
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${DATADIRNAME}/$${PACKAGE}|$${DATADIRNAME}/gnome/$${PACKAGE}|g' ${WRKSRC}/configure
