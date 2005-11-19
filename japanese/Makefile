@@ -405,6 +405,7 @@
     SUBDIR += xemacs-devel-canna+wnn6
     SUBDIR += xemacs-devel-freewnn
     SUBDIR += xemacs-devel-wnn6
+    SUBDUR += xemacs21-canna
     SUBDIR += xjman
     SUBDIR += xjman-3
     SUBDIR += xjtext
