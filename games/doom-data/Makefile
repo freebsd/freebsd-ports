@@ -50,6 +50,10 @@ PLIST_SUB+=	${f}="@comment "
 .   endif
 .endfor
 
+.if ${DISTFILES} == ""
+.   undef DIST_SUBDIR
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for f in ${LIST}
