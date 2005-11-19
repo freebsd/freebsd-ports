@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.91 2005/11/19 20:34:31 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.92 2005/11/19 21:21:13 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -1441,6 +1441,8 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	#
 	# whole file: ldconfig must come with "true" command
 	#
+	print "OK: checking that ldconfig is properly checked.\n"
+		if ($verbose);
 	if ($ldconfigwithtrue
 	 && $j =~ /(ldconfig|\$[{(]LDCONFIG[)}])/
 	 && $j !~ /(\/usr\/bin\/true|\$[{(]TRUE[)}])/) {
@@ -1452,6 +1454,8 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	#
 	# whole file: ${GZIP_CMD} -9 (or any other number)
 	#
+	print "OK: checking for compression arguments passed to \${GZIP_CMD}.\n"
+		if ($verbose);
 	if ($j =~ /\${GZIP_CMD}\s+-(\w+(\s+-)?)*(\d)/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN: $file [$lineno]: possible use of \"\${GZIP_CMD} -$3\" ".
@@ -1462,6 +1466,8 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	#
 	# whole file: ${MKDIR} -p
 	#
+	print "OK: checking for \${MKDIR} -p.\n"
+		if ($verbose);
 	if ($j =~ /\${MKDIR}\s+-p/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN: $file [$lineno]: possible use of \"\${MKDIR} -p\" ".
@@ -1472,6 +1478,8 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	#
 	# whole file: ${MACHINE_ARCH}
 	#
+	print "OK: checking for instances of \${MACHINE_ARCH} being test.\n"
+		if ($verbose);
 	if ($j =~ /\${MACHINE_ARCH}\s*[!=]=/) {
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: MACHINE_ARCH should never be tested ".
@@ -2620,7 +2628,9 @@ sub abspathname {
 	$str =~ s/([ \t][\@-]?(?:sed|\$[\{\(]SED[\}\)]|\$[\{\(]REINPLACE_CMD[\}\)]))((?:\s+\-\w+)*\s+(?:"(?:\\"|[^"\n])*"|'(?:\\'|[^'\n])*'))+(.*)/$1$3/g; #'
 
 	# ignore parameter string to echo command
-	$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^"])*')[ \t]*[;\n]//; #'
+	# XXX: This next pattern crashes Perl 5.8.7.
+	#$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^"])*')[ \t]*[;\n]//; #'
+	$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+.*(;|$)//m; #'
 
 	print "OK: checking direct use of full pathnames in $file.\n"
 		if ($verbose);
