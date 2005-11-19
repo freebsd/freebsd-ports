@@ -18,21 +18,22 @@ package-canonical:
 	@${ECHO_MSG} "===>   Canonical packaging for OpenOffice.org";
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ;\
 	${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_native_install_${LOCALIZED_LANG}${PKG_SUFX} .
-	@${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_languagepack/bsd/install/${LOCALIZED_LANG}/freebsd-*/openoffice*.tgz .
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
+	#@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util; dmake sdkoo'
 	@${RM} -fr ${WRKDIR}/sdk_tmp
 	@${MKDIR} ${WRKDIR}/sdk_tmp
 	@cd ${WRKDIR}/sdk_tmp ; \
-		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd.pro/SDK/bsd/install/${LOCALIZED_LANG}/freebsd-*/openoffice*.tgz
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice_SDK/bsd/install/${LOCALIZED_LANG}/freebsd-*/openoffice*.tgz
 	@cd ${WRKDIR}/sdk_tmp/opt/openoffice* ; \
-		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
-		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_SDK.tar.bz2 ${INSTALLATION_BASEDIR}
+		${MKDIR} ../${INSTALLATION_BASEDIR}_sdk ; \
+		${MV} * ../${INSTALLATION_BASEDIR}_sdk ; cd .. ; \
+		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_SDK.tar.bz2 ${INSTALLATION_BASEDIR}_sdk
 
 ure:
 	@${ECHO_MSG} "===>   Make Uno Runtime Environment of OpenOffice.org"
+	#@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util; dmake ure_en-US'
 	@${RM} -fr ${WRKDIR}/ure_tmp
 	@${MKDIR} ${WRKDIR}/ure_tmp
 	@cd ${WRKDIR}/ure_tmp ; \
@@ -49,9 +50,9 @@ solver:
 languagepack:
 	@${ECHO_MSG} "===>   Make languagepack of OpenOffice.org"
 .if defined (ALL_LOCALIZED_LANGS)
-	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack'
 .else
-	@cd ${WRKSRC} ; ${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util ; dmake ooolanguagepack_${LOCALIZED_LANG}'
 .endif
 
 .if !defined (ALL_LOCALIZED_LANGS)
