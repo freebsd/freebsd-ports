@@ -62,10 +62,9 @@ include/lapackpp/vd.h
 include/lapackpp/vf.h
 include/lapackpp/vi.h
 include/lapackpp/vli.h
-lib/liblapackpp.a
 lib/liblapackpp.la
 lib/liblapackpp.so
-lib/liblapackpp.so.8
+lib/liblapackpp.so.9
 lib/pkgconfig/lapackpp.pc
 share/aclocal/acx_lapackpp.m4
 @dirrm include/lapackpp
