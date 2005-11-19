@@ -30,7 +30,7 @@ PLIST_SUB=	WITH_X11="@comment "
 
 USE_GMAKE=	yes
 
-MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mclasserase mcopy.1 mdel.1 mdeltree.1 \
+MAN1=		mattrib.1 mbadblocks.1 mcat.1 mcd.1 mclasserase.1 mcopy.1 mdel.1 mdeltree.1 \
 		mdir.1 mdu.1 mformat.1 mkmanifest.1 minfo.1 mlabel.1 mmd.1 mmount.1 \
 		mmove.1 mpartition.1 mrd.1 mren.1 mshowfat.1 \
 		mtoolstest.1 mtools.1 mtype.1 mzip.1
