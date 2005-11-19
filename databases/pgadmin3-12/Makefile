@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-wx=${X11BASE} --with-wx-config=${WX_CONFIG}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
 CONFLICTS=	pgadmin3-1.[456789]*
+NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
