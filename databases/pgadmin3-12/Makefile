@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	pgadmin3/release/v${PORTVERSION}/src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE} --with-wx-config=${WX_CONFIG}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
+CONFLICTS=	pgadmin3-1.[456789]*
 
 .include <bsd.port.pre.mk>
 
