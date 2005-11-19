@@ -27,7 +27,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not build on 4.x (sound system)
+BROKEN=		"does not build on 4.x (sound system)"
 .endif
 
 pre-configure:
