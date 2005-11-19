@@ -8,6 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.8.7
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.8,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
@@ -104,7 +105,9 @@ pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	-@${FIND} ${PREFIX}/share/icons -type d -depth 1 -exec \
+	-@${TOUCH} -f ${X11BASE}/share/icons/hicolor/icon-theme.cache \
+		2>/dev/null
+	-@${FIND} ${X11BASE}/share/icons -type d -depth 1 -exec \
 		${PREFIX}/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
 	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK_VERSION}/engines
