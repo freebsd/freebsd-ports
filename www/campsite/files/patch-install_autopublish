@@ -1,0 +1,19 @@
+--- implementation/management/bin/install_autopublish.orig	Wed Jul 27 14:03:04 2005
++++ implementation/management/bin/install_autopublish	Sat Nov 19 00:28:45 2005
+@@ -3,10 +3,10 @@
+ [ "$USER_INSTALL" = "" ] && USER_INSTALL=false
+ if $USER_INSTALL; then exit 0; fi
+ 
+-. ${INSTALL_CONF}/cron_functions
+-if [ -f /etc/crontab ]; then
+-    uninstall_cron_task "$BIN_DIR/autopublish" /etc/crontab
+-fi
+-install_cron_task "*" "*" "*" "*" "*" "$ROOT_USER" "$BIN_DIR/autopublish" /etc/cron.d/campsite_autopublish -c || exit 1
+-restart_cron || exit 1
++#. ${INSTALL_CONF}/cron_functions
++#if [ -f /etc/crontab ]; then
++#    uninstall_cron_task "$BIN_DIR/autopublish" /etc/crontab
++#fi
++#install_cron_task "*" "*" "*" "*" "*" "$ROOT_USER" "$BIN_DIR/autopublish" /etc/cron.d/campsite_autopublish -c || exit 1
++#restart_cron || exit 1
+ exit 0

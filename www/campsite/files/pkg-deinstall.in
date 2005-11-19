@@ -1,0 +1,21 @@
+#! /bin/sh
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+DEINSTALL)
+  echo "---> Starting deinstall script:"
+
+  if /usr/bin/crontab -u root -l | \
+      /usr/bin/diff - %%PREFIX%%/campsite/etc/crontab.in >/dev/null 2>&1 ; then
+      echo "---> Zeroing crontab for \"root\""
+      /usr/bin/crontab -u root /dev/null
+  else
+      echo "---> Crontab for \"root\" not removed: please deinstall"
+      echo "---> manually if you no-longer wish to use Campsite. eg:"
+      echo "--->     /usr/bin/crontab -u root -r"
+  fi
+
+esac

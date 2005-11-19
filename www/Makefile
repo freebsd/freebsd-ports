@@ -57,6 +57,7 @@
     SUBDIR += bugmenot-firefox
     SUBDIR += cadaver
     SUBDIR += calamaris
+    SUBDIR += campsite
     SUBDIR += caudium10
     SUBDIR += caudium12
     SUBDIR += cgi-lib

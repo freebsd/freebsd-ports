@@ -1,0 +1,11 @@
+Campsite is a multilingual content management system (CMS) for news websites.
+
+Campsite follows a print publication paradigm, so it structures sites
+by default as Publications> Issues > Sections > Articles.
+Campsite works best for medium-to-large-size online news publications,
+but it is capable of handling smaller sites as well.
+Some of its main features are ease of use, total design freedom for
+web designers, built-in subscription support, automatic publishing,
+easy article translation and internationalization.
+
+WWW: http://www.campware.org/
