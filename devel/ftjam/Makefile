@@ -18,8 +18,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-INSTALL_WRKSRC=	${WRKSRC}/bin.freebsd
-
 .ifndef(NOPORTDOCS)
 PORTDOCS=	\
 		Jam.html \
@@ -46,6 +44,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 . endfor
 .endif
-	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/jam ${PREFIX}/bin/${PORTNAME}
+# INSTALL_WRKSRC changes depending on ARCH
+	@${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name "bin.freebsd*"`/jam \
+		${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
