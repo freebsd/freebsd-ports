@@ -9,7 +9,7 @@ PORTNAME=	dateutil
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	https://moin.conectiva.com.br/DateUtil?action=AttachFile&do=get&target=
+MASTER_SITES=	http://labix.org/download/python-dateutil/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-dateutil-${PORTVERSION}
 
@@ -20,6 +20,6 @@ USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
-FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
+#FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 .include <bsd.port.mk>
