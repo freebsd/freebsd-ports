@@ -1,5 +1,5 @@
---- texk/web2c/ptex-3.1.8.1/Makefile.in.orig	Mon Mar  7 15:30:44 2005
-+++ texk/web2c/ptex-3.1.8.1/Makefile.in	Sat Mar 19 08:24:59 2005
+--- texk/web2c/ptex-3.1.9/Makefile.in.orig	Mon Mar  7 15:30:44 2005
++++ texk/web2c/ptex-3.1.9/Makefile.in	Sat Mar 19 08:24:59 2005
 @@ -5,7 +5,7 @@
  
  default: programs formats
