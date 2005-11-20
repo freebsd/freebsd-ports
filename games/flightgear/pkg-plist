@@ -6,4 +6,3 @@ bin/js_demo
 bin/metar
 bin/terrasync
 bin/yasim
-sbin/js_server
