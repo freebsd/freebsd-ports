@@ -1,13 +1,10 @@
 *****************************************************************************
 
-Edit %%LOCALBASE%%/etc/php/extensions.ini and add:
+You have installed the eaccelerator package.
 
-extension=eaccelerator.so
+Edit %%LOCALBASE%%/etc/php.ini and add:
 
-****************************************************
-*** This extension must be loaded after          ***
-*** extension=session.so                         ***
-****************************************************
+zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/eaccelerator.so"
 
 Then create the cache directory:
 
