@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-DISTVERSION?=	6.2.0
+DISTVERSION?=	6.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
 DISTNAME=	SlimServer_v${DISTVERSION}
