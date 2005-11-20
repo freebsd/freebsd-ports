@@ -7,11 +7,12 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.2.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
-MASTER_SITES=	http://mirrors.kernel.org/fedora/core/updates/1/i386/ \
-		http://distro.ibiblio.org/pub/linux/distributions/fedora/linux/core/updates/1/i386/ \
-		ftp://ftp.uni-koeln.de/mirrors/fedora/linux/core/updates/1/i386/
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX} \
+		http://distro.ibiblio.org/pub/linux/distributions/fedora/linux/core/${SUBDIR}/ \
+		ftp://ftp.uni-koeln.de/mirrors/fedora/linux/core/${SUBDIR}/
+MASTER_SITE_SUBDIR=	updates/1/i386
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X, Linux binary

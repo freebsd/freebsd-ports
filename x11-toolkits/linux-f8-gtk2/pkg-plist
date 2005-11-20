@@ -128,6 +128,7 @@ usr/share/locale/ko/LC_MESSAGES/gtk20.mo
 usr/share/locale/lt/LC_MESSAGES/gtk20.mo
 usr/share/locale/lv/LC_MESSAGES/gtk20.mo
 usr/share/locale/mk/LC_MESSAGES/gtk20.mo
+usr/share/locale/ml/LC_MESSAGES/gtk20.mo
 usr/share/locale/mn/LC_MESSAGES/gtk20.mo
 usr/share/locale/ms/LC_MESSAGES/gtk20.mo
 usr/share/locale/ne/LC_MESSAGES/gtk20.mo
@@ -171,6 +172,8 @@ usr/share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm usr/share/themes/Raleigh/gtk-2.0
 @dirrm usr/share/themes/Raleigh
 @dirrm usr/share/themes
+@unexec rmdir %D/usr/share/locale/ar/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ar >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/cy/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/cy >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/en@IPA/LC_MESSAGES >/dev/null 2>&1 || true
@@ -187,5 +190,9 @@ usr/share/themes/Raleigh/gtk-2.0/gtkrc
 @unexec rmdir %D/usr/share/locale/lv >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/mk/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/mk >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ml/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ml >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ne/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ne >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/sp/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/sp >/dev/null 2>&1 || true
