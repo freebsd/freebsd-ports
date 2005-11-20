@@ -1,6 +1,7 @@
 bin/clipaccumulate
 bin/clipbrowse
 bin/clipedit
+bin/clipfilter
 bin/clipjoin
 %%SITE_PERL%%/Clipboard.pm
 %%SITE_PERL%%/Clipboard/Pb.pm
