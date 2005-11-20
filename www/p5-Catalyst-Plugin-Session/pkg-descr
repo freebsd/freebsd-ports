@@ -1,0 +1,14 @@
+The Session plugin is the base of two related parts of functionality
+required for session management in web applications.
+
+The first part, the State, is getting the browser to repeat back a
+session key, so that the web application can identify the client and
+logically string several requests together into a session.
+
+The second part, the Store, deals with the actual storage of information
+about the client. This data is stored so that the it may be revived for
+every request made by the same client.
+
+This plugin links the two pieces together.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session/
