@@ -1938,6 +1938,7 @@ ecm		ports/archivers/ecm
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecu		ports/comms/ecu
+ed2k		ports/misc/ed2k
 edb		ports/databases/edb
 ede		ports/x11-wm/ede
 edith		ports/editors/edith
