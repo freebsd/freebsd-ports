@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -31,6 +31,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
 		--without-texinfo \
