@@ -4,6 +4,7 @@ include/simgear/constants.h
 include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
 include/simgear/environment/metar.hxx
+include/simgear/environment/visual_enviro.hxx
 include/simgear/ephemeris/celestialBody.hxx
 include/simgear/ephemeris/ephemeris.hxx
 include/simgear/ephemeris/jupiter.hxx
@@ -38,6 +39,7 @@ include/simgear/math/vector.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/sg_path.hxx
 include/simgear/misc/sgstream.hxx
+include/simgear/misc/stdint.hxx
 include/simgear/misc/stopwatch.hxx
 include/simgear/misc/strutils.hxx
 include/simgear/misc/tabbed_values.hxx
@@ -59,11 +61,14 @@ include/simgear/scene/model/model.hxx
 include/simgear/scene/model/modellib.hxx
 include/simgear/scene/model/personality.hxx
 include/simgear/scene/model/placement.hxx
+include/simgear/scene/model/placementtrans.hxx
+include/simgear/scene/model/shadowvolume.hxx
+include/simgear/scene/sky/bbcache.hxx
 include/simgear/scene/sky/cloud.hxx
-include/simgear/scene/sky/clouds3d/SkySceneLoader.hpp
-include/simgear/scene/sky/clouds3d/SkyUtil.hpp
+include/simgear/scene/sky/cloudfield.hxx
 include/simgear/scene/sky/dome.hxx
 include/simgear/scene/sky/moon.hxx
+include/simgear/scene/sky/newcloud.hxx
 include/simgear/scene/sky/oursun.hxx
 include/simgear/scene/sky/sky.hxx
 include/simgear/scene/sky/sphere.hxx
@@ -74,9 +79,12 @@ include/simgear/scene/tgdb/obj.hxx
 include/simgear/scene/tgdb/pt_lights.hxx
 include/simgear/scene/tgdb/userdata.hxx
 include/simgear/scene/tgdb/vasi.hxx
+include/simgear/screen/RenderTexture.h
 include/simgear/screen/colors.hxx
 include/simgear/screen/extensions.hxx
+include/simgear/screen/jpgfactory.hxx
 include/simgear/screen/screen-dump.hxx
+include/simgear/screen/shader.h
 include/simgear/screen/texture.hxx
 include/simgear/screen/tr.h
 include/simgear/serial/serial.hxx
@@ -99,10 +107,8 @@ include/simgear/timing/sg_time.hxx
 include/simgear/timing/timestamp.hxx
 include/simgear/timing/timezone.h
 include/simgear/version.h
-include/simgear/xgl/xgl.h
 include/simgear/xml/easyxml.hxx
 lib/libsgbucket.a
-lib/libsgclouds3d.a
 lib/libsgdebug.a
 lib/libsgenvironment.a
 lib/libsgephem.a
@@ -123,10 +129,8 @@ lib/libsgstructure.a
 lib/libsgtgdb.a
 lib/libsgthreads.a
 lib/libsgtiming.a
-lib/libsgxgl.a
 lib/libsgxml.a
 @dirrm include/simgear/xml
-@dirrm include/simgear/xgl
 @dirrm include/simgear/timing
 @dirrm include/simgear/threads
 @dirrm include/simgear/structure
@@ -134,7 +138,6 @@ lib/libsgxml.a
 @dirrm include/simgear/serial
 @dirrm include/simgear/screen
 @dirrm include/simgear/scene/tgdb
-@dirrm include/simgear/scene/sky/clouds3d
 @dirrm include/simgear/scene/sky
 @dirrm include/simgear/scene/model
 @dirrm include/simgear/scene/material
