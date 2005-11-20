@@ -17,7 +17,7 @@ $FreeBSD$
  );
  
  sub main {
-@@ -74,28 +81,30 @@
+@@ -74,28 +81,14 @@
  
  	print "*** Ignore any warnings about AppConfig. ***\n\n";
  
@@ -26,18 +26,13 @@ $FreeBSD$
 -	chomp($perlBinary = <STDIN>);
 -
 -	$perlBinary ||= '/usr/bin/perl';
-+#	print "Please enter a perl binary to use (defaults to /usr/bin/perl)\n";
-+#	print "This must be the same perl binary that you ran this program with --> ";
-+#	chomp($perlBinary = <STDIN>);
-+#
-+#	$perlBinary ||= '/usr/bin/perl';
 +	$perlBinary = '%%PERL%%';
  
- 	unless (-x $perlBinary) {
+ 	unless (-f $perlBinary && -x $perlBinary) {
  		die "Couldn't find a perl binary. Exiting.\n";
  	}
  
--	# Where does their slimserver live? Try to guess.
+ 	# Where does their slimserver live? Try to guess.
 -	if (-f 'slimserver.pl' && -d 'CPAN/arch') {
 -
 -		$slimServerPath = cwd();
@@ -49,23 +44,11 @@ $FreeBSD$
 -	}
 -
 -	$slimServerPath ||= '/usr/local/slimserver';
-+#	# Where does their slimserver live? Try to guess.
-+#	if (-f 'slimserver.pl' && -d 'CPAN/arch') {
-+#
-+#		$slimServerPath = cwd();
-+#
-+#	} else {
-+#
-+#		print "Please enter the path to your SlimServer directory (ex: /usr/local/slimserver) --> ";
-+#		chomp($slimServerPath = <STDIN>);
-+#	}
-+#
-+#	$slimServerPath ||= '/usr/local/slimserver';
-+	$slimServerPath = '%%TMP_SLIMDIR%%';
++	$slimServerPath ||= '%%TMP_SLIMDIR%%';
  
  	unless (-d $slimServerPath) {
  		die "Couldn't find a valid SlimServer path. Exiting.\n";
-@@ -107,12 +116,13 @@
+@@ -107,12 +100,7 @@
  	# This is where the binaries will end up.
  	my $cpanDest = "$slimServerPath/CPAN/arch/$version/$archname/auto";
  
@@ -75,17 +58,11 @@ $FreeBSD$
 -
 -	# Default to the current directory.
 -	$downloadPath ||= '.';
-+#	# Where do they want the downloads to go?
-+#	print "Please enter a directory to download files to --> ";
-+#	chomp($downloadPath = <STDIN>);
-+#
-+#	# Default to the current directory.
-+#	$downloadPath ||= '.';
 +	$downloadPath = '%%CPANWRKDIR%%';
  
  	# Remove trailing slash
  	$downloadPath =~ s|^(.+?)/$|$1|;
-@@ -125,32 +135,32 @@
+@@ -125,32 +113,6 @@
  
  	my $pwd = cwd();
  
@@ -115,36 +92,10 @@ $FreeBSD$
 -	} else {
 -		print "Downloads will use $downloadUsing to fetch tarballs.\n";
 -	}
-+#	# What do we want to download with?
-+#	eval { require LWP::Simple };
-+#
-+#	# No LWP - try a command line program.
-+#	if ($@) {
-+#
-+#		for my $cmd (qw(curl wget)) {
-+#
-+#			system("which $cmd >/dev/null 2>&1");
-+#
-+#			unless ($? >> 8) {
-+#				$downloadUsing = $cmd;
-+#				last;
-+#			}
-+#		}
-+#
-+#	} else {
-+#
-+#		$downloadUsing = 'lwp';
-+#	}
-+#
-+#	unless ($downloadUsing) {
-+#		die "Couldn't find any valid downloaders - install LWP, wget or curl.\n";
-+#	} else {
-+#		print "Downloads will use $downloadUsing to fetch tarballs.\n";
-+#	}
  
  	for my $package (@packages) {
  
-@@ -161,18 +171,19 @@
+@@ -161,18 +123,7 @@
  		# Remove any previous version.
  		unlink $package;
  
@@ -160,18 +111,6 @@ $FreeBSD$
 -
 -			`$downloadUsing -q -O $package $SOURCE/$package?view=auto`;
 -		}
-+#		if ($downloadUsing eq 'lwp') {
-+#
-+#			LWP::Simple::getstore("$SOURCE/$package?view=auto", $package);
-+#
-+#		} elsif ($downloadUsing eq 'curl') {
-+#
-+#			`$downloadUsing --silent -o $package $SOURCE/$package?view=auto`;
-+#
-+#		} else {
-+#
-+#			`$downloadUsing -q -O $package $SOURCE/$package?view=auto`;
-+#		}
 +		`cp %%DISTDIR%%/$package .`;
  
  		unless (-r $package) {
