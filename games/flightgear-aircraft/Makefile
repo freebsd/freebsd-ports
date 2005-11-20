@@ -6,69 +6,80 @@
 #
 
 PORTNAME=	flightgear-aircrafts
-PORTVERSION=	1.0
+PORTVERSION=	20051118
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/
-DISTFILES=	747_20050118.tgz \
-		A320_20050118.tgz \
-		a4_20050118.tgz \
-		airwaveXtreme150_20050118.tgz \
-		AN-225_20050222.tgz \
-		as350_20050118.tgz \
-		asw20_20050118.tgz \
-		b1900d_20050124.tgz \
-		B-52F_20050125.tgz \
-		BAC-TSR2_20050120.tgz \
-		beech99_20050118.tgz \
-		bell206_20050118.tgz \
-		Boeing314_20050125.tgz \
-		c172-le_20050118.tgz \
-		c172r_20050118.tgz \
-		c182_20050118.tgz \
-		Canberra_20050118.tgz \
-		ch47_20050118.tgz \
-		Citation_20050118.tgz \
-		ComperSwift_20050118.tgz \
+MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
+		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/
+DISTFILES=	747_${PORTVERSION}.tgz \
+		A320_${PORTVERSION}.tgz \
+		A380_${PORTVERSION}.tgz \
+		a4_${PORTVERSION}.tgz \
+		airwaveXtreme150_${PORTVERSION}.tgz \
+		AN-225_${PORTVERSION}.tgz \
+		as350_${PORTVERSION}.tgz \
+		asw20_${PORTVERSION}.tgz \
+		b1900d_${PORTVERSION}.tgz \
+		b29_${PORTVERSION}.tgz \
+		B-52F_${PORTVERSION}.tgz \
+		BAC-TSR2_${PORTVERSION}.tgz \
+		beech99_${PORTVERSION}.tgz \
+		bell206_${PORTVERSION}.tgz \
+		Boeing314_${PORTVERSION}.tgz \
+		c150_${PORTVERSION}.tgz \
+		c172-le_${PORTVERSION}.tgz \
+		c172r_${PORTVERSION}.tgz \
+		c182_${PORTVERSION}.tgz \
+		Canberra_${PORTVERSION}.tgz \
+		ch47_${PORTVERSION}.tgz \
+		Citation-Bravo_${PORTVERSION}.tgz \
+		colditz_${PORTVERSION}.tgz \
+		ComperSwift_${PORTVERSION}.tgz \
 		Concorde_2.0.tgz \
-		dc3_20050118.tgz \
-		f104_20050118.tgz \
-		f15_20050118.tgz \
-		fkdr1_20050118.tgz \
-		fokker100_20050326.tgz \
-		fokker50_20050118.tgz \
-		harrier_20050118.tgz \
-		j22_20050118.tgz \
-		marchetti_20050118.tgz \
-		MD11_20050118.tgz \
-		ornithopter_20050118.tgz \
-		OV10_20050118.tgz \
-		paraglider_20050118.tgz \
-		pc7_20050118.tgz \
-		seahawk_20050118.tgz \
-		sgs233_20050118.tgz \
-		shuttle_20050118.tgz \
-		sopwithCamel_20050118.tgz \
-		Spitfire_20050118.tgz \
-		T37_20050118.tgz \
-		T38_20050118.tgz \
-		tu154_20050118.tgz \
-		X15_20050118.tgz \
-		x24b_20050118.tgz \
-		YF-23_20050118.tgz
+		dc3_${PORTVERSION}.tgz \
+		dhc2_${PORTVERSION}.tgz \
+		f104_${PORTVERSION}.tgz \
+		f15_${PORTVERSION}.tgz \
+		fkdr1_${PORTVERSION}.tgz \
+		fokker100_${PORTVERSION}.tgz \
+		fokker50_${PORTVERSION}.tgz \
+		harrier_${PORTVERSION}.tgz \
+		Hurricane_${PORTVERSION}.tgz \
+		j22_${PORTVERSION}.tgz \
+		l410_${PORTVERSION}.tgz \
+		marchetti_${PORTVERSION}.tgz \
+		MD11_${PORTVERSION}.tgz \
+		MiG-15_${PORTVERSION}.tgz \
+		ornithopter_${PORTVERSION}.tgz \
+		OV10_${PORTVERSION}.tgz \
+		paraglider_${PORTVERSION}.tgz \
+		pc7_${PORTVERSION}.tgz \
+		santa_${PORTVERSION}.tgz \
+		seahawk_${PORTVERSION}.tgz \
+		sgs233_${PORTVERSION}.tgz \
+		shuttle_${PORTVERSION}.tgz \
+		sopwithCamel_${PORTVERSION}.tgz \
+		Spitfire_${PORTVERSION}.tgz \
+		sr20_${PORTVERSION}.tgz \
+		T37_${PORTVERSION}.tgz \
+		TU-114_${PORTVERSION}.tgz \
+		tu154_${PORTVERSION}.tgz \
+		X15_${PORTVERSION}.tgz \
+		x24b_${PORTVERSION}.tgz \
+		YF-23_${PORTVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
-RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
+PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/.plist
 
 post-extract:
-	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' -or -name COPYING \) \
-		-delete
+	@${RM} -f ${WRKSRC}/b29/LICENSE
 
 pre-install:
 	@${RM} -f ${PLIST}
