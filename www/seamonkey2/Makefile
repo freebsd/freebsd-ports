@@ -23,6 +23,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
+DEPRECATED=	"The mozilla team has shifted the development branch of \
+		mozilla to seamonkey, this port is outdated and has many \
+		vulnerabilities"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
 MOZ_SUFX?=	-devel
