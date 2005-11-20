@@ -7,6 +7,7 @@
 
 PORTNAME=	xmule
 DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
@@ -38,6 +39,7 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--with-wx-config=${WX_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+MAKE_ARGS=	-e
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 # for debugging purposes
@@ -98,6 +100,10 @@ post-patch:
 		-e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/${file}
 .endfor
+# wx-config -> ${WX_CONFIG}
+	@${REINPLACE_CMD} -E \
+		-e 's|wx-config|${WX_CONFIG}|' \
+		${WRKSRC}/src/xmule.make.in
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
