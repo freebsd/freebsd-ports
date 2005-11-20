@@ -32,6 +32,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig gtk20
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_GCC=	3.3+
 WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
