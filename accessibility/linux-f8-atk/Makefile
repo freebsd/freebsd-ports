@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.8.0
+PORTREVISION=	0
 CATEGORIES=	accessibility
-MASTER_SITES=	http://download.fedora.us/fedora/redhat/9/i386/RPMS.os/ \
-		ftp://fr2.rpmfind.net/linux/redhat-archive/9/en/os/i386/RedHat/RPMS/
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	3/i386/os/Fedora/RPMS
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
@@ -18,10 +18,10 @@ COMMENT=	Accessibility Toolkit, Linux/i386 binary
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 
-BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist
 RESTRICTED=	"binary under GNU LGPL without accompanying source"
-RPM_SET=	atk-1.2.0-2.i386.rpm
+RPM_SET=	atk-${PORTVERSION}-2.i386.rpm
+PLIST_SUB+=	LIBVERSION="800.0" PORTVERSION="${PORTVERSION}"
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
