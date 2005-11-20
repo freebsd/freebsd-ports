@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	2.1.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/2.1/ \
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.0/ \
 		ftp://ftp.ipt.ru/pub/download/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	IcePy-${PORTVERSION}
 MAINTAINER=	bsam@ipt.ru
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
-LIB_DEPENDS=	Ice.21:${PORTSDIR}/devel/ice
+LIB_DEPENDS=	Ice.30:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -31,7 +31,7 @@ CFLAGS+=	-DNDEBUG
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} == "ia64"
 BROKEN=		"does not compile"
 .endif
 

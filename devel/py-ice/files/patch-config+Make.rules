@@ -1,5 +1,5 @@
---- config/Make.rules.orig	Fri Jun 24 01:36:53 2005
-+++ config/Make.rules	Tue Aug 30 20:31:34 2005
+--- config/Make.rules.orig	Fri Nov 11 16:59:51 2005
++++ config/Make.rules	Thu Nov 17 18:15:30 2005
 @@ -7,6 +7,8 @@
  #
  # **********************************************************************
@@ -35,13 +35,24 @@
  endif
  
  ifeq ($(PYTHON_VERSION),)
-@@ -103,14 +105,14 @@
- ifeq ($(LP64),yes)
-     install_libdir	= $(prefix)/lib$(lp64suffix)
- else
--    install_libdir	= $(prefix)/lib
-+    install_libdir	= %%PYTHON_SITELIBDIR%%/Ice
+@@ -100,21 +102,21 @@
+     slicedir		= $(ICE_HOME)/slice
  endif
+ 
+-ifeq ($(LP64),yes)
++#ifeq ($(LP64),yes)
+ #
+ # TODO: Where should the shared library be installed if it is a 64 bit
+ # build.
+ #
+-    install_libdir	= $(prefix)/lib$(lp64suffix)
+-else
+-    install_libdir	= $(prefix)/python
+-endif
++#    install_libdir	= $(prefix)/lib$(lp64suffix)
++#else
++    install_libdir	= %%PYTHON_SITELIBDIR%%/Ice
++#endif
  
  install_slicedir	= $(prefix)/slice
 -install_pythondir	= $(prefix)/python

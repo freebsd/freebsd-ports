@@ -6,9 +6,6 @@
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/IcePack_Admin_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/IcePack_Exception_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/IcePack_Query_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePatch2_FileInfo_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePatch2_FileServer_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceStorm_IceStorm_ice.py
@@ -18,7 +15,13 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ConnectionF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Connection_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Current_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_Endpoint_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_FacetMap_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Admin_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Descriptor_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Exception_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Observer_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Query_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Identity_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocalException_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocatorF_ice.py
@@ -43,19 +46,19 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePy.so
-%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.2.1.2
-%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.21
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.3.0.0
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.30
 %%PYTHON_SITELIBDIR%%/Ice/LICENSE
 %%PYTHON_SITELIBDIR%%/Ice/ICE_LICENSE
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2/__init__.py
 %%PYTHON_SITELIBDIR%%/Ice/IceBox/__init__.py
-%%PYTHON_SITELIBDIR%%/Ice/IcePack/__init__.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid/__init__.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePatch2/__init__.py
 %%PYTHON_SITELIBDIR%%/Ice/IceStorm/__init__.py
 %%PYTHON_SITELIBDIR%%/Ice.pth
 @dirrm %%PYTHON_SITELIBDIR%%/Ice/Glacier2
 @dirrm %%PYTHON_SITELIBDIR%%/Ice/IceBox
-@dirrm %%PYTHON_SITELIBDIR%%/Ice/IcePack
+@dirrm %%PYTHON_SITELIBDIR%%/Ice/IceGrid
 @dirrm %%PYTHON_SITELIBDIR%%/Ice/IcePatch2
 @dirrm %%PYTHON_SITELIBDIR%%/Ice/IceStorm
 @dirrm %%PYTHON_SITELIBDIR%%/Ice
