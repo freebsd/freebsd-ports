@@ -237,7 +237,7 @@ share/locale/vi/LC_MESSAGES/bittorrent.mo
 share/locale/zh_CN/LC_MESSAGES/bittorrent.mo
 share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
-%%GUI%%@dirrm share/pixmaps/BitTorrent       
+%%GUI%%@dirrm share/pixmaps/BitTorrent
 %%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
