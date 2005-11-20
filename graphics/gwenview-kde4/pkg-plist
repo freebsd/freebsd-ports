@@ -124,15 +124,6 @@ share/doc/HTML/nl/gwenview/introduction.docbook
 share/doc/HTML/nl/gwenview/keybindings.docbook
 share/doc/HTML/nl/gwenview/mouse.docbook
 share/doc/HTML/nl/gwenview/view_mode.png
-share/doc/HTML/pt/gwenview/common
-share/doc/HTML/pt/gwenview/docked_windows.docbook
-share/doc/HTML/pt/gwenview/external_tools.docbook
-share/doc/HTML/pt/gwenview/index.cache.bz2
-share/doc/HTML/pt/gwenview/index.docbook
-share/doc/HTML/pt/gwenview/interface.docbook
-share/doc/HTML/pt/gwenview/introduction.docbook
-share/doc/HTML/pt/gwenview/keybindings.docbook
-share/doc/HTML/pt/gwenview/mouse.docbook
 share/doc/HTML/pt_BR/gwenview/browse_mode.png
 share/doc/HTML/pt_BR/gwenview/common
 share/doc/HTML/pt_BR/gwenview/docked_windows.docbook
@@ -152,15 +143,6 @@ share/doc/HTML/ru/gwenview/interface.docbook
 share/doc/HTML/ru/gwenview/introduction.docbook
 share/doc/HTML/ru/gwenview/keybindings.docbook
 share/doc/HTML/ru/gwenview/mouse.docbook
-share/doc/HTML/sv/gwenview/common
-share/doc/HTML/sv/gwenview/docked_windows.docbook
-share/doc/HTML/sv/gwenview/external_tools.docbook
-share/doc/HTML/sv/gwenview/index.cache.bz2
-share/doc/HTML/sv/gwenview/index.docbook
-share/doc/HTML/sv/gwenview/interface.docbook
-share/doc/HTML/sv/gwenview/introduction.docbook
-share/doc/HTML/sv/gwenview/keybindings.docbook
-share/doc/HTML/sv/gwenview/mouse.docbook
 share/icons/crystalsvg/16x16/apps/gvdirpart.png
 share/icons/crystalsvg/22x22/apps/gvdirpart.png
 share/icons/crystalsvg/32x32/apps/gvdirpart.png
@@ -185,8 +167,6 @@ share/locale/cy/LC_MESSAGES/gwenview.mo
 share/locale/da/LC_MESSAGES/gwenview.mo
 share/locale/de/LC_MESSAGES/gwenview.mo
 share/locale/el/LC_MESSAGES/gwenview.mo
-share/locale/en_GB/LC_MESSAGES/gwenview.mo
-share/locale/es/LC_MESSAGES/gwenview.mo
 share/locale/et/LC_MESSAGES/gwenview.mo
 share/locale/fo/LC_MESSAGES/gwenview.mo
 share/locale/fr/LC_MESSAGES/gwenview.mo
@@ -205,14 +185,10 @@ share/locale/nl/LC_MESSAGES/gwenview.mo
 share/locale/nso/LC_MESSAGES/gwenview.mo
 share/locale/pa/LC_MESSAGES/gwenview.mo
 share/locale/pl/LC_MESSAGES/gwenview.mo
-share/locale/pt/LC_MESSAGES/gwenview.mo
 share/locale/pt_BR/LC_MESSAGES/gwenview.mo
 share/locale/ro/LC_MESSAGES/gwenview.mo
 share/locale/ru/LC_MESSAGES/gwenview.mo
-share/locale/rw/LC_MESSAGES/gwenview.mo
-share/locale/sr/LC_MESSAGES/gwenview.mo
 share/locale/sr@Latn/LC_MESSAGES/gwenview.mo
-share/locale/sv/LC_MESSAGES/gwenview.mo
 share/locale/ta/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
 share/locale/uk/LC_MESSAGES/gwenview.mo
@@ -235,14 +211,8 @@ share/services/gvimagepart.desktop
 @unexec rmdir %D/share/locale/ven 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
 @unexec rmdir %D/share/locale/nso/LC_MESSAGES 2>/dev/null || true
@@ -259,10 +229,8 @@ share/services/gvimagepart.desktop
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@dirrm share/doc/HTML/sv/gwenview
 @dirrm share/doc/HTML/ru/gwenview
 @dirrm share/doc/HTML/pt_BR/gwenview
-@dirrm share/doc/HTML/pt/gwenview
 @dirrm share/doc/HTML/nl/gwenview
 @dirrm share/doc/HTML/it/gwenview
 @dirrm share/doc/HTML/fr/gwenview
