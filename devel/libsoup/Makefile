@@ -38,10 +38,6 @@ CONFIGURE_ARGS+=--disable-ssl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	"Does not build on 4.X"
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "libsoup has the following configurable option(s):"
