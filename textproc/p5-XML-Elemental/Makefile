@@ -5,22 +5,34 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Elemental
-PORTVERSION=	1.03
+PORTVERSION=	2.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic classes for simplistic and perlish handling of XML data
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	XML::Parser::Style::Elemental.3 XML::Elemental::Node.3 \
-	XML::Elemental::Element.3 XML::Elemental::Characters.3 \
-	XML::Elemental::Document.3 XML::Elemental.3
+MAN3=	XML::Elemental.3 \
+	XML::Elemental::Characters.3 \
+	XML::Elemental::Document.3 \
+	XML::Elemental::Element.3 \
+	XML::Elemental::Node.3 \
+	XML::Elemental::SAXHandler.3 \
+	XML::Elemental::Util.3 \
+	XML::Parser::Style::Elemental.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
