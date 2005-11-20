@@ -19,7 +19,7 @@ COMMENT=	A database query and administration tool
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
