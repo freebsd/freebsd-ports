@@ -77,7 +77,7 @@ usr/share/locale/wa/LC_MESSAGES/glib20.mo
 usr/share/locale/yi/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@dirrm usr/share/doc/glib2-2.2.3
+@dirrm usr/share/doc/glib2-%%PORTVERSION%%
 @unexec rmdir %D/usr/share/locale/am/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/am >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/ar/LC_MESSAGES >/dev/null 2>&1 || true
