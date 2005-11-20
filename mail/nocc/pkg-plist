@@ -7,6 +7,7 @@ www/nocc/common.php
 @unexec if cmp -s %D/www/nocc/conf.php %D/www/nocc/conf.php.dist; then rm -f %D/www/nocc/conf.php; fi
 www/nocc/conf.php.dist
 @exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
+www/nocc/conf_charset.php
 www/nocc/conf_lang.php
 www/nocc/contacts.php
 www/nocc/contacts_manager.php
@@ -18,6 +19,7 @@ www/nocc/exception.php
 www/nocc/functions.php
 www/nocc/get_img.php
 www/nocc/help.php
+www/nocc/html_entity_decode.php
 www/nocc/index.php
 www/nocc/is_uploaded_file.php
 www/nocc/logout.php
@@ -49,9 +51,9 @@ www/nocc/html/send.php
 www/nocc/html/send_confirmed.php
 www/nocc/html/send_error.php
 www/nocc/lang/add_message.sh
-www/nocc/lang/ar-win.php
 www/nocc/lang/ar.php
 www/nocc/lang/bg.php
+www/nocc/lang/ca.php
 www/nocc/lang/cs.php
 www/nocc/lang/da.php
 www/nocc/lang/de.php
@@ -76,8 +78,6 @@ www/nocc/lang/pt-br.php
 www/nocc/lang/pt.php
 www/nocc/lang/remove_message.sh
 www/nocc/lang/ro.php
-www/nocc/lang/ru-iso.php
-www/nocc/lang/ru-koi.php
 www/nocc/lang/ru.php
 www/nocc/lang/sk.php
 www/nocc/lang/sl.php
@@ -89,95 +89,86 @@ www/nocc/lang/xx-hacker.php
 www/nocc/lang/zh-gb.php
 www/nocc/lang/zh-tw.php
 www/nocc/rss.php
-www/nocc/themes/blue/colors.php
-www/nocc/themes/blue/style.css
-www/nocc/themes/blue/img/attach.gif
+www/nocc/themes/blue/img/attach.png
 www/nocc/themes/blue/img/button.png
-www/nocc/themes/blue/img/confused.gif
-www/nocc/themes/blue/img/cool.gif
-www/nocc/themes/blue/img/cry.gif
-www/nocc/themes/blue/img/delete.gif
-www/nocc/themes/blue/img/down.gif
-www/nocc/themes/blue/img/embarassed.gif
-www/nocc/themes/blue/img/flat.gif
-www/nocc/themes/blue/img/grin.gif
-www/nocc/themes/blue/img/happy.gif
-www/nocc/themes/blue/img/left_arrow.gif
-www/nocc/themes/blue/img/logo.gif
-www/nocc/themes/blue/img/love.gif
-www/nocc/themes/blue/img/new.gif
-www/nocc/themes/blue/img/right_arrow.gif
-www/nocc/themes/blue/img/spacer.gif
-www/nocc/themes/blue/img/surprised.gif
-www/nocc/themes/blue/img/tongue.gif
-www/nocc/themes/blue/img/unhappy.gif
-www/nocc/themes/blue/img/up.gif
-www/nocc/themes/blue/img/wink.gif
-www/nocc/themes/newlook/colors.php
-www/nocc/themes/newlook/style.css
-www/nocc/themes/newlook/img/attach.gif
-www/nocc/themes/newlook/img/bg.gif
+www/nocc/themes/blue/img/down.png
+www/nocc/themes/blue/img/error.png
+www/nocc/themes/blue/img/left_arrow.png
+www/nocc/themes/blue/img/logo.png
+www/nocc/themes/blue/img/new.png
+www/nocc/themes/blue/img/right_arrow.png
+www/nocc/themes/blue/img/rss.png
+www/nocc/themes/blue/img/smilies/confused.png
+www/nocc/themes/blue/img/smilies/cool.png
+www/nocc/themes/blue/img/smilies/cry.png
+www/nocc/themes/blue/img/smilies/embarassed.png
+www/nocc/themes/blue/img/smilies/flat.png
+www/nocc/themes/blue/img/smilies/grin.png
+www/nocc/themes/blue/img/smilies/happy.png
+www/nocc/themes/blue/img/smilies/love.png
+www/nocc/themes/blue/img/smilies/surprised.png
+www/nocc/themes/blue/img/smilies/tongue.png
+www/nocc/themes/blue/img/smilies/unhappy.png
+www/nocc/themes/blue/img/smilies/wink.png
+www/nocc/themes/blue/img/up.png
+www/nocc/themes/blue/style.css
+www/nocc/themes/newlook/img/attach.png
 www/nocc/themes/newlook/img/button.png
-www/nocc/themes/newlook/img/confused.gif
-www/nocc/themes/newlook/img/cool.gif
-www/nocc/themes/newlook/img/cry.gif
-www/nocc/themes/newlook/img/delete.gif
-www/nocc/themes/newlook/img/down.gif
-www/nocc/themes/newlook/img/embarassed.gif
-www/nocc/themes/newlook/img/flat.gif
-www/nocc/themes/newlook/img/grin.gif
-www/nocc/themes/newlook/img/happy.gif
-www/nocc/themes/newlook/img/left_arrow.gif
-www/nocc/themes/newlook/img/logo.gif
-www/nocc/themes/newlook/img/love.gif
-www/nocc/themes/newlook/img/new.gif
-www/nocc/themes/newlook/img/right_arrow.gif
-www/nocc/themes/newlook/img/shtamp.gif
-www/nocc/themes/newlook/img/spacer.gif
-www/nocc/themes/newlook/img/surprised.gif
-www/nocc/themes/newlook/img/tongue.gif
-www/nocc/themes/newlook/img/unhappy.gif
-www/nocc/themes/newlook/img/up.gif
-www/nocc/themes/newlook/img/wink.gif
-www/nocc/themes/standard/colors.php
-www/nocc/themes/standard/style.css
-www/nocc/themes/standard/img/attach.gif
+www/nocc/themes/newlook/img/down.png
+www/nocc/themes/newlook/img/error.png
+www/nocc/themes/newlook/img/left_arrow.png
+www/nocc/themes/newlook/img/logo.png
+www/nocc/themes/newlook/img/new.png
+www/nocc/themes/newlook/img/right_arrow.png
+www/nocc/themes/newlook/img/rss.png
+www/nocc/themes/newlook/img/shtamp.png
+www/nocc/themes/newlook/img/smilies/confused.png
+www/nocc/themes/newlook/img/smilies/cool.png
+www/nocc/themes/newlook/img/smilies/cry.png
+www/nocc/themes/newlook/img/smilies/embarassed.png
+www/nocc/themes/newlook/img/smilies/flat.png
+www/nocc/themes/newlook/img/smilies/grin.png
+www/nocc/themes/newlook/img/smilies/happy.png
+www/nocc/themes/newlook/img/smilies/love.png
+www/nocc/themes/newlook/img/smilies/surprised.png
+www/nocc/themes/newlook/img/smilies/tongue.png
+www/nocc/themes/newlook/img/smilies/unhappy.png
+www/nocc/themes/newlook/img/smilies/wink.png
+www/nocc/themes/newlook/img/up.png
+www/nocc/themes/newlook/style.css
+www/nocc/themes/standard/img/attach.png
 www/nocc/themes/standard/img/button.png
-www/nocc/themes/standard/img/confused.gif
-www/nocc/themes/standard/img/cool.gif
-www/nocc/themes/standard/img/cry.gif
-www/nocc/themes/standard/img/delete.gif
-www/nocc/themes/standard/img/down.gif
-www/nocc/themes/standard/img/embarassed.gif
-www/nocc/themes/standard/img/flat.gif
-www/nocc/themes/standard/img/grin.gif
-www/nocc/themes/standard/img/happy.gif
-www/nocc/themes/standard/img/left_arrow.gif
-www/nocc/themes/standard/img/logo.gif
-www/nocc/themes/standard/img/love.gif
-www/nocc/themes/standard/img/new.gif
-www/nocc/themes/standard/img/right_arrow.gif
-www/nocc/themes/standard/img/spacer.gif
-www/nocc/themes/standard/img/surprised.gif
-www/nocc/themes/standard/img/tongue.gif
-www/nocc/themes/standard/img/unhappy.gif
-www/nocc/themes/standard/img/up.gif
-www/nocc/themes/standard/img/wink.gif
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+www/nocc/themes/standard/img/down.png
+www/nocc/themes/standard/img/error.png
+www/nocc/themes/standard/img/left_arrow.png
+www/nocc/themes/standard/img/logo.png
+www/nocc/themes/standard/img/new.png
+www/nocc/themes/standard/img/right_arrow.png
+www/nocc/themes/standard/img/rss.png
+www/nocc/themes/standard/img/smilies/confused.png
+www/nocc/themes/standard/img/smilies/cool.png
+www/nocc/themes/standard/img/smilies/cry.png
+www/nocc/themes/standard/img/smilies/embarassed.png
+www/nocc/themes/standard/img/smilies/flat.png
+www/nocc/themes/standard/img/smilies/grin.png
+www/nocc/themes/standard/img/smilies/happy.png
+www/nocc/themes/standard/img/smilies/love.png
+www/nocc/themes/standard/img/smilies/surprised.png
+www/nocc/themes/standard/img/smilies/tongue.png
+www/nocc/themes/standard/img/smilies/unhappy.png
+www/nocc/themes/standard/img/smilies/wink.png
+www/nocc/themes/standard/img/up.png
+www/nocc/themes/standard/style.css
+@dirrm www/nocc/themes/standard/img/smilies
 @dirrm www/nocc/themes/standard/img
 @dirrm www/nocc/themes/standard
+@dirrm www/nocc/themes/newlook/img/smilies
 @dirrm www/nocc/themes/newlook/img
 @dirrm www/nocc/themes/newlook
+@dirrm www/nocc/themes/blue/img/smilies
 @dirrm www/nocc/themes/blue/img
 @dirrm www/nocc/themes/blue
 @dirrm www/nocc/themes
 @dirrm www/nocc/lang
 @dirrm www/nocc/html
 @dirrm www/nocc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
