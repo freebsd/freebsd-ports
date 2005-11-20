@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaccelerator
-PORTVERSION=	0.9.3
+DISTVERSION=	0.9.4-rc1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,29 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An opcode cache for PHP with encoder and loader
 
-USE_PHP=	yes
+USE_PHP=	session
 USE_PHPIZE=	yes
+USE_PHP_BUILD=	yes
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared
 
+USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${LOCALBASE}/lib/php/${PHP_EXT_DIR}/session.so)
-WITHOUT_PHP_SESSION=	yes
-CONFIGURE_ARGS+=	--without-eaccelerator-sessions
-.endif
-
-pre-everything::
-.if defined(WITHOUT_PHP_SESSION)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> If you use ${PORTNAME} with php session, please"
-	@${ECHO_MSG} "===> press CTRL+C and install www/php${PHP_VER}-session"
-	@${ECHO_MSG} "===>"
-	@sleep 2
-.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -62,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
