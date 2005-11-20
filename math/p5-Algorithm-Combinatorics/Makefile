@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Combinatorics
-PORTVERSION=	0.08
+PORTVERSION=	0.12
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Efficient generation of combinatorial sequences
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		Algorithm::Combinatorics.3
