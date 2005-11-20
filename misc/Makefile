@@ -71,6 +71,7 @@
     SUBDIR += dvorak7min
     SUBDIR += dvorakng
     SUBDIR += earthview
+    SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
     SUBDIR += elscreen
     SUBDIR += esniper
