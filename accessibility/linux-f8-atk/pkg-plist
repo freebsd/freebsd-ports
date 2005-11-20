@@ -1,24 +1,211 @@
 usr/lib/libatk-1.0.so.0
-usr/lib/libatk-1.0.so.0.200.0
-usr/share/doc/atk-1.2.0/AUTHORS
-usr/share/doc/atk-1.2.0/COPYING
-usr/share/doc/atk-1.2.0/ChangeLog
-usr/share/doc/atk-1.2.0/README
+usr/lib/libatk-1.0.so.0.%%LIBVERSION%%
+usr/share/doc/atk-%%PORTVERSION%%/AUTHORS
+usr/share/doc/atk-%%PORTVERSION%%/COPYING
+usr/share/doc/atk-%%PORTVERSION%%/ChangeLog
+usr/share/doc/atk-%%PORTVERSION%%/README
+usr/share/locale/af/LC_MESSAGES/atk10.mo
+usr/share/locale/am/LC_MESSAGES/atk10.mo
+usr/share/locale/az/LC_MESSAGES/atk10.mo
+usr/share/locale/be/LC_MESSAGES/atk10.mo
 usr/share/locale/bg/LC_MESSAGES/atk10.mo
+usr/share/locale/bs/LC_MESSAGES/atk10.mo
+usr/share/locale/ca/LC_MESSAGES/atk10.mo
 usr/share/locale/cs/LC_MESSAGES/atk10.mo
+usr/share/locale/cy/LC_MESSAGES/atk10.mo
 usr/share/locale/da/LC_MESSAGES/atk10.mo
 usr/share/locale/de/LC_MESSAGES/atk10.mo
+usr/share/locale/el/LC_MESSAGES/atk10.mo
+usr/share/locale/en_CA/LC_MESSAGES/atk10.mo
 usr/share/locale/en_GB/LC_MESSAGES/atk10.mo
+usr/share/locale/eo/LC_MESSAGES/atk10.mo
 usr/share/locale/es/LC_MESSAGES/atk10.mo
+usr/share/locale/et/LC_MESSAGES/atk10.mo
+usr/share/locale/eu/LC_MESSAGES/atk10.mo
+usr/share/locale/fa/LC_MESSAGES/atk10.mo
+usr/share/locale/fi/LC_MESSAGES/atk10.mo
+usr/share/locale/fr/LC_MESSAGES/atk10.mo
+usr/share/locale/ga/LC_MESSAGES/atk10.mo
+usr/share/locale/gu/LC_MESSAGES/atk10.mo
 usr/share/locale/he/LC_MESSAGES/atk10.mo
+usr/share/locale/hi/LC_MESSAGES/atk10.mo
+usr/share/locale/hr/LC_MESSAGES/atk10.mo
 usr/share/locale/hu/LC_MESSAGES/atk10.mo
+usr/share/locale/id/LC_MESSAGES/atk10.mo
+usr/share/locale/is/LC_MESSAGES/atk10.mo
+usr/share/locale/it/LC_MESSAGES/atk10.mo
+usr/share/locale/ja/LC_MESSAGES/atk10.mo
+usr/share/locale/kn/LC_MESSAGES/atk10.mo
+usr/share/locale/ko/LC_MESSAGES/atk10.mo
+usr/share/locale/li/LC_MESSAGES/atk10.mo
+usr/share/locale/lt/LC_MESSAGES/atk10.mo
+usr/share/locale/lv/LC_MESSAGES/atk10.mo
+usr/share/locale/mk/LC_MESSAGES/atk10.mo
+usr/share/locale/ml/LC_MESSAGES/atk10.mo
+usr/share/locale/mn/LC_MESSAGES/atk10.mo
+usr/share/locale/mr/LC_MESSAGES/atk10.mo
 usr/share/locale/ms/LC_MESSAGES/atk10.mo
+usr/share/locale/nb/LC_MESSAGES/atk10.mo
+usr/share/locale/ne/LC_MESSAGES/atk10.mo
 usr/share/locale/nl/LC_MESSAGES/atk10.mo
+usr/share/locale/nn/LC_MESSAGES/atk10.mo
 usr/share/locale/no/LC_MESSAGES/atk10.mo
+usr/share/locale/pa/LC_MESSAGES/atk10.mo
+usr/share/locale/pl/LC_MESSAGES/atk10.mo
+usr/share/locale/pt/LC_MESSAGES/atk10.mo
+usr/share/locale/pt_BR/LC_MESSAGES/atk10.mo
+usr/share/locale/ro/LC_MESSAGES/atk10.mo
 usr/share/locale/ru/LC_MESSAGES/atk10.mo
+usr/share/locale/sk/LC_MESSAGES/atk10.mo
+usr/share/locale/sl/LC_MESSAGES/atk10.mo
+usr/share/locale/sq/LC_MESSAGES/atk10.mo
+usr/share/locale/sr/LC_MESSAGES/atk10.mo
+usr/share/locale/sr@Latn/LC_MESSAGES/atk10.mo
+usr/share/locale/sr@ije/LC_MESSAGES/atk10.mo
 usr/share/locale/sv/LC_MESSAGES/atk10.mo
+usr/share/locale/ta/LC_MESSAGES/atk10.mo
+usr/share/locale/tk/LC_MESSAGES/atk10.mo
+usr/share/locale/tr/LC_MESSAGES/atk10.mo
 usr/share/locale/uk/LC_MESSAGES/atk10.mo
 usr/share/locale/vi/LC_MESSAGES/atk10.mo
-@dirrm usr/share/doc/atk-1.2.0
-@unexec rmdir %D/usr/share/locale/he/LC_MESSAGES 2>&1 >/dev/null || true
-@unexec rmdir %D/usr/share/locale/he 2>&1 >/dev/null || true
+usr/share/locale/wa/LC_MESSAGES/atk10.mo
+usr/share/locale/yi/LC_MESSAGES/atk10.mo
+usr/share/locale/zh_CN/LC_MESSAGES/atk10.mo
+usr/share/locale/zh_TW/LC_MESSAGES/atk10.mo
+@dirrm usr/share/doc/atk-%%PORTVERSION%%
+@unexec rmdir %D/usr/share/locale/af/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/af >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/am/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/am >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/az/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/az >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/be/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/be >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bg/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bg >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bs/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bs >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ca/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ca >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/cs/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/cs >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/cy/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/cy >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/da/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/da >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/de/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/de >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/el/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/el >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/en_CA/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/en_CA >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/en_GB/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/en_GB >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eo/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eo >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/es/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/es >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/et/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/et >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eu/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/eu >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fa/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fa >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fi >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fr/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/fr >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ga/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ga >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/gu/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/gu >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/he/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/he >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hi >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hr/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hr >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hu/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/hu >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/id/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/id >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/is/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/is >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/it/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/it >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ja/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ja >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/kn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/kn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ko/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ko >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/li/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/li >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/lt/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/lt >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/lv/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/lv >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mk/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mk >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ml/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ml >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mr/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/mr >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ms/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ms >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nb/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nb >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ne/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ne >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nl/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nl >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/nn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/no/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/no >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pa/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pa >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pl/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pl >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pt/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pt >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pt_BR/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/pt_BR >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ro/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ro >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ru/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ru >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sk/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sk >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sl/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sl >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sq/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sq >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr@Latn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr@Latn >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr@ije/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sr@ije >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sv/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/sv >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ta/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/ta >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/tk/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/tk >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/tr/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/tr >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/uk/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/uk >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/vi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/vi >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/wa/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/wa >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/yi/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/yi >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/zh_CN/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/zh_CN >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/zh_TW/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/zh_TW >/dev/null 2>&1 || true
