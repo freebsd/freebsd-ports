@@ -109,7 +109,6 @@ usr/lib/libgnorbagtk.so.0
 usr/lib/libgtkxmhtml.so.1
 usr/lib/libzvt.so.2
 @dirrm usr/share/type-convert
-@dirrm usr/share/pixmaps
 @dirrm usr/share/mime-info
 @dirrm usr/share/idl
 @dirrm usr/share/doc/gnome-libs-1.2.8

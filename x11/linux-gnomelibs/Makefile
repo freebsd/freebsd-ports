@@ -7,10 +7,10 @@
 
 PORTNAME=	gnomelibs
 PORTVERSION=	1.2.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 linux
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of gnome-libs
 
 RPM_SET=	gnome-libs-${PORTVERSION}-11.${ARCH}.rpm
