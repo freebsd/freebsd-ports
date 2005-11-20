@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.7
-PORTREVISION=	6
+PORTVERSION=	1.2.8
+PORTREVISION=	0
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://mirrors.xmission.com/fedora/core/3/i386/os/Fedora/RPMS/ \
-		http://fedora.cat.pdx.edu/linux/core/3/i386/os/Fedora/RPMS/
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	updates/3/${ARCH}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib
@@ -18,7 +18,7 @@ COMMENT=	RPM of the PNG lib
 DIST_SUBDIR=	rpm/i386/fc3
 # no alpha rpm is available
 ONLY_FOR_ARCHS=	i386 amd64
-RPM_SET=	libpng-${PORTVERSION}-1.i386.rpm
+RPM_SET=	libpng-${PORTVERSION}-1.fc3.${ARCH}.rpm
 
 PLIST_FILES=	\
 		usr/lib/libpng.so.3 \
