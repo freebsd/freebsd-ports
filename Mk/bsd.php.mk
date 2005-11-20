@@ -165,6 +165,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}
 
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
+SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
 .if defined(USE_PHPIZE) || defined(USE_PHPEXT)
 BUILD_DEPENDS+=	phpize:${PHP_PORT}
