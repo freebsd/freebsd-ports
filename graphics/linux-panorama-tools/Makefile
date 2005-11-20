@@ -14,7 +14,7 @@
 
 PORTNAME=	linux-panorama-tools
 PORTVERSION=	2.6b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.path.unimelb.edu.au/~dersch/
 DISTNAME=	PanoTools
@@ -23,8 +23,8 @@ MAINTAINER=	cartola@openit.com.br
 COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
 RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
-		${LINUXBASE}/usr/lib/libtiff.so.3.6.1:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libpng12.so.0.1.2.7:${PORTSDIR}/graphics/linux-png
+		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
+		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png
 
 NO_BUILD=	yes
 USE_LINUX=	yes
