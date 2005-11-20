@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	triangle
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	math
 MASTER_SITES=	http://cm.bell-labs.com/netlib/voronoi/
 DISTNAME=	${PORTNAME}
@@ -15,9 +15,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
-BROKEN=		Size mismatch
-
-NO_CDROM=	Triangle must not be sold for profit
+NO_CDROM=	"Triangle must not be sold for profit"
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
