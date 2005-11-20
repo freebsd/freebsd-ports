@@ -5,14 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.20050716
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-#		http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
-MASTER_SITE_SUBDIR=	maho/chemtool
+MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
-DISTNAME=	ct161gtk2
+DISTNAME=	ct17a15
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
@@ -21,18 +18,22 @@ COMMENT=	Drawing organic molecules easily and store them (developer version)
 LIB_DEPENDS=	EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-gtk2/
+WRKSRC=         ${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_REINPLACE=	yes
-USE_GNOME=	gtk12
-USE_AUTOTOOLS=	autoconf:213
+USE_GNOME=	gtk20
+#USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1
+#to include emf
+CFLAGS+= -I${LOCALBASE}/include/libEMF
+CXXFLAGS+= -I${LOCALBASE}/include/libEMF
 
 post-patch:
-	${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure
 
 do-install:
 	@(cd ${WRKSRC}; ${GMAKE} install)
