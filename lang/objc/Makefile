@@ -14,6 +14,7 @@ DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Object Compiler
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 BOOTVERSION=	3.1.33
 
@@ -24,13 +25,17 @@ CONFIGURE_ARGS=	--prefix=$(PREFIX)
 
 .include <bsd.port.pre.mk>
 
+# byacc broken, http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/85115"
 .if ${OSVERSION} >= 500113
-BROKEN=		"byacc broken, http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/85115"
+BUILD_DEPENDS+=	byaccj:${PORTSDIR}/devel/byaccj
 .endif
 
 pre-configure:
+.if ${OSVERSION} >= 500113
+	${REINPLACE_CMD} -e 's|byacc|byaccj|' ${WRKSRC}/configure
+.endif
 	cd $(WRKDIR)/${PORTNAME}-bootstrap-$(BOOTVERSION);\
-	./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install
+	${CONFIGURE_ENV} ./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install
 
 pre-install:
 	$(MKDIR) $(PREFIX)/share/doc/objc
