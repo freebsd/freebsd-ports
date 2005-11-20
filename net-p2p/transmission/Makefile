@@ -16,7 +16,7 @@ COMMENT=	A free BitTorrent client written from scratch in C
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
-CFLAGS+=	-Wall -W
+CFLAGS+=	-Wall -W ${CPPFLAGS}
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
