@@ -4338,6 +4338,10 @@ www/data-dist/phpgroupware/fudforum/setup/index.php
 www/data-dist/phpgroupware/fudforum/setup/setup.inc.php
 www/data-dist/phpgroupware/fudforum/setup/tables_current.inc.php
 www/data-dist/phpgroupware/fudforum/templates/default/images/empty_dir
+www/data-dist/phpgroupware/fudforum/templates/default/images/navbar.png
+www/data-dist/phpgroupware/fudforum/templates/idots/images/navbar.png
+www/data-dist/phpgroupware/fudforum/templates/idsociety/images/navbar-over.png
+www/data-dist/phpgroupware/fudforum/templates/idsociety/images/navbar.png
 www/data-dist/phpgroupware/header.inc.php.template
 www/data-dist/phpgroupware/headlines/admin.php
 www/data-dist/phpgroupware/headlines/deleteheadline.php
@@ -5370,6 +5374,7 @@ www/data-dist/phpgroupware/phpgwapi/js/jscalendar/simple-3.html
 www/data-dist/phpgroupware/phpgwapi/js/jscalendar/simple-4.html
 www/data-dist/phpgroupware/phpgwapi/setup/default_records.inc.php
 www/data-dist/phpgroupware/phpgwapi/setup/phpgw_br.lang
+www/data-dist/phpgroupware/phpgwapi/setup/phpgw_ca.lang
 www/data-dist/phpgroupware/phpgwapi/setup/phpgw_cs.lang
 www/data-dist/phpgroupware/phpgwapi/setup/phpgw_da.lang
 www/data-dist/phpgroupware/phpgwapi/setup/phpgw_de.lang
@@ -8456,6 +8461,10 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/headlines/help/EN
 @dirrm www/data-dist/phpgroupware/headlines/help
 @dirrm www/data-dist/phpgroupware/headlines
+@dirrm www/data-dist/phpgroupware/fudforum/templates/idsociety/images
+@dirrm www/data-dist/phpgroupware/fudforum/templates/idsociety
+@dirrm www/data-dist/phpgroupware/fudforum/templates/idots/images
+@dirrm www/data-dist/phpgroupware/fudforum/templates/idots
 @dirrm www/data-dist/phpgroupware/fudforum/templates/default/images
 @dirrm www/data-dist/phpgroupware/fudforum/templates/default
 @dirrm www/data-dist/phpgroupware/fudforum/templates
