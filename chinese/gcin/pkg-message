@@ -4,7 +4,6 @@ Remember to set environment varible:
   (csh/tcsh) 				(sh/bash)
   setenv XMODIFIERS @im=xcin		export XMODIFIERS='@im=xcin'
   setenv GTK_IM_MODULE xim		export GTK_IM_MODULE=xim
-  setenv QT_IM_MODULE xim		export QT_IM_MODULE=xim
 
 and set LANG, LC_CTYPE to one of zh_TW.UTF-8, zh_TW.Big5 value:
   	(csh/tcsh)			(sh/bash)

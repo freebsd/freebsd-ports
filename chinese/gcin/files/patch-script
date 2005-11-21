@@ -1,6 +1,6 @@
 diff -ruN scripts.orig/Makefile scripts/Makefile
---- scripts.orig/Makefile	Thu Aug 11 22:03:33 2005
-+++ scripts/Makefile	Thu Aug 11 22:04:10 2005
+--- scripts.orig/Makefile	Mon Nov 21 19:57:34 2005
++++ scripts/Makefile	Mon Nov 21 19:57:54 2005
 @@ -1,13 +1,10 @@
  include ../config.mak
  
@@ -17,8 +17,8 @@ diff -ruN scripts.orig/Makefile scripts/Makefile
  	install -m 755 $(SCRIPTS) $(GCIN_SCRIPT_DIR_i)
  clean:
 diff -ruN scripts.orig/gcin-user-setup scripts/gcin-user-setup
---- scripts.orig/gcin-user-setup	Thu Aug 11 22:03:33 2005
-+++ scripts/gcin-user-setup	Thu Aug 11 22:03:40 2005
+--- scripts.orig/gcin-user-setup	Mon Nov 21 19:57:34 2005
++++ scripts/gcin-user-setup	Mon Nov 21 20:00:30 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -26,8 +26,8 @@ diff -ruN scripts.orig/gcin-user-setup scripts/gcin-user-setup
  if [ -z "$1" -o -z "$2" ]; then
    echo "please specify gcin_table_dir gcin_bin_dir"
 diff -ruN scripts.orig/gcin-utf8-setup scripts/gcin-utf8-setup
---- scripts.orig/gcin-utf8-setup	Thu Aug 11 22:03:33 2005
-+++ scripts/gcin-utf8-setup	Thu Aug 11 22:03:40 2005
+--- scripts.orig/gcin-utf8-setup	Mon Nov 21 19:57:34 2005
++++ scripts/gcin-utf8-setup	Mon Nov 21 20:00:42 2005
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -35,16 +35,16 @@ diff -ruN scripts.orig/gcin-utf8-setup scripts/gcin-utf8-setup
  cd
  
 diff -ruN scripts.orig/utf8-edit scripts/utf8-edit
---- scripts.orig/utf8-edit	Thu Aug 11 22:03:33 2005
-+++ scripts/utf8-edit	Thu Aug 11 22:15:12 2005
+--- scripts.orig/utf8-edit	Mon Nov 21 19:57:34 2005
++++ scripts/utf8-edit	Mon Nov 21 20:00:11 2005
 @@ -1,10 +1,10 @@
 -#!/bin/bash
 +#!/bin/sh
  
  PATH=$PATH:/opt/gnome/bin:/usr/local/bin
  
--for i in gedit kedit kate
-+for i in gedit leafpad kedit kate gvim vim jedit
+-for i in leafpad gedit kedit kate
++for i in leafpad gedit gvim kedit kate jedit
  do
 -  which $i >& /dev/null
 +  which $i > /dev/null
