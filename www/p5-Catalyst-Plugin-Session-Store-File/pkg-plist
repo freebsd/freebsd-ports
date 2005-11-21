@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Catalyst/Plugin/Session/Store/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/File/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/File
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Session/Store 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Session 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
