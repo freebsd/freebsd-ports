@@ -1946,7 +1946,7 @@ devel/libidn|dns/libidn|2005-11-12|Moved to a better category
 devel/p5-Net-LibIDN|dns/p5-Net-LibIDN|2005-11-12|Moved to a better category
 net/libnet|net/libnet10|2005-11-14|Moved
 net/libnet-devel/net/libnet|2005-11-14|Moved
-graphics/libpixman|graphics/cairo|2005-11-14|Project merged into cairo
+graphics/libpixman||2005-11-14|Project merged into cairo
 security/hping|net/hping|2005-11-15|Moved to a better category
 lang/dis||2005-11-15|Master site has vanished
 lang/malbolge||2005-11-15|Master site has vanished
