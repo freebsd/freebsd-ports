@@ -36,6 +36,10 @@ PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.0"
+.endif
+
 .if ${OSVERSION} >= 502126
 CONFIGURE_ARGS+=--disable-fast-call
 .endif
