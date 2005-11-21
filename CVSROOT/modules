@@ -2843,6 +2843,7 @@ ggsd		ports/net/ggsd
 ggv		ports/print/ggv
 ggz-client-libs	ports/games/ggz-client-libs
 ggz-gtk-client	ports/games/ggz-gtk-client
+ggz-sdl-games	ports/games/ggz-sdl-games
 ggz-txt-client	ports/games/ggz-txt-client
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
