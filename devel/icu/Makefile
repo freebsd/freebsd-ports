@@ -51,6 +51,10 @@ PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 .if ${ARCH} != "sparc64"
 USE_REINPLACE=	yes
 post-patch:
