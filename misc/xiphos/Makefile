@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORT
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
 RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
 
+BROKEN=		Configure fails
+
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 intlhack
