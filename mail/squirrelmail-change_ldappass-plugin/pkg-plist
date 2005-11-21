@@ -1,0 +1,45 @@
+@unexec %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin change_ldappass
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/PL_pl/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/PL_pl/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/de/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/es/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR/LC_MESSAGES/change_ldappass.mo
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR/LC_MESSAGES/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/locale/change_ldappass.po
+%%SQUIRRELDIR%%/plugins/change_ldappass/README
+%%SQUIRRELDIR%%/plugins/change_ldappass/config.php.sample
+%%SQUIRRELDIR%%/plugins/change_ldappass/version
+%%SQUIRRELDIR%%/plugins/change_ldappass/setup.php
+%%SQUIRRELDIR%%/plugins/change_ldappass/INSTALL
+%%SQUIRRELDIR%%/plugins/change_ldappass/options.php
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/de/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/PL_pl/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/es/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/de
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/es
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/PL_pl
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/no_NO
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pt_BR
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/pl
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/fr_FR
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale/el_GR
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/locale
+@dirrm %%SQUIRRELDIR%%/plugins/change_ldappass/
+@exec %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin change_ldappass
