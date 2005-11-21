@@ -1,0 +1,19 @@
+--- configure.orig	Tue Nov 22 00:31:28 2005
++++ configure	Tue Nov 22 00:31:40 2005
+@@ -7357,7 +7357,7 @@
+ fi
+ 
+ 
+-                                                                                ac_config_files="$ac_config_files Makefile mcastread/Makefile mcastsend/Makefile mfc/Makefile mtrace6/Makefile pim6dd/Makefile pim6sd/Makefile pmsft/Makefile"
++                                                                                ac_config_files="$ac_config_files Makefile mcastread/Makefile mcastsend/Makefile mfc/Makefile mtrace6/Makefile pim6dd/Makefile pim6sd/Makefile"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -7915,7 +7915,6 @@
+   "mtrace6/Makefile" ) CONFIG_FILES="$CONFIG_FILES mtrace6/Makefile" ;;
+   "pim6dd/Makefile" ) CONFIG_FILES="$CONFIG_FILES pim6dd/Makefile" ;;
+   "pim6sd/Makefile" ) CONFIG_FILES="$CONFIG_FILES pim6sd/Makefile" ;;
+-  "pmsft/Makefile" ) CONFIG_FILES="$CONFIG_FILES pmsft/Makefile" ;;
+   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
+   "include/config.h" ) CONFIG_HEADERS="$CONFIG_HEADERS include/config.h" ;;
+   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5

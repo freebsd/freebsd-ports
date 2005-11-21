@@ -1,0 +1,21 @@
+mcast-tools is a package containing IPv6-multicast routing daemons and tools,
+comprising the following programs.
+
+  - mcastread
+  	an IPv6 multicast receiver
+
+  - mcastsend
+  	an IPv6 multicast sender
+
+  - mfc
+  	an IPv6 multicast routing daemon, which only supports static
+	multicast routing.
+
+  - pim6sd
+  	an IPv6 multicast routing daemon, which supports PIM-SM
+	 (Protocol Independent Multicast Sparse-Mode Version 2), and 
+	 PIM-SSM (Source-Specific Multicast using PIM-SM)
+
+  - pim6dd 
+  	 an IPv6 multicast routing daemon, which supports PIM-DM
+	 (Protocol Independent Multicast Dense-Mode Version 2)
