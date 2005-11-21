@@ -4,15 +4,14 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/ActionContainer.pm
 %%SITE_PERL%%/Catalyst/AttrContainer.pm
 %%SITE_PERL%%/Catalyst/Base.pm
-%%SITE_PERL%%/Catalyst/Build.pm
 %%SITE_PERL%%/Catalyst/Component.pm
 %%SITE_PERL%%/Catalyst/Controller.pm
-%%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/DispatchType.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Default.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Index.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Path.pm
 %%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
+%%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
 %%SITE_PERL%%/Catalyst/Engine/CGI.pm
 %%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
@@ -38,6 +37,9 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Test.pm
 %%SITE_PERL%%/Catalyst/Utils.pm
 %%SITE_PERL%%/Catalyst/View.pm
+%%SITE_PERL%%/Module/Install/Catalyst.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2> /dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/DispatchType 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP 2>/dev/null || true
@@ -47,3 +49,5 @@ bin/catalyst.pl
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst/Request 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module/Install 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true

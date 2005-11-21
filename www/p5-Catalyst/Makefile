@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.56
+PORTVERSION=	5.57
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-CGI.pm>=3.06:${PORTSDIR}/www/p5-CGI.pm \
 		p5-File-Modified>=0:${PORTSDIR}/devel/p5-File-Modified \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-HTTP-Body>=0.4:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Body>=0.5:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-libwww>=5.801:${PORTSDIR}/www/p5-libwww \
 		p5-HTTP-Request-AsCGI>=0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
@@ -40,7 +40,7 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN1=	catalyst.pl.1
 MAN3=	Catalyst.3 \
@@ -48,7 +48,6 @@ MAN3=	Catalyst.3 \
 	Catalyst::ActionContainer.3 \
 	Catalyst::AttrContainer.3 \
 	Catalyst::Base.3 \
-	Catalyst::Build.3 \
 	Catalyst::Component.3 \
 	Catalyst::Controller.3 \
 	Catalyst::DispatchType.3 \
@@ -81,7 +80,8 @@ MAN3=	Catalyst.3 \
 	Catalyst::Response.3 \
 	Catalyst::Test.3 \
 	Catalyst::Utils.3 \
-	Catalyst::View.3
+	Catalyst::View.3 \
+	Module::Install::Catalyst.3
 
 post-install:
 	@${CAT} pkg-message
