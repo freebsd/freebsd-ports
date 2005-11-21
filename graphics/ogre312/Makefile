@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
-DISTNAME=	ogre-linux_osx-v1-0-5
+DISTNAME=	ogre-linux_osx-v${PORTVERSION:S/./-/g}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
@@ -73,7 +73,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in README COPYING AUTHORS ChangeLog
+.for docfile in README COPYING AUTHORS
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
