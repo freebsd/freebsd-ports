@@ -15,6 +15,7 @@ lib/libgcin-im-client.so
 %%DATADIR%%/script/gcin-utf8-setup
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
+%%DATADIR%%/table/cj-punc.gtab
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
 %%DATADIR%%/table/dayi3.gtab
