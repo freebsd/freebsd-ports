@@ -18,6 +18,8 @@ COMMENT=	Vi like keybinding Eclipse plugin FREETRIAL Version
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
