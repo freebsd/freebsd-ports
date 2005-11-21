@@ -11667,6 +11667,7 @@ squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
 squirm		ports/www/squirm
 squirrelmail	ports/mail/squirrelmail
+squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
 squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
