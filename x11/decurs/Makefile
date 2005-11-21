@@ -26,6 +26,10 @@ GNU_CONFIGURE=	yes
 BROKEN=		"Does not compile on !i386"
 .endif
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not compile on FreeBSD >= 6.0"
+.endif
+
 .if ${OSVERSION} > 500035
 USE_REINPLACE=	yes
 .endif
