@@ -141,19 +141,20 @@ if __name__ == '__main__':
     APP_HOME = "%%APP_HOME%%"
     PID_FILE = "%%PID_FILE%%"
     COMMAND = "%%PREFIX%%/sbin/%%APP_NAME%%.sh"
+    os.environ["JAVA_OPTIONS"] = " ".join(sys.argv[1:-1])
     ARGS = [COMMAND, "servlet"]
 
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         usage()
         sys.exit(1)
 
-    if sys.argv[1] == "start":
+    if sys.argv[-1] == "start":
         start()
 
-    elif sys.argv[1] == "stop":
+    elif sys.argv[-1] == "stop":
         stop()
 
-    elif sys.argv[1] == "restart":
+    elif sys.argv[-1] == "restart":
         stop()
         start()
 
