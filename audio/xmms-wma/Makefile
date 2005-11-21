@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WMA plugin for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
