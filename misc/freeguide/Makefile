@@ -17,6 +17,8 @@ COMMENT=	An interactive TV guide which will create personalized TV listings
 
 RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
 
+BROKEN=		Incomplete pkg-plist
+
 USE_JAVA=	yes
 USE_JIKES=	no
 JAVA_VERSION=	1.4+
