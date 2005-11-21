@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	milter-bogom
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.usebox.net/jjm/bogom/ \
 		http://blackshell.usebox.net/bogom/
 DISTNAME=	bogom-${PORTVERSION}
 
-MAINTAINER=	victor@alf.dyndns.ws
+MAINTAINER=	victor@bsdes.net
 COMMENT=	Simple sendmail milter to interface bogofilter
 
 RUN_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
@@ -25,6 +24,7 @@ MAKE_ARGS=	CPPFLAGS="-DDEF_CONF=\\\"${PREFIX}/etc/bogom.conf\\\" ${PTHREAD_CFLAG
 
 USE_REINPLACE=	yes
 USE_RC_SUBR=	milter-bogom.sh
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	sbin/bogom \
 		etc/bogom.conf-example
@@ -52,5 +52,6 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
