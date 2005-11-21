@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Cache-Mmap
-PORTVERSION=	0.081
+PORTVERSION=	0.090
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.09
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Cache::Mmap - Shared data cache using memory mapped files
