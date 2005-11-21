@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
+BROKEN=		Does not build
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:253
