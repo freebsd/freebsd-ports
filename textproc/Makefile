@@ -290,6 +290,7 @@
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-Filter-Simple
+    SUBDIR += p5-FormValidator-Simple
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-Format
