@@ -197,6 +197,7 @@
     SUBDIR += gemdropx
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-gtk-client
+    SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
     SUBDIR += gl-117
     SUBDIR += glasteroids

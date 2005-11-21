@@ -1,0 +1,19 @@
+etc/ggz.modules
+lib/ggz/ggz.ttt3d
+lib/ggz/geekgame
+share/ggz/geekgame/bot.png
+share/ggz/geekgame/one.png
+share/ggz/geekgame/zero.png
+share/ggz/geekgame/icon.png
+share/ggz/geekgame/default.png
+share/ggz/geekgame/board.bmp
+share/ggz/geekgame/lines.bmp
+share/ggz/geekgame/banner.bmp
+share/ggz/ttt3d/board.bmp
+share/ggz/ttt3d/cursor.bmp
+share/ggz/ttt3d/figure.bmp
+share/ggz/ttt3d/lines.bmp
+@dirrm lib/ggz
+@dirrm share/ggz/geekgame
+@dirrm share/ggz/ttt3d
+@unexec rmdir %D/share/ggz 2>/dev/null || true
