@@ -23,7 +23,7 @@ name="nginx"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/nginx"
 
-extra_commands="configtest"
+extra_commands="configtest reload"
 
 configtest_cmd="configtest_cmd"
 configtest_cmd()  {
