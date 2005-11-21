@@ -1,0 +1,5 @@
+This plugin allows you to validate request parameters with
+FormValidator::Simple.  See FormValidator::Simple for more
+information.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-FormValidator-Simple/
