@@ -479,7 +479,6 @@ share/locale/zh_TW/LC_MESSAGES/gtk20.mo
 share/themes/Default/gtk-2.0-key/gtkrc
 share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/gtk-2.0/gtkrc
-@exec /usr/bin/touch -f %%X11BASE%%/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
 @exec /usr/bin/find %%X11BASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
 @unexec /usr/bin/find %%X11BASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
 @dirrm share/themes/Raleigh/gtk-2.0
