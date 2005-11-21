@@ -6,66 +6,69 @@
 #
 
 PORTNAME=	flightgear-aircrafts
-PORTVERSION=	20051118
+PORTVERSION=	20051121
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/
-DISTFILES=	747_${PORTVERSION}.tgz \
-		A320_${PORTVERSION}.tgz \
-		A380_${PORTVERSION}.tgz \
-		a4_${PORTVERSION}.tgz \
-		airwaveXtreme150_${PORTVERSION}.tgz \
-		AN-225_${PORTVERSION}.tgz \
-		as350_${PORTVERSION}.tgz \
-		asw20_${PORTVERSION}.tgz \
-		b1900d_${PORTVERSION}.tgz \
-		b29_${PORTVERSION}.tgz \
-		B-52F_${PORTVERSION}.tgz \
-		BAC-TSR2_${PORTVERSION}.tgz \
-		beech99_${PORTVERSION}.tgz \
-		bell206_${PORTVERSION}.tgz \
-		Boeing314_${PORTVERSION}.tgz \
-		c150_${PORTVERSION}.tgz \
-		c172-le_${PORTVERSION}.tgz \
-		c172r_${PORTVERSION}.tgz \
-		c182_${PORTVERSION}.tgz \
-		Canberra_${PORTVERSION}.tgz \
-		ch47_${PORTVERSION}.tgz \
-		Citation-Bravo_${PORTVERSION}.tgz \
-		colditz_${PORTVERSION}.tgz \
-		ComperSwift_${PORTVERSION}.tgz \
-		Concorde_2.0.tgz \
-		dc3_${PORTVERSION}.tgz \
-		dhc2_${PORTVERSION}.tgz \
-		f104_${PORTVERSION}.tgz \
-		f15_${PORTVERSION}.tgz \
-		fkdr1_${PORTVERSION}.tgz \
-		fokker100_${PORTVERSION}.tgz \
-		fokker50_${PORTVERSION}.tgz \
-		harrier_${PORTVERSION}.tgz \
-		Hurricane_${PORTVERSION}.tgz \
-		j22_${PORTVERSION}.tgz \
-		l410_${PORTVERSION}.tgz \
-		marchetti_${PORTVERSION}.tgz \
-		MD11_${PORTVERSION}.tgz \
-		MiG-15_${PORTVERSION}.tgz \
-		ornithopter_${PORTVERSION}.tgz \
-		OV10_${PORTVERSION}.tgz \
-		paraglider_${PORTVERSION}.tgz \
-		pc7_${PORTVERSION}.tgz \
-		santa_${PORTVERSION}.tgz \
-		seahawk_${PORTVERSION}.tgz \
-		sgs233_${PORTVERSION}.tgz \
-		shuttle_${PORTVERSION}.tgz \
-		sopwithCamel_${PORTVERSION}.tgz \
-		Spitfire_${PORTVERSION}.tgz \
-		sr20_${PORTVERSION}.tgz \
-		T37_${PORTVERSION}.tgz \
-		TU-114_${PORTVERSION}.tgz \
-		tu154_${PORTVERSION}.tgz \
-		X15_${PORTVERSION}.tgz \
-		x24b_${PORTVERSION}.tgz \
-		YF-23_${PORTVERSION}.tgz
+		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \
+		ftp://ftp.sunsite.org.uk/sites/ftp.flightgear.org/flightgear-ftp/Aircraft/ \
+		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft/
+DISTFILES=	747_${FGRELDATE}.tgz \
+		A320_${FGRELDATE}.tgz \
+		A380_${FGRELDATE}.tgz \
+		a4_${FGRELDATE}.tgz \
+		airwaveXtreme150_${FGRELDATE}.tgz \
+		AN-225_${FGRELDATE}.tgz \
+		as350_${FGRELDATE}.tgz \
+		asw20_${FGRELDATE}.tgz \
+		b1900d_${FGRELDATE}.tgz \
+		b29_${FGRELDATE}.tgz \
+		B-52F_${FGRELDATE}.tgz \
+		BAC-TSR2_${FGRELDATE}.tgz \
+		beech99_${FGRELDATE}.tgz \
+		bell206_${FGRELDATE}.tgz \
+		Boeing314_1.1.tgz \
+		c150_${FGRELDATE}.tgz \
+		c172-le_${FGRELDATE}.tgz \
+		c172r_${FGRELDATE}.tgz \
+		c182_${FGRELDATE}.tgz \
+		Canberra_${FGRELDATE}.tgz \
+		ch47_${FGRELDATE}.tgz \
+		Citation-Bravo_${FGRELDATE}.tgz \
+		colditz_${FGRELDATE}.tgz \
+		ComperSwift_${FGRELDATE}.tgz \
+		Concorde_2.1.tgz \
+		dc3_${FGRELDATE}.tgz \
+		dhc2_${FGRELDATE}.tgz \
+		f104_${FGRELDATE}.tgz \
+		f15_${FGRELDATE}.tgz \
+		fkdr1_${FGRELDATE}.tgz \
+		fokker100_${FGRELDATE}.tgz \
+		fokker50_${FGRELDATE}.tgz \
+		harrier_${FGRELDATE}.tgz \
+		Hurricane_${FGRELDATE}.tgz \
+		j22_${FGRELDATE}.tgz \
+		l410_${FGRELDATE}.tgz \
+		Lockheed1049_1.0.tgz \
+		marchetti_${FGRELDATE}.tgz \
+		MD11_${FGRELDATE}.tgz \
+		MiG-15_${FGRELDATE}.tgz \
+		ornithopter_${FGRELDATE}.tgz \
+		OV10_${FGRELDATE}.tgz \
+		paraglider_${FGRELDATE}.tgz \
+		pc7_${FGRELDATE}.tgz \
+		santa_${FGRELDATE}.tgz \
+		seahawk_${FGRELDATE}.tgz \
+		sgs233_${FGRELDATE}.tgz \
+		shuttle_${FGRELDATE}.tgz \
+		sopwithCamel_${FGRELDATE}.tgz \
+		Spitfire_${FGRELDATE}.tgz \
+		sr20_${FGRELDATE}.tgz \
+		T37_${FGRELDATE}.tgz \
+		TU-114_${FGRELDATE}.tgz \
+		tu154_${FGRELDATE}.tgz \
+		X15_${FGRELDATE}.tgz \
+		x24b_${FGRELDATE}.tgz \
+		YF-23_${FGRELDATE}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -73,6 +76,7 @@ COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
 RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
+FGRELDATE=	20051118
 PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
