@@ -495,6 +495,7 @@
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
+    SUBDIR += p5-Catalyst-Plugin-FormValidator-Simple
     SUBDIR += p5-Catalyst-Plugin-Pluggable
     SUBDIR += p5-Catalyst-Plugin-Prototype
     SUBDIR += p5-Catalyst-Plugin-Session
