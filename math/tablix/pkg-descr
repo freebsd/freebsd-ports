@@ -1,0 +1,15 @@
+Tablix is a powerful free software kernel for solving general timetabling
+problems. It uses a coarse-grained parallel genetic algorithm in
+combination with other techniques to construct sensible timetables from XML
+formatted problem descriptions. Tablix can run on a single host as well as
+on a heterogeneous parallel virtual machine using PVM3.
+
+Tablix kernel supports a very wide range of timetabling problems,
+from high school timetabling to barge scheduling. A number of timetable
+constraints are already implemented in the default installation.
+Because of kernel's modular design it is easy to add custom timetable
+constraints and/or modify existing ones. Kernel modules are written in C.
+Extensive API documentation is available on the internet
+and in the source distribution.
+
+WWW: http://www.tablix.org/

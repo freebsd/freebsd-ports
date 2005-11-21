@@ -1,0 +1,30 @@
+bin/tablix2
+bin/tablix2_benchmark
+bin/tablix2_kernel
+bin/tablix2_output
+bin/tablix2_plot
+bin/tablix2_test
+lib/pvm/bin/FREEBSD/tablix2
+lib/pvm/bin/FREEBSD/tablix2_kernel
+lib/pvm/bin/FREEBSD/tablix2_output
+lib/tablix2/consecutive.so
+lib/tablix2/export_csv.so
+lib/tablix2/export_htmlcss.so
+lib/tablix2/export_ttf.so
+lib/tablix2/fixedtime.so
+lib/tablix2/freemorning.so
+lib/tablix2/freeperiod.so
+lib/tablix2/holes.so
+lib/tablix2/perday.so
+lib/tablix2/placecapability.so
+lib/tablix2/preferredroom.so
+lib/tablix2/preferredtime.so
+lib/tablix2/sameday.so
+lib/tablix2/sametime.so
+lib/tablix2/sametimeas.so
+lib/tablix2/timeplace.so
+lib/tablix2/walk.so
+share/locale/sl/LC_MESSAGES/tablix2.mo
+share/tablix2/modulesref.xml
+@dirrm lib/tablix2
+@dirrm share/tablix2
