@@ -630,6 +630,7 @@
     SUBDIR += p5-Sledge-Template-Expr
     SUBDIR += p5-Syntax-Highlight-HTML
     SUBDIR += p5-Syntax-Highlight-Shell
+    SUBDIR += p5-Task-Catalyst
     SUBDIR += p5-Template-Multilingual
     SUBDIR += p5-Template-Plugin-Class
     SUBDIR += p5-Template-Plugin-Comma
