@@ -1,5 +1,5 @@
 md5deep is a cross-platform set of programs to compute 
-MD5 message digests or SHA-1 message digests on an arbitrary
+various types of message digests on an arbitrary
 number of files. The programs run on Windows, Linux, *BSD, 
 OS X, Solaris, and should run on most other platforms.
 md5deep is similar to the md5sum program found in the 
