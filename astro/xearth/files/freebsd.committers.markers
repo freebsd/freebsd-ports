@@ -19,7 +19,7 @@
  35.44,		139.43,		"issei"				# Tokyo, Japan
  35.54,		139.53,		"        ,nyan,ume"		# Yokohama, Kanagawa, Japan
  35.36,		139.31,		"                     ,daichi"	# Kawasaki, Kanagawa, Japan
- 35.55,		139.67,		"suz,sumikawa"			# Kawasaki, Kanagawa, Japan
+ 35.55,		139.67,		"suz,sumikawa,shin"		# Kawasaki, Kanagawa, Japan
 -34.13899,	138.77295,	"grog"				# Echunga, SA Australia
  37.33,		138.46,		"rushani"			# Niigata, Japan
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
@@ -86,7 +86,7 @@
  49.48,		8.42,		"naddy"				# Ludwigshafen, Germany
  47.23,		8.32,		"andre"				# Zurich, Switzerland
  51.32,		7.27,		"ue"				# Dortmund, Germany
- 43.6,		7.00,		"clement"	align=left	# Mougins, France
+ 43.6,		7.00,		"clement,bruno"	align=left	# Mougins, France
  49.404722,	6.950555,	"netchild"			# Eppelborn, Germany
  50.92,		6.95,		"se"				# Cologne, Germany
  51.3,		6.75,		"alex"		align=left	# Meerbusch, Germany
@@ -103,21 +103,25 @@
  45.1116,	5.4337,		"damien"			# Grenoble, France
  43.27357,	5.40153,	"hq"		align=left	# Marseille, France
  51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
+ 52.05,		5.2833,		"znerd"				# Driebergen, The Netherlands
  45.62,		4.93,		"thierry"	align=left	# Chaponnay, France
  51.84,		4.65,		"marks"				# Hendrik-Ido-Ambacht, The Netherlands
+ 51.917,	4.500,		"remko"				# Rotterdam, The Netherlands
  50.9349,	4.4548,		"philip"	align=left	# Kampenhout, Belgium
  50.383,	4.36,		"jylefort"	align=left	# Charleroi, Belgium
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
+ 42.51,		2.41,		"carvay"			# Araba, Vitoria-Gasteiz, Spain
  41.6666,	2.3333,		"jesusr"			# Barcelona, Spain
  48.87,		2.33,		"roberto"	align=left	# Paris, France
  48.847135,	2.28514,	"mat,dumbbell,cognet"		# Paris, France
  49.005858,	2.267550,	"flz"				# Saint Prix, France
  48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
- 48.836		2.242		"blackend"	align=left	# Boulogne-Billancourt, France
+ 48.836,	2.242,		"blackend"	align=left	# Boulogne-Billancourt, France
  51.27615,	1.0071,		"jesper"			# Reading, United Kingdom
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
  52.12,		0.06,		"rwatson"			# Cambridge, UK
+ 52.116761,	0.056618,	"dmlb"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
  51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
@@ -176,6 +180,7 @@
  30.427,	-97.753,	"   ,dbaker"			# Austin, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
+ 39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
  40.1,		-105.3,		"imp"				# (CORE) Boulder, CO, USA
  40.1,		-105.3,		"    ,gibbs,ken,fsmp,will"	# Boulder, CO, USA
  32.222,	-110.926,	"jcamou"			# Tucson, AZ, USA
@@ -200,6 +205,7 @@
  37.329278,	-121.962306,	"nsayer"			# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
+ 37.369,  	-122.035,	"vkashyap"			# Sunnyvale, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.38,		-122.08,	"petef"				# Mountain View, CA, USA
  37.596,	-122.08,	"arun"				# Union City, CA, USA
@@ -208,7 +214,7 @@
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
  37.55,		-122.26,	"terry"				# Foster City, CA, USA
- 37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
+ 37.887398,	-122.264896,	"gsutter,sam"			# Berkeley, CA, USA
  37.843858,	-122.294535,	"gshapiro"			# Emeryville, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  47.70,		-122.34,	"brooks"			# Seattle, WA, USA
