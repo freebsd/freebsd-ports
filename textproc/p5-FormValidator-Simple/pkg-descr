@@ -1,0 +1,14 @@
+This module provides you a sweet way of form data validation with
+simple constraints chains.
+
+You can write constraints on single line for each input data.
+
+This idea is based on Sledge::Plugin::Validator, and most of
+validation code is borrowed from this plugin.
+
+(Sledge is a MVC web application framework: http://sl.edge.jp [Japanese] )
+
+The result object this module returns behaves like
+Data::FormValidator::Results.
+
+WWW: http://search.cpan.org/dist/FormValidator-Simple/

@@ -1,0 +1,18 @@
+%%SITE_PERL%%/FormValidator/Simple/Exception.pm
+%%SITE_PERL%%/FormValidator/Simple/Constraints.pm
+%%SITE_PERL%%/FormValidator/Simple/Iterator.pm
+%%SITE_PERL%%/FormValidator/Simple/Result.pm
+%%SITE_PERL%%/FormValidator/Simple/Results.pm
+%%SITE_PERL%%/FormValidator/Simple/Messages.pm
+%%SITE_PERL%%/FormValidator/Simple/Constraint.pm
+%%SITE_PERL%%/FormValidator/Simple/ArrayList.pm
+%%SITE_PERL%%/FormValidator/Simple/Validator.pm
+%%SITE_PERL%%/FormValidator/Simple/Constants.pm
+%%SITE_PERL%%/FormValidator/Simple/Profile.pm
+%%SITE_PERL%%/FormValidator/Simple/Data.pm
+%%SITE_PERL%%/FormValidator/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/FormValidator/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/FormValidator 2>/dev/null || true
