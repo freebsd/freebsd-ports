@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tree-Simple-View
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
@@ -24,6 +24,10 @@ MAN3=		Tree::Simple::View.3 Tree::Simple::View::DHTML.3 \
 		Tree::Simple::View::HTML.3 Tree::Simple::View::Exceptions.3
 
 PERL_CONFIGURE=	yes
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Tree/Simple/View/._DHTML.pm
+	${RM} ${WRKSRC}/lib/Tree/Simple/._View.pm
 
 .include <bsd.port.pre.mk>
 
