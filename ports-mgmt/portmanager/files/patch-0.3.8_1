@@ -1,0 +1,428 @@
+diff -ruN ../0.3.8/libMGPM/src/MGPMlogCreate.c ./libMGPM/src/MGPMlogCreate.c
+--- ../0.3.8/libMGPM/src/MGPMlogCreate.c	Fri Nov 18 07:49:06 2005
++++ ./libMGPM/src/MGPMlogCreate.c	Sun Nov 20 12:50:55 2005
+@@ -106,7 +106,7 @@
+ 	fprintf( logFileStream, "%-25s  %d  %-25s  %d\n", "backUp", property->backUp,  "buildDependsAreLeaves", property->buildDependsAreLeaves );
+ 	fprintf( logFileStream, "%-25s  %d  %-25s  %d\n", "forced", property->forced,  "interactive", property->interactive );
+ 	fprintf( logFileStream, "%-25s  %d  %-25s  %d\n", "log", property->log,  "pmMode", property->pmMode );
+-	fprintf( logFileStream, "%-25s  %d  %-25s  %d\n", "resume", property->resume,  " ", 0 );
++	fprintf( logFileStream, "%-25s  %d  %-25s  %d\n", "pristine", property->pristine, "resume", property->resume );
+ 	fprintf( logFileStream, "%s\n", SINGLE_LINES );
+ 
+ 	fclose( logFileStream );
+diff -ruN ../0.3.8/libMGPM/src/MGPMrCommandLine.c ./libMGPM/src/MGPMrCommandLine.c
+--- ../0.3.8/libMGPM/src/MGPMrCommandLine.c	Sat Nov 19 17:18:08 2005
++++ ./libMGPM/src/MGPMrCommandLine.c	Sun Nov 20 17:08:58 2005
+@@ -50,6 +50,7 @@
+ 
+ void	MGPMrTimer( int signalId )
+ {
++	int	idx	= 0;
+ 	/*
+ 	* re-set the signal handler again to MGPMrCatchSignal, for next time
+ 	*/
+@@ -59,7 +60,14 @@
+ */
+ 	while( fflush( stdout ) );
+ 
++	while( close( 0 ) && idx < 100 )
++	{
++		printf( "close(0) retry %d of 100\n", idx );
++		idx++;
++	}
++/*
+ 	fclose( stdin );
++*/
+ 	globalProperty->timeOut	= 1;
+ }
+ 
+@@ -88,14 +96,15 @@
+ 	property.autoConflicts		= 0;	/* 1 = yes to all */
+ 	property.autoMoved		= 0;	/* if 1 then remove moved ports is Y */
+ 	property.backUp			= 0;	/* 0 = no packages 1 = build backup packages */
++	property.bsdPortMkPatched	= 0;	/* 1 = bsd.port.mk is in patched state */
++	property.bsdPortMkPatchedBlock	= 0;	/* 1 = bsd.port.mk can't be patch so quit trying */
+ 	property.forced			= 0;	/* set by -f on command line */
+ 	property.interactive		= 0;	/* set by -ui on command line */
+ 	property.log			= 0;	/* set by -l --LOG on command line */
+ 	property.optionsChanged		= 0;	/* set by MGPMrUpdate for example to indicate a ports's options just changed */ 
+ 	property.pmMode			= 0;	/* 0 = multiple port updates/1 = single */
++	property.pristine		= 0;	/* 1 = run in pristine mode */
+ 	property.resume			= 0;    /* 1 = portmanager updated itself, don't rebuild databases in -u -f mode */
+-	property.bsdPortMkPatched	= 0;	/* 1 = bsd.port.mk is in patched state */
+-	property.bsdPortMkPatchedBlock	= 0;	/* 1 = bsd.port.mk can't be patch so quit trying */
+ 
+ /*
+  * set by Makefile options in ports
+diff -ruN ../0.3.8/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.8/libMGPM/src/MGPMrController.c	Sat Nov 19 11:25:43 2005
++++ ./libMGPM/src/MGPMrController.c	Sun Nov 20 12:33:50 2005
+@@ -47,8 +47,10 @@
+ 	char	fix[]				= "--fix";
+ 	char	id[]				= "MGPMrController";
+ 	char	ignore[]			= "/IGNORE";
++	char	p[]				= "-p";
+ 	char	package_version[]		= PACKAGE_VERSION;
+ 	char	portmanager[]			= "portmanager";
++	char	pristine[]			= "--pristine";
+ 	char	resume[]			= "--resume";
+ 	char	space[]				= " ";
+ 	char	ui[]				= "-ui";
+@@ -131,16 +133,33 @@
+ 	{
+ 		property->resume	= 1;
+ 	} 
++
+ 	MGdbGoTop( property->commandLineDb );
+ 	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, ui, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->interactive	= 1;
+ 	} 
++
+ 	MGdbGoTop( property->commandLineDb );
+ 	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, upgradeInteractive, property->fieldCommandLineDbKey, exact ) )
+ 	{
+ 		property->interactive	= 1;
+ 	} 
++
++	MGdbGoTop( property->commandLineDb );
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, p, property->fieldCommandLineDbKey, exact ) )
++	{
++		property->pristine	= 1;
++	} 
++
++	MGdbGoTop( property->commandLineDb );
++	if( MGdbSeek( property->commandLineDb, property->fieldCommandLineDbKey, pristine, property->fieldCommandLineDbKey, exact ) )
++	{
++		property->pristine	= 1;
++	} 
++
++
++
+ 	property->logFile	= MGPMlogCreate( property );
+ 
+ 	/*
+diff -ruN ../0.3.8/libMGPM/src/MGPMrCreateInstalledDb.c ./libMGPM/src/MGPMrCreateInstalledDb.c
+--- ../0.3.8/libMGPM/src/MGPMrCreateInstalledDb.c	Fri Nov 18 07:49:06 2005
++++ ./libMGPM/src/MGPMrCreateInstalledDb.c	Mon Nov 21 10:27:28 2005
+@@ -175,7 +175,12 @@
+ 
+ 		buffPtr 			= portDependencyName + stringSize + 1;
+ 
+-		portDependencyDir		= strstr( buffPtr, "@comment DEPORIGIN:" );
++		if( ( portDependencyDir = strstr( buffPtr, "@comment DEPORIGIN:" ) ) == NULL )
++		{
++			/* if here +CONTENTS record is screwed up */
++			break;
++		}
++		
+ 		portDependencyDir		+= strlen( "@comment DEPORIGIN:" );
+ 		stringSize			= strstr( portDependencyDir, "\n" ) - portDependencyDir;
+ 		portDependencyDir[stringSize]	= 0;
+diff -ruN ../0.3.8/libMGPM/src/MGPMrGetPortName.c ./libMGPM/src/MGPMrGetPortName.c
+--- ../0.3.8/libMGPM/src/MGPMrGetPortName.c	Sat Nov 19 17:45:28 2005
++++ ./libMGPM/src/MGPMrGetPortName.c	Mon Nov 21 11:55:45 2005
+@@ -42,6 +42,7 @@
+ 	int	answer				= 0;
+ 	int	bufferSize			= 0xffff;
+ 	int	stdinFileDescriptor		= 0;
++	int	stdinFileDescriptorIdx		= 0;
+ 
+ 	command		= (char*)calloc( bufferSize, 1 );
+ 
+@@ -156,8 +157,16 @@
+ 				 * reset alarm, reopen stdin after timeout
+ 				 */
+ 				alarm(0);
+-				stdinFileDescriptor	= open( "/dev/tty", O_RDWR );
++/*
++				stdinFileDescriptorIdx		= 0;
++				while( ( stdinFileDescriptor = open( "/dev/tty", O_RDWR ) ) != -1 && stdinFileDescriptorIdx < 10000 )
++				{
++					printf( "open( /dev/tty ) retry %d of 100\n", stdinFileDescriptorIdx );
++					stdinFileDescriptorIdx++;
++				}
+ 				stdin = fdopen( stdinFileDescriptor, "r" );
++*/
++				stdin = fdopen( 0, "r" );
+ 				property->timeOut	= 0;
+ 				MGPMlogAdd( property, "installed ", portName,
+ 					" removed from system after 5 minute timeout:  no longer in ports tree: see /usr/ports/MOVED", " ", " " );
+diff -ruN ../0.3.8/libMGPM/src/MGPMrReadConfigure.c ./libMGPM/src/MGPMrReadConfigure.c
+--- ../0.3.8/libMGPM/src/MGPMrReadConfigure.c	Fri Nov 18 07:49:06 2005
++++ ./libMGPM/src/MGPMrReadConfigure.c	Sun Nov 20 17:21:54 2005
+@@ -54,7 +54,7 @@
+ {
+ 	FILE*	configDbStream		= NULL;	
+ 	char*	configFileNameOld	= NULL;
+-/*	char	id[]			= "MGPMrReadConfigure";	*/
++	char	id[]			= "MGPMrReadConfigure";
+ 	char*	buffer			= NULL;
+ 	char*	command			= NULL;
+ 	char*	nullBase		= NULL;
+@@ -107,7 +107,12 @@
+ 	strcat( command, property->configConfFileName );
+ 	strcat( command, " >> " );
+ 	strcat( command, property->configDbFileName );
+-	system( command );
++	if( system( command ) )
++	{
++		fprintf( stdout, "%s %s: error: command %s reurned an error\n", id, PACKAGE_VERSION );
++		while( fflush( stdout ) );
++		assert( 0 );
++	}
+ 	configDbFileSize	= MGrFileSize(  property->configDbFileName );
+ 	buffer			= malloc( configDbFileSize + 1 );
+ 	configDbStream		= fopen( property->configDbFileName, "r" );
+diff -ruN ../0.3.8/libMGPM/src/MGPMrSinglePortStatus.c ./libMGPM/src/MGPMrSinglePortStatus.c
+--- ../0.3.8/libMGPM/src/MGPMrSinglePortStatus.c	Fri Nov 18 14:40:55 2005
++++ ./libMGPM/src/MGPMrSinglePortStatus.c	Sun Nov 20 15:16:01 2005
+@@ -57,6 +57,7 @@
+ 	int	counter					= 0;
+ 	int	installedPortsDbIDX			= 0;
+ 	int	old					= 0;
++	int	returnCode				= 0;
+ 	int*	counterPtr				= NULL;
+ 	
+ 	counterPtr	= &counter;
+@@ -147,22 +148,47 @@
+ 								installedPortsDbIDX,
+ 								property->fieldInstalledPortsDbPortDir ) );
+ 
+-			if( rCheckForOldDependencies( property, installedPortsDbPortDir, oldDependencyName, oldDependencyDir, counterPtr ) )
++			if( ( returnCode = rCheckForOldDependencies( property,
++									installedPortsDbPortDir,
++									oldDependencyName,
++									oldDependencyDir,
++									counterPtr ) ) )
+ 			{
+-				fprintf( stdout, "%05d have:%-35s %-35s built with OLD dependency: %s\n",
+-					counter,
+-			 		installedPortsDbPortName,
+-			 		installedPortsDbPortDir,
+-					oldDependencyName ); 
+-				while( fflush( stdout ) );
++				if( returnCode	== 2 )
++				{
++					fprintf( stdout, "%05d PRISTINE MODE: %-35s %-35s has incorrect %s entry in +CONTENTS file\n",
++						counter,
++			 			installedPortsDbPortName,
++			 			installedPortsDbPortDir,
++						oldDependencyName ); 
++					while( fflush( stdout ) );
++
++					MGdbAdd( property->oldPortsDb,
++						installedPortsDbPortDir,
++						installedPortsDbPortName,
++						"PRISTINE MODE: incorrect +CONTENTS file entry",
++						oldDependencyName,
++						oldDependencyDir,
++						NULL );
++				}
++				else
++				{
++					fprintf( stdout, "%05d have:%-35s %-35s built with OLD dependency: %s\n",
++						counter,
++			 			installedPortsDbPortName,
++			 			installedPortsDbPortDir,
++						oldDependencyName ); 
++					while( fflush( stdout ) );
++
++					MGdbAdd( property->oldPortsDb,
++						installedPortsDbPortDir,
++						installedPortsDbPortName,
++						"built with OLD dependency",
++						oldDependencyName,
++						oldDependencyDir,
++						NULL );
++				}
+ 
+-				MGdbAdd( property->oldPortsDb,
+-					installedPortsDbPortDir,
+-					installedPortsDbPortName,
+-					"built with OLD dependency",
+-					oldDependencyName,
+-					oldDependencyDir,
+-					NULL );
+ 			}
+ 			else
+ 			{
+@@ -353,11 +379,11 @@
+ 	char	exact[]						= "exact";
+ 	char*	availableDependenciesDbDependencyNamePtr	= NULL;
+ 	char*	installedPortsDbPortNamePtr			= NULL;
+-
++	
+ 	counterPtr[0]++;
+ 
+ 	/*
+-	 * Are all dpendencies belonging to installedPortsDbPortName in installedPortsDb?
++	 * Are all availableDependencies belonging to installedPortsDbPortName in installedPortsDb?
+ 	 */
+ 	MGdbGoTop( property->availableDependenciesDb );
+ 
+@@ -385,7 +411,7 @@
+ 	}			
+ 											 
+ 	/*
+-	 * installedPortsDbPortName has no dependencies, were done here
++	 * installedPortsDbPortName has no available Dependencies, we are done here
+ 	 */
+ 	if( availableDependenciesDbDependencyNamePtr == NULL )
+ 	{
+@@ -406,7 +432,7 @@
+ 									property->fieldInstalledPortsDbPortName,
+ 									exact );
+ 		/*
+-		 * dependency is not in installedPortsDb
++		 * availableDependency is not in installedPortsDb
+ 		 */
+ 		if( installedPortsDbPortNamePtr == NULL )
+ 		{
+@@ -421,6 +447,38 @@
+ 									installedPortsDbPortDir,
+ 									property->fieldAvailableDependenciesDbDependencyName,
+ 									exact );
++	}
++
++	if( property->pristine || property->forced )
++	{
++		/*
++		 * One last test is to check that each of installedPortsDbPortDir's dependencies found in dependencyDb are indeed in
++		 * installedDB, this verifies that +CONTENTS file is correct
++		 */
++		 MGdbGoTop( property->dependencyPortsDb );
++		 while( MGdbSeek( property->dependencyPortsDb,
++	 			property->fieldDependencyDbPortDir,
++				installedPortsDbPortDir,
++				property->fieldDependencyDbPortDir,
++				exact ) )
++		{
++			strcpy( oldDependencyName, MGdbGet( property->dependencyPortsDb,
++							MGdbGetRecno( property->dependencyPortsDb ) - 1,
++							property->fieldDependencyDbDependencyPortName ) );
++
++			MGdbGoTop( property->installedPortsDb );
++			if( MGdbSeek( property->installedPortsDb,
++				property->fieldInstalledPortsDbPortName,
++				oldDependencyName,
++				property->fieldInstalledPortsDbPortName,
++				exact ) == NULL )
++			{
++				strcpy( oldDependencyDir, MGdbGet( property->dependencyPortsDb,
++							MGdbGetRecno( property->dependencyPortsDb ) - 1,
++							property->fieldDependencyDbDependencyPortDir ) );
++				return( 2 );
++			}
++		}
+ 	}
+ 	oldDependencyDir[0]	= 0;
+ 	oldDependencyName[0]	= 0;
+diff -ruN ../0.3.8/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.8/libMGPM/src/MGPMrUpdate.c	Sat Nov 19 18:01:27 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Mon Nov 21 11:55:19 2005
+@@ -76,6 +76,7 @@
+ 	int	installedPortsDbIDX				= 0;
+ 	int	installedPortsDbQTY				= 0;
+ 	int	stdinFileDescriptor				= 0;
++	int	stdinFileDescriptorIdx				= 0;
+ 	int 	answer						= 1;
+ 
+ 	structLocalProperty	localProperty;
+@@ -610,7 +611,8 @@
+ 					stinker = strstr( bufferBase, localProperty.installedPortName );
+ 					if( stinker )
+ 					{
+-						fprintf( stdout, "OK to remove conflicting port %s Yy/Nn/Aa [Y]\? ", localProperty.installedPortName );
++						fprintf( stdout, "OK to remove conflicting port %s Yy/Nn/Aa [Y]\?\n", localProperty.installedPortName );
++						fprintf( stdout, "Will timeout after 5 minutes and default to [Y] if no selection is made\n" );
+ 						while( fflush( stdout ) );
+ 						if( property->autoConflicts == 0 )
+ 						{
+@@ -693,8 +695,16 @@
+ 							 * reset alarm, reopen stdin after timeout
+ 							 */
+ 							alarm(0);
+-							stdinFileDescriptor	= open( "/dev/tty", O_RDWR );
++/*
++							stdinFileDescriptorIdx		= 0;
++							while( ( stdinFileDescriptor = open( "/dev/tty", O_RDWR ) ) != -1 && stdinFileDescriptorIdx < 10000 )
++							{
++								printf( "open( /dev/tty ) retry %d of 100\n", stdinFileDescriptorIdx );
++								stdinFileDescriptorIdx++;
++							}
+ 							stdin = fdopen( stdinFileDescriptor, "r" );
++*/
++							stdin = fdopen( 0, "r" );
+ 							property->timeOut	= 0;
+ 							MGPMlogAdd( property, "conflicting installed ", localProperty.installedPortName,
+ 								" removed from system after 5 minute timeout: conflicted with ", oldPortName, " " );
+diff -ruN ../0.3.8/libMGPM/src/libMGPM.h ./libMGPM/src/libMGPM.h
+--- ../0.3.8/libMGPM/src/libMGPM.h	Sat Nov 19 17:08:06 2005
++++ ./libMGPM/src/libMGPM.h	Sun Nov 20 16:54:55 2005
+@@ -119,6 +119,8 @@
+ 	int	autoConflicts;			/* if 1 then conflicts Y/N default is Y */
+ 	int	autoMoved;			/* if 1 then remove moved ports is Y */
+ 	int	backUp;				/* if 1 then make packages for updatyed ports */
++	int	bsdPortMkPatched;		/* 1 = bsd.port.mk is in patched state */
++	int	bsdPortMkPatchedBlock;		/* 1 = bsd.port.mk can't be patch so quit trying */
+ 	int	buildDependsAreLeaves;		/* 1 = treat build depends as if they don't exist in availableDependencies.db */
+ 	int	forced;				/* 1 = forced updates 0 = normal */
+ 	int	interactive;			/* 0 = non, 1 = interactive */
+@@ -126,10 +128,9 @@
+ 	int	objIdx;
+ 	int	optionsChanged;			/* set by MGPMrUpdate for example to indicate a ports's options just changed */ 
+ 	int	pmMode;				/* singlePort Upgrade = 1 multiple upgrade = 0 */
++	int	pristine;			/* 1 = run in pristine mode */
+ 	int	resume;				/* 0=normal 1=don't create databases*/
+ 	int	verbose;
+-	int	bsdPortMkPatched;		/* 1 = bsd.port.mk is in patched state */
+-	int	bsdPortMkPatchedBlock;		/* 1 = bsd.port.mk can't be patch so quit trying */
+ 	
+ 	/*
+ 	 * misc
+@@ -236,7 +237,7 @@
+ int		MGPMrStatus( structProperty* property );
+ int		MGPMrUpdate(structProperty* property, char* oldPortDir, char* oldPortName );
+ int 		MGPMrBsdPortMkRevertPatch( structProperty* property );
+-void		MGPMrCatchSignal(int signalId );	/* located in MGPMrController.c */
+-void		MGPMrTimer( int signalId );
++void		MGPMrCatchSignal(int signalId );	/* located in MGPMrCommandLine.c */
++void		MGPMrTimer( int signalId );		/* located in MGPMrCommandLine.c */
+ 
+ #endif
+diff -ruN ../0.3.8/portmanager/help.txt ./portmanager/help.txt
+--- ../0.3.8/portmanager/help.txt	Fri Nov 18 07:49:06 2005
++++ ./portmanager/help.txt	Sun Nov 20 11:44:28 2005
+@@ -33,6 +33,14 @@
+ 				instead of starting from the beggining by
+ 				trying this option
+ 
++	-p or --pristine	Updates a port if any dependency in it's
++				/var/db/pkg/{port name}/+CONTENTS does not
++				match what is installed. The effect is when a
++				port is updated, any port who uses the updated
++				port in it's dependency chain, no matter how
++				deep, are rebuilt. Normally only ports one
++				level up are rebuilt. 
++
+ 	examples:
+ 	
+ 	to add or update a single port with logging:
+diff -ruN ../0.3.8/portmanager/portmanager.1 ./portmanager/portmanager.1
+--- ../0.3.8/portmanager/portmanager.1	Fri Nov 18 07:49:06 2005
++++ ./portmanager/portmanager.1	Sun Nov 20 12:37:51 2005
+@@ -88,6 +88,13 @@
+ from the ports tree (see /usr/ports/MOVED for a list of these)
+ .sp
+ .It
++\fB\&-p\fR or \fB\&--pristine\fR
++ Updates a port if any dependency in it's /var/db/pkg/{port name}/+CONTENTS
++does not match what is installed. The effect is when a port is updated, any
++port who uses the updated port in it's dependency chain, no matter how deep,
++are rebuilt. Normally only ports one level up are rebuilt. 
++.sp
++.It
+ \fB\&--resume\fR
+  bypass installed port dependency data collection:  if you quit in the middle of a forced update for example,
+ you may be able to resume instead of starting from the beginning with this option. After you have updated
