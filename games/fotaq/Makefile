@@ -1,6 +1,6 @@
 # New ports collection makefile for: fotaq (Flight of the Amazon Queen)
 # Date created:        Fri Mar 26 23:34:32 BST 2004
-# Whom:                Alex Trull <alexander@trull.com>
+# Whom:                Alex Trull <freebsd.alex@trull.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
 DISTNAME=	FOTAQ_Talkie
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
