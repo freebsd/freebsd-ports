@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -142,7 +142,7 @@ post-install:
 	@${SED} ${SUBSTITUTIONS} ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "********************************************************************************"
-	@${CAT} ${PKGMESSAGE} | fmt -w 80
+	@${FMT} -w80 ${PKGMESSAGE}
 	@${ECHO_CMD} "********************************************************************************"
 	@${ECHO_CMD}
 
