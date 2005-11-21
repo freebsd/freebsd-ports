@@ -4,7 +4,7 @@ GZIP_CMD?=	gzip
 MKBOLD_CMD?=	mkbold
 MKITALIC_CMD?=	mkitalic
 
-DIST_ALL=	7x14maru.bdf 7x14rkmaru.bdf 8x16maru.bdf \
+DIST_ALL=	7x14maru.bdf 7x14rkmr.bdf 8x16maru.bdf \
 		8x16rkmr.bdf 9x18maru.bdf 9x18rkmr.bdf \
 		maru14.bdf maru16.bdf maru18.bdf
 
