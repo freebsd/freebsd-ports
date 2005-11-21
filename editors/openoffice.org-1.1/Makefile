@@ -38,6 +38,8 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}_src.tar.gz
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
+BROKEN=		Configure fails
+
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
