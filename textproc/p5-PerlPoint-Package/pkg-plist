@@ -1,23 +1,32 @@
+@comment $FreeBSD$
 bin/pp2sdf
+bin/pp2tdo
 %%SITE_PERL%%/PerlPoint/Anchors.pm
 %%SITE_PERL%%/PerlPoint/Backend.pm
 %%SITE_PERL%%/PerlPoint/Constants.pm
+%%SITE_PERL%%/PerlPoint/Generator.pm
+%%SITE_PERL%%/PerlPoint/Generator/Object/Page.pm
+%%SITE_PERL%%/PerlPoint/Generator/SDF.pm
+%%SITE_PERL%%/PerlPoint/Generator/SDF/Default.pm
 %%SITE_PERL%%/PerlPoint/Parser.pm
 %%SITE_PERL%%/PerlPoint/Tags.pm
 %%SITE_PERL%%/PerlPoint/Tags/Basic.pm
-%%SITE_PERL%%/PerlPoint/Tags/CPPP.pm
 %%SITE_PERL%%/PerlPoint/Tags/SDF.pm
+%%SITE_PERL%%/PerlPoint/Template.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/.pp2sdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/perlpods.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/pp2cppp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2pp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2ppresenter
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2sdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2tdo
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2tree
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/PerlPoint/Tags 2>/dev/null || true
+@dirrm %%SITE_PERL%%/PerlPoint/Generator/SDF
+@dirrm %%SITE_PERL%%/PerlPoint/Generator/Object
+@dirrm %%SITE_PERL%%/PerlPoint/Generator
 @unexec rmdir %D/%%SITE_PERL%%/PerlPoint 2>/dev/null || true

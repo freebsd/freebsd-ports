@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PerlPoint-Package
-PORTVERSION=	0.39
-PORTREVISION=	2
+PORTVERSION=	0.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PerlPoint
@@ -25,15 +24,19 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN1=		pp2sdf.1
+MAN1=		pp2sdf.1 pp2tdo.1
 MAN3=		PerlPoint::Anchors.3 \
 		PerlPoint::Backend.3 \
 		PerlPoint::Constants.3 \
+		PerlPoint::Generator.3 \
+		PerlPoint::Generator::Object::Page.3 \
+		PerlPoint::Generator::SDF.3 \
+		PerlPoint::Generator::SDF::Default.3 \
 		PerlPoint::Parser.3 \
 		PerlPoint::Tags.3 \
 		PerlPoint::Tags::Basic.3 \
-		PerlPoint::Tags::CPPP.3 \
-		PerlPoint::Tags::SDF.3
+		PerlPoint::Tags::SDF.3 \
+		PerlPoint::Template.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	# suck all DOCSDIR
@@ -46,4 +49,10 @@ post-install:
 	@cd ${WRKSRC}/demo; ${FIND} . | ${CPIO} -padm ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
