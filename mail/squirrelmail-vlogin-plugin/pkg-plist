@@ -1,0 +1,22 @@
+@unexec %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin vlogin
+@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/vlogin/data/domains
+%%SQUIRRELDIR%%/plugins/vlogin/data/domains/domain.com.vlogin.config.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample.typical
+%%SQUIRRELDIR%%/plugins/vlogin/data/hostmap.dat.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/users.dat.sample
+%%SQUIRRELDIR%%/plugins/vlogin/data/.htaccess
+%%SQUIRRELDIR%%/plugins/vlogin/data/config.php.sample.per_user_functions_only
+%%SQUIRRELDIR%%/plugins/vlogin/INSTALL
+%%SQUIRRELDIR%%/plugins/vlogin/COPYING
+%%SQUIRRELDIR%%/plugins/vlogin/index.php
+%%SQUIRRELDIR%%/plugins/vlogin/README
+%%SQUIRRELDIR%%/plugins/vlogin/functions.php
+%%SQUIRRELDIR%%/plugins/vlogin/version
+%%SQUIRRELDIR%%/plugins/vlogin/setup.php
+%%SQUIRRELDIR%%/plugins/vlogin/functions.php.debug
+@dirrm %%SQUIRRELDIR%%/plugins/vlogin/data/domains
+@dirrm %%SQUIRRELDIR%%/plugins/vlogin/data
+@dirrm %%SQUIRRELDIR%%/plugins/vlogin
+@exec %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin vlogin
