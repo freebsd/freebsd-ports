@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/diacanvas/_canvasmodule.so:${PORTSDIR}/graph
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+BROKEN=		"Does not build"
 .endif
 
 USE_PYTHON=	2.2+
