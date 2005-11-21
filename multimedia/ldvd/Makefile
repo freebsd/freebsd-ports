@@ -24,6 +24,8 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_PERL=	yes
 USE_REINPLACE=	yes

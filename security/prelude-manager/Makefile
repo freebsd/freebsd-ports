@@ -16,6 +16,8 @@ LIB_DEPENDS+=	prelude.2:${PORTSDIR}/security/libprelude \
 		preludedb.0:${PORTSDIR}/security/libpreludedb \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		Unfetchable
+
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 USE_GMAKE=	yes

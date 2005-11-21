@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 MANCOMPRESSED=	no
