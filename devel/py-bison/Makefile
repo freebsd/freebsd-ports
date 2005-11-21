@@ -27,6 +27,12 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
@@ -43,4 +49,4 @@ post-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
