@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	getopt
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.frodol.dds.nl/
+MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A getopt(1) replacement that supports GNU-style long options
