@@ -220,7 +220,6 @@ share/OGRE/ogre-config.glade
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 @dirrm include/OGRE
 @dirrm lib/OGRE
 @dirrm share/OGRE
