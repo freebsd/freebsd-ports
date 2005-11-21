@@ -11,7 +11,7 @@ CATEGORIES=	mail textproc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/default.pkg/${PORTVERSION}
 
-MAINTAINER=	david+ports@bushong.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application of machine learning to e-mail filtering
 
 USE_GETOPT_LONG=yes
