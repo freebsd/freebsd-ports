@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unalz
-PORTVERSION=	0.31
+PORTVERSION=	0.53
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,7 @@ PLIST_FILES=	bin/unalz
 MAKEFILE=	Makefile.freebsd
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+WRKSRC=		${WRKDIR}/unalz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${PREFIX}/bin
