@@ -11,4 +11,5 @@ bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc40
 include/mf-runtime.h
 %%FORTRAN%%bin/gfortran40
+%%FORTRAN%%bin/%%GNU_HOST%%-gfortran40
 @comment Insert PLIST.lib here
