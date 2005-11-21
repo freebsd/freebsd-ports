@@ -2,7 +2,6 @@
 %%PYTHON_SITELIBDIR%%/formencode/__init__.py
 %%PYTHON_SITELIBDIR%%/formencode/api.py
 %%PYTHON_SITELIBDIR%%/formencode/compound.py
-%%PYTHON_SITELIBDIR%%/formencode/conftest.py
 %%PYTHON_SITELIBDIR%%/formencode/context.py
 %%PYTHON_SITELIBDIR%%/formencode/declarative.py
 %%PYTHON_SITELIBDIR%%/formencode/doctest_xml_compare.py
@@ -17,6 +16,7 @@
 %%PYTHON_SITELIBDIR%%/formencode/interfaces.py
 %%PYTHON_SITELIBDIR%%/formencode/schema.py
 %%PYTHON_SITELIBDIR%%/formencode/sqlformgen.py
+%%PYTHON_SITELIBDIR%%/formencode/sqlschema.py
 %%PYTHON_SITELIBDIR%%/formencode/validators.py
 %%PYTHON_SITELIBDIR%%/formencode/variabledecode.py
 %%PYTHON_SITELIBDIR%%/formencode/util/__init__.py
@@ -32,7 +32,6 @@
 %%PYTHON_SITELIBDIR%%/formencode/__init__.pyc
 %%PYTHON_SITELIBDIR%%/formencode/api.pyc
 %%PYTHON_SITELIBDIR%%/formencode/compound.pyc
-%%PYTHON_SITELIBDIR%%/formencode/conftest.pyc
 %%PYTHON_SITELIBDIR%%/formencode/context.pyc
 %%PYTHON_SITELIBDIR%%/formencode/declarative.pyc
 %%PYTHON_SITELIBDIR%%/formencode/doctest_xml_compare.pyc
@@ -47,12 +46,12 @@
 %%PYTHON_SITELIBDIR%%/formencode/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/formencode/schema.pyc
 %%PYTHON_SITELIBDIR%%/formencode/sqlformgen.pyc
+%%PYTHON_SITELIBDIR%%/formencode/sqlschema.pyc
 %%PYTHON_SITELIBDIR%%/formencode/validators.pyc
 %%PYTHON_SITELIBDIR%%/formencode/variabledecode.pyc
 %%PYTHON_SITELIBDIR%%/formencode/__init__.pyo
 %%PYTHON_SITELIBDIR%%/formencode/api.pyo
 %%PYTHON_SITELIBDIR%%/formencode/compound.pyo
-%%PYTHON_SITELIBDIR%%/formencode/conftest.pyo
 %%PYTHON_SITELIBDIR%%/formencode/context.pyo
 %%PYTHON_SITELIBDIR%%/formencode/declarative.pyo
 %%PYTHON_SITELIBDIR%%/formencode/doctest_xml_compare.pyo
@@ -67,6 +66,7 @@
 %%PYTHON_SITELIBDIR%%/formencode/interfaces.pyo
 %%PYTHON_SITELIBDIR%%/formencode/schema.pyo
 %%PYTHON_SITELIBDIR%%/formencode/sqlformgen.pyo
+%%PYTHON_SITELIBDIR%%/formencode/sqlschema.pyo
 %%PYTHON_SITELIBDIR%%/formencode/validators.pyo
 %%PYTHON_SITELIBDIR%%/formencode/variabledecode.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/WebwareExamples/__init__.py
