@@ -21,7 +21,7 @@ PATCH_SITE_SUBDIR=	1.8
 PATCHFILES=	${RUBY_PATCHFILES}
 #PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented interpreted scripting language
 
 .if defined(WITH_ONIGURUMA)
