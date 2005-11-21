@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -43,9 +43,6 @@ PORTDOCS=	\
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
-
-# always install the public key
-PORTDOCS+=	public.key
 
 .include <bsd.port.pre.mk>
 
@@ -107,14 +104,17 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
 .endif
 
+pre-patch:
+# do not install public.key, we will do it ourselves
+	@${REINPLACE_CMD} -E \
+		-e "s|^.*'public.key'.*$$||" \
+		${WRKSRC}/setup.py
+
 post-patch:
-# whrandom is deprecated: whrandom -> random
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -x -n 10 \
-		${REINPLACE_CMD} -E \
-		-e 's|whrandom|random|' \
-		-e 's|reuse=False|reuse=True|' \
-		-e 's|/usr/bin/env python.*|${LOCALBASE}/bin/python|'
+# public.key will be located under ${DATADIR} not ${DOCSDIR}
+	@${REINPLACE_CMD} -E \
+		-e "s|%%DATADIR%%|'${DATADIR}/'|" \
+		${WRKSRC}/BitTorrent/NewVersion.py
 
 post-install:
 # set proper permissions
@@ -126,13 +126,16 @@ post-install:
 # pixmaps
 	@${CHMOD} -R ${SHAREMODE} \
 		${PREFIX}/share/pixmaps/${PORTNAME}/*
-	@${CHMOD} a+x \
+	@${CHMOD} a+X \
 		${PREFIX}/share/pixmaps/${PORTNAME}/logo
 .endif
-#.ifndef(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 # docs
 	@${CHMOD} -R ${SHAREMODE} \
 		${DOCSDIR}/*
-#.endif
+.endif
+# public.key
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/public.key ${DATADIR}
 
 .include <bsd.port.post.mk>
