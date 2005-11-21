@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tree-Simple-VisitorFactory
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
@@ -40,6 +40,10 @@ MAN3=		Tree::Simple::Visitor::BreadthFirstTraversal.3 \
 		Tree::Simple::Visitor::VariableDepthClone.3
 
 PERL_CONFIGURE=	yes
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Tree/Simple/._VisitorFactory.pm
+	${RM} ${WRKSRC}/lib/Tree/Simple/Visitor/._FindByPath.pm
 
 .include <bsd.port.pre.mk>
 

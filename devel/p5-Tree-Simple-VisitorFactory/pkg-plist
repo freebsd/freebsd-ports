@@ -1,4 +1,3 @@
-%%SITE_PERL%%/Tree/Simple/Visitor/._FindByPath.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/BreadthFirstTraversal.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/CreateDirectoryTree.pm
 %%SITE_PERL%%/Tree/Simple/Visitor/FindByNodeValue.pm
