@@ -1,14 +1,20 @@
 # New ports collection makefile for:	quake3
-# Date created:							23 August 2005
-# Whom:									pypt
+# Date created:				23 August 2005
+# Whom:					pypt
 #
 # $FreeBSD$
 #
 
 PORTNAME=	quake3
 PORTVERSION=	1.32b
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
+		http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
+		http://www.planetgargoyle.com/ \
+		http://www.teamdarkside.net/ \
+		http://0day.icculus.org/mirrors/quake3/ \
+		http://www.olpainless.net/files/
 EXTRACT_SUFX=	-source.zip
 EXTRACT_ONLY=
 
