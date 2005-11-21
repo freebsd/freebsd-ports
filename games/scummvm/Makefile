@@ -1,12 +1,12 @@
 # New ports collection makefile for:	scummvm
 # Date created:				Tue Sep  2 23:34:32 BST 2003
-# Whom:				Alex Trull <alexander@trull.com>
+# Whom:				Alex Trull <freebsd.alex@trull.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
+USE_GCC=	3.3+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -24,6 +25,7 @@ CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
 		--disable-alsa \
 		--with-zlib-prefix=/usr \
 		--disable-debug
+CONFIGURE_ENV=	CXX="${CXX}"
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 		MAD "Enable mad (MP3) support" on \
@@ -35,7 +37,7 @@ PORTDOCS=	NEWS README TODO
 PLIST_FILES=	bin/scummvm
 
 .if defined(WITH_MPEG2)
-WITH_VORBIS=	yes         
+WITH_VORBIS=	yes
 .endif
 
 .include <bsd.port.pre.mk>

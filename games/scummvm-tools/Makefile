@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.alex@trull.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
@@ -23,15 +23,16 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/tools-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+USE_GCC=	3.3+
 .endif
 
 do-install:
-.for i in descumm extract md5table mm_nes_extract queenrebuild rescumm
+.for i in compress_queen compress_saga compress_san compress_scumm_bun compress_scumm_sou compress_simon compress_sword1 compress_sword2 extract_kyra extract_loom_tg16 extract_mm_c64 extract_mm_nes extract_scumm_mac extract_simon1_amiga extract_zak_c64 dekyra descumm desword2
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
 .endfor
 
@@ -43,7 +44,7 @@ do-install:
 post-patch:
 	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' ${WRKSRC}/Makefile
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/gcc/gcc32/g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/gcc/${CC}/g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's/g\+\+/g\+\+32/g' ${WRKSRC}/Makefile
 .endif
 
