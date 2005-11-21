@@ -30,6 +30,12 @@ ALL_TARGET=	# empty
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 504000
+BROKEN=		"Incorrect pkg-plist"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile ${WRKSRC}/package.conf
@@ -55,4 +61,4 @@ post-install:
 		${INSTALL_DATA} *.html ReadMe.* haddock.css haskell_icon.gif ${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
