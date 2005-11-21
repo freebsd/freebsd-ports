@@ -1,0 +1,8 @@
+In order for Catalyst::Plugin::Session to work the session ID needs to
+be stored on the client, and the session data needs to be stored on the
+server.
+
+This plugin stores the session ID on the client using the cookie
+mechanism.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Session-State-Cookie/
