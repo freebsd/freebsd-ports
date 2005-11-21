@@ -316,6 +316,7 @@
     SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
+    SUBDIR += mcast-tools
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micro_proxy
@@ -561,8 +562,6 @@
     SUBDIR += php5-xmlrpc
     SUBDIR += php5-yp
     SUBDIR += phpldapadmin
-    SUBDIR += pim6dd
-    SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += plb
     SUBDIR += pload

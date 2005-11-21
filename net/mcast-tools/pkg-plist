@@ -1,0 +1,8 @@
+etc/pim6sd.conf.sample
+etc/pim6dd.conf.sample
+bin/mtrace6
+bin/mcastread
+bin/mcastsend
+sbin/pim6dd
+sbin/pim6sd
+sbin/pim6stat

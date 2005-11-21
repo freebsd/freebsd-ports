@@ -1,0 +1,3 @@
+# $FreeBSD: /tmp/pcvs/ports/net/mcast-tools/files/pim6dd.conf.sample,v 1.1 2005-11-21 22:33:50 suz Exp $
+#
+phyint stf0 disable
