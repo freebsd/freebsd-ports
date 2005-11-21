@@ -13,6 +13,7 @@
 @unexec rm -f %D/share/portmanager/ports_old.db 2>/dev/null || true
 %%DATADIR%%/help.txt
 %%DATADIR%%/patch-bsd.port.mk-0.3.6
+%%DATADIR%%/bsd.port.mk-BACKUP
 bin/portmanager
 etc/portmanager/pm-020.conf.SAMPLE
 include/libMG.h
