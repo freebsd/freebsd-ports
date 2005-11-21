@@ -263,6 +263,7 @@
     SUBDIR += superlu
     SUBDIR += superlu_mt
     SUBDIR += surf
+    SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tomsfastmath
     SUBDIR += topaz
