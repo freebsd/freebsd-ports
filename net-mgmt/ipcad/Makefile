@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ipcad
 # Date created:				15 April 2001
-# Whom:					Lev Walkin <vlm@spelio.net.ru>
+# Whom:					Lev Walkin <vlm@lionet.info>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	3.6.3
+PORTVERSION=	3.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
 		http://ipcad.sourceforge.net/	\
