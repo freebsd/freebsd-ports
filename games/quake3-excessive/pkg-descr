@@ -1,6 +1,6 @@
-This package contains all of the items you'll need to run a
-Quake III Arena dedicated server with Excessive mod under
-FreeBSD with Linux emulation.
+Excessive is a mod for Quake III Arena. It's a server-side only mod, so if you
+only want to play on Excessive servers, you do not need to install this. If
+you plan on running an Excessive server, then this is for you.
 
 WWW: http://www.planetquake.com/excessive/
 
