@@ -8,7 +8,7 @@
 PORTNAME=	xdms
 PORTVERSION=	1.3.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.modeemi.fi/~shd/xdms/
+MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/xdms/
 
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An Amiga DMS archiver unpacker
