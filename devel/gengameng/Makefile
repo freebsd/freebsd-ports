@@ -9,8 +9,7 @@ PORTNAME=	gengameng
 PORTVERSION=	4.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
-		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An SDL game engine library
