@@ -7,6 +7,7 @@
 
 PORTNAME=	hattrickorganizer
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.wow-auctions.net/ho/download/
 DISTNAME=	ho_${PORTVERSION:S/.//g}
