@@ -1,8 +1,8 @@
 CXX = g++
 CC ?= gcc
 LIBS=-lcrypto -lexpat 
-CXXFLAGS += -I.  $(INCDIR) -DHAVE_CONFIG_H
-LDFLAGS += -L. $(LIBS) -lstdc++
+CXXFLAGS += -I.  -I${LOCALBASE}/include -DHAVE_CONFIG_H
+LDFLAGS = -L. $(LIBS) -L${LOCALBASE}/lib -lstdc++
 TARGETS = gen_crq load_cert station_loc dumptqsldata converter
 ZLIB=z
 MYLIB=tqsllib
