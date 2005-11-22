@@ -1330,8 +1330,6 @@ etc/horde/httpd.conf.horde
 %%HORDEDIR%%/themes/simplex/info.php
 %%HORDEDIR%%/themes/simplex/screen.css
 %%HORDEDIR%%/util/barcode.php
-%%HORDEDIR%%/util/google_example.php
-%%HORDEDIR%%/util/icon_browser.php
 %%HORDEDIR%%/util/regex_test.php
 @dirrm %%HORDEDIR%%/util
 @dirrm %%HORDEDIR%%/themes/simplex/graphics
