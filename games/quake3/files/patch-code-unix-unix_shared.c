@@ -1,11 +1,11 @@
---- code/unix/unix_shared.c	Tue Aug 16 02:10:07 2005
-+++ ../../work/quake3-1.32b/code/unix/unix_shared.c	Mon Aug 29 00:37:41 2005
+--- code/unix/unix_shared.c.orig	Mon Aug 15 20:10:07 2005
++++ code/unix/unix_shared.c	Sun Nov 20 18:41:22 2005
 @@ -38,7 +38,7 @@
  static char cdPath[MAX_OSPATH];
  
  // Used to determine local installation path
 -static char installPath[MAX_OSPATH];
-+static char installPath[MAX_OSPATH] = "##PREFIX##/lib/quake3";	// FreeBSD
++static char installPath[MAX_OSPATH] = %%Q3DIR%%;
  
  // Used to determine where to store user-specific files
  static char homePath[MAX_OSPATH];

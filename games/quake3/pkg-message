@@ -1,7 +1,0 @@
------
-Quake III client is installed in bin/quake3 and
-Quake III dedicated server in bin/q3ded.
-
-No .pak3's are installed, you need to copy/link them to
-~/.q3a/baseq3
------
