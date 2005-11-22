@@ -9949,7 +9949,6 @@ preferential	ports/www/preferential
 preferential-firefox	ports/www/preferential-firefox
 prelude-lml	ports/security/prelude-lml
 prelude-manager	ports/security/prelude-manager
-prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
 premake		ports/devel/premake
 preps-gui	ports/devel/preps-gui
