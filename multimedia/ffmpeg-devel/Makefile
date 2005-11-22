@@ -544,6 +544,10 @@ post-patch:
 .endif
 
 post-configure:
+# FreeBSD 5.4-STABLE and later have lrintf()
+.if ${OSVERSION} >= 504100
+	@${ECHO_CMD} '#define HAVE_LRINTF' >> ${WRKSRC}/config.h
+.endif
 .ifdef(WITH_DTS)
 	@${REINPLACE_CMD} -E \
 		-e 's|-ldts|${LOCALBASE}/lib/libdts.a|' \
