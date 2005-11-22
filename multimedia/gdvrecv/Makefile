@@ -20,6 +20,8 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+CONFLICTS=	dvts-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502000
