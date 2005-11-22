@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="873a6542-5b8d-11da-b96e-000fb586ba73">
+    <topic>Horde -- Cross site scripting vulnerabilities in MIME viewers.</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><lt>3.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Annouce of Horde 3.0.7 (final):</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2005/000232.html">
+	  <p>This [3.0.7] is a security release that fixes cross site scripting vulnerabilities in
+            two of Horde's MIME viewers. These holes could for example be exploited by an
+            attacker sending specially crafted emails to Horde's webmail client IMP. The
+            attack could be used to steal users' identity information, taking over users'
+	    sessions, or changing users' settings.</p>
+	  <p>As a hotfix the css and tgz MIME drivers can be disabled by removing their
+            entries from the $mime_drivers_map['horde']['registered'] list in
+            horde/config/mime_drivers.php.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.horde.org/archives/announce/2005/000232.html</url>
+    </references>
+    <dates>
+      <discovery>2005-11-22</discovery>
+      <entry>2005-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c55f9ed0-56a7-11da-a3f0-00123ffe8333">
     <topic>phpmyadmin -- HTTP Response Splitting vulnerability</topic>
     <affects>
