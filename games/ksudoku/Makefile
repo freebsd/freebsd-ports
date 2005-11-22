@@ -7,6 +7,7 @@
 
 PORTNAME=	ksudoku
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,6 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_AUTOTOOLS=	libtool:15
 USE_KDELIBS_VER=3
-USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
