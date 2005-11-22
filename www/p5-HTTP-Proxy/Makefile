@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Proxy
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -33,6 +33,7 @@ MAN3=		\
 		HTTP::Proxy::Engine.3 \
 		HTTP::Proxy::Engine::Legacy.3 \
 		HTTP::Proxy::Engine::NoFork.3 \
+		HTTP::Proxy::Engine::ScoreBoard.3 \
 		HTTP::Proxy::HeaderFilter.3 \
 		HTTP::Proxy::HeaderFilter::simple.3 \
 		HTTP::Proxy::HeaderFilter::standard.3
@@ -40,13 +41,7 @@ MAN3=		\
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
-
-post-patch:
-	@${PERL} -i -pe '$$_ = "" if /use warnings/' ${WRKSRC}/Build.PL
-	@${PERL} -i -pe 's/^our ([^\s;]+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/HTTP/Proxy/Engine/NoFork.pm \
-		${WRKSRC}/lib/HTTP/Proxy/Engine/Legacy.pm
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
