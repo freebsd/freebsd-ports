@@ -1407,6 +1407,7 @@
     SUBDIR += py-ro
     SUBDIR += py-roxlib
     SUBDIR += py-sendfile
+    SUBDIR += py-setuptools
     SUBDIR += py-simpleparse
     SUBDIR += py-simpy
     SUBDIR += py-sip
