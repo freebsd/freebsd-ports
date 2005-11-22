@@ -1,74 +1,54 @@
---- usr/local/etc/drweb/drweb_qmail.conf.orig	Wed Dec 22 18:06:47 2004
-+++ usr/local/etc/drweb/drweb_qmail.conf	Wed Dec 22 18:11:27 2004
-@@ -87,10 +87,10 @@
- DenyByDefault = no
- 
- # List with rules for users or domains to block scanning 
--DenyList = /usr/local/etc/drweb/users.conf
-+DenyList = %CONFDIR%/users.conf
- 
- # Directory used to store temporary files
--Spool = /var/drweb/spool 
-+Spool = /tmp 
- 
- # Permissions for created spool files
- SpoolFilesMode = 0600
-@@ -267,16 +267,16 @@
- FilterMail = DrWEB-DAEMON
- 
- # List of unnotificable viruses
--UnnotificableVirusesList = /usr/local/etc/drweb/viruses.conf
-+UnnotificableVirusesList = %CONFDIR%/viruses.conf
- 
- # List of unnotificable addresses
--UnnotificableAddressesList = /usr/local/etc/drweb/addresses.conf
-+UnnotificableAddressesList = %CONFDIR%/addresses.conf
- 
- # Quarantine directory. 
- # The infected files could be moved in that dir 
- # if you leave this field empty or commented out then 
- # infected messages will not be stored
--Quarantine = /var/drweb/infected
-+Quarantine = /usr/local/drweb/infected
- 
- # Permissions for quarantined files
- QuarantineFilesMode = 0660
-@@ -300,21 +300,21 @@
+--- usr/local/etc/drweb/drweb_qmail.conf.orig	Mon Nov 21 17:06:02 2005
++++ usr/local/etc/drweb/drweb_qmail.conf	Mon Nov 21 17:30:21 2005
+@@ -353,9 +353,9 @@
  RcptsNotify = yes
  
  # Files with notification templates
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/virus-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/virus-admin.msg
 -RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/virus-rcpts.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/qmail/virus-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/virus-admin.msg
-+RcptsTemplate = %CONFDIR%/templates/en-ru/qmail/virus-rcpts.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sender-virus.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-virus.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/rcpts-virus.msg
+ 
+ [MalwareNotifications]
+ # Enable or disable sending notifications to persons (yes/no)
+@@ -364,21 +364,21 @@
+ RcptsNotify = yes
+ 
+ # Files with notification templates
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/malware-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/malware-admin.msg
+-RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/malware-rcpts.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sender-malware.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-malware.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/rcpts-malware.msg
  
  [CuredNotifications]
  SenderNotify = yes
  AdminNotify = yes
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/cured-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/cured-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/qmail/cured-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/cured-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sendercured.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-cured.msg
  
  [SkipNotifications]
  SenderNotify = yes
  AdminNotify = no
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/skip-sender.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/qmail/skip-sender.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sender-skip.msg
  AdminTemplate = 
  RcptsTemplate = 
  
-@@ -322,16 +322,16 @@
+@@ -386,16 +386,16 @@
  SenderNotify = yes
  AdminNotify = yes
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/archive-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/archive-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/qmail/archive-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/archive-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sender-archive.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-archive.msg
  RcptsTemplate = 
  
  [ErrorNotifications]
@@ -77,23 +57,23 @@
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/error-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/error-admin.msg
-+SenderTemplate = %CONFDIR%/templates/en-ru/qmail/error-sender.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/error-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/sender-error.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-error.msg
  RcptsTemplate = 
  
  [RuleFilterNotifications]
-@@ -339,12 +339,12 @@
+@@ -403,12 +403,12 @@
  AdminNotify = yes
  RcptsNotify = no
  SenderTemplate = 
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/rule-admin.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/rule-admin.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-rule.msg
  RcptsTemplate = 
  
  [LicenseLimitNotifications]
  AdminNotify = yes
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/license-admin.msg
-+AdminTemplate = %CONFDIR%/templates/en-ru/qmail/license-admin.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/qmail/admin-license.msg
  
  ###################
  # Logging section #
