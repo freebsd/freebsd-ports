@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 # just work/sword-1.5.7
 DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
 
-MAINTAINER=	wvengen@stack.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig

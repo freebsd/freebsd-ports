@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	wvengen@stack.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful Bible study application for KDE3
 
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
