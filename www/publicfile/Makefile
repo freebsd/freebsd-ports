@@ -21,6 +21,7 @@ RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 OPTIONS=	BASICAUTH "basic HTTP authentication support" off \
 		COMMONLOG "support for Apache common log format" on \
 		REDIRECT_SLASH "don't complain when omitting trailing slash" off \
+		ENV_FILETYPES "get filetypes from the environment" off \
 		SSL "provide SSL support through ucspi-ssl" on
 
 .include <bsd.port.pre.mk>
