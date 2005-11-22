@@ -4,49 +4,55 @@ lib/gcfilms/GCData.pm
 lib/gcfilms/GCDialogs.pm
 lib/gcfilms/GCDisplay.pm
 lib/gcfilms/GCExport.pm
-lib/gcfilms/GCGenres.pm
-lib/gcfilms/GCGraphicComponents.pm
-lib/gcfilms/GCImport.pm
-lib/gcfilms/GCLang.pm
-lib/gcfilms/GCMainWindow.pm
-lib/gcfilms/GCMoviesLists.pm
-lib/gcfilms/GCOptions.pm
-lib/gcfilms/GCPlugins.pm
-lib/gcfilms/GCSplash.pm
-lib/gcfilms/GCStyle.pm
-lib/gcfilms/GCUtils.pm
 lib/gcfilms/GCExport/GCExportBase.pm
 lib/gcfilms/GCExport/GCExportCSV.pm
 lib/gcfilms/GCExport/GCExportHTML.pm
 lib/gcfilms/GCExport/GCExportSQL.pm
 lib/gcfilms/GCExport/GCExportTarGz.pm
+lib/gcfilms/GCExport/GCExportTellico.pm
 lib/gcfilms/GCExport/GCExportXML.pm
+lib/gcfilms/GCExtract.pm
+lib/gcfilms/GCGenres.pm
+lib/gcfilms/GCGraphicComponents.pm
+lib/gcfilms/GCImport.pm
 lib/gcfilms/GCImport/GCImportAMC.pm
 lib/gcfilms/GCImport/GCImportBase.pm
 lib/gcfilms/GCImport/GCImportCSV.pm
 lib/gcfilms/GCImport/GCImportDVDProfiler.pm
 lib/gcfilms/GCImport/GCImportGCfilms.pm
 lib/gcfilms/GCImport/GCImportList.pm
+lib/gcfilms/GCImport/GCImportTarGz.pm
+lib/gcfilms/GCImport/GCImportTellico.pm
+lib/gcfilms/GCLang.pm
 lib/gcfilms/GCLang/DE.pm
 lib/gcfilms/GCLang/EN.pm
 lib/gcfilms/GCLang/ES.pm
 lib/gcfilms/GCLang/FR.pm
 lib/gcfilms/GCLang/IT.pm
+lib/gcfilms/GCLang/RO.pm
+lib/gcfilms/GCMainWindow.pm
+lib/gcfilms/GCMoviesLists.pm
+lib/gcfilms/GCOptions.pm
+lib/gcfilms/GCPanel.pm
+lib/gcfilms/GCPlugins.pm
 lib/gcfilms/GCPlugins/GCAlapage.pm
 lib/gcfilms/GCPlugins/GCAllocine.pm
 lib/gcfilms/GCPlugins/GCAmazon.pm
 lib/gcfilms/GCPlugins/GCAmazonDE.pm
 lib/gcfilms/GCPlugins/GCAmazonFR.pm
 lib/gcfilms/GCPlugins/GCAniDB.pm
-lib/gcfilms/GCPlugins/GCAnimeka.pm
 lib/gcfilms/GCPlugins/GCAnimeNfoA.pm
 lib/gcfilms/GCPlugins/GCAnimeNfoM.pm
+lib/gcfilms/GCPlugins/GCAnimeka.pm
 lib/gcfilms/GCPlugins/GCCinemaClock.pm
 lib/gcfilms/GCPlugins/GCCinemotions.pm
 lib/gcfilms/GCPlugins/GCCulturalia.pm
 lib/gcfilms/GCPlugins/GCDVDFr.pm
 lib/gcfilms/GCPlugins/GCDVDPost.pm
 lib/gcfilms/GCPlugins/GCDVDZone2.pm
+lib/gcfilms/GCPlugins/GCDicshop.pm
+lib/gcfilms/GCPlugins/GCFilmAffinityEN.pm
+lib/gcfilms/GCPlugins/GCFilmAffinityES.pm
 lib/gcfilms/GCPlugins/GCFilmUP.pm
 lib/gcfilms/GCPlugins/GCImdb.pm
 lib/gcfilms/GCPlugins/GCMonsieurCinema.pm
@@ -54,168 +60,239 @@ lib/gcfilms/GCPlugins/GCMovieClubFR.pm
 lib/gcfilms/GCPlugins/GCMovieClubNL.pm
 lib/gcfilms/GCPlugins/GCOFDb.pm
 lib/gcfilms/GCPlugins/GCPluginsBase.pm
-share/gcfilms/gcfilms.png
-share/gcfilms/no.jpg
-share/gcfilms/splash.jpg
-share/gcfilms/genres/EN.genres
-share/gcfilms/genres/ES.genres
-share/gcfilms/genres/FR.genres
-share/gcfilms/html_models/Tabs
-share/gcfilms/html_models/Tian
-share/gcfilms/html_models/rootII_design
-share/gcfilms/icons/gcfilms_logo128.ico
-share/gcfilms/icons/gcfilms_logo128.png
-share/gcfilms/icons/gcfilms_logo32.ico
-share/gcfilms/icons/gcfilms_logo32.png
-share/gcfilms/icons/gcfilms_logo64.ico
-share/gcfilms/icons/gcfilms_logo64.png
-share/gcfilms/plugins/alapage.png
-share/gcfilms/plugins/allocine.png
-share/gcfilms/plugins/amazon.de.png
-share/gcfilms/plugins/amazon.fr.png
-share/gcfilms/plugins/amazon.png
-share/gcfilms/plugins/anidb.png
-share/gcfilms/plugins/animenfo.png
-share/gcfilms/plugins/animeka.png
-share/gcfilms/plugins/cinemaclock.png
-share/gcfilms/plugins/cinemotions.png
-share/gcfilms/plugins/culturalia.png
-share/gcfilms/plugins/dvdfr.png
-share/gcfilms/plugins/dvdpost.png
-share/gcfilms/plugins/dvdzone2.png
-share/gcfilms/plugins/filmup.png
-share/gcfilms/plugins/imdb.png
-share/gcfilms/plugins/mcinema.png
-share/gcfilms/plugins/movieclub.png
-share/gcfilms/plugins/ofdb.png
-share/gcfilms/style/Gtk/gtkrc
-share/gcfilms/style/Gtk/lend.png
-share/gcfilms/style/Gtk/list_bg.xpm
-share/gcfilms/style/Gtk/list_bg_selected.xpm
-share/gcfilms/style/Gtk/list_bg_unselected.xpm
-share/gcfilms/style/Tian/active.png
-share/gcfilms/style/Tian/active2.png
-share/gcfilms/style/Tian/add.png
-share/gcfilms/style/Tian/arrowdown.png
-share/gcfilms/style/Tian/arrowleft.png
-share/gcfilms/style/Tian/arrowright.png
-share/gcfilms/style/Tian/arrowup.png
-share/gcfilms/style/Tian/box.png
-share/gcfilms/style/Tian/box2.png
-share/gcfilms/style/Tian/box3.png
-share/gcfilms/style/Tian/cancel.png
-share/gcfilms/style/Tian/cdrom.png
-share/gcfilms/style/Tian/checked.png
-share/gcfilms/style/Tian/clear.png
-share/gcfilms/style/Tian/delete.png
-share/gcfilms/style/Tian/display.png
-share/gcfilms/style/Tian/export.png
-share/gcfilms/style/Tian/find.png
-share/gcfilms/style/Tian/gtkrc
-share/gcfilms/style/Tian/harddisk.png
-share/gcfilms/style/Tian/help.png
-share/gcfilms/style/Tian/home.png
-share/gcfilms/style/Tian/horizontal.png
-share/gcfilms/style/Tian/horizontal_hover.png
-share/gcfilms/style/Tian/import.png
-share/gcfilms/style/Tian/internet.png
-share/gcfilms/style/Tian/lend.png
-share/gcfilms/style/Tian/list_bg.xpm
-share/gcfilms/style/Tian/list_bg_selected.xpm
-share/gcfilms/style/Tian/list_bg_unselected.xpm
-share/gcfilms/style/Tian/new.png
-share/gcfilms/style/Tian/ok.png
-share/gcfilms/style/Tian/open.png
-share/gcfilms/style/Tian/paths.png
-share/gcfilms/style/Tian/preferences.png
-share/gcfilms/style/Tian/properties.png
-share/gcfilms/style/Tian/quit.png
-share/gcfilms/style/Tian/radiochecked.png
-share/gcfilms/style/Tian/radiounchecked.png
-share/gcfilms/style/Tian/refresh.png
-share/gcfilms/style/Tian/remove.png
-share/gcfilms/style/Tian/save.png
-share/gcfilms/style/Tian/saveas.png
-share/gcfilms/style/Tian/sortdown.png
-share/gcfilms/style/Tian/sortup.png
-share/gcfilms/style/Tian/spindown.png
-share/gcfilms/style/Tian/spinup.png
-share/gcfilms/style/Tian/tab_corner.png
-share/gcfilms/style/Tian/tonight.png
-share/gcfilms/style/Tian/unchecked.png
-share/gcfilms/style/Tian/vertical.png
-share/gcfilms/style/Tian/vertical_hover.png
-share/gcfilms/style/kde/active.png
-share/gcfilms/style/kde/active2.png
-share/gcfilms/style/kde/add.png
-share/gcfilms/style/kde/arrowdown.png
-share/gcfilms/style/kde/arrowleft.png
-share/gcfilms/style/kde/arrowright.png
-share/gcfilms/style/kde/arrowup.png
-share/gcfilms/style/kde/bghonrizontalscroll.png
-share/gcfilms/style/kde/bgverticalscroll.png
-share/gcfilms/style/kde/box.png
-share/gcfilms/style/kde/box2.png
-share/gcfilms/style/kde/box3.png
-share/gcfilms/style/kde/cancel.png
-share/gcfilms/style/kde/cdrom.png
-share/gcfilms/style/kde/checked.png
-share/gcfilms/style/kde/clear.png
-share/gcfilms/style/kde/delete.png
-share/gcfilms/style/kde/display.png
-share/gcfilms/style/kde/exec.png
-share/gcfilms/style/kde/export.png
-share/gcfilms/style/kde/find.png
-share/gcfilms/style/kde/gtkrc
-share/gcfilms/style/kde/gtkrcold
-share/gcfilms/style/kde/harddisk.png
-share/gcfilms/style/kde/help.png
-share/gcfilms/style/kde/home.png
-share/gcfilms/style/kde/horizontal.png
-share/gcfilms/style/kde/horizontal_hover.png
-share/gcfilms/style/kde/import.png
-share/gcfilms/style/kde/internet.png
-share/gcfilms/style/kde/khelpcenter.png
-share/gcfilms/style/kde/lend.png
-share/gcfilms/style/kde/list_bg.xpm
-share/gcfilms/style/kde/list_bg_selected.xpm
-share/gcfilms/style/kde/list_bg_unselected.xpm
-share/gcfilms/style/kde/new.png
-share/gcfilms/style/kde/ok.png
-share/gcfilms/style/kde/open.png
-share/gcfilms/style/kde/paths.png
-share/gcfilms/style/kde/preferences.png
-share/gcfilms/style/kde/properties.png
-share/gcfilms/style/kde/quit.png
-share/gcfilms/style/kde/radiochecked.png
-share/gcfilms/style/kde/radiounchecked.png
-share/gcfilms/style/kde/refresh.png
-share/gcfilms/style/kde/remove.png
-share/gcfilms/style/kde/save.png
-share/gcfilms/style/kde/saveas.png
-share/gcfilms/style/kde/sortdown.png
-share/gcfilms/style/kde/sortup.png
-share/gcfilms/style/kde/spindown.png
-share/gcfilms/style/kde/spinup.png
-share/gcfilms/style/kde/tab_corner.png
-share/gcfilms/style/kde/tonight.png
-share/gcfilms/style/kde/unchecked.png
-share/gcfilms/style/kde/vertical.png
-share/gcfilms/style/kde/vertical_hover.png
-share/gcfilms/xml_models/Ant_Movie_Catalog
-share/gcfilms/xml_models/DVDProfiler
+lib/gcfilms/GCSplash.pm
+lib/gcfilms/GCStyle.pm
+lib/gcfilms/GCUtils.pm
+%%DATADIR%%/LICENSE
+%%DATADIR%%/genres/EN.genres
+%%DATADIR%%/genres/ES.genres
+%%DATADIR%%/genres/FR.genres
+%%DATADIR%%/html_models/Shelf
+%%DATADIR%%/html_models/Shelf.png
+%%DATADIR%%/html_models/Simple
+%%DATADIR%%/html_models/Simple.png
+%%DATADIR%%/html_models/Tabs
+%%DATADIR%%/html_models/Tabs.png
+%%DATADIR%%/html_models/Tian
+%%DATADIR%%/html_models/Tian.png
+%%DATADIR%%/html_models/rootII_design
+%%DATADIR%%/html_models/rootII_design.png
+%%DATADIR%%/icons/GCfilms.ico
+%%DATADIR%%/icons/gcfilms_16x16.png
+%%DATADIR%%/icons/gcfilms_24x24.png
+%%DATADIR%%/icons/gcfilms_32x32.png
+%%DATADIR%%/icons/gcfilms_48x48.png
+%%DATADIR%%/icons/gcfilms_64x64.png
+%%DATADIR%%/icons/web.ico
+%%DATADIR%%/list_bg/Box/list_bg.png
+%%DATADIR%%/list_bg/Box/list_bg.xpm
+%%DATADIR%%/list_bg/Box/list_bg_selected.png
+%%DATADIR%%/list_bg/Box/list_bg_selected.xpm
+%%DATADIR%%/list_bg/Box/list_bg_unselected.png
+%%DATADIR%%/list_bg/Box/list_bg_unselected.xpm
+%%DATADIR%%/list_bg/Marble/list_bg.png
+%%DATADIR%%/list_bg/Marble/list_bg_selected.png
+%%DATADIR%%/list_bg/Marble/list_bg_unselected.png
+%%DATADIR%%/list_bg/Wood/list_bg.png
+%%DATADIR%%/list_bg/Wood/list_bg_selected.png
+%%DATADIR%%/list_bg/Wood/list_bg_unselected.png
+%%DATADIR%%/list_bg/Wood2/list_bg.png
+%%DATADIR%%/list_bg/Wood2/list_bg_selected.png
+%%DATADIR%%/list_bg/Wood2/list_bg_unselected.png
+%%DATADIR%%/logos/GCfilms_Peri.png
+%%DATADIR%%/logos/Peri_main_logo.png
+%%DATADIR%%/logos/Peri_main_logo.svg
+%%DATADIR%%/logos/about.png
+%%DATADIR%%/logos/button.png
+%%DATADIR%%/logos/install.png
+%%DATADIR%%/logos/no.png
+%%DATADIR%%/logos/splash.png
+%%DATADIR%%/panel/floating_bottom.png
+%%DATADIR%%/panel/floating_top.png
+%%DATADIR%%/panel/title_back.png
+%%DATADIR%%/panel/title_right.png
+%%DATADIR%%/style/GCfilms/gtkrc
+%%DATADIR%%/style/GCfilms/icons/about/16x16.png
+%%DATADIR%%/style/GCfilms/icons/about/64x64.png
+%%DATADIR%%/style/GCfilms/icons/add/16x16.png
+%%DATADIR%%/style/GCfilms/icons/add/24x24.png
+%%DATADIR%%/style/GCfilms/icons/add/32x32.png
+%%DATADIR%%/style/GCfilms/icons/cancel/24x24.png
+%%DATADIR%%/style/GCfilms/icons/cancel/32x32.png
+%%DATADIR%%/style/GCfilms/icons/clear/24x24.png
+%%DATADIR%%/style/GCfilms/icons/clear/32x32.png
+%%DATADIR%%/style/GCfilms/icons/convert/16x16.png
+%%DATADIR%%/style/GCfilms/icons/delete/16x16.png
+%%DATADIR%%/style/GCfilms/icons/delete/24x24.png
+%%DATADIR%%/style/GCfilms/icons/delete/32x32.png
+%%DATADIR%%/style/GCfilms/icons/directory/32x32.png
+%%DATADIR%%/style/GCfilms/icons/dnd/16x16.png
+%%DATADIR%%/style/GCfilms/icons/error/64x64.png
+%%DATADIR%%/style/GCfilms/icons/execute/16x16.png
+%%DATADIR%%/style/GCfilms/icons/execute/24x24.png
+%%DATADIR%%/style/GCfilms/icons/execute/32x32.png
+%%DATADIR%%/style/GCfilms/icons/find/16x16.png
+%%DATADIR%%/style/GCfilms/icons/find/24x24.png
+%%DATADIR%%/style/GCfilms/icons/find/32x32.png
+%%DATADIR%%/style/GCfilms/icons/go-back/16x16.png
+%%DATADIR%%/style/GCfilms/icons/go-back/24x24.png
+%%DATADIR%%/style/GCfilms/icons/go-down/16x16.png
+%%DATADIR%%/style/GCfilms/icons/go-down/24x24.png
+%%DATADIR%%/style/GCfilms/icons/go-forward/16x16.png
+%%DATADIR%%/style/GCfilms/icons/go-forward/24x24.png
+%%DATADIR%%/style/GCfilms/icons/go-up/16x16.png
+%%DATADIR%%/style/GCfilms/icons/go-up/24x24.png
+%%DATADIR%%/style/GCfilms/icons/help/16x16.png
+%%DATADIR%%/style/GCfilms/icons/help/32x32.png
+%%DATADIR%%/style/GCfilms/icons/help/64x64.png
+%%DATADIR%%/style/GCfilms/icons/home/32x32.png
+%%DATADIR%%/style/GCfilms/icons/jump-to/24x24.png
+%%DATADIR%%/style/GCfilms/icons/jump-to/32x32.png
+%%DATADIR%%/style/GCfilms/icons/media-next/24x24.png
+%%DATADIR%%/style/GCfilms/icons/media-next/32x32.png
+%%DATADIR%%/style/GCfilms/icons/media-play/16x16.png
+%%DATADIR%%/style/GCfilms/icons/media-play/24x24.png
+%%DATADIR%%/style/GCfilms/icons/media-play/32x32.png
+%%DATADIR%%/style/GCfilms/icons/network/32x32.png
+%%DATADIR%%/style/GCfilms/icons/new/16x16.png
+%%DATADIR%%/style/GCfilms/icons/new/24x24.png
+%%DATADIR%%/style/GCfilms/icons/new/32x32.png
+%%DATADIR%%/style/GCfilms/icons/ok/24x24.png
+%%DATADIR%%/style/GCfilms/icons/ok/32x32.png
+%%DATADIR%%/style/GCfilms/icons/open/16x16.png
+%%DATADIR%%/style/GCfilms/icons/open/24x24.png
+%%DATADIR%%/style/GCfilms/icons/open/32x32.png
+%%DATADIR%%/style/GCfilms/icons/preferences/16x16.png
+%%DATADIR%%/style/GCfilms/icons/preferences/24x24.png
+%%DATADIR%%/style/GCfilms/icons/preferences/32x32.png
+%%DATADIR%%/style/GCfilms/icons/properties/24x24.png
+%%DATADIR%%/style/GCfilms/icons/properties/32x32.png
+%%DATADIR%%/style/GCfilms/icons/quit/16x16.png
+%%DATADIR%%/style/GCfilms/icons/quit/32x32.png
+%%DATADIR%%/style/GCfilms/icons/refresh/16x16.png
+%%DATADIR%%/style/GCfilms/icons/refresh/24x24.png
+%%DATADIR%%/style/GCfilms/icons/refresh/32x32.png
+%%DATADIR%%/style/GCfilms/icons/remove/24x24.png
+%%DATADIR%%/style/GCfilms/icons/remove/32x32.png
+%%DATADIR%%/style/GCfilms/icons/revert-to-saved/16x16.png
+%%DATADIR%%/style/GCfilms/icons/save-as/16x16.png
+%%DATADIR%%/style/GCfilms/icons/save-as/24x24.png
+%%DATADIR%%/style/GCfilms/icons/save-as/32x32.png
+%%DATADIR%%/style/GCfilms/icons/save/16x16.png
+%%DATADIR%%/style/GCfilms/icons/save/24x24.png
+%%DATADIR%%/style/GCfilms/icons/save/32x32.png
+%%DATADIR%%/style/GCfilms/icons/select-color/32x32.png
+%%DATADIR%%/style/GCfilms/lend.png
+%%DATADIR%%/style/Gtk/gtkrc
+%%DATADIR%%/style/Gtk/lend.png
+%%DATADIR%%/style/kde/active.png
+%%DATADIR%%/style/kde/active2.png
+%%DATADIR%%/style/kde/add.png
+%%DATADIR%%/style/kde/arrowdown.png
+%%DATADIR%%/style/kde/arrowleft.png
+%%DATADIR%%/style/kde/arrowright.png
+%%DATADIR%%/style/kde/arrowup.png
+%%DATADIR%%/style/kde/bghonrizontalscroll.png
+%%DATADIR%%/style/kde/bgverticalscroll.png
+%%DATADIR%%/style/kde/box.png
+%%DATADIR%%/style/kde/box2.png
+%%DATADIR%%/style/kde/box3.png
+%%DATADIR%%/style/kde/cancel.png
+%%DATADIR%%/style/kde/cdrom.png
+%%DATADIR%%/style/kde/checked.png
+%%DATADIR%%/style/kde/clear.png
+%%DATADIR%%/style/kde/delete.png
+%%DATADIR%%/style/kde/display.png
+%%DATADIR%%/style/kde/exec.png
+%%DATADIR%%/style/kde/export.png
+%%DATADIR%%/style/kde/find.png
+%%DATADIR%%/style/kde/gtkrc
+%%DATADIR%%/style/kde/gtkrcold
+%%DATADIR%%/style/kde/harddisk.png
+%%DATADIR%%/style/kde/help.png
+%%DATADIR%%/style/kde/home.png
+%%DATADIR%%/style/kde/horizontal.png
+%%DATADIR%%/style/kde/horizontal_hover.png
+%%DATADIR%%/style/kde/import.png
+%%DATADIR%%/style/kde/internet.png
+%%DATADIR%%/style/kde/khelpcenter.png
+%%DATADIR%%/style/kde/lend.png
+%%DATADIR%%/style/kde/new.png
+%%DATADIR%%/style/kde/ok.png
+%%DATADIR%%/style/kde/open.png
+%%DATADIR%%/style/kde/paths.png
+%%DATADIR%%/style/kde/preferences.png
+%%DATADIR%%/style/kde/properties.png
+%%DATADIR%%/style/kde/quit.png
+%%DATADIR%%/style/kde/radiochecked.png
+%%DATADIR%%/style/kde/radiounchecked.png
+%%DATADIR%%/style/kde/refresh.png
+%%DATADIR%%/style/kde/remove.png
+%%DATADIR%%/style/kde/save.png
+%%DATADIR%%/style/kde/saveas.png
+%%DATADIR%%/style/kde/sortdown.png
+%%DATADIR%%/style/kde/sortup.png
+%%DATADIR%%/style/kde/spindown.png
+%%DATADIR%%/style/kde/spinup.png
+%%DATADIR%%/style/kde/tab_corner.png
+%%DATADIR%%/style/kde/tonight.png
+%%DATADIR%%/style/kde/unchecked.png
+%%DATADIR%%/style/kde/vertical.png
+%%DATADIR%%/style/kde/vertical_hover.png
+%%DATADIR%%/xml_models/Ant_Movie_Catalog
+%%DATADIR%%/xml_models/DVDProfiler
+@dirrm %%DATADIR%%/xml_models
+@dirrm %%DATADIR%%/style/kde
+@dirrm %%DATADIR%%/style/Gtk
+@dirrm %%DATADIR%%/style/GCfilms/icons/select-color
+@dirrm %%DATADIR%%/style/GCfilms/icons/save-as
+@dirrm %%DATADIR%%/style/GCfilms/icons/save
+@dirrm %%DATADIR%%/style/GCfilms/icons/revert-to-saved
+@dirrm %%DATADIR%%/style/GCfilms/icons/remove
+@dirrm %%DATADIR%%/style/GCfilms/icons/refresh
+@dirrm %%DATADIR%%/style/GCfilms/icons/quit
+@dirrm %%DATADIR%%/style/GCfilms/icons/properties
+@dirrm %%DATADIR%%/style/GCfilms/icons/preferences
+@dirrm %%DATADIR%%/style/GCfilms/icons/open
+@dirrm %%DATADIR%%/style/GCfilms/icons/ok
+@dirrm %%DATADIR%%/style/GCfilms/icons/new
+@dirrm %%DATADIR%%/style/GCfilms/icons/network
+@dirrm %%DATADIR%%/style/GCfilms/icons/media-play
+@dirrm %%DATADIR%%/style/GCfilms/icons/media-next
+@dirrm %%DATADIR%%/style/GCfilms/icons/jump-to
+@dirrm %%DATADIR%%/style/GCfilms/icons/home
+@dirrm %%DATADIR%%/style/GCfilms/icons/help
+@dirrm %%DATADIR%%/style/GCfilms/icons/go-up
+@dirrm %%DATADIR%%/style/GCfilms/icons/go-forward
+@dirrm %%DATADIR%%/style/GCfilms/icons/go-down
+@dirrm %%DATADIR%%/style/GCfilms/icons/go-back
+@dirrm %%DATADIR%%/style/GCfilms/icons/find
+@dirrm %%DATADIR%%/style/GCfilms/icons/execute
+@dirrm %%DATADIR%%/style/GCfilms/icons/error
+@dirrm %%DATADIR%%/style/GCfilms/icons/dnd
+@dirrm %%DATADIR%%/style/GCfilms/icons/directory
+@dirrm %%DATADIR%%/style/GCfilms/icons/delete
+@dirrm %%DATADIR%%/style/GCfilms/icons/convert
+@dirrm %%DATADIR%%/style/GCfilms/icons/clear
+@dirrm %%DATADIR%%/style/GCfilms/icons/cancel
+@dirrm %%DATADIR%%/style/GCfilms/icons/add
+@dirrm %%DATADIR%%/style/GCfilms/icons/about
+@dirrm %%DATADIR%%/style/GCfilms/icons
+@dirrm %%DATADIR%%/style/GCfilms
+@dirrm %%DATADIR%%/style
+@dirrm %%DATADIR%%/panel
+@dirrm %%DATADIR%%/logos
+@dirrm %%DATADIR%%/list_bg/Wood2
+@dirrm %%DATADIR%%/list_bg/Wood
+@dirrm %%DATADIR%%/list_bg/Marble
+@dirrm %%DATADIR%%/list_bg/Box
+@dirrm %%DATADIR%%/list_bg
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/html_models
+@dirrm %%DATADIR%%/genres
+@dirrm share/gcfilms
+@dirrm lib/gcfilms/GCPlugins
+@dirrm lib/gcfilms/GCLang
 @dirrm lib/gcfilms/GCImport
 @dirrm lib/gcfilms/GCExport
-@dirrm lib/gcfilms/GCLang
-@dirrm lib/gcfilms/GCPlugins
 @dirrm lib/gcfilms
-@dirrm share/gcfilms/genres
-@dirrm share/gcfilms/icons
-@dirrm share/gcfilms/plugins
-@dirrm share/gcfilms/style/Gtk
-@dirrm share/gcfilms/style/Tian
-@dirrm share/gcfilms/style/kde
-@dirrm share/gcfilms/style
-@dirrm share/gcfilms/html_models
-@dirrm share/gcfilms/xml_models
-@dirrm share/gcfilms
