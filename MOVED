@@ -1972,3 +1972,10 @@ devel/bison-devel|devel/bison2|2005-11-18|Upgraded to 2.x
 security/prelude-nids|security/snort|2005-11-21|Deprecated in favor of using Snort
 net/pim6dd||2005-09-22|Deleted since it's succeeded by net/mcast-tools
 net/pim6sd||2005-09-22|Deleted since it's succeeded by net/mcast-tools
+games/q3server|games/linux-quake3|2005-11-22|Renamed
+games/q3server-excessive|games/quake3-excessive|2005-11-22|Renamed
+games/q3server-freezetag|games/quake3-freezetag|2005-11-22|Renamed
+games/q3server-osp|games/quake3-osp|2005-11-22|Renamed
+games/q3server-ra3|games/quake3-ra3|2005-11-22|Renamed
+games/q3server-ut|games/quake3-ut|2005-11-22|Renamed
+games/q3server-wfa|games/quake3-wfa|2005-11-22|Renamed
