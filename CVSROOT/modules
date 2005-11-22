@@ -3038,6 +3038,7 @@ gnetcat		ports/net/gnetcat
 gnetlist	ports/cad/gnetlist
 gnewtellium	ports/net/gnewtellium
 gngb		ports/emulators/gngb
+gngeo		ports/emulators/gngeo
 gnmm		ports/games/gnmm
 gno3dtet	ports/games/gno3dtet
 gnochm		ports/deskutils/gnochm
