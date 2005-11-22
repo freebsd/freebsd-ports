@@ -29,7 +29,8 @@ PORTDOCS=	*
 .endif
 
 post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/encoder.php > ${WRKSRC}/encoder
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g; s|0777|0755|g" \
+		${WRKSRC}/encoder.php > ${WRKSRC}/encoder
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
