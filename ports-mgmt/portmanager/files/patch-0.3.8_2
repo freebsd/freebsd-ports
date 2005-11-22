@@ -1,0 +1,97 @@
+diff -ruN ../0.3.8_1/libMGPM/src/MGPMrGetPortName.c ./libMGPM/src/MGPMrGetPortName.c
+--- ../0.3.8_1/libMGPM/src/MGPMrGetPortName.c	Mon Nov 21 15:18:23 2005
++++ ./libMGPM/src/MGPMrGetPortName.c	Tue Nov 22 08:18:39 2005
+@@ -78,7 +78,9 @@
+ 				"%s %s is no longer in the ports collection, see /usr/ports/MOVED\nthis port must be removed for portmanager to continue\nis it OK to remove %s from your system? (yes/no/auto yes to all) [y/n/a] [y]\n",
+ 				portName, portDir, portName );
+ 			fprintf( stdout, "%s\n", SINGLE_LINES );
++/*
+ 			fprintf( stdout, "Will timeout after 5 minutes and default to [Y] if no selection is made\n" );
++*/
+ 			while( fflush( stdout ) );
+ 
+ 			if( property->autoMoved == 0 )
+@@ -86,9 +88,11 @@
+ 				/*
+ 				 * set timeout default to Y
+ 				 */
++/*
+ 				property->timeOut = 0;
+ 				signal( SIGALRM, MGPMrTimer );
+-				alarm( 300 );	/* time out in 5 minutes */
++				alarm( 300 );
++*/
+ 				answer	= getc(stdin);
+ 				
+ 				switch(answer)
+@@ -156,18 +160,11 @@
+ 				/*
+ 				 * reset alarm, reopen stdin after timeout
+ 				 */
+-				alarm(0);
+ /*
+-				stdinFileDescriptorIdx		= 0;
+-				while( ( stdinFileDescriptor = open( "/dev/tty", O_RDWR ) ) != -1 && stdinFileDescriptorIdx < 10000 )
+-				{
+-					printf( "open( /dev/tty ) retry %d of 100\n", stdinFileDescriptorIdx );
+-					stdinFileDescriptorIdx++;
+-				}
+-				stdin = fdopen( stdinFileDescriptor, "r" );
+-*/
+-				stdin = fdopen( 0, "r" );
++				alarm(0);
++				stdin = fdopen( fileno(stdin), "r" );
+ 				property->timeOut	= 0;
++*/
+ 				MGPMlogAdd( property, "installed ", portName,
+ 					" removed from system after 5 minute timeout:  no longer in ports tree: see /usr/ports/MOVED", " ", " " );
+ 			}
+diff -ruN ../0.3.8_1/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.8_1/libMGPM/src/MGPMrUpdate.c	Mon Nov 21 15:18:23 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Tue Nov 22 08:17:51 2005
+@@ -612,18 +612,21 @@
+ 					if( stinker )
+ 					{
+ 						fprintf( stdout, "OK to remove conflicting port %s Yy/Nn/Aa [Y]\?\n", localProperty.installedPortName );
++/*
+ 						fprintf( stdout, "Will timeout after 5 minutes and default to [Y] if no selection is made\n" );
++*/
+ 						while( fflush( stdout ) );
+ 						if( property->autoConflicts == 0 )
+ 						{
+ 							/*
+ 							 * set timeout default to Y
+ 							 */
++/*							 
+ 							property->timeOut = 0;
+ 							signal( SIGALRM, MGPMrTimer );
+-							alarm( 300 );	/* time out in 5 minutes */
++							alarm( 300 );
++*/
+ 							answer	= getc(stdin);
+-
+ 							switch(answer)
+ 							{
+ 								case KEY_ENTER:
+@@ -694,18 +697,11 @@
+ 							/*
+ 							 * reset alarm, reopen stdin after timeout
+ 							 */
+-							alarm(0);
+ /*
+-							stdinFileDescriptorIdx		= 0;
+-							while( ( stdinFileDescriptor = open( "/dev/tty", O_RDWR ) ) != -1 && stdinFileDescriptorIdx < 10000 )
+-							{
+-								printf( "open( /dev/tty ) retry %d of 100\n", stdinFileDescriptorIdx );
+-								stdinFileDescriptorIdx++;
+-							}
+-							stdin = fdopen( stdinFileDescriptor, "r" );
+-*/
+-							stdin = fdopen( 0, "r" );
++							alarm(0);
++							stdin = fdopen( fileno(stdin), "r" );
+ 							property->timeOut	= 0;
++*/
+ 							MGPMlogAdd( property, "conflicting installed ", localProperty.installedPortName,
+ 								" removed from system after 5 minute timeout: conflicted with ", oldPortName, " " );
+ 						}
