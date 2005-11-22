@@ -825,6 +825,7 @@
     SUBDIR += tdiary-devel
     SUBDIR += tdom
     SUBDIR += thttpd
+    SUBDIR += thttpd-st
     SUBDIR += thumbnail_index
     SUBDIR += tidy
     SUBDIR += tidy-devel
