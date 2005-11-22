@@ -1,186 +1,171 @@
-drweb-qmail/qmail-queue.drweb
-@unexec if [ -f %D/etc/drweb-qmail/addresses.conf ] && cmp -s %D/etc/drweb-qmail/addresses.conf %D/etc/drweb-qmail/addresses.conf-dist; then rm -f %D/etc/drweb-qmail/addresses.conf; fi
-etc/drweb-qmail/addresses.conf-dist
-@exec [ -f %B/addresses.conf ] || cp %B/%f %B/addresses.conf
-@unexec if [ -f %D/etc/drweb-qmail/drweb_qmail.conf ] && cmp -s %D/etc/drweb-qmail/drweb_qmail.conf %D/etc/drweb-qmail/drweb_qmail.conf-dist; then rm -f %D/etc/drweb-qmail/drweb_qmail.conf; fi
-etc/drweb-qmail/drweb_qmail.conf-dist
-@exec [ -f %B/drweb_qmail.conf ] || cp %B/%f %B/drweb_qmail.conf
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/archive-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/archive-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/archive-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/archive-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/archive-admin.msg-dist
-@exec [ -f %B/archive-admin.msg ] || cp %B/%f %B/archive-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/archive-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/archive-sender.msg %D/etc/drweb-qmail/templates/en-jp/qmail/archive-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/archive-sender.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/archive-sender.msg-dist
-@exec [ -f %B/archive-sender.msg ] || cp %B/%f %B/archive-sender.msg.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/cured-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/cured-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/cured-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/cured-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/cured-admin.msg-dist
-@exec [ -f %B/cured-admin.msg ] || cp %B/%f %B/cured-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/cured-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/cured-sender.msg %D/etc/drweb-qmail/templates/en-jp/qmail/cured-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/cured-sender.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/cured-sender.msg-dist
-@exec [ -f %B/cured-sender.msg ] || cp %B/%f %B/cured-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/error-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/error-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/error-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/error-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/error-admin.msg-dist
-@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/error-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/error-sender.msg %D/etc/drweb-qmail/templates/en-jp/qmail/error-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/error-sender.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/error-sender.msg-dist
-@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/license-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/license-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/license-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/license-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/license-admin.msg-dist
-@exec [ -f %B/license-admin.msg ] || cp %B/%f %B/license-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/rule-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/rule-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/rule-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/rule-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/rule-admin.msg-dist
-@exec [ -f %B/rule-admin.msg ] || cp %B/%f %B/rule-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/skip-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/skip-sender.msg %D/etc/drweb-qmail/templates/en-jp/qmail/skip-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/skip-sender.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/skip-sender.msg-dist
-@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/virus-admin.msg %D/etc/drweb-qmail/templates/en-jp/qmail/virus-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-admin.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/virus-admin.msg-dist
-@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-rcpts.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/virus-rcpts.msg %D/etc/drweb-qmail/templates/en-jp/qmail/virus-rcpts.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-rcpts.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/virus-rcpts.msg-dist
-@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-jp/qmail/virus-sender.msg %D/etc/drweb-qmail/templates/en-jp/qmail/virus-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-jp/qmail/virus-sender.msg; fi
-etc/drweb-qmail/templates/en-jp/qmail/virus-sender.msg-dist
-@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/archive-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/archive-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/archive-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/archive-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/archive-admin.msg-dist
-@exec [ -f %B/archive-admin.msg ] || cp %B/%f %B/archive-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/archive-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/archive-sender.msg %D/etc/drweb-qmail/templates/en-pl/qmail/archive-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/archive-sender.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/archive-sender.msg-dist
-@exec [ -f %B/archive-sender.msg ] || cp %B/%f %B/archive-sender.msg.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/cured-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/cured-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/cured-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/cured-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/cured-admin.msg-dist
-@exec [ -f %B/cured-admin.msg ] || cp %B/%f %B/cured-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/cured-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/cured-sender.msg %D/etc/drweb-qmail/templates/en-pl/qmail/cured-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/cured-sender.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/cured-sender.msg-dist
-@exec [ -f %B/cured-sender.msg ] || cp %B/%f %B/cured-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/error-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/error-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/error-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/error-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/error-admin.msg-dist
-@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/error-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/error-sender.msg %D/etc/drweb-qmail/templates/en-pl/qmail/error-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/error-sender.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/error-sender.msg-dist
-@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/license-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/license-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/license-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/license-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/license-admin.msg-dist
-@exec [ -f %B/license-admin.msg ] || cp %B/%f %B/license-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/rule-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/rule-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/rule-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/rule-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/rule-admin.msg-dist
-@exec [ -f %B/rule-admin.msg ] || cp %B/%f %B/rule-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/skip-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/skip-sender.msg %D/etc/drweb-qmail/templates/en-pl/qmail/skip-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/skip-sender.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/skip-sender.msg-dist
-@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/virus-admin.msg %D/etc/drweb-qmail/templates/en-pl/qmail/virus-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-admin.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/virus-admin.msg-dist
-@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-rcpts.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/virus-rcpts.msg %D/etc/drweb-qmail/templates/en-pl/qmail/virus-rcpts.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-rcpts.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/virus-rcpts.msg-dist
-@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-pl/qmail/virus-sender.msg %D/etc/drweb-qmail/templates/en-pl/qmail/virus-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-pl/qmail/virus-sender.msg; fi
-etc/drweb-qmail/templates/en-pl/qmail/virus-sender.msg-dist
-@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/archive-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/archive-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/archive-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/archive-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/archive-admin.msg-dist
-@exec [ -f %B/archive-admin.msg ] || cp %B/%f %B/archive-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/archive-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/archive-sender.msg %D/etc/drweb-qmail/templates/en-ru/qmail/archive-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/archive-sender.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/archive-sender.msg-dist
-@exec [ -f %B/archive-sender.msg ] || cp %B/%f %B/archive-sender.msg.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/cured-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/cured-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/cured-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/cured-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/cured-admin.msg-dist
-@exec [ -f %B/cured-admin.msg ] || cp %B/%f %B/cured-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/cured-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/cured-sender.msg %D/etc/drweb-qmail/templates/en-ru/qmail/cured-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/cured-sender.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/cured-sender.msg-dist
-@exec [ -f %B/cured-sender.msg ] || cp %B/%f %B/cured-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/error-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/error-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/error-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/error-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/error-admin.msg-dist
-@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/error-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/error-sender.msg %D/etc/drweb-qmail/templates/en-ru/qmail/error-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/error-sender.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/error-sender.msg-dist
-@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/license-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/license-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/license-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/license-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/license-admin.msg-dist
-@exec [ -f %B/license-admin.msg ] || cp %B/%f %B/license-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/rule-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/rule-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/rule-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/rule-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/rule-admin.msg-dist
-@exec [ -f %B/rule-admin.msg ] || cp %B/%f %B/rule-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/skip-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/skip-sender.msg %D/etc/drweb-qmail/templates/en-ru/qmail/skip-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/skip-sender.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/skip-sender.msg-dist
-@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/virus-admin.msg %D/etc/drweb-qmail/templates/en-ru/qmail/virus-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-admin.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/virus-admin.msg-dist
-@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-rcpts.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/virus-rcpts.msg %D/etc/drweb-qmail/templates/en-ru/qmail/virus-rcpts.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-rcpts.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/virus-rcpts.msg-dist
-@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en-ru/qmail/virus-sender.msg %D/etc/drweb-qmail/templates/en-ru/qmail/virus-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en-ru/qmail/virus-sender.msg; fi
-etc/drweb-qmail/templates/en-ru/qmail/virus-sender.msg-dist
-@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/archive-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/archive-admin.msg %D/etc/drweb-qmail/templates/en/qmail/archive-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/archive-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/archive-admin.msg-dist
-@exec [ -f %B/archive-admin.msg ] || cp %B/%f %B/archive-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/archive-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/archive-sender.msg %D/etc/drweb-qmail/templates/en/qmail/archive-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/archive-sender.msg; fi
-etc/drweb-qmail/templates/en/qmail/archive-sender.msg-dist
-@exec [ -f %B/archive-sender.msg ] || cp %B/%f %B/archive-sender.msg.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/cured-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/cured-admin.msg %D/etc/drweb-qmail/templates/en/qmail/cured-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/cured-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/cured-admin.msg-dist
-@exec [ -f %B/cured-admin.msg ] || cp %B/%f %B/cured-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/cured-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/cured-sender.msg %D/etc/drweb-qmail/templates/en/qmail/cured-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/cured-sender.msg; fi
-etc/drweb-qmail/templates/en/qmail/cured-sender.msg-dist
-@exec [ -f %B/cured-sender.msg ] || cp %B/%f %B/cured-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/error-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/error-admin.msg %D/etc/drweb-qmail/templates/en/qmail/error-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/error-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/error-admin.msg-dist
-@exec [ -f %B/error-admin.msg ] || cp %B/%f %B/error-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/error-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/error-sender.msg %D/etc/drweb-qmail/templates/en/qmail/error-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/error-sender.msg; fi
-etc/drweb-qmail/templates/en/qmail/error-sender.msg-dist
-@exec [ -f %B/error-sender.msg ] || cp %B/%f %B/error-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/license-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/license-admin.msg %D/etc/drweb-qmail/templates/en/qmail/license-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/license-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/license-admin.msg-dist
-@exec [ -f %B/license-admin.msg ] || cp %B/%f %B/license-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/rule-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/rule-admin.msg %D/etc/drweb-qmail/templates/en/qmail/rule-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/rule-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/rule-admin.msg-dist
-@exec [ -f %B/rule-admin.msg ] || cp %B/%f %B/rule-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/skip-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/skip-sender.msg %D/etc/drweb-qmail/templates/en/qmail/skip-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/skip-sender.msg; fi
-etc/drweb-qmail/templates/en/qmail/skip-sender.msg-dist
-@exec [ -f %B/skip-sender.msg ] || cp %B/%f %B/skip-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/virus-admin.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/virus-admin.msg %D/etc/drweb-qmail/templates/en/qmail/virus-admin.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/virus-admin.msg; fi
-etc/drweb-qmail/templates/en/qmail/virus-admin.msg-dist
-@exec [ -f %B/virus-admin.msg ] || cp %B/%f %B/virus-admin.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/virus-rcpts.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/virus-rcpts.msg %D/etc/drweb-qmail/templates/en/qmail/virus-rcpts.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/virus-rcpts.msg; fi
-etc/drweb-qmail/templates/en/qmail/virus-rcpts.msg-dist
-@exec [ -f %B/virus-rcpts.msg ] || cp %B/%f %B/virus-rcpts.msg
-@unexec if [ -f %D/etc/drweb-qmail/templates/en/qmail/virus-sender.msg ] && cmp -s %D/etc/drweb-qmail/templates/en/qmail/virus-sender.msg %D/etc/drweb-qmail/templates/en/qmail/virus-sender.msg-dist; then rm -f %D/etc/drweb-qmail/templates/en/qmail/virus-sender.msg; fi
-etc/drweb-qmail/templates/en/qmail/virus-sender.msg-dist
-@exec [ -f %B/virus-sender.msg ] || cp %B/%f %B/virus-sender.msg
-@unexec if [ -f %D/etc/drweb-qmail/users.conf ] && cmp -s %D/etc/drweb-qmail/users.conf %D/etc/drweb-qmail/users.conf-dist; then rm -f %D/etc/drweb-qmail/users.conf; fi
-etc/drweb-qmail/users.conf-dist
-@exec [ -f %B/users.conf ] || cp %B/%f %B/users.conf
-@unexec if [ -f %D/etc/drweb-qmail/viruses.conf ] && cmp -s %D/etc/drweb-qmail/viruses.conf %D/etc/drweb-qmail/viruses.conf-dist; then rm -f %D/etc/drweb-qmail/viruses.conf; fi
-etc/drweb-qmail/viruses.conf-dist
-@exec [ -f %B/viruses.conf ] || cp %B/%f %B/viruses.conf
-etc/rc.d/01.drweb-qmail.sh-dist
-%%DOCSDIR%%/qmail/FAQ.rus.txt
-%%DOCSDIR%%/qmail/FAQ.txt
-%%DOCSDIR%%/qmail/addresses_list.rus.txt
-%%DOCSDIR%%/qmail/addresses_list.txt
-%%DOCSDIR%%/qmail/conf_file.rus.txt
-%%DOCSDIR%%/qmail/conf_file.txt
-%%DOCSDIR%%/qmail/notify.rus.txt
-%%DOCSDIR%%/qmail/notify.txt
-%%DOCSDIR%%/qmail/readme
-%%DOCSDIR%%/qmail/readme.rus
-%%DOCSDIR%%/qmail/users_list.rus.txt
-%%DOCSDIR%%/qmail/users_list.txt
-%%DOCSDIR%%/qmail/viruses_list.rus.txt
-%%DOCSDIR%%/qmail/viruses_list.txt
-@dirrm %%DOCSDIR%%/qmail
-@dirrm %%DOCSDIR%%
-@dirrm etc/drweb-qmail/templates/en/qmail
-@dirrm etc/drweb-qmail/templates/en-ru/qmail
-@dirrm etc/drweb-qmail/templates/en-ru
-@dirrm etc/drweb-qmail/templates/en-pl/qmail
-@dirrm etc/drweb-qmail/templates/en-pl
-@dirrm etc/drweb-qmail/templates/en-jp/qmail
-@dirrm etc/drweb-qmail/templates/en-jp
-@dirrm etc/drweb-qmail/templates/en
-@dirrm etc/drweb-qmail/templates
-@dirrm etc/drweb-qmail
-@dirrm drweb-qmail/run
-@dirrm drweb-qmail
+drweb/drweb-qmail
+@unexec if [ -f %D/etc/drweb/addresses.conf ] && cmp -s %D/etc/drweb/addresses.conf %D/etc/drweb/addresses.conf-distr; then rm -f %D/etc/drweb/addresses.conf; fi
+etc/drweb/addresses.conf-distr
+@exec if [ ! -f %D/etc/drweb/addresses.conf ] ; then cp -p %D/%F %B/addresses.conf; fi
+@unexec if [ -f %D/etc/drweb/drweb_qmail.conf ] && cmp -s %D/etc/drweb/drweb_qmail.conf %D/etc/drweb/drweb_qmail.conf-distr; then rm -f %D/etc/drweb/drweb_qmail.conf; fi
+etc/drweb/drweb_qmail.conf-distr
+@exec if [ ! -f %D/etc/drweb/drweb_qmail.conf ] ; then cp -p %D/%F %B/drweb_qmail.conf; fi
+@unexec if [ -f %D/etc/drweb/users.conf ] && cmp -s %D/etc/drweb/users.conf %D/etc/drweb/users.conf-distr; then rm -f %D/etc/drweb/users.conf; fi
+etc/drweb/users.conf-distr
+@exec if [ ! -f %D/etc/drweb/users.conf ] ; then cp -p %D/%F %B/users.conf; fi
+@unexec if [ -f %D/etc/drweb/viruses.conf ] && cmp -s %D/etc/drweb/viruses.conf %D/etc/drweb/viruses.conf-distr; then rm -f %D/etc/drweb/viruses.conf; fi
+etc/drweb/viruses.conf-distr
+@exec if [ ! -f %D/etc/drweb/viruses.conf ] ; then cp -p %D/%F %B/viruses.conf; fi
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_archive.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_archive.msg %D/etc/drweb/templates/en-pl/qmail/admin_archive.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_archive.msg ] ; then cp -p %D/%F %B/admin_archive.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_cured.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_cured.msg %D/etc/drweb/templates/en-pl/qmail/admin_cured.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_cured.msg ] ; then cp -p %D/%F %B/admin_cured.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_error.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_error.msg %D/etc/drweb/templates/en-pl/qmail/admin_error.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_error.msg ] ; then cp -p %D/%F %B/admin_error.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_license.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_license.msg %D/etc/drweb/templates/en-pl/qmail/admin_license.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_license.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_license.msg ] ; then cp -p %D/%F %B/admin_license.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_license.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_malware.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_malware.msg %D/etc/drweb/templates/en-pl/qmail/admin_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_malware.msg ] ; then cp -p %D/%F %B/admin_malware.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_rule.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_rule.msg %D/etc/drweb/templates/en-pl/qmail/admin_rule.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_rule.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_rule.msg ] ; then cp -p %D/%F %B/admin_rule.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_rule.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/admin_virus.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/admin_virus.msg %D/etc/drweb/templates/en-pl/qmail/admin_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/admin_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/admin_virus.msg ] ; then cp -p %D/%F %B/admin_virus.msg; fi
+etc/drweb/templates/en-pl/qmail/admin_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/rcpts_malware.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/rcpts_malware.msg %D/etc/drweb/templates/en-pl/qmail/rcpts_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/rcpts_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/rcpts_malware.msg ] ; then cp -p %D/%F %B/rcpts_malware.msg; fi
+etc/drweb/templates/en-pl/qmail/rcpts_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/rcpts_virus.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/rcpts_virus.msg %D/etc/drweb/templates/en-pl/qmail/rcpts_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/rcpts_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/rcpts_virus.msg ] ; then cp -p %D/%F %B/rcpts_virus.msg; fi
+etc/drweb/templates/en-pl/qmail/rcpts_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_archive.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_archive.msg %D/etc/drweb/templates/en-pl/qmail/sender_archive.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_archive.msg ] ; then cp -p %D/%F %B/sender_archive.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_cured.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_cured.msg %D/etc/drweb/templates/en-pl/qmail/sender_cured.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_cured.msg ] ; then cp -p %D/%F %B/sender_cured.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_error.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_error.msg %D/etc/drweb/templates/en-pl/qmail/sender_error.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_error.msg ] ; then cp -p %D/%F %B/sender_error.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_malware.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_malware.msg %D/etc/drweb/templates/en-pl/qmail/sender_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_malware.msg ] ; then cp -p %D/%F %B/sender_malware.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_skip.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_skip.msg %D/etc/drweb/templates/en-pl/qmail/sender_skip.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_skip.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_skip.msg ] ; then cp -p %D/%F %B/sender_skip.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_skip.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-pl/qmail/sender_virus.msg ] && cmp -s %D/etc/drweb/templates/en-pl/qmail/sender_virus.msg %D/etc/drweb/templates/en-pl/qmail/sender_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-pl/qmail/sender_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-pl/qmail/sender_virus.msg ] ; then cp -p %D/%F %B/sender_virus.msg; fi
+etc/drweb/templates/en-pl/qmail/sender_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_archive.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_archive.msg %D/etc/drweb/templates/en-ru/qmail/admin_archive.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_archive.msg ] ; then cp -p %D/%F %B/admin_archive.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_cured.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_cured.msg %D/etc/drweb/templates/en-ru/qmail/admin_cured.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_cured.msg ] ; then cp -p %D/%F %B/admin_cured.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_error.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_error.msg %D/etc/drweb/templates/en-ru/qmail/admin_error.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_error.msg ] ; then cp -p %D/%F %B/admin_error.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_license.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_license.msg %D/etc/drweb/templates/en-ru/qmail/admin_license.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_license.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_license.msg ] ; then cp -p %D/%F %B/admin_license.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_license.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_malware.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_malware.msg %D/etc/drweb/templates/en-ru/qmail/admin_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_malware.msg ] ; then cp -p %D/%F %B/admin_malware.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_rule.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_rule.msg %D/etc/drweb/templates/en-ru/qmail/admin_rule.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_rule.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_rule.msg ] ; then cp -p %D/%F %B/admin_rule.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_rule.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/admin_virus.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/admin_virus.msg %D/etc/drweb/templates/en-ru/qmail/admin_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/admin_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/admin_virus.msg ] ; then cp -p %D/%F %B/admin_virus.msg; fi
+etc/drweb/templates/en-ru/qmail/admin_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/rcpts_malware.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/rcpts_malware.msg %D/etc/drweb/templates/en-ru/qmail/rcpts_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/rcpts_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/rcpts_malware.msg ] ; then cp -p %D/%F %B/rcpts_malware.msg; fi
+etc/drweb/templates/en-ru/qmail/rcpts_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/rcpts_virus.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/rcpts_virus.msg %D/etc/drweb/templates/en-ru/qmail/rcpts_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/rcpts_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/rcpts_virus.msg ] ; then cp -p %D/%F %B/rcpts_virus.msg; fi
+etc/drweb/templates/en-ru/qmail/rcpts_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_archive.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_archive.msg %D/etc/drweb/templates/en-ru/qmail/sender_archive.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_archive.msg ] ; then cp -p %D/%F %B/sender_archive.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_cured.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_cured.msg %D/etc/drweb/templates/en-ru/qmail/sender_cured.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_cured.msg ] ; then cp -p %D/%F %B/sender_cured.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_error.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_error.msg %D/etc/drweb/templates/en-ru/qmail/sender_error.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_error.msg ] ; then cp -p %D/%F %B/sender_error.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_malware.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_malware.msg %D/etc/drweb/templates/en-ru/qmail/sender_malware.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_malware.msg ] ; then cp -p %D/%F %B/sender_malware.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_skip.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_skip.msg %D/etc/drweb/templates/en-ru/qmail/sender_skip.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_skip.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_skip.msg ] ; then cp -p %D/%F %B/sender_skip.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_skip.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en-ru/qmail/sender_virus.msg ] && cmp -s %D/etc/drweb/templates/en-ru/qmail/sender_virus.msg %D/etc/drweb/templates/en-ru/qmail/sender_virus.msg-distr; then rm -f %D/etc/drweb/templates/en-ru/qmail/sender_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en-ru/qmail/sender_virus.msg ] ; then cp -p %D/%F %B/sender_virus.msg; fi
+etc/drweb/templates/en-ru/qmail/sender_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_archive.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_archive.msg %D/etc/drweb/templates/en/qmail/admin_archive.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_archive.msg ] ; then cp -p %D/%F %B/admin_archive.msg; fi
+etc/drweb/templates/en/qmail/admin_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_cured.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_cured.msg %D/etc/drweb/templates/en/qmail/admin_cured.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_cured.msg ] ; then cp -p %D/%F %B/admin_cured.msg; fi
+etc/drweb/templates/en/qmail/admin_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_error.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_error.msg %D/etc/drweb/templates/en/qmail/admin_error.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_error.msg ] ; then cp -p %D/%F %B/admin_error.msg; fi
+etc/drweb/templates/en/qmail/admin_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_license.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_license.msg %D/etc/drweb/templates/en/qmail/admin_license.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_license.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_license.msg ] ; then cp -p %D/%F %B/admin_license.msg; fi
+etc/drweb/templates/en/qmail/admin_license.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_malware.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_malware.msg %D/etc/drweb/templates/en/qmail/admin_malware.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_malware.msg ] ; then cp -p %D/%F %B/admin_malware.msg; fi
+etc/drweb/templates/en/qmail/admin_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_rule.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_rule.msg %D/etc/drweb/templates/en/qmail/admin_rule.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_rule.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_rule.msg ] ; then cp -p %D/%F %B/admin_rule.msg; fi
+etc/drweb/templates/en/qmail/admin_rule.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/admin_virus.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/admin_virus.msg %D/etc/drweb/templates/en/qmail/admin_virus.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/admin_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/admin_virus.msg ] ; then cp -p %D/%F %B/admin_virus.msg; fi
+etc/drweb/templates/en/qmail/admin_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/rcpts_malware.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/rcpts_malware.msg %D/etc/drweb/templates/en/qmail/rcpts_malware.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/rcpts_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/rcpts_malware.msg ] ; then cp -p %D/%F %B/rcpts_malware.msg; fi
+etc/drweb/templates/en/qmail/rcpts_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/rcpts_virus.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/rcpts_virus.msg %D/etc/drweb/templates/en/qmail/rcpts_virus.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/rcpts_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/rcpts_virus.msg ] ; then cp -p %D/%F %B/rcpts_virus.msg; fi
+etc/drweb/templates/en/qmail/rcpts_virus.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_archive.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_archive.msg %D/etc/drweb/templates/en/qmail/sender_archive.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_archive.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_archive.msg ] ; then cp -p %D/%F %B/sender_archive.msg; fi
+etc/drweb/templates/en/qmail/sender_archive.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_cured.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_cured.msg %D/etc/drweb/templates/en/qmail/sender_cured.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_cured.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_cured.msg ] ; then cp -p %D/%F %B/sender_cured.msg; fi
+etc/drweb/templates/en/qmail/sender_cured.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_error.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_error.msg %D/etc/drweb/templates/en/qmail/sender_error.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_error.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_error.msg ] ; then cp -p %D/%F %B/sender_error.msg; fi
+etc/drweb/templates/en/qmail/sender_error.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_malware.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_malware.msg %D/etc/drweb/templates/en/qmail/sender_malware.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_malware.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_malware.msg ] ; then cp -p %D/%F %B/sender_malware.msg; fi
+etc/drweb/templates/en/qmail/sender_malware.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_skip.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_skip.msg %D/etc/drweb/templates/en/qmail/sender_skip.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_skip.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_skip.msg ] ; then cp -p %D/%F %B/sender_skip.msg; fi
+etc/drweb/templates/en/qmail/sender_skip.msg-distr
+@unexec if [ -f %D/etc/drweb/templates/en/qmail/sender_virus.msg ] && cmp -s %D/etc/drweb/templates/en/qmail/sender_virus.msg %D/etc/drweb/templates/en/qmail/sender_virus.msg-distr; then rm -f %D/etc/drweb/templates/en/qmail/sender_virus.msg; fi
+@exec if [ ! -f %D/etc/drweb/templates/en/qmail/sender_virus.msg ] ; then cp -p %D/%F %B/sender_virus.msg; fi
+etc/drweb/templates/en/qmail/sender_virus.msg-distr
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rus
+%%PORTDOCS%%%%DOCSDIR%%/addresses_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/addresses_list.txt
+%%PORTDOCS%%%%DOCSDIR%%/conf_file.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/conf_file.txt
+%%PORTDOCS%%%%DOCSDIR%%/notify.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/notify.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%%%DOCSDIR%%/readme.rus
+%%PORTDOCS%%%%DOCSDIR%%/users_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/users_list.txt
+%%PORTDOCS%%%%DOCSDIR%%/viruses_list.rus.txt
+%%PORTDOCS%%%%DOCSDIR%%/viruses_list.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/drweb/templates/en/qmail
+@dirrm etc/drweb/templates/en
+@dirrm etc/drweb/templates/en-ru/qmail
+@dirrm etc/drweb/templates/en-ru
+@dirrm etc/drweb/templates/en-pl/qmail
+@dirrm etc/drweb/templates/en-pl
+@dirrm etc/drweb/templates
