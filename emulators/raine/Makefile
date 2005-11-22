@@ -15,7 +15,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro \
+LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
 		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
