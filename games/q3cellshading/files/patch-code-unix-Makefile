@@ -1,5 +1,5 @@
---- code/unix/Makefile	Sun May  5 12:21:10 2002
-+++ ../../work/quake3-1.32b/code/unix/Makefile	Sun Aug 28 23:16:03 2005
+--- code/unix/Makefile.orig	Sun May  5 07:21:10 2002
++++ code/unix/Makefile	Sun Nov 20 18:48:48 2005
 @@ -136,7 +136,7 @@
      ifeq ($(ARCH),ppc)
        NEWPGCC=/loki/global/ppc/bin/gcc
