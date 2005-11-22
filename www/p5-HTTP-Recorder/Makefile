@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	HTTP-Recorder
-PORTVERSION=	0.03.01
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LE/LEIRA
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Record interaction with websites
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
+		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/HTTP/Request/Params.pm:${PORTSDIR}/www/p5-HTTP-Request-Params
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
