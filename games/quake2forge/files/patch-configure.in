@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Mar 16 11:07:38 2004
-+++ configure.in	Fri Mar  4 14:30:46 2005
+--- configure.in.orig	Tue Mar 16 07:07:38 2004
++++ configure.in	Wed Sep 28 20:52:44 2005
 @@ -109,6 +109,7 @@
  	# test for the library first, for people who may have the libs
  	# installed but no headers
@@ -33,3 +33,13 @@
  		AC_SUBST(OPENGL_CFLAGS)
  		AC_SUBST(OPENGL_LIBS)
  	else
+@@ -779,9 +778,6 @@
+ 	src/ctf/Makefile
+ 	src/xatrix/Makefile
+ 	src/rogue/Makefile
+-	data/Makefile
+-	data/pixmaps/Makefile
+-	data/baseq2/Makefile
+ 	docs/Makefile
+ 	docs/ctf/Makefile
+ 	quake2.spec
