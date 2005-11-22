@@ -12040,6 +12040,7 @@ throttle	ports/sysutils/throttle
 throttled	ports/net/throttled
 thrulay		ports/benchmarks/thrulay
 thttpd		ports/www/thttpd
+thttpd-st	ports/www/thttpd-st
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
 thunderbird	ports/mail/thunderbird
