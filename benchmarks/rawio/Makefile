@@ -10,7 +10,8 @@ PORTNAME=	rawio
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.lemis.com/pub/
+MASTER_SITES=	ftp://ftp.lemis.com/pub/ \
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Test performance of low-level storage devices
