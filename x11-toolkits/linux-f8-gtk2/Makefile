@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.4.14
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX} \
 		http://distro.ibiblio.org/pub/linux/distributions/fedora/linux/core/${SUBDIR}/ \
