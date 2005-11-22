@@ -1,5 +1,82 @@
---- usr/local/etc/drweb/drweb_smf.conf.def	Mon Sep 26 18:51:24 2005
-+++ usr/local/etc/drweb/drweb_smf.conf	Mon Nov  7 21:44:51 2005
+--- usr/local/etc/drweb/drweb_smf.conf.orig	Mon Sep 26 18:51:24 2005
++++ usr/local/etc/drweb/drweb_smf.conf	Mon Nov 21 14:39:27 2005
+@@ -386,9 +386,9 @@
+ RcptsNotify = yes
+ 
+ # Files with notification templates
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
+-RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-virus.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admih-virus.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts-virus.msg
+ 
+ [MalwareNotifications]
+ # Enable or disable sending notifications to persons (yes/no)
+@@ -397,21 +397,21 @@
+ RcptsNotify = yes
+ 
+ # Files with notification templates
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-admin.msg
+-RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-rcpts.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-malware.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-malware.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts-malware.msg
+ 
+ [CuredNotifications]
+ SenderNotify = yes
+ AdminNotify = yes
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-cured.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-cured.msg
+ 
+ [SkipNotifications]
+ SenderNotify = yes
+ AdminNotify = no
+ RcptsNotify = no
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-skip.msg
+ AdminTemplate = 
+ RcptsTemplate = 
+ 
+@@ -419,16 +419,16 @@
+ SenderNotify = yes
+ AdminNotify = yes
+ RcptsNotify = no
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-archive.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-archive.msg
+ RcptsTemplate = 
+ 
+ [ErrorNotifications]
+ SenderNotify = yes
+ AdminNotify = yes
+ RcptsNotify = no
+-SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-sender.msg
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-admin.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-error.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-error.msg
+ RcptsTemplate = 
+ 
+ [RuleFilterNotifications]
+@@ -436,12 +436,12 @@
+ AdminNotify = yes
+ RcptsNotify = no
+ SenderTemplate = 
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rule-admin.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-rule.msg
+ RcptsTemplate = 
+ 
+ [LicenseLimitNotifications]
+ AdminNotify = yes
+-AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/license-admin.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-license.msg
+ 
+ ###################
+ # Logging section #
 @@ -480,8 +480,8 @@
  
  # Definition of Sendmail Milter Address according to sendmail.cf 
