@@ -1,0 +1,14 @@
+bin/gngeo
+%%DATADIR%%/cursor.bmp
+%%DATADIR%%/gui_font.bmp
+%%DATADIR%%/gui_font2.bmp
+%%DATADIR%%/little_font.bmp
+%%DATADIR%%/neo-geo.rom
+%%DATADIR%%/ng-lo.rom
+%%DATADIR%%/ng-sfix.rom
+%%DATADIR%%/ng-sm1.rom
+%%DATADIR%%/romrc
+%%DATADIR%%/sb_arrows.bmp
+%%EXAMPLESDIR%%/gngeorc
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%

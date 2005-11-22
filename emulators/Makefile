@@ -31,6 +31,7 @@
     SUBDIR += generator-cbiere
     SUBDIR += gens
     SUBDIR += gngb
+    SUBDIR += gngeo
     SUBDIR += gnuboy
     SUBDIR += grustibus
     SUBDIR += gsnes9x
