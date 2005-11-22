@@ -10310,6 +10310,7 @@ py-scipy	ports/science/py-scipy
 py-sdl_mixer	ports/audio/py-sdl_mixer
 py-sendfile	ports/devel/py-sendfile
 py-serial	ports/comms/py-serial
+py-setuptools	ports/devel/py-setuptools
 py-sgflib	ports/games/py-sgflib
 py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
