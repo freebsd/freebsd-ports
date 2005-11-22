@@ -25,7 +25,6 @@ share/applications/emelfm2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LGPL
 %%PORTDOCS%%%%DOCSDIR%%/PLUGINS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ROADMAP
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
@@ -35,13 +34,8 @@ share/pixmaps/emelfm2/apply_all_48.png
 share/pixmaps/emelfm2/bookmark_48.png
 share/pixmaps/emelfm2/cl_clear_48.png
 share/pixmaps/emelfm2/copy_as_48.png
-share/pixmaps/emelfm2/emelfm2_1_24.png
-share/pixmaps/emelfm2/emelfm2_1_32.png
-share/pixmaps/emelfm2/emelfm2_1_48.png
+share/pixmaps/emelfm2/dragsel.png
 share/pixmaps/emelfm2/emelfm2_24.png
-share/pixmaps/emelfm2/emelfm2_2_24.png
-share/pixmaps/emelfm2/emelfm2_2_32.png
-share/pixmaps/emelfm2/emelfm2_2_48.png
 share/pixmaps/emelfm2/emelfm2_32.png
 share/pixmaps/emelfm2/emelfm2_48.png
 share/pixmaps/emelfm2/filter_48.png
