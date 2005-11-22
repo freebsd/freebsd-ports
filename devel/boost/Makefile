@@ -45,6 +45,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
+# Check if our origin is devel/boost-gcc3 and stop for FreeBSD >= 5
+.if defined (BOOST_GCC3_PORT) && (${OSVERSION} >= 500000)
+IGNORE=		from devel/boost-gcc3 is intended for FreeBSD 4.x only. Please use devel/boost instead
+.endif
+
 .if !defined(WITH_PYTHON) && defined(WITH_PYSTE)
 WITH_PYTHON=	IMPLIED_BY_PYSTE
 .endif
