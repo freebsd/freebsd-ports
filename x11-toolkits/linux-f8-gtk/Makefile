@@ -58,7 +58,7 @@ RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
 .endif
 DBPATH=		/var/lib/rpm
 RPMFLAGS+=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-		--nodeps --replacepkgs
+		--nodeps --replacepkgs --oldpackage
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
 do-install:
