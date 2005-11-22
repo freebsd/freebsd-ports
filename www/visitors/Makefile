@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	visitors
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
+DISTNAME=	${PORTNAME}-0.61
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Very fast and easy to use web log analyzer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_0.61
 
 USE_REINPLACE=	yes
 
