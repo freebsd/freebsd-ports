@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/HTTP/Request/Params.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/Params/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request/Params
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Request 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTTP/Request 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
