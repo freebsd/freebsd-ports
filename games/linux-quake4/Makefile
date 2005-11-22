@@ -9,7 +9,9 @@ PORTNAME=	quake4
 PORTVERSION=	1.0.5
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake4/linux/
+MASTER_SITES=	ftp://3dgr35g:mr23g239a@3dgamers.mirror.internode.on.net/3dgamers/games/quake4/ \
+		ftp://ftp.idsoftware.com/idstuff/quake4/linux/ \
+		http://bsd.gubkin.ru/myports/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
