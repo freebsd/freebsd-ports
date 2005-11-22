@@ -2,8 +2,8 @@
 
 all:
 	(cd tqsllib;make)
-	(cd tqsllib-apps;make)
+	(cd TrustedQSL-1.11;make)
 
 install:
 	(cd tqsllib;make install)
-	(cd tqsllib-apps;make install)
+	(cd TrustedQSL-1.11;make install)

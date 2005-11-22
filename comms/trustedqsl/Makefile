@@ -6,36 +6,44 @@
 #
 
 PORTNAME=	trustedqsl
-PORTVERSION=	1.10
-PORTREVISION=	4
+PORTVERSION=	1.11
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trustedqsl
-DISTFILES=	tqsllib-1.4.tar.gz TrustedQSL-1.10.tar.gz
+DISTFILES=	tqsllib-1.4.tar.gz TrustedQSL-1.11.tar.gz
 
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+		wx_base-2.6:${PORTSDIR}/x11-toolkits/wxgtk26
 
+USE_PERL5=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	INCDIR="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/Makefile  ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.tqsllib  ${WRKSRC}/tqsllib/Makefile
-	${CP} ${FILESDIR}/Makefile.tqsllib-apps  ${WRKSRC}/tqsllib-apps/Makefile
+	${CP} ${FILESDIR}/Makefile.TrustedQSL-1.11  ${WRKSRC}/TrustedQSL-1.11/Makefile
+	${CP} ${FILESDIR}/sysconfig.h.tqsllib  ${WRKSRC}/tqsllib/sysconfig.h
+	${CP} ${FILESDIR}/sysconfig.h.TrustedQSL-1.11  ${WRKSRC}/TrustedQSL-1.11/sysconfig.h
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
-	@for file in ${EXTRACT_ONLY}; do  \
-		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+	@for f in ${EXTRACT_ONLY}; do  \
+		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
 		then \
 			exit 1; \
 		fi \
@@ -45,8 +53,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tqslcert
 	@${MKDIR} ${PREFIX}/share/doc/tqslapp
-	@${CP} ${WRKSRC}/tqsllib-apps/tqslcert_help/* ${PREFIX}/share/doc/tqslcert/
-	@${CP} ${WRKSRC}/tqsllib-apps/tqsl_help/* ${PREFIX}/share/doc/tqslapp/
+	@${CP} ${WRKSRC}/TrustedQSL-1.11/help/tqslcert/* ${PREFIX}/share/doc/tqslcert/
+	@${CP} ${WRKSRC}/TrustedQSL-1.11/help/tqslapp/* ${PREFIX}/share/doc/tqslapp/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
