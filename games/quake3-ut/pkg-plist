@@ -1,7 +1,22 @@
-%%PORTDOCS%%%%Q3DIR%%Urban Terror 3.0.lnk
-%%PORTDOCS%%%%Q3DIR%%overview.txt
-%%PORTDOCS%%%%Q3DIR%%q3ut.ico
-%%PORTDOCS%%%%Q3DIR%%radio commands.txt
-%%PORTDOCS%%%%Q3DIR%%readme.txt
-%%Q3DIR%%zQ3UT3.pk3
-@dirrm %%Q3DIR%%
+%%PORTDOCS%%%%DOCSDIR%%/beta3.html
+%%PORTDOCS%%%%DOCSDIR%%/radio_commands.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme33.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme34.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme35.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme36.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme37.txt
+%%DATADIR%%/description.txt
+%%DATADIR%%/ut_campus.pk3
+%%DATADIR%%/ut_dville-v2.pk3
+%%DATADIR%%/ut_ftdicks.pk3
+%%DATADIR%%/zQ3UT3.pk3
+%%DATADIR%%/zQ3UT31.pk3
+%%DATADIR%%/zQ3UT32.pk3
+%%DATADIR%%/zQ3UT33.pk3
+%%DATADIR%%/zQ3UT34.pk3
+%%DATADIR%%/zQ3UT35.pk3
+%%DATADIR%%/zQ3UT36.pk3
+%%DATADIR%%/zQ3UT37.pk3
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

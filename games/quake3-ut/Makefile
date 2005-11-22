@@ -6,20 +6,30 @@
 #
 
 PORTNAME=	ut
-PORTVERSION=	3.0
-MASTER_SITES=	http://gamefiles.blueyonder.co.uk/blueyondergames/quake3arena/modifications/urbanterror/patches/win32/ \
-		ftp://www.playdedicated.com/pub/sid/quake3/ \
-		http://ftp.club-internet.fr/pub/games/nofrag/quake3/mods/urbanterror/patches/ \
-		ftp://ftp.edome.net/online/clientit/ \
-		http://clanhosted.clix.pt/files/clanhosted/quake3/ut/
-DISTNAME=	urbanterror3
+PORTVERSION=	3.7
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/
+DISTNAME=	urbanTerror${PORTVERSION:S/.//}_full
 
-COMMENT=	Quake III Arena Mod: Urban Terror for Linux
+MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Quake III Arena Mod: Urban Terror
 
-NO_PACKAGE=	"Distfile is >256MB; define FORCE_PACKAGE if you really want this."
+USE_ZIP=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-WRKSRC=		${WRKDIR}/q3ut3
+do-install:
+	@${MKDIR} ${DATADIR}
+.for f in *.pk3 description.txt
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in beta3.html radio_commands.txt readme*.txt
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
-Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
+.include "${.CURDIR}/../quake3-data/Makefile.include"
 
-.include "${Q3_MOD_MASTER}/Makefile"
+.include <bsd.port.mk>
