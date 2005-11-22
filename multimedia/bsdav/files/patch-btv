@@ -1,0 +1,26 @@
+--- btv.dist	Thu Aug 11 08:37:38 2005
++++ btv	Sat Nov  5 22:44:15 2005
+@@ -20,7 +20,7 @@
+ : ${CHANSET=nabcst}
+ 
+ 
+-function usage
++usage()
+ {
+ 	echo "Usage: tv [-vm] [-c channel] [-d directory] [-n norm]"
+ 	echo "          [-r command]"
+@@ -34,8 +34,13 @@
+ V=""
+ RET=0
+ 
++args=`getopt c:d:mn:r:v $*`
++if [ $? -ne 0 ]
++then
++	usage
++fi
++set -- ${args}
+ 
+-set -- `getopt c:d:mn:r:v $*` || usage
+ 
+ for i
+ do

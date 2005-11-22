@@ -1,9 +1,9 @@
 bin/audiorec
-bin/avplay
-bin/bktrplay
+%%X11%%bin/avplay
+%%X11%%bin/bktrplay
 bin/bktrrec
 bin/bsdavdemux
-bin/bsdavplay
+%%X11%%bin/bsdavplay
 bin/bsdavrec
 bin/btv
 bin/tunerctl
