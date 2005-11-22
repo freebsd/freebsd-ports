@@ -8,7 +8,8 @@
 PORTNAME=	bzip
 PORTVERSION=	0.21
 CATEGORIES=	archivers
-MASTER_SITES=	http://custom.lab.unb.br/pub/compression/bzip/
+MASTER_SITES=	http://custom.lab.unb.br/pub/compression/bzip/ \
+		http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A block-sorting file compressor
