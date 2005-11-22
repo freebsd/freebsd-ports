@@ -1,6 +1,8 @@
-This package contains all of the items you'll need to run a
-Quake III Arena dedicated server with OSP Tourney DM/CA/CTF
-mod under FreeBSD with Linux emulation.
+OSP Tourney DM is designed to facilitate competitive, yet flexible, match
+play. This mod simply makes it easier and more convenient for players and
+admins alike to ehance the Quake3 experience. There have absolutely been *NO*
+changes to the core gameplay or its dynamics -- its all default Quake3 in this
+regard.
 
 WWW: http://www.orangesmoothie.org/
 

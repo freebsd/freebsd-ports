@@ -7,12 +7,34 @@
 
 PORTNAME=	osp
 PORTVERSION=	1.03a
-MASTER_SITES=	http://files.l33tgames.com/files/q3/mods/osp/ \
-		http://www.flatlands.ch/filebase/mods/left/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	osp-Quake3-${PORTVERSION}_full
 
-COMMENT=	Quake III Arena Mod: OSP Tourney DM/CA/CTF for Linux
+MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Quake III Arena Mod: OSP Tourney DM/CA/CTF
 
-Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include "${Q3_MOD_MASTER}/Makefile"
+USE_ZIP=	yes
+NO_BUILD=	yes
+
+do-install:
+	@${MKDIR} ${DATADIR}
+.for f in *.cfg *.pk3 description.txt filters.txt
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
+.for d in cfg-GfxExample locs vm
+	@${CP} -R ${WRKSRC}/${d} ${DATADIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Docs/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} "${WRKSRC}/OSP Match Quick Start.txt" \
+		${DOCSDIR}/osp-match-quick-start.txt
+.endif
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
+
+.include <bsd.port.mk>
