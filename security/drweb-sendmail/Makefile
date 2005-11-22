@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb-sendmail
 PORTVERSION=	4.33
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/411/:f411 \
 		ftp://ftp.drweb.ru/pub/drweb/unix/FreeBSD/54/:f54 \
