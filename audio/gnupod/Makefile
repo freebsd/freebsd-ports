@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.98
+PORTVERSION=	0.98.3
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://savannah.gnu.org/download/gnupod/ \
 		http://blinkenlights.ch/gnupod-dist/stable/
@@ -35,6 +35,12 @@ NO_BUILD=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	gnupod only support perl 5.8 or above
+.endif
+
 .ifndef(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
@@ -49,4 +55,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipod.svg ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
