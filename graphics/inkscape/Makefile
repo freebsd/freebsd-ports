@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.42.2
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,16 +20,17 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libxslt
+WANT_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack libxslt
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4
-CONFIGURE_ARGS=	--with-popt \
-		--with-gnome-print
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LOCALBASE} ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-popt
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		inkscape.1 inkview.1
 
@@ -38,6 +38,19 @@ MAN1=		inkscape.1 inkview.1
 
 .if ${OSVERSION} < 500000
 IGNORE=	Requires symbols not present on 4.X
+.endif
+
+.if ${HAVE_GNOME:Mlibgnomeprint} != ""
+USE_GNOME+=		libgnomeprint
+CONFIGURE_ARGS+=	--with-gnome-print
+.else
+CONFIGURE_ARGS+=	--without-gnome-print
+.endif
+.if ${HAVE_GNOME:Mgnomevfs2} != ""
+USE_GNOME+=		gnomevfs2
+CONFIGURE_ARGS+=	--with-gnome-vfs
+.else
+CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
 
 patch-autotools::
