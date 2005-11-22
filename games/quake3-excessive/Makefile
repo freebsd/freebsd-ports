@@ -7,12 +7,34 @@
 
 PORTNAME=	excessive
 PORTVERSION=	003
+CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pat
 DISTNAME=	${PORTNAME}_q3_server_${PORTVERSION}
 
-COMMENT=	Quake III Arena Excessive Mod for Linux
+MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Quake III Arena Mod: Excessive
 
-Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include "${Q3_MOD_MASTER}/Makefile"
+USE_ZIP=	yes
+NO_BUILD=	yes
+
+post-extract:
+	@(cd ${WRKSRC}; ${UNZIP_CMD} description.pk3)
+
+do-install:
+	@${MKDIR} ${DATADIR}
+.for f in description.txt motd.cfg maplist.cfg
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
+	@${MKDIR} ${DATADIR}/vm
+	@${INSTALL_DATA} ${WRKSRC}/vm/qagame.qvm ${DATADIR}/vm
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
+
+.include <bsd.port.mk>

@@ -1,7 +1,8 @@
-%%Q3DIR%%description.pk3
-%%Q3DIR%%maplist.cfg
-%%Q3DIR%%motd.cfg
-%%Q3DIR%%readme.txt
-%%Q3DIR%%vm/qagame.qvm
-@dirrm %%Q3DIR%%vm
-@dirrm %%Q3DIR%%
+%%DATADIR%%/description.txt
+%%DATADIR%%/maplist.cfg
+%%DATADIR%%/motd.cfg
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%DATADIR%%/vm/qagame.qvm
+@dirrm %%DATADIR%%/vm
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
