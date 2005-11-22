@@ -93,6 +93,7 @@
     SUBDIR += psi
     SUBDIR += py-jabber
     SUBDIR += py-twistedWords
+    SUBDIR += ruby-xmpp4r
     SUBDIR += simicq
     SUBDIR += sulci
     SUBDIR += tik
