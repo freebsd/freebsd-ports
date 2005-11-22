@@ -1,19 +1,9 @@
-===============================================
+============================================================
 
-Install pak0.pak, models, skins and additional
-stuff in ${PREFIX}/share/quake2
+If you experience problems with mouse movements when running
+in GLX-Mode, try setting in_dgamouse to 1.
 
-To play the official Quake 2 levels, you have
-to copy/link pak0.pak, players and video from
-Install/Data/baseq2 on the Quake 2 CD to the
-${PREFIX}/share/quake2/baseq2 directory.
+ATTENTION: The Quake2Forge binary now gets installed as q2f
+instead of quake2 to avoid conflicting with games/quake2lnx
 
-If you experience problems with mouse move-
-ments when running in GLX-Mode, try setting
-in_dgamouse to 1.
-
-ATTENTION: The Quake2Forge binary now gets 
-installed as q2f instead of quake2 to avoid
-conflicting with games/quake2lnx
-
-===============================================
+============================================================

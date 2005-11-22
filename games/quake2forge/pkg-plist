@@ -1,54 +1,49 @@
 bin/q2f
-%%SVGA%%lib/quake2/ref_soft.so
-%%SDL%%lib/quake2/ref_softsdl.so
-%%SDLGL%%lib/quake2/ref_sdlgl.so
-%%GL%%lib/quake2/ref_glx.so
-%%SVGA%%%%GL%%lib/quake2/ref_tdfx.so
-%%X11%%lib/quake2/ref_softx.so
-lib/quake2/snd_oss.so
-%%SDL%%lib/quake2/snd_sdl.so
-%%AO%%lib/quake2/snd_ao.so
-lib/quake2/baseq2/game.so
-lib/quake2/ctf/game.so
-%%PORTDOCS%%share/doc/quake2/README.axp
-%%PORTDOCS%%share/doc/quake2/README.install
-%%PORTDOCS%%share/doc/quake2/README.joystick
-%%PORTDOCS%%share/doc/quake2/README.linux
-%%PORTDOCS%%share/doc/quake2/README.sdl
-%%PORTDOCS%%share/doc/quake2/README.solaris
-%%PORTDOCS%%share/doc/quake2/README.Solaris
-%%PORTDOCS%%share/doc/quake2/README.sound
-%%PORTDOCS%%share/doc/quake2/TODO-ctf.txt
-%%PORTDOCS%%share/doc/quake2/changes-ctf.txt
-%%PORTDOCS%%share/doc/quake2/changes.txt
-%%PORTDOCS%%share/doc/quake2/joystick.txt
-%%PORTDOCS%%share/doc/quake2/readme.txt
-%%PORTDOCS%%share/doc/quake2/ctf/admin.gif
-%%PORTDOCS%%share/doc/quake2/ctf/adminset.gif
-%%PORTDOCS%%share/doc/quake2/ctf/automac.gif
-%%PORTDOCS%%share/doc/quake2/ctf/ghost.jpg
-%%PORTDOCS%%share/doc/quake2/ctf/grapple.jpg
-%%PORTDOCS%%share/doc/quake2/ctf/layout.jpg
-%%PORTDOCS%%share/doc/quake2/ctf/mainctf_back.jpg
-%%PORTDOCS%%share/doc/quake2/ctf/menu.gif
-%%PORTDOCS%%share/doc/quake2/ctf/q2ctf.html
-%%PORTDOCS%%share/doc/quake2/ctf/say_team.gif
-%%PORTDOCS%%share/doc/quake2/ctf/stats.jpg
-%%PORTDOCS%%share/doc/quake2/ctf/tech1.gif
-%%PORTDOCS%%share/doc/quake2/ctf/tech2.gif
-%%PORTDOCS%%share/doc/quake2/ctf/tech3.gif
-%%PORTDOCS%%share/doc/quake2/ctf/tech4.gif
-%%PORTDOCS%%@dirrm share/doc/quake2/ctf
-%%PORTDOCS%%@dirrm share/doc/quake2
-@dirrm lib/quake2/baseq2
-@dirrm lib/quake2/ctf
-@dirrm lib/quake2
-@unexec rm %D/share/quake2/baseq2/config.cfg 2>/dev/null || true
-@unexec rm %D/share/quake2/ctf/config.cfg 2>/dev/null || true
-@unexec rm %D/share/quake2/rogue/config.cfg 2>/dev/null || true
-@unexec rm %D/share/quake2/xatrix/config.cfg 2>/dev/null || true
-@unexec rmdir %D/share/quake2/baseq2 2>/dev/null || true
-@unexec rmdir %D/share/quake2/ctf 2>/dev/null || true
-@unexec rmdir %D/share/quake2/rogue 2>/dev/null || true
-@unexec rmdir %D/share/quake2/xatrix 2>/dev/null || true
-@unexec rmdir %D/share/quake2 2>/dev/null || true
+lib/quake2forge/baseq2/game.so
+lib/quake2forge/ctf/game.so
+%%ROGUE%%lib/quake2forge/rogue/game.so
+%%XATRIX%%lib/quake2forge/xatrix/game.so
+%%GL%%lib/quake2forge/ref_glx.so
+%%SDLGL%%lib/quake2forge/ref_sdlgl.so
+%%SVGA%%lib/quake2forge/ref_soft.so
+%%SDL%%lib/quake2forge/ref_softsdl.so
+%%X11%%lib/quake2forge/ref_softx.so
+%%SVGA%%%%GL%%lib/quake2forge/ref_tdfx.so
+%%AO%%lib/quake2forge/snd_ao.so
+lib/quake2forge/snd_oss.so
+%%SDL%%lib/quake2forge/snd_sdl.so
+%%PORTDOCS%%%%DOCSDIR%%/README.Solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.axp
+%%PORTDOCS%%%%DOCSDIR%%/README.install
+%%PORTDOCS%%%%DOCSDIR%%/README.joystick
+%%PORTDOCS%%%%DOCSDIR%%/README.linux
+%%PORTDOCS%%%%DOCSDIR%%/README.sdl
+%%PORTDOCS%%%%DOCSDIR%%/README.solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.sound
+%%PORTDOCS%%%%DOCSDIR%%/TODO-ctf.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes-ctf.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/ctf/admin.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/adminset.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/automac.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/ghost.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ctf/grapple.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ctf/layout.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ctf/mainctf_back.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ctf/menu.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/q2ctf.html
+%%PORTDOCS%%%%DOCSDIR%%/ctf/say_team.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/stats.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ctf/tech1.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/tech2.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/tech3.gif
+%%PORTDOCS%%%%DOCSDIR%%/ctf/tech4.gif
+%%PORTDOCS%%%%DOCSDIR%%/joystick.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ctf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/quake2forge/ctf
+@dirrm lib/quake2forge/baseq2
+%%ROGUE%%@dirrm lib/quake2forge/rogue
+%%XATRIX%%@dirrm lib/quake2forge/xatrix
+@dirrm lib/quake2forge
