@@ -8,7 +8,7 @@
 PORTNAME=	sceptre
 PORTVERSION=	00.317
 CATEGORIES=	cad
-MASTER_SITES=	ftp://novilux.fh-friedberg.de/pub/sceptre/
+MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	SCEPTRE is a general purpose circuit analysis program
