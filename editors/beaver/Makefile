@@ -9,7 +9,8 @@ PORTNAME=		beaver
 PORTVERSION=		0.3.1
 PORTREVISION=		8
 CATEGORIES=		editors
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
+			http://gnu.rtin.bz/ftp/savannah/files/beaver/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		jylefort@FreeBSD.org
