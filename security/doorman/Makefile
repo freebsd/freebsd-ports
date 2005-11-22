@@ -7,6 +7,7 @@
 
 PORTNAME=	doorman
 PORTVERSION=	0.81
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	doorman
@@ -47,7 +48,7 @@ pre-patch:
 
 post-configure:
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's,-lpcap,-L${LOCALBASE}/lib/libpcap.a,' \
+	@${REINPLACE_CMD} -e 's,-lpcap,${LOCALBASE}/lib/libpcap.a,' \
 		${WRKSRC}/Makefile
 .endif
 
