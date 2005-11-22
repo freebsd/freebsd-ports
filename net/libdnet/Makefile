@@ -10,32 +10,46 @@ PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+.if defined(BUILD_PYTHON_MODULE)
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+.endif
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	A simple interface to low level networking routines
+COMMENT?=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 
-.if defined(WITH_PYTHON)
+SLAVE_DIRS=	net/py-libdnet
+
+.if defined(BUILD_PYTHON_MODULE)
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
-PLIST_FILES+=	lib/${PYTHON_VERSION}/site-packages/dnet.so
+INSTALL_WRKSRC=	${BUILD_WRKSRC}/python
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/dnet.so
+PLIST_SUB+=	MASTER="@comment "
 .else
 CONFIGURE_ARGS+=	--without-python
-.endif
+INSTALLS_SHLIB=	yes
+PLIST_SUB+=	MASTER=""
 
 MAN3=	dnet.3
 MAN8=	dnet.8
+.endif
 
 pre-everything::
-.if !defined(WITH_PYTHON)
+.if !defined(BUILD_PYTHON_MODULE)
 	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> You can add python support using WITH_PYTHON,"
+	@${ECHO_MSG} "===> You can add python support with the port ${SLAVE_DIRS}."
 	@${ECHO_MSG} "===>"
 	@sleep 2
+.endif
+
+.if defined(BUILD_PYTHON_MODULE) && defined(MAINTAINER_MODE)
+test:	install
+	${PYTHON_CMD} ${INSTALL_WRKSRC}/test.py
 .endif
 
 .include <bsd.port.mk>

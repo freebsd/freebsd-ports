@@ -597,6 +597,7 @@
     SUBDIR += py-kenosis
     SUBDIR += py-kenosis-bittorrent
     SUBDIR += py-ldap2
+    SUBDIR += py-libdnet
     SUBDIR += py-libnet
     SUBDIR += py-medusa
     SUBDIR += py-mp-random
