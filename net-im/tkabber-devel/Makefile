@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.8.a.20051012
+PORTVERSION=	0.9.8.a.20051120
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -16,8 +16,7 @@ COMMENT=	Tcl/Tk based jabber client, development version
 
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg \
 		tkXwin.1:${PORTSDIR}/x11/tkXwin
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
@@ -26,12 +25,14 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
+USE_TCL=	yes
+USE_TK=		yes
 
 SUBDIRS=	aniemoteicons emoticons-tkabber ifaceck ifacetk plugins \
 		jabberlib-tclxml pixmaps sounds textundo msgs mclistbox-1.02
 
 do-install:
-	${ECHO} -e "#!/bin/sh\nexec wish8.4 ${DATADIR}/tkabber.tcl \
+	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${WRKDIR}/tkabber.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${PREFIX}/bin/tkabber
 
