@@ -6,22 +6,35 @@
 #
 
 PORTNAME=	wfa
-PORTVERSION=	3.3
-MASTER_SITES=	ftp://ftp.ogl.org/pub/q3/wfa/ \
-		ftp://urgentfury.org/pub/quake3/ \
-		http://wfa.themelon.net/wfa/ \
-		ftp://mirror1.planetice.net/pub/wfa/ \
-		ftp://mirror2.planetice.net/pub/wfa/ \
-		http://www.quakeshit.com/files/ \
-		ftp://ftp2.extreme-players.de/q3/mod/wfa/
-DISTFILES=	WFA_Media_v33.zip WFA_MapPack1_v33.zip \
-		WFA_MapPack2_v33.zip
+PORTVERSION=	3.5b
+CATEGORIES=	games
+MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/
+DISTFILES=	WFA35Engine.zip WFA35MapPack1.zip WFA35MapPack2.zip \
+		WFA_v35b.zip 35b_mappack1.zip
+DIST_SUBDIR=	${PORTNAME}
 
-COMMENT=	Quake III Arena Mod: Weapons Factory Arena for Linux
+MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Quake III Arena Mod: Weapons Factory Arena
 
-EXTRACT_BEFORE_ARGS=	-o -qq
+USE_ZIP=	yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
+post-extract:
+	@${RM} ${WRKSRC}/help/BobWFACfgV236.exe
 
-.include "${Q3_MOD_MASTER}/Makefile"
+do-install:
+	@${MKDIR} ${DATADIR}
+.for f in *.cfg *.pk3
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in EnglishRadioHelp help
+	@${CP} -R ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
+
+.include <bsd.port.mk>
