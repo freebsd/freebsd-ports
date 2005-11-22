@@ -37,6 +37,7 @@ bin/tkabber
 %%DATADIR%%/ifacetk/iface.tcl
 %%DATADIR%%/ifacetk/ilogin.tcl
 %%DATADIR%%/ifacetk/iroster.tcl
+%%DATADIR%%/ifacetk/systray.tcl
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
@@ -81,7 +82,7 @@ bin/tkabber
 %%DATADIR%%/msgs/ro.msg
 %%DATADIR%%/msgs/ru.msg
 %%DATADIR%%/msgs/ru.rc
-%%DATADIR%%/msgs/ua.msg
+%%DATADIR%%/msgs/uk.msg
 %%DATADIR%%/muc.tcl
 %%DATADIR%%/negotiate.tcl
 %%DATADIR%%/pixmaps/amibulb/browser/aim.gif
@@ -530,16 +531,19 @@ bin/tkabber
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
-%%DATADIR%%/plugins/general/conferences.tcl
 %%DATADIR%%/plugins/general/conferenceinfo.tcl
+%%DATADIR%%/plugins/general/conferences.tcl
+%%DATADIR%%/plugins/general/headlines.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
 %%DATADIR%%/plugins/general/offline.tcl
 %%DATADIR%%/plugins/general/presenceinfo.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
+%%DATADIR%%/plugins/general/roster_delimiter.tcl
 %%DATADIR%%/plugins/general/sound.tcl
 %%DATADIR%%/plugins/general/stats.tcl
 %%DATADIR%%/plugins/general/subscribe_gateway.tcl
 %%DATADIR%%/plugins/general/tkcon.tcl
+%%DATADIR%%/plugins/general/xcommands.tcl
 %%DATADIR%%/plugins/iq/browse.tcl
 %%DATADIR%%/plugins/iq/last.tcl
 %%DATADIR%%/plugins/iq/oob.tcl
