@@ -12,7 +12,7 @@ PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
-		http://home.vrweb.de/martin.lottermoser/pcl3dist/:pcl3 \
+		http://home.vrweb.de/~martin.lottermoser/pcl3dist/:pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://www33.ocn.ne.jp/~higamasa/gdevmd2k/:md2k \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
