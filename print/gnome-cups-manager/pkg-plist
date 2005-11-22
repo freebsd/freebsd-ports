@@ -68,3 +68,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-cups-manager.mo
 @dirrm share/gnome/pixmaps/gnome-cups-manager
 @dirrm share/gnome/gnome-cups-manager
 @unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
+@dirrm include/libgnomecups-1/libgnomecups
+@dirrm include/libgnomecups-1
