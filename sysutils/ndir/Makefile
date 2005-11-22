@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ndir
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.8.8
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~mw/software/
 DISTNAME=	NDir-${PORTVERSION}
@@ -23,10 +23,12 @@ CFLAGS+=	-DNO_THOUSANDS_GROUPING
 MAN1=		ndir.1
 MLINKS=		ndir.1 lv.1 ndir.1 lw.1
 
+PLIST_FILES=	bin/ndir bin/lw bin/lv
+
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -E "s/^export GLOBAL.+//g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|-Wall -O2|${CFLAGS}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndir ${PREFIX}/bin
