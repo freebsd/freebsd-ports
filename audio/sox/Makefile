@@ -21,19 +21,11 @@ MLINKS=			play.1 rec.1 sox.1 soxmix.1
 GNU_CONFIGURE=		yes
 MAKE_ENV=		PLAY_SUPPORT=1
 
+OPTIONS=	LAME "Enable mp3 encoding with LAME" off \
+		MAD "Enable mp3 decoding with MAD" off \
+		VORBIS "Enable Ogg Vorbis support" off
+
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libmp3lame.so.0)
-WITH_LAME=	YES
-.endif
-
-.if exists(${LOCALBASE}/lib/libmad.so.2)
-WITH_MAD=	YES
-.endif
-
-.if exists(${LOCALBASE}/lib/libvorbis.so.3)
-WITH_VORBIS=	YES
-.endif
 
 .if defined(WITH_VORBIS) || defined(WITH_LAME) || defined(WITH_MAD)
 CFLAGS+=	-I${LOCALBASE}/include
@@ -60,17 +52,6 @@ CONFIGURE_ARGS+=	--enable-mad
 LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
 .else
 CONFIGURE_ARGS+=	--disable-mad
-.endif
-
-pre-fetch:
-.if !defined(WITH_LAME)
-	@${ECHO_MSG} "You can enable mp3 encoding by defining WITH_LAME."
-.endif
-.if !defined(WITH_MAD)
-	@${ECHO_MSG} "You can enable mp3 decoding by defining WITH_MAD."
-.endif
-.if !defined(WITH_VORBIS)
-	@${ECHO_MSG} "You can enable Ogg Vorbis support by defining WITH_VORBIS."
 .endif
 
 .include <bsd.port.post.mk>
