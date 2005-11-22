@@ -1,11 +1,15 @@
-There are two modules in this distribution. Date::Doomsday calculates doomsday
-for a particular year. Date::DayOfWeek uses the doomsday algorithm to
-calculate the day of the week for any given date.
+There are two modules in this distribution. Date::Doomsday calculates
+doomsday for a particular year. Date::DayOfWeek uses the doomsday
+algorithm to calculate the day of the week for any given date.
 
-Doomsday is a cute little idea invented by Dr John Conway that makes it very
-easy to figure out the day of the week for any date.
+Doomsday is a cute little idea invented by Dr John Conway that makes it
+very easy to figure out the day of the week for any date.
 
-You can find out more about doomsday and related calculations at
-http://www.interlog.com/~r937/doomsday.html
+For more information about the origins and mathematics surrounding
+doomsday, see the following web sites:
+
+http://rudy.ca/doomsday.html
+http://quasar.as.utexas.edu/BillInfo/doomsday.html
+http://www.cst.cmich.edu/users/graha1sw/Pub/Doomsday/Doomsday.html
 
 WWW: http://search.cpan.org/dist/Date-DayOfWeek/
