@@ -1,7 +1,0 @@
-bin/voipong
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/THANKS
-etc/voipong.conf-dist
-@dirrm %%DOCSDIR%%
