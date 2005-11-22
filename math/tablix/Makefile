@@ -21,7 +21,7 @@ PVM_ROOT=	${PREFIX}/lib/pvm
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
