@@ -72,6 +72,9 @@ HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Sparc64 link error
+.endif
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
