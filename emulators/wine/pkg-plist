@@ -766,15 +766,18 @@ lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 share/aclocal/wine.m4
 share/applications/wine.desktop
-%%DATADIR%%/wine.inf
-%%DATADIR%%/generic.ppd
+share/wine/wine.inf
+share/wine/generic.ppd
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.progman
+%%PORTDOCS%%%%DOCSDIR%%/README.uninstaller
 %%PORTDOCS%%%%DOCSDIR%%/README.wcmd
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
+%%PORTDOCS%%%%DOCSDIR%%/README.winemine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/wine
 @dirrm include/wine/msvcrt/sys

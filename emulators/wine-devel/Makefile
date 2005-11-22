@@ -53,7 +53,7 @@ post-install:
 .for i in README ANNOUNCE AUTHORS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in wcmd winedbg
+.for i in progman uninstaller wcmd winedbg winemine
 	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README ${DOCSDIR}/README.${i}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
