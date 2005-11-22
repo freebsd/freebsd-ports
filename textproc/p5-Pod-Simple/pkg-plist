@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Pod/Simple.pm
 %%SITE_PERL%%/Pod/Simple.pod
 %%SITE_PERL%%/Pod/Simple/BlackBox.pm
