@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.9
+PORTREVISION=	0
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david+ports@bushong.net
 COMMENT=	Ruby IRC bot similar to infobot
@@ -18,25 +19,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	rexml
+USE_RUBY_SETUP=	yes
 
-NO_BUILD=	yes
-
-post-patch:
-	@${RUBY} -pi -e 'sub /rbotconf/, "${PREFIX}/etc/rbot"' ${WRKSRC}/rbot.rb
-	@rm ${WRKSRC}/rbot/*.orig
-	@rm ${WRKSRC}/rbot/plugins/*.orig
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rbot.rb ${PREFIX}/bin/rbot
-	${TAR} -C ${WRKSRC} -cf - rbot | ${TAR} -C ${RUBY_SITELIBDIR} -xkpf -
-	${MKDIR} ${PREFIX}/etc/rbot
-	( cd ${WRKSRC}/rbotconf && ${TAR} -cf - * ) | \
-		${TAR} -C ${PREFIX}/etc/rbot -xkpf -
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	( cd ${WRKSRC}/doc && ${TAR} -cf - * ) | \
-		${TAR} -C ${RUBY_MODDOCDIR} -xpf -
-.endif
-	@${CAT} ${PKGMESSAGE}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc/${RUBY_NAME}
 
 .include <bsd.port.mk>
