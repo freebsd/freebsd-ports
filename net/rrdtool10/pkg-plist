@@ -55,6 +55,8 @@ include/rrd.h
 %%PORTDOCS%%%%DOCSDIR%%/RRDp.txt
 %%PORTDOCS%%%%DOCSDIR%%/rrdxport.txt
 %%PORTDOCS%%%%DOCSDIR%%/rrd-beginners.txt
+%%PORTDOCS%%%%DOCSDIR%%/rrdfirst.pod
+%%PORTDOCS%%%%DOCSDIR%%/rrdfirst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdtool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlast.html
@@ -76,6 +78,7 @@ include/rrd.h
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdxport.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrd-beginners.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rrdfirst.html
 %%SITE_PERL%%/RRDp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
