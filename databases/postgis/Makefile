@@ -57,7 +57,7 @@ MAKE_ARGS+=	USE_ICONV=1
 .endif
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=	geos.2:${PORTSDIR}/graphics/geos
+LIB_DEPENDS+=	geos.3:${PORTSDIR}/graphics/geos
 MAKE_ARGS+=	USE_GEOS=1
 .else
 MAKE_ARGS+=	USE_GEOS=0
