@@ -1,0 +1,26 @@
+Torrus is designed to be the universal data series processing framework.
+Although most users deploy Torrus for SNMP monitoring, it might be useful for
+data series of any nature. Tobi Oetiker's RRDtool is used for data storage.
+
+    * Configuration compiler and validator. It processes the XML configuration
+      files and saves the configuration into a database.
+    * View renderer and the web interface. They generate HTML and the graphical
+      representation of the datasources and provide user authentication and
+      authorization. All generated output is controlled by the configuration
+      parameters and templates. The users can easily create their own
+      presentation of data series.
+    * SNMP Collector. Modular collector core architecture allows further
+      extension with new collector and storage types. Any datasource can have
+      its own polling schedule.
+    * SNMP Device Discovery Tool. Devdiscover is a new, modular, flexible, and
+      expandable tool for automatic generation of Torrus configuration files.
+      New device types and MIBs are easily added as independent Perl modules.
+    * Threshold monitor. All data, regardless of their type and nature, can be
+      monitored according to the user-defined rules. The rules can also include
+      the datasource-specific parameters, e.g. boundary values etc. The
+      thresholds are specified by RPN expressions.
+
+WWW: http://torrus.org
+
+- Corey Smith
+corsmith@gmail.com

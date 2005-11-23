@@ -167,6 +167,7 @@
     SUBDIR += tas
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
+    SUBDIR += torrus
     SUBDIR += trafd
     SUBDIR += whatmask
     SUBDIR += wide-dhcp

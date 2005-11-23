@@ -1,0 +1,13 @@
+--- configs/Makefile.in.orig	Tue Jul 19 15:21:59 2005
++++ configs/Makefile.in	Tue Jul 19 15:22:37 2005
+@@ -385,9 +385,7 @@
+ 	done
+ 	for f in devdiscover-siteconfig.pl email-siteconfig.pl \
+ 	         snmptrap-siteconfig.pl torrus-siteconfig.pl; do \
+-	  if test ! -r $(DESTDIR)$(siteconfdir)/$$f; then \
+-	    $(INSTALL_DATA) $$f $(DESTDIR)$(siteconfdir)/$$f; \
+-	  fi \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(siteconfdir)/$$f.sample; \
+ 	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
