@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	pciutils
-PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
-		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
-		ftp://ftp.kernel.org/pub/software/utils/pciutils/
+MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
+		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
+		ftp://metalab.unc.edu/pub/Linux/hardware/
 
 MAINTAINER=	samy@kerneled.org
 COMMENT=	PCI configuration utilities
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	LANG=C
 
 MAN8=		lspci.8 setpci.8 update-pciids.8
 
-pre-everything::
+pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "              W  A  R  N  I  N  G"
 	@${ECHO_MSG} "************************************************"
