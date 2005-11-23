@@ -1,0 +1,9 @@
+--- lib/Makefile.orig  Mon Nov 14 10:43:07 2005
++++ lib/Makefile       Mon Nov 14 10:42:14 2005
+@@ -9,4 +9,6 @@
+ NOPIC=                yes
+ MKLINKLIB=    no
+ 
++install:
++
+ .include <bsd.lib.mk>
