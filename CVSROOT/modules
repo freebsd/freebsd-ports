@@ -12181,6 +12181,7 @@ torrent		ports/games/torrent
 torrentflux	ports/net/torrentflux
 torrentsniff	ports/net/torrentsniff
 torrentzip	ports/archivers/torrentzip
+torrus		ports/net-mgmt/torrus
 torsmo		ports/sysutils/torsmo
 tosha		ports/audio/tosha
 toshctl		ports/sysutils/toshctl
