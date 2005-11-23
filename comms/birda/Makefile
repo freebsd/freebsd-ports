@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	birda
-PORTVERSION=	1.00
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
+		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
-
-DEPRECATED=	"mastersite disappeared, no longer maintained by author"
-EXPIRATION_DATE=	2005-12-31
 
 MAN1=		ircomm.1 irobex.1 irs.1 \
 		mkobexcard.1 mkobexdate.1 mkobexmemo.1 mkobexpdb.1 \
