@@ -1,3 +1,4 @@
+bin/XMLTester
 bin/geos-config
 include/geos.h
 include/geos/geom.h
@@ -24,11 +25,13 @@ include/geos/operation.h
 include/geos/planargraph.h
 include/geos/platform.h
 include/geos/precision.h
+include/geos/profiler.h
 include/geos/spatialIndex.h
+include/geos/timeval.h
 include/geos/unload.h
 include/geos/util.h
 include/geos/version.h
 lib/libgeos.a
 lib/libgeos.so
-lib/libgeos.so.2
+lib/libgeos.so.3
 @dirrm include/geos
