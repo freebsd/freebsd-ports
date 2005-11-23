@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.2.9
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.videolan.org/pub/%SUBDIR%/
+MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -20,7 +19,7 @@ NO_CDROM=	CSS code may violate the DMCA
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
