@@ -6034,6 +6034,7 @@ mcrypt		ports/security/mcrypt
 mcstas		ports/science/mcstas
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
+md5coll		ports/security/md5coll
 md5deep		ports/security/md5deep
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
