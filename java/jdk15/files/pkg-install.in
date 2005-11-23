@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 # System preference location
 JRE_HOME=%%JRE_HOME%%
