@@ -9,16 +9,13 @@ PORTNAME=	smpeg
 PORTVERSION=	0.4.4
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
-		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
-		ftp://boudicca.tux.org/misc/lokigames/open-source/smpeg/ \
-		ftp://snuffleupagus.animearchive.org/loki/open-source/smpeg/ \
-		http://ftp.gameaholic.com/mirrors/ftp.lokigames.com/open-source/smpeg/
+MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	A free MPEG1 video player library with sound support
 
-USE_GNOME=
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
