@@ -1,0 +1,15 @@
+UIRD is software to control your PC via a normal remote control. It is designed
+to interface with the UIRR (Universal IR Receiver), which is a piece of
+hardware that you can easily build yourself.
+
+Features:
+
+  * Embedded perl-interpreter for advanced scripting features
+  * Learning mode - interactively press a button on your remote and then enter
+    what should happend every time you push that button
+  * Simple configuration-file for specifying what should happen when you push a
+    particular button
+  * Network mode sends IR-data encapsulated in UDP-packets over the network to a
+    remote host
+
+WWW: http://vvv.purjo.nu/uird/
