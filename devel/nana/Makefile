@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nana
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.ntu.edu.au/pub/nana/
+MASTER_SITES=	ftp://ftp.cs.ntu.edu.au/pub/nana/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	pjm@gnu.org
 COMMENT=	Support for assertion checking and logging using GNU C and GDB

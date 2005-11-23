@@ -31,6 +31,6 @@ info/nana.info-3
 lib/libnana.a
 libexec/nana-trace.gdb
 libexec/nanafilter
-share/nana/nana-run-init.gdb
-share/nana/nana-run.gdb
-@dirrm share/nana
+%%DATADIR%%/nana-run-init.gdb
+%%DATADIR%%/nana-run.gdb
+@dirrm %%DATADIR%%
