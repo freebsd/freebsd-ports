@@ -219,6 +219,7 @@
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
     SUBDIR += mcrypt
+    SUBDIR += md5coll
     SUBDIR += md5deep
     SUBDIR += mdcrack
     SUBDIR += metasploit
