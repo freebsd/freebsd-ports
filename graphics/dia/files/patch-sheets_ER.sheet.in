@@ -1,0 +1,11 @@
+--- sheets/ER.sheet.in~	Sat Nov 19 11:49:51 2005
++++ sheets/ER.sheet.in	Sat Nov 19 11:49:51 2005
+@@ -8,7 +8,7 @@
+     </object>
+     <object name="ER - Entity" intdata="1">
+       <_description>Weak entity</_description>
+-      <icon>ER/weakentity.png</icon>
++      <icon>ER/weakentity.xpm</icon>
+     </object>
+     <object name="ER - Relationship">
+       <_description>Relationship</_description>
