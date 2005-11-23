@@ -48,6 +48,11 @@ MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
 .endif
 
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES+=	pkg-install \
+		pkg-deinstall
+SUB_LIST+=	JRE_HOME=${PREFIX}/jdk${JDK_VERSION}/jre \
+		ARCH=${MACHINE_ARCH}
 
 WRKSRC=		${WRKDIR}/control/make
 
@@ -301,8 +306,6 @@ do-install:
 # XXX: put unregistervm into install script ?
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
-	@${SED} -e "s:%%JRE_HOME%%:${PREFIX}/jdk${JDK_VERSION}/jre:g" \
-	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
