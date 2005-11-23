@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
 .if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		prelude.1:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		prelude.2:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
 PLIST_SUB+=		PRELUDE=""
 .else
