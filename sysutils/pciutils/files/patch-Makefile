@@ -1,13 +1,24 @@
---- Makefile.orig	Sat Jan  4 15:53:01 2003
-+++ Makefile	Fri Jun 13 21:20:28 2003
-@@ -2,9 +2,7 @@
- # Makefile for Linux PCI Utilities
- # (c) 1998--2003 Martin Mares <mj@ucw.cz>
+--- Makefile.orig	Wed Sep 21 09:04:54 2005
++++ Makefile	Wed Nov 23 00:11:07 2005
+@@ -1,19 +1,16 @@
+ # Makefile for The PCI Utilities
+ # (c) 1998--2005 Martin Mares <mj@ucw.cz>
  
--OPT=-O2 -fomit-frame-pointer
--#OPT=-O2 -g
--CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes
-+CFLAGS += -Wall -W -Wno-parentheses -Wstrict-prototypes
+-OPT=-O2
+-CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
++CFLAGS+= -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes -Winline
  
- VERSION=2.1.11
- #SUFFIX=-pre2
+ VERSION=2.2.0
+ DATE=2005-09-21
+ 
+-PREFIX=/usr/local
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
+ IDSDIR=$(SHAREDIR)
+ MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
+-INSTALL=install
+-DIRINSTALL=install -d
++DIRINSTALL=$(INSTALL) -d
+ PCILIB=lib/libpci.a
+ PCIINC=lib/config.h lib/header.h lib/pci.h lib/types.h lib/sysdep.h
+ 
