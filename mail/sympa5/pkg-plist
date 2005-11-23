@@ -55,6 +55,52 @@ sbin/bounced.pl
 sbin/sympa.pl
 sbin/sympa_wizard.pl
 sbin/task_manager.pl
+%%DOCSDIR%%/contents.png
+%%DOCSDIR%%/crossref.png
+%%DOCSDIR%%/img1.old
+%%DOCSDIR%%/img1.png
+%%DOCSDIR%%/img2.old
+%%DOCSDIR%%/img2.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.png
+%%DOCSDIR%%/next.png
+%%DOCSDIR%%/next_g.png
+%%DOCSDIR%%/node1.html
+%%DOCSDIR%%/node10.html
+%%DOCSDIR%%/node11.html
+%%DOCSDIR%%/node12.html
+%%DOCSDIR%%/node13.html
+%%DOCSDIR%%/node14.html
+%%DOCSDIR%%/node15.html
+%%DOCSDIR%%/node16.html
+%%DOCSDIR%%/node17.html
+%%DOCSDIR%%/node18.html
+%%DOCSDIR%%/node19.html
+%%DOCSDIR%%/node2.html
+%%DOCSDIR%%/node20.html
+%%DOCSDIR%%/node21.html
+%%DOCSDIR%%/node22.html
+%%DOCSDIR%%/node23.html
+%%DOCSDIR%%/node24.html
+%%DOCSDIR%%/node25.html
+%%DOCSDIR%%/node26.html
+%%DOCSDIR%%/node27.html
+%%DOCSDIR%%/node3.html
+%%DOCSDIR%%/node4.html
+%%DOCSDIR%%/node5.html
+%%DOCSDIR%%/node6.html
+%%DOCSDIR%%/node7.html
+%%DOCSDIR%%/node8.html
+%%DOCSDIR%%/node9.html
+%%DOCSDIR%%/prev.png
+%%DOCSDIR%%/prev_g.png
+%%DOCSDIR%%/sympa.css
+%%DOCSDIR%%/sympa.html
+%%DOCSDIR%%/sympa.pdf
+%%DOCSDIR%%/sympa.ps
+%%DOCSDIR%%/sympa.tex
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/up_g.png
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/config.digest
 %%EXAMPLESDIR%%/config.include
@@ -84,9 +130,12 @@ sbin/task_manager.pl
 %%NLS%%share/locale/pt/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sympa.mo
+%%NLS%%share/nls/POSIX
+%%NLS%%share/nls/en_US.US-ASCII
 %%DATADIR%%/README
 %%DATADIR%%/auth.conf
 %%DATADIR%%/ca-bundle.crt
@@ -387,6 +436,8 @@ sympa/icons/unknown.png
 %%NLS%%@unexec rmdir %D/share/locale/fi 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
@@ -403,6 +454,8 @@ sympa/icons/unknown.png
 %%NLS%%@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sv 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/tr 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
@@ -440,6 +493,7 @@ sympa/icons/unknown.png
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/sample-list
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm libexec/sympa
 @dirrm lib/sympa/Marc
 @dirrm lib/sympa
