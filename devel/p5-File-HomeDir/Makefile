@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	File-HomeDir
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/S/SB/SBURKE
+MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Get home directory for self or other users
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
