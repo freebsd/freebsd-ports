@@ -18,6 +18,10 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
 		dagrab:${PORTSDIR}/audio/dagrab
 
+BROKEN=		"Unfetchable"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2006-01-24
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 
