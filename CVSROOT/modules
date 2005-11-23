@@ -5771,6 +5771,7 @@ linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vmware-toolbox5	ports/emulators/linux-vmware-toolbox5
 linux-vsound	ports/audio/linux-vsound
+linux-warsow	ports/games/linux-warsow
 linux-winetools	ports/emulators/linux-winetools
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-ymessenger	ports/net-im/linux-ymessenger
