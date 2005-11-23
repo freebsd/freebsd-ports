@@ -60,6 +60,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/easter_egg.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/filehandle.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/formats.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/formula_result.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/function_locale.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/headers.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/hide_sheet.pl
