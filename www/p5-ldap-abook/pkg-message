@@ -1,7 +1,13 @@
 ========== Installing ldap-abook for the first time ==========
+Some assembly required! These instructions for creating the LDAP
+database do not work out of the box, please additionally read e.g.
+http://www.onlamp.com/pub/a/onlamp/2003/03/27/ldap_ab.html?page=1
+
 Tell the openldap server about the abook schema with the
 following line in $PREFIX/etc/openldap/slapd.conf:
 
+include $PREFIX/etc/openldap/schema/cosine.schema
+include $PREFIX/etc/openldap/schema/inetorgperson.schema
 include $PREFIX/www/ldap-abook/examples/default/abookperson.schema
 
 Create the initial ``abook'' ou using the following command:
