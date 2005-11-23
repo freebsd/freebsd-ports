@@ -601,6 +601,8 @@ VTK-*			math/vtk		Portions contain patented algorithms
 						and may require a license for
 						commercial use
 waeiji*.txt		japanese/waeijiro-fpw	The original dictionary is not free
+warsow_*		games/linux-warsow	Redistribution is limited, art
+						is copyrighted
 webcopy-*		www/webcopy		Do not sell for profit
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 webglimpse-*.src.tar.gz	www/webglimpse		Depends on glimpse
