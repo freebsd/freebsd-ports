@@ -1,4 +1,6 @@
 MD5 (freetype-2.1.10.tar.bz2) = a4012e7d1f6400df44a16743b11b8423
+SHA256 (freetype-2.1.10.tar.bz2) = fed2ed148d7d105b95493c5e95561c8b05ee7909e00f828f036d8ed1be6a5e53
 SIZE (freetype-2.1.10.tar.bz2) = 1037107
 MD5 (cjk-freetype-2.1.10-20050728.patch.gz) = 7584b9c3de3e1e032897a48f00e2c0f4
+SHA256 (cjk-freetype-2.1.10-20050728.patch.gz) = 5f7fe3c93fc604175c84226883306b7b848e549d799b2d03ce9cc9ac53e3efa0
 SIZE (cjk-freetype-2.1.10-20050728.patch.gz) = 1200
