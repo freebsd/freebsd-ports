@@ -1,3 +1,15 @@
 bin/proz
-@unexec if cmp -s %D/etc/prozilla.conf %D/etc/prozilla.conf-sample; then rm -f %D/etc/prozilla.conf; fi
-etc/prozilla.conf-sample
+include/common.h
+include/netrc.h
+include/prozilla.h
+lib/libprozilla.a
+lib/libprozilla.la
+share/locale/fr/LC_MESSAGES/proz.mo
+share/locale/it/LC_MESSAGES/.mo
+share/locale/it/LC_MESSAGES/proz.mo
+share/locale/nl/LC_MESSAGES/.mo
+share/locale/nl/LC_MESSAGES/proz.mo
+share/locale/pt_BR/LC_MESSAGES/.mo
+share/locale/pt_BR/LC_MESSAGES/proz.mo
+share/locale/ro/LC_MESSAGES/.mo
+share/locale/ro/LC_MESSAGES/proz.mo
