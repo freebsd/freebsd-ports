@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	esn@x123.info
 COMMENT=	CMS that supports pgsql and mysql
 
+USE_PHP=	session
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libpq.so)
