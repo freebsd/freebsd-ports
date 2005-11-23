@@ -52,4 +52,5 @@ echo ""
 chown -R ${USER}:${GROUP} ${DRWEB_PREFIX}
 chown -R ${USER}:${GROUP} ${DRWEB_VARPREFIX}
 chmod 0750 ${DRWEB_VARPREFIX}
+chown -R ${USER}:${GROUP} ${PREFIX}/etc/drweb
 exit 0
