@@ -1,0 +1,30 @@
+--- abcde.old	Tue Nov 22 13:12:14 2005
++++ abcde	Tue Nov 22 13:12:51 2005
+@@ -2453,17 +2453,18 @@
+ 
+ # Allow -o OUTPUT(1):OPTIONS(1),...,OUTPUT(N):OPTIONS(N) mode of operation
+ if echo "$OUTPUTTYPE" | grep ":" > /dev/null 2>&1 ; then
+-	for OUTPUT in $(echo $OUTPUTTYPE | tr , \ ); do
+-		case "$OUTPUT" in
+-			vorbis:*|ogg:*)	OGGENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
+-			mp3:*)	MP3ENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
+-			flac:*)	FLACENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
+-			spx:*)	SPEEXENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
+-			mpc:*)	MPPENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
++	for OUTPUT in $(echo $OUTPUTTYPE | tr \  \| | tr , \ ); do
++		TOUTPUT=$(echo $OUTPUT | tr \| \ )
++		case "$TOUTPUT" in
++			vorbis:*|ogg:*)	OGGENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
++			mp3:*)	MP3ENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
++			flac:*)	FLACENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
++			spx:*)	SPEEXENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
++			mpc:*)	MPPENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
+ 		esac
+ 	done
+-	for OUTPUT in $(echo $OUTPUTTYPE | tr , \ ); do
+-		TEMPOUTPUT=$( echo "$OUTPUT" | cut -d: -f1 )
++	for OUTPUT in $(echo $OUTPUTTYPE | tr \  \| | tr , \ ); do
++		TEMPOUTPUT=$( echo "$OUTPUT" | tr \| \ | cut -d: -f1 )
+ 		TEMPOUTPUTTYPE="${TEMPOUTPUTTYPE:+$TEMPOUTPUTTYPE,}$TEMPOUTPUT"
+ 	done
+ 	OUTPUTTYPE="$TEMPOUTPUTTYPE"
