@@ -17,7 +17,7 @@ COMMENT=	Professional CAD system
 BUILD_DEPENDS=	qcad:${PORTSDIR}/cad/qcad
 
 WRKSRC=		${WRKDIR}/partlibrary-${PORTVERSION:S/.1$/-1/}
-DATADIR=	${PREFIX}/share/qcad/libraries
+DATADIR=	${PREFIX}/share/qcad/library
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
@@ -28,14 +28,12 @@ PLIST=		${WRKDIR}/pkg-plist
 .include <bsd.port.pre.mk>
 
 pre-install:
-	@${ECHO_CMD} '@exec mkdir -p %D/share/qcad/libraries' > ${PLIST}
-	@${FIND} ${WRKSRC}/ -type f | \
-		${SED} -e "s:^${WRKSRC}/:share/qcad/libraries/:g" >> ${PLIST}
-	@${FIND} -d ${WRKSRC} -type d | \
-		${SED} -e "s:^${WRKSRC}:@dirrm share/qcad/libraries:g" >> ${PLIST}
+	@${FIND} ${WRKSRC} -type f | \
+		${SED} -e "s:^${WRKSRC}/:share/qcad/library/:g" > ${PLIST}
+	@${FIND} -d ${WRKSRC}/* -type d | \
+		${SED} -e "s:^${WRKSRC}:@dirrm share/qcad/library:g" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}
 	${TAR} -C ${WRKSRC} --exclude CVS -cf - . | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 
