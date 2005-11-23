@@ -1,4 +1,3 @@
-$NetBSD: md5,v 1.1.1.1 1999/05/23 19:17:43 tv Exp $
-
 MD5 (undms-1.3.c.Z) = 7c9d5a4830d0e1ded7eab3a287f15c4b
+SHA256 (undms-1.3.c.Z) = d5c5396d1003f4d4125b4fe4833043e207b7315e87db3be92c2188ffbe27e8ac
 SIZE (undms-1.3.c.Z) = 13186
