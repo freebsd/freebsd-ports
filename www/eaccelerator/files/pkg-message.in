@@ -2,38 +2,14 @@
 
 You have installed the eaccelerator package.
 
-1. Edit %%LOCALBASE%%/etc/php.ini and add:
+Edit %%LOCALBASE%%/etc/php.ini and add:
 
-    zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/eaccelerator.so"
+zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/eaccelerator.so"
 
-   ****************************************************
-   *** This extension must be loaded after          ***
-   *** extension=session.so                         ***
-   ****************************************************
+Then create the cache directory:
 
-2. Then create the cache directory:
+mkdir /tmp/eaccelerator
+chown www /tmp/eaccelerator
+chmod 0700 /tmp/eaccelerator
 
-    # mkdir /tmp/eaccelerator
-    # chown www /tmp/eaccelerator
-    # chmod 0700 /tmp/eaccelerator
-
-3. Finally, edit %%LOCALBASE%%/etc/php.ini to fit your need:
-	; For example
-	eaccelerator.shm_size="16"
-	eaccelerator.cache_dir="/tmp/eaccelerator"
-	eaccelerator.enable="1"
-	eaccelerator.optimizer="1"
-	eaccelerator.check_mtime="1"
-	eaccelerator.debug="0"
-	eaccelerator.filter=""
-	eaccelerator.shm_max="0"
-	eaccelerator.shm_ttl="0"
-	eaccelerator.shm_prune_period="0"
-	eaccelerator.shm_only="0"
-	eaccelerator.compress="1"
-	eaccelerator.compress_level="9" 
-
-  For more detailed information, please take a look at 
-    http://eaccelerator.net/IniSettingsUk
-
-****************************************************************************
+*****************************************************************************
