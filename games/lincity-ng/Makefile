@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lincity-ng
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/lincity-ng/
 MASTER_SITE_SUBDIR=	${PORTNAME}
