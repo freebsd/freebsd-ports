@@ -10,8 +10,8 @@ PORTVERSION=	0.1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/821/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}.rb-${PORTVERSION}	# any file name is ok
-DIST_SUBDIR=	ruby
+DISTFILES=	${PORTNAME}.rb
+DIST_SUBDIR=	ruby/ogginfo-0.1
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
