@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sqlgrey
-PORTVERSION=	1.4.8
+PORTVERSION=	1.6.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
@@ -32,7 +32,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-ETCFILES=	clients_fqdn_whitelist clients_ip_whitelist sqlgrey.conf
+ETCFILES=	clients_fqdn_whitelist clients_ip_whitelist dyn_fqdn.regexp smtp_server.regexp sqlgrey.conf
 SGY_USERNAME?=	sqlgrey
 SGY_GROUPNAME?=	${SGY_USERNAME}
 ETCDIR?=	etc/sqlgrey
@@ -48,7 +48,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAN1=	sqlgrey.1
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changelog FAQ HOWTO README TODO db_performance_reports
+PORTDOCS=	Changelog FAQ HOWTO README TODO
 .endif
 
 pre-everything::
@@ -59,14 +59,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's-#!/usr/bin/perl-#!${PERL}-' -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
 
 do-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_whitelists ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/sqlgrey.sh ${PREFIX}/etc/rc.d
 	@cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${MANPREFIX}/man/man1/sqlgrey.1
 	@${MKDIR} ${PREFIX}/${ETCDIR}
 .for i in ${ETCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}.dist
-	@[ "${i}" = "sqlgrey.conf" ] || ${TOUCH} ${PREFIX}/${ETCDIR}/${i}.local
+	@[ "${i}" = "dyn_fqdn.regexp" ] || [ "${i}" = "smtp_server.regexp" ] || [ "${i}" = "sqlgrey.conf" ] || ${TOUCH} ${PREFIX}/${ETCDIR}/${i}.local
 	@[ -f ${PREFIX}/${ETCDIR}/${i} ] || ${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}
 .endfor
 .if !defined(NOPORTDOCS)

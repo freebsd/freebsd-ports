@@ -18,7 +18,7 @@
 . %%RC_SUBR%%
 
 name=sqlgrey
-rcvar=`set_rcvar`
+load_rc_config sqlgrey
 
 command=%%PREFIX%%/sbin/sqlgrey
 extra_commands=reload
@@ -34,14 +34,8 @@ stop_postcmd()
 # set defaults
 
 sqlgrey_enable=${sqlgrey_enable:-"NO"}
-sqlgrey_pidfile=${sqlgrey_pidfile:-"/var/run/sqlgrey.pid"}
-sqlgrey_listen=${sqlgrey_listen:-"2501"}
 sqlgrey_config=${sqlgrey_config:-"/usr/local/%%ETCDIR%%/sqlgrey.conf"}
-sqlgrey_flags=${sqlgrey_flags:-"--pidfile=${sqlgrey_pidfile} \
-	--inet=${sqlgrey_listen} --daemonize --user=sqlgrey --group=sqlgrey \
-	--configfile=${sqlgrey_config}"}
-
-pidfile="${sqlgrey_pidfile}"
+sqlgrey_flags=${sqlgrey_flags:-"--daemonize --configfile=${sqlgrey_config}"}
 
 load_rc_config $name
 run_rc_command "$1"
