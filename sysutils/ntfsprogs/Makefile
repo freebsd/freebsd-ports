@@ -7,6 +7,7 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -24,7 +25,8 @@ USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-OPTIONS=	GNOMEVFS2 "Install GnomeVFS 2.0 libntfs interface" off
+OPTIONS=	GNOMEVFS2 "Install GnomeVFS 2.0 libntfs interface" off \
+		FUSE "Compile with Fuse interface" off
 
 MAN8=		libntfs-gnomevfs.8 \
 		mkntfs.8	\
@@ -46,11 +48,22 @@ MLINKS=		mkntfs.8 mkfs.ntfs.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOMEVFS2)
+CONFIGURE_ARGS+=--enable-gnome-vfs
 USE_GNOME=	gnomevfs2
-PLIST_SUB=	GNOMEVFS2=""
+PLIST_SUB+=	GNOMEVFS2=""
 .else
-CONFIGURE_ARGS=	--disable-gnome-vfs
-PLIST_SUB=	GNOMEVFS2="@comment "
+CONFIGURE_ARGS+=--disable-gnome-vfs
+PLIST_SUB+=	GNOMEVFS2="@comment "
+.endif
+
+.if defined(WITH_FUSE)
+CONFIGURE_ARGS+=--enable-fuse-module
+PLIST_SUB+=	FUSE=""
+LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+MLINKS+=	ntfsmount.8 mount.ntfs-fuse.8
+.else
+CONFIGURE_ARGS+=--disable-fuse-module
+PLIST_SUB+=	FUSE="@comment "
 .endif
 
 post-patch:

@@ -3,6 +3,7 @@ bin/ntfscluster
 bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
+%%FUSE%%bin/ntfsmount
 include/ntfs/attrib.h
 include/ntfs/attrlist.h
 include/ntfs/bitmap.h
@@ -39,6 +40,7 @@ lib/libntfs.so
 lib/libntfs.so.8
 sbin/mkntfs
 sbin/mkfs.ntfs
+%%FUSE%%sbin/mount.ntfs-fuse
 sbin/ntfsclone
 sbin/ntfscp
 sbin/ntfslabel
