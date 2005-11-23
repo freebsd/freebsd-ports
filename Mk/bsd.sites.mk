@@ -910,8 +910,8 @@ MASTER_SITE_REDHAT_LINUX+= \
 #
 .if !defined(IGNORE_MASTER_SITE_RINGSERVER)
 MASTER_SITE_RINGSERVER+=	\
-	ftp://www.t.ring.gr.jp/pub/%SUBDIR%/ \
-	http://www.t.ring.gr.jp/archives/%SUBDIR%/
+	ftp://www.dnsbalance.ring.gr.jp/pub/%SUBDIR%/ \
+	http://www.dnsbalance.ring.gr.jp/archives/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_RUBY)
