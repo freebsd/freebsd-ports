@@ -50,6 +50,7 @@ lib/%%DISTNAME%%-lib/stack-q.tf
 lib/%%DISTNAME%%-lib/stack_queue.tf
 lib/%%DISTNAME%%-lib/stdlib.tf
 lib/%%DISTNAME%%-lib/teraterm.keyboard.cnf
+lib/%%DISTNAME%%-lib/testcolor.tf
 lib/%%DISTNAME%%-lib/textencode.tf
 lib/%%DISTNAME%%-lib/textutil.tf
 lib/%%DISTNAME%%-lib/tf-help

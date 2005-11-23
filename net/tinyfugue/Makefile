@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tf
-PORTVERSION=	5.0b6
+PORTVERSION=	5.0b7
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
 		ftp://tf.tcp.com/pub/tinyfugue/
@@ -17,10 +17,10 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A popular programmable MUD client, with macro support and more
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-manpage --enable-version
+CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink --datadir=${PREFIX}/lib
 
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
-MAN1=		tf.1
+#MAN1=		tf.1
 
 .include <bsd.port.mk>
