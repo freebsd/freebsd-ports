@@ -25,6 +25,12 @@ CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
 MAN1=			kawa.1 qexo.1
 INFO=			kawa kawa-tour
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not compile on FreeBSD 4.x
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|sed |gsed |g;' \
@@ -32,4 +38,4 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
