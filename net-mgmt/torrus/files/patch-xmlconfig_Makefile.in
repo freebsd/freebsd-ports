@@ -1,0 +1,15 @@
+--- xmlconfig/Makefile.in.orig	Tue Jul 19 15:25:15 2005
++++ xmlconfig/Makefile.in	Tue Jul 19 15:25:41 2005
+@@ -511,10 +511,8 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(sitexmldir)
+-	if test ! -r $(DESTDIR)$(sitexmldir)/site-global.xml; then \
+-	  $(INSTALL_DATA) site-global.xml \
+-		$(DESTDIR)$(sitexmldir)/site-global.xml; \
+-	fi
++	$(INSTALL_DATA) site-global.xml \
++		$(DESTDIR)$(sitexmldir)/site-global.xml.sample;
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
