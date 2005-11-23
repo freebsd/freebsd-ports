@@ -27,8 +27,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-jpeg-factory
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CFLAGS+=	-O0	# optimizations cause a build failure
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
