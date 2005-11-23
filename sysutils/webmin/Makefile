@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.240
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	updown-1.240-8.wbm.gz
+WEBMIN_MODULES=	mysql-1.240-9.wbm.gz \
+		updown-1.240-8.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
