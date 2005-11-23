@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	Catalyst-Plugin-SubRequest
-PORTVERSION=	0.04
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	Make subrequests to actions in Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst
