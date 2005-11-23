@@ -27,10 +27,6 @@ INFO=			kawa kawa-tour
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD 4.x
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|sed |gsed |g;' \
