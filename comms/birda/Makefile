@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
-MAINTAINER=	allbery@ece.cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
 DEPRECATED=	"mastersite disappeared, no longer maintained by author"
