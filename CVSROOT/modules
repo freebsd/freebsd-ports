@@ -5673,6 +5673,7 @@ linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
+linux-alienarena	ports/games/linux-alienarena
 linux-allegro		ports/devel/linux-allegro
 linux-americasarmy	ports/games/linux-americasarmy
 linux-arts	ports/audio/linux-arts
