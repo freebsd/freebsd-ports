@@ -21,6 +21,12 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/unalz
 
+pre-patch:
+	cd ${WRKSRC} && for f in `find . -name '*.c' -o -name '*.h'`; do \
+		${TR} -d '\015' < ${WRKSRC}/$$f > ${WRKSRC}/$$f.tmp && \
+		${MV} -f ${WRKSRC}/$$f.tmp ${WRKSRC}/$$f; \
+	done
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${PREFIX}/bin
 
