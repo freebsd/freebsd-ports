@@ -12,7 +12,7 @@ PORTVERSION=	2.2.2
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/v2.2/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
