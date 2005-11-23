@@ -9,7 +9,8 @@ PORTNAME=	miracl
 DISTVERSION=	4.85
 PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/
+MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
+		http://indigo.ie/~mscott/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
