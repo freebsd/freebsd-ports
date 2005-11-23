@@ -7,6 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -45,6 +46,7 @@ MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 
 OPTIONS=	XINERAMA "Enable xinerama support" off \
 		XKB_STATUS "XKB keyboard language status support" off \
+		WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
 		WM_LINGUAS "Enable support for additional locales" off
 
 .include <bsd.port.pre.mk>
@@ -59,6 +61,10 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 .if defined(WITH_XKB_STATUS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-modelock
+.endif
+
+.if !defined(WITHOUT_WM_SINGLE_CLICK) || defined(PACKAGE_BUILDING)
+EXTRA_PATCHES+=		${WRKSRC}/contrib/single_click.diff
 .endif
 
 .if defined(WITH_WM_LINGUAS) || defined(PACKAGE_BUILDING)
