@@ -9,6 +9,7 @@
     SUBDIR += avinfo
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
+    SUBDIR += bmpx
     SUBDIR += bsdav
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv

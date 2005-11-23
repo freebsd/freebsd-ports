@@ -1,0 +1,216 @@
+@comment $FreeBSD$
+bin/bmp-dbus-introspect
+bin/bmp-dbus-query-lists
+bin/bmp-dbus-system-control
+bin/bmp-remote-pygtk
+bin/bmpty
+bin/bmpx
+bin/hrel-demo
+include/bmpx/dbus.h
+include/bmpx/file_utils.h
+include/bmpx/interfaces/plugin_interface_container.h
+include/bmpx/interfaces/plugin_interface_flow.h
+include/bmpx/interfaces/plugin_interface_plug_meta.h
+include/bmpx/interfaces/plugin_interface_transport.h
+include/bmpx/list.h
+include/bmpx/metadata.h
+include/bmpx/playlist.h
+include/bmpx/plugin.h
+include/bmpx/plugin_interfaces.h
+include/bmpx/sanity.h
+include/bmpx/uri.h
+include/bmpx/util.h
+include/bmpx/vfs.h
+include/bmpx/xml.h
+include/libhrel/libhrel/relation.h
+include/libhrel/libhrel/relation_base.h
+include/libhrel/libhrel/relation_restrict.h
+include/libhrel/libhrel/relation_sort.h
+include/libhrel/libhrel/stack.h
+include/libhrel/libhrel/tuple.h
+include/libhrel/libhrel/types.h
+lib/bmpx/plugins/container/libcontainer_folder.a
+lib/bmpx/plugins/container/libcontainer_folder.so
+lib/bmpx/plugins/container/libcontainer_folder.so.0
+lib/bmpx/plugins/container/libcontainer_m3u.a
+lib/bmpx/plugins/container/libcontainer_m3u.so
+lib/bmpx/plugins/container/libcontainer_m3u.so.0
+lib/bmpx/plugins/container/libcontainer_pls.a
+lib/bmpx/plugins/container/libcontainer_pls.so
+lib/bmpx/plugins/container/libcontainer_pls.so.0
+lib/bmpx/plugins/container/libcontainer_xspf.a
+lib/bmpx/plugins/container/libcontainer_xspf.so
+lib/bmpx/plugins/container/libcontainer_xspf.so.0
+lib/bmpx/plugins/flow/libflow_linear.a
+lib/bmpx/plugins/flow/libflow_linear.so
+lib/bmpx/plugins/flow/libflow_linear.so.0
+lib/bmpx/plugins/flow/libflow_shuffle.a
+lib/bmpx/plugins/flow/libflow_shuffle.so
+lib/bmpx/plugins/flow/libflow_shuffle.so.0
+lib/bmpx/plugins/transport/libtransport_cdda.a
+lib/bmpx/plugins/transport/libtransport_cdda.so
+lib/bmpx/plugins/transport/libtransport_cdda.so.0
+lib/bmpx/plugins/transport/libtransport_file.a
+lib/bmpx/plugins/transport/libtransport_file.so
+lib/bmpx/plugins/transport/libtransport_file.so.0
+lib/bmpx/plugins/transport/libtransport_http.a
+lib/bmpx/plugins/transport/libtransport_http.so
+lib/bmpx/plugins/transport/libtransport_http.so.0
+lib/libhrel.la
+lib/libhrel.so
+lib/libhrel.so.1
+lib/libskinned.a
+lib/libskinned.so
+lib/libskinned.so.0
+libdata/pkgconfig/hrel.pc
+share/applications/bmpx.desktop
+share/bmp-remote/pygtk/bmp-remote-image.png
+share/bmp-remote/pygtk/bmp_remote.glade
+%%DATADIR%%/data/GPL.txt
+%%DATADIR%%/glade/dialog_add_files.glade
+%%DATADIR%%/glade/dialog_add_from_library.glade
+%%DATADIR%%/glade/dialog_add_url.glade
+%%DATADIR%%/glade/dialog_export_tracklist.glade
+%%DATADIR%%/glade/dialog_file_info.glade
+%%DATADIR%%/glade/dialog_new_list_from_selection.glade
+%%DATADIR%%/glade/dialog_preferences.glade
+%%DATADIR%%/glade/dialog_rename_tracklist.glade
+%%DATADIR%%/icons/themes/darksphere/icon_player_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_64.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_64.png
+%%DATADIR%%/icons/themes/display/icon_player_128.png
+%%DATADIR%%/icons/themes/display/icon_player_16.png
+%%DATADIR%%/icons/themes/display/icon_player_32.png
+%%DATADIR%%/icons/themes/display/icon_player_48.png
+%%DATADIR%%/icons/themes/display/icon_player_64.png
+%%DATADIR%%/icons/themes/display/icon_playlist_128.png
+%%DATADIR%%/icons/themes/display/icon_playlist_16.png
+%%DATADIR%%/icons/themes/display/icon_playlist_32.png
+%%DATADIR%%/icons/themes/display/icon_playlist_48.png
+%%DATADIR%%/icons/themes/display/icon_playlist_64.png
+%%DATADIR%%/icons/themes/plastic/icon_player_128.png
+%%DATADIR%%/icons/themes/plastic/icon_player_16.png
+%%DATADIR%%/icons/themes/plastic/icon_player_32.png
+%%DATADIR%%/icons/themes/plastic/icon_player_48.png
+%%DATADIR%%/icons/themes/plastic/icon_player_64.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_128.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_16.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_32.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_48.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_64.png
+%%DATADIR%%/icons/themes/red/icon_player_128.png
+%%DATADIR%%/icons/themes/red/icon_player_16.png
+%%DATADIR%%/icons/themes/red/icon_player_32.png
+%%DATADIR%%/icons/themes/red/icon_player_48.png
+%%DATADIR%%/icons/themes/red/icon_player_64.png
+%%DATADIR%%/icons/themes/red/icon_playlist_128.png
+%%DATADIR%%/icons/themes/red/icon_playlist_16.png
+%%DATADIR%%/icons/themes/red/icon_playlist_32.png
+%%DATADIR%%/icons/themes/red/icon_playlist_48.png
+%%DATADIR%%/icons/themes/red/icon_playlist_64.png
+%%DATADIR%%/icons/tray-icons/tray-icon-default.png
+%%DATADIR%%/icons/tray-icons/tray-icon-exit.png
+%%DATADIR%%/icons/tray-icons/tray-icon-paused.png
+%%DATADIR%%/icons/tray-icons/tray-icon-playing.png
+%%DATADIR%%/images/about_logo.png
+%%DATADIR%%/images/appearance.png
+%%DATADIR%%/images/appearance_ia.png
+%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/eq.png
+%%DATADIR%%/images/eq_ia.png
+%%DATADIR%%/images/library.png
+%%DATADIR%%/images/library_ia.png
+%%DATADIR%%/images/logo-experimental.png
+%%DATADIR%%/images/mouse.png
+%%DATADIR%%/images/mouse_ia.png
+%%DATADIR%%/images/playback.png
+%%DATADIR%%/images/playback_ia.png
+%%DATADIR%%/images/playlist.png
+%%DATADIR%%/images/playlist_ia.png
+%%DATADIR%%/images/plugins.png
+%%DATADIR%%/images/plugins_ia.png
+%%DATADIR%%/images/preferences-logo.png
+%%DATADIR%%/images/wait.gif
+%%DATADIR%%/skins/default/README
+%%DATADIR%%/skins/default/balance.bmp
+%%DATADIR%%/skins/default/cbuttons.bmp
+%%DATADIR%%/skins/default/eq_ex.bmp
+%%DATADIR%%/skins/default/eqmain.bmp
+%%DATADIR%%/skins/default/main.bmp
+%%DATADIR%%/skins/default/monoster.bmp
+%%DATADIR%%/skins/default/nums_ex.bmp
+%%DATADIR%%/skins/default/playpaus.bmp
+%%DATADIR%%/skins/default/pledit.bmp
+%%DATADIR%%/skins/default/pledit.txt
+%%DATADIR%%/skins/default/posbar.bmp
+%%DATADIR%%/skins/default/shufrep.bmp
+%%DATADIR%%/skins/default/text.bmp
+%%DATADIR%%/skins/default/titlebar.bmp
+%%DATADIR%%/skins/default/viscolor.txt
+%%DATADIR%%/skins/default/volume.bmp
+%%DATADIR%%/ui/main.ui
+%%DATADIR%%/ui/playlist.ui
+%%DATADIR%%/ui/trayicon.ui
+share/gtk-doc/html/libhrel/ch06.html
+share/gtk-doc/html/libhrel/fundamentals.html
+share/gtk-doc/html/libhrel/home.png
+share/gtk-doc/html/libhrel/index.html
+share/gtk-doc/html/libhrel/index.sgml
+share/gtk-doc/html/libhrel/left.png
+share/gtk-doc/html/libhrel/libhrel-BTree.html
+share/gtk-doc/html/libhrel/libhrel-Relation.html
+share/gtk-doc/html/libhrel/libhrel-Restricted-Relation.html
+share/gtk-doc/html/libhrel/libhrel-Sorted-Relation.html
+share/gtk-doc/html/libhrel/libhrel-Stack.html
+share/gtk-doc/html/libhrel/libhrel-Tuple.html
+share/gtk-doc/html/libhrel/libhrel-Type-system.html
+share/gtk-doc/html/libhrel/libhrel.devhelp
+share/gtk-doc/html/libhrel/overview.html
+share/gtk-doc/html/libhrel/relations.html
+share/gtk-doc/html/libhrel/right.png
+share/gtk-doc/html/libhrel/style.css
+share/gtk-doc/html/libhrel/tuple.html
+share/gtk-doc/html/libhrel/type-system.html
+share/gtk-doc/html/libhrel/up.png
+share/icons/hicolor/48x48/apps/bmpx.png
+share/locale/af/LC_MESSAGES/bmpx.mo
+share/locale/bg/LC_MESSAGES/bmpx.mo
+share/locale/de/LC_MESSAGES/bmpx.mo
+share/locale/el/LC_MESSAGES/bmpx.mo
+share/locale/fr/LC_MESSAGES/bmpx.mo
+share/locale/ja/LC_MESSAGES/bmpx.mo
+@dirrm include/bmpx/interfaces
+@dirrm include/bmpx
+@dirrm include/libhrel/libhrel
+@dirrm include/libhrel
+@dirrm lib/bmpx/plugins/container
+@dirrm lib/bmpx/plugins/flow
+@dirrm lib/bmpx/plugins/transport
+@dirrm lib/bmpx/plugins
+@dirrm lib/bmpx
+@dirrm share/bmp-remote/pygtk
+@dirrm share/bmp-remote
+@dirrm %%DATADIR%%/icons/themes/darksphere
+@dirrm %%DATADIR%%/icons/themes/display
+@dirrm %%DATADIR%%/icons/themes/plastic
+@dirrm %%DATADIR%%/icons/themes/red
+@dirrm %%DATADIR%%/icons/themes
+@dirrm %%DATADIR%%/icons/tray-icons
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
+@dirrm share/gtk-doc/html/libhrel
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
