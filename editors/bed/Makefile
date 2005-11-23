@@ -9,7 +9,8 @@ PORTNAME=	bed
 PORTVERSION=	0.2.19
 PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://bedlinux.tripod.com/download/
 MASTER_SITE_SUBDIR=	apps/editors/terminal
 EXTRACT_SUFX=	.src.tar.gz
 
