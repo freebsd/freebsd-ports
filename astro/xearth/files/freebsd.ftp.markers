@@ -41,7 +41,9 @@
 # Asia/Australia
 #
 35.7,	139.7,	"ftp.jp.FreeBSD.org"		# Tokyo, Japan
-37.56,	126.98,	"ftp.kr.FreeBSD.org"		# Seoul, South Korea
+37.4253,126.9911,"ftp.kr.FreeBSD.org"		# Gwacheon, South Korea
+37.4828,127.0200,"ftp2.kr.FreeBSD.org"		# Daejeon, South Korea
+36.3733,127.3628,"ftp3.kr.FreeBSD.org"		# Seoul, South Korea
 -27.0,	153.0,	"ftp.au.FreeBSD.org"		# Brisbane, Australia (UQ/AARNet)
 -42.88,	147.32,	"ftp2.au.FreeBSD.org"		# Hobart, Australia (Tas. Govt)
 -33.55,	151.1,	"ftp3.au.FreeBSD.org"		# Sydney, Australia (U Syd)
