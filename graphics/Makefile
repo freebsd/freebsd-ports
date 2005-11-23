@@ -55,6 +55,7 @@
     SUBDIR += corona
     SUBDIR += cqcam
     SUBDIR += crw
+    SUBDIR += crystalspace
     SUBDIR += cthumb
     SUBDIR += curator
     SUBDIR += danpei
