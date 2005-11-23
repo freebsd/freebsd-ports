@@ -1,4 +1,3 @@
-$NetBSD: md5,v 1.1.1.1 1999/05/23 02:01:25 tv Exp $
-
 MD5 (ppsmall-1.0.tar.Z) = 012c6685c386fbac129d54eb561d7ea8
+SHA256 (ppsmall-1.0.tar.Z) = d305c14162f9039e65c0a2fea0087ba190e7e5732e3f8efacee8187892e603a9
 SIZE (ppsmall-1.0.tar.Z) = 5251
