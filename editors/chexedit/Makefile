@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
 PLIST_FILES=	bin/chexedit
 
 MAN1=		chexedit.1
