@@ -1,5 +1,5 @@
---- code/Construct	Mon Aug 15 23:56:27 2005
-+++ ../../work/quake3-1.32b/code/Construct	Sun Aug 28 23:13:56 2005
+--- /work/a/ports/games/quake3/work/quake3-1.32b/code/Construct.orig	Mon Aug 15 20:56:27 2005
++++ /work/a/ports/games/quake3/work/quake3-1.32b/code/Construct	Wed Nov 23 10:37:04 2005
 @@ -19,8 +19,8 @@
  use Cons_gcc;
  
@@ -11,6 +11,17 @@
  $do_masterserver = 0;
  $do_authserver = 0;
  $do_authport = 0;
+@@ -32,8 +32,8 @@
+ $DO_WIN32 = 0;
+ $NO_VM = 0;
+ $NO_SO = 0;
+-$CC='gcc';
+-$CXX='g++';
++$CC=$ENV{CC};
++$CXX=$ENV{CXX};
+ 
+ # detect an sdk build (don't attempt client build and other things)
+ if ( -r 'unix/Conscript-client' )
 @@ -63,9 +63,9 @@
  else
  {
