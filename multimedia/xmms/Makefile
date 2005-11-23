@@ -9,8 +9,7 @@ PORTNAME=	xmms
 PORTVERSION=	1.2.10
 PORTREVISION=	4
 CATEGORIES+=	multimedia audio ipv6
-MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
-		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
+MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	esk@ira.uka.de
