@@ -1,0 +1,11 @@
+--- libhrel/Makefile.in.orig	Wed Nov 23 14:11:02 2005
++++ libhrel/Makefile.in	Wed Nov 23 14:12:47 2005
+@@ -192,7 +192,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ SUBDIRS = libhrel docs
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${prefix}/libdata/pkgconfig
+ pkgconfig_DATA = hrel.pc
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ all: config.h
