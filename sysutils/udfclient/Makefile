@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udfclient
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
 DISTNAME=	UDFclient.${PORTVERSION}
@@ -25,6 +25,6 @@ PLIST_FILES=	bin/udfdump \
 		bin/newfs_udf \
 		bin/cd_sessions \
 		bin/cd_disect \
-		bin/cdrw_format
+		bin/mmc_format
 
 .include <bsd.port.mk>
