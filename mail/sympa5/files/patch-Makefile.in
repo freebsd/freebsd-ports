@@ -27,32 +27,6 @@
  
  importantchanges:
  	@( 	PERL=$(PERL); export PERL; \
-@@ -610,7 +612,7 @@
- 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
- 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
- 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
--	LOCALEDIR='${prefix}/locale' SCRIPTDIR='${SCRIPTDIR}' \
-+	SCRIPTDIR='${SCRIPTDIR}' \
- 	USER='${USER}' GROUP='${GROUP}') || exit 1;
- 
- installlocale:
-@@ -618,7 +620,6 @@
- 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
- 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
- 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
--	LOCALEDIR='${prefix}/locale' \
- 	USER='${USER}' GROUP='${GROUP}' install) || exit 1;
- 
- updatelocale:
-@@ -626,7 +627,7 @@
- 	$(MAKE) SH='${SH}' CC='${CC}' CFLAGS='${CFLAGS}' PERL='${PERL}' \
- 	DIR='${DIR}' LOCALEDIR='${LOCALEDIR}' ETCBINDIR='${ETCBINDIR}' \
- 	DESTDIR='${DESTDIR}' CONFIG='${CONFIG}' WWSCONFIG='${WWSCONFIG}' \
--	LOCALEDIR='${prefix}/locale' SCRIPTDIR='${SCRIPTDIR}' \
-+	SCRIPTDIR='${SCRIPTDIR}' \
- 	USER='${USER}' GROUP='${GROUP}' update-po) || exit 1;
- 
- installsrc:
 @@ -719,7 +720,7 @@
  
  installdir:

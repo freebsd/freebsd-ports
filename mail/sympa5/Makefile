@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	5.1
+PORTVERSION=	5.1.2
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
