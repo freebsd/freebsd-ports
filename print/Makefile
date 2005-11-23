@@ -145,6 +145,7 @@
     SUBDIR += latex2slides
     SUBDIR += latexdiff
     SUBDIR += latexmk
+    SUBDIR += lcdf-typetools
     SUBDIR += lgrind
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
