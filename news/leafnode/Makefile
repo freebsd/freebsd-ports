@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.11.3
+PORTVERSION=	1.11.4
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -15,7 +15,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
 			./:DEFAULT \
 			system/news/transport/:sunsite
-DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
 
 MAINTAINER=	matthias.andree@gmx.de
