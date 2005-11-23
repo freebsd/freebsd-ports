@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -29,7 +29,7 @@ MAN1=		lighttpd.1 spawn-fcgi.1
 OPTIONS=	OPENSSL		"Enable SSL support"	on  \
 		OPENLDAP	"Enable LDAP support"	off \
 		MYSQL		"Enable MYSQL support"	off \
-		IPV6		"Disable IPV6 support"	off \
+		IPV6		"Enable IPV6 support"	on \
 		CML		"Enable Cache Meta Language support" off
 
 .include <bsd.port.pre.mk>
@@ -49,7 +49,7 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-.if defined(WITH_IPV6)
+.if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
