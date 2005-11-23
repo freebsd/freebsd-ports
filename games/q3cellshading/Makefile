@@ -7,7 +7,7 @@
 
 PORTNAME=	quake3
 PORTVERSION=	1.32b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
@@ -27,8 +27,15 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 USE_GL=		yes
+USE_GCC=	3.2+
 
 PLIST_FILES=	bin/q3ded bin/quake3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%Q3DIR%%|"${Q3DIR}"|' \
@@ -38,7 +45,7 @@ pre-build:
 	${MKDIR} ${WRKSRC}/lcc/build
 
 do-build:
-	cd ${WRKSRC}/code && ${PERL} unix/cons
+	cd ${WRKSRC}/code && ${MAKE_ENV} ${PERL} unix/cons
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/code/install/linuxq3ded \
@@ -47,4 +54,4 @@ do-install:
 		${PREFIX}/bin/quake3
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

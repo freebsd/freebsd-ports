@@ -1,11 +1,11 @@
-diff -ruN ./code/qcommon/common.c ../quake3-1.32b-BUILT/./code/qcommon/common.c
---- ./code/qcommon/common.c	Tue Aug 16 02:10:07 2005
-+++ ../quake3-1.32b-BUILT/./code/qcommon/common.c	Mon Aug 22 21:03:32 2005
-@@ -24,15 +24,7 @@
+--- code/qcommon/common.c.orig	Mon Aug 15 23:10:07 2005
++++ code/qcommon/common.c	Wed Nov 23 10:53:29 2005
+@@ -24,15 +24,8 @@
  #include "../game/q_shared.h"
  #include "qcommon.h"
  #include <setjmp.h>
 -#ifdef __linux__
++#include <sys/types.h>
  #include <netinet/in.h>
 -#else
 -#if defined(MACOS_X)
