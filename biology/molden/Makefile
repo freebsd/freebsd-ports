@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
+BROKEN=		"Size mismatch"
+
 USE_XLIB=	yes
 
 RESTRICTED=	"free for academic, non profit usage;"
