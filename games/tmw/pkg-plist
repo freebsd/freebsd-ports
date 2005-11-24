@@ -1,0 +1,110 @@
+bin/tmw
+share/applications/tmw.desktop
+share/pixmaps/tmw.png
+share/tmw/data/graphics/gui/attack_target.png
+share/tmw/data/graphics/gui/bg_quad_dis.png
+share/tmw/data/graphics/gui/browserfont.png
+share/tmw/data/graphics/gui/button.png
+share/tmw/data/graphics/gui/button_disabled.png
+share/tmw/data/graphics/gui/buttonhi.png
+share/tmw/data/graphics/gui/buttonpress.png
+share/tmw/data/graphics/gui/checkbox.png
+share/tmw/data/graphics/gui/deepbox.png
+share/tmw/data/graphics/gui/fixedfont.png
+share/tmw/data/graphics/gui/hits_blue.png
+share/tmw/data/graphics/gui/hits_red.png
+share/tmw/data/graphics/gui/hits_yellow.png
+share/tmw/data/graphics/gui/hscroll_left_default.png
+share/tmw/data/graphics/gui/hscroll_left_highlight.png
+share/tmw/data/graphics/gui/hscroll_left_pressed.png
+share/tmw/data/graphics/gui/hscroll_right_default.png
+share/tmw/data/graphics/gui/hscroll_right_highlight.png
+share/tmw/data/graphics/gui/hscroll_right_pressed.png
+share/tmw/data/graphics/gui/menuitemD.png
+share/tmw/data/graphics/gui/menuitemF.png
+share/tmw/data/graphics/gui/menuitemN.png
+share/tmw/data/graphics/gui/menuitemP.png
+share/tmw/data/graphics/gui/mouse.png
+share/tmw/data/graphics/gui/radioin.png
+share/tmw/data/graphics/gui/radioout.png
+share/tmw/data/graphics/gui/resize.png
+share/tmw/data/graphics/gui/rpgfont_wider.png
+share/tmw/data/graphics/gui/sansserif8.png
+share/tmw/data/graphics/gui/selection.png
+share/tmw/data/graphics/gui/slider.png
+share/tmw/data/graphics/gui/thickborder.png
+share/tmw/data/graphics/gui/vscroll_blue.png
+share/tmw/data/graphics/gui/vscroll_down_default.png
+share/tmw/data/graphics/gui/vscroll_down_highlight.png
+share/tmw/data/graphics/gui/vscroll_down_pressed.png
+share/tmw/data/graphics/gui/vscroll_grey.png
+share/tmw/data/graphics/gui/vscroll_red.png
+share/tmw/data/graphics/gui/vscroll_up_default.png
+share/tmw/data/graphics/gui/vscroll_up_highlight.png
+share/tmw/data/graphics/gui/vscroll_up_pressed.png
+share/tmw/data/graphics/images/login_wallpaper.png
+share/tmw/data/graphics/images/minimap_new_1-1.png
+share/tmw/data/graphics/images/minimap_new_2-1.png
+share/tmw/data/graphics/images/minimap_new_3-1.png
+share/tmw/data/graphics/images/minimap_new_5-1.png
+share/tmw/data/graphics/sprites/emotions.png
+share/tmw/data/graphics/sprites/items.png
+share/tmw/data/graphics/sprites/monster0.png
+share/tmw/data/graphics/sprites/monster1.png
+share/tmw/data/graphics/sprites/monster10.png
+share/tmw/data/graphics/sprites/monster2.png
+share/tmw/data/graphics/sprites/monster3.png
+share/tmw/data/graphics/sprites/monster4.png
+share/tmw/data/graphics/sprites/monster5.png
+share/tmw/data/graphics/sprites/monster6.png
+share/tmw/data/graphics/sprites/monster7.png
+share/tmw/data/graphics/sprites/monster8.png
+share/tmw/data/graphics/sprites/monster9.png
+share/tmw/data/graphics/sprites/npcs.png
+share/tmw/data/graphics/sprites/player_male_base.png
+share/tmw/data/graphics/sprites/player_male_hair.png
+share/tmw/data/graphics/sprites/weapons.png
+share/tmw/data/graphics/tiles/arena.png
+share/tmw/data/graphics/tiles/cave.png
+share/tmw/data/graphics/tiles/collision.png
+share/tmw/data/graphics/tiles/desert1.png
+share/tmw/data/graphics/tiles/desert2.png
+share/tmw/data/graphics/tiles/desert_x2.png
+share/tmw/data/graphics/tiles/desert_x3.png
+share/tmw/data/graphics/tiles/inn.png
+share/tmw/data/graphics/tiles/mountain.png
+share/tmw/data/help/about.txt
+share/tmw/data/help/changes.txt
+share/tmw/data/help/commands.txt
+share/tmw/data/help/header.txt
+share/tmw/data/help/index.txt
+share/tmw/data/help/skills.txt
+share/tmw/data/help/support.txt
+share/tmw/data/help/team.txt
+share/tmw/data/icons/tmw-icon.ico
+share/tmw/data/icons/tmw-icon.png
+share/tmw/data/icons/tmw-icon.xpm
+share/tmw/data/items.xml
+share/tmw/data/maps/new_1-1.tmx.gz
+share/tmw/data/maps/new_2-1.tmx.gz
+share/tmw/data/maps/new_3-1.tmx.gz
+share/tmw/data/maps/new_4-1.tmx.gz
+share/tmw/data/maps/new_5-1.tmx.gz
+share/tmw/data/maps/new_6-1.tmx.gz
+share/tmw/data/maps/new_7-1.tmx.gz
+share/tmw/data/maps/new_8-1.tmx.gz
+share/tmw/data/sfx/bow_shoot_1.ogg
+share/tmw/data/sfx/fist-swish.ogg
+share/tmw/data/sfx/levelup.ogg
+@dirrm share/applications
+@dirrm share/tmw/data/sfx
+@dirrm share/tmw/data/maps
+@dirrm share/tmw/data/icons
+@dirrm share/tmw/data/help
+@dirrm share/tmw/data/graphics/tiles
+@dirrm share/tmw/data/graphics/sprites
+@dirrm share/tmw/data/graphics/images
+@dirrm share/tmw/data/graphics/gui
+@dirrm share/tmw/data/graphics
+@dirrm share/tmw/data
+@dirrm share/tmw

@@ -557,6 +557,7 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
+    SUBDIR += tmw
     SUBDIR += tomatoes
     SUBDIR += tome
     SUBDIR += toppler
