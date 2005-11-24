@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Catalyst-Model-CDBI
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	lars@balker.dk
 COMMENT=	CDBI model class for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-DBI-Loader \
@@ -26,7 +26,7 @@ MAN3=	Catalyst::Helper::Model::CDBI.3 \
 	Catalyst::Model::CDBI.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE=	requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
+.if ${PERL_LEVEL} <= 500800
+IGNORE=	requires Perl 5.8. Install lang/perl5.8, and try again
 .endif
 .include <bsd.port.post.mk>
