@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tmw
-# Date created: 	12 Oktober 2005
-# Whom: 		Tobias Gion
+# Date created:				12 Oktober 2005
+# Whom:					Tobias Gion
 #
 # $FreeBSD$
 #
@@ -10,7 +10,6 @@ PORTVERSION=	0.0.17
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
-#DISTFILES=	 ${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	freebsd@gionet.de
 COMMENT=	A free open source 2D MMORPG in development
@@ -22,11 +21,11 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		guichan.0:${PORTSDIR}/devel/guichan
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=15
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image mixer net
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CXXFLAGS="-lpthread"
+		CXXFLAGS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>

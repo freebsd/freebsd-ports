@@ -1,5 +1,5 @@
---- /work/a/ports/NEW/tmw/work/tmw-0.0.17/configure.orig	Sun Oct  2 13:27:45 2005
-+++ /work/a/ports/NEW/tmw/work/tmw-0.0.17/configure	Thu Nov 24 00:58:05 2005
+--- configure.orig	Sun Oct  2 13:27:45 2005
++++ configure	Thu Nov 24 00:58:05 2005
 @@ -6363,7 +6363,7 @@
  
  # Search for sdl-config
