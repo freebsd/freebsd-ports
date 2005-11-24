@@ -1,0 +1,28 @@
+For the FreeBSD port, we assume 
+
+/usr/local/mrourmon 
+
+is the base directory, although that can be overridden with
+the port Makefile.
+
+Read the INSTALL file in the ourmon base directory.
+**************************************************
+
+If you want to uninstall ourmon, read "uninstall.txt" in
+the base directory. 
+
+Be sure and inspect and modify the basic config file,
+at /usr/local/mrourmon/etc/ourmon.conf.  In particular
+set the notion of topn_syn home IP in the config file
+
+topn_syn_homeip  10.1.0.0       255.255.0.0
+
+to your home subnet and netmask.  
+
+After setting the config file up properly,
+in order to start the front-end probe process,
+named "ourmon", you must cd to the base directory  
+and run the ourmon probe from the start shellscript.
+
+# cd /usr/local/mrourmon/bin
+# ./ourmon.sh start
