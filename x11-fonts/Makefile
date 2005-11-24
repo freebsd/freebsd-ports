@@ -50,6 +50,7 @@
     SUBDIR += p5-type1inst
     SUBDIR += pcf2bdf
     SUBDIR += ppantsfonts
+    SUBDIR += proggy_fonts
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += terminus-font

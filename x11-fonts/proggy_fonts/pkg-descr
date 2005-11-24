@@ -1,0 +1,16 @@
+The proggy programmer's fonts (Proggy Clean, Proggy Square, Proggy Small,
+and Proggy Tiny) are a set of fixed-width screen fonts that are designed
+for code listings. Each font only comes in one size that it looks good at.
+The fonts were optimized while coding in C or C++. For this reason,
+characters like the '*' were placed vertically centered, as '*' usually
+means dereference or multiply, but never 'to the power of' like in Fortran.
+The {}s are centered horizontally (as the author's coding style aligns
+braces vertically), the zero looks different from the capital oh, and there
+is never any confusion between ells, ones, and eyes. Additionally, the
+arithmetic operators (+ - * < >) are all axis aligned.
+
+Author: Tristan Grimmer
+WWW: http://www.proggyfonts.com/
+
+-- Leland Wang
+llwang@infor.org
