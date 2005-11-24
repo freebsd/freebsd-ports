@@ -9,7 +9,7 @@ PORTNAME=	metakit
 PORTVERSION=	2.4.9.3
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	http://www.equi4.com/pub/mk/
+MASTER_SITES=	http://www.equi4.com/pub/mk/older/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
