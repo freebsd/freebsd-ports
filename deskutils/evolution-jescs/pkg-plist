@@ -4,6 +4,7 @@ lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so.0
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
 libdata/bonobo/servers/GNOME_Evolution_SunOne_Storage.server
+libexec/evolution/%%EVO_VERSION%%/evolution-jescs
 share/gnome/evolution/%%EVO_VERSION%%/images/sun-connector.png
 share/gnome/evolution/%%EVO_VERSION%%/images/sunone-invitations.png
 share/gnome/evolution/%%EVO_VERSION%%/images/sunone-invitations-mini.png
@@ -37,4 +38,3 @@ share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 @unexec rmdir %D/share/locale/zh_HK 2> /dev/null || true
 @dirrm share/gnome/evolution-jescs/glade
 @dirrm share/gnome/evolution-jescs
-@dirrm libexec/evolution/%%EVO_VERSION%%/evolution-jescs
