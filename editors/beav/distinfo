@@ -1,4 +1,6 @@
 MD5 (beav_1.40.orig.tar.gz) = 9c30dce1697f468682eb2aae464de175
+SHA256 (beav_1.40.orig.tar.gz) = 7ad905e4124bf105ca0e213d8212bed231559825ac11588794b9be7a91399ddc
 SIZE (beav_1.40.orig.tar.gz) = 128103
 MD5 (beav_1.40-18.diff.gz) = 63a2f7a63334abc020cd37e86d349ec1
+SHA256 (beav_1.40-18.diff.gz) = 7904624e71cad4c3adc9b0200278e84172f136883d6e2fcccad977f90d1763a3
 SIZE (beav_1.40-18.diff.gz) = 14218
