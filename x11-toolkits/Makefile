@@ -214,6 +214,7 @@
     SUBDIR += xforms-i18n
     SUBDIR += xg
     SUBDIR += xmhtml
+    SUBDIR += xscoop
     SUBDIR += xview
     SUBDIR += xview-clients
 
