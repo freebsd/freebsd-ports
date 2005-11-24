@@ -1770,6 +1770,7 @@ dontspace	ports/games/dontspace
 doodle		ports/deskutils/doodle
 doom		ports/games/doom
 doom-data	ports/games/doom-data
+doom-freedoom	ports/games/doom-freedoom
 doom-hacx	ports/games/doom-hacx
 doom-hr		ports/games/doom-hr
 doom-hr2	ports/games/doom-hr2
