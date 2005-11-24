@@ -1,0 +1,12 @@
+lib/X11/fonts/local/ProggyClean.pcf.gz
+lib/X11/fonts/local/ProggySquare.pcf.gz
+lib/X11/fonts/local/ProggySmall.pcf.gz
+lib/X11/fonts/local/ProggyTiny.pcf.gz
+lib/X11/fonts/local/ProggyCleanSZ.pcf.gz
+lib/X11/fonts/local/ProggySquareSZ.pcf.gz
+lib/X11/fonts/local/ProggyTinySZ.pcf.gz
+lib/X11/fonts/local/ProggyCleanSZBP.pcf.gz
+lib/X11/fonts/local/ProggyCleanCP.pcf.gz
+lib/X11/fonts/local/ProggyCleanSZCP.pcf.gz
+@exec (cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir)
+@unexec (cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir)
