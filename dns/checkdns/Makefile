@@ -16,7 +16,6 @@ COMMENT=	A domain name server analysis and reporting tool
 USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
-PKG_MESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/main.c \
