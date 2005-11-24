@@ -113,6 +113,7 @@
     SUBDIR += nstreams
     SUBDIR += openvmps
     SUBDIR += oproute
+    SUBDIR += ourmon
     SUBDIR += p0f
     SUBDIR += p5-Altoids
     SUBDIR += p5-Cflow
