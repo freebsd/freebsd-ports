@@ -1,5 +1,6 @@
 bin/xarchive
 lib/xarchive/wrappers/7za-wrap.sh
+lib/xarchive/wrappers/ace-wrap.sh
 lib/xarchive/wrappers/arj-wrap.sh
 lib/xarchive/wrappers/deb-wrap.sh
 lib/xarchive/wrappers/rar-wrap.sh
