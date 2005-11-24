@@ -1,4 +1,6 @@
 MD5 (cxterm5.0.p3.tar.gz) = de542ec3e12b04f5589a7c1583d8c512
+SHA256 (cxterm5.0.p3.tar.gz) = b4c36838987749037116a4045c9b0302375be712e2a1cbacf38b9201420000c3
 SIZE (cxterm5.0.p3.tar.gz) = 2073787
 MD5 (cxterm-5.0.p3-color.patch.gz) = 66d3f22cf4d8ab260c9e2e422f61e04c
+SHA256 (cxterm-5.0.p3-color.patch.gz) = 1c8df79cbf77cc895d614afc46be81475474eb41997f2df2fda4f91fed38abfb
 SIZE (cxterm-5.0.p3-color.patch.gz) = 15182

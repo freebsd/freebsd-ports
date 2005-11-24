@@ -1,4 +1,6 @@
 MD5 (libicq-0.33.tar.gz) = 3717d4b08dfdd9af9a57f5d17d04529d
+SHA256 (libicq-0.33.tar.gz) = 5295bf86a785adf0b70ad5b3416bc73019f177eb5b1a023cd99a52c29e6ed765
 SIZE (libicq-0.33.tar.gz) = 101447
 MD5 (libicq-0.33ja.patch) = c9052a2912f29ae47eaf08f449a7ead9
+SHA256 (libicq-0.33ja.patch) = b49286f396b67778cb6728e2aadeb6b60eb236a952e34980bd9792425d8578eb
 SIZE (libicq-0.33ja.patch) = 10484

@@ -1,4 +1,6 @@
 MD5 (gicq-0.33.tar.gz) = 4e9ef1ef01bf1c74cbbd10448c9568e1
+SHA256 (gicq-0.33.tar.gz) = 33742e082231e68e01579051d6d2a069ce414334df1f41c94813de4f6d4579f3
 SIZE (gicq-0.33.tar.gz) = 182625
 MD5 (gicq-0.33ja.patch) = 505659cf8cf78784252f87ed829cc3f4
+SHA256 (gicq-0.33ja.patch) = 2cba893d7ba9d3bbb6a38b345f3552292f4212a609c3e1050c4477f0d793ffac
 SIZE (gicq-0.33ja.patch) = 1147
