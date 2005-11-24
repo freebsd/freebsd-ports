@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source
@@ -30,23 +30,24 @@ ALL_TARGET=	jar
 ALL_TARGET+=	javadocs
 PORTDOCS=	apidocs design
 .endif
-JARFILE=	xalan.jar
-PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/xalan-j
+JARFILES=	xalan.jar serializer.jar
+PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|} bin/xalan-j
 
 SUB_FILES=	xalan-j.sh
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/
+	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
+.for jarfile in ${JARFILES}
+	@${INSTALL_DATA} ${WRKSRC}/build/${jarfile} ${JAVAJARDIR}/
+	@${ECHO_MSG} -n " ${jarfile}"
+.endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/build/docs && ${FIND} ${PORTDOCS} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@cd ${WRKSRC}/build/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/build/docs && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin/..."
