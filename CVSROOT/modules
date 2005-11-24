@@ -9981,6 +9981,7 @@ prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
 proftpd-mysql	ports/ftp/proftpd-mysql
 profxp		ports/ftp/profxp
+proggy_fonts	ports/x11-fonts/proggy_fonts
 progsreiserfs	ports/sysutils/progsreiserfs
 proguard	ports/java/proguard
 proj		ports/graphics/proj
