@@ -1,6 +1,0 @@
-XScoop provides the ability to quickly determine which underlying X libraries
-were statically linked into an application, even when the source is not
-available. XScoop parses an executable, looking for matches on a subset of
-sample keywords that may identify the library being used. It does not produce
-absolute results, and instead supplies a report with key-hits which represent
-the likelihood that a particular library is present in the binary.
