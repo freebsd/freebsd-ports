@@ -124,6 +124,7 @@
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doom-data
+    SUBDIR += doom-freedoom
     SUBDIR += doom-hacx
     SUBDIR += doom-hr
     SUBDIR += doom-hr2
