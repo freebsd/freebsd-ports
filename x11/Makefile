@@ -258,7 +258,6 @@
     SUBDIR += xrestop
     SUBDIR += xrootconsole
     SUBDIR += xrsh
-    SUBDIR += xscoop
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
     SUBDIR += xscreensaver-gnome-hacks
