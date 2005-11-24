@@ -12,10 +12,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	A very simple GUI framework for use with SDL
-
-BROKEN=		Size mismatch
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
