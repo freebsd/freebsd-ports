@@ -1,4 +1,6 @@
 MD5 (grep-2.4.2.tar.gz) = 8ec9a2e875cd3aaa89896a8f39249f58
+SHA256 (grep-2.4.2.tar.gz) = 44715a24d374236c1711427830512309d16ee8898e13b2bda5ad4ab229bbc74a
 SIZE (grep-2.4.2.tar.gz) = 460582
 MD5 (grep-2.4.2-mlb2.patch.gz) = 70fad6606fe32e903e9cacbecad5363e
+SHA256 (grep-2.4.2-mlb2.patch.gz) = 357e13799903da3c566ea40f8dd7222094c2cb035523060e7146e28e14bcf5a4
 SIZE (grep-2.4.2-mlb2.patch.gz) = 39453
