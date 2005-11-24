@@ -8,7 +8,7 @@
 PORTNAME=	wmjsql
 PORTVERSION=	0.5
 CATEGORIES=	databases windowmaker
-MASTER_SITES=	http://www.dockapps.org/download.php/id/73/ \
+MASTER_SITES=	http://www.dockapps.org/files/42/73/ \
 		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
