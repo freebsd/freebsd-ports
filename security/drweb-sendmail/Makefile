@@ -59,7 +59,7 @@ do-install:
 .for TMPL in ${TMPLS}
 	${INSTALL} -m 0640 -o drweb -g drweb ${WRKSRC}${LOCALBASE}/etc/drweb/templates/${LANG}/${TMPL}.msg \
 		${CONF_PREFIX}/templates/${LANG}/sendmail/${TMPL}.msg-distr
-.if !exists( ${CONF_PREFIX}/templates/${LANG}/aendmail/${TMPL}.msg )
+.if !exists( ${CONF_PREFIX}/templates/${LANG}/sendmail/${TMPL}.msg )
 	${CP} ${CONF_PREFIX}/templates/${LANG}/sendmail/${TMPL}.msg-distr \
 		${CONF_PREFIX}/templates/${LANG}/sendmail/${TMPL}.msg
 .endif
