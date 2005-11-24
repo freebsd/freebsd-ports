@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xerces-j
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-j/source
@@ -27,21 +26,22 @@ WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
 OPTIONS=	DEPRECATED_JARS "build/install the deprecated JARs" on \
 		SAMPLES "build/install the samples" on
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	jars
 .if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadocs #docs
-PORTDOCS=	api dom3-api other xerces2 xni xs
+ALL_TARGET+=	javadocs docs
+PORTDOCS=	*
 .endif
 
 JARFILES+=	xercesImpl.jar xml-apis.jar
 .if !defined(WITHOUT_DEPRECATED_JARS)
 ALL_TARGET+=	deprecatedjars
-JARFILES+=	xerces.jar xmlParserAPIs.jar resolver.jar
-.endif
-.if !defined(WITHOUT_SAMPLES)
-JARFILES+=	xercesSamples.jar
+DEPRECATED_JARFILES=	xerces.jar xercesSamples.jar
+PLIST_FILES+=	${DEPRECATED_JARFILES:S,^,%%DATADIR%%/deprecated/,}
+PLIST_DIRS+=	%%DATADIR%%/deprecated %%DATADIR%%
 .endif
 
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
@@ -55,17 +55,25 @@ post-extract:
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
-	@${MKDIR} ${JAVAJARDIR}
 .for JARFILE in ${JARFILES}
 	@cd ${WRKSRC}/build && ${INSTALL_DATA} ${JARFILE} ${JAVAJARDIR}/${JARFILE}
 	@${ECHO_MSG} -n " ${JARFILE}"
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
+.if !defined(WITHOUT_DEPRECATED_JARS)
+	@${ECHO_MSG} -n ">> Installing deprecated JAR files in ${DATADIR}/deprecated/..."
+	@${MKDIR} ${DATADIR}/deprecated
+.for JARFILE in ${DEPRECATED_JARFILES}
+	@cd ${WRKSRC}/build && ${INSTALL_DATA} ${JARFILE} ${DATADIR}/deprecated/${JARFILE}
+	@${ECHO_MSG} -n " ${JARFILE}"
+.endfor
+	@${ECHO_MSG} " [ DONE ]"
+.endif
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/build/docs/javadocs && \
-		${FIND} ${PORTDOCS} -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} ${PORTDOCS} -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	@cd ${WRKSRC}/build/docs/ && \
+		${FIND} . -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+		${FIND} . -not -type d -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 .if !defined(WITHOUT_SAMPLES)
