@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		fftw.2:${PORTSDIR}/math/fftw \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		nettle.1:${PORTSDIR}/security/nettle \
+		nettle.2:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird
 
 OPTIONS=	TTF "Add FreeType 1 support" on \

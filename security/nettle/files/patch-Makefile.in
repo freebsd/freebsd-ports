@@ -1,10 +1,10 @@
---- Makefile.in.orig	Fri Oct 24 14:28:03 2003
-+++ Makefile.in	Fri Oct 24 14:29:11 2003
-@@ -1067,7 +1067,6 @@ $(SHLIBFORLINK): $(SHLIBOBJECTS)
- install-shared: $(SHLIBFORLINK)
- 	$(INSTALL_DATA) $(SHLIBFORLINK) $(DESTDIR)$(libdir)/$(SHLIBFILE)
- 	(cd $(DESTDIR)$(libdir) \
+--- Makefile.in.orig	Tue Nov  1 09:34:09 2005
++++ Makefile.in	Tue Nov  1 09:34:24 2005
+@@ -221,7 +221,6 @@
+ 	$(INSTALL_PROGRAM) $(SHLIBFORLINK) $(DESTDIR)$(libdir)/$(SHLIBFILE)
+ 	[ -z "$(SHLIBSONAME)" ] \
+                 || (cd $(DESTDIR)$(libdir) \
 -		&& ln -sf $(SHLIBFILE) $(SHLIBSONAME) \
  		&& ln -sf $(SHLIBFILE) $(SHLIBFORLINK) )
  
- %.html : %.texinfo
+ install-info: nettle.info

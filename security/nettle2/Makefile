@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	nettle
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
@@ -28,7 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes
 
 DOCS=		NEWS README TODO nettle.html
-EXAMPLES=	examples/README examples/*.c examples/*.h
+EXAMPLES=	examples/*.c examples/*.h
 INFO=		nettle
 
 post-extract:
