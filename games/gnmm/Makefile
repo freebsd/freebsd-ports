@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
 USE_GETTEXT=	yes

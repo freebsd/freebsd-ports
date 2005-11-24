@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba

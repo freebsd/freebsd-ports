@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A metacity spin-off with Expose(tm)-like features
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
