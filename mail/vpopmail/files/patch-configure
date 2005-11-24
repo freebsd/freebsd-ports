@@ -1,5 +1,5 @@
---- configure.orig	Sun Mar 20 16:38:35 2005
-+++ configure	Wed May 11 15:26:14 2005
+--- configure.old	Sun Nov 20 15:09:16 2005
++++ configure	Sun Nov 20 15:11:01 2005
 @@ -838,6 +838,8 @@
    --enable-qmail-newu=PATH   Full path to qmail-newu program.
    --enable-qmail-inject=PATH Full path to qmail-inject program.
@@ -133,3 +133,14 @@
  
      auth_inc="-I/usr/local/include"
  
+@@ -8296,8 +8297,8 @@
+   fi
+ fi
+ 
+-echo "${CC} -O2" > cdb/conf-cc
+-echo "${CC} -s" > cdb/conf-ld
++echo "${CC} ${CFLAGS}" > cdb/conf-cc
++echo "${CC} ${STRIP}" > cdb/conf-ld
+ 
+ echo ""
+ echo ""
