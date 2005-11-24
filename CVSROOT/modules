@@ -12438,6 +12438,7 @@ utf8conv	ports/converters/utf8conv
 utf8locale	ports/misc/utf8locale
 utftools	ports/misc/utftools
 utftpd		ports/net/utftpd
+uticom		ports/comms/uticom
 utserver	ports/games/utserver
 uudeview	ports/converters/uudeview
 uudx		ports/converters/uudx
