@@ -8,9 +8,7 @@
 PORTNAME=	cvs2cl
 PORTVERSION=	2.58
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.iDaemons.org/pub/distfiles/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
 DISTFILES=	${PORTNAME}.pl-${PORTVERSION}.gz
 EXTRACT_ONLY=	# none
 
@@ -22,7 +20,7 @@ USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 MANCOMPRESSED=	no
 MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME} 
+PLIST_FILES=	bin/${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
