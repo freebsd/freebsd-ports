@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flightgear-aircrafts
-PORTVERSION=	20051121
+PORTVERSION=	20051124
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft/
 DISTFILES=	747_${FGRELDATE}.tgz \
 		A320_${FGRELDATE}.tgz \
-		A380_${FGRELDATE}.tgz \
 		a4_${FGRELDATE}.tgz \
 		airwaveXtreme150_${FGRELDATE}.tgz \
 		AN-225_${FGRELDATE}.tgz \
