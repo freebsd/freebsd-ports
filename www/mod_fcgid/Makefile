@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://fastcgi.coremail.cn/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	An alternative FastCGI module for Apache2
 
 USE_APACHE=	yes
