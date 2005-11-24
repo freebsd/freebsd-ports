@@ -12155,6 +12155,7 @@ tmetric		ports/benchmarks/tmetric
 tmpreaper	ports/sysutils/tmpreaper
 tmpwatch	ports/sysutils/tmpwatch
 tmsnc		ports/net-im/tmsnc
+tmw		ports/games/tmw
 tn-aspell	ports/textproc/tn-aspell
 tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
