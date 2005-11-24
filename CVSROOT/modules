@@ -13460,7 +13460,7 @@ xsane		ports/graphics/xsane
 xsb		ports/lang/xsb
 xsc		ports/games/xsc
 xscavenger	ports/games/xscavenger
-xscoop		ports/x11/xscoop
+xscoop		ports/x11-toolkits/xscoop
 xscorch		ports/games/xscorch
 xscrabble	ports/games/xscrabble
 xscreensaver	ports/x11/xscreensaver
