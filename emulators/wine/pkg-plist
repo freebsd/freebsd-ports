@@ -458,6 +458,7 @@ lib/wine/dswave.dll.so
 lib/wine/dxdiagn.dll.so
 lib/wine/eject.exe.so
 lib/wine/expand.exe.so
+lib/wine/explorer.exe.so
 lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
 lib/wine/glu32.dll.so
