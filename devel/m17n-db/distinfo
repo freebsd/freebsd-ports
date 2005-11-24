@@ -1,4 +1,6 @@
 MD5 (m17n-db-1.2.0.tar.gz) = de2a5ded6800a3744e8df0d665d1ffe5
+SHA256 (m17n-db-1.2.0.tar.gz) = 79164d0c6d8d8c26d2c85a3e1292675cf0244b3c416e49ad78297cd88f30a5e2
 SIZE (m17n-db-1.2.0.tar.gz) = 344172
 MD5 (glibc-2.3.3.tar.bz2) = e825807b98042f807799ccc9dd96d31b
+SHA256 (glibc-2.3.3.tar.bz2) = e769c2960526aa638527f1cecfb9dae019e362041db8e790a327757fe1ee4281
 SIZE (glibc-2.3.3.tar.bz2) = 13053127
