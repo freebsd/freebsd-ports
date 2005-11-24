@@ -8,4 +8,4 @@ This port installs the version currently maintained by OpenOffice
 project. Unfortunately, OOo does not offer dmake as an independent
 download, but, fortunately, the folks at Debian do.
 
-WWW: http://people.debian.org/~rene/pkgs/dmake/
+WWW: http://people.debian.org/~rene/dmake/

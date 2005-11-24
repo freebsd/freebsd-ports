@@ -8,7 +8,7 @@
 PORTNAME=	dmake
 PORTVERSION=	4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://people.debian.org/~rene/pkgs/dmake/
+MASTER_SITES=	http://people.debian.org/~rene/dmake/
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
