@@ -1,0 +1,62 @@
+bin/klamav
+bin/klammail
+bin/klamd
+bin/ScanWithKlamAV.sh
+share/doc/HTML/en/klamav02/index.docbook
+share/doc/HTML/en/klamav02/index.cache.bz2
+share/doc/HTML/en/klamav02/common
+share/locale/de/LC_MESSAGES/klamav02.mo
+share/locale/it/LC_MESSAGES/klamav02.mo
+share/locale/ru/LC_MESSAGES/klamav02.mo
+share/locale/pt_BR/LC_MESSAGES/klamav02.mo
+share/applnk/Utilities/klamav.desktop
+share/apps/konqueror/servicemenus/klamav-dropdown.desktop
+share/apps/klamav/klamavui.rc
+share/icons/locolor/32x32/apps/klamav.png
+share/icons/locolor/32x32/actions/klamav.png
+share/icons/locolor/16x16/apps/klamav.png
+share/icons/hicolor/48x48/apps/klamav.png
+share/icons/hicolor/32x32/apps/klamav.png
+share/icons/hicolor/22x22/actions/klamav.png
+share/icons/hicolor/32x32/actions/klamav.png
+share/icons/locolor/16x16/actions/klamav.png
+share/apps/klamav/icons/locolor/32x32/apps/klamav.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamavbw.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamavdl.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamavbwdl.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamavbw.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamavdl.png
+share/apps/klamav/icons/hicolor/22x22/actions/klamavbwdl.png
+share/apps/klamav/icons/locolor/32x32/actions/klamav.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamavbwdl.png
+share/apps/klamav/icons/locolor/16x16/apps/klamav.png
+share/apps/klamav/icons/hicolor/48x48/apps/klamav.png
+share/apps/klamav/icons/hicolor/32x32/apps/klamav.png
+share/apps/klamav/icons/hicolor/22x22/actions/klamavbw.png
+share/apps/klamav/icons/hicolor/22x22/actions/klamav.png
+share/apps/klamav/icons/hicolor/22x22/actions/klamavdl.png
+share/apps/klamav/icons/hicolor/32x32/actions/klamav.png
+share/apps/klamav/icons/locolor/16x16/actions/klamav.png
+share/apps/klamav/about/main.html
+share/apps/klamav/about/wait.html
+share/apps/klamav/about/aboutklamav.html
+share/apps/klamav/about/klam.png
+@dirrm share/doc/HTML/en/klamav02
+@dirrm share/apps/klamav/about
+@dirrm share/apps/klamav/icons/locolor/32x32/apps
+@dirrm share/apps/klamav/icons/hicolor/32x32/actions
+@dirrm share/apps/klamav/icons/hicolor/32x32/apps
+@dirrm share/apps/klamav/icons/hicolor/22x22/actions
+@dirrm share/apps/klamav/icons/locolor/32x32/actions
+@dirrm share/apps/klamav/icons/locolor/16x16/apps
+@dirrm share/apps/klamav/icons/hicolor/48x48/apps
+@dirrm share/apps/klamav/icons/locolor/16x16/actions
+@dirrm share/apps/klamav/icons/locolor/32x32
+@dirrm share/apps/klamav/icons/locolor/16x16
+@dirrm share/apps/klamav/icons/locolor
+@dirrm share/apps/klamav/icons/hicolor/32x32
+@dirrm share/apps/klamav/icons/hicolor/22x22
+@dirrm share/apps/klamav/icons/hicolor/48x48
+@dirrm share/apps/klamav/icons/hicolor
+@dirrm share/apps/klamav/icons
+@dirrm share/apps/klamav

@@ -177,6 +177,7 @@
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kgpg
+    SUBDIR += klamav
     SUBDIR += knocker
     SUBDIR += krb4
     SUBDIR += krb5
