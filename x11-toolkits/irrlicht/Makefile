@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	barner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
