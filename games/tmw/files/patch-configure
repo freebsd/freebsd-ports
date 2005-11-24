@@ -1,0 +1,11 @@
+--- /work/a/ports/NEW/tmw/work/tmw-0.0.17/configure.orig	Sun Oct  2 13:27:45 2005
++++ /work/a/ports/NEW/tmw/work/tmw-0.0.17/configure	Thu Nov 24 00:58:05 2005
+@@ -6363,7 +6363,7 @@
+ 
+ # Search for sdl-config
+ # Extract the first word of "sdl-config", so it can be a program name with args.
+-set dummy sdl-config; ac_word=$2
++set dummy `basename ${SDL_CONFIG}`; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_path_LIBSDL_CONFIG+set}" = set; then
