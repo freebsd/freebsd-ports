@@ -1,0 +1,16 @@
+--- GNUmakefile.orig	Tue Oct  4 14:56:57 2005
++++ GNUmakefile	Tue Oct  4 15:03:47 2005
+@@ -1,9 +1,9 @@
+ include $(GNUSTEP_MAKEFILES)/common.make
+ CP = cp
+-GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_USER_ROOT)
+-ADDITIONAL_GUI_LIBS = -lGLU -lGL -lSDL -lpthread -lSDL_mixer -lSDL_image -lSDL_gfx
+-ADDITIONAL_CFLAGS = -DLINUX `sdl-config --cflags`
+-ADDITIONAL_OBJCFLAGS = -DLOADSAVEGUI -DLINUX -DHAVE_SOUND -Wno-import `sdl-config --cflags`
++GNUSTEP_INSTALLATION_DIR = $(GNUSTEP_LOCAL_ROOT)
++ADDITIONAL_GUI_LIBS = -lGLU -lGL -lSDL_mixer -lSDL_image -lSDL_gfx `sdl-config --libs`
++ADDITIONAL_CFLAGS = -I/usr/X11R6/include -DLINUX `sdl-config --cflags`
++ADDITIONAL_OBJCFLAGS = -I/usr/X11R6/include -DLOADSAVEGUI -DLINUX -DHAVE_SOUND -Wno-import `sdl-config --cflags`
+ APP_NAME = oolite
+ oolite_LIB_DIRS += -L/usr/X11R6/lib/
+ 
