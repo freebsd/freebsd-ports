@@ -7,7 +7,7 @@
 PORTNAME=	uptimed
 PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://unixcode.org/downloads/uptimed/ \
+MASTER_SITES=	http://www.robertjohnkaper.com/downloads/uptimed/ \
 		http://people.fruitsalad.org/tap/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
