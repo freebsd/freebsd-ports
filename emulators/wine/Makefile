@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
@@ -33,15 +33,14 @@ USE_GL=		yes
 USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
 
+SUB_FILES=	pkg-message wine.sh
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
 IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
 .endif
-
-post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/wine.sh \
-		> ${WRKSRC}/wine.sh
 
 pre-build:
 	cd ${WRKSRC} && make depend
@@ -60,8 +59,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
-	@${INSTALL_SCRIPT} ${WRKSRC}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
-	${ECHO}
-	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKDIR}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
