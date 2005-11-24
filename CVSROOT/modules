@@ -4916,6 +4916,7 @@ kissd		ports/net/kissd
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
 kkeyled		ports/sysutils/kkeyled
+klamav		ports/security/klamav
 klaptopdaemon	ports/sysutils/klaptopdaemon
 klassmodeler	ports/devel/klassmodeler
 klh10		ports/emulators/klh10
