@@ -108,6 +108,7 @@
     SUBDIR += kde-style-comix
     SUBDIR += kde-style-lipstik
     SUBDIR += kde-style-tiblit
+    SUBDIR += kde-windeco-activeheart
     SUBDIR += kde-windeco-crystal
     SUBDIR += kde-windeco-knifty
     SUBDIR += kde-windeco-neos
