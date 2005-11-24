@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shttpd
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	shttpd
@@ -18,7 +18,7 @@ COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 MAN1=		shttpd.1
 
 .if defined(WITHOUT_SSL)
-PKGNAMESUFFIX=	-nossl
+PKGNAMESUFFIX+=	-nossl
 .else
 CFLAGS+=	-DWITH_SSL -lssl -lcrypto
 .endif
