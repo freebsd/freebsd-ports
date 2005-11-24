@@ -1,0 +1,5 @@
+Crystal Entity Layer (CEL) is a game entity layer based on Crystal Space. 
+It makes it easier for game developers to create games based on Crystal Space. 
+CEL can optionally be used together with Python or other scripting languages
+
+WWW:	http://sourceforge.net/projects/cel/
