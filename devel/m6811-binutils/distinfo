@@ -1,4 +1,6 @@
 MD5 (binutils-2.11.2.tar.gz) = 7a3df361177d491069cb5edbdc15e57c
+SHA256 (binutils-2.11.2.tar.gz) = 5d600829fa397c6be7f3c51cb6ee135da50b39c3628d7f9fa660171ea4700f11
 SIZE (binutils-2.11.2.tar.gz) = 9934295
 MD5 (binutils-2.11.2-m68hc1x-20020203.diffs.gz) = 18037c3c83fdcee754b14fd2874a9918
+SHA256 (binutils-2.11.2-m68hc1x-20020203.diffs.gz) = 39b2e6e23a6542e6899faca856c438132c98c07cbc223ecec88225936d7c5928
 SIZE (binutils-2.11.2-m68hc1x-20020203.diffs.gz) = 278467
