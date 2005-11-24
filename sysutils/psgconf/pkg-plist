@@ -1,0 +1,170 @@
+@unexec cmp %D/etc/psg.conf.sample %D/etc/psg.conf && rm %D/etc/psg.conf
+@unexec cmp %D/etc/psgconf_modules.sample %D/etc/psgconf_modules && rm %D/etc/psgconf_modules
+etc/psg.conf.sample
+etc/psgconf_modules.sample
+sbin/psgconf
+sbin/platform-name
+share/psgconf/config/defaults.conf
+share/psgconf/config/platform-freebsd4.conf
+share/psgconf/config/platform-freebsd5.conf
+share/psgconf/config/platform-freebsd6.conf
+share/psgconf/config/platform-hpux10.conf
+share/psgconf/config/platform-hpux11.conf
+share/psgconf/config/platform-irix6.conf
+share/psgconf/config/platform-ix86-linux2.4.conf
+share/psgconf/config/platform-rs6000-aix4.3.3.conf
+share/psgconf/config/platform-rs6000-aix5.1.0.conf
+share/psgconf/config/platform-sparc-solaris8.conf
+share/psgconf/config/platform-sparc-solaris9.conf
+share/psgconf/config/platform-sparc-solaris10.conf
+share/psgconf/files/magic
+share/psgconf/files/rc.shutdown
+%%SITE_PERL%%//%%PERL_ARCH%%/auto/PSGConf/.packlist
+%%SITE_PERL%%/psgconf-intro.pod
+%%SITE_PERL%%/PSGConf.pm
+%%SITE_PERL%%/PSGConf/Action.pm
+%%SITE_PERL%%/PSGConf/Action/ChMod.pm
+%%SITE_PERL%%/PSGConf/Action/CopyFile.pm
+%%SITE_PERL%%/PSGConf/Action/Crontab.pm
+%%SITE_PERL%%/PSGConf/Action/File.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/BSD_exports.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/EnvFile.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/Literal.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/RC_Script.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/SASL_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/TLI_hosts.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/auto_direct.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/dfstab.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/dsm_opt.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/dsm_sys.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_cshrc.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_exports.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_group.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_master_passwd.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_passwd.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_profile.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_rpc.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_security_passwd.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_services.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_shadow.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/etc_system.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/ftpaccess.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/hosts.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/hosts_allow.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/httpd_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/inetd_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/ld_so_config.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/mime_types.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/named_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/netmasks.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/nsswitch_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/ntp_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/pam_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/pam_file.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/printcap.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/qpopper_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/resolv_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sendmail_aliases.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sendmail_cf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sendmail_map.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sendmail_mc.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sendmail_trusted_users.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sshd_config.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/sudoers.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/syslog_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/tsm_inclexcl.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/workers_properties.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/xinetd_conf.pm
+%%SITE_PERL%%/PSGConf/Action/HomeDir.pm
+%%SITE_PERL%%/PSGConf/Action/MkDir.pm
+%%SITE_PERL%%/PSGConf/Action/MkNod.pm
+%%SITE_PERL%%/PSGConf/Action/ModifyFile.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/Encap.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/FTPArchive.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD/Packages.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD/Ports.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat/RHN.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat/RPMS.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/Solaris.pm
+%%SITE_PERL%%/PSGConf/Action/Remove.pm
+%%SITE_PERL%%/PSGConf/Action/RemoveCrontab.pm
+%%SITE_PERL%%/PSGConf/Action/RestartDaemon.pm
+%%SITE_PERL%%/PSGConf/Action/RunCommand.pm
+%%SITE_PERL%%/PSGConf/Action/Symlink.pm
+%%SITE_PERL%%/PSGConf/Action/TouchFile.pm
+%%SITE_PERL%%/PSGConf/Action/svcs/setprop.pm
+%%SITE_PERL%%/PSGConf/Control.pm
+%%SITE_PERL%%/PSGConf/Control/AIX.pm
+%%SITE_PERL%%/PSGConf/Control/AnonFTP.pm
+%%SITE_PERL%%/PSGConf/Control/Apache.pm
+%%SITE_PERL%%/PSGConf/Control/Apache/FastCGI.pm
+%%SITE_PERL%%/PSGConf/Control/Apache/mod_jk.pm
+%%SITE_PERL%%/PSGConf/Control/CachingDNS.pm
+%%SITE_PERL%%/PSGConf/Control/Core.pm
+%%SITE_PERL%%/PSGConf/Control/FreeBSD.pm
+%%SITE_PERL%%/PSGConf/Control/InitScripts.pm
+%%SITE_PERL%%/PSGConf/Control/Inittab.pm
+%%SITE_PERL%%/PSGConf/Control/Library/crle.pm
+%%SITE_PERL%%/PSGConf/Control/Library/ld_so_conf.pm
+%%SITE_PERL%%/PSGConf/Control/Library/ldconfig.pm
+%%SITE_PERL%%/PSGConf/Control/NFS_Client.pm
+%%SITE_PERL%%/PSGConf/Control/NFS_Server.pm
+%%SITE_PERL%%/PSGConf/Control/NTP.pm
+%%SITE_PERL%%/PSGConf/Control/NameServiceSwitch.pm
+%%SITE_PERL%%/PSGConf/Control/Network.pm
+%%SITE_PERL%%/PSGConf/Control/PAM.pm
+%%SITE_PERL%%/PSGConf/Control/Packages.pm
+%%SITE_PERL%%/PSGConf/Control/PostgreSQL.pm
+%%SITE_PERL%%/PSGConf/Control/Printers.pm
+%%SITE_PERL%%/PSGConf/Control/RHN.pm
+%%SITE_PERL%%/PSGConf/Control/RPC.pm
+%%SITE_PERL%%/PSGConf/Control/Resolver.pm
+%%SITE_PERL%%/PSGConf/Control/SASL.pm
+%%SITE_PERL%%/PSGConf/Control/ShellStartupFiles.pm
+%%SITE_PERL%%/PSGConf/Control/Shells.pm
+%%SITE_PERL%%/PSGConf/Control/Solaris.pm
+%%SITE_PERL%%/PSGConf/Control/TCPWrappers.pm
+%%SITE_PERL%%/PSGConf/Control/TSM.pm
+%%SITE_PERL%%/PSGConf/Control/Users.pm
+%%SITE_PERL%%/PSGConf/Control/cron.pm
+%%SITE_PERL%%/PSGConf/Control/dtlogin.pm
+%%SITE_PERL%%/PSGConf/Control/inetd.pm
+%%SITE_PERL%%/PSGConf/Control/logadm.pm
+%%SITE_PERL%%/PSGConf/Control/logrotate.pm
+%%SITE_PERL%%/PSGConf/Control/motd.pm
+%%SITE_PERL%%/PSGConf/Control/newsyslog.pm
+%%SITE_PERL%%/PSGConf/Control/qpopper.pm
+%%SITE_PERL%%/PSGConf/Control/sendmail.pm
+%%SITE_PERL%%/PSGConf/Control/sshd.pm
+%%SITE_PERL%%/PSGConf/Control/sudo.pm
+%%SITE_PERL%%/PSGConf/Control/syslog.pm
+%%SITE_PERL%%/PSGConf/Data.pm
+%%SITE_PERL%%/PSGConf/Data/Boolean.pm
+%%SITE_PERL%%/PSGConf/Data/ConfigError.pm
+%%SITE_PERL%%/PSGConf/Data/Enum.pm
+%%SITE_PERL%%/PSGConf/Data/Hash.pm
+%%SITE_PERL%%/PSGConf/Data/Integer.pm
+%%SITE_PERL%%/PSGConf/Data/List.pm
+%%SITE_PERL%%/PSGConf/Data/String.pm
+%%SITE_PERL%%/PSGConf/Data/Table.pm
+%%SITE_PERL%%/PSGConf/DataStore/ConfigFile.pm
+%%SITE_PERL%%/PSGConf/Util.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PSGConf
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/GenerateFile 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/svcs 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control/Library 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Data 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf/DataStore 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PSGConf 2>/dev/null || true
+@unexec rmdir %D/share/psgconf/config 2>/dev/null || true
+@unexec rmdir %D/share/psgconf/files 2>/dev/null || true
+@unexec rmdir %D/share/psgconf 2>/dev/null || true

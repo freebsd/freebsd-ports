@@ -1,0 +1,4 @@
+The psgconf package is a modular system configuration framework.  It
+includes a number of default modules to configure typical system
+parameters, and allows administrators to add their own modules to meet
+site-specific needs.

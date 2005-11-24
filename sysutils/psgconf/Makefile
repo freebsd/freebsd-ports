@@ -1,0 +1,172 @@
+# New ports collection makefile for:	psgconf
+# Date created:				17 Feb 2004
+# Whom:						Jim Pirzyk <pirzyk@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	psgconf
+PORTVERSION=	3.1.5
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
+
+MAINTAINER=	pirzyk@freebsd.org
+COMMENT=	Controls system configuration
+
+BUILD_DEPENDS= ${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
+ 	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod
+RUN_DEPENDS=   ${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	YES
+
+MAN1=		psgconf.1
+MAN3=		PSGConf.3 \
+		PSGConf::Action.3 \
+		PSGConf::Action::ChMod.3 \
+		PSGConf::Action::CopyFile.3 \
+		PSGConf::Action::Crontab.3 \
+		PSGConf::Action::File.3 \
+		PSGConf::Action::GenerateFile.3 \
+		PSGConf::Action::GenerateFile::BSD_exports.3 \
+		PSGConf::Action::GenerateFile::EnvFile.3 \
+		PSGConf::Action::GenerateFile::Literal.3 \
+		PSGConf::Action::GenerateFile::RC_Script.3 \
+		PSGConf::Action::GenerateFile::SASL_conf.3 \
+		PSGConf::Action::GenerateFile::TLI_hosts.3 \
+		PSGConf::Action::GenerateFile::auto_direct.3 \
+		PSGConf::Action::GenerateFile::dfstab.3 \
+		PSGConf::Action::GenerateFile::dsm_opt.3 \
+		PSGConf::Action::GenerateFile::dsm_sys.3 \
+		PSGConf::Action::GenerateFile::etc_cshrc.3 \
+		PSGConf::Action::GenerateFile::etc_exports.3 \
+		PSGConf::Action::GenerateFile::etc_group.3 \
+		PSGConf::Action::GenerateFile::etc_master_passwd.3 \
+		PSGConf::Action::GenerateFile::etc_passwd.3 \
+		PSGConf::Action::GenerateFile::etc_profile.3 \
+		PSGConf::Action::GenerateFile::etc_rpc.3 \
+		PSGConf::Action::GenerateFile::etc_security_passwd.3 \
+		PSGConf::Action::GenerateFile::etc_services.3 \
+		PSGConf::Action::GenerateFile::etc_shadow.3 \
+		PSGConf::Action::GenerateFile::etc_system.3 \
+		PSGConf::Action::GenerateFile::ftpaccess.3 \
+		PSGConf::Action::GenerateFile::hosts.3 \
+		PSGConf::Action::GenerateFile::hosts_allow.3 \
+		PSGConf::Action::GenerateFile::httpd_conf.3 \
+		PSGConf::Action::GenerateFile::inetd_conf.3 \
+		PSGConf::Action::GenerateFile::ld_so_config.3 \
+		PSGConf::Action::GenerateFile::mime_types.3 \
+		PSGConf::Action::GenerateFile::named_conf.3 \
+		PSGConf::Action::GenerateFile::netmasks.3 \
+		PSGConf::Action::GenerateFile::nsswitch_conf.3 \
+		PSGConf::Action::GenerateFile::ntp_conf.3 \
+		PSGConf::Action::GenerateFile::pam_conf.3 \
+		PSGConf::Action::GenerateFile::pam_file.3 \
+		PSGConf::Action::GenerateFile::printcap.3 \
+		PSGConf::Action::GenerateFile::qpopper_conf.3 \
+		PSGConf::Action::GenerateFile::resolv_conf.3 \
+		PSGConf::Action::GenerateFile::sendmail_aliases.3 \
+		PSGConf::Action::GenerateFile::sendmail_cf.3 \
+		PSGConf::Action::GenerateFile::sendmail_map.3 \
+		PSGConf::Action::GenerateFile::sendmail_mc.3 \
+		PSGConf::Action::GenerateFile::sendmail_trusted_users.3 \
+		PSGConf::Action::GenerateFile::sshd_config.3 \
+		PSGConf::Action::GenerateFile::sudoers.3 \
+		PSGConf::Action::GenerateFile::syslog_conf.3 \
+		PSGConf::Action::GenerateFile::tsm_inclexcl.3 \
+		PSGConf::Action::GenerateFile::workers_properties.3 \
+		PSGConf::Action::GenerateFile::xinetd_conf.3 \
+		PSGConf::Action::HomeDir.3 \
+		PSGConf::Action::MkDir.3 \
+		PSGConf::Action::MkNod.3 \
+		PSGConf::Action::ModifyFile.3 \
+		PSGConf::Action::PackageManager.3 \
+		PSGConf::Action::PackageManager::Encap.3 \
+		PSGConf::Action::PackageManager::FTPArchive.3 \
+		PSGConf::Action::PackageManager::FreeBSD.3 \
+		PSGConf::Action::PackageManager::FreeBSD::Packages.3 \
+		PSGConf::Action::PackageManager::FreeBSD::Ports.3 \
+		PSGConf::Action::PackageManager::RedHat::RHN.3 \
+		PSGConf::Action::PackageManager::RedHat::RPMS.3 \
+		PSGConf::Action::PackageManager::Solaris.3 \
+		PSGConf::Action::Remove.3 \
+		PSGConf::Action::RemoveCrontab.3 \
+		PSGConf::Action::RestartDaemon.3 \
+		PSGConf::Action::RunCommand.3 \
+		PSGConf::Action::Symlink.3 \
+		PSGConf::Action::TouchFile.3 \
+		PSGConf::Action::svcs::setprop.3 \
+		PSGConf::Control.3 \
+		PSGConf::Control::AIX.3 \
+		PSGConf::Control::AnonFTP.3 \
+		PSGConf::Control::Apache.3 \
+		PSGConf::Control::Apache::FastCGI.3 \
+		PSGConf::Control::Apache::mod_jk.3 \
+		PSGConf::Control::CachingDNS.3 \
+		PSGConf::Control::Core.3 \
+		PSGConf::Control::FreeBSD.3 \
+		PSGConf::Control::InitScripts.3 \
+		PSGConf::Control::Inittab.3 \
+		PSGConf::Control::Library::crle.3 \
+		PSGConf::Control::Library::ld_so_conf.3 \
+		PSGConf::Control::Library::ldconfig.3 \
+		PSGConf::Control::NFS_Client.3 \
+		PSGConf::Control::NFS_Server.3 \
+		PSGConf::Control::NTP.3 \
+		PSGConf::Control::NameServiceSwitch.3 \
+		PSGConf::Control::Network.3 \
+		PSGConf::Control::PAM.3 \
+		PSGConf::Control::Packages.3 \
+		PSGConf::Control::PostgreSQL.3 \
+		PSGConf::Control::Printers.3 \
+		PSGConf::Control::RHN.3 \
+		PSGConf::Control::RPC.3 \
+		PSGConf::Control::Resolver.3 \
+		PSGConf::Control::SASL.3 \
+		PSGConf::Control::ShellStartupFiles.3 \
+		PSGConf::Control::Shells.3 \
+		PSGConf::Control::Solaris.3 \
+		PSGConf::Control::TCPWrappers.3 \
+		PSGConf::Control::TSM.3 \
+		PSGConf::Control::Users.3 \
+		PSGConf::Control::cron.3 \
+		PSGConf::Control::dtlogin.3 \
+		PSGConf::Control::inetd.3 \
+		PSGConf::Control::logadm.3 \
+		PSGConf::Control::logrotate.3 \
+		PSGConf::Control::motd.3 \
+		PSGConf::Control::newsyslog.3 \
+		PSGConf::Control::qpopper.3 \
+		PSGConf::Control::sendmail.3 \
+		PSGConf::Control::sshd.3 \
+		PSGConf::Control::sudo.3 \
+		PSGConf::Control::syslog.3 \
+		PSGConf::Data.3 \
+		PSGConf::Data::Boolean.3 \
+		PSGConf::Data::ConfigError.3 \
+		PSGConf::Data::Enum.3 \
+		PSGConf::Data::Hash.3 \
+		PSGConf::Data::Integer.3 \
+		PSGConf::Data::List.3 \
+		PSGConf::Data::String.3 \
+		PSGConf::Data::Table.3 \
+		PSGConf::DataStore::ConfigFile.3 \
+		psgconf-intro.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		This port requires perl 5.6 or newer
+.endif
+
+post-patch:
+	${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+
+post-install:
+	-@${MKDIR} ${PREFIX}/etc
+	@${CP} ${WRKSRC}/etc/psg.conf ${PREFIX}/etc/psg.conf.sample
+	@${CP} ${WRKSRC}/etc/psgconf_modules ${PREFIX}/etc/psgconf_modules.sample
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.include <bsd.port.post.mk>

@@ -421,6 +421,7 @@
     SUBDIR += procmap
     SUBDIR += progsreiserfs
     SUBDIR += prune
+    SUBDIR += psgconf
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack

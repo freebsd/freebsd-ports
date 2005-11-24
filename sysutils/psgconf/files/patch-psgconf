@@ -1,0 +1,47 @@
+--- ./sbin/psgconf.orig	Mon Jun 21 21:15:29 2004
++++ ./sbin/psgconf	Mon Jun 21 21:15:50 2004
+@@ -30,7 +30,7 @@
+ my ($display_policy_methods, $display_data_objs);
+ my ($num_changed);
+ 
+-my $lockfile = '/etc/psgconf.lock';
++my $lockfile = '/usr/local/etc/psgconf.lock';
+ 
+ $| = 1;
+ umask 0022;
+@@ -232,7 +232,7 @@
+ Usage: $0 [options]
+ Options:
+ 
+-   -c file	Use config file "file" (default is /etc/psg.conf)
++   -c file	Use config file "file" (default is /usr/local/etc/psg.conf)
+    -d		Show changes psgconf would make to system files
+    -D		Display known data objects and exit without doing anything
+    -e		Don't update software packages
+@@ -242,7 +242,7 @@
+    -I dir	Specifies the location of the config directory
+    -l		Lock (creates lockfile)
+    -L		Ignore lock file in fix mode
+-   -m file	Use module list from "file" (default is /etc/psgconf_modules)
++   -m file	Use module list from "file" (default is /usr/local/etc/psgconf_modules)
+    -o opt=val	Set option "opt" to value "val"
+    -P		Display known policy methods and exit without doing anything
+    -R		Don't restart daemons when config files change
+@@ -287,7 +287,7 @@
+ 
+ =item -c configfile
+ 
+-Use an alternate config file instead of F</etc/psg.conf>.
++Use an alternate config file instead of F</usr/local/etc/psg.conf>.
+ Note that this has no effect when not using the
+ B<PSGConf::DataStore::ConfigFile> module.
+ 
+@@ -347,7 +347,7 @@
+ 
+ =item -m modulesfile
+ 
+-Use an alternate modules file instead of F</etc/psgconf_modules>.
++Use an alternate modules file instead of F</usr/local/etc/psgconf_modules>.
+ 
+ This option is shorthand for C<-o modules_file=modulesfile>.
+ 
