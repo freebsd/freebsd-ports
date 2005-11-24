@@ -30,6 +30,7 @@
     SUBDIR += staroffice70
     SUBDIR += steak
     SUBDIR += swissgerman-ding
+    SUBDIR += tvbrowser
     SUBDIR += unix-connect
     SUBDIR += webalizer2
 

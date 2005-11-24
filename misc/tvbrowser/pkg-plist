@@ -1,0 +1,101 @@
+bin/tvbrowser
+%%DATADIR%%/INSTALL.txt
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/help/de/Forward24.gif
+%%DATADIR%%/help/de/about.html
+%%DATADIR%%/help/de/assistant.html
+%%DATADIR%%/help/de/deinstallation.html
+%%DATADIR%%/help/de/faq.html
+%%DATADIR%%/help/de/img01.png
+%%DATADIR%%/help/de/img02.png
+%%DATADIR%%/help/de/img03.png
+%%DATADIR%%/help/de/img04.png
+%%DATADIR%%/help/de/img05.png
+%%DATADIR%%/help/de/img06.png
+%%DATADIR%%/help/de/img07.png
+%%DATADIR%%/help/de/img08.png
+%%DATADIR%%/help/de/img09.png
+%%DATADIR%%/help/de/index.html
+%%DATADIR%%/help/de/installation.html
+%%DATADIR%%/help/de/main.html
+%%DATADIR%%/help/de/navigation.html
+%%DATADIR%%/help/de/online.html
+%%DATADIR%%/help/de/settings.html
+%%DATADIR%%/help/default/index.html
+%%DATADIR%%/help/style.css
+%%DATADIR%%/imgs/About16.gif
+%%DATADIR%%/imgs/Back24.gif
+%%DATADIR%%/imgs/Down24.gif
+%%DATADIR%%/imgs/Export16.gif
+%%DATADIR%%/imgs/Find24.gif
+%%DATADIR%%/imgs/Forward24.gif
+%%DATADIR%%/imgs/Help16.gif
+%%DATADIR%%/imgs/Host16.gif
+%%DATADIR%%/imgs/Import16.gif
+%%DATADIR%%/imgs/Info_16to9.gif
+%%DATADIR%%/imgs/Info_BlackAndWhite.gif
+%%DATADIR%%/imgs/Info_DolbyDigital51.gif
+%%DATADIR%%/imgs/Info_DolbySurround.gif
+%%DATADIR%%/imgs/Info_Mono.gif
+%%DATADIR%%/imgs/Info_OriginalWithSubtitle.gif
+%%DATADIR%%/imgs/Info_Stereo.gif
+%%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped.gif
+%%DATADIR%%/imgs/Info_TwoChannelTone.gif
+%%DATADIR%%/imgs/Jar16.gif
+%%DATADIR%%/imgs/Open16.gif
+%%DATADIR%%/imgs/Preferences16.gif
+%%DATADIR%%/imgs/Preferences24.gif
+%%DATADIR%%/imgs/Refresh16.gif
+%%DATADIR%%/imgs/Refresh24.gif
+%%DATADIR%%/imgs/Search16.gif
+%%DATADIR%%/imgs/Stop24.gif
+%%DATADIR%%/imgs/TVBrowser.ico
+%%DATADIR%%/imgs/TVBrowser16.gif
+%%DATADIR%%/imgs/TVBrowser16.png
+%%DATADIR%%/imgs/TVBrowser32.gif
+%%DATADIR%%/imgs/TimeEarly24.gif
+%%DATADIR%%/imgs/TimeEvening24.gif
+%%DATADIR%%/imgs/TimeMidday24.gif
+%%DATADIR%%/imgs/TimeMorning24.gif
+%%DATADIR%%/imgs/TimeNow24.gif
+%%DATADIR%%/imgs/Up24.gif
+%%DATADIR%%/imgs/WebComponent16.gif
+%%DATADIR%%/imgs/background.jpg
+%%DATADIR%%/imgs/background2.jpg
+%%DATADIR%%/imgs/columns2.jpg
+%%DATADIR%%/imgs/columns_afternoon.jpg
+%%DATADIR%%/imgs/columns_early.jpg
+%%DATADIR%%/imgs/columns_edge.jpg
+%%DATADIR%%/imgs/columns_evening.jpg
+%%DATADIR%%/imgs/columns_midday.jpg
+%%DATADIR%%/imgs/down16.gif
+%%DATADIR%%/imgs/more.png
+%%DATADIR%%/imgs/splash.jpg
+%%DATADIR%%/imgs/tvabout.jpg
+%%DATADIR%%/imgs/up16.gif
+%%DATADIR%%/plugins/FavoritesPlugin.jar
+%%DATADIR%%/plugins/GoogleSearchPlugin.jar
+%%DATADIR%%/plugins/ImdbSearchPlugin.jar
+%%DATADIR%%/plugins/ListViewPlugin.jar
+%%DATADIR%%/plugins/NewsPlugin.jar
+%%DATADIR%%/plugins/PrintPlugin.jar
+%%DATADIR%%/plugins/ProgramInfo.jar
+%%DATADIR%%/plugins/ReminderPlugin.jar
+%%DATADIR%%/plugins/SearchPlugin.jar
+%%DATADIR%%/plugins/ShowviewPlugin.jar
+%%DATADIR%%/plugins/TVRaterPlugin.jar
+%%DATADIR%%/themepacks/themepack.zip
+%%DATADIR%%/tvbrowser.jar
+%%DATADIR%%/tvdataservice/TvBrowserDataService.jar
+%%DATADIR%%/website.url
+@dirrm %%DATADIR%%/tvdataservice
+@dirrm %%DATADIR%%/themepacks
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/imgs
+@dirrm %%DATADIR%%/help/default
+@dirrm %%DATADIR%%/help/de
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/tvdata
+@unexec rmdir /var/tvbrowser/tvdata
+@unexec rmdir /var/tvbrowser
+@dirrm share/tvbrowser
