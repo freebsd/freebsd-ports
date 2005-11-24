@@ -9,11 +9,11 @@ PORTNAME=	emacs-${MULE}
 PORTVERSION=	${EMACS_VER}.${MULE_VER}
 PORTREVISION=	2
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU} http://home.catv.ne.jp/pp/ginoue/software/emacs-xim/:xim
 MASTER_SITE_SUBDIR=	emacs
 DISTNAME=	emacs-${EMACS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${XIM_PATCH}${EXTRACT_SUFX}
+		${XIM_PATCH}${EXTRACT_SUFX}:xim
 
 PATCH_SITES=	http://www.teu.ac.jp/nsit/~yatagawa/comp/emacs/ \
 		ftp://ftp.m17n.org/pub/mule/dynamic-loading/
