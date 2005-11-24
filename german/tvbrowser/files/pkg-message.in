@@ -1,0 +1,30 @@
+************************************************************
+
+Check if %%PREFIX%%/bin/java exists. If not, create a link:
+
+       ln -s %%PREFIX%%/bin/javavm %%PREFIX%%/bin/java
+
+or change the start script %%PREFIX%%/bin/tvbrowser
+
+
+    
+               !!!    IMPORTANT    !!!
+
+In order to use TV Browser as a regular user you have to do
+the following:
+
+1. As the regular user run tvbrowser
+
+2. Cancel the Setup Assistant
+
+3. Do not update the tv data
+
+4. Click on the Settings button
+
+5. Select Advanced | Directories and enter 
+   
+   /var/tvbrowser/tvdata 
+
+6. Restart TV Browser and have fun
+
+************************************************************
