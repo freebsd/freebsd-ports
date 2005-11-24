@@ -102,6 +102,7 @@
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += uird
+    SUBDIR += uticom
     SUBDIR += viewfax
     SUBDIR += vpb-driver
     SUBDIR += vpb2
