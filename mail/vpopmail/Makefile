@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -133,10 +133,6 @@ RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
 
-.if !defined(WITHOUT_FPIC)
-CFLAGS+=	-fPIC
-.endif
-
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 .if defined(WITH_LDAP_SASL)
@@ -206,6 +202,10 @@ EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
 QMAIL_DIR?=	${LOCALBASE}/qmail
 .else
 QMAIL_DIR?=	/var/qmail
+.endif
+
+.if !defined(WITHOUT_FPIC) && ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
 .endif
 
 # Uncomment this, or set PREFIX to /home if you have an existing
