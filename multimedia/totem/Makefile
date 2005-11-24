@@ -15,6 +15,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	hendrik@scholz.net
 COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -42,8 +45,6 @@ CONFLICTS=	totem-gstreamer-[0-9]*
 LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 
 .if defined(WITH_GSTREAMER)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 CONFIGURE_ARGS+=--enable-gstreamer
 USE_GSTREAMER+=	gnomevfs core gconf
 WITHOUT_DVDNAV=	yes
