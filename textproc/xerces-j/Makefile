@@ -50,6 +50,11 @@ TOOLS_JARFILES=	resolver.jar stylebook-1.0-b2.jar bin/xjavac.jar
 CLASSPATH!=	${ECHO_CMD} ${TOOLS_JARFILES:S,^,tools/,} | ${TR} " " ":"
 MAKE_ENV=	CLASSPATH=${CLASSPATH}
 
+JAVA_PORT_API=	${LOCALBASE}/share/doc/jdk${JAVA_PORT_VERSION:C/([0-9]\.[0-9])\.[0-9]/\1/}/api
+.if exists(${JAVA_PORT_API})
+MAKE_ARGS+=	-Djdk.api="${JAVA_PORT_API}"
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && ${MV} ../tools .
 
