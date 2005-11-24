@@ -1,0 +1,61 @@
+Allows to enforce a packagelistLoc for JDK API documentation
+
+$FreeBSD$
+
+--- build.xml.orig	Thu Nov 24 16:57:51 2005
++++ build.xml	Thu Nov 24 17:19:25 2005
+@@ -402,7 +402,9 @@
+       windowtitle='XML Standard API' doctitle='XML Standard API'
+       bottom='${copyright}'
+       additionalparam='${additional.param}'
+-      />
++      >
++      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+     <mkdir dir='${build.dir}/docs/javadocs/xni'/>
+     <javadoc packagenames='org.apache.xerces.xni.*'
+       locale='en_US'
+@@ -412,7 +414,9 @@
+       doctitle='Xerces Native Interface'
+       bottom='${copyright}'
+       additionalparam='${additional.param}'
+-      />
++      >
++      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+     <mkdir dir='${build.dir}/docs/javadocs/xs'/>
+     <javadoc packagenames='org.apache.xerces.xs, org.apache.xerces.xs.datatypes'
+       locale='en_US'
+@@ -422,7 +426,9 @@
+       doctitle='XML Schema API'
+       bottom='${copyright}'
+       additionalparam='${additional.param}'
+-      />
++      >
++      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+     
+     <mkdir dir='${build.dir}/docs/javadocs/xerces2'/>
+     <javadoc packagenames='org.apache.xerces.dom.*,
+@@ -440,7 +446,9 @@
+       doctitle='Xerces2 Implementation'
+       bottom='${copyright}'
+       additionalparam='${additional.param}'
+-      />
++      >
++      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+     <mkdir dir='${build.dir}/docs/javadocs/other'/>
+     <javadoc packagenames='org.apache.html.*,
+                            org.apache.wml.*,
+@@ -451,7 +459,9 @@
+       windowtitle='Other Classes' doctitle='Other Classes'
+       bottom='${copyright}'
+       additionalparam='${additional.param}'
+-      />
++      >
++      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++    </javadoc>
+   </target>
+ 
+   <!-- =================================================================== -->
