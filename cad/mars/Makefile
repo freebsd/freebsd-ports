@@ -20,7 +20,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maryland Routing Simulator
 
 NO_WRKSUBDIR=	yes
-FETCH_ENV=	"FTP_PASSIVE_MODE=no"
 .if defined(WITHOUT_X11)
 MAKEFILE=	Makefile.NoX
 .else
