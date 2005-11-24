@@ -7,19 +7,20 @@
 
 PORTNAME=	basiliskII
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~cbauer/
+MASTER_SITES=	http://www.gibix.net/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk
-DISTNAME=	BasiliskII_src_15012002
+DISTNAME=	BasiliskII_src_22112005
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
-USE_GNOME=	esound gtk12
+USE_BZIP2=	yes
+USE_GNOME=	esound gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-fbdev-dga --enable-fpe=uae
@@ -32,6 +33,10 @@ MAN1=		BasiliskII.1
 
 .if ${OSVERSION} > 400012
 CFLAGS+=	-fpermissive
+.endif
+
+.if ${ARCH} == amd64
+BROKEN=		"Does not compile"
 .endif
 
 post-install:
