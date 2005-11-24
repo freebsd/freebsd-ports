@@ -139,6 +139,7 @@ lib/transcode/import_null.so
 lib/transcode/import_nuv.so
 lib/transcode/import_nvrec.so
 lib/transcode/import_ogg.so
+lib/transcode/import_oss.so
 lib/transcode/import_pvn.so
 lib/transcode/import_raw.so
 lib/transcode/import_rawlist.so
