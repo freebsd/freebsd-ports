@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	q@galgenberg.net
 COMMENT=	Tools for manipulating fonts
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
