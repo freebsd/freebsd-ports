@@ -409,6 +409,7 @@
     SUBDIR += omega
     SUBDIR += oneko
     SUBDIR += oneko-sakura
+    SUBDIR += oolite
     SUBDIR += oonsoo
     SUBDIR += openglad
     SUBDIR += openmortal
