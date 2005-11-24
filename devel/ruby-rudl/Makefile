@@ -18,6 +18,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high level library to use SDL from Ruby
 
+BROKEN=		"Checksum mismatch"
+
 USE_SDL=	gfx image mixer ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
