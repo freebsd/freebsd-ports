@@ -9,13 +9,7 @@ PORTNAME=	inet
 PORTVERSION=	1.0.10
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
-		ftp://planetmirror.com/pub/fpc/dist/FreeBSD/ \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/FreeBSD/ \
-		ftp://freepascal.stack.nl/pub/fpc/dist/FreeBSD/ \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/FreeBSD/ \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/FreeBSD/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepascal
 PKGNAMEPREFIX=	fpc-
 DISTNAME=	fpc-${PORTVERSION}.ELF
