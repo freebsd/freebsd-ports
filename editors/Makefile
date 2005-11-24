@@ -141,6 +141,7 @@
     SUBDIR += semi113-mule
     SUBDIR += setedit
     SUBDIR += slime
+    SUBDIR += spe
     SUBDIR += speedbar
     SUBDIR += speedbar-emacs20
     SUBDIR += ssed

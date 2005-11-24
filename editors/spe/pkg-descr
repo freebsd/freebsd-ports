@@ -1,0 +1,9 @@
+Spe is a free python IDE with auto indentation & completion, call tips,
+syntax coloring & highlighting, UML diagrams, class explorer, source index,
+auto todo list, sticky notes, pycrust shell, file browsers, drag&drop,
+context help, Blender support, ... Spe ships with Python debugger
+(remote & encrypted), wxGlade (gui designer), PyChecker (source code doctor)
+and Kiki (regex console)
+
+Author:	Stani Michiels
+WWW:	http://www.stani.be/python/spe/blog/
