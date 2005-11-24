@@ -1,0 +1,15 @@
+--- ./etc/psgconf_modules.orig	Mon Jun 21 21:55:15 2004
++++ ./etc/psgconf_modules	Mon Jun 21 21:55:30 2004
+@@ -3,7 +3,7 @@
+ ###
+ 
+ ### define data store module(s)
+-DataStore	PSGConf::DataStore::ConfigFile	config_file=/etc/psg.conf
++DataStore	PSGConf::DataStore::ConfigFile	config_file=/usr/local/etc/psg.conf
+ 
+ ### define control modules
+-Control		PSGConf::Control::Packages	PackageManager=PSGConf::Action::PackageManager::Encap
++Control		PSGConf::Control::Packages	PackageManager=PSGConf::Action::PackageManager::FreeBSD::Ports
+ Control		PSGConf::Control::Users
+ Control		PSGConf::Control::Core
+ Control		PSGConf::Control::Solaris
