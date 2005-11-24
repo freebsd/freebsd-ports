@@ -1,0 +1,5 @@
+Number::Phone::JP is a simple module to validate Japanese phone
+number formats.  The Japanese phone numbers are regulated by
+Ministry of Public Management, Home Affairs, Posts and
+Telecommunications of Japan.  You can validate what a target
+number is valid from this regulation point of view.
