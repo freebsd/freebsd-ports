@@ -89,6 +89,7 @@
     SUBDIR += flyway
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
+    SUBDIR += fortune-mod-culmea-culmilor
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
     SUBDIR += freedialog
