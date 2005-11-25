@@ -12,4 +12,4 @@ will automatically start decryption
 - Signatures: creation & verification of detached & cleartext signatures
 - Key management: import, export, delete, sign, generate and edit keys.
 
-WWW: http://devel-home.kde.org/~kgpg/
+WWW: http://developer.kde.org/~kgpg/
