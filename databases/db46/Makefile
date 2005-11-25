@@ -1,12 +1,12 @@
-# ports collection makefile for:	Berkeley DB v4.3
-# Date created:				2004-11-10
+# ports collection makefile for:	Berkeley DB v4.4
+# Date created:				2005-11-21
 # Whom:					Matthias Andree <matthias.andree@gmx.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db43
-PORTVERSION=	4.3.29
+PORTNAME=	db44
+PORTVERSION=	4.4.16
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
@@ -17,16 +17,15 @@ PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCH_DIST_STRIP=	-d ..
 
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	The Berkeley DB package, revision 4.3
+COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
-CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 BDBVER=			${PORTVERSION:R}
 BDBMINOR=		${BDBVER:E:S/^\.//}
 BDBDIR=			BerkeleyDB.${BDBVER}
@@ -46,7 +45,7 @@ pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
-	${CHMOD} u+w ${WRKSRC}/../dist/configure
+	@${CHMOD} u+w ${WRKSRC}/../dist/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^extern  void db_rpc_serverprog/ d;' ${WRKSRC}/db_server.h
@@ -61,10 +60,5 @@ post-install:
 .endif
 	cd ${PREFIX}/bin/${PORTNAME} ; \
 	for i in * ; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
-.include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_ARGS+=	--with-mutex=x86/gcc-assembly
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
