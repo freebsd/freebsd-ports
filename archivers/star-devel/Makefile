@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.5.a.68
+DISTVERSION=	1.5a70
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	Unique standard tape archiver with many enhancements

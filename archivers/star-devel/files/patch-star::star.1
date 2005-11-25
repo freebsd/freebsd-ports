@@ -1,17 +1,17 @@
-diff -bur star/star.1 star-1.5/star/star.1
---- star/star.1	Fri Feb 25 09:07:00 2005
-+++ star/star.1	Fri Feb 25 09:07:43 2005
-@@ -31,13 +31,6 @@
- ] 
+--- star/star.1.orig	Thu Nov 24 21:05:10 2005
++++ star/star.1	Thu Nov 24 21:06:26 2005
+@@ -32,14 +32,6 @@
  .I file1 .\|.\|. filen
+ [\fIfind_expr\fP]
  .br
--.B "tar\ \ "
+-.ie n .B "tar\ \ "
+-.el .B "tar\ \ \ "
 -.I command
--[
--.I options
--] 
+-[\fIoptions\fP]
+-.ie n .B "\ \ \ \ \ \ \ "
+-.el .B "\ \ \ \ \ \ \ \ \ "
 -.I file1 .\|.\|. filen
 -.br
  .B "star\ "
- .B "\-copy\ \ "
- [
+ .ie n .B "\-copy\ \ "
+ .el .B "\-copy\ \ \ \ "
