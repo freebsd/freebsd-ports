@@ -3,7 +3,7 @@
 
 # PROVIDE: gdm
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: FreeBSD
 
 gdm_enable=${gdm_enable-"NO"}
 
