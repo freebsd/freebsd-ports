@@ -11,11 +11,15 @@ share/worker/catalogs/italiano.catalog.flags
 share/worker/catalogs/polski.catalog
 share/worker/catalogs/polski.catalog.coms
 share/worker/catalogs/polski.catalog.flags
+share/worker/catalogs/spanish.catalog
+share/worker/catalogs/spanish.catalog.coms
+share/worker/catalogs/spanish.catalog.flags
 share/worker/catalogs/russian.catalog
 share/worker/catalogs/russian.catalog.coms
 share/worker/catalogs/russian.catalog.flags
 share/worker/config-deutsch
 share/worker/config-english
+share/worker/scripts/xeditor
 share/worker/scripts/xliwrapper_worker
 share/worker/scripts/displaywrapper_worker
 share/worker/scripts/cd2flac.sh
