@@ -9,7 +9,7 @@ PORTNAME=	pglogd
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	www databases
-MASTER_SITES=	http://www.digitalstratum.com/pglogd/
+MASTER_SITES=	http://digitalstratum.com/download/
 
 MAINTAINER=	allie@pajunas.com
 COMMENT=	Sends web server log entries to a PostgreSQL database
