@@ -12,7 +12,7 @@ PORTVERSION=	2.6.2
 PORTREVISION=	6
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
-PATCH_SITES=    ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.2/
+PATCH_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.2/
 PATCHFILES=	connect-dos.patch realpath.patch
 
 MAINTAINER=	ache@FreeBSD.org
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
 		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
 
-MAKE_ENV+=      WARNINGS=-DSPT_TYPE=SPT_BUILTIN
+MAKE_ENV+=	WARNINGS=-DSPT_TYPE=SPT_BUILTIN
 
 MAN1=		ftpcount.1 ftpwho.1
 MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5 \
