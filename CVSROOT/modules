@@ -10791,6 +10791,7 @@ root		ports/devel/root
 root-doc	ports/devel/root-doc
 roottail	ports/sysutils/roottail
 rosegarden	ports/audio/rosegarden
+rospell		ports/editors/rospell
 rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
 rote		ports/devel/rote
