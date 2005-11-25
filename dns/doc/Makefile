@@ -7,7 +7,7 @@
 
 PORTNAME=	doc
 PORTVERSION=	2.2.3
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=   ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
 MAINTAINER=	sanpei@FreeBSD.org

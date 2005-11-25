@@ -112,7 +112,6 @@
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += diradmin
-    SUBDIR += doc
     SUBDIR += dosdetector
     SUBDIR += dtcp
     SUBDIR += dtcpclient

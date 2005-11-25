@@ -32,6 +32,7 @@
     SUBDIR += dnstracer
     SUBDIR += dnsutl
     SUBDIR += dnswalk
+    SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += drill
     SUBDIR += ez-ipupdate
