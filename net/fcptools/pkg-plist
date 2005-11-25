@@ -1,10 +1,6 @@
 bin/fcpget
 bin/fcpput
-bin/fcpputsite
-bin/fcpputsplit
-include/fcptools/compat.h
+bin/fcpx
 include/fcptools/ezFCPlib.h
 lib/libezfcp.a
-lib/libezfcp.so
-lib/libezfcp.so.0
 @dirrm include/fcptools
