@@ -1,0 +1,8 @@
+* * *
+
+Usage:
+	fortune %%FORTUNE_DIR%%/%%FORTUNE_FILE%%
+If you want the "offensive" ones also:
+	fortune %%FORTUNE_DIR%%/%%FORTUNE_FILE%%-o
+
+* * * 
