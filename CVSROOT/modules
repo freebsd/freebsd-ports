@@ -10161,6 +10161,7 @@ py-dateutil	ports/devel/py-dateutil
 py-dbus		ports/devel/py-dbus
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
+py-django	ports/www/py-django
 py-dns		ports/dns/py-dns
 py-dnspython	ports/dns/py-dnspython
 py-docutils	ports/textproc/py-docutils
