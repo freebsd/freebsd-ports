@@ -21,6 +21,10 @@ COMMENT=	A plugin for GKrellM that displays a rotating earth
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2005-12-31
+IGNORE=		has no mastersite, nor is it maintained any longer
+
 WRKSRC=		${WRKDIR}/${PORTNAME}_anim
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
