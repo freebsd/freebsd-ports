@@ -382,7 +382,6 @@ MASTER_SITE_GENTOO+=	\
 	ftp://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	ftp://files.gentoo.gr/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/gentoo/%SUBDIR%/ \
-	ftp://gg3.net/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ecc.u-tokyo.ac.jp/GENTOO/%SUBDIR%/ \
 	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 .endif
@@ -499,8 +498,8 @@ MASTER_SITE_KDE+=	\
 	http://ftp.gwdg.de/pub/x11/kde/%SUBDIR%/ \
 	http://kde.mirrors.hoobly.com/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-hamburg.de/pub/soft/X/contrib/kde/%SUBDIR%/ \
-	ftp://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
-	http://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
+	ftp://ftp.rediris.es/mirror/kde/pub/kde/%SUBDIR%/ \
+	http://sunsite.rediris.es/mirror/kde/pub/kde/%SUBDIR%/ \
 	ftp://ftp.mirrors.net.ar/pub/kde/%SUBDIR%/ \
 	ftp://ftp.man.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
@@ -549,7 +548,6 @@ MASTER_SITE_KDE+=	\
 	http://sunsite.tus.ac.jp/pub/archives/linux/kde/%SUBDIR%/ \
 	ftp://linux.cis.nctu.edu.tw/X/wm/kde/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.sun.ac.za/mirrorsites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.sun.ac.za/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.estpak.ee/pub/kde/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
@@ -565,8 +563,6 @@ MASTER_SITE_KDE+=	\
 	http://linux3.cc.ntu.edu.tw/pub/kde/%SUBDIR%/ \
 	ftp://mi.mirror.garr.it/pub/mirrors/KDE/%SUBDIR%/ \
 	http://mi.mirror.garr.it/mirrors/KDE/%SUBDIR%/ \
-	ftp://mirror.xmission.com/kde/%SUBDIR%/ \
-	http://mirror.xmission.com/kde/%SUBDIR%/ \
 	ftp://ftp.iway.fr/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
@@ -880,10 +876,8 @@ MASTER_SITE_REDHAT_LINUX+= \
 	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
-	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/
 .endif
