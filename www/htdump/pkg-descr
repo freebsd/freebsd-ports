@@ -4,4 +4,4 @@ developer who work low level, for example with CGI binaries. This makes a
 perfect debugging tool, since it allows usual but also rfc-illegal operations.
 Packet level debugging is included in this tool.
 
-WWW:	http://www.palli.nl/~ivo/prog/linux/htdump/
+WWW:	http://ivo.palli.nl/prog/linux/htdump/overview.html
