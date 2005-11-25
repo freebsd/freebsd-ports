@@ -10458,6 +10458,7 @@ python21	ports/lang/python21
 python22	ports/lang/python22
 python23	ports/lang/python23
 pythoncad	ports/cad/pythoncad
+pythonchess	ports/games/pythonchess
 pythondirector	ports/net/pythondirector
 pyumlgraph	ports/devel/pyumlgraph
 pyweather	ports/astro/pyweather
