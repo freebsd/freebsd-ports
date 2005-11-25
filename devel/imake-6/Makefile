@@ -21,6 +21,8 @@ CONFLICTS=	imake-4*
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES
 USE_REINPLACE=	yes
+MAKE_ENV=	MAKEFLAGS="CC=${CC}"
+SCRIPTS_ENV=	CC=${CC}
 
 .ifdef USE_IMAKE
 .error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
