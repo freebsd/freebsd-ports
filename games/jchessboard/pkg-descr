@@ -1,0 +1,5 @@
+JChessBoard is a chess game and PGN viewer/editor written in Java that can be
+connected to another JChessBoard via a direct TCP/IP connection. No Internet
+Chess Server is required for playing.
+
+WWW: http://jchessboard.sourceforge.net/
