@@ -8,10 +8,13 @@
 PORTNAME=	mdw
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.redbrick.dcu.ie/~colmmacc/mdw/
+MASTER_SITES=	# no longer maintained by author
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A utility to check the MD5 sum of a webpage
+
+DEPRECATED=	no longer maintained by author
+EXPIRATION_DATE=	2006-01-24
 
 USE_AUTOTOOLS=	autoconf:213
 USE_REINPLACE=	yes
