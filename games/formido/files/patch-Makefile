@@ -1,0 +1,31 @@
+--- Makefile.orig	Fri Nov  7 21:58:35 2003
++++ Makefile	Sat Nov 19 19:58:06 2005
+@@ -7,23 +7,23 @@
+ #(just don't include the ending slash)
+ 
+ #Data directory (default: ./data)
+-DATDIR = ./data
++DATDIR ?= ./data
+ 
+ #High score directory (default: ./data)
+-HISCOREDIR = ./data
++HISCOREDIR ?= ./data
+ 
+ #Config file directory (default: .)
+ CONFIGDIR = .
+ 
+-CC=g++
++CC?=g++
+ FLAGS=`sdl-config --cflags` -Wall -I./include
+-LINKFLAGS=-O2 -ffast-math -fomit-frame-pointer
++LINKFLAGS?=-O2 -ffast-math -fomit-frame-pointer
+ LIBS=`sdl-config --libs` -lm -lSDL_mixer -lSDL_image
+ CPPFILES=blend.cpp credits.cpp explo.cpp hof.cpp menu.cpp player.cpp \
+ 	bomb.cpp critter.cpp font.cpp init.cpp mymath.cpp powerup.cpp \
+ 	config.cpp effect.cpp game.cpp main.cpp particle.cpp timer.cpp
+ 
+-DEFINES=-DDATA_DIR=\"${DATDIR}\" -DHISCORE_DIR=\"${HISCOREDIR}\" -DCONFIG_DIR=\"${CONFIGDIR}\"
++DEFINES=-DDATA_DIR=\"${DATDIR}\" -DHISCORE_DIR=\"${HISCOREDIR}\" -DDEFAULT_CONFIG_FILE=\"${DEFAULT_CONFIG_FILE}\"
+ 
+ SOURCES=$(addprefix src/, $(CPPFILES))
+ OBJECTS=$(addprefix obj/, $(CPPFILES:.cpp=.o))
