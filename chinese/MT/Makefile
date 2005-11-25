@@ -18,6 +18,9 @@ COMMENT=	Web-based personal publishing system like weblogs
 
 RUN_DEPENDS=	${LOCALBASE}/${CGIDIR}/mt.cgi:${PORTSDIR}/www/MT
 
+DEPRECATED=	Does not work with MT3
+EXPIRATION_DATE=	2005-12-31
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DATADIR=	www/data/mt
