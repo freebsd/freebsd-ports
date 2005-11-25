@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"XMMS plugin, that plays a sound on incoming mail and opens the MUA"
+COMMENT=	XMMS plugin, that plays a sound on incoming mail and opens the MUA
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libchipcard
 
 MAINTAINER=	martin@libchipcard.de
-COMMENT=	"A library for easy access to chipcards"
+COMMENT=	A library for easy access to chipcards
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 

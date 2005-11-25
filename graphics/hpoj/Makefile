@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	hpoj
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vs@FreeBSD.org
-COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
+COMMENT=	HP OfficeJet Linux driver; printing, scanning, and photo-card access
 
 NOT_FOR_ARCHS=	sparc64 ia64
 

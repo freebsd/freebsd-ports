@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	arved
 DISTNAME=	xmms_ladspa-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"XMMS Plugin that provides LADSPA Plugins to XMMS"
+COMMENT=	XMMS Plugin that provides LADSPA Plugins to XMMS
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
