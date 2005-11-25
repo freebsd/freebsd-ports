@@ -1,2 +1,6 @@
 MD5 (djbdns-1.05.tar.gz) = 3147c5cd56832aa3b41955c7a51cbeb2
+SHA256 (djbdns-1.05.tar.gz) = 3ccd826a02f3cde39be088e1fc6aed9fd57756b8f970de5dc99fcd2d92536b48
+SIZE (djbdns-1.05.tar.gz) = 85648
 MD5 (djbdns-1.05-man-20031023.tar.gz) = 14d7329cff69f604fac607436eb8485e
+SHA256 (djbdns-1.05-man-20031023.tar.gz) = ba1c58f14bc928908d8618230f400d73cfe2200ed800a272b63048e3e50be569
+SIZE (djbdns-1.05-man-20031023.tar.gz) = 17170
