@@ -7,6 +7,7 @@
 
 PORTNAME=	imap
 PORTVERSION=	2004g
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
