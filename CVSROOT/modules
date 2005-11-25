@@ -1244,7 +1244,6 @@ comconsole	ports/sysutils/comconsole
 comical		ports/graphics/comical
 commoncpp	ports/devel/commoncpp
 compaq-cc	ports/lang/compaq-cc
-compat22	ports/misc/compat22
 compat3x	ports/misc/compat3x
 compat4x	ports/misc/compat4x
 compat5x	ports/misc/compat5x
