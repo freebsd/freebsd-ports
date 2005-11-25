@@ -360,6 +360,7 @@
     SUBDIR += gwenhywfar
     SUBDIR += happydoc
     SUBDIR += hapy
+    SUBDIR += hc12mem
     SUBDIR += hptools
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
