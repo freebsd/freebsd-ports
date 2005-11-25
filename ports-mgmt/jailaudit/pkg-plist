@@ -1,0 +1,11 @@
+bin/jailaudit
+etc/jailaudit.conf.sample
+%%PERIODICDIR%%/security/410.jailaudit
+@unexec rmdir %D/%%PERIODICDIR%%/security 2>/dev/null || true
+@unexec rmdir %D/%%PERIODICDIR%% 2>/dev/null || true
+@exec mkdir -p %D/%%REPORTDIR%%
+@unexec rmdir %D/%%REPORTDIR%% 2>/dev/null || true
+@exec mkdir -p %D/%%TMPDIR%%
+@unexec rmdir %D/%%TMPDIR%% 2>/dev/null || true
+@unexec rmdir %DPDIR%% 2>/dev/null || true
+@unexec rmdir %D/jailaudit 2>/dev/null || true
