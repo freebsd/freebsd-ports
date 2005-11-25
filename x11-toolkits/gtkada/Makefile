@@ -9,9 +9,9 @@ PORTNAME=	gtkada
 PORTVERSION=	1.2.12
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://libre.act-europe.fr/GtkAda/ \
-		http://gtkada.eu.org/ \
-		http://www.adapower.com/gtkada/
+MASTER_SITES=	http://cesnet.linux.tucows.com/files/ \
+		http://aranea.linux.tucows.com/files/ \
+		http://swissonline.linux.tucows.com/files/
 DISTNAME=	GtkAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
