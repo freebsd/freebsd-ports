@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pebrot
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.7.1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,9 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Text-based MSN messenger client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cjkcodecs/__init__.py:${PORTSDIR}/converters/py-cjkcodecs
-
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
+
+post-extract:
+	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
 
 .include <bsd.port.mk>
