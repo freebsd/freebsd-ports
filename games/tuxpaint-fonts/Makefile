@@ -70,7 +70,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 # Set DISTFILES and PLIST_FILES according to OPTIONS
 
 .for l in ${LANGS:U}
-.	if defined(WITH_${l})
+.	if !defined(WITHOUT_${l})
 DISTFILES+=	${${l}_DISTFILES}${EXTRACT_SUFX}
 PLIST_FILES+=	%%DATADIR%%/fonts/locale/${${l}_CODE}.ttf
 .	endif
