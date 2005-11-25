@@ -198,6 +198,7 @@
     SUBDIR += jesred
     SUBDIR += jetspeed
     SUBDIR += jetty
+    SUBDIR += joomla
     SUBDIR += kannel
     SUBDIR += kazehakase
     SUBDIR += kdewebdev

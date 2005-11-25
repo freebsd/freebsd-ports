@@ -1,0 +1,83 @@
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	joomla/
+#	joomla/files
+#	joomla/files/pkg-message.in
+#	joomla/Makefile
+#	joomla/dist
+#	joomla/pkg-plist
+#	joomla/distinfo
+#	joomla/pkg-descr
+#
+echo c - joomla/
+mkdir -p joomla/ > /dev/null 2>&1
+echo c - joomla/files
+mkdir -p joomla/files > /dev/null 2>&1
+echo x - joomla/files/pkg-message.in
+sed 's/^X//' >joomla/files/pkg-message.in << 'END-of-joomla/files/pkg-message.in'
+X*******************************************************************
+X
+X Please read INSTALL file. It can be found at:
+X		
+X  %%PREFIX%%/%%JOOMLA_DIR%%/INSTALL.php
+X
+X*******************************************************************
+END-of-joomla/files/pkg-message.in
+echo x - joomla/Makefile
+sed 's/^X//' >joomla/Makefile << 'END-of-joomla/Makefile'
+X# New ports collection makefile for:	www/joomla
+X# Date created:				Sat Out 15, 2005
+X# Whom:					Francisco Cabrita <include@npf.pt.freebsd.org>
+X#
+X# $FreeBSD$
+X
+XPORTNAME=	joomla
+XPORTVERSION=	1.0.3
+XCATEGORIES=	www
+XMASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_3/frs1820?dl=1/:source1
+XDISTFILES=	${JOOMLA_SRC}:source1
+X
+XMAINTAINER=	include@npf.pt.freebsd.org
+XCOMMENT=	A dynamic web content management system (CMS)
+X
+XNO_BUILD=	yes
+XUSE_MYSQL=	yes
+X#USE_PHP=	mysql session zlib gd pdf xml pcre
+XUSE_PHP=	mysql zlib
+XWANT_PHP_WEB=	yes
+XPKGMESSAGE=	${WRKDIR}/pkg-message
+XSUB_FILES=	pkg-message
+XSUB_LIST+=	JOOMLA_DIR=${JOOMLA_DIR}
+XPLIST_SUB+=	JOOMLA_DIR=${JOOMLA_DIR}
+X
+XJOOMLA_DIR?=	www/${PORTNAME}
+XDIST_SUBDIR=	${PORTNAME}
+X
+XJOOMLA_SRC=	Joomla_1.0.3-Stable-Full_Package.tar.gz
+X
+Xdo-extract:
+X		@${MKDIR} ${WRKSRC}
+X		@${TAR} -zxf ${DISTDIR}/${DIST_SUBDIR}/${JOOMLA_SRC} -C ${WRKSRC}
+X		@${RM} -rf ${WRKSRC}/templates/rhuk_solarflare # remove empty
+X
+Xdo-install:
+X		@${MKDIR} ${PREFIX}/${JOOMLA_DIR}
+X		@cd ${WRKSRC} && \
+X			${FIND} . -type d -exec ${MKDIR} ${PREFIX}/${JOOMLA_DIR}/{} \; \
+X				-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${JOOMLA_DIR}/{} \;
+X		@cd ${WRKSRC} && \
+X			${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/${JOOMLA_DIR}/{} \; \
+X				-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${JOOMLA_DIR}/{} \;
+X
+Xpost-install:
+X		@${CAT} ${PKGMESSAGE}
+X
+X.include <bsd.port.mk>
+END-of-joomla/Makefile
+echo x - joomla/dist
+sed 's/^X//' >joomla/dist << 'END-of-joomla/dist'
