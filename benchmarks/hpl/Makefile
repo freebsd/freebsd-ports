@@ -8,7 +8,8 @@
 PORTNAME=	hpl
 PORTVERSION=	1.0a
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
+MASTER_SITES=	http://www.netlib.org/benchmark/hpl/ \
+		ftp://ftp.hipecs.hokudai.ac.jp/netlib/benchmark/hpl/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
