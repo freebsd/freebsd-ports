@@ -1,6 +1,0 @@
-#!/bin/sh
-
-rm -f ${WRKSRC}/makefile
-cp ${FILESDIR}/Makefile ${WRKSRC}/Makefile
-cp ${FILESDIR}/FreeBSD ${WRKSRC}/conf/FreeBSD
-cp ${FILESDIR}/FreeBSD.without_x11 ${WRKSRC}/conf/FreeBSD.without_x11
