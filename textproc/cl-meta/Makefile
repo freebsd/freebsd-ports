@@ -9,8 +9,6 @@ PORTVERSION=		0.1
 CATEGORIES=		textproc lisp
 MASTER_SITES=		ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 			ftp://ftp.ntnu.no/pub/lisp/cclan/ \
-			ftp://www.aarg.net/pub/cclan/ \
-			http://thingamy.com/cclan/ \
 			http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=		cl-
 DISTNAME=		${PORTNAME}_${PORTVERSION}
