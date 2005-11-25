@@ -2,7 +2,7 @@ BisonGen is a general-purpose parser generator that converts a grammar
 description for an LALR(1) context-free grammar into a program to
 parse that grammar.
 
-WWW: http://www.4suite.org
+WWW: http://www.4suite.org/index.xhtml
 
 - Frerich Raabe
 frerich.raabe@gmx.de

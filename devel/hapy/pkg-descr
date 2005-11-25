@@ -4,6 +4,6 @@ scripting languages and communication protocol messages are
 typical use cases. Generated parsers are C++ objects. Hapy is
 public domain software.
 
-WWW: http://www.hapy.org/
+WWW: http://hapy.sourceforge.net
 
 - Alex Rousskov
