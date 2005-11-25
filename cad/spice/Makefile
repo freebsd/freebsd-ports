@@ -25,6 +25,7 @@ MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
+MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	STRIP_CMD=${STRIP_CMD}
 
 .ifdef WITHOUT_X11
@@ -40,7 +41,9 @@ USE_XLIB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/ucb|${LOCALBASE}/bin|' ${WRKSRC}/util/build
 
-post-configure:
+do-configure:
+	@${CP} ${FILESDIR}/FreeBSD ${WRKSRC}/conf/FreeBSD
+	@${CP} ${FILESDIR}/FreeBSD.without_x11 ${WRKSRC}/conf/FreeBSD.without_x11
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
 	    s+@X11BASE@+${X11BASE}+;' \
 	    ${WRKSRC}/conf/FreeBSD ${WRKSRC}/conf/FreeBSD.without_x11
