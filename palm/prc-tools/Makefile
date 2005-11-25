@@ -9,7 +9,7 @@ PORTNAME=	prc-tools
 PORTVERSION=	2.3
 PORTREVISION=	3
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	prc-tools binutils/releases \
 		gcc/releases/gcc-2.95.3 gdb/old-releases gcc/releases/gcc-3.3.1
 DISTNAME=	prc-tools-${PORTVERSION}
