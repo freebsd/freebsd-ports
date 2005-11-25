@@ -8,7 +8,7 @@
 PORTNAME=	mod_put
 PORTVERSION=	1.3
 CATEGORIES=	www
-MASTER_SITES=	http://hpwww.ec-lyon.fr/~vincent/apache/
+MASTER_SITES=	http://perso.ec-lyon.fr/lyonel.vincent/apache/
 DISTFILES=	mod_put.tar.gz
 
 MAINTAINER=	apache@FreeBSD.org
