@@ -1,6 +1,6 @@
---- src/refresh.c.orig	Mon Aug 23 22:40:08 2004
-+++ src/refresh.c	Fri Dec 10 08:58:03 2004
-@@ -62,7 +62,13 @@
+--- src/refresh.c.orig	Mon Aug 23 19:40:08 2004
++++ src/refresh.c	Thu Nov 24 15:11:48 2005
+@@ -62,8 +62,14 @@
  __RCSID("$Id: refresh.c,v 1.32 2004/08/24 02:40:08 sethk Exp $");
  
  /* XXX use libinstall/lib.h */
@@ -10,10 +10,12 @@
 +#define	INDEX_FN    PORTS_BASE "/INDEX-5"
 +#else
  #define	INDEX_FN    PORTS_BASE "/INDEX"
+-#define INDEX_MAXLN 4096
 +#endif
- #define INDEX_MAXLN 4096
++#define INDEX_MAXLN 8192
  #define DB_DIR	    "/var/db/pkg"
  #define ITER_BYTES  (128 * 1024)
+ #define ITER_ENTS   32
 @@ -183,10 +189,12 @@
  	if (*sp == '|')
  	    ++i;
