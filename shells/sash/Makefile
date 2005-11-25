@@ -11,7 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.canb.auug.org.au/%SUBDIR%/
 MASTER_SITE_SUBDIR=	~dbell/programs
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Stand-Alone shell combining many common utilities
 
 MAN1=		sash.1

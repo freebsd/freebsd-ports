@@ -12,7 +12,7 @@ CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Livejournal.com postings recusive copy utility
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

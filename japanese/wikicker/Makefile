@@ -10,7 +10,7 @@ PORTVERSION=		0.26
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		http://www.naney.org/comp/distrib/WiKicker/archive/
 
-MAINTAINER=		ports@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wiki like system by perl5
 
 # ============================================================================

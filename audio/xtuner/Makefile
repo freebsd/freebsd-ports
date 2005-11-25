@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTNAME=	Xtuner-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xwindows interface for the RadioREVEAL and RadioTrack FM radio cards!
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms

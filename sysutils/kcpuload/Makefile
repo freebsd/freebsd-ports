@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU meter for Kicker
 
 USE_KDELIBS_VER=3
