@@ -50,8 +50,6 @@ lib/libavahi-glib.a
 lib/libavahi-glib.so
 lib/libavahi-glib.so.1
 libdata/pkgconfig/avahi-client.pc
-libdata/pkgconfig/avahi-compat-howl.pc
-libdata/pkgconfig/avahi-compat-libdns_sd.pc
 libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon

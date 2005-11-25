@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.freedesktop.org/~lennart/
 
@@ -35,7 +34,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_RC_SUBR=	yes
-FILES_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
 	avahi-publish-service.1 avahi-publish.1 avahi-resolve-address.1 \
@@ -59,17 +57,9 @@ CONFIGURE_ARGS+=--disable-gtk
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-post-configure:
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/avahi-daemon.sh > ${WRKDIR}/avahi-daemon.sh
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/avahi-dnsconfd.sh > ${WRKDIR}/avahi-dnsconfd.sh
-
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/avahi-daemon.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/avahi-dnsconfd.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>
