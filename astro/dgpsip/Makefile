@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgpsip
-PORTVERSION=	1.32
+PORTVERSION=	1.35
 CATEGORIES=	astro
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
