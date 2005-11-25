@@ -9,7 +9,7 @@ PORTNAME=	wmglobe
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
+MASTER_SITES=	http://hamete.org/static/wmg/
 
 MAINTAINER=	will@FreeBSD.org
 COMMENT=	A neat xearth-like WindowMaker dockapp
