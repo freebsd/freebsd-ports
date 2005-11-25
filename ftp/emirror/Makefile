@@ -20,6 +20,7 @@ COMMENT=	A full features FTP-mirroring software with nice logfiles
 
 DEPRECATED=	Doesn't work (see ports/83546)
 EXPIRATION_DATE=2005-12-31
+IGNORE=		doesn't work (see ports/83546)
 
 HTMLDIR?=	${PREFIX}/www/emirror
 LOCKDIR?=	/tmp/emirror-locks
