@@ -3,7 +3,6 @@ include/common.h
 include/netrc.h
 include/prozilla.h
 lib/libprozilla.a
-lib/libprozilla.la
 share/locale/fr/LC_MESSAGES/proz.mo
 share/locale/it/LC_MESSAGES/.mo
 share/locale/it/LC_MESSAGES/proz.mo
