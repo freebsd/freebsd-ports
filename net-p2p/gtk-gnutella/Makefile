@@ -24,8 +24,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.95.4
-PORTREVISION=	1
+DISTVERSION=	0.96b
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -47,15 +46,23 @@ CONFIGURE_ARGS=	-Dyacc='bison -y' -Dofficial='true' -Dprefix=${PREFIX} \
 		-Dprivlib=${PREFIX}/share/gtk-gnutella \
 		-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale \
 		-Dcc='${CC}' -Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
-		-Doptimize='undef' -Dlibpth='/usr/lib ${LOCALBASE}/lib'
+		-Doptimize='undef' -Dlibpth='/usr/lib ${LOCALBASE}/lib' \
+		-Dd_enablenls='define'
 
 MAN1=		gtk-gnutella.1
 
-OPTIONS=	DEBUG "Build with debugging symbols" off \
-		GTK2 "Build with gtk2 frontend" on \
+OPTIONS=	GTK2 "Build with gtk2 frontend" on \
+		TLS "enable GNU TLS encryption support" off \
+		IPV6 "enable IPv6 support" off \
+		DBUS "enable DBUS support" off \
+		DEBUG "Build with debugging symbols" off \
 		PORTABILITY "Use the PATH variable at run-time" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
 
 .if !defined(INTERACTIVE_CONFIGURE)
 CONFIGURE_ARGS+=	-d -e
@@ -75,6 +82,22 @@ USE_GNOME+=		gtk12
 
 .if defined(WITH_PORTABILITY)
 CONFIGURE_ARGS+=	-Dd_portable=true
+.endif
+
+.if defined(WITH_TLS)
+LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	-Dd_gnutls=undef
+.endif
+
+.if !defined(WITH_IPV6)
+CONFIGURE_ARGS+=	-D ipv6=false
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=		dbus:${PORTSDIR}/devel/dbus
+.else
+CONFIGURE_ARGS+=	-D dbus=false
 .endif
 
 .include <bsd.port.post.mk>
