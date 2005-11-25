@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.crevola.com/francois/amyc/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Display the contents of your Netscape cache
 
-DEPRECATED=	not longer being actively developed
+DEPRECATED=	no longer being actively developed
 EXPIRATION_DATE=2006-01-24
 
 USE_AUTOTOOLS=	autoconf:213
