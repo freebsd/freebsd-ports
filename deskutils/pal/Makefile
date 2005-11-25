@@ -1,6 +1,6 @@
 # Ports collection makefile for:	pal
 # Date created:				Mar 16, 2004
-# Whom:					Herbert J. Skuhra <herbert.skuhra@gmx.at>
+# Whom:					Herbert J. Skuhra <h.skuhra@gmail.com>
 #
 # $FreeBSD$
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	palcal
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	herbert.skuhra@gmx.at
+MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A calendar application
 
 USE_GNOME=	glib20
