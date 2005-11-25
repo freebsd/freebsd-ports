@@ -1,0 +1,4 @@
+bin/rospell
+%%DATADIR%%/dictionary.fixed
+%%DATADIR%%/dictionary.ro
+@dirrm %%DATADIR%%

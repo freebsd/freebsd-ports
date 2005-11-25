@@ -1,0 +1,19 @@
+Rospell is gedit-liek QT-based spell checker / editor for the Romanian language
+which runs on Linux and FreebSD.
+
+Rospell este un speller/corector UTF-8 simplu pentru limba romana, pentru Linux
+si FreeBSD:
+- Dependinte simple - Biblioteca QT a firmei Trolltech (si Xorg/XFree86)
+- Suport UTF-8, ISO8859-2/16 si CP1250 (Windows) - Practic toate formatele
+majore pentru editare de text in limba romana sunt suportate.
+- Suport XML - Toate formatele bazate pe XML, precum OpenOffice, AbiWord,
+Scribus si HTML, sunt suportate. Tag-urile XML sunt recunoscute si nu sunt
+incluse in corectare.
+- Dictionar larg - Aprox. 280.000 cuvinte romanesti in momentul de fata.
+- Editor - Similar cu gedit, simplu si rapid.
+- Diacritice - Pentru acele cazuri rare cand nu reusiti sa va setati tastatura
+in mod corect, caracterele diacritice sunt suportate direct de catre editor.
+- Web Loading - Suport pentru incarcare de pagini web cu detectie automata a
+formatului (UTF8/ISO/CP1250).
+
+WWW: http://rospell.sourceforge.net
