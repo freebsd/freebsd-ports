@@ -171,6 +171,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += isakmpd
     SUBDIR += its4
+    SUBDIR += jailaudit
     SUBDIR += jce_policy14
     SUBDIR += john
     SUBDIR += keychain
