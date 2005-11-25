@@ -20,7 +20,7 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
-MAKEFILE=       ${WRKSRC}/scripts/makefile.freebsd
+MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
 ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
 INSTALLS_SHLIB=	yes

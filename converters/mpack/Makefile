@@ -7,7 +7,7 @@
 
 PORTNAME=	mpack
 PORTVERSION=	1.5
-PORTREVISION=   3
+PORTREVISION=	3
 CATEGORIES=	converters mail news
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

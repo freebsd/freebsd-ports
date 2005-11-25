@@ -7,7 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3ia
-PORTREVISION=   3
+PORTREVISION=	3
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp26ru
@@ -25,7 +25,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-PGPLIB=         ${PREFIX}/share/pgp
+PGPLIB=		${PREFIX}/share/pgp
 OBJS=		language.txt ru.hlp
 
 do-install:
