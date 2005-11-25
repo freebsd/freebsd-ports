@@ -1,4 +1,6 @@
 MD5 (gman_0.9.3.orig.tar.gz) = 819582eb2527e36271f82f6562001b43
+SHA256 (gman_0.9.3.orig.tar.gz) = 27d11b4f2d41691335cb666ca07e6b491fb24496b30330ffbbb26eaa24ed0f99
 SIZE (gman_0.9.3.orig.tar.gz) = 42369
 MD5 (gman_0.9.3-2.diff.gz) = fee6f58dbda042c251a6c4f9ce3ba738
+SHA256 (gman_0.9.3-2.diff.gz) = a29ea8cb0488a557b844bee117268fefbf1eabf812532476759efc536dfed1a7
 SIZE (gman_0.9.3-2.diff.gz) = 10295
