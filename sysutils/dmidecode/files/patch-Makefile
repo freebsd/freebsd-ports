@@ -1,31 +1,36 @@
---- Makefile.orig	Mon Feb 28 21:43:00 2005
-+++ Makefile	Sun Mar 20 22:16:32 2005
-@@ -8,9 +8,9 @@
+--- Makefile.orig	Wed Jun 15 20:22:35 2005
++++ Makefile	Fri Nov 25 20:31:58 2005
+@@ -8,25 +8,25 @@
  #	Licensed under the GNU Public License.
  #
  
 -CC      = gcc
 -CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
--          -Wcast-align -Wwrite-strings -Wmissing-prototypes
-+CFLAGS  += -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-+          -Wcast-align -Wwrite-strings -Wmissing-prototypes ${CPPFLAGS} \
-+          -DHAVE_DECL_GETOPT
+-          -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline
++CFLAGS+=	-W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
++		-Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline
++CFLAGS+=	${CPPFLAGS}
  #CFLAGS += -DBIGENDIAN
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
-@@ -19,12 +19,11 @@
+ # When debugging, disable -O2 and enable -g.
+-CFLAGS += -O2
++#CFLAGS += -O2
  #CFLAGS += -g
  
  # Pass linker flags here
 -LDFLAGS =
-+LDFLAGS +=
++LDFLAGS+=
  
  DESTDIR =
 -prefix  = /usr/local
--sbindir = $(prefix)/sbin
--mandir  = $(prefix)/man
-+sbindir = $(PREFIX)/sbin
-+mandir  = $(PREFIX)/man
++prefix  = $(PREFIX)
+ sbindir = $(prefix)/sbin
+-mandir  = $(prefix)/share/man
++mandir  = $(MANPREFIX)/man
  man8dir = $(mandir)/man8
+-docdir  = $(prefix)/share/doc/dmidecode
++docdir  = $(DOCSDIR)
  
- all : dmidecode biosdecode ownership vpddecode
+ INSTALL         := install
+ INSTALL_DATA    := $(INSTALL) -m 644
