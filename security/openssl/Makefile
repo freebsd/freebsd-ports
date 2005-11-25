@@ -925,6 +925,16 @@ pre-everything::
 	@${FALSE}
 
 .endif
+.if exists(/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
+pre-everything::
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# this ports conflicts with your base system"
+	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_BASE"
+	@${ECHO_CMD} "# and use WITH_OPENSSL_PORT=yes instead."
+	@${ECHO_CMD} "#"
+	@${FALSE}
+
+.endif
 BASE_SUFFIX=	-overwrite-base
 PREFIX=		/usr
 OPENSSLDIR=	/etc/ssl
