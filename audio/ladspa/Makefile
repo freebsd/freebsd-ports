@@ -13,7 +13,7 @@ DISTNAME=	ladspa_sdk_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"Linux Audio Developer's Simple Plugin API"
+COMMENT=	Linux Audio Developer's Simple Plugin API
 
 WRKSRC=		${WRKDIR}/ladspa_sdk
 USE_GMAKE=	yes

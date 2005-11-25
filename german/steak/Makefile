@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Steak.${PORTVERSION}
 
 MAINTAINER=	h.eichmann@gmx.de
-COMMENT=	"An english <-> german dictionary under the GPL"
+COMMENT=	An english <-> german dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

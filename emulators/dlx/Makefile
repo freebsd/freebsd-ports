@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"Assembler for Hennessy and Patterson's DLX architecture"
+COMMENT=	Assembler for Hennessy and Patterson's DLX architecture
 
 ONLY_FOR_ARCHS=	i386
 USE_GCC=	2.95
