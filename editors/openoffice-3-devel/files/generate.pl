@@ -6,7 +6,10 @@
 print "#!/bin/csh\n";
 print "make deinstall clean\n";
 print "/usr/bin/time -h make WITH_CCACHE=yes install package package-rename solver sdk ure languagepack deinstall >& log.en\n";
-print "rm work/.configure* work/.build* \n";
+#print "rm work/.configure* work/.build* \n";
+#workaround for breakage at odk sdk_oo
+print "make deinstall clean\n";
+
 print "/usr/bin/time -h make ALL_LOCALIZED_LANGS=yes >& log.all\n";
 
 open ( FILE,  "< Makefile.localized") ;
