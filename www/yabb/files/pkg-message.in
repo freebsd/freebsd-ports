@@ -1,0 +1,18 @@
+YaBB is now installed. It requires further
+configuration, though.
+
+If you didn't specify otherwise a quick guide
+is available at: http://yourserver/yabb-quide/
+
+A readme and is available at:
+%%DOCSDIR%%
+
+For additional documentation please visit the
+official site at: http://www.yabbforum.com/
+
+To start a setup process browse to:
+http://yourserver/cgi-bin/yabb2/Setup.pl
+
+Please note that this port is still a work in
+progress. Use it carefully and make a backup
+before you upgrade.

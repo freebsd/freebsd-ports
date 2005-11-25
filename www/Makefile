@@ -894,6 +894,7 @@
     SUBDIR += xitami
     SUBDIR += xpath2rss
     SUBDIR += xshttpd
+    SUBDIR += yabb
     SUBDIR += yaws
     SUBDIR += zerowait-httpd
     SUBDIR += znavigator
