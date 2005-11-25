@@ -44,6 +44,7 @@ lib/libidnkitlite.a
 lib/libidnkitlite.so
 lib/libidnkitlite.so.1
 lib/libidnkitres.a
+lib/libidnkitres.la
 lib/libidnkitres.so
 lib/libidnkitres.so.1
 share/idnkit/jp.map

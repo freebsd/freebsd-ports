@@ -7,7 +7,7 @@
 
 PORTNAME=	idnkit
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nic.ad.jp/ja/idn/idnkit/download/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -37,6 +37,7 @@ DOCS_EN=	ChangeLog NEWS README
 DOCS_JA=	README.ja
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/tools/runidn/libidnkitres.la ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/ja
 .for f in ${DOCS_EN}
