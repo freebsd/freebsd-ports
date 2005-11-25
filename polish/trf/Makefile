@@ -8,9 +8,9 @@
 PORTNAME=	trf
 PORTVERSION=	0.4
 CATEGORIES=	polish finance
-MASTER_SITES=	http://www.ceti.pl/eaquer/trf/
+MASTER_SITES=	http://maciek.bbnet.pl/soft/trf/
 
-MAINTAINER=	eaquer@ceti.pl
+MAINTAINER=	mkorzen@gmail.com
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
 
 post-install:
