@@ -44,33 +44,19 @@ SOVERSION=	7
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-TARGET=		FreeBSD2
-TARGETDIR=	freebsd-2
-WORDSIZE=	32
-BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
-.elif ${ARCH} == "i386"
-.if ${OSVERSION} < 400011
-TARGET=		FreeBSD3
-TARGETDIR=	freebsd-3
-BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
-.else
+.if ${ARCH} == "i386"
 TARGET=		FreeBSD4
 TARGETDIR=	freebsd-4
 BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
-.endif
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
-.if ${OSVERSION} < 400011
-IGNORE=		Not supported on older versions of FreeBSD/Alpha
-.endif
 CFLAGS+=	-mieee
 TARGET=		FBSD_ALPHA
 TARGETDIR=	fbsd-alpha
 WORDSIZE=	64
 BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .else
-IGNORE=		Not supported on ${ARCH}
+IGNORE=		is not supported on ${ARCH}
 .endif
 
 EXTRA_PATCHES!=	${ECHO_CMD} ${PATCHDIR}/${TARGET}-patch-*
