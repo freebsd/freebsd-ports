@@ -35,6 +35,11 @@ BUILD_DEPENDS+=	${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES+=	pkg-install \
+		pkg-deinstall
+SUB_LIST+=	JRE_HOME=${PREFIX}/jdk${JDK_VERSION}/jre \
+		ARCH=${MACHINE_ARCH}
 
 WRKSRC=		${WRKDIR}/control/make
 
@@ -335,8 +340,6 @@ post-install:
 	${FIND} "${PREFIX}/jdk${JDK_VERSION}/jre/plugin" -type d | ${XARGS} ${CHMOD} a+rx
 .endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
-	@${SED} -e "s:%%JRE_HOME%%:${PREFIX}/jdk${JDK_VERSION}/jre:g" \
-	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
