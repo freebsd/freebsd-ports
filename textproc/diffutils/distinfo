@@ -1,4 +1,6 @@
 MD5 (diffutils-2.8.1.tar.gz) = 71f9c5ae19b60608f6c7f162da86a428
+SHA256 (diffutils-2.8.1.tar.gz) = c5001748b069224dd98bf1bb9ee877321c7de8b332c8aad5af3e2a7372d23f5a
 SIZE (diffutils-2.8.1.tar.gz) = 780086
 MD5 (diffutils-2.8.1-timestamp_precision.diff) = 1ac049df51ef80fe9acaba123b2a4128
+SHA256 (diffutils-2.8.1-timestamp_precision.diff) = b9732e8f63e8999d47e9c0eaf9048d1b08de5dc8da825236fd2af04c373c4128
 SIZE (diffutils-2.8.1-timestamp_precision.diff) = 1989
