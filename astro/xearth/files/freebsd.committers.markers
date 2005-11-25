@@ -187,8 +187,8 @@
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
- 40.1,		-105.3,		"imp"				# (CORE) Boulder, CO, USA
- 40.1,		-105.3,		"    ,gibbs,ken,fsmp,will"	# Boulder, CO, USA
+ 40.1,		-105.3,		"gibbs,ken,fsmp,will"		# Boulder, CO, USA
+ 40.01942534,	-105.23914289,	"imp"				# (CORE) Boulder, CO, USA
  32.222,	-110.926,	"jcamou"			# Tucson, AZ, USA
  40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  41.077919,	-111.955328,	"brandon"			# Layton, UT, USA
