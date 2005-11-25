@@ -1,0 +1,5 @@
+etc/squid/squid_radius_auth.conf
+etc/squid/squid_radius_auth.conf.default
+libexec/squid/squid_radius_auth
+@unexec rmdir %D/libexec/squid/ 2>/dev/null || true
+@unexec rmdir %D/etc/squid/ 2>/dev/null || true
