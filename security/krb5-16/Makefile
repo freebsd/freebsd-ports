@@ -29,7 +29,8 @@ GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=	--enable-shared --enable-static
 CONFIGURE_ARGS+=	--disable-thread-support
-CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
+CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
+			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
 
@@ -70,12 +71,6 @@ HTML_DOCS=		admin.html user-guide.html install.html
 HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-CONFIGURE_ENV+=		CFLAGS="-fPIC ${CFLAGS}"
-.else
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
-.endif
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
