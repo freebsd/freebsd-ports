@@ -16,18 +16,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup client to NetWorker servers
 
-FORBIDDEN=	http://vuxml.freebsd.org/d177d9f9-e317-11d9-8088-00123f0f7307.html
+FORBIDDEN=	"http://vuxml.freebsd.org/d177d9f9-e317-11d9-8088-00123f0f7307.html"
 
 LATEST_LINK=	nwclient602
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		rapgen.1
 MAN3=		nsr_getdate.3
@@ -44,7 +44,7 @@ MAN8=		ansrd.8 changers.8 dasadmin.8 EMASS_silo.8 emcdiscover.8 \
 		lusbinfo.8 lusdebug.8 lusmode.8 mini_el.8 mminfo.8 mmlocate.8\
 		mmpool.8 mmrecov.8 msense.8 networker.8 nmi_config.8 nsr.8 \
 		nsr_crash.8 nsr_ize.8 nsr_shutdown.8 nsradmin.8 nsralist.8 \
- 		nsrarchive.8 nsrcap.8 nsrcat.8 nsrck.8 nsrclone.8 nsrd.8 \
+		nsrarchive.8 nsrcap.8 nsrcat.8 nsrck.8 nsrclone.8 nsrd.8 \
 		nsrdb2.8 nsrdbmi.8 nsrdocrc.8 nsrexec.8 nsrexecd.8 nsrhsmck.8 \
 		nsrhsmls.8 nsrib.8 nsriba.8 nsrim.8 nsrindexasm.8 nsrindexd.8 \
 		nsrinfo.8 nsrjb.8 nsrlic.8 nsrls.8 nsrmig.8 nsrmm.8 nsrmmd.8 \
