@@ -9,10 +9,13 @@ PORTNAME=	amyc
 PORTVERSION=	0.9.159
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://www.crevola.com/about/current/
+MASTER_SITES=	http://www.crevola.com/francois/amyc/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Display the contents of your Netscape cache
+
+DEPRECATED=	not longer being actively developed
+EXPIRATION_DATE=2006-01-24
 
 USE_AUTOTOOLS=	autoconf:213
 USE_GETTEXT=	yes
