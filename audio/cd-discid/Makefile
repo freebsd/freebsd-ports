@@ -8,8 +8,7 @@
 PORTNAME=	cd-discid
 PORTVERSION=	0.9
 CATEGORIES=	audio
-MASTER_SITES=	http://lly.org/~rcw/cd-discid/ \
-		http://www.soulwax.net/freebsd/
+MASTER_SITES=	http://lly.org/~rcw/cd-discid/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	hcoyote@ghostar.org
