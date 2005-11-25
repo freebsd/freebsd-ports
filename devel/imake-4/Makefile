@@ -22,6 +22,8 @@ PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+MAKE_ENV=	MAKEFLAGS="CC=${CC}"
+SCRIPTS_ENV=	CC=${CC}
 
 .ifdef USE_IMAKE
 .error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
