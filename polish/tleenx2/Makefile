@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tleenx
 DISTNAME=	TleenX2-${PORTVERSION}
 
-MAINTAINER=	eaquer@ceti.pl
+MAINTAINER=	mkorzen@gmail.com
 COMMENT=	Client for polish IM service called Tlen.pl
 
 LIB_DEPENDS=	tlen.1:${PORTSDIR}/polish/libtlen
