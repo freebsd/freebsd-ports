@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mixmos
 # Date created:		24 Jul 2004
-# Whom:			Herbert J. Skuhra <herbert.skuhra@gmx.at>
+# Whom:			Herbert J. Skuhra <h.skuhra@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://clay.ll.pl/download/
 
-MAINTAINER=	herbert.skuhra@gmx.at
+MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A GTK2 audio mixer
 
 USE_GNOME=	gtk20
