@@ -8,8 +8,7 @@
 PORTNAME=	qDecoder
 PORTVERSION=	7.0
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/\
-		ftp://ftp2.qDecoder.org/pub/qDecoder/
+MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cjh@FreeBSD.org
