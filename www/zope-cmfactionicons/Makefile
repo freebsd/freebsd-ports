@@ -8,7 +8,7 @@
 PORTNAME=	cmfactionicons
 PORTVERSION=	0.9
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/tseaver/CMFActionIcons/CMFActionIcons-0.9/
+MASTER_SITES=	http://www.zope.org/Members/tseaver/CMFActionIcons/CMFActionIcons-0.9/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	CMFActionIcons-${PORTVERSION}
 
