@@ -10,7 +10,7 @@ PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
-		ftp://ftp.gnu.org/pub/gnu/cons/stable/${PORTVERSION}/ \
+		ftp://ftp.gnu.org/pub/gnu/cons/ \
 		http://www.baldmt.com/cons/stable/
 EXTRACT_SUFX=	.tgz
 
