@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://portmanager.sunsite.dk/distfiles/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -34,7 +34,7 @@ INSTALL_TARGET=		install info
 # time.
 #
 CONFIGURE_ARGS=	--with-prefix=${PREFIX} --with-bindir=/bin \
-		--with-etcdir=/etc/portmanager --with-pkgdbdir=/var/db/pkg \
+		--with-etcdir=/etc --with-pkgdbdir=/var/db/pkg \
 		--with-portsdir=${PORTSDIR} --with-sharedir=/share/portmanager \
 		--with-tempdir=/tmp
 
