@@ -19,7 +19,7 @@ USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -D__dead=static
 MAKE_ARGS+=	X11LIBDIR="${X11BASE}/lib" \
-		CFLAGS="${CFLAGS}"
+		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/xidle
 MAN1=		xidle.1
