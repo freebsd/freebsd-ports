@@ -519,6 +519,7 @@
     SUBDIR += senso
     SUBDIR += sex
     SUBDIR += shaaft
+    SUBDIR += shootingstar
     SUBDIR += six
     SUBDIR += sl
     SUBDIR += slashem-tty
