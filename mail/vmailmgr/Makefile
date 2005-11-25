@@ -9,7 +9,7 @@ PORTNAME=	vmailmgr
 PORTVERSION=	0.96.9
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.vmailmgr.org/current/
+MASTER_SITES=	http://www.vmailmgr.org/archive/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Virtual MAIL ManaGeR for virtual mailboxes and domains
