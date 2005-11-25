@@ -1,0 +1,11 @@
+--- configure.old	Thu Nov 24 19:50:09 2005
++++ configure	Thu Nov 24 19:51:04 2005
+@@ -4060,7 +4060,7 @@
+ 
+ MODULES="gtk+-2.0 >= 2.0.0 libglade-2.0 >= 1.110.0 loudmouth-1.0 >= 0.16"
+ 
+-if test "x$enable_gtkspell" == "xyes"
++if test "x$enable_gtkspell" = "xyes"
+ then
+ 
+   succeeded=no

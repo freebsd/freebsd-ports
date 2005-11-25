@@ -26,6 +26,7 @@ bin/kf
 %%DATADIR%%/chat.glade
 %%DATADIR%%/chat.glade.h
 %%DATADIR%%/chat.png
+%%DATADIR%%/contacts.glade
 %%DATADIR%%/dnd.png
 %%DATADIR%%/dock.glade
 %%DATADIR%%/dock.glade.h
@@ -91,10 +92,16 @@ bin/kf
 %%DATADIR%%/new_account.glade.h
 %%DATADIR%%/online.png
 %%DATADIR%%/password.png
+%%DATADIR%%/people16.png
+%%DATADIR%%/people24.png
 %%DATADIR%%/pix_chat.png
 %%DATADIR%%/pix_message.png
 %%DATADIR%%/pix_system.png
 %%DATADIR%%/plus.png
+%%DATADIR%%/privacy.glade
+%%DATADIR%%/privacy.glade.h
+%%DATADIR%%/privacy_list.glade
+%%DATADIR%%/privacy_list.glade.h
 %%DATADIR%%/register.glade
 %%DATADIR%%/register.glade.h
 %%DATADIR%%/search.glade
@@ -107,18 +114,16 @@ bin/kf
 %%DATADIR%%/unavailable.png
 %%DATADIR%%/unavailable_desc.png
 %%DATADIR%%/unknown.png
+%%DATADIR%%/vcard.png
 %%DATADIR%%/vcard.glade
 %%DATADIR%%/vcard.glade.h
 %%DATADIR%%/www.png
 %%DATADIR%%/xa.png
+share/applications/kf.desktop
 share/locale/bg/LC_MESSAGES/kf.mo
 share/locale/pl/LC_MESSAGES/kf.mo
 share/locale/ru/LC_MESSAGES/kf.mo
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/pl
-@dirrm share/locale/ru
+share/pixmaps/kf.png
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
