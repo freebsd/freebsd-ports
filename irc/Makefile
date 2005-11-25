@@ -50,6 +50,7 @@
     SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += irssi-dcc_send_limiter
     SUBDIR += irssi-devel
     SUBDIR += irssi-fish
     SUBDIR += irssi-scripts
