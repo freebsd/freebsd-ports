@@ -8,10 +8,13 @@
 PORTNAME=	gnuinfo
 PORTVERSION=	1.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.wohnheim.uni-ulm.de/allerlei/
+MASTER_SITES=	# disappeared
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	CGI program to convert GNU .info files into html
+
+DEPRECATED=	mastersite disappeared
+EXPIRATION_DATE=	2006-01-24
 
 NO_WRKSUBDIR=	yes
 
