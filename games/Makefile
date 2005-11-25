@@ -285,6 +285,7 @@
     SUBDIR += interlogic
     SUBDIR += ishido
     SUBDIR += ivan
+    SUBDIR += jchessboard
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
