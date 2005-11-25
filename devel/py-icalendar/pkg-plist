@@ -1,14 +1,33 @@
-%%PORTDOCS%%share/doc/icalendar/example.ics
-%%PORTDOCS%%share/doc/icalendar/example.py
+%%PORTDOCS%%share/doc/icalendar/example.txt
 %%PORTDOCS%%share/doc/icalendar/groupscheduled.ics
-%%PORTDOCS%%share/doc/icalendar/groupscheduled.py
-%%PORTDOCS%%share/doc/icalendar/test.ics
-%%PORTDOCS%%share/doc/icalendar/test.py
-%%PYTHON_SITELIBDIR%%/iCalendar/CaselessDict.py
-%%PYTHON_SITELIBDIR%%/iCalendar/ContentlinesParser.py
-%%PYTHON_SITELIBDIR%%/iCalendar/PropertyValues.py
-%%PYTHON_SITELIBDIR%%/iCalendar/__init__.py
-%%PYTHON_SITELIBDIR%%/iCalendar/iCalendar.py
-%%PYTHON_SITELIBDIR%%/iCalendar/tools.py
-@dirrm %%PYTHON_SITELIBDIR%%/iCalendar
+%%PORTDOCS%%share/doc/icalendar/groupscheduled.txt
+%%PORTDOCS%%share/doc/icalendar/multiple.ics
+%%PORTDOCS%%share/doc/icalendar/multiple.txt
+%%PORTDOCS%%share/doc/icalendar/small.ics
+%%PORTDOCS%%share/doc/icalendar/small.txt
+%%PYTHON_SITELIBDIR%%/icalendar/__init__.py
+%%PYTHON_SITELIBDIR%%/icalendar/__init__.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/cal.py
+%%PYTHON_SITELIBDIR%%/icalendar/cal.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/cal.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.py
+%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/interfaces.py
+%%PYTHON_SITELIBDIR%%/icalendar/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/parser.py
+%%PYTHON_SITELIBDIR%%/icalendar/parser.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/parser.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/prop.py
+%%PYTHON_SITELIBDIR%%/icalendar/prop.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/prop.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/tools.py
+%%PYTHON_SITELIBDIR%%/icalendar/tools.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/tools.pyo
+%%PYTHON_SITELIBDIR%%/icalendar/util.py
+%%PYTHON_SITELIBDIR%%/icalendar/util.pyc
+%%PYTHON_SITELIBDIR%%/icalendar/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/icalendar
 %%PORTDOCS%%@dirrm share/doc/icalendar
