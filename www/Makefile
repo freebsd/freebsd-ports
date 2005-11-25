@@ -731,6 +731,7 @@
     SUBDIR += py-beautifulsoup
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
+    SUBDIR += py-django
     SUBDIR += py-fcgi
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
