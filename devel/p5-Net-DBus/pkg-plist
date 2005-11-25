@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus/DBus.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus/DBus.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Service.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteService.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Dumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Callback.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Exporter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Reactor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Watch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Bus.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Connection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Introspector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/Signal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/MethodReturn.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/MethodCall.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/Error.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/ExportingObjects.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
