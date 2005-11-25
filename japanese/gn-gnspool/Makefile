@@ -14,6 +14,10 @@ DISTNAME=	gn-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Japanese Newsreader with Local Spool Support
 
+BROKEN=		"Unfetchable"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2006-01-26
+
 # The program ``configure'' sometimes issue questions and
 # batch-mode build would fail.
 IS_INTERACTIVE=	yes
