@@ -45,7 +45,7 @@
  55.778474,	37.596996,	"osa"				# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
- -25.80974,	28.27731,	"jhay"				# Pretoria, South Africa
+-25.80974,	28.27731,	"jhay"				# Pretoria, South Africa
  60.16,		24.87,		"scop"				# Helsinki, Finland
  37.98,		23.73,		"dds"				# Athens, Greece
  42.6333,	23.2964,	"roam"				# Sofia, Bulgaria
@@ -68,7 +68,7 @@
  55.627,	12.382,		"simon"				# Vallensbaek, Denmark
  49.200270,	12.279196,	"marius"			# Cham, Germany
  48.23,		11.87,		"jkois"				# Woerth, Germany
-48.32,		11.67,		"mr"				# Neufahrn, Germany
+ 48.32,		11.67,		"mr"				# Neufahrn, Germany
  55.4833,	11.6333,	"pho"				# Sor\o, Denmark
  48.20115,	11.6124,	"barner"			# Munich, Germany
  48.00,		11.35,		"obraun"			# Starnberg, Germany
@@ -188,8 +188,8 @@
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
- 40.1,		-105.3,		"gibbs,ken,fsmp,will"		# Boulder, CO, USA
  40.01942534,	-105.23914289,	"imp"				# (CORE) Boulder, CO, USA
+ 40.1,		-105.3,		"gibbs,ken,fsmp,will"		# Boulder, CO, USA
  32.222,	-110.926,	"jcamou"			# Tucson, AZ, USA
  40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  41.077919,	-111.955328,	"brandon"			# Layton, UT, USA
