@@ -1,0 +1,20 @@
+bin/pythonchess
+%%DATADIR%%/bishopb.gif
+%%DATADIR%%/bishopw.gif
+%%DATADIR%%/board.py
+%%DATADIR%%/chesspersonalities.py
+%%DATADIR%%/empty.gif
+%%DATADIR%%/kingb.gif
+%%DATADIR%%/kingw.gif
+%%DATADIR%%/knightb.gif
+%%DATADIR%%/knightw.gif
+%%DATADIR%%/nchess6.py
+%%DATADIR%%/openinglibrary.py
+%%DATADIR%%/openinglibrary.txt
+%%DATADIR%%/pawnb.gif
+%%DATADIR%%/pawnw.gif
+%%DATADIR%%/queenb.gif
+%%DATADIR%%/queenw.gif
+%%DATADIR%%/rookb.gif
+%%DATADIR%%/rookw.gif
+@dirrm %%DATADIR%%
