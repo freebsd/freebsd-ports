@@ -18,6 +18,9 @@ DISTNAME=	${PORTNAME}-2.2.0-0.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full features FTP-mirroring software with nice logfiles
 
+DEPRECATED=	Doesn't work (see ports/83546)
+EXPIRATION_DATE=2005-12-31
+
 HTMLDIR?=	${PREFIX}/www/emirror
 LOCKDIR?=	/tmp/emirror-locks
 
