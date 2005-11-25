@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -49,6 +50,9 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
 .endif
+
+post-patch:
+	${CP} ${FILESDIR}/karbon_factory_init.cc ${WRKSRC}/karbon
 
 post-configure:
 .if ${OSVERSION} < 500035
