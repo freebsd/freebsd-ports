@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A file creation/modification logger
 
+BROKEN=		Unfetchable
+
 DOCS=		BUGS CHANGELOG INSTALL README TODO
 
 .if !defined(NOPORTDOCS)
