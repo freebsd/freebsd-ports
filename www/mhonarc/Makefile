@@ -9,12 +9,7 @@ PORTNAME=	mhonarc
 PORTVERSION=	2.6.15
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
-		http://www.oac.uci.edu/indiv/ehood/tar/ \
-		http://mirror.ncsa.uiuc.edu/mhonarc.org/\
-		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
-		ftp://ftp.redhat.com/pub/contrib/noarch/noarch/ \
-		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
-		http://www.perl.com/CPAN-local/authors/id/EHOOD/
+		http://www.oac.uci.edu/indiv/ehood/tar/
 DISTNAME=	MHonArc-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
