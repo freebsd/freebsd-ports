@@ -95,6 +95,7 @@
     SUBDIR += connect4
     SUBDIR += connectfive
     SUBDIR += conquest
+    SUBDIR += construo
     SUBDIR += corewars
     SUBDIR += cosmo
     SUBDIR += cowsay

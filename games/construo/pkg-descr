@@ -1,0 +1,12 @@
+Construo is a simple 2D construction programm (it is currently not
+a real game) for objects which consist of rods and springs and let
+them react on physical forces. You can currently construct buildings
+and objects like bridges, towers, spaceshuttles, etc. and you let
+them fall to ground and see seem smash and break. Sound like fun,
+doesn't it =;-) The game is similar to Bridge Builder and heavily
+inspired from the Gamasutra article Collision Response: Bouncy,
+Trouncy, Fun. Its covered under the GNU General Public License,
+thats means source code is availabel and you are allowed to modify
+it.
+
+WWW: http://www.nongnu.org/construo/
