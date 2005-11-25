@@ -1,4 +1,6 @@
 MD5 (mtv-1.2.5.tar.gz) = 862ceb5fcf7a5956414bd613c9504f36
+SHA256 (mtv-1.2.5.tar.gz) = f95259724ea152b60d3dd613ca687454408ff4c714fd2f6d4f521f50002a1dfd
 SIZE (mtv-1.2.5.tar.gz) = 408421
 MD5 (libSDLx11.so.tar.gz) = 3b84f7200010b56c08b8608d5fba2cdb
+SHA256 (libSDLx11.so.tar.gz) = 44736964782ffa30c4bec86ac6c7cf210c4c3c2ee363295efaf24aae3e61f9ad
 SIZE (libSDLx11.so.tar.gz) = 72019
