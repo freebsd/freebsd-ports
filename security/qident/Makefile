@@ -8,7 +8,7 @@
 PORTNAME=	qident
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.interlude.eu.org/~ad/software/qident/
+MASTER_SITES=	http://www.hairylemon.org/~ad/software/qident/
 
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Query a remote IDENT (RFC 1413) server

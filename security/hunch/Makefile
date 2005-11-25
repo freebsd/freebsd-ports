@@ -9,7 +9,7 @@ PORTNAME=	hunch
 PORTVERSION=	1.1.7
 CATEGORIES=	security
 MASTER_SITES=	http://s89813419.onlinehome.us/ \
-		http://web.cs.cmu.edu/~dpelleg/download/
+		http://www.cs.cmu.edu/~dpelleg/download/
 
 MAINTAINER=	daniel+hunch@pelleg.org
 COMMENT=	Scan httpd log files for vulnerability probes, mail admins

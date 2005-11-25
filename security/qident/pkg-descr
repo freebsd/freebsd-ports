@@ -1,4 +1,4 @@
 A small program to query an ident protocol server (rfc1413).  Uses the   
 `libident' library.
 
-WWW: http://www.interlude.eu.org/~ad/software/qident/
+WWW: http://www.hairylemon.org/~ad/software/qident/
