@@ -805,6 +805,7 @@
     SUBDIR += snownews
     SUBDIR += spreadlogd
     SUBDIR += squid
+    SUBDIR += squid_radius_auth
     SUBDIR += squidclients
     SUBDIR += squidguard
     SUBDIR += squidpurge
