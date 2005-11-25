@@ -7,6 +7,7 @@
     SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
     SUBDIR += aguri
+    SUBDIR += aircrack
     SUBDIR += airport
     SUBDIR += angst
     SUBDIR += annextools

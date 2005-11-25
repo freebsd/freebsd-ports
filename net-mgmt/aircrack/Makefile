@@ -1,0 +1,47 @@
+# New ports collection makefile for:	aircrack
+# Date created:				25 Nov 2005
+# Whom:					Lars Engels <lars.engels@0x20.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aircrack
+PORTVERSION=	2.41
+CATEGORIES=	net-mgmt
+MASTER_SITES=	http://www.cr0.net:8040/code/network/ \
+		http://100h.org/wlan/aircrack/ \
+		http://100h.org/wlan/aircrack/archives/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	lars.engels@0x20.net
+COMMENT=	Aircrack is a set of tools for auditing wireless networks
+
+ALL_TARGET=	aircrack airdecap arpforge mergeivs pcap2ivs
+
+PLIST_FILES=	bin/aircrack bin/airdecap bin/arpforge bin/mergeivs bin/pcap2ivs
+PORTDOCS=	*
+
+USE_REINPLACE=	yes
+
+pre-fetch:
+	@${CAT} ${PKGMESSAGE}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/aircrack ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/airdecap ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/arpforge ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mergeivs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pcap2ivs ${PREFIX}/bin
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

@@ -1,0 +1,14 @@
+aircrack is a set of tools for auditing wireless networks:
+
+    * airodump: 802.11 packet capture program
+    * aireplay: 802.11 packet injection program
+    * aircrack: static WEP and WPA-PSK key cracker
+    * airdecap: decrypts WEP/WPA capture files
+    * arpforge: forges ARP packets
+
+At the moment airodump and aireplay cannot be built on FreeBSD.
+
+WWW: http://www.cr0.net:8040/code/network/aircrack/
+
+- Lars Engels
+lars.engels@0x20.net

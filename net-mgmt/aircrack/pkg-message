@@ -1,0 +1,9 @@
+====
+Attention!
+
+Of the aircrack suite only airdecap, arpforge and aircrack are working
+with FreeBSD. Airump and aireplay are too Linux-specific to run at the
+moment.
+However aircrack can handle kismet's dumpfile so there is only no
+FreeBSD equivalent to aireplay.
+====
