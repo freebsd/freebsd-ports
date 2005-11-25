@@ -290,6 +290,7 @@ aiksaurus	ports/textproc/aiksaurus
 aiksaurus-gtk	ports/textproc/aiksaurus-gtk
 aim		ports/net-im/aim
 aimsniff	ports/security/aimsniff
+aircrack	ports/net-mgmt/aircrack
 airoflash	ports/misc/airoflash
 airport		ports/net-mgmt/airport
 airrox		ports/games/airrox
