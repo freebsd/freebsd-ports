@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fcptools
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.7.${RELEASE_DATE}
 CATEGORIES=	net security
 MASTER_SITES=	http://freenetproject.org/snapshots/
+DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -19,8 +19,10 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME:L}
-INSTALLS_SHLIB=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-stable
+RELEASE_DATE=	20041108
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/ezFCPlib/libezfcp.a ${PREFIX}/lib
 
 .include <bsd.port.mk>
