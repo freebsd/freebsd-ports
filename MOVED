@@ -1981,3 +1981,4 @@ games/q3server-ut|games/quake3-ut|2005-11-22|Renamed
 games/q3server-wfa|games/quake3-wfa|2005-11-22|Renamed
 print/lcdf-typetools|print/typetools|2005-11-24|Port has already existed
 x11/xscoop|x11-toolkits/xscoop|2005-11-24|Port readded in proper category
+misc/compat22||2005-11-25|Forbidden, unfetchable, unneeded

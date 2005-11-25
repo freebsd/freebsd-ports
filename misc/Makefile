@@ -42,7 +42,6 @@
     SUBDIR += clpbar
     SUBDIR += cmatrix
     SUBDIR += colortail
-    SUBDIR += compat22
     SUBDIR += compat3x
     SUBDIR += compat4x
     SUBDIR += compat5x
