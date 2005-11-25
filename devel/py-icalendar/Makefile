@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	icalendar
-PORTVERSION=	0.9.3
+PORTVERSION=	0.11
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.mxm.dk/products/public/ical/downloads/
+MASTER_SITES=	http://codespeak.net/icalendar/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	iCalendar.${PORTVERSION}
+DISTNAME=	iCalendar-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Parser and generator of iCalender files for Python
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
+USE_PYDISTUTILS=	yes
+
 WRKSRC=		${WRKDIR}/iCalendar
 
-do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}/iCalendar
-	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/iCalendar/
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
