@@ -1,4 +1,6 @@
 MD5 (ruby/ruby-1.8.2.tar.gz) = 8ffc79d96f336b80f2690a17601dea9b
+SHA256 (ruby/ruby-1.8.2.tar.gz) = 34cf95791323c96dc92c672c16daaef69f00a0ba69e1c43bab893ae38b7eeb3e
 SIZE (ruby/ruby-1.8.2.tar.gz) = 3627349
 MD5 (ruby/1.8.2-patch1.gz) = 4f32bae4546421a20a9211253da103d3
+SHA256 (ruby/1.8.2-patch1.gz) = d9d85c4bba4d2cba4c065c4fa58da7e3071137c1a0958cbb085e5b6749cf5a08
 SIZE (ruby/1.8.2-patch1.gz) = 1347
