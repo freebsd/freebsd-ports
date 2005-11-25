@@ -1,0 +1,107 @@
+--- karbon/Makefile.in.orig	Wed Oct  5 12:52:36 2005
++++ karbon/Makefile.in	Fri Nov 25 18:12:28 2005
+@@ -369,7 +369,7 @@
+ libkarbonbase_la_LDFLAGS = $(KDE_RPATH) -version-info 2:0:0 -no-undefined $(KDE_NO_UNDEFINED)
+ libkarbonbase_la_LIBADD = $(LIB_KOFFICEUI)
+ 
+-libkarboncommon_la_LDFLAGS = $(KDE_RPATH) $(LIBFREETYPE_RPATH)
++libkarboncommon_la_LDFLAGS = $(KDE_RPATH) $(LIBFREETYPE_RPATH) -no-undefined
+ libkarboncommon_la_LIBADD = $(LIB_KOFFICECORE) $(LIB_KOFFICEUI) $(LIB_KOPAINTER) $(LIB_KOTEXT) \
+ 	dockers/libkarbondockers.la \
+ 	widgets/libkarbonwidgets.la \
+@@ -388,7 +388,7 @@
+ 	$(LIBFREETYPE_LIBS)
+ 
+ 
+-libkarbonpart_la_SOURCES = dummy.cpp
++libkarbonpart_la_SOURCES = karbon_factory_init.cc
+ libkarbonpart_la_LDFLAGS = $(KDE_PLUGIN) $(LIBFREETYPE_RPATH)
+ libkarbonpart_la_LIBADD = libkarboncommon.la
+ #>- libkarbonpart_la_METASOURCES = AUTO
+@@ -422,10 +422,10 @@
+ karbon_la_DEPENDENCIES = libkdeinit_karbon.la
+ #>- am_karbon_la_OBJECTS = main.lo
+ #>+ 1
+-am_karbon_la_OBJECTS = karbon_dummy.lo
++am_karbon_la_OBJECTS = karbon_karbon_factory_init.lo
+ #>- karbon_la_OBJECTS = $(am_karbon_la_OBJECTS)
+ #>+ 1
+-karbon_la_OBJECTS = karbon_dummy.lo
++karbon_la_OBJECTS = karbon_karbon_factory_init.lo
+ libkarbonbase_la_DEPENDENCIES =
+ am_libkarbonbase_la_OBJECTS = karbon_view_base.lo karbon_part_base.lo
+ #>- libkarbonbase_la_OBJECTS = $(am_libkarbonbase_la_OBJECTS)
+@@ -455,10 +455,10 @@
+ @KDE_USE_FINAL_FALSE@libkarboncommon_la_OBJECTS = $(libkarboncommon_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libkarboncommon_la_OBJECTS = $(libkarboncommon_la_final_OBJECTS)
+ libkarbonpart_la_DEPENDENCIES = libkarboncommon.la
+-am_libkarbonpart_la_OBJECTS = dummy.lo
++am_libkarbonpart_la_OBJECTS = karbon_factory_init.lo
+ #>- libkarbonpart_la_OBJECTS = $(am_libkarbonpart_la_OBJECTS)
+ #>+ 1
+-libkarbonpart_la_OBJECTS = dummy.lo
++libkarbonpart_la_OBJECTS = karbon_factory_init.lo
+ bin_PROGRAMS =
+ #>- PROGRAMS = $(bin_PROGRAMS)
+ #>+ 2
+@@ -473,7 +473,7 @@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+ am__depfiles_maybe = depfiles
+-#>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/dummy.Plo \
++#>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/karbon_factory_init.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/karbon_drag.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/karbon_factory.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/karbon_grid_data.Plo \
+@@ -486,7 +486,7 @@
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/karbon_view_iface.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/main.Plo
+ #>+ 24
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/karbon.la.Po $(DEPDIR)/karbon_dummy.Plo $(DEPDIR)/karbon_part_iface_skel.P $(DEPDIR)/karbon_view_iface_skel.P  $(DEPDIR)/libkarbonbase_la.all_cc.P $(DEPDIR)/libkarboncommon_la.all_cc.P $(DEPDIR)/libkarboncommon_la.all_cpp.P ./$(DEPDIR)/dummy.Plo \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/karbon.la.Po $(DEPDIR)/karbon_karbon_factory_init.Plo $(DEPDIR)/karbon_part_iface_skel.P $(DEPDIR)/karbon_view_iface_skel.P  $(DEPDIR)/libkarbonbase_la.all_cc.P $(DEPDIR)/libkarboncommon_la.all_cc.P $(DEPDIR)/libkarboncommon_la.all_cpp.P ./$(DEPDIR)/karbon_factory_init.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_drag.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_factory.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_grid_data.Plo \
+@@ -498,7 +498,7 @@
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_view_base.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_view_iface.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/main.Plo
+-@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =  $(DEPDIR)/karbon.la.Po $(DEPDIR)/karbon_dummy.Plo $(DEPDIR)/karbon_part_iface_skel.P $(DEPDIR)/karbon_view_iface_skel.P ./$(DEPDIR)/dummy.Plo \
++@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =  $(DEPDIR)/karbon.la.Po $(DEPDIR)/karbon_karbon_factory_init.Plo $(DEPDIR)/karbon_part_iface_skel.P $(DEPDIR)/karbon_view_iface_skel.P ./$(DEPDIR)/karbon_factory_init.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_drag.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_factory.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/karbon_grid_data.Plo \
+@@ -710,7 +710,7 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dummy.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/karbon_factory_init.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/karbon_drag.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/karbon_factory.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/karbon_grid_data.Plo@am__quote@
+@@ -1021,9 +1021,6 @@
+ 	uninstall-recursive
+ 
+ 
+-dummy.cpp:
+-	echo > dummy.cpp
+-
+ messages: rc.cpp
+ 	$(EXTRACTRC) data/*.rc >> rc.cpp
+ 	$(XGETTEXT) rc.cpp *.cpp *.cc */*.cc tools/*.h plugins/*/*.cc -o $(podir)/karbon.pot
+@@ -1049,10 +1046,10 @@
+ 	echo 'extern "C" int kdemain(int argc, char* argv[]);' > karbon.la.cc; \
+ 	echo 'int main(int argc, char* argv[]) { return kdemain(argc,argv); }' >> karbon.la.cc
+ 
+-karbon_dummy.cc:
+-	echo '#include <kdemacros.h>' > karbon_dummy.cc; \
+-	echo 'extern "C" int kdemain(int argc, char* argv[]);' >> karbon_dummy.cc; \
+-	echo 'extern "C" KDE_EXPORT int kdeinitmain(int argc, char* argv[]) { return kdemain(argc,argv); }' >> karbon_dummy.cc
++karbon_karbon_factory_init.cc:
++	echo '#include <kdemacros.h>' > karbon_karbon_factory_init.cc; \
++	echo 'extern "C" int kdemain(int argc, char* argv[]);' >> karbon_karbon_factory_init.cc; \
++	echo 'extern "C" KDE_EXPORT int kdeinitmain(int argc, char* argv[]) { return kdemain(argc,argv); }' >> karbon_karbon_factory_init.cc
+ karbon_LDFLAGS = $(KDE_RPATH) -no-undefined $(all_libraries)
+ karbon_LDADD = libkdeinit_karbon.la
+ karbon_DEPENDENCIES = libkdeinit_karbon.la
