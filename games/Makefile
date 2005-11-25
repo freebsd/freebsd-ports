@@ -173,6 +173,7 @@
     SUBDIR += flying
     SUBDIR += fmars
     SUBDIR += foobillard
+    SUBDIR += formido
     SUBDIR += fotaq
     SUBDIR += frabs
     SUBDIR += freebsd-games

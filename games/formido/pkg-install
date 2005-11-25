@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+HISCOREDIR="/var/games/formido"
+
+[ "$2" != "POST-INSTALL" -o -e "$HISCOREDIR" ] && exit 0 
+
+echo "Creating hiscore directory..."
+mkdir -p "$HISCOREDIR"
+
+chgrp games "$HISCOREDIR"
+chmod g+w "$HISCOREDIR"
