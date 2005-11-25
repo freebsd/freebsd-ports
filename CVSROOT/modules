@@ -2441,6 +2441,7 @@ forth		ports/lang/forth
 fortran-utils	ports/devel/fortran-utils
 fortune-mod-bible	ports/misc/fortune-mod-bible
 fortune-mod-bofh	ports/misc/fortune-mod-bofh
+fortune-mod-culmea-culmilor	ports/misc/fortune-mod-culmea-culmilor
 fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
