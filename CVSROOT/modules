@@ -11401,6 +11401,7 @@ shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
 shmux		ports/net/shmux
 shntool		ports/audio/shntool
+shootingstar	ports/games/shootingstar
 shorten		ports/audio/shorten
 shout		ports/audio/shout
 shoutcast	ports/audio/shoutcast
