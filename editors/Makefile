@@ -129,6 +129,7 @@
     SUBDIR += psgml-mule
     SUBDIR += puff
     SUBDIR += qemacs
+    SUBDIR += rospell
     SUBDIR += rox-edit
     SUBDIR += sam
     SUBDIR += scite
