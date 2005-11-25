@@ -11,7 +11,7 @@ PORTNAME?=	gtk
 PORTVERSION?=	1.2
 PORTREVISION?=	5
 CATEGORIES?=	x11-toolkits linux
-MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
+MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g} ${FEDORALEGACY_MIRRORS:S/__DIR__/${FEDORADIR}/g}
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${RPM_SET}
 
@@ -49,8 +49,11 @@ BASEVERSION?=	7.1
 RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/
+FEDORALEGACY_MIRRORS=	\
+	http://download.fedoralegacy.org/redhat/__DIR__/
 STDDIR=		linux/${BASEVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
 UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${ARCH}
+FEDORADIR=	${BASEVERSION}/os/${ARCH}
 .if (${ARCH} == "i386")
 RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
 .elif (${ARCH} == "alpha")
