@@ -10,7 +10,7 @@ PORTVERSION=	5.4.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.vtwm.org/downloads/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay

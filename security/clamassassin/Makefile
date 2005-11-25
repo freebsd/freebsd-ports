@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://drivel.com/clamassassin/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple virus filter wrapper for ClamAV
 
 BUILD_DEPENDS=	sigtool:${PORTSDIR}/security/clamav \

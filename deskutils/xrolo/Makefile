@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/	\
 DISTNAME=	${PORTNAME}.v2p6
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic rolodex
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

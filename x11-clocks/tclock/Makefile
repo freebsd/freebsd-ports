@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent analog clock for x11
 
 NO_WRKSUBDIR=	yes

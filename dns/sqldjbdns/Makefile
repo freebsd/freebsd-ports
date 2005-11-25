@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJB dns server with PostgreSQL backend
 
 DJ_PORT?=	${PORTSDIR}/dns/djbdns

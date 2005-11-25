@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.sayclub.co.kr/pub/packages/aixpdslib/flip/RISC/4.3/src/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert text file line endings between Unix and DOS formats
 
 NO_LATEST_LINK=	yes
