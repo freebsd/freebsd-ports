@@ -1022,6 +1022,7 @@
     SUBDIR += p5-Module-Starter-PBP
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-NEXT
+    SUBDIR += p5-Net-DBus
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-OOTools
     SUBDIR += p5-ORBit

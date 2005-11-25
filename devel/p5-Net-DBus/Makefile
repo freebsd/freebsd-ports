@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p5-Net-DBus
+# Date created:				2005-11-25
+# Whom:					Roman Bogorodskiy <novel@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-DBus
+PORTVERSION=	0.32.2
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	novel@FreeBSD.org
+COMMENT=	Perl extension for the DBus message system
+
+LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
+
+USE_GNOME=	pkgconfig
+PERL_CONFIGURE=	yes
+
+MAN3=	Net::DBus::Tutorial.3 Net::DBus::RemoteObject.3 \
+	Net::DBus::Binding::Connection.3 Net::DBus::RemoteService.3 \
+	Net::DBus::Tutorial::ExportingObjects.3 Net::DBus::Dumper.3 \
+	Net::DBus::Binding::Iterator.3 Net::DBus::Binding::Message.3 \
+	Net::DBus::Binding::Server.3 Net::DBus::Service.3 \
+	Net::DBus.3 Net::DBus::Object.3 Net::DBus::Reactor.3 \
+	Net::DBus::Exporter.3
+
+.include <bsd.port.mk>
