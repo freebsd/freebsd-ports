@@ -9674,6 +9674,7 @@ pload		ports/net/pload
 plod		ports/sysutils/plod
 plog		ports/www/plog
 plone		ports/www/plone
+plonx		ports/games/plonx
 plor		ports/news/plor
 ploticus	ports/math/ploticus
 ploticus-nox11	ports/math/ploticus-nox11
