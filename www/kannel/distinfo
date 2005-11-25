@@ -1,6 +1,3 @@
 MD5 (gateway-1.4.0.tar.gz) = b6fbb1599b377c44c35a5338746c42d3
+SHA256 (gateway-1.4.0.tar.gz) = 33a3858780a6e1a0e38aa005a62e8682baedf77ba0222d22f91c9cdfd79c592f
 SIZE (gateway-1.4.0.tar.gz) = 2465341
-MD5 (mbuni-kannel-patch-full) = 1960dca61a6e8b31b1f190344da06ab9
-SIZE (mbuni-kannel-patch-full) = 26456
-MD5 (mbuni-kannel-patch-minimal) = 49dfc4ba9166c6301b5bd06e57746d10
-SIZE (mbuni-kannel-patch-minimal) = 2742
