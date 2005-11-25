@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vpnd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	security
-MASTER_SITES=	http://sunsite.dk/vpnd/archive/ \
+MASTER_SITES=	http://vpnd.dotsrc.org/archive/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
