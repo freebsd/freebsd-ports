@@ -9,8 +9,7 @@ PORTNAME=	bmp-wma
 PORTVERSION=	0.1.1
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.nixp.ru/pub/files/ \
-		http://bmpwma.younggods.net/download/
+MASTER_SITES=	http://www.nixp.ru/pub/files/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	WMA input plugin for beep-media-player
