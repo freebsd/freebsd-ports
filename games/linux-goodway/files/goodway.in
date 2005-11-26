@@ -1,0 +1,23 @@
+#!/bin/sh
+
+gwdir="%%GWDIR%%"
+userdir="$HOME/.goodway"
+portversion="%%PORTVERSION%%"
+
+# The executables need to be run from the data directory, and need to
+# write files in it. We therefore mirror the data directory hierarchy
+# in $userdir, and create symlinks to the data files.
+
+if [ "x`cat $userdir/version 2>/dev/null`" != "x$portversion" ]; then
+	echo "Updating hierarchy in $userdir"
+	cd $gwdir || exit 1
+	find * -type d -exec mkdir -p "$userdir/{}" \; || exit 1
+	find * -type f ! -name '*.prf' -exec ln -sf "$gwdir/{}" "$userdir/{}" \; || exit 1
+	if ! [ -e $userdir/Properties3.prf ]; then
+		install -m 644 $gwdir/Properties3.prf $userdir
+	fi
+	echo "$portversion" > $userdir/version || exit 1
+fi
+
+cd $userdir || exit 1
+exec /bin/sh ./goodway "$@"

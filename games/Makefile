@@ -334,6 +334,7 @@
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-fortress
     SUBDIR += linux-enemyterritory-tce
+    SUBDIR += linux-goodway
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-quake3-demo
