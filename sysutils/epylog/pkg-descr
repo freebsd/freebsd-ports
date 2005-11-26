@@ -14,7 +14,7 @@ series 7 and above).
 However, other unix and linux flavors should work fine,
 as long as they use standard logging facilities and things like PAM.
 
-WWW: http://linux.duke.edu/projects/epylog
+WWW: http://linux.duke.edu/projects/epylog/
 
 - Alan Snelson
 alan@wave2.co.uk

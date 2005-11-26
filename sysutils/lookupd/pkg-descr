@@ -13,4 +13,4 @@ default and lookupd_ldap module can be found in ports.
 Lookupd should be plugged into the current FreeBSD
 nsswitch implementation using a standard module - nss_lookupd.so.
 
-WWW: http://www.rsu.ru/~bushman/lookupd
+WWW: http://www.rsu.ru/~bushman/lookupd/
