@@ -7,10 +7,10 @@
 
 PORTNAME=	sql-ledger
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.sql-ledger.com/source/ \
-		http://abacus.sql-ledger.com/source/
+		http://www.sql-ledger.com/source/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lth@FreeBSD.org
@@ -18,8 +18,6 @@ COMMENT=	A double entry accounting system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Size mismatch
 
 NO_BUILD=	yes
 USE_PERL5=	yes
