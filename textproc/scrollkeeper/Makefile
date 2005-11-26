@@ -38,7 +38,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:13:inc
 USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnomehier gnometarget libxslt
+USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf \
