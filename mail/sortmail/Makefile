@@ -8,8 +8,7 @@
 PORTNAME=	sortmail
 PORTVERSION=	1.20
 CATEGORIES=	mail
-MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/  \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.freebsdcluster.org/~lasse/software/
 
 MAINTAINER=	lasse@freebsdcluster.org
 COMMENT=	Useful tool for sorting mbox style mailboxes after date
