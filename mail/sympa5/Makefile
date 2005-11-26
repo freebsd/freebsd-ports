@@ -7,6 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	5.1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
