@@ -1,5 +1,5 @@
---- /work/a/ports/NEW/formido/work/formido-1.0/src/config.cpp.orig	Fri Nov  7 18:59:01 2003
-+++ /work/a/ports/NEW/formido/work/formido-1.0/src/config.cpp	Fri Nov 25 03:54:00 2005
+--- src/config.cpp.orig	Fri Nov  7 18:59:01 2003
++++ src/config.cpp	Fri Nov 25 03:54:00 2005
 @@ -30,6 +30,11 @@
  void load_config(char *file, CONFIG *conf) {
  
