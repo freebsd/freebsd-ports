@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pureadmin
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	purify
@@ -16,16 +15,18 @@ MASTER_SITE_SUBDIR=	purify
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd
 
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
-
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20
+USE_GNOME=	gnomehack gnomeprefix libglade2
+USE_FAM=	yes
 USE_REINPLACE=	yes
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/-g -Wall/d' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-std=gnu99||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
