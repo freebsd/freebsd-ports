@@ -9097,6 +9097,7 @@ pcnfsd		ports/net/pcnfsd
 pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
 pcre-utf8	ports/devel/pcre-utf8
+pcrs		ports/textproc/pcrs
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdbar		ports/palm/pdbar
