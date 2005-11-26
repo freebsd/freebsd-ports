@@ -1,0 +1,4 @@
+This port contains a version of libgcc which is newer than the one shipped
+with the default linux_base port.
+
+WWW: http://gcc.gnu.org/

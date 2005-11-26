@@ -124,6 +124,7 @@
     SUBDIR += librep
     SUBDIR += libutils
     SUBDIR += linux-j
+    SUBDIR += linux-libgcc
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
