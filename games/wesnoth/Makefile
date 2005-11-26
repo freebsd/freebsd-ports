@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -73,10 +73,6 @@ PLIST_SUB+=		TOOLS:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-#.if ${OSVERSION} < 500000
-#IGNORE=does not compile on FreeBSD 4.x, due to lack of towupper() and wide character in libc
-#.endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
 CONFIGURE_ARGS+=	--with-gnome

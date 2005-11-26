@@ -73,6 +73,7 @@ share/locale/it/LC_MESSAGES/wesnoth-sotbe.mo
 share/locale/it/LC_MESSAGES/wesnoth-trow.mo
 share/locale/it/LC_MESSAGES/wesnoth.mo
 share/locale/ja/LC_MESSAGES/wesnoth-editor.mo
+share/locale/ja/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ja/LC_MESSAGES/wesnoth-httt.mo
 share/locale/ja/LC_MESSAGES/wesnoth-lib.mo
 share/locale/ja/LC_MESSAGES/wesnoth-sotbe.mo
@@ -108,6 +109,7 @@ share/locale/sk/LC_MESSAGES/wesnoth-ei.mo
 share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
 share/locale/sk/LC_MESSAGES/wesnoth-lib.mo
 share/locale/sk/LC_MESSAGES/wesnoth-sotbe.mo
+share/locale/sk/LC_MESSAGES/wesnoth-trow.mo
 share/locale/sk/LC_MESSAGES/wesnoth.mo
 share/locale/sv/LC_MESSAGES/wesnoth-editor.mo
 share/locale/sv/LC_MESSAGES/wesnoth-ei.mo
@@ -871,6 +873,12 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/cuttlefish.png
 %%DATADIR%%/images/deep-tentacle-attack.png
 %%DATADIR%%/images/deep-tentacle-defend.png
+%%DATADIR%%/images/deep-tentacle-die-1.png
+%%DATADIR%%/images/deep-tentacle-die-2.png
+%%DATADIR%%/images/deep-tentacle-die-3.png
+%%DATADIR%%/images/deep-tentacle-die-4.png
+%%DATADIR%%/images/deep-tentacle-die-5.png
+%%DATADIR%%/images/deep-tentacle-die-6.png
 %%DATADIR%%/images/deep-tentacle.png
 %%DATADIR%%/images/direwolf_rider.png
 %%DATADIR%%/images/drake-blademaster-attack-close1.png
@@ -2236,6 +2244,10 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/portraits/core/Jason_Lutes/human-spearman.png
 %%DATADIR%%/images/portraits/core/Jason_Lutes/human-swordsman.png
 %%DATADIR%%/images/portraits/core/Jason_Lutes/human-thug.png
+%%DATADIR%%/images/portraits/core/Neoriceisgood/dwarvish_berzerker.png
+%%DATADIR%%/images/portraits/core/Neoriceisgood/orcish_grunt.png
+%%DATADIR%%/images/portraits/core/Neoriceisgood/orcish_leader.png
+%%DATADIR%%/images/portraits/core/Neoriceisgood/orcish_shaman_old.png
 %%DATADIR%%/images/projectiles/bone-n.png
 %%DATADIR%%/images/projectiles/bone-ne.png
 %%DATADIR%%/images/projectiles/bullet.png
@@ -2842,11 +2854,23 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/keep-wall-sw.png
 %%DATADIR%%/images/terrain/keep-wall-w.png
 %%DATADIR%%/images/terrain/keep.png
+%%DATADIR%%/images/terrain/lava-n-ne-nw-s.png
+%%DATADIR%%/images/terrain/lava-n-ne-nw.png
+%%DATADIR%%/images/terrain/lava-n-ne.png
 %%DATADIR%%/images/terrain/lava-n.png
+%%DATADIR%%/images/terrain/lava-ne-nw-s.png
+%%DATADIR%%/images/terrain/lava-ne-se.png
 %%DATADIR%%/images/terrain/lava-ne.png
+%%DATADIR%%/images/terrain/lava-nw-n.png
 %%DATADIR%%/images/terrain/lava-nw.png
+%%DATADIR%%/images/terrain/lava-s-nw-ne-n.png
+%%DATADIR%%/images/terrain/lava-s-sw-nw.png
+%%DATADIR%%/images/terrain/lava-s-sw.png
 %%DATADIR%%/images/terrain/lava-s.png
+%%DATADIR%%/images/terrain/lava-se-s.png
 %%DATADIR%%/images/terrain/lava-se.png
+%%DATADIR%%/images/terrain/lava-sw-nw-n.png
+%%DATADIR%%/images/terrain/lava-sw-nw.png
 %%DATADIR%%/images/terrain/lava-sw.png
 %%DATADIR%%/images/terrain/lava.png
 %%DATADIR%%/images/terrain/lava2.png
@@ -2867,13 +2891,21 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/ocean2.png
 %%DATADIR%%/images/terrain/ocean3.png
 %%DATADIR%%/images/terrain/out.png
+%%DATADIR%%/images/terrain/road-n-ne.png
 %%DATADIR%%/images/terrain/road-n.png
+%%DATADIR%%/images/terrain/road-ne-se.png
 %%DATADIR%%/images/terrain/road-ne.png
+%%DATADIR%%/images/terrain/road-nw-n.png
 %%DATADIR%%/images/terrain/road-nw.png
+%%DATADIR%%/images/terrain/road-s-sw.png
 %%DATADIR%%/images/terrain/road-s.png
+%%DATADIR%%/images/terrain/road-se-s.png
 %%DATADIR%%/images/terrain/road-se.png
+%%DATADIR%%/images/terrain/road-sw-nw.png
 %%DATADIR%%/images/terrain/road-sw.png
 %%DATADIR%%/images/terrain/road.png
+%%DATADIR%%/images/terrain/road2.png
+%%DATADIR%%/images/terrain/road3.png
 %%DATADIR%%/images/terrain/rocks.png
 %%DATADIR%%/images/terrain/ruin1-concave-e.png
 %%DATADIR%%/images/terrain/ruin1-concave-ne.png
@@ -3355,11 +3387,27 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/sunkenkeep-wall-sw.png
 %%DATADIR%%/images/terrain/sunkenkeep-wall-w.png
 %%DATADIR%%/images/terrain/sunkenkeep.png
+%%DATADIR%%/images/terrain/swampwater-flowers1.png
+%%DATADIR%%/images/terrain/swampwater-flowers2.png
+%%DATADIR%%/images/terrain/swampwater-n-ne-se.png
+%%DATADIR%%/images/terrain/swampwater-n-ne.png
 %%DATADIR%%/images/terrain/swampwater-n.png
+%%DATADIR%%/images/terrain/swampwater-ne-se-s.png
+%%DATADIR%%/images/terrain/swampwater-ne-se.png
 %%DATADIR%%/images/terrain/swampwater-ne.png
+%%DATADIR%%/images/terrain/swampwater-nw-n-ne.png
+%%DATADIR%%/images/terrain/swampwater-nw-n.png
 %%DATADIR%%/images/terrain/swampwater-nw.png
+%%DATADIR%%/images/terrain/swampwater-plant1.png
+%%DATADIR%%/images/terrain/swampwater-plant2.png
+%%DATADIR%%/images/terrain/swampwater-s-sw-nw.png
+%%DATADIR%%/images/terrain/swampwater-s-sw.png
 %%DATADIR%%/images/terrain/swampwater-s.png
+%%DATADIR%%/images/terrain/swampwater-se-s-sw.png
+%%DATADIR%%/images/terrain/swampwater-se-s.png
 %%DATADIR%%/images/terrain/swampwater-se.png
+%%DATADIR%%/images/terrain/swampwater-sw-nw-n.png
+%%DATADIR%%/images/terrain/swampwater-sw-nw.png
 %%DATADIR%%/images/terrain/swampwater-sw.png
 %%DATADIR%%/images/terrain/swampwater.png
 %%DATADIR%%/images/terrain/swampwater2.png
@@ -3387,6 +3435,8 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/tropical-forest4.png
 %%DATADIR%%/images/terrain/village-cave-tile.png
 %%DATADIR%%/images/terrain/village-cave.png
+%%DATADIR%%/images/terrain/village-cave2.png
+%%DATADIR%%/images/terrain/village-cave3.png
 %%DATADIR%%/images/terrain/village-coast-tile.png
 %%DATADIR%%/images/terrain/village-coast.png
 %%DATADIR%%/images/terrain/village-desert-shadow.png
@@ -3398,6 +3448,9 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/village-dusk2.png
 %%DATADIR%%/images/terrain/village-dusk3.png
 %%DATADIR%%/images/terrain/village-dusk4.png
+%%DATADIR%%/images/terrain/village-elven-snow-tile.png
+%%DATADIR%%/images/terrain/village-elven-snow.png
+%%DATADIR%%/images/terrain/village-elven-snow2.png
 %%DATADIR%%/images/terrain/village-elven-tile.png
 %%DATADIR%%/images/terrain/village-elven.png
 %%DATADIR%%/images/terrain/village-elven2.png
@@ -3405,6 +3458,9 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/images/terrain/village-human-hills-tile.png
 %%DATADIR%%/images/terrain/village-human-mountain-tile.png
 %%DATADIR%%/images/terrain/village-human-snow-hills-tile.png
+%%DATADIR%%/images/terrain/village-human-snow.png
+%%DATADIR%%/images/terrain/village-human-snow2.png
+%%DATADIR%%/images/terrain/village-human-snow3.png
 %%DATADIR%%/images/terrain/village-human-tile.png
 %%DATADIR%%/images/terrain/village-human.png
 %%DATADIR%%/images/terrain/village-human2.png
@@ -3847,10 +3903,12 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/sounds/arrive.wav
 %%DATADIR%%/sounds/arrow-hit.wav
 %%DATADIR%%/sounds/arrow-miss.wav
+%%DATADIR%%/sounds/bat-flapping-wings.wav
 %%DATADIR%%/sounds/bell.wav
 %%DATADIR%%/sounds/dagger-swish.wav
 %%DATADIR%%/sounds/dart.wav
 %%DATADIR%%/sounds/eagle.wav
+%%DATADIR%%/sounds/entangle.wav
 %%DATADIR%%/sounds/female-hit.wav
 %%DATADIR%%/sounds/female-strong-hit.wav
 %%DATADIR%%/sounds/fire.wav
@@ -3897,6 +3955,7 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/images/tools
 @dirrm %%DATADIR%%/images/terrain
 @dirrm %%DATADIR%%/images/projectiles
+@dirrm %%DATADIR%%/images/portraits/core/Neoriceisgood
 @dirrm %%DATADIR%%/images/portraits/core/Jason_Lutes
 @dirrm %%DATADIR%%/images/portraits/core/James_Woo
 @dirrm %%DATADIR%%/images/portraits/core/Alex_Jarocha-Ernst
