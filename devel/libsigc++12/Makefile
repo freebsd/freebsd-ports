@@ -8,11 +8,12 @@
 PORTNAME=	libsigc++
 PORTVERSION=	1.2.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2 \
-		libsigc
+MASTER_SITES=	${MASTER_SITE_GNOME:S/$/:gnome/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2/:gnome \
+		libsigc/:sf
 DIST_SUBDIR=	gnome2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
