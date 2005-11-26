@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
-PORTVERSION=	2.9.0
+PORTVERSION=	3.0.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_//g}
@@ -27,12 +27,14 @@ AP_EXTRAS=	-DAPACHE${AP_VER} -lmysqlclient -lz -lm
 
 .if !defined(NOPORTDOCS)
 post-build:
-	@${ECHO} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
+	@${ECHO} "%%PORTDOCS%%%%DOCSDIR%%/CONFIGURE" >> ${PLIST}
+	@${ECHO} "%%PORTDOCS%%%%DOCSDIR%%/CHANGES" >> ${PLIST}
 	@${ECHO} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CONFIGURE ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 .endif
 
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
