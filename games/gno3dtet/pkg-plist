@@ -1,9 +1,9 @@
 bin/gno3dtet
-share/gnome/apps/Games/gno3dtet.desktop
+share/gnome/applications/gno3dtet.desktop
 share/gnome/games/gno3dtet.hof
-share/gnome/help/gno3dtet/C/copying.html
-share/gnome/help/gno3dtet/C/gno3dtet.html
-share/gnome/help/gno3dtet/C/topic.dat
+share/gnome/help/gno3dtet/C/gno3dtet.xml
+share/gnome/help/gno3dtet/C/legal.xml
+share/gnome/omf/gno3dtet/gno3dtet-C.omf
 share/gnome/pixmaps/gno3dtet.png
 share/gnome/sounds/gno3dtet/danger.wav
 share/gnome/sounds/gno3dtet/fall.wav
@@ -11,11 +11,12 @@ share/gnome/sounds/gno3dtet/hof.wav
 share/gnome/sounds/gno3dtet/land.wav
 share/gnome/sounds/gno3dtet/layer.wav
 share/gnome/sounds/gno3dtet/level.wav
-share/gnome/sounds/gno3dtet/move.wav
 share/gnome/sounds/gno3dtet/new.wav
 share/gnome/sounds/gno3dtet/pause.wav
 share/gnome/sounds/gno3dtet/score.wav
 share/gnome/sounds/gno3dtet/screwd.wav
+share/locale/fr/LC_MESSAGES/gno3dtet.mo
 @dirrm share/gnome/sounds/gno3dtet
+@dirrm share/gnome/omf/gno3dtet
 @dirrm share/gnome/help/gno3dtet/C
 @dirrm share/gnome/help/gno3dtet

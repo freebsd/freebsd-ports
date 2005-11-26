@@ -6,29 +6,43 @@
 #
 
 PORTNAME=	gno3dtet
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.96.1
 CATEGORIES=	games gnome
-MASTER_SITES=	ftp://12.206.131.3/pub/gno3dtet/ \
-		http://www.eseb.net/ftp/gno3dtet/
+MASTER_SITES=	http://eseb.net/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic 3D-ified T*tris
 
-USE_REINPLACE=	yes
+EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
+
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui librsvg2
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	autoheader:259 automake:19 aclocal:19 autoconf:259
+ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_OMF=	yes
+
+run-autotools:: run-autotools-aclocal run-autotools-autoheader \
+		run-autotools-automake run-autotools-autoconf
+
+post-extract:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/intltoolize -c -f
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/LIBTOOL/d ; \
+		 s|gnome-games|gno3dtet|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|/gnome/help/|/help/|g' \
+		${WRKSRC}/xmldocs.make
+	@${REINPLACE_CMD} -e 's|/gnome/help/|/help/|g ; \
+		 s|datadir)/locale|prefix)/share/locale|g' ${WRKSRC}/src/Makefile.am
+
+pre-configure:
+	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/mkinstalldirs ${WRKSRC}
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
