@@ -8,11 +8,11 @@
 PORTNAME=	dump9660
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.eecs.harvard.edu/~wkj/Software/dump9660/
+MASTER_SITES=	http://www.morphisms.net/~wkj/Software/dump9660/
 DISTNAME=	dump9660
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dump9660-port@eecs.harvard.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create an ISO 9660 image, possibly incrementally
 
 MAN8=		mk9660.8
