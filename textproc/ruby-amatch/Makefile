@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	amatch
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.2
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1566/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7008/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
@@ -22,7 +22,13 @@ RUBY_SETUP=	install.rb
 
 INSTALL_TARGET=	site-install
 
-DOCS=		CHANGES README.en amatch.txt.en
+DOCS=		CHANGES README.en
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -32,4 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
