@@ -271,6 +271,7 @@
     SUBDIR += linux-libogg
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
+    SUBDIR += linux-openal
     SUBDIR += linux-vsound
     SUBDIR += listener
     SUBDIR += liteamp
