@@ -60,7 +60,7 @@ LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 
 # WITH_OPENHBCI is old synonym for aqbanking option
 .if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	aqbanking.8:${PORTSDIR}/finance/aqbanking \
+LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
 		ktoblzcheck.4:${PORTSDIR}/finance/ktoblzcheck
 CONFIGURE_ARGS+=--enable-hbci
 PLIST_SUB=	AQBANKING=""
