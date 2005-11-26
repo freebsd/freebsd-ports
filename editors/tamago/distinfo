@@ -1,4 +1,6 @@
 MD5 (egg_4.0.6+0.20041122cvs.orig.tar.gz) = 64ec1af61f6e265c05447dd4e2a83aae
+SHA256 (egg_4.0.6+0.20041122cvs.orig.tar.gz) = 722413515f2d60418d98250c8aed2b811e6b5363cdb69899193d454afe425115
 SIZE (egg_4.0.6+0.20041122cvs.orig.tar.gz) = 287308
 MD5 (egg_4.0.6+0.20041122cvs-9.diff.gz) = 88a69191178c8c8dde7a19e4f7b79420
+SHA256 (egg_4.0.6+0.20041122cvs-9.diff.gz) = e542e72644c317f6eb43aa89a5bbcefff499a8a9418ae42a72c38ea15f540e8c
 SIZE (egg_4.0.6+0.20041122cvs-9.diff.gz) = 16721

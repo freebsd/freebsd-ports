@@ -1,4 +1,6 @@
 MD5 (graphviz/gv.i) = 97e21a6cd9a797851cad815e68a6c81d
+SHA256 (graphviz/gv.i) = 82e04f4d967268f11f8dfc62a715eaa941122bff6c93abab3add3297d8e23993
 SIZE (graphviz/gv.i) = 5246
 MD5 (graphviz/__init__.py) = aaad44b12a9db8876c18bcb7edcfc28b
+SHA256 (graphviz/__init__.py) = 73b2260007bfc3a34c70f736b7e2615bc4529a84227c8294970222c4ea2770f3
 SIZE (graphviz/__init__.py) = 8880
