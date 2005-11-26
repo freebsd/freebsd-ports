@@ -5,7 +5,7 @@ defined, and a search pattern for the object definition, separated by
 white-space. Using the tags file, many editors (ex(1), vim(1), emacs(1), etc)
 can quickly locate these object definitions.
 
-WWW: http://phptags.sf.net
+WWW: http://phptags.sourceforge.net/
 
 -Roman Bogorodskiy
 <bogorodskiy@inbox.ru>
