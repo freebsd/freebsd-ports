@@ -8,8 +8,8 @@ PORTNAME=	VCP
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML/RBS
+MASTER_SITES=	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/authors/id/R/RB/RBS/ \
+		http://backpan.perl.org/authors/id/R/RB/RBS/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
