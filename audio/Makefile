@@ -264,6 +264,7 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += lindele
+    SUBDIR += linux-alsa-lib
     SUBDIR += linux-arts
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile
