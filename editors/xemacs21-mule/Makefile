@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -97,9 +98,9 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 .include <bsd.port.pre.mk>
 
 # Undump and malloc do not behave on amd64 at the moment
-.if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=--with-system-malloc --pdump
-.endif
+#.if ${ARCH} == "amd64"
+#CONFIGURE_ARGS+=--with-system-malloc --pdump
+#.endif
 
 pre-fetch:
 .if !defined(WITH_GTK)
