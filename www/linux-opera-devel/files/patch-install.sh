@@ -1,8 +1,20 @@
 --- install.sh.orig	Mon Nov 14 07:48:04 2005
-+++ install.sh	Tue Nov 22 14:15:02 2005
-@@ -759,10 +759,9 @@
++++ install.sh	Sat Nov 26 15:53:03 2005
+@@ -381,7 +381,7 @@
+ 	    mvv=''    # SunOS mv (no -v verbose option)
+ 	;;
+ 
+-	i[3456]86:FreeBSD|i[3456]86:NetBSD)
++	i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD)
+ 		cpf='-f'
+ 		if test "$verbose" -gt '1'
+ 		then
+@@ -757,12 +757,11 @@
+     debug_msg 0 "in generate_wrapper()"
+ 
      case "${machine}:${os}" in
- 	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
+-	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
++	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
  	    wrapper_ibmjava="
 -	    IBMJava2-142/jre \\
 -	    IBMJava2-141/jre \\
