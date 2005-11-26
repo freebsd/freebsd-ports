@@ -1,0 +1,85 @@
+--- Makefile.orig	Sun Dec 22 11:29:46 2002
++++ Makefile	Sat Jul  9 18:52:09 2005
+@@ -31,7 +31,7 @@
+ 
+ default : twelf-server twelf-emacs
+ 
+-all : twelf-server twelf-sml twelf-emacs
++# all : twelf-server twelf-sml twelf-emacs
+ 
+ twelf-server: ; 
+ 	@echo "*************************************************"
+@@ -62,3 +62,73 @@
+ 
+ clean: ;
+ 	rm -rf $(twelfdir)/src/*/CM ;
++
++# ---------------------------------------------------------------
++# Installation
++# ---------------------------------------------------------------
++
++arch != uname -p
++
++.if ${arch} == "i386"
++smlarch = x86
++.else
++smlarch = ${arch}
++.endif
++
++prefix        = %%PREFIX%%
++bindir        = ${prefix}/bin
++infodir       = ${prefix}/info
++twelfexecdir  = ${prefix}/libexec/twelf
++twelfsharedir = ${prefix}/share/twelf
++
++runfile  = bin/twelf-server
++heapfile = bin/.heap/twelf-server.${smlarch}-bsd
++
++infofiles  != (cd doc/info; find . -type f -not -name '*.orig')
++sharefiles != (find README       -type f;                     \
++               find doc          -type f -not -name '*.orig'; \
++               find emacs        -type f;                     \
++               find examples     -type f;                     \
++               find examples-clp -type f;                     \
++               find tex          -type f)
++
++installfiles := ${bindir}/twelf-server             \
++                ${twelfsharedir}/${runfile}        \
++                ${twelfexecdir}/${heapfile}        \
++                ${infofiles:%=$(infodir)/%}        \
++                ${sharefiles:%=$(twelfsharedir)/%}
++
++all: ${runfile} ${heapfile}
++
++${runfile}:
++	echo "#!/bin/sh" >$@
++	echo "exec ${sml} @SMLload=${twelfexecdir}/${heapfile} @SMLdebug=/dev/null" >>$@
++
++${heapfile}:
++	$(sml) < twelf-server.sml
++
++${bindir}/twelf-server: ${twelfsharedir}/${runfile}
++	ln -s $? $@
++
++${twelfsharedir}/${runfile}: ${runfile}
++	@install -d -o root -g wheel -m 0755 ${@D}
++	install -o root -g wheel -m 0555 $? $@
++
++${twelfexecdir}/${heapfile}: ${heapfile}
++	@install -d -o root -g wheel -m 0755 ${@D}
++	install -o root -g wheel -m 0444 $? $@
++
++.for file in ${infofiles}
++${infodir}/${file}: doc/info/${file}
++	ln -s ${twelfsharedir}/$? $@
++.endfor
++
++.for file in ${sharefiles}
++${twelfsharedir}/${file}: ${file}
++	@install -d -o root -g wheel -m 0755 ${@D}
++	install -o root -g wheel -m 0644 $? $@
++.endfor
++
++install: ${installfiles}
++	install-info ${infodir}/twelf.info ${infodir}/dir
++
