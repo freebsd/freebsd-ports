@@ -9,7 +9,6 @@ of the Plan 9 dump file system.  The dump is file-based rather than
 block-based: if a file's contents have not changed since the last
 backup, only its directory entry will be rewritten.
 
-WWW: http://www.eecs.harvard.edu/~wkj/Software/dump9660/
+WWW: http://www.morphisms.net/~wkj/Software/dump9660/
 
 - William Josephson and Russ Cox
-dump9660-port@eecs.harvard.edu
