@@ -289,6 +289,7 @@
     SUBDIR += tolua4
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
+    SUBDIR += twelf
     SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += xsb

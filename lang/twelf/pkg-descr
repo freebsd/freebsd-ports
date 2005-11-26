@@ -1,0 +1,19 @@
+
+The Twelf implementation comprises
+
+ * the LF logical framework, including type reconstruction;
+ * the Elf constraint logic programming language;
+ * an inductive meta-theorem prover for LF;
+ * and an Emacs interface.
+
+Twelf provides a uniform meta-language for specifying,
+implementing, and proving properties of programming languages
+and logics.  Example suites include Cartesian Closed Categories
+and lambda-calculus, the Church-Rosser theorem for the untyped
+lambda-calculus, Mini-ML including type preservation and
+compilation, cut elimination, theory of logic programming,
+and Hilbert's deduction theorem.
+
+-- the Twelf home page
+
+WWW: http://www.cs.cmu.edu/~twelf
