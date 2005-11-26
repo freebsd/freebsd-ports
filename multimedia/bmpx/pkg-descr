@@ -1,8 +1,8 @@
-BMPx  is  an audio player that can be either used with a built-in
+BMPx is an audio player that can be either used with a built-in
 frontend which currently utilizes Winamp 2.x compatible skins, or
-as a daemon  for  other  frontends  to connect via a DBus 
-interface. It can run under X11 with graphical GUIs, or without X
-under plain  UNIX  terminal as  a daemon (in which case it 
-requires a different frontend connecting to it via DBus).
+as a daemon for other frontends to connect via a DBus interface.
+It can run under X11 with graphical GUIs, or without X under 
+plain UNIX terminal as a daemon (in which case it requires a 
+different frontend connecting to it via DBus).
 
-WWW:	http://bmpx.berlios.de/
+WWW:	http://beep-media-player.org/
