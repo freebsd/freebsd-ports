@@ -13,4 +13,9 @@ If you already use XFree86 4.1.0 or later, you may use 'vmware'
 driver for X server.  Vmware-guestd is installed as a separate port,
 ports/emulators/vmware-guestd4, but this port install guestd automatically.
 
-WWW:	http://www.vmware.com/products/desktop/ws_features.html
+This port assumes that a) users want only "must-have" binaries and
+b) guest OS runs on a certain architecture and never be changed.  For
+those want full-feature of VMware Tools, use the installer bundled with
+VMware Tools instead.
+
+WWW:	http://www.vmware.com/products/ws/

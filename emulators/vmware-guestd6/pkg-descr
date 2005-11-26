@@ -6,4 +6,9 @@ for FreeBSD guest.
 If you want to run FreeBSD as a VMware guest OS, install this port
 would help you.  If you want to run X, install vmware-tools too.
 
-WWW:	http://www.vmware.com/products/desktop/ws_features.html
+This port assumes that a) users want only "must-have" binaries and
+b) guest OS runs on a certain architecture and never be changed.  For
+those want full-feature of VMware Tools, use the installer bundled with
+VMware Tools instead.
+
+WWW:	http://www.vmware.com/products/ws/
