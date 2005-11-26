@@ -7,23 +7,23 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
-USE_GCC=	3.4
+OPTIONS=	DOUBLE "64bit Data Precision Support" off \
+		FFTW3 "FFTW3 Support" on \
+		IMAGEMAGICK "ImageMagick Support" on
+
+USE_GCC=	3.4+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" IOCTL=1
 
 PLIST_FILES=	bin/ale
-
-OPTIONS=	DOUBLE "64bit Data Precision Support" off \
-		FFTW3 "FFTW3 Support" on \
-		IMAGEMAGICK "ImageMagick Support" on
 
 .include <bsd.port.pre.mk>
 
@@ -48,8 +48,8 @@ MAKE_ARGS+=	IMAGEMAGICK=1
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/d2.h
 .if ${OSVERSION} < 502114
-.for file in d2/image_rw.h d2/ppm.h d3/scene.cc
-	@${REINPLACE_CMD} -e 's|round|rint|g' ${WRKSRC}/${file}
+.for file in d2/image.h d2/image_rw.h d2/ppm.h d3/scene.cc
+	@${REINPLACE_CMD} -e 's|round(|rint(|g' ${WRKSRC}/${file}
 .endfor
 .endif
 
