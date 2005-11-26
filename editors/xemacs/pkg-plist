@@ -8,6 +8,7 @@ bin/gnudoit
 bin/ootags
 bin/rcs-checkin
 bin/xemacs-%%XEMACS_VER%%
+%%PDUMP%%bin/xemacs-%%XEMACS_VER%%.dmp
 @exec ln -s %D/%F %B/xemacs
 @unexec rm %B/xemacs
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp

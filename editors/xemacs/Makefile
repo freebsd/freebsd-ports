@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -53,6 +53,9 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH} \
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-system-malloc --pdump
+PLIST_SUB+=	PDUMP=""
+.else
+PLIST_SUB+=	PDUMP="@comment "
 .endif
 
 .if !defined(WITHOUT_XEMACS_PACKAGES)
@@ -135,6 +138,6 @@ post-install::
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
-	${RM} -f ${PREFIX}/bin/send-pr ${PREFIX}/bin/xemacs-${XEMACS_VER}-*.dmp
+	${RM} -f ${PREFIX}/bin/send-pr
 
 .include <bsd.port.post.mk>
