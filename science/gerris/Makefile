@@ -13,10 +13,11 @@ CATEGORIES=		science math
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gfs
 
-PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}gfs/:patch1 \
-			http://members.aon.at/odunkl/downloads/patches/:patch2
-PATCHFILES=		gerris-0.6-patch-1.gz:patch1 \
-			gerris-0.6-patch-2.gz:patch2
+PATCH_SITES=		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+			http://members.aon.at/odunkl/downloads/patches/:odunkl
+PATCH_SITE_SUBDIR=	gfs/:sf
+PATCHFILES=		gerris-0.6-patch-1.gz:sf,odunkl \
+			gerris-0.6-patch-2.gz:odunkl
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		odunkl@gmx.net
