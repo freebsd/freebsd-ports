@@ -8,11 +8,14 @@
 PORTNAME=	fspanel
 PORTVERSION=	0.8.b1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.chatjunkies.org/fspanel/
+MASTER_SITES=	# disappeared
 DISTNAME=	fspanel-0.8beta1
 
-MAINTAINER=	anarcat@anarcat.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny panel listing opened windows for gnome-compliant WM
+
+DEPRECATED=	mastersite disappeared -- consider using fbpanel instead
+EXPIRATION_DATE=	2006-01-25
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
