@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+if ! grep -q '^/lib/libgcc$' $PKG_PREFIX/etc/ld.so.conf; then
+	echo '/lib/libgcc' > $PKG_PREFIX/etc/ld.so.conf.tmp || exit 1
+	cat $PKG_PREFIX/etc/ld.so.conf >> $PKG_PREFIX/etc/ld.so.conf.tmp || exit 1
+	mv -f $PKG_PREFIX/etc/ld.so.conf.tmp $PKG_PREFIX/etc/ld.so.conf || exit 1
+fi
+
+$PKG_PREFIX/sbin/ldconfig || true
