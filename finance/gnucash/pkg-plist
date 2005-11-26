@@ -460,50 +460,6 @@ share/gnome/gnucash/doc/examples/trading2.xac
 share/gnome/gnucash/doc/examples/web.qif
 share/gnome/gnucash/doc/examples/xfer.xac
 share/gnome/gnucash/doc/guile-hackers.txt
-share/gnome/gnucash/doc/html/Account_8h.html
-share/gnome/gnucash/doc/html/SchedXaction_8h.html
-share/gnome/gnucash/doc/html/TransLog_8h.html
-share/gnome/gnucash/doc/html/Transaction_8h.html
-share/gnome/gnucash/doc/html/annotated.html
-share/gnome/gnucash/doc/html/classes.html
-share/gnome/gnucash/doc/html/combocell_8h.html
-share/gnome/gnucash/doc/html/date_8h.html
-share/gnome/gnucash/doc/html/doxygen.css
-share/gnome/gnucash/doc/html/doxygen.gif
-share/gnome/gnucash/doc/html/files.html
-share/gnome/gnucash/doc/html/functions.html
-share/gnome/gnucash/doc/html/globals.html
-share/gnome/gnucash/doc/html/gnc-hbci-trans-templ_8h.html
-share/gnome/gnucash/doc/html/gnc-log-replay_8h.html
-share/gnome/gnucash/doc/html/gnc-ofx-import_8h.html
-share/gnome/gnucash/doc/html/gnc-pricedb_8h.html
-share/gnome/gnucash/doc/html/gnc-ui-util_8h.html
-share/gnome/gnucash/doc/html/group__Account__Quickfill.html
-share/gnome/gnucash/doc/html/group__Date.html
-share/gnome/gnucash/doc/html/group__Engine.html
-share/gnome/gnucash/doc/html/group__Import__Export.html
-share/gnome/gnucash/doc/html/group__UI.html
-share/gnome/gnucash/doc/html/import-account-matcher_8h.html
-share/gnome/gnucash/doc/html/import-backend_8h.html
-share/gnome/gnucash/doc/html/import-commodity-matcher_8h.html
-share/gnome/gnucash/doc/html/import-main-matcher_8h.html
-share/gnome/gnucash/doc/html/import-match-map_8h.html
-share/gnome/gnucash/doc/html/import-match-picker_8h.html
-share/gnome/gnucash/doc/html/import-settings_8h.html
-share/gnome/gnucash/doc/html/import-utilities_8h.html
-share/gnome/gnucash/doc/html/index.html
-share/gnome/gnucash/doc/html/modules.html
-share/gnome/gnucash/doc/html/structGNCDateEdit.html
-share/gnome/gnucash/doc/html/struct__FormulaCell.html
-share/gnome/gnucash/doc/html/struct__GNCFrequency.html
-share/gnome/gnucash/doc/html/struct__temporalStateData.html
-share/gnome/gnucash/doc/html/structaccount__group__s.html
-share/gnome/gnucash/doc/html/structaccount__s.html
-share/gnome/gnucash/doc/html/structgnc__template__xaction__data.html
-share/gnome/gnucash/doc/html/structgncp__SchedXaction.html
-share/gnome/gnucash/doc/html/structgncp__freq__spec.html
-share/gnome/gnucash/doc/html/structsplit__s.html
-share/gnome/gnucash/doc/html/structtimespec64.html
 share/gnome/gnucash/doc/projects.html
 share/gnome/gnucash/finance-quote-check
 share/gnome/gnucash/finance-quote-helper
@@ -519,6 +475,8 @@ share/gnome/gnucash/glade/exchange-dialog.glade
 share/gnome/gnucash/glade/fincalc.glade
 share/gnome/gnucash/glade/generic-import.glade
 share/gnome/gnucash/glade/gnc-date-format.glade
+%%AQBANKING%%share/gnome/gnucash/glade/hbci.glade
+%%AQBANKING%%share/gnome/gnucash/glade/hbcipass.glade
 share/gnome/gnucash/glade/help.glade
 share/gnome/gnucash/glade/invoice.glade
 share/gnome/gnucash/glade/job.glade
@@ -646,6 +604,7 @@ share/gnome/gnucash/scm/gnc-menu-extensions.scm
 share/gnome/gnucash/scm/gnc-numeric.scm
 share/gnome/gnucash/scm/gnumeric/gnumeric-utilities.scm
 share/gnome/gnucash/scm/gnumeric/table-utils.scm
+%%AQBANKING%%share/gnome/gnucash/scm/hbci/hbci.scm
 share/gnome/gnucash/scm/help-topics-index.scm
 share/gnome/gnucash/scm/hooks.scm
 share/gnome/gnucash/scm/html-barchart.scm
@@ -710,6 +669,7 @@ share/locale/pl/LC_MESSAGES/gnucash.mo
 share/locale/pt/LC_MESSAGES/gnucash.mo
 share/locale/pt_BR/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
+share/locale/rw/LC_MESSAGES/gnucash.mo
 share/locale/sk/LC_MESSAGES/gnucash.mo
 share/locale/sv/LC_MESSAGES/gnucash.mo
 share/locale/ta/LC_MESSAGES/gnucash.mo
@@ -717,6 +677,8 @@ share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/es_NI/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/es_NI 2> /dev/null || true
 @dirrm share/gnome/pixmaps/gnucash
@@ -724,6 +686,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/scm/printing
 @dirrm share/gnome/gnucash/scm/ofx
 @dirrm share/gnome/gnucash/scm/log-replay
+%%AQBANKING%%@dirrm share/gnome/gnucash/scm/hbci
 @dirrm share/gnome/gnucash/scm/gnumeric
 @dirrm share/gnome/gnucash/scm/generic-import
 @dirrm share/gnome/gnucash/scm

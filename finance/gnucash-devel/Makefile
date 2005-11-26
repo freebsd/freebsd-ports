@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.11
-PORTREVISION=	1
+PORTVERSION=	1.8.12
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -35,7 +34,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp
+USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp intltool intlhack
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -61,11 +60,13 @@ LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 
 # WITH_OPENHBCI is old synonym for aqbanking option
 .if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
-		ktoblzcheck.1:${PORTSDIR}/finance/ktoblzcheck
+LIB_DEPENDS+=	aqbanking.8:${PORTSDIR}/finance/aqbanking \
+		ktoblzcheck.4:${PORTSDIR}/finance/ktoblzcheck
 CONFIGURE_ARGS+=--enable-hbci
+PLIST_SUB=	AQBANKING=""
 .else
 CONFIGURE_ARGS+=--disable-hbci
+PLIST_SUB=	AQBANKING="@comment "
 .endif
 
 post-configure:
