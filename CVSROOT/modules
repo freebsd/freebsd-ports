@@ -5794,6 +5794,7 @@ linux-vmware-toolbox5	ports/emulators/linux-vmware-toolbox5
 linux-vsound	ports/audio/linux-vsound
 linux-warsow	ports/games/linux-warsow
 linux-winetools	ports/emulators/linux-winetools
+linux-x-plane	ports/games/linux-x-plane
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-ymessenger	ports/net-im/linux-ymessenger
 linux_base	ports/emulators/linux_base
