@@ -647,3 +647,5 @@ ztelnet-*		net/ztelnet		zmodem code has restrictive
 						copyright
 gngeo-*                 emulators/gngeo         The Neo-Geo BIOS
 						can not be redistributed
+twelf-*			lang/twelf		License is currently
+						indeterminate
