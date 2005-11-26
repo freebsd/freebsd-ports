@@ -234,7 +234,7 @@ do-install:
 .endif
 .if defined(WITH_VMWARE_VMXNET)
 	${MKDIR} ${VMWARE_KMODDIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
 .endif
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/vmware-guestd.sh > ${WRKDIR}/vmware-guestd.sh
