@@ -7,7 +7,7 @@
 PORTNAME=		at
 PORTVERSION=		1.0
 CATEGORIES=		science
-MASTER_SITES=		http://oalib.saic.com/Modes/AcousticsToolbox/
+MASTER_SITES=		http://www.hlsresearch.com/oalib/Modes/AcousticsToolbox/
 DISTNAME=		at_Unix
 EXTRACT_SUFX=		.tar.Z
 
