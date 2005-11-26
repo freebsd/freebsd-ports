@@ -1,0 +1,40 @@
+--- configure.orig     Tue Dec  2 10:45:42 2003
++++ configure  Sat Nov 26 02:57:22 2005
+@@ -19,12 +19,12 @@
+ # dashes changed to underlines.
+ build=NONE
+ cache_file=./config.cache
+-exec_prefix=NONE
++exec_prefix=/usr/local
+ host=NONE
+ no_create=
+ nonopt=NONE
+ no_recursion=
+-prefix=NONE
++prefix=/usr/local
+ program_prefix=NONE
+ program_suffix=NONE
+ program_transform_name=s,x,x,
+@@ -42,8 +42,8 @@
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+-libdir='${exec_prefix}/lib'
+-includedir='${prefix}/include'
++libdir="${exec_prefix}/lib"
++includedir="${prefix}/include"
+ oldincludedir='/usr/include'
+ infodir='${prefix}/info'
+ mandir='${prefix}/man'
+@@ -685,9 +685,9 @@
+ rm -fr conftest*
+ ac_ext=c
+ # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
+-ac_cpp='$CPP $CPPFLAGS'
++ac_cpp='$CPP -I${includedir} -L${libdir} $CPPFLAGS'
+ ac_compile='${CC-cc} -c $CFLAGS $CPPFLAGS conftest.$ac_ext 1>&5'
+-ac_link='${CC-cc} -o conftest${ac_exeext} $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
++ac_link='${CC-cc} -I${includedir} -L${libdir} -o conftest${ac_exeext} $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cc_cross
+ 
+ echo "$ac_t""$ac_cv_prog_cc_works" 1>&6
