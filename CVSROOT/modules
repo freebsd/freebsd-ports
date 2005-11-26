@@ -6835,6 +6835,7 @@ nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
 nload		ports/net/nload
 nltk		ports/textproc/nltk
+nltk_lite	ports/textproc/nltk_lite
 nmap		ports/security/nmap
 nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
