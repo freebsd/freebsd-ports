@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
-MAINTAINER=	anarcat@anarcat.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
 USE_GMAKE=	yes

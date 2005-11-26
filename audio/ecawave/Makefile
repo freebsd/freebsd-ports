@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
-MAINTAINER=	anarcat@anarcat.ath.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple graphical audio file editor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
