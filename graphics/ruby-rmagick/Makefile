@@ -8,7 +8,7 @@
 PORTNAME=	rmagick
 PORTVERSION=	1.9.0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/5224/
+MASTER_SITES=	http://rubyforge.lauschmusik.de/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
