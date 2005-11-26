@@ -10,7 +10,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs .
+MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
