@@ -10,6 +10,7 @@ PORTVERSION=	1.02
 CATEGORIES=	biology
 MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
 		${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Bio
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	razi@genet.sickkids.on.ca
