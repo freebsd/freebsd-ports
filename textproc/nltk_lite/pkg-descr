@@ -1,0 +1,11 @@
+NLTK-Lite is a new collection of lightweight NLP modules designed for 
+maximum simplicity and efficiency. NLTK-Lite only covers the simple 
+variants of standard data structures and tasks. Simplicity and 
+efficiency are valued over generality and extensibility.
+
+NLTK-Lite is primarily intended to facilitate teaching NLP to students 
+having limited programming experience. The focus is on teaching Python
+together with the help of NLP recipes, instead of teaching students to
+use a large set of specialized classes that lock them in to using NLTK.
+
+WWW: http://nltk.sourceforge.net/
