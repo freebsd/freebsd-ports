@@ -1,6 +1,8 @@
 bin/exiv2
+bin/exiv2-config
 include/exiv2/basicio.hpp
 include/exiv2/canonmn.hpp
+include/exiv2/crwimage.hpp
 include/exiv2/datasets.hpp
 include/exiv2/error.hpp
 include/exiv2/exif.hpp
@@ -24,7 +26,7 @@ include/exiv2/sonymn.hpp
 include/exiv2/tags.hpp
 include/exiv2/types.hpp
 include/exiv2/value.hpp
-lib/libexiv2-0.7.so
+lib/libexiv2-0.8.so
 lib/libexiv2.a
 lib/libexiv2.la
 lib/libexiv2.so
