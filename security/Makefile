@@ -539,6 +539,7 @@
     SUBDIR += tinysu
     SUBDIR += tlswrap
     SUBDIR += tor
+    SUBDIR += tor-devel
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
