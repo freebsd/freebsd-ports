@@ -9,7 +9,7 @@ PORTNAME=	pwd_unmkdb
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/pwd_unmkdb/ \
-		http://www.c2tech.net/~fullermd/distfiles/
+		http://www.centralmiss.com/~matt/distfiles/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Recover a master.passwd from the hashed database
