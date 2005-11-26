@@ -1,4 +1,5 @@
 bin/texmaker
+%%DATADIR%%/application.icns
 %%DATADIR%%/blank.gif
 %%DATADIR%%/doc1.png
 %%DATADIR%%/doc11.png
@@ -22,9 +23,15 @@ bin/texmaker
 %%DATADIR%%/prev_d.gif
 %%DATADIR%%/psheader.txt
 %%DATADIR%%/style.css
+%%DATADIR%%/texmaker.desktop
+%%DATADIR%%/texmaker.svg
+%%DATADIR%%/texmaker128x128.png
 %%DATADIR%%/texmaker16x16.png
+%%DATADIR%%/texmaker22x22.png
 %%DATADIR%%/texmaker32x32.png
 %%DATADIR%%/texmaker48x48.png
+%%DATADIR%%/texmaker64x64.png
+%%DATADIR%%/texmaker_fr.qm
 %%DATADIR%%/up.gif
 %%DATADIR%%/up_d.gif
 %%DATADIR%%/usermanual.html

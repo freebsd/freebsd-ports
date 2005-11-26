@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
 
