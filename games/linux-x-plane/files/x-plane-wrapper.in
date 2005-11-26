@@ -1,0 +1,39 @@
+#!/bin/sh
+
+xdir="%%XDIR%%"
+userdir="$HOME/.x-plane"
+portversion="%%PORTVERSION%%"
+xpversion="%%XPVERSION%%"
+
+# The executables need to be run from the data directory, and need to
+# write files in it. We therefore mirror the data directory hierarchy
+# in $userdir, and create symlinks to the data files.
+
+if [ "x`cat $userdir/version 2>/dev/null`" != "x$portversion" ]; then
+	echo "Updating hierarchy in $userdir"
+	cd $xdir || exit 1
+	find * -type d -exec mkdir -p "$userdir/{}" \; || exit 1
+	find * -type f ! -name '*.prf' -exec ln -sf "$xdir/{}" "$userdir/{}" \; || exit 1
+	cd $xdir/Resources/Preferences || exit 1
+	for f in *; do
+		if ! [ -e "$userdir/Resources/Preferences/$f" ]; then
+			install -m 644 "$f" $userdir/Resources/Preferences || exit 1
+		fi
+	done
+	echo "$portversion" > $userdir/version || exit 1
+fi
+
+if ! [ -e $userdir/cpu ]; then
+	echo "i586" > $userdir/cpu || exit 1
+fi
+
+cpu=`cat $userdir/cpu 2>/dev/null`
+if [ "x$cpu" != "xathlon-xp" ] && [ "x$cpu" != "xi586" ] && [ "x$cpu" != "xpentium-3" ]; then
+	echo "Unknown CPU \"$cpu\" in $userdir/cpu, defaulting to i586"
+	cpu=i586
+fi
+
+program=`basename $0`
+
+cd $userdir || exit 1
+exec ./$program-$xpversion-lin1-$cpu "$@"
