@@ -1,33 +1,44 @@
---- configure.orig	Sun Sep 21 16:06:57 2003
-+++ configure	Sun Sep 21 16:07:24 2003
-@@ -3860,10 +3860,10 @@
- #include "confdefs.h"
+--- configure.orig	Thu Oct 20 21:05:33 2005
++++ configure	Thu Oct 20 21:12:31 2005
+@@ -9710,12 +9710,12 @@
+ /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
 +extern int *libintl_nl_domain_bindings;
- int main() {
+ int
+ main ()
+ {
  bindtextdomain ("", "");
 -return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
 +return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
- ; return 0; }
- EOF
- if { (eval echo configure:3870: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -11776,7 +11776,7 @@
+   ;
+   return 0;
+ }
+@@ -20102,7 +20102,7 @@
    withval="$with_help_prefix"
    GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
  else
 -  GNC_HELPDIR="\${datadir}/gnome/help/gnucash"
 +  GNC_HELPDIR="\${datadir}/help/gnucash"
- fi
+ fi;
  
  
-@@ -13665,7 +13665,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgtkhtml $GTKHTML_LIBS $LIBS"
-+LIBS="-lgtkhtml-1.1 $GTKHTML_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 13671 "configure"
- #include "confdefs.h"
+@@ -21587,7 +21587,7 @@
+ 
+ 
+ 
+-for ac_header in db_185.h db1/db.h db4/db_185.h
++for ac_header in db_185.h db1/db.h db41/db_185.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -21750,7 +21750,7 @@
+ 
+ 
+ 
+-for ac_header in db.h db_185.h db1/db.h db4/db_185.h
++for ac_header in db.h db_185.h db1/db.h db41/db_185.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

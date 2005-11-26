@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- src/gnome/Makefile.in	2002/07/11 09:16:01	1.1
-+++ src/gnome/Makefile.in	2002/07/11 09:16:10
-@@ -226,7 +226,7 @@
-   window-report.c
- 
+--- src/gnome/Makefile.in.orig	Wed Oct 19 21:10:12 2005
++++ src/gnome/Makefile.in	Wed Oct 19 21:10:41 2005
+@@ -470,7 +470,7 @@
+   window-reconcile.c \
+   window-register.c
  
 -gnomeappdir = ${datadir}/gnome/apps/Applications
 +gnomeappdir = ${datadir}/apps/Applications
- 
- gnomeapp_DATA = gnucash.desktop
- 
+ gnomeapp_in_files = gnucash.desktop.in
+ gnomeapp_DATA = $(gnomeapp_in_files:.desktop.in=.desktop)
+ appicondir = $(datadir)/pixmaps
