@@ -267,6 +267,7 @@
     SUBDIR += linux-arts
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile
+    SUBDIR += linux-libogg
     SUBDIR += linux-mbrola
     SUBDIR += linux-vsound
     SUBDIR += listener
