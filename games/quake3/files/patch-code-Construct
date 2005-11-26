@@ -1,5 +1,5 @@
---- /work/a/ports/games/quake3/work/quake3-1.32b/code/Construct.orig	Mon Aug 15 20:56:27 2005
-+++ /work/a/ports/games/quake3/work/quake3-1.32b/code/Construct	Wed Nov 23 10:37:04 2005
+--- code/Construct.orig	Mon Aug 15 20:56:27 2005
++++ code/Construct	Wed Nov 23 10:37:04 2005
 @@ -19,8 +19,8 @@
  use Cons_gcc;
  

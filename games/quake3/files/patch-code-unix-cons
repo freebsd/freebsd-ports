@@ -1,5 +1,5 @@
---- /work/a/ports/games/quake3/work/quake3-1.32b/code/unix/cons.orig	Fri Jun 14 13:01:32 2002
-+++ /work/a/ports/games/quake3/work/quake3-1.32b/code/unix/cons	Wed Nov 23 10:32:49 2005
+--- code/unix/cons.orig	Fri Jun 14 13:01:32 2002
++++ code/unix/cons	Wed Nov 23 10:32:49 2005
 @@ -271,11 +271,11 @@
       # Defaults for a typical (?) UNIX platform.
       # Your mileage may vary.
