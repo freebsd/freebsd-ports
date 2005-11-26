@@ -5737,6 +5737,7 @@ linux-jpeg	ports/graphics/linux-jpeg
 linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libglade	ports/devel/linux-libglade
 linux-libmng	ports/graphics/linux-libmng
+linux-libogg	ports/audio/linux-libogg
 linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
