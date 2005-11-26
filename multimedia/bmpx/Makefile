@@ -6,35 +6,35 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.9
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.berlios.de/bmpx/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	beepmp
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Audio player
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		fam.0:${PORTSDIR}/devel/fam \
-		xine.14:${PORTSDIR}/multimedia/libxine
+		xine.14:${PORTSDIR}/multimedia/libxine \
+		curl.3:${PORTSDIR}/ftp/curl
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 libglade2
 USE_AUTOTOOLS=	libtool:15
+USE_BZIP2=	yes
+USE_FAM=	yes
+USE_GCC=	3.4+
+USE_GMAKE=	yes
+USE_GNOME=	gtk20 libglade2 desktopfileutils
+LIBTOOLFILES=	configure libhrel/configure libskinned/configure
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-xine --disable-gst
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include  -D__BSD_VISIBLE ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		bmpx.1
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|-Wall -pedantic -std=c99||' \
-		${WRKSRC}/configure
 
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--disable-dbus
@@ -42,4 +42,34 @@ CONFIGURE_ARGS+=	--disable-dbus
 LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITHOUT_PERL)
+CONFIGURE_ARGS+=	--disable-perl
+.else
+USE_PERL5_BUILD=	yes
+.endif
+
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	PYTHON="@comment "
+.else
+USE_PYTHON=	yes
+USE_GNOME+=	pygtk2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus.pth:${PORTSDIR}/devel/py-dbus
+PLIST_SUB+=	PYTHON=""
+.endif
+
+.if defined(WITHOUT_STARTUP_NOTIFICATION)
+CONFIGURE_ARGS+=	--disable-sn
+.else
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+post-patch:
+	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
+		${WRKSRC}/src/metadata.c
+.endif
+
+.include <bsd.port.post.mk>
