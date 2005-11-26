@@ -22,7 +22,7 @@ USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomeprefix gnomehack gnomepanel lthack
+USE_GNOME=	gnomeprefix gnomehack gnomepanel lthack intlhack
 GNU_CONFIGURE=	yes
 
 LIBS+=		-L${LOCALBASE}/lib -L${X11BASE}/lib
