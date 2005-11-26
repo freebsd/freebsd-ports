@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ripit
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	3.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
+MASTER_SITES=	http://www.suwald.com/ripit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
@@ -17,10 +16,11 @@ COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
+RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/ripit.pl
+PLIST_FILES=	bin/ripit.pl \
+		bin/ripit
 USE_PERL5=	yes
 
 post-patch:
@@ -30,6 +30,7 @@ do-install:
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${PREFIX}/bin
 
 post-install:
+	@ ${LN} -s ${PREFIX}/bin/ripit.pl ${PREFIX}/bin/ripit
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

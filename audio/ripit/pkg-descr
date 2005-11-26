@@ -7,7 +7,7 @@ is a console program that needs no user intervention. It requires
 p5-CDDB for CDDB access. A track ripper program and an encoder are
 also needed.
 
-WWW: http://www.geocities.com/ukcave/ripit.html
+WWW: http://www.suwald.com/ripit/ripit.html
 
 --
 Port by Oyvind Moll <oyvindmo@initio.no>
