@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.hibernaculum.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for monitoring disk usage in a more visual way than du
 
+DEPRECATED=	unfetchable -- current version is 0.9
+EXPIRATION_DATE=	2006-01-26
+
 USE_PERL5=	yes
 
 MAN1=		durep.1
