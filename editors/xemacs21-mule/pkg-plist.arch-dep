@@ -9,6 +9,7 @@ bin/ootags
 bin/rcs-checkin
 bin/xemacs
 bin/xemacs-%%XEMACS_VER%%
+%%PDUMP%%bin/xemacs-%%XEMACS_VER%%.dmp
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/DOC
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/add-big-package.sh
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/config.values
