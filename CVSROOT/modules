@@ -5691,6 +5691,7 @@ linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
 linux-alienarena	ports/games/linux-alienarena
 linux-allegro		ports/devel/linux-allegro
+linux-alsa-lib	ports/audio/linux-alsa-lib
 linux-americasarmy	ports/games/linux-americasarmy
 linux-arts	ports/audio/linux-arts
 linux-aspell	ports/textproc/linux-aspell
