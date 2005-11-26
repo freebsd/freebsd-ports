@@ -10,10 +10,13 @@ PORTNAME=	glens
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://virtual.theo.phys.ulg.ac.be/
+MASTER_SITES=	# no longer available
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL gravitational lens simulator
+
+DEPRECATED=	no longer available from mastersite
+EXPIRATION_DATE=	2006-01-25
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 
