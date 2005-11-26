@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-scrobbler
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	XMMS plugin for Audioscrobbler.com
