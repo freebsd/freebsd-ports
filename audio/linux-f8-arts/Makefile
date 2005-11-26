@@ -6,38 +6,14 @@
 #
 
 PORTNAME=		arts
-PORTVERSION=		1.0.3
-PORTREVISION=		3
+DISTVERSION=		1.3.0-4
 CATEGORIES=		audio kde linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	8.0/en/os/${MACHINE_ARCH}/RedHat/RPMS
-PKGNAMEPREFIX=		linux-
-DISTNAME=		${PORTNAME}-${PORTVERSION:S/.1$/-1/}-1.${MACHINE_ARCH}
-EXTRACT_SUFX=		.rpm
-EXTRACT_ONLY=
+MASTER_SITE_SUBDIR=	3/${LINUX_ARCH}/os/Fedora/RPMS/
 
-MAINTAINER=		bms@FreeBSD.org
-COMMENT=		Audio system for the KDE integrated X11 desktop
+MAINTAINER=		jylefort@FreeBSD.org
+COMMENT=		Audio system for the KDE integrated X11 desktop (Linux version)
 
-BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
+ONLY_FOR_ARCHS=		i386 amd64
+INSTALLS_LINUX_SHLIB=	yes
 
-USE_LINUX=		yes
-USE_LINUX_PREFIX=	yes
-LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig
-
-ONLY_FOR_ARCHS=		i386
-DIST_SUBDIR=		rpm
-NO_BUILD=		yes
-PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
-
-DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-			--nodeps --replacepkgs
-RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
-
-do-install:
-	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
-	@${LDCONFIG_LINUX}
-
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
