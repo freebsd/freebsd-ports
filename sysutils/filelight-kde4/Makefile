@@ -9,7 +9,7 @@ PORTNAME=	filelight
 PORTVERSION=	0.6.4
 PORTREVISION=	4
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.methylblue.com/filelight/
+MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Represent a file system as a set of concentric segmented-rings
