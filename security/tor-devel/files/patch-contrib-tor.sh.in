@@ -1,9 +1,9 @@
---- contrib/tor.sh.in.orig	Sun Jun  5 15:44:43 2005
-+++ contrib/tor.sh.in	Fri Sep  2 13:25:51 2005
+--- contrib/tor.sh.in.orig Sun Jun  5 15:44:43 2005
++++ contrib/tor.sh.in  Fri Sep  2 13:25:51 2005
 @@ -5,12 +5,12 @@
  # chkconfig: 2345 90 10
  # description: Onion Router
- 
+
 -TORUSER=
 -TORGROUP=
 +TORUSER=_tor
@@ -14,7 +14,7 @@
 -TORDATA=@LOCALSTATEDIR@/lib/tor
 +TORLOG=/var/log/tor.log
 +TORDATA=/var/db/tor/data
- 
+
  TORCONF=@CONFDIR@/torrc
  # Strictly speaking, we don't need to su if we have --user and --group.
 @@ -48,7 +48,7 @@

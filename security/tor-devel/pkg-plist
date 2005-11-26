@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tor
 bin/tor-resolve
 bin/torify

@@ -1,16 +1,18 @@
-# ports collection makefile for: 		tor
-# Date created: 				2004.05.28
-# Whom:						freebsd-ports@rikrose.net
+# ports collection makefile for:	tor-devel
+# Date created:				2005.10.20
+# Whom:					eol1@yahoo.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.0.14
+PORTVERSION=	0.1.1.8
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
-MAINTAINER=	freebsd-ports@rikrose.net
+MAINTAINER=	eol1@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
@@ -19,6 +21,8 @@ LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
+
+CONFLICTS=	tor-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1
