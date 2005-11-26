@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	vmware
-MASTER_SITES=	# bundled with VMware itself
+MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-tools
 
-COMMENT=VMware tools for guest OS (for VMware 5.x, FreeBSD version)
+COMMENT=VMware Tools for guest OS (VMware Workstation 5.x, FreeBSD version)
 
 MASTERDIR=	${.CURDIR}/../vmware-guestd5
 DESCR=		${PKGDIR}/pkg-descr.tools

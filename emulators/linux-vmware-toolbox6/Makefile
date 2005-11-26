@@ -7,18 +7,21 @@
 
 PORTNAME=	vmware-toolbox
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	1
+#PORTREVISION=	0
 CATEGORIES=	emulators linux
-MASTER_SITES=	# bundled with VMware itself
+MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMEPREFIX=	linux-
 DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware toolbox for guest OS (for VMware 5.x, Linux version)
+COMMENT=VMware toolbox for guest OS (VMware Workstation 5.x, Linux version)
+
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
-PLIST_FILES=	bin/linux-vmware-toolbox
+PLIST_FILES=	bin/linux-vmware-toolbox bin/linux-vmware-toolbox-gtk \
+		bin/linux-vmware-user
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
@@ -32,8 +35,8 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	5.0.0
-BUILD_VER=	13124
+VMWARE_VER=	5.5.0
+BUILD_VER=	18463
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +48,12 @@ MOUNT_DEV?=	/dev/acd0
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
+
+.if ${ARCH} == i386
+BITS?=		32
+.else # ${ARCH} == amd64
+BITS?=		64
+.endif
 
 do-fetch:
 	@${DO_NADA}
@@ -87,7 +96,10 @@ post-extract:
 	${UMOUNT} ${MOUNT_DEV}
 
 do-install:
-	${BRANDELF} -t Linux ${WRKSRC}/bin/vmware-toolbox-old
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox-old ${PREFIX}/bin/linux-vmware-toolbox
+.for file in vmware-toolbox-gtk vmware-user
+	${BRANDELF} -t Linux ${WRKSRC}/lib/bin${BITS}/${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/${file} ${PREFIX}/bin/linux-${file}
+.endfor
+	${LN} -sfh linux-vmware-toolbox-gtk ${PREFIX}/bin/linux-vmware-toolbox
 
 .include <bsd.port.post.mk>

@@ -15,22 +15,40 @@ PREFIX=%%PREFIX%%
 checkvm_cmd="${PREFIX}/sbin/vmware-checkvm > /dev/null"
 
 # Functions
-vmware_guest_kmod_start()
+vmware_guest_vmmemctl_start()
 {
 	echo 'Loading vmmemctl kernel module.'
 	kldload ${PREFIX}/lib/vmware-tools/modules/vmmemctl.ko >/dev/null 2>&1
 }
+vmware_guest_vmmemctl_start()
+{
+	echo 'Loading vmxnet kernel module.'
+	kldload ${PREFIX}/lib/vmware-tools/modules/vmxnet.ko >/dev/null 2>&1
+}
 
-# VMware kernel modules
-name="vmware_guest_kmod"
+# VMware kernel module: vmmemctl
+name="vmware_guest_vmmemctl"
 rcvar=`set_rcvar`
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_guest_kmod_start"
+start_cmd="vmware_guest_vmmemctl_start"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
 load_rc_config $name
-[ -z "$vmware_guest_kmod_enable" ] && vmware_guest_kmod_enable="NO"
+[ -z "$vmware_guest_vmmemctl_enable" ] && vmware_guest_vmmemctl_enable="NO"
+[ -n "$vmware_guest_kmod_enable" ] && vmware_guest_vmmemctl_enable="$vmware_guest_kmod_enable"
+run_rc_command "$1"
+
+# VMware kernel module: vmxnet
+name="vmware_guest_vmxnet"
+rcvar=`set_rcvar`
+start_precmd="${checkvm_cmd}"
+start_cmd="vmware_guest_vmxnet_start"
+stop_precmd="${checkvm_cmd}"
+stop_cmd=":"
+
+load_rc_config $name
+[ -z "$vmware_guest_vmxnet_enable" ] && vmware_guest_vmxnet_enable="NO"
 run_rc_command "$1"
 
 # VMware guest daemon
