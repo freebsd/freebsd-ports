@@ -8,8 +8,7 @@
 PORTNAME=	cmdwatch
 PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://wedgie.org/pub/ \
-		ftp://ftp.apexds.com/pub/
+MASTER_SITES=	ftp://wedgie.org/pub/
 
 MAINTAINER=	bjohnson@wedgie.org
 COMMENT=	Watches the output from a command at specified intervals
