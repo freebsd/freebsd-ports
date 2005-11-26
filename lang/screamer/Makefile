@@ -8,8 +8,7 @@
 PORTNAME=	screamer
 PORTVERSION=	3.20
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/
 DISTNAME=	screamer.tar
 EXTRACT_SUFX=	.Z
 
