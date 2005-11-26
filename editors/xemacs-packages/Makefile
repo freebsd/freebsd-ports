@@ -8,7 +8,7 @@
 PORTNAME=	xemacs-packages
 PORTVERSION=	13.1
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
+MASTER_SITES=	${MASTER_SITE_XEMACS}
 DISTFILES=	\
 		Sun-1.16-pkg.tar.gz \
 		ada-1.14-pkg.tar.gz \
@@ -125,6 +125,7 @@ DISTFILES=	\
 		xwem-1.21-pkg.tar.gz \
 		zenirc-1.16-pkg.tar.gz
 DIST_SUBDIR=	xemacs
+MASTER_SITE_SUBDIR=	packages
 
 MAINTAINER=	anrays@gmail.com
 COMMENT=	Basic XEmacs elisp packages(xemacs-packages)
