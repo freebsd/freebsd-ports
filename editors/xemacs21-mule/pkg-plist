@@ -37,6 +37,7 @@ bin/ootags
 bin/rcs-checkin
 bin/xemacs
 bin/xemacs-%%XEMACS_VER%%
+%%PDUMP%%bin/xemacs-%%XEMACS_VER%%.dmp
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
 lib/xemacs-%%XEMACS_VER%%/etc/CHARSETS
 lib/xemacs-%%XEMACS_VER%%/etc/CODING-STANDARDS

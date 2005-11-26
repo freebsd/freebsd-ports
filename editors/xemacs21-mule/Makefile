@@ -98,9 +98,12 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 .include <bsd.port.pre.mk>
 
 # Undump and malloc do not behave on amd64 at the moment
-#.if ${ARCH} == "amd64"
-#CONFIGURE_ARGS+=--with-system-malloc --pdump
-#.endif
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=--with-system-malloc --pdump
+PLIST_SUB+=	PDUMP=""
+.else
+PLIST_SUB+=	PDUMP="@comment "
+.endif
 
 pre-fetch:
 .if !defined(WITH_GTK)
@@ -198,7 +201,7 @@ post-install::
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
-	${RM} -f ${PREFIX}/bin/send-pr ${PREFIX}/bin/xemacs-${XEMACS_VER}-*.dmp
+	${RM} -f ${PREFIX}/bin/send-pr
 .if defined(WITH_GTK)
 	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
 	@${ECHO_MSG} "the maintainer."
