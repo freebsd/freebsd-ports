@@ -1,23 +1,34 @@
 bin/pureadmin
-bin/pureadminsearch
 share/gnome/applications/pureadmin.desktop
 share/gnome/pixmaps/pureadmin.png
+share/gnome/pureadmin/dialogs.glade
 share/gnome/pureadmin/docs/index.txt
 share/gnome/pureadmin/docs/introduction.txt
 share/gnome/pureadmin/docs/main_window.txt
 share/gnome/pureadmin/docs/preferences.txt
 share/gnome/pureadmin/docs/user_manager.txt
-share/gnome/pureadmin/pixmaps/down.png
-share/gnome/pureadmin/pixmaps/logo.png
-share/gnome/pureadmin/pixmaps/main-icon.png
-share/gnome/pureadmin/pixmaps/up.png
-share/gnome/pureadmin/pixmaps/user.png
-share/gnome/pureadmin/pixmaps/user_identity.png
-share/gnome/pureadmin/pixmaps/userconfig.png
-share/gnome/pureadmin/pixmaps/usericon.png
+share/gnome/pureadmin/down.png
+share/gnome/pureadmin/logo.png
+share/gnome/pureadmin/mainwindow.glade
+share/gnome/pureadmin/prefwin.glade
+share/gnome/pureadmin/pureadmin-16x16.png
+share/gnome/pureadmin/pureadmin-24x24.png
+share/gnome/pureadmin/pureadmin-32x32.png
+share/gnome/pureadmin/pureadmin-48x48.png
+share/gnome/pureadmin/up.png
+share/gnome/pureadmin/user.png
+share/gnome/pureadmin/user_identity.png
+share/gnome/pureadmin/userconfig.png
+share/gnome/pureadmin/usericon.png
+share/gnome/pureadmin/usermanager.glade
+share/icons/hicolor/16x16/apps/pureadmin.png
+share/icons/hicolor/24x24/apps/pureadmin.png
+share/icons/hicolor/32x32/apps/pureadmin.png
+share/icons/hicolor/48x48/apps/pureadmin.png
 share/locale/fr/LC_MESSAGES/pureadmin.mo
 share/locale/it/LC_MESSAGES/pureadmin.mo
 share/locale/sv/LC_MESSAGES/pureadmin.mo
-@dirrm share/gnome/pureadmin/pixmaps
 @dirrm share/gnome/pureadmin/docs
 @dirrm share/gnome/pureadmin
+@unexec rmdir %D/share/icons/hicolor/24x24/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/24x24 2>/dev/null || true
