@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
 
-MAINTAINER=	oyvindmo@initio.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
 
 # See pkg-message about other dependencies.
