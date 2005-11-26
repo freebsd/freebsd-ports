@@ -18,6 +18,8 @@ COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
+BROKEN=		Checksum mismatch
+
 NO_BUILD=	yes
 
 LISPDIR=	${PREFIX}/share/emacs/site-lisp
