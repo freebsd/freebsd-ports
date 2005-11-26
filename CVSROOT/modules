@@ -5726,6 +5726,7 @@ linux-geepee32	ports/emulators/linux-geepee32
 linux-gid	ports/cad/linux-gid
 linux-glib2	ports/devel/linux-glib2
 linux-gnomelibs	ports/x11/linux-gnomelibs
+linux-goodway	ports/games/linux-goodway
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2	ports/x11-toolkits/linux-gtk2
