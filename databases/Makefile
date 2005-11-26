@@ -75,6 +75,7 @@
     SUBDIR += jdbc-oracle9i
     SUBDIR += kbibtex
     SUBDIR += kinterbasdb
+    SUBDIR += kmysqladmin
     SUBDIR += knoda
     SUBDIR += ksqlanalyzer
     SUBDIR += ksqlshell
