@@ -12324,6 +12324,7 @@ tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
 twander		ports/x11-fm/twander
+twelf		ports/lang/twelf
 twhttpd		ports/www/twhttpd
 twig		ports/www/twig
 twiki		ports/www/twiki
