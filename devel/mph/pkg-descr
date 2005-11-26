@@ -6,4 +6,4 @@ a language independent binary or text representation of the MPH
 function on stdout. To generate a usable hash function, this output
 should be fed to a language dependent filter, like emitc.
 
-WWW: http://www.ibiblio.org/pub/Linux/devel/lang/c
+WWW: http://www.ibiblio.org/pub/Linux/devel/lang/c/
