@@ -13,6 +13,8 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/2515/
 MAINTAINER=	kelley@insidesystems.net
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	1.8
