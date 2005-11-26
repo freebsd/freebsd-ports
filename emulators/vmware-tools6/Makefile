@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	vmware
+PORTREVISION?=	0
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-tools
 
