@@ -5736,6 +5736,7 @@ linux-j		ports/lang/linux-j
 linux-jigdo	ports/net/linux-jigdo
 linux-jpeg	ports/graphics/linux-jpeg
 linux-libaudiofile	ports/audio/linux-libaudiofile
+linux-libgcc	ports/lang/linux-libgcc
 linux-libglade	ports/devel/linux-libglade
 linux-libmng	ports/graphics/linux-libmng
 linux-libogg	ports/audio/linux-libogg
