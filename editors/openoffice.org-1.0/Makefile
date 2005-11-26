@@ -9,16 +9,14 @@ PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
 PORTREVISION=	6
 CATEGORIES+=	editors
-MASTER_SITES+=  ${MASTER_SITE_RINGSERVER} \
+MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/  \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		${MASTER_SITE_RINGSERVER:S/$/:help/} \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent-1.0/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
 		${MASTER_SITE_LOCAL:S/$/:ru/}
-MASTER_SITE_SUBDIR+= misc/openoffice/stable/${PORTVERSION} \
-		maho/openoffice.org/:moz,ru \
+MASTER_SITE_SUBDIR+= maho/openoffice.org/:moz,ru \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
 		misc/openoffice/contrib/helpcontent-1.0/:help
 DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz patch-translation-ru-1.0.3.bz2:ru
@@ -109,7 +107,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:253
+USE_AUTOTOOLS=  autoconf:253
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
