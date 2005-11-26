@@ -8,11 +8,10 @@
 PORTNAME=	xmake
 PORTVERSION=	1.06
 CATEGORIES=	devel
-MASTER_SITES=	http://apollo.backplane.com/xmake/ \
-		ftp://atari.saturn5.com/pub/dlowe/
+MASTER_SITES=	http://apollo.backplane.com/xmake/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dlowe@saturn5.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful make utility
 
 WRKSRC=		${WRKDIR}/xmake
