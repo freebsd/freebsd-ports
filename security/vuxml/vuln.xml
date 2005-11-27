@@ -35,6 +35,46 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="27a70a01-5f6c-11da-8d54-000cf18bbe54">
+    <topic>ghostscript -- insecure temporary file creation vulnerability</topic>
+    <affects>
+      <package>
+	<name>ghostscript-gnu</name>
+	<name>ghostscript-gnu-nox11</name>
+	<range><lt>7.07_14</lt></range>
+      </package>
+      <package>
+	<name>ghostscript-afpl</name>
+	<name>ghostscript-afpl-nox11</name>
+	<range><lt>8.53_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.securityfocus.com/bid/11285/discuss">
+	  <p>Ghostscript is affected by an insecure temporary file
+	    creation vulnerability. This issue is likely due
+	    to a design error that causes the application to fail
+	    to verify the existence of a file before writing to it.</p>
+
+	  <p>An attacker may leverage this issue to overwrite
+	    arbitrary files with the privileges of an unsuspecting
+	    user that activates the vulnerable application.
+	    Reportedly this issue is unlikely to facilitate
+	    privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11285</bid>
+      <cvename>CVE-2004-0967</cvename>
+    </references>
+    <dates>
+      <discovery>2004-10-19</discovery>
+      <entry>2005-11-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="873a6542-5b8d-11da-b96e-000fb586ba73">
     <topic>horde -- Cross site scripting vulnerabilities in MIME viewers.</topic>
     <affects>
