@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdiff-backup
-PORTVERSION?=	1.0.2
+PORTVERSION?=	1.0.3
 PORTEPOCH?=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -18,7 +18,7 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 
-CONFLICTS=	rdiff-backup-devel-[0-9]*
+CONFLICTS?=	rdiff-backup-devel-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
