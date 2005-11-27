@@ -1,7 +1,7 @@
 bin/guikachu
 bin/guikachu2rcp
 share/gnome/application-registry/guikachu.applications
-share/gnome/apps/Development/guikachu.desktop
+share/gnome/applications/guikachu.desktop
 share/gnome/guikachu/fonts/bigbold.txt
 share/gnome/guikachu/fonts/bigfont.txt
 share/gnome/guikachu/fonts/boldfont.txt
