@@ -64,6 +64,9 @@ bin/rdiff-backup
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/log.pyo
+%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.py
+%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.pyc
+%%PYTHON_SITELIBDIR%%/rdiff_backup/longname.pyo
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.pyc
 %%PYTHON_SITELIBDIR%%/rdiff_backup/manage.pyo
