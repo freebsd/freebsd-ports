@@ -3,7 +3,7 @@ ask/ChangeLog
 ask/TODO
 ask/ask.py
 ask/askconfig.py
-ask/ask-2.4.1-1.spec
+ask/ask-%%VER%%-1.spec
 ask/asklock.py
 ask/asklog.py
 ask/askmail.py
@@ -12,6 +12,7 @@ ask/askmessage.py
 ask/askremote.py
 ask/asksetup.py
 ask/askversion.py
+ask/test.py
 ask/templates/blacklist_da.txt
 ask/templates/blacklist_de.txt
 ask/templates/blacklist_en.txt
@@ -43,7 +44,6 @@ ask/samples/blacklist.txt
 ask/samples/ignorelist.txt
 ask/samples/sample_askrc
 ask/samples/whitelist.txt
-
 @dirrm %%DOCSDIR%%/docs
 @dirrm %%DOCSDIR%%/utils
 @dirrm %%DOCSDIR%%
