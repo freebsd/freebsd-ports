@@ -7,10 +7,11 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5106
+PORTREVISION=	1
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/ \
 		http://fgudin.nerim.net/files/
-DISTNAME=	${PORTNAME}-20051018
+DISTNAME=	${PORTNAME}-20051123
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
