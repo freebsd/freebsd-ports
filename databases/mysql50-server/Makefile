@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.15
+PORTVERSION=	5.0.16
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -59,6 +59,9 @@ CONFIGURE_ARGS+=--without-innodb
 .endif
 .if defined(WITH_ARCHIVE)
 CONFIGURE_ARGS+=--with-archive-storage-engine
+.endif
+.if defined(WITH_FEDERATED)
+CONFIGURE_ARGS+=--with-federated-storage-engine
 .endif
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-ndbcluster
@@ -122,8 +125,8 @@ PLIST_SUB+=	NDB=""
 PLIST_SUB+=	NDB="@comment "
 .endif
 
-MAN1=		mysqld.1 \
-		mysqld_safe.1 perror.1 replace.1
+MAN1=		myisamchk.1 myisamlog.1 myisampack.1 mysqld.1 \
+		mysqld_safe.1 mysql.server.1 perror.1 replace.1
 
 INFO=		mysql
 
@@ -144,6 +147,7 @@ pre-fetch:
 	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
+	@${ECHO} "	WITH_FEDERATED=yes	Enable support for Federated Storage Engine."
 	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 
@@ -152,7 +156,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
@@ -172,7 +176,8 @@ LATEST_LINK=	mysql50-client
 
 CONFLICTS=	mysql-client-3.* mysql-client-4.*
 
-MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
+MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
+		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
@@ -185,7 +190,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
@@ -211,7 +216,8 @@ LATEST_LINK=	mysql50-scripts
 
 CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.*
 
-MAN1=		mysql_zap.1 mysqlaccess.1 mysqld_multi.1 mysql_fix_privilege_tables.1
+MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
+		mysqld_multi.1 mysql_fix_privilege_tables.1
 
 SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
 		mysql_secure_installation mysql_zap mysqlaccess \
@@ -222,7 +228,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = scripts @man_dirs@|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = ${SCRIPTS}|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am install-data-am|install-exec-am|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
 # Common part
