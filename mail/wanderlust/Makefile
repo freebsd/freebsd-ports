@@ -38,6 +38,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIME
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/${BITMAP_PORT_NAME}
 .endif
 
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-WL-MK ${PATCHDIR}/extra-patch-elmo:elmo-version.el
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${EMACS_W3M_LISP_FILE})
@@ -74,9 +78,10 @@ PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		SHIMBUN=${SHIMBUN}
 
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+WRK_STARTUP_FILE=	${WRKDIR}/wanderlust-startup.el
 MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
 		LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
-		FLAGS="-batch -q -no-site-file -l ${WRKDIR}/wanderlust-startup.el"
+		FLAGS="-batch -q -no-site-file -l ${WRK_STARTUP_FILE:C/\/\/*/\//g}"
 .if defined(EMACS_PACKAGESDIR)
 MAKE_ARGS+=	PACKAGEDIR=${PREFIX}/${EMACS_PACKAGESDIR}
 .else
