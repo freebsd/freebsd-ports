@@ -81,6 +81,7 @@
     SUBDIR += icegradient
     SUBDIR += icon-bluecurve-theme
     SUBDIR += icon-naming-utils
+    SUBDIR += icons-tango
     SUBDIR += indubstrial
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
