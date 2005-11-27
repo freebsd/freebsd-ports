@@ -33,11 +33,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock
-.if defined(BATCH)
-CONFIGURE_ARGS+=	--enable-dfl-port=/dev/cuaa0
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+MINICOM_DEFAULT_PORT?=	/dev/cuad0
 .else
-CONFIGURE_ARGS+=	--enable-dfl-port=/dev/modem
+MINICOM_DEFAULT_PORT?=	/dev/cuaa0
 .endif
+CONFIGURE_ARGS+=	--enable-dfl-port=${MINICOM_DEFAULT_PORT}
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 
@@ -47,12 +51,6 @@ post-patch:
 		s@/rb@/lrb@;s@/rx@/lrx@" ${WRKSRC}/src/rwconf.c
 	${REINPLACE_CMD} -E -e "s@^(SUBDIRS = .*) intl@\1@" \
 		${WRKSRC}/Makefile.in
-
-pre-configure:
-.if !defined(BATCH)
-	# this script creates a link from your comm port to /dev/modem
-	${SH} ${SCRIPTDIR}/create-dev-link
-.endif
 
 post-install:
 	${CHOWN} uucp:dialer ${PREFIX}/bin/minicom
@@ -72,4 +70,4 @@ post-install:
 		${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
