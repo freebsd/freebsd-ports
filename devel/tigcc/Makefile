@@ -8,10 +8,10 @@
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b5
 CATEGORIES=	devel
-MASTER_SITES=	http://tigcc.ticalc.org/sources/\
-		http://tigcc.ticalc.org/linux/
+MASTER_SITES=	http://tigcc.ticalc.org/sources/:src \
+		http://tigcc.ticalc.org/linux/:linux
 DISTNAME=	tigcc_src
-DISTFILES=	tigcc_src.tar.bz2 gcc-3.3.3.tar.bz2 gas-2.14.tar.bz2
+DISTFILES=	tigcc_src.tar.bz2:linux gcc-3.3.3.tar.bz2:src gas-2.14.tar.bz2:src
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
