@@ -10,7 +10,7 @@ PORTVERSION=	3.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oyvind@moll.no
 COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
 
 # See pkg-message about other dependencies.
