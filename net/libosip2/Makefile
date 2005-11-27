@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	libosip2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A low layer of SIP implementation
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
