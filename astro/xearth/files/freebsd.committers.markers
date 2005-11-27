@@ -127,7 +127,6 @@
  48.8391,	2.265565,	"roberto"	align=left	# Paris, France
  48.912,	2.256,		"mich"		align=left	# La Garenne-Colombes, France
  48.836,	2.242,		"blackend"	align=left	# Boulogne-Billancourt, France
- 51.461916,	-1.011833,		"jesper"			# Reading, United Kingdom
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
@@ -139,6 +138,7 @@
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
  51.67,		-0.61,		"markm"		align=left	# (CORE) Amersham, Bucks, UK
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
+ 51.461916,	-1.011833,	"jesper"			# Reading, United Kingdom
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
