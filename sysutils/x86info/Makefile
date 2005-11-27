@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
