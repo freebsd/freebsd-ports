@@ -1,0 +1,5 @@
+bin/icon-name-mapping
+share/dtds/legacy-icon-mapping.dtd
+share/icon-naming-utils/legacy-icon-mapping.xml
+@dirrm share/dtds
+@dirrm share/icon-naming-utils

@@ -80,6 +80,7 @@
     SUBDIR += gtkstep-pastel
     SUBDIR += icegradient
     SUBDIR += icon-bluecurve-theme
+    SUBDIR += icon-naming-utils
     SUBDIR += indubstrial
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
