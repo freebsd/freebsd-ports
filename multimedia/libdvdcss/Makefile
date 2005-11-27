@@ -39,7 +39,7 @@ post-patch:
 		${BUILD_WRKSRC}/Makefile.in
 .else
 # we do not want the latex documents... too many dependencies just
-# to get something in ps we already have get as html
+# to get in ps what we already have in html
 	@${REINPLACE_CMD} -E \
 		-e 's|^([[:space:]]*all:[[:space:]]*.*)stamp-latex|\1|' \
 		${BUILD_WRKSRC}/doc/Makefile.in
