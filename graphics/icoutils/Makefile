@@ -7,6 +7,7 @@
 
 PORTNAME=	icoutils
 PORTVERSION=	0.26.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,12 +33,8 @@ PLIST_FILES=	\
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+USE_GCC=3.4
 .endif
 
 .include <bsd.port.post.mk>
