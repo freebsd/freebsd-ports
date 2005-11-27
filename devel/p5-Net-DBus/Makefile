@@ -28,4 +28,10 @@ MAN3=	Net::DBus::Tutorial.3 Net::DBus::RemoteObject.3 \
 	Net::DBus.3 Net::DBus::Object.3 Net::DBus::Reactor.3 \
 	Net::DBus::Exporter.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=         requires perl 5.006 or better
+.endif
+
+.include <bsd.port.post.mk>
