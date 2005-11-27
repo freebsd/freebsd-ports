@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucspi-ipc
-PORTVERSION=	0.63
+PORTVERSION=	0.67
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ipc/
 
