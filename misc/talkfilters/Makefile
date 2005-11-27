@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.3.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/
 
