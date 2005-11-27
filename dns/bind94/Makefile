@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 USE_OPENSSL=	yes
 
 .if defined(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	--with-openssl=/usr/local
+CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl
 .endif
