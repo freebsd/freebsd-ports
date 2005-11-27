@@ -8,6 +8,7 @@
 
 PORTNAME=	libdvdcss
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -23,7 +24,31 @@ USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
+.ifndef(NOPORTDOCS)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+
+PORTDOCS=	*
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ioctl.c
+# should we disable doc building?
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} -E \
+		-e 's|^([[:space:]]*SUBDIRS[[:space:]]*=.*)doc|\1|' \
+		${BUILD_WRKSRC}/Makefile.in
+.else
+# we do not want the latex documents... too many dependencies just
+# to get something in ps we already have get as html
+	@${REINPLACE_CMD} -E \
+		-e 's|^([[:space:]]*all:[[:space:]]*.*)stamp-latex|\1|' \
+		${BUILD_WRKSRC}/doc/Makefile.in
+.endif
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/html/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
