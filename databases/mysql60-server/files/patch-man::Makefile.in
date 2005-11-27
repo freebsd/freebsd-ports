@@ -1,13 +1,11 @@
---- man/Makefile.in.orig	Tue Mar 22 20:27:16 2005
-+++ man/Makefile.in	Wed Apr  6 13:10:42 2005
-@@ -333,9 +333,7 @@
- tools_dirs = @tools_dirs@
- uname_prog = @uname_prog@
+--- man/Makefile.in.orig	Sun Nov 27 00:09:54 2005
++++ man/Makefile.in	Sun Nov 27 00:09:03 2005
+@@ -338,7 +338,7 @@
+ yassl_libs = @yassl_libs@
+ yassl_libs_with_path = @yassl_libs_with_path@
  zlib_dir = @zlib_dir@
--man_MANS = mysql.1 mysql_zap.1 mysqlaccess.1 \
--		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqldump.1 mysqlshow.1 \
--		perror.1 replace.1 mysqld_safe.1 mysql_fix_privilege_tables.1
-+man_MANS =
+-man1_MANS = @man1_files@
++man1_MANS =
+ EXTRA_DIST = $(man1_MANS)
+ all: all-am
  
- EXTRA_DIST = mysql.1.in mysql_zap.1.in \
- 		mysqlaccess.1.in mysqladmin.1.in mysqld.1.in mysqld_multi.1.in \
