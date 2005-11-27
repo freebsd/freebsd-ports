@@ -7,6 +7,7 @@
 
 PORTNAME=	sbagen
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +15,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sequenced binaural wave generator
+
+DEPRECATED=	1.0.8 is the 2000 version, 1.4.3 is current. Please send patches or take maintainership!
+EXPIRATION_DATE=	2006-03-31
+IGNORE=		is deprecated: ${DEPRECATED}
 
 SHAREFILES=	t-alpha t-beta t-calm t-calm2 t-delta t-focus t-focus-1 \
 		t-focus-2 t-focus2 t-mix1 t-seqall t-test10 t-test10b \
