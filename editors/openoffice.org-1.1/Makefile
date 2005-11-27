@@ -38,14 +38,12 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}_src.tar.gz
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-BROKEN=		Configure fails
-
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
 DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
-USE_GNOME=	orbit
+USE_GNOME+=	orbit
 .endif
 
 USE_XLIB=	yes
@@ -53,6 +51,7 @@ USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GNOME+=	gtk20
 WITHOUT_CPU_CFLAGS=	true
 
 ONLY_FOR_ARCHS=	i386
