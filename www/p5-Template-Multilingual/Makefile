@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Multilingual
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -25,7 +25,7 @@ MAN3=		Template::Multilingual.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=         requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
