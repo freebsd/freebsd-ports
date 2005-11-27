@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.nongnu.org/materm/
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi terminal based on aterm
 
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 USE_PERL5=	yes

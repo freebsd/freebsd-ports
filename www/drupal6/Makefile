@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
 
 USE_PHP=	session
