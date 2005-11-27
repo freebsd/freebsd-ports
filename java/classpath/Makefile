@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	classpath
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -19,11 +19,12 @@ COMMENT=	A GNU project to create a free Java class library
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gtk20 libartlgpl2 pkgconfig
+#USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-jni --with-jikes
+#CONFIGURE_ARGS=	--enable-jni --with-jikes
+CONFIGURE_ARGS=	--enable-jni --with-jikes --disable-gtk-peer
 USE_GMAKE=	yes
 
 INFO=		hacking vmintegration
