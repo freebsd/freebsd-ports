@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hc12mem
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://cml.mfk.net.pl/hc12mem/
 
