@@ -7,6 +7,7 @@
 
 PORTNAME=	serialport
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	comms ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/72/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
