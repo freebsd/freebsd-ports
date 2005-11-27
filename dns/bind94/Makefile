@@ -28,10 +28,16 @@ COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 ISCVERSION=	9.3.1
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
+CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
 USE_OPENSSL=	yes
+
+.if defined(WITH_OPENSSL_PORT)
+CONFIGURE_ARGS+=	--with-openssl=/usr/local
+.else
+CONFIGURE_ARGS+=	--with-openssl
+.endif
 
 # ISC staff has informed me that for 9.3.x, threads are always a bad idea.
 # Leave the affirmative option for those that want to experiment.
