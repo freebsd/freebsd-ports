@@ -8,8 +8,7 @@
 PORTNAME=	xdaliclock
 PORTVERSION=	2.20
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
-		${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	http://www.jwz.org/xdaliclock/
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
