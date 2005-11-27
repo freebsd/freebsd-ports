@@ -1,0 +1,58 @@
+diff -ruN ../0.3.9_2/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.9_2/libMGPM/src/MGPMrUpdate.c	Sat Nov 26 04:48:47 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Sat Nov 26 13:43:36 2005
+@@ -78,16 +78,6 @@
+ 	int	installedPortsDbQTY				= 0;
+ 
+ 	structLocalProperty	localProperty;
+-/*
+-fprintf( stdout, "%s debug: oldPortDir-=>%s\n", id, oldPortDir );
+-while( fflush( stdout ) );
+-*/
+-	if( ( strcmp( "/sysutils/portmanager", oldPortDir ) == 0 || strcmp( "/local/sysutils/portmanager", oldPortDir ) == 0 ) && property->forced )
+-	{
+-		fprintf( stdout, "skipping portmanager, will not self update in forced mode by design\n" );
+-		while( fflush( stdout ) );
+-		return( 0 );
+-	}
+ 
+ 	property->optionsChanged	= 0;
+ 
+@@ -118,6 +108,19 @@
+ 	property->installedPortsDb		= MGdbOpen( property->installedPortsDbFileName );
+ 	property->strikesDb			= MGdbOpen( property->strikesDbFileName );
+ 
++
++	if( ( strcmp( "/sysutils/portmanager", oldPortDir ) == 0 || strcmp( "/local/sysutils/portmanager", oldPortDir ) == 0 ) && property->forced )
++	{
++		fprintf( stdout, "ignoring portmanager, will not self update in forced mode by design\n" );
++		MGPMlogAdd( property, "ignoring portmanager ", "will not self update in forced mode by design",
++								oldPortDir, "added to ignore.db", " " );
++
++		MGdbAdd( property->ignoreDb, oldPortDir, "skipping portmanager, will not self update in forced mode by design\n", NULL );
++		while( fflush( stdout ) );
++		rCleanUp( property, &localProperty );
++		return( 0 );
++	}
++
+ 	/* 
+ 	 * test for bsd.ports.mk patch
+ 	 */
+@@ -418,16 +421,7 @@
+ 				 * options changed so need to purge oldPortDir's records
+ 				 * from availablePortsDb and availableDependenciesDb
+ 				 */
+-				if( property->log )
+-				{
+-					strcpy( localProperty.command, "echo \"    options changed so returning " );
+-					strcat( localProperty.command, oldPortName );
+-					strcat( localProperty.command, " " );
+-					strcat( localProperty.command, oldPortDir );
+-					strcat( localProperty.command, " to out of date pool " );
+-					strcat( localProperty.command, " \">> /var/log/portmanager.log" );
+-					system( localProperty.command );
+-				}
++				MGPMlogAdd( property, "options changed so returning ", oldPortName, oldPortDir, " to out of date pool ", " " );
+ 				property->optionsChanged	= 1;
+ 				MGdbGoTop( property->availablePortsDb );
+ 				while( MGdbSeek( property->availablePortsDb,
