@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 
@@ -70,7 +70,6 @@ pre-everything::
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|/bin/bash|${LOCALBASE}/bin/bash|; \
-		 /^#include/s|\<id3.h\>|\"id3.h\"|; \
 		 s|-lncursesw|-lncurses|g"
 
 .include <bsd.port.post.mk>
