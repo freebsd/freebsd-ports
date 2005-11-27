@@ -8,8 +8,7 @@
 PORTNAME=	tct
 PORTVERSION=	1.14
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.fish.com/tct/ \
-		http://www.porcupine.org/forensics/
+MASTER_SITES=	http://www.porcupine.org/forensics/
 
 MAINTAINER=	francisco@gomezmarin.com
 COMMENT=	Analyzer for forensic data

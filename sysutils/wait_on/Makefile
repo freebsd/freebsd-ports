@@ -8,9 +8,7 @@
 PORTNAME=	wait_on
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/wait_on/ \
-		ftp://ftp.megamirror.com/pub/ugh/unix/wait_on/ \
-		http://ftp.megamirror.com/pub/ugh/unix/wait_on/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/wait_on/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	Enable shell scripts to monitor directories for new files
