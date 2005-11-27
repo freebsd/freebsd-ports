@@ -8,7 +8,7 @@
 PORTNAME=	etlfonts-noncjk
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/fonts/
+MASTER_SITES=	# disappeared
 DISTNAME=	non-cjk
 EXTRACT_SUFX=	.tar
 

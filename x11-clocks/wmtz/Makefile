@@ -9,8 +9,7 @@ PORTNAME=	wmtz
 PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker afterstep
-MASTER_SITES=	http://www.geocities.com/jl1n/wmtz/ \
-		http://soupnazi.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.geocities.com/jl1n/wmtz/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the time in different time zones
