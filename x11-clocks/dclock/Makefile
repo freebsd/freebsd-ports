@@ -8,7 +8,7 @@
 PORTNAME=	dclock
 PORTVERSION=	pl6
 CATEGORIES=	x11-clocks
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
+MASTER_SITES=	# disappeared
 DISTNAME=	Dclock
 
 PATCH_SITES=	${MASTER_SITE_XCONTRIB}
@@ -18,6 +18,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 7-segment digital clock with optional military time and alarm
+
+DEPRECATED=	mastersites disappeared
+EXPIRATION_DATE=	2006-01-26
 
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes
