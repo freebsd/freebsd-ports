@@ -1,0 +1,9 @@
+The subname() function exported by this module allows one to assign new
+names to Perl subroutine.  This is different from glob-assignment, since
+the name is only used for informational purposes (caller, Carp, etc.).
+
+Note that for anonymous closures (subs that reference lexicals declared
+outside the sub itself) one can name each instance of the closure
+differently, which can be very useful for debugging.
+
+WWW: http://search.cpan.org/dist/Sub-Name/
