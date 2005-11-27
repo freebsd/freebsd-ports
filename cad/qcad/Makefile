@@ -48,7 +48,7 @@ do-build:
 
 pre-install:
 	@${ECHO_CMD} bin/qcad > ${PLIST}
-.for dir in data fonts library patterns qm scripts
+.for dir in data fonts patterns qm scripts
 	@${FIND} ${WRKSRC}/qcad/${dir} -type f | \
 		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
 .endfor
@@ -58,7 +58,7 @@ pre-install:
 	@${FIND} -d ${WRKSRC}/qcad/doc -type d | \
 	${SED} -e "s:^${WRKSRC}/qcad/doc:%%PORTDOCS%%@dirrm share/doc/qcad:g" \
 		>> ${PLIST}
-.for dir in scripts qm patterns library fonts data
+.for dir in scripts qm patterns fonts data
 	@${FIND} -d ${WRKSRC}/qcad/${dir} -type d | \
 	${SED} -e "s:^${WRKSRC}/qcad/${dir}:@dirrm share/qcad/${dir}:g" >> \
 		${PLIST}
@@ -68,7 +68,7 @@ pre-install:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
 	@${MKDIR} ${DATADIR}
-.for dir in data fonts library patterns qm scripts
+.for dir in data fonts patterns qm scripts
 	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
