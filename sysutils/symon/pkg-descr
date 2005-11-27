@@ -11,4 +11,4 @@ can write the incoming symon streams into rrd files. Clients interested in
 monitoring machine state can also log into symux and receive data as ascii as
 it arrives. 
 
-WWW: http://www.xs4all.nl/~wpd/symon
+WWW: http://www.xs4all.nl/~wpd/symon/
