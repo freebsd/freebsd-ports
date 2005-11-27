@@ -9,12 +9,15 @@ PORTNAME=	praytime
 PORTVERSION=	0.21
 PORTREVISION=	5
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	# disappeared
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	${PORTNAME}-desklet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display muslim prayer times on your desktop
+
+DEPRECATED=	no longer available from mastersite
+EXPIRATION_DATE=	2006-01-26
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
