@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file-find utility for Gnome loosely modeled after the Windoze utility
 
+DEPRECATED=	unfetchable -- needs version update
+EXPIRATION_DATE=	2006-01-27
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
