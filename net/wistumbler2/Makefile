@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nopcode.org/prj/wistumbler2/
 DISTNAME=	wistumbler${PORTVERSION}-pre7
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Stumbler for WaveLAN/IEEE Wireless
 
 MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=1

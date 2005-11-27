@@ -10,7 +10,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
 LIB_DEPENDS=	ming:${PORTSDIR}/graphics/ming

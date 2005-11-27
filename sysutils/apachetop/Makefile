@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://spork.qfe3.net/apachetop/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache RealTime log stats
 
 USE_AUTOTOOLS=	autoconf:259:env

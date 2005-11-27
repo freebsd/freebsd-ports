@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.physics.purdue.edu/~teepanis/qtpcr/
 DISTNAME=	qtpcr-${PORTVERSION}
 
-MAINTAINER=	esn@x123.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software that controls the ICOM PCR-1000 Receiver
 
 DEPRECATED=	"mastersite disappeared, no longer maintained by author"
