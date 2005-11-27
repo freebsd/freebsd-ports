@@ -3853,6 +3853,7 @@ icoconvert	ports/graphics/icoconvert
 icod		ports/graphics/icod
 icon		ports/lang/icon
 icon-bluecurve-theme	ports/x11-themes/icon-bluecurve-theme
+icon-naming-utils	ports/x11-themes/icon-naming-utils
 icon-slicer	ports/graphics/icon-slicer
 icontact	ports/graphics/icontact
 iconv		ports/converters/iconv
