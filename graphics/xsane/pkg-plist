@@ -4,6 +4,7 @@ share/locale/da/LC_MESSAGES/xsane.mo
 share/locale/de/LC_MESSAGES/xsane.mo
 share/locale/es/LC_MESSAGES/xsane.mo
 share/locale/fr/LC_MESSAGES/xsane.mo
+share/locale/hu/LC_MESSAGES/xsane.mo
 share/locale/it/LC_MESSAGES/xsane.mo
 share/locale/ja/LC_MESSAGES/xsane.mo
 share/locale/nl/LC_MESSAGES/xsane.mo
@@ -72,7 +73,7 @@ share/sane/xsane/doc/xsane-fax.jpg
 share/sane/xsane/doc/xsane-gamma.jpg
 share/sane/xsane/doc/xsane-gimp.jpg
 share/sane/xsane/doc/xsane-histogram.jpg
-share/sane/xsane/doc/xsane-logo2.jpg
+share/sane/xsane/doc/xsane-logo.jpg
 share/sane/xsane/doc/xsane-mail-project.jpg
 share/sane/xsane/doc/xsane-mail.jpg
 share/sane/xsane/doc/xsane-medium.jpg
