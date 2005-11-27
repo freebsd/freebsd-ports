@@ -8,7 +8,7 @@
 PORTNAME=	wmcp
 PORTVERSION=	1.2.8
 CATEGORIES=	x11-wm windowmaker
-MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable pager for Window Maker
