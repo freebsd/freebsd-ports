@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sockets
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.alhem.net/Sockets/
 PKGNAMESUFFIX?=	-devel
