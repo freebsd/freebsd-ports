@@ -1,0 +1,17 @@
+--- configure.orig	Sun Nov 27 10:51:09 2005
++++ configure	Sun Nov 27 10:51:35 2005
+@@ -5940,12 +5940,10 @@
+ 
+ 
+ 
+-list=wchar_t
+-
+ if test $ac_cv_sizeof_wchar_t -eq 4; then
+-  list="$list ucs4 utf32 ucs-4 utf-32 UCS-4"
++  list="ucs4 utf32 ucs-4 utf-32 UCS-4"
+ else
+-  list="$list ucs2 utf16 ucs-2 utf-16 UCS-2"
++  list="ucs2 utf16 ucs-2 utf-16 UCS-2"
+ fi
+ 
+ 
