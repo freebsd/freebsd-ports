@@ -28,12 +28,14 @@ PLIST=		${WRKDIR}/pkg-plist
 .include <bsd.port.pre.mk>
 
 pre-install:
+	@${ECHO_CMD} '@exec mkdir -p %D/share/qcad/libraries' > ${PLIST}
 	@${FIND} ${WRKSRC} -type f | \
-		${SED} -e "s:^${WRKSRC}/:share/qcad/library/:g" > ${PLIST}
-	@${FIND} -d ${WRKSRC}/* -type d | \
+		${SED} -e "s:^${WRKSRC}/:share/qcad/library/:g" >> ${PLIST}
+	@${FIND} -d ${WRKSRC} -type d | \
 		${SED} -e "s:^${WRKSRC}:@dirrm share/qcad/library:g" >> ${PLIST}
 
 do-install:
+	@${MKDIR} ${DATADIR}
 	${TAR} -C ${WRKSRC} --exclude CVS -cf - . | \
 		${TAR} -C ${DATADIR} --unlink -xf -
 
