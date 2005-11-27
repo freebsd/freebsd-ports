@@ -16,5 +16,7 @@ Supported target connections:
   - Marek Peca's PODEX and my own improved version
 - LRAE (Load RAM And Execute) serial bootloader
   see Freescale's Application Note AN2546
+- Freescale's HCS12 MCU serial monitor                                         
+  see Freescale's Application Note AN2548                                      
 
 WWW: http://cml.mfk.net.pl/hc12mem
