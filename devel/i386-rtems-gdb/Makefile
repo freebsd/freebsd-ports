@@ -9,9 +9,7 @@ PORTNAME=	gdb
 PORTVERSION=	5.2
 PORTREVISION=	11
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://www.rtems.com/ftp/pub/rtems/snapshots/c_tools/gdb-5.2-1/source/
-MASTER_SITE_SUBDIR=	gdb
+MASTER_SITES=	http://www.rtems.com/ftp/pub/rtems/snapshots/c_tools/gdb-5.2-1/source/
 
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	FSF gdb-5.2 base-port for RTEMS development
