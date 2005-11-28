@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffconvert
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel textproc
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 
