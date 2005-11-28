@@ -40,8 +40,8 @@ PLIST_SUB+=	OFX="@comment "
 .endif
 
 # no configure option to disable ktoblzcheck support (yet)
-.if defined(WITH_KTOBLZCHECK) || exists(${LOCALBASE}/lib/libktoblzcheck.so.1)
-LIB_DEPENDS+=	ktoblzcheck.1:${PORTSDIR}/finance/ktoblzcheck
+.if defined(WITH_KTOBLZCHECK) || exists(${LOCALBASE}/lib/libktoblzcheck.so.4)
+LIB_DEPENDS+=	ktoblzcheck.4:${PORTSDIR}/finance/ktoblzcheck
 .endif
 
 .include <bsd.port.post.mk>
