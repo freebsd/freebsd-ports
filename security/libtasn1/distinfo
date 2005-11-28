@@ -1,4 +1,3 @@
-MD5 (libtasn1-0.2.13.tar.gz) = d124b11908cfb88883fe71472c25d53a
-SIZE (libtasn1-0.2.13.tar.gz) = 876331
-MD5 (libtasn1-0.2.13.tar.gz.sig) = f574337b4b875ca055ce8affc21bc8b3
-SIZE (libtasn1-0.2.13.tar.gz.sig) = 184
+MD5 (libtasn1-0.2.17.tar.gz) = 9101e7a033f1431d413fff83bacfbec0
+SHA256 (libtasn1-0.2.17.tar.gz) = 0f5f24b1061425fa3a9ae915e99930a3a1b43c0daa54228bf5d32f3cd52ff519
+SIZE (libtasn1-0.2.17.tar.gz) = 882868
