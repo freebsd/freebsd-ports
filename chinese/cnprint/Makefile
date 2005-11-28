@@ -9,9 +9,6 @@ PORTNAME=		cnprint
 PORTVERSION=		3.30b
 CATEGORIES=		chinese print
 MASTER_SITES=		ftp://freebsd.sinica.edu.tw/pub/statue/cnprint/ \
-			http://nba184.med.uth.tmc.edu:3006/~cai/software/cnp/ \
-			http://nba184.med.uth.tmc.edu:3006/~cai/software/cnp/metrics/ \
-			http://nba184.med.uth.tmc.edu:3006/~cai/software/cnp/fonts/ \
 			ftp://ftp.csc.cuhk.edu.hk/pub/chinese/ifcss/software/fonts/misc/ \
 			http://www.ibiblio.org/pub/packages/ccic/software/fonts/big5/hbf/
 DISTFILES=		cnprint330b.c \
