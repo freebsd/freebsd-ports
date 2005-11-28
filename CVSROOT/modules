@@ -1354,6 +1354,7 @@ cryptlib	ports/security/cryptlib
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
+crystalentitylayer	ports/graphics/crystalentitylayer
 crystalspace	ports/graphics/crystalspace
 cs		ports/misc/cs
 cs-aspell	ports/textproc/cs-aspell
