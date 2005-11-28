@@ -13,6 +13,8 @@
 -34.05,		151.15,		"edwin"				# Cronulla, Australia
 -33.55,		151.1,		"bde"				# Sydney, Australia.
 -37.7,		144.9,		"jb,danny,thepish,benno"	# Melbourne, Vic Australia
+ 35.69,		139.92,		"metal"				# Ichikawa, Chiba, Japan
+ 35.783,  	139.900,	"amurai"			# Matsudo, Chiba, Japan
  35.63783,	139.69633,	"kjc"				# Tokyo, Japan
  35.593,	139.688,	"bland"				# Tokyo, Japan
  35.55,		139.67,		"suz,sumikawa,shin"		# Kawasaki, Kanagawa, Japan
@@ -35,8 +37,10 @@
  25.017,	121.450,	"avatar,clive,foxfair,keith,kevlo,vanilla,leeym,clsung"	# Taipei, Taiwan
  24.80,		120.97,		"ijliao"			# HsinChu, Taiwan
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
+ 39.900  	116.413,	"delphij"			# Beijing, Beijing, China
  55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
  12.58,		77.35,		"jkoshy"			# Bangalore, India
+ 43.219564,	76.851597,	"bp"				# Almaty, Kazakhstan
  11.9667,	48.05,		"gj"				# ???, Germany
  51.33,		46.00,		"novel"				# Saratov, Russia
  48.805,	44.586,		"den"				# Volgograd, Russia
@@ -53,7 +57,7 @@
  65.58,		22.17,		"johan"				# Lulea, Sweden
  38.15,		21.45,		"keramida"			# Patras, Greece
  52.14,		21.03,		"abial"				# Warsaw, Poland
--34.0179,	18.4705		"nbm"				# Cape Town, South Africa
+-34.0179,	18.4705,	"nbm"				# Cape Town, South Africa
  59.33,		18.05,		"girgen"			# Stockholm, Sweden
 -34,		18,		"sheldonh"			# Cape Town, South Africa
  48.2114,	16.3105,	"stefanf"			# Vienna, Austria
@@ -80,7 +84,7 @@
  59.92,		10.75,		"eivind,des,tegge,anders"	# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
- 56.09105,	10.12423	"erwin"				# Aarhus, Denmark
+ 56.09105,	10.12423,	"erwin"				# Aarhus, Denmark
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
  53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  53.33,		9.59,		"stb"				# Hamburg, Germany
@@ -88,6 +92,7 @@
  51.20,		9.20,		"dinoex"			# Habichtswald, Germany
  45.27,		9.17,		"olgeni"			# Milano, Italy
  45.488328,	9.164711,	"ale"		align=left	# Milano, Italy
+ 52.05,		8.9,		"lkoeller"			# Lemgo, Germany
  50.1025,	8.6841,		"tomsoft"			# Frankfurt, Hessen, Germany
  47.367,	8.550,		"ehaupt"			# Zurich, Switzerland
  47.1666,	8.5166,		"dhartmei"			# Zug, Switzerland
@@ -119,7 +124,7 @@
  50.9349,	4.4548,		"philip"	align=left	# Kampenhout, Belgium
  50.383,	4.36,		"jylefort"	align=left	# Charleroi, Belgium
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
- 42.51,		2.41,		"carvay"			# Araba, Vitoria-Gasteiz, Spain
+ 42.8474,	2.6716,		"carvay"			# Araba, Vitoria-Gasteiz, Spain
  41.6666,	2.3333,		"jesusr"			# Barcelona, Spain
  48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
  48.847135,	2.28514,	"mat"				# Paris, France
@@ -170,6 +175,7 @@
  35.791,	-78.781,	"marcus"			# Cary, NC, USA
  35.8072,	-78.7994,	"gallatin"			# Cary, NC, USA
  35.73,		-78.91,		"bsd"				# Apex, NC, USA
+ 39.629,  	-79.956,	"dannyboy"			# Morgantown, WV, USA
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
  35.74,		-81.7,		"ahze"				# Morganton, NC, USA
@@ -208,7 +214,7 @@
  34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
  33.979,	-118.439,	"                           dougb,"# Marina del Rey, CA USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
- 38.54,		-121.76,	"obrien,mharo"			# Davis, CA, USA
+ 38.54,		-121.76,	"obrien,mharo,reg"		# Davis, CA, USA
  37.40,		-121.94,	"alfred,wsanchez"		# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
  37.4014,	-121.9544,	"cjc"				# Santa Clara, CA, USA
