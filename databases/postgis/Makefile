@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.0.4
-PORTREVISION=	2
+DISTVERSION=	1.0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/download/
 
@@ -73,6 +72,8 @@ pre-configure:
 	${MV} ${WRKDIR}/pgsql/postgresql* ${PGSQL_SRC} \
 
 post-install:
+	@([ -d ${PREFIX}/lib/postgresql ] || ${MKDIR} ${PREFIX}/lib/postgresql )
+	@ ${LN} ${PREFIX}/lib/liblwgeom.so.1 ${PREFIX}/lib/postgresql
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
