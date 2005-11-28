@@ -7,7 +7,7 @@
 PORTNAME=	ming
 PORTVERSION=	0.2a.${RUBY_MING_VERSION}
 CATEGORIES+=	graphics ruby
-MASTER_SITES=	http://madscientist.jp/~ikegami/sources/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/1765/
 PKGNAMEPREFIX?=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${RUBY_MING_VERSION}
 DIST_SUBDIR=	ruby

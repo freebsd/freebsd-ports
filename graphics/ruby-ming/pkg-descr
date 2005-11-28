@@ -5,6 +5,6 @@ sounds. To use Japanese fonts with JaMing, the letters must be
 followed the UTF-8 formats. Uconv, which is an UTF-8 extension library
 for Ruby, can be used to convert other Kanji encodings into Unicode.
 
-WWW: http://madscientist.jp/~ikegami/ruby/ming/
+WWW: http://mingruby.rubyforge.org/
 
 Author: Daisuke Ikegami <ikegami@madscientist.jp>
