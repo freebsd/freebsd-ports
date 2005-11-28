@@ -7,7 +7,7 @@
 # Add the following line to /etc/rc.conf to enable instiki:
 # instiki_enable (bool):      Set to "NO" by default
 #                             Set it to "YES" to enable instiki
-# instiki_flags (str):        Set to "--port %%INSTIKIPORT%% --storage %%PREFIX%%/%%INSTIKIDIR%%/storage" by default.
+# instiki_flags (str):        Set to "--port %%INSTIKIPORT%% --storage %%PREFIX%%/%%INSTIKIDIR%%/storage --daemon" by default.
 #                             Extra flags passed to start command
 #
 . %%RC_SUBR%%
@@ -16,10 +16,10 @@ name="instiki"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/%%INSTIKIDIR%%/instiki"
-command_interpreter="%%RUBY_WITHOUT_SUFFIX%%"
+command_interpreter="%%RUBY_WITH_SUFFIX%%"
 
 [ -z "$instiki_enable" ]	&& instiki_enable="NO"
-[ -z "$instiki_flags" ]	&& instiki_flags="--port %%INSTIKIPORT%% --storage %%PREFIX%%/%%INSTIKIDIR%%/storage"
+[ -z "$instiki_flags" ]	&& instiki_flags="--port %%INSTIKIPORT%% --storage %%PREFIX%%/%%INSTIKIDIR%%/storage --daemon"
 
 load_rc_config $name
 
