@@ -10,4 +10,4 @@ for each regex object.  Currently supported character encodings are
 ASCII, UTF-8, EUC-JP and Shift_JIS.
 
 Author:	K.Kosako <kosako@sofnec.co.jp>
-WWW:	http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/oniguruma/
+WWW:	http://www.geocities.jp/kosako3/oniguruma/
