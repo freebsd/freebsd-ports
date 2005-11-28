@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.17
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
@@ -17,10 +17,10 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/libtasn1
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
 INSTALLS_SHLIB=	yes
+USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -49,6 +49,10 @@ MAN3=		\
 		asn1_write_value.3 \
 		libtasn1_perror.3 \
 		libtasn1_strerror.3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
+		${WRKSRC}/lib/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
