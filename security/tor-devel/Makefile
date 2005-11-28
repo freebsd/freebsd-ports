@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.8
+PORTVERSION=	0.1.1.9
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 PKGNAMESUFFIX=	-devel
