@@ -7,6 +7,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 
@@ -22,6 +23,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 PORTDOCS=	*
+MAN1=		exiv2.1
 
 .if defined(PORTDOCS)
 ALLTARGET=	all doc
