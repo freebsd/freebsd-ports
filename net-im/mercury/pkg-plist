@@ -4,7 +4,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/lib/commons-jxpath-1.1.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
-%%INSTDIR%%/lib/jazzy_spellcheck.jar
 %%INSTDIR%%/lib/jdom1_0.jar
 %%INSTDIR%%/lib/sbbi-upnplib-1.0.2.jar
 %%INSTDIR%%/lib/xmlpull.jar
@@ -228,7 +227,6 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Skins
 @dirrm %%INSTDIR%%/resources/AppData/Plugins
 @dirrm %%INSTDIR%%/resources/AppData/LoginImages
-@dirrm %%INSTDIR%%/resources/AppData/Dictionaries
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
 @dirrm %%INSTDIR%%/resources/AppData/Backgrounds
 @dirrm %%INSTDIR%%/resources/AppData
