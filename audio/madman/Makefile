@@ -21,8 +21,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
-BROKEN=		Does not compile
-
 USE_QT_VER=	3
 USE_GNOME=	glib12
 
