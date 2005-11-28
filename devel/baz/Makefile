@@ -39,7 +39,7 @@ CFLAGS+=	-I ${LOCALBASE}/include ${LDFLAGS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		"does not compile (missing va_copy)"
+IGNORE=		does not compile (missing va_copy)
 .endif
 
 pre-patch:
