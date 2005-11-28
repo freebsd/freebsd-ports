@@ -14,4 +14,4 @@ the blocks (typically 8x8, 8x16, or 16x16 pixel areas) which contain
 the pixels to be interpolated are minimally disturbed, and other
 blocks remain pixel-by-pixel identical to the original image.
 
-WWW: http://jpegpixi.sourceforge.net/
+WWW: http://www.zero-based.org/software/jpegpixi/

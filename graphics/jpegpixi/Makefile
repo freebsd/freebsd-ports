@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpegpixi
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 
