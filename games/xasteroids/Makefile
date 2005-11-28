@@ -8,9 +8,7 @@
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.isst.fhg.de/pub/windows/X/notinstalled_pack/ \
-		ftp://ftp.opengroup.org/pub/ftp.x.org/R5contrib/ \
-		ftp://ftp.x.org/pub/R5contrib/
+MASTER_SITES=	ftp://ftp.opengroup.org/pub/ftp.x.org/R5contrib/
 DISTFILES=	xasteroids.sh.Z
 
 MAINTAINER=	ports@FreeBSD.org
