@@ -9,9 +9,7 @@
 PORTNAME=	pop3gwd
 PORTVERSION=	1.2
 CATEGORIES=	mail net
-MASTER_SITES=	http://www.go.dlr.de/linux/src/			\
-		ftp://ftp.eos.hokudai.ac.jp/pub/mail/pop/	\
-		ftp://ftp.win.ne.jp/pub/network/mail/pop/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/linux/src/
 
 MAINTAINER=	jonny@jonny.eng.br
 COMMENT=	App-level proxy for Mail retrieval behind Firewalls
