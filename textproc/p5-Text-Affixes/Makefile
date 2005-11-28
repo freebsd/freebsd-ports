@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Affixes
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -22,7 +22,7 @@ MAN3=		Text::Affixes.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
