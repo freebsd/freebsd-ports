@@ -8,9 +8,9 @@
 PORTNAME=	puff
 PORTVERSION=	0.42
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.developerpit.com/puff/
+MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Simple and efficient text editor
 
 WRKSRC=		${WRKDIR}/puff
