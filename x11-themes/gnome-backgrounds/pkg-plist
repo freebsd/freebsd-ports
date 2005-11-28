@@ -31,13 +31,14 @@ share/locale/fr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/gl/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/gu/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/hi/LC_MESSAGES/gnome-backgrounds.mo
-share/locale/hy/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/hu/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/hy/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/id/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/it/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ja/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ko/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ku/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ky/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/lt/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ne/LC_MESSAGES/gnome-backgrounds.mo
@@ -66,6 +67,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
 @unexec rmdir %D/share/locale/te 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky 2> /dev/null || true
 @unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @unexec rmdir %D/share/locale/hy/LC_MESSAGES 2> /dev/null || true
