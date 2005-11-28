@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
 		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		${SITE_PERL}/Test/SubCalls.pm:${PORTSDIR}/devel/p5-Test-SubCalls
 RUN_DEPENDS=	${BUILD_DEPENDS}
