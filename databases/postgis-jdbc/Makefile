@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis-jdbc
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	databases java
 MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgis-${PORTVERSION}
