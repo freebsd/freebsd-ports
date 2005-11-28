@@ -18,6 +18,9 @@ PLIST_FILES=	bin/xscoop
 PORTDOCS=	xscoop.pdf
 NO_BUILD=	yes
 
+# distfile contains i386 binary
+ONLY_FOR_ARCHS=	i386
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xscoop ${PREFIX}/bin/xscoop
 	${INSTALL_MAN} ${WRKSRC}/xscoop.7 ${MAN7PREFIX}/man/man7/xscoop.7
