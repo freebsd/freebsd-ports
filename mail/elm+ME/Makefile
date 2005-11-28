@@ -10,17 +10,14 @@ PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
 CATEGORIES=	mail
 DISTNAME=	elm-${ELM_VERSION}ME+${ELM_REVISION}
 
-# here are the main repositories.
-MASTER_SITES=	http://www.ozone.fmi.fi/KEH/ \
-		ftp://ftp.ozone.fmi.fi/KEH/
+# here is the main repository.
+MASTER_SITES=	http://www.ozone.fmi.fi/KEH/
 		
 # the following repositories conform to the main repository.
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 		ftp://ftp.tu-darmstadt.de/pub/networking/mail/elm+ME/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/elm-me-plus/ \
-		ftp://ftp.ntua.gr/pub/net/mail/elm-me/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/network/mail/elm-2.4ME+/ \
-		ftp://ftp.win.ne.jp/pub/network/mail/elm-2.4ME+/
+		ftp://ftp.ntua.gr/pub/net/mail/elm-me/src/elm-${ELM_VERSION}ME+/
 
 # the following repositories maybe conform to the main repository.
 # MASTER_SITES+=	ftp://ftp.unina.it/pub/Unix/pkgs/network/mail/elm-me+/ \
