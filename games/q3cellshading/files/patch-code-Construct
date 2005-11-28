@@ -49,7 +49,7 @@
  else
  {
 -  $BASE_CFLAGS = $COMMON_CFLAGS . '-DNDEBUG -O6 -mcpu=pentiumpro -march=pentium -fomit-frame-pointer -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2 -fno-strict-aliasing -fstrength-reduce ';
-+  $BASE_CFLAGS = $COMMON_CFLAGS . '-DNDEBUG -O6 -march=pentiumpro -march=pentium -fomit-frame-pointer -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce ';
++  $BASE_CFLAGS = $COMMON_CFLAGS . '-DNDEBUG -O6 -fomit-frame-pointer -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce ';
  	$BSPC_BASE_CFLAGS = $BASE_CFLAGS . '-DLINUX -DBSPC -Dstricmp=strcasecmp ';
  }
  
