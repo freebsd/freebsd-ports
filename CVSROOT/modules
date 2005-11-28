@@ -2660,6 +2660,7 @@ gail		ports/accessibility/gail
 gaim		ports/net-im/gaim
 gaim-bangexec	ports/net-im/gaim-bangexec
 gaim-encryption	ports/security/gaim-encryption
+gaim-extprefs	ports/net-im/gaim-extprefs
 gaim-festival	ports/audio/gaim-festival
 gaim-guifications	ports/net-im/gaim-guifications
 gaim-ignorance	ports/net-im/gaim-ignorance
