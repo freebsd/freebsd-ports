@@ -15,19 +15,11 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/procmail/ \
-		ftp://ftp.fdt.net/pub/unix/packages/procmail/ \
-		ftp://ftp.tamu.edu/pub/mirrors/procmail/ \
 		ftp://ftp.kfki.hu/pub/packages/mail/procmail/ \
 		ftp://giswitch.sggw.waw.pl/pub/unix/procmail/ \
-		ftp://ftp.solarisguide.com/pub/procmail/ \
-		ftp://ftp.win.ne.jp/pub/network/mail/procmail/ \
 		http://www.ring.gr.jp/archives/net/mail/procmail/ \
 		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
-		ftp://ftp.ayamura.org/pub/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ \
-		ftp://ftp.gigabell.net/pub/procmail/ \
-		ftp://ftp.linja.net/pub/mirrors/procmail/ \
-		ftp://ftp.stealth.net/pub/mirrors/ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.procmail.org/pub/procmail/
 
 MAINTAINER=	ache@FreeBSD.org
