@@ -1,2 +1,4 @@
 Ftp client based on the OpenBSD ftp client code, implements the
 FTP AUTH TLS IETF draft.
+
+WWW: http://www.ford-hutchinson.com/~fh-1-pfh/ftps-ext.html
