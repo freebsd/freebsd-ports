@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051123:
+  AFFECTS: users of www/lighttpd
+  AUTHOR: delphij@FreeBSD.org
+
+  A change has been committed against www/lighttpd, which flips the
+  meaning of the IPV6 option to match other ports, along with the
+  1.4.7 upgrade.  If you have previously saved configuration that
+  checks the IPV6 option (meaning to disable IPv6), then you will
+  have to rerun the configuration with ``make config''.
+
+  The default setting for IPV6 build is kept, which was enabled by
+  default.
+
 20051113:
   AFFECTS: users of x11/xterm, x11/xorg-clients, x11/XFree86-4-clients
   AUTHOR: x11@FreeBSD.org
