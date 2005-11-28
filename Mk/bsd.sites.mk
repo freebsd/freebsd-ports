@@ -331,7 +331,6 @@ MASTER_SITE_GENTOO+=	\
 	http://gentoo.seren.com/gentoo/%SUBDIR%/ \
 	http://gentoo.chem.wisc.edu/gentoo/%SUBDIR%/ \
 	http://adelie.polymtl.ca/%SUBDIR%/ \
-	http://cudlug.cudenver.edu/gentoo/%SUBDIR%/ \
 	http://mirrors.tds.net/gentoo/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/www.ibiblio.org/gentoo/%SUBDIR%/ \
 	http://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
@@ -361,7 +360,6 @@ MASTER_SITE_GENTOO+=	\
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
 	ftp://gentoo.mirrors.pair.com/%SUBDIR%/ \
-	ftp://cudlug.cudenver.edu/pub/mirrors/distributions/gentoo/%SUBDIR%/ \
 	ftp://mirrors.tds.net/gentoo/%SUBDIR%/ \
 	ftp://ftp.gentoo.skynet.be/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/%SUBDIR%/ \
@@ -1045,7 +1043,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.rz.uni-wuerzburg.de/pub/linux/MIRROR.suse/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/.disk1/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.hu-berlin.de/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.isst.fhg.de/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.rz.uni-kiel.de/pub2/linux/suse/%SUBDIR%/ \
 	http://mirrors.sth.sze.hu/linux/suse/%SUBDIR%/ \
@@ -1073,8 +1070,6 @@ MASTER_SITE_SUSE+= 	\
 	http://download.mirror.ac.uk/sites/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.isr.ist.utl.pt/pub/suse/%SUBDIR%/ \
-	http://ftp.isr.ist.utl.pt/pub/suse/%SUBDIR%/ \
 	ftp://ftp.softnet.tuc.gr/pub/linux/suse/suse/%SUBDIR%/ \
 	http://ftp.softnet.tuc.gr/pub/linux/suse/suse/%SUBDIR%/ \
 	ftp://ftp.duth.gr/pub/suse/suse/%SUBDIR%/ \
