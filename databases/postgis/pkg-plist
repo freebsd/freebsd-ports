@@ -2,6 +2,7 @@ bin/pgsql2shp
 bin/shp2pgsql
 lib/liblwgeom.so
 lib/liblwgeom.so.1
+lib/postgresql/liblwgeom.so.1
 %%DATADIR%%/README.postgis
 %%DATADIR%%/lwpostgis.sql
 %%DATADIR%%/spatial_ref_sys.sql
@@ -11,6 +12,7 @@ lib/liblwgeom.so.1
 %%DATADIR%%/utils/test_joinestimation.pl
 %%DATADIR%%/utils/README
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@unexec rmdir %%LIBDIR%%/postgresql 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%%/utils 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir %D/lib 2>/dev/null || true
