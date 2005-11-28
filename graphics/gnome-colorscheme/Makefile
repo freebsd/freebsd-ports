@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	colorscheme
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.2/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:S/.1$//}/
 PKGNAMEPREFIX=	gnome-
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	A color scheme builder for the GNOME desktop
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gnomevfsmm-2.6:${PORTSDIR}/devel/gnome-vfsmm \
+		boost_thread.3:${PORTSDIR}/devel/boost \
 		cppunit-1.10:${PORTSDIR}/devel/cppunit
 
 USE_BZIP2=	yes
