@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.8.7
-PORTREVISION=	3
+PORTVERSION=	2.8.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.8,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.8/ \
