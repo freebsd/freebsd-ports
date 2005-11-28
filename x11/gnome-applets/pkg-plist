@@ -117,6 +117,18 @@ share/gnome/help/accessx-status/fr/figures/accessx_sticky-keys.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-meta-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-shift-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-windows-key.png
+share/gnome/help/accessx-status/it/accessx-status.xml
+share/gnome/help/accessx-status/it/figures/accessx-status-applet.png
+share/gnome/help/accessx-status/it/figures/accessx-status-disabled.png
+share/gnome/help/accessx-status/it/figures/accessx_bounce-keys.png
+share/gnome/help/accessx-status/it/figures/accessx_mouse-keys.png
+share/gnome/help/accessx-status/it/figures/accessx_slow-keys.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-altGr-key.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-ctrl-key.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-keys.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-meta-key.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-shift-key.png
+share/gnome/help/accessx-status/it/figures/accessx_sticky-windows-key.png
 share/gnome/help/accessx-status/uk/accessx-status.xml
 share/gnome/help/accessx-status/uk/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/uk/figures/accessx-status-disabled.png
@@ -380,6 +392,7 @@ share/gnome/help/trashapplet/uk/trashapplet.xml
 share/gnome/omf/accessx-status/accessx-status-C.omf
 share/gnome/omf/accessx-status/accessx-status-es.omf
 share/gnome/omf/accessx-status/accessx-status-fr.omf
+share/gnome/omf/accessx-status/accessx-status-it.omf
 share/gnome/omf/accessx-status/accessx-status-uk.omf
 %%BATTERY%%share/gnome/omf/battstat/battstat-C.omf
 %%BATTERY%%share/gnome/omf/battstat/battstat-es.omf
@@ -783,6 +796,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 %%BATTERY%%@dirrm share/gnome/help/battstat
 @dirrm share/gnome/help/accessx-status/uk/figures
 @dirrm share/gnome/help/accessx-status/uk
+@dirrm share/gnome/help/accessx-status/it/figures
+@dirrm share/gnome/help/accessx-status/it
 @dirrm share/gnome/help/accessx-status/fr/figures
 @dirrm share/gnome/help/accessx-status/fr
 @dirrm share/gnome/help/accessx-status/es/figures
