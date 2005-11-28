@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www
-MASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_3/frs1820?dl=1/:source1
+MASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_4/frs2532?dl=1/:source1
 DISTFILES=	${JOOMLA_SRC}:source1
 
 MAINTAINER=	include@npf.pt.freebsd.org
@@ -25,7 +25,7 @@ PLIST_SUB+=	JOOMLA_DIR=${JOOMLA_DIR}
 JOOMLA_DIR?=	www/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-JOOMLA_SRC=	Joomla_1.0.3-Stable-Full_Package.tar.gz
+JOOMLA_SRC=	Joomla_1.0.4-Stable-Full_Package.tar.gz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
