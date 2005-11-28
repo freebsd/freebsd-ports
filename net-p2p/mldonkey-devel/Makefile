@@ -83,10 +83,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ${ARCH}"
-.endif
-
 # Fix build on 4.x
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
