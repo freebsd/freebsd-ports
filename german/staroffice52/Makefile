@@ -11,7 +11,6 @@ PORTREVISION=	3
 CATEGORIES=	german editors linux
 MASTER_SITES=	ftp://ftp.hu-berlin.de/pub/linux/staroffice/german/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/staroffice/deutsch/ \
-		ftp://ftp.isst.fhg.de/ISST/Sun/Staroffice/5.2/ \
 		ftp://ftp.hu-berlin.de/pub/mirrors/sunsolve.sun.com/pub/patches/ \
 		ftp://ftp.sunsite.auc.dk/disk2/sun-patches/ \
 		ftp://sunsite.uio.no/pub/sun/sun-patches/ \
