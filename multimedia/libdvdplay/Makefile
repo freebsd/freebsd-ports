@@ -8,7 +8,7 @@
 PORTNAME=	libdvdplay
 PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.videolan.org/pub/%SUBDIR%/
+MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
