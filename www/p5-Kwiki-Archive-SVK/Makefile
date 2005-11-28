@@ -26,7 +26,7 @@ MAN3=		Kwiki::Archive::SVK.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=	requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 post-install:
