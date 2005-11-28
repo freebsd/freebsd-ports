@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pptpd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable pptpd:
+#
+# pptpd_enable="YES"
+#
+
+pptpd_enable=${pptpd_enable-"NO"}
+pptpd_flags=${pptpd_flags-""}
+
+. %%RC_SUBR%%
+
+name=pptpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+sig_stop=-KILL
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,6 +1,6 @@
-etc/pptpd.conf.sample
-etc/rc.d/pptpd.sh.sample
-lib/pptpd/pptpd-logwtmp.so
-sbin/pptpctrl
+@unexec %D/etc/rc.d/pptpd.sh stop > /dev/null 2>&1 || true
 sbin/pptpd
-@dirrm lib/pptpd
+sbin/pptpctrl
+lib/pptpd/pptpd-logwtmp.so
+etc/pptpd.conf.sample
+@unexec rmdir %D/lib/pptpd 2> /dev/null || true
