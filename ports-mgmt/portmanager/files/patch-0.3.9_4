@@ -1,0 +1,574 @@
+diff -ruN ../0.3.9_3/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.9_3/libMGPM/src/MGPMrController.c	Sat Nov 26 14:30:47 2005
++++ ./libMGPM/src/MGPMrController.c	Sun Nov 27 05:58:44 2005
+@@ -155,6 +155,7 @@
+ 	{
+ 		property->pristine	= 1;
+ 	} 
++
+ 	MGdbDestroy( property->commandLineDb );
+ 
+ 	property->logFile	= MGPMlogCreate( property );
+diff -ruN ../0.3.9_3/libMGPM/src/MGPMrCreateInstalledDb.c ./libMGPM/src/MGPMrCreateInstalledDb.c
+--- ../0.3.9_3/libMGPM/src/MGPMrCreateInstalledDb.c	Sat Nov 26 14:30:47 2005
++++ ./libMGPM/src/MGPMrCreateInstalledDb.c	Sun Nov 27 07:06:23 2005
+@@ -167,6 +167,7 @@
+ 	buffer		= (char*)calloc( bufferSize + 1, 1 );
+ 	buffer[bufferSize-1]	= 0;
+ 	fread(buffer, 1, bufferSize, contentsFileStream );
++	fclose( contentsFileStream );
+ 	buffPtr	= buffer;
+ 	portDependencyName	= buffer;
+ 	if( ( dependencyDbStream = fopen( property->dependencyPortsDbFileName, "a" ) ) == 0 )
+@@ -209,6 +210,7 @@
+ 			fprintf( stdout, "pkg_delete -f %s/%s then find it in /usr/ports/{category}/{portname} and reinstall\n",
+ 				PKGDBDIR, installedPortNamePtr );
+ */
++			fclose( dependencyDbStream );
+ 			return( 1 );
+ 		}
+ 
+@@ -251,13 +253,6 @@
+ 		return( 1 );
+ 	}
+ 	free(buffer);
+-	if( fclose( contentsFileStream ) )
+-	{
+-		fprintf( stderr, "%s %s error: can not close  %s\n", id, PACKAGE_VERSION, contentsFileName );
+-		perror( "system message" );
+-		while( fflush( stderr ) );
+-		return( 1 );
+-	}
+ 	free(contentsFileName);
+ 	return(0);
+ }
+@@ -292,14 +287,12 @@
+ 	{
+ 		if( property->pmMode	== 2 )
+ 		{
+-fprintf( stderr, "%s %s DEBUG(1): could not open %s pmMode-=>%d\n", id, PACKAGE_VERSION, contentsFileName, property->pmMode );
+-perror( "system message" );
+-while( fflush( stderr ) );
+ 			free( contentsFileName );
+ 			return(1);
+ 		}
+ 		fprintf( stderr, "%s %s error: could not open %s pmMode-=>%d\n", id, PACKAGE_VERSION, contentsFileName, property->pmMode );
+ 		perror( "system message" );
++		free( contentsFileName );
+ 		while( fflush( stderr ) );
+ 		return( 1 );
+ 	}
+@@ -314,6 +307,7 @@
+ 		fprintf( stderr, "\t\t%s installation is corrupt!\n", installedPortNamePtr );
+ 		fprintf( stderr, "\t\trecomend running \"pkg_delete -f %s\" then manually reinstalling this port\n", installedPortNamePtr );
+ 		while( fflush( stderr ) );
++		free( buffer );
+ 		return( 1 );
+ 	}
+ 
+@@ -324,6 +318,7 @@
+ 		fprintf( stderr, "\t\t%s installation is corrupt!\n", installedPortNamePtr );
+ 		fprintf( stderr, "\t\trecomend running \"pkg_delete -f %s\" then manually reinstalling this port\n", installedPortNamePtr );
+ 		while( fflush( stderr ) );
++		free( buffer );
+ 		return( 1 );
+ 	}
+ 	portDirTemp[address-portDirTemp]	= 0;
+@@ -404,6 +399,8 @@
+ 		fprintf( stderr, "\t\t%s installation is corrupt!\n", installedPortNamePtr );
+ 		fprintf( stderr, "\t\trecomend running \"pkg_delete -f %s\" then manually reinstalling this port\n", installedPortNamePtr );
+ 		while( fflush( stderr ) );
++		free( buffer );
++		free( contentsFileName );
+ 		return( 1 );
+ 	}
+ 
+@@ -416,11 +413,12 @@
+ 		fprintf( stderr, "\t\t%s installation is corrupt!\n", installedPortNamePtr );
+ 		fprintf( stderr, "\t\trecomend running \"pkg_delete -f %s\" then manually reinstalling this port\n", installedPortNamePtr );
+ 		while( fflush( stderr ) );
++		free( buffer );
++		free( contentsFileName );
+ 		return( 1 );
+ 	}
+ 
+ 	free( contentsFileName );
+-
+ 	free( buffer );
+ 
+ 	return( 0 );
+diff -ruN ../0.3.9_3/libMGPM/src/MGPMrGetPortName.c ./libMGPM/src/MGPMrGetPortName.c
+--- ../0.3.9_3/libMGPM/src/MGPMrGetPortName.c	Sat Nov 26 14:30:47 2005
++++ ./libMGPM/src/MGPMrGetPortName.c	Sun Nov 27 19:21:34 2005
+@@ -41,6 +41,7 @@
+ 	char*	optionsPtr			= NULL;
+ 	int	answer				= 0;
+ 	int	bufferSize			= 0xffff;
++	int	doubleBreak			= 0;
+ 
+ 	command		= (char*)calloc( bufferSize, 1 );
+ 
+@@ -88,63 +89,72 @@
+ 				signal( SIGALRM, MGPMrTimer );
+ 				property->STDIN = fopen( "/dev/stdin", "r" );
+ 				property->timeOut = 0;
+-				answer	= getc( property->STDIN );
+-				
+-				switch(answer)
++				doubleBreak	= 0;
++				while( 1 == 1 )
+ 				{
+-					case KEY_ENTER:
++					answer	= getc( property->STDIN );
++					fclose( property->STDIN );
++					switch(answer)
+ 					{
+-						break;
+-					}
+-					case KEY_A:
+-					{
+-						answer	= getc( property->STDIN );
+-						property->autoMoved = 1;
+-						break;
+-					}
+-					case KEY_a:
+-					{
+-						property->autoMoved = 1;
+-						answer	= getc( property->STDIN );
+-						break;
+-					}
+-					case KEY_Y:
+-					{
+-						answer	= getc( property->STDIN );
+-						break;
+-					}
+-					case KEY_y:
+-					{
+-						answer	= getc( property->STDIN );
+-						break;
+-					}
+-					case KEY_N:
+-					{
+-						answer	= getc( property->STDIN );
+-						fprintf( stdout, "you will have to deal with this manually then, portmanager shutting down\n" );
+-						while( fflush( stdout ) );
+-						exit(0);
+-					}
+-					case KEY_n:
+-					{
+-						answer	= getc( property->STDIN );
+-						fprintf( stdout, "you will have to deal with this manually then, portmanager shutting down\n" );
+-						while( fflush( stdout ) );
+-						exit(0);
+-					}
+-					default:
+-					{
+-						if( property->timeOut )
++						case KEY_ENTER:
+ 						{
+-							fprintf( stdout, "5 minute timeout, defaulting to [Y]\n");
++							doubleBreak	= 1;
++							break;
++						}
++						case KEY_A:
++						{
++							property->autoMoved = 1;
++							doubleBreak	= 1;
++							break;
++						}
++						case KEY_a:
++						{
++							property->autoMoved = 1;
++							doubleBreak	= 1;
++							break;
++						}
++						case KEY_Y:
++						{
++							doubleBreak	= 1;
++							break;
++						}
++						case KEY_y:
++						{
++							doubleBreak	= 1;
++							break;
++						}
++						case KEY_N:
++						{
++							fprintf( stdout, "you will have to deal with this manually then, portmanager shutting down\n" );
+ 							while( fflush( stdout ) );
++							exit(0);
+ 						}
+-						else
++						case KEY_n:
+ 						{
+-							fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N\n");
++							fprintf( stdout, "you will have to deal with this manually then, portmanager shutting down\n" );
+ 							while( fflush( stdout ) );
+-							answer	= getc( property->STDIN );
++							exit(0);
++						}
++						default:
++						{
++							if( property->timeOut )
++							{
++								fprintf( stdout, "5 minute timeout, defaulting to [Y]\n");
++								while( fflush( stdout ) );
++								doubleBreak	= 1;
++								break;
++							}
++							else
++							{
++								property->STDIN = fopen( "/dev/stdin", "r" );
++								fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N\n");
++								while( fflush( stdout ) );
++							}
+ 						}
++					}
++					if( doubleBreak )
++					{
++						break;
+ 					}
+ 				}
+ 			}
+diff -ruN ../0.3.9_3/libMGPM/src/MGPMrShowLeavesDelete.c ./libMGPM/src/MGPMrShowLeavesDelete.c
+--- ../0.3.9_3/libMGPM/src/MGPMrShowLeavesDelete.c	Sat Nov 26 14:30:47 2005
++++ ./libMGPM/src/MGPMrShowLeavesDelete.c	Sun Nov 27 20:42:14 2005
+@@ -42,10 +42,11 @@
+ 	char*	leafPortDir		= NULL;
+ 	char*	leafPortName		= NULL;
+ 	char*	pkgDescFile		= NULL;
++	int	answer			= 1;
+ 	int	bufferSize		= 0xffff;
++	int	doubleBreak		= 0;
+ 	int	installedPortsDbIDX	= 0;
+ 	int	installedPortsDbQTY	= 0;
+-	int	key			= 1;
+ 	
+ 	command		= calloc( bufferSize, 1 );
+ 	leafPortDir	= calloc( bufferSize, 1 );
+@@ -107,8 +108,10 @@
+ 			installedPortsDbIDX++;
+ 			continue;
+ 		}
+-		if( key != KEY_ENTER )
++/*
++		if( answer != KEY_ENTER )
+ 		{
++*/
+ 			system( "clear" );
+ 			fprintf( stdout,"%s\n", SINGLE_LINES );
+ 			fprintf( stdout, "*** for safety run portmanager -u after using this feature for deletion ***\n" );
+@@ -144,73 +147,87 @@
+ 				system( command );
+ 			}
+ 			fprintf( stdout,"%s\n", SINGLE_LINES );
+-			fprintf( stdout, "\n<SPACE><ENTER> to skip\n<X><ENTER> removes port\n<N><ENTER> *Nuke it*, removes distribution files\n\n" ); 
++			fprintf( stdout, "\n<ENTER> to skip\n<X><ENTER> removes port\n<N><ENTER> *Nuke it*, removes distribution files\n\n" ); 
+ 			fprintf( stdout,"%s\n", SINGLE_LINES );
++/*
+ 		}
+-		key		= getc( stdin );
+-		switch( key )
++*/
++		property->STDIN = fopen( "/dev/stdin", "r" );
++		doubleBreak	= 0;
++		while( 1 == 1 )
+ 		{
+-			case	KEY_ENTER:
+-			{
+-				continue;
++			answer	= getc( property->STDIN );
++			fclose( property->STDIN );
++			switch(answer)
++			{
++				case	KEY_ENTER:
++				{
++					doubleBreak	= 1;
++					MGdbAdd( property->ignoreDb, leafPortDir, "-slid <SPACE> skipped", NULL );
++					fprintf( stdout, "Skipping %s\n\n", leafPortName );
++					break;
++				}
++				case	KEY_n:
++				{
++					doubleBreak	= 1;
++					/* nuke() */
++					fprintf( stdout, "<n> Nuking %s\n\n", leafPortName );
++					removePort( property, leafPortName, installedPortsDbIDX );
++					nuke( leafPortDir );
++					rebuildDb( property );
++					installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
++					installedPortsDbIDX	= 1;
++					break;
++				}
++				case	KEY_N:
++				{
++					doubleBreak	= 1;
++					/* nuke() */
++					fprintf( stdout, "<N> Nuking %s\n\n", leafPortName );
++					removePort( property, leafPortName, installedPortsDbIDX );
++					nuke( leafPortDir );
++					rebuildDb( property );
++					installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
++					installedPortsDbIDX	= 1;
++					break;
++				}
++				case	KEY_x:
++				{
++					doubleBreak	= 1;
++					/* delete() */
++					fprintf( stdout, "<x> Removing %s\n\n", leafPortName );
++					removePort( property, leafPortName, installedPortsDbIDX );
++					rebuildDb( property );
++					installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
++					installedPortsDbIDX	= 1;
++					break;
++				}
++				case	KEY_X:
++				{
++					doubleBreak	= 1;
++					/* delete() */
++					fprintf( stdout, "<X> Removing %s\n\n", leafPortName );
++					removePort( property, leafPortName, installedPortsDbIDX );
++					rebuildDb( property );
++					installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
++					installedPortsDbIDX	= 1;
++					break;
++				}
++				default:
++				{
++					property->STDIN = fopen( "/dev/stdin", "r" );
++					fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N\n");
++					while( fflush( stdout ) );
++				}
+ 			}
+-			case	KEY_SPACE:
++			if( doubleBreak )
+ 			{
+-				MGdbAdd( property->ignoreDb, leafPortDir, "-slid <SPACE> skipped", NULL );
+-				fprintf( stdout, "<SPACE> Skipping %s\n\n", leafPortName );
+-				break;
+-			}
+-			case	KEY_n:
+-			{
+-				/* nuke() */
+-				fprintf( stdout, "<n> Nuking %s\n\n", leafPortName );
+-				removePort( property, leafPortName, installedPortsDbIDX );
+-				nuke( leafPortDir );
+-				rebuildDb( property );
+-				installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
+-				installedPortsDbIDX	= 1;
+-				break;
+-			}
+-			case	KEY_N:
+-			{
+-				/* nuke() */
+-				fprintf( stdout, "<N> Nuking %s\n\n", leafPortName );
+-				removePort( property, leafPortName, installedPortsDbIDX );
+-				nuke( leafPortDir );
+-				rebuildDb( property );
+-				installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
+-				installedPortsDbIDX	= 1;
+-				break;
+-			}
+-			case	KEY_x:
+-			{
+-				/* delete() */
+-				fprintf( stdout, "<x> Removing %s\n\n", leafPortName );
+-				removePort( property, leafPortName, installedPortsDbIDX );
+-				rebuildDb( property );
+-				installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
+-				installedPortsDbIDX	= 1;
+-				break;
+-			}
+-			case	KEY_X:
+-			{
+-				/* delete() */
+-				fprintf( stdout, "<X> Removing %s\n\n", leafPortName );
+-				removePort( property, leafPortName, installedPortsDbIDX );
+-				rebuildDb( property );
+-				installedPortsDbQTY	= MGdbGetRecordQty( property->installedPortsDb );
+-				installedPortsDbIDX	= 1;
+-				break;
+-			}
+-			default:
+-			{
+-				MGdbAdd( property->ignoreDb, leafPortDir, "-slid <DEFAULT> skipped", NULL );
+-				fprintf( stdout, "Skipping %s\n\n", leafPortName );
+ 				break;
+ 			}
+ 		}
+ 		fprintf( stdout, "\n" );
+ 		installedPortsDbIDX++;
++
+ 	}
+ 	MGdbDestroy( property->availableDependenciesDb );
+ 	MGdbDestroy( property->ignoreDb );
+diff -ruN ../0.3.9_3/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.9_3/libMGPM/src/MGPMrUpdate.c	Sat Nov 26 14:30:47 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Sun Nov 27 18:54:47 2005
+@@ -72,6 +72,7 @@
+ 	int	availableDependenciesDbQTY			= 0;
+ 	int	availablePortsDbIDX				= 0;
+ 	int	bufferSize					= 0xffff;
++	int	doubleBreak					= 0;
+ 	int	errorCode					= 0;
+ 	int	idx						= 0;
+ 	int	installedPortsDbIDX				= 0;
+@@ -615,67 +616,77 @@
+ 							signal( SIGALRM, MGPMrTimer );
+ 							property->STDIN = fopen( "/dev/stdin", "r" );
+ 							property->timeOut = 0;
+-							answer	= getc( property->STDIN );
+-
+-							switch(answer)
++							doubleBreak	= 0;
++							while( 1 == 1 )
+ 							{
+-								case KEY_ENTER:
+-								{
+-									break;
+-								}
+-								case KEY_A:
+-								{
+-									answer	= getc( property->STDIN );
+-									property->autoConflicts	= 1;
+-									break;
+-								}
+-								case KEY_a:
+-								{
+-									property->autoConflicts	= 1;
+-									answer	= getc( property->STDIN );
+-									break;
+-								}
+-								case KEY_Y:
+-								{
+-									answer	= getc( property->STDIN );
+-									break;
+-								}
+-								case KEY_y:
+-								{
+-									answer	= getc( property->STDIN );
+-									break;
+-								}
+-								case KEY_N:
+-								{
+-									fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
+-									while( fflush( stdout ) );
+-									MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
+-									answer	= getc( property->STDIN );
+-									rCleanUp( property, &localProperty );
+-									return(0);
+-								}
+-								case KEY_n:
+-								{
+-									fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
+-									while( fflush( stdout ) );
+-									MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
+-									answer	= getc( property->STDIN );
+-									rCleanUp( property, &localProperty );
+-									return(0);
+-								}
+-								default:
++								answer	= getc( property->STDIN );
++								fclose( property->STDIN );
++								switch(answer)
+ 								{
+-									if( property->timeOut )
++									case KEY_ENTER:
++									{
++										doubleBreak	= 1;
++										break;
++									}
++									case KEY_A:
++									{
++										doubleBreak	= 1;
++										property->autoConflicts	= 1;
++										break;
++									}
++									case KEY_a:
+ 									{
+-										fprintf( stdout, "5 minute timeout, defaulting to [Y]\n");
++										doubleBreak	= 1;
++										property->autoConflicts	= 1;
++										break;
++									}
++									case KEY_Y:
++									{
++										doubleBreak	= 1;
++										break;
++									}
++									case KEY_y:
++									{
++										doubleBreak	= 1;
++										break;
++									}
++									case KEY_N:
++									{
++										fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
+ 										while( fflush( stdout ) );
++										MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
++										rCleanUp( property, &localProperty );
++										return(0);
+ 									}
+-									else
++									case KEY_n:
+ 									{
+-										fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N\n");
++										fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
+ 										while( fflush( stdout ) );
+-										answer	= getc( property->STDIN );
++										MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
++										rCleanUp( property, &localProperty );
++										return(0);
++									}
++									default:
++									{
++										if( property->timeOut )
++										{
++											fprintf( stdout, "5 minute timeout, defaulting to [Y]\n");
++											while( fflush( stdout ) );
++											doubleBreak	= 1;
++											break;
++										}
++										else
++										{
++											property->STDIN = fopen( "/dev/stdin", "r" );
++											fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N\n");
++											while( fflush( stdout ) );
++										}
+ 									}
++									
++								}
++								if( doubleBreak )
++								{
++									break;
+ 								}
+ 							}
+ 						}
+@@ -695,7 +706,6 @@
+ 						}
+ 						else
+ 						{
+-							fclose( property->STDIN );
+ 							MGPMlogAdd( property, "conflicting installed ", localProperty.installedPortName,
+ 								" removed from system: conflicted with ", oldPortName, " " );
+ 						}
+@@ -1573,17 +1583,7 @@
+ 		strcpy( comment, "port marked " );
+ 		strcat( comment, brokeCheckType );
+ 		MGdbAdd( property->ignoreDb, oldPortDir, comment, NULL );
+-		if( property->log )
+-		{
+-			strcpy( command, "echo \"      " );
+-			strcat( command, oldPortName );
+-			strcat( command, " " );
+-			strcat( command, oldPortDir );
+-			strcat( command, " marked " );
+-			strcat( command, brokeCheckType );
+-			strcat( command, " port not installed/updated\" >> /var/log/portmanager.log" );
+-			system( command );
+-		}
++		MGPMlogAdd( property, oldPortName, oldPortDir, " marked ", brokeCheckType, " port not installed/updated" );
+ 		pclose( pHandle );
+ 		free( buffer );	
+ 		free( command );
