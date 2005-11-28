@@ -3960,6 +3960,7 @@ inn-stable	ports/news/inn-stable
 inplace		ports/misc/inplace
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
+instant-tinderbox	ports/misc/instant-tinderbox
 instant-workstation	ports/misc/instant-workstation
 instiki		ports/www/instiki
 insub		ports/irc/insub
