@@ -18,8 +18,17 @@ COMMENT=	QT-based editor with support for romanian charsets and spell checking
 USE_XLIB=	yes
 USE_QT_VER=	3
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	QTDIR=${X11BASE} LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+
+HAS_CONFIGURE=	yes
 
 MAN1=	rospell.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		doesn't compile properly on 4.x systems
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE}
@@ -27,4 +36,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
