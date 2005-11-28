@@ -24,10 +24,19 @@ USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
+.ifndef(WITH_DOXYGEN)
+NOPORTDOCS=	yes
+.endif
+
 .ifndef(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 PORTDOCS=	*
+.endif
+
+pre-everything::
+.if !defined(WITH_DOXYGEN)
+	@${ECHO_MSG} '==> Define WITH_DOXYGEN to build API documentation'
 .endif
 
 post-patch:
