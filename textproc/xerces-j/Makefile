@@ -20,6 +20,7 @@ CONFLICTS=	xml4j-4.*
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 USE_ANT=	yes
+USE_JIKES=	no
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
 
@@ -32,7 +33,10 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 ALL_TARGET=	jars
 .if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadocs docs
+ALL_TARGET+=	javadocs
+.if ${JAVA_PORT_VERSION:C/[0-9]\.([0-9])\.[0-9]/\1/} == "5"
+ALL_TARGET+=	docs
+.endif
 PORTDOCS=	*
 .endif
 
