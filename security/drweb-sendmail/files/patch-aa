@@ -7,9 +7,9 @@
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
 -RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-virus.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admih-virus.msg
-+RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts-virus.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_virus.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admih_virus.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts_virus.msg
  
  [MalwareNotifications]
  # Enable or disable sending notifications to persons (yes/no)
@@ -20,24 +20,24 @@
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-admin.msg
 -RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/malware-rcpts.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-malware.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-malware.msg
-+RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts-malware.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_malware.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_malware.msg
++RcptsTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rcpts_malware.msg
  
  [CuredNotifications]
  SenderNotify = yes
  AdminNotify = yes
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/cured-admin.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-cured.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-cured.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_cured.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_cured.msg
  
  [SkipNotifications]
  SenderNotify = yes
  AdminNotify = no
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/skip-sender.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-skip.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_skip.msg
  AdminTemplate = 
  RcptsTemplate = 
  
@@ -47,8 +47,8 @@
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/archive-admin.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-archive.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-archive.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_archive.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_archive.msg
  RcptsTemplate = 
  
  [ErrorNotifications]
@@ -57,8 +57,8 @@
  RcptsNotify = no
 -SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-sender.msg
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/error-admin.msg
-+SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender-error.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-error.msg
++SenderTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/sender_error.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_error.msg
  RcptsTemplate = 
  
  [RuleFilterNotifications]
@@ -67,13 +67,13 @@
  RcptsNotify = no
  SenderTemplate = 
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/rule-admin.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-rule.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_rule.msg
  RcptsTemplate = 
  
  [LicenseLimitNotifications]
  AdminNotify = yes
 -AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/license-admin.msg
-+AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin-license.msg
++AdminTemplate = /usr/local/etc/drweb/templates/en-ru/sendmail/admin_license.msg
  
  ###################
  # Logging section #
