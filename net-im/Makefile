@@ -20,6 +20,7 @@
     SUBDIR += fugu
     SUBDIR += gaim
     SUBDIR += gaim-bangexec
+    SUBDIR += gaim-extprefs
     SUBDIR += gaim-guifications
     SUBDIR += gaim-ignorance
     SUBDIR += gaim-latex
