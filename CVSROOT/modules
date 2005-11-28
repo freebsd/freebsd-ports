@@ -9858,6 +9858,7 @@ ports_mk	ports/devel/mk
 ports_modules	ports/sysutils/modules
 ports_multimedia	ports/multimedia
 ports_net	ports/net
+ports_net_im	ports/net-im
 ports_net_mgmt	ports/net-mgmt
 ports_netboot	ports/net/netboot
 ports_news	ports/news
