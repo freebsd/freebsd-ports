@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libwnck
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -21,7 +21,7 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 ltverhack
+USE_GNOME=	gnomehack gtk20 ltverhack intlhack
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
