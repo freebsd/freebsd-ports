@@ -2,6 +2,6 @@ bin/tor
 bin/tor-resolve
 bin/torify
 etc/rc.d/tor.sh.sample
-etc/tor/torrc.sample
 etc/tor/tor-tsocks.conf.sample
+etc/tor/torrc.sample
 @unexec rmdir %D/etc/tor 2>/dev/null || true
