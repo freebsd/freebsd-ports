@@ -401,6 +401,7 @@ include/brlcad/dm_color.h
 include/brlcad/dm_xvars.h
 include/brlcad/exit_status.h
 include/brlcad/fb.h
+include/brlcad/fbio.h
 include/brlcad/fbserv_obj.h
 include/brlcad/forms.h
 include/brlcad/itcl.h
@@ -488,9 +489,6 @@ include/plane.h
 include/qray.h
 include/rb_internals.h
 include/sgicursor.h
-include/tcl.h
-include/tclDecls.h
-include/tclPlatDecls.h
 include/tk.h
 include/tkDecls.h
 include/tkPlatDecls.h
@@ -624,26 +622,18 @@ lib/librt.so.19
 lib/libsysv.a
 lib/libsysv.so
 lib/libsysv.so.19
-lib/libtcl.a
-lib/libtcl.so
-lib/libtcl.so.19
-lib/libtcl8.4.a
-lib/libtcl8.4.so
-lib/libtcl8.4.so.19
 lib/libtclcad.a
 lib/libtclcad.so
 lib/libtclcad.so.19
-lib/libtclstub.a
-lib/libtclstub.so
-lib/libtclstub.so.0
-lib/libtclstub8.4.a
-lib/libtclstub8.4.so
-lib/libtclstub8.4.so.0
 lib/libtermio.a
 lib/libtermio.so
 lib/libtermio.so.19
 lib/libtk.a
+lib/libtk.so
+lib/libtk.so.19
 lib/libtk8.4.a
+lib/libtk8.4.so
+lib/libtk8.4.so.19
 lib/libtkstub.a
 lib/libtkstub.so
 lib/libtkstub.so.0
@@ -653,106 +643,6 @@ lib/libtkstub8.4.so.0
 lib/libwdb.a
 lib/libwdb.so
 lib/libwdb.so.19
-lib/tcl8.4/auto.tcl
-lib/tcl8.4/dde/pkgIndex.tcl
-lib/tcl8.4/encoding/ascii.enc
-lib/tcl8.4/encoding/big5.enc
-lib/tcl8.4/encoding/cp1250.enc
-lib/tcl8.4/encoding/cp1251.enc
-lib/tcl8.4/encoding/cp1252.enc
-lib/tcl8.4/encoding/cp1253.enc
-lib/tcl8.4/encoding/cp1254.enc
-lib/tcl8.4/encoding/cp1255.enc
-lib/tcl8.4/encoding/cp1256.enc
-lib/tcl8.4/encoding/cp1257.enc
-lib/tcl8.4/encoding/cp1258.enc
-lib/tcl8.4/encoding/cp437.enc
-lib/tcl8.4/encoding/cp737.enc
-lib/tcl8.4/encoding/cp775.enc
-lib/tcl8.4/encoding/cp850.enc
-lib/tcl8.4/encoding/cp852.enc
-lib/tcl8.4/encoding/cp855.enc
-lib/tcl8.4/encoding/cp857.enc
-lib/tcl8.4/encoding/cp860.enc
-lib/tcl8.4/encoding/cp861.enc
-lib/tcl8.4/encoding/cp862.enc
-lib/tcl8.4/encoding/cp863.enc
-lib/tcl8.4/encoding/cp864.enc
-lib/tcl8.4/encoding/cp865.enc
-lib/tcl8.4/encoding/cp866.enc
-lib/tcl8.4/encoding/cp869.enc
-lib/tcl8.4/encoding/cp874.enc
-lib/tcl8.4/encoding/cp932.enc
-lib/tcl8.4/encoding/cp936.enc
-lib/tcl8.4/encoding/cp949.enc
-lib/tcl8.4/encoding/cp950.enc
-lib/tcl8.4/encoding/dingbats.enc
-lib/tcl8.4/encoding/ebcdic.enc
-lib/tcl8.4/encoding/euc-cn.enc
-lib/tcl8.4/encoding/euc-jp.enc
-lib/tcl8.4/encoding/euc-kr.enc
-lib/tcl8.4/encoding/gb12345.enc
-lib/tcl8.4/encoding/gb1988.enc
-lib/tcl8.4/encoding/gb2312-raw.enc
-lib/tcl8.4/encoding/gb2312.enc
-lib/tcl8.4/encoding/iso2022-jp.enc
-lib/tcl8.4/encoding/iso2022-kr.enc
-lib/tcl8.4/encoding/iso2022.enc
-lib/tcl8.4/encoding/iso8859-1.enc
-lib/tcl8.4/encoding/iso8859-10.enc
-lib/tcl8.4/encoding/iso8859-13.enc
-lib/tcl8.4/encoding/iso8859-14.enc
-lib/tcl8.4/encoding/iso8859-15.enc
-lib/tcl8.4/encoding/iso8859-16.enc
-lib/tcl8.4/encoding/iso8859-2.enc
-lib/tcl8.4/encoding/iso8859-3.enc
-lib/tcl8.4/encoding/iso8859-4.enc
-lib/tcl8.4/encoding/iso8859-5.enc
-lib/tcl8.4/encoding/iso8859-6.enc
-lib/tcl8.4/encoding/iso8859-7.enc
-lib/tcl8.4/encoding/iso8859-8.enc
-lib/tcl8.4/encoding/iso8859-9.enc
-lib/tcl8.4/encoding/jis0201.enc
-lib/tcl8.4/encoding/jis0208.enc
-lib/tcl8.4/encoding/jis0212.enc
-lib/tcl8.4/encoding/koi8-r.enc
-lib/tcl8.4/encoding/koi8-u.enc
-lib/tcl8.4/encoding/ksc5601.enc
-lib/tcl8.4/encoding/macCentEuro.enc
-lib/tcl8.4/encoding/macCroatian.enc
-lib/tcl8.4/encoding/macCyrillic.enc
-lib/tcl8.4/encoding/macDingbats.enc
-lib/tcl8.4/encoding/macGreek.enc
-lib/tcl8.4/encoding/macIceland.enc
-lib/tcl8.4/encoding/macJapan.enc
-lib/tcl8.4/encoding/macRoman.enc
-lib/tcl8.4/encoding/macRomania.enc
-lib/tcl8.4/encoding/macThai.enc
-lib/tcl8.4/encoding/macTurkish.enc
-lib/tcl8.4/encoding/macUkraine.enc
-lib/tcl8.4/encoding/shiftjis.enc
-lib/tcl8.4/encoding/symbol.enc
-lib/tcl8.4/encoding/tis-620.enc
-lib/tcl8.4/history.tcl
-lib/tcl8.4/http1.0/http.tcl
-lib/tcl8.4/http1.0/pkgIndex.tcl
-lib/tcl8.4/http2.4/http.tcl
-lib/tcl8.4/http2.4/pkgIndex.tcl
-lib/tcl8.4/init.tcl
-lib/tcl8.4/ldAout.tcl
-lib/tcl8.4/msgcat1.3/msgcat.tcl
-lib/tcl8.4/msgcat1.3/pkgIndex.tcl
-lib/tcl8.4/opt0.4/optparse.tcl
-lib/tcl8.4/opt0.4/pkgIndex.tcl
-lib/tcl8.4/package.tcl
-lib/tcl8.4/parray.tcl
-lib/tcl8.4/reg/pkgIndex.tcl
-lib/tcl8.4/safe.tcl
-lib/tcl8.4/tclIndex
-lib/tcl8.4/tcltest2.2/pkgIndex.tcl
-lib/tcl8.4/tcltest2.2/tcltest.tcl
-lib/tcl8.4/word.tcl
-lib/tclConfig.sh
 lib/tk8.4/bgerror.tcl
 lib/tk8.4/button.tcl
 lib/tk8.4/choosedir.tcl
@@ -916,8 +806,13 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/db/woodsman.g
 %%DATADIR%%/%%PORTVERSION%%/db/world.g
 %%DATADIR%%/%%PORTVERSION%%/db/xmp.g
+%%DATADIR%%/%%PORTVERSION%%/doc/README.AIX
+%%DATADIR%%/%%PORTVERSION%%/doc/README.BSD
 %%DATADIR%%/%%PORTVERSION%%/doc/README.IRIX
+%%DATADIR%%/%%PORTVERSION%%/doc/README.Linux
 %%DATADIR%%/%%PORTVERSION%%/doc/README.MacOSX
+%%DATADIR%%/%%PORTVERSION%%/doc/README.Solaris
+%%DATADIR%%/%%PORTVERSION%%/doc/README.Windows
 %%DATADIR%%/%%PORTVERSION%%/doc/anim.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/benchmark.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/cvs.txt
@@ -1378,6 +1273,7 @@ lib/tkConfig.sh
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/pattern_gui.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/plot.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/points.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/prj_add.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/ps.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/qray.tcl
@@ -1518,15 +1414,6 @@ lib/tkConfig.sh
 @dirrm lib/tk8.4/demos/images
 @dirrm lib/tk8.4/demos
 @dirrm lib/tk8.4
-@dirrm lib/tcl8.4/tcltest2.2
-@dirrm lib/tcl8.4/reg
-@dirrm lib/tcl8.4/opt0.4
-@dirrm lib/tcl8.4/msgcat1.3
-@dirrm lib/tcl8.4/http2.4
-@dirrm lib/tcl8.4/http1.0
-@dirrm lib/tcl8.4/encoding
-@dirrm lib/tcl8.4/dde
-@dirrm lib/tcl8.4
 @dirrm lib/iwidgets4.0.1/scripts
 @dirrm lib/iwidgets4.0.1
 @dirrm lib/itk3.3
