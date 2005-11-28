@@ -8,7 +8,7 @@
 PORTNAME=	pam_pGina
 PORTVERSION=	1.1.3
 CATEGORIES=	security
-MASTER_SITES=	http://pgina.xpasystems.com/downloads/pam/
+MASTER_SITES=	http://pgina.xpasystems.com/files/
 DISTNAME=	pgina_pam-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
