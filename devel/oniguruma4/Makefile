@@ -8,9 +8,8 @@
 PORTNAME=	oniguruma
 PORTVERSION=	2.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.geocities.jp/kosako1/oniguruma/archive/ \
-		${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner/ruby-contrib
 DISTNAME=	onigd${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
