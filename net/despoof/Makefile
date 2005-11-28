@@ -9,7 +9,7 @@ PORTNAME=	despoof
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	http://razor.bindview.com/tools/files/ \
+MASTER_SITES=	http://www.bindview.com/Resources/RAZOR/Files/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
 EXTRACT_SUFX=	.tgz

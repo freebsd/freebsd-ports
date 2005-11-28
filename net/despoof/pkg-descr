@@ -4,4 +4,4 @@ the real TTL of the packet and compare it to the TTL of the packet you
 received. This is intended to be used as a component of an IDS
 toolkit.
 
-WWW:	http://www.bindview.com/Support/RAZOR/Utilities/Unix_Linux/despoof_readme.cfm
+WWW:	http://www.bindview.com/Services/razor/Utilities/Unix_Linux/despoof_readme.cfm
