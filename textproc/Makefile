@@ -345,6 +345,7 @@
     SUBDIR += p5-PPI-HTML
     SUBDIR += p5-Parse-FixedLength
     SUBDIR += p5-Parse-Syslog
+    SUBDIR += p5-Perl-Critic
     SUBDIR += p5-Perl-MinimumVersion
     SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package
