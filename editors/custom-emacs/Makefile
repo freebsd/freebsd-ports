@@ -8,8 +8,7 @@
 PORTNAME=	custom
 PORTVERSION=	${CUSTOM_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
-		ftp://ftp.win.ne.jp/pub/word/elisp/
+MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	ports@FreeBSD.org
