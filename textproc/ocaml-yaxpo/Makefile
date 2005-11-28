@@ -8,7 +8,7 @@
 PORTNAME=	yaxpo
 PORTVERSION=	0.0.${DATE_VERSION}
 CATEGORIES=	textproc
-MASTER_SITES=	http://mikelin.mit.edu/yaxpo/
+MASTER_SITES=	http://compbio.mit.edu/mikelin/yaxpo/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	yaxpo
 
@@ -21,10 +21,12 @@ USE_REINPLACE=	yes
 
 ALL_TARGET=	yaxpo
 
-DATE_VERSION=	20020816
+DATE_VERSION=	20050614
 
 .ifndef(NOPORTDOCS)
 ALL_TARGET+=	doc
+
+PORTDOCS=	*
 .endif
 
 post-configure:

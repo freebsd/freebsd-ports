@@ -8,4 +8,4 @@ these provides a data model complete with DOM-like constructors,
 accessors, mutators, and serializers, enabling you to manipulate
 and emit XML as well as parse it.
 
-WWW: http://mikelin.mit.edu/yaxpo/
+WWW: http://compbio.mit.edu/mikelin/yaxpo/
