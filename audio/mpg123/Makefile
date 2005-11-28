@@ -15,7 +15,8 @@ DISTNAME=	mpg123-0.59r-pl1
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/:ipv6 \
 		http://www.unix-ag.org/Linux-Alpha/Packages/:l3 \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}:recode
+		${MASTER_SITE_LOCAL:S/$/:recode/}
+PATCH_SITE_SUBDIR=	sobomax/:recode
 PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:ipv6 \
 		mpg123-059r-recode-20010410.diff.gz:recode \
 		l3.diff.gz:l3
