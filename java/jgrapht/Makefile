@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	jgrapht
 # Date created:			Jul 9, 2004
 # Whom:				ijliao
@@ -7,36 +6,40 @@
 #
 
 PORTNAME=	jgrapht
-PORTVERSION=	0.5.3
-CATEGORIES=	java
+PORTVERSION=	0.6.0
+CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Java class provides mathematical graph-theory objects and algorithms
+MAINTAINER=	hq@FreeBSD.org
+COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
-JAVA_RUN=	yes
-
-.if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
-ANT_CMD?=	${LOCALBASE}/bin/ant
-ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
-.endif
+JAVA_VERSION=	1.4+
 
 .if !defined(WITHOUT_COMPILE)
-JAVA_BUILD=	yes
-ANT_TARGETS=	jar
+USE_ANT=	yes
+ALL_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	javadoc
+.endif
+.else
+NO_BUILD=	yes
 .endif
 
 .if !defined(NOPORTDOCS)
-ANT_TARGETS+=	javadoc
 PORTDOCS=	*
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+
+.include <bsd.port.pre.mk>
+
+JAVA_PORT_API=	${LOCALBASE}/share/doc/jdk${JAVA_PORT_VERSION:C/([0-9]\.[0-9])\.[0-9]/\1/}/api
+.if exists(${JAVA_PORT_API})
+MAKE_ARGS+=	-Djdk.api="${JAVA_PORT_API}"
+.endif
 
 pre-fetch:
 	@${ECHO_MSG} ""
@@ -45,26 +48,18 @@ pre-fetch:
 	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO_MSG} ""
 
-do-build:
-.if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}
-	@${MV} -f ${WRKSRC}/${PORTNAME}-${PORTVERSION}-local.jar ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar
-.endif
+post-build:
+	${MV} ${WRKSRC}/${PORTNAME}-${PORTVERSION}-local.jar ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar
 
-do-install: do-install-jar do-install-javadoc
-
-do-install-jar:
-	@${ECHO_CMD} -n  ">> Installing .jar file..."
+do-install:
+	@${ECHO_MSG} -n  ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_CMD} " [DONE]"
-
-do-install-javadoc:
+	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/javadoc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/javadoc && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/javadoc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [DONE]"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
