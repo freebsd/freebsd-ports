@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.60.1
-PORTREVISION=	1
+PORTVERSION=	1.61.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -43,7 +42,7 @@ ALL_TARGET=	all utils
 MAN1=		gmsh.1
 
 .if !defined(WITHOUT_TRIANGLE)
-NO_CDROM=	Triangle must not be sold for profit
+NO_CDROM=	"Triangle must not be sold for profit"
 .endif
 
 .include <bsd.port.pre.mk>
@@ -54,7 +53,8 @@ CONFIGURE_ARGS+=	--disable-netgen	# Problem with Netgen & gcc-295
 
 post-extract:
 .if !defined(WITHOUT_TRIANGLE)
-	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.* ${WRKSRC}/Triangle
+	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.*	\
+		${WRKSRC}/contrib/Triangle
 .endif
 
 pre-configure:

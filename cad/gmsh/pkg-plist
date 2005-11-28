@@ -21,7 +21,9 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.i1
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/cube.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/encode.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/hex.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/isosurf.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/lowmem-anim.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.geo
@@ -32,9 +34,11 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece-extr.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/primitives.pos
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/pripyrtet.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/rotate.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-discrete.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-stl.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-stl.stl
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-surf.msh
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere-surf.stl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/splines.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/title.script
