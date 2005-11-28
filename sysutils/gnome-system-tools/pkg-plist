@@ -130,6 +130,7 @@ share/locale/id/LC_MESSAGES/gnome-system-tools.mo
 share/locale/it/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ja/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ko/LC_MESSAGES/gnome-system-tools.mo
+share/locale/ku/LC_MESSAGES/gnome-system-tools.mo
 share/locale/lt/LC_MESSAGES/gnome-system-tools.mo
 share/locale/lv/LC_MESSAGES/gnome-system-tools.mo
 share/locale/mk/LC_MESSAGES/gnome-system-tools.mo
@@ -162,6 +163,8 @@ share/locale/wa/LC_MESSAGES/gnome-system-tools.mo
 share/locale/xh/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-tools.mo
+@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ku 2> /dev/null || true
 @dirrm share/gnome/omf/gnome-system-tools
 @dirrm share/gnome/help/users-admin/C/figures
 @dirrm share/gnome/help/users-admin/C
