@@ -9,10 +9,7 @@ PORTNAME=	moettf
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://www.edu.tw/download/mandr/biauword/5879/ \
-		http://www.edu.tw/download/mandr/allbook/lishu/ \
-		http://www.edu.tw/download/mandr/biauword/kai/ \
-		ftp://freebsd.sinica.edu.tw/pub/keith/moettf/ \
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/moettf/ \
 		ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/
 DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe \
 		edustd-15.exe kai-pc.ttf
