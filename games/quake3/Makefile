@@ -7,7 +7,7 @@
 
 PORTNAME=	quake3
 PORTVERSION=	1.32b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
