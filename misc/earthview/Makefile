@@ -9,15 +9,11 @@
 PORTNAME=	earthview
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a view output of an arbitrary region of the Earth
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes
