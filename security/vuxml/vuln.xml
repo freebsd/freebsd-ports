@@ -311,8 +311,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-1151</cvename>
-      <cvename>CAN-2005-1152</cvename>
+      <cvename>CVE-2005-1151</cvename>
+      <cvename>CVE-2005-1152</cvename>
       <url>http://secunia.com/advisories/15475/</url>
     </references>
     <dates>
@@ -654,7 +654,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CAN-2005-2337</cvename>
+      <cvename>CVE-2005-2337</cvename>
       <url>http://www.ruby-lang.org/en/20051003.html</url>
     </references>
     <dates>
@@ -919,7 +919,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="d2b80c7c-3aae-11da-9484-00123ffe8333">
-    <topic>zope28 -- expose RestructuredText functionality to untrusted users</topic>
+    <topic>zope -- expose RestructuredText functionality to untrusted users</topic>
     <affects>
       <package>
 	<name>zope</name>
@@ -939,13 +939,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2005-3323</cvename>
       <bid>15082</bid>
       <url>http://www.zope.org/Products/Zope/Hotfix_2005-10-09/security_alert</url>
     </references>
     <dates>
       <discovery>2005-10-09</discovery>
       <entry>2005-10-11</entry>
-      <modified>2005-10-23</modified>
+      <modified>2005-11-28</modified>
     </dates>
   </vuln>
 
