@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kmplayer
-DISTVERSION=	0.9.1-pre3
-PORTEPOCH=	1
+DISTVERSION=	0.9.1a
+PORTEPOCH=	2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}

@@ -15,9 +15,36 @@ share/apps/kmplayer/kmplayerui.rc
 share/apps/kmplayer/noise.gif
 share/apps/kmplayer/pluginsinfo
 share/config/kmplayerrc
+share/doc/HTML/da/kmplayer/common
+share/doc/HTML/da/kmplayer/index.cache.bz2
+share/doc/HTML/da/kmplayer/index.docbook
+share/doc/HTML/de/kmplayer/common
+share/doc/HTML/de/kmplayer/index.cache.bz2
+share/doc/HTML/de/kmplayer/index.docbook
 share/doc/HTML/en/kmplayer/common
 share/doc/HTML/en/kmplayer/index.cache.bz2
 share/doc/HTML/en/kmplayer/index.docbook
+share/doc/HTML/es/kmplayer/common
+share/doc/HTML/es/kmplayer/index.cache.bz2
+share/doc/HTML/es/kmplayer/index.docbook
+share/doc/HTML/et/kmplayer/common
+share/doc/HTML/et/kmplayer/index.cache.bz2
+share/doc/HTML/et/kmplayer/index.docbook
+share/doc/HTML/fr/kmplayer/common
+share/doc/HTML/fr/kmplayer/index.cache.bz2
+share/doc/HTML/fr/kmplayer/index.docbook
+share/doc/HTML/it/kmplayer/common
+share/doc/HTML/it/kmplayer/index.cache.bz2
+share/doc/HTML/it/kmplayer/index.docbook
+share/doc/HTML/pt/kmplayer/common
+share/doc/HTML/pt/kmplayer/index.cache.bz2
+share/doc/HTML/pt/kmplayer/index.docbook
+share/doc/HTML/ru/kmplayer/common
+share/doc/HTML/ru/kmplayer/index.cache.bz2
+share/doc/HTML/ru/kmplayer/index.docbook
+share/doc/HTML/sv/kmplayer/common
+share/doc/HTML/sv/kmplayer/index.cache.bz2
+share/doc/HTML/sv/kmplayer/index.docbook
 share/icons/hicolor/128x128/apps/kmplayer.png
 share/icons/hicolor/16x16/apps/kmplayer.png
 share/icons/hicolor/22x22/apps/kmplayer.png
@@ -25,8 +52,72 @@ share/icons/hicolor/32x32/apps/kmplayer.png
 share/icons/hicolor/48x48/apps/kmplayer.png
 share/icons/hicolor/64x64/apps/kmplayer.png
 share/icons/hicolor/scalable/apps/kmplayer.svgz
+share/locale/ar/LC_MESSAGES/kmplayer.mo
+share/locale/br/LC_MESSAGES/kmplayer.mo
+share/locale/bs/LC_MESSAGES/kmplayer.mo
+share/locale/ca/LC_MESSAGES/kmplayer.mo
+share/locale/cs/LC_MESSAGES/kmplayer.mo
+share/locale/cy/LC_MESSAGES/kmplayer.mo
+share/locale/da/LC_MESSAGES/kmplayer.mo
+share/locale/de/LC_MESSAGES/kmplayer.mo
+share/locale/el/LC_MESSAGES/kmplayer.mo
+share/locale/en_GB/LC_MESSAGES/kmplayer.mo
+share/locale/es/LC_MESSAGES/kmplayer.mo
+share/locale/et/LC_MESSAGES/kmplayer.mo
+share/locale/fi/LC_MESSAGES/kmplayer.mo
+share/locale/fr/LC_MESSAGES/kmplayer.mo
+share/locale/ga/LC_MESSAGES/kmplayer.mo
+share/locale/he/LC_MESSAGES/kmplayer.mo
+share/locale/hi/LC_MESSAGES/kmplayer.mo
+share/locale/hu/LC_MESSAGES/kmplayer.mo
+share/locale/is/LC_MESSAGES/kmplayer.mo
+share/locale/it/LC_MESSAGES/kmplayer.mo
+share/locale/ja/LC_MESSAGES/kmplayer.mo
+share/locale/lt/LC_MESSAGES/kmplayer.mo
+share/locale/mt/LC_MESSAGES/kmplayer.mo
+share/locale/nb/LC_MESSAGES/kmplayer.mo
+share/locale/nl/LC_MESSAGES/kmplayer.mo
+share/locale/pa/LC_MESSAGES/kmplayer.mo
+share/locale/pl/LC_MESSAGES/kmplayer.mo
+share/locale/pt/LC_MESSAGES/kmplayer.mo
+share/locale/pt_BR/LC_MESSAGES/kmplayer.mo
+share/locale/ro/LC_MESSAGES/kmplayer.mo
+share/locale/ru/LC_MESSAGES/kmplayer.mo
+share/locale/rw/LC_MESSAGES/kmplayer.mo
+share/locale/sk/LC_MESSAGES/kmplayer.mo
+share/locale/sr/LC_MESSAGES/kmplayer.mo
+share/locale/sr@Latn/LC_MESSAGES/kmplayer.mo
+share/locale/sv/LC_MESSAGES/kmplayer.mo
+share/locale/ta/LC_MESSAGES/kmplayer.mo
+share/locale/tr/LC_MESSAGES/kmplayer.mo
+share/locale/xx/LC_MESSAGES/kmplayer.mo
+share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
 share/services/kmplayer_part.desktop
 @unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/xx/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/xx 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/rw 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
@@ -43,8 +134,26 @@ share/services/kmplayer_part.desktop
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kmplayer
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/ru/kmplayer
+@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
+@dirrm share/doc/HTML/pt/kmplayer
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/it/kmplayer
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/fr/kmplayer
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@dirrm share/doc/HTML/et/kmplayer
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrm share/doc/HTML/es/kmplayer
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
 @dirrm share/doc/HTML/en/kmplayer
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kmplayer
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@dirrm share/doc/HTML/da/kmplayer
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @unexec rmdir %D/share/config 2>/dev/null || true
 @dirrm share/apps/kmplayer
