@@ -1,4 +1,6 @@
 MD5 (squid_radius_auth-1.08.tgz) = 1b365097c38e494933e294465e6a2b31
+SHA256 (squid_radius_auth-1.08.tgz) = 8f3ed8d49013c190fcdd457f260096a7dcecfa0bb51f30799d6d00adb63cb1be
 SIZE (squid_radius_auth-1.08.tgz) = 13854
 MD5 (squid_radius_freebsd.diff) = 843cf3d5ac689b277ec9a3221c54f23f
+SHA256 (squid_radius_freebsd.diff) = f27012c5cf79894f688c1dc73023ad748783d5e57f38f3c966f9b7052a326719
 SIZE (squid_radius_freebsd.diff) = 574
