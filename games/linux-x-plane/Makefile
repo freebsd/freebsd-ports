@@ -25,6 +25,7 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution prohibited"
+NO_PACKAGE=	"Package will be 353 MB, set FORCE_PACKAGE if you really want to build it"
 ONLY_FOR_ARCHS=	i386
 
 XPVERSION=	${PORTVERSION:S|.||g}
