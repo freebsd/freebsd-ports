@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.netams.com/files/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
-NO_PACKAGE=	Depends on kernel
+NO_PACKAGE=	"Depends on kernel"
 
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
@@ -47,7 +47,7 @@ OPTIONS=	DEBUG	"Build with debug symbols"			off \
 .include <bsd.port.pre.mk>
 
 .if !exists(${SYSDIR})
-IGNORE=		Could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
+IGNORE=		could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
 .endif
 
 post-patch:
