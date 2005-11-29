@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gl
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	graphics scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -30,15 +30,19 @@ DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 PLIST_SUB=	VERSION="`gauche-config -V`" \
 		TARGET="${CONFIGURE_TARGET}"
 
+.if !defined(NOPORTDOCS)
+INFO=		gauche-gl-refe gauche-gl-refj
+.endif
+
 do-install:
 	cd ${WRKSRC}/src; ${MAKE} ${INSTALL_TARGET}
 	cd ${WRKSRC}/lib; ${MAKE} ${INSTALL_TARGET}
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for info in gauche-gl-refe.info gauche-gl-refj.info
-	${GZCAT} ${WRKSRC}/doc/${info}.gz >${PREFIX}/info/${info}
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.for i in gauche-gl-refe.info gauche-gl-refj.info
+	${GZCAT} ${WRKSRC}/doc/${i}.gz >${PREFIX}/info/${i}
+	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
