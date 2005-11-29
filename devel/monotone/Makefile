@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.23
-PORTREVISION=	2
+PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
@@ -18,6 +17,7 @@ COMMENT=	A distributed version control system with digital signatures
 PLIST_FILES=	bin/monotone
 INFO=		monotone
 MAN1=		monotone.1
+PORTDOCS=	NEWS UPGRADE
 
 USE_GCC=	3.4+
 USE_REINPLACE=	yes
@@ -51,5 +51,11 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|\($$(CXX) -Wall\)|\1 ${CXXFLAGS}|' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

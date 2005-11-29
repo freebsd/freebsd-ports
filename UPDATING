@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051129:
+  AFFECTS: users of devel/monotone
+  AUTHOR: lapo@lapo.it
+
+  Keys are now stored in ~/.monotone/keys/.
+  You must run 'db migrate' against each of your databases;
+  this will automatically migrate the keys.
+  Command line syntax for 'serve' has changed; please adjust
+  startup scripts accordingly.
+  See /usr/local/share/doc/monotone/NEWS for details. 
+
 20051123:
   AFFECTS: users of www/lighttpd
   AUTHOR: delphij@FreeBSD.org
