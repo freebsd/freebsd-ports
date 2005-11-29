@@ -16,6 +16,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/SPE.py
 %%PYTHON_SITELIBDIR%%/_spe/SPE.pyc
 %%PYTHON_SITELIBDIR%%/_spe/SPE.pyo
+%%PYTHON_SITELIBDIR%%/_spe/SPE_DEBUG.py
+%%PYTHON_SITELIBDIR%%/_spe/SPE_DEBUG.pyc
+%%PYTHON_SITELIBDIR%%/_spe/SPE_DEBUG.pyo
 %%PYTHON_SITELIBDIR%%/_spe/SPE_notes.txt
 %%PYTHON_SITELIBDIR%%/_spe/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/__init__.pyc
@@ -43,93 +46,17 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/speDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/speDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/speDialog.pyo
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdb.wxg
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.py
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.pyc
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/winpdbDialog.pyo
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/_spe/doc
 %%PORTDOCS%%%%DOCSDIR%%/about.htm
 %%PORTDOCS%%%%DOCSDIR%%/addYourOwnMenus.txt
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Armature-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Armature.Armature-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Armature.Bone-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/BGL-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/BGL.Buffer-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Blender-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Camera-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Camera.Camera-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Curve-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Curve.Curve-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Draw-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Effect-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Effect.Effect-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Image-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Image.Image-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Ipo-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Ipo.BezTriple-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Ipo.Ipo-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Ipo.IpoCurve-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Lamp-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Lamp.Lamp-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Lattice-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Lattice.Lattice-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Material-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Material.Material-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Metaball-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Metaball.Metaball-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/NMesh-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/NMesh.NMCol-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/NMesh.NMFace-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/NMesh.NMVert-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/NMesh.NMesh-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Object-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Object.Object-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Registry-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Scene-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Scene.Scene-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Sys-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Text-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Text.Text-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Texture-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Texture.MTex-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Texture.Texture-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Types-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/Window-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/World-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/World.World-class.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/epydoc.css
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/frames.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/help.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/index.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/indices.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Armature-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-BGL-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Blender-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Camera-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Curve-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Draw-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Effect-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Image-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Ipo-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Lamp-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Lattice-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Material-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Metaball-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-NMesh-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Object-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Registry-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Scene-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Sys-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Text-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Texture-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Types-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-Window-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-World-module.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc-everything.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/blender_python_API/trees.html
 %%PORTDOCS%%%%DOCSDIR%%/donate.html
 %%PORTDOCS%%%%DOCSDIR%%/home.py
 %%PORTDOCS%%%%DOCSDIR%%/home.pyc
 %%PORTDOCS%%%%DOCSDIR%%/home.pyo
-%%PORTDOCS%%%%DOCSDIR%%/manual.odt
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pyds.css
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/separators.txt
@@ -143,6 +70,9 @@ bin/spe
 %%EXAMPLESDIR%%/example.pyc
 %%EXAMPLESDIR%%/example.pyo
 %%EXAMPLESDIR%%/example_notes.txt
+%%EXAMPLESDIR%%/signature.py
+%%EXAMPLESDIR%%/signature.pyc
+%%EXAMPLESDIR%%/signature.pyo
 %%EXAMPLESDIR%%/uml_example.py
 %%EXAMPLESDIR%%/uml_example.pyc
 %%EXAMPLESDIR%%/uml_example.pyo
@@ -355,100 +285,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/dirs
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/docs
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/files
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/postinst
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian/rules
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/Makefile
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/apa.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01s04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01s05.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch01s06.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch02s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch02s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch02s04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch02s05.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s05.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s06.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch03s07.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s05.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s06.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s07.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s08.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s09.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s10.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s11.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s12.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s13.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s14.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s15.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s16.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s17.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s18.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s19.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s20.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s21.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s22.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s23.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s24.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s25.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s26.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch04s27.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch05.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch05s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch05s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/ch05s04.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/design_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/design_window_empty_slot.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/index.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/label_menu.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/main_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/pr01.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/pr01s02.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/pr01s03.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/preview_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/properties_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/properties_window_tab_1.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/properties_window_tab_2.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/properties_window_tab_3.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/select_frame.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/sizer_menu.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html/tree_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/box_sizer_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/button_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/custom_widget.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/frame_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/notebook_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/sizer_slot.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/spacer_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img/text_ctrl_button.gif
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/index.html
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/pdf/readme.txt
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/design_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/design_window_empty_slot.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/label_menu.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/main_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/preview_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/properties_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/properties_window_tab_1.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/properties_window_tab_2.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/properties_window_tab_3.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/select_frame.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/sizer_menu.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/test.wxg
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src/tree_window.png
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/tech_notes.txt
-%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/tutorial.html
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers/__init__.pyo
@@ -473,6 +310,20 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/events_mixin.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/events_mixin.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/events_mixin.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/bmp.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/box.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/color_dialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/custom.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/equity.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/err_dialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/font_dialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/grid.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/menubar.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/notebook.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/ppp_connection.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/scroll.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/split.wxg
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples/unicode.wxg
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/font_dialog.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/font_dialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/font_dialog.pyo
@@ -927,6 +778,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/tree_ctrl.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/tree_ctrl/tree_ctrl.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/widgets/widgets.txt
+%%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/wxglade
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/wxglade.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/wxglade.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/wxglade.pyo
@@ -973,6 +825,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/compiled.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/dedent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/def.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/documentinfo.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/donate.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/down.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/editcopy.png
@@ -1009,6 +862,8 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/import.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/indent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char_win.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/kmail.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/locals.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/mozilla.png
@@ -1081,12 +936,12 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/stc.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/stc.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/stc.pyo
-%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/winpdb_settings.txt
 %%PYTHON_SITELIBDIR%%/_spe/spe
 %%PYTHON_SITELIBDIR%%/_spe/spe.blend
 %%PYTHON_SITELIBDIR%%/_spe/spe.blend.py
 %%PYTHON_SITELIBDIR%%/_spe/spe.blend.pyc
 %%PYTHON_SITELIBDIR%%/_spe/spe.blend.pyo
+%%PYTHON_SITELIBDIR%%/_spe/speMac.blend
 %%PYTHON_SITELIBDIR%%/_spe/spe_blender.py
 %%PYTHON_SITELIBDIR%%/_spe/spe_blender.pyc
 %%PYTHON_SITELIBDIR%%/_spe/spe_blender.pyo
@@ -1130,8 +985,21 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/tabs/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/tabs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/tabs/__init__.pyo
-%%PYTHON_SITELIBDIR%%/_spe/winpdb_settings.cfg
-%%PYTHON_SITELIBDIR%%/_spe/winpdb_settings.txt
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_ListCtrl.py
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_ListCtrl.pyc
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_ListCtrl.pyo
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_ListCtrl.wxg
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_TreeCtrl.py
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_TreeCtrl.pyc
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_TreeCtrl.pyo
+%%PYTHON_SITELIBDIR%%/_spe/test/test_realtime_TreeCtrl.wxg
+%%PYTHON_SITELIBDIR%%/_spe/view/__init__.py
+%%PYTHON_SITELIBDIR%%/_spe/view/__init__.pyc
+%%PYTHON_SITELIBDIR%%/_spe/view/__init__.pyo
+%%PYTHON_SITELIBDIR%%/_spe/view/documentation.py
+%%PYTHON_SITELIBDIR%%/_spe/view/documentation.pyc
+%%PYTHON_SITELIBDIR%%/_spe/view/documentation.pyo
+%%PYTHON_SITELIBDIR%%/_spe/workspace.reg.txt
 %%PYTHON_SITELIBDIR%%/_spe/wxgChild.py
 %%PYTHON_SITELIBDIR%%/_spe/wxgChild.pyc
 %%PYTHON_SITELIBDIR%%/_spe/wxgChild.pyo
@@ -1139,7 +1007,6 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/wxgMenu.pyc
 %%PYTHON_SITELIBDIR%%/_spe/wxgMenu.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/dialogs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/blender_python_API
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/images
@@ -1150,12 +1017,8 @@ bin/spe
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/winpdb
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/codegen
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/debian
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/html
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/img
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/pdf
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs/src
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/docs
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/edit_sizers
+@dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/examples
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/icons/gtk
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/icons/msw
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins/wxGlade/icons
@@ -1200,4 +1063,6 @@ bin/spe
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/sm/wxp
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/sm
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/_spe/test
+@dirrm %%PYTHON_SITELIBDIR%%/_spe/view
 @dirrm %%PYTHON_SITELIBDIR%%/_spe
