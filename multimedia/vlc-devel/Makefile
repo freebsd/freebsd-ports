@@ -3,7 +3,7 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/multimedia/vlc-devel/Makefile,v 1.2 2005/08/15 05:48:27 mezz Exp $
+#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.2 2005/11/29 17:44:29 ahze Exp $
 #
 # NOTES about VLC Knobs:
 # Below you will see a number of knobs, if it starts with WITHOUT_ it is
@@ -69,6 +69,9 @@
 # WITH_REALAUDIO
 #  Real audio(R) support
 #
+# WITH_SHOUT
+#  Libshout2 support
+#
 # WITH_TREMOR
 #  Interger-only Ogg Vorbis decoder
 #   !!experimental!!
@@ -82,9 +85,6 @@
 # WITH_SPEEX=yes
 #  Speex voice codec Support
 #
-# WITH_TOOLAME=yes
-#  Toolame Support
-#
 # WITH_TWOLAME=yes
 #  Twolame Mpeg layer 2 audio Support
 #
@@ -96,12 +96,15 @@
 # WITH_AALIB=yes
 #  Console Graphics Support
 #
+# WITH_CACA=yes
+#  Console Graphics Support (implies WITH_AALIB)
+#
+# WITH_DV=yes
+#  Digital video input
+#
 # WITH_FRIBIDI=yes
 #
 # WITH_GGI=yes
-#
-# WITH_CACA=yes
-#  Console Graphics Support (implies WITH_AALIB)
 #
 # WITH_SDL=yes
 #  SDL video output
@@ -153,7 +156,10 @@
 #
 # Other Knobs:
 #
-# DEBUG=yes
+# WITH_AVAHI=yes
+#  Avahi (Rendezvous/Bonjour (R) ) networking
+#
+# WITH_DEBUG=yes
 #  Enable debuging support
 #
 # WITHOUT_CDROM=yes
@@ -172,12 +178,14 @@
 # WITH_DVDREAD=yes
 #  Enable Regular DVD support (non-menu)
 #
-# WITH_MOZILLA=	[mozilla|mozilla-devel|firefox]
-# WITH_MOZILLA_PLUGIN= yes
+# WITH_GECKO= [firefox|mozilla|seamonkey|nvu]
+# WITH_VLC_MOZILLA_PLUGIN= yes
 #  Enable A mozilla plugin for VLC
 #  See http://www.videolan.org/doc/vlc-user-guide/en/ch07.html#id2529837
 #  for more info on using this plugin.
 #   defaults to www/mozilla
+#
+#  NOTE: The www/mplayer-plugin is much more complete.
 #
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
@@ -220,10 +228,11 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.4.20051102
+DISTVERSION=	0.8.5.20051128
 PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
+MASTER_SITES=	http://download2.videolan.org/pub/vlc/snapshots/ \
+		http://download.videolan.org/pub/vlc/snapshots/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -231,21 +240,17 @@ MASTER_SITES=	http://download.videolan.org/pub/vlc/snapshots/
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	ahze/:mozilla
 PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.4.//}
+DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.5.//}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	vlc-*-0.8.2*
+CONFLICTS=	vlc-*-0.8.4*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.4.//}
-### BROKEN -- Needs newer verision of toolame ###
-WITHOUT_TOOLAME=	yes
-WITHOUT_MOZILLA_PLUGIN=	yes
-### BROKEN ###
+WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.5.//}
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
@@ -266,7 +271,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
@@ -278,33 +283,6 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 
 MAN1=		vlc.1 \
 		vlc-config.1
-
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-### Remove comment when gnome 2.12 hits the streets.
-#WITH_MOZILLA?=	firefox
-.if ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config" \
-		XPIDL="${X11BASE}/lib/firefox/xpidl"\
-		XPIDL_INCL="-I${X11BASE}/share/idl/firefox"
-.else
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-config" \
-		XPIDL="${X11BASE}/lib/mozilla${HEADERS_SUFX}/xpidl" \
-		XPIDL_INCL="-I${X11BASE}/share/idl/mozilla${HEADERS_SUFX}"
-.endif
-MOZILLA_SUFFIX=-mozilla
-CONFIGURE_ARGS+=--enable-mozilla
-.if ${WITH_MOZILLA}=="mozilla-devel"
-HEADERS_SUFX=	-devel
-.else
-HEADERS_SUFX=
-.endif
-.endif
 
 .if defined(WITH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
 WX_CONFIG=	wxgtk2-2.4-config
@@ -321,16 +299,10 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 BROKEN=	"Does not compile with perl ${PERL_VERSION}"
 .endif
 
-.if ${ARCH}=="amd64"
-WITH_WXGTK_VER=	2.4
-.endif
-
-.if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-.if ${WITH_MOZILLA}=="mozilla-devel"
-USE_GCC=	3.4
-WITHOUT_LIVEMEDIA=	yes
-.endif
-.endif
+#.if ${ARCH}=="amd64"
+# Maybe this works now??
+#WITH_WXGTK_VER=	2.4
+#.endif
 
 # compatible knobs.
 .if defined(WITH_DEBUG)
@@ -422,6 +394,13 @@ LIB_DEPENDS+=	 artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
+.endif
+
+.if (defined(WITH_AVAHI) || exists(${LOCALBASE}/lib/libavahi-client.a)) && !defi
+LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi
+CONFIGURE_ARGS+=	--enable-bonjour
+.else
+CONFIGUE_ARGS+=		--disable-bonjour
 .endif
 
 .if !defined(WITHOUT_CDROM)
@@ -558,6 +537,13 @@ CONFIGURE_ARGS+=--enable-dts
 CONFIGURE_ARGS+=--disable-dts
 .endif
 
+.if (defined(WITH_DV) || exists(${LOCALBASE}/lib/libdv.a)) && !defined(WITHOUT_DV)
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
+CONFIGURE_ARGS+=--enable-dv
+.else
+CONFIGURE_ARGS+=--disable-dv
+.endif
+
 .if defined(WITHOUT_HTTPD)
 CONFIGURE_ARGS+=--disable-httpd
 .endif
@@ -592,6 +578,16 @@ CONFIGURE_ARGS+=--enable-a52
 CONFIGURE_ARGS+=--disable-a52
 .endif
 
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
+USE_GECKO=	firefox mozilla seamonkey nvu
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
+		XPIDL="${XPIDL}" \
+		XPIDL_INCL="${XPIDL_INCL}"
+MOZILLA_SUFFIX=-mozilla
+CONFIGURE_ARGS+=--enable-mozilla
+.endif
+
 .if !defined(WITHOUT_MPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
@@ -601,6 +597,11 @@ CONFIGURE_ARGS+=--disable-libmpeg2
 
 .if defined(WITH_REALAUDIO)
 CONFIGURE_ARGS+=	--enable-real
+.endif
+
+.if (defined(WITH_SHOUT) || exists(${LOCALBASE}/lib/libshout.a)) && !defined(WITHOUT_SHOUT)
+LIB_DEPENDS+=	shout.4:${PORTSDIR}/audio/libshout2
+CONFIGURE_AGRS+=	--enable-shout
 .endif
 
 .if (defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.a)) && !defined(WITHOUT_THEORA)
@@ -707,14 +708,6 @@ CONFIGURE_ARGS+=--disable-svgalib
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .else
 CONFIGURE_ARGS+=--disable-tremor
-.endif
-
-.if defined(WITH_TOOLAME) && !defined(WITHOUT_TOOLAME)
-BUILD_DEPENDS+=		toolame:${PORTSDIR}/audio/toolame
-RUN_DEPEDNS+=		toolame:${PORTSDIR}/audio/toolame
-CONFIGURE_ARGS+=	--enable-toolame
-.else
-CONFIGURE_ARGS+=	--disable-toolame
 .endif
 
 .if (defined(WITH_TWOLAME) || exists(${LOCALBASE}/lib/libtwolame.a)) && !defined(WITHOUT_TWOLAME)
@@ -854,16 +847,6 @@ pre-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endfor
 
-pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^ffmpeg-0.4.9.p'`" ]; then \
-		${ECHO_MSG} ;\
-		${ECHO_MSG} "Note: ffmpeg-0.4.9 detected, if you want ffmpeg's postprocess" ;\
-		${ECHO_MSG} " features please hit ^C and remove ffmpeg-0.4.9 and" ;\
-		${ECHO_MSG} " install multimedia/ffmpeg-devel" ;\
-		${ECHO_MSG} ;\
-		sleep 2 ;\
-	fi
-
 do-install:
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
 		${FAKEDIR}/bin/vlc-config
@@ -891,7 +874,7 @@ do-install:
 	fi
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 	${INSTALL_DATA} ${FILESDIR}/svlc.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/gvlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
 .endif
 .if !defined(WITHOUT_WXGTK)
 	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
