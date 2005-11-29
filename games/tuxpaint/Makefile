@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTVERSION=	0.9.15
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,27 +28,15 @@ MANCOMPRESSED=	yes
 IGNORE=		needs wide character string functions in libc
 .endif
 
-post-extract:
-# Remove CVS directories
-	@${FIND} ${WRKSRC} -type d -name CVS -print0 | \
-		${XARGS} -0 ${RM} -rf
-
 post-patch:
-# Fix Makefile
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}| ; \
-			s|$$(PREFIX)/share/tuxpaint|${DATADIR}| ; \
-			s|$$(PREFIX)/share/doc/tuxpaint|${DOCSDIR}|; \
-			s|sdl-config|${SDL_CONFIG}|'  \
-				${WRKSRC}/${MAKEFILE}
-
-# Documentation (optional)
+# Documentation.
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-doc\([^:]\)|\1|' ${WRKSRC}/${MAKEFILE}
 .endif
 
 # Fix SDL include statement and remove "#error" statement
 	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2| ; \
-			s|#error.*||' \
-				${WRKSRC}/src/${PORTNAME}.c
+		s|#error.*||' \
+		${WRKSRC}/src/${PORTNAME}.c
 
 .include <bsd.port.post.mk>
