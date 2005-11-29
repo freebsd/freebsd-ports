@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.hairylemon.org/~ad/software/qident/
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Query a remote IDENT (RFC 1413) server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
+LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
 
 USE_REINPLACE=	yes
 
