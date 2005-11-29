@@ -1,0 +1,11 @@
+@ -0,0 +1,10 @@
+#!/bin/sh
+
+dirs="Ted appFrame appUtil bitmap ind libreg tedPackage"
+
+for d in $dirs; do
+  (cd $d && ./configure $*)
+  if [ $? != 0 ]; then
+    exit $?
+  fi
+done
