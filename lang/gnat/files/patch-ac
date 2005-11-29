@@ -1,31 +1,20 @@
-*** ada/Makefile.in.orig	Thu Oct 24 04:02:15 2002
---- ada/Makefile.in	Fri Nov 22 09:12:11 2002
-***************
-*** 820,825 ****
---- 820,845 ----
-    endif
-  endif
-  
-+ ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys))),)
-+   LIBGNAT_TARGET_PAIRS = \
-+   a-intnam.ads<4fintnam.ads \
-+   s-inmaop.adb<7sinmaop.adb \
-+   s-intman.adb<5fintman.adb \
-+   s-mastop.adb<5omastop.adb \
-+   s-osinte.adb<5fosinte.adb \
-+   s-osinte.ads<5fosinte.ads \
-+   s-osprim.adb<7sosprim.adb \
-+   s-taprop.adb<5ftaprop.adb \
-+   s-taspri.ads<7staspri.ads \
-+   s-tpopsp.adb<7stpopsp.adb \
-+   system.ads<5fsystem.ads
-+ 
-+   SHARED_MAJOR = 1
-+   soext = .so.$(SHARED_MAJOR)
-+   THREADSLIB=-pthread
-+   LIBRARY_VERSION := $(strip $(shell grep Library_Version $(fsrcpfx)gnatvsn.ads | sed -e 's/.*GNAT Lib v\(.*\)[ "].*/\1/'))
-+ endif
-+ 
-  ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
-    ifeq ($(strip $(filter-out mips sgi irix6%,$(targ))),)
-      LIBGNAT_TARGET_PAIRS = \
+--- gcc/ada/Makefile.in.orig	Tue May 17 09:22:45 2005
++++ gcc/ada/Makefile.in	Mon Nov 28 10:24:38 2005
+@@ -893,7 +893,7 @@
+   mlib-tgt.adb<mlib-tgt-linux.adb
+   GNATLIB_SHARED = gnatlib-shared-dual
+ 
+-  THREADSLIB= -lc_r
++  THREADSLIB= $(PTHREAD_LIBS)
+   GMEM_LIB = gmemlib
+   PREFIX_OBJS = $(PREFIX_REAL_OBJS)
+   LIBRARY_VERSION := $(LIB_VERSION)
+@@ -1410,7 +1410,7 @@
+ # subdirectory and copied.
+ LIBGNAT_SRCS = ada.h adaint.c adaint.h argv.c cio.c cstreams.c \
+   errno.c exit.c cal.c ctrl_c.c \
+-  raise.h raise.c sysdep.c aux-io.c init.c initialize.c seh_init.c \
++  raise.h raise.c sysdep.c aux-io.c init.c initialize.c seh_init.c types.h \
+   final.c tracebak.c tb-alvms.c tb-alvxw.c expect.c mkdir.c socket.c gsocket.h \
+   $(EXTRA_LIBGNAT_SRCS)
+ 

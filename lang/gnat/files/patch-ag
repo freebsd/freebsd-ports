@@ -1,19 +1,11 @@
-*** ./ada/gnatchop.adb.orig	Thu Oct 24 04:02:18 2002
---- ./ada/gnatchop.adb	Fri Nov 22 09:18:03 2002
-***************
-*** 49,55 ****
-     Config_File_Name : constant String_Access := new String'("gnat.adc");
-     --  The name of the file holding the GNAT configuration pragmas
-  
-!    Gcc : String_Access := new String'("gcc");
-     --  May be modified by switch --GCC=
-  
-     Gcc_Set : Boolean := False;
---- 49,55 ----
-     Config_File_Name : constant String_Access := new String'("gnat.adc");
-     --  The name of the file holding the GNAT configuration pragmas
-  
-!    Gcc : String_Access := new String'("adagcc");
-     --  May be modified by switch --GCC=
-  
-     Gcc_Set : Boolean := False;
+--- gcc/ada/gnatchop.adb.orig	Fri Jul 29 09:03:44 2005
++++ gcc/ada/gnatchop.adb	Wed Nov 23 23:40:15 2005
+@@ -45,7 +45,7 @@
+    Config_File_Name : constant String_Access := new String'("gnat.adc");
+    --  The name of the file holding the GNAT configuration pragmas
+ 
+-   Gcc : String_Access := new String'("gcc");
++   Gcc : String_Access := new String'("gnatgcc");
+    --  May be modified by switch --GCC=
+ 
+    Gcc_Set : Boolean := False;

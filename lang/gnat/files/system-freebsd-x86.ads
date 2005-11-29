@@ -5,11 +5,9 @@
 --                               S Y S T E M                                --
 --                                                                          --
 --                                 S p e c                                  --
---                            (Default Version)                             --
+--                           (FreeBSD/x86 Version)                          --
 --                                                                          --
---                            $Revision: 1.40 $
---                                                                          --
---          Copyright (C) 1992-2000 Free Software Foundation, Inc.          --
+--          Copyright (C) 1992-2005, Free Software Foundation, Inc.         --
 --                                                                          --
 -- This specification is derived from the Ada Reference Manual for use with --
 -- GNAT. The copyright notice above, and the license provisions that follow --
@@ -23,8 +21,8 @@
 -- or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License --
 -- for  more details.  You should have  received  a copy of the GNU General --
 -- Public License  distributed with GNAT;  see file COPYING.  If not, write --
--- to  the Free Software Foundation,  59 Temple Place - Suite 330,  Boston, --
--- MA 02111-1307, USA.                                                      --
+-- to  the  Free Software Foundation,  51  Franklin  Street,  Fifth  Floor, --
+-- Boston, MA 02110-1301, USA.                                              --
 --                                                                          --
 -- As a special exception,  if other files  instantiate  generics from this --
 -- unit, or you link  this unit with other files  to produce an executable, --
@@ -34,14 +32,15 @@
 -- covered by the  GNU Public License.                                      --
 --                                                                          --
 -- GNAT was originally developed  by the GNAT team at  New York University. --
--- It is now maintained by Ada Core Technologies Inc (http://www.gnat.com). --
+-- Extensive contributions were provided by Ada Core Technologies Inc.      --
 --                                                                          --
 ------------------------------------------------------------------------------
 
 package System is
-pragma Pure (System);
---  Note that we take advantage of the implementation permission to
---  make this unit Pure instead of Preelaborable, see RM 13.7(36)
+   pragma Pure;
+   --  Note that we take advantage of the implementation permission to make
+   --  this unit Pure instead of Preelaborable; see RM 13.7.1(15). In Ada
+   --  2005, this is Pure in any case (AI-362).
 
    type Name is (SYSTEM_NAME_GNAT);
    System_Name : constant Name := SYSTEM_NAME_GNAT;
@@ -60,7 +59,7 @@ pragma Pure (System);
    Max_Mantissa          : constant := 63;
    Fine_Delta            : constant := 2.0 ** (-Max_Mantissa);
 
-   Tick                  : constant := 1.0;
+   Tick                  : constant := 0.000_001;
 
    --  Storage-related Declarations
 
@@ -120,20 +119,35 @@ private
    Backend_Divide_Checks     : constant Boolean := False;
    Backend_Overflow_Checks   : constant Boolean := False;
    Command_Line_Args         : constant Boolean := True;
+   Compiler_System_Version   : constant Boolean := False;
+   Configurable_Run_Time     : constant Boolean := False;
    Denorm                    : constant Boolean := True;
+   Duration_32_Bits          : constant Boolean := False;
+   Exit_Status_Supported     : constant Boolean := True;
    Fractional_Fixed_Ops      : constant Boolean := False;
    Frontend_Layout           : constant Boolean := False;
    Functions_Return_By_DSP   : constant Boolean := False;
-   Long_Shifts_Inlined       : constant Boolean := True;
-   High_Integrity_Mode       : constant Boolean := False;
    Machine_Overflows         : constant Boolean := False;
    Machine_Rounds            : constant Boolean := True;
    OpenVMS                   : constant Boolean := False;
+   Preallocated_Stacks       : constant Boolean := False;
    Signed_Zeros              : constant Boolean := True;
    Stack_Check_Default       : constant Boolean := False;
    Stack_Check_Probes        : constant Boolean := False;
+   Support_64_Bit_Divides    : constant Boolean := True;
+   Support_Aggregates        : constant Boolean := True;
+   Support_Composite_Assign  : constant Boolean := True;
+   Support_Composite_Compare : constant Boolean := True;
+   Support_Long_Shifts       : constant Boolean := True;
+   Suppress_Standard_Library : constant Boolean := False;
    Use_Ada_Main_Program_Name : constant Boolean := False;
    ZCX_By_Default            : constant Boolean := False;
    GCC_ZCX_Support           : constant Boolean := False;
    Front_End_ZCX_Support     : constant Boolean := False;
+
+   --  Obsolete entries, to be removed eventually (bootstrap issues!)
+
+   High_Integrity_Mode       : constant Boolean := False;
+   Long_Shifts_Inlined       : constant Boolean := True;
+
 end System;

@@ -1,57 +1,11 @@
-*** ./Makefile.in.orig	Fri Nov  5 19:52:38 1999
---- ./Makefile.in	Sat Nov  6 10:07:16 1999
-***************
-*** 152,158 ****
-  ENQUIRE_LDFLAGS = $(LDFLAGS)
-  
-  # Sed command to transform gcc to installed name.  Overwritten by configure.
-! program_transform_name = -e s,x,x,
-  program_transform_cross_name = -e s,^,$(target_alias)-,
-  
-  # Tools to use when building a cross-compiler.
---- 152,158 ----
-  ENQUIRE_LDFLAGS = $(LDFLAGS)
-  
-  # Sed command to transform gcc to installed name.  Overwritten by configure.
-! program_transform_name = -e s,^,ada,
-  program_transform_cross_name = -e s,^,$(target_alias)-,
-  
-  # Tools to use when building a cross-compiler.
-***************
-*** 2151,2157 ****
-  # Install the driver last so that the window when things are
-  # broken is small.
-  install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
-!     install-man install-info lang.install-normal install-driver
-  
-  # Do nothing while making gcc with a cross-compiler. The person who
-  # makes gcc for the target machine has to know how to put a complete
---- 2151,2157 ----
-  # Install the driver last so that the window when things are
-  # broken is small.
-  install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
-!     install-man lang.install-normal install-driver
-  
-  # Do nothing while making gcc with a cross-compiler. The person who
-  # makes gcc for the target machine has to know how to put a complete
-***************
-*** 2241,2249 ****
-  # Install gcov if it was compiled.
-  	-if [ -f gcov$(exeext) ]; \
-  	then \
-! 	    rm -f $(bindir)/gcov$(exeext); \
-! 	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/gcov$(exeext); \
-! 	    chmod a+x $(bindir)/gcov$(exeext); \
-  	fi
-  
-  # Install the driver program as $(target_alias)-gcc
---- 2241,2249 ----
-  # Install gcov if it was compiled.
-  	-if [ -f gcov$(exeext) ]; \
-  	then \
-! 	    rm -f $(bindir)/adagcov$(exeext); \
-! 	    $(INSTALL_PROGRAM) gcov$(exeext) $(bindir)/adagcov$(exeext); \
-! 	    chmod a+x $(bindir)/adagcov$(exeext); \
-  	fi
-  
-  # Install the driver program as $(target_alias)-gcc
+--- gcc/Makefile.in.orig	Wed Nov 23 23:55:21 2005
++++ gcc/Makefile.in	Thu Nov 24 10:47:11 2005
+@@ -2871,7 +2871,7 @@
+ # Install the driver last so that the window when things are
+ # broken is small.
+ install: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    install-cpp install-man install-info install-@POSUB@ \
++    install-cpp install-man install-@POSUB@ \
+     lang.install-normal install-driver
+ 
+ # Handle cpp installation.

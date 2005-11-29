@@ -1,6 +1,5 @@
-
 # New ports collection makefile for:	GNU Ada gnat
-# Date created:         Sat Mar 18 02:16:45 1995
+# Date created:		Sat Mar 18 02:16:45 1995
 # Whom:			hsu
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
@@ -15,170 +14,151 @@
 #   using symbolic links.
 
 PORTNAME=	gnat
-PORTVERSION=	3.15p
-PORTREVISION=	1
+PORTVERSION=	2005
 CATEGORIES=	lang
-MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/:gnat \
-		http://libre.act-europe.fr/GNAT/${PORTVERSION}/:gnat \
-		${MASTER_SITE_LOCAL:S/$/:boot/} \
-		ftp://ftp.gnu.org/pub/gnu/gcc/:gcc
-MASTER_SITE_SUBDIR=	gcc/:gcc deischen/gcc/:boot
-DISTFILES=	${GNATNAME}.tgz:gnat \
-		gcc-2.8.1.tar.gz:gcc
+MASTER_SITES=	${MASTER_SITE_LOCAL}:boot
+MASTER_SITE_SUBDIR=	deischen/gcc/:boot
+DISTFILES=	${GCC_SRCFILE}:gcc ${GNAT_SRCFILE}:gnat
 
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	The GNU Ada Compiler system
 
+CONFLICTS=	gcc-3.4.*
+USE_GMAKE=	yes
+
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/gcc-2.8.1
-GNATNAME=	gnat-${PORTVERSION}-src
-GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
-GCC_VERSION=	2.8.1
+WRKSRC=		${WRKDIR}/gcc-34
+GNATNAME=	gnat-gpl-2005-src
+GNUHOST=	${ARCH}-portbld-freebsd${OSREL}
+GCC_VERSION=	3.4.5
+
+# http://libre.adacore.com/:gcc
+# http://libre.adacore.com/:gnat
+GCC_SRCFILE=	gcc-3.4.5-20050524-src.tgz
+GNAT_SRCFILE=	gnat-gpl-2005-src.tgz
 
 PLIST_SUB=	GNUHOST=${GNUHOST} GCC_VERSION=${GCC_VERSION} \
-		LIBRARY_VERSION=${LIBRARY_VERSION} \
-		SHARED_MAJOR=${SHARED_MAJOR}
-.if ${OSVERSION} < 600011
-PLIST_FILES+=	lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/math.h
-.endif
+		LIBRARY_VERSION=${LIBRARY_VERSION}
 
 # Make no mistake about what host/target we are building on/for.
 # This package does not support cross-compiling, and this fixes
 # problems with bsd.port.mk files from earlier FreeBSD 3.x releases.
-CONFIGURE_TARGET=	--host=${GNUHOST} --target=${GNUHOST}
-CONFIGURE_ARGS=		--program-prefix=ada
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAN1=		adagcc.1 cccp.1
+CONFIGURE_TARGET=	${GNUHOST}
+CONFIGURE_ARGS=		--enable-languages="c,ada" \
+			--program-prefix=gnat \
+			--disable-nls \
+			--with-system-zlib \
+			--with-libiconv-prefix=${LOCALBASE}
 
-# You need a compiler who calls an existing GNAT compiler (3.12 or greater).
-# If you have one, point CC at it.  By default, we'll look for one in the
-# obvious places.  If we can't find one, we'll fetch a distfile containing
+TARGLIB=	${PREFIX}/lib/gcc/${GNUHOST}/${GCC_VERSION}
+GNU_CONFIGURE=	yes
+MAN1=		gnatgcc.1 gnatcpp.1 gnatgcov.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
+NO_PACKAGE=	"This version of GNAT produces GPL-tainted executables"
+
+.if ${PORTOBJFORMAT} == "aout"
+BROKEN=	"Cannot build for aout."
+.endif
+
+# You need a compiler who calls an existing GNAT compiler (3.15 or greater).
+# If you have one, point GNATGCC at it.  By default, we'll look for one in
+# the path.  If we can't find one, we'll fetch a distfile containing
 # a minimum (still pretty large) compiler toolset and use that to build.
 
-# For the GNAT compiler, we look in ${PREFIX} and in ${LOCALBASE}.
-.ifdef PREFIX
-have_boot!=	if [ -x ${PREFIX}/bin/adagcc -a -x ${PREFIX}/bin/gnatbind ]; then \
-			${ECHO_CMD} "${PREFIX}/bin"; \
+GNATGCC!=	if ${WHICH} adagcc > /dev/null 2>&1; then \
+			${ECHO_CMD} "`${WHICH} adagcc`"; \
+		else \
+			${ECHO_CMD} ""; \
+		fi
+GNATBIND!=	if ${WHICH} gnatbind > /dev/null 2>&1; then \
+			${ECHO_CMD} "`${WHICH} gnatbind`"; \
+		else \
+			${ECHO_CMD} ""; \
+		fi
+.if empty(GNATGCC)
+GNATGCC!=	if ${WHICH} gnatgcc > /dev/null 2>&1; then \
+			${ECHO_CMD} "`${WHICH} gnatgcc`"; \
+		else \
+			${ECHO_CMD} ""; \
+		fi
+.endif
+
+.if !empty(GNATGCC) && !empty(GNATBIND)
+have_boot!=	if [ -x ${GNATGCC} -a -x ${GNATBIND} ]; then \
+			${ECHO_CMD} "$$PATH"; \
 		else \
 			${ECHO_CMD} ""; \
 		fi
 .else
 have_boot=
 .endif
-.if empty(have_boot)
-have_boot!=	if [ -x ${LOCALBASE}/bin/adagcc -a -x ${LOCALBASE}/bin/gnatbind ]; then \
-			${ECHO_CMD} "${LOCALBASE}/bin"; \
-		else \
-			${ECHO_CMD} ""; \
-		fi
-.endif
-
-#
-# Check for attempts to cross-compile or build an aout GNAT compiler.
-.if empty(have_boot)
-have_boot!=	if [ ${PORTOBJFORMAT} = "aout" ]; then \
-			${ECHO_CMD} "borken for aout"; \
-		else \
-			${ECHO_CMD} ""; \
-		fi
-.else
-have_boot!=	if [ `file ${have_boot}/adagcc | awk ' { print $$2 }'` = "ELF" ]; then \
-			if [ ${PORTOBJFORMAT} = "elf" ]; then \
-				${ECHO_CMD} ${have_boot}; \
-			else \
-				${ECHO_CMD} "borken for aout"; \
-			fi \
-		else \
-			${ECHO_CMD} "borken for aout"; \
-		fi
-.endif
-
-.if ${have_boot} == "borken for aout"
-BROKEN=	"Cannot build with or for an aout compiler."
-.endif
 
 .if empty(have_boot)
 ONLY_FOR_ARCHS=	i386
 DISTFILES+=	gnat-3.15p-boot.tar.gz:boot
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+BUILD_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 # Warning!  You need the trailing slash on GCC_EXEC_PREFIX.
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
 		ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
 		ADA_OBJECTS_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adalib
-have_boot=	${WRKDIR}/adaboot
+have_boot=	${WRKDIR}/adaboot:${PATH}
+GNATGCC=	adagcc
 .endif
 
 # Make sure we use the Ada-aware gcc compiler.
-CC =	adagcc
-CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}/bin:$$PATH
-
-.if OVERRIDE_CFLAGS
-GNATCFLAGS=	${CFLAGS}
-GNATLIBCFLAGS=	${CFLAGS}
-.else
-GNATCFLAGS=	-O2
-GNATLIBCFLAGS=	-O2
-.endif
+CC=		${GNATGCC}
+CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}
 
 # Shared library handling
-LIBRARY_VERSION=	3.15
-SHARED_MAJOR=	1
-
-# Account for signal set changes
-.if ${OSVERSION} > 400010
-SIGSET_WORDS=	4
-SIGACTION=	new_struct_sigaction
+.if defined(WANT_SHAREDLIBS)
+CONFIGURE_ARGS+=	--enable-shared
+INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
+LIBRARY_VERSION=	GPL2005
+PLIST_SUB+=		SHAREDLIB=""
 .else
-SIGSET_WORDS=	1
-SIGACTION=	old_struct_sigaction
+CONFIGURE_ARGS+=	--disable-shared
+PLIST_SUB+=		SHAREDLIB="@comment"
+.endif
+
+# Check for GNAT sources.
+.if !exists(${DISTDIR}/${GNAT_SRCFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=	:\n\
+Because of licensing and registration restrictions, you must fetch the\n\
+source distribution manually.  Please access http://libre.adacore.com/\n\
+with a web browser, register (it's free), and log in.  Download the source\n\
+files:\n\
+\t${GNAT_SRCFILE}\n\
+\t${GCC_SRCFILE}\n\
+and place them in ${DISTDIR}.\n
 .endif
 
 pre-patch:
-	@if [ ! -f ${WRKSRC}/config/i386/freebsd-aout.h ]; then \
-	 	${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h; \
-		${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h; \
-	fi
-	@${ECHO} "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
-	-( for i in ${PORTSDIR}/lang/gcc28/files/patch-*; do \
+	@${ECHO} "===>  Applying FreeBSD ports tree patches for gcc34."
+	@( cd ${WRKSRC}; \
+	    for i in ${PORTSDIR}/lang/gcc34/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} < $$i; \
 	    done )
-	@${ECHO} "===>  Patching gcc for ${GNATNAME}"
-	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${GNATNAME}/src/gcc-281.dif )
+	@${ECHO} "===>  Applying GNAT supplied patches for gcc34."
+	@( cd ${WRKSRC}; \
+	    ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${GNATNAME}/src/gcc-34.dif )
 	@${ECHO} "===>  Moving GNAT compiler sources into GCC tree."
-	-( ${MV} ${WRKDIR}/${GNATNAME}/src/ada ${WRKDIR}/gcc-2.8.1 )
-	@${ECHO} "===>  Making way for FreeBSD GNAT support files"
-	-( ${RM} -f ${WRKSRC}/ada/[45]f* )
+	@( ${MV} ${WRKDIR}/${GNATNAME}/src/ada ${WRKDIR}/gcc-34/gcc )
 
 # Copy any additional files required into the correct locations, and also
 # remove .orig files leftover from patching so they won't get installed.
 post-patch:
-	(cd ${FILESDIR}; \
+	@(cd ${FILESDIR}; \
 	    for i in *.adb *.ads ; do \
-		${CP} $$i ${WRKSRC}/ada; \
+		${CP} $$i ${WRKSRC}/gcc/ada; \
 	    done )
-.if ${OSVERSION} >= 500016
-	( ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/freebsd5x-patch-01 )
-.endif
-	${RM} ${WRKDIR}/gnat-3.15p-src/examples/*.orig
 
 pre-configure:
-	@(cd ${WRKSRC}/config/${ARCH}/ ; \
-	MAJ=`/sbin/sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${MV} freebsd.h freebsd.h.in ; \
-	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
-		>freebsd.h)
-	@(cd ${WRKSRC}/ada/ ; \
-	${MV} 5fosinte.ads 5fosinte.ads.in ; \
-	${SED} -e "s:__FreeBSD__sigset_words:${SIGSET_WORDS}:" \
-		-e "s:__FreeBSD__sigaction:${SIGACTION}:" 5fosinte.ads.in \
-		> 5fosinte.ads)
-	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/cstamp-h.in
-	@(cd ${WRKSRC}/ada; \
-	   ${TOUCH} treeprs.ads a-[es]info.h nmake.ad[bs])
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/gcc/cstamp-h.in
 
 #
 # Can't get this to work with default bsd.port.mk do-configure target.
@@ -193,69 +173,56 @@ do-configure:
 #
 do-build:
 	(cd ${WRKSRC}; \
-	    PATH=${have_boot}/bin:$$PATH \
-	    ${COMPILEDATA} ${GMAKE} CC="${CC}" OLDCC="adagcc" CFLAGS="${GNATCFLAGS}" LANGUAGES="c ada gcov" )
+	    PATH=${have_boot} \
+	    ${COMPILEDATA} ${GMAKE} CC=${CC} )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="${GNATCFLAGS}" LANGUAGES="c ada gcov" bootstrap )
+	    ${GMAKE} PTHREAD_LIBS=${PTHREAD_LIBS} bootstrap )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="-fPIC ${GNATLIBCFLAGS}" \
-	    soext=.so.${SHARED_MAJOR} LIBRARY_VERSION=${LIBRARY_VERSION} \
-	    gnatlib-shared )
-	${MV} ${WRKSRC}/ada/rts/lib*-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
-		${WRKSRC}/ada
-	${RM} ${WRKSRC}/stamp-gnatlib2
+	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnatlib )
+.if defined(WANT_SHAREDLIBS)
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="${GNATLIBCFLAGS}" gnatlib )
+	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnatlib-shared )
+.endif
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="${GNATCFLAGS}" gnattools )
+	    ${GMAKE} -C gcc PTHREAD_LIBS=${PTHREAD_LIBS} gnattools )
 
 do-install:
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CC="${CC}" LANGUAGES="c ada gcov" ${INSTALL_TARGET} )
-	${INSTALL_DATA} \
-	    ${WRKSRC}/ada/libgnat-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
-	    ${PREFIX}/lib
-	${INSTALL_DATA} \
-	    ${WRKSRC}/ada/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
-	    ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/libgnat-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
-	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnat.so
-	${LN} -s ${PREFIX}/lib/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
-	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnarl.so
-	${INSTALL_SCRIPT} ${WRKSRC}/ada/gnathtml.pl ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} \
-	    ${WRKDIR}/gnat-3.15p-src/examples/* ${EXAMPLESDIR}
-.endif
+	    ${GMAKE} ${INSTALL_TARGET} )
+	${INSTALL_SCRIPT} ${WRKSRC}/gcc/ada/gnathtml.pl ${PREFIX}/bin
 
 post-install:
-	@(for prog in ${PREFIX}/bin/adagcc \
-	    ${PREFIX}/bin/adagcov \
+	@(for prog in \
 	    ${PREFIX}/bin/gnat \
 	    ${PREFIX}/bin/gnatbind \
 	    ${PREFIX}/bin/gnatbl \
 	    ${PREFIX}/bin/gnatchop \
+	    ${PREFIX}/bin/gnatclean \
+	    ${PREFIX}/bin/gnatcpp \
 	    ${PREFIX}/bin/gnatfind \
+	    ${PREFIX}/bin/gnatgcc \
+	    ${PREFIX}/bin/gnatgcov \
 	    ${PREFIX}/bin/gnatkr \
 	    ${PREFIX}/bin/gnatlink \
 	    ${PREFIX}/bin/gnatls \
 	    ${PREFIX}/bin/gnatmake \
-	    ${PREFIX}/bin/gnatmem \
+	    ${PREFIX}/bin/gnatname \
 	    ${PREFIX}/bin/gnatprep \
-	    ${PREFIX}/bin/gnatpsta \
-	    ${PREFIX}/bin/gnatpsys \
 	    ${PREFIX}/bin/gnatxref \
-	    ${PREFIX}/bin/${GNUHOST}-gcc \
-	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/cc1 \
-	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/gnat1 \
-	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/cpp ; do \
+	    ${PREFIX}/bin/${GNUHOST}-gcc-${GCC_VERSION} \
+	    ${PREFIX}/bin/${GNUHOST}-gnatgcc \
+	    ${PREFIX}/libexec/gcc/${GNUHOST}/${GCC_VERSION}/cc1 \
+	    ${PREFIX}/libexec/gcc/${GNUHOST}/${GCC_VERSION}/gnat1 \
+	    ${PREFIX}/libexec/gcc/${GNUHOST}/${GCC_VERSION}/collect2 ; \
+	 do \
 	    if [ -x $$prog ]; then \
 		${STRIP_CMD} $$prog ; \
 	    fi \
 	done)
-	@(${TOUCH} ${TOUCH_FLAGS} ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/include/float.h)
-	@(chown -R bin:bin ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION})
-	${LDCONFIG} -m ${PREFIX}/lib
+	@(chown -R root:wheel ${TARGLIB})
+.if defined(WANT_SHAREDLIBS)
+	${MV} -f ${PREFIX}/lib/libgcc_s.* ${TARGLIB}
+.endif
+	${RM} -f ${PREFIX}/lib/libiberty.a
 
 .include <bsd.port.post.mk>
