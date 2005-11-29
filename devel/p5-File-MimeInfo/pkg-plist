@@ -1,5 +1,7 @@
+bin/mimeopen
 bin/mimetype
 %%SITE_PERL%%/File/MimeInfo.pm
+%%SITE_PERL%%/File/MimeInfo/Applications.pm
 %%SITE_PERL%%/File/MimeInfo/Cookbook.pod
 %%SITE_PERL%%/File/MimeInfo/Magic.pm
 %%SITE_PERL%%/File/MimeInfo/Rox.pm

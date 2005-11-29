@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	File-MimeInfo
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
+PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARDUS/${PORTNAME}
@@ -22,8 +22,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		mimetype.1
-MAN3=		File::MimeInfo::Cookbook.3 \
+MAN1=		mimetype.1 mimeopen.1
+MAN3=		File::MimeInfo::Applications.3 \
+		File::MimeInfo::Cookbook.3 \
 		File::MimeInfo::Magic.3 \
 		File::MimeInfo::Rox.3 \
 		File::MimeInfo.3
@@ -31,7 +32,7 @@ MAN3=		File::MimeInfo::Cookbook.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500503
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again
+IGNORE=	newer perl version required. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
