@@ -9,11 +9,12 @@ PORTNAME=	prc-tools
 PORTVERSION=	2.3
 PORTREVISION=	3
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	prc-tools binutils/releases \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/prc-tools/:S/$/:prc/} \
+		${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases \
 		gcc/releases/gcc-2.95.3 gdb/old-releases gcc/releases/gcc-3.3.1
 DISTNAME=	prc-tools-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz \
+DISTFILES=	${DISTNAME}.tar.gz:prc \
 		binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
 		gcc-3.3.1.tar.bz2
 EXTRACT_ONLY=	binutils-2.14.tar.bz2 gdb-5.3.tar.bz2 gcc-2.95.3.tar.bz2 \
