@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.0rc2
-PORTREVISION=	3
+DISTVERSION=	1.3.0rc3
+PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
