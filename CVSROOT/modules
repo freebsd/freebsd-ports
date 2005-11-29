@@ -12334,6 +12334,7 @@ tuxkart		ports/games/tuxkart
 tuxmath		ports/games/tuxmath
 tuxnes		ports/emulators/tuxnes
 tuxpaint	ports/games/tuxpaint
+tuxpaint-config	ports/games/tuxpaint-config
 tuxpaint-fonts	ports/games/tuxpaint-fonts
 tuxpaint-stamps	ports/games/tuxpaint-stamps
 tuxpuck		ports/games/tuxpuck
