@@ -7,15 +7,16 @@
 
 PORTNAME=	roundcube
 PORTVERSION=	0.1
+PORTREVISION=	${SNAPSHOT}
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}mail
-DISTNAME=	${PORTNAME}_webmail_${PORTVERSION}-${SNAPSHOT}
+MASTER_SITES=	http://www.unixified.net/roundcube/
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${SNAPSHOT}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-SNAPSHOT=	20051007
+SNAPSHOT=	20051128
 
 WRKSRC=		${WRKDIR}/${PORTNAME}mail
 NO_BUILD=	yes
@@ -46,10 +47,6 @@ USE_PHP+=	pgsql
 .if defined(WITH_SQLITE)
 USE_PHP+=	sqlite
 .endif
-
-pre-install:
-	@${MV} ${WRKSRC}/config/db.inc.php ${WRKSRC}/config/db.inc.php.sample
-	@${MV} ${WRKSRC}/config/main.inc.php ${WRKSRC}/config/main.inc.php.sample
 
 do-install:
 	${MKDIR} ${RCUBEROOT}
