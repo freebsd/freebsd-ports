@@ -3,4 +3,4 @@ ability to remotely manage Snort [Barnyard] based Intrusion
 Detection Systems, push configuration files, monitor sensor health,
 and view Snort alerts all from a clean simple web interface.
 
-WWW: http://snortsms.servangle.net/
+WWW: http://snortsms.sourceforge.net/

@@ -8,7 +8,8 @@
 PORTNAME=	snortsms
 PORTVERSION=	1.0.0
 CATEGORIES=	security www
-MASTER_SITES=	http://snortsms.servangle.net/dnloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	snortsms
 
 MAINTAINER=	snortsms@servangle.dnydns.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS
