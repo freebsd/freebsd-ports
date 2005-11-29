@@ -1,29 +1,1074 @@
 --- configure.orig	Mon Oct  7 03:53:55 2002
 +++ configure	Sat Oct 12 18:06:18 2002
-@@ -10250,7 +10250,7 @@
-     *-freebsd2*)
- 			       scsilib_libs="$scsilib_libs"
- 			       ;;
--    *-freebsd[3456]*)
-+    *-freebsd[34567]*)
- 			       scsilib_libs="$scsilib_libs -lcam"
- 			       ;;
-   esac
-@@ -10268,7 +10268,7 @@
- 	       scsilib_objs="ScsiIf-linux.o sg_err.o"
- 	       ;;
+@@ -310,7 +310,7 @@
+ # include <unistd.h>
+ #endif"
  
--    *-freebsd[3456]*)
-+    *-freebsd[34567]*)
- 	       scsilib_libs="-lcam"
- 	       scsilib_objs="ScsiIf-freebsd-cam.o"
- 	       ;;
-@@ -10514,7 +10514,7 @@
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CPP RANLIB ac_ct_RANLIB AR EGREP antlr_path dlg_path LAME_CFLAGS LAME_LIBS PKG_CONFIG ac_pt_PKG_CONFIG SIGCPP2_CFLAGS SIGCPP2_LIBS GTKMM2_CFLAGS GTKMM2_LIBS LIBGUIMM2_CFLAGS LIBGUIMM2_LIBS VORBISFILE_CFLAGS VORBISFILE_LIBS MAD_CFLAGS MAD_LIBS AO_CFLAGS AO_LIBS en_xdao en_toc2mp3 en_toc2cue en_cue2toc en_cdrdao scsilib_dir scsilib_incl scsilib_libs scsilib_objs pcctsinc dao_src sound_if_obj thread_libs mydefs COND_XDAO_TRUE COND_XDAO_FALSE COND_TOC2MP3_TRUE COND_TOC2MP3_FALSE COND_SCSILIB_TRUE COND_SCSILIB_FALSE COND_PCCTS_TRUE COND_PCCTS_FALSE COND_MP3_TRUE COND_MP3_FALSE COND_OGG_TRUE COND_OGG_FALSE LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT build build_cpu build_vendor build_os host host_cpu host_vendor host_os CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CPP RANLIB ac_ct_RANLIB AR EGREP antlr_path dlg_path LAME_CFLAGS LAME_LIBS PKG_CONFIG SIGCPP2_CFLAGS SIGCPP2_LIBS GTKMM2_CFLAGS GTKMM2_LIBS LIBGUIMM2_CFLAGS LIBGUIMM2_LIBS VORBISFILE_CFLAGS VORBISFILE_LIBS MAD_CFLAGS MAD_LIBS AO_CFLAGS AO_LIBS en_xdao en_toc2mp3 en_toc2cue en_cue2toc en_cdrdao scsilib_dir scsilib_incl scsilib_libs scsilib_objs pcctsinc dao_src sound_if_obj thread_libs mydefs COND_XDAO_TRUE COND_XDAO_FALSE COND_TOC2MP3_TRUE COND_TOC2MP3_FALSE COND_SCSILIB_TRUE COND_SCSILIB_FALSE COND_PCCTS_TRUE COND_PCCTS_FALSE COND_MP3_TRUE COND_MP3_FALSE COND_OGG_TRUE COND_OGG_FALSE LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -779,58 +779,14 @@
+ ac_env_CPP_value=$CPP
+ ac_cv_env_CPP_set=${CPP+set}
+ ac_cv_env_CPP_value=$CPP
+-ac_env_PKG_CONFIG_set=${PKG_CONFIG+set}
+-ac_env_PKG_CONFIG_value=$PKG_CONFIG
+-ac_cv_env_PKG_CONFIG_set=${PKG_CONFIG+set}
+-ac_cv_env_PKG_CONFIG_value=$PKG_CONFIG
+-ac_env_SIGCPP2_CFLAGS_set=${SIGCPP2_CFLAGS+set}
+-ac_env_SIGCPP2_CFLAGS_value=$SIGCPP2_CFLAGS
+-ac_cv_env_SIGCPP2_CFLAGS_set=${SIGCPP2_CFLAGS+set}
+-ac_cv_env_SIGCPP2_CFLAGS_value=$SIGCPP2_CFLAGS
+-ac_env_SIGCPP2_LIBS_set=${SIGCPP2_LIBS+set}
+-ac_env_SIGCPP2_LIBS_value=$SIGCPP2_LIBS
+-ac_cv_env_SIGCPP2_LIBS_set=${SIGCPP2_LIBS+set}
+-ac_cv_env_SIGCPP2_LIBS_value=$SIGCPP2_LIBS
+-ac_env_GTKMM2_CFLAGS_set=${GTKMM2_CFLAGS+set}
+-ac_env_GTKMM2_CFLAGS_value=$GTKMM2_CFLAGS
+-ac_cv_env_GTKMM2_CFLAGS_set=${GTKMM2_CFLAGS+set}
+-ac_cv_env_GTKMM2_CFLAGS_value=$GTKMM2_CFLAGS
+-ac_env_GTKMM2_LIBS_set=${GTKMM2_LIBS+set}
+-ac_env_GTKMM2_LIBS_value=$GTKMM2_LIBS
+-ac_cv_env_GTKMM2_LIBS_set=${GTKMM2_LIBS+set}
+-ac_cv_env_GTKMM2_LIBS_value=$GTKMM2_LIBS
+-ac_env_LIBGUIMM2_CFLAGS_set=${LIBGUIMM2_CFLAGS+set}
+-ac_env_LIBGUIMM2_CFLAGS_value=$LIBGUIMM2_CFLAGS
+-ac_cv_env_LIBGUIMM2_CFLAGS_set=${LIBGUIMM2_CFLAGS+set}
+-ac_cv_env_LIBGUIMM2_CFLAGS_value=$LIBGUIMM2_CFLAGS
+-ac_env_LIBGUIMM2_LIBS_set=${LIBGUIMM2_LIBS+set}
+-ac_env_LIBGUIMM2_LIBS_value=$LIBGUIMM2_LIBS
+-ac_cv_env_LIBGUIMM2_LIBS_set=${LIBGUIMM2_LIBS+set}
+-ac_cv_env_LIBGUIMM2_LIBS_value=$LIBGUIMM2_LIBS
+-ac_env_VORBISFILE_CFLAGS_set=${VORBISFILE_CFLAGS+set}
+-ac_env_VORBISFILE_CFLAGS_value=$VORBISFILE_CFLAGS
+-ac_cv_env_VORBISFILE_CFLAGS_set=${VORBISFILE_CFLAGS+set}
+-ac_cv_env_VORBISFILE_CFLAGS_value=$VORBISFILE_CFLAGS
+-ac_env_VORBISFILE_LIBS_set=${VORBISFILE_LIBS+set}
+-ac_env_VORBISFILE_LIBS_value=$VORBISFILE_LIBS
+-ac_cv_env_VORBISFILE_LIBS_set=${VORBISFILE_LIBS+set}
+-ac_cv_env_VORBISFILE_LIBS_value=$VORBISFILE_LIBS
+-ac_env_MAD_CFLAGS_set=${MAD_CFLAGS+set}
+-ac_env_MAD_CFLAGS_value=$MAD_CFLAGS
+-ac_cv_env_MAD_CFLAGS_set=${MAD_CFLAGS+set}
+-ac_cv_env_MAD_CFLAGS_value=$MAD_CFLAGS
+ ac_env_MAD_LIBS_set=${MAD_LIBS+set}
+ ac_env_MAD_LIBS_value=$MAD_LIBS
+ ac_cv_env_MAD_LIBS_set=${MAD_LIBS+set}
+ ac_cv_env_MAD_LIBS_value=$MAD_LIBS
+-ac_env_AO_CFLAGS_set=${AO_CFLAGS+set}
+-ac_env_AO_CFLAGS_value=$AO_CFLAGS
+-ac_cv_env_AO_CFLAGS_set=${AO_CFLAGS+set}
+-ac_cv_env_AO_CFLAGS_value=$AO_CFLAGS
+-ac_env_AO_LIBS_set=${AO_LIBS+set}
+-ac_env_AO_LIBS_value=$AO_LIBS
+-ac_cv_env_AO_LIBS_set=${AO_LIBS+set}
+-ac_cv_env_AO_LIBS_value=$AO_LIBS
++ac_env_MAD_CFLAGS_set=${MAD_CFLAGS+set}
++ac_env_MAD_CFLAGS_value=$MAD_CFLAGS
++ac_cv_env_MAD_CFLAGS_set=${MAD_CFLAGS+set}
++ac_cv_env_MAD_CFLAGS_value=$MAD_CFLAGS
+ 
+ #
+ # Report the --help message.
+@@ -945,26 +901,8 @@
+   CXX         C++ compiler command
+   CXXFLAGS    C++ compiler flags
+   CPP         C preprocessor
+-  PKG_CONFIG  path to pkg-config utility
+-  SIGCPP2_CFLAGS
+-              C compiler flags for SIGCPP2, overriding pkg-config
+-  SIGCPP2_LIBS
+-              linker flags for SIGCPP2, overriding pkg-config
+-  GTKMM2_CFLAGS
+-              C compiler flags for GTKMM2, overriding pkg-config
+-  GTKMM2_LIBS linker flags for GTKMM2, overriding pkg-config
+-  LIBGUIMM2_CFLAGS
+-              C compiler flags for LIBGUIMM2, overriding pkg-config
+-  LIBGUIMM2_LIBS
+-              linker flags for LIBGUIMM2, overriding pkg-config
+-  VORBISFILE_CFLAGS
+-              C compiler flags for VORBISFILE, overriding pkg-config
+-  VORBISFILE_LIBS
+-              linker flags for VORBISFILE, overriding pkg-config
+-  MAD_CFLAGS  C compiler flags for MAD, overriding pkg-config
+-  MAD_LIBS    linker flags for MAD, overriding pkg-config
+-  AO_CFLAGS   C compiler flags for AO, overriding pkg-config
+-  AO_LIBS     linker flags for AO, overriding pkg-config
++  MAD_LIBS    ""
++  MAD_CFLAGS  ""
+ 
+ Use these variables to override the choices made by `configure' or to help
+ it to find libraries and programs with nonstandard names/locations.
+@@ -9831,11 +9769,11 @@
+ if test "$xdao" = yes; then
+   en_xdao=yes
+ 
++  succeeded=no
+ 
+-if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+-	if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+ if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
+@@ -9860,6 +9798,7 @@
+ done
+ done
+ 
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
+   ;;
  esac
+ fi
+@@ -9873,19 +9812,72 @@
+ echo "${ECHO_T}no" >&6
+ fi
  
- case "$host" in
--  *-linux-* | *-freebsd[456]* | *-solaris*)
-+  *-linux-* | *-freebsd[4567]* | *-solaris*)
- 	     sound_if_obj=SoundIF-ao.o
- 	     ;;
+-fi
+-if test -z "$ac_cv_path_PKG_CONFIG"; then
+-  ac_pt_PKG_CONFIG=$PKG_CONFIG
+-  # Extract the first word of "pkg-config", so it can be a program name with args.
++  fi
++
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for sigc++-2.0 >= 2.0.0" >&5
++echo $ECHO_N "checking for sigc++-2.0 >= 2.0.0... $ECHO_C" >&6
++
++        if $PKG_CONFIG --exists "sigc++-2.0 >= 2.0.0" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++            succeeded=yes
++
++            echo "$as_me:$LINENO: checking SIGCPP2_CFLAGS" >&5
++echo $ECHO_N "checking SIGCPP2_CFLAGS... $ECHO_C" >&6
++            SIGCPP2_CFLAGS=`$PKG_CONFIG --cflags "sigc++-2.0 >= 2.0.0"`
++            echo "$as_me:$LINENO: result: $SIGCPP2_CFLAGS" >&5
++echo "${ECHO_T}$SIGCPP2_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking SIGCPP2_LIBS" >&5
++echo $ECHO_N "checking SIGCPP2_LIBS... $ECHO_C" >&6
++            SIGCPP2_LIBS=`$PKG_CONFIG --libs "sigc++-2.0 >= 2.0.0"`
++            echo "$as_me:$LINENO: result: $SIGCPP2_LIBS" >&5
++echo "${ECHO_T}$SIGCPP2_LIBS" >&6
++        else
++            SIGCPP2_CFLAGS=""
++            SIGCPP2_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            SIGCPP2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "sigc++-2.0 >= 2.0.0"`
++
++        fi
++
++
++
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
++
++  if test $succeeded = yes; then
++     :
++  else
++     echo "Building of gcdmaster disabled"; en_xdao=no
++  fi
++
++
++  succeeded=no
++
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
+ set dummy pkg-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  case $ac_pt_PKG_CONFIG in
++  case $PKG_CONFIG in
+   [\\/]* | ?:[\\/]*)
+-  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
+   ;;
+   *)
+   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+@@ -9895,253 +9887,175 @@
+   test -z "$as_dir" && as_dir=.
+   for ac_exec_ext in '' $ac_executable_extensions; do
+   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+ done
+ done
  
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
+   ;;
+ esac
+ fi
+-ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
+ 
+-if test -n "$ac_pt_PKG_CONFIG"; then
+-  echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
+-echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6
++if test -n "$PKG_CONFIG"; then
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-  PKG_CONFIG=$ac_pt_PKG_CONFIG
+-else
+-  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
+-fi
++  fi
+ 
+-fi
+-if test -n "$PKG_CONFIG"; then
+-	_pkg_min_version=0.9.0
+-	echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
+-echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6
+-	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
+-		echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-	else
+-		echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-		PKG_CONFIG=""
+-	fi
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for gtkmm-2.4 >= 2.4.0" >&5
++echo $ECHO_N "checking for gtkmm-2.4 >= 2.4.0... $ECHO_C" >&6
+ 
+-fi
++        if $PKG_CONFIG --exists "gtkmm-2.4 >= 2.4.0" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++            succeeded=yes
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for SIGCPP2" >&5
+-echo $ECHO_N "checking for SIGCPP2... $ECHO_C" >&6
++            echo "$as_me:$LINENO: checking GTKMM2_CFLAGS" >&5
++echo $ECHO_N "checking GTKMM2_CFLAGS... $ECHO_C" >&6
++            GTKMM2_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-2.4 >= 2.4.0"`
++            echo "$as_me:$LINENO: result: $GTKMM2_CFLAGS" >&5
++echo "${ECHO_T}$GTKMM2_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking GTKMM2_LIBS" >&5
++echo $ECHO_N "checking GTKMM2_LIBS... $ECHO_C" >&6
++            GTKMM2_LIBS=`$PKG_CONFIG --libs "gtkmm-2.4 >= 2.4.0"`
++            echo "$as_me:$LINENO: result: $GTKMM2_LIBS" >&5
++echo "${ECHO_T}$GTKMM2_LIBS" >&6
++        else
++            GTKMM2_CFLAGS=""
++            GTKMM2_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            GTKMM2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtkmm-2.4 >= 2.4.0"`
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$SIGCPP2_CFLAGS"; then
+-        pkg_cv_SIGCPP2_CFLAGS="$SIGCPP2_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"sigc++-2.0 >= 2.0.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "sigc++-2.0 >= 2.0.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_SIGCPP2_CFLAGS=`$PKG_CONFIG --cflags "sigc++-2.0 >= 2.0.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$SIGCPP2_LIBS"; then
+-        pkg_cv_SIGCPP2_LIBS="$SIGCPP2_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"sigc++-2.0 >= 2.0.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "sigc++-2.0 >= 2.0.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_SIGCPP2_LIBS=`$PKG_CONFIG --libs "sigc++-2.0 >= 2.0.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
++        fi
+ 
+ 
+ 
+-if test $pkg_failed = yes; then
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
+ 
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        SIGCPP2_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "sigc++-2.0 >= 2.0.0"`
+-        else
+-	        SIGCPP2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "sigc++-2.0 >= 2.0.0"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$SIGCPP2_PKG_ERRORS" >&5
++  if test $succeeded = yes; then
++     :
++  else
++     echo "Building of gcdmaster disabled"; en_xdao=no
++  fi
+ 
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-elif test $pkg_failed = untried; then
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-else
+-	SIGCPP2_CFLAGS=$pkg_cv_SIGCPP2_CFLAGS
+-	SIGCPP2_LIBS=$pkg_cv_SIGCPP2_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-	:
+-fi
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for GTKMM2" >&5
+-echo $ECHO_N "checking for GTKMM2... $ECHO_C" >&6
++  succeeded=no
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$GTKMM2_CFLAGS"; then
+-        pkg_cv_GTKMM2_CFLAGS="$GTKMM2_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= 2.4.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= 2.4.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GTKMM2_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-2.4 >= 2.4.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-	pkg_failed=untried
++  case $PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
++  ;;
++esac
+ fi
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
++
+ if test -n "$PKG_CONFIG"; then
+-    if test -n "$GTKMM2_LIBS"; then
+-        pkg_cv_GTKMM2_LIBS="$GTKMM2_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4 >= 2.4.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4 >= 2.4.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GTKMM2_LIBS=`$PKG_CONFIG --libs "gtkmm-2.4 >= 2.4.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+-	pkg_failed=untried
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
+ fi
+ 
++  fi
+ 
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for libgnomeuimm-2.6 >= 2.6.0" >&5
++echo $ECHO_N "checking for libgnomeuimm-2.6 >= 2.6.0... $ECHO_C" >&6
+ 
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        GTKMM2_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "gtkmm-2.4 >= 2.4.0"`
+-        else
+-	        GTKMM2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtkmm-2.4 >= 2.4.0"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$GTKMM2_PKG_ERRORS" >&5
+-
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-elif test $pkg_failed = untried; then
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-else
+-	GTKMM2_CFLAGS=$pkg_cv_GTKMM2_CFLAGS
+-	GTKMM2_LIBS=$pkg_cv_GTKMM2_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
++        if $PKG_CONFIG --exists "libgnomeuimm-2.6 >= 2.6.0" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-	:
+-fi
++            succeeded=yes
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for LIBGUIMM2" >&5
+-echo $ECHO_N "checking for LIBGUIMM2... $ECHO_C" >&6
++            echo "$as_me:$LINENO: checking LIBGUIMM2_CFLAGS" >&5
++echo $ECHO_N "checking LIBGUIMM2_CFLAGS... $ECHO_C" >&6
++            LIBGUIMM2_CFLAGS=`$PKG_CONFIG --cflags "libgnomeuimm-2.6 >= 2.6.0"`
++            echo "$as_me:$LINENO: result: $LIBGUIMM2_CFLAGS" >&5
++echo "${ECHO_T}$LIBGUIMM2_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking LIBGUIMM2_LIBS" >&5
++echo $ECHO_N "checking LIBGUIMM2_LIBS... $ECHO_C" >&6
++            LIBGUIMM2_LIBS=`$PKG_CONFIG --libs "libgnomeuimm-2.6 >= 2.6.0"`
++            echo "$as_me:$LINENO: result: $LIBGUIMM2_LIBS" >&5
++echo "${ECHO_T}$LIBGUIMM2_LIBS" >&6
++        else
++            LIBGUIMM2_CFLAGS=""
++            LIBGUIMM2_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            LIBGUIMM2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgnomeuimm-2.6 >= 2.6.0"`
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$LIBGUIMM2_CFLAGS"; then
+-        pkg_cv_LIBGUIMM2_CFLAGS="$LIBGUIMM2_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgnomeuimm-2.6 >= 2.6.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "libgnomeuimm-2.6 >= 2.6.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_LIBGUIMM2_CFLAGS=`$PKG_CONFIG --cflags "libgnomeuimm-2.6 >= 2.6.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$LIBGUIMM2_LIBS"; then
+-        pkg_cv_LIBGUIMM2_LIBS="$LIBGUIMM2_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgnomeuimm-2.6 >= 2.6.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "libgnomeuimm-2.6 >= 2.6.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_LIBGUIMM2_LIBS=`$PKG_CONFIG --libs "libgnomeuimm-2.6 >= 2.6.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
++        fi
+ 
+ 
+ 
+-if test $pkg_failed = yes; then
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
+ 
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        LIBGUIMM2_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libgnomeuimm-2.6 >= 2.6.0"`
+-        else
+-	        LIBGUIMM2_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libgnomeuimm-2.6 >= 2.6.0"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$LIBGUIMM2_PKG_ERRORS" >&5
++  if test $succeeded = yes; then
++     :
++  else
++     echo "Building of gcdmaster disabled"; en_xdao=no
++  fi
+ 
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-elif test $pkg_failed = untried; then
+-	echo "Building of gcdmaster disabled"; en_xdao=no
+-else
+-	LIBGUIMM2_CFLAGS=$pkg_cv_LIBGUIMM2_CFLAGS
+-	LIBGUIMM2_LIBS=$pkg_cv_LIBGUIMM2_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-	:
+-fi
+ fi
+ 
+ 
+@@ -10612,146 +10526,200 @@
+ 
+ if test "$with_ogg_support" = yes; then
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for VORBISFILE" >&5
+-echo $ECHO_N "checking for VORBISFILE... $ECHO_C" >&6
++  succeeded=no
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$VORBISFILE_CFLAGS"; then
+-        pkg_cv_VORBISFILE_CFLAGS="$VORBISFILE_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"vorbisfile >= 1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "vorbisfile >= 1.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_VORBISFILE_CFLAGS=`$PKG_CONFIG --cflags "vorbisfile >= 1.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-	pkg_failed=untried
++  case $PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
++  ;;
++esac
+ fi
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
++
+ if test -n "$PKG_CONFIG"; then
+-    if test -n "$VORBISFILE_LIBS"; then
+-        pkg_cv_VORBISFILE_LIBS="$VORBISFILE_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"vorbisfile >= 1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "vorbisfile >= 1.0") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_VORBISFILE_LIBS=`$PKG_CONFIG --libs "vorbisfile >= 1.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+-	pkg_failed=untried
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
+ fi
+ 
++  fi
+ 
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for vorbisfile >= 1.0" >&5
++echo $ECHO_N "checking for vorbisfile >= 1.0... $ECHO_C" >&6
+ 
+-if test $pkg_failed = yes; then
++        if $PKG_CONFIG --exists "vorbisfile >= 1.0" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++            succeeded=yes
+ 
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        VORBISFILE_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "vorbisfile >= 1.0"`
++            echo "$as_me:$LINENO: checking VORBISFILE_CFLAGS" >&5
++echo $ECHO_N "checking VORBISFILE_CFLAGS... $ECHO_C" >&6
++            VORBISFILE_CFLAGS=`$PKG_CONFIG --cflags "vorbisfile >= 1.0"`
++            echo "$as_me:$LINENO: result: $VORBISFILE_CFLAGS" >&5
++echo "${ECHO_T}$VORBISFILE_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking VORBISFILE_LIBS" >&5
++echo $ECHO_N "checking VORBISFILE_LIBS... $ECHO_C" >&6
++            VORBISFILE_LIBS=`$PKG_CONFIG --libs "vorbisfile >= 1.0"`
++            echo "$as_me:$LINENO: result: $VORBISFILE_LIBS" >&5
++echo "${ECHO_T}$VORBISFILE_LIBS" >&6
+         else
+-	        VORBISFILE_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "vorbisfile >= 1.0"`
++            VORBISFILE_CFLAGS=""
++            VORBISFILE_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            VORBISFILE_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "vorbisfile >= 1.0"`
++
+         fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$VORBISFILE_PKG_ERRORS" >&5
+ 
+-	echo "OGG support disabled"; with_ogg_support=no
+-elif test $pkg_failed = untried; then
+-	echo "OGG support disabled"; with_ogg_support=no
+-else
+-	VORBISFILE_CFLAGS=$pkg_cv_VORBISFILE_CFLAGS
+-	VORBISFILE_LIBS=$pkg_cv_VORBISFILE_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-	:
+-fi
++
++
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
++
++  if test $succeeded = yes; then
++     :
++  else
++     echo "OGG support disabled"; with_ogg_support=no
++  fi
++
+ fi
+ 
+ if test "$with_mp3_support" = yes; then
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for MAD" >&5
+-echo $ECHO_N "checking for MAD... $ECHO_C" >&6
++  succeeded=no
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$MAD_CFLAGS"; then
+-        pkg_cv_MAD_CFLAGS="$MAD_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"mad >= 0.10\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "mad >= 0.10") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_MAD_CFLAGS=`$PKG_CONFIG --cflags "mad >= 0.10" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-	pkg_failed=untried
++  case $PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
++  ;;
++esac
+ fi
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
++
+ if test -n "$PKG_CONFIG"; then
+-    if test -n "$MAD_LIBS"; then
+-        pkg_cv_MAD_LIBS="$MAD_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"mad >= 0.10\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "mad >= 0.10") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_MAD_LIBS=`$PKG_CONFIG --libs "mad >= 0.10" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+-	pkg_failed=untried
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
+ fi
+ 
++  fi
+ 
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for mad >= 0.10" >&5
++echo $ECHO_N "checking for mad >= 0.10... $ECHO_C" >&6
+ 
+-if test $pkg_failed = yes; then
++        if $PKG_CONFIG --exists "mad >= 0.10" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++            succeeded=yes
+ 
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        MAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "mad >= 0.10"`
++            echo "$as_me:$LINENO: checking MAD_CFLAGS" >&5
++echo $ECHO_N "checking MAD_CFLAGS... $ECHO_C" >&6
++            MAD_CFLAGS=`$PKG_CONFIG --cflags "mad >= 0.10"`
++            echo "$as_me:$LINENO: result: $MAD_CFLAGS" >&5
++echo "${ECHO_T}$MAD_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking MAD_LIBS" >&5
++echo $ECHO_N "checking MAD_LIBS... $ECHO_C" >&6
++            MAD_LIBS=`$PKG_CONFIG --libs "mad >= 0.10"`
++            echo "$as_me:$LINENO: result: $MAD_LIBS" >&5
++echo "${ECHO_T}$MAD_LIBS" >&6
+         else
+-	        MAD_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "mad >= 0.10"`
++            MAD_CFLAGS=""
++            MAD_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            MAD_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "mad >= 0.10"`
++
+         fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$MAD_PKG_ERRORS" >&5
+ 
+-	echo "libMAD detection via pkg-config failed"; with_mp3_support=no
+-elif test $pkg_failed = untried; then
+-	echo "libMAD detection via pkg-config failed"; with_mp3_support=no
+-else
+-	MAD_CFLAGS=$pkg_cv_MAD_CFLAGS
+-	MAD_LIBS=$pkg_cv_MAD_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-	:
+-fi
++
++
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
++
++  if test $succeeded = yes; then
++     :
++  else
++     echo "libMAD detection via pkg-config failed"; with_mp3_support=no
++  fi
++
+ 	if test "$with_mp3_support" = no; then
+ 		echo "$as_me:$LINENO: checking for mad_stream_init in -lmad" >&5
+ echo $ECHO_N "checking for mad_stream_init in -lmad... $ECHO_C" >&6
+@@ -10971,82 +10939,109 @@
+ 	fi
+ fi
+ 
+-if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_xdao" = yes; then
+ 
+-pkg_failed=no
+-echo "$as_me:$LINENO: checking for AO" >&5
+-echo $ECHO_N "checking for AO... $ECHO_C" >&6
++  succeeded=no
+ 
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$AO_CFLAGS"; then
+-        pkg_cv_AO_CFLAGS="$AO_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"ao >= 0.8\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "ao >= 0.8") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_AO_CFLAGS=`$PKG_CONFIG --cflags "ao >= 0.8" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  if test -z "$PKG_CONFIG"; then
++    # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-	pkg_failed=untried
++  case $PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++
++  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
++  ;;
++esac
+ fi
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
++
+ if test -n "$PKG_CONFIG"; then
+-    if test -n "$AO_LIBS"; then
+-        pkg_cv_AO_LIBS="$AO_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"ao >= 0.8\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "ao >= 0.8") 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_AO_LIBS=`$PKG_CONFIG --libs "ao >= 0.8" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
++  echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6
+ else
+-	pkg_failed=untried
++  echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
+ fi
+ 
++  fi
+ 
++if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_xdao" = yes; then
+ 
+-if test $pkg_failed = yes; then
++  if test "$PKG_CONFIG" = "no" ; then
++     echo "*** The pkg-config script could not be found. Make sure it is"
++     echo "*** in your path, or set the PKG_CONFIG environment variable"
++     echo "*** to the full path to pkg-config."
++     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
++  else
++     PKG_CONFIG_MIN_VERSION=0.9.0
++     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++        echo "$as_me:$LINENO: checking for ao >= 0.8" >&5
++echo $ECHO_N "checking for ao >= 0.8... $ECHO_C" >&6
+ 
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        AO_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "ao >= 0.8"`
++        if $PKG_CONFIG --exists "ao >= 0.8" ; then
++            echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++            succeeded=yes
++
++            echo "$as_me:$LINENO: checking AO_CFLAGS" >&5
++echo $ECHO_N "checking AO_CFLAGS... $ECHO_C" >&6
++            AO_CFLAGS=`$PKG_CONFIG --cflags "ao >= 0.8"`
++            echo "$as_me:$LINENO: result: $AO_CFLAGS" >&5
++echo "${ECHO_T}$AO_CFLAGS" >&6
++
++            echo "$as_me:$LINENO: checking AO_LIBS" >&5
++echo $ECHO_N "checking AO_LIBS... $ECHO_C" >&6
++            AO_LIBS=`$PKG_CONFIG --libs "ao >= 0.8"`
++            echo "$as_me:$LINENO: result: $AO_LIBS" >&5
++echo "${ECHO_T}$AO_LIBS" >&6
+         else
+-	        AO_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "ao >= 0.8"`
++            AO_CFLAGS=""
++            AO_LIBS=""
++            ## If we have a custom action on failure, don't print errors, but
++            ## do set a variable so people can do so.
++            AO_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "ao >= 0.8"`
++
+         fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$AO_PKG_ERRORS" >&5
+ 
+-	echo "Building of gcdmaster disabled"; with_ogg_support=no;
+-        with_mp3_support=no; en_xdao=no
+-elif test $pkg_failed = untried; then
+-	echo "Building of gcdmaster disabled"; with_ogg_support=no;
+-        with_mp3_support=no; en_xdao=no
+-else
+-	AO_CFLAGS=$pkg_cv_AO_CFLAGS
+-	AO_LIBS=$pkg_cv_AO_LIBS
+-        echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
++
++
++     else
++        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
++        echo "*** See http://www.freedesktop.org/software/pkgconfig"
++     fi
++  fi
++
++  if test $succeeded = yes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_AO 1
+ _ACEOF
+ 
+-fi
++  else
++     echo "Building of gcdmaster disabled"; with_ogg_support=no;
++        with_mp3_support=no; en_xdao=no
++  fi
++
+ fi
+ 
+ if test "$with_ogg_support" = yes; then
+@@ -11922,7 +11917,6 @@
+ s,@LAME_CFLAGS@,$LAME_CFLAGS,;t t
+ s,@LAME_LIBS@,$LAME_LIBS,;t t
+ s,@PKG_CONFIG@,$PKG_CONFIG,;t t
+-s,@ac_pt_PKG_CONFIG@,$ac_pt_PKG_CONFIG,;t t
+ s,@SIGCPP2_CFLAGS@,$SIGCPP2_CFLAGS,;t t
+ s,@SIGCPP2_LIBS@,$SIGCPP2_LIBS,;t t
+ s,@GTKMM2_CFLAGS@,$GTKMM2_CFLAGS,;t t
