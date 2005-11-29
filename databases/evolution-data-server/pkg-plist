@@ -423,6 +423,7 @@ share/doc/libedataserver/libedataserver-e-trie.html
 share/doc/libedataserver/libedataserver-e-uid.html
 share/doc/libedataserver/libedataserver-e-url.html
 share/doc/libedataserver/libedataserver-e-util.html
+share/doc/libedataserver/libedataserver-e-xml-hash-utils.html
 share/doc/libedataserver/libedataserver-md5-utils.html
 share/doc/libedataserver/libedataserver.devhelp
 share/doc/libedataserver/right.png
