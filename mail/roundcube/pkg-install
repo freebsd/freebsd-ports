@@ -7,7 +7,7 @@ POST-INSTALL)
 	chown -R ${WWWOWN}:${WWWGRP} ${RCUBEROOT}/logs
 	chown -R ${WWWOWN}:${WWWGRP} ${RCUBEROOT}/temp
 	for i in ${RCUBEROOT}/config/db.inc.php ${RCUBEROOT}/config/main.inc.php; do
-		[ -f ${i} ] || cp ${i}.sample ${i}
+		[ -f ${i} ] || cp ${i}.dist ${i}
 	done
 	;;
 *)

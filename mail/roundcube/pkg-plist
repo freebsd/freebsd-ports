@@ -1,25 +1,23 @@
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
 %%DOCSDIR%%/UPGRADING
 %%RCUBEDIR%%/SQL/mysql.initial.sql
 %%RCUBEDIR%%/SQL/mysql.update.sql
 %%RCUBEDIR%%/SQL/postgres.initial.sql
 %%RCUBEDIR%%/SQL/sqlite.initial.sql
 %%RCUBEDIR%%/config/.htaccess
-%%RCUBEDIR%%/config/db.inc.php.sample
-%%RCUBEDIR%%/config/main.inc.php.sample
+%%RCUBEDIR%%/config/db.inc.php.dist
+%%RCUBEDIR%%/config/main.inc.php.dist
 %%RCUBEDIR%%/index.php
 %%RCUBEDIR%%/logs/.htaccess
-%%RCUBEDIR%%/logs/errors
-%%RCUBEDIR%%/logs/sendmail
 %%RCUBEDIR%%/program/blank.gif
 %%RCUBEDIR%%/program/include/bugs.inc
 %%RCUBEDIR%%/program/include/cache.inc
 %%RCUBEDIR%%/program/include/main.inc
 %%RCUBEDIR%%/program/include/rcube_db.inc
 %%RCUBEDIR%%/program/include/rcube_imap.inc
+%%RCUBEDIR%%/program/include/rcube_mdb2.inc
 %%RCUBEDIR%%/program/include/rcube_shared.inc
 %%RCUBEDIR%%/program/include/rcube_smtp.inc
 %%RCUBEDIR%%/program/include/session.inc
@@ -48,6 +46,56 @@
 %%RCUBEDIR%%/program/lib/DB/sqlite.php
 %%RCUBEDIR%%/program/lib/DB/storage.php
 %%RCUBEDIR%%/program/lib/DB/sybase.php
+%%RCUBEDIR%%/program/lib/MDB2.php
+%%RCUBEDIR%%/program/lib/MDB2/Date.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/Common.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/fbsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/ibase.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mssql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mysql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mysqli.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/oci8.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/pgsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/sqlite.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/Common.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/fbsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/ibase.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mssql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mysql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mysqli.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/oci8.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/pgsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/sqlite.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/fbsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/ibase.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mssql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mysql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mysqli.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/oci8.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/pgsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/sqlite.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/Common.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/fbsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/ibase.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mssql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mysql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mysqli.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/oci8.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/pgsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/sqlite.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/fbsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/ibase.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/mssql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/mysql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/mysqli.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/oci8.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/pgsql.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/querysim.php
+%%RCUBEDIR%%/program/lib/MDB2/Driver/sqlite.php
+%%RCUBEDIR%%/program/lib/MDB2/Extended.php
+%%RCUBEDIR%%/program/lib/MDB2/Iterator.php
+%%RCUBEDIR%%/program/lib/MDB2/LOB.php
+%%RCUBEDIR%%/program/lib/MDB2/Wrapper/peardb.php
 %%RCUBEDIR%%/program/lib/Mail/mime.php
 %%RCUBEDIR%%/program/lib/Mail/mimeDecode.php
 %%RCUBEDIR%%/program/lib/Mail/mimePart.php
@@ -62,20 +110,53 @@
 %%RCUBEDIR%%/program/lib/mime.inc
 %%RCUBEDIR%%/program/lib/utf7.inc
 %%RCUBEDIR%%/program/lib/utf8.inc
+%%RCUBEDIR%%/program/localization/ca/labels.inc
+%%RCUBEDIR%%/program/localization/ca/messages.inc
+%%RCUBEDIR%%/program/localization/cz/labels.inc
+%%RCUBEDIR%%/program/localization/cz/messages.inc
 %%RCUBEDIR%%/program/localization/da/labels.inc
 %%RCUBEDIR%%/program/localization/da/messages.inc
 %%RCUBEDIR%%/program/localization/de/labels.inc
 %%RCUBEDIR%%/program/localization/de/messages.inc
+%%RCUBEDIR%%/program/localization/el/labels.inc
+%%RCUBEDIR%%/program/localization/el/messages.inc
 %%RCUBEDIR%%/program/localization/en/labels.inc
 %%RCUBEDIR%%/program/localization/en/messages.inc
+%%RCUBEDIR%%/program/localization/en_GB/labels.inc
+%%RCUBEDIR%%/program/localization/en_GB/messages.inc
 %%RCUBEDIR%%/program/localization/es/labels.inc
 %%RCUBEDIR%%/program/localization/es/messages.inc
+%%RCUBEDIR%%/program/localization/fi/labels.inc
+%%RCUBEDIR%%/program/localization/fi/messages.inc
 %%RCUBEDIR%%/program/localization/fr/labels.inc
 %%RCUBEDIR%%/program/localization/fr/messages.inc
+%%RCUBEDIR%%/program/localization/index.inc
 %%RCUBEDIR%%/program/localization/it/labels.inc
 %%RCUBEDIR%%/program/localization/it/messages.inc
+%%RCUBEDIR%%/program/localization/ja/labels.inc
+%%RCUBEDIR%%/program/localization/ja/messages.inc
+%%RCUBEDIR%%/program/localization/lv/labels.inc
+%%RCUBEDIR%%/program/localization/lv/messages.inc
+%%RCUBEDIR%%/program/localization/nb_NO/labels.inc
+%%RCUBEDIR%%/program/localization/nb_NO/messages.inc
 %%RCUBEDIR%%/program/localization/nl/labels.inc
 %%RCUBEDIR%%/program/localization/nl/messages.inc
+%%RCUBEDIR%%/program/localization/nn_NO/labels.inc
+%%RCUBEDIR%%/program/localization/nn_NO/messages.inc
+%%RCUBEDIR%%/program/localization/pl/labels.inc
+%%RCUBEDIR%%/program/localization/pl/messages.inc
+%%RCUBEDIR%%/program/localization/pt/labels.inc
+%%RCUBEDIR%%/program/localization/pt/messages.inc
+%%RCUBEDIR%%/program/localization/pt_BR/labels.inc
+%%RCUBEDIR%%/program/localization/pt_BR/messages.inc
+%%RCUBEDIR%%/program/localization/ro/labels.inc
+%%RCUBEDIR%%/program/localization/ro/messages.inc
+%%RCUBEDIR%%/program/localization/ru/labels.inc
+%%RCUBEDIR%%/program/localization/ru/messages.inc
+%%RCUBEDIR%%/program/localization/se/labels.inc
+%%RCUBEDIR%%/program/localization/se/messages.inc
+%%RCUBEDIR%%/program/localization/tw/labels.inc
+%%RCUBEDIR%%/program/localization/tw/messages.inc
 %%RCUBEDIR%%/program/steps/addressbook/delete.inc
 %%RCUBEDIR%%/program/steps/addressbook/edit.inc
 %%RCUBEDIR%%/program/steps/addressbook/func.inc
@@ -108,6 +189,7 @@
 %%RCUBEDIR%%/skins/default/images/buttons/add_contact_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_contact_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/addressbook.gif
 %%RCUBEDIR%%/skins/default/images/buttons/addressbook.png
 %%RCUBEDIR%%/skins/default/images/buttons/attach_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/attach_pas.png
@@ -120,6 +202,7 @@
 %%RCUBEDIR%%/skins/default/images/buttons/contacts_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/delete_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/delete_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/down_arrow.png
 %%RCUBEDIR%%/skins/default/images/buttons/download_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/download_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/edit_contact_act.png
@@ -130,6 +213,7 @@
 %%RCUBEDIR%%/skins/default/images/buttons/inbox_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/logout.gif
 %%RCUBEDIR%%/skins/default/images/buttons/logout.png
+%%RCUBEDIR%%/skins/default/images/buttons/mail.gif
 %%RCUBEDIR%%/skins/default/images/buttons/mail.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_pas.png
@@ -139,16 +223,21 @@
 %%RCUBEDIR%%/skins/default/images/buttons/print_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/reply_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/reply_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/replyall_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/replyall_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/send_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/send_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/settings.gif
 %%RCUBEDIR%%/skins/default/images/buttons/settings.png
 %%RCUBEDIR%%/skins/default/images/buttons/source_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/source_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/spacer.gif
+%%RCUBEDIR%%/skins/default/images/buttons/up_arrow.png
 %%RCUBEDIR%%/skins/default/images/display/confirm.png
 %%RCUBEDIR%%/skins/default/images/display/info.png
 %%RCUBEDIR%%/skins/default/images/display/loading.gif
 %%RCUBEDIR%%/skins/default/images/display/warning.png
+%%RCUBEDIR%%/skins/default/images/favicon.ico
 %%RCUBEDIR%%/skins/default/images/icons/abcard.png
 %%RCUBEDIR%%/skins/default/images/icons/attachment.png
 %%RCUBEDIR%%/skins/default/images/icons/dot.png
@@ -175,7 +264,9 @@
 %%RCUBEDIR%%/skins/default/images/roundcube_logo_print.gif
 %%RCUBEDIR%%/skins/default/images/tab_act.gif
 %%RCUBEDIR%%/skins/default/images/tab_pas.gif
+%%RCUBEDIR%%/skins/default/images/taskbar.gif
 %%RCUBEDIR%%/skins/default/includes/header.html
+%%RCUBEDIR%%/skins/default/includes/links.html
 %%RCUBEDIR%%/skins/default/includes/settingscripts.html
 %%RCUBEDIR%%/skins/default/includes/settingstabs.html
 %%RCUBEDIR%%/skins/default/includes/taskbar.html
@@ -213,16 +304,39 @@
 @dirrm %%RCUBEDIR%%/program/steps/mail
 @dirrm %%RCUBEDIR%%/program/steps/addressbook
 @dirrm %%RCUBEDIR%%/program/steps
+@dirrm %%RCUBEDIR%%/program/localization/tw
+@dirrm %%RCUBEDIR%%/program/localization/se
+@dirrm %%RCUBEDIR%%/program/localization/ru
+@dirrm %%RCUBEDIR%%/program/localization/ro
+@dirrm %%RCUBEDIR%%/program/localization/pt_BR
+@dirrm %%RCUBEDIR%%/program/localization/pt
+@dirrm %%RCUBEDIR%%/program/localization/pl
+@dirrm %%RCUBEDIR%%/program/localization/nn_NO
 @dirrm %%RCUBEDIR%%/program/localization/nl
+@dirrm %%RCUBEDIR%%/program/localization/nb_NO
+@dirrm %%RCUBEDIR%%/program/localization/lv
+@dirrm %%RCUBEDIR%%/program/localization/ja
 @dirrm %%RCUBEDIR%%/program/localization/it
 @dirrm %%RCUBEDIR%%/program/localization/fr
+@dirrm %%RCUBEDIR%%/program/localization/fi
 @dirrm %%RCUBEDIR%%/program/localization/es
+@dirrm %%RCUBEDIR%%/program/localization/en_GB
 @dirrm %%RCUBEDIR%%/program/localization/en
+@dirrm %%RCUBEDIR%%/program/localization/el
 @dirrm %%RCUBEDIR%%/program/localization/de
 @dirrm %%RCUBEDIR%%/program/localization/da
+@dirrm %%RCUBEDIR%%/program/localization/cz
+@dirrm %%RCUBEDIR%%/program/localization/ca
 @dirrm %%RCUBEDIR%%/program/localization
 @dirrm %%RCUBEDIR%%/program/lib/Net
 @dirrm %%RCUBEDIR%%/program/lib/Mail
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Wrapper
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Native
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Manager
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype
+@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver
+@dirrm %%RCUBEDIR%%/program/lib/MDB2
 @dirrm %%RCUBEDIR%%/program/lib/DB
 @dirrm %%RCUBEDIR%%/program/lib/Auth/SASL
 @dirrm %%RCUBEDIR%%/program/lib/Auth
