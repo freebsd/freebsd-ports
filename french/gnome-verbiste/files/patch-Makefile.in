@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Nov 29 18:27:47 2005
++++ Makefile.in	Tue Nov 29 18:28:39 2005
+@@ -892,8 +892,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-frman1DATA install-frman3DATA \
+-	install-libdataDATA install-man install-pkgconfigDATA
++install-data-am:
+ 
+ install-exec-am:
+ 

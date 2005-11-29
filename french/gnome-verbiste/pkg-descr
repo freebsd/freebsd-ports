@@ -1,0 +1,6 @@
+GNOME Verbiste is a GNOME frontend to the Verbiste French conjugation
+system. It contains a GNOME program and a GNOME Panel applet. This applet
+shows a text field in the GNOME Panel where the user can enter a conjugated
+verb and obtain its complete conjugation.
+
+WWW: http://sarrazip.com/dev/verbiste.html

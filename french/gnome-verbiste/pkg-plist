@@ -1,0 +1,6 @@
+bin/verbiste
+libdata/bonobo/servers/verbiste.server
+libexec/verbiste-applet
+share/applications/verbiste.desktop
+@unexec rmdir %B 2>/dev/null || true
+share/pixmaps/verbiste.png
