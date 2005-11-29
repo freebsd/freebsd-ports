@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	1.00
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst>=5.57:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 		p5-Catalyst-Plugin-FormValidator-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator-Simple \
 		p5-Catalyst-Plugin-FillInForm>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FillInForm \
