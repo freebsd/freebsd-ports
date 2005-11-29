@@ -1,7 +1,7 @@
 etc/rc.d/rtc.sh
 include/rtc.h
 modules/rtc.ko
-share/examples/rtc/test.c
-@dirrm share/examples/rtc
+%%EXAMPLESDIR%%/test.c
+@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/modules 2>/dev/null || true
 @unexec rm -f /dev/rtc
