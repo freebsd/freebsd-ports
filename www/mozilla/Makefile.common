@@ -1,0 +1,357 @@
+# Makefile.common handles common tasks and dependencies for mozilla ports.
+#
+# Date created:		12 Nov 2005
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#    $MCom: ports/www/mozilla/Makefile.common,v 1.17 2005/11/29 08:40:08 ahze Exp $
+
+# Ports can use the following:
+#
+# NOGECKO_INSTALL
+# NOGECKO_PLIST		Do not auto-create plist
+# NOMOZCONFIG		Use CONFIGURE_ARGS instead of .mozconfig
+#
+# MOZILLA_PLIST_DIRS	Listing of directories to create plist and/or
+#			 install
+# MOZ_PIS_SCRIPTS	List scripts listed in ${FILESDIR} to filter
+#			 through MOZCONFIG_SED and install with mozilla
+#			 PIS scripts.
+# MOZ_SED_ARGS		Add or replace to MOZ_SED_ARGS
+#
+# MOZ_OPTIONS		Add more configure arguments to .mozconfig
+# MOZ_MK_OPTIONS	Add more make arguments to .mozconfig
+# MOZ_EXPORT		Add export variables to .mozconfig
+# MOZ_EXTENSIONS	Override "default" extensions
+# MOZ_GRAPHICS		Override "default" graphics decoders
+# MOZ_PROTOCOLS		Override "default" protocols
+#
+# PORT_MOZCONFIG	Defaults to ${FILESDIR}/mozconfig.in, but can
+#			be set to a generic mozconfig included with
+#			the port
+
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		nspr4:${PORTSDIR}/devel/nspr \
+		nss3:${PORTSDIR}/security/nss \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
+
+OPTIONS+=	DEBUG "Build a debugging image" off \
+		LOGGING "Enable additional log messages" off \
+		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
+
+MAINTAINER?=	gnome@FreeBSD.org
+
+MOZILLA?=	${PORTNAME}
+MOZILLA_VER?=	${PORTVERSION}
+MOZ_RPATH?=	${MOZILLA}
+USE_GNOME+=	gtk20 libidl desktopfileutils
+USE_ICONV=	yes
+USE_PERL5_BUILD=yes
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
+WRKSRC?=	${WRKDIR}/mozilla
+FAKEDIR?=	${WRKDIR}/fake
+PLIST?=		${WRKDIR}/plist
+
+KRB5_HOME?=	/usr
+BROWSER_PLUGINS_DIR?=	lib/browser_plugins
+MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
+
+ESD_LIB?=	libesd.so.2
+FREETYPE_LIB?=	libfreetype.so.9
+
+GENERIC_MOZCONFIG?=	${.CURDIR}/../../www/mozilla/files/mozconfig-generic.in
+PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
+MOZCONFIG?=		${WRKSRC}/.mozconfig
+MOZILLA_PLIST_DIRS?=	bin include lib share/idl
+
+PKGINSTALL?=	${WRKDIR}/pkg-install
+PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
+
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude */CVS/*	\
+			--exclude */macbuild/*			\
+			--exclude */package/*			\
+			--exclude .cvsignore			\
+			--exclude makefile.win			\
+			--exclude MANIFEST			\
+			--exclude */nsprpub/*			\
+			--exclude mozilla/modules/libimg/png	\
+			--exclude mozilla/jpeg			\
+			--exclude mozilla/dbm			\
+			--exclude mozilla/js/src/fdlibm		\
+			--exclude mozilla/security/nss		\
+			--exclude mozilla/gc/boehm		\
+			--exclude mozilla/gfx/cairo
+
+JPI_LIST?=\
+	${LOCALBASE}/jdk1.5.0/jre/plugin/${ARCH}/ns7/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so
+
+PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
+			${MOZILLA}-xpcom ${MOZILLA}-plugin
+
+CPPFLAGS+=		-I${X11BASE}/include
+CFLAGS+=		${PTHREAD_CFLAGS}
+LDFLAGS+=		-L${X11BASE}/lib -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
+LIBS+=			${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
+
+# Standard options from README
+MOZ_OPTIONS+=	--enable-crypto 	\
+		--disable-tests 	\
+		--enable-default-toolkit=gtk2 \
+		--enable-xft		\
+		--with-pthreads
+# Configure options for install
+MOZ_OPTIONS+=	--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
+.if !defined(MOZ_EXTENSIONS)
+MOZ_OPTIONS+=	--enable-extensions=default
+.else
+MOZ_OPTIONS+=	--enable-extensions=${MOZ_EXTENSIONS}
+.endif
+.if !defined(MOZ_GRAPHICS)
+MOZ_OPTIONS+=	--enable-image-decoders=default
+.else
+MOZ_OPTIONS+=	--enable-image-decoders=${MOZ_GRAPHICS}
+.endif
+.if !defined(MOZ_PROTOCOLS)
+MOZ_OPTIONS+=	--enable-necko-protocols=default
+.else
+MOZ_OPTIONS+=	--enable-necko-protocols=${MOZ_PROTOCOLS}
+.endif
+# others 
+MOZ_OPTIONS+=	--with-system-jpeg=${LOCALBASE} \
+		--with-system-zlib=/usr		\
+		--with-system-png=${LOCALBASE}	\
+		--with-gssapi=${KRB5_HOME}	\
+		--with-system-nspr		\
+		--disable-auto-deps		\
+		--enable-chrome-format=jar	\
+		--disable-cpp-exceptions	\
+		--disable-cpp-rtti		\
+		--disable-glibtest		\
+		--disable-gtktest		\
+		--disable-freetypetest		\
+		--enable-double-buffer		\
+		--enable-mathml			\
+		--disable-installer		\
+		--disable-md			\
+		--disable-pedantic		\
+		--disable-bidi			\
+		--disable-xterm-updates		\
+		--enable-xinerama
+MOZ_MK_OPTIONS+=	XP_UNIX=1		\
+			PERL=${PERL}
+#MOZ_EXPORT+=	CPPFLAGS=${CPPFLAGS}		\
+#		CFLAGS=$$CFLAGS			\
+#		LIBS=$$LIBS			\
+#		LDFLAGS=$$LDFLAGS		\
+#		CONFIG_SH=$$SH			\
+#		XP_UNIX=1			\
+#		PERL=$$PERL5
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS:=	-O2 -fno-strict-aliasing ${CFLAGS:N-O*}
+WITH_OPTIMIZE?=	-O2
+.else
+CFLAGS:=	${CFLAGS:N-O*:N-m*} -O
+WITH_OPTIMIZE?=	-O
+.endif
+
+.if defined(WITH_SMB)
+USE_GNOME+=	gnomevfs2
+MOZ_OPTIONS+=	--disable-gnomevfs
+.endif
+
+.if defined(WITH_DEBUG)
+MOZ_OPTIONS+=	--enable-debug				\
+		--disable-strip
+WITH_LOGGING=	yes
+.else
+MOZ_OPTIONS+=	--disable-debug				\
+		--enable-optimize=${WITH_OPTIMIZE}	\
+		--enable-strip
+.endif
+
+.if defined(WITH_LOGGING)
+MOZ_OPTIONS+=	--enable-logging
+.else
+MOZ_OPTIONS+=	--disable-logging
+.endif
+
+.if exists(${LOCALBASE}/include/freetype/freetype.h)
+BROKEN=	"You must upgrade your freetype port to 1.3.1_2 or higher before \
+	installing ${PORTNAME}.  If you have 1.3.1_2 installed, please remove \
+	${LOCALBASE}/include/freetype, then build ${PORTNAME}"
+.endif
+
+# Makefile.common defines
+MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
+		-e 's|@CFLAGS@|${CFLAGS}|g'		\
+		-e 's|@LDFLAGS@|${LDFLAGS}|g'		\
+		-e 's|@LIBS@|${LIBS}|g'			\
+		-e 's|@X11BASE@|${X11BASE}|g'		\
+		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
+		-e 's|@FAKEDIR@|${FAKEDIR}|g'		\
+		-e 's|@PERL@|${PERL5}|g'			\
+		-e 's|@KRB5_HOME@|${KRB5_HOME}|g'	\
+		-e 's|@MOZDIR@|${PREFIX}/lib/${MOZILLA}|g'	\
+		-e 's|%%PREFIX%%|${PREFIX}|g'		\
+		-e 's|%%CFLAGS%%|${CFLAGS}|g'		\
+		-e 's|%%LDFLAGS%%|${LDFLAGS}|g'		\
+		-e 's|%%LIBS%%|${LIBS}|g'		\
+		-e 's|%%X11BASE%%|${X11BASE}|g'		\
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
+		-e 's|%%FAKEDIR%%|${FAKEDIR}|g'		\
+		-e 's|%%PERL%%|${PERL5}|g'		\
+		-e 's|%%KRB5_HOME%%|${KRB5_HOME}|g'	\
+		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
+MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
+
+post-patch: gecko-post-patch gecko-moz-pis-patch
+
+gecko-post-patch:
+.if exists(${.CURDIR}/pkg-install.in)
+	@${MOZCONFIG_SED} < ${.CURDIR}/pkg-install.in > ${PKGINSTALL}
+.endif
+.if exists(${.CURDIR}/pkg-deinstall.in)
+	@${MOZCONFIG_SED} < ${.CURDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+.endif
+	@${RM} -f ${MOZCONFIG}
+.if !defined(NOMOZCONFIG)
+.if exists(${GENERIC_MOZCONFIG})
+	@${MOZCONFIG_SED} < ${GENERIC_MOZCONFIG} >> ${MOZCONFIG}
+.endif
+	@if [ -e ${PORT_MOZCONFIG} ] ; then \
+		${MOZCONFIG_SED} < ${PORT_MOZCONFIG} >> ${MOZCONFIG} ; \
+	fi
+.for arg in ${MOZ_OPTIONS}
+	@${ECHO_CMD} ac_add_options ${arg} >> ${MOZCONFIG}
+.endfor
+.for arg in ${MOZ_MK_OPTIONS}
+	@${ECHO_CMD} mk_add_options ${arg} >> ${MOZCONFIG}
+.endfor
+.for var in ${MOZ_EXPORT}
+	@${ECHO_CMD} "export ${var}" >> ${MOZCONFIG}
+.endfor
+.endif # .if !defined(NOMOZCONFIG)
+	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g ; \
+		s|"%FULL_NSPR_CFLAGS%"|`nspr-config --cflags`|g ; \
+		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
+			${WRKSRC}/build/unix/mozilla-config.in
+	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
+		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
+		${WRKSRC}/config/autoconf.mk.in
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/security/coreconf/FreeBSD.mk \
+		${WRKSRC}/js/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|/usr/X11R6|${X11BASE}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/build/unix/run-mozilla.sh
+	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
+		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
+		${WRKSRC}/gfx/src/gtk/nsDeviceContextSpecG.cpp
+	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
+		${FALSE}; \
+	fi
+
+# handles mozilla pis scripts.
+gecko-moz-pis-patch:
+.for moz in ${MOZ_PIS_SCRIPTS}
+	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
+.endfor
+
+post-build: gecko-post-build
+
+gecko-post-build:
+	@${REINPLACE_CMD} -e "s|\(Libs:.*\)\($$\)|\1 -Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}\2|" \
+		${WRKSRC}/build/unix/*.pc
+
+pre-install: gecko-pre-install gecko-moz-pis-pre-install gecko-create-plist
+
+gecko-pre-install:
+	@${DO_NADA}	# Empty for now
+
+gecko-create-plist:
+.if !defined(NOGECKO_PLIST)
+	@${RM} -rf ${FAKEDIR} ${PLIST}
+	@${TOUCH} -f ${PLIST}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+		${FAKEDIR}/bin/${MOZILLA}	\
+		${FAKEDIR}/bin/${MOZILLA}-config
+	${RM} -f ${FAKEDIR}/bin/*.bak
+# Create the plist
+	${ECHO_CMD} "${BROWSER_PLUGINS_DIR}/.${MOZILLA}.keep" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/${BROWSER_PLUGINS_DIR} 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${MKDIR} ${FAKEDIR}/libdata
+	${MV} -f ${FAKEDIR}/lib/pkgconfig ${FAKEDIR}/libdata/
+	${RM} -f ${FAKEDIR}/lib/pkgconfig
+.for dir in ${MOZILLA_PLIST_DIRS}
+	@cd ${FAKEDIR}/${dir} && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|${dir}/|' >> ${PLIST} && \
+		${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLIST}
+.endfor
+.for pcfile in ${PKGCONFIG_FILES}
+	${ECHO_CMD} "libdata/pkgconfig/${pcfile}.pc" >> ${PLIST}
+	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+		-e 's|${MOZILLA}-nspr = ${PORTVERSION}|nspr|' \
+		${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc
+.endfor
+	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
+.if ${MOZILLA_PLIST_DIRS:Mshare/idl}!=""
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/idl 2>/dev/null || ${TRUE}" >> ${PLIST}
+.endif
+.endif # !defined(NOGECKO_PLIST)
+
+do-install: gecko-do-install
+
+gecko-do-install:
+.if !defined(NOGECKO_INSTALL)
+.for dir in ${MOZILLA_PLIST_DIRS}
+.if !exists(${PREFIX}/${dir})
+	${MKDIR} ${PREFIX}/${dir}
+	${CHMOD} 755 ${PREFIX}/${dir}
+.endif
+	cd ${FAKEDIR}/${dir} && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${dir}
+.endfor
+.for pcfile in ${PKGCONFIG_FILES}
+	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
+		${PREFIX}/libdata/pkgconfig/${pcfile}.pc
+.endfor
+	${MKDIR} ${PREFIX}/${BROWSER_PLUGINS_DIR}
+	${TOUCH} -f ${PREFIX}/${BROWSER_PLUGINS_DIR}/.${MOZILLA}.keep
+.endif # !defined(NOGECKO_INSTALL)
+
+gecko-moz-pis-pre-install:
+.if defined(MOZ_PIS_SCRIPTS)
+	${MKDIR} ${FAKEDIR}/${MOZ_PIS_DIR}
+.for moz in ${MOZ_PIS_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/${moz} ${FAKEDIR}/${MOZ_PIS_DIR}
+.endfor
+.endif
+
+post-install: gecko-post-install
+
+gecko-post-install:
+.if !defined(PAKCAGE_BUILDING)
+	@if [ -e ${PKGINSTALL} ] ; then \
+		${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
+	fi
+.endif
+	@-update-desktop-database

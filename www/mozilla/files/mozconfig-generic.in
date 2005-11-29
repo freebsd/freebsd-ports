@@ -1,0 +1,8 @@
+ac_add_options	--prefix=@FAKEDIR@
+export CPPFLAGS="@CPPFLAGS@"
+export CFLAGS="@CFLAGS@"
+export LIBS="@LIBS@"
+export LDFLAGS="@LDFLAGS@"
+export CONFIG_SH=/bin/sh
+export XP_UNIX=1
+export PERL="@PERL@"

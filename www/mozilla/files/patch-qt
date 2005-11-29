@@ -1,15 +1,15 @@
---- configure.orig	Tue Apr 20 21:39:17 2004
-+++ configure	Thu Apr 29 14:01:52 2004
-@@ -9362,7 +9362,7 @@
+--- configure.orig	Tue Oct 12 00:13:29 2004
++++ configure	Wed Nov 23 01:48:55 2005
+@@ -9368,7 +9368,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9368 "configure"
+ #line 9374 "configure"
  #include "confdefs.h"
-@@ -9393,7 +9393,7 @@
+@@ -9399,7 +9399,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -18,16 +18,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
-@@ -9403,7 +9403,7 @@
+@@ -9409,7 +9409,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9409 "configure"
+ #line 9415 "configure"
  #include "confdefs.h"
-@@ -9434,7 +9434,7 @@
+@@ -9440,7 +9440,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -36,7 +36,22 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -12298,9 +12298,9 @@
+@@ -11401,12 +11401,12 @@
+ 
+             echo $ac_n "checking MOZ_GTK2_CFLAGS""... $ac_c" 1>&6
+ echo "configure:11404: checking MOZ_GTK2_CFLAGS" >&5
+-            MOZ_GTK2_CFLAGS=`$PKG_CONFIG --cflags "gtk+-2.0 >= 1.3.7"`
++            MOZ_GTK2_CFLAGS=`$PKG_CONFIG --cflags "gtk+-2.0 >= 1.3.7" "pangox >= 1.1.0"`
+             echo "$ac_t""$MOZ_GTK2_CFLAGS" 1>&6
+ 
+             echo $ac_n "checking MOZ_GTK2_LIBS""... $ac_c" 1>&6
+ echo "configure:11409: checking MOZ_GTK2_LIBS" >&5
+-            MOZ_GTK2_LIBS=`$PKG_CONFIG --libs "gtk+-2.0 >= 1.3.7"`
++            MOZ_GTK2_LIBS=`$PKG_CONFIG --libs "gtk+-2.0 >= 1.3.7" "pangox >= 1.1.0"`
+             echo "$ac_t""$MOZ_GTK2_LIBS" 1>&6
+         else
+             MOZ_GTK2_CFLAGS=""
+@@ -12344,9 +12344,9 @@
  
  
  

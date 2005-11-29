@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
-#   $MCom: ports/mail/thunderbird-devel/pkg-install.in,v 1.5 2005/06/28 05:40:07 adamw Exp $
+#   $MCom: ports/mail/thunderbird-devel/pkg-install.in,v 1.7 2005/11/18 10:05:25 ahze Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)

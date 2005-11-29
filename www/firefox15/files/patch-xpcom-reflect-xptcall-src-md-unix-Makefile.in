@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox/files/patch-xpcom-reflect-xptcall-src-md-unix-Makefile.in,v 1.7 2005/11/11 00:15:48 ahze Exp $
 
 --- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Aug 14 21:00:23 2003
 +++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Feb  1 15:06:40 2004

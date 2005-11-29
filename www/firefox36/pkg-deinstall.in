@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#    $MCom: ports/www/firefox/pkg-deinstall.in,v 1.8 2005/11/22 21:29:14 ahze Exp $
 #
 # Date created:			Mon Nov 29, 2003
 # Whom:				Thierry Thomas (<thierry@pompo.net>)
@@ -17,9 +18,6 @@ MOZDIR=%%MOZDIR%%
 rm -rf ${MOZDIR}/chrome/overlayinfo
 rm -f ${MOZDIR}/chrome/*.rdf
 rm -f ${MOZDIR}/component.reg
-rm -f ${MOZDIR}/components.ini
-rm -f ${MOZDIR}/defaults.ini
 rm -f ${MOZDIR}/components/*.dat
-rm -rf ${MOZDIR}/extensions
 
 exit 0
