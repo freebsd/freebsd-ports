@@ -12,7 +12,7 @@ fi
 
 # Ensure the old version exists at the end of the argument list
 OLDVERSION=`echo "$*" | sed -e "s/^.* \([^ ]*\)/\1/"`
-VTEST=`echo "$OLDVERSION" | sed -e "s/^1\.8\.[01234]$/OKAY/"`
+VTEST=`echo "$OLDVERSION" | sed -e "s/^1\.8\.[0123467]$/OKAY/"`
 if [ "${VTEST}" != "OKAY" ]
 then
 	echo "The final argument should be the old version of the port, in the format."

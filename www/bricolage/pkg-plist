@@ -37,6 +37,13 @@ bricolage/upgrade/1.8.6/fix_autopopulateds.pl
 bricolage/upgrade/1.8.6/fix_published_version.pl
 bricolage/upgrade/1.8.6/fix_resource_idx.pl
 bricolage/upgrade/1.8.6/fix_story_category_seq.pl
+bricolage/upgrade/1.8.7/add_expire_event_types.pl
+bricolage/upgrade/1.8.7/job_partial_index.pl
+bricolage/upgrade/1.8.7/move_media.pl
+bricolage/upgrade/1.8.7/move_media2.pl
+bricolage/upgrade/1.8.7/postgresql_8.1_fixes.pl
+bricolage/upgrade/1.8.8/fix_media_expire.pl
+bricolage/upgrade/1.8.8/fix_media_resources.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/change_user/dhandler
@@ -2953,6 +2960,8 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.8.8
+@dirrm bricolage/upgrade/1.8.7
 @dirrm bricolage/upgrade/1.8.6
 @dirrm bricolage/upgrade/1.8.4
 @dirrm bricolage/upgrade/1.8.3
