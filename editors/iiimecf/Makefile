@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iiimecf
-PORTVERSION=	0.3
+PORTVERSION=	0.6
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/IIIM/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
