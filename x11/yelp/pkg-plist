@@ -1,7 +1,5 @@
 bin/gnome-help
-bin/gnome-help-bin
 bin/yelp
-bin/yelp-bin
 libdata/bonobo/servers/GNOME_Yelp.server
 share/gnome/applications/yelp.desktop
 share/gnome/yelp/default.css
