@@ -7,6 +7,7 @@
 
 PORTNAME=	io
 PORTVERSION=	0.0.2005.10.17
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -48,8 +49,9 @@ pre-patch:
 		${WRKSRC}/_build.io
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vm/io ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/vm/io2c ${PREFIX}/bin
+.for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer
+	${INSTALL_PROGRAM} ${WRKSRC}/${fname} ${PREFIX}/bin
+.endfor
 
 	${INSTALL_DATA} ${WRKSRC}/vm/_libs/libIoVM.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/bindings/*/*.a ${PREFIX}/lib

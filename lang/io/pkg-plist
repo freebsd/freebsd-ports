@@ -1,5 +1,7 @@
 bin/io
 bin/io2c
+bin/ioDesktop
+bin/ioServer
 include/io/IoBlock.h
 include/io/IoCFunction.h
 include/io/IoCLI.h
