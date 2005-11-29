@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.15
-PORTREVISION=	
+PORTVERSION=	3.15.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-3.15
+DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
@@ -48,7 +47,7 @@ PLIST_SUB+=	DOCS="@comment "
 PLIST_SUB+=	DOCS=""
 .endif
 .if defined(WITHOUT_EXAMPLES)
-PLIST_SUB+=     EXAMPLES="@comment "
+PLIST_SUB+=	EXAMPLES="@comment "
 .else
 PLIST_SUB+=	EXAMPLES=""
 .endif
