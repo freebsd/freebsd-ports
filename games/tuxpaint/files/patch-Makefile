@@ -1,24 +1,41 @@
---- Makefile.orig	Sun Oct  3 19:32:26 2004
-+++ Makefile	Thu Jul 14 15:49:29 2005
-@@ -27,7 +27,7 @@
+--- Makefile.orig	Sat Oct 15 00:22:36 2005
++++ Makefile	Mon Nov 28 16:17:07 2005
+@@ -17,7 +17,6 @@
+ 
+ # Where to install things:
+ 
+-PREFIX=/usr/local
+ 
+ 
+ # Root directory to place files when creating packages.
+@@ -39,7 +38,7 @@
  # Docs and man page:
  
- DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint/
--MAN_PREFIX=$(PREFIX)/share/man/
-+MAN_PREFIX=$(PREFIX)/man/
+ DOC_PREFIX=$(PKG_ROOT)$(PREFIX)/share/doc/tuxpaint
+-MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/share/man
++MAN_PREFIX=$(PKG_ROOT)$(PREFIX)/man
  
  
  # 'System-wide' Config file:
-@@ -88,7 +88,7 @@
+@@ -88,14 +87,14 @@
+ 
+ # Libraries, paths, and flags:
+ 
+-SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
++SDL_LIBS=$(shell ${SDL_CONFIG} --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+ SDL_MIXER_LIB=-lSDL_mixer
+-SDL_CFLAGS=$(shell sdl-config --cflags)
++SDL_CFLAGS=$(shell ${SDL_CONFIG} --cflags)
+ 
  
  # The entire set of CFLAGS:
  
--CFLAGS=-O2 -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
-+CFLAGS+= -Wall -Isrc/$(MOUSEDIR) -D$(CURSOR_SHAPES)_CURSOR_SHAPES
- DEFS=-DDATA_PREFIX=\"$(DATA_PREFIX)\" \
- 	-D$(NOSOUNDFLAG) -DDOC_PREFIX=\"$(DOC_PREFIX)\" \
- 	-DLOCALEDIR=\"$(LOCALE_PREFIX)\" -DCONFDIR=\"$(CONFDIR)\"
-@@ -145,8 +145,7 @@
+-CFLAGS=-O2 -W -Wall -fno-common -ffast-math \
++CFLAGS+= -W -Wall -fno-common -ffast-math \
+ 	-Wcast-align -Wredundant-decls \
+ 	-Wbad-function-cast -Wwrite-strings \
+ 	-Waggregate-return \
+@@ -207,8 +206,7 @@
  install:	install-bin install-data install-man install-doc \
  		install-icon install-gettext install-importscript \
  		install-default-config install-example-stamps \
@@ -28,19 +45,18 @@
  	@echo
  	@echo "--------------------------------------------------------------"
  	@echo
-@@ -393,10 +392,6 @@
+@@ -552,9 +550,6 @@
  	@install -d $(ICON_PREFIX)
- 	@cp data/images/icon.png $(ICON_PREFIX)tuxpaint.png
- 	@chmod 644 $(ICON_PREFIX)tuxpaint.png
+ 	@cp data/images/icon.png $(ICON_PREFIX)/tuxpaint.png
+ 	@chmod 644 $(ICON_PREFIX)/tuxpaint.png
 -	@install -d $(X11_ICON_PREFIX)
--	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)tuxpaint.xpm
--	@chmod 644 $(X11_ICON_PREFIX)tuxpaint.xpm
--
+-	@cp data/images/icon32x32.xpm $(X11_ICON_PREFIX)/tuxpaint.xpm
+-	@chmod 644 $(X11_ICON_PREFIX)/tuxpaint.xpm
+ 
  
  # Install the program:
- 
-@@ -680,12 +675,6 @@
- 	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1/
+@@ -912,12 +907,6 @@
+ 	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
 -	@# pl/man1 directory...
@@ -52,8 +68,8 @@
  	@# tuxpaint-import.1
  	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
-@@ -701,7 +690,7 @@
- 	@$(CC) $(CFLAGS) $(SDL_CFLAGS) $(DEFS) \
+@@ -933,7 +922,7 @@
+ 	@$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(SDL_CFLAGS) $(DEFS) \
  		-o tuxpaint obj/tuxpaint.o $(HQXX_O) \
  		$(ARCH_LIBS) $(SDL_LIBS) \
 -		-lm $(ARCH_LINKS)
