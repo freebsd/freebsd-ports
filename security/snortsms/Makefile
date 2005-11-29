@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	security www
 MASTER_SITES=	http://snortsms.servangle.net/dnloads/
 
-MAINTAINER=	snortsms@servangle.net
+MAINTAINER=	snortsms@servangle.dnydns.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
