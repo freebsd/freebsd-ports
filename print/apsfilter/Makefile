@@ -62,9 +62,6 @@ PAPERSIZE?=     letter
 # Build and install all filter apsfilter knows about (rather expensive)
 #
 # all needed decompression utilities
-.if !exists(/usr/bin/bzip2)
-RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
-.endif
 RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
 RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
 # all needed "ASCII to ps" filter utilities
