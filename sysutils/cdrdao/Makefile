@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	cdrdao
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 PORTREVISION?=	0
 CATEGORIES=	sysutils audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -58,8 +58,7 @@ CONFIGURE_ARGS+=	--without-mp3-support --without-ogg-support
 
 CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--with-pcctsinc=${LOCALBASE}/include/pccts \
-			--without-posix-threads
-#CONFIGURE_ARGS+=	--without-scglib
+			--without-posix-threads --with-scglib=pkg
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=		LANG=C
 
@@ -102,7 +101,7 @@ post-patch:
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
 		${WRKSRC}/xdao/Settings.cc
 	@${REINPLACE_CMD} -E -e \
-		's|(icon-filename=).+(gcdmaster-doc.png)|\1${X11BASE}\/share\/gnome\/mime-info\/\2|g' \
+		's|(icon-filename=).+(gcdmaster-doc.png)|\1${X11BASE}\/share\/gnome\/pixmaps\/document-icons\/\2|g' \
 		${WRKSRC}/xdao/gcdmaster.keys
 .else
 .for i in cdrdao.man main.cc
