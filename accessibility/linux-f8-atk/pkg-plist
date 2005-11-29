@@ -9,6 +9,7 @@ usr/share/locale/am/LC_MESSAGES/atk10.mo
 usr/share/locale/az/LC_MESSAGES/atk10.mo
 usr/share/locale/be/LC_MESSAGES/atk10.mo
 usr/share/locale/bg/LC_MESSAGES/atk10.mo
+usr/share/locale/bn/LC_MESSAGES/atk10.mo
 usr/share/locale/bs/LC_MESSAGES/atk10.mo
 usr/share/locale/ca/LC_MESSAGES/atk10.mo
 usr/share/locale/cs/LC_MESSAGES/atk10.mo
@@ -83,6 +84,8 @@ usr/share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @unexec rmdir %D/usr/share/locale/be >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/bg/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/bg >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bn/LC_MESSAGES >/dev/null 2>&1 || true
+@unexec rmdir %D/usr/share/locale/bn >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/bs/LC_MESSAGES >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/bs >/dev/null 2>&1 || true
 @unexec rmdir %D/usr/share/locale/ca/LC_MESSAGES >/dev/null 2>&1 || true
