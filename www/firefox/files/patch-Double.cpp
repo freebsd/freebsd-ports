@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox/files/patch-Double.cpp,v 1.7 2005/11/11 00:15:48 ahze Exp $
 
 --- extensions/transformiix/source/base/Double.cpp.orig	Thu Jan 30 09:26:46 2003
 +++ extensions/transformiix/source/base/Double.cpp	Sun Nov 16 01:46:42 2003

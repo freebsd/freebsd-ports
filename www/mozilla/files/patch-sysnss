@@ -1,0 +1,178 @@
+--- Makefile.in	Tue Sep 14 16:59:40 2004
++++ Makefile.in	Tue Aug  2 08:26:55 2005
+@@ -102,6 +102,4 @@
+ # tier 1 -  3rd party individual libraries
+ #
+-tier_1_dirs	+= dbm
+-
+ ifndef MOZ_NATIVE_JPEG
+ tier_1_dirs	+= jpeg
+--- security/manager/Makefile.in	Mon Mar 28 19:56:36 2005
++++ security/manager/Makefile.in	Tue Aug  2 09:02:50 2005
+@@ -37,16 +37,7 @@
+ 	SOFTOKEN3_LIB \
+ 	SOFTOKEN3_CHK \
+-	LOADABLE_ROOT_MODULE \
+ 	HAVE_FREEBL_MODULES \
+ 	$(NULL)
+ 
+-LOADABLE_ROOT_MODULE = $(DLL_PREFIX)nssckbi$(DLL_SUFFIX)
+-
+-NSS3_LIB = $(DLL_PREFIX)nss3$(DLL_SUFFIX)
+-SMIME3_LIB = $(DLL_PREFIX)smime3$(DLL_SUFFIX)
+-SSL3_LIB =  $(DLL_PREFIX)ssl3$(DLL_SUFFIX)
+-SOFTOKEN3_LIB = $(DLL_PREFIX)softokn3$(DLL_SUFFIX)
+-SOFTOKEN3_CHK = $(DLL_PREFIX)softokn3.chk
+-
+ ifneq (,$(filter SunOS HP-UX,$(OS_ARCH)))
+ ifeq (,$(filter i86pc ia64,$(OS_TEST)))
+@@ -132,9 +123,4 @@
+ .nss.cleaned: .nss.checkout
+ 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-endif
+ 	touch $@
+ 
+@@ -153,43 +139,4 @@
+ ifeq ($(OS_ARCH),WINNT)
+ 	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-else
+-	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-endif
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
+-endif
+-ifndef DISABLE_DIST_GRE
+-	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(GRE_DIST)
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(GRE_DIST)
+-ifdef HAVE_FREEBL_MODULES
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(GRE_DIST)
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(GRE_DIST)
+-endif
+-endif
+-ifndef _SKIP_OLD_GRE_INSTALL
+-	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DIST)/bin
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DIST)/bin
+-ifdef HAVE_FREEBL_MODULES
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(DIST)/bin
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(DIST)/bin
+-endif
+ endif
+ 	$(MAKE) -C boot $@
+@@ -200,18 +147,4 @@
+ 
+ install::
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DESTDIR)$(mozappdir)
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DESTDIR)$(mozappdir)
+-ifdef HAVE_FREEBL_MODULES
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(DESTDIR)$(mozappdir)
+-endif
+ 	$(MAKE) -C boot $@
+ 	$(MAKE) -C ssl $@
+@@ -227,9 +160,4 @@
+ endif
+ 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-endif
+ 
+ echo-requires-recursive::
+--- security/manager/ssl/src/Makefile.in	Wed Jan  7 08:36:51 2004
++++ security/manager/ssl/src/Makefile.in	Tue Aug  2 09:13:07 2005
+@@ -117,5 +117,5 @@
+ # Use local includes because they are inserted before INCLUDES
+ # so that Mozilla's nss.h is used, not glibc's
+-LOCAL_INCLUDES += -I$(DIST)/public/nss \
++LOCAL_INCLUDES += -I$(LOCALBASE)/include/nss/nss \
+                   $(NULL)
+ 
+--- config/config.mk	Tue Oct 12 00:11:11 2004
++++ config/config.mk	Tue Aug  2 09:19:18 2005
+@@ -170,5 +170,4 @@
+ NSS_LIBS	= \
+ 	$(LIBS_DIR) \
+-	$(DIST)/lib/$(LIB_PREFIX)crmf.$(LIB_SUFFIX) \
+ 	-lsmime3 \
+ 	-lssl3 \
+@@ -189,11 +188,5 @@
+ endif
+ 
+-NSS_DEP_LIBS	= \
+-	$(DIST)/lib/$(LIB_PREFIX)crmf.$(LIB_SUFFIX) \
+-	$(DIST)/lib/$(DLL_PREFIX)smime3$(DLL_SUFFIX) \
+-	$(DIST)/lib/$(DLL_PREFIX)ssl3$(DLL_SUFFIX) \
+-	$(DIST)/lib/$(DLL_PREFIX)nss3$(DLL_SUFFIX) \
+-	$(DIST)/lib/$(DLL_PREFIX)softokn3$(DLL_SUFFIX) \
+-	$(NULL)
++NSS_DEP_LIBS	=
+ 
+ MOZ_UNICHARUTIL_LIBS = $(DIST)/lib/$(LIB_PREFIX)unicharutil_s.$(LIB_SUFFIX)
+--- security/manager/ssl/src/nsNSSComponent.cpp	Thu Apr 22 15:48:30 2004
++++ security/manager/ssl/src/nsNSSComponent.cpp	Thu Aug  4 16:44:27 2005
+@@ -88,4 +88,8 @@
+ }
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
++
+ #ifdef PR_LOGGING
+ PRLogModuleInfo* gPIPNSSLog = nsnull;
+@@ -406,4 +410,5 @@
+     const char *possible_ckbi_locations[] = {
+       NS_GRE_DIR,
++      NS_UNIX_LIB_DIR,
+       NS_XPCOM_CURRENT_PROCESS_DIR
+     };
+@@ -419,5 +424,5 @@
+       }
+ 
+-      char *fullModuleName = nsnull;
++      char *fullModuleName;
+ #ifdef XP_MAC
+       nsCAutoString nativePath;
+@@ -431,4 +436,12 @@
+       fullModuleName = PR_GetLibraryName(processDir.get(), "nssckbi");
+ #endif
++      if (fullModuleName == nsnull)
++        continue;
++      struct stat sb;
++      if (stat(fullModuleName, &sb)) {
++        if (errno != ENOENT)
++          perror(fullModuleName);
++        continue;
++      }
+       /* If a module exists with the same name, delete it. */
+       NS_ConvertUCS2toUTF8 modNameUTF8(modName);

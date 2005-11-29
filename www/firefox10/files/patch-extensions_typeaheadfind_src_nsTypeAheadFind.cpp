@@ -1,4 +1,5 @@
 $FreeBSD$
+  $MCom: ports/www/firefox/files/patch-extensions_typeaheadfind_src_nsTypeAheadFind.cpp,v 1.7 2005/11/11 00:15:48 ahze Exp $
 
 --- extensions/typeaheadfind/src/nsTypeAheadFind.cpp.orig	Wed Nov 19 01:20:47 2003
 +++ extensions/typeaheadfind/src/nsTypeAheadFind.cpp	Tue Feb 10 02:52:26 2004
