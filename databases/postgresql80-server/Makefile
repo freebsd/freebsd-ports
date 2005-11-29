@@ -103,7 +103,7 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if defined(SERVER_ONLY) && defined(WITH_HIER)
 PATCH_SITES+=	http://gppl.moonbone.ru/:hier801055
-PATCHFILES+=	hier-Pg8.0.1-0.5.5.diff.gz:hier801055
+PATCHFILES+=	hier-Pg8.0.3-0.5.5.diff.gz:hier801055
 USE_BISON=	yes
 .  endif
 
