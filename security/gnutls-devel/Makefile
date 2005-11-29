@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/
 MASTER_SITE_SUBDIR=	alpha/gnutls
+DISTNAME=	gnutls-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
