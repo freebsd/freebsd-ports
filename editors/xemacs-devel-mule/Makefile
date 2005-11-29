@@ -167,6 +167,10 @@ PLIST_SUB+=	WITH_PGSQL=""
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
+.if defined(WITH_WINDOWS1251)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cyrillic.el
+.endif
+
 BINNAMEEXT=		-mule
 .if defined(CANNA) && defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
