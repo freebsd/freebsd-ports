@@ -5,13 +5,8 @@ lib/gauche/%%VERSION%%/include/gauche/math3d.h
 share/gauche/%%VERSION%%/lib/gl.scm
 share/gauche/%%VERSION%%/lib/gl/glut.scm
 share/gauche/%%VERSION%%/lib/gl/math3d.scm
+share/gauche/%%VERSION%%/lib/gl/simple-image.scm
 @dirrm share/gauche/%%VERSION%%/lib/gl
-%%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refe.info %D/info/dir
-%%PORTDOCS%%@unexec install-info --delete %D/info/gauche-gl-refj.info %D/info/dir
-%%PORTDOCS%%info/gauche-gl-refe.info
-%%PORTDOCS%%info/gauche-gl-refj.info
-%%PORTDOCS%%@exec install-info %D/info/gauche-gl-refe.info %D/info/dir
-%%PORTDOCS%%@exec install-info %D/info/gauche-gl-refj.info %D/info/dir
 %%PORTDOCS%%%%EXAMPLESDIR%%/gears.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-2.scm
@@ -67,7 +62,6 @@ share/gauche/%%VERSION%%/lib/gl/math3d.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.vert
 %%PORTDOCS%%%%EXAMPLESDIR%%/slbook/ogl2particle/README.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/slbook/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/images/foo.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/images/noturn.rgb
 %%PORTDOCS%%%%EXAMPLESDIR%%/images/flower.rgb
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-6.scm
