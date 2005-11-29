@@ -1,0 +1,20 @@
+bin/tuxpaint-config
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%DATADIR%%/images/icon-win32.ico
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/icon16x16.png
+%%DATADIR%%/images/icon32x32.png
+%%DATADIR%%/images/icon32x32.xpm
+%%DATADIR%%/images/icon48x48.png
+%%DATADIR%%/images/win32-icon16x16x16.png
+%%DATADIR%%/images/win32-icon16x16x256.png
+%%DATADIR%%/images/win32-icon32x32x16.png
+%%DATADIR%%/images/win32-icon32x32x256.png
+%%DATADIR%%/images/win32-icon48x48x256.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
