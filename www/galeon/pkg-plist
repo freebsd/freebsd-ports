@@ -1,5 +1,4 @@
 bin/galeon
-bin/galeon-bin
 bin/galeon-config-tool
 etc/sound/events/galeon.soundlist
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
