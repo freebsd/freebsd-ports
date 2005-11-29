@@ -1,0 +1,232 @@
+diff -ruN ../0.3.9_4/libMGPM/src/MGPMrController.c ./libMGPM/src/MGPMrController.c
+--- ../0.3.9_4/libMGPM/src/MGPMrController.c	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/MGPMrController.c	Tue Nov 29 03:03:01 2005
+@@ -163,7 +163,7 @@
+ 	/*
+ 	 * Need to check configDb for ignored ports and add them to ignoreDb here
+ 	 */
+-	MGPMrReadConfigure( property );
++	MGPMrReadConfigure( property, " " );
+ 
+ 	while( fflush( stdout ) );
+ 	if( property->buildDependsAreLeaves )
+@@ -180,7 +180,7 @@
+ 	{
+ 		if( property->resume == 0 ) /* skip this if portmanager has upgraded/rebuilt its self */
+ 		{
+-			MGPMrReadConfigure( property );
++			MGPMrReadConfigure( property, " " );
+ 			if( ( errorCode	= MGPMrCreateAllUpdateStatusDb( property ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
+@@ -241,7 +241,7 @@
+ 		property->pmMode	= 1; /* fake like we are in single port update */
+ 		if( property->resume == 0 )
+ 		{
+-			MGPMrReadConfigure( property );
++			MGPMrReadConfigure( property, " " );
+ 			if( ( errorCode	= MGPMrCreateAllUpdateStatusDb( property ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
+@@ -284,7 +284,7 @@
+ 		 */
+ 		if( property->resume == 0 ) /* skip this if --resume  */
+ 		{
+-			MGPMrReadConfigure( property );
++			MGPMrReadConfigure( property, " " );
+ 			if( ( errorCode	= MGPMrSinglePortCreateStatusDb( property, path ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrSinglePortCreateStatusDb", errorCode );
+@@ -296,7 +296,7 @@
+ 		}
+ 		while( 1 )
+ 		{
+-			MGPMrReadConfigure( property );
++			MGPMrReadConfigure( property, " " );
+ 			if( ( errorCode	= MGPMrStatus( property ) ) )
+ 			{
+ 				fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrStatus", errorCode );
+@@ -492,7 +492,7 @@
+ 	property->pmMode	= 1; /* fake like we are in single port update */
+ 	if( property->resume == 0 ) /* skip this if portmanager has upgraded/rebuilt its self */
+ 	{
+-		MGPMrReadConfigure( property );
++		MGPMrReadConfigure( property, " " );
+ 		if( ( errorCode	= MGPMrCreateAllUpdateStatusDb( property ) ) )
+ 		{
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION,
+@@ -502,7 +502,7 @@
+ 	}
+ 	while( 1 )
+ 	{
+-		MGPMrReadConfigure( property );
++		MGPMrReadConfigure( property, " " );
+ 		if( ( errorCode	= MGPMrStatus( property ) ) )
+ 		{
+ 			fprintf( stdout, "%s %s error: %s returned errorCode %d\n", id, PACKAGE_VERSION, "MGPMrStatus", errorCode );
+diff -ruN ../0.3.9_4/libMGPM/src/MGPMrPackageDepends.c ./libMGPM/src/MGPMrPackageDepends.c
+--- ../0.3.9_4/libMGPM/src/MGPMrPackageDepends.c	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/MGPMrPackageDepends.c	Tue Nov 29 03:25:59 2005
+@@ -58,7 +58,7 @@
+ 	
+ 	pkgDb	= MGdbCreate( pkgDbFileName, "fieldPortName", "fieldPortDir", NULL );
+ 
+-	MGPMrReadConfigure( property );
++	MGPMrReadConfigure( property, path );
+ 
+ 	if( ( errorCode	= MGPMrSinglePortCreateStatusDb( property, path ) ) )
+ 	{
+@@ -101,11 +101,21 @@
+ 			 * Gaurentee that we get the name from /var/db/pkg/{port name}
+ 			 */
+ 			MGdbGoTop( property->installedPortsDb );
+-			strcpy( portName, MGdbSeek( property->installedPortsDb,
+-							property->fieldInstalledPortsDbPortDir,
+-							portDir,
+-							property->fieldInstalledPortsDbPortName,
+-							exact ) );	
++			if( MGdbSeek( property->installedPortsDb,
++					property->fieldInstalledPortsDbPortDir,
++					portDir,
++					property->fieldInstalledPortsDbPortName,
++					exact ) )
++			{
++				strcpy( portName, MGdbGet( property->installedPortsDb,
++							MGdbGetRecno( property->installedPortsDb ) - 1,
++							property->fieldInstalledPortsDbPortName ) );	
++			}
++			else
++			{
++				continue;
++			}
++			
+ 			/*
+ 			 * Below is to prevent dupes instead of just fprinting portName & portDir
+ 			 */
+diff -ruN ../0.3.9_4/libMGPM/src/MGPMrReadConfigure.c ./libMGPM/src/MGPMrReadConfigure.c
+--- ../0.3.9_4/libMGPM/src/MGPMrReadConfigure.c	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/MGPMrReadConfigure.c	Tue Nov 29 03:26:30 2005
+@@ -56,7 +56,7 @@
+ int	rReadConfigureMergeRecords( structProperty* property, char* configDbFileName );
+ int	rReadConfigureParse( structProperty* property, char* configDbFileName, int flags );
+ 
+-int	MGPMrReadConfigure( structProperty* property )
++int	MGPMrReadConfigure( structProperty* property, char* newPortDir )
+ {
+ 	FILE*		fHandle			= NULL;
+ 	FILE*		pHandle			= NULL;
+@@ -130,6 +130,17 @@
+ 	}
+ 
+ 	rReadConfigureAwkConfigure( property, property->configConfFileName,  property->configDbFileName );
++
++	/*
++	 * Create a record for port that isn't installed yet if portmanager
++	 * is being used to add a new port
++	 */
++	if( strlen( newPortDir ) > 1 )
++	{
++		configDb	= MGdbOpen( property->configDbFileName );
++		MGdbAdd( configDb, newPortDir, " ", NULL );
++		MGdbDestroy( configDb );
++	}
+ 
+ 	/*
+ 	 * Is ruby installed?
+diff -ruN ../0.3.9_4/libMGPM/src/MGPMrStatus.c ./libMGPM/src/MGPMrStatus.c
+--- ../0.3.9_4/libMGPM/src/MGPMrStatus.c	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/MGPMrStatus.c	Mon Nov 28 14:00:00 2005
+@@ -328,13 +328,35 @@
+ 					availablePortsDbPortDirPtr ); 
+ 				while( fflush( stdout ) );
+ 
+-				MGdbAdd( property->oldPortsDb,
+-					availablePortsDbPortDirPtr,
+-					availablePortsDbPortNamePtr,
+-					"MISSING",
+-					availablePortsDbPortNamePtr,
+-					availablePortsDbPortDirPtr,
+-					NULL );
++				MGdbGoTop( property->availableDependenciesDb );
++				if( MGdbSeek( property->availableDependenciesDb,
++						property->fieldAvailableDependenciesDbDependencyDir,
++						availablePortsDbPortDirPtr,
++						property->fieldAvailableDependenciesDbDependencyDir,
++						exact ) )
++				{
++					MGdbAdd( property->oldPortsDb,
++						availablePortsDbPortDirPtr,
++						availablePortsDbPortNamePtr,
++						"MISSING dependency of",
++						MGdbGet( property->availableDependenciesDb,
++							MGdbGetRecno( property->availableDependenciesDb ) - 1,
++							property->fieldAvailableDependenciesDbPortName ),
++						MGdbGet( property->availableDependenciesDb,
++							MGdbGetRecno( property->availableDependenciesDb ) - 1,
++							property->fieldAvailableDependenciesDbPortDir ),
++						NULL );
++				}
++				else
++				{
++					MGdbAdd( property->oldPortsDb,
++						availablePortsDbPortDirPtr,
++						availablePortsDbPortNamePtr,
++						"MISSING",
++						availablePortsDbPortNamePtr,
++						availablePortsDbPortDirPtr,
++						NULL );
++				}
+ 			}
+ 		}
+ 		availablePortsDbIDX++;
+diff -ruN ../0.3.9_4/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.3.9_4/libMGPM/src/MGPMrUpdate.c	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Mon Nov 28 08:50:05 2005
+@@ -652,16 +652,32 @@
+ 									}
+ 									case KEY_N:
+ 									{
+-										fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
++										fprintf( stdout,
++											"\nAdding  %s %s conflicts with installed port %s added to ignore list\n",
++											oldPortName, oldPortDir, localProperty.installedPortName );
+ 										while( fflush( stdout ) );
++										MGPMlogAdd( property,
++											oldPortName,
++											oldPortDir,
++											"conflicts with installed port ",
++											localProperty.installedPortName,
++											" added to ignore.db" );
+ 										MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
+ 										rCleanUp( property, &localProperty );
+ 										return(0);
+ 									}
+ 									case KEY_n:
+ 									{
+-										fprintf( stdout, "\nAdding  %s %s to ignore list\n", oldPortName, oldPortDir );
++										fprintf( stdout,
++											"\nAdding  %s %s conflicts with installed port %s added to ignore list\n",
++											oldPortName, oldPortDir, localProperty.installedPortName );
+ 										while( fflush( stdout ) );
++										MGPMlogAdd( property,
++											oldPortName,
++											oldPortDir,
++											"conflicts with installed port ",
++											localProperty.installedPortName,
++											" added to ignore.db" );
+ 										MGdbAdd( property->ignoreDb, oldPortDir, "conflicts with another port", NULL );
+ 										rCleanUp( property, &localProperty );
+ 										return(0);
+diff -ruN ../0.3.9_4/libMGPM/src/libMGPM.h ./libMGPM/src/libMGPM.h
+--- ../0.3.9_4/libMGPM/src/libMGPM.h	Sun Nov 27 21:47:15 2005
++++ ./libMGPM/src/libMGPM.h	Tue Nov 29 02:59:21 2005
+@@ -238,7 +238,7 @@
+ int		MGPMrMissingDependencies( structProperty* property );
+ int		MGPMrPackageDepends( structProperty* property , char* path );
+ int		MGPMrParse( structProperty* property, char* availablePortName, char* availablePortDir, char* dependType, char* buffer, int* counterPtr );
+-int		MGPMrReadConfigure( structProperty* property );
++int		MGPMrReadConfigure( structProperty* property, char* newPortDir );
+ int		MGPMrShowLeaves( structProperty* property );
+ int		MGPMrShowLeavesDelete( structProperty* property );
+ int		MGPMrSinglePortCreateStatusDb( structProperty* property, char* path );
+Binary files ../0.3.9_4/portmanager-0.3.10.tar.gz and ./portmanager-0.3.10.tar.gz differ
