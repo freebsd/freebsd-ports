@@ -1,4 +1,4 @@
-bin/thales
+sbin/thales
 etc/thales.conf.default
 %%DATADIR%%/mysql-bahamut.sql
 %%DATADIR%%/mysql-hybrid.sql
