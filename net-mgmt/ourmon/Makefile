@@ -48,7 +48,7 @@ pre-build:
 
 pre-install:
 .if exists(${PREFIX}/etc/ourmon.conf)
-    ${MV} ${PREFIX}/etc/ourmon.conf ${PREFIX}/etc/ourmon.conf.old
+	${MV} ${PREFIX}/etc/ourmon.conf ${PREFIX}/etc/ourmon.conf.old
 .endif
 	$(CP) -R ${WRKSRC} ${PREFIX}
 
