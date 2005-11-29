@@ -19,16 +19,14 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
-CONFIGURE_WRKSRC=	${WRKSRC}/Ted
 
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
-MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
+MAKE_ENV+=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}\\\"\"" \
 		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\""
 ALL_TARGET=	compile.shared
@@ -38,7 +36,10 @@ INDDIR=		${PREFIX}/share/Ted/ind
 
 post-extract:
 	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
+
 post-patch:
+	${CP} -p ${FILESDIR}/configure ${WRKSRC}/configure
+	${CHMOD} +x ${WRKSRC}/configure
 	${REINPLACE_CMD} \
 		's|DEF_PKGDIR|DEF_DOCUMENT_DIR|g' ${WRKSRC}/Ted/makefile.in
 
