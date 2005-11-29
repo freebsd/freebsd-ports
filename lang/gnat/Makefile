@@ -121,7 +121,7 @@ LIBRARY_VERSION=	GPL2005
 PLIST_SUB+=		SHAREDLIB=""
 .else
 CONFIGURE_ARGS+=	--disable-shared
-PLIST_SUB+=		SHAREDLIB="@comment"
+PLIST_SUB+=		SHAREDLIB="@comment "
 .endif
 
 # Check for GNAT sources.
