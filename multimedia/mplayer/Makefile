@@ -302,6 +302,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
+		--cc=${CC} \
+		--as=${AS} \
 		--enable-png \
 		--enable-menu \
 		--disable-libfame \
@@ -881,6 +883,13 @@ post-patch:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} -E ${WRKSRC} -type f -print0 \
+		-iregex ".*(configure|.sh|Makefile)" | \
+		${XARGS} -x -0 -n 10 \
+		${REINPLACE_CMD} -E \
+			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
+			-e 's|[[:space:]]gcc| ${CC}|' \
+			-e 's|\$$\(CC\)|${CC}|'
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
