@@ -12,7 +12,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 DISTNAME=	XBone-${PORTVERSION}
 
-MAINTAINER=	xbone@isi.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GUI for XBone, a tool to deploy and manage IP-based VPNs
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
