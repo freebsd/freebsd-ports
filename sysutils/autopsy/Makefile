@@ -15,6 +15,7 @@ MAINTAINER=	opr@bsdaemon.be
 COMMENT=	The Autopsy Forensic Browser is a GUI for Sleuthkit
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 IS_INTERACTIVE=	yes
