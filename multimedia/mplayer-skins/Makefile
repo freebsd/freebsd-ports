@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mplayer
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTNAME=	mplayer-skins
+PORTVERSION=	1.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
+		http://ftp5.mplayerhq.hu/mplayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
 		ftp://ftp.mplayerhq.hu/MPlayer/Skin/ \
+		ftp://ftp5.mplayerhq.hu/mplayer/Skin/ \
 		ftp://ftp.lug.udel.edu/MPlayer/Skin/
-PKGNAMESUFFIX=	-skins
 DISTFILES=	# filled in later after options
 DIST_SUBDIR=	mplayer
 
