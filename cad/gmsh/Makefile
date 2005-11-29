@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.61.0
+PORTVERSION=	1.61.2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -49,6 +49,7 @@ NO_CDROM=	"Triangle must not be sold for profit"
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--disable-netgen	# Problem with Netgen & gcc-295
+BROKEN=		"Does not compile with gcc-295"
 .endif
 
 post-extract:
