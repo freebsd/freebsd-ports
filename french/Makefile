@@ -13,6 +13,7 @@
     SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
+    SUBDIR += gnome-verbiste
     SUBDIR += homard
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
@@ -23,6 +24,7 @@
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += staroffice52
+    SUBDIR += verbiste
     SUBDIR += xtel
 
 .include <bsd.port.subdir.mk>

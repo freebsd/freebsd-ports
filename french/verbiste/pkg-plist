@@ -1,0 +1,32 @@
+bin/french-conjugator
+bin/french-deconjugator
+include/verbiste-0.1/verbiste/FrenchVerbDictionary.h
+include/verbiste-0.1/verbiste/HashMap.h
+include/verbiste-0.1/verbiste/Trie.cpp
+include/verbiste-0.1/verbiste/Trie.h
+include/verbiste-0.1/verbiste/c-api.h
+include/verbiste-0.1/verbiste/misc-types.h
+lib/libverbiste-0.1.a
+lib/libverbiste-0.1.so
+lib/libverbiste-0.1.so.0
+libdata/pkgconfig/verbiste-0.1.pc
+share/locale/fr/LC_MESSAGES/verbiste.mo
+share/verbiste-0.1/conjugation-fr.xml
+share/verbiste-0.1/verbs-fr.xml
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/HACKING
+%%DOCSDIR%%/LISEZMOI
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%EXAMPLESDIR%%/FrenchDeconjugatorTester.java
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/conjugator.c
+%%EXAMPLESDIR%%/deconjugator.c
+%%EXAMPLESDIR%%/test-french-deconjugator.pl
+%%EXAMPLESDIR%%/trans-tenses.pl
+@dirrm include/verbiste-0.1/verbiste
+@dirrm include/verbiste-0.1
+@dirrm share/verbiste-0.1
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
