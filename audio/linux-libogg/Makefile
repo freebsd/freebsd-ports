@@ -7,6 +7,7 @@
 
 PORTNAME=	libogg
 DISTVERSION=	1.1.2-2
+PORTREVISION=	1
 CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	development/${LINUX_ARCH}/Fedora/RPMS/
 
