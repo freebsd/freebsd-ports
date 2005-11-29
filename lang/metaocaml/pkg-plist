@@ -81,6 +81,7 @@ lib/metaocaml/lib/caml/intext.h
 lib/metaocaml/lib/caml/memory.h
 lib/metaocaml/lib/caml/misc.h
 lib/metaocaml/lib/caml/mlvalues.h
+lib/metaocaml/lib/caml/printexc.h
 lib/metaocaml/lib/caml/signals.h
 lib/metaocaml/lib/camlheader
 lib/metaocaml/lib/camlheader_ur
@@ -89,6 +90,10 @@ lib/metaocaml/lib/camlinternalOO.cmx
 lib/metaocaml/lib/camlinternalOO.ml
 lib/metaocaml/lib/camlinternalOO.mli
 lib/metaocaml/lib/camlinternalOO.p.cmx
+lib/metaocaml/lib/camlp4/argl.cmi
+lib/metaocaml/lib/camlp4/argl.cmo
+lib/metaocaml/lib/camlp4/argl.cmx
+lib/metaocaml/lib/camlp4/argl.o
 lib/metaocaml/lib/camlp4/ast2pt.cmi
 lib/metaocaml/lib/camlp4/ast2pt.mli
 lib/metaocaml/lib/camlp4/camlp4.a
@@ -98,17 +103,22 @@ lib/metaocaml/lib/camlp4/camlp4_top.cma
 lib/metaocaml/lib/camlp4/camlp4o.cma
 lib/metaocaml/lib/camlp4/camlp4r.cma
 lib/metaocaml/lib/camlp4/extfold.cmi
+lib/metaocaml/lib/camlp4/extfold.cmx
 lib/metaocaml/lib/camlp4/extfold.mli
 lib/metaocaml/lib/camlp4/extfun.cmi
+lib/metaocaml/lib/camlp4/extfun.cmx
 lib/metaocaml/lib/camlp4/extfun.mli
 lib/metaocaml/lib/camlp4/fstream.cmi
+lib/metaocaml/lib/camlp4/fstream.cmx
 lib/metaocaml/lib/camlp4/fstream.mli
 lib/metaocaml/lib/camlp4/gramext.cmi
+lib/metaocaml/lib/camlp4/gramext.cmx
 lib/metaocaml/lib/camlp4/gramext.mli
 lib/metaocaml/lib/camlp4/gramlib.a
 lib/metaocaml/lib/camlp4/gramlib.cma
 lib/metaocaml/lib/camlp4/gramlib.cmxa
 lib/metaocaml/lib/camlp4/grammar.cmi
+lib/metaocaml/lib/camlp4/grammar.cmx
 lib/metaocaml/lib/camlp4/grammar.mli
 lib/metaocaml/lib/camlp4/mLast.cmi
 lib/metaocaml/lib/camlp4/mLast.mli
@@ -167,6 +177,7 @@ lib/metaocaml/lib/camlp4/pa_ru.o
 lib/metaocaml/lib/camlp4/pcaml.cmi
 lib/metaocaml/lib/camlp4/pcaml.mli
 lib/metaocaml/lib/camlp4/plexer.cmi
+lib/metaocaml/lib/camlp4/plexer.cmx
 lib/metaocaml/lib/camlp4/plexer.mli
 lib/metaocaml/lib/camlp4/pr_depend.cmo
 lib/metaocaml/lib/camlp4/pr_depend.cmx
@@ -206,8 +217,10 @@ lib/metaocaml/lib/camlp4/quotation.mli
 lib/metaocaml/lib/camlp4/spretty.cmi
 lib/metaocaml/lib/camlp4/spretty.mli
 lib/metaocaml/lib/camlp4/stdpp.cmi
+lib/metaocaml/lib/camlp4/stdpp.cmx
 lib/metaocaml/lib/camlp4/stdpp.mli
 lib/metaocaml/lib/camlp4/token.cmi
+lib/metaocaml/lib/camlp4/token.cmx
 lib/metaocaml/lib/camlp4/token.mli
 lib/metaocaml/lib/char.cmi
 lib/metaocaml/lib/char.cmx
@@ -585,6 +598,12 @@ lib/metaocaml/lib/weak.p.cmx
 %%X11%%lib/metaocaml/lib/stublibs/dllgraphics.so
 %%LABLTK%%lib/metaocaml/bin/labltk
 %%LABLTK%%lib/metaocaml/bin/ocamlbrowser
+%%LABLTK%%lib/metaocaml/lib/labltk/balloon.cmi
+%%LABLTK%%lib/metaocaml/lib/labltk/balloon.cmx
+%%LABLTK%%lib/metaocaml/lib/labltk/balloon.mli
+%%LABLTK%%lib/metaocaml/lib/labltk/bell.cmi
+%%LABLTK%%lib/metaocaml/lib/labltk/bell.cmx
+%%LABLTK%%lib/metaocaml/lib/labltk/bell.mli
 %%LABLTK%%lib/metaocaml/lib/labltk/button.cmi
 %%LABLTK%%lib/metaocaml/lib/labltk/button.cmx
 %%LABLTK%%lib/metaocaml/lib/labltk/button.mli
@@ -895,12 +914,6 @@ lib/metaocaml/lib/weak.p.cmx
 %%LABLTK%%lib/metaocaml/lib/labltk/wm.mli
 %%LABLTK%%lib/metaocaml/lib/stublibs/dlllabltk.so
 %%LABLTK%%lib/metaocaml/lib/stublibs/dlltkanim.so
-%%LABLTK%%lib/metaocaml/lib/labltk/balloon.cmi
-%%LABLTK%%lib/metaocaml/lib/labltk/balloon.cmx
-%%LABLTK%%lib/metaocaml/lib/labltk/balloon.mli
-%%LABLTK%%lib/metaocaml/lib/labltk/bell.cmi
-%%LABLTK%%lib/metaocaml/lib/labltk/bell.cmx
-%%LABLTK%%lib/metaocaml/lib/labltk/bell.mli
 %%LABLTK%%%%EXAMPLESDIR%%/camltk/Makefile
 %%LABLTK%%%%EXAMPLESDIR%%/camltk/Makefile.nt
 %%LABLTK%%%%EXAMPLESDIR%%/camltk/addition.ml
@@ -938,12 +951,12 @@ lib/metaocaml/lib/weak.p.cmx
 @dirrm lib/metaocaml/bin
 @dirrm lib/metaocaml/lib/caml
 @dirrm lib/metaocaml/lib/camlp4
+%%LABLTK%%@dirrm lib/metaocaml/lib/labltk
 @dirrm lib/metaocaml/lib/ocamldoc/custom
 @dirrm lib/metaocaml/lib/ocamldoc
 @dirrm lib/metaocaml/lib/stublibs
 @dirrm lib/metaocaml/lib/threads
 @dirrm lib/metaocaml/lib/vmthreads
-%%LABLTK%%@dirrm lib/metaocaml/lib/labltk
 @dirrm lib/metaocaml/lib
 @dirrm lib/metaocaml
 @dirrm %%DATADIR%%/man/man1
