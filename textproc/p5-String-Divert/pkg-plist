@@ -1,0 +1,6 @@
+%%SITE_PERL%%/String/Divert.pm
+%%SITE_PERL%%/String/Divert.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Divert/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Divert 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/String 2>/dev/null || true
