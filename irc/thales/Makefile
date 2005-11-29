@@ -7,6 +7,7 @@
 
 PORTNAME=	thales
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +18,7 @@ COMMENT=	GNU Thales -- An IRC to MySQL gateway
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MYSQL=	yes
+USE_RC_SUBR=	thales.sh
 USE_REINPLACE=	yes
 
 # Currently, not all supported IRCDs are handled here, only the ones
@@ -34,7 +36,10 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:${PORTSDIR}/irc/unreal
 
 # ``Assign with expansion'' is needed here, otherwise we cannot override
 # WITH_IRCD value supplied as make(1) argument (which can be bogus).
-CONFIGURE_ARGS:=	--with-ircd=${WITH_IRCD}
+CONFIGURE_ARGS:=	--with-ircd=${WITH_IRCD} \
+			--prefix=${PREFIX}/sbin/thales \
+			--with-mysql=${LOCALBASE} \
+			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 
 .if defined(WITHOUT_MODES)
 CONFIGURE_ARGS+=	--enable-no-modes
@@ -61,7 +66,7 @@ post-patch: .SILENT
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/thales ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/thales ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/data/thales.conf.default ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/data/*.sql ${DATADIR}
 .if !defined(NOPORTDOCS)

@@ -1,0 +1,17 @@
+--- data/thales.conf.default	Sat Jul  5 17:04:39 2003
++++ data/thales.conf.default	Sat Apr  2 10:57:47 2005
+@@ -144,12 +144,12 @@
+ # PIDFile <filename>  [REQUIRED]
+ #     Specifies the name of the file containing Services' process ID.
+ 
+-PIDFile     thales.pid
++PIDFile     /var/run/thales.pid
+ 
+ # LogFile <filename> [REQUIRED]
+ #     Specifies the name of the log file.
+ 
+-LogFile     thales.log
++LogFile     /var/log/thales.log
+ 
+ ###########################################################################
+ #

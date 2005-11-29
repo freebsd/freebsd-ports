@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: thales
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable Thales:
+# thales_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable Thales
+#
+
+. %%RC_SUBR%%
+
+name="thales"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/thales"
+
+[ -z "$thales_enable" ]	&& thales_enable="NO"
+
+required_files="%%PREFIX%%/etc/thales.conf"
+
+load_rc_config $name
+run_rc_command "$1"
