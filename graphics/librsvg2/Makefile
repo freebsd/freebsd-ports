@@ -8,7 +8,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.12.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
@@ -51,27 +51,8 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" no
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOZILLA_PLUGIN)
-WITH_MOZILLA?=	firefox
-
-.if ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
-HEADERS_SUFX=
-.elif ${WITH_MOZILLA}=="mozilla"
-MOZILLA=	mozilla
-HEADERS_SUFX=
-.elif ${WITH_MOZILLA}=="mozilla-devel"
-MOZILLA=	mozilla
-HEADERS_SUFX=	-devel
-.else
-BROKEN=		"Unknown Gecko source specified (${WITH_MOZILLA})"
-.endif
-
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/${MOZILLA}-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/${MOZILLA}${HEADERS_SUFX}
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/${MOZILLA}-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/${MOZILLA}${HEADERS_SUFX}
-
-.if ${WITH_MOZILLA}=="mozilla-devel" && ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
+USE_GECKO=	firefox mozilla
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 CONFIGURE_ENV+=	MOZILLA_CONFIG=no
 CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
 
@@ -84,7 +65,7 @@ PLIST_SUB+=	PLUGIN="@comment "
 
 post-patch:
 .if defined(WITH_MOZILLA_PLUGIN)
-	@${REINPLACE_CMD} -e 's|mozilla-plugin|${MOZILLA}-plugin${HEADERS_SUFX}|g' \
+	@${REINPLACE_CMD} -e 's|mozilla-plugin|${GECKO}-plugin|g' \
 		${WRKSRC}/configure
 .endif
 
