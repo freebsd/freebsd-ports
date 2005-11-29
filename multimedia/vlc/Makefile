@@ -235,7 +235,7 @@ MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${D
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
-RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 CONFLICTS=	vlc-devel*
@@ -264,7 +264,7 @@ PLIST=		${WRKDIR}/plist
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/vlc/ ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
@@ -585,6 +585,7 @@ CONFIGURE_ARGS+=--disable-mp3lame
 
 .if !defined(WITHOUT_MATROSKA)
 LIB_DEPENDS+=	matroska.0:${PORTSDIR}/multimedia/libmatroska
+BUILD_DEPENDS+=	libebml>=0.7.6:${PORTSDIR}/textproc/libebml
 CONFIGURE_ARGS+=--enable-mkv
 .else
 CONFIGURE_ARGS+=--disable-mkv
