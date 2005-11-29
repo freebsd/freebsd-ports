@@ -8,6 +8,7 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipconfig.py
 %%PYTHON_SITELIBDIR%%/sipconfig.pyc
 %%PYTHON_SITELIBDIR%%/sipconfig.pyo
+%%PYTHON_SITELIBDIR%%/sipdistutils.py
 %%DOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DATADIR%%
 @dirrm %%DATADIR%%
