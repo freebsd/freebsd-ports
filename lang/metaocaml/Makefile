@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	metaocaml
-PORTVERSION=	3.08.a23
+PORTVERSION=	3.08.a27
 CATEGORIES=	lang
-MASTER_SITES=	http://www.metaocaml.org/dist/ \
-		http://www.metaocaml.org/dist/old/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jylefort
-DISTNAME=	MetaOCaml_308_alpha_023
+MASTER_SITES=	http://www.metaocaml.org/dist/old/
+DISTNAME=	MetaOCaml_308_alpha_027
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The MetaOCaml compiler and programming environment
@@ -32,7 +29,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	world opt metaocamlopt opt.opt
 STRIP=
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME="${PORTNAME}"
 
 MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamldoc.1 ocamlopt.1 \
 		ocamlrun.1 ocamlyacc.1 ocamlmktop.1 ocaml.1 ocamlc.1 \
@@ -76,9 +74,12 @@ PLIST_SUB+=	X11=""
 PLIST_SUB+=	X11="@comment "
 .endif
 
+# We would like to use bsd.tcl.mk here, but we can't USE_TCL after including
+# bsd.port.pre.mk and we can't test WITH_LABLTK before including bsd.port.pre.mk
 .if defined(WITH_LABLTK)
 LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=-tkdefs "-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4"
+CONFIGURE_ARGS+=-tklibs "-L${LOCALBASE}/lib"
 PLIST_SUB+=	LABLTK=""
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=-tk-no-x11
@@ -90,8 +91,9 @@ PLIST_SUB+=	LABLTK="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
-		 s|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
+		"s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
+		 s|-pthread|${PTHREAD_LIBS}|; \
+		 s|aspp='gcc'|aspp='${CC}'|" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -type f -name Makefile -exec ${REINPLACE_CMD} -Ee \
 		's,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \3,; \
 		 s,^([[:space:]]*(then)?[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,; \
@@ -101,7 +103,8 @@ post-patch:
 		 s,^([[:space:]]*(then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,; \
 		 s,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \2,; \
 		 s,([[:space:]]*then[[:space:]]*)cp([[:space:]]+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \2,; \
-		 s,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,;' {} \;
+		 s,([[:space:]]*(do|then)[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,; \
+		 s,-O,,' {} \;
 
 post-install:
 .if defined(WITH_LABLTK)
@@ -121,8 +124,6 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/lib/metaocaml/bin/${p}
 .endfor
 	${CHMOD} u+w ${PREFIX}/lib/metaocaml/lib/ld.conf
-	@${SED} "s|%%PORTNAME%%|${PORTNAME}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%DATADIR%%|${DATADIR}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,14 @@
---- configure.orig	Thu Jul 15 16:17:46 2004
-+++ configure	Thu Jul 15 16:58:51 2004
-@@ -1113,116 +1113,14 @@
+--- configure.orig	Mon Oct 17 10:20:41 2005
++++ configure	Sat Nov  5 22:40:41 2005
+@@ -653,6 +653,7 @@
+   alpha,*,digital) profiling='prof';;
+   i386,*,linux_elf) profiling='prof';;
+   i386,*,bsd_elf) profiling='prof';;
++  *,*,freebsd) profiling='prof';;
+   sparc,*,solaris)
+     profiling='prof'
+     case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
+@@ -1123,117 +1124,14 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -63,6 +71,7 @@
 -    $x11_lib_dir          \
 -    $x11_try_lib_dir      \
 -                          \
+-    /usr/X11R6/lib64      \
 -    /usr/X11R6/lib        \
 -    /usr/lib/X11R6        \
 -    /usr/local/X11R6/lib  \
