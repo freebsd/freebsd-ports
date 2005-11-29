@@ -7,7 +7,7 @@
 
 PORTNAME=	rtc
 PORTVERSION=	2004.02.24.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -34,11 +34,11 @@ SRC_BASE?=	/usr/src
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-IGNORE=		"Systems prior to 400013 are out of support"
+IGNORE=		needs a system more recent than 400013
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		"Kernel source files required"
+IGNORE=		needs kernel source files
 .endif
 
 do-extract:

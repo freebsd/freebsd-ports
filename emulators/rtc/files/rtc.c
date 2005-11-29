@@ -82,7 +82,7 @@ struct rtc_softc {
 	struct callout rtc_handle;
 	struct timespec lasttime;
 	struct selinfo sip;
-	int woken;
+	unsigned long woken;
 	void *rtc_ident;
 	} var;
 };
@@ -338,11 +338,13 @@ rtc_read(dev_t dev, struct uio *uio, int flags __unused)
 		tsleep(&sc->var.rtc_ident, PCATCH, "rtc rd", hz * 10);
 #if 0
 	if (sc->var.woken > 1)
-		printf("woken: %d\n", sc->var.woken);
+		printf("woken: %lu\n", sc->var.woken);
 #endif
 
-	if (uio->uio_resid == sizeof(int)) {
-		error = uiomove(&sc->var.woken, sizeof(int), uio);
+	if (uio->uio_resid == sizeof(unsigned int)) {
+		error = uiomove(&sc->var.woken, sizeof(unsigned int), uio);
+	} else if (uio->uio_resid == sizeof(unsigned long)) {
+		error = uiomove(&sc->var.woken, sizeof(unsigned long), uio);
 	}
 	sc->var.woken = 0;
 	return error;
