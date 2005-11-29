@@ -1,15 +1,24 @@
---- libavcodec/libpostproc/Makefile.orig	Thu May 26 13:50:31 2005
-+++ libavcodec/libpostproc/Makefile	Thu May 26 14:00:11 2005
-@@ -56,16 +56,14 @@
- 	install $(INSTALLSTRIP) -m 755 $(SPPLIB) "$(prefix)"
+--- libavcodec/libpostproc/Makefile.orig	Mon Nov 28 22:37:54 2005
++++ libavcodec/libpostproc/Makefile	Mon Nov 28 22:47:35 2005
+@@ -20,7 +20,7 @@
+ PPOBJS=postprocess.o
+ SPPOBJS=postprocess_pic.o
+ 
+-CFLAGS  = $(OPTFLAGS) $(MLIB_INC) -I. -I.. $(EXTRA_INC)
++CFLAGS  = $(OPTFLAGS) $(MLIB_INC) -I. -I.. $(EXTRA_INC) -I/usr/home/lioux/src/myports/ports/multimedia/ffmpeg-devel/work/FFMpeg-2005112800/libavcodec  -I/usr/home/lioux/src/myports/ports/multimedia/ffmpeg-devel/work/FFMpeg-2005112800/libavcodec/i386  -I/usr/home/lioux/src/myports/ports/multimedia/ffmpeg-devel/work/FFMpeg-2005112800/libavformat  -I/usr/local/include  -I/usr/X11R6/include  -I. -I..  -L/usr/local/lib  -L/usr/X11R6/lib  -O -pipe -pipe -funit-at-a-time -m3dnow -msse -mfpmath=sse,387 -falign-functions -fforce-addr -fforce-mem -foptimize-register-move -foptimize-sibling-calls -fpeel-loops -fprefetch-loop-arrays -freorder-blocks -march=athlon-xp -fno-force-addr -I/usr/local/include/vorbis
+ # -I/usr/X11R6/include/
+ 
+ .SUFFIXES: .c .o
+@@ -62,16 +62,14 @@
+ 	install $(INSTALLSTRIP) -m 755 $(SPPLIBNAME) "$(prefix)"
  else
  	install -d $(libdir)
--	install $(INSTALLSTRIP) -m 755 $(SPPLIB) $(libdir)/$(SPPLIB).$(SPPVERSION)
--	ln -sf $(SPPLIB).$(SPPVERSION) $(libdir)/$(SPPLIB)
--	ln -sf $(SPPLIB).$(SPPVERSION) $(libdir)/$(SPPLIB).$(SPPMAJOR)
+-	install $(INSTALLSTRIP) -m 755 $(SPPLIBNAME) $(libdir)/$(SPPLIB)
+-	ln -sf $(SPPLIB) $(libdir)/$(SPPLIBNAME)
+-	ln -sf $(SPPLIB) $(libdir)/$(SPPLIBMAJOR)
 -	install -d $(libdir)/pkgconfig
 -	install -m 644 ../../libpostproc.pc $(libdir)/pkgconfig
-+	${BSD_INSTALL_DATA} $(SPPLIB) $(libdir)/libpostproc.so
++	${BSD_INSTALL_DATA} $(SPPLIBNAME) $(libdir)/libpostproc.so
 +	install -d $(prefix)/libdata/pkgconfig
 +	${BSD_INSTALL_DATA} ../../libpostproc.pc $(prefix)/libdata/pkgconfig
  	$(LDCONFIG) || true

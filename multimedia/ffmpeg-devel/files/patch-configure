@@ -1,11 +1,20 @@
---- configure.orig	Fri May 13 01:19:02 2005
-+++ configure	Fri May 13 01:19:42 2005
-@@ -935,6 +935,8 @@
+--- configure.orig	Sat Oct 22 17:17:17 2005
++++ configure	Mon Nov 28 23:58:20 2005
+@@ -1019,6 +1019,8 @@
  builtin_vector=no
- if $cc -o $TMPO $TMPC 2> /dev/null ; then
+ if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
    builtin_vector=yes
 +else
 +  builtin_vector=no
  fi
  
  # dlopen/dlfcn.h probing
+@@ -1449,7 +1451,7 @@
+   echo "BUILD_SHARED=yes" >> config.mak
+   echo "PIC=-fPIC -DPIC" >> config.mak
+   echo "SPPMAJOR=0" >> config.mak
+-  echo "SPPVERSION=0.0.1" >> config.mak 
++  echo "SPPVERSION=1" >> config.mak 
+ fi
+ echo "EXTRALIBS=$extralibs" >> config.mak
+ version=`grep '#define FFMPEG_VERSION ' "$source_path/libavcodec/avcodec.h" |
