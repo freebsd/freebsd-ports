@@ -1,5 +1,5 @@
 @exec mkdir -p %D/%%MAMBO_DIR%%/cache/com_banners
-%%MAMBO_DIR%%/CHANGELOG
+%%MAMBO_DIR%%/read_me.txt
 %%MAMBO_DIR%%/INSTALL
 %%MAMBO_DIR%%/LICENSE
 %%MAMBO_DIR%%/administrator/backups/index.html
@@ -1247,7 +1247,6 @@
 @dirrm %%MAMBO_DIR%%/components/com_contact
 @dirrm %%MAMBO_DIR%%/components/com_banners
 @dirrm %%MAMBO_DIR%%/components
-@dirrm %%MAMBO_DIR%%/cache/com_banners
 @dirrm %%MAMBO_DIR%%/cache
 @dirrm %%MAMBO_DIR%%/administrator/templates/mambo_admin_blue/images
 @dirrm %%MAMBO_DIR%%/administrator/templates/mambo_admin_blue/css

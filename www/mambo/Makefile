@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mambo
-PORTVERSION=	4.5.2.3
+PORTVERSION=	4.5.3
 CATEGORIES=	www
-MASTER_SITES=	http://mamboforge.net/frs/download.php/4004/:source1 \
-		http://mamboforge.net/frs/download.php/6159/:source2
+MASTER_SITES=	http://mamboforge.net/frs/download.php/6151/:source1 \
+		http://mamboforge.net/frs/download.php/7636/:source2
 DISTFILES=	${MAMBO_SRC}:source1 \
 		${MAMBO_PATCH1}:source2
 
@@ -29,8 +29,8 @@ PLIST_SUB+=	MAMBO_DIR=${MAMBO_DIR}
 MAMBO_DIR?=	www/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-MAMBO_SRC=	MamboV4.5.2-Stable.tar.gz
-MAMBO_PATCH1=	Patch_4.5.2_to_4.5.2.3.zip
+MAMBO_SRC=	MamboV4.5.3-stable.tar.gz
+MAMBO_PATCH1=	Mambo4523.security_fix.zip
 
 do-extract:
 		@${MKDIR} ${WRKSRC}
