@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO
-DISTVERSION=	1.0RC2
+DISTVERSION=	1.0.2
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -25,7 +25,7 @@ PHP_MODNAME=	pdo
 .include <bsd.port.pre.mk>
 
 .if ${PHP_VER} == 4
-IGNORE=	PDO requires PHP version 5.0.3 or higher
+IGNORE=		requires PHP version 5.0.3 or higher
 .endif
 
 post-install:
