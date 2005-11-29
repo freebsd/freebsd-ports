@@ -16,6 +16,9 @@ COMMENT=	A personal finance manager for Gnome
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime/DateTime.py:${PORTSDIR}/lang/py-mx-base
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-01-28
+
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
