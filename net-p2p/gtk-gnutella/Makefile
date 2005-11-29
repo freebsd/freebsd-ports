@@ -60,10 +60,6 @@ OPTIONS=	GTK2 "Build with gtk2 frontend" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
 .if !defined(INTERACTIVE_CONFIGURE)
 CONFIGURE_ARGS+=	-d -e
 .endif
