@@ -19,13 +19,13 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 DESCR?=		${.CURDIR}/../${PORTNAME}/pkg-descr
-MD5_FILE?=	${MASTERDIR}/distinfo.${ARCH}
+MD5_FILE?=	${MASTERDIR}/distinfo.${LINUX_ARCH}
 PLIST?=		${WRKDIR}/.plist
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-LINUX_ARCH?=	x86_64
+LINUX_ARCH?=	i386	# the linuxulator does not yet support amd64 code
 .elif ${ARCH} == "powerpc"
 LINUX_ARCH?=	ppc
 .else
