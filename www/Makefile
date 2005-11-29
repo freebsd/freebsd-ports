@@ -121,7 +121,6 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
-    SUBDIR += firefox-devel
     SUBDIR += firefox-remote
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
