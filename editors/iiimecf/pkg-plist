@@ -4,6 +4,12 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimp.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimp.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/EIMIL.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/PCE.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf-UI.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/EIMIL.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/PCE.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf/iiimcf-UI.elc
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/iiimecf
 %%PORTDOCDIR%%/ChangeLog
 %%PORTDOCDIR%%/README
