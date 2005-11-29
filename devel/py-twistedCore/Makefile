@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedCore
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Twisted/${PORTVERSION:R}/ \
 		http://tmrc.mit.edu/mirror/twisted/Twisted/${PORTVERSION:R}/
@@ -34,5 +35,10 @@ USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+
+post-install:
+# permission safeness
+	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/twisted/
+	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/twisted/
 
 .include <bsd.port.mk>
