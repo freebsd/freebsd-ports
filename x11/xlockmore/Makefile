@@ -50,6 +50,10 @@ USE_GL=	yes
 CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
 
+.if defined(WITH_NICE_ONLY)
+CONFIGURE_ARGS+=	--enable-nice-only
+.endif
+
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
 .endif
