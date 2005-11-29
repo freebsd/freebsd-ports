@@ -43,5 +43,9 @@ lib/liblog4cpp.a
 lib/liblog4cpp.so
 lib/liblog4cpp.so.4
 share/aclocal/log4cpp.m4
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/default.css
+%%DOCSDIR%%/sflogo.png
 @dirrm include/log4cpp/threading
 @dirrm include/log4cpp
+@dirrm %%DOCSDIR%%
