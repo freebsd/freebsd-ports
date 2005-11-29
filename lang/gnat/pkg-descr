@@ -1,6 +1,10 @@
-The GNU Ada compiler system built on GCC 2.8.1.
+The GPL version of GNU Ada compiler system built on GCC 3.4.5
+
+Binaries built with this version of compiler are covered by the
+GPL license.  Use the Ada compiler bundled with GCC 4.0 and
+subsequent for LGPL licensing.
 
 The libraries supplied with this version of GNAT support tasking
-with FreeBSD 3.x, 4.x, and 5.x versions of libc_r.
+with FreeBSD 3.x, 4.x, and 5.x versions of libc_r and libpthread.
 
-WWW: http://libre.act-europe.fr/GNAT/
+WWW: http://libre.act-europe.com/

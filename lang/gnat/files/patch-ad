@@ -1,19 +1,11 @@
-*** ./ada/make.adb.orig	Fri Sep 24 08:41:53 1999
---- ./ada/make.adb	Tue Nov  2 02:46:10 1999
-***************
-*** 238,244 ****
-     -- Compiler, Binder & Linker Data and Subprograms --
-     ----------------------------------------------------
-  
-!    Gcc             : String_Access := Program_Name ("gcc");
-     Gnatbind        : String_Access := Program_Name ("gnatbind");
-     Gnatlink        : String_Access := Program_Name ("gnatlink");
-     --  Default compiler, binder, linker programs
---- 238,244 ----
-     -- Compiler, Binder & Linker Data and Subprograms --
-     ----------------------------------------------------
-  
-!    Gcc             : String_Access := Program_Name ("adagcc");
-     Gnatbind        : String_Access := Program_Name ("gnatbind");
-     Gnatlink        : String_Access := Program_Name ("gnatlink");
-     --  Default compiler, binder, linker programs
+--- gcc/ada/make.adb.orig	Fri Jul 29 09:03:47 2005
++++ gcc/ada/make.adb	Wed Nov 23 23:36:44 2005
+@@ -579,7 +579,7 @@
+    -- Compiler, Binder & Linker Data and Subprograms --
+    ----------------------------------------------------
+ 
+-   Gcc             : String_Access := Program_Name ("gcc");
++   Gcc             : String_Access := Program_Name ("gnatgcc");
+    Gnatbind        : String_Access := Program_Name ("gnatbind");
+    Gnatlink        : String_Access := Program_Name ("gnatlink");
+    --  Default compiler, binder, linker programs
