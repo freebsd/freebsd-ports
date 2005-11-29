@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnomesystemmonitor
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.12
