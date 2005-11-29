@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.8
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -44,7 +44,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 		${SITE_PERL}/MasonX/Interp/WithCallbacks.pm:${PORTSDIR}/www/p5-MasonX-Interp-WithCallbacks \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect
-
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${BUILD_DEPENDS}
 
@@ -57,7 +56,7 @@ MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
 # in the same order as found within inst/versions.txt
 #
 # Skip 1.8.5
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
