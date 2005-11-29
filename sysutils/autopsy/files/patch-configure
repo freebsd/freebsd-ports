@@ -1,6 +1,6 @@
---- configure.orig	Mon Sep  8 04:13:10 2003
-+++ configure	Mon Sep  8 04:15:15 2003
-@@ -39,7 +39,7 @@
+--- configure.orig	Thu Oct 13 19:03:54 2005
++++ configure	Tue Nov 29 12:41:17 2005
+@@ -45,7 +45,7 @@
  
  
  # Directories to search in
@@ -9,3 +9,22 @@
  
  
  echo ""
+@@ -271,8 +271,9 @@
+ echo '          http://www.sleuthkit.org/sleuthkit/'
+ echo ''
+ echo 'Enter the directory where you installed it:'
++tskdir=${LOCALBASE}
+ while (test 1 -eq 1) 
+-  do read tskdir;
++  do 
+   if (test -x "${tskdir}/bin/icat") then
+     if (test -x "${tskdir}/bin/fls") then
+       echo '  Sleuth Kit bin directory was found';
+@@ -284,6 +285,7 @@
+   else
+     echo 'The Sleuth Kit was not found (try again):';
+   fi;
++  read tskdir;
+ done
+ 
+ 

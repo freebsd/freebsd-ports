@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autopsy
-PORTVERSION=	1.73
+PORTVERSION=	2.06
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	opr@bsdaemon.be
 COMMENT=	The Autopsy Forensic Browser is a GUI for Sleuthkit
 
-#
-# It should have a BUILD_DEPENDS on something in sysutils/sleuthkit,
-# but I'm not sure which what to do it on.
-#
 BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit
 
 USE_PERL5=	yes
@@ -25,9 +21,6 @@ IS_INTERACTIVE=	yes
 WEB=		pict/*
 WEBHELP=	help/*
 MAN1=		autopsy.1
-
-do-configure:
-	@echo "Note: use ${LOCALBASE}/ as your Sleuth Kit install directory!"
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/autopsy ${PREFIX}/bin
