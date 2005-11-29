@@ -11,12 +11,8 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/}:group1 \
 	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/}:group1 \
 	ftp://ftp.uni-koeln.de/pc/win32/msoft/:group1 \
-	ftp://ftp.extra.ouh.nl/studie/alg/hulp/win/fonts/:group1 \
-	ftp://ftp.vn.ua/pub/win/freefont/:group1 \
 	ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
-	ftp://ftp.directnet.ru/pub/fonts-win/:group1 \
 	ftp://ftp.sinn.ru/pub/win95/fonts/:group1 \
-	ftp://ftp.lexa.ru/pub/mirrors/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
 	ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
 	http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/:group2 \
 	http://www.zeuscat.com/andrew/software/corefonts/:group2 \
