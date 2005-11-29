@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_LINUX=	yes
 RESTRICTED=	"Redistribution prohibited"
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GWVERSION=	${PORTVERSION:S|.||g}
 

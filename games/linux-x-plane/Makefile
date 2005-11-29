@@ -26,7 +26,7 @@ USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution prohibited"
 NO_PACKAGE=	"Package will be 353 MB, set FORCE_PACKAGE if you really want to build it"
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 XPVERSION=	${PORTVERSION:S|.||g}
 
