@@ -29,6 +29,10 @@ USE_GMAKE=	yes
 
 INFO=		hacking vmintegration
 PLIST_FILES=	lib/security/classpath.security
+PLIST_FILES+=	include/jni.h
+PLIST_FILES+=	include/jni_md.h
+PLIST_FILES+=	include/jawt.h
+PLIST_FILES+=	include/jawt_md.h
 
 .include <bsd.port.pre.mk>
 
