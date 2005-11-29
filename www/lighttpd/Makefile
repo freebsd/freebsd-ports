@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -36,7 +36,9 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on  \
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl
+CONFIGURE_ARGS+=	--with-openssl \
+			--with-openssl-includes=${OPENSSLINC} \
+			--with-openssl-libs=${OPENSSLLIB}
 .endif
 
 .if defined(WITH_OPENLDAP)
