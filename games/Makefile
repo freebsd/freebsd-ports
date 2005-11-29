@@ -588,6 +588,7 @@
     SUBDIR += tuxkart
     SUBDIR += tuxmath
     SUBDIR += tuxpaint
+    SUBDIR += tuxpaint-config
     SUBDIR += tuxpaint-fonts
     SUBDIR += tuxpaint-stamps
     SUBDIR += tuxpuck
