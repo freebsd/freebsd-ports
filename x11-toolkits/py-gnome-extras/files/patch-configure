@@ -1,0 +1,10 @@
+--- configure.orig	Fri Nov 11 21:36:37 2005
++++ configure	Fri Nov 11 21:36:55 2005
+@@ -21713,6 +21713,7 @@
+ case $mozpackage in
+      firefox) mozpackage_required_version=1.0 ;;
+      mozilla) mozpackage_required_version=1.2b ;;
++     seamonkey) mozpackage_required_version=1.2b ;;
+      *) { { echo "$as_me:$LINENO: error: --with-gtkmozembed argument must be either 'mozilla' or 'firefox'" >&5
+ echo "$as_me: error: --with-gtkmozembed argument must be either 'mozilla' or 'firefox'" >&2;}
+    { (exit 1); exit 1; }; }
