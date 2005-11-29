@@ -2,8 +2,12 @@ bin/ffmpeg
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
+include/ffmpeg/avutil.h
 include/ffmpeg/common.h
 include/ffmpeg/dsputil.h
+include/ffmpeg/integer.h
+include/ffmpeg/intfloat_readwrite.h
+include/ffmpeg/mathematics.h
 include/ffmpeg/rational.h
 include/ffmpeg/rtp.h
 include/ffmpeg/rtsp.h
@@ -14,5 +18,10 @@ lib/libavcodec.so.%%SHLIB_VERSION%%
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VERSION%%
+lib/libavutil-CVS.so
+lib/libavutil.a
+lib/libavutil.so
+lib/libavutil.so.%%SHLIB_VERSION%%
+lib/pkgconfig/libavutil.pc
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavformat.pc

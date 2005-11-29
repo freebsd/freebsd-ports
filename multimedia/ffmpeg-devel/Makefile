@@ -8,7 +8,9 @@
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	http://mplayerhq.hu/MPlayer/cvs/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#		http://mplayerhq.hu/MPlayer/cvs/
+MASTER_SITE_SUBDIR=	lioux
 PKGNAMESUFFIX=	-devel
 DISTNAME=	FFMpeg-${RELEASE_DATE}
 
@@ -54,7 +56,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	20050620
+RELEASE_DATE=	2005112800
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
@@ -69,11 +71,14 @@ DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
 PORTDOCS=	*
 
 ## headers
-HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
-		libavcodec/dsputil.h
+HEADER_FILES=	libavcodec/avcodec.h \
+		libavcodec/dsputil.h \
+		libavutil/common.h
 #
 # libraries
-LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
+LIB_FILES=	libavcodec/libavcodec.a \
+		libavformat/libavformat.a \
+		libavutil/libavutil.a
 
 .include <bsd.port.pre.mk>
 
@@ -100,7 +105,11 @@ WITH_IPV6=	yes
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
 .else
-EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
+#EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
+.endif
+## sse hardware vector support 
+.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
+WITH_BUILTIN_VECTOR=	yes
 .endif
 
 ##
@@ -122,8 +131,12 @@ WITH_FAAD=yes
 .if exists(${LOCALBASE}/lib/libfreetype.so)
 WITH_FREETYPE2=yes
 .endif
+## gsm
+.if exists(${LOCALBASE}/lib/libgsm.so)
+WITH_GSM=yes
+.endif
 ## imlib2
-.if exists(${X11BASE}/lib/libImlib2.so)
+.if exists(${LOCALBASE}/lib/libImlib2.so)
 WITH_IMLIB2=yes
 .endif
 ## lame mp3
@@ -184,8 +197,7 @@ CONFIGURE_ARGS+=	--enable-a52 \
 # libavcodec needs it
 FFMPEG_LDFLAGS+=		-la52
 .else
-CONFIGURE_ARGS+=	--enable-a52 \
-			--disable-a52bin
+CONFIGURE_ARGS+=	--enable-a52
 .endif
 ## dts
 .ifdef(WITH_DTS)
@@ -227,6 +239,12 @@ CONFIGURE_ARGS+=	--enable-gpl
 CONFIGURE_ARGS+=	--disable-mmx
 
 WITHOUT_BUILTIN_VECTOR=	yes
+.endif
+## gsm
+.ifdef(WITH_GSM)
+LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
+
+CONFIGURE_ARGS+=	--enable-libgsm
 .endif
 ## mp3
 .ifdef(WITH_MP3)
@@ -337,7 +355,7 @@ pre-everything::
 	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_BUILTIN_VECTOR)
+.if !defined(WITHOUT_BUILTIN_VECTOR) && !defined(WITH_BUILTIN_VECTOR)
 	@${ECHO_MSG} 'Define WITH_BUILTIN_VECTOR if your system supports SSE"
 	@${ECHO_MSG}
 .endif
@@ -363,6 +381,10 @@ pre-everything::
 .endif
 .ifndef(WITHOUT_IPV6)
 	@${ECHO_MSG} 'Define WITHOUT_IPV6 to disable IPV6 network support'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_GSM)
+	@${ECHO_MSG} 'Define WITH_GSM to enable GSM codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_MMX)
@@ -439,7 +461,7 @@ pre-everything::
 post-extract:
 .if ${ARCH} == "i386"
 # install booktree extension
-	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
+#	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
 .endif # ${ARCH} == i386
 
 post-patch:
@@ -464,11 +486,6 @@ post-patch:
 .endif
 .if ${ARCH} == "i386"
 .ifdef(WITH_VIDEO_CAPTURE)
-# we support "v4l" per default through Steve O'Hara-Smith's bktr(4)
-# patch
-	@${REINPLACE_CMD} -E \
-		-e 's|^(v4l).*$$|\1="yes"|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # set proper audio device
 .ifdef(WITH_AUDIO_DEV)
 	@${REINPLACE_CMD} -E \
@@ -513,7 +530,7 @@ post-patch:
 		-e 's|^(imlib2).*$$|\1=yes|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E \
-		-e 's|(-lImlib2)|-L ${X11BASE}/lib \1|' \
+		-e 's|(-lImlib2)|-L ${LOCALBASE}/lib \1|' \
 		${WRKSRC}/vhook/Makefile
 .endif
 .if defined(WITH_IPV6) && ${OSVERSION} >= 400014
