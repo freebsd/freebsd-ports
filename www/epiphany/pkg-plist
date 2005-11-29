@@ -1,5 +1,4 @@
 bin/epiphany
-bin/epiphany-bin
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-command-manager.h
