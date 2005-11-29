@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.38.2
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/bacula \
+		--mandir=${PREFIX}/man \
 		--with-fd-user=root \
 		--with-fd-group=wheel \
 		--with-dir-user=bacula \
@@ -75,7 +76,7 @@ USE_GNOME=	libgnome
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
-MAN8=           "bacula.8"
+MAN8=           bacula.8
 
 .include <bsd.port.pre.mk>
 
