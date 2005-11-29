@@ -7,12 +7,15 @@
 
 PORTNAME=	phpwiki
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A PHP WikiWikiWeb
+
+CONFLICTS=	phpwiki-1.3*
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype pcre posix session tokenizer xml zlib
@@ -38,14 +41,14 @@ do-configure:
 do-install:
 	-${MKDIR} ${PREFIX}/${PHPWIKI}/lib
 	-${MKDIR} ${PREFIX}/${PHPWIKI}/pages
-	@${CHOWN} www:www ${PREFIX}/${PHPWIKI}/pages
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPWIKI}/pages
 	@${CHMOD} 755 ${PREFIX}/${PHPWIKI}/pages
 	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${PHPWIKI}/ )
 .for i in ${ROOTDIRS}
 	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${PHPWIKI}/ )
 .endfor
 .for i in ${USERFILES}
-	@if test ! -f ${PREFIX}/${PHPWIKI}/${i} ; then \
+	@if ${TEST} ! -f ${PREFIX}/${PHPWIKI}/${i} ; then \
 		${CP} ${PREFIX}/${PHPWIKI}/${i}-dist \
 			${PREFIX}/${PHPWIKI}/${i}; \
 	fi
