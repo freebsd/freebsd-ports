@@ -397,6 +397,7 @@
     SUBDIR += pib
     SUBDIR += pidof
     SUBDIR += pipemeter
+    SUBDIR += pkg-orphan
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
     SUBDIR += pkg_install-devel
