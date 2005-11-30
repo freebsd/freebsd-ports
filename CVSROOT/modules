@@ -9562,6 +9562,7 @@ phpua-ut2003	ports/games/phpua-ut2003
 phpwebapp	ports/www/phpwebapp
 phpwebftp	ports/ftp/phpwebftp
 phpwiki		ports/www/phpwiki
+phpwiki13	ports/www/phpwiki13
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
 physcalc	ports/math/physcalc
