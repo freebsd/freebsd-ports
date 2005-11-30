@@ -17,7 +17,7 @@ MAINTAINER=	s_yanagita@ybb.ne.jp
 COMMENT=	SCIM IMEngine module using UIM input method library
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	uim.0:${PORTSDIR}/japanese/uim
+LIB_DEPENDS=	uim.0:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	lthack
