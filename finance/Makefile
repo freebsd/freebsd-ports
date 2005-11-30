@@ -49,6 +49,7 @@
     SUBDIR += p5-Finance-Quote
     SUBDIR += p5-Finance-QuoteHist
     SUBDIR += p5-Math-Financial
+    SUBDIR += pfpro
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
