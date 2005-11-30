@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
@@ -56,7 +56,7 @@ post-patch:
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins"|/lib/browser_plugins" ":" MOZILLA_PREFIX "/lib/browser_linux_plugins"|' \
+	@${REINPLACE_CMD} -e 's|/lib/mozilla/plugins|/lib/browser_plugins:${X11BASE}/lib/browser_linux_plugins|' \
 		${WRKSRC}/embed/mozilla/mozilla-embed-single.cpp
 
 post-install:
