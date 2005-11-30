@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix26/scripts/Attic/configure.postfix,v 1.68 2005-11-30 19:25:11 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix26/scripts/Attic/configure.postfix,v 1.69 2005-11-30 22:25:35 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -24,6 +24,7 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
+SASLKRB5MIT	"If your SASL requires MIT Kerberos5 select this option" "$status_SASLKRB5MIT" \
 SPF		"SPF support" "$status_SPF" \
 TLS		"SSL and TLS" "$status_TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
@@ -100,6 +101,10 @@ while [ "$1" ]; do
 			;;
 		SASLKRB5)
 			echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken"
+			;;
+		SASLKRB5MIT)
+			echo "LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5"
+			echo "POSTFIX_AUXLIBS+= -Wl,--rpath,\$\${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err"
 			;;
 		SPF)
 			# see http://www.ipnet6.org/postfix/spf/
