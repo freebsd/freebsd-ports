@@ -8,7 +8,7 @@
 
 PORTNAME=	k3d
 PORTVERSION=	0.4.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
 		Magick++.8:${PORTSDIR}/graphics/ImageMagick \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		Half.2:${PORTSDIR}/graphics/OpenEXR \
-		gts.3:${PORTSDIR}/graphics/gts
+		gts.4:${PORTSDIR}/graphics/gts
 
 CONFLICTS=	atlas-3* superlu-3*
 
