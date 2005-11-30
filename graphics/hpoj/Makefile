@@ -8,7 +8,7 @@
 
 PORTNAME=	hpoj
 PORTVERSION=	0.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
@@ -55,7 +55,7 @@ PLIST_SUB+=	CUPS="@comment "
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}/include/net-snmp/library
 .else
 CONFIGURE_ARGS+=--without-snmp

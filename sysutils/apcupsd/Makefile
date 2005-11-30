@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.18
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=--enable-master-slave
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 .endif
 
