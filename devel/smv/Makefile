@@ -8,7 +8,7 @@
 PORTNAME=	smv
 PORTVERSION=	2.5.4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www-2.cs.cmu.edu/~modelcheck/smv/
+MASTER_SITES=	http://www.cs.cmu.edu/~modelcheck/smv/
 DISTNAME=	${PORTNAME}.r${PORTVERSION}
 
 MAINTAINER=	marc.vanwoerkom@fernuni-hagen.de

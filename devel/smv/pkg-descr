@@ -8,7 +8,7 @@ structure in the SMV language and provides specifications
 in CTL. The model checking algorithm allows to determine 
 if the Kripke structure fulfills the specifications.
 
-WWW: http://www-2.cs.cmu.edu/~modelcheck/smv.html
+WWW: http://www.cs.cmu.edu/~modelcheck/smv.html
 
 Marc E.E. van Woerkom
 marc.vanwoerkom@fernuni-hagen.de
