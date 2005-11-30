@@ -33,7 +33,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  the first example.
 #
 #
-# Ports shoud use the following:
+# Ports should use the following:
 #
 # USE_GECKO= mozilla firefox seamonkey
 #  The list of gecko backends that the port supports. Unless the user
@@ -47,6 +47,8 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #
 #  Example: 
 #  USE_GECKO= mozilla firefox seamonkey
+#  .include <bsd.port.pre.mk>
+#  .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 #  post-patch:
 #  .if ${GECKO}=="seamonkey"
 #	@${REINPALCE_CMD} -e 's|mozilla-|seamonkey-|' \
