@@ -7,6 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://eu1.networkupstools.org/source/${PORTVERSION:R}/ \
 		http://us1.networkupstools.org/source/${PORTVERSION:R}/
@@ -83,7 +84,7 @@ MAN8=		newhidups.8
 .endif
 
 .if ${SUBSYS} == snmp
-LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 ALL_TARGET=	snmp
 INSTALL_TARGET=	install-snmp
 

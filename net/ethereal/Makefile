@@ -7,7 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.10.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
 .if !defined(WITHOUT_SNMP) && !defined(LITE)
-LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-net-snmp=${LOCALBASE}/bin/net-snmp-config
 .else
 CONFIGURE_ARGS+=	--enable-snmp=no --with-ucd-snmp=no --with-net-snmp=no

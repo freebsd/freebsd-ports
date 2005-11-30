@@ -7,6 +7,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rtg
@@ -15,7 +16,7 @@ MAINTAINER=	so14k@so14k.com
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client \
-		netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 

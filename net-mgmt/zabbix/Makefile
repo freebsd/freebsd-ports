@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,7 @@ OPTIONS=	PGSQL "Use a PostgreSQL backend" off \
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 .else # ZABBIX_AGENT_ONLY
-LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 USE_PHP=	gd snmp sockets
 SUB_FILES=	pkg-message
 .endif # ZABBIX_AGENT_ONLY
