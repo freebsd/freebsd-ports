@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	8.1.11
+PORTVERSION=	8.1.12
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.conserver.com/conserver/
+MASTER_SITES=	http://www.conserver.com/ \
+		ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
 
 MAINTAINER=	kuriyama@FreeBSD.org

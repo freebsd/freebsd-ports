@@ -8,17 +8,15 @@
 
 . %%RC_SUBR%%
 
-name=conserver
+name="conserver"
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/conserver
+command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/conserver.pid
 required_files=%%PREFIX%%/etc/conserver.cf
 
-# set defaults
-[ -z "$conserver_enable" ]	&& conserver_enable=NO
-[ -z "$conserver_flags" ]	&& conserver_flags="-d"
-
 load_rc_config $name
+: ${conserver_enable="NO"}
+: ${conserver_flags="-d"}
 
 run_rc_command "$1"
