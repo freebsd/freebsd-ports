@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- build.xml.orig
++++ build.xml
+@@ -152,7 +152,7 @@
+     <ant dir='doc/hrc-ref' antfile='build.xml' target='all'/>
+   </target>
+ 
+-  <target name="doc" depends='init, doc.javadoc, doc.doxygen, doc.hrc-ref' description='Builds all the documentation files'>
++  <target name="doc" depends='init, doc.javadoc, doc.doxygen' description='Builds all the documentation files'>
+   </target>
+ 
+   <target name="doc.javadoc" depends='init' description='Generates Java classes documentation' unless='doc.javadoc.required'>
