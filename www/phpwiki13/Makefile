@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpwiki
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.3.11p1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
@@ -15,43 +14,33 @@ MASTER_SITE_SUBDIR=	phpwiki
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A PHP WikiWikiWeb
 
-CONFLICTS=	phpwiki-1.3*
+CONFLICTS+=	phpwiki-1.2*
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype pcre posix session tokenizer xml zlib
+USE_PHP=	ctype pcre posix session tokenizer xml zlib mysql
+.if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
+USE_PHP+=	dba
+.endif
 .endif
 
 NO_BUILD=	YES
 PHP4_PORT?=	www/mod_php4
 PHPWIKI?=	www/data-dist/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
-USERFILES=	admin.php lib/config.php
-ROOTFILES=	admin.php-dist index.php
-ROOTDIRS=	admin images lib locale pgsrc schemas templates
-DOCFILES=	CREDITS ChangeLog DBLIB.txt HISTORY INSTALL \
-		INSTALL.flatfile INSTALL.mSQL INSTALL.mssql \
-		INSTALL.mysql INSTALL.pgsql LICENSE README \
-		UPGRADING.readme
+ROOTFILES=	GoogleSearch.wsdl PhpWiki.wsdl RPC2.php SOAP.php \
+		configurator.php favicon.ico getimg.php gforge.php \
+		index.php passencrypt.php wiki
+ROOTDIRS=	config doc lib locale pgsrc schemas tests themes uploads
+DOCFILES=	INSTALL LICENSE README TODO UPGRADING
 
 do-configure:
-.for i in ${USERFILES}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}-dist
-.endfor
 
 do-install:
-	-${MKDIR} ${PREFIX}/${PHPWIKI}/lib
-	-${MKDIR} ${PREFIX}/${PHPWIKI}/pages
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPWIKI}/pages
-	@${CHMOD} 755 ${PREFIX}/${PHPWIKI}/pages
+	-${MKDIR} ${PREFIX}/${PHPWIKI}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPWIKI}
 	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${PHPWIKI}/ )
 .for i in ${ROOTDIRS}
 	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${PHPWIKI}/ )
-.endfor
-.for i in ${USERFILES}
-	@if ${TEST} ! -f ${PREFIX}/${PHPWIKI}/${i} ; then \
-		${CP} ${PREFIX}/${PHPWIKI}/${i}-dist \
-			${PREFIX}/${PHPWIKI}/${i}; \
-	fi
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
