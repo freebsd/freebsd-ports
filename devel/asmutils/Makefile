@@ -44,10 +44,10 @@ post-patch:
 STRIP=	#
 
 do-install:
-	${MKDIR} ${PREFIX}/bin/asmutils
-	${MKDIR} ${PREFIX}/lib/asmutils
+	@${MKDIR} ${PREFIX}/bin/asmutils
+	@${MKDIR} ${PREFIX}/lib/asmutils
 .for B in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/$B ${PREFIX}/bin/asmutils
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${B} ${PREFIX}/bin/asmutils
 .endfor
 	(cd ${PREFIX}/bin/asmutils && \
 		${LN} -sf uname arch && \
@@ -58,12 +58,12 @@ do-install:
 		${LN} -sf mkdir rmdir && \
 		${LN} -sf ln sln)
 .for L in c crypto m
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib$L.so.0 ${PREFIX}/lib/asmutils
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${L}.so.0 ${PREFIX}/lib/asmutils
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for D in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/$D ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${D} ${DOCSDIR}
 .endfor
 .endif
 
