@@ -62,6 +62,7 @@ sbin/postmap
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
+%%SUB_TEST%%sbin/qmqp-sink
 %%SUB_TEST%%sbin/qmqp-source
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source

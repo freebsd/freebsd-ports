@@ -15,8 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -86,6 +85,12 @@ POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
+.if defined(NOPORTDOCS)
+READMEDIR=no
+.else
+READMEDIR=${PREFIX}/share/doc/postfix
+.endif
+
 pre-patch:
 	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
 		> ${WRKSRC}/html/body_checks.5.html
@@ -112,12 +117,6 @@ do-configure:
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-.if defined(NOPORTDOCS)
-READMEDIR=no
-.else
-READMEDIR=${PREFIX}/share/doc/postfix
-.endif
-
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
 	config_directory=${PREFIX}/etc/postfix \
@@ -135,8 +134,11 @@ do-install:
 
 	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 
-.	for file in ${BINTEST}
-		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
+.	for f in ${BINTEST}
+		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
+.	endfor
+.	for f in ${MANTEST}
+		@${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
 .	endfor
 
 	@${MKDIR} ${PREFIX}/etc/postfix/dist
