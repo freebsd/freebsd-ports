@@ -8,7 +8,7 @@
 PORTNAME=	freeipmi
 PORTVERSION=	0.1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.californiadigital.com/pub/${PORTNAME}/download/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
 
 PATCH_SITES=	ftp://ftp.riss-telecom.ru/pub/patches/
 PATCHFILES=	${DISTNAME}-fbsd.diff
@@ -34,7 +34,7 @@ INFO+=		freeipmi
 PORTDOCS=	*
 PKGDEINSTALL=	${PKGINSTALL}
 
-OPTIONS+=	IOPERM "Use i386_set_ioperm(2) instead of io(4)" off
+#OPTIONS+=	IOPERM "Use i386_set_ioperm(2) instead of io(4)" off
 
 SHLIBVER=	1
 
