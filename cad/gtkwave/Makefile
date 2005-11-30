@@ -17,9 +17,6 @@ MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	Electronic Waveform Viewer
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
