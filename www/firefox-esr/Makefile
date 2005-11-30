@@ -31,6 +31,7 @@ USE_GCC=	3.4+
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZ_OPTIONS=	--enable-application=browser \
+		--enable-svg		\
 		--enable-svg-renderer=cairo \
 		--enable-system-cairo	\
 		--enable-official-branding \
