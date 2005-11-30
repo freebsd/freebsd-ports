@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ppmcaption
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jwz.org/ppmcaption/
 
