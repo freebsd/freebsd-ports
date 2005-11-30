@@ -19,9 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ming.3:${PORTSDIR}/graphics/ming \
 		Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:13:inc
