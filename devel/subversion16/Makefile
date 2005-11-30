@@ -8,8 +8,11 @@ PORTNAME=	subversion
 DISTVERSION=	1.3.0-rc2
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://lolut.utbm.info/pub/subversion-1.3.0/rc2/
+MASTER_SITES=	http://lolut.utbm.info/pub/subversion-1.3.0/rc2/:main \
+		http://svnbook.red-bean.com/en/1.1/:book
 #MASTER_SITES=	http://subversion.tigris.org/tarballs/
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
@@ -196,6 +199,7 @@ PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 PORTDOCS+=	book
+DISTFILES+=	svn-book.html:book svn-book.pdf:book
 .endif
 
 SCRIPTS=
@@ -370,8 +374,8 @@ post-install:	${MKREPOS_TARGET}
 	done
 .if defined(WITH_BOOK)
 	${MKDIR} ${DOCSDIR}/book
-	cd ${WRKSRC}/doc/book ; \
-	  ${INSTALL_DATA} svn-book.html svn-book.pdf ${DOCSDIR}/book
+	${INSTALL_DATA} ${DISTDIR}/svn-book.html ${DOCSDIR}/book
+	${INSTALL_DATA} ${DISTDIR}/svn-book.pdf ${DOCSDIR}/book
 .endif
 .endif
 .if defined(WITH_PERL)
