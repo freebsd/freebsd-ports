@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Sep 14 04:50:13 2005
-+++ Makefile	Wed Sep 14 04:55:01 2005
-@@ -15,7 +15,7 @@
+--- Makefile.orig	Tue Nov 29 16:45:03 2005
++++ Makefile	Tue Nov 29 23:17:26 2005
+@@ -16,7 +16,7 @@
  endif
  
  # MMX/SSE optims
@@ -9,14 +9,15 @@
  SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
            common/i386/pixel-a.asm common/i386/mc-a.asm \
-@@ -55,14 +55,20 @@
- OBJS = $(SRCS:%.c=%.o)
+@@ -60,14 +60,21 @@
  DEP  = depend
  
+ .PHONY: default fprofiled clean distclean install uninstall
 -default: $(DEP) x264$(EXE)
++
 +SHARED_LIB = libx264.so
 +SHARED_LIB_VER = $(SHARED_LIB).1
-+ 
++  
 +default: $(DEP) x264$(EXE) $(SHARED_LIB_VER)
  
  libx264.a: .depend $(OBJS) $(OBJASM)
@@ -27,7 +28,7 @@
 -	$(CC) -o $@ x264.o matroska.o libx264.a $(LDFLAGS)
 +x264$(EXE): $(SHARED_LIB_VER) x264.o matroska.o
 +	$(CC) -o $@ x264.o matroska.o $(SHARED_LIB_VER) $(LDFLAGS)
-+
++ 
 +$(SHARED_LIB_VER): $(OBJS) libx264.a
 +	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) $(LDFLAGS)
  
