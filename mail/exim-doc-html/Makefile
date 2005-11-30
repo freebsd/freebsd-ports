@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.50
+PORTVERSION=	4.60
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -52,9 +52,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .if ${DOCFORMAT} == "html"
-	@ ${MKDIR} ${DOCSDIR}/html
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/html/*.gif ${DOCSDIR}/html
+	${TAR} -C ${WRKSRC}/doc -cf - html | \
+		${TAR} --unlink -C ${DOCSDIR} -xf -
 .elif ${DOCFORMAT} == "pdf"
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 .elif ${DOCFORMAT} == "postscript"
