@@ -3,8 +3,3 @@ Ftpmirror is an utility to copy directory hierarchy
 
 A similar perl script exists, whose name is `mirror',
 but ftpmirror requires less memory than mirror.
-
-WWW: http://noc.intec.co.jp/ftpmirror.html
-
-- Yasuhiro Fukuma
-yasuf@big.or.jp
