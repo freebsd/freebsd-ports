@@ -17,9 +17,6 @@ MAINTAINER=	steve@ion.lu
 COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
