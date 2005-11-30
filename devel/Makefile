@@ -1580,6 +1580,7 @@
     SUBDIR += subversion
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
+    SUBDIR += subversion-ruby
     SUBDIR += sunterlib
     SUBDIR += svk
     SUBDIR += swig11
