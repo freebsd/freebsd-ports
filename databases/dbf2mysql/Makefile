@@ -9,10 +9,8 @@ PORTNAME=	dbf2mysql
 PORTVERSION=	1.14
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://mysql.tsuren.net/Downloads/Contrib/ \
-		ftp://ftp.us.es/Mirror/www.mysql.org/Downloads/Contrib/ \
-		ftp://mysql.nixc.net/pub/mysql/Downloads/Contrib/ \
-		http://www.binarycode.org/mysql/Downloads/Contrib/
+MASTER_SITES=	http://mirror.etf.bg.ac.yu/mysql/Downloads/Contrib/ \
+		ftp://ftp.ciril.fr/pub/sgbd/mysql/Downloads/Contrib
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
