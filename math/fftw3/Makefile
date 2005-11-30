@@ -7,7 +7,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.0.1
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		http://www.fftw.org/
@@ -29,7 +29,7 @@ USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 USE_LDOUBLE=	yes
 
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -41,8 +41,7 @@ MAN1=	fftw${FFTW3_SUFX}-wisdom.1
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
-		SMP_THREADS "Enable FFTW SMP threads library" off
+OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off
 
 .include <bsd.port.pre.mk>
 
@@ -72,13 +71,6 @@ CFLAGS_3DNOW+=	-malign-double
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS_3DNOW}"
 .endif
 .endif # end WITH_OPTIMIZED_CFLAGS
-
-.if defined(WITH_SMP_THREADS)
-CONFIGURE_ARGS+=--enable-threads
-PLIST_SUB+=	THREADS=""
-.else
-PLIST_SUB+=	THREADS="@comment "
-.endif
 
 .if defined(FFTW3_FLAVOR)
 .if ${FFTW3_FLAVOR}=="float"

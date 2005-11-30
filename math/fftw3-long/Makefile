@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Fast C routines (Long Double Percision)
 
