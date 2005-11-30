@@ -15,5 +15,6 @@ COMMENT=	Mozex allows Firefox's users to use external programs for mail, news, e
 MASTERDIR=	${.CURDIR}/../mozex
 
 WITH_FIREFOX=	yes
+BROKEN="Does not work with Firefox 1.5"
 
 .include "${MASTERDIR}/Makefile"
