@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.komquats.com/distfiles/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	An ftp replacement that runs over an ssh tunnel
 DEPRECATED=	yes
-EXPIRATION_DATE=	2006-03-01
+EXPIRATION_DATE=	2005-12-16
 
 .include <bsd.port.pre.mk>
 
