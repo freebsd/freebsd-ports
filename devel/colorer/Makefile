@@ -8,7 +8,7 @@
 
 PORTNAME=	colorer
 PORTVERSION=	0.b2
-CATEGORIES=	devel
+CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Colorer-take5.beta2
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/mathml-xsd/mathml2.xsd:${PORTSDIR}/textproc/mathml-xsd \
 		${LOCALBASE}/share/xhtml1-xsd/xhtml1-strict.xsd:${PORTSDIR}/textproc/xhtml1-xsd
 
-BROKEN=		Does not build
-
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_JAVA=	yes
@@ -31,20 +29,21 @@ JAVA_VERSION=	1.4+
 USE_ANT=	yes
 ALL_TARGET?=	library-linux
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
 
 post-build:
 	@(cd ${WRKSRC}/distr/Colorer-take5-linux.beta2 ; \
 	${REINPLACE_CMD} -e "s|make -C|${GMAKE} -C|" Makefile.in ; \
 	${REINPLACE_CMD} -e "s|-O3|${CFLAGS}|" src/shared/makefile.colorer.gcc ; \
-	${CHMOD} +x configure && ${SETENV} ${CONFIGURE_ENV} ./configure ; \
+	${CHMOD} +x configure && ${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${PREFIX} ; \
 	${GMAKE} ${PORTNAME} \
 	)
 
 do-install:
 	@(cd ${WRKSRC}/distr/Colorer-take5-linux.beta2 ; \
 	  ${INSTALL_PROGRAM} src/colorer/colorer ${PREFIX}/bin ; \
-	  ${INSTALL_DATA} src/libcolorer/libcolorer.so ${PREFIX}/lib ; \
+	  ${INSTALL_PROGRAM} src/libcolorer/libcolorer.so ${PREFIX}/lib ; \
 	  ${MKDIR} ${DATADIR}/bin ; \
 	  ${CP} -R hrc hrd ${DATADIR} ; \
 	  ${CP} -R bin/4ever2take5 bin/apache bin/doclinks bin/xsd2hrc \
