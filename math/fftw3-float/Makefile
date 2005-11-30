@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Fast C routines (Single Percision)
