@@ -4472,7 +4472,6 @@ ja-tkstep80	ports/japanese/tkstep80
 ja-today	ports/japanese/today
 ja-truetypefonts	ports/japanese/truetypefonts
 ja-typist	ports/japanese/typist
-ja-uim		ports/japanese/uim
 ja-vera-fpw	ports/japanese/vera-fpw
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
@@ -12405,6 +12404,7 @@ uf-view		ports/misc/uf-view
 ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 ufs_copy	ports/sysutils/ufs_copy
 uhexen		ports/games/uhexen
+uim		ports/textproc/uim
 uird		ports/comms/uird
 uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd

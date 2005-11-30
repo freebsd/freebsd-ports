@@ -39,7 +39,7 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .if defined(WITH_UIM)
 CONFIGURE_ARGS+=	--enable-uim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
-LIB_DEPENDS+=	uim.0:${PORTSDIR}/japanese/uim
+LIB_DEPENDS+=	uim.0:${PORTSDIR}/textproc/uim
 PLIST_SUB+=	UIM=""
 .else
 PLIST_SUB+=	UIM="@comment "

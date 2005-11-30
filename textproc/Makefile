@@ -745,6 +745,7 @@
     SUBDIR += txt2man
     SUBDIR += txt2tags
     SUBDIR += ua-ispell
+    SUBDIR += uim
     SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf

@@ -8,7 +8,7 @@
 PORTNAME=	uim
 PORTVERSION=	0.4.9.1
 PORTREVISION=	1
-CATEGORIES=	japanese x11
+CATEGORIES=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
 MAINTAINER=	nobutaka@FreeBSD.org
