@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Convert/PEM.pm
 %%SITE_PERL%%/Convert/PEM/CBC.pm
-%%SITE_PERL%%/Convert/PEM/ErrorHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/PEM/.packlist
 @dirrm %%SITE_PERL%%/Convert/PEM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/PEM

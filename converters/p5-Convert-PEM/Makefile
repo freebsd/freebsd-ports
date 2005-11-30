@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Convert-PEM
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
@@ -25,6 +25,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Convert::PEM.3 Convert::PEM::CBC.3 Convert::PEM::ErrorHandler.3
+MAN3=		Convert::PEM.3 Convert::PEM::CBC.3
 
 .include <bsd.port.mk>
