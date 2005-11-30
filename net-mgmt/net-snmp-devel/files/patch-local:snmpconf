@@ -1,53 +1,35 @@
---- local/snmpconf.orig	Sat Oct  9 01:01:37 2004
-+++ local/snmpconf	Mon Oct 25 08:42:23 2004
+--- local/snmpconf.orig	Sun Aug 21 10:23:23 2005
++++ local/snmpconf	Wed Nov 30 12:19:42 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!%%PERL%% -w
  
  #
  # A simple configuration file builder based on questions listed in
-@@ -32,7 +32,7 @@
-     $opts{'c'} = "$ENV{SNMPSHAREPATH}/snmpconf-data";
-   }
-   else {
--    $opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
-+    $opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
-   }
-   
-   # default config file path
-@@ -40,7 +40,7 @@
-     $confpath = "$ENV{SNMPCONFPATH}";
-   }
-   else {
--    $confpath = "/usr/local/share/snmp";
-+    $confpath = "%%PREFIX%%/share/snmp";
-   }
+@@ -31,7 +31,7 @@
+   $opts{'c'} = &my_getenv("SNMPSHAREPATH") . "/snmpconf-data";
  }
- else
-@@ -128,7 +128,7 @@
- #
- # Find existing files to possibly read in.
- #
--my @searchpath = ("$confpath","/usr/local/etc/snmp", ".", "$home");
-+my @searchpath = ("$confpath","%%PREFIX%%/etc/snmp", ".", "$home");
- push @searchpath, $opts{I} if ($opts{I});
- foreach my $i (@searchpath) {
-     debug("searching $i\n");
-@@ -227,7 +227,7 @@
- 	if ($opts{'i'} || $opts{'I'}) {
-           $opts{'I'} = "$confpath" if (!$opts{'I'});
+ else {
+-  $opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
++  $opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
+ }
+  
+ # default config file path
+@@ -39,7 +39,7 @@
+   $confpath = &my_getenv("SNMPCONFPATH");
+ }
+ else {
+-  $confpath = "/usr/local/share/snmp";
++  $confpath = "%%PREFIX%%/share/snmp";
+ }
  
--          if (! (-d "$opts{'I'}") && ! (mkdir ("$opts{'I'}"))) {
-+          if (! (-d "$opts{'I'}") && ! (mkdir ("$opts{'I'}", 0777))) {
- 	    print "\nCould not create $opts{'I'} directory: $!\n";
- 	    print ("File $didfile{$i} left in current directory\n");
- 	  }
-@@ -242,7 +242,7 @@
-             }
-           }
- 	} elsif ($opts{'p'}) {
--	  if (! (-d "$home") && ! (mkdir ("$home"))) {
-+	  if (! (-d "$home") && ! (mkdir ("$home", 0777))) {
- 	    print "\nCould not create $home directory: $!\n";
- 	    print ("File $didfile{$i} left in current directory\n");
- 	  }
+ # home environment variable
+@@ -100,7 +100,7 @@
+   $ENV_SEPARATOR = ';';
+ }
+ my @searchpath = split(/$ENV_SEPARATOR/, $confpath);
+-push @searchpath, "/usr/local/etc/snmp";
++push @searchpath, "%%PREFIX%%/etc/snmp";
+ push @searchpath, ".";
+ push @searchpath, "$home";
+ 

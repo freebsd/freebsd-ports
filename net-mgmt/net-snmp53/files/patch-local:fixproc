@@ -1,23 +1,21 @@
---- local/fixproc.orig	Sat Apr 20 16:30:13 2002
-+++ local/fixproc	Wed Jul 13 08:53:37 2005
+--- local/fixproc.orig	Wed May 25 01:23:54 2005
++++ local/fixproc	Wed Nov 30 12:16:05 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl
 +#!%%PERL%%
  # 
  # fixproc [-min n] [-max n] [-check | -kill | -restart | -exist | -fix] proc ...
  # 
-@@ -129,7 +129,9 @@
- #
- # Timothy Kong		3/1995
+@@ -131,7 +131,7 @@
+ 
+ use File::Temp qw(tempfile);
  
 -$database_file = '/local/etc/fixproc.conf';
-+use File::Temp qw(tempfile);
-+
 +$database_file = '%%PREFIX%%/etc/fixproc.conf';
  
  $debug = 0;			# specify debug level using -dN
  				# currently defined: -d1
-@@ -155,6 +157,14 @@
+@@ -157,6 +157,14 @@
  $shell_header = "#!/bin/sh\n";
  $shell_end_marker = 'shell_end_marker';
  
@@ -32,122 +30,14 @@
  &read_args();
  &read_database();
  # &dump_database();		# debug only
-@@ -191,20 +201,19 @@
- sub create_sh_script
- {
-   local ($file) = pop (@_);
-+  local ($fh) = pop (@_);
-   local ($i) = pop (@_);
- 
--  printf (stderr "create_sh_script\n") if ($debug > 0);
-+  printf (STDERR "create_sh_script\n") if ($debug > 0);
- 
-   $! = $fixproc_error;
--  open (file, ">"."$file") || die "$0: cannot open $file\n";
-   while ( $shell_lines[$i] ne $shell_end_marker )
-     {
--      printf (file "%s", $shell_lines[$i]);
-+      printf ($fh "%s", $shell_lines[$i]);
-       $i++;
-     }
--  close (file);
--  system "chmod +x $file";
--  return file;
-+  close ($fh);
-+  chmod 0755, $file;
- }
- 
- 
-@@ -212,7 +221,7 @@
- {
-   local ($proc) = pop(@_);
- 
--  printf (stderr "do_fix\n") if ($debug > 0);
-+  printf (STDERR "do_fix\n") if ($debug > 0);
- 
-   if ($fix{$proc} eq '')
-     {
-@@ -230,15 +239,14 @@
-   else
-     {
-       # it must be "shell", so execute the shell script defined in database
-+      local ($tmpfh, $tmpfile) = tempfile("fix_XXXXXXXX", DIR => "/tmp");
- 
--      local ($tmpfile) = "/tmp/fix_$$";
--
--      &create_sh_script ($fix{$proc}, $tmpfile);
-+      &create_sh_script ($fix{$proc}, $tmpfh, $tmpfile);
- 
-       	# return code is number divided by 256
-       $error_code = (system "$tmpfile") / 256;
--      system "rm $tmpfile";
--      return ($fix_failed_error) if ($error_code != 0);
-+      unlink($tmpfile);
-+      return ($cannot_fix_error) if ($error_code != 0);
-         # sleep needed here?
-       return &do_exist ($proc);
-     }
-@@ -249,7 +257,7 @@
- {
-   local ($proc) = pop(@_);
- 
--  printf (stderr "do_check\n") if ($debug > 0);
-+  printf (STDERR "do_check\n") if ($debug > 0);
- 
-   if ($check{$proc} eq '')
-     {
-@@ -262,13 +270,13 @@
-       # if not "exist", then it must be "shell", so execute the shell script
-       # defined in database
- 
--      local ($tmpfile) = "/tmp/check_$$";
-+      local ($tmpfh, $tmpfile) = tempfile("check_XXXXXXXX", DIR => "/tmp");
- 
--      &create_sh_script ($check{$proc}, $tmpfile);
-+      &create_sh_script ($fix{$proc}, $tmpfh, $tmpfile);
- 
-       	# return code is number divided by 256
-       $error_code = (system "$tmpfile") / 256;
--      system "rm $tmpfile";
-+      unlink($tmpfile);
-       return ($check_failed_error) if ($error_code != 0);
- 
-       # check passed, continue
-@@ -281,14 +289,16 @@
- {
-   local ($proc) = pop(@_);
- 
--  printf (stderr "do_exist\n") if ($debug > 0);
-+  printf (STDERR "do_exist\n") if ($debug > 0);
- 
-   # do ps, check to see if min <= no. of processes <= max
-   $! = $fixproc_error;
--  open (command, "/bin/ps -e | /bin/grep $proc | /bin/wc -l |")
-+  open (COMMAND, "/bin/ps $ps_opts |")
-     || die "$0: can't run ps-grep-wc command\n";
--  $proc_count = <command>;
--  if (($proc_count < $min{$proc}) || ($proc_count > $max{$proc}))
-+  @allprocs = <COMMAND>;
-+  close COMMAND;
-+  @procs = grep(/$proc/, @allprocs);
-+  if (($#procs < $min{$proc}) || ($#procs > $max{$proc}))
-     {
-       return $check_failed_error;
-     }
-@@ -301,45 +311,52 @@
-   local ($proc) = pop(@_);
-   local ($second_kill_needed);
- 
--  printf (stderr "do_kill\n") if ($debug > 0);
-+  printf (STDERR "do_kill\n") if ($debug > 0);
+@@ -305,41 +313,47 @@
  
    # first try kill
    $! = $fixproc_error;
--  open (command, "/bin/ps -e | /bin/grep $proc |")
+-  open (COMMAND, "/bin/ps -e | /bin/grep $proc |")
 +  open (COMMAND, "/bin/ps $ps_opts |")
      || die "$0: can't run ps-grep-awk command\n";
--  while (<command>)
-+  while (<COMMAND>)
+   while (<COMMAND>)
      {
 -      # match the first field of ps -e
 +     if /$proc/ {
@@ -164,12 +54,11 @@
    # if process still exist, try kill -9
    sleep 2;
    $! = $fixproc_error;
--  open (command, "/bin/ps -e | /bin/grep $proc |")
+-  open (COMMAND, "/bin/ps -e | /bin/grep $proc |")
 +  open (COMMAND, "/bin/ps $ps_opts |")
      || die "$0: can't run ps-grep-awk command\n";
    $second_kill_needed = 0;
--  while (<command>)
-+  while (<COMMAND>)
+   while (<COMMAND>)
      {
 -      # match the first field of ps -e
 +     if /$proc/ {
@@ -180,7 +69,6 @@
 +      /^\s*(\d+)\s/ || die "$0: can't match ps $ps_opts output\n";
 +      kill 9, $1;
        $second_kill_needed = 1;
-+     }
      }
 +  close COMMAND;
    return ($no_error) if ($second_kill_needed == 0);
@@ -188,11 +76,10 @@
    # see if kill -9 worked
    sleep 2;
    $! = $fixproc_error;
--  open (command, "/bin/ps -e | /bin/grep $proc |")
+-  open (COMMAND, "/bin/ps -e | /bin/grep $proc |")
 +  open (COMMAND, "/bin/ps $ps_opts |")
      || die "$0: can't run ps-grep-awk command\n";
--  while (<command>)
-+  while (<COMMAND>)
+   while (<COMMAND>)
      {				# a process still exist, return error
 -      return $cannot_kill_error;
 +      return $cannot_kill_error if /$proc/;
@@ -201,32 +88,3 @@
    return $no_error;		# good, all dead
  }
  
-@@ -349,7 +366,7 @@
-   local ($proc) = pop(@_);
-   local ($error_code);
- 
--  printf (stderr "do_restart\n") if ($debug > 0);
-+  printf (STDERR "do_restart\n") if ($debug > 0);
- 
-   $error_code = &do_kill ($proc);
-   return $error_code if ($error_code != $no_error);
-@@ -369,7 +386,7 @@
-   local ($proc) = pop(@_);
-   local ($error_code);
- 
--  printf (stderr "work_on_proc\n") if ($debug > 0);
-+  printf (STDERR "work_on_proc\n") if ($debug > 0);
- 
-   if ($cmd_line_action eq '')
-     {
-@@ -475,8 +492,8 @@
-   local ($str2);
- 
-   $! = $fixproc_error;
--  open (db, $database_file) || die 'cannot open database file $database_file\n';
--  while (<db>)
-+  open (DB, $database_file) || die 'cannot open database file $database_file\n';
-+  while (<DB>)
-     {
-       if ((! /\S/) || (/^[ \t]*#.*$/))
- 	{

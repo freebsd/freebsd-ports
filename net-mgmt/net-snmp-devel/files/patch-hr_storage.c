@@ -1,6 +1,6 @@
---- agent/mibgroup/host/hr_storage.c.orig	Sun Oct 17 10:59:14 2004
-+++ agent/mibgroup/host/hr_storage.c	Mon Oct 25 07:49:40 2004
-@@ -212,6 +212,10 @@
+--- agent/mibgroup/host/hr_storage.c.orig	Fri Oct  7 07:55:23 2005
++++ agent/mibgroup/host/hr_storage.c	Wed Nov 30 12:01:05 2005
+@@ -233,6 +233,10 @@
  void            sol_get_swapinfo(int *, int *);
  #endif
  
@@ -11,7 +11,7 @@
  #define	HRSTORE_MEMSIZE		1
  #define	HRSTORE_INDEX		2
  #define	HRSTORE_TYPE		3
-@@ -451,7 +455,8 @@
+@@ -472,7 +476,8 @@
      NULL,
      "Memory Buffers",           /* HRS_TYPE_MBUF */
      "Real Memory",              /* HRS_TYPE_MEM */
@@ -21,7 +21,7 @@
  };
  
  
-@@ -566,6 +571,7 @@
+@@ -611,6 +616,7 @@
                  storage_type_id[storage_type_len - 1] = 3;      /* Virtual Mem */
                  break;
              case HRS_TYPE_MBUF:
@@ -29,28 +29,19 @@
                  storage_type_id[storage_type_len - 1] = 1;      /* Other */
                  break;
              default:
-@@ -654,7 +660,7 @@
-             case HRS_TYPE_SWAP:
+@@ -704,7 +710,7 @@
                  long_return = memory_totals.t_vm;
+ #endif
                  break;
 -#else               /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
 +#else
              case HRS_TYPE_MEM:
                  long_return = physmem;
                  break;
-@@ -664,6 +670,8 @@
- #endif
-                 long_return = 0;
-                 break;
-+#endif              /* linux || solaris2 || hpux10 || hpux11 || ... */
-+#if !defined(linux) && !defined(solaris2) && !defined(hpux10) && !defined(hpux11)
-             case HRS_TYPE_MBUF:
- #if HAVE_SYS_POOL_H
-                 long_return = 0;
-@@ -673,7 +681,26 @@
+@@ -726,13 +732,45 @@
                       i++)
                      long_return += mbstat.m_mtypes[i];
- #elif defined(MBSTAT_SYMBOL)
+ #elif defined(MBSTAT_SYMBOL) && defined(STRUCT_MBSTAT_HAS_M_MBUFS)
 +#if !defined(__FreeBSD__) || __FreeBSD_version < 500021
                  long_return = mbstat.m_mbufs;
 +#elif defined(__FreeBSD__) && __FreeBSD_version < 500024
@@ -68,16 +59,16 @@
 +		  break;
 +		}
 +#else
++#error "XXX"
 +		/* XXX TODO: implement new method */
 +		return NULL;
 +#endif /* __FreeBSD__ */
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -681,6 +708,18 @@
+                 long_return = 0;
  #endif
                  break;
- #endif              /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
 +#if defined(__FreeBSD__) && __FreeBSD_version >= 500024
 +	    case HRS_TYPE_MBUFCLUSTER: {
 +	      size_t mlen = sizeof(int);
@@ -93,8 +84,8 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -733,6 +772,12 @@
-                     * mclpool.pr_size;
+@@ -796,6 +834,12 @@
+ #endif
  #elif defined(MBSTAT_SYMBOL) && defined(STRUCT_MBSTAT_HAS_M_CLUSTERS)
                  long_return = mbstat.m_clusters - mbstat.m_clfree;      /* unlikely, but... */
 +#elif defined(__FreeBSD__) && __FreeBSD_version < 500102
@@ -106,7 +97,7 @@
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -740,6 +785,11 @@
+@@ -803,6 +847,11 @@
  #endif
                  break;
  #endif                      /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
@@ -118,7 +109,7 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -766,7 +816,11 @@
+@@ -829,7 +878,11 @@
                  break;
  #if !defined(linux) && !defined(solaris2) && !defined(hpux10) && !defined(hpux11)  && defined(MBSTAT_SYMBOL)
              case HRS_TYPE_MBUF:
@@ -130,7 +121,7 @@
                  break;
  #endif                          /* !linux && !solaris2 && !hpux10 && !hpux11 && MBSTAT_SYMBOL */
              default:
-@@ -892,3 +946,97 @@
+@@ -955,3 +1008,97 @@
      *usedP = ainfo.ani_resv;
  }
  #endif                          /* solaris2 */
