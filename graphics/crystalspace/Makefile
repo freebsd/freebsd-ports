@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	3.4+
 USE_GL=		yes
 USE_REINPLACE=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
@@ -52,6 +53,10 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 		BFD	"Universal BFD library from the GNU binutils"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
 
 .if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
