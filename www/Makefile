@@ -789,6 +789,7 @@
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += script4rss
+    SUBDIR += seamonkey
     SUBDIR += selenium
     SUBDIR += servlet-api
     SUBDIR += session2
