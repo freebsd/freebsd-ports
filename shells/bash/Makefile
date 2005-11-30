@@ -56,6 +56,16 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 			--disable-rpath \
 			--enable-disabled-builtins
 
+.if defined(WANT_STATIC_BASH) || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:L} != "no")
+.if !defined(WITHOUT_NLS)
+WITHOUT_NLS=yes
+.endif
+CONFIGURE_ARGS+= --enable-static-link
+PKGNAMESUFFIX=	-static
+.else
+CONFIGURE_ARGS+= --enable-static-link=no
+.endif
+			
 .if defined(WITHOUT_HELP)
 CONFIGURE_ARGS+=	--disable-help-builtin
 PLIST_SUB+=		HELP="@comment "
