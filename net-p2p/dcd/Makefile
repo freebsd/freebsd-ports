@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	0.4.8
+PORTVERSION=	0.5.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
@@ -23,10 +23,16 @@ MAN8=		dcd.8 dcd.console.8
 MANLANG=	"" pl.ISO8859-2
 
 CONF_FILES=	console.allow dcd.banned dcd.conf dcd.motd dcd.penalties \
-		dcd.users dcd.welcome nicks.allow
+		dcd.rules dcd.users dcd.welcome nicks.allow
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
 
 post-patch:
 .for f in dcd dcd.console
@@ -61,4 +67,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
