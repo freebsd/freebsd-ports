@@ -1,0 +1,15 @@
+==========================================================================
+
+  Adzap has now been installed.  To get it up and running, copy
+  %%EXAMPLESDIR%%/adzap.conf to %%PREFIX%%/etc/ and
+  modify it to match your setup.  Then edit your squid configuration
+  and add %%PREFIX%%/libexec/adzap as your http-redirector.
+
+  If you run a web server, you can copy files from
+  %%PREFIX%%/share/examples/adzap/zaps to your htdocs tree and
+  modify the web locations in %%PREFIX%%/etc/adzap.conf accordingly.
+
+  You can find JavaScript proxy auto-configuration scripts in
+  %%EXAMPLESDIR%%/rc
+
+==========================================================================
