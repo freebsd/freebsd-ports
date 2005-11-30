@@ -147,7 +147,7 @@ post-build:
 	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libmysql.la/' ${WRKSRC}/smsd/Makefile
 .endif
 .if defined(WITH_PGSQL)
-	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libpq.la/' -e 's/^DB_LIBS = libfile.la libmysql.la$$/DB_LIBS = libfile.la libpq.la libmysql.la' ${WRKSRC}/smsd/Makefile
+	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libpq.la/' -e 's/^DB_LIBS = libfile.la libmysql.la$$/DB_LIBS = libfile.la libpq.la libmysql.la/' ${WRKSRC}/smsd/Makefile
 .endif
 	@cd ${WRKSRC}/smsd && ${GMAKE} all
 .endif
