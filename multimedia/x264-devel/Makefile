@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20051114
+PORTVERSION=	0.0.20051129
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -28,7 +28,8 @@ PLIST_FILES=	bin/x264 \
 		include/x264.h \
 		lib/libx264.a \
 		lib/libx264.so \
-		lib/libx264.so.${SHLIB_VER}
+		lib/libx264.so.${SHLIB_VER} \
+		libdata/pkgconfig/x264.pc
 
 OPTIONS=	GPAC "Enable MPEG-4 Output" On \
 		DEBUG "Enable Debugging" Off \
@@ -69,11 +70,16 @@ CONFIGURE_ARGS+=	--enable-visualize
 USE_XLIB=		yes
 .endif
 
+pre-install:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/x264.pc
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x264 ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/x264.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libx264.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libx264.so.${SHLIB_VER} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/x264.pc ${PREFIX}/libdata/pkgconfig
 	${LN} -sf libx264.so.${SHLIB_VER} ${PREFIX}/lib/libx264.so
 
 .include <bsd.port.post.mk>
