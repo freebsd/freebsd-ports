@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d6b092bd-61e1-11da-b64c-0001020eed82">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>8.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/supsearch.dml?index=819">
+	  <p>It is possible to make a form input that looks like an
+	    image link. If the form input has a "title" attribute, the
+	    status bar will show the "title". A "title" which looks
+	    like a URL can mislead the user, since the title can say
+	    http://nice.familiar.com/, while the form action can be
+	    something else.</p>
+	  <p>Opera's tooltip says "Title:" before the title text,
+	    making a spoof URL less convincing. A user who has enabled
+	    the status bar and disabled tooltips can be affected by
+	    this. Neither of these settings are Opera's defaults.</p>
+	  <p>This exploit is mostly of interest to users who disable
+	    JavaScript. If JavaScript is enabled, any link target or
+	    form action can be overridden by the script. The tooltip
+	    and the statusbar can only be trusted to show the true
+	    location if JavaScript is disabled.</p>
+	</blockquote>
+	<blockquote cite="http://www.opera.com/support/search/supsearch.dml?index=817">
+	  <p>Java code using LiveConnect methods to remove a property
+	    of a JavaScript object may in some cases use null pointers
+	    that can make Opera crash. This crash is not exploitable
+	    and such code is rare on the web.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3699</cvename>
+      <url>http://secunia.com/advisories/17571/</url>
+      <url>http://www.opera.com/support/search/supsearch.dml?index=817</url>
+      <url>http://www.opera.com/support/search/supsearch.dml?index=819</url>
+    </references>
+    <dates>
+      <discovery>2005-11-16</discovery>
+      <entry>2005-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dfc1daa8-61de-11da-b64c-0001020eed82">
     <topic>opera -- command line URL shell command injection</topic>
     <affects>
