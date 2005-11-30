@@ -11845,6 +11845,7 @@ subtitleripper	ports/multimedia/subtitleripper
 subversion	ports/devel/subversion
 subversion-perl	ports/devel/subversion-perl
 subversion-python	ports/devel/subversion-python
+subversion-ruby	ports/devel/subversion-ruby
 subweb		ports/security/subweb
 suck		ports/news/suck
 suck-cnews	ports/news/suck-cnews
