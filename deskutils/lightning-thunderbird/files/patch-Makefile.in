@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Thu Oct 21 19:25:55 2004
++++ Makefile.in	Thu Oct 21 19:26:46 2004
+@@ -80,8 +80,7 @@
+ 	$(tier_1_dirs) \
+ 	$(tier_2_dirs) \
+ 	$(tier_9_dirs) \
+-	$(tier_50_dirs) \
+-	$(NULL)
++	$(tier_50_dirs)
+ 
+ ifdef GC_LEAK_DETECTOR
+ DIRS += gc/boehm
+@@ -100,7 +99,8 @@
+ DIRS += $(tier_98_dirs)
+ endif
+ 
+-DIRS	+= $(tier_99_dirs)
++DIRS	+= $(tier_99_dirs) \
++		$(NULL)
+ 
+ #
+ # tier 0 - base build config dirs

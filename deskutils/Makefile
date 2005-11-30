@@ -132,6 +132,7 @@
     SUBDIR += sliderule
     SUBDIR += splashsetter
     SUBDIR += sugarcrm
+    SUBDIR += sunbird
     SUBDIR += superkaramba
     SUBDIR += taskjuggler
     SUBDIR += teapot
