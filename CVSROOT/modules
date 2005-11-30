@@ -11343,6 +11343,7 @@ sdts++		ports/devel/sdts++
 seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
+seamonkey	ports/www/seamonkey
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec
 secpanel	ports/security/secpanel
