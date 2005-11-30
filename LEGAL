@@ -651,3 +651,6 @@ gngeo-*                 emulators/gngeo         The Neo-Geo BIOS
 						can not be redistributed
 twelf-*			lang/twelf		License is currently
 						indeterminate
+pfpro-*			finance/pfpro		Only available for customers
+						subscribed to the VeriSign
+						PayFlow Pro Service
