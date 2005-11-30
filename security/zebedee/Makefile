@@ -14,10 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	greg@hewgill.com
 COMMENT=	Encrypted, secure compressed TCP tunnel
 
-.if defined(${BATCH}) || !exists(/usr/bin/bzip2)
-LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
-
 USE_OPENSSL=	YES
 USE_PERL5_BUILD=YES
 
