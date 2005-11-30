@@ -1,3 +1,4 @@
+bin/delaunay
 bin/gts-config
 bin/gts2dxf
 bin/gts2oogl
@@ -5,12 +6,13 @@ bin/gts2stl
 bin/gtscheck
 bin/gtscompare
 bin/gtstemplate
+%%NETPBM%%bin/happrox
 bin/stl2gts
 bin/transform
 include/gts.h
 include/gtsconfig.h
 lib/libgts.a
 lib/libgts.so
-lib/libgts.so.3
+lib/libgts.so.4
 libdata/pkgconfig/gts.pc
 share/aclocal/gts.m4
