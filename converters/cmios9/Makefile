@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmios9
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	converters
 MASTER_SITES=	http://members.tripod.com/kmi9000/files/
 
