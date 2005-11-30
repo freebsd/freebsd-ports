@@ -14,6 +14,7 @@ bin/snmpget
 bin/snmpgetnext
 bin/snmpinform
 bin/snmpnetstat
+bin/snmpnetstat53
 bin/snmpset
 bin/snmpstatus
 bin/snmptable
@@ -140,6 +141,7 @@ include/net-snmp/system/bsdi4.h
 include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
 include/net-snmp/system/darwin7.h
+include/net-snmp/system/darwin8.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd2.h
@@ -162,6 +164,7 @@ include/net-snmp/system/solaris2.6.h
 include/net-snmp/system/solaris2.7.h
 include/net-snmp/system/solaris2.8.h
 include/net-snmp/system/solaris2.9.h
+include/net-snmp/system/solaris2.10.h
 include/net-snmp/system/sunos.h
 include/net-snmp/system/svr5.h
 include/net-snmp/system/sysv.h
@@ -243,6 +246,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.column_enums.conf
 %%DATADIR%%/mib2c.column_storage.conf
 %%DATADIR%%/mib2c.conf
+%%DATADIR%%/mib2c.container.conf
 %%DATADIR%%/mib2c.create-dataset.conf
 %%DATADIR%%/mib2c.genhtml.conf
 %%DATADIR%%/mib2c.int_watch.conf
@@ -252,6 +256,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
 %%DATADIR%%/mib2c.scalar.conf
+%%DATADIR%%/mib2c.table_data.conf
 %%DATADIR%%/mib2c-data/default-mfd-top.m2c
 %%DATADIR%%/mib2c-data/details-enums.m2i
 %%DATADIR%%/mib2c-data/details-node.m2i

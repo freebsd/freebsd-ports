@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.2.1.2
+PORTVERSION=	5.2.2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -82,7 +82,7 @@ PLIST_SUB+=	WITH_IPV6=""
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
-SHLIB_VERSION=	7
+SHLIB_VERSION=	9
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -165,7 +165,7 @@ MAN5=		mib2c.conf.5 snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
 
-BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
+BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpnetstat53 snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN_FILES=	snmpd snmptrapd
 STARTUP_DIR=	${PREFIX}/etc/rc.d
@@ -271,6 +271,6 @@ display-message:
 
 # Maintainer's note:
 #   Don't forget to bump library version in these ports.
-#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder,net-mgmt/p5-SNMP-Info,net-mgmt/nagios-snmp-plugins,french/plgrenouille,mail/cyrus-imapd22,net/ifstat,sysutils/jailadmin
+#   french/plgrenouille,graphics/hpoj,lang/php4,lang/php5,mail/cyrus-imapd22,misc/kdeutils3,net-mgmt/braa,net-mgmt/docsis,net-mgmt/mbrowse,net-mgmt/nagios-snmp-plugins,net-mgmt/p5-SNMP-Info,net-mgmt/py-yapsnmp,net-mgmt/sdig,net-mgmt/zabbix,net/cactid,net/ethereal,net/ifstat,net/quagga,net/rtg,net/tethereal,security/libfwbuilder,sysutils/apcupsd,sysutils/jailadmin,sysutils/nut
 
 .include <bsd.port.post.mk>
