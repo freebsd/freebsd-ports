@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	idesk
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Place launch icons and background directly on your desktop
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
@@ -28,6 +26,30 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`
 MAKE_ARGS=	cc="${CXX}" cflags="${CXXFLAGS}"
 
+OPTIONS=	XFT	"XFT antialias support"	on \
+		SHAPE	"Enable support of the XShape extension"	on \
+		SN	"Startup notification support"	off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_XFT)
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+CONFIGURE_ARGS+=	--enable-xft
+.else
+CONFIGURE_ARGS+=	--disable-xft
+.endif
+
+.if !defined(WITHOUT_SHAPE)
+CONFIGURE_ARGS+=	--enable-shape
+.else
+CONFIGURE_ARGS+=	--disable-shape
+.endif
+
+.if defined(WITH_SN)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=	--enable-libsn
+.endif
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/idesk ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -36,4 +58,4 @@ do-install:
 .endif
 		@${SED} -e 's:%%PREFIX%%:${PREFIX}:' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
