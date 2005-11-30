@@ -7,6 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	1.2.0
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -28,12 +29,13 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 INSTALLS_OMF=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
-CONFIGURE_ARGS+=--disable-mozilla
 
 OPTIONS?=	DVDNAV "Enable DVD support" on \
-		GSTREAMER "Use Gstreamer instead of Xine" off
+		GSTREAMER "Use Gstreamer instead of Xine" off \
+		MOZILLA_PLUGIN "Totem mozilla plugin" off
 
 MAN1=	totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
@@ -44,14 +46,27 @@ CONFLICTS=	totem-gstreamer-[0-9]*
 
 LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 
+.if defined(WITH_MOZILLA_PLUGIN)
+USE_GECKO=	firefox mozilla seamonkey
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+PLIST_SUB+=	MOZILLA=""
+LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=--with-mozilla=${GECKO}
+.else
+PLIST_SUB+=	MOZILLA="@comment "
+CONFIGURE_ARGS+=--disable-mozilla
+.endif
+
 .if defined(WITH_GSTREAMER)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 CONFIGURE_ARGS+=--enable-gstreamer
 USE_GSTREAMER+=	gnomevfs core gconf
 WITHOUT_DVDNAV=	yes
-PLIST_SUB=	GSTREAMER=""
+PLIST_SUB+=	GSTREAMER=""
 .else
 LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
-PLIST_SUB=	GSTREAMER="@comment "
+PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
@@ -88,6 +103,14 @@ pre-everything::
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 
 post-patch:
+	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
+.if defined(WITH_MOZILLA_PLUGIN)
+	@${ECHO} "" >> ${PKGMESSAGE}
+	@${CAT} ${FILESDIR}/pkg-message-mozilla.in >> ${PKGMESSAGE}
+.endif
+	@${REINPLACE_CMD} -e 's|/plugins||; \
+		s|@MOZILLA_PLUGINDIR@|${PREFIX}/lib/browser_plugins|' \
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/totem-preferences.c \
 		${WRKSRC}/src/backend/bacon-video-widget-gst.c
