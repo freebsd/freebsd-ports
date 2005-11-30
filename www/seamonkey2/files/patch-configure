@@ -1,15 +1,15 @@
---- configure.orig	Wed Dec 22 19:34:26 2004
-+++ configure	Sun Jan 16 16:30:16 2005
-@@ -9446,7 +9446,7 @@
+--- configure.orig	Thu Nov 10 15:33:30 2005
++++ configure	Thu Nov 10 22:04:56 2005
+@@ -10203,7 +10203,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9452 "configure"
+ #line 10209 "configure"
  #include "confdefs.h"
-@@ -9477,7 +9477,7 @@
+@@ -10234,7 +10234,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -18,16 +18,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
-@@ -9487,7 +9487,7 @@
+@@ -10244,7 +10244,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9493 "configure"
+ #line 10250 "configure"
  #include "confdefs.h"
-@@ -9518,7 +9518,7 @@
+@@ -10275,7 +10275,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -36,12 +36,12 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -11847,7 +11847,7 @@
-   MOZ_COMPOSER=1
-   MOZ_PROFILESHARING=1
-   MOZ_APP_VERSION=$MOZILLA_VERSION
--  MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth sroaming permissions"
-+  MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth sroaming permissions"
-   ;;
- 
- browser)
+@@ -12745,7 +12745,7 @@
+   MOZ_SUITE=1
+   MOZ_PROFILESHARING=
+   MOZ_APP_VERSION=$SEAMONKEY_VERSION
+-  MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref venkman inspector irc universalchardet typeaheadfind webservices spellcheck gnomevfs auth sroaming permissions reporter"
++  MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref venkman inspector  universalchardet typeaheadfind webservices spellcheck gnomevfs auth sroaming permissions reporter"
+   cat >> confdefs.h <<\EOF
+ #define MOZ_SUITE 1
+ EOF

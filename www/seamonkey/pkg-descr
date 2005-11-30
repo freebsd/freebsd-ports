@@ -1,4 +1,4 @@
-This is the current release of the Mozilla open source web browser. It should 
+This is the current release of the Seamonkey open source web browser. It should 
 be fully compliant with all W3C standards, including HTML, CSS, XML, XSL, 
 JavaScript, MathML, SSL encryption, SVG and RDF.  Also supports Java with
 the use of the FreeBSD native Java plug-in.
@@ -6,4 +6,4 @@ the use of the FreeBSD native Java plug-in.
 This is the latest bleeding edge release.  Beware that you'll probably find
 bugs here, so if you value stability, try www/mozilla.
 
-WWW: http://www.mozilla.org/
+WWW: http://www.mozilla.org/projects/seamonkey/
