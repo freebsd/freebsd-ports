@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mozilla Calendar
+Comment=Mozilla Sunbird Calendar
+Icon=@SUNBIRD_ICON@
+Exec=sunbird
+Terminal=false
+Type=Application
+Categories=Application;Office;
