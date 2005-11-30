@@ -70,6 +70,6 @@ post-install:
 	${TAR} -cf - -C ${WRKSRC}${LOCALBASE}/drweb/doc . | \
 		${TAR} -xf - -C ${DOCSDIR}
 .endif
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${DRWEB_PREFIX} ${DRWEB_VARPREFIX}
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${DRWEB_PREFIX} ${DRWEB_VARPREFIX} ${PREFIX}
 
 .include <bsd.port.post.mk>
