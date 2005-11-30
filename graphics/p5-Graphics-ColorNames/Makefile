@@ -7,6 +7,7 @@
 
 PORTNAME=	Graphics-ColorNames
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graphics
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A perl class that defines RGB values for common color names
+
+BUILD_DEPENDS=	${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
