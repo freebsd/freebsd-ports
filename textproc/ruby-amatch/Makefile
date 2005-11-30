@@ -22,19 +22,17 @@ RUBY_SETUP=	install.rb
 
 INSTALL_TARGET=	site-install
 
-DOCS=		CHANGES README.en
+PLIST_FILES=	bin/agrep.rb %%RUBY_SITEARCHLIBDIR%%/amatch.so
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTDOCS=	CHANGES README.en
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
