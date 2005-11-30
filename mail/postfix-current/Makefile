@@ -335,7 +335,4 @@ post-install:
 	@${RM} -f ${PREFIX}/etc/postfix/postfix-files.bak
 	@${CAT} ${PKGMESSAGE}
 
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
 .include <bsd.port.post.mk>
