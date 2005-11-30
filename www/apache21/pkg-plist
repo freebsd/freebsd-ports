@@ -6,9 +6,9 @@
 @unexec if cmp -s %D/etc/apache21/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/etc/apache21/magic; fi
 %%EXAMPLESDIR%%/magic
 @exec [ -f %D/etc/apache21/magic ] || cp %D/%%EXAMPLESDIR%%/magic %D/etc/apache21/magic
-@unexec if cmp -s %D/etc/apache21/mime.types %D/%%EXAMPLESDIR%%/mime.types-; then rm -f %D/etc/apache21/mime.types; fi
+@unexec if cmp -s %D/etc/apache21/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/etc/apache21/mime.types; fi
 %%EXAMPLESDIR%%/mime.types
-@exec [ -f %D/etc/apache21/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types- %D/etc/apache21/mime.types
+@exec [ -f %D/etc/apache21/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/etc/apache21/mime.types
 @unexec if cmp -s %D/etc/apache21/extra/httpd-autoindex.conf %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf; then rm -f %D/etc/apache21/extra/httpd-autoindex.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-autoindex.conf
 @exec [ -f %D/etc/apache21/extra/httpd-autoindex.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-autoindex.conf %D/etc/apache21/extra/httpd-autoindex.conf
@@ -135,6 +135,7 @@ include/apache21/mod_auth.h
 include/apache21/mod_cgi.h
 include/apache21/mod_core.h
 include/apache21/mod_dav.h
+include/apache21/mod_dbd.h
 include/apache21/mod_include.h
 include/apache21/mod_log_config.h
 include/apache21/mod_proxy.h
