@@ -16,6 +16,7 @@ include/ssp/stdio.h
 include/ssp/unistd.h
 @unexec rmdir %D/include/ssp 2>/dev/null || true
 %%FORTRAN%%bin/gfortran41
+%%FORTRAN%%bin/%%GNU_HOST%%-gfortran41
 %%JAVA%%bin/addr2name.awk41
 %%JAVA%%bin/fastjar41
 %%JAVA%%bin/gcj41
