@@ -19,6 +19,7 @@ RESTRICTED=	"Only for VeriSign PayFlow Pro customers"
 NO_BUILD=	yes
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
+SUB_FILES=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -43,10 +44,6 @@ some terms and conditions.  After downing the SDK, place ${PFP_BUNDLE}\n\
 in ${DISTDIR}.\n
 .endif
 
-post-patch:
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${.CURDIR}/pkg-message \
-	    > ${PKGMESSAGE}
-
 do-install:
 	${INSTALL_PROGRAM} ${FBSDDIR}/bin/pfpro ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${FBSDDIR}/bin/pfpro-file ${PREFIX}/bin
@@ -54,5 +51,8 @@ do-install:
 	${INSTALL_DATA} ${FBSDDIR}/lib/libpfpro.so ${PREFIX}/lib
 	${MKDIR} ${CERTDIR}
 	${INSTALL_DATA} ${FBSDDIR}/certs/f73e89fd.0 ${CERTDIR}
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
