@@ -350,10 +350,12 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
 
 .if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
-PATCHFILES+=	qmail-1.03-starttls-smtp-auth_outgoingip.patch:smtp_auth_tls
+SMTP_AUTH_TLS_PATCH=	qmail-1.03-starttls-smtp-auth_outgoingip.patch
 .else
-PATCHFILES+=	qmail-1.03-starttls-smtp-auth.patch:smtp_auth_tls
+SMTP_AUTH_TLS_PATCH=	qmail-1.03-starttls-smtp-auth.patch
 .endif
+
+PATCHFILES+=	${SMTP_AUTH_TLS_PATCH}:smtp_auth_tls
 
 .if defined(WITH_MAXRCPT_PATCH) && !defined(BARRIER_MAXRCPT_PATCH)
 PATCH_SITES+=	http://www.unixlike.com.br/coisas/qmail/:maxrcpt
@@ -506,7 +508,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 .elif defined(SLAVE_SMTP_AUTH_TLS)
-	@${HEAD} -6 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-starttls-smtp-auth.patch \
+	@${HEAD} -6 ${DISTDIR}/${DIST_SUBDIR}/${SMTP_AUTH_TLS_PATCH} \
 		| ${TAIL} -5 \
 		> ${WRKDIR}/SMTP_AUTH+TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" ${WRKSRC}/Makefile
