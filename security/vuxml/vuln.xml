@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfc1daa8-61de-11da-b64c-0001020eed82">
+    <topic>opera -- command line URL shell command injection</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>8.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Opera Advisory reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/supsearch.dml?index=818">
+	  <p>Opera for UNIX uses a wrapper shell script to start up
+	    Opera. This shell script reads the input arguments, like
+	    the file names or URLs that Opera is to open. It also
+	    performs some environment checks, for example whether Java
+	    is available and if so, where it is located.</p>
+	  <p>This wrapper script can also run commands embedded in the
+	    URL, so that a specially crafted URL can make arbitrary
+	    commands run on the recipient's machine. Users who have
+	    other programs set up to use Opera to open Web links are
+	    vulnerable to this flaw. For these users, clicking a Web
+	    link in for example OpenOffice.org or Evolution can run a
+	    command that was put into the link.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15521</bid>
+      <cvename>CVE-2005-3750</cvename>
+      <url>http://secunia.com/secunia_research/2005-57/advisory/</url>
+      <url>http://www.opera.com/support/search/supsearch.dml?index=818</url>
+    </references>
+    <dates>
+      <discovery>2005-11-17</discovery>
+      <entry>2005-11-30</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="ffb82d3a-610f-11da-8823-00123ffe8333">
     <topic>mambo -- "register_globals" emulation layer overwrite vulnerability</topic>
