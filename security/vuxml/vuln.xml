@@ -35,6 +35,41 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="ffb82d3a-610f-11da-8823-00123ffe8333">
+    <topic>mambo -- "register_globals" emulation layer overwrite vulnerability</topic>
+    <affects>
+      <package>
+	<name>mambo</name>
+	<range><lt>4.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17622/">
+	  <p>peter MC tachatte has discovered a vulnerability in Mambo,
+	    which can be exploited by malicious people to manipulate
+	    certain information and compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to an error in the
+	    "register_globals" emulation layer in "globals.php" where
+	    certain arrays used by the system can be overwritten. This
+	    can be exploited to include arbitrary files from external
+	    and local resources via the "mosConfig_absolute_path" parameter.</p>
+	  <p>Successful exploitation requires that "register_globals"
+	    is disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mamboserver.com/index.php?option=com_content&amp;task=view&amp;id=172&amp;Itemid=1</url>
+      <url>http://secunia.com/advisories/17622/</url>
+    </references>
+    <dates>
+      <discovery>2005-11-17</discovery>
+      <entry>2005-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27a70a01-5f6c-11da-8d54-000cf18bbe54">
     <topic>ghostscript -- insecure temporary file creation vulnerability</topic>
     <affects>
