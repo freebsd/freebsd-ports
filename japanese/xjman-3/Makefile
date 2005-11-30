@@ -12,6 +12,7 @@ MASTER_SITES= 	${MASTER_SITE_PORTS_JP} \
 MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../xjman
+MD5_FILE=	${.CURDIR}/distinfo
 WRKSRC=		${WRKDIR}/man/ja_JP.eucJP
 
 LATEST_LINK=	ja-xjman-3
