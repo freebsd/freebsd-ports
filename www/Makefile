@@ -709,6 +709,7 @@
     SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
+    SUBDIR += phpwiki13
     SUBDIR += planet
     SUBDIR += plog
     SUBDIR += plone
