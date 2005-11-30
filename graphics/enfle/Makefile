@@ -19,9 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		arc.1:${PORTSDIR}/archivers/libarc
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
