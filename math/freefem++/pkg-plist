@@ -20,14 +20,20 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/all.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/arrayoFVh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bilap.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/AAA.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/NSP1P2.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/P2b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/SegmentationFault.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/bug/aaa.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/b.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/bb.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-arg-string.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugborder.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugf.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugv1.18.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/fe-vect.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/func.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/laptopbig.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/mesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/zArithmetic_bug1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/ccc-adp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/BlackScholes2D.edp
@@ -40,6 +46,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/membrane.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/membranerror.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/muwave.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/optimcontrol.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/potential.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/ref.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/chapt3/regtests.edp
@@ -95,6 +102,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/error.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem3.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/ffstack.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/gmres.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/include.tar.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/lex.hpp
@@ -127,7 +135,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/BlackSchole.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FEComplex.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG2.edp
@@ -148,7 +155,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/adaptindicatorP2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/aile.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/algo.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/algowithmacro.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/all.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/array.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/beam.edp

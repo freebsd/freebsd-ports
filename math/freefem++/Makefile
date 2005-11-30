@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.0-4
+DISTVERSION=	2.1-0
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base
 
-RESTRICTED=	No resale or commercial use
+RESTRICTED=	"No resale or commercial use"
 
 USE_GL=			yes
 USE_GCC=		3.4
