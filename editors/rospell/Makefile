@@ -20,7 +20,7 @@ USE_QT_VER=	3
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ENV=	QTDIR=${X11BASE} LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
-HAS_CONFIGURE=	yes
+MAKEFILE=	BSDmakefile
 
 MAN1=	rospell.1
 
@@ -30,10 +30,13 @@ MAN1=	rospell.1
 IGNORE=		doesn't compile properly on 4.x systems
 .endif
 
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} dictfiles.h
+
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} ${ALL_TARGET}
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>
