@@ -4,6 +4,7 @@ bin/deliver
 bin/dotlock
 bin/edinplace
 bin/escape
+bin/omacutil
 bin/macutil
 bin/mailexec
 bin/match

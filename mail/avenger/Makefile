@@ -4,9 +4,15 @@
 #
 # $FreeBSD$
 #
+# If you would like to use SASL authentication, you will need to define:
+#
+#     WITH_AVENGER_SASL2=yes
+#
+# in your make.conf file.
+#
 
 PORTNAME=	avenger
-PORTVERSION=	0.7
+PORTVERSION=	0.7.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
@@ -25,6 +31,13 @@ MAN8=		asmtpd.8 avenger.local.8
 
 CONFIGURE_ENV=	WFLAGS='-Wall'
 CONFIGURE_ARGS=	--with-db=${LOCALBASE}
+
+.if defined(WITH_AVENGER_SASL2)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+# Note, for version 0.7.2, the --enable-sasl=/... syntax is broken
+#CONFIGURE_ARGS+=	--enable-sasl=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-sasl
+.endif
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
