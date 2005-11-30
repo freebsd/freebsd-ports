@@ -7,6 +7,7 @@
 
 PORTNAME=	wmcpuload
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
