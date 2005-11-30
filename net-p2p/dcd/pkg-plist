@@ -1,10 +1,12 @@
 sbin/dcd
+sbin/dcd.adduser
 @exec install -d -m 751 -o daemon -g daemon %D/etc/dcd
 etc/dcd/console.allow.default
 etc/dcd/dcd.banned.default
 etc/dcd/dcd.conf.default
 etc/dcd/dcd.motd.default
 etc/dcd/dcd.penalties.default
+etc/dcd/dcd.rules.default
 etc/dcd/dcd.users.default
 etc/dcd/dcd.welcome.default
 etc/dcd/nicks.allow.default
