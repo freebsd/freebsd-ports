@@ -15,6 +15,7 @@ MAINTAINER=	babak@farrokhi.net
 COMMENT=	A PHP WikiWikiWeb
 
 CONFLICTS+=	phpwiki-1.2*
+LATEST_LINK=	phpwiki13
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype pcre posix session tokenizer xml zlib mysql
