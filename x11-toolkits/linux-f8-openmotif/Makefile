@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
 MASTER_SITE_SUBDIR=	om2.2.4/redhat-7.3
 PKGNAMEPREFIX=	linux-
-EXTRACT_SUFX=	-0.1.${MACHINE_ARCH}.rpm
+EXTRACT_SUFX=	-0.1.i386.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
@@ -20,12 +20,12 @@ COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.i386
 
 EXTRACT_FILES=	./usr/X11R6/lib/libMrm.so.3.0.3 \
 		./usr/X11R6/lib/libUil.so.3.0.3 \
