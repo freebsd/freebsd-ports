@@ -4,7 +4,6 @@
 %%GALLERY2DIR%%/bootstrap.inc
 %%GALLERY2DIR%%/docs/DEVELOPER_GUIDELINES
 %%GALLERY2DIR%%/docs/EMBEDDING
-%%GALLERY2DIR%%/docs/LOCALIZING
 %%GALLERY2DIR%%/embed.php
 %%GALLERY2DIR%%/images/g2Logo.gif
 %%GALLERY2DIR%%/images/gallery.gif
