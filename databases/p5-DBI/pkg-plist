@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/dbiprof
 bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBI.pm
