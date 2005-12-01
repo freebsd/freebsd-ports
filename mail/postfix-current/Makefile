@@ -35,6 +35,7 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions" on \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)" off \
 		SASLKRB		"If your SASL requires Kerberos select this option" off \
 		SASLKRB5	"If your SASL requires Kerberos5 select this option" off \
+		SASLKRB5MIT	"If your SASL requires MIT Kerberos5 select this option" off\
 		TLS		"Enable SSL and TLS support" off \
 		DB3		"Berkeley DB3 (required if SASL built with DB3)" off \
 		DB40		"Berkeley DB4.0 (required if SASL built with DB4.0)" off \
@@ -110,17 +111,25 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
 .if defined(WITH_SASLKRB)
-.if defined(WITH_SASLKRB5)
+.if defined(WITH_SASLKRB5) || defined(WITH_SASLKRB5MIT)
 BROKEN=			"Select only one SASL Kerberos option"
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
 
 .if defined(WITH_SASLKRB5)
-.if defined(WITH_SASLKRB)
+.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5MIT)
 BROKEN=			"Select only one SASL Kerberos option"
 .endif
 POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+.endif
+
+.if defined(WITH_SASLKRB5MIT)
+.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
+BROKEN=			"Select only one SASL Kerberos option"
+.endif
+LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
+POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
 .if defined(WITH_TLS)
