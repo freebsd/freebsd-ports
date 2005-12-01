@@ -2327,6 +2327,7 @@ fileschanged	ports/sysutils/fileschanged
 fillets-ng	ports/games/fillets-ng
 filtermail	ports/mail/filtermail
 filters		ports/games/filters
+finance_pfpro	ports/finance/pfpro
 finchtv		ports/biology/finchtv
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
