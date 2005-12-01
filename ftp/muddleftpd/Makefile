@@ -9,7 +9,12 @@
 PORTNAME=	muddleftpd
 PORTVERSION=	1.3.13.1
 CATEGORIES=	ftp
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	http://gnu.rtin.bz/ftp/savannah/files/muddleftpd/ \
+		http://sunsite.rediris.es/pub/gnu/savannah/files/muddleftpd/ \
+		http://mirrors.ibiblio.org/pub/mirrors/gnu/ftp/savannah/files/muddleftpd/ \
+		http://www.mirrormonster.com/gnuftp/savannah/files/muddleftpd/ \
+		http://ftp.linux.cz/pub/gnu/savannah/files/muddleftpd/ \
+		http://gnu.mirrors.tds.net/pub/gnu/savannah/files/muddleftpd/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
