@@ -36,6 +36,7 @@
     SUBDIR += cwtex
     SUBDIR += cwtexttf
     SUBDIR += cxterm
+    SUBDIR += dfsongsd
     SUBDIR += dictd-database
     SUBDIR += emacs20
     SUBDIR += enscript
