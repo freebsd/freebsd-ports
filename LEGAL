@@ -136,6 +136,8 @@ dc3play-*		graphics/dc3play	No redistribution due to
 						beta status
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
+DFSongSd.ttf		chinese/dfsongsd	No redistribution or
+						commercial use is allowed
 dgd/*			net/dgd			License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
