@@ -137,6 +137,7 @@
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += ml-pnet
+    SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += mono
     SUBDIR += moscow_ml
