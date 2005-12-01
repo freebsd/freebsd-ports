@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3/.packlist
+%%SITE_PERL%%/Class/C3.pm
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/C3 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true

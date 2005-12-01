@@ -724,6 +724,7 @@
     SUBDIR += p5-Class-Autouse
     SUBDIR += p5-Class-Base
     SUBDIR += p5-Class-BlackHole
+    SUBDIR += p5-Class-C3
     SUBDIR += p5-Class-Container
     SUBDIR += p5-Class-Contract
     SUBDIR += p5-Class-Data-Inheritable
