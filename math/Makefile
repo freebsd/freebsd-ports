@@ -97,6 +97,7 @@
     SUBDIR += kaskade
     SUBDIR += koctave
     SUBDIR += kseg
+    SUBDIR += labplot
     SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++

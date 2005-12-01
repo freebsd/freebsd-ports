@@ -1,0 +1,11 @@
+--- doc/sv/Makefile.in.orig	Mon Sep 26 18:49:40 2005
++++ doc/sv/Makefile.in	Mon Sep 26 18:51:45 2005
+@@ -481,7 +481,7 @@
+ 	fi
+ 	$(INSTALL_DATA) index.docbook $(DESTDIR)/$(kde_htmldir)/sv/LabPlot/index.docbook
+ 	rm -f $(DESTDIR)/$(kde_htmldir)/sv/LabPlot/small_pics
+-	ln -fs $(kde_htmldir)/en/LabPlot/small_pics/ $(DESTDIR)/$(kde_htmldir)/sv/LabPlot/
++	ln -fs $(kde_htmldir)/en/LabPlot/small_pics $(DESTDIR)/$(kde_htmldir)/sv/LabPlot/
+ 
+ uninstall-local:
+ #>- 	rm -f $(kde_htmldir)/sv/LabPlot/small_pics
