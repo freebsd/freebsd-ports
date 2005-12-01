@@ -12,7 +12,6 @@ CATEGORIES=	chinese net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION:S,.,-,g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBMan is a BBS client for X Window System
@@ -22,14 +21,13 @@ LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
-USE_GCC=	3.3
 
 PLIST_FILES=	bin/BBMan
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not link on FreeBSD 4.x"
+.if ${OSVERSION} >= 500000
+USE_GCC=	3.3
 .endif
 
 .if ${ARCH} == ia64
