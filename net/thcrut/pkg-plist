@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/18 20:30:43 dugsong Exp $
 bin/thcrut
-share/thcrut/manuf
-share/thcrut/nmap-os-fingerprints
-share/thcrut/thcrut-os-fingerprints
-@dirrm share/thcrut
+%%DATADIR%%/manuf
+%%DATADIR%%/nmap-os-fingerprints
+%%DATADIR%%/thcrut-os-fingerprints
+@dirrm %%DATADIR%%
