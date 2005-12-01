@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
 
+BROKEN=	"Problems on squid log parser. Waiting version 2.1"
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=gcc
