@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051201:
+  AFFECTS: users of lang/ocaml
+  AUTHOR: burelle@lri.fr
+
+  Upgrade to 3.09.0 will break binary compatibility at link time, so any
+  librairy build with old versions should be rebuild in order to be
+  usable (standalone binaries do not require rebuild since they are
+  staticaly linked.)
+
 20051129:
   AFFECTS: users of devel/monotone
   AUTHOR: lapo@lapo.it
