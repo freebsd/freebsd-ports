@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.9
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
-
-BROKEN=	"Problems on squid log parser. Waiting version 2.1"
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
