@@ -6,7 +6,7 @@
 
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://ypwong.org/hotkeys/${PORTVERSION}/	\
 		${MASTER_SITE_XCONTRIB}
@@ -33,6 +33,7 @@ SAMPLE_CONFIG=	${PREFIX}/etc/hotkeys.conf.sample
 post-extract:
 	@${CP} ${PATCHDIR}/error.h ${WRKSRC}/src
 	@${CP} ${PATCHDIR}/eliteduo.def ${WRKSRC}/def
+	@${CP} ${PATCHDIR}/logitech-ultrax.def ${WRKSRC}/def
 
 post-install:
 	@${MV} ${ORIG_CONFIG} ${SAMPLE_CONFIG}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<definition>
+
+  <config model="Logitech UltraX (USB) Keyboard">
+
+    <Record       keycode="237"/> <!-- Media -->
+    <Play         keycode="162"/> <!-- Play/Pause -->
+    <Mute         keycode="160"/>
+    <Favorites    keycode="230"/> <!-- Favoritter -->
+    <Email        keycode="236"/> <!-- E-post -->
+    <WebBrowser   keycode="178"/> <!-- WWW -->
+
+  </config>
+  
+  <contributor>
+    <name>Torfinn Ingolfsen</name>
+    <email>tingo@start.no</email>
+  </contributor>
+
+</definition>
