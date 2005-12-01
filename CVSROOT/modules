@@ -5137,6 +5137,7 @@ l2a		ports/textproc/l2a
 l2tpd		ports/net/l2tpd
 l5		ports/security/l5
 la-aspell	ports/textproc/la-aspell
+labplot		ports/math/labplot
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
