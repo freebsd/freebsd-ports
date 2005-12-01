@@ -34,6 +34,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="faca0843-6281-11da-8630-00123ffe8333">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal</name>
+	<range><lt>4.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17824/">
+	  <p>Some vulnerabilities have been reported in Drupal,
+	    which can be exploited by malicious people to bypass
+	    certain security restrictions, and conduct script
+	    insertion and HTTP response splitting attacks.</p>
+	  <p>1) An input validation error in the filtering of
+	    HTML code can be exploited to inject arbitrary
+	    JavaScript code in submitted content, which will be
+	    executed in a user's browser session in context of
+	    an affected site when the malicious user data is
+	    viewed.
+	    Successful exploitation requires that the user has
+	    access to the full HTML input format.
+	    Ref: sa-2005-007</p>
+	  <p>2) An input validation error in the attachment
+	    handling can be exploited to upload a malicious
+	    image with embedded HTML and script content, which
+	    will be executed in a user's browser session in
+	    context of an affected site when viewed directly with
+	    the Microsoft Internet Explorer browser.
+	    This can also be exploited to inject arbitrary HTTP
+	    headers, which will be included in the response sent
+	    to the user.
+	    Ref: sa-2005-008</p>
+	  <p>3) The problem is that it is possible to bypass the
+	    "access user profile" permission. However, this cannot
+	    be exploited to modify data.
+	    Successful exploitation requires that the server runs
+	    PHP 5.
+	    Ref: sa-2005-009</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/files/sa-2005-007/advisory.txt</url>
+      <url>http://drupal.org/files/sa-2005-008/advisory.txt</url>
+      <url>http://drupal.org/files/sa-2005-009/advisory.txt</url>
+      <url>http://secunia.com/advisories/17824/</url>
+    </references>
+    <dates>
+      <discovery>2005-12-01</discovery>
+      <entry>2005-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6b092bd-61e1-11da-b64c-0001020eed82">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
