@@ -9,6 +9,7 @@ bin/moldenogl
 %%PORTDOCS%%share/molden/test/bucky.xyz
 %%PORTDOCS%%share/molden/test/chemx.test
 %%PORTDOCS%%share/molden/test/complex2.out
+%%PORTDOCS%%share/molden/test/cpeptide.gro
 %%PORTDOCS%%share/molden/test/esp.test
 %%PORTDOCS%%share/molden/test/esp.txt
 %%PORTDOCS%%share/molden/test/esp.xyz

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,9 +16,8 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
-BROKEN=		"Size mismatch"
-
 USE_XLIB=	yes
+USE_MESA=	yes
 
 RESTRICTED=	"free for academic, non profit usage;"
 NO_CDROM=	"Do not re-distribute source and executable."
@@ -38,11 +37,9 @@ post-configure:
 	@${ECHO_MSG} "**  before \'make build\'."
 	@${ECHO_MSG} "********************"
 
-do-build:
-	(cd ${WRKSRC} && ${MAKE})
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/molden ${WRKSRC}/moldenogl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/molden ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/moldenogl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/molden
 	${MKDIR} ${PREFIX}/share/molden/test
