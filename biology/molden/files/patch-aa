@@ -1,21 +1,19 @@
-
-$FreeBSD$
-
---- makefile.orig	Tue Nov  5 04:43:01 2002
-+++ makefile	Fri Jan 17 16:04:35 2003
-@@ -12,13 +12,31 @@
+--- makefile.orig	Wed Nov  2 16:35:57 2005
++++ makefile	Thu Dec  1 15:11:18 2005
+@@ -12,14 +12,32 @@
  #
  #	Disregard compiler warnings on rdmolf.f
  #
 -CC = cc
--LIBS =  -lX11 -lm
 +#CC = cc
-+#LIBS =  -lX11 -lm
+ LIBS =  -lX11 -lm
+-LIBSG = -L/usr/X11R6/lib -lGLU -lGL -lXmu -lX11 -lm
++LIBSG = -L${X11BASE}/lib -lGLU -lGL -lXmu -lX11 -lm
 +
 +###
 +# FreeBSD
 +#CC = gcc
-+CFLAGS += -c -DDOBACK -DHASTIMER -I/usr/X11R6/include
++CFLAGS += -c -DDOBACK -DHASTIMER -I${X11BASE}/include
 +#FC = f77
 +.if ${MACHINE_ARCH} == i386
 +FFLAGS += -malign-double
@@ -26,7 +24,7 @@ $FreeBSD$
 +.else
 +FFLAGS += -Wno-globals -fno-globals
 +.endif
-+LIBS =  -L/usr/X11R6/lib -lX11 -lm
++LIBS =  -L${X11BASE}/lib -lX11 -lm
 +LDR = f77
 +###
  
@@ -40,21 +38,21 @@ $FreeBSD$
  
  # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
  #
-@@ -160,7 +178,7 @@
+@@ -168,7 +186,7 @@
  # For The OpenGL Graphics library molden helper 'moldenogl'
  # (make moldenogl)
  #
--LIBSG = -lglut -lGLU -lGL -lXmu -lX11 -lm
-+LIBSG = -L${X11BASE}/lib -lglut -lGLU -lGL -lXmu -lX11 -lm
+-LIBSOGL = -lglut -lGLU -lGL -lXmu -lX11 -lm
++LIBSOGL = -L${X11BASE}/lib -lglut -lGLU -lGL -lXmu -lX11 -lm
  #
  # on linux :
  #
-@@ -170,6 +188,8 @@
+@@ -187,6 +205,8 @@
  #
- #LIBSG = -L/usr/X11R6/lib -lglut -lMesaGLU -lMesaGL -lXmu -lXi -lX11 -lm
+ #LIBSG = -L/usr/X11R6/lib -framework GLUT -framework OpenGL -framework Cocoa
  #
 +
 +all: molden moldenogl
  
- molden:	$(OBJS) $(SOBJ) mpdum.o xwin.o 
+ molden:	$(OBJS) mpdum.o xwin.o 
  	$(LDR) -o molden $(OBJS) $(SOBJ) mpdum.o xwin.o $(LIBS)
