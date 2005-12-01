@@ -8,11 +8,11 @@
 PORTNAME=	email
 PORTVERSION=	2.5.6
 CATEGORIES=	mail python
-MASTER_SITES=	ftp://ftp.python.org/pub/python/contrib/
+MASTER_SITES=	http://www.python.org/ftp/python/contrib/
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 DISTNAME=       email-${PORTVERSION}
 
-MAINTAINER=	estartu@augusta.de
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Email package for Python 2.1.3 or upper
 
 NO_LATEST_LINK=	yes
