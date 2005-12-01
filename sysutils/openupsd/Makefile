@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://frmb.org/download/
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A UPS daemon for some Belkin UPS's
 
 USE_RC_SUBR=	yes

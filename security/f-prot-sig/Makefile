@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.f-prot.com/pub/ \
 DISTFILES=	fp-def.zip macrdef2.zip
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus Signatures
 
 # F-Prot does not version their .DEF files so the port always pulls the latest.

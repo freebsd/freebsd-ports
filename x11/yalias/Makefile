@@ -13,7 +13,7 @@ MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	An enhanced execution box with regex pattern matching
 
 USE_GNOME=	gtk20

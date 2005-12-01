@@ -15,7 +15,7 @@ DISTNAME=	Statgrab-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A PECL extension to retrieve information from libstatgrab
 
 LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab

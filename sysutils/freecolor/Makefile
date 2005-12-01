@@ -10,7 +10,7 @@ PORTVERSION=	0.8.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rkeene.org/files/oss/freecolor/
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Displays free memory as a bargraph
 
 LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab

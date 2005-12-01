@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unix
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Perl extension for collecting information about the machine
 
 LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab

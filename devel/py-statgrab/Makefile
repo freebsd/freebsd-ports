@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A set of Python bindings for libstatgrab
 
 LIB_DEPENDS=	statgrab.7:${PORTSDIR}/devel/libstatgrab

@@ -12,7 +12,7 @@ MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	An experimental reimplementation of Dan Bernstein's daemontools
 
 GNU_CONFIGURE=	yes

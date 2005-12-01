@@ -13,7 +13,7 @@ MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	LTVariations-${PORTVERSION}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A collection of sensors and displays
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
