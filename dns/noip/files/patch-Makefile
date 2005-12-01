@@ -1,6 +1,6 @@
---- Makefile.orig	Thu May  8 23:13:28 2003
-+++ Makefile	Fri Aug 29 10:22:57 2003
-@@ -1,16 +1,16 @@
+--- Makefile.orig	Sat Aug  2 05:56:55 2003
++++ Makefile	Wed Nov 30 01:35:17 2005
+@@ -1,13 +1,13 @@
  TGT=noip2
 -CC=gcc
 +MYCC=${CC}
@@ -19,17 +19,13 @@
 +#ARCH=linux
  
  # for BSD systems that have getifaddr(), uncomment the next line
--#ARCH=bsd_with_getifaddrs
-+ARCH=bsd_with_getifaddrs
- 
- # for early BSD systems without getifaddrs(), uncomment the next line
- #ARCH=bsd
+ #ARCH=bsd_with_getifaddrs
 @@ -21,7 +21,7 @@
  # ARCH=sun
  
  ${TGT}: Makefile ${TGT}.c 
 -	${CC} -Wall -g -O2 -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
-+	${MYCC} ${CFLAGS} -D${ARCH} -DPREFIX=\"${MYPREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${MYCC} ${CFLAGS} -Dbsd_with_getifaddrs -DPREFIX=\"${MYPREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
  
  install: ${TGT} 
  	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
