@@ -10,7 +10,7 @@ PORTVERSION=	3.2
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.isi.edu/xbone/software/xbone/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xbone@isi.edu
 COMMENT=	Deploys and manages IP-based VPNs (aka "virtual Internets")
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
