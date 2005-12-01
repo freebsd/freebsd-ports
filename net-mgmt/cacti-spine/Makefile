@@ -10,7 +10,7 @@ PORTVERSION=	0.8.6.f
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
-DISTNAME=	cacti-${PORTNAME}-0.8.6f-${PORTREVISION}
+DISTNAME=	cacti-${PORTNAME}-0.8.6f-1
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
