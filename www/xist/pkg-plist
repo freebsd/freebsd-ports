@@ -1,6 +1,7 @@
 bin/doc2txt
 bin/dtd2xsc
 bin/tld2xsc
+bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/__init__.pyo
@@ -51,6 +52,9 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/jsp.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/jsp.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/jsp.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/kid.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/kid.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/kid.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/meta.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/meta.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/meta.pyo
@@ -114,9 +118,6 @@ bin/tld2xsc
 %%PYTHON_SITELIBDIR%%/ll/xist/utils.py
 %%PYTHON_SITELIBDIR%%/ll/xist/utils.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/utils.pyo
-%%PYTHON_SITELIBDIR%%/ll/xist/wwi.py
-%%PYTHON_SITELIBDIR%%/ll/xist/wwi.pyc
-%%PYTHON_SITELIBDIR%%/ll/xist/wwi.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/xfind.py
 %%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/xfind.pyo
