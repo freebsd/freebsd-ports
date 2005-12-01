@@ -28,6 +28,7 @@ etc/sarg/languages/Latvian
 etc/sarg/languages/Polish
 etc/sarg/languages/Portuguese
 etc/sarg/languages/Romanian
+etc/sarg/languages/Russian_UTF-8
 etc/sarg/languages/Russian_koi8
 etc/sarg/languages/Russian_windows1251
 etc/sarg/languages/Serbian
@@ -48,6 +49,7 @@ etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
 etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/sarg-block-it.php
+etc/sarg/sarg-php/sarg-realtime.php
 etc/sarg/sarg-php/sarg-squidguard-block.php
 etc/sarg/sarg-php/sarg-squidguard-block2.php
 etc/sarg/sarg-php/style.php
