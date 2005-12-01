@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08.3
-PORTREVISION=	2
+PORTVERSION=	3.09.0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -67,7 +66,8 @@ MANN=		Arg.n Array.n ArrayLabels.n Bigarray.Array1.n \
 		Scanf.n Set.Make.n Set.OrderedType.n Set.S.n Set.n Sort.n \
 		Stack.n StdLabels.Array.n StdLabels.List.n StdLabels.String.n \
 		StdLabels.n Str.n Stream.n String.n StringLabels.n Sys.n \
-		Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n
+		Unix.LargeFile.n Unix.n Weak.Make.n Weak.S.n Weak.n \
+		CamlinternalMod.n
 MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 camlp4o.1 camlp4.1 camlp4r.1 camlp4.1 mkcamlp4.1 \
 		camlp4.1 camlp4o.opt.1 camlp4.1 camlp4r.opt.1 \
@@ -89,7 +89,7 @@ MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64 || ${ARCH} == ia64
-BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
+BROKEN=	"ocamlc.opt seg-faults on ${ARCH}, please try to fix"
 .endif
 PLIST_SUB+=	PROF=""
 

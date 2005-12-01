@@ -11,6 +11,7 @@ bin/ocamlprof
 bin/ocamlrun
 bin/ocamlyacc
 bin/ocpp
+lib/ocaml/Makefile.config
 lib/ocaml/addlabels
 lib/ocaml/arg.cmi
 lib/ocaml/arg.cmx
@@ -65,6 +66,11 @@ lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
+lib/ocaml/camlinternalMod.cmi
+lib/ocaml/camlinternalMod.cmx
+lib/ocaml/camlinternalMod.ml
+lib/ocaml/camlinternalMod.mli
+lib/ocaml/camlinternalMod.p.cmx
 lib/ocaml/camlinternalOO.cmi
 lib/ocaml/camlinternalOO.cmx
 lib/ocaml/camlinternalOO.ml
@@ -588,6 +594,16 @@ lib/ocaml/int_misc.cmx
 %%TK%%lib/ocaml/labltk/wm.cmi
 %%TK%%lib/ocaml/labltk/wm.cmx
 %%TK%%lib/ocaml/labltk/wm.mli
+%%TK%%lib/ocaml/labltk/fileevent.cmx
+%%TK%%lib/ocaml/labltk/protocol.cmx
+%%TK%%lib/ocaml/labltk/rawwidget.cmx
+%%TK%%lib/ocaml/labltk/textvariable.cmx
+%%TK%%lib/ocaml/labltk/timer.cmx
+%%TK%%lib/ocaml/labltk/tkthread.cmi
+%%TK%%lib/ocaml/labltk/tkthread.cmo
+%%TK%%lib/ocaml/labltk/tkthread.mli
+%%TK%%lib/ocaml/labltk/tkthread.o
+%%TK%%lib/ocaml/labltk/widget.cmx
 lib/ocaml/lazy.cmi
 lib/ocaml/lazy.cmx
 lib/ocaml/lazy.ml
@@ -809,7 +825,6 @@ lib/ocaml/stringLabels.cmx
 lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
 %%PROF%%lib/ocaml/stringLabels.p.cmx
-lib/ocaml/string_misc.cmx
 lib/ocaml/stublibs/dllbigarray.so
 %%X11%%lib/ocaml/stublibs/dllgraphics.so
 %%TK%%lib/ocaml/stublibs/dlllabltk.so
