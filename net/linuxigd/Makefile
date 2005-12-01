@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
-LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp104
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
