@@ -13,11 +13,9 @@ MASTER_SITES=	http://www.thc.org/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local network discovery tool
 
-BROKEN=		Size mismatch
-
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE} \
-		 	--sysconfdir=${PREFIX}/share/thcrut
+		 	--sysconfdir=${DATADIR}
 
 .include <bsd.port.mk>
