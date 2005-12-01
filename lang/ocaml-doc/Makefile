@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08
+PORTVERSION=	3.09
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
