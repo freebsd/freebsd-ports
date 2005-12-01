@@ -8,7 +8,10 @@
 PORTNAME=	libslang
 PORTVERSION=	1.4.9
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
+		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v1.4/ \
+		ftp://ftp.ntua.gr/pub/lang/slang/slang/v1.4/ \
+		ftp://ftp.plig.org/pub/slang/v1.4/
 DISTNAME=	slang-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
