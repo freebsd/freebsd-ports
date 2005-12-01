@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.03003
+PORTVERSION=	0.04000
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSTROUT
 PKGNAMEPREFIX=	p5-
+DISTNAME=       ${PORTNAME}-0.04
 
 MAINTAINER=	lars@balker.dk
 COMMENT=	Extensible and flexible object <-> relational mapper
@@ -18,15 +19,17 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 BUILD_DEPENDS=	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-DBD-SQLite>=1.08:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Class-C3>=0.07:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-Class-Trigger>=0:${PORTSDIR}/devel/p5-Class-Trigger \
+		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
