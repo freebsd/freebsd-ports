@@ -1,0 +1,6 @@
+MD5 (mlton-20041109-1.i386-freebsd.tbz) = 20253620c65f97e62e5356e182d88333
+SHA256 (mlton-20041109-1.i386-freebsd.tbz) = eb311c8cebf721e9a9cd36c115b754725c6301f0cca5877c0f467d0765580067
+SIZE (mlton-20041109-1.i386-freebsd.tbz) = 3704706
+MD5 (mlton-20041109-1.freebsd.src.tgz) = 14432457b2858ce25e645a93d3dedf55
+SHA256 (mlton-20041109-1.freebsd.src.tgz) = 5467959bcf65df5ad2bf43870b4f43747eb83446115c188eebeeb4dce3bd9a5a
+SIZE (mlton-20041109-1.freebsd.src.tgz) = 2488842
