@@ -7,6 +7,7 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/
 
