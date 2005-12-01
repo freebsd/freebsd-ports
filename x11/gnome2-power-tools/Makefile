@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-power-tools/Makefile,v 1.62 2005/10/06 01:26:06 marcus Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-power-tools
 
