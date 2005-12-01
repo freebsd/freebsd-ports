@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20041222
+PORTVERSION=	20050424
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
 DISTNAME=	awk
@@ -16,13 +16,12 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
-BROKEN=		Size mismatch
-
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
 MAN1=		nawk.1
 CFLAGS+=	-DHAS_ISBLANK
+PLIST_FILES=	bin/nawk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/a.out ${PREFIX}/bin/nawk
