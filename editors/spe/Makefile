@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SPE
-PORTVERSION=	0.8.0a
+PORTVERSION=	0.8.0b
 CATEGORIES=	editors devel python
 MASTER_SITES=	http://download.berlios.de/python/ \
 		${MASTER_SITE_SOURCEFORGE}
