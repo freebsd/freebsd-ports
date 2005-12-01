@@ -4,11 +4,11 @@ bin/kcdscr
 share/locale/en_GB/LC_MESSAGES/kcd.mo
 share/locale/en_GB.UTF-8/LC_MESSAGES/kcd.mo
 share/locale/en_US.UTF-8/LC_MESSAGES/kcd.mo
-%%PORTDOCS%%share/doc/kcd/README
-%%PORTDOCS%%share/examples/kcd/kcd.csh.init
-%%PORTDOCS%%share/examples/kcd/kcd.sh.init
-%%PORTDOCS%%@dirrm share/examples/kcd
-%%PORTDOCS%%@dirrm share/doc/kcd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/kcd.csh.init
+%%PORTDOCS%%%%EXAMPLESDIR%%/kcd.sh.init
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/share/locale/en_GB.UTF-8/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/en_GB.UTF-8 2> /dev/null || true
 @unexec rmdir %D/share/locale/en_US.UTF-8/LC_MESSAGES 2> /dev/null || true
