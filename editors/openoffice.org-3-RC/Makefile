@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openoffice.org
-PORTVERSION=	2.0.0
+PORTNAME?=	openoffice.org
+PORTVERSION?=	2.0.0
 PORTREVISION=	1
-CATEGORIES+=	editors
+CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -54,7 +54,7 @@ JAVA_VENDOR=	bsdjava
 .include <${FILESDIR}/Makefile.localized>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Install lang/perl5.8 then try again
+IGNORE=		install lang/perl5.8 then try again
 .endif
 
 CODELINE=		680
