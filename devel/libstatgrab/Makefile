@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 
 DIST_SUBDIR=	i-scream

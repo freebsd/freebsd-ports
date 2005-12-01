@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.jibble.org/files/ \
 		ftp://ftp.i-scream.org/pub/www.jibble.org/files/ \
 		http://www.i-scream.org/pub/www.jibble.org/files/
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	PircBot Java IRC Bot Framework
 
 USE_ZIP=	yes

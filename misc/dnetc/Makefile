@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
 # This is architecture dependent
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Distributed.net distributed computing project client
 
 # These are architecture dependent

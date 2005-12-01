@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
 DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
 RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww

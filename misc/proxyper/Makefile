@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper/ \
 		http://http.distributed.net/pub/dcti/proxyper/
 DISTNAME=	proxyper${PORTVERSION}-freebsd-x86
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	The official distributed.net v2 personal proxy
 
 # There's a "b" suffix on the version, but not the directory

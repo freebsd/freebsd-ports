@@ -11,7 +11,7 @@ CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	JAlbum${PORTVERSION}
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Web photo album generator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sys
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tim@bishnet.net
+MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Try every conceivable way to get full hostname
 
 PERL_CONFIGURE=	yes
