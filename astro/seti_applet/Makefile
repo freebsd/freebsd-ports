@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An applet that displays current status of seti@home client
 
+DEPRECATED=	Will stop working on 2005-12-15 (see http://setiathome.ssl.berkeley.edu/)
+EXPIRATION_DATE=2005-12-15
+
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 

@@ -9,8 +9,11 @@ PORTREVISION=	4
 CATEGORIES=	astro linux
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Donate idle cycles to the search for space aliens - Linux i686 version
+
+DEPRECATED=	Will stop working on 2005-12-15 (see http://setiathome.ssl.berkeley.edu/), use astro/boinc-setiathome.
+EXPIRATION_DATE=2005-12-15
 
 # Global variables
 #

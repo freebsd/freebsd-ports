@@ -13,8 +13,11 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${PORT_HOST}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER?=	cyrille.lefevre@laposte.net
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Donate idle cycles to the search for space aliens
+
+DEPRECATED=	Will stop working on 2005-12-15 (see http://setiathome.ssl.berkeley.edu/), use astro/boinc-setiathome.
+EXPIRATION_DATE=2005-12-15
 
 .include <bsd.port.pre.mk>
 
