@@ -1,0 +1,8 @@
+ExtUtils::AutoInstall lets module writers to specify a more
+sophisticated form of dependency information than the PREREQ_PM
+option offered by ExtUtils::MakeMaker.
+
+This module works best with the Module::Install framework,
+a drop-in replacement for MakeMaker.
+
+WWW: http://search.cpan.org/dist/ExtUtils-AutoInstall/
