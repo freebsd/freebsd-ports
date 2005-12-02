@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Prototype
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -25,6 +25,8 @@ MAN3=		HTML::Prototype.3 \
 		HTML::Prototype::Controls.3 \
 		HTML::Prototype::DragDrop.3 \
 		HTML::Prototype::Effects.3 \
+		HTML::Prototype::Helper::Tag.3 \
+		HTML::Prototype::Helper.3 \
 		HTML::Prototype::Js.3
 
 .include <bsd.port.pre.mk>
