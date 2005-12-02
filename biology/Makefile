@@ -45,6 +45,7 @@
     SUBDIR += p5-Bio-ASN1-EntrezGene
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-bioperl
+    SUBDIR += p5-bioperl-devel
     SUBDIR += paml
     SUBDIR += phylip
     SUBDIR += platon
