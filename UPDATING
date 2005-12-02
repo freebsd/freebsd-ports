@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20051202:
+  AFFECTS: users of www/plone and cmf oriented zope modules
+  AUTHOR: filippo.natali@gmail.com
+
+  www/plone has been updated to the latest 2.1.1 version. Some
+  zope modules are unfortunately incompatible with this version
+  of plone.
+
+20051202:
   AFFECTS: users of security/racoon and security/ipsec-tools
   AUTHOR: lawrance@FreeBSD.org
 
