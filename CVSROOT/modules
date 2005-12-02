@@ -7818,6 +7818,7 @@ p5-Exception-Class-DBI	ports/databases/p5-Exception-Class-DBI
 p5-Expect	ports/lang/p5-Expect
 p5-Exporter-Lite	ports/devel/p5-Exporter-Lite
 p5-Exporter-Tidy	ports/devel/p5-Exporter-Tidy
+p5-ExtUtils-AutoInstall	ports/devel/p5-ExtUtils-AutoInstall
 p5-ExtUtils-CBuilder	ports/devel/p5-ExtUtils-CBuilder
 p5-ExtUtils-Constant	ports/devel/p5-ExtUtils-Constant
 p5-ExtUtils-Depends	ports/devel/p5-ExtUtils-Depends
