@@ -509,6 +509,7 @@
     SUBDIR += p5-Catalyst-Plugin-Static
     SUBDIR += p5-Catalyst-Plugin-SubRequest
     SUBDIR += p5-Catalyst-Plugin-Textile
+    SUBDIR += p5-Catalyst-Plugin-XMLRPC
     SUBDIR += p5-Catalyst-View-HTML-Template
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Class-DBI-FromForm
