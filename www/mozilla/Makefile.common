@@ -6,29 +6,48 @@
 # $FreeBSD$
 #    $MCom: ports/www/mozilla/Makefile.common,v 1.17 2005/11/29 08:40:08 ahze Exp $
 
+# This file contains some reusable components for mozilla ports. It's of
+# use primarily to apps from the mozilla project itself (such as Firefox,
+# Thunderbird, etc.), and probably won't be of use for gecko-based ports
+# like epiphany, galeon, etc. The reusable components for gecko-based ports
+# lives in www/mozilla/bsd.gecko.mk.
+#
+#
 # Ports can use the following:
 #
-# NOGECKO_INSTALL
-# NOGECKO_PLIST		Do not auto-create plist
-# NOMOZCONFIG		Use CONFIGURE_ARGS instead of .mozconfig
+# MOZILLA_PLIST_DIRS	List of directories to descend into when
+#			installing and creating the plist
+# MOZ_PIS_SCRIPTS	List of scripts residing in ${FILESDIR} to
+#			be filtered through MOZCONFIG_SED and installed
+#			along with our Pluggable Init Scripts (PIS)
+# MOZ_SED_ARGS		sed(1) commands through which MOZ_PIS_SCRIPTS
+#			are filtered. There is a default set defined here,
+#			so you probably want to add to MOZ_SED_ARGS rather
+#			than clobber it
 #
-# MOZILLA_PLIST_DIRS	Listing of directories to create plist and/or
-#			 install
-# MOZ_PIS_SCRIPTS	List scripts listed in ${FILESDIR} to filter
-#			 through MOZCONFIG_SED and install with mozilla
-#			 PIS scripts.
-# MOZ_SED_ARGS		Add or replace to MOZ_SED_ARGS
-#
-# MOZ_OPTIONS		Add more configure arguments to .mozconfig
-# MOZ_MK_OPTIONS	Add more make arguments to .mozconfig
-# MOZ_EXPORT		Add export variables to .mozconfig
-# MOZ_EXTENSIONS	Override "default" extensions
-# MOZ_GRAPHICS		Override "default" graphics decoders
-# MOZ_PROTOCOLS		Override "default" protocols
+# MOZ_OPTIONS		configure arguments (added to .mozconfig). If
+#			NOMOZCONFIG is defined, you probably want to set
+#			CONFIGURE_ARGS+=${MOZ_OPTIONS}
+# MOZ_MK_OPTIONS	make(1) arguments (added to .mozconfig). If
+#			NOMOZCONFIG is defined, you probably want to set
+#			MAKE_ARGS+=${MOZ_MK_OPTIONS}
+# MOZ_EXPORT		environment variables for the build process
+#			(added to .mozconfig). If NOMOZCONFIG is defined,
+#			you probably want to set MAKE_ENV+=${MOZ_EXPORT}
+# MOZ_EXTENSIONS	A list of extensions to build
+# MOZ_GRAPHICS		A list of image decoders to build
+# MOZ_PROTOCOLS		A list of protocols to build (http, ftp, etc.)
 #
 # PORT_MOZCONFIG	Defaults to ${FILESDIR}/mozconfig.in, but can
 #			be set to a generic mozconfig included with
 #			the port
+#
+# NOGECKO_INSTALL	Don't install the built gecko (most likely
+#			for testing)
+# NOGECKO_PLIST		Don't create a dynamically-generated playlist
+# NOMOZCONFIG		Don't drop a customized .mozconfig into the
+#			build directory. Options will have to be
+#			specified in CONFIGURE_ARGS instead
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -313,9 +332,7 @@ gecko-create-plist:
 .endfor
 	${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${PLIST}
-.if ${MOZILLA_PLIST_DIRS:Mshare/idl}!=""
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/idl 2>/dev/null || ${TRUE}" >> ${PLIST}
-.endif
 .endif # !defined(NOGECKO_PLIST)
 
 do-install: gecko-do-install
