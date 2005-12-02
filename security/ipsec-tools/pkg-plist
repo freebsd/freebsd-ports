@@ -1,6 +1,5 @@
 sbin/racoon
 sbin/setkey
-etc/rc.d/racoon.sh
 include/libipsec/libpfkey.h
 include/racoon/admin.h
 include/racoon/evt.h
@@ -26,10 +25,8 @@ lib/libracoon.so.0
 sbin/plainrsa-gen
 sbin/racoonctl
 %%EXAMPLESDIR%%/psk.txt
-%%EXAMPLESDIR%%/psk.txt.in
 %%EXAMPLESDIR%%/psk.txt.sample
 %%EXAMPLESDIR%%/racoon.conf
-%%EXAMPLESDIR%%/racoon.conf.in
 %%EXAMPLESDIR%%/racoon.conf.sample
 %%EXAMPLESDIR%%/racoon.conf.sample-gssapi
 %%EXAMPLESDIR%%/racoon.conf.sample-inherit
