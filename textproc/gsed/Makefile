@@ -6,72 +6,57 @@
 #
 
 PORTNAME=	sed
-PORTVERSION=	4.0.9
-PORTREVISION=	1
+PORTVERSION=	4.1.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	g
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	The GNU stream editor
 
 # Global variables
-#
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS+=--disable-nls
 USE_GMAKE=	yes
-
 INFO=		sed
 MAN1=		gsed.1
 
 # Local variables
-#
-
 PATCH_SUBDIRS=	. doc lib sed
 DATADIR=	${PREFIX}/share/${PKGBASE}
-
 SAMP_FILES=	binary*.sed dc.sed
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
-
-DOC_FILES=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
+PORTDOCS=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
-# Post-configure
-#
+post-patch:
+	@${REINPLACE_CMD} -e 's,^\* sed:,* CNU sed:,' \
+		${WRKSRC}/doc/config.texi
 
-post-configure: patch-makefiles
-
-patch-makefiles:
+post-configure:
 .for subdir in ${PATCH_SUBDIRS}
-	@${REINPLACE_CMD} -e 's|s,x,x,|s,^,g,|' ${WRKSRC}/${subdir}/Makefile
+	@${REINPLACE_CMD} -e 's|s,x,x,|s,^,g,|' \
+			  -e 's|^doc_DATA|#doc_DATA|' \
+		${WRKSRC}/${subdir}/Makefile
 .endfor
 
-# Post-install
-#
-
-post-install: install-sample-files install-doc-files
-
-install-sample-files:
+post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${EXAMPLESDIR}
+.for f in ${SAMP_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/testsuite/${f} ${EXAMPLESDIR}
 .endfor
-
-install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
 # Maintainer only
-#
 test:
 	@cd ${WRKSRC}/testsuite; ${MAKE} check
 
