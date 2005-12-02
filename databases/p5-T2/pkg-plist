@@ -6,6 +6,7 @@ bin/t2-write-js.pl
 %%SITE_PERL%%/T2/Association.pm
 %%SITE_PERL%%/T2/Attribute.pm
 %%SITE_PERL%%/T2/Class.pm
+%%SITE_PERL%%/T2/DBSetup.pm
 %%SITE_PERL%%/T2/Method.pm
 %%SITE_PERL%%/T2/Schema.pm
 %%SITE_PERL%%/T2/Storage.pm
