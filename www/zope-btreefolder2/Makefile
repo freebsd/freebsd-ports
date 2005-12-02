@@ -22,6 +22,8 @@ DIST_SUBDIR=	zope
 
 WRKSRC=		${WRKDIR}/BTreeFolder2
 
+CONFLICTS=	plone-[0-9]*
+
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py  ${WRKSRC}/tests
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}

@@ -25,6 +25,8 @@ ZOPEPRODUCTNAME=PlacelessTranslationService
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
+CONFLICTS=	plone-[0-9]*
+
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
 
