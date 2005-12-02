@@ -34,7 +34,13 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		RCUBEROOT=${RCUBEROOT}
 
-WANT_PHP_MOD=	yes
+WANT_PHP_WEB=	yes
+
+OPTIONS=	MYSQL "Use MySQL backend" on \
+		PGSQL "Use PostgreSQL backend" off \
+		SQLITE "Use SQLite backend" off
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
@@ -47,6 +53,8 @@ USE_PHP+=	pgsql
 .if defined(WITH_SQLITE)
 USE_PHP+=	sqlite
 .endif
+
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 do-install:
 	${MKDIR} ${RCUBEROOT}
@@ -65,4 +73,4 @@ post-install:
 	@${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
