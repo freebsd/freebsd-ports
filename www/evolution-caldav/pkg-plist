@@ -1,3 +1,4 @@
 lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-evolution-caldav.so
 lib/evolution/%%EVO_VERSION%%/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendcaldav.so
+share/locale/de/LC_MESSAGES/evolution-caldav-%%EVO_VERSION%%.mo
