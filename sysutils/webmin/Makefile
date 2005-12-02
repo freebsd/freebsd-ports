@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.240
-PORTREVISION=	2
+PORTVERSION=	1.250
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webmin.com/updates/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webadmin
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_THEMES}
+MASTER_SITES=	http://www.webmin.com/updates/:up \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	webadmin/:sf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -26,9 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	mysql-1.240-9.wbm.gz \
-		updown-1.240-8.wbm.gz
-WEBMIN_THEMES=
+WEBMIN_MODULES=
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
