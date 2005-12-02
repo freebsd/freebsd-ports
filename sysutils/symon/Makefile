@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.71
-PORTREVISION=	2
+PORTVERSION=	2.72
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
@@ -24,11 +23,11 @@ WITHOUT_SYMUX=	yes
 .endif
 
 .if !defined(WITHOUT_SYMUX)
-LIB_DEPENDS=	rrd.2:${PORTSDIR}/net/rrdtool
+LIB_DEPENDS+=	rrd.2:${PORTSDIR}/net/rrdtool
 .endif
 
 .if defined(WITHOUT_SYMUX) && defined(WITHOUT_SYMON)
-IGNORE=	You have defined both WITHOUT_SYMUX or WITHOUT_RRD *and* WITHOUT_SYMON
+IGNORE=	you have defined both WITHOUT_SYMUX or WITHOUT_RRD *and* WITHOUT_SYMON
 .endif
 
 SUBDIR=		lib
