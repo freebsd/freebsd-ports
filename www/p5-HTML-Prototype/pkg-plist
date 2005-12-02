@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTML/Prototype/Controls.pm
 %%SITE_PERL%%/HTML/Prototype/DragDrop.pm
 %%SITE_PERL%%/HTML/Prototype/Effects.pm
+%%SITE_PERL%%/HTML/Prototype/Helper.pm
+%%SITE_PERL%%/HTML/Prototype/Helper/Tag.pm
 %%SITE_PERL%%/HTML/Prototype/Js.pm
+@unexec rmdir %D/%%SITE_PERL%%/HTML/Prototype/Helper 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/HTML/Prototype 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
