@@ -10,7 +10,7 @@ PORTVERSION=	1.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 
-MAINTAINER=	sam@rfc1149.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sockets library for Ada
 
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat \

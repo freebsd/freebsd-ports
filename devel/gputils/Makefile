@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sam@rfc1149.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPUTILS is a set of utilities for Microchip PIC microcontrollers
 
 GNU_CONFIGURE=	yes
