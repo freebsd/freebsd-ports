@@ -229,6 +229,9 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # Enable Sender Policy Framework (SPF) checking in exiscan-acl
 #WITH_SPF=		yes
 #
+# Enable DomainKeys support
+#WITH_DOMAINKEYS=	yes
+#
 # Enable Sender Rewriting Scheme (SRS)
 #WITH_SRS=		yes
 #
@@ -492,6 +495,14 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
 .else
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 		-e 's,XX_SPF_LIBS_XX,,'
+.endif
+
+.if defined(WITH_DOMAINKEYS)
+LIB_DEPENDS+=	domainkeys.3:${PORTSDIR}/mail/libdomainkeys
+SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,-ldomainkeys,' \
+		-e 's,^\# (EXPERIMENTAL_DOMAINKEYS=),\1,'
+.else
+SEDLIST+=	-e 's,XX_DOMAINKEYS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_SRS)
