@@ -7,6 +7,7 @@ bin/spork
 %%SITE_PERL%%/Spork/Registry.pm
 %%SITE_PERL%%/Spork/Command.pm
 %%SITE_PERL%%/Spork/Config.pm
+%%SITE_PERL%%/Spork/Plugin.pm
 %%SITE_PERL%%/Spork/Template/TT2.pm
 %%SITE_PERL%%/Spork/Formatter/Autringy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spork/.packlist
