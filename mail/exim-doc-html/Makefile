@@ -19,13 +19,13 @@ COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
 
+DOCFORMAT?=	html
+DISTDOCFORMAT?=	${DOCFORMAT}
+
 .if ${DOCFORMAT} == "info"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 MAKEINFO=	${LOCALBASE}/bin/makeinfo
 .endif
-
-DOCFORMAT?=	html
-DISTDOCFORMAT?=	${DOCFORMAT}
 
 .if !defined(NOPORTDOCS)
 .if ${DOCFORMAT} == "html"
