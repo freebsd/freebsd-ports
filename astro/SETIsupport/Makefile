@@ -16,6 +16,9 @@ EXTRACT_ONLY=
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	JAVA application that shows current state of seti@home client
 
+DEPRECATED=	Will stop working on 2005-12-15 (see http://setiathome.ssl.berkeley.edu/)
+EXPIRATION_DATE=2005-12-15
+
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
 		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
