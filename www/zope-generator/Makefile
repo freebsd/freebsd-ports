@@ -23,6 +23,8 @@ DIST_SUBDIR=	zope
 WRKSRC=	${WRKDIR}/${PORTNAME}
 PLIST=	${WRKDIR}/pkg-plist
 
+CONFLICTS=	plone-[0-9]*
+
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 

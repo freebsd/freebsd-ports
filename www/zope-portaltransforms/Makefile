@@ -26,6 +26,8 @@ USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
+CONFLICTS=	plone-[0-9]*
+
 ZOPEPRODUCTNAME=	PortalTransforms
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 PLIST=		${WRKDIR}/pkg-plist

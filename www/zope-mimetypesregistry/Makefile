@@ -27,6 +27,8 @@ ZOPEPRODUCTNAME=	MimetypesRegistry
 WRKSRC=	${WRKDIR}/${ZOPEPRODUCTNAME}
 PLIST=	${WRKDIR}/pkg-plist
 
+CONFLICTS=	plone-[0-9]*
+
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
