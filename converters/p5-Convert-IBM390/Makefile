@@ -1,12 +1,12 @@
 # New ports collection makefile for:	p5-Convert-IBM390
 # Date created:				13 Aug 2005
-# Whom:					Jason Burges <dev@fenux.net>
+# Whom:					Jason Burgess <dev@fenux.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Convert-IBM390
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
