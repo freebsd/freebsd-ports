@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION:S/_/./g}
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	jdk-1_5_0-doc
@@ -27,7 +28,7 @@ DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDet
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-PORTDOCS=	api guide images index.html install-notes relnotes tooldocs
+PORTDOCS=	api guide images index.html relnotes tooldocs
 
 .include <bsd.port.pre.mk>
 
