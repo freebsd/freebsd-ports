@@ -31,8 +31,6 @@ USE_GCC=	3.4+
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-svg		\
-		--enable-svg-renderer=cairo \
 		--enable-system-cairo	\
 		--enable-official-branding \
 		--enable-canvas
@@ -48,6 +46,10 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on alpha during post-build
+.endif
+
+.if ${OSVERSION} >= 504101
+MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
 
 .if ${PERL_LEVEL} < 500600
