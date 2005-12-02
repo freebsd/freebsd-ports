@@ -7,6 +7,7 @@
 
 PORTNAME=	taskjuggler
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
@@ -14,7 +15,7 @@ MAINTAINER=	povey@wedgetail.com
 COMMENT=	A project management tool for UNIX based operating systems
 
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
-		${SITE_PERL}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
+		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		${SITE_PERL}/PostScript/Simple.pm:${PORTSDIR}/print/p5-PostScript-Simple \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		poster:${PORTSDIR}/print/poster \
