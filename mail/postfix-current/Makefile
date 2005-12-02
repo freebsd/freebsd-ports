@@ -30,24 +30,24 @@ USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 
-OPTIONS=	PCRE		"Perl Compatible Regular Expressions" on \
-		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)" off \
-		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)" off \
-		SASLKRB		"If your SASL requires Kerberos select this option" off \
-		SASLKRB5	"If your SASL requires Kerberos5 select this option" off \
-		SASLKRB5MIT	"If your SASL requires MIT Kerberos5 select this option" off\
-		TLS		"Enable SSL and TLS support" off \
-		DB3		"Berkeley DB3 (required if SASL built with DB3)" off \
-		DB40		"Berkeley DB4.0 (required if SASL built with DB4.0)" off \
-		DB41		"Berkeley DB4.1 (required if SASL built with DB4.1)" off \
-		DB42		"Berkeley DB4.2 (required if SASL built with DB4.2)" off \
-		DB43		"Berkeley DB4.3 (required if SASL built with DB4.3)" off \
-		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)" off \
-		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)" off \
-		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)" off \
-		CDB		"CDB maps lookups" off \
-		NIS		"NIS maps lookups" off \
-		TEST		"SMTP/LMTP test server and generator" off
+OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
+		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
+		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		off \
+		SASLKRB		"If your SASL req. Kerberos select this option"		off \
+		SASLKRB5	"If your SASL req. Kerberos5 select this option"	off \
+		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	off \
+		TLS		"Enable SSL and TLS support"				off \
+		DB3		"Berkeley DB3 (required if SASL built with DB3)"	off \
+		DB40		"Berkeley DB4.0 (required if SASL built with DB4.0)"	off \
+		DB41		"Berkeley DB4.1 (required if SASL built with DB4.1)"	off \
+		DB42		"Berkeley DB4.2 (required if SASL built with DB4.2)"	off \
+		DB43		"Berkeley DB4.3 (required if SASL built with DB4.3)"	off \
+		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	off \
+		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	off \
+		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	off \
+		CDB		"CDB maps lookups"					off \
+		NIS		"NIS maps lookups"					off \
+		TEST		"SMTP/LMTP test server and generator"			off
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
@@ -111,20 +111,20 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
 .if defined(WITH_SASLKRB)
-.if defined(WITH_SASLKRB5) || defined(WITH_SASLKRB5MIT)
+.if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
 BROKEN=			"Select only one SASL Kerberos option"
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
 
 .if defined(WITH_SASLKRB5)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5MIT)
+.if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
 BROKEN=			"Select only one SASL Kerberos option"
 .endif
 POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
-.if defined(WITH_SASLKRB5MIT)
+.if defined(WITH_SASLKMIT)
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
 BROKEN=			"Select only one SASL Kerberos option"
 .endif
