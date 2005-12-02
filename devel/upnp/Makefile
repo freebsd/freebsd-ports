@@ -17,6 +17,8 @@ COMMENT=	Universal Plug and Play Software Development Kit
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs
 
+CONFLICTS=	upnp-1.[^2].*
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/upnp
