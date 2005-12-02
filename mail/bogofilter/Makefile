@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.96.6
+PORTVERSION=	1.0.0
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -55,7 +55,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|^#!.*perl|#! ${PERL}|' \
 		${WRKSRC}/src/tests/unsort.pl \
 		${WRKSRC}/contrib/*.pl
-	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1 t.lock3/' \
+	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \
 		${WRKSRC}/src/tests/Makefile.in
 
 .if !defined(NOPORTDOCS)
