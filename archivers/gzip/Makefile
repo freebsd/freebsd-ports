@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://sunfreeware.risq.qc.ca/SOURCES/ \
 		ftp://sunsite.belnet.be/mirror/ftp.sunfreeware.com/pub/freeware/SOURCES/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A compression utility designed to be a replacement for compress
 
 USE_REINPLACE=	yes
