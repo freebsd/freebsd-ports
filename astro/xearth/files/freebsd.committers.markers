@@ -2,7 +2,7 @@
 #
 # FreeBSD Project Committers
 #
-# In case you don't know the exact coordinates, you might find it at 
+# In case you don't know the exact coordinates, you might find it at
 # http://maps.google.com/ or http://www.heavens-above.com/
 
 #
@@ -31,8 +31,8 @@
 -34.53,		138.35,		"newton, markp"	align=left	# Adelaide, SA Australia
  35.02,		137.07,		"sada   " align=left		# Toyota, Aichi, Japan
  34.483,	136.85,		"kiri"				# Toba, Mie, Japan
- 35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan 
- 34.35,		135.30,		"yoichi"			# Osaka, Osaka, Japan	
+ 35.0,		135.47,		"maho"				# Kyoto, Kyoto, Japan
+ 34.35,		135.30,		"yoichi"			# Osaka, Osaka, Japan
  34.47,		135.26,		"matusita"			# Ikeda, Osaka, Japan
  37.56,		126.98,		"cjh,yongari"			# Seoul, South Korea
  37.56587,	126.93098,	"perky"				# Seoul, South Korea
@@ -202,7 +202,7 @@
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
  40.01942534,	-105.23914289,	"imp"				# (CORE) Boulder, CO, USA
  40.1,		-105.3,		"gibbs,ken,fsmp,will"		# Boulder, CO, USA
- 29.067,	-110.967,	"jcamou"			# Hermosillo, Sonora, Mexico 
+ 29.067,	-110.967,	"jcamou"			# Hermosillo, Sonora, Mexico
  40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  41.077919,	-111.955328,	"brandon"			# Layton, UT, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
@@ -228,7 +228,7 @@
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.596,	-122.08,	"arun"				# Union City, CA, USA
  37.38,		-122.08,	"petef"				# Mountain View, CA, USA
- 47.684091,	-122.128662,	"orion"				# Redmond, WA, USA 
+ 47.684091,	-122.128662,	"orion"				# Redmond, WA, USA
  47.756,	-122.14,	"seanc"				# Shoreline, WA, USA
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
