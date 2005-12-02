@@ -5,42 +5,55 @@
 # $FreeBSD$
 #
 
-PORTNAME=		linux-gtk-bluecurve-theme
-PORTVERSION=		0.88
-CATEGORIES=		x11-themes
-MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	1/${ARCH}/os/Fedora/RPMS
-DISTFILES=		redhat-artwork-${PORTVERSION}-1.${ARCH}.rpm
-DIST_SUBDIR=		rpm
+PORTNAME=	gtk-bluecurve-theme
+DISTVERSION=	0.117-1
+CATEGORIES=	x11-themes linux
+MASTER_SITE_SUBDIR=	3/${LINUX_ARCH}/os/Fedora/RPMS/
+DISTNAME=	redhat-artwork-${DISTVERSION}
 
-MAINTAINER=		jylefort@FreeBSD.org
-COMMENT=		Bluecurve theme for GTK1 and GTK2 from Fedora Core (Linux version)
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes (Linux version)
 
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+ONLY_FOR_ARCHS=	i386 amd64
 
-EXTRACT_CMD=		rpm2cpio.pl
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| ${CPIO} -id --quiet
+# GTK+ 1.x theme engine
+GTK1_RCDIR=	gtk
+GTK1_ENGINEDIR=	usr/lib/gtk/themes/engines
+GTK1_ENGINEDIRS=${GTK1_ENGINEDIR} usr/lib/gtk/themes usr/lib/gtk
 
-NO_WRKSUBDIR=		yes
-USE_LINUX_PREFIX=	yes
-NO_BUILD=		yes
-USE_REINPLACE=		yes
-ONLY_FOR_ARCHS=		i386
+# GTK+ 2.x theme engine
+GTK2_RCDIR=	gtk-2.0
+GTK2_ENGINEDIR=	usr/lib/gtk-2.0/2.4.0/engines
+GTK2_ENGINEDIRS=${GTK2_ENGINEDIR} usr/lib/gtk-2.0/2.4.0 usr/lib/gtk-2.0
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|include "iconrc"||' \
-		${WRKSRC}/usr/share/themes/Bluecurve/gtk-2.0/gtkrc
+EXTRA_STYLES=	BerriesAndCream Gnome Grape Lime Slate Strawberry Tangerine
+THEMES=		Bluecurve ${EXTRA_STYLES:S|^|Bluecurve-|}
+
+pre-install:
+	@${RM} -f ${PLIST}
+.for v in 1 2
+	@${ECHO_CMD} '${GTK${v}_ENGINEDIR}/libbluecurve.so' >> ${PLIST}
+.  for d in ${GTK${v}_ENGINEDIRS}
+	@${ECHO_CMD} '@unexec rmdir %D/${d} 2>/dev/null || true' >> ${PLIST}
+.  endfor
+.  for t in ${THEMES}
+	@${ECHO_CMD} 'usr/share/themes/${t}/${GTK${v}_RCDIR}/gtkrc' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm usr/share/themes/${t}/${GTK${v}_RCDIR}' >> ${PLIST}
+.  endfor
+.endfor
+.for t in ${THEMES}
+	@${ECHO_CMD} '@dirrm usr/share/themes/${t}' >> ${PLIST}
+.endfor
+	@${ECHO_CMD} '@unexec rmdir %D/usr/share/themes 2>/dev/null || true' >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/usr/share/themes/Bluecurve
-	${MKDIR} ${PREFIX}/usr/lib/gtk-2.0/2.2.0/engines
-	${MKDIR} ${PREFIX}/usr/share/themes/Bluecurve/gtk-2.0
-	${INSTALL_DATA} ${WRKSRC}/usr/lib/gtk-2.0/2.2.0/engines/libbluecurve.so ${PREFIX}/usr/lib/gtk-2.0/2.2.0/engines
-	${INSTALL_DATA} ${WRKSRC}/usr/share/themes/Bluecurve/gtk-2.0/gtkrc ${PREFIX}/usr/share/themes/Bluecurve/gtk-2.0
-	${MKDIR} ${PREFIX}/usr/lib/gtk/themes/engines
-	${INSTALL_DATA} ${WRKSRC}/usr/lib/gtk/themes/engines/libbluecurve.so ${PREFIX}/usr/lib/gtk/themes/engines
-	${MKDIR} ${PREFIX}/usr/share/themes/Bluecurve/gtk
-	${INSTALL_DATA} ${WRKSRC}/usr/share/themes/Bluecurve/gtk/gtkrc ${PREFIX}/usr/share/themes/Bluecurve/gtk
+.for v in 1 2
+	${MKDIR} ${PREFIX}/${GTK${v}_ENGINEDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${GTK${v}_ENGINEDIR}/libbluecurve.so ${PREFIX}/${GTK${v}_ENGINEDIR}
+.  for t in ${THEMES}
+	${MKDIR} ${PREFIX}/usr/share/themes/${t}/${GTK${v}_RCDIR}
+	${INSTALL_DATA} ${WRKSRC}/usr/share/themes/${t}/${GTK${v}_RCDIR}/gtkrc ${PREFIX}/usr/share/themes/${t}/${GTK${v}_RCDIR}
+.  endfor
+.endfor
 
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
