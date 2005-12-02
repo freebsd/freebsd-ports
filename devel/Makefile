@@ -1624,6 +1624,7 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += upnp
+    SUBDIR += upnp104
     SUBDIR += uppaal
     SUBDIR += ups-debug
     SUBDIR += ustl
