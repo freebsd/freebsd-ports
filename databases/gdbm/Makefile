@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	The GNU database manager
 
 USE_GMAKE=	yes
