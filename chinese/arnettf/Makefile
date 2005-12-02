@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	arnettf
-PORTVERSION=	0.0.20041031
+PORTVERSION=	0.0.20050501
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://debian.linux.org.tw/pub/3Anoppix/people/arne/uming/:uming \
+MASTER_SITES=	http://www.linuxhall.org/download/fonts/:uming \
 		http://debian.linux.org.tw/pub/3Anoppix/people/arne/ukai/:ukai
-DISTFILES=	ttf-arphic-uming_0.0.20041031-1.tar.gz:uming \
-		ttf-arphic-ukai_0.0.20041031-1.tar.gz:ukai
+PKGNAMEPREFIX=	zh-
+DISTFILES=	ttf-arphic-uming_0.1-0.dot.1.tar.gz:uming \
+		ttf-arphic-ukai_0.0.20050501-1.tar.gz:ukai
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Arne TrueType Font is combine of arphic ming and kai fonts
 
 NO_WRKSUBDIR=	yes
@@ -23,8 +24,8 @@ TTF=		ukai.ttf uming.ttf
 
 do-install:
 	@${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-ukai-0.0.20041031/ukai.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-uming-0.0.20041031/uming.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-ukai-0.0.20050501/ukai.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-uming-0.1/uming.ttf ${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
