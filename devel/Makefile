@@ -1147,7 +1147,6 @@
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
-    SUBDIR += p5-Test-Builder-Tester
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd

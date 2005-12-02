@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Test/Builder/Tester.pm
-%%SITE_PERL%%/Test/Builder/Tester/Color.pm
-@dirrm %%SITE_PERL%%/Test/Builder/Tester
-@dirrm %%SITE_PERL%%/Test/Builder
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
