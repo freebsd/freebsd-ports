@@ -19,6 +19,9 @@ COMMENT=	Universal Plug and Play Software Development Kit
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs
 
+CONFLICTS=	upnp-1.[^0].*
+LATEST_LINK=	upnp104
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
