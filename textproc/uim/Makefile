@@ -7,9 +7,10 @@
 
 PORTNAME=	uim
 PORTVERSION=	0.4.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://uim.freedesktop.org/releases/
+MASTER_SITES=	http://uim.freedesktop.org/releases/ \
+		http://www.tuhep.phys.tohoku.ac.jp/~jhpark/uim/:byeoru
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
@@ -30,6 +31,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+BYEORU_FILES=	byeoru.scm byeoru-custom.scm byeoru-key-custom.scm \
+		byeoru-symbols.scm byeoru-dic.scm
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BYEORU_FILES:S/$/:byeoru/}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAN1=		uim-xim.1
 
@@ -69,6 +74,11 @@ PLIST_SUB+=	CANNA=""
 .else
 PLIST_SUB+=	CANNA="@comment "
 .endif
+
+post-extract:
+	for i in ${BYEORU_FILES}; do \
+		${CAT} ${DISTDIR}/$$i >${WRKSRC}/scm/$$i; \
+	done
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm

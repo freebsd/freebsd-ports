@@ -58,6 +58,11 @@ share/uim/direct.scm
 share/uim/generic-custom.scm
 share/uim/generic-key-custom.scm
 share/uim/generic.scm
+share/uim/byeoru.scm
+share/uim/byeoru-custom.scm
+share/uim/byeoru-key-custom.scm
+share/uim/byeoru-symbols.scm
+share/uim/byeoru-dic.scm
 share/uim/hangul.scm
 share/uim/hangul2.scm
 share/uim/hangul3.scm
