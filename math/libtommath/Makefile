@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtommath
-PORTVERSION=	0.36
-PORTREVISION=	1
+PORTVERSION=	0.37
 CATEGORIES=	math
 MASTER_SITES=	http://math.libtomcrypt.org/files/
 DISTNAME=	ltm-${PORTVERSION}
@@ -20,5 +19,8 @@ MAKEFILE=	makefile
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
+
+PLIST_FILES=	include/tommath.h include/tommath_class.h \
+		include/tommath_superclass.h lib/libtommath.a
 
 .include <bsd.port.mk>
