@@ -17,6 +17,7 @@ Recent changes:
 0.18 - Performance improvements to the XS version.
 0.19 - Fixed a bug in unpackeb.
 0.20 - Fixed memory leaks in CF_num2packed and CF_num2zoned.
+0.21 - Added '@' option to unpackeb at the request of Marc (CPAN bug 15461).
 
 Copyright 2001 Geoffrey Rommel.  This program is free software;
 you can redistribute it and/or modify it under the same terms as Perl
