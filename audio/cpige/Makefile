@@ -7,6 +7,7 @@
 
 PORTNAME=	cpige
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/
 
@@ -16,7 +17,6 @@ COMMENT=	Icecast/Shoutcast stream ripper
 MAKE_ARGS=	CC="${CC}" CLIBS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
