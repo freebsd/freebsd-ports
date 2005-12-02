@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051202:
+  AFFECTS: users of security/racoon and security/ipsec-tools
+  AUTHOR: lawrance@FreeBSD.org
+
+  security/racoon has been removed.  You should migrate to its
+  replacement, security/ipsec-tools.  No configuration changes will
+  be required.
+
+  The default configuration file location has changed for ipsec-tools.
+  You will need to move your racoon configuration files to the new
+  location /usr/local/etc/racoon.  Alternatively, add this line in
+  rc.conf to continue using the old location:
+
+  racoon_flags="-f /usr/local/etc"
+
 20051201:
   AFFECTS: users of lang/ocaml
   AUTHOR: burelle@lri.fr
