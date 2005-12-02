@@ -131,6 +131,10 @@
 # srs_recipient       (string*)     SRS recipient
 # srs_status          (string*)     SRS status
 
+#WITHOUT_DOMAINKEYS
+# Enable Yahoo DomainKeys support.
+# DomainKeys support depends on exiscan.
+
 #WITHOUT_TCP_WRAPPERS
 # Link against libwrap to support /etc/hosts.allow access control.
 
@@ -261,6 +265,9 @@ WITHOUT_SPF?=yes
 .endif
 .ifndef WITH_SRS
 WITHOUT_SRS?=yes
+.endif
+.ifndef WITH_DOMAINKEYS
+WITHOUT_DOMAINKEYS?=yes
 .endif
 .ifndef WITH_TCP_WRAPPERS
 WITHOUT_TCP_WRAPPERS?=yes
