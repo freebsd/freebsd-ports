@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
@@ -16,66 +16,36 @@ DIST_SUBDIR=	zope
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
-RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
-
 USE_ZOPE=	yes
 USE_PYTHON=	yes
+PLIST=          ${WRKDIR}/pkg-plist
 
-WRKSRC=		${WRKDIR}/Plone-${PORTVERSION}
-PLIST=		${WRKDIR}/pkg-plist
-MODULES=	CMFPlone
+CONFLICTS=	zope-archetypes-[0-9]* \
+		zope-btreefolder2-[0-9]* \
+		zope-cmf-[0-9]* \
+		zope-cmfactionicons-[0-9]* \
+		zope-cmfformcontroller-[0-9]* \
+		zope-cmfquickinstaller-[0-9]* \
+		zope-generator-[0-9]* \
+		zope-groupuserfolder-[0-9]* \
+		zope-kupu-[0-9]* \
+		zope-mimetypesregistry-[0-9]* \
+		zope-placelesstranslationservice-[0-9]* \
+		zope-plonelanguagetool-[0-9]* \
+		zope-portaltransforms-[0-9]* \
+		zope-validation-[0-9]*
 
-OPTIONS=	FORMULATOR "Install Formulator port" off \
-		BTREEFOLDER2 "Install BTreeFolder2 port" off \
-		CMFQUICKINSTALLER "Install CMFQuickInstallerTool port" off \
-		CMFACTIONICONS "Install CMFActionIcons port" off \
-		CMFFORMCONTROLLER "Install CMFFormController port" off \
-		GROUPUSERFOLDER "Install GroupUserFolder port" off \
-		PLTRANSSERVICE "Install PlacelessTranslationService port" off
+PLIST_SUB=	ZOPEPRODUCTDIR=${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FORMULATOR)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Formulator/__init__.py:${PORTSDIR}/www/zope-formulator
-.else
-MODULES+=	Formulator
-.endif
-
-.if defined(WITH_BTREEFOLDER2)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/BTreeFolder2/__init__.py:${PORTSDIR}/www/zope-btreefolder2
-.else
-MODULES+=	BTreeFolder2
-.endif
-
-.if defined(WITH_CMFQUICKINSTALLER)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFQuickInstallerTool/__init__.py:${PORTSDIR}/www/zope-cmfquickinstaller
-.else
-MODULES+=	CMFQuickInstallerTool
-.endif
-
-.if defined(WITH_CMFACTIONICONS)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFActionIcons/__init__.py:${PORTSDIR}/www/zope-cmfactionicons
-.else
-MODULES+=	CMFActionIcons
-.endif
-
-.if defined(WITH_CMFFORMCONTROLLER)
-RUN_DEPENDS+=   ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/__init__.py:${PORTSDIR}/www/zope-cmfformcontroller
-.else
-MODULES+=   CMFFormController
-.endif
-
-.if defined(WITH_GROUPUSERFOLDER)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/GroupUserFolder/__init__.py:${PORTSDIR}/www/zope-groupuserfolder
-.else
-MODULES+=	GroupUserFolder
-.endif
-
-.if defined(WITH_PLTRANSSERVICE)
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PlacelessTranslationService/__init__.py:${PORTSDIR}/www/zope-placelesstranslationservice
-.else
-MODULES+=	PlacelessTranslationService
-.endif
+_MODULES=	ATContentTypes ATReferenceBrowserWidget Archetypes \
+		BTreeFolder2 CMFActionIcons CMFCalendar CMFCore CMFDefault \
+		CMFDynamicViewFTI CMFFormController CMFPlone \
+		CMFQuickInstallerTool CMFSetup CMFTopic CMFUid DCWorkflow \
+		ExtendedPathIndex ExternalEditor GroupUserFolder \
+		MimetypesRegistry PlacelessTranslationService \
+		PloneErrorReporting PloneLanguageTool PloneTranslations \
+		PortalTransforms ResourceRegistries SecureMailHost generator \
+		kupu validation
 
 pre-everything::
 .if !defined(BATCH)
@@ -87,37 +57,34 @@ pre-everything::
 .endif
 
 do-build:
-	-@for m in ${MODULES}; do \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$$m; \
-	done
+.for m in ${_MODULES}
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$m
+.endfor
 
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
-	@for m in ${MODULES}; do \
-		if [ ! -f ${ZOPEBASEDIR}/Products/$${m}/__init__.py ]; then \
-			cd ${WRKSRC}; \
-			for i in `${FIND} $${m} -type f`; do \
-				${ECHO_CMD} %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
-			done; \
-			for i in `${FIND} -d $${m} -type d`; do \
-				${ECHO_CMD} @dirrm %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
-			done; \
-		fi;\
+	@for m in ${_MODULES}; do \
+		cd ${WRKSRC}; \
+		for i in `${FIND} $${m} -type f`; do \
+			${ECHO_CMD} %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
+		done; \
+		for i in `${FIND} -d $${m} -type d`; do \
+			${ECHO_CMD} @dirrm %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
+		done; \
 	done
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
-	@cd ${WRKSRC}; \
-	for m in ${MODULES}; do \
-		if [ ! -f ${ZOPEBASEDIR}/Products/$${m}/__init__.py ]; then \
-			${CP} -R $${m} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}; \
-		fi; \
-	done
+.for m in ${_MODULES}
+	@${CP} -R ${WRKSRC}/$m ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
+	@${FIND} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
+		| ${XARGS} -0 -- ${CHMOD} a-w
+.endfor
 
 post-install:
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
