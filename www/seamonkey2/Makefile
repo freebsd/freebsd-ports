@@ -56,7 +56,7 @@ IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.4+
+BROKEN="Does not build"
 .endif
 
 .if defined(WITHOUT_MAILNEWS)
