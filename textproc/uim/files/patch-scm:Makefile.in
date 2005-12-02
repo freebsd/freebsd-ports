@@ -1,0 +1,20 @@
+--- scm/Makefile.in.orig	Tue Nov 22 03:25:25 2005
++++ scm/Makefile.in	Tue Nov 22 03:27:10 2005
+@@ -283,6 +283,8 @@
+  tcode.scm \
+  tutcode.scm tutcode-key-custom.scm \
+  hangul.scm hangul2.scm hangul3.scm romaja.scm \
++ byeoru.scm byeoru-dic.scm byeoru-symbols.scm \
++ byeoru-custom.scm byeoru-key-custom.scm \
+  viqr.scm \
+  ipa-x-sampa.scm \
+  latin.scm \
+@@ -293,7 +295,7 @@
+  uim-module-manager.scm\
+ $(am__append_1)
+ 
+-module_names = "pyload" $(am__append_2) $(am__append_3) $(am__append_4) $(am__append_5) "tcode" "tutcode" "hangul" "viqr" "ipa-x-sampa" "latin" $(am__append_6) $(am__append_7)
++module_names = "pyload" $(am__append_2) $(am__append_3) $(am__append_4) $(am__append_5) "tcode" "tutcode" "byeoru" "hangul" "viqr" "ipa-x-sampa" "latin" $(am__append_6) $(am__append_7)
+ subdir = scm
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
