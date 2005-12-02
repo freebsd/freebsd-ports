@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	1.10
+PORTVERSION=	1.30
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.57:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst>=5.58:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 		p5-Catalyst-Plugin-FormValidator-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator-Simple \
 		p5-Catalyst-Plugin-FillInForm>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FillInForm \
@@ -27,6 +27,9 @@ BUILD_DEPENDS=	p5-Catalyst>=5.57:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Catalyst-Plugin-Session-State-URI>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-URI \
 		p5-Catalyst-Plugin-Session-Store-File>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-Store-File \
+		p5-Catalyst-Plugin-I18N>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
+		p5-Catalyst-Plugin-XMLRPC>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-XMLRPC \
+		p5-Catalyst-Plugin-Pluggable>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Pluggable \
 		p5-Catalyst-Model-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC \
 		p5-Catalyst-Model-DBIC-Plain>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Plain \
 		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
