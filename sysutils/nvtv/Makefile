@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nv-tv-out
 DISTNAME=	nvtv-${PORTVERSION}
 
-MAINTAINER=	sam@rfc1149.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TV output on nvidia card
 
 LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci
