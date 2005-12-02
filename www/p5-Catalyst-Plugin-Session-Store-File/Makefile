@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-File
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/E/ES/ESSKAR
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	File storage backend for session data
 
-BUILD_DEPENDS=	p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
+BUILD_DEPENDS=	p5-Catalyst>=5.0:${PORTSDIR}/www/p5-Catalyst \
+		p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable
