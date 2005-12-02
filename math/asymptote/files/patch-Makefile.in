@@ -1,10 +1,10 @@
---- Makefile.in	Thu Oct 20 09:36:42 2005
-+++ Makefile.in.port	Mon Oct 24 11:00:23 2005
-@@ -36,7 +36,7 @@
- mandir = @mandir@
+--- Makefile.in	Tue Nov  8 08:22:41 2005
++++ Makefile.in.port	Thu Nov 24 17:33:55 2005
+@@ -37,7 +37,7 @@
  datadir = @datadir@
  asydir = $(datadir)/asymptote
--exampledir = $(datadir)/doc/asymptote
+ docdir = $(datadir)/doc/asymptote
+-exampledir = $(docdir)
 +exampledir = $(datadir)/examples/asymptote
  animationsdir = $(exampledir)/animations
  latexdir = @latexdir@

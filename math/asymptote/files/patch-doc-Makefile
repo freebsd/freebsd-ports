@@ -1,22 +1,12 @@
---- doc/Makefile	Thu Sep 29 07:53:39 2005
-+++ doc/Makefile.port	Mon Nov  7 22:02:27 2005
-@@ -25,8 +25,8 @@
- latexusage.eps: latexusage.dvi
- 	dvips -o latexusage.eps latexusage
- 
--latexusage.png: latexusage.dvi
--	dvipng -o latexusage.png latexusage
-+latexusage.png: latexusage.eps
-+	convert -density 144x144 +antialias -geometry 50%x latexusage.eps latexusage.png
- 
- latexusage.pdf: latexusage.dvi
- 	dvipdf latexusage
-@@ -51,7 +51,8 @@
+--- doc/Makefile	Wed Nov 16 09:36:10 2005
++++ doc/Makefile.port	Thu Nov 24 17:37:49 2005
+@@ -52,8 +52,9 @@
  	rm -rf asymptote
  
  install-man: man
--	${INSTALL} -m 644 asymptote.pdf $(exampledir)
 +	mkdir -p $(prefix)/share/doc/asymptote
+ 	${INSTALL} -d $(docdir) $(mandir)/man1
+-	${INSTALL} -m 644 asymptote.pdf $(docdir)
 +	${INSTALL} -m 644 asymptote.pdf $(prefix)/share/doc/asymptote/
  	${INSTALL} -m 644 $(MANFILES) $(mandir)/man1
  
