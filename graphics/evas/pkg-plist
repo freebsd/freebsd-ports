@@ -1,13 +1,11 @@
 bin/evas-config
 bin/evas_buffer_test
-bin/evas_gl_x11_test
 bin/evas_software_x11_perf_load
 bin/evas_software_x11_perf_test
 bin/evas_software_x11_test
 bin/evas_xrender_x11_test
 include/Evas.h
 include/Evas_Engine_Buffer.h
-include/Evas_Engine_GL_X11.h
 include/Evas_Engine_Software_X11.h
 include/Evas_Engine_XRender_X11.h
 lib/libevas.a
