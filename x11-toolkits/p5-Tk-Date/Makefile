@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-Date
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::Date.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or higher. Please install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
