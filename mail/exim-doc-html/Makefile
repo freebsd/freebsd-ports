@@ -19,6 +19,11 @@ COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
 
+.if ${DOCFORMAT} == "info"
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+MAKEINFO=	${LOCALBASE}/bin/makeinfo
+.endif
+
 DOCFORMAT?=	html
 DISTDOCFORMAT?=	${DOCFORMAT}
 
@@ -42,8 +47,8 @@ pre-everything::
 do-build:
 .if ${DOCFORMAT} == "info"
 	@ cd ${WRKSRC}/doc; \
-		makeinfo --no-split --output exim.info spec.texinfo; \
-		makeinfo --no-split --output exim_filter.info filter.texinfo
+		${MAKEINFO} --no-split --output exim.info spec.texinfo; \
+		${MAKEINFO} --no-split --output exim_filter.info filter.texinfo
 .else
 	@ ${DO_NADA}
 .endif
