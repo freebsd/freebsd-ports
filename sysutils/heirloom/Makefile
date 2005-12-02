@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Cyrille.Lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Heirloom Toolchest is a collection of standard Unix utilities
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh

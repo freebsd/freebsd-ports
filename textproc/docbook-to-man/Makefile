@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/tools/dtm/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DocBook SGML DTD into nroff/troff -man macros converter
 
 .include <bsd.port.pre.mk>

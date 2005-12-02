@@ -14,7 +14,7 @@ MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Uptimes project client
 
 # Global variables
