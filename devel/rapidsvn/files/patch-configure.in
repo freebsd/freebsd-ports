@@ -1,0 +1,10 @@
+--- configure.in.orig	Fri Dec  2 14:55:24 2005
++++ configure.in	Fri Dec  2 14:55:59 2005
+@@ -254,6 +254,7 @@
+ 
+ 
+ for _try_docbook_xsl in \
++  $DOCBOOK_XSL/html \
+   /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html \
+   /usr/share/sgml/docbook/yelp/docbook/html \
+   /usr/local/share/sgml/docbook/stylesheet/xsl/nwalsh/html \
