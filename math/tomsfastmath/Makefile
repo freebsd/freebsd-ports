@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomsfastmath
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	math
 MASTER_SITES=	http://libtomcrypt.org/tfm/files/
 DISTNAME=	tfm-${PORTVERSION}
