@@ -17,7 +17,7 @@ MASTER_SITES=	http://homepages.starnet.fr/dtrystram/
 #	ftp://ftp.ac-amiens.fr/pub/Educatifs_fr/Francais	ledico.zip
 DISTNAME=	ledico
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive dictionary in french
 BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 

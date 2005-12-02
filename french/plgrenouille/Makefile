@@ -12,7 +12,7 @@ CATEGORIES=	french net
 MASTER_SITES=	http://concept.free.free.fr/plgrenouille/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un client pour determiner votre bande passante a un raccordement large bande
 
 LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp

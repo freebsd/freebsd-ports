@@ -20,7 +20,7 @@ DISTFILES=	args.c:s blok.c:s brkincr.h:s builtin.c:s cmd.c:s \
 		timeout.h:s word.c:s xec.c:s sh.1:m
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	Cyrille.Lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the UNIX 7th Edition shell
 
 EXTRACT_CMD=	${CP}
