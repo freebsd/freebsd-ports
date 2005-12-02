@@ -104,7 +104,7 @@ BUILD_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
 		ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
 		ADA_OBJECTS_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adalib
-have_boot=	${WRKDIR}/adaboot:${PATH}
+have_boot=	${WRKDIR}/adaboot/bin:${PATH}
 GNATGCC=	adagcc
 .endif
 
