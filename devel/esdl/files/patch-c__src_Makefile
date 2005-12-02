@@ -1,5 +1,8 @@
---- c_src/Makefile.ori	Tue Sep  9 10:28:24 2003
-+++ c_src/Makefile	Mon Nov 17 18:34:14 2003
+
+$FreeBSD$
+
+--- c_src/Makefile.orig
++++ c_src/Makefile
 @@ -11,7 +11,7 @@
  include ../win32_conf/mingw_vars.mk
  else
@@ -29,7 +32,7 @@
    CLINKFLAGS 		=  -fpic -shared  
  
 @@ -38,13 +37,13 @@
-   ERL_DIR := $(shell echo 'io:format("~s~n",[code:root_dir()]),halt().' | erl | sed 's,^[0-9]*> *,,g' | tail +2)
+   ERL_DIR := $(shell echo 'io:format("~s~n",[code:root_dir()]),halt().' | erl | grep '1>' | sed 's,^[0-9]*> *,,g')
    ERL_INCS = -I$(ERL_DIR)/usr/include
  
 -  CC = gcc

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	esdl
-PORTVERSION=	0.94.0615
-PORTREVISION=	1
+PORTVERSION=	0.95.0630
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,10 +28,6 @@ ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
