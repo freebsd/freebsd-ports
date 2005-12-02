@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	bundles/src/:bundles updates/src/:updates
 DIST_SUBDIR=	globus
 EXTRACT_ONLY=
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Globus Toolkit version ${GLOBUS_VER}
 
 NOMANCOMPRESS=	yes
@@ -65,9 +65,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 600028
-BROKEN=		"Does not build on FreeBSD >= 6.0"
-.endif
+BROKEN=		"Does not fetch"
 
 # XXX: We should build 64-bit flavors on 64-bit platforms, but the
 # 32-bit flavors build there and the 64-bit ones don't.  This probalby
