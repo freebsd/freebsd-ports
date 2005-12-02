@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.57
+PORTVERSION=	5.61
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -37,7 +37,10 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
-		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
+		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
+		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
+		p5-ExtUtils-AutoInstall>=0:${PORTSDIR}/devel/p5-ExtUtils-AutoInstall
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -48,6 +51,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::ActionContainer.3 \
 	Catalyst::AttrContainer.3 \
 	Catalyst::Base.3 \
+	Catalyst::Build.3 \
 	Catalyst::Component.3 \
 	Catalyst::Controller.3 \
 	Catalyst::DispatchType.3 \
@@ -85,6 +89,9 @@ MAN3=	Catalyst.3 \
 
 post-install:
 	@${CAT} pkg-message
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,^features, .. m,^\);,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
