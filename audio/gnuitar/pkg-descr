@@ -1,0 +1,16 @@
+This is an open source program for real-time sound effect processing. You
+can use it to add some distortion to your guitar, or some reverb to your
+voice. Available effects are:
+
+    * 2 kinds of distortion (one is Ibanez TubeScreamer 9 simulation)
+    * sustain
+    * various flavors of reverb, echo & delay
+    * chorus/flanger
+    * equalizer
+    * noise reduction
+    * wah-wah
+    * phasor
+    * tremolo
+    * vibrato
+
+WWW: http://www.gnuitar.com
