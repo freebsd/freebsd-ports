@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	jisx0213-fonts
-PORTVERSION=	1.06
+PORTVERSION=	20040425
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www12.ocn.ne.jp/~imamura/ \
 		http://gitatsu.hp.infoseek.co.jp/bdf/:yagi
-DISTFILES=	jiskan16-2000-1.bdf.gz jiskan16-2000-2.bdf.gz \
-		K14-1.bdf.gz K14-2.bdf.gz K12-1.bdf.gz K12-2.bdf.gz \
+DISTFILES=	jiskan16-2004-1.bdf.gz jiskan16-2000-1.bdf.gz \
+		jiskan16-2000-2.bdf.gz K14-2004-1.bdf.gz \
+		K14-2000-1.bdf.gz K14-2000-2.bdf.gz \
+		K12-1.bdf.gz K12-2.bdf.gz \
 		jiskan24-2000-1.bdf.gz:yagi jiskan24-2000-2.bdf.gz:yagi
 
 MAINTAINER=	yoichi@FreeBSD.org
@@ -36,7 +38,7 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.in ${WRKDIR}/Makefile
 	@(cd ${WRKDIR}; ${GUNZIP_CMD} *.gz)
 
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
