@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Apr 19 14:21:19 2001
++++ Makefile	Sat Dec  3 15:19:39 2005
+@@ -57,9 +57,15 @@
+ unix:
+ 	$(MAKE) all CC="gcc" O=.o X= \
+ 	CFLAGS="-DUNIX -O" LFLAGS="-s" LIBS="-lsocket" OUT=-o
++unix6:
++	$(MAKE) all CC="gcc" O=.6o X=6 \
++	CFLAGS="-DUNIX -O -DUSE_IPV6" LFLAGS="-lsocket" LIBS="" OUT=-o
+ unix-debug:
+ 	$(MAKE) all CC="gcc -g" O=.o X= \
+ 	CFLAGS="-DUNIX" LFLAGS="" LIBS="-lsocket" OUT=-o
++unix6-debug:
++	$(MAKE) all CC="gcc -g" O=.6o X=6 \
++	CFLAGS="-DUNIX -DUSE_IPV6" LFLAGS="-lsocket" LIBS="" OUT=-o
+ watt32:
+ 	$(MAKE) all CC="gcc -g -O2" O=.o X=.exe OUT=-o \
+         CFLAGS="-DWATT32 -I../../inc" LIBS="../../lib/libwatt.a"
+@@ -73,7 +79,7 @@
+ 
+ .SUFFIXES: .c $O
+ .c$O:
+-	$(CC) $(CFLAGS) $(INC) -c $*.c
++	$(CC) $(OUT) $@ $(CFLAGS) $(INC) -c $*.c
+ 
+ netio$O: netio.c netbios.h getopt.h
+ netbios$O: netbios.c netbios.h
