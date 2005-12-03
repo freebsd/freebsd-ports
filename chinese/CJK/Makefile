@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	CJK
-PORTVERSION=	4.5.2
-PORTREVISION=	2
+PORTVERSION=	4.6.0
+PORTREVISION=	0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cjk/\
-  		ftp://ftp.ffii.org/pub/cjk/
+MASTER_SITES=	http://cjk.ffii.org/
 DISTNAME=	cjk-${PORTVERSION}
 
 MAINTAINER=	rafan@infor.org
