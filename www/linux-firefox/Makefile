@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.0.7
+PORTVERSION=	1.5
 CATEGORIES?=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
 PKGNAMEPREFIX?=	linux-
-DISTNAME?=	firefox-${PORTVERSION}
 
-MAINTAINER=	voisine@gmail.com
-COMMENT=	Web browser branched from Mozilla
+MAINTAINER=	infofarmer@gmail.com
+COMMENT=	Web browser based on the browser portion of Mozilla
 
 RUN_DEPENDS?=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
@@ -23,79 +22,40 @@ RUN_DEPENDS?=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/
 		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 FIREFOX_NAME=	${PKGNAMEPREFIX}${PORTNAME}
-DESCR=		${.CURDIR}/pkg-descr
-MD5_FILE=	${.CURDIR}/distinfo
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST=		${WRKDIR}/pkg-plist
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/firefox
+WRKSRC=		${WRKDIR}/${PORTNAME}
+FDIR=		${PREFIX}/lib/${FIREFOX_NAME}
 
-do-patch:
-	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/linkfarm
-	${ECHO_CMD} \
-	"# Run this after installing Beonex, Mozilla or Netscape plugins." \
-		>>${WRKDIR}/linkfarm
-	${ECHO_CMD} "cd ${PREFIX}/lib/${FIREFOX_NAME}/plugins" \
-		>>${WRKDIR}/linkfarm
-	${ECHO_CMD} "${FIND} -L . -type l -delete" \
-		>>${WRKDIR}/linkfarm
-
-.for ii in \
-	lib/linux-beonex/plugins \
-	lib/netscape-linux/plugins \
-	lib/flash \
-	lib/linux-mozilla/plugins \
-	lib/linux-netscape*/plugins \
-	lib/linux-flashplugin6 \
-	lib/linux-flashplugin7 \
-	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
-	linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla
-	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
-		>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
-		>>${WRKDIR}/linkfarm
-.endfor
-
-pre-install:
-	${ECHO_CMD} bin/${FIREFOX_NAME} > ${PLIST}
-	${ECHO_CMD} lib/${FIREFOX_NAME}/${FIREFOX_NAME}-bin >> ${PLIST}
-	${ECHO_CMD} \
-		"@unexec ${FIND} ${PREFIX}/lib/${FIREFOX_NAME}/plugins \
-		-type l -exec ${RM} {} \;" >> ${PLIST}
-	cd ${WRKSRC} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:lib/${FIREFOX_NAME}/:' >> ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm lib/${FIREFOX_NAME}/:' >> ${PLIST}
-	${ECHO_CMD} lib/${FIREFOX_NAME}/linkfarm >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/${FIREFOX_NAME} >> ${PLIST}
-	${ECHO_CMD} "@exec ${PREFIX}/lib/${FIREFOX_NAME}/linkfarm" \
-		>> ${PLIST}
+PLIST_SUB+=	FIREFOX_NAME=${FIREFOX_NAME}
+SUB_LIST+=	FIREFOX_NAME=${FIREFOX_NAME}
+SUB_FILES=	linkfarm pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/${FIREFOX_NAME}
-	${CHMOD} 755 ${PREFIX}/lib/${FIREFOX_NAME}
-	cd ${WRKSRC} && ${FIND} * | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} \
-		${PREFIX}/lib/${FIREFOX_NAME}
-	${LN} -sf ${PREFIX}/lib/${FIREFOX_NAME}/firefox \
-		${PREFIX}/bin/${FIREFOX_NAME}
-	${LN} -sf ${PREFIX}/lib/${FIREFOX_NAME}/firefox-bin \
-		${PREFIX}/lib/${FIREFOX_NAME}/${FIREFOX_NAME}-bin
-	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm \
-	${PREFIX}/lib/${FIREFOX_NAME}
+	${INSTALL} -d ${FDIR}
+	${CP} -R ${WRKSRC}/ ${FDIR}
+	${LN} -sf ${FDIR}/firefox ${PREFIX}/bin/${FIREFOX_NAME}
+	${LN} -sf ${FDIR}/firefox-bin ${FDIR}/${FIREFOX_NAME}-bin
+	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${FDIR}
 
 post-install:
-	@${ECHO_CMD} \*\* After adding plugins to \(Linux\) Beonex,
-	@${ECHO_CMD} \*\* Mozilla or Netscape, run\
-		> ${PKGMESSAGE}
-	@${ECHO_CMD} \*\* ${PREFIX}/lib/${FIREFOX_NAME}/linkfarm as root \
-		>> ${PKGMESSAGE}
-	@${ECHO_CMD} \*\* to make them available to ${FIREFOX_NAME}. \
-		>> ${PKGMESSAGE}
-	@- ${SH} ${PREFIX}/lib/${FIREFOX_NAME}/linkfarm || true
-	@ ${CAT} ${PKGMESSAGE}
+	@${SH} ${FDIR}/linkfarm
+	@${CAT} ${PKGMESSAGE}
+
+# Maintainer section
+create-plist:
+	${ECHO_CMD} bin/%%FIREFOX_NAME%% > ${PLIST}
+	${ECHO_CMD} lib/%%FIREFOX_NAME%%/%%FIREFOX_NAME%%-bin >> ${PLIST}
+	cd ${WRKDIR} && ${FIND} ${PORTNAME} -type f -or -type l | \
+		${SED} -e "s#^${PORTNAME}#lib/%%FIREFOX_NAME%%#" | ${SORT} >> ${PLIST}
+	${ECHO_CMD} lib/%%FIREFOX_NAME%%/linkfarm >> ${PLIST}
+	${ECHO_CMD} @exec %%PREFIX%%/lib/%%FIREFOX_NAME%%/linkfarm >> ${PLIST}
+	${ECHO_CMD} @unexec ${FIND} %%PREFIX%%/lib/%%FIREFOX_NAME%%/plugins \
+		-type l -delete >> ${PLIST}
+	cd ${WRKDIR} && ${FIND} -d ${PORTNAME} -type d | \
+		${SED} -e "s#^${PORTNAME}#@dirrm lib/%%FIREFOX_NAME%%#" >> ${PLIST}
 
 .include <bsd.port.mk>

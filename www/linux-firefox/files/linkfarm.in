@@ -1,0 +1,14 @@
+#!/bin/sh
+# Run this after installing Beonex, Mozilla or Netscape plugins
+cd	%%PREFIX%%/lib/%%FIREFOX_NAME%%/plugins
+find -L . -type l -delete
+find	%%PREFIX%%/lib/linux-beonex/plugins \
+	%%PREFIX%%/lib/netscape-linux/plugins \
+	%%PREFIX%%/lib/flash \
+	%%PREFIX%%/lib/linux-mozilla/plugins \
+	%%PREFIX%%/lib/linux-netscape*/plugins \
+	%%PREFIX%%/lib/linux-flashplugin6 \
+	%%PREFIX%%/lib/linux-flashplugin7 \
+	%%PREFIX%%/linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
+	%%PREFIX%%/linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla \
+	-type f -maxdepth 1 -exec ln -s {} \; 2>/dev/null || true
