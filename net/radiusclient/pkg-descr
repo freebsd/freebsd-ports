@@ -1,9 +1,5 @@
 This is a port of a client library and basic utilities for performing
 logins authenticated by a Radiusd server.
 
-Only static linking to the library produced is supported.
-
-Documentation is scant and is recommended only for expert users.
-
 - Maurice Castro
 maurice@serc.rmit.edu.au
