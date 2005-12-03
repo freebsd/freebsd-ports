@@ -8,16 +8,17 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
-			${MASTER_SITE_REDHAT_LINUX:S/$/:new/} \
+MASTER_SITES=		http://download.fedoralegacy.org/redhat/%SUBDIR%/ \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
-MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
-			updates/${PORTVERSION}/${LANG}/os/${ARCH}/:new
+MASTER_SITE_SUBDIR=	${PORTVERSION}/os/${ARCH} \
+			${PORTVERSION}/updates/${ARCH} \
+			${PORTVERSION}/os/SRPMS \
+			${PORTVERSION}/updates/SRPMS
 DISTFILES=		redhat-release-8.0-8.noarch.rpm \
-			glibc-common-2.3.2-4.80.8.${ARCH}.rpm:new \
-			glibc-2.3.2-4.80.8.${ARCH}.rpm:new \
+			glibc-common-2.3.2-4.80.8.${ARCH}.rpm \
+			glibc-2.3.2-4.80.8.${ARCH}.rpm \
 			setup-2.5.20-1.noarch.rpm \
 			filesystem-2.1.6-5.noarch.rpm \
 			basesystem-8.0-1.noarch.rpm \
@@ -31,13 +32,13 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			gdbm-1.8.0-18.${ARCH}.rpm \
 			glib-1.2.10-8.${ARCH}.rpm \
 			libtermcap-2.0.8-31.${ARCH}.rpm \
-			bash-2.05b-5.${ARCH}.rpm \
+			bash-2.05b-5.1.${ARCH}.rpm \
 			bzip2-1.0.2-5.${ARCH}.rpm \
 			compat-libstdc++-7.3-2.96.110.${ARCH}.rpm \
 			ncurses-5.2-28.${ARCH}.rpm \
 			info-4.2-5.${ARCH}.rpm \
 			grep-2.5.1-4.${ARCH}.rpm \
-			fileutils-4.1.9-11.${ARCH}.rpm \
+			fileutils-4.1.9-11.2.${ARCH}.rpm \
 			popt-1.7-1.06.${ARCH}.rpm \
 			readline-4.3-3.${ARCH}.rpm \
 			setserial-2.17-9.${ARCH}.rpm \
@@ -47,8 +48,41 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			rpm-4.1-1.06.${ARCH}.rpm \
 			libgcc-3.2-7.${ARCH}.rpm \
 			freetype-2.1.5-0.ximian.5.1.${ARCH}.rpm:ft \
-			zlib-1.1.4-8.8x.${ARCH}.rpm:new
+			zlib-1.1.4-8.8x.${ARCH}.rpm
 EXTRACT_ONLY=
+
+.if defined(PACKAGE_BUILDING)
+DISTFILES+=	acl-2.0.11-2.src.rpm \
+		attr-2.0.8-3.src.rpm \
+		basesystem-8.0-1.src.rpm \
+		bash-2.05b-5.1.src.rpm \
+		bzip2-1.0.2-5.src.rpm \
+		compat-db-3.3.11-2.src.rpm \
+		compat-gcc-7.3-2.96.110.src.rpm \
+		db4-4.0.14-14.src.rpm \
+		filesystem-2.1.6-5.src.rpm \
+		fileutils-4.1.9-11.2.src.rpm \
+		gcc-3.2-7.src.rpm \
+		gdbm-1.8.0-18.src.rpm \
+		glib-1.2.10-8.src.rpm \
+		glibc-2.3.2-4.80.8.src.rpm \
+		grep-2.5.1-4.src.rpm \
+		libelf-0.8.2-2.src.rpm \
+		libtermcap-2.0.8-31.src.rpm \
+		ncurses-5.2-28.src.rpm \
+		readline-4.3-3.src.rpm \
+		redhat-release-8.0-8.src.rpm \
+		rpm-4.1-1.06.src.rpm \
+		setserial-2.17-9.src.rpm \
+		setup-2.5.20-1.src.rpm \
+		sh-utils-2.0.12-3.src.rpm \
+		slang-1.4.5-11.src.rpm \
+		termcap-11.0.1-13.src.rpm \
+		texinfo-4.2-5.src.rpm \
+		zlib-1.1.4-8.8x.src.rpm
+
+ALWAYS_KEEP_DISTFILES=	yes
+.endif
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
@@ -92,6 +126,9 @@ FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
+# FIXME. This will result in a file at /compat/linux/etcnsswitch.conf.dist (sic!)
+RPMFLAGS+=	--relocate /etc/nsswitch.conf=/etc/nsswitch.conf.dist --badreloc
+
 do-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
@@ -105,10 +142,13 @@ do-install:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES:S/:new//:S/:ft//}; do \
+	@for R in ${DISTFILES:S/:ft//}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
+	@${MV} ${PREFIX}/etcnsswitch.conf.dist ${PREFIX}/etc/nsswitch.conf.dist
+	@test -f ${PREFIX}/etc/nsswitch.conf || cp ${PREFIX}/etc/nsswitch.conf.dist \
+		${PREFIX}/etc/nsswitch.conf
 	@${FIND} ${PREFIX}/bin ${PREFIX}/sbin/ ${PREFIX}/usr/bin \
 		${PREFIX}/usr/sbin -type f -print0 | ${XARGS} -0 file \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
