@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- doc/ogg/Makefile.in.orig	Fri Sep 24 00:35:51 2004
-+++ doc/ogg/Makefile.in	Fri Sep 24 00:36:19 2004
-@@ -159,7 +159,7 @@
+--- doc/libogg/Makefile.in.orig
++++ doc/libogg/Makefile.in
+@@ -168,7 +168,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@

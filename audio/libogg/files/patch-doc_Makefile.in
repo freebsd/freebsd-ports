@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	Fri Sep 24 00:35:47 2004
-+++ doc/Makefile.in	Fri Sep 24 00:36:02 2004
-@@ -169,7 +169,7 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -178,7 +178,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- SUBDIRS = ogg
+ SUBDIRS = libogg
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- doc_DATA = framing.html index.html oggstream.html rfc3533.txt rfc3534.txt stream.png vorbisword2.png white-ogg.png white-xifish.png
- EXTRA_DIST = $(doc_DATA)
- all: all-recursive
+ doc_DATA = framing.html index.html oggstream.html ogg-multiplex.html \
+ 	stream.png vorbisword2.png white-ogg.png white-xifish.png \
+ 	rfc3533.txt rfc3534.txt

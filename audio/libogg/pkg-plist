@@ -10,6 +10,7 @@ libdata/pkgconfig/ogg.pc
 share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg-multiplex.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/bitpacking.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/datastructures.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/decoding.html
