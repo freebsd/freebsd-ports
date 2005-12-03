@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 
-MAINTAINER=	maurice@castro.aus.net
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Client library and basic utilities for Radius authenticated login
 
 USE_GMAKE=	yes
