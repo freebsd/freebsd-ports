@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.0.b5
+PORTVERSION=	2.0.b6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
-DISTNAME=	nagios-2.0b5
+DISTNAME=	nagios-2.0b6
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Extremely powerful network monitoring system
