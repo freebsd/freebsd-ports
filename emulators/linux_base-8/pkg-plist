@@ -51,7 +51,9 @@ etc/ld.so.cache
 etc/ld.so.conf
 etc/logrotate.d/rpm
 etc/mtab
-etc/nsswitch.conf
+@unexec if cmp -s %D/etc/nsswitch.conf.dist %D/etc/nsswitch.conf; then rm -f %D/etc/nsswitch.conf; fi
+etc/nsswitch.conf.dist
+@exec [ -f %D/etc/nsswitch.conf ] || cp %D/etc/nsswitch.conf.dist %D/etc/nsswitch.conf
 etc/pam.d/su
 etc/profile
 etc/profile.d/colorls.csh
@@ -5115,6 +5117,7 @@ usr/share/locale/zh_TW/LC_MESSAGES/fileutils.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 usr/share/man/ja/man8/rpm.8.gz
 usr/share/man/ja/man8/rpm2cpio.8.gz
+usr/share/man/man1/..1.gz
 usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
 usr/share/man/man1/alias.1.gz
