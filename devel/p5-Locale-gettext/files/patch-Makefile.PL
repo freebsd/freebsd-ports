@@ -1,11 +1,23 @@
---- Makefile.PL.orig	Thu Aug 16 22:50:39 2001
-+++ Makefile.PL	Thu Aug 16 22:51:09 2001
-@@ -1,6 +1,7 @@
- use ExtUtils::MakeMaker;
+--- Makefile.PL.orig	Sat Dec  3 21:28:47 2005
++++ Makefile.PL	Sat Dec  3 21:35:59 2005
+@@ -11,8 +11,8 @@
+ 
+ unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
+ 	# try with -lintl
+-	$libs = "-lintl";
+-	unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
++	$libs = "-lintl -L$ENV{LOCALBASE}/lib -I$ENV{LOCALBASE}/include";
++	unless (conftest("#include <libintl.h>\nchar *x = gettext(\"foo\");", "gettext", 0)) {
+ 		unlink("conftest.c");
+ 		unlink("conftest");
+ 		die "gettext function not found. Please install libintl";
+@@ -33,7 +33,8 @@
+ 
  WriteMakefile(
      NAME => "Locale::gettext",
--    LIBS => ["-lintl"],
+-    LIBS => ($libs eq '') ? [] : [$libs],
++    LIBS => ($libs eq '') ? [] : ["-lintl -L$ENV{LOCALBASE}/lib"],
 +    INC => "-I$ENV{LOCALBASE}/include",
-+    LIBS => ["-L$ENV{LOCALBASE}/lib -lintl"],
      VERSION_FROM => 'gettext.pm', 
  );
+ 
