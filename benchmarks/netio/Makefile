@@ -6,7 +6,8 @@
 
 PORTNAME=	netio
 PORTVERSION=	1.14
-CATEGORIES=	benchmarks net
+PORTREVISION=	1
+CATEGORIES=	benchmarks net ipv6
 MASTER_SITES=	http://www.netfuse.de/techarea/netio/
 DISTNAME=	netio114
 
@@ -17,13 +18,25 @@ WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	unix
 PLIST_FILES=	bin/netio
+
+.if defined(WITH_IPV6)
+PLIST_FILES+=	bin/netio6
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-lsocket,," ${WRKSRC}/Makefile
 
+do-build:
+	cd ${WRKSRC} && ${GMAKE} unix
+.if defined(WITH_IPV6)
+	cd ${WRKSRC} && ${GMAKE} unix6
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netio ${PREFIX}/bin
+.if defined(WITH_IPV6)
+	${INSTALL_PROGRAM} ${WRKSRC}/netio6 ${PREFIX}/bin
+.endif
 
 .include <bsd.port.mk>
