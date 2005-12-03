@@ -29,6 +29,7 @@
     SUBDIR += apache13-ssl
     SUBDIR += apache2
     SUBDIR += apache21
+    SUBDIR += apache22
     SUBDIR += arena
     SUBDIR += aria
     SUBDIR += ashe           # requires Motif
