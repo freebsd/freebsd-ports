@@ -8,12 +8,12 @@
 #
 
 PORTNAME?=	gtk
-PORTVERSION?=	1.2
-PORTREVISION?=	5
+PORTVERSION?=	1.2.10
+PORTREVISION?=	0
 CATEGORIES?=	x11-toolkits linux
-MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g} ${FEDORALEGACY_MIRRORS:S/__DIR__/${FEDORADIR}/g}
+MASTER_SITES?=	${FEDORALEGACY_MIRRORS:S/__DIR__/${FEDORADIR}/g} ${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
-DISTFILES=	${RPM_SET}
+DISTFILES=	${RPM_SET} ${SRC_DISTFILES}
 
 MAINTAINER?=	freebsd-emulation@FreeBSD.org
 COMMENT?=	RPM of the Gtk lib
@@ -45,7 +45,7 @@ LINUX_LDCONFIG?=${LINUXBASE}/sbin/ldconfig
 # Let's avoid hardcoding 'en' as the language.
 LANG=		en
 # Set the version of linux_base
-BASEVERSION?=	7.1
+BASEVERSION?=	8.0
 RPM_MIRRORS=	\
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/
@@ -55,9 +55,7 @@ STDDIR=		linux/${BASEVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS
 UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${ARCH}
 FEDORADIR=	${BASEVERSION}/os/${ARCH}
 .if (${ARCH} == "i386")
-RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
-.elif (${ARCH} == "alpha")
-RPM_SET?=	gtk+-1.2.9-4.${ARCH}.rpm
+RPM_SET?=	gtk+-1.2.10-22.${ARCH}.rpm
 .endif
 DBPATH=		/var/lib/rpm
 RPMFLAGS+=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
