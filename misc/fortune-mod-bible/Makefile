@@ -19,9 +19,11 @@ DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_BZIP2=	yes
+SUB_FILES+=	pkg-message
+_STRFILE=	/usr/games/strfile
 
 do-build:
-	@${CAT} ${FILESDIR}/pkg-message.in | ${SED} 's#PREFIX#${PREFIX}#' > ${PKGMESSAGE}
+	@cd ${WRKSRC} && ${_STRFILE} bible
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games
