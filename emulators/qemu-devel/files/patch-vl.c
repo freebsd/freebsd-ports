@@ -1,16 +1,5 @@
 --- vl.c.orig	Mon Nov 14 15:55:56 2005
 +++ vl.c	Mon Nov 14 15:57:25 2005
-@@ -40,6 +40,10 @@
- #include <sys/socket.h>
- #include <netinet/in.h>
- #include <dirent.h>
-+#ifdef __FreeBSD__
-+#include <sys/types.h>
-+#include <libutil.h>
-+#endif
- #ifdef _BSD
- #include <sys/stat.h>
- #ifndef __APPLE__
 @@ -1363,7 +1367,7 @@
      return chr;
  }
