@@ -1,4 +1,4 @@
-# New ports collection makefile for:	apache21
+# New ports collection makefile for:	apache22
 # Date created:				Dec 11 2004
 # Whom:					Clement Laforet <clement@FreeBSD.org>
 #
@@ -8,23 +8,23 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.1.9
+PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
-DISTNAME=	httpd-${PORTVERSION}-beta
+DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
 		powerlogo.gif:powerlogo
-DIST_SUBDIR=	apache21
+DIST_SUBDIR=	apache22
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
 MAINTAINER?=	clement@FreeBSD.org
-COMMENT?=	Version 2.1 of Apache web server with ${WITH_MPM:L} MPM.
+COMMENT?=	Version 2.2 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 
-LATEST_LINK=	apache21
+LATEST_LINK=	apache22
 
 CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
@@ -32,13 +32,14 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+ipv6-1.* apache+ssl-1.* apache-1.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* \
-		apache-2.0.* apache-*-2.0.*
+		apache-2.0.* apache-*-2.0.* apache-2.1.* apache-*-2.1.*
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
 			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
 			AUTOHEADER=${AUTOHEADER}
 
+USE_APACHE=		common22
 USE_BZIP2=		yes
 USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
@@ -143,8 +144,6 @@ WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
 
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
-WANT_APACHE=	common21
-.include "${APACHEDIR}/../apache2/Makefile.modules.3rd"
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
@@ -195,7 +194,7 @@ post-patch:
 		${WRKSRC}/docs/docroot/index.html
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache21.sh
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
@@ -219,17 +218,17 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 install-startup-script:
-.if !exists(${WRKDIR}/apache21.sh)
+.if !exists(${WRKDIR}/apache22.sh)
 	@${MKDIR} ${WRKDIR}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache21.sh
+		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
 .endif
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache21.sh startup script."
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache21.sh ${PREFIX}/etc/rc.d/apache21.sh
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache22.sh startup script."
+	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache22.sh ${PREFIX}/etc/rc.d/apache22.sh
 
 post-install: install-startup-script
-	@${MKDIR} ${PREFIX}/etc/apache21/envvars.d
-	@${MKDIR} ${PREFIX}/etc/apache21/Includes
+	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
+	@${MKDIR} ${PREFIX}/etc/apache22/Includes
 	@@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
