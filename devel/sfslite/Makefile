@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sfslite
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=--with-gmp=/usr
 #
 # Map X.Y.Z.Q => X.Y
 #
-SHORTVERSION!=	${ECHO} ${PORTVERSION} | sed -Ee 's/([^.]+\.[^.]+).*/\1/'
+SHORTVERSION=	${PORTVERSION:C/^([^\.]+\.[^\.]+).*$/\1/}
 
 #
 # if being called from one of the slave distributions (like
