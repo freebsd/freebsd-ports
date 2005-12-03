@@ -34,6 +34,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 
 # patch files
 EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
+
 .if defined (WITH_WINDOWSUPDATEFIX)
 EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
 .endif
