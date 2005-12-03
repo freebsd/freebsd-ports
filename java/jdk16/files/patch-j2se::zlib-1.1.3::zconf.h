@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- ../../j2se/src/share/native/java/util/zip/zlib-1.1.3/zconf.h	8 Nov 2004 22:27:36 -0000	1.1.1.1
 +++ ../../j2se/src/share/native/java/util/zip/zlib-1.1.3/zconf.h	20 Oct 2005 18:19:49 -0000
 @@ -11,44 +11,49 @@

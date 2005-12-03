@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- ../../j2se/src/solaris/native/java/net/Inet4AddressImpl.c	10 Aug 2005 16:51:14 -0000	1.8
 +++ ../../j2se/src/solaris/native/java/net/Inet4AddressImpl.c	21 Sep 2005 02:27:28 -0000	1.9
 @@ -608,6 +608,8 @@
