@@ -50,14 +50,14 @@ IGNORE=		You need the kernel sources installed to build this module.
 patch-iicbb:
 .if ${OSVERSION} < 500000
 	@if [ -z "`${GREP} cxm_iic /usr/src/sys/dev/iicbus/iicbb.c`" ]; then \
-	    ${PATCH} /usr/src/sys/dev/iicbus/iicbb.c ${WRKDIR}/dev/cxm/Patch.iicbb-fbsd4; \
+	    ${PATCH} -d/sys <${WRKDIR}/dev/cxm/Patch.iicbb-fbsd4; \
 	    ${ECHO_CMD} "Patched /usr/src/sys/dev/iicbus/iicbb.c"; \
 	else \
 	    ${ECHO_CMD} "/usr/src/sys/dev/iicbus/iicbb.c was already patched"; \
 	fi
 .else
 	@if [ -z "`${GREP} cxm_iic /usr/src/sys/dev/iicbus/iicbb.c`" ]; then \
-	    ${PATCH} /usr/src/sys/dev/iicbus/iicbb.c ${WRKDIR}/dev/cxm/Patch.iicbb-fbsd5; \
+	    ${PATCH} -d/sys <${WRKDIR}/dev/cxm/Patch.iicbb-fbsd5; \
 	    ${ECHO_CMD} "Patched /usr/src/sys/dev/iicbus/iicbb.c"; \
 	else \
 	    ${ECHO_CMD} "/usr/src/sys/dev/iicbus/iicbb.c was already patched"; \
