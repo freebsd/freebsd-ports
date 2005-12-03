@@ -166,6 +166,7 @@
     SUBDIR += gnomemedia2
     SUBDIR += gnomoradio
     SUBDIR += gnowavcut
+    SUBDIR += gnuitar
     SUBDIR += gnump3d
     SUBDIR += gnupod
     SUBDIR += gogo
