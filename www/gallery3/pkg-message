@@ -16,12 +16,12 @@ If you are using MySQL, here's the short version of the instructions:
 You will also need to configure Apache.  Consider adding the following
 to your httpd.conf:
 
-    <Directory %%PREFIX%%/%%GALLERYDIR%%>
+    <Directory %%PREFIX%%/%%GALLERY2DIR%%>
         AllowOverride Options FileInfo
     </Directory>
 
 Then restart Apache: 'apachectl graceful'
 
-Please visit 'http://{host.domain}/%%GALLERYDIR%%/' in a
+Please visit 'http://{host.domain}/%%GALLERY2DIR%%/' in a
 web-browser and follow the configuration instructions.
 *****************************************************************
