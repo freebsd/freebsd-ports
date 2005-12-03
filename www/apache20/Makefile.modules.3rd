@@ -33,7 +33,7 @@ IGNORE=		"This module require apache2 and you have apache13 installed"
 .     endif
 .   endif
 .   ifdef(WITH_APACHE2)
-.error You have `WITH_APACHE2' variable defined either in environment or in make(1) argumentsm. but apache13 is installed Please undefine and try again.
+IGNORE=	You have 'WITH_APACHE2' variable defined either in environment or in make(1) arguments. but apache13 is installed Please undefine and try again.
 .   endif
 .endif
 
@@ -158,6 +158,17 @@ CONFIGURE_ARGS+=	--disable-access --disable-auth \
 			--disable-asis --disable-cgid --disable-cgi \
 			--disable-negotiation --disable-dir --disable-imap \
 			--disable-actions --disable-userdir --disable-alias
+.elif ${WANT_APACHE} == common21
+CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
+			--disable-authz-host --disable-authz-groupfile \
+			--disable-authz-user --disable-authz-default \
+			--disable-auth-basic --disable-charset-lite \
+			--disable-include --disable-log-config --disable-env \
+			--disable-setenvif --disable-mime --disable-status \
+			--disable-autoindex --disable-asis --disable-cgid \
+			--disable-cgi --disable-negotiation --disable-dir \
+			--disable-imagemap --disable-actions --disable-userdir \
+			--disable-alias
 .endif
 
 .if defined(WITH_MODULES)
@@ -182,13 +193,13 @@ _APACHE_MODULES+=	${WITH_EXTRA_MODULES}
 
 
 .if !defined(WITH_STATIC_APACHE)
-.    if ${WANT_APACHE} == common2
+.    if ${WANT_APACHE} == common2 || ${WANT_APACHE} == common21
 # FYI
 #DYNAMIC_MODULES=	so
 CONFIGURE_ARGS+=	--enable-so
 .    endif
 .else
-.    if ${WANT_APACHE} == common2
+.    if ${WANT_APACHE} == common2 || ${WANT_APACHE} == common21
 CONFIGURE_ARGS+=	--disable-so
 .    endif
 WITH_ALL_STATIC_MODULES=	YES
@@ -198,7 +209,7 @@ WITH_ALL_STATIC_MODULES=	YES
 .if ${WANT_APACHE} == common13
 SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
-.elif ${WANT_APACHE} == common2
+.elif ${WANT_APACHE} == common2 || ${WANT_APACHE} == common21
 SUEXEC_CONFARGS=	with-suexec
 .else
 IGNORE=		Can not determine apache version
