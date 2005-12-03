@@ -7,6 +7,7 @@
 
 PORTNAME=	fortune-mod-bible
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fortunebible
@@ -23,7 +24,7 @@ SUB_FILES+=	pkg-message
 _STRFILE=	/usr/games/strfile
 
 do-build:
-	@cd ${WRKSRC} && ${_STRFILE} bible
+	@cd ${WRKSRC} && ${_STRFILE} -C bible
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games
