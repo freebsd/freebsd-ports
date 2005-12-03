@@ -7,7 +7,7 @@
 
 PORTNAME=	quake3
 PORTVERSION=	1.32b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
@@ -32,6 +32,11 @@ USE_GCC=	3.2+
 PLIST_FILES=	bin/q3ded bin/quake3
 
 .include <bsd.port.pre.mk>
+
+# Anyone to play with this on IA64?
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on IA64 (feel free to submit fixes)"
+.endif
 
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
