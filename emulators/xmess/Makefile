@@ -7,7 +7,7 @@
 
 PORTNAME=	xmess
 
-MAINTAINER=	mmendez@gmail.com
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	X11 emulator for game consoles
 
 MASTERDIR=	${.CURDIR}/../xmame
