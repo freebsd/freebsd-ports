@@ -153,7 +153,7 @@ RC_SCRIPT=	apache
 RC_SCRIPT=	apache.sh
 .endif
 
-PLIST_SUB=	RC_SCRIPT="${RC_SCRIPT}"
+PLIST_SUB+=	RC_SCRIPT="${RC_SCRIPT}"
 
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
