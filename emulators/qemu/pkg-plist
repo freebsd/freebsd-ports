@@ -1,5 +1,6 @@
 bin/qemu
 bin/qemu-img
+bin/qemu-system-arm
 bin/qemu-system-mips
 bin/qemu-system-ppc
 bin/qemu-system-sparc
