@@ -42,7 +42,6 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../mozilla/Makefile.common"
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on alpha during post-build
@@ -103,4 +102,5 @@ post-install:
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 
+.include "${.CURDIR}/../mozilla/Makefile.common"
 .include <bsd.port.post.mk>
