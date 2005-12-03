@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
@@ -34,7 +34,6 @@ MOZ_EXPORT=	MOZ_THUNDERBIRD=1
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1
 
 PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
-SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
 CONFLICTS=	thunderbird*-1.5*
@@ -67,6 +66,9 @@ post-patch:
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 
 pre-install:
+	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
+	${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
+		${FAKEDIR}/lib/${PORTNAME}/defaults
 	${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 
