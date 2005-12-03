@@ -7,14 +7,14 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.99.902
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		x11 linux
 MASTER_SITES=	${MASTER_SITE_SUSE} \
 		ftp://ftp.in2p3.fr/pub/linux/suse/update/9.1/rpm/i586/ \
 		ftp://ftp.dit.upm.es/suseupdates/suse-9.1/updates/
 MASTER_SITE_SUBDIR=	i386/update/9.1/rpm/i586
 PKGNAMEPREFIX=	linux-
-DISTNAME=	XFree86-libs-4.3.99.902-43.35.3.i586.rpm
+DISTNAME=	XFree86-libs-4.3.99.902-43.42.5.i586.rpm
 EXTRACT_SUFX=
 DIST_SUBDIR=	rpm/i386/suse
 EXTRACT_ONLY=
