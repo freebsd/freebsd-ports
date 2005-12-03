@@ -12,8 +12,8 @@
 #
 # Variables definition
 # USE_APACHE:	Call this script. Values can be:
-#		<version>: 1.3/13/2.0/20/2.1/1.3+/2.0+/2.1+
-#		common*: common13, common20 and common21
+#		<version>: 1.3/13/2.0/20/2.1/2.2/1.3+/2.0+/2.1+/2.2+
+#		common*: common13, common20, common21 and common22
 #
 #
 #
@@ -23,7 +23,7 @@ USE_APACHE=yes
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
-APACHE_SUPPORTED_VERSION=	13 20 21
+APACHE_SUPPORTED_VERSION=	13 20 21 22
 .if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	YES
 .elif ${USE_APACHE:L} == apr
@@ -88,6 +88,17 @@ CONFIGURE_ARGS+=	--disable-access --disable-auth \
 			--disable-negotiation --disable-dir --disable-imap \
 			--disable-actions --disable-userdir --disable-alias
 .elif ${USE_APACHE} == common21
+CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
+			--disable-authz-host --disable-authz-groupfile \
+			--disable-authz-user --disable-authz-default \
+			--disable-auth-basic --disable-charset-lite \
+			--disable-include --disable-log-config --disable-env \
+			--disable-setenvif --disable-mime --disable-status \
+			--disable-autoindex --disable-asis --disable-cgid \
+			--disable-cgi --disable-negotiation --disable-dir \
+			--disable-imagemap --disable-actions --disable-userdir \
+			--disable-alias
+.elif ${USE_APACHE} == common22
 CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-authz-host --disable-authz-groupfile \
 			--disable-authz-user --disable-authz-default \
@@ -285,7 +296,7 @@ PLIST_SUB+=	APACHEMODDIR="libexec/apache2" \
 # XXX We postpone www/apache2 => www/apache20 migration
 #APACHE_PORT=	www/apache${APACHE_VERSION}
 APACHE_PORT=	www/apache2
-.elif ${APACHE_VERSION} == "21"
+.elif ${APACHE_VERSION} >= "21"
 AP_BUILDEXT=	la
 PLIST_SUB+=	APACHEMODDIR="libexec/apache${APACHE_VERSION}" \
 			APACHEINCLUDEDIR="include/apache${APACHE_VERSION}"
