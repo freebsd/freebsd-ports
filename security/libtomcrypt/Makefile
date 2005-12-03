@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
-
-PATCH_SITES=	http://www.libtomcrypt.org/files/patch-1.06/
-PATCHFILES=	makefile.diff
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
@@ -52,12 +49,19 @@ CFLAGS+=	-DTFM_DESC
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 .else
 NOPORTDOCS=	yes
-INSTALL_TARGET=	install_lib
+MAKE_ARGS+=	NODOCS=yes
 .endif
 
 .if defined(MAINTAINER_MODE)
 test:	build
-	(cd ${WRKSRC} && ${GMAKE} test && ${WRKSRC}/test)
-.endif
+	@${ECHO_MSG} "Testing with -DUSE_TFM..."
+	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_TFM" EXTRALIBS="-L${PREFIX}/lib -ltfm" ${GMAKE} test && ${WRKSRC}/test)
 
+	@${ECHO_MSG} "Cleaning up test binary..."
+	@${RM} ${WRKSRC}/test
+	@${RM} ${WRKSRC}/demos/test.o
+
+	@${ECHO_MSG} "Testing with -DUSE_LTM..."
+	(cd ${WRKSRC} && CFLAGS="${CFLAGS} -DUSE_LTM" EXTRALIBS="-L${PREFIX}/lib -ltommath" ${GMAKE} test && ${WRKSRC}/test)
+.endif
 .include <bsd.port.post.mk>
