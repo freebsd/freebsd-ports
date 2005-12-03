@@ -1,0 +1,61 @@
+--- configure.orig	Sun Nov 20 20:43:14 2005
++++ configure	Sat Dec  3 21:00:06 2005
+@@ -1318,7 +1318,7 @@
+ 
+ 
+ 
+-if test x"$VICE_VERSION_BUILD" == "x" -o x"$VICE_VERSION_BUILD" == "x0" ; then
++if test x"$VICE_VERSION_BUILD" = "x" -o x"$VICE_VERSION_BUILD" = "x0" ; then
+   VICE_VERSION=$VICE_VERSION_MAJOR"."$VICE_VERSION_MINOR
+ else
+   VICE_VERSION=$VICE_VERSION_MAJOR"."$VICE_VERSION_MINOR"."$VICE_VERSION_BUILD
+@@ -1718,7 +1718,7 @@
+           ac_config_headers="$ac_config_headers src/config.h"
+ 
+ 
+-if test x"$VICE_VERSION_BUILD" == "x" -o x"$VICE_VERSION_BUILD" == "x0" ; then
++if test x"$VICE_VERSION_BUILD" = "x" -o x"$VICE_VERSION_BUILD" = "x0" ; then
+   VERSION_RC=$VICE_VERSION_MAJOR","$VICE_VERSION_MINOR",0,0"
+ else
+   VERSION_RC=$VICE_VERSION_MAJOR","$VICE_VERSION_MINOR","$VICE_VERSION_BUILD",0"
+@@ -6080,7 +6080,7 @@
+ fi
+ 
+ if test x"$with_sdl" = "xyes"; then
+-	for ac_prog in sdl-config
++	for ac_prog in ${SDL_CONFIG##*/}
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -12594,6 +12594,7 @@
+ else
+   ac_check_lib_save_LIBS=$LIBS
+ LIBS="-lesd $SOUND_LIBS $LIBS"
++CPPFLAGS="`esd-config --cflags` $CPPFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -12655,10 +12656,10 @@
+   if test x"$with_sdl" = "xyes"; then
+     old_cflags=$CFLAGS
+     old_libs=$LIBS
+-    CFLAGS="$CFLAGS `sdl-config --cflags`"
+-    LIBS="$LIBS `sdl-config --libs`"
++    CFLAGS="$CFLAGS `${SDL_CONFIG} --cflags`"
++    LIBS="$LIBS `${SDL_CONFIG} --libs`"
+ 
+-for ac_header in SDL/SDL_audio.h
++for ac_header in SDL_audio.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -12800,7 +12801,8 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lSDL $SOUND_LIBS $LIBS"
++LIBS="`${SDL_CONFIG} --libs` $SOUND_LIBS $LIBS"
++CFLAGS="`${SDL_CONFIG} --cflags` $CFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

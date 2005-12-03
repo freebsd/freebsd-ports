@@ -185,6 +185,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/MSDOS-Ethernet-Howto.txt
 %%DOCSDIR%%/MSDOS-Howto.txt
+%%DOCSDIR%%/MinixVmd-Howto.txt
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/NLS-Howto.txt
 %%DOCSDIR%%/PETdoc.txt
