@@ -9,7 +9,7 @@ PORTNAME=	fgkicker
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://users.pandora.be/ceppe/projects/files/fgkicker/
+MASTER_SITES=	http://www.larfeliz.be/projects/files/fgkicker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erik@smluc.org
