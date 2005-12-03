@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.101
+PORTVERSION?=	0.102
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.arcade-history.com/download/:history \
@@ -17,7 +17,7 @@ DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
-MAINTAINER?=	mmendez@gmail.com
+MAINTAINER?=	mmendez@energyhq.be
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
@@ -128,7 +128,7 @@ PLIST_SUB+=	DATFILES=""
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 HIVER=		0100
-HISTVER=	1_05
+HISTVER=	1_05c
 
 DISTFILES+=	uhsdat${HIVER}.zip:highscore \
 		history${HISTVER}.zip:history \
