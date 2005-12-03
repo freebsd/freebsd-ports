@@ -3195,6 +3195,7 @@ gnuchess	ports/games/gnuchess
 gnudatalanguage	ports/science/gnudatalanguage
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
+gnuitar		ports/audio/gnuitar
 gnulibiberty	ports/devel/gnulibiberty
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
