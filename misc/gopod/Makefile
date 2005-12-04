@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gopod
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	misc
 MASTER_SITES=	http://gopod.free-go.net/gopod/ \
 		http://critical.ch/distfiles/
@@ -20,6 +20,8 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+MAKE_ARGS+=	CC="${CC}"
+
 RESTRICTED=	"Unclear legal status in EU countries"
 
 .if ${PKGNAMEPREFIX} == ""
@@ -29,13 +31,20 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/console-version
 
 PORTDOCS=	README_EN README_FR
 
+post-extract:
+	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h)" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
+
 post-patch:
 .if ${PKGNAMEPREFIX} == "gtk-"
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/main.c
-.endif
-	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/main.c
-	@${REINPLACE_CMD} -e 's|\($$(CC)\)|\1 ${CFLAGS}|; /strip/d' \
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/gui.c
+	@${REINPLACE_CMD} -E \
+		's/^(CFLAGS|LDFLAGS).*=/\1+=/; s|(OS_FLAGS\))|\1 $${CFLAGS}|' \
 		${WRKSRC}/Makefile
+.else
+	@${REINPLACE_CMD} -e 's|\($$(CC)\)|\1 $${CFLAGS}|; /strip/d' \
+		${WRKSRC}/Makefile
+.endif
 
 do-install:
 .if ${PKGNAMEPREFIX} == ""
