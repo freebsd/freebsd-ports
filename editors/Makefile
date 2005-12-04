@@ -115,6 +115,7 @@
     SUBDIR += nvi-perl
     SUBDIR += nxml-emacs21
     SUBDIR += offix-editor
+    SUBDIR += ooo-build
     SUBDIR += ooodict-all
     SUBDIR += openoffice.org-1.0
     SUBDIR += openoffice.org-1.1

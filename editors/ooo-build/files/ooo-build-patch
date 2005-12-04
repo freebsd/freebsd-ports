@@ -1,0 +1,44 @@
+gnu patch is gpatch for FreeBSD.
+--- patches/apply.pl	Tue Nov  1 00:07:02 2005
++++ patches/apply.pl	Tue Nov  1 00:07:32 2005
+@@ -473,7 +473,7 @@
+     my $ver_line;
+     my $is_old = 1;
+ 
+-    open ($Patch, "patch --version|") || die "Can't run patch: $!";
++    open ($Patch, "gpatch --version|") || die "Can't run patch: $!";
+     $ver_line = <$Patch>;
+     $ver_line =~ m/\s+(\d+)\.(\d+)\.(\d+)/ || die "Can't get patch version\n";
+     if ($1 >= 2 && $2 >= 5 && $3 >= 9) {
+@@ -597,7 +597,7 @@
+     $applied_patches = $dest_dir.'/applied_patches';
+ 
+     $opts = join ' ', @arguments;
+-    $base_cmd = "patch -l -p0 $opts -d $dest_dir";
++    $base_cmd = "gpatch -l -p0 $opts -d $dest_dir";
+     if (is_old_patch_version()) {
+ 	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
+     }
+
+--- patches/OOO_2_0/apply.orig	Wed Nov 30 01:16:48 2005
++++ patches/OOO_2_0/apply	Sun Dec  4 11:54:05 2005
+@@ -57,6 +57,8 @@
+ Gentoo64: GentooBase, 64bit
+ # Win32
+ Win32 : Win32Common, NovellOnly, NovellOnlyWin32
++# FreeBSD
++FreeBSD : LinuxCommon, NotDebian
+ 
+ # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
+ 
+@@ -495,7 +497,7 @@
+ # Fix missing __cxa_guard_acquire/__cxa_guard_release - #34676 (for FC3)
+ sal-cxa-guard.diff
+ # do not pack any potential .orig files with ppds
+-psprint_config-no-orig.diff
++#psprint_config-no-orig.diff #don't apply for FBSD patch (workaround)
+ # Fix ODK Java bits
+ odk-java-wizpanel.diff
+ # add possibility to set ARCH_FLAGS when building libnas
+
+
