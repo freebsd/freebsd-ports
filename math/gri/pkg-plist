@@ -7,9 +7,6 @@ bin/gri-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/logo.dat
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@unexec install-info --delete %D/info/gri.info %D/info/dir
-%%PORTDOCS%%info/gri.info
-%%PORTDOCS%%@exec install-info %D/info/gri.info %D/info/dir
 %%PORTDOCS%%%%DOCSDIR%%/html/AboutGriMode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Acknowledgments.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AdjustingCharacterPosition.html

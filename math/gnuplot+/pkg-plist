@@ -1,9 +1,6 @@
 bin/lasergnu
 bin/gnuplot
 bin/gnuplot_x11
-@unexec install-info --delete %D/info/gnuplot.info %D/info/dir
-info/gnuplot.info
-@exec install-info %D/info/gnuplot.info %D/info/dir
 share/gnuplot.gih
 share/doc/gnuplot+/Copyright.plus
 share/doc/gnuplot+/History.plus

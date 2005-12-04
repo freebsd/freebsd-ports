@@ -37,6 +37,7 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--with-vflib=${LOCALBASE}/lib
 
 MAN1=		gnuplot.1 lasergnu.1
+INFO=		gnuplot
 
 WRKSRC=		${WRKDIR}/gnuplot-3.7.1
 GP_DOCS=	${WRKSRC}/Copyright.plus \
