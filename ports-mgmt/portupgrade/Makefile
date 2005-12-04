@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20041226
-PORTREVISION=	9
+PORTVERSION=	20051204
+PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://dists.lovepeers.org/distfiles/portupgrade/
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	koma2@lovepeers.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
-DISTVERSION=	20041224
+DISTVERSION=	${PORTVERSION}
 
 .if ${DISTVERSION} != ${PORTVERSION}
 PATCH_SITES=	${MASTER_SITES}
