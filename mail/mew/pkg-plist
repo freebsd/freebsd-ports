@@ -2,13 +2,6 @@ bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/uumerge
-@exec [ -f %D/info/dir ] || sed -ne 1,/Menu:/p /usr/share/info/dir > %D/info/dir
-@unexec install-info --delete %D/info/mew.info %D/info/dir
-info/mew.info
-@exec install-info %D/info/mew.info %D/info/dir
-info/mew.info-1
-info/mew.info-2
-info/mew.info-3
 %%MEW_DOCDIR%%/00changes
 %%MEW_DOCDIR%%/00copyright
 %%MEW_DOCDIR%%/00copyright.jis
