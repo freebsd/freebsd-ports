@@ -15,7 +15,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to keep your virtual host configuration in a LDAP directory
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 USE_OPENLDAP=	YES
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
@@ -28,9 +28,6 @@ AP_LIB+=	${LDAP_LIB}
 PORTDOCS=	AUTHORS cfg_ldap.conf ChangeLog COPYING INSTALL \
 		mod_cfg_ldap.schema README TODO
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -39,4 +36,4 @@ post-install:
 .   endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
