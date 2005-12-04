@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.10
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,15 @@ COMMENT=	Challenging 2D motocross platform game
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lua.5:${PORTSDIR}/lang/lua
+BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_REINPLACE=	yes
-USE_SDL=	sdl
+USE_SDL=	sdl mixer
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -34,15 +36,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
-# game is still in alpha state, other archs are untested
-ONLY_FOR_ARCHS=	i386
-
-post-patch:
+post-extract:
 	@${FIND} ${WRKSRC}/src -name "*.cpp" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e "s|$$(${PRINTF} '\r')||g"
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/VCommon.h
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ode/config.h \
-		${WRKSRC}/src/image/tim_memory_crt.cpp
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/image/tim_memory_crt.cpp
+	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs` |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|endian.h|sys/endian.h|' ${WRKSRC}/src/VCommon.h
 
 .if !defined(NOPORTDOCS)
 post-install:
