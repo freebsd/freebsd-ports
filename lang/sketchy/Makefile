@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20051118
-CATEGORIES=	lang devel lisp
+PORTVERSION=	20051203
+CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/sketchy/
 
 MAINTAINER=	nmh@t3x.org
