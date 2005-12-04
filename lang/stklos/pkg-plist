@@ -1,9 +1,13 @@
 bin/stklos
 bin/stklos-compile
 bin/stklos-config
+bin/stklos-ext-install
 bin/stklos-genlex
+bin/stklos-install
 bin/stklos-script
 include/stklos/extraconf.h
+include/stklos/fport.h
+include/stklos/socket.h
 include/stklos/stklos.h
 include/stklos/stklosconf.h
 lib/stklos/%%VERSION%%/ldap.so
@@ -13,7 +17,6 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/bb.stk
 %%DATADIR%%/%%VERSION%%/bigloo.stk
 %%DATADIR%%/%%VERSION%%/bonus.stk
-%%DATADIR%%/%%VERSION%%/boot.img
 %%DATADIR%%/%%VERSION%%/boot.stk
 %%DATADIR%%/%%VERSION%%/compfile.ostk
 %%DATADIR%%/%%VERSION%%/compfile.stk
@@ -38,6 +41,7 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/lex-rt.ostk
 %%DATADIR%%/%%VERSION%%/lex-rt.stk
 %%DATADIR%%/%%VERSION%%/load.stk
+%%DATADIR%%/%%VERSION%%/make-C-boot.stk
 %%DATADIR%%/%%VERSION%%/match.ostk
 %%DATADIR%%/%%VERSION%%/match.stk
 %%DATADIR%%/%%VERSION%%/mbe.stk
@@ -85,8 +89,12 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/srfi-4.stk
 %%DATADIR%%/%%VERSION%%/srfi-48.ostk
 %%DATADIR%%/%%VERSION%%/srfi-48.stk
+%%DATADIR%%/%%VERSION%%/srfi-60.ostk
+%%DATADIR%%/%%VERSION%%/srfi-60.stk
 %%DATADIR%%/%%VERSION%%/srfi-7.ostk
 %%DATADIR%%/%%VERSION%%/srfi-7.stk
+%%DATADIR%%/%%VERSION%%/srfi-70.ostk
+%%DATADIR%%/%%VERSION%%/srfi-70.stk
 %%DATADIR%%/%%VERSION%%/srfi-9.ostk
 %%DATADIR%%/%%VERSION%%/srfi-9.stk
 %%DATADIR%%/%%VERSION%%/struct.stk
