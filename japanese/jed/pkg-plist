@@ -1,12 +1,6 @@
 bin/jed
 bin/rgrep
 %%XJED_ENTRY%%
-%%PORTDOCS%%@unexec install-info --delete %D/info/jed.info %D/info/dir
-%%PORTDOCS%%info/jed.info
-%%PORTDOCS%%info/jed.1in
-%%PORTDOCS%%info/jed.2in
-%%PORTDOCS%%info/jed.3in
-%%PORTDOCS%%@exec install-info %D/info/jed.info %D/info/dir
 lib/jed/bin/getmail
 %%PORTDOCS%%lib/jed/doc/abbrev.txt
 %%PORTDOCS%%lib/jed/doc/color.txt
