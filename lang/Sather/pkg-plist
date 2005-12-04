@@ -1,14 +1,5 @@
 bin/sabrowse
 bin/sacomp
-@unexec install-info --delete %D/info/sather.info %D/info/dir
-info/sather.info
-@exec install-info %D/info/sather-mode.info %D/info/dir
-@unexec install-info --delete %D/info/sather-mode.info %D/info/dir
-info/sather-mode.info
-@exec install-info %D/info/sather.info %D/info/dir
-@unexec install-info --delete %D/info/sather-tutorial.info %D/info/dir
-info/sather-tutorial.info
-@exec install-info %D/info/sather-tutorial.info %D/info/dir
 lib/sather/Bin/PP
 lib/sather/Bin/bin-wrapper
 lib/sather/Bin/gen_html

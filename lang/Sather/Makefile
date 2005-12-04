@@ -24,6 +24,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	full optional
 MAN1=		sabrowse.1 sacomp.1
 
+INFO=		sather sather-mode sather-tutorial
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
