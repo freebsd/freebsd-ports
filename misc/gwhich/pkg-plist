@@ -1,6 +1,3 @@
 bin/gwhich
-@unexec install-info --delete %D/info/which.info %D/info/dir
-info/which.info
-@exec install-info %D/info/which.info %D/info/dir
 share/examples/gwhich/EXAMPLES
 @dirrm share/examples/gwhich

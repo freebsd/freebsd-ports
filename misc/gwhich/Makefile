@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
 MAN1=		gwhich.1
+INFO=		which
 
 post-install:
 	@install-info ${PREFIX}/info/which.info ${PREFIX}/info/dir
