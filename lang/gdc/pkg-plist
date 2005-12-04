@@ -79,6 +79,7 @@ include/d/%%GCC_VER%%/std/cstream.d
 include/d/%%GCC_VER%%/std/ctype.d
 include/d/%%GCC_VER%%/std/date.d
 include/d/%%GCC_VER%%/std/dateparse.d
+include/d/%%GCC_VER%%/std/demangle.d
 include/d/%%GCC_VER%%/std/file.d
 include/d/%%GCC_VER%%/std/format.d
 include/d/%%GCC_VER%%/std/gc.d
@@ -177,6 +178,7 @@ include/d/%%GCC_VER%%/std/typeinfo/ti_ulong.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_ushort.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_void.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_wchar.d
+include/d/%%GCC_VER%%/std/windows/charset.d
 include/d/%%GCC_VER%%/std/windows/iunknown.d
 include/d/%%GCC_VER%%/std/windows/registry.d
 include/d/%%GCC_VER%%/std/windows/syserror.d
