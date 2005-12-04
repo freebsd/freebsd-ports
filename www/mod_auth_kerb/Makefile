@@ -24,7 +24,7 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 # (i.e., HTTP over SSL/TLS).  Thus, we require as a dependency
 # a version of Apache which can do this.
 #
-USE_APACHE=	yes
+USE_APACHE=	13
 # Don't fsck with CFLAGS
 CFLAGS:=
 GNU_CONFIGURE=	yes
