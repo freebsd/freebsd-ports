@@ -14,15 +14,13 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	20+
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+
 PORTDOCS=	doc.html README
 
-do-build:
-	cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	cd ${WRKSRC} && ${APXS} -A -i -n extract_forwarded ${PORTNAME}.la
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
