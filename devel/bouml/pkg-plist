@@ -572,6 +572,7 @@ bin/bouml
 %%DATADIR%%/xmi/1664.bodies
 %%DATADIR%%/xmi/1792.bodies
 %%DATADIR%%/xmi/1920.bodies
+%%DATADIR%%/xmi/2.session
 %%DATADIR%%/xmi/2048.bodies
 %%DATADIR%%/xmi/2176.bodies
 %%DATADIR%%/xmi/2304.bodies
