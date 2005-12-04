@@ -16,18 +16,16 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
 SRC_FILE=	bw_mod-0.6.c
 PORTDOCS=	APACHE2-LICENSE LICENSE bw_mod-0.6.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && \
 		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

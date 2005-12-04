@@ -13,7 +13,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 LATEST_LINK=	mod_auth_external2
@@ -21,8 +21,6 @@ SHORTMODNAME=	external_auth
 
 PORTDOCS=	AUTHENTICATORS INSTALL README
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -31,4 +29,4 @@ post-install:
 .   endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

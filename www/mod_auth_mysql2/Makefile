@@ -20,7 +20,7 @@ LATEST_LINK=	mod_auth_mysql2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_MYSQL=	YES
-WANT_APACHE=	2
+USE_APACHE=	20
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_INC+=	${LOCALBASE}/include/mysql
@@ -28,10 +28,8 @@ AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
 PORTDOCS=	INSTALL example_data.html htpasswd.sql
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
