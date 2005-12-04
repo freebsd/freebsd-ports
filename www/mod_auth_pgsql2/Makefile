@@ -13,22 +13,18 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_PGSQL=	yes
+USE_APACHE=	20
 
 LATEST_LINK=	mod_auth_pgsql2
 
-APXS?=		${LOCALBASE}/sbin/apxs
-PG_INC?=	${LOCALBASE}/include
-PG_LIBS?=	${LOCALBASE}/lib -lpq
+AP_INC?=	${LOCALBASE}/include
+AP_LIBS?=	${LOCALBASE}/lib -lpq
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+PORTDOCS=	mod_auth_pgsql.html
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -I ${PG_INC} -L ${PG_LIBS} -c ${PORTNAME}.c)
-
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.la)
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/mod_auth_pgsql.html ${DOCSDIR}
