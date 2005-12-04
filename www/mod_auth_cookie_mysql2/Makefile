@@ -18,7 +18,7 @@ USE_MYSQL=	YES
 # If someone can test it with MySQL 5.0 ;-)
 BROKEN_WITH_MYSQL=	50
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
@@ -26,11 +26,9 @@ AP_INC?=	${LOCALBASE}/include/mysql
 AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
 PORTDOCS=	mod_auth_cookie_mysql.html
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
