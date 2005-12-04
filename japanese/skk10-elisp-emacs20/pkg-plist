@@ -40,9 +40,6 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/skk.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/%%SKK_STARTUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/skk
-@unexec install-info --delete %D/info/skk.info %D/info/dir
-info/skk.info
-@exec install-info %D/info/skk.info %D/info/dir
 %%SKK_JISYODIR%%/SKK.tut
 %%SKK_JISYODIR%%/SKK.tut.E
 %%SKK_DOCDIR%%/AUTHORS

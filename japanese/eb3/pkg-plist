@@ -15,33 +15,6 @@ include/eb/font.h
 include/eb/text.h
 include/eb/zio.h
 @dirrm include/eb
-@unexec install-info --delete %D/info/eb-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebfont-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebfont.info %D/info/dir
-@unexec install-info --delete %D/info/ebinfo-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebinfo.info %D/info/dir
-@unexec install-info --delete %D/info/ebrefile-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebrefile.info %D/info/dir
-@unexec install-info --delete %D/info/ebzip-ja.info %D/info/dir
-@unexec install-info --delete %D/info/ebzip.info %D/info/dir
-info/eb-ja.info
-info/ebfont-ja.info
-info/ebfont.info
-info/ebinfo-ja.info
-info/ebinfo.info
-info/ebrefile-ja.info
-info/ebrefile.info
-info/ebzip-ja.info
-info/ebzip.info
-@exec install-info %D/info/eb-ja.info %D/info/dir
-@exec install-info %D/info/ebfont-ja.info %D/info/dir
-@exec install-info %D/info/ebfont.info %D/info/dir
-@exec install-info %D/info/ebinfo-ja.info %D/info/dir
-@exec install-info %D/info/ebinfo.info %D/info/dir
-@exec install-info %D/info/ebrefile-ja.info %D/info/dir
-@exec install-info %D/info/ebrefile.info %D/info/dir
-@exec install-info %D/info/ebzip-ja.info %D/info/dir
-@exec install-info %D/info/ebzip.info %D/info/dir
 lib/libeb.a
 lib/libeb.so
 lib/libeb.so.7

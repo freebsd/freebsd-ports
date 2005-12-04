@@ -18,6 +18,8 @@ COMMENT=	GNU sed + multi-byte extension
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+INFO=		sed
+
 PATCH_SITES=	http://www.hinadori.dyn.to/~wills/program/
 PATCHFILES=	${PORTNAME}mb109.diff.gz
 PATCH_DIST_STRIP=	-p1

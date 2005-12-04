@@ -16,6 +16,8 @@ COMMENT=	NDTP client written in Tcl/Tk
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+INFO=		bookview-ja bookview
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4

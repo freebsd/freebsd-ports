@@ -23,6 +23,7 @@ COMMENT=	Tools for manipulating MSDOS files + support 1232KB , Unicode LFN
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xdf
+INFO=		mtools
 
 USE_GMAKE=	yes
 

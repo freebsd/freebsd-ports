@@ -20,6 +20,8 @@ PKGDIR=		${.CURDIR}/../lookup
 PLIST=		${.CURDIR}/pkg-plist
 EMACS_PORT_NAME?=	emacs21
 
+INFO?=		lookup lookup-guide
+
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
 ELISPDIR=	${EMACSDIR}/lisp/lookup

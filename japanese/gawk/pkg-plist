@@ -1,8 +1,5 @@
 bin/gawk
 bin/igawk
-@unexec install-info --delete %D/info/gawk.info %D/info/dir
-info/gawk.info
-@exec install-info %D/info/gawk.info %D/info/dir
 libexec/awk/grcat
 libexec/awk/pwcat
 share/awk/assert.awk

@@ -27,6 +27,8 @@ PORT_CLASS?=	master
 EMACS_PORT_NAME=	emacs20
 .endif
 
+INFO=		skk
+
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
