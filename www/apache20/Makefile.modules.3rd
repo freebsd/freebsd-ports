@@ -65,7 +65,7 @@ APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
 .if defined(WITH_APACHE2)
 AP_BUILDEXT=	la
 PLIST_SUB+=	APACHEMODDIR="libexec/apache2"
-APACHE_PORT=	www/apache2
+APACHE_PORT=	www/apache20
 AP_VER=		2
 .else
 AP_BUILDEXT=	so
