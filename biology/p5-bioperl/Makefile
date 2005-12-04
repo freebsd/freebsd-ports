@@ -40,6 +40,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
 		${SITE_PERL}/Text/Shellwords.pm:${PORTSDIR}/textproc/p5-Text-Shellwords
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	p5-bioperl-1.[13579]*
+
 PERL_CONFIGURE=	YES
 
 MAN1=		bp_aacomp.pl.1 \
