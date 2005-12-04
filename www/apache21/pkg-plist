@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-@exec mkdir -p %D/etc/apache21 2> /dev/null
+@exec mkdir -p %D/etc/apache21/extra 2> /dev/null
 @unexec if cmp -s %D/etc/apache21/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache21/httpd.conf; fi
 %%EXAMPLESDIR%%/httpd.conf
 @exec [ -f %D/etc/apache21/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/etc/apache21/httpd.conf

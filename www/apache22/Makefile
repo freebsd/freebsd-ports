@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
@@ -229,6 +230,9 @@ install-startup-script:
 post-install: install-startup-script
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
-	@@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@[ -d ${DOCSDIR}/style/lang/ ] && ${TOUCH} ${DOCSDIR}/style/lang/.keepme
+.endif
 
 .include <bsd.port.post.mk>
