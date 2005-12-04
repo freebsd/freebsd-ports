@@ -34,6 +34,8 @@ CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	NO
 
+INFO=			krb425 krb5-admin krb5-install krb5-user
+
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
 PLIST_SUB+=		KRB4="@comment "

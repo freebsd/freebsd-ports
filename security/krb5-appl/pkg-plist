@@ -1,7 +1,3 @@
-@unexec install-info --delete %D/info/krb425.info %D/info/dir
-@unexec install-info --delete %D/info/krb5-admin.info %D/info/dir
-@unexec install-info --delete %D/info/krb5-install.info %D/info/dir
-@unexec install-info --delete %D/info/krb5-user.info %D/info/dir
 bin/compile_et
 bin/ftp
 bin/gss-client
@@ -48,10 +44,6 @@ include/gssrpc/xdr.h
 %%KRB4%%include/kerberosIV/mit-copyright.h
 include/krb5.h
 include/profile.h
-info/krb425.info
-info/krb5-admin.info
-info/krb5-install.info
-info/krb5-user.info
 lib/libcom_err.a
 lib/libcom_err.so
 lib/libcom_err.so.3
@@ -118,7 +110,3 @@ share/gnats/mit
 @dirrm share/et
 @dirrm share/gnats
 @dirrm share/examples/krb5
-@exec install-info %D/info/krb425.info %D/info/dir
-@exec install-info %D/info/krb5-admin.info %D/info/dir
-@exec install-info %D/info/krb5-install.info %D/info/dir
-@exec install-info %D/info/krb5-user.info %D/info/dir

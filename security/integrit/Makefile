@@ -19,7 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME} utils
 
-MAN1=	i-ls.1 i-viewdb.1 integrit.1
+PLIST_FILES=	bin/i-ls sbin/i-viewdb sbin/integrit
+MAN1=		i-ls.1 i-viewdb.1 integrit.1
+INFO=		integrit
 
 .include <bsd.port.pre.mk>
 

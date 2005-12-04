@@ -26,5 +26,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		authforce.1
 MANCOMPRESSED=	yes
+INFO=		authforce
 
 .include <bsd.port.mk>

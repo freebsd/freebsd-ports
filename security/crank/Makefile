@@ -25,4 +25,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${GUILE_CONFIG} compile`" \
 		LDFLAGS="`${GUILE_CONFIG} link`"
 USE_GMAKE=	yes
 
+INFO=		crank
+
 .include <bsd.port.mk>
