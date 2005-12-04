@@ -21,13 +21,10 @@ PATCH_DIST_STRIP=	-l
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Provides access control based on Referer HTTP header for Apache
 
-WANT_APACHE=	13
+USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -38,4 +35,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

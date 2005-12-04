@@ -16,17 +16,16 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
 USE_MYSQL=	YES
+
 # If someone can test it with MySQL 4.1 ;-)
 BROKEN_WITH_MYSQL=	41
 
-WANT_APACHE=	13
+USE_APACHE=	13
 
 AP_FAST_BUILD=	YES
 AP_INC?=	${LOCALBASE}/include/mysql
 AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so)
 .if !defined(NOPORTDOCS)
@@ -37,4 +36,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/putcookie.cgi ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

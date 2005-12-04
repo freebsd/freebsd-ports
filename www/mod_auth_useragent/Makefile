@@ -14,13 +14,12 @@ MASTER_SITES=	http://download.tangent.org/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to forbid clients based on their User-Agent
 
-WANT_APACHE=	13
+USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 PORTDOCS=	README faq.html
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
@@ -28,4 +27,4 @@ PORTDOCS=	README faq.html
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
