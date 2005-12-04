@@ -30,6 +30,9 @@ INSTALL_TARGET=	install-bin
 .endif
 
 MAN1=	gri.1 gri_merge.1 gri_unpage.1
+.if !defined(NOPORTDOCS)
+INFO=		gri
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info* ${WRKSRC}/doc/info
