@@ -19,5 +19,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		trueprint.1
+INFO=		trueprint
 
 .include <bsd.port.mk>

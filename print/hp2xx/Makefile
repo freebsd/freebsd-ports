@@ -24,6 +24,7 @@ MAKE_ENV=	DEFINES="${CPPFLAGS}" ALL_LIBS="${LDFLAGS}" \
 		PREVIEWER="${PREVIEWER}" 
 
 MAN1=		hp2xx.1
+INFO=		hp2xx
 
 CPPFLAGS=	-DUNIX -I${LOCALBASE}/include
 LDFLAGS=	-lm -L${LOCALBASE}/lib -ltiff -lpng -lz
