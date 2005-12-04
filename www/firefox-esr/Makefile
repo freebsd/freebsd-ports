@@ -8,7 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -27,6 +27,9 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+
+GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
+GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
 FIREFOX_ICON=		${MOZILLA}.xpm
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
@@ -69,6 +72,7 @@ post-patch:
 
 pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
 .if !defined(WITHOUT_NEWTAB)
 	${ECHO_CMD} >> ${SYSTEM_PREFS}
@@ -76,13 +80,6 @@ pre-install:
 	${ECHO_CMD} "pref(\"browser.link.open_external\", 3);" \
 		>> ${SYSTEM_PREFS}
 .endif # !defined(WITHOUT_NEWTAB)
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "lib/${MOZILLA}/chrome/icons/default/default.xpm" >> ${PLIST}
-	${ECHO_CMD} "@dirrm lib/${MOZILLA}/chrome/icons/default" >> ${PLIST}
-	${ECHO_CMD} "@dirrm lib/${MOZILLA}/chrome/icons" >> ${PLIST}
-# Dirty hack to make sure stuff gets removed right.
-	${SORT} -r ${PLIST} > ${PLIST}.tmp
-	${MV} -f ${PLIST}.tmp ${PLIST}
 
 do-install:
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
