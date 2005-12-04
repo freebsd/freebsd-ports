@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.5.20
+PORTVERSION=	0.6.0
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
