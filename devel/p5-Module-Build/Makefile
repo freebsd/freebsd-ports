@@ -7,6 +7,7 @@
 
 PORTNAME=	Module-Build
 PORTVERSION=	0.26.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module/KWILLIAMS
@@ -23,6 +24,20 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes INSTALL README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500600
+BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 
 MAN3=		Module::Build.3 \
 		Module::Build::Base.3 \
@@ -44,22 +59,8 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3 \
 		Module::Build::Platform::os2.3
-
 MAN1=		config_data.1
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Changes INSTALL README
-
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} > 500600
-BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 .endif
 .if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
