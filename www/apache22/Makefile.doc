@@ -65,12 +65,6 @@
 ##                                defines WITH_EXCEPTION_HOOK too)
 ##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
 ##
-##   Port-related:
-##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and
-##                                NO_ERROR
-##           WITH_CUSTOM_WWW:     Let you choose your ${PREFIX}/www components
-##                                [cgi|errordocs|icons|wwwdata]
-##
 ##  Optionnal patches:  
 ##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
 ##                                from apr/httpd CVS)
@@ -102,52 +96,4 @@ MAKE_ENV+=	NOPORTDOCS=yes
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1 htdbm.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8 htcacheclean.8
 
-.if defined(WITHOUT_WWW)
-NO_CGI=		YES
-NO_WWWDATA=	YES
-NO_ICONS=	YES
-NO_ERROR=	YES
-.elif defined(WITH_CUSTOM_WWW)
-.    if ${WITH_CUSTOM_WWW:Mcgi} == ""
-NO_CGI=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Mwwwdata} == ""
-NO_WWWDATA=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Merrordocs} == ""
-NO_ERROR=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Micons} == ""
-NO_ICONS=		YES
-.    endif
-.endif
-
-.if defined(NO_CGI)
-MAKE_ENV+=	NO_CGI=yes
-PLIST_SUB+=	CGI="@comment "
-.else
-PLIST_SUB+=	CGI=""
-.endif
-
-.if defined(NO_ICONS)
-MAKE_ENV+=	NO_ICONS=yes
-PLIST_SUB+=	ICONS="@comment "
-.else
-PLIST_SUB+=	ICONS=""
-.endif
-
-.if defined(NO_WWWDATA)
-MAKE_ENV+=	NO_WWWDATA=yes
-PLIST_SUB+=	WWWDATA="@comment "
-.else
-PLIST_SUB+=	WWWDATA=""
-.endif
-
-.if defined(NO_ERROR)
-MAKE_ENV+=	NO_ERROR=yes
-PLIST_SUB+=	ERROR="@comment "
-.else
-PLIST_SUB+=	ERROR=""
-.endif
-
-PORTDOCS=	*#don't blame me ;-)
+PORTDOCS=	* #don't blame me ;-)
