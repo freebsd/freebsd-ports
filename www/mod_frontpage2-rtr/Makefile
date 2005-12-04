@@ -27,7 +27,7 @@ USE_REINPLACE=	yes
 WANT_APACHE?=	2
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../apache2/Makefile.modules.3rd"
+.include "${.CURDIR}/../apache20/Makefile.modules.3rd"
 .include "${.CURDIR}/../frontpage/Makefile.fp.common"
 
 .ifdef WITH_APACHE2
