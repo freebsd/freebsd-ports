@@ -649,7 +649,6 @@
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-W3C-LinkChecker
     SUBDIR += p5-W3C-LogValidator
-    SUBDIR += p5-WWW-Automate
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Curl
     SUBDIR += p5-WWW-Dilbert
