@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
+INFO=		aalib
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes

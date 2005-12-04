@@ -19,5 +19,6 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 MAN1=		barcode.1
 MAN3=		barcode.3
 GNU_CONFIGURE=	yes
+INFO=		barcode
 
 .include <bsd.port.mk>

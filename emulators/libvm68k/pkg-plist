@@ -7,9 +7,6 @@ include/vm68k/mutex.h
 include/vm68k/processor.h
 include/vm68k/size.h
 include/vm68k/types.h
-@unexec install-info --delete %D/info/libvm68k.info %D/info/dir
-info/libvm68k.info
-@exec install-info %D/info/libvm68k.info %D/info/dir
 lib/libvm68k.a
 lib/libvm68k.so
 lib/libvm68k.so.4
