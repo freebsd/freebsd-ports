@@ -3,9 +3,6 @@ include/pop3lite/alias.h
 include/pop3lite/apop.h
 include/pop3lite/mailbox.h
 include/pop3lite/userconf.h
-@unexec install-info --delete %D/info/pop3lite-admin.info %D/info/dir
-info/pop3lite-admin.info
-@exec install-info %D/info/pop3lite-admin.info %D/info/dir
 lib/pop3lite/alias.so
 lib/pop3lite/apop.so
 lib/pop3lite/capa.so

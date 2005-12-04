@@ -44,6 +44,8 @@ MAN1=		mewcat.1 mewdecode.1 mewencode.1 mewls.1 incm.1
 # make sure LATEST_LINK is different from mew1
 LATEST_LINK=    mew${MEW_MAJOR_VER}-${EMACS_PORT_NAME}
 
+INFO+=		mew${MEW_MAJOR_VER} mew${MEW_MAJOR_VER}.jis
+
 post-patch:
 	for f in mew-key.el info/mew.texi; do \
 		${PERL} -i -pe 's,%%MEW_MAJOR_VER%%,${MEW_MAJOR_VER},g' ${WRKSRC}/$${f}; \

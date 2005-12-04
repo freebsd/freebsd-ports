@@ -22,6 +22,7 @@ INSTALLS_SHLIB=	yes
 
 MAN5=		pop3lite.conf.5
 MAN8=		pop3lite.8
+INFO=		pop3lite-admin
 
 pre-build:
 	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool

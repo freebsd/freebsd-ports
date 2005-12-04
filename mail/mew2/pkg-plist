@@ -3,18 +3,6 @@ bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/mewls
-@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
-@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
-info/mew%%MEW_MAJOR_VER%%.info
-info/mew%%MEW_MAJOR_VER%%.info-1
-info/mew%%MEW_MAJOR_VER%%.info-2
-info/mew%%MEW_MAJOR_VER%%.info-3
-info/mew%%MEW_MAJOR_VER%%.jis.info
-info/mew%%MEW_MAJOR_VER%%.jis.info-1
-info/mew%%MEW_MAJOR_VER%%.jis.info-2
-info/mew%%MEW_MAJOR_VER%%.jis.info-3
-@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
-@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
 share/doc/mew%%MEW_MAJOR_VER%%/00api
 share/doc/mew%%MEW_MAJOR_VER%%/00changes
 share/doc/mew%%MEW_MAJOR_VER%%/00copyright
