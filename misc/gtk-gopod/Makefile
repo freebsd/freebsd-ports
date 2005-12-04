@@ -17,7 +17,7 @@ USE_GNOME=	gtk20
 RESTRICTED=	"Unclear legal status in EU countries"
 
 PLIST=		${.CURDIR}/pkg-plist
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-main.c
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-gui.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk-version
 DATAFILES=	capped.png go.png go_.png mask.xpm notdetected.png uncapped.png
