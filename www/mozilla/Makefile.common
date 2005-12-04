@@ -15,6 +15,9 @@
 #
 # Ports can use the following:
 #
+# GECKO_PLIST_PRE_FILES  List of files to add to the beginning of plist
+# GECKO_PLIST_PRE_DIRS
+#
 # MOZILLA_PLIST_DIRS	List of directories to descend into when
 #			installing and creating the plist
 # MOZ_PIS_SCRIPTS	List of scripts residing in ${FILESDIR} to
@@ -316,6 +319,12 @@ gecko-create-plist:
 		${FAKEDIR}/bin/${MOZILLA}-config
 	${RM} -f ${FAKEDIR}/bin/*.bak
 # Create the plist
+.for f in ${GECKO_PLIST_PRE_FILES}
+	${ECHO_CMD} ${f} >> ${PLIST}
+.endfor
+.for f in ${GECKO_PLIST_PRE_DIRS}
+	${ECHO_CMD} "@dirrm ${f}" >> ${PLIST}
+.endfor
 	${ECHO_CMD} "${BROWSER_PLUGINS_DIR}/.${MOZILLA}.keep" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/${BROWSER_PLUGINS_DIR} 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${MKDIR} ${FAKEDIR}/libdata
