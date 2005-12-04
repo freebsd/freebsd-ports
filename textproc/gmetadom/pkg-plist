@@ -94,6 +94,7 @@ lib/libgmetadom_gdome_cpp_smart.so.2
 %%WITH_OCAML%%lib/ocaml/gdome2/iProcessingInstruction.ml
 %%WITH_OCAML%%lib/ocaml/gdome2/iText.cmi
 %%WITH_OCAML%%lib/ocaml/gdome2/iText.ml
+%%WITH_OCAML%%lib/ocaml/gdome2/libmlgdome.a
 %%WITH_OCAML%%lib/ocaml/gdome2/mlgdome.a
 %%WITH_OCAML%%lib/ocaml/gdome2/mlgdome.cma
 %%WITH_OCAML%%lib/ocaml/gdome2/mlgdome.cmxa
@@ -149,7 +150,6 @@ lib/libgmetadom_gdome_cpp_smart.so.2
 %%WITH_OCAML%%lib/ocaml/gdome2/tText.mli
 %%WITH_OCAML%%lib/ocaml/stublibs/dllmlgdome.so
 %%WITH_OCAML%%lib/ocaml/stublibs/dllmlgdome.so.owner
-%%WITH_OCAML%%lib/ocaml/stublibs/libmlgdome.so
 libdata/pkgconfig/gdome2-cpp-smart.pc
 @dirrm include/gmetadom/gdome_cpp_smart
 @dirrm include/gmetadom
