@@ -155,7 +155,7 @@ SVNGROUP?=	svn
 .endif
 
 .if defined(WITH_APACHE2_APR)
-APACHE2_PORT?=	www/apache2
+APACHE2_PORT?=	www/apache20
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 .if ${APACHE2_PORT} == "www/apache21"
@@ -263,11 +263,11 @@ pre-extract:
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_APACHE2_APR)
-	@${ECHO_MSG} "Using APR from www/apache2.  If you have the devel/apr"
+	@${ECHO_MSG} "Using APR from www/apache20.  If you have the devel/apr"
 	@${ECHO_MSG} "port/package installed, you may need to remove it."
 .else
 	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the www/apache2 port, rather than the devel/apr port,"
+	@${ECHO_MSG} "the www/apache20 port, rather than the devel/apr port,"
 	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
 .endif
 	@${ECHO_MSG} ""

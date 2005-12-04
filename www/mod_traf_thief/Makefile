@@ -16,7 +16,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to redirect part of the traffic to your url
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 RESTRICTED=	No licence

@@ -26,7 +26,7 @@ AP_INC?=	${LOCALBASE}/include/mysql
 AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so)
 .if !defined(NOPORTDOCS)

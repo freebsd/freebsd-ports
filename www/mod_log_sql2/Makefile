@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
 LIB_DEPENDS+=		dbi.0:${PORTSDIR}/databases/libdbi
 .endif
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 .   if ${AP_VER} == 13
 WITHOUT_SSL=	YES
 .   endif

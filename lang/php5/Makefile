@@ -128,7 +128,7 @@ APACHE_MPM!=	${APXS} -q MPM_NAME
 .endif
 .if defined(WITH_APACHE2)
 APACHE_MPM?=	${WITH_MPM}
-APACHE_PORT=	www/apache2
+APACHE_PORT=	www/apache20
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp5.so
 .if ${APACHE_MPM} == "worker"

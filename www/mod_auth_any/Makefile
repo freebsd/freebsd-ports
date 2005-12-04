@@ -26,5 +26,5 @@ AP_INC+=	. -DWITH_APACHE2=1
 WANT_APACHE=	13
 .endif
 
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 .include <bsd.port.post.mk>

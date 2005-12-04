@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.outoforder.cc/downloads/mod_transform/
 MAINTAINER=	stan@stormier.net
 COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache200
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache200
 
 HAS_CONFIGURE=	yes
 USE_GNOME=	libxslt

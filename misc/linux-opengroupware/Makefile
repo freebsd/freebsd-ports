@@ -22,7 +22,7 @@ MAINTAINER=	frank@opengroupware.org
 COMMENT=	Groupware package including mail, calendar, palm sync and much more
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake
 

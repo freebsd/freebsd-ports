@@ -21,7 +21,7 @@ AP_GENPLIST=	YES
 PORTDOCS=	htaccess-example httpd.conf-append-example
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 .if !defined(NOPORTDOCS)
 post-install:

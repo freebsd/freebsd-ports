@@ -20,5 +20,5 @@ AP2_SRC_FILE=	mod_rpaf-2.0.c
 AP2_PKGNAMESUFFIX=	-ap2
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 .include <bsd.port.post.mk>

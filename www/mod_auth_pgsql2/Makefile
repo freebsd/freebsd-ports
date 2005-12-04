@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PGSQL=	yes

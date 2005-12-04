@@ -17,7 +17,7 @@ COMMENT=		Gnatsweb, a GNATS web interface
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 .ifdef WITH_APACHE2
-RUN_DEPENDS+=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+RUN_DEPENDS+=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20
 .endif
 
 USE_PERL5_RUN=		yes

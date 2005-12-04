@@ -24,7 +24,7 @@ SRC_FILE=	bw_mod-0.6.c
 PORTDOCS=	APACHE2-LICENSE LICENSE bw_mod-0.6.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache200/Makefile.modules.3rd"
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && \

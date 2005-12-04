@@ -27,7 +27,7 @@ AP_GENPLIST=	YES
 PORTDOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 post-install:
 .if !defined(NOPORTDOCS)

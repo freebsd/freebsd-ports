@@ -74,7 +74,7 @@ PLIST_SUB+=		APACHE=""
 #
 # Apache 2
 #
-BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache2
+BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache20
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=		MOD_DIR=libexec/apache2
 # Allow apxs invocations

@@ -23,7 +23,7 @@ SHORTMODNAME=	log_config
 MODULENAME=	mod_log_config-st
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.post.mk>

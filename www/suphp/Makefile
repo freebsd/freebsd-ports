@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
-APACHE_PORT=	www/apache2
+APACHE_PORT=	www/apache20
 PLIST_SUB+=	MODULEDIR="libexec/apache2/"
 .else
 PLIST_SUB+=	MODULEDIR="libexec/apache/"

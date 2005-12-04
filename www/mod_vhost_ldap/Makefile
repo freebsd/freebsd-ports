@@ -31,7 +31,7 @@ IGNORE=		Requires support of LDAP in apache 2.0.x port
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache200/Makefile.modules.3rd"
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
