@@ -17,15 +17,13 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to authenticate on a remote web server
 
-USE_APACHE=	YES
-WITH_APACHE2=	YES
+USE_APACHE=	20
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
 
 PORTDOCS=	readme.txt
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
 
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.la)
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
