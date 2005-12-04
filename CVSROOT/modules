@@ -7053,6 +7053,7 @@ onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
 oolite		ports/games/oolite
 oonsoo		ports/games/oonsoo
+ooo-build	ports/editors/ooo-build
 ooodict-all	ports/editors/ooodict-all
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
