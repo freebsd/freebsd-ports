@@ -1,5 +1,0 @@
-Pim6sd is an IPv6 multicast routing daemon, which supports the following
-protocols for IPv6.
-	PIMv2 (Protocol Independent Multicast Version 2) sparse mode 
-	PIM-SSM (Source-Specific Multicast using PIM sparse-mode)
-
