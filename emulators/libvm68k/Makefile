@@ -19,6 +19,8 @@ USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
+INFO=		libvm68k
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^#define _POSIX_C_SOURCE 199506L/d' \
 		${WRKSRC}/memory.cc ${WRKSRC}/memory_map.cc ${WRKSRC}/version.cc

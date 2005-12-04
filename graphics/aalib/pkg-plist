@@ -8,6 +8,3 @@ lib/libaa.a
 lib/libaa.so
 lib/libaa.so.1
 share/aclocal/aalib.m4
-@unexec install-info --delete %D/info/aalib.info %D/info/dir
-info/aalib.info
-@exec install-info %D/info/aalib.info %D/info/dir

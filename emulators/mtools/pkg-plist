@@ -30,9 +30,6 @@ bin/mtype
 bin/mwrite
 bin/mxtar
 bin/mzip
-@unexec install-info --delete %D/info/mtools.info %D/info/dir
-info/mtools.info
-@exec install-info %D/info/mtools.info %D/info/dir
 @unexec if cmp -s %D/etc/mtools.conf %D/etc/mtools.conf.sample; then rm -f %D/etc/mtools.conf; fi
 etc/mtools.conf.sample
 @exec if [ ! -f %D/etc/mtools.conf ]; then cp %B/%f %D/etc/mtools.conf; fi
