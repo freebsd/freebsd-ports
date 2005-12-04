@@ -25,6 +25,8 @@ ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
 INFODIR?=	info
 
+INFO+=		emacs-w3m-ja emacs-w3m
+
 USE_AUTOTOOLS=	autoconf:213
 ALL_TARGET=	default
 

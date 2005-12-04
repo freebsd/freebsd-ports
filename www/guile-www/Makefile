@@ -17,5 +17,6 @@ COMMENT=	Guile modules for WWW interaction
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
+INFO=		guile-www
 
 .include <bsd.port.mk>

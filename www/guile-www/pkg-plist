@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/guile-www.info %D/info/dir
-info/guile-www.info
-@exec install-info %D/info/guile-www.info %D/info/dir
 share/guile/www/cgi.scm
 share/guile/www/http.scm
 share/guile/www/main.scm

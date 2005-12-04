@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/python-xlib.info %D/info/dir
-info/python-xlib.info
-@exec install-info %D/info/python-xlib.info %D/info/dir
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/X.py
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/X.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/X.pyo

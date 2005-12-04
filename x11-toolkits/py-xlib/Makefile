@@ -18,6 +18,7 @@ COMMENT=	X11 library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+INFO=		python-xlib
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/info/python-xlib.info ${PREFIX}/info/

@@ -1,13 +1,3 @@
-@unexec install-info --delete %D/%%INFODIR%%/emacs-w3m-ja.info %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-w3m-ja.info
-@exec install-info %D/%%INFODIR%%/emacs-w3m-ja.info %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-w3m-ja.info-1
-%%INFODIR%%/emacs-w3m-ja.info-2
-%%INFODIR%%/emacs-w3m-ja.info-3
-%%INFODIR%%/emacs-w3m-ja.info-4
-@unexec install-info --delete %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-w3m.info
-@exec install-info %D/%%INFODIR%%/emacs-w3m.info %D/%%INFODIR%%/dir
 %%ICONDIR%%/antenna-up.xpm
 %%ICONDIR%%/back-disabled.xpm
 %%ICONDIR%%/back-up.xpm
