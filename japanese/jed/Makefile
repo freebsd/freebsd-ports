@@ -31,6 +31,9 @@ CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lcurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
 ALL_TARGET=	${BINSTUFF} getmail
 MAN1=		jed.1 rgrep.1
+.if !defined(NOPORTDOCS)
+INFO=		jed
+.endif
 
 JED_ROOT=	${PREFIX}/lib/jed
 BINSTUFF=	jed rgrep
@@ -100,8 +103,10 @@ do-install:
 	${INSTALL_MAN} ${_DOCDIR}/${f} ${PREFIX}/man/man1/
 .endfor
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${_INFODIR}/jed.* ${PREFIX}/info/
-	@install-info ${PREFIX}/info/jed.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${_INFODIR}/jed.info ${PREFIX}/info/
+	${INSTALL_DATA} ${_INFODIR}/jed.1in ${PREFIX}/info/jed.info-1
+	${INSTALL_DATA} ${_INFODIR}/jed.2in ${PREFIX}/info/jed.info-2
+	${INSTALL_DATA} ${_INFODIR}/jed.3in ${PREFIX}/info/jed.info-3
 	@${MKDIR} ${JED_ROOT}/doc/
 	${INSTALL_DATA} ${_DOCDIR}/README ${_DOCDIR}/*.txt ${_DOCDIR}/jed.tex ${WRKSRC}/jed-j.doc ${JED_ROOT}/doc/
 .endif
