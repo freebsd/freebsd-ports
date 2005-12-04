@@ -8,7 +8,7 @@
 PORTNAME=	ldvd
 PORTVERSION=	2.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://files.gff-clan.net/pub/ldvd/
+MASTER_SITES=	http://ftp-master.debian-unofficial.org/contrib/vedran/ldvd/${PORTVERSION}/
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
@@ -23,8 +23,6 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-
-BROKEN=		Unfetchable
 
 USE_BZIP2=	yes
 USE_PERL=	yes
