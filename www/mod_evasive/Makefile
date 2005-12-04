@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/mod_dosevasive
 PORTDOCS=	LICENSE README test.pl
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \

@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=--enable-idn
 
 .if defined(WITH_DPSEARCH_APACHE)
 .if defined (WITH_APACHE2)
-BUILD_DEPEND+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+BUILD_DEPEND+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20
 .else
 BUILD_DEPEND+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 .endif

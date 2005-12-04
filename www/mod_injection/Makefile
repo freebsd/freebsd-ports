@@ -13,7 +13,7 @@ MASTER_SITES=	http://pmade.org/distfiles/oss-releases/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Injects text in the HTTP response after a HTML tag
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 APXS?=		${LOCALBASE}/sbin/apxs

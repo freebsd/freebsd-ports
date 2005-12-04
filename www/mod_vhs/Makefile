@@ -38,7 +38,7 @@ PORTDOCS=	ChangeLog AUTHORS README.logs README.wildcards WARNING \
 		WARNING.THREADS README.phpopt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 post-install:
 .if !defined (NOPORTDOCS)

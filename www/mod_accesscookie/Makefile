@@ -24,7 +24,7 @@ AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

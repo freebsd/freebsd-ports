@@ -1986,3 +1986,4 @@ www/firefox-devel|www/firefox|2005-11-29|Firefox 1.5 is now stable
 japanese/uim|textproc/uim|2005-11-30|new category
 www/p5-HTML-Chuncks|www/p5-HTML-Chunks|2005-12-01|corrected directory
 devel/p5-Test-Builder-Tester|devel/p5-Test-Simple|2005-12-02|Included in Test::Simple package
+www/apache2|www/apache20|2005-12-03|renamed for consistency with other apache ports

@@ -27,7 +27,7 @@
     SUBDIR += apache13-modssl
     SUBDIR += apache13-modssl+ipv6
     SUBDIR += apache13-ssl
-    SUBDIR += apache2
+    SUBDIR += apache20
     SUBDIR += apache21
     SUBDIR += apache22
     SUBDIR += arena

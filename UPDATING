@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051203:
+  AFFECTS: users of www/apache2
+  AUTHOR: clement@FreeBSD.org
+
+  www/apache2 port directory was renamed to www/apache20 to keep
+  consistency with other apache ports.
+
+20051203:
+  AFFECTS: users of www/apache22 and any web apps porters
+  AUTHOR: clement@FreeBSD.org
+
+  www/apache22 stop supporting ${LOCALBASE}/www/(data|error|cgi)(|-dist)
+  directory layout in favor of ${LOCALBASE}/www/apache22/(data|error|cgi).
+  FYI, ports layout may change soon.
+
 20051202:
   AFFECTS: users of www/plone and cmf oriented zope modules
   AUTHOR: filippo.natali@gmail.com

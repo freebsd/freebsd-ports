@@ -22,7 +22,7 @@ AP_GENPLIST=	YES
 PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+.include "${PORTSDIR}/www/apache200/Makefile.modules.3rd"
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
