@@ -33,7 +33,7 @@ AP_PORT_IS_MODULE=	YES
 #### for backward compatibility
 .elif ${USE_APACHE:L} == yes
 .   if defined(WITH_APACHE2)
-APACHE_PORT?=	www/apache2
+APACHE_PORT?=	www/apache20
 .   else
 APACHE_PORT?=	www/apache13
 .   endif
