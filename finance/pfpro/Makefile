@@ -22,6 +22,7 @@ NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+LATEST_LINK=	verisign-pfpro
 
 CERTDIR=	${PREFIX}/certs
 
