@@ -37,6 +37,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		WORDSIZE=${WORDSIZE} BYTEORDER=${BYTEORDER}
 
 MAN1=		gforth.1
+INFO=		gforth vmgen
 
 # Local variables
 #

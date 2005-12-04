@@ -11,18 +11,3 @@ bin/gccbug-%%PORTVERSION%%
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
-@unexec install-info --delete %D/info/cpp.info %D/info/dir
-@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
-@unexec install-info --delete %D/info/g77.info %D/info/dir
-@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@unexec install-info --delete %D/info/gccint.info %D/info/dir
-info/cpp.info
-info/cppinternals.info
-info/g77.info
-info/gcc.info
-info/gccint.info
-@exec install-info %D/info/cpp.info %D/info/dir
-@exec install-info %D/info/cppinternals.info %D/info/dir
-@exec install-info %D/info/g77.info %D/info/dir
-@exec install-info %D/info/gcc.info %D/info/dir
-@exec install-info %D/info/gccint.info %D/info/dir

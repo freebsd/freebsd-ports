@@ -1,3 +1,0 @@
-@unexec install-info --delete %D/info/emacs-lisp-intro.info %D/info/dir
-info/emacs-lisp-intro.info
-@exec install-info %D/info/emacs-lisp-intro.info %D/info/dir

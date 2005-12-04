@@ -27,6 +27,7 @@ LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+INFO=		cpp cppinternals g77 gcc gccint
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure

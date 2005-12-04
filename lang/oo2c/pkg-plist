@@ -5,26 +5,6 @@ bin/oobacktrace
 bin/oocn
 bin/ooef
 bin/oowhereis
-@unexec install-info --delete %D/info/OOCref.info %D/info/dir
-info/OOCref.info
-info/OOCref.info-1
-info/OOCref.info-2
-info/OOCref.info-3
-info/OOCref.info-4
-info/OOCref.info-5
-info/OOCref.info-6
-info/OOCref.info-7
-info/OOCref.info-8
-info/OOCref.info-9
-info/OOCref.info-10
-info/OOCref.info-11
-info/OOCref.info-12
-info/OOCref.info-13
-info/OOCref.info-14
-info/OOCref.info-15
-info/OOCref.info-16
-info/OOCref.info-17
-@exec install-info %D/info/OOCref.info %D/info/dir
 lib/liboo2c.a
 lib/liboo2c.la
 lib/liboo2c.so
