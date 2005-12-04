@@ -15,15 +15,12 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 LATEST_LINK=	mod_auth_pam2
 
+USE_APACHE=	20+
 USE_GMAKE=	YES
 MAKE_ENV+=	APXS=${APXS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-APXS?=		${LOCALBASE}/sbin/apxs
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
