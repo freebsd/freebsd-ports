@@ -1,7 +1,4 @@
 bin/gvd
-@unexec install-info --delete %D/info/gvd.info %D/info/dir
-info/gvd.info
-@exec install-info %D/info/gvd.info %D/info/dir
 share/locale/fr/LC_MESSAGES/gvd.mo
 %%DOCSDIR%%/gvd.html
 %%DOCSDIR%%/gvd.ps

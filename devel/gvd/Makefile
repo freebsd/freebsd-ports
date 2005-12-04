@@ -23,6 +23,8 @@ DEPRECATED=		GVD is now integrated as part of GPS, the GNAT Programming System. 
 			No further releases of GVD stand alone will be made.
 EXPIRATION_DATE=	2005-12-01
 
+INFO=			gvd
+
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=		yes
@@ -38,6 +40,5 @@ post-patch:
 post-install:
 	${GMAKE} -C ${WRKSRC}/docs docdir=${PREFIX}/share/doc/gvd install
 	${MV} ${PREFIX}/share/doc/gvd/gvd.info ${PREFIX}/info/
-	install-info ${PREFIX}/info/gvd.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
