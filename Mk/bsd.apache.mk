@@ -289,22 +289,25 @@ IGNORE?=	PREFIX must be egal to APXS_PREFIX.
 .   endif
 .endif
 
-.if ${APACHE_VERSION} == "20"
+.if ${APACHE_VERSION} == 20
 AP_BUILDEXT=	la
-PLIST_SUB+=	APACHEMODDIR="libexec/apache2" \
-			APACHEINCLUDEDIR="include/apache2"
+APACHEMODDIR=	libexec/apache2
+APACHEINCLUDEDIR=include/apache2
 APACHE_PORT=	www/apache${APACHE_VERSION}
 .elif ${APACHE_VERSION} >= 21
 AP_BUILDEXT=	la
-PLIST_SUB+=	APACHEMODDIR="libexec/apache${APACHE_VERSION}" \
-			APACHEINCLUDEDIR="include/apache${APACHE_VERSION}"
+APACHEMODDIR=	libexec/apache${APACHE_VERSION}
+APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
 APACHE_PORT=	www/apache${APACHE_VERSION}
 .else
 AP_BUILDEXT=	so
-PLIST_SUB+=	APACHEMODDIR="libexec/apache" \
-			APACHEINCLUDEDIR="include/apache"
+APACHEMODDIR=	libexec/apache
+APACHEINCLUDEDIR=include/apache
 APACHE_PORT?= www/apache13
 .endif
+
+PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
+		APACHEINCLUDEDIR="${APACHEINCLUDEDIR}"
 
 .for VAR in ${OVERRIDABLE_VARS}
 .  if defined(AP${APACHE_VERSION}_${VAR})
