@@ -15,7 +15,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Supply access control based cookies stored in a MySQL database
 
 USE_MYSQL=	YES
-WANT_APACHE=	13
+USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_INC+=	${LOCALBASE}/include/mysql
@@ -23,8 +23,6 @@ AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -32,4 +30,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

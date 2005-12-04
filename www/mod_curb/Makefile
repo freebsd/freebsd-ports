@@ -15,17 +15,14 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A per-server bandwidth limiter module for Apache 1.3
 
-WANT_APACHE=	13
+USE_APACHE=	13
 
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

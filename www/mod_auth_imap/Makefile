@@ -14,14 +14,11 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module to provide authentication via an IMAP mail server
 
-WANT_APACHE=	13
+USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
 PORTDOCS=	htaccess-example httpd.conf-append-example
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -29,4 +26,4 @@ post-install:
 	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

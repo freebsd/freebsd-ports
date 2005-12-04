@@ -14,10 +14,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to supply access control based on ident reply
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WANT_APACHE=	13
+USE_APACHE=	13
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
