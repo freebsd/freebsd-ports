@@ -16,14 +16,12 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
-WANT_APACHE=	2
+USE_APACHE=	20
 LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
 PORTDOCS=	htaccess-example httpd.conf-append-example
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -31,4 +29,4 @@ post-install:
 	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
