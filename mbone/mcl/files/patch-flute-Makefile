@@ -11,9 +11,9 @@
 +	#
 +	BINDIR = ../bin/freebsd
 +	LDPC_BINDIR = ../../ldpc/bin/freebsd
-+	LIBRARIES = -lm -pthread -lglib-2.0 -lgdome -lxml2 -L/usr/local/lib
++	LIBRARIES = -lm -pthread -lglib-2.0 -lgdome -lxml2 -L${LOCALBASE}/lib
 +	# added -I/usr/local/include for libgdome header files
-+	ADD_INCLUDES = -I/usr/local/include/ -I/usr/local/include/glib-2.0/ -I/usr/local/include/libgdome/
++	ADD_INCLUDES = -I${LOCALBASE}/include/ -I${LOCALBASE}/include/glib-2.0/ -I${LOCALBASE}/include/libgdome/
 +endif
 +
  
