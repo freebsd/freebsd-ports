@@ -14,9 +14,9 @@ DISTNAME=	mod_v2h
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A mass virtual hosting module for Apache with support
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache200 \
+BUILD_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache200 \
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 		${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-2
