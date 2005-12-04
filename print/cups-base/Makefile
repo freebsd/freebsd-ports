@@ -9,7 +9,7 @@
 
 PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
@@ -33,6 +33,8 @@ post-patch:
 		${WRKSRC}/man/*.man
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${CP} ${WRKSRC}/cups.sh.in ${WRKSRC}/cups.sh.in.presed
+	@${SED} 40d ${WRKSRC}/cups.sh.in.presed > ${WRKSRC}/cups.sh.in
 
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
