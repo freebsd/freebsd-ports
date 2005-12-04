@@ -140,19 +140,6 @@ share/doc/festival/speechtools/index.html
 share/doc/festival/speechtools/HTML.index
 share/doc/festival/speechtools/TeX.formulae
 @dirrm share/doc/festival/speechtools
-@unexec install-info --delete %D/info/festival.info %D/info/dir
-info/festival.info
-info/festival.info-9
-info/festival.info-8
-info/festival.info-7
-info/festival.info-6
-info/festival.info-5
-info/festival.info-4
-info/festival.info-3
-info/festival.info-2
-info/festival.info-1
-info/festival.info-10
-@exec install-info %D/info/festival.info %D/info/dir
 share/doc/festival/festival/user-manual/festival_35.html
 share/doc/festival/festival/user-manual/festival_1.html
 share/doc/festival/festival/user-manual/festival_2.html

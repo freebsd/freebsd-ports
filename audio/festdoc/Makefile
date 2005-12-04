@@ -19,7 +19,7 @@ COMMENT=	Documentation for Festival
 
 NO_BUILD=	yes
 
-INFO_FILES=	festival.info
+INFO=		festival
 FDOC=		${PREFIX}/share/doc/festival
 
 post-extract:
