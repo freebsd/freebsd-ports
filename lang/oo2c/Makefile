@@ -20,6 +20,8 @@ USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		oo2c.1 oob.1 ooef.1 oocn.1 oowhereis.1
 
+INFO=		OOCref
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

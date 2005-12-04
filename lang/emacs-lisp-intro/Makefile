@@ -15,5 +15,6 @@ MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	An introduction to Emacs Lisp programming
 
 USE_AUTOTOOLS=	autoconf:213
+INFO=		emacs-lisp-intro
 
 .include <bsd.port.mk>

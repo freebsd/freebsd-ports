@@ -14,12 +14,6 @@ bin/gforthmi-%%PORTVERSION%%
 bin/vmgen-%%PORTVERSION%%
 @exec ln -fs %f %B/vmgen
 @unexec rm -f %B/vmgen
-@unexec install-info --quiet --delete %D/info/gforth.info %D/info/dir
-info/gforth.info
-@exec install-info %D/info/gforth.info %D/info/dir
-@unexec install-info --quiet --delete %D/info/vmgen.info %D/info/dir
-info/vmgen.info
-@exec install-info %D/info/vmgen.info %D/info/dir
 %%LIB_DIR%%/%%PORTVERSION%%/gforth-ditc
 %%LIB_DIR%%/%%PORTVERSION%%/gforth.fi
 @exec mkdir -p %D/lib/gforth/site-forth
