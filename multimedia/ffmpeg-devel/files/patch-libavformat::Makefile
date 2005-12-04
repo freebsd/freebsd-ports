@@ -21,8 +21,8 @@
                  "$(prefix)/include/ffmpeg"
 -	install -d "$(libdir)/pkgconfig"
 -	install -m 644 ../libavformat.pc "$(libdir)/pkgconfig"
-+	install -d $(prefix)/libdata/pkgconfig
-+	${BSD_INSTALL_DATA} ../libavformat.pc $(prefix)/libdata/pkgconfig
++	install -d "$(prefix)/libdata/pkgconfig"
++	${BSD_INSTALL_DATA} ../libavformat.pc "$(prefix)/libdata/pkgconfig"
  
  %.o: %.c
  	$(CC) $(CFLAGS) $(LIBOBJFLAGS) -c -o $@ $< 
