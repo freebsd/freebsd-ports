@@ -30,7 +30,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
 		--with-apxs=${APXS}
 
-.include "${.CURDIR}/../apache2/Makefile.modules.3rd"
+.include "${.CURDIR}/../apache20/Makefile.modules.3rd"
 
 post-install:
 .if !defined(NOPORTDOCS)
