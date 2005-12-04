@@ -15,7 +15,6 @@ COMMENT=	Make proxied requests appear with client IP
 
 USE_APACHE?=	1.3+
 AP_FAST_BUILD=	YES
-AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
 .include <bsd.port.pre.mk>
