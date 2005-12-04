@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.60
+PORTVERSION=	0.71
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	The successor of the STk Scheme interpreter
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 		gc.1:${PORTSDIR}/devel/boehm-gc
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -26,7 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gtk --disable-gnome
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1
+MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1 \
+		stklos-install.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/doc/Makefile.in
