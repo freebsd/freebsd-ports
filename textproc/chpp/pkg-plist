@@ -1,9 +1,4 @@
 bin/chpp
-@unexec install-info --delete %D/info/chpp.info %D/info/dir
-info/chpp.info
-info/chpp.info-1
-info/chpp.info-2
-@exec install-info %D/info/chpp.info %D/info/dir
 share/chpp/include/cgi.chh
 share/chpp/include/files.chh
 share/chpp/include/list.chh

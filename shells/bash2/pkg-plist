@@ -4,9 +4,6 @@ bin/bash2
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
 bin/bashbug
-@unexec install-info --delete %D/info/bash.info %D/info/dir
-info/bash.info
-@exec install-info %D/info/bash.info %D/info/dir
 %%PORTDOCS%%%%DOCSDIR%%/article.ps.bz2
 %%PORTDOCS%%%%DOCSDIR%%/bashref.ps.bz2
 %%PORTDOCS%%%%DOCSDIR%%/article.txt

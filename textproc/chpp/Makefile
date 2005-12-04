@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 EXAMPLES_DIR=	${PREFIX}/share/examples/chpp
+INFO=		chpp
 
 .include <bsd.port.pre.mk>
 

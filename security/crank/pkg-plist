@@ -1,7 +1,4 @@
 bin/crank
-@unexec install-info --delete %D/info/crank.info %D/info/dir
-info/crank.info
-@exec install-info %D/info/crank.info %D/info/dir
 share/crank/patch/std_monoalphabetic.scm
 share/crank/scheme/crank.scm
 share/crank/24_sort_ascending.xpm

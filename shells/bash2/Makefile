@@ -45,6 +45,7 @@ CONFIGURE_ARGS+= --enable-static-link=no
 CONFIGURE_ARGS+= --debug
 .endif
 MAN1=		bash.1 bashbug.1
+INFO=		bash
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \

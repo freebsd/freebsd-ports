@@ -1,6 +1,0 @@
-bin/i-ls
-sbin/i-viewdb
-sbin/integrit
-@unexec install-info --delete %D/info/integrit %D/info/dir
-info/integrit.info
-@exec install-info %D/info/integrit.info %D/info/dir
