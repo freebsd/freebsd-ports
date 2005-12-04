@@ -26,6 +26,7 @@ NOT_FOR_ARCHS=	amd64 sparc64 ia64
 LATEST_LINK=	gcc30
 
 USE_BZIP2=	yes
+INFO=		cpp cppinternals g77 gcc
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
