@@ -27,6 +27,12 @@ EMACS_VERSION=	19.34
 BROKEN=		"Does not compile on !i386"
 .endif
 
+.if ${OSVERSION} > 600000
+PLIST_SUB+=	NOTON6="@comment "
+.else
+PLIST_SUB+=	NOTON6=""
+.endif
+
 WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 
 .for dir in 	chinese/mule-freewnn \
@@ -60,7 +66,7 @@ CONFIGURE_COOKIE=	${WRKDIR}/.configure_done.${MULEPKG}
 BUILD_COOKIE=		${WRKDIR}/.build_done.${MULEPKG}
 PATCH_COOKIE=		${WRKDIR}/.patch_done.${MULEPKG}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
-PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${CONFIGURE_TARGET}
+PLIST_SUB+=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${CONFIGURE_TARGET}
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
