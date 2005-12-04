@@ -9,238 +9,142 @@ depends on core01. for FreeBSD this is regarded as circular dependency
 and pkg_add command is forked infinite times and eats up systems' resource.
 namely when core01 tries to install core02, core02 also tries to
 install core01.
-
 Index: instsetoo_native/inc_openoffice/unix/packagelist.txt
 ===================================================================
 RCS file: /cvs/installation/instsetoo_native/inc_openoffice/unix/packagelist.txt,v
-retrieving revision 1.20
-diff -u -r1.20 packagelist.txt
---- instsetoo_native/inc_openoffice/unix/packagelist.txt	11 Nov 2005 10:39:31 -0000	1.20
-+++ instsetoo_native/inc_openoffice/unix/packagelist.txt	16 Nov 2005 21:54:35 -0000
-@@ -36,7 +36,7 @@
- solarisrequires = ""
+retrieving revision 1.21
+diff -u -r1.21 packagelist.txt
+--- instsetoo_native/inc_openoffice/unix/packagelist.txt	30 Nov 2005 13:21:44 -0000	1.21
++++ instsetoo_native/inc_openoffice/unix/packagelist.txt	3 Dec 2005 22:26:12 -0000
+@@ -37,6 +37,7 @@
  packagename = "%UNIXPRODUCTNAME-core01"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-mailcap,%UNIXPRODUCTNAMEWITHOUTDOT-core,%UNIXPRODUCTNAMEWITHOUTDOT-core01"
--requires = "%UNIXPRODUCTNAME-core02,%UNIXPRODUCTNAME-core03,%UNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-core05,%UNIXPRODUCTNAME-core06,%UNIXPRODUCTNAME-core07,%UNIXPRODUCTNAME-core08"
-+requires = "%UNIXPRODUCTNAME-core02,%UNIXPRODUCTNAME-core03,%UNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-core05,%UNIXPRODUCTNAME-core06,%UNIXPRODUCTNAME-core07,%UNIXPRODUCTNAME-core08,%UNIXPRODUCTNAME-core09,%UNIXPRODUCTNAME-core10"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-mailcap,%WITHOUTDOTUNIXPRODUCTNAME-core,%WITHOUTDOTUNIXPRODUCTNAME-core01"
+ requires = "%UNIXPRODUCTNAME-core02,%UNIXPRODUCTNAME-core03,%UNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-core05,%UNIXPRODUCTNAME-core06,%UNIXPRODUCTNAME-core07,%UNIXPRODUCTNAME-core08"
++freebsdrequires = "%UNIXPRODUCTNAME-core02,%UNIXPRODUCTNAME-core03,%UNIXPRODUCTNAME-core04,%UNIXPRODUCTNAME-core05,%UNIXPRODUCTNAME-core06,%UNIXPRODUCTNAME-core07,%UNIXPRODUCTNAME-core08,%UNIXPRODUCTNAME-core09,%UNIXPRODUCTNAME-core10"
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -50,7 +50,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-writer"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-writer"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Writer module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -64,7 +63,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-calc"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-calc"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Calc module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -78,7 +76,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-draw"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-draw"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Draw module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -92,7 +89,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-impress"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-impress"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Impress module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -106,7 +102,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-base"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-base"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Base module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -120,7 +115,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01,%UNIXPRODUCTNAMEWITHOUTDOT-core02,%UNIXPRODUCTNAMEWITHOUTDOT-core03,%UNIXPRODUCTNAMEWITHOUTDOT-core04,%UNIXPRODUCTNAMEWITHOUTDOT-core05,%UNIXPRODUCTNAMEWITHOUTDOT-core06,%UNIXPRODUCTNAMEWITHOUTDOT-core07,%UNIXPRODUCTNAMEWITHOUTDOT-core08,%UNIXPRODUCTNAMEWITHOUTDOT-core09,%UNIXPRODUCTNAMEWITHOUTDOT-core10"
- packagename = "%UNIXPRODUCTNAME-math"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-math"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Math module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -133,7 +127,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-graphicfilter"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-graphicfilter"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Graphic filter module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -146,7 +139,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-testtool"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-testtool"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Testtool module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -159,7 +151,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-spellcheck"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-spellcheck"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "English spellchecker module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -172,7 +163,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-xsltfilter"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-xsltfilter"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "XSLT filter samples module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -185,7 +175,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-javafilter"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-javafilter"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Java filter module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -198,7 +187,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-gallery"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-gallery"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Optional gallery for %PRODUCTNAME %PRODUCTVERSION"
-@@ -211,7 +199,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-lngutils"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-lngutils"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Language utilities for %PRODUCTNAME %PRODUCTVERSION"
-@@ -224,7 +211,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-activex"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-activex"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "ActiveX control for %PRODUCTNAME %PRODUCTVERSION"
-@@ -237,7 +223,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-pyuno"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-pyuno"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Pyuno module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -245,25 +230,11 @@
- End
- 
- Start
--module = "gid_Module_Optional_Pymailmerge"
--solarispackagename = "openofficeorg-emailmerge"
--solarisrequires = "openofficeorg-pyuno"
--packagename = "openoffice.org-emailmerge"
--linuxreplaces = "openofficeorg-emailmerge"
--requires = "openoffice.org-pyuno"
--copyright = "1999-2005 by OpenOffice.org"
--vendor = "OpenOffice.org"
--description = "Email mailmerge module for %PRODUCTNAME %PRODUCTVERSION"
--destpath = "/opt/openoffice.org%PRODUCTVERSION"
--End
--
--Start
- module = "gid_Module_Root_Fonts_Ooo_Hidden"
- solarispackagename = "%UNIXPRODUCTNAMEWITHOUTDOT-ooofonts"
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
- packagename = "%UNIXPRODUCTNAME-ooofonts"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-ooofonts"
--requires = "%UNIXPRODUCTNAME-core01"
- copyright = "1999-2005 by OpenOffice.org"
- vendor = "OpenOffice.org"
- description = "Mailcap module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -277,7 +248,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -278,6 +279,7 @@
  packagename = "%UNIXPRODUCTNAME-core02"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core02"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core02"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -290,7 +260,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -291,6 +293,7 @@
  packagename = "%UNIXPRODUCTNAME-core03"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core03"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core03"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -303,7 +272,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -304,6 +307,7 @@
  packagename = "%UNIXPRODUCTNAME-core04"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core04"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core04"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -316,7 +284,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -317,6 +321,7 @@
  packagename = "%UNIXPRODUCTNAME-core05"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core05"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core05"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -329,7 +296,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -330,6 +335,7 @@
  packagename = "%UNIXPRODUCTNAME-core06"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core06"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core06"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -342,7 +308,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -343,6 +349,7 @@
  packagename = "%UNIXPRODUCTNAME-core07"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core07"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core07"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -355,7 +320,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -356,6 +363,7 @@
  packagename = "%UNIXPRODUCTNAME-core08"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core08"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core08"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -368,7 +332,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -369,6 +377,7 @@
  packagename = "%UNIXPRODUCTNAME-core09"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core09"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core09"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
-@@ -382,7 +345,6 @@
- solarisrequires = "%UNIXPRODUCTNAMEWITHOUTDOT-core01"
+@@ -383,6 +392,7 @@
  packagename = "%UNIXPRODUCTNAME-core10"
- linuxreplaces = "%UNIXPRODUCTNAMEWITHOUTDOT-core10"
--requires = "%UNIXPRODUCTNAME-core01"
+ linuxreplaces = "%WITHOUTDOTUNIXPRODUCTNAME-core10"
+ requires = "%UNIXPRODUCTNAME-core01"
++freebsdrequires = ""
  copyright = "1999-2005 by OpenOffice.org"
  vendor = "OpenOffice.org"
  description = "Office core module for %PRODUCTNAME %PRODUCTVERSION"
+Index: solenv/bin/modules/installer/epmfile.pm
+===================================================================
+RCS file: /cvs/tools/solenv/bin/modules/installer/epmfile.pm,v
+retrieving revision 1.42
+diff -u -r1.42 epmfile.pm
+--- solenv/bin/modules/installer/epmfile.pm	9 Nov 2005 09:09:49 -0000	1.42
++++ solenv/bin/modules/installer/epmfile.pm	3 Dec 2005 22:26:52 -0000
+@@ -395,6 +395,11 @@
+ 		$provides = "solarisprovides";	 # the name in the packagelist	
+ 		$requires = "solarisrequires";	 # the name in the packagelist	
+ 	}
++	elsif ( $installer::globals::isfreebsdpkgbuild )
++	{
++		$provides = "freebsdprovides";	 # the name in the packagelist	
++		$requires = "freebsdrequires";	 # the name in the packagelist	
++	}
+ 	else
+ 	{
+ 		$provides = "provides";	 		# the name in the packagelist	
+Index: solenv/bin/modules/installer/globals.pm
+===================================================================
+RCS file: /cvs/tools/solenv/bin/modules/installer/globals.pm,v
+retrieving revision 1.47
+diff -u -r1.47 globals.pm
+--- solenv/bin/modules/installer/globals.pm	9 Nov 2005 09:10:01 -0000	1.47
++++ solenv/bin/modules/installer/globals.pm	3 Dec 2005 22:26:52 -0000
+@@ -80,6 +80,7 @@
+ 	$issolarispkgbuild = 0;
+ 	$issolarissparcbuild = 0;
+ 	$issolarisx86build = 0;
++	$isfreebsdpkgbuild = 0;
+ 	$unpackpath = "";
+ 	$idttemplatepath = "";
+ 	$idtlanguagepath = "";
+Index: solenv/bin/modules/installer/parameter.pm
+===================================================================
+RCS file: /cvs/tools/solenv/bin/modules/installer/parameter.pm,v
+retrieving revision 1.29
+diff -u -r1.29 parameter.pm
+--- solenv/bin/modules/installer/parameter.pm	9 Nov 2005 09:10:12 -0000	1.29
++++ solenv/bin/modules/installer/parameter.pm	3 Dec 2005 22:26:53 -0000
+@@ -304,6 +304,10 @@
+ 			$installer::globals::epmoutpath = "packages";
+ 		}
+ 	}
++	if ( $installer::globals::compiler =~ /unxfbsdi/ )
++	{
++		$installer::globals::isfreebsdpkgbuild = 1;
++	}
+ 
+ 	if ( $installer::globals::compiler =~ /unxso[lg]s/ ) { $installer::globals::issolarissparcbuild = 1; }
+ 	
