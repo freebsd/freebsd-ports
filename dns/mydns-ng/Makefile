@@ -79,7 +79,6 @@ pre-fetch:
 	@${ECHO} ""
 
 post-install:
-	@install-info ${PREFIX}/info/mydns.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/contrib
 .for f in ${DOCS}

@@ -29,6 +29,5 @@ EXAMPLESDIR=	share/examples/gm4
 post-install:
 	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
-	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

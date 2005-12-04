@@ -42,7 +42,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cogre/${i} ${CEDET_LISPDIR}/cogre
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/cogre/cogre.info ${PREFIX}/info
-	install-info ${PREFIX}/info/cogre.info ${PREFIX}/info/dir
 
 # common
 	${MKDIR} ${CEDET_LISPDIR}/common
@@ -62,7 +61,6 @@ do-install:
 .for i in *.info*
 	${INSTALL_DATA} ${WRKSRC}/ede/${i} ${PREFIX}/info
 .endfor
-	install-info ${PREFIX}/info/ede.info ${PREFIX}/info/dir
 
 # eieio
 	${MKDIR} ${CEDET_LISPDIR}/eieio
@@ -70,7 +68,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/eieio/${i} ${CEDET_LISPDIR}/eieio
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/eieio/eieio.info ${PREFIX}/info
-	install-info ${PREFIX}/info/eieio.info ${PREFIX}/info/dir
 
 # semantic
 	${MKDIR} ${CEDET_LISPDIR}/semantic
@@ -88,9 +85,6 @@ do-install:
 .for i in *.info*
 	${INSTALL_DATA} ${WRKSRC}/semantic/doc/${i} ${PREFIX}/info
 .endfor
-.for i in ${SEMANTIC_INFOS}
-	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
-.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/semantic/semanticdb.sh ${PREFIX}/bin
 
 # speedbar
@@ -99,7 +93,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/speedbar/${i} ${CEDET_LISPDIR}/speedbar
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar.info ${PREFIX}/info
-	install-info ${PREFIX}/info/speedbar.info ${PREFIX}/info/dir
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

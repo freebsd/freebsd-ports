@@ -47,7 +47,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/semantic.info* ${PREFIX}/info
-	install-info ${PREFIX}/info/semantic.info ${PREFIX}/info/dir
 
 post-install:
 .if !defined(NOPORTDOCS)

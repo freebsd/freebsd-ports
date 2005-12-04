@@ -40,7 +40,6 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/info/muddleftpd.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/muddleftpd.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}

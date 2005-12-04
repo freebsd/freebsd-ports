@@ -56,6 +56,5 @@ post-install:
 	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
 	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc/mtools.conf.sample
 	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
-	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
