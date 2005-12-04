@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/os/${ARCH} \
 			${PORTVERSION}/updates/${ARCH} \
 			${PORTVERSION}/os/SRPMS \
 			${PORTVERSION}/updates/SRPMS
-DISTFILES=		redhat-release-8.0-8.noarch.rpm \
+BIN_DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			glibc-common-2.3.2-4.80.8.${ARCH}.rpm \
 			glibc-2.3.2-4.80.8.${ARCH}.rpm \
 			setup-2.5.20-1.noarch.rpm \
@@ -52,7 +52,7 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 EXTRACT_ONLY=
 
 .if defined(PACKAGE_BUILDING)
-DISTFILES+=	acl-2.0.11-2.src.rpm \
+SRC_DISTFILES+=	acl-2.0.11-2.src.rpm \
 		attr-2.0.8-3.src.rpm \
 		basesystem-8.0-1.src.rpm \
 		bash-2.05b-5.1.src.rpm \
@@ -84,6 +84,8 @@ DISTFILES+=	acl-2.0.11-2.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
+DISTFILES=	${BIN_DISTFILES} ${SRC_DISTFILES}
+
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
@@ -98,9 +100,6 @@ NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
-
-# Let's avoid hardcoding 'en' as the language.
-LANG=			en
 
 .include <bsd.port.pre.mk>
 
@@ -142,7 +141,7 @@ do-install:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES:S/:ft//}; do \
+	@for R in ${BIN_DISTFILES:S/:ft//}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
