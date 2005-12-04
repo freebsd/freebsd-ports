@@ -7,9 +7,8 @@ lib/icon/bin/icont
 lib/icon/bin/iconx
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f
-%%WITHOUT_X11%%lib/icon/bin/ipatch
 %%WITHOUT_X11%%lib/icon/bin/palette
-lib/icon/bin/patchstr
+lib/icon/bin/rtt
 %%WITHOUT_X11%%lib/icon/bin/vib
 %%WITHOUT_X11%%@exec ln -sf %B/%f %D/bin/%f
 %%WITHOUT_X11%%@unexec rm -f %D/bin/%f
@@ -65,6 +64,8 @@ lib/icon/lib/bkutil.u1
 lib/icon/lib/bkutil.u2
 lib/icon/lib/bold.u1
 lib/icon/lib/bold.u2
+lib/icon/lib/boolops.u1
+lib/icon/lib/boolops.u2
 lib/icon/lib/bufread.u1
 lib/icon/lib/bufread.u2
 lib/icon/lib/button.u1
@@ -145,6 +146,8 @@ lib/icon/lib/dif.u1
 lib/icon/lib/dif.u2
 lib/icon/lib/digitcnt.u1
 lib/icon/lib/digitcnt.u2
+lib/icon/lib/dijkstra.u1
+lib/icon/lib/dijkstra.u2
 lib/icon/lib/distance.u1
 lib/icon/lib/distance.u2
 lib/icon/lib/divide.u1
@@ -329,6 +332,8 @@ lib/icon/lib/iscreen.u1
 lib/icon/lib/iscreen.u2
 lib/icon/lib/isdplot.u1
 lib/icon/lib/isdplot.u2
+lib/icon/lib/isdxplot.u1
+lib/icon/lib/isdxplot.u2
 lib/icon/lib/iterfncs.u1
 lib/icon/lib/iterfncs.u2
 lib/icon/lib/itlib.u1
@@ -392,6 +397,8 @@ lib/icon/lib/makelsys.u1
 lib/icon/lib/makelsys.u2
 lib/icon/lib/mapbit.u1
 lib/icon/lib/mapbit.u2
+lib/icon/lib/mapnav.u1
+lib/icon/lib/mapnav.u2
 lib/icon/lib/mapstr.u1
 lib/icon/lib/mapstr.u2
 lib/icon/lib/matchlib.u1
@@ -400,6 +407,8 @@ lib/icon/lib/math.u1
 lib/icon/lib/math.u2
 lib/icon/lib/matrix.u1
 lib/icon/lib/matrix.u2
+lib/icon/lib/matrix2.u1
+lib/icon/lib/matrix2.u2
 lib/icon/lib/memlog.u1
 lib/icon/lib/memlog.u2
 lib/icon/lib/memrfncs.u1
@@ -420,6 +429,8 @@ lib/icon/lib/namepfx.u1
 lib/icon/lib/namepfx.u2
 lib/icon/lib/navitrix.u1
 lib/icon/lib/navitrix.u2
+lib/icon/lib/nestlist.u1
+lib/icon/lib/nestlist.u2
 lib/icon/lib/ngrams.u1
 lib/icon/lib/ngrams.u2
 lib/icon/lib/noncase.u1
@@ -459,6 +470,8 @@ lib/icon/lib/patch.u1
 lib/icon/lib/patch.u2
 lib/icon/lib/patterns.u1
 lib/icon/lib/patterns.u2
+lib/icon/lib/pattread.u1
+lib/icon/lib/pattread.u2
 lib/icon/lib/patutils.u1
 lib/icon/lib/patutils.u2
 lib/icon/lib/patword.u1
@@ -790,25 +803,29 @@ lib/icon/lib/xutils.u1
 lib/icon/lib/xutils.u2
 lib/icon/lib/zipread.u1
 lib/icon/lib/zipread.u2
-%%PORTDOCS%%share/doc/icon/blubordr.gif
-%%PORTDOCS%%share/doc/icon/build.htm
-%%PORTDOCS%%share/doc/icon/clnroff.sed
-%%PORTDOCS%%share/doc/icon/cube128.gif
-%%PORTDOCS%%share/doc/icon/docguide.htm
-%%PORTDOCS%%share/doc/icon/faq.htm
-%%PORTDOCS%%share/doc/icon/faq.txt
-%%PORTDOCS%%share/doc/icon/files.htm
-%%PORTDOCS%%share/doc/icon/gb80.jpg
-%%PORTDOCS%%share/doc/icon/ib80.jpg
-%%PORTDOCS%%share/doc/icon/icon.txt
-%%PORTDOCS%%share/doc/icon/icont.txt
-%%PORTDOCS%%share/doc/icon/index.htm
-%%PORTDOCS%%share/doc/icon/install.htm
-%%PORTDOCS%%share/doc/icon/istyle.css
-%%PORTDOCS%%share/doc/icon/lb80.jpg
-%%PORTDOCS%%share/doc/icon/relnotes.htm
-%%PORTDOCS%%share/doc/icon/wwwcube.gif
-%%PORTDOCS%%@dirrm share/doc/icon
+%%PORTDOCS%%%%DOCSDIR%%/blubordr.gif
+%%PORTDOCS%%%%DOCSDIR%%/build.htm
+%%PORTDOCS%%%%DOCSDIR%%/clnroff.sed
+%%PORTDOCS%%%%DOCSDIR%%/cube128.gif
+%%PORTDOCS%%%%DOCSDIR%%/cygwin.htm
+%%PORTDOCS%%%%DOCSDIR%%/docguide.htm
+%%PORTDOCS%%%%DOCSDIR%%/faq.htm
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/files.htm
+%%PORTDOCS%%%%DOCSDIR%%/gb80.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ib80.jpg
+%%PORTDOCS%%%%DOCSDIR%%/icon.txt
+%%PORTDOCS%%%%DOCSDIR%%/icont.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/install.htm
+%%PORTDOCS%%%%DOCSDIR%%/istyle.css
+%%PORTDOCS%%%%DOCSDIR%%/lb80.jpg
+%%PORTDOCS%%%%DOCSDIR%%/macintosh.htm
+%%PORTDOCS%%%%DOCSDIR%%/port.htm
+%%PORTDOCS%%%%DOCSDIR%%/relnotes.htm
+%%PORTDOCS%%%%DOCSDIR%%/shortcut.gif
+%%PORTDOCS%%%%DOCSDIR%%/wwwcube.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/icon/lib
 @dirrm lib/icon/bin
 @dirrm lib/icon
