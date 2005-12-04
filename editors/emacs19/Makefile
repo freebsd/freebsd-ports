@@ -41,8 +41,10 @@ MAN1=		emacs.1 etags.1 ctags.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"invalid packing list"
+.if ${OSVERSION} > 600000
+PLIST_SUB+=	NOTON6="@comment "
+.else
+PLIST_SUB+=	NOTON6=""
 .endif
 
 post-install:
