@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.55
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -264,5 +265,8 @@ post-install: install-startup-script
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@[ -d ${DOCSDIR}/style/lang/ ] && ${TOUCH} ${DOCSDIR}/style/lang/.keepme
+.endif
 
 .include <bsd.port.post.mk>
