@@ -51,6 +51,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-1.[0-46-9]*
 
+LATEST_LINK=	p5-bioperl-devel
+
 PERL_CONFIGURE=	YES
 
 MAN1=		bp_aacomp.pl.1 \
