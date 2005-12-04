@@ -49,7 +49,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/Text/Wrap.pm:${PORTSDIR}/lang/
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-bioperl-1.[0-46-9]*
+CONFLICTS=	p5-bioperl-1.[02468]*
 
 LATEST_LINK=	p5-bioperl-devel
 
