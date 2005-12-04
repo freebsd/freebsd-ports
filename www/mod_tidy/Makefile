@@ -17,7 +17,7 @@ COMMENT=	Validates the HTML output of your apache2 webserver
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-WANT_APACHE=	2
+USE_APACHE=	20
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_INC+=	${LOCALBASE}/include/tidy
@@ -25,11 +25,8 @@ AP_LIB+=	${LOCALBASE}/lib -ltidy
 PLIST_FILES=	${DOCSDIR:S/${PREFIX}\///}/LICENSE
 PLIST_DIRS=	${DOCSDIR:S/${PREFIX}\///}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../LICENSE ${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
