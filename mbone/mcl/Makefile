@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.inrialpes.fr/planete/people/roca/mcl/bin/
 DISTNAME=	mcl_v2.99.1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	past@noc.ntua.gr
+MAINTAINER=	past@ebs.gr
 COMMENT=	Implementation of the ALC and NORM Reliable Multicast Protocols
 
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT} \
