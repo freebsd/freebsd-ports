@@ -31,9 +31,6 @@ post-extract:
 	@${CP} ${WRKSRC}/doc/rplay.texi ${WRKSRC}/doc/rplayd.texi
 
 post-install:
-.for info in ${INFO}
-	@install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 	@${ECHO_MSG} "===>	Installing ${PREFIX}/etc/rc.d/rplayd.sh"
 	@${ECHO_MSG} "===>	startup file as ${PREFIX}/etc/rc.d/rplayd.sh.sample"
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rplayd.sh ${PREFIX}/etc/rc.d/rplayd.sh.sample

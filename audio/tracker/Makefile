@@ -32,7 +32,6 @@ post-patch:
 		${WRKSRC}/Arch/PCux/audio.c
 
 post-install:
-	@install-info ${PREFIX}/info/tracker.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tracker/html
 .for docfile in FAQ readme tracker.doc
