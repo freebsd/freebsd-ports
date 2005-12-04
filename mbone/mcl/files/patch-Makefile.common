@@ -22,7 +22,7 @@
  	LD = /opt/SUNWspro/bin/CC 
 +endif
 +ifeq (${OS},freebsd)
-+	OSFLAGS = -DFREEBSD -I/usr/include/g++ -I/usr/include/c++/3.3
++	OSFLAGS = -DFREEBSD -I${LOCALBASE}/g++ -I${LOCALBASE}/c++/3.3
 +	# Which compiler?
 +	# NB: use -Wall for compilation warnings with gcc
 +	#
