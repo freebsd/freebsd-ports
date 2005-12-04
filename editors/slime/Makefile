@@ -36,7 +36,6 @@ do-install:
 		${INSTALL_DATA} *.elc ${SLIME_LISPDIR}; \
 		${INSTALL_DATA} *.lisp ${SLIME_LISPDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/slime.info ${PREFIX}/${INFO_PATH}
-	install-info ${PREFIX}/info/slime.info ${PREFIX}/info/dir
 
 post-install:
 .if !defined(NOPORTDOCS)

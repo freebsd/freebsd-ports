@@ -34,8 +34,4 @@ MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 USE_AUTOTOOLS=	automake:14:env autoconf:213:env
 
-post-install:
-	install-info ${PREFIX}/info/cvs.info ${PREFIX}/info/dir
-	install-info ${PREFIX}/info/cvsclient.info ${PREFIX}/info/dir
-
 .include <bsd.port.mk>

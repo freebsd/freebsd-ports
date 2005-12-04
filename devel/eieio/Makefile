@@ -44,6 +44,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/eieio.info ${PREFIX}/info
-	install-info ${PREFIX}/info/eieio.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

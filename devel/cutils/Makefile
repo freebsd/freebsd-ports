@@ -21,7 +21,4 @@ INFO=		cutils
 PLIST_FILES=	bin/cdecl bin/chilight bin/cobfusc bin/cundecl bin/cunloop \
 		bin/yyextract bin/yyref
 
-post-install:
-	install-info ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
-
 .include <bsd.port.mk>

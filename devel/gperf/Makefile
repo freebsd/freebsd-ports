@@ -19,7 +19,4 @@ MAN1=		gperf.1
 INFO=		gperf
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
-post-install:
-		install-info ${PREFIX}/info/gperf.info ${PREFIX}/info/dir
-
 .include <bsd.port.mk>

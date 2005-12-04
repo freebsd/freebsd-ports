@@ -30,8 +30,6 @@ PLIST_SUB=	GDBM_COMPAT="@comment "
 MAN3=		gdbm.3
 INFO=		gdbm
 
-INSTALL_INFO?=	install-info
-
 pre-everything::
 .if !defined(WITH_COMPAT)
 	@${ECHO_MSG}
@@ -39,8 +37,5 @@ pre-everything::
 	@${ECHO_MSG} "use \"make WITH_COMPAT=yes\""
 	@${ECHO_MSG}
 .endif
-
-post-install:
-	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

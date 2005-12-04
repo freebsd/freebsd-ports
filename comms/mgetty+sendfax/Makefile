@@ -92,7 +92,6 @@ post-install:
 	${INSTALL_DATA} -m 600 ${WRKSRC}/voice/voice.conf-dist \
 		${PREFIX}/etc/mgetty+sendfax/voice.conf.dist
 	@${TAR}  -cf - -C ${WRKSRC} samples | ${TAR}  -xf - -C ${PREFIX}/lib/mgetty+sendfax/
-	@install-info ${PREFIX}/info/mgetty.info ${PREFIX}/info/dir
 .if !defined(BATCH)
 	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
 .endif

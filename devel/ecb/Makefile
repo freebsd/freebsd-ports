@@ -102,7 +102,4 @@ do-install:
 .endfor
 .endif
 
-post-install:
-	install-info --dir ${PREFIX}/info/dir ${PREFIX}/info/ecb.info
-
 .include <bsd.port.mk>

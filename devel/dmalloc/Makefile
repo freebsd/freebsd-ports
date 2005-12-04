@@ -40,8 +40,5 @@ post-install:
 		${LN} -sf ${PREFIX}/lib/libdmallocxx.so.1 ${PREFIX}/lib/libdmallocxx.so; \
 		${LN} -sf ${PREFIX}/lib/libdmallocth.so.1 ${PREFIX}/lib/libdmallocth.so; \
 		${LN} -sf ${PREFIX}/lib/libdmallocthcxx.so.1 ${PREFIX}/lib/libdmallocthcxx.so)
-.if !defined(NOPORTDOCS)
-	@install-info ${PREFIX}/info/dmalloc.info ${PREFIX}/info/dir
-.endif
 
 .include <bsd.port.mk>

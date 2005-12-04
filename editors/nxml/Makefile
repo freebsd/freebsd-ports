@@ -42,7 +42,6 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/nxml-mode.info ${PREFIX}/info
-	install-info ${PREFIX}/info/nxml-mode.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for F in ${DOCUMENTS}

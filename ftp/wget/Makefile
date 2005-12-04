@@ -53,7 +53,4 @@ post-patch:
 			 -e 's,@file{},@file{${PREFIX}},' \
 		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
 
-post-install:
-	install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
-
 .include <bsd.port.mk>
