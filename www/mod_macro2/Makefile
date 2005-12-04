@@ -13,18 +13,16 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2 module for use macros in config files
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 LATEST_LINK=	mod_macro2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=	${PORTNAME}.html
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
