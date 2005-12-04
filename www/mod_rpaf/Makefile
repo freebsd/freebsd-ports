@@ -13,12 +13,16 @@ MASTER_SITES=	http://stderr.net/apache/rpaf/download/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
 
+USE_APACHE?=	1.3+
 AP_FAST_BUILD=	YES
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-AP2_SRC_FILE=	mod_rpaf-2.0.c
-AP2_PKGNAMESUFFIX=	-ap2
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+
+.if ${APACHE_VERSION} >= 20
+AP${APACHE_VERSION}_SRC_FILE=	mod_rpaf-2.0.c
+AP${APACHE_VERSION}_PKGNAMESUFFIX=-ap${APACHE_VERSION}
+.endif
+
 .include <bsd.port.post.mk>

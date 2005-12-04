@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 LATEST_LINK=	mod_rpaf2
 MASTERDIR=	${.CURDIR}/../mod_rpaf
 

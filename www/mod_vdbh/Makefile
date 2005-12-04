@@ -14,7 +14,7 @@ DIST_SUBDIR=	apache
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows mass virtual hosting using a MySQL backend with Apache 2.0.x
 
-WANT_APACHE=	2
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 USE_MYSQL=	YES
@@ -25,9 +25,6 @@ AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
 PORTDOCS=	AUTHORS README TODO
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-
 post-install:
 .if !defined (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -36,4 +33,4 @@ post-install:
 .   endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
