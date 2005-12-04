@@ -20,5 +20,6 @@ EMACS_PORT_NAME?=	emacs21
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+INFO=		mailcrypt
 
 .include <bsd.port.mk>

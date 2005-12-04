@@ -1,8 +1,3 @@
-@unexec install-info --delete %D/info/mailcrypt.info %D/info/dir
-info/mailcrypt.info
-info/mailcrypt.info-1
-info/mailcrypt.info-2
-@exec install-info %D/info/mailcrypt.info %D/info/dir
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/expect.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/expect.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mailcrypt.el

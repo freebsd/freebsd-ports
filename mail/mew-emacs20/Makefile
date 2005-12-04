@@ -20,5 +20,6 @@ INSTALL_TARGET=	install install-info install-jinfo install-etc
 
 # use pkg-* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}
+INFO=		mew.jis
 
 .include "${MASTERDIR}/Makefile"
