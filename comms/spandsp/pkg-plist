@@ -16,6 +16,7 @@ include/spandsp/fsk.h
 include/spandsp/g168models.h
 include/spandsp/hdlc.h
 include/spandsp/ima_adpcm.h
+include/spandsp/logging.h
 include/spandsp/mmx.h
 include/spandsp/modem_echo.h
 include/spandsp/oki_adpcm.h
@@ -46,6 +47,7 @@ include/spandsp/v27ter_tx.h
 include/spandsp/v29rx.h
 include/spandsp/v29tx.h
 include/spandsp/v42.h
+include/spandsp/v42bis.h
 include/spandsp/v8.h
 include/spandsp/vector.h
 lib/libspandsp.a
