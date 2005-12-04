@@ -72,6 +72,9 @@ CONFIGURE_ARGS=	--enable-nls \
 
 APPENDIXDIR=	${DATADIR}/appendix
 
+INFO=		eb-ja ebfont-ja ebfont ebinfo-ja ebinfo ebrefile-ja \
+		ebrefile ebzip-ja ebzip
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

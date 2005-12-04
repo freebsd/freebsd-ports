@@ -46,13 +46,4 @@
 %%ELISPDIR%%/lookup/stem-english.elc
 %%ELISPDIR%%/lookup/lookup-vars.el
 %%ELISPDIR%%/lookup/lookup-vars.elc
-@unexec install-info  --delete %D/info/lookup.info %D/info/dir
-info/lookup.info
-info/lookup.info-1
-info/lookup.info-2
-info/lookup.info-3
-@exec install-info %D/info/lookup.info %D/info/dir
-@unexec install-info  --delete %D/info/lookup-guide.info %D/info/dir
-info/lookup-guide.info
-@exec install-info %D/info/lookup-guide.info %D/info/dir
 @dirrm %%ELISPDIR%%/lookup

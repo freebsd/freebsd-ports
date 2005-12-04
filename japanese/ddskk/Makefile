@@ -27,6 +27,8 @@ DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 PLIST=	${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
+INFO=		skk
+
 SKK_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/skk
 SKK_DOCS=	AUTHORS.ja CODENAME.ja Contributors FAQ.ja NEWS.ja README
 SKK_EXAMPLES=	etc/Emacs.ad etc/dot.emacs etc/dot.skk

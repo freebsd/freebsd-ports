@@ -21,6 +21,8 @@ COMMENT=	GNU grep + multi-byte extension
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j --disable-nls
 
+INFO=		grep
+
 MAN1=		jgrep.1
 MLINKS=		jgrep.1 jegrep.1 \
 		jgrep.1 jfgrep.1

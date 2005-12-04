@@ -1,7 +1,4 @@
 bin/sed
-@unexec install-info --delete %D/info/sed.info %D/info/dir
-info/sed.info
-@exec install-info %D/info/sed.info %D/info/dir
 %%PORTDOCS%%share/doc/ja-sed/OREADME.MB
 %%PORTDOCS%%share/doc/ja-sed/README.MB
 %%PORTDOCS%%@dirrm share/doc/ja-sed

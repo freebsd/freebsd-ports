@@ -30,6 +30,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 OPTIONS=	DVIPSK "Install dvipsk with Japanize patch from ASCII" off
 OPTIONS+=	UDVIPS "Install udvips (Implies DVIPSK)" off
 
+INFO=		kpathsea latex web2c
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_UDVIPS)

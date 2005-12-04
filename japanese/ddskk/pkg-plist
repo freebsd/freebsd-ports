@@ -67,13 +67,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/skk
-@unexec install-info --delete %D/info/skk.info %D/info/dir
-info/skk.info
-info/skk.info-1
-info/skk.info-2
-info/skk.info-3
-info/skk.info-4
-@exec install-info %D/info/skk.info %D/info/dir
 share/skk/NICOLA-SKK.tut
 share/skk/SKK.tut
 share/skk/SKK.tut.E

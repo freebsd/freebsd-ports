@@ -21,6 +21,8 @@ COMMENT=	GNU awk + multi-byte extension
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 
+INFO=		gawk
+
 MAN1=		gawk.1 igawk.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
