@@ -23,5 +23,6 @@ EMACS_SETUPEL=	${PORTNAME}-setup.el
 
 # use pkg-* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}
+INFO=		mew.jis
 
 .include "${MASTERDIR}/Makefile"
