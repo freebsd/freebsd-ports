@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	jhp@cocoja.holywar.net
 COMMENT=	A client program to help playing muds (devel version)
 
+LATEST_LINK=	${PORTNAME}-devel
+
 WRKSRC=		${WRKDIR}/tt/src
 
 GNU_CONFIGURE=	yes

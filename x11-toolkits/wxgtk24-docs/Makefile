@@ -15,6 +15,8 @@ DISTNAME=	wxWindows-${PORTVERSION}-HTML
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wxWindows documentation in HTML
 
+LATEST_LINK=	wxgtk24_doc
+
 NO_BUILD=	YES
 USE_REINPLACE=	YES
 USE_ZIP=	YES
