@@ -7,13 +7,13 @@
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
