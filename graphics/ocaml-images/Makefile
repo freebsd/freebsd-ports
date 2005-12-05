@@ -7,34 +7,37 @@
 #
 
 PORTNAME=	images
-PORTVERSION=	2.11
-PORTREVISION=	0
+PORTVERSION=	2.2
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	camlimages-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marwan.burelle@lri.fr
 COMMENT=	Objective Caml image processing library
 
-USE_GHOSTSCRIPT=	yes
-
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
+		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
+		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk
+		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
+		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_GHOSTSCRIPT=	yes
 USE_XPM=	yes
 USE_FREETYPE=	yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	\
 	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+	LDFLAGS="${LDFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include --includedir=${X11BASE}/include
 USE_GMAKE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
