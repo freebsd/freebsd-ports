@@ -29,8 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 50000
-IGNORE=	Does not build on 4.X
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
 .endif
 
 .include <bsd.port.post.mk>
