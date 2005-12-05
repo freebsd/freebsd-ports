@@ -58,7 +58,6 @@ pre-install:
 	${ECHO_CMD} 'share/applications/sunbird.desktop' >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${SUNBIRD_ICON}' >> ${PLIST}
 	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
-	${ECHO_CMD} '@unexec ${RMDIR} %D/share/pixmaps 2>/dev/null || ${TRUE}' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
