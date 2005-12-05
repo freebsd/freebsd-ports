@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.6.4.4
-#DISTVERSION=	2.6.4-pl4
+PORTVERSION=	2.7.0
+#DISTVERSION=	2.7.0
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-pl\1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
@@ -107,7 +107,7 @@ pre-everything::
 	${ECHO_MSG} "with PHP5 and MySQL 4.1.x"
 
 post-patch:
-	${MV} ${WRKSRC}/${CFGFILE} ${WRKSRC}/${CFGFILE}.sample
+	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample
 	cd ${WRKSRC} ; \
 	${FIND} . ! -type d ! -name ${CFGFILE}.sample | ${SORT} | \
 	    ${SED} -e "s,^\.,%%MYADMDIR%%,"           >${PLIST} ; \
