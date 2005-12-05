@@ -37,6 +37,5 @@ do-install:
 	${LN} -sf dvipng ${PREFIX}/bin/dvigif
 	${INSTALL_MAN} ${WRKSRC}/dvipng.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/dvipng.info ${PREFIX}/info
-	install-info ${PREFIX}/info/dvipng.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
