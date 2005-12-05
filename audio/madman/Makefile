@@ -24,8 +24,6 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_QT_VER=	3
 USE_GNOME=	glib12
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/madman \
 		lib/madman/plugins/burn_to_audio_cd \
 		lib/madman/plugins/burn_to_data_cd \
