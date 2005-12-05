@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: gdm
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON LOGIN cleanvar
 # KEYWORD: FreeBSD
 
 gdm_enable=${gdm_enable-"NO"}
