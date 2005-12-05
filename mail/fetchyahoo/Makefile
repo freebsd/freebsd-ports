@@ -14,7 +14,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
 RUN_DEPENDS=	\
-	encode-base64:${PORTSDIR}/converters/p5-MIME-Base64 \
+	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${SITE_PERL}/IO/Lines.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -31,6 +31,10 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again.
+.endif
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
