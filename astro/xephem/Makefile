@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.6.4
+PORTVERSION=	3.7.1
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	An interactive astronomical ephemeris program
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_MOTIF=	yes
-USE_IMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
+
 MAN1=		xephem.1
 
-LIBASTROSRC=	${WRKDIR}/${DISTNAME}/libastro
-LIBIPSRC=	${WRKDIR}/${DISTNAME}/libip
-LIBJPEGDSRC=	${WRKDIR}/${DISTNAME}/libjpegd
-LIBLILXMLSRC=	${WRKDIR}/${DISTNAME}/liblilxml
-
-NO_CDROM=	Personal use only
+NO_CDROM=	"Personal use only"
 
 # XXX needs to be the same as DISTFILES
 XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
@@ -43,22 +43,24 @@ place it in ${DISTDIR} and then run make again.\n
 .endfor
 
 post-patch:
-	@${CHMOD} u+w ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
-		 s|CFLAGS=|CFLAGS+=|g ; \
-		 s|-O2 ||g' ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC}/../.. -name Makefile -type f | \
+		${XARGS} ${REINPLACE_CMD} -e 's|CC =|CC?=|g ; \
+		s|CFLAGS=|CFLAGS+=|g ; \
+		s|-O2 ||g'
 
 pre-build:
-	@cd ${LIBASTROSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
-	@cd ${LIBIPSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
-	@cd ${LIBJPEGDSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
-	@cd ${LIBLILXMLSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 	@${ECHO_CMD} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' > ${WRKSRC}/XEphem.ad
 
-post-install:
+pre-install:
+	@${FIND} ${WRKSRC}/../.. -name Makefile.bak -type f | ${XARGS} ${RM} -f
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xephem.1 ${PREFIX}/man/man1 
 	${INSTALL_DATA} ${WRKSRC}/XEphem.ad ${PREFIX}/lib/X11/app-defaults/XEphem
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
-	${TAR} -C ${WRKSRC} -cf - auxil catalogs fits fifos help tools \
+	${TAR} -C ${WRKSRC} -cf - auxil catalogs fifos fits gallery help lo tools \
 		| ${TAR} -C ${PREFIX}/lib/X11/xephem --unlink -xf -
 	@${FIND} ${PREFIX}/lib/X11/xephem | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREMODE}
 	@${FIND} ${PREFIX}/lib/X11/xephem -type f | ${XARGS} ${CHMOD} ${SHAREMODE}

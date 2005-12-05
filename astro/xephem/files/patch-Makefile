@@ -1,0 +1,35 @@
+--- Makefile.orig	Fri Nov 18 16:43:09 2005
++++ Makefile	Mon Dec  5 12:58:21 2005
+@@ -10,9 +10,9 @@
+ # back here and compile and link all the *.c files into one executable, xephem.
+ 
+ # -I and -L flags to find required supporting XEphem libraries
+-LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I../../libjpegd -I../../libpng -I../../libz
+-LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L../../libjpegd -L../../libpng -L../../libz
+-LIBLIB = -lastro -lip -llilxml -ljpegd -lpng -lz
++LIBINC = -I../../libastro -I../../libip -I../../liblilxml -I%%LOCALBASE%%/include
++LIBLNK = -L../../libastro -L../../libip -L../../liblilxml -L%%LOCALBASE%%/lib
++LIBLIB = -lastro -lip -llilxml -ljpeg -lpng -lz
+ 
+ # MOTIFI is the directory containing the Xm directory of include files.
+ # MOTIFL is the directory containing the libXm.a library.
+@@ -31,7 +31,7 @@
+ 
+ # for linux and Apple OS X
+ CC = gcc
+-CLDFLAGS = -g
++#CLDFLAGS = -g
+ CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/usr/X11R6/include
+ LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/X11R6/lib
+ XLIBS = $(MOTIFL)/libXm.a -lXp -lXt -lXext -lSM -lICE -lXmu -lX11
+@@ -181,10 +181,7 @@
+ libs:
+ 	cd ../../libastro; make
+ 	cd ../../libip; make
+-	cd ../../libjpegd; make
+ 	cd ../../liblilxml; make
+-	cd ../../libpng; make
+-	cd ../../libz; make
+ 
+ clean:
+ 	touch x.o
