@@ -1,3 +1,4 @@
+%%DOCSDIR%%/CHANGELOG
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README
@@ -20,6 +21,7 @@
 %%RCUBEDIR%%/program/include/rcube_mdb2.inc
 %%RCUBEDIR%%/program/include/rcube_shared.inc
 %%RCUBEDIR%%/program/include/rcube_smtp.inc
+%%RCUBEDIR%%/program/include/rcube_sqlite.inc
 %%RCUBEDIR%%/program/include/session.inc
 %%RCUBEDIR%%/program/js/app.js
 %%RCUBEDIR%%/program/js/common.js
@@ -118,6 +120,8 @@
 %%RCUBEDIR%%/program/localization/da/messages.inc
 %%RCUBEDIR%%/program/localization/de/labels.inc
 %%RCUBEDIR%%/program/localization/de/messages.inc
+%%RCUBEDIR%%/program/localization/ee/labels.inc
+%%RCUBEDIR%%/program/localization/ee/messages.inc
 %%RCUBEDIR%%/program/localization/el/labels.inc
 %%RCUBEDIR%%/program/localization/el/messages.inc
 %%RCUBEDIR%%/program/localization/en/labels.inc
@@ -262,6 +266,8 @@
 %%RCUBEDIR%%/skins/default/images/roundcube_logo.gif
 %%RCUBEDIR%%/skins/default/images/roundcube_logo.png
 %%RCUBEDIR%%/skins/default/images/roundcube_logo_print.gif
+%%RCUBEDIR%%/skins/default/images/sort_asc.gif
+%%RCUBEDIR%%/skins/default/images/sort_desc.gif
 %%RCUBEDIR%%/skins/default/images/tab_act.gif
 %%RCUBEDIR%%/skins/default/images/tab_pas.gif
 %%RCUBEDIR%%/skins/default/images/taskbar.gif
@@ -323,6 +329,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/en_GB
 @dirrm %%RCUBEDIR%%/program/localization/en
 @dirrm %%RCUBEDIR%%/program/localization/el
+@dirrm %%RCUBEDIR%%/program/localization/ee
 @dirrm %%RCUBEDIR%%/program/localization/de
 @dirrm %%RCUBEDIR%%/program/localization/da
 @dirrm %%RCUBEDIR%%/program/localization/cz
