@@ -96,7 +96,7 @@ have_boot=
 ONLY_FOR_ARCHS=	i386
 DISTFILES+=	gnat-3.15p-boot.tar.gz:boot
 .if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
 .endif
 # Warning!  You need the trailing slash on GCC_EXEC_PREFIX.
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
