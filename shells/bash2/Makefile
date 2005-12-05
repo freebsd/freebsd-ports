@@ -36,7 +36,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/bash-${PORTVERSION:C/\....$//}
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
-.if defined(WANT_STATIC_BASH) || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ( ${NOSHARED} != "no" && ${NOSHARED} != "NO" ))
+.if defined(WITH_STATIC_BASH) || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ( ${NOSHARED} != "no" && ${NOSHARED} != "NO" ))
 CONFIGURE_ARGS+= --enable-static-link
 .else
 CONFIGURE_ARGS+= --enable-static-link=no
