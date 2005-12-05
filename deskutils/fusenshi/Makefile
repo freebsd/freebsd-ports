@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fusenshi
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -21,6 +21,12 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 USE_GCC=	3.4
 USE_GNOME=	libxml2
 USE_XLIB=	yes
+
+.ifdef WITHOUT_SSL
+MAKE_ARGS+=	WITHOUT_SSL=yes
+.else
+USE_OPENSSL=	yes
+.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/fusenshi

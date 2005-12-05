@@ -1,6 +1,6 @@
 bin/fusenshi
-share/fusenshi/pixmaps/fusenshi.xpm
-share/fusenshi/pixmaps/fusenshi_small.xpm
+%%DATADIR%%/pixmaps/fusenshi.xpm
+%%DATADIR%%/pixmaps/fusenshi_small.xpm
 share/locale/ja/LC_MESSAGES/fusenshi.mo
-@dirrm share/fusenshi/pixmaps
-@dirrm share/fusenshi
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
