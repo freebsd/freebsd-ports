@@ -3,11 +3,14 @@
 %%SITE_PERL%%/Graph/Easy/As_graphviz.pm
 %%SITE_PERL%%/Graph/Easy/As_txt.pm
 %%SITE_PERL%%/Graph/Easy/Attributes.pm
+%%SITE_PERL%%/Graph/Easy/Base.pm
 %%SITE_PERL%%/Graph/Easy/Edge.pm
 %%SITE_PERL%%/Graph/Easy/Edge/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Group.pm
 %%SITE_PERL%%/Graph/Easy/Group/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Layout.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Chain.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Grid.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Path.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Scout.pm
 %%SITE_PERL%%/Graph/Easy/Node.pm
