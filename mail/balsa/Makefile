@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	2.3.6
-PORTREVISION=	3
+PORTVERSION=	2.3.7
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -45,6 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 MAN1=		balsa.1
 
 OPTIONS=	LDAP "Enable LDAP support" on \
+		GTKSPELL "Spell checking support" on \
 		GPG "Enable GnuPG support" off
 
 .include <bsd.port.pre.mk>
@@ -57,6 +57,11 @@ CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+.if !defined(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+CONFIGURE_ARGS+=--with-gtkspell
 .endif
 
 .if ${PREFIX}==${X11BASE}
