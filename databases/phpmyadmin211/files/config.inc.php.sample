@@ -1,0 +1,12 @@
+<?php
+/* $FreeBSD$
+ *
+ * Skeleton configuration file -- this file is empty on a fresh
+ * installaton of phpmyadmin.
+ * 
+ * Copy any settings you want to override from config.defaults.php
+ * 
+ */
+
+
+?>
