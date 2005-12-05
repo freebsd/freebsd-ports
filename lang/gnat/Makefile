@@ -25,6 +25,7 @@ COMMENT=	The GNU Ada Compiler system
 
 CONFLICTS=	gcc-3.4.*
 USE_GMAKE=	yes
+USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -98,7 +99,7 @@ have_boot=
 ONLY_FOR_ARCHS=	i386
 DISTFILES+=	gnat-3.15p-boot.tar.gz:boot
 .if ${OSVERSION} >= 500000
-BUILD_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 # Warning!  You need the trailing slash on GCC_EXEC_PREFIX.
 COMPILEDATA=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
