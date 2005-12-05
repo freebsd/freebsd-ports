@@ -31,6 +31,7 @@
     SUBDIR += cdpr
     SUBDIR += cfgstoragemk
     SUBDIR += cflowd
+    SUBDIR += check_snmp_pkgvuln
     SUBDIR += choparp
     SUBDIR += cidr
     SUBDIR += cisco_conf

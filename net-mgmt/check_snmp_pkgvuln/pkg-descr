@@ -1,0 +1,6 @@
+check_snmp_pkgvuln is a Nagios plugin that detects hosts that are running
+vulnerable ports based on the database of security vulnerabilities
+provided by portaudit.  The plugin communicates with the host via SNMP
+using the HOST-RESOURCES-MIB::hrSWInstalledName MIB.
+
+WWW: http://www.cultdeadsheep.org/~clement/
