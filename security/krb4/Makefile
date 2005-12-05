@@ -37,7 +37,6 @@ CONFIGURE_ENV+=	\
 INFO=	kth-krb
 
 post-install:
-	install-info ${PREFIX}/info/kth-krb.info ${PREFIX}/info/dir
 	${SED} -e "s~%%PREFIX%%~${PREFIX}~g" \
 	    < ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${ECHO_CMD} "*** ATTENTION ***"

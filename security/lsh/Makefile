@@ -59,8 +59,6 @@ post-install:
 .for SBIN in lshd
 	${STRIP_CMD} ${PREFIX}/sbin/${SBIN}
 .endfor
-	install-info ${PREFIX}/info/lsh.info ${PREFIX}/info/dir
-	install-info ${PREFIX}/info/nettle.info ${PREFIX}/info/dir
 
 test:
 	(cd ${WRKSRC}/src/testsuite && ${SETENV} ${MAKE_ENV} \

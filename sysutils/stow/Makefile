@@ -23,11 +23,8 @@ USE_PERL5=	yes
 PLIST_FILES=	bin/stow
 INFO=		stow
 
-INSTALL_INFO?=	install-info
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/stow ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/stow.info ${PREFIX}/info
-	@${INSTALL_INFO} ${PREFIX}/info/stow.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

@@ -39,9 +39,4 @@ LDFLAGS+=	-L${X11BASE}/lib -lX11
 PREVIEWER=	to_x11
 .endif
 
-post-install:
-.for info in hp2xx.info
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
-.endfor
-
 .include <bsd.port.mk>

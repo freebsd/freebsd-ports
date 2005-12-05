@@ -22,6 +22,5 @@ INFO=		python-xlib
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/info/python-xlib.info ${PREFIX}/info/
-	@install-info ${PREFIX}/info/python-xlib.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

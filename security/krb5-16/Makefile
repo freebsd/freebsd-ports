@@ -47,9 +47,6 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-INFO_FILES=		krb425.info krb5-admin.info krb5-install.info \
-			krb5-user.info
-
 MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
 			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
 			rlogin.1 ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
@@ -98,7 +95,7 @@ pre-build:
 
 post-build:
 	@(cd ${WRKSRC}/../doc && \
-	${MAKE} ${INFO_FILES})
+	${MAKE} ${INFO:S/$/.info/})
 .if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@(cd ${WRKSRC}/../doc && \
 	${MAKE} ${HTML_DOCS})
@@ -123,11 +120,8 @@ post-install:
 .endif
 	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 # handle info files
-.for info in ${INFO_FILES}
-	${INSTALL_MAN} ${WRKSRC}/../doc/${info} ${PREFIX}/info/${info}
-.endfor
-.for info in ${INFO_FILES:M*.info}
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
+.for info in ${INFO}
+	${INSTALL_MAN} ${WRKSRC}/../doc/${info}.info ${PREFIX}/info/${info}.info
 .endfor
 # fixup packing list (no libs without version numbers in aout case)
 .if ${PORTOBJFORMAT} == "aout"

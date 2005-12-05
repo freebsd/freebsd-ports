@@ -48,7 +48,6 @@ do-install:
 .endfor
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/docs/boa.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/boa.info ${PREFIX}/info/dir
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/boa.sh ]; then \

@@ -24,6 +24,5 @@ GNU_CONFIGURE=	yes
 
 pre-install:
 	makeinfo -o ${PREFIX}/info/plwm.info ${WRKSRC}/doc/plwm.texi
-	install-info --section=X11 ${PREFIX}/info/plwm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
