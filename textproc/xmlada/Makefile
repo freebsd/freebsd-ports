@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	aidan@velvet.net
 COMMENT=	An XML parsing library for Ada 95
 
-BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -36,6 +36,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/docs/xml.info ${PREFIX}/${INFO_PATH}/xmlada.info
-	install-info ${PREFIX}/${INFO_PATH}/xmlada.info ${PREFIX}/${INFO_PATH}/dir
 
 .include <bsd.port.mk>
