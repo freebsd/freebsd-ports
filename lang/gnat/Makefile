@@ -26,6 +26,7 @@ COMMENT=	The GNU Ada Compiler system
 CONFLICTS=	gcc-3.4.*
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -57,10 +58,6 @@ GNU_CONFIGURE=	yes
 MAN1=		gnatgcc.1 gnatcpp.1 gnatgcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 NO_PACKAGE=	"This version of GNAT produces GPL-tainted executables"
-
-.if ${PORTOBJFORMAT} == "aout"
-BROKEN=	"Cannot build for aout."
-.endif
 
 # You need a compiler who calls an existing GNAT compiler (3.15 or greater).
 # If you have one, point GNATGCC at it.  By default, we'll look for one in

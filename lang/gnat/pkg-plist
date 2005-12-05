@@ -16,6 +16,7 @@ bin/gnatname
 bin/gnatprep
 bin/gnatxref
 bin/gprmake
+bin/gnathtml.pl
 bin/%%GNUHOST%%-gcc-%%GCC_VERSION%%
 bin/%%GNUHOST%%-gnatgcc
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/adainclude/a-astaco.adb
@@ -1549,9 +1550,6 @@ lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/install-tools/include/varargs.h
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/install-tools/include/xmmintrin.h
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/install-tools/mkheaders.conf
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/libgcc.a
-lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/libgcc_eh.a
-lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/libgcc_s.so
-lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/libgcc_s.so.1
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/libgcov.a
 lib/gcc/%%GNUHOST%%/%%GCC_VERSION%%/specs
 libexec/gcc/%%GNUHOST%%/%%GCC_VERSION%%/cc1
