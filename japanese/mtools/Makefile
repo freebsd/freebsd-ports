@@ -50,6 +50,5 @@ post-install:
 	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
 	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
 	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
-	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

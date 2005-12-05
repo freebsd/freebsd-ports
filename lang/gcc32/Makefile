@@ -123,9 +123,6 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
 .for mp in ${_MANPAGES}

@@ -73,7 +73,6 @@ post-install:
 	@test -d ${PREFIX}/share/doc/gnuplot+ || ${MKDIR} ${PREFIX}/share/doc/gnuplot+
 	${INSTALL_DATA} ${GP_DOCS} ${PREFIX}/share/doc/gnuplot+
 	${INSTALL_DATA} ${WRKSRC}/docs/gnuplot.info ${PREFIX}/info
-	install-info ${PREFIX}/info/gnuplot.info ${PREFIX}/info/dir
 	${MKDIR} ${PREFIX}/share/examples/gnuplot+
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${PREFIX}/share/examples/gnuplot+
 

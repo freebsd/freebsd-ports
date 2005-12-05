@@ -115,9 +115,6 @@ post-install:
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 .endif
-.for info in ${INFO}
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV} \
 		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib

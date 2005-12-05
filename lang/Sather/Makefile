@@ -91,9 +91,8 @@ do-install:
 .for file in sabrowse.1 sacomp.1
 	${INSTALL_MAN} ${WRKSRC}/Doc/man/man1/${file} ${MANPREFIX}/man/man1
 .endfor
-.for file in sather-mode.info sather-tutorial.info sather.info
-	${INSTALL_DATA} ${WRKSRC}/Emacs/${file} ${PREFIX}/info
-	@install-info ${PREFIX}/info/${file} ${PREFIX}/info/dir
+.for file in ${INFO}
+	${INSTALL_DATA} ${WRKSRC}/Emacs/${file}.info ${PREFIX}/info
 .endfor
 .for file in hl319.el sather-lib.el sather-module.el sather.el
 	${INSTALL_DATA} ${WRKSRC}/Emacs/${file} ${PREFIX}/share/emacs/site-lisp

@@ -47,7 +47,6 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/doc/gri.info ${PREFIX}/info
-	install-info ${PREFIX}/info/gri.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>

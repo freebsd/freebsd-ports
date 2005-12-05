@@ -67,9 +67,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/info/
-.for info in ${INFO}
-	install-info --section="${INFOSECTION}" ${WRKSRC}/doc/${info}.info ${PREFIX}/info/dir
-.endfor
 .endif
 
 .include <bsd.port.post.mk>

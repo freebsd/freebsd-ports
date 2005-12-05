@@ -96,7 +96,6 @@ post-install:
 			${INSTALL_DATA} $${i} ${LOCALBASE}/${SKK_DOCDIR} ;\
 		done ;\
 	)
-	@install-info ${LOCALBASE}/info/skk.info ${LOCALBASE}/info/dir
 .if !defined(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/READMEs/* ${LOCALBASE}/${SKK_DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/experimental/GUIDELINE \

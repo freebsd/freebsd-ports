@@ -33,7 +33,6 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} *.scm *.init *.txt *.xyz *.ps ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/slib.info ${PREFIX}/info
-	install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for file in ANNOUNCE ChangeLog FAQ README

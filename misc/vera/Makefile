@@ -22,7 +22,4 @@ do-build:
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/vera.info ${PREFIX}/info
 
-post-install:
-	@ install-info ${PREFIX}/info/vera.info ${PREFIX}/info/dir
-
 .include <bsd.port.mk>

@@ -22,7 +22,6 @@ MAN1=		gwhich.1
 INFO=		which
 
 post-install:
-	@install-info ${PREFIX}/info/which.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/examples/gwhich
 	@${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${PREFIX}/share/examples/gwhich/EXAMPLES

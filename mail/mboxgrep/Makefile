@@ -31,7 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
 
 post-install:
-	install-info ${PREFIX}/info/mboxgrep.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 .for f in ${DOCS}
