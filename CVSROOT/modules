@@ -12135,6 +12135,7 @@ tifmerge	ports/graphics/tifmerge
 tigcc		ports/devel/tigcc
 tightvnc	ports/net/tightvnc
 tik		ports/net-im/tik
+tilda		ports/x11/tilda
 tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
 timelimit	ports/sysutils/timelimit
