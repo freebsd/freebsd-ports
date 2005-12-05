@@ -8,7 +8,8 @@
 PORTNAME=	rinfo
 PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://www.ctgi.net/pub/ctgi/
+MASTER_SITES=	ftp://www.ctgi.net/pub/ctgi/ \
+		http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List status of files checked out of RCS repositories
