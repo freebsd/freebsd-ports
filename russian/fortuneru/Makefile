@@ -7,6 +7,7 @@
 
 PORTNAME=	fortuneru
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	ftp://de22.kiev.ua/pub/files/ \
 		ftp://hosting.cvu.kiev.ua/pub/files/ \
