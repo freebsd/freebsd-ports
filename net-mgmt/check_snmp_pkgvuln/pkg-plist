@@ -1,0 +1,2 @@
+%%NAGIOS_PLUGIN_DIR%%/check_snmp_pkgvuln
+@unexec rmdir %D/%%NAGIOS_PLUGIN_DIR%% 2>/dev/null || true
