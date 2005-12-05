@@ -8,7 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.12
-PORTREVISION?=	4
+PORTREVISION?=	5
 PORTEPOCH=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -47,6 +47,13 @@ OPTIONS=CALENDAR "Enable the Calendar module" off \
 	XMLTERM "Enable the XMLTerm module" on \
 	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
 	SMB "Enable smb:// URI support using gnomevfs" off
+
+.if !defined(WITHOUT_MAILNEWS)
+GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/defaults/isp/US/movemail.rdf \
+			lib/${MOZILLA}/defaults/isp/movemail.rdf
+GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/defaults/isp/US/ \
+			lib/${MOZILLA}/defaults/isp
+.endif
 
 .include <bsd.port.pre.mk>
 
