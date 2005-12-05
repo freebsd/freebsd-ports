@@ -1,6 +1,7 @@
-SQLExplorer Eclipse Database Plugin
+Eclipse IDE plugin for database query/schema viewer for nearly any kind of
+JDBC database. It supports plugins for specialized functionality for
+individual databases (Oracle and data tools ( like Hibernate, Oracle
+or Sybase )
 
-SQLExplorer is a visual database design/query tool implemented as a plugin
-for Eclipse.
+WWW: http://sourceforge.net/projects/eclipsesql/
 
-WWW: https://sqlexplorer.dev.java.net/
