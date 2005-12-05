@@ -7,6 +7,7 @@
 
 PORTNAME=	fortuneit
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
 DISTNAME=	fortune.it-${PORTVERSION}
