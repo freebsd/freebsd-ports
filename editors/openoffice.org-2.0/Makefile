@@ -59,8 +59,8 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-INSTALLATION_BASEDIR=	openoffice.org${PORTVERSION}
-EXECBASE=		openoffice.org-${PORTVERSION}
+INSTALLATION_BASEDIR?=	openoffice.org${PORTVERSION}
+EXECBASE?=		openoffice.org-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
 PACKAGE_BASENAME=	OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
