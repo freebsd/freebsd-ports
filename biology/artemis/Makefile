@@ -7,9 +7,10 @@
 
 PORTNAME=	artemis
 PORTVERSION=	7
+PORTREVISION=	1
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/
-DISTNAME=	artemis_compiled_v${PORTVERSION}
+DISTNAME=	artemis_compiled_v${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A DNA sequence viewer and annotation tool
