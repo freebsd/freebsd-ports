@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sig2dot
-PORTVERSION=	0.27
+PORTVERSION=	0.35
 CATEGORIES=	security
 MASTER_SITES=	http://www.chaosreigns.com/code/sig2dot/
 DISTNAME=	${PORTNAME}
