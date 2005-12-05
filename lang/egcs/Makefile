@@ -99,9 +99,6 @@ post-install:
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 .endif
-.for info in cpp g77 gcc
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} \
 		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib

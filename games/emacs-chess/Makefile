@@ -69,7 +69,6 @@ do-install:
 .endif
 
 post-install:
-	install-info --dir ${PREFIX}/info/dir ${PREFIX}/info/chess.info
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

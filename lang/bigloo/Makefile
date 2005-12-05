@@ -49,12 +49,9 @@ post-configure:
 BROKEN=		"Does not compile on !i386"
 .endif
 
-post-install: install-info
+post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/bigloo.sh | ${SED} "s|%%BIGLOO_VERSION%%|${PORTVERSION}|g" > ${PREFIX}/etc/rc.d/000.bigloo.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.bigloo.sh
-
-install-info:
-	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 test: build
 	@(cd ${WRKSRC}; ${GMAKE} test)

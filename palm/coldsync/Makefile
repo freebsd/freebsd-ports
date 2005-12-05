@@ -66,7 +66,6 @@ post-patch:
 .endif
 
 post-install:
-	install-info ${PREFIX}/info/conduits.info ${PREFIX}/info/dir
 	${MKDIR} ${PREFIX}/include/pconn
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/pconn/*.h ${PREFIX}/include/pconn/

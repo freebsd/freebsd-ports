@@ -42,7 +42,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 .for i in gauche-gl-refe.info gauche-gl-refj.info
 	${GZCAT} ${WRKSRC}/doc/${i}.gz >${PREFIX}/info/${i}
-	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}

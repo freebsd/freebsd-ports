@@ -34,8 +34,10 @@ MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -DHAVE_DECL_GETOPT"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PLIST_FILES=	bin/ocrad
+.if !defined(NOPORTDOCS)
 INFO=		ocrad
 MAN1=		ocrad.1
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocrad ${PREFIX}/bin
@@ -43,7 +45,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA} ${WRKSRC}/doc/ocrad.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/ocrad.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.post.mk>

@@ -55,7 +55,6 @@ post-install:
 	for f in ${WRKSRC}/doc/yorick.info*; do \
 	  ${INSTALL_DATA} $$f ${PREFIX}/info; \
 	done
-	install-info ${PREFIX}/info/yorick.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>

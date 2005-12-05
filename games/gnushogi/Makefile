@@ -41,7 +41,6 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${PREFIX}/info
-	install-info ${PREFIX}/info/gnushogi.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${DOCSDIR}
