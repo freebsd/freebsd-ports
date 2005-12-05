@@ -834,6 +834,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/empty.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/encoding.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/eraser.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/error.gif
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/exec.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/exit.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/explore.png
@@ -891,6 +892,8 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/tab_right.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/tar.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/test/index.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber.gif
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber_disabled.gif
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/thumbnail.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/todo.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/uml.png
@@ -921,6 +924,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/uml.pyo
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.py
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyc
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyo
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.pyo
