@@ -10,7 +10,11 @@
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
 CATEGORIES=	print audio
-MASTER_SITES=	http://lilypond.org/download/v2.2/
+MASTER_SITES=	http://lilypond.org/download/v2.2/:src \
+		http://distfiles.master.finkmirrors.net/:rpm
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
+		${PORTNAME}-${PORTVERSION}-1.i386.rpm:rpm
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU music typesetter
@@ -24,8 +28,6 @@ MAN1=		abc2ly.1 etf2ly.1 midi2ly.1 mup2ly.1 lilypond.1 musedata2ly.1 \
 		convert-ly.1 lilypond-bin.1 lilypond-book.1
 INFO=		lilypond lilypond-internals \
 		music-glossary
-
-CONFLICTS=	lilypond-2.*
 
 #INSTALLS_SHLIB not needed for phyton library midi.so
 
@@ -44,7 +46,6 @@ CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}"
 .if defined(WITH_SELFBUILT_FONTS)
 BUILD_DEPENDS+=	mftrace:${PORTSDIR}/print/mftrace
 .else
-BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 BUILD_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm
 .endif
 
@@ -74,9 +75,6 @@ PLIST_SUB+=	CONDITIONAL=""
 .endif
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-#IGNORING portlint 2.5.0 WARN: possible direct use of command "install" found at line 64. use ${INSTALL_foobaa} instead.
-INSTALL_INFO?=	install-info
-
 pre-configure:
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=g;s=%%DATADIRVERSION%%=${DATADIR}/${PORTVERSION}=g" \
 		< ${FILESDIR}/pkg-install.in \
@@ -104,9 +102,6 @@ post-install:
 		--exclude=dummy.dep --exclude=CVS --exclude=GNUmakefile . \
 		| ${TAR} -xf - -C ${DOCSDIR}
 
-.for ii in ${INFO}
-	- ${INSTALL_INFO} ${PREFIX}/info/${ii}.info ${PREFIX}/info/dir
-.endfor
 .endif
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

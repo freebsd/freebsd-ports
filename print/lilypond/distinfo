@@ -1,3 +1,6 @@
 MD5 (lilypond-2.2.2.tar.gz) = 1f9ed6b5a80533ce6c960c889fa51226
 SHA256 (lilypond-2.2.2.tar.gz) = 0b65cdb5e303a90617ccc2b35f5ff3a27e462c1ed5f8f7a0a1973fa1a7cb2381
 SIZE (lilypond-2.2.2.tar.gz) = 1900426
+MD5 (lilypond-2.2.2-1.i386.rpm) = 00389bd6b909d7a2023d29013e8f2338
+SHA256 (lilypond-2.2.2-1.i386.rpm) = 079d2e3c3a7aa56b156c890fa636af20a88a4bbc2935ea6378277973bd532cf4
+SIZE (lilypond-2.2.2-1.i386.rpm) = 4264723

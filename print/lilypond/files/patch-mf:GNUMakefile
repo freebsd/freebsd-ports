@@ -30,7 +30,7 @@
  redhat-package=lilypond-$(TOPLEVEL_VERSION)-1.i386.rpm
  $(outdir)/$(redhat-package):
 -	wget  --passive-ftp -P $(outdir) http://lilypond.org/download/binaries/RedHat-9/$(redhat-package)
-+	wget  --passive-ftp -P $(outdir) http://www.lilypond.org/ftp/binaries/Fedora-1/$(redhat-package)
++	cp ${DISTDIR}/$(redhat-package) $(outdir)
 +	#wget  --passive-ftp -P $(outdir) http://lilypond.org/download/binaries/RedHat-9/$(redhat-package)
  
  get-rpm-pfa: $(outdir)/$(redhat-package)
