@@ -7,6 +7,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.0p2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl2/
 DISTNAME=	coq-8.0pl2
