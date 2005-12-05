@@ -30,7 +30,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pv ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${PREFIX}/man/man1/pv.1
-	${INSTALL_MAN} ${WRKSRC}/doc/pv.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/doc/pv.info ${PREFIX}/${INFO_PATH}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
