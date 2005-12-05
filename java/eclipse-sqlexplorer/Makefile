@@ -6,42 +6,33 @@
 #
 
 PORTNAME=	sqlexplorer
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	#
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= eclipsesql
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	net.java.${PORTNAME}_${PORTVERSION}
+DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	sugimura@jp.FreeBSD.ORG
 COMMENT=	A visual database query tool for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-DOWNLOAD_URL=	https://sqlexplorer.dev.java.net/servlets/ProjectDocumentList
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
+		@${MKDIR} -p ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+		@(cd ${WRKSRC}; ${FIND} -s plugins -not -type d) \
+			| ${SED} -ne 's,^,eclipse/,p' >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d plugins -type d) \
+			| ${GREP} -vE '^plugins$$' \
+			| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	${PRINTF}
-IGNORE=	:\n\
-Because of a specific structure of dev.java.net, you must fetch the\n\
-distribution manually. Please acccess\n\
-\n\
-  ${DOWNLOAD_URL}\n\
-\n\
-with a web browser and click its filename.\n\
-Please place the downloaded ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}/${DIST_SUBDIR}.\n
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
