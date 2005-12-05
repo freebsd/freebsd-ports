@@ -42,11 +42,6 @@ OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libssl.so:${PORTSDIR}/security/openssl-stable
-RUN_DEPENDS+=	${LOCALBASE}/lib/libssl.so:${PORTSDIR}/security/openssl-stable
-.endif
-
 .if exists(${LOCALBASE}/bin/gnokii)
 .	if !defined(WITH_GNOKII)
 GNOKII_OVERRIDE=yes
