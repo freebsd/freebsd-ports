@@ -1,6 +1,7 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%INSTDIR%%/lib/JFlash.jar
+%%INSTDIR%%/lib/Skins.jar
 %%INSTDIR%%/lib/commons-jxpath-1.1.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/dllStuff.jar
@@ -71,6 +72,22 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_CLGroup/View.xml
 %%INSTDIR%%/resources/AppData/Views/Default_Chat/Default.html
 %%INSTDIR%%/resources/AppData/Views/Default_Chat/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/close_button.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/dpimg_border.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/index.html
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/left_arrow.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_bot.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_left.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_right.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_left.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_left_bot.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_right.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_right_bot.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_shadow.png
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/page2.html
+%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/right_arrow.png
 %%INSTDIR%%/resources/AppData/Views/Default_General/Alias.txt
 %%INSTDIR%%/resources/AppData/Views/Default_General/Alias_MSNName.txt
 %%INSTDIR%%/resources/AppData/Views/Default_General/Email.txt
@@ -141,21 +158,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.png
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.swf
 %%INSTDIR%%/resources/Images.zip
-%%INSTDIR%%/resources/UI/contactcard/close_button.png
-%%INSTDIR%%/resources/UI/contactcard/dpimg_border.png
-%%INSTDIR%%/resources/UI/contactcard/index.html
-%%INSTDIR%%/resources/UI/contactcard/left_arrow.png
-%%INSTDIR%%/resources/UI/contactcard/msn_back.png
-%%INSTDIR%%/resources/UI/contactcard/msn_back_bot.png
-%%INSTDIR%%/resources/UI/contactcard/msn_back_left.png
-%%INSTDIR%%/resources/UI/contactcard/msn_back_right.png
-%%INSTDIR%%/resources/UI/contactcard/msn_left.png
-%%INSTDIR%%/resources/UI/contactcard/msn_left_bot.png
-%%INSTDIR%%/resources/UI/contactcard/msn_right.png
-%%INSTDIR%%/resources/UI/contactcard/msn_right_bot.png
-%%INSTDIR%%/resources/UI/contactcard/msn_shadow.png
-%%INSTDIR%%/resources/UI/contactcard/page2.html
-%%INSTDIR%%/resources/UI/contactcard/right_arrow.png
 %%INSTDIR%%/resources/UI/dialogs/Jabber_ContactSubscribed.xml
 %%INSTDIR%%/resources/UI/dialogs/Jabber_JoinMUC.xml
 %%INSTDIR%%/resources/UI/dialogs/RemoveContact.xml
@@ -195,7 +197,6 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/lang
 @dirrm %%INSTDIR%%/resources/UI/panels
 @dirrm %%INSTDIR%%/resources/UI/dialogs
-@dirrm %%INSTDIR%%/resources/UI/contactcard
 @dirrm %%INSTDIR%%/resources/UI
 @dirrm %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks/eHV6bWRQcm1xQXpVN0ViZDBUV3FCcWNHb0tBPQ==
@@ -215,6 +216,7 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Winks
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_IM
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_General
+@dirrm %%INSTDIR%%/resources/AppData/Views/Default_ContactCard
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_Chat
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLGroup
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLContact
