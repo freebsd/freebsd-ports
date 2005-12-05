@@ -1,0 +1,19 @@
+--- sa-learn.raw.org	Tue Sep 13 19:07:32 2005
++++ sa-learn.raw	Sun Dec  4 16:43:52 2005
+@@ -109,6 +109,7 @@ GetOptions(
+   'local|L'              => \$opt{'local'},
+   'no-sync|nosync'       => \$opt{'nosync'},
+   'showdots'             => \$opt{'showdots'},
++  'quiet'                => \$opt{'quiet'},
+   'progress'             => \$opt{'progress'},
+   'use-ignores'          => \$opt{'use-ignores'},
+   'no-rebuild|norebuild' => sub { $opt{'nosync'} = 1; warn "The --no-rebuild option has been deprecated.  Please use --no-sync instead.\n" },
+@@ -409,7 +410,7 @@ eval {
+   $progress->final() if ($opt{progress} && $progress);
+ 
+   my $phrase = defined $forget ? "Forgot" : "Learned";
+-  print "$phrase tokens from $learnedcount message(s) ($messagecount message(s) examined)\n";
++  print "$phrase tokens from $learnedcount message(s) ($messagecount message(s) examined)\n" if (!$opt{quiet});
+ 
+   # If we needed to make a tempfile, go delete it.
+   if ( defined $tempfile ) {
