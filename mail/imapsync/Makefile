@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.144
+PORTVERSION=	1.145
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
+MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
+		http://freebsd.komi.mtsnet.ru/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tiamat@komi.mts.ru
@@ -24,7 +25,13 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/imapsync
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
