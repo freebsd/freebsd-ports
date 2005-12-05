@@ -974,6 +974,7 @@ share/locale/sv/LC_MESSAGES/lilypond.mo
 %%CONDITIONAL%%@dirrm %%DATADIR%%/%%PORTVERSION%%/vim
 %%CONDITIONAL%%@dirrm share/omf/lilypond/%%PORTVERSION%%
 %%CONDITIONAL%%@dirrm share/omf/lilypond
+%%CONDITIONAL%%@dirrm share/omf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/python
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/source
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/afm
