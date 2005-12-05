@@ -7,6 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.freedesktop.org/~lennart/
 
@@ -23,6 +24,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-distro=freebsd \
+		--with-dbus-system-address=unix:path=/var/run/dbus \
 		--disable-qt3 \
 		--disable-qt4 \
 		--disable-python \
