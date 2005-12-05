@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.freedesktop.org/~lennart/
 
@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	--with-distro=freebsd \
 		--disable-mono \
 		--disable-monodoc \
 		--disable-doxygen-doc \
-		--disable-doxygen-dot
+		--disable-doxygen-dot \
+		--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
