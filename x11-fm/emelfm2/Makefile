@@ -8,7 +8,9 @@
 PORTNAME=	emelfm2
 PORTVERSION=	0.1.3
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.emelfm2.org/rel/
+MASTER_SITES=	http://www.emelfm2.org/rel/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
