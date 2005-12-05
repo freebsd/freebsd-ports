@@ -17,7 +17,7 @@ COMMENT=	Quake III Arena Mod: Urban Terror
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_PACKAGE=	yes
+NO_PACKAGE=	"Distfile is \>256MB"
 
 do-install:
 	@${MKDIR} ${DATADIR}
