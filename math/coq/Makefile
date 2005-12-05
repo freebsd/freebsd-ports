@@ -17,14 +17,14 @@ COMMENT=	Theorem prover based on lambda-C
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_GMAKE=	yes
+ALL_TARGET=	world
+WITH_IDE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 CONFIGURE_ARGS+=	--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=	--reals all
 CONFIGURE_ARGS+=	--opt
-
-ALL_TARGET=	world
 
 PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
 
@@ -34,7 +34,7 @@ PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
 BROKEN=	"OCaml bug prevents compilation"
 .endif
 
-.if exists(${LOCALBASE}/bin/lablgtk2)
+.if defined(WITH_IDE) || exists(${LOCALBASE}/bin/lablgtk2)
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 PLIST_SUB+=	IDE=""
