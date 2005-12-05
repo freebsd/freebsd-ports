@@ -19,6 +19,8 @@ PATCHFILES=	elisp-manual-20-2.5-jp.ERRATA.000422.jis \
 MAINTAINER=	okazaki@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Lisp Reference Manual
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES
 USE_REINPLACE=	yes
@@ -67,11 +69,6 @@ post-build:
 do-install:
 .for i in ${INFO}
 	${INSTALL_DATA} ${WRKDIR}/info/$i.info ${PREFIX}/${INFO_PATH}
-.endfor
-
-post-install:
-.for i in ${INFO}
-	install-info ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
 .endfor
 
 .include <bsd.port.mk>

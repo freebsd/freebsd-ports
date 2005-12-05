@@ -64,7 +64,6 @@ do-install:
 	${CHGRP} -R ${PGRP} ${DESTDIR}${PCONFIGDIR}
 .if !defined(NO_PTEXINFO)
 	${INSTALL_DATA} ${WRKSRC}/polipo.info ${DESTDIR}${PREFIX}/info/
-	install-info ${PREFIX}/info/polipo.info ${DESTDIR}${PREFIX}/info/dir
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DESTDIR}${DOCSDIR}

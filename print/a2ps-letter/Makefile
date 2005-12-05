@@ -58,9 +58,6 @@ PLIST_SUB+=	WITHEMACS="@comment "
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/a2ps
 	(cd ${WRKSRC}/doc; ${MAKE} install)
-	install-info ${PREFIX}/info/a2ps.info ${PREFIX}/info/dir
-	install-info ${PREFIX}/info/ogonkify.info ${PREFIX}/info/dir
-	install-info ${PREFIX}/info/regex.info ${PREFIX}/info/dir
 	${RM} -f ${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>

@@ -53,8 +53,6 @@ MAN1=	gbasename.1 gcat.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 gcksum.1 \
 	gunexpand.1 guniq.1 gunlink.1 guptime.1 gusers.1 gvdir.1 \
 	gwc.1 gwho.1 gwhoami.1 gyes.1
 
-INSTALL_INFO?=	install-info
-
 post-patch:
 .if !defined(WITH_SUID)
 	@${REINPLACE_CMD} -e "s/u\+s/u\+w/g" ${WRKSRC}/src/Makefile.in
@@ -63,9 +61,6 @@ post-patch:
 post-build:
 	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
 
-post-install: install-info
-
-install-info:
-	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
+post-install:
 
 .include <bsd.port.mk>

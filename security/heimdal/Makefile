@@ -87,7 +87,6 @@ pre-install:
 .include "Makefile.man"
 
 post-install:
-	install-info ${PREFIX}/info/heimdal.info ${PREFIX}/info/dir
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 

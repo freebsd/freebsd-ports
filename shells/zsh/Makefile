@@ -134,7 +134,6 @@ pre-install:
 	@${MKDIR} ${PREFIX}/info
 	makeinfo --no-split --output=${PREFIX}/info/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
-	install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
 .endif
 
 post-install:

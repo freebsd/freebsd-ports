@@ -127,9 +127,6 @@ post-install:
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
-.for info in cpp cppinternals g77 gcc
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
