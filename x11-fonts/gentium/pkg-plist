@@ -1,23 +1,20 @@
 @unexec if cmp -s %D/etc/fonts/local.conf %D/etc/fonts/local.conf-%%FONTNAME%%; then rm -f %D/etc/fonts/local.conf; fi
 etc/fonts/local.conf-%%FONTNAME%%
 @exec [ ! -f %B/local.conf ] && cp %B/%f %B/local.conf
-%%FONTSDIR%%/COPYING
+%%FONTSDIR%%/GenAI102.ttf
+%%FONTSDIR%%/GenAR102.ttf
+%%FONTSDIR%%/GenI102.ttf
+%%FONTSDIR%%/GenR102.ttf
+%%FONTSDIR%%/OFL
 %%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/Gentium.ttf
-%%FONTSDIR%%/GentiumAItI.ttf
-%%FONTSDIR%%/GentiumAlt.ttf
-%%FONTSDIR%%/GentiumI.ttf
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FONTLOG
+%%PORTDOCS%%%%DOCSDIR%%/GENTIUM-FAQ
 %%PORTDOCS%%%%DOCSDIR%%/Gentium-Greek-Specimen.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Gentium-RU-A3Proofs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/Gentium-RU-Specimen.pdf
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/ISSUES
+%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ
 %%PORTDOCS%%%%DOCSDIR%%/QUOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
