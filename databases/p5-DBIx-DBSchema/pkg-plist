@@ -7,6 +7,7 @@
 %%SITE_PERL%%/DBIx/DBSchema/DBD.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Oracle.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Pg.pm
+%%SITE_PERL%%/DBIx/DBSchema/DBD/SQLite.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Sybase.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/mysql.pm
 %%SITE_PERL%%/DBIx/DBSchema/Table.pm
