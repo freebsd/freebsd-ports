@@ -151,6 +151,7 @@
     SUBDIR += gv-aspell
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
+    SUBDIR += heirloom-doctools
     SUBDIR += hevea
     SUBDIR += hgrep
     SUBDIR += hhm

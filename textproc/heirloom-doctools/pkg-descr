@@ -1,0 +1,7 @@
+The Heirloom Documentation Tools provide troff, nroff, and related
+utilities to format manual pages and other documents for output on
+terminals and printers.  They are portable and enhanced versions of
+the utilities released by Sun as part of OpenSolaris, and, for pic,
+grap, mpm, and some minor parts, by Lucent as part of Plan 9.
+
+WWW:	http://heirloom.sourceforge.net/
