@@ -6,25 +6,12 @@
 #
 # This port is shamelessly copied from Joe Marcus Clarke's bitstream-vera
 # port.
-#
-# A note about MASTER_SITES.  The bsd.port.mk system, expects (not
-# unreasonably) that the name of the distfile being fetched should be
-# the last component of the URL it passes to fetch(1).  Unfortunately,
-# in this case the master site uses some sort of fancy content
-# management system and the URL required to download the distfile is
-# strictly:
-#
-# http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_101_LT&_sc=1
-#
-# No mention of the distfile there.  Hack around the problem by adding
-# a dummy argument to the CGI arg list, which the site ignores, but
-# that serves to placate bsd.ports.mk
 
 PORTNAME=	gentium
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_101_LT&_sc=1&dummy=/
-DISTNAME=	fonts-ttf-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_102_L_tar&_sc=1&filename=/
+DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Gentium TrueType font collection
@@ -32,16 +19,15 @@ COMMENT=	Gentium TrueType font collection
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-NO_CDROM=	License forbids commercial distribution without permission
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/ttf-sil-${PORTNAME}-${PORTVERSION:C@\.([[:digit:]]+)$@\1@}
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}" \
 		FONTNAME=${FONTNAME}
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_LIST=	"FONTSDIR=${FONTSDIR}"
+SUB_FILES=	pkg-message
 
 #
 # Local variables
@@ -50,14 +36,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
-DOCSLIST=	CHANGELOG FAQ Gentium-Greek-Specimen.pdf \
+DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
 		Gentium-RU-A3Proofs.pdf Gentium-RU-Specimen.pdf \
-		HISTORY INSTALL ISSUES QUOTES README THANKS
+		OFL-FAQ QUOTES README
 
 .SILENT:
-
-post-patch:
-	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 #
 # Install
@@ -69,7 +52,7 @@ install-fonts:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/OFL ${FONTSDIR}
 
 install-conf:
 	${MKDIR} ${PREFIX}/etc/fonts
