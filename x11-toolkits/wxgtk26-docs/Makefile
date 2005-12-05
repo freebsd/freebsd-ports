@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wxgtk_doc_26
+PORTNAME=	wxgtk_doc
 PORTVERSION=	2.6.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,11 +15,13 @@ DISTNAME=	wxWidgets-${PORTVERSION}-HTML
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	wxWidgets 2.6.2 HTML documentation
 
+LATEST_LINK=	wxgtk26_doc
+
 NO_BUILD=	YES
 
 CONTRIBDOCDIR=	${WRKDIR}/wxWidgets-${PORTVERSION}/contrib/docs
 
-WXGTKDOCDIR=	share/doc/${PORTNAME}
+WXGTKDOCDIR=	share/doc/${PORTNAME}_26
 WRKSRC=		${WRKDIR}/wxWidgets-${PORTVERSION}/docs
 
 do-install:
