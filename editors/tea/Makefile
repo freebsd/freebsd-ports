@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		10.2
+DISTVERSION=		11.0
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 
@@ -22,9 +22,14 @@ USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=		ASPELL "Build with GNU aspell support" off
+OPTIONS=		TEA_ONLY "Build original GTK-only version" off \
+			ASPELL "Build with GNU aspell support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_TEA_ONLY)
+CONFIGURE_ARGS+=	--enable-tea
+.endif
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
