@@ -18,7 +18,7 @@ MASTER_SITES=	http://hpux.cs.utah.edu/ftp/hpux/X11/Misc/xbaby-1.2/ \
 		http://smokeping.planetmirror.com/pub/hpux/X11/Misc/xbaby-1.2/
 EXTRACT_SUFX=	-src-10.20.tar.gz
 
-MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Babies hide under your windows
 
 USE_IMAKE=	yes

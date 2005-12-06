@@ -13,7 +13,7 @@ MASTER_SITES=	http://www55.tok2.com/home/hym/pub/X11/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An old man watching your mouse cursor
 
 PLIST_FILES=	bin/xeji
