@@ -10,7 +10,7 @@ LOCALBASE=@LOCALBASE@
 if [ -x $LOCALBASE/bin/python ] ; then
 	PYTHON_VERSION=python$(${LOCALBASE}/bin/python -c 'import sys; print sys.version[:3]' 2>/dev/null)
 	if [ -e ${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so ]; then
-		exec ${LOCALBASE}/libexec/fetchmailconf.bin "$@"
+		exec ${LOCALBASE}/libexec/fetchmailconf.py "$@"
 	fi
 fi
 cat <<EOF
