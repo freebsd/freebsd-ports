@@ -2,7 +2,7 @@
 * To run this from %%PREFIX%%/etc/postfix/master.cf:
 
 policy  unix  -       n       n       -       -       spawn
-  user=nobody argv=%%PREFIX%%/libexec/postfix/policyd-weight
+  user=polw argv=%%PREFIX%%/libexec/postfix/policyd-weight
 
 * To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
 
@@ -23,4 +23,11 @@ smtpd_recipient_restrictions =
 * edit %%PREFIX%%/etc/policyd-weight.conf
 * An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
 *
+*
+* ATTENTION !!! ATTENTION
+*
+* if you are already using policyd-weight you MUST update your master.cf and
+* change the user=nobody argument to user=polw
+* 
+* ATTENTION !!! ATTENTION
 *************
