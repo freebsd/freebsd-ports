@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mt@primats.org.ua
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Squid log analyzer and HTML report generator
 
 USE_REINPLACE=	yes
