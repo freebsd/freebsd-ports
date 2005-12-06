@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.bsddiary.net/gru/
 
-MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gru makes your eyes happy
 
 USE_IMAKE=	yes

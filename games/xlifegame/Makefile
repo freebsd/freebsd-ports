@@ -10,7 +10,7 @@ PORTVERSION=	1.13.1
 CATEGORIES=	games
 MASTER_SITES=	http://www55.tok2.com/home/hym/pub/X11/
 
-MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A life game for X
 
 USE_IMAKE=	yes
