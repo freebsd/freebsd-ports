@@ -48,6 +48,10 @@ WITH_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
 CONFIGURE_ARGS+=--enable-aboutme
