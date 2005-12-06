@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sfslite
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
