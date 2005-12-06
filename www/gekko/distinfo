@@ -1,3 +1,6 @@
 MD5 (gekko-0.5.6.tar.gz) = 0aeffaa30e2f6790cd737a6cc4a709f2
 SHA256 (gekko-0.5.6.tar.gz) = 2d7ba0f8c017eb12e9afd36ed5e847ad59f4f0ace92b928798077bbbc2af8590
 SIZE (gekko-0.5.6.tar.gz) = 2012168
+MD5 (gekko-patch-0.5.6.1.tar.gz) = a47aa848764660015a2d1aff10a845d0
+SHA256 (gekko-patch-0.5.6.1.tar.gz) = 69e1e9f7a3ea8fd25d8577b22cb5e0eb9a25033e246cce68652fa7bcb319ebf0
+SIZE (gekko-patch-0.5.6.1.tar.gz) = 4277

@@ -7,9 +7,13 @@
 
 PORTNAME=	gekko
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
+
+PATCH_SITES=	http://gekkoware.org/data/files/uploaded/
+PATCHFILES=	gekko-patch-0.5.6.1.tar.gz
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Open Source solution for your Web Content Management
@@ -18,6 +22,10 @@ NO_BUILD=	yes
 USE_PHP=	bz2 gd mysql pcre session zlib
 GEKKODIR?=	www/data-dist/gekko
 PLIST_SUB=	GEKKODIR=${GEKKODIR}
+
+do-patch:
+	${TAR} xfz ${_DISTDIR}/${PATCHFILES} -C ${WRKSRC} && \
+		${MV} ${WRKSRC}/conf.php ${WRKSRC}/src/conf.php
 
 do-install:
 	${MKDIR} ${PREFIX}/${GEKKODIR}
