@@ -98,9 +98,6 @@ MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
 
-verify:	checksum
-	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
-
 pre-fetch:
 .if defined(PORT_REPLACES_BASE_BIND9)
 	@${ECHO} ""
@@ -113,6 +110,9 @@ pre-fetch:
 	@/bin/sleep 5
 WITH_PORT_REPLACES_BASE_BIND9=	true
 .endif
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
