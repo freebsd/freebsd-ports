@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
+INFO=		oleo
 
 .include <bsd.port.pre.mk>
 
