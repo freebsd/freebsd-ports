@@ -1,14 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/.packlist
 %%SITE_PERL%%/Net/Google.pm
-%%SITE_PERL%%/Net//Google/tool.pm
+%%SITE_PERL%%/Net/Google/tool.pm
 %%SITE_PERL%%/Net/Google/Cache.pm
 %%SITE_PERL%%/Net/Google/Response.pm
 %%SITE_PERL%%/Net/Google/Search.pm
 %%SITE_PERL%%/Net/Google/Service.pm
-%%SITE_PERL%%/Net/Google/Services/GoogleSearch.wsdl
 %%SITE_PERL%%/Net/Google/Spelling.pm
-@dirrm %%SITE_PERL%%/Net/Google/Services
 @dirrm %%SITE_PERL%%/Net/Google
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
 @unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
