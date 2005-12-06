@@ -8,11 +8,11 @@ PORTVERSION=		0.3.2
 CATEGORIES=		audio multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=		.tar.bz2
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	The real-time guitar processor
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	YES
 USE_GNOME=	gtk20 glib20
 WANT_GNOME=	YES
