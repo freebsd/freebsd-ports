@@ -14,6 +14,7 @@ lib/zaptel/wcfxs.ko
 lib/zaptel/wct1xxp.ko
 lib/zaptel/wct4xxp.ko
 lib/zaptel/wcte11xp.ko
+lib/zaptel/zaphfc.ko
 lib/zaptel/zaptel.ko
 lib/zaptel/ztdummy.ko
 @dirrm lib/zaptel

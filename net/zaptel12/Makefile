@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	misc
 MASTER_SITES=	http://www.portaone.com/~gonzo/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
@@ -25,6 +24,12 @@ ONLY_FOR_ARCHS=	i386
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	"does not build on FreeBSD \< 5.x"
+.endif
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
@@ -50,4 +55,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/zaptel.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
