@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t_coffee
-PORTVERSION=	3.14
+PORTVERSION=	3.18
 CATEGORIES=	biology
 MASTER_SITES=	http://igs-server.cnrs-mrs.fr/~cnotred/Packages/
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
@@ -17,8 +17,6 @@ COMMENT=	A multiple DNA or protein sequence alignment package
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 BUILD_WRKSRC=	${WRKSRC}/t_coffee_source
 MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
@@ -42,4 +40,10 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.x"
+.endif
+
+.include <bsd.port.post.mk>
