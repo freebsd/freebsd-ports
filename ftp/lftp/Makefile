@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	\
-		ftp://mirror.widexs.nl/pub/lftp/ \
-		ftp://mirror.widexs.nl/pub/lftp/old/ \
+		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
+		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/old/ \
 		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/ \
