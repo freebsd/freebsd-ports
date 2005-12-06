@@ -10,42 +10,17 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.5.2
-PORTREVISION=	4
+PORTVERSION=	6.3.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://download.berlios.de/%SUBDIR%/:fetchmail_site,fetchmailconf_site \
-		http://www.catb.org/~esr/%SUBDIR%/:fetchmail_site \
-		ftp://ftp.ayamura.org/pub/%SUBDIR%/:fetchmail_site \
-		ftp://ftp.win.jp/pub/%SUBDIR%/:fetchmail \
-		ftp://ftp.dti.ad.jp/pub/net/mail/%SUBDIR%/:fetchmail_site \
-		http://home.leo.org/~barner/freebsd/distfiles/:fetchmail_site,fetchmailconf_site
-MASTER_SITE_SUBDIR=	fetchmail/:fetchmail_site,fetchmailconf_site
-DISTNAME=	${PORTNAME}-6.2.5
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fetchmail_site \
-		fetchmailconf-${FETCHMAILCONF_VER}.gz:fetchmailconf_site
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://download.berlios.de/%SUBDIR%/ \
+MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
+		http://home.pages.de/~mandree/%SUBDIR%/ \
 		http://home.leo.org/~barner/freebsd/distfiles/
-PATCH_SITE_SUBDIR=	fetchmail
-PATCHFILES=	${PORTNAME}-patch-${PORTVERSION}.gz
-PATCH_DIST_STRIP=-p1
+MASTER_SITE_SUBDIR=	fetchmail
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
-FETCHMAILCONF_VER=1.43.2
-
-.if defined(WITH_X11)
-RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-.endif
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
-.if defined(WITH_X11)
-USE_PYTHON=	yes
-.endif
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -59,20 +34,25 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 
-FDOC=		${PREFIX}/share/doc/fetchmail
-DOCS=		FAQ FEATURES NEWS NOTES README \
-		design-notes.html fetchmail-FAQ.html fetchmail-features.html
-WRKSRC=		${WRKDIR}/${PORTNAME}-6.2.5
-
-.if !defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
+.if defined(WITH_X11)
+USE_PYTHON=	yes
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 .include <bsd.port.pre.mk>
+
+FDOC=		${PREFIX}/share/doc/fetchmail
+DOCS=		FAQ FEATURES NEWS NOTES README \
+		design-notes.html fetchmail-FAQ.html fetchmail-features.html
+
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+USE_GETTEXT=		yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-inet6
@@ -110,24 +90,17 @@ PLIST_SUB+=	NTLMDOCS="%%PORTDOCS%%@comment "
 .endif
 
 pre-patch:
-	@${CP} -f  /usr/include/md5.h ${WRKSRC}
-# Use fetchmailconf-1.43.2 to avoid a password exposure
-# caused by insecure file creation
-	@${GZCAT} ${DISTDIR}/fetchmailconf-${FETCHMAILCONF_VER}.gz | \
-		${SED} -e "s,^#!/.*/python,#!${LOCALBASE}/bin/python,g" \
-		> ${WRKDIR}/fetchmailconf.temp
-	@${MV} -f ${WRKDIR}/fetchmailconf.temp ${WRKSRC}/fetchmailconf
-	@${SED} -e "s,@LOCALBASE@,${LOCALBASE},g" \
-		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
-	@${REINPLACE_CMD} -e "s,@l@,,;s,@GT_NO@,," \
-		${WRKSRC}/intl/Makefile.in
-
+	@${REINPLACE_CMD} -e "s,^#!/usr/bin/env python,#!${LOCALBASE}/bin/python,g" \
+		${WRKSRC}/fetchmailconf.py
+	@${CP} ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
+	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE},g" \
+		 ${WRKDIR}/fetchmailconf
 post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${FDOC}
 .endif
-	${MV} ${PREFIX}/bin/fetchmailconf ${PREFIX}/libexec/fetchmailconf.bin
+
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

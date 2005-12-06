@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Sat Sep 17 15:19:44 2005
++++ Makefile.in	Tue Sep 20 15:11:33 2005
+@@ -29,7 +29,7 @@
+ INSTALL = @INSTALL@
+ install_sh_DATA = $(install_sh) -c -m 644
+ install_sh_PROGRAM = $(install_sh) -c
+-install_sh_SCRIPT = $(install_sh) -c
++install_sh_SCRIPT = $(install_sh) -c -m 555
+ INSTALL_HEADER = $(INSTALL_DATA)
+ transform = $(program_transform_name)
+ NORMAL_INSTALL = :
+@@ -837,23 +837,16 @@
+ uninstall-info-am:
+ install-pythonPYTHON: $(python_PYTHON)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pythondir)" || $(mkdir_p) "$(DESTDIR)$(pythondir)"
++	$(mkdir_p) "$(libexecdir)"
+ 	@list='$(python_PYTHON)'; dlist=''; for p in $$list; do\
+ 	  if test -f "$$p"; then b=; else b="$(srcdir)/"; fi; \
+ 	  if test -f $$b$$p; then \
+ 	    f=$(am__strip_dir) \
+ 	    dlist="$$dlist $$f"; \
+-	    echo " $(pythonPYTHON_INSTALL) '$$b$$p' '$(DESTDIR)$(pythondir)/$$f'"; \
+-	    $(pythonPYTHON_INSTALL) "$$b$$p" "$(DESTDIR)$(pythondir)/$$f"; \
++	    echo " $(install_sh_SCRIPT) '$$b$$p' '$(libexecdir)/$$f'"; \
++	    $(install_sh_SCRIPT) "$$b$$p" "$(libexecdir)/$$f"; \
+ 	  else :; fi; \
+ 	done; \
+-	if test -n "$$dlist"; then \
+-	  if test -z "$(DESTDIR)"; then \
+-	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(pythondir)" $$dlist; \
+-	  else \
+-	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(pythondir)" $$dlist; \
+-	  fi; \
+-	else :; fi
+ 
+ uninstall-pythonPYTHON:
+ 	@$(NORMAL_UNINSTALL)
