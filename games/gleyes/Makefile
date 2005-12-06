@@ -18,6 +18,9 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT version of Xeyes
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2006-01-06
+
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
