@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nux
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://dsd.lbl.gov/nux-download/releases/
@@ -38,7 +38,7 @@ PLIST_FILES+=	bin/fire-xquery
 .if !defined(NOPORTDOCS)
 PORTDOCS=	api changelog.html cvs.html dependencies.html \
 		gettingstarted.html images index.html license.html licenses \
-		mailing.html readme.html style.css todo.html
+		mailing.html readme.html related.html style.css todo.html
 .endif
 
 .if defined(WITH_XQUERY_TOOL)
