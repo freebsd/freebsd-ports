@@ -1,23 +1,6 @@
 *** Makefile.in.orig	Wed Jan 22 18:43:12 1997
 --- Makefile.in	Wed Nov  8 05:12:34 2000
 ***************
-*** 16,22 ****
-  ## Received from Mike Coleman
-  ############################################################################
-  
-! CC = gcc
-  
-  c_sources = \
-  	common.c \
---- 16,22 ----
-  ## Received from Mike Coleman
-  ############################################################################
-  
-! CC = @CC@
-  
-  c_sources = \
-  	common.c \
-***************
 *** 40,46 ****
   
   NINT_SWITCH = @NINTSW@
