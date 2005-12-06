@@ -20,8 +20,7 @@ AP_GENPLIST=	YES
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} >= 20
-AP${APACHE_VERSION}_SRC_FILE=	mod_rpaf-2.0.c
-AP${APACHE_VERSION}_PKGNAMESUFFIX=-ap${APACHE_VERSION}
+SRC_FILE=	mod_rpaf-2.0.c
 .endif
 
 .include <bsd.port.post.mk>
