@@ -15,6 +15,8 @@ COMMENT=	A simple Lisp interpreter
 
 GNU_CONFIGURE=	yes
 
-MAN1=	${PORTNAME}.1
+MAN1=		${PORTNAME}.1
+INFO=		slisp
+PLIST_FILES=	bin/slisp
 
 .include <bsd.port.mk>

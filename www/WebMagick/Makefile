@@ -21,6 +21,7 @@ LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+INFO=		webmagick
 CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_iconpath=webmagick \
 		webmagick_cv_prefixpath="" \
