@@ -8,6 +8,7 @@
 
 PORTNAME=	speex
 PORTVERSION=	1.1.11.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -24,7 +25,6 @@ USE_GNOME=	gnomehack
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15:inc
-USE_GCC=	3.4+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
@@ -39,15 +39,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if ${MACHINE_CPU:Msse}!=""
 CONFIGURE_ARGS+=	--enable-sse
 .endif
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-	${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
