@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2004.12.16
+PORTVERSION=	2005.13.07
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 DISTNAME=	${PORTNAME}
@@ -17,9 +17,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
-
-BROKEN=		Size mismatch
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		pdf.7:${PORTSDIR}/print/pdflib
 
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
