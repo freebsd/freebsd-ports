@@ -9,8 +9,7 @@ PORTNAME=	gtkabale
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.citkit.ru/pub/sourceforge/g/gt/gtkabale/ \
-		ftp://ftp.seindal.dk/pub/rene/
+MASTER_SITES=	http://sf.gds.tuwien.ac.at/3/g/gt/gtkabale/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lazy version of solitaire game
