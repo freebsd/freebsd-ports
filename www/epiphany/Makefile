@@ -45,6 +45,10 @@ MAN1=		epiphany.1
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.X
+.endif
+
 NO_WERROR=	yes
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
