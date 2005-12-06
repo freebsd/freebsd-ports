@@ -39,6 +39,7 @@ etc/horde/httpd.conf.gollem
 %%GOLLEMDIR%%/locale/lv_LV/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/nl_NL/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/nn_NO/LC_MESSAGES/gollem.mo
+%%GOLLEMDIR%%/locale/pl_PL/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/ro_RO/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/ru_RU/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/sv_SE/LC_MESSAGES/gollem.mo
@@ -46,6 +47,7 @@ etc/horde/httpd.conf.gollem
 %%GOLLEMDIR%%/locale/zh_TW/help.xml
 %%GOLLEMDIR%%/login.php
 %%GOLLEMDIR%%/manager.php
+%%GOLLEMDIR%%/permissions.php
 %%GOLLEMDIR%%/po/README
 %%GOLLEMDIR%%/po/bg_BG.po
 %%GOLLEMDIR%%/po/cs_CZ.po
@@ -60,21 +62,27 @@ etc/horde/httpd.conf.gollem
 %%GOLLEMDIR%%/po/lv_LV.po
 %%GOLLEMDIR%%/po/nl_NL.po
 %%GOLLEMDIR%%/po/nn_NO.po
+%%GOLLEMDIR%%/po/pl_PL.po
 %%GOLLEMDIR%%/po/ro_RO.po
 %%GOLLEMDIR%%/po/ru_RU.po
 %%GOLLEMDIR%%/po/sv_SE.po
 %%GOLLEMDIR%%/po/zh_TW.po
+%%GOLLEMDIR%%/quota.php
 %%GOLLEMDIR%%/redirect.php
 %%GOLLEMDIR%%/selectlist.php
 %%GOLLEMDIR%%/templates/clipboard/clipboard.html
 %%GOLLEMDIR%%/templates/common-header.inc
+%%GOLLEMDIR%%/templates/javascript/open_quota_win.js
 %%GOLLEMDIR%%/templates/javascript/open_selectlist_win.js
 %%GOLLEMDIR%%/templates/login/login.inc
+%%GOLLEMDIR%%/templates/login/nologin.inc
 %%GOLLEMDIR%%/templates/manager/empty_dir.inc
 %%GOLLEMDIR%%/templates/manager/header.inc
+%%GOLLEMDIR%%/templates/manager/javascript.inc
 %%GOLLEMDIR%%/templates/manager/manager.html
 %%GOLLEMDIR%%/templates/menu.inc
 %%GOLLEMDIR%%/templates/prefs/columnselect.inc
+%%GOLLEMDIR%%/templates/quota/quota.html
 %%GOLLEMDIR%%/templates/selectlist/javascript.inc
 %%GOLLEMDIR%%/templates/selectlist/selectlist.html
 %%GOLLEMDIR%%/test.php
@@ -102,6 +110,7 @@ etc/horde/httpd.conf.gollem
 @dirrm %%GOLLEMDIR%%/themes/graphics
 @dirrm %%GOLLEMDIR%%/themes
 @dirrm %%GOLLEMDIR%%/templates/selectlist
+@dirrm %%GOLLEMDIR%%/templates/quota
 @dirrm %%GOLLEMDIR%%/templates/prefs
 @dirrm %%GOLLEMDIR%%/templates/manager
 @dirrm %%GOLLEMDIR%%/templates/login
@@ -117,6 +126,8 @@ etc/horde/httpd.conf.gollem
 @dirrm %%GOLLEMDIR%%/locale/ru_RU
 @dirrm %%GOLLEMDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%GOLLEMDIR%%/locale/ro_RO
+@dirrm %%GOLLEMDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%GOLLEMDIR%%/locale/pl_PL
 @dirrm %%GOLLEMDIR%%/locale/nn_NO/LC_MESSAGES
 @dirrm %%GOLLEMDIR%%/locale/nn_NO
 @dirrm %%GOLLEMDIR%%/locale/nl_NL/LC_MESSAGES
