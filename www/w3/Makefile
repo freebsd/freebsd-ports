@@ -33,7 +33,7 @@ ELISPDIR?=	${PREFIX}/share/emacs/site-lisp
 INFODIR=	${PREFIX}/info
 ADDIR=		${X11BASE}/lib/X11/app-defaults
 DIRSECTION=	The Emacs editor and associated tools
-INFOFILE=	w3.info
+INFO=		w3
 
 post-build:
 .for f in DEINSTALL INSTALL dot.emacs user-install
@@ -41,7 +41,7 @@ post-build:
 		-e "s,%PREFIX%,${PREFIX},g" \
 		-e "s,%INFODIR%,${INFODIR},g" \
 		-e "s,%ELISPDIR%,${ELISPDIR},g" \
-		-e "s,%INFOFILE%,${INFOFILE},g" \
+		-e "s,%INFOFILE%,${INFO:S/$/.info/},g" \
 		-e "s,%ADDIR%,${ADDIR},g" \
 		-e "s,%TOUCH%,${TOUCH},g" \
 		-e "s,%MKDIR%,${MKDIR},g" \
