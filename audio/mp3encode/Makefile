@@ -15,13 +15,14 @@ DISTNAME=	dist10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG layer I, II and III audio file encoder
 
-RESTRICTED=	Condition is not clear
+RESTRICTED=	"Condition is not clear"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
 
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+MAKE_ARGS+=	CC="${CC}"
 ALL_TARGET=	encode
 
 # Directories and extra files
@@ -33,10 +34,12 @@ TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
 		absthr_0 absthr_1 absthr_2 alloc_0 alloc_1 alloc_2 alloc_3 \
 		alloc_4 dewindow enwindow huffcode huffdec psy_data
 
+PLIST_FILES=	bin/encode ${TABLE_FILES:S|^|share/mp3encode/|}
+PLIST_DIRS=	share/mp3encode
+
 post-patch:
 	@${ECHO_MSG} "===>  Specifing table path "
-	${SED} "s/ZAP/${TABLE_LIB_SED}/g" < ${WRKSRC}/common.h >${WRKSRC}/common.h.sed
-	${CP} -f ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
+	@${REINPLACE_CMD} -e "s/ZAP/${TABLE_LIB_SED}/g" ${WRKSRC}/common.h
 
 do-install:
 	@${ECHO_MSG} "===>  Installing binaries"
