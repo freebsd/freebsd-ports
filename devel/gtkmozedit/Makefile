@@ -17,7 +17,6 @@ COMMENT=	Text editor widget based on Mozilla's editing functionality
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-WITH_MOZILLA?=	firefox
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
@@ -26,8 +25,13 @@ USE_GECKO=	firefox mozilla
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
+.if ${OSVERSION} < 500000
+BROKEN="Does not build"
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|firefox-nspr|firefox-xpcom|' \
+	@${REINPLACE_CMD} -e 's|firefox-nspr|firefox-xpcom|; \
+		s|mozilla-nspr|mozilla-xpcom|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
