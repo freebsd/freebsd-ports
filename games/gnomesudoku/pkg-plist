@@ -38,6 +38,9 @@ bin/gnome-sudoku
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyo
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.py
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyc
 %%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyo
