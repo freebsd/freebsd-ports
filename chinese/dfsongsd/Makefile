@@ -31,7 +31,7 @@ do-fetch:
 .if !exists (${DISTDIR}/${DISTNAME})
 ECHO_MSG=/usr/bin/printf
 IGNORE=\'s distfile must be downloaded manually from\n\
-\ \ \ \ \ http://glyph.iso10646hk.net/chinese/download_001.html. If you agree\n\
+\ \ \ \ \ http://glyph.iso10646hk.net/chinese/download_001.html If you agree\n\
 \ \ \ \ \ with the terms given in the above page, please download ${DISTNAME},\n\
 \ \ \ \ \ put it into ${DISTDIR} and run \'make\' again\n\n.
 .endif
