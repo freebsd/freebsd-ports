@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	finchtv
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.geospiza.com/finchtv/download/programs/linux/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
