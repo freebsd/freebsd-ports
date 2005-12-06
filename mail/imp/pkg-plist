@@ -34,6 +34,7 @@
 %%IMPDIR%%/filterprefs.php
 %%IMPDIR%%/folders.php
 %%IMPDIR%%/index.php
+%%IMPDIR%%/js/ieEscGuard.js
 %%IMPDIR%%/lib/.htaccess
 %%IMPDIR%%/lib/Auth/imp.php
 %%IMPDIR%%/lib/Block/summary.php
@@ -496,5 +497,6 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/lib/Block
 @dirrm %%IMPDIR%%/lib/Auth
 @dirrm %%IMPDIR%%/lib
+@dirrm %%IMPDIR%%/js
 @unexec rmdir %D/%%IMPDIR%%/config 2>/dev/null || true
 @unexec rmdir %D/%%IMPDIR%% 2>/dev/null || true
