@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.10
+PORTVERSION=	0.10.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
@@ -32,16 +32,19 @@ INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 PORTDOCS=	COPYING README TODO
 
 post-extract:
-	@${FIND} ${WRKSRC}/ -type d -name CVS |xargs ${RM} -rf
+	@${FIND} ${WRKSRC}/ -type d \( -name CVS -or -name .svn \) | ${XARGS} ${RM} -rf
 
 post-patch:
-	@${REINPLACE_CMD} -e '/spooldir/s|/path/to/data|/var/spool/jabber|' \
-		-e '/pid/s|PyMSNt.pid|/var/jabberd/pid/${PORTNAME}.pid|' \
-		-e '/<debugOn>/s|<debugOn>|<!--<debugOn>-->|' \
+	@${REINPLACE_CMD} -i "" '/spooldir/s|/path/to/data|/var/spool/jabber|' \
 		${WRKSRC}/config-example.xml
-	@${REINPLACE_CMD} -e 's|../config.xml|${PREFIX}/etc/jabber-pymsn.xml|g' \
+	@${REINPLACE_CMD} -i "" 's|../config.xml|${PREFIX}/etc/jabber-pymsn.xml|g' \
 		${WRKSRC}/src/xmlconfig.py
-	@${RM} ${WRKSRC}/src/xmlconfig.py.bak
+	@${REINPLACE_CMD} -i "" 's|src/legacy|legacy|g' \
+		${WRKSRC}/src/legacy/glue.py \
+		${WRKSRC}/src/legacy/legacylist.py
+	@${REINPLACE_CMD} -i "" 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/src/config.py
+	@${RM} -f ${WRKSRC}/src/*.orig
 	@${ECHO} '#!${PYTHON_CMD}' > ${WRKSRC}/src/main.py.new
 	@${CAT} ${WRKSRC}/src/main.py >> ${WRKSRC}/src/main.py.new
 	@${MV} ${WRKSRC}/src/main.py.new ${WRKSRC}/src/main.py
