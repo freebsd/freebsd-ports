@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	treeviewx
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	biology
-MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVERSION}/
+MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVERSION:S/.1//}/
 DISTNAME=	tv-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
@@ -25,10 +24,4 @@ CONFIGURE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
 
 PLIST_FILES=	bin/tv
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
