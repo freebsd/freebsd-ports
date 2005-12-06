@@ -61,8 +61,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.info \
 		${PREFIX}/${INFO_PATH}
 
-post-install:
-	@install-info ${PREFIX}/${INFO_PATH}/${PORTNAME}.info \
-		${PREFIX}/${INFO_PATH}/dir
-
 .include <bsd.port.mk>
