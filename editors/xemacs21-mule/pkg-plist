@@ -70,6 +70,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/README.OO-BROWSER
 lib/xemacs-%%XEMACS_VER%%/etc/SERVICE
 lib/xemacs-%%XEMACS_VER%%/etc/TERMS
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL
+lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.cs
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.de
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.fr
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.hr
@@ -80,6 +81,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.pl
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.ro
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.ru
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.se
+lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.sl
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.th
 lib/xemacs-%%XEMACS_VER%%/etc/XKeysymDB
 lib/xemacs-%%XEMACS_VER%%/etc/aliases.ksh
