@@ -7,6 +7,7 @@
 
 PORTNAME=	ripit
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
@@ -22,6 +23,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/ripit.pl \
 		bin/ripit
 USE_PERL5=	yes
+USE_BZIP2=	yes
 
 post-patch:
 	@ ${PERL} -pi -ne "s|#!/usr/bin/perl|#!${PERL}|" ${WRKSRC}/ripit.pl
