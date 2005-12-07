@@ -1,0 +1,30 @@
+bin/recoll
+bin/recollindex
+%%DATADIR%%/examples/mimeconf
+%%DATADIR%%/examples/mimemap
+%%DATADIR%%/examples/recoll.conf
+%%DATADIR%%/filters/rcldoc
+%%DATADIR%%/filters/rclgaim
+%%DATADIR%%/filters/rclpdf
+%%DATADIR%%/filters/rclps
+%%DATADIR%%/filters/rclrtf
+%%DATADIR%%/filters/rclsoff
+%%DATADIR%%/filters/rcluncomp
+%%DATADIR%%/images/document.png
+%%DATADIR%%/images/drawing.png
+%%DATADIR%%/images/html.png
+%%DATADIR%%/images/message.png
+%%DATADIR%%/images/mozilla_doc.png
+%%DATADIR%%/images/pdf.png
+%%DATADIR%%/images/postscript.png
+%%DATADIR%%/images/presentation.png
+%%DATADIR%%/images/soffice.png
+%%DATADIR%%/images/spreadsheet.png
+%%DATADIR%%/images/txt.png
+%%DATADIR%%/images/wordprocessing.png
+%%DATADIR%%/translations/recoll_fr.qm
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
