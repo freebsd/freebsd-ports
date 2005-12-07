@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/kWnn4/katod
 bin/kWnn4/katof
 bin/kWnn4/kdtoa
@@ -8,12 +9,10 @@ bin/kWnn4/kwnnkill
 bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
 @dirrm bin/kWnn4
-etc/rc.d/kWnn.sh
+etc/rc.d/kwnn.sh
 lib/wnn/ko_KR/dic/sys/full.fzk
 lib/wnn/ko_KR/dic/sys/hword.dic
 lib/wnn/ko_KR/dic/sys/single.dic
 @dirrm lib/wnn/ko_KR/dic/sys
 @dirrm lib/wnn/ko_KR/dic/usr
 @dirrm lib/wnn/ko_KR/dic
-@dirrm lib/wnn/ko_KR
-@dirrm lib/wnn

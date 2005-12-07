@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 # an installation script for Wnn4.2
 
 check_pw()
@@ -49,33 +50,41 @@ yesno() {
 }
 
 mk_startup_script() {
-      echo "Installing ${startup_script} startup file.";
-      cat << EOF > ${startup_script}
+	_wnnname=$1
+	_wnnserver=$2
+	_wnn_socket=$3
+	_scriptfile=${PKG_PREFIX}/etc/rc.d/${_wnnname}.sh
+
+      echo "Installing ${_scriptfile} startup file.";
+      cat << EOF > ${_scriptfile}
 #!/bin/sh
-wnnserver=${wnnserver}
-case "\$1" in
-start)
-  if [ -x $wnnserver ]; then
-    ${wnnstat} -L ${wnn_lang} localhost > /dev/null 2>&1
-    if [ \$? = 255 ]; then
-      rm -f  ${wnn_socket}
-      echo -n ' ${wnnname}'
-      $wnnserver > /dev/null
-    fi
-  fi
-  ;;
-stop)
-  ${wnnkill} -L ${wnn_lang} localhost
-  ;;
-*)
-  echo "Usage: \`basename \$0\` {start|stop}" >&2
-  exit 64
-  ;;
-esac
+#
+# PROVIDE: ${_wnnname}
+# REQUIRE: LOGIN
+#
 
-exit 0
+. %%RC_SUBR%%
 
+name=${_wnnname}
+rcvar=\`set_rcvar\`
+command=${_wnnserver}
+procname=${_wnnserver}
+
+load_rc_config \${name}
+
+start_precmd()
+{
+	rm -f ${_wnn_socket}
+}
+
+stop_postcmd()
+{
+	rm -f ${_wnn_socket}
+}
+
+run_rc_command "\$1"
 EOF
+	chmod 0555 ${_scriptfile}
 
 }
 
@@ -135,9 +144,10 @@ POST-INSTALL)
 	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
 	wnnstat=${PKG_PREFIX}/bin/Wnn4/wnnstat
 	wnnkill=${PKG_PREFIX}/bin/Wnn4/wnnkill
-	wnnname=Wnn
+	wnnname=wnn
 	wnn_socket=/tmp/jd_sockV4
 	wnn_lang=ja_JP
+	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
 	;;
       zh-FreeWnn-*)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
@@ -146,9 +156,16 @@ POST-INSTALL)
 	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
 	wnnstat=${PKG_PREFIX}/bin/cWnn4/cwnnstat
 	wnnkill=${PKG_PREFIX}/bin/cWnn4/cwnnkill
-	wnnname=cWnn
+	wnnname=cwnn
 	wnn_socket=/tmp/cd_sockV4
 	wnn_lang=zh_CN
+	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
+	
+	wnnserver2=${PKG_PREFIX}/bin/cWnn4/tserver
+	wnn_lang2=zh_TW
+	wnnname2=twnn
+	wnn_socket2=/tmp/td_sockV4
+	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
 	;;
       ko-FreeWnn-*)
 	sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
@@ -157,9 +174,10 @@ POST-INSTALL)
 	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
 	wnnstat=${PKG_PREFIX}/bin/kWnn4/kwnnstat
 	wnnkill=${PKG_PREFIX}/bin/kWnn4/kwnnkill
-	wnnname=kWnn
+	wnnname=kwnn
 	wnn_socket=/tmp/kd_sockV4
 	wnn_lang=ko_KR
+	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
 	;;
     esac
 
@@ -173,25 +191,5 @@ POST-INSTALL)
       fi
       chown wnn $dir
     done
-
-    ## create a startup script ##
-    startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
-    if [ ! -f ${startup_script} ]; then
-        mk_startup_script
-	chmod 755 ${startup_script};
-	chown bin:bin ${startup_script};
-	case "$1" in
-	    zh-FreeWnn-*)
-		wnnname=tWnn
-		startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
-		wnnserver=${PKG_PREFIX}/bin/cWnn4/tserver
-		wnn_lang=zh_TW
-		wnn_socket=/tmp/td_sockV4
-		mk_startup_script
-		chmod 755 ${startup_script};
-		chown bin:bin ${startup_script};
-		;;
-       esac
-    fi
-    ;;
+	;;
 esac
