@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/cWnn4/catod
 bin/cWnn4/catof
 bin/cWnn4/cdtoa
@@ -9,8 +10,8 @@ bin/cWnn4/cwnnstat
 bin/cWnn4/cwnntouch
 bin/cWnn4/tserver
 @dirrm bin/cWnn4
-etc/rc.d/cWnn.sh
-etc/rc.d/tWnn.sh
+etc/rc.d/cwnn.sh
+etc/rc.d/twnn.sh
 lib/wnn/zh_CN/dic/sys/QianMa.dic
 lib/wnn/zh_CN/dic/sys/WuBi.dic
 lib/wnn/zh_CN/dic/sys/basic.dic
@@ -30,6 +31,3 @@ lib/wnn/zh_TW/dic/sys/full.conR
 @dirrm lib/wnn/zh_TW/dic/sys
 @dirrm lib/wnn/zh_TW/dic/usr
 @dirrm lib/wnn/zh_TW/dic
-@dirrm lib/wnn/zh_CN
-@dirrm lib/wnn/zh_TW
-@dirrm lib/wnn

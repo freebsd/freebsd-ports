@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051207:
+  AFFECTS: users of {japanese,chinese,korean}/FreeWnn-*
+  AUTHOR: hrs@FreeBSD.org
+
+  {ja,zh,ko}-FreeWnn-server now use the new rc.subr(8) framework
+  for their startup script.  Note that to invoke each Wnn daemon at
+  boot time you have to set the following variables in rc.conf(5)
+  respectively:
+
+  wnn_enable
+  kwnn_enable
+  twnn_enable
+  cwnn_enable
+
 20051203:
   AFFECTS: users of www/apache2
   AUTHOR: clement@FreeBSD.org

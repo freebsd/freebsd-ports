@@ -1,9 +1,0 @@
---- Wnn/romkan/Imakefile.orig	Wed Aug 17 10:10:21 1994
-+++ Wnn/romkan/Imakefile	Wed Nov 18 00:08:23 1998
-@@ -3,5 +3,6 @@
- XCOMM
- #define DoNormalLib YES
-+#define DoSharedLib YES
- 
- #include <Library.tmpl>
- 
