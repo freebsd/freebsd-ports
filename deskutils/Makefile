@@ -85,6 +85,7 @@
     SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
     SUBDIR += kuake
+    SUBDIR += linux-sunbird
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += ljit

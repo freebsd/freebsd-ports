@@ -5,34 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=      sunbird
-PORTVERSION=   0.2
-PORTREVISION=  1
-CATEGORIES?=   www linux
-MASTER_SITES=  ${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR?=calendar/sunbird/releases/${PORTVERSION}
-PKGNAMEPREFIX?=linux-
-DISTNAME?=     sunbird-${PORTVERSION}-i686-linux-gtk2+xft
+PORTNAME=	sunbird
+PORTVERSION=	0.3a1
+PORTREVISION=	1
+CATEGORIES?=	deskutils linux
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR?=	calendar/sunbird/releases/${PORTVERSION}
+PKGNAMEPREFIX?=	linux-
+DISTNAME?=	sunbird-${PORTVERSION}.en-US.linux-i686
+EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=    voisine@gmail.com
-COMMENT=       Calendaring application branched from Mozilla
+MAINTAINER=	voisine@gmail.com
+COMMENT=	Calendaring application branched from Mozilla
 
-RUN_DEPENDS?=  \
+RUN_DEPENDS?=	\
 ${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 ${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 ${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
 ${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 ${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
-NO_BUILD=      yes
-ONLY_FOR_ARCHS=i386
-SUNBIRD_NAME=  ${PKGNAMEPREFIX}${PORTNAME}
-DESCR=         ${.CURDIR}/pkg-descr
-MD5_FILE=      ${.CURDIR}/distinfo
-PLIST=         ${WRKDIR}/pkg-plist
-USE_LINUX=     yes
-USE_X_PREFIX=  yes
-WRKSRC=        ${WRKDIR}/sunbird
+NO_BUILD=	yes
+ONLY_FOR_ARCHS=	i386
+SUNBIRD_NAME=	${PKGNAMEPREFIX}${PORTNAME}
+DESCR=		${.CURDIR}/pkg-descr
+MD5_FILE=	${.CURDIR}/distinfo
+PLIST=		${WRKDIR}/pkg-plist
+USE_BZIP2=	yes
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/sunbird
 
 pre-install:
 	${ECHO_CMD} bin/${SUNBIRD_NAME} > ${PLIST}
