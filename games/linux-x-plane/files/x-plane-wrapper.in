@@ -3,37 +3,55 @@
 xdir="%%XDIR%%"
 userdir="$HOME/.x-plane"
 portversion="%%PORTVERSION%%"
-xpversion="%%XPVERSION%%"
+programs="%%PROGRAMS%%"
+targets="athlon-xp i586 pentium-3"
 
 # The executables need to be run from the data directory, and need to
 # write files in it. We therefore mirror the data directory hierarchy
 # in $userdir, and create symlinks to the data files.
 
 if [ "x`cat $userdir/version 2>/dev/null`" != "x$portversion" ]; then
+	if [ -e $userdir ]; then
+		cd $userdir || exit 1
+
+		echo "Removing dangling symlinks from $userdir"
+		find * -type l ! -exec stat -L {} \; -delete >/dev/null 2>&1
+
+		echo "Removing obsolete configuration from $userdir"
+		rm -f Resources/Preferences/*
+		rm -f $userdir/cpu
+
+		echo "Removing empty directories from $userdir"
+		find -d * -type d -empty -delete
+	fi
+
 	echo "Updating hierarchy in $userdir"
 	cd $xdir || exit 1
+
 	find * -type d -exec mkdir -p "$userdir/{}" \; || exit 1
 	find * -type f ! -name '*.prf' -exec ln -sf "$xdir/{}" "$userdir/{}" \; || exit 1
-	cd $xdir/Resources/Preferences || exit 1
-	for f in *; do
-		if ! [ -e "$userdir/Resources/Preferences/$f" ]; then
-			install -m 644 "$f" $userdir/Resources/Preferences || exit 1
-		fi
+
+	for p in $programs; do
+		for t in $targets; do
+			if [ -e $p-$t ]; then
+				rm -f $userdir/$p-$t
+				cp -p $p-$t $userdir || exit 1
+			fi
+		done
 	done
+
 	echo "$portversion" > $userdir/version || exit 1
-fi
-
-if ! [ -e $userdir/cpu ]; then
-	echo "i586" > $userdir/cpu || exit 1
-fi
-
-cpu=`cat $userdir/cpu 2>/dev/null`
-if [ "x$cpu" != "xathlon-xp" ] && [ "x$cpu" != "xi586" ] && [ "x$cpu" != "xpentium-3" ]; then
-	echo "Unknown CPU \"$cpu\" in $userdir/cpu, defaulting to i586"
-	cpu=i586
 fi
 
 program=`basename $0`
 
 cd $userdir || exit 1
-exec ./$program-$xpversion-lin1-$cpu "$@"
+
+for t in $targets; do
+	if [ -e $program-$t ]; then
+		exec ./$program-$t "$@"
+	fi
+done
+
+echo "$program not found. Check your X-Plane installation." >&2
+exit 1
