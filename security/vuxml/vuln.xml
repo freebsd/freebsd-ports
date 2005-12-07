@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7289187b-66a5-11da-99f6-00123ffe8333">
+    <topic>trac -- search module SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>trac</name>
+	<range><lt>0.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17894/">
+	  <p>A vulnerability has been reported in Trac, which
+	    can be exploited by malicious people to conduct SQL
+	    injection attacks.</p>
+	  <p>Some unspecified input passed in the search module
+	    isn't properly sanitised before being used in a SQL
+	    query. This can be exploited to manipulate SQL
+	    queries by injecting arbitrary SQL code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://projects.edgewall.com/trac/wiki/ChangeLog#a0.9.2</url>
+      <url>http://secunia.com/advisories/17894/</url>
+    </references>
+    <dates>
+      <discovery>2005-12-05</discovery>
+      <entry>2005-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="faca0843-6281-11da-8630-00123ffe8333">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
