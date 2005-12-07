@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	YAML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	"YAML implementation in Perl"
+COMMENT=	YAML implementation in Perl
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	</dev/null
