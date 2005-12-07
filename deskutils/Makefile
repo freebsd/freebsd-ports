@@ -125,6 +125,7 @@
     SUBDIR += preferences.app
     SUBDIR += py-dosage
     SUBDIR += pypanel
+    SUBDIR += recoll
     SUBDIR += remember.el
     SUBDIR += remind
     SUBDIR += rolo
