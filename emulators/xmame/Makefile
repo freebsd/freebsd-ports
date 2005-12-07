@@ -9,6 +9,7 @@ PORTNAME?=	xmame
 PORTVERSION?=	0.102
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
+		http://www.energyhq.es.eu.org/files/:xmame \
 		http://www.pkix.net/mirror/x.mame.net/:xmame \
 		http://www.arcade-history.com/download/:history \
 		http://www.energyhq.es.eu.org/files/:history \
