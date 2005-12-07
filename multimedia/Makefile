@@ -68,6 +68,7 @@
     SUBDIR += jahshaka
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
+    SUBDIR += kbtv
     SUBDIR += kdemultimedia3
     SUBDIR += kino
     SUBDIR += kino-dvtitler
