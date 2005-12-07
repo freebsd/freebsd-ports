@@ -1,2 +1,6 @@
 MD5 (xpdf-3.01.tar.gz) = e004c69c7dddef165d768b1362b44268
+SHA256 (xpdf-3.01.tar.gz) = 7aedfb8cd113b868277c3d894633dd6e0f5a8ed28af12f5d883ae4ed98e9f789
 SIZE (xpdf-3.01.tar.gz) = 599778
+MD5 (xpdf-3.01pl1.patch) = 4184783da2885ecde3c2256de5144555
+SHA256 (xpdf-3.01pl1.patch) = 10a9dd1ff8dc6885d0168ba9cfece8f9bc9a0b305f3afc0739d940103ed19124
+SIZE (xpdf-3.01pl1.patch) = 4936
