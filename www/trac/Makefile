@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -34,11 +34,14 @@ x-generate-plist:
 		's,.*share/nls/.+$$,,g \
 		;s,@dirrm share/man(/.*)?$$,,g \
 		;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g \
+		;s,share/trac,%%DATADIR%%,g \
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.pre.mk>
 

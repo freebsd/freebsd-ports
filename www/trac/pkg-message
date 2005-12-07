@@ -1,4 +1,3 @@
-
 *******************************************************************************
 
 The Trac database schema was changed between versions 0.8 and 0.9.  This
@@ -15,4 +14,3 @@ You can also find the canonical upgrade instructions at:
 	/usr/ports/UPDATING
 
 *******************************************************************************
-
