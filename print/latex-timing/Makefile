@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-timing
 PORTVERSION=	1.0.19940515
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/timing
@@ -17,32 +17,29 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for drawing timing diagrams
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_BUILD=	YES
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		MFDIR=${MFDIR} TFMDIR=${TFMDIR} PKDIR=${PKDIR}
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-DOC_FILES=	read.me timing.dvi timing.tex prozt1.tex tim0594.upl
+DOC_FILES=	read.me timing.pdf timing.tex prozt1.tex tim0594.upl
 
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	timing.sty
 
-MFDIR=		${TEXMFLOCAL}/fonts/source/public/${PORTNAME:S/^latex-//}
+MFDIR=		${TEXMFDIR}/fonts/source/public/${PORTNAME:S/^latex-//}
 MF_FILES=	timing.mf timing1.mf timing1s.mf timing2.mf timing2s.mf
 
-PKDIR=		${TEXMFLOCAL}/fonts/pk/${PORTNAME:S/^latex-//}
+PKDIR=		${TEXMFDIR}/fonts/pk/${PORTNAME:S/^latex-//}
 PK_FILES=	timing1.pk timing1s.pk timing2.pk timing2s.pk
 
-TFMDIR=		${TEXMFLOCAL}/fonts/tfm/${PORTNAME:S/^latex-//}
+TFMDIR=		${TEXMFDIR}/fonts/tfm/${PORTNAME:S/^latex-//}
 TFM_FILES=	timing1.tfm timing1s.tfm timing2.tfm timing2s.tfm
 
 do-install:
