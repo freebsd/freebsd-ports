@@ -4777,6 +4777,7 @@ kbiff		ports/mail/kbiff
 kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
 kblticker	ports/deskutils/kblticker
+kbtv		ports/multimedia/kbtv
 kcachegrind	ports/devel/kcachegrind
 kcd		ports/misc/kcd
 kcd-devel		ports/misc/kcd-devel
@@ -5876,6 +5877,7 @@ logsurfer	ports/misc/logsurfer
 logtool		ports/sysutils/logtool
 logtool-devel	ports/sysutils/logtool-devel
 logtools	ports/www/logtools
+logwatch	ports/sysutils/logwatch
 long-exposure-tools	ports/graphics/long-exposure-tools
 lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
