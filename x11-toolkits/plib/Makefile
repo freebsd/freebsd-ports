@@ -7,6 +7,7 @@
 
 PORTNAME=	plib
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
@@ -17,10 +18,13 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" \
-		CPPFLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-GL=${X11BASE} --with-x
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
+
+post-build:
+	${CC} ${CFLAGS} -o ${WRKDIR}/plib-jscal ${FILESDIR}/jsBSDCal.c
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/plib-jscal ${PREFIX}/bin
 
 .include <bsd.port.mk>
