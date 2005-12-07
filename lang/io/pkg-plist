@@ -4,8 +4,6 @@ bin/ioDesktop
 bin/ioServer
 include/io/IoBlock.h
 include/io/IoCFunction.h
-include/io/IoCLI.h
-include/io/IoCatch.h
 include/io/IoCollector.h
 include/io/IoCompiler.h
 include/io/IoConfig.h
@@ -16,10 +14,8 @@ include/io/IoDebugger.h
 include/io/IoDirectory.h
 include/io/IoDuration.h
 include/io/IoDynLib.h
-include/io/IoException.h
 include/io/IoFile.h
 include/io/IoFile_stat.h
-include/io/IoFuture.h
 include/io/IoLexer.h
 include/io/IoList.h
 include/io/IoMap.h
@@ -27,12 +23,11 @@ include/io/IoMark.h
 include/io/IoMessage.h
 include/io/IoMessage_inline.h
 include/io/IoMessage_parser.h
-include/io/IoNil.h
 include/io/IoNumber.h
 include/io/IoObject.h
 include/io/IoObjectGroup.h
 include/io/IoObjectGroup_inline.h
-include/io/IoObject_actor.h
+include/io/IoObject_flow.h
 include/io/IoObject_inline.h
 include/io/IoObject_persistence.h
 include/io/IoObject_struct.h
@@ -43,7 +38,11 @@ include/io/IoSeq.h
 include/io/IoSeq_immutable.h
 include/io/IoSeq_mutable.h
 include/io/IoState.h
+include/io/IoState_callbacks.h
 include/io/IoState_collector.h
+include/io/IoState_coros.h
+include/io/IoState_debug.h
+include/io/IoState_eval.h
 include/io/IoState_exceptions.h
 include/io/IoState_inline.h
 include/io/IoState_symbols.h
@@ -70,7 +69,6 @@ include/io/base/BStreamTag.h
 include/io/base/Base.h
 include/io/base/ByteArray.h
 include/io/base/ByteArray_inline.h
-include/io/base/CLI.h
 include/io/base/CStack.h
 include/io/base/CString.h
 include/io/base/Common.h
@@ -124,7 +122,9 @@ lib/libIoVM.a
 %%DOCSDIR%%/licenseForDocs.txt
 %%DOCSDIR%%/releaseHistory.txt
 %%EXAMPLESDIR%%/docgen/DocsExtractor.io
-%%EXAMPLESDIR%%/ioCode/A_Object.io
+%%EXAMPLESDIR%%/ioCode/A1_Object.io
+%%EXAMPLESDIR%%/ioCode/A2_Exception.io
+%%EXAMPLESDIR%%/ioCode/Actor.io
 %%EXAMPLESDIR%%/ioCode/B_Sequence.io
 %%EXAMPLESDIR%%/ioCode/Date.io
 %%EXAMPLESDIR%%/ioCode/Directory.io
@@ -135,7 +135,25 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/ioCode/Sandbox.io
 %%EXAMPLESDIR%%/ioCode/System.io
 %%EXAMPLESDIR%%/ioCode/Y_Path.io
+%%EXAMPLESDIR%%/ioCode/Z_CLI.io
 %%EXAMPLESDIR%%/ioCode/Z_Importer.io
+%%EXAMPLESDIR%%/ioCode/_hidden/A_Object.io
+%%EXAMPLESDIR%%/ioCode/_hidden/B_Nil.io
+%%EXAMPLESDIR%%/ioCode/_hidden/B_Sequence.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Date.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Directory.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Exception.io
+%%EXAMPLESDIR%%/ioCode/_hidden/File.io
+%%EXAMPLESDIR%%/ioCode/_hidden/List.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Number.io
+%%EXAMPLESDIR%%/ioCode/_hidden/P_CGI.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Sandbox.io
+%%EXAMPLESDIR%%/ioCode/_hidden/System.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Y_Path.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Z_CLI.io
+%%EXAMPLESDIR%%/ioCode/_hidden/Z_Importer.io
+%%EXAMPLESDIR%%/ioCode/_new/A_Nil.io
+%%EXAMPLESDIR%%/ioCode/_new/test.io
 %%EXAMPLESDIR%%/ioCode/_old/Importer copy.io
 %%EXAMPLESDIR%%/ioCode/_old/Importer2.io
 %%EXAMPLESDIR%%/ioCode/_old/Io2C.io
@@ -146,18 +164,8 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/ioCode/_old/zzz_docs.io
 %%EXAMPLESDIR%%/ioCode/_test/Compiler.io
 %%EXAMPLESDIR%%/ioCode/_test/System.io
-%%EXAMPLESDIR%%/new/.DS_Store.1
-%%EXAMPLESDIR%%/new/IoBufferEnumerator.c
-%%EXAMPLESDIR%%/new/IoBufferEnumerator.h
-%%EXAMPLESDIR%%/new/IoCoroutine.c
-%%EXAMPLESDIR%%/new/IoCoroutine.h
-%%EXAMPLESDIR%%/new/IoLocals.c
-%%EXAMPLESDIR%%/new/IoLocals.h
-%%EXAMPLESDIR%%/new/IoPMap.c
-%%EXAMPLESDIR%%/new/IoPMap.h
-%%EXAMPLESDIR%%/new/IoPObject.c
-%%EXAMPLESDIR%%/new/IoPObject.h
-%%EXAMPLESDIR%%/new/_buildinfo.io
+%%EXAMPLESDIR%%/new/IoObject_flow.c
+%%EXAMPLESDIR%%/new/Iter.c
 %%EXAMPLESDIR%%/sampleCode/Account.io
 %%EXAMPLESDIR%%/sampleCode/Ackerman.io
 %%EXAMPLESDIR%%/sampleCode/ActivateNo.io
@@ -165,18 +173,20 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/sampleCode/BottlesOfBeer.io
 %%EXAMPLESDIR%%/sampleCode/Cards.io
 %%EXAMPLESDIR%%/sampleCode/CommandLineArgs.io
+%%EXAMPLESDIR%%/sampleCode/ConditionTest.io
 %%EXAMPLESDIR%%/sampleCode/Conditions.io
 %%EXAMPLESDIR%%/sampleCode/Control.io
 %%EXAMPLESDIR%%/sampleCode/ControlFlow.io
 %%EXAMPLESDIR%%/sampleCode/Decompile.io
+%%EXAMPLESDIR%%/sampleCode/Dir.io
 %%EXAMPLESDIR%%/sampleCode/Enums.io
 %%EXAMPLESDIR%%/sampleCode/Foreach.io
 %%EXAMPLESDIR%%/sampleCode/Hanoi.io
 %%EXAMPLESDIR%%/sampleCode/HelloWorld.io
 %%EXAMPLESDIR%%/sampleCode/Inheritance.io
 %%EXAMPLESDIR%%/sampleCode/LaunchPath.io
-%%EXAMPLESDIR%%/sampleCode/SetParent.io
-%%EXAMPLESDIR%%/sampleCode/SetSlot.io
+%%EXAMPLESDIR%%/sampleCode/Ping.io
+%%EXAMPLESDIR%%/sampleCode/Ping.io copy
 %%EXAMPLESDIR%%/sampleCode/Sort.io
 %%EXAMPLESDIR%%/sampleCode/Super.io
 %%EXAMPLESDIR%%/sampleCode/WeakLink.io
@@ -186,111 +196,10 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/sampleCode/_tricks/AutoSetterGetter.io
 %%EXAMPLESDIR%%/sampleCode/_tricks/Constants.io
 %%EXAMPLESDIR%%/sampleCode/_tricks/Swap.io
+%%EXAMPLESDIR%%/sampleCode/except.io
 %%EXAMPLESDIR%%/sampleCode/metrics.io
-%%EXAMPLESDIR%%/tests/BigFolder.io
-%%EXAMPLESDIR%%/tests/CompilePerf.io
-%%EXAMPLESDIR%%/tests/Concurrency/Accumulator.io
-%%EXAMPLESDIR%%/tests/Concurrency/Actors.io
-%%EXAMPLESDIR%%/tests/Concurrency/AsyncFactorial.io
-%%EXAMPLESDIR%%/tests/Concurrency/Continuation.io
-%%EXAMPLESDIR%%/tests/Concurrency/ErlangChallenge.io
-%%EXAMPLESDIR%%/tests/Concurrency/Future.io
-%%EXAMPLESDIR%%/tests/Concurrency/Generator.io
-%%EXAMPLESDIR%%/tests/Concurrency/NeuralNet.io
-%%EXAMPLESDIR%%/tests/Concurrency/Performance.io
-%%EXAMPLESDIR%%/tests/Concurrency/PingPong.io
-%%EXAMPLESDIR%%/tests/Concurrency/ProducerConsumer.io
-%%EXAMPLESDIR%%/tests/Debugger.io
-%%EXAMPLESDIR%%/tests/SpeedResults
-%%EXAMPLESDIR%%/tests/StackTrace.io
-%%EXAMPLESDIR%%/tests/Testing/IoUnit.io
-%%EXAMPLESDIR%%/tests/_expiremental/FrayTest.io
-%%EXAMPLESDIR%%/tests/_expiremental/RST/doString.io
-%%EXAMPLESDIR%%/tests/_expiremental/RST/evil.io
-%%EXAMPLESDIR%%/tests/_expiremental/RST/evil1.io
-%%EXAMPLESDIR%%/tests/_expiremental/activate.io
-%%EXAMPLESDIR%%/tests/_expiremental/finalize.io
-%%EXAMPLESDIR%%/tests/_expiremental/objc.io
-%%EXAMPLESDIR%%/tests/_expiremental/parse.io
-%%EXAMPLESDIR%%/tests/_expiremental/parser.io
-%%EXAMPLESDIR%%/tests/_expiremental/symbolic.io
-%%EXAMPLESDIR%%/tests/_expiremental/tailCall.io
-%%EXAMPLESDIR%%/tests/_old/SwapColumns.io
-%%EXAMPLESDIR%%/tests/_old/primitiveTests.io
-%%EXAMPLESDIR%%/tests/_speed/SpeedResults
-%%EXAMPLESDIR%%/tests/_speed/SpeedResults.html
-%%EXAMPLESDIR%%/tests/_speed/collector/test.io
-%%EXAMPLESDIR%%/tests/_speed/coro.io
-%%EXAMPLESDIR%%/tests/_speed/justMessage/message copy.io
-%%EXAMPLESDIR%%/tests/_speed/justMessage/message.io
-%%EXAMPLESDIR%%/tests/_speed/justMessage/message.ruby
-%%EXAMPLESDIR%%/tests/_speed/list.io
-%%EXAMPLESDIR%%/tests/_speed/speed.io
-%%EXAMPLESDIR%%/tests/_speed/speed.lua
-%%EXAMPLESDIR%%/tests/_speed/speed.py
-%%EXAMPLESDIR%%/tests/_speed/speed.rebol
-%%EXAMPLESDIR%%/tests/_speed/speed.ruby
-%%EXAMPLESDIR%%/tests/_speed/speedResults.io
-%%EXAMPLESDIR%%/tests/_speed/speedResults2.io
-%%EXAMPLESDIR%%/tests/a.io
-%%EXAMPLESDIR%%/tests/break.io
-%%EXAMPLESDIR%%/tests/compare.io
-%%EXAMPLESDIR%%/tests/deepPrint.io
-%%EXAMPLESDIR%%/tests/dict copy 1.io
-%%EXAMPLESDIR%%/tests/dict.io
-%%EXAMPLESDIR%%/tests/except.io
-%%EXAMPLESDIR%%/tests/except2.io
-%%EXAMPLESDIR%%/tests/gc.io
-%%EXAMPLESDIR%%/tests/lineContinuations.io
-%%EXAMPLESDIR%%/tests/methodWithDefaults.io
-%%EXAMPLESDIR%%/tests/ops.io
-%%EXAMPLESDIR%%/tests/performance/Ackerman.io
-%%EXAMPLESDIR%%/tests/performance/_ReadMe.txt
-%%EXAMPLESDIR%%/tests/performance/ary.io
-%%EXAMPLESDIR%%/tests/performance/ary.py
-%%EXAMPLESDIR%%/tests/performance/ary2.io
-%%EXAMPLESDIR%%/tests/performance/ary3.io
-%%EXAMPLESDIR%%/tests/performance/ary3.py
-%%EXAMPLESDIR%%/tests/performance/aryv.io
-%%EXAMPLESDIR%%/tests/performance/data/columns.txt
-%%EXAMPLESDIR%%/tests/performance/data/prince.txt
-%%EXAMPLESDIR%%/tests/performance/except.io
-%%EXAMPLESDIR%%/tests/performance/fibo.io
-%%EXAMPLESDIR%%/tests/performance/fibo.py
-%%EXAMPLESDIR%%/tests/performance/hash.io
-%%EXAMPLESDIR%%/tests/performance/hash2.io
-%%EXAMPLESDIR%%/tests/performance/heapsort.io
-%%EXAMPLESDIR%%/tests/performance/hello.io
-%%EXAMPLESDIR%%/tests/performance/hello.py
-%%EXAMPLESDIR%%/tests/performance/lists.io
-%%EXAMPLESDIR%%/tests/performance/matrix.io
-%%EXAMPLESDIR%%/tests/performance/methcall.io
-%%EXAMPLESDIR%%/tests/performance/moments.io
-%%EXAMPLESDIR%%/tests/performance/nbody.io
-%%EXAMPLESDIR%%/tests/performance/nestedloop.io
-%%EXAMPLESDIR%%/tests/performance/nestedloop.py
-%%EXAMPLESDIR%%/tests/performance/objinst.io
-%%EXAMPLESDIR%%/tests/performance/random.io
-%%EXAMPLESDIR%%/tests/performance/regexmatch.io
-%%EXAMPLESDIR%%/tests/performance/reversefile.io
-%%EXAMPLESDIR%%/tests/performance/sieve.io
-%%EXAMPLESDIR%%/tests/performance/spellcheck.io
-%%EXAMPLESDIR%%/tests/performance/strcat.io
-%%EXAMPLESDIR%%/tests/performance/sumcol.io
-%%EXAMPLESDIR%%/tests/performance/threads.io
-%%EXAMPLESDIR%%/tests/performance/wc.io
-%%EXAMPLESDIR%%/tests/performance/wordfreq.io
-%%EXAMPLESDIR%%/tests/ray.io
-%%EXAMPLESDIR%%/tests/resend.io
-%%EXAMPLESDIR%%/tests/shootoutTests.io
-%%EXAMPLESDIR%%/tests/super.io
-%%EXAMPLESDIR%%/tests/test0.io
-%%EXAMPLESDIR%%/tests/test1.io
-%%EXAMPLESDIR%%/tests/test2.io
-%%EXAMPLESDIR%%/tests/testSplit.io
-%%EXAMPLESDIR%%/tests/trace.io
-%%EXAMPLESDIR%%/unitTests/AllTests.io
 %%EXAMPLESDIR%%/unitTests/BlockTest.io
+%%EXAMPLESDIR%%/unitTests/CoroutineTest.io
 %%EXAMPLESDIR%%/unitTests/DateTest.io
 %%EXAMPLESDIR%%/unitTests/ListTest.io
 %%EXAMPLESDIR%%/unitTests/LoopTest.io
@@ -299,28 +208,17 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/unitTests/MiscTest.io
 %%EXAMPLESDIR%%/unitTests/NumberTest.io
 %%EXAMPLESDIR%%/unitTests/ObjectTest.io
-%%EXAMPLESDIR%%/unitTests/StringTest.io
-%%EXAMPLESDIR%%/unitTests/UnitTest.io
-%%EXAMPLESDIR%%/unitTests/UnitTestTest.io
-%%EXAMPLESDIR%%/unitTests/WarningTest.io
+%%EXAMPLESDIR%%/unitTests/SequenceTest.io
+%%EXAMPLESDIR%%/unitTests/run.io
 @dirrm %%EXAMPLESDIR%%/unitTests
-@dirrm %%EXAMPLESDIR%%/tests/performance/data
-@dirrm %%EXAMPLESDIR%%/tests/performance
-@dirrm %%EXAMPLESDIR%%/tests/_speed/justMessage
-@dirrm %%EXAMPLESDIR%%/tests/_speed/collector
-@dirrm %%EXAMPLESDIR%%/tests/_speed
-@dirrm %%EXAMPLESDIR%%/tests/_old
-@dirrm %%EXAMPLESDIR%%/tests/_expiremental/RST
-@dirrm %%EXAMPLESDIR%%/tests/_expiremental
-@dirrm %%EXAMPLESDIR%%/tests/Testing
-@dirrm %%EXAMPLESDIR%%/tests/Concurrency
-@dirrm %%EXAMPLESDIR%%/tests
 @dirrm %%EXAMPLESDIR%%/sampleCode/_tricks
 @dirrm %%EXAMPLESDIR%%/sampleCode/_special
 @dirrm %%EXAMPLESDIR%%/sampleCode
 @dirrm %%EXAMPLESDIR%%/new
 @dirrm %%EXAMPLESDIR%%/ioCode/_test
 @dirrm %%EXAMPLESDIR%%/ioCode/_old
+@dirrm %%EXAMPLESDIR%%/ioCode/_new
+@dirrm %%EXAMPLESDIR%%/ioCode/_hidden
 @dirrm %%EXAMPLESDIR%%/ioCode
 @dirrm %%EXAMPLESDIR%%/docgen
 @dirrm %%EXAMPLESDIR%%

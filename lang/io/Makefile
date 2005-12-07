@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2005.10.17
-PORTREVISION=	1
+PORTVERSION=	0.0.2005.12.05
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -27,6 +26,8 @@ MAKE_ENV=	INCS="-I${LOCALBASE}/include" LIBLOCAL="-L${LOCALBASE}/lib"
 BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
 
 pre-patch:
+	${FIND} ${WRKSRC} -name '.DS_Store*' -delete
+
 	${RM} ${WRKSRC}/vm/base/DynLib_OSX.c
 	cd ${WRKSRC}/libs && for mod in *; do \
 		if [ $$mod != "zlib" ]; then \
@@ -45,7 +46,7 @@ pre-patch:
 
 	${REINPLACE_CMD} \
 		-e 's,^\( *options := "\).*$$,\1${CFLAGS} -I${LOCALBASE}/include -DSANE_POPEN -DIOBINDINGS",' \
-		-e 's,\( -lIoVM\),\1 -lncurses ,' \
+		-e 's,\( -lIoVM\), -L${LOCALBASE}/lib \1 -lncurses ,' \
 		${WRKSRC}/_build.io
 
 do-install:
@@ -65,7 +66,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/_docs/* ${DOCSDIR}
 
-.for subdir in ioCode new sampleCode docgen tests unitTests
+.for subdir in ioCode new sampleCode docgen unitTests
 	${MKDIR} ${EXAMPLESDIR}/${subdir}
 	${TAR} -C ${WRKSRC}/vm/_${subdir} -cf - . | \
 		${TAR} -C ${EXAMPLESDIR}/${subdir} -xf -
