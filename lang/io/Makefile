@@ -7,6 +7,7 @@
 
 PORTNAME=	io
 PORTVERSION=	0.0.2005.12.05
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -48,6 +49,9 @@ pre-patch:
 		-e 's,^\( *options := "\).*$$,\1${CFLAGS} -I${LOCALBASE}/include -DSANE_POPEN -DIOBINDINGS",' \
 		-e 's,\( -lIoVM\), -L${LOCALBASE}/lib \1 -lncurses ,' \
 		${WRKSRC}/_build.io
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 .for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer
