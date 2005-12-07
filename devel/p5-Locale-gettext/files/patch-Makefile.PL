@@ -6,7 +6,7 @@
  	# try with -lintl
 -	$libs = "-lintl";
 -	unless (conftest("char *x = gettext(\"foo\");", "gettext", 0)) {
-+	$libs = "-lintl -L$ENV{LOCALBASE}/lib -I$ENV{LOCALBASE}/include";
++	$libs = "-L$ENV{LOCALBASE}/lib -lintl -I$ENV{LOCALBASE}/include";
 +	unless (conftest("#include <libintl.h>\nchar *x = gettext(\"foo\");", "gettext", 0)) {
  		unlink("conftest.c");
  		unlink("conftest");
@@ -16,7 +16,7 @@
  WriteMakefile(
      NAME => "Locale::gettext",
 -    LIBS => ($libs eq '') ? [] : [$libs],
-+    LIBS => ($libs eq '') ? [] : ["-lintl -L$ENV{LOCALBASE}/lib"],
++    LIBS => ($libs eq '') ? [] : ["-L$ENV{LOCALBASE}/lib -lintl"],
 +    INC => "-I$ENV{LOCALBASE}/include",
      VERSION_FROM => 'gettext.pm', 
  );
