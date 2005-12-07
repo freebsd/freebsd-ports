@@ -39,6 +39,7 @@
     SUBDIR += cadubi
     SUBDIR += cairo
     SUBDIR += cairo-java
+    SUBDIR += cairomm
     SUBDIR += cal3d
     SUBDIR += cal3d-devel
     SUBDIR += camediaplay
