@@ -1,0 +1,36 @@
+%%SITE_PERL%%/Excel/Template.pm
+%%SITE_PERL%%/Excel/Template/Base.pm
+%%SITE_PERL%%/Excel/Template/Container.pm
+%%SITE_PERL%%/Excel/Template/Container/Bold.pm
+%%SITE_PERL%%/Excel/Template/Container/Conditional.pm
+%%SITE_PERL%%/Excel/Template/Container/Format.pm
+%%SITE_PERL%%/Excel/Template/Container/Hidden.pm
+%%SITE_PERL%%/Excel/Template/Container/Italic.pm
+%%SITE_PERL%%/Excel/Template/Container/KeepLeadingZeros.pm
+%%SITE_PERL%%/Excel/Template/Container/Locked.pm
+%%SITE_PERL%%/Excel/Template/Container/Loop.pm
+%%SITE_PERL%%/Excel/Template/Container/Outline.pm
+%%SITE_PERL%%/Excel/Template/Container/Row.pm
+%%SITE_PERL%%/Excel/Template/Container/Scope.pm
+%%SITE_PERL%%/Excel/Template/Container/Shadow.pm
+%%SITE_PERL%%/Excel/Template/Container/Strikeout.pm
+%%SITE_PERL%%/Excel/Template/Container/Workbook.pm
+%%SITE_PERL%%/Excel/Template/Container/Worksheet.pm
+%%SITE_PERL%%/Excel/Template/Context.pm
+%%SITE_PERL%%/Excel/Template/Element.pm
+%%SITE_PERL%%/Excel/Template/Element/Backref.pm
+%%SITE_PERL%%/Excel/Template/Element/Cell.pm
+%%SITE_PERL%%/Excel/Template/Element/Formula.pm
+%%SITE_PERL%%/Excel/Template/Element/Range.pm
+%%SITE_PERL%%/Excel/Template/Element/Var.pm
+%%SITE_PERL%%/Excel/Template/Factory.pm
+%%SITE_PERL%%/Excel/Template/Format.pm
+%%SITE_PERL%%/Excel/Template/Iterator.pm
+%%SITE_PERL%%/Excel/Template/TextObject.pm
+%%SITE_PERL%%/mach/auto/Excel/Template/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Excel/Template
+@dirrm %%SITE_PERL%%/mach/auto/Excel
+@dirrm %%SITE_PERL%%/Excel/Template/Element
+@dirrm %%SITE_PERL%%/Excel/Template/Container
+@dirrm %%SITE_PERL%%/Excel/Template
+@dirrm %%SITE_PERL%%/Excel
