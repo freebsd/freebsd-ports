@@ -10735,6 +10735,7 @@ readlink	ports/sysutils/readlink
 reallyslick	ports/graphics/reallyslick
 recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
+recoll		ports/deskutils/recoll
 recombine	ports/biology/recombine
 recoverjpeg	ports/graphics/recoverjpeg
 recvnet		ports/net/recvnet
