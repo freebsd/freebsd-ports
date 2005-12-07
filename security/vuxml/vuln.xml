@@ -34,6 +34,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23afd91f-676b-11da-99f6-00123ffe8333">
+    <topic>phpmyadmin -- register_globals emulation "import_blacklist" manipulation</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.7.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17925/">
+	  <p>Stefan Esser has reported a vulnerability in phpMyAdmin,
+	    which can be exploited by malicious people to conduct
+	    cross-site scripting attacks, disclose sensitive
+	    information, and compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to an error in the
+	    register_globals emulation layer in "grab_globals.php"
+	    where the "import_blacklist" variable is not properly
+	    protected from being overwritten. This can be exploited
+	    to execute arbitrary HTML and script code in a user's
+	    browser session in context of an affected site, and
+	    include arbitrary files from external and local resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-9</url>
+      <url>http://www.hardened-php.net/advisory_252005.110.html</url>
+      <url>http://secunia.com/advisories/17925/</url>
+    </references>
+    <dates>
+      <discovery>2005-12-07</discovery>
+      <entry>2005-12-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="59ada6e5-676a-11da-99f6-00123ffe8333">
+    <topic>phpmyadmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security advisory reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-8">
+	  <p>It was possible to conduct an XSS attack via the
+	    HTTP_HOST variable; also, some scripts in the libraries
+	    directory that handle header generation were vulnerable
+	    to XSS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3665</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-8</url>
+      <url>http://secunia.com/advisories/17895/</url>
+    </references>
+    <dates>
+      <discovery>2005-12-05</discovery>
+      <entry>2005-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="964161cd-6715-11da-99f6-00123ffe8333">
     <topic>ffmpeg -- libavcodec buffer overflow vulnerability</topic>
     <affects>
