@@ -1,0 +1,4 @@
+ghasher is a GUI tool to easily calculate the MD5 sum(or md2,md4,sha1,sha,
+ripemd160,dss1) of a file.
+
+WWW: http://asgaard.homelinux.org/code/ghasher/

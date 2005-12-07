@@ -1,0 +1,12 @@
+--- Makefile.orig      Tue Dec  6 18:03:46 2005
++++ Makefile   Tue Dec  6 18:04:24 2005
+@@ -1,6 +1,7 @@
++all: ghasher
+ CFLAGS = -Wall  -ggdb -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+-CFLAGS +=`pkg-config gtk+-2.0 libglade-2.0 --cflags`
+-LDFLAGS =`pkg-config gtk+-2.0 libglade-2.0 --libs` -lcrypto -Wl,-O2
++CFLAGS +=`pkg-config gtk+-2.0 libglade-2.0 gthread-2.0 --cflags`
++LDFLAGS +=`pkg-config gtk+-2.0 libglade-2.0 gthread-2.0 --libs` -lcrypto -Wl,-O2
+ OBJECTS = gui.o util.o list.o verify.o
+ BINDIR=/usr/bin
+ PIXMAPDIR=/usr/share/pixmaps
