@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="964161cd-6715-11da-99f6-00123ffe8333">
+    <topic>ffmpeg -- libavcodec buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>0.4.9.p1_4</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg-devel</name>
+	<range><lt>0.4.9.c.2005120600</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/17892/">
+	  <p>Simon Kilvington has reported a vulnerability in
+	    FFmpeg libavcodec, which can be exploited by malicious
+	    people to cause a DoS (Denial of Service) and
+	    potentially to compromise a user's system.</p>
+	  <p>The vulnerability is caused due to a boundary error
+	    in the "avcodec_default_get_buffer()" function of
+	    "utils.c" in libavcodec. This can be exploited to
+	    cause a heap-based buffer overflow when a
+	    specially-crafted 1x1 ".png" file containing a palette
+	    is read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://article.gmane.org/gmane.comp.video.ffmpeg.devel/26558</url>
+      <url>http://secunia.com/advisories/17892/</url>
+    </references>
+    <dates>
+      <discovery>2005-11-30</discovery>
+      <entry>2005-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7289187b-66a5-11da-99f6-00123ffe8333">
     <topic>trac -- search module SQL injection vulnerability</topic>
     <affects>
