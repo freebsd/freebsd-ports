@@ -1,0 +1,15 @@
+include/cairomm-1.0/cairomm/cairomm.h
+include/cairomm-1.0/cairomm/context.h
+include/cairomm-1.0/cairomm/enums.h
+include/cairomm-1.0/cairomm/exception.h
+include/cairomm-1.0/cairomm/fontface.h
+include/cairomm-1.0/cairomm/fontoptions.h
+include/cairomm-1.0/cairomm/path.h
+include/cairomm-1.0/cairomm/pattern.h
+include/cairomm-1.0/cairomm/surface.h
+lib/libcairomm-1.0.a
+lib/libcairomm-1.0.so
+lib/libcairomm-1.0.so.0
+libdata/pkgconfig/cairomm-1.0.pc
+@dirrm include/cairomm-1.0/cairomm
+@dirrm include/cairomm-1.0
