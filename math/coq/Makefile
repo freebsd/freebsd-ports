@@ -11,6 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl2/
 DISTNAME=	coq-8.0pl2
+PATCHFILES=	patch-coq-8.0pl2-ocaml-3.09
+PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
