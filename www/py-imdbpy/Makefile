@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	imdbpy
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,10 +26,6 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 .endif
-
-PLIST_FILES=	${DOCSDIR:S,${PREFIX}/,,}/.xvpics/imdbpyPowered.png \
-		${DOCSDIR:S,${PREFIX}/,,}/.xvpics/imdbpyico.png
-PLIST_DIRS=	${DOCSDIR:S,${PREFIX}/,,}/.xvpics
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/imdb ! -type d | \
