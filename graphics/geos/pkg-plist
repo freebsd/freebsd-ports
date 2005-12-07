@@ -31,7 +31,11 @@ include/geos/timeval.h
 include/geos/unload.h
 include/geos/util.h
 include/geos/version.h
+include/geos_c.h
 lib/libgeos.a
 lib/libgeos.so
-lib/libgeos.so.3
+lib/libgeos.so.4
+lib/libgeos_c.a
+lib/libgeos_c.so
+lib/libgeos_c.so.1
 @dirrm include/geos

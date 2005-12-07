@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://geos.refractions.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
