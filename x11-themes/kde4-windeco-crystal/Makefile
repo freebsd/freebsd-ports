@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.saschahlusiak.de/linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
