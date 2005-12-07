@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-goodway
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.xpgoodwayteam.org/dwn_goodway/
 DISTNAME=	goodwayv${GWVERSION}_free
@@ -58,7 +58,11 @@ post-patch:
 	@${MV} ${WRKSRC}/JRE/javaws/javawsbin ${WRKSRC}/.programs/JRE/javaws
 
 do-build:
-	@${ECHO_CMD} 'GNL_XPlaneEXE=${X11BASE}/lib/x-plane/X-Plane-816-lin1-i586' > ${WRKSRC}/Properties3.prf
+.for t in athlon-xp i586 pentium-3
+	@if [ -e ${X11BASE}/lib/x-plane/X-Plane-${t} ]; then \
+		${ECHO_CMD} 'GNL_XPlaneEXE=${X11BASE}/lib/x-plane/X-Plane-${t}' > ${WRKSRC}/Properties3.prf; \
+	fi
+.endfor
 	@${ECHO_CMD} 'GNL_XPlaneDir=${X11BASE}/lib/x-plane' >> ${WRKSRC}/Properties3.prf
 	@icoconvert ${WRKSRC}/ICON1.ICO
 	@${MKDIR} ${WRKSRC}/.icons
