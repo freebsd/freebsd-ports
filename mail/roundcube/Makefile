@@ -37,8 +37,11 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 WANT_PHP_WEB=	yes
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend" off
+		PGSQL "Use PostgreSQL backend" off
+
+.if defined(PHP_VER) && ${PHP_VER} == 5
+OPTIONS+=       SQLITE "Use SQLite backend" off
+.endif
 
 .include <bsd.port.pre.mk>
 
