@@ -7,11 +7,15 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
+
+PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
+PATCHFILES=	xpdf-3.01pl1.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
