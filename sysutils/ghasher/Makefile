@@ -1,0 +1,32 @@
+# New ports collection makefile for:   ghasher
+# Date Created:                        06 Dec 2005
+# Whom:                                Remington Lang <MrL0Lz@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ghasher
+PORTVERSION=	1.2.1
+CATEGORIES=	sysutils gnome
+MASTER_SITES=	http://asgaard.homelinux.org/code/ghasher/
+
+MAINTAINER=	MrL0Lz@gmail.com
+COMMENT=	GUI frontend to MD5 sum
+
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk20 libglade2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_FILES=	bin/ghasher
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ghasher ${PREFIX}/bin
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500040
+USE_GETOPT_LONG=yes
+.endif
+
+.include <bsd.port.post.mk>

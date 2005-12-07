@@ -181,6 +181,7 @@
     SUBDIR += gdesklets-multitail
     SUBDIR += gdmap
     SUBDIR += gfslicer
+    SUBDIR += ghasher
     SUBDIR += gkfreq
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
