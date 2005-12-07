@@ -7528,6 +7528,7 @@ p5-Class-ParmList	ports/devel/p5-Class-ParmList
 p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
 p5-Class-Roles	ports/devel/p5-Class-Roles
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
+p5-Class-StateMachine	ports/devel/p5-Class-StateMachine
 p5-Class-Tangram	ports/devel/p5-Class-Tangram
 p5-Class-Throwable	ports/devel/p5-Class-Throwable
 p5-Class-Tom	ports/devel/p5-Class-Tom
