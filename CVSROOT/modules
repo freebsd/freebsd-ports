@@ -2859,6 +2859,7 @@ ggz-client-libs	ports/games/ggz-client-libs
 ggz-gtk-client	ports/games/ggz-gtk-client
 ggz-sdl-games	ports/games/ggz-sdl-games
 ggz-txt-client	ports/games/ggz-txt-client
+ghasher		ports/sysutils/ghasher
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
 ghc5		ports/lang/ghc5
