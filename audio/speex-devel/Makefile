@@ -36,6 +36,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN="Does not build"
+.endif
+
 .if ${MACHINE_CPU:Msse}!=""
 CONFIGURE_ARGS+=	--enable-sse
 .endif
