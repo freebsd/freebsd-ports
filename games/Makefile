@@ -346,6 +346,7 @@
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += linux-warsow
     SUBDIR += linux-x-plane
+    SUBDIR += linux-x-plane-net-installer
     SUBDIR += liquidwar
     SUBDIR += lm-solve
     SUBDIR += lmarbles
