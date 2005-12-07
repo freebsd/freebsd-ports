@@ -953,6 +953,7 @@ cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 cairo		ports/graphics/cairo
 cairo-java	ports/graphics/cairo-java
+cairomm		ports/graphics/cairomm
 cake		ports/games/cake
 cal3d		ports/graphics/cal3d
 cal3d-devel	ports/graphics/cal3d-devel
