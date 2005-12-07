@@ -1,3 +1,4 @@
+bin/plib-jscal
 include/plib/fnt.h
 include/plib/js.h
 include/plib/net.h
