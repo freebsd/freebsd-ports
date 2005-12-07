@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_GD)
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+GD_PORT?=	graphics/gd
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/${GD_PORT}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
