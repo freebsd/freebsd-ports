@@ -107,24 +107,6 @@ share/apps/amarok/scripts/playlist2html/Playlist.py
 share/apps/amarok/scripts/playlist2html/PlaylistServer.py
 share/apps/amarok/scripts/playlist2html/README
 share/apps/amarok/scripts/playlist2html/playlist2html.py
-share/apps/amarok/scripts/shouter/Amarok.py
-share/apps/amarok/scripts/shouter/ChangeLog
-share/apps/amarok/scripts/shouter/Globals.py
-share/apps/amarok/scripts/shouter/Playlist.py
-share/apps/amarok/scripts/shouter/README
-share/apps/amarok/scripts/shouter/Services.py
-share/apps/amarok/scripts/shouter/Shouter.py
-share/apps/amarok/scripts/shouter/ShouterConfig.py
-share/apps/amarok/scripts/shouter/ShouterExceptions.py
-share/apps/amarok/scripts/shouter/SocketErrors.py
-share/apps/amarok/scripts/shouter/StreamConfig.py
-share/apps/amarok/scripts/shouter/StreamController.py
-share/apps/amarok/scripts/shouter/StreamPublisher.py
-share/apps/amarok/scripts/shouter/binfuncs.py
-share/apps/amarok/scripts/shouter/debug.py
-share/apps/amarok/scripts/shouter/propfind-req.xml
-share/apps/amarok/scripts/shouter/silence/silence-48.mp3
-share/apps/amarok/scripts/shouter/test/client.py
 share/apps/amarok/scripts/templates/amarok.rb
 share/apps/amarok/scripts/templates/python_qt_template.py
 share/apps/amarok/scripts/templates/ruby_qt_template.rb
@@ -154,7 +136,6 @@ share/apps/konqsidebartng/entries/amarok.desktop
 share/apps/konqsidebartng/kicker_entries/amarok.desktop
 share/apps/konqueror/servicemenus/amarok_append.desktop
 share/apps/profiles/amarok.profile.xml
-share/apps/zeroconf/_shoutcast._tcp
 share/config.kcfg/amarok.kcfg
 %%GSTREAMER%%share/config.kcfg/gstconfig.kcfg
 share/config/amarokrc
@@ -430,7 +411,6 @@ share/icons/hicolor/64x64/apps/amarok.png
 share/locale/az/LC_MESSAGES/amarok.mo
 share/locale/be/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
-share/locale/bn/LC_MESSAGES/amarok.mo
 share/locale/br/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
@@ -444,7 +424,6 @@ share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
-share/locale/fy/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
 share/locale/gl/LC_MESSAGES/amarok.mo
 share/locale/he/LC_MESSAGES/amarok.mo
@@ -491,8 +470,6 @@ share/nls/en_US.US-ASCII
 %%XINE%%share/services/amarok_xine-engine.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/servicetypes/amarok_plugin.desktop
-@dirrm share/locale/fy/LC_MESSAGES
-@dirrm share/locale/fy
 @dirrm share/locale/ku/LC_MESSAGES
 @dirrm share/locale/ku
 @dirrm share/locale/lo/LC_MESSAGES
@@ -522,9 +499,6 @@ share/servicetypes/amarok_plugin.desktop
 @dirrm share/apps/amarok/themes
 @dirrm share/apps/amarok/scripts/webcontrol
 @dirrm share/apps/amarok/scripts/templates
-@dirrm share/apps/amarok/scripts/shouter/test
-@dirrm share/apps/amarok/scripts/shouter/silence
-@dirrm share/apps/amarok/scripts/shouter
 @dirrm share/apps/amarok/scripts/playlist2html
 @dirrm share/apps/amarok/scripts/graphequalizer
 @dirrm share/apps/amarok/scripts/common
