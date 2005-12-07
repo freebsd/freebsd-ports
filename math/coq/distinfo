@@ -1,3 +1,6 @@
 MD5 (coq-8.0pl2.tar.gz) = 39ee0fed76e47a11de2f49e2c236ef79
 SHA256 (coq-8.0pl2.tar.gz) = 95e0180b560dd3efc006dd88f4996b5b2dca70d895b058be8e1def490c52842b
 SIZE (coq-8.0pl2.tar.gz) = 2285855
+MD5 (patch-coq-8.0pl2-ocaml-3.09) = 9a53dc19f345c6c9df9fb18a5f28d8d6
+SHA256 (patch-coq-8.0pl2-ocaml-3.09) = f81eec6b1e39760795015dd954c49c39aef0b4d29409fe866f5f6299f0a5f75f
+SIZE (patch-coq-8.0pl2-ocaml-3.09) = 818
