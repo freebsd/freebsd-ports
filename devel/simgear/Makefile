@@ -7,6 +7,7 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
