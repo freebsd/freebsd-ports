@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.89
+PORTVERSION=	0.90
 PORTREVISION=	0
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.seamons.com/net_server/ \
