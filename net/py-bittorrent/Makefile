@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -18,16 +17,25 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
+USE_TWISTED_RUN=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	LICENSE.txt \
-		redirdonate.html \
-		README.txt credits.txt
+PORTDOCS=	\
+		LICENSE.txt \
+		README.txt \
+		TRACKERLESS.txt \
+		credits.txt \
+		credits-l10n.txt \
+		redirdonate.html
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
@@ -43,8 +51,8 @@ WITHOUT_PSYCO=	yes
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 PLIST_FILES+=	\
-		bin/btmaketorrentgui.py \
-		bin/btdownloadgui.py \
+		bin/bittorrent \
+		bin/maketorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
 		share/pixmaps/BitTorrent/broken.png \
 		share/pixmaps/BitTorrent/finished.png \
@@ -56,7 +64,10 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/play.png \
 		share/pixmaps/BitTorrent/queued.png \
 		share/pixmaps/BitTorrent/remove.png \
-		share/pixmaps/BitTorrent/running.png
+		share/pixmaps/BitTorrent/running.png \
+		share/pixmaps/BitTorrent/status-natted.png \
+		share/pixmaps/BitTorrent/status-running.png \
+		share/pixmaps/BitTorrent/status-stopped.png
 
 PLIST_SUB+=	GUI=""
 .else
@@ -68,23 +79,17 @@ PLIST_SUB+=	GUI="@comment "
 .ifndef(WITHOUT_PSYCO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
-EXTRA_PATCHES+= \
-		${FILESDIR}/extra-psyco-patch-btdownloadcurses.py \
-		${FILESDIR}/extra-psyco-patch-btdownloadgui.py \
-		${FILESDIR}/extra-psyco-patch-btdownloadheadless.py \
-		${FILESDIR}/extra-psyco-patch-btlaunchmany.py \
-		${FILESDIR}/extra-psyco-patch-btlaunchmanycurses.py \
-		${FILESDIR}/extra-psyco-patch-btmaketorrent.py \
-		${FILESDIR}/extra-psyco-patch-btmaketorrentgui.py \
-		${FILESDIR}/extra-psyco-patch-btreannouce.py \
-		${FILESDIR}/extra-psyco-patch-btrename.py \
-		${FILESDIR}/extra-psyco-patch-btshowmetainfo.py \
-		${FILESDIR}/extra-psyco-patch-bttrack.py
-
-PLIST_FILES+=	\
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.py \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyc \
-		${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent/PSYCO.pyo
+EXTRA_PATCHES+=	\
+		${FILESDIR}/extra-psyco-patch-bittorrent-console.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent-curses.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent-tracker.py \
+		${FILESDIR}/extra-psyco-patch-bittorrent.py \
+		${FILESDIR}/extra-psyco-patch-changetracker-console.py \
+		${FILESDIR}/extra-psyco-patch-launchmany-console.py \
+		${FILESDIR}/extra-psyco-patch-launchmany-curses.py \
+		${FILESDIR}/extra-psyco-patch-maketorrent-console.py \
+		${FILESDIR}/extra-psyco-patch-maketorrent.py \
+		${FILESDIR}/extra-psyco-patch-torrentinfo-console.py
 .endif
 
 pre-everything::
@@ -95,15 +100,17 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITHOUT_PSYCO to disable devel/py-psyco optimization'
 .endif
 
+pre-patch:
+# do not install public.key, we will do it ourselves
+	@${REINPLACE_CMD} -E \
+		-e "s|^.*'public.key'.*$$||" \
+		${WRKSRC}/setup.py
+
 post-patch:
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -x -n 10 \
-		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python.*|${LOCALBASE}/bin/python|'
-.ifndef(WITHOUT_PSYCO)
-# activate psyco optimization
-	@${ECHO_CMD} 'psyco = 1' > ${WRKSRC}/BitTorrent/PSYCO.py
-.endif
+# public.key will be located under ${DATADIR} not ${DOCSDIR}
+	@${REINPLACE_CMD} -E \
+		-e "s|%%DATADIR%%|'${DATADIR}/'|" \
+		${WRKSRC}/BitTorrent/NewVersion.py
 
 post-install:
 # set proper permissions
@@ -115,7 +122,7 @@ post-install:
 # pixmaps
 	@${CHMOD} -R ${SHAREMODE} \
 		${PREFIX}/share/pixmaps/${PORTNAME}/*
-	@${CHMOD} a+x \
+	@${CHMOD} a+X \
 		${PREFIX}/share/pixmaps/${PORTNAME}/logo
 .endif
 .ifndef(NOPORTDOCS)
@@ -123,5 +130,8 @@ post-install:
 	@${CHMOD} -R ${SHAREMODE} \
 		${DOCSDIR}/*
 .endif
+# public.key
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/public.key ${DATADIR}
 
 .include <bsd.port.post.mk>

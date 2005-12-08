@@ -1,12 +1,11 @@
-bin/btdownloadcurses.py
-bin/btdownloadheadless.py
-bin/btlaunchmany.py
-bin/btlaunchmanycurses.py
-bin/btmaketorrent.py
-bin/btreannounce.py
-bin/btrename.py
-bin/btshowmetainfo.py
-bin/bttrack.py
+bin/bittorrent-console
+bin/bittorrent-curses
+bin/bittorrent-tracker
+bin/changetracker-console
+bin/launchmany-console
+bin/launchmany-curses
+bin/maketorrent-console
+bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyo
@@ -37,15 +36,21 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/OpenPath.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/OpenPath.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/OpenPath.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.pyo
@@ -58,6 +63,12 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_magic.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyo
@@ -94,6 +105,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/defer.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/defer.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/defer.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.pyo
@@ -115,6 +129,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/platform.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/platform.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/prefs.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/prefs.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/prefs.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/selectpoll.pyo
@@ -124,9 +141,160 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.py
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/KRateLimiter.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.py
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/__init__.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/actions.py
+%%PYTHON_SITELIBDIR%%/khashmir/actions.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/actions.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/cache.py
+%%PYTHON_SITELIBDIR%%/khashmir/cache.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/cache.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/const.py
+%%PYTHON_SITELIBDIR%%/khashmir/const.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/const.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/hammerlock.py
+%%PYTHON_SITELIBDIR%%/khashmir/hammerlock.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/hammerlock.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.py
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/inserter.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/khash.py
+%%PYTHON_SITELIBDIR%%/khashmir/khash.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/khash.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/khashmir.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/knet.py
+%%PYTHON_SITELIBDIR%%/khashmir/knet.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/knet.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/knode.py
+%%PYTHON_SITELIBDIR%%/khashmir/knode.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/knode.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.py
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/krpc.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.py
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/kstore.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.py
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/ktable.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/node.py
+%%PYTHON_SITELIBDIR%%/khashmir/node.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/node.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/setup.py
+%%PYTHON_SITELIBDIR%%/khashmir/setup.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/setup.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test.py
+%%PYTHON_SITELIBDIR%%/khashmir/test.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_khashmir.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_krpc.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.py
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/test_kstore.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/unet.py
+%%PYTHON_SITELIBDIR%%/khashmir/unet.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/unet.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/util.py
+%%PYTHON_SITELIBDIR%%/khashmir/util.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/util.pyo
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.py
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyc
+%%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
+%%DATADIR%%/public.key
+share/locale/af/LC_MESSAGES/bittorrent.mo
+share/locale/ar/LC_MESSAGES/bittorrent.mo
+share/locale/bg/LC_MESSAGES/bittorrent.mo
+share/locale/ca/LC_MESSAGES/bittorrent.mo
+share/locale/cs/LC_MESSAGES/bittorrent.mo
+share/locale/da/LC_MESSAGES/bittorrent.mo
+share/locale/de/LC_MESSAGES/bittorrent.mo
+share/locale/eo/LC_MESSAGES/bittorrent.mo
+share/locale/es/LC_MESSAGES/bittorrent.mo
+share/locale/es_MX/LC_MESSAGES/bittorrent.mo
+share/locale/et/LC_MESSAGES/bittorrent.mo
+share/locale/eu/LC_MESSAGES/bittorrent.mo
+share/locale/fi/LC_MESSAGES/bittorrent.mo
+share/locale/fr/LC_MESSAGES/bittorrent.mo
+share/locale/ga/LC_MESSAGES/bittorrent.mo
+share/locale/gr/LC_MESSAGES/bittorrent.mo
+share/locale/he_IL/LC_MESSAGES/bittorrent.mo
+share/locale/hr/LC_MESSAGES/bittorrent.mo
+share/locale/hu/LC_MESSAGES/bittorrent.mo
+share/locale/hy/LC_MESSAGES/bittorrent.mo
+share/locale/it/LC_MESSAGES/bittorrent.mo
+share/locale/ja/LC_MESSAGES/bittorrent.mo
+share/locale/ka/LC_MESSAGES/bittorrent.mo
+share/locale/ko/LC_MESSAGES/bittorrent.mo
+share/locale/lt/LC_MESSAGES/bittorrent.mo
+share/locale/ml/LC_MESSAGES/bittorrent.mo
+share/locale/ms/LC_MESSAGES/bittorrent.mo
+share/locale/nb_NO/LC_MESSAGES/bittorrent.mo
+share/locale/nl/LC_MESSAGES/bittorrent.mo
+share/locale/pl/LC_MESSAGES/bittorrent.mo
+share/locale/pt/LC_MESSAGES/bittorrent.mo
+share/locale/pt_BR/LC_MESSAGES/bittorrent.mo
+share/locale/ro/LC_MESSAGES/bittorrent.mo
+share/locale/ru/LC_MESSAGES/bittorrent.mo
+share/locale/sk/LC_MESSAGES/bittorrent.mo
+share/locale/sl/LC_MESSAGES/bittorrent.mo
+share/locale/sq/LC_MESSAGES/bittorrent.mo
+share/locale/sv/LC_MESSAGES/bittorrent.mo
+share/locale/th/LC_MESSAGES/bittorrent.mo
+share/locale/tlh/LC_MESSAGES/bittorrent.mo
+share/locale/tr/LC_MESSAGES/bittorrent.mo
+share/locale/uk/LC_MESSAGES/bittorrent.mo
+share/locale/vi/LC_MESSAGES/bittorrent.mo
+share/locale/zh_CN/LC_MESSAGES/bittorrent.mo
+share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
-%%GUI%%@dirrm share/pixmaps/BitTorrent
+%%GUI%%@dirrm share/pixmaps/BitTorrent       
 %%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk 2>/dev/null || true
+@unexec rmdir %D/share/locale/tlh/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tlh 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko 2>/dev/null || true
+@unexec rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hy 2>/dev/null || true
+@unexec rmdir %D/share/locale/he_IL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/he_IL 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
