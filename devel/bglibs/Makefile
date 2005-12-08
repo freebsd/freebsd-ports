@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bglibs
-PORTVERSION=	1.028
+PORTVERSION=	1.031
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
