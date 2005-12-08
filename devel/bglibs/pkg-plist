@@ -17,6 +17,7 @@ include/bglibs/crc/crc32.h
 include/bglibs/crc/crc32c.h
 include/bglibs/crc/crc64.h
 include/bglibs/crc/gcrc.h
+include/bglibs/crypto/hmac.h
 include/bglibs/crypto/md5.h
 include/bglibs/crypto/sha1.h
 include/bglibs/crypto/sha256.h
