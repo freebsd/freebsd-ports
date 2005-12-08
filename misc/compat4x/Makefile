@@ -35,9 +35,17 @@ RUN_DEPENDS=		${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/l
 COMPAT4X_OSVERSION=	5.3
 PLIST=			${.CURDIR}/pkg-plist.freebsd5
 .if ${ARCH} == i386
+PLIST_SUB+=		LIBDIR="lib"
+COMPAT4X_DISTFILES=	${PORTNAME}.aa \
+			${PORTNAME}.ab
+.elif ${ARCH} == amd64
+ARCH=			i386
+TARGET_DIR=		${PREFIX}/lib32/compat
+PLIST_SUB+=		LIBDIR="lib32"
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab
 .elif ${ARCH} == alpha
+PLIST_SUB+=		LIBDIR="lib"
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab
 .else
@@ -65,6 +73,12 @@ IGNORE=			unsupported architecture
 PLIST_SUB+=		I386_ONLY=""
 .else
 PLIST_SUB+=		I386_ONLY="@comment "
+.endif
+.if ${ARCH} == amd64
+PLIST_SUB+=		AMD64_ONLY=""
+PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
+.else
+PLIST_SUB+=		AMD64_ONLY="@comment "
 .endif
 
 OPENSSL_LIBS=		libcrypto.so.1 libcrypto.so.2 libssl.so.1 libssl.so.2
@@ -109,6 +123,9 @@ do-extract:
 do-build:
 	@( ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
 	) > ${WRKDIR}/000.${PORTNAME}.sh
+.if ${TARGET_DIR} == ${PREFIX}/lib32/compat
+	@${ECHO_CMD} '${LDCONFIG} -32 -m ${TARGET_DIR}' >> ${WRKDIR}/000.${PORTNAME}.sh
+.endif
 
 do-install:
 	${MKDIR} ${TARGET_DIR} ${PREFIX}/etc/rc.d
@@ -117,6 +134,9 @@ do-install:
 .for lib in ${FREEBSD4_LIBS}
 	${LN} -sf ${lib}.compat4x ${TARGET_DIR}/${lib}
 .endfor
+.endif
+.if ${ARCH} == amd64
+	${LDCONFIG} -32 -m ${TARGET32_DIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
