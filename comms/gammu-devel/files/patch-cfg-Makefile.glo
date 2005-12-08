@@ -9,15 +9,6 @@
  
  $(TOPDIR)/gammu/gammu: $(COMMON) $(GAMMU)
  	@echo Linking gammu
-@@ -136,7 +136,7 @@
- 
- $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR): $(COMMON)
- 	@echo Linking libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR)
--	@$(CC) $(LDLIBS) -shared -Wl,-soname -Wl,libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) -o $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(COMMON)
-+	@$(CC) $(LDLIBS) -shared -Wl,-soname -Wl,libGammu.so.$(SONAME_MAJOR) -o $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(COMMON)
- 	@$(LN) -s libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR)
- 	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(TOPDIR)/common/libGammu.so
- 
 @@ -225,12 +225,14 @@
  	@$(INSTALL) -m 0644 $(TOPDIR)/changelog $(DESTDIR)$(INSTALL_DOC_DIR)
  	@$(INSTALL) -m 0644 $(TOPDIR)/readme.txt $(DESTDIR)$(INSTALL_DOC_DIR)
