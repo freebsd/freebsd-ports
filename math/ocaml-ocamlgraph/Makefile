@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	0.81
+PORTVERSION=	0.95
 CATEGORIES=	math
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlgraph/
 PKGNAMEPREFIX=	ocaml-
