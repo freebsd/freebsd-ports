@@ -8261,6 +8261,7 @@ p5-Math-GSL	ports/math/p5-Math-GSL
 p5-Math-Interpolate	ports/math/p5-Math-Interpolate
 p5-Math-LinearCombination	ports/math/p5-Math-LinearCombination
 p5-Math-Logic	ports/math/p5-Math-Logic
+p5-Math-Matrix	ports/math/p5-Math-Matrix
 p5-Math-Pari	ports/math/p5-Math-Pari
 p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
