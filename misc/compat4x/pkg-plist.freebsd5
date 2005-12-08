@@ -1,41 +1,44 @@
 etc/rc.d/000.compat4x.sh
-lib/compat/libc.so.4
+%%LIBDIR%%/compat/libc.so.4
 @unexec if [ -e %B/libc_r.so.4.compat3x ]; then ln -sf libc_r.so.4.compat3x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
-lib/compat/libc_r.so.4.compat4x
+%%LIBDIR%%/compat/libc_r.so.4.compat4x
 @exec ln -sf %f %B/libc_r.so.4
-%%FORBIDDEN:%%lib/compat/libcrypto.so.1
-%%FORBIDDEN:%%lib/compat/libcrypto.so.2
-lib/compat/libdevstat.so.2
-lib/compat/libedit.so.3
-lib/compat/libfetch.so.2
-lib/compat/libgmp.so.3
-lib/compat/libhistory.so.4
-lib/compat/libm.so.2
-lib/compat/libmp.so.3
-lib/compat/libopie.so.2
-lib/compat/libpam.so.1
-lib/compat/libpcap.so.2
+%%FORBIDDEN:%%%%LIBDIR%%/compat/libcrypto.so.1
+%%FORBIDDEN:%%%%LIBDIR%%/compat/libcrypto.so.2
+%%LIBDIR%%/compat/libdevstat.so.2
+%%LIBDIR%%/compat/libedit.so.3
+%%LIBDIR%%/compat/libfetch.so.2
+%%LIBDIR%%/compat/libgmp.so.3
+%%LIBDIR%%/compat/libhistory.so.4
+%%LIBDIR%%/compat/libm.so.2
+%%LIBDIR%%/compat/libmp.so.3
+%%LIBDIR%%/compat/libopie.so.2
+%%LIBDIR%%/compat/libpam.so.1
+%%LIBDIR%%/compat/libpcap.so.2
 @unexec if [ -e %B/libperl.so.3.compat3x ]; then ln -sf libperl.so.3.compat3x %B/libperl.so.3; else rm %B/libperl.so.3; fi
-lib/compat/libperl.so.3.compat4x
+%%LIBDIR%%/compat/libperl.so.3.compat4x
 @exec ln -sf %f %B/libperl.so.3
-lib/compat/libposix1e.so.2
-lib/compat/libreadline.so.4
-lib/compat/libskey.so.2
-%%FORBIDDEN:%%lib/compat/libssl.so.1
-%%FORBIDDEN:%%lib/compat/libssl.so.2
-lib/compat/libstdc++.so.3
-lib/compat/libusb.so.0
-lib/compat/libusbhid.so.0
-%%I386_ONLY%%lib/compat/libutil.so.3
-%%I386_ONLY%%lib/compat/libvgl.so.2
-lib/compat/pam_cleartext_pass_ok.so
-lib/compat/pam_deny.so
-lib/compat/pam_opie.so
-lib/compat/pam_opieaccess.so
-lib/compat/pam_permit.so
-lib/compat/pam_radius.so
-lib/compat/pam_skey.so
-lib/compat/pam_ssh.so
-lib/compat/pam_tacplus.so
-lib/compat/pam_unix.so
-@unexec rmdir %D/lib/compat 2>/dev/null || true
+%%LIBDIR%%/compat/libposix1e.so.2
+%%LIBDIR%%/compat/libreadline.so.4
+%%LIBDIR%%/compat/libskey.so.2
+%%FORBIDDEN:%%%%LIBDIR%%/compat/libssl.so.1
+%%FORBIDDEN:%%%%LIBDIR%%/compat/libssl.so.2
+%%LIBDIR%%/compat/libstdc++.so.3
+%%LIBDIR%%/compat/libusb.so.0
+%%LIBDIR%%/compat/libusbhid.so.0
+%%I386_ONLY%%%%LIBDIR%%/compat/libutil.so.3
+%%I386_ONLY%%%%LIBDIR%%/compat/libvgl.so.2
+%%LIBDIR%%/compat/pam_cleartext_pass_ok.so
+%%LIBDIR%%/compat/pam_deny.so
+%%LIBDIR%%/compat/pam_opie.so
+%%LIBDIR%%/compat/pam_opieaccess.so
+%%LIBDIR%%/compat/pam_permit.so
+%%LIBDIR%%/compat/pam_radius.so
+%%LIBDIR%%/compat/pam_skey.so
+%%LIBDIR%%/compat/pam_ssh.so
+%%LIBDIR%%/compat/pam_tacplus.so
+%%LIBDIR%%/compat/pam_unix.so
+%%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
+@unexec rmdir %D/%%LIBDIR%%/compat 2>/dev/null || true
+@comment Hardcode lib32 since we should not remove lib.
+@unexec rmdir %D/lib32 2>/dev/null || true
