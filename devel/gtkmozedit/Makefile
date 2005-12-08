@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
-USE_GECKO=	firefox mozilla
+USE_GECKO=	mozilla
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
