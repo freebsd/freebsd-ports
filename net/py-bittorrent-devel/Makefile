@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.1
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
