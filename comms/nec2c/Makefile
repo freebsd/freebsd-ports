@@ -23,7 +23,7 @@ LIB_DEPENDS=	ccm:${PORTSDIR}/math/ccmath
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not build (gcc does not understand complex numbers)"
+USE_GCC=	3.4+
 .endif
 
 post-patch:
