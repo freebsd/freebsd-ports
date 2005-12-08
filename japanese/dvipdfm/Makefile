@@ -25,8 +25,6 @@ LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-base \
 			${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 
-BROKEN=			Incorrect pkg-plist
-
 MAN1=			dvipdfm.1
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
@@ -40,8 +38,8 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	strip ${PREFIX}/bin/dvipdfm
-	strip ${PREFIX}/bin/ebb
+	@${STRIP_CMD} ${PREFIX}/bin/dvipdfm
+	@${STRIP_CMD} ${PREFIX}/bin/ebb
 	mktexlsr
 	${MKDIR} ${PREFIX}/share/dvipdfm
 	${INSTALL_DATA} ${WRKSRC}/latex-support/dvipdfm.def ${PREFIX}/share/dvipdfm
