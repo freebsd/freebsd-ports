@@ -1,0 +1,2 @@
+%%SITE_PERL%%/CGI/Application/Plugin/DBH.pm
+@unexec rmdir %D/%%SITE_PERL%%/CGI/Application/Plugin 2>/dev/null || true
