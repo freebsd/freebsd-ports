@@ -36,6 +36,8 @@ BUILD_DEPENDS=	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+DEPRECATED=	Replaced by www/p5-Task-Catalyst
+EXPRIRATION_DATE=	2005-02-08
 
 MAN3=	Bundle::Catalyst.3
 
