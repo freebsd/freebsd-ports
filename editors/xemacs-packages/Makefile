@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	13.1
+PORTVERSION=	13.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
 		Sun-1.16-pkg.tar.gz \
 		ada-1.14-pkg.tar.gz \
-		apel-1.29-pkg.tar.gz \
+		apel-1.32-pkg.tar.gz \
 		auctex-1.46-pkg.tar.gz \
-		bbdb-1.26-pkg.tar.gz \
+		bbdb-1.29-pkg.tar.gz \
 		build-1.14-pkg.tar.gz \
-		c-support-1.21-pkg.tar.gz \
+		c-support-1.22-pkg.tar.gz \
 		calc-1.26-pkg.tar.gz \
 		calendar-1.23-pkg.tar.gz \
 		cc-mode-1.45-pkg.tar.gz \
@@ -28,16 +29,16 @@ DISTFILES=	\
 		dired-1.17-pkg.tar.gz \
 		docbookide-0.07-pkg.tar.gz \
 		ecb-1.22-pkg.tar.gz \
-		ecrypto-0.19-pkg.tar.gz \
+		ecrypto-0.20-pkg.tar.gz \
 		edebug-1.21-pkg.tar.gz \
-		ediff-1.53-pkg.tar.gz \
-		edit-utils-2.24-pkg.tar.gz \
+		ediff-1.60-pkg.tar.gz \
+		edit-utils-2.32-pkg.tar.gz \
 		edt-1.13-pkg.tar.gz \
 		efs-1.33-pkg.tar.gz \
 		eieio-1.05-pkg.tar.gz \
 		elib-1.11-pkg.tar.gz \
 		emerge-1.11-pkg.tar.gz \
-		erc-0.17-pkg.tar.gz \
+		erc-0.19-pkg.tar.gz \
 		escreen-1.01-pkg.tar.gz \
 		eshell-1.10-pkg.tar.gz \
 		ess-1.16-pkg.tar.gz \
@@ -48,27 +49,27 @@ DISTFILES=	\
 		fortran-modes-1.04-pkg.tar.gz \
 		frame-icon-1.11-pkg.tar.gz \
 		fsf-compat-1.15-pkg.tar.gz \
-		games-1.15-pkg.tar.gz \
+		games-1.17-pkg.tar.gz \
 		general-docs-1.04-pkg.tar.gz \
 		gnats-1.17-pkg.tar.gz \
-		gnus-1.85-pkg.tar.gz \
+		gnus-1.87-pkg.tar.gz \
 		haskell-mode-1.07-pkg.tar.gz \
 		hm--html-menus-1.23-pkg.tar.gz \
 		hyperbole-1.16-pkg.tar.gz \
 		ibuffer-1.09-pkg.tar.gz \
 		idlwave-1.32-pkg.tar.gz \
-		igrep-1.13-pkg.tar.gz \
+		igrep-1.14-pkg.tar.gz \
 		ilisp-1.33-pkg.tar.gz \
-		ispell-1.31-pkg.tar.gz \
+		ispell-1.32-pkg.tar.gz \
 		jde-1.48-pkg.tar.gz \
-		mail-lib-1.73-pkg.tar.gz \
+		mail-lib-1.75-pkg.tar.gz \
 		mailcrypt-2.14-pkg.tar.gz \
 		mew-1.19-pkg.tar.gz \
 		mh-e-1.29-pkg.tar.gz \
 		mine-1.16-pkg.tar.gz \
 		misc-games-1.18-pkg.tar.gz \
 		mmm-mode-1.02-pkg.tar.gz \
-		net-utils-1.46-pkg.tar.gz \
+		net-utils-1.48-pkg.tar.gz \
 		ocaml-0.05-pkg.tar.gz \
 		oo-browser-1.04-pkg.tar.gz \
 		os-utils-1.36-pkg.tar.gz \
@@ -76,56 +77,55 @@ DISTFILES=	\
 		pcl-cvs-1.66-pkg.tar.gz \
 		pcomplete-1.04-pkg.tar.gz \
 		perl-modes-1.08-pkg.tar.gz \
-		pgg-1.05-pkg.tar.gz \
-		prog-modes-2.05-pkg.tar.gz \
+		pgg-1.06-pkg.tar.gz \
+		prog-modes-2.06-pkg.tar.gz \
 		ps-print-1.11-pkg.tar.gz \
 		psgml-1.44-pkg.tar.gz \
 		psgml-dtds-1.03-pkg.tar.gz \
 		python-modes-1.06-pkg.tar.gz \
 		reftex-1.34-pkg.tar.gz \
-		re-builder-1.02-pkg.tar.gz \
-		riece-1.19-pkg.tar.gz \
+		re-builder-1.05-pkg.tar.gz \
+		riece-1.21-pkg.tar.gz \
 		rmail-1.14-pkg.tar.gz \
 		ruby-modes-1.02-pkg.tar.gz \
-		sasl-1.15-pkg.tar.gz \
+		sasl-1.16-pkg.tar.gz \
 		scheme-1.14-pkg.tar.gz \
 		semantic-1.19-pkg.tar.gz \
 		sgml-1.11-pkg.tar.gz \
-		sh-script-1.18-pkg.tar.gz \
-		sieve-1.17-pkg.tar.gz \
+		sh-script-1.21-pkg.tar.gz \
+		sieve-1.18-pkg.tar.gz \
 		slider-1.15-pkg.tar.gz \
-		sml-mode-0.11-pkg.tar.gz \
+		sml-mode-0.12-pkg.tar.gz \
 		sounds-au-1.12-pkg.tar.gz \
 		sounds-wav-1.12-pkg.tar.gz \
-		speedbar-1.27-pkg.tar.gz \
+		speedbar-1.28-pkg.tar.gz \
 		strokes-1.10-pkg.tar.gz \
-		supercite-1.20-pkg.tar.gz \
-		texinfo-1.29-pkg.tar.gz \
-		text-modes-1.88-pkg.tar.gz \
+		supercite-1.21-pkg.tar.gz \
+		texinfo-1.30-pkg.tar.gz \
+		text-modes-1.90-pkg.tar.gz \
 		textools-1.15-pkg.tar.gz \
 		time-1.14-pkg.tar.gz \
 		tm-1.38-pkg.tar.gz \
 		tooltalk-1.15-pkg.tar.gz \
 		tpu-1.14-pkg.tar.gz \
-		tramp-1.25-pkg.tar.gz \
+		tramp-1.28-pkg.tar.gz \
 		vc-1.41-pkg.tar.gz \
 		vc-cc-1.22-pkg.tar.gz \
 		vhdl-1.20-pkg.tar.gz \
 		view-process-1.13-pkg.tar.gz \
-		viper-1.40-pkg.tar.gz \
+		viper-1.47-pkg.tar.gz \
 		vm-7.22-pkg.tar.gz \
 		w3-1.31-pkg.tar.gz \
 		x-symbol-1.10-pkg.tar.gz \
-		xemacs-base-1.97-pkg.tar.gz \
-		xemacs-devel-1.70-pkg.tar.gz \
+		xemacs-base-2.00-pkg.tar.gz \
+		xemacs-devel-1.72-pkg.tar.gz \
 		xetla-1.00-pkg.tar.gz \
 		xlib-1.14-pkg.tar.gz \
 		xslide-1.09-pkg.tar.gz \
-		xslt-process-1.11-pkg.tar.gz \
+		xslt-process-1.12-pkg.tar.gz \
 		xwem-1.21-pkg.tar.gz \
 		zenirc-1.16-pkg.tar.gz
 DIST_SUBDIR=	xemacs
-MASTER_SITE_SUBDIR=	packages
 
 MAINTAINER=	anrays@gmail.com
 COMMENT=	Basic XEmacs elisp packages(xemacs-packages)
