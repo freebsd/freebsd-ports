@@ -31,27 +31,18 @@ MANCOMPRESSED=	no
 RESTRICTED=	"Downloading requires completion of a license agreement"
 
 .include <bsd.port.pre.mk>
-TO_BE_FETCHED=
-.for f in ${DISTFILES}
-.if ! exists (${DISTDIR}/${DIST_SUBDIR}/${f})
-TO_BE_FETCHED+=		${f}
-.endif
-.endfor
 
 do-fetch:
-.if ${TO_BE_FETCHED} != ""
+.if ! exists (${DISTDIR}/${DIST_SUBDIR}/uppaal.zip)
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\n\
 ------------------------------------------------------------------\n\
 Downloading this software requires completion of a licence\n\
 agreement, which may be found at: http://www.uppaal.com\n\
 \n\
-Please download the _latest_ versions of the following files into\n\
+Please download the _latest_ version of 'uppaal.zip' into\n\
 ${DISTDIR}/${DIST_SUBDIR}\n\
 \n
-.for f in ${TO_BE_FETCHED}
-IGNORE+=	${f}\n
-.endfor
 IGNORE+=------------------------------------------------------------------\n\n
 .endif
 
