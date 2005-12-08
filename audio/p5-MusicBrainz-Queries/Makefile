@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	MusicBrainz-Queries
-PORTVERSION=	0.05
-PORTREVISION=	2
+PORTVERSION=	0.09
+PORTREVISION=	0
 CATEGORIES=	audio perl5
-MASTER_SITES=	# none
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/S/SV/SVANZOEST
 PKGNAMEPREFIX=	p5-
-DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module that provides the musicbrainz query constants
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${LIBMUSICBRAINZ_PORTDIR}:patch
-LIB_DEPENDS=	musicbrainz.4:${LIBMUSICBRAINZ_PORTDIR}
-
-LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
+BUILD_DEPENDS=	${LOCALBASE}/include/musicbrainz/queries.h:${PORTSDIR}/audio/libmusicbrainz
 
 PERL_CONFIGURE=	yes
 
@@ -30,9 +27,5 @@ MAN3=		MusicBrainz::Queries.3
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
-
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -fs `cd ${LIBMUSICBRAINZ_PORTDIR}; ${MAKE} -V WRKSRC`/perl/Queries ${WRKSRC}
 
 .include <bsd.port.post.mk>
