@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GCC=	3.4+
+CFLAGS+=	-I${X11BASE}/include
 
 MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices
 MOZ_PROTOCOLS=	http,file,jar,viewsource,res,data
