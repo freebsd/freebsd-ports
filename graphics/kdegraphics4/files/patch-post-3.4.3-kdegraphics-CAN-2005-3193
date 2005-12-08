@@ -1,0 +1,174 @@
+Index: kpdf/xpdf/xpdf/Stream.cc
+===================================================================
+--- kpdf/xpdf/xpdf/Stream.cc	(revision 486295)
++++ kpdf/xpdf/xpdf/Stream.cc	(working copy)
+@@ -408,18 +408,33 @@ void ImageStream::skipLine() {
+ 
+ StreamPredictor::StreamPredictor(Stream *strA, int predictorA,
+ 				 int widthA, int nCompsA, int nBitsA) {
++  int totalBits;
++
+   str = strA;
+   predictor = predictorA;
+   width = widthA;
+   nComps = nCompsA;
+   nBits = nBitsA;
++  predLine = NULL;
++  ok = gFalse;
+ 
+   nVals = width * nComps;
++  totalBits = nVals * nBits;
++  if (totalBits == 0 ||
++      (totalBits / nBits) / nComps != width ||
++      totalBits + 7 < 0) {
++    return;
++  }
+   pixBytes = (nComps * nBits + 7) >> 3;
+-  rowBytes = ((nVals * nBits + 7) >> 3) + pixBytes;
++  rowBytes = ((totalBits + 7) >> 3) + pixBytes;
++  if (rowBytes < 0) {
++    return;
++  }
+   predLine = (Guchar *)gmalloc(rowBytes);
+   memset(predLine, 0, rowBytes);
+   predIdx = rowBytes;
++
++  ok = gTrue;
+ }
+ 
+ StreamPredictor::~StreamPredictor() {
+@@ -1013,6 +1028,10 @@ LZWStream::LZWStream(Stream *strA, int p
+     FilterStream(strA) {
+   if (predictor != 1) {
+     pred = new StreamPredictor(this, predictor, columns, colors, bits);
++    if (!pred->isOk()) {
++      delete pred;
++      pred = NULL;
++    }
+   } else {
+     pred = NULL;
+   }
+@@ -2899,6 +2918,10 @@ GBool DCTStream::readBaselineSOF() {
+   height = read16();
+   width = read16();
+   numComps = str->getChar();
++  if (numComps <= 0 || numComps > 4) {
++    error(getPos(), "Bad number of components in DCT stream");
++    return gFalse;
++  }
+   if (prec != 8) {
+     error(getPos(), "Bad DCT precision %d", prec);
+     return gFalse;
+@@ -3258,6 +3281,10 @@ FlateStream::FlateStream(Stream *strA, i
+     FilterStream(strA) {
+   if (predictor != 1) {
+     pred = new StreamPredictor(this, predictor, columns, colors, bits);
++    if (!pred->isOk()) {
++      delete pred;
++      pred = NULL;
++    }
+   } else {
+     pred = NULL;
+   }
+Index: kpdf/xpdf/xpdf/Stream.h
+===================================================================
+--- kpdf/xpdf/xpdf/Stream.h	(revision 486295)
++++ kpdf/xpdf/xpdf/Stream.h	(working copy)
+@@ -233,6 +233,8 @@ public:
+ 
+   ~StreamPredictor();
+ 
++  GBool isOk() { return ok; }
++
+   int lookChar();
+   int getChar();
+ 
+@@ -250,6 +252,7 @@ private:
+   int rowBytes;			// bytes per line
+   Guchar *predLine;		// line buffer
+   int predIdx;			// current index in predLine
++  GBool ok;
+ };
+ 
+ //------------------------------------------------------------------------
+Index: kpdf/xpdf/xpdf/JPXStream.cc
+===================================================================
+--- kpdf/xpdf/xpdf/JPXStream.cc	(revision 486295)
++++ kpdf/xpdf/xpdf/JPXStream.cc	(working copy)
+@@ -666,7 +666,7 @@ GBool JPXStream::readCodestream(Guint /*
+   int segType;
+   GBool haveSIZ, haveCOD, haveQCD, haveSOT;
+   Guint precinctSize, style;
+-  Guint segLen, capabilities, comp, i, j, r;
++  Guint segLen, capabilities, nTiles, comp, i, j, r;
+ 
+   //----- main header
+   haveSIZ = haveCOD = haveQCD = haveSOT = gFalse;
+@@ -701,8 +701,12 @@ GBool JPXStream::readCodestream(Guint /*
+ 	            / img.xTileSize;
+       img.nYTiles = (img.ySize - img.yTileOffset + img.yTileSize - 1)
+ 	            / img.yTileSize;
+-      img.tiles = (JPXTile *)gmalloc(img.nXTiles * img.nYTiles *
+-				     sizeof(JPXTile));
++      nTiles = img.nXTiles * img.nYTiles;
++      if (img.nXTiles == 0 || nTiles / img.nXTiles != img.nYTiles) {
++        error(getPos(), "Bad tile count in JPX SIZ marker segment");  
++        return gFalse;
++      }
++      img.tiles = (JPXTile *)gmallocn(nTiles, sizeof(JPXTile));
+       for (i = 0; i < img.nXTiles * img.nYTiles; ++i) {
+ 	img.tiles[i].tileComps = (JPXTileComp *)gmalloc(img.nComps *
+ 							sizeof(JPXTileComp));
+Index: kpdf/xpdf/goo/gmem.c
+===================================================================
+--- kpdf/xpdf/goo/gmem.c	(revision 486129)
++++ kpdf/xpdf/goo/gmem.c	(working copy)
+@@ -175,6 +175,28 @@ void gfree(void *p) {
+ #endif
+ }
+ 
++void *gmallocn(int nObjs, int objSize) {
++  int n;
++
++  n = nObjs * objSize;
++  if (objSize == 0 || n / objSize != nObjs) {
++    fprintf(stderr, "Bogus memory allocation size\n");
++    exit(1);
++  }
++  return gmalloc(n);
++}
++
++void *greallocn(void *p, int nObjs, int objSize) {
++  int n;
++
++  n = nObjs * objSize;
++  if (objSize == 0 || n / objSize != nObjs) {
++    fprintf(stderr, "Bogus memory allocation size\n");
++    exit(1);
++  }
++  return grealloc(p, n);
++}
++
+ #ifdef DEBUG_MEM
+ void gMemReport(FILE *f) {
+   GMemHdr *p;
+Index: kpdf/xpdf/goo/gmem.h
+===================================================================
+--- kpdf/xpdf/goo/gmem.h	(revision 486129)
++++ kpdf/xpdf/goo/gmem.h	(working copy)
+@@ -28,6 +28,15 @@ extern void *gmalloc(size_t size);
+ extern void *grealloc(void *p, size_t size);
+ 
+ /*
++ * These are similar to gmalloc and grealloc, but take an object count
++ * and size.  The result is similar to allocating nObjs * objSize
++ * bytes, but there is an additional error check that the total size
++ * doesn't overflow an int.
++ */
++extern void *gmallocn(int nObjs, int objSize);
++extern void *greallocn(void *p, int nObjs, int objSize);
++
++/*
+  * Same as free, but checks for and ignores NULL pointers.
+  */
+ extern void gfree(void *p);
