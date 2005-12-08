@@ -25,8 +25,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.2.5
-PORTREVISION=	1
+PORTVERSION=	4.2.6
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
