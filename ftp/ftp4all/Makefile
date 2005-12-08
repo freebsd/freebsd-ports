@@ -16,6 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} f4awebsite.tar.gz
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	Advanced ftp-daemon
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-01-28
+
 HAS_CONFIGURE=	yes
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
