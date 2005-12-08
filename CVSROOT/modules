@@ -8086,6 +8086,7 @@ p5-Inline-CPP	ports/devel/p5-Inline-CPP
 p5-Inline-Filters	ports/devel/p5-Inline-Filters
 p5-Inline-Java	ports/devel/p5-Inline-Java
 p5-Inline-Tcl	ports/devel/p5-Inline-Tcl
+p5-Interpolation	ports/lang/p5-Interpolation
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-JSON		ports/converters/p5-JSON
 p5-Jabber-Connection	ports/net-im/p5-Jabber-Connection
