@@ -20,7 +20,7 @@ vmware_guest_vmmemctl_start()
 	echo 'Loading vmmemctl kernel module.'
 	kldload ${PREFIX}/lib/vmware-tools/modules/vmmemctl.ko >/dev/null 2>&1
 }
-vmware_guest_vmmemctl_start()
+vmware_guest_vmxnet_start()
 {
 	echo 'Loading vmxnet kernel module.'
 	kldload ${PREFIX}/lib/vmware-tools/modules/vmxnet.ko >/dev/null 2>&1
