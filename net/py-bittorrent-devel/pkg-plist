@@ -6,6 +6,9 @@ bin/launchmany-console
 bin/launchmany-curses
 bin/maketorrent-console
 bin/torrentinfo-console
+%%PYTHON_SITELIBDIR%%/BitTorrent/BeautifulSupe.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/BeautifulSupe.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/BeautifulSupe.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Choker.pyo
@@ -48,9 +51,15 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/NatTraversal.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/NatTraversal.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/NatTraversal.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/NewVersion.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/PeerID.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/PeerID.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/PeerID.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/PiecePicker.pyo
@@ -81,6 +90,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/TorrentQueue.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/TorrentQueue.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/TorrentQueue.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/TrayIcon.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/TrayIcon.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/TrayIcon.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Uploader.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Uploader.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Uploader.pyo
@@ -111,6 +123,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/download.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/language.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/language.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/language.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/launchmanycore.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/launchmanycore.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/launchmanycore.pyo
@@ -212,32 +227,19 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
 %%DATADIR%%/public.key
 share/locale/af/LC_MESSAGES/bittorrent.mo
-share/locale/ar/LC_MESSAGES/bittorrent.mo
 share/locale/bg/LC_MESSAGES/bittorrent.mo
 share/locale/ca/LC_MESSAGES/bittorrent.mo
 share/locale/cs/LC_MESSAGES/bittorrent.mo
 share/locale/da/LC_MESSAGES/bittorrent.mo
 share/locale/de/LC_MESSAGES/bittorrent.mo
-share/locale/eo/LC_MESSAGES/bittorrent.mo
+share/locale/el/LC_MESSAGES/bittorrent.mo
 share/locale/es/LC_MESSAGES/bittorrent.mo
 share/locale/es_MX/LC_MESSAGES/bittorrent.mo
-share/locale/et/LC_MESSAGES/bittorrent.mo
-share/locale/eu/LC_MESSAGES/bittorrent.mo
-share/locale/fi/LC_MESSAGES/bittorrent.mo
 share/locale/fr/LC_MESSAGES/bittorrent.mo
-share/locale/ga/LC_MESSAGES/bittorrent.mo
-share/locale/gr/LC_MESSAGES/bittorrent.mo
-share/locale/he_IL/LC_MESSAGES/bittorrent.mo
-share/locale/hr/LC_MESSAGES/bittorrent.mo
 share/locale/hu/LC_MESSAGES/bittorrent.mo
-share/locale/hy/LC_MESSAGES/bittorrent.mo
 share/locale/it/LC_MESSAGES/bittorrent.mo
 share/locale/ja/LC_MESSAGES/bittorrent.mo
-share/locale/ka/LC_MESSAGES/bittorrent.mo
 share/locale/ko/LC_MESSAGES/bittorrent.mo
-share/locale/lt/LC_MESSAGES/bittorrent.mo
-share/locale/ml/LC_MESSAGES/bittorrent.mo
-share/locale/ms/LC_MESSAGES/bittorrent.mo
 share/locale/nb_NO/LC_MESSAGES/bittorrent.mo
 share/locale/nl/LC_MESSAGES/bittorrent.mo
 share/locale/pl/LC_MESSAGES/bittorrent.mo
@@ -247,26 +249,18 @@ share/locale/ro/LC_MESSAGES/bittorrent.mo
 share/locale/ru/LC_MESSAGES/bittorrent.mo
 share/locale/sk/LC_MESSAGES/bittorrent.mo
 share/locale/sl/LC_MESSAGES/bittorrent.mo
-share/locale/sq/LC_MESSAGES/bittorrent.mo
 share/locale/sv/LC_MESSAGES/bittorrent.mo
-share/locale/th/LC_MESSAGES/bittorrent.mo
-share/locale/tlh/LC_MESSAGES/bittorrent.mo
 share/locale/tr/LC_MESSAGES/bittorrent.mo
-share/locale/uk/LC_MESSAGES/bittorrent.mo
 share/locale/vi/LC_MESSAGES/bittorrent.mo
 share/locale/zh_CN/LC_MESSAGES/bittorrent.mo
 share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
-%%GUI%%@dirrm share/pixmaps/BitTorrent       
+%%GUI%%@dirrm share/pixmaps/BitTorrent
 %%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk 2>/dev/null || true
-@unexec rmdir %D/share/locale/tlh/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/tlh 2>/dev/null || true
 @unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sl 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
@@ -281,14 +275,8 @@ share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 @unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko 2>/dev/null || true
-@unexec rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hy 2>/dev/null || true
-@unexec rmdir %D/share/locale/he_IL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/he_IL 2>/dev/null || true
-@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gr 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
