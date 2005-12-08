@@ -13930,3 +13930,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 p5-HTML-Chunks	ports/www/p5-HTML-Chunks
+p5-IO-KQueue	ports/devel/p5-IO-KQueue
