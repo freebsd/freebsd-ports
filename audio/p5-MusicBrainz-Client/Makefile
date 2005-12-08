@@ -6,33 +6,32 @@
 #
 
 PORTNAME=	MusicBrainz-Client
-PORTVERSION=	0.06
-PORTREVISION=	2
+PORTVERSION=	0.10
+PORTREVISION=	0
 CATEGORIES=	audio perl5
-MASTER_SITES=	# none
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/S/SV/SVANZOEST
 PKGNAMEPREFIX=	p5-
-DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module that provides access to the musicbrainz client API
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${LIBMUSICBRAINZ_PORTDIR}:patch
-LIB_DEPENDS=	musicbrainz.4:${LIBMUSICBRAINZ_PORTDIR}
-
-LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
+LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MusicBrainz/Queries.pm:${PORTSDIR}/audio/p5-MusicBrainz-Queries
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		MusicBrainz::Client.3
+MAN3=		MusicBrainz::Client.3 \
+		MusicBrainz::Client::Simple.3 \
+		MusicBrainz::Client::Simple::Album.3 \
+		MusicBrainz::Client::Simple::Artist.3 \
+		MusicBrainz::Client::Simple::Track.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
-
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -fs `cd ${LIBMUSICBRAINZ_PORTDIR}; ${MAKE} -V WRKSRC`/perl/Client ${WRKSRC}
 
 .include <bsd.port.post.mk>
