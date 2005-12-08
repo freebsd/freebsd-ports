@@ -166,6 +166,7 @@
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
     SUBDIR += p5-F77
+    SUBDIR += p5-Interpolation
     SUBDIR += p5-JavaScript-SpiderMonkey
     SUBDIR += p5-JavaScript-Squish
     SUBDIR += p5-List-MoreUtils

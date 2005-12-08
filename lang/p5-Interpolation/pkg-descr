@@ -1,0 +1,16 @@
+Beginners always want to write this:
+
+  print "The sum of three and four is: 3+4";
+
+And they want the 3+4 part to be evaluated, so that it prints this:
+
+  The sum of three and four is: 7
+
+Of course, it's a double-quoted string, so it's not evaluated.  The only
+things that are evaluated in double-quoted strings are variable
+references.
+
+There are solutions to this, but most of them are ugly.  This module is
+less ugly.
+
+WWW: http://search.cpan.org/dist/Interpolation/
