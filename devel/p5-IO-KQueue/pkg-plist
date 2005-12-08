@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/IO/KQueue.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/KQueue.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/KQueue.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue
+@unexec %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
