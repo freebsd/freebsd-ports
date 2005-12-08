@@ -23,6 +23,9 @@ PATCHFILES=	ftpsearch-1.0.patch1 \
 MAINTAINER=	Tor.Egge@idi.ntnu.no
 COMMENT=	A system for indexing contents on ftp servers
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-01-30
+
 NO_PACKAGE=	"Hostname compiled in"
 
 GNU_CONFIGURE=	yes
