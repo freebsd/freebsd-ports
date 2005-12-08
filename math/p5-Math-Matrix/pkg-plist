@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Math/Matrix.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Matrix/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Matrix 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
