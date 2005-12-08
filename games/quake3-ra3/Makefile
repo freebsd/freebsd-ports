@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Rocket Arena 3
 
+NO_PACKAGE=	"Package will be 102MB, set FORCE_PACKAGE if you really want to build it"
+
 WRKSRC=		${WRKDIR}/arena
 
 USE_ZIP=	yes
