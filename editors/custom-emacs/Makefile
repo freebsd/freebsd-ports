@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	The Custom Library for emacs
 
-DEPRECATED=	"mastersite dissapeared; abandoned software for obsolete emacs version"
+DEPRECATED=	"mastersite dissapeared, abandoned software for obsolete emacs version"
 EXPIRATION_DATE=2006-01-24
 
 # custom library
