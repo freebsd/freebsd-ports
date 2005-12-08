@@ -7,7 +7,7 @@
 
 PORTNAME=	bpm
 PORTVERSION=	0.4.1b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 EXTRACT_SUFX=	.tgz
@@ -26,5 +26,8 @@ MAKE_ENV+=	OSTYPE="${OPSYS}"
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-lintl|-lintl -L${LOCALBASE}/lib|g"
+# GnomeVFS needs pthread; bpm may use GnomeVFS (via GtkFileChooser)
+	@${REINPLACE_CMD} -e 's|^CFLAGS+=|& ${PTHREAD_CFLAGS}|; \
+		s|^LDLIBS+=|& ${PTHREAD_LIBS}|' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
