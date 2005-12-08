@@ -24,6 +24,7 @@ NVU=		${PORTNAME}-${DISTVERSION}
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
+CFLAGS+=	-I${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../mozilla/Makefile.common"
