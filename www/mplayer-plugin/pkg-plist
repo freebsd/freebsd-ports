@@ -3,9 +3,13 @@ etc/mplayerplug-in.conf.dist
 @unexec if cmp -s %D/etc/mplayerplug-in.types %D/etc/mplayerplug-in.types.dist; then rm -f %D/etc/mplayerplug-in.types; fi
 etc/mplayerplug-in.types.dist
 lib/browser_plugins/mplayerplug-in-gmp.so
+lib/browser_plugins/mplayerplug-in-gmp.xpt
 lib/browser_plugins/mplayerplug-in-qt.so
+lib/browser_plugins/mplayerplug-in-qt.xpt
 lib/browser_plugins/mplayerplug-in-rm.so
+lib/browser_plugins/mplayerplug-in-rm.xpt
 lib/browser_plugins/mplayerplug-in-wmp.so
+lib/browser_plugins/mplayerplug-in-wmp.xpt
 lib/browser_plugins/mplayerplug-in.so
 lib/browser_plugins/mplayerplug-in.xpt
 share/locale/da/LC_MESSAGES/mplayerplug-in.mo

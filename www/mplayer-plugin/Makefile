@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.16
+PORTVERSION=	3.17
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -22,7 +22,10 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GECKO=	firefox mozilla seamonkey
 PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
-		mplayerplug-in-qt.so mplayerplug-in-rm.so mplayerplug-in-gmp.so
+		mplayerplug-in-qt.so mplayerplug-in-rm.so \
+		mplayerplug-in-gmp.so mplayerplug-in-wmp.xpt \
+		mplayerplug-in-qt.xpt mplayerplug-in-rm.xpt \
+		mplayerplug-in-gmp.xpt
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DBSD" \
