@@ -955,6 +955,7 @@
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
+    SUBDIR += p5-IO-KQueue
     SUBDIR += p5-IO-LockedFile
     SUBDIR += p5-IO-Multiplex
     SUBDIR += p5-IO-Pager
