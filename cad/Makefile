@@ -32,6 +32,7 @@
     SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog
+    SUBDIR += kicad
     SUBDIR += leocad
     SUBDIR += libgeda
     SUBDIR += linux-eagle
