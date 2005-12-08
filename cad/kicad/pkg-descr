@@ -1,0 +1,17 @@
+Kicad is an open source (GPL) software for the creation of electronic schematic
+diagrams and printed circuit board artwork.
+
+Designed and written by Jean-Pierre Charras, a researcher at LIS (Laboratoire
+des Images et des Signaux) and a teacher in IUT de Saint Martin d'Heres
+(France), in the field of electrical engineering and image processing.
+
+Kicad is a set of four softwares and a project manager:
+
+    * Eeschema: Schematic entry.
+    * Pcbnew: Board editor.
+    * Gerbview: GERBER viewer (photoplotter documents).
+    * Cvpcb: footprint selector for components used in the circuit design.
+    * Kicad: project manager.
+
+WWW: http://iut-tice.ujf-grenoble.fr/kicad/
+WWW: http://www.lis.inpg.fr/realise_au_lis/kicad/index.html
