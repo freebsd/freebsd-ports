@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,6 +52,10 @@ TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
 		faq emacs emacs-mime eshell eudc forms gnus idlwave \
 		info message mh-e pcl-cvs reftex sc speedbar vip \
 		viper widget woman
+INFO=		ada-mode autotype ccmode cl dired-x ebrowse ediff \
+		efaq emacs emacs-mime eshell eudc forms gnus idlwave \
+		info message mh-e pcl-cvs reftex sc speedbar vip \
+		viper widget woman 
 
 LATEST_LINK=	emacs
 
