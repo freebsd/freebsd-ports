@@ -172,6 +172,7 @@
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
+    SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
