@@ -26,7 +26,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 500000
-BROKEN=		"Bad C++ code"
+USE_GCC=	3.4+
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
