@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Parser
-PORTVERSION=	3.47
+PORTVERSION=	3.48
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -31,7 +31,7 @@ MAN3=		HTML::Entities.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Requires Perl version 5.6 or above
+IGNORE=		requires Perl version 5.6 or above
 .endif
 
 .include <bsd.port.post.mk>
