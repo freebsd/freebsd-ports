@@ -56,6 +56,16 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 
 WANT_GNOME=	yes
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp"
+.endif
+
+.if defined(WITH_RUBY)
+USE_RUBY=	yes
+MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(LITE)
@@ -71,11 +81,6 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 MAKE_ARGS+=	CONF_OPT_CSCOPE="--enable-cscope"
 .endif
 
-.if defined(WITH_PYTHON)
-USE_PYTHON=	yes
-MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp"
-.endif
-
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
@@ -85,11 +90,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp"
-.endif
-
-.if defined(WITH_RUBY)
-USE_RUBY=	yes
-MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .endif
 
 .if !defined(WITHOUT_X11)
