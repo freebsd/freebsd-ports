@@ -63,8 +63,10 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${WRKSRC}/configure
 #  .endif
 
-
-_GECKO_ALL=	firefox mozilla nvu seamonkey sunbird thunderbird
+.if ${OSVERSION} >= 500000
+_GECKO_ALL=	firefox nvu seamonkey sunbird
+.endif
+_GECKO_ALL+=	mozilla thunderbird
 
 _NEW_GCC_GECKO=	firefox seamonkey sunbird
 
