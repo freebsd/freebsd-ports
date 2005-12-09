@@ -16,10 +16,11 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A "meta-port" to install PHP extensions
 
-NO_BUILD=	# none
-
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
+USE_PHP_BUILD=	yes
+
+NO_BUILD=	yes
 
 WITH_CTYPE=	yes
 WITH_DOM=	yes
@@ -39,8 +40,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		CURL            "CURL support" off \
 		DBA             "dba support" off \
 		DBASE           "dBase library support" off \
-		DBX             "dbx support" off \
-		DIO             "Direct I/O support" off \
 		DOM             "DOM support" on \
 		EXIF            "EXIF support" off \
 		FILEINFO        "fileinfo support" off \
@@ -57,17 +56,14 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		LDAP            "OpenLDAP support" off \
 		MBSTRING        "multibyte string support" off \
 		MCRYPT          "Encryption support" off \
-		MCVE            "MCVE support" off \
 		MHASH           "Crypto-hashing support" off \
 		MING            "ming shockwave flash support" off \
-		MNOGOSEARCH     "mnoGoSearch support" off \
 		MSSQL           "MS-SQL database support" off \
 		MYSQL           "MySQL database support" off \
 		MYSQLI          "MySQLi database support" off \
 		NCURSES         "ncurses support (CLI only)" off \
 		ODBC            "unixODBC support" off \
 		OPENSSL         "OpenSSL support" off \
-		ORACLE          "Oracle support" off \
 		PANDA           "panda support" off \
 		PCNTL           "pcntl support (CLI only)" off \
 		PCRE            "Perl Compatible Regular Expression support" on \
@@ -92,10 +88,10 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		TOKENIZER       "tokenizer support" on \
 		WDDX            "WDDX support (implies XML)" off \
 		XML             "XML support" on \
+		XMLREADER       "XMLReader support" off \
 		XMLRPC          "XMLRPC-EPI support" off \
 		XSL             "XSL support (Implies DOM)" off \
 		YAZ             "YAZ support (ANSI/NISO Z39.50)" off \
-		YP              "YP/NIS support" off \
 		ZIP             "ZIP support" off \
 		ZLIB            "ZLIB support" off
 
@@ -107,14 +103,14 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .include "${OPTIONSFILE}"
 .endif
 
-ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE DBX DIO \
+ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
 		DOM EXIF FILEINFO FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP ICONV IMAGICK IMAP INTERBASE LDAP MBSTRING MCRYPT \
-		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL MYSQLI \
-		NCURSES ODBC OPENSSL ORACLE PANDA PCNTL PCRE PDF PGSQL POSIX \
+		MHASH MIME_MAGIC MING MSSQL MYSQL MYSQLI \
+		NCURSES ODBC OPENSSL PANDA PCNTL PCRE PDF PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
-		TIDY TOKENIZER WDDX XML XMLRPC XSL YAZ YP ZIP ZLIB
+		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XSL YAZ ZIP ZLIB
 
 SEL_OPTIONS=	yes
 .for opt in ${ALL_OPTIONS}
@@ -124,10 +120,7 @@ SEL_OPTIONS+=	${opt:L}
 .endfor
 USE_PHP=	${SEL_OPTIONS}
 
-do-build:
-	@${DO_NADA}
-
-do-install:
+do-install: build
 	@${DO_NADA}
 
 .include <bsd.port.mk>
