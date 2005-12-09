@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Interpolation
-PORTVERSION=	0.70
+PORTVERSION=	0.70.1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/J/JE/JENDA
@@ -18,6 +18,7 @@ COMMENT=	Implement arbitrary string interpolation semantics for Perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.70
 PERL_CONFIGURE=	yes
 
 MAN3=	Interpolation.3
