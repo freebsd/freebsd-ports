@@ -5,19 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	enscript-${PAPERSIZE}
+PORTNAME=	enscript
 PORTVERSION=	1.6.4
 PORTREVISION=	1
 CATEGORIES+=	print
-MASTER_SITES=	http://people.ssh.com/mtr/genscript/
+MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
+PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	rafan@infor.org
 COMMENT=	ASCII to PostScript filter
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 INFO=		enscript
 MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1
