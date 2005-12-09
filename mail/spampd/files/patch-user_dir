@@ -1,0 +1,10 @@
+--- spampd.orig	Thu Dec  8 09:54:07 2005
++++ spampd	Thu Dec  8 09:54:07 2005
+@@ -793,6 +793,7 @@
+ my $assassin = Mail::SpamAssassin->new({
+ 		'dont_copy_prefs' => 1,
+ 		'debug' => $debug,
++		'user_dir' => (getpwnam($user))[7],
+ 		'local_tests_only' => $options{'local-only'} || 0 });
+ 
+ $options{'auto-whitelist'} and eval {
