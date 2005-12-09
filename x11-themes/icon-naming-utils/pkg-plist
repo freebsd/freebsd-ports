@@ -1,5 +1,6 @@
-bin/icon-name-mapping
+libexec/icon-name-mapping
 share/dtds/legacy-icon-mapping.dtd
+libdata/pkgconfig/icon-naming-utils.pc
 share/icon-naming-utils/legacy-icon-mapping.xml
 @dirrm share/dtds
 @dirrm share/icon-naming-utils
