@@ -13,6 +13,7 @@ COMMENT=	GUI interface to view & edit all Firefox prefs
 
 MASTERDIR=	${.CURDIR}/../preferential
 
+BROKEN="Does not work with Firefox 1.5"
 WITH_FIREFOX=	yes
 
 .include "${MASTERDIR}/Makefile"

@@ -22,6 +22,8 @@ RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
+BROKEN="Does not work with Firefox 1.5"
+
 FIREFOX=	${PORTNAME}
 FIREFOX_HOME=	${PREFIX}/lib/${FIREFOX}
 REGXPCOM=	${FIREFOX_HOME}/regxpcom
