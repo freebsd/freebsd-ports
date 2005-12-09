@@ -5392,6 +5392,7 @@ libgdamm	ports/databases/libgdamm
 libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
 libgenome	ports/biology/libgenome
+libgeotiff	ports/graphics/libgeotiff
 libgetline	ports/devel/libgetline
 libggi		ports/graphics/libggi
 libggigcp	ports/graphics/libggigcp
