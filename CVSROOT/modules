@@ -9168,7 +9168,6 @@ pdumpfs-clean	ports/sysutils/pdumpfs-clean
 pdumpfs-rsync	ports/sysutils/pdumpfs-rsync
 peacock		ports/www/peacock
 pear		ports/devel/pear
-pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_HTTP	ports/security/pear-Auth_HTTP
 pear-Auth_PrefManager	ports/security/pear-Auth_PrefManager
@@ -9179,7 +9178,6 @@ pear-Cache	ports/sysutils/pear-Cache
 pear-Cache_Lite	ports/sysutils/pear-Cache_Lite
 pear-Config	ports/devel/pear-Config
 pear-Console_Getargs	ports/devel/pear-Console_Getargs
-pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Console_Table	ports/devel/pear-Console_Table
 pear-Contact_Vcard_Build	ports/mail/pear-Contact_Vcard_Build
 pear-Contact_Vcard_Parse	ports/mail/pear-Contact_Vcard_Parse
@@ -9277,7 +9275,6 @@ pear-Net_UserAgent_Mobile	ports/net/pear-Net_UserAgent_Mobile
 pear-Numbers_Roman	ports/textproc/pear-Numbers_Roman
 pear-Numbers_Words	ports/textproc/pear-Numbers_Words
 pear-OLE	ports/devel/pear-OLE
-pear-PEAR	ports/devel/pear-PEAR
 pear-PEAR_PackageFileManager	ports/devel/pear-PEAR_PackageFileManager
 pear-PHPDoc	ports/devel/pear-PHPDoc
 pear-PHPUnit	ports/devel/pear-PHPUnit
@@ -9304,7 +9301,6 @@ pear-XML_Beautifier	ports/textproc/pear-XML_Beautifier
 pear-XML_HTMLSax	ports/textproc/pear-XML_HTMLSax
 pear-XML_NITF	ports/devel/pear-XML_NITF
 pear-XML_Parser	ports/devel/pear-XML_Parser
-pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
 pear-XML_SVG	ports/devel/pear-XML_SVG
 pear-XML_Serializer	ports/devel/pear-XML_Serializer
@@ -9461,7 +9457,6 @@ php4-oracle	ports/databases/php4-oracle
 php4-overload	ports/lang/php4-overload
 php4-pcntl	ports/devel/php4-pcntl
 php4-pcre	ports/devel/php4-pcre
-php4-pear	ports/devel/php4-pear
 php4-pgsql	ports/databases/php4-pgsql
 php4-posix	ports/sysutils/php4-posix
 php4-pspell	ports/textproc/php4-pspell
@@ -9522,7 +9517,6 @@ php5-openssl	ports/security/php5-openssl
 php5-oracle	ports/databases/php5-oracle
 php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
-php5-pear	ports/devel/php5-pear
 php5-pgsql	ports/databases/php5-pgsql
 php5-posix	ports/sysutils/php5-posix
 php5-pspell	ports/textproc/php5-pspell
