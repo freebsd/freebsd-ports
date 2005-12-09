@@ -576,6 +576,7 @@
     SUBDIR += php5-simplexml
     SUBDIR += php5-wddx
     SUBDIR += php5-xml
+    SUBDIR += php5-xmlreader
     SUBDIR += php5-xsl
     SUBDIR += pocketreader
     SUBDIR += ppower4
