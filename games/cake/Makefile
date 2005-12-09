@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cake
-PORTVERSION=	2004.07.09
+PORTVERSION=	2005.10.23
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org:8080/morbac/cake/download/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}_src
+DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake3 map viewer
@@ -22,13 +22,17 @@ LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
 .endif
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+# Need to pass `-l', but PATCH_ARGS+= won't work because of PATCH_ARGS?=
+# in bsd.port.mk.
+PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 
 ALL_TARGET=	main
-MAKE_ARGS+=	PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ARGS+=	CXX=${CXX} PTHREAD_LIBS=${PTHREAD_LIBS}
+WRKSRC=		${WRKDIR}/cake_src
 
 PLIST_FILES=	bin/cake
 
@@ -38,22 +42,10 @@ pre-everything::
 .endif
 
 post-extract:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(cpp|h)" \
+	@${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or -name Makefile \) \
 		-exec ${REINPLACE_CMD} -E -e 's/[[:cntrl:]]*$$//' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*push[[:blank:]]*,[[:blank:]]*1[[:blank:]]*\)/#pragma pack(1)/g' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' '{}' \;
-	@${REINPLACE_CMD} -e 's/checkGLError/CheckGLError/g' \
-		${WRKSRC}/cake/glsetup/glutils.cpp ${WRKSRC}/cake/q3bsp.cpp
-	@${REINPLACE_CMD} -e 's/get_nstart_pos/GetNumStartPos/g' \
-		-e 's/set_start_pos/SetStartPos/g' \
-		-e 's/moveMouseXY/MoveMouseXY/g' \
-		-e 's/moveForward/MoveForward/g' \
-		-e 's/moveBackward/MoveBackward/g' \
-		-e 's/moveRight/MoveRight/g' \
-		-e 's/moveLeft/MoveLeft/g' \
-		-e 's/moveUp/MoveUp/g' \
-		-e 's/moveDown/MoveDown/g' \
-		-e 's/report/Report/g' ${WRKSRC}/main.cpp
 	@${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
 		${WRKSRC}/cake/sound.h
 
