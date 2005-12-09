@@ -1,4 +1,4 @@
-%%CLI%%bin/php
+%%CLICGI%%bin/php
 bin/php-config
 bin/phpize
 etc/php.conf
@@ -166,9 +166,9 @@ lib/php/build/mkdep.awk
 lib/php/build/phpize.m4
 lib/php/build/scan_makefile_in.awk
 lib/php/build/shtool
-%%SAPI_FILE%%
-%%APACHE%%@exec %D/sbin/apxs -e -a -n php4 %f
-%%APACHE%%@unexec %D/sbin/apxs -e -A -n php4 %f
+%%APACHE%%%%APACHEMODDIR%%/%%AP_MODULE%%
+%%APACHE%%@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f
+%%APACHE%%@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/standard

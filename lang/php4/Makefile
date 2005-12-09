@@ -24,7 +24,6 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} == "-cgi" || ${PKGNAMESUFFIX} == "-cli"
 GNU_CONFIGURE=	yes
-USE_BISON=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-versioning \
@@ -59,7 +58,9 @@ WITH_APACHE=	yes
 
 .if defined(WITH_APACHE)
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
-APACHE_COMPAT=	yes
+USE_APACHE=	1.3+
+MODULENAME=	lib${PORTNAME}
+SHORTMODNAME=	${PORTNAME}
 .endif
 
 .if ${PHP_SAPI} == "cgi"
@@ -68,19 +69,10 @@ OPTIONS=	REDIRECT "Enable force-cgi-redirect support" off \
 		FASTCGI "Enable fastcgi support" off \
 		PATHINFO "Enable path-info-check support" on
 .endif
-.if defined(WITH_APACHE)
-.if defined(WITH_APACHE2)
-OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" on
-.else
-OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
-.endif
-.endif
 OPTIONS+=	DEBUG "Enable debug" off \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
 		OPENSSL "Build static OpenSSL extension" off
-
-EXT_DIR=	20020429
 
 CONFLICTS?=	php4-cli-4* mod_php4-4* php4-cgi-4*
 CONFLICTS+=	php5-5* php5-cli-5* mod_php5-5* php5-cgi-5*
@@ -90,11 +82,13 @@ CONFIGURE_ARGS+=--disable-cli
 .endif
 
 MAN1=		php-config.1 phpize.1
-.if ${PHP_SAPI} == "full" || ${PHP_SAPI} == "cli"
-PLIST_SUB+=	CLI=""
+.if ${PHP_SAPI} != "mod"
+PLIST_SUB+=	CLICGI=""
+.if ${PHP_SAPI} != "cgi"
 MAN1+=		php.1
+.endif
 .else
-PLIST_SUB+=	CLI="@comment "
+PLIST_SUB+=	CLICGI="@comment "
 .endif
 
 .if defined(WITH_APACHE)
@@ -105,11 +99,6 @@ PLIST_SUB+=	APACHE="@comment "
 
 .if ${PHP_SAPI} == "cli"
 CONFIGURE_ARGS+=--disable-cgi
-SAPI_FILE=	"@comment "
-.endif
-
-.if ${PHP_SAPI} == "cgi"
-SAPI_FILE=	bin/php
 .endif
 
 .include <bsd.port.pre.mk>
@@ -125,37 +114,20 @@ LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 .endif
 
 .if defined(WITH_APACHE)
-.if exists(${LOCALBASE}/include/apache2/httpd.h)
-WITH_APACHE2=	yes
-APACHE_MPM!=	${APXS} -q MPM_NAME
-.endif
-.if defined(WITH_APACHE2)
-APACHE_MPM?=	${WITH_MPM}
-APACHE_PORT=	www/apache20
+.if ${APACHE_VERSION} > 13
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
-SAPI_FILE=	libexec/apache2/libphp4.so
-.if ${APACHE_MPM} == "worker"
-EXT_DIR:=	${EXT_DIR}-zts
-.endif
 .else
-APACHE_PORT?=	www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
-SAPI_FILE=	libexec/apache/libphp4.so
 .endif
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
-EXT_DIR:=	${EXT_DIR}-debug
 .endif
 
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=--enable-zend-multibyte
 .endif
-
-PLIST_SUB+=	SAPI_FILE=${SAPI_FILE}
 
 .if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
@@ -198,7 +170,6 @@ pre-configure:
 post-build:
 	@${ECHO_CMD} "PHP_VER=4" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_EXT_DIR=${EXT_DIR}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_PORT=\$${PORTSDIR}/${PHP_PORT}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 .if defined(WITH_OPENSSL)
@@ -215,10 +186,6 @@ post-install:
 .endif
 
 .else
-.if ${PKGNAMESUFFIX} == "-pear"
-.include "${MASTERDIR}/Makefile.pear"
-.else
 .include "${MASTERDIR}/Makefile.ext"
-.endif
 .endif
 .include <bsd.port.post.mk>
