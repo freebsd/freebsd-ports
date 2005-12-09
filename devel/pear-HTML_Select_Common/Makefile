@@ -25,5 +25,5 @@ EXAMPLES=	Country.php FRDepartements.php UKCounty.php USState.php
 _EXAMPLESDIR=	Select/Common/examples
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

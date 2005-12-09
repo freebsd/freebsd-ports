@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR internationalization package
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	I18N
@@ -34,5 +34,5 @@ EXAMPLES=	I18N_Currency.php I18N_DateTime.php I18N_Message.php		\
 _EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

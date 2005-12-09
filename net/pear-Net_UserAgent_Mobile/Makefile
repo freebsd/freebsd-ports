@@ -12,7 +12,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	PEAR class that parses HTTP mobile user agent string
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net/UserAgent
@@ -26,5 +26,5 @@ TESTS=		00-compile.phpt 01-request.phpt 02-docomo.phpt \
 		09-fallback-on-nomatch.phpt DoCoMoMap.xml
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

@@ -12,7 +12,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR XML parsing class based on PHP's bundled expat
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
@@ -23,5 +23,5 @@ EXAMPLES=	xml_parser_file.php xml_parser_file.xml xml_parser_handler.php \
 		xml_parser_simple2.xml xml_parser_simple_handler.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

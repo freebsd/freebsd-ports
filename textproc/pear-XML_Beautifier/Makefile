@@ -23,5 +23,5 @@ EXAMPLES=	example1.php example2.php example3.php example4.php example5.php \
 		example6.php test.xml
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

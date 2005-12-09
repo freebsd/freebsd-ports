@@ -23,5 +23,5 @@ DOCS=		add_example.php base.php mdb_mail_queue_schema.xml \
 		mysql.sql pgsql.sql send_example.php TODO README
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

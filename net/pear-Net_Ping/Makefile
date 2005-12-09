@@ -12,7 +12,7 @@ CATEGORIES=	net pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class to execute ping
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
@@ -22,5 +22,5 @@ EXAMPLES=	example.php
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

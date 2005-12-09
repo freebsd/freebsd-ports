@@ -12,7 +12,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Virtual File System API
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR \
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -28,5 +28,5 @@ post-patch:
 	@${MV} ${WRKSRC}/scripts/vfs.php ${WRKSRC}/pear-vfs.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

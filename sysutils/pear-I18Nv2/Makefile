@@ -12,7 +12,7 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Internationalization
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	iconv
@@ -150,5 +150,5 @@ PHP_VERS=	${PHP_VERSION:S/.//g}
 #IGNORE=		"You need PHP 4.0.6 or later to install PEAR::I18Nv2"
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

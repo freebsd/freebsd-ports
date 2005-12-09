@@ -12,7 +12,7 @@ CATEGORIES=	ftp www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	ftp
@@ -26,5 +26,5 @@ post-extract:
 	@${MV} ${WRKSRC}/Net/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

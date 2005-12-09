@@ -12,7 +12,7 @@ CATEGORIES=	irc www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class for communication with IRC networks
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
@@ -97,5 +97,5 @@ DOCS=		DOCUMENTATION HOWTO HTML/classtrees_Net_SmartIRC.html \
 		HTML/Net_SmartIRC/_SmartIRC-0.5.5_SmartIRC_php.html
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

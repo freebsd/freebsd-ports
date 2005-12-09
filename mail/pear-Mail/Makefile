@@ -12,7 +12,7 @@ CATEGORIES=	mail www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class that provides multiple interfaces for sending emails
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
@@ -28,5 +28,5 @@ OPTIONS=	PEAR_NET_SMTP "PEAR::Net_SMTP support" off
 RUN_DEPENDS+=	${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

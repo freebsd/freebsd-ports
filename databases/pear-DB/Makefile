@@ -13,7 +13,7 @@ CATEGORIES=	databases www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Database Abstraction Layer
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
@@ -40,7 +40,7 @@ TESTS=		db_error.phpt db_parsedsn.phpt db_factory.phpt db_ismanip.phpt \
 _DOCSDIR=	doc
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 post-patch:
 .for file in ${FILES}

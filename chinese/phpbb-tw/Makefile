@@ -18,7 +18,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	The Traditional Chinese version of phpBB
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-[0-9]*
 

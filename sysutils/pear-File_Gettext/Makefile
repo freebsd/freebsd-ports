@@ -12,7 +12,7 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR GNU Gettext file parser
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
@@ -28,5 +28,5 @@ PHP_VERS=	${PHP_VERSION:S/.//g}
 IGNORE=		"You need PHP 4.1.0 or later to install PEAR::File_Gettext"
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

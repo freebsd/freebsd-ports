@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	nick@foobar.org
 COMMENT=	Simple HTML data structure package
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table \
 		${PEARDIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
 		${PEARDIR}/Spreadsheet/Excel/Writer.php:${PORTSDIR}/textproc/pear-Spreadsheet_Excel_Writer \
@@ -35,5 +35,5 @@ FILES=		DataGrid.php DataGrid/Core.php DataGrid/Column.php \
 		DataGrid/Record/DataObject.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

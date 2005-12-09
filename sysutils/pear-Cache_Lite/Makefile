@@ -13,7 +13,7 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR fast and safe little cache system
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Cache
@@ -23,5 +23,5 @@ TESTS=		test.php test2.php test3.php bench.php bench2.php bench3.php readme
 _DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

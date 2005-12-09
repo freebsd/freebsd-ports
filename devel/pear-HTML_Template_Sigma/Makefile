@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	PEAR template API
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/Template
@@ -34,5 +34,5 @@ do-install-tests-msg: .USE
 	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=PHPUnit>;;)."
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

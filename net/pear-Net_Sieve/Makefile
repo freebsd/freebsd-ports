@@ -21,5 +21,5 @@ TESTS=		test_sieve.php
 _TESTSDIR=	.
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

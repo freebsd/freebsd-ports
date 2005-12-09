@@ -13,7 +13,7 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR common file and directory routines
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		File.php File/Util.php File/CSV.php
@@ -22,5 +22,5 @@ TESTS=		parser.php test.csv FileTest.php CSV/001.phpt CSV/001.csv \
 		CSV/004.csv CSV/005.phpt CSV/005.csv CSV/tests.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

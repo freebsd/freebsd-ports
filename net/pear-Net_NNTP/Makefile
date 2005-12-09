@@ -22,5 +22,5 @@ EXAMPLES=	index.php group.php read.php
 _EXAMPLESDIR=	docs/examples/news.php.net
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

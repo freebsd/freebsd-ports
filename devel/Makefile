@@ -1241,7 +1241,6 @@
     SUBDIR += pear
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Getargs
-    SUBDIR += pear-Console_Getopt
     SUBDIR += pear-Console_Table
     SUBDIR += pear-Date
     SUBDIR += pear-Event_Dispatcher
@@ -1266,7 +1265,6 @@
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
     SUBDIR += pear-OLE
-    SUBDIR += pear-PEAR
     SUBDIR += pear-PEAR_PackageFileManager
     SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPUnit
@@ -1283,7 +1281,6 @@
     SUBDIR += pear-Var_Dump
     SUBDIR += pear-XML_NITF
     SUBDIR += pear-XML_Parser
-    SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RSS
     SUBDIR += pear-XML_SVG
     SUBDIR += pear-XML_Serializer
@@ -1306,7 +1303,6 @@
     SUBDIR += php4-ncurses
     SUBDIR += php4-pcntl
     SUBDIR += php4-pcre
-    SUBDIR += php4-pear
     SUBDIR += php4-readline
     SUBDIR += php4-shmop
     SUBDIR += php4-sysvmsg
@@ -1319,7 +1315,6 @@
     SUBDIR += php5-ncurses
     SUBDIR += php5-pcntl
     SUBDIR += php5-pcre
-    SUBDIR += php5-pear
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
     SUBDIR += php5-sysvmsg

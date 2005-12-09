@@ -13,7 +13,7 @@ CATEGORIES=	security pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class for creating an authentication system
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-Auth
@@ -68,5 +68,5 @@ RUN_DEPENDS+=	${PEARDIR}/Auth/RADIUS.php:${PORTSDIR}/net/pear-Auth_RADIUS
 RUN_DEPENDS+=	${PEARDIR}/File/SMBPasswd.php:${PORTSDIR}/security/pear-File_SMBPasswd
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

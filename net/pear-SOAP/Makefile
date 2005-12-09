@@ -12,7 +12,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR SOAP Client/Server for PHP
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	SOAP
@@ -33,5 +33,5 @@ EXAMPLES=	attachment.php client.php com_client.php \
 _EXAMPLESDIR=	example
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

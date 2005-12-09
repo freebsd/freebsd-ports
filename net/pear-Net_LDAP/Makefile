@@ -12,7 +12,7 @@ CATEGORIES=	net pear
 MAINTAINER=	tux@pinguru.net
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	ldap
@@ -25,5 +25,5 @@ _DOCSDIR=	./doc
 TESTS=		tests.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

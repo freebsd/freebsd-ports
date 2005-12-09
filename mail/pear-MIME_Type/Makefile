@@ -12,7 +12,7 @@ CATEGORIES=	mail www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class for dealing with MIME types
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-${PORTNAME}
@@ -35,7 +35,7 @@ post-extract:
 RUN_DEPENDS+=	${PEARDIR}/System/Command.php:${PORTSDIR}/devel/pear-System_Command
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 post-patch:
 .for file in ${FILES}

@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	tux@pinguru.net
 COMMENT=	Tool to generate documentation from the source
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	PHPDoc
@@ -100,7 +100,7 @@ DATA=		renderer/html/default/class.html \
 SCRIPTFILES=	phpdoc
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,@php_dir@,${PEARDIR}," \

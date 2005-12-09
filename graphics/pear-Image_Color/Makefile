@@ -12,7 +12,7 @@ CATEGORIES=	graphics www pear
 MAINTAINER=	tux@pinguru.net
 COMMENT=	PEAR::Image_Color manages and handles color data and conversions
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	gd
@@ -21,5 +21,5 @@ CATEGORY=	Image
 FILES=		Color.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

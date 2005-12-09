@@ -12,7 +12,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	BCMATH "PHP BCMath extension support" off \
@@ -45,5 +45,5 @@ post-extract:
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/docs
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

@@ -39,5 +39,5 @@ TESTS=		Common.php Get.php GetAll.php GetCount.php GetQueryString.php index.php 
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

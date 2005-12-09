@@ -21,5 +21,5 @@ FILES=		SASL.php SASL/Anonymous.php SASL/Common.php SASL/CramMD5.php \
 		SASL/DigestMD5.php SASL/Login.php SASL/Plain.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
