@@ -9488,8 +9488,6 @@ php5-ctype	ports/textproc/php5-ctype
 php5-curl	ports/ftp/php5-curl
 php5-dba	ports/databases/php5-dba
 php5-dbase	ports/databases/php5-dbase
-php5-dbx	ports/databases/php5-dbx
-php5-dio	ports/devel/php5-dio
 php5-dom	ports/textproc/php5-dom
 php5-exif	ports/graphics/php5-exif
 php5-extensions	ports/lang/php5-extensions
@@ -9504,17 +9502,14 @@ php5-interbase	ports/databases/php5-interbase
 php5-ldap	ports/net/php5-ldap
 php5-mbstring	ports/converters/php5-mbstring
 php5-mcrypt	ports/security/php5-mcrypt
-php5-mcve	ports/devel/php5-mcve
 php5-mhash	ports/security/php5-mhash
 php5-ming	ports/graphics/php5-ming
-php5-mnogosearch	ports/www/php5-mnogosearch
 php5-mssql	ports/databases/php5-mssql
 php5-mysql	ports/databases/php5-mysql
 php5-mysqli	ports/databases/php5-mysqli
 php5-ncurses	ports/devel/php5-ncurses
 php5-odbc	ports/databases/php5-odbc
 php5-openssl	ports/security/php5-openssl
-php5-oracle	ports/databases/php5-oracle
 php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
 php5-pgsql	ports/databases/php5-pgsql
@@ -9540,7 +9535,6 @@ php5-xml	ports/textproc/php5-xml
 php5-xmlreader	ports/textproc/php5-xmlreader
 php5-xmlrpc	ports/net/php5-xmlrpc
 php5-xsl	ports/textproc/php5-xsl
-php5-yp		ports/net/php5-yp
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
 php_doc-ar	ports/arabic/php_doc
