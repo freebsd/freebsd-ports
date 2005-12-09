@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Devel/TraceSAX.pm
+%%SITE_PERL%%/Devel/TraceSAX/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/TraceSAX/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/TraceSAX
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Devel/TraceSAX
+@unexec rmdir %D/lib/perl5/site_perl/5.8.7/Devel 2>/dev/null || true
