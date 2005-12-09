@@ -1,0 +1,103 @@
+Index: toolkit/components/history/src/nsGlobalHistory.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/toolkit/components/history/src/nsGlobalHistory.cpp,v
+retrieving revision 1.58.2.2
+diff -u -8 -p -r1.58.2.2 nsGlobalHistory.cpp
+--- toolkit/components/history/src/nsGlobalHistory.cpp.orig	23 Oct 2005 18:55:54 -0000	1.58.2.2
++++ toolkit/components/history/src/nsGlobalHistory.cpp	8 Dec 2005 19:46:10 -0000
+@@ -108,16 +108,20 @@ nsIPrefBranch* nsGlobalHistory::gPrefBra
+ 
+ #define PREF_BRANCH_BASE                        "browser."
+ #define PREF_BROWSER_HISTORY_EXPIRE_DAYS        "history_expire_days"
+ #define PREF_AUTOCOMPLETE_ONLY_TYPED            "urlbar.matchOnlyTyped"
+ #define PREF_AUTOCOMPLETE_ENABLED               "urlbar.autocomplete.enabled"
+ 
+ #define FIND_BY_AGEINDAYS_PREFIX "find:datasource=history&match=AgeInDays&method="
+ 
++// see bug #319004 -- clamp title and URL to generously-large but not too large
++// length
++#define HISTORY_STRING_LENGTH_MAX 65536
++
+ // sync history every 10 seconds
+ #define HISTORY_SYNC_TIMEOUT (10 * PR_MSEC_PER_SEC)
+ //#define HISTORY_SYNC_TIMEOUT 3000 // every 3 seconds - testing only!
+ 
+ // the value of mLastNow expires every 3 seconds
+ #define HISTORY_EXPIRE_NOW_TIMEOUT (3 * PR_MSEC_PER_SEC)
+ 
+ #define MSECS_PER_DAY (PR_MSEC_PER_SEC * 60 * 60 * 24)
+@@ -1105,30 +1109,37 @@ nsGlobalHistory::GetCount(PRUint32* aCou
+ }
+ 
+ NS_IMETHODIMP
+ nsGlobalHistory::SetPageTitle(nsIURI *aURI, const nsAString& aTitle)
+ {
+   nsresult rv;
+   NS_ENSURE_ARG_POINTER(aURI);
+ 
+-  const nsAFlatString& titleString = PromiseFlatString(aTitle);
++  nsString realTitleString(aTitle);
++  if (realTitleString.Length() > HISTORY_STRING_LENGTH_MAX)
++    realTitleString.Left(realTitleString, HISTORY_STRING_LENGTH_MAX);
++
++  const nsAFlatString& titleString = PromiseFlatString(realTitleString);
+ 
+   // skip about: URIs to avoid reading in the db (about:blank, especially)
+   PRBool isAbout;
+   rv = aURI->SchemeIs("about", &isAbout);
+   NS_ENSURE_SUCCESS(rv, rv);
+   if (isAbout) return NS_OK;
+ 
+   NS_ENSURE_SUCCESS(OpenDB(), NS_ERROR_FAILURE);
+   
+   nsCAutoString URISpec;
+   rv = aURI->GetSpec(URISpec);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
++  if (URISpec.Length() > HISTORY_STRING_LENGTH_MAX)
++    URISpec.Left(URISpec, HISTORY_STRING_LENGTH_MAX);
++
+   nsCOMPtr<nsIMdbRow> row;
+   rv = FindRow(kToken_URLColumn, URISpec.get(), getter_AddRefs(row));
+ 
+   // if the row doesn't exist, we silently succeed
+   if (rv == NS_ERROR_NOT_AVAILABLE) return NS_OK;
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   // Get the old title so we can notify observers
+Index: mork/src/morkSink.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/db/mork/src/morkSink.cpp,v
+retrieving revision 1.8
+diff -u -8 -p -r1.8 morkSink.cpp
+--- db/mork/src/morkSink.cpp	17 Apr 2004 21:49:24 -0000	1.8
++++ db/mork/src/morkSink.cpp	8 Dec 2005 19:45:59 -0000
+@@ -110,25 +110,20 @@ morkSpool::SpillPutc(morkEnv* ev, int c)
+       {
+         mork_size size = coil->mBlob_Size;
+         mork_fill fill = (mork_fill) (at - body); // current content size
+         if ( fill <= size ) // less content than medium size?
+         {
+           coil->mBuf_Fill = fill;
+           if ( at >= end ) // need to grow the coil?
+           {
+-            if ( size > 2048 ) // grow slower over 2K?
+-              size += 512;
++            if ( size > 65536 )
++              size += 65536;
+             else
+-            {
+-              mork_size growth = ( size * 4 ) / 3; // grow by 33%
+-              if ( growth < 64 ) // grow faster under (64 * 3)?
+-                growth = 64;
+-              size += growth;
+-            }
++              size *= 2;
+             if ( coil->GrowCoil(ev, size) ) // made coil bigger?
+             {
+               body = (mork_u1*) coil->mBuf_Body;
+               if ( body ) // have a coil body?
+               {
+                 mSink_At = at = body + fill;
+                 mSink_End = end = body + coil->mBlob_Size;
+               }
