@@ -68,7 +68,7 @@
 +	/* these types are sent to syslog instead of reported on.
 +	 * only continue if there are other events as well
 +	 */
-+	if (event == 0 || (event & ~(IP_ETHER_REUSE | FLIPFLOP_DECNET) == 0))
++	if (event == 0 || (event & ~(IP_ETHER_REUSE | FLIPFLOP_DECNET)) == 0)
 +	  return;
 +
  	if (debug) {
