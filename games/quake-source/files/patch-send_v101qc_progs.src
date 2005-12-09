@@ -1,0 +1,8 @@
+--- send/v101qc/progs.src.orig	Thu Jul 25 03:51:28 1996
++++ send/v101qc/progs.src	Thu Dec  8 17:57:20 2005
+@@ -1,4 +1,4 @@
+-../progs.dat
++./progs.dat
+ 
+ defs.qc
+ subs.qc

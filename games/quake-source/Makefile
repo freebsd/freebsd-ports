@@ -38,6 +38,11 @@ PLIST_SUB+=	QUAKEWORLD=""
 PLIST_SUB+=	QUAKEWORLD="@comment "
 .endif
 
+pre-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${FILE} | \
+		${GREP} 'CRLF' | ${SED} -e 's/:.*//' | \
+		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${CP} -R ${WRKSRC}/send/v101qc ${DATADIR}
