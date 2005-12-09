@@ -1,4 +1,5 @@
-Cake is map viewer for Quake III Arena.  It currently features:
+Cake is powerful 3D game engine and (as a reference application) map viewer
+for id Software's Quake III Arena maps.  It currently features:
 
     * BSP (+PVS) support
     * collisions detection (with normal faces + patches)
