@@ -1,14 +1,18 @@
 bin/tv_cat
 bin/tv_check
 bin/tv_extractinfo_en
+bin/tv_grab_au
 bin/tv_grab_be
+bin/tv_grab_br
+bin/tv_grab_ch
 bin/tv_grab_de_tvtoday
 bin/tv_grab_dk
+bin/tv_grab_ee
 bin/tv_grab_es
-bin/tv_grab_es_digital
 bin/tv_grab_fi
 bin/tv_grab_fr
 bin/tv_grab_huro
+bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_jp
 bin/tv_grab_na_dd
@@ -17,6 +21,7 @@ bin/tv_grab_nl
 bin/tv_grab_nl_wolf
 bin/tv_grab_no
 bin/tv_grab_pt
+bin/tv_grab_re
 bin/tv_grab_se
 bin/tv_grab_se_swedb
 bin/tv_grab_uk_bleb
@@ -55,9 +60,12 @@ bin/tv_to_text
 %%SITE_PERL%%/XMLTV/Usage.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
+%%DATADIR%%/tv_grab_au/channel_ids
 %%DATADIR%%/tv_grab_be/channel_ids_fr
 %%DATADIR%%/tv_grab_be/channel_ids_nl
+%%DATADIR%%/tv_grab_ch/channel_ids
 %%DATADIR%%/tv_grab_de_tvtoday/channel_ids
+%%DATADIR%%/tv_grab_huro/jobmap
 %%DATADIR%%/tv_grab_it/channel_ids
 %%DATADIR%%/tv_grab_uk_bleb/icon_urls
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
@@ -65,10 +73,13 @@ bin/tv_to_text
 @dirrm %%DATADIR%%/tv_grab_uk_rt
 @dirrm %%DATADIR%%/tv_grab_uk_bleb
 @dirrm %%DATADIR%%/tv_grab_it
+@dirrm %%DATADIR%%/tv_grab_huro
 @dirrm %%DATADIR%%/tv_grab_de_tvtoday
+@dirrm %%DATADIR%%/tv_grab_ch
 @dirrm %%DATADIR%%/tv_grab_be
+@dirrm %%DATADIR%%/tv_grab_au
 @dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
+@dirrm %%SITE_PERL%%/mach/auto/XMLTV
 @dirrm %%SITE_PERL%%/XMLTV/ProgressBar
 @dirrm %%SITE_PERL%%/XMLTV/Ask
 @dirrm %%SITE_PERL%%/XMLTV
