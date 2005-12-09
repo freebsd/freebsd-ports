@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR data paging class
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Pager
@@ -27,5 +27,5 @@ TESTS=		all_tests.php pager_include.php pager_jumping_noData_test.php \
 		pager_wrapper_test.php simple_include.php README
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

@@ -12,7 +12,7 @@ CATEGORIES=	www devel pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Object-oriented interface to the session_* family functions
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Session.php Session/Container.php Session/Container/DB.php
@@ -20,5 +20,5 @@ EXAMPLES=	HTTP_Session_Example.php sessiondata.sql
 _EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

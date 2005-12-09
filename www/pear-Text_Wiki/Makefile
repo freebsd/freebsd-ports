@@ -12,7 +12,7 @@ CATEGORIES=	www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
@@ -96,5 +96,5 @@ post-extract:
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/Wiki.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

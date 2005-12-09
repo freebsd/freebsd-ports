@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Finite State Machine
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		FSM.php
@@ -22,5 +22,5 @@ EXAMPLES=	rpn.php
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

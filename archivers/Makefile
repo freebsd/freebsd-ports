@@ -66,7 +66,6 @@
     SUBDIR += par2cmdline
     SUBDIR += parchive
     SUBDIR += pbzip2
-    SUBDIR += pear-Archive_Tar
     SUBDIR += pear-File_Archive
     SUBDIR += pecl-zip
     SUBDIR += php4-bz2

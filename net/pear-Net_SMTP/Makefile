@@ -32,5 +32,5 @@ OPTIONS=	PEAR_AUTH_SASL "PEAR::Auth_SASL support" off
 BUILD_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

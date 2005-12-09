@@ -21,5 +21,5 @@ EXAMPLES=	Table_example1.php Table_example2.php
 _EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

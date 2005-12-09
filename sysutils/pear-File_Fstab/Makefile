@@ -12,7 +12,7 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class to read and write fstab files
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	File
@@ -28,5 +28,5 @@ post-extract:
 .endfor
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

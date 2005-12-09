@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	Validation class
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Validate.php Validate/Finance.php \
@@ -34,7 +34,7 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 post-patch:
 .for f in ${DATAFILES}

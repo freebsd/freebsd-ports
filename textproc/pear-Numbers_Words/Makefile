@@ -12,7 +12,7 @@ CATEGORIES=	textproc pear
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	PEAR package provides methods for spelling numerals in words
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
@@ -26,5 +26,5 @@ FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
 TESTS=		test-numbers-words.php clitest.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

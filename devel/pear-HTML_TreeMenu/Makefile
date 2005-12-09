@@ -12,7 +12,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	Provides an API to create a HTML tree
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
@@ -36,5 +36,5 @@ DOCS=		HTML_TreeMenu.doc HTML_TreeMenu.pdf example.php map_fs.php
 _DATADIR=	.
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

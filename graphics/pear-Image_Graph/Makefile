@@ -12,7 +12,7 @@ CATEGORIES=	graphics www pear
 MAINTAINER=	nick@foobar.org
 COMMENT=	An OO PEAR graph rendering package
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
 		${PEARDIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas
 
@@ -170,6 +170,6 @@ post-patch:
 .endfor
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 .include <bsd.port.post.mk>

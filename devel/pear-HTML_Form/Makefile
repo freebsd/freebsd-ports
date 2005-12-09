@@ -12,7 +12,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR simple HTML form package
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes
@@ -25,7 +25,7 @@ post-extract:
 	@${MV} ${WRKSRC}/HTML/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|@include_path@|${PREFIX}/${LPEARDIR}|g" \

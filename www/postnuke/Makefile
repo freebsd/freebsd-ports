@@ -14,7 +14,7 @@ DISTNAME=	PostNuke-0.761
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 USE_MYSQL=	YES
 

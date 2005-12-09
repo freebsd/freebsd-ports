@@ -12,7 +12,7 @@ CATEGORIES=	misc www pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if !defined (WITHOUT_CACHE)
@@ -40,5 +40,5 @@ EXAMPLES=	globalweather-basic.php ejse-basic.php metar-basic.php		\
 		weather.com-extensive.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

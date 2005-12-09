@@ -12,7 +12,7 @@ CATEGORIES=	mail www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class to build (create) and fetch vCard 2.1 and 3.0 text blocks
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Contact_Vcard_Build.php
@@ -20,5 +20,5 @@ TESTS=		test.php
 _TESTSDIR=	.
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

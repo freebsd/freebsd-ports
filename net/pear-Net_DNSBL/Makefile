@@ -31,5 +31,5 @@ PHP_VERS=	${PHP_VERSION:S/.//g}
 IGNORE=		"You need PHP 4.3.6 or later to install PEAR::Net_DNSBL"
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

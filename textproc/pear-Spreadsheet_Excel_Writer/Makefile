@@ -13,7 +13,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	PEAR class for writing Microsoft Excel files
 
 BUILD_DEPENDS=	${PEARDIR}/OLE/OLE.php:${PORTSDIR}/devel/pear-OLE \
-		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Spreadsheet/Excel
@@ -21,5 +21,5 @@ FILES=		Writer.php Writer/BIFFwriter.php Writer/Format.php Writer/Parser.php \
 		Writer/Validator.php Writer/Workbook.php Writer/Worksheet.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

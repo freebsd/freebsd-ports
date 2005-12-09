@@ -12,7 +12,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Engine for performing and rendering text diffs
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Text
@@ -32,5 +32,5 @@ EXAMPLES=	1.txt \
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

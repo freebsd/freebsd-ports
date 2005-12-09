@@ -12,7 +12,7 @@ CATEGORIES=	security pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class to manipulate many kinds of password files
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-File_Passwd
@@ -34,5 +34,5 @@ TESTS=		testsuite.php test_file_passwd.php test_common.php test_unix.php \
 RUN_DEPENDS+=	${PEARDIR}/Crypt/CHAP.php:${PORTSDIR}/security/pear-Crypt_CHAP
 .endif
 
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

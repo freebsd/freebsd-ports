@@ -12,7 +12,7 @@ CATEGORIES=	www devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	Easy and secure managment of files submitted via HTML Forms
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTTP
@@ -21,5 +21,5 @@ EXAMPLES=	upload_example.php
 _EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

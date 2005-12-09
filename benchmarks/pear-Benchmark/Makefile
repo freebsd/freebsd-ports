@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks devel www pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	bcmath
@@ -23,5 +23,5 @@ EXAMPLES=	timer_example.php
 _EXAMPLESDIR=	doc
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

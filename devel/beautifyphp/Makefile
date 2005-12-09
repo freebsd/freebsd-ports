@@ -15,7 +15,7 @@ DISTNAME=	beautify_php_${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP4
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

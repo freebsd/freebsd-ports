@@ -49,5 +49,5 @@ DOCS=		elements.php filters.php formrule.php groups.php rules-builtin.php rules-
 		renderers/templates/styles/fancygroup.html
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

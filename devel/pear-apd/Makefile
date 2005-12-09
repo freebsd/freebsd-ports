@@ -13,7 +13,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured engine-level PHP profiler/debugger
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
@@ -26,7 +26,7 @@ DUMP_DIR?=	/var/tmp/apd
 PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 .if ${PHP_VER} == 4
 APD_VER=	0.9.2

@@ -12,7 +12,7 @@ CATEGORIES=	math devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR graph datastructure manipulation library
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Structures
@@ -25,5 +25,5 @@ post-extract:
 	@${MV} ${WRKSRC}/Structures/* ${WRKSRC}/
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

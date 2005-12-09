@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	toshiya@saitoh.nu
 COMMENT=	PEAR Database Abstraction Layer
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR \
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -21,5 +21,5 @@ NO_BUILD=	yes
 FILES=		Pager.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>

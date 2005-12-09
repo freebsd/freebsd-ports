@@ -1988,3 +1988,9 @@ www/p5-HTML-Chuncks|www/p5-HTML-Chunks|2005-12-01|corrected directory
 devel/p5-Test-Builder-Tester|devel/p5-Test-Simple|2005-12-02|Included in Test::Simple package
 www/apache2|www/apache20|2005-12-03|renamed for consistency with other apache ports
 www/linux-sunbird|deskutils/linux-sunbird|2005-12-07|Moved to more suitable category
+devel/php4-pear||2005-12-09|Obsolated by devel/pear port
+devel/php5-pear||2005-12-09|Obsolated by devel/pear port
+archivers/pear-Archive_Tar||2005-12-09|Obsolated by devel/pear port
+devel/pear-Console_Getopt||2005-12-09|Obsolated by devel/pear port
+devel/pear-XML_RPC||2005-12-09|Obsolated by devel/pear port
+devel/pear-PEAR|devel/pear|2005-12-09|New pear bootstrap code

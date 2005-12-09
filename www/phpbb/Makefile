@@ -15,7 +15,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-tw-[0-9]*
 

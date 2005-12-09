@@ -12,7 +12,7 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR SAX parser for HTML and other badly formed XML documents
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
@@ -25,5 +25,5 @@ _EXAMPLESDIR=	docs/examples
 _TESTSDIR=	docs/tests
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
