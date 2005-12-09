@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.21
+PORTVERSION=	0.5.39
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.funktronics.ca/python-xmltv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,9 @@ COMMENT=	A Python module that provides access to XMLTV TV listings
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+.ifndef(NOPORTDOCS)
 PORTDOCS=	README.txt
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
