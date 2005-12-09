@@ -18,21 +18,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Mozilla Gecko renderer
 
-BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-
-.if !defined(WITH_MOZILLA)
-MOZILLA=	firefox
-.else
-.if ${WITH_MOZILLA}=="mozilla"
-MOZILLA=	mozilla
-.else
-MOZILLA=	firefox
-.endif
-.endif
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
+USE_GECKO=	mozilla
 USE_REINPLACE=	yes
 USE_RUBY_EXTCONF=	yes
 
@@ -43,8 +32,11 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|${MOZILLA}-gtkmozembed|g' \
+	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|g' \
 		${WRKSRC}/extconf.rb
 
 post-install:
@@ -57,4 +49,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
