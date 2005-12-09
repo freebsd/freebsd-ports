@@ -1,0 +1,50 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cvsupd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable cvsupd:
+#
+#cvsupd_enable="YES"
+
+. %%RC_SUBR%%
+
+name="cvsupd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Load defaults from cvsupd config file
+base="%%PREFIX%%/etc/cvsup"
+if [ ! -r "${base}/config.sh" ]; then
+	err 1 "${base}/config.sh is not readable."
+fi
+. ${base}/config.sh
+
+# Set defaults
+: ${cvsupd_enable:=NO}
+: ${cvsupd_outfile=/var/run/${name}.out}
+: ${cvsupd_user:=${user:-cvsup}}
+
+command="%%PREFIX%%/sbin/cvsupd"
+command_args="-e -C ${maxclients:-8} -l @${facility:-daemon} \
+	-b ${base:-/home/ncvs} -s sup.client"
+stop_cmd="cvsupd_stop"
+
+cvsupd_stop() {
+	if [ -z "$rc_pid" ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	echo "Stopping ${name}."
+	killall $name
+	_return=$?
+	[ "$_return" -ne 0 ] && [ -z "$rc_force" ] && return 1
+}
+
+run_rc_command "$1"
