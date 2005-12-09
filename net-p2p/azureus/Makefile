@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	2.3.0.4
-PORTREVISION=	5
+PORTVERSION=	2.3.0.6
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +22,7 @@ BUILD_DEPENDS=	\
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
+		${LOCALBASE}/eclipse/plugins/org.junit_3.8.1/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
 		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
