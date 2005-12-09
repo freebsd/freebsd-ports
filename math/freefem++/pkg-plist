@@ -73,6 +73,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/lap_mat.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/lapacienprecon.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/AFunction.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/AFunction_ext.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/AnyType.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/BamgFreeFem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/CGNL.hpp
@@ -103,6 +104,8 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem3.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/ffstack.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/gmres.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/include.tar.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/lex.hpp
