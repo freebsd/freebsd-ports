@@ -42,7 +42,15 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  as a gecko backend unless WITH_GECKO=firefox or WITH_GECKO=seamonkey
 #  is defined by the user.
 #
-#  Your port should check the ${GECKO} variable to see which backend
+#  Example:
+#  USE_GECKO= mozilla firefox seamonkey
+#  .include <bsd.port.pre.mk>
+#  .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+#  post-patch:
+#	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
+#		${WRKSRC}/configure
+#
+#  If you want your port to check the ${GECKO} variable to see which backend
 #  has been chosen.
 #
 #  Example: 
