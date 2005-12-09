@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Apr  2 22:24:36 2005
-+++ Makefile.in	Sat Apr  2 22:25:03 2005
+--- Makefile.in.orig	Fri Dec  9 19:22:49 2005
++++ Makefile.in	Fri Dec  9 19:23:02 2005
 @@ -268,10 +268,9 @@
  	@rm -rf Compilation.flags Makefile aclocal.m4 autom4te.cache config.h* config.l* config.st* config.rp* configure depcomp intl
  
  install: all
 -	@mkdir -p @bindir@
--	@mkdir -p @datadir@/{applications,locale,pixmaps}
+-	@mkdir -p @datadir@/{applications,locale,icons}
 -	@cp -f ed2k.xmule-2.0 xmule @bindir@
 -	@cp -f ed2k.xmule-2.0 @bindir@/ed2k
 +	@mkdir -p @datadir@/applications
@@ -13,4 +13,4 @@
 +	@mkdir -p @datadir@/pixmaps
  	@cd po && $(MAKE) install
  	@cp -f xmule.desktop @datadir@/applications
- 	@cp -f xmule.xpm @datadir@/pixmaps
+ 	@cp -f xmule.xpm @datadir@/icons

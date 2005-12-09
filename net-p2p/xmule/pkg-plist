@@ -1,7 +1,7 @@
 bin/xmule
 bin/xmule-ed2k-handler
 share/gnome/applications/xmule.desktop
-share/gnome/pixmaps/xmule.xpm
+share/gnome/icons/xmule.xpm
 share/locale/de/LC_MESSAGES/xmule.mo
 share/locale/ee/LC_MESSAGES/xmule.mo
 share/locale/es/LC_MESSAGES/xmule.mo
@@ -11,21 +11,7 @@ share/locale/it/LC_MESSAGES/xmule.mo
 share/locale/ko/LC_MESSAGES/xmule.mo
 share/locale/pl/LC_MESSAGES/xmule.mo
 share/locale/tr/LC_MESSAGES/xmule.mo
-@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/tr 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rmdir %D/share/gnome/locale 2>/dev/null || true
