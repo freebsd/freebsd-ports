@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9b4facec-6761-11da-99f6-00123ffe8333">
+    <topic>curl -- URL buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.11.2</ge><lt>7.15.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Project cURL Security Advisory reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20051207.html">
+	  <p>libcurl's URL parser function can overflow a malloced
+	    buffer in two ways, if given a too long URL.</p>
+	  <p>1 - pass in a URL with no protocol (like "http://")
+	    prefix, using no slash and the string is 256 bytes or
+	    longer. This leads to a single zero byte overflow of the
+	    malloced buffer.</p>
+	  <p>2 - pass in a URL with only a question mark as separator
+	    (no slash) between the host and the query part of the URL.
+	    This leads to a single zero byte overflow of the malloced
+	    buffer.</p>
+	  <p>Both overflows can be made with the same input string,
+	    leading to two single zero byte overwrites.</p>
+	  <p>The affected flaw cannot be triggered by a redirect, but
+	    the long URL must be passed in "directly" to libcurl. It
+	    makes this a "local" problem. Of course, lots of programs
+	    may still pass in user-provided URLs to libcurl without doing
+	    much syntax checking of their own, allowing a user to exploit
+	    this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15756</bid>
+      <cvename>CVE-2005-4077</cvename>
+      <url>http://curl.haxx.se/docs/adv_20051207.html</url>
+      <url>http://www.hardened-php.net/advisory_242005.109.html</url>
+      <url>http://secunia.com/advisories/17907/</url>
+    </references>
+    <dates>
+      <discovery>2005-12-07</discovery>
+      <entry>2005-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23afd91f-676b-11da-99f6-00123ffe8333">
     <topic>phpmyadmin -- register_globals emulation "import_blacklist" manipulation</topic>
     <affects>
