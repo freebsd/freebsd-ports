@@ -10667,6 +10667,7 @@ rabl_server	ports/mail/rabl_server
 race		ports/games/race
 racoon2		ports/security/racoon2
 raddump		ports/net/raddump
+radeontool	ports/sysutils/radeontool
 radiator	ports/net/radiator
 radio		ports/audio/radio
 radiusclient	ports/net/radiusclient
