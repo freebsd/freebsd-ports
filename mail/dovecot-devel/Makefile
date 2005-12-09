@@ -8,7 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.0.alpha4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
