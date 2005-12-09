@@ -6,17 +6,26 @@
 #
 
 PORTNAME=	Crypt-DES
-PORTVERSION=	2.03
+PORTVERSION=	2.05
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to DES block cipher
+
+BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::DES.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=	requires perl 5.6.x or later. Install lang/perl5 or lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
