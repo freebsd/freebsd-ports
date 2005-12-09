@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/mtr/
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
