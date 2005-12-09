@@ -1,6 +1,6 @@
---- deskbar/deskbar-applet.py.orig	Mon Oct 31 02:44:59 2005
-+++ deskbar/deskbar-applet.py	Mon Oct 31 02:45:06 2005
-@@ -28,8 +28,8 @@
+--- deskbar/deskbar-applet.py.orig	Sat Nov 19 14:15:58 2005
++++ deskbar/deskbar-applet.py	Thu Dec  8 22:23:00 2005
+@@ -34,8 +34,8 @@
  gettext.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
  gettext.textdomain('deskbar-applet')
  
@@ -8,6 +8,6 @@
 -locale.textdomain('deskbar-applet')
 +#locale.bindtextdomain('deskbar-applet', abspath(join(deskbar.defs.DATA_DIR, "locale")))
 +#locale.textdomain('deskbar-applet')
-     
+ 
  def applet_factory(applet, iid):
- 	deskbar.applet.DeskbarApplet(applet)
+ 	print 'Starting Deskbar instance:', applet, iid
