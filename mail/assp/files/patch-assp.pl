@@ -1,5 +1,14 @@
 --- assp.pl.orig	Tue Mar 15 06:41:24 2005
 +++ assp.pl	Wed May 18 11:33:35 2005
+@@ -39,7 +39,7 @@
+ 
+ loadConfig();
+ sub loadConfig {
+- print "loading config -- base='$base'\n";
++ # print "loading config -- base='$base'\n";
+  @Config=(
+  [0,0,0,heading,'Network Setup'],
+  # except for the heading lines, all config lines have the following:
 @@ -58,7 +58,7 @@
    'The address:port of your message handling system\'s smtp server. For example: 127.0.0.1:125'],
   [AsAService,'As a Service',0,checkbox,'','(\S*)',undef,
@@ -30,6 +39,14 @@
    'The *nix group to assume after startup: assp or nogroup -- requires ASSP restart.'],
   [ChangeRoot,'Change Root',60,textinput,'','(.*)',undef,
    'Non-blank means to run in chroot jail in *nix. You need an etc/protocols file to make this work<br />
+@@ -3631,6 +3631,7 @@
+  @PossibleOptionFiles=();
+  for (@Config) {
+   if($_->[6] eq 'ConfigMakeRe') {
++   $silent=1 if($AsADaemon);
+    ${$_->[0]}=optionList(${$_->[0]},$_->[0]);
+    push(@PossibleOptionFiles,$_->[0]);
+   } elsif($_->[6] eq 'ConfigCompileRe') {
 @@ -4462,4 +4462,4 @@
         dynablock.njabl.org
      );

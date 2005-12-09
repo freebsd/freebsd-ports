@@ -6,14 +6,17 @@
 
 cd %%ASSP_HOME%%
 
+[ -f nightly.log ] && mv nightly.log nightly.log.old
+
 if [ ! -f %%PREFIX%%/lib/assp/rebuildspamdb.pl ]
 then
 	echo "%%PREFIX%%/lib/assp/rebuildspamdb.pl does not exist"
 	rc_spamdb=2
 else
 	echo ""
-	echo "Running ASSP rebuildspamdb.pl:"
-	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
+	echo "Running ASSP rebuildspamdb.pl (output to nightly.log)"
+	echo "Running ASSP rebuildspamdb.pl:" >>nightly.log
+	%%PERL%% %%PREFIX%%/lib/assp/rebuildspamdb.pl >>nightly.log && rc_spamdb=0 || rc_spamdb=3
 fi
 
 if [ ! -f %%PREFIX%%/lib/assp/freshclam.sh ]
@@ -27,5 +30,15 @@ else
 	export PATH=$PATH:%%LOCALBASE%%/bin
 	sh %%PREFIX%%/lib/assp/freshclam.sh && rc_clamav=0 || rc_clamav=3
 fi
+
+. %%RC_SUBR%%
+name=assp
+rcvar=`set_rcvar`
+load_rc_config $name
+: ${assp_logexpire="45"}
+
+echo ""
+echo "Removing old ASSP log files:"
+find . -name '*.maillog.txt' -mtime +$assp_logexpire -exec ls -l {} \; -exec rm {} \;
 
 exit $(($rc_spamdb|$rc_clamav))
