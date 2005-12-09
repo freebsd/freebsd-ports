@@ -284,14 +284,12 @@
     SUBDIR += php4-sybase_ct
     SUBDIR += php5-dba
     SUBDIR += php5-dbase
-    SUBDIR += php5-dbx
     SUBDIR += php5-filepro
     SUBDIR += php5-interbase
     SUBDIR += php5-mssql
     SUBDIR += php5-mysql
     SUBDIR += php5-mysqli
     SUBDIR += php5-odbc
-    SUBDIR += php5-oracle
     SUBDIR += php5-pgsql
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase_ct

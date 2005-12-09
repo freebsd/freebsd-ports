@@ -27,7 +27,6 @@
 # WANT_PHP_MOD=yes  - Want the Apache Module for PHP.
 # WANT_PHP_SCR=yes  - Want the CLI or the CGI version of PHP.
 # WANT_PHP_WEB=yes  - Want the Apache Module or the CGI version of PHP.
-# WANT_PHP_PEAR=yes - Want the PEAR framework.
 #
 # You may combine multiple WANT_PHP_* knobs.
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
@@ -37,33 +36,39 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 .if exists(${LOCALBASE}/etc/php.conf)
 .include "${LOCALBASE}/etc/php.conf"
-.endif
-
+PHP_EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${LOCALBASE}/lib/php/\(.*\),\1,p'
+.else
 DEFAULT_PHP_VER?=	4
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if !defined(PHP_EXT_DIR)
 .if ${PHP_VER} == 4
 PHP_EXT_DIR=	20020429
 .else
-PHP_EXT_DIR=	20041030
+PHP_EXT_DIR=	20050922
 .endif
-.if exists(${LOCALBASE}/include/apache2/httpd.h)
+
+HTTPD?=		${LOCALBASE}/sbin/httpd
+.if exists(${HTTPD})
+APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
+.	if ${APACHE_VERSION} > 13
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_MPM!=	${APXS} -q MPM_NAME
-.if ${APACHE_MPM} == "worker"
+.		if ${APACHE_MPM} == "worker"
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
-.endif
-.else
-.if defined(WITH_APACHE2) && defined(WITH_MPM) && ${WITH_MPM} == "worker"
+.		endif
+.	endif
+.elif defined(APACHE_PORT)
+APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
+.	if ${APACHE_VERSION} > 13 && defined(WITH_MPM) && ${WITH_MPM} == "worker"
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
+.	endif
 .endif
-.endif
+
 .if defined(WITH_DEBUG)
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
 .endif
-.endif
 PHP_SAPI?=	""
+.endif
 PHP_EXT_INC?=	""
 
 .if defined(BROKEN_WITH_PHP)
@@ -151,13 +156,6 @@ check-makevars::
 .endif
 
 PHP_PORT?=	${PORTSDIR}/lang/php${PHP_VER}
-
-.if defined(WANT_PHP_PEAR)
-.	if defined(USE_PHP_BUILD)
-BUILD_DEPENDS+=	pear:${PORTSDIR}/devel/php${PHP_VER}-pear
-.	endif
-RUN_DEPENDS+=	pear:${PORTSDIR}/devel/php${PHP_VER}-pear
-.endif
 
 .if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}
@@ -252,17 +250,19 @@ php-ini:
 # Extensions
 .if ${USE_PHP:L} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase dbx dio \
+_USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 		exif fileinfo filepro fribidi ftp gd gettext gmp \
-		iconv imagick imap interbase ldap mbstring mcrypt mcve \
-		mhash ming mnogosearch mssql mysql ncurses odbc \
-		openssl oracle panda pcntl pcre pdf pgsql posix \
+		iconv imagick imap interbase ldap mbstring mcrypt \
+		mhash ming mssql mysql ncurses odbc \
+		openssl panda pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
-		tokenizer wddx xml xmlrpc yaz yp zip zlib
+		tokenizer wddx xml xmlrpc yaz zip zlib
 # version specific components
-_USE_PHP_VER4=	${_USE_PHP_ALL} crack domxml mcal overload xslt
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli simplexml soap sqlite tidy xsl
+_USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml mcal mcve \
+		mnogosearch oracle overload xslt yp
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli simplexml soap sqlite \
+		tidy xmlreader xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
@@ -329,6 +329,7 @@ tidy_DEPENDS=	www/php${PHP_VER}-tidy
 tokenizer_DEPENDS=	devel/php${PHP_VER}-tokenizer
 wddx_DEPENDS=	textproc/php${PHP_VER}-wddx
 xml_DEPENDS=	textproc/php${PHP_VER}-xml
+xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
 xslt_DEPENDS=	textproc/php${PHP_VER}-xslt

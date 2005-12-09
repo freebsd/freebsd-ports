@@ -559,7 +559,6 @@
     SUBDIR += php5-soap
     SUBDIR += php5-sockets
     SUBDIR += php5-xmlrpc
-    SUBDIR += php5-yp
     SUBDIR += phpldapadmin
     SUBDIR += pipsecd
     SUBDIR += plb

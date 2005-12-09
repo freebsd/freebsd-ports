@@ -56,14 +56,6 @@ PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 CONFIGURE_ARGS+=--enable-dbase
 .endif
 
-.if ${PHP_MODNAME} == "dbx"
-CONFIGURE_ARGS+=--enable-dbx
-.endif
-
-.if ${PHP_MODNAME} == "dio"
-CONFIGURE_ARGS+=--enable-dio
-.endif
-
 .if ${PHP_MODNAME} == "dom"
 CONFIGURE_ARGS+=--enable-dom \
 		--with-libxml-dir=${LOCALBASE}
@@ -83,7 +75,11 @@ CONFIGURE_ARGS+=--enable-filepro
 .endif
 
 .if ${PHP_MODNAME} == "ftp"
-CONFIGURE_ARGS+=--enable-ftp
+CONFIGURE_ARGS+=--enable-ftp \
+		--with-openssl-dir=${OPENSSLBASE}
+
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
+USE_OPENSSL=	yes
 .endif
 
 .if ${PHP_MODNAME} == "gd"
@@ -169,16 +165,6 @@ CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 USE_AUTOTOOLS=	libltdl:15
 .endif
 
-.if ${PHP_MODNAME} == "mcve"
-LIB_DEPENDS+=	mcve.3:${PORTSDIR}/devel/libmcve
-
-CONFIGURE_ARGS+=--with-mcve=${LOCALBASE} \
-                --with-openssl-dir=${OPENSSLBASE}
-
-LDFLAGS+=       -L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=    yes
-.endif
-
 .if ${PHP_MODNAME} == "mhash"
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 
@@ -189,12 +175,6 @@ CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
 LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
 
 CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
-.endif
-
-.if ${PHP_MODNAME} == "mnogosearch"
-LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch31
-
-CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mssql"
@@ -234,12 +214,6 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
-.endif
-
-.if ${PHP_MODNAME} == "oracle"
-BUILD_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-client
-
-CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
 .endif
 
 .if ${PHP_MODNAME} == "pcntl"
@@ -373,27 +347,35 @@ CONFIGURE_ARGS+=--enable-xml \
 USE_GNOME=	libxml2
 .endif
 
-.if ${PHP_MODNAME} == "xmlrpc"
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+.if ${PHP_MODNAME} == "xmlreader"
+CONFIGURE_ARGS+=--with-xmlreader \
+		--with-libxml-dir=${LOCALBASE}
 
+USE_GNOME=	libxml2
+
+USE_PHP=	xml
+USE_PHP_BUILD=	yes
+.endif
+
+.if ${PHP_MODNAME} == "xmlrpc"
 CONFIGURE_ARGS+=--with-xmlrpc \
-		--with-expat-dir=${LOCALBASE} \
+		--with-libxml-dir=${LOCALBASE} \
 		--with-iconv-dir=${LOCALBASE}
 
 USE_ICONV=	yes
+USE_GNOME=	libxml2
 
 PHP_HEADER_DIRS=libxmlrpc
+
+USE_PHP=	xml
+USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "xsl"
 CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 
 USE_GNOME=	libxslt
-USE_PHP=	dom
-.endif
-
-.if ${PHP_MODNAME} == "yp"
-CONFIGURE_ARGS+=--enable-yp
+USE_PHP=	dom xml
 .endif
 
 .if ${PHP_MODNAME} == "zlib"
@@ -461,13 +443,9 @@ post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
-.if ${PHP_MODNAME} == "oracle"
-pre-configure:
-	@cd ${WRKSRC}; \
-	for lib in c3v6 client common core3 epc generic ncr nlsrtl3 sqlnet wrap; do \
-		/usr/bin/ar x ${LOCALBASE}/oracle7/lib/lib$${lib}.a; \
-	done; \
-	/usr/bin/ar rcs liboracle.a *.o
+.if ${PHP_MODNAME} == "pcre"
+post-extract:
+	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
 .if ${PHP_MODNAME} == "snmp"
