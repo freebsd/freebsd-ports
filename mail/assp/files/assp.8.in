@@ -239,6 +239,10 @@ to start ASSP at boot time
 .IP assp_args
 passed to the ASSP client, default is
 .I assp_args="%%ASSP_HOME%%"
+.IP assp_logexpire
+used by nightly script to expire logs, default is
+.I assp_logexpire="45"
+days
 .SH FILES
 .IP %%ASSP_HOME%%
 location of ASSP config file, log file and spam databases
