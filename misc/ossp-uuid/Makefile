@@ -1,12 +1,12 @@
-# New ports collection makefile for:   OSSP uuid
-# Date created:                12 February 2004
-# Whom:                        Kimura Fuyuki <fuyuki@nigredo.org>
+# New ports collection makefile for:	OSSP uuid
+# Date created:				12 February 2004
+# Whom:					Kimura Fuyuki <fuyuki@nigredo.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -17,36 +17,33 @@ COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-[0-9]*
 
-USE_REINPLACE=		yes
+USE_REINPLACE=	yes
+USE_GCC=	3.2+
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=		yes
-CONFIGURE_ARGS+=	--disable-shared --enable-static
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-shared --enable-static
 
-MAN1=		uuid-config.1 uuid.1
-MAN3=		uuid.3
+MAN1=	uuid-config.1 uuid.1
+MAN3=	uuid.3
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 CONFIGURE_ENV+=	PERL=${PERL5}
 CONFIGURE_ARGS+=	--with-perl
-PLIST_SUB+=		WITH_PERL=''
-MAN3=			OSSP::uuid.3
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+PLIST_SUB+=	WITH_PERL=''
+MAN3=		OSSP::uuid.3
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 .else
-PLIST_SUB+=		WITH_PERL='@comment '
+PLIST_SUB+=	WITH_PERL='@comment '
 .endif
 
-test:
-	cd ${WRKSRC}; ${MAKE} check
-
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,\$$.libdir./pkgconfig,\$$\(prefix\)/libdata/pkgconfig,g' \
-		${WRKSRC}/Makefile.in
 
 .if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
 IGNORE=	supports Perl 5.8.0 or above only
 .endif
+
+test:	build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.post.mk>
