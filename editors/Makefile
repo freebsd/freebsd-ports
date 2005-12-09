@@ -187,6 +187,7 @@
     SUBDIR += xemacs-packages
     SUBDIR += xemacs21-mule
     SUBDIR += xenon
+    SUBDIR += xml2rfc-xxe
     SUBDIR += xmleditor
     SUBDIR += xvile
     SUBDIR += xxe
