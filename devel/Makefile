@@ -1238,6 +1238,7 @@
     SUBDIR += pcre++
     SUBDIR += pcre-utf8
     SUBDIR += pcsc-lite
+    SUBDIR += pear
     SUBDIR += pear-Config
     SUBDIR += pear-Console_Getargs
     SUBDIR += pear-Console_Getopt

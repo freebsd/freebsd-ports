@@ -1,0 +1,169 @@
+bin/pear
+bin/peardev
+bin/pecl
+etc/pear.conf
+%%DOCSDIR%%/Archive_Tar/docs/Archive_Tar.txt
+@exec mkdir -p %D/share/pear/.channels/.alias
+@exec mkdir -p %D/share/pear/.registry/.channel.__uri
+@exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
+@exec touch %D/share/pear/.channels/.alias/pear.txt
+@exec touch %D/share/pear/.channels/.alias/pecl.txt
+@exec touch %D/share/pear/.channels/__uri.reg
+@exec touch %D/share/pear/.channels/pear.php.net.reg
+@exec touch %D/share/pear/.channels/pecl.php.net.reg
+@exec touch %D/share/pear/.depdb
+@exec touch %D/share/pear/.depdblock
+@exec touch %D/share/pear/.filemap
+@exec touch %D/share/pear/.lock
+%%DATADIR%%/.registry/archive_tar.reg
+%%DATADIR%%/.registry/console_getopt.reg
+%%DATADIR%%/.registry/pear.reg
+%%DATADIR%%/.registry/xml_rpc.reg
+%%DATADIR%%/Archive/Tar.php
+%%DATADIR%%/Console/Getopt.php
+%%DATADIR%%/OS/Guess.php
+%%DATADIR%%/PEAR/Autoloader.php
+%%DATADIR%%/PEAR/Builder.php
+%%DATADIR%%/PEAR/ChannelFile/Parser.php
+%%DATADIR%%/PEAR/ChannelFile.php
+%%DATADIR%%/PEAR/Command/Auth.php
+%%DATADIR%%/PEAR/Command/Auth.xml
+%%DATADIR%%/PEAR/Command/Build.php
+%%DATADIR%%/PEAR/Command/Build.xml
+%%DATADIR%%/PEAR/Command/Channels.php
+%%DATADIR%%/PEAR/Command/Channels.xml
+%%DATADIR%%/PEAR/Command/Common.php
+%%DATADIR%%/PEAR/Command/Config.php
+%%DATADIR%%/PEAR/Command/Config.xml
+%%DATADIR%%/PEAR/Command/Install.php
+%%DATADIR%%/PEAR/Command/Install.xml
+%%DATADIR%%/PEAR/Command/Mirror.php
+%%DATADIR%%/PEAR/Command/Mirror.xml
+%%DATADIR%%/PEAR/Command/Package.php
+%%DATADIR%%/PEAR/Command/Package.xml
+%%DATADIR%%/PEAR/Command/Pickle.php
+%%DATADIR%%/PEAR/Command/Pickle.xml
+%%DATADIR%%/PEAR/Command/Registry.php
+%%DATADIR%%/PEAR/Command/Registry.xml
+%%DATADIR%%/PEAR/Command/Remote.php
+%%DATADIR%%/PEAR/Command/Remote.xml
+%%DATADIR%%/PEAR/Command/Test.php
+%%DATADIR%%/PEAR/Command/Test.xml
+%%DATADIR%%/PEAR/Command.php
+%%DATADIR%%/PEAR/Common.php
+%%DATADIR%%/PEAR/Config.php
+%%DATADIR%%/PEAR/Dependency.php
+%%DATADIR%%/PEAR/Dependency2.php
+%%DATADIR%%/PEAR/DependencyDB.php
+%%DATADIR%%/PEAR/Downloader/Package.php
+%%DATADIR%%/PEAR/Downloader.php
+%%DATADIR%%/PEAR/ErrorStack.php
+%%DATADIR%%/PEAR/Exception.php
+%%DATADIR%%/PEAR/Frontend/CLI.php
+%%DATADIR%%/PEAR/Frontend.php
+%%DATADIR%%/PEAR/Installer/Role/Common.php
+%%DATADIR%%/PEAR/Installer/Role/Data.php
+%%DATADIR%%/PEAR/Installer/Role/Data.xml
+%%DATADIR%%/PEAR/Installer/Role/Doc.php
+%%DATADIR%%/PEAR/Installer/Role/Doc.xml
+%%DATADIR%%/PEAR/Installer/Role/Ext.php
+%%DATADIR%%/PEAR/Installer/Role/Ext.xml
+%%DATADIR%%/PEAR/Installer/Role/Php.php
+%%DATADIR%%/PEAR/Installer/Role/Php.xml
+%%DATADIR%%/PEAR/Installer/Role/Script.php
+%%DATADIR%%/PEAR/Installer/Role/Script.xml
+%%DATADIR%%/PEAR/Installer/Role/Src.php
+%%DATADIR%%/PEAR/Installer/Role/Src.xml
+%%DATADIR%%/PEAR/Installer/Role/Test.php
+%%DATADIR%%/PEAR/Installer/Role/Test.xml
+%%DATADIR%%/PEAR/Installer/Role.php
+%%DATADIR%%/PEAR/Installer.php
+%%DATADIR%%/PEAR/PackageFile/Generator/v1.php
+%%DATADIR%%/PEAR/PackageFile/Generator/v2.php
+%%DATADIR%%/PEAR/PackageFile/Parser/v1.php
+%%DATADIR%%/PEAR/PackageFile/Parser/v2.php
+%%DATADIR%%/PEAR/PackageFile/v1.php
+%%DATADIR%%/PEAR/PackageFile/v2/Validator.php
+%%DATADIR%%/PEAR/PackageFile/v2/rw.php
+%%DATADIR%%/PEAR/PackageFile/v2.php
+%%DATADIR%%/PEAR/PackageFile.php
+%%DATADIR%%/PEAR/Packager.php
+%%DATADIR%%/PEAR/REST/10.php
+%%DATADIR%%/PEAR/REST/11.php
+%%DATADIR%%/PEAR/REST.php
+%%DATADIR%%/PEAR/Registry.php
+%%DATADIR%%/PEAR/Remote.php
+%%DATADIR%%/PEAR/RunTest.php
+%%DATADIR%%/PEAR/Task/Common.php
+%%DATADIR%%/PEAR/Task/Postinstallscript/rw.php
+%%DATADIR%%/PEAR/Task/Postinstallscript.php
+%%DATADIR%%/PEAR/Task/Replace/rw.php
+%%DATADIR%%/PEAR/Task/Replace.php
+%%DATADIR%%/PEAR/Task/Unixeol/rw.php
+%%DATADIR%%/PEAR/Task/Unixeol.php
+%%DATADIR%%/PEAR/Task/Windowseol/rw.php
+%%DATADIR%%/PEAR/Task/Windowseol.php
+%%DATADIR%%/PEAR/Validate.php
+%%DATADIR%%/PEAR/Validator/PECL.php
+%%DATADIR%%/PEAR/XMLParser.php
+%%DATADIR%%/PEAR.php
+%%DATADIR%%/System.php
+%%DATADIR%%/XML/RPC/Dump.php
+%%DATADIR%%/XML/RPC/Server.php
+%%DATADIR%%/XML/RPC.php
+%%DATADIR%%/data/PEAR/package.dtd
+%%DATADIR%%/data/PEAR/template.spec
+%%DATADIR%%/pearcmd.php
+%%DATADIR%%/peclcmd.php
+%%DATADIR%%/tests/XML_RPC/tests/allgot.inc
+%%DATADIR%%/tests/XML_RPC/tests/empty-value-struct.php
+%%DATADIR%%/tests/XML_RPC/tests/empty-value.php
+%%DATADIR%%/tests/XML_RPC/tests/protoport.php
+%%DATADIR%%/tests/XML_RPC/tests/test_Dump.php
+%%DATADIR%%/tests/XML_RPC/tests/types.php
+@dirrm %%DOCSDIR%%/Archive_Tar/docs
+@dirrm %%DOCSDIR%%/Archive_Tar
+@unexec rmdir %D/share/doc/pear 2> /dev/null || true
+@unexec rm %D/share/pear/.channels/.alias/pear.txt 2> /dev/null || true
+@unexec rm %D/share/pear/.channels/.alias/pecl.txt 2> /dev/null || true
+@unexec rm %D/share/pear/.channels/__uri.reg 2> /dev/null || true
+@unexec rm %D/share/pear/.channels/pear.php.net.reg 2> /dev/null || true
+@unexec rm %D/share/pear/.channels/pecl.php.net.reg 2> /dev/null || true
+@unexec rm %D/share/pear/.depdb 2> /dev/null || true
+@unexec rm %D/share/pear/.depdblock 2> /dev/null || true
+@unexec rm %D/share/pear/.filemap 2> /dev/null || true
+@unexec rm %D/share/pear/.lock 2> /dev/null || true
+@unexec rmdir %D/share/pear/.channels/.alias 2> /dev/null || true
+@unexec rmdir %D/share/pear/.channels 2> /dev/null || true
+@unexec rmdir %D/share/pear/.registry/.channel.__uri 2> /dev/null || true
+@unexec rmdir %D/share/pear/.registry/.channel.pecl.php.net 2> /dev/null || true
+@unexec rmdir %D/share/pear/.registry 2> /dev/null || true
+@dirrm %%DATADIR%%/Archive
+@dirrm %%DATADIR%%/Console
+@dirrm %%DATADIR%%/OS
+@dirrm %%DATADIR%%/PEAR/ChannelFile
+@dirrm %%DATADIR%%/PEAR/Command
+@dirrm %%DATADIR%%/PEAR/Downloader
+@dirrm %%DATADIR%%/PEAR/Frontend
+@dirrm %%DATADIR%%/PEAR/Installer/Role
+@dirrm %%DATADIR%%/PEAR/Installer
+@dirrm %%DATADIR%%/PEAR/PackageFile/Generator
+@dirrm %%DATADIR%%/PEAR/PackageFile/Parser
+@dirrm %%DATADIR%%/PEAR/PackageFile/v2
+@dirrm %%DATADIR%%/PEAR/PackageFile
+@dirrm %%DATADIR%%/PEAR/REST
+@dirrm %%DATADIR%%/PEAR/Task/Postinstallscript
+@dirrm %%DATADIR%%/PEAR/Task/Replace
+@dirrm %%DATADIR%%/PEAR/Task/Unixeol
+@dirrm %%DATADIR%%/PEAR/Task/Windowseol
+@dirrm %%DATADIR%%/PEAR/Task
+@dirrm %%DATADIR%%/PEAR/Validator
+@dirrm %%DATADIR%%/PEAR
+@dirrm %%DATADIR%%/XML/RPC
+@unexec rmdir %D/share/pear/XML 2> /dev/null || true
+@dirrm %%DATADIR%%/data/PEAR
+@unexec rmdir %D/share/pear/data 2> /dev/null || true
+@dirrm %%DATADIR%%/tests/XML_RPC/tests
+@dirrm %%DATADIR%%/tests/XML_RPC
+@unexec rmdir %D/share/pear/tests 2> /dev/null || true
+@unexec rmdir %D/share/pear 2> /dev/null || true

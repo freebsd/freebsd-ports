@@ -1,0 +1,13 @@
+PEAR is a framework and distribution system for reusable PHP components.
+
+PEAR is short for "PHP Extension and Application Repository" and is
+pronounced just like the fruit. The purpose of PEAR is to provide:
+ - A structured library of open-sourced code for PHP users
+ - A system for code distribution and package maintenance
+ - A standard style for code written in PHP
+ - The PHP Extension Community Library (PECL)
+
+WWW: http://pear.php.net/
+
+- Alex Dupre
+ale@FreeBSD.org
