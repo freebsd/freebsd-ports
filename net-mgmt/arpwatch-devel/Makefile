@@ -7,6 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a13
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 PKGNAMESUFFIX=	-devel
