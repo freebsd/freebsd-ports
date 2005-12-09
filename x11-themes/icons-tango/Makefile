@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icons-tango
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango-project.org/releases/
 DISTNAME=	tango-icon-theme-${PORTVERSION}
@@ -14,12 +14,12 @@ DISTNAME=	tango-icon-theme-${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	A basic set of icons for the most common usage
 
-BUILD_DEPENDS=  icon-name-mapping:${PORTSDIR}/x11-themes/icon-naming-utils \
+BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/icon-naming-utils \
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 
-USE_GNOME=	intlhack
-GNU_CONFIGURE=  yes
-USE_GMAKE=      yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	intlhack
 
 .include <bsd.port.mk>
