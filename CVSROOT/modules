@@ -9167,6 +9167,7 @@ pdumpfs		ports/sysutils/pdumpfs
 pdumpfs-clean	ports/sysutils/pdumpfs-clean
 pdumpfs-rsync	ports/sysutils/pdumpfs-rsync
 peacock		ports/www/peacock
+pear		ports/devel/pear
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_HTTP	ports/security/pear-Auth_HTTP
