@@ -1,14 +1,29 @@
-
-$FreeBSD$
-
---- configure.orig
-+++ configure
-@@ -1674,7 +1674,7 @@
-           ac_config_headers="$ac_config_headers lib/ftconfig.h:lib/ftconfig.h.in"
+--- configure.orig	Wed May 11 16:15:55 2005
++++ configure	Fri Dec  9 15:30:02 2005
+@@ -1662,7 +1662,7 @@
+ 
  
  
 -CFLAGS="-g -Wall"
-+CFLAGS="-g -Wall -fPIC"
++CFLAGS="-fPIC"
  
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
+@@ -3345,7 +3345,7 @@
+ 
+ 
+ if test "x$WHERE_PGSQL" != "x"; then
+-  LIBS="-L$WHERE_PGSQL/lib/pgsql"
++  LIBS="-L$WHERE_PGSQL/lib"
+   echo "$as_me:$LINENO: checking for PQsetdbLogin in -lpq" >&5
+ echo $ECHO_N "checking for PQsetdbLogin in -lpq... $ECHO_C" >&6
+ if test "${ac_cv_lib_pq_PQsetdbLogin+set}" = set; then
+@@ -3402,7 +3402,7 @@
+ echo "${ECHO_T}$ac_cv_lib_pq_PQsetdbLogin" >&6
+ if test $ac_cv_lib_pq_PQsetdbLogin = yes; then
+ 
+-      PGSQLCFLAGS="-L$WHERE_PGSQL/lib -I$WHERE_PGSQL/include/pgsql"
++      PGSQLCFLAGS="-L$WHERE_PGSQL/lib -I$WHERE_PGSQL/include"
+       PGSQLLIB="-lpq"
+       cat >>confdefs.h <<\_ACEOF
+ #define HAVE_PGSQL 1

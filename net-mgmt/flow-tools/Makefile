@@ -7,12 +7,14 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	Suite of tools and library to work with netflow data
 
+USE_PYTHON_RUN=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir=${PREFIX}
@@ -25,8 +27,17 @@ MAN1=	flow-capture.1 flow-cat.1 flow-dscan.1 flow-expire.1	\
 	flow-tag.1 flow-tools.1	flow-tools-examples.1 		\
 	flow-xlate.1 flow-rptfmt.1 flow-log2rrd.1 flow-rpt2rrd.1
 
+.if defined(WITH_PGSQL)
+CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
+USE_PGSQL=	yes
+.endif
+
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+USE_MYSQL=	yes
+.endif
+
 post-patch:
-	${TOUCH} -r ${WRKSRC}/configure.in.orig ${WRKSRC}/configure.in
 	${REINPLACE_CMD}\
 	 -e 's|@localstatedir@/sym/|${PREFIX}/share/flow-tools/|' \
 	 -e 's|@localstatedir@/cfg/|${PREFIX}/etc/flow-tools/|' \
