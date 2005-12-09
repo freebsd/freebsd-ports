@@ -7781,6 +7781,7 @@ p5-Devel-StealthDebug	ports/devel/p5-Devel-StealthDebug
 p5-Devel-Symdump	ports/devel/p5-Devel-Symdump
 p5-Devel-Trace	ports/devel/p5-Devel-Trace
 p5-Devel-TraceCalls	ports/devel/p5-Devel-TraceCalls
+p5-Devel-TraceSAX	ports/textproc/p5-Devel-TraceSAX
 p5-Devel-ptkdb	ports/devel/p5-Devel-ptkdb
 p5-Device-Modem	ports/comms/p5-Device-Modem
 p5-Device-SerialPort	ports/comms/p5-Device-SerialPort
