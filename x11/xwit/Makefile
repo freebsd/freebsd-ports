@@ -8,7 +8,9 @@
 PORTNAME=	xwit
 PORTVERSION=	3.4
 CATEGORIES=	x11
-MASTER_SITES=	http://www.x.org/contrib/utilities/
+MASTER_SITES=	http://gd.tuwien.ac.at/hci/X11/contrib/utilities/ \
+		http://public.planetmirror.com/pub/x11/contrib/utilities/ \
+		http://www.netsw.org/x11/tools/internal/
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	X interface tool
