@@ -154,10 +154,12 @@ include/wine/windows/dpaddr.h
 include/wine/windows/dplay.h
 include/wine/windows/dplay8.h
 include/wine/windows/dplobby.h
+include/wine/windows/dplobby8.h
 include/wine/windows/dsconf.h
 include/wine/windows/dshow.h
 include/wine/windows/dsdriver.h
 include/wine/windows/dsound.h
+include/wine/windows/dsrole.h
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -337,6 +339,7 @@ include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
 include/wine/windows/urlmon.h
 include/wine/windows/urlmon.idl
+include/wine/windows/usp10.h
 include/wine/windows/uuids.h
 include/wine/windows/uxtheme.h
 include/wine/windows/ver.h
