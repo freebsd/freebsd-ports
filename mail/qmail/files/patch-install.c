@@ -29,7 +29,7 @@
  }
  
 -void main()
-+void main(argc, argv)
++int main(argc, argv)
  {
 +  noc=--argc;
    fdsourcedir = open_read(".");
