@@ -1,0 +1,42 @@
+--- Makefile.in.orig	Fri Sep  2 15:11:29 2005
++++ Makefile.in	Thu Dec  8 16:34:29 2005
+@@ -210,12 +210,12 @@
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(prefix)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(bindir)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(includedir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(libdir)/pkgconfig
++	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man3
+ 	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(mandir)/man1
+ 	$(SHTOOL) install -c -m 755 uuid-config $(DESTDIR)$(bindir)/
+ 	$(SHTOOL) install -c -m 644 $(S)/uuid-config.1 $(DESTDIR)$(mandir)/man1/
+-	$(SHTOOL) install -c -m 644 $(S)/uuid.pc $(DESTDIR)$(libdir)/pkgconfig/
++	$(SHTOOL) install -c -m 644 $(S)/uuid.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/
+ 	$(SHTOOL) install -c -m 644 uuid.h $(DESTDIR)$(includedir)/
+ 	-@if [ ".$(WITH_DCE)" = .yes ]; then \
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid_dce.h $(DESTDIR)$(includedir)/"; \
+@@ -230,7 +230,7 @@
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/"; \
+ 	    $(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/; \
+ 	fi
+-	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 libuuid.la $(DESTDIR)$(libdir)/
++	$(SHTOOL) install -c -m 644 .libs/libuuid.a $(DESTDIR)$(libdir)/
+ 	-@if [ ".$(WITH_DCE)" = .yes ]; then \
+ 	    $(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 libuuid_dce.la $(DESTDIR)$(libdir)/; \
+ 	fi
+@@ -270,13 +270,13 @@
+ 	    echo "$(RM) $(DESTDIR)$(includedir)/uuid++.hh"; \
+ 	    $(RM) $(DESTDIR)$(includedir)/uuid++.hh; \
+ 	fi
+-	-$(RM) $(DESTDIR)$(libdir)/pkgconfig/uuid.pc
++	-$(RM) $(DESTDIR)$(prefix)/libdata/pkgconfig/uuid.pc
+ 	-$(RM) $(DESTDIR)$(mandir)/man1/uuid-config.1
+ 	-$(RM) $(DESTDIR)$(bindir)/uuid-config
+ 	-$(RMDIR) $(DESTDIR)$(mandir)/man1 >/dev/null 2>&1 || $(TRUE)
+ 	-$(RMDIR) $(DESTDIR)$(mandir)/man3 >/dev/null 2>&1 || $(TRUE)
+ 	-$(RMDIR) $(DESTDIR)$(mandir) >/dev/null 2>&1 || $(TRUE)
+-	-$(RMDIR) $(DESTDIR)$(libdir)/pkgconfig >/dev/null 2>&1 || $(TRUE)
++	-$(RMDIR) $(DESTDIR)$(prefix)/libdata/pkgconfig >/dev/null 2>&1 || $(TRUE)
+ 	-$(RMDIR) $(DESTDIR)$(libdir) >/dev/null 2>&1 || $(TRUE)
+ 	-$(RMDIR) $(DESTDIR)$(includedir) >/dev/null 2>&1 || $(TRUE)
+ 	-$(RMDIR) $(DESTDIR)$(bindir) >/dev/null 2>&1 || $(TRUE)
