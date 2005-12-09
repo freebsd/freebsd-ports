@@ -189,6 +189,7 @@
     SUBDIR += xenon
     SUBDIR += xmleditor
     SUBDIR += xvile
+    SUBDIR += xxe
     SUBDIR += yudit
     SUBDIR += zed
     SUBDIR += zile
