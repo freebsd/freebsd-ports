@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.99
+PORTVERSION=	1.0
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
 		http://www.bitlbee.be/andy/:msn6
@@ -14,7 +14,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:bitlbee
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://get.bitlbee.org/patches/
-PATCHFILES=	${DISTNAME}-bsd-install.diff
 
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
@@ -46,10 +45,6 @@ CONFIGURE_ARGS+=--msn=1
 CONFIGURE_ARGS+=--msn=0 --ssl=bogus
 .endif
 
-.if defined(WITH_FLOOD)
-CONFIGURE_ARGS+=--flood=1
-.endif
-
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--ldap=${LOCALBASE}
@@ -66,12 +61,6 @@ pre-configure:
 . else
 	@${ECHO_CMD} "MSN 6 features will be enabled."
 . endif
-.endif
-
-.if !defined(WITH_FLOOD)
-	@${ECHO_CMD} "Type \"make -DWITH_FLOOD\" if you want to enable flood protection."
-.else
-	@${ECHO_CMD} "Flood protection will be enabled."
 .endif
 
 .if !defined(WITH_LDAP)
