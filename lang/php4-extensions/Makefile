@@ -16,10 +16,11 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A "meta-port" to install PHP extensions
 
-NO_BUILD=	# none
-
 DEFAULT_PHP_VER=4
 BROKEN_WITH_PHP=5
+USE_PHP_BUILD=	yes
+
+NO_BUILD=	yes
 
 WITH_CTYPE=	yes
 WITH_MYSQL=	yes
@@ -121,10 +122,7 @@ SEL_OPTIONS+=	${opt:L}
 .endfor
 USE_PHP=	${SEL_OPTIONS}
 
-do-build:
-	@${DO_NADA}
-
-do-install:
+do-install: build
 	@${DO_NADA}
 
 .include <bsd.port.mk>
