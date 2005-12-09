@@ -11,6 +11,7 @@ include/curl/types.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.%%SHLIB_VER%%
+libdata/pkgconfig/libcurl.pc
 %%SSL%%%%DATADIR%%/curl-ca-bundle.crt
 %%SSL%%@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS
@@ -21,6 +22,7 @@ lib/libcurl.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.devcpp
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE-MIXING
