@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -15,7 +16,7 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://ftp.cfu.net/pub/amavisd-new/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
-MAINTAINER=	blaz@si.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
@@ -116,7 +117,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 post-patch:
-	@for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny; do \
+	@for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny amavisd-release; do \
 		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
 	done
 
@@ -133,6 +134,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-agent ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-nanny ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd-release ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 .if !exists(${PREFIX}/etc/amavisd.conf)
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc
