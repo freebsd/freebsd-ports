@@ -1,5 +1,4 @@
 bin/memcached
-etc/rc.d/memcached.sh
 %%PORTDOCS%%%%DOCSDIR%%/memory_management.txt
 %%PORTDOCS%%%%DOCSDIR%%/protocol.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
