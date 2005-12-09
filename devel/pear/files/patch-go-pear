@@ -1,0 +1,134 @@
+--- go-pear.orig	Mon Dec  5 07:50:50 2005
++++ go-pear	Thu Dec  8 10:04:09 2005
+@@ -278,6 +278,7 @@
+     $install_pfc = $_SESSION['go-pear']['install_pfc'];
+ }
+ 
++/*
+ if (!WEBINSTALLER) {
+     $tty = WINDOWS ? @fopen('\con', 'r') : @fopen('/dev/tty', 'r');
+ 
+@@ -321,6 +322,7 @@
+         $http_proxy = $tmp;
+     }
+ }
++*/
+ 
+ $origpwd = getcwd();
+ 
+@@ -415,6 +417,7 @@
+ mkdir_p($ptmp, 0700);
+ $ok = @chdir($ptmp);
+ 
++/*
+ while (!WEBINSTALLER) {
+     print "
+ Below is a suggested file layout for your new PEAR installation.  To
+@@ -495,6 +498,7 @@
+         }
+     }
+ }
++*/
+ 
+ foreach ($config_vars as $n => $var) {
+     for ($m = 1; $m <= count($config_vars); $m++) {
+@@ -519,6 +523,7 @@
+     }
+ }
+ 
++/*
+ if (!WEBINSTALLER) {
+     $msg = "The following PEAR packages are bundled with PHP: " .
+         implode(', ', $pfc_packages);
+@@ -527,6 +532,7 @@
+     $install_pfc = !stristr(fgets($tty, 1024), "n");
+     print "\n";
+ }
++*/
+ 
+ ####
+ # Download
+@@ -534,6 +540,7 @@
+ 
+ ini_set("include_path", $ptmp);
+ 
++/*
+ if (!extension_loaded('zlib') && !WEBINSTALLER) { // In Web context we could be in multithread env which makes dl() end up with a fatal error.
+     if (WINDOWS) {
+         @dl('php_zlib.dll');
+@@ -556,6 +563,7 @@
+ if (!$have_gzip) {
+     print "Downloading uncompressed packages\n";
+ };
++*/
+ 
+ if ($install_pfc) {
+     $to_install = array_merge($installer_packages, $pfc_packages);
+@@ -580,7 +588,7 @@
+ 
+ foreach ($installer_packages as $pkg) {
+     foreach($local_dir as $file) {
+-        if (substr($file, 0, strlen(str_replace('-stable', '', $pkg))) == str_replace('-stable', '', $pkg)) {
++        if (substr($file, 0, strlen(str_replace('stable', '', $pkg))) == str_replace('stable', '', $pkg)) {
+             $pkg = str_replace('-stable', '', $pkg);
+             echo str_pad("Using local package: $pkg", max(38,21+strlen($pkg)+4), '.');
+             copy(dirname(__FILE__).'/go-pear-bundle/'.$file, $file);
+@@ -688,7 +696,7 @@
+ if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
+     $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
+ } else {
+-    $config = &PEAR_Config::singleton();
++    $config = &PEAR_Config::singleton($prefix."/etc/pear.conf", '');
+ };
+ $config->set('preferred_state', 'stable');
+ foreach ($config_vars as $var) {
+@@ -719,6 +727,7 @@
+ 
+ // Base installation finished
+ 
++/*
+ ini_restore("include_path");
+ 
+ if (!WEBINSTALLER) {
+@@ -876,6 +885,7 @@
+ if (WINDOWS && !WEBINSTALLER) {
+     win32CreateRegEnv();
+ }
++*/
+ // Set of functions following
+ 
+ // {{{ download_url()
+@@ -1248,15 +1258,16 @@
+         }
+     } else {
+         if ($_prefix === null) {
+-            $prefix    = dirname(PHP_BINDIR);
++            $prefix    = "%%PREFIX%%";
+         } else {
+             $prefix = $_prefix;
+         }
+         $bin_dir   = '$prefix/bin';
+         $php_dir   = '$prefix/share/pear';
+-        $doc_dir   = '$php_dir/docs';
++        $doc_dir   = '$prefix/share/doc/pear';
+         $data_dir  = '$php_dir/data';
+         $test_dir  = '$php_dir/tests';
++/*
+         // check if the user has installed PHP with PHP or GNU layout
+         if (@is_dir("$prefix/lib/php/.registry")) {
+             $php_dir = '$prefix/lib/php';
+@@ -1268,6 +1279,7 @@
+         } elseif (@is_dir("$prefix/share/php/.registry")) {
+             $php_dir = '$prefix/share/php';
+         }
++*/
+     }
+ }
+ 
+@@ -2373,4 +2385,4 @@
+     }
+     return true;
+ }
+-?>
+\ No newline at end of file
++?>

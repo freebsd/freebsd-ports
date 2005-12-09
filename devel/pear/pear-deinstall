@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Remove package declaration from PEAR's registry.
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+PKG_NAME=${1%%-[0-9._]*}
+PACKAGE=$(echo $PKG_NAME | sed 's/pear-//')
+
+PEAR=${PKG_PREFIX}/bin/pear
+
+${PEAR} uninstall -r -n ${PACKAGE} || true
