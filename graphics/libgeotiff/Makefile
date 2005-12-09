@@ -1,0 +1,29 @@
+# New ports collection makefile for:		libgeotiff
+# Date created:					9 December 2005
+# Whom:						Sam Lawrance
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libgeotiff
+PORTVERSION=	1.2.2
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
+		http://dl1.maptools.org/dl/geotiff/libgeotiff/
+
+MAINTAINER=	lawrance@FreeBSD.org
+COMMENT=	Library for reading and writing GeoTIFF information tags
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		proj.5:${PORTSDIR}/graphics/proj \
+		tiff.4:${PORTSDIR}/graphics/tiff
+
+CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
+		--with-proj=${LOCALBASE} \
+		--with-libtiff=${LOCALBASE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>

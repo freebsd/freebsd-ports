@@ -294,6 +294,7 @@
     SUBDIR += libflash
     SUBDIR += libfpx
     SUBDIR += libgdgeda
+    SUBDIR += libgeotiff
     SUBDIR += libggi
     SUBDIR += libggigcp
     SUBDIR += libggimisc
