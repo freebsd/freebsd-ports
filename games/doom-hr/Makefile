@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.planetmirror.com/pub/idgames/themes/hr/ \
 		ftp://ftp.ntua.gr/pub/vendors/idgames/themes/hr/ \
 		http://ftp.sunet.se/pub/pc/games/idgames/themes/hr/ \
 		ftp://3darchives.in-span.net/pub/idgames/themes/hr/
+PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
@@ -20,12 +21,14 @@ MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Hell Revealed is a megawad, a 32-level replacement for DooM II
 
 USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-aqo
+USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	DEMO_NM "Install demos with -nomonsters" on \
 		DEMO_UV "Install Ultra-Violence demos" on
+
+DATADIR=	${DMDIR}/${PORTNAME}
 
 post-extract:
 	@(cd ${WRKDIR} && ${SH} ${SCRIPTDIR}/lowercase.sh)

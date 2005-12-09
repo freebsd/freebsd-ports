@@ -9,6 +9,7 @@ PORTNAME=	hacx
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
+PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}.wad
 EXTRACT_SUFX=	.bz2
 
@@ -18,6 +19,8 @@ COMMENT=	A full TC using the Doom II engine
 USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+DATADIR=	${DMDIR}/${PORTNAME}
 
 PLIST_FILES=	%%DATADIR%%/${DISTNAME}
 PLIST_DIRS=	%%DATADIR%%

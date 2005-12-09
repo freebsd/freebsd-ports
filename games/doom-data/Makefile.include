@@ -1,42 +1,33 @@
 # Makefile for defining variables used by other Doom related ports.
 
-# Determine if the port is a Doom engine.
+# Set variables.
 
-DMENGINES=	deng doom doomlegacy prboom vavoom
+DMPKGNAMEPREFIX?=doom-
+DMDIR?=		${LOCALBASE}/share/doom
 
-.for f in ${DMENGINES}
-.   if ${PORTNAME} == ${f}
-ENGINE=		yes
-.   endif
-.endfor
+# Add them to the environment.
 
-# Package name prefix.
+MAKE_ENV+=	DMDIR="${DMDIR}"
+PLIST_SUB+=	DMDIR="${DMDIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	DMDIR="${DMDIR}"
 
-DMPKGNAMEPREFIX=doom-
-
-.if !defined(ENGINE)
-PKGNAMEPREFIX?=	${DMPKGNAMEPREFIX}
-.endif
-
-# Dependency to "games/doom-data".
+# Add the dependency.
 
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${DMDIR}:${PORTSDIR}/games/doom-data
 .endif
 
-# Installation directories.
+# DOS to Unix text conversion.
 
-DMDIR=		${PREFIX}/share/doom
-
-.if ${PORTNAME} == "data"
-DATADIR?=	${DMDIR}
+.if defined(USE_CRLF)
+.   if defined(USE_ZIP)
+EXTRACT_BEFORE_ARGS=	-aqo
+.   else
+USE_REINPLACE=	yes
+pre-patch:
+	@${FIND} ${WRKDIR} -type f -print0 | \
+		${XARGS} -0 ${FILE} | ${GREP} 'CRLF' | \
+		${SED} -e "s/:.*//" | ${SED} -e 's/ /\\ /g' | \
+		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
+.   endif
 .endif
-
-.if ${PORTNAME} != "data" && !defined(ENGINE)
-DATADIR?=	${DMDIR}/${PORTNAME}
-.endif
-
-DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-PLIST_SUB+=	DMDIR="${DMDIR:S/${PREFIX}\///}"
-SUB_LIST+=	DMDIR="${DMDIR}"

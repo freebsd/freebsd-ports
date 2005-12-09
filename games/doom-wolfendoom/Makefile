@@ -9,6 +9,7 @@ PORTNAME=	wolfendoom
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/doom/
+PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	alejandro@varnet.biz
@@ -17,6 +18,8 @@ COMMENT=	Wolfenstein 3D levels ported to Doom II
 USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+DATADIR=	${DMDIR}/${PORTNAME}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
