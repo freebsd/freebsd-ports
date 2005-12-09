@@ -7,6 +7,7 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.52.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -26,6 +27,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
+		subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		${BUILD_DEPENDS}
