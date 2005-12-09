@@ -437,6 +437,7 @@
     SUBDIR += pyfind
     SUBDIR += qlogtools
     SUBDIR += qtpkg
+    SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
     SUBDIR += rc_subr
