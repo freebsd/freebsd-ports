@@ -38,3 +38,4 @@ etc/amavisd.conf-sample
 sbin/amavisd
 sbin/amavisd-agent
 sbin/amavisd-nanny
+sbin/amavisd-release
