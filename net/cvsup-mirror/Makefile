@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsup-mirror
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 DISTFILES=
 
@@ -22,9 +22,10 @@ IS_INTERACTIVE=	true
 NO_PACKAGE=	too interactive
 SCRIPTS_ENV=	USA_RESIDENT=${USA_RESIDENT}
 
+USE_RC_SUBR=	cvsupd.sh
+
 base=${PREFIX}/etc/cvsup
 distrib=${base}/sup.client/distrib
-rc=${PREFIX}/etc/rc.d
 
 do-extract:
 	@test -d ${WRKSRC} || ${MKDIR} ${WRKSRC}
@@ -32,13 +33,11 @@ do-extract:
 do-install:
 	@${ECHO_MSG} "Installing files"
 	@test -d ${distrib} || ${MKDIR} ${distrib}
-	@test -d ${rc} || ${MKDIR} ${rc}
 	@${INSTALL_DATA} ${WRKSRC}/config.sh ${base}
 	@${INSTALL_DATA} ${WRKSRC}/cvsupd.access ${base}
 	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}
 	@${INSTALL_DATA} ${FILESDIR}/refuse.self ${distrib}
-	@${INSTALL_SCRIPT} ${FILESDIR}/cvsupd.sh ${rc}
 	@${CP} /dev/null ${base}/.start_server
 
 post-install:
