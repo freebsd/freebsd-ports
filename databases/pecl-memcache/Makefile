@@ -16,13 +16,11 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	tux@pinguru.net
 COMMENT=	Memcached extension
 
-RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
-
 USE_PHP=	zlib
 USE_PHPEXT=	yes
 PHP_MODNAME=	memcache
 
-CONFIGURE_ARGS+=--with-zlib-dir=/usr
+CONFIGURE_ARGS=	--with-zlib-dir=/usr
 
 .if !defined(NOPORTDOCS)
 post-install:
