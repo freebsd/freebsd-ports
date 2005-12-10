@@ -2664,6 +2664,7 @@ gai-album	ports/audio/gai-album
 gai-visual-audio	ports/audio/gai-visual-audio
 gail		ports/accessibility/gail
 gaim		ports/net-im/gaim
+gaim-assistant	ports/net-im/gaim-assistant
 gaim-bangexec	ports/net-im/gaim-bangexec
 gaim-encryption	ports/security/gaim-encryption
 gaim-extprefs	ports/net-im/gaim-extprefs
