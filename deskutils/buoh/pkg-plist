@@ -1,0 +1,19 @@
+bin/buoh
+share/applications/buoh.desktop
+%%DATADIR%%/comics/comics.xml
+%%DATADIR%%/pixmaps/buoh16x16.png
+%%DATADIR%%/pixmaps/buoh64x64.png
+%%DATADIR%%/ui/buoh-ui.xml
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+share/pixmaps/buoh64x64.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/comics
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
