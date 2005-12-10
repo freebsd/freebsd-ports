@@ -6,12 +6,14 @@
 # $FreeBSD$
 
 PORTNAME=	boost
-PORTVERSION=	1.33.0
+PORTVERSION=	1.33.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
 MASTER_SITE_SUBDIR=boost/:boost_site
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:boost_site
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Free peer-reviewed portable C++ source libraries
@@ -25,7 +27,7 @@ MAKE_ENV+=	GCC="${CC} ${CFLAGS}"\
 		STLPORT_ROOT=/
 
 .if defined(WITH_PYTHON) || defined (WITH_PYSTE)
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 .endif
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
@@ -104,7 +106,8 @@ SPIRIT_VERSION=	1.6.2
 EXTRA_PATCHES=	${FILESDIR}/FBSD4-patch-boost_detail_utf8_codecvt_facet.hpp \
 		${FILESDIR}/FBSD4-patch-libs_serialization_src_stl_port.cpp \
 		${FILESDIR}/FBSD4-patch-libs::serialization::build::Jamfile \
-		${FILESDIR}/FBSD4-patch-boost_test_impl_test_tools.ipp
+		${FILESDIR}/FBSD4-patch-boost_test_impl_test_tools.ipp \
+		${FILESDIR}/FBSD4-patch-boost_archive_detail_oserializer.hpp
 
 .if !defined(WITH_GCC34)
 USE_ZIP=	yes
@@ -288,9 +291,11 @@ do-build:
 .endif
 
 do-install:
+	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${BJAM} ${PREFIX}/bin/
 
 # Install libraries
+	${MKDIR} ${PREFIX}/lib
 	${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.a"\
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
@@ -306,6 +311,7 @@ do-install:
 .endfor
 
 # Install headers
+	${MKDIR} ${PREFIX}/include
 	cd ${WRKSRC} && \
 	${FIND} boost -type d -a \! -name "*.orig"\
 		-exec ${MKDIR} ${PREFIX}/include/\{\} \;
@@ -330,7 +336,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 
 	${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0444 {} \;
-	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0555 {} \;
+	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \;
 	${FIND} ${WRKSRC} -name ".cvsignore" -delete
 	cd ${WRKSRC} &&\
 	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css"\
