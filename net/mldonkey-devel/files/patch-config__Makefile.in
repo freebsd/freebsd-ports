@@ -1,0 +1,20 @@
+--- ../mldonkey.orig/config/Makefile.in	Wed Nov 30 21:46:02 2005
++++ config/Makefile.in	Sat Dec 10 17:44:06 2005
+@@ -19,7 +19,7 @@
+ 
+ ##################################################################
+ 
+-DEVFLAGS= -warn-error Am 
++DEVFLAGS= #-warn-error Am 
+ # -dtypes
+ 
+ NO_LIBS_byte=
+@@ -1722,7 +1722,7 @@
+ PA_ZOG_FILES=tools/zoggy/zog_types.ml tools/zoggy/zog_messages.ml tools/zoggy/zog_misc.ml tools/zoggy/pa_zog.ml
+ 
+ pa_zog.cma: $(PA_ZOG_FILES)
+-	$(OCAMLC) -I tools/zoggy -I +camlp4 -pp "$(CAMLP4) pa_o.cmo pr_dump.cmo" -a -o pa_zog.cma  $(PA_ZOG_FILES)
++	$(OCAMLC) -I tools/zoggy -I +camlp4 -pp "$(CAMLP4) pa_o.cmo pr_dump.cmo -loc loc" -a -o pa_zog.cma  $(PA_ZOG_FILES)
+ 
+ 
+ OCAMLPP=./ocamlpp.byte

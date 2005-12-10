@@ -1,0 +1,31 @@
+--- ../mldonkey.orig/config/configure.in	Tue Dec  6 18:43:02 2005
++++ config/configure.in	Sat Dec 10 17:44:06 2005
+@@ -133,9 +133,9 @@
+ if test ! -z "$SUB_VERSION3"; then
+   MLDONKEY_VERSION=$MLDONKEY_VERSION.$SUB_VERSION3
+ fi
+-REQUIRED_OCAML=3.08.4
+-DOWNLOAD_OCAML_MAJOR=3.08
+-DOWNLOAD_OCAML=3.08.4
++REQUIRED_OCAML=3.09.0
++DOWNLOAD_OCAML_MAJOR=3.09
++DOWNLOAD_OCAML=3.09.0
+ 
+ REQUIRED_LABLGTK=1.2.7
+ 
+@@ -332,6 +332,7 @@
+   OCAMLVERSION=`$OCAMLC -v | sed -n -e 's|.*version* *\(.*\)$|\1|p' `
+   case "$OCAMLVERSION" in
+     "$REQUIRED_OCAML"*) ;;
++    3.08.4*) ;;
+     3.08.3*) ;;
+     3.08.2*)
+         if test "$system" = "rhapsody"; then
+@@ -503,6 +504,7 @@
+ REBUILD_OCAML=no
+ case "$OCAMLVERSION" in
+     "$REQUIRED_OCAML"*) ;;
++    3.08.4*) ;;
+     3.08.3*) ;;
+     3.08.2*)
+         if test "$system" = "rhapsody"; then
