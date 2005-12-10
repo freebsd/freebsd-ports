@@ -921,6 +921,7 @@ buildbot	ports/devel/buildbot
 buildtool	ports/devel/buildtool
 buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
+buoh		ports/deskutils/buoh
 burgerspace	ports/games/burgerspace
 bush		ports/shells/bush
 buttonbox	ports/x11/buttonbox
