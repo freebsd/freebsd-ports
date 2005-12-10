@@ -7,7 +7,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to the Sary library
 
-LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
