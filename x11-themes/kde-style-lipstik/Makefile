@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lipstik
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
@@ -14,7 +14,6 @@ DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Modified Plastik KDE style
 
-USE_AUTOTOOLS=	autoheader:259
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_REINPLACE=	yes
