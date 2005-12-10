@@ -15,6 +15,8 @@ DISTNAME=	globalwarfare_beta1.2.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Global Warfare full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 WRKSRC=		${WRKDIR}/globalwarfare
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
