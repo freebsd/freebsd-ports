@@ -61,6 +61,7 @@
     SUBDIR += simlib
     SUBDIR += szip
     SUBDIR += udunits
+    SUBDIR += v_sim
     SUBDIR += vis5d+
     SUBDIR += vmd
     SUBDIR += x11iraf
