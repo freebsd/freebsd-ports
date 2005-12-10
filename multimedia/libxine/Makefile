@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -56,11 +55,6 @@ MAN1=	xine-config.1
 MAN5=	xine.5
 
 .include <bsd.port.pre.mk>
-
-# CDIOCREADAUDIO macro is not defined
-.if ${OSVERSION} >= 501106
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:input:input_cdda.c
-.endif
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
 PLIST_SUB+=	WITH_LIBXV=""

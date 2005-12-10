@@ -1,6 +1,6 @@
---- configure.orig	Mon Nov 15 02:57:21 2004
-+++ configure	Mon Nov 15 02:57:39 2004
-@@ -25382,7 +25382,7 @@
+--- configure.orig	Sun Dec 11 03:18:42 2005
++++ configure	Sun Dec 11 03:23:42 2005
+@@ -26269,7 +26269,7 @@
                   "ac_cv_lib_avcodec_pp_get_context" \
                   "ac_cv_lib_postproc_pp_get_context" \
                   "ac_cv_lib_avcodec_register_avcodec"; do
@@ -9,3 +9,12 @@
          done
  
                  if test "${ac_cv_header_avcodec_h+set}" = set; then
+@@ -26804,7 +26804,7 @@
+       fi
+     else
+             CPPFLAGS="${FFMPEG_CPPFLAGS} ${ac_save_CPPFLAGS}"
+-      LDFLAGS="${FFMPEG_LIBS} ${FFMPEG_POSTPROC_LIBS } ${ac_save_LDFLAGS}"
++      LDFLAGS="${FFMPEG_LIBS} ${FFMPEG_POSTPROC_LIBS} ${ac_save_LDFLAGS}"
+       cat >conftest.$ac_ext <<_ACEOF
+ #include <avcodec.h>
+ #include <postprocess.h>
