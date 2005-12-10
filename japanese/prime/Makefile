@@ -7,13 +7,14 @@
 
 PORTNAME=	prime
 DISTVERSION=	1.0.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 
 MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	PRedictive Input Method Editor(PRIME)
 
-LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary
+LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/sary.so:${PORTSDIR}/textproc/ruby-sary \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv \
 		${LOCALBASE}/share/emacs/site-lisp/init-suikyo.el:${PORTSDIR}/japanese/suikyo \
