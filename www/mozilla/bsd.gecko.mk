@@ -136,7 +136,7 @@ XPIDL_INCL?=			`${GECKO_CONFIG} --idlflags`
 BUILD_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 RUN_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 .else
-BROKEN="Incorrect use of USE_GECKO"
+BROKEN="Unable to find a supported gecko, please check USE_GECKO"
 .endif
 
 pre-everything:: _gecko-pre-everything
