@@ -585,6 +585,7 @@ avida		ports/biology/avida
 avidemux2	ports/multimedia/avidemux2
 aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
+avifonts	ports/x11-fonts/avifonts
 avinfo		ports/multimedia/avinfo
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
