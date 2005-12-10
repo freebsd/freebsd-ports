@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hdup
-PORTVERSION=	2.0.13
+PORTVERSION=	2.0.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 		http://www.miek.nl/projects/hdup2/previous
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	The little, spiffy, backup tool
 
-WRKSRC=		${WRKDIR}/hdup2
+#WRKSRC=		${WRKDIR}/hdup2
 
 OPTIONS=	GNUTAR_PORT "Build with the newest GNU tar from ports" no
 
