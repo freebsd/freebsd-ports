@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2005.13.07
+PORTVERSION=	2006.01.01
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 DISTNAME=	${PORTNAME}
@@ -27,12 +27,12 @@ EXTRACT_BEFORE_ARGS=	#
 ALL_TARGET=	${PORTNAME}
 
 CFLAGS+=	-D HAVE_DIRENT_H \
-		-D DEFAULT_HELPFILE=${PREFIX}/lib/X11/seaview/seaview.help
+		-D DEFAULT_HELPFILE=${PREFIX}/lib/X11/${PORTNAME}/seaview.help
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/seaview_align.sh ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/X11/seaview
-	@${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
+	@${MKDIR} ${PREFIX}/lib/X11/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/${PORTNAME}
 
 .include <bsd.port.mk>
