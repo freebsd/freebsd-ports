@@ -1,11 +1,5 @@
-libexec/%%APACHE%%/mod_security.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 @exec %D/sbin/apxs -e -a -n security %D/%F
 @unexec %D/sbin/apxs -e -A -n security %D/%F
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/modsecurity-manual.pdf
 %%EXAMPLESDIR%%/httpd.conf.example-minimal
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
