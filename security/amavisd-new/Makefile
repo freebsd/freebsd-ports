@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://ftp.cfu.net/pub/amavisd-new/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
