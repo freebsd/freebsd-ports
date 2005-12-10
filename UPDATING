@@ -6,6 +6,35 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051210:
+  AFFECTS: users of mail/fetchmail using SSL encryption
+  AUTHOR: barner@FreeBSD.org
+ 
+  Fetchmail now checks the validity of server certificates and complains
+  verbosely in maillog if the validation fails.
+
+  If your mail server's certificate is not signed by one of the root
+  authorities, you have to manually configure them using the following steps:
+
+    * Download the necessary certificates in PEM format and store them
+      at a suitable location, e.g. /home/user/.certs
+
+    * Run the c_rehash tool on the freshly installed certificates:
+
+      - If you are using OpenSSL from the base system (this is the default)
+        use the following command:
+	% perl /usr/src/crypto/openssl/tools/c_rehash /home/user/.certs
+
+      - If you are using OpenSSL from security/openssl please use
+        % c_rehash /home/user/.certs
+
+    * Use the following options to enable SSL encryption your .fetchmailrc
+      configuration file:
+
+      options ssl sslcertpath /home/user/.certs sslcertck
+              sslfingerprint '< fingerprint >'
+	      < other options >
+
 20051208:
   AFFECTS: users of net/py-bittorrent and net/py-bittorrent-core
   AUTHOR: lioux@FreeBSD.org
