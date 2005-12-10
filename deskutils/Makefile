@@ -14,6 +14,7 @@
     SUBDIR += bigyear
     SUBDIR += blogtk
     SUBDIR += bmp-docklet
+    SUBDIR += buoh
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += checkrdf
