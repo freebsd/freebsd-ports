@@ -1,0 +1,4 @@
+The `nvidia-xconfig` is a tool intended to provide basic control over
+configuration options available in the NVIDIA X driver.
+
+WWW: http://www.nvidia.com/object/unix.html

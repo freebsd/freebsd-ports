@@ -1,0 +1,45 @@
+--- Makefile.orig	Wed Nov 23 11:58:16 2005
++++ Makefile	Sat Dec 10 17:21:45 2005
+@@ -56,12 +56,11 @@
+   CFLAGS += -g -DDEBUG
+ else
+   STRIP = strip
+-  CFLAGS += -O
+ endif
+ 
+ # default prefix
+ ifdef ROOT
+-  prefix = $(ROOT)/usr
++  prefix = $(ROOT)
+ else
+   prefix = /usr/local
+ endif
+@@ -80,17 +79,15 @@
+ else
+ ECHO=echo
+ define INSTALL_RULE
+-	$(INSTALL) -m 755 $< $(bindir)
+-	mkdir -p $(mandir)
+-	$(INSTALL) -m 644 $(MANPAGE) $(mandir)
+-	gzip -9f $(mandir)/$(MANPAGE)
++	$(BSD_INSTALL_PROGRAM) $< $(bindir)
++	$(BSD_INSTALL_MAN) $(MANPAGE) $(mandir)
+ endef
+ LLSCF=
+ endif
+ 
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+-mandir = $(exec_prefix)/share/man/man1
++mandir = $(MANPREFIX)/man/man1
+ 
+ NVIDIA_XCONFIG = nvidia-xconfig
+ NVIDIA_XCONFIG_VERSION = 1.0
+@@ -145,7 +142,6 @@
+ all: $(NVIDIA_XCONFIG) $(MANPAGE)
+ 
+ install: $(NVIDIA_XCONFIG)
+-	$(STRIP) $<
+ 	$(INSTALL_RULE)
+ 
+ $(NVIDIA_XCONFIG): $(OBJS) $(LIB)
