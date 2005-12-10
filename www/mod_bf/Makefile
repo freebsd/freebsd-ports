@@ -14,12 +14,8 @@ MASTER_SITE_SUBDIR=	modbf
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A brainf*ck module for Apache
 
-USE_APACHE=	yes
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
+USE_APACHE=	13
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 .include <bsd.port.mk>
