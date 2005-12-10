@@ -8,8 +8,9 @@ libexec/fetchmailconf.py
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%NTLMDOCS%%%%DOCSDIR%%/README.NTLM
-%%PORTDOCS%%%%SSLDOCS%%%%DOCSDIR%%/README.SSL
+%%PORTDOCS%%%%DOCSDIR%%/README.SSL
 %%PORTDOCS%%%%DOCSDIR%%/design-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/esrs-design-notes.html
 %%PORTDOCS%%%%DOCSDIR%%/fetchmail-FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/fetchmail-features.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
