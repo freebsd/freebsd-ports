@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-faad2
 
 .if defined (WITH_XINE)
 CONFIGURE_ARGS+=	--enable-xine=yes
-LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 .else
 USE_GSTREAMER+=	gconf
 .endif

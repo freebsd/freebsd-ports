@@ -89,7 +89,7 @@ RUN_DEPENDS+=	dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 .if !defined(WITHOUT_LIBXINE)
-LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-support
 .endif
 .if defined(WITH_MPLAYER)

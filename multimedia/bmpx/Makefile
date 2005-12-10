@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.12.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
@@ -15,7 +16,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Audio player
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		xine.14:${PORTSDIR}/multimedia/libxine \
+		xine.15:${PORTSDIR}/multimedia/libxine \
 		curl.3:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool:15
