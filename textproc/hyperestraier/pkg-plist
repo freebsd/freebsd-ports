@@ -10,8 +10,8 @@ include/estnode.h
 include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
-lib/libestraier.so.7
-lib/libestraier.so.7.0.0
+lib/libestraier.so.8
+lib/libestraier.so.8.0.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
@@ -66,7 +66,9 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/logo.png
 %%DATADIR%%/doc/metatree.png
 %%DATADIR%%/doc/nguide-en.html
+%%DATADIR%%/doc/nguide-en.html~
 %%DATADIR%%/doc/nguide-ja.html
+%%DATADIR%%/doc/nguide-ja.html~
 %%DATADIR%%/doc/nodeframe.png
 %%DATADIR%%/doc/pguide-en.html
 %%DATADIR%%/doc/pguide-ja.html
