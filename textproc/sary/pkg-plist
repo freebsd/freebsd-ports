@@ -17,23 +17,22 @@ include/sary/sorter.h
 include/sary/str.h
 include/sary/text.h
 include/sary/writer.h
-@dirrm include/sary
 lib/libsary.a
-lib/libsary.la
 lib/libsary.so
-lib/libsary.so.9
+lib/libsary.so.10
 libdata/pkgconfig/sary.pc
-%%PORTDOCS%%share/doc/sary/en/libsary.html
-%%PORTDOCS%%share/doc/sary/en/suffix-array.html
-%%PORTDOCS%%share/doc/sary/images/figure1.png
-%%PORTDOCS%%share/doc/sary/images/figure2.png
-%%PORTDOCS%%share/doc/sary/images/figure3.png
-%%PORTDOCS%%share/doc/sary/images/figure4.png
-%%PORTDOCS%%share/doc/sary/images/figure5.png
-%%PORTDOCS%%share/doc/sary/ja/libsary.html
-%%PORTDOCS%%share/doc/sary/ja/suffix-array.html
-%%PORTDOCS%%share/doc/sary/sary.css
-%%PORTDOCS%%@dirrm share/doc/sary/en
-%%PORTDOCS%%@dirrm share/doc/sary/images
-%%PORTDOCS%%@dirrm share/doc/sary/ja
-%%PORTDOCS%%@dirrm share/doc/sary
+%%PORTDOCS%%%%DOCSDIR%%/en/libsary.html
+%%PORTDOCS%%%%DOCSDIR%%/en/suffix-array.html
+%%PORTDOCS%%%%DOCSDIR%%/images/figure1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/figure2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/figure3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/figure4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/figure5.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/libsary.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/suffix-array.html
+%%PORTDOCS%%%%DOCSDIR%%/sary.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/sary
