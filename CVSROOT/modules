@@ -1247,6 +1247,7 @@ columns		ports/games/columns
 comclear	ports/www/comclear
 comconsole	ports/sysutils/comconsole
 comical		ports/graphics/comical
+comix		ports/graphics/comix
 commoncpp	ports/devel/commoncpp
 compaq-cc	ports/lang/compaq-cc
 compat3x	ports/misc/compat3x
