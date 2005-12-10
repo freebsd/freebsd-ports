@@ -12538,6 +12538,7 @@ v		ports/x11-toolkits/v
 v6eval		ports/net/v6eval
 v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
+v_sim		ports/science/v_sim
 valgrind	ports/devel/valgrind
 valgrind-snapshot	ports/devel/valgrind-snapshot
 validator	ports/www/validator
