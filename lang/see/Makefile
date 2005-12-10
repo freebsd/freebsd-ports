@@ -10,6 +10,9 @@ PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.netsw.org/softeng/lang/js/ \
+		ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
+		http://mirror.arcticnetwork.ca/pub/FreeBSD/distfiles/ \
+		http://ftp3.ie.freebsd.org/pub/FreeBSD/distfiles/ \
 		http://www.adaptive-enterprises.com.au/~d/software/see/
 
 MAINTAINER=	sime@logos.hr
