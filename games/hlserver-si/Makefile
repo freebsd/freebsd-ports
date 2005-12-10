@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Science and Industry full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 _DONT_INCLUDE_MK_=yes
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
