@@ -1,0 +1,5 @@
+Comix is an image viewer specifically designed to handle comic books. It reads
+ZIP, RAR and tar archives (also gzip or bzip2 compressed), as well as plain
+image files. It has a simple and user-friendly GUI using PyGTK.
+
+WWW: http://comix.sourceforge.net/

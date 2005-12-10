@@ -1,0 +1,8 @@
+bin/comix
+share/applications/comix.desktop
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/pixmaps/comix.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/applications 2> /dev/null || true
