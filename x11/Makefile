@@ -142,6 +142,7 @@
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
     SUBDIR += nvidia-settings
+    SUBDIR += nvidia-xconfig
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += oooqs
