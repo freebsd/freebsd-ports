@@ -1,7 +1,14 @@
---- configure.in.orig	Sun Nov 21 19:50:36 2004
-+++ configure.in	Mon Dec 13 10:43:16 2004
-@@ -69,7 +69,7 @@
+--- configure.in.orig	Sun Nov 13 06:33:15 2005
++++ configure.in	Sat Dec 10 13:14:10 2005
+@@ -67,9 +67,14 @@
+   AC_MSG_ERROR([APR not found.  Please read the documentation.])
+ fi
  
++if test "x${USE_BUNDLED_APR}" != "x" ; then
++		apr_found=reconfig
++		apr_config=srclib/apr/apr-1-config
++fi
++
  if test "$apr_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr,
 -                    [$apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir --datadir=$datadir --with-installbuilddir=$installbuilddir],
@@ -9,7 +16,19 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the first to build and the last to be cleaned
    AP_BUILD_SRCLIB_DIRS="apr $AP_BUILD_SRCLIB_DIRS"
-@@ -97,7 +97,7 @@
+@@ -95,6 +100,11 @@
+   AC_MSG_ERROR([APR-util not found.  Please read the documentation.])
+ fi
+ 
++if test "x${USE_BUNDLED_APR}" != "x" ; then
++		apu_found=reconfig
++		apu_config=srclib/apr-util/apu-1-config
++fi
++
+ # Catch some misconfigurations:
+ case ${apr_found}.${apu_found} in
+ reconfig.yes)
+@@ -107,7 +117,7 @@
  
  if test "$apu_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr-util,
@@ -18,7 +37,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -549,8 +549,14 @@
+@@ -617,8 +627,14 @@
  	[Root directory of the Apache install area])
  AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
  	[Location of the config file, relative to the Apache root directory])
