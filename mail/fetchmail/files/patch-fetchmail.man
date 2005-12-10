@@ -1,20 +1,108 @@
---- fetchmail.man.orig	Tue Dec  6 21:49:31 2005
-+++ fetchmail.man	Tue Dec  6 21:49:50 2005
+Index: fetchmail.man
+===================================================================
+--- fetchmail.man	(Revision 4499)
++++ fetchmail.man	(Arbeitskopie)
 @@ -798,7 +798,7 @@
  but a string matching the user host name is likely.
  By using the option 'envelope Delivered\-To:' you can make fetchmail reliably
  identify the original envelope recipient, but you have to strip the
 -'mbox\-userstr\-' prefix to deliver to the correct user.
-+\'mbox\-userstr\-' prefix to deliver to the correct user.
++\&'mbox\-userstr\-' prefix to deliver to the correct user.
  This is what this option is for.
  .TP
  .B \-\-configdump
-@@ -2188,7 +2188,7 @@
+@@ -1339,11 +1339,11 @@
+ two or more lines, unless you use a backslash to join lines (see below).
+ An unquoted string is any whitespace-delimited token that is neither
+ numeric, string quoted nor contains the special characters ',', ';',
+-':', or '='.
++\&':', or '='.
+ .PP
+ Any amount of whitespace separates tokens in server entries, but is
+ otherwise ignored. You may use backslash escape sequences (\en for LF,
+-\&\et for HT, \&\eb for BS, \er for CR, \e\fInnn\fP for decimal (where
++\&\et for HT, \eb for BS, \er for CR, \e\fInnn\fP for decimal (where
+ nnn cannot start with a 0), \e0\fIooo\fP for octal, and \ex\fIhh\fP for
+ hex) to embed non-printable characters or string delimiters in strings.
+ In quoted strings, a backslash at the very end of a line will cause the
+@@ -1386,7 +1386,7 @@
+ square brackets are optional.  Those corresponding to short command-line
+ options are followed by '\-' and the appropriate option letter.  If
+ option is only relevant to a single mode of operation, it is noted as
+-'s' or 'm' for singledrop- or multidrop-mode, respectively.
++\&'s' or 'm' for singledrop- or multidrop-mode, respectively.
+ 
+ Here are the legal global options:
+ 
+@@ -1452,7 +1452,7 @@
+ local[domains]	\&	m	T{
+ Specify domain(s) to be regarded as local
+ T}
+-port    		\&	T{
++port    	\&	\&	T{
+ Specify TCP/IP service port (obsolete, use 'service' instead).
+ T}
+ service 	\-P	\&	T{
+@@ -1489,7 +1489,7 @@
+ plugout   	\&	\&	T{
+ Specify command through which to make listener connections.
+ T}
+-dns   	\&	m	T{
++dns     	\&	m	T{
+ Enable DNS lookup for multidrop (default)
+ T}
+ no dns   	\&	m	T{
+@@ -1519,7 +1519,7 @@
+ esmtpname   	\&	\&	T{
+ Set name for RFC2554 authentication to the ESMTP server.
+ T}
+-esmtppassword   	\&	\&	T{
++esmtppassword	\&	\&	T{
+ Set password for RFC2554 authentication to the ESMTP server.
+ T}
+ .TE
+@@ -1788,7 +1788,7 @@
+ to the listener or MDA unaltered (local-name mappings are \fInot\fR
+ applied).
+ .PP
+-If you are using 'localdomains', you may also need to specify \&'no
++If you are using 'localdomains', you may also need to specify 'no
+ envelope', which disables \fIfetchmail\fR's normal attempt to deduce
+ an envelope address from the Received line or X-Envelope-To header or
+ whatever header has been previously set by 'envelope'.  If you set 'no
+@@ -1923,7 +1923,7 @@
+ followed by a string sets the same global specified by \-\-logfile.  A
+ command-line \-\-logfile option will override this. Note that \-\-logfile is
+ only effective if fetchmail detaches itself from the terminal.  Also,
+-'set daemon' sets the poll interval as \-\-daemon does.  This can be
++\&'set daemon' sets the poll interval as \-\-daemon does.  This can be
+ overridden by a command-line \-\-daemon option; in particular \-\-daemon\~0
+ can be used to force foreground operation. The 'set postmaster'
+ statement sets the address to which multidrop mail defaults if there are
+@@ -2182,13 +2182,13 @@
+ header. But this doesn't work reliably for other MTAs, nor if there is
+ more than one recipient.  By default, \fIfetchmail\fR looks for
+ envelope addresses in these lines; you can restore this default with
+-\&\-E "Received" or \&'envelope Received'.
++\&\-E "Received" or 'envelope Received'.
+ .PP
+ .B As a better alternative,
  some SMTP listeners and/or mail servers insert a header
  in each message containing a copy of the envelope addresses.  This
  header (when it exists) is often 'X\-Original\-To', 'Delivered\-To' or
 -'X\-Envelope\-To'.  Fetchmail's assumption about this can be changed with
-+\'X\-Envelope\-To'.  Fetchmail's assumption about this can be changed with
++\&'X\-Envelope\-To'.  Fetchmail's assumption about this can be changed with
  the \-E or 'envelope' option.  Note that writing an envelope header of
  this kind exposes the names of recipients (including blind-copy
  recipients) to all receivers of the messages, so the upstream must store
+@@ -2243,8 +2243,8 @@
+ list called (say) "fetchmail-friends", and you want to keep the alias
+ list on your client machine.
+ .PP
+-On your server, you can alias \&'fetchmail\-friends' to 'esr'; then, in
+-your \fI.fetchmailrc\fR, declare \&'to esr fetchmail\-friends here'.
++On your server, you can alias 'fetchmail\-friends' to 'esr'; then, in
++your \fI.fetchmailrc\fR, declare 'to esr fetchmail\-friends here'.
+ Then, when mail including 'fetchmail\-friends' as a local address
+ gets fetched, the list name will be appended to the list of
+ recipients your SMTP listener sees.  Therefore it will undergo alias

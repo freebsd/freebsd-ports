@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -18,17 +19,19 @@ MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	fetchmail
 
 MAINTAINER=	barner@FreeBSD.org
-COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
+COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-POP2 --enable-SDPS \
 		--with-hesiod=no --enable-fallback=no
+# bsd.openssl.mk will add the LDFLAGS to CONFIGURE_ENV:
+LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
 MAN1=		fetchmail.1
@@ -41,9 +44,11 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${POR
 
 .include <bsd.port.pre.mk>
 
-FDOC=		${PREFIX}/share/doc/fetchmail
-DOCS=		FAQ FEATURES NEWS NOTES README \
-		design-notes.html fetchmail-FAQ.html fetchmail-features.html
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+
+DOCS=		FAQ FEATURES NEWS NOTES README README.SSL \
+		design-notes.html fetchmail-FAQ.html fetchmail-features.html \
+		esrs-design-notes.html
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--enable-nls
@@ -54,31 +59,10 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=--enable-inet6
-.endif
-
-.if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
-CONFIGURE_ARGS+=--with-ssl=/usr
-DOCS+=		README.SSL
-PLIST_SUB+=	SSLDOCS="%%PORTDOCS%%"
-.elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
-CONFIGURE_ARGS+=-with-includes=${LOCALBASE}/include/openssl --with-ssl=${LOCALBASE}
-.if exists(${LOCALBASE}/lib/libRSAglue.a)
-CONFIGURE_ENV+=	RSAGLUE=-lRSAglue
-.endif
-DOCS+=		README.SSL
-PLIST_SUB+=	SSLDOCS="%%PORTDOCS%%"
-.else
-PLIST_SUB+=	SSLDOCS="%%PORTDOCS%%@comment "
-.endif
-
-.if exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
-CONFIGURE_ARGS += --with-kerberos=/usr
-.endif
-
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libkrb5.a)
 CONFIGURE_ARGS += --with-kerberos5=${KRB5_HOME}
+.elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4)
+CONFIGURE_ARGS += --with-kerberos=/usr
 .endif
 
 .if defined(WITH_NTLM)
@@ -97,10 +81,27 @@ pre-patch:
 		 ${WRKDIR}/fetchmailconf
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${FDOC}
+	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
+
+pre-configure:
+.if defined(WITH_NTLM)
+	@${ECHO_CMD} "Building in support for NTLM/MSN authentication."
+.else
+	@${ECHO_CMD} "Add -DWITH_NTLM to add support for NTLM/MSN authentication."
+.endif
+.if defined(WITH_X11)
+	@${ECHO_CMD) "Adding Python/Tkinter dependencies for fetchmailconf."
+.else
+	@${ECHO_CMD} "Add -DWITH_X11 to add Python/Tkinter dependencies for fetchmailconf."
+.endif
+.if defined(WITHOUT_NLS)
+	@${ECHO_CMD} "Using national language support (NLS)."
+.else
+	@${ECHO_CMD} "You can use -DWITHOUT_NLS to suppress national language support (NLS)."
+.endif
 
 .include <bsd.port.post.mk>
