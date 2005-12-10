@@ -13,6 +13,7 @@
     SUBDIR += GeoIP
     SUBDIR += Sockets
     SUBDIR += Sockets-devel
+    SUBDIR += abills
     SUBDIR += acx100
     SUBDIR += adasockets
     SUBDIR += aget

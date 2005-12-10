@@ -1,0 +1,50 @@
+# New ports collection makefile for:	abills
+# Date created:		2 February 2005
+# Whom:			Michael Lednev <liettneff@bk.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	abills
+PORTVERSION=	0.23b
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	abills
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	liettneff@bk.ru
+COMMENT=	Billing system for dialup and VPN users
+
+RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES
+
+USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if defined(WITH_GRAPHICS)
+RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool
+.endif
+
+pre-everything::
+	@ ${ECHO} ""
+	@ ${ECHO} "	Define WITH_GRAPHICS if you want traffic graphs (experimental)"
+	@ ${ECHO} ""
+
+post-extract:
+	@ ${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's,/usr/abills,${PREFIX}/abills,g' {} \;
+
+do-install:
+	@ ${CP} -R ${WRKSRC} ${PREFIX}
+
+post-install:
+	@ ${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
