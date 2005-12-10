@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication-CDBI
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -25,7 +25,9 @@ PERL_CONFIGURE=	yes
 MAN3=		Catalyst::Plugin::Authentication::CDBI.3
 
 .include <bsd.port.pre.mk>
+
 .if ${PERL_LEVEL} < 500801
-IGNORE= requires at least Perl 5.8.1. Install lang/perl5.8, and try again
+IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
 .endif
+
 .include <bsd.port.post.mk>
