@@ -6,39 +6,32 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.8.7
+PORTVERSION=	1.9.1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
-DISTNAME=	${PORTNAME:S/_//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/_//}-apache-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
-USE_APACHE=	yes
+USE_APACHE=	1.3+
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/apache2/httpd.h)
-WITH_APACHE2=	yes
-.endif
-
-.if defined(WITH_APACHE2)
+.if ${APACHE_VERSION} > 13
 APWRKSRC?=	${WRKSRC}/apache2
-PLIST_SUB=	APACHE=apache2
-SO=		la
 .else
 APWRKSRC?=	${WRKSRC}/apache1
-PLIST_SUB=	APACHE=apache
-SO=		so
 .endif
 
-DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual.pdf
+DOCS=		CHANGES INSTALL LICENSE README doc/modsecurity-apache-manual-1.9.pdf
+PORTDOCS=	*
 
 do-build:
-	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
+	@cd ${APWRKSRC} && ${APXS} -c ${MODULENAME}.c
 
 do-install:
-	${APXS} -i -a -n security ${APWRKSRC}/mod_security.${SO}
+	${APXS} -i -a -n ${SHORTMODNAME} ${APWRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/httpd.conf.example-* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
