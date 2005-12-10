@@ -23,6 +23,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
 EXTRACT_DEPENDS?=	${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${PORTSDIR}/${LOCAL_SRCDIR}:configure
+LIB_DEPENDS?=	nspr4:${PORTSDIR}/devel/nspr
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
