@@ -122,32 +122,6 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC}/config && ${AUTOCONF}
-# use lang/ocaml308 instead of lang/ocaml
-.if exists(${LOCALBASE}/libexec/ocaml-3.08/ocamlc.opt)
-	@${REINPLACE_CMD} -E \
-		-e 's|@OCAMLC@|${LOCALBASE}/libexec/ocaml-3.08/ocamlc.opt|' \
-		-e 's|@OCAMLLIB@|${LOCALBASE}/lib/ocaml-3.08|' \
-		-e 's|@OCAMLOPT@|${LOCALBASE}/libexec/ocaml-3.08/ocamlopt.opt|' \
-		-e 's|@OCAMLLEX@|${LOCALBASE}/libexec/ocaml-3.08/ocamllex.opt|' \
-		-e 's|@OCAMLDEP@|${LOCALBASE}/libexec/ocaml-3.08/ocamldep|' \
-		-e 's|@OCAMLYACC@|${LOCALBASE}/libexec/ocaml-3.08/ocamlyacc|' \
-		-e 's|@CAMLP4@|${LOCALBASE}/libexec/ocaml-3.08/camlp4|' \
-		-e 's|@OCAMLLEX@|${LOCALBASE}/libexec/ocaml-3.08/ocamllex.opt|' \
-		-e 's|@OCAMLMKTOP@|${LOCALBASE}/libexec/ocaml-3.08/ocamlmktop|' \
-		${WRKSRC}/config/Makefile.config.in
-.else
-	@${REINPLACE_CMD} -E \
-		-e 's|@OCAMLC@|${LOCALBASE}/libexec/ocaml-3.08/ocamlc|' \
-		-e 's|@OCAMLLIB@|${LOCALBASE}/lib/ocaml-3.08|' \
-		-e 's|@OCAMLOPT@|${LOCALBASE}/libexec/ocaml-3.08/ocamlopt|' \
-		-e 's|@OCAMLLEX@|${LOCALBASE}/libexec/ocaml-3.08/ocamllex|' \
-		-e 's|@OCAMLDEP@|${LOCALBASE}/libexec/ocaml-3.08/ocamldep|' \
-		-e 's|@OCAMLYACC@|${LOCALBASE}/libexec/ocaml-3.08/ocamlyacc|' \
-		-e 's|@CAMLP4@|${LOCALBASE}/libexec/ocaml-3.08/camlp4|' \
-		-e 's|@OCAMLLEX@|${LOCALBASE}/libexec/ocaml-3.08/ocamllex|' \
-		-e 's|@OCAMLMKTOP@|${LOCALBASE}/libexec/ocaml-3.08/ocamlmktop|' \
-		${WRKSRC}/config/Makefile.config.in
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -E \
