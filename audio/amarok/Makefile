@@ -55,7 +55,7 @@ PLIST_SUB+=	GSTREAMER=""
 CONFIGURE_ARGS+=--without-xine
 PLIST_SUB+=	XINE="@comment "
 .else
-LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .endif
 
