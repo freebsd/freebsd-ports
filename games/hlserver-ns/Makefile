@@ -21,6 +21,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Natural Selection full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 UNZIP?=		${LOCALBASE}/bin/unzip
 
 slaveport-post-extract:
