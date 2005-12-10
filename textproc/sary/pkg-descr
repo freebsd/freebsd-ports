@@ -4,4 +4,4 @@ data structure called a suffix array.  It can also search specific
 fields in a text file by assigning index points to those fields.
 
 Author:	Satoru Takabayashi <satoru@namazu.org>
-WWW:	http://sary.namazu.org/index.html.en
+WWW:	http://sary.sourceforge.net/index.html.en
