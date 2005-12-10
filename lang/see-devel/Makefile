@@ -8,7 +8,10 @@
 PORTNAME=	see
 PORTVERSION=	1.3
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/
+MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
+		http://mirror.arcticnetwork.ca/pub/FreeBSD/distfiles/ \
+		http://ftp3.ie.freebsd.org/pub/FreeBSD/distfiles/ \
+		http://www.adaptive-enterprises.com.au/~d/software/see/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20050609-gerry
 
