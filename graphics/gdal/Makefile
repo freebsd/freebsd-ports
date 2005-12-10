@@ -46,4 +46,10 @@ MAN1=		gdal-config.1 gdal_utilities.1 gdalwarp.1 ogrtindex.1 \
 post-patch:
 		@${REINPLACE_CMD} -e 's|6LIBZ|6|;;s|lgif|lungif|' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"C++ code does not compile on 4.x"
+.endif
+
+.include <bsd.port.post.mk>
