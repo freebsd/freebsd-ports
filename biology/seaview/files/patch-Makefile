@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Apr  6 05:54:30 2005
-+++ Makefile	Mon Dec  5 08:31:05 2005
++++ Makefile	Fri Dec  9 07:41:26 2005
 @@ -1,18 +1,15 @@
 -FLTK = ../fltk
 -PDF = ../PDFlib-Lite-6.0.1/libs/pdflib
@@ -7,7 +7,7 @@
  CXX = g++
  
 -CFLAGS  = -Dunix  -U__APPLE__  -c $(OPT) -I$(FLTK) -I$(PDF) -I$(X11)/include 
-+CFLAGS  = -Dunix -c $(OPT) -I$(X11BASE)/include -I$(LOCALBASE)/include
++CFLAGS+= -Dunix -c $(OPT) -I$(X11BASE)/include -I$(LOCALBASE)/include
  
  
  OBJECTS = seaview.o pdf.o custom.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o old_file_chooser.o
