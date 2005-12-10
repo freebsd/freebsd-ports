@@ -1,0 +1,113 @@
+@exec mkdir -p %D/abills/cgi-bin/admin/tmp
+@exec mkdir -p %D/abills/cgi-bin/admin/graphics
+@exec mkdir -p %D/abills/cgi-bin/admin/nets
+@exec mkdir -p %D/abills/backup
+@exec mkdir -p %D/abills/libexec/ext_acct
+@exec mkdir -p %D/abills/var/q
+@exec mkdir -p %D/abills/var/log/back
+@exec mkdir -p %D/abills/var/devices
+@exec mkdir -p %D/abills/miniserv/var
+abills/abills.sql
+abills/bin/abcm
+abills/bin/showstats
+abills/bin/uc
+abills/bin/uc.conf
+abills/bin/urdiff
+abills/cgi-bin/admin/Abdocs.pm
+abills/cgi-bin/admin/Abwconf.pm
+abills/cgi-bin/admin/docs.cgi
+abills/cgi-bin/admin/grapher.cgi
+abills/cgi-bin/admin/messages.pl
+abills/cgi-bin/admin/networks.cgi
+abills/cgi-bin/admin/postfix.cgi
+abills/cgi-bin/admin/users.cgi
+abills/cgi-bin/excel.cgi
+abills/cgi-bin/img.cgi
+abills/cgi-bin/img/down_pointer.png
+abills/cgi-bin/img/email-g.gif
+abills/cgi-bin/img/host.gif
+abills/cgi-bin/img/msg_inbox.gif
+abills/cgi-bin/img/msg_savebox.gif
+abills/cgi-bin/img/network.gif
+abills/cgi-bin/img/network.png
+abills/cgi-bin/img/none.jpg
+abills/cgi-bin/img/red_dot.gif
+abills/cgi-bin/img/signature.jpg
+abills/cgi-bin/img/sort_none.png
+abills/cgi-bin/img/stamp.jpg
+abills/cgi-bin/img/up_pointer.png
+abills/cgi-bin/img/vertblue.gif
+abills/cgi-bin/img/vertgreen.gif
+abills/cgi-bin/img/vertred.gif
+abills/cgi-bin/img/vertyellow.gif
+abills/cgi-bin/templates/account.tpl
+abills/cgi-bin/users.cgi
+abills/cgi-bin/win_dunes.cgi
+abills/docs/img/inpayments.gif
+abills/docs/img/nas_servers.gif
+abills/docs/img/online.gif
+abills/docs/img/payments.gif
+abills/docs/img/user_interface.gif
+abills/docs/img/user_manag.gif
+abills/docs/img/user_stats.gif
+abills/docs/img/users_list.gif
+abills/docs/index.htm
+abills/dunes.sql
+abills/language/english.pl
+abills/language/russian.pl
+abills/language/ukraine.pl
+abills/libexec/Base.pm
+abills/libexec/billd
+abills/libexec/config.pl
+abills/libexec/linkupdown
+abills/libexec/mail.pl
+abills/libexec/modules/pm25.pl
+abills/libexec/modules/usr.pl
+abills/libexec/nas.pl
+abills/libexec/periodic
+abills/libexec/pppcons
+abills/libexec/racct.pl
+abills/libexec/radtest.sh
+abills/libexec/rauth.pl
+abills/libexec/sql.pl
+abills/miniserv/etc/miniserv.pem
+abills/miniserv/etc/miniserv.users
+abills/miniserv/mime.types
+abills/miniserv/miniserv.conf
+abills/miniserv/miniserv.pem
+abills/miniserv/miniserv.pl
+abills/soft/exppp_asm-0.2.4.tar.gz
+abills/soft/expppd-0.2.1.tar.gz
+abills/soft/radpppd.tar.gz
+abills/libexec/DES.pm
+abills/libexec/MSCHAP.pm
+abills/soft/kha0s-mpd.tar.gz
+abills/docs/img/user_fees.gif
+abills/docs/mpd.htm
+abills/docs/mail.htm
+abills/language/bulgarian.pl
+@dirrm abills/cgi-bin/admin/tmp
+@dirrm abills/cgi-bin/admin/graphics
+@dirrm abills/cgi-bin/admin/nets
+@dirrm abills/cgi-bin/admin
+@dirrm abills/cgi-bin/img
+@dirrm abills/cgi-bin/templates
+@dirrm abills/cgi-bin
+@dirrm abills/backup
+@dirrm abills/soft
+@dirrm abills/bin
+@dirrm abills/libexec/ext_acct
+@dirrm abills/libexec/modules
+@dirrm abills/libexec
+@dirrm abills/language
+@dirrm abills/var/q
+@dirrm abills/var/log/back
+@dirrm abills/var/log
+@dirrm abills/var/devices
+@dirrm abills/var
+@dirrm abills/docs/img
+@dirrm abills/docs
+@dirrm abills/miniserv/var
+@dirrm abills/miniserv/etc
+@dirrm abills/miniserv
+@dirrm abills
