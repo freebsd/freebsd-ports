@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -20,6 +20,8 @@ MASTER_SITE_SUBDIR=	fetchmail
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/ETRN/ODMR
+
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
