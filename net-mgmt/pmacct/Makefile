@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.9.4p1
+PORTVERSION=	0.9.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -17,12 +17,12 @@ GNU_CONFIGURE=	yes
 GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.4
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
+		SQLITE "Enable SQLite support." Off \
 		MMAP  "Enable mmap(2) support." On \
 		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On
 
@@ -48,6 +48,14 @@ PLIST_SUB+=	WITH_PGSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 PLIST_SUB+=	WITH_PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+CONFIGURE_ARGS+=--enable-sqlite3 \
+		--with-sqlite3-includes=${LOCALBASE}/include
+.else
+CONFIGURE_ARGS+=--disable-sqlite3
 .endif
 
 .if defined(WITHOUT_MMAP)

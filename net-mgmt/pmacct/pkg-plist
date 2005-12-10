@@ -23,6 +23,7 @@ sbin/sfacctd
 %%EXAMPLESDIR%%/pmacctd-sql.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
+%%EXAMPLESDIR%%/pmacctd-sqlite3_v4.conf.example
 %%EXAMPLESDIR%%/ports.lst.example
 %%EXAMPLESDIR%%/pretag.map.example
 %%EXAMPLESDIR%%/rrdtool-example.sh
