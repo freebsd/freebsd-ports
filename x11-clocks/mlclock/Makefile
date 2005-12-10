@@ -8,21 +8,28 @@
 PORTNAME=	mlclock
 PORTVERSION=	1.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for mlvwm window manager
 
-DEPRECATED=	mastersite disappeared
-EXPIRATION_DATE=	2006-01-26
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/mlclock
+USE_X_PREFIX=	yes
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/mlclock
+PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji
+PLIST_DIRS=	%%DATADIR%%
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include \
+		-DRCFILE=\".mlclockrc\" mlclock.c -o mlclock \
+		-L${X11BASE}/lib -lX11
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mlclock ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
 .for i in mlclockrc mlclockrc-kanji
-	${INSTALL_DATA} ${WRKSRC}/rcfile/${i} ${PREFIX}/share/mlclock
+	${INSTALL_DATA} ${WRKSRC}/rcfile/${i} ${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
