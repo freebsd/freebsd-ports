@@ -942,7 +942,7 @@ MASTER_SITE_SAMBA+= \
 
 .if !defined(IGNORE_MASTER_SITE_SAVANNAH)
 MASTER_SITE_SAVANNAH+= \
-	http://savannah.nongnu.org/download/%SUBDIR%/
+	http://download.savannah.nongnu.org/releases/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
