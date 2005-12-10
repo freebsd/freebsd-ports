@@ -1,0 +1,20 @@
+%%FONTSDIR%%/AVI-BonatiPT-Bold.ttf
+%%FONTSDIR%%/AVI-BonatiPT-BoldItalic.ttf
+%%FONTSDIR%%/AVI-BonatiPT-Italic.ttf
+%%FONTSDIR%%/AVI-BonatiPT-Normal.ttf
+%%FONTSDIR%%/AVI-Jacobs-Bold.ttf
+%%FONTSDIR%%/AVI-Jacobs-BoldItalic.ttf
+%%FONTSDIR%%/AVI-Jacobs-Italic.ttf
+%%FONTSDIR%%/AVI-Jacobs-Normal.ttf
+%%FONTSDIR%%/AVI-Optima-Bold.ttf
+%%FONTSDIR%%/AVI-Optima-BoldItalic.ttf
+%%FONTSDIR%%/AVI-Optima-Italic.ttf
+%%FONTSDIR%%/AVI-Optima-Normal.ttf
+%%FONTSDIR%%/AVI-OptimaCollege-Italic.ttf
+%%FONTSDIR%%/AVI-OptimaCollege.ttf
+%%FONTSDIR%%/AVI-ParisAifel-Medium.ttf
+%%FONTSDIR%%/AVI-ParisAifel-MediumItalic.ttf
+%%FONTSDIR%%/fonts.dir
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true

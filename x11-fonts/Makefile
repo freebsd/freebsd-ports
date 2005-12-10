@@ -15,6 +15,7 @@
     SUBDIR += artwiz-aleczapka-de
     SUBDIR += artwiz-aleczapka-se
     SUBDIR += artwiz-fonts
+    SUBDIR += avifonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
