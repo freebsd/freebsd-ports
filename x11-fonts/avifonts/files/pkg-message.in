@@ -1,0 +1,14 @@
+To use these fonts, follow the instructions below.
+
+Make sure that the freetype module is loaded. If it is not, add the following
+line to the "Modules" section of your X configuration file:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of your X configuration file:
+
+	FontPath "%%FONTSDIR%%/"
+
+Note: your X configuration file is typically %%X11BASE%%/etc/X11/XF86Config
+if you are using XFree86, and %%X11BASE%%/etc/X11/xorg.conf
+if you are using X.Org.
