@@ -202,6 +202,7 @@ libexec/apache21/httpd.exp
 %%MOD_EXPIRES%%libexec/apache21/mod_expires.so
 %%MOD_EXT_FILTER%%libexec/apache21/mod_ext_filter.so
 %%MOD_FILE_CACHE%%libexec/apache21/mod_file_cache.so
+%%MOD_FILTER%%libexec/apache21/mod_filter.so
 %%MOD_HEADERS%%libexec/apache21/mod_headers.so
 %%MOD_IMAGEMAP%%libexec/apache21/mod_imagemap.so
 %%MOD_INCLUDE%%libexec/apache21/mod_include.so
