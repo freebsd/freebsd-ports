@@ -1,0 +1,6 @@
+usr/lib/libperl.so.5.8
+usr/lib/perl5/5.8.5/i386-linux-thread-multi/CORE/libperl.so.5.8
+@dirrm usr/lib/perl5/5.8.5/i386-linux-thread-multi/CORE
+@dirrm usr/lib/perl5/5.8.5/i386-linux-thread-multi
+@dirrm usr/lib/perl5/5.8.5
+@dirrm usr/lib/perl5

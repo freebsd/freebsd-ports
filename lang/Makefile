@@ -125,6 +125,7 @@
     SUBDIR += libutils
     SUBDIR += linux-j
     SUBDIR += linux-libgcc
+    SUBDIR += linux-libperl5.8
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua-mode.el
