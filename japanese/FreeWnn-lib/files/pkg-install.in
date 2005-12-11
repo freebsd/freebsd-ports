@@ -161,10 +161,10 @@ POST-INSTALL)
 	wnn_lang=zh_CN
 	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
 	
-	wnnserver2=${PKG_PREFIX}/bin/cWnn4/tserver
-	wnn_lang2=zh_TW
-	wnnname2=twnn
-	wnn_socket2=/tmp/td_sockV4
+	wnnserver=${PKG_PREFIX}/bin/cWnn4/tserver
+	wnn_lang=zh_TW
+	wnnname=twnn
+	wnn_socket=/tmp/td_sockV4
 	mk_startup_script ${wnnname} ${wnnserver} ${wnn_socket}
 	;;
       ko-FreeWnn-*)
