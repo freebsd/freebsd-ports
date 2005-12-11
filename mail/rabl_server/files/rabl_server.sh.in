@@ -1,9 +1,10 @@
 #!/bin/sh
 # $FreeBSD$
+# $Tecnik: ports/mail/rabl_server/files/rabl_server.sh.in,v 1.4 2005/12/09 19:55:53 itetcu Exp $
 #
 
 # PROVIDE: rabl_server
-# REQUIRE: NETWORKING SERVERS
+# REQUIRE: DAEMON
 # BEFORE: mail
 # KEYWORD: shutdown
 
@@ -22,16 +23,9 @@ name=rabl_server
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/${name}
-#command_args="-c ${rabl_server_conf} -u ${rabl_server_user}"
-#${name}_flags="-c ${rabl_server_conf} -u ${rabl_server_user}"
 required_files=%%PREFIX%%/etc/${name}.conf
 
 extra_commands=reload
-
-#reload()
-#{
-# kill -HUP `cat $pidfile`
-#}
 
 # set defaults
 rabl_server_enable=${rabl_server_enable:-"NO"}

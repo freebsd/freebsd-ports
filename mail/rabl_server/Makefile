@@ -4,6 +4,8 @@
 #
 # $FreeBSD$
 #
+# $Tecnik: ports/mail/rabl_server/Makefile,v 1.7 2005/12/09 19:54:50 itetcu Exp $
+#
 
 PORTNAME=	rabl_server
 PORTVERSION=	1.0.0
