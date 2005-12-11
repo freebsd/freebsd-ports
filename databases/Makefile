@@ -319,6 +319,7 @@
     SUBDIR += postgresql81-server
     SUBDIR += postgresql_autodoc
     SUBDIR += puredb
+    SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-MySQL
     SUBDIR += py-MySQLdb
