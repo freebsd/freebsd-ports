@@ -8,9 +8,7 @@
 PORTNAME=	opera
 PORTVERSION=	1.2
 PORTREVISION=	1
-MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/opera/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/opera/ \
-		http://distribution.redeemedsoft.com/r12/
+MASTER_SITES=	http://distribution.redeemedsoft.com/r12/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}0
 
 MAINTAINER=	ports@FreeBSD.org
