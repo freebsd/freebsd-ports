@@ -7,6 +7,20 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20051210:
+  AFFECTS: users of net/mldonkey-devel
+  AUTHOR: lioux@FreeBSD.org
+
+  MLDonkey port net/mldonkey-devel has been patched to work with
+  the updated lang/ocaml version 3.09. As a result, ocaml 3.09
+  is now a requirement. You have to follow the instructions for
+  updating your complete ocaml installation outlined below on
+  20051201 by burelle@lri.fr.
+
+  If you use the command below, everything should be fine.
+
+  $ portupgrade -n -fr 'ocaml*' 'mldonkey-*devel*'
+
+20051210:
   AFFECTS: users of mail/fetchmail using SSL encryption
   AUTHOR: barner@FreeBSD.org
  
