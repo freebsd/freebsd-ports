@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lipstik
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
