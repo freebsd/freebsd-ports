@@ -11,7 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -81,13 +81,6 @@ pre-patch:
 	@${CP} ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
 	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE},g" \
 		 ${WRKDIR}/fetchmailconf
-post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
-
-	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 
 pre-configure:
 .if defined(WITH_NTLM)
@@ -96,7 +89,7 @@ pre-configure:
 	@${ECHO_CMD} "Add -DWITH_NTLM to add support for NTLM/MSN authentication."
 .endif
 .if defined(WITH_X11)
-	@${ECHO_CMD) "Adding Python/Tkinter dependencies for fetchmailconf."
+	@${ECHO_CMD} "Adding Python/Tkinter dependencies for fetchmailconf."
 .else
 	@${ECHO_CMD} "Add -DWITH_X11 to add Python/Tkinter dependencies for fetchmailconf."
 .endif
@@ -105,5 +98,14 @@ pre-configure:
 .else
 	@${ECHO_CMD} "You can use -DWITHOUT_NLS to suppress national language support (NLS)."
 .endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${PREFIX}/libexec
 
 .include <bsd.port.post.mk>
