@@ -23,6 +23,7 @@ RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
 USE_XPM=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
@@ -63,8 +64,10 @@ LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 LIBS+=			-lgettextlib
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL)
