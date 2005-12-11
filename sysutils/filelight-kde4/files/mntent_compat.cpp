@@ -49,7 +49,9 @@ static struct optmap omap[] = {
   { MNT_SYNCHRONOUS,	"sync"		},
   { MNT_NOEXEC,		"noexec"	},
   { MNT_NOSUID,		"nosuid"	},
+#ifdef MNT_NODEV
   { MNT_NODEV,		"nodev"		},
+#endif
   { MNT_UNION,		"union"		},
   { MNT_ASYNC,		"async"		},
   { MNT_NOATIME,	"noatime"	},
