@@ -8,7 +8,7 @@
 PORTNAME=	iwi-firmware
 RELNAME=	ipw2200
 PORTVERSION=	2.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	flz@FreeBSD.org
@@ -29,5 +29,7 @@ FIRMWARES=	ipw-${PORTVERSION}-boot.fw:${DRIVERNAME}-boot.fw \
 		ipw-${PORTVERSION}-ibss_ucode.fw:${DRIVERNAME}-ucode-ibss.fw \
 		ipw-${PORTVERSION}-sniffer.fw:${DRIVERNAME}-sniffer.fw \
 		ipw-${PORTVERSION}-sniffer_ucode.fw:${DRIVERNAME}-ucode-sniffer.fw
+
+MIN7OSVERSION=	700006
 
 .include "${MASTERDIR}/Makefile"

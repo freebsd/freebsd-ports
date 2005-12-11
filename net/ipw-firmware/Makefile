@@ -25,23 +25,31 @@ FIRMWARES?=	${RELNAME}-${PORTVERSION}-i.fw:${DRIVERNAME}-i.fw \
 		${RELNAME}-${PORTVERSION}-p.fw:${DRIVERNAME}-p.fw \
 		${RELNAME}-${PORTVERSION}.fw:${DRIVERNAME}.fw
 
-OPTIONS=	MODULE	"Install ${DRIVERNAME}(4) kernel module"	off
+OPTIONS=	MODULE	"Install ${DRIVERNAME}(4) kernel module (very old snapshot)" off \
+		CONTROL	"Install ${DRIVERNAME}control(8) utility" on
+
+# Override PREFIX to install ${DRIVERNAME}control(8) somewhere we hope it'll
+# be available soon enough.
+PREFIX=		/usr
 
 WRKSRC=		${WRKDIR}
 KERNDIR=	/boot/kernel
 KMODDIR=	/boot/modules
+FWDIR=		/boot/firmware
 SUB_FILES=	pkg-message
 SUB_LIST=	DRIVERNAME="${DRIVERNAME}" \
 		RELNAME="${RELNAME}" \
-		KMODDIR="${KMODDIR}"
+		KMODDIR="${KMODDIR}" \
+		FWDIR="${FWDIR}"
 PLIST_SUB:=	${SUB_LIST}
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man" \
 		KMODDIR="${KMODDIR}"
-USE_RC_SUBR=	${DRIVERNAME}.sh
 
-MAN8=		${DRIVERNAME}control.8
 MANCOMPRESSED=	yes
+
+# Dummy OSVERSION for ipw.
+MIN7OSVERSION?=	999999
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
@@ -54,18 +62,35 @@ IS_INTERACTIVE=	yes
 # should move on. I may change this if I get successful reports though.
 # Comment this IGNORE line if you want to test it anyway.
 .if ${OSVERSION} < 503000
-IGNORE=		Need a fresh version of RELENG_5
+IGNORE=		needs at least FreeBSD 5.3-RELEASE
+.endif
+
+.if ${OSVERSION} > ${MIN7OSVERSION}
+SUB_LIST+=	DONT_NEED_CONTROL="@comment "
+. if !defined(WITHOUT_CONTROL)
+IGNORE=		is configured with ${DRIVERNAME}control(8) which you don't need
+. endif
+.else
+SUB_LIST+=	DONT_NEED_CONTROL=""
+MAN8+=		${DRIVERNAME}control.8
+USE_RCORDER=	${DRIVERNAME}.sh
 .endif
 
 .if defined(WITH_MODULE)
 . if ${OSVERSION} > 600023
-IGNORE=		${DRIVERNAME}(4) support is already included in your tree
+IGNORE=		is configured with ${DRIVERNAME}(4) support which you don't need
 . else
 PLIST_SUB+=	WITH_MODULE=""
 MAN4+=		${DRIVERNAME}.4
 . endif
 .else
 PLIST_SUB+=	WITH_MODULE="@comment MODULE "
+.endif
+
+.if !defined(WITHOUT_CONTROL)
+PLIST_SUB+=	WITH_CONTROL=""
+.else
+PLIST_SUB+=	WITH_CONTROL="@comment CONTROL "
 .endif
 
 # "Might" because people still can include ${DRIVERNAME}(4) support in kernel by extracting
@@ -78,8 +103,11 @@ SUB_LIST+=	MIGHT_NEED_MODULE="@comment "
 
 do-build:
 .if defined(WITH_MODULE)
-	cd ${WRKSRC}/${DRIVERDISTNAME}/src/; make all
-.else
+. for i in share sys
+	cd ${WRKSRC}/${DRIVERDISTNAME}/src/${i}; make all
+. endfor
+.endif
+.if !defined(WITHOUT_CONTROL)
 	cd ${WRKSRC}/${DRIVERDISTNAME}/src/usr.sbin/${DRIVERNAME}control/; make all
 .endif
 
@@ -91,16 +119,29 @@ do-install:
 .endif
 	${MKDIR} ${DATADIR}
 .if defined(WITH_MODULE)
-	cd ${WRKSRC}/${DRIVERDISTNAME}/src/; make install ${MAKE_ENV}
-.else
+. for i in share sys
+	cd ${WRKSRC}/${DRIVERDISTNAME}/src/${i}; make install ${MAKE_ENV}
+. endfor
+.endif
+.if !defined(WITHOUT_CONTROL)
 	cd ${WRKSRC}/${DRIVERDISTNAME}/src/usr.sbin/${DRIVERNAME}control/; make install ${MAKE_ENV}
 .endif
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
+	${MKDIR} ${FWDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${FWDIR}/LICENSE.${DRIVERNAME}
 .for i in ${FIRMWARES}
-	${INSTALL_DATA} ${WRKSRC}/${i:C/:.*//} ${DATADIR}/${i:C/.*://}
+	${INSTALL_DATA} ${WRKSRC}/${i:C/:.*//} ${FWDIR}/${i:C/.*://}
 .endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+.if defined(WITH_MODULE)
+	@${ECHO_CMD} "You asked for ${DRIVERNAME}(4) module to be installed but"
+	@${ECHO_CMD} "be aware that this is a *very* *old* snapshot of the code"
+	@${ECHO_CMD} "and that it probably won't work correctly."
+	@${ECHO_CMD} "This option will probably go away in a near future."
+	@${ECHO_CMD} "SLIPPERY WHEN WET ! BEWARE OF THE DOGS !"
+	@${ECHO_CMD} "You have been warned."
+.endif
+
 
 .include <bsd.port.post.mk>

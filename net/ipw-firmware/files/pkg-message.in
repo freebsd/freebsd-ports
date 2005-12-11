@@ -1,31 +1,31 @@
 ------------------------------------------------------------------
-This port has installed following files in %%DATADIR%%:
+This port has installed following files in %%FWDIR%%:
 
-  - LICENSE : License terms,
+  - LICENSE.%%DRIVERNAME%% : License terms,
   - %%DRIVERNAME%%-i.fw : IBSS mode (aka ad-hoc mode) firmware,
   - %%DRIVERNAME%%-p.fw : Monitor mode firmware,
   - %%DRIVERNAME%%.fw : BSS mode (aka infrastructure mode) firmware.
 
 Ensure you've read license terms carefully before you use this
 firmware.
-
-You must choose the correct image depending on how you want to
-use your adapter.
-
-For instance, to download firmware for BSS mode:
-
-  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 \
-	-f %%DATADIR%%/%%DRIVERNAME%%.fw
-
-The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
-to /etc/rc.conf to use it :
-
-  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
-    use the startup script.
-  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
-    change to interface names list (optional).
-  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
-    are bss, ibss and monitor (optional).
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%You must choose the correct image depending on how you want to
+%%DONT_NEED_CONTROL%%use your adapter.
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%For instance, to download firmware for BSS mode:
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 \
+%%DONT_NEED_CONTROL%%	-f %%DATADIR%%/%%DRIVERNAME%%.fw
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
+%%DONT_NEED_CONTROL%%to /etc/rc.conf to use it :
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
+%%DONT_NEED_CONTROL%%    use the startup script.
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
+%%DONT_NEED_CONTROL%%    change to interface names list (optional).
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
+%%DONT_NEED_CONTROL%%    are bss, ibss and monitor (optional).
 %%MIGHT_NEED_MODULE%%
 %%MIGHT_NEED_MODULE%%Note: 
 %%MIGHT_NEED_MODULE%%
