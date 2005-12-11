@@ -208,7 +208,10 @@ post-patch:
 	done
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 	@for file in ${PTHREAD_FILES}; do \
-		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
+		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
+			-e "s:-lc_r:${PTHREAD_LIBS}:g" \
+			-e "s:-lpthread:${PTHREAD_LIBS}:g" \
+			${WRKSRC}/$${file}; \
 	done
 .endif
 
