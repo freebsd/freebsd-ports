@@ -1,11 +1,11 @@
---- make_it.orig	Thu Jan 13 22:50:01 2000
-+++ make_it	Wed Feb 13 16:21:44 2002
-@@ -50,7 +50,14 @@
+--- make_it.orig	2002-06-01 10:33:35.000000000 +0000
++++ make_it
+@@ -52,11 +52,18 @@ case $OS in
                  CC='gcc'
                  CF='-O2 -fomit-frame-pointer -DUSE_RANDOM -DUSE_VT100 -DLINES=25'
                  LF='';;
 -
-+	NetBSD|FreeBSD|Darwin)
++	NetBSD|Darwin)
 +		echo "Making Powwow for $OS"
 +		CC='gcc'
 +		CF='-O2 -pipe -DUSE_SGTTY -DBSD_LIKE -DUSE_RANDOM -DUSE_REGEXP'
@@ -16,3 +16,8 @@
  	*)
  		echo 'UNSUPPORTED OS!!! Trying with defaults.';;
  esac
+-echo "make" $* "CC='$CC' CDEFS='$CF' LDFLAGS='$LF' "
++echo "make" $* "CC='$CC' CDEFS='$CF $CFLAGS' LDFLAGS='$LF' "
+ 
+-make $* CC="${CC}" CDEFS="${CF}" LDFLAGS="${LF}"
++make $* CC="${CC}" CDEFS="${CF} ${CFLAGS}" LDFLAGS="${LF}"
