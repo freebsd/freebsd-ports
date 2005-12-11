@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Dec 10 22:27:50 2005
++++ Makefile.in	Sat Dec 10 22:29:15 2005
+@@ -250,7 +250,7 @@
+ EXTRA_DIST = intltool-extract.in intltool-merge.in intltool-update.in $(spec) $(spec).in autogen.sh pxlib.pc.in
+ 
+ #all-local: $(spec)
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ pkgconfig_DATA = pxlib.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
