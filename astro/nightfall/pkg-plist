@@ -1,16 +1,12 @@
 bin/nightfall
-%%GNOME:%%share/gnome/apps/Applications/nightfall.desktop
-%%GNOME:%%share/gnome/help/nightfall/C/index.html
-%%GNOME:%%share/gnome/help/nightfall/C/nightfall.html
-%%GNOME:%%share/gnome/help/nightfall/C/topic.dat
-%%GNOME:%%share/gnome/help/nightfall/de/index.html
-%%GNOME:%%share/gnome/help/nightfall/de/nightfall.html
-%%GNOME:%%share/gnome/help/nightfall/de/topic.dat
-%%GNOME:%%share/gnome/pixmaps/gnome-nightfall.png
+share/gnome/applications/nightfall.desktop
+%%GNOME:%%share/gnome/help/nightfall/C/nightfall.xml
+%%GNOME:%%share/gnome/help/nightfall/de/nightfall.xml
 share/locale/de/LC_MESSAGES/nightfall.mo
 share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/cfg/51_peg.cfg
 %%DATADIR%%/cfg/bh_vir.cfg
+%%DATADIR%%/cfg/bh_vir_simple.cfg
 %%DATADIR%%/cfg/dd_mon.cfg
 %%DATADIR%%/cfg/er_vul.cfg
 %%DATADIR%%/cfg/lz_cen.cfg
@@ -85,6 +81,9 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/pixmaps/starp_256.jpg
 %%DATADIR%%/pixmaps/stars_128.jpg
 %%DATADIR%%/pixmaps/stars_256.jpg
+%%GNOME:%%share/gnome/omf/nightfall/nightfall-C.omf
+%%GNOME:%%share/gnome/omf/nightfall/nightfall-de.omf
+%%GNOME:%%@dirrm share/gnome/omf/nightfall
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/doc/de
 @dirrm %%DATADIR%%/doc/C

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.42
+PORTVERSION=	1.44
 CATEGORIES=	astro
 MASTER_SITES=	http://www.lsw.uni-heidelberg.de/users/rwichman/
 
@@ -15,10 +15,10 @@ COMMENT=	An interactive binary star application
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_PERL5=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gtk12 gnometarget
+USE_GNOME=	gnomehack gnomehier gnometarget gtk20
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -30,9 +30,11 @@ MAN1=		nightfall.1
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomelibs gnomeprefix
+USE_GNOME+=	gnomeprefix libgnomeui
+CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
+INSTALLS_OMF=	yes
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--disable-gnome
@@ -51,21 +53,26 @@ CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--disable-opengl
 .else
 LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut \
-		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 CONFIGURE_ARGS+=	--with-lib-GL
 .endif
 
 pre-everything::
 	@${ECHO_MSG} "Nightfall has the following tunable option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_GNOME=gnomelibs		Turns off Gnome support"
+	@${ECHO_MSG} "	WITHOUT_GNOME=libgnomeui	Turns off Gnome support"
 	@${ECHO_MSG} "	WITHOUT_PGPLOT=yes		Turns off PGPLOT support"
 	@${ECHO_MSG} "	WITHOUT_OPENGL=yes		Turns off OpenGL support"
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(GNOME_DATADIR)/gnome/|(GNOME_DATADIR)/|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps/gnome|g' \
+		${WRKSRC}/nightfall.desktop
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
+		${PREFIX}/share/gnome/applications
 
 .include <bsd.port.post.mk>
