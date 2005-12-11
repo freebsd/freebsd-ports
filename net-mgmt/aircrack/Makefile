@@ -10,7 +10,12 @@ PORTVERSION=	2.41
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cr0.net:8040/code/network/ \
 		http://100h.org/wlan/aircrack/ \
-		http://100h.org/wlan/aircrack/archives/
+		http://100h.org/wlan/aircrack/archives/ \
+	        http://mirror.arcticnetwork.ca/pub/gentoo/distfiles/ \
+	        http://gentoo.llarian.net/distfiles/ \
+	        http://gentoo.zie.pg.gda.pl/distfiles/ \
+	        http://www.dvo.ru/pub/distfiles/ \
+	        http://gentoo.nedlinux.nl/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lars.engels@0x20.net
