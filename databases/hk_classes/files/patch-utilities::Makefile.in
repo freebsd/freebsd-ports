@@ -1,6 +1,6 @@
---- utilities/Makefile.in.orig	Sun Mar 13 19:46:30 2005
-+++ utilities/Makefile.in	Fri Apr  1 20:52:27 2005
-@@ -221,20 +221,20 @@
+--- utilities/Makefile.in.orig	Sun Oct 23 18:56:09 2005
++++ utilities/Makefile.in	Sat Dec 10 20:00:12 2005
+@@ -238,22 +238,22 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  INCLUDES = -I../hk_classes
@@ -26,5 +26,8 @@
 -hk_importcsv_LDFLAGS = -lhk_classes -ldl -L../hk_classes
 +hk_importcsv_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
  hk_importcsv_SOURCES = hk_importcsvutility.cpp
- man_MANS = hk_report.1man hk_actionquery.1man hk_exportxml.1man hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man
- EXTRA_DIST = $(man_MANS)
+-hk_dbcopy_LDFLAGS = -lhk_classes -ldl -L../hk_classes
++hk_dbcopy_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+ hk_dbcopy_SOURCES = hk_dbcopyutility.cpp
+ man_MANS = hk_report.1man hk_actionquery.1man hk_dbcopy.1man hk_exportxml.1man \
+ 	hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man
