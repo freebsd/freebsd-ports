@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbibtex
-PORTVERSION=	0.1.2
-PORTREVISION=	3
+PORTVERSION=	0.1.3
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/download/
 
