@@ -26,9 +26,11 @@ share/qGo/sounds/talk.wav
 share/qGo/sounds/tictoc.wav
 share/qGo/translations/qgo_cz.qm
 share/qGo/translations/qgo_de.qm
+share/qGo/translations/qgo_dk.qm
 share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
 share/qGo/translations/qgo_nl.qm
+share/qGo/translations/qgo_pt.qm
 share/qGo/translations/qgo_zh.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
