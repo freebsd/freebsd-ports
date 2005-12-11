@@ -4,6 +4,10 @@ lib/kde3/libkbibtexpart.so
 share/applnk/Office/kbibtex.desktop
 share/apps/kbibtex/kbibtex_shell.rc
 share/apps/kbibtexpart/kbibtex_part.rc
+share/apps/kbibtexpart/xslt/html.xsl
+share/doc/HTML/en/kbibtex/common
+share/doc/HTML/en/kbibtex/index.cache.bz2
+share/doc/HTML/en/kbibtex/index.docbook
 share/icons/crystalsvg/128x128/apps/kbibtex.png
 share/icons/crystalsvg/16x16/apps/kbibtex.png
 share/icons/crystalsvg/22x22/apps/kbibtex.png
@@ -11,5 +15,7 @@ share/icons/crystalsvg/32x32/apps/kbibtex.png
 share/icons/crystalsvg/48x48/apps/kbibtex.png
 share/icons/crystalsvg/64x64/apps/kbibtex.png
 share/services/kbibtex_part.desktop
+@dirrm share/doc/HTML/en/kbibtex
+@dirrm share/apps/kbibtexpart/xslt
 @dirrm share/apps/kbibtexpart
 @dirrm share/apps/kbibtex
