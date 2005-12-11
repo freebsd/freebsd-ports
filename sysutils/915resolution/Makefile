@@ -5,10 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	915resolution
-PORTVERSION=	1.0
+PORTVERSION=	0.5
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.tecnik93.com/~acpi_perf/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://www.geocities.com/stomljen/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Resolution tool for Intel i915 video cards
