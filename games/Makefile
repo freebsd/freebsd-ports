@@ -170,6 +170,7 @@
     SUBDIR += flightgear
     SUBDIR += flightgear-aircrafts
     SUBDIR += flightgear-atlas
+    SUBDIR += flightgear-mb339-pan
     SUBDIR += flying
     SUBDIR += fmars
     SUBDIR += foobillard
