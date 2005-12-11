@@ -24,7 +24,7 @@ disconnected=0
 
 if [ "${norsync}" = 1 ]; then
   md5=0
-  nocopy=-nocopy
+  nocopy=
 else
   md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
   nocopy=
