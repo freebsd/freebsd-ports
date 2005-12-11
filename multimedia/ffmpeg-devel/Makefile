@@ -115,6 +115,10 @@ WITHOUT_MMX=	yes
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
 WITH_BUILTIN_VECTOR=	yes
 .endif
+# sparc64 doest not like bktr
+.if ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--disable-bktr
+.endif
 
 ##
 ## lib detection
