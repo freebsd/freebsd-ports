@@ -1,5 +1,5 @@
 --- Makefile.in	Tue Nov  8 08:22:41 2005
-+++ Makefile.in.port	Thu Nov 24 17:33:55 2005
++++ Makefile.in.port	Sat Dec 10 19:02:52 2005
 @@ -37,7 +37,7 @@
  datadir = @datadir@
  asydir = $(datadir)/asymptote
@@ -9,3 +9,12 @@
  animationsdir = $(exampledir)/animations
  latexdir = @latexdir@
  INSTALL = @INSTALL@
+@@ -64,7 +64,7 @@
+ 	rm -f $(GC).tar
+ 	cd $(GC); \
+ 	./configure --disable-threads --disable-shared --enable-cplusplus; \
+-	$(MAKE) check
++	$(MAKE)
+ 
+ doc:	asy
+ 	cd doc; $(MAKE) doc
