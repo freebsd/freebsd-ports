@@ -1,13 +1,26 @@
 bin/superkaramba
-share/applnk/Utilities/karamba.desktop
-share/apps/superkaramba/karambaui.rc
-share/doc/HTML/en/karamba/common
-share/doc/HTML/en/karamba/index.cache.bz2
-share/doc/HTML/en/karamba/index.docbook
-@dirrm share/doc/HTML/en/karamba
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+share/applnk/Utilities/superkaramba.desktop
+share/apps/superkaramba/superkarambaui.rc
+share/doc/HTML/en/superkaramba/common
+share/doc/HTML/en/superkaramba/index.cache.bz2
+share/doc/HTML/en/superkaramba/index.docbook
+share/icons/crystalsvg/128x128/apps/superkaramba.png
+share/icons/crystalsvg/128x128/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/16x16/apps/superkaramba.png
+share/icons/crystalsvg/16x16/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/22x22/apps/superkaramba.png
+share/icons/crystalsvg/22x22/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/32x32/apps/superkaramba.png
+share/icons/crystalsvg/32x32/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/48x48/apps/superkaramba.png
+share/icons/crystalsvg/48x48/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/64x64/apps/superkaramba.png
+share/icons/crystalsvg/64x64/mimetypes/superkaramba_theme.png
+share/icons/crystalsvg/scalable/apps/superkaramba.svgz
+share/icons/crystalsvg/scalable/mimetypes/superkaramba_theme.svgz
+share/mimelnk/application/x-superkaramba.desktop
+@dirrm share/doc/HTML/en/superkaramba-apidocs/superkaramba/html
+@dirrm share/doc/HTML/en/superkaramba-apidocs/superkaramba
+@dirrm share/doc/HTML/en/superkaramba-apidocs
+@dirrm share/doc/HTML/en/superkaramba
 @dirrm share/apps/superkaramba
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
