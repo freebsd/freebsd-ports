@@ -17,6 +17,8 @@ EXTRACT_ONLY=
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Colourful 14th century Arab spice trading game
 
+NO_PACKAGE=	"Package will be 186MB, set FORCE_PACKAGE if you really want to build it"
+
 USE_JAVA=	1.4+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
