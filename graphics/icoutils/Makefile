@@ -37,7 +37,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -print0 | \
 		${XARGS} -0 -x -n 10 \
 		${REINPLACE_CMD} -E \
-		-e 's|<stdint.h>|<inttypes.h>|' \
 		-e 's|/usr/bin/perl|${PERL5}|'
 
 .include <bsd.port.pre.mk>
