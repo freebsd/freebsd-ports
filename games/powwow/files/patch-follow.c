@@ -1,6 +1,6 @@
---- follow.c.orig	Wed Feb 13 15:59:06 2002
-+++ follow.c	Wed Feb 13 15:59:46 2002
-@@ -96,7 +96,7 @@
+--- follow.c.orig	2002-02-19 19:42:34.000000000 +0000
++++ follow.c
+@@ -96,7 +96,7 @@ void set_terminal()
      ioctl(0, TIOCGLTC, &ltcsave);
      ttyb = ttybsave;
      ttyb.sg_flags = (ttyb.sg_flags|O_CBREAK) & ~O_ECHO;
@@ -9,12 +9,3 @@
      ltc = ltcsave;
      ltc.t_suspc = -1;
      ioctl(0, TIOCSLTC, &ltc);
-@@ -127,7 +127,7 @@
- #endif /* USE_SGTTY */
- }
- 
--void main(int argc, char *argv[]) {
-+int main(int argc, char *argv[]) {
-    FILE *f;
-    char c = 0, buf[512];
-    int d;

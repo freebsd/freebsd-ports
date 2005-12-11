@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	powwow
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://Linuz.sns.it/pub/Linux/max/powwow/ \
+MASTER_SITES=	http://linuz.sns.it/~max/powwow/ \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
-MASTER_SITE_SUBDIR=	games/muds
 
-MAINTAINER=	otis@freebsd.sk
+MAINTAINER=	otis@sk.FreeBSD.org
 COMMENT=	Client to play MUDs
 
 USE_REINPLACE=	yes
