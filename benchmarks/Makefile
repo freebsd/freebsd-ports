@@ -43,6 +43,7 @@
     SUBDIR += siege
     SUBDIR += stream
     SUBDIR += super-smack
+    SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
     SUBDIR += tmetric
