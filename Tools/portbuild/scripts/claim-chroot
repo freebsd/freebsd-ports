@@ -47,7 +47,7 @@ while [ ${found} != 1 ]; do
     chroot=${chrootdir}/${chrootnum}
     mkdir -p ${chroot}/used 2>/dev/null || continue
     # Need to make sure that used/ is also present after mounting the fresh md so as to not leave open any races
-    mount /dev/${unit} ${chroot}/used
+    mount -o async /dev/${unit} ${chroot}/used
     mkdir ${chroot}/used/used
     touch ${chroot}/used/used/${pkgname}
     umount ${chroot}/used
