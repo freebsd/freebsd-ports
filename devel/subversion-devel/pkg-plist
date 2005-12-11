@@ -181,10 +181,10 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/test-scripts/svntest/svntest.sh
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
-%%MOD_DAV_SVN%%libexec/%%APACHEDIR%%/mod_dav_svn.so
-%%MOD_DAV_SVN%%libexec/%%APACHEDIR%%/mod_authz_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/%%APACHEDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/%%APACHEDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
+%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.a
 %%WITH_JAVA%%lib/libsvnjavahl-1.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.so.0
