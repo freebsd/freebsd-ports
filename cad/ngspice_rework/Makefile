@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	15
+PORTVERSION=	17
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ngspice
-DISTNAME=	ngspice-rework${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	ng-spice-rework-${PORTVERSION}
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A circuit simulator derived from spice3f5
 
-WRKSRC=		${WRKDIR}/ng-spice-rework-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
-.ifndef PACKAGE_BUILDING
+.ifdef PACKAGE_BUILDING
 CONFIGURE_ARGS+=	--with-readline=yes
 .else
 CONFIGURE_ARGS+=	--disable-debug
