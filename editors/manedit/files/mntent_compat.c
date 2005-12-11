@@ -37,7 +37,9 @@ struct mntent *getmntent(FILE * filep)
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_SYNCHRONOUS)    getmntent_addopt(&c, "sync");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOEXEC)         getmntent_addopt(&c, "noexec");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOSUID)         getmntent_addopt(&c, "nosuid");
+#ifdef MNT_NODEV
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NODEV)          getmntent_addopt(&c, "nodev");
+#endif
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_UNION)          getmntent_addopt(&c, "union");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_ASYNC)          getmntent_addopt(&c, "async");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOATIME)        getmntent_addopt(&c, "noatime");
