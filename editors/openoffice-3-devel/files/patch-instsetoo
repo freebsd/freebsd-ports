@@ -130,20 +130,24 @@ diff -u -r1.47 globals.pm
  	$unpackpath = "";
  	$idttemplatepath = "";
  	$idtlanguagepath = "";
+
 Index: solenv/bin/modules/installer/parameter.pm
 ===================================================================
 RCS file: /cvs/tools/solenv/bin/modules/installer/parameter.pm,v
 retrieving revision 1.29
 diff -u -r1.29 parameter.pm
 --- solenv/bin/modules/installer/parameter.pm	9 Nov 2005 09:10:12 -0000	1.29
-+++ solenv/bin/modules/installer/parameter.pm	3 Dec 2005 22:26:53 -0000
-@@ -304,6 +304,10 @@
++++ solenv/bin/modules/installer/parameter.pm	10 Dec 2005 13:11:30 -0000
+@@ -304,6 +304,13 @@
  			$installer::globals::epmoutpath = "packages";
  		}
  	}
 +	if ( $installer::globals::compiler =~ /unxfbsdi/ )
 +	{
-+		$installer::globals::isfreebsdpkgbuild = 1;
++		if ( $installer::globals::packageformat eq "bsd" )
++		{
++			$installer::globals::isfreebsdpkgbuild = 1;
++		}
 +	}
  
  	if ( $installer::globals::compiler =~ /unxso[lg]s/ ) { $installer::globals::issolarissparcbuild = 1; }

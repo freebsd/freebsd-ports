@@ -21,7 +21,6 @@ package-canonical:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	#@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util; dmake sdkoo'
 	@${RM} -fr ${WRKDIR}/sdk_tmp
 	@${MKDIR} ${WRKDIR}/sdk_tmp
 	@cd ${WRKDIR}/sdk_tmp ; \
@@ -33,7 +32,6 @@ sdk:
 
 ure:
 	@${ECHO_MSG} "===>   Make Uno Runtime Environment of OpenOffice.org"
-	#@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd instsetoo_native/util; dmake ure_en-US'
 	@${RM} -fr ${WRKDIR}/ure_tmp
 	@${MKDIR} ${WRKDIR}/ure_tmp
 	@cd ${WRKDIR}/ure_tmp ; \
