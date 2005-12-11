@@ -2,11 +2,6 @@
 
 of=extras.html.new
 
-# delete .new file if it is more than a day old
-find $of -mtime +1 -delete 2>/dev/null
-
-if [ -f $of ]; then exit; fi
-
 if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
 echo "<html><head><title>List of files and directories that do not match their mtree description</title>" >$of

@@ -27,17 +27,10 @@ arch=$(echo ${buildlogdir} | sed -e "s,${rpb}/,," | cut -f 1 -d /)
 # create a name for the tempfile
 of=.index.html
 
-# delete lockfiles if more than a day old
-find $of .lock -mmin +60 -delete 2>/dev/null
-
-# exit if another instance of this program is running
-if [ -f $of -o -f .lock ]; then exit; fi
-
 # if there are no new logfiles, there is nothing to do here.
 if [ -e .stamp -a $(echo $(find -f $buildlogdir -maxdepth 1 -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
 touch .stamp
-touch .lock
 
 # get the list of buildlogs.
 set $buildlogdir/*.log
@@ -307,7 +300,3 @@ done
 
 echo $maints | sed -e 's/ /\
 /g' | sort -fu > maintainers
-
-# now remove the lockfile for this invocation, and exit
-rm .lock
-# echo 'processlogs: at '`date`', end'
