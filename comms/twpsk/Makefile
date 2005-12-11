@@ -15,7 +15,16 @@ COMMENT=	A openmotif X psk31 client
 
 USE_XPM=	yes
 USE_MOTIF=	yes
+USE_REINPLACE=	yes
 
 MAN1=		psk31.1
+
+FILES_TO_PATCH=	Makefile psk31.1 twpskHelp
+post-patch:
+.for file in ${FILES_TO_PATCH}
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${X11BASE}|g' \
+		${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
