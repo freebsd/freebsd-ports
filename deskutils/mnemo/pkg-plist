@@ -54,6 +54,7 @@ etc/horde/httpd.conf.mnemo
 %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/help.xml
 %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/tr_TR/help.xml
 %%MNEMODIR%%/locale/zh_CN/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/zh_TW/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/memo.php
@@ -85,6 +86,7 @@ etc/horde/httpd.conf.mnemo
 %%MNEMODIR%%/po/zh_CN.po
 %%MNEMODIR%%/po/zh_TW.po
 %%MNEMODIR%%/scripts/.htaccess
+%%MNEMODIR%%/scripts/import_vnotes.php
 %%MNEMODIR%%/scripts/sql/mnemo.sql
 %%MNEMODIR%%/scripts/sql/mnemo.oci8.sql
 %%MNEMODIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
@@ -107,9 +109,12 @@ etc/horde/httpd.conf.mnemo
 %%MNEMODIR%%/templates/search/search.inc
 %%MNEMODIR%%/templates/view/memo.inc
 %%MNEMODIR%%/themes/graphics/add.png
+%%MNEMODIR%%/themes/graphics/az.png
 %%MNEMODIR%%/themes/graphics/favicon.ico
 %%MNEMODIR%%/themes/graphics/mnemo.png
 %%MNEMODIR%%/themes/graphics/notepads.png
+%%MNEMODIR%%/themes/graphics/za.png
+%%MNEMODIR%%/themes/screen.css
 %%MNEMODIR%%/view.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%MNEMODIR%%/themes/graphics
@@ -130,6 +135,7 @@ etc/horde/httpd.conf.mnemo
 @dirrm %%MNEMODIR%%/locale/zh_TW
 @dirrm %%MNEMODIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/zh_CN
+@dirrm %%MNEMODIR%%/locale/tr_TR
 @dirrm %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/sv_SE
 @dirrm %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES

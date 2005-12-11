@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
