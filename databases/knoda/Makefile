@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		knoda
-PORTVERSION=		0.7.4
-PORTREVISION=	1
+PORTVERSION=		0.8
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,7 @@ MAINTAINER=		sem@FreeBSD.org
 COMMENT=		Database frontend for KDE
 
 BUILD_DEPENDS=		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS=		hk_classes.8:${PORTSDIR}/databases/hk_classes
+LIB_DEPENDS=		hk_classes.9:${PORTSDIR}/databases/hk_classes
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3

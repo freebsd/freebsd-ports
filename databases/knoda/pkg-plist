@@ -150,6 +150,7 @@ share/doc/HTML/en/knoda/common
 share/doc/HTML/en/knoda/complexreport.png
 share/doc/HTML/en/knoda/csvexport.png
 share/doc/HTML/en/knoda/csvimport.png
+share/doc/HTML/en/knoda/dbregional.png
 share/doc/HTML/en/knoda/exportimportmanager.png
 share/doc/HTML/en/knoda/filter.png
 share/doc/HTML/en/knoda/filterdefinition.png
@@ -178,6 +179,7 @@ share/doc/HTML/en/knoda/mainwindow-sdi.png
 share/doc/HTML/en/knoda/mainwindow.png
 share/doc/HTML/en/knoda/mainwindow2.png
 share/doc/HTML/en/knoda/modebuttons.png
+share/doc/HTML/en/knoda/objecthandling.png
 share/doc/HTML/en/knoda/options.png
 share/doc/HTML/en/knoda/options1.png
 share/doc/HTML/en/knoda/options2.png
@@ -203,6 +205,7 @@ share/doc/HTML/en/knoda/tablewithcombo.png
 share/doc/HTML/en/knoda/taborder1.png
 share/doc/HTML/en/knoda/taborder2.png
 share/doc/HTML/en/knoda/tutorial.docbook
+share/doc/HTML/en/knoda/xmlexport.png
 share/icons/hicolor/16x16/apps/knoda.png
 share/icons/hicolor/32x32/apps/knoda.png
 share/icons/locolor/16x16/apps/knoda.png
