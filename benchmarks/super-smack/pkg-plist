@@ -1,0 +1,6 @@
+bin/gen-data
+bin/super-smack
+%%DATADIR%%/select-key.smack
+%%DATADIR%%/update-select.smack
+@dirrm %%DATADIR%%
+@unexec rmdir /var/smack-data 2>/dev/null || true
