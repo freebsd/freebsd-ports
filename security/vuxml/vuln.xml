@@ -34,6 +34,152 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2506f558-6a8a-11da-b96e-000fb586ba73">
+    <topic>mnemo -- Cross site scripting vulnerabilities in several of the notepad name and note data fields</topic>
+    <affects>
+      <package>
+	<name>mnemo</name>
+	<range><lt>2.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Announce of Mnemo H3 (2.0.3) (final):</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433279228172&amp;w=2">
+	  <p>This [2.0.3] is a security release that fixes cross site scripting
+	    vulnerabilities in several of the notepad name and note data
+	    fields. None of the vulnerabilities can be exploited by
+	    unauthenticated users; however, we strongly recommend that all users
+	    of Mnemo 2.0.2 upgrade to 2.0.3 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433279228172&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-12-11</discovery>
+      <entry>2005-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee6b5956-6a89-11da-b96e-000fb586ba73">
+    <topic>nag -- Cross site scripting vulnerabilities in several of the tasklist name and task data fields</topic>
+    <affects>
+      <package>
+	<name>nag</name>
+	<range><lt>2.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Announce of Nag H3 (2.0.4) (final):</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433205826731&amp;w=2">
+	  <p>This [2.0.4] is a security release that fixes cross site scripting
+	    vulnerabilities in several of the tasklist name and task data
+	    fields. None of the vulnerabilities can be exploited by
+	    unauthenticated users; however, we strongly recommend that all users
+	    of Nag 2.0.3 upgrade to 2.0.4 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433205826731&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-12-11</discovery>
+      <entry>2005-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eeebd55d-6a88-11da-b96e-000fb586ba73">
+    <topic>turba -- Cross site scripting vulnerabilities in several of the address book name and contact data fields</topic>
+    <affects>
+      <package>
+	<name>turba</name>
+	<range><lt>2.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Announce of Turba H3 (2.0.5) (final):</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433120829232&amp;w=2">
+	  <p>This [2.0.5] is a security release that fixes cross site scripting
+	    vulnerabilities in several of the address book name and contact data
+	    fields. None of the vulnerabilities can be exploited by
+	    unauthenticated users; however, we strongly recommend that all users
+	    of Turba 2.0.4 upgrade to 2.0.5 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433120829232&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-12-11</discovery>
+      <entry>2005-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36494478-6a88-11da-b96e-000fb586ba73">
+    <topic>kronolith -- Cross site scripting vulnerabilities in several of the calendar name and event data fields</topic>
+    <affects>
+      <package>
+	<name>kronolith</name>
+	<range><lt>2.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Announce of Kronolith H3 (2.0.6) (final):</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=kronolith&amp;m=113433029822279&amp;w=2">
+	  <p>This [2.0.6] is a security release that fixes cross site scripting
+	    vulnerabilities in several of the calendar name and event data
+	    fields. None of the vulnerabilities can be exploited by
+	    unauthenticated users; however, we strongly recommend that all users
+	    of Kronolith 2.0.5 upgrade to 2.0.6 as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=kronolith&amp;m=113433029822279&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-12-11</discovery>
+      <entry>2005-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="01356ccc-6a87-11da-b96e-000fb586ba73">
+    <topic>horde -- Cross site scripting vulnerabilities in several of Horde's templates</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><lt>3.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Announce of Horde H3 3.0.8 (final):</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433346726097&amp;w=2">
+	  <p>This [3.0.8] is a security release that fixes cross site scripting
+	    vulnerabilities in several of Horde's templates. None of the
+	    vulnerabilities can be exploited by unauthenticated users; however, we
+	    strongly recommend that all users of Horde 3.0.7 upgrade to 3.0.8 as
+	    soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=horde-announce&amp;m=113433346726097&amp;w=2</url>
+    </references>
+    <dates>
+      <discovery>2005-12-11</discovery>
+      <entry>2005-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b4facec-6761-11da-99f6-00123ffe8333">
     <topic>curl -- URL buffer overflow vulnerability</topic>
     <affects>
@@ -441,7 +587,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="873a6542-5b8d-11da-b96e-000fb586ba73">
-    <topic>horde -- Cross site scripting vulnerabilities in MIME viewers.</topic>
+    <topic>horde -- Cross site scripting vulnerabilities in MIME viewers</topic>
     <affects>
       <package>
 	<name>horde</name>
@@ -451,7 +597,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Annouce of Horde 3.0.7 (final):</p>
+	<p>Announce of Horde 3.0.7 (final):</p>
 	<blockquote cite="http://lists.horde.org/archives/announce/2005/000232.html">
 	  <p>This [3.0.7] is a security release that fixes cross site
 	    scripting vulnerabilities in two of Horde's MIME viewers. These
