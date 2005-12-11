@@ -11,14 +11,9 @@ of=/usr/local/www/data/errorlogs/.${arch}-${branch}-failure.html
 
 cd ${pb}/${arch}/${branch}
 
-find $of .failure.html.lock -mmin +60 -delete 2>/dev/null
-
-if [ -f $of -o -f .failure.html.lock ]; then exit; fi
-
 if [ -e .newfailure.stamp -a $(echo $(find . -maxdepth 1 -newer .newfailure.stamp -name newfailure 2>&1 /dev/null | wc -l)) = "0" ]; then exit; fi
 
 touch .newfailure.stamp
-touch .failure.html.lock
 
 newfailure=${pb}/${arch}/${branch}/newfailure
 num=$(wc -l ${newfailure} | awk '{print $1}')
@@ -72,5 +67,4 @@ while read dir name ver date last count; do
     echo "</tr>" >> $of
 done < newfailure
 footer ""
-rm .failure.html.lock
 mv -f $of /usr/local/www/data/errorlogs/${arch}-${branch}-failure.html
