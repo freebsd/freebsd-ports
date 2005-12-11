@@ -11961,6 +11961,7 @@ synce-trayicon	ports/palm/synce-trayicon
 syndigator	ports/www/syndigator
 synergy 	ports/sysutils/synergy
 synonym		ports/mail/synonym
+sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
