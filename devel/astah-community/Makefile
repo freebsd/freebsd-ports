@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -44,6 +44,11 @@ IGNORE=		needs you to fetch manually the distribution file\
 		from ${DOWNLOAD_URL}, \
 		then place it in ${DISTDIR} and run make again
 .endif
+
+# miss packed with MS-DOS style new line code for version 2.4.3
+# add @ to hide strange message caused by ^M
+pre-patch:
+	@${REINPLACE_CMD} "s///" ${WRKSRC}/jude
 
 post-patch:
 	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!; \
