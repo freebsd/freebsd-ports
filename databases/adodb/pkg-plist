@@ -11,7 +11,6 @@
 %%ADODB_DIR%%/adodb-perf.inc.php
 %%ADODB_DIR%%/adodb-php4.inc.php
 %%ADODB_DIR%%/adodb-time.inc.php
-%%ADODB_DIR%%/adodb-time.zip
 %%ADODB_DIR%%/adodb-xmlschema.inc.php
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/pivottable.inc.php
@@ -63,6 +62,10 @@
 %%ADODB_DIR%%/drivers/adodb-odbtp_unicode.inc.php
 %%ADODB_DIR%%/drivers/adodb-oracle.inc.php
 %%ADODB_DIR%%/drivers/adodb-pdo.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo_mssql.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo_mysql.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo_oci.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo_pgsql.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres64.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres7.inc.php
@@ -71,7 +74,6 @@
 %%ADODB_DIR%%/drivers/adodb-sapdb.inc.php
 %%ADODB_DIR%%/drivers/adodb-sqlanywhere.inc.php
 %%ADODB_DIR%%/drivers/adodb-sqlite.inc.php
-%%ADODB_DIR%%/drivers/adodb-sqlite.inc.php.bak
 %%ADODB_DIR%%/drivers/adodb-sqlitepo.inc.php
 %%ADODB_DIR%%/drivers/adodb-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-sybase_ase.inc.php
@@ -111,6 +113,7 @@
 %%ADODB_DIR%%/session/adodb-encrypt-mcrypt.php
 %%ADODB_DIR%%/session/adodb-encrypt-md5.php
 %%ADODB_DIR%%/session/adodb-encrypt-secret.php
+%%ADODB_DIR%%/session/adodb-encrypt-sha1.php
 %%ADODB_DIR%%/session/adodb-sess.txt
 %%ADODB_DIR%%/session/adodb-session-clob.php
 %%ADODB_DIR%%/session/adodb-session.php
@@ -127,8 +130,10 @@
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
 %%ADODB_DIR%%/xsl/remove-0.2.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
+%%TESTS%%%%ADODB_DIR%%/tests/cf~testsessions.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
 %%TESTS%%%%ADODB_DIR%%/tests/pdo.php
+%%TESTS%%%%ADODB_DIR%%/tests/rr.htm
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-perf.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-pgblob.php
