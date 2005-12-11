@@ -10152,6 +10152,7 @@ pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
 pwsafe		ports/sysutils/pwsafe
 pxe		ports/net/pxe
+pxlib		ports/databases/pxlib
 pxtools		ports/databases/pxtools
 pxytest		ports/security/pxytest
 py-4suite	ports/textproc/py-4suite
