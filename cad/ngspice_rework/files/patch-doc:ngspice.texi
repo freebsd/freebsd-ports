@@ -1,6 +1,6 @@
---- doc/ngspice.texi.orig	Mon Dec 10 20:21:11 2001
-+++ doc/ngspice.texi	Mon Jan  7 17:15:34 2002
-@@ -5,6 +5,11 @@
+--- doc/ngspice.texi.orig	Tue Aug 16 07:24:58 2005
++++ doc/ngspice.texi	Sat Dec 10 17:56:39 2005
+@@ -7,6 +7,11 @@
  @setchapternewpage odd
  @c %**end of header
  
@@ -9,6 +9,6 @@
 +* NGSPICE: (ngspice).              NGSPICE User Manual
 +@end direntry
 +
- @ifinfo
- This file documents NGSPICE.
- 
+ @c Summary Description and Copyright
+ @copying
+ Copyright 1996 The Regents of the University of California.
