@@ -7,6 +7,12 @@ bin/xcbm2
 bin/xpet
 bin/xplus4
 bin/xvic
+%%NLS%%lib/locale/de/LC_MESSAGES/vice.mo
+%%NLS%%lib/locale/fr/LC_MESSAGES/vice.mo
+%%NLS%%lib/locale/it/LC_MESSAGES/vice.mo
+%%NLS%%lib/locale/nl/LC_MESSAGES/vice.mo
+%%NLS%%lib/locale/pl/LC_MESSAGES/vice.mo
+%%NLS%%lib/locale/sv/LC_MESSAGES/vice.mo
 lib/vice/C128/basic64
 lib/vice/C128/basichi
 lib/vice/C128/basiclo
