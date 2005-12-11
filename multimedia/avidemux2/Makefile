@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.42
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -20,6 +19,7 @@ PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15
 USE_REINPLACE=	yes
@@ -32,12 +32,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
-CONFIGURE_ARGS=	--disable-warnings
+CONFIGURE_ARGS=	--disable-warnings \
+		--with-jsapi-include=${LOCALBASE}/include
 USE_GMAKE=	yes
 OPTIONS=	OPTIMIZED_CFLAGS "build with -O3 for lavcodec" off \
 		FAAC "FAAC (mpeg4/aac encoder)" off \
 		FAAD "FAAD (mpeg4/aac decoder)" off \
-		MPEGENC "MPEG/MJPEG video" off \
+		X264 "H.264 encoding" off \
 		A52 "A52 audio" off \
 		XVID "Xvid video" off \
 		SDL "SDL audio/video framework" off
@@ -48,6 +49,10 @@ OPTIONS=	OPTIMIZED_CFLAGS "build with -O3 for lavcodec" off \
 #WITH_SDL=	yes
 #.endif
 
+.if exists(${LOCALBASE}/lib/libx264.so)
+WITH_X264=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libfaac.so)
 WITH_FAAC=	yes
 .endif
@@ -56,20 +61,12 @@ WITH_FAAC=	yes
 WITH_FAAD=	yes
 .endif
 
-.if exists(${LOCALBASE}/bin/mpeg2enc)
-WITH_MPEGENC=	yes
-.endif
-
 .if exists(${LOCALBASE}/lib/liba52.so.0)
 WITH_A52=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libxvidcore.so.4)
 WITH_XVID=	yes
-.endif
-
-.if defined(WITH_MPEGENC)
-RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
 
 .if defined(WITH_XVID)
@@ -91,6 +88,10 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 
 .if defined(WITH_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+.endif
+
+.if defined(WITH_X264)
+LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 .endif
 
 .if ${OSVERSION} < 500000
