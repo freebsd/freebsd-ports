@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		superkaramba
-PORTVERSION=		0.36
-PORTREVISION=		3
+PORTVERSION=		0.37
 CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdragon
@@ -14,8 +13,7 @@ MASTER_SITE_SUBDIR=	netdragon
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE tool that allows interactive eye-candy on the desktop
 
-EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
-
+WRKSRC=			${WRKDIR}/${PORTNAME}
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
@@ -41,6 +39,5 @@ RUN_DEPENDS+=	mbmon:${PORTSDIR}/sysutils/xmbmon
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 ||g;' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.post.mk>
