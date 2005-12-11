@@ -1,0 +1,24 @@
+
+%%PKGNAME%% has been installed into:
+
+    %%PREFIX%%/%%PLADIR%%
+
+Please edit config.php to suit your needs.
+
+To make phpLDAPadmin available through your web site, 
+I suggest that you add the following to httpd.conf:
+
+    Alias /phpldapadmin/ "%%PREFIX%%/%%PLADIR%%/htdocs"
+
+Please note: if you are upgrading from version 0.9.7 or earlier, the
+layout of the %%PKGNAME%% files has been completely reworked. You
+will need to modify your apache configuration and merge the settings
+from your original configuration file:
+
+    %%PREFIX%%/%%PLADIR%%/config.php
+
+ to
+
+   %%PREFIX%%/%%PLADIR%%/config/config.php
+
+

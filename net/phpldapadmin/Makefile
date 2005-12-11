@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.7.2
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,17 +24,12 @@ USE_PHP=	ldap openssl pcre session
 PKGNAMESUFFIX=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 WANT_PHP_CGI=	yes
-PKGINST_SKEL=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
-PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
-PKGDEINST_SKEL=	${PKGDIR}/pkg-deinstall${PKGNAMESUFFIX}
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall${PKGNAMESUFFIX}
 
 PLAUSR?=	pldapadm
 
-SED_SCRIPT=	-e 's!%%PREFIX%%!${PREFIX}!g' \
-		-e 's!%%PLADIR%%!${PLADIR}!g' \
-		-e 's!%%PLAUSR%%!${PLAUSR}!g' \
-		-e 's!%%PLAGRP%%!${PLAGRP}!g'
+SUB_LIST+=	PLAUSR=${PLAUSR} \
+		PLAGRP=${PLAGRP}
+SUB_FILES+=	pkg-install  pkg-deinstall
 
 .else
 
@@ -42,16 +37,21 @@ WANT_PHP_WEB=	yes
 
 .endif
 
-MSG_SKEL=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 # PLAUSR is only used WITH_SUPHP
 PLADIR?=	www/${PORTNAME}
 PLAGRP?=	${WWWGRP}
+CFGDIR=		config
 CFGFILE=	config.php
+
+SUB_LIST+=	PKGNAME=${PKGNAME} \
+		PLADIR=${PLADIR}
+SUB_FILES+=	pkg-message
 
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PLADIR=${PLADIR} PLAGRP=${PLAGRP}
+
+sedSTART=	@unexec rmdir %D/%%PLADIR%%
+sedEND=		2>/dev/null || true
 
 .SILENT:
 
@@ -64,21 +64,14 @@ pre-everything::
 	${ECHO_MSG} ""
 
 post-patch:
-	${RM} -f ${PLIST}
-	cd ${WRKSRC} ; \
+	cd ${WRKSRC} ;                                                      \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore | \
-	    ${SORT} | ${SED} "s!^\.!%%PLADIR%%!"     >${PLIST} ; \
-	${CAT} ${PKGDIR}/pkg-plist-chunk            >>${PLIST} ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-	    -e 's!^\.$$!@unexec rmdir %D/%%PLADIR%% 2>/dev/null || true!' \
-	    -e 's!^\.!@dirrm %%PLADIR%%!'           >>${PLIST}
-	${SED} -e 's!%%PKGNAME%%!${PKGNAME}!g' \
-	       -e 's!%%PREFIX%%!${PREFIX}!g'   \
-	       -e 's!%%PLADIR%%!${PLADIR}!g'   ${MSG_SKEL} > ${PKGMESSAGE}
-.if defined(WITH_SUPHP)
-	${SED} ${SED_SCRIPT} ${PKGINST_SKEL}   > ${PKGINSTALL}
-	${SED} ${SED_SCRIPT} ${PKGDEINST_SKEL} > ${PKGDEINSTALL}
-.endif
+	    ${SORT} | ${SED} -e "s!^\.!%%PLADIR%%!"             >${PLIST} ; \
+	${CAT} ${PKGDIR}/pkg-plist-chunk                       >>${PLIST} ; \
+	${FIND} . -type d | ${SORT} -r | ${SED}                             \
+	    -e 's!^\./${CFGDIR}$$!${sedSTART}/${CFGDIR} ${sedEND}!'         \
+	    -e 's!^\.$$!${sedSTART} ${sedEND}!'                             \
+	    -e 's!^\.!@dirrm %%PLADIR%%!'                      >>${PLIST}
 
 pre-install:
 .if defined(WITH_SUPHP)
@@ -99,7 +92,7 @@ install-app:
 	done
 
 install-conf:
-	cd ${PREFIX}/${PLADIR} ; \
+	cd ${PREFIX}/${PLADIR}/${CFGDIR} ; \
 	${CHMOD} 0640 ${CFGFILE}.example ; \
 	${CHGRP} ${PLAGRP} ${CFGFILE}.example ; \
 	if ${TEST} ! -f ${CFGFILE} ; then \
