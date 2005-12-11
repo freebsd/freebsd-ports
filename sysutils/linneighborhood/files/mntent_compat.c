@@ -37,7 +37,7 @@ struct mntent *getmntent(FILE * filep)
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_SYNCHRONOUS)    getmntent_addopt(&c, "sync");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOEXEC)         getmntent_addopt(&c, "noexec");
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOSUID)         getmntent_addopt(&c, "nosuid");
-#if __FreeBSD_version < 700008
+#ifdef MNT_NODEV 
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NODEV)          getmntent_addopt(&c, "nodev");
 #endif
         if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_UNION)          getmntent_addopt(&c, "union");
