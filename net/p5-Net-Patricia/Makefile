@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	Net-Patricia
-PORTVERSION=	1.010
+PORTVERSION=	1.014
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://net.doit.wisc.edu/~plonka/Net-Patricia/
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for fast IP address lookups
 
 PERL_CONFIGURE=	YES
 
 MAN3=		Net::Patricia.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
