@@ -24,10 +24,9 @@ tmpdir=$5
 md5master=$6
 disconnected=$7
 
-cd ${tmpdir}
-
 mkdir -p ${tmpdir}/${branch}/chroot
 mkdir -p ${tmpdir}/${branch}/tarballs
+cd ${tmpdir}
 if [ "$nocopy" = 0 ]; then
   if [ -f ${tmpdir}/${branch}/tarballs/bindist.tar ]; then
     md5=$(/sbin/md5 ${tmpdir}/${branch}/tarballs/bindist.tar | awk '{print $4}')
