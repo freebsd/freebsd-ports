@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-DISTVERSION=	1.3.0-rc2
+DISTVERSION=	1.3.0-rc4
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://lolut.utbm.info/pub/subversion-1.3.0/rc2/:main \
+MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.1/:book
-#MASTER_SITES=	http://subversion.tigris.org/tarballs/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -155,21 +154,18 @@ SVNGROUP?=	svn
 .endif
 
 .if defined(WITH_APACHE2_APR)
-APACHE2_PORT?=	www/apache20
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
-.if ${APACHE2_PORT} == "www/apache21"
-PLIST_SUB+=	APACHEDIR="apache21"
+USE_APACHE=	2.0+
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.if ${APACHE_PORT} == "www/apache21"
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
 .else
-PLIST_SUB+=	APACHEDIR="apache2"
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
 .endif
-APR_PORT=	${APACHE2_PORT}
+APR_PORT=	${APACHE_PORT}
 .if !defined(WITHOUT_BDB)
 DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
@@ -263,11 +259,11 @@ pre-extract:
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_APACHE2_APR)
-	@${ECHO_MSG} "Using APR from www/apache20.  If you have the devel/apr"
+	@${ECHO_MSG} "Using APR from ${APACHE_PORT}.  If you have the devel/apr"
 	@${ECHO_MSG} "port/package installed, you may need to remove it."
 .else
 	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the www/apache20 port, rather than the devel/apr port,"
+	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port,"
 	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
 .endif
 	@${ECHO_MSG} ""
