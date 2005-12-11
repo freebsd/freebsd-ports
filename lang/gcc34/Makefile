@@ -23,7 +23,7 @@ DISTFILES=	\
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.4
 
-CONFLICTS=	gcc-4.0.* gcc-4.1.*
+CONFLICTS=	gcc-4.0.* gcc-4.1.* gcc-4.2.*
 LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes

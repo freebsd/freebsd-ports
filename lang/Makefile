@@ -74,6 +74,7 @@
     SUBDIR += gcc34
     SUBDIR += gcc40
     SUBDIR += gcc41
+    SUBDIR += gcc42
     SUBDIR += gcl
     SUBDIR += gdc
     SUBDIR += gforth
