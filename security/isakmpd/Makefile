@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/isakmpd
-MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 
 MAN5=		isakmpd.conf.5 isakmpd.policy.5
 MAN8=		certpatch.8 isakmpd.8
