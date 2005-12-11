@@ -42,6 +42,7 @@
     SUBDIR += scimark2c
     SUBDIR += siege
     SUBDIR += stream
+    SUBDIR += super-smack
     SUBDIR += tcpblast
     SUBDIR += thrulay
     SUBDIR += tmetric
