@@ -1,0 +1,9 @@
+The Turbolet L410 package simulates the Turbolet L410 Czech commuter aircraft,
+and is provided as an aircraft for the FlightGear flight simulator. Since the
+aircraft requires modifications to the FlightGear source code, this port
+builds and installs a patched FlightGear executable.
+
+WWW: http://javky.rozhled.cz/index.php?id=fgfsl410&typ=P
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
