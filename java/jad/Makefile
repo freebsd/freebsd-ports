@@ -8,7 +8,8 @@
 PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.kpdus.com/jad/freebsd/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jadfb158
 
