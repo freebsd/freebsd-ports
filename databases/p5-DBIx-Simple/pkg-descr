@@ -1,0 +1,14 @@
+DBIx::Simple module aims to be a simplified object oriented interface to Perl
+DBI.  From its description ...
+
+  Query preparation and execution are combined in a single method, the result
+  object (which is a wrapper around the statement handle) provides easy
+  row-by-row and slurping methods.
+
+  The "query" method returns either a result object, or a dummy object.  The
+  dummy object returns undef (or an empty list) for all methods and when used in
+  boolean context, is false. The dummy object lets you postpone (or skip) error
+  checking, but it also makes immediate error check simply " $db->query(...) or
+  die $db->error".
+
+WWW: http://search.cpan.org/dist/DBIx-Simple/
