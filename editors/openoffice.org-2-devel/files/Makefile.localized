@@ -14,15 +14,34 @@ CATEGORIES+=	arabic
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "be-BY"
+LANG_PKGNAME=	be
+LANG_SUFFIX=	BY
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bg"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "br"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "bn"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "be-BY"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+.if ${LOCALIZED_LANG} == "bn-BD"
+LANG_PKGNAME=	be
+LANG_SUFFIX=	BD
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "bg"
+.if ${LOCALIZED_LANG} == "bn-IN"
+LANG_PKGNAME=	bn
+LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bs"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -53,11 +72,18 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "en-GB"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	en
+LANG_SUFFIX=	GB
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "en-US"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	en
+LANG_SUFFIX=	US
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "en-ZA"
+LANG_PKGNAME=	en
+LANG_SUFFIX=	ZA
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "eo"
@@ -94,7 +120,8 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "gu-IN"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	gu
+LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "he"
@@ -102,7 +129,8 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "hi-IN"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	hi
+LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "hr"
@@ -138,7 +166,19 @@ CATEGORIES+=     korean
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "lo"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "lt"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "lv"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "mk"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -171,7 +211,8 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pa-IN"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	pa
+LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pl"
@@ -183,7 +224,6 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
 CATEGORIES+=	portuguese
 LANG_PKGNAME=	${LOCALIZED_LANG}
-LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
 .endif
 ################################################################
@@ -212,11 +252,13 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sh-YU"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	sh
+LANG_SUFFIX=	YU
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sr-CS"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	sr
+LANG_SUFFIX=	CS
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ss"
@@ -231,12 +273,22 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "sw"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "sw-TZ"
+LANG_PKGNAME=	sw
+LANG_SUFFIX=	TZ
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sx"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ta-IN"
-LANG_PKGNAME=	${LOCALIZED_LANG}
+LANG_PKGNAME=	ta
+LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "th"
