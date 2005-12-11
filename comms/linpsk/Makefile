@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-qtdir=${X11BASE}
+CONFIGURE_ARGS=	--with-qtdir=${X11BASE} --prefix=${PREFIX}
 
 SUB_FILES=	pkg-message
 
@@ -40,6 +40,8 @@ IGNORE=		does not build on FreeBSD 4.x
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-I$$(top_srcdir)/src/portaudio||' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/src/interfaces/Makefile.in
