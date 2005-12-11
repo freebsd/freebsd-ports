@@ -5764,6 +5764,7 @@ linux-libgcc	ports/lang/linux-libgcc
 linux-libglade	ports/devel/linux-libglade
 linux-libmng	ports/graphics/linux-libmng
 linux-libogg	ports/audio/linux-libogg
+linux-libperl5.8	ports/lang/linux-libperl5.8
 linux-libvorbis	ports/audio/linux-libvorbis
 linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
