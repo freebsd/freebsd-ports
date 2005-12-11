@@ -1,8 +1,10 @@
-sbin/%%DRIVERNAME%%control
-%%DATADIR%%/LICENSE
-%%DATADIR%%/%%DRIVERNAME%%-i.fw
-%%DATADIR%%/%%DRIVERNAME%%-p.fw
-%%DATADIR%%/%%DRIVERNAME%%.fw
-@dirrm %%DATADIR%%
+@cwd /
+%%WITH_CONTROL%%usr/sbin/%%DRIVERNAME%%control
+@exec mkdir -p %%FWDIR%%
+@cwd %%FWDIR%%
+LICENSE.%%DRIVERNAME%%
+%%DRIVERNAME%%-i.fw
+%%DRIVERNAME%%-p.fw
+%%DRIVERNAME%%.fw
 %%WITH_MODULE%%@cwd /
 %%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko

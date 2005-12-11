@@ -1,20 +1,34 @@
 ------------------------------------------------------------------
-You must choose the correct mode depending on how you want to
-use your adapter.
+This port has installed following files in %%FWDIR%%:
 
-For instance, to download firmware for BSS mode:
+  - LICENSE.%%DRIVERNAME%% : License terms,
+  - %%DRIVERNAME%%-boot.fw : Boot mode firmware,
+  - %%DRIVERNAME%%-bss.fw : BSS mode firmware,
+  - %%DRIVERNAME%%-ucode-bss.fw : BSS mode micro-code,
+  - %%DRIVERNAME%%-ibss.fw : IBSS mode firmware,
+  - %%DRIVERNAME%%-ucode-ibss.fw : IBSS mode micro-code,
+  - %%DRIVERNAME%%-sniffer.fw : Sniffer mode firmware,
+  - %%DRIVERNAME%%-ucode-sniffer.fw : Sniffer mode micro-code.
 
-  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 -d %%DATADIR%% -m bss
-
-The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
-to /etc/rc.conf to use it :
-
-  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
-    use the startup script.
-  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
-    change to interface names list (optional).
-  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
-    are bss, ibss and sniffer (optional).
+Ensure you've read license terms carefully before you use this
+firmware.
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%You must choose the correct mode depending on how you want to
+%%DONT_NEED_CONTROL%%use your adapter.
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%For instance, to download firmware for BSS mode:
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 -d %%DATADIR%% -m bss
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
+%%DONT_NEED_CONTROL%%to /etc/rc.conf to use it :
+%%DONT_NEED_CONTROL%%
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_enable (bool) : defaults to "NO", set it to "YES" to
+%%DONT_NEED_CONTROL%%    use the startup script.
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_interfaces (str) : defaults to "%%DRIVERNAME%%0", override it to
+%%DONT_NEED_CONTROL%%    change to interface names list (optional).
+%%DONT_NEED_CONTROL%%  - %%DRIVERNAME%%_mode_<iface> (str) : defaults to "bss", possible values
+%%DONT_NEED_CONTROL%%    are bss, ibss and sniffer (optional).
 %%MIGHT_NEED_MODULE%%
 %%MIGHT_NEED_MODULE%%Note: 
 %%MIGHT_NEED_MODULE%%

@@ -4,8 +4,8 @@
 #
 
 # PROVIDE: %%DRIVERNAME%%
-# REQUIRE: LOGIN abi
-# BEFORE:  securelevel
+# REQUIRE: mountcritlocal
+# BEFORE:  ipfilter
 # KEYWORD: FreeBSD shutdown
 
 # Add the following line to /etc/rc.conf to enable `%%DRIVERNAME%%':
@@ -50,7 +50,7 @@ command="/usr/local/sbin/%%DRIVERNAME%%control"
 
 		eval _file=\$_%%DRIVERNAME%%_file_${i}
 		echo -n " [${i}:${_mode:=bss}]"
-		${command} -i ${i} -f %%DATADIR%%/${_file}
+		${command} -i ${i} -f %%FWDIR%%/${_file}
 		ifconfig ${i} up
 	done
 	echo "."
