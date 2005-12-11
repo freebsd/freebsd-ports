@@ -21,8 +21,6 @@ COMMENT=	GTK2 binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not compile
-
 USE_GNOME=	gtk20 # this alters CONFIGURE_TARGET!
 GNU_CONFIGURE=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/gtk

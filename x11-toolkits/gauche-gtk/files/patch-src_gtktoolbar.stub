@@ -1,0 +1,11 @@
+--- src/gtktoolbar.stub.orig	Sat Dec 10 22:36:08 2005
++++ src/gtktoolbar.stub	Sat Dec 10 22:36:31 2005
+@@ -51,8 +51,6 @@
+    (tooltips :type <gtk-tooltips>)
+    (button-maxw :type <int>)
+    (button-maxh :type <int>)
+-   (style-set-connection :type <uint>)
+-   (icon-size-connection :type <uint>)
+    (style-set :type <uint>)
+    (icon-size-set :type <uint>)
+    )
