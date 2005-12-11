@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.1.0
-PORTREVISION=	20051202
+PORTVERSION=	4.2.0
+PORTREVISION=	20051210
 CATEGORIES=	lang java
-VERSIONSTRING=	4.1-${PORTREVISION}
+VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -19,15 +19,15 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.1
+COMMENT=	GNU Compiler Collection 4.2
 
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
-CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.0.*
-LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
+CONFLICTS=	gcc-3.3.* gcc-3.4.* gcc-4.0.* gcc-4.1.*
+LATEST_LINK?=	gcc42${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -61,7 +61,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		41
+SUFFIX=		42
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-nls \
@@ -84,7 +84,8 @@ LDCONFIG_DIRS=	${TARGLIB}
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 ALL_TARGET=	bootstrap-lean
-PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
+		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
@@ -185,7 +186,7 @@ post-install:
 
 cklatest:
 .for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/
-	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.1'
+	@-ncftpls -l ${SITE} | ${GREP} 'LATEST.*4\.2'
 .endfor
 
 .include <bsd.port.post.mk>
