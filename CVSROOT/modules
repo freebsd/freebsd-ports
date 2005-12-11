@@ -2379,6 +2379,7 @@ flick		ports/devel/flick
 flightgear	ports/games/flightgear
 flightgear-aircrafts	ports/games/flightgear-aircrafts
 flightgear-atlas	ports/games/flightgear-atlas
+flightgear-mb339-pan	ports/games/flightgear-mb339-pan
 flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
 flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
