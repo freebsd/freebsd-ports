@@ -37,6 +37,10 @@ fi
 
 # Choose highest-priority machine that is free
 mach=$(echo ${mach} | tr -s ' ' '\n' | grep -F -f - ${pb}/${arch}/mlist | head -1)
+if [ -z "${mach}" ]; then
+	rm -f "${mach}"
+	exit 1
+fi
 
 . ${pb}/${arch}/portbuild.conf
 test -f ${pb}/${arch}/portbuild.${mach} && . ${pb}/${arch}/portbuild.${mach}
