@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-aircrafts
 PORTVERSION=	20051124
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \
@@ -46,7 +47,6 @@ DISTFILES=	747_${FGRELDATE}.tgz \
 		harrier_${FGRELDATE}.tgz \
 		Hurricane_${FGRELDATE}.tgz \
 		j22_${FGRELDATE}.tgz \
-		l410_${FGRELDATE}.tgz \
 		Lockheed1049_1.0.tgz \
 		marchetti_${FGRELDATE}.tgz \
 		MD11_${FGRELDATE}.tgz \
