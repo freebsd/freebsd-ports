@@ -8,12 +8,6 @@ arch=$1
 home=${pb}/errorlogs
 scripts=${pb}/scripts
 
-lock=$home/lock
-
-if [ -f $lock ]; then exit; fi
-
-echo ${arch} > $lock
-
 for ver in latest full; do
   for num in 4 4-exp 5 5-exp 6 7; do
     cd $home/$arch-$num-$ver && ${scripts}/processlogs ${arch}
