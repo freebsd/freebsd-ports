@@ -1,0 +1,10 @@
+Paraphrased from the Data:Swap's documentation  ...
+
+Data::Swap (XS) module allows to swap the contents of two referenced
+variables, even if they have different types.  The main application is
+to change the base type of an object after it has been created, for
+example for dynamic loading of data structures:
+
+      swap $self, bless $replacement, $newclass;
+
+WWW: http://search.cpan.org/dist/Data-Swap/
