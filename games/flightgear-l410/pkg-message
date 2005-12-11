@@ -1,0 +1,6 @@
+===============================================================================
+The standard fgfs executable cannot handle the L410. To fly it, use the
+L410-specific fgfs executable:
+
+	fgfs-l410 --aircraft=l410
+===============================================================================
