@@ -16,6 +16,7 @@ bin/tcxmlcheck
 bin/tcxpm2rgb
 bin/transcode
 lib/transcode/af6_decore.so
+lib/transcode/import_oss.so
 %%WITH_LIBA52%%lib/transcode/a52_decore.so
 lib/transcode/export_ac3.so
 lib/transcode/export_af6.conf
