@@ -19,6 +19,8 @@ CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
@@ -26,7 +28,7 @@ CONFIGURE_ARGS+=	--with-mysql
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-postgresql
+CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
