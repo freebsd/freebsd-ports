@@ -27,12 +27,14 @@ EXAMPLE_FILES=	example.asm morse.asm morse.i pic16f84.i picmac.i
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picasm ${PREFIX}/bin
+	${MKDIR} ${DATADIR}/device_definitions
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/picasm.txt ${DOCSDIR}
 .for EXAMPLE in ${EXAMPLE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${EXAMPLE} ${EXAMPLESDIR}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/device_definitions/*.i ${DATADIR}/device_definitions
 .endif
 
 .include <bsd.port.mk>
