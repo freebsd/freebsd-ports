@@ -7455,6 +7455,7 @@ p5-Catalyst-Model-DBIC-Plain	ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Plugin-Authentication	ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-Store-DBIC	ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
+p5-Catalyst-Plugin-Authorization-ACL	ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles	ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-Catalyst-Plugin-DefaultEnd	ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
