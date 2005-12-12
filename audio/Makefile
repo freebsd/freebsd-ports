@@ -243,6 +243,7 @@
     SUBDIR += lame
     SUBDIR += laudio
     SUBDIR += liba52
+    SUBDIR += liba52-devel
     SUBDIR += libadplug
     SUBDIR += libao
     SUBDIR += libaudiofile
