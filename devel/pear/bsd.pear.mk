@@ -7,6 +7,8 @@ PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
 
+RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
+
 USE_REINPLACE=	yes
 
 .if !defined(USE_PHPIZE)
