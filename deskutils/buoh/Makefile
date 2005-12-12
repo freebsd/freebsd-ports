@@ -25,6 +25,19 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 GCONF_SCHEMAS=	buoh.schemas
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+CFLAGS+=		-g
+STRIP=
+.endif
+
+pre-everything::
+.if !defined(WITH_DEBUG)
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_DEBUG=yes to enable debugging in Buoh."
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/applications|g' \
 		${WRKSRC}/data/Makefile.in
