@@ -1,0 +1,4 @@
+This plugin uses "Authen::Htpasswd" to let your application use
+".htpasswd" files for it's authentication storage.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authentication-Store-Htpasswd/
