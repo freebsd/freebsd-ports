@@ -45,6 +45,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%Q3DIR%%|"${Q3DIR}"|' \
 		${WRKSRC}/code/unix/unix_shared.c
+	@${REINPLACE_CMD} -e 's|botlib.log|/dev/null|' ${WRKSRC}/code/botlib/be_interface.c
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lcc/build
