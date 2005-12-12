@@ -9,7 +9,8 @@ PORTNAME=	cider
 PORTVERSION=	1.b1
 PORTREVISION=	3
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Cider/new/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mita
 DISTNAME=	cider1b1
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
