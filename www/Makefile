@@ -494,6 +494,7 @@
     SUBDIR += p5-Catalyst-Model-CDBI-Sweet
     SUBDIR += p5-Catalyst-Model-DBIC
     SUBDIR += p5-Catalyst-Model-DBIC-Plain
+    SUBDIR += p5-Catalyst-Plugin-Authentication
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-FillInForm
