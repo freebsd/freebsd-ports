@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libgiigic
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	A library on top of libgii, gic stands for General Input Configuration
 
-LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
+LIB_DEPENDS=	gii.1:${PORTSDIR}/devel/libgii
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
@@ -89,6 +89,6 @@ MLINKS=		gicActionLazyAction.3 gicActionLazyGetstate.3 \
 		- gicRecognizerTrainStart.3 - gicRecognizerTrainStop.3
 
 post-install:
-	@${CP} ${WRKSRC}/libgiigic.conf ${PREFIX}/etc/ggi/libgiigic.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/libgiigic.conf ${PREFIX}/etc/ggi/libgiigic.conf.dist
 
 .include <bsd.port.mk>
