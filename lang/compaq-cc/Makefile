@@ -8,7 +8,7 @@
 
 PORTNAME=	compaq-cc
 PORTVERSION=	6.4.9.005.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.compaq.com/pub/products/C-CXX/linux/compaq_c/
 DISTFILES=	ccc-6.4.9.005-1.alpha.rpm libots-2.2.7-2.alpha.rpm
@@ -58,6 +58,12 @@ do-install:
 .for F in ${DISTFILES}
 	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |${CPIO} -idum -R root:wheel
 .endfor
+	${MV} ${PREFIX}/usr/man/man1/ccc.1 ${PREFIX}/usr/share/man/man1/
+	${MV} ${PREFIX}/usr/man/man8/protect_headers_setup.8 \
+		${PREFIX}/usr/share/man/man8/
+	-${RMDIR} ${PREFIX}/usr/man/man1 ${PREFIX}/usr/man/man8 \
+		${PREFIX}/usr/man
+
 .for F in ${CCC_ROOT}/alpha-linux/bin/lnxcc \
 	${CCC_ROOT}/alpha-linux/bin/lnxcc_driver
 	brandelf -t Linux ${PREFIX}$F
