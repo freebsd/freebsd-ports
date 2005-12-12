@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscoop
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.datazygte.com/ports/x11-toolkits/xscoop/
 
@@ -21,10 +21,18 @@ NO_BUILD=	yes
 # distfile contains i386 binary
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION}>=600000
+EXEFILE= xscoop6
+.else
+EXEFILE= xscoop5
+.endif
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xscoop ${PREFIX}/bin/xscoop
+	${INSTALL_PROGRAM} ${WRKSRC}/${EXEFILE} ${PREFIX}/bin/xscoop
 	${INSTALL_MAN} ${WRKSRC}/xscoop.7 ${MAN7PREFIX}/man/man7/xscoop.7
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/xscoop.pdf ${DOCSDIR}/xscoop.pdf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
