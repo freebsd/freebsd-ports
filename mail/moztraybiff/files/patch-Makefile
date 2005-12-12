@@ -1,15 +1,15 @@
---- Makefile.orig	Tue May 17 17:48:26 2005
-+++ Makefile	Tue May 17 17:49:09 2005
+--- Makefile.orig	Mon Dec 12 13:57:47 2005
++++ Makefile	Mon Dec 12 13:58:39 2005
 @@ -1,7 +1,7 @@
  SUBDIRS = components chrome
  .PHONY: all clean subdirs ${SUBDIRS} content locale
- VERSION = 1.1
+ VERSION = 1.2
 -PLATFORM := $(shell gcc -dumpmachine)
 +PLATFORM := $(shell uname)
  XPI_NAME = mozTrayBiff
  XPI_VERSION := $(VERSION)-$(PLATFORM)
  XPI_FILENAME = $(XPI_NAME)-$(XPI_VERSION).xpi
-@@ -15,7 +15,7 @@ XPI_VERSION := $(XPI_VERSION)-moz$(shell
+@@ -15,7 +15,7 @@
  XPI_EXTRA_FILES = install.js
  endif
  ifeq ($(MOZILLA_PLATFORM),tbird)
