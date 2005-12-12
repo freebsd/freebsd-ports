@@ -9,33 +9,27 @@ PORTNAME=	edonkey
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	misc linux
-MASTER_SITES=	# disappeared
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-tool-recovermet
-DISTNAME=	ed2k_recovermet
-EXTRACT_SUFX=	.gz
-EXTRACT_ONLY=
+DISTNAME=	ed2k_recovermet-0.2_alpha
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that tries to re-create x.part.met files compromised due to crash
 
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
-
 ONLY_FOR_ARCHS=	i386
+USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/edonkey-tool-recovermet
 
-BINARY_NAME=	${PORTNAME}${PKGNAMESUFFIX}
-
-post-extract:
-	@${GZCAT} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKSRC}/${BINARY_NAME}
+BINARY_NAME=	ed2k_recovermet
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} \
+		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.pre.mk>
 
