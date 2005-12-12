@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	1.5.6
-PORTREVISION=	2
+PORTVERSION=	1.6.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
@@ -18,7 +17,7 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		ebml:${PORTSDIR}/textproc/libebml \
 		expat.5:${PORTSDIR}/textproc/expat2 \
-		lzo.1:${PORTSDIR}/archivers/lzo \
+		lzo2.2:${PORTSDIR}/archivers/lzo2 \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
@@ -38,7 +37,8 @@ FILES_DATA=	\
 		mkvmerge-gui.hhc \
 		mkvmerge-gui.hhk \
 		mkvmerge-gui.hhp \
-		mkvmerge-gui.html \
+		mkvmerge-gui.html
+IMAGES_DATA=	\
 		addingremovingattachments.gif \
 		addremovefiles.gif \
 		attachmentoptions.gif \
@@ -52,17 +52,22 @@ FILES_DATA=	\
 		textsubtitlestrackoptions.gif \
 		trackselection.gif \
 		videotrackoptions.gif
-PLIST_DIRS+=	%%DATADIR%%
+PLIST_DIRS+=	\
+		%%DATADIR%%/images \
+		%%DATADIR%%
 .for file in ${FILES_DATA}
 PLIST_FILES+=	%%DATADIR%%/${file}
 .endfor
+.for file in ${IMAGES_DATA}
+PLIST_FILES+=	%%DATADIR%%/images/${file}
+.endfor
 
-WXGTK_CONFIG=	wxgtk2-2.4-config
+WXGTK_CONFIG=	wxgtk2u-2.6-config
 
 .include <bsd.port.pre.mk>
 
 .ifndef(WITHOUT_WXGTK)
-LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+LIB_DEPENDS+=	wx_gtk2u_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 
 MAN1+=		mmg.1
 PLIST_FILES+=	bin/mmg
