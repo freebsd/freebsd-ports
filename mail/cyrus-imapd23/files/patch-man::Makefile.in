@@ -1,0 +1,30 @@
+Index: man/Makefile.in
+diff -u man/Makefile.in.orig man/Makefile.in
+--- man/Makefile.in.orig	Wed May 11 00:02:35 2005
++++ man/Makefile.in	Sat Dec 10 15:26:05 2005
+@@ -50,6 +50,7 @@
+ SHELL = /bin/sh
+ 
+ prefix = @prefix@
++cyrus_prefix = @cyrus_prefix@
+ 
+ mandir = @mandir@
+ 
+@@ -68,7 +69,7 @@
+ 	$(srcdir)/notifyd.8 $(srcdir)/chk_cyrus.8 $(srcdir)/mbexamine.8 \
+ 	$(srcdir)/nntpd.8 $(srcdir)/fetchnews.8 $(srcdir)/smmapd.8 \
+ 	$(srcdir)/sync_client.8 $(srcdir)/sync_server.8 $(srcdir)/sync_reset.8 \
+-	$(srcdir)/unexpunge.8
++	$(srcdir)/unexpunge.8 $(srcdir)/make_md5.8
+ 
+ all: $(MAN1) $(MAN3) $(MAN5) $(MAN8)
+ 
+@@ -95,7 +96,7 @@
+ 	done
+ 	for file in $(MAN8); \
+ 	do \
+-		$(INSTALL) -m 644 $$file $(DESTDIR)$(mandir)/man8 || exit 1; \
++		$(INSTALL) -m 644 $$file $(DESTDIR)$(cyrus_prefix)/man/man8 || exit 1; \
+ 	done
+ 
+ clean:
