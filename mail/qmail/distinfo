@@ -64,3 +64,6 @@ SIZE (qmail/spamcontrol-2317_tgz.bin) = 120429
 MD5 (qmail/qmail-1.03-tls-20021228.patch) = 0f00f92289c561a8c0053c75e995e823
 SHA256 (qmail/qmail-1.03-tls-20021228.patch) = d41e9b5effc775bcfc5f8c9f781ffa9b7264ec1c3ee13494162b436f66e4190a
 SIZE (qmail/qmail-1.03-tls-20021228.patch) = 42088
+MD5 (qmail/qmail-smtpd-auth-0.31.tar.gz) = 6b202f71a99fb41e9e32906017270ba0
+SHA256 (qmail/qmail-smtpd-auth-0.31.tar.gz) = 1b439fa7e128de13fa80b86883f61a39d17b87b7e8916b6a0eab065bbe49b938
+SIZE (qmail/qmail-smtpd-auth-0.31.tar.gz) = 8798
