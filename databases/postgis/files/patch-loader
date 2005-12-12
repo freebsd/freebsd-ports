@@ -1,13 +1,5 @@
 --- loader/Makefile	Wed Jan 12 15:03:57 2005
 +++ loader/Makefile	Mon Jan 31 14:36:59 2005
-@@ -18,6 +18,7 @@
- 
- ifeq ($(USE_ICONV),1)
- 	override CFLAGS += -DUSE_ICONV
-+	override LDFLAGS += -liconv
- endif
- 
- override CFLAGS := -g -I.. -I$(srcdir) -I$(top_builddir)/src/interfaces/libpq $(CFLAGS) -DFRONTEND -DSYSCONFDIR='"$(sysconfdir)"' -DUSE_VERSION=$(USE_VERSION)
 @@ -31,8 +32,8 @@
  	$(CC) $(CFLAGS) $(OBJS) shp2pgsql.o $(LDFLAGS) -o $@ 
  

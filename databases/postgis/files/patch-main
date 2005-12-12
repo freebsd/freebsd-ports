@@ -16,3 +16,16 @@
  
  uninstall: liblwgeom-uninstall loaderdumper-uninstall
  
+--- Makefile.config	Thu Dec  1 07:26:49 2005
++++ Makefile.config	Fri Dec  9 23:27:18 2005
+@@ -75,8 +75,8 @@
+ # Use ICONV_LDFLAGS and ICONV_CFLAGS to fine-tune usage.
+ #
+ USE_ICONV ?= 0
+-ICONV_CFLAGS ?=
+-ICONV_LDFLAGS ?=
++ICONV_CFLAGS ?=-I/usr/local/include
++ICONV_LDFLAGS ?=-L/usr/local/lib -liconv
+ 
+ #
+ # Path to library (to be specified in CREATE FUNCTION queries)
