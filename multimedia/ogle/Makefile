@@ -7,14 +7,14 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Open DVD player that supports DVD menus
 
-LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
+LIB_DEPENDS=	a52-devel.0:${PORTSDIR}/audio/liba52-devel \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
@@ -46,11 +46,15 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
-# hack to make ogle work with liba52 + djbfft
+# hack to make ogle work with liba52-devel + djbfft
 # CFLAGS safeness
-	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|; \
+	@${REINPLACE_CMD} -E -e 's|(-la52)|\1-devel ${LIBA52_DEP_LIBS}|; \
 		s,(X?CFLAGS[[:space:]]*=[[:space:]]*"\$$CFLAGS).*(-(fomit-frame-pointer|funroll-loops|march|mcpu)).*",\1",' \
+		-e 's|a52dec/|a52dec-devel/|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E \
+		-e 's|a52dec/|a52dec-devel/|' \
+		${WRKSRC}/ac3/decode_a52.c
 
 pre-configure:
 	@${TOUCH} `${FIND} -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
@@ -64,8 +68,8 @@ CFLAGS+=	-O2
 .endif
 
 # hack to make ogle work with liba52 + djbfft
-.if exists(${LOCALBASE}/lib/liba52.la)
-LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
+.if exists(${LOCALBASE}/lib/liba52-devel.so)
+LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52-devel.la | ${CUT} -d \' -f 2
 .else
 LIBA52_DEP_LIBS=
 .endif
