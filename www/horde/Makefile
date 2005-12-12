@@ -20,7 +20,6 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 .if defined(WITH_PHP5)
 PKGNAMESUFFIX=	-php5
 .endif
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A common code-base used by Horde applications, written in PHP
