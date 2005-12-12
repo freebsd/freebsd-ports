@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.18
-PORTREVISION=	1
+PORTVERSION=	5.1.19
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
+		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
+		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
+		ftp://ftp.chg.ru/pub/math/grace/src/stable/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/stable/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -37,6 +40,7 @@ CONFIGURE_ARGS=	\
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
 	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
 	--enable-grace-home=${X11BASE}/lib/X11/grace
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	# empty
 INSTALL_TARGET=	install links
 
