@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	http://vegan.net/tony/supersmack/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	gslin@gslin.org
 COMMENT=	A benchmarking, stress testing, and load generation tool for Databases
 
 GNU_CONFIGURE=	yes

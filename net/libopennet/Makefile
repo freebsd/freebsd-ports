@@ -10,7 +10,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	gslin@gslin.org
 COMMENT=	A library for opening files over a network
 
 GNU_CONFIGURE=	yes

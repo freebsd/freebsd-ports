@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Flickr
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl interface to the Flickr API
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
