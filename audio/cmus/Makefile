@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 
