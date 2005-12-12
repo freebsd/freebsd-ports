@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	dns perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
@@ -27,13 +27,15 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::DNS::Keyset.3 Net::DNS::RR::DS.3 Net::DNS::RR::KEY.3 \
 		Net::DNS::RR::NXT.3 Net::DNS::RR::SIG.3 \
-		Net::DNS::RR::SIG::Private.3 Net::DNS::SEC.3 \
+		Net::DNS::SEC.3 \
 		Net::DNS::SEC::Private.3 Net::DNS::RR::RRSIG.3 \
 		Net::DNS::RR::NSEC.3 Net::DNS::RR::DNSKEY.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again.
+.elif ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
