@@ -116,6 +116,7 @@
     SUBDIR += dosdetector
     SUBDIR += dtcp
     SUBDIR += dtcpclient
+    SUBDIR += dualserver
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += edonkey-gui-gtk
