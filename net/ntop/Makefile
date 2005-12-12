@@ -7,13 +7,14 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
@@ -21,6 +22,11 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 
 DBDIR?=		/var/db
+
+# Only need to be interactive if it's the first install.
+.if !exists(${DBDIR}/ntop/ntop_pw.db)
+IS_INTERACTIVE=	yes
+.endif
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
@@ -41,6 +47,8 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 CONFIGURE_ARGS+=--disable-ipv6
 
 MAN8=		ntop.8
+
+USE_RC_SUBR=	ntop.sh
 
 ##
 ## Available knobs:
@@ -76,7 +84,7 @@ CONFIGURE_ARGS+=	--enable-i18n \
 .endif
 
 .if defined(WITH_XMLDUMP)
-BROKEN=			Does not build with XML dump support
+BROKEN=			"Does not build with XML dump support"
 LIB_DEPENDS+=		gdome.8:${PORTSDIR}/textproc/gdome2
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/libxml2/libxml \
@@ -91,9 +99,8 @@ post-install:
 	@${MKDIR} ${DBDIR}/ntop
 	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
 	@${RMDIR} ${PREFIX}/lib/plugins
-	@${SED} -e "s#%%PREFIX%%#${PREFIX}#g;s#%%DBDIR%%#${DBDIR}#g" \
-		${FILESDIR}/ntop.sh > ${WRKDIR}/ntop.sh
-	@${INSTALL_DATA} ${WRKDIR}/ntop.sh ${PREFIX}/etc/rc.d
-	@${SED} "s,%%LOCALBASE%%,${LOCALBASE},g" < ${PKGMESSAGE}
+	@if [ ! -f ${DBDIR}/ntop/ntop_pw.db ]; then \
+		${PREFIX}/bin/ntop -u nobody -A; \
+	fi
 
 .include <bsd.port.post.mk>
