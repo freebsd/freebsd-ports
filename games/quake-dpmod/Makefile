@@ -9,6 +9,7 @@ PORTNAME=	dpmod
 PORTVERSION=	20050818
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
+PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	darkplacesmod${PORTVERSION}
 
 MAINTAINER=	alejandro@varnet.biz
@@ -19,6 +20,8 @@ RUN_DEPENDS=	darkplaces:${PORTSDIR}/games/darkplaces
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+DATDAIR=	${Q1DIR}/${PORTNAME}
 
 post-extract:
 # Remove CVS directories
