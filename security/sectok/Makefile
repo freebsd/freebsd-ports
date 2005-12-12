@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 DISTNAME=	sectok-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard Utility
 
 LIB_DEPENDS=	sectok.3:${PORTSDIR}/security/libsectok

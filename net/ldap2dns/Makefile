@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ldap2dns.tiscover.com/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain DNS zones using an LDAP directory
 
 USE_OPENLDAP=	yes

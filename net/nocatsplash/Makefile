@@ -13,7 +13,7 @@ MASTER_SITES=	http://nocat.net/download/NoCatSplash/
 DISTNAME=	NoCatSplash-nightly
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
 
 BROKEN=		Unfetchable

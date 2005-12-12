@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP trap handler/translator/swiss-army-knife
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://nocat.net/download/NoCatAuth/
 DISTNAME=	NoCatAuth-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Authentication Server
 
 RUN_DEPENDS= \

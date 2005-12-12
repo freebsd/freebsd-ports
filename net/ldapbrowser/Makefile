@@ -11,7 +11,7 @@ CATEGORIES=	net java
 MASTER_SITES=	http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
 DISTNAME=	Browser282b2
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
 RESTRICTED=	"No reply from author regarding redistribution licensing"

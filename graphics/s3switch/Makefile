@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.probo.com/timr/
 DISTNAME=	s3ssrc
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable TV-out on S3 graphics cards
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IFD Handler Developer's Kit for MUSCLE PC/SC Lite
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite

@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/ \
 		http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
 PLIST_FILES=	bin/wmxss

@@ -12,7 +12,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
 DISTNAME=	ebnf2ps-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate EPS/FIG diagrams from EBNF/yacc/bison grammars
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

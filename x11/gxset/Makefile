@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for xset(1)
 
 USE_GETOPT_LONG=yes

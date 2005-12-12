@@ -13,7 +13,7 @@ DISTFILES=	gdbmods
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for gdb -k to provide kld symbol information
 
 NO_BUILD=	yes

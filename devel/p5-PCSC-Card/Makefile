@@ -12,7 +12,7 @@ MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	pcsc-perl-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite

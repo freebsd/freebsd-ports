@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	festival-gaim
 PKGNAMEPREFIX=	gaim-
 DISTNAME=	festival-gaim-1.00
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Festival speech support for Gaim
 
 BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim

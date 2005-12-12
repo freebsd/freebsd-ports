@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.innovationsw.com/~jaiger/downloads/smartcard/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC/SC Lite driver for Gemplus GPR400 PCMCIA Smart Card Readers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
