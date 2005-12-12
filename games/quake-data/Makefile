@@ -9,6 +9,7 @@ PORTNAME=	data
 PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/quake/data/:qs
+PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	quakesw-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qs
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -25,6 +26,8 @@ NO_WRKSUBDIR=	yes
 OPTIONS=	FULL "Install full version" off \
 		QUAKEWORLD "Install QuakeWorld data" on \
 		QUAKEWORLD_SKINS "Install QuakeWorld skins" on
+
+DATADIR=	${Q1DIR}
 
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
 SKINFILES=	skinbase.zip qw_skins.zip

@@ -39,6 +39,8 @@ OPTIONS=	GLX "Build GLX client" on \
 		X86_ASM "Enable x86 assembly code" on \
 		XMMS "Enable MP3 Player feature" off
 
+DATADIR=	${Q1DIR}
+
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>

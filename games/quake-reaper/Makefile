@@ -9,6 +9,7 @@ PORTNAME=	reaper
 PORTVERSION=	0.81
 CATEGORIES=	games
 MASTER_SITES=	http://www.mindspring.com/~win32ch/
+PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	reaprb81
 
 MAINTAINER=	alejandro@varnet.biz
@@ -18,6 +19,8 @@ USE_ZIP=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+DATADIR=	${Q1DIR}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}
