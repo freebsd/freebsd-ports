@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	eb-4.2.1+.diff
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	takamune2004@yahoo.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
