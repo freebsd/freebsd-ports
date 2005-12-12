@@ -2000,3 +2000,4 @@ devel/php5-dio||2005-12-09|Unsupported in PHP 5.1
 devel/php5-mcve||2005-12-09|Unsupported in PHP 5.1
 net/php5-yp||2005-12-09|Unsupported in PHP 5.1
 www/php5-mnogosearch||2005-12-09|Unsupported in PHP 5.1
+mail/qmail-smtp_auth+tls||2005-12-12|SMTP_AUTH patch added to qmail-tls port
