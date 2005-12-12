@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.46.2
+PORTVERSION=	4.48.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -232,6 +232,21 @@ do-install:
 		fi; \
 	done
 	@${CAT} ${PKGMESSAGE}
+
+.if !defined(NO_SPAMASSASSIN_SYMLINK)
+post-install:
+	@if [ -d ${PREFIX}/etc/mail/spamassassin ]; then \
+		if [ ! -r ${PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then \
+			if [ ! -r ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ]; then \
+				${CP} ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf.sample ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf; \
+			fi; \
+			${ECHO} ${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+			${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+		else \
+			${ECHO} "File ${PREFIX}/etc/mail/spamassassin/mailscanner.cf already exists!"; \
+		fi; \
+	fi
+.endif
 
 renew-wrapper: install
 	# Renew virus wrapper scripts
