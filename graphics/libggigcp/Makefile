@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libggigcp
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -69,6 +69,6 @@ MLINKS=		gcpGetRGBAGamma.3 gcpGetCMYKGamma.3 \
 		- gcp_YCCcolor.3 - gcp_YUVcolor.3
 
 post-install:
-	@${CP} ${WRKSRC}/libggigcp.conf ${PREFIX}/etc/ggi/libggigcp.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/libggigcp.conf ${PREFIX}/etc/ggi/libggigcp.conf.dist
 
 .include <bsd.port.mk>
