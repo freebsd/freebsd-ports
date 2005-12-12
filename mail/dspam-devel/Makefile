@@ -3,6 +3,7 @@
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.9 2005/12/12 01:53:28 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -18,8 +19,8 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sourc
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.1
-#SNAP_DATE=	.20051016.2141
+PORTVER_MAJ=	3.6.2
+#SNAP_DATE=	.20051211.2134
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
@@ -39,38 +40,42 @@ DISTFILES=	snapshot-devel.tar.gz
 FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .endif
 
-_UPD_LINE_NO=	31
+_UPD_LINE_NO=	17
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
-OPTIONS+=	DAEMON "Daemonize dspam; speak LMTP or DLMTP" on
+OPTIONS+=	DAEMON "Daemonize dspam; speaks LMTP or DLMTP" on
 
 ## algorithm options
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
 
+#
 OPTIONS+=	CLAMAV "Enable clamav support" on
 OPTIONS+=	CLAMAV_DEVEL "Enable clamav support" off
-
-## run-time configure  options
-OPTIONS+=	USER_HOMEDIR "Store user data in ~/.dspam" off
-OPTIONS+=	TRUSTED_USERS "Disable trusted user security" off
-
-## back-end
+OPTIONS+=	CLAMAV_LOCAL "RUN_DEPEND on selected clamav" on
+#
 OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
 OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" on
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
+OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on MySQL server selected version" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" on
+OPTIONS+=	POSTGRESQL_LOCAL "RUN_DEPEND on PostgreSQL server" off
 OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" off
 OPTIONS+=	SQLITE3 "Use SQLite v3.x as back-end" on
 OPTIONS+=	HASH "Use hash driver" on
-OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
+#
 OPTIONS+=	LDAP "Enable recipient verification via LDAP" off
+
+# layout
+OPTIONS+=	USER_HOMEDIR "Store user data in ~/.dspam" off
+OPTIONS+=	TRUSTED_USERS "Disable trusted user security" off
+OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
 OPTIONS+=	LONG_USERNAMES "Usernames longer that OS supports" off
 OPTIONS+=	LARGE_SCALE "File structure for large scale" off
 OPTIONS+=	DOMAIN_SCALE "File structure for multiple domains" off
@@ -137,13 +142,15 @@ PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
 
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
-# we set DSPAM_MODE at the end as some LDAs whant specific mode
+# we set DSPAM_MODE at the end as some LDAs want specific mode
 
 _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g' \
 		-e 's,%%PORTNAME%%,${PORTNAME},g' \
-		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g'
+		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
+		-e '/^%%FreeBSD/D' \
+		-e '/^%%Tecnik%%/D'
 
 .ifdef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -175,27 +182,18 @@ _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 CONFIGURE_ARGS+=	--enable-neural-networking
 .endif
 
-.ifdef(WITH_CLAMAV)
-RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav
-.endif
-
-.ifdef(WITH_CLAMAV_DEVEL)
-RUN_DEPENDS+=	${LOCALBASE}/etc/clamd.conf:${PORTSDIR}/security/clamav-devel
-.endif
-
-.ifdef(WITH_CLAMAV) || defined(WITH_CLAMAV_DEVEL)
+.ifdef(WITH_CLAMAV) && defined(WITH_CLAMAV_LOCAL)
 CONFIGURE_ARGS+=	--enable-clamav
+RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
 SUB_LIST+=	CLAMD=clamd
-.else
+.endif
+.ifdef(WITH_CLAMAV_DEVEL)  && defined(WITH_CLAMAV_LOCAL)
+CONFIGURE_ARGS+=	--enable-clamav
+RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
+SUB_LIST+=	CLAMD=clamd
+.endif
+.ifndef(WITH_CLAMAV_LOCAL)
 SUB_LIST+=	CLAMD=
-.endif
-
-.ifdef(WITH_USER_HOMEDIR)
-CONFIGURE_ARGS+=	--enable-homedir
-.endif
-
-.ifdef(WITH_TRUSTED_USERS)
-CONFIGURE_ARGS+=	--disable-trusted-user-security
 .endif
 
 # we need to know if we are building statically or dynamicaly for the plist
@@ -211,6 +209,12 @@ CONFIGURE_ARGS+=	--with-pgsql-includes=${LOCALBASE}/include \
 PLIST_SUB+=	PGSQL=""
 #PKGNAMESUFFIX=	-pgsql
 _DBDRV_COUNT:=	${_DBDRV_COUNT}o
+.	if defined(WITH_POSTGRESQL_LOCAL)
+RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+SUB_LIST+=	PGSQL=postgresql
+.	else
+SUB_LIST+=	PGSQL=
+.	endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
 _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
@@ -289,9 +293,13 @@ _DBDRV_COUNT:=	${_DBDRV_COUNT}o
 .	if defined(WITH_MYSQL_COMPRESS)
 CONFIGURE_ARGS+=	--enable-client-compression
 .	endif
+.	if defined(WITH_MYSQL_LOCAL)
+RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${WANT_MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
-.else
+.	else
 SUB_LIST+=	MYSQL=
+.	endif
+.else
 _DBDRV:=	${_DBDRV:S/mysql_drv,//}
 PLIST_SUB+=	MYSQL="@comment "
 .endif
@@ -305,16 +313,24 @@ PLIST_SUB+=	DYNAMIC=""
 PLIST_SUB+=	DYNAMIC="@comment "
 .endif
 
-.ifdef(WITH_VIRT_USERS)
-CONFIGURE_ARGS+=	--enable-virtual-users
-.endif
-
 .ifdef(WITH_LDAP)
 CONFIGURE_ARGS+=	--enable-ldap
 USE_OPENLDAP=	YES
 #CPPFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-lldap -llber
 #CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
+
+.ifdef(WITH_USER_HOMEDIR)
+CONFIGURE_ARGS+=	--enable-homedir
+.endif
+
+.ifdef(WITH_TRUSTED_USERS)
+CONFIGURE_ARGS+=	--disable-trusted-user-security
+.endif
+
+.ifdef(WITH_VIRT_USERS)
+CONFIGURE_ARGS+=	--enable-virtual-users
 .endif
 
 .ifdef(WITH_LONG_USERNAMES)
@@ -630,7 +646,7 @@ post-install:
 		${INSTALL_DATA} default.prefs ${CGI_PATH}/default.prefs.sample
 	cd ${WRKSRC}/webui/cgi-bin && \
 		${INSTALL_DATA} admins ${CGI_PATH}/admins.sample
-	@${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
+	${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
 .endif
 
@@ -651,7 +667,7 @@ post-install:
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${DSPAM_HOME}
 	@${CHOWN} ${DSPAM_HOME_OWNER}:${DSPAM_HOME_GROUP} ${DSPAM_HOME}
 .for _file in firstrun.txt firstspam.txt quarantinefull.txt
-	if ! ${TEST} -e ${WRKSRC}/txt/${_file}.sample;\
+	@if ! ${TEST} -e ${WRKSRC}/txt/${_file}.sample;\
 	then\
 		cd ${WRKSRC}/txt && \
 		${MV} ${_file} ${_file}.sample;\

@@ -1,10 +1,10 @@
 #!/bin/sh
 # $FreeBSD$
 # formerly $ FreeBSD: ports/mail/dspam-devel/files/dspam.rc,v 1.2 2005/02/25 03:09:26 leeym Exp $
-#
+# $Tecnik: ports/mail/dspam-devel/files/dspam-devel.sh.in,v 1.2 2005/12/11 21:57:45 itetcu Exp $
 
 # PROVIDE: dspam
-# REQUIRE: LOGIN NETWORKING SERVERS %%MYSQL%% %%CLAMD%%
+# REQUIRE: DAEMON %%MYSQL%% %%PGSQL%% %%CLAMD%%
 # BEFORE: mail
 # KEYWORD: shutdown
 
