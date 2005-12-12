@@ -6,38 +6,32 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	v${PORTVERSION:S/.//}_src
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		iconv.3:${PORTSDIR}/converters/iconv
 
-.ifdef (WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-.endif
-
-USE_ZIP=	yes
-USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:259
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-sdl --with-opengl --without-openal
+CONFIGURE_ENV=	"CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+		"LDFLAGS=-L${LOCALBASE}/lib -L${X11BASE}/lib"
+ALL_TARGET=	all sv
 USE_SDL=	mixer sdl
 USE_GL=		yes
-ALL_TARGET=	all sv
 ONLY_FOR_ARCHS=	i386
 
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-MAKE_ARGS=	"USE_SDL=1"
-
-.ifdef (WITH_OPENAL)
-MAKE_ARGS+=	"USE_AL=1"
-.endif
-
 .ifdef (WITH_OPTIMIZED_CFLAGS)
-MAKE_ARGS+=	OPT_CFLAGS="-O3 -ffast-math -fomit-frame-pointer"
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 SUB_FILES=	pkg-message vavoom
@@ -46,6 +40,16 @@ SUB_LIST=	"PREFIX=${PREFIX}" "PORTSDIR=${PORTSDIR}"
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
+
+OPENAL_CONFIG?=	${LOCALBASE}/bin/openal-config
+.if exists(${OPENAL_CONFIG})
+WITH_OPENAL=	yes
+.endif
+
+.ifdef (WITH_OPENAL)
+CONFIGURE_ARGS+=	--with-openal
+LIB_DEPENDS+=		openal.0:${PORTSDIR}/audio/openal
+.endif
 
 # -fno-strict-aliasing (default on FreeBSD 6.0+) produces run-working
 #  code for `vcc', so use a more conservative setting here
@@ -66,10 +70,11 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
-.if ${OSVERSION} >= 502126
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/utils/acc/parse.c \
-		${WRKSRC}/utils/acc/strlist.c
-.endif
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
+		${WRKSRC}/utils/acc/parse.c ${WRKSRC}/utils/acc/strlist.c
+	@${REINPLACE_CMD} -e 's|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
+		s|%%OPENAL_CONFIG%%|${OPENAL_CONFIG}|g' ${WRKSRC}/configure.ac
+	@(cd ${WRKSRC} && ${SH} ./fixunix.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Vavoom ${PREFIX}/bin
