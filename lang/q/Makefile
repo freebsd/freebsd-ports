@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	6.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/dx/lib_freebsd/libDXL.a:${PORTSDIR}/graphics/opendx
 LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		gii.0:${PORTSDIR}/devel/libgii \
+		gii.1:${PORTSDIR}/devel/libgii \
 		ggi.2:${PORTSDIR}/graphics/libggi \
 		gmp.6:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
