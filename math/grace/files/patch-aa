@@ -1,18 +1,11 @@
-*** configure.orig	Mon May 22 19:54:43 2000
---- configure	Mon May 22 19:54:47 2000
-***************
-*** 2590,2596 ****
-  # It thinks the first close brace ends the variable substitution.
-  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-
-! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
-
-  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
-
---- 2590,2596 ----
-  # It thinks the first close brace ends the variable substitution.
-  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-
-! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
-
-  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+--- configure.orig	Sat Nov 26 23:13:06 2005
++++ configure	Mon Dec 12 21:25:36 2005
+@@ -8184,7 +8184,7 @@
+ # It thinks the first close brace ends the variable substitution.
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ 
+-test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
