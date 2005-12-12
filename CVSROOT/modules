@@ -12992,6 +12992,7 @@ wuzzah		ports/sysutils/wuzzah
 wv		ports/textproc/wv
 wv2		ports/textproc/wv2
 wwl		ports/comms/wwl
+www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 www6to4		ports/www/www6to4
 wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
