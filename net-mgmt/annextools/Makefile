@@ -14,7 +14,7 @@ DISTNAME=	R10.0B-R2.3
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	microannex_xl
 
-MAINTAINER=     bms@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	BSD tools for the MicroAnnex-XL Terminal Server
 
 WRKSRC=		${WRKDIR}/src
