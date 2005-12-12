@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/pp2html
 bin/pp2latex
 %%SITE_PERL%%/Bundle/PerlPoint.pm
