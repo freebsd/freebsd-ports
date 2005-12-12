@@ -9,7 +9,8 @@ PORTNAME=	foremost
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/pkg/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Console program to recover files based on their headers and footers
