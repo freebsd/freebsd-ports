@@ -7,7 +7,7 @@
 
 PORTNAME=	urban
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://urban.bengburken.net/files/linux/
 DIST_SUBDIR=	urban
@@ -21,7 +21,7 @@ LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi \
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGG_NEED_OLD_INTTYPES" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-global-highscore=/var/games/urban.scores
 
 PORTDOCS=	AUTHORS CHEAT NEWS README README.swe
