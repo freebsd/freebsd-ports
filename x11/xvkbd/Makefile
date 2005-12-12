@@ -7,7 +7,7 @@
 
 PORTNAME=	xvkbd
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
@@ -16,7 +16,7 @@ COMMENT=	A virtual keyboard for X applications
 
 MAN1=		xvkbd.1
 
-OPTIONS=	XAW3D	"Xaw3d support" on \
+OPTIONS=	XAW3D	"Xaw3d support" off \
 		XTEST	"XTEST extensions support" on \
 		I18N	"internationalization" on
 
