@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -29,7 +28,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 WANT_SDL=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -434,8 +433,6 @@ post-install:
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so.4 \
 		${PREFIX}/lib/transcode/libxvidcore.so.4
 .endif
-
-	@${RM} ${PREFIX}/lib/transcode/*.la
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	I386=""
