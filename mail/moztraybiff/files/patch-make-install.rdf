@@ -1,0 +1,14 @@
+--- make-install.rdf.orig	Mon Dec 12 14:23:05 2005
++++ make-install.rdf	Mon Dec 12 14:23:39 2005
+@@ -1,9 +1,9 @@
+ #!/usr/bin/perl
+ 
+-my $machine = `gcc -dumpmachine`;
++my $machine = `uname`;
+ chomp $machine;
+ 
+-$machine =~ /^(.*?)\-/
++$machine =~ /^(.*?)$/
+ 	or die "Unable to parse machine name";
+ my $arch = $1;
+ 
