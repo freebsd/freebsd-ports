@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libggimisc
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -40,6 +40,6 @@ PLIST_SUB+=	WITH_SVGALIB="@comment "
 .endif
 
 post-install:
-	@${CP} ${WRKSRC}/libggimisc.conf ${PREFIX}/etc/ggi/libggimisc.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/libggimisc.conf ${PREFIX}/etc/ggi/libggimisc.conf.dist
 
 .include <bsd.port.post.mk>
