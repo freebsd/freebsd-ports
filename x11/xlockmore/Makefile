@@ -35,6 +35,15 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		xlock.1
 
+OPTIONS=MESAGL			"Enable Mesa 3D (for GL modes)"		off \
+	MB			"Enable Xmb function series"		off \
+	SYSLOG			"Enable syslog logging"			off \
+	DISABLE_ALLOW_ROOT	"Allows users to turn off allowroot"	off \
+	NICE_ONLY		"Enable only low cpu modes"		off \
+	BLANK_ONLY		"Enable blank mode only (boring)"	off \
+	PAM			"Enable PAM authentication support"	off \
+	BAD_PAM			"Xlock will ask PAM with root rights"	off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
@@ -54,12 +63,24 @@ CONFIGURE_ARGS+=	--without-mesa --without-opengl
 CONFIGURE_ARGS+=	--enable-nice-only
 .endif
 
+.if defined(WITH_BAD_PAM) && !defined(WITH_PAM)
+WITH_PAM=	yes
+.endif
+
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
 .endif
 
+.if defined(WITH_NICE_ONLY)
+CONFIGURE_ARGS+=	--enable-nice-only
+.endif
+
+.if defined(WITH_BLANK_ONLY)
+CONFIGURE_ARGS+=	--enable-blank-only
+.endif
+
 .if defined(WITH_MB)
-CONFIGURE_ARGS+=	--enable-use_mb
+CONFIGURE_ARGS+=	--enable-use-mb
 .endif
 
 .if defined(XLOCKMORE_LANG)
@@ -76,9 +97,21 @@ CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 CONFIGURE_ARGS+=	--disable-allow-root
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_PAM) && !defined (WITH_BAD_PAM)
+pre-extract:
+	@${ECHO}
+	@${ECHO} "You have enabled PAM support. If you want to authenticate against"
+	@${ECHO} "root only accessible PAM modules then define WITH_BAD_PAM=yes also."
+	@${ECHO} "For example, pam_unix requires root rights to access shadow passwords."
+	@${ECHO}
+.endif
+
 post-configure:
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
+.endif
+.if defined(WITH_BAD_PAM)
+	 ${REINPLACE_CMD} -e 's|/\* #define BAD_PAM \*/|#define BAD_PAM|g' ${WRKSRC}/config.h
 .endif
 
 PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
