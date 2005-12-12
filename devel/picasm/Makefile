@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
 USE_BZIP2=	yes
