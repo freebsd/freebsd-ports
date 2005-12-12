@@ -1,4 +1,4 @@
-# New ports collection makefile for:	monitord
+# New ports collection makefile for:	radeontool
 # Date created:				10 Dec 2005
 # Whom:					takawata@jp.FreeBSD.org
 #
@@ -13,5 +13,6 @@ MASTER_SITES=	http://fdd.com/software/radeon/
 MAINTAINER=	takawata@jp.freebsd.org
 COMMENT=	ATI Radeon video card contoroling tool useful for laptops
 
+USE_GETOPT_LONG=YES
 
 .include <bsd.port.mk>
