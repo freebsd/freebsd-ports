@@ -1,9 +1,9 @@
---- ../MailScanner-install-4.44.6.orig/docs/man/MailScanner.conf.5.html	Mon Aug 22 16:18:05 2005
-+++ docs/man/MailScanner.conf.5.html	Mon Aug 22 16:18:30 2005
+--- ../MailScanner-install-4.48.4.orig/docs/man/MailScanner.conf.5.html	Wed Dec  7 18:33:07 2005
++++ docs/man/MailScanner.conf.5.html	Wed Dec  7 18:34:00 2005
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Jun  1 11:29:47 2005 -->
-+<!-- CreationDate: Thu Aug 18 11:23:58 2005 -->
++<!-- CreationDate: Tue Dec  6 20:28:14 2005 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
@@ -15,7 +15,7 @@
  <a href="#What to do with spam">What to do with spam</a><br>
  <a href="#System logging">System logging</a><br>
  <a href="#Advanced SpamAssassin Settings">Advanced SpamAssassin Settings</a><br>
-@@ -953,6 +954,30 @@
+@@ -953,6 +954,61 @@
  <tr valign="top" align="left">
  <td width="11%"></td>
  <td width="89%">
@@ -43,10 +43,97 @@
 +<tr valign="top" align="left">
 +<td width="11%"></td>
 +<td width="89%">
++<p><b>Reject Messages</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>You may not want to receive mail from certain addresses
++and/or to certain addresses. If so, you can do this with
++your email transport (sendmail, Postfix, etc) but that will
++just send a one&minus;line message which is not helpful to
++the user sending the message. If this is set to yes, then
++the message set by the &quot;Rejection Report&quot; will be
++sent instead, and the incoming message will be deleted. If
++you want to store a copy of the original incoming message
++then use the &quot;Archive Mail&quot; setting to archive a
++copy of it. The purpose of this option is to set it to be a
++ruleset, so that you can reject messages from a few
++offending addresses where you need to send a polite reply
++instead of just a brief 1&minus;line rejection message.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
  <p><b>Maximum Attachments Per Message</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -4909,10 +4934,239 @@
+@@ -2523,6 +2579,27 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Quarantine Modified Body</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>Do you want to store copies of messages which have been
++disarmed by having their HTML modified at all? This can also
++be the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Quarantine Whole Message</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2621,6 +2698,27 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Rejection Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: %reports&minus;dir%/rejection.report.txt</p>
++<!-- INDENTATION -->
++<p>Set where to find the message text sent to users who
++triggered the ruleset you are using with the &quot;Reject
++Message&quot; option.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Deleted Bad Filename Message Report</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -4909,10 +5007,239 @@
  <td width="78%">
  <p>Default: no</p>
  <!-- INDENTATION -->

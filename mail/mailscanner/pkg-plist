@@ -97,6 +97,7 @@ libexec/MailScanner/trend-wrapper.sample
 libexec/MailScanner/update_virus_scanners
 libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/vexira-wrapper.sample
+%%DATADIR%%/reports/ca/rejection.report.txt.sample
 %%DATADIR%%/reports/ca/deleted.content.message.txt.sample
 %%DATADIR%%/reports/ca/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/ca/deleted.virus.message.txt.sample
@@ -134,6 +135,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/cy+en/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/cy+en/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.content.report.txt.sample
+%%DATADIR%%/reports/cy+en/rejection.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.error.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.filename.report.txt.sample
 %%DATADIR%%/reports/cy+en/sender.mcp.report.txt.sample
@@ -159,6 +161,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/cz/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/cz/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/cz/sender.content.report.txt.sample
+%%DATADIR%%/reports/cz/rejection.report.txt.sample
 %%DATADIR%%/reports/cz/sender.error.report.txt.sample
 %%DATADIR%%/reports/cz/sender.filename.report.txt.sample
 %%DATADIR%%/reports/cz/sender.mcp.report.txt.sample
@@ -183,6 +186,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/de/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/de/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/de/sender.content.report.txt.sample
+%%DATADIR%%/reports/de/rejection.report.txt.sample
 %%DATADIR%%/reports/de/sender.error.report.txt.sample
 %%DATADIR%%/reports/de/sender.filename.report.txt.sample
 %%DATADIR%%/reports/de/sender.mcp.report.txt.sample
@@ -206,6 +210,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/dk/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/dk/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/dk/sender.content.report.txt.sample
+%%DATADIR%%/reports/dk/rejection.report.txt.sample
 %%DATADIR%%/reports/dk/sender.error.report.txt.sample
 %%DATADIR%%/reports/dk/sender.filename.report.txt.sample
 %%DATADIR%%/reports/dk/sender.mcp.report.txt.sample
@@ -229,6 +234,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/en/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/en/recipient.spam.report.txt.sample
 %%DATADIR%%/reports/en/sender.content.report.txt.sample
+%%DATADIR%%/reports/en/rejection.report.txt.sample
 %%DATADIR%%/reports/en/sender.error.report.txt.sample
 %%DATADIR%%/reports/en/sender.filename.report.txt.sample
 %%DATADIR%%/reports/en/sender.mcp.report.txt.sample
@@ -251,6 +257,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/es/languages.conf.sample
 %%DATADIR%%/reports/es/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/es/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/es/rejection.report.txt.sample
 %%DATADIR%%/reports/es/sender.content.report.txt.sample
 %%DATADIR%%/reports/es/sender.error.report.txt.sample
 %%DATADIR%%/reports/es/sender.filename.report.txt.sample
@@ -274,6 +281,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/fr/languages.conf.sample
 %%DATADIR%%/reports/fr/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/fr/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/fr/rejection.report.txt.sample
 %%DATADIR%%/reports/fr/sender.content.report.txt.sample
 %%DATADIR%%/reports/fr/sender.error.report.txt.sample
 %%DATADIR%%/reports/fr/sender.filename.report.txt.sample
@@ -297,6 +305,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/hu/languages.conf.sample
 %%DATADIR%%/reports/hu/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/hu/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/hu/rejection.report.txt.sample
 %%DATADIR%%/reports/hu/sender.content.report.txt.sample
 %%DATADIR%%/reports/hu/sender.error.report.txt.sample
 %%DATADIR%%/reports/hu/sender.filename.report.txt.sample
@@ -320,6 +329,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/it/languages.conf.sample
 %%DATADIR%%/reports/it/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/it/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/it/rejection.report.txt.sample
 %%DATADIR%%/reports/it/sender.content.report.txt.sample
 %%DATADIR%%/reports/it/sender.error.report.txt.sample
 %%DATADIR%%/reports/it/sender.filename.report.txt.sample
@@ -343,6 +353,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/nl/languages.conf.sample
 %%DATADIR%%/reports/nl/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/nl/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/nl/rejection.report.txt.sample
 %%DATADIR%%/reports/nl/sender.content.report.txt.sample
 %%DATADIR%%/reports/nl/sender.error.report.txt.sample
 %%DATADIR%%/reports/nl/sender.filename.report.txt.sample
@@ -366,6 +377,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/pt_br/languages.conf.sample
 %%DATADIR%%/reports/pt_br/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/pt_br/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/pt_br/rejection.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.content.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.error.report.txt.sample
 %%DATADIR%%/reports/pt_br/sender.filename.report.txt.sample
@@ -389,6 +401,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/ro/languages.conf.sample
 %%DATADIR%%/reports/ro/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/ro/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/ro/rejection.report.txt.sample
 %%DATADIR%%/reports/ro/sender.content.report.txt.sample
 %%DATADIR%%/reports/ro/sender.error.report.txt.sample
 %%DATADIR%%/reports/ro/sender.filename.report.txt.sample
@@ -413,6 +426,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/se/languages.conf.sample
 %%DATADIR%%/reports/se/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/se/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/se/rejection.report.txt.sample
 %%DATADIR%%/reports/se/sender.content.report.txt.sample
 %%DATADIR%%/reports/se/sender.error.report.txt.sample
 %%DATADIR%%/reports/se/sender.filename.report.txt.sample
@@ -436,6 +450,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/sk/languages.conf.sample
 %%DATADIR%%/reports/sk/recipient.mcp.report.txt.sample
 %%DATADIR%%/reports/sk/recipient.spam.report.txt.sample
+%%DATADIR%%/reports/sk/rejection.report.txt.sample
 %%DATADIR%%/reports/sk/sender.content.report.txt.sample
 %%DATADIR%%/reports/sk/sender.error.report.txt.sample
 %%DATADIR%%/reports/sk/sender.filename.report.txt.sample
