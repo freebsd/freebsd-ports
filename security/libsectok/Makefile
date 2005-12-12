@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
 DISTNAME=	libsectok-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API Library
 
 INSTALLS_SHLIB=	yes

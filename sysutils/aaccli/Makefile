@@ -13,7 +13,7 @@ MASTER_SITES=		http://download.adaptec.com/raid/ccu/freebsd/
 DISTNAME=		5400s_fbsd_cli_v10
 EXTRACT_SUFX=		.zip
 
-MAINTAINER=		bms@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Adaptec SCSI RAID administration tool
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

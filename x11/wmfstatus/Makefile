@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.finik.net/files/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose LCD display for the WindowMaker dock
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

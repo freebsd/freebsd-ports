@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cvstrac.org/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For CVS
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2

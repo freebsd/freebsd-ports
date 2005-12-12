@@ -11,7 +11,7 @@ CATEGORIES=	mail x11
 MASTER_SITES=	http://yath.mine.nu/wmymail/ \
 		http://dockapps.org/files/65/96/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check inbox using a WindowMaker DockApp
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp

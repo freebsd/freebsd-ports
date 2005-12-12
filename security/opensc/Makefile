@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc.org/files/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API
 
 USE_GNOME=	pkgconfig

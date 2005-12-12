@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/fonts
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-based .bdf font editor for X
 
 GNU_CONFIGURE=	yes

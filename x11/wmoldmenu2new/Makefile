@@ -12,7 +12,7 @@ MASTER_SITES=	http://largo.windowmaker.org/files/
 DISTNAME=	wm-oldmenu2new
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to convert WindowMaker RootMenu menus to new PropList format
 
 USE_X_PREFIX=	yes
