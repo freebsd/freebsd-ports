@@ -1,0 +1,46 @@
+--- configure.ac.orig	Fri Apr 29 02:07:06 2005
++++ configure.ac	Mon Dec 12 15:00:03 2005
+@@ -82,7 +82,7 @@
+ 		fi
+ 	else
+ 	if test "x$with_sdl" = "xyes"; then
+-		AC_PATH_PROG([sdl_config], [sdl-config])
++		AC_PATH_PROG([sdl_config], [sdl-config], [%%SDL_CONFIG%%])
+ 		if test "x$sdl_config" = "x"; then
+ 			AC_MSG_ERROR(['cannot find SDL instalation'])
+ 		fi
+@@ -104,14 +104,14 @@
+ 	if test "x$sdl_config" != "x"; then
+ 		MAIN_PLATFORM='UNIX_SDL'
+ 		MAIN_CFLAGS="`${sdl_config} --cflags`"
+-		MAIN_LIBS="-lSDL_mixer `${sdl_config} --libs` -lpng -lz -lm -lstdc++"
++		MAIN_LIBS="-lSDL_mixer `${sdl_config} --libs` -lpng -liconv -lz -lm -lstdc++"
+ 	fi
+ 	fi
+ 	OBJ_FILES="$OBJ_FILES \$(SYS_OBJS_${MAIN_PLATFORM})"
+ 
+ 	AC_CHECK_HEADER([linux/cdrom.h], [
+ 		OBJ_FILES="$OBJ_FILES \$(CDAUDIO_OBJ_LINUX)"
+-	], [AC_CHECK_HEADER([sys/cdrom.h], [
++	], [AC_CHECK_HEADER([sys/cdio.h], [
+ 		OBJ_FILES="$OBJ_FILES \$(CDAUDIO_OBJ_BSD)"
+ 	], [
+ 		OBJ_FILES="$OBJ_FILES \$(CDAUDIO_OBJ_NONE)"
+@@ -126,7 +126,7 @@
+ 	fi
+ 
+ 	if test "x$with_openal" != "xno"; then
+-		AC_PATH_PROG([openal_config], [openal-config])
++		AC_PATH_PROG([openal_config], [openal-config], [%%OPENAL_CONFIG%%])
+ 		if test "x$openal_config" != "x"; then
+ 			OBJ_FILES="$OBJ_FILES \$(AL_OBJS)"
+ 			MAIN_CFLAGS="$MAIN_CFLAGS `$openal_config --cflags`"
+@@ -136,7 +136,7 @@
+ 
+ 	SERVER_EXE='VavoomSV$(EXEEXT)'
+ 	SV_OBJ_FILES='$(SV_COMMON_OBJ_FILES) $(SV_SYS_OBJS_UNIX)'
+-	SV_LIBS='-lm -lstdc++'
++	SV_LIBS='-lm -lstdc++ -lz'
+ 	;;
+ esac
+ 
