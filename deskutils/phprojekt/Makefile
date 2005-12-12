@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/download/
 DISTNAME=	${PORTNAME}
@@ -14,14 +14,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	tux@pinguru.net
 COMMENT=	An open source groupware suite
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
+USE_PHP=	yes
+DEFAULT_PHP_VER=4
+BROKEN_WITH_PHP=5
+WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/www/${PORTNAME}
