@@ -14,4 +14,4 @@ when invoded with --listen, --input, and --output, this mode is quite useful
 for network program debugging as well.
 
 Author:		Angus Mackay <amackay@gusnet.cx>
-WWW:		http://www.gusnet.cx:8080/proj/tcpcat/
+WWW:		http://ess4.engr.uvic.ca/proj/tcpcat
