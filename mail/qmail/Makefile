@@ -11,6 +11,7 @@ PORTREVISION?=	4
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	garga@FreeBSD.org
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
@@ -57,6 +58,7 @@ BARRIER_RFC2821_PATCH=		yes
     defined(SLAVE_SPAMCONTROL) || \
     defined(SLAVE_TLS)
 BARRIER_SPF_PATCH=		yes
+BARRIER_SMTP_AUTH_PATCH=	yes
 .endif
 
 .if !defined(SLAVE_SMTP_AUTH_TLS)
@@ -104,8 +106,8 @@ PATCH_DIST_STRIP+=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,smtp_auth_tls,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 
-NO_PACKAGE=	djb's packaging license does not allow non-standard \
-		qmail binary distributions
+NO_PACKAGE=	"djb\'s packaging license does not allow non-standard \
+		qmail binary distributions"
 
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
@@ -113,6 +115,12 @@ NO_PACKAGE=	djb's packaging license does not allow non-standard \
 PREFIX?=		/var/qmail
 QMAIL_VERSION?=		1.03
 
+.if !defined(BARRIER_SMTP_AUTH_PATCH)
+SMTP_AUTH_VERSION=	0.31
+SMTP_AUTH_DIR=		${WRKDIR}/${PORTNAME}-smtpd-auth-${SMTP_AUTH_VERSION}
+
+OPTIONS+=	SMTP_AUTH_PATCH "Provide SMTP Authentication" off
+.endif
 .if !defined(BARRIER_QMAILQUEUE_PATCH)
 OPTIONS+=	QMAILQUEUE_PATCH "run a QMAILQUEUE program" off
 .endif
@@ -346,6 +354,11 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 
 .endif
 
+.if defined(WITH_SMTP_AUTH_PATCH)
+MASTER_SITES+=	http://members.elysium.pl/brush/qmail-smtpd-auth/dist/:smtp_auth
+DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
+.endif
+
 .if defined(SLAVE_SMTP_AUTH_TLS)
 PATCH_SITES+=	http://www.galle.com.br/~garga/qmail/:smtp_auth_tls
 
@@ -504,6 +517,13 @@ post-extract:
 .endif
 
 post-patch:
+.if defined(WITH_SMTP_AUTH_PATCH)
+	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
+.if defined(WITH_SPF_PATCH)
+	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch
+.endif
+	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
+.endif
 .if defined(SLAVE_MYSQL)
 	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
 		${WRKSRC}/Makefile

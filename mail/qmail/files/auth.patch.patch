@@ -1,0 +1,105 @@
+--- auth.patch.orig	Mon Dec 12 09:55:27 2005
++++ auth.patch	Mon Dec 12 09:58:44 2005
+@@ -1,5 +1,5 @@
+-*** Makefile.orig	Mon Jun 15 05:53:16 1998
+---- Makefile	Fri May 10 00:31:38 2002
++*** Makefile.orig	Mon Dec 12 09:37:18 2005
++--- Makefile	Mon Dec 12 09:51:10 2005
+ ***************
+ *** 136,141 ****
+ --- 136,145 ----
+@@ -14,52 +14,50 @@
+   binm1.sh conf-qmail
+   	cat binm1.sh \
+ ***************
+-*** 1536,1547 ****
+-  timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o received.o \
+-  date822fmt.o now.o qmail.o cdb.a fd.a wait.a datetime.a getln.a \
+-  open.a sig.a case.a env.a stralloc.a alloc.a substdio.a error.a str.a \
+-! fs.a auto_qmail.o socket.lib
++*** 1597,1608 ****
++  timeoutwrite.o ip.o ipme.o ipalloc.o strsalloc.o control.o constmap.o \
++  received.o date822fmt.o now.o qmail.o spf.o dns.o cdb.a fd.a wait.a \
++  datetime.a getln.a open.a sig.a case.a env.a stralloc.a alloc.a substdio.a \
++! error.a str.a fs.a auto_qmail.o socket.lib dns.lib
+   	./load qmail-smtpd rcpthosts.o commands.o timeoutread.o \
+-  	timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o \
+-  	received.o date822fmt.o now.o qmail.o cdb.a fd.a wait.a \
+-  	datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
+-! 	alloc.a substdio.a error.a str.a fs.a auto_qmail.o  `cat \
+-  	socket.lib`
++  	timeoutwrite.o ip.o ipme.o ipalloc.o strsalloc.o control.o \
++  	constmap.o received.o date822fmt.o now.o qmail.o spf.o dns.o cdb.a \
++  	fd.a wait.a datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
++! 	alloc.a substdio.a error.a fs.a auto_qmail.o \
++  	str.a `cat socket.lib` `cat dns.lib`
+   
+   qmail-smtpd.0: \
+---- 1540,1551 ----
+-  timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o received.o \
+-  date822fmt.o now.o qmail.o cdb.a fd.a wait.a datetime.a getln.a \
+-  open.a sig.a case.a env.a stralloc.a alloc.a substdio.a error.a str.a \
+-! fs.a auto_qmail.o base64.o socket.lib
++--- 1601,1612 ----
++  timeoutwrite.o ip.o ipme.o ipalloc.o strsalloc.o control.o constmap.o \
++  received.o date822fmt.o now.o qmail.o spf.o dns.o cdb.a fd.a wait.a \
++  datetime.a getln.a open.a sig.a case.a env.a stralloc.a alloc.a substdio.a \
++! error.a str.a fs.a auto_qmail.o base64.o socket.lib dns.lib
+   	./load qmail-smtpd rcpthosts.o commands.o timeoutread.o \
+-  	timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o \
+-  	received.o date822fmt.o now.o qmail.o cdb.a fd.a wait.a \
+-  	datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
+-! 	alloc.a substdio.a error.a str.a fs.a auto_qmail.o base64.o  `cat \
+-  	socket.lib`
++  	timeoutwrite.o ip.o ipme.o ipalloc.o strsalloc.o control.o \
++  	constmap.o received.o date822fmt.o now.o qmail.o spf.o dns.o cdb.a \
++  	fd.a wait.a datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
++! 	alloc.a substdio.a error.a fs.a auto_qmail.o base64.o \
++  	str.a `cat socket.lib` `cat dns.lib`
+   
+   qmail-smtpd.0: \
+ ***************
+-*** 1553,1559 ****
++*** 1614,1620 ****
+   substdio.h alloc.h auto_qmail.h control.h received.h constmap.h \
+-  error.h ipme.h ip.h ipalloc.h ip.h gen_alloc.h ip.h qmail.h \
++  error.h ipme.h ip.h ipalloc.h strsalloc.h ip.h gen_alloc.h ip.h qmail.h \
+   substdio.h str.h fmt.h scan.h byte.h case.h env.h now.h datetime.h \
+-! exit.h rcpthosts.h timeoutread.h timeoutwrite.h commands.h
++! exit.h rcpthosts.h timeoutread.h timeoutwrite.h commands.h spf.h
+   	./compile qmail-smtpd.c
+   
+   qmail-start: \
+---- 1557,1564 ----
++--- 1618,1625 ----
+   substdio.h alloc.h auto_qmail.h control.h received.h constmap.h \
+-  error.h ipme.h ip.h ipalloc.h ip.h gen_alloc.h ip.h qmail.h \
++  error.h ipme.h ip.h ipalloc.h strsalloc.h ip.h gen_alloc.h ip.h qmail.h \
+   substdio.h str.h fmt.h scan.h byte.h case.h env.h now.h datetime.h \
+-! exit.h rcpthosts.h timeoutread.h timeoutwrite.h commands.h wait.h \
+-! fd.h base64.h
++! exit.h rcpthosts.h timeoutread.h timeoutwrite.h commands.h spf.h \
++! wait.h fd.h base64.h
+   	./compile qmail-smtpd.c
+   
+   qmail-start: \
+-
+-
+ *** TARGETS.orig	Mon Jun 15 05:53:16 1998
+ --- TARGETS	Fri May 10 00:31:38 2002
+ ***************
+@@ -143,11 +141,11 @@
+ *** qmail-smtpd.c.orig	Mon Jun 15 05:53:16 1998
+ --- qmail-smtpd.c	Fri May 10 00:33:35 2002
+ ***************
+-*** 23,29 ****
+---- 23,32 ----
+-  #include "timeoutread.h"
++*** 24,30 ****
++--- 24,33 ----
+   #include "timeoutwrite.h"
+   #include "commands.h"
++  #include "spf.h"
+ + #include "wait.h"
+ + #include "fd.h"
+   
