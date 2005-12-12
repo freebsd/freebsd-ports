@@ -1,0 +1,88 @@
+--- auth.patch.orig	Mon Dec 12 12:23:49 2005
++++ auth.patch	Mon Dec 12 12:25:57 2005
+@@ -14,29 +14,31 @@
+   binm1.sh conf-qmail
+   	cat binm1.sh \
+ ***************
+-*** 1536,1547 ****
++*** 1537,1549 ****
+   timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o received.o \
+   date822fmt.o now.o qmail.o cdb.a fd.a wait.a datetime.a getln.a \
+   open.a sig.a case.a env.a stralloc.a alloc.a substdio.a error.a str.a \
+ ! fs.a auto_qmail.o socket.lib
+   	./load qmail-smtpd rcpthosts.o commands.o timeoutread.o \
+   	timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o \
++  	tls.o ssl_timeoutio.o ndelay.a -L/usr/local/ssl/lib -lssl -lcrypto \
+   	received.o date822fmt.o now.o qmail.o cdb.a fd.a wait.a \
+   	datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
+ ! 	alloc.a substdio.a error.a str.a fs.a auto_qmail.o  `cat \
+   	socket.lib`
+   
+   qmail-smtpd.0: \
+---- 1540,1551 ----
++--- 1541,1553 ----
+   timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o received.o \
+   date822fmt.o now.o qmail.o cdb.a fd.a wait.a datetime.a getln.a \
+   open.a sig.a case.a env.a stralloc.a alloc.a substdio.a error.a str.a \
+ ! fs.a auto_qmail.o base64.o socket.lib
+   	./load qmail-smtpd rcpthosts.o commands.o timeoutread.o \
+   	timeoutwrite.o ip.o ipme.o ipalloc.o control.o constmap.o \
++  	tls.o ssl_timeoutio.o ndelay.a -L/usr/local/ssl/lib -lssl -lcrypto \
+   	received.o date822fmt.o now.o qmail.o cdb.a fd.a wait.a \
+   	datetime.a getln.a open.a sig.a case.a env.a stralloc.a \
+-! 	alloc.a substdio.a error.a str.a fs.a auto_qmail.o base64.o  `cat \
++! 	alloc.a substdio.a error.a str.a fs.a auto_qmail.o base64.o `cat \
+   	socket.lib`
+   
+   qmail-smtpd.0: \
+@@ -174,30 +176,38 @@
+   stralloc greeting = {0};
+   
+ ***************
+-*** 229,235 ****
+-  }
++*** 265,272 ****
+   void smtp_ehlo(arg) char *arg;
+   {
+-!   smtp_greet("250-"); out("\r\n250-PIPELINING\r\n250 8BITMIME\r\n");
++    smtp_greet("250-");
++  #ifdef TLS
++!   if (!ssl) out("\r\n250-STARTTLS");
++  #endif
++    out("\r\n250-PIPELINING\r\n250 8BITMIME\r\n");
+     seenmail = 0; dohelo(arg);
+-  }
+-  void smtp_rset()
+---- 241,255 ----
+-  }
++--- 277,298 ----
+   void smtp_ehlo(arg) char *arg;
+   {
+-!   smtp_greet("250-");
+-! #ifdef AUTHCRAM
++    smtp_greet("250-");
+++ #ifdef AUTHCRAM
++  #ifdef TLS
++!   if (!ssl) out("\r\n250-STARTTLS AUTH LOGIN CRAM-MD5 PLAIN");
++!   if (!ssl) out("\r\n250-STARTTLS AUTH=LOGIN CRAM-MD5 PLAIN");
++! #else
+ !   out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
+ !   out("\r\n250-AUTH=LOGIN CRAM-MD5 PLAIN");
++! #endif
++! #else
++! #ifdef TLS
++!   if (!ssl) out("\r\n250-STARTTLS AUTH LOGIN PLAIN");
++!   if (!ssl) out("\r\n250-STARTTLS AUTH=LOGIN PLAIN");
+ ! #else
+ !   out("\r\n250-AUTH LOGIN PLAIN");
+ !   out("\r\n250-AUTH=LOGIN PLAIN");
+ ! #endif
+-!   out("\r\n250-PIPELINING\r\n250 8BITMIME\r\n");
++  #endif
++    out("\r\n250-PIPELINING\r\n250 8BITMIME\r\n");
+     seenmail = 0; dohelo(arg);
+-  }
+-  void smtp_rset()
+ ***************
+ *** 394,403 ****
+ --- 414,639 ----

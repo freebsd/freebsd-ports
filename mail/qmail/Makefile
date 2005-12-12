@@ -55,10 +55,16 @@ BARRIER_RFC2821_PATCH=		yes
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL) || \
     defined(SLAVE_SMTP_AUTH_TLS) || \
+    defined(SLAVE_SPAMCONTROL)
+BARRIER_SMTP_AUTH_PATCH=	yes
+.endif
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_MYSQL) || \
+    defined(SLAVE_SMTP_AUTH_TLS) || \
     defined(SLAVE_SPAMCONTROL) || \
     defined(SLAVE_TLS)
 BARRIER_SPF_PATCH=		yes
-BARRIER_SMTP_AUTH_PATCH=	yes
 .endif
 
 .if !defined(SLAVE_SMTP_AUTH_TLS)
@@ -519,9 +525,11 @@ post-extract:
 post-patch:
 .if defined(WITH_SMTP_AUTH_PATCH)
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
-.if defined(WITH_SPF_PATCH)
+. if defined(WITH_SPF_PATCH)
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch
-.endif
+. elif defined(SLAVE_TLS)
+	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch-tls
+. endif
 	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
 .endif
 .if defined(SLAVE_MYSQL)
