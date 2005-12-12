@@ -1,6 +1,6 @@
---- src/perl/Makefile.in.orig	Tue Feb 22 09:11:53 2005
-+++ src/perl/Makefile.in	Tue Feb 22 09:12:11 2005
-@@ -467,7 +467,7 @@
+--- src/perl/Makefile.in.orig	Sun Dec 11 15:58:14 2005
++++ src/perl/Makefile.in	Sun Dec 11 15:58:41 2005
+@@ -681,7 +681,7 @@
  
  install-exec-local:
  	for dir in $(perl_dirs); do \
