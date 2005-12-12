@@ -1,5 +1,5 @@
 --- doc/Makefile	Tue Apr 12 08:17:04 2005
-+++ doc/Makefile	Thu Apr 21 17:20:56 2005
++++ doc/Makefile	Fri Dec  9 23:36:05 2005
 @@ -1,11 +1,14 @@
  COMMONOPTS = -f docbook -b html -e no-valid
  
@@ -32,7 +32,7 @@
  
  html/postgis.html: postgis-out.xml
  	xsltproc \
-@@ -67,6 +69,15 @@
+@@ -67,6 +69,16 @@
  maintainer-clean: clean
  	@rm -f html/*.html
  
@@ -47,6 +47,7 @@
 +	$(INSTALL_DATA)	html/ch04.html $(DOCSDIR)/ch04.html
 +	$(INSTALL_DATA)	html/ch05.html $(DOCSDIR)/ch05.html
 +	$(INSTALL_DATA)	html/ch06.html $(DOCSDIR)/ch06.html
++	$(INSTALL_DATA)	html/ch07.html $(DOCSDIR)/ch07.html
 +	$(INSTALL_DATA)	html/apa.html $(DOCSDIR)/apa.html
 + 
  .PHONY: html 
