@@ -1911,6 +1911,7 @@ easysok		ports/games/easysok
 easytag		ports/audio/easytag
 easytag-devel	ports/audio/easytag-devel
 eawpats		ports/audio/eawpats
+eawplus		ports/audio/eawplus
 ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 eboxy		ports/devel/eboxy
