@@ -214,6 +214,7 @@
     SUBDIR += gtkgep
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
+    SUBDIR += guspat
     SUBDIR += holyshout
     SUBDIR += hydrogen
     SUBDIR += icecast
