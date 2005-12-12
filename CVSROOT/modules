@@ -1466,6 +1466,7 @@ cyphesis	ports/net/cyphesis
 cyr-rfx		ports/x11-fonts/cyr-rfx
 cyrus-imapd2	ports/mail/cyrus-imapd2
 cyrus-imapd22	ports/mail/cyrus-imapd22
+cyrus-imapd23	ports/mail/cyrus-imapd23
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
