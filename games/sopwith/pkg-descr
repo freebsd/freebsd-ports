@@ -5,4 +5,4 @@ also a port to Gtk+, the widget library used by GNOME and there is
 initial code written toward a backport allowing it to be run under
 DOS, like the original.
 
-WWW: http://fraggle.despayre.org:81/stuffage/sopwith/
+WWW: http://sdl-sopwith.sourceforge.net/
