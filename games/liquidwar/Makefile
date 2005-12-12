@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liquidwar
-PORTVERSION=	5.6.2
-PORTREVISION=	4
+PORTVERSION=	5.6.3
 CATEGORIES=	games
 MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 		${MASTER_SITE_SAVANNAH} \
