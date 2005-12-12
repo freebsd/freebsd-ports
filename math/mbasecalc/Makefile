@@ -17,7 +17,8 @@ COMMENT=	Simple calculator program inspired by basecalc
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_X_PREFIX=	yes
-MAKE_ENV=	INCLUDES=-I${X11BASE}/include
+MAKE_ARGS=	INCLUDES="-I${X11BASE}/include -I." \
+		LIBS="-L${X11BASE}/lib -lfltk -lX11"
 
 PLIST_FILES=	bin/mbasecalc
 
