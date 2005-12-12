@@ -273,8 +273,6 @@ post-patch:
 .endif
 
 post-install:
-		@${INSTALL_DATA} ${WRKSRC}/man/make_md5.8 \
-			${PREFIX}/cyrus/man/man8/
 .for f in ${CYRUS_MAN3}
 		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
 		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${f}.gz \
