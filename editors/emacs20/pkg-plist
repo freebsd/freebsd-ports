@@ -1,63 +1,25 @@
-bin/b2m
-bin/ctags
-bin/emacs
+bin/b2m20
+bin/ctags20
 bin/emacs-%%EMACS_VER%%
-bin/emacsclient
-bin/etags
-bin/rcs-checkin
-@unexec install-info --delete %D/info/ccmode %D/info/dir
-@unexec install-info --delete %D/info/cl %D/info/dir
-@unexec install-info --delete %D/info/dired-x %D/info/dir
-@unexec install-info --delete %D/info/ediff %D/info/dir
-@unexec install-info --delete %D/info/emacs %D/info/dir
-@unexec install-info --delete %D/info/forms %D/info/dir
-@unexec install-info --delete %D/info/gnus %D/info/dir
-@unexec install-info --delete %D/info/info %D/info/dir
-@unexec install-info --delete %D/info/message %D/info/dir
-@unexec install-info --delete %D/info/mh-e %D/info/dir
-@unexec install-info --delete %D/info/reftex %D/info/dir
-@unexec install-info --delete %D/info/sc %D/info/dir
-@unexec install-info --delete %D/info/vip %D/info/dir
-@unexec install-info --delete %D/info/viper %D/info/dir
-@unexec install-info --delete %D/info/widget %D/info/dir
-info/ccmode
-info/cl
-info/dired-x
-info/ediff
-info/emacs
-info/forms
-info/gnus
-info/info
-info/message
-info/mh-e
-info/reftex
-info/sc
-info/vip
-info/viper
-info/widget
-@exec install-info %D/info/ccmode %D/info/dir
-@exec install-info %D/info/cl %D/info/dir
-@exec install-info %D/info/dired-x %D/info/dir
-@exec install-info %D/info/ediff %D/info/dir
-@exec install-info %D/info/emacs %D/info/dir
-@exec install-info %D/info/forms %D/info/dir
-@exec install-info %D/info/gnus %D/info/dir
-@exec install-info %D/info/info %D/info/dir
-@exec install-info %D/info/message %D/info/dir
-@exec install-info %D/info/mh-e %D/info/dir
-@exec install-info %D/info/reftex %D/info/dir
-@exec install-info %D/info/sc %D/info/dir
-@exec install-info %D/info/vip %D/info/dir
-@exec install-info %D/info/viper %D/info/dir
-@exec install-info %D/info/widget %D/info/dir
+bin/emacs20
+bin/emacsclient20
+bin/etags20
+bin/rcs-checkin20
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/b2m
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/ctags
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/cvtmail
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/digest-doc
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacs
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacs-%%EMACS_VER%%
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacsclient
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacsserver
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/etags
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fakemail
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fns-%%EMACS_VER%%.1.el
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/profile
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/rcs-checkin
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/rcs2log
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/sorted-doc
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
@@ -152,6 +114,22 @@ share/emacs/%%EMACS_VER%%/etc/ulimit.hack
 share/emacs/%%EMACS_VER%%/etc/vipcard.tex
 share/emacs/%%EMACS_VER%%/etc/viperCard.tex
 share/emacs/%%EMACS_VER%%/etc/yow.lines
+share/emacs/%%EMACS_VER%%/info/ccmode
+share/emacs/%%EMACS_VER%%/info/cl
+share/emacs/%%EMACS_VER%%/info/dir
+share/emacs/%%EMACS_VER%%/info/dired-x
+share/emacs/%%EMACS_VER%%/info/ediff
+share/emacs/%%EMACS_VER%%/info/emacs
+share/emacs/%%EMACS_VER%%/info/forms
+share/emacs/%%EMACS_VER%%/info/gnus
+share/emacs/%%EMACS_VER%%/info/info
+share/emacs/%%EMACS_VER%%/info/message
+share/emacs/%%EMACS_VER%%/info/mh-e
+share/emacs/%%EMACS_VER%%/info/reftex
+share/emacs/%%EMACS_VER%%/info/sc
+share/emacs/%%EMACS_VER%%/info/vip
+share/emacs/%%EMACS_VER%%/info/viper
+share/emacs/%%EMACS_VER%%/info/widget
 @exec mkdir -p %D/share/emacs/%%EMACS_VER%%/leim
 share/emacs/%%EMACS_VER%%/lisp/COPYING
 share/emacs/%%EMACS_VER%%/lisp/README
@@ -1308,6 +1286,7 @@ share/emacs/site-lisp/subdirs.el
 @dirrm libexec/emacs
 @dirrm share/emacs/%%EMACS_VER%%/etc/e
 @dirrm share/emacs/%%EMACS_VER%%/etc
+@dirrm share/emacs/%%EMACS_VER%%/info
 @dirrm share/emacs/%%EMACS_VER%%/leim
 @dirrm share/emacs/%%EMACS_VER%%/lisp/language
 @dirrm share/emacs/%%EMACS_VER%%/lisp/gnus

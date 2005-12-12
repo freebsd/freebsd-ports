@@ -20,10 +20,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU editing macros
 
-CONFLICTS=	emacs-19.* emacs-21.* \
-		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
-
 ONLY_FOR_ARCHS=	i386 alpha
 DEPRECATED=	"editors/emacs is recommended instead for new installations"
 
@@ -38,10 +34,13 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
 USE_XLIB=	yes
 .endif
-CONFIGURE_ARGS+=	--with-line-space
+CONFIGURE_ARGS+=	--with-line-space \
+	--bindir='$${archlibdir}' \
+	--infodir='$${datadir}/emacs/$${version}/info'
+MAKE_ARGS+=	manext=20.1
 
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-MAN1=		emacs.1 etags.1 ctags.1
+MAN1=		emacs20.1 etags20.1 ctags20.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 RECOMPILE_ELS=	dired.el startup.el
@@ -60,5 +59,12 @@ post-build:
 		${SETENV} ${MAKE_ENV} \
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET} ;\
 	)
+
+BINDIR=	${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
+post-install:
+	for f in b2m ctags emacs emacsclient etags rcs-checkin; do \
+		${LN} -sf ${BINDIR}/$${f} ${PREFIX}/bin/$${f}20; \
+	done
+	${LN} -sf ${BINDIR}/emacs-${EMACS_VER} ${PREFIX}/bin/emacs-${EMACS_VER}
 
 .include <bsd.port.mk>
