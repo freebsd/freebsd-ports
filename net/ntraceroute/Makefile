@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	ntraceroute
-PORTVERSION=	6.3.9
+PORTVERSION=	6.4.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.login.com/pub/software/traceroute/beta/
-DISTFILES=	traceroute_639.c
+MASTER_SITES=	ftp://ftp.login.com/pub/software/traceroute/beta/ \
+		http://gd.tuwien.ac.at/infosys/network/tools/traceroute/beta/
+DISTNAME=	traceroute_640.c
+EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bms@FreeBSD.org
