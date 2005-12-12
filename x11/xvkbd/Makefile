@@ -7,6 +7,7 @@
 
 PORTNAME=	xvkbd
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
@@ -15,25 +16,18 @@ COMMENT=	A virtual keyboard for X applications
 
 MAN1=		xvkbd.1
 
-.if	defined(WITH_ALL)
-WITH_XAW3D=	yes
-WITH_XTEST=	yes
-WITH_I18N=	yes
-.endif
-
-.if	defined(WITH_XAW3D)
-BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
-.endif
+OPTIONS=	XAW3D	"Xaw3d support" on \
+		XTEST	"XTEST extensions support" on \
+		I18N	"internationalization" on
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 
-pre-fetch:
-		@${ECHO} "The following define controls are available:"
-		@${ECHO} "- WITH_XAW3D	- Xaw3d support;"
-		@${ECHO} "- WITH_XTEST	- XTEST extesions support;"
-		@${ECHO} "- WITH_I18N	- internationalization;"
-		@${ECHO} "- WITH_ALL	- all of the above."
+.include <bsd.port.pre.mk>
+
+.if	defined(WITH_XAW3D)
+BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
 
 .if	defined(WITH_XAW3D)
 XK_DEFSUBST +=	-e 's/XCOMM define XAW3D/\#define XAW3D/;'
@@ -50,4 +44,4 @@ post-patch:
 		${REINPLACE_CMD} ${XK_DEFSUBST} ${WRKSRC}/Imakefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
