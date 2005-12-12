@@ -4,5 +4,7 @@
 For configuration and upgrade, please read file:
 %%PREFIX%%/abills/docs/index.html
 
+NOTE: please look for changes in abills.sql when upgrading!
+
 ************************************************************
 

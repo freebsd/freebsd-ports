@@ -6,11 +6,15 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.23b
+PORTVERSION=	0.24b
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	abills
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	http://vibrators.ru/abills/
+PATCHFILES=	patches-aa.tar.bz2
 
 MAINTAINER=	liettneff@bk.ru
 COMMENT=	Billing system for dialup and VPN users
@@ -39,10 +43,15 @@ pre-everything::
 	@ ${ECHO} ""
 
 post-extract:
+	@ ${MKDIR} ${WRKSRC}/var/log/q ${WRKSRC}/var/log/devices ${WRKSRC}/cgi-bin/admin/nets ${WRKSRC}/cgi-bin/admin/graphics ${WRKSRC}/backup
+
+post-patch:
+	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	@ ${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's,/usr/abills,${PREFIX}/abills,g' {} \;
 
 do-install:
 	@ ${CP} -R ${WRKSRC} ${PREFIX}
+	@ ${CHOWN} -R www ${PREFIX}/abills/cgi-bin
 
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
