@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libggiwmh
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -48,6 +48,6 @@ PLIST_SUB+=	XWMH="@comment "
 .endif
 
 post-install:
-	@${CP} ${WRKSRC}/libggiwmh.conf ${PREFIX}/etc/ggi/libggiwmh.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/libggiwmh.conf ${PREFIX}/etc/ggi/libggiwmh.conf.dist
 
 .include <bsd.port.mk>
