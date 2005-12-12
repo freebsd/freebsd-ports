@@ -1,4 +1,5 @@
 $FreeBSD$
+$Tecnik: ports/mail/dspam-devel/files/UPDATING,v 1.6 2005/12/12 01:53:20 itetcu Exp $
 
 This file documents some of the problems you may encounter when
 upgrading dspam port.  I will try my best to minimize these disruptions,
@@ -13,7 +14,25 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
-# dspam-devel-3.6.1 (2005/11/17)
+# dspam-devel-3.6.2 (2005-12-11 21:34)
+#
+
+Memory leak still here :(
+
+BUGFIX:	segfaults in daemon mode with hash_drv plus other hash_dvr fixes
+BUGFIX: for how token values are calculated, cutting false positives nearly
+in half
+BUGFIX: close connections to ldap after calls
+	on ldap failure fail database creation
+
+CLAMAV* now only enables clam support in dspam; use CLAMAV_LOCAL to
+RUN_DEPEND on the port and have it REQUIRED in the rc script.
+Add MYSQL_LOCAL and POSTGRESQL_LOCAL options to RUN_DEPEND on servers and
+have them REQUIRED in the rc script.
+
+
+###########################################################################
+# dspam-devel-3.6.1 (2005-11-17)
 #
 
 fix RUN_DEPENDS for WITH_CGI=on by USE_APACHE=1.3+, no need to upgrade if

@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+@comment $Tecnik: ports/mail/dspam-devel/pkg-plist,v 1.2 2005/12/11 20:46:46 itetcu Exp $
 %%HASH%%bin/cssstat
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssclean
