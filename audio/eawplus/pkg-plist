@@ -1,0 +1,40 @@
+%%TIMIDITY_DATADIR%%/timidity.cfg-eawplus
+%%DATADIR%%/88prod.cfg
+%%DATADIR%%/88prod2.cfg
+%%DATADIR%%/88prot.cfg
+%%DATADIR%%/adsrmod.cfg
+%%DATADIR%%/altassign8p.cfg
+%%DATADIR%%/inst/GUS/power/h-hihatp.pat
+%%DATADIR%%/inst/GUS/power/h-snare.pat
+%%DATADIR%%/inst/tamupat/acpiano.pat
+%%DATADIR%%/inst/tamupat/britepno.pat
+%%DATADIR%%/inst/tamupat/is2wave.pat
+%%DATADIR%%/inst/tamupat/is3wave.pat
+%%DATADIR%%/inst/tamupat/iswave.pat
+%%DATADIR%%/inst/tamupat/kantele.pat
+%%DATADIR%%/inst/tamupat/musicbox.pat
+%%DATADIR%%/inst/tamupat/s2wave.pat
+%%DATADIR%%/inst/tamupat/s3wave.pat
+%%DATADIR%%/inst/tamupat/sawwave.pat
+%%DATADIR%%/inst/tamupat/sinewave.pat
+%%DATADIR%%/inst/tamupat/sotetsu.pat
+%%DATADIR%%/inst/tamupat/sqrwave.pat
+%%DATADIR%%/inst/tamupat/synpiano.pat
+%%DATADIR%%/inst/tamupat/triwave.pat
+%%DATADIR%%/timidity.cfg
+%%DATADIR%%/timidity.cfg.iz
+%%DATADIR%%/timidity.cfg.orig
+%%DATADIR%%/timidity.cfg.orig2
+%%DATADIR%%/timidity.cfg.sh
+%%DATADIR%%/tune.cfg
+%%PORTDOCS%%%%DOCSDIR%%/Drumset-j.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe-j.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/VupHistory-j.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt.gz
+@unexec rmdir %D/%%TIMIDITY_DATADIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/inst/tamupat
+@dirrm %%DATADIR%%/inst/GUS/power
+@dirrm %%DATADIR%%/inst/GUS
+@dirrm %%DATADIR%%/inst
+@dirrm %%DATADIR%%

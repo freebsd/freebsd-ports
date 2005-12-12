@@ -95,6 +95,7 @@
     SUBDIR += easytag
     SUBDIR += easytag-devel
     SUBDIR += eawpats
+    SUBDIR += eawplus
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += emu10kx
