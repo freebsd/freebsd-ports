@@ -88,7 +88,7 @@ PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
-PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}.patch:tls
+PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch:tls
 PATCH_DIST_STRIP+=	-p1
 .endif
 
@@ -496,7 +496,7 @@ post-patch:
 .endfor
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 .elif defined(SLAVE_TLS)
-	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}.patch > \
+	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
 		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
