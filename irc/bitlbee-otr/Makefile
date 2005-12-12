@@ -9,7 +9,7 @@ PORTNAME=	bitlbee
 PORTVERSION=	1.0
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
-		http://www.bitlbee.be/andy/:msn6
+		http://get.bitlbee.org/patches/:patches
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:bitlbee
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,7 +20,7 @@ COMMENT=	An IRC to other chat networks gateway
 
 .if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
 # don't use DISTNAME as old patch applies fine to new release
-DISTFILES+=	${PORTNAME}-0.92-msn6.akke.patch:msn6
+DISTFILES+=	${PORTNAME}-1.0-msn6.akke.patch:patches
 .endif
 
 .if defined(WITH_LDAP)
@@ -71,7 +71,7 @@ pre-configure:
 
 post-patch:
 .if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
-	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${PORTNAME}-0.92-msn6.akke.patch
+	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${PORTNAME}-1.0-msn6.akke.patch
 .endif
 
 post-build:
