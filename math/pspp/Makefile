@@ -27,7 +27,7 @@ INFO=		pspp
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+USE_GCC=	3.4+
 .endif
 
 .include <bsd.port.post.mk>
