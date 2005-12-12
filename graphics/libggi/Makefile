@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	A flexible drawing library
 
-LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
+LIB_DEPENDS=	gii.1:${PORTSDIR}/devel/libgii
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -41,15 +41,23 @@ MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
 		ggiSetGCForeground.3 ggiSetMode.3 ggiSetOrigin.3 \
 		ggiSetPalette.3 ggiSetTextMode.3 \
 		ggi_color.3 ggi_colormap.3 \
-		ggi_directbuffer.3 ggi_mode.3 ggi_pixelformat.3
+		ggi_directbuffer.3 ggi_mode.3 ggi_pixelformat.3 \
+		ggidev-add_3.3 \
+		ggidev-assign_3.3 \
+		ggidev-eq_3.3 \
+		ggidev-inc_3.3 \
+		ggidev-invert_3.3 \
+		ggidev-sign_3.3
 MAN7=		libggi.7 display-aa.7 display-auto.7 \
-		display-dga.7 display-directx.7 \
+		display-directx.7 \
 		display-fbdev.7 display-file.7 display-glide.7 \
 		display-mansync.7 display-memory.7 display-monotext.7 \
-		display-multi.7 display-palemu.7 display-sub.7 \
+		display-multi.7 display-palemu.7 \
+		display-quartz.7 display-sub.7 \
 		display-svgalib.7 display-tele.7 display-terminfo.7 \
 		display-tile.7 display-trueemu.7 \
-		display-vcsa.7 display-vgl.7 display-x.7
+		display-vcsa.7 display-vgl.7 display-x.7 \
+		ggidev-triple-int.7
 MLINKS=		ggi-demo.1 demo.1 \
 		display-directx.7 display-directxnt.7 \
 		ggiCheckMode.3 ggiCheckGraphMode.3 - ggiCheckSimpleMode.3 \
@@ -92,7 +100,24 @@ MLINKS=		ggi-demo.1 demo.1 \
 		ggi_directbuffer.3 ggi_pixellinearbuffer.3 \
 		- ggi_pixelplanarbuffer.3 - ggi_samplelinearbuffer.3 \
 		- ggi_sampleplanarbuffer.3 \
-		ggi_mode.3 ggi_coord.3 - ggi_graphtype.3
+		ggi_mode.3 ggi_coord.3 - ggi_graphtype.3 \
+		ggidev-add_3.3 ggidev-divmod_3.3 \
+		- ggidev-mul_3.3 \
+		- ggidev-sub_3.3 \
+		ggidev-assign_3.3 ggidev-assign_int_3.3 \
+		- ggidev-assign_unsigned_3.3 \
+		ggidev-eq_3.3 ggidev-ge_3.3 \
+		ggidev-inc_3.3 ggidev-abs_3.3 \
+		- ggidev-dec_3.3 \
+		- ggidev-negate_3.3 \
+		ggidev-invert_3.3 ggidev-lshift_3.3 \
+		- ggidev-rshift_3.3 \
+		ggidev-sign_3.3 ggidev-bits_3.3 \
+		- ggidev-eq0_3.3 \
+		- ggidev-ge0_3.3 \
+		- ggidev-gt0_3.3 \
+		- ggidev-le0_3.3 \
+		- ggidev-lt0_3.3
 
 .if exists(/usr/include/dev/kgi/kgi.h)
 CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
@@ -130,6 +155,8 @@ PLIST_SUB+=	WITH_SVGALIB="@comment "
 .endif
 
 post-install:
-	@${CP} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
+	${TOUCH} ${PREFIX}/lib/ggi/default/fbdev/.keep
+	${TOUCH} ${PREFIX}/lib/ggi/default/kgi/.keep
+	${INSTALL_DATA} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
 
 .include <bsd.port.post.mk>
