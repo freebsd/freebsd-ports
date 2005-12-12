@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@ccca.nctu.edu.tw
+MAINTAINER=	gslin@gslin.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
 GNU_CONFIGURE=	yes
