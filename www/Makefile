@@ -496,6 +496,7 @@
     SUBDIR += p5-Catalyst-Model-DBIC-Plain
     SUBDIR += p5-Catalyst-Plugin-Authentication
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
+    SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
