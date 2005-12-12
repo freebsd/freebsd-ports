@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/old-targz/
@@ -21,6 +21,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 
 USE_XLIB=	yes
+USE_PYTHON=	yes
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
@@ -36,6 +37,11 @@ ALL_TARGET=	${PORTNAME:U}
 
 MAN1=		texmacs.1 fig2ps.1
 MANCOMPRESSED=	yes
+
+.if !defined(WITHOUT_IMLIB2)
+LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+CONFIGURE_ARGS+=	--with-imlib2
+.endif
 
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
