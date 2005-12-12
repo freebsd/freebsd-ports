@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/User.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd/Backend.pm
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd.pm
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Htpasswd 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
