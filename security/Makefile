@@ -533,6 +533,7 @@
     SUBDIR += sudosh
     SUBDIR += super
     SUBDIR += swatch
+    SUBDIR += symbion-sslproxy
     SUBDIR += tea-total
     SUBDIR += termlog
     SUBDIR += tinc
