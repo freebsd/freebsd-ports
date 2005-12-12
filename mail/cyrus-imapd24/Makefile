@@ -1,13 +1,13 @@
 # New ports collection makefile for:		cyrus-imapd
-# Date created:					Jan 4th 2001
+# Date created:					Dec 10th 2005
 # Whom:						ume@FreeBSD.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.2.12
-PORTREVISION=	2
+PORTVERSION=	2.3.0
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -20,9 +20,9 @@ LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
 
-LATEST_LINK=	${PORTNAME}22
+LATEST_LINK=	${PORTNAME}23
 
 USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
@@ -39,38 +39,37 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
-OPTIONS=	AUTH_KRB5	"Use Kerberos5 authorization module"	off
 .if defined(WITH_BDB_VER)
 USE_BDB_VER=	${WITH_BDB_VER}
 .else
 USE_BDB_VER=	3
 .endif
 .if ${USE_BDB_VER} == 3
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	on \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 4
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 41
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	on \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
 		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 42
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	on \
 		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 43
-OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
 		BDB_42		"Use BerkeleyDB v4.2"	off \
@@ -82,11 +81,12 @@ BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 OPTIONS+=	DRAC		"Enable DRAC support"			off
 OPTIONS+=	IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
 		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on
-OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader (experimantal)"	off
+OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader"			off
 OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
 OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
 OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
 OPTIONS+=	NNTP		"Enable NNTP support"			off
+OPTIONS+=	REPLICATION	"Enable replication"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
@@ -164,6 +164,13 @@ PLIST_SUB+=	IDLED="@comment "
 PLIST_SUB+=	IDLED="@comment "
 .endif
 
+.if defined(WITH_REPLICATION)
+CONFIGURE_ARGS+=--enable-replication
+PLIST_SUB+=	REPLICATION=""
+.else
+PLIST_SUB+=	REPLICATION="@comment "
+.endif
+
 .if defined(WITH_LISTEXT)
 CONFIGURE_ARGS+=--enable-listext
 .endif
@@ -173,8 +180,10 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4 \
+#EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
+EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::berkdb.m4 \
+		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
 		${FILESDIR}/extra-patch-configure.in
 USE_AUTOTOOLS=	autoconf:259 autoheader:259
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
@@ -195,18 +204,11 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
-.if defined(WITH_AUTH_KRB5) && defined(WITH_LDAP_PTLOADER)
-BROKEN=		"AUTH_KRB5 and LDAP_PTLOADER are exclusive.  Run 'make config' again!"
-.endif
 .if defined(WITH_LDAP_PTLOADER)
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-auth=pts --with-pts=ldap --with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP_PTLOADER=""
-.elif defined(WITH_AUTH_KRB5)
-CONFIGURE_ARGS+=--with-auth=krb5
-PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .else
-CONFIGURE_ARGS+=--with-auth=unix
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
 .endif
 
@@ -226,17 +228,19 @@ CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
 		cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 deliver.8 \
 		fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 lmtpd.8 \
-		master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 quota.8 \
-		reconstruct.8 rmnews.8 smmapd.8 squatter.8 syncnews.8 \
-		timsieved.8 tls_prune.8
+		make_md5.8 master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 \
+		quota.8 reconstruct.8 rmnews.8 smmapd.8 squatter.8 \
+		sync_client.8 sync_reset.8 sync_server.8 syncnews.8 \
+		timsieved.8 tls_prune.8 unexpunge.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
 		install-configure install-murder install-netnews \
-		install-perf install-prereq install-sieve install-snmpmon \
-		install-testing install-upgrade install-virtdomains \
-		mailing-list man notes os overview questions readme sieve \
-		sieve-protocol specs
+		install-perf install-prereq install-replication \
+		install-sieve install-snmpmon install-testing \
+		install-upgrade install-virtdomains mailing-list man \
+		notes os overview questions readme sieve sieve-protocol \
+		specs
 
 CONFS=		cmu-frontend.conf prefork.conf cmu-backend.conf normal.conf \
 		small.conf
@@ -269,6 +273,8 @@ post-patch:
 .endif
 
 post-install:
+		@${INSTALL_DATA} ${WRKSRC}/man/make_md5.8 \
+			${PREFIX}/cyrus/man/man8/
 .for f in ${CYRUS_MAN3}
 		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
 		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${f}.gz \

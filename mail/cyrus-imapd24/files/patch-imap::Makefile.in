@@ -1,0 +1,60 @@
+Index: imap/Makefile.in
+diff -u imap/Makefile.in.orig imap/Makefile.in
+--- imap/Makefile.in.orig	Fri Nov 18 00:46:14 2005
++++ imap/Makefile.in	Sat Dec 10 16:46:31 2005
+@@ -130,10 +130,10 @@
+ 
+ 
+ install:
+-	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
++	$(INSTALL) -d ${DESTDIR}$(service_path)
+ 	for file in $(PROGS); \
+ 	do \
+-		$(INSTALL) -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \
++		$(INSTALL) -s -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \
+ 	done
+ 	ln -f $(DESTDIR)$(service_path)/pop3d $(DESTDIR)$(service_path)/pop3proxyd
+ 	ln -f $(DESTDIR)$(service_path)/imapd $(DESTDIR)$(service_path)/proxyd
+@@ -219,13 +219,13 @@
+ 	$(CC) $(LDFLAGS) -o mupdate \
+ 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
+ 	 mutex_pthread.o tls.o libimap.a \
+-	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
++	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
+ 
+ mupdate.pure: mupdate.o mupdate-slave.o mupdate-client.o mutex_pthread.o \
+ 	libimap.a $(DEPLIBS)
+ 	$(PURIFY) $(PUREOPT) $(CC) $(LDFLAGS) -o mupdate.pure \
+ 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
+-	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
++	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
+ 
+ pop3d: pop3d.o proxy.o backend.o tls.o mutex_fake.o libimap.a \
+ 	$(DEPLIBS) $(SERVICE)
+@@ -247,10 +247,11 @@
+ 	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
+ 
+ sync_server: sync_server.o sync_support.o sync_commit.o \
+-	imapparse.o tls.o libimap.a mutex_fake.o $(DEPLIBS) $(SERVICE)
++	imapparse.o tls.o libimap.a mutex_fake.o mboxkey.o \
++	$(DEPLIBS) $(SERVICE)
+ 	$(CC) $(LDFLAGS) -o \
+ 	sync_server sync_server.o sync_support.o sync_commit.o \
+-	imapparse.o tls.o $(SERVICE) libimap.a mutex_fake.o \
++	imapparse.o tls.o $(SERVICE) libimap.a mutex_fake.o mboxkey.o \
+ 	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
+ 
+ ### Command Line Utilities
+@@ -336,10 +337,10 @@
+ 	backend.o tls.o imapparse.o libimap.a mutex_fake.o $(DEPLIBS) $(LIBS)
+ 
+ sync_reset: sync_reset.o sync_support.o sync_commit.o \
+-	libimap.a mutex_fake.o $(DEPLIBS)
++	libimap.a mutex_fake.o mboxkey.o $(DEPLIBS)
+ 	$(CC) $(LDFLAGS) -o \
+ 	sync_reset sync_reset.o sync_support.o sync_commit.o \
+-	libimap.a mutex_fake.o $(DEPLIBS) $(LIBS)
++	libimap.a mutex_fake.o mboxkey.o $(DEPLIBS) $(LIBS)
+ 
+ ### Other Misc Targets
+ 
