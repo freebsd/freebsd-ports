@@ -12,7 +12,7 @@ CATEGORIES=	java lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	plexus@snafu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Assembler Interface
 
 USE_ZIP=	yes
