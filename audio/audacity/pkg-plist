@@ -1,42 +1,48 @@
 bin/audacity
-share/audacity/nyquist/bug.lsp
-share/audacity/nyquist/dspprims.lsp
-share/audacity/nyquist/evalenv.lsp
-share/audacity/nyquist/follow.lsp
-share/audacity/nyquist/init.lsp
-share/audacity/nyquist/misc.lsp
-share/audacity/nyquist/nyinit.lsp
-share/audacity/nyquist/nyqmisc.lsp
-share/audacity/nyquist/nyquist.lsp
-share/audacity/nyquist/printrec.lsp
-share/audacity/nyquist/profile.lsp
-share/audacity/nyquist/seq.lsp
-share/audacity/nyquist/seqfnint.lsp
-share/audacity/nyquist/seqmidi.lsp
-share/audacity/nyquist/sndfnint.lsp
-share/audacity/nyquist/system.lsp
-share/audacity/nyquist/test.lsp
-share/audacity/nyquist/xlinit.lsp
-share/audacity/plug-ins/clicktrack.ny
-share/audacity/plug-ins/crossfadein.ny
-share/audacity/plug-ins/crossfadeout.ny
-share/audacity/plug-ins/delay.ny
-share/audacity/plug-ins/highpass.ny
-share/audacity/plug-ins/lowpass.ny
-share/audacity/plug-ins/pluck.ny
-share/audacity/plug-ins/tremolo.ny
-share/audacity/audacity-1.2-help.htb
+%%DATADIR%%/nyquist/bug.lsp
+%%DATADIR%%/nyquist/dspprims.lsp
+%%DATADIR%%/nyquist/evalenv.lsp
+%%DATADIR%%/nyquist/follow.lsp
+%%DATADIR%%/nyquist/init.lsp
+%%DATADIR%%/nyquist/misc.lsp
+%%DATADIR%%/nyquist/nyinit.lsp
+%%DATADIR%%/nyquist/nyqmisc.lsp
+%%DATADIR%%/nyquist/nyquist.lsp
+%%DATADIR%%/nyquist/printrec.lsp
+%%DATADIR%%/nyquist/profile.lsp
+%%DATADIR%%/nyquist/seq.lsp
+%%DATADIR%%/nyquist/seqfnint.lsp
+%%DATADIR%%/nyquist/seqmidi.lsp
+%%DATADIR%%/nyquist/sndfnint.lsp
+%%DATADIR%%/nyquist/system.lsp
+%%DATADIR%%/nyquist/test.lsp
+%%DATADIR%%/nyquist/xlinit.lsp
+%%DATADIR%%/plug-ins/SilenceMarker.ny
+%%DATADIR%%/plug-ins/clicktrack.ny
+%%DATADIR%%/plug-ins/crossfadein.ny
+%%DATADIR%%/plug-ins/crossfadeout.ny
+%%DATADIR%%/plug-ins/delay.ny
+%%DATADIR%%/plug-ins/highpass.ny
+%%DATADIR%%/plug-ins/lowpass.ny
+%%DATADIR%%/plug-ins/pluck.ny
+%%DATADIR%%/plug-ins/tremolo.ny
+%%DATADIR%%/audacity-1.2-help.htb
+share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/bg/LC_MESSAGES/audacity.mo
 share/locale/ca/LC_MESSAGES/audacity.mo
 share/locale/cs/LC_MESSAGES/audacity.mo
 share/locale/da/LC_MESSAGES/audacity.mo
 share/locale/de/LC_MESSAGES/audacity.mo
+share/locale/el/LC_MESSAGES/audacity.mo
 share/locale/es/LC_MESSAGES/audacity.mo
+share/locale/eu/LC_MESSAGES/audacity.mo
 share/locale/fi/LC_MESSAGES/audacity.mo
 share/locale/fr/LC_MESSAGES/audacity.mo
+share/locale/ga/LC_MESSAGES/audacity.mo
 share/locale/hu/LC_MESSAGES/audacity.mo
 share/locale/it/LC_MESSAGES/audacity.mo
 share/locale/ja/LC_MESSAGES/audacity.mo
+share/locale/lt/LC_MESSAGES/audacity.mo
 share/locale/mk/LC_MESSAGES/audacity.mo
 share/locale/nb/LC_MESSAGES/audacity.mo
 share/locale/nl/LC_MESSAGES/audacity.mo
@@ -47,9 +53,10 @@ share/locale/sl/LC_MESSAGES/audacity.mo
 share/locale/sv/LC_MESSAGES/audacity.mo
 share/locale/uk/LC_MESSAGES/audacity.mo
 share/locale/zh/LC_MESSAGES/audacity.mo
-@dirrm share/audacity/plug-ins
-@dirrm share/audacity/nyquist
-@dirrm share/audacity
+share/locale/zh_TW/LC_MESSAGES/audacity.mo
+@dirrm %%DATADIR%%/plug-ins
+@dirrm %%DATADIR%%/nyquist
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
