@@ -7,8 +7,8 @@ usr/bin/ccc
 @comment Insert PLIST.alphalinux here
 @comment -=[ begin PLIST.alphalinux ]=-
 @comment -=[ end PLIST.alphalinux ]=-
-usr/man/man1/ccc.1
-usr/man/man8/protect_headers_setup.8
+usr/share/man/man1/ccc.1
+usr/share/man/man8/protect_headers_setup.8
 @comment Insert PLIST.alpha-freebsd here
 @comment -=[ begin PLIST.alpha-freebsd ]=-
 @comment -=[ end PLIST.alpha-freebsd ]=-
