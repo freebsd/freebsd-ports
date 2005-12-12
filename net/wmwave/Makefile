@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display 802.11 status in the WindowMaker Dock
 
 MAKEFILE=	${FILESDIR}/Makefile
