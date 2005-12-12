@@ -4,12 +4,12 @@
 #
 # $FreeBSD$
 # $Id: Makefile,v 1.1 2005/11/20 18:17:56 itetcu Rel $
-#
+# $Tecnik: ports/editors/rospell/Makefile,v 1.2 2005/12/12 19:00:23 itetcu Exp $
 
 PORTNAME=	rospell
-PORTVERSION=	2005.03.b1
+PORTVERSION=	2005.03
 CATEGORIES=	editors textproc # this should/will be romanian ;)
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itetcu@people.tecnik93.com
