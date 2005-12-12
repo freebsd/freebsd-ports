@@ -35,6 +35,7 @@
     SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += drill
+    SUBDIR += dualserver
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
