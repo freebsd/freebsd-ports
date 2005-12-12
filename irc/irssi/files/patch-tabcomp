@@ -1,0 +1,121 @@
+--- src/fe-common/core/utf8.h.orig	Fri Dec  9 01:32:44 2005
++++ src/fe-common/core/utf8.h	Mon Dec 12 12:13:50 2005
+@@ -18,6 +18,10 @@
+    Make sure out is at least 6 x length of str. */
+ void utf16_to_utf8(const unichar *str, char *out);
+ 
++/* unichar -> UTF-8 string with position transformed. The NUL is copied as well.
++   Make sure out is at least 6 x length of str. */
++void utf16_to_utf8_with_pos(const unichar *str, int spos, char *out, int *opos);
++
+ /* XXX I didn't check the encoding range of big5+. This is standard big5. */
+ #define is_big5_los(lo) (0x40 <= (lo) && (lo) <= 0x7E) /* standard */
+ #define is_big5_lox(lo) (0x80 <= (lo) && (lo) <= 0xFE) /* extended */
+--- src/fe-common/core/utf8.c.orig	Fri Dec  9 01:32:44 2005
++++ src/fe-common/core/utf8.c	Mon Dec 12 12:15:20 2005
+@@ -182,6 +182,24 @@
+ 	*out = '\0';
+ }
+ 
++void utf16_to_utf8_with_pos(const unichar *str, int spos, char *out, int *opos)
++{
++	int len;
++	const unichar *sstart = str;
++	char *ostart = out;
++
++	*opos = 0;
++	while (*str != '\0') {
++		len = utf16_char_to_utf8(*str, out);
++		out += len;
++
++		str++;
++		if(str - sstart == spos)
++			*opos = out - ostart;
++	}
++	*out = '\0';
++}
++
+ static const unichar wcc[] = {
+ 	0x0, 0x300, 0x34F, 0x360, 0x363, 0x483, 0x487, 0x488, 0x48A, 0x591,
+ 	0x5A2, 0x5A3, 0x5BA, 0x5BB, 0x5BE, 0x5BF, 0x5C0, 0x5C1, 0x5C3, 0x5C4,
+--- src/fe-text/gui-entry.c.orig	Fri Dec  9 01:32:46 2005
++++ src/fe-text/gui-entry.c	Mon Dec 12 12:26:13 2005
+@@ -81,6 +81,24 @@
+ 	*out = '\0';
+ }
+ 
++void unichars_to_big5_with_pos(const unichar *str, int spos, char *out, int *opos)
++{
++	const unichar *sstart = str;
++	char *ostart = out;
++
++	*opos = 0;
++	while(*str != '\0')
++	{
++		if(*str > 0xff)
++			*out ++ = (*str >> 8) & 0xff;
++		*out ++ = *str & 0xff;
++		str ++;
++		if(str - sstart == spos)
++			*opos = out - ostart;
++	}
++	*out = '\0';
++}
++
+ int strlen_big5(const unsigned char *str)
+ {
+ 	int len=0;
+@@ -367,6 +385,29 @@
+ 		else
+ 			for (i = 0; i <= entry->text_len; i++)
+ 				buf[i] = entry->text[i];
++	}
++	return buf;
++}
++
++char *gui_entry_get_text_and_pos(GUI_ENTRY_REC *entry, int *pos)
++{
++	char *buf;
++	int i;
++
++	g_return_val_if_fail(entry != NULL, NULL);
++
++	buf = g_malloc(entry->text_len*6 + 1);
++	if (entry->utf8)
++		utf16_to_utf8_with_pos(entry->text, entry->pos, buf, pos);
++	else {
++		if(term_type==TERM_TYPE_BIG5)
++			unichars_to_big5_with_pos(entry->text, entry->pos, buf, pos);
++		else
++		{
++			for (i = 0; i <= entry->text_len; i++)
++				buf[i] = entry->text[i];
++			*pos = entry->pos;
++		}
+ 	}
+ 	return buf;
+ }
+--- src/fe-text/gui-readline.c.orig	Fri Dec  9 01:32:46 2005
++++ src/fe-text/gui-readline.c	Mon Dec 12 12:32:35 2005
+@@ -778,9 +778,7 @@
+ 	char *text, *line;
+ 	int pos;
+ 
+-	pos = gui_entry_get_pos(active_entry);
+-
+-        text = gui_entry_get_text(active_entry);
++        text = gui_entry_get_text_and_pos(active_entry, &pos);
+ 	line = word_complete(active_win, text, &pos, erase);
+ 	g_free(text);
+ 
+@@ -806,9 +804,7 @@
+ 	char *text, *line;
+ 	int pos;
+ 
+-	pos = gui_entry_get_pos(active_entry);
+-
+-        text = gui_entry_get_text(active_entry);
++        text = gui_entry_get_text_and_pos(active_entry, &pos);
+ 	line = auto_word_complete(text, &pos);
+ 	g_free(text);
+ 
