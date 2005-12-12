@@ -7,6 +7,6 @@ include/ggi/internal/gcp.h
 lib/ggi/gcp/default/color_gcp.so
 lib/libggigcp.a
 lib/libggigcp.so
-lib/libggigcp.so.0
+lib/libggigcp.so.1
 @dirrm lib/ggi/gcp/default
 @dirrm lib/ggi/gcp
