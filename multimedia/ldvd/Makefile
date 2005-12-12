@@ -7,40 +7,45 @@
 
 PORTNAME=	ldvd
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp-master.debian-unofficial.org/contrib/vedran/ldvd/${PORTVERSION}/
 
-MAINTAINER=	fehlner@gmx.de
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		ifo_dump:${PORTSDIR}/multimedia/ogle \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		buffer:${PORTSDIR}/misc/buffer \
-		lsdvd:${PORTSDIR}/multimedia/lsdvd \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_BZIP2=	yes
 USE_PERL=	yes
 USE_REINPLACE=	yes
-NO_BUILD=	yes
 DATA=		de.lang en.lang
 PORTDOCS=	AUTHORS HISTORY README.de README.en
-PLIST_FILES=	bin/ldvd etc/ldvd.conf.sample ${DATA:S|^|%%DATADIR%%/|}
+PLIST_FILES=    bin/ldvd bin/ldvd-ls etc/ldvd.conf.sample \
+		${DATA:S|^|%%DATADIR%%/|}
 PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|ldvd-ls|lsdvd|g' \
-		${WRKSRC}/ldvd.conf ${WRKSRC}/ldvd
 	@${REINPLACE_CMD} -e 's|/usr/share/$$sh_name-$$version|${DATADIR}|g; \
 		s|/etc|${PREFIX}/etc|g' ${WRKSRC}/ldvd
 
+do-build:
+	@cd ${WRKSRC} && \
+		${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
+			-ldvdread ldvd-ls.c -o ldvd-ls
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ldvd ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ldvd-ls ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ldvd.conf ${PREFIX}/etc/ldvd.conf.sample
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${DATA:S|^|${WRKSRC}/|} ${DATADIR}
