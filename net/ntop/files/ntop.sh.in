@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ntop
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ntop:
+#
+#ntop_enable="YES"
+#
+# See ntop(8) for flags
+#
+
+. %%RC_SUBR%%
+
+name=ntop
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/ntop
+
+ntop_enable=${ntop_enable:-"NO"}
+ntop_flags=${ntop_flags:-"-d --use-syslog=daemon"}
+
+load_rc_config $name
+run_rc_command "$1"

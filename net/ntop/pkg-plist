@@ -6,7 +6,6 @@ etc/ntop/oui.txt.gz
 etc/ntop/p2c.opt.table.gz
 etc/ntop/specialMAC.txt.gz
 @dirrm etc/ntop
-etc/rc.d/ntop.sh
 lib/libicmpPlugin-%%SHLIB%%.so
 lib/libicmpPlugin.a
 lib/libicmpPlugin.so

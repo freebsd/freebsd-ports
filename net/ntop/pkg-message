@@ -1,20 +1,10 @@
 ----------------------------------------------------------------------------
-ntop has been installed, but is not quite ready to be used yet!
+WARNING:
 
-You need to set an administrator password for ntop before it may be used.
-Just run startup script to be prompted for the password.
-
-Note that the installed startup script will NOT be execute at system
-startup by default.  If you wish ntop to start when your system boots,
-you should make this script executable:
-
-  # chmod 555 %%LOCALBASE%%/etc/rc.d/ntop.sh
-
-			       NB!! NB!! NB!!
 In the past, ntop has been the subject of repeated security vulner-
 abilities, particularly relating to its web interface.  It is strongly
 suggested that you protect your ntop web interface via packet filters
 or TCP wrappers.
-IPv6 isn't currently supported by the port.
 
+IPv6 isn't currently supported by the port.
 ----------------------------------------------------------------------------
