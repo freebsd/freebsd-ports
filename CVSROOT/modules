@@ -11947,6 +11947,7 @@ sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
 sylpheed2	ports/mail/sylpheed2
 sylpheed2-devel	ports/mail/sylpheed2-devel
+symbion-sslproxy	ports/security/symbion-sslproxy
 symlinks	ports/sysutils/symlinks
 symon		ports/sysutils/symon
 sympa		ports/mail/sympa
