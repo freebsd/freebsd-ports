@@ -7,6 +7,7 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.risp.ru/pub/RinetSoftware/
 DISTNAME=	netmond-2.2-b6
@@ -15,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	vfom@narod.ru
 COMMENT=	Netmond - IP network monitoring daemon
 
+USE_REINPLACE=	yes
 #MK_IFGRAPH=	yes
 
 .if defined(MK_IFGRAPH)
@@ -38,6 +40,9 @@ PLIST_FILES+=	sbin/ifgraph
 PORTDOCS=	README README.ru CHANGES README.port README.port.ru
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-patch:
+	${REINPLACE_CMD} "s/1645/1812/" ${WRKSRC}/radius.c
 
 do-install:
 	@if pw user show netmon 2>/dev/null ; then \
