@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-View-TT
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -16,6 +16,7 @@ MAINTAINER=	lars@balker.dk
 COMMENT=	Template Toolkit view class for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst>=5.50:${PORTSDIR}/www/p5-Catalyst \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Template/Timer.pm:${PORTSDIR}/www/p5-Template-Timer
 RUN_DEPENDS=	${BUILD_DEPENDS}
