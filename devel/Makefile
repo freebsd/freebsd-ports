@@ -667,6 +667,7 @@
     SUBDIR += p5-Algorithm-Bucketizer
     SUBDIR += p5-Algorithm-ChooseSubsets
     SUBDIR += p5-Algorithm-Cluster
+    SUBDIR += p5-Algorithm-Dependency
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-Evolutionary
     SUBDIR += p5-Algorithm-Interval2Prefix
