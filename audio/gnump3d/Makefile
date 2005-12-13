@@ -7,6 +7,7 @@
 
 PORTNAME=	gnump3d
 PORTVERSION=	2.9.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,8 +24,11 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_BZIP2=	yes
-USE_PERL5=	yes
+USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+USE_RC_SUBR=	gnump3.sh
+SUB_LIST+=	PERL=${PERL}
 
 MAN1=		gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
 
@@ -32,16 +36,19 @@ CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
-	it's outdated. Install lang/perl5 and issue 'use.perl port'
+.if ${PERL_LEVEL} < 500800
+IGNORE=	needs at least perl 5.8. Do not use FreeBSD 4.x' system perl,\
+	it's outdated. Install lang/perl5.8 and issue 'use.perl port'
+.elif ${PERL_LEVEL} < 500806
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
 .endif
 
 post-patch:
 .for f in bin/gnump3d-index bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf \
 	man/gnump3d.conf.1
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		 s|!/usr/bin/perl|!${PERL}| ; \
 		 s|%%SITE_PERL%%|${SITE_PERL}|g' ${WRKSRC}/${f}
 .endfor
 
