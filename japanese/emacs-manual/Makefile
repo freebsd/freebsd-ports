@@ -8,11 +8,11 @@
 PORTNAME=	emacs-manual
 PORTVERSION=	13.20000303
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/emacs-20.x/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	emacs
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/emacs-20.x/:ascii \
+		${MASTER_SITE_GNU:S/$/:gnu/}
+MASTER_SITE_SUBDIR=	emacs/:gnu
 DISTNAME=	emacs-20.6-man-jp
-DISTFILES=	${DISTNAME}.tgz ${EMACS_ARC}
+DISTFILES=	${DISTNAME}.tgz:ascii ${EMACS_ARC:S/$/:gnu/}
 
 MAINTAINER=	okazaki@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Manual
