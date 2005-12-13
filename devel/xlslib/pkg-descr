@@ -1,0 +1,18 @@
+xlsLib is a multiplatform, C++ developed, library for dynamically 
+generating Excel(TM) files (*.xls). It allows the generation of Excel(TM) 
+compatible files without the need of any other external software.
+
+    * Easy to use, fully object oriented, API.
+    * Excel 95 (TM) format spreadsheets.
+    * Multiple worksheets.
+    * All standard font's styles and colors.
+    * All standard cell's styles, colors and properties.
+    * All standard cell's border-styles and colors.
+    * Three basic type of cells:
+          o Blank.
+          o Label. The text in labels can be formated in all standard styles.
+          o Number. All standard number-formats are supported.
+    * Merged cells.
+    * Handling of cells using ranges.
+
+WWW: http://xlslib.sourceforge.net/

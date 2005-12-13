@@ -1640,6 +1640,7 @@
     SUBDIR += wininfo
     SUBDIR += wxGlade
     SUBDIR += xfc
+    SUBDIR += xlslib
     SUBDIR += xmake
     SUBDIR += xparam
     SUBDIR += xtl
