@@ -6,5 +6,6 @@ LICENSE.%%DRIVERNAME%%
 %%DRIVERNAME%%-i.fw
 %%DRIVERNAME%%-p.fw
 %%DRIVERNAME%%.fw
+@unexec rmdir %%FWDIR%% 2>/dev/null || true
 %%WITH_MODULE%%@cwd /
 %%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko

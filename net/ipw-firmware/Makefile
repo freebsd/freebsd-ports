@@ -117,7 +117,6 @@ do-install:
 # terms to install the port/package.
 	${SH} ${PKGREQ} ${PORTNAME} INSTALL
 .endif
-	${MKDIR} ${DATADIR}
 .if defined(WITH_MODULE)
 . for i in share sys
 	cd ${WRKSRC}/${DRIVERDISTNAME}/src/${i}; make install ${MAKE_ENV}
