@@ -486,6 +486,7 @@
     SUBDIR += libhash
     SUBDIR += libhoard
     SUBDIR += libical
+    SUBDIR += libisc
     SUBDIR += libltdl15
     SUBDIR += libmatheval
     SUBDIR += libmba

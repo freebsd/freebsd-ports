@@ -1,0 +1,16 @@
+lib/libisc.a
+lib/libisc.so
+lib/libisc.so.1
+%%PROFLIB%%lib/libisc_p.a
+include/isc/assertions.h
+include/isc/ctl.h
+include/isc/dst.h
+include/isc/eventlib.h
+include/isc/heap.h
+include/isc/irpmarshall.h
+include/isc/list.h
+include/isc/logging.h
+include/isc/memcluster.h
+include/isc/misc.h
+include/isc/tree.h
+@dirrm include/isc
