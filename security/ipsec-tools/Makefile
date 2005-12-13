@@ -11,7 +11,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipsec-tools
@@ -29,11 +29,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--enable-debug --enable-dpd --enable-natt=kernel \
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-debug --enable-dpd --enable-natt=kernel \
 		--enable-frag --enable-ipv6 --enable-shared \
 		--sysconfdir=${PREFIX}/etc/racoon \
-		--with-pkgversion=freebsd-${PORTVERSION} \
+		--with-pkgversion=freebsd-${PORTVERSION}
 
 MAN3=		ipsec_set_policy.3 ipsec_strerror.3
 MAN5=		racoon.conf.5
