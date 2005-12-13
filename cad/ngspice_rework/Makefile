@@ -7,6 +7,7 @@
 
 PORTNAME=	ngspice_rework
 PORTVERSION=	17
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ngspice
@@ -19,11 +20,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
-.ifdef PACKAGE_BUILDING
-CONFIGURE_ARGS+=	--with-readline=yes
-.else
 CONFIGURE_ARGS+=	--disable-debug
-.endif
 
 INFO=		ngspice
 MAN1=		ngspice.1 ngnutmeg.1 ngsconvert.1
