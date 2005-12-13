@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DMitry
-PORTVERSION=	1.2a
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.mor-pah.net/code/ \
 		http://www.deepmagic.org.uk/
@@ -23,7 +23,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
