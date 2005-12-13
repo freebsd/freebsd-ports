@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI-Find
-PORTVERSION=	0.13
+PORTVERSION=	0.16
 CATEGORIES=	textproc net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
@@ -23,4 +23,8 @@ PERL_CONFIGURE=	yes
 MAN3=	URI::Find.3 \
 	URI::Find::Schemeless.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+IGNORE=	requires perl 5.6 or above due to dependencies
+
+.include <bsd.port.post.mk>
