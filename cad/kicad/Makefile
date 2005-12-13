@@ -27,6 +27,9 @@ LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}${EXTRACT_SUFX}:dat
 DOCVERSION=	2005-09-27
+. if defined(PACKAGE_BUILDING)	# unzip is used during post-install:
+RUN_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+. endif
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
@@ -52,6 +55,10 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
 .else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not compile on ${OSVERSION}"
 .endif
 
 post-extract:
