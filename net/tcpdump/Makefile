@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	3.8.3
-PORTREVISION=	2
+PORTVERSION=	3.9.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.tcpdump.org/release/
+MASTER_SITES=	http://www.tcpdump.org/release/ \
+		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
@@ -51,44 +51,21 @@ PLIST_SUB+=	NOTBASE=""
 # WITHOUT_CRYPTO	Build without IPSEC or TCPMD5 decryption.
 # WITHOUT_IPV6		Build without IPV6 support.
 # WITH_LIBPCAP_BASE	Use libpcap from the base system instead of ports.
-# WITH_RADIOTAP		Build with support for BSD 802.11 Radiotap headers.
-# WITH_TCPMD5		Build with support for TCP-MD5 digest verification.
 #
-# Defaults:	WITHOUT_LIBPCAP_PORT WITHOUT_RADIOTAP WITHOUT_TCPMD5
-#		WITH_CRYPTO WITH_IPV6
+# Defaults:	WITHOUT_LIBPCAP_BASE WITH_CRYPTO WITH_IPV6
 
 # The --without-crypto flag needs to be explicitly specified. The
 # configure script gets confused if you specify --with-crypto and
 # thinks this means you *don't* want crypto.
-# If crypto is requested, then apply a patch to fix the detection
-# of OpenSSL versions > 0.9.7d. We assume the installed version is
-# at least this recent; this may fail on older systems.
 #
 .if defined(WITHOUT_CRYPTO)
 CONFIGURE_ARGS+=	--without-crypto
 .else
 USE_OPENSSL=		defined
-USE_AUTOTOOLS=		autoconf:253
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-openssl-configure.in
 .endif
 
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.if defined(WITH_RADIOTAP)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-extract.h \
-		${PATCHDIR}/extra-patch-ieee802_11_radio.h \
-		${PATCHDIR}/extra-patch-print-802_11.c
-.endif
-
-.if defined(WITH_TCPMD5)
-.if defined(WITHOUT_CRYPTO)
-BROKEN=		"The use of WITH_TCPMD5 requires crypto support."
-.else
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tcpmd5-print-tcp.c \
-		${PATCHDIR}/extra-patch-tcpmd5-tcp.h
-.endif
 .endif
 
 # When compiling against the port, it's necessary to force the
@@ -104,13 +81,9 @@ LOCALPCAPBASE=	/usr
 
 LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
-WRKPCAPDIR=	${WRKDIR}/libpcap-0.8.3
+WRKPCAPDIR=	${WRKDIR}/libpcap-0.9.4
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000 && !defined(TCPDUMP_OVERWRITE_BASE)
-IGNORE=		Already in base system
-.endif
 
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
