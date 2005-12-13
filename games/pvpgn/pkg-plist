@@ -37,6 +37,7 @@ etc/pvpgn/command_groups.conf-sample
 etc/pvpgn/news.txt-sample
 etc/pvpgn/realm.conf-sample
 etc/pvpgn/sql_DB_layout.conf-sample
+etc/pvpgn/sql_DB_layout2.conf-sample
 etc/pvpgn/supportfile.conf-sample
 etc/pvpgn/topics.conf-sample
 etc/pvpgn/tournament.conf-sample
