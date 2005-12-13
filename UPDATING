@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051212:
+  AFFECTS: users of net/ntop
+  AUTHOR: wxs@csh.rit.edu
+
+  ntop now installs a rcNG script.  It also logs to syslog by default.
+  To enable ntop at boot time, set the following in rc.conf(5):
+
+  ntop_enable="YES"
+
 20051210:
   AFFECTS: users of net/mldonkey-devel
   AUTHOR: lioux@FreeBSD.org
