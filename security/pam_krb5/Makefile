@@ -9,19 +9,8 @@ PORTNAME=		pam_krb5
 PORTVERSION=		1.3.r7
 PORTREVISION=	2
 CATEGORIES=		security
-MASTER_SITE_SOURCEFORGE+=	http://unc.dl.sourceforge.net/%SUBDIR%/ \
-			http://umn.dl.sourceforge.net/%SUBDIR%/ \
-			http://twtelecom.dl.sourceforge.net/%SUBDIR%/ \
-			http://aleron.dl.sourceforge.net/%SUBDIR%/ \
-			http://easynews.dl.sourceforge.net/%SUBDIR%/ \
-			http://switch.dl.sourceforge.net/%SUBDIR%/ \
-			http://cesnet.dl.sourceforge.net/%SUBDIR%/ \
-			http://flow.dl.sourceforge.net/%SUBDIR%/ \
-			http://keihanna.dl.sourceforge.net/%SUBDIR%/ \
-			http://heanet.dl.sourceforge.net/%SUBDIR%/
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			http://www.komquats.com/distfiles/
-MASTER_SITE_SUBDIR=	sourceforge/${PORTNAME:S/_/-/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
