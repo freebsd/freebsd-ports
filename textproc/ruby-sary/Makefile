@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	sary
-PORTVERSION=	0.5
-PORTREVISION=	6
+PORTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
+MASTER_SITES=	http://sary.sourceforge.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby interface to the Sary library
 
 LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
@@ -35,8 +35,6 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 post-install: doc-install
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
 
-.include <bsd.port.mk>
-
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
@@ -47,3 +45,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>
