@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	IPC-Run3
-PORTVERSION=	0.033
+PORTVERSION=	0.034
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IPC
@@ -33,7 +33,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+post-patch:
+	@${FIND} ${WRKSRC}/lib -type f | ${XARGS} ${REINPLACE_CMD} -e '/warnings/d'
 .endif
 
 .include <bsd.port.post.mk>
