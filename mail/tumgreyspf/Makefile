@@ -7,6 +7,7 @@
 
 PORTNAME=	tumgreyspf
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/
 
@@ -28,14 +29,12 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 SUB_FILES=	pkg-message pkg-deinstall pkg-install
-SUB_LIST+=	TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
+SUB_LIST=	TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
 		TUMGREYSPF_USER=${TUMGREYSPF_USER} \
 		TUMGREYSPF_GROUP=${TUMGREYSPF_GROUP} \
 		PYTHON_CMD=${PYTHON_CMD}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -49,6 +48,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%TUMGREYSPF_DIR%%|${TUMGREYSPF_DIR}|g" \
 		${WRKSRC}/tumgreyspfsupp.py ${WRKSRC}/tumgreyspf.conf
+	@${GREP} -r "env python" ${WRKSRC} | ${CUT} -d: -f1 | \
+		${XARGS} ${REINPLACE_CMD} -e "s|env python|env ${PYTHON_CMD}|"
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspfsupp.py ${PYTHONPREFIX_SITELIBDIR}
@@ -57,17 +58,17 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-configtest ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gentest ${PREFIX}/bin/tumgreyspf-gentest
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf-stat ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
+	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc/tumgreyspf.conf.default
 .if !exists(${PREFIX}/etc/tumgreyspf.conf)
-	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${PREFIX}/etc
 .endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/__default__.dist ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/__default__.dist ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 .if !defined(PACKAGE_BUILDING)
