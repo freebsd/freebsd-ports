@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051213:
+  AFFECTS: users of pear ports
+  AUTHOR: ale@FreeBSD.org
+
+  A few old pear ports have been removed from the tree in favour of a
+  single devel/pear port.  If portupgrade complains about missing ports,
+  you may safely remove pear-XML_RPC, pear-Console_Getopt, pear-Archive_Tar
+  and php[45]-pear and then run:
+
+  portupgrade -o devel/pear -f pear-PEAR
+
 20051212:
   AFFECTS: users of net/ntop
   AUTHOR: wxs@csh.rit.edu
