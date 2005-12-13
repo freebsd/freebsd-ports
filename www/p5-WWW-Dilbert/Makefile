@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Dilbert
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -27,7 +27,8 @@ MAN3=		WWW::Dilbert.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601  # p5-WWW-Mechanize-1.10 requires perl 5.6.x or later.
+# p5-WWW-Mechanize-1.10 requires perl 5.6.x or later.
+.if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.x or later. Install lang/perl5 or lang/perl5.8 then try again
 .endif
 
