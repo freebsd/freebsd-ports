@@ -1,0 +1,10 @@
+libisc is C utility library which is used as part of part of ISC's bind.
+
+It includes functions for:
+- assertion handling.
+- balanced binary (AVL) trees.
+- bit masks comparison.
+- event based programs.
+- heap-based priority queues.
+- memory handling.
+- program logging.

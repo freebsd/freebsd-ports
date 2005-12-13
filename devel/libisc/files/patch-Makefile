@@ -1,0 +1,40 @@
+--- /dev/null	Fri Nov 25 23:55:00 2005
++++ lib/bind/freebsdportisc/Makefile	Fri Nov 25 23:57:32 2005
+@@ -0,0 +1,37 @@
++# $FreeBSD$
++.PATH: ${.CURDIR}/../isc ${.CURDIR}/../include/isc
++
++LIB=	isc
++
++SRCS=	assertions.c base64.c bitncmp.c ctl_clnt.c ctl_p.c \
++	ctl_srvr.c ev_connects.c ev_files.c ev_streams.c \
++	ev_timers.c ev_waits.c eventlib.c heap.c hex.c logging.c \
++	memcluster.c movefile.c tree.c
++
++INCS=	assertions.h ctl.h dst.h eventlib.h heap.h irpmarshall.h \
++	list.h logging.h memcluster.h misc.h tree.h
++
++SHLIB_MAJOR=1
++
++LIBDIR=	${PREFIX}/lib
++MANDIR=	${PREFIX}/man/man
++INCSDIR=	${PREFIX}/include/isc
++
++MAN=	assertions.3 eventlib.3 logging.3 tree.3 \
++	bitncmp.3 heap.3 memcluster.3
++
++# Not elegant, but it works
++.for mp in ${MAN}
++${mp}:
++	ln -s ${.CURDIR}/../isc/${mp:S/.3/.mdoc/} ${mp}
++.endfor
++
++top_builddir =	BSD/ports/libisc/work/bind-9.3.1/lib/bind
++
++CFLAGS+=	-I${.CURDIR}/../include -I${.CURDIR}/.. \
++		-I${.CURDIR}/../port/freebsd/include
++
++beforeinstall:
++	test -d ${INCSDIR} || mkdir ${INCSDIR}
++
++.include <bsd.lib.mk>
