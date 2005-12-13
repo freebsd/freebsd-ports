@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AI-Pathfinding-AStar
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	AI
@@ -25,7 +25,7 @@ MAN3=		AI::Pathfinding::AStar.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Uses devel/p5-Heap-Simple, which requires perl5.6, install lang/perl5 or lang/perl5.8
+IGNORE=		uses devel/p5-Heap-Simple, which requires perl5.6. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
