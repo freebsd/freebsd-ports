@@ -8,11 +8,12 @@ PORTNAME=	linux_base
 PORTVERSION=	3.0.23
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	dists/woody/main/disks-${ARCH}/base-images-${PORTVERSION}-${DISTDATE} \
-			pool/main/u/util-linux
+MASTER_SITES=	${MASTER_SITE_DEBIAN:S/$/:base/} \
+		${MASTER_SITE_DEBIAN:S/$/:util/}
+MASTER_SITE_SUBDIR=	dists/woody/main/disks-${ARCH}/base-images-${PORTVERSION}-${DISTDATE}/:base \
+			pool/main/u/util-linux/:util
 PKGNAMESUFFIX=	-debian
-DISTFILES=	basedebs.tar util-linux-locales_2.11n-7_all.deb
+DISTFILES=	basedebs.tar:base util-linux-locales_2.11n-7_all.deb:util
 EXTRACT_ONLY=	basedebs.tar
 
 MAINTAINER=	trevor@FreeBSD.org
