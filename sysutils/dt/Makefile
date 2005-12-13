@@ -4,27 +4,26 @@
 #
 # $FreeBSD$
 #
+# $Tecnik: ports/sysutils/dt/Makefile,v 1.3 2005/12/12 19:58:36 itetcu Exp $
+#
 
 PORTNAME=	dt
-PORTVERSION=	15.6
+PORTVERSION=	15.14
 CATEGORIES=	sysutils
-MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/
+MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/ \
+		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	dt-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
-
-BROKEN=		Size mismatch
 
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/dt.d
+MAKEFILE=	Makefile.freebsd
 ALL_TARGET=	dt
 
 PORTDOCS=	README.1st ToDoList WhatsNew-* dt-UsersGuide.txt dt-Overview.txt
-
-post-patch:
-	@${CP} ${WRKSRC}/Makefile.freebsd ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dt ${PREFIX}/sbin
