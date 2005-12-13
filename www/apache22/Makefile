@@ -12,10 +12,12 @@ PORTVERSION=	2.2.0
 PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo \
+		http://apache.webthing.com/database/:aprmysql
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		powerlogo.gif:powerlogo
+		powerlogo.gif:powerlogo \
+		apr_dbd_mysql.c:aprmysql
 DIST_SUBDIR=	apache22
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
@@ -189,7 +191,10 @@ pre-everything::
 	@${ECHO_MSG}	""
 
 post-extract:
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif \
+		${WRKSRC}/docs/icons/freebsd.gif
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.c \
+		${WRKSRC}/srclib/apr-util/dbd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif" ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' \
@@ -212,9 +217,11 @@ post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
 	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS," \
 			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
-	${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
-			s,%%WWWGRP%%,${WWWGRP}, " \
+	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
+			s,%%WWWGRP%%,${WWWGRP}," \
 			${WRKSRC}/docs/conf/httpd.conf
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
+			${WRKSRC}/support/envvars-std
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -231,9 +238,10 @@ install-startup-script:
 post-install: install-startup-script
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes
 .if !defined(NOPORTDOCS)
 	@[ -d ${DOCSDIR}/style/lang/ ] && ${TOUCH} ${DOCSDIR}/style/lang/.keepme
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
