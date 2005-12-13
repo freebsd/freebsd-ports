@@ -39,6 +39,10 @@ OPTIONS=	MAN "Enable man page support" off \
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
+.if ${OSVERSION} < 500000
+BROKEN="Does not build"
+.endif
+
 .if defined(WITH_MAN)
 CONFIGURE_ARGS+=--enable-man
 .endif
