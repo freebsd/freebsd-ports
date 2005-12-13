@@ -5473,6 +5473,7 @@ libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
+libisc		ports/devel/libisc
 libjit		ports/lang/libjit
 libkexif	ports/graphics/libkexif
 libkipi		ports/graphics/libkipi
