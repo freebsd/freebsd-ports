@@ -1,0 +1,15 @@
+Algorithm::Dependency is a framework for creating simple read-only 
+dependency heirachies, where you have a set of items that rely on other 
+items in the set, and require actions on them as well.
+
+Despite the most visible of these being software installation systems like 
+the CPAN installer, or debian apt-get, they are usefull in other 
+situations. This module intentionally uses implementation-neutral words, 
+to avoid confusion.
+
+WWW: http://search.cpan.org/dist/Algorithm-Dependency
+Author: Adam Kennedy <cpan@ali.as>
+
+-- 
+Aaron Dalton
+aaron@FreeBSD.org
