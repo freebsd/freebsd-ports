@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7.1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +22,8 @@ MAN1=		${PORTNAME}.1
 USE_PERL5=	yes
 
 do-install:
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
-.endfor # i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
+		${MANPREFIX}/man/man1/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
@@ -35,4 +34,10 @@ post-install:
 .endfor # i in ChangeLog README sample.gotmailrc
 .endif # !defined(NOPORTDOCS)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
