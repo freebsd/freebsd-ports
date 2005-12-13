@@ -94,6 +94,31 @@ IGNORE=		"Unknown DBM"
 CONFIGURE_ARGS+=	--with-dbm=sdbm
 .endif
 
+.if defined(WITH_MYSQL)
+USE_MYSQL=	YES
+CONFIGURE_ARGS+= --with-mysql=${LOCALBASE}
+CFLAGS+=	-I${LOCALBASE}/include/mysql ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LIBS="${LIBS}"
+WITH_THREADS=	YES
+AUTHN_MODULES=	authn_dbd
+MISC_MODULES=	dbd
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	YES
+CONFIGURE_ARGS+= --with-pgsql=${LOCALBASE}
+AUTHN_MODULES=	authn_dbd
+MISC_MODULES=	dbd
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=	YES
+CONFIGURE_ARGS+= --with-sqlite3=${LOCALBASE}
+AUTHN_MODULES=	authn_dbd
+MISC_MODULES=	dbd
+.endif
+
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
@@ -112,19 +137,19 @@ WITH_SSL_MODULES=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-AUTH_MODULES=		auth_basic auth_digest
-AUTHN_MODULES=		authn_file authn_dbm authn_anon authn_default
+AUTH_MODULES+=		auth_basic auth_digest
+AUTHN_MODULES+=		authn_file authn_dbm authn_anon authn_default
 AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
 			authz_owner authz_default
+CACHE_MODULES=		cache disk_cache file_cache mem_cache
 DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
 			log_forensic optional_hook_export optional_hook_import \
-			optional_fn_import optional_fn_export \
-			mem_cache
+			optional_fn_import optional_fn_export 
 LDAP_MODULES=		ldap authnz_ldap
-MISC_MODULES=		actions alias asis autoindex cache cern_meta \
-			cgi charset_lite deflate dir disk_cache env expires \
-			file_cache headers imagemap include info log_config logio mime \
+MISC_MODULES+=		actions alias asis autoindex cern_meta \
+			cgi charset_lite deflate dir env expires \
+			headers imagemap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
 			unique_id userdir usertrack vhost_alias filter
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer
@@ -133,7 +158,7 @@ SUEXEC_MODULES=		suexec
 THREADS_MODULES=	cgid
 
 DEFAULT_MODULES_CATEGORIES= \
-			AUTH AUTHN AUTHZ DAV MISC
+			AUTH AUTHN AUTHZ DAV CACHE MISC
 
-ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ DAV EXPERIMENTAL LDAP MISC \
-			PROXY SSL SUEXEC THREADS
+ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ CACHE DAV EXPERIMENTAL LDAP \
+			MISC PROXY SSL SUEXEC THREADS

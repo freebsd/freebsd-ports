@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 @exec mkdir -p %D/etc/apache22/extra 2> /dev/null
+@exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
+@exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
 @unexec if cmp -s %D/etc/apache22/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache22/httpd.conf; fi
 %%EXAMPLESDIR%%/httpd.conf
 @exec [ -f %D/etc/apache22/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/etc/apache22/httpd.conf
@@ -43,6 +45,7 @@
 %%EXAMPLESDIR%%/extra/httpd-vhosts.conf
 @exec [ -f %D/etc/apache22/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/etc/apache22/extra/httpd-vhosts.conf
 etc/rc.d/apache22.sh
+etc/apache22/Includes/no-accf.conf
 include/apache22/ap_compat.h
 include/apache22/ap_config.h
 include/apache22/ap_config_auto.h
@@ -174,6 +177,7 @@ libexec/apache22/httpd.exp
 %%MOD_AUTH_BASIC%%libexec/apache22/mod_auth_basic.so
 %%MOD_AUTH_DIGEST%%libexec/apache22/mod_auth_digest.so
 %%MOD_AUTHN_ANON%%libexec/apache22/mod_authn_anon.so
+%%MOD_AUTHN_DBD%%libexec/apache22/mod_authn_dbd.so
 %%MOD_AUTHN_DBM%%libexec/apache22/mod_authn_dbm.so
 %%MOD_AUTHN_DEFAULT%%libexec/apache22/mod_authn_default.so
 %%MOD_AUTHN_FILE%%libexec/apache22/mod_authn_file.so
@@ -195,6 +199,7 @@ libexec/apache22/httpd.exp
 %%MOD_CHARSET_LITE%%libexec/apache22/mod_charset_lite.so
 %%MOD_DAV%%libexec/apache22/mod_dav.so
 %%MOD_DAV_FS%%libexec/apache22/mod_dav_fs.so
+%%MOD_DBD%%libexec/apache22/mod_dbd.so
 %%MOD_DEFLATE%%libexec/apache22/mod_deflate.so
 %%MOD_DIR%%libexec/apache22/mod_dir.so
 %%MOD_DISK_CACHE%%libexec/apache22/mod_disk_cache.so
@@ -530,8 +535,6 @@ www/apache22/icons/world2.png
 %%APR_PORTS%%@dirrm build-1
 @unexec rmdir %D/libexec/apache22 2> /dev/null || true
 @dirrm include/apache22
-@exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
-@exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
 @unexec rmdir %D/www/apache22 2> /dev/null || true
 @unexec rmdir %D/etc/apache22/Includes 2> /dev/null || true
 @unexec rm -f %D/etc/apache22/httpd.conf.bak 2> /dev/null || true

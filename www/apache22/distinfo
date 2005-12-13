@@ -4,3 +4,6 @@ SIZE (apache22/httpd-2.2.0.tar.bz2) = 4839151
 MD5 (apache22/powerlogo.gif) = 0f106073b3c7844cf22d4df126b27c62
 SHA256 (apache22/powerlogo.gif) = 0144675a80761b9660bdb652d331d9ba3bebdff89c0fa35a56aa463662a53254
 SIZE (apache22/powerlogo.gif) = 5279
+MD5 (apache22/apr_dbd_mysql.c) = 59d26a91cb7f1492fea9ab3e6cd054fc
+SHA256 (apache22/apr_dbd_mysql.c) = db204a0e9a89620bf890985383b637d201b418002a0976a2476c0c58783cc3a3
+SIZE (apache22/apr_dbd_mysql.c) = 18999

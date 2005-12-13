@@ -5,7 +5,7 @@
  #
  @OS_SPECIFIC_VARS@
 +
-+ENVVARS_DIR=%%PREFIX%%/etc/apache21/envvars.d
++ENVVARS_DIR=%%PREFIX%%/etc/apache22/envvars.d
 +
 +for envvars_file in $(ls ${ENVVARS_DIR}/*.env 2>/dev/null)
 +do
