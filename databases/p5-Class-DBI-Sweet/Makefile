@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Class-DBI-Sweet
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSTROUT
+MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
 COMMENT=	Extra sweet features for Class::DBI
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
+BUILD_DEPENDS=	p5-Class-DBI>=3.0.12:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
