@@ -13304,6 +13304,7 @@ xlogout		ports/x11/xlogout
 xloops-ginac	ports/science/xloops-ginac
 xlreader	ports/textproc/xlreader
 xls2xml		ports/textproc/xls2xml
+xlslib		ports/devel/xlslib
 xlupe		ports/x11/xlupe
 xmaddressbook	ports/deskutils/xmaddressbook
 xmagv		ports/graphics/xmagv
