@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psiconv
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	converters devel
 MASTER_SITES=	http://software.frodo.looijaard.name/psiconv/files/
 
