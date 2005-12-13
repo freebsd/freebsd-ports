@@ -62,7 +62,7 @@ upgrades.
       - If you are using OpenSSL from security/openssl please use
         % c_rehash /home/user/.certs
 
-    * Use the following options to enable SSL encryption your .fetchmailrc
+    * Use the following options to enable SSL encryption in your .fetchmailrc
       configuration file:
 
       options ssl sslcertpath /home/user/.certs sslcertck
