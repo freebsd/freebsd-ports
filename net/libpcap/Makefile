@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.tcpdump.org/release/
+MASTER_SITES=	http://www.tcpdump.org/release/ \
+		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bms@FreeBSD.org
