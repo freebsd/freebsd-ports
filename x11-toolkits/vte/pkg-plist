@@ -59,6 +59,7 @@ share/locale/it/LC_MESSAGES/vte.mo
 share/locale/ja/LC_MESSAGES/vte.mo
 share/locale/ka/LC_MESSAGES/vte.mo
 share/locale/ko/LC_MESSAGES/vte.mo
+share/locale/ky/LC_MESSAGES/vte.mo
 share/locale/li/LC_MESSAGES/vte.mo
 share/locale/lt/LC_MESSAGES/vte.mo
 share/locale/lv/LC_MESSAGES/vte.mo
@@ -98,6 +99,8 @@ share/locale/zh_CN/LC_MESSAGES/vte.mo
 share/locale/zh_TW/LC_MESSAGES/vte.mo
 @unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ky 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang 2> /dev/null || true
 @dirrm share/gnome/vte/termcap
