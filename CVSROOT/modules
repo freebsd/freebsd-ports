@@ -5474,7 +5474,6 @@ libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
-libisc		ports/devel/libisc
 libjit		ports/lang/libjit
 libkexif	ports/graphics/libkexif
 libkipi		ports/graphics/libkipi
@@ -9897,6 +9896,7 @@ ports_lang	ports/lang
 ports_less	ports/sysutils/less
 ports_libarchive	ports/archivers/libarchive
 ports_libedit	ports/devel/libedit
+ports_libisc		ports/devel/libisc
 ports_libpcap	ports/net/libpcap
 ports_libusb	ports/devel/libusb
 ports_lukemftp	ports/ftp/lukemftp
