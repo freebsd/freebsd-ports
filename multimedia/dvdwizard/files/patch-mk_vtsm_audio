@@ -1,0 +1,10 @@
+--- mk_vtsm_audio.orig	Wed Dec 14 10:27:12 2005
++++ mk_vtsm_audio	Wed Dec 14 10:27:04 2005
+@@ -384,6 +384,7 @@
+ 	encNorm="p"
+ fi
+ ppmtoy4m -n 10 -F "$encFrameRate" -r "$vtsmBG" | \
++	y4mscaler -O chromass=420MPEG2 -O size=SRC -O sar=SRC | \
+ 	mpeg2enc -a 2 -n "$encNorm" -f 8 -o "$videotrack" || error_out
+ mplex -f 8 -o /dev/stdout "$videotrack" "$audiotrack" | \
+ 	spumux -v4 "$spuxml" > "$menumpeg" || error_out

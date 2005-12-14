@@ -1,0 +1,10 @@
+--- mk_vmgm.orig	Wed Dec 14 10:10:24 2005
++++ mk_vmgm	Wed Dec 14 10:09:27 2005
+@@ -655,6 +655,7 @@
+ 	encNorm="p"
+ fi
+ ppmtoy4m -n 10 -F "$encFrameRate" -r "$workbg" | \
++	y4mscaler -O chromass=420MPEG2 -O size=SRC -O sar=SRC | \
+ 	mpeg2enc -a 2 -n "$encNorm" -f 8 -o "$videotrack" || error_out
+ mplex -f 8 -o /dev/stdout "$videotrack" "$audiotrack" | \
+   	spumux -v4 "$spuxml" > "$menumpeg" || error_out

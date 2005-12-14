@@ -1,0 +1,22 @@
+--- mk_vtsm.orig	Wed Dec 14 11:16:44 2005
++++ mk_vtsm	Wed Dec 14 11:17:57 2005
+@@ -217,9 +217,9 @@
+ convert -size $patchsize xc:transparent -density "$normDensity" -units PixelsPerInch "$emptybutton" || error_out
+ for i in 0 1 2; do
+    bmask[i]="$workDir"/tmp_bmask_"${suffix[i]}".png
+-   convert -size $thumbsize xc:transparent -density "$normDensity" -units PixelsPerInch \
++   convert +antialias -size $thumbsize xc:green -density "$normDensity" -units PixelsPerInch \
+            -bordercolor "${color[i]}" -border $bordersize \
+-           -bordercolor transparent -border $borderspace "${bmask[i]}" || error_out
++           -bordercolor green -border $borderspace -transparent green "${bmask[i]}" || error_out
+ done
+ 
+ #
+@@ -528,6 +528,7 @@
+         encNorm="p"
+     fi
+  	ppmtoy4m -n 10 -F "$encFrameRate" -r "$vtsmBG" | \
++			y4mscaler -O chromass=420MPEG2 -O size=SRC -O sar=SRC | \
+  			mpeg2enc -a 2 -n "$encNorm" -f 8 -o "$videotrack" || error_out
+  	mplex -f 8 -o /dev/stdout "$videotrack" "$audiotrack" | \
+    			spumux -v4 "$spuxml" > "$menumpeg" || error_out
