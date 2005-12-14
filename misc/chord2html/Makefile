@@ -1,22 +1,19 @@
-# ex:ts=8
 # Ports collection makefile for:	chord2html
-# Date created:			Sep 11, 2002
-# Whom:				ijliao
+# Date created:				Sep 11, 2002
+# Whom:					ijliao
 #
 # $FreeBSD$
+#
+# $Tecnik: ports/misc/chord2html/Makefile,v 1.3 2005/12/14 11:41:25 itetcu Exp $
 #
 
 PORTNAME=	chord2html
 PORTVERSION=	1.3
 CATEGORIES=	misc
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Convert CHORD input files to HTML
-
-BROKEN=		"mastersite disappeared"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2005-12-11
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
@@ -30,7 +27,9 @@ PLIST_DIRS=	share/chord2html
 
 post-patch:
 	@${PERL} -pi -e "s,/usr/bin/perl,${PERL},g ; \
-		s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/chord2html
+			 s,%%PREFIX%%,${PREFIX},g ; \
+			 s,chord2html.css,${PREFIX}/share/chord2html/chord2html.css," \
+		${WRKSRC}/chord2html
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/chord2html ${PREFIX}/bin
