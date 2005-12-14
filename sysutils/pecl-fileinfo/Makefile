@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fileinfo
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -24,7 +23,7 @@ USE_PHPEXT=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502128
-LIB_DEPENDS=	magic.1:${PORTSDIR}/sysutils/file
+LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
 MAGICBASE=	${LOCALBASE}
 .else
 MAGICBASE=	/usr
