@@ -343,7 +343,7 @@ WITHOUT_IMLIB2=	yes
 . endif # imlib2
 
 .else
-CONFIGURE_ARGS+=	-disable-vhook
+CONFIGURE_ARGS+=	--disable-vhook
 .endif ## WITHOUT_VHOOK
 ## xvid
 .ifdef(WITH_XVID)
