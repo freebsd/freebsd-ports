@@ -21,6 +21,7 @@
     SUBDIR += dvdauthor
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
+    SUBDIR += dvdwizard
     SUBDIR += dvts
     SUBDIR += emovix
     SUBDIR += enjoympeg

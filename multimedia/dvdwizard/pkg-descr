@@ -1,0 +1,16 @@
+[ excerpt from distfile's README with modifications ]
+
+dvdwizard is a wrapper-script which incorporates a fully automated
+creation of a DVD-structure with Chapters and menus from one or
+more mpeg-streams. This is done by several "sub-scripts" and various
+freely available tools.
+
+A lot of things have changed since the initial version. It is now
+possible to author multiple titlesets at once, PAL or NTSC is
+supported. If the movie has more than one audio stream, an audio
+selection menu will be shown, languages of audio tracks are now
+freely customizable. Also, a configuration file has been introduced.
+
+WWW: http://udrecsuite.sourceforge.net/
+
+-- lioux@FreeBSD.org
