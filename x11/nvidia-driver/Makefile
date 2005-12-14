@@ -129,19 +129,19 @@ post-patch: .SILENT
 	${REINPLACE_CMD} '/bus_memio\.h/d' ${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)
-	${REINPLACE_CMD} 's/undef NV_SUPPORT_OS_AGP/define NV_SUPPORT_OS_AGP/' \
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_VM86_INT10CALL)
-	${REINPLACE_CMD} 's/undef NV_USE_OS_VM86_INT10CALL/define NV_USE_OS_VM86_INT10CALL/' \
+	${REINPLACE_CMD} -E 's/undef (NV_USE_OS_VM86_INT10CALL)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_ACPI)
-	${REINPLACE_CMD} 's/undef NV_SUPPORT_ACPI_PM/define NV_SUPPORT_ACPI_PM/' \
+	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_ACPI_PM)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITHOUT_LINUX)
-	${REINPLACE_CMD} 's/define NV_SUPPORT_LINUX_COMPAT/undef NV_SUPPORT_LINUX_COMPAT/' \
+	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 	${REINPLACE_CMD} -E 's/(extension).*/\1/ ; /bin/d' ${WRKSRC}/x11/Makefile
