@@ -18,6 +18,7 @@ COMMENT=	An opcode cache for PHP with encoder and loader
 USE_PHP=	session
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+BROKEN_WITH_PHP=	5
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared
 
@@ -25,9 +26,7 @@ USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g; s|0777|0755|g" \
