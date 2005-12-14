@@ -800,6 +800,7 @@
     SUBDIR += script4rss
     SUBDIR += seamonkey
     SUBDIR += selenium
+    SUBDIR += serendipity
     SUBDIR += servlet-api
     SUBDIR += session2
     SUBDIR += shttpd

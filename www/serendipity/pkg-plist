@@ -1,0 +1,1557 @@
+%%SERENDIPITY%%/bundled-libs/.current_version
+%%SERENDIPITY%%/bundled-libs/Cache/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/Cache/Lite.php
+%%SERENDIPITY%%/bundled-libs/Cache/Lite/Function.php
+%%SERENDIPITY%%/bundled-libs/Cache/Lite/Output.php
+%%SERENDIPITY%%/bundled-libs/HTTP/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/HTTP/Request.php
+%%SERENDIPITY%%/bundled-libs/HTTP/Request/Listener.php
+%%SERENDIPITY%%/bundled-libs/Net/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/Net/CheckIP.php
+%%SERENDIPITY%%/bundled-libs/Net/DNSBL.php
+%%SERENDIPITY%%/bundled-libs/Net/DNSBL/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/Net/DNSBL/SURBL.php
+%%SERENDIPITY%%/bundled-libs/Net/Socket.php
+%%SERENDIPITY%%/bundled-libs/Net/URL.php
+%%SERENDIPITY%%/bundled-libs/Onyx/RSS.php
+%%SERENDIPITY%%/bundled-libs/PEAR.php
+%%SERENDIPITY%%/bundled-libs/Smarty/BUGS
+%%SERENDIPITY%%/bundled-libs/Smarty/COPYING.lib
+%%SERENDIPITY%%/bundled-libs/Smarty/ChangeLog
+%%SERENDIPITY%%/bundled-libs/Smarty/FAQ
+%%SERENDIPITY%%/bundled-libs/Smarty/INSTALL
+%%SERENDIPITY%%/bundled-libs/Smarty/NEWS
+%%SERENDIPITY%%/bundled-libs/Smarty/README
+%%SERENDIPITY%%/bundled-libs/Smarty/RELEASE_NOTES
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/Config_File.class.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/Smarty.class.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/Smarty_Compiler.class.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/debug.tpl
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.assemble_plugin_filepath.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.assign_smarty_interface.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.create_dir_structure.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.display_debug_console.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.get_include_path.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.get_microtime.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.get_php_resource.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.is_secure.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.is_trusted.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.load_plugins.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.load_resource_plugin.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.process_cached_inserts.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.process_compiled_include.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.read_cache_file.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.rm_auto.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.rmdir.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.run_insert_handler.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.smarty_include_php.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.write_cache_file.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.write_compiled_include.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.write_compiled_resource.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/internals/core.write_file.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/block.textformat.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/compiler.assign.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.assign_debug_info.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.config_load.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.counter.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.cycle.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.debug.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.eval.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.fetch.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_checkboxes.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_image.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_options.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_radios.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_select_date.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_select_time.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.html_table.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.mailto.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.math.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.popup.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/function.popup_init.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.capitalize.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.cat.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.count_characters.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.count_paragraphs.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.count_sentences.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.count_words.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.date_format.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.debug_print_var.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.default.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.escape.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.indent.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.lower.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.nl2br.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.regex_replace.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.replace.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.spacify.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.string_format.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.strip.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.strip_tags.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.truncate.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.upper.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/modifier.wordwrap.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/outputfilter.trimwhitespace.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/shared.escape_special_chars.php
+%%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins/shared.make_timestamp.php
+%%SERENDIPITY%%/bundled-libs/Text/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/Text/Wiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Anchor.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Blockquote.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Bold.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Break.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Center.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Code.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Colortext.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Deflist.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Delimiter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Embed.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Emphasis.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Freelink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Function.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Heading.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Horiz.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Html.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Image.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Include.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Interwiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Italic.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/List.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Newline.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Paragraph.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Phplookup.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Prefilter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Raw.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Revise.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Strong.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Superscript.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Table.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Tighten.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Toc.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Tt.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Url.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default/Wikilink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Anchor.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Blockquote.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Bold.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Break.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Center.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Code.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Colortext.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Deflist.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Delimiter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Embed.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Emphasis.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Freelink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Function.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Heading.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Horiz.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Html.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Image.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Include.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Interwiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Italic.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/List.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Newline.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Paragraph.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Phplookup.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Prefilter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Raw.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Revise.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Strong.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Superscript.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Table.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Tighten.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Toc.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Tt.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Url.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex/Wikilink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Anchor.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Blockquote.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Bold.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Break.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Center.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Code.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Colortext.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Deflist.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Delimiter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Embed.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Emphasis.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Freelink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Function.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Heading.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Horiz.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Html.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Image.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Include.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Interwiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Italic.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/List.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Newline.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Paragraph.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Phplookup.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Prefilter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Raw.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Revise.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Strong.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Superscript.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Table.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Tighten.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Toc.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Tt.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Url.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain/Wikilink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Anchor.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Blockquote.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Bold.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Break.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Center.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Code.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Colortext.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Deflist.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Delimiter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Embed.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Emphasis.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Freelink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Function.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Heading.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Horiz.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Html.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Image.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Include.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Interwiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Italic.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/List.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Newline.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Paragraph.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Phplookup.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Prefilter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Raw.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Revise.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Strong.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Superscript.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Table.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Tighten.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Toc.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Tt.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Url.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml/Wikilink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/blockquote.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/bold.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/break.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/center.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/code.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/colortext.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/deflist.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/delimiter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/embed.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/emphasis.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/entities.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/freelink.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/heading.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/horiz.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/html.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/image.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/include.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/interwiki.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/italic.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/list.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/newline.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/paragraph.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/phpcode.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/phplookup.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/prefilter.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/raw.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/revise.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/strong.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/superscript.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/table.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/tighten.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/toc.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/tt.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/url.php
+%%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule/wikilink.php
+%%SERENDIPITY%%/bundled-libs/XML/BUNDLE_NOTICE
+%%SERENDIPITY%%/bundled-libs/XML/RPC.php
+%%SERENDIPITY%%/bundled-libs/XML/RPC/Dump.php
+%%SERENDIPITY%%/bundled-libs/XML/RPC/Server.php
+%%SERENDIPITY%%/bundled-libs/create_release.sh
+%%SERENDIPITY%%/bundled-libs/docs/HomePage.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/SamplePage.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/SmashWordsTogether.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/TextWikiProposal.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/TokenRuleKeys.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/WikiPage.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
+%%SERENDIPITY%%/bundled-libs/docs/index.php
+%%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
+%%SERENDIPITY%%/bundled-libs/tests/README
+%%SERENDIPITY%%/comment.php
+%%SERENDIPITY%%/deployment/archives/.ignore
+%%SERENDIPITY%%/deployment/comment.php
+%%SERENDIPITY%%/deployment/exit.php
+%%SERENDIPITY%%/deployment/index.php
+%%SERENDIPITY%%/deployment/rss.php
+%%SERENDIPITY%%/deployment/serendipity.css.php
+%%SERENDIPITY%%/deployment/serendipity_admin.php
+%%SERENDIPITY%%/deployment/serendipity_admin_image_selector.php
+%%SERENDIPITY%%/deployment/serendipity_config.inc.php
+%%SERENDIPITY%%/deployment/serendipity_define.js.php
+%%SERENDIPITY%%/deployment/serendipity_editor.js
+%%SERENDIPITY%%/deployment/serendipity_xmlrpc.php
+%%SERENDIPITY%%/deployment/templates_c/.ignore
+%%SERENDIPITY%%/deployment/uploads/.ignore
+%%SERENDIPITY%%/deployment/wfwcomment.php
+%%SERENDIPITY%%/docs/CHANGED_FILES
+%%SERENDIPITY%%/docs/INSTALL
+%%SERENDIPITY%%/docs/INSTALL_EMBEDED
+%%SERENDIPITY%%/docs/INSTALL_SHARED
+%%SERENDIPITY%%/docs/LICENSE
+%%SERENDIPITY%%/docs/NEWS
+%%SERENDIPITY%%/docs/NEWS_OLD
+%%SERENDIPITY%%/docs/README
+%%SERENDIPITY%%/docs/UPGRADE
+%%SERENDIPITY%%/docs/upgrade.sh
+%%SERENDIPITY%%/exit.php
+%%SERENDIPITY%%/htmlarea/ChangeLog
+%%SERENDIPITY%%/htmlarea/dialog.js
+%%SERENDIPITY%%/htmlarea/examples/2-areas.html
+%%SERENDIPITY%%/htmlarea/examples/context-menu.html
+%%SERENDIPITY%%/htmlarea/examples/core.html
+%%SERENDIPITY%%/htmlarea/examples/css.html
+%%SERENDIPITY%%/htmlarea/examples/custom.css
+%%SERENDIPITY%%/htmlarea/examples/full-page.html
+%%SERENDIPITY%%/htmlarea/examples/fully-loaded.html
+%%SERENDIPITY%%/htmlarea/examples/index.html
+%%SERENDIPITY%%/htmlarea/examples/spell-checker.html
+%%SERENDIPITY%%/htmlarea/examples/table-operations.html
+%%SERENDIPITY%%/htmlarea/htmlarea.css
+%%SERENDIPITY%%/htmlarea/htmlarea.js
+%%SERENDIPITY%%/htmlarea/images/ed_about.gif
+%%SERENDIPITY%%/htmlarea/images/ed_align_center.gif
+%%SERENDIPITY%%/htmlarea/images/ed_align_justify.gif
+%%SERENDIPITY%%/htmlarea/images/ed_align_left.gif
+%%SERENDIPITY%%/htmlarea/images/ed_align_right.gif
+%%SERENDIPITY%%/htmlarea/images/ed_blank.gif
+%%SERENDIPITY%%/htmlarea/images/ed_charmap.gif
+%%SERENDIPITY%%/htmlarea/images/ed_color_bg.gif
+%%SERENDIPITY%%/htmlarea/images/ed_color_fg.gif
+%%SERENDIPITY%%/htmlarea/images/ed_copy.gif
+%%SERENDIPITY%%/htmlarea/images/ed_custom.gif
+%%SERENDIPITY%%/htmlarea/images/ed_cut.gif
+%%SERENDIPITY%%/htmlarea/images/ed_delete.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_bold.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_italic.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_strike.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_sub.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_sup.gif
+%%SERENDIPITY%%/htmlarea/images/ed_format_underline.gif
+%%SERENDIPITY%%/htmlarea/images/ed_help.gif
+%%SERENDIPITY%%/htmlarea/images/ed_hr.gif
+%%SERENDIPITY%%/htmlarea/images/ed_html.gif
+%%SERENDIPITY%%/htmlarea/images/ed_image.gif
+%%SERENDIPITY%%/htmlarea/images/ed_indent_less.gif
+%%SERENDIPITY%%/htmlarea/images/ed_indent_more.gif
+%%SERENDIPITY%%/htmlarea/images/ed_killword.gif
+%%SERENDIPITY%%/htmlarea/images/ed_left_to_right.gif
+%%SERENDIPITY%%/htmlarea/images/ed_link.gif
+%%SERENDIPITY%%/htmlarea/images/ed_list_bullet.gif
+%%SERENDIPITY%%/htmlarea/images/ed_list_num.gif
+%%SERENDIPITY%%/htmlarea/images/ed_paste.gif
+%%SERENDIPITY%%/htmlarea/images/ed_print.gif
+%%SERENDIPITY%%/htmlarea/images/ed_redo.gif
+%%SERENDIPITY%%/htmlarea/images/ed_right_to_left.gif
+%%SERENDIPITY%%/htmlarea/images/ed_rmformat.gif
+%%SERENDIPITY%%/htmlarea/images/ed_s9yimage.gif
+%%SERENDIPITY%%/htmlarea/images/ed_save.gif
+%%SERENDIPITY%%/htmlarea/images/ed_save.png
+%%SERENDIPITY%%/htmlarea/images/ed_show_border.gif
+%%SERENDIPITY%%/htmlarea/images/ed_splitcel.gif
+%%SERENDIPITY%%/htmlarea/images/ed_undo.gif
+%%SERENDIPITY%%/htmlarea/images/fullscreen_maximize.gif
+%%SERENDIPITY%%/htmlarea/images/fullscreen_minimize.gif
+%%SERENDIPITY%%/htmlarea/images/insert_table.gif
+%%SERENDIPITY%%/htmlarea/index.html
+%%SERENDIPITY%%/htmlarea/lang/b5.js
+%%SERENDIPITY%%/htmlarea/lang/ch.js
+%%SERENDIPITY%%/htmlarea/lang/cs-iso.js
+%%SERENDIPITY%%/htmlarea/lang/cs-utf.js
+%%SERENDIPITY%%/htmlarea/lang/cs-win.js
+%%SERENDIPITY%%/htmlarea/lang/cz.js
+%%SERENDIPITY%%/htmlarea/lang/da-utf.js
+%%SERENDIPITY%%/htmlarea/lang/da.js
+%%SERENDIPITY%%/htmlarea/lang/de-utf.js
+%%SERENDIPITY%%/htmlarea/lang/de.js
+%%SERENDIPITY%%/htmlarea/lang/ee.js
+%%SERENDIPITY%%/htmlarea/lang/el.js
+%%SERENDIPITY%%/htmlarea/lang/en.js
+%%SERENDIPITY%%/htmlarea/lang/es-utf.js
+%%SERENDIPITY%%/htmlarea/lang/es.js
+%%SERENDIPITY%%/htmlarea/lang/fi.js
+%%SERENDIPITY%%/htmlarea/lang/fr-utf.js
+%%SERENDIPITY%%/htmlarea/lang/fr.js
+%%SERENDIPITY%%/htmlarea/lang/gb.js
+%%SERENDIPITY%%/htmlarea/lang/he.js
+%%SERENDIPITY%%/htmlarea/lang/hu.js
+%%SERENDIPITY%%/htmlarea/lang/it-utf.js
+%%SERENDIPITY%%/htmlarea/lang/it.js
+%%SERENDIPITY%%/htmlarea/lang/ja-euc.js
+%%SERENDIPITY%%/htmlarea/lang/ja-jis.js
+%%SERENDIPITY%%/htmlarea/lang/ja-sjis.js
+%%SERENDIPITY%%/htmlarea/lang/ja-utf8.js
+%%SERENDIPITY%%/htmlarea/lang/lt.js
+%%SERENDIPITY%%/htmlarea/lang/lv.js
+%%SERENDIPITY%%/htmlarea/lang/nb.js
+%%SERENDIPITY%%/htmlarea/lang/nl-utf.js
+%%SERENDIPITY%%/htmlarea/lang/nl.js
+%%SERENDIPITY%%/htmlarea/lang/no-utf.js
+%%SERENDIPITY%%/htmlarea/lang/no.js
+%%SERENDIPITY%%/htmlarea/lang/pl.js
+%%SERENDIPITY%%/htmlarea/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/lang/pt_pt-utf.js
+%%SERENDIPITY%%/htmlarea/lang/pt_pt.js
+%%SERENDIPITY%%/htmlarea/lang/ro.js
+%%SERENDIPITY%%/htmlarea/lang/ru.js
+%%SERENDIPITY%%/htmlarea/lang/se-utf.js
+%%SERENDIPITY%%/htmlarea/lang/se.js
+%%SERENDIPITY%%/htmlarea/lang/si.js
+%%SERENDIPITY%%/htmlarea/lang/vn.js
+%%SERENDIPITY%%/htmlarea/license.txt
+%%SERENDIPITY%%/htmlarea/plugins/CSS/css.js
+%%SERENDIPITY%%/htmlarea/plugins/CSS/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/context-menu.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/el.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/ContextMenu/menu.css
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/full-page.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/img/docprop.gif
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/pt_pt.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/lang/ro.js
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/popups/docprop.html
+%%SERENDIPITY%%/htmlarea/plugins/FullPage/test.html
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-delete.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-insert-after.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-insert-before.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-merge.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-prop.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/cell-split.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/col-delete.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/col-insert-after.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/col-insert-before.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/col-split.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/row-delete.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/row-insert-above.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/row-insert-under.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/row-prop.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/row-split.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/img/table-prop.gif
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/cz.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/da.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/de.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/el.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/en.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/fi.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/hu.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/it.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/nl.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/no.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/pt_br.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/pt_pt.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang/ro.js
+%%SERENDIPITY%%/htmlarea/plugins/TableOperations/table-operations.js
+%%SERENDIPITY%%/htmlarea/popupdiv.js
+%%SERENDIPITY%%/htmlarea/popups/about.html
+%%SERENDIPITY%%/htmlarea/popups/blank.html
+%%SERENDIPITY%%/htmlarea/popups/custom2.html
+%%SERENDIPITY%%/htmlarea/popups/editor_help.html
+%%SERENDIPITY%%/htmlarea/popups/fullscreen.html
+%%SERENDIPITY%%/htmlarea/popups/insert_image.html
+%%SERENDIPITY%%/htmlarea/popups/insert_table.html
+%%SERENDIPITY%%/htmlarea/popups/link.html
+%%SERENDIPITY%%/htmlarea/popups/old-fullscreen.html
+%%SERENDIPITY%%/htmlarea/popups/old_insert_image.html
+%%SERENDIPITY%%/htmlarea/popups/popup.js
+%%SERENDIPITY%%/htmlarea/popups/select_color.html
+%%SERENDIPITY%%/htmlarea/popupwin.js
+%%SERENDIPITY%%/htmlarea/reference.html
+%%SERENDIPITY%%/htmlarea/release-notes.html
+%%SERENDIPITY%%/include/admin/category.inc.php
+%%SERENDIPITY%%/include/admin/comments.inc.php
+%%SERENDIPITY%%/include/admin/configuration.inc.php
+%%SERENDIPITY%%/include/admin/entries.inc.php
+%%SERENDIPITY%%/include/admin/entries_overview.inc.php
+%%SERENDIPITY%%/include/admin/export.inc.php
+%%SERENDIPITY%%/include/admin/groups.inc.php
+%%SERENDIPITY%%/include/admin/images.inc.php
+%%SERENDIPITY%%/include/admin/import.inc.php
+%%SERENDIPITY%%/include/admin/importers/b2evolution.inc.php
+%%SERENDIPITY%%/include/admin/importers/bblog.inc.php
+%%SERENDIPITY%%/include/admin/importers/blogger.inc.php
+%%SERENDIPITY%%/include/admin/importers/bmachine.inc.php
+%%SERENDIPITY%%/include/admin/importers/geeklog.inc.php
+%%SERENDIPITY%%/include/admin/importers/generic.inc.php
+%%SERENDIPITY%%/include/admin/importers/movabletype.inc.php
+%%SERENDIPITY%%/include/admin/importers/nucleus.inc.php
+%%SERENDIPITY%%/include/admin/importers/phpbb.inc.php
+%%SERENDIPITY%%/include/admin/importers/pmachine.inc.php
+%%SERENDIPITY%%/include/admin/importers/sunlog.inc.php
+%%SERENDIPITY%%/include/admin/importers/textpattern.inc.php
+%%SERENDIPITY%%/include/admin/importers/voodoopad.inc.php
+%%SERENDIPITY%%/include/admin/importers/wordpress-pg.inc.php
+%%SERENDIPITY%%/include/admin/importers/wordpress.inc.php
+%%SERENDIPITY%%/include/admin/installer.inc.php
+%%SERENDIPITY%%/include/admin/overview.inc.php
+%%SERENDIPITY%%/include/admin/personal.inc.php
+%%SERENDIPITY%%/include/admin/plugins.inc.php
+%%SERENDIPITY%%/include/admin/templates.inc.php
+%%SERENDIPITY%%/include/admin/upgrader.inc.php
+%%SERENDIPITY%%/include/admin/users.inc.php
+%%SERENDIPITY%%/include/compat.inc.php
+%%SERENDIPITY%%/include/db/db.inc.php
+%%SERENDIPITY%%/include/db/mysql.inc.php
+%%SERENDIPITY%%/include/db/mysqli.inc.php
+%%SERENDIPITY%%/include/db/postgres.inc.php
+%%SERENDIPITY%%/include/db/sqlite.inc.php
+%%SERENDIPITY%%/include/functions.inc.php
+%%SERENDIPITY%%/include/functions_calendars.inc.php
+%%SERENDIPITY%%/include/functions_comments.inc.php
+%%SERENDIPITY%%/include/functions_config.inc.php
+%%SERENDIPITY%%/include/functions_entries.inc.php
+%%SERENDIPITY%%/include/functions_entries_admin.inc.php
+%%SERENDIPITY%%/include/functions_images.inc.php
+%%SERENDIPITY%%/include/functions_installer.inc.php
+%%SERENDIPITY%%/include/functions_permalinks.inc.php
+%%SERENDIPITY%%/include/functions_rss.inc.php
+%%SERENDIPITY%%/include/functions_smarty.inc.php
+%%SERENDIPITY%%/include/functions_trackbacks.inc.php
+%%SERENDIPITY%%/include/functions_upgrader.inc.php
+%%SERENDIPITY%%/include/genpage.inc.php
+%%SERENDIPITY%%/include/lang.inc.php
+%%SERENDIPITY%%/include/plugin_api.inc.php
+%%SERENDIPITY%%/include/plugin_internal.inc.php
+%%SERENDIPITY%%/include/tpl/config_local.inc.php
+%%SERENDIPITY%%/include/tpl/config_personal.inc.php
+%%SERENDIPITY%%/include/tpl/htaccess_cgi_errordocs.tpl
+%%SERENDIPITY%%/include/tpl/htaccess_cgi_normal.tpl
+%%SERENDIPITY%%/include/tpl/htaccess_cgi_rewrite.tpl
+%%SERENDIPITY%%/include/tpl/htaccess_errordocs.tpl
+%%SERENDIPITY%%/include/tpl/htaccess_normal.tpl
+%%SERENDIPITY%%/include/tpl/htaccess_rewrite.tpl
+%%SERENDIPITY%%/index.php
+%%SERENDIPITY%%/lang/UTF-8/recode.php
+%%SERENDIPITY%%/lang/UTF-8/recode.sh
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_bg.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_cn.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_cs.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_cz.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_da.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_de.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_en.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_es.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_fa.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_fi.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_fr.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_hu.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_is.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_it.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_ja.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_ko.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_nl.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_no.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_pt.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_pt_PT.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_ro.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_ru.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_se.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_tn.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_tw.inc.php
+%%SERENDIPITY%%/lang/UTF-8/serendipity_lang_zh.inc.php
+%%SERENDIPITY%%/lang/addlang.sh
+%%SERENDIPITY%%/lang/addlang.txt
+%%SERENDIPITY%%/lang/append.sh
+%%SERENDIPITY%%/lang/serendipity_lang_bg.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_cn.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_cs.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_cz.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_da.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_de.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_en.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_es.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_fa.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_fi.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_fr.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_hu.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_is.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_it.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_ja.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_ko.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_nl.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_no.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_pt.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_pt_PT.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_ro.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_ru.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_se.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_tn.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_tw.inc.php
+%%SERENDIPITY%%/lang/serendipity_lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/serendipity_event_bbcode.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/pngbehavior.htc
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/serendipity_event_browsercompatibility.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/serendipity_event_contentrewrite.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/serendipity_event_creativecommons.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/serendipity_event_emoticate.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/serendipity_event_entryproperties.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/serendipity_event_htmlvalidator.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/serendipity_event_karma.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.js
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/serendipity_event_mailer.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/serendipity_event_nl2br.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/serendipity_event_s9ymarkup.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/serendipity_event_searchhighlight.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.ttf
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.txt
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/Vera.ttf
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/VeraSe.ttf
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_2.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_3.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_4.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_7.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_9.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_a.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_b.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_c.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_d.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_e.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_f.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_h.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_j.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_k.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_l.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_m.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_n.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_p.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_q.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_r.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_t.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_u.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_v.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_w.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_x.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_y.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/captcha_z.png
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.ttf
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.txt
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/serendipity_event_spamblock.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/serendipity_event_spartacus.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_cz.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_cz.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/serendipity_event_statistics.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/serendipity_event_templatechooser.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/serendipity_event_textile.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/textile.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/serendipity_event_textwiki.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/serendipity_event_trackexits.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_es.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/serendipity_event_weblogping.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/servicesdb_en.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/servicesdb_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/servicesdb_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/serendipity_event_xhtmlcleanup.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/serendipity_plugin_comments.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/serendipity_plugin_creativecommons.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/serendipity_plugin_entrylinks.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/serendipity_plugin_eventwrapper.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/serendipity_plugin_history.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_is.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/serendipity_plugin_recententries.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/serendipity_plugin_shoutbox.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_de.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_ja.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/serendipity_plugin_templatedropdown.php
+%%SERENDIPITY%%/rss.php
+%%SERENDIPITY%%/serendipity.css.php
+%%SERENDIPITY%%/serendipity_admin.php
+%%SERENDIPITY%%/serendipity_admin_image_selector.php
+%%SERENDIPITY%%/serendipity_config.inc.php
+%%SERENDIPITY%%/serendipity_define.js.php
+%%SERENDIPITY%%/serendipity_editor.js
+%%SERENDIPITY%%/serendipity_xmlrpc.php
+%%SERENDIPITY%%/sql/db.sql
+%%SERENDIPITY%%/sql/db_update_0.2_0.3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.2_0.3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.3_0.4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.3_0.4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.5.1_0.6_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.5.1_0.6_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.5_0.5.1_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.5_0.5.1_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.10_0.6.11_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.10_0.6.11_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.1_0.6.2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.1_0.6.2_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.2_0.6.3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.2_0.6.3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.3_0.6.4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.3_0.6.4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.4_0.6.5_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.4_0.6.5_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.5_0.6.6_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.5_0.6.6_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.6_0.6.7_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.6_0.6.7_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.8_0.6.9_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.8_0.6.9_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.6.9_0.7.0_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6.9_0.7.0_postgresql.sql
+%%SERENDIPITY%%/sql/db_update_0.6_0.6.1_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.6_0.6.1_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha10_0.8-alpha11_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha11_0.8-alpha12_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha11_0.8-alpha12_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha11_0.8-alpha12_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha12_0.8-alpha13_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha12_0.8-alpha13_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha12_0.8-alpha13_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha1_0.8-alpha2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha4_0.8-alpha5_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha4_0.8-alpha5_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha4_0.8-alpha5_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha5_0.8-alpha6_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha5_0.8-alpha6_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-alpha5_0.8-alpha6_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta3_0.8-beta4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta3_0.8-beta4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta3_0.8-beta4_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta5_0.8-beta6_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta5_0.8-beta6_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.8-beta5_0.8-beta6_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha1_0.9-alpha2_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha1_0.9-alpha2_postgres.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha1_0.9-alpha2_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha2_0.9-alpha3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha3_0.9-alpha4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_0.9-alpha4_0.9-alpha5_mysql.sql
+%%SERENDIPITY%%/templates/HOWTO
+%%SERENDIPITY%%/templates/blue/htmlarea.css
+%%SERENDIPITY%%/templates/blue/img/back.png
+%%SERENDIPITY%%/templates/blue/img/down.png
+%%SERENDIPITY%%/templates/blue/img/forward.png
+%%SERENDIPITY%%/templates/blue/img/up.png
+%%SERENDIPITY%%/templates/blue/info.txt
+%%SERENDIPITY%%/templates/blue/preview.png
+%%SERENDIPITY%%/templates/blue/style.css
+%%SERENDIPITY%%/templates/default-rtl/admin/img/background.jpg
+%%SERENDIPITY%%/templates/default-rtl/admin/img/banner_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/button_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/infobar_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/menu_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/img/menuheader_background.png
+%%SERENDIPITY%%/templates/default-rtl/admin/style.css
+%%SERENDIPITY%%/templates/default-rtl/htmlarea.css
+%%SERENDIPITY%%/templates/default-rtl/img/background.png
+%%SERENDIPITY%%/templates/default-rtl/info.txt
+%%SERENDIPITY%%/templates/default-rtl/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/default-rtl/preview.png
+%%SERENDIPITY%%/templates/default-rtl/style.css
+%%SERENDIPITY%%/templates/default/admin/img/accept.png
+%%SERENDIPITY%%/templates/default/admin/img/background.jpg
+%%SERENDIPITY%%/templates/default/admin/img/banner_background.png
+%%SERENDIPITY%%/templates/default/admin/img/big_delete.png
+%%SERENDIPITY%%/templates/default/admin/img/big_rename.png
+%%SERENDIPITY%%/templates/default/admin/img/big_resize.png
+%%SERENDIPITY%%/templates/default/admin/img/big_rotate_ccw.png
+%%SERENDIPITY%%/templates/default/admin/img/big_rotate_cw.png
+%%SERENDIPITY%%/templates/default/admin/img/big_zoom.png
+%%SERENDIPITY%%/templates/default/admin/img/button_background.png
+%%SERENDIPITY%%/templates/default/admin/img/clock.png
+%%SERENDIPITY%%/templates/default/admin/img/clock_future.png
+%%SERENDIPITY%%/templates/default/admin/img/configure.png
+%%SERENDIPITY%%/templates/default/admin/img/delete.png
+%%SERENDIPITY%%/templates/default/admin/img/downarrow.png
+%%SERENDIPITY%%/templates/default/admin/img/edit.png
+%%SERENDIPITY%%/templates/default/admin/img/folder.png
+%%SERENDIPITY%%/templates/default/admin/img/infobar_background.png
+%%SERENDIPITY%%/templates/default/admin/img/install.png
+%%SERENDIPITY%%/templates/default/admin/img/install_now.png
+%%SERENDIPITY%%/templates/default/admin/img/install_now_spartacus.png
+%%SERENDIPITY%%/templates/default/admin/img/install_template.png
+%%SERENDIPITY%%/templates/default/admin/img/menu_background.png
+%%SERENDIPITY%%/templates/default/admin/img/menuheader_background.png
+%%SERENDIPITY%%/templates/default/admin/img/menuitem.png
+%%SERENDIPITY%%/templates/default/admin/img/mime_unknown.png
+%%SERENDIPITY%%/templates/default/admin/img/next.png
+%%SERENDIPITY%%/templates/default/admin/img/previous.png
+%%SERENDIPITY%%/templates/default/admin/img/rotate.png
+%%SERENDIPITY%%/templates/default/admin/img/thumbnail.png
+%%SERENDIPITY%%/templates/default/admin/img/unconfigure.png
+%%SERENDIPITY%%/templates/default/admin/img/uparrow.png
+%%SERENDIPITY%%/templates/default/admin/img/upgrade_now.png
+%%SERENDIPITY%%/templates/default/admin/img/user_admin.png
+%%SERENDIPITY%%/templates/default/admin/img/user_chief.png
+%%SERENDIPITY%%/templates/default/admin/img/user_editor.png
+%%SERENDIPITY%%/templates/default/admin/img/zoom.png
+%%SERENDIPITY%%/templates/default/admin/style.css
+%%SERENDIPITY%%/templates/default/atom.css
+%%SERENDIPITY%%/templates/default/commentform.tpl
+%%SERENDIPITY%%/templates/default/commentpopup.tpl
+%%SERENDIPITY%%/templates/default/comments.tpl
+%%SERENDIPITY%%/templates/default/content.tpl
+%%SERENDIPITY%%/templates/default/entries.tpl
+%%SERENDIPITY%%/templates/default/entries_archives.tpl
+%%SERENDIPITY%%/templates/default/entries_summary.tpl
+%%SERENDIPITY%%/templates/default/htmlarea.css
+%%SERENDIPITY%%/templates/default/img/back.png
+%%SERENDIPITY%%/templates/default/img/background.png
+%%SERENDIPITY%%/templates/default/img/blank.gif
+%%SERENDIPITY%%/templates/default/img/blank.png
+%%SERENDIPITY%%/templates/default/img/delete.png
+%%SERENDIPITY%%/templates/default/img/down.png
+%%SERENDIPITY%%/templates/default/img/emoticons/cool.png
+%%SERENDIPITY%%/templates/default/img/emoticons/cry.png
+%%SERENDIPITY%%/templates/default/img/emoticons/eek.png
+%%SERENDIPITY%%/templates/default/img/emoticons/laugh.png
+%%SERENDIPITY%%/templates/default/img/emoticons/normal.png
+%%SERENDIPITY%%/templates/default/img/emoticons/sad.png
+%%SERENDIPITY%%/templates/default/img/emoticons/smile.png
+%%SERENDIPITY%%/templates/default/img/emoticons/tongue.png
+%%SERENDIPITY%%/templates/default/img/emoticons/wink.png
+%%SERENDIPITY%%/templates/default/img/forward.png
+%%SERENDIPITY%%/templates/default/img/graph_bar_horisontal.png
+%%SERENDIPITY%%/templates/default/img/img_align_left.png
+%%SERENDIPITY%%/templates/default/img/img_align_right.png
+%%SERENDIPITY%%/templates/default/img/img_align_top.png
+%%SERENDIPITY%%/templates/default/img/minus.png
+%%SERENDIPITY%%/templates/default/img/norights.png
+%%SERENDIPITY%%/templates/default/img/plus.png
+%%SERENDIPITY%%/templates/default/img/rename.png
+%%SERENDIPITY%%/templates/default/img/s9y_banner_small.png
+%%SERENDIPITY%%/templates/default/img/scale.png
+%%SERENDIPITY%%/templates/default/img/somerights20.gif
+%%SERENDIPITY%%/templates/default/img/up.png
+%%SERENDIPITY%%/templates/default/img/xml.gif
+%%SERENDIPITY%%/templates/default/img/zoom.png
+%%SERENDIPITY%%/templates/default/index.tpl
+%%SERENDIPITY%%/templates/default/info.txt
+%%SERENDIPITY%%/templates/default/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/default/plugin_categories.tpl
+%%SERENDIPITY%%/templates/default/preview.png
+%%SERENDIPITY%%/templates/default/sidebar.tpl
+%%SERENDIPITY%%/templates/default/style.css
+%%SERENDIPITY%%/templates/default/trackbacks.tpl
+%%SERENDIPITY%%/templates/idea/img/I_had_an_idea.jpg
+%%SERENDIPITY%%/templates/idea/img/bullet.gif
+%%SERENDIPITY%%/templates/idea/img/clock_face_messy_paint_runs.jpg
+%%SERENDIPITY%%/templates/idea/img/quote.gif
+%%SERENDIPITY%%/templates/idea/info.txt
+%%SERENDIPITY%%/templates/idea/preview.png
+%%SERENDIPITY%%/templates/idea/style.css
+%%SERENDIPITY%%/templates/kubrick/comments.tpl
+%%SERENDIPITY%%/templates/kubrick/config.inc.php
+%%SERENDIPITY%%/templates/kubrick/entries.tpl
+%%SERENDIPITY%%/templates/kubrick/images/kubrickbg.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubrickbgcolor.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubrickbgwide.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubrickfooter.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubrickheader.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubricklogo.jpg
+%%SERENDIPITY%%/templates/kubrick/images/kubrickportrait.png
+%%SERENDIPITY%%/templates/kubrick/img/back.png
+%%SERENDIPITY%%/templates/kubrick/img/down.png
+%%SERENDIPITY%%/templates/kubrick/img/forward.png
+%%SERENDIPITY%%/templates/kubrick/img/up.png
+%%SERENDIPITY%%/templates/kubrick/index.tpl
+%%SERENDIPITY%%/templates/kubrick/info.txt
+%%SERENDIPITY%%/templates/kubrick/lang_de.inc.php
+%%SERENDIPITY%%/templates/kubrick/lang_en.inc.php
+%%SERENDIPITY%%/templates/kubrick/lang_ko.inc.php
+%%SERENDIPITY%%/templates/kubrick/preview.png
+%%SERENDIPITY%%/templates/kubrick/sidebar.tpl
+%%SERENDIPITY%%/templates/kubrick/style.css
+%%SERENDIPITY%%/templates/kubrick/trackbacks.tpl
+%%SERENDIPITY%%/templates/moz-modern/htmlarea.css
+%%SERENDIPITY%%/templates/moz-modern/img/back.png
+%%SERENDIPITY%%/templates/moz-modern/img/background.png
+%%SERENDIPITY%%/templates/moz-modern/img/background2.png
+%%SERENDIPITY%%/templates/moz-modern/img/forward.png
+%%SERENDIPITY%%/templates/moz-modern/index.tpl
+%%SERENDIPITY%%/templates/moz-modern/info.txt
+%%SERENDIPITY%%/templates/moz-modern/preview.png
+%%SERENDIPITY%%/templates/moz-modern/style.css
+%%SERENDIPITY%%/templates/mt-clean/info.txt
+%%SERENDIPITY%%/templates/mt-clean/preview.png
+%%SERENDIPITY%%/templates/mt-clean/style.css
+%%SERENDIPITY%%/templates/mt-georgiablue/info.txt
+%%SERENDIPITY%%/templates/mt-georgiablue/preview.png
+%%SERENDIPITY%%/templates/mt-georgiablue/style.css
+%%SERENDIPITY%%/templates/mt-gettysburg/img/back.png
+%%SERENDIPITY%%/templates/mt-gettysburg/img/down.png
+%%SERENDIPITY%%/templates/mt-gettysburg/img/forward.png
+%%SERENDIPITY%%/templates/mt-gettysburg/img/up.png
+%%SERENDIPITY%%/templates/mt-gettysburg/info.txt
+%%SERENDIPITY%%/templates/mt-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt-gettysburg/style.css
+%%SERENDIPITY%%/templates/mt-plainjane/info.txt
+%%SERENDIPITY%%/templates/mt-plainjane/preview.png
+%%SERENDIPITY%%/templates/mt-plainjane/style.css
+%%SERENDIPITY%%/templates/mt-rusty/img/back.png
+%%SERENDIPITY%%/templates/mt-rusty/img/down.png
+%%SERENDIPITY%%/templates/mt-rusty/img/forward.png
+%%SERENDIPITY%%/templates/mt-rusty/img/up.png
+%%SERENDIPITY%%/templates/mt-rusty/info.txt
+%%SERENDIPITY%%/templates/mt-rusty/preview.png
+%%SERENDIPITY%%/templates/mt-rusty/style.css
+%%SERENDIPITY%%/templates/mt-stormy/inactive.txt
+%%SERENDIPITY%%/templates/mt-stormy/info.txt
+%%SERENDIPITY%%/templates/mt-stormy/style.css
+%%SERENDIPITY%%/templates/mt-trendy/htmlarea.css
+%%SERENDIPITY%%/templates/mt-trendy/img/back.png
+%%SERENDIPITY%%/templates/mt-trendy/img/forward.png
+%%SERENDIPITY%%/templates/mt-trendy/info.txt
+%%SERENDIPITY%%/templates/mt-trendy/preview.png
+%%SERENDIPITY%%/templates/mt-trendy/style.css
+%%SERENDIPITY%%/templates/mt3-chalkboard/img/back.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/img/down.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/img/forward.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/img/up.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/info.txt
+%%SERENDIPITY%%/templates/mt3-chalkboard/preview.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/style.css
+%%SERENDIPITY%%/templates/mt3-gettysburg/info.txt
+%%SERENDIPITY%%/templates/mt3-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt3-gettysburg/style.css
+%%SERENDIPITY%%/templates/mt3-independence/info.txt
+%%SERENDIPITY%%/templates/mt3-independence/preview.png
+%%SERENDIPITY%%/templates/mt3-independence/style.css
+%%SERENDIPITY%%/templates/mt3-squash/info.txt
+%%SERENDIPITY%%/templates/mt3-squash/preview.png
+%%SERENDIPITY%%/templates/mt3-squash/style.css
+%%SERENDIPITY%%/templates/newspaper/htmlarea.css
+%%SERENDIPITY%%/templates/newspaper/img/shadowb.png
+%%SERENDIPITY%%/templates/newspaper/img/shadowbl.png
+%%SERENDIPITY%%/templates/newspaper/img/shadowbr.png
+%%SERENDIPITY%%/templates/newspaper/img/shadowr.png
+%%SERENDIPITY%%/templates/newspaper/img/shadowt.png
+%%SERENDIPITY%%/templates/newspaper/info.txt
+%%SERENDIPITY%%/templates/newspaper/layout.php
+%%SERENDIPITY%%/templates/newspaper/preview.png
+%%SERENDIPITY%%/templates/newspaper/style.css
+%%SERENDIPITY%%/templates/wp/atom.css
+%%SERENDIPITY%%/templates/wp/commentform.tpl
+%%SERENDIPITY%%/templates/wp/comments.tpl
+%%SERENDIPITY%%/templates/wp/content.tpl
+%%SERENDIPITY%%/templates/wp/entries.tpl
+%%SERENDIPITY%%/templates/wp/entries_archives.tpl
+%%SERENDIPITY%%/templates/wp/entries_summary.tpl
+%%SERENDIPITY%%/templates/wp/htmlarea.css
+%%SERENDIPITY%%/templates/wp/index.tpl
+%%SERENDIPITY%%/templates/wp/info.txt
+%%SERENDIPITY%%/templates/wp/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/wp/sidebar.tpl
+%%SERENDIPITY%%/templates/wp/trackbacks.tpl
+%%SERENDIPITY%%/templates/wp/wp-layout.css
+%%SERENDIPITY%%/templates_c/.empty
+%%SERENDIPITY%%/uploads/.empty
+%%SERENDIPITY%%/wfwcomment.php
+@dirrm %%SERENDIPITY%%/uploads
+@dirrm %%SERENDIPITY%%/templates_c
+@dirrm %%SERENDIPITY%%/templates/wp
+@dirrm %%SERENDIPITY%%/templates/newspaper/img
+@dirrm %%SERENDIPITY%%/templates/newspaper
+@dirrm %%SERENDIPITY%%/templates/mt3-squash
+@dirrm %%SERENDIPITY%%/templates/mt3-independence
+@dirrm %%SERENDIPITY%%/templates/mt3-gettysburg
+@dirrm %%SERENDIPITY%%/templates/mt3-chalkboard/img
+@dirrm %%SERENDIPITY%%/templates/mt3-chalkboard
+@dirrm %%SERENDIPITY%%/templates/mt-trendy/img
+@dirrm %%SERENDIPITY%%/templates/mt-trendy
+@dirrm %%SERENDIPITY%%/templates/mt-stormy
+@dirrm %%SERENDIPITY%%/templates/mt-rusty/img
+@dirrm %%SERENDIPITY%%/templates/mt-rusty
+@dirrm %%SERENDIPITY%%/templates/mt-plainjane
+@dirrm %%SERENDIPITY%%/templates/mt-gettysburg/img
+@dirrm %%SERENDIPITY%%/templates/mt-gettysburg
+@dirrm %%SERENDIPITY%%/templates/mt-georgiablue
+@dirrm %%SERENDIPITY%%/templates/mt-clean
+@dirrm %%SERENDIPITY%%/templates/moz-modern/img
+@dirrm %%SERENDIPITY%%/templates/moz-modern
+@dirrm %%SERENDIPITY%%/templates/kubrick/img
+@dirrm %%SERENDIPITY%%/templates/kubrick/images
+@dirrm %%SERENDIPITY%%/templates/kubrick
+@dirrm %%SERENDIPITY%%/templates/idea/img
+@dirrm %%SERENDIPITY%%/templates/idea
+@dirrm %%SERENDIPITY%%/templates/default/img/emoticons
+@dirrm %%SERENDIPITY%%/templates/default/img
+@dirrm %%SERENDIPITY%%/templates/default/admin/img
+@dirrm %%SERENDIPITY%%/templates/default/admin
+@dirrm %%SERENDIPITY%%/templates/default-rtl/img
+@dirrm %%SERENDIPITY%%/templates/default-rtl/admin/img
+@dirrm %%SERENDIPITY%%/templates/default-rtl/admin
+@dirrm %%SERENDIPITY%%/templates/default-rtl
+@dirrm %%SERENDIPITY%%/templates/default
+@dirrm %%SERENDIPITY%%/templates/blue/img
+@dirrm %%SERENDIPITY%%/templates/blue
+@dirrm %%SERENDIPITY%%/templates
+@dirrm %%SERENDIPITY%%/sql
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_recententries
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_history
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_plugin_comments
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_weblogping
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_trackexits
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_textwiki
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_textile
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_templatechooser
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_statistics
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_spartacus
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_spamblock
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_nl2br
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_mailer
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_livesearch
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_karma
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_htmlvalidator
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_entryproperties
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_emoticate
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_creativecommons
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_bbcode
+@dirrm %%SERENDIPITY%%/plugins
+@dirrm %%SERENDIPITY%%/lang/UTF-8
+@dirrm %%SERENDIPITY%%/lang
+@dirrm %%SERENDIPITY%%/include/tpl
+@dirrm %%SERENDIPITY%%/include/db
+@dirrm %%SERENDIPITY%%/include/admin/importers
+@dirrm %%SERENDIPITY%%/include/admin
+@dirrm %%SERENDIPITY%%/include
+@dirrm %%SERENDIPITY%%/htmlarea/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/TableOperations
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/popups
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage/img
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/FullPage
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ContextMenu/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/ContextMenu
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CSS/lang
+@dirrm %%SERENDIPITY%%/htmlarea/plugins/CSS
+@dirrm %%SERENDIPITY%%/htmlarea/plugins
+@dirrm %%SERENDIPITY%%/htmlarea/lang
+@dirrm %%SERENDIPITY%%/htmlarea/images
+@dirrm %%SERENDIPITY%%/htmlarea/examples
+@dirrm %%SERENDIPITY%%/htmlarea
+@dirrm %%SERENDIPITY%%/docs
+@dirrm %%SERENDIPITY%%/deployment/uploads
+@dirrm %%SERENDIPITY%%/deployment/templates_c
+@dirrm %%SERENDIPITY%%/deployment/archives
+@dirrm %%SERENDIPITY%%/deployment
+@dirrm %%SERENDIPITY%%/bundled-libs/tests
+@dirrm %%SERENDIPITY%%/bundled-libs/docs
+@dirrm %%SERENDIPITY%%/bundled-libs/XML/RPC
+@dirrm %%SERENDIPITY%%/bundled-libs/XML
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Rule
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Xhtml
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Plain
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Render/Latex
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Render
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse/Default
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki/Parse
+@dirrm %%SERENDIPITY%%/bundled-libs/Text/Wiki
+@dirrm %%SERENDIPITY%%/bundled-libs/Text
+@dirrm %%SERENDIPITY%%/bundled-libs/Smarty/libs/plugins
+@dirrm %%SERENDIPITY%%/bundled-libs/Smarty/libs/internals
+@dirrm %%SERENDIPITY%%/bundled-libs/Smarty/libs
+@dirrm %%SERENDIPITY%%/bundled-libs/Smarty
+@dirrm %%SERENDIPITY%%/bundled-libs/Onyx
+@dirrm %%SERENDIPITY%%/bundled-libs/Net/DNSBL
+@dirrm %%SERENDIPITY%%/bundled-libs/Net
+@dirrm %%SERENDIPITY%%/bundled-libs/HTTP/Request
+@dirrm %%SERENDIPITY%%/bundled-libs/HTTP
+@dirrm %%SERENDIPITY%%/bundled-libs/Cache/Lite
+@dirrm %%SERENDIPITY%%/bundled-libs/Cache
+@dirrm %%SERENDIPITY%%/bundled-libs
+@dirrm %%SERENDIPITY%%
