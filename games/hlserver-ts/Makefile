@@ -14,6 +14,8 @@ DISTNAME=	ts${PORTVERSION}-linux_server
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod The Specialists full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 USE_BZIP2=	yes
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
