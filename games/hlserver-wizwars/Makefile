@@ -17,6 +17,8 @@ DISTNAME=	wizwars_v${PORTVERSION:S/0.//:S/.//g}_full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Wizard Wars full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 WRKSRC=		${WRKDIR}/wizwars
 
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
