@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamilter
-PORTVERSION=	0.59
-PORTREVISION=	2
+PORTVERSION=	0.60
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 MASTER_SITE_SUBDIR=	dinoex
