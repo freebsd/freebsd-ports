@@ -1,0 +1,15 @@
+This is an SNMP message encoding and decoding library, providing very
+low-level facilities; you pretty much need to read the SNMP RFCs to use
+it.  It is, however, very fast (it's more than an order of magnitude
+faster than Net::SNMP, and it can send a request and parse a response in
+only slightly more time than the snmpd from net-snmp takes to parse the
+request and send a response), and it's relatively complete --- the
+interface is flexible enough that you can use it to write SNMP
+management applications, SNMP agents, and test suites for SNMP
+implementations.
+
+The package also includes NSNMP::Simple, which lets you get or set a
+single OID via SNMP with a single line of code.  It's easier to use, and
+roughly an order of magnitude faster, than Net::SNMP.
+
+WWW: http://search.cpan.org/dist/NSNMP/

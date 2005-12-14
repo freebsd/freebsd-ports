@@ -120,6 +120,7 @@
     SUBDIR += p5-Altoids
     SUBDIR += p5-Cflow
     SUBDIR += p5-Mon
+    SUBDIR += p5-NSNMP
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IPv4Addr
