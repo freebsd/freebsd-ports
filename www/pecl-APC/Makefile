@@ -7,6 +7,7 @@
 
 PORTNAME=	APC
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -25,9 +26,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
 
-OPTIONS=	MMAP       "Enable mmap memory support (default: IPC shm)" off \
-		SEMAPHORES "Enable sysv IPC semaphores (default: fcntl())" off \
-		PHP4_OPT   "Little optimization to PHP4" off
+OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
+		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
+		PHP4_OPT	"Little optimization to PHP4"			off
+
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -39,29 +42,45 @@ CONFIGURE_ARGS+=	--enable-apc-mmap
 CONFIGURE_ARGS+=	--enable-apc-sem
 .endif
 
-.if defined(WITH_PHP4_OPT)
-.if ${PHP_VER} == 4
+.if defined(WITH_PHP4_OPT) && ${PHP_VER} == 4
 .if exists(${LOCALBASE}/include/apache/httpd.h)
 CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
 .elif exists(${LOCALBASE}/include/apache2/httpd.h)
-CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
+CFLAGS+=	-I${LOCALBASE}/include/apache2 -DAPC_PHP4_STAT
+.elif exists(${LOCALBASE}/include/apache21/httpd.h)
+CFLAGS+=	-I${LOCALBASE}/include/apache21 -DAPC_PHP4_STAT
+.elif exists(${LOCALBASE}/include/apache22/httpd.h)
+CFLAGS+=	-I${LOCALBASE}/include/apache22 -DAPC_PHP4_STAT
 .endif
 .else
-IGNORE=	This optimization is only for PHP4. PHP5 or newer does not need it
-.endif
-.endif
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+pre-extract:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "*** WARNING ***"
+	@${ECHO_CMD} "This optimization is only for PHP4. PHP5 or newer does not need it"
+	@${ECHO_CMD} "I will continue instalation..."
+	@${ECHO_CMD}
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NOTICE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/apc.php ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
+.if ${PHP_VER} == 5
+	@${ECHO_CMD}
+	@${ECHO_CMD} "*** WARNING *** WARNING *** WARNING ***"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "To APC work with PHP >= 5.1 you need add"
+	@${ECHO_CMD} "below option in your php.ini"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "auto_globals_jit = Off"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "*** WARNING *** WARNING *** WARNING ***"
+	@${ECHO_CMD}
+.endif
 
 .include <bsd.port.post.mk>
