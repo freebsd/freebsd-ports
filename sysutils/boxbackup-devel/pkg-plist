@@ -7,8 +7,8 @@
 %%SERVER%%bin/bbstored-certs
 %%SERVER%%bin/bbstored-config
 %%SERVER%%bin/raidfile-config
-%%CLIENT%%etc/rc.d/bbackupd.sh
-%%SERVER%%etc/rc.d/bbstored.sh
+%%CLIENT%%@exec mkdir -p -m 0700 %D/etc/box/bbackupd
+%%SERVER%%@exec mkdir -p -m 0700 %D/etc/box/bbstored
 %%CLIENT%%@dirrm etc/box/bbackupd
 %%SERVER%%@dirrm etc/box/bbstored
 @dirrm etc/box

@@ -1,5 +1,6 @@
 #!/bin/sh
 #
+# $FreeBSD$
 #
 # PROVIDE: bbstored
 # REQUIRE: NETWORKING
@@ -11,15 +12,15 @@
 #bbstored_enable="YES"
 #
 
-bbstored_enable=${bbstored_enable-"NO"}
-bbstored_flags=${bbstored_flags-"/usr/local/etc/box/bbstored.conf"}
-bbstored_pidfile=${bbstored_pidfile-"/var/run/bbstored.pid"}
+: ${bbstored_enable:="NO"}
+: ${bbstored_flags:="%%PREFIX%%/etc/box/bbstored.conf"}
+: ${bbstored_pidfile:="/var/run/bbstored.pid"}
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="bbstored"
 rcvar=`set_rcvar`
-command="/usr/local/bin/bbstored"
+command="%%PREFIX%%/bin/bbstored"
 extra_commands="reload"
 
 load_rc_config $name
