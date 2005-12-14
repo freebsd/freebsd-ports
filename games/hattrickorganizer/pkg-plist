@@ -1,8 +1,12 @@
 bin/hattrickorganizer
 %%DATADIR%%/HO.bat
 %%DATADIR%%/HO.sh
+%%DATADIR%%/HOLauncher.class
+%%DATADIR%%/LICENSELGPL.txt
 %%DATADIR%%/Logo.ico
+%%DATADIR%%/README_JL.txt
 %%DATADIR%%/defaults.xml
+%%DATADIR%%/epv.dat
 %%DATADIR%%/flags/100flag.png
 %%DATADIR%%/flags/101flag.png
 %%DATADIR%%/flags/102flag.png
@@ -116,6 +120,8 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/TrainingExperience.class
 %%DATADIR%%/hoplugins/Transfers.class
 %%DATADIR%%/hoplugins/commons/plugin.xml
+%%DATADIR%%/hoplugins/commons/sprache/LanguageCodes.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Argentina.properties
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Catalan.properties
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Czech.properties
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Danish.properties
@@ -130,6 +136,8 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Romanian.properties
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Slovak.properties
 %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/TeamPlanner/English.properties
+%%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Argentina.properties
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Catalan.properties
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Deutsch.properties
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/English.properties
@@ -142,6 +150,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Slovak.properties
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/Spanish.properties
 %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience/svenska.properties
+%%DATADIR%%/hoplugins/commons/sprache/Transfers/Argentina.properties
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/Catalan.properties
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/Deutsch.properties
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/English.properties
@@ -152,6 +161,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/Polish.properties
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/Portugues.properties
 %%DATADIR%%/hoplugins/commons/sprache/Transfers/Spanish.properties
+%%DATADIR%%/hoplugins/commons/sprache/shared/Argentina.properties
 %%DATADIR%%/hoplugins/commons/sprache/shared/Catalan.properties
 %%DATADIR%%/hoplugins/commons/sprache/shared/Czech.properties
 %%DATADIR%%/hoplugins/commons/sprache/shared/Danish.properties
@@ -169,6 +179,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/sprache/shared/Svenska.properties
 %%DATADIR%%/hoplugins/commons/ui/BaseTableModel.class
 %%DATADIR%%/hoplugins/commons/ui/CompositeIcon.class
+%%DATADIR%%/hoplugins/commons/ui/DebugWindow.class
 %%DATADIR%%/hoplugins/commons/ui/DefaultTableSorter.class
 %%DATADIR%%/hoplugins/commons/ui/InfoPanel.class
 %%DATADIR%%/hoplugins/commons/ui/NumberTextField$DecimalFieldDocument.class
@@ -189,12 +200,14 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/ui/sorter/SortableHeaderRenderer.class
 %%DATADIR%%/hoplugins/commons/ui/sorter/TableModelHandler.class
 %%DATADIR%%/hoplugins/commons/utils/DateUtil.class
+%%DATADIR%%/hoplugins/commons/utils/Debug.class
 %%DATADIR%%/hoplugins/commons/utils/HTCalendar.class
 %%DATADIR%%/hoplugins/commons/utils/HTCalendarFactory.class
 %%DATADIR%%/hoplugins/commons/utils/ListUtil.class
 %%DATADIR%%/hoplugins/commons/utils/MathUtil.class
 %%DATADIR%%/hoplugins/commons/utils/PluginProperty.class
 %%DATADIR%%/hoplugins/commons/utils/RatingUtil.class
+%%DATADIR%%/hoplugins/commons/utils/SeriesUtil.class
 %%DATADIR%%/hoplugins/commons/vo/MatchRating.class
 %%DATADIR%%/hoplugins/teamAnalyzer/SystemManager.class
 %%DATADIR%%/hoplugins/teamAnalyzer/comparator/AppearanceComparator.class
@@ -239,6 +252,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterPanel$1.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/ManualFilterTableRenderer.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/PlayerInfoPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/PlayerPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RatingBox.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RatingPanel.class
@@ -250,9 +264,6 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$3.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter$4.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RecapTableSorter.class
-%%DATADIR%%/hoplugins/teamAnalyzer/ui/RosterPanel$1.class
-%%DATADIR%%/hoplugins/teamAnalyzer/ui/RosterPanel$2.class
-%%DATADIR%%/hoplugins/teamAnalyzer/ui/RosterPanel$3.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RosterPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/RosterTableRenderer.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/TacticPanel.class
@@ -274,6 +285,9 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/JokePanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$1.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$10.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$11.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$12.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$13.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$2.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$3.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/component/SettingPanel$4.class
@@ -288,6 +302,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/DownloadItemListener.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/FavoriteItemListener.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/HelpItemListener.class
+%%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/ImportItemListener.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/controller/SimButtonListener.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/FormationPanel.class
 %%DATADIR%%/hoplugins/teamAnalyzer/ui/lineup/LineupStylePanel.class
@@ -312,7 +327,7 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/Team.class
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/TeamLineup.class
 %%DATADIR%%/hoplugins/teamAnalyzer/vo/UserTeamSpotLineup.class
-%%DATADIR%%/hoplugins/trainingExperience/FutureTrainingManager.class
+%%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$1.class
 %%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager$SkillupComperator.class
 %%DATADIR%%/hoplugins/trainingExperience/OldTrainingManager.class
 %%DATADIR%%/hoplugins/trainingExperience/constants/Skills.class
@@ -320,36 +335,31 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/trainingExperience/dao/DividerDAO.class
 %%DATADIR%%/hoplugins/trainingExperience/dao/EffectDAO$1.class
 %%DATADIR%%/hoplugins/trainingExperience/dao/EffectDAO.class
-%%DATADIR%%/hoplugins/trainingExperience/dao/TrainingDAO.class
 %%DATADIR%%/hoplugins/trainingExperience/plugin.xml
 %%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/AnalyzerPanel.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/ChangeTableRenderer.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/EffectPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/MainPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$2.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel$3.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputTable.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableRenderer.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableSorter$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/OutputTableSorter.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/PlayerDetailPanel.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/PlayerSelectionListener.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/SkillupPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/SkillupTable.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/SkillupTableRenderer.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$2.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel$3.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/StaffPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingComparator.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingLegendPanel$ColorReplaceFilter.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingLegendPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingPanel$1.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingPanel.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel$1.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel$2.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel.class
-%%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapRenderer.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapTable.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingTable.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/bar/ColorModus.class
@@ -366,10 +376,16 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/trainingExperience/ui/model/FutureTrainingsTableModel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/model/OutputTableModel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/model/PastTrainingsTableModel.class
-%%DATADIR%%/hoplugins/trainingExperience/vo/HattrickTrainingWeek.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/ChangeTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/OutputTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/SkillupTableRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/SkillupTypeTableCellRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/SkillupsTableCellRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/renderer/TrainingRecapRenderer.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/FutureTrainingWeek.class
+%%DATADIR%%/hoplugins/trainingExperience/vo/PastSkillup.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/PlayerValues.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/SkillChange.class
-%%DATADIR%%/hoplugins/trainingExperience/vo/Skillup.class
 %%DATADIR%%/hoplugins/trainingExperience/vo/TrainWeekEffect.class
 %%DATADIR%%/hoplugins/transfers/constants/TransferTypes.class
 %%DATADIR%%/hoplugins/transfers/dao/BookmarkDAO.class
@@ -422,7 +438,9 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/transfers/vo/TransferredPlayer.class
 %%DATADIR%%/hsqldb.jar
 %%DATADIR%%/hsqldb_lic.txt
+%%DATADIR%%/jl1.0.jar
 %%DATADIR%%/lizenz.txt
+%%DATADIR%%/ratings.dat
 %%DATADIR%%/sprache/Argentina.properties
 %%DATADIR%%/sprache/Bulgarian.properties
 %%DATADIR%%/sprache/Catalan.properties
@@ -461,6 +479,7 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/transfers/constants
 @dirrm %%DATADIR%%/hoplugins/transfers
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/vo
+@dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/renderer
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/model
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/component
 @dirrm %%DATADIR%%/hoplugins/trainingExperience/ui/bar
@@ -494,6 +513,7 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/commons/sprache/shared
 @dirrm %%DATADIR%%/hoplugins/commons/sprache/Transfers
 @dirrm %%DATADIR%%/hoplugins/commons/sprache/TrainingExperience
+@dirrm %%DATADIR%%/hoplugins/commons/sprache/TeamPlanner
 @dirrm %%DATADIR%%/hoplugins/commons/sprache/TeamAnalyzer
 @dirrm %%DATADIR%%/hoplugins/commons/sprache
 @dirrm %%DATADIR%%/hoplugins/commons

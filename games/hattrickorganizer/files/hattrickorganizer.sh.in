@@ -27,7 +27,7 @@
 #  - edit the HODIR variable to this new directory (without the ``)    #
 #     and HOHOME to any user writable directory!                       #
 #                                                                      #
-#  - start HO! out of a terminal via e.g. 'ho'		                   #
+#  - start HO! out of a terminal via e.g. 'hattrickorganizer'          #
 #                                                                      #
 #  - manage your team :)                                               #
 #                                                                      #
@@ -107,6 +107,12 @@ PLUGINSDIR=$HOHOME/hoplugins
 SPRACHDIR=$HOHOME/sprache
 
             
+# required java version
+
+JAVAVERREQ=1.4.1
+
+# Which database files and name of backup file?
+
 # Which database files and name of backup file?
 
 BACKUPLIST="database.data database.script database.backup database.properties"
@@ -151,7 +157,9 @@ help(){
 	Options:
           -h  --help         This help text
           -v  --version      Show HO! version
+          -f  --force        Start without checking java-version
           -nb --nobackup     Start without backup
+          -j  --java <path>  Use this java
           -r  --restore      Restore the last backup-file
           -rd --restoredate  <date>
                              Restore the backup-file from <date>
@@ -167,18 +175,18 @@ start(){
 	cd $HOHOME
 	JAVA_VERSION="%%JAVA_VERSION%%" "${JAVA}" -jar $HODIR/hocoded.jar
 
-	# check database and print warning
-	if [ `grep modified $DATABASEDIR/database.properties | \
+          # check database and print warning
+	  if [ `grep modified $DATABASEDIR/database.properties | \
 			cut -d= -f2` = "no" ] 
-	then
+	  then
 		echo "Database OK!"      
-	else
+	  else
 		cat <<-EOF >&2
 			Database was not relased correctly!
 			Probably next time you will have problems starting HO...
 			... but you can restore a backup with switches -r or -rd. :-)
 		EOF
-	fi
+	  fi
 }
 
 # Backup 
@@ -235,12 +243,44 @@ restore(){
 		if [ -r "$BACKUPDIR/$PREFIX-$RESTOREDATE.tgz" ]
 		then
 			gunzip -c "$BACKUPDIR/$PREFIX-$RESTOREDATE.tgz" | tar -xf - 
-			echo "Restored database from $BACKUPDIR/ \
-			$PREFIX-$RESTOREDATE.tgz"
+			echo "Restored database from $BACKUPDIR/$PREFIX-$RESTOREDATE.tgz"
 		else
 			echo "Error reading backup file $BACKUPDIR/$PREFIX-$RESTOREDATE.tgz!" >&2
 			exit 2
 		fi
+	fi
+}
+
+# Check java -version
+
+checkjava(){
+	test -x "$JAVA" || { echo "Can't find java!" ; exit 1 ; }
+	JAVAVER=`$JAVA -version 2>&1 | head -n 1 | \
+	         awk -F\" '{print $2}' | sed s/[^0-9\.].*//g`
+	JAVAMAJ=`echo $JAVAVER | awk -F. '{print $1}'`
+	JAVAMIN=`echo $JAVAVER | awk -F. '{print $2}'`
+	JAVAMINMIN=`echo $JAVAVER | awk -F. '{print $3}'`
+	JAVAMAJREQ=`echo $JAVAVERREQ | awk -F. '{print $1}'`
+	JAVAMINREQ=`echo $JAVAVERREQ | awk -F. '{print $2}'`
+	JAVAMINMINREQ=`echo $JAVAVERREQ | awk -F. '{print $3}'`
+        if ( [ $JAVAMAJ = "" ] || [ $JAVAMIN = "" ] \
+				|| [ $JAVAMINMIN = "" ] ) ; then
+          echo -e "Couldn't check java version! \n
+		  Try '$HONAME -f' to override the version check" >&2
+          exit 3
+        fi
+	if ( [ $JAVAMAJ -lt $JAVAMAJREQ ] || \
+	    ( [ $JAVAMAJ -eq $JAVAMAJREQ ] && \
+		[ $JAVAMIN -lt $JAVAMINREQ ] ) || \
+	    ( [ $JAVAMAJ -eq $JAVAMAJREQ ] && \
+		[ $JAVAMIN -eq $JAVAMINREQ ] && \
+		[ $JAVAMINMIN -lt $JAVAMINMINREQ ] ) ) 
+	then
+        cat <<-EOF >&2
+		  	The default Java version is too old!
+	        You could try another one: '$HONAME -j <path>'
+		EOF
+		exit 3
 	fi
 }
 
@@ -251,6 +291,15 @@ restore(){
 until [ -z "$1" ]
 do
 	case "$1" in
+		-j|--java)   
+			JAVA=$2;
+			if [ -z $JAVA ]
+			then
+				echo "Option j or java needs a parameter!" >&2
+				exit 1
+			fi
+			shift
+			;;
 		-v|--version)
 			echo "This is HO! version $HOVERSION";
 			exit 0
@@ -299,6 +348,10 @@ do
 done
 
 
+# Check for java -version (if called without `force')
+
+`$CHECK`   && checkjava
+
 # Check if all needed directories exist
 
 if [ ! -d $HOHOME ]
@@ -309,13 +362,19 @@ fi
 
 if [ ! -d $PLUGINSDIR ]
 then
-	echo "creating $PLUGINSDIR"
-	cp -r $HODIR/hoplugins $HOHOME
+        if [ ! -d $HODIR/hoplugins ]
+        then
+          echo "creating $HODIR/hoplugins"
+          mkdir $HOHOME/hoplugins
+        else
+  	  echo "copying $PLUGINSDIR"
+	  cp -r $HODIR/hoplugins $HOHOME
+        fi
 fi
 
 if [ ! -d $SPRACHDIR ]
 then
-	echo "creating $SPRACHDIR"
+	echo "copying $SPRACHDIR"
 	cp -r $HODIR/sprache $HOHOME	
 fi
 
