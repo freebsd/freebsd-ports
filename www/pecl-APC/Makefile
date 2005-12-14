@@ -74,7 +74,7 @@ post-install:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "*** WARNING *** WARNING *** WARNING ***"
 	@${ECHO_CMD}
-	@${ECHO_CMD} "To APC work with PHP >= 5.1 you need add"
+	@${ECHO_CMD} "To APC work with PHP >= 5.0.5 you need add"
 	@${ECHO_CMD} "below option in your php.ini"
 	@${ECHO_CMD}
 	@${ECHO_CMD} "auto_globals_jit = Off"
