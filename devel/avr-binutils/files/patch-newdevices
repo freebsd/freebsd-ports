@@ -1,17 +1,20 @@
-diff -ru /tmp/binutils-orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
---- /tmp/binutils-orig/gas/config/tc-avr.c	Wed Feb 23 13:28:04 2005
-+++ ./gas/config/tc-avr.c	Sat Jul 30 21:43:34 2005
-@@ -88,6 +88,9 @@
+diff -ur ../binutils-2.16.1.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
+--- ../binutils-2.16.1.orig/gas/config/tc-avr.c	Wed Feb 23 13:28:04 2005
++++ ./gas/config/tc-avr.c	Wed Dec 14 22:35:33 2005
+@@ -88,6 +88,12 @@
    {"at86rf401", AVR_ISA_2xxx,     bfd_mach_avr2},
    {"attiny13",  AVR_ISA_TINY2,    bfd_mach_avr2},
    {"attiny2313",AVR_ISA_TINY2,    bfd_mach_avr2},
++  {"attiny24",  AVR_ISA_TINY2,    bfd_mach_avr2},
++  {"attiny44",  AVR_ISA_TINY2,    bfd_mach_avr2},
++  {"attiny84",  AVR_ISA_TINY2,    bfd_mach_avr2},
 +  {"attiny25",  AVR_ISA_TINY2,    bfd_mach_avr2},
 +  {"attiny45",  AVR_ISA_TINY2,    bfd_mach_avr2},
 +  {"attiny85",  AVR_ISA_TINY2,    bfd_mach_avr2},
    {"atmega603", AVR_ISA_M603,     bfd_mach_avr3}, /* XXX -> m103 */
    {"atmega103", AVR_ISA_M103,     bfd_mach_avr3},
    {"at43usb320",AVR_ISA_M103,     bfd_mach_avr3},
-@@ -100,21 +103,35 @@
+@@ -100,21 +106,35 @@
    {"atmega88",  AVR_ISA_M8,       bfd_mach_avr4},
    {"atmega8515",AVR_ISA_M8,       bfd_mach_avr4},
    {"atmega8535",AVR_ISA_M8,       bfd_mach_avr4},
@@ -47,9 +50,9 @@ diff -ru /tmp/binutils-orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
    {"at90can128",AVR_ISA_M128,     bfd_mach_avr5},
    {"at94k",     AVR_ISA_94K,      bfd_mach_avr5},
    {NULL, 0, 0}
-diff -ru /tmp/binutils-orig/include/opcode/avr.h ./include/opcode/avr.h
---- /tmp/binutils-orig/include/opcode/avr.h	Thu Mar  3 12:58:09 2005
-+++ ./include/opcode/avr.h	Sat Jul 30 21:36:59 2005
+diff -ur ../binutils-2.16.1.orig/include/opcode/avr.h ./include/opcode/avr.h
+--- ../binutils-2.16.1.orig/include/opcode/avr.h	Thu Mar  3 12:58:09 2005
++++ ./include/opcode/avr.h	Wed Dec 14 22:34:19 2005
 @@ -37,6 +37,7 @@
                         AVR_ISA_SPM | AVR_ISA_BRK)
  #define AVR_ISA_M8   (AVR_ISA_2xxx | AVR_ISA_MUL | AVR_ISA_MOVW | \
