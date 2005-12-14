@@ -1,5 +1,6 @@
 #!/bin/sh
 #
+# $FreeBSD$
 #
 # PROVIDE: bbackupd
 # REQUIRE: NETWORKING
@@ -11,15 +12,15 @@
 #bbackupd_enable="YES"
 #
 
-bbackupd_enable=${bbackupd_enable-"NO"}
-bbackupd_flags=${bbackupd_flags-"/usr/local/etc/box/bbackupd.conf"}
-bbackupd_pidfile=${bbackupd_pidfile-"/var/run/bbackupd.pid"}
+: ${bbackupd_enable:="NO"}
+: ${bbackupd_flags:="%%PREFIX%%/etc/box/bbackupd.conf"}
+: ${bbackupd_pidfile:="/var/run/bbackupd.pid"}
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="bbackupd"
 rcvar=`set_rcvar`
-command="/usr/local/bin/bbackupd"
+command="%%PREFIX%%/bin/bbackupd"
 extra_commands="reload"
 
 load_rc_config $name
