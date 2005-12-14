@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rox-edit
-PORTVERSION=	1.9.7
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -24,6 +23,7 @@ USE_PYTHON=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .cvsignore | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

@@ -1,6 +1,7 @@
 apps/Edit/.DirIcon
 apps/Edit/AppInfo.xml
 apps/Edit/AppRun
+apps/Edit/Edit.xml
 apps/Edit/EditWindow.py
 apps/Edit/EditWindow.pyc
 apps/Edit/EditWindow.pyo
@@ -37,6 +38,7 @@ apps/Edit/findrox.pyo
 apps/Edit/goto.py
 apps/Edit/goto.pyc
 apps/Edit/goto.pyo
+apps/Edit/images/marker.png
 apps/Edit/images/rox-diff.png
 apps/Edit/images/rox-word-wrap.png
 apps/Edit/search.py
