@@ -1,5 +1,7 @@
 bin/nikto
-etc/nikto/config.txt
+@unexec if cmp -s %D/etc/nikto.conf %D/etc/nikto.conf.sample; then rm -f %D/etc/nikto.conf; fi
+etc/nikto.conf.sample
+@exec [ -f %B/nikto.conf ] || cp %B/%f %B/nikto.conf
 %%DATADIR%%/nikto_mutate.plugin
 %%DATADIR%%/nikto_outdated.plugin
 %%DATADIR%%/nikto_apacheusers.plugin
@@ -20,4 +22,3 @@ etc/nikto/config.txt
 %%DATADIR%%/servers.db
 %%DATADIR%%/LW.pm
 @dirrm %%DATADIR%%
-@dirrm etc/nikto
