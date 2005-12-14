@@ -34,6 +34,70 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="82a41084-6ce7-11da-b90c-000e0c2e438a">
+    <topic>mantis -- "t_core_path" file inclusion vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Research reports:</p>
+	<blockquote cite="http://secunia.com/secunia_research/2005-46/advisory/">
+	  <p>Input passed to the "t_core_path" parameter in
+	    "bug_sponsorship_list_view_inc.php" isn't properly verified,
+	    before it used to include files. This can be exploited to
+	    include arbitrary files from external and local
+	    resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3335</cvename>
+      <url>http://secunia.com/secunia_research/2005-46/advisory/</url>
+    </references>
+    <dates>
+      <discovery>2005-10-26</discovery>
+      <entry>2005-12-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6e3b12e2-6ce3-11da-b90c-000e0c2e438a">
+    <topic>mantis -- "view_filters_page.php" cross-site scripting
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>r0t reports:</p>
+	<blockquote cite="http://pridels.blogspot.com/2005/12/mantis-bugtracking-system-xss-vuln.html">
+	  <p>Mantis contains a flaw that allows a remote cross site
+	    scripting attack. This flaw exists because input passed to
+	    "target_field" parameter in "view_filters_page.php" isn't
+	    properly sanitised before being returned to the user.  This
+	    could allow a user to create a specially crafted URL that
+	    would execute arbitrary code in a user's browser within the
+	    trust relationship between the browser and the server,
+	    leading to a loss of integrity.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15842</bid>
+      <url>http://pridels.blogspot.com/2005/12/mantis-bugtracking-system-xss-vuln.html</url>
+    </references>
+    <dates>
+      <discovery>2005-12-13</discovery>
+      <entry>2005-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2506f558-6a8a-11da-b96e-000fb586ba73">
     <topic>mnemo -- Cross site scripting vulnerabilities in several of the notepad name and note data fields</topic>
     <affects>
