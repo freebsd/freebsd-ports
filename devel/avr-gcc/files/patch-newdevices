@@ -1,20 +1,23 @@
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
---- ../gcc-3.4.4-orig/gcc/config/avr/avr.c	Sun Mar 20 22:14:28 2005
-+++ ./gcc/config/avr/avr.c	Fri Nov  4 21:20:12 2005
-@@ -175,6 +175,12 @@
+diff -ur ../gcc-3.4.5.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
+--- ../gcc-3.4.5.orig/gcc/config/avr/avr.c	Wed Dec 14 23:11:50 2005
++++ ./gcc/config/avr/avr.c	Wed Dec 14 23:14:22 2005
+@@ -175,6 +175,15 @@
    { "at90c8534", 2, "__AVR_AT90C8534__" },
    { "at90s8535", 2, "__AVR_AT90S8535__" },
    { "at86rf401", 2, "__AVR_AT86RF401__" },
 +    /* Classic + MOVW, <= 8K.  */
 +  { "attiny13",   2, "__AVR_ATtiny13__" },
 +  { "attiny2313", 2, "__AVR_ATtiny2313__" },  
++  { "attiny24", 2, "__AVR_ATtiny24__" },
++  { "attiny44", 2, "__AVR_ATtiny44__" },
++  { "attiny84", 2, "__AVR_ATtiny84__" },
 +  { "attiny25", 2, "__AVR_ATtiny25__" },
 +  { "attiny45", 2, "__AVR_ATtiny45__" },
 +  { "attiny85", 2, "__AVR_ATtiny85__" },
      /* Classic, > 8K.  */
    { "avr3",      3, NULL },
    { "atmega103", 3, "__AVR_ATmega103__" },
-@@ -185,19 +191,42 @@
+@@ -185,19 +194,42 @@
      /* Enhanced, <= 8K.  */
    { "avr4",      4, NULL },
    { "atmega8",   4, "__AVR_ATmega8__" },
@@ -57,9 +60,9 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "at94k",     5, "__AVR_AT94K__" },
      /* Assembler only.  */
    { "avr1",      1, NULL },
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
---- ../gcc-3.4.4-orig/gcc/config/avr/avr.h	Tue Mar  9 03:59:55 2004
-+++ ./gcc/config/avr/avr.h	Fri Nov  4 21:21:30 2005
+diff -ur ../gcc-3.4.5.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
+--- ../gcc-3.4.5.orig/gcc/config/avr/avr.h	Wed Dec 14 23:11:46 2005
++++ ./gcc/config/avr/avr.h	Wed Dec 14 23:15:30 2005
 @@ -2351,12 +2351,13 @@
     Do not define this macro if it does not need to do anything.  */
  
@@ -67,7 +70,7 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
 -%{mmcu=at90s1200|mmcu=attiny1*|mmcu=attiny28:-m avr1} \
 -%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401:-m avr2}\
 +%{mmcu=at90s1200|mmcu=attiny11|mmcu=attiny12|mmcu=attiny15|mmcu=attiny28:-m avr1} \
-+%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401|mmcu=attiny13|mmcu=attiny2313|mmcu=attiny25|mmcu=attiny45|mmcu=attiny85:-m avr2}\
++%{mmcu=attiny22|mmcu=attiny26|mmcu=at90s2*|mmcu=at90s4*|mmcu=at90s8*|mmcu=at90c8*|mmcu=at86rf401|mmcu=attiny13|mmcu=attiny2313|mmcu=attiny24|mmcu=attiny44|mmcu=attiny84|mmcu=attiny25|mmcu=attiny45|mmcu=attiny85:-m avr2}\
  %{mmcu=atmega103|mmcu=atmega603|mmcu=at43*|mmcu=at76*:-m avr3}\
 -%{mmcu=atmega8*:-m avr4}\
 -%{mmcu=atmega16*|mmcu=atmega32*|mmcu=atmega64|mmcu=atmega128|mmcu=at94k:-m avr5}\
@@ -97,12 +100,15 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  /* Another C string constant that tells the GCC driver program how
     and when to place a reference to `libgcc.a' into the linker
     command line.  This constant is placed both before and after the
-@@ -2421,23 +2422,51 @@
+@@ -2421,23 +2422,54 @@
  %{mmcu=at90c8534:crtc8534.o%s} \
  %{mmcu=at90s8535:crts8535.o%s} \
  %{mmcu=at86rf401:crt86401.o%s} \
 +%{mmcu=attiny13:crttn13.o%s} \
 +%{mmcu=attiny2313:crttn2313.o%s} \
++%{mmcu=attiny24:crttn24.o%s} \
++%{mmcu=attiny44:crttn44.o%s} \
++%{mmcu=attiny84:crttn84.o%s} \
 +%{mmcu=attiny25:crttn25.o%s} \
 +%{mmcu=attiny45:crttn45.o%s} \
 +%{mmcu=attiny85:crttn85.o%s} \
@@ -149,9 +155,9 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  %{mmcu=at94k:crtat94k.o%s}"
  
  #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
-diff -ur ../gcc-3.4.4-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
---- ../gcc-3.4.4-orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
-+++ ./gcc/config/avr/t-avr	Fri Nov  4 21:22:34 2005
+diff -ur ../gcc-3.4.5.orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
+--- ../gcc-3.4.5.orig/gcc/config/avr/t-avr	Mon Apr 25 06:17:34 2005
++++ ./gcc/config/avr/t-avr	Wed Dec 14 23:13:03 2005
 @@ -46,12 +46,27 @@
  	mmcu?avr3=mmcu?at43usb320 mmcu?avr3=mmcu?at43usb355 \
  	mmcu?avr3=mmcu?at76c711 \
@@ -184,4 +190,3 @@ diff -ur ../gcc-3.4.4-orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
  	mmcu?avr5=mmcu?at94k
  
  MULTILIB_EXCEPTIONS =
- 
