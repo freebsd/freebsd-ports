@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.5.10a
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
 
@@ -20,18 +19,19 @@ USE_PHP=	yes
 
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
 # Check for FreeBSD version
 .if ${OSVERSION} < 400000
-IGNORE=		This port is for FreeBSD 4 or above
+IGNORE=		this port is for FreeBSD 4 or above
 .else
 .if ${OSVERSION} < 500000
 VER=		4.3
 .else
-VER=		5.1
+VER=		5.4
 .if ${OSVERSION} >= 501111
 LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
 .endif
@@ -52,14 +52,12 @@ and place it in ${DISTDIR}.\n
 .if ${PHP_VER} == 4
 ZEND_PATH=	4.4.x
 .else
-ZEND_PATH=	5.0.x
+ZEND_PATH=	5.1.x
 .endif
 
 PLIST_SUB+=	ZEND_PATH=${ZEND_PATH}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer/php-${ZEND_PATH}
@@ -78,8 +76,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
