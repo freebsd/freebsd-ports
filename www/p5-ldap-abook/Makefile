@@ -7,6 +7,7 @@
 
 PORTNAME=	ldap-abook
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 CGI script providing an LDAP addressbook web interface
 
-FORBIDDEN=	Arbitrary command execution vulnerability in CGI script
+FORBIDDEN=	"Arbitrary command execution vulnerability in CGI script"
 
 RUN_DEPENDS=	${SITE_PERL}/AddressBook.pm:${PORTSDIR}/net/p5-AddressBook \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -23,11 +24,12 @@ RUN_DEPENDS=	${SITE_PERL}/AddressBook.pm:${PORTSDIR}/net/p5-AddressBook \
 
 ABOOK=		${PREFIX}/www/ldap-abook
 CONFIG=		${PREFIX}/etc/AddressBook.conf
-USE_PERL5=	yes
+USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|(/etc/AddressBook.conf)|${PREFIX}$$1|g' \
+	@${REINPLACE_CMD} -e 's|(/etc/AddressBook.conf)|${PREFIX}$$1|g' \
 	   ${WRKSRC}/cgi-bin/abook.cgi
 
 do-install:
@@ -38,7 +40,7 @@ do-install:
 	${INSTALL_DATA} ${ABOOK}/examples/default/AddressBook.conf \
 	    ${CONFIG}-dist
 	[ -f ${CONFIG} ] || \
-	    install  -o root -g www -m 640 ${CONFIG}-dist ${CONFIG}
+	    ${INSTALL} -o root -g www -m 640 ${CONFIG}-dist ${CONFIG}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
