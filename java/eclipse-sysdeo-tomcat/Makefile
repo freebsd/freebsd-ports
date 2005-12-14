@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	sysdeo
-PORTVERSION=	3
-PORTREVISION=	2
+PORTVERSION=	3.1.0
 CATEGORIES=	java
-MASTER_SITES=	http://www.sysdeo.com/eclipse/
+MASTER_SITES=	http://www.sysdeo.com/sysdeo/content/download/393/4930/file/
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	-tomcat
-DISTNAME=	tomcatPluginV${PORTVERSION}
+DISTNAME=	tomcatPluginV31
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	sugimura@jp.FreeBSD.ORG
@@ -25,7 +24,11 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_3.0.0 ${PREFIX}/eclipse/plugins
+		@${MKDIR} -p ${PREFIX}/eclipse
+		@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${PREFIX}/eclipse/plugins
+		@(cd ${WRKSRC}; ${FIND} -s com.sysdeo.eclipse.tomcat_${PORTVERSION} -not -type d) \
+			| ${SED} -ne 's,^,eclipse/plugins/,p' >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d com.sysdeo.eclipse.tomcat_${PORTVERSION} -type d) \
+			| ${SED} -ne 's,^,@dirrm eclipse/plugins/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
