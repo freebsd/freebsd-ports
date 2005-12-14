@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	opr@bsdaemon.be
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
 CONFLICTS=	ja-ls-[0-9]*
@@ -31,14 +31,14 @@ MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/BSD5)$$/& || defined(FREEBSD6) || defined(FREEBSD7)/' \
-		${WRKSRC}/src/misc/tsk_os.h
+		${WRKSRC}/src/auxtools/tsk_os.h
 	@${REINPLACE_CMD} -E -e 's/^CC[[:space:]]*=/CC \?=/' \
 		-e 's/[[:space:]]+file test[[:space:]]*$$//' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CC[[:space:]]*=/d' -e 's/\$$(OPT) \$$(DEBUG)//' \
 		-e 's/^CFLAGS[[:space:]]*=/CFLAGS \+=/' \
 		${WRKSRC}/src/disktools/Makefile ${WRKSRC}/src/fstools/Makefile \
 		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
-		${WRKSRC}/src/misc/Makefile ${WRKSRC}/src/mmtools/Makefile \
+		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
 		${WRKSRC}/src/srchtools/Makefile
 
 do-install:
