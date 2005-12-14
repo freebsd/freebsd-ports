@@ -16,6 +16,8 @@ DISTFILES=      whlbeta2_linux.tar.gz whl_b2_update.tar.gz:update
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Wasteland full server package for Linux
 
+BROKEN=		"Unfetchable"
+
 HALFLIFE_PORT_MASTER=	${.CURDIR}/../hlserver-flf
 
 .include "${HALFLIFE_PORT_MASTER}/Makefile"
