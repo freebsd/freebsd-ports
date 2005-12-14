@@ -15,6 +15,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life mod Counter-Strike with TSC modifications
 
+BROKEN=		"mastersite disappeared, no longer maintained by author"
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2006-02-13
+
 BUILD_DEPENDS+=	${LINUXBASE}${HLDSDIR}cstrike/liblist.gam:${HALFLIFE_COUNTERSTRIKE_MASTER}
 
 NO_WRKSUBDIR=	yes
