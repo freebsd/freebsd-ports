@@ -38,6 +38,8 @@ MAKE_ARGS=	PGSQL_SRC="${PGSQL_SRC}" \
 
 .include <bsd.port.pre.mk>
 
+DEFAULT_PGSQL_VER?= 74
+
 #Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)
 PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
