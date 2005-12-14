@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Module/Install/Makefile.pm
 %%SITE_PERL%%/Module/Install/Bundle.pm
 %%SITE_PERL%%/Module/Install/Run.pm
+%%SITE_PERL%%/Module/Install/Share.pm
 %%SITE_PERL%%/Module/Install/WriteAll.pm
 %%SITE_PERL%%/Module/Install/Include.pm
 %%SITE_PERL%%/Module/Install/Scripts.pm
