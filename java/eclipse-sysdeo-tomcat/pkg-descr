@@ -1,6 +1,6 @@
 Sysdeo Eclipse Tomcat Launcher plugin, its features are:
 
-    * Starting, stopping and restarting Tomcat 4.x, 5.0.x, 3.3
+    * Starting, stopping and restarting Tomcat 4.x, 5.x, 3.3
     * Registering Tomcat process to Eclipse debugger
     * Creating a WAR project (wizard can update server.xml file)
     * Adding Java Projects to Tomcat classpath
@@ -11,4 +11,4 @@ Sysdeo Eclipse Tomcat Launcher plugin, its features are:
       several java projects loaded at the same classloader level than classes
       in a Tomcat project
 
-WWW: http://www.sysdeo.com/eclipse/tomcatPlugin.html
+WWW: http://www.sysdeo.com/eclipse/
