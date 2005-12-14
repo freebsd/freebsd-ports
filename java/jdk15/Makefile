@@ -149,42 +149,40 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 
 LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 
-# Check for JDK sources
-.if !exists(${DISTDIR}/${SCSL_SRCFILE}) && !defined(PACKAGE_BUILDING)
+# Check for JDK sources and patch file
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access http://www.sun.com/software/java2/download.html\n\
-with a web browser and follow the \"Download\" link for the\n\
-\"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
+Due to licensing restrictions, certain files must be fetched manually.\n\n
+.if !exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE})#{
+IGNORE += Please open http://www.sun.com/software/java2/download.html\n\
+in a web browser and follow the \"Download\" link for the\n\
+\"JDK ${JDK_VERSION:S/1.//}\".  You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
-accepting the Sun Community Source License, select \"J2SESDK\" and\n\
-download the source file, ${SCSL_SRCFILE}.  Please place this file in\n\
-${DISTDIR}.\n
-.endif
-.if !exists(${DISTDIR}/${SCSL_BINFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Please access http://www.sun.com/software/java2/download.html\n\
-with a web browser and follow the \"Download\" link for the\n\
-\"Java(TM) SDK ${JDK_VERSION}\". You will be required to log in and register,\n\
-but you can create an account on this page.  After registration and\n\
-accepting the Sun Community Source License, select \"J2SESDK\" and\n\
-download the source file, ${SCSL_BINFILE}.  Please place this file in\n\
-${DISTDIR}.\n
-.endif
-
-# Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-The source distribution exists on your system, but due to\n\
-licensing restrictions you still need to download the\n\
-patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\
-Please place the patchset in ${DISTDIR}.\n
-.endif
+accepting the Sun Community Source License, download the\n
+.if !exists(${DISTDIR}/${SCSL_SRCFILE})#{
+IGNORE += SCSL Source file, ${SCSL_SRCFILE}
+.endif#}
+.if !exists(${DISTDIR}/${SCSL_BINFILE})#{
+.if !exists(${DISTDIR}/${SCSL_SRCFILE})#{
+IGNORE += and the\n
+.endif#}
+IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
+.endif#}
+IGNORE += .\n\n
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += In addition, please
+.endif#}
+.elif !exists(${DISTDIR}/${PATCHSETFILE})
+IGNORE += Please
+.endif#}
+.if !exists(${DISTDIR}/${PATCHSETFILE})#{
+IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\n
+.endif#}
+IGNORE += Please place the downloaded file(s) in ${DISTDIR}
+IGNORE += \n and restart the build.\n\n
+.endif#}
 
 pre-fetch:
 	@${ECHO_MSG}
