@@ -8,7 +8,7 @@
 PORTNAME=	netrek-COW
 PORTVERSION=	3.00.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://bigbang.astro.indiana.edu/pub/netrek/COW/COW-bin/
+MASTER_SITES=	http://ftp.netrek.org/pub/netrek/clients/cow/COW-bin/old/
 DISTFILES=	COW.3.00pl0.FreeBSD.gz
 
 MAINTAINER=	ports@FreeBSD.org
