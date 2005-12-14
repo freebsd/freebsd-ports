@@ -1,0 +1,20 @@
+--- chaptercheck.orig	Wed Dec 14 09:55:38 2005
++++ chaptercheck	Wed Dec 14 09:56:47 2005
+@@ -100,7 +100,7 @@
+ 			echo "Invalid interval specified, $cSpec is not numeric. Aborting" >&2
+ 			usage
+ 		fi
+-   	chapterList=`seq -s, 0 $interval $maxlen`
++   	chapterList=`seq2 -s 0 -i $interval -e $maxlen | tr " " ","`
+   	else
+    		mode="string"
+    		chapterList="$cSpec"
+@@ -152,7 +152,7 @@
+ 
+          if [ $checkfrac -ne $frac ]; then
+ 	    echo $chapter: fractions not a multiple of $fracInt >&2
+-	    let "errors+=1"
++#	    let "errors+=1"
+          fi
+       fi
+    fi

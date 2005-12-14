@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ ${#} -le 3 ]; then
+  if [ ${#} -eq 2 ]; then
+    start="${1}"
+    increment="1"
+    end="${2}"
+  elif [ ${#} -eq 3 ]; then
+    start="${1}"
+    increment="${2}"
+    end="${3}"
+  fi
+
+  if [ ${start} -eq ${end} ]; then
+    echo "${start}"
+    return 0
+  elif [ ${start} -lt ${end} ]; then
+    exec seq2 -s ${start} -e ${end} -i ${increment}
+  else
+    exec seq2 -s ${end} -e ${start} -i ${increment} | sort -n -r
+  fi
+else
+  return 1
+fi

@@ -1,0 +1,24 @@
+--- dvdtguess.orig	Wed Dec 14 08:49:13 2005
++++ dvdtguess	Wed Dec 14 08:49:58 2005
+@@ -37,17 +37,17 @@
+ #
+ fext=."${tfile##*.}"
+ fBase=$(basename "$tfile" "$fext")
+-spacename=`echo "$fBase" | tr '_' ' ' | tr --squeeze-repeats ' '`
++spacename=`echo "$fBase" | tr '_' ' ' | tr -s ' '`
+ words=`echo "$spacename" | wc -w`
+ for i in `seq 1 $words`; do
+ 	actword=`echo "$spacename" | cut -d' ' -f$i`
+ 	if [ -z "$tstring" ]; then									# if we're at the beginning
+-   	    if [ "$(echo $actword | tr --squeeze-repeats [A-Z] ' ')" != " " ]; then		# if the word is not complete upper-case
+-        	if [ "$(echo $actword | tr --squeeze-repeats [0-9] ' ')" != " " -o ${#actword} -gt 1 ]; then	# and not one numeric digit (e.g. PREMIERE 1, SAT 1, PRO 7)
++   	    if [ "$(echo $actword | tr -s [A-Z] | tr -s ' ')" != " " ]; then		# if the word is not complete upper-case
++        	if [ "$(echo $actword | tr -s [0-9] | tr -s ' ')" != " " -o ${#actword} -gt 1 ]; then	# and not one numeric digit (e.g. PREMIERE 1, SAT 1, PRO 7)
+ 				tstring=$actword								# then begin writing the title
+ 			fi
+ 		fi
+- 	elif [ "$(echo $actword | tr --squeeze-repeats [0-9] ' ')" != " " ] || [ ${#actword} -lt 6 ]; then		# append words to title
++ 	elif [ "$(echo $actword | tr -s [0-9] | tr -s ' ')" != " " ] || [ ${#actword} -lt 6 ]; then		# append words to title
+ 		tstring="$tstring $actword"														# if they are not numeric or have less the 6 digits
+   	fi
+ done
