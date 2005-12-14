@@ -15,8 +15,8 @@ PATCH_SITES=		ftp://ftp2.v6.linux.or.jp/pub/Linux/IPv6-2/netris/ \
 PATCHFILES=		netris-0.5-v6-19991206a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		desmo@bandwidth.org
-COMMENT=	A network head to head version of T*tris
+MAINTAINER=		ports@FreeBSD.org
+COMMENT=		A network head to head version of T*tris
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
