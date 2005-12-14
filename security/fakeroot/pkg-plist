@@ -1,6 +1,12 @@
 bin/faked
 bin/fakeroot
-lib/libfakeroot.so.0
-lib/libfakeroot.so
 lib/libfakeroot.a
+lib/libfakeroot.so
+lib/libfakeroot.so.0
 man/fr/man1/fakeroot.1.gz
+@unexec rmdir %D/man/sv/man1 2>/dev/null || true
+@unexec rmdir %D/man/sv 2>/dev/null || true
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
+@unexec rmdir %D/man/es/man1 2>/dev/null || true
+@unexec rmdir %D/man/es 2>/dev/null || true
