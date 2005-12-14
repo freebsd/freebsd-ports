@@ -17,7 +17,7 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
-DISTVERSION=	3.93
+DISTVERSION=	3.95
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -31,8 +31,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .ifndef BUILD_NMAPFE
 
 MAN1=		nmap.1
-MANLANG=	"" de.ISO8859-1 es.ISO8859-1 fr.ISO8859-1 it.ISO8859-15 \
-		lt.ISO8859-13 pt.ISO8859-1 ru.KOI8-R
+MANLANG=	"" pt.ISO8859-1 pt_BR.ISO8859-1
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
@@ -54,12 +53,11 @@ post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
 
 post-install:
-	@for lang in de.ISO8859-1=german es.ISO8859-1=spanish fr.ISO8859-1=french it.ISO8859-15=italian \
-		lt.ISO8859-13=lithuanian pt.ISO8859-1=portuguese ru.KOI8-R=russian; do \
+	@for lang in pt.ISO8859-1=pt-pt pt_BR.ISO8859-1=pt-br; do \
 		llang="`expr $${lang} : '\([^=]*\)'`"; \
 		elang="`expr $${lang} : '.*=\([^=]*\)'`"; \
 		${MKDIR} ${DESTDIR}${MAN1PREFIX}/man/$${llang}/man1; \
-		${INSTALL_MAN} ${WRKSRC}/docs/nmap_$${elang}.1 \
+		${INSTALL_MAN} ${WRKSRC}/docs/man-$${elang}.1 \
 			${DESTDIR}${MAN1PREFIX}/man/$${llang}/man1/nmap.1; \
 	done
 .ifndef NOPORTDOCS
@@ -80,7 +78,7 @@ PLIST_SUB=	REALPREFIX=${PREFIX}
 MAN1=		nmapfe.1
 MLINKS=		nmapfe.1 xnmap.1
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 
 CONFIGURE_ARGS+=--without-openssl
 
