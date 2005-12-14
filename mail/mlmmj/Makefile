@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/
 
@@ -50,7 +50,7 @@ USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
-MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
+MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.sh.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/mlmmj-make-ml.sh
