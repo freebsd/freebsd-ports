@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cairomm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
