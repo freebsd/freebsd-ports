@@ -10,4 +10,7 @@ share/geonext-%%LANG%%/index.html
 share/geonext-%%LANG%%/license.txt
 share/geonext-%%LANG%%/x.ico
 share/geonext-%%LANG%%/ubt.gif
+share/geonext-%%LANG%%/help_fr.jar
+share/geonext-%%LANG%%/help.jar
+share/geonext-%%LANG%%/geonext-batik.jar
 @dirrm share/geonext-%%LANG%%
