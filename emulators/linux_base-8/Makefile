@@ -114,14 +114,18 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
 
-.if (${ARCH} == "amd64")
-LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
-ARCH=			i386
+.if (${MACHINE_ARCH} == "amd64")
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
 RPMFLAGS+=		--noscripts
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
+
+.if (${ARCH} == "amd64")
+LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
+ARCH=			i386
+.endif
+
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
