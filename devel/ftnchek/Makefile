@@ -16,12 +16,8 @@ COMMENT=	Fortran 77 semantic checking utility
 
 MAN1=		dcl2inc.1 ftnchek.1
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CFLAGS=.*$$|CFLAGS="-DUNIX \$$CFLAGS"|g' ${WRKSRC}/configure
+MAKE_ARGS=	OPT="${CFLAGS}" CC="${CC}"
 
 .include <bsd.port.mk>
