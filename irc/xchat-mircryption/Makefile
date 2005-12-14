@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mircryption
-DISTVERSION=	0.1
+DISTVERSION=	1.1.27
 CATEGORIES=	irc security
 MASTER_SITES=	http://mircryption.sourceforge.net/Downloads/
 PKGNAMEPREFIX=	xchat-
@@ -17,13 +17,12 @@ COMMENT=	A free encryption add-on for the popular XChat irc client
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat2
 
-BROKEN=		Size mismatch
-
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/mircryption/src/xchat/
 #
