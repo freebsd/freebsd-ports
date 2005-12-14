@@ -9,7 +9,7 @@ PORTNAME=	jfk
 PORTVERSION=	0.1.1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://se-linux.inso.tuwien.ac.at/fame/
+MASTER_SITES=	http://relax.ath.cx/jfk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 2D shoot'em up game
