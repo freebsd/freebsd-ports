@@ -1,14 +1,5 @@
---- Makefile.orig	Fri Jul 29 22:30:54 2005
-+++ Makefile	Tue Aug 16 00:48:33 2005
-@@ -37,7 +37,7 @@
- # default definitions; can be overwritten by users
- 
- SHELL = /bin/sh
--INSTALL = install -m 755
-+INSTALL = $(BSD_INSTALL_PROGRAM)
- BUILD_OS := $(shell uname)
- BUILD_ARCH := $(shell uname -m)
- 
+--- Makefile.orig	Sat Dec 10 17:52:43 2005
++++ Makefile	Sat Dec 10 17:56:28 2005
 @@ -74,12 +74,11 @@
    ifndef STRIP
      STRIP = strip
@@ -23,7 +14,27 @@
  else
    prefix = /usr/local
  endif
-@@ -177,7 +176,6 @@
+@@ -97,16 +96,14 @@
+ else
+ ECHO=echo
+ define INSTALL_RULE
+-	$(INSTALL) -m 755 $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
+-	mkdir -p $(mandir)
+-	$(INSTALL) -m 644 doc/$(MANPAGE) $(mandir)
+-	gzip -9f $(mandir)/$(MANPAGE)
++	$(BSD_INSTALL_PROGRAM) $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
++	$(BSD_INSTALL_MAN) doc/$(MANPAGE) $(mandir)
+ endef
+ endif
+ 
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+-mandir = $(exec_prefix)/share/man/man1
++mandir = $(MANPREFIX)/man/man1
+ 
+ X11R6_CFLAGS = -I $(X11R6_INC_DIR)
+ 
+@@ -189,7 +186,6 @@
  all: $(NVIDIA_SETTINGS)
  
  install: $(NVIDIA_SETTINGS)
