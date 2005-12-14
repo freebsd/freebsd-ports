@@ -1874,6 +1874,7 @@ dvdimagecmp	ports/sysutils/dvdimagecmp
 dvdrip		ports/multimedia/dvdrip
 dvdstyler	ports/multimedia/dvdstyler
 dvdtape		ports/sysutils/dvdtape
+dvdwizard	ports/multimedia/dvdwizard
 dvi2tty		ports/print/dvi2tty
 dvi2xx		ports/print/dvi2xx
 dvipdfmx	ports/print/dvipdfmx
