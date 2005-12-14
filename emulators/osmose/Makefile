@@ -8,7 +8,8 @@
 PORTNAME=	osmose
 PORTVERSION=	0.6.30
 CATEGORIES=	emulators
-MASTER_SITES=	http://bcz.emu-france.com/osmose/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	${PORTNAME}-final-src
 
 MAINTAINER=	alejandro@varnet.biz
