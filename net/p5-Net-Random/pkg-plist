@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/Random.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Random/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Random
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

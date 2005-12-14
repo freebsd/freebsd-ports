@@ -466,6 +466,7 @@
     SUBDIR += p5-Net-PcapUtils
     SUBDIR += p5-Net-Ping-External
     SUBDIR += p5-Net-Radius
+    SUBDIR += p5-Net-Random
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-RawSock
     SUBDIR += p5-Net-Rendezvous
