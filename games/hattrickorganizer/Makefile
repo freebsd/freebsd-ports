@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hattrickorganizer
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTVERSION=	1.36
 CATEGORIES=	games java
-MASTER_SITES=	http://www.wow-auctions.net/ho/download/
+MASTER_SITES=	http://www.wow-auctions.net/ho/download/ \
+		http://www.bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	ho_${PORTVERSION:S/.//g}
 
 MAINTAINER=	lars.engels@0x20.net
