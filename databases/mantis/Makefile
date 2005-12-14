@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	mantisbt
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A bug tracking system written in PHP
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/82a41084-6ce7-11da-b90c-000e0c2e438a.html
+
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_APACHE=	yes
