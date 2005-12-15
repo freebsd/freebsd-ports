@@ -87,7 +87,6 @@
     SUBDIR += jcommon
     SUBDIR += jdbcpool
     SUBDIR += jde
-    SUBDIR += jde-emacs20
     SUBDIR += jdk11
     SUBDIR += jdk11-doc
     SUBDIR += jdk12
