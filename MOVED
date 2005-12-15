@@ -2001,3 +2001,15 @@ devel/php5-mcve||2005-12-09|Unsupported in PHP 5.1
 net/php5-yp||2005-12-09|Unsupported in PHP 5.1
 www/php5-mnogosearch||2005-12-09|Unsupported in PHP 5.1
 mail/qmail-smtp_auth+tls||2005-12-12|SMTP_AUTH patch added to qmail-tls port
+astro/setiathome||2005-12-15|SETI@home software migrated to astro/boinc-setiathome
+astro/linux-setiathome||2005-12-15|SETI@home software migrated to astro/boinc-setiathome
+astro/SETIsupport||2005-12-15|SETI@home software migrated, port now obsolete
+astro/fooseti||2005-12-15|SETI@home software migrated, port now obsolete
+astro/gdesklets-seti||2005-12-15|SETI@home software migrated, port now obsolete
+astro/ksetisaver||2005-12-15|SETI@home software migrated, port now obsolete
+astro/ksetispy||2005-12-15|SETI@home software migrated, port now obsolete
+astro/ksetiwatch||2005-12-15|SETI@home software migrated, port now obsolete
+astro/p5-SETI-Stats||2005-12-15|SETI@home software migrated, port now obsolete
+astro/seti_applet||2005-12-15|SETI@home software migrated, port now obsolete
+astro/tkseti||2005-12-15|SETI@home software migrated, port now obsolete
+astro/gkrellmseti||2005-12-15|SETI@home software migrated, port now obsolete
