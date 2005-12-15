@@ -94,7 +94,6 @@
     SUBDIR += netleak
     SUBDIR += netmask
     SUBDIR += netmond
-    SUBDIR += netqc
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
     SUBDIR += netspoc

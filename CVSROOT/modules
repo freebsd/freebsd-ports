@@ -110,7 +110,6 @@ L-Breeder	ports/biology/L-Breeder
 LPRng		ports/sysutils/LPRng
 LPRngTool	ports/sysutils/LPRngTool
 MT		ports/www/MT
-MT-PM		ports/www/MT-PM
 Maaate		ports/audio/Maaate
 MathPlanner	ports/editors/MathPlanner
 MuSE		ports/audio/muse
@@ -436,7 +435,6 @@ archivemail	ports/mail/archivemail
 archivers_rvm	ports/archivers/rvm
 archmage	ports/textproc/archmage
 archmbox	ports/mail/archmbox
-arena		ports/www/arena
 ares		ports/dns/ares
 argouml		ports/devel/argouml
 argp-standalone	ports/devel/argp-standalone
@@ -690,7 +688,6 @@ beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
 beep-media-player	ports/multimedia/beep-media-player
 berkeley-db	ports/java/berkeley-db
-bestfit		ports/misc/bestfit
 bf2c		ports/lang/bf2c
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
@@ -1041,7 +1038,6 @@ cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cduce		ports/lang/cduce
 cedet		ports/devel/cedet
-cedet-emacs20	ports/devel/cedet-emacs20
 cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
 cenon		ports/graphics/cenon
@@ -1768,7 +1764,6 @@ docsis		ports/net-mgmt/docsis
 doctorj		ports/devel/doctorj
 documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
-dog		ports/misc/dog
 dokuwiki	ports/www/dokuwiki
 dolly		ports/sysutils/dolly
 dolly+		ports/sysutils/dolly+
@@ -2929,7 +2924,6 @@ gkrellm-gamma	ports/misc/gkrellm-gamma
 gkrellm-gift	ports/net/gkrellm-gift
 gkrellm-gtodo	ports/deskutils/gkrellm-gtodo
 gkrellm-helium	ports/misc/gkrellm-helium
-gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm-reminder2	ports/deskutils/gkrellm-reminder2
 gkrellm-trayicons	ports/sysutils/gkrellm-trayicons
 gkrellm-xkb	ports/misc/gkrellm-xkb
@@ -2965,7 +2959,6 @@ gkrellshoot	ports/misc/gkrellshoot
 gkrellshoot2	ports/misc/gkrellshoot2
 gkrellsun	ports/astro/gkrellsun
 gkrelltop	ports/sysutils/gkrelltop
-gkrellweather	ports/misc/gkrellweather
 gkrellweather2	ports/misc/gkrellweather2
 gksu		ports/sysutils/gksu
 gkx86info	ports/misc/gkx86info
@@ -3588,7 +3581,6 @@ gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
-gvd		ports/devel/gvd
 gview		ports/graphics/gview
 gwave		ports/cad/gwave
 gwee		ports/security/gwee
@@ -4131,7 +4123,6 @@ ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
 ja-anthy	ports/japanese/anthy
 ja-aterm	ports/japanese/aterm
-ja-balsa	ports/japanese/balsa
 ja-bible_names-fpw	ports/japanese/bible_names-fpw
 ja-bookview	ports/japanese/bookview
 ja-bugzilla	ports/japanese/bugzilla
@@ -4406,7 +4397,6 @@ ja-postgresql-tcltk	ports/japanese/postgresql-tcltk
 ja-postgresql73-man	ports/japanese/postgresql73-man
 ja-postgresql74-man	ports/japanese/postgresql74-man
 ja-postgresql80-man	ports/japanese/postgresql80-man
-ja-ppxp		ports/japanese/ppxp
 ja-prime	ports/japanese/prime
 ja-prime-dict	ports/japanese/prime-dict
 ja-prime-el	ports/japanese/prime-el
@@ -4482,7 +4472,6 @@ ja-timidity++-slang	ports/japanese/timidity++-slang
 ja-timidity++-tcltk	ports/japanese/timidity++-tcltk
 ja-tk42		ports/japanese/tk42
 ja-tk80		ports/japanese/tk80
-ja-tkdesk	ports/japanese/tkdesk
 ja-tkhonyaku	ports/japanese/tkhonyaku
 ja-tkstep80	ports/japanese/tkstep80
 ja-today	ports/japanese/today
@@ -5452,7 +5441,6 @@ libgutenfetch	ports/devel/libgutenfetch
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
-libhtmlparse	ports/textproc/libhtmlparse
 libhttpd-persistent	ports/www/libhttpd-persistent
 libical		ports/devel/libical
 libiconv	ports/converters/libiconv
@@ -5734,7 +5722,6 @@ linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
 linux-edonkey-core	ports/net/linux-edonkey-core
 linux-edonkey-server	ports/net/linux-edonkey-server
-linux-edonkey-tool-list	ports/misc/linux-edonkey-tool-list
 linux-edonkey-tool-recovermet	ports/misc/linux-edonkey-tool-recovermet
 linux-enemyterritory	ports/games/linux-enemyterritory
 linux-enemyterritory-fortress	ports/games/linux-enemyterritory-fortress
@@ -6789,7 +6776,6 @@ netpbm		ports/graphics/netpbm
 netperf		ports/benchmarks/netperf
 netpipe		ports/benchmarks/netpipe
 netpipes	ports/net/netpipes
-netqc		ports/net-mgmt/netqc
 netrek-BRMH-bin	ports/games/netrek-BRMH-bin
 netrek-COW3-bin	ports/games/netrek-COW3-bin
 netrexx		ports/java/netrexx
@@ -9713,7 +9699,6 @@ pl-kde3-i18n	ports/polish/kde3-i18n
 pl-koffice-i18n	ports/polish/koffice-i18n
 pl-libtlen	ports/polish/libtlen
 pl-sap		ports/polish/sap
-pl-sms		ports/polish/sms
 pl-sms2		ports/polish/sms2
 pl-tleenx2	ports/polish/tleenx2
 pl-trf		ports/polish/trf
@@ -10028,7 +10013,6 @@ ppptraf		ports/net/ppptraf
 ppracer		ports/games/ppracer
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
-ppxp		ports/net/ppxp
 prayer		ports/mail/prayer
 prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
@@ -10937,7 +10921,6 @@ ru-koi2koi	ports/russian/koi2koi
 ru-koi8r-ps	ports/russian/koi8r-ps
 ru-ksocrat	ports/russian/ksocrat
 ru-messarge	ports/russian/messarge
-ru-mtc		ports/russian/mtc
 ru-mueller-dic	ports/russian/mueller-dic
 ru-muttprint	ports/russian/muttprint
 ru-napster	ports/russian/napster
@@ -12210,7 +12193,6 @@ tkXwin		ports/x11/tkXwin
 tkabber		ports/net-im/tkabber
 tkabber-devel	ports/net-im/tkabber-devel
 tkcon		ports/devel/tkcon
-tkcron		ports/misc/tkcron
 tkcvs		ports/devel/tkcvs
 tkdesk		ports/x11-fm/tkdesk
 tkdiff		ports/textproc/tkdiff
@@ -12530,7 +12512,6 @@ userneu-devel	ports/sysutils/userneu-devel
 usogres		ports/databases/usogres
 usrinfo		ports/sysutils/usrinfo
 ustl		ports/devel/ustl
-utah-glx	ports/graphics/utah-glx
 utcount		ports/sysutils/utcount
 utf8conv	ports/converters/utf8conv
 utf8locale	ports/misc/utf8locale
@@ -12596,7 +12577,6 @@ vi-aspell	ports/vietnamese/aspell
 vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
-vi-vi2vn	ports/vietnamese/vi2vn
 vi-vis2u	ports/vietnamese/vis2u
 vi-vn7to8	ports/vietnamese/vn7to8
 vi-vnconvert	ports/vietnamese/vnconvert
@@ -12890,7 +12870,6 @@ wmlongrun	ports/sysutils/wmlongrun
 wmlpq		ports/print/wmlpq
 wmmail		ports/mail/wmmail
 wmmaiload	ports/mail/wmmaiload
-wmmand		ports/misc/wmmand
 wmmatrix	ports/x11/wmmatrix
 wmmemfree	ports/sysutils/wmmemfree
 wmmemload	ports/sysutils/wmmemload
@@ -13249,7 +13228,6 @@ xhtml-11	ports/textproc/xhtml-11
 xhtml-basic	ports/textproc/xhtml-basic
 xhtml-modularization	ports/textproc/xhtml-modularization
 xhtml1-xsd	ports/textproc/xhtml1-xsd
-xicq		ports/net-im/xicq
 xidle		ports/x11/xidle
 ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin

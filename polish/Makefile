@@ -15,7 +15,6 @@
     SUBDIR += libtlen
     SUBDIR += php_doc
     SUBDIR += sap
-    SUBDIR += sms
     SUBDIR += sms2
     SUBDIR += tleenx2
     SUBDIR += trf

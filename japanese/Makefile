@@ -21,7 +21,6 @@
     SUBDIR += another-htmllint
     SUBDIR += anthy
     SUBDIR += aterm
-    SUBDIR += balsa
     SUBDIR += bible_names-fpw
     SUBDIR += bookview
     SUBDIR += bugzilla
@@ -297,7 +296,6 @@
     SUBDIR += postgresql73-man
     SUBDIR += postgresql74-man
     SUBDIR += postgresql80-man
-    SUBDIR += ppxp
     SUBDIR += prime
     SUBDIR += prime-dict
     SUBDIR += prime-el
@@ -374,7 +372,6 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += tk42
     SUBDIR += tk80
-    SUBDIR += tkdesk
     SUBDIR += tkhonyaku
     SUBDIR += tkstep80
     SUBDIR += today

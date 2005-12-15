@@ -570,7 +570,6 @@
     SUBDIR += tulip
     SUBDIR += uDrawGraph
     SUBDIR += urt
-    SUBDIR += utah-glx
     SUBDIR += vcg
     SUBDIR += vertex
     SUBDIR += vid

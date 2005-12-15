@@ -20,7 +20,6 @@
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
-    SUBDIR += bestfit
     SUBDIR += bibletime
     SUBDIR += biblical-curse
     SUBDIR += bidwatcher
@@ -64,7 +63,6 @@
     SUBDIR += display
     SUBDIR += dnetc
     SUBDIR += documancer
-    SUBDIR += dog
     SUBDIR += dotfile
     SUBDIR += dtach
     SUBDIR += dvorak7min
@@ -102,7 +100,6 @@
     SUBDIR += git
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-helium
-    SUBDIR += gkrellm-reminder
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
@@ -114,7 +111,6 @@
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
     SUBDIR += gkrellshoot2
-    SUBDIR += gkrellweather
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info
     SUBDIR += gkx86info2
@@ -287,7 +283,6 @@
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += lingoteach
-    SUBDIR += linux-edonkey-tool-list
     SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-opengroupware
     SUBDIR += localedata
@@ -415,7 +410,6 @@
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += thailocale
-    SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkregexp
@@ -446,7 +440,6 @@
     SUBDIR += wmfirew
     SUBDIR += wminfo
     SUBDIR += wmjulia
-    SUBDIR += wmmand
     SUBDIR += wmpal
     SUBDIR += wmproxyper
     SUBDIR += wmtunlo
