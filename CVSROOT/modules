@@ -11285,6 +11285,7 @@ scand		ports/net/scand
 scandoc		ports/devel/scandoc
 scanlogd	ports/security/scanlogd
 scanssh		ports/security/scanssh
+scapy		ports/net/scapy
 scare		ports/games/scare
 scavenge	ports/dns/scavenge
 sccmilter	ports/mail/sccmilter
