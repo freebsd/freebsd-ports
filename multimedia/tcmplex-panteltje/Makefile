@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://ip51cf87c4.direct-adsl.nl/panteltje/dvd/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Re-write of the A/V multiplexer from the transcode distribution
 
 ALL_TARGET=	a.out
