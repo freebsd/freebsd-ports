@@ -7,6 +7,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,12 +16,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
+# vpopmail installation directory
+#
+# NB: change this with extreme caution!  For instance, if vpopmail is not
+# already installed in this directory, building the vpopmail port as
+# a dependency will NOT automatically cause it to be installed there!
+
+VPOPMAIL_DIR?=	${LOCALBASE}/vpopmail
+
 BUILD_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
-	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
-	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
 .if defined(WITHOUT_IDX)
 BUILD_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
@@ -92,7 +101,7 @@ CONFIGURE_ARGS+=	\
 	--enable-htmllibdir=${DATADIR} \
 	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-cgipath=${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
-	--enable-vpopmaildir=${LOCALBASE}/vpopmail \
+	--enable-vpopmaildir=${VPOPMAIL_DIR} \
 	--enable-autoresponder-path=${LOCALBASE}/bin \
 	--enable-ezmlmdir=${LOCALBASE}/bin
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
