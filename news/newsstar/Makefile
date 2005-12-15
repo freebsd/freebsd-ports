@@ -1,6 +1,6 @@
 # New ports collection makefile for:	newsstar
 # Date created:				9 May 2004
-# Whom:					Andrey Slusar <vasallia@ukr.net>
+# Whom:					Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 .if defined(WITHOUT_SSL)

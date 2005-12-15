@@ -1,6 +1,6 @@
 # New ports collection makefile for:	s-news
 # Date created:				Jul 13 13:29:47 EEST 2004
-# Whom:					Andrey Slusar <vasallia@ukr.net>
+# Whom:					Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.lost.org.uk/
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

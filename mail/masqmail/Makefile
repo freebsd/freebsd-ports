@@ -1,6 +1,6 @@
 # Ports collection makefile for:	masqmail
 # Date created:				4 Apr 2004
-# Whom:					Andrey Slusar <vasallia@ukr.net>
+# Whom:					Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://innominate.org/kurth/masqmail/download/
 DISTNAME=	MasqMail-${PORTVERSION}
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
 CONFLICTS=	masqmail-0.2*

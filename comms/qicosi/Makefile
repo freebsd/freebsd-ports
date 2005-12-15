@@ -1,6 +1,6 @@
 # New ports collection makefile for:	qicosi
 # Date created:				26 May 2004
-# Whom:					Andrey Slusar <vasallia@ukr.net>
+# Whom:					Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://193.232.248.13:8080/qicoxe/
 DISTNAME=	qico-${PORTVERSION}xe
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Ip/modem fido compatible mailer
 
 USE_BZIP2=	yes
