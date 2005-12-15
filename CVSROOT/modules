@@ -11761,7 +11761,6 @@ sqsh		ports/databases/sqsh
 squall		ports/net/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
-squeuer		ports/astro/squeuer
 squid		ports/www/squid
 squid_radius_auth	ports/www/squid_radius_auth
 squidclam	ports/security/squidclam
