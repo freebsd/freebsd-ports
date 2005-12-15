@@ -18,7 +18,7 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_PHP=	mysql pcre
+USE_PHP=	mysql pcre session
 
 SUB_LIST+=	"MYADMDIR=${MYADMDIR}" \
 		"PKGNAME=${PKGNAME}"
