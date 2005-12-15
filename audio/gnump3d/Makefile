@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	gnump3.sh
+USE_RC_SUBR=	gnump3d.sh
 SUB_LIST+=	PERL=${PERL}
 
 MAN1=		gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
