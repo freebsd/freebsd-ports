@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.04000
+PORTVERSION=	0.04001
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSTROUT
+MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
-DISTNAME=       ${PORTNAME}-0.04
+#DISTNAME=       ${PORTNAME}-0.04001
 
 MAINTAINER=	lars@balker.dk
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
+BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
