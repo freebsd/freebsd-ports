@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	SPE
-PORTVERSION=	0.8.0c
+PORTVERSION=	0.8.1.b
 CATEGORIES=	editors devel python
 MASTER_SITES=	http://download.berlios.de/python/ \
 		${MASTER_SITE_SOURCEFORGE}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/[a-z]$/.&/g}-wx2.6.1.0.-bl2.35
+DISTNAME=	${PORTNAME}-${PORTVERSION}-wx2.6.1.0.-bl2.35
 
 MAINTAINER=	nivit@email.it
 COMMENT=	Stani's Python Editor

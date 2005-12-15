@@ -39,6 +39,15 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/preferencesDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/preferencesDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/preferencesDialog.pyo
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.py
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyc
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyo
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.py
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.pyc
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.pyo
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog_exit.wxg
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/separatorDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/separatorDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/separatorDialog.pyo
@@ -87,6 +96,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/info.py
 %%PYTHON_SITELIBDIR%%/_spe/info.pyc
 %%PYTHON_SITELIBDIR%%/_spe/info.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/Kopie van spe_winpdb.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/Kopie van spe_winpdb.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/Kopie van spe_winpdb.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/Pycheck.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/Pycheck.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/Pycheck.pyo
@@ -221,6 +233,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/plugins/pychecker2/util.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/pychecker2/util.pyc
 %%PYTHON_SITELIBDIR%%/_spe/plugins/pychecker2/util.pyo
+%%PYTHON_SITELIBDIR%%/_spe/plugins/spe_winpdb.py
+%%PYTHON_SITELIBDIR%%/_spe/plugins/spe_winpdb.pyc
+%%PYTHON_SITELIBDIR%%/_spe/plugins/spe_winpdb.pyo
 %%PYTHON_SITELIBDIR%%/_spe/plugins/winpdb/PKG-INFO
 %%PYTHON_SITELIBDIR%%/_spe/plugins/winpdb/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/plugins/winpdb/__init__.pyc
@@ -822,7 +837,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/browser.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/class.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/comment.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/compiled.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/debug.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/dedent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/def.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/documentinfo.png
@@ -833,14 +848,10 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/editpaste.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/empty.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/encoding.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/eraser.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/error.gif
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/exec.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/exit.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/explore.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/favicon.ico
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/file_properties.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/fileclose.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/filefind.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/filenew.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/fileopen.png
@@ -852,33 +863,25 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/folder_delete.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/folder_new.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/folder_open.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/folder_tar.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/font_type1.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/forward.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/goto.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/help.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/icon.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/icon_py.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/image.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/import.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/indent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char_win.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/kmail.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/locals.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/mozilla.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/note.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/notes.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/pdf.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/pyCrust.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/pyCrust_small.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/pychecker.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/recent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/redo.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/reload.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/remember.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/run.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/run_debug.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/separator.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/session.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/shell.png
@@ -887,13 +890,11 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/spe.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/spe_about.jpg
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/spe_about.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/synaptic.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/tab_left.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/tab_right.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/tar.png
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/test/index.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber.gif
-%%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber_disabled.gif
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber_Layer 1.gif
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/throbber_still.gif
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/thumbnail.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/todo.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/uml.png
@@ -902,6 +903,8 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/view_left_right.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/view_top_bottom.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/viewmag.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/warning.gif
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/workspace_save.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/install.jpg
 %%PYTHON_SITELIBDIR%%/_spe/sm/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/__init__.pyc
@@ -1063,7 +1066,6 @@ bin/spe
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/shortcuts
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/sidebar
-@dirrm %%PYTHON_SITELIBDIR%%/_spe/skins/default/test
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/skins/default
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/skins
 @dirrm %%PYTHON_SITELIBDIR%%/_spe/sm/wxp
