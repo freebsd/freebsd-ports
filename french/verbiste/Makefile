@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
