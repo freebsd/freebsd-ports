@@ -121,7 +121,6 @@ OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
 R		ports/math/R
-SETIsupport	ports/astro/SETIsupport
 STk		ports/lang/STk
 Sather		ports/lang/Sather
 SciPlot		ports/graphics/SciPlot
@@ -2447,7 +2446,6 @@ foomatic-db	ports/print/foomatic-db
 foomatic-db-engine	ports/print/foomatic-db-engine
 foomatic-db-hpijs	ports/print/foomatic-db-hpijs
 foomatic-filters	ports/print/foomatic-filters
-fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
 foremost	ports/sysutils/foremost
 forg		ports/net/forg
@@ -2791,7 +2789,6 @@ gdesklets-multitail	ports/sysutils/gdesklets-multitail
 gdesklets-praytime	ports/x11-clocks/gdesklets-praytime
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-sensor-displayconstraints	ports/deskutils/gdesklets-sensor-displayconstraints
-gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist	ports/x11/gdesklets-tasklist
 gdesklets-xmms	ports/audio/gdesklets-xmms
@@ -2955,7 +2952,6 @@ gkrellmoon	ports/astro/gkrellmoon
 gkrellmoon2	ports/astro/gkrellmoon2
 gkrellmouse	ports/sysutils/gkrellmouse
 gkrellmqst	ports/net/gkrellmqst
-gkrellmseti	ports/astro/gkrellmseti
 gkrellmss	ports/audio/gkrellmss
 gkrellmss2	ports/audio/gkrellmss2
 gkrellmvolume	ports/audio/gkrellmvolume
@@ -5123,9 +5119,6 @@ krss		ports/deskutils/krss
 krusader	ports/x11-fm/krusader
 kscope		ports/devel/kscope
 kseg		ports/math/kseg
-ksetisaver	ports/astro/ksetisaver
-ksetispy	ports/astro/ksetispy
-ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 kshowmail	ports/mail/kshowmail
 ksig		ports/misc/ksig
@@ -5807,7 +5800,6 @@ linux-relview	ports/math/linux-relview
 linux-runrev	ports/devel/linux-runrev
 linux-sdl12	ports/devel/linux-sdl12
 linux-sdl_image	ports/graphics/linux-sdl_image
-linux-setiathome	ports/astro/linux-setiathome
 linux-spheresofchaos-demo	ports/games/linux-spheresofchaos-demo
 linux-steam	ports/games/linux-steam
 linux-sun-jdk12	ports/java/linux-sun-jdk12
@@ -8603,7 +8595,6 @@ p5-Resources	ports/devel/p5-Resources
 p5-Roman	ports/math/p5-Roman
 p5-SAVI-Perl	ports/security/p5-SAVI-Perl
 p5-SDL		ports/devel/p5-SDL
-p5-SETI-Stats	ports/astro/p5-SETI-Stats
 p5-SGMLSpm	ports/textproc/p5-SGMLSpm
 p5-SHA		ports/security/p5-SHA
 p5-SNMP		ports/net-mgmt/p5-SNMP
@@ -11436,8 +11427,6 @@ ses		ports/math/ses
 session2	ports/www/session2
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
-seti_applet	ports/astro/seti_applet
-setiathome	ports/astro/setiathome
 setquota	ports/sysutils/setquota
 settitle	ports/x11/settitle
 sex		ports/games/sex
@@ -12242,7 +12231,6 @@ tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
 tkrunit		ports/misc/tkrunit
 tkscanfax	ports/comms/tkscanfax
-tkseti		ports/astro/tkseti
 tkshape		ports/x11-toolkits/tkshape
 tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
