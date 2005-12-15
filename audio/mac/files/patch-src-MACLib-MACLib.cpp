@@ -1,5 +1,5 @@
---- src/MACLib/MACLib.cpp.orig	Wed May 12 08:56:22 2004
-+++ src/MACLib/MACLib.cpp	Mon Aug  9 20:27:19 2004
+--- src/MACLib/MACLib.cpp.orig	Wed May  4 15:35:33 2005
++++ src/MACLib/MACLib.cpp	Mon Nov 28 01:45:59 2005
 @@ -62,7 +62,7 @@
          pExtension--;
  

@@ -18,6 +18,7 @@ include/mac/APELink.h
 include/mac/APETag.h
 include/mac/MACLib.h
 include/mac/MACProgressHelper.h
+include/mac/MACUtils.h
 @dirrm include/mac
 lib/libmac.so.2
 lib/libmac.so
