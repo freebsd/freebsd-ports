@@ -1,6 +1,0 @@
-fooseti is a small GTK+ frontend to SETI@Home.  It can display your total
-CPU time, number of packets completed and the average time to complete them,
-as well as the status of the current packet.
-
-- Pete
-petef@databits.net

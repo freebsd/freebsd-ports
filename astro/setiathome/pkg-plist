@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-libexec/%%PREFX%%setiathome%%SUFX%%.bin
-sbin/%%PREFX%%setiathome%%SUFX%%
-@unexec if cmp -s %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample; then rm -f %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf; fi
-etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample
-@exec [ -f %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf ] || cp %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf
-etc/rc.d/%%PREFX%%setiathome%%SUFX%%.sh
-%%X11PORTS%%bin/%%PREFX%%xsetiathome%%SUFX%%

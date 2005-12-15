@@ -3,30 +3,22 @@
 
     COMMENT = Astronomical ports
 
-    SUBDIR += SETIsupport
     SUBDIR += accrete
     SUBDIR += boinc-setiathome
     SUBDIR += celestia
     SUBDIR += cfitsio
     SUBDIR += dgpsip
     SUBDIR += ephem
-    SUBDIR += fooseti
     SUBDIR += gdesklets-goodweather
-    SUBDIR += gdesklets-seti
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2
-    SUBDIR += gkrellmseti
     SUBDIR += gkrellsun
     SUBDIR += glunarclock
     SUBDIR += gpsdrive
     SUBDIR += gpsman
     SUBDIR += jday
-    SUBDIR += ksetisaver
-    SUBDIR += ksetispy
-    SUBDIR += ksetiwatch
     SUBDIR += libnova
-    SUBDIR += linux-setiathome
     SUBDIR += luna
     SUBDIR += match
     SUBDIR += mymoon
@@ -45,7 +37,6 @@
     SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
-    SUBDIR += p5-SETI-Stats
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3
@@ -55,8 +46,6 @@
     SUBDIR += roadmap
     SUBDIR += saoimage
     SUBDIR += sattrack
-    SUBDIR += seti_applet
-    SUBDIR += setiathome
     SUBDIR += sky2000
     SUBDIR += spacechart
     SUBDIR += squeuer
@@ -66,7 +55,6 @@
     SUBDIR += stars
     SUBDIR += stellarium
     SUBDIR += sunclock
-    SUBDIR += tkseti
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
     SUBDIR += wmmoonclock
