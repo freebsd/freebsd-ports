@@ -82,8 +82,7 @@ NVVERSION=	7174
 PORTREVISION=	2
 EXTRA_PATCHES+=	${FILESDIR}/6113-patch-lib::Makefile
 .else
-NVVERSION=	7676
-PORTREVISION=	1
+NVVERSION=	8174
 EXTRA_PATCHES+=	${FILESDIR}/7667-*
 .endif
 .if ${OSVERSION} >= 600033
@@ -144,9 +143,16 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/define (NV_SUPPORT_LINUX_COMPAT)/undef \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-	${REINPLACE_CMD} -E 's/(extension).*/\1/ ; /bin/d' ${WRKSRC}/x11/Makefile
+	${REINPLACE_CMD} -E 's/(extension).*/\1/ ; /bin/d ; /man/d' \
+		${WRKSRC}/x11/Makefile
 
 post-install:
+# pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
+.if ${NVVERSION} < 8174
+	@${REINPLACE_CMD} '/libnvidia-cfg/d ; /html/d' ${TMPPLIST}
+.else
+	@${REINPLACE_CMD} '/README\.Linux/d' ${TMPPLIST}
+.endif
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .if ${OSVERSION} < 500000
 .for dev in 0 1 2 3
