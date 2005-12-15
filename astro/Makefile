@@ -48,7 +48,6 @@
     SUBDIR += sattrack
     SUBDIR += sky2000
     SUBDIR += spacechart
-    SUBDIR += squeuer
     SUBDIR += sscalc
     SUBDIR += stardates
     SUBDIR += starplot
