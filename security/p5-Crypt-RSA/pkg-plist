@@ -1,22 +1,24 @@
-%%SITE_PERL%%/Crypt/RSA/Key.pm
-%%SITE_PERL%%/Crypt/RSA/SS/PSS.pm
-%%SITE_PERL%%/Crypt/RSA/SS/PKCS1v15.pm
-%%SITE_PERL%%/Crypt/RSA/ES/OAEP.pm
-%%SITE_PERL%%/Crypt/RSA/ES/PKCS1v15.pm
-%%SITE_PERL%%/Crypt/RSA/Primitives.pm
-%%SITE_PERL%%/Crypt/RSA/Key/Private/SSH.pm
-%%SITE_PERL%%/Crypt/RSA/Key/Private.pm
-%%SITE_PERL%%/Crypt/RSA/Key/Public/SSH.pm
-%%SITE_PERL%%/Crypt/RSA/Key/Public.pm
+%%SITE_PERL%%/Crypt/RSA.pm
 %%SITE_PERL%%/Crypt/RSA/DataFormat.pm
 %%SITE_PERL%%/Crypt/RSA/Debug.pm
+%%SITE_PERL%%/Crypt/RSA/ES/OAEP.pm
+%%SITE_PERL%%/Crypt/RSA/ES/PKCS1v15.pm
 %%SITE_PERL%%/Crypt/RSA/Errorhandler.pm
-%%SITE_PERL%%/Crypt/RSA.pm
+%%SITE_PERL%%/Crypt/RSA/Key.pm
+%%SITE_PERL%%/Crypt/RSA/Key/Private.pm
+%%SITE_PERL%%/Crypt/RSA/Key/Private/SSH.pm
+%%SITE_PERL%%/Crypt/RSA/Key/Public.pm
+%%SITE_PERL%%/Crypt/RSA/Key/Public/SSH.pm
+%%SITE_PERL%%/Crypt/RSA/Primitives.pm
+%%SITE_PERL%%/Crypt/RSA/SS/PKCS1v15.pm
+%%SITE_PERL%%/Crypt/RSA/SS/PSS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/.packlist
-@dirrm %%SITE_PERL%%/Crypt/RSA/ES
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Private
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Public
-@dirrm %%SITE_PERL%%/Crypt/RSA/Key
-@dirrm %%SITE_PERL%%/Crypt/RSA/SS
-@dirrm %%SITE_PERL%%/Crypt/RSA
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Crypt/RSA/SS
+@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Public
+@dirrm %%SITE_PERL%%/Crypt/RSA/Key/Private
+@dirrm %%SITE_PERL%%/Crypt/RSA/Key
+@dirrm %%SITE_PERL%%/Crypt/RSA/ES
+@dirrm %%SITE_PERL%%/Crypt/RSA
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
