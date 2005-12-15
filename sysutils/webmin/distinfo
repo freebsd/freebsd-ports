@@ -1,3 +1,6 @@
 MD5 (webmin-1.250.tar.gz) = 521fcf66588f0c0c5cca229b932820fd
 SHA256 (webmin-1.250.tar.gz) = 961b6b6873c8e8683134326eaec31a66a68a929caaed3f14a8ad92b387ed9af3
 SIZE (webmin-1.250.tar.gz) = 8928214
+MD5 (acl-1.250-2.wbm.gz) = 94116fd6050ae56e4ae072ba29228fed
+SHA256 (acl-1.250-2.wbm.gz) = 951ec1c16621efb1bbb3245540ab474535a6e1b0b19c5ff978d05098227ca9e2
+SIZE (acl-1.250-2.wbm.gz) = 255384
