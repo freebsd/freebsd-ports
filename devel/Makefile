@@ -506,6 +506,7 @@
     SUBDIR += libpci
     SUBDIR += libpdel
     SUBDIR += libpeak
+    SUBDIR += libpperl
     SUBDIR += libredblack
     SUBDIR += libshbuf
     SUBDIR += libshhmsg

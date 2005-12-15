@@ -1,0 +1,2 @@
+libpperl is a library abstracting the embedded perl interface so as to
+transparently handle as many of the hairy edge cases as possible.
