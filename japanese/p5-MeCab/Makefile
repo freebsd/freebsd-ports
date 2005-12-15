@@ -22,8 +22,8 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+.if ${PERL_LEVEL} < 500600
+IGNORE=         requires Perl 5.6.0 or above
 .endif
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
