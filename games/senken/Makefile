@@ -8,7 +8,8 @@ PORTNAME=	senken
 PORTVERSION=	0.3.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A city simulation game
