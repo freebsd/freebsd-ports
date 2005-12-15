@@ -42,7 +42,8 @@ CONFIGURE_ARGS+=	--enable-apc-mmap
 CONFIGURE_ARGS+=	--enable-apc-sem
 .endif
 
-.if defined(WITH_PHP4_OPT) && ${PHP_VER} == 4
+.if defined(WITH_PHP4_OPT)
+.if ${PHP_VER} == 4
 .if exists(${LOCALBASE}/include/apache/httpd.h)
 CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
 .elif exists(${LOCALBASE}/include/apache2/httpd.h)
@@ -53,12 +54,13 @@ CFLAGS+=	-I${LOCALBASE}/include/apache21 -DAPC_PHP4_STAT
 CFLAGS+=	-I${LOCALBASE}/include/apache22 -DAPC_PHP4_STAT
 .endif
 .else
-pre-extract:
+pre-configure:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "*** WARNING ***"
 	@${ECHO_CMD} "This optimization is only for PHP4. PHP5 or newer does not need it"
 	@${ECHO_CMD} "I will continue instalation..."
 	@${ECHO_CMD}
+.endif
 .endif
 
 post-install:
