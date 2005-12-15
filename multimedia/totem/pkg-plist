@@ -59,11 +59,22 @@ share/gnome/help/totem/ru/figures/totem_screenshot.png
 share/gnome/help/totem/ru/figures/totem_start_window.png
 share/gnome/help/totem/ru/legal.xml
 share/gnome/help/totem/ru/totem.xml
+share/gnome/help/totem/uk/figures/totem_next_button.png
+share/gnome/help/totem/uk/figures/totem_pause_button.png
+share/gnome/help/totem/uk/figures/totem_play_button.png
+share/gnome/help/totem/uk/figures/totem_previous_button.png
+share/gnome/help/totem/uk/figures/totem_show_playlist_button.png
+share/gnome/help/totem/uk/figures/totem_start_window.png
+share/gnome/help/totem/uk/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/uk/figures/totem_volume_mute_button.png
+share/gnome/help/totem/uk/legal.xml
+share/gnome/help/totem/uk/totem.xml
 share/gnome/omf/totem/totem-C.omf
 share/gnome/omf/totem/totem-de.omf
 share/gnome/omf/totem/totem-es.omf
 share/gnome/omf/totem/totem-fr.omf
 share/gnome/omf/totem/totem-ru.omf
+share/gnome/omf/totem/totem-uk.omf
 share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
 share/gnome/totem/filmholes-big-left.png
@@ -154,6 +165,8 @@ share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/totem
 @dirrm share/gnome/omf/totem
+@dirrm share/gnome/help/totem/uk/figures
+@dirrm share/gnome/help/totem/uk
 @dirrm share/gnome/help/totem/ru/figures
 @dirrm share/gnome/help/totem/ru
 @dirrm share/gnome/help/totem/fr/figures
