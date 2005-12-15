@@ -1,6 +1,6 @@
 # New ports collection makefile for:    itraxp
 # Date created:         Thu Sep 16 16:45:51 UTC 2004
-# Whom:                 Andrey Slusar <anrays@gmail.com>
+# Whom:                 Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	itraxpl
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Advanced Perl supporting FTN messages tracker
 
 USE_GMAKE=	yes

@@ -1,5 +1,5 @@
 # New ports collection makefile for: fidogateds
-# Whom:                 Andrey Slusar <vasallia@ukr.net>
+# Whom:                 Andrey Slusar <anray@FreeBSD.org>
 # Date created:         9 Feb 2004
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	rusfidogate
 PKGNAMESUFFIX=		-ds
 DISTNAME=		fidogate${PORTVERSION}ds
 
-MAINTAINER=		anrays@gmail.com
+MAINTAINER=		anray@FreeBSD.org
 COMMENT=		Fido-Internet Gateway and Tosser
 
 .if !defined(WITHOUT_INN)

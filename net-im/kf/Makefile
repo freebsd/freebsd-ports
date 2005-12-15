@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kf
 # Date created:		Tue Oct 19 01:48:30 UTC 2004
-# Whom:			Andrey Slusar <anray@inet.ua>
+# Whom:			Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.5.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/kf/
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth

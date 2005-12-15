@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libpcd
 # Date created:		2004-08-23
-# Whom:			Andrey Slusar <anray@inet.ua>
+# Whom:			Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/libpcd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	A library for reading PhotoCD images
 
 USE_GMAKE=	yes

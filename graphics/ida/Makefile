@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ida
 # Date created:				Thu Aug 19 21:13:58 UTC 2004
-# Whom:					Andrey Slusar <anray@inet.ua>
+# Whom:					Andrey Slusar <anray@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
 
 OPTIONS=	LIBEXIF "Build with libexif" on

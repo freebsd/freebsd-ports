@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	binkleyforce
 PKGNAMESUFFIX=	-kst
 DISTNAME=	${PORTNAME}-0.22.8.kst7
 
-MAINTAINER=	anrays@gmail.com
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_GMAKE=	yes
