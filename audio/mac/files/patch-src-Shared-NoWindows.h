@@ -1,6 +1,6 @@
---- src/Shared/NoWindows.h.orig	Wed May 12 09:00:17 2004
-+++ src/Shared/NoWindows.h	Mon Aug  9 20:28:34 2004
-@@ -50,7 +50,7 @@
+--- src/Shared/NoWindows.h.orig	Tue May  3 10:05:03 2005
++++ src/Shared/NoWindows.h	Mon Nov 28 01:47:00 2005
+@@ -65,7 +65,7 @@
  
  #include <locale.h> 
  
