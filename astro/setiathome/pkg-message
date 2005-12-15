@@ -1,7 +1,0 @@
-****  %%PREFIX%%/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf may be edited
-      to tune some startup variables such as `seti_nice' defaulted to
-      15 and `seti_maxprocs' defaulted to your number of processors.
-****  NOTE: FreeBSD 5.x does support FreeBSD 4.0 binaries by default.
-      To run setiathome, you must have the following line to your
-      kernel configuration file (/sys/i386/conf/<YOUR_KERNEL>) :
-          options COMPAT_FREEBSD4    # Compatible with FreeBSD 4.x
