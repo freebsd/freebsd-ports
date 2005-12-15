@@ -104,7 +104,6 @@
     SUBDIR += tmsnc
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
-    SUBDIR += xicq
     SUBDIR += ymessenger
     SUBDIR += ysm
 

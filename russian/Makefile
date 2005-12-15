@@ -18,7 +18,6 @@
     SUBDIR += ksocrat
     SUBDIR += libcyrillic
     SUBDIR += messarge
-    SUBDIR += mtc
     SUBDIR += mueller-dic
     SUBDIR += muttprint
     SUBDIR += napster

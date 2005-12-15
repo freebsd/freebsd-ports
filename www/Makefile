@@ -4,7 +4,6 @@
     COMMENT = Ports related to the World Wide Web
 
     SUBDIR += MT
-    SUBDIR += MT-PM
     SUBDIR += WebMagick
     SUBDIR += abcache
     SUBDIR += adblock
@@ -30,7 +29,6 @@
     SUBDIR += apache20
     SUBDIR += apache21
     SUBDIR += apache22
-    SUBDIR += arena
     SUBDIR += aria
     SUBDIR += ashe           # requires Motif
     SUBDIR += asp2php

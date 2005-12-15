@@ -2014,3 +2014,25 @@ astro/seti_applet||2005-12-15|SETI@home software migrated, port now obsolete
 astro/tkseti||2005-12-15|SETI@home software migrated, port now obsolete
 astro/gkrellmseti||2005-12-15|SETI@home software migrated, port now obsolete
 astro/squeuer||2005-12-15|SETI@home software migrated, port now obsolete
+net/ppxp||2005-12-15|Security vulnerability, does not compile
+japanese/ppxp||2005-12-15|Master port was removed
+www/MT-PM||2005-12-15|Obsolete with MT 3.x
+www/arena||2005-12-15|Does not work with libpng 1.2.x
+devel/cedet-emacs20||2005-12-15|Does not build, no longer supported
+devel/gvd||2005-12-15|No longer supported
+polish/sms||2005-12-15|Obsoleted by sms2
+graphics/utah-glx||2005-12-15|Depends on XFree86-3 and no development since 2003
+japanese/balsa||2005-12-15|Mastersite disappeared, does not compile
+japanese/tkdesk||2005-12-15|Mastersite disappeared
+textproc/libhtmlparse||2005-12-15|Mastersite disappeared
+russian/mtc||2005-12-15|Mastersite disappeared
+misc/bestfit||2005-12-15|Mastersite disappeared
+misc/wmmand||2005-12-15|Mastersite disappeared
+misc/linux-edonkey-tool-list||2005-12-15|Mastersite disappeared
+misc/dog||2005-12-15|Mastersite disappeared
+misc/tkcron||2005-12-15|Mastersite disappeared
+misc/gkrellweather||2005-12-15|Dependency GrabWeather no longer exists
+misc/gkrellm-reminder||2005-12-15|Mastersite disappeared
+vietnamese/vi2vn||2005-12-15|Mastersite disappeared
+net-mgmt/netqc||2005-12-15|Mastersite disappeared, conflicting dependencies
+net-im/xicq||2005-12-15|Mastersite disappeared
