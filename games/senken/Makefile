@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A city simulation game
 
 USE_GNOME=	gnometarget gtk20
