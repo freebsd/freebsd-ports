@@ -18,7 +18,8 @@ COMMENT=	The free and open multilingual web publishing tool for news sites
 LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		idn.16:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		gm4:${PORTSDIR}/devel/m4
+		gm4:${PORTSDIR}/devel/m4 \
+		pear:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/share/pear/HTTP/Client.php:${PORTSDIR}/www/pear-HTTP_Client \
 		${LOCALBASE}/share/pear/File.php:${PORTSDIR}/sysutils/pear-File \
@@ -34,7 +35,6 @@ USE_APACHE=	YES
 BROKEN_WITH_PHP=	5
 USE_PHP=	mysql curl pcre xml xmlrpc
 WANT_PHP_CLI=	YES
-WANT_PHP_PEAR=	YES
 USE_PHP_BUILD=	YES
 
 HAS_CONFIGURE=	yes
