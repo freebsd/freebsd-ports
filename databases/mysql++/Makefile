@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7.40
+PORTVERSION=	2.0.7
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
+PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 
 MAINTAINER=	sergey@network-asp.biz
-COMMENT=	Complex C++ API for MySQL
+COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --includedir=${PREFIX}/include/mysql++
-CONFIGURE_ARGS+=	--disable-examples
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --disable-examples
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+
+CONFLICTS=	${PORTNAME}*-1.*
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
 USE_GCC=	3.4
 .endif
-
-PKGNAMESUFFIX=	-mysql${MYSQL_VER}
-COMMENT+=	${MYSQL_VER}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -39,9 +42,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.h ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/Makefile.simple ${EXAMPLESDIR}/Makefile.temp
-	@${SED} -e "s|/usr/include/mysql++|${PREFIX}/include/mysql++|" < ${EXAMPLESDIR}/Makefile.temp | \
-	${SED} -e "s|/usr/include/mysql|${LOCALBASE}/include/mysql|" | \
-	${SED} -e "s|-lmysqlpp|-L${PREFIX}/lib -L${LOCALBASE}/lib/mysql -lmysqlpp|" > ${EXAMPLESDIR}/Makefile
+	@${SED} -e "s|-I../lib|-I${PREFIX}/include/mysql++|" < ${EXAMPLESDIR}/Makefile.temp | \
+		${SED} -e "s|/usr/include/mysql|${LOCALBASE}/include/mysql|" | \
+		${SED} -e "s|CXX=g++||" | \
+		${SED} -e "s|-lmysqlpp|-L${PREFIX}/lib -L${LOCALBASE}/lib/mysql -lmysqlpp|" \
+		> ${EXAMPLESDIR}/Makefile
 	@${RM} -f ${EXAMPLESDIR}/Makefile.temp
 .endif
 
