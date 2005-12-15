@@ -1,0 +1,4 @@
+include/pperl.h
+lib/libpperl.so.0
+lib/libpperl.a
+libdata/pkgconfig/libpperl.pc
