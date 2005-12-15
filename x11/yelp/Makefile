@@ -40,7 +40,7 @@ OPTIONS=	MAN "Enable man page support" off \
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 .if ${OSVERSION} < 500000
-BROKEN="Does not build"
+USE_GCC=	2.95
 .endif
 
 .if defined(WITH_MAN)
