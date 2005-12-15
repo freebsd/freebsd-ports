@@ -2036,3 +2036,4 @@ misc/gkrellm-reminder||2005-12-15|Mastersite disappeared
 vietnamese/vi2vn||2005-12-15|Mastersite disappeared
 net-mgmt/netqc||2005-12-15|Mastersite disappeared, conflicting dependencies
 net-im/xicq||2005-12-15|Mastersite disappeared
+java/jde-emacs20||2005-12-15|Dependency cedet-emacs20 no longer exists
