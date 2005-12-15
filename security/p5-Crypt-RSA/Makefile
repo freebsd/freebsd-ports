@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-RSA
-PORTVERSION=	1.50
+PORTVERSION=	1.57
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -27,16 +27,30 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD2.pm:${PORTSDIR}/security/p5-Digest-MD2 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
-		${SITE_PERL}/MD5.pm:${PORTSDIR}/security/p5-MD5
+		${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Crypt::RSA::Key.3 Crypt::RSA::SS::PSS.3 \
-		Crypt::RSA::Primitives.3 Crypt::RSA::ES::OAEP.3 \
-		Crypt::RSA.3 Crypt::RSA::SS::PKCS1v15.3 \
-		Crypt::RSA::DataFormat.3 Crypt::RSA::Key::Private.3 \
-		Crypt::RSA::ES::PKCS1v15.3 Crypt::RSA::Debug.3 \
-		Crypt::RSA::Key::Public.3 Crypt::RSA::Errorhandler.3
+MAN3=	Crypt::RSA.3 \
+	Crypt::RSA::DataFormat.3 \
+	Crypt::RSA::Debug.3 \
+	Crypt::RSA::ES::OAEP.3 \
+	Crypt::RSA::ES::PKCS1v15.3 \
+	Crypt::RSA::Errorhandler.3 \
+	Crypt::RSA::Key.3 \
+	Crypt::RSA::Key::Private.3 \
+	Crypt::RSA::Key::Private::SSH.3 \
+	Crypt::RSA::Key::Public.3 \
+	Crypt::RSA::Key::Public::SSH.3 \
+	Crypt::RSA::Primitives.3 \
+	Crypt::RSA::SS::PKCS1v15.3 \
+	Crypt::RSA::SS::PSS.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6 or above due to dependencies
+.endif
+
+.include <bsd.port.post.mk>
