@@ -201,6 +201,66 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Only build ports if ${ARCH} matches one of these.
 # NOT_FOR_ARCHS	- Only build ports if ${ARCH} doesn't match one of these.
 #
+# Dependency checking.  Use these if your port requires another port
+# not in the list below.  (Default: empty.)
+#
+# EXTRACT_DEPENDS
+#				- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "extract" stage.  "path" is
+#				  the name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# PATCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends on in the "patch" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the existence
+#				  (if it is a full pathname) or search for it in your
+#				  $PATH (if it is an executable) and go into "dir" to do
+#				  a "make all install" if it's not found.  If the third
+#				  field ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# FETCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends in the "fetch" stage.  "path" is the
+#				  name of a file if it starts with a slash (/), an
+#				  executable otherwise.  make will test for the
+#				  existence (if it is a full pathname) or search for
+#				  it in your $PATH (if it is an executable) and go
+#				  into "dir" to do a "make all install" if it's not
+#				  found.  If the third field ("target") exists, it will
+#				  be used instead of ${DEPENDS_TARGET}.
+# BUILD_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends to build (between the "extract" and
+#				  "build" stages, inclusive).  The test done to
+#				  determine the existence of the dependency is the
+#				  same as FETCH_DEPENDS.  If the third field ("target")
+#				  exists, it will be used instead of ${DEPENDS_TARGET}.
+# RUN_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
+#				  package depends to run.  The test done to determine
+#				  the existence of the dependency is the same as
+#				  FETCH_DEPENDS.  This will be checked during the
+#				  "install" stage and the name of the dependency will
+#				  be put into the package as well.  If the third field
+#				  ("target") exists, it will be used instead of
+#				  ${DEPENDS_TARGET}.
+# LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
+#				  package depends on.  "lib" is the name of a shared library.
+#				  make will use "ldconfig -r" to search for the library.
+#				  lib can contain extended regular expressions.
+# DEPENDS		- A list of "dir[:target]" tuples of other ports this
+#				  package depends on being made first.  Use this only for
+#				  things that don't fall into the above four categories.
+#				  If the second field ("target") exists, it will be used
+#				  instead of ${DEPENDS_TARGET}.
+#
+# DEPENDS_TARGET
+#				- The default target to execute when a port is calling a
+#				  dependency.
+#				  Default: install
+#
 # These variables control options about how a port gets built and/or
 # are shorthand notations for common sets of dependencies.
 # Use these if your port uses some of the common software packages. By
@@ -387,65 +447,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${LOCALBASE}/etc/rc.subr.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
-#
-# Dependency checking.  Use these if your port requires another port
-# not in the list above.  (Default: empty.)
-#
-# EXTRACT_DEPENDS
-#				- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends on in the "extract" stage.  "path" is
-#				  the name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the existence
-#				  (if it is a full pathname) or search for it in your
-#				  $PATH (if it is an executable) and go into "dir" to do
-#				  a "make all install" if it's not found.  If the third
-#				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# PATCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends on in the "patch" stage.  "path" is the
-#				  name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the existence
-#				  (if it is a full pathname) or search for it in your
-#				  $PATH (if it is an executable) and go into "dir" to do
-#				  a "make all install" if it's not found.  If the third
-#				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# FETCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends in the "fetch" stage.  "path" is the
-#				  name of a file if it starts with a slash (/), an
-#				  executable otherwise.  make will test for the
-#				  existence (if it is a full pathname) or search for
-#				  it in your $PATH (if it is an executable) and go
-#				  into "dir" to do a "make all install" if it's not
-#				  found.  If the third field ("target") exists, it will
-#				  be used instead of ${DEPENDS_TARGET}.
-# BUILD_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends to build (between the "extract" and
-#				  "build" stages, inclusive).  The test done to
-#				  determine the existence of the dependency is the
-#				  same as FETCH_DEPENDS.  If the third field ("target")
-#				  exists, it will be used instead of ${DEPENDS_TARGET}.
-# RUN_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
-#				  package depends to run.  The test done to determine
-#				  the existence of the dependency is the same as
-#				  FETCH_DEPENDS.  This will be checked during the
-#				  "install" stage and the name of the dependency will
-#				  be put into the package as well.  If the third field
-#				  ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
-# LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
-#				  package depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the library.
-#				  lib can contain extended regular expressions.
-# DEPENDS		- A list of "dir[:target]" tuples of other ports this
-#				  package depends on being made first.  Use this only for
-#				  things that don't fall into the above four categories.
-#				  If the second field ("target") exists, it will be used
-#				  instead of ${DEPENDS_TARGET}.
-# DEPENDS_TARGET
-#				- The default target to execute when a port is calling a
-#				  dependency.
-#				  Default: install
 #
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
