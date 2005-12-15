@@ -3,7 +3,8 @@
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.9 2005/12/12 01:53:28 itetcu Exp $
+#
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.12 2005/12/13 21:09:01 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -13,6 +14,7 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
@@ -40,7 +42,7 @@ DISTFILES=	snapshot-devel.tar.gz
 FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .endif
 
-_UPD_LINE_NO=	17
+_UPD_LINE_NO=	6
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
