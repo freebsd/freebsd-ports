@@ -1,5 +1,5 @@
---- display.c.orig	Mon Mar 26 10:03:42 2001
-+++ display.c	Fri Mar  8 01:15:54 2002
+--- display.c.orig	Thu Dec 15 14:29:14 2005
++++ display.c	Thu Dec 15 14:29:58 2005
 @@ -12,6 +12,7 @@
  #include <signal.h>
  #include <ctype.h>
@@ -27,14 +27,12 @@
    
    for(i = 0; i < 128; i++)
      {
-@@ -90,8 +90,8 @@
+@@ -90,7 +90,7 @@
  
  void display()
  {
 -	FILE	*fp, *popen();
--	char	ch;
 +	FILE	*fp;
-+	int	ch;
+ 	int	ch;
  	char    *dt;
  	time_t  tnow;
- 	int nlines;
