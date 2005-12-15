@@ -40,7 +40,6 @@
     SUBDIR += balance
     SUBDIR += bbsnet
     SUBDIR += beacon
-    SUBDIR += beacon-server
     SUBDIR += bfilter
     SUBDIR += bindtest
     SUBDIR += bing
