@@ -20,6 +20,9 @@ lib/libXvMCNVIDIA.so.1
 @unexec rm -f %D/lib/libXvMCNVIDIA.so
 @exec ln -sf %D/lib/libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA_dynamic.so.1
 @unexec rm -f %D/lib/libXvMCNVIDIA_dynamic.so.1
+lib/libnvidia-cfg.so.1
+@exec ln -sf %D/lib/libnvidia-cfg.so.1 %D/lib/libnvidia-cfg.so
+@unexec rm -f %D/lib/libnvidia-cfg.so
 lib/libnvidia-tls.so.1
 @exec ln -sf %D/lib/libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
 @unexec rm -f %D/lib/libnvidia-tls.so
@@ -29,6 +32,47 @@ lib/modules/drivers/nvidia_drv.o
 lib/modules/extensions/libglx.so.1
 @exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
 @unexec rm -f %D/lib/modules/extensions/libglx.so
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-a.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-b.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-c.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-d.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-e.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-f.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-g.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-h.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-i.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-j.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-k.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-l.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-m.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-n.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-o.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-p.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-q.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-r.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-s.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-t.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-u.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-v.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-w.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/appendix-x.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-01.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-02.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-03-section-02.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-03.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-04.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-05.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-06.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-07.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-08.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/chapter-09.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/index.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/part-01.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/part-02.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/part-03.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/preface-01.html
+%%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/html/preface-02.html
+%%PORTDOCS%%@dirrm share/doc/NVIDIA_GLX-1.0/html
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/README
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/README.Linux
 %%PORTDOCS%%share/doc/NVIDIA_GLX-1.0/XF86Config.sample
