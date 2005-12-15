@@ -356,7 +356,9 @@
 %%DATADIR%%/woodflut.pat
 %%DATADIR%%/xgmap2.cfg
 %%DATADIR%%/xylophon.pat
-share/timidity/timidity.cfg
+@unexec if cmp -s %D/share/timidity/timidity.cfg %D/share/timidity/timidity.cfg-eawpats; then rm -f %D/share/timidity/timidity.cfg; fi
+share/timidity/timidity.cfg-eawpats
+@exec [ ! -f %B/timidity.cfg ] && cp -p %B/%f %B/timidity.cfg
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/copyrigh.txt
 %%PORTDOCS%%%%DOCSDIR%%/drumsfx.txt
