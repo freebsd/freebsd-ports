@@ -6629,6 +6629,7 @@ mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
 myphpmoney	ports/finance/myphpmoney
 mysql++		ports/databases/mysql++
+mysql++1	ports/databases/mysql++1
 mysql-administrator	ports/databases/mysql-administrator
 mysql-connector-java	ports/databases/mysql-connector-java
 mysql-editor	ports/databases/mysql-editor
