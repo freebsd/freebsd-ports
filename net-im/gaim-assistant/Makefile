@@ -6,6 +6,7 @@
 
 PORTNAME=	gaim-assistant
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +20,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_GCC=	3.4+
 
 GNU_CONFIGURE=	yes
 
@@ -27,7 +29,7 @@ PLIST_FILES=	lib/gaim/gaim-assistant.so
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/gaim-assistant.so ${PREFIX}/lib/gaim
+	${INSTALL_PROGRAM} ${WRKSRC}/gaim-assistant.so ${PREFIX}/lib/gaim
 
 .include <bsd.port.pre.mk>
 
