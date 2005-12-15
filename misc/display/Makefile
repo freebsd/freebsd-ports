@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	display
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.2a
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ipsmart.com/src/
 EXTRACT_SUFX=	.tgz
@@ -29,6 +28,7 @@ CONFLICTS=	ImageMagick-[0-9]* goblin-*
 .endif
 
 CONFIGURE_ARGS+=	--program-prefix=${DISPLAY_PROGRAM_PREFIX}
+CONFIGURE_ENV+=	LDFLAGS="${STRIP}"
 
 MAN1=		${DISPLAY_PROGRAM_PREFIX}display.1
 PLIST_FILES=	bin/${DISPLAY_PROGRAM_PREFIX}display
