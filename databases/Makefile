@@ -107,6 +107,7 @@
     SUBDIR += mtop
     SUBDIR += myodbc
     SUBDIR += mysql++
+    SUBDIR += mysql++1
     SUBDIR += mysql-administrator
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor

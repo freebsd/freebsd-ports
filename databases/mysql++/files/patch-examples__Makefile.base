@@ -1,0 +1,92 @@
+--- examples/Makefile.base.orig	Wed Nov  2 21:03:09 2005
++++ examples/Makefile.base	Sat Dec 10 16:08:30 2005
+@@ -22,15 +22,6 @@
+ 
+ # --- No user-serviceable parts below :)
+ 
+-define mk-objlist
+-	$(foreach O,$1,\
+-		$(if $(findstring $(BIN_DIR)/,$(O)),$(O),$(BIN_DIR)/$(O)))
+-endef
+-
+-ifndef BIN_DIR
+-	BIN_DIR=.
+-endif
+-
+ BINARIES=resetdb$(EXE) simple1$(EXE) simple2$(EXE) simple3$(EXE) \
+ 		usequery$(EXE) fieldinf1$(EXE) dbinfo$(EXE) cgi_image$(EXE) \
+ 		load_file$(EXE) updel$(EXE) multiquery$(EXE) custom1$(EXE) \
+@@ -67,56 +58,55 @@
+ 
+ 
+ resetdb$(EXE): $(RESETDB_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(RESETDB_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ simple1$(EXE): $(SIMPLE1_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(SIMPLE1_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ simple2$(EXE): $(SIMPLE2_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(SIMPLE2_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ simple3$(EXE): $(SIMPLE3_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(SIMPLE3_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ usequery$(EXE): $(USEQUERY_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(USEQUERY_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom1$(EXE): $(CUSTOM1_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM1_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom2$(EXE): $(CUSTOM2_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM2_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom3$(EXE): $(CUSTOM3_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM3_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom4$(EXE): $(CUSTOM4_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM4_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom5$(EXE): $(CUSTOM5_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM5_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ custom6$(EXE): $(CUSTOM6_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CUSTOM6_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ fieldinf1$(EXE): $(FIELDINF1_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(FIELDINF1_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ dbinfo$(EXE): $(DBINFO_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(DBINFO_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ cgi_image$(EXE): $(CGI_IMAGE_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(CGI_IMAGE_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ load_file$(EXE): $(LOAD_FILE_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(LOAD_FILE_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ updel$(EXE): $(UPDEL_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(UPDEL_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ multiquery$(EXE): $(MULTIQUERY_OBJS)
+-	$(LD) $(LDFLAGS) $(LDSTARTUP) $(call mk-objlist,$^) $(LDEXEFLAG)$@ $(LIBS)
+-
++	$(LD) $(LDFLAGS) $(LDSTARTUP) $(MULTIQUERY_OBJS) $(LDEXEFLAG)$@ $(LIBS)
+ 
+ resetdb.$(OBJ): resetdb.cpp util.h
+ simple1.$(OBJ): simple1.cpp util.h
