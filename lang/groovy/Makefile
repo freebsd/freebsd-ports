@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.0-beta-9
+DISTVERSION=	1.0-jsr-04
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 
@@ -19,7 +19,7 @@ JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LICENSE.txt conf ${PORTNAME}-${DISTVERSION}.jar lib
-SCRIPTFILES=	grok groovy groovyConsole groovyc groovysh
+SCRIPTFILES=	grok groovy groovyConsole groovyc groovysh startGroovy
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	changelog-report.html cvs-usage.html dependencies.html \
@@ -43,9 +43,9 @@ do-install:
 	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing executables in ${PREFIX}/bin..."
+	@${REINPLACE_CMD} -f ${WRKDIR}/set-groovy_home.sed ${WRKSRC}/bin/startGroovy
 .for file in ${SCRIPTFILES}
 	@${ECHO_MSG} -n " ${file}"
-	@${REINPLACE_CMD} -f ${WRKDIR}/set-groovy_home.sed ${WRKSRC}/bin/${file}
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin/
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
