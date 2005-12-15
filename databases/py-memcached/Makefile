@@ -7,15 +7,14 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.danga.com/memcached/dist/
-PKGNAMEPREFIX=	py-
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION:S/$/_tummy5/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
-
-RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
