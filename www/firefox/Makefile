@@ -50,7 +50,7 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 IGNORE=	core dumps on alpha during post-build
 .endif
 
-.if ${OSVERSION} >= 504101
+.if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
 
