@@ -12,4 +12,10 @@
 *	this version of SpamAssassin for important information		*
 *	regarding changes in this version.				*
 *									*
+*	SpamAssassin may require additional configuration in		*
+*	PREFIX/mail/etc/spamassassin/init.pre depending on		*
+*	the options you have installed.	 Otherwise, annoying		*
+*	(but harmless) error messages may result.  Read the		*
+*	files listed above.						*
+*									*
 *************************************************************************
