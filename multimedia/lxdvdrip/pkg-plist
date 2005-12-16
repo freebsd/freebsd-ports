@@ -4,7 +4,9 @@ bin/lxac3scan
 @unexec if cmp -s %D/etc/lxdvdrip.conf %D/etc/lxdvdrip.conf.sample; then rm -f %D/etc/lxdvdrip.conf; fi
 etc/lxdvdrip.conf.sample
 @exec [ -f %B/lxdvdrip.conf ] || cp %B/%f %B/lxdvdrip.conf
+%%DATADIR%%/lxdvdrip.wav
 %%EXAMPLESDIR%%/lxdvdrip.conf.DE
 %%EXAMPLESDIR%%/lxdvdrip.conf.EN
 %%EXAMPLESDIR%%/lxdvdrip.conf.FR
+@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%

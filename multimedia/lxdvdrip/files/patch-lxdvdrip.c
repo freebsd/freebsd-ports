@@ -38,6 +38,15 @@
    fclose (filehandle);
  
    title[32] = '\0';
+@@ -5986,7 +5990,7 @@
+ 	      if (strstr (buffer_name, "mbuffer"))
+ 		sprintf (szBufferBefehl, "%s -s 64k -q -i", buffer_name);	// nehme mbuffer
+ 	      else
+-		sprintf (szBufferBefehl, "%s -s 64k -m 16m -i", buffer_name);	// nehme buffer
++		sprintf (szBufferBefehl, "%s -s 64k -m 10m -i", buffer_name);	// nehme buffer
+ 	    }
+           // Behandlung von Forced Subtitles
+           printf ("Wert Untertitel: %ld\n", lUntertitel);
 @@ -7633,7 +7637,7 @@
  	    strcat (szFilmVerzeichnis, "/");
  	  strcat (szFilmVerzeichnis, szDVDName);
