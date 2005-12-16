@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.8
+PORTVERSION=	0.11.8.1
 CATEGORIES=	net-im irc
-MASTER_SITES=	http://www.liquidx.org/distfiles/ \
-		http://shell.n.ml.org/n/naim/
+MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	tlp@LiquidX.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
