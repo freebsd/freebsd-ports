@@ -9,8 +9,9 @@ PORTNAME=	uox3
 PORTVERSION=	0.69.02
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.borg-cube.com/pub/uox3/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
+MASTER_SITES=	http://www.mwcyber.com/GateTraveler/uox/files/:file1 \
+		http://mirror.etf.bg.ac.yu/freebsd/distfiles/uox3/:file2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:file1 tqpsworld${EXTRACT_SUFX}:file2
 DISTNAME=	uox3v6902-linux
 
 MAINTAINER=	ports@FreeBSD.org
