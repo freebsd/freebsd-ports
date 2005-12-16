@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Thu Jun 19 03:01:36 2003
-+++ Makefile.in	Thu Jun 19 03:04:15 2003
+--- Makefile.in.old	Mon Nov  7 19:50:05 2005
++++ Makefile.in	Thu Dec 15 19:25:55 2005
 @@ -83,7 +83,7 @@
  
  # For linking (configure script will modify this line)
@@ -12,7 +9,12 @@ $FreeBSD$
  
  all:demo
  
-@@ -128,25 +128,17 @@
+@@ -124,29 +124,21 @@
+ 	@echo "Executable go in $(BINDIR)"
+ 	@echo "Scores     go in $(SCOREDIR)"
+ 	@echo "Defaults   go in $(RESOURCEDIR)/Xbl"
+-	@echo "Man pages  go in $(MANPATH)/mann or man1"
++	@echo "Man pages  go in $(MANPATH)/man1"
  	@-if [ "" != "$(USE_SETGID)" ] ; then \
  		echo "You use GID=$(GROUP_GID) protection" ; \
  		fi
@@ -40,7 +42,7 @@ $FreeBSD$
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 755  $(BINDIR)/xbl ;\
  	   else \
-@@ -160,7 +152,6 @@
+@@ -160,30 +152,20 @@
  	-mkdir $(SCOREDIR) 2>/dev/null
  	$(CP) Xbl.ad  $(RESOURCEDIR)/Xbl ;	chmod 644 $(RESOURCEDIR)/Xbl
  	$(CP) Xbl.ad  $(SCOREDIR)/Xbl ;		chmod 644 $(SCOREDIR)/Xbl
@@ -48,3 +50,27 @@ $FreeBSD$
  	-if [ "" = "$(USE_SETGID)" ] ; then \
  	     chmod 777 $(SCOREDIR) ;\
  	     chmod 666 $(SCOREDIR)/[1-9]* ;\
+ 	   else \
+ 	     chmod 775 $(SCOREDIR) ;\
+-	     chmod 664 $(SCOREDIR)/[1-9]* ;\
+-	     chown root $(SCOREDIR) $(SCOREDIR)/[1-9]* ;\
+-	     chgrp $(GROUP_GID) $(SCOREDIR) $(SCOREDIR)/[1-9]* ;\
+ 	fi
+ 	#
+ 	# Install manual pages
+ 	#
+-	-if [ -d $(MANPATH)/mann ] ; \
+-		then \
+-		$(CP) xbl.man $(MANPATH)/mann/xbl.n ;\
+-		chmod 444 $(MANPATH)/mann/xbl.n ; \
+-	   else \
+ 		$(CP) xbl.man $(MANPATH)/man1/xbl.1 ;\
+ 		chmod 444 $(MANPATH)/man1/xbl.1 ; \
+-		fi
+ 	cp *.gif *.html $(SCOREDIR)
+ 	#
+-	-ls -lsa $(SCOREDIR) $(BINDIR)/xbl $(MANPATH)/man[1n]/xbl.[1n]
++	-ls -lsa $(SCOREDIR) $(BINDIR)/xbl $(MANPATH)/man1/xbl.1
+ 	@echo "Type xbl to play"
+ 
+ bl:$(OBJ)
