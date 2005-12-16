@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDO_MYSQL
-DISTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
