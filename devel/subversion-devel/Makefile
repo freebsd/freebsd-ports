@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 DISTVERSION=	1.3.0-rc4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.1/:book
@@ -156,7 +156,7 @@ SVNGROUP?=	svn
 .if defined(WITH_APACHE2_APR)
 USE_APACHE=	2.0+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.if ${APACHE_PORT} == "www/apache21"
+.if ${APACHE_VERSION} >= 21
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
@@ -363,6 +363,7 @@ post-install:	${MKREPOS_TARGET}
 	@${MKDIR} ${PREFIX}/share/subversion
 	cd ${WRKSRC}/tools ; \
 	  tar --exclude '*.in' -cf - * | tar -C ${PREFIX}/share/subversion -xf -
+	@${CHMOD} -R a-st,o+rX ${PREFIX}/share/subversion
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
