@@ -8,7 +8,7 @@
 PORTNAME=	x3eyes
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/
+MASTER_SITES=	http://www55.tok2.com/home/hym/pub/X11/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
