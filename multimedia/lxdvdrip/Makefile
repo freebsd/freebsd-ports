@@ -7,7 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.47
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -17,13 +17,13 @@ MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	streamdvd:${PORTSDIR}/multimedia/streamdvd \
-		transcode:${PORTSDIR}/multimedia/transcode \
+RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		buffer:${PORTSDIR}/misc/buffer \
+		dvdbackup:${PORTSDIR}/sysutils/dvdbackup \
+		dvdwizard:${PORTSDIR}/multimedia/dvdwizard \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		mpgtx:${PORTSDIR}/multimedia/mpgtx \
-		dvdbackup:${PORTSDIR}/sysutils/dvdbackup
+		transcode:${PORTSDIR}/multimedia/transcode
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
