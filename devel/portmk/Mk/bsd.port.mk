@@ -1199,7 +1199,7 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSI
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
-DEVELMKDIR=		${PORTSDIR}/devel/portmk/Mk
+DEVELPORTSDIR?=	${PORTSDIR}/devel/portmk
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
@@ -1308,60 +1308,125 @@ PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
 .endif
 
+.if defined(USE_LOCAL_MK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
+# not yet:
+#.else
+#.include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
+.endif
+
 # XXX: (not yet): .if defined(USE_AUTOTOOLS)
+# .if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
+# .include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
+# .else
 # .include "${PORTSDIR}/Mk/bsd.autotools.mk"
+# .endif
 # XXX: (not yet): .endif
 
 .if defined(USE_OPENSSL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.openssl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.openssl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.endif
 .endif
 
 .if defined(EMACS_PORT_NAME)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.emacs.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.emacs.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
+.endif
 .endif
 
 .if defined(USE_GNUSTEP)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnustep.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnustep.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
+.endif
 .endif
 
 .if defined(USE_PHP)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.php.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.php.mk"
+.endif
 .endif
 
 .if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.python.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.python.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
 .endif
 
 .if defined(USE_JAVA)
-.include "${DEVELMKDIR}/bsd.java.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.java.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.java.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
 .endif
 
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.ruby.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.ruby.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.endif
 .endif
 
 .if defined(USE_TCL) || defined(USE_TK)
-.include "${DEVELMKDIR}/bsd.tcl.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.tcl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.tcl.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
 .endif
 
 .if defined(USE_APACHE) || defined(APACHE_COMPAT)
-.include "${DEVELMKDIR}/bsd.apache.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.apache.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.apache.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.endif
 .endif
 
 .if defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.kde.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.kde.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
+.endif
 .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
+.endif
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sdl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sdl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 .endif
 
 .if ${OSVERSION} >= 502123
@@ -1474,8 +1539,21 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
+.if defined(USE_LOCAL_MK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
+# not yet:
+#.else
+#.include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
+.endif
+
 .if defined(USE_GCC)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gcc.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gcc.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
+.endif
 .endif
 
 .if defined(USE_OPENLDAP_VER)
@@ -1734,37 +1812,69 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 
 # XXX: (not yet): .if defined(USE_AUTOTOOLS)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
+.endif
 # XXX: (not yet): .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
 	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
 	defined(USE_BDB) || defined(USE_SQLITE) 
-.include "${DEVELMKDIR}/bsd.database.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.database.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.database.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.database.mk"
+.endif
 .endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
 .endif
 
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
+.endif
 .endif
 
 .if defined(USE_SDL) || defined(WANT_SDL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sdl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sdl.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 .endif
 
 .if defined(USE_PYTHON)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.python.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.python.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+.endif
 .endif
 
 .if defined(USE_TCL) || defined(USE_TK)
-.include "${DEVELMKDIR}/bsd.tcl.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.tcl.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.tcl.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
 .endif
 
 .if defined(USE_APACHE) || defined(APACHE_COMPAT)
-.include "${DEVELMKDIR}/bsd.apache.mk"
+.if exists(${DEVELPORTSDIR}/Mk/bsd.apache.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.apache.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.endif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -2101,7 +2211,11 @@ check-makevars::
 .endif
 
 # Popular master sites
+.if exists(${DEVELPORTSDIR}/Mk/bsd.sites.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.sites.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.sites.mk"
+.endif
 
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
