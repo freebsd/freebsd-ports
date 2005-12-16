@@ -8,11 +8,14 @@
 PORTNAME=	xgolgo
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
+MASTER_SITES=	#
 DISTNAME=	xeyes-g
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watches what you are doing and whether you're hostile or not
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-15
 
 WRKSRC=		${WRKDIR}/xeyes
 USE_IMAKE=	yes
