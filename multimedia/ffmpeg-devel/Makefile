@@ -364,7 +364,7 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 .if !defined(WITHOUT_BUILTIN_VECTOR) && !defined(WITH_BUILTIN_VECTOR)
-	@${ECHO_MSG} 'Define WITH_BUILTIN_VECTOR if your system supports SSE"
+	@${ECHO_MSG} 'Define WITH_BUILTIN_VECTOR if your system supports SSE'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_DTS)
