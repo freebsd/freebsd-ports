@@ -1,0 +1,9 @@
+This is a fake IKE daemon supporting just enough of the standards and Cisco
+extensions to attack commonly found insecure Cisco PSK+XAUTH VPN setups.
+
+If you know the pre-shared key, also known as shared secret or group password,
+you can impersonate the VPN gateway in IKE phase 1, and learn XAUTH user
+credentials in phase 2.
+
+Author: Daniel Roethlisberger <daniel@roe.ch>
+WWW: http://www.roe.ch/FakeIKEd

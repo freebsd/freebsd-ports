@@ -100,6 +100,7 @@
     SUBDIR += fakeident
     SUBDIR += fakeroot
     SUBDIR += fcrackzip
+    SUBDIR += fiked
     SUBDIR += find-zlib
     SUBDIR += find_ddos
     SUBDIR += finger_mysql
