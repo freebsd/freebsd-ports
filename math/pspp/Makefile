@@ -17,6 +17,7 @@ COMMENT=	Program for statistical analysis of sampled data
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 		gslcblas.0:${PORTSDIR}/math/gsl
 
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -26,8 +27,8 @@ INFO=		pspp
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		"Needs at least Perl 5.6"
 .endif
 
 .include <bsd.port.post.mk>
