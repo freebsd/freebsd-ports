@@ -10,10 +10,13 @@ PORTNAME=	deep_zoom
 PORTVERSION=	0.3
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.rogers.com/rowley-c/deep_zoom/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate very highly zoomed fractals
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-02-16
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
