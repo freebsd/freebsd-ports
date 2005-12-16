@@ -7,8 +7,6 @@ bin/gengetopt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/cmdline1.c.html
-%%PORTDOCS%%%%DOCSDIR%%/cmdline1.h.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/cmdline1.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/cmdline1.h
 %%PORTDOCS%%%%DOCSDIR%%/examples/cmdline2.c
@@ -18,9 +16,8 @@ bin/gengetopt
 %%PORTDOCS%%%%DOCSDIR%%/examples/sample1.ggo
 %%PORTDOCS%%%%DOCSDIR%%/examples/sample2.ggo
 %%PORTDOCS%%%%DOCSDIR%%/gengetopt.html
-%%PORTDOCS%%%%DOCSDIR%%/man_getopt.html
-%%PORTDOCS%%%%DOCSDIR%%/no_getopt_long.txt
-%%PORTDOCS%%%%DOCSDIR%%/old_changes.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/NEWSold
 %%DATADIR%%/getopt.c
 %%DATADIR%%/getopt1.c
 %%DATADIR%%/gnugetopt.h

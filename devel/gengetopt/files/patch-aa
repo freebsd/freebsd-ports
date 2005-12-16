@@ -1,0 +1,13 @@
+--- doc/gengetopt.texinfo.orig	Thu Dec 15 13:54:45 2005
++++ doc/gengetopt.texinfo	Thu Dec 15 13:58:26 2005
+@@ -26,6 +26,10 @@
+ @c @setchapternewpage odd
+ @c %**end of header
+ 
++@direntry
++* GenGetopt (gengetopt).	A tool for generating a C function which parses command line arguments.
++@end direntry
++
+ @set myhomepage @uref{http://www.lorenzobettini.it}
+ 
+ @ifinfo
