@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	xrmap
-PORTVERSION=	2.32
-PORTREVISION=	2
-CATEGORIES=	misc
+PORTVERSION=	2.33
+CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
 DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data ${POPFILE}:data
@@ -18,20 +17,22 @@ EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
-BROKEN=		Unfetchable
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 MANCOMPRESSED=	no
 USE_XPM=	yes
+USE_XLIB=	yes
 USE_REINPLACE=	yes
 
 CIAFILE=	CIA_WDB2.jpd.bz2
 POPFILE=	population.dat.bz2
 SRCFILE=	xrmap-${PORTVERSION}.tar.bz2
-DATAFILES=	anthems-1.1.tar.bz2 earthdata_med_res.tar.bz2 \
+DATAFILES=	anthems-1.2.tar.bz2 earthdata_med_res.tar.bz2 \
 		factbook_text_2005.tar.bz2 factbook_html_2005.tar.bz2 \
-		flags-2.0.tar.bz2 hymns-1.2.tar.bz2 pdfmaps-1.2.tar.bz2
+		flags-2.7-eps.tar.bz2 hymns-1.3.tar.bz2 pdfmaps-1.3.tar.bz2
 
 MAN1=		emx.1 xrmap.1
 PORTDOCS=	*
@@ -55,6 +56,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrmap ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xrmap._man ${PREFIX}/man/man1/xrmap.1
 	${MKDIR} ${PREFIX}/share/rmap
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/rmap/
 .for f in Locations Xrmaprc i18n picons pixmaps postscript rc themes
 	cd ${WRKSRC} && \
 	${FIND} ${f} -type d -exec ${MKDIR} "${PREFIX}/share/rmap/{}" \; && \
@@ -82,10 +84,6 @@ do-install:
 	${FIND} ${f} -type l -exec ${CP} -Rf "{}" "${PREFIX}/share/rmap/{}" \; && \
 	${FIND} ${f} ! -type d ! -type l -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/rmap/{}" \;
 .endfor
-
-# install examples
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.rc ${EXAMPLESDIR}
 
 # install documentation
 .if !defined(NOPORTDOCS)
