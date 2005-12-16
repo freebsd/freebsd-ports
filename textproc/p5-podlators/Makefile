@@ -7,6 +7,7 @@
 
 PORTNAME=	podlators
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -39,6 +40,8 @@ PLIST_SUB=	PL_FILES=""
 post-patch:
 .if ${PERL_LEVEL} >= 500600
 	@${REINPLACE_CMD} -Ee '/(pod2man|pod2text)/d' ${WRKSRC}/Makefile.PL
+.else
+	${PERL} -pi -e 's/;/();/ if $$.==303' ${WRKSRC}/lib/Pod/Man.pm
 .endif
 
 .include <bsd.port.post.mk>
