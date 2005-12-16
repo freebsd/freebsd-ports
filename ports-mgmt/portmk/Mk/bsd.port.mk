@@ -1469,6 +1469,8 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
+# note: the next line is from 86106 which says: "It needs more investigation.
+# We will keep it in devel/portmk for further tests."
 MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
