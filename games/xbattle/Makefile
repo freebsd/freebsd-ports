@@ -8,7 +8,8 @@
 PORTNAME=	xbattle
 PORTVERSION=	5.4.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A concurrent multi-player battle strategy game
