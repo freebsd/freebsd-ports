@@ -7,6 +7,7 @@
 
 PORTNAME=	typo
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://rubyforge.org/frs/download.php/6171/
 EXTRACT_SUFX=	.tgz
@@ -23,7 +24,8 @@ TYPODIR=	www/${DISTNAME}
 
 do-install:
 	${CP} -R ${WRKSRC} ${PREFIX}/${TYPODIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/log
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPODIR}/public
 
 post-install:
 	@${FIND} ${PREFIX}/${TYPODIR} -not -type d \
