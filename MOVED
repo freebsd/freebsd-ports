@@ -2037,3 +2037,4 @@ net-mgmt/netqc||2005-12-15|Mastersite disappeared, conflicting dependencies
 net-im/xicq||2005-12-15|Mastersite disappeared
 java/jde-emacs20||2005-12-15|Dependency cedet-emacs20 no longer exists
 net/beacon-server||2005-12-15|Integrated in net/beacon
+misc/xrmap|astro/xrmap|2005-12-17|Move to a more appropriate category

@@ -463,7 +463,6 @@
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
-    SUBDIR += xrmap
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo
