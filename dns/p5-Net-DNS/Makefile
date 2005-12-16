@@ -53,7 +53,7 @@ pre-fetch:
 	@${ECHO} "************************************************************"
 	@sleep 5
 .else
-RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS+=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 .endif
 
 .if ${PERL_LEVEL} < 500800
