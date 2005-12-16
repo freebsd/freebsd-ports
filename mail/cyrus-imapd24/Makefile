@@ -85,7 +85,7 @@ OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader"			off
 OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
 OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
 OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
-OPTIONS+=	NNTP		"Enable NNTP support"			off
+OPTIONS+=	NNTP		"Enable NNTP support (BROKEN)"		off
 OPTIONS+=	REPLICATION	"Enable replication"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
@@ -133,6 +133,7 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${BDB_VER} \
 		--with-bdb=db${BDB_SUFFIX}
 
 .if defined(WITH_NNTP)
+IGNORE=		NNTP support is broken by the original distribution
 CONFIGURE_ARGS+=--enable-nntp
 PLIST_SUB+=	NNTP=""
 .else
