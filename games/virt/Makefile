@@ -8,25 +8,24 @@ PORTNAME=	virt
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://vampiro.rshb.com.ru/pub/warez/virt/ \
-		ftp://ftp.treasury.ru/pub/unix/virt/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game and keyboard teacher in one. Enjoy it!
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-15
+
 USE_GNOME=	gtk12
-USE_PERL5_BUILD=yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} `gtk12-config --cflags`"
 MAN6=		virt.6
 MANCOMPRESSED=	no
 
-post-patch:
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g ; \
-		s,%%INSTALL_PROGRAM%%,${INSTALL_PROGRAM},g ; \
-		s,%%INSTALL_DATA%%,${INSTALL_DATA},g ; \
-		s,%%INSTALL_MAN%%,${INSTALL_MAN},g" ${WRKSRC}/Makefile
-
-pre-install:
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+do-install:
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}/keytop
+	${INSTALL_PROGRAM} ${WRKSRC}/virt ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_DATA} virtrc virt.eng virt.rus COPYRIGHT ${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/keytop/*.xpm ${DATADIR}/keytop
+	${INSTALL_MAN} ${WRKSRC}/virt.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
