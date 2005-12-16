@@ -113,10 +113,8 @@ etc/pear.conf
 %%DATADIR%%/XML/RPC.php
 %%DATADIR%%/data/PEAR/package.dtd
 %%DATADIR%%/data/PEAR/template.spec
-@exec mkdir -p %D/share/pear/packages 2> /dev/null || true
 %%DATADIR%%/pearcmd.php
 %%DATADIR%%/peclcmd.php
-@exec mkdir -p %D/share/pear/sql 2> /dev/null || true
 %%DATADIR%%/tests/XML_RPC/tests/allgot.inc
 %%DATADIR%%/tests/XML_RPC/tests/empty-value-struct.php
 %%DATADIR%%/tests/XML_RPC/tests/empty-value.php
@@ -165,8 +163,6 @@ etc/pear.conf
 @unexec rmdir %D/share/pear/XML 2> /dev/null || true
 @dirrm %%DATADIR%%/data/PEAR
 @unexec rmdir %D/share/pear/data 2> /dev/null || true
-@unexec rmdir %D/share/pear/packages 2> /dev/null || true
-@unexec rmdir %D/share/pear/sql 2> /dev/null || true
 @dirrm %%DATADIR%%/tests/XML_RPC/tests
 @dirrm %%DATADIR%%/tests/XML_RPC
 @unexec rmdir %D/share/pear/tests 2> /dev/null || true
