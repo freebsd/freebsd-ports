@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-lynx=${LOCALBASE}/bin/lynx
 USE_PERL5=	yes
 USE_PYTHON=	yes
 
-CONF_FILES=	epylog.conf \
+LOCAL_CONF_FILES=	epylog.conf \
 		modules.d/logins.conf \
 		modules.d/mail.conf \
 		modules.d/notices.conf \
@@ -40,7 +40,7 @@ CONF_FILES=	epylog.conf \
 		weed_local.cf
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	CONF_FILES="${CONF_FILES}"
+SUB_LIST=	LOCAL_CONF_FILES="${LOCAL_CONF_FILES}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$sysconfdir/cron\.daily|$$sysconfdir/epylog|' \
