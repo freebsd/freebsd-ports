@@ -9,13 +9,13 @@ PORTNAME=	xgalaga
 PORTVERSION=	2.0.34
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.cit.uws.edu.au/pub/unix/games/ \
-		http://ftp.yars.free.net/pub/software/unix/games/arcade/ \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Galaga resurrected on X
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-15
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
