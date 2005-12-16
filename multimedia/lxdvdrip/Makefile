@@ -7,7 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.47
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -20,6 +20,7 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	streamdvd:${PORTSDIR}/multimedia/streamdvd \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		buffer:${PORTSDIR}/misc/buffer \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		mpgtx:${PORTSDIR}/multimedia/mpgtx \
 		dvdbackup:${PORTSDIR}/sysutils/dvdbackup
