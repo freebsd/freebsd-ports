@@ -20,17 +20,16 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 .if defined(WITH_HTDIG)
-## this may be broken with mailman 2.1.6 -- someone send patches to $MAINTAINER
 # see http://www.openinfo.co.uk/mailman/index.html
 # Order of application of these patches is critical.
-PATCHFILES+=	indexing-2.1.4-0.1.patch.gz:patch1 \
-		htdig-2.1.4-0.1.patch.gz:patch2
+PATCHFILES+=	indexing-2.1.6-0.1.patch.gz:patch1 \
+		htdig-2.1.6-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=	http://www.openinfo.co.uk/mailman/patches/444879/:patch1 \
-		http://www.openinfo.co.uk/mailman/patches/444884/:patch2
+PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
+		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 .endif
 
-MAINTAINER?=	vivek@khera.org
+MAINTAINER?=	ports@freebsd.org
 COMMENT?=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
@@ -72,7 +71,7 @@ MAIL_GID?=	mailnull
 MAIL_GID?=	daemon
 .endif
 CGI_GID?=	www
-IMGDIR=		www/icons
+IMGDIR?=	www/icons
 #
 # End of user-configurable variables.
 
@@ -133,7 +132,7 @@ post-configure:
 # port system auditors complain if dir is created prior to install
 # but configure demands it be there.  we delete it now if empty,
 # so it will be re-created.  For existing installs, this is ignored
-	@- rmdir ${MAILMANDIR} 2> /dev/null
+	@- ${RMDIR} ${MAILMANDIR} 2> /dev/null
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
