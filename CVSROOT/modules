@@ -12430,6 +12430,7 @@ uhexen		ports/games/uhexen
 uim		ports/textproc/uim
 uird		ports/comms/uird
 uk-aspell	ports/ukrainian/aspell
+uk-emacs-koi8u	ports/ukrainian/emacs-koi8u
 uk-gd		ports/ukrainian/gd
 uk-kde3-i18n	ports/ukrainian/kde3-i18n
 uk-koffice-i18n	ports/ukrainian/koffice-i18n
