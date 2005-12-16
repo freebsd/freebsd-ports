@@ -68,8 +68,6 @@ _GECKO_ALL=	firefox nvu seamonkey sunbird
 .endif
 _GECKO_ALL+=	mozilla thunderbird
 
-_NEW_GCC_GECKO=	firefox seamonkey sunbird
-
 sunbird_PORTSDIR=	deskutils
 
 thunderbird_PORTSDIR=	mail
@@ -115,13 +113,6 @@ GECKO=	${gecko}
 GECKO_FALLTRHOUGH=	${TRUE}
 .  endif
 . endfor
-.endif
-
-# Use new gcc on new geckos
-.if defined(GECKO) && ${_GECKO_ALL:M${GECKO}}!=""
-. if ${_NEW_GCC_GECKO:M${GECKO}}!=""
-USE_GCC?=	3.4+
-. endif
 .endif
 
 # Generic defines
