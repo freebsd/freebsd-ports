@@ -12,11 +12,13 @@ E32, E64, E128, E256, H128, H256, UF32, NE64.
 
 Supported target connections:
 - BDM:
+  - Daniel Malik's TDBML (Turbo BDM Light) USB POD
   - Kevin Ross's BDM12 POD
-  - Marek Peca's PODEX and my own improved version
+  - Marek Peca's PODEX
+  - my own improved version of PODEX with firmware bugfixes
 - LRAE (Load RAM And Execute) serial bootloader
   see Freescale's Application Note AN2546
-- Freescale's HCS12 MCU serial monitor                                         
-  see Freescale's Application Note AN2548                                      
+- Freescale's HCS12 MCU serial monitor
+  see Freescale's Application Note AN2548
 
 WWW: http://cml.mfk.net.pl/hc12mem
