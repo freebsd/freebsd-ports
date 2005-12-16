@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- pci_pm.h.orig	Wed Jul 14 18:02:49 2004
++++ pci_pm.h	Fri Dec 16 18:13:15 2005
+@@ -68,7 +68,7 @@
+ #define ID_AMD756	0x740B1022
+ #define ID_AMD766	0x74131022
+ #define ID_AMD768	0x74431022
+-#define ID_AMD8111	0x746A1022
++#define ID_AMD8111	0x746B1022
+ #define ID_NFORCE	0x01B410DE
+ #define ID_NFORCE2	0x006410DE
+ #define ID_ALI7101	0x710110B9
