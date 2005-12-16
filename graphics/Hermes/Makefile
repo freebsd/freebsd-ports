@@ -9,9 +9,9 @@ PORTNAME=	Hermes
 PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.clanlib.org/download/files/ \
-		http://distro.ibiblio.org/pub/linux/distributions/sorcerer/sources/Hermes/1.3.3/ \
-		http://power-net.linux.tucows.com/files/x11/dev/
+MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
@@ -24,10 +24,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
 
+PORTDOCS=	*
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64
-IGNORE=		"is broken on sparc64: interchanges red and blue colour channels in images"
+IGNORE=		is broken on sparc64: interchanges red and blue colour channels in images
 .endif
 
 post-install:
@@ -37,8 +39,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/API
-.for file in api-1.htm api-2.htm api-3.htm api-4.htm api.htm api.ps api.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/api/${file} ${DOCSDIR}/API
+.for f in api-1.htm api-2.htm api-3.htm api-4.htm api.htm api.ps api.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/api/${f} ${DOCSDIR}/API
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/docs/api/sgml/api.sgml ${DOCSDIR}/API
 .endif
