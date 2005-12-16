@@ -4,6 +4,7 @@
     COMMENT = Ukrainian support
 
     SUBDIR += aspell
+    SUBDIR += emacs-koi8u
     SUBDIR += gd
     SUBDIR += ispell
     SUBDIR += kde3-i18n
