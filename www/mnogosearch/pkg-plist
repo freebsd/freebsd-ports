@@ -119,19 +119,23 @@ etc/mnogosearch/stopwords/es.sl
 etc/mnogosearch/stopwords/fr.sl
 etc/mnogosearch/stopwords/hu.sl
 etc/mnogosearch/stopwords/it.sl
+etc/mnogosearch/stopwords/ja.sl
 etc/mnogosearch/stopwords/lt.sl
 etc/mnogosearch/stopwords/nl.sl
 etc/mnogosearch/stopwords/no.sl
 etc/mnogosearch/stopwords/pl.sl
 etc/mnogosearch/stopwords/pt.sl
 etc/mnogosearch/stopwords/ru.sl
+etc/mnogosearch/stopwords/se.sl
 etc/mnogosearch/stopwords/sk.sl
 etc/mnogosearch/stopwords/tr.sl
 etc/mnogosearch/stopwords/ua.sl
+etc/mnogosearch/stopwords/zh.sl
 etc/mnogosearch/synonym/english.syn
 etc/mnogosearch/synonym/francais.syn
 etc/mnogosearch/synonym/italian.syn
 etc/mnogosearch/synonym/russian.syn
+etc/mnogosearch/synonym/russian.big.syn
 etc/mnogosearch/thai.freq
 include/udm_agent.h
 include/udm_alias.h
@@ -393,12 +397,12 @@ sbin/indexer
 %%DATADIR%%/mssql/create.single.sql
 %%DATADIR%%/mssql/drop.multi.sql
 %%DATADIR%%/mssql/drop.single.sql
-%%DATADIR%%/mysql/create.fly.sql
 %%DATADIR%%/mysql/create.multi.sql
 %%DATADIR%%/mysql/create.single.sql
-%%DATADIR%%/mysql/drop.fly.sql
+%%DATADIR%%/mysql/create.blob.sql
 %%DATADIR%%/mysql/drop.multi.sql
 %%DATADIR%%/mysql/drop.single.sql
+%%DATADIR%%/mysql/drop.blob.sql
 %%DATADIR%%/oracle/create.multi.sql
 %%DATADIR%%/oracle/create.single.sql
 %%DATADIR%%/oracle/drop.multi.sql
@@ -411,6 +415,10 @@ sbin/indexer
 %%DATADIR%%/sqlite/create.single.sql
 %%DATADIR%%/sqlite/drop.multi.sql
 %%DATADIR%%/sqlite/drop.single.sql
+%%DATADIR%%/sybase/create.single.sql
+%%DATADIR%%/sybase/create.multi.sql
+%%DATADIR%%/sybase/drop.single.sql
+%%DATADIR%%/sybase/drop.multi.sql
 %%DATADIR%%/virtuoso/create.multi.sql
 %%DATADIR%%/virtuoso/create.single.sql
 %%DATADIR%%/virtuoso/drop.multi.sql
@@ -426,6 +434,7 @@ sbin/indexer
 @dirrm %%DATADIR%%/ibase
 @dirrm %%DATADIR%%/db2
 @dirrm %%DATADIR%%/mssql
+@dirrm %%DATADIR%%/sybase
 @dirrm %%DATADIR%%
 @dirrm etc/mnogosearch/synonym
 @dirrm etc/mnogosearch/stopwords
