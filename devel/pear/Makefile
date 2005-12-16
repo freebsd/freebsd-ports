@@ -7,7 +7,7 @@
 
 PORTNAME=	pear
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
@@ -31,7 +31,6 @@ post-patch:
 
 do-install:
 	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
-	@${MKDIR} ${DATADIR}/packages ${DATADIR}/sql
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
