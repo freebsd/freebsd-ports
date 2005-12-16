@@ -15,6 +15,9 @@ EXTRACT_ONLY=
 MAINTAINER=	jameso@elwood.net
 COMMENT=	The free demo of Civilization: Call to Power
 
+DEPRECATED=	Tarball is unfetchable since 2001
+EXPIRATION_DATE=2006-02-17
+
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
