@@ -1,0 +1,24 @@
+$FreeBSD$
+
+--- configure.orig	Fri Aug 13 10:22:18 2004
++++ configure	Fri Dec 16 17:50:05 2005
+@@ -3486,8 +3486,9 @@
+ 
+ 
+ case "${host}" in
+-	i?86-*-freebsd*)
++	i?86-*-freebsd* | amd64-*-freebsd*)
+   		CC=cc
++		HOSTDEF="-DSMBUS_IOCTL"
+ 		;;
+ 	i?86-*-linux-*)
+   		CC=gcc
+@@ -3946,7 +3947,7 @@
+ done
+ 
+ 
+-for ac_header in machine/smb.h
++for ac_header in dev/smbus/smb.h machine/smb.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
