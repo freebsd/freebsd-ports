@@ -1,4 +1,6 @@
 MD5 (gnupg-1.4.2.tar.bz2) = c7afd50c7d01fcfada229326b3958404
+SHA256 (gnupg-1.4.2.tar.bz2) = 2e59787afe23102ebd8b05d32ce6abf165d2035958b200c2e330329c0a98b892
 SIZE (gnupg-1.4.2.tar.bz2) = 2891177
 MD5 (gnupg-1.4.2.tar.bz2.sig) = 9b2fba5c49d094b1f1b8219d354e61f5
+SHA256 (gnupg-1.4.2.tar.bz2.sig) = a6cc885af017aa0aa059230f246c30cb0adbe8a30bacbc6cc6e85347be6b6e34
 SIZE (gnupg-1.4.2.tar.bz2.sig) = 65
