@@ -4215,9 +4215,9 @@ checksum: fetch check-checksum-algorithms
 				fi; \
 			done; \
 			\
-			if [ $$ignored = "true" ]; then \
+			if ( [ $$ignored = "true" ]) ; then \
 				${ECHO_MSG} "=> No suitable checksum found for $$file."; \
-				OK="${FALSE}"; \
+				OK="false"; \
 			fi; \
 			\
 		done; \
