@@ -13529,7 +13529,7 @@ xrestop		ports/x11/xrestop
 xrick		ports/games/xrick
 xripple		ports/games/xripple
 xrisk		ports/games/xrisk
-xrmap		ports/misc/xrmap
+xrmap		ports/astro/xrmap
 xrmftp		ports/ftp/xrmftp
 xrml		ports/graphics/xrml
 xrn		ports/news/xrn
