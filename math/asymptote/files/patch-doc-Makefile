@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- doc/Makefile	Wed Nov 16 09:36:10 2005
 +++ doc/Makefile.port	Thu Nov 24 17:37:49 2005
 @@ -52,8 +52,9 @@
