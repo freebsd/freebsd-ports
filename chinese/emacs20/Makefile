@@ -32,7 +32,7 @@ post-patch:
 	@${ECHO_CMD} "share/emacs/%%EMACS_VER%%/etc/dot.emacs" >> ${WRKDIR}/pkg-plist
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/pkg-plist
 
-post-install:
+post-install::
 	${INSTALL} -c ${.CURDIR}/files/Emacs ${PREFIX}/share/emacs/${PORTVERSION}/etc
 	${INSTALL} -c ${.CURDIR}/files/dot.emacs ${PREFIX}/share/emacs/${PORTVERSION}/etc
 	@${CAT} ${PKGMESSAGE}

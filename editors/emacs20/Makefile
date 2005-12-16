@@ -61,7 +61,7 @@ post-build:
 	)
 
 BINDIR=	${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
-post-install:
+post-install::
 	for f in b2m ctags emacs emacsclient etags rcs-checkin; do \
 		${LN} -sf ${BINDIR}/$${f} ${PREFIX}/bin/$${f}20; \
 	done
