@@ -27,7 +27,7 @@ DIST_SUBDIR=	xemacs
 MAINTAINER?=	anray@FreeBSD.org
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
-CONFLICTS=	emacs-[0-9]* \
+CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-devel-mule-[0-9]*
 
