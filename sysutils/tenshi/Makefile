@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.3.1
+PORTVERSION=		0.3.4
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
 MASTER_SITE_SUBDIR=	tenshi
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		laszlof@vonostingroup.com
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
 
 RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils
