@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An emacs major mode for editing SGML and XML DTDs
 
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
+EMACS_PORT_NAME?=	emacs20
+
+EMACS_NO_BUILD_DEPENDS=	YES
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
