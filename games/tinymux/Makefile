@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymux
-PORTVERSION=	2.3.3.${PATCHLEVEL}
+PORTVERSION=	2.3.5.${PATCHLEVEL}
 CATEGORIES=	games net
 MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.3/${PATCHLEVEL}/ \
 		http://www.tinymux.org/ \
@@ -16,14 +16,13 @@ DISTNAME=	mux-${PORTVERSION}.unix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multi-Player FreeForm adventure Program
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-PATCHLEVEL=	22
+PATCHLEVEL=	24
 WRKSRC=		${WRKDIR}/mux2.3/src
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
