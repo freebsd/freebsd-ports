@@ -643,7 +643,6 @@
     SUBDIR += open-beagle
     SUBDIR += openorb
     SUBDIR += openthreads
-    SUBDIR += opentop
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += oskit
