@@ -16,6 +16,8 @@ COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 			smbstatus:${PORTSDIR}/net/samba3
 
+BROKEN=			Does not compile
+
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
