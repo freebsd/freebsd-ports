@@ -83,6 +83,7 @@ SPEEX			Speex audio codec support
 SQLITE			Sqlite embedded sql database support
 SSE			Adds support for x86 SSE optimizations
 SSL			Adds support for SSL (Secure Socket Layer)
+STATIC			Build statically linked executables
 THEORA			Theora video codec support
 VORBIS			OGG/Vorbis audio support
 X11			Support for X11
