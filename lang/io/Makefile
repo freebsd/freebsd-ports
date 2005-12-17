@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2005.12.05
-PORTREVISION=	1
+PORTVERSION=	0.0.2005.12.11
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -26,6 +25,12 @@ WRKSRC=		${WRKDIR}/release/${DISTNAME}/
 MAKE_ENV=	INCS="-I${LOCALBASE}/include" LIBLOCAL="-L${LOCALBASE}/lib"
 BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4+
+.endif
+
 pre-patch:
 	${FIND} ${WRKSRC} -name '.DS_Store*' -delete
 
@@ -39,7 +44,7 @@ pre-patch:
 
 	for mkf in `${FIND} ${WRKSRC} -iname Makefile`; do \
 		${REINPLACE_CMD} \
-			-e 's,^CFLAGS.*$$,CFLAGS+=$${INCS} $${INCLUDE},g' \
+			-e 's,^CFLAGS.*$$,CFLAGS+=-g $${INCS} $${INCLUDE},g' \
 			-e 's,^\(LFLAGS.*\)$$,\1 $${LIBLOCAL},g' \
 			-e 's,^CC=\(.*\)$$,CC?=\1,g' \
 			$$mkf; \
@@ -52,6 +57,10 @@ pre-patch:
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
+.if ${OSVERSION} < 500000
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/<stdint.h>/<inttypes.h>/' vm/base/_new/Array/Array.h vm/base/_new/Data.h vm/base/Common.h vm/base/NEW_stdint.h
+.endif
+
 
 do-install:
 .for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer
@@ -77,4 +86,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
