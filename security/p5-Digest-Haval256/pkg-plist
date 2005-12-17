@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Digest/Haval256.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/Haval256.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256/Haval256.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Haval256
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Digest/ 2>/dev/null || true

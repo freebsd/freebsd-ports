@@ -331,6 +331,7 @@
     SUBDIR += p5-Digest
     SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-HMAC
+    SUBDIR += p5-Digest-Haval256
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD4
     SUBDIR += p5-Digest-MD5
