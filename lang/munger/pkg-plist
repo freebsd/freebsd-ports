@@ -9,6 +9,7 @@ bin/munger
 %%DATADIR%%/filter.munger
 %%DATADIR%%/tags.munger
 %%DATADIR%%/fcgi.munger
+%%DATADIR%%/cgi.munger
 %%DATADIR%%/client.fcgi
 %%DATADIR%%/err.munger
 %%DATADIR%%/options.munger
