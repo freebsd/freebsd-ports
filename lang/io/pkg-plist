@@ -91,6 +91,7 @@ include/io/base/NEW_stdint.h
 include/io/base/PHash.h
 include/io/base/PHash_inline.h
 include/io/base/PortableGettimeofday.h
+include/io/base/PortableStrlcpy.h
 include/io/base/PortableStrptime.h
 include/io/base/PortableTruncate.h
 include/io/base/PortableUsleep.h
@@ -110,10 +111,12 @@ lib/libIoFnmatch.a
 lib/libIoMD5.a
 lib/libIoRegex.a
 lib/libIoSHA1.a
+lib/libIoSkipDB.a
 lib/libIoSockets.a
 lib/libIoSyslog.a
 lib/libIoUser.a
 lib/libIoVM.a
+%%DOCSDIR%%/_darcsboring.txt
 %%DOCSDIR%%/docs.html
 %%DOCSDIR%%/embedding.html
 %%DOCSDIR%%/guide.html
@@ -126,6 +129,7 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/ioCode/A2_Exception.io
 %%EXAMPLESDIR%%/ioCode/Actor.io
 %%EXAMPLESDIR%%/ioCode/B_Sequence.io
+%%EXAMPLESDIR%%/ioCode/Block.io
 %%EXAMPLESDIR%%/ioCode/Date.io
 %%EXAMPLESDIR%%/ioCode/Directory.io
 %%EXAMPLESDIR%%/ioCode/File.io
@@ -184,6 +188,7 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/sampleCode/Hanoi.io
 %%EXAMPLESDIR%%/sampleCode/HelloWorld.io
 %%EXAMPLESDIR%%/sampleCode/Inheritance.io
+%%EXAMPLESDIR%%/sampleCode/Jer.io
 %%EXAMPLESDIR%%/sampleCode/LaunchPath.io
 %%EXAMPLESDIR%%/sampleCode/Ping.io
 %%EXAMPLESDIR%%/sampleCode/Ping.io copy
