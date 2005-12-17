@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Digest/SV1.pm
+@unexec rmdir %D/%%SITE_PERL%%/Digest/ 2>/dev/null || true
