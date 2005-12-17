@@ -1,0 +1,7 @@
+MD5 sums (see RFC 1321 - The MD5 Message-Digest Algorithm) are used as a
+one-way hash of data. Due to the nature of the formula used, it is impossible
+to reverse it.
+This module provides functions to search several online MD5 hashes database and
+return the results (or return undefined if no match found).
+
+WWW: http://search.cpan.org/dist/Digest-MD5-Reverse

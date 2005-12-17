@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Digest/MD5/Reverse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5/Reverse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5/Reverse/
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/MD5 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/ 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Digest/MD5 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Digest/ 2>/dev/null || true
