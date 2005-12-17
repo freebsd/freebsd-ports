@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +20,7 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 
 OPTIONS=	QUICKTIME "With Quicktime support" off
 
+USE_AUTOTOOLS=	autoconf:259
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libxml2
@@ -33,6 +33,10 @@ CONFIGURE_ENV=	CPPFLAGS=-"I${LOCALBASE}/include -I${X11BASE}/include" \
 MAN1=	kino.1
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500039
+USE_GCC=	3.4
+.endif
 
 .if defined(WITH_QUICKTIME)
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
