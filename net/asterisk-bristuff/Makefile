@@ -39,14 +39,17 @@ USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MKDIR="${MKDIR}" \
-		PWLIBDIR=${WRKDIRPREFIX}${PORTSDIR}/devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${PORTSDIR}/net/openh323/work/openh323 \
+		PWLIBDIR=${PWLIBDIR} \
+		OPENH323DIR=${OPENH323DIR} \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 
 MAN8=		asterisk.8
 
 .include <bsd.port.pre.mk>
+
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib; make -V WRKSRC
+OPENH323DIR!=	cd ${PORTSDIR}/net/openh323; make -V WRKSRC
 
 .if ${ARCH} != "i386"
 WITHOUT_H323=	1
