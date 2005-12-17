@@ -345,6 +345,7 @@
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD4
     SUBDIR += p5-Digest-MD5
+    SUBDIR += p5-Digest-MD5-File
     SUBDIR += p5-Digest-MD5-M4p
     SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-SHA
