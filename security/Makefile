@@ -329,6 +329,7 @@
     SUBDIR += p5-Crypt-xDBM_File
     SUBDIR += p5-Data-Password
     SUBDIR += p5-Digest
+    SUBDIR += p5-Digest-Adler32
     SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-Haval256
