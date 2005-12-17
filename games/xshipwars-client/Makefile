@@ -9,11 +9,14 @@ PORTNAME=	xshipwars-client
 PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
+MASTER_SITES=	#
 DISTFILES=	xsw1.23.tgz stimages1.3.tgz
 
 MAINTAINER=	troll@digitalspark.net
 COMMENT=	Hardcore Internet space combat/economy game resembling EV on crack!
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-16
 
 WRKSRC=		${WRKDIR}/xsw1.23/client
 USE_XLIB=	YES
