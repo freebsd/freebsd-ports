@@ -7,12 +7,13 @@
 
 PORTNAME=	geogebra-i18n
 PORTVERSION=	2.6b
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math java
-MASTER_SITES=	http://www.geogebra.at/download/InstData/Java/
+MASTER_SITES=	http://www.geogebra.at/download/InstData/Java/ \
+		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
 DISTNAME=	geogebra_setup
 EXTRACT_SUFX=	.jar
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A dynamic software that joins geometry, algebra and calculus
