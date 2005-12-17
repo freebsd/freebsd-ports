@@ -7,6 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.8.12
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -56,6 +57,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
+	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
 	${RM} ${PREFIX}/libexec/sudo_noexec.la
 
 .include <bsd.port.post.mk>
