@@ -33,21 +33,25 @@ CONFIGURE_TARGET=
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	OSTYPE=${OPSYS} \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323 \
+		PTLIBDIR=${PWLIBDIR} \
+		OPENH323DIR=${OPENH323DIR} \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 
-CONFIGURE_ARGS=	--with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/include/ptlib \
-		--with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/lib \
-		--with-openh323-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/include \
-		--with-openh323-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/lib \
-		--with-ldap-includes=${LOCALBASE}/include \
-		--with-openldap-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-ptlib-includes=${PWLIBDIR}/include/ptlib \
+		--with-ptlib-libs=${PWLIBDIR}/lib \
+		--with-openh323-includes=${OPENH323DIR}/include \
+		--with-openh323-libs=${OPENH323DIR}/lib \
+ 		--with-ldap-includes=${LOCALBASE}/include \
+ 		--with-openldap-libs=${LOCALBASE}/lib
+
 GCONF_SCHEMAS=	gnomemeeting.schemas
 MAN1=		gnomemeeting.1
 
 .include <bsd.port.pre.mk>
+
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib && make -V WRKSRC
+OPENH323DIR!=	cd ${PORTSDIR}/net/openh323 && make -V WRKSRC
 
 .if ${ARCH} != "i386"
 BROKEN=		"Configure fails on !i386"
