@@ -13,6 +13,8 @@ MASTER_SITES=		http://tea.linux.kiev.ua/
 MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
 
+BROKEN=			Size mismatch
+
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_REINPLACE=		yes
