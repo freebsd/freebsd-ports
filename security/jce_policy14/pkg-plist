@@ -1,0 +1,6 @@
+@exec   mv %D/%%JAVA_HOME%%/jre/lib/security/local_policy.jar          %D/%%JAVA_HOME%%/jre/lib/security/local_policy.jar.orig
+%%JAVA_HOME%%/jre/lib/security/local_policy.jar
+@unexec mv %B/%f.orig %B/%f
+@exec   mv %D/%%JAVA_HOME%%/jre/lib/security/US_export_policy.jar      %D/%%JAVA_HOME%%/jre/lib/security/US_export_policy.jar.orig
+%%JAVA_HOME%%/jre/lib/security/US_export_policy.jar
+@unexec mv %B/%f.orig %B/%f
