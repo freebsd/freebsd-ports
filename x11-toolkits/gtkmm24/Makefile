@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -29,7 +29,8 @@ USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gtk20
-CONFIGURE_ARGS=	--enable-static=yes \
+CONFIGURE_ARGS=	--disable-demos \
+		--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
@@ -42,14 +43,13 @@ CONFIGURE_ARGS+=--disable-examples
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--disable-docs
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
-		-e '/^SUBDIRS =/s/@DEMO_SUBDIR@//' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/docs//' \
-		${WRKSRC}/Makefile.in
-.endif
 
 patch-autotools::
 	@(cd ${PATCH_WRKSRC}; \
