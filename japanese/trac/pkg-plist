@@ -327,6 +327,7 @@ bin/tracdb2env
 %%DATADIR%%/wiki-default/TracIni
 %%DATADIR%%/wiki-default/TracInstall
 %%DATADIR%%/wiki-default/TracInterfaceCustomization
+%%DATADIR%%/wiki-default/TracJa
 %%DATADIR%%/wiki-default/TracLinks
 %%DATADIR%%/wiki-default/TracLogging
 %%DATADIR%%/wiki-default/TracModPython
@@ -341,6 +342,7 @@ bin/tracdb2env
 %%DATADIR%%/wiki-default/TracStandalone
 %%DATADIR%%/wiki-default/TracSupport
 %%DATADIR%%/wiki-default/TracSyntaxColoring
+%%DATADIR%%/wiki-default/TracTermsJa
 %%DATADIR%%/wiki-default/TracTickets
 %%DATADIR%%/wiki-default/TracTicketsCustomFields
 %%DATADIR%%/wiki-default/TracTimeline
