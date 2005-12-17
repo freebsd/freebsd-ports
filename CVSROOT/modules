@@ -7801,6 +7801,7 @@ p5-Digest-FNV	ports/security/p5-Digest-FNV
 p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-Hashcash	ports/security/p5-Digest-Hashcash
 p5-Digest-Haval256	ports/security/p5-Digest-Haval256
+p5-Digest-JHash	ports/security/p5-Digest-JHash
 p5-Digest-MD2	ports/security/p5-Digest-MD2
 p5-Digest-MD4	ports/security/p5-Digest-MD4
 p5-Digest-MD5	ports/security/p5-Digest-MD5
