@@ -15,15 +15,11 @@ following first:
 
 * Remove leftover semaphores / increase semaphore limits.
   - Close apps which use Mono and run `ipcs -sbt`.  Remove the
-    semaphores with MODE "--rw-------" and NSEMS "8"
+    semaphores with MODE "--rw-------" and NSEMS "8" using ipcrm (1)
   - _OR_ simply reboot which is the safest method.
   - On multi-user systems the semaphore limits may need to be increased
-    from the FreeBSD default of 10 identifiers and 60 total semaphores.
-    The following should comfortably support 30 users.
+    from the defaults. The following should comfortably support 30 users.
 
     # echo "kern.ipc.semmni=40" >> /boot/loader.conf
     # echo "kern.ipc.semmns=300" >> /boot/loader.conf
-
-    By users we mean local users.  XSP can serve multiple clients but
-    would count as only one user, the user running XSP.
 ************************************************************************
