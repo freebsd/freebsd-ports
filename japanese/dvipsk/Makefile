@@ -37,6 +37,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
+BROKEN=		Incomplete pkg-plist
+
 PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk
 EXTRA_PATCHES=	${WRKDIR}/dvipsk-${PORTVERSION}-p1.7a.diff
 CONFIGURE_WRKSRC=${WRKDIR}/${TETEX_SRC}
