@@ -1,0 +1,27 @@
+# Ports collection Makefile for:	p5-Digest-Adler32
+# Date created:				17 Dec 2005
+# Whom:					Gabor Kovesdan
+# $FreeBSD$
+
+PORTNAME=	Digest-Adler32
+PORTVERSION=	0.03
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Digest
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gkovesdan@t-hosting.hu
+COMMENT=	Perl extension for Adler32 hash algorithm
+
+BUILD_DEPENDS=	${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
+
+PERL_CONFIGURE= yes
+#PERL_MODBUILD=  yes
+
+MAN3=	Digest::Adler32.3
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500503
+IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+.endif
+.include <bsd.port.post.mk>
