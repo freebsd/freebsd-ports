@@ -277,10 +277,12 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 MAN1=		vlc.1 \
 		vlc-config.1
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
 ### Remove comment when gnome 2.12 hits the streets.
 #WITH_MOZILLA?=	firefox
-.if ${WITH_MOZILLA}=="firefox"
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 
@@ -297,7 +299,7 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-co
 .endif
 MOZILLA_SUFFIX=-mozilla
 CONFIGURE_ARGS+=--enable-mozilla
-.if ${WITH_MOZILLA}=="mozilla-devel"
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="mozilla-devel"
 HEADERS_SUFX=	-devel
 .else
 HEADERS_SUFX=
@@ -312,8 +314,6 @@ WX_CONFIG=	wxgtk2-2.6-config
 WXGTK2_PORT=	wxgtk26
 CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 BROKEN=	"Does not compile with perl ${PERL_VERSION}"
