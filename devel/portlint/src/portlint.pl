@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.92 2005/11/19 21:21:13 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.94 2005/12/17 16:35:05 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1873,6 +1873,10 @@ DIST_SUBDIR EXTRACT_ONLY
 			&perror("WARN: $file: EXTRACT_SUFX is \".tar.gz.\" ".
 				"by default. you don't need to specify it.");
 		}
+		if ($extractsufx eq '.tar.bz2') {
+			&perror("WARN: $file: EXTRACT_SUFX is \".tar.bz2.\" ".
+				"You should use USE_BZIP2 instead.");
+		}
 	} else {
 		print "OK: no EXTRACT_SUFX seen, using default value.\n"
 			if ($verbose);
@@ -2467,12 +2471,19 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	print "OK: checking INFO.\n" if ($verbose);
 	if ($autoinfo && $tmp =~ /\nINFO=\s*([^\n]*)\n/) {
 		my @minfo = grep($_ !~ /^\s*$/, split(/\s+/, $1));
+		if ($tmp =~ /\binstall-info\b/) {
+			&perror("FATAL: $file: install-info is automatically run ".
+				"when INFO is defined.");
+		}
 		foreach $i (@minfo) {
 			if ($i =~ /\.info(-\d+)?$/) {
 				&perror("FATAL: $file: do not include the .info extension ".
 					"on files listed in the INFO macro.");
 			}
 		}
+	} elsif ($autoinfo && $tmp =~ /\binstall-info\b/) {
+		&perror("WARN: $file: do not call install-info directly.  Use the ".
+			"INFO macro instead.");
 	}
 
 	# check USE_X11 and USE_IMAKE
