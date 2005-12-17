@@ -1,0 +1,23 @@
+This is Encrypted MAC (EMAC), formerly known as Double MAC (DMAC).
+Unlike HMAC, which reuses an existing one-way hash function, such as
+MD5, SHA-1 or RIPEMD-160, EMAC reuses an existing block cipher to
+produce a secure message authentication code (MAC).
+
+Using the block cipher, a message is encrypted in CBC mode. The last
+block is taken as the MAC of the message. For fixed-length messages,
+this method is provably secure. In reality, however, messages have
+arbitrary lengths, and this method is not secure. To make secure MACs
+for variable length messages, the last block is encrypted once again
+with a different key. The security of this construction has been proved
+in the paper, ``CBC MAC for Real-Time Data Sources'' by Erez Petrank
+and Charles Rackoff. The security can be proved on the assumption that
+the underlying block cipher is pseudo-random.
+
+The performance and key-agility of EMAC are reasonable. EMAC is
+preferable for short messages because the block length is smaller
+compared to the schemes based on a hash function. EMAC is also chosen
+as one of the NESSIE winners for Message Authentication Codes, along
+with UMAC, TTMAC and HMAC. The current NESSIE specification chooses the
+AES as block cipher.
+
+WWW: http://search.cpan.org/dist/Digest-DMAC
