@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
+BROKEN=		Incomplete pkg-plist
+
 .include <bsd.port.pre.mk>
 
 # I will remove WITH_PLUGINS knob.
