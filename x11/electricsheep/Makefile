@@ -25,6 +25,8 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
