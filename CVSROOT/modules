@@ -7793,6 +7793,7 @@ p5-Digest-Adler32	ports/security/p5-Digest-Adler32
 p5-Digest-BubbleBabble	ports/security/p5-Digest-BubbleBabble
 p5-Digest-CRC	ports/security/p5-Digest-CRC
 p5-Digest-Crc32	ports/security/p5-Digest-Crc32
+p5-Digest-DJB	ports/security/p5-Digest-DJB
 p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-Hashcash	ports/security/p5-Digest-Hashcash
 p5-Digest-Haval256	ports/security/p5-Digest-Haval256
