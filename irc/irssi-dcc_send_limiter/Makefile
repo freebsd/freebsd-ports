@@ -20,6 +20,8 @@ PATCHFILES=	${DISTFILES}.diff
 MAINTAINER=	drizzt@gufi.org
 COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
 
+BROKEN=		Unfetchable
+
 USE_GNOME=	pkgconfig
 NO_WRKSUBDIR=	yes
 
