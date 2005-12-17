@@ -337,6 +337,7 @@
     SUBDIR += p5-Digest-DMAC
     SUBDIR += p5-Digest-EMAC
     SUBDIR += p5-Digest-Elf
+    SUBDIR += p5-Digest-FNV
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-Hashcash
     SUBDIR += p5-Digest-Haval256
