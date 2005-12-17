@@ -14,6 +14,7 @@ share/apps/kbtv/dialog_hardware_info.py
 share/apps/kbtv/dialog_hardware_info.pyc
 share/apps/kbtv/dialog_picture_settings.py
 share/apps/kbtv/dialog_picture_settings.pyc
+share/apps/kbtv/input.kbtv
 share/apps/kbtv/kbtv.py
 share/apps/kbtv/kbtv.pyc
 share/apps/kbtv/kbtv_channels.py

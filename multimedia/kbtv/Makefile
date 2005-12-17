@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	kbtv
-DISTVERSION=	1.0-rc1
+DISTVERSION=	1.0-rc2
 CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	danny@ricin.com
-COMMENT=	KDE TV viewer for BSD
+COMMENT=	Simple KDE TV viewer for BSD
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt \
 		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
