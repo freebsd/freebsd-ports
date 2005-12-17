@@ -7789,6 +7789,7 @@ p5-Device-Modem	ports/comms/p5-Device-Modem
 p5-Device-SerialPort	ports/comms/p5-Device-SerialPort
 p5-Dialog	ports/devel/p5-Dialog
 p5-Digest	ports/security/p5-Digest
+p5-Digest-Adler32	ports/security/p5-Digest-Adler32
 p5-Digest-BubbleBabble	ports/security/p5-Digest-BubbleBabble
 p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-Haval256	ports/security/p5-Digest-Haval256
