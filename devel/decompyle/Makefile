@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python byte-code decompiler
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2005-12-31
+
 USE_PYTHON=	-2.3
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=  yes
