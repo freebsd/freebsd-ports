@@ -1,6 +1,7 @@
 %%SITE_PERL%%/WWW/Search/AltaVista.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/AdvancedNews.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/AdvancedWeb.pm
+%%SITE_PERL%%/WWW/Search/AltaVista/Careers.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/DE.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/Intranet.pm
 %%SITE_PERL%%/WWW/Search/AltaVista/Intranet3.pm
