@@ -20,6 +20,8 @@ EXTRACT_ONLY=	${SRC_DIST}
 MAINTAINER=	MLton@mlton.org
 COMMENT=	An optimizing Standard ML compiler
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea 	\
