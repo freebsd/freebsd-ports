@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	#empty
