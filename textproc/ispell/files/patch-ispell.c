@@ -1,5 +1,5 @@
---- ispell.c.orig	Wed Jul 25 17:51:46 2001
-+++ ispell.c	Sat Feb 22 14:24:29 2003
+--- ispell.c.orig	Thu Jul 26 07:51:46 2001
++++ ispell.c	Sat Dec 17 22:21:26 2005
 @@ -209,6 +209,7 @@
  #include <fcntl.h>
  #endif /* NO_FCNTL_H */
@@ -58,7 +58,7 @@
  	{
  	(void) fprintf (stderr,
  	  argc == 1 ? ISPELL_C_NO_FILE : ISPELL_C_NO_FILES);
-@@ -935,6 +947,29 @@
+@@ -935,6 +947,35 @@
  	outfile = stdout;
  	checkfile ();
  	exit (0);
@@ -78,10 +78,16 @@
 +	    {
 +    	    while (argc--)
 +		{
-+	        infile = setupdefmt (*argv++);
-+	        outfile = stdout;
-+		checkfile ();
-+    		(void) fclose (infile);
++    		if ((infile = setupdefmt (*argv)) == NULL)
++		{
++			(void) fprintf (stderr, CANT_OPEN, *argv);
++			(void) sleep ((unsigned) 2);
++		} else {
++	        	outfile = stdout;
++			checkfile ();
++    			(void) fclose (infile);
++		}
++		argv++;
 +		}
 +	    exit (0);
 +	    }
