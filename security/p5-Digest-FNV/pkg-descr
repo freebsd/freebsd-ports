@@ -1,0 +1,6 @@
+Digest::FNV is an implementation for the 32-bit version of Fowler/Noll/Vo
+hashing algorithm which allows variable length input strings to be quickly
+hashed into unsigned integer values. For more information about this hash,
+please visit http://www.isthe.com/chongo/tech/comp/fnv/.
+
+WWW: http://search.cpan.org/dist/Digest-FNV
