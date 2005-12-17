@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On
+CONFLICTS=	ja-trac-*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

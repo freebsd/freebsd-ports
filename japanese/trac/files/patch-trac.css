@@ -1,0 +1,11 @@
+--- ./htdocs/css/trac.css.orig	Fri Dec 16 11:24:16 2005
++++ ./htdocs/css/trac.css	Fri Dec 16 11:24:26 2005
+@@ -47,7 +47,7 @@
+   background: url(../extlink.gif) left center no-repeat;
+   padding-left: 16px;
+  }
+- * html a.ext-link .icon { display: inline-block; }
++ * html a.ext-link .icon { display: inline; }
+ }
+ 
+ /* Forms */
