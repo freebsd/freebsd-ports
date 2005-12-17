@@ -28,6 +28,10 @@ CONFLICTS=	py*-4suite-[01]* py*-xml-0.7*
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
+.endif
+
 BINDIR=		bin
 SYSCONFDIR=	etc/4Suite
 LIBDIR=		lib/4Suite
