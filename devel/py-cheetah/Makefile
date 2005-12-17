@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cheetah
-DISTVERSION=	0.9.17rc1
+DISTVERSION=	1.0
 CATEGORIES=	devel textproc www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cheetahtemplate

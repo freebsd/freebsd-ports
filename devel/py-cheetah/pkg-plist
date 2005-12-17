@@ -1,5 +1,8 @@
 bin/cheetah
 bin/cheetah-compile
+%%PYTHON_SITELIBDIR%%/Cheetah/CacheRegion.py
+%%PYTHON_SITELIBDIR%%/Cheetah/CacheRegion.pyc
+%%PYTHON_SITELIBDIR%%/Cheetah/CacheRegion.pyo
 %%PYTHON_SITELIBDIR%%/Cheetah/CheetahWrapper.py
 %%PYTHON_SITELIBDIR%%/Cheetah/CheetahWrapper.pyc
 %%PYTHON_SITELIBDIR%%/Cheetah/CheetahWrapper.pyo
