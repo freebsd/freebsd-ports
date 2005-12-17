@@ -29,6 +29,8 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 WITHOUT_WEB=	yes
 .endif
 
+USE_ICONV=	yes
+
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
 .else
@@ -43,7 +45,6 @@ BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/m
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
 MAKE_ENV+=	BROWSER=mozilla
 .endif
-USE_ICONV=	yes
 MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
 .endif
 
