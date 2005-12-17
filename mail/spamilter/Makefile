@@ -12,10 +12,6 @@ MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 MASTER_SITE_SUBDIR=	dinoex
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	spamilter-0.59-2005-11-08.patch.gz
-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
@@ -33,7 +29,7 @@ USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 LDFLAGS+=	${PTHREAD_LIBS}
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" __MAKE_CONF=/dev/null
 
 BINFILES=	spamilter-system-report spamilter-user-report
 DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
@@ -42,24 +38,21 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-ALL_TARGET=	spamilter dnsblchk mxlookup iflookup
-.else
-PLIST_FILES+=	bin/ipfwmtad
-.endif
-.if ${OSVERSION} > 501000
-.if ${OSVERSION} < 504000
-IGNORE=		is unusable because of resource starvation in threads
-.endif
-.endif
-
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--sendmail_dir "${LOCALBASE}"
+CONFIGURE_ARGS+=	--sendmail-dir "${LOCALBASE}"
 .endif
-#CFLAGS+=	-DDEBUG_TIMESTAMP
 
-PLIST_FILES+=	bin/dnsblchk bin/mxlookup bin/spamilter \
+.if defined(SMTP_AFTER_POP3)
+CONFIGURE_ARGS+=	--with-popauth
+.endif
+
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam
+.endif
+
+PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
+		bin/spamilter \
 		bin/spamilter-system-report bin/spamilter-user-report \
 		etc/rc.d/milter-spamilter.sh.sample
 .if !defined(NOPORTDOCS)
@@ -86,23 +79,7 @@ pre-configure:
 		${WRKSRC}/spamilter.c \
 		${WRKSRC}/docs/docs.html ${WRKSRC}/docs/docs.txt
 
-post-configure:
-	${REINPLACE_CMD} \
-		-e "s|^CFLAGS=|#CFLAGS=|" \
-		-e "s|^LDFLAGS=|#LDFLAGS=|" \
-		-e "s|^LIBDIRS=|#LIBDIRS=|" \
-		-e "s|/usr/local/bind|${LOCALBASE}/bind|" \
-		-e "s|/usr/local/|${PREFIX}/|" \
-		-e "s|<SUPPORT_POPAUTH\\([^>]*\\)>|\\1|" \
-		-e "s|<SUPPORT_LIBSPF[^>]*>| |" \
-		-e "s|<SUPPORT_SPF\\([^>]*\\)>| |" \
-		-e "s|<SUPPORT_PAM[^>]*>| |" \
-		-e "s|uam.[hco]| |" \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} \
-		-e "s|#define SUPPORT_LIBSPF|#undef SUPPORT_LIBSPF|" \
-		-e "s|#define SUPPORT_PAM|#undef SUPPORT_PAM|" \
-		${WRKSRC}/config.h
+xpost-configure:
 .if ${OSVERSION} > 500000
 	${REINPLACE_CMD} \
 		-e "s| install-ipfwmtad | |" \
