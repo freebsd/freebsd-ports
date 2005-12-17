@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
+BROKEN=		Install fails
+
 EMACS_PORT_NAME=	xemacs21-mule
 COMMENT=	Simple front-end to w3m for xemacs21-mule
 
