@@ -7809,6 +7809,7 @@ p5-Digest-MD5	ports/security/p5-Digest-MD5
 p5-Digest-MD5-File	ports/security/p5-Digest-MD5-File
 p5-Digest-MD5-M4p	ports/security/p5-Digest-MD5-M4p
 p5-Digest-MD5-Reverse	ports/security/p5-Digest-MD5-Reverse
+p5-Digest-ManberHash	ports/security/p5-Digest-ManberHash
 p5-Digest-Nilsimsa	ports/security/p5-Digest-Nilsimsa
 p5-Digest-SHA	ports/security/p5-Digest-SHA
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
