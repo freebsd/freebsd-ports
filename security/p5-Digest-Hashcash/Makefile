@@ -1,0 +1,25 @@
+# Ports collection Makefile for:	p5-Digest-Hashcash
+# Date created:				17 Dec 2005
+# Whom:					Gabor Kovesdan
+# $FreeBSD$
+
+PORTNAME=	Digest-Hashcash
+PORTVERSION=	0.04
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMBACK
+PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	gkovesdan@t-hosting.hu
+COMMENT=	Perl extension for Hashcash hash algorithm
+
+PERL_CONFIGURE= yes
+
+MAN3=	Digest::Hashcash.3
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500503
+IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+.endif
+.include <bsd.port.post.mk>
