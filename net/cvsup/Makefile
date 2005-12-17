@@ -55,7 +55,16 @@ MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
 MAN1=		cvpasswd.1 cvsup.1
 MAN8=		cvsupd.8
 
+pre-everything::
 .ifdef STATIC
+	@${ECHO_MSG} "*****************************************************"
+	@${ECHO_MSG} "* In future, please define WITH_STATIC instead of   *"
+	@${ECHO_MSG} "* STATIC.                                           *"
+	@${ECHO_MSG} "*****************************************************"
+	@${ECHO_MSG} ""
+.endif
+
+.ifdef STATIC || WITH_STATIC
 M3FLAGS+=	-DSTATIC
 .endif
 
