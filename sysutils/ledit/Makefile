@@ -16,6 +16,8 @@ COMMENT=	Line editor to be used with interactive commands
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Does not build
+
 ALL_TARGET=	all ledit.opt
 
 INSTALL_TARGET=	install.opt
