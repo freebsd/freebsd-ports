@@ -333,6 +333,7 @@
     SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-CRC
     SUBDIR += p5-Digest-Crc32
+    SUBDIR += p5-Digest-DJB
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-Hashcash
     SUBDIR += p5-Digest-Haval256
