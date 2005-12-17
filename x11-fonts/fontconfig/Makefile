@@ -165,12 +165,11 @@ MAN5=		fonts-conf.5
 
 .include <bsd.port.pre.mk>
 
-#.if defined(WITH_CJK)
-#PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
-#		http://bsdchat.com/dist/firefly-cjk-patchset/
-#PATCHFILES+=	cjk-fontconfig-2.2.3-20050315.patch.gz
-#PATCH_DIST_STRIP+=	-p1
-#.endif
+.if defined(WITH_CJK)
+PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/
+PATCHFILES+=	cjk-fontconfig-2.3.2-20051217.patch.gz
+PATCH_DIST_STRIP+=	-p1
+.endif
 
 .if defined(NOPORTDOCS)
 post-patch:
