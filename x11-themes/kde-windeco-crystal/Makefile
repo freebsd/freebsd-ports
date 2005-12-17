@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Transparent KDE window decoration
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
