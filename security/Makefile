@@ -350,6 +350,7 @@
     SUBDIR += p5-Digest-MD5-Reverse
     SUBDIR += p5-Digest-ManberHash
     SUBDIR += p5-Digest-Nilsimsa
+    SUBDIR += p5-Digest-Pearson
     SUBDIR += p5-Digest-SHA
     SUBDIR += p5-Digest-SHA1
     SUBDIR += p5-Digest-SHA2
