@@ -20,6 +20,8 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		edje.5:${PORTSDIR}/graphics/edje \
 		ecore.1:${PORTSDIR}/x11/ecore
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
