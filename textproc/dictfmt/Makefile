@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -27,9 +27,9 @@ INSTALL_TARGET=	install.dictfmt
 MAN1=		dictfmt.1 dictfmt_index2suffix.1 dictfmt_index2word.1 \
 		dictunformat.1
 PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
-		bin/dictfmt_plugin bin/dictfmt_virtual bin/dictunformat
+		bin/dictunformat
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
