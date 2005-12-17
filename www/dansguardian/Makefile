@@ -7,6 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.8.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}.source
@@ -14,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.source
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
-		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -36,15 +36,15 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 MAN8=		dansguardian.8
 NOMANCOMPRESSED=	yes
 
-OPTIONS=	DG_GCC3 "Compile using GCC 3.3 on FreeBSD 4.x." off \
-		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
+OPTIONS=	DG_APACHE "Enable Apache support." on \
+		DG_PHRASELISTS "Install new phraselists over the old ones." off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
 NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
 NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	"${NO_PACKAGE}"
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +53,10 @@ RESTRICTED=	${NO_PACKAGE}
 CONFIGURE_ARGS+=	--gccver=3
 .else
 CONFIGURE_ARGS+=	--gccver=2
+.endif
+
+.if !defined(WITHOUT_DG_APACHE)
+USE_APACHE=	1.3+
 .endif
 
 # User needs to manually download the distfile
