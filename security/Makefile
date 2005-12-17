@@ -334,6 +334,7 @@
     SUBDIR += p5-Digest-CRC
     SUBDIR += p5-Digest-Crc32
     SUBDIR += p5-Digest-HMAC
+    SUBDIR += p5-Digest-Hashcash
     SUBDIR += p5-Digest-Haval256
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD4
