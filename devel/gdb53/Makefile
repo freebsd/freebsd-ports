@@ -38,6 +38,8 @@ BROKEN=		"Configure fails on amd64"
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
+	${LN} -sf ${FILESDIR}/freebsd-uthread.c ${FILESDIR}/kvm-fbsd.c \
+		${WRKSRC}/gdb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
