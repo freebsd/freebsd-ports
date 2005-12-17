@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 DISTVERSION=	1.3.0-rc4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.1/:book
@@ -356,7 +356,7 @@ post-build:
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav libexec/apache2/mod_dav.so
 .endif
 
 post-install:	${MKREPOS_TARGET}
