@@ -35,6 +35,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500600
 post-patch:
 	@${FIND} ${WRKSRC}/lib -type f | ${XARGS} ${REINPLACE_CMD} -e '/warnings/d'
+	@${FIND} ${WRKSRC}/lib -name "*.bak" | ${XARGS} ${RM} -f
 .endif
 
 .include <bsd.port.post.mk>
