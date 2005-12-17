@@ -101,22 +101,16 @@ CFLAGS+=	-I${LOCALBASE}/include/mysql ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 WITH_THREADS=	YES
-AUTHN_MODULES=	authn_dbd
-MISC_MODULES=	dbd
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	YES
 CONFIGURE_ARGS+= --with-pgsql=${LOCALBASE}
-AUTHN_MODULES=	authn_dbd
-MISC_MODULES=	dbd
 .endif
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=	YES
 CONFIGURE_ARGS+= --with-sqlite3=${LOCALBASE}
-AUTHN_MODULES=	authn_dbd
-MISC_MODULES=	dbd
 .endif
 
 .if defined(WITH_THREADS)
@@ -137,21 +131,26 @@ WITH_SSL_MODULES=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
-AUTH_MODULES+=		auth_basic auth_digest
-AUTHN_MODULES+=		authn_file authn_dbm authn_anon authn_default
+.if !defined(WITH_THREADS)
+WITHOUT_MODULES+=	mem_cache
+.endif
+
+.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
+WITHOUT_MODULES+=	authn_dbd dbd
+.endif
+
+AUTH_MODULES=		auth_basic auth_digest
+AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default
 AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
 			authz_owner authz_default
-CACHE_MODULES=		cache disk_cache file_cache
-.if defined(WITH_THREADS)
-CACHE_MODULES+=		mem_cache
-.endif
+CACHE_MODULES=		cache disk_cache file_cache mem_cache
 DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
 			log_forensic optional_hook_export optional_hook_import \
 			optional_fn_import optional_fn_export 
 LDAP_MODULES=		ldap authnz_ldap
 MISC_MODULES+=		actions alias asis autoindex cern_meta \
-			cgi charset_lite deflate dir env expires \
+			cgi charset_lite dbd deflate dir env expires \
 			headers imagemap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
 			unique_id userdir usertrack vhost_alias filter
