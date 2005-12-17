@@ -21,7 +21,7 @@ COMMENT=	Manage remote serial consoles via TCP/IP
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
-USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 
 MAN5=		conserver.cf.5
 MAN8=		autologin.8 console.8 conserver.8
@@ -34,7 +34,7 @@ MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
 #PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 do-build:
-	${PERL} -pi.orig -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
+	${REINPLACE_CMD} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
 	    ${WRKSRC}/etc/conserver/cons.h
 .for d in etc/conserver etc/console etc/autologin
 	(cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} makeme \
