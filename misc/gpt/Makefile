@@ -27,6 +27,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
 
+BROKEN=		Broken distinfo
+
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}autotools2004
