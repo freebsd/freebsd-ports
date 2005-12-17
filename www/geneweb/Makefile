@@ -16,6 +16,8 @@ COMMENT=	An advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Does not build
+
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwu.1
 
 SUB_FILES+=	pkg-message
