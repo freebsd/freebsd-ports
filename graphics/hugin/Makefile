@@ -28,6 +28,8 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 RUN_DEPENDS=	PTOptimizer:${PORTSDIR}/graphics/libpano12 \
 		PTStitcher:${PORTSDIR}/graphics/linux-panorama-tools
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
