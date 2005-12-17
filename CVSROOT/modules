@@ -7796,6 +7796,7 @@ p5-Digest-Crc32	ports/security/p5-Digest-Crc32
 p5-Digest-DJB	ports/security/p5-Digest-DJB
 p5-Digest-DMAC	ports/security/p5-Digest-DMAC
 p5-Digest-EMAC	ports/security/p5-Digest-EMAC
+p5-Digest-Elf	ports/security/p5-Digest-Elf
 p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-Hashcash	ports/security/p5-Digest-Hashcash
 p5-Digest-Haval256	ports/security/p5-Digest-Haval256
