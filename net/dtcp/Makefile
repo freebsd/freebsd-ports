@@ -7,7 +7,7 @@
 
 PORTNAME=	dtcp
 PORTVERSION=	20050521
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 
-.if !defined(DTCP_CLIENT_ONLY)
+.if defined(WITH_QPOPAUTH)
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
