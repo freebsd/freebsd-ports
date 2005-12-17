@@ -6,20 +6,21 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Emulator for Commodore's C64, C128, VIC20, PET, and CBM-II
+COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 .if !defined(VICE_WITH_GNOME)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
+RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
 
 USE_XPM=	yes
 USE_REINPLACE=	yes
@@ -41,7 +42,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INFO=		vice
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
 		vice.1 x128.1 \
@@ -49,6 +49,10 @@ MLINKS=		vice.1 x64.1 \
 		vice.1 xpet.1 \
 		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
+
+.if !defined(NOPORTDOCS)
+INFO=		vice
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -63,7 +67,7 @@ LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
-LIBS+=			-lgettextlib
+LDFLAGS+=		-lgettextlib
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -99,13 +103,21 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
+.endif
 
 pre-install:
-	${MKDIR} ${DOCSDIR} ${PREFIX}/lib/vice/fonts
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.endif
+	${MKDIR} ${PREFIX}/lib/vice/fonts
 	${INSTALL_DATA} ${WRKSRC}/data/fonts/vice-cbm.bdf \
 		${PREFIX}/lib/vice/fonts/
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${LN} -sf vice_toc.html ${DOCSDIR}/index.html
+.endif
 
 .include <bsd.port.post.mk>
