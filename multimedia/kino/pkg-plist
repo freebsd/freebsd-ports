@@ -7,9 +7,18 @@ include/kino/image_filters.h
 include/kino/image_transitions.h
 include/kino/kino_extra.h
 include/kino/playlist.h
+lib/kino-gtk2/libdvtitler.a
+lib/kino-gtk2/libdvtitler.la
+lib/kino-gtk2/libdvtitler.so
+lib/kino-gtk2/libdvtitler.so.0
+lib/kino-gtk2/libtimfx.a
+lib/kino-gtk2/libtimfx.la
+lib/kino-gtk2/libtimfx.so
+lib/kino-gtk2/libtimfx.so.0
 share/gnome/applications/Kino.desktop
 share/gnome/kino/about.jpeg
 share/gnome/kino/capture.png
+share/gnome/kino/dvtitler.glade
 share/gnome/kino/edit.png
 share/gnome/kino/export.png
 share/gnome/kino/fx.png
@@ -24,8 +33,11 @@ share/gnome/kino/link.xpm
 share/gnome/kino/link_off.xpm
 share/gnome/kino/magick.glade
 share/gnome/kino/publish_project.png
+share/gnome/kino/publish_project_16.png
 share/gnome/kino/publish_still.png
+share/gnome/kino/publish_still_16.png
 share/gnome/kino/saveframe.png
+share/gnome/kino/saveframe_16.png
 share/gnome/kino/split.xpm
 share/gnome/kino/stock_media-begin-16.png
 share/gnome/kino/stock_media-end-16.png
@@ -41,6 +53,7 @@ share/gnome/kino/stock_media-repeat-alt.png
 share/gnome/kino/stock_media-rew-16.png
 share/gnome/kino/stock_media-stop-16.png
 share/gnome/kino/timeline.png
+share/gnome/kino/timfx.glade
 share/gnome/kino/trim.png
 share/gnome/kino/trim_in.xpm
 share/gnome/kino/trim_out.xpm
@@ -66,13 +79,51 @@ share/gnome/kino/scripts/exports/ffmpeg_divx_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_dvd.sh
 share/gnome/kino/scripts/exports/ffmpeg_dvd_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_flv.sh
+share/gnome/kino/scripts/exports/ffmpeg_h264.sh
+share/gnome/kino/scripts/exports/ffmpeg_h264_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp3.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp4.sh
+share/gnome/kino/scripts/exports/ffmpeg_mp4_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
 share/gnome/kino/scripts/exports/mencoder.sh
 share/gnome/kino/scripts/exports/rawplay.sh
+share/gnome/kino/scripts/import/media.sh
 share/gnome/kino/scripts/publish/frame.sh
 share/gnome/kino/scripts/publish/project.sh
+share/gnome/kino/lumas/bar_bottom.png
+share/gnome/kino/lumas/bar_left.png
+share/gnome/kino/lumas/bar_right.png
+share/gnome/kino/lumas/bar_top.png
+share/gnome/kino/lumas/barn_bottomleft.png
+share/gnome/kino/lumas/barn_horz.png
+share/gnome/kino/lumas/barn_topleft.png
+share/gnome/kino/lumas/barn_vert.png
+share/gnome/kino/lumas/box_bottomcentre.png
+share/gnome/kino/lumas/box_bottomleft.png
+share/gnome/kino/lumas/box_bottomright.png
+share/gnome/kino/lumas/box_leftcentre.png
+share/gnome/kino/lumas/box_rightcentre.png
+share/gnome/kino/lumas/box_topcentre.png
+share/gnome/kino/lumas/box_topleft.png
+share/gnome/kino/lumas/box_topright.png
+share/gnome/kino/lumas/burst.png
+share/gnome/kino/lumas/checkerboard_small.png
+share/gnome/kino/lumas/clock.png
+share/gnome/kino/lumas/clock_clockwise12.png
+share/gnome/kino/lumas/clock_clockwise6.png
+share/gnome/kino/lumas/diag_bottomleft.png
+share/gnome/kino/lumas/diag_bottomright.png
+share/gnome/kino/lumas/diag_topleft.png
+share/gnome/kino/lumas/diag_topright.png
+share/gnome/kino/lumas/fourbox_in.png
+share/gnome/kino/lumas/fourbox_out.png
+share/gnome/kino/lumas/horizontal_barn_doors.png
+share/gnome/kino/lumas/horizontal_blinds.png
+share/gnome/kino/lumas/iris_circle.png
+share/gnome/kino/lumas/iris_rectangle.png
+share/gnome/kino/lumas/left_to_right.png
+share/gnome/kino/lumas/matrix_snake_toplefthorizontal.png
+share/gnome/kino/lumas/symmetric_clock.png
 share/gnome/pixmaps/kino.png
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
@@ -85,8 +136,11 @@ share/locale/nb/LC_MESSAGES/kino.mo
 share/locale/eu/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
+@dirrm lib/kino-gtk2
 @dirrm share/gnome/kino/help
+@dirrm share/gnome/kino/lumas
 @dirrm share/gnome/kino/scripts/exports
+@dirrm share/gnome/kino/scripts/import
 @dirrm share/gnome/kino/scripts/publish
 @dirrm share/gnome/kino/scripts
 @dirrm share/gnome/kino
