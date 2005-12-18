@@ -25,7 +25,7 @@ load_rc_config "$name"
 : ${%%DRIVERNAME%%_enable="NO"}
 : ${%%DRIVERNAME%%_interfaces="%%DRIVERNAME%%0"}
 
-command="/usr/local/sbin/%%DRIVERNAME%%control"
+command="%%PREFIX%%/sbin/%%DRIVERNAME%%control"
 
 %%DRIVERNAME%%_start_cmd()
 {
