@@ -37,6 +37,7 @@ include/libecasound/audiofx_rcfilter.h
 include/libecasound/audiofx_reverb.h
 include/libecasound/audiofx_timebased.h
 include/libecasound/audiogate.h
+include/libecasound/audioio-aac.h
 include/libecasound/audioio-buffered.h
 include/libecasound/audioio-cdr.h
 include/libecasound/audioio-cdr_impl.h
@@ -46,6 +47,7 @@ include/libecasound/audioio-db-server.h
 include/libecasound/audioio-db-server_impl.h
 include/libecasound/audioio-device.h
 include/libecasound/audioio-ewf.h
+include/libecasound/audioio-flac.h
 include/libecasound/audioio-forked-stream.h
 include/libecasound/audioio-loop.h
 include/libecasound/audioio-manager.h
@@ -117,6 +119,7 @@ include/libecasound/midi-cc.h
 include/libecasound/midi-client.h
 include/libecasound/midi-parser.h
 include/libecasound/midi-server.h
+include/libecasound/midiio-aseq.h
 include/libecasound/midiio-raw.h
 include/libecasound/midiio.h
 include/libecasound/osc-gen-file.h
@@ -126,6 +129,7 @@ include/libecasound/oscillator.h
 include/libecasound/preset.h
 include/libecasound/preset_impl.h
 include/libecasound/resource-file.h
+include/libecasound/sample-ops_impl.h
 include/libecasound/sample-specs.h
 include/libecasound/samplebuffer.h
 include/libecasound/samplebuffer_functions.h
@@ -136,16 +140,13 @@ include/libecasound/two-stage-linear-envelope.h
 include/libecasoundc/eca-control-interface.h
 include/libecasoundc/ecasoundc.h
 lib/libecasound.a
-lib/libecasound.la
 lib/libecasoundc.a
-lib/libecasoundc.la
 lib/libkvutils.a
-lib/libkvutils.la
-share/ecasound/ecasound.el
-share/ecasound/ecasoundrc
-share/ecasound/effect_presets
-share/ecasound/generic_oscillators
-@dirrm share/ecasound
+%%DATADIR%%/ecasound.el
+%%DATADIR%%/ecasoundrc
+%%DATADIR%%/effect_presets
+%%DATADIR%%/generic_oscillators
+@dirrm %%DATADIR%%
 @dirrm include/libecasoundc
 @dirrm include/libecasound
 @dirrm include/kvutils
