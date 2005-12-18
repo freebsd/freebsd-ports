@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmwork
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 
@@ -22,16 +21,16 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		wmwork.1
 PLIST_FILES=	bin/wmwork
 
-CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
-LDFLAGS=	-L${X11BASE}/lib
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${PREFIX}/bin/wmwork
-	@${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${MANPREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
