@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.33
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
