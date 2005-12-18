@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
@@ -69,6 +69,15 @@ pre-install:
 	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
 	${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
 		${FAKEDIR}/lib/${PORTNAME}/defaults
+	@cd ${FAKEDIR}/lib/${PORTNAME}/defaults/isp && \
+		${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|lib/${PORTNAME}/defaults/isp/|' >> ${PLIST} && \
+		${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm lib/${PORTNAME}/defaults/isp/|' \
+		>> ${PLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults/isp 2>/dev/null || ${TRUE}" >> ${PLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults 2>/dev/null || ${TRUE}" >> ${PLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/ 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 
