@@ -63,6 +63,7 @@ www/data-dist/phpgroupware/addressbook/inc/import/Import_from_Netscape
 www/data-dist/phpgroupware/addressbook/inc/import/Import_from_Outlook_-_Deutsch
 www/data-dist/phpgroupware/addressbook/inc/import/Import_from_Outlook_-_English
 www/data-dist/phpgroupware/addressbook/index.php
+www/data-dist/phpgroupware/addressbook/js/base/base.js
 www/data-dist/phpgroupware/addressbook/setup/phpgw_br.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_cs.lang
 www/data-dist/phpgroupware/addressbook/setup/phpgw_da.lang
@@ -5131,6 +5132,7 @@ www/data-dist/phpgroupware/phpgwapi/doc/index.pdf
 www/data-dist/phpgroupware/phpgwapi/doc/index.txt
 www/data-dist/phpgroupware/phpgwapi/doc/lang_files.txt
 www/data-dist/phpgroupware/phpgwapi/doc/ldap/README
+www/data-dist/phpgroupware/phpgwapi/doc/ldap/README_LDAP_WITH_OTHER_TOOLS
 www/data-dist/phpgroupware/phpgwapi/doc/ldap/UPDATE
 www/data-dist/phpgroupware/phpgwapi/doc/ldap/iplanet/phpgw.at.conf
 www/data-dist/phpgroupware/phpgwapi/doc/ldap/iplanet/phpgw.oc.conf
@@ -8829,6 +8831,8 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/addressbook/templates/default
 @dirrm www/data-dist/phpgroupware/addressbook/templates
 @dirrm www/data-dist/phpgroupware/addressbook/setup
+@dirrm www/data-dist/phpgroupware/addressbook/js/base
+@dirrm www/data-dist/phpgroupware/addressbook/js
 @dirrm www/data-dist/phpgroupware/addressbook/inc/import
 @dirrm www/data-dist/phpgroupware/addressbook/inc/export
 @dirrm www/data-dist/phpgroupware/addressbook/inc
