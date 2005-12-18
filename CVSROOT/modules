@@ -7613,6 +7613,7 @@ p5-Crypt-RC5	ports/security/p5-Crypt-RC5
 p5-Crypt-RC6	ports/security/p5-Crypt-RC6
 p5-Crypt-RIPEMD160	ports/security/p5-Crypt-RIPEMD160
 p5-Crypt-RSA	ports/security/p5-Crypt-RSA
+p5-Crypt-Rabbit	ports/security/p5-Crypt-Rabbit
 p5-Crypt-RandPasswd	ports/security/p5-Crypt-RandPasswd
 p5-Crypt-Random	ports/security/p5-Crypt-Random
 p5-Crypt-Rijndael	ports/security/p5-Crypt-Rijndael
