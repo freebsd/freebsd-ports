@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		env4801
-PORTVERSION=		0.2
+PORTVERSION=		0.3
 CATEGORIES=		sysutils
 MASTER_SITES=		http://phk.freebsd.dk/soekris/env4801/
 DISTFILES=		Makefile env4801.c
