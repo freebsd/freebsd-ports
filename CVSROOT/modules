@@ -4441,6 +4441,7 @@ ja-scim-canna	ports/japanese/scim-canna
 ja-scim-prime	ports/japanese/scim-prime
 ja-scim-skk	ports/japanese/scim-skk
 ja-scim-tables	ports/japanese/scim-tables
+ja-scim-tomoe	ports/japanese/scim-tomoe
 ja-scim-uim	ports/japanese/scim-uim
 ja-sed		ports/japanese/sed
 ja-shinonome	ports/japanese/shinonome
