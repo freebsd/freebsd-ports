@@ -30,14 +30,6 @@ SUB_LIST+=	RUBY=${RUBY}
 
 PLIST_FILES=	sbin/dtcpauth sbin/dtcpc sbin/dtcps
 
-pre-everything::
-.if !defined(DTCP_CLIENT_ONLY)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you don't use DTCP server, you don't need qpopper."
-	@${ECHO_MSG} "In that case, You may use DTCP_CLIENT_ONLY=yes to avoid building qpopper."
-	@${ECHO_MSG} ""
-.endif
-
 pre-install:
 	@for script in ${USE_RC_SUBR}; do \
 		if [ -f ${PREFIX}/etc/rc.d/$${script} ]; then \
