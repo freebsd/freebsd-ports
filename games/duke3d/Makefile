@@ -14,6 +14,9 @@ COMMENT=	Icculus Duke Nukem 3D port for various Operating Systems
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+DEPRECATED=	Master site disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-03-18
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
@@ -37,10 +40,6 @@ OPTIONS=	DOSBOX "Dependency on dosbox (required by SETUP.EXE and\
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-DEPRECATED=	Please use games/jfduke3d. This port is being kept for RELENG_4 users
-.endif
 
 .if !defined(WITHOUT_DOSBOX)
 RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
