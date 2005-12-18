@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: compat4x
+# REQUIRE: mountcritremote
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# compat4x_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=compat4x
+rcvar=`set_rcvar`
+
+command=%%LDCONFIG%%
+command_args='-m %%PREFIX%%/lib/compat'
+%%AMD64%%
+%%AMD64%%start_postcmd=${name}_poststart
+%%AMD64%%compat4x_poststart () {
+%%AMD64%%	%%LDCONFIG%% -32 -m %%TARGET32_DIR%%
+%%AMD64%%}
+
+load_rc_config ${name}
+run_rc_command "$1"

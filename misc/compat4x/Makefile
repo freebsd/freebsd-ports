@@ -7,7 +7,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${COMPAT4X_MASTER_SITE_SUBDIR}
@@ -22,11 +22,15 @@ WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_MTREE=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat
+TARGET32_DIR=	${PREFIX}/lib32/compat
+USE_RC_SUBR=	${PORTNAME}.sh
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 
 .include <bsd.port.pre.mk>
+
+SUB_LIST+=	LDCONFIG="${LDCONFIG}"
 
 .if ${OSVERSION} >= 600016
 RUN_DEPENDS=		${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
@@ -41,7 +45,7 @@ COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 .elif ${ARCH} == amd64
 ARCH=			i386
 PKGNAMESUFFIX=		-i386
-TARGET_DIR=		${PREFIX}/lib32/compat
+TARGET_DIR=		${TARGET32_DIR}
 PLIST_SUB+=		LIBDIR="lib32"
 COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab
@@ -78,8 +82,10 @@ PLIST_SUB+=		I386_ONLY="@comment "
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64_ONLY=""
 PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
+SUB_LIST+=		AMD64="" TARGET32_DIR="${TARGET32_DIR}"
 .else
 PLIST_SUB+=		AMD64_ONLY="@comment "
+SUB_LIST+=		AMD64="@comment "
 .endif
 
 OPENSSL_LIBS=		libcrypto.so.1 libcrypto.so.2 libssl.so.1 libssl.so.2
@@ -121,15 +127,10 @@ do-extract:
 .endfor
 .endif
 
-do-build:
-	@( ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
-	) > ${WRKDIR}/000.${PORTNAME}.sh
-.if ${TARGET_DIR} == ${PREFIX}/lib32/compat
-	@${ECHO_CMD} '${LDCONFIG} -32 -m ${TARGET_DIR}' >> ${WRKDIR}/000.${PORTNAME}.sh
-.endif
+NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${TARGET_DIR} ${PREFIX}/etc/rc.d
+	${MKDIR} ${TARGET_DIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
 .if ${OSVERSION} >= 500000
 .for lib in ${FREEBSD4_LIBS}
@@ -139,7 +140,6 @@ do-install:
 .if ${ARCH} == amd64
 	${LDCONFIG} -32 -m ${TARGET32_DIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL

@@ -1,4 +1,3 @@
-etc/rc.d/000.compat5x.sh
 lib/compat/libalias.so.4
 lib/compat/libarchive.so.1
 lib/compat/libasn1.so.7
