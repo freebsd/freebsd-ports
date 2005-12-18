@@ -42,6 +42,8 @@ USE_REINPLACE=		yes
 CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 			--with-mozilla-include-dir="${X11BASE}/include/mozilla${HEADERS_SUFX}"
 
+BROKEN=	"Does not build with new Mozilla"
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " By default mozilla-bonobo uses www/mozilla for html rendering, but you can"
