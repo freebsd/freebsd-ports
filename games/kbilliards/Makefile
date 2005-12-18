@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbilliards
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.hostnotfound.it/kbilliards/
 
@@ -16,8 +15,8 @@ COMMENT=	Funny billiards simulator game for KDE
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_KDELIBS_VER=	3
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -28,5 +27,8 @@ CFLAGS+=	-Dsqrtl=sqrt
 .if ${OSVERSION} < 502114
 CFLAGS+=	-Dround=rint
 .endif
+
+pre-configure:
+	@cd ${WRKSRC} && ${PERL} admin/am_edit
 
 .include <bsd.port.post.mk>
