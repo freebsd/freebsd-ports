@@ -1,4 +1,3 @@
-etc/rc.d/000.compat4x.sh
 %%LIBDIR%%/compat/libc.so.4
 @unexec if [ -e %B/libc_r.so.4.compat3x ]; then ln -sf libc_r.so.4.compat3x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
 %%LIBDIR%%/compat/libc_r.so.4.compat4x

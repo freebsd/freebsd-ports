@@ -11,6 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -28,7 +29,7 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
-RCSCRIPT=	${WRKDIR}/000.compat5x.sh
+USE_RC_SUBR=	${PORTNAME}.sh
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +41,8 @@ IGNORE=	is for FreeBSD 6.x and newer
 RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
 .endif
 
+SUB_LIST+=	LDCONFIG="${LDCONFIG}"
+
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA=""
 .else
@@ -48,8 +51,10 @@ PLIST_SUB+=	ALPHA="@comment "
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64=""
 PLIST_SUB+=	LDCONFIG_LIB32="${LDCONFIG} -32"
+SUB_LIST+=	AMD64="" TARGET32_DIR="${TARGET32_DIR}"
 .else
 PLIST_SUB+=	AMD64="@comment "
+SUB_LIST+=	AMD64="@comment "
 .endif
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
@@ -62,12 +67,7 @@ PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64="@comment "
 .endif
 
-do-build:
-	${ECHO_CMD} '#!/bin/sh' > ${RCSCRIPT}
-	${ECHO_CMD} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}' >> ${RCSCRIPT}
-.if ${ARCH} == amd64
-	${ECHO_CMD} '${LDCONFIG} -32 -m ${TARGET32_DIR}' >> ${RCSCRIPT}
-.endif
+NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${TARGET_DIR}
@@ -77,6 +77,5 @@ do-install:
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 	${LDCONFIG} -32 -m ${TARGET32_DIR}
 .endif
-	${INSTALL_SCRIPT} ${RCSCRIPT} ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.post.mk>
