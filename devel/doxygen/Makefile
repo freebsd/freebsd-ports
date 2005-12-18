@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	portmaint@melvyn.homeunix.org
 COMMENT=	A documentation system for C and C++
 
 ALL_TARGET=	all
