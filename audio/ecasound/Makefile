@@ -6,77 +6,63 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
+USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile
 INSTALLS_SHLIB=	yes
-
-MAKE_ENV+=	${CONFIGURE_ENV}
-
-.if defined(WITH_MPG123)
-RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
-.endif
-
-.if defined(WITH_LAME)
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if defined(WITH_MIKMOD)
-RUN_DEPENDS+=	mikmod:${PORTSDIR}/audio/mikmod
-.endif
-
-.if defined(WITH_AUDIOFILE)
-# very crappy hack to detect audiofile properly
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-.else
-CONFIGURE_ARGS+=	--disable-audiofile
-.endif
-
-#.if defined(WITH_PYECASOUND)
-#USE_PYTHON=	yes
-#PLIST_SUB+=	WITH_PYECASOUND=""
-#.else
-CONFIGURE_ARGS+=	--disable-pyecasound
-PLIST_SUB+=	WITH_PYECASOUND="@comment "
-#.endif
-
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in-optimizations
-.endif
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
 		ecafixdc.1 ecalength.1 ecamonitor.1 ecanormalize.1 \
 		ecaplay.1 ecasignalview.1
 MAN5=		ecasoundrc.5
 
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CFLAGS+=	-fpermissive
 .endif
-.if !defined(WITH_AUDIOFILE)
-	@${ECHO_MSG} "You can enable AUDIOFILE support by defining WITH_AUDIOFILE."
+
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+.else
+CONFIGURE_ARGS+=	--disable-arts
+.endif
+
+.if defined(WITH_AUDIOFILE)
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+.else
+CONFIGURE_ARGS+=	--disable-audiofile
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
+
+.if defined(WITH_SAMPLERATE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsndfile
+.else
+CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
 .endif
 
 post-patch:
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's!-O2 -ffast-math!!' ${WRKSRC}/kvutils/Makefile.am
-.endif
+	@${REINPLACE_CMD} -e 's| $$EXTRAGCCFLAGS||g ; \
+		 s| -pthread||g ; \
+		 s| -D_THREAD_SAFE||g ; \
+		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
 
-#	${STRIP_CMD} ${PREFIX}/bin/ecaconvert ${PREFIX}/bin/ecafixdc \
-#${PREFIX}/bin/ecanormalize ${PREFIX}/bin/ecaplay ${PREFIX}/bin/ecasignalview \
-#${PREFIX}/bin/ecasound ${PREFIX}/bin/ecasound-config ${PREFIX}/bin/ecasoundc-config
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
