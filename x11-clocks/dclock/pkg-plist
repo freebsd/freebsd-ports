@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/dclock
+lib/X11/app-defaults/DClock
+%%DATADIR%%/sounds/bell.wav
+%%DATADIR%%/sounds/digital.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/changelog.Debian
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
