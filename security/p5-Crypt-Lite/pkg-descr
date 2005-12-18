@@ -1,0 +1,14 @@
+Sometimes it's necessary to protect some certain data against plain reading
+or you intend to send information through the Internet. Another reason might
+be to assure users cannot modify their previously entered data in a follow-up
+step of a long Web transaction where you don't want to deal with server-side
+session data. The goal of Crypt::Lite was to have a pretty simple way to
+encrypt and decrypt data without the need to install and compile huge
+packages with lots of dependencies.
+Crypt::Lite generates every time a different encrypted hash when you
+re-encrypt the same data with the same secret string. Nevertheless you
+are able to make double or tripple-encryption with any data to increase
+the security. Decryption works also on hashes that have been encrypted
+on a foreign host (try this with an unpatched IDEA installation ;-).
+
+WWW: http://search.cpan.org/dist/Crypt-Lite
