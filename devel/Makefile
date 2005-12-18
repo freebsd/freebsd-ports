@@ -121,6 +121,7 @@
     SUBDIR += cedet
     SUBDIR += cflow
     SUBDIR += cflow2vcg
+    SUBDIR += cgdb
     SUBDIR += cgilib
     SUBDIR += cgprof
     SUBDIR += chora
