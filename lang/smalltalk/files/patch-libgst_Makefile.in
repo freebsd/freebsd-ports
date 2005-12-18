@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- libgst/Makefile.in.orig
-+++ libgst/Makefile.in
-@@ -212,7 +212,7 @@
- 
+--- libgst/Makefile.in.orig	Tue Nov 22 01:19:02 2005
++++ libgst/Makefile.in	Fri Dec 16 23:18:14 2005
+@@ -307,7 +307,7 @@
  # definitions for libgst.la
- libgst_la_LIBADD = $(top_builddir)/lib-src/library.la $(LIBSIGSEGV) \
--	@LIBLTDL@ @LIBSNPRINTFV@ @LIBREADLINE@ @LIBGMP@
-+	@LIBLTDL@ @LIBSNPRINTFV@ @LIBREADLINE@ @LIBGMP@ -lexecinfo
- 
- 
- libgst_la_LDFLAGS = -version-info $(VERSION_INFO)
+ libgst_la_LIBADD = $(top_builddir)/lib-src/library.la \
+ 	$(top_builddir)/libffi/libffi.la @LIBSNPRINTFV@ @LIBREADLINE@ \
+-	@LIBGMP@ $(am__append_3)
++	@LIBGMP@ -lexecinfo $(am__append_3)
+ libgst_la_DEPENDENCIES = $(top_builddir)/lib-src/library.la \
+ 	$(top_builddir)/libffi/libffi.la @LIBSNPRINTFV@ \
+ 	$(am__append_4)

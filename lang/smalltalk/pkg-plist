@@ -1,29 +1,41 @@
 bin/gst
 bin/gst-config
+bin/gst-load
 bin/gst-package
+bin/gst-reload
+bin/gst-sunit
 include/gst.h
 include/gstpub.h
-include/sigsegv.h
 lib/libgst.a
 lib/libgst.la
+lib/libgst.so
+lib/libgst.so.5
 %%TCLTK%%lib/smalltalk/blox-tk.la
 %%TCLTK%%lib/smalltalk/blox-tk.so
 lib/smalltalk/gdbm.la
 lib/smalltalk/gdbm.so
 lib/smalltalk/i18n.la
 lib/smalltalk/i18n.so
+lib/smalltalk/libc.la
 lib/smalltalk/md5.la
 lib/smalltalk/md5.so
 lib/smalltalk/regex.la
 lib/smalltalk/regex.so
 lib/smalltalk/tcp.la
 lib/smalltalk/tcp.so
+libdata/pkgconfig/gnu-smalltalk.pc
 share/aclocal/gst.m4
 share/aclocal/snprintfv.m4
 share/emacs/site-lisp/gst-mode.el
 share/emacs/site-lisp/smalltalk-mode.el
 share/smalltalk/Load.st
 share/smalltalk/Reload.st
+share/smalltalk/Test.st
+share/smalltalk/blox-gtk/Blox.st
+share/smalltalk/blox-gtk/BloxBasic.st
+share/smalltalk/blox-gtk/BloxExtend.st
+share/smalltalk/blox-gtk/BloxText.st
+share/smalltalk/blox-gtk/BloxWidgets.st
 share/smalltalk/blox-tk/Blox.st
 share/smalltalk/blox-tk/BloxBasic.st
 share/smalltalk/blox-tk/BloxCanvas.st
@@ -60,7 +72,6 @@ share/smalltalk/browser/View.st
 share/smalltalk/browser/bear.gif
 share/smalltalk/browser/test.st
 share/smalltalk/compiler/ChangeLog
-share/smalltalk/compiler/Load.st
 share/smalltalk/compiler/ParseTreeSearcher.st
 share/smalltalk/compiler/RBFormatter.st
 share/smalltalk/compiler/RBParseNodes.st
@@ -76,6 +87,10 @@ share/smalltalk/compiler/StartCompiler.st
 share/smalltalk/compiler/test.st
 share/smalltalk/db/ChangeLog
 share/smalltalk/db/DB.st
+share/smalltalk/db/Glorp.st
+share/smalltalk/db/GlorpMySQL.st
+share/smalltalk/db/GlorpPort.st
+share/smalltalk/db/GlorpTest.st
 share/smalltalk/db/MySQL.st
 share/smalltalk/db/MySQLTests.st
 share/smalltalk/db/README
@@ -83,9 +98,14 @@ share/smalltalk/db/mysql-test.st
 share/smalltalk/examples/Application.st
 share/smalltalk/examples/Bench.st
 share/smalltalk/examples/Case.st
+share/smalltalk/examples/Continuations.st
+share/smalltalk/examples/Debugger.st
+share/smalltalk/examples/DeltaBlue.st
 share/smalltalk/examples/Dinner.st
 share/smalltalk/examples/EditStream.st
+share/smalltalk/examples/Gen2.st
 share/smalltalk/examples/GenClasses.st
+share/smalltalk/examples/Generator.st
 share/smalltalk/examples/Lisp.st
 share/smalltalk/examples/Man.st
 share/smalltalk/examples/MemUsage.st
@@ -97,7 +117,6 @@ share/smalltalk/examples/PushBack.st
 share/smalltalk/examples/Queens.st
 share/smalltalk/examples/README
 share/smalltalk/examples/RandomInt.st
-share/smalltalk/examples/RecursLit.st
 share/smalltalk/examples/RegExp.st
 share/smalltalk/examples/Richards.st
 share/smalltalk/examples/SortCriter.st
@@ -120,9 +139,8 @@ share/smalltalk/examples/xml.sed
 share/smalltalk/gst.im
 share/smalltalk/gtk/GtkDecl.st
 share/smalltalk/gtk/GtkImpl.st
-share/smalltalk/gtk/Libs.st
 share/smalltalk/gtk/MoreFuncs.st
-share/smalltalk/gtk/Types.st
+share/smalltalk/gtk/MoreStructs.st
 share/smalltalk/gtk/example_arrow.st
 share/smalltalk/gtk/example_aspectframe.st
 share/smalltalk/gtk/example_buttonbox.st
@@ -130,15 +148,61 @@ share/smalltalk/gtk/example_entry.st
 share/smalltalk/gtk/example_eventbox.st
 share/smalltalk/gtk/example_hello.st
 share/smalltalk/gtk/example_tictactoe.st
+share/smalltalk/gtk/example_tree.st
 share/smalltalk/i18n/ChangeLog
 share/smalltalk/i18n/Collation.st
 share/smalltalk/i18n/Expression.st
 share/smalltalk/i18n/GetText.st
-share/smalltalk/i18n/Load.st
 share/smalltalk/i18n/Locale.st
 share/smalltalk/i18n/Numbers.st
 share/smalltalk/i18n/Sets.st
 share/smalltalk/i18n/Times.st
+share/smalltalk/java/Java.st
+share/smalltalk/java/JavaClassFiles.st
+share/smalltalk/java/JavaExtensions.st
+share/smalltalk/java/JavaMetaobjects.st
+share/smalltalk/java/JavaRuntime.st
+share/smalltalk/java/JavaTranslation.st
+share/smalltalk/java/extract-native.awk
+share/smalltalk/java/gnu_gcj_convert_IOConverter.st
+share/smalltalk/java/gnu_gcj_runtime_StackTrace.st
+share/smalltalk/java/gnu_gcj_runtime_StringBuffer.st
+share/smalltalk/java/gnu_java_net_PlainDatagramSocketImpl.st
+share/smalltalk/java/gnu_java_net_PlainSocketImpl.st
+share/smalltalk/java/gnu_java_nio_FileLockImpl.st
+share/smalltalk/java/gnu_java_nio_SelectorImpl.st
+share/smalltalk/java/java_io_File.st
+share/smalltalk/java/java_io_FileDescriptor.st
+share/smalltalk/java/java_io_ObjectInputStream.st
+share/smalltalk/java/java_io_VMObjectStreamClass.st
+share/smalltalk/java/java_lang_Character.st
+share/smalltalk/java/java_lang_Class.st
+share/smalltalk/java/java_lang_ConcreteProcess.st
+share/smalltalk/java/java_lang_Double.st
+share/smalltalk/java/java_lang_Float.st
+share/smalltalk/java/java_lang_Math.st
+share/smalltalk/java/java_lang_Object.st
+share/smalltalk/java/java_lang_Runtime.st
+share/smalltalk/java/java_lang_String.st
+share/smalltalk/java/java_lang_StringBuffer.st
+share/smalltalk/java/java_lang_System.st
+share/smalltalk/java/java_lang_Thread.st
+share/smalltalk/java/java_lang_VMClassLoader.st
+share/smalltalk/java/java_lang_ref_Reference.st
+share/smalltalk/java/java_lang_reflect_Array.st
+share/smalltalk/java/java_lang_reflect_Constructor.st
+share/smalltalk/java/java_lang_reflect_Field.st
+share/smalltalk/java/java_lang_reflect_Method.st
+share/smalltalk/java/java_lang_reflect_Proxy.st
+share/smalltalk/java/java_net_InetAddress.st
+share/smalltalk/java/java_net_NetworkInterface.st
+share/smalltalk/java/java_nio_DirectByteBufferImpl.st
+share/smalltalk/java/java_nio_channels_FileChannelImpl.st
+share/smalltalk/java/java_text_Collator.st
+share/smalltalk/java/java_util_ResourceBundle.st
+share/smalltalk/java/java_util_TimeZone.st
+share/smalltalk/java/java_util_zip_Deflater.st
+share/smalltalk/java/java_util_zip_Inflater.st
 share/smalltalk/kernel/AbstNamespc.st
 share/smalltalk/kernel/AnsiDates.st
 share/smalltalk/kernel/AnsiExcept.st
@@ -225,6 +289,7 @@ share/smalltalk/kernel/RecursionLock.st
 share/smalltalk/kernel/RootNamespc.st
 share/smalltalk/kernel/RunArray.st
 share/smalltalk/kernel/ScaledDec.st
+share/smalltalk/kernel/Security.st
 share/smalltalk/kernel/Semaphore.st
 share/smalltalk/kernel/SeqCollect.st
 share/smalltalk/kernel/Set.st
@@ -262,7 +327,6 @@ share/smalltalk/net/SMTP.st
 share/smalltalk/net/URIResolver.st
 share/smalltalk/net/httpd/FileServer.st
 share/smalltalk/net/httpd/Haiku.st
-share/smalltalk/net/httpd/Load.st
 share/smalltalk/net/httpd/STT.st
 share/smalltalk/net/httpd/WebServer.st
 share/smalltalk/net/httpd/WikiServer.st
@@ -284,7 +348,6 @@ share/smalltalk/numerics/Basic.st
 share/smalltalk/numerics/Distributions.st
 share/smalltalk/numerics/Functions.st
 share/smalltalk/numerics/Integration.st
-share/smalltalk/numerics/Load.st
 share/smalltalk/numerics/Matrixes.st
 share/smalltalk/numerics/NumericsAdds.st
 share/smalltalk/numerics/NumericsTests.st
@@ -303,7 +366,6 @@ share/smalltalk/tcp/Datagram.st
 share/smalltalk/tcp/IPSocketImpl.st
 share/smalltalk/tcp/SocketAddress.st
 share/smalltalk/tcp/Sockets.st
-share/smalltalk/tcp/TCP.st
 share/smalltalk/tcp/Tests.st
 share/smalltalk/tcp/cfuncs.st
 share/smalltalk/tcp/init.st
@@ -379,6 +441,7 @@ share/smalltalk/xml/XSL.st
 @dirrm share/smalltalk/net/httpd
 @dirrm share/smalltalk/net
 @dirrm share/smalltalk/kernel
+@dirrm share/smalltalk/java
 @dirrm share/smalltalk/i18n
 @dirrm share/smalltalk/gtk
 @dirrm share/smalltalk/examples/modules
@@ -387,6 +450,7 @@ share/smalltalk/xml/XSL.st
 @dirrm share/smalltalk/compiler
 @dirrm share/smalltalk/browser
 @dirrm share/smalltalk/blox-tk
+@dirrm share/smalltalk/blox-gtk
 @dirrm share/smalltalk
 @dirrm lib/smalltalk
 @exec mkdir -p %D/include/snprintfv
