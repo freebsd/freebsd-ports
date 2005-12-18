@@ -339,6 +339,7 @@
     SUBDIR += scim-prime
     SUBDIR += scim-skk
     SUBDIR += scim-tables
+    SUBDIR += scim-tomoe
     SUBDIR += scim-uim
     SUBDIR += sed
     SUBDIR += shinonome
