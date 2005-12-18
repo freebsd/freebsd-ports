@@ -282,6 +282,7 @@
     SUBDIR += p5-Business-PayPal-EWP
     SUBDIR += p5-CSP
     SUBDIR += p5-Crypt-Anubis
+    SUBDIR += p5-Crypt-AppleTwoFish
     SUBDIR += p5-Crypt-Blowfish
     SUBDIR += p5-Crypt-Blowfish_PP
     SUBDIR += p5-Crypt-CAST5_PP
