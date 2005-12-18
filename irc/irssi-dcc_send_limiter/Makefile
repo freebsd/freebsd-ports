@@ -8,9 +8,7 @@
 PORTNAME=	dcc_send_limiter
 PORTVERSION=	0.8.9
 CATEGORIES=	irc
-.for _PREFIX in www fi hu de uk ie lt be dk ca lv
-MASTER_SITES+=	http://${_PREFIX}.irssi.org/files/plugins/
-.endfor
+MASTER_SITES=	http://svn.irssi.org/repos/modules/trunk/
 DISTNAME=	dcc-send-limiter
 EXTRACT_SUFX=	.c
 
@@ -19,8 +17,6 @@ PATCHFILES=	${DISTFILES}.diff
 
 MAINTAINER=	drizzt@gufi.org
 COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
-
-BROKEN=		Unfetchable
 
 USE_GNOME=	pkgconfig
 NO_WRKSUBDIR=	yes
