@@ -8,7 +8,8 @@
 PORTNAME=	policyd
 PORTVERSION=	1.71
 CATEGORIES=	mail
-MASTER_SITES=	http://policyd.sourceforge.net/
+MASTER_SITES=	http://policyd.sourceforge.net/ \
+		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
 DISTNAME=	policyd-v${PORTVERSION}
