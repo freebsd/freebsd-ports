@@ -6,7 +6,7 @@
 
 EXTRACT_SUFX=   .xpi
 
-BUILD_DEPENDS+=	${MOZDIR}/regchrome:${PORTSDIR}/www/${MOZPORT}
+BUILD_DEPENDS+=	${MOZDIR}/regxpcom:${PORTSDIR}/www/${MOZPORT}
 RUN_DEPENDS+=	${MOZDIR}:${PORTSDIR}/www/${MOZPORT}
 
 NO_BUILD=	yes
