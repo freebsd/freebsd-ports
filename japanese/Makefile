@@ -184,6 +184,7 @@
     SUBDIR += libjcode
     SUBDIR += libjconv
     SUBDIR += libslang
+    SUBDIR += libtomoe-gtk
     SUBDIR += linux-JM
     SUBDIR += linux-ttfonts
     SUBDIR += lipsf
