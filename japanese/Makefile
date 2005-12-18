@@ -375,6 +375,7 @@
     SUBDIR += tkhonyaku
     SUBDIR += tkstep80
     SUBDIR += today
+    SUBDIR += tomoe
     SUBDIR += trac
     SUBDIR += truetypefonts
     SUBDIR += typist
