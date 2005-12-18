@@ -6,25 +6,53 @@
 #
 
 PORTNAME=	dclock
-PORTVERSION=	pl6
+PORTVERSION=	2.1.2.7
 CATEGORIES=	x11-clocks
-MASTER_SITES=	# disappeared
-DISTNAME=	Dclock
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/d/dclock
+DISTNAME=	dclock_2.1.2.orig
 
-PATCH_SITES=	${MASTER_SITE_XCONTRIB}
-PATCH_SITE_SUBDIR=	R6contrib-fixes
-PATCHFILES=	Dclock-pl6.patch.gz
+PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/d/dclock,}
+PATCHFILES=	dclock_2.1.2-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 7-segment digital clock with optional military time and alarm
+MAINTAINER=	yasu@utahime.org
+COMMENT=	A 7-segment digital clock with some optional features
 
-DEPRECATED=	mastersites disappeared
-EXPIRATION_DATE=	2006-01-26
-
-IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes
-MAN1=		dclock.1
-PLIST_FILES=	bin/dclock
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+WRKSRC=		${WRKDIR}/dclock
+MAN1=		dclock.1
+
+OPTIONS=	SOX "Install SoX to play audio" On
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SOX)
+RUN_DEPENDS+=	play:${PORTSDIR}/audio/sox
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
+				  -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+				  ${WRKSRC}/Dclock.c \
+				  ${WRKSRC}/Dclock.ad \
+				  ${WRKSRC}/dclock.1
+	@${MV} ${WRKSRC}/dclock.1 ${WRKSRC}/dclock.man
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/Dclock.ad ${PREFIX}/lib/X11/app-defaults/DClock
+	${MKDIR} ${DATADIR}/sounds
+.for f in bell.wav digital.wav
+	${INSTALL_DATA} ${WRKSRC}/sounds/${f} ${DATADIR}/sounds
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in README TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${DOCSDIR}/changelog.Debian
+.endif
+
+.include <bsd.port.post.mk>
