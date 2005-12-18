@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	1.100.2
+PORTVERSION=	2.0.0
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,12 +15,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
+USE_GCC=	3.4+
+USE_GNOME=	gnomehack gnometarget libxml2
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=open
 INSTALLS_SHLIB=	yes
 
-MAN1=	openbabel.1
+MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1 
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+post-extract:
+	@${LN} -sf babel.1 ${WRKSRC}/doc/openbabel.1
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|= babel|= openbabel|g' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's| babel| openbabel|g ; \
+		 s|"babel|"openbabel|g' ${WRKSRC}/doc/o*.1
+	@${REINPLACE_CMD} -e 's|^babel|openbabel|g ; \
+		 s|(babel|(openbabel|g ; \
+		 s|= babel|= openbabel|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
