@@ -67,11 +67,13 @@ IGNORE=		needs at least FreeBSD 5.3-RELEASE
 
 .if ${OSVERSION} > ${MIN7OSVERSION}
 SUB_LIST+=	DONT_NEED_CONTROL="@comment "
+PLIST_SUB+=	MTREE_DIRRM="@comment "
 . if !defined(WITHOUT_CONTROL)
 IGNORE=		is configured with ${DRIVERNAME}control(8) which you don't need
 . endif
 .else
 SUB_LIST+=	DONT_NEED_CONTROL=""
+PLIST_SUB+=	MTREE_DIRRM=""
 MAN8+=		${DRIVERNAME}control.8
 USE_RCORDER=	${DRIVERNAME}.sh
 .endif

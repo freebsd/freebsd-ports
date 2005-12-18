@@ -1,10 +1,11 @@
 @cwd /
 %%WITH_CONTROL%%usr/sbin/%%DRIVERNAME%%control
-@exec mkdir -p %%FWDIR%%
+%%MTREE_DIRRM%%@exec mkdir -p %%FWDIR%%
 @cwd %%FWDIR%%
 LICENSE.%%DRIVERNAME%%
 %%DRIVERNAME%%-i.fw
 %%DRIVERNAME%%-p.fw
 %%DRIVERNAME%%.fw
+%%MTREE_DIRRM%%@unexec rmdir %%FWDIR%% 2>/dev/null || true
 %%WITH_MODULE%%@cwd /
 %%WITH_MODULE%%%%KMODDIR%%/if_%%DRIVERNAME%%.ko
