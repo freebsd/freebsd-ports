@@ -11979,6 +11979,7 @@ sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
+systemc		ports/cad/systemc
 sysutils_gag	ports/sysutils/gag
 szip		ports/archivers/szip
 t-prot		ports/mail/t-prot
