@@ -1,0 +1,24 @@
+===>  CONFIGURATION NOTE:
+
+  Configuration of sshit is done via main configuration file
+  located at %%PREFIX%%/etc/sshit.conf
+
+  To run the script, add a line in /etc/syslog.conf:
+
+auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/sshit
+
+  and restart syslogd.
+
+  If you want to use pf as the firewall, you should add a table and the
+  corresponding deny rule. For example,
+  (In /etc/pf.conf)
+
+table <badhosts> persist
+block on $extdev from <badhosts> to any
+
+  and reload the pf rules. 
+
+  If you want to use ipfw2 (with table) as the firewall, you should add a 
+  table and the corresponding deny rule. For example,
+
+# ipfw add deny ip from table(0) to any  
