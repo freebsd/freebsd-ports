@@ -32,7 +32,7 @@ INSTALLS_SHLIB=	yes
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 .if ${OSVERSION} < 500000
-IGNORE=	"Does not build on 4.X"
+IGNORE=	does not build on 4.X
 .endif
 
 .include <bsd.port.post.mk>
