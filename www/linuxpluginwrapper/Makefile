@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	nork
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
-BROKEN=		Incomplete pkg-plist
-
 .include <bsd.port.pre.mk>
 
 # I will remove WITH_PLUGINS knob.
@@ -93,9 +91,9 @@ post-build:
 	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
 .endif
 
+.if		defined(WITH_PLUGINS)
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_linux_plugins
-.if		defined(WITH_PLUGINS)
 	@${LN} -sf ${LINUXBASE}/usr/local/Adobe/Acrobat7.0/Browser/intellinux/nppdf.so \
 		${X11BASE}/lib/browser_linux_plugins/
 	@${LN} -sf ${X11BASE}/lib/linux-flashplugin6/flashplayer.xpt \
