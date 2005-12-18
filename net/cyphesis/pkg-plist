@@ -16,8 +16,6 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/basic/editor.py
 %%DATADIR%%/rulesets/basic/hooks/__init__.py
 %%DATADIR%%/rulesets/basic/hooks/ruleset_import_hooks.py
-%%DATADIR%%/rulesets/basic/mind/BaseMind.py
-%%DATADIR%%/rulesets/basic/mind/ExternalMind.py
 %%DATADIR%%/rulesets/basic/mind/Goal.py
 %%DATADIR%%/rulesets/basic/mind/Knowledge.py
 %%DATADIR%%/rulesets/basic/mind/MemMap.py
@@ -104,6 +102,8 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/mason/world/objects/tools/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/undead/Skeleton.py
 %%DATADIR%%/rulesets/mason/world/objects/undead/__init__.py
+%%DATADIR%%/rulesets/mason/world/tasks/Combat.py
+%%DATADIR%%/rulesets/mason/world/tasks/__init__.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -143,6 +143,7 @@ etc/cyphesis/werewolf.xml
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/tools
 @dirrm %%DATADIR%%/rulesets/mason/world/objects/undead
 @dirrm %%DATADIR%%/rulesets/mason/world/objects
+@dirrm %%DATADIR%%/rulesets/mason/world/tasks
 @dirrm %%DATADIR%%/rulesets/mason/world
 @dirrm %%DATADIR%%/rulesets/mason
 @dirrm %%DATADIR%%/rulesets
