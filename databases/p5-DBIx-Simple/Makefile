@@ -18,6 +18,20 @@ COMMENT=	Simplified object oriented interface to Perl DBI
 RUN_DEPENDS=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI \
 		p5-Data-Swap>=0.02:${PORTSDIR}/devel/p5-Data-Swap
 
+OPTIONS= \
+	SQL_ABSTRACT     "Generate SQL from Perl data structures" off \
+	DBIX_XHTML_TABLE "Create XHTML tables from SQL queries" off \
+	TEXT_TABLE       "Create plain text table from data" off
+
+PERL_CONFIGURE=	yes
+
+MAN3=	DBIx::Simple.3 \
+	DBIx::Simple::Examples.3 \
+	DBIx::Simple::Comparison.3 \
+	DBIx::Simple::SQE.3
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SQL_ABSTRACT)
 RUN_DEPENDS+=	p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract
 .endif
@@ -29,15 +43,6 @@ RUN_DEPENDS+=	p5-DBIx-XHTML_Table>=0:${PORTSDIR}/databases/p5-DBIx-XHTML_Table
 .if defined(WITH_TEXT_TABLE)
 RUN_DEPENDS+=	p5-Text-Table>=0:${PORTSDIR}/textproc/p5-Text-Table
 .endif
-
-PERL_CONFIGURE=	yes
-
-MAN3=	DBIx::Simple.3 \
-	DBIx::Simple::Examples.3 \
-	DBIx::Simple::Comparison.3 \
-	DBIx::Simple::SQE.3
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		need at least Perl 5.6; install lang/perl or lang/perl5.8
