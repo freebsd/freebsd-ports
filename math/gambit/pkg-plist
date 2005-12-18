@@ -11,6 +11,12 @@ bin/gambit-nfg-enumpure
 bin/gambit-nfg-lcp
 bin/gambit-nfg-liap
 bin/gambit-nfg-logit
+bin/gambit-nfg-logitdyn
 bin/gambit-nfg-lp
 bin/gambit-nfg-mixdom
 bin/gambit-nfg-simpdiv
+bin/gambit-nfg2html
+bin/gambit-nfg2tex
+lib/libgambit.a
+lib/libgambit.so
+lib/libgambit.so.0

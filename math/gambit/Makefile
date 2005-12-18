@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gambit
-PORTVERSION=	0.2005.06.13
-PORTREVISION=	1
+PORTVERSION=	0.2005.12.12
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +19,20 @@ LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		WX_CONFIG="${X11BASE}/bin/wxgtk2-2.6-config"
 MAKE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.6-config"
+INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	${PTHREAD_CFLAGS}
 LDFLAGS=	${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+.for file in efgdisplay.cc efgpanel.cc nfgpanel.cc
+	@${REINPLACE_CMD} -e '/#if/s: or : || :g' ${WRKSRC}/sources/gui/${file}
+.endfor
 
 .include <bsd.port.mk>
