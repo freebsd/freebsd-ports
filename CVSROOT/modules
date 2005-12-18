@@ -11808,6 +11808,7 @@ ssh2		ports/security/ssh2
 ssh2-nox11	ports/security/ssh2-nox11
 ssh_askpass_gtk2	ports/security/ssh_askpass_gtk2
 sshbuddy	ports/misc/sshbuddy
+sshit		ports/security/sshit
 ssldump		ports/net/ssldump
 sslproxy	ports/security/sslproxy
 sslsniffer	ports/security/sslsniffer
