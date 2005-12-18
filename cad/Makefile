@@ -53,6 +53,7 @@
     SUBDIR += sceptre
     SUBDIR += slffea
     SUBDIR += spice
+    SUBDIR += systemc
     SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc
