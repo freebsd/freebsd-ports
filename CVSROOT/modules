@@ -10792,6 +10792,7 @@ renderpark	ports/graphics/renderpark
 reoback		ports/sysutils/reoback
 rep-gtk		ports/x11-toolkits/rep-gtk
 rep-gtk2	ports/x11-toolkits/rep-gtk2
+repeater	ports/net/repeater
 replaceit	ports/textproc/replaceit
 replex		ports/multimedia/replex
 reply-o-matic	ports/mail/reply-o-matic
