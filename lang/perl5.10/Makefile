@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -18,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/tobez\//} \
 		http://www.tobez.org/download/port-mirrors/lang/perl58/
-PATCHFILES=	defined-or-5.8.7.bz2
+PATCHFILES=	defined-or-5.8.7.bz2 sprintf-5.8.7.patch.bz2
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
