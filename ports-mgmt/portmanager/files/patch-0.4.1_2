@@ -1,0 +1,52 @@
+diff -ruN ../0.4.1_1/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.4.1_1/libMGPM/src/MGPMrUpdate.c	Sat Dec 17 20:06:52 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Sun Dec 18 18:06:47 2005
+@@ -983,30 +983,34 @@
+ 	env[0]	= malloc( MAXSTRINGSIZE );
+ 	env[1]	= malloc( MAXSTRINGSIZE );
+ 	env[2]	= malloc( MAXSTRINGSIZE );
+-	env[3]	= 0;
++	env[3]	= malloc( MAXSTRINGSIZE );
++	env[4]	= 0;
+ 
+ 	/*
+ 	 * setup environment
+ 	 */
+ 	MGmStrcpy( env[0], "PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin" );
+ 
++	MGmStrcpy( env[1], "TERM=" );
++	MGmStrcat( env[1], getenv( "TERM" ) );
++
+ 	if( getenv( "CCACHE_DIR" ) != NULL )
+ 	{
+-		MGmStrcpy( env[1], "CCACHE_DIR=" );
+-		MGmStrcat( env[1], getenv( "CCACHE_DIR" ) );
++		MGmStrcpy( env[2], "CCACHE_DIR=" );
++		MGmStrcat( env[2], getenv( "CCACHE_DIR" ) );
+ 	}
+ 	else
+ 	{
+-		env[1][0]	= 0;
++		env[2][0]	= 0;
+ 	}
+ 
+ 	if( getenv( "CCACHE_PATH" ) != NULL )
+ 	{
+-		MGmStrcpy( env[2], "CCACHE_PATH=/usr/bin:/usr/local/bin" );
++		MGmStrcpy( env[3], "CCACHE_PATH=/usr/bin:/usr/local/bin" );
+ 	}
+ 	else
+ 	{
+-		env[2][0]	= 0;
++		env[3][0]	= 0;
+ 	}
+ 
+ 	if( MGrStrlen( localProperty.options ) > 0 )
+@@ -1080,6 +1084,7 @@
+ 	free( env[0] );
+ 	free( env[1] );
+ 	free( env[2] );
++	free( env[3] );
+ 	free( env );
+ 
+ 	/************************************************************************/
