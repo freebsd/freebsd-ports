@@ -22,7 +22,7 @@ MAN3=		Tie::iCal.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500703
-BROKEN=		"Requires newer version of Perl with Tie::File 0.97 or later"
+IGNORE=		requires newer version of Perl with Tie::File 0.97 or later
 .endif
 
 .include <bsd.port.post.mk>
