@@ -22,8 +22,11 @@ MAN3=		File::Copy::Recursive.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e 's/(mkdir \S+)/$$1, 0755/g' ${WRKSRC}/Recursive.pm
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Recursive.pm
+	${REINPLACE_CMD} -e '/warnings/d' ${WRKSRC}/Recursive.pm
 .endif
 
 .include <bsd.port.post.mk>
