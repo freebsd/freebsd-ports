@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	1.11.1
+PORTVERSION=	1.13.2
 CATEGORIES=	databases ruby
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/5163/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7641/
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.1.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.2.5.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
