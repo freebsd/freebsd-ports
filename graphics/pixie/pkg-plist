@@ -50,7 +50,6 @@ lib/pixie/rgbe.so
 %%PORTDOCS%%%%DOCSDIR%%/network.htm
 %%PORTDOCS%%%%DOCSDIR%%/occlusionculling.htm
 %%PORTDOCS%%%%DOCSDIR%%/options.htm
-%%PORTDOCS%%%%DOCSDIR%%/rayreflect/reflect.rib
 %%PORTDOCS%%%%DOCSDIR%%/rayshadow/index.html
 %%PORTDOCS%%%%DOCSDIR%%/rayshadow/logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/rayshadow/shadow.rib
@@ -135,7 +134,6 @@ lib/pixie/rgbe.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/softshadow
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/running
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rayshadow
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rayreflect
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/figures
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pixie

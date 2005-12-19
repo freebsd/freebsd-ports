@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -97,7 +97,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${DOCSDIR}
-.for i in figures rayreflect rayshadow running softshadow
+.for i in figures rayshadow running softshadow
 	@${MKDIR} ${DOCSDIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i}/* ${DOCSDIR}/${i}
 .endfor
