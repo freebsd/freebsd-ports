@@ -4991,6 +4991,7 @@ ko-bitchx	ports/korean/bitchx
 ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
+ko-firefox-ko	ports/korean/firefox-ko
 ko-gau		ports/korean/gau
 ko-gdick	ports/korean/gdick
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
