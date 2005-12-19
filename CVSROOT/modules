@@ -11425,6 +11425,7 @@ semi113		ports/editors/semi113
 semi113-emacs19	ports/editors/semi113-emacs19
 semi113-emacs20	ports/editors/semi113-emacs20
 semi113-mule	ports/editors/semi113-mule
+sendemail	ports/net/sendemail
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
