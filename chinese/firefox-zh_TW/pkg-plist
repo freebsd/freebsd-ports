@@ -4,6 +4,8 @@
 lib/%%FIREFOX%%/browserconfig.properties
 lib/%%FIREFOX%%/chrome/zh-TW.jar
 lib/%%FIREFOX%%/chrome/zh-TW.manifest
+lib/%%FIREFOX%%/components/compreg.dat
+lib/%%FIREFOX%%/components/xpti.dat
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
 lib/%%FIREFOX%%/defaults/profile/user.js
