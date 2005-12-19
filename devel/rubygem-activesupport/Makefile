@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	activesupport
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.5
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/5160/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7637/
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
