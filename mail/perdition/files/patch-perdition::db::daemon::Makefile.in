@@ -1,11 +1,11 @@
---- perdition/db/daemon/Makefile.in.orig	Mon Dec 15 12:24:51 2003
-+++ perdition/db/daemon/Makefile.in	Mon Dec 15 12:27:20 2003
-@@ -155,7 +155,7 @@
+--- perdition/db/daemon/Makefile.in.orig	Tue Dec  6 16:10:19 2005
++++ perdition/db/daemon/Makefile.in	Tue Dec  6 16:11:15 2005
+@@ -144,7 +144,7 @@
+ libperditiondb_daemon_la_SOURCES =  perditiondb_daemon.c perditiondb_daemon.h unix_socket.c unix_socket.h
  
  libperditiondb_daemon_la_LDFLAGS = -version-info 0:0:0
- 
--libperditiondb_daemon_la_LIBADD = -ldb
-+libperditiondb_daemon_la_LIBADD = -lgdbm
+-libperditiondb_daemon_la_LIBADD = -ldb -L. -lperditiondb_daemon_packet
++libperditiondb_daemon_la_LIBADD = -lgdbm -L. -lperditiondb_daemon_packet
  
  noinst_PROGRAMS = client server
  

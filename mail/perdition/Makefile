@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	perdition
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	A POP3 & IMAP4 proxy that can map users to multiple backend servers
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \

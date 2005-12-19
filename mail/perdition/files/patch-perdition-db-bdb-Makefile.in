@@ -1,6 +1,6 @@
---- perdition/db/bdb/Makefile.in.orig	Sun Jun 15 18:42:41 2003
-+++ perdition/db/bdb/Makefile.in	Sun Jun 15 18:42:58 2003
-@@ -143,7 +143,7 @@
+--- perdition/db/bdb/Makefile.in.orig	Tue Dec  6 15:56:55 2005
++++ perdition/db/bdb/Makefile.in	Tue Dec  6 15:57:17 2005
+@@ -142,7 +142,7 @@
  
  libperditiondb_bdb_la_LDFLAGS = -version-info 0:0:0
  

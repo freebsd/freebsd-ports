@@ -1,10 +1,10 @@
---- etc/Makefile.in.orig	Sun Jun 15 21:50:02 2003
-+++ etc/Makefile.in	Sun Jun 15 21:50:18 2003
-@@ -136,7 +136,7 @@
- ssl_includes = @ssl_includes@
- ssl_lib = @ssl_lib@
+--- etc/Makefile.in.orig	Wed Jun 22 06:32:39 2005
++++ etc/Makefile.in	Mon Dec 19 09:31:41 2005
+@@ -137,7 +137,7 @@
  
--SUBDIRS = perdition @pam_dir@ rc.d sysconfig
+ @PAM_BUILD_TRUE@PAM_DIR = pam.d
+ 
+-SUBDIRS = perdition $(PAM_DIR) rc.d sysconfig
 +SUBDIRS = perdition
  
  EXTRA_DIST = 
