@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7eb0b23-7099-11da-a15c-0060084a00e5">
+    <topic>fetchmail -- null pointer dereference in multidrop mode with
+      headerless email</topic>
+      <affects>
+        <package>
+          <name>fetchmail</name>
+          <range><lt>6.3.1</lt></range>
+        </package>
+      </affects>
+      <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The fetchmail team reports:</p>
+        <blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2005-03.txt">
+          <p>Fetchmail contains a bug that causes an application crash
+             when fetchmail is configured for multidrop mode and the
+             upstream mail server sends a message without headers.  As
+             fetchmail does not record this message as "previously fetched",
+             it will crash with the same message if it is re-executed, so it
+             cannot make progress. A malicious or broken-into upstream server
+             could thus cause a denial of service in fetchmail clients.
+           </p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-4348</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2005-03.txt</url>
+      <url>http://article.gmane.org/gmane.mail.fetchmail.user/7573</url>
+      <url>http://bugs.debian.org/343836</url>
+    </references>
+    <dates>
+      <discovery>2005-12-19</discovery>
+      <entry>2005-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="82a41084-6ce7-11da-b90c-000e0c2e438a">
     <topic>mantis -- "t_core_path" file inclusion vulnerability</topic>
     <affects>
