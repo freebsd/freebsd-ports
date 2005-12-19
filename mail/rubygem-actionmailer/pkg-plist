@@ -1,5 +1,21 @@
 %%CACHE_DIR%%/actionmailer-%%PORTVERSION%%.gem
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Base.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Base.src/M000453.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Base.src/M000454.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Base.src/M000455.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000446.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000447.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src/M000448.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Part.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Part.src/M000451.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Part.src/M000452.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/PartContainer.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/PartContainer.src/M000449.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/PartContainer.src/M000450.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/MailHelper.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/MailHelper.src/M000456.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TC_Unquoter.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TC_Unquoter.src/M000001.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TC_Unquoter.src/M000002.html
@@ -458,6 +474,7 @@
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/files/lib/action_mailer/vendor/tmail/tmail_rb.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/files/lib/action_mailer/vendor/tmail/utils_rb.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
+%%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/files/lib/action_mailer/version_rb.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/files/lib/action_mailer_rb.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/fr_class_index.html
 %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/fr_file_index.html
@@ -501,6 +518,7 @@
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/lib/action_mailer/vendor/tmail/stringio.rb
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/lib/action_mailer/vendor/tmail/tmail.rb
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/lib/action_mailer/vendor/tmail/utils.rb
+%%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/lib/action_mailer/version.rb
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/rakefile
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/helper_mailer/use_helper.rhtml
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/helper_mailer/use_helper_method.rhtml
@@ -510,6 +528,7 @@
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email10
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email11
+%%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email12
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email2
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email3
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/raw_email4
@@ -524,7 +543,10 @@
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/test_mailer/signed_up.rhtml
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/mail_helper_test.rb
+%%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/mail_render_test.rb
 %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/mail_service_test.rb
+%%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/quoting_test.rb
+%%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/tmail_test.rb
 %%SPEC_DIR%%/actionmailer-%%PORTVERSION%%.gemspec
 @dirrm %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/test_mailer
 @dirrm %%GEMS_DIR%%/actionmailer-%%PORTVERSION%%/test/fixtures/templates
@@ -592,6 +614,12 @@
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TMail.src
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TMail
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/TC_Unquoter.src
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/MailHelper.src
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/PartContainer.src
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Part.src
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers/ClassMethods.src
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Helpers
+@dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer/Base.src
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes/ActionMailer
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc/classes
 @dirrm %%DOC_DIR%%/actionmailer-%%PORTVERSION%%/rdoc
