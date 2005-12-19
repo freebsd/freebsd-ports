@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pxp
-PORTVERSION=	1.1.95
-PORTREVISION=	1
+PORTVERSION=	1.1.96
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
