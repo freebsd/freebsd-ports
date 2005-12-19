@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_QuickForm_advmultiselect
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
