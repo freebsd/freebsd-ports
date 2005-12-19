@@ -213,6 +213,7 @@
     SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += migemo-xemacs21-mule
     SUBDIR += mikachan-ttfonts
+    SUBDIR += mime_pls
     SUBDIR += mimekit
     SUBDIR += ming
     SUBDIR += mobileimap
