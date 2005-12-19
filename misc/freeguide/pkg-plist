@@ -18,12 +18,14 @@ share/applications/freeguide.desktop
 %%DOCSDIR%%/timezone.html
 %%DOCSDIR%%/userguide.html
 %%JAVAJARDIR%%/FreeGuide.jar
-share/java/pixmaps/freeguide.png
-share/java/pixmaps/freeguide/logo-16x16.png
-share/java/pixmaps/freeguide/logo-32x32.png
-share/java/pixmaps/freeguide/logo-48x48.png
-share/java/pixmaps/freeguide/logo-64x64.png
-share/java/pixmaps/freeguide/logo-72x72.png
-share/java/pixmaps/freeguide/logo-96x96.png
-@dirrm share/java/pixmaps/freeguide
+%%JAVASHAREDIR%%/pixmaps/freeguide.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-16x16.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-32x32.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-48x48.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-64x64.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-72x72.png
+%%JAVASHAREDIR%%/pixmaps/freeguide/logo-96x96.png
+@dirrm %%JAVASHAREDIR%%/pixmaps/freeguide
+@unexec rmdir %D/%%JAVASHAREDIR%%/pixmaps 2>/dev/null || true
 @dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/applications 2>/dev/null || true
