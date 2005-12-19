@@ -1,0 +1,11 @@
+The Crypt::GPG module provides access to the functionality of the GnuPG
+(www.gnupg.org) encryption tool through an object oriented interface.
+It provides methods for encryption, decryption, signing, signature
+verification, key generation, key certification, export and import.
+Key-server access is on the todo list.
+This release of the module may create compatibility issues with previous
+versions. If you find any such problems, or any bugs or documentation
+errors, please do report them to crypt-gpg at neomailbox.com.
+
+
+WWW: http://search.cpan.org/dist/Crypt-GPG
