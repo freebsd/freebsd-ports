@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/MySQL/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/MySQL/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/MySQL/MySQL.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/MySQL/MySQL.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/MySQL
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt 2>/dev/null || true
