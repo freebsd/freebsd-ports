@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.5
 CATEGORIES=	mail ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/5169/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7647/
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Easy email delivery and testing for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-1.9.1.gemspec:${PORTSDIR}/www/rubygem-actionpack
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-1.11.2.gemspec:${PORTSDIR}/www/rubygem-actionpack
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
