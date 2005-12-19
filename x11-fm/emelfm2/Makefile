@@ -8,7 +8,7 @@
 PORTNAME=	emelfm2
 PORTVERSION=	0.1.3
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.emelfm2.org/rel/ \
+MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 
