@@ -1,0 +1,3 @@
+Extends base class with a distributed cache.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Cache-Memcached/
