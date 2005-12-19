@@ -7,6 +7,7 @@
 
 PORTNAME=	phpwiki
 PORTVERSION=	1.3.11p1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
@@ -17,24 +18,50 @@ COMMENT=	A PHP WikiWikiWeb
 CONFLICTS+=	phpwiki-1.2*
 LATEST_LINK=	phpwiki13
 
-.if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype pcre posix session tokenizer xml zlib mysql
-.if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
-USE_PHP+=	dba
-.endif
-.endif
 
 NO_BUILD=	YES
 PHP4_PORT?=	www/mod_php4
 PHPWIKI?=	www/data-dist/phpwiki
 PLIST_SUB+=	PHPWIKI=${PHPWIKI}
+SUB_FILES=	pkg-message
 ROOTFILES=	GoogleSearch.wsdl PhpWiki.wsdl RPC2.php SOAP.php \
 		configurator.php favicon.ico getimg.php gforge.php \
 		index.php passencrypt.php wiki
-ROOTDIRS=	config doc lib locale pgsrc schemas tests themes uploads
+ROOTDIRS=	config lib locale pgsrc schemas tests themes uploads
 DOCFILES=	INSTALL LICENSE README TODO UPGRADING
 
-do-configure:
+OPTIONS=	MYSQL "Use MySQL backend" on \
+		PGSQL "Use PostgreSQL backend" off \
+		DB4   "Use Berkeley DB4 backend" off
+
+.if defined(PHP_VER) && ${PHP_VER} == 5
+OPTIONS+=	SQLITE "Use SQLite backend" off
+.endif
+
+PORT_DBDIR?=	/var/db/ports
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+
+.if defined(WITH_DB4)
+USE_PHP+=	dba
+.endif
+
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PHP+=	pgsql
+.endif
+
+.if defined(WITH_SQLITE)
+USE_PHP+=	sqlite
+.endif
 
 do-install:
 	-${MKDIR} ${PREFIX}/${PHPWIKI}
@@ -48,6 +75,10 @@ do-install:
 .for i in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
+	@(cd ${WRKSRC} && ${CP} -R doc/* ${DOCSDIR}/ )
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
