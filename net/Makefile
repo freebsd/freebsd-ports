@@ -684,6 +684,7 @@
     SUBDIR += scr_ipfm
     SUBDIR += sdl_net
     SUBDIR += seda
+    SUBDIR += sendemail
     SUBDIR += sendfile
     SUBDIR += ser
     SUBDIR += serveez
