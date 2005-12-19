@@ -1,14 +1,4 @@
 %%CACHE_DIR%%/actionwebservice-%%PORTVERSION%%.gem
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000035.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000036.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000037.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000038.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000039.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000040.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000041.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000042.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src/M000043.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000027.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src/M000028.html
@@ -31,10 +21,10 @@
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Container/Direct/ClassMethods.src/M000002.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000045.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000046.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000048.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000049.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000036.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000037.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000039.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Invocation/ClassMethods.src/M000040.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000005.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/Registry.src/M000006.html
@@ -60,13 +50,14 @@
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000021.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Protocol/Soap/SoapTypedArrayFactory.src/M000022.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src/M000044.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Scaffolding/ClassMethods.src/M000035.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/SignatureTypes.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000051.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000052.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000053.html
-%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000054.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000042.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000043.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000044.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Struct.src/M000045.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/VERSION.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/created.rid
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/api_rb.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/base_rb.html
@@ -94,6 +85,7 @@
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/support/class_inheritable_options_rb.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/support/signature_types_rb.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/test_invoke_rb.html
+%%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service/version_rb.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/files/lib/action_web_service_rb.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/fr_class_index.html
 %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/fr_file_index.html
@@ -149,6 +141,7 @@
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/parameters.rhtml
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/templates/scaffolds/result.rhtml
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/test_invoke.rb
+%%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/lib/action_web_service/version.rb
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/setup.rb
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/abstract_client.rb
 %%GEMS_DIR%%/actionwebservice-%%PORTVERSION%%/test/abstract_dispatcher.rb
@@ -224,7 +217,6 @@
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client/Soap.src
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/Client
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Method.src
-@dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API/Base.src
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService/API
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes/ActionWebService
 @dirrm %%DOC_DIR%%/actionwebservice-%%PORTVERSION%%/rdoc/classes
