@@ -123,7 +123,7 @@ COMMENT=	Gstreamer ${GST_PLUGIN} plugin
 
 # Enable the right plugin
 
-CONFIGURE_ARGS:=${CONFIGURE_ARGS:S|--disable-${p}|--enable-${p}|}
+CONFIGURE_ARGS:=${CONFIGURE_ARGS:S|--disable-${GST_PLUGIN}|--enable-${GST_PLUGIN}|}
 
 # Build/Install directory. defaults to ext/${GST_PLUGIN}
 #   few plugins are in sys/
@@ -146,6 +146,7 @@ PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.so
 .if ${GST_PLUGIN}=="artsd"
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 GST_PLIST_SUFFIX=	sink
+CONFIGURE_ARGS+=--enable-artsc
 .endif
 
 # cairo
@@ -218,6 +219,7 @@ GST_PLUGIN_DIR=	ext/gdk_pixbuf
 # gnomevfs
 .if ${GST_PLUGIN}=="gnomevfs"
 USE_GNOME+=	gnomevfs2
+CONFIGURE_ARGS+=--enable-gnome_vfs
 .endif
 
 # gsm
