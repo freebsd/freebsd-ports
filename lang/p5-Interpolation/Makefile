@@ -11,6 +11,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/J/JE/JENDA
 PKGNAMEPREFIX=	p5-
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.70
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implement arbitrary string interpolation semantics for Perl
