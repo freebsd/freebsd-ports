@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.49
+PORTVERSION=	1.50
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -15,9 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
-.if defined(WITH_PROXY)
-BUILD_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.if defined(WITH_PROXY)
+PROXY_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
+BUILD_DEPENDS+=	${PROXY_DEPENDS}
+RUN_DEPENDS+=	${PROXY_DEPENDS}
 .endif
 
 CONFLICTS=	p5-DBI-1.3*
@@ -68,7 +72,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Please install databases/p5-DBI-137 instead
+IGNORE=		requires newer Perl, but you can use databases/p5-DBI-137 instead
 .endif
 
 .include <bsd.port.post.mk>
