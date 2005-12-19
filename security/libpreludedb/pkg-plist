@@ -9,7 +9,7 @@ include/libpreludedb/preludedb-sql.h
 include/libpreludedb/preludedb-version.h
 include/libpreludedb/preludedb-error.h
 include/libpreludedb/preludedb.h
-lib/libpreludedb.so.0
+lib/libpreludedb.so.1
 lib/libpreludedb.so
 lib/libpreludedb.a
 lib/libpreludedb/plugins/formats/classic.so
