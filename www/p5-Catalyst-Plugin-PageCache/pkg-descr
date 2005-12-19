@@ -1,0 +1,10 @@
+Many dynamic websites perform heavy processing on most pages, yet this
+information may rarely change from request to request. Using the
+PageCache plugin, you can cache the full output of different pages so
+they are served to your visitors as fast as possible. This method of
+caching is very useful for withstanding a Slashdotting, for example.
+
+This plugin requires that you also load a Cache plugin. Please see the
+Known Issues when choosing a cache backend.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-PageCache/
