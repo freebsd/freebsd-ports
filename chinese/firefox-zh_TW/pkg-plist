@@ -1,22 +1,38 @@
 @exec mv %D/lib/%%FIREFOX%%/browserconfig.properties %D/lib/%%FIREFOX%%/browserconfig.properties.orig
-@exec mv %D/lib/%%FIREFOX%%/chrome/browser.jar %D/lib/%%FIREFOX%%/chrome/browser.jar.orig
-@exec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig
-@exec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig
 lib/%%FIREFOX%%/browserconfig.properties
-lib/%%FIREFOX%%/chrome/browser.jar
-lib/%%FIREFOX%%/chrome/chrome.rdf
-lib/%%FIREFOX%%/chrome/installed-chrome.txt
 lib/%%FIREFOX%%/chrome/zh-TW.jar
+lib/%%FIREFOX%%/chrome/zh-TW.manifest
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
 lib/%%FIREFOX%%/defaults/profile/user.js
+lib/%%FIREFOX%%/searchplugins/BahamutSearch.png
+lib/%%FIREFOX%%/searchplugins/BahamutSearch.src
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
 lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
+lib/%%FIREFOX%%/searchplugins/Giga_Cdict.png
+lib/%%FIREFOX%%/searchplugins/Giga_Cdict.src
+lib/%%FIREFOX%%/searchplugins/chineseidioms.png
+lib/%%FIREFOX%%/searchplugins/chineseidioms.src
+lib/%%FIREFOX%%/searchplugins/edudict.gif
+lib/%%FIREFOX%%/searchplugins/edudict.src
+lib/%%FIREFOX%%/searchplugins/findbook.png
+lib/%%FIREFOX%%/searchplugins/findbook.src
+lib/%%FIREFOX%%/searchplugins/freshports.png
+lib/%%FIREFOX%%/searchplugins/freshports.src
+lib/%%FIREFOX%%/searchplugins/php.png
+lib/%%FIREFOX%%/searchplugins/php.src
+lib/%%FIREFOX%%/searchplugins/rexchendict.gif
+lib/%%FIREFOX%%/searchplugins/rexchendict.src
+lib/%%FIREFOX%%/searchplugins/wretch-album.png
+lib/%%FIREFOX%%/searchplugins/wretch-album.src
+lib/%%FIREFOX%%/searchplugins/xuite-album.png
+lib/%%FIREFOX%%/searchplugins/xuite-album.src
+lib/%%FIREFOX%%/searchplugins/yhbid_tw.gif
+lib/%%FIREFOX%%/searchplugins/yhbid_tw.src
+lib/%%FIREFOX%%/searchplugins/yahoo.stock.src
+lib/%%FIREFOX%%/searchplugins/yahoo.stock.png
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
-@unexec mv %D/lib/%%FIREFOX%%/chrome/browser.jar.orig %D/lib/%%FIREFOX%%/chrome/browser.jar
-@unexec mv %D/lib/%%FIREFOX%%/chrome/chrome.rdf.orig %D/lib/%%FIREFOX%%/chrome/chrome.rdf
-@unexec mv %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt.orig %D/lib/%%FIREFOX%%/chrome/installed-chrome.txt
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html
