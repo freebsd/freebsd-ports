@@ -1,0 +1,15 @@
+@exec mv %D/lib/%%FIREFOX%%/browserconfig.properties %D/lib/%%FIREFOX%%/browserconfig.properties.orig
+@exec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig
+lib/%%FIREFOX%%/browserconfig.properties
+lib/%%FIREFOX%%/chrome/ko.jar
+lib/%%FIREFOX%%/chrome/ko.manifest
+lib/%%FIREFOX%%/components/compreg.dat
+lib/%%FIREFOX%%/components/xpti.dat
+lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
+lib/%%FIREFOX%%/defaults/profile/user.js
+lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
+lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
+lib/%%FIREFOX%%/searchplugins/freshports.png
+lib/%%FIREFOX%%/searchplugins/freshports.src
+@unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
+@unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js

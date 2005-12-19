@@ -1,0 +1,10 @@
+********************************
+If your XIM wouldn't work properly, try to make a file
+
+"${HOME}/.mozilla/firefox/*.default/user.js"
+
+with below content;
+--
+user_pref("xim.input_style", "over-the-spot")
+--
+********************************
