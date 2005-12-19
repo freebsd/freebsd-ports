@@ -1,4 +1,4 @@
-$Id$
+$FreeBSD$
 
 --- Makefile.PL.orig	Fri May 24 17:51:36 2002
 +++ Makefile.PL	Fri May 24 17:52:52 2002
@@ -6,7 +6,7 @@ $Id$
  
  require "./lib/Getopt/Long.pm";
  my $version = $Getopt::Long::VERSION_STRING || $Getopt::Long::VERSION;
-+my $leave_alone = $Config{installprivlib} =~ m|/libdata/perl/|;
++my $leave_alone = 1;
  
  sub MY::postamble {
      my $ret = "";
