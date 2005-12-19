@@ -265,10 +265,8 @@ README=	${TEMPLATES}/README.category
 .endif
 COMMENTFILE?=	${.CURDIR}/pkg/COMMENT
 DESCR?=		${.CURDIR}/pkg/DESCR
-.if ${OSVERSION} >= 600000
-INDEXFILE?=	INDEX-6
-.elif ${OSVERSION} >= 500036
-INDEXFILE?=	INDEX-5
+.if ${OSVERSION} >= 500036
+INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
 .else
 INDEXFILE?=	INDEX
 .endif
@@ -333,8 +331,11 @@ PORTSEARCH_KEYLIM?=0
 PORTSEARCH_XKEYLIM?=0
 PORTSEARCH_IGNORECASE?=1
 
-search: ${PORTSDIR}/${INDEXFILE}
-	@here=${.CURDIR}; \
+_PORTSEARCH=	\
+	here=${.CURDIR}; \
+	if [ ! -r ${PORTSDIR}/${INDEXFILE} ] ; then \
+		echo "The ${.TARGET} target requires ${INDEXFILE}. Please run make index or make fetchindex."; \
+	else \
 	cd ${PORTSDIR}; \
 	if [ -z "$$key"   -a -z "$$xkey"   -a \
 	     -z "$$name"  -a -z "$$xname"  -a \
@@ -346,9 +347,9 @@ search: ${PORTSDIR}/${INDEXFILE}
 	     -z "$$rdeps" -a -z "$$xrdeps" -a \
 	     -z "$$www"   -a -z "$$xwww"   ]; \
 	then \
-	  echo "The search target requires a keyword parameter or name parameter,"; \
-	  echo "e.g.: \"make search key=somekeyword\""; \
-	  echo "or    \"make search name=somekeyword\""; \
+	  echo "The ${.TARGET} target requires a keyword parameter or name parameter,"; \
+	  echo "e.g.: \"make ${.TARGET} key=somekeyword\""; \
+	  echo "or    \"make ${.TARGET} name=somekeyword\""; \
 	  exit; \
 	fi; \
 	awk -F\| -v there="$$here/" -v top="$$(pwd -P)" \
@@ -365,6 +366,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    -v keylim="$${keylim:-${PORTSEARCH_KEYLIM}}" \
 	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}" \
 	    -v display="$${display:-${PORTSEARCH_DISPLAY_FIELDS}}" \
+	    -v xdisplay="$$xdisplay" \
 	'BEGIN { \
             gsub(/\+/,"\\+",name); \
 	    if (substr(there, 1, length(top)) == top) \
@@ -407,6 +409,10 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    for (i in d) { \
 	      disp[fields[d[i]]] = 1; \
 	    } \
+	    split(xdisplay, xd, /,[ \t]*/); \
+	    for (i in xd) { \
+	      delete disp[fields[xd[i]]]; \
+	    } \
 	  } \
 	  { \
 	    if (substr($$2, 1, therelen) != there) \
@@ -431,4 +437,11 @@ search: ${PORTSDIR}/${INDEXFILE}
 	      if (i in disp) \
 	        printf("%s:\t%s\n", names[i], $$i); \
 	    print(""); \
-	  }' ${PORTSDIR}/${INDEXFILE}
+	  }' ${PORTSDIR}/${INDEXFILE} ; fi
+
+search:
+	@${_PORTSEARCH}
+
+quicksearch:
+	@export display="name,path,info" ; \
+	${_PORTSEARCH}
