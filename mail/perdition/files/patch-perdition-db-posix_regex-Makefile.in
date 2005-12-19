@@ -1,6 +1,6 @@
---- perdition/db/posix_regex/Makefile.in.orig	Sun Jun 15 21:54:10 2003
-+++ perdition/db/posix_regex/Makefile.in	Sun Jun 15 21:55:04 2003
-@@ -270,11 +270,11 @@
+--- perdition/db/posix_regex/Makefile.in.orig	Tue Dec  6 16:05:43 2005
++++ perdition/db/posix_regex/Makefile.in	Tue Dec  6 16:08:04 2005
+@@ -269,11 +269,11 @@
  	$(mkinstalldirs) $(DESTDIR)$(confdir)
  	@list='$(conf_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \

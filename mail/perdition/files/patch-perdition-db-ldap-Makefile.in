@@ -1,6 +1,6 @@
---- ./perdition/db/ldap/Makefile.in.orig	Sun Jun 15 21:21:13 2003
-+++ ./perdition/db/ldap/Makefile.in	Sun Jun 15 21:22:09 2003
-@@ -550,8 +550,8 @@
+--- perdition/db/ldap/Makefile.in.orig	Tue Dec  6 15:59:30 2005
++++ perdition/db/ldap/Makefile.in	Tue Dec  6 16:04:27 2005
+@@ -545,8 +545,8 @@
  				"$(DESTDIR)@ldap_schemadir@"; \
  		fi; \
  		if test -w "$(DESTDIR)@ldap_schemadir@"; then \
