@@ -3,6 +3,23 @@
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/UPGRADING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/HISTORY
+%%DOCSDIR%%/INSTALL.MacOSX
+%%DOCSDIR%%/INSTALL.flatfile
+%%DOCSDIR%%/INSTALL.mSQL
+%%DOCSDIR%%/INSTALL.mysql
+%%DOCSDIR%%/INSTALL.oci8
+%%DOCSDIR%%/INSTALL.pgsql
+%%DOCSDIR%%/INSTALL.sqlite
+%%DOCSDIR%%/README.coding
+%%DOCSDIR%%/README.foaf
+%%DOCSDIR%%/README.fpdf
+%%DOCSDIR%%/README.phpwiki-auth
+%%DOCSDIR%%/README.phpwiki-cache
+%%DOCSDIR%%/README.security
+%%DOCSDIR%%/THEMES
+%%DOCSDIR%%/phpwiki_architecture.png
 %%PHPWIKI%%/GoogleSearch.wsdl
 %%PHPWIKI%%/PhpWiki.wsdl
 %%PHPWIKI%%/RPC2.php
@@ -14,23 +31,6 @@
 %%PHPWIKI%%/config/make-dbhelper.pl
 %%PHPWIKI%%/config/phpwiki.spec
 %%PHPWIKI%%/configurator.php
-%%PHPWIKI%%/doc/CREDITS
-%%PHPWIKI%%/doc/HISTORY
-%%PHPWIKI%%/doc/INSTALL.MacOSX
-%%PHPWIKI%%/doc/INSTALL.flatfile
-%%PHPWIKI%%/doc/INSTALL.mSQL
-%%PHPWIKI%%/doc/INSTALL.mysql
-%%PHPWIKI%%/doc/INSTALL.oci8
-%%PHPWIKI%%/doc/INSTALL.pgsql
-%%PHPWIKI%%/doc/INSTALL.sqlite
-%%PHPWIKI%%/doc/README.coding
-%%PHPWIKI%%/doc/README.foaf
-%%PHPWIKI%%/doc/README.fpdf
-%%PHPWIKI%%/doc/README.phpwiki-auth
-%%PHPWIKI%%/doc/README.phpwiki-cache
-%%PHPWIKI%%/doc/README.security
-%%PHPWIKI%%/doc/THEMES
-%%PHPWIKI%%/doc/phpwiki_architecture.png
 %%PHPWIKI%%/favicon.ico
 %%PHPWIKI%%/getimg.php
 %%PHPWIKI%%/gforge.php
@@ -1616,7 +1616,6 @@
 @dirrm %%PHPWIKI%%/lib/DbSession
 @dirrm %%PHPWIKI%%/lib/ASCIIMathPHP
 @dirrm %%PHPWIKI%%/lib
-@dirrm %%PHPWIKI%%/doc
 @dirrm %%PHPWIKI%%/config
 @dirrm %%PHPWIKI%%
 @dirrm %%DOCSDIR%%
