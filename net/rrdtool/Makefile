@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
-LIB_DEPENDS=	cgi.1:${PORTSDIR}/devel/cgilib \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		png.5:${PORTSDIR}/graphics/png
 
@@ -22,7 +21,7 @@ USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--enable-perl-site-install --disable-python
+CONFIGURE_ARGS=	--enable-perl-site-install --disable-python --disable-tcl
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libart-2.0 -I${LOCALBASE}/include/freetype2
 LDFLAGS+=	-L${LOCALBASE}/lib
