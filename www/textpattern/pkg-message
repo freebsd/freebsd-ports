@@ -1,0 +1,10 @@
+-----------------------------------------------------------
+
+For initial setup:
+
+ - Setup an empty mysql database
+ - Open web browser and browse textpattern directory
+     http://yourserver/subdir/textpattern/setup/
+ - Follow steps on setup wizard
+
+-----------------------------------------------------------

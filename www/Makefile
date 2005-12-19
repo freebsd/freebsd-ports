@@ -841,6 +841,7 @@
     SUBDIR += tdiary
     SUBDIR += tdiary-devel
     SUBDIR += tdom
+    SUBDIR += textpattern
     SUBDIR += thttpd
     SUBDIR += thttpd-st
     SUBDIR += thumbnail_index
