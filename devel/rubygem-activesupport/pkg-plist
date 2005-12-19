@@ -1,82 +1,109 @@
 %%CACHE_DIR%%/activesupport-%%PORTVERSION%%.gem
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000075.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src/M000076.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000094.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000095.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000096.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum/EvenOdd.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum/EvenOdd.src/M000109.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum/EvenOdd.src/M000110.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum/EvenOdd.src/M000111.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000109.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000110.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src/M000111.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000059.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000060.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000061.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000062.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000065.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000068.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000069.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000070.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000071.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src/M000074.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000065.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src/M000066.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000027.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000028.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src/M000029.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src/M000030.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000084.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000086.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000088.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000090.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000092.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000095.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000097.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000099.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000101.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000103.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000105.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src/M000107.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000066.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000068.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000070.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000072.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000074.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000076.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000078.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000080.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000082.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000077.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000079.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000081.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000083.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000085.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000087.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000089.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000091.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src/M000093.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src/M000026.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000127.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000128.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000129.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000130.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src/M000131.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000097.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000098.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000112.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src/M000113.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000099.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000100.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000101.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000102.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000103.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000104.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000105.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000106.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000107.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000108.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000114.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000115.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000116.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000118.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000120.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000121.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000122.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000123.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000124.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000125.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src/M000126.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000132.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src/M000133.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000032.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000033.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000034.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000035.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000036.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000037.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000038.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000039.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000040.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000041.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000042.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000043.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000044.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000045.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000046.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000047.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000048.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000049.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000053.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000055.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000057.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000051.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000052.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000056.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000058.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000060.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000062.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src/M000063.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src/M000064.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000028.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000029.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000030.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000031.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000032.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000033.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src/M000034.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Binding.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Binding.src/M000027.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Binding.src/M000025.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000125.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000126.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000127.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000128.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000129.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000153.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000154.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000155.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000156.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src/M000157.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000016.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000017.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000018.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000019.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000020.html
@@ -84,26 +111,29 @@
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000022.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000023.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000024.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000025.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src/M000026.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000113.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000114.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000115.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000116.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000117.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000118.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000119.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000120.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000121.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000122.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000123.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000124.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Kernel.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Kernel.src/M000112.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/NilClass.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/NilClass.src/M000017.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000134.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000135.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000136.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000137.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000138.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000139.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000140.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000141.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000142.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000143.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000144.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000145.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src/M000146.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000147.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000148.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000149.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000150.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000151.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src/M000152.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000003.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000004.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000005.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000006.html
@@ -116,7 +146,6 @@
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000013.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000014.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000015.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src/M000016.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/created.rid
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/binding_of_caller_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/breakpoint_rb.html
@@ -125,36 +154,46 @@
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/class_attribute_accessors_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/class_inheritable_attributes_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/clean_logger_rb.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/array/to_param_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/array/conversions_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/array_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/blank_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/cgi/escape_skipping_slashes_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/cgi_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/date/conversions_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/date_rb.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/fixnum/even_odd_rb.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/fixnum_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/enumerable_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/exception_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/hash/indifferent_access_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/hash/keys_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/hash/reverse_merge_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/hash_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/integer/even_odd_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/integer/inflections_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/integer_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/kernel_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/load_error_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/numeric/bytes_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/numeric/time_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/numeric_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/object_and_class_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/range/conversions_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/range_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string/access_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string/conversions_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string/inflections_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string/starts_ends_with_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/time/calculations_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/time/conversions_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/time_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/dependencies_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/inflections_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/inflector_rb.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/misc_rb.html
-%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/misc_rb.src/M000003.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/module_attribute_accessors_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/ordered_options_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/values/time_zone_rb.html
+%%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/version_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/whiny_nil_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support_rb.html
 %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/fr_class_index.html
@@ -171,41 +210,53 @@
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/clean_logger.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/array.rb
-%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/array/to_param.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/array/conversions.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/blank.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/cgi.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/date.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/date/conversions.rb
-%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/fixnum.rb
-%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/fixnum/even_odd.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/enumerable.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/exception.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/hash.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/hash/indifferent_access.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/hash/keys.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/hash/reverse_merge.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/integer.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/integer/even_odd.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/integer/inflections.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/kernel.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/load_error.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/numeric.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/numeric/bytes.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/numeric/time.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/object_and_class.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/range.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/range/conversions.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string/access.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string/conversions.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string/inflections.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string/starts_ends_with.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/time.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/time/calculations.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/time/conversions.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/dependencies.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/inflections.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/inflector.rb
-%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/misc.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/module_attribute_accessors.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/ordered_options.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/values/time_zone.rb
+%%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/version.rb
 %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/whiny_nil.rb
 %%SPEC_DIR%%/activesupport-%%PORTVERSION%%.gemspec
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/values
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/time
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/string
+@dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/range
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/numeric
+@dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/integer
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/hash
-@dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/fixnum
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/date
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/cgi
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib/active_support/core_ext/array
@@ -214,12 +265,12 @@
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%/lib
 @dirrm %%GEMS_DIR%%/activesupport-%%PORTVERSION%%
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/values
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/misc_rb.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/time
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/string
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/range
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/numeric
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/integer
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/hash
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/fixnum
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/date
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/cgi
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib/active_support/core_ext/array
@@ -229,27 +280,37 @@
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files/lib
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/files
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/TimeZone.src
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/NilClass.src
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Kernel.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector/Inflections.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Inflector
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/HashWithIndifferentAccess.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Breakpoint.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/Binding.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Conversions.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations/ClassMethods.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time/Calculations
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Time
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/StartsEndsWith.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Inflections.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Conversions.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String/Access.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/String
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Range/Conversions.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Range
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Time.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric/Bytes.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Numeric
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/Inflections.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer/EvenOdd.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Integer
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/ReverseMerge.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash/Keys.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Hash
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum/EvenOdd.src
-@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Fixnum
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date/Conversions.src
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Date
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.src
+@dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions/Array
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport/CoreExtensions
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes/ActiveSupport
 @dirrm %%DOC_DIR%%/activesupport-%%PORTVERSION%%/rdoc/classes
