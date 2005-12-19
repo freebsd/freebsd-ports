@@ -1,0 +1,101 @@
+%%TEXTPATTERN%%/HISTORY.txt
+%%TEXTPATTERN%%/README.txt
+%%TEXTPATTERN%%/images/1.gif
+%%TEXTPATTERN%%/index.php
+%%TEXTPATTERN%%/textpattern/config.php.default
+%%TEXTPATTERN%%/textpattern/css.php
+%%TEXTPATTERN%%/textpattern/include/import/BloggerImportTemplate.txt
+%%TEXTPATTERN%%/textpattern/include/import/import_b2.php
+%%TEXTPATTERN%%/textpattern/include/import/import_blogger.php
+%%TEXTPATTERN%%/textpattern/include/import/import_mt.php
+%%TEXTPATTERN%%/textpattern/include/import/import_mtdb.php
+%%TEXTPATTERN%%/textpattern/include/import/import_wp.php
+%%TEXTPATTERN%%/textpattern/include/txp_admin.php
+%%TEXTPATTERN%%/textpattern/include/txp_article.php
+%%TEXTPATTERN%%/textpattern/include/txp_auth.php
+%%TEXTPATTERN%%/textpattern/include/txp_category.php
+%%TEXTPATTERN%%/textpattern/include/txp_css.php
+%%TEXTPATTERN%%/textpattern/include/txp_diag.php
+%%TEXTPATTERN%%/textpattern/include/txp_discuss.php
+%%TEXTPATTERN%%/textpattern/include/txp_file.php
+%%TEXTPATTERN%%/textpattern/include/txp_form.php
+%%TEXTPATTERN%%/textpattern/include/txp_image.php
+%%TEXTPATTERN%%/textpattern/include/txp_import.php
+%%TEXTPATTERN%%/textpattern/include/txp_link.php
+%%TEXTPATTERN%%/textpattern/include/txp_list.php
+%%TEXTPATTERN%%/textpattern/include/txp_log.php
+%%TEXTPATTERN%%/textpattern/include/txp_page.php
+%%TEXTPATTERN%%/textpattern/include/txp_plugin.php
+%%TEXTPATTERN%%/textpattern/include/txp_prefs.php
+%%TEXTPATTERN%%/textpattern/include/txp_preview.php
+%%TEXTPATTERN%%/textpattern/include/txp_section.php
+%%TEXTPATTERN%%/textpattern/include/txp_tag.php
+%%TEXTPATTERN%%/textpattern/index.php
+%%TEXTPATTERN%%/textpattern/lang/README
+%%TEXTPATTERN%%/textpattern/lang/en-gb.txt
+%%TEXTPATTERN%%/textpattern/lib/IXRClass.php
+%%TEXTPATTERN%%/textpattern/lib/admin_config.php
+%%TEXTPATTERN%%/textpattern/lib/class.thumb.php
+%%TEXTPATTERN%%/textpattern/lib/classTextile.php
+%%TEXTPATTERN%%/textpattern/lib/i18n-ascii.txt
+%%TEXTPATTERN%%/textpattern/lib/taglib.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_db.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_forms.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_head.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_html.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_misc.php
+%%TEXTPATTERN%%/textpattern/lib/txplib_update.php
+%%TEXTPATTERN%%/textpattern/license.txt
+%%TEXTPATTERN%%/textpattern/publish.php
+%%TEXTPATTERN%%/textpattern/publish/atom.php
+%%TEXTPATTERN%%/textpattern/publish/comment.php
+%%TEXTPATTERN%%/textpattern/publish/log.php
+%%TEXTPATTERN%%/textpattern/publish/rss.php
+%%TEXTPATTERN%%/textpattern/publish/search.php
+%%TEXTPATTERN%%/textpattern/publish/taghandlers.php
+%%TEXTPATTERN%%/textpattern/setup/en-gb.php
+%%TEXTPATTERN%%/textpattern/setup/index.php
+%%TEXTPATTERN%%/textpattern/setup/setup-langs.php
+%%TEXTPATTERN%%/textpattern/setup/txpsql.php
+%%TEXTPATTERN%%/textpattern/textpattern.css
+%%TEXTPATTERN%%/textpattern/txp_img/button.gif
+%%TEXTPATTERN%%/textpattern/txp_img/carver.gif
+%%TEXTPATTERN%%/textpattern/txp_img/down.gif
+%%TEXTPATTERN%%/textpattern/txp_img/down2.gif
+%%TEXTPATTERN%%/textpattern/txp_img/header.gif
+%%TEXTPATTERN%%/textpattern/txp_img/howto.gif
+%%TEXTPATTERN%%/textpattern/txp_img/htmldown.gif
+%%TEXTPATTERN%%/textpattern/txp_img/htmlup.gif
+%%TEXTPATTERN%%/textpattern/txp_img/previewdown.gif
+%%TEXTPATTERN%%/textpattern/txp_img/previewup.gif
+%%TEXTPATTERN%%/textpattern/txp_img/reset_time.gif
+%%TEXTPATTERN%%/textpattern/txp_img/tabs.gif
+%%TEXTPATTERN%%/textpattern/txp_img/tabshadow.gif
+%%TEXTPATTERN%%/textpattern/txp_img/textdown.gif
+%%TEXTPATTERN%%/textpattern/txp_img/textpattern.gif
+%%TEXTPATTERN%%/textpattern/txp_img/texttabshadow.gif
+%%TEXTPATTERN%%/textpattern/txp_img/textup.gif
+%%TEXTPATTERN%%/textpattern/txp_img/tplogoGreyer.gif
+%%TEXTPATTERN%%/textpattern/txp_img/txp1_0.gif
+%%TEXTPATTERN%%/textpattern/txp_img/txp_editorheader.gif
+%%TEXTPATTERN%%/textpattern/txp_img/txp_slug105x45.gif
+%%TEXTPATTERN%%/textpattern/txp_img/txp_slug105x70.gif
+%%TEXTPATTERN%%/textpattern/txp_img/up.gif
+%%TEXTPATTERN%%/textpattern/txp_img/up2.gif
+%%TEXTPATTERN%%/textpattern/update/_to_1.0.0.php
+%%TEXTPATTERN%%/textpattern/update/_to_4.0.2.php
+%%TEXTPATTERN%%/textpattern/update/_update.php
+%%TEXTPATTERN%%/textpattern/update/index.html
+@dirrm %%TEXTPATTERN%%/textpattern/update
+@dirrm %%TEXTPATTERN%%/textpattern/txp_img
+@dirrm %%TEXTPATTERN%%/textpattern/tmp
+@dirrm %%TEXTPATTERN%%/textpattern/setup
+@dirrm %%TEXTPATTERN%%/textpattern/publish
+@dirrm %%TEXTPATTERN%%/textpattern/lib
+@dirrm %%TEXTPATTERN%%/textpattern/lang
+@dirrm %%TEXTPATTERN%%/textpattern/include/import
+@dirrm %%TEXTPATTERN%%/textpattern/include
+@dirrm %%TEXTPATTERN%%/textpattern
+@dirrm %%TEXTPATTERN%%/images
+@dirrm %%TEXTPATTERN%%/files
+@dirrm %%TEXTPATTERN%%
