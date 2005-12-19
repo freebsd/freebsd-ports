@@ -7,9 +7,6 @@
 %%PYTHON_SITELIBDIR%%/tada/tao.py
 %%PYTHON_SITELIBDIR%%/tada/tao.pyc
 %%PYTHON_SITELIBDIR%%/tada/tao.pyo
-%%PYTHON_SITELIBDIR%%/tada/taorda.py
-%%PYTHON_SITELIBDIR%%/tada/taorda.pyc
-%%PYTHON_SITELIBDIR%%/tada/taorda.pyo
 %%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.py
 %%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/tada/test/MySQLdb/__init__.pyo
