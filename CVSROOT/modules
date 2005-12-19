@@ -7599,6 +7599,7 @@ p5-Crypt-HCE_MD5	ports/security/p5-Crypt-HCE_MD5
 p5-Crypt-HCE_SHA	ports/security/p5-Crypt-HCE_SHA
 p5-Crypt-IDEA	ports/security/p5-Crypt-IDEA
 p5-Crypt-Lite	ports/security/p5-Crypt-Lite
+p5-Crypt-MySQL	poris/security/p5-Crypt-MySQL
 p5-Crypt-NULL	ports/security/p5-Crypt-NULL
 p5-Crypt-OFB	ports/security/p5-Crypt-OFB
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
