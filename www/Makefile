@@ -499,6 +499,7 @@
     SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
     SUBDIR += p5-Catalyst-Plugin-Cache-FastMmap
+    SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormValidator
