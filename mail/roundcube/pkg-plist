@@ -114,6 +114,8 @@
 %%RCUBEDIR%%/program/lib/utf8.inc
 %%RCUBEDIR%%/program/localization/ca/labels.inc
 %%RCUBEDIR%%/program/localization/ca/messages.inc
+%%RCUBEDIR%%/program/localization/cn/labels.inc
+%%RCUBEDIR%%/program/localization/cn/messages.inc
 %%RCUBEDIR%%/program/localization/cz/labels.inc
 %%RCUBEDIR%%/program/localization/cz/messages.inc
 %%RCUBEDIR%%/program/localization/da/labels.inc
@@ -159,6 +161,8 @@
 %%RCUBEDIR%%/program/localization/ru/messages.inc
 %%RCUBEDIR%%/program/localization/se/labels.inc
 %%RCUBEDIR%%/program/localization/se/messages.inc
+%%RCUBEDIR%%/program/localization/tr/labels.inc
+%%RCUBEDIR%%/program/localization/tr/messages.inc
 %%RCUBEDIR%%/program/localization/tw/labels.inc
 %%RCUBEDIR%%/program/localization/tw/messages.inc
 %%RCUBEDIR%%/program/steps/addressbook/delete.inc
@@ -311,6 +315,7 @@
 @dirrm %%RCUBEDIR%%/program/steps/addressbook
 @dirrm %%RCUBEDIR%%/program/steps
 @dirrm %%RCUBEDIR%%/program/localization/tw
+@dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/se
 @dirrm %%RCUBEDIR%%/program/localization/ru
 @dirrm %%RCUBEDIR%%/program/localization/ro
@@ -333,6 +338,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/de
 @dirrm %%RCUBEDIR%%/program/localization/da
 @dirrm %%RCUBEDIR%%/program/localization/cz
+@dirrm %%RCUBEDIR%%/program/localization/cn
 @dirrm %%RCUBEDIR%%/program/localization/ca
 @dirrm %%RCUBEDIR%%/program/localization
 @dirrm %%RCUBEDIR%%/program/lib/Net
