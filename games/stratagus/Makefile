@@ -7,7 +7,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
-		${LOCALBASE}/lib/liblua.a:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		lua.5:${PORTSDIR}/lang/lua
 
 USE_SDL=	yes
 USE_XLIB=	yes
