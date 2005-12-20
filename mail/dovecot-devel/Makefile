@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.alpha4
-PORTREVISION=	2
+DISTVERSION=	1.0.alpha5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -16,6 +15,7 @@ MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,13 +26,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		USE-WIKI-INSTEAD \
+PORTDOCS=	USE-WIKI-INSTEAD \
 		auth-protocol.txt auth.txt configuration.txt design.txt \
-		index.txt mail-storages.txt mkcert.sh multiaccess.txt \
-		nfs.txt securecoding.txt variables.txt \
-		dovecot-ldap.conf dovecot-sql.conf dovecot-openssl.cnf
+		index.txt mail-storages.txt multiaccess.txt nfs.txt \
+		securecoding.txt variables.txt
 
 OPTIONS=	SASL2		"SASL2 support"		off \
+		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
@@ -41,7 +41,7 @@ OPTIONS=	SASL2		"SASL2 support"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500038 || !defined(WITH_RCORDER)
+.if ( ${OSVERSION} < 500038 ) || !defined(WITH_RCORDER)
 USE_RC_SUBR=	dovecot.sh
 .else
 USE_RCORDER=	dovecot.sh
@@ -49,13 +49,17 @@ USE_RCORDER=	dovecot.sh
 
 ## SASL2 support
 #
-# SASL provides authentication support to
-# session-based protocols. This is can be
-# used by dovecot for authentication sources.
-#
 .if defined(WITH_SASL2)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl2
+.endif
+
+## GSSAPI support
+#
+.if defined(WITH_GSSAPI)
+CONFIGURE_ARGS+=	--with-gssapi
+.else
+CONFIGURE_ARGS+=	--without-gssapi
 .endif
 
 ## VPopMail Support
@@ -89,34 +93,18 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
+pre-configure:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's/^\(SUBDIRS = src\) doc/\1/' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKSRC}/dovecot-example.conf >${WRKDIR}/dovecot.conf.sample
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/dovecot-example.conf
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-do-install:
-	@${MKDIR} ${PREFIX}/libexec/dovecot
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/src/auth/checkpassword-reply \
-		${WRKSRC}/src/auth/dovecot-auth \
-		${WRKSRC}/src/deliver/deliver \
-		${WRKSRC}/src/imap/imap \
-		${WRKSRC}/src/imap-login/imap-login \
-		${WRKSRC}/src/pop3/pop3 \
-		${WRKSRC}/src/pop3-login/pop3-login \
-		${WRKSRC}/src/util/rawlog \
-			${PREFIX}/libexec/dovecot/
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/src/master/dovecot \
-		${WRKSRC}/src/util/dovecotpw \
-			${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKDIR}/dovecot.conf.sample ${PREFIX}/etc/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

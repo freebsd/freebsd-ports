@@ -1,5 +1,21 @@
 @comment $FreeBSD$
-etc/dovecot.conf.sample
+etc/dovecot-example.conf
+lib/dovecot/imap/libimap_quota_plugin.a
+lib/dovecot/imap/libimap_quota_plugin.la
+lib/dovecot/imap/libimap_quota_plugin.so
+lib/dovecot/imap/libquota_plugin.so
+lib/dovecot/imap/libtrash_plugin.so
+@dirrm lib/dovecot/imap
+lib/dovecot/lda/libquota_plugin.so
+lib/dovecot/lda/libtrash_plugin.so
+@dirrm lib/dovecot/lda
+lib/dovecot/libquota_plugin.a
+lib/dovecot/libquota_plugin.la
+lib/dovecot/libquota_plugin.so
+lib/dovecot/libtrash_plugin.a
+lib/dovecot/libtrash_plugin.la
+lib/dovecot/libtrash_plugin.so
+@dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
 libexec/dovecot/deliver
 libexec/dovecot/dovecot-auth
@@ -11,19 +27,3 @@ libexec/dovecot/rawlog
 @dirrm libexec/dovecot
 sbin/dovecot
 sbin/dovecotpw
-%%PORTDOCS%%%%DOCSDIR%%/USE-WIKI-INSTEAD
-%%PORTDOCS%%%%DOCSDIR%%/auth-protocol.txt
-%%PORTDOCS%%%%DOCSDIR%%/auth.txt
-%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/design.txt
-%%PORTDOCS%%%%DOCSDIR%%/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/mail-storages.txt
-%%PORTDOCS%%%%DOCSDIR%%/mkcert.sh
-%%PORTDOCS%%%%DOCSDIR%%/multiaccess.txt
-%%PORTDOCS%%%%DOCSDIR%%/nfs.txt
-%%PORTDOCS%%%%DOCSDIR%%/securecoding.txt
-%%PORTDOCS%%%%DOCSDIR%%/variables.txt
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-ldap.conf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-openssl.cnf
-%%PORTDOCS%%%%DOCSDIR%%/dovecot-sql.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
