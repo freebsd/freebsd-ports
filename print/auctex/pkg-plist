@@ -173,6 +173,16 @@
 %%LISPDIR%%/auctex/style/url.elc
 %%LISPDIR%%/auctex/style/jsarticle.elc
 %%LISPDIR%%/auctex/style/jsbook.elc
+%%LISPDIR%%/auctex/style/dk-bib.el
+%%LISPDIR%%/auctex/style/inputenc.el
+%%LISPDIR%%/auctex/style/frenchb.el
+%%LISPDIR%%/auctex/style/francais.el
+%%LISPDIR%%/auctex/style/MinionPro.el
+%%LISPDIR%%/auctex/style/dk-bib.elc
+%%LISPDIR%%/auctex/style/inputenc.elc
+%%LISPDIR%%/auctex/style/frenchb.elc
+%%LISPDIR%%/auctex/style/francais.elc
+%%LISPDIR%%/auctex/style/MinionPro.elc
 %%LISPDIR%%/auctex/tex.elc
 %%LISPDIR%%/auctex/tex-buf.elc
 %%LISPDIR%%/auctex/latex.elc
@@ -191,6 +201,10 @@
 %%LISPDIR%%/auctex/tex-jp.elc
 %%LISPDIR%%/auctex/tex-bar.elc
 %%LISPDIR%%/auctex/toolbar-x.elc
+%%LISPDIR%%/auctex/prv-emacs.el
+%%LISPDIR%%/auctex/prv-emacs.elc
+%%LISPDIR%%/auctex/preview.el
+%%LISPDIR%%/auctex/preview.elc
 %%LISPDIR%%/auctex/images/amstex.xpm
 %%LISPDIR%%/auctex/images/bibtex.xpm
 %%LISPDIR%%/auctex/images/dropdown.xpm
@@ -236,13 +250,8 @@
 %%LISPDIR%%/auctex/images/prvwrk20.xpm
 %%LISPDIR%%/auctex/images/prvwrk24.xbm
 %%LISPDIR%%/auctex/images/prvwrk24.xpm
-%%LISPDIR%%/preview/preview.el
-%%LISPDIR%%/preview/preview.elc
-%%LISPDIR%%/preview/prv-emacs.el
-%%LISPDIR%%/preview/prv-emacs.elc
 %%LISPDIR%%/preview-latex.el
 %%LISPDIR%%/auctex.el
-@dirrm %%LISPDIR%%/preview
 @dirrm %%LISPDIR%%/auctex/style
 @dirrm %%LISPDIR%%/auctex/auto
 @dirrm %%LISPDIR%%/auctex/images
