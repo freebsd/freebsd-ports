@@ -10,7 +10,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Table.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Cookbook.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Draw.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Engines.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
@@ -24,6 +24,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transformations.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/interface.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/regmach.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
