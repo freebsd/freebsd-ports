@@ -1,0 +1,6 @@
+sbin/chilli
+%%DATADIR%%/chilli.sample
+%%DATADIR%%/dictionary.chillispot
+%%DATADIR%%/freeradius.users
+%%DATADIR%%/hotspotlogin.cgi
+@dirrm %%DATADIR%%
