@@ -9,15 +9,19 @@ PORTNAME=	ut
 PORTVERSION=	3.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/
+PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	urbanTerror${PORTVERSION:S/.//}_full
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Urban Terror
 
 USE_ZIP=	yes
+USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	"Distfile is \>256MB\; define FORCE_PACKAGE if you really want this."
+
+DATADIR=	${Q3DIR}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}

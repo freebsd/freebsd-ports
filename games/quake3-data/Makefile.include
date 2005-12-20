@@ -1,44 +1,33 @@
-# Makefile for defining variables used by other Quake III Arena related ports.
+# Makefile for defining variables used by other Doom related ports.
 
-# Package name prefix.
+# Set variables.
 
-Q3PKGNAMEPREFIX=quake3-
+Q3PKGNAMEPREFIX?=quake3-
+Q3DIR?=		${LOCALBASE}/share/quake3
 
-.if ${PORTNAME} != "quake3"
-PKGNAMEPREFIX?=	${Q3PKGNAMEPREFIX}
-.endif
+# Add them to the environment.
 
-# Dependency to "games/quake3-data".
+MAKE_ENV+=	Q3DIR="${Q3DIR}"
+PLIST_SUB+=	Q3DIR="${Q3DIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	Q3DIR="${Q3DIR}"
+
+# Add the dependency.
 
 .if ${PORTNAME} != "data"
 RUN_DEPENDS+=	${Q3DIR}/baseq3/pak1.pk3:${PORTSDIR}/games/quake3-data
 .endif
 
-# Installation directories.
+# DOS to Unix text conversion.
 
-Q3DIR=		${LOCALBASE}/share/quake3
-
-.if ${PORTNAME} == "data" || ${PORTNAME} == "quake3"
-DATADIR?=	${Q3DIR}
-.else
-DATADIR?=	${Q3DIR}/${PORTNAME}
-.endif
-
-DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-PLIST_SUB+=	Q3DIR="${Q3DIR:S/${PREFIX}\///}"
-
-# Convert "dos" text files to "unix".
-
-.if defined(USE_ZIP)
+.if defined(USE_CRLF)
+.   if defined(USE_ZIP)
 EXTRACT_BEFORE_ARGS=	-aqo
-.else
+.   else
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
-
 pre-patch:
-# remove trailing ^M
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|url)" \
-		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
+	@${FIND} ${WRKDIR} -type f -print0 | \
+		${XARGS} -0 ${FILE} | ${GREP} 'CRLF' | \
+		${SED} -e "s/:.*//" | ${SED} -e 's/ /\\ /g' | \
+		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
+.   endif
 .endif
