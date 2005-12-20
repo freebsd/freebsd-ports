@@ -1,0 +1,5 @@
+ chroot_safe, a tool to chroot any application in a sane manner without
+requring binaries, shared libraries etc within the chroot or any support from
+the application. Works with any dynamically linked application.
+
+WWW: http://sourceforge.net/projects/chrootsafe/
