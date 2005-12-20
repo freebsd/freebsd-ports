@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: junkbuster
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD
+
+#
+# Add the following lines to /etc/rc.conf to enable junkbuster:
+# junkbuster_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable junkbuster
+#
+
+. %%RC_SUBR%%
+
+name="junkbuster"
+command=%%PREFIX%%/sbin/junkbuster
+required_files=%%PREFIX%%/etc/junkbuster/configfile
+start_cmd="ijb_start"
+
+[ -z "${junkbuster_enable}" ] && junkbuster_enable="NO"
+
+ijb_start()
+{
+	cd %%PREFIX%%/etc/junkbuster
+	su -m nobody -c "%%PREFIX%%/sbin/junkbuster configfile &" >/dev/null
+	echo -n " junkbuster"
+}
+
+load_rc_config $name
+run_rc_command "$1"
+
+#case $1 in
+#start)
+#	if [ -d %%JDIR%% \
+#	     -a -x %%PREFIX%%/sbin/junkbuster \
+#	     -a -f %%JDIR%%/configfile ]; then
+#		: seems OK
+#	else
+#		echo >&2 "$0: missing files!"
+#		exit 1
+#	fi
+#	cd %%JDIR%%
+#	su -m nobody -c "%%PREFIX%%/sbin/junkbuster configfile &" \
+#	    >/dev/null \
+#	&& echo -n " junkbuster" \
+#	|| echo " junkbuster FAILED TO START"
+#	;;
+#stop)
+#	killall junkbuster && echo -n " junkbuster"
+#	;;
+#restart)
+#	$0 stop
+#	$0 start
+#	;;
+#*)
+#	echo "Usage: `basename $0` {start|stop}" >&2
+#	exit 64
+#	;;
+#esac
+#
+#exit 0
