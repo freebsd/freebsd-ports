@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-autoindex --disable-asis --disable-cgid \
 			--disable-cgi --disable-negotiation --disable-dir \
 			--disable-imagemap --disable-actions --disable-userdir \
-			--disable-alias
+			--disable-alias --disable-filter
 .elif ${USE_APACHE} == common22
 CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-authz-host --disable-authz-groupfile \
@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-autoindex --disable-asis --disable-cgid \
 			--disable-cgi --disable-negotiation --disable-dir \
 			--disable-imagemap --disable-actions --disable-userdir \
-			--disable-alias
+			--disable-alias --disable-filter
 .endif
 
 .if defined(WITH_MODULES)
