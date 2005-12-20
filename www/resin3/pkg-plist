@@ -1,5 +1,7 @@
 @comment $FreeBSD$
 %%APP_NAME%%/lib/aopalliance.jar
+%%APP_NAME%%/lib/default.xsl
+%%APP_NAME%%/lib/eclipse-compiler.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar
 %%APP_NAME%%/lib/j2eedeploy.jar
@@ -10,6 +12,7 @@
 %%APP_NAME%%/lib/jstl-11.jar
 %%APP_NAME%%/lib/jta-101.jar
 %%APP_NAME%%/lib/portlet-10.jar
+%%APP_NAME%%/lib/quercus.jar
 %%APP_NAME%%/lib/resin-jdk15.jar
 %%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/resinboot.jar
