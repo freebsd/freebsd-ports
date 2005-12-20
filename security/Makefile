@@ -308,6 +308,7 @@
     SUBDIR += p5-Crypt-HCE_MD5
     SUBDIR += p5-Crypt-HCE_SHA
     SUBDIR += p5-Crypt-IDEA
+    SUBDIR += p5-Crypt-Imail
     SUBDIR += p5-Crypt-Lite
     SUBDIR += p5-Crypt-MySQL
     SUBDIR += p5-Crypt-NULL
