@@ -23,10 +23,9 @@ USE_AUTOTOOLS=	libtool:15
 
 LICQ_PORT?=	net-im/licq
 
-LOCALES=	de cs es fr pt pt_BR ro ru se
+LOCALES=	de cs es fr pt pt_BR ro ru sv sk
 PLIST_FILES=	lib/licq/licq_osd.so \
 		${LOCALES:C+^.*$+share/locale/&/LC_MESSAGES/licq_osd_plugin.mo+}
-PLIST_DIRS=	share/locale/se/LC_MESSAGES share/locale/se
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"

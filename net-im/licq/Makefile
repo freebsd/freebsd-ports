@@ -19,13 +19,17 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
 
 USE_REINPLACE=	yes
+USE_ICONV=	yes
+#USE_GCC=	3.3+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
 # workaround for installed autoconf/automake
 CONFIGURE_ARGS+=--program-transform-name=s,y,y,
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-LDFLAGS+=	${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(WITH_SOCKS)
 SOCKS_SUFFIX=	-socks
