@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	malsync
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.20
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
-DISTNAME=	malsync_2.1.0.src
+DISTNAME=	malsync_2.2.0.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+
+# Code is not 64-bit clean
+NOT_FOR_ARCH=	amd64
 
 PLIST_FILES=	bin/malsync
 USE_GMAKE=	yes
