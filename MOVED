@@ -662,6 +662,7 @@ comms/bayonne||2003-11-07|port was broken for >3 months with no fix submitted
 emulators/xpinmame||2003-11-07|port was broken for >3 months with no fix submitted
 french/spip||2003-11-07|port was broken for >3 months with no fix submitted
 ftp/moxftp||2003-11-07|port was broken for >3 months with no fix submitted
+ftp/sftp||2005-12-20|Author no longer supports the software. Functionality is in OpenSSH.
 games/rollemup||2003-11-07|port was broken for >3 months with no fix submitted
 games/xpuyo||2003-11-07|port was broken for >3 months with no fix submitted
 graphics/imlib3d||2003-11-07|port was broken for >3 months with no fix submitted
