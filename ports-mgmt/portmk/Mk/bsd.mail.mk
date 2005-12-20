@@ -18,17 +18,17 @@ Mail_Pre_Include=			bsd.mail.mk
 # Ports can use the following vars:
 #
 # QMAIL_PREFIX		- Define it if qmail is installed in a different PREFIX.
-#			  Default: /var/qmail
+#					  Default: /var/qmail
 #
 # QMAIL_SLAVEPORT	- Define it if you install a slaveport of qmail, to
-#			  prevent stale dependencies. Valid slaveports are:
-#			  ldap, mysql, spamcontrol and tls.
+#					  prevent stale dependencies. Valid slaveports are:
+#					  ldap, mysql, spamcontrol and tls.
 #
 # USE_QMAIL_BUILD	- Add qmail or qmail slaveport to BUILD_DEPENDS.
 #
 # USE_QMAIL_RUN		- Add qmail or qmail slaveport to RUN_DEPENDS.
 #
-# USE_QMAIL		- Add qmail or qmail slaveport to RUN and BUILD_DEPENDS.
+# USE_QMAIL			- Add qmail or qmail slaveport to RUN and BUILD_DEPENDS.
 #
 # WANT_QMAIL		- Set vars related to qmail, like QMAIL_PREFIX.
 
@@ -46,7 +46,7 @@ _QMAIL_SLAVEPORT_OKAY=	true
 .	endfor
 
 .	if !defined(_QMAIL_SLAVEPORT_OKAY)
-IGNORE=	"Invalid QMAIL_SLAVEPORT value. Only one can be set, valid values are: ${_QMAIL_VALID_SLAVEPORTS}"
+IGNORE=	Invalid QMAIL_SLAVEPORT value. Only one can be set, valid values are: ${_QMAIL_VALID_SLAVEPORTS}
 .	endif
 .endif
 
