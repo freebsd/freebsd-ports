@@ -23,6 +23,7 @@ COMMENT=	Quake III Arena -- first person shooter (native build)
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_ZIP=	yes
+USE_CRLF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes

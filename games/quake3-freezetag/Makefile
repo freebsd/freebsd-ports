@@ -10,6 +10,7 @@ PORTVERSION=	1.51b
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pat
+PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	q3freeze${PORTVERSION:S/.//}
 
 MAINTAINER=	pat@FreeBSD.org
@@ -18,7 +19,10 @@ COMMENT=	Quake III Arena Mod: Freeze Tag
 WRKSRC=		${WRKDIR}/freeze
 
 USE_ZIP=	yes
+USE_CRLF=	yes
 NO_BUILD=	yes
+
+DATADIR=	${Q3DIR}/${PORTNAME}
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 

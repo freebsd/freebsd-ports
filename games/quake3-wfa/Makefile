@@ -9,6 +9,7 @@ PORTNAME=	wfa
 PORTVERSION=	3.5b
 CATEGORIES=	games
 MASTER_SITES=	http://www.ijs.si/~lesi/distfiles/
+PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTFILES=	WFA35Engine.zip WFA35MapPack1.zip WFA35MapPack2.zip \
 		WFA_v35b.zip 35b_mappack1.zip
 DIST_SUBDIR=	${PORTNAME}
@@ -19,8 +20,11 @@ COMMENT=	Quake III Arena Mod: Weapons Factory Arena
 NO_PACKAGE=	"Package will be 138MB, set FORCE_PACKAGE if you really want to build it"
 
 USE_ZIP=	yes
+USE_CRLF=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+DATADIR=	${Q3DIR}/${PORTNAME}
 
 post-extract:
 	@${RM} ${WRKSRC}/help/BobWFACfgV236.exe

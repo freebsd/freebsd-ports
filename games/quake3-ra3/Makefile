@@ -10,6 +10,7 @@ PORTVERSION=	1.76
 CATEGORIES=	games
 MASTER_SITES=	ftp.clanbase.com/pub/ \
 		ftp.mirrors.degnet.de/pub/misc/PlanetQuake3.net/modifications/rocketarena3/
+PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	pat@FreeBSD.org
@@ -20,7 +21,10 @@ NO_PACKAGE=	"Package will be 102MB, set FORCE_PACKAGE if you really want to buil
 WRKSRC=		${WRKDIR}/arena
 
 USE_ZIP=	yes
+USE_CRLF=	yes
 NO_BUILD=	yes
+
+DATADIR=	${Q3DIR}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}
