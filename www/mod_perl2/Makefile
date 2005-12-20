@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.2
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
@@ -16,8 +16,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
 PERL_CONFIGURE=	yes
 GMAKE=		yes
 
@@ -56,17 +55,20 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		ModPerl::RegistryLoader.3 ModPerl::RegistryPrefork.3 \
 		ModPerl::Util.3 mod_perl2.3
 
-pre-everything::
-	@${ECHO} "************************************************************"
-	@${ECHO} "NOTE: Version 2.0.0-RC5 and higher of ${PORTNAME}"
-	@${ECHO} "      significantly change the API - old code *will* break!"
-	@${ECHO} "      See http://perl.apache.org/docs/2.0/rename.html"
-	@${ECHO} ""
-	@${ECHO} "Hit Ctrl-C to abort now, if this is of concern."
-	@${ECHO} "************************************************************"
-	@sleep 10
-
 .include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${APACHE_VERSION} >= 21
+	@${ECHO} "************************************************************"
+	@${ECHO} "You are building ${PORTNAME}-${PORTVERSION} for apache${APACHE_VERSION}."
+	@${ECHO} ""
+	@${ECHO} "Please note that the maintainer only tests ${PORTNAME}-${PORTVERSION}"
+	@${ECHO} "with apache20. If you encounter a problem, please roll back"
+	@${ECHO} "to that version and verify that the problem still exists,"
+	@${ECHO} "before submitting a problem report."
+	@${ECHO} "************************************************************"
+	@sleep 5
+.endif
 
 # it is time to require perl 5.8.x
 .if ${PERL_LEVEL} < 500800
@@ -74,14 +76,14 @@ IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/include/apache2/modules/perl
+	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
-		${PREFIX}/include/apache2/modules/perl
-	${INSTALL_DATA} ${WRKSRC}/xs/*.h ${PREFIX}/include/apache2
-	${INSTALL_DATA} ${WRKSRC}/xs/APR/PerlIO/*.h ${PREFIX}/include/apache2
-	${MKDIR} ${PREFIX}/libexec/apache2
+		${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
+	${INSTALL_DATA} ${WRKSRC}/xs/*.h ${PREFIX}/${APACHEINCLUDEDIR}
+	${INSTALL_DATA} ${WRKSRC}/xs/APR/PerlIO/*.h ${PREFIX}/${APACHEINCLUDEDIR}
+	${MKDIR} ${PREFIX}/${APACHEMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
-		${PREFIX}/libexec/apache2/mod_perl.so
+		${PREFIX}/${APACHEMODDIR}/mod_perl.so
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
