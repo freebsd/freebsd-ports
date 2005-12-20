@@ -7596,6 +7596,7 @@ p5-Crypt-Cryptix	ports/security/p5-Crypt-Cryptix
 p5-Crypt-Ctr	ports/security/p5-Crypt-Ctr
 p5-Crypt-DES	ports/security/p5-Crypt-DES
 p5-Crypt-DES_EDE3	ports/security/p5-Crypt-DES_EDE3
+p5-Crypt-DES_PP	ports/security/p5-Crypt-DES_PP
 p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
