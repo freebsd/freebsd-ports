@@ -8,7 +8,7 @@
 PORTNAME=	zaptel
 PORTVERSION=	0.11
 CATEGORIES=	misc
-MASTER_SITES=	http://www.portaone.com/~gonzo/
+MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
