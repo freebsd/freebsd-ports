@@ -53,7 +53,7 @@ _LINUX_BASE_SUFFIX=		8
 _LINUX_BASE_SUFFIX=		debian
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					"uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"8\" and \"debian\""
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"8\" and \"debian\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
