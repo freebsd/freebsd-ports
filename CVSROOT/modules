@@ -1105,6 +1105,7 @@ chordpack	ports/audio/chordpack
 chpasswd	ports/www/chpasswd
 chpp		ports/textproc/chpp
 chromium	ports/games/chromium
+chroot_safe	ports/security/chroot_safe
 chrootuid	ports/security/chrootuid
 chryzodus	ports/math/chryzodus
 chtml		ports/www/chtml
