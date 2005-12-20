@@ -1,9 +1,19 @@
 @unexec if cmp -s %D/AntiVir/antivir-dist_avmilter %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
 AntiVir/antivir-dist_avmilter
 @exec [ -f %B/antivir ] || cp -p %B/%f %B/antivir
-@unexec if cmp -s %D/AntiVir/antivir.vdf-dist_avmilter %D/AntiVir/antivir.vdf; then rm -f %D/AntiVir/antivir.vdf; fi
-AntiVir/antivir.vdf-dist_avmilter
-@exec [ -f %B/antivir.vdf ] || cp -p %B/%f %B/antivir.vdf
+@unexec if cmp -s %D/AntiVir/antivir0.vdf-dist_avmilter %D/AntiVir/antivir0.vdf; then rm -f %D/AntiVir/antivir0.vdf; fi
+AntiVir/antivir0.vdf-dist_avmilter
+@exec [ -f %B/antivir0.vdf ] || cp -p %B/%f %B/antivir0.vdf
+@unexec if cmp -s %D/AntiVir/antivir1.vdf-dist_avmilter %D/AntiVir/antivir1.vdf; then rm -f %D/AntiVir/antivir1.vdf; fi
+AntiVir/antivir1.vdf-dist_avmilter
+@exec [ -f %B/antivir1.vdf ] || cp -p %B/%f %B/antivir1.vdf
+@unexec if cmp -s %D/AntiVir/antivir2.vdf-dist_avmilter %D/AntiVir/antivir2.vdf; then rm -f %D/AntiVir/antivir2.vdf; fi
+AntiVir/antivir2.vdf-dist_avmilter
+@exec [ -f %B/antivir2.vdf ] || cp -p %B/%f %B/antivir2.vdf
+@unexec if cmp -s %D/AntiVir/antivir3.vdf-dist_avmilter %D/AntiVir/antivir3.vdf; then rm -f %D/AntiVir/antivir3.vdf; fi
+AntiVir/antivir3.vdf-dist_avmilter
+@exec [ -f %B/antivir3.vdf ] || cp -p %B/%f %B/antivir3.vdf
+@unexec rmdir %D/AntiVir/updcomp 2> /dev/null || true
 @unexec rmdir %D/AntiVir 2> /dev/null || echo "If permanently deleting this package, %D/AntiVir and its contents must be removed manually."
 bin/avq
 bin/avqrm
@@ -84,11 +94,13 @@ sbin/avmilter.bin
 @dirrm %%EXAMPLESDIR%%/templates/nl
 @dirrm %%EXAMPLESDIR%%/templates
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.DE
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/README.gpg
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/antivir.gpg
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_de.pdf
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_en.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
