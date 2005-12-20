@@ -376,6 +376,7 @@ sbin/rotatelogs
 %%DOCSDIR%%/manual/index.html.html
 %%DOCSDIR%%/manual/index.html.ja.jis
 %%DOCSDIR%%/manual/install-tpf.html
+%%DOCSDIR%%/manual/install-ztpf.html
 %%DOCSDIR%%/manual/install.html.en
 %%DOCSDIR%%/manual/install.html.es
 %%DOCSDIR%%/manual/install.html.fr
