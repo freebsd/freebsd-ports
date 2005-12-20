@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	antivir-milter
-PORTVERSION=	1.1.1p9
+PORTVERSION=	1.1.2p1
 DISTVERSIONPREFIX=	prof-
 DISTVERSION=	${PORTVERSION:C/p/-/}
 CATEGORIES=	security mail
@@ -21,8 +21,6 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-# Auto re-fetch sucks!
-FETCH_CMD=	/usr/bin/fetch -A
 # When the avmilter binary is stripped its self-check fails.
 STRIP=
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -50,8 +48,8 @@ post-extract:
 	@${CP} ${FILESDIR}/avq.sh ${WRKSRC}/script/avq
 
 post-patch:
-.for i in doc/MANUAL etc/antivir.conf etc/avmilter.conf script/avq \
-	script/avupdater script/rc.avmilter
+.for i in doc/MANUAL doc/RELEASE_NOTES etc/antivir.conf etc/avmilter.conf \
+	pgp/README script/avq script/avupdater script/rc.avmilter
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
@@ -70,12 +68,14 @@ do-install:
 	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755 ${BINSRC}/antivir \
 		${PREFIX}/AntiVir
 .endif
-	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/antivir.vdf \
-		${PREFIX}/AntiVir/antivir.vdf-dist_avmilter
-.if !exists(${PREFIX}/AntiVir/antivir.vdf)
-	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/antivir.vdf \
+.for i in antivir0.vdf antivir1.vdf antivir2.vdf antivir3.vdf
+	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/${i} \
+		${PREFIX}/AntiVir/${i}-dist_avmilter
+.if !exists(${PREFIX}/AntiVir/${i})
+	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 644 ${WRKSRC}/vdf/${i} \
 		${PREFIX}/AntiVir
 .endif
+.endfor
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/avq ${PREFIX}/bin
 	@${INSTALL} -d ${PREFIX}/etc/avmilter
 .for i in avmilter.conf avmilter.ignore avmilter.scan avmilter.warn
@@ -113,12 +113,14 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
-.for i in ChangeLog LICENSE LICENSE.DE
+.for i in LICENSE LICENSE.DE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in MANUAL RELEASE_NOTES avmilter_de.pdf avmilter_en.pdf
+.for i in CHANGELOG MANUAL RELEASE_NOTES avmilter_de.pdf avmilter_en.pdf
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
+	@${INSTALL_DATA} ${WRKSRC}/pgp/README ${DOCSDIR}/README.gpg
+	@${INSTALL_DATA} ${WRKSRC}/pgp/antivir.gpg ${DOCSDIR}
 .endif
 
 post-install:

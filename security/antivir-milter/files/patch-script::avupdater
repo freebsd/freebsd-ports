@@ -1,7 +1,7 @@
 --- script/avupdater.orig	Nov 25 10:29:31 2004
 +++ script/avupdater	Wed Dec  8 15:23:09 2004
-@@ -5,10 +5,8 @@
- # Copyright (c) 2002-2005 H+BEDV Datentechnik GmbH
+@@ -5,13 +5,11 @@
+ # Copyright 2002-2005 H+BEDV Datentechnik GmbH
  #
  
 -PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin"
@@ -10,79 +10,114 @@
 -AVDIR="/usr/lib/AntiVir"
 +AVDIR="%%PREFIX%%/AntiVir"
  
- DAEMON="$AVDIR/$DAEMONNAME"
+ DAEMON="${AVDIR}/${DAEMONNAME}"
+-DAEMONPARAMS="--updater-daemon"
++DAEMONPARAMS="--updater-daemon -q -C %%PREFIX%%/etc/antivir.conf"
+ SERVICENAME="avupdater"
+ OS=`uname | tr "[:upper:]" "[:lower:]"`
+ PROCCMD=""
+@@ -35,23 +33,22 @@
+ {
+ 	if [ $1 -eq 0 ]
+ 	then
+-		${ECHO} "."
++		${ECHO} -n " ${SERVICENAME}"
+ 	fi
+ 	exit $1
+ }
  
-@@ -71,63 +69,41 @@
+ stopEXIT()
+ {
+-	if [ $1 -ne 1 ]
++	if [ $1 -eq 0 ]
+ 	then
+-		${ECHO} "."
++		${ECHO} -n " ${SERVICENAME}"
+ 	fi
+ 	exit $1
+ }
+ 
+ statusEXIT()
+ {
+-	${ECHO} "."
+ 	exit $1
+ }
+ 
+@@ -104,7 +101,7 @@
+ 		fi
+ 	fi
+ 
+-	for PROC in `$PROCCMD | grep ${DAEMONNAME}.*${DAEMONPARAMS} | grep -v grep`
++	for PROC in `$PROCCMD | grep "${DAEMONNAME}.*${DAEMONPARAMS}" | grep -v grep`
+ 	do
+ 		if [ -z "`$ECHO ${PROC} | sed -e s/[0-9]//g`" ]
+ 		then
+@@ -115,16 +112,9 @@
  
  case "$1" in
  	start)
--		$ECHO -n "Starting AntiVir: avupdater"
+-		${ECHO} -n "Starting AntiVir: ${SERVICENAME}"
 -
--		if [ ! -x "$DAEMON" ]
--		then
--			$ECHO " (FAILED)"
--			$ECHO " "
--			$ECHO "error: $DAEMON is missing"
--			$ECHO " "
--			exit 1
--		fi
+ 		if [ ! -x "${DAEMON}" ]
+ 		then
+ 			# daemon missing
 -
--		$DAEMON --updater-daemon -q
--
--		if [ $? -ne 0 ]
--		then
--			$ECHO " (FAILED)"
--			$ECHO " "
--			$ECHO "error: $DAEMONNAME failed to start"
--			$ECHO "See log files for details."
--			$ECHO " "
--			exit 1
-+		if [ -x "$DAEMON" ]; then
-+			$DAEMON --updater-daemon -q \
-+				-C %%PREFIX%%/etc/antivir.conf
-+			if [ $? -eq 0 ]; then
-+				$ECHO -n " avupdater"
-+			fi
+-			${ECHO} " (FAILED)"
+-			${ECHO} " "
+-			${ECHO} "error: ${DAEMON} missing"
+-			${ECHO} " "
+ 			startEXIT 5
  		fi
+ 
+@@ -144,20 +134,12 @@
+ 		if [ ${ERROR} -ne 0 -o -z "${PROCESSLIST}" ]
+ 		then
+ 			# daemon failed to start, there is a problem
 -
--		$ECHO "."
+-			${ECHO} " (FAILED)"
+-			${ECHO} " "
+-			${ECHO} "error: ${DAEMON} failed"
+-			${ECHO} "See log files for details."
+-			${ECHO} " "
+ 			startEXIT 1
+ 		fi
+ 
+ 		startEXIT 0
  		;;
  	stop)
--		$ECHO -n "Stopping AntiVir: avupdater"
+-		${ECHO} -n "Stopping AntiVir: ${SERVICENAME}"
 -
  		getPROCESSLIST
- 		for PROC in $PROCESSLIST
- 		do
- 			kill -TERM $PROC > /dev/null 2>&1
- 		done
+ 		if [ -z "${PROCESSLIST}" ]
+ 		then
+@@ -194,28 +176,21 @@
+ 		if [ ! -z "${PROCESSLIST}" ]
+ 		then
+ 			# there are still processes running? this may be a problem
+-
+-			${ECHO} " (FAILED)"
+-			${ECHO} " "
+-			${ECHO} "There may be processes still running."
+-			${ECHO} " "
+ 			stopEXIT 1
+ 		fi
  
--		$ECHO "."
-+		$ECHO -n " avupdater"
- 		;;
- 	restart)
- 		$0 stop
- 		$0 start
+ 		stopEXIT 0
  		;;
  	status)
--		$ECHO -n "AntiVir Status: avupdater "
+-		${ECHO} -n "AntiVir Status: ${SERVICENAME} "
 -
  		getPROCESSLIST
- 		if [ ! -z "$PROCESSLIST" ]
+ 
+ 		# display the results of what we found
+ 		if [ -z "${PROCESSLIST}" ]
  		then
--			$ECHO -n "(running)"
-+			$ECHO "OK avupdater is running!"
- 			RC=0
+-			${ECHO} -n "not running"
++			${ECHO} "FAILED ${SERVICENAME} not running"
+ 			statusEXIT 3
  		else
--			$ECHO -n "(not running)"
-+			$ECHO "FAILED avupdater is not running!"
- 			RC=3
+-			${ECHO} -n "running"
++			${ECHO} "OK ${SERVICENAME} running"
+ 			statusEXIT 0
  		fi
--		$ECHO "."
- 		exit $RC
  		;;
- 	*)
--		$ECHO "usage: $0 {start|stop|restart|status}"
-+		$ECHO "Usage: `basename $0` {start|stop|restart|status}" >&2
- 		exit 1
- 		;;
- esac
