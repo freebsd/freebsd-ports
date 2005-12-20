@@ -49,7 +49,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"C++ code does not compile on 4.x"
+CONFIGURE_ARGS+=--without-pcraster
 .endif
 
 .include <bsd.port.post.mk>
