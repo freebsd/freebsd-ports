@@ -49,6 +49,7 @@
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
     SUBDIR += chkrootkit
+    SUBDIR += chroot_safe
     SUBDIR += chrootuid
     SUBDIR += cksfv
     SUBDIR += clamassassin
