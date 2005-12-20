@@ -4,5 +4,3 @@ is converted from TeX's PK format to gFONT's own GdF format (Gd Font) and
 rendered into the resulting GIF image by the use of its own enhanced Gd
 library. The result is intended to be included into HTML pages with an IMG
 tag.
-
-WWW: http://www.engelschall.com/sw/gfont/
