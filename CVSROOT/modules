@@ -11472,7 +11472,6 @@ sfs		ports/security/sfs
 sfslite		ports/devel/sfslite
 sfslite-dbg	ports/devel/sfslite-dbg
 sfslite-noopt	ports/devel/sfslite-noopt
-sftp_port	ports/ftp/sftp
 sgb		ports/devel/sgb
 sge		ports/sysutils/sge
 sge53		ports/sysutils/sge53
