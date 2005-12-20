@@ -12,7 +12,9 @@
 %%LIBDIR%%/tests/Lib/test_uri.py
 %%LIBDIR%%/tests/README
 %%LIBDIR%%/tests/Xml/Borrowed/__init__.py
+%%LIBDIR%%/tests/Xml/Borrowed/ie-050515.py
 %%LIBDIR%%/tests/Xml/Borrowed/rs-030516.py
+%%LIBDIR%%/tests/Xml/Borrowed/uo-051205.py
 %%LIBDIR%%/tests/Xml/Core/.#test_catalog.py.1.3
 %%LIBDIR%%/tests/Xml/Core/4suite.xsa
 %%LIBDIR%%/tests/Xml/Core/__init__.py
@@ -41,6 +43,7 @@
 %%LIBDIR%%/tests/Xml/Core/relaxng_datatypes.py
 %%LIBDIR%%/tests/Xml/Core/test_catalog.py
 %%LIBDIR%%/tests/Xml/Core/test_convenience_parse.py
+%%LIBDIR%%/tests/Xml/Core/test_convenience_parse.py.~1.1.~
 %%LIBDIR%%/tests/Xml/Core/test_domlette.py
 %%LIBDIR%%/tests/Xml/Core/test_domlette_interfaces.py
 %%LIBDIR%%/tests/Xml/Core/test_domlette_memory.py
@@ -51,6 +54,8 @@
 %%LIBDIR%%/tests/Xml/Core/test_nss.py
 %%LIBDIR%%/tests/Xml/Core/test_printers.py
 %%LIBDIR%%/tests/Xml/Core/test_ranges.py
+%%LIBDIR%%/tests/Xml/Core/test_saxlette.py
+%%LIBDIR%%/tests/Xml/Core/test_saxlette_scenarios.py
 %%LIBDIR%%/tests/Xml/Core/test_xinclude.py
 %%LIBDIR%%/tests/Xml/Core/test_xmlstring.py
 %%LIBDIR%%/tests/Xml/Core/test_xmlstring.py.~1.1.~
@@ -158,6 +163,7 @@
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/gkh_20001016.py
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/ie5default.xslt
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/jd_20000911.py
+%%LIBDIR%%/tests/Xml/Xslt/Borrowed/jk_20050406.py
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/js_20001004.py
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/js_20001012.py
 %%LIBDIR%%/tests/Xml/Xslt/Borrowed/js_20001016.py
@@ -326,6 +332,10 @@
 %%LIBDIR%%/tests/Xml/Xslt/Exslt/test_regexp.py
 %%LIBDIR%%/tests/Xml/Xslt/Exslt/test_sets.py
 %%LIBDIR%%/tests/Xml/Xslt/Exslt/test_strings.py
+%%LIBDIR%%/tests/Xml/Xslt/Manual/__init__.py
+%%LIBDIR%%/tests/Xml/Xslt/Manual/extfuncs_demo.py
+%%LIBDIR%%/tests/Xml/Xslt/Manual/ord.py
+%%LIBDIR%%/tests/Xml/Xslt/Manual/test_xpath_xslt_extensions.py
 %%LIBDIR%%/tests/Xml/Xslt/__init__.py
 %%LIBDIR%%/tests/Xml/Xslt/test_harness.py
 %%LIBDIR%%/tests/Xml/__init__.py
@@ -1065,6 +1075,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sdocbook_html.css
 %%PORTDOCS%%%%DOCSDIR%%/xml/CoreManual.doc
 %%PORTDOCS%%%%DOCSDIR%%/xml/CoreManualSections/Domlette.xml
+%%PORTDOCS%%%%DOCSDIR%%/xml/CoreManualSections/Examples.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/CoreManualSections/Installation.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/CoreManualSections/Introduction.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/CoreManualSections/MarkupWriter.xml
@@ -1352,6 +1363,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/Lib/CommandLine
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/Lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%
+@dirrm %%LIBDIR%%/tests/Xml/Xslt/Manual
 @dirrm %%LIBDIR%%/tests/Xml/Xslt/Exslt
 @dirrm %%LIBDIR%%/tests/Xml/Xslt/Core/etc
 @dirrm %%LIBDIR%%/tests/Xml/Xslt/Core
