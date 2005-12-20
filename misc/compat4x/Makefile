@@ -7,7 +7,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${COMPAT4X_MASTER_SITE_SUBDIR}
@@ -127,6 +127,17 @@ do-extract:
 .endfor
 .endif
 
+post-extract:
+	@( ${ECHO} ""; \
+	   ${ECHO} "******************************************************"; \
+	   ${ECHO} "To enable the ldconfig of these libraries at boot time"; \
+	   ${ECHO} "you need to add compat4x_enable=\"yes\" to either"; \
+	   ${ECHO} "/etc/rc.conf.local or /etc/rc.conf"; \
+	   ${ECHO} "******************************************************"; \
+	   ${ECHO} ""; ) > ${WRKDIR}/pkg-message
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 NO_BUILD=	yes
 
 do-install:
@@ -143,5 +154,6 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
