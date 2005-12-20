@@ -290,6 +290,7 @@
     SUBDIR += p5-Crypt-CBCeasy
     SUBDIR += p5-Crypt-CFB
     SUBDIR += p5-Crypt-Caesar
+    SUBDIR += p5-Crypt-Chimera
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-Cracklib
     SUBDIR += p5-Crypt-Cryptix
