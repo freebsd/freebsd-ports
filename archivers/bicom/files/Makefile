@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 
-CCX =	c++
+CXX ?=	c++
 
 IDIR =	-I./bialib
 
@@ -16,10 +16,10 @@ OBJS =	bialib/mtstream.o \
 	bicom/bicom.o
 
 .cpp.o:
-	${CCX} ${CXXFLAGS} ${IDIR} -c $< -o $*.o
+	${CXX} ${CXXFLAGS} ${IDIR} -c $< -o $*.o
 
 all:	${OBJS}
-	${CCX} ${CXXFLAGS} -o bicom/bicom ${OBJS}
+	${CXX} ${CXXFLAGS} -o bicom/bicom ${OBJS}
 
 clean:
 	rm -f bicom/bicom bicom/*.o bialib/*.o core
