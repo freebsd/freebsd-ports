@@ -9,7 +9,7 @@ PORTNAME=	qmailanalog
 PORTVERSION=	0.70
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://cr.yp.to/software/
+MASTER_SITES=	http://cr.yp.to/software/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
