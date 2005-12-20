@@ -1,0 +1,16 @@
+SendSNPP is a perl program for sending messages through a RFC1861 compliant
+SNPP server. SNPP stands for Simple Network Paging Protocol. It is used by a
+wide range of paging providers for sending pages. A list of some of the
+providers that support the SNPP service is on the WWW site below. SendSNPP
+requires no special modules, and has been tested on Linux and Windows systems.
+It has a very straight forward interface making it very easy to use.
+
+Feature List:
+- Easy addition of new service providers by simply editing a hash
+- Supports logging to a file
+- Script returns error status to the system when an error occurs
+- Automatic message truncation when message exceeds providers limit
+- Verbose and descriptive error messages if something goes wrong
+- Multiple debugging levels
+
+WWW: http://caspian.dotconf.net/menu/Software/SendSNPP/

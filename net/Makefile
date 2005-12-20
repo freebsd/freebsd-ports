@@ -687,6 +687,7 @@
     SUBDIR += seda
     SUBDIR += sendemail
     SUBDIR += sendfile
+    SUBDIR += sendsnpp
     SUBDIR += ser
     SUBDIR += serveez
     SUBDIR += sharity-light
