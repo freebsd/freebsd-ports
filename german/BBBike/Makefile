@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BBBike
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bbbike
@@ -33,8 +33,6 @@ LOCAL_PERL_ARCH=	${PERL_VER}/${ARCH}-freebsd
 .endif
 PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 
-.include <bsd.port.pre.mk>
-
 do-build:
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} clean
@@ -51,11 +49,11 @@ PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
 .if !defined(PERL_VER) || ${PERL_VER} == 5.005
-	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e 'print "$$Config{archname}"'`; \
-	${SED} -e "s|%%LOCAL_PERL_ARCH%%|$$LOCAL_PERL_ARCH|g" < ${PLIST_IN} > ${PLIST}
+	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e '$$x = qq{$$Config{archname}}; $$x =~ s{/}{\\\\/}g; print $$x'`; \
+	${SED} -e "s/%%LOCAL_PERL_ARCH%%/$$LOCAL_PERL_ARCH/g" < ${PLIST_IN} > ${PLIST}
 .else
-	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e 'print "$$Config{version}/$$Config{archname}"'`; \
-	${SED} -e "s|%%LOCAL_PERL_ARCH%%|$$LOCAL_PERL_ARCH|g" < ${PLIST_IN} > ${PLIST}
+	LOCAL_PERL_ARCH=`${PERL5} -MConfig -e '$$x = qq{$$Config{version}/$$Config{archname}}; $$x =~ s{/}{\\\\/}g; print $$x'`; \
+	${SED} -e "s/%%LOCAL_PERL_ARCH%%/$$LOCAL_PERL_ARCH/g" < ${PLIST_IN} > ${PLIST}
 .endif
 
 do-install:
@@ -70,4 +68,4 @@ do-install:
 	${LN} -s  ${MYDESTDIR}/$f ${PREFIX}/bin/$f
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
