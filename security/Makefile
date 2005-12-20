@@ -297,6 +297,7 @@
     SUBDIR += p5-Crypt-Ctr
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-DES_EDE3
+    SUBDIR += p5-Crypt-DES_PP
     SUBDIR += p5-Crypt-DH
     SUBDIR += p5-Crypt-DSA
     SUBDIR += p5-Crypt-ECB
