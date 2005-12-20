@@ -674,6 +674,7 @@
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-libsmbclient
+    SUBDIR += samba-nmblookup
     SUBDIR += samba3
     SUBDIR += sambasentinel
     SUBDIR += samplicator
