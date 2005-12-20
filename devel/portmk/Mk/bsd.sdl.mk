@@ -29,7 +29,7 @@
 #
 
 #
-# $FreeBSD: /tmp/pcvs/ports/devel/portmk/Mk/Attic/bsd.sdl.mk,v 1.1 2005-12-19 06:08:26 linimon Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/portmk/Mk/Attic/bsd.sdl.mk,v 1.2 2005-12-20 02:30:51 linimon Exp $
 #
 
 SDL_Include_MAINTAINER=		edwin@FreeBSD.org
@@ -145,7 +145,7 @@ USE_SDL=	sdl
 _USE_SDL=
 .for component in ${USE_SDL}
 . if ${_USE_SDL_ALL:M${component}}==""
-BROKEN=	"Unknown SDL component ${component}"
+BROKEN=	Unknown SDL component ${component}
 . endif
 _USE_SDL+=	${_REQUIRES_${component}} ${component}
 .endfor

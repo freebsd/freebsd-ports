@@ -18,7 +18,7 @@
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
 #
-# $FreeBSD: /tmp/pcvs/ports/ports-mgmt/portmk/Mk/Attic/bsd.gcc.mk,v 1.1 2005-12-19 06:08:26 linimon Exp $
+# $FreeBSD: /tmp/pcvs/ports/ports-mgmt/portmk/Mk/Attic/bsd.gcc.mk,v 1.2 2005-12-20 02:30:51 linimon Exp $
 #
 
 GCC_Include_MAINTAINER=		portmgr@FreeBSD.org
@@ -77,7 +77,7 @@ _GCCVERSION_OKAY=	true;
 .endfor
 
 .if !defined(_GCCVERSION_OKAY)
-BROKEN=	"Unknown version of GCC specified (USE_GCC=${USE_GCC})"
+BROKEN=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 #
@@ -93,7 +93,7 @@ _GCC_FOUND${v}:=	base
 . endif
 .endfor
 .if !defined(_GCCVERSION)
-BROKEN=		"Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})"
+BROKEN=		Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})
 .endif
 
 #

@@ -76,7 +76,7 @@ USE_AUTOTOOLS_COMPAT+=	libtool:${WANT_LIBTOOL_VER}:env
 #
 .if ${USE_AUTOTOOLS_COMPAT}!=""
 . if defined(USE_AUTOTOOLS)
-BROKEN+=	"Mix and match of old and new autotools system prohibited"
+BROKEN+=	Mix and match of old and new autotools system prohibited
 . else
 USE_AUTOTOOLS=	${USE_AUTOTOOLS_COMPAT}
 _AUTOTOOLS_PN=	${.CURDIR:C/${PORTSDIR}\///}
@@ -166,7 +166,7 @@ AUTOMAKE_VERSION=	${AUTOTOOL_automake_env}
 # Make sure we specified a legal version of automake
 #
 . if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}/Makefile)
-BROKEN+=	"Unknown AUTOMAKE version: ${AUTOMAKE_VERSION}"
+BROKEN+=	Unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
 . endif
 
 # Set up the automake environment
@@ -212,7 +212,7 @@ AUTOCONF_VERSION=	${AUTOTOOL_autoconf_env}
 # Make sure we specified a legal version of autoconf
 #
 . if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_VERSION}/Makefile)
-BROKEN+=	"Unknown AUTOCONF version: ${AUTOCONF_VERSION}"
+BROKEN+=	Unknown AUTOCONF version: ${AUTOCONF_VERSION}
 . endif
 
 # Set up the autoconf/autoheader environment
@@ -260,7 +260,7 @@ LIBTOOL_VERSION=		${AUTOTOOL_libtool_env}
 # Make sure we specified a legal version of libtool
 #
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
-BROKEN+=	"Unknown LIBTOOL version: ${LIBTOOL_VERSION}"
+BROKEN+=	Unknown LIBTOOL version: ${LIBTOOL_VERSION}
 . endif
 
 # Set up the libtool environment
@@ -338,7 +338,7 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # the order of autotools running.
 
 .if !target(run-autotools)
-run-autotools:: run-autotools-aclocal run-autotools-automake \
+run-autotools:: run-autotools-aclocal patch-autotools run-autotools-automake \
 		run-autotools-autoconf run-autotools-autoheader
 .endif
 

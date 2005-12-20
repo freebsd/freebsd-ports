@@ -602,7 +602,7 @@ BROKEN+=the GNOME ${GNOME_DESKTOP_VERSION} desktop
 .         endif
 .      endif
 .  if ${_USE_GNOME_ALL:M${component}}==""
-BROKEN=	"Unknown component ${component}"
+BROKEN=	Unknown component ${component}
 .  endif
 _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 . endfor
@@ -628,7 +628,7 @@ ltverhack_PRE_PATCH=	${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
 						done;
 .else
 .if ${USE_GNOME:Mltverhack}!=""
-BROKEN= "${PORTNAME} uses the ltverhack GNOME component but does not use libtool"
+BROKEN= ${PORTNAME} uses the ltverhack GNOME component but does not use libtool
 .endif
 .endif
 

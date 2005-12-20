@@ -2691,7 +2691,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	ipv6 irc japanese java kde korean lang linux lisp \
 	mail math mbone misc multimedia net net-im net-mgmt news \
 	palm parallel pear perl5 picobsd plan9 polish portuguese print \
-	python ruby rubygem russian \
+	python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
 	tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
 	tk80 tk82 tk83 tk84 tkstep80 \
