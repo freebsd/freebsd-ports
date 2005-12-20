@@ -14,6 +14,9 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Print inode contents
 
+DEPRECATED=	Buggy, use stat(1) from base
+EXPIRATION_DATE=2006-03-20
+
 MAN1=		stat.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/stat
