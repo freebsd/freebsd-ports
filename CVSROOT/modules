@@ -11293,6 +11293,7 @@ sam		ports/editors/sam
 sam2p		ports/graphics/sam2p
 samba		ports/net/samba
 samba-libsmbclient	ports/net/samba-libsmbclient
+samba-nmblookup	ports/net/samba-nmblookup
 samba-vscan	ports/security/samba-vscan
 samba3		ports/net/samba3
 sambasentinel	ports/net/sambasentinel
