@@ -6,10 +6,3 @@ bin/vmware-toolbox-tcl
 %%INSTALLXSERVER4:%%etc/XF86Config-4_VMware
 %%INSTALLXSERVER4:%%lib/modules/drivers/vmware_drv.o_VMware
 %%INSTALLXVMMOUSE:%%lib/modules/input/vmmouse_drv.o_VMware
-share/vmware-tools/poweroff-vm-default
-share/vmware-tools/poweron-vm-default
-share/vmware-tools/resume-vm-default
-share/vmware-tools/suspend-vm-default
-@dirrm share/vmware-tools
-@cwd /
-etc/vmware-tools
