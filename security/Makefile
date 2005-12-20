@@ -301,6 +301,7 @@
     SUBDIR += p5-Crypt-DH
     SUBDIR += p5-Crypt-DSA
     SUBDIR += p5-Crypt-ECB
+    SUBDIR += p5-Crypt-GOST
     SUBDIR += p5-Crypt-GPG
     SUBDIR += p5-Crypt-GeneratePassword
     SUBDIR += p5-Crypt-HCE_MD5
