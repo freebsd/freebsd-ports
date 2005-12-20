@@ -346,6 +346,7 @@
     SUBDIR += py-sybase
     SUBDIR += py-tada
     SUBDIR += pydbdesigner
+    SUBDIR += pydbx
     SUBDIR += qdbm
     SUBDIR += qt-ibase-plugin
     SUBDIR += qt-mysql-plugin
