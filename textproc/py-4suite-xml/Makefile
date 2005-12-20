@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	4Suite-XML
-PORTVERSION=	1.0.b2
+PORTVERSION=	1.0.b3
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foursuite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	4Suite-XML-1.0b2
+DISTNAME=	4Suite-XML-1.0b3
 
 MAINTAINER=	mike@skew.org
 COMMENT=	A collection of Python tools for XML processing
@@ -23,14 +23,10 @@ REINPLACE_ARGS=	-i "" -E
 USE_PYTHON=	2.2.1+
 USE_PYDISTUTILS=	yes
 
-WRKSRC=		${WRKDIR}/4Suite-1.0b2
+WRKSRC=		${WRKDIR}/4Suite-1.0b3
 CONFLICTS=	py*-4suite-[01]* py*-xml-0.7*
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386"
-.endif
 
 BINDIR=		bin
 SYSCONFDIR=	etc/4Suite
@@ -72,6 +68,5 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
