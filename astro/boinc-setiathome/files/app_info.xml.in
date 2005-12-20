@@ -4,6 +4,7 @@
     </app>
     <file_info>
         <name>%%SETI_BINARY%%</name>
+	<executable/>
     </file_info>
     <app_version>
         <app_name>setiathome</app_name>
