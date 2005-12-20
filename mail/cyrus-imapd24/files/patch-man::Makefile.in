@@ -10,15 +10,6 @@ diff -u man/Makefile.in.orig man/Makefile.in
  
  mandir = @mandir@
  
-@@ -68,7 +69,7 @@
- 	$(srcdir)/notifyd.8 $(srcdir)/chk_cyrus.8 $(srcdir)/mbexamine.8 \
- 	$(srcdir)/nntpd.8 $(srcdir)/fetchnews.8 $(srcdir)/smmapd.8 \
- 	$(srcdir)/sync_client.8 $(srcdir)/sync_server.8 $(srcdir)/sync_reset.8 \
--	$(srcdir)/unexpunge.8
-+	$(srcdir)/unexpunge.8 $(srcdir)/make_md5.8
- 
- all: $(MAN1) $(MAN3) $(MAN5) $(MAN8)
- 
 @@ -95,7 +96,7 @@
  	done
  	for file in $(MAN8); \

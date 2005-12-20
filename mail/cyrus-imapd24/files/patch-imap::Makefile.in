@@ -31,30 +31,3 @@ diff -u imap/Makefile.in.orig imap/Makefile.in
  
  pop3d: pop3d.o proxy.o backend.o tls.o mutex_fake.o libimap.a \
  	$(DEPLIBS) $(SERVICE)
-@@ -247,10 +247,11 @@
- 	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
- 
- sync_server: sync_server.o sync_support.o sync_commit.o \
--	imapparse.o tls.o libimap.a mutex_fake.o $(DEPLIBS) $(SERVICE)
-+	imapparse.o tls.o libimap.a mutex_fake.o mboxkey.o \
-+	$(DEPLIBS) $(SERVICE)
- 	$(CC) $(LDFLAGS) -o \
- 	sync_server sync_server.o sync_support.o sync_commit.o \
--	imapparse.o tls.o $(SERVICE) libimap.a mutex_fake.o \
-+	imapparse.o tls.o $(SERVICE) libimap.a mutex_fake.o mboxkey.o \
- 	$(DEPLIBS) $(LIBS) $(LIB_WRAP)
- 
- ### Command Line Utilities
-@@ -336,10 +337,10 @@
- 	backend.o tls.o imapparse.o libimap.a mutex_fake.o $(DEPLIBS) $(LIBS)
- 
- sync_reset: sync_reset.o sync_support.o sync_commit.o \
--	libimap.a mutex_fake.o $(DEPLIBS)
-+	libimap.a mutex_fake.o mboxkey.o $(DEPLIBS)
- 	$(CC) $(LDFLAGS) -o \
- 	sync_reset sync_reset.o sync_support.o sync_commit.o \
--	libimap.a mutex_fake.o $(DEPLIBS) $(LIBS)
-+	libimap.a mutex_fake.o mboxkey.o $(DEPLIBS) $(LIBS)
- 
- ### Other Misc Targets
- 
