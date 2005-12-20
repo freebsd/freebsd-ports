@@ -11448,6 +11448,7 @@ sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
 sendok		ports/mail/sendok
+sendsnpp	ports/net/sendsnpp
 senken		ports/games/senken
 senna		ports/textproc/senna
 senso		ports/games/senso
