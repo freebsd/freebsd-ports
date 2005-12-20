@@ -5,9 +5,9 @@ bin/lcksum
 bin/lcreate
 bin/lfdiff
 bin/lmerge
+bin/lsort
 bin/ra.sh
 bin/twhich
-etc/rc.d/radmind.sh
 sbin/radmind
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README

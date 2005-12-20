@@ -26,12 +26,12 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/radmind
 command_args=""
-required_files=/var/radmind/config
+required_files=%%RADMIND_BASE_DIR%%/config
 
 # set defaults
 
 radmind_enable=${radmind_enable:-"NO"}
-radmind_flags=${radmind_flags:-"-D /var/radmind -m 5 -u 077 -Llocal7 -w 0"}
+radmind_flags=${radmind_flags:-"-D %%RADMIND_BASE_DIR%% -m 5 -u 077 -Llocal7 -w 0"}
 
 load_rc_config ${name}
 run_rc_command "$1"
