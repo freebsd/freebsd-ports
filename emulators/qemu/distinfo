@@ -1,2 +1,3 @@
-MD5 (qemu-snapshot-2005-11-30_23.tar.bz2) = 40b6eca5be9c491aafa6c1edea750835
-SIZE (qemu-snapshot-2005-11-30_23.tar.bz2) = 1241259
+MD5 (qemu-0.8.0.tar.gz) = eb175b26583280706fe7e4d8910d320d
+SHA256 (qemu-0.8.0.tar.gz) = de388539ce86971a2cbe8474fca8b6160898c95772e3e6e08a7794d48db32a61
+SIZE (qemu-0.8.0.tar.gz) = 1497965
