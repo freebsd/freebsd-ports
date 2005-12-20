@@ -7,6 +7,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/ \
 		http://people.ee.ethz.ch/~dws/software/mailgraph/pub/old/
@@ -24,10 +25,8 @@ MAILGRAPH_USER?=	${WWWOWN}
 MAILGRAPH_GROUP?=	${WWWGRP}
 
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} DATADIR=${DATADIR} \
-		MAILGRAPH_USER=${MAILGRAPH_USER} MAILGRAPH_GROUP=${MAILGRAPH_GROUP}
-STARTUP_FILE=	${PREFIX}/etc/rc.d/mailgraph.sh
+USE_RC_SUBR=	${PORTNAME}.sh
+SUB_LIST+=	MAILGRAPH_USER=${MAILGRAPH_USER} MAILGRAPH_GROUP=${MAILGRAPH_GROUP}
 
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
@@ -51,9 +50,6 @@ do-install:
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/www/cgi-bin
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/mailgraph.sh.tmpl > ${STARTUP_FILE}
-	@${CHMOD} 755 ${STARTUP_FILE}
 
 post-install:
 	@${ECHO}
