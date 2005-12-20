@@ -22,7 +22,7 @@ Mail_Pre_Include=			bsd.mail.mk
 #
 # QMAIL_SLAVEPORT	- Define it if you install a slaveport of qmail, to
 #			  prevent stale dependencies. Valid slaveports are:
-#			  ldap, mysql, smtp_auth+tls, spamcontrol and tls.
+#			  ldap, mysql, spamcontrol and tls.
 #
 # USE_QMAIL_BUILD	- Add qmail or qmail slaveport to BUILD_DEPENDS.
 #
@@ -34,7 +34,7 @@ Mail_Pre_Include=			bsd.mail.mk
 
 QMAIL_PREFIX?=	/var/qmail
 
-_QMAIL_VALID_SLAVEPORTS=	ldap mysql smtp_auth+tls spamcontrol tls
+_QMAIL_VALID_SLAVEPORTS=	ldap mysql spamcontrol tls
 
 .if defined(USE_QMAIL) || defined(USE_QMAIL_RUN) || defined (USE_QMAIL_BUILD)
 

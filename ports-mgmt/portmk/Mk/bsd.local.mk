@@ -28,4 +28,6 @@ Local_Post_Include=	bsd.local.mk
 # time should live.
 #
 
+.include "${DEVELPORTSDIR}/Mk/bsd.portsmon.mk"
+ 
 .endif # defined(_POSTMKINCLUDED) && !defined(Local_Post_Include)

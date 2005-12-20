@@ -7,7 +7,7 @@
 # Please send all suggested changes to the maintainer instead of committing
 # them to CVS yourself.
 #
-# $FreeBSD: /tmp/pcvs/ports/devel/portmk/Mk/Attic/bsd.php.mk,v 1.2 2005-12-20 01:56:26 linimon Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/portmk/Mk/Attic/bsd.php.mk,v 1.3 2005-12-20 02:30:51 linimon Exp $
 #
 # Adding 'USE_PHP=yes' to a port includes this Makefile after bsd.ports.pre.mk.
 # If the port requires a predefined set of PHP extensions, they can be
@@ -74,7 +74,7 @@ PHP_EXT_INC?=	""
 .if defined(BROKEN_WITH_PHP)
 .	for VER in ${BROKEN_WITH_PHP}
 .		if ${PHP_VER} == "${VER}"
-BROKEN=		"Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})"
+BROKEN=		Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})
 .		endif
 .	endfor
 .endif

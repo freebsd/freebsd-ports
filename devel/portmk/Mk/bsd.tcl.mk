@@ -79,7 +79,7 @@ TCLSH=			${LOCALBASE}/bin/tclsh${TCL_VER}
 .endfor
 
 .if ${_FOUND} == "no"
-IGNORE=		"Unknown TCL version specified: ${USE_TCL}"
+IGNORE=		Unknown TCL version specified: ${USE_TCL}
 .endif
 .endif # defined(USE_TCL)
 
@@ -94,7 +94,7 @@ USE_TK=		84
 TK_VER:=	${USE_TK:S/8/8./}
 
 .if defined(USE_TCL) && ${TCL_VER} != ${TK_VER}
-IGNORE=		"TCL and TK versions must be equal (${TCL_VER} vs ${TK_VER})"
+IGNORE=		TCL and TK versions must be equal (${TCL_VER} vs ${TK_VER})
 .endif
 
 _FOUND=		no
@@ -112,7 +112,7 @@ WISH=			${LOCALBASE}/bin/wish${TK_VER}
 .endfor
 
 .if ${_FOUND} == "no"
-IGNORE=		"Unknown TK version specified: ${USE_TK}"
+IGNORE=		Unknown TK version specified: ${USE_TK}
 .endif
 .endif # defined(USE_TK)
 
