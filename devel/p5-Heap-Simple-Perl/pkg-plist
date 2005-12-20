@@ -27,6 +27,7 @@
 %%SITE_PERL%%/auto/Heap/Simple/Perl/insert.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/key.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/keys.al
+%%SITE_PERL%%/auto/Heap/Simple/Perl/merge_arrays.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/min_key.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/top.al
 %%SITE_PERL%%/auto/Heap/Simple/Perl/top_key.al
