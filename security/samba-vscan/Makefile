@@ -28,6 +28,12 @@ ETCDIR=		${PREFIX}/etc/samba-vscan
 PKGMESSAGE=	${WRKDIR}/pkg-message
 VSCAN_SAMBA_PORT?=samba3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=${FILESDIR}/extra_patch-*
+.endif
+
 .if ${VSCAN_SAMBA_PORT} == "samba3"
 PLIST_SUB=	VFSDIR=lib/samba/vfs
 .else
@@ -58,4 +64,4 @@ post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g;" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
