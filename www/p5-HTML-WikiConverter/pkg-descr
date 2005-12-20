@@ -1,0 +1,13 @@
+HTML::WikiConverter is an HTML to wiki converter capable of
+converting HTML source into a variety of wiki dialects. Supported
+dialects include:
+
+  DokuWiki    Kwiki
+  MediaWiki   MoinMoin
+  Oddmuse     PhpWiki
+  PmWiki      SnipSnap
+  TikiWiki    UseMod
+  WakkaWiki
+
+WWW: http://search.cpan.org/dist/HTML-WikiConverter/
+Author:	David J. Iberri <diberri@yahoo.com>
