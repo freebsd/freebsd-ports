@@ -1,0 +1,4 @@
+This is a tool to query NetBIOS names and map them to IP addresses
+in a network using NetBIOS over TCP/IP queries from the Samba port.
+
+WWW: http://www.samba.org/
