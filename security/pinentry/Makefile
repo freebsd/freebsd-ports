@@ -16,7 +16,7 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
-		ksba.14:${PORTSDIR}/security/libksba
+		ksba.15:${PORTSDIR}/security/libksba
 
 CONFLICTS?=	pinentry-[a-z]*-[0.9]*
 
