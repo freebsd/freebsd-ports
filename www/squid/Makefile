@@ -66,10 +66,14 @@
 #     Override the maximum number of filedescriptors. Useful if you
 #     build as another user who is not privileged to use the amount
 #     of filedescriptors the resulting binary is expected to support.
+#    --enable-ntlm-fail-open
+#     Enable NTLM fail open, where a helper that fails one of the
+#     Authentication steps can allow squid to still authenticate the user
 #
 
 PORTNAME=	squid
 PORTVERSION=	2.5.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -82,6 +86,7 @@ DISTNAME=	squid-2.5.STABLE12
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
+PATCHFILES=	squid-2.5.STABLE12-SMB_BadFetch.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -120,6 +125,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
+		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
@@ -292,6 +298,12 @@ CONFIGURE_ARGS+=	--enable-ipf-transparent
 EXTRA_PATCHES+=		${PATCHDIR}/follow_xff-2.5.patch \
 			${PATCHDIR}/follow_xff-configure.patch
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
+.endif
+.if defined(WITH_SQUID_ICAP)
+EXTRA_PATCHES+=		${PATCHDIR}/icap-2.5-core.patch \
+			${PATCHDIR}/icap-2.5-bootstrap.patch
+CONFIGURE_ARGS+=	--enable-icap-support
+error_files+=		ERR_ICAP_FAILURE
 .endif
 .if defined(WITH_SQUID_LARGEFILE)
 CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
