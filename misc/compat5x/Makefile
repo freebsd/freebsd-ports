@@ -11,7 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -67,6 +67,17 @@ PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64="@comment "
 .endif
 
+post-extract:
+	@( ${ECHO} ""; \
+	   ${ECHO} "******************************************************"; \
+	   ${ECHO} "To enable the ldconfig of these libraries at boot time"; \
+	   ${ECHO} "you need to add compat5x_enable=\"yes\" to either"; \
+	   ${ECHO} "/etc/rc.conf.local or /etc/rc.conf"; \
+	   ${ECHO} "******************************************************"; \
+	   ${ECHO} ""; ) > ${WRKDIR}/pkg-message
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 NO_BUILD=	yes
 
 do-install:
@@ -77,5 +88,8 @@ do-install:
 	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
 	${LDCONFIG} -32 -m ${TARGET32_DIR}
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
