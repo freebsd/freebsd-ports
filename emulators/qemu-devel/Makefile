@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.7.2s.20051130
+PORTVERSION=	0.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://qemu.dad-answers.com/download/qemu/:snapshot
-DISTNAME=	${PORTNAME}-snapshot-2005-11-30_23
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -27,7 +26,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/kqemu/kqemu.h:${PORTSDIR}/emulators/kqemu-k
 .endif
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_SDL=	sdl
