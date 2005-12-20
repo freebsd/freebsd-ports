@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/mailgraph/files/Attic/mailgraph.sh.in,v 1.1 2005-12-20 12:20:47 vanilla Exp $
 #
 # PROVIDE: mailgraph
 # REQUIRE: DAEMON
