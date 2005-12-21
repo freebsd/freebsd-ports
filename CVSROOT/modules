@@ -6083,6 +6083,7 @@ mcrypt		ports/security/mcrypt
 mcstas		ports/science/mcstas
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
+mcweject	ports/sysutils/mcweject
 md4coll		ports/security/md4coll
 md5coll		ports/security/md5coll
 md5deep		ports/security/md5deep
