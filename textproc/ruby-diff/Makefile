@@ -8,7 +8,8 @@
 PORTNAME=		diff
 PORTVERSION=		0.4
 CATEGORIES=		textproc ruby
-MASTER_SITES=		http://www.rubynet.org/mirrors/diff/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	matusita/ruby-diff
 PKGNAMEPREFIX=		${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=		ruby
 
