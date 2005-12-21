@@ -8,13 +8,12 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.6
-PORTREVISION=	20051206
+PORTREVISION=	20051220
 CATEGORIES=	lang
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTFILES=	\
-		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
+DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -23,7 +22,6 @@ DISTFILES=	\
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.4
 
-CONFLICTS=	gcc-4.0.* gcc-4.1.*
 LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -57,7 +55,8 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
@@ -71,13 +70,19 @@ CXXFLAGS+=	-fPIC
 .endif
 .endif
 ALL_TARGET=	bootstrap-lean
-PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
+		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		g77-${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1
-INFO=		cpp cppinternals g77 gcc gccinstall gccint
+INFO=		gcc${SUFFIX}/cpp \
+		gcc${SUFFIX}/cppinternals \
+		gcc${SUFFIX}/g77 \
+		gcc${SUFFIX}/gcc \
+		gcc${SUFFIX}/gccinstall \
+		gcc${SUFFIX}/gccint
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
