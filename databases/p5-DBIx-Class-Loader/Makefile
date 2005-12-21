@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	DBIx-Class-Loader
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
+MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -25,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::Loader.3 \
+	DBIx::Class::Loader::DB2.3 \
 	DBIx::Class::Loader::Generic.3 \
 	DBIx::Class::Loader::Pg.3 \
 	DBIx::Class::Loader::SQLite.3 \

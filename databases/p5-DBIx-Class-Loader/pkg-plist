@@ -1,5 +1,6 @@
 %%SITE_PERL%%/DBIx/Class/Loader/Writing.pm
 %%SITE_PERL%%/DBIx/Class/Loader/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Loader/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Loader/Generic.pm
 %%SITE_PERL%%/DBIx/Class/Loader/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Loader/SQLite.pm
