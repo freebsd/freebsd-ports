@@ -11460,6 +11460,7 @@ sendip		ports/net-mgmt/sendip
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
 sendok		ports/mail/sendok
+sendsms		ports/net/sendsms
 sendsnpp	ports/net/sendsnpp
 senken		ports/games/senken
 senna		ports/textproc/senna
