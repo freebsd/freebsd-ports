@@ -8,14 +8,18 @@
 PORTNAME=	crafty
 PORTVERSION=	19.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/:data \
-		ftp://ftp.cis.uab.edu/pub/hyatt/doc/:doc \
-		ftp://ftp.cis.uab.edu/pub/hyatt/v${PORTVERSION:R}/:src
-DISTFILES=	crafty-${PORTVERSION}.tar.gz:src \
-		start.pgn.gz:data
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/book/:data \
+		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
+		ftp://ftp.cis.uab.edu/pub/hyatt/src/:src
+DISTFILES=	crafty-${PORTVERSION}.zip:src \
+		start.pgn:data
+DIST_SUBDIR=	crafty
+EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 COMMENT=	A chess programm for playing and analyzing games
+
+USE_ZIP=        yes
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
@@ -37,13 +41,10 @@ OPT+=		-DFAST
 .endif
 MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
 
-DIST_SUBDIR=	crafty
-EXTRACT_ONLY=	crafty-${PORTVERSION}.tar.gz
-
 MAN6=		crafty.6
 
 post-extract:
-	${GUNZIP_CMD} <${DISTDIR}/${DIST_SUBDIR}/start.pgn.gz >${WRKSRC}/start.pgn
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/start.pgn ${WRKSRC}/start.pgn
 	${MV} ${WRKSRC}/Sparc.s ${WRKSRC}/Sparc.S
 .ifdef CRAFTY_SPARC_ASM
 	########################################################
