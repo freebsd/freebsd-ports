@@ -8,7 +8,9 @@ share/examples/cmail/cmail.rc
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/cmail
 %%SITE_PERL%%/CMail/In/Base.pm
 %%SITE_PERL%%/CMail/In/file.pm
+%%SITE_PERL%%/CMail/In/imaps.pm
 %%SITE_PERL%%/CMail/In/pop3.pm
+%%SITE_PERL%%/CMail/In/pop3s.pm
 %%SITE_PERL%%/CMail/In/maildir.pm
 %%SITE_PERL%%/CMail/In/mbox.pm
 %%SITE_PERL%%/CMail/In/imap.pm
