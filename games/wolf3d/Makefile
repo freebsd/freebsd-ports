@@ -10,6 +10,7 @@ PORTVERSION=	20011028
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
+		http://cvsup.theplanet.com/distfiles/:wolf \
 		http://www.liquidx.org/distfiles/:wolfdata
 DISTFILES=	wolf3d-20011028.tar.gz:wolf wolfdata.tar.gz:wolfdata
 
