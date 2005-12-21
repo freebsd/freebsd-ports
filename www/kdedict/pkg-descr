@@ -1,0 +1,24 @@
+KDE Dictionary is used by a few KDE i18n teams.
+Kdedict is written by Matthias Kiefer from German team
+and i18n.kde.org's instalaltion is currently administered by Claudiu Costin
+from Romaninan Team.
+Kdedict is a web based database to administer the standard translations of a
+translation team. You can search the database for different criterias and the
+found entries are shown in a table.
+Kdedict does not use a full blown database but stores the information in a
+plain text file. This way, everybody can easily run kdedict offline (using a
+local web server) without having to install and admin a big database. To enable
+users to update their locale database easily, kdedict offers a download option.
+But if you have basic knowledge of Perl, it should be no problem to adapt
+dedict for using a real database.
+The database consists of the fields: original text, description, translation,
+description, category of the word (i.e. GUI, Network), date of last update and
+flag, if the translation is accepted by the team. This flag allows you to
+include translations, that your team is not in agreement about, into the
+database.
+Kdedict is able to manage user logins, so you can easily maintain your database
+over the web. When logged in, it is easy to edit, insert or delete entries.
+Kdedict can also manage multiple languages, by creating one table for each
+user.
+
+WWW: http://i18n.kde.org/tools/kdedict/
