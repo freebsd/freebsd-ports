@@ -349,6 +349,7 @@
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-Twofish2
     SUBDIR += p5-Crypt-UnixCrypt
+    SUBDIR += p5-Crypt-X509
     SUBDIR += p5-Crypt-xDBM_File
     SUBDIR += p5-Data-Password
     SUBDIR += p5-Digest
