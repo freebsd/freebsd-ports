@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-RBL
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -26,13 +26,10 @@ MAN3=		Mail::RBL.3
 
 FILES=		Makefile.PL RBL.pm
 
-pre-patch:
-.for i in ${FILES}
-	@${PERL} -pi -e 's/\r//' ${WRKSRC}/${i}
-.endfor
-	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
-		-e '$$_="" if /require 5/;' \
-		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/RBL.pm
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.x or higher. Please install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
