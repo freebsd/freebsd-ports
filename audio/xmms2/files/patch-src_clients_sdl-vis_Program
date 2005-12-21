@@ -1,0 +1,10 @@
+--- src/clients/sdl-vis/Program.orig	Sun Dec 18 08:35:27 2005
++++ src/clients/sdl-vis/Program	Sun Dec 18 14:36:51 2005
+@@ -7,5 +7,5 @@
+ 	env.Prepend(LIBPATH="src/clients/lib/xmmsclient-glib")
+ 	env.Append(LIBS=["xmmsclient-glib"])
+ 	env.pkgconfig("glib-2.0")
+-	env.configcmd("sdl-config --libs --cflags")
+-	env.checklib("SDL_ttf", "TTF_Init")
++	env.configcmd("sdl11-config --libs --cflags")
++	env.Append(LIBS=["SDL_ttf"])
