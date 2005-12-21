@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fiked
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://dragon.roe.ch/bitsnpieces/fiked/ \
 		http://home.tiscalinet.ch/roe/fiked/
@@ -15,35 +15,30 @@ MAINTAINER=	daniel@roe.ch
 COMMENT=	A fake IKE PSK+XAUTH daemon based on VPNC
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
+.if !defined(WITHOUT_LIBNET)
 BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+.endif
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.2+
 USE_REINPLACE=	yes
 
 MAKEFILE=	GNUmakefile
 
-MAKE_ENV+=	CC="${CC}"
-
 PLIST_FILES=	bin/fiked
 MAN1=		fiked.1
-PORTDOCS=	README
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
+PORTDOCS=	README NEWS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(CC\)=|\1?=|; s|=-g|=|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|=-g|=|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fiked ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/fiked.1 ${PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
