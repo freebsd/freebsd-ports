@@ -1,5 +1,5 @@
 # New ports collection makefile for:	rtf2html
-# Date created:				 6 Jul 2005
+# Date created:				6 Jul 2005
 # Whom:					Emanuel Haupt <ehaupt@critical.ch>
 #
 # $FreeBSD$
@@ -8,7 +8,9 @@
 PORTNAME=	rtf2html
 DISTVERSION=	1.1b
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.45.free.net/~vitus/ice/misc/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
