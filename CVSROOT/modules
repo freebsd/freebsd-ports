@@ -9767,6 +9767,7 @@ playmidi	ports/audio/playmidi
 plb		ports/net/plb
 plconfig	ports/sysutils/plconfig
 plib		ports/x11-toolkits/plib
+plman		ports/math/plman
 pload		ports/net/pload
 plod		ports/sysutils/plod
 plog		ports/www/plog
