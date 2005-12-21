@@ -687,6 +687,7 @@
     SUBDIR += seda
     SUBDIR += sendemail
     SUBDIR += sendfile
+    SUBDIR += sendsms
     SUBDIR += sendsnpp
     SUBDIR += ser
     SUBDIR += serveez
