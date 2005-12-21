@@ -7653,6 +7653,7 @@ p5-Crypt-Serpent	ports/security/p5-Crypt-Serpent
 p5-Crypt-Shark	ports/security/p5-Crypt-Shark
 p5-Crypt-SmbHash	ports/security/p5-Crypt-SmbHash
 p5-Crypt-Solitaire	ports/security/p5-Crypt-Solitaire
+p5-Crypt-TEA	ports/security/p5-Crypt-TEA
 p5-Crypt-TripleDES	ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
 p5-Crypt-Twofish2	ports/security/p5-Crypt-Twofish2
