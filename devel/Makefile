@@ -961,6 +961,7 @@
     SUBDIR += p5-IO-KQueue
     SUBDIR += p5-IO-LockedFile
     SUBDIR += p5-IO-Multiplex
+    SUBDIR += p5-IO-NestedCapture
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-String
