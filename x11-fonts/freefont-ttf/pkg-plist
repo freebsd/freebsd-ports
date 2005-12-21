@@ -1,0 +1,19 @@
+lib/X11/fonts/freefont-ttf/FreeMono.ttf
+lib/X11/fonts/freefont-ttf/FreeMonoBold.ttf
+lib/X11/fonts/freefont-ttf/FreeMonoBoldOblique.ttf
+lib/X11/fonts/freefont-ttf/FreeMonoOblique.ttf
+lib/X11/fonts/freefont-ttf/FreeSans.ttf
+lib/X11/fonts/freefont-ttf/FreeSansBold.ttf
+lib/X11/fonts/freefont-ttf/FreeSansBoldOblique.ttf
+lib/X11/fonts/freefont-ttf/FreeSansOblique.ttf
+lib/X11/fonts/freefont-ttf/FreeSerif.ttf
+lib/X11/fonts/freefont-ttf/FreeSerifBold.ttf
+lib/X11/fonts/freefont-ttf/FreeSerifBoldItalic.ttf
+lib/X11/fonts/freefont-ttf/FreeSerifItalic.ttf
+lib/X11/fonts/freefont-ttf/fonts.dir
+lib/X11/fonts/freefont-ttf/fonts.scale
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
+@dirrm lib/X11/fonts/freefont-ttf

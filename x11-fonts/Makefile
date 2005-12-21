@@ -25,6 +25,7 @@
     SUBDIR += dejavu
     SUBDIR += etlfonts
     SUBDIR += fontconfig
+    SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += geminifonts
     SUBDIR += gentium
