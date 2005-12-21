@@ -1,4 +1,7 @@
 bin/gpsk31
-share/gpsk31/gpsk31.conf
-share/gpsk31/psk31.cod
+%%DATADIR%%/gpsk.conf
+%%DATADIR%%/psk31.cod
+%%DATADIR%%/README
+share/applications/gpsk31.desktop
 @dirrm share/gpsk31
+@dirrm share/applications

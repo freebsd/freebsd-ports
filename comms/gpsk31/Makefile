@@ -5,15 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	gpsk31
-PORTVERSION=	0.2.4a
+PORTVERSION=	0.3
 CATEGORIES=	comms
-MASTER_SITES=	http://ftp.iasi.roedu.net/mirrors/ftp.1409.org/gpsk31/
+MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	xride@x12.dk
 COMMENT=	A gtk psk31 client
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+MAN1=	gpsk31.1
 .include <bsd.port.mk>
