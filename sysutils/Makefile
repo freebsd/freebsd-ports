@@ -299,6 +299,7 @@
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += mcron
+    SUBDIR += mcweject
     SUBDIR += mdf2iso
     SUBDIR += megarc
     SUBDIR += memdump
