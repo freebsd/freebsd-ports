@@ -10893,6 +10893,7 @@ robotfindskitten	ports/games/robotfindskitten
 rockdodger	ports/games/rockdodger
 rocksndiamonds	ports/games/rocksndiamonds
 rolo		ports/deskutils/rolo
+romdict		ports/textproc/romdict
 romeo		ports/palm/romeo
 root		ports/devel/root
 root-doc	ports/devel/root-doc
