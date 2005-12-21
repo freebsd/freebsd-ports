@@ -1,0 +1,7 @@
+Tie::ShareLite provides for a tied hash interface to the IPC::ShareLite module
+that is very similar to the one provided by IPC::Shareable. Only hashes can be
+tied at this time. The hashes can be of any complexity allowed by the Storable
+module, however, there are some caveats covered in the REFERENCES section of
+manpage.
+
+WWW: http://search.cpan.org/dist/Tie-ShareLite/
