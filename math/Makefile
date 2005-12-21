@@ -208,6 +208,7 @@
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
     SUBDIR += physcalc
+    SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
