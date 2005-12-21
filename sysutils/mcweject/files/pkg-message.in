@@ -1,0 +1,6 @@
+===================================================================
+The file eject.allow has been installed in %%PREFIX%%/share/examples/.
+
+Copy this file to %%PREFIX%%/etc/eject.allow, and edit to reflect
+the devices you wish to be ejectable.
+===================================================================
