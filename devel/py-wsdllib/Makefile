@@ -20,7 +20,9 @@ BUILD_DEPENDS=	4xslt:${PORTSDIR}/textproc/py-4suite
 RUN_DEPENDS=	${PYXML} \
 		4xslt:${PORTSDIR}/textproc/py-4suite
 
-BROKEN=		Unfetchable
+BROKEN=		"Unfetchable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2006-01-07
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
