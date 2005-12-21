@@ -4896,6 +4896,7 @@ kdeaddons3	ports/misc/kdeaddons3
 kdeadmin3	ports/sysutils/kdeadmin3
 kdeartwork3	ports/x11-themes/kdeartwork3
 kdebase3	ports/x11/kdebase3
+kdedict		ports/www/kdedict
 kdeedu3		ports/misc/kdeedu3
 kdegames3	ports/games/kdegames3
 kdegraphics3	ports/graphics/kdegraphics3
