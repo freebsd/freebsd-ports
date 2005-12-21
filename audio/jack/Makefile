@@ -72,5 +72,7 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
+post-build:
+	${RM} -f ${WRKSRC}/doc/reference/html/dir__2F*
 
 .include <bsd.port.post.mk>
