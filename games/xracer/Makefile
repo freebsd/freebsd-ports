@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
 MAINTAINER=	troll@digitalspark.net
 COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
+BROKEN=		"Unfetchable"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
