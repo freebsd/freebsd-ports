@@ -11,10 +11,9 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,} \
-		ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/:mpeg \
-		http://starship.python.net/~gward/mpeglib/:mpeg
+		http://ftp.man.poznan.pl/pub/%SUBDIR%/ \
+		http://fresh.t-systems-sfr.com/unix/src/misc/:mpeg \
+		http://ftp.sayclub.com/pub/X/gimp/libs/:mpeg
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		mpeg_lib-1.3.1.tar.gz:mpeg
