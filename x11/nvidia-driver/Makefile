@@ -25,6 +25,7 @@ NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		VM86_INT10CALL	"Use VM86 interface for video BIOS calls" off \
