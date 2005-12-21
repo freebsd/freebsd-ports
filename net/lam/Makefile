@@ -10,7 +10,7 @@ PORTVERSION=   	6.5.9
 CATEGORIES=    	net parallel
 MASTER_SITES=  	http://www.lam-mpi.org/download/files/
 
-MAINTAINER=    	bremner@unb.ca
+MAINTAINER=    	ports@FreeBSD.org
 COMMENT=	Local Area Multicomputer MPI implementation
 
 USE_BZIP2=	yes

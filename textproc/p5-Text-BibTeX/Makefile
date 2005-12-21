@@ -8,14 +8,13 @@
 PORTNAME=	Text-BibTeX
 PORTVERSION=	0.34
 PORTREVISION=	1
-
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	biblio/bibtex/utils/btOOL
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz btparse-0.33.tar.gz
 
-MAINTAINER=	bremner@unb.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text::BibTeX - Manipulate BibTeX files from perl
 
 USE_PERL5=	yes

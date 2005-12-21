@@ -12,7 +12,7 @@ MASTER_SITES=	http://ipe.compgeom.org/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	bremner@unb.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible drawing editor
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
