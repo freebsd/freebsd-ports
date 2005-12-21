@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obby
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
@@ -39,7 +39,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	"Some dependencies does not run on FreeBSD \< 5.x"
+IGNORE=	some dependencies does not run on FreeBSD < 5.x
 .endif
 
 .include <bsd.port.post.mk>

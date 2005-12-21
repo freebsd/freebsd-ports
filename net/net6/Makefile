@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net6
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/
 
