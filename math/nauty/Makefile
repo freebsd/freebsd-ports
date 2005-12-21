@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/
 DISTNAME=	${PORTNAME}20beta9
 
-MAINTAINER=	bremner@unb.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brendan McKay's graph isomorphism tester
 
 WRKSRC=		${WRKDIR}/${PORTNAME}20
