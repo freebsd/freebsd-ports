@@ -9,8 +9,3 @@ basis. Unlike SpamAssassin, it communicates via SMTP, so it works
 with any MTA. It also supports scoring based on rules with a rejection
 threshold; this allows hybrid warning/rejection configurations based
 on how many and which rules a message matches.
-
-WWW: http://www.messagewall.org
-
-- Pieter
-opr@bsdaemon.be
