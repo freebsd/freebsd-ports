@@ -178,11 +178,13 @@ share/tome/file/smeagolr.txt
 share/tome/file/speakpet.txt
 share/tome/file/timefun.txt
 share/tome/file/timenorm.txt
+share/tome/help/TANG.txt
 share/tome/help/ability.txt
 share/tome/help/advanced.hlp
 share/tome/help/attack.txt
 share/tome/help/automat.txt
 share/tome/help/birth.txt
+share/tome/help/bldg.txt
 share/tome/help/c_alchem.txt
 share/tome/help/c_archer.txt
 share/tome/help/c_assass.txt
@@ -435,7 +437,9 @@ share/tome/xtra/font/xm8x13.fnt
 share/tome/xtra/font/xm8x13b.fnt
 share/tome/xtra/font/xm8x16.fnt
 share/tome/xtra/graf/16x16.bmp
+share/tome/xtra/graf/16x16.png
 share/tome/xtra/graf/8x8.bmp
+share/tome/xtra/graf/8x8.png
 share/tome/xtra/graf/mask.bmp
 share/tome/xtra/graf/tome-128.png
 share/tome/xtra/music/delete.me
@@ -450,7 +454,6 @@ share/tome/xtra/sound/readme.txt
 @dirrm share/tome/scpt
 @dirrm share/tome/save
 @dirrm share/tome/pref
-@dirrm share/tome/plot
 @dirrm share/tome/patch
 @dirrm share/tome/note
 @dirrm share/tome/mods
