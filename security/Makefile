@@ -340,6 +340,7 @@
     SUBDIR += p5-Crypt-SKey
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Crypt-Salt
+    SUBDIR += p5-Crypt-SaltedHash
     SUBDIR += p5-Crypt-Serpent
     SUBDIR += p5-Crypt-Shark
     SUBDIR += p5-Crypt-SmbHash
