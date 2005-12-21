@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cmail
-PORTVERSION=	4.01
+PORTVERSION=	4.02
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A simple mail counter, useful for multiple mailfiles
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=		cmail.1
+MAN3=		CMail::In::Base.3 CMail::Out::Base.3
 DOCS=		LICENSE README
 
 post-install:
