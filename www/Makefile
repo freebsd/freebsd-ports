@@ -201,6 +201,7 @@
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kazehakase
+    SUBDIR += kdedict
     SUBDIR += kdewebdev
     SUBDIR += knowledgekit
     SUBDIR += larbin
