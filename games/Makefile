@@ -577,6 +577,7 @@
     SUBDIR += torcs
     SUBDIR += tornado
     SUBDIR += torrent
+    SUBDIR += toycars
     SUBDIR += trackballs
     SUBDIR += tractorgen
     SUBDIR += traindirector
