@@ -1,14 +1,11 @@
-$FreeBSD$
-
---- src/c/plugin/apache/Makefile.in.orig	Thu Nov 13 09:27:52 2003
-+++ src/c/plugin/apache/Makefile.in	Thu Nov 13 09:28:36 2003
-@@ -28,8 +28,7 @@
+--- src/c/plugin/apache/Makefile.in.orig	Fri Dec 16 13:18:12 2005
++++ src/c/plugin/apache/Makefile.in	Fri Dec 16 13:18:19 2005
+@@ -28,8 +28,6 @@
  	$(CC) -c $(INCLUDES) $(CFLAGS) $<
  
  install	:
 -	sh install.sh -conf $(apache_conf) -libexec $(apache_libexec) \
 -	   -resin_home $(resin_home)
-+	%%APXS%% -i -a -n caucho mod_caucho.so
  
  clean	:
  	- rm *.o *.lo *.la *.so

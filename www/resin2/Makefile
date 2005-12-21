@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		2.1.16
+PORTVERSION=		2.1.17
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -18,6 +18,7 @@ JAVA_VERSION=		1.2+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
+USE_OPENSSL=		yes
 
 # Customizable settings
 RUNASUSER?=		www
@@ -55,7 +56,10 @@ COPYDIRS=		doc lib libexec xsl
 .include <bsd.port.pre.mk>
 
 # Pass JAVA_HOME as determined by bsd.java.mk
-CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME}
+CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
+			--with-openssl-lib=${OPENSSLLIB} \
+			--with-openssl-include=${OPENSSLINC}
+LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
@@ -117,16 +121,25 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} The Resin Apache module mod_caucho has been activated \
 	    in the Apache configuration file, where you should also \
 	    add a line to specify the location of the Resin configuration \
-	    file, for example: | fmt -w 80 >> ${PKGMESSAGE}
+	    file, for example: | ${FMT} -w 80 >> ${PKGMESSAGE}
 	@${ECHO_CMD} >> ${PKGMESSAGE}
 	@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
 	@${ECHO_CMD} "    CauchoConfigFile ${PREFIX}/etc/${APP_NAME}.xml" >> ${PKGMESSAGE}
 	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
 .endif
 
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
+
 # Resin does not handle installation, so proceed now
-post-install:
+do-install:
 	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
+.if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
+	${APXS} -i -n caucho -a ${WRKSRC}/src/c/plugin/apache2/mod_caucho.so
+.endif
+.if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
+	${APXS} -i -n caucho -a ${WRKSRC}/src/c/plugin/apache1/mod_caucho.so
+.endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${ECHO_MSG} "********************************************************************************"
