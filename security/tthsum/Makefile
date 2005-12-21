@@ -8,7 +8,9 @@
 PORTNAME=	tthsum
 PORTVERSION=	1.1.0
 CATEGORIES=	security
-MASTER_SITES=	http://wza.digitalbrains.com/source/tthsum/
+MASTER_SITES=	http://critical.ch/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for generating and checking TTH message digests
