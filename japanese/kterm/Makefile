@@ -1,13 +1,13 @@
 # New ports collection makefile for:	kterm
-# Date created:		18 November 1994
-# Whom:			asami
+# Date created:				18 November 1994
+# Whom:					asami
 #
 # $FreeBSD$
 #
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_PORTS_JP:S/$/:wp_jp/} \
 		${MASTER_SITE_XCONTRIB} \
@@ -34,14 +34,19 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-jisx0213.patch.gz:jisx0213 \
 		${DISTNAME}-color16.patch.gz:color16 \
 		${DISTNAME}-termios-0.2.patch.gz:termios
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-MAN1=		kterm.1
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	no
 
-DOCDIR=		${PREFIX}/share/doc/kterm
+MAN1=		kterm.1
+MANLANG=	"" ja
+
+PLIST_FILES=	bin/kterm lib/X11/app-defaults/KTerm
+PORTDOCS=	README.kt README.wallpaper.ja
+
+NKFCMD=		nkf
 
 .if !defined(PACKAGE_BUILDING)
 
@@ -68,16 +73,16 @@ post-patch:
 
 .endif
 
-post-install:
-# install japanese manual
+post-build:
 	@${MV} ${WRKSRC}/kterm.jman ${WRKSRC}/kterm.jman.jis
-	@nkf -e -u ${WRKSRC}/kterm.jman.jis >${WRKSRC}/kterm.jman
-	@${INSTALL_MAN} ${WRKSRC}/kterm.jman ${PREFIX}/man/ja/man1/kterm.1
-	@${GZIP_CMD} ${PREFIX}/man/ja/man1/kterm.1
+	@${NKFCMD} -e -u ${WRKSRC}/kterm.jman.jis >${WRKSRC}/${MAN1}
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCDIR}
-	@${INSTALL_DATA} ${_DISTDIR}/README.wallpaper.ja ${DOCDIR}/README.wallpaper.ja
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/README.wallpaper.ja ${DOCSDIR}/README.wallpaper.ja
 .endif
 
 .include <bsd.port.mk>
