@@ -18,7 +18,7 @@ firmware.
 %%DONT_NEED_CONTROL%%
 %%DONT_NEED_CONTROL%%For instance, to download firmware for BSS mode:
 %%DONT_NEED_CONTROL%%
-%%DONT_NEED_CONTROL%%  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 -d %%DATADIR%% -m bss
+%%DONT_NEED_CONTROL%%  # %%DRIVERNAME%%control -i %%DRIVERNAME%%0 -d %%FWDIR%% -m bss
 %%DONT_NEED_CONTROL%%
 %%DONT_NEED_CONTROL%%The port has installed a startup script (%%DRIVERNAME%%.sh). Add these lines
 %%DONT_NEED_CONTROL%%to /etc/rc.conf to use it :
