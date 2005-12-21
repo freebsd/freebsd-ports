@@ -588,6 +588,7 @@
     SUBDIR += xmms-wma
     SUBDIR += xmms-xf86audio
     SUBDIR += xmms-xymms
+    SUBDIR += xmms2
     SUBDIR += xmmsctrl
     SUBDIR += xmp
     SUBDIR += xmpeg3
