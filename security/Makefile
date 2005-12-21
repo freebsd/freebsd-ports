@@ -341,6 +341,7 @@
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Crypt-Salt
     SUBDIR += p5-Crypt-Serpent
+    SUBDIR += p5-Crypt-Shark
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
     SUBDIR += p5-Crypt-TripleDES
