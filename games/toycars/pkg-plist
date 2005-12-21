@@ -1,0 +1,42 @@
+bin/toycars
+%%DATADIR%%/data/cars/carslist.xml
+%%DATADIR%%/data/cars/concept_sedan/concept_sedan.png
+%%DATADIR%%/data/cars/concept_sedan/concept_sedan.xml
+%%DATADIR%%/data/cars/concept_sedan/concept_sedan_wheel.png
+%%DATADIR%%/data/cars/dodge-viper/dodge-viper-sprite.png
+%%DATADIR%%/data/cars/dodge-viper/dodge-viper.xml
+%%DATADIR%%/data/cars/dodge-viper/wheel.png
+%%DATADIR%%/data/cars/ferrari-f1/ferrari-f1-sprite.png
+%%DATADIR%%/data/cars/ferrari-f1/ferrari-f1.xml
+%%DATADIR%%/data/cars/ferrari-f1/ferrari-wheel-sprite.png
+%%DATADIR%%/data/fonts/cricket1.glf
+%%DATADIR%%/data/images/bombsprite.png
+%%DATADIR%%/data/images/loading.png
+%%DATADIR%%/data/images/needle.png
+%%DATADIR%%/data/images/title.png
+%%DATADIR%%/data/tilesets/default/default.xml
+%%DATADIR%%/data/tilesets/default/tiles.png
+%%DATADIR%%/data/tracks/Circuit/Circuit.xml
+%%DATADIR%%/data/tracks/Circuit/oval.map
+%%DATADIR%%/data/tracks/Corner/Corner.xml
+%%DATADIR%%/data/tracks/Corner/corner.map
+%%DATADIR%%/data/tracks/Helix/Helix.xml
+%%DATADIR%%/data/tracks/Helix/helix.map
+%%DATADIR%%/data/tracks/Rings/Rings.xml
+%%DATADIR%%/data/tracks/Rings/rings.map
+%%DATADIR%%/data/tracks/tracklist.xml
+@dirrm %%DATADIR%%/data/tracks/Rings
+@dirrm %%DATADIR%%/data/tracks/Helix
+@dirrm %%DATADIR%%/data/tracks/Corner
+@dirrm %%DATADIR%%/data/tracks/Circuit
+@dirrm %%DATADIR%%/data/tracks
+@dirrm %%DATADIR%%/data/tilesets/default
+@dirrm %%DATADIR%%/data/tilesets
+@dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/cars/ferrari-f1
+@dirrm %%DATADIR%%/data/cars/dodge-viper
+@dirrm %%DATADIR%%/data/cars/concept_sedan
+@dirrm %%DATADIR%%/data/cars
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
