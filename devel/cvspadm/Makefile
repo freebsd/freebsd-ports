@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.securityfoo.net/ray/projs/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool for CVS pserver user administration
 
+DEPRECATED=	"mastersite disappeared, no longer maintained by author"
+EXPIRATION_DATE=	2005-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
