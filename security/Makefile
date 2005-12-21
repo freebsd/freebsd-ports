@@ -314,6 +314,7 @@
     SUBDIR += p5-Crypt-Khazad
     SUBDIR += p5-Crypt-License
     SUBDIR += p5-Crypt-Lite
+    SUBDIR += p5-Crypt-Loki97
     SUBDIR += p5-Crypt-MySQL
     SUBDIR += p5-Crypt-NULL
     SUBDIR += p5-Crypt-OFB
