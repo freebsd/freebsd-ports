@@ -7451,6 +7451,7 @@ p5-Catalyst-Model-DBIC-Plain	ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Plugin-Authentication	ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-Store-DBIC	ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
+p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL	ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles	ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-Catalyst-Plugin-Cache-FastMmap	ports/www/p5-Catalyst-Plugin-Cache-FastMmap
@@ -13033,7 +13034,6 @@ wuzzah		ports/sysutils/wuzzah
 wv		ports/textproc/wv
 wv2		ports/textproc/wv2
 wwl		ports/comms/wwl
-www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 www6to4		ports/www/www6to4
 wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
