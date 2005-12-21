@@ -17,11 +17,22 @@ VEXIMDIR=	www/${PORTNAME}
 WRKSRC=		${WRKDIR}/vexim2
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-USE_MYSQL=	yes
 USE_APACHE=	yes
 USE_PHP=	yes
+
+OPTIONS=	MYSQL "Use MySQL" On \
+		PGSQL "Use PostgreSQL" Off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
+USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+WITH_PGSQL=	yes
+.endif
 
 post-patch:
 	${FIND} ${WRKSRC} -name CVS -prune -exec ${RM} -r {} \;
@@ -49,4 +60,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
