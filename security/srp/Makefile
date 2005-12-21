@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	srp
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	security net
 MASTER_SITES=	http://srp.stanford.edu/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
 USE_REINPLACE=	yes
@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--with-openssl=/usr				\
 		--enable-loginf
 
 post-patch:
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
+	@${GREP} -slR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib\.h|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
