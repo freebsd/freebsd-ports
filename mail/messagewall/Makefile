@@ -9,8 +9,8 @@ PORTNAME=	messagewall
 PORTVERSION=	1.0.8
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.messagewall.org/download/
-DISTNAME=	messagewall-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	messagewall_${PORTVERSION}.orig
 
 MAINTAINER=	opr@bsdaemon.be
 COMMENT=	Free SMTP PROXY with filtering
