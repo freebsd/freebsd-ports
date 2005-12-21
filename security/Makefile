@@ -302,6 +302,7 @@
     SUBDIR += p5-Crypt-DH
     SUBDIR += p5-Crypt-DSA
     SUBDIR += p5-Crypt-ECB
+    SUBDIR += p5-Crypt-Enigma
     SUBDIR += p5-Crypt-GOST
     SUBDIR += p5-Crypt-GOST_PP
     SUBDIR += p5-Crypt-GPG
