@@ -12,5 +12,6 @@ lib/gnupg/pcsc-wrapper
 libexec/gpg-preset-passphrase
 libexec/gpg-protect-tool
 sbin/addgnupghome
+share/gnupg/qualified.txt
 %%NLS%%share/locale/de/LC_MESSAGES/gnupg2.mo
 @dirrm lib/gnupg
