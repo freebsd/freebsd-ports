@@ -634,6 +634,7 @@
     SUBDIR += rman
     SUBDIR += ro-aspell
     SUBDIR += roap
+    SUBDIR += romdict
     SUBDIR += rot
     SUBDIR += rotix
     SUBDIR += rtf2html
