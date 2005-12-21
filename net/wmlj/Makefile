@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	wmlj
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A dockapp that monitors your friends list at LiveJournal.com
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
