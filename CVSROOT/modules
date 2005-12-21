@@ -8105,6 +8105,7 @@ p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
 p5-IO-LockedFile	ports/devel/p5-IO-LockedFile
 p5-IO-Multiplex	ports/devel/p5-IO-Multiplex
+p5-IO-NestedCapture	ports/devel/p5-IO-NestedCapture
 p5-IO-Pager	ports/devel/p5-IO-Pager
 p5-IO-Prompt	ports/devel/p5-IO-Prompt
 p5-IO-Socket-Multicast	ports/net/p5-IO-Socket-Multicast
