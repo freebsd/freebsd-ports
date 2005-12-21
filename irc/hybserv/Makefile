@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	hybserv
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.hybserv.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	HybServ2 IRCD Services
 
-IGNORE=		uses a uid registered to the ircservices user
+# uses a uid registered to the ircservices user
+CONFLICT=	ircservices-*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

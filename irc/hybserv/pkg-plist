@@ -3,11 +3,14 @@ hybserv/hybserv
 hybserv/cleandb
 hybserv/encryptconf
 hybserv/encryptdb
+hybserv/finddupe
+hybserv/fixalvl
 hybserv/mkpasswd
 hybserv/servchk
-hybserv/fixlevel
 hybserv/hybserv.conf
 hybserv/settings.conf
+hybserv/jupes.conf
+hybserv/glines.conf
 hybserv/motd.dcc
 hybserv/motd.global
 hybserv/shownicks
@@ -25,7 +28,6 @@ hybserv/help/seenserv/seennick
 hybserv/help/seenserv/index
 hybserv/help/seenserv/seen
 hybserv/help/seenserv/seenstat
-hybserv/help/seenserv/unseen
 hybserv/help/operserv/dcc/motd
 hybserv/help/operserv/dcc/index
 hybserv/help/operserv/dcc/link
@@ -51,6 +53,7 @@ hybserv/help/operserv/kill
 hybserv/help/operserv/killchan
 hybserv/help/operserv/killhost
 hybserv/help/operserv/kline
+hybserv/help/operserv/motd
 hybserv/help/operserv/off
 hybserv/help/operserv/omode
 hybserv/help/operserv/on
@@ -80,10 +83,10 @@ hybserv/help/nickserv/set/kill
 hybserv/help/nickserv/set/master
 hybserv/help/nickserv/set/memos
 hybserv/help/nickserv/set/notify
-hybserv/help/nickserv/set/oper
 hybserv/help/nickserv/set/password
 hybserv/help/nickserv/set/phone
 hybserv/help/nickserv/set/private
+hybserv/help/nickserv/set/privmsg
 hybserv/help/nickserv/set/secure
 hybserv/help/nickserv/set/signon
 hybserv/help/nickserv/set/uin
@@ -144,8 +147,10 @@ hybserv/help/chanserv/level/index
 hybserv/help/chanserv/level/list
 hybserv/help/chanserv/level/reset
 hybserv/help/chanserv/level/set
+hybserv/help/chanserv/set/comment
 hybserv/help/chanserv/set/verbose
 hybserv/help/chanserv/set/email
+hybserv/help/chanserv/set/expirebans
 hybserv/help/chanserv/set/founder
 hybserv/help/chanserv/set/forget
 hybserv/help/chanserv/set/password
@@ -162,6 +167,7 @@ hybserv/help/chanserv/set/topic
 hybserv/help/chanserv/set/topiclock
 hybserv/help/chanserv/set/url
 hybserv/help/chanserv/set/entrymsg
+hybserv/help/chanserv/cycle
 hybserv/help/chanserv/forbid
 hybserv/help/chanserv/forget
 hybserv/help/chanserv/halfop
@@ -171,6 +177,7 @@ hybserv/help/chanserv/info
 hybserv/help/chanserv/invite
 hybserv/help/chanserv/list
 hybserv/help/chanserv/clearnoexp
+hybserv/help/chanserv/modes
 hybserv/help/chanserv/op
 hybserv/help/chanserv/resetlevels
 hybserv/help/chanserv/register
