@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A GTK2 comic book viewer for .cbz, .cbr and .cbt files
 
-RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
 USE_GNOME=	pygtk2
