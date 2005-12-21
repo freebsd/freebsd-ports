@@ -1,0 +1,17 @@
+# New ports collection makefile for:	fortune-mod-ferengi_rules_of_acquisition
+# Date created:				2005-12-15
+# Whom:					Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
+#
+# $FreeBSD$
+# $Tecnik: ports/misc/fortune-mod-ferengi_rules_of_acquisition/Makefile,v 1.5 2005/12/20 00:16:42 itetcu Exp $
+
+PORTNAME=	fortune-mod-ferengi_rules_of_acquisition
+PORTVERSION=	2005.12.19
+CATEGORIES=	misc
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+
+MAINTAINER=	itetcu@people.tecnik93.com
+COMMENT=	Star Trek: The Ferengi Rules of Acquisition
+
+.include "${.CURDIR}/../../misc/fortune-mod-culmea-culmilor/Makefile.fortune"
+.include <bsd.port.mk>
