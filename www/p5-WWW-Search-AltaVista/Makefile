@@ -35,7 +35,6 @@ MAN3=		WWW::Search::AltaVista.3 \
 
 .include <bsd.port.pre.mk>
 
-# p5-WWW-Search-AltaVista -> p5-WWW-Search -> p5-libwww -> p5-URI -> p5-MIME-Base64
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
 .endif
