@@ -10,6 +10,8 @@
 %%SITE_PERL%%/HTMLObject/WAP.pm
 %%SITE_PERL%%/HTMLObject/WMLCard.pm
 %%SITE_PERL%%/HTMLObject/WMLDeck.pm
+%%SITE_PERL%%/HTMLObject/Widgets.pm
+%%SITE_PERL%%/HTMLObject/ErrorBase.pm
 %%SITE_PERL%%/auto/HTMLObject/Base/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/Form/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/FrameSet/autosplit.ix
@@ -21,6 +23,8 @@
 %%SITE_PERL%%/auto/HTMLObject/WAP/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/WMLCard/autosplit.ix
 %%SITE_PERL%%/auto/HTMLObject/WMLDeck/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/Widgets/autosplit.ix
+%%SITE_PERL%%/auto/HTMLObject/ErrorBase/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTMLObject
 @dirrm %%SITE_PERL%%/auto/HTMLObject/WMLDeck
@@ -34,5 +38,7 @@
 @dirrm %%SITE_PERL%%/auto/HTMLObject/FrameSet
 @dirrm %%SITE_PERL%%/auto/HTMLObject/Form
 @dirrm %%SITE_PERL%%/auto/HTMLObject/Base
+@dirrm %%SITE_PERL%%/auto/HTMLObject/Widgets
+@dirrm %%SITE_PERL%%/auto/HTMLObject/ErrorBase
 @dirrm %%SITE_PERL%%/auto/HTMLObject
 @dirrm %%SITE_PERL%%/HTMLObject
