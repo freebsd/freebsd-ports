@@ -1,0 +1,11 @@
+$FreeBSD$
+--- bin/plman	Tue Nov 23 11:32:50 2004
++++ bin/plman.port	Mon Dec 12 12:57:36 2005
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ 
+-PLMAN_PATH='MODIFY HERE!!'		# Example: ~/bin/plman
++PLMAN_PATH='%%DATADIR%%'		# Example: ~/bin/plman
+ 
+ # Execute plman
+ java -classpath "${PLMAN_PATH}/lib/plman.jar":"${PLMAN_PATH}/lib/ant.jar" PropositionalLogicParser $*
