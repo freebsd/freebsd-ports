@@ -8,10 +8,13 @@
 PORTNAME=	animabob
 PORTVERSION=	1.3.0b
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.borg.umn.edu/pub/lcse/grant/AnimaBob/
+MASTER_SITES=	#
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Interactive 3D volume renderer
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-02-16
 
 USE_IMAKE=	yes
 USE_MESA=	yes
