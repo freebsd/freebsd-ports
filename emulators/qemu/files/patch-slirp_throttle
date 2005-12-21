@@ -49,7 +49,7 @@ diff -u -p -r1.157 vl.c
  int slirp_can_output(void)
  {
 -    return 1;
-+    qemu_can_send_packet(slirp_vc);
++    return qemu_can_send_packet(slirp_vc);
  }
  
  void slirp_output(const uint8_t *pkt, int pkt_len)
