@@ -2532,6 +2532,7 @@ freedroidrpg	ports/games/freedroidrpg
 freedt		ports/sysutils/freedt
 freefem		ports/math/freefem
 freefem++	ports/math/freefem++
+freefont-ttf	ports/x11-fonts/freefont-ttf
 freefonts	ports/x11-fonts/freefonts
 freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
