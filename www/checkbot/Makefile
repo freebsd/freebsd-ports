@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	checkbot
-PORTVERSION=	1.75
+PORTVERSION=	1.77
 CATEGORIES=	www perl5
-MASTER_SITES=	http://degraaff.org/checkbot/ \
+MASTER_SITES=	${MASTER_SITE_SOUREFORGE} \
+		http://degraaff.org/checkbot/ \
 		http://wolfram.schneider.org/src/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A WWW link verifier, similar to momspider
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -19,6 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
