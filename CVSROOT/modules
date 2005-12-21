@@ -4743,6 +4743,7 @@ jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
 junipoll	ports/net-mgmt/junipoll
 junit		ports/java/junit
+junkbuster	ports/www/junkbuster
 junkfilter	ports/mail/junkfilter
 juno-2		ports/graphics/juno-2
 jwchat		ports/net-im/jwchat
