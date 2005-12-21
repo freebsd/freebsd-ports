@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunch
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	security
 MASTER_SITES=	http://s89813419.onlinehome.us/ \
 		http://www.cs.cmu.edu/~dpelleg/download/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 USE_PERL5=	yes
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=	too interactive
+NO_PACKAGE=	"too interactive"
 NO_BUILD=	true
 
 do-install:
