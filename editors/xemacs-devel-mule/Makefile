@@ -7,7 +7,6 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -49,7 +48,7 @@ USE_XPM=	yes
 .endif
 
 XEMACS_REL=	21.5
-XEMACS_VER=	${XEMACS_REL}-b23
+XEMACS_VER=	${XEMACS_REL}-b24
 XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
@@ -65,7 +64,6 @@ CONFIGURE_ARGS=	--enable-mule \
 		--enable-sound=native \
 		--with-site-lisp \
 		--with-pop \
-		--with-xfs \
 		--with-ldap=no \
 		--with-infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--enable-clash-detection \
@@ -90,7 +88,10 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 CONFIGURE_ARGS+=--enable-debug=no --enable-error-checking=no
 .endif
 
-.if defined(WITH_GTK)
+.if defined(WITH_XFT)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+CONFIGURE_ARGS+=--with-xft=all
+.elif defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
 WITH_XIM=
 WITH_MENUBARS=	--enable-menubars=gtk
@@ -98,6 +99,8 @@ WITH_SCROLLBARS=--enable-scrollbars=gtk
 WITH_DIALOGS=	--enable-dialogs=gtk
 WITH_WIDGETS=	--enable-widgets=gtk
 USE_GNOME+=	gtk12
+.else
+CONFIGURE_ARGS+=--with-xfs
 .endif
 
 PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule

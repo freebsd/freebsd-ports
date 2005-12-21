@@ -46,6 +46,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/InstallGuide
 lib/xemacs-%%XEMACS_VER%%/etc/NEWS
 lib/xemacs-%%XEMACS_VER%%/etc/ONEWS
 lib/xemacs-%%XEMACS_VER%%/etc/OONEWS
+lib/xemacs-%%XEMACS_VER%%/etc/PROBLEMS
 lib/xemacs-%%XEMACS_VER%%/etc/README
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.cs
@@ -556,6 +557,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/file-coding.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frame-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frame.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/frameslots.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gc.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gccache-gtk.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/general-slots.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/getpagesize.h
@@ -855,9 +857,11 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/toolbar.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/tooltalk.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/ui-gtk.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/universe.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/vdb.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/window-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/window.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/winslots.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xft-fonts.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xgccache.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsic.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsicp.h
@@ -1055,6 +1059,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/font-menu.el
 lib/xemacs-%%XEMACS_VER%%/lisp/font-menu.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/font.el
 lib/xemacs-%%XEMACS_VER%%/lisp/font.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/fontconfig.el
+lib/xemacs-%%XEMACS_VER%%/lisp/fontconfig.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/fontl-hooks.el
 lib/xemacs-%%XEMACS_VER%%/lisp/fontl-hooks.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/format.el

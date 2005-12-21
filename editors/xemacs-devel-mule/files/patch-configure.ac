@@ -1,6 +1,6 @@
---- configure.ac	2005/03/11 11:19:01	1.2
-+++ configure.ac	2005/03/17 20:16:50
-@@ -1148,6 +1148,7 @@
+--- configure.ac.orig	Sun Dec 18 19:58:55 2005
++++ configure.ac	Mon Dec 19 16:04:59 2005
+@@ -1257,6 +1257,7 @@
  dnl Straightforward OS determination
  case "$ac_cv_build" in
    *-*-linux*    ) opsys=linux ;;
@@ -8,7 +8,16 @@
    *-*-netbsd*   ) opsys=netbsd ;;
    *-*-openbsd*	) opsys=openbsd ;;
    *-*-nextstep* ) opsys=nextstep ;;
-@@ -4943,7 +4950,7 @@
+@@ -3423,7 +3424,7 @@
+       dnl #### How about /sw/include, and /opt/local/include?
+       dnl these directories need to be the parent of the freetype directory
+       for freetype_include_top in "/usr/X11R6/include/freetype2" \
+-				  "/usr/include/freetype2"
++				  "$with_site_includes/freetype2"
+       do
+ 	if test -d $freetype_include_top; then
+ 	  AC_CHECKING([in ${freetype_include_top}/freetype2])
+@@ -5296,7 +5297,7 @@
  dnl Check for Berkeley DB.
  if test "$enable_database_berkdb" != "no"; then
    AC_MSG_CHECKING(for Berkeley db.h)
