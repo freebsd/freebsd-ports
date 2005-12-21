@@ -339,6 +339,7 @@
     SUBDIR += p5-Crypt-Rijndael
     SUBDIR += p5-Crypt-SKey
     SUBDIR += p5-Crypt-SSLeay
+    SUBDIR += p5-Crypt-Salt
     SUBDIR += p5-Crypt-Serpent
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
