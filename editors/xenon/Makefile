@@ -29,7 +29,7 @@ FIX_FILES=	Xe.h XeApp.h XeFontTable.C XeFontTable.h XeKeyTable.C \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=	"Does not compile (bad C++ code)"
 .endif
 
 do-configure:
