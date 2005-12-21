@@ -345,6 +345,7 @@
     SUBDIR += p5-Crypt-Shark
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
+    SUBDIR += p5-Crypt-TEA
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-Twofish2
