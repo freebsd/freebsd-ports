@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-XMLViewer
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
@@ -21,7 +21,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::XMLViewer.3
+MAN1=		tkxmlview.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or higher. Install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
