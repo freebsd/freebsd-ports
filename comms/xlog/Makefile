@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	comms
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
 		http://www.qsl.net/pg4i/download/
@@ -17,6 +16,7 @@ COMMENT=	Amateur Radio logging application
 USE_X_PREFIX=	yes
 USE_GNOME=	libgnomeprint gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-mime-update
 
 .if defined(WITH_HAMLIB)
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
