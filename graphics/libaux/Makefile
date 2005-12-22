@@ -8,7 +8,7 @@
 PORTNAME=	libaux
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.rus.uni-stuttgart.de/pub/systems/sgi/OpenGL/contrib/
+MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 DISTFILES=	libaux${EXTRACT_SUFX} libtk${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
