@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gphpedit
-PORTVERSION=	0.9.50
-PORTREVISION=	2
+PORTVERSION=	0.9.80
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
@@ -43,6 +42,9 @@ pre-everything::
 .if !defined(WITHOUT_PHPDOC)
 	@${ECHO_MSG} "WITHOUT_PHPDOC=yes to not install php_doc, help will be disable."
 .endif
+
+post-extract:
+	cd ${WRKSRC}/src/gtkscintilla2 && ${GMAKE} clean
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share/gnome|g' \
