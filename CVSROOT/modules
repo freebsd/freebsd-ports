@@ -4015,6 +4015,7 @@ ipdf		ports/textproc/ipdf
 ipe		ports/graphics/ipe
 iperf		ports/benchmarks/iperf
 ipex		ports/net/ipex
+ipfcount	ports/security/ipfcount
 ipfilter2dshield	ports/security/ipfilter2dshield
 ipfm		ports/net-mgmt/ipfm
 ipfmeta		ports/security/ipfmeta
