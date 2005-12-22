@@ -521,6 +521,7 @@
     SUBDIR += p5-perl-ldap
     SUBDIR += passlogd
     SUBDIR += pathchar
+    SUBDIR += pathneck
     SUBDIR += pbnc
     SUBDIR += pchar
     SUBDIR += pcnfsd
