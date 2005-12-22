@@ -697,8 +697,8 @@ upgrades.
 
   The PostgreSQL ports have been updated to latest versions. A
   security problem in the template database requires a simple SQL
-  command to be run on each database. because these problems are
-  really incorrect system catalog entries. Updating to a new release
+  command to be run on each database. Because these problems are
+  really incorrect system catalog entries, updating to a new release
   will NOT by itself solve the problems in an existing
   installation.
 
