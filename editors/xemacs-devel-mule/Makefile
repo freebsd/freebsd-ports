@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -168,10 +169,6 @@ USE_PGSQL=	yes
 PLIST_SUB+=	WITH_PGSQL=""
 .else
 PLIST_SUB+=	WITH_PGSQL="@comment "
-.endif
-
-.if defined(WITH_WINDOWS1251)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cyrillic.el
 .endif
 
 BINNAMEEXT=		-mule
