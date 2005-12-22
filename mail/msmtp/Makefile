@@ -24,15 +24,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		msmtp.1
 INFO=	msmtp
 
-# XXX we need gnutls >= 1.2.0 which is not avaible via ports tree
 .if defined(WITH_GNUTLS)
-.undef WITH_GNUTLS
-.endif
-
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls-devel
 CONFIGURE_ARGS+=	--with-ssl=gnutls
-.elif defined (WITH_OPENSSL)
+.elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=openssl
 .else
