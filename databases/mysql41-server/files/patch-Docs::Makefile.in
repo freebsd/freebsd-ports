@@ -1,11 +1,20 @@
---- Docs/Makefile.in.orig	Fri May 13 13:33:27 2005
-+++ Docs/Makefile.in	Fri Jun  3 16:54:40 2005
-@@ -481,7 +481,7 @@
- 	uninstall-info-am
+--- Docs/Makefile.in.orig	Wed Nov 30 21:37:04 2005
++++ Docs/Makefile.in	Thu Dec 22 16:03:51 2005
+@@ -324,7 +324,7 @@
+ 			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
  
- 
--all:			txt_files
+ GT = $(srcdir)/Support/generate-text-files.pl
+-all: all-am
 +all:
  
- txt_files:		../INSTALL-SOURCE ../INSTALL-WIN-SOURCE ../EXCEPTIONS-CLIENT \
- 			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
+ .SUFFIXES:
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
+@@ -410,7 +410,7 @@
+ install-data: install-data-am
+ uninstall: uninstall-am
+ 
+-install-am: all-am
++install-am:
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ 
+ installcheck: installcheck-am

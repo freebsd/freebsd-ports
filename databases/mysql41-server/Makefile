@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.15
+PORTVERSION=	4.1.16
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -120,8 +120,8 @@ PLIST_SUB+=	NDB=""
 PLIST_SUB+=	NDB="@comment "
 .endif
 
-MAN1=		isamchk.1 isamlog.1 mysqld.1 \
-		mysqld_safe.1 perror.1 replace.1
+MAN1=		myisamchk.1 myisamlog.1 myisampack.1 mysqld.1 \
+		mysqld_safe.1 mysql.server.1 perror.1 replace.1
 
 INFO=		mysql
 
@@ -149,12 +149,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
+	@${ECHO_CMD} "-- fill_help_tables.sql is broken in 4.1.16 release" \
+		> ${WRKSRC}/scripts/fill_help_tables.sql
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
@@ -168,7 +170,8 @@ LATEST_LINK=	mysql41-client
 
 CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
 
-MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
+MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
+		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
@@ -181,7 +184,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
@@ -206,7 +209,8 @@ LATEST_LINK=	mysql41-scripts
 
 CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.[02-9].* mysql-scripts-5.*
 
-MAN1=		mysql_zap.1 mysqlaccess.1 mysqld_multi.1 mysql_fix_privilege_tables.1
+MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
+		mysqld_multi.1 mysql_fix_privilege_tables.1
 
 SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
 		mysql_secure_installation mysql_zap mysqlaccess \
@@ -217,7 +221,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = scripts @man_dirs@|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = ${SCRIPTS}|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am install-data-am|install-exec-am|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
 # Common part
