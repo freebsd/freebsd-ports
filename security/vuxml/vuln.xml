@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b5a49db7-72fc-11da-9827-021106004fd6">
+    <topic>scponly -- local privilege escalation exploits</topic>
+      <affects>
+        <package>
+          <name>scponly</name>
+          <range><lt>4.2</lt></range>
+        </package>
+      </affects>
+      <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Max Vozeler reports:</p>
+        <blockquote cite="https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html">
+          <p>If ALL the following conditions are true, administrators using
+            scponly-4.1 or older may be at risk of a local privilege
+            escalation exploit:</p>
+          <ul>
+            <li>the chrooted setuid scponlyc binary is installed</li>
+            <li>regular non-scponly users have interactive shell access
+              to the box</li>
+            <li>a user executable dynamically linked setuid binary
+              (such as ping) exists on the same file system mount
+              as the user's home directory</li>
+            <li>the operating system supports an LD_PRELOAD style
+              mechanism to overload dynamic library loading</li>
+          </ul>
+        </blockquote>
+        <p>Pekka Pessi also reports:</p>
+        <blockquote cite="https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html">
+          <p>If ANY the following conditions are true, administrators
+            using scponly-4.1 or older may be at risk of a local privilege
+            escalation exploit:</p>
+          <ul>
+            <li>scp compatibility is enabled</li>
+            <li>rsync compatibility is enabled</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.ccs.neu.edu/pipermail/scponly/2005-December/001027.html</url>
+      <url>http://sublimation.org/scponly/#relnotes</url>
+    </references>
+    <dates>
+      <discovery>2005-12-21</discovery>
+      <entry>2005-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7eb0b23-7099-11da-a15c-0060084a00e5">
     <topic>fetchmail -- null pointer dereference in multidrop mode with
       headerless email</topic>
