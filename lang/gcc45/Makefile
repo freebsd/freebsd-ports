@@ -26,7 +26,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
-CONFLICTS=	gcc-4.0.* gcc-4.1.*
+CONFLICTS=	gcc-4.1.*
 LATEST_LINK?=	gcc42${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
