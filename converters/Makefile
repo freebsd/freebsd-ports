@@ -23,6 +23,7 @@
     SUBDIR += iconv
     SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345
+    SUBDIR += intel2gas
     SUBDIR += ish
     SUBDIR += konwert
     SUBDIR += ktextdecode
