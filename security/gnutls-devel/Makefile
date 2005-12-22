@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gnutls-devel
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_GNUPG} \
-	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/ \
-	http://josefsson.org/gnutls/releases/ \
-	ftp://ftp.gnutls.org/pub/gnutls/
+MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
+		${MASTER_SITE_GNUPG} \
+		http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
+		ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/ \
+		ftp://ftp.gnutls.org/pub/gnutls/
 MASTER_SITE_SUBDIR=	alpha/gnutls
 DISTNAME=	gnutls-${PORTVERSION}
 
@@ -42,9 +42,9 @@ USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ARGS=	MAKEINFO="${PREFIX}/bin/makeinfo"
+MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		MAKEINFO="${PREFIX}/bin/makeinfo"
+		MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-included-lzo --disable-static
 MANCOMPRESSED=	no

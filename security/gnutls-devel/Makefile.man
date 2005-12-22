@@ -10,7 +10,8 @@ MAN1=	certtool.1 \
 	psktool.1 \
 	srptool.1
 
-MAN3=	gnutls_hex_decode.3 \
+MAN3=	gnutls_anon_set_server_params_function.3 \
+	gnutls_hex_decode.3 \
 	gnutls_hex_encode.3 \
 	gnutls_srp_base64_encode.3 \
 	gnutls_srp_base64_encode_alloc.3 \
@@ -52,7 +53,6 @@ MAN3=	gnutls_hex_decode.3 \
 	gnutls_certificate_server_set_request.3 \
 	gnutls_certificate_client_set_retrieve_function.3 \
 	gnutls_certificate_server_set_retrieve_function.3 \
-	gnutls_certificate_verify_peers.3 \
 	gnutls_certificate_verify_peers2.3 \
 	gnutls_db_set_ptr.3 \
 	gnutls_certificate_expiration_time_peers.3 \
@@ -121,6 +121,8 @@ MAN3=	gnutls_hex_decode.3 \
 	gnutls_session_get_data2.3 \
 	gnutls_session_get_id.3 \
 	gnutls_session_set_data.3 \
+	gnutls_session_get_client_random.3 \
+	gnutls_session_get_server_random.3 \
 	gnutls_srp_free_client_credentials.3 \
 	gnutls_srp_set_client_credentials.3 \
 	gnutls_srp_allocate_client_credentials.3 \
@@ -139,6 +141,7 @@ MAN3=	gnutls_hex_decode.3 \
 	gnutls_deinit.3 \
 	gnutls_openpgp_send_key.3 \
 	gnutls_certificate_send_x509_rdn_sequence.3 \
+	gnutls_certificate_set_x509_simple_pkcs12_file.3 \
 	gnutls_handshake_set_private_extensions.3 \
 	gnutls_session_is_resumed.3 \
 	gnutls_session_get_ptr.3 \
@@ -377,4 +380,29 @@ MAN3=	gnutls_hex_decode.3 \
 	gnutls_psk_set_server_credentials_file.3 \
 	gnutls_psk_set_server_credentials_function.3 \
 	gnutls_psk_set_client_credentials_function.3 \
-	gnutls_psk_server_get_username.3
+	gnutls_psk_server_get_username.3 \
+	gnutls_psk_set_server_dh_params.3 \
+	gnutls_psk_set_server_params_function.3 \
+	gnutls_psk_set_params_function.3 \
+	gnutls_prf_raw.3 \
+	gnutls_prf.3 \
+	gnutls_ia_permute_inner_secret.3 \
+	gnutls_ia_generate_challenge.3 \
+	gnutls_ia_endphase_send.3 \
+	gnutls_ia_extract_inner_secret.3 \
+	gnutls_ia_verify_endphase.3 \
+	gnutls_ia_send.3 \
+	gnutls_ia_recv.3 \
+	gnutls_ia_handshake_p.3 \
+	gnutls_ia_handshake.3 \
+	gnutls_ia_allocate_client_credentials.3 \
+	gnutls_ia_free_client_credentials.3 \
+	gnutls_ia_set_client_avp_function.3 \
+	gnutls_ia_set_client_avp_ptr.3 \
+	gnutls_ia_get_client_avp_ptr.3 \
+	gnutls_ia_allocate_server_credentials.3 \
+	gnutls_ia_free_server_credentials.3 \
+	gnutls_ia_set_server_avp_function.3 \
+	gnutls_ia_set_server_avp_ptr.3 \
+	gnutls_ia_get_server_avp_ptr.3 \
+	gnutls_ia_require_inner_phase.3
