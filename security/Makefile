@@ -266,6 +266,7 @@
     SUBDIR += openssl-beta
     SUBDIR += openssl-stable
     SUBDIR += openvpn
+    SUBDIR += openvpn-admin
     SUBDIR += opieprint
     SUBDIR += osiris
     SUBDIR += outguess
