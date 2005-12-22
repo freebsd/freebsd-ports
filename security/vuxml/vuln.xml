@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="43770b1c-72f6-11da-8c1d-000e0c2e438a">
-    <topic>ndb-server -- buffer overflow vulnerability</topic>
+    <topic>nbd-server -- buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>nbd-server</name>
