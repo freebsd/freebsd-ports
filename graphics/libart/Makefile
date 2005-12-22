@@ -8,7 +8,8 @@
 PORTNAME=	libart
 PORTVERSION=	2.3.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.artofcode.com/${PORTNAME}/
+MASTER_SITES=	http://tiger.bioinf.cs.uni-potsdam.de/free/Graphics/ \
+		http://cvsup.theplanet.com/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
