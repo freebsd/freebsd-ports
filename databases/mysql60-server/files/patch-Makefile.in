@@ -1,9 +1,9 @@
---- Makefile.in.orig	Thu May 26 15:27:53 2005
-+++ Makefile.in	Fri Jun  3 15:05:48 2005
-@@ -355,12 +355,7 @@
+--- Makefile.in.orig	Thu Dec 15 00:34:48 2005
++++ Makefile.in	Thu Dec 22 15:29:54 2005
+@@ -365,12 +365,7 @@
+ EXTRA_DIST = INSTALL-SOURCE INSTALL-WIN-SOURCE \
+ 			README COPYING EXCEPTIONS-CLIENT
  
- # These are built from source in the Docs directory
- EXTRA_DIST = INSTALL-SOURCE README COPYING EXCEPTIONS-CLIENT
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ @yassl_dir@ \
 -			@readline_topdir@ sql-common \
 -			@thread_dirs@ pstack \
