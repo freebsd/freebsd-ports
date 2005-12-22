@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	101
+PORTVERSION=	112
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.berlios.de/pub/elc/ http://el.tfm.ro/
 DISTFILES=	${EL_PROG} ${EL_DATA}
@@ -16,20 +16,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		cal3d.11:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_SDL=	sdl net
 
 EL_PROG=	elc_${PORTVERSION}.tgz
-EL_DATA=	el_${PORTVERSION}.zip
+EL_DATA=	el_${PORTVERSION}_linux.zip
 
 WRKSRC=		${WRKDIR}/elc
 
-ALL_TARGET=	el.x86.bsd.bin
+ALL_TARGET=	cal3d
 MAKEFILE=	Makefile.bsd
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CFLAGS+=	-DX86_64
+.endif
 
 do-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
@@ -40,4 +46,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/el.x86.bsd.bin ${DATADIR}
 	${UNZIP_CMD} ${DISTDIR}/${EL_DATA} -d ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
