@@ -129,8 +129,6 @@
     SUBDIR += metacity-longhorninspirat-theme
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-alloy-c
-    SUBDIR += metacity-theme-hacked-2
-    SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
     SUBDIR += notif2
