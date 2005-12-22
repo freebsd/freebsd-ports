@@ -8,6 +8,8 @@
  * 2003/06/24 Louis D. Langholtz <ldl@aros.net>
  *            Removed unneeded blksize_bits field from nbd_device struct.
  *            Cleanup PARANOIA usage & code.
+ * 2004/02/19 Paul Clements
+ *            Removed PARANOIA, plus various cleanup and comments
  */
 
 #ifndef LINUX_NBD_H
@@ -32,22 +34,19 @@ enum {
 #define nbd_cmd(req) ((req)->cmd[0])
 #define MAX_NBD 128
 
-/* Define PARANOIA to include extra sanity checking code in here & driver */
-#define PARANOIA
-
 /* userspace doesn't need the nbd_device structure */
 #ifdef __KERNEL__
+
+/* values for flags field */
+#define NBD_READ_ONLY 0x0001
+#define NBD_WRITE_NOCHK 0x0002
 
 struct nbd_device {
 	int flags;
 	int harderror;		/* Code of hard error			*/
-#define NBD_READ_ONLY 0x0001
-#define NBD_WRITE_NOCHK 0x0002
 	struct socket * sock;
 	struct file * file; 	/* If == NULL, device is not ready, yet	*/
-#ifdef PARANOIA
-	int magic;		/* FIXME: not if debugging is off	*/
-#endif
+	int magic;
 	spinlock_t queue_lock;
 	struct list_head queue_head;/* Requests are added here...	*/
 	struct semaphore tx_lock;
@@ -58,16 +57,14 @@ struct nbd_device {
 
 #endif
 
-/* This now IS in some kind of include file...	*/
-
-/* These are send over network in request/reply magic field */
+/* These are sent over the network in the request/reply magic fields */
 
 #define NBD_REQUEST_MAGIC 0x25609513
 #define NBD_REPLY_MAGIC 0x67446698
 /* Do *not* use magics: 0x12560953 0x96744668. */
 
 /*
- * This is packet used for communication between client and
+ * This is the packet used for communication between client and
  * server. All data are in network byte order.
  */
 struct nbd_request {
@@ -82,6 +79,10 @@ struct nbd_request {
 #endif
 ;
 
+/*
+ * This is the reply packet that nbd-server sends back to the client after
+ * it has completed an I/O request (or an error occurs).
+ */
 struct nbd_reply {
 	u32 magic;
 	u32 error;		/* 0 = ok, else error	*/
