@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmw
-PORTVERSION=	4.10
+PORTVERSION=	4.11
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.univie.ac.at/applications/www.quercite.com/ \
 		http://www.quercite.com/
