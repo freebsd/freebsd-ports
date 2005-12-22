@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.3
-PORTREVISION=	20051208
+PORTREVISION=	20051215
 CATEGORIES=	lang
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -29,7 +29,6 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
-CONFLICTS=	gcc-3.3.* gcc-4.1.*
 LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -60,7 +59,8 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_FORTRAN)
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
@@ -74,16 +74,21 @@ LDCONFIG_DIRS=	${TARGLIB}
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 ALL_TARGET=	bootstrap-lean
-PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
+		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1
-INFO=		cpp cppinternals gcc gccinstall gccint
+INFO=		gcc${SUFFIX}/cpp \
+		gcc${SUFFIX}/cppinternals \
+		gcc${SUFFIX}/gcc \
+		gcc${SUFFIX}/gccinstall \
+		gcc${SUFFIX}/gccint
 
 .if defined(WITH_FORTRAN)
 MAN1+=	gfortran${SUFFIX}.1
-INFO+=	gfortran
+INFO+=	gcc${SUFFIX}/gfortran
 PLIST_SUB+=	FORTRAN=""
 .else
 PLIST_SUB+=	FORTRAN="@comment "
@@ -125,6 +130,8 @@ post-install:
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
+	${MV} -f ${PREFIX}/include/mf-runtime.h \
+	         ${TARGLIB}/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/include
 	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
