@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cnupm
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/ \
 		${MASTER_SITE_LOCAL}
