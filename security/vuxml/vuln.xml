@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="43770b1c-72f6-11da-8c1d-000e0c2e438a">
+    <topic>ndb-server -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>nbd-server</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kurt Fitzner reports a buffer overflow vulnerability
+	  within nbd.  This could potentially allow the execution
+	  of arbitrary code on the ndb server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-3534</cvename>
+      <url>http://www.debian.org/security/2005/dsa-924</url>
+    </references>
+    <dates>
+      <discovery>2005-12-21</discovery>
+      <entry>2005-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b5a49db7-72fc-11da-9827-021106004fd6">
     <topic>scponly -- local privilege escalation exploits</topic>
       <affects>
