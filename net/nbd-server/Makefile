@@ -7,6 +7,7 @@
 
 PORTNAME=	nbd-server
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nbd
@@ -25,13 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 PLIST_FILES=	bin/nbd-server
 MAN1=		nbd-server.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		"GCC fails on FreeBSD >= 7.0"
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/nbd.h ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
