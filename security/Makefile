@@ -379,6 +379,7 @@
     SUBDIR += p5-Digest-Pearson-PurePerl
     SUBDIR += p5-Digest-Perl-MD5
     SUBDIR += p5-Digest-SHA
+    SUBDIR += p5-Digest-SHA-PurePerl
     SUBDIR += p5-Digest-SHA1
     SUBDIR += p5-Digest-SHA2
     SUBDIR += p5-Digest-SHA256
