@@ -7858,6 +7858,7 @@ p5-Digest-ManberHash	ports/security/p5-Digest-ManberHash
 p5-Digest-Nilsimsa	ports/security/p5-Digest-Nilsimsa
 p5-Digest-Pearson	ports/security/p5-Digest-Pearson
 p5-Digest-Pearson-PurePerl	ports/security/p5-Digest-Pearson-PurePerl
+p5-Digest-Perl-MD4	ports/security/p5-Digest-Perl-MD4
 p5-Digest-Perl-MD5	ports/security/p5-Digest-Perl-MD5
 p5-Digest-SHA	ports/security/p5-Digest-SHA
 p5-Digest-SHA-PurePerl	ports/security/p5-Digest-SHA-PurePerl
