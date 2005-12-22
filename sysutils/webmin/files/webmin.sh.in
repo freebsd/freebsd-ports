@@ -11,8 +11,6 @@
 # webmin_enable="YES"
 #
 
-webmin_enable="NO"
-
 . %%RC_SUBR%%
 
 name=webmin
