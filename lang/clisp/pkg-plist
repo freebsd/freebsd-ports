@@ -11,12 +11,13 @@ lib/clisp/base/lispinit.mem
 lib/clisp/base/makevars
 lib/clisp/base/modules.h
 lib/clisp/base/modules.o
+lib/clisp/base/readline.o
 lib/clisp/base/regex.o
 lib/clisp/base/regexi.o
 lib/clisp/base/regexp.dvi
 lib/clisp/clisp-link
+lib/clisp/data/Symbol-Table.text
 lib/clisp/data/UnicodeDataFull.txt
-lib/clisp/data/clhs.txt
 lib/clisp/full/calls.o
 lib/clisp/full/gettext.o
 lib/clisp/full/libavcall.a
@@ -30,6 +31,7 @@ lib/clisp/full/makevars
 lib/clisp/full/modules.h
 lib/clisp/full/modules.o
 lib/clisp/full/rawsock.o
+lib/clisp/full/readline.o
 lib/clisp/full/regex.o
 lib/clisp/full/regexi.o
 lib/clisp/full/regexp.dvi
@@ -57,8 +59,8 @@ lib/clisp/linkkit/modules.d
 %%PORTDOCS%%%%DOCSDIR%%/doc/clisp.1
 %%PORTDOCS%%%%DOCSDIR%%/doc/clisp.dvi
 %%PORTDOCS%%%%DOCSDIR%%/doc/clisp.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/clisp.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/clisp.ps
 %%PORTDOCS%%%%DOCSDIR%%/doc/editors.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/impnotes.css
