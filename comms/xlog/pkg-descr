@@ -1,7 +1,3 @@
-News: It's gone stable! After years of development, xlog is now
-considered stable and ready for prime-time. Congratulations to
-Joop, PG4I, who has put in so much work, effort and time.
-
 Xlog is an Amateur Radio station logger.  Xlog is able to do
 DXCC lookups and will display country information, CQ and ITU zone,
 location in latitude and longitude and distance and heading in
@@ -10,7 +6,8 @@ and heading calculation for VHF logging is also supported.
 
 Xlog supports cabrillo and ADIF and can import twlog and editest files.
 It also has the ability to customise log fields which makes it ideal for
-use in those countries that have odd logging rules such as the U.K.
+use in those countries that have odd logging rules such as the U.K. Also
+included is the ability to log using the FCC emmissions codes.
 
 There is a new format for exporting the log called 'labels'. This will
 save some fields of the log in a TAB separated file. This file can be
