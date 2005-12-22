@@ -377,6 +377,7 @@
     SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-Pearson
     SUBDIR += p5-Digest-Pearson-PurePerl
+    SUBDIR += p5-Digest-Perl-MD4
     SUBDIR += p5-Digest-Perl-MD5
     SUBDIR += p5-Digest-SHA
     SUBDIR += p5-Digest-SHA-PurePerl
