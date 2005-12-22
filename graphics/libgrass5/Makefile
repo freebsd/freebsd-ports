@@ -9,10 +9,13 @@ PORTNAME=	libgrass5
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://gdal.velocet.ca/projects/grass/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of functions from the GRASS GIS application for use by non-GRASS programs
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-02-22
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
