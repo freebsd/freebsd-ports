@@ -7,6 +7,7 @@
 
 PORTNAME=	xmltv
 PORTVERSION=	0.5.41
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -34,6 +35,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
 	${SITE_PERL}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
 	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
+	${SITE_PERL}/Unicode/UTF8simple.pm:${PORTSDIR}/converters/p5-Unicode-UTF8simple \
 	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent
