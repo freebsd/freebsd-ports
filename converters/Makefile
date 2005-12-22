@@ -79,6 +79,7 @@
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += siconv
+    SUBDIR += ta2as
     SUBDIR += tnef
     SUBDIR += trans
     SUBDIR += tuc
