@@ -4,8 +4,9 @@ bin/pioneers-meta-server
 bin/pioneers-server-console
 bin/pioneers-server-gtk
 bin/pioneersai
-share/gnome/apps/Games/pioneers-server.desktop
-share/gnome/apps/Games/pioneers.desktop
+share/gnome/applications/pioneers-editor.desktop
+share/gnome/applications/pioneers-server.desktop
+share/gnome/applications/pioneers.desktop
 share/gnome/games/pioneers/5-6-player.game
 share/gnome/games/pioneers/Another_swimming_pool_in_the_wall.game
 share/gnome/games/pioneers/Cube.game
@@ -109,7 +110,9 @@ share/gnome/games/pioneers/x.game
 %%LIBGNOME%%share/gnome/help/pioneers/C/legal.xml
 %%LIBGNOME%%share/gnome/help/pioneers/C/pioneers.xml
 %%LIBGNOME%%share/gnome/omf/pioneers/pioneers-C.omf
-share/gnome/pixmaps/gnome-pioneers.png
+share/gnome/pixmaps/pioneers-editor.png
+share/gnome/pixmaps/pioneers-server.png
+share/gnome/pixmaps/pioneers.png
 share/gnome/pixmaps/pioneers/bridge.png
 share/gnome/pixmaps/pioneers/city.png
 share/gnome/pixmaps/pioneers/develop.png
