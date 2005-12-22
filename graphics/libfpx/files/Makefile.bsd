@@ -7,7 +7,7 @@ LIBDIR	=	${LOCALBASE}/lib
 INCSDIR	=	${LOCALBASE}/include
 INCDIR	=	${INCSDIR}		# for pre-bsd.incs.mk API
 
-NOPROFILE=	Don't want it
+NO_PROFILE=	Don't want it
 HAVES=		-DHAVE_WCHAR_H -DHAVE_DLFCN_H \
 		-DHAVE_SYS_TIME_H \
 		-DHAVE_SYS_PARAM_H -DHAVE_SYS_MOUNT_H
