@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.35
-PORTREVISION=	1
+PORTVERSION=	2.36
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
@@ -33,7 +32,8 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64
-BROKEN=		"Does not compile on amd64 or ia64"
+CFLAGS+=	-DNO_MULTIMAP_SHM -DNO_MULTIMAP_FILE -DNO_SINGLEMAP \
+		-DNO_TRIVIALMAP
 .endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
