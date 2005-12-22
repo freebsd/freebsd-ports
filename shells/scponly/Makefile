@@ -24,17 +24,9 @@
 # default: undefined
 # define if you want to disable wildcard processing.
 #
-# WITHOUT_SCPONLY_SCP
-# default: undefined
-# define if you want to disable vanilla scp compatibility.
-#
 # WITHOUT_SCPONLY_GFTP
 # default: undefined
 # define if you want to disable gftp compatibility.
-#
-# WITHOUT_SCPONLY_WINSCP
-# default: undefined
-# define if you want to disable WinSCP compatibility.
 #
 # WITH_SCPONLY_CHROOT
 # default: undefined
@@ -43,6 +35,14 @@
 # WITH_SCPONLY_RSYNC
 # default: undefined
 # define if you want to enable rsync compatibility.
+#
+# WITH_SCPONLY_SCP
+# default: undefined
+# define if you want to enable vanilla scp compatibility.
+#
+# WITH_SCPONLY_SFTP_LOGGING
+# default: undefined
+# define if you want to enable sftp logging compatibility.
 #
 # WITH_SCPONLY_SVN
 # default: undefined
@@ -56,6 +56,10 @@
 # default: undefined
 # define if you want to enable unison compatibility.
 #
+# WITH_SCPONLY_WINSCP
+# default: undefined
+# define if you want to enable WinSCP compatibility.
+#
 #
 # Additional knobs:
 #
@@ -66,8 +70,8 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	4.1
-PORTREVISION=	2
+PORTVERSION=	4.2
+PORTREVISION=	0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
@@ -90,16 +94,8 @@ CONFIGURE_ARGS+=--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
 CONFIGURE_ARGS+=--disable-wildcards
 .endif
 
-.if defined(WITHOUT_SCPONLY_SCP)
-CONFIGURE_ARGS+=--disable-scp-compat
-.endif
-
 .if defined(WITHOUT_SCPONLY_GFTP)
 CONFIGURE_ARGS+=--disable-gftp-compat
-.endif
-
-.if defined(WITHOUT_SCPONLY_WINSCP)
-CONFIGURE_ARGS+=--disable-winscp-compat
 .endif
 
 .if defined(WITH_SCPONLY_CHROOT)
@@ -111,6 +107,14 @@ CONFIGURE_ARGS+=--enable-chrooted-binary
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
+.endif
+
+.if defined(WITH_SCPONLY_SCP)
+CONFIGURE_ARGS+=--enable-scp-compat
+.endif
+
+.if defined(WITH_SCPONLY_SFTP_LOGGING)
+CONFIGURE_ARGS+=--enable-sftp-logging-compat
 .endif
 
 .if defined(WITH_SCPONLY_SVN)
@@ -129,6 +133,10 @@ CONFIGURE_ARGS+=--enable-svnserv-compat
 BUILD_DEPENDS+=	unison:${PORTSDIR}/net/unison
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-unison-compat
+.endif
+
+.if defined(WITH_SCPONLY_WINSCP)
+CONFIGURE_ARGS+=--enable-winscp-compat
 .endif
 
 pre-everything::
