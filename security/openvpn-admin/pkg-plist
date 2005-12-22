@@ -1,0 +1,4 @@
+bin/openvpn-admin
+etc/pam.d/openvpn-admin.pam
+%%DATADIR%%/openvpn-admin.desktop
+@dirrm %%DATADIR%%
