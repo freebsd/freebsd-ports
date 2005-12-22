@@ -1,11 +1,9 @@
-$FreeBSD$
-
---- perl.c.orig	Mon Oct 27 20:32:18 2003
-+++ perl.c	Mon Oct 27 20:33:57 2003
-@@ -3945,6 +3945,27 @@ S_init_perllib(pTHX)
- /* Use the ~-expanded versions of APPLLIB (undocumented),
-     ARCHLIB PRIVLIB SITEARCH SITELIB VENDORARCH and VENDORLIB
- */
+--- perl.c.orig	Fri Apr 22 16:14:27 2005
++++ perl.c	Thu Dec 22 12:47:28 2005
+@@ -4397,6 +4397,27 @@ S_init_perllib(pTHX)
+     incpush(APPLLIB_EXP, TRUE, TRUE, TRUE);
+ #endif
+ 
 +#ifdef SITEARCH_EXP
 +    /* sitearch is always relative to sitelib on Windows for
 +     * DLL-based path intuition to work correctly */
@@ -27,10 +25,10 @@ $FreeBSD$
 +    incpush(SITELIB_STEM, FALSE, TRUE, TRUE);
 +#endif
 +
- #ifdef APPLLIB_EXP
-     incpush(APPLLIB_EXP, TRUE, TRUE, TRUE);
+ #ifdef ARCHLIB_EXP
+     incpush(ARCHLIB_EXP, FALSE, FALSE, TRUE);
  #endif
-@@ -3980,27 +4001,6 @@ S_init_perllib(pTHX)
+@@ -4428,27 +4449,6 @@ S_init_perllib(pTHX)
      incpush(PRIVLIB_EXP, TRUE, FALSE, TRUE);
  #else
      incpush(PRIVLIB_EXP, FALSE, FALSE, TRUE);
