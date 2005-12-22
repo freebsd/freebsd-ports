@@ -1,0 +1,15 @@
+[ excerpt from developer's www site ]
+
+Intel2GAS is a converter that will convert assembler source files
+written for NASM to files that can be assembled using the GNU
+Assembler (GAS), on the i386 platform. It provides support for basic
+MMX instructions as well.
+
+This converter was written for the Hermes project and is now released
+to the general public. The code inside this converter is extremely
+flexible, you can write a syntax file to convert between any two
+assembler languages on a good day.. :)
+
+WWW: http://www.niksula.cs.hut.fi/~mtiihone/intel2gas/
+
+-- lioux@FreeBSD.org
