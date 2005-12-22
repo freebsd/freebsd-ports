@@ -10,7 +10,7 @@
 #
 #  - Nameing knobs:
 #     When a port has a lib-prefix (ie: libquicktime, libxine)
-#      the lib-prefix should be stipped from the knob name.
+#      the lib-prefix should be stripped from the knob name.
 #      (ie: QUICKTIME, XINE).
 #
 #
