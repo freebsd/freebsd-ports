@@ -1,5 +1,5 @@
---- gphpedit.desktop.in.orig	Sat Dec 18 14:14:16 2004
-+++ gphpedit.desktop.in	Sat Dec 18 14:14:39 2004
+--- gphpedit.desktop.in.orig	Thu Dec 22 22:01:19 2005
++++ gphpedit.desktop.in	Thu Dec 22 22:01:42 2005
 @@ -5,5 +5,5 @@
  Terminal=false
  MultipleArgs=true
