@@ -1,0 +1,8 @@
+[ excerpt from developer's www site ]
+
+Nomyso is a Perl program which converts assembly language source
+files for MASM and TASM to NASM-compatible source files.
+
+WWW: http://www.devoresoftware.com/nomyso/
+
+-- lioux@FreeBSD.org
