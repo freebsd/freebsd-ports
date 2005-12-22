@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-FormValidator-Simple
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
@@ -17,7 +17,7 @@ COMMENT=	Validator for Catalyst with FormValidator::Simple
 
 BUILD_DEPENDS=	p5-Catalyst>=5.30:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
-		p5-FormValidator-Simple>=0:${PORTSDIR}/textproc/p5-FormValidator-Simple
+		p5-FormValidator-Simple>=0.13:${PORTSDIR}/textproc/p5-FormValidator-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
