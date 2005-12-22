@@ -1,0 +1,17 @@
+[ excerpt from distfile's README with modifications ]
+
+This is the first version of TASM to AT&T converter (TA2AS). Frank
+van Dijk, member of SPiRiT!, wrote this utility. It reads in a
+source file with TASM syntax and tries(first version remember? :))
+to convert it to AT&T syntax.  It hasn't been tested very well. So
+email all your bugreports to one of the SPiRiT emailaddresses (see
+below). Also for wanted features!  But the sourcefile is included
+so why don't you try first :)
+
+This is one of the utilities we wrote, to make life easier when
+working with DJGPP! :)
+
+
+WWW: http://udrecsuite.sourceforge.net/
+
+-- lioux@FreeBSD.org
