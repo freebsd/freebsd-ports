@@ -8,7 +8,7 @@
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
 CATEGORIES=	games
-MASTER_SITES=	http://www.galgenberg.net/~q/:qf \
+MASTER_SITES=	http://www.galgenberg.net/distfiles/:qf \
 		ftp://ftp.idsoftware.com/idstuff/quake2/source/:id \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/source/:id
 DISTNAME=	quake2-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qf
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	q@galgenberg.net
+MAINTAINER=	alejandro@varnet.biz
 COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
