@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libqglviewer
-PORTVERSION=	2.0.0.3
+PORTVERSION=	2.1.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/
 DISTNAME=	libQGLViewer-${PORTVERSION:R}-${PORTVERSION:E}
@@ -25,12 +25,13 @@ INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/QGLViewer
+PORTDOCS=	*
 
 QMAKE?=		${LOCALBASE}/bin/qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 do-configure:
-	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} QGLViewer.pro PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>
