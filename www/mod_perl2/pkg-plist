@@ -270,7 +270,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl2.pm
-libexec/apache2/mod_perl.so
+%%APACHEMODDIR%%/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Global
