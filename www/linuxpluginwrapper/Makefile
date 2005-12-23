@@ -18,6 +18,10 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
+.if		${OSVERSION} >= 700009
+IGNORE=		doesn't support ELF Symbol versioning, yet.
+.endif
+
 # I will remove WITH_PLUGINS knob.
 .if		defined(WITH_PLUGINS)
 RUN_DEPENDS=	${X11BASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
