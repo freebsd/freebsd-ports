@@ -15,13 +15,17 @@ COMMENT=	Perl5 interface to DMAC Double Message-Digest Algorithms
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Digest::DMAC.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_ = "" if m{warnings}' ${WRKSRC}/DMAC.pm ${WRKSRC}/t/*.t
 .endif
+
 .include <bsd.port.post.mk>
