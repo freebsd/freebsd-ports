@@ -871,7 +871,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-11-10</discovery>
       <entry>2005-11-13</entry>
-      <modified>2005-11-14</modified>
+      <modified>2005-12-23</modified>
     </dates>
   </vuln>
 
@@ -4404,6 +4404,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-03-22</discovery>
       <entry>2005-07-09</entry>
+      <modified>2005-12-23</modified>
     </dates>
   </vuln>
 
