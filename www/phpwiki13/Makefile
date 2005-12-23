@@ -7,7 +7,7 @@
 
 PORTNAME=	phpwiki
 PORTVERSION=	1.3.11p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
@@ -18,7 +18,7 @@ COMMENT=	A PHP WikiWikiWeb
 CONFLICTS+=	phpwiki-1.2*
 LATEST_LINK=	phpwiki13
 
-USE_PHP=	ctype pcre posix session tokenizer xml zlib mysql
+USE_PHP=	ctype pcre posix session tokenizer xml zlib
 
 NO_BUILD=	YES
 PHP4_PORT?=	www/mod_php4
@@ -34,6 +34,10 @@ DOCFILES=	INSTALL LICENSE README TODO UPGRADING
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
 		DB4   "Use Berkeley DB4 backend" off
+
+.if exists(${LOCALBASE}/etc/php.conf)
+.include "${LOCALBASE}/etc/php.conf"
+.endif
 
 .if defined(PHP_VER) && ${PHP_VER} == 5
 OPTIONS+=	SQLITE "Use SQLite backend" off
