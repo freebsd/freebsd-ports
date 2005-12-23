@@ -13,11 +13,11 @@ MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_SRC680_m${MILESTONE}_source.tar.bz2
+DISTFILES+=	OOo_${OOOTAG}_source.tar.bz2
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
-EXTRACT_ONLY=	OOo_SRC680_m${MILESTONE}_source.tar.bz2
+EXTRACT_ONLY=	OOo_${OOOTAG}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -59,13 +59,14 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		145
-SNAPDATE=		20051208
-INSTALLATION_BASEDIR?=	openoffice.org${RELEASE_NR}m${MILESTONE}
-EXECBASE?=		openoffice.org-${RELEASE_NR}m${MILESTONE}
+MILESTONE?=		146
+OOOTAG?=		SRC680_m${MILESTONE}
+SNAPDATE=		20051222
+INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
+EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
-PACKAGE_BASENAME=	OOo_${RELEASE_NR}m${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}Intel
 
 LOCALIZED_LANG?=	en-US
 # FIXME (Somehow INDEX build fails)
@@ -191,7 +192,7 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
@@ -216,7 +217,7 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
-			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
+			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
