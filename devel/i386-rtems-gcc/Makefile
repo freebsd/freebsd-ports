@@ -25,9 +25,9 @@ COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Configure fails on FreeBSD >= 7.0"
-.endif
+#.if ${OSVERSION} >= 700000
+#BROKEN=		"Configure fails on FreeBSD >= 7.0"
+#.endif
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"
