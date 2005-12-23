@@ -89,11 +89,11 @@ pre-fetch:
 	@${ECHO} "You can select the language for OOo by making it with:"
 	@${ECHO} "make LOCALIZED_LANG=xx" 
 	@${ECHO} "while xx can be one of the following"
-	@${ECHO} "af ar bn be-BY bg ca cs cy da de el en-GB en-US eo es"
-	@${ECHO} "et eu fi fr ga gl gu-IN he hi-IN hr hu it ja km kn-IN"
-	@${ECHO} "ko lo lt ms ne nb nl nn nr ns pa-IN pl pt pt-BR ru rw"
-	@${ECHO} "sk sl sh-YU sr-CS ss st sv sw-TZ ta-IN th tn tr ts ve"
-	@${ECHO} "vi xh zh-CN zh-TW zu"
+	@${ECHO} "af ar be-BY bg br bn bn-BD bn-IN bs ca cs cy da de el"
+	@${ECHO} "en-GB en-US en-ZA eo es et eu fi fr ga gl gu-IN he hi-IN"
+	@${ECHO} "hr hu it ja km kn-IN ko lo lt lv mk ms ne nb nl nn nr"
+	@${ECHO} "ns pa-IN pl pt pt-BR ru rw sk sl sh-YU sr-CS ss st sv"
+	@${ECHO} "sw sw-TZ sx ta-IN th tn tr ts ve vi xh zh-CN zh-TW zu"
 	@${ECHO} "Default: en-US"
 #XXX currently broken
 #.if !defined(WITHOUT_JAVA)
