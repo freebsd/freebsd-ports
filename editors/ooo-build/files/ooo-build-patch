@@ -20,9 +20,9 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/OOO_2_0/apply.orig	Wed Nov 30 01:16:48 2005
-+++ patches/OOO_2_0/apply	Sun Dec  4 11:54:05 2005
-@@ -57,6 +57,8 @@
+--- patches/src680/apply.orig	Thu Dec 22 18:47:08 2005
++++ patches/src680/apply	Sat Dec 24 01:46:07 2005
+@@ -64,6 +64,8 @@
  Gentoo64: GentooBase, 64bit
  # Win32
  Win32 : Win32Common, NovellOnly, NovellOnlyWin32
@@ -31,7 +31,16 @@ gnu patch is gpatch for FreeBSD.
  
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
-@@ -495,7 +497,7 @@
+@@ -306,7 +308,7 @@
+ 
+ [ Shrink ]
+ # strip 450k of .comment sections - i#57063
+-size-strip.diff
++# size-strip.diff
+ # save 1.7Mb of (shared) memory for non-asian locales
+ cws-i18nshrink.diff
+ 
+@@ -557,7 +559,7 @@
  # Fix missing __cxa_guard_acquire/__cxa_guard_release - #34676 (for FC3)
  sal-cxa-guard.diff
  # do not pack any potential .orig files with ppds
@@ -40,5 +49,3 @@ gnu patch is gpatch for FreeBSD.
  # Fix ODK Java bits
  odk-java-wizpanel.diff
  # add possibility to set ARCH_FLAGS when building libnas
-
-
