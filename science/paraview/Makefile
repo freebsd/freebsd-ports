@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	2.2.1
+PORTVERSION=	2.4.1
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.paraview.org/files/v2.2/
+MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	ParaView is a powerful scientific data visualization application
@@ -19,6 +19,7 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+PLIST_SUB+=	VERMAJORMINOR=2.4
 
 do-configure:
 	${MKDIR} ${WRKSRC}
@@ -29,6 +30,7 @@ do-configure:
 		-DCMAKE_CXX_COMPILER=${CXX} \
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
 		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-		-DPARAVIEW_USE_SYSTEM_HDF5=1
+		-DPARAVIEW_USE_SYSTEM_HDF5=1 \
+		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1
 
 .include <bsd.port.mk>
