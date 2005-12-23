@@ -10,7 +10,7 @@ lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/encoding.h
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/typedstream.h
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/thr.h
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/cc1obj
-m68k-rtems/lib/m68000/libobjc.la     
+m68k-rtems/lib/m68000/libobjc.la
 m68k-rtems/lib/m68000/libobjc.a
 m68k-rtems/lib/m68040/msoft-float/libobjc.la
 m68k-rtems/lib/m68040/msoft-float/libobjc.a

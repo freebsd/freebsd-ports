@@ -11,7 +11,7 @@ lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/typedstream.h
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/include/objc/thr.h
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/cc1obj
 sh-rtems/lib/ml/m2/libobjc.la
-sh-rtems/lib/ml/m2/libobjc.a            
+sh-rtems/lib/ml/m2/libobjc.a
 sh-rtems/lib/ml/m3e/libobjc.la
 sh-rtems/lib/ml/m3e/libobjc.a
 sh-rtems/lib/ml/m4-single-only/libobjc.la
