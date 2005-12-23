@@ -6,19 +6,18 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.0.0
-PORTREVISION=	1
+PORTVERSION?=	2.0.1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_2.0.0_src.tar.gz
+DISTFILES+=	OOo_${PORTVERSION}_src.tar.gz
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
-EXTRACT_ONLY=	OOo_2.0.0_src.tar.gz
+EXTRACT_ONLY=	OOo_${PORTVERSION}_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -59,7 +58,8 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-INSTALLATION_BASEDIR?=	openoffice.org${PORTVERSION}
+OOOTAG?=		OOA680_m1
+INSTALLATION_BASEDIR?=	openoffice.org-${PORTVERSION}
 EXECBASE?=		openoffice.org-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
@@ -119,7 +119,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/OOo_2.0.0rc3_src
+WRKSRC=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 ZIP?=		${PREFIX}/bin/zip
@@ -174,11 +174,11 @@ do-build:
 .endif
 
 do-install:
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.tgz > ${WRKDIR}/INSTALLFILES
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.tgz > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
 	@${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
-		${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
+		${CP} ${WRKSRC}/instsetoo_native/unxfbsd.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ${WRKDIR}/tmp ; \
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKDIR}/tmp/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
@@ -189,7 +189,6 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
 			-e 's#%%PORTVERSION%%#${PORTVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
@@ -204,11 +203,6 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-# python post-install script start
-# consult instsetoo_native/inc_openoffice/unix/shellscripts_pyuno.txt
-	@cd ${PREFIX}/${INSTALLATION_BASEDIR}/program ; ${LN} -s python-core-2.3.4 ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core; ${LN} -s python.sh ${PREFIX}/${INSTALLATION_BASEDIR}/program/python
-	@${CHMOD} +x ${PREFIX}/${INSTALLATION_BASEDIR}/program/python-core-2.3.4/bin/python
-# python post-install script end
 	@${PRINTF} "bin/openoffice.org\n" > ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
@@ -220,7 +214,6 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
-			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
