@@ -5471,6 +5471,7 @@ libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
+libjbigi	ports/math/libjbigi
 libjit		ports/lang/libjit
 libkexif	ports/graphics/libkexif
 libkipi		ports/graphics/libkipi
