@@ -1,0 +1,14 @@
+When working with text it is convenient and common to want to truncate
+strings to make them fit a desired context. E.g., you might have a menu
+that is only 100px wide and prefer text doesn't wrap so you'd truncate
+it around 15-30 characters, depending on preference and typeface size.
+This is trivial with plain text and substr but with HTML it is somewhat
+difficult because whitespace has fluid significance and open tags that
+are not properly closed destroy well-formedness and can wreck an entire
+layout.
+
+HTML::Truncate attempts to account for those two problems by padding
+truncation for spacing and entities and closing any tags that remain
+open at the point of truncation.
+
+WWW: http://search.cpan.org/dist/HTML-Truncate/
