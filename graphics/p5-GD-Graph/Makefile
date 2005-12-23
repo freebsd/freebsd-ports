@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	GD-Graph
-PORTVERSION=	1.43
+PORTVERSION=	1.43.05
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	GD
+MASTER_SITE_SUBDIR=	Test/BWARFIELD
 PKGNAMEPREFIX=	p5-
-DISTNAME=	GDGraph-${PORTVERSION}
+DISTNAME=	GDGraph-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Graph plotting module for perl5
@@ -28,5 +28,8 @@ MAN3=		GD::Graph.3 \
 		GD::Graph::FAQ.3 \
 		GD::Graph::colour.3 \
 		GD::Graph::hbars.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -print0 | ${XARGS} -0 ${RM} -f
 
 .include <bsd.port.mk>
