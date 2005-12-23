@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	1.5rc1
-PORTREVISION=	2
+DISTVERSION=	1.5rc2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -36,7 +35,7 @@ MOZ_OPTIONS=	--enable-single-profile --disable-profilesharing	\
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1
 MOZ_EXPORT=	MOZ_THUNDERBIRD=1
 
-PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
+PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/icons/default.xpm
 
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
