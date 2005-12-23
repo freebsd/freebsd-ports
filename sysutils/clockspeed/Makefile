@@ -7,7 +7,7 @@
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
@@ -44,6 +44,9 @@ do-configure:
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${CC} -s -L${LOCALBASE}/lib > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
+
+post-build:
+	@${CP} ${LOCALBASE}/etc/leapsecs.dat ${WRKSRC}/leapsecs.dat
 
 post-install: real-post-install
 
