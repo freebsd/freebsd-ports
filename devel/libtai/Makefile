@@ -7,7 +7,7 @@
 
 PORTNAME=	libtai
 PORTVERSION=	0.60
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
@@ -40,6 +40,8 @@ do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} -fPIC -DPIC > ${WRKSRC}/conf-ccso
+# update leap seconds table
+	@${CAT} ${FILESDIR}/leapsecs-update.txt >> ${WRKSRC}/leapsecs.txt
 
 pre-install:
 # correct header locations inside files
@@ -47,6 +49,11 @@ pre-install:
 	@${REINPLACE_CMD} -E -e 's|(#include[[:space:]]+)"([^"]+)"|\1<libtai/\2>|' \
 		${WRKSRC}/${file}
 .endfor
+
+post-build:
+	@${ENV} LD_LIBRARY_PATH=${WRKSRC} \
+		${WRKSRC}/leapsecs < ${WRKSRC}/leapsecs.txt > \
+		${WRKSRC}/leapsecs.dat
 
 do-install:
 	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${BINGRP} -m 644 \
