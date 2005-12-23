@@ -14,7 +14,7 @@ etc/file_rules.txt
 etc/file_users.txt
 etc/file_vfs.txt
 etc/file_who.txt
-etc/file_groups.txt   
+etc/file_groups.txt
 include/wzdftpd/libwzd-auth/wzd_auth.h
 include/wzdftpd/libwzd-auth/wzd_crypt.h
 include/wzdftpd/libwzd-auth/wzd_md5.h
