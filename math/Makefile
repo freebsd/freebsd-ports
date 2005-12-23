@@ -106,6 +106,7 @@
     SUBDIR += ldouble
     SUBDIR += libRmath
     SUBDIR += libgmp4
+    SUBDIR += libjbigi
     SUBDIR += libmath++
     SUBDIR += libneural
     SUBDIR += libqalculate
