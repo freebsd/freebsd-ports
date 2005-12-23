@@ -14,8 +14,8 @@ sparc-rtems/lib/soft/v8/libobjc.la
 sparc-rtems/lib/soft/v8/libobjc.a
 sparc-rtems/lib/soft/libobjc.la
 sparc-rtems/lib/soft/libobjc.a
-sparc-rtems/lib/v8/libobjc.la   
+sparc-rtems/lib/v8/libobjc.la
 sparc-rtems/lib/v8/libobjc.a
-sparc-rtems/lib/libobjc.la    
-sparc-rtems/lib/libobjc.a  
+sparc-rtems/lib/libobjc.la
+sparc-rtems/lib/libobjc.a
 @dirrm lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/include/objc

@@ -12,7 +12,7 @@ lib/gcc-lib/mips-rtems/%%GCCVERSION%%/include/objc/thr.h
 lib/gcc-lib/mips-rtems/%%GCCVERSION%%/cc1obj
 mips-rtems/lib/el/libobjc.la
 mips-rtems/lib/el/libobjc.a
-mips-rtems/lib/single/el/libobjc.la  
+mips-rtems/lib/single/el/libobjc.la
 mips-rtems/lib/single/el/libobjc.a
 mips-rtems/lib/single/libobjc.la
 mips-rtems/lib/single/libobjc.a

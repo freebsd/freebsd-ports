@@ -205,8 +205,8 @@ lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/iso646.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/ppc-asm.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/altivec.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/limits.h
-lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/float.h  
-lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/README     
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/float.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/README
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/cc1
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/cc1plus
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/collect2
@@ -726,10 +726,10 @@ powerpc-rtems/lib/m603e/roe/nof/libm.a
 powerpc-rtems/lib/m603e/roe/nof/libc.a
 powerpc-rtems/lib/m603e/roe/nof/crt0.o
 powerpc-rtems/lib/m603e/roe/nof/libg.a
-powerpc-rtems/lib/m603e/roe/libm.a  
-powerpc-rtems/lib/m603e/roe/libc.a 
-powerpc-rtems/lib/m603e/roe/crt0.o  
-powerpc-rtems/lib/m603e/roe/libg.a 
+powerpc-rtems/lib/m603e/roe/libm.a
+powerpc-rtems/lib/m603e/roe/libc.a
+powerpc-rtems/lib/m603e/roe/crt0.o
+powerpc-rtems/lib/m603e/roe/libg.a
 powerpc-rtems/lib/m603e/nof/libsupc++.la
 powerpc-rtems/lib/m603e/nof/libsupc++.a
 powerpc-rtems/lib/m603e/nof/libstdc++.la

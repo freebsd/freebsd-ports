@@ -10,10 +10,10 @@ lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/encoding.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/typedstream.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/objc/thr.h
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/cc1obj
-powerpc-rtems/lib/m403/roe/libobjc.la         
-powerpc-rtems/lib/m403/roe/libobjc.a         
-powerpc-rtems/lib/m403/libobjc.la         
-powerpc-rtems/lib/m403/libobjc.a         
+powerpc-rtems/lib/m403/roe/libobjc.la
+powerpc-rtems/lib/m403/roe/libobjc.a
+powerpc-rtems/lib/m403/libobjc.la
+powerpc-rtems/lib/m403/libobjc.a
 powerpc-rtems/lib/m505/roe/libobjc.la
 powerpc-rtems/lib/m505/roe/libobjc.a
 powerpc-rtems/lib/m505/libobjc.la
