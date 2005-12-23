@@ -7,13 +7,10 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	1.0a1
-PORTREVISION=	1
+DISTVERSION=	1.0b
 CATEGORIES?=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
-#MASTER_SITES=	${MASTER_SITE_MOZILLA}
-#MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -34,7 +31,8 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
-		--enable-system-cairo
+		--enable-system-cairo		\
+		--enable-canvas
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=suite
 
 OPTIONS=MAILNEWS "Enable Mail and News modules" on \
@@ -88,10 +86,6 @@ MOZ_OPTIONS+=	--enable-calendar
 .if defined(WITHOUT_COMPOSER)
 MOZ_OPTIONS+=	--disable-composer
 .endif
-
-#.if ${ARCH} == "i386"
-#CONFIGURE_ARGS+=	--enable-reorder
-#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
