@@ -7,6 +7,7 @@ PORTNAME=	ooo-build
 PORTVERSION=	${OOO-BUILDVERSION}
 MASTER_SITES+=	http://ooo.ximian.com/packages/OOO680/ \
 		http://ooo.ximian.com/packages/SRC680/ \
+		http://ooo.ximian.com/packages/OOA680/ \
 		${MASTER_SITE_SOURCEFORGE:S/$/:wpd/}:wpd \
 		http://www.openclipart.org/downloads/0.18/:openclipart
 MASTER_SITE_SUBDIR+= libwpd/:wpd
@@ -20,8 +21,8 @@ MAINTAINER=	maho@FreeBSD.org
 #DEVELOPER_VER=	yes #you must be an expert or guru to activate this 
 .if defined(DEVELOPER_VER)
 OOO-BUILDVERSION=2.0.0.${MILESTONE}
-MILESTONE=	140
-OOOBUILD=	ooo-build-src680.140.1
+MILESTONE=	143
+OOOBUILD=	ooo-build-src680.${MILESTONE}.0
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
 OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
@@ -31,7 +32,7 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-6.tar.bz2
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOO-BUILDVERSION=2.0.0.2
+OOO-BUILDVERSION=2.0.1
 OOOBUILD=	ooo-build-${OOO-BUILDVERSION}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
@@ -40,7 +41,7 @@ OOO_LIBWPD=	libwpd-0.8.3.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-6.tar.bz2
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
-OOO_PATCHDIR=OOO_2_0
+OOO_PATCHDIR=src680
 .endif
 
 MD5_FILE=      ${.CURDIR}/distinfo
