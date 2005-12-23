@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Perl extension for ElfHash hash algorithm
 
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Digest::Elf.3
 
