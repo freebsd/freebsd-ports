@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-PORTVERSION=	2.3
+PORTVERSION=	2.5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -17,9 +17,9 @@ COMMENT=	A php script that displays info about the host being accessed
 USE_PHP=	pcre xml
 WANT_PHP_WEB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}-dev
-WEBOWN?=	www
-WEBGRP?=	www
+WRKSRC=		${WRKDIR}/${PORTNAME:L}
+WWWOWN?=	www
+WWWGRP?=	www
 APACHEDIR=	${PREFIX}/www/data
 INSTALLDIR=	${APACHEDIR}/phpSysInfo
 NO_BUILD=	yes
@@ -38,7 +38,7 @@ post-patch:
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
 	${CHMOD} -R ${BINMODE} ${INSTALLDIR}
 	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
