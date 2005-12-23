@@ -35,8 +35,8 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	5.5.0
-BUILD_VER=	18463
+VMWARE_VER=	5.5.1
+BUILD_VER=	19175
 
 .include <bsd.port.pre.mk>
 
