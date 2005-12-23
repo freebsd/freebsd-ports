@@ -21,7 +21,10 @@ MAN3=	Digest::Perl::Digest-MD4.3 \
 WRKSRC=	${WRKDIR}/MD4
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_ = "" if m{warnings}' ${WRKSRC}/MD4.pm
 .endif
+
 .include <bsd.port.post.mk>
