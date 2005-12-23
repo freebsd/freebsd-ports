@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1710_RC2b
-PORTEPOCH=	2
+DISTVERSION=	1710_F2
+PORTEPOCH=	3
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
 		http://download.mercury.to/
@@ -36,7 +36,9 @@ LINSTDIR?=	share/Mercury
 INSTDIR=	${PREFIX}/${LINSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 SUB_DIRS=	lib resources
-DIR2PRUNE=	resources/AppData/Games
+DIR2PRUNE=	resources/AppData/Games		\
+		resources/AppData/Plugins	\
+		resources/AppData/Themes
 
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar

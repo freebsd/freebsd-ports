@@ -221,13 +221,11 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLGroup
 @dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLContact
 @dirrm %%INSTDIR%%/resources/AppData/Views
-@dirrm %%INSTDIR%%/resources/AppData/Themes
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
 @dirrm %%INSTDIR%%/resources/AppData/SplashWindow
 @dirrm %%INSTDIR%%/resources/AppData/Sounds
 @dirrm %%INSTDIR%%/resources/AppData/Skins
-@dirrm %%INSTDIR%%/resources/AppData/Plugins
 @dirrm %%INSTDIR%%/resources/AppData/LoginImages
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
 @dirrm %%INSTDIR%%/resources/AppData/Backgrounds
