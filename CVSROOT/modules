@@ -5865,6 +5865,7 @@ ljsm		ports/www/ljsm
 lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
+llvm		ports/devel/llvm
 lm-solve	ports/games/lm-solve
 lmarbles	ports/games/lmarbles
 lmbench		ports/benchmarks/lmbench
