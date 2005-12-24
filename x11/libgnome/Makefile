@@ -29,8 +29,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack esound \
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 SUB_FILES=	pkg-deinstall
 
