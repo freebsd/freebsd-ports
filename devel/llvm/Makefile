@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.cs.uiuc.edu/releases/${PORTVERSION}/
 
@@ -28,6 +29,8 @@ MAN1=		analyze.1 bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
 post-patch:
 	${REINPLACE_CMD} -e 's,\(OPTIONAL_DIRS.*\)examples,\1,g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,\(PROJ_docsdir.*:=\).*$$,\1${DOCSDIR},g' \
+		${WRKSRC}/Makefile.config.in
 	${RM} -rf ${WRKSRC}/projects/sample
 
 .include <bsd.port.mk>

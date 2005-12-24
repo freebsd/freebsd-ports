@@ -1,5 +1,7 @@
 bin/analyze
 bin/bugpoint
+bin/burg
+bin/fpcmp
 bin/gccas
 bin/gccld
 bin/llc
@@ -19,91 +21,7 @@ bin/llvm-stub
 bin/llvmc
 bin/opt
 bin/stkrc
-docs/llvm/html.tar.gz
-docs/llvm/html/AliasAnalysis.html
-docs/llvm/html/Bugpoint.html
-docs/llvm/html/BytecodeFormat.html
-docs/llvm/html/CFEBuildInstrs.html
-docs/llvm/html/CodeGenerator.html
-docs/llvm/html/CodingStandards.html
-docs/llvm/html/CommandGuide/analyze.html
-docs/llvm/html/CommandGuide/bugpoint.html
-docs/llvm/html/CommandGuide/gccas.html
-docs/llvm/html/CommandGuide/gccld.html
-docs/llvm/html/CommandGuide/index.html
-docs/llvm/html/CommandGuide/llc.html
-docs/llvm/html/CommandGuide/lli.html
-docs/llvm/html/CommandGuide/llvm-ar.html
-docs/llvm/html/CommandGuide/llvm-as.html
-docs/llvm/html/CommandGuide/llvm-bcanalyzer.html
-docs/llvm/html/CommandGuide/llvm-db.html
-docs/llvm/html/CommandGuide/llvm-dis.html
-docs/llvm/html/CommandGuide/llvm-extract.html
-docs/llvm/html/CommandGuide/llvm-ld.html
-docs/llvm/html/CommandGuide/llvm-link.html
-docs/llvm/html/CommandGuide/llvm-nm.html
-docs/llvm/html/CommandGuide/llvm-prof.html
-docs/llvm/html/CommandGuide/llvm-ranlib.html
-docs/llvm/html/CommandGuide/llvmc.html
-docs/llvm/html/CommandGuide/llvmgcc.html
-docs/llvm/html/CommandGuide/llvmgxx.html
-docs/llvm/html/CommandGuide/manpage.css
-docs/llvm/html/CommandGuide/opt.html
-docs/llvm/html/CommandGuide/stkrc.html
-docs/llvm/html/CommandLine.html
-docs/llvm/html/CompilerDriver.html
-docs/llvm/html/CompilerWriterInfo.html
-docs/llvm/html/ExtendingLLVM.html
-docs/llvm/html/FAQ.html
-docs/llvm/html/GarbageCollection.html
-docs/llvm/html/GettingStarted.html
-docs/llvm/html/GettingStartedVS.html
-docs/llvm/html/HowToSubmitABug.html
-docs/llvm/html/LLVMVsTheWorld.html
-docs/llvm/html/LangRef.html
-docs/llvm/html/Lexicon.html
-docs/llvm/html/MakefileGuide.html
-docs/llvm/html/ProgrammersManual.html
-docs/llvm/html/Projects.html
-docs/llvm/html/ReleaseNotes.html
-docs/llvm/html/SourceLevelDebugging.html
-docs/llvm/html/Stacker.html
-docs/llvm/html/SystemLibrary.html
-docs/llvm/html/TableGenFundamentals.html
-docs/llvm/html/TestingGuide.html
-docs/llvm/html/UsingLibraries.html
-docs/llvm/html/WritingAnLLVMBackend.html
-docs/llvm/html/WritingAnLLVMPass.html
-docs/llvm/html/doxygen.css
-docs/llvm/html/img/Debugging.gif
-docs/llvm/html/img/libdeps.gif
-docs/llvm/html/img/lines.gif
-docs/llvm/html/img/objdeps.gif
-docs/llvm/html/img/venusflytrap.jpg
-docs/llvm/html/index.html
-docs/llvm/html/llvm.css
-docs/llvm/ps/analyze.ps
-docs/llvm/ps/bugpoint.ps
-docs/llvm/ps/gccas.ps
-docs/llvm/ps/gccld.ps
-docs/llvm/ps/llc.ps
-docs/llvm/ps/lli.ps
-docs/llvm/ps/llvm-ar.ps
-docs/llvm/ps/llvm-as.ps
-docs/llvm/ps/llvm-bcanalyzer.ps
-docs/llvm/ps/llvm-db.ps
-docs/llvm/ps/llvm-dis.ps
-docs/llvm/ps/llvm-extract.ps
-docs/llvm/ps/llvm-ld.ps
-docs/llvm/ps/llvm-link.ps
-docs/llvm/ps/llvm-nm.ps
-docs/llvm/ps/llvm-prof.ps
-docs/llvm/ps/llvm-ranlib.ps
-docs/llvm/ps/llvmc.ps
-docs/llvm/ps/llvmgcc.ps
-docs/llvm/ps/llvmgxx.ps
-docs/llvm/ps/opt.ps
-docs/llvm/ps/stkrc.ps
+bin/tblgen
 etc/llvm/.dir
 etc/llvm/C
 etc/llvm/c
@@ -348,6 +266,91 @@ lib/libLLVMTransforms.a
 lib/libLLVMipa.a
 lib/libLLVMipo.a
 lib/stkr_compiler.o
+%%DOCSDIR%%/html.tar.gz
+%%DOCSDIR%%/html/AliasAnalysis.html
+%%DOCSDIR%%/html/Bugpoint.html
+%%DOCSDIR%%/html/BytecodeFormat.html
+%%DOCSDIR%%/html/CFEBuildInstrs.html
+%%DOCSDIR%%/html/CodeGenerator.html
+%%DOCSDIR%%/html/CodingStandards.html
+%%DOCSDIR%%/html/CommandGuide/analyze.html
+%%DOCSDIR%%/html/CommandGuide/bugpoint.html
+%%DOCSDIR%%/html/CommandGuide/gccas.html
+%%DOCSDIR%%/html/CommandGuide/gccld.html
+%%DOCSDIR%%/html/CommandGuide/index.html
+%%DOCSDIR%%/html/CommandGuide/llc.html
+%%DOCSDIR%%/html/CommandGuide/lli.html
+%%DOCSDIR%%/html/CommandGuide/llvm-ar.html
+%%DOCSDIR%%/html/CommandGuide/llvm-as.html
+%%DOCSDIR%%/html/CommandGuide/llvm-bcanalyzer.html
+%%DOCSDIR%%/html/CommandGuide/llvm-db.html
+%%DOCSDIR%%/html/CommandGuide/llvm-dis.html
+%%DOCSDIR%%/html/CommandGuide/llvm-extract.html
+%%DOCSDIR%%/html/CommandGuide/llvm-ld.html
+%%DOCSDIR%%/html/CommandGuide/llvm-link.html
+%%DOCSDIR%%/html/CommandGuide/llvm-nm.html
+%%DOCSDIR%%/html/CommandGuide/llvm-prof.html
+%%DOCSDIR%%/html/CommandGuide/llvm-ranlib.html
+%%DOCSDIR%%/html/CommandGuide/llvmc.html
+%%DOCSDIR%%/html/CommandGuide/llvmgcc.html
+%%DOCSDIR%%/html/CommandGuide/llvmgxx.html
+%%DOCSDIR%%/html/CommandGuide/manpage.css
+%%DOCSDIR%%/html/CommandGuide/opt.html
+%%DOCSDIR%%/html/CommandGuide/stkrc.html
+%%DOCSDIR%%/html/CommandLine.html
+%%DOCSDIR%%/html/CompilerDriver.html
+%%DOCSDIR%%/html/CompilerWriterInfo.html
+%%DOCSDIR%%/html/ExtendingLLVM.html
+%%DOCSDIR%%/html/FAQ.html
+%%DOCSDIR%%/html/GarbageCollection.html
+%%DOCSDIR%%/html/GettingStarted.html
+%%DOCSDIR%%/html/GettingStartedVS.html
+%%DOCSDIR%%/html/HowToSubmitABug.html
+%%DOCSDIR%%/html/LLVMVsTheWorld.html
+%%DOCSDIR%%/html/LangRef.html
+%%DOCSDIR%%/html/Lexicon.html
+%%DOCSDIR%%/html/MakefileGuide.html
+%%DOCSDIR%%/html/ProgrammersManual.html
+%%DOCSDIR%%/html/Projects.html
+%%DOCSDIR%%/html/ReleaseNotes.html
+%%DOCSDIR%%/html/SourceLevelDebugging.html
+%%DOCSDIR%%/html/Stacker.html
+%%DOCSDIR%%/html/SystemLibrary.html
+%%DOCSDIR%%/html/TableGenFundamentals.html
+%%DOCSDIR%%/html/TestingGuide.html
+%%DOCSDIR%%/html/UsingLibraries.html
+%%DOCSDIR%%/html/WritingAnLLVMBackend.html
+%%DOCSDIR%%/html/WritingAnLLVMPass.html
+%%DOCSDIR%%/html/doxygen.css
+%%DOCSDIR%%/html/img/Debugging.gif
+%%DOCSDIR%%/html/img/libdeps.gif
+%%DOCSDIR%%/html/img/lines.gif
+%%DOCSDIR%%/html/img/objdeps.gif
+%%DOCSDIR%%/html/img/venusflytrap.jpg
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/llvm.css
+%%DOCSDIR%%/ps/analyze.ps
+%%DOCSDIR%%/ps/bugpoint.ps
+%%DOCSDIR%%/ps/gccas.ps
+%%DOCSDIR%%/ps/gccld.ps
+%%DOCSDIR%%/ps/llc.ps
+%%DOCSDIR%%/ps/lli.ps
+%%DOCSDIR%%/ps/llvm-ar.ps
+%%DOCSDIR%%/ps/llvm-as.ps
+%%DOCSDIR%%/ps/llvm-bcanalyzer.ps
+%%DOCSDIR%%/ps/llvm-db.ps
+%%DOCSDIR%%/ps/llvm-dis.ps
+%%DOCSDIR%%/ps/llvm-extract.ps
+%%DOCSDIR%%/ps/llvm-ld.ps
+%%DOCSDIR%%/ps/llvm-link.ps
+%%DOCSDIR%%/ps/llvm-nm.ps
+%%DOCSDIR%%/ps/llvm-prof.ps
+%%DOCSDIR%%/ps/llvm-ranlib.ps
+%%DOCSDIR%%/ps/llvmc.ps
+%%DOCSDIR%%/ps/llvmgcc.ps
+%%DOCSDIR%%/ps/llvmgxx.ps
+%%DOCSDIR%%/ps/opt.ps
+%%DOCSDIR%%/ps/stkrc.ps
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms
 @dirrm include/llvm/Target
@@ -364,9 +367,8 @@ lib/stkr_compiler.o
 @dirrm include/llvm/ADT
 @dirrm include/llvm
 @dirrm etc/llvm
-@dirrm docs/llvm/ps
-@dirrm docs/llvm/html/img
-@dirrm docs/llvm/html/CommandGuide
-@dirrm docs/llvm/html
-@dirrm docs/llvm
-@dirrm docs
+@dirrm %%DOCSDIR%%/ps
+@dirrm %%DOCSDIR%%/html/img
+@dirrm %%DOCSDIR%%/html/CommandGuide
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
