@@ -4,21 +4,11 @@
 @unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; else echo If permanently deleting this package, %D/%%T%%/conf/catalina.policy must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/catalina.properties %D/%%T%%/conf/catalina.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.properties; else echo If permanently deleting this package, %D/%%T%%/conf/catalina.properties must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/context.xml %D/%%T%%/conf/context.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/context.xml; else echo If permanently deleting this package, %D/%%T%%/conf/context.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/jk2.manifest %D/%%T%%/conf/jk2.manifest.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.manifest; else echo If permanently deleting this package, %D/%%T%%/conf/jk2.manifest must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/jk2.properties %D/%%T%%/conf/jk2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/jk2.properties must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/jkconf.ant.xml %D/%%T%%/conf/jkconf.ant.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jkconf.ant.xml; else echo If permanently deleting this package, %D/%%T%%/conf/jkconf.ant.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/jkconfig.manifest %D/%%T%%/conf/jkconfig.manifest.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jkconfig.manifest; else echo If permanently deleting this package, %D/%%T%%/conf/jkconfig.manifest must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/server-minimal.xml %D/%%T%%/conf/server-minimal.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-minimal.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server-minimal.xml must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/shm.manifest %D/%%T%%/conf/shm.manifest.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/shm.manifest; else echo If permanently deleting this package, %D/%%T%%/conf/shm.manifest must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/tomcat-jk2.manifest %D/%%T%%/conf/tomcat-jk2.manifest.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-jk2.manifest; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-jk2.manifest must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/uriworkermap.properties %D/%%T%%/conf/uriworkermap.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/uriworkermap.properties; else echo If permanently deleting this package, %D/%%T%%/conf/uriworkermap.properties must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/workers.properties %D/%%T%%/conf/workers.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers.properties; else echo If permanently deleting this package, %D/%%T%%/conf/workers.properties must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/workers.properties.minimal %D/%%T%%/conf/workers.properties.minimal.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers.properties.minimal; else echo If permanently deleting this package, %D/%%T%%/conf/workers.properties.minimal must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/workers2.properties %D/%%T%%/conf/workers2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/workers2.properties must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/workers2.properties.minimal %D/%%T%%/conf/workers2.properties.minimal.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/workers2.properties.minimal; else echo If permanently deleting this package, %D/%%T%%/conf/workers2.properties.minimal must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/logging.properties %D/%%T%%/conf/logging.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/logging.properties; else echo If permanently deleting this package, %D/%%T%%/conf/logging.properties must be removed manually; fi
 bin/tomcat55ctl
 etc/rc.d/jakarta-tomcat55.sh
 %%T%%/LICENSE
@@ -26,19 +16,21 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/RELEASE-NOTES
 %%T%%/RUNNING.txt
 %%T%%/bin/bootstrap.jar
+%%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
 %%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-logging-api.jar
 %%T%%/bin/digest.sh
 %%JAVA14%%%%T%%/bin/jmx.jar
+%%T%%/bin/jmxaccessor-tasks.xml
 %%T%%/bin/jsvc.tar.gz
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
 %%T%%/bin/startup.sh
 %%T%%/bin/tomcat-juli.jar
+%%T%%/bin/tomcat-native.tar.gz
 %%T%%/bin/tool-wrapper.sh
 %%T%%/bin/version.sh
-%%T%%/common/classes/logging.properties
 %%JAVA14%%%%T%%/common/endorsed/xercesImpl.jar
 %%JAVA14%%%%T%%/common/endorsed/xml-apis.jar
 %%T%%/common/i18n/tomcat-i18n-en.jar
@@ -60,23 +52,14 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/conf/catalina.policy.%%CONF_EXT%%
 %%T%%/conf/catalina.properties.%%CONF_EXT%%
 %%T%%/conf/context.xml.%%CONF_EXT%%
-%%T%%/conf/jk2.manifest.%%CONF_EXT%%
-%%T%%/conf/jk2.properties.%%CONF_EXT%%
-%%T%%/conf/jkconf.ant.xml.%%CONF_EXT%%
-%%T%%/conf/jkconfig.manifest.%%CONF_EXT%%
 %%T%%/conf/server-minimal.xml.%%CONF_EXT%%
 %%T%%/conf/server.xml.%%CONF_EXT%%
-%%T%%/conf/shm.manifest.%%CONF_EXT%%
-%%T%%/conf/tomcat-jk2.manifest.%%CONF_EXT%%
 %%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
-%%T%%/conf/uriworkermap.properties.%%CONF_EXT%%
 %%T%%/conf/web.xml.%%CONF_EXT%%
-%%T%%/conf/workers.properties.%%CONF_EXT%%
-%%T%%/conf/workers.properties.minimal.%%CONF_EXT%%
-%%T%%/conf/workers2.properties.%%CONF_EXT%%
-%%T%%/conf/workers2.properties.minimal.%%CONF_EXT%%
+%%T%%/conf/logging.properties.%%CONF_EXT%%
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
+%%T%%/server/lib/catalina-ant-jmx.jar
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina-cluster.jar
 %%T%%/server/lib/catalina-optional.jar
@@ -89,6 +72,7 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/server/lib/servlets-ssi.renametojar
 %%T%%/server/lib/servlets-webdav.jar
 %%T%%/server/lib/tomcat-ajp.jar
+%%T%%/server/lib/tomcat-apr.jar
 %%T%%/server/lib/tomcat-coyote.jar
 %%T%%/server/lib/tomcat-http.jar
 %%T%%/server/lib/tomcat-util.jar
@@ -126,6 +110,7 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/webapps/ROOT/WEB-INF/lib/catalina-root.jar
 %%T%%/webapps/ROOT/WEB-INF/web.xml
 %%T%%/webapps/ROOT/admin/index.html
+%%T%%/webapps/ROOT/favicon.ico
 %%T%%/webapps/ROOT/index.jsp
 %%T%%/webapps/ROOT/jakarta-banner.gif
 %%T%%/webapps/ROOT/tomcat-power.gif
@@ -246,16 +231,6 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/panel_tag.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tag/web/xhtmlbasic_tag.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/choose_jsp.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$1.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$10.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$2.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$3.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$4.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$5.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$6.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$7.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$8.class
-%%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp$9.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/foreach_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/tagplugin/if_jsp.class
 %%T%%/webapps/jsp-examples/WEB-INF/classes/org/apache/jsp/xml/xml_jsp.class
@@ -273,7 +248,6 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/webapps/jsp-examples/WEB-INF/jsp2/jsp2-example-taglib.tld
 %%T%%/webapps/jsp-examples/WEB-INF/lib/jstl.jar
 %%T%%/webapps/jsp-examples/WEB-INF/lib/standard.jar
-%%T%%/webapps/jsp-examples/WEB-INF/tagPlugins.xml
 %%T%%/webapps/jsp-examples/WEB-INF/tags/displayProducts.tag
 %%T%%/webapps/jsp-examples/WEB-INF/tags/helloWorld.tag
 %%T%%/webapps/jsp-examples/WEB-INF/tags/panel.tag
@@ -508,6 +482,7 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
 %%T%%/webapps/tomcat-docs/appdev/source.html
 %%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/apr.html
 %%T%%/webapps/tomcat-docs/architecture/index.html
 %%T%%/webapps/tomcat-docs/architecture/overview.html
 %%T%%/webapps/tomcat-docs/architecture/printer/index.html
@@ -716,6 +691,7 @@ etc/rc.d/jakarta-tomcat55.sh
 %%T%%/webapps/tomcat-docs/manager-howto.html
 %%T%%/webapps/tomcat-docs/mbeans-descriptor-howto.html
 %%T%%/webapps/tomcat-docs/monitoring.html
+%%T%%/webapps/tomcat-docs/printer/apr.html
 %%T%%/webapps/tomcat-docs/printer/balancer-howto.html
 %%T%%/webapps/tomcat-docs/printer/building.html
 %%T%%/webapps/tomcat-docs/printer/cgi-howto.html
