@@ -1,0 +1,16 @@
+*** configure.orig    Thu Dec 22 09:05:13 2005
+--- configure Thu Dec 22 09:11:23 2005
+***************
+*** 18060,18064 ****
+
+
+!   if test "$have_kde" == "yes"; then
+      # Extract the first word of "dcopidl", so it can be a program name with args.
+  set dummy dcopidl; ac_word=$2
+--- 18060,18064 ----
+
+
+!   if test "X$have_kde" = "Xyes"; then
+      # Extract the first word of "dcopidl", so it can be a program name with args.
+  set dummy dcopidl; ac_word=$2
+
