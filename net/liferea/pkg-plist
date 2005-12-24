@@ -7,8 +7,29 @@ share/gnome/liferea/css/adblock.css
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/css/liferea2.css
 share/gnome/liferea/doc/html/about_en.html
+share/gnome/liferea/doc/html/enclosures_en.html
+share/gnome/liferea/doc/html/faq_en.html
 share/gnome/liferea/doc/html/folders_en.html
 share/gnome/liferea/doc/html/headlines_en.html
+share/gnome/liferea/doc/html/help_feed_available.png
+share/gnome/liferea/doc/html/help_feed_error.png
+share/gnome/liferea/doc/html/help_feed_ocs.png
+share/gnome/liferea/doc/html/help_feed_prop_auth_1.0.0.png
+share/gnome/liferea/doc/html/help_feed_prop_cache_1.0.0.png
+share/gnome/liferea/doc/html/help_feed_prop_enclosures_1.0.0.png
+share/gnome/liferea/doc/html/help_feed_prop_general_1.0.0.png
+share/gnome/liferea/doc/html/help_feed_prop_source_1.0.0.png
+share/gnome/liferea/doc/html/help_item_flag.png
+share/gnome/liferea/doc/html/help_prefs_browser_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_enclosures_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_feeds_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_folders_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_gui_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_headlines_1.0.0.png
+share/gnome/liferea/doc/html/help_prefs_proxy_1.0.0.png
+share/gnome/liferea/doc/html/help_search_1.0.0.png
+share/gnome/liferea/doc/html/help_subscribe_1.0.0.png
+share/gnome/liferea/doc/html/help_vfolder_1.0.0.png
 share/gnome/liferea/doc/html/preferences_en.html
 share/gnome/liferea/doc/html/reference.css
 share/gnome/liferea/doc/html/reference_en.html
@@ -52,6 +73,7 @@ share/locale/pt_BR/LC_MESSAGES/liferea.mo
 share/locale/ro/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
 share/locale/sk/LC_MESSAGES/liferea.mo
+share/locale/sv/LC_MESSAGES/liferea.mo
 share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/pixmaps
