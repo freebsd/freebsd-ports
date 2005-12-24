@@ -13,12 +13,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Perl extension for Fowler/Noll/Vo hash algorithm
 
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Digest::FNV.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE=	requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-FNV.xs
+
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/FNV.pm
+	${PERL} -pi -e '$$_="" if m{5.006|warnings}' ${WRKSRC}/FNV.pm
+	${PERL} -pi -e 's/ our / my /' ${WRKSRC}/FNV.pm
 .endif
+
 .include <bsd.port.post.mk>
