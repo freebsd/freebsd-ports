@@ -9460,6 +9460,7 @@ pfstat		ports/sysutils/pfstat
 pft		ports/security/pft
 pftop		ports/sysutils/pftop
 pftpd		ports/ftp/pftpd
+pftpx		ports/ftp/pftpx
 pfw		ports/security/pfw
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
