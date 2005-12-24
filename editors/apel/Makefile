@@ -30,11 +30,10 @@ APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 PORTCLASS?=	master
 
 # emacs port setup
-.if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs21
-.endif
+EMACS_PORT_NAME?=	emacs21
 
 EMACS_MASTERDIR_PKGFILES=YES
+DESCR=		${PKGDIR}/pkg-descr
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -53,9 +52,11 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
 .endif
-.if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/xemacs-base/advice.el:${PORTSDIR}/editors/xemacs-packages
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/xemacs-base/advice.el:${PORTSDIR}/editors/xemacs-packages
+.if (${EMACS_NAME} == "xemacs")
+.BEGIN:
+	@${ECHO} "Please use apel from editors/xemacs-packages port."
+	@${ECHO} "This port only for GNU Emacs."
+	@${FALSE}
 .endif
 .else
 .BEGIN:
