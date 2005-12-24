@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
 DISTNAME=	apache-tomcat-${PORTVERSION}
 
-MAINTAINER=	liukang@bjut.edu.cn
+MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 USE_JAVA=	yes
