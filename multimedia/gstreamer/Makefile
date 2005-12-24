@@ -33,8 +33,8 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \
 		--disable-failing-tests
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}" \
 		SHLIB_VERSION="${SHLIB_VERSION}" \
