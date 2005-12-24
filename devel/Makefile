@@ -548,6 +548,7 @@
     SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
     SUBDIR += linuxthreads
+    SUBDIR += llvm
     SUBDIR += log4c
     SUBDIR += log4cplus
     SUBDIR += log4cpp
