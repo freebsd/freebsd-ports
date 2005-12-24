@@ -110,7 +110,6 @@ System/Library/Makefiles/test-library.make
 System/Library/Makefiles/test-tool.make
 System/Library/Makefiles/tool.make
 System/Library/Makefiles/transform_paths.sh
-System/Library/Makefiles/user_home
 System/Library/Makefiles/vendor.sh
 System/Library/Makefiles/which_lib
 System/Tools/debugapp

@@ -8,6 +8,7 @@ System/Library/DTDs/gsdoc-1_0_0.dtd
 System/Library/DTDs/gsdoc-1_0_1.dtd
 System/Library/DTDs/gsdoc-1_0_1.rnc
 System/Library/DTDs/gsdoc-1_0_2.dtd
+System/Library/DTDs/gsdoc-1_0_3.dtd
 System/Library/DTDs/plist-0_9.dtd
 System/Library/Documentation/man/man1/autogsdoc.1.gz
 System/Library/Documentation/man/man1/cvtenc.1.gz
@@ -104,8 +105,6 @@ System/Library/Headers/GNUstepBase/GSLocale.h
 System/Library/Headers/GNUstepBase/GSLock.h
 System/Library/Headers/GNUstepBase/GSMime.h
 System/Library/Headers/GNUstepBase/GSObjCRuntime.h
-System/Library/Headers/GNUstepBase/GSRunLoopCtxt.h
-System/Library/Headers/GNUstepBase/GSRunLoopWatcher.h
 System/Library/Headers/GNUstepBase/GSUnion.h
 System/Library/Headers/GNUstepBase/GSXML.h
 System/Library/Headers/GNUstepBase/Unicode.h
@@ -130,8 +129,6 @@ System/Library/Headers/gnustep/base/GSLocale.h
 System/Library/Headers/gnustep/base/GSLock.h
 System/Library/Headers/gnustep/base/GSMime.h
 System/Library/Headers/gnustep/base/GSObjCRuntime.h
-System/Library/Headers/gnustep/base/GSRunLoopCtxt.h
-System/Library/Headers/gnustep/base/GSRunLoopWatcher.h
 System/Library/Headers/gnustep/base/GSUnion.h
 System/Library/Headers/gnustep/base/GSXML.h
 System/Library/Headers/gnustep/base/Unicode.h
