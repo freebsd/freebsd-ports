@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.12.7
+PORTVERSION=	0.12.10
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,8 +30,7 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3
 
-OPTIONS=	SNDFILE "Add audio/libsndfile decoder (for wav files)" On \
-		FLAC "Add audio/flac decoder" On \
+OPTIONS=	FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
 		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
 		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
@@ -52,14 +51,6 @@ showinfo:
 
 .if ${OSVERSION} > 500000
 PKGMESSAGE=	${PKGDIR}/pkg-message5
-.endif
-
-.if defined(WITH_SNDFILE)
-PLIST_SUB+=	SNDFILE=""
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
-.else
-PLIST_SUB+=	SNDFILE="@comment "
-CONFIGURE_ARGS+=	--without-sndfile
 .endif
 
 .if defined(WITH_FLAC)
