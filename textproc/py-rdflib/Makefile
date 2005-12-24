@@ -7,28 +7,15 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://rdflib.net/2005/06/28/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://rdflib.net/2005/12/23/
+PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A Python library for RDF manipulation
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
-
-post-install:
-	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-	@${FIND} ${DOCSDIR} ! -type d | ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO} "@dirrm ${DOCSDIR:S,${PREFIX}/,,}" >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
