@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libqalculate
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qalculate
@@ -17,17 +16,15 @@ COMMENT=	Very powerful GUI calculator for GNOME (backend library)
 
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
-USE_X_PREFIX=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	intlhack lthack pkgconfig gnomehack glib20 libxml2
+USE_GNOME=	intlhack gnomehack glib20 libxml2
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not build even with USE_GCC"
+IGNORE=		does not build on FreeBSD 4.x
 .endif
 
 .include <bsd.port.post.mk>
