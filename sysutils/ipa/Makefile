@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.3.6
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
@@ -14,57 +14,77 @@ MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://ipa.it-ss.be/
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
-COMMENT=	IP accounting software
+COMMENT=	Pluggable accounting system
 
-NO_PACKAGE=	"Needs to be built uniquely for each host"
-ALL_TARGET=
-.ifdef(NOPORTDOCS)
-MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
-.endif
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_RC_SUBR=	yes
 
-.ifdef WITH_PF
-PF_INCLUDE_DIR?=	/usr/include/net
-MAKE_ARGS+=	PF_INCLUDE_DIR=${PF_INCLUDE_DIR}
-.endif
-
-MAN5=		ipa.5 ipa.conf.5
-MAN8=		ipa.8 ipastat.8
-MANLANG=	"" ru_RU.KOI8-R
+OPTIONS=	AUTORULES "Enable dynamic rules support" on \
+		RULES "Enable static rules support" on \
+		LIMITS "Enable limits support" on \
+		SUBLIMITS "Enable sublimits support" on \
+		THRESHOLDS "Enable thresholds support" on \
+		CTL_CREDS "Enable ipactl's messages credentials" on \
+		MEMFUNC_DEBUG "Enable ipa_memfunc debugging" off \
+		DEBUG_INFO "Produce debugging information" off \
+		MAN_KOI8_R "Install Russian manual pages" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-MAKE_ARGS+=	-DWITHOUT_IPFIL
-WITHOUT_IPFIL=	yes
+.ifdef WITHOUT_AUTORULES
+CONFIGURE_ARGS+=	--disable-autorules
 .endif
 
-.if ${OSVERSION} >= 600000
-MAKE_ARGS+=	-DIPFW2
-IPFW2=		yes
+.ifdef WITHOUT_RULES
+CONFIGURE_ARGS+=	--disable-rules
 .endif
 
-pre-everything::
-	@${ECHO_MSG} "-------------------------------------------------------------------"
-.if !defined(WITHOUT_IPFW)
-	@${ECHO_MSG} "o You can remove IPv4 Firewall support by defining WITHOUT_IPFW"
+.ifdef WITHOUT_LIMITS
+CONFIGURE_ARGS+=	--disable-limits
 .endif
-.if !defined(WITHOUT_IP6FW) && ${OSVERSION} >= 420001
-	@${ECHO_MSG} "o You can remove IPv6 Firewall support by defining WITHOUT_IP6FW"
+
+.ifdef WITHOUT_SUBLIMITS
+CONFIGURE_ARGS+=	--disable-sublimits
 .endif
-.if !defined(WITHOUT_IPFIL)
-	@${ECHO_MSG} "o You can remove IP Filter support by defining WITHOUT_IPFIL"
+
+.ifdef WITHOUT_THRESHOLDS
+CONFIGURE_ARGS+=	--disable-thresholds
 .endif
-.if !defined(WITHOUT_IP6FW) && !defined(WITH_IP6FW) && ${OSVERSION} >= 400000 && ${OSVERSION} < 420001
-	@${ECHO_MSG} "o You can add IPv6 Firewall support by defining WITH_IP6FW,"
-	@${ECHO_MSG} "  this support will be probably broken on your system (see the"
-	@${ECHO_MSG} "  ${WRKSRC}/INSTALL file for more information)"
+
+.ifdef WITHOUT_CTL_CREDS
+CONFIGURE_ARGS+=	--disable-ctl-creds
 .endif
-.if !defined(IPFW2) && !defined(WITHOUT_IPFW) && ${OSVERSION} >= 460100 && ${OSVERSION} < 500038
-	@${ECHO_MSG} "o You can add IPFW2 support by defining IPFW2"
+
+.ifdef WITH_MEMFUNC_DEBUG
+CONFIGURE_ARGS+=	--enable-memfunc-debug
 .endif
-.if ${OSVERSION} >= 500000 && !defined(WITH_PF)
-	@${ECHO_MSG} "o You can add OpenBSD Packet Filter support by defining WITH_PF"
+
+.ifdef WITH_DEBUG_INFO
+STRIP=		# empty
+CFLAGS+=	-g
 .endif
-	@${ECHO_MSG} "-------------------------------------------------------------------"
+
+MAN3=		ipa_mod.3
+MAN5=		ipa.conf.5 ipastat.conf.5
+MAN8=		ipa.8 ipactl.8 ipastat.8
+MANLANG=	""
+.ifdef WITH_MAN_KOI8_R
+MANLANG+=	ru.KOI8-R
+.endif
+
+RC_SCRIPT_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+post-build:
+	@${SED} ${RC_SCRIPT_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/ipa.sh > ${WRKSRC}/ipa.sh
+
+do-install:
+	cd ${WRKSRC}/src && make install
+	cd ${WRKSRC}/man && make install-am
+	${INSTALL_SCRIPT} ${WRKSRC}/ipa.sh ${PREFIX}/etc/rc.d
+.ifdef WITH_MAN_KOI8_R
+	cd ${WRKSRC}/man/ru.KOI8-R && make install
+.endif
 
 .include <bsd.port.post.mk>
