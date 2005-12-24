@@ -53,6 +53,7 @@ include/k3bgrowisofswriter.h
 include/k3binffilewriter.h
 include/k3bintvalidator.h
 include/k3biso9660.h
+include/k3biso9660backend.h
 include/k3biso9660imagewritingjob.h
 include/k3bisooptions.h
 include/k3bjob.h
@@ -109,8 +110,8 @@ lib/kde3/libk3bexternalencoder.so
 %%FLAC%%lib/kde3/libk3bflacdecoder.so
 %%LAME%%lib/kde3/libk3blameencoder.la
 %%LAME%%lib/kde3/libk3blameencoder.so
-%%SNDFILE%%lib/kde3/libk3blibsndfiledecoder.la
-%%SNDFILE%%lib/kde3/libk3blibsndfiledecoder.so
+lib/kde3/libk3blibsndfiledecoder.la
+lib/kde3/libk3blibsndfiledecoder.so
 lib/kde3/libk3bmaddecoder.la
 lib/kde3/libk3bmaddecoder.so
 %%MPC%%lib/kde3/libk3bmpcdecoder.la
@@ -125,7 +126,7 @@ lib/kde3/libk3bwavedecoder.la
 lib/kde3/libk3bwavedecoder.so
 lib/libk3b.la
 lib/libk3b.so
-lib/libk3b.so.1
+lib/libk3b.so.2
 lib/libk3baudiometainforenamerplugin.la
 lib/libk3baudiometainforenamerplugin.so
 lib/libk3baudioprojectcddbplugin.la
@@ -145,20 +146,92 @@ share/apps/k3b/cdi/vcd_on_cdi_41.pdf
 share/apps/k3b/eventsrc
 share/apps/k3b/extra/k3bphotosvcd.mpg
 share/apps/k3b/extra/k3bphotovcd.mpg
-share/apps/k3b/icons/crystalsvg/16x16/actions/cdburn.png
-share/apps/k3b/icons/crystalsvg/16x16/actions/cdinfo.png
-share/apps/k3b/icons/crystalsvg/16x16/actions/cdrwblank.png
 share/apps/k3b/icons/crystalsvg/16x16/actions/greenled.png
 share/apps/k3b/icons/crystalsvg/16x16/actions/redled.png
 share/apps/k3b/icons/crystalsvg/16x16/actions/yellowinfo.png
 share/apps/k3b/icons/crystalsvg/16x16/actions/yellowled.png
-share/apps/k3b/icons/crystalsvg/22x22/actions/cdcopy.png
-share/apps/k3b/icons/crystalsvg/22x22/actions/cdinfo.png
-share/apps/k3b/icons/crystalsvg/22x22/actions/cdrwblank.png
-share/apps/k3b/icons/crystalsvg/32x32/actions/cdburn.png
-share/apps/k3b/icons/crystalsvg/32x32/actions/cdcopy.png
+share/apps/k3b/icons/hicolor/16x16/actions/audiocd.png
+share/apps/k3b/icons/hicolor/16x16/actions/burn_cdimage.png
+share/apps/k3b/icons/hicolor/16x16/actions/burn_dvdimage.png
+share/apps/k3b/icons/hicolor/16x16/actions/cdburn.png
+share/apps/k3b/icons/hicolor/16x16/actions/cdcopy.png
+share/apps/k3b/icons/hicolor/16x16/actions/cddarip.png
+share/apps/k3b/icons/hicolor/16x16/actions/datacd.png
+share/apps/k3b/icons/hicolor/16x16/actions/datadvd.png
+share/apps/k3b/icons/hicolor/16x16/actions/dvdcopy.png
+share/apps/k3b/icons/hicolor/16x16/actions/emovix.png
+share/apps/k3b/icons/hicolor/16x16/actions/erasecd.png
+share/apps/k3b/icons/hicolor/16x16/actions/formatdvd.png
+share/apps/k3b/icons/hicolor/16x16/actions/mixedcd.png
+share/apps/k3b/icons/hicolor/16x16/actions/mp3cd.png
 share/apps/k3b/icons/hicolor/16x16/actions/musicbrainz.png
+share/apps/k3b/icons/hicolor/16x16/actions/videocd.png
+share/apps/k3b/icons/hicolor/16x16/actions/videodvd.png
+share/apps/k3b/icons/hicolor/22x22/actions/audiocd.png
+share/apps/k3b/icons/hicolor/22x22/actions/burn_cdimage.png
+share/apps/k3b/icons/hicolor/22x22/actions/burn_dvdimage.png
+share/apps/k3b/icons/hicolor/22x22/actions/cdburn.png
+share/apps/k3b/icons/hicolor/22x22/actions/cdcopy.png
+share/apps/k3b/icons/hicolor/22x22/actions/cddarip.png
+share/apps/k3b/icons/hicolor/22x22/actions/datacd.png
+share/apps/k3b/icons/hicolor/22x22/actions/datadvd.png
+share/apps/k3b/icons/hicolor/22x22/actions/dvdcopy.png
+share/apps/k3b/icons/hicolor/22x22/actions/emovix.png
+share/apps/k3b/icons/hicolor/22x22/actions/erasecd.png
+share/apps/k3b/icons/hicolor/22x22/actions/formatdvd.png
+share/apps/k3b/icons/hicolor/22x22/actions/mixedcd.png
+share/apps/k3b/icons/hicolor/22x22/actions/mp3cd.png
+share/apps/k3b/icons/hicolor/22x22/actions/videocd.png
+share/apps/k3b/icons/hicolor/22x22/actions/videodvd.png
+share/apps/k3b/icons/hicolor/32x32/actions/audiocd.png
+share/apps/k3b/icons/hicolor/32x32/actions/burn_cdimage.png
+share/apps/k3b/icons/hicolor/32x32/actions/burn_dvdimage.png
+share/apps/k3b/icons/hicolor/32x32/actions/cdburn.png
+share/apps/k3b/icons/hicolor/32x32/actions/cdcopy.png
+share/apps/k3b/icons/hicolor/32x32/actions/cddarip.png
+share/apps/k3b/icons/hicolor/32x32/actions/datacd.png
+share/apps/k3b/icons/hicolor/32x32/actions/datadvd.png
+share/apps/k3b/icons/hicolor/32x32/actions/dvdcopy.png
+share/apps/k3b/icons/hicolor/32x32/actions/emovix.png
+share/apps/k3b/icons/hicolor/32x32/actions/erasecd.png
+share/apps/k3b/icons/hicolor/32x32/actions/formatdvd.png
+share/apps/k3b/icons/hicolor/32x32/actions/mixedcd.png
+share/apps/k3b/icons/hicolor/32x32/actions/mp3cd.png
+share/apps/k3b/icons/hicolor/32x32/actions/videocd.png
+share/apps/k3b/icons/hicolor/32x32/actions/videodvd.png
+share/apps/k3b/icons/hicolor/48x48/actions/audiocd.png
+share/apps/k3b/icons/hicolor/48x48/actions/burn_cdimage.png
+share/apps/k3b/icons/hicolor/48x48/actions/burn_dvdimage.png
+share/apps/k3b/icons/hicolor/48x48/actions/cdburn.png
+share/apps/k3b/icons/hicolor/48x48/actions/cdcopy.png
+share/apps/k3b/icons/hicolor/48x48/actions/cddarip.png
+share/apps/k3b/icons/hicolor/48x48/actions/datacd.png
+share/apps/k3b/icons/hicolor/48x48/actions/datadvd.png
+share/apps/k3b/icons/hicolor/48x48/actions/dvdcopy.png
+share/apps/k3b/icons/hicolor/48x48/actions/emovix.png
+share/apps/k3b/icons/hicolor/48x48/actions/erasecd.png
+share/apps/k3b/icons/hicolor/48x48/actions/formatdvd.png
+share/apps/k3b/icons/hicolor/48x48/actions/mixedcd.png
+share/apps/k3b/icons/hicolor/48x48/actions/mp3cd.png
+share/apps/k3b/icons/hicolor/48x48/actions/videocd.png
+share/apps/k3b/icons/hicolor/48x48/actions/videodvd.png
 share/apps/k3b/icons/hicolor/64x64/actions/musicbrainz.png
+share/apps/k3b/icons/hicolor/scalable/actions/audiocd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/burn_cdimage.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/burn_dvdimage.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/cdburn.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/cdcopy.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/cddarip.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/datacd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/datadvd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/dvdcopy.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/emovix.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/erasecd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/formatdvd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/mixedcd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/mp3cd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/videocd.svgz
+share/apps/k3b/icons/hicolor/scalable/actions/videodvd.svgz
 share/apps/k3b/k3bui.rc
 share/apps/k3b/pics/73lab/dialog_left.png
 share/apps/k3b/pics/73lab/dialog_right.png
@@ -205,7 +278,7 @@ share/apps/k3b/plugins/k3bexternalencoder.plugin
 %%FFMPEG%%share/apps/k3b/plugins/k3bffmpegdecoder.plugin
 %%FLAC%%share/apps/k3b/plugins/k3bflacdecoder.plugin
 %%LAME%%share/apps/k3b/plugins/k3blameencoder.plugin
-%%SNDFILE%%share/apps/k3b/plugins/k3blibsndfiledecoder.plugin
+share/apps/k3b/plugins/k3blibsndfiledecoder.plugin
 share/apps/k3b/plugins/k3bmaddecoder.plugin
 %%MPC%%share/apps/k3b/plugins/k3bmpcdecoder.plugin
 share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
@@ -246,19 +319,24 @@ share/mimelnk/application/x-k3b.desktop
 share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
 share/sounds/k3b_wait_media1.wav
+@dirrm share/doc/HTML/en/k3b
 @dirrm share/apps/k3b/plugins
 @dirrm share/apps/k3b/pics/crystal
 @dirrm share/apps/k3b/pics/73lab
 @dirrm share/apps/k3b/pics
+@dirrm share/apps/k3b/icons/hicolor/scalable/actions
+@dirrm share/apps/k3b/icons/hicolor/scalable
 @dirrm share/apps/k3b/icons/hicolor/64x64/actions
 @dirrm share/apps/k3b/icons/hicolor/64x64
+@dirrm share/apps/k3b/icons/hicolor/48x48/actions
+@dirrm share/apps/k3b/icons/hicolor/48x48
+@dirrm share/apps/k3b/icons/hicolor/32x32/actions
+@dirrm share/apps/k3b/icons/hicolor/32x32
+@dirrm share/apps/k3b/icons/hicolor/22x22/actions
+@dirrm share/apps/k3b/icons/hicolor/22x22
 @dirrm share/apps/k3b/icons/hicolor/16x16/actions
 @dirrm share/apps/k3b/icons/hicolor/16x16
 @dirrm share/apps/k3b/icons/hicolor
-@dirrm share/apps/k3b/icons/crystalsvg/32x32/actions
-@dirrm share/apps/k3b/icons/crystalsvg/32x32
-@dirrm share/apps/k3b/icons/crystalsvg/22x22/actions
-@dirrm share/apps/k3b/icons/crystalsvg/22x22
 @dirrm share/apps/k3b/icons/crystalsvg/16x16/actions
 @dirrm share/apps/k3b/icons/crystalsvg/16x16
 @dirrm share/apps/k3b/icons/crystalsvg
