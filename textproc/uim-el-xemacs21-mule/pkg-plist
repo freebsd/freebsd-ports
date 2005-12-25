@@ -1,0 +1,14 @@
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-candidate.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-debug.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-key.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-keymap.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-leim.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-preedit.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-util.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-var.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim.el
+%%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%EMACS_PACKAGESDIR%%/lisp/uim-el
+%%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
