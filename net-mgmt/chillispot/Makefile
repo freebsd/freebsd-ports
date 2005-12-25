@@ -7,6 +7,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.org/download/ \
 		http://www.geeklan.co.uk/files/ \
@@ -16,14 +17,15 @@ MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=yes
 CONFIGURE_TARGET=-build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
-MAN8=	chilli.8
+MAN8=		chilli.8
 
 OPTIONS=	RAW "Latest Release Of Apache & mySQL" Off \
-	 MATURE "Stable Releases of Apache &  mySQL" Off \
-	 FREE "freeRADIUS" Off \
-	 OPENR "openradius" Off
+		MATURE "Stable Releases of Apache &  mySQL" Off \
+		FREE "freeRADIUS" Off \
+		OPENR "openradius" Off
 
 .include <bsd.port.pre.mk>
 
