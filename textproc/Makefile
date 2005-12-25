@@ -753,6 +753,7 @@
     SUBDIR += txt2tags
     SUBDIR += ua-ispell
     SUBDIR += uim
+    SUBDIR += uim-el
     SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf
