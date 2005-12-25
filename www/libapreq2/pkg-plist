@@ -8,58 +8,58 @@ include/apreq2/apreq_param.h
 include/apreq2/apreq_parser.h
 include/apreq2/apreq_util.h
 include/apreq2/apreq_version.h
-lib/libapreq2.so.3
-lib/libapreq2.so
 lib/libapreq2.a
+lib/libapreq2.so
+lib/libapreq2.so.3
 libexec/apache2/mod_apreq2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/DummyVersions.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Cookie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Request.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Upload.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/ 2>/dev/null || true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/DummyVersions.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/CGI.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pod
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Cookie.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Request.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Upload.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/Apache2.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/CGI.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/ 2>/dev/null || true
+%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/ 2>/dev/null || true
+%%WITH_MODPERL2%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
 @dirrm include/apache2/apreq2
 @dirrm include/apreq2
