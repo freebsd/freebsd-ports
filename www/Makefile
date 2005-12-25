@@ -205,6 +205,7 @@
     SUBDIR += kdewebdev
     SUBDIR += knowledgekit
     SUBDIR += larbin
+    SUBDIR += libapreq2
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
     SUBDIR += libhttpd-persistent
