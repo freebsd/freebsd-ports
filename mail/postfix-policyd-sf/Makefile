@@ -17,6 +17,8 @@ DISTNAME=	policyd-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
+BROKEN=		"Does not fetch"
+
 USE_MYSQL=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
