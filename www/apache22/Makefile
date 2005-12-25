@@ -12,11 +12,9 @@ PORTVERSION=	2.2.0
 PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo \
 		http://apache.webthing.com/database/:aprmysql
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
-		powerlogo.gif:powerlogo \
 		apr_dbd_mysql.c:aprmysql
 DIST_SUBDIR=	apache22
 EXTRACT_ONLY=	${DISTNAME}.tar.bz2
@@ -191,14 +189,10 @@ pre-everything::
 	@${ECHO_MSG}	""
 
 post-extract:
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif \
-		${WRKSRC}/docs/icons/freebsd.gif
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.c \
 		${WRKSRC}/srclib/apr-util/dbd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif" ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' \
-		${WRKSRC}/docs/docroot/index.html
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
