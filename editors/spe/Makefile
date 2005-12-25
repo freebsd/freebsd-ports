@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SPE
-PORTVERSION=	0.8.1.b
+PORTVERSION=	0.8.1.c
 CATEGORIES=	editors devel python
 MASTER_SITES=	http://download.berlios.de/python/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -54,4 +54,5 @@ WX_PYTHON_DIR=	wx-2.6-gtk2-ansi
 .if defined(WITH_ENCRYPTED_DEBUG)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 .endif
+
 .include <bsd.port.post.mk>
