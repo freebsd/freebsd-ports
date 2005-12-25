@@ -8,7 +8,9 @@
 PORTNAME=	mod_fcgid
 PORTVERSION=	1.07
 CATEGORIES=	www
-MASTER_SITES=	http://fastcgi.coremail.cn/
+MASTER_SITES=	http://fastcgi.coremail.cn/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vanilla
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	hemi@puresimplicity.net
