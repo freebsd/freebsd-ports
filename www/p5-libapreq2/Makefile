@@ -5,41 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libapreq2
-PORTVERSION=	2.06
 CATEGORIES=	www perl5 devel
-MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
-MASTER_SITE_SUBDIR=libapreq
-PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Generic Apache2 Request Library
+COMMENT=	Generic Apache2 Request Library with perl binding
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
-		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MASTERDIR=	${.CURDIR}/../libapreq2
 
-WITH_APACHE2=	yes
-INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${APXS}
-USE_PERL5=	yes
-USE_APACHE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_[0-9]+//}
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+WITH_MODPERL2=	yes
 
-MAN3=	APR::Request::Apache2.3 APR::Request::CGI.3 APR::Request::Cookie.3 \
-	APR::Request::Error.3 APR::Request::Param.3 APR::Request.3 \
-	APR::Request::Hook.3 APR::Request::Parser.3 Apache2::Cookie.3 \
-	Apache2::Upload.3 Apache2::Request.3
-
-post-configure:
-	cd ${CONFIGURE_WRKSRC}/glue/perl && \
-		${PERL5} Makefile.PL -apxs ${APXS} && \
-		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
