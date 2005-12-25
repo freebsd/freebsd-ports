@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	estraier
-PORTVERSION=	1.2.28
-PORTREVISION=	3
+PORTVERSION=	1.2.29
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://estraier.sourceforge.net/
