@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ion-3ds
-PORTVERSION=	20051029
+PORTVERSION=	20051210
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 
@@ -16,7 +16,7 @@ COMMENT=	The development version of the Ion window manager
 LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
-CONFLICTS=	ion-2002* pwm-* ion-2*
+CONFLICTS=	ion-2002* pwm-[0-9]* ion-2*
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -31,6 +31,7 @@ IONDEFINES+=	-DCF_NO_LOCALE
 .endif
 
 MAN1=		ion3.1 pwm3.1
+MANLANG=	"" fi cs de
 DOCSDIR=	share/doc/ion3
 
 # NO, I don't want to use configure but ion's author system.mk
