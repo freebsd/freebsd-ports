@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2005-10-27
+DISTVERSION=		2005-12-22
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -26,7 +26,7 @@ LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}${EXTRACT_SUFX}:dat
-DOCVERSION=	2005-09-27
+DOCVERSION=	2005-12-21
 . if defined(PACKAGE_BUILDING)	# unzip is used during post-install:
 RUN_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 . endif
