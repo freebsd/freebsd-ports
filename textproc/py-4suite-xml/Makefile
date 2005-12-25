@@ -7,6 +7,7 @@
 
 PORTNAME=	4Suite-XML
 PORTVERSION=	1.0.b3
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +25,7 @@ USE_PYTHON=	2.2.1+
 USE_PYDISTUTILS=	yes
 
 WRKSRC=		${WRKDIR}/4Suite-1.0b3
-CONFLICTS=	py*-4suite-[01]* py*-xml-0.7*
+CONFLICTS=	py*-4suite-[01]*
 
 .include <bsd.port.pre.mk>
 
@@ -62,6 +63,7 @@ PYDISTUTILS_INSTALLARGS=	--without-docs
 .else
 PYDISTUTILS_BUILDARGS=		--with-docs
 PYDISTUTILS_INSTALLARGS=	--with-docs
+BUILD_DEPENDS=	${PYEXPAT}
 .endif
 
 post-install:
