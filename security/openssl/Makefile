@@ -956,7 +956,7 @@ EXTRACONFIGURE+=	386
 
 do-configure:
 	cd ${WRKSRC} \
-	&& ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
+	&& ${SETENV} CC="${CC}" FREEBSDCC="${CC}" CFLAGS="${CFLAGS}" PERL="${PERL}" \
 	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 	-L${PREFIX}/lib ${EXTRACONFIGURE}
