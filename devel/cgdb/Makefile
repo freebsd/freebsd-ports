@@ -19,7 +19,17 @@ USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/cgdb
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500018
+# This port requires readline 4.2 or newer, which is only available
+# in the base system in FreeBSD 5.x or later.
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=		${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,libutil\.h,,g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
