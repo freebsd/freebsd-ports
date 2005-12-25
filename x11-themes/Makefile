@@ -132,6 +132,7 @@
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
     SUBDIR += notif2
+    SUBDIR += openbox-themes
     SUBDIR += phase
     SUBDIR += qinx
     SUBDIR += qnxstyle
