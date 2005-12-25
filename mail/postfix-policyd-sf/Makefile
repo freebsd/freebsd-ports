@@ -7,6 +7,7 @@
 
 PORTNAME=	policyd
 PORTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
@@ -16,8 +17,6 @@ DISTNAME=	policyd-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Anti-spam plugin for Postfix (written in C)
-
-BROKEN=		"Does not fetch"
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
