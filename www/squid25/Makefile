@@ -73,7 +73,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -132,7 +132,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
 		SQUID_RCNG "Install an rcNG startup script" on
 
-etc_files=	rc.d/squid.sh squid/cachemgr.conf.default \
+etc_files=	rc.d/squid${rc_suffix} squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
 		squid/msntauth.conf.default squid/squid.conf.default
 
@@ -317,9 +317,11 @@ STRIP=			""
 USE_RC_SUBR=	yes
 rc_del=		rcold
 rc_state=	rcng
+rc_suffix=
 .else
 rc_del=		rcng
 rc_state=	rcold
+rc_suffix=	.sh
 .endif
 
 # Languages:
@@ -364,7 +366,7 @@ pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
-# create an rcOld/rcNG squid.sh:
+# create the start script:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
@@ -386,7 +388,7 @@ post-install:
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/squid.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/squid.sh ${PREFIX}/etc/rc.d/squid${rc_suffix}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}

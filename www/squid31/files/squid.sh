@@ -4,9 +4,8 @@
 #
 # --begin rcng
 # PROVIDE: squid
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 # 
 # Note:
 # Set "squid_enable=yes" in either /etc/rc.conf, /etc/rc.conf.local or
