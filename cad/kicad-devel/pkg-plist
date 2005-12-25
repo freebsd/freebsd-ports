@@ -20,12 +20,9 @@
 %%INSTDIR%%/demos/electric/electric.cache.lib
 %%INSTDIR%%/demos/electric/electric.pro
 %%INSTDIR%%/demos/electric/electric.sch
-%%INSTDIR%%/demos/interf_u/interf_u.bak
 %%INSTDIR%%/demos/interf_u/interf_u.brd
-%%INSTDIR%%/demos/interf_u/interf_u.cache.bck
 %%INSTDIR%%/demos/interf_u/interf_u.cache.lib
 %%INSTDIR%%/demos/interf_u/interf_u.cmp
-%%INSTDIR%%/demos/interf_u/interf_u.drl
 %%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
@@ -471,6 +468,8 @@
 %%INSTDIR%%/internat/it/kicad.po
 %%INSTDIR%%/internat/pt/kicad.mo
 %%INSTDIR%%/internat/pt/kicad.po
+%%INSTDIR%%/internat/sl/kicad.mo
+%%INSTDIR%%/internat/sl/kicad.po
 %%INSTDIR%%/library/74xx.dcm
 %%INSTDIR%%/library/74xx.lib
 %%INSTDIR%%/library/adc-dac.dcm
@@ -586,6 +585,7 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/pic16f84.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/motorola/m68hc12B.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/motorola/mmc2114.pdf
+%%PORTDOCS%%%%INSTDIR%%/library/doc/ns/DS7830.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/ns/lf398.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/ns/lm1877.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/ns/lm555.pdf
@@ -881,6 +881,8 @@
 %%INSTDIR%%/modules/packages3d/discret/to18.wrl
 %%INSTDIR%%/modules/packages3d/discret/to220_horiz.wings
 %%INSTDIR%%/modules/packages3d/discret/to220_horiz.wrl
+%%INSTDIR%%/modules/packages3d/discret/to220_vert.wings
+%%INSTDIR%%/modules/packages3d/discret/to220_vert.wrl
 %%INSTDIR%%/modules/packages3d/discret/to221_horiz.wings
 %%INSTDIR%%/modules/packages3d/discret/to3.wings
 %%INSTDIR%%/modules/packages3d/discret/to3.wrl
@@ -968,6 +970,8 @@
 %%INSTDIR%%/modules/packages3d/smd/pqfp160.wrl
 %%INSTDIR%%/modules/packages3d/smd/self_cms_we-pd3.wings
 %%INSTDIR%%/modules/packages3d/smd/self_cms_we-pd3.wrl
+%%INSTDIR%%/modules/packages3d/smd/tqfp32.wings
+%%INSTDIR%%/modules/packages3d/smd/tqfp32.wrl
 %%INSTDIR%%/modules/packages3d/smd/vqfp100.wings
 %%INSTDIR%%/modules/packages3d/smd/vqfp100.wrl
 %%INSTDIR%%/modules/packages3d/smd/vqfp44.wings
@@ -990,6 +994,7 @@
 %%INSTDIR%%/modules/supports.mdc
 %%INSTDIR%%/modules/supports.mod
 %%INSTDIR%%/news.txt
+%%INSTDIR%%/readme.txt
 %%INSTDIR%%/template/kicad.pro
 %%INSTDIR%%/version.txt
 @dirrm %%INSTDIR%%/template
@@ -1047,6 +1052,7 @@
 %%PORTDOCS%%@dirrm %%INSTDIR%%/library/doc/74xx
 %%PORTDOCS%%@dirrm %%INSTDIR%%/library/doc
 @dirrm %%INSTDIR%%/library
+@dirrm %%INSTDIR%%/internat/sl
 @dirrm %%INSTDIR%%/internat/pt
 @dirrm %%INSTDIR%%/internat/it
 @dirrm %%INSTDIR%%/internat/fr
