@@ -1,8 +1,19 @@
---- src/tab.c.orig	Thu Dec 22 21:13:51 2005
-+++ src/tab.c	Thu Dec 22 22:08:18 2005
-@@ -521,55 +521,55 @@
+--- src/tab.c.orig	Sun Oct 16 13:24:52 2005
++++ src/tab.c	Sun Dec 25 09:48:30 2005
+@@ -520,56 +520,66 @@
+ {
  	GString *long_filename = NULL;
  	
++	long_filename = tab_help_try_filename("%%LOCALBASE%%/share/doc/php-en/function.", command, ".html");
++	if (long_filename)
++		return long_filename;
++	long_filename = tab_help_try_filename("%%LOCALBASE%%/share/doc/php-en/ref.", command, ".html");
++	if (long_filename)
++		return long_filename;
++	long_filename = tab_help_try_filename("%%LOCALBASE%%/share/doc/php-en/", command, NULL);
++	if (long_filename)
++			return long_filename;
++							
  	// For Redhat/Fedora Core and other sensible distrubutions...
 -	long_filename = tab_help_try_filename("/usr/share/doc/phpmanual/function.", command, ".html");
 +	long_filename = tab_help_try_filename("%%LOCALBASE%%/share/doc/phpmanual/function.", command, ".html");

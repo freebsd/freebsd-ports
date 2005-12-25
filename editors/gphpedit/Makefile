@@ -7,6 +7,7 @@
 
 PORTNAME=	gphpedit
 PORTVERSION=	0.9.80
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
@@ -44,7 +45,7 @@ pre-everything::
 .endif
 
 post-extract:
-	cd ${WRKSRC}/src/gtkscintilla2 && ${GMAKE} clean
+	@cd ${WRKSRC}/src/gtkscintilla2 && ${GMAKE} clean
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share/gnome|g' \
