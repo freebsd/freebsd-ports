@@ -932,6 +932,7 @@
     SUBDIR += zope-cmfphotoalbum
     SUBDIR += zope-cmfquickinstaller
     SUBDIR += zope-coreblog
+    SUBDIR += zope-coreblog2
     SUBDIR += zope-epoz
     SUBDIR += zope-exuserfolder
     SUBDIR += zope-formulator

@@ -1,3 +1,4 @@
-To complete the installation of COREBlog
+To complete the installation of COREBlog2
 
-- Restart Zope.  This may be done from the Zope Control Panel.
+- Normal CMF/Plone-product install procedure.
+
