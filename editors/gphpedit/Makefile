@@ -44,9 +44,6 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_PHPDOC=yes to not install php_doc, help will be disable."
 .endif
 
-post-extract:
-	@cd ${WRKSRC}/src/gtkscintilla2 && ${GMAKE} clean
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share/gnome|g' \
 		${WRKSRC}/src/main.h
@@ -54,5 +51,8 @@ post-patch:
 		${WRKSRC}/src/calltip.c ${WRKSRC}/src/main_window.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/tab.c
+
+pre-build:
+	@cd ${WRKSRC}/src/gtkscintilla2 && ${GMAKE} clean
 
 .include <bsd.port.mk>
