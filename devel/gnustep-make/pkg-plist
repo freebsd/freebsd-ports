@@ -1,5 +1,6 @@
 @exec mkdir -p %D/System/Library/Makefiles
 @exec ln -s Library/Makefiles %D/System
+GNUstep.conf
 System/Library/Makefiles/GNUstep-reset.sh
 System/Library/Makefiles/GNUstep.csh
 System/Library/Makefiles/GNUstep.sh
