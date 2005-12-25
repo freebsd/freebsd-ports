@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Apr  7 13:38:51 2004
-+++ Makefile.in	Wed Apr  7 23:23:22 2004
-@@ -201,7 +201,7 @@
+--- Makefile.in.orig	Fri Dec 16 17:11:10 2005
++++ Makefile.in	Sat Dec 24 03:01:18 2005
+@@ -335,7 +335,7 @@
+ 	uim.pc.in ChangeLog.old uim.desktop autogen.sh
  
- DISTCLEANFILES = uim.pc intltool-extract intltool-merge intltool-update
- 
+ DISTCLEANFILES = uim.pc intltool-extract intltool-merge intltool-update po/.intltool-merge-cache
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = uim.pc
- 
- noinst_PROGRAMS = $(gtk_entry) uim-agent
+ desktopdir = $(datadir)/applications
+ desktop_in_files = uim.desktop.in
