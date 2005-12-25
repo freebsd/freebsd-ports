@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2005.12.11
+PORTVERSION=	0.0.2005.12.21
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/

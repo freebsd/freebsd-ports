@@ -36,6 +36,7 @@ include/io/IoSandbox.h
 include/io/IoScheduler.h
 include/io/IoSeq.h
 include/io/IoSeq_immutable.h
+include/io/IoSeq_inline.h
 include/io/IoSeq_mutable.h
 include/io/IoState.h
 include/io/IoState_callbacks.h
@@ -116,7 +117,6 @@ lib/libIoSockets.a
 lib/libIoSyslog.a
 lib/libIoUser.a
 lib/libIoVM.a
-%%DOCSDIR%%/_darcsboring.txt
 %%DOCSDIR%%/docs.html
 %%DOCSDIR%%/embedding.html
 %%DOCSDIR%%/guide.html
@@ -138,34 +138,15 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/ioCode/P_CGI.io
 %%EXAMPLESDIR%%/ioCode/Sandbox.io
 %%EXAMPLESDIR%%/ioCode/System.io
+%%EXAMPLESDIR%%/ioCode/UnitTest.io
 %%EXAMPLESDIR%%/ioCode/Y_Path.io
 %%EXAMPLESDIR%%/ioCode/Z_CLI.io
 %%EXAMPLESDIR%%/ioCode/Z_Importer.io
-%%EXAMPLESDIR%%/ioCode/_hidden/A_Object.io
-%%EXAMPLESDIR%%/ioCode/_hidden/B_Nil.io
-%%EXAMPLESDIR%%/ioCode/_hidden/B_Sequence.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Date.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Directory.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Exception.io
-%%EXAMPLESDIR%%/ioCode/_hidden/File.io
-%%EXAMPLESDIR%%/ioCode/_hidden/List.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Number.io
-%%EXAMPLESDIR%%/ioCode/_hidden/P_CGI.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Sandbox.io
-%%EXAMPLESDIR%%/ioCode/_hidden/System.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Y_Path.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Z_CLI.io
-%%EXAMPLESDIR%%/ioCode/_hidden/Z_Importer.io
-%%EXAMPLESDIR%%/ioCode/_new/A_Nil.io
-%%EXAMPLESDIR%%/ioCode/_new/test.io
-%%EXAMPLESDIR%%/ioCode/_old/Importer copy.io
 %%EXAMPLESDIR%%/ioCode/_old/Importer2.io
 %%EXAMPLESDIR%%/ioCode/_old/Io2C.io
 %%EXAMPLESDIR%%/ioCode/_old/Object.io
 %%EXAMPLESDIR%%/ioCode/_old/Parser.io
 %%EXAMPLESDIR%%/ioCode/_old/p.io
-%%EXAMPLESDIR%%/ioCode/_old/sake.io
-%%EXAMPLESDIR%%/ioCode/_old/zzz_docs.io
 %%EXAMPLESDIR%%/ioCode/_test/Compiler.io
 %%EXAMPLESDIR%%/ioCode/_test/System.io
 %%EXAMPLESDIR%%/new/IoObject_flow.c
@@ -223,7 +204,6 @@ lib/libIoVM.a
 @dirrm %%EXAMPLESDIR%%/ioCode/_test
 @dirrm %%EXAMPLESDIR%%/ioCode/_old
 @dirrm %%EXAMPLESDIR%%/ioCode/_new
-@dirrm %%EXAMPLESDIR%%/ioCode/_hidden
 @dirrm %%EXAMPLESDIR%%/ioCode
 @dirrm %%EXAMPLESDIR%%/docgen
 @dirrm %%EXAMPLESDIR%%
