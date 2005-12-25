@@ -258,6 +258,8 @@ share/locale/sv/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
 %%WITHEMACS%%share/emacs/site-lisp/a2ps-print.el
 %%WITHEMACS%%share/emacs/site-lisp/a2ps.el
+%%WITHEMACS%%lib/xemacs/site-lisp/a2ps-print.el
+%%WITHEMACS%%lib/xemacs/site-lisp/a2ps.el
 @dirrm %%DATADIR%%/ogonkify/fonts
 @dirrm %%DATADIR%%/ogonkify/afm
 @dirrm %%DATADIR%%/ogonkify
@@ -268,6 +270,8 @@ share/locale/tr/LC_MESSAGES/a2ps.mo
 @dirrm %%DATADIR%%/encoding
 @dirrm %%DATADIR%%/afm
 @dirrm %%DATADIR%%
+%%WITHEMACS%%@dirrm lib/xemacs/site-lisp
+%%WITHEMACS%%@dirrm lib/xemacs
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ca 2> /dev/null || true
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
