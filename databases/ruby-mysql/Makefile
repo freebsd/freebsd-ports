@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mysql
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://www.tmtm.org/mysql/ruby/
+MASTER_SITES=	http://www.tmtm.org/downloads/mysql/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
