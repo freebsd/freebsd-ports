@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	typo
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	www
-MASTER_SITES=	http://rubyforge.org/frs/download.php/6171/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7005/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jw@innerewut.de
