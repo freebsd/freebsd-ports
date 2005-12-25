@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051225:
+  AFFECTS: users of p5-libapreq2
+  AUTHOR: vanilla@FreeBSD.org
+
+  libapreq2 can be pure c library, I believe some people need pure c library,
+  but hate mod_perl, so I split it to 2 ports, and set libapreq2 as
+  p5-libapreq2's master ports.
+
+  If you need pure library of libapreq2, install www/libapreq2.
+  If you like mod_perl & enjoy p5-libapreq2, install/www/p5-libapreq2.
+
 20051213:
   AFFECTS: users of pear ports
   AUTHOR: ale@FreeBSD.org
