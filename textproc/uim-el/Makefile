@@ -30,7 +30,7 @@ CONFIGURE_ARGS?=--enable-emacs --with-lispdir=${LOCALBASE}/${EMACS_VERSION_SITE_
 CONFIGURE_ENV=	EMACS=${EMACS_CMD}
 
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
-PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
 .if !defined(NOPORTDOCS)
 post-install:
