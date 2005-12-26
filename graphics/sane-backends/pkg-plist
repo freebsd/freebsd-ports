@@ -24,9 +24,11 @@ etc/sane.d/genesys.conf
 %%GPHOTO2%%etc/sane.d/gphoto2.conf
 etc/sane.d/gt68xx.conf
 etc/sane.d/hp.conf
+etc/sane.d/hp4200.conf
 etc/sane.d/hp5400.conf
 etc/sane.d/ibm.conf
 etc/sane.d/leo.conf
+etc/sane.d/lexmark.conf
 etc/sane.d/ma1509.conf
 etc/sane.d/matsushita.conf
 etc/sane.d/microtek.conf
@@ -107,12 +109,16 @@ lib/sane/libsane-gt68xx.so
 lib/sane/libsane-gt68xx.so.1
 lib/sane/libsane-hp.so
 lib/sane/libsane-hp.so.1
+lib/sane/libsane-hp4200.so
+lib/sane/libsane-hp4200.so.1
 lib/sane/libsane-hp5400.so
 lib/sane/libsane-hp5400.so.1
 lib/sane/libsane-ibm.so
 lib/sane/libsane-ibm.so.1
 lib/sane/libsane-leo.so
 lib/sane/libsane-leo.so.1
+lib/sane/libsane-lexmark.so
+lib/sane/libsane-lexmark.so.1
 lib/sane/libsane-ma1509.so
 lib/sane/libsane-ma1509.so.1
 lib/sane/libsane-matsushita.so
@@ -125,6 +131,8 @@ lib/sane/libsane-mustek.so
 lib/sane/libsane-mustek.so.1
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
+lib/sane/libsane-mustek_usb2.so
+lib/sane/libsane-mustek_usb2.so.1
 lib/sane/libsane-nec.so
 lib/sane/libsane-nec.so.1
 lib/sane/libsane-net.so
@@ -145,8 +153,8 @@ lib/sane/libsane-sceptre.so
 lib/sane/libsane-sceptre.so.1
 lib/sane/libsane-sharp.so
 lib/sane/libsane-sharp.so.1
-%%USB%%lib/sane/libsane-sm3600.so
-%%USB%%lib/sane/libsane-sm3600.so.1
+lib/sane/libsane-sm3600.so
+lib/sane/libsane-sm3600.so.1
 lib/sane/libsane-sm3840.so
 lib/sane/libsane-sm3840.so.1
 lib/sane/libsane-snapscan.so
@@ -205,6 +213,8 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/mustek/mustek.CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.TODO
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.TODO
 %%PORTDOCS%%%%DOCSDIR%%/niash/niash.TODO
 %%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/plustek/MakeModule.sh
@@ -268,8 +278,12 @@ sbin/saned
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
 @exec mkdir %D/share/sane
+@exec mkdir %D/share/sane/artec_eplus48u
 @exec mkdir %D/share/sane/gt68xx
+@exec mkdir %D/share/sane/snapscan
+@unexec rmdir %D/share/sane/snapscan 2>/dev/null || true
 @unexec rmdir %D/share/sane/gt68xx 2>/dev/null || true
+@unexec rmdir %D/share/sane/artec_eplus48u 2>/dev/null || true
 @unexec rmdir %D/share/sane 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/umax
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/u12
@@ -277,6 +291,7 @@ sbin/saned
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sceptre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plustek
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/niash
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/matsushita

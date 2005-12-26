@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.16
-PORTREVISION=	1
+PORTVERSION=	1.0.17
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/download.php/1079/ \
+MASTER_SITES=	http://alioth.debian.org/download.php/1347/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -41,10 +40,8 @@ INSTALLS_SHLIB=	yes
 
 .if defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--disable-libusb
-PLIST_SUB+=	USB="@comment "
 .else
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-PLIST_SUB+=	USB=""
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -66,5 +63,7 @@ PLIST_SUB+=	GPHOTO2="@comment "
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= \.\./libtool|= @LIBTOOL@|g'
+	@${REINPLACE_CMD} -e 's|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
