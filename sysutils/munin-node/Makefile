@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	munin
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
 .endif
 
 .if ${PERL_LEVEL} < 500800
