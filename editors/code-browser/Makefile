@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +22,11 @@ USE_GCC=	3.4+
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 
+PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
 		%%DATADIR%%/languages.cb-config \
 		%%DATADIR%%/preferences.cb-config
 PLIST_DIRS=	%%DATADIR%%
-PORTDOCS=	code-browser.chm doc.css doc.html
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +45,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/code-browser ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/config/*.* ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
