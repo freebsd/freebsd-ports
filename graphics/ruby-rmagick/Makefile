@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.3
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rubyforge.lauschmusik.de/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
+OPTIONSFILE?=	${PORT_DBDIR}/${DIST_SUBDIR}-${PORTNAME}/options
 
 #PATCH_SITES=	http://rubyforge.org/download.php/10/
 #PATCHFILES=	RMagick-${PORTVERSION}.patch
@@ -20,8 +21,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
+OPTIONS= GRAPHICSMAGICK "Use GraphicsMagick instead of ImageMagick" Off
+
 BUILD_DEPENDS=	wmf2eps:${PORTSDIR}/graphics/libwmf
-LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
@@ -37,6 +39,12 @@ CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
 DOCS=		ChangeLog README.html
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GRAPHICSMAGICK)
+LIB_DEPENDS=GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
+.else
+LIB_DEPENDS=Magick.8:${PORTSDIR}/graphics/ImageMagick
+.endif
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
