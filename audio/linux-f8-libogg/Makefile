@@ -9,7 +9,7 @@ PORTNAME=	libogg
 DISTVERSION=	1.1.2-2
 PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	development/${LINUX_ARCH}/Fedora/RPMS/
+MASTER_SITE_SUBDIR=	4/${LINUX_ARCH}/os/Fedora/RPMS/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Ogg bitstream library (Linux version)
