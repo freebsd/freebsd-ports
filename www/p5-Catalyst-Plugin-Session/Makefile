@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NU/NUFFIN
@@ -16,9 +16,14 @@ MAINTAINER=	lars@balker.dk
 COMMENT=	Generic Catalyst Session plugin
 
 BUILD_DEPENDS=	p5-Catalyst>=5.50:${PORTSDIR}/www/p5-Catalyst \
+		p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Digest>=0:${PORTSDIR}/security/p5-Digest \
+		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
+		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
 		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
