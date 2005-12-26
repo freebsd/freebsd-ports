@@ -45,6 +45,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPHandler.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/IPC.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/IPC.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/IPC.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyo
@@ -81,6 +84,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/StatusLight.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/StatusLight.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/StatusLight.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Storage.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Storage.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Storage.pyo
@@ -111,9 +117,6 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/configfile.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/configfile.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/configfile.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/controlsocket.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/controlsocket.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/controlsocket.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/defaultargs.pyo
