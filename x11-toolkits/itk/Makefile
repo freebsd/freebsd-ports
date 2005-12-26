@@ -7,7 +7,8 @@
 
 PORTNAME=	itk
 PORTVERSION=	${MAJOR}.${MINOR}.1
-CATEGORIES=	x11-toolkits
+PORTREVISION=	1
+CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	_src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	[incr Tk] (A.K.A. "itk")
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
 
 USE_REINPLACE=	yes
