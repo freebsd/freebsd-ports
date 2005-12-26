@@ -7,7 +7,7 @@
 
 PORTNAME=	divx4linux
 PORTVERSION=	5.0.${RELEASE_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/divx/
 PKGNAMEPREFIX=	linux-
@@ -33,6 +33,10 @@ post-patch:
 .for ext in ${DOC_EXT}
 	@${REINPLACE_CMD} -e "s///" ${WRKSRC}/*.${ext}
 .endfor
+
+pre-install:
+# elf branding
+	@${BRANDELF} -t Linux ${WRKSRC}/*.so
 
 do-install:
 .ifndef(NOPORTDOCS)

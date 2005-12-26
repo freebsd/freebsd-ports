@@ -7,7 +7,7 @@
 
 PORTNAME=	divx4linux
 PORTVERSION=	0.${RELEASE_DATE:S/_/./}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/videocodecs/linux/
 PKGNAMEPREFIX=	linux-
@@ -37,6 +37,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s///" ${WRKSRC}/*.${ext}
 .endfor
 
+pre-install:
+# elf branding
+	@${BRANDELF} -t Linux ${WRKSRC}/*.so
+
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/usr/share/doc/${PKGNAME}
@@ -47,6 +51,7 @@ do-install:
 # Header file installation
 	@${MKDIR} ${PREFIX}/usr/include/divx4
 	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/usr/include/divx4
+# Library file installation
 	@${MKDIR} ${PREFIX}/usr/lib/divx4
 	@${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/usr/lib/divx4
 	@${LINUXBASE}/sbin/ldconfig
