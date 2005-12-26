@@ -7,8 +7,6 @@
 
 PKGNAMEPREFIX=	fi-
 
-MAINTAINER=	chinsan.tw@gmail.com
-
 ADOBE_LANG=	suo
 CMD_SUFFIX=	-fi
 MASTERDIR=	${.CURDIR}/../../print/acroread7
