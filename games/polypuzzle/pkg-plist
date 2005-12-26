@@ -10,13 +10,15 @@ bin/polypuzzle
 %%DATADIR%%/pieces.monster
 %%DATADIR%%/pieces.small
 %%DATADIR%%/pieces.square
+%%DATADIR%%/pieces.round
 %%DATADIR%%/pieces.star
 %%DATADIR%%/pieces.triangle
 %%PORTDOCS%%%%DOCSDIR%%/About
 %%PORTDOCS%%%%DOCSDIR%%/Bugs
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/Install
+%%PORTDOCS%%%%DOCSDIR%%/Instructions
+%%PORTDOCS%%%%DOCSDIR%%/Links
 %%PORTDOCS%%%%DOCSDIR%%/Math
 %%PORTDOCS%%%%DOCSDIR%%/Readme
 %%PORTDOCS%%%%DOCSDIR%%/Thanks
