@@ -20,7 +20,8 @@ The following walkthrough is for PostgreSQL databases:
 
 The following walkthrough is the tinderbox environment setup:
 
-- Edit the file %%PREFIX%%/scripts/tinderbox.ph
+- Edit the file %%PREFIX%%/scripts/tinderbox.ph (copy from
+  tinderbox.ph.dist)
   
   - $BUILD_ROOT should be "%%PREFIX%%/tinderbox"
   - $SUBJECT should be "My Tinderbox"
@@ -32,12 +33,14 @@ The following walkthrough is the tinderbox environment setup:
   - Comment out the lines after "for www", and uncomment the lines 
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_ds.php
+  (copy from inc_ds.php.dist)
 
   - $DB_HOST should be localhost
   - $DB_DRIVER should be pgsql
   - $DB_USER should be tinderbox
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_tinderbox.php
+  (copy from inc_tinderbox.php.dist)
 
   - $rootdir should be %%PREFIX%%/tinderbox
   - $wwwrooturi should be /tb

@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -37,6 +38,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
+
+post-extract:
+.for f in inc_ds.php inc_tinderbox.php
+	${MV} ${WRKSRC}/www-exp/${f} ${WRKSRC}/www-exp/${f}-dist
+.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
