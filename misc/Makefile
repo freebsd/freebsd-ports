@@ -412,6 +412,7 @@
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += thailocale
+    SUBDIR += tinderbox
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkregexp
