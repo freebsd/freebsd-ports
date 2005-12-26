@@ -129,8 +129,8 @@ ARCH=			i386
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
-# FIXME. This will result in a file at /compat/linux/etcnsswitch.conf.dist (sic!)
-RPMFLAGS+=	--relocate /etc/nsswitch.conf=/etc/nsswitch.conf.dist --badreloc
+# FIXME. The double-// can go away, once we deprecate rpm-3
+RPMFLAGS+=	--relocate /etc/nsswitch.conf=/etc//nsswitch.conf.dist --badreloc
 
 do-install:
 #
@@ -149,7 +149,6 @@ do-install:
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@${MV} ${PREFIX}/etcnsswitch.conf.dist ${PREFIX}/etc/nsswitch.conf.dist
 	@test -f ${PREFIX}/etc/nsswitch.conf || cp ${PREFIX}/etc/nsswitch.conf.dist \
 		${PREFIX}/etc/nsswitch.conf
 	@${FIND} ${PREFIX}/bin ${PREFIX}/sbin/ ${PREFIX}/usr/bin \
