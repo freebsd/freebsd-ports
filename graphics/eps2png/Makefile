@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eps2png
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/Johan_Vromans
+MASTER_SITE_SUBDIR=	../../authors/id/J/JV/JV/
 
 MAINTAINER=	nik@freebsd.org
 COMMENT=	Converts EPS images to PNG
