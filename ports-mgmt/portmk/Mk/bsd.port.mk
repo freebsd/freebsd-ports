@@ -1571,6 +1571,10 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
+.if defined(USE_DOS2UNIX)
+USE_REINPLACE=	yes
+.endif
+
 .if defined(USE_LOCAL_MK)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
@@ -1578,10 +1582,6 @@ MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 #.else
 #.include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
-.endif
-
-.if defined(USE_DOS2UNIX)
-USE_REINPLACE=	yes
 .endif
 
 .if defined(USE_GCC)
