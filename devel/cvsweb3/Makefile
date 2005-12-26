@@ -60,6 +60,10 @@ TITLE?=		My CVS Repository
 CGIDIR?=	www/cgi-bin
 ICONSDIR?=	www/icons
 CSSDIR?=	www/data/css
+.elif exists(${PREFIX}/www/apache22/cgi-bin)
+CGIDIR?=       www/apache22/cgi-bin
+ICONSDIR?=     www/apache22/icons
+CSSDIR?=       www/apache22/data/css
 .elif exists(${PREFIX}/apache/cgi-bin)
 CGIDIR?=	apache/cgi-bin
 ICONSDIR?=	apache/icons
