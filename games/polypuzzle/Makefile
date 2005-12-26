@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polypuzzle
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6
 CATEGORIES=	games tcl84 tk84
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
 EXTRACT_SUFX=	.tgz
@@ -20,10 +20,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
-DOC_FILES=	About Bugs Changelog Copyright Install Math Readme Thanks Todo
+DOC_FILES=	About Bugs Changelog Install Instructions Links Math Readme \
+		Thanks Todo
 DATA_FILES=	menus pieces.3x20 pieces.783 pieces.bonus pieces.colours \
 		pieces.flower pieces.large pieces.medium pieces.monster \
-		pieces.small pieces.square pieces.star pieces.triangle
+		pieces.round pieces.small pieces.square pieces.star \
+		pieces.triangle
 
 pre-install:
 	 @${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:g" ${WRKSRC}/polypuzzle
