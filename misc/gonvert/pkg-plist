@@ -8,6 +8,7 @@ share/gnome/applications/gonvert.desktop
 share/gnome/pixmaps/gonvert.png
 %%DATADIR%%/gonvert.glade
 %%DATADIR%%/pixmaps/gonvert_picture.png
+share/locale/pl/LC_MESSAGES/gonvert.mo
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
