@@ -16,7 +16,7 @@ COMMENT=	Port build tinderbox system
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
-		cvsup:${PORTSDIR}/net/cvsup
+		cvsup:${PORTSDIR}/net/cvsup-without-gui
 
 OPTIONS=	PGSQL "With pgsql" On \
 		MYSQL "With mysql" Off
