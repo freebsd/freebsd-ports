@@ -1,6 +1,6 @@
 # New ports collection makefile for:	afterstep-stable
 # Date created:		1 May 1998
-# Whom:			Brett Taylor
+# Whom:			Brett Taylor <brett@peloton.physics.montana.edu>
 #
 # $FreeBSD$
 #
