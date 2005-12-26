@@ -8,7 +8,7 @@ PORTNAME=	kcheckers
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://kcheckers.org/
+MASTER_SITES=	http://wibix.de/aw_downloads/kcheckers/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
