@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Dec 26 09:30:50 2005
++++ doc/Makefile.in	Mon Dec 26 09:31:03 2005
+@@ -173,7 +173,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-dist_man_MANS = argtable2.3 argtable.3
++dist_man_MANS = argtable.3
+ dist_doc_DATA = argtable2-advanced.html argtable2-advanced.pdf \
+ 	argtable2-advanced.ps argtable2-intro.html argtable2-intro.pdf \
+ 	argtable2-intro.ps argtable2.html argtable2.pdf argtable2.ps \
