@@ -209,3 +209,14 @@ diff -u -r1.13 -r1.15
          cdefn = Itcl_FindClass(interp, name, /* autoload */ 0);
  
          if (cdefn) {
+--- generic/itcl_cmds.c.orig	Sun Dec 25 15:16:04 2005
++++ generic/itcl_cmds.c	Sun Dec 25 15:28:16 2005
+@@ -996,7 +996,7 @@
+      *  then return it as is.
+      */
+     token = Tcl_GetStringFromObj(objv[1], (int*)NULL);
+-    if (*token == ':' && *(token+1) == ':') {
++    if (strncmp(token, "::", 2) == 0) {
+         Tcl_SetObjResult(interp, objv[1]);
+         return TCL_OK;
+     }
