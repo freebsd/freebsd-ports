@@ -16,8 +16,7 @@
 # WITH_AUTHLIB=yes	Enable optional support for Courier Auth Library
 
 PORTNAME=	maildrop
-PORTVERSION=	1.8.0
-PORTREVISION=	3
+PORTVERSION=	2.0.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -36,6 +35,8 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_AUTHLIB)
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
