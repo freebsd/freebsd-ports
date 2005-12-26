@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.9
 CATEGORIES=	mail www pear
 
 MAINTAINER=	antonio@php.net
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Mail.php Mail/mail.php Mail/null.php Mail/sendmail.php	\
 		Mail/smtp.php Mail/RFC822.php
-TESTS=		rfc822.phpt
+TESTS=		rfc822.phpt smtp_error.phpt
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_NET_SMTP "PEAR::Net_SMTP support" off
