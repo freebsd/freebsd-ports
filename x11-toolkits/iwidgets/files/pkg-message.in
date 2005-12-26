@@ -1,0 +1,21 @@
+
+Iwidgets is a "mega-widget" set built using itk.  It includes
+a set of megawidgets, installed in %%PREFIX%%/lib/iwidgets4.0.1
+(and symlinked to %%PREFIX%%/lib/iwidgets), a set of man pages
+describing the various widgets, some scripts in
+%%PREFIX%%/lib/%%IWIDGETS%%/scripts and some demo files in
+%%PREFIX%%/lib/%%IWIDGETS%%/demos.  Run the demos in X windows by
+using wish (E.g. wish8.4 %%PREFIX%%/lib/%%IWIDGETS%%/demos/checkbox)
+
+All the man pages are installed as iwidgets_example.  If you search
+man for widgets, you will get the Tk widgets.  To see the man pages
+for iwidgets widgets, type man iwidgets_toolbar (for example.) There
+is also a set of html documentation pages installed in
+%%PREFIX%%/lib/%%IWIDGETS%%/demos/html that may be helpful.
+Look at iwidgets4.0.0UserCmds.html for a list of the user commands
+that are available to you.
+
+Finally, you may want to read iwidgets.ps (use a Postcript viewer),
+installed in %%DOCSDIR%%, which is a comprehensive
+explanation of iwidgets.
+
