@@ -6047,7 +6047,6 @@ marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 masqmail	ports/mail/masqmail
-masqmail-devel	ports/mail/masqmail-devel
 mastergear	ports/emulators/mastergear
 match		ports/astro/match
 matchbox	ports/x11-wm/matchbox
