@@ -2042,3 +2042,4 @@ devel/opentop||2005-12-17|Obsoleted. New versions are comercial
 x11-themes/metacity-theme-hacked-2||2005-12-22|Obsolete by x11-themes/gnome-art
 x11-themes/metacity-theme-iridium-rounded||2005-12-22|Obsolete by x11-themes/gnome-art
 converters/intel2gas|lang/intel2gas|2005-12-22|Duplicate port entry
+x11-themes/metacity-theme-alloy-c|2005-12-26|Obsolete by x11-themes/gnome-art
