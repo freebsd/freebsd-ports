@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig       Tue Dec 20 16:07:46 2005
++++ src/Makefile.in    Tue Dec 20 16:09:14 2005
+@@ -459,7 +459,7 @@
+ shellrcdir = $(kde_datadir)/k9copy
+ shellrc_DATA = k9copyui.rc
+ applnkApplication_DATA = K9copy.desktop
+-applnkApplicationdir = $(kde_appsdir)/Application
++applnkApplicationdir = $(kde_appsdir)/Multimedia
+ AM_CXXFLAGS = -O2 -g3
+ #>- all: all-am
+ #>+ 1
