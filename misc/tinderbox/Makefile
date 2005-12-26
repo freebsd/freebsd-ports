@@ -1,0 +1,48 @@
+# Ports collection makefile for:	misc/tinderbox
+# Whom:			Edwin Groothuis <edwin@mavetju.org>
+# Date created:		31 december 2005
+#
+# $FreeBSD$
+
+PORTNAME=	tinderbox
+PORTVERSION=	2.2.1
+CATEGORIES=	misc
+MASTER_SITES=	http://tinderbox.marcuscom.com/
+
+MAINTAINER=	edwin@mavetju.org
+COMMENT=	Port build tinderbox system
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
+		cvsup:${PORTSDIR}/net/cvsup
+
+OPTIONS=	PGSQL "With pgsql" On \
+		MYSQL "With mysql" Off
+
+NO_BUILD=	yes
+USE_APACHE=	yes
+USE_PHP=	pgsql mysql session
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+.endif
+
+do-install:
+	${MKDIR} ${PREFIX}/tinderbox/scripts
+	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
+
+post-install:
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
