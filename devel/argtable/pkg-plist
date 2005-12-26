@@ -1,19 +1,4 @@
 include/argtable2.h
 lib/libargtable2.a
-%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.html
-%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.pdf
-%%PORTDOCS%%%%DOCSDIR%%/argtable2-intro.ps
-%%PORTDOCS%%%%DOCSDIR%%/argtable2.html
-%%PORTDOCS%%%%DOCSDIR%%/argtable2.pdf
-%%PORTDOCS%%%%DOCSDIR%%/argtable2.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/echo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/ls.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/mv.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/myprog.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/myprog_C89.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/rm.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/uname.c
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/libargtable2.so
+lib/libargtable2.so.1
