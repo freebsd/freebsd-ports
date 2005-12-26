@@ -367,6 +367,7 @@
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
     SUBDIR += mod_webapp
+    SUBDIR += mod_webkit
     SUBDIR += mod_zap
     SUBDIR += moinmoin
     SUBDIR += momspider
