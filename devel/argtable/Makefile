@@ -8,6 +8,7 @@
 
 PORTNAME=	argtable
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,26 +17,31 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2
-
-USE_GETOPT_LONG=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		docdir="${PREFIX}/share/doc/${PORTNAME}"
-WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
-PORTDOCS=	*
+MAN3=		argtable2.3
+MLINKS=		argtable2.3 argtable.3
 
-MAN3=		argtable.3
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
+		 s|: install-dist_exampleDATA|:|g' ${WRKSRC}/Makefile.in
 
 post-install:
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${INSTALL_MAN} ${WRKSRC}/doc/argtable2.3 ${MAN3PREFIX}/man/man3
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/*.c ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/*.h ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/*.txt ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
