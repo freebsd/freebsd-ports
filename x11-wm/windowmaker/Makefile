@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	GNUStep-compliant NeXTStep window manager clone
+COMMENT=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
