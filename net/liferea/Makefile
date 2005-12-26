@@ -38,8 +38,9 @@ MOZILLA=	mozilla-devel
 MOZ_BUILD=	mozilla
 MOZ_SUFFIX=	-devel
 .elif ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
-MOZ_BUILD=	firefox
+# Firefox build is broken in liferea-1.0 with firefox-1.5
+#MOZILLA=	firefox
+#MOZ_BUILD=	firefox
 .else
 IGNORE=		: Available options for WITH_MOZILLA are: mozilla mozilla-devel firefox
 .endif
