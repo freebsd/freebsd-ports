@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
@@ -31,6 +31,10 @@ PLIST_FILES=	bin/ale
 BROKEN=		"Does not build on alpha"
 .endif
 
+.if ${OSVERSION} < 502114
+CFLAGS+=	-Dround=rint
+.endif
+
 .if defined(WITH_DOUBLE)
 MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
 .endif
@@ -47,11 +51,6 @@ MAKE_ARGS+=	IMAGEMAGICK=1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/d2.h
-.if ${OSVERSION} < 502114
-.for file in d2/image.h d2/image_rw.h d2/ppm.h d3/scene.cc
-	@${REINPLACE_CMD} -e 's|round(|rint(|g' ${WRKSRC}/${file}
-.endfor
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ale ${PREFIX}/bin
