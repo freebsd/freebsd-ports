@@ -8,7 +8,7 @@
 PORTNAME=	nadar
 PORTVERSION=	2.0
 CATEGORIES=	games
-MASTER_SITES=	http://web.ffn.ne.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://download.vector.co.jp/pack/unix/game/action/
 
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	A network tank battle game
