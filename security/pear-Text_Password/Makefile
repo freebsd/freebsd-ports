@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_password
-PORTVERSION=	1.0
+PORTVERSION=	1.1.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
@@ -17,7 +17,7 @@ WANT_PHP_PEAR=	yes
 
 CATEGORY=	Text
 FILES=		Password.php
-TESTS=		01-text-password.phpt
+TESTS=		Text_Password_Test.php
 
 WRKSRC=		${WRKDIR}/Text_Password-${PORTVERSION}
 
