@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.14
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
@@ -21,8 +21,8 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|#!/usr/bin/python|#!/usr/bin/env python|g' ${WRKSRC}/gonvert
+	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|g ; \
+		 s|gtk.mainloop|gtk.main|g' ${WRKSRC}/gonvert
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gonvert ${PREFIX}/bin
@@ -35,9 +35,12 @@ do-install:
 	@${MKDIR} ${DATADIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/gonvert_picture.png \
 		${DATADIR}/pixmaps
+	@${MKDIR} ${PREFIX}/share/locale/pl/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/i18n/pl_messages.gmo \
+		${PREFIX}/share/locale/pl/LC_MESSAGES/gonvert.mo
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in README CHANGELOG FAQ README THANKS TODO
+.for file in CHANGELOG FAQ README THANKS TODO
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
