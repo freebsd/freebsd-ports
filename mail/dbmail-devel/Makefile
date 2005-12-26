@@ -7,7 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.0/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -59,8 +59,8 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
-	@${FIND} ${WRKSRC} -name *.orig -type f | ${XARGS} ${RM} -fr
+	${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
+	${FIND} ${WRKSRC} -name '*.orig' -type f -delete
 
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \

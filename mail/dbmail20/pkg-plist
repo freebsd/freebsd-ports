@@ -7,10 +7,6 @@ lib/dbmail/libsortdbmail.so.0
 lib/dbmail/libsortdbmail.a
 lib/dbmail/libsortdbmail.la
 lib/dbmail/libsortdbmail.so
-lib/libdbmail.so
-lib/libdbmail.so.0
-lib/libdbmail.a
-lib/libdbmail.la
 sbin/dbmail-imapd
 sbin/dbmail-lmtpd
 sbin/dbmail-pop3d
