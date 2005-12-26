@@ -14,9 +14,11 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
+BROKEN=		"is unfetchable"
+
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
-IGNORE=		Requires kernel source (/usr/src/sys) to build
+IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
