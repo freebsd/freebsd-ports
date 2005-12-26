@@ -7,7 +7,7 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.21
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -109,8 +109,8 @@ CONFIGURE_ARGS+=--with-openssl=yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
-SASLAUTHD_RUNPATH?=	/var/state/saslauthd
-.if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
+SASLAUTHD_RUNPATH?=	/var/run/saslauthd
+.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
 RUNPATH=	"@comment "
 .endif
 
@@ -138,7 +138,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
 		${PREFIX}/sbin/testsaslauthd
 	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
-.if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
+.if ${SASLAUTHD_RUNPATH} != /var/run/saslauthd
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
 	@${ECHO_MSG} "Make sure to have ${SASLAUTHD_RUNPATH} by yourself."
