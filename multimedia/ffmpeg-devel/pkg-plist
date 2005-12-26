@@ -1,4 +1,8 @@
 bin/ffmpeg
+bin/ffplay
+bin/ffserver
+etc/ffserver.conf.sample
+etc/rc.d/ffserver.sh
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
@@ -8,20 +12,51 @@ include/ffmpeg/dsputil.h
 include/ffmpeg/integer.h
 include/ffmpeg/intfloat_readwrite.h
 include/ffmpeg/mathematics.h
+include/ffmpeg/postproc/postprocess.h
 include/ffmpeg/rational.h
 include/ffmpeg/rtp.h
 include/ffmpeg/rtsp.h
 include/ffmpeg/rtspcodes.h
 lib/libavcodec.a
 lib/libavcodec.so
-lib/libavcodec.so.%%SHLIB_VERSION%%
+lib/libavcodec.so.1
 lib/libavformat.a
 lib/libavformat.so
-lib/libavformat.so.%%SHLIB_VERSION%%
+lib/libavformat.so.1
 lib/libavutil-CVS.so
 lib/libavutil.a
 lib/libavutil.so
-lib/libavutil.so.%%SHLIB_VERSION%%
-libdata/pkgconfig/libavutil.pc
+lib/libavutil.so.1
+lib/libpostproc.a
+lib/libpostproc.so
+lib/libpostproc.so.0
+lib/libpostproc.so.1
+lib/vhook/drawtext.so
+lib/vhook/fish.so
+lib/vhook/imlib2.so
+lib/vhook/null.so
+lib/vhook/ppm.so
+lib/vhook/watermark.so
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavformat.pc
+libdata/pkgconfig/libavutil.pc
+libdata/pkgconfig/libpostproc.pc
+man/man1/ffmpeg.1.gz
+man/man1/ffplay.1.gz
+man/man1/ffserver.1.gz
+share/doc/ffmpeg/COPYING
+share/doc/ffmpeg/Changelog
+share/doc/ffmpeg/README
+share/doc/ffmpeg/TODO
+share/doc/ffmpeg/faq.html
+share/doc/ffmpeg/ffmpeg-doc.html
+share/doc/ffmpeg/ffplay-doc.html
+share/doc/ffmpeg/ffserver-doc.html
+share/doc/ffmpeg/hooks.html
+share/doc/ffmpeg/optimization.txt
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/doc/ffmpeg
+@dirrm lib/vhook
+@dirrm include/ffmpeg/postproc
+@dirrm include/ffmpeg
