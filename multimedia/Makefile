@@ -67,6 +67,7 @@
     SUBDIR += hayes
     SUBDIR += istanbul
     SUBDIR += jahshaka
+    SUBDIR += k9copy
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
     SUBDIR += kbtv

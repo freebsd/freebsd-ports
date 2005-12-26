@@ -1,0 +1,18 @@
+bin/k9copy
+bin/k9playcell
+bin/k9vamps
+share/applnk/Multimedia/K9copy.desktop
+share/apps/k9copy/k9copyui.rc
+share/doc/HTML/en/k9copy/index.cache.bz2
+share/doc/HTML/en/k9copy/index.docbook
+share/doc/HTML/en/k9copy/common
+share/icons/hicolor/16x16/apps/k9copy.png
+share/icons/hicolor/32x32/apps/k9copy.png
+share/icons/hicolor/48x48/apps/k9copy.png
+share/locale/en_GB/LC_MESSAGES/k9copy.mo
+share/locale/es/LC_MESSAGES/k9copy.mo
+share/locale/fr/LC_MESSAGES/k9copy.mo
+share/locale/hu/LC_MESSAGES/k9copy.mo
+share/locale/it/LC_MESSAGES/k9copy.mo
+@dirrm share/doc/HTML/en/k9copy
+@dirrm share/apps/k9copy
