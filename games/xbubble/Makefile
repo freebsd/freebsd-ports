@@ -7,7 +7,8 @@
 PORTNAME=	xbubble
 PORTVERSION=	0.5.8
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.gnu.org/pub/savannah/files/xbubble/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	klaus.goger@reflex.at
 COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
