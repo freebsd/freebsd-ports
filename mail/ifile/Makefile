@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ifile
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	mail textproc
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/default.pkg/${PORTVERSION}
+MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application of machine learning to e-mail filtering
