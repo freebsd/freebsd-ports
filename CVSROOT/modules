@@ -12257,6 +12257,7 @@ timidity++-xaw	ports/audio/timidity++-xaw
 timidity++-xskin	ports/audio/timidity++-xskin
 tin		ports/news/tin
 tinc		ports/security/tinc
+tinderbox	ports/misc/tinderbox
 tinker		ports/biology/tinker
 tintfu		ports/graphics/tintfu
 tintin++	ports/net/tintin++
