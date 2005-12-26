@@ -6,7 +6,7 @@
 
 # $FreeBSD$
 
-PATH=/bin:/usr/sbin:${LOCALBASE}/bin:/usr/local/bin
+PATH=/bin:/usr/sbin:${LOCALBASE}/bin:
 
 # set these if not provided by the Makefile
 WEBWARE_USER=${WEBWARE_USER:-webkit}
@@ -46,23 +46,24 @@ add_webkit_account()
 
 compile_python_files()
 {
-	(cd ${WEBWARE_MASTER_DIR} && python install.py --password-prompt=no)
+	(cd ${WEBWARE_MASTER_DIR} && python install.py --no-password-prompt)
 }
 
 make_webkit_home_dir()
 {
     # make the default webware user home directory if it doesn't exist yet
     if ! [ -d ${WEBKIT_HOME_DIR} ] ; then
-        mkdir -p ${WEBKIT_HOME_DIR}
+        # make application workdir for webkit user
+        python ${WEBWARE_MASTER_DIR}/bin/MakeAppWorkDir.py \
+               ${WEBKIT_HOME_DIR}
+        chown -R root:wheel ${WEBKIT_HOME_DIR}
+        echo chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
+            ${WEBKIT_HOME_DIR}/Cache ${WEBKIT_HOME_DIR}/ErrorMsgs \
+            ${WEBKIT_HOME_DIR}/Logs ${WEBKIT_HOME_DIR}/Sessions
+        chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
+            ${WEBKIT_HOME_DIR}/Cache ${WEBKIT_HOME_DIR}/ErrorMsgs \
+            ${WEBKIT_HOME_DIR}/Logs ${WEBKIT_HOME_DIR}/Sessions
     fi
-
-    # make application workdir for webkit user
-    python ${WEBWARE_MASTER_DIR}/bin/MakeAppWorkDir.py \
-           ${WEBKIT_HOME_DIR}
-    chown -R root:wheel ${WEBKIT_HOME_DIR}
-    chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
-        ${WEBKIT_HOME_DIR}/Cache ${WEBKIT_HOME_DIR}/ErrorMsgs \
-        ${WEBKIT_HOME_DIR}/Logs ${WEBKIT_HOME_DIR}/Sessions
 }
 
 case $2 in
