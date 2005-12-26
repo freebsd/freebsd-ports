@@ -7,6 +7,7 @@
 
 PORTNAME=	keitairc
 PORTVERSION=	1.29
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://keitairc.sourceforge.jp/
 DISTNAME=	${PORTNAME}
@@ -30,7 +31,7 @@ EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
 
 do-install:
