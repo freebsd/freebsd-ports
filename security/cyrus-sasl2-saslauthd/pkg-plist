@@ -11,10 +11,9 @@ sbin/testsaslauthd
 %%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
 %%RUNPATH%%@mode ug=rwx,o=
-%%RUNPATH%%@exec mkdir -p /var/state/saslauthd
-%%RUNPATH%%@exec chown -R cyrus:mail /var/state/saslauthd
-%%RUNPATH%%@exec chmod -R ug=rwx,o= /var/state/saslauthd
-%%RUNPATH%%@comment This file gets created by the state/saslauthd program
-%%RUNPATH%%@unexec rm -fr /var/state/saslauthd
-%%RUNPATH%%@unexec rmdir /var/state
+%%RUNPATH%%@exec mkdir -p /var/run/saslauthd
+%%RUNPATH%%@exec chown -R cyrus:mail /var/run/saslauthd
+%%RUNPATH%%@exec chmod -R ug=rwx,o= /var/run/saslauthd
+%%RUNPATH%%@comment This file gets created by the run/saslauthd program
+%%RUNPATH%%@unexec rm -fr /var/run/saslauthd
 @cwd %%PREFIX%%
