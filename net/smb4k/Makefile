@@ -42,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/${DOCSDIR}
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
