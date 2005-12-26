@@ -10,8 +10,7 @@ PORTVERSION=		0.5
 CATEGORIES=		games ipv6
 MASTER_SITES=		ftp://ftp.netris.org/pub/netris/
 
-PATCH_SITES=		ftp://ftp2.v6.linux.or.jp/pub/Linux/IPv6-2/netris/ \
-			http://ftp2.v6.linux.or.jp/pub/Linux/IPv6-2/netris/
+PATCH_SITES=		http://debian.lcs.mit.edu/pub/usagi/ftp.v6.linux.or.jp/IPv6-2/netris/
 PATCHFILES=		netris-0.5-v6-19991206a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
