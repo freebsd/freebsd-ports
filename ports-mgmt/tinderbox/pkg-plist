@@ -79,8 +79,8 @@ tinderbox/scripts/www-exp/templates/default/user_admin.tpl
 tinderbox/scripts/www-exp/templates/default/user_permissions.tpl
 tinderbox/scripts/www-exp/templates/default/user_properties.tpl
 tinderbox/scripts/www-exp/templates/default/current_buildports.tpl
-tinderbox/scripts/www-exp/inc_ds.php
-tinderbox/scripts/www-exp/inc_tinderbox.php
+tinderbox/scripts/www-exp/inc_ds.php-dist
+tinderbox/scripts/www-exp/inc_tinderbox.php-dist
 tinderbox/scripts/www-exp/index.php
 tinderbox/scripts/tinderbox-mysql.schema
 tinderbox/scripts/tc
@@ -106,7 +106,6 @@ tinderbox/scripts/tinderbox-pgsql.schema
 @dirrm tinderbox/scripts/www-exp/templates
 @dirrm tinderbox/scripts/www-exp/module
 @dirrm tinderbox/scripts/www-exp/core
-@dirrm tinderbox/scripts/www-exp
 @dirrm tinderbox/scripts/www
 @dirrm tinderbox/scripts/upgrade
 @dirrm tinderbox/scripts/man/man1
@@ -114,5 +113,6 @@ tinderbox/scripts/tinderbox-pgsql.schema
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc
+@unexec rmdir %D/tinderbox/www-exp 2>/dev/null || true
 @unexec rmdir %D/tinderbox/scripts 2>/dev/null || true
 @unexec rmdir %D/tinderbox 2>/dev/null || true
