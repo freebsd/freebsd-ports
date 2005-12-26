@@ -3,7 +3,7 @@
 # Whom:                Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/misc/fortune-mod-culmea-culmilor/Makefile,v 1.3 2005/12/15 17:48:02 itetcu Exp $
+# $Tecnik: ports/misc/fortune-mod-culmea-culmilor/Makefile,v 1.4 2005/12/21 16:18:14 itetcu Exp $
 #
 
 PORTNAME=	fortune-mod-culmea-culmilor
