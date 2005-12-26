@@ -12888,6 +12888,7 @@ white_dune	ports/graphics/white_dune
 whowatch	ports/sysutils/whowatch
 wide-dhcp	ports/net-mgmt/wide-dhcp
 widentd		ports/net/widentd
+wikindx		ports/www/wikindx
 wiliki		ports/www/wiliki
 wily		ports/editors/wily
 win32-codecs	ports/multimedia/win32-codecs
