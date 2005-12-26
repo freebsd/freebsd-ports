@@ -1,6 +1,6 @@
---- configure.orig	Sat Oct 22 17:17:17 2005
-+++ configure	Mon Nov 28 23:58:20 2005
-@@ -1019,6 +1019,8 @@
+--- configure.orig	Sat Dec 17 16:14:03 2005
++++ configure	Tue Dec 20 03:13:45 2005
+@@ -1021,6 +1021,8 @@
  builtin_vector=no
  if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
    builtin_vector=yes
@@ -9,12 +9,22 @@
  fi
  
  # dlopen/dlfcn.h probing
-@@ -1449,7 +1451,7 @@
+@@ -1457,13 +1459,13 @@
+ if test "$lshared" = "yes" ; then
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
-   echo "SPPMAJOR=0" >> config.mak
--  echo "SPPVERSION=0.0.1" >> config.mak 
-+  echo "SPPVERSION=1" >> config.mak 
+-  echo "SPPMAJOR=${lavc_version/.*/}" >> config.mak
+-  echo "SPPVERSION=$lavc_version" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version/.*/}" >> config.mak
++  echo "SPPMAJOR=${lavc_version%%.*}" >> config.mak
++  echo "SPPVERSION=${lavc_version%%.*}" >> config.mak
++  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
+   echo "LAVCVERSION=$lavc_version" >> config.mak
+-  echo "LAVFMAJOR=${lavf_version/.*/}" >> config.mak
++  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
+   echo "LAVFVERSION=$lavf_version" >> config.mak
+-  echo "LAVUMAJOR=${lavu_version/.*/}" >> config.mak
++  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
+   echo "LAVUVERSION=$lavu_version" >> config.mak
  fi
  echo "EXTRALIBS=$extralibs" >> config.mak
- version=`grep '#define FFMPEG_VERSION ' "$source_path/libavcodec/avcodec.h" |

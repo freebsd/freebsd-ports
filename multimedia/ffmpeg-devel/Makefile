@@ -12,11 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://mplayerhq.hu/MPlayer/cvs/
 MASTER_SITE_SUBDIR=	lioux
 PKGNAMESUFFIX=	-devel
-DISTNAME=	FFMpeg-2005112800
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	lioux
-PATCHFILES=	FFMpeg-2005112800-2005120600.diff.bz2
+DISTNAME=	FFMpeg-${RELEASE_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
@@ -60,7 +56,7 @@ INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
 
-RELEASE_DATE=	2005120600
+RELEASE_DATE=	2005122600
 SHLIB_VERSION=	1
 
 MAN1=		ffmpeg.1
