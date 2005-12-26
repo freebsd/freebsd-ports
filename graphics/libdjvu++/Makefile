@@ -8,7 +8,7 @@
 PORTNAME=	libdjvu++
 PORTVERSION=	2.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://djvu.research.att.com/open/
+MASTER_SITES=	http://www.djvuzone.org/open/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	AT&T's DjVu: The Technology for Scanned Documents on the Web
