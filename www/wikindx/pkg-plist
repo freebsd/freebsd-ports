@@ -1,0 +1,672 @@
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/CUSTOMIZATION
+%%DOCSDIR%%/DISCLAIMER
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README_RSS
+%%DOCSDIR%%/UPDATEWIKINDX
+%%WIKINDX%%/attachments/ATTACHMENTS
+%%WIKINDX%%/config.php
+%%WIKINDX%%/core/admin/ADMIN.php
+%%WIKINDX%%/core/admin/ADMINCUSTOM.php
+%%WIKINDX%%/core/admin/ADMINGROUP.php
+%%WIKINDX%%/core/admin/ADMINSTYLE.php
+%%WIKINDX%%/core/admin/ADMINUSER.php
+%%WIKINDX%%/core/admin/CONFIG.php
+%%WIKINDX%%/core/admin/DELETERESOURCE.php
+%%WIKINDX%%/core/attachments/ATTACHMENTS.php
+%%WIKINDX%%/core/authorize/AUTHORIZE.php
+%%WIKINDX%%/core/browse/BROWSECATEGORY.php
+%%WIKINDX%%/core/browse/BROWSECOLLECTION.php
+%%WIKINDX%%/core/browse/BROWSECOMMON.php
+%%WIKINDX%%/core/browse/BROWSECREATOR.php
+%%WIKINDX%%/core/browse/BROWSEKEYWORD.php
+%%WIKINDX%%/core/browse/BROWSEPUBLISHER.php
+%%WIKINDX%%/core/cite/CITE.php
+%%WIKINDX%%/core/cite/cite.js
+%%WIKINDX%%/core/collection/COLLECTION.php
+%%WIKINDX%%/core/collection/COLLECTIONMAP.php
+%%WIKINDX%%/core/cookie/COOKIE.php
+%%WIKINDX%%/core/creator/CREATOR.php
+%%WIKINDX%%/core/edit/EDIT.php
+%%WIKINDX%%/core/file/BIBTEXCONFIG.php
+%%WIKINDX%%/core/file/BIBTEXMAP.php
+%%WIKINDX%%/core/file/ENDNOTEMAP.php
+%%WIKINDX%%/core/file/FILE.php
+%%WIKINDX%%/core/file/RISMAP.php
+%%WIKINDX%%/core/file/TAG.php
+%%WIKINDX%%/core/file/export/BIBTEX.php
+%%WIKINDX%%/core/file/export/ENDNOTE.php
+%%WIKINDX%%/core/file/export/EXPORTCOMMON.php
+%%WIKINDX%%/core/file/export/HTMLEXPORT.php
+%%WIKINDX%%/core/file/export/RIS.php
+%%WIKINDX%%/core/file/export/RTF.php
+%%WIKINDX%%/core/file/import/BIBTEXCREATORPARSE.php
+%%WIKINDX%%/core/file/import/BIBTEXIMPORT.php
+%%WIKINDX%%/core/file/import/BIBTEXIMPORTSTAGE1.php
+%%WIKINDX%%/core/file/import/BIBTEXIMPORTSTAGE2.php
+%%WIKINDX%%/core/file/import/BIBTEXMONTHPARSE.php
+%%WIKINDX%%/core/file/import/BIBTEXPAGEPARSE.php
+%%WIKINDX%%/core/file/import/BIBTEXPARSE.php
+%%WIKINDX%%/core/file/import/ENDNOTECREATORPARSE.php
+%%WIKINDX%%/core/file/import/ENDNOTEDATEPARSE.php
+%%WIKINDX%%/core/file/import/ENDNOTEIMPORT.php
+%%WIKINDX%%/core/file/import/ENDNOTEIMPORTSTAGE1.php
+%%WIKINDX%%/core/file/import/ENDNOTEIMPORTSTAGE2.php
+%%WIKINDX%%/core/file/import/ENDNOTEPARSEXML.php
+%%WIKINDX%%/core/file/import/IMPORTCOMMON.php
+%%WIKINDX%%/core/front/FRONT.php
+%%WIKINDX%%/core/group/GROUP.php
+%%WIKINDX%%/core/html/CLOSE.php
+%%WIKINDX%%/core/html/CLOSENOMENU.php
+%%WIKINDX%%/core/html/CLOSEPOPUP.php
+%%WIKINDX%%/core/html/FORM.php
+%%WIKINDX%%/core/html/FORMMISC.php
+%%WIKINDX%%/core/html/HTML.php
+%%WIKINDX%%/core/html/HTTPHEADER.php
+%%WIKINDX%%/core/html/MENU.php
+%%WIKINDX%%/core/html/MISC.php
+%%WIKINDX%%/core/html/OPENBODY.php
+%%WIKINDX%%/core/html/TABLE.php
+%%WIKINDX%%/core/icons/LOADICONS.php
+%%WIKINDX%%/core/init/INIT.php
+%%WIKINDX%%/core/init/SCRIPTTIME.php
+%%WIKINDX%%/core/init/SYSTEMCHECK.php
+%%WIKINDX%%/core/javascript/common.js
+%%WIKINDX%%/core/keyword/KEYWORD.php
+%%WIKINDX%%/core/list/LISTCOMMON.php
+%%WIKINDX%%/core/list/LISTRESOURCES.php
+%%WIKINDX%%/core/list/LISTSOMERESOURCES.php
+%%WIKINDX%%/core/list/POWERSEARCHRESOURCES.php
+%%WIKINDX%%/core/list/SEARCHMETADATA.php
+%%WIKINDX%%/core/list/SEARCHRESOURCES.php
+%%WIKINDX%%/core/list/SELECTMETADATA.php
+%%WIKINDX%%/core/list/SELECTRESOURCES.php
+%%WIKINDX%%/core/messages/ABOUT.php
+%%WIKINDX%%/core/messages/CONSTANTS.php
+%%WIKINDX%%/core/messages/ERRORS.php
+%%WIKINDX%%/core/messages/HELP.php
+%%WIKINDX%%/core/messages/HELPCONFIG.php
+%%WIKINDX%%/core/messages/HELPIMPORT.php
+%%WIKINDX%%/core/messages/HELPSTYLE.php
+%%WIKINDX%%/core/messages/LANGUAGE.php
+%%WIKINDX%%/core/messages/LOADLANGUAGE.php
+%%WIKINDX%%/core/messages/MESSAGES.php
+%%WIKINDX%%/core/messages/SUCCESS.php
+%%WIKINDX%%/core/messages/UTF8.php
+%%WIKINDX%%/core/modules/LOADMODULES.php
+%%WIKINDX%%/core/news/NEWS.php
+%%WIKINDX%%/core/notify/NOTIFY.php
+%%WIKINDX%%/core/paging/PAGING.php
+%%WIKINDX%%/core/preferences/PREFERENCES.php
+%%WIKINDX%%/core/publisher/PUBLISHER.php
+%%WIKINDX%%/core/publisher/PUBLISHERMAP.php
+%%WIKINDX%%/core/resource/RESOURCE.php
+%%WIKINDX%%/core/resource/RESOURCEABSTRACT.php
+%%WIKINDX%%/core/resource/RESOURCECUSTOM.php
+%%WIKINDX%%/core/resource/RESOURCEEDIT.php
+%%WIKINDX%%/core/resource/RESOURCEFORM.php
+%%WIKINDX%%/core/resource/RESOURCEMAP.php
+%%WIKINDX%%/core/resource/RESOURCEMUSING.php
+%%WIKINDX%%/core/resource/RESOURCENEW.php
+%%WIKINDX%%/core/resource/RESOURCENOTE.php
+%%WIKINDX%%/core/resource/RESOURCEPARAPHRASE.php
+%%WIKINDX%%/core/resource/RESOURCEQUOTE.php
+%%WIKINDX%%/core/resource/RESOURCEVIEW.php
+%%WIKINDX%%/core/resource/RESOURCEWRITE.php
+%%WIKINDX%%/core/resource/TEXTQP.php
+%%WIKINDX%%/core/resource/VALIDATEINPUT.php
+%%WIKINDX%%/core/session/SESSION.php
+%%WIKINDX%%/core/sql/SQL.php
+%%WIKINDX%%/core/sql/SQLADODB.php
+%%WIKINDX%%/core/sql/STATEMENTS.php
+%%WIKINDX%%/core/sql/adodb-datadict.inc.php
+%%WIKINDX%%/core/sql/adodb-iterator.inc.php
+%%WIKINDX%%/core/sql/adodb-lib.inc.php
+%%WIKINDX%%/core/sql/adodb-php4.inc.php
+%%WIKINDX%%/core/sql/adodb-time.inc.php
+%%WIKINDX%%/core/sql/adodb-xmlschema.inc.php
+%%WIKINDX%%/core/sql/adodb.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-access.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-db2.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-firebird.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-generic.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-ibase.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-informix.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-mssql.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-mysql.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-oci8.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-postgres.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-sapdb.inc.php
+%%WIKINDX%%/core/sql/datadict/datadict-sybase.inc.php
+%%WIKINDX%%/core/sql/drivers/adodb-mysql.inc.php
+%%WIKINDX%%/core/sql/drivers/adodb-postgres.inc.php
+%%WIKINDX%%/core/sql/drivers/adodb-postgres64.inc.php
+%%WIKINDX%%/core/sql/drivers/adodb-postgres7.inc.php
+%%WIKINDX%%/core/sql/libtypes.so
+%%WIKINDX%%/core/sql/license.txt
+%%WIKINDX%%/core/sql/toexport.inc.php
+%%WIKINDX%%/core/sql/xsl/convert-0.1-0.2.xsl
+%%WIKINDX%%/core/sql/xsl/convert-0.2-0.1.xsl
+%%WIKINDX%%/core/sql/xsl/remove-0.2.xsl
+%%WIKINDX%%/core/styles/BIBFORMAT.php
+%%WIKINDX%%/core/styles/BIBSTYLE.php
+%%WIKINDX%%/core/styles/CITEFORMAT.php
+%%WIKINDX%%/core/styles/CITESTYLE.php
+%%WIKINDX%%/core/styles/EXPORTFILTER.php
+%%WIKINDX%%/core/styles/LOADSTYLE.php
+%%WIKINDX%%/core/styles/PARSESTYLE.php
+%%WIKINDX%%/core/styles/PARSEXML.php
+%%WIKINDX%%/core/styles/PREVIEWSTYLE.php
+%%WIKINDX%%/core/styles/STYLEMAP.php
+%%WIKINDX%%/core/template/TEMPLATE.php
+%%WIKINDX%%/core/template/phemplate.php
+%%WIKINDX%%/core/text/TEXT.php
+%%WIKINDX%%/core/type/TYPE.php
+%%WIKINDX%%/core/user/BIBLIOGRAPHY.php
+%%WIKINDX%%/core/user/BOOKMARK.php
+%%WIKINDX%%/core/user/LISTBIBLIOGRAPHY.php
+%%WIKINDX%%/core/user/MYWIKINDX.php
+%%WIKINDX%%/core/user/USER.php
+%%WIKINDX%%/core/wp/JsFormatBar/FORMATBAR.php
+%%WIKINDX%%/core/wp/JsFormatBar/JavaScript/JavaScript.js
+%%WIKINDX%%/core/wp/JsFormatBar/blank.htm
+%%WIKINDX%%/core/wp/JsFormatBar/calendar.php
+%%WIKINDX%%/core/wp/JsFormatBar/insert_link.htm
+%%WIKINDX%%/core/wp/JsFormatBar/insert_table.htm
+%%WIKINDX%%/core/wp/JsFormatBar/palette.htm
+%%WIKINDX%%/core/wp/JsFormatBar/sp_char.php
+%%WIKINDX%%/core/wp/JsFormatBar/sp_charLoad.htm
+%%WIKINDX%%/core/wp/JsFormatBar/sp_charNav.htm
+%%WIKINDX%%/core/wp/WP.php
+%%WIKINDX%%/core/wp/WPRTF.php
+%%WIKINDX%%/docs/classes/collection/checkexistsMethod.html
+%%WIKINDX%%/docs/classes/collection/collectionClass.html
+%%WIKINDX%%/docs/classes/collection/graballMethod.html
+%%WIKINDX%%/docs/classes/creator/checkexistsMethod.html
+%%WIKINDX%%/docs/classes/creator/creatorClass.html
+%%WIKINDX%%/docs/classes/creator/formatinitialsMethod.html
+%%WIKINDX%%/docs/classes/creator/graballMethod.html
+%%WIKINDX%%/docs/classes/export/exportcommonClass.html
+%%WIKINDX%%/docs/classes/export/formatnameMethod.html
+%%WIKINDX%%/docs/classes/export/grababstractMethod.html
+%%WIKINDX%%/docs/classes/export/grabnoteMethod.html
+%%WIKINDX%%/docs/classes/export/keywordformatMethod.html
+%%WIKINDX%%/docs/classes/export/listfilesMethod.html
+%%WIKINDX%%/docs/classes/export/pageformatMethod.html
+%%WIKINDX%%/docs/classes/export/titleformatMethod.html
+%%WIKINDX%%/docs/classes/group/addsqlMethod.html
+%%WIKINDX%%/docs/classes/group/graballMethod.html
+%%WIKINDX%%/docs/classes/group/groupClass.html
+%%WIKINDX%%/docs/classes/html/aMethod.html
+%%WIKINDX%%/docs/classes/html/anameMethod.html
+%%WIKINDX%%/docs/classes/html/bMethod.html
+%%WIKINDX%%/docs/classes/html/brMethod.html
+%%WIKINDX%%/docs/classes/html/checkboxMethod.html
+%%WIKINDX%%/docs/classes/html/closeClass.html
+%%WIKINDX%%/docs/classes/html/closenomenuClass.html
+%%WIKINDX%%/docs/classes/html/codetohtmlMethod.html
+%%WIKINDX%%/docs/classes/html/dbtoformtidyMethod.html
+%%WIKINDX%%/docs/classes/html/dbtohtmltidyMethod.html
+%%WIKINDX%%/docs/classes/html/fileuploadMethod.html
+%%WIKINDX%%/docs/classes/html/formClass.html
+%%WIKINDX%%/docs/classes/html/formendMethod.html
+%%WIKINDX%%/docs/classes/html/formheaderMethod.html
+%%WIKINDX%%/docs/classes/html/formhiddenMethod.html
+%%WIKINDX%%/docs/classes/html/formmultiheaderMethod.html
+%%WIKINDX%%/docs/classes/html/formsubmitMethod.html
+%%WIKINDX%%/docs/classes/html/hMethod.html
+%%WIKINDX%%/docs/classes/html/hrMethod.html
+%%WIKINDX%%/docs/classes/html/htmlClass.html
+%%WIKINDX%%/docs/classes/html/iMethod.html
+%%WIKINDX%%/docs/classes/html/imgMethod.html
+%%WIKINDX%%/docs/classes/html/liMethod.html
+%%WIKINDX%%/docs/classes/html/miscClass.html
+%%WIKINDX%%/docs/classes/html/nltohtmlMethod.html
+%%WIKINDX%%/docs/classes/html/olMethod.html
+%%WIKINDX%%/docs/classes/html/pMethod.html
+%%WIKINDX%%/docs/classes/html/passwordinputMethod.html
+%%WIKINDX%%/docs/classes/html/radiobuttonMethod.html
+%%WIKINDX%%/docs/classes/html/removenlMethod.html
+%%WIKINDX%%/docs/classes/html/selectedboxMethod.html
+%%WIKINDX%%/docs/classes/html/selectedboxvalueMethod.html
+%%WIKINDX%%/docs/classes/html/selectedboxvaluemultipleMethod.html
+%%WIKINDX%%/docs/classes/html/selectfboxMethod.html
+%%WIKINDX%%/docs/classes/html/selectfboxvalueMethod.html
+%%WIKINDX%%/docs/classes/html/selectfboxvaluemultipleMethod.html
+%%WIKINDX%%/docs/classes/html/spanMethod.html
+%%WIKINDX%%/docs/classes/html/stripBBCodeMethod.html
+%%WIKINDX%%/docs/classes/html/tableClass.html
+%%WIKINDX%%/docs/classes/html/tableendMethod.html
+%%WIKINDX%%/docs/classes/html/tablestartMethod.html
+%%WIKINDX%%/docs/classes/html/tdMethod.html
+%%WIKINDX%%/docs/classes/html/tdendMethod.html
+%%WIKINDX%%/docs/classes/html/tdstartMethod.html
+%%WIKINDX%%/docs/classes/html/textareainputMethod.html
+%%WIKINDX%%/docs/classes/html/textinputMethod.html
+%%WIKINDX%%/docs/classes/html/trendMethod.html
+%%WIKINDX%%/docs/classes/html/trstartMethod.html
+%%WIKINDX%%/docs/classes/html/ulMethod.html
+%%WIKINDX%%/docs/classes/import/importcommonClass.html
+%%WIKINDX%%/docs/classes/import/splittitleMethod.html
+%%WIKINDX%%/docs/classes/import/titleexistsMethod.html
+%%WIKINDX%%/docs/classes/import/writecollectiontableMethod.html
+%%WIKINDX%%/docs/classes/import/writecreatortableMethod.html
+%%WIKINDX%%/docs/classes/import/writepublishertableMethod.html
+%%WIKINDX%%/docs/classes/import/writeresourcekeywordtableMethod.html
+%%WIKINDX%%/docs/classes/index.html
+%%WIKINDX%%/docs/classes/init/dbversionMethod.html
+%%WIKINDX%%/docs/classes/init/getVarsMethod.html
+%%WIKINDX%%/docs/classes/init/initClass.html
+%%WIKINDX%%/docs/classes/init/versionMethod.html
+%%WIKINDX%%/docs/classes/keyword/graballMethod.html
+%%WIKINDX%%/docs/classes/keyword/keywordClass.html
+%%WIKINDX%%/docs/classes/list/listcommonClass.html
+%%WIKINDX%%/docs/classes/list/listresourcesMethod.html
+%%WIKINDX%%/docs/classes/list/userbibconditionMethod.html
+%%WIKINDX%%/docs/classes/messages/aboutClass.html
+%%WIKINDX%%/docs/classes/messages/abouttextMethod.html
+%%WIKINDX%%/docs/classes/messages/decodeUtf8Method.html
+%%WIKINDX%%/docs/classes/messages/errorsClass.html
+%%WIKINDX%%/docs/classes/messages/languageClass.html
+%%WIKINDX%%/docs/classes/messages/messagesClass.html
+%%WIKINDX%%/docs/classes/messages/smartUtf8DecodeMethod.html
+%%WIKINDX%%/docs/classes/messages/textMethod.html
+%%WIKINDX%%/docs/classes/messages/utf8Class.html
+%%WIKINDX%%/docs/classes/paging/linksMethod.html
+%%WIKINDX%%/docs/classes/paging/linksinfoMethod.html
+%%WIKINDX%%/docs/classes/paging/pagingClass.html
+%%WIKINDX%%/docs/classes/paging/sqllimitMethod.html
+%%WIKINDX%%/docs/classes/publisher/checkexistsMethod.html
+%%WIKINDX%%/docs/classes/publisher/graballMethod.html
+%%WIKINDX%%/docs/classes/publisher/publisherClass.html
+%%WIKINDX%%/docs/classes/scripttime/elapsedTimeMethod.html
+%%WIKINDX%%/docs/classes/scripttime/scripttimeClass.html
+%%WIKINDX%%/docs/classes/session/cleararrayMethod.html
+%%WIKINDX%%/docs/classes/session/delvarMethod.html
+%%WIKINDX%%/docs/classes/session/getarrayMethod.html
+%%WIKINDX%%/docs/classes/session/getvarMethod.html
+%%WIKINDX%%/docs/classes/session/issetvarMethod.html
+%%WIKINDX%%/docs/classes/session/sessionClass.html
+%%WIKINDX%%/docs/classes/session/setvarMethod.html
+%%WIKINDX%%/docs/classes/session/writearrayMethod.html
+%%WIKINDX%%/docs/classes/sql/deleteMethod.html
+%%WIKINDX%%/docs/classes/sql/fetchOneMethod.html
+%%WIKINDX%%/docs/classes/sql/fetchRowMethod.html
+%%WIKINDX%%/docs/classes/sql/formataliasMethod.html
+%%WIKINDX%%/docs/classes/sql/formatfieldMethod.html
+%%WIKINDX%%/docs/classes/sql/formattimestampMethod.html
+%%WIKINDX%%/docs/classes/sql/insertMethod.html
+%%WIKINDX%%/docs/classes/sql/lastautoidMethod.html
+%%WIKINDX%%/docs/classes/sql/limitMethod.html
+%%WIKINDX%%/docs/classes/sql/listfieldsMethod.html
+%%WIKINDX%%/docs/classes/sql/listtablesMethod.html
+%%WIKINDX%%/docs/classes/sql/loopRecordSetMethod.html
+%%WIKINDX%%/docs/classes/sql/numrowsMethod.html
+%%WIKINDX%%/docs/classes/sql/optimizeMethod.html
+%%WIKINDX%%/docs/classes/sql/queryMethod.html
+%%WIKINDX%%/docs/classes/sql/selectMethod.html
+%%WIKINDX%%/docs/classes/sql/selectnoexecuteMethod.html
+%%WIKINDX%%/docs/classes/sql/selectwithexceptionsMethod.html
+%%WIKINDX%%/docs/classes/sql/sqlClass.html
+%%WIKINDX%%/docs/classes/sql/tidyinputMethod.html
+%%WIKINDX%%/docs/classes/sql/updateMethod.html
+%%WIKINDX%%/docs/classes/sql/updatenullMethod.html
+%%WIKINDX%%/docs/classes/sql/updatesingleMethod.html
+%%WIKINDX%%/docs/classes/statements/allresourcetablesMethod.html
+%%WIKINDX%%/docs/classes/statements/listfieldsMethod.html
+%%WIKINDX%%/docs/classes/statements/listjoinMethod.html
+%%WIKINDX%%/docs/classes/statements/statementsClass.html
+%%WIKINDX%%/docs/classes/systemcheck/systemcheckClass.html
+%%WIKINDX%%/docs/conventions.html
+%%WIKINDX%%/docs/createMySQL.html
+%%WIKINDX%%/docs/docs.css
+%%WIKINDX%%/docs/index.html
+%%WIKINDX%%/docs/resourceDatabaseMatrix.html
+%%WIKINDX%%/docs/structure.html
+%%WIKINDX%%/docs/templates/index.html
+%%WIKINDX%%/docs/templates/minimal/body.tpl
+%%WIKINDX%%/docs/templates/minimal/bodyPopUp.tpl
+%%WIKINDX%%/docs/templates/minimal/content.tpl
+%%WIKINDX%%/docs/templates/minimal/footer.tpl
+%%WIKINDX%%/docs/templates/minimal/header.tpl
+%%WIKINDX%%/docs/templates/minimal/menu.tpl
+%%WIKINDX%%/docs/templates/minimal/minimal.css
+%%WIKINDX%%/docs/usage/database.html
+%%WIKINDX%%/docs/usage/index.html
+%%WIKINDX%%/docs/usage/languages.html
+%%WIKINDX%%/docs/usage/pluginmodules.html
+%%WIKINDX%%/docs/usage/session.html
+%%WIKINDX%%/docs/usage/utf8.html
+%%WIKINDX%%/files/FILES
+%%WIKINDX%%/index.php
+%%WIKINDX%%/languages/en/ABOUT.php
+%%WIKINDX%%/languages/en/CONSTANTS.php
+%%WIKINDX%%/languages/en/ERRORS.php
+%%WIKINDX%%/languages/en/HELP.php
+%%WIKINDX%%/languages/en/HELPCONFIG.php
+%%WIKINDX%%/languages/en/HELPIMPORT.php
+%%WIKINDX%%/languages/en/HELPSTYLE.php
+%%WIKINDX%%/languages/en/MESSAGES.php
+%%WIKINDX%%/languages/en/SUCCESS.php
+%%WIKINDX%%/languages/en/description.txt
+%%WIKINDX%%/modules/MODULES
+%%WIKINDX%%/papers/PAPERS
+%%WIKINDX%%/rss.php
+%%WIKINDX%%/styles/bibliography/apa/APA.xml
+%%WIKINDX%%/styles/bibliography/apa/README.txt
+%%WIKINDX%%/styles/bibliography/britishmedicaljournal/BRITISHMEDICALJOURNAL.xml
+%%WIKINDX%%/styles/bibliography/britishmedicaljournal/README.txt
+%%WIKINDX%%/styles/bibliography/chicago/CHICAGO.xml
+%%WIKINDX%%/styles/bibliography/chicago/README.txt
+%%WIKINDX%%/styles/bibliography/harvard/HARVARD.xml
+%%WIKINDX%%/styles/bibliography/harvard/README.txt
+%%WIKINDX%%/styles/bibliography/ieee/IEEE.xml
+%%WIKINDX%%/styles/bibliography/ieee/README.txt
+%%WIKINDX%%/styles/bibliography/mla/MLA.xml
+%%WIKINDX%%/styles/bibliography/mla/README.txt
+%%WIKINDX%%/styles/bibliography/turabian/README.txt
+%%WIKINDX%%/styles/bibliography/turabian/TURABIAN.xml
+%%WIKINDX%%/styles/bibliography/wikindx/README.txt
+%%WIKINDX%%/styles/bibliography/wikindx/WIKINDX.xml
+%%WIKINDX%%/templates/blue/blue.css
+%%WIKINDX%%/templates/blue/body.tpl
+%%WIKINDX%%/templates/blue/bodyPopUp.tpl
+%%WIKINDX%%/templates/blue/content.tpl
+%%WIKINDX%%/templates/blue/description.txt
+%%WIKINDX%%/templates/blue/footer.tpl
+%%WIKINDX%%/templates/blue/header.tpl
+%%WIKINDX%%/templates/blue/icons/add.gif
+%%WIKINDX%%/templates/blue/icons/checkall.gif
+%%WIKINDX%%/templates/blue/icons/cite.gif
+%%WIKINDX%%/templates/blue/icons/delete.gif
+%%WIKINDX%%/templates/blue/icons/edit.gif
+%%WIKINDX%%/templates/blue/icons/file.gif
+%%WIKINDX%%/templates/blue/icons/next.gif
+%%WIKINDX%%/templates/blue/icons/previous.gif
+%%WIKINDX%%/templates/blue/icons/uncheckall.gif
+%%WIKINDX%%/templates/blue/icons/view.gif
+%%WIKINDX%%/templates/blue/icons/viewmeta.gif
+%%WIKINDX%%/templates/blue/images/arrow-blue.gif
+%%WIKINDX%%/templates/blue/images/body-bg-blue.gif
+%%WIKINDX%%/templates/blue/images/formatBarBackground.gif
+%%WIKINDX%%/templates/blue/images/formatBarBackground.png
+%%WIKINDX%%/templates/blue/images/header-bg-blue.jpg
+%%WIKINDX%%/templates/blue/menu.tpl
+%%WIKINDX%%/templates/blue/menuShim.js
+%%WIKINDX%%/templates/chocolate/body.tpl
+%%WIKINDX%%/templates/chocolate/bodyPopUp.tpl
+%%WIKINDX%%/templates/chocolate/chocolate.css
+%%WIKINDX%%/templates/chocolate/content.tpl
+%%WIKINDX%%/templates/chocolate/description.txt
+%%WIKINDX%%/templates/chocolate/footer.tpl
+%%WIKINDX%%/templates/chocolate/header.tpl
+%%WIKINDX%%/templates/chocolate/icons/add.gif
+%%WIKINDX%%/templates/chocolate/icons/checkall.gif
+%%WIKINDX%%/templates/chocolate/icons/cite.gif
+%%WIKINDX%%/templates/chocolate/icons/delete.gif
+%%WIKINDX%%/templates/chocolate/icons/edit.gif
+%%WIKINDX%%/templates/chocolate/icons/file.gif
+%%WIKINDX%%/templates/chocolate/icons/next.gif
+%%WIKINDX%%/templates/chocolate/icons/previous.gif
+%%WIKINDX%%/templates/chocolate/icons/uncheckall.gif
+%%WIKINDX%%/templates/chocolate/icons/view.gif
+%%WIKINDX%%/templates/chocolate/icons/viewmeta.gif
+%%WIKINDX%%/templates/chocolate/images/formatBarBackground.gif
+%%WIKINDX%%/templates/chocolate/images/formatBarBackground.png
+%%WIKINDX%%/templates/chocolate/images/wikindx3choclogo.gif
+%%WIKINDX%%/templates/chocolate/menu.tpl
+%%WIKINDX%%/templates/chocolate/menuShim.js
+%%WIKINDX%%/templates/classic/body.tpl
+%%WIKINDX%%/templates/classic/bodyPopUp.tpl
+%%WIKINDX%%/templates/classic/classic.css
+%%WIKINDX%%/templates/classic/content.tpl
+%%WIKINDX%%/templates/classic/description.txt
+%%WIKINDX%%/templates/classic/footer.tpl
+%%WIKINDX%%/templates/classic/header.tpl
+%%WIKINDX%%/templates/classic/icons/add.gif
+%%WIKINDX%%/templates/classic/icons/checkall.gif
+%%WIKINDX%%/templates/classic/icons/cite.gif
+%%WIKINDX%%/templates/classic/icons/delete.gif
+%%WIKINDX%%/templates/classic/icons/edit.gif
+%%WIKINDX%%/templates/classic/icons/file.gif
+%%WIKINDX%%/templates/classic/icons/next.gif
+%%WIKINDX%%/templates/classic/icons/previous.gif
+%%WIKINDX%%/templates/classic/icons/uncheckall.gif
+%%WIKINDX%%/templates/classic/icons/view.gif
+%%WIKINDX%%/templates/classic/icons/viewmeta.gif
+%%WIKINDX%%/templates/classic/images/formatBarBackground.gif
+%%WIKINDX%%/templates/classic/images/formatBarBackground.png
+%%WIKINDX%%/templates/classic/images/wikindx3logo-anim.gif
+%%WIKINDX%%/templates/classic/menu.tpl
+%%WIKINDX%%/templates/classic/menuShim.js
+%%WIKINDX%%/templates/default/body.tpl
+%%WIKINDX%%/templates/default/bodyPopUp.tpl
+%%WIKINDX%%/templates/default/content.tpl
+%%WIKINDX%%/templates/default/default.css
+%%WIKINDX%%/templates/default/description.txt
+%%WIKINDX%%/templates/default/footer.tpl
+%%WIKINDX%%/templates/default/header.tpl
+%%WIKINDX%%/templates/default/icons/add.gif
+%%WIKINDX%%/templates/default/icons/checkall.gif
+%%WIKINDX%%/templates/default/icons/cite.gif
+%%WIKINDX%%/templates/default/icons/delete.gif
+%%WIKINDX%%/templates/default/icons/edit.gif
+%%WIKINDX%%/templates/default/icons/file.gif
+%%WIKINDX%%/templates/default/icons/next.gif
+%%WIKINDX%%/templates/default/icons/previous.gif
+%%WIKINDX%%/templates/default/icons/uncheckall.gif
+%%WIKINDX%%/templates/default/icons/view.gif
+%%WIKINDX%%/templates/default/icons/viewmeta.gif
+%%WIKINDX%%/templates/default/images/formatBarBackground.gif
+%%WIKINDX%%/templates/default/images/formatBarBackground.png
+%%WIKINDX%%/templates/default/images/paper.jpg
+%%WIKINDX%%/templates/default/images/wikindx3logo-anim.gif
+%%WIKINDX%%/templates/default/menu.tpl
+%%WIKINDX%%/templates/default/menuShim.js
+%%WIKINDX%%/templates/green_marble/body.tpl
+%%WIKINDX%%/templates/green_marble/bodyPopUp.tpl
+%%WIKINDX%%/templates/green_marble/content.tpl
+%%WIKINDX%%/templates/green_marble/description.txt
+%%WIKINDX%%/templates/green_marble/footer.tpl
+%%WIKINDX%%/templates/green_marble/green_marble.css
+%%WIKINDX%%/templates/green_marble/header.tpl
+%%WIKINDX%%/templates/green_marble/icons/add.gif
+%%WIKINDX%%/templates/green_marble/icons/checkall.gif
+%%WIKINDX%%/templates/green_marble/icons/cite.gif
+%%WIKINDX%%/templates/green_marble/icons/delete.gif
+%%WIKINDX%%/templates/green_marble/icons/edit.gif
+%%WIKINDX%%/templates/green_marble/icons/file.gif
+%%WIKINDX%%/templates/green_marble/icons/next.gif
+%%WIKINDX%%/templates/green_marble/icons/previous.gif
+%%WIKINDX%%/templates/green_marble/icons/uncheckall.gif
+%%WIKINDX%%/templates/green_marble/icons/view.gif
+%%WIKINDX%%/templates/green_marble/icons/viewmeta.gif
+%%WIKINDX%%/templates/green_marble/images/bk-marble.gif
+%%WIKINDX%%/templates/green_marble/images/blank.gif
+%%WIKINDX%%/templates/green_marble/images/d-marble.gif
+%%WIKINDX%%/templates/green_marble/images/formatBarBackground.gif
+%%WIKINDX%%/templates/green_marble/images/formatBarBackground.png
+%%WIKINDX%%/templates/green_marble/images/l-marble.gif
+%%WIKINDX%%/templates/green_marble/images/ld-marble.gif
+%%WIKINDX%%/templates/green_marble/images/logo.gif
+%%WIKINDX%%/templates/green_marble/images/lu-marble.gif
+%%WIKINDX%%/templates/green_marble/images/r-marble.gif
+%%WIKINDX%%/templates/green_marble/images/rd-marble.gif
+%%WIKINDX%%/templates/green_marble/images/ru-marble.gif
+%%WIKINDX%%/templates/green_marble/images/u-marble.gif
+%%WIKINDX%%/templates/green_marble/menu.tpl
+%%WIKINDX%%/templates/green_marble/menuShim.js
+%%WIKINDX%%/templates/green_marble/readme.txt
+%%WIKINDX%%/templates/notmac/body.tpl
+%%WIKINDX%%/templates/notmac/bodyPopUp.tpl
+%%WIKINDX%%/templates/notmac/content.tpl
+%%WIKINDX%%/templates/notmac/description.txt
+%%WIKINDX%%/templates/notmac/footer.tpl
+%%WIKINDX%%/templates/notmac/header.tpl
+%%WIKINDX%%/templates/notmac/icons/add.gif
+%%WIKINDX%%/templates/notmac/icons/checkall.gif
+%%WIKINDX%%/templates/notmac/icons/cite.gif
+%%WIKINDX%%/templates/notmac/icons/delete.gif
+%%WIKINDX%%/templates/notmac/icons/edit.gif
+%%WIKINDX%%/templates/notmac/icons/file.gif
+%%WIKINDX%%/templates/notmac/icons/next.gif
+%%WIKINDX%%/templates/notmac/icons/previous.gif
+%%WIKINDX%%/templates/notmac/icons/uncheckall.gif
+%%WIKINDX%%/templates/notmac/icons/view.gif
+%%WIKINDX%%/templates/notmac/icons/viewmeta.gif
+%%WIKINDX%%/templates/notmac/images/formatBarBackground.gif
+%%WIKINDX%%/templates/notmac/images/formatBarBackground.png
+%%WIKINDX%%/templates/notmac/images/halfwhite.png
+%%WIKINDX%%/templates/notmac/images/paper.jpg
+%%WIKINDX%%/templates/notmac/images/wikindx.png
+%%WIKINDX%%/templates/notmac/menu.tpl
+%%WIKINDX%%/templates/notmac/menuShim.js
+%%WIKINDX%%/templates/notmac/menuback.png
+%%WIKINDX%%/templates/notmac/notmac.css
+%%WIKINDX%%/templates/simple/body.tpl
+%%WIKINDX%%/templates/simple/bodyPopUp.tpl
+%%WIKINDX%%/templates/simple/content.tpl
+%%WIKINDX%%/templates/simple/description.txt
+%%WIKINDX%%/templates/simple/footer.tpl
+%%WIKINDX%%/templates/simple/header.tpl
+%%WIKINDX%%/templates/simple/icons/add.gif
+%%WIKINDX%%/templates/simple/icons/checkall.gif
+%%WIKINDX%%/templates/simple/icons/cite.gif
+%%WIKINDX%%/templates/simple/icons/delete.gif
+%%WIKINDX%%/templates/simple/icons/edit.gif
+%%WIKINDX%%/templates/simple/icons/file.gif
+%%WIKINDX%%/templates/simple/icons/next.gif
+%%WIKINDX%%/templates/simple/icons/previous.gif
+%%WIKINDX%%/templates/simple/icons/uncheckall.gif
+%%WIKINDX%%/templates/simple/icons/view.gif
+%%WIKINDX%%/templates/simple/icons/viewmeta.gif
+%%WIKINDX%%/templates/simple/images/formatBarBackground.gif
+%%WIKINDX%%/templates/simple/images/formatBarBackground.png
+%%WIKINDX%%/templates/simple/images/simple-bg.gif
+%%WIKINDX%%/templates/simple/images/simple-table-bg.gif
+%%WIKINDX%%/templates/simple/menu.tpl
+%%WIKINDX%%/templates/simple/menuShim.js
+%%WIKINDX%%/templates/simple/simple.css
+%%WIKINDX%%/templates/vert/body.tpl
+%%WIKINDX%%/templates/vert/bodyPopUp.tpl
+%%WIKINDX%%/templates/vert/content.tpl
+%%WIKINDX%%/templates/vert/description.txt
+%%WIKINDX%%/templates/vert/footer.tpl
+%%WIKINDX%%/templates/vert/header.tpl
+%%WIKINDX%%/templates/vert/images/formatBarBackground.gif
+%%WIKINDX%%/templates/vert/images/formatBarBackground.png
+%%WIKINDX%%/templates/vert/menu.tpl
+%%WIKINDX%%/templates/vert/menuShim.js
+%%WIKINDX%%/templates/vert/vert.css
+%%WIKINDX%%/update/createMySQL.txt
+%%WIKINDX%%/update/createSQL.xml
+%%WIKINDX%%/update/updateMySQL.txt
+@dirrm %%WIKINDX%%/update
+@dirrm %%WIKINDX%%/templates/vert/images
+@dirrm %%WIKINDX%%/templates/vert
+@dirrm %%WIKINDX%%/templates/simple/images
+@dirrm %%WIKINDX%%/templates/simple/icons
+@dirrm %%WIKINDX%%/templates/simple
+@dirrm %%WIKINDX%%/templates/notmac/images
+@dirrm %%WIKINDX%%/templates/notmac/icons
+@dirrm %%WIKINDX%%/templates/notmac
+@dirrm %%WIKINDX%%/templates/green_marble/images
+@dirrm %%WIKINDX%%/templates/green_marble/icons
+@dirrm %%WIKINDX%%/templates/green_marble
+@dirrm %%WIKINDX%%/templates/default/images
+@dirrm %%WIKINDX%%/templates/default/icons
+@dirrm %%WIKINDX%%/templates/default
+@dirrm %%WIKINDX%%/templates/classic/images
+@dirrm %%WIKINDX%%/templates/classic/icons
+@dirrm %%WIKINDX%%/templates/classic
+@dirrm %%WIKINDX%%/templates/chocolate/images
+@dirrm %%WIKINDX%%/templates/chocolate/icons
+@dirrm %%WIKINDX%%/templates/chocolate
+@dirrm %%WIKINDX%%/templates/blue/images
+@dirrm %%WIKINDX%%/templates/blue/icons
+@dirrm %%WIKINDX%%/templates/blue
+@dirrm %%WIKINDX%%/templates
+@dirrm %%WIKINDX%%/styles/bibliography/wikindx
+@dirrm %%WIKINDX%%/styles/bibliography/turabian
+@dirrm %%WIKINDX%%/styles/bibliography/mla
+@dirrm %%WIKINDX%%/styles/bibliography/ieee
+@dirrm %%WIKINDX%%/styles/bibliography/harvard
+@dirrm %%WIKINDX%%/styles/bibliography/chicago
+@dirrm %%WIKINDX%%/styles/bibliography/britishmedicaljournal
+@dirrm %%WIKINDX%%/styles/bibliography/apa
+@dirrm %%WIKINDX%%/styles/bibliography
+@dirrm %%WIKINDX%%/styles
+@dirrm %%WIKINDX%%/papers
+@dirrm %%WIKINDX%%/modules
+@dirrm %%WIKINDX%%/languages/en
+@dirrm %%WIKINDX%%/languages
+@dirrm %%WIKINDX%%/files
+@dirrm %%WIKINDX%%/docs/usage
+@dirrm %%WIKINDX%%/docs/templates/minimal
+@dirrm %%WIKINDX%%/docs/templates
+@dirrm %%WIKINDX%%/docs/classes/systemcheck
+@dirrm %%WIKINDX%%/docs/classes/statements
+@dirrm %%WIKINDX%%/docs/classes/sql
+@dirrm %%WIKINDX%%/docs/classes/session
+@dirrm %%WIKINDX%%/docs/classes/scripttime
+@dirrm %%WIKINDX%%/docs/classes/publisher
+@dirrm %%WIKINDX%%/docs/classes/paging
+@dirrm %%WIKINDX%%/docs/classes/messages
+@dirrm %%WIKINDX%%/docs/classes/list
+@dirrm %%WIKINDX%%/docs/classes/keyword
+@dirrm %%WIKINDX%%/docs/classes/init
+@dirrm %%WIKINDX%%/docs/classes/import
+@dirrm %%WIKINDX%%/docs/classes/html
+@dirrm %%WIKINDX%%/docs/classes/group
+@dirrm %%WIKINDX%%/docs/classes/export
+@dirrm %%WIKINDX%%/docs/classes/creator
+@dirrm %%WIKINDX%%/docs/classes/collection
+@dirrm %%WIKINDX%%/docs/classes
+@dirrm %%WIKINDX%%/docs
+@dirrm %%WIKINDX%%/core/wp/JsFormatBar/JavaScript
+@dirrm %%WIKINDX%%/core/wp/JsFormatBar
+@dirrm %%WIKINDX%%/core/wp
+@dirrm %%WIKINDX%%/core/user
+@dirrm %%WIKINDX%%/core/type
+@dirrm %%WIKINDX%%/core/text
+@dirrm %%WIKINDX%%/core/template
+@dirrm %%WIKINDX%%/core/styles
+@dirrm %%WIKINDX%%/core/sql/xsl
+@dirrm %%WIKINDX%%/core/sql/drivers
+@dirrm %%WIKINDX%%/core/sql/datadict
+@dirrm %%WIKINDX%%/core/sql
+@dirrm %%WIKINDX%%/core/session
+@dirrm %%WIKINDX%%/core/resource
+@dirrm %%WIKINDX%%/core/publisher
+@dirrm %%WIKINDX%%/core/preferences
+@dirrm %%WIKINDX%%/core/paging
+@dirrm %%WIKINDX%%/core/notify
+@dirrm %%WIKINDX%%/core/news
+@dirrm %%WIKINDX%%/core/modules
+@dirrm %%WIKINDX%%/core/messages
+@dirrm %%WIKINDX%%/core/list
+@dirrm %%WIKINDX%%/core/keyword
+@dirrm %%WIKINDX%%/core/javascript
+@dirrm %%WIKINDX%%/core/init
+@dirrm %%WIKINDX%%/core/icons
+@dirrm %%WIKINDX%%/core/html
+@dirrm %%WIKINDX%%/core/group
+@dirrm %%WIKINDX%%/core/front
+@dirrm %%WIKINDX%%/core/file/import
+@dirrm %%WIKINDX%%/core/file/export
+@dirrm %%WIKINDX%%/core/file
+@dirrm %%WIKINDX%%/core/edit
+@dirrm %%WIKINDX%%/core/creator
+@dirrm %%WIKINDX%%/core/cookie
+@dirrm %%WIKINDX%%/core/collection
+@dirrm %%WIKINDX%%/core/cite
+@dirrm %%WIKINDX%%/core/browse
+@dirrm %%WIKINDX%%/core/authorize
+@dirrm %%WIKINDX%%/core/attachments
+@dirrm %%WIKINDX%%/core/admin
+@dirrm %%WIKINDX%%/core
+@dirrm %%WIKINDX%%/attachments
+@dirrm %%WIKINDX%%
+@dirrm %%DOCSDIR%%

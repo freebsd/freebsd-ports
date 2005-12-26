@@ -896,6 +896,7 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wget4web
+    SUBDIR += wikindx
     SUBDIR += wiliki
     SUBDIR += winhelpcgi
     SUBDIR += wml
