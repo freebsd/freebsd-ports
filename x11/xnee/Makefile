@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	2.01
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,10 +34,8 @@ PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-post-build:
+post-install:
 	cd ${WRKSRC}/doc && makeinfo --no-split xnee.texi
-
-pre-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
