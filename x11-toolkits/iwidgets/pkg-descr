@@ -1,6 +1,7 @@
-This  package contains  [incr Widgets]  version 3.0.0  and 2.2.0.  [incr
+This  package contains  [incr Widgets]  version 4.0.1.  [incr
 Widgets] is  a companion to  [incr Tk] and  provides a widget  set, with
 many improved  widgets. The [incr  Widgets] collection is also  known as
-``iwidgets''.
+``iwidgets'' or "mega-widgets".
 
 WWW:	http://sourceforge.net/projects/incrtcl/
+pauls@utdallas.edu
