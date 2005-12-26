@@ -7,6 +7,7 @@
 
 PORTNAME=	alacarte
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dev.realistanew.com/${PORTNAME}/releases/${PORTVERSION}/
 
