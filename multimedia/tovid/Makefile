@@ -7,7 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.24
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 
 MAINTAINER=	lioux@FreeBSD.org
