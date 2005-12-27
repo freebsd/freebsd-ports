@@ -1,0 +1,8 @@
+This module allows you to record all HTTP communication between an
+HTTP::Server::Simple-derived server and its clients.  It is a mixin, so
+it doesn't itself subclass HTTP::Server::Simple; you need to subclass
+from both HTTP::Server::Simple::Recorder and an actual
+HTTP::Server::Simple subclass, and HTTP::Server::Simple::Recorder should
+be listed first.
+
+WWW: http://search.cpan.org/dist/HTTP-Server-Simple-Recorder/
