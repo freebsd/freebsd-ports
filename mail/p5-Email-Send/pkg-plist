@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Email/Send.pm
+%%SITE_PERL%%/Email/Send/IO.pm
+%%SITE_PERL%%/Email/Send/NNTP.pm
+%%SITE_PERL%%/Email/Send/Qmail.pm
+%%SITE_PERL%%/Email/Send/SMTP.pm
+%%SITE_PERL%%/Email/Send/Sendmail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/Send 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
