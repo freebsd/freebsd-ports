@@ -13035,6 +13035,7 @@ wnews		ports/www/wnews
 wol		ports/net/wol
 wolf3d		ports/games/wolf3d
 wolfpack	ports/games/wolfpack
+wop		ports/games/wop
 word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
 wordplay	ports/games/wordplay
