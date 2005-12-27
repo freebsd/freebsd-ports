@@ -7,10 +7,10 @@
 
 PORTNAME=	console
 PORTVERSION=	${CONSOLE_LICQ_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
-LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
+LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
