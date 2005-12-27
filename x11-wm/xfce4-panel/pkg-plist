@@ -143,13 +143,13 @@ share/xfce4/doc/he/images/add-item-dialog.png
 share/xfce4/doc/he/images/clock-properties.png
 share/xfce4/doc/he/images/default_panel.png
 share/xfce4/doc/he/images/handle-popup.png
-share/xfce4/doc/he/images/item-popup.png  
+share/xfce4/doc/he/images/item-popup.png
 share/xfce4/doc/he/images/launcher-properties.png
 share/xfce4/doc/he/images/mailcheck-properties.png
 share/xfce4/doc/he/images/menuitem-properties.png
 share/xfce4/doc/he/images/nooptions-properties.png
 share/xfce4/doc/he/images/pager-properties.png
-share/xfce4/doc/he/images/panel-settings.png 
+share/xfce4/doc/he/images/panel-settings.png
 share/xfce4/doc/he/images/systembuttons-properties.png
 share/xfce4/doc/he/xfce4-panel.html
 @dirrm etc/xdg/xfce4/panel

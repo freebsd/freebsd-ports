@@ -44,7 +44,7 @@ share/locale/ja/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ko/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ku/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/lt/LC_MESSAGES/xfce-mcs-plugins.mo
-share/locale/mr/LC_MESSAGES/xfce-mcs-plugins.mo  
+share/locale/mr/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ms/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/nl/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/pa/LC_MESSAGES/xfce-mcs-plugins.mo
@@ -76,9 +76,9 @@ share/xfce4/doc/fr/images/mouse_settings.png
 share/xfce4/doc/fr/images/user_interface_settings.png
 share/xfce4/doc/fr/xfce-mcs-plugins.html
 share/xfce4/doc/he/images/display_preferences.png
-share/xfce4/doc/he/images/font_selection.png   
+share/xfce4/doc/he/images/font_selection.png
 share/xfce4/doc/he/images/keyboard_settings.png
-share/xfce4/doc/he/images/mouse_settings.png   
+share/xfce4/doc/he/images/mouse_settings.png
 share/xfce4/doc/he/images/user_interface_settings.png
 share/xfce4/doc/he/xfce-mcs-plugins.html
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
