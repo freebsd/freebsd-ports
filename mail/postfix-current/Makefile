@@ -31,6 +31,7 @@ USE_PERL5_BUILD=yes
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		off \
+		DOVECOT		"Dovecot SASL authentication method"			off \
 		SASLKRB		"If your SASL req. Kerberos select this option"		off \
 		SASLKRB5	"If your SASL req. Kerberos5 select this option"	off \
 		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	off \
@@ -91,8 +92,8 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if defined(WITH_SASL)
-.if defined(WITH_SASL2)
-BROKEN=			"Select only one SASL version"
+.if defined(WITH_SASL2) || defined(WITH_DOVECOT)
+BROKEN=			"Select only one SASL authentication method"
 .endif
 LIB_DEPENDS+=		sasl.8:${PORTSDIR}/security/cyrus-sasl
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl1
@@ -100,12 +101,20 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lpam -lcrypt
 .endif
 
 .if defined(WITH_SASL2)
-.if defined(WITH_SASL)
-BROKEN=			"Select only one SASL version"
+.if defined(WITH_SASL) || defined(WITH_DOVECOT)
+BROKEN=			"Select only one SASL authentication method"
 .endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
+.endif
+
+.if defined(WITH_DOVECOT)
+.if defined(WITH_SASL) || defined(WITH_SASL2)
+BROKEN=			"Select only one SASL authentication method"
+.endif
+RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SASL_SERVER=\"dovecot\"
 .endif
 
 .if defined(WITH_SASLKRB)
