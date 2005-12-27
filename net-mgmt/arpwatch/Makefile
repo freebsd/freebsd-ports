@@ -7,6 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a13
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 DISTNAME=	arpwatch-2.1a13
@@ -17,10 +18,11 @@ COMMENT=	Monitor arp & rarp requests
 CONFLICTS=	arpwatch-devel-2.*
 
 GNU_CONFIGURE=	yes
-HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
+
+USE_RC_SUBR=	arpwatch.sh
 
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
@@ -34,9 +36,5 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch;	\
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
-	${INSTALL_SCRIPT} ${FILESDIR}/arpwatch.sh ${PREFIX}/etc/rc.d/arpwatch.sh.sample
-	@${ECHO_MSG} "#####################################################################"
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/arpwatch.sh.sample file."
-	@${ECHO_MSG} "#####################################################################"
 
 .include <bsd.port.mk>

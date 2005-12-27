@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: arpwatch
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD
+
+# Add the following lines to /etc/rc.conf to enable arpwatch:
+#
+#arpwatch_enable="YES"
+#
+arpwatch_enable=${arpwatch_enable:-"NO"}
+arpwatch_dir="%%PREFIX%%/arpwatch/"
+arpwatch_interfaces=
+
+. %%RC_SUBR%%
+
+name=arpwatch
+rcvar=`set_rcvar`
+required_dirs=${arpwatch_dir}
+
+load_rc_config ${name}
+
+command="%%PREFIX%%/sbin/${name}"
+start_precmd=${name}_precmd
+
+arpwatch_precmd() {
+    case ${arpwatch_interfaces} in
+        '')
+	    echo prcmd
+	    if [ ! -e "${arpwatch_dir}/arp.dat" ]; then
+		if [ -e "${arpwatch_dir}/arp.dat-" ]; then
+		    cp "${arpwatch_dir}/arp.dat-" "${arpwatch_dir}/arp.dat"
+		else
+		    touch "${arpwatch_dir}/arp.dat"
+		fi
+	    fi
+	;;
+
+	*)
+	    for interface in ${arpwatch_interfaces}; do
+	        if [ ! -e "${arpwatch_dir}/arp.${interface}.dat" ]; then
+		    if [ -e "${arpwatch_dir}/arp.${interface}.dat-" ]; then
+		        cp "${arpwatch_dir}/arp.${interface}.dat-" "${arpwatch_dir}/arp.${interface}.dat"
+		    else
+		        touch "${arpwatch_dir}/arp.${interface}.dat"
+		    fi
+		fi
+	    done
+	;;
+    esac
+}
+
+arpwatch_stop() {
+    killall arpwatch
+}
+
+case ${arpwatch_interfaces} in
+    '')  
+	 echo 'meuh'
+         run_rc_command "$1"
+    ;;
+
+    *)
+	 if [ "$1" = "start" ]; then
+ 	     for interface in ${arpwatch_interfaces}; do
+		 eval options=\$arpwatch_${interface}_options
+	         command_args="-i ${interface} ${options} -f arp.${interface}.dat" 
+                 run_rc_command "$1"
+	     done
+	 else
+             run_rc_command "$1"
+	 fi
+    ;;
+esac
