@@ -6,6 +6,7 @@ include/cairomm-1.0/cairomm/fontface.h
 include/cairomm-1.0/cairomm/fontoptions.h
 include/cairomm-1.0/cairomm/path.h
 include/cairomm-1.0/cairomm/pattern.h
+include/cairomm-1.0/cairomm/refptr.h
 include/cairomm-1.0/cairomm/surface.h
 lib/libcairomm-1.0.a
 lib/libcairomm-1.0.so
