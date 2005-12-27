@@ -1,8 +1,0 @@
---- src.contrib/GMSL/NVIZ2.2/html/Gmakefile.orig	Tue Jan 22 13:51:38 2002
-+++ src.contrib/GMSL/NVIZ2.2/html/Gmakefile	Thu Oct  9 23:13:37 2003
-@@ -3,4 +3,4 @@
- all:
- 	if [ ! -d $(GRASS_NVIZ_DOCS) ]; then mkdir $(GRASS_NVIZ_DOCS); fi
- #fix for CVS and Gmakefile:
--	(tar -cf - *  | (cd $(GRASS_NVIZ_DOCS); tar  -xf - 2>/dev/null ); true)
-+	(tar -cf - [a-z]* | (cd $(GRASS_NVIZ_DOCS); tar  -xf - 2>/dev/null ); true)
