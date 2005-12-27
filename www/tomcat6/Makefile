@@ -10,7 +10,7 @@ PORTVERSION=	5.5.12
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
-DISTNAME=	apache-tomcat-${PORTVERSION}
+DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
 
 MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
@@ -74,7 +74,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.4"
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-compat.tar.gz
+DISTFILES+=	apache-tomcat-${PORTVERSION}-compat.tar.gz
 PLIST_SUB+=	JAVA14=""
 .else
 PLIST_SUB+=	JAVA14="@comment "
