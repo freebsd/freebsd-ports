@@ -8,7 +8,7 @@
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
 CATEGORIES=	games
-MASTER_SITES=	http://www.calodox.scene.org:8080/morbac/cake/download/ \
+MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//g}
 
