@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	projectx
-PORTVERSION=	0.82.1.00
+PORTVERSION=	0.90.2.00
 CATEGORIES=	multimedia java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	project-x
@@ -24,9 +24,11 @@ USE_JIKES=	no
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/\.00$//}
+EXTRACT_BEFORE_ARGS+=	-aq
 
 do-configure:
-	${TR} -d '\015' <${WRKSRC}/build.sh | ${SED} -e "s|^javac|${JAVAC}|" >${WRKSRC}/build-fbsd.sh
+	${SED} -e "s|^javac|${JAVAC}|" ${WRKSRC}/build.sh >${WRKSRC}/build-fbsd.sh
 
 do-build:
 	cd ${WRKSRC} && ${MKDIR} build && ${SH} build-fbsd.sh
@@ -37,6 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/commons-net-1.3.0.jar ${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/jakarta-oro-2.0.8.jar ${DATADIR}/lib
 	${MKDIR} ${DATADIR}/htmls/images ${DATADIR}/htmls/de
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/htmls/*.html ${DATADIR}/htmls
 	${INSTALL_DATA} ${WRKSRC}/htmls/de/*.html ${DATADIR}/htmls/de
 	${INSTALL_DATA} ${WRKSRC}/htmls/images/* ${DATADIR}/htmls/images
