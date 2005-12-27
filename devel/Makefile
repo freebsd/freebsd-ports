@@ -943,6 +943,7 @@
     SUBDIR += p5-Filesys-Virtual-Plain
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
     SUBDIR += p5-Getopt-Declare
