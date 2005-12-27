@@ -46,7 +46,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 PLIST_SUB=	VERSION="1.4.0"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
+FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
 
 MAN1=		pango-querymodules.1
 
