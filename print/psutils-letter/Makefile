@@ -26,6 +26,8 @@ MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 
 SCRIPTS_ENV+=	PERL=${PERL}
 
+CONFLICTS?=	psutils-a4-*
+
 .if !defined(PAPERSIZE)
 PAPERSIZE=letter
 PAPERSIZE_UNSPECIFIED=	yes

@@ -92,8 +92,10 @@ XCFLAGS+=	-DA4
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
+CONFLICTS+=	ghostscript-gnu-[0-9]*
 .else
 USE_XLIB=	yes
+CONFLICTS+=	ghostscript-gnu-nox11-*
 .endif
 
 .if defined(WITH_SVGALIB)
