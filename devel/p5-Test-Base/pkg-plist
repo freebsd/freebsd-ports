@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Base/.packlist
+%%SITE_PERL%%/Test/Base.pm
+%%SITE_PERL%%/Test/Base/Filter.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Base 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Test/Base 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true

@@ -1,0 +1,11 @@
+Testing is usually the ugly part of Perl module authoring. Perl gives
+you a standard way to run tests with Test::Harness, and basic testing
+primitives with Test::More. After that you are pretty much on your own
+to develop a testing framework and philosophy. Test::More encourages you
+to make your own framework by subclassing Test::Builder, but that is not
+trivial.
+
+Test::Base gives you a way to write your own test framework base class
+that *is* trivial.
+
+WWW: http://search.cpan.org/dist/Test-Base/
