@@ -24,6 +24,26 @@ PLIST_SUB+=	EVENTUM=${EVENTUM}
 SUB_LIST+=	EVENTUM=${EVENTUM}
 SUB_FILES=	pkg-message
 
+.if ${EVENTUM:M/*}
+EVENTUM_DIST=${EVENTUM}
+.else
+EVENTUM_DIST=${PREFIX}/${EVENTUM}
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "This port has the following tunables"
+	@${ECHO_MSG} "EVENTUM   path where Eventum will be installed"
+	@${ECHO_MSG} "          either absolute or relative to the PREFIX"
+	@${ECHO_MSG} "WWWOWN    eventum files owner"
+	@${ECHO_MSG} "WWWGRP    eventum files group"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Current state is"
+	@${ECHO_MSG} "EVENTUM   " ${EVENTUM}
+	@${ECHO_MSG} "WWWOWN    " ${WWWOWN}
+	@${ECHO_MSG} "WWWGRP    " ${WWWGRP}
+	@${ECHO_MSG} ""
+
 pre-install:
 	@${MV} ${WRKSRC}/setup.conf.php ${WRKSRC}/setup.conf.php-dist
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-dist
@@ -34,10 +54,10 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${EVENTUM} >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${EVENTUM}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${EVENTUM}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${EVENTUM}
-	@${CHMOD} -R 755 ${PREFIX}/${EVENTUM}
+	@${MKDIR} ${EVENTUM_DIST}
+	@${CP} -R ${WRKSRC}/ ${EVENTUM_DIST}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${EVENTUM_DIST}
+	@${CHMOD} -R 755 ${EVENTUM_DIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
