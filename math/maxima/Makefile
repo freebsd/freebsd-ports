@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.9.1
+PORTVERSION=	5.9.2
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,11 +21,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
-BROKEN=		Does not build
-
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:253
+USE_AUTOTOOLS=	automake:14 autoconf:259
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${LOCALBASE}/bin/wish8.4 \
@@ -44,57 +42,54 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 # Lisp to build with. Define only ONE of these!
-WITH_CMUCL=	yes
-#WITH_SBCL=	yes
-#WITH_GCL=	yes
 #WITH_CLISP=	yes
-
-.if defined(WITH_CMUCL)
-LISPSELECT=	--enable-cmucl
-LISPPORT=	lisp:${PORTSDIR}/lang/cmucl
-BINDIRECTORY=	binary-cmucl
-LISPBINARY=	lisp
-MAXIMABINARY=	maxima.core
-.endif
-
-.if defined(WITH_GCL)
-LISPSELECT=	--enable-gcl
-LISPPORT=	gcl:${PORTSDIR}/lang/gcl
-# check these when unbroken
-BINDIRECTORY=	binary-gcl
-LISPBINARY=	lisp
-MAXIMABINARY=	maxima
-BROKEN=		"Broken at LISP:USE-PACKAGE."
-.endif
+#WITH_CMUCL=	yes
+#WITH_GCL=	yes
+WITH_SBCL=	yes
 
 .if defined(WITH_CLISP)
 LISPSELECT=	--enable-clisp
 LISPPORT=	clisp:${PORTSDIR}/lang/clisp
 BINDIRECTORY=	binary-clisp
 LISPBINARY=	lisp.run
+PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima.mem
-.if ${OSVERSION} >= 600000
-BROKEN=		"Dumps core while compiling bessel.fas in CURRENT"
 .endif
+
+.if defined(WITH_CMUCL)
+LISPSELECT=	--enable-cmucl
+LISPPORT=	lisp:${PORTSDIR}/lang/cmucl
+BINDIRECTORY=	binary-cmucl
+LISPBINARY=	lisp
+PLIST_SUB+=	LISPBINARY=""
+MAXIMABINARY=	maxima.core
+.endif
+
+.if defined(WITH_GCL)
+LISPSELECT=	--enable-gcl
+LISPPORT=	gcl:${PORTSDIR}/lang/gcl
+BINDIRECTORY=	binary-gcl
+#LISPBINARY is null so fudge this so deinstall works cleanly
+PLIST_SUB+=	LISPBINARY="@comment "
+MAXIMABINARY=	maxima
 .endif
 
 .if defined(WITH_SBCL)
 LISPSELECT=	--enable-sbcl
 LISPPORT=	sbcl:${PORTSDIR}/lang/sbcl
-# check these when unbroken
 BINDIRECTORY=	binary-sbcl
-LISPBINARY=	lisp
+#LISPBINARY is null so fudge this so deinstall works cleanly
+PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima.core
-BROKEN=		"Drops into debugger when loading xerprn.fasl"
 .endif
 
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "Maxima has the following tunable options:"
-	@${ECHO} "  WITH_CMUCL   Build with CMU Common Lisp (default)"
-	@${ECHO} "  WITH_GCL     Build with GNU Common Lisp"
 	@${ECHO} "  WITH_CLISP   Build with Clisp"
-	@${ECHO} "  WITH_SBCL    Build with Steel Bank Common Lisp"
+	@${ECHO} "  WITH_CMUCL   Build with CMU Common Lisp"
+	@${ECHO} "  WITH_GCL     Build with GNU Common Lisp"
+	@${ECHO} "  WITH_SBCL    Build with Steel Bank Common Lisp (default)"
 	@${ECHO} ""
 
 post-extract:
