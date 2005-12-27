@@ -1,0 +1,15 @@
+--- templates/unix/wxwidgets.cbp.orig	Sun Nov 27 15:36:22 2005
++++ templates/unix/wxwidgets.cbp	Sun Nov 27 15:36:55 2005
+@@ -14,10 +14,10 @@
+ 			<Add option="-Winvalid-pch"/>
+ 			<Add option="-include &quot;wx_pch.h&quot;"/>
+ 			<Add option="-DUSE_PCH"/>
+-			<Add option="`wx-config --cflags`"/>
++			<Add option="`wxgtk2-2.6-config --cflags`"/>
+ 		</Compiler>
+ 		<Linker>
+-			<Add option="`wx-config --libs`"/>
++			<Add option="`wxgtk2-2.6-config --libs`"/>
+ 		</Linker>
+ 	</Project>
+ </CodeBlocks_project_file>
