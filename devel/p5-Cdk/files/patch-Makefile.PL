@@ -5,6 +5,6 @@
      'VERSION'	=> '4.09010',
      'LIBS'	=> ['-L/usr/local/lib -lcdk -lcurses'],
 -    'INC'	=> '-I/usr/include/ncurses -I/usr/local/include/cdk',
-+    'INC'	=> '-I/usr/include -I/usr/local/include',
++    'INC'	=> '-I/usr/include -I/usr/local/include -I/usr/local/include/cdk',
      'clean'	=> {FILES => 'Makefile.old'},
  );
