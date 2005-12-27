@@ -71,9 +71,11 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	shells
-MASTER_SITES=	http://www.sublimation.org/scponly/
+MASTER_SITES=	http://www.sublimation.org/scponly/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	scponly
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rushani@FreeBSD.org
@@ -140,6 +142,10 @@ CONFIGURE_ARGS+=--enable-winscp-compat
 .endif
 
 pre-everything::
+	@${ECHO_MSG} "From scponly 4.2, scp & WinSCP compatibilities are not"
+	@${ECHO_MSG} "enabled by default.  To enable those compatibilities,"
+	@${ECHO_MSG} "define WITH_SCPONLY_SCP and/or WITH_SCPONLY_WINSCP,"
+	@${ECHO_MSG} "respectively."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can enable chroot functionality by defining WITH_SCPONLY_CHROOT."
 	@${ECHO_MSG} ""
