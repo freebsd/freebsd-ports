@@ -1230,6 +1230,7 @@ coda6_server	ports/net/coda6_server
 code-browser	ports/editors/code-browser
 code2000	ports/x11-fonts/code2000
 code2html	ports/textproc/code2html
+codeblocks	ports/devel/codeblocks
 codeville	ports/devel/codeville
 codeworker	ports/devel/codeworker
 cog		ports/sysutils/cog
