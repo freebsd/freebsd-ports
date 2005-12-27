@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.0.1
+PORTVERSION=	2.9.3.2
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,16 +14,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
-		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-
-#IGNORE=		"currently at lower revision than www/dansguardian"
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		iconv.3:${PORTSDIR}/converters/libiconv
+		
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_GCC=	3.4+
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	dansguardian.sh
 
 CONFLICTS=	dansguardian-2.[678]*
 LATEST_LINK=	dansguardian-devel
@@ -35,29 +33,29 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 
 MAN8=		dansguardian.8
 
-OPTIONS=	DG_CLAMAV "Enable ClamAV support (libclamav)" off \
-		DG_CLAMD  "Enable ClamAV daemon support (clamd)" off \
-		DG_ICAP   "Enable ICAP AV content scanner support" off \
-		DG_KASP   "Enable Kaspersky AV support" off \
-		DG_DMGR   "Enable the fancy download manager" off
-#		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
+OPTIONS=	DG_APACHE  "Enable Apache support" on \
+		DG_CLAMAV  "Enable ClamAV support (libclamav)" off \
+		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
+		DG_ICAP    "Enable ICAP AV content scanner support" off \
+		DG_KASP    "Enable Kaspersky AV support" off \
+		DG_DMGR    "Enable the fancy download manager" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
 NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
 NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	"${NO_PACKAGE}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DG_CLAMAV) && defined(WITH_DG_CLAMD)
-BROKEN=	"You have select both ClamAV integration options, which is known to cause issues.  Please select only one of the ClamAV options.  Run make config to change the options"
+.if defined(WITH_DG_APACHE)
+USE_APACHE=	1.3+
 .endif
 
 .if defined(WITH_DG_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav=yes
-LIB_DEPENDS=		clamav.1:${PORTSDIR}/security/clamav:install
+LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav:install
 .endif
 
 .if defined(WITH_DG_CLAMD)
@@ -82,31 +80,7 @@ CONFIGURE_ARGS+=	--enable-fancydm
 IGNORE="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
 .endif
 
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dansguardian.sh > ${WRKSRC}/dansguardian.sh
-
-pre-install:
-# Configure pkg-plist based on whether phraselists are to be installed or not
-.if defined(WITH_DG_PHRASELISTS)
-PLIST_SUB=	PHRASELISTS=""
-.else
-PLIST_SUB=	PHRASELISTS="@comment "
-.endif
-
 post-install:
-# Check whether to install default phraselists
-.if defined(WITH_DG_PHRASELISTS)
-	@${ECHO_MSG} "===>   Installing default phraselists into ${CONFDIR}/phraselists"
-	@${CP} -R ${WRKSRC}/phraselists ${CONFDIR}
-.else
-	@${ECHO_MSG} "===>   Skipping installation of phraselists."
-.endif
-
-# Install startup script
-	@${ECHO_MSG} "===>   Installing startup script into ${PREFIX}/etc/rc.d"
-	@${INSTALL_SCRIPT} ${WRKSRC}/dansguardian.sh ${PREFIX}/etc/rc.d/start-dg.sh
-
 # Display post-install message
 	@${CAT} pkg-message
 

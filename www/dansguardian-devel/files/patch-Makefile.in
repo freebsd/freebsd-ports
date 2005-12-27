@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Fri Dec 16 09:25:29 2005
++++ Makefile.in	Fri Dec 16 09:25:46 2005
+@@ -615,10 +615,10 @@
+ 
+ 
+ install-data-local:
+-	if ! test -d "$(DESTDIR)$(DGLOGLOCATION)"; then \
+-		$(mkinstalldirs) $(DESTDIR)$(DGLOGLOCATION) && \
+-		chown -R $(DGPROXYUSER):$(DGPROXYGROUP) $(DESTDIR)$(DGLOGLOCATION); \
+-	fi
++#	if ! test -d "$(DESTDIR)$(DGLOGLOCATION)"; then \
++#		$(mkinstalldirs) $(DESTDIR)$(DGLOGLOCATION) && \
++#		chown -R $(DGPROXYUSER):$(DGPROXYGROUP) $(DESTDIR)$(DGLOGLOCATION); \
++#	fi
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
