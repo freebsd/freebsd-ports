@@ -48,6 +48,7 @@ post-extract:
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' '{}' \;
 	@${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
 		${WRKSRC}/cake/sound.h
+	@${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/cake
