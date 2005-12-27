@@ -17,6 +17,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/DruidPageEdge.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/DruidPageStandard.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Entry.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/enums.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/FileEntry.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/FontPicker.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/HRef.pod

@@ -7,18 +7,13 @@
 #
 
 PORTNAME=	Gnome2
-PORTVERSION=	1.00
-PORTREVISION=	4
+PORTVERSION=	1.030
 CATEGORIES=	x11-toolkits gnome perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl/:cpan \
-		gtk2-perl/:sf
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtk2-perl
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Allows a perl developer to use the Gnome libraries
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
@@ -39,7 +34,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 post-install:
