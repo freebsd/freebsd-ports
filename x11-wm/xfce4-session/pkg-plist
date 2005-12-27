@@ -81,11 +81,11 @@ share/xfce4/doc/C/images/xfsm-splash.png
 share/xfce4/doc/C/xfce4-session.html
 share/xfce4/doc/fr/images/xfsm-advanced.png
 share/xfce4/doc/fr/images/xfsm-general.png
-share/xfce4/doc/fr/images/xfsm-splash.png 
-share/xfce4/doc/fr/xfce4-session.html  
-share/xfce4/doc/he/images/xfsm-advanced.png 
-share/xfce4/doc/he/images/xfsm-general.png  
-share/xfce4/doc/he/images/xfsm-splash.png   
+share/xfce4/doc/fr/images/xfsm-splash.png
+share/xfce4/doc/fr/xfce4-session.html
+share/xfce4/doc/he/images/xfsm-advanced.png
+share/xfce4/doc/he/images/xfsm-general.png
+share/xfce4/doc/he/images/xfsm-splash.png
 share/xfce4/doc/he/xfce4-session.html
 @dirrm etc/xdg/xfce4-session
 @unexec rmdir %D/etc/xdg 2>/dev/null || true

@@ -4,8 +4,8 @@ bin/dvdunauthor
 bin/mpeg2desc
 bin/spumux
 bin/spuunmux
-share/dvdauthor/dvdauthor.xsd 
-share/dvdauthor/spumux.xsd 
+share/dvdauthor/dvdauthor.xsd
+share/dvdauthor/spumux.xsd
 @dirrm share/dvdauthor
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
