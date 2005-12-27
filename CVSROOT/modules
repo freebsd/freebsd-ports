@@ -12378,6 +12378,7 @@ tosvcd		ports/multimedia/tosvcd
 totd		ports/dns/totd
 totem		ports/multimedia/totem
 totem-gstreamer	ports/multimedia/totem-gstreamer
+tovid		ports/multimedia/tovid
 towitoko	ports/devel/towitoko
 toxine		ports/multimedia/toxine
 toycars		ports/games/toycars
