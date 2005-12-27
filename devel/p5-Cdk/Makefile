@@ -7,16 +7,17 @@
 
 PORTNAME=	Cdk
 PORTVERSION=	4.9.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://dickey.his.com/cdk/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdk-perl-20031210
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Perl5 module for Curses Development Kit
 
-LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
+LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 
 PERL_CONFIGURE=	yes
 
