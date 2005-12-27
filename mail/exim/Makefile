@@ -366,7 +366,8 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 
 .if defined(WITH_SASLAUTHD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
-SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=),\1,'
+SASLAUTHD_SOCKET?=	/var/run/saslauthd/mux
+SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=).*,\1${SASLAUTHD_SOCKET},'
 .endif
 
 .if defined(WITH_PWCHECK)
