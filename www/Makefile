@@ -846,6 +846,7 @@
     SUBDIR += tdiary
     SUBDIR += tdiary-devel
     SUBDIR += tdom
+    SUBDIR += template_
     SUBDIR += textpattern
     SUBDIR += thttpd
     SUBDIR += thttpd-st
