@@ -1,0 +1,18 @@
+The intent of File::ShareDir is to provide a companion to
+Class::Inspector and File::HomeDir, modules that take a process that is
+well-known by advanced Perl developers but gets a little tricky, and
+make it more available to the larger Perl community.
+
+Quite often you want or need your Perl module (CPAN or otherwise) to
+have access to a large amount of read-only data that is stored on the
+file-system at run-time.
+
+On a linux-like system, this would be in a place such as /usr/share,
+however Perl runs on a wide variety of different systems, and so the use
+of any one location is unreliable.
+
+Perl provides a little-known method for doing this, but almost nobody is
+aware that it exists. As a result, module authors often go through some
+very strange ways to make the data available to their code.
+
+WWW: http://search.cpan.org/dist/File-ShareDir/

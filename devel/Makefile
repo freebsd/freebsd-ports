@@ -929,6 +929,7 @@
     SUBDIR += p5-File-Random
     SUBDIR += p5-File-ReadBackwards
     SUBDIR += p5-File-Remove
+    SUBDIR += p5-File-ShareDir
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
