@@ -4,6 +4,6 @@ other additions. Unlike many other efforts, wterm aims to have
 its changed merged back into the parent rxvt rather than forking off 
 yet another seperate terminal emulator.
 
-WWW: http://largo.windowmaker.org/files.php#wterm
+WWW: http://www.wterm.org
 
  -Adam <adam-ports@blacktabby.org>
