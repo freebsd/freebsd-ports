@@ -50,6 +50,9 @@ etc/hellanzb.conf.sample
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/ArticleDecoder.pyo
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/DupeHandler.py
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/DupeHandler.pyc
+%%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/DupeHandler.pyo
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.py
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyc
 %%PYTHON_SITELIBDIR%%/Hellanzb/NZBLeecher/NZBModel.pyo
