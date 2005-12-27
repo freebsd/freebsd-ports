@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20051228:
+  AFFECTS: users of shells/scponly
+  AUTHOR: rushani@FreeBSD.org
+
+  From scponly 4.2, scp & WinSCP compatibilities are not enabled by default.
+  To enable those compatibilities, define WITH_SCPONLY_SCP and/or
+  WITH_SCPONLY_WINSCP, respectively.
+
 20051225:
   AFFECTS: users of p5-libapreq2
   AUTHOR: vanilla@FreeBSD.org
