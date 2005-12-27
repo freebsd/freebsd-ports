@@ -580,6 +580,7 @@
     SUBDIR += meta-cvs
     SUBDIR += mico
     SUBDIR += mime
+    SUBDIR += mimir
     SUBDIR += mingw
     SUBDIR += mingw-bin-msvcrt
     SUBDIR += mingw-binutils

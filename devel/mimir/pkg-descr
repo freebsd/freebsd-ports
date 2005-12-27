@@ -1,0 +1,8 @@
+Mimir is a libary used by the Elan programming language for the
+generation of internal data structures to maintain the abstract syntax
+tree and intermediate code.
+
+Its usage is not restricted to the Elan programming language itself
+though.
+
+WWW: http://www.cs.ru.nl/elan/
