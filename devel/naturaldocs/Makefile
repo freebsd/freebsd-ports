@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	naturaldocs
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	NaturalDocs-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	An extensible, multi-language source code documentation generator
 
 USE_ZIP=	yes
