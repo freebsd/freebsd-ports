@@ -4,6 +4,7 @@ MAN3+=	cdk.3 \
 	cdk_button.3 \
 	cdk_buttonbox.3 \
 	cdk_calendar.3 \
+	cdk_compat.3 \
 	cdk_dialog.3 \
 	cdk_display.3 \
 	cdk_dscale.3 \
@@ -20,6 +21,8 @@ MAN3+=	cdk.3 \
 	cdk_matrix.3 \
 	cdk_mentry.3 \
 	cdk_misc.3 \
+	cdk_objs.3 \
+	cdk_params.3 \
 	cdk_position.3 \
 	cdk_process.3 \
 	cdk_radio.3 \
@@ -33,8 +36,9 @@ MAN3+=	cdk.3 \
 	cdk_traverse.3 \
 	cdk_uscale.3 \
 	cdk_uslider.3 \
+	cdk_util.3 \
 	cdk_viewer.3
-BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
+MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_alphalist.3 destroyCDKAlphalist.3 \
 	cdk_alphalist.3 drawCDKAlphalist.3 \
 	cdk_alphalist.3 eraseCDKAlphalist.3 \
@@ -143,6 +147,9 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_calendar.3 setCDKCalendarPostProcess.3 \
 	cdk_calendar.3 setCDKCalendarPreProcess.3 \
 	cdk_calendar.3 setCDKCalendarYearAttribute.3 \
+	cdk_compat.3 getDirectoryContents.3 \
+	cdk_compat.3 readFile.3 \
+	cdk_compat.3 splitString.3 \
 	cdk_dialog.3 activateCDKDialog.3 \
 	cdk_dialog.3 destroyCDKDialog.3 \
 	cdk_misc.3 Beep.3 \
@@ -550,12 +557,29 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_misc.3 sortList.3 \
 	cdk_misc.3 stripWhiteSpace.3 \
 	cdk_misc.3 viewFile.3 \
+	cdk_objs.3 cleanCdkTitle.3 \
+	cdk_objs.3 drawCdkTitle.3 \
+	cdk_objs.3 positionCDKObject.3 \
+	cdk_objs.3 setCdkExitType.3 \
+	cdk_objs.3 setCDKObjectBackgroundColor.3 \
+	cdk_objs.3 setCDKObjectPostProcess.3 \
+	cdk_objs.3 setCDKObjectPreProcess.3 \
+	cdk_objs.3 setCdkTitle.3 \
+	cdk_objs.3 validCDKObject.3 \
+	cdk_params.3 CDKparamNumber.3 \
+	cdk_params.3 CDKparamNumber2.3 \
+	cdk_params.3 CDKparamString.3 \
+	cdk_params.3 CDKparamString2.3 \
+	cdk_params.3 CDKparamValue.3 \
+	cdk_params.3 CDKparseParams.3 \
+	cdk_params.3 CDKparsePosition.3 \
 	cdk_radio.3 activateCDKRadio.3 \
 	cdk_radio.3 destroyCDKRadio.3 \
 	cdk_radio.3 drawCDKRadio.3 \
 	cdk_radio.3 eraseCDKRadio.3 \
 	cdk_radio.3 getCDKRadioBox.3 \
 	cdk_radio.3 getCDKRadioChoiceCharacter.3 \
+	cdk_radio.3 getCDKRadioCurrentItem.3 \
 	cdk_radio.3 getCDKRadioHighlight.3 \
 	cdk_radio.3 getCDKRadioLeftBrace.3 \
 	cdk_radio.3 injectCDKRadio.3 \
@@ -569,6 +593,7 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_radio.3 setCDKRadioBox.3 \
 	cdk_radio.3 setCDKRadioBoxAttribute.3 \
 	cdk_radio.3 setCDKRadioChoiceCharacter.3 \
+	cdk_radio.3 setCDKRadioCurrentItem.3 \
 	cdk_radio.3 setCDKRadioHighlight.3 \
 	cdk_radio.3 setCDKRadioHorizontalChar.3 \
 	cdk_radio.3 setCDKRadioLLChar.3 \
@@ -625,9 +650,11 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_scroll.3 drawCDKScroll.3 \
 	cdk_scroll.3 eraseCDKScroll.3 \
 	cdk_scroll.3 getCDKScrollBox.3 \
+	cdk_scroll.3 getCDKScrollCurrent.3 \
 	cdk_scroll.3 getCDKScrollHighlight.3 \
 	cdk_scroll.3 getCDKScrollItems.3 \
 	cdk_scroll.3 injectCDKScroll.3 \
+	cdk_scroll.3 insertCDKScrollItem.3 \
 	cdk_scroll.3 moveCDKScroll.3 \
 	cdk_scroll.3 newCDKScroll.3 \
 	cdk_scroll.3 positionCDKScroll.3 \
@@ -636,11 +663,13 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_scroll.3 setCDKScrollBackgroundColor.3 \
 	cdk_scroll.3 setCDKScrollBox.3 \
 	cdk_scroll.3 setCDKScrollBoxAttribute.3 \
+	cdk_scroll.3 setCDKScrollCurrent.3 \
 	cdk_scroll.3 setCDKScrollHighlight.3 \
 	cdk_scroll.3 setCDKScrollHorizontalChar.3 \
 	cdk_scroll.3 setCDKScrollItems.3 \
 	cdk_scroll.3 setCDKScrollLLChar.3 \
 	cdk_scroll.3 setCDKScrollLRChar.3 \
+	cdk_scroll.3 setCDKScrollPosition.3 \
 	cdk_scroll.3 setCDKScrollPostProcess.3 \
 	cdk_scroll.3 setCDKScrollPreProcess.3 \
 	cdk_scroll.3 setCDKScrollULChar.3 \
@@ -653,6 +682,7 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_selection.3 getCDKSelectionBox.3 \
 	cdk_selection.3 getCDKSelectionChoice.3 \
 	cdk_selection.3 getCDKSelectionChoices.3 \
+	cdk_selection.3 getCDKSelectionCurrent.3 \
 	cdk_selection.3 getCDKSelectionHighlight.3 \
 	cdk_selection.3 getCDKSelectionMode.3 \
 	cdk_selection.3 getCDKSelectionModes.3 \
@@ -667,6 +697,7 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_selection.3 setCDKSelectionBoxAttribute.3 \
 	cdk_selection.3 setCDKSelectionChoice.3 \
 	cdk_selection.3 setCDKSelectionChoices.3 \
+	cdk_selection.3 setCDKSelectionCurrent.3 \
 	cdk_selection.3 setCDKSelectionHighlight.3 \
 	cdk_selection.3 setCDKSelectionHorizontalChar.3 \
 	cdk_selection.3 setCDKSelectionLLChar.3 \
@@ -854,4 +885,26 @@ BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_uslider.3 setCDKUSliderULChar.3 \
 	cdk_uslider.3 setCDKUSliderURChar.3 \
 	cdk_uslider.3 setCDKUSliderValue.3 \
-	cdk_uslider.3 setCDKUSliderVerticalChar.3
+	cdk_uslider.3 setCDKUSliderVerticalChar.3 \
+	cdk_util.3 alignxy.3 \
+	cdk_util.3 CDKallocStrings.3 \
+	cdk_util.3 CDKfreeChtypes.3 \
+	cdk_util.3 ceilCDK.3 \
+	cdk_util.3 cmpStrChstr.3 \
+	cdk_util.3 deleteCursesWindow.3 \
+	cdk_util.3 dirName.3 \
+	cdk_util.3 eraseCursesWindow.3 \
+	cdk_util.3 floorCDK.3 \
+	cdk_util.3 freeCharList.3 \
+	cdk_util.3 freeChtypeList.3 \
+	cdk_util.3 char2DisplayType.3 \
+	cdk_util.3 checkForLink.3 \
+	cdk_util.3 chstrncpy.3 \
+	cdk_util.3 chtype2String.3 \
+	cdk_util.3 justifyString.3 \
+	cdk_util.3 mode2Filetype.3 \
+	cdk_util.3 moveCursesWindow.3 \
+	cdk_util.3 popupLabelAttrib.3 \
+	cdk_util.3 selectFile.3 \
+	cdk_util.3 setWidgetDimension.3 \
+	cdk_util.3 viewInfo.3

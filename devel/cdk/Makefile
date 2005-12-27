@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	cdk
-PORTVERSION=	4.9.11.20041224
+PORTVERSION=	5.0.20050424
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://dickey.his.com/cdk/
+MASTER_SITES=	ftp://invisible-island.net/cdk/ \
+		http://fresh.t-systems-sfr.com/linux/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 USE_GMAKE=	yes
@@ -44,15 +45,7 @@ INSTALLS_SHLIB=	yes
 .include "${.CURDIR}/maninfo.mk"
 
 post-patch:
-.	for f in cli/Makefile.in demos/Makefile.in examples/Makefile.in
-		@${REINPLACE_CMD} -e 's|^\(LINKIT.*\)|& \&\& ${STRIP_CMD} $$@|' ${WRKSRC}/$f
-		@${RM} ${WRKSRC}/$f.bak
-.	endfor
-
-post-configure:
-	${REINPLACE_CMD} -e 's|^DOCUMENT_DIR.*$$|DOCUMENT_DIR=${DOCSDIR}|' \
-		-e 's|^CDKSHLIB.*$$|CDKSHLIB=$$(SONAME)|' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/doc/cdk|/share/doc/cdk| ; s|VERSION)|VERSION_MAJOR)|' ${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}/cli

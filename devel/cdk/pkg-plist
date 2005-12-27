@@ -40,7 +40,7 @@ include/cdk/uslider.h
 include/cdk/viewer.h
 lib/libcdk.a
 lib/libcdk.so
-lib/libcdk.so.4
+lib/libcdk.so.5
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/EXPANDING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -194,6 +194,8 @@ lib/libcdk.so.4
 %%EXAMPLESDIR%%/examples/traverse_ex.c
 %%EXAMPLESDIR%%/examples/viewer_ex
 %%EXAMPLESDIR%%/examples/viewer_ex.c
+%%EXAMPLESDIR%%/examples/viewer_ex2
+%%EXAMPLESDIR%%/examples/viewer_ex2.c
 @dirrm %%EXAMPLESDIR%%/examples
 @dirrm %%EXAMPLESDIR%%/demos
 @dirrm %%EXAMPLESDIR%%/cli/utils
