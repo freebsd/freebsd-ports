@@ -1,0 +1,9 @@
+Polymorphic return values are really useful.  Often, we just want to
+know if something worked or not.  Other times, we'd like to know what
+the error text was.  Still others, we may want to know what the error
+code was, and what the error properties were.  We don't want to handle
+objects or data structures for every single return value, but we do want
+to check error conditions in our code because that's what good
+programmers do.
+
+WWW: http://search.cpan.org/dist/Return-Value/
