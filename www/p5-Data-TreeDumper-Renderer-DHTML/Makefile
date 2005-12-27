@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p5-Data-TreeDumper-Renderer-DHTML
+# Date Created:				26 Dec 2005
+# Whom:					Zach Thompson <hideo@lastamericanempire.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Data-TreeDumper-Renderer-DHTML
+PORTVERSION=	0.07
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Data
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	hideo@lastamericanempire.com
+COMMENT=	DHTML renderer for Data::TreeDumper
+
+BUILD_DEPENDS=	${SITE_PERL}/Data/TreeDumper.pm:${PORTSDIR}/devel/p5-Data-TreeDumper
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Data::TreeDumper::Renderer::DHTML.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
