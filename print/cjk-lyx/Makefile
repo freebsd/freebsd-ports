@@ -6,46 +6,92 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.4.1
-PORTREVISION=	1
-CATEGORIES=	print
-MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/
+PORTVERSION=	1.3.5
+CATEGORIES=	print chinese japanese korean
+MASTER_SITES=	http://www.otaru-uc.ac.jp/~yokota/comp/CJK-LyX/ \
+		http://www.otaru-uc.ac.jp/~yokota/comp/layouts/:JPN \
+		ftp://cellular.phys.pusan.ac.kr/CJK-LyX/${FORM}/
 PKGNAMEPREFIX=	cjk-
-DISTNAME=	CJK-LyX-qt-${PORTVERSION:R}-${PORTVERSION:E}.src
+DISTNAME=	CJK-LyX-${FORM}-${PORTVERSION}-1.src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		lyx-platex-patch-${FORM}-${PORTVERSION}.tar.gz:JPN \
+		lyx.mo:JPN
+DIST_SUBDIR=	CJK-LyX
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		lyx-platex-patch-${FORM}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX \
 		makepsres:${X_CLIENTS_PORT}
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-WRKSRC=		${WRKDIR}/CJK-LyX-qt-${PORTVERSION:R}
+CONFLICTS=	lyx-[0-9]*
+WRKSRC=		${WRKDIR}/CJK-LyX-${FORM}-${PORTVERSION}
+EXTRA_PATCHES=	${WRKDIR}/platex.patch
+.if !defined(NOPORTDOCS)
+MASTER_SITES+=	http://133.16.174.22/lyx/lyx-manual/:JADOC
+JADOCVER=	1.3.3-1
+JADOCNAME=	ja_LyX_Doc-${JADOCVER}.tar.gz
+JADOCWRK=	1.3.3
+DISTFILES+=	${JADOCNAME}:JADOC
+EXTRACT_ONLY+=	${JADOCNAME}
+.endif
 
-CONFLICTS=	lyx-*
-
-USE_QT_VER=	3
 USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
+USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
-CONFIGURE_ARGS=	--with-frontend=qt \
-		--with-extra-lib="${LOCALBASE}/lib" \
+USE_AUTOTOOLS=	libtool:15
+
+OPTIONS=	QT "Compile with qt instead of xforms (recommended)" ON \
+		ASPELL "Compile with aspell support" ON \
+		ISPELL "Compile with ispell support" OFF
+.if defined(LANG) && ${LANG:C/_.*//} == "ja"
+OPTIONS+=	JATETEX "Set Japanese teTeX dependency (recommended to Japanese users)" ON
+.else
+OPTIONS+=	JATETEX "Set Japanese teTeX dependency (recommended to Japanese users)" OFF
+.endif
+
+.include <bsd.port.pre.mk>
+
+# Choose an appropriate localized LaTeX as dependency
+.if defined(WITH_JATETEX)
+RUN_DEPENDS+=	latex:${PORTSDIR}/japanese/teTeX
+.else
+RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+.endif
+
+CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 reLyX.1
 
 CFLAGS+=	-DI18N
+.if ${OSVERSION} < 500035
+CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
+.endif
 
+.if !defined(WITHOUT_QT)
+FORM=		qt
+CONFIGURE_ARGS+=	--with-frontend=qt
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
+PLIST_SUB+=	WITH_XFORMS="@comment "
+.else
+FORM=		xforms
+LIB_DEPENDS+=	forms.1:${PORTSDIR}/x11-toolkits/xforms-i18n
+USE_XPM=	yes
+CONFIGURE_ARGS+=	--with-extra-inc="${X11BASE}/include/X11"
+PLIST_SUB+=	WITH_XFORMS=""
+.endif
 
-.if defined(WITH_ASPELL)
+.if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
@@ -56,25 +102,19 @@ CONFIGURE_ARGS+=	--with-pspell \
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
+post-extract::
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Extracting Japanese documentations to the source tree..."
+	@${ECHO_MSG}
+	@${MV} ${WRKDIR}/${JADOCWRK}/* ${WRKSRC}/lib/doc
+	@${RMDIR} ${WRKDIR}/${JADOCWRK}
 .endif
 
-pre-everything::
-.if !defined(WITH_ASPELL)
+post-build::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Aspell/Pspell support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ASPELL=yes\""
+	@${ECHO_MSG} "Fixing up the Japanese message file..."
 	@${ECHO_MSG}
-.endif
-
-.if !defined(WITH_ISPELL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Ispell support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
-	@${ECHO_MSG}
-.endif
+	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/lyx.mo ${WRKSRC}/po/ja.gmo
 
 .include <bsd.port.post.mk>
