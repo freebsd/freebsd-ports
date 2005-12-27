@@ -528,6 +528,7 @@
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-Compress-LeadingBlankSpaces
+    SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FastCGI
     SUBDIR += p5-FastCGI-ProcManager
