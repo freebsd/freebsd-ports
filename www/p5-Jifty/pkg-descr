@@ -1,0 +1,10 @@
+Jifty -- Just Do It.
+
+Jifty is yet another web framework.  Jifty tries not to make you say
+things more than once.  Out of the proverbial box, Jifty comes with one
+way to do everything you should need to do: One database mapper, one
+templating system, one web services layer, one AJAX toolkit, one set of
+handlers for standalone or FastCGI servers. We work hard to make all the
+bits play well together, so you don't have to.
+
+WWW: http://search.cpan.org/dist/Jifty/
