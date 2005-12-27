@@ -50,6 +50,7 @@ bin/enc2xs
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode/UTF7.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR/2022_KR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header/ISO_2022_JP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN 2>/dev/null || true
@@ -63,6 +64,7 @@ bin/enc2xs
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true

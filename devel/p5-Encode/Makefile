@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Encode
-PORTVERSION=	2.10
+PORTVERSION=	2.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Encode
@@ -23,8 +23,6 @@ MAN1=		piconv.1 enc2xs.1
 
 .if ${PERL_LEVEL} < 500800
 IGNORE=		Requires Perl 5.8.0 or above.
-.elif ${PERL_LEVEL} > 500806
-IGNORE=		Perl above 5.8.7 has Encode ${PORTVERSION}.
 .endif
 
 .include <bsd.port.post.mk>
