@@ -6,7 +6,10 @@ case "$#" in
 0)
 	mkdir -p "${HOME}/.projectx"
 	cd "${HOME}/.projectx"
-	ln -sf %%PREFIX%%/share/projectx/htmls .
+	ln -sf %%DATADIR%%/*.txt %%DATADIR%%/htmls .
+	if ! grep '^# ProjectX 0.90.2.00' X.ini >/dev/null; then
+		rm -f X.ini
+	fi
 	;;
 esac
 
