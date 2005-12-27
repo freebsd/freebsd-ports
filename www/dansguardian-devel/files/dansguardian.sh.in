@@ -1,9 +1,9 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/www/dansguardian-devel/files/Attic/dansguardian.sh.in,v 1.1 2005-12-27 23:02:10 edwin Exp $
 
 # PROVIDE: dansguardian
-# REQUIRE: DAEMON squid
-# BEFORE: LOGIN
+# REQUIRE: NETWORKING SERVERS squid
+# BEFORE:  DAEMON
 # KEYWORD: FreeBSD shutdown
 
 # Define these dansguardian_* variables in one of these files:
@@ -13,9 +13,9 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-dansguardian_enable="NO"
-dansguardian_flags=""
-dansguardian_pidfile="/var/run/dansguardian.pid"
+dansguardian_enable=${dansguardian_enable:-"NO"}
+dansguardian_flags=${dansguardian_flags:-""}
+dansguardian_pidfile=${dansguardian_pidfile:-"/var/run/dansguardian.pid"}
 
 . %%RC_SUBR%%
 
