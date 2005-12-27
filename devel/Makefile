@@ -1105,6 +1105,7 @@
     SUBDIR += p5-Religion
     SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
+    SUBDIR += p5-Return-Value
     SUBDIR += p5-SDL
     SUBDIR += p5-SPOPS
     SUBDIR += p5-SVN-Mirror
