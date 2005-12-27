@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Free real-time Worms game
 
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/imake-6
+
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
 USE_GMAKE=	yes
