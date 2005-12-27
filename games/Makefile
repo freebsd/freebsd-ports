@@ -632,6 +632,7 @@
     SUBDIR += wmtimebomb
     SUBDIR += wolf3d
     SUBDIR += wolfpack
+    SUBDIR += wop
     SUBDIR += wordplay
     SUBDIR += wormux
     SUBDIR += wtf
