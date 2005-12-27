@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	cmucl-extra
-PORTVERSION=	19a
+PORTVERSION=	19b
 CATEGORIES=	lang lisp
-MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19a/ \
-		http://www.pmsf.de/pub/cmucl/release/19a/ \
-		ftp://ftp.averillpark.net/cmucl/release/19a/ \
-		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19a/ \
-		ftp://ftp.tepus.com/pub/project/cmucl/release/19a/
-DISTNAME=	cmucl-19a-x86-FreeBSD.extra
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	ftp://ftp.common-lisp.net/pub/project/cmucl/release/19b/ \
+		http://www.pmsf.de/pub/cmucl/release/19b/ \
+		ftp://ftp.averillpark.net/cmucl/release/19b/ \
+		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/19b/ \
+		ftp://ftp.tepus.com/pub/project/cmucl/release/19b/
+DISTNAME=	cmucl-19b-x86-FreeBSD.extra
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
