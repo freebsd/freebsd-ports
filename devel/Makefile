@@ -685,6 +685,7 @@
     SUBDIR += p5-Alias
     SUBDIR += p5-Alzabo
     SUBDIR += p5-Alzabo-GUI-Mason
+    SUBDIR += p5-App-CLI
     SUBDIR += p5-App-Info
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
