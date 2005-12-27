@@ -757,18 +757,18 @@ lib/X11/xsm/system.xsm
 
 @comment xterm workaround
 
-@exec [ ! -e %D/bin/resize ] && ln -sf %D/bin/resize-static %D/bin/resize
-@exec [ ! -e %D/bin/uxterm ] && ln -sf %D/bin/uxterm-static %D/bin/uxterm
-@exec [ ! -e %D/bin/xterm ] && ln -sf %D/bin/xterm-static %D/bin/xterm
-@exec [ ! -e %D/lib/X11/app-defaults/UXTerm ] && ln -sf %D/lib/X11/app-defaults/UXTerm-static %D/lib/X11/app-defaults/UXTerm
-@exec [ ! -e %D/lib/X11/app-defaults/XTerm-color ] && ln -sf %D/lib/X11/app-defaults/XTerm-color-static %D/lib/X11/app-defaults/XTerm-color
-@exec [ ! -e %D/lib/X11/app-defaults/XTerm ] && ln -s %D/lib/X11/app-defaults/XTerm-static %D/lib/X11/app-defaults/XTerm
-@unexec [ -L %D/bin/resize ] && rm %D/bin/resize
-@unexec [ -L %D/bin/uxterm ] && rm %D/bin/uxterm
-@unexec [ -L %D/bin/xterm ] && rm %D/bin/xterm
-@unexec [ -L %D/lib/X11/app-defaults/UXTerm ] && rm %D/lib/X11/app-defaults/UXTerm
-@unexec [ -L %D/lib/X11/app-defaults/XTerm-color ] && rm %D/lib/X11/app-defaults/XTerm-color
-@unexec [ -L %D/lib/X11/app-defaults/XTerm ] && rm %D/lib/X11/app-defaults/XTerm
+@exec if [ ! -e %D/bin/resize ]; then ln -sf %D/bin/resize-static %D/bin/resize; fi
+@exec if [ ! -e %D/bin/uxterm ]; then ln -sf %D/bin/uxterm-static %D/bin/uxterm; fi
+@exec if [ ! -e %D/bin/xterm ]; then ln -sf %D/bin/xterm-static %D/bin/xterm; fi
+@exec if [ ! -e %D/lib/X11/app-defaults/UXTerm ]; then ln -sf %D/lib/X11/app-defaults/UXTerm-static %D/lib/X11/app-defaults/UXTerm; fi
+@exec if [ ! -e %D/lib/X11/app-defaults/XTerm-color ]; then ln -sf %D/lib/X11/app-defaults/XTerm-color-static %D/lib/X11/app-defaults/XTerm-color; fi
+@exec if [ ! -e %D/lib/X11/app-defaults/XTerm ]; then ln -s %D/lib/X11/app-defaults/XTerm-static %D/lib/X11/app-defaults/XTerm; fi
+@unexec if [ -L %D/bin/resize ]; then rm %D/bin/resize; fi
+@unexec if [ -L %D/bin/uxterm ]; then rm %D/bin/uxterm; fi
+@unexec if [ -L %D/bin/xterm ]; then rm %D/bin/xterm; fi
+@unexec if [ -L %D/lib/X11/app-defaults/UXTerm ]; then rm %D/lib/X11/app-defaults/UXTerm; fi
+@unexec if [ -L %D/lib/X11/app-defaults/XTerm-color ]; then rm %D/lib/X11/app-defaults/XTerm-color; fi
+@unexec if [ -L %D/lib/X11/app-defaults/XTerm ]; then rm %D/lib/X11/app-defaults/XTerm; fi
 
 @dirrm include/X11/PM
 @dirrm lib/X11/proxymngr
