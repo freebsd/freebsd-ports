@@ -1,0 +1,39 @@
+bin/dvrequant
+bin/idvid
+bin/makedvd
+bin/makemenu
+bin/makeslides
+bin/makevcd
+bin/makexml
+bin/postproc
+bin/previd
+bin/tovid
+bin/tovid-batch
+bin/tovid-init
+bin/tovid-interactive
+bin/tovid-test
+bin/tovidgui
+%%PYTHON_SITELIBDIR%%/libtovid/Globals.py
+%%PYTHON_SITELIBDIR%%/libtovid/Globals.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/Globals.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/Parser.py
+%%PYTHON_SITELIBDIR%%/libtovid/Parser.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/Parser.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/Project.py
+%%PYTHON_SITELIBDIR%%/libtovid/Project.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/Project.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/TDL.py
+%%PYTHON_SITELIBDIR%%/libtovid/TDL.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/TDL.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/Target.py
+%%PYTHON_SITELIBDIR%%/libtovid/Target.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/Target.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/__init__.py
+%%PYTHON_SITELIBDIR%%/libtovid/__init__.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/__init__.pyo
+%%PYTHON_SITELIBDIR%%/libtovid/tools.py
+%%PYTHON_SITELIBDIR%%/libtovid/tools.pyc
+%%PYTHON_SITELIBDIR%%/libtovid/tools.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/libtovid
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true

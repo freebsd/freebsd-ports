@@ -168,6 +168,7 @@
     SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += totem-gstreamer
+    SUBDIR += tovid
     SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += vcdgear
