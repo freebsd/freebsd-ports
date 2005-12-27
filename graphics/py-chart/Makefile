@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	chart
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/pychart/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
