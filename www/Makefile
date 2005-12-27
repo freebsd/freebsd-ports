@@ -545,6 +545,7 @@
     SUBDIR += p5-HTML-FillInForm
     SUBDIR += p5-HTML-FromText
     SUBDIR += p5-HTML-LinkExtractor
+    SUBDIR += p5-HTML-Lint
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Pager
     SUBDIR += p5-HTML-Parser
