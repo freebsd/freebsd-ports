@@ -6,68 +6,67 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	5.0.2
-PORTREVISION=	4
+PORTVERSION=	6.0.1
 PORTEPOCH=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://grass.itc.it/grass50/source/ \
-		http://grass.meteo.uni.wroc.pl/grass50/source/ \
-		ftp://sunsite.ualberta.ca/pub/Mirror/grass-web/grass50/source/ \
-		http://www.dinama.gub.uy/grass/grass50/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_src
+MASTER_SITES=	ftp://grass.itc.it/pub/grass/grass60/source/\
+		http://grass.itc.it/grass60/source/ \
+		http://grass.meteo.uni.wroc.pl/grass60/source/ \
+		http://grass.ru.ac.za/grass60/source/\
+		ftp://ftp.planetmirror.com/pub/grass/grass60/source/\
+		http://wgrass.media.osaka-cu.ac.jp/grassh/grass60/source/\
+		http://public.planetmirror.com/pub/grass/grass60/source/\
+		ftp://www.ibiblio.org/pub/packages/gis/grass/grass60/source/\
+		http://www.geog.uni-hannover.de/grass/grass60/source/\
+		http://grass.ibiblio.org/grass60/source/\
+		http://gulus.usherbrooke.ca/pub/appl/grass/grass60/source/\
+		http://ludique.u-bourgogne.fr/grass/grass60/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lrntct@gmail.com
 COMMENT=	An open source Geographical Information System (GIS)
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gd.4:${PORTSDIR}/graphics/gd \
 		fftw.2:${PORTSDIR}/math/fftw \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
-		odbc.1:${PORTSDIR}/databases/unixODBC \
-		lapack.3:${PORTSDIR}/math/lapack
-BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
-		wish8.3:${PORTSDIR}/x11-toolkits/tk83
-RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
-		wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude *CVS*
-
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+		freetype.9:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
+		gdal-config:${PORTSDIR}/graphics/gdal \
+		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
+		gdal-config:${PORTSDIR}/graphics/gdal
 
 USE_PGSQL=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
-USE_GL=		yes
+USE_FREETYPE=	yes
+USE_FFTW=	yes
 USE_PERL5=	yes
-USE_BISON=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:213
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
+USE_TK=		yes
+PATCH_TCL_SCRIPTS=lib/init/init.sh
+PATCH_TK_SCRIPTS=lib/init/init.sh
+
+ALL_TARGET=
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
-		--with-tcltk-includes="${LOCALBASE}/include/tcl8.3 \
-					 ${LOCALBASE}/include/tk8.3" \
-		--with-postgres-includes=${LOCALBASE}/include/postgresql/internal/ \
+		--with-tcltk-includes="${LOCALBASE}/include/tcl8.4 \
+					 ${LOCALBASE}/include/tk8.4" \
 		--with-opengl-includes=${X11BASE}/include \
 		--with-opengl-libs=${X11BASE}/lib \
 		--with-freetype \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
-		--with-blas \
-		--with-lapack \
 		--with-nls \
-		--without-motif
+		--with-cxx \
+		--enable-largefile
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},' \
-		-e 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},' ${WRKSRC}/configure.in
+post-extract:
+	@${REINPLACE_CMD} -e 's/ make mo/ ${GMAKE} mo/g' \
+	${WRKSRC}/locale/Makefile
 
-.include <bsd.port.pre.mk>
-
-post-install:
-	-(cd ${PREFIX} && ${GREP} -v "@" ${PLIST} | \
-	  ${XARGS} ${STRIP_CMD} 2> /dev/null || ${TRUE})
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
