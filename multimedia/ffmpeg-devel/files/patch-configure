@@ -16,15 +16,15 @@
 -  echo "SPPMAJOR=${lavc_version/.*/}" >> config.mak
 -  echo "SPPVERSION=$lavc_version" >> config.mak
 -  echo "LAVCMAJOR=${lavc_version/.*/}" >> config.mak
-+  echo "SPPMAJOR=${lavc_version%%.*}" >> config.mak
-+  echo "SPPVERSION=${lavc_version%%.*}" >> config.mak
-+  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
++  echo "SPPMAJOR=1" >> config.mak
++  echo "SPPVERSION=1" >> config.mak
++  echo "LAVCMAJOR=1" >> config.mak
    echo "LAVCVERSION=$lavc_version" >> config.mak
 -  echo "LAVFMAJOR=${lavf_version/.*/}" >> config.mak
-+  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
++  echo "LAVFMAJOR=1" >> config.mak
    echo "LAVFVERSION=$lavf_version" >> config.mak
 -  echo "LAVUMAJOR=${lavu_version/.*/}" >> config.mak
-+  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
++  echo "LAVUMAJOR=1" >> config.mak
    echo "LAVUVERSION=$lavu_version" >> config.mak
  fi
  echo "EXTRALIBS=$extralibs" >> config.mak
