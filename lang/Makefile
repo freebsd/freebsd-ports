@@ -37,6 +37,7 @@
     SUBDIR += ecl
     SUBDIR += egcs
     SUBDIR += eiffel
+    SUBDIR += elan
     SUBDIR += elisp-manual
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
