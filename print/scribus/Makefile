@@ -8,6 +8,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.org.uk/downloads/${PORTVERSION}/
@@ -51,10 +52,11 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g; \
-		 s|-O2 ||g ; \
-		 s|="-lc"|=""|g ; \
-		 s|2\.3|${PYTHON_VERSION:S/^python//}|g ; \
-		 s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
+		s|-O2 ||g ; \
+		s|="-lc"|=""|g ; \
+		s|python2\.3|python${PYTHON_VERSION:S/^python//}|g ; \
+		s|Python 2\.3|Python ${PYTHON_VERSION:S/^python//}|g ; \
+		s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/\/share\/pixmaps\//s|^|#|g' \
 		${WRKSRC}/scribus/icons/Makefile.in
 
