@@ -1304,6 +1304,7 @@ courier-authlib-userdb	ports/databases/courier-authlib-userdb
 courier-authlib-usergdbm	ports/databases/courier-authlib-usergdbm
 courier-authlib-vchkpw	ports/mail/courier-authlib-vchkpw
 courier-imap	ports/mail/courier-imap
+couriergraph	ports/mail/couriergraph
 courierpassd	ports/security/courierpassd
 coverhunter	ports/audio/coverhunter
 cowbell		ports/audio/cowbell
