@@ -1,5 +1,5 @@
---- tools/sfio/sfhdr.h.orig	Fri Apr 27 04:17:42 2001
-+++ tools/sfio/sfhdr.h	Tue Feb 18 19:26:37 2003
+--- lib/sfio/sfhdr.h.orig	Fri Apr 27 04:17:42 2001
++++ lib/sfio/sfhdr.h	Tue Feb 18 19:26:37 2003
 @@ -122,6 +122,10 @@
  #include	<errno.h>
  #include	<ctype.h>

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.6
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -17,6 +16,7 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
@@ -26,18 +26,26 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
 		TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
-		MISSING=${TRUE}
+		MISSING=${TRUE} \
+		OCAML=/nonexistent \
+		PERL=/nonexistent \
+		PHP=/nonexistent \
+		PYTHON=/nonexistent \
+		RUBY=/nonexistent
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
+		--enable-dependency-tracking \
 		--with-iconvlibdir=${LOCALBASE}/lib \
 		--with-tclsh=${LOCALBASE}/tcl8.4 \
-		--with-wish=${LOCALBASE}/wish8.4
+		--with-wish=${LOCALBASE}/wish8.4 \
+		--with-fontconfigincludedir=${X11BASE}/include \
+		--with-fontconfiglibdir=${X11BASE}/lib
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
-MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotneato-config.1 \
+MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
 		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 lefty.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
 MAN3=		agraph.3 cdt.3 expr.3 graph.3 pack.3 pathplan.3
