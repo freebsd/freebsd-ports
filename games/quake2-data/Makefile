@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quake2/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/idstuff/quake2/
+PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	${Q2FULL}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
@@ -24,6 +25,8 @@ NO_WRKSUBDIR=	yes
 
 OPTIONS=	CTF "Install the Capture The Flag mod data" on \
 		SHAREWARE "Install demo version game data" off
+
+DATADIR=	${Q2DIR}
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
