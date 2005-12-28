@@ -24,6 +24,8 @@ USE_GMAKE=	yes
 MAKE_ENV+=	OPENWINHOME=${X11BASE}
 WEB_BROWSER?=	mozilla
 
+MANL=		robot.l
+
 pre-build:
 	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
 	  ${WRKSRC}/Robot/Makefile
