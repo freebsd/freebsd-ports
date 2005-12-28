@@ -49,6 +49,7 @@
     SUBDIR += p5-Finance-Currency-Convert-XE
     SUBDIR += p5-Finance-Quote
     SUBDIR += p5-Finance-QuoteHist
+    SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
     SUBDIR += pfpro
     SUBDIR += qhacc
