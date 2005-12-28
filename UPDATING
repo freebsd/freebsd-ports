@@ -7,6 +7,21 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20051228:
+  AFFECTS: users of multimedia/tovid
+  AUTHOR: lioux@FreeBSD.org
+
+  tovid shell scripts relies heavily on bash(1) but the previous
+  port version tried to use sh(1). However, since there were too
+  many complications, the port now depends on shells/bash.
+
+  Due to this change, the configuration files need to be regenerated.
+  Please, erase all previous configuration files. The configuration
+  file samples will be generated on the 1st invocation of the
+  scripts.
+
+  $ rm ~/.tovid/*
+
+20051228:
   AFFECTS: users of shells/scponly
   AUTHOR: rushani@FreeBSD.org
 
