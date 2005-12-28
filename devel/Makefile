@@ -1097,6 +1097,7 @@
     SUBDIR += p5-Proc-PID-File
     SUBDIR += p5-Proc-PIDFile
     SUBDIR += p5-Proc-ProcessTable
+    SUBDIR += p5-Proc-Queue
     SUBDIR += p5-Proc-Reliable
     SUBDIR += p5-Proc-Simple
     SUBDIR += p5-Project-Gantt
