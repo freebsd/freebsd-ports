@@ -1,0 +1,5 @@
+Couriergraph is a very simple mail statistics RRDtool frontend for Postfix
+that produces daily, weekly, monthly and yearly graphs of Courier's POP3,
+IMAP, POP3s and IMAPs logins.
+
+WWW: http://www.stahl.bau.tu-bs.de/~hildeb/postfix/couriergraph/

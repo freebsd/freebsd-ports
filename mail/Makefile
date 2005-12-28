@@ -45,6 +45,7 @@
     SUBDIR += courier
     SUBDIR += courier-authlib-vchkpw
     SUBDIR += courier-imap
+    SUBDIR += couriergraph
     SUBDIR += crashecho
     SUBDIR += crm114
     SUBDIR += cucipop

@@ -1,0 +1,8 @@
+Make sure this script should be invoked with privilege to read
+/var/log/maillog.
+
+
+*** WARNING ***
+
+The rrd database has been moved to %%DATADIR%%.
+If you have previous ones, please move them to %%DATADIR%%.
