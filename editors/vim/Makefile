@@ -7,21 +7,21 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	0
+PATCHLEVEL=	6
 PORTVERSION=	6.4.${PATCHLEVEL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
-#PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	000
-#.for p in ${BADPATCHES}
-#PATCHFILES:=	${PATCHFILES:N6.4.${p}}
-#.endfor
+BADPATCHES=	000 001
+.for p in ${BADPATCHES}
+PATCHFILES:=	${PATCHFILES:N6.4.${p}}
+.endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
