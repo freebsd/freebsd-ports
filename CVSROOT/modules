@@ -9125,6 +9125,7 @@ p5-XPC		ports/net/p5-XPC
 p5-XSLoader	ports/devel/p5-XSLoader
 p5-Xmms		ports/audio/p5-Xmms
 p5-YAML		ports/textproc/p5-YAML
+p5-YAML-Syck	ports/textproc/p5-YAML-Syck
 p5-YAPE-HTML	ports/textproc/p5-YAPE-HTML
 p5-YAPE-Regex	ports/textproc/p5-YAPE-Regex
 p5-YAPE-Regex-Explain	ports/textproc/p5-YAPE-Regex-Explain
