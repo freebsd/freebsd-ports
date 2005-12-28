@@ -118,9 +118,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003alock_002dpackage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003amake_002dtimer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003amake_002dweak_002dpointer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003anative_002dnamestring.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003anative_002dpathname.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dimplemented_002dby_002dlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dimplements_002dlist.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apackage_002dlocked_002dp.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aparse_002dnative_002dnamestring.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aposix_002dgetenv.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003apurify.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Function-sb_002dext_003aquit.html
@@ -215,6 +218,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Introduction-to-the-Foreign-Function-Interface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Language-Reference.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Lisp-Pathnames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Loading-Shared-Object-Files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Local-Foreign-Variables.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Local-_0028Unix_0029-Domain-Sockets.html
@@ -234,6 +238,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/More-SBCL-Information.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Mutex-Support.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Name-Service.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Native-Filenames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Networking.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Note-On-Lexical-Variable-Access.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Online-Documentation.html
@@ -246,6 +251,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Package-Lock-Violations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Package-Locks-in-Compiled-Code.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Package-Locks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Pathnames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Precise-Type-Checking.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Profiling.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Quit.html
@@ -518,6 +524,7 @@ lib/sbcl/sb-simple-streams/string.fasl
 lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
+lib/sbcl/sb-simple-streams/test-data.tmp
 lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sbcl.core
