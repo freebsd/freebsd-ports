@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -18,14 +18,17 @@ DISTFILES+=	${DISTNAME}-html${EXTRACT_SUFX}
 MAINTAINER=	sa2c@sa2c.net
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
+.undef BOOT_VERSION
 # If you have a previous version of SBCL installed, you can use it
 # instead of CMUCL to build the port, then deinstall it before
 # installing the new version.
 .if defined(WITH_SBCL)
 LISP_CMD=	""
-.else
+.elif defined(WITH_CMUCL)
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 LISP_CMD=	"lisp -noinit -batch"
+.else
+BOOT_VERSION=	${PORTVERSION}
 .endif
 
 USE_REINPLACE=	yes
@@ -49,6 +52,18 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_asdf-install_installer.lisp
 
 .if ${OSVERSION} >= 600022
 RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+.endif
+
+.if defined(BOOT_VERSION)
+MASTER_SITES+=	http://www.and.or.jp/sbcl/:boot
+BOOT_ARCH=	${ARCH}
+BOOT_OS=	${OPSYS:L}
+BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH}-${BOOT_OS}
+DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:boot
+LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
+.if ${OSVERSION} >= 500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
+.endif
 .endif
 
 post-patch:
