@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: compat5x
-# REQUIRE: mountcritremote
+# REQUIRE: ldconfig
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
