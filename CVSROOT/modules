@@ -10761,6 +10761,7 @@ quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
 quit		ports/games/quit
 quixote		ports/www/quixote
+quodlibet	ports/multimedia/quodlibet
 quoted		ports/net/quoted
 quotes		ports/misc/quotes
 quranref	ports/misc/quranref
