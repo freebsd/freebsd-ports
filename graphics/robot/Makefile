@@ -7,7 +7,7 @@
 
 PORTNAME=	robot
 PORTVERSION=	4.93.89
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lheaftp.gsfc.nasa.gov/pub/corbet/robot/
 DISTNAME=	robot-beta
@@ -17,8 +17,6 @@ COMMENT=	Graph plotting and data analysis program using OpenLook
 
 BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
-
-BROKEN=		Size mismatch
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
