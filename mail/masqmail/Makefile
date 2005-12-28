@@ -49,7 +49,6 @@ CONFIGURE_ARGS+=	--enable-ident
 
 USE_GNOME=	glib12
 USE_RC_SUBR=	yes
-NO_LATEST_LINK=	yes
 
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
