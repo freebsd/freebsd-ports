@@ -7,6 +7,7 @@
 
 PORTNAME=	ipfcount
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
@@ -27,7 +28,7 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 5006
+.if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6 or higher - see the lang/perl5.8 port
 .endif
 
