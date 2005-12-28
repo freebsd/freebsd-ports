@@ -1,0 +1,19 @@
+IPA_SDB -- IPA simple database module
+
+Main features:
+
+- Distribution consists of database ipa_db_sdb(8) and statistics
+  ipa_st_mod(8) modules;
+- Modules completely support dynamic and static rules, limits and
+  thresholds;
+- All database files are stored in own record based database formats;
+- Formats of database files are machine architecture independent;
+- Sizes of database records are relatively small (binary data formats);
+- Access to statistics can be granted accordingly to the user group;
+- There is the ipa_sdb_dump(8) utility for dumping database files to
+  text format and back.
+
+WWW: http://ipa-system.sourceforge.net/modules/ipa_sdb/
+
+- Andrey Simonenko
+simon@comsys.ntu-kpi.kiev.ua
