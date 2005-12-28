@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.5
+PORTVERSION=	1.5b
 CATEGORIES=	chinese www
-MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
+MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/ \
+		ftp://bbs.ilc.edu.tw/chinsan/distfiles/
 PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
 
@@ -23,8 +24,6 @@ NO_BUILD=	yes
 
 FIREFOX=	${PORTNAME}
 FIREFOX_HOME=	${PREFIX}/lib/${FIREFOX}
-REGXPCOM=	${FIREFOX_HOME}/regxpcom
-FIREFOX_BIN=	${FIREFOX_HOME}/${PORTNAME}-bin
 
 PLIST_SUB=	FIREFOX=${FIREFOX}
 
@@ -34,6 +33,8 @@ do-install:
 	@${ECHO_MSG} "===> Backup setting files..."
 	(cd ${FIREFOX_HOME}; \
 	${CP} -f browserconfig.properties browserconfig.properties.orig)
+	(cd ${FIREFOX_HOME}/chrome; \
+	${CP} -f en-US.manifest en-US.manifest.orig)
 	(cd ${FIREFOX_HOME}/defaults/pref; \
 	${CP} -f firefox-l10n.js firefox-l10n.js.orig)
 	(cd ${FIREFOX_HOME}/defaults/profile; \
@@ -42,12 +43,5 @@ do-install:
 	@${ECHO_MSG} "===> Copying locale files..."
 	(cd ${WRKSRC}; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${FIREFOX_HOME}
-
-	@${ECHO_MSG} "===> Building Chrome's registry..."
-	(cd ${FIREFOX_HOME} || exit 1 ; \
-	./run-mozilla.sh ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. \
-		${REGXPCOM} || true ; \
-	./run-mozilla.sh ${FIREFOX_BIN} -register )
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
