@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML-Syck
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	YAML
@@ -21,8 +21,8 @@ MAN3=		YAML::Syck.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
