@@ -1,0 +1,5 @@
+This module implements a FIFO queueing infrastructure, using a directory
+as the communications and storage media.  No daemon process is required
+to manage the queue; all communication takes place via the filesystem.
+
+WWW: http://search.cpan.org/dist/IPC-DirQueue/
