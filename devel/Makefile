@@ -978,6 +978,7 @@
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-IPC-Cache
     SUBDIR += p5-IPC-Cmd
+    SUBDIR += p5-IPC-DirQueue
     SUBDIR += p5-IPC-Locker
     SUBDIR += p5-IPC-MM
     SUBDIR += p5-IPC-Run

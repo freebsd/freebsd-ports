@@ -1,0 +1,11 @@
+bin/dq-deque
+bin/dq-list
+bin/dq-server
+bin/dq-submit
+%%SITE_PERL%%/IPC/DirQueue.pm
+%%SITE_PERL%%/IPC/DirQueue/Job.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/DirQueue/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/DirQueue 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IPC/DirQueue 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IPC 2>/dev/null || true
