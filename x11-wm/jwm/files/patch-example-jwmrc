@@ -1,0 +1,12 @@
+--- example.jwmrc.orig	Wed Dec 28 16:16:26 2005
++++ example.jwmrc	Wed Dec 28 16:19:07 2005
+@@ -113,6 +113,9 @@
+ 
+ 	<Icons>
+ 		<IconPath>$HOME/.icons</IconPath>
++		<IconPath>%%PREFIX%%/share/icons</IconPath>
++		<IconPath>%%PREFIX%%/share/pixmaps</IconPath>
++		<IconPath>%%PREFIX%%/lib/X11/icons</IconPath>
+ 	</Icons>
+ 
+ 	<StartupCommand>
