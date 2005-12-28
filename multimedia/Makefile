@@ -150,6 +150,7 @@
     SUBDIR += pvr250
     SUBDIR += py-gstreamer
     SUBDIR += qdvdauthor
+    SUBDIR += quodlibet
     SUBDIR += quark
     SUBDIR += recmpeg
     SUBDIR += replex
