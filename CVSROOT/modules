@@ -8156,6 +8156,7 @@ p5-IO-stringy	ports/devel/p5-IO-stringy
 p5-IP-Country	ports/net/p5-IP-Country
 p5-IPC-Cache	ports/devel/p5-IPC-Cache
 p5-IPC-Cmd	ports/devel/p5-IPC-Cmd
+p5-IPC-DirQueue	ports/devel/p5-IPC-DirQueue
 p5-IPC-Locker	ports/devel/p5-IPC-Locker
 p5-IPC-MM	ports/devel/p5-IPC-MM
 p5-IPC-Run	ports/devel/p5-IPC-Run
