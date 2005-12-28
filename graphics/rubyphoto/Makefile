@@ -9,7 +9,7 @@ PORTNAME=	rubyphoto
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	graphics ruby www
-MASTER_SITES=	http://plig.net/~ture/rubyphoto/files/
+MASTER_SITES=	http://www.markhj.com/rubyphoto/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for creating web image galleries
