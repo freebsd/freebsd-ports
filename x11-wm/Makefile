@@ -56,6 +56,7 @@
     SUBDIR += ion-2
     SUBDIR += ion-3ds
     SUBDIR += jewel
+    SUBDIR += jwm
     SUBDIR += kahakai
     SUBDIR += kappdock
     SUBDIR += kompmgr
