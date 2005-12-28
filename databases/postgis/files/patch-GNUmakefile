@@ -1,0 +1,30 @@
+--- GNUmakefile	Mon Dec 19 18:23:23 2005
++++ GNUmakefile	Wed Dec 28 15:38:36 2005
+@@ -4,9 +4,15 @@
+ #
+ #-----------------------------------------------------
+ 
+-all: Makefile.config liblwgeom loaderdumper utils 
++all: Makefile.config liblwgeom loaderdumper utils
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc
++endif
+ 
+-install: all liblwgeom-install loaderdumper-install 
++install: all liblwgeom-install loaderdumper-install utils-install
++ifneq ($(WITH-DOC),)
++	$(MAKE) -C doc install
++endif
+ 
+ uninstall: liblwgeom-uninstall loaderdumper-uninstall docs-uninstall
+ 
+@@ -74,6 +80,9 @@
+ 
+ utils:
+ 	$(MAKE) -C utils
++
++utils-install:
++	$(MAKE) -C utils install
+ 
+ configure: configure.in
+ 	./autogen.sh

@@ -1,13 +1,22 @@
---- loader/Makefile	Wed Jan 12 15:03:57 2005
-+++ loader/Makefile	Mon Jan 31 14:36:59 2005
-@@ -31,8 +32,8 @@
- 	$(CC) $(CFLAGS) $(OBJS) shp2pgsql.o $(LDFLAGS) -o $@ 
+--- loader/Makefile	Fri Dec 16 14:47:24 2005
++++ loader/Makefile	Wed Dec 28 14:23:13 2005
+@@ -9,7 +9,7 @@
+ #---------------------------------------------------------------
  
- install: all
--	$(INSTALL_PROGRAM) pgsql2shp$(EXE) $(DESTDIR)$(bindir)/pgsql2shp$(EXE)
--	$(INSTALL_PROGRAM) shp2pgsql$(EXE) $(DESTDIR)$(bindir)/shp2pgsql$(EXE)
-+	$(INSTALL_PROGRAM) pgsql2shp$(EXE) $(DESTDIR)$(BINDIR)/pgsql2shp$(EXE)
-+	$(INSTALL_PROGRAM) shp2pgsql$(EXE) $(DESTDIR)$(BINDIR)/shp2pgsql$(EXE)
+ ifeq ($(USE_ICONV),1)
+-	override CFLAGS += -DUSE_ICONV
++	override CFLAGS += -DUSE_ICONV -I/usr/local/include
+ 	override LDFLAGS += $(ICONV_LDFLAGS)
+ endif
  
- uninstall:
- 	rm -f $(DESTDIR)$(bindir)/pgsql2shp$(EXE)
+--- loader/shp2pgsql.c	Tue Nov  1 07:25:47 2005
++++ loader/shp2pgsql.c	Wed Dec 28 14:23:13 2005
+@@ -33,7 +33,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ #include "getopt.h"
+-#ifdef HAVE_ICONV_H
++#ifdef USE_ICONV
+ #include <iconv.h>
+ #endif
+ 
