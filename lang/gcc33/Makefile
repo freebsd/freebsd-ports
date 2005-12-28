@@ -24,7 +24,6 @@ DISTFILES=	\
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3
 
-CONFLICTS=	gcc-4.1.*
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 USE_BISON=	yes
 USE_BZIP2=	yes

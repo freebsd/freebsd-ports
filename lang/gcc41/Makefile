@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.0
-PORTREVISION=	20051216
+PORTREVISION=	20051223
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -26,7 +26,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
 .endif
 
-CONFLICTS=	gcc-3.3.* gcc-4.2.*
+CONFLICTS=	gcc-4.2.*
 LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
@@ -69,7 +69,8 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_JAVA_AWT)
 CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
@@ -90,13 +91,17 @@ MAN1=		cpp${SUFFIX}.1 \
 		g++${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1
-INFO=		cpp cppinternals gcc gccinstall gccint
+INFO=		gcc${SUFFIX}/cpp \
+		gcc${SUFFIX}/cppinternals \
+		gcc${SUFFIX}/gcc \
+		gcc${SUFFIX}/gccinstall \
+		gcc${SUFFIX}/gccint
 
 .if defined(WITH_FORTRAN)
 DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 MAN1+=		gfortran${SUFFIX}.1
-INFO+=		gfortran
+INFO+=		gcc${SUFFIX}/gfortran
 PLIST_SUB+=	FORTRAN=""
 .else
 PLIST_SUB+=	FORTRAN="@comment "
@@ -121,7 +126,7 @@ MAN1+=		fastjar${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO+=		gcj fastjar
+INFO+=		gcc${SUFFIX}/gcj gcc${SUFFIX}/fastjar
 PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
@@ -166,6 +171,8 @@ post-install:
 	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
 	fi
 .endfor
+	${MV} -f ${PREFIX}/include/mf-runtime.h \
+	         ${TARGLIB}/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/include
 	${RM} -f ${TARGLIB}/*.la
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
