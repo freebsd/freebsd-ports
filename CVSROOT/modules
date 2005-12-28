@@ -4009,6 +4009,7 @@ iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
 ip6_int		ports/net/ip6_int
 ipa		ports/sysutils/ipa
+ipa_ip6fw	ports/net/ipa_ip6fw
 ipa_ipfw	ports/net/ipa_ipfw
 ipacctd		ports/net-mgmt/ipacctd
 ipaudit		ports/net-mgmt/ipaudit
