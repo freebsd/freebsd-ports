@@ -1,0 +1,5 @@
+This module provides a Perl interface to the libsyck data serialization
+library.  It exports the Dump and Load functions for converting Perl
+data structures to YAML strings, and the other way around.
+
+WWW: http://search.cpan.org/dist/YAML-Syck/
