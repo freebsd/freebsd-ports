@@ -220,6 +220,7 @@
     SUBDIR += ifstated
     SUBDIR += imapproxy
     SUBDIR += ip6_int
+    SUBDIR += ipa_ip6fw
     SUBDIR += ipa_ipfw
     SUBDIR += ipex
     SUBDIR += ipfw-graph
