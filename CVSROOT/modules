@@ -4751,6 +4751,7 @@ junkfilter	ports/mail/junkfilter
 juno-2		ports/graphics/juno-2
 jwchat		ports/net-im/jwchat
 jwhois		ports/net/jwhois
+jwm		ports/x11-wm/jwm
 jxm		ports/audio/jxm
 jython		ports/lang/jython
 jzip		ports/games/jzip
