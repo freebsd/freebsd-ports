@@ -7,7 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 
@@ -55,12 +55,15 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 # md5sum -> md5
 # gnu sed -> sed
-# linux du -> du
+# linux du -b -> emulation with awk
+# du should follow symbolic links
 # faster mplayer -dumpaudio
 	@${REINPLACE_CMD} -E \
 		-e 's|md5sum|md5|' \
 		-e 's|sed[[:space:]]+-r|sed -E|' \
 		-e "s,du[[:space:]]+-b([^\|]+),ls -ALln \1 | ${AWK} '{print \$$5}'," \
+		-e 's|(du[[:space:]]+-c)|\1 -H|' \
+		-e 's|(du[[:space:]]+-h)|\1 -H|' \
 		-e 's|(-dumpaudio)|-vc dummy -vo null \1|' \
 		${WRKSRC}/src/*
 # bash to sh fixes
