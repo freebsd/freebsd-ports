@@ -21,4 +21,5 @@ bin/munger
 %%DATADIR%%/view.munger
 %%DATADIR%%/tk.munger
 %%DATADIR%%/expander.fcgi
+%%DATADIR%%/cal.munger
 @dirrm %%DATADIR%%
