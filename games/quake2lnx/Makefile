@@ -45,8 +45,10 @@ OPTIONS=	AA		"Build ASCII software renderer" off \
 		X11		"Build X11 software driver" on \
 		X86_ASM		"Enable use of x86 assembly code" on
 
+DATADIR=	${Q2DIR}
+
 ALL_TARGET=	build_release
-MAKE_ENV=	DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
+MAKE_ENV=	LIBDIR="${LIBDIR}"
 
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
