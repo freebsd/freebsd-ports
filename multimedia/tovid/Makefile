@@ -7,6 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 
@@ -36,6 +37,7 @@ BUILD_DEPENDS=	\
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 RUN_DEPENDS=	\
 		${BUILD_DEPENDS} \
+		bash:${PORTSDIR}/shells/bash \
 		${PYTHON_SITELIBDIR}/wx-2.6-gtk2-ansi/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26
 
 USE_REINPLACE=	yes
@@ -78,7 +80,7 @@ post-patch:
 .endfor
 # sh interpreter safeness
 	@${REINPLACE_CMD} -E \
-		-e 's|`which env`[[:space:]]+sh|${SH}|' \
+		-e 's|`which env`[[:space:]]+sh|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/src/Makefile.in
 
 post-build:
