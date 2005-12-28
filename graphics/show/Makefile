@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ugrad.cs.ubc.ca/~i6a2/show/
 
-MAINTAINER=	i6a2@ugrad.cs.ubc.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg	\
