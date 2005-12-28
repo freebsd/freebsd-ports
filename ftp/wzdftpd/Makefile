@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ARGS+=	--without-pam --without-pgsql
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -55,13 +55,14 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if defined(WITH_SSL)
-USE_OPENSSL=	yes
+#USE_OPENSSL=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .else
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls-devel
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
