@@ -1,0 +1,37 @@
+bin/exfalso
+bin/quodlibet
+lib/quodlibet/exfalso.png
+lib/quodlibet/exfalso.py
+%%EXTENSIONS:%%lib/quodlibet/mmkeys.so
+lib/quodlibet/plugins/qlscrobbler.py
+lib/quodlibet/ql-volume-max.png
+lib/quodlibet/ql-volume-medium.png
+lib/quodlibet/ql-volume-min.png
+lib/quodlibet/ql-volume-zero.png
+lib/quodlibet/quodlibet.png
+lib/quodlibet/quodlibet.py
+lib/quodlibet/quodlibet.zip
+%%EXTENSIONS:%%lib/quodlibet/trayicon.so
+share/applications/exfalso.desktop
+share/applications/quodlibet.desktop
+share/locale/bg/LC_MESSAGES/quodlibet.mo
+share/locale/de/LC_MESSAGES/quodlibet.mo
+share/locale/en_CA/LC_MESSAGES/quodlibet.mo
+share/locale/en_GB/LC_MESSAGES/quodlibet.mo
+share/locale/es/LC_MESSAGES/quodlibet.mo
+share/locale/fi/LC_MESSAGES/quodlibet.mo
+share/locale/fr/LC_MESSAGES/quodlibet.mo
+share/locale/gl/LC_MESSAGES/quodlibet.mo
+share/locale/he/LC_MESSAGES/quodlibet.mo
+share/locale/it/LC_MESSAGES/quodlibet.mo
+share/locale/nl/LC_MESSAGES/quodlibet.mo
+share/locale/pl/LC_MESSAGES/quodlibet.mo
+share/locale/pt/LC_MESSAGES/quodlibet.mo
+share/locale/ru/LC_MESSAGES/quodlibet.mo
+share/pixmaps/exfalso.png
+share/pixmaps/quodlibet.png
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@exec mkdir -p %D/lib/quodlibet/plugins
+@dirrm lib/quodlibet/plugins
+@exec mkdir -p %D/lib/quodlibet
+@dirrm lib/quodlibet

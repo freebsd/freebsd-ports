@@ -1,0 +1,24 @@
+--- Makefile.orig	Fri Nov 11 16:06:26 2005
++++ Makefile	Wed Dec 28 01:50:43 2005
+@@ -10,7 +10,6 @@
+ 	@./check.py
+ 
+ make-install-dirs:
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	mkdir -p $(DESTDIR)$(PREFIX)/$(TO)
+ 
+@@ -27,10 +26,10 @@
+ 
+ install-%: make-install-dirs
+ 	install -m 755 $*.py $(DESTDIR)$(PREFIX)/$(TO)
+-	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/share/man/man1/$*.1
+-	install -D -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
++	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/man/man1/$*.1
++	install -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
+ 	install -m 644 $*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	install -D -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
++	install -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
+ 	ln -sf ../$(TO)/$*.py $(DESTDIR)$(PREFIX)/bin/$*
+ 
+ clean:
