@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-Signature
-PORTVERSION=	0.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	Generate cryptographic signatures for objects
 
-BUILD_DEPENDS=	p5-prefork>=0.02:${PORTSDIR}/devel/p5-prefork \
-		p5-Storable>=2.11:${PORTSDIR}/devel/p5-Storable \
+BUILD_DEPENDS=	p5-Storable>=2.11:${PORTSDIR}/devel/p5-Storable \
 		p5-Digest-MD5>=2.00:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-PathTools>=0.82:${PORTSDIR}/devel/p5-PathTools \
+		p5-PathTools>=0.80:${PORTSDIR}/devel/p5-PathTools \
 		p5-ExtUtils-AutoInstall>=0.63:${PORTSDIR}/devel/p5-ExtUtils-AutoInstall
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
