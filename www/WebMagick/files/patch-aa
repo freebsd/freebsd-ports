@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.151
-diff -u -r1.117 -r1.151
+retrieving revision 1.153
+diff -u -r1.117 -r1.153
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	28 Dec 2005 20:25:54 -0000	1.151
++++ webmagick.in	28 Dec 2005 21:44:47 -0000	1.153
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.151 2005/12/28 20:25:54 ache Exp $
++# $Id: webmagick.in,v 1.153 2005/12/28 21:44:47 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1360,7 +1360,7 @@ diff -u -r1.117 -r1.151
      return( $_ );
  }
  
-@@ -4324,23 +4559,10 @@
+@@ -4324,23 +4559,11 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
@@ -1383,11 +1383,12 @@ diff -u -r1.117 -r1.151
 -    s/ /%20/g;          # " "
 -    s:\\:/:g; # replace \ with / for better URLs
 +    # RFC 2396
-+    s/([^0-9a-zA-Z_.!~*'()-])/sprintf("%%%02x", ord($1))/eg;
++    # unreserved + some reserved (no query, allow path chars): "$+,/:;=@"
++    s/([^0-9a-zA-Z_.!~*'()\$+,\/:;=\@-])/sprintf("%%%02x", ord($1))/eg;
      return( $_ );
  }
  
-@@ -4387,7 +4609,6 @@
+@@ -4387,7 +4610,6 @@
      my $rc;
      foreach $rc (@_) {
          next if ( ! -r $rc || ! -f $rc );
@@ -1395,7 +1396,7 @@ diff -u -r1.117 -r1.151
  	eval ( get_rc($rc) );
  	if( $@ ) {
  	    print( STDERR "Bad Eval for file \"${rc}\"...\n$@\n" );
-@@ -4468,7 +4689,7 @@
+@@ -4468,7 +4690,7 @@
      my $path=$top;
      $direlem='';
      do {
