@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	am-utils
-PORTVERSION=	6.1.2.1
+PORTVERSION=	6.1.3
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/am-utils/ \
 		ftp://sunsite.org.uk/package/am-utils/ \
 		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
@@ -22,7 +21,7 @@ COMMENT=	The Berkeley Automounter Suite of Utilities
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 
-PORTDOCS=	AUTHORS COPYING BUGS FAQ NEWS README.attrcache
+PORTDOCS=	AUTHORS BUGS COPYING FAQ NEWS README.attrcache
 
 .if defined(WITH_OPENLDAP) || defined(PACKAGE_BUILDING)
 USE_OPENLDAP=	yes
