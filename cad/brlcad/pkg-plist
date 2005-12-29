@@ -206,7 +206,6 @@ bin/orle-fb
 bin/orle-pix
 bin/patch-g
 bin/pcd-pix
-bin/perf.sh
 bin/picket_fence
 bin/pipe
 bin/pipetest

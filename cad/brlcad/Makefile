@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.6.4
+PORTVERSION=	7.6.6
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
@@ -34,8 +34,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-libs="-lpng" --program-transform-name="" \
 		--disable-tcl-build --disable-jove
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-ALL_TARGET=
 
 MAN1=	wish.1 awf.1 comgeom-g.1 g-iges.1 iges-g.1 patch-g.1 rpatch.1 ug-g.1   \
 	asc-nmg.1 bot_shell-vtk.1 conv-vg2g.1 cy-g.1 dbclean.1 dxf-g.1 enf-g.1 \
@@ -136,10 +134,6 @@ BROKEN=		"Does not compile on FreeBSD-${OSREL}"
 
 .if !(${ARCH} == i386 || ${ARCH} == amd64)
 IGNORE=		dumps core on ${ARCH}
-.endif
-
-.if ${ARCH} == amd64
-BROKEN=		"Does not compile"
 .endif
 
 .ifndef WITHOUT_OPTIMIZATION
