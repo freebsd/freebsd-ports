@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../adblock
 
 WITH_FIREFOX=	yes
 
+BROKEN=	"Does not build with new Firefox"
+
 .include "${MASTERDIR}/Makefile"
