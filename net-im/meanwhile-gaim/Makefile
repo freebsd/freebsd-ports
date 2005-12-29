@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meanwhile
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Provides Lotus Sametime support for Gaim
 
 BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
-LIB_DEPENDS=	meanwhile.0:${PORTSDIR}/net-im/meanwhile
+LIB_DEPENDS=	meanwhile.1:${PORTSDIR}/net-im/meanwhile
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
