@@ -1,0 +1,9 @@
+bin/nctop
+etc/nctop.conf.sample
+sbin/nctopd
+share/nctop/www/README
+share/nctop/www/index.php
+share/nctop/www/plotstat.pl
+share/nctop/www/collectstat.pl
+@dirrm share/nctop/www
+@dirrm share/nctop/
