@@ -1,0 +1,12 @@
+--- configure.orig      Thu Aug 19 03:46:49 2004
++++ configure   Mon Feb 28 17:16:51 2005
+@@ -21218,7 +21218,7 @@
+
+
+ have_v4l=no
+-if test x$os_name=xLinux; then
++if test x$os_name = xLinux; then
+
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_CAMV4L
+

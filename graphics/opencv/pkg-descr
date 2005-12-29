@@ -1,0 +1,10 @@
+The Open Computer Vision Library is a collection of algorithms and sample
+code for various computer vision problems. The library is compatible with
+IPL and utilizes Intel Integrated Performance Primitives for better
+performance.
+
+WWW: http://sourceforge.net/projects/opencvlibrary/
+     http://www.intel.com/research/mrl/research/opencv/
+
+- Marc
+http://marc.abramowitz.info
