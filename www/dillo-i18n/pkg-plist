@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/dillo
+bin/dillocfg
 bin/dpid
 bin/dpidc
 etc/dillorc.sample
@@ -10,6 +11,9 @@ libexec/dillo/dpi/file/file.dpi
 libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
+%%NLS%%share/locale/ja/LC_MESSAGES/dillo.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/dillo.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/dillo.mo
 @dirrm libexec/dillo/dpi/https
 @dirrm libexec/dillo/dpi/hello
 @dirrm libexec/dillo/dpi/ftp
