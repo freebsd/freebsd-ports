@@ -1,0 +1,6 @@
+bin/qemu-launcher
+%%DATADIR%%/glade/diskimages.glade
+%%DATADIR%%/glade/qemulauncher.glade
+%%DATADIR%%/glade/qemulauncher.png
+@dirrm share/qemu-launcher/glade
+@dirrm share/qemu-launcher
