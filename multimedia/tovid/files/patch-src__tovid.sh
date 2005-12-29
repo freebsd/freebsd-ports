@@ -1,5 +1,14 @@
 --- src/tovid.sh.orig	Tue Dec 27 03:29:42 2005
 +++ src/tovid.sh	Tue Dec 27 03:43:52 2005
+@@ -265,7 +265,7 @@
+ check_disk_space()
+ {
+     # Determine space available in current directory (in MB)
+-    AVAIL_SPACE=`df -mP . | awk 'NR != 1 {print $4;}'`
++    AVAIL_SPACE=`df -m . | awk 'NR != 1 {print $4;}'`
+     # Rough estimates of KB/sec for different formats
+     K_PER_SEC=200
+     test x"$TGT_RES" = x"VCD" && K_PER_SEC=172
 @@ -1327,7 +1327,7 @@
          AUDIO_CMD="cat /dev/zero | $PRIORITY sox -t raw -c 2 -r $SAMPRATE -w -s - -t wav $AUDIO_WAV trim 0 $V_DURATION"
      # Extract audio normally

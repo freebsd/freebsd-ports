@@ -7,7 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 
@@ -58,6 +58,7 @@ post-patch:
 # linux du -b -> emulation with awk
 # du should follow symbolic links
 # faster mplayer -dumpaudio
+# faster mplayer -dumpvideo
 	@${REINPLACE_CMD} -E \
 		-e 's|md5sum|md5|' \
 		-e 's|sed[[:space:]]+-r|sed -E|' \
@@ -65,6 +66,7 @@ post-patch:
 		-e 's|(du[[:space:]]+-c)|\1 -H|' \
 		-e 's|(du[[:space:]]+-h)|\1 -H|' \
 		-e 's|(-dumpaudio)|-vc dummy -vo null \1|' \
+		-e 's|(-dumpvideo)|-ac dummy -ao null \1|' \
 		${WRKSRC}/src/*
 # bash to sh fixes
 	@${REINPLACE_CMD} -E \
