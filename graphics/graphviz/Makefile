@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -24,8 +25,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
@@ -64,6 +66,9 @@ MYPORTDOCS=	dotguide.pdf dottyguide.pdf leftyguide.pdf \
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4+
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'
 
 post-install:
 .if !defined(NOPORTDOCS)
