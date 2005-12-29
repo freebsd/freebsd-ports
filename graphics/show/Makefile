@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	show
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ugrad.cs.ubc.ca/~i6a2/show/
+MASTER_SITES=	http://www.ibiblio.org/propaganda/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg	\
@@ -20,11 +19,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		ungif.5:${PORTSDIR}/graphics/libungif	\
 		Imlib.5:${PORTSDIR}/graphics/imlib
 
-PLIST_FILES=	bin/show
-USE_XLIB=	yes
 USE_X_PREFIX=	yes
 
+PLIST_FILES=	bin/show
+
+post-extract:
+	@${CP} ${PATCHDIR}/Makefile ${WRKSRC}
+	@${RM} ${WRKSRC}/${PORTNAME}
+
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/show ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/show ${PREFIX}/bin
 
 .include <bsd.port.mk>
