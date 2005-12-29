@@ -6751,6 +6751,7 @@ ncnf		ports/devel/ncnf
 ncp		ports/net/ncp
 ncplib		ports/net/ncplib
 ncrypt		ports/security/ncrypt
+nctop		ports/sysutils/nctop
 ncurses		ports/devel/ncurses
 nd		ports/www/nd
 ndiff		ports/math/ndiff
