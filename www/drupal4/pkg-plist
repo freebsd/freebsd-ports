@@ -84,7 +84,9 @@
 %%DRUPDIR%%/scripts/cron-curl.sh
 %%DRUPDIR%%/scripts/cron-lynx.sh
 %%DRUPDIR%%/scripts/prefix.sh
-%%DRUPDIR%%/sites/default/settings.php
+@unexec if cmp -s %D/%%DRUPDIR%%/sites/default/settings.php-dist %D/%%DRUPDIR%%/sites/default/settings.php; then rm -f %D/%%DRUPDIR%%/sites/default/settings.php; fi
+%%DRUPDIR%%/sites/default/settings.php-dist
+@exec if [ ! -f %D/%%DRUPDIR%%/sites/default/settings.php ] ; then cp -p %D/%F %B/settings.php; fi
 %%DRUPDIR%%/themes/bluemarine/logo.png
 %%DRUPDIR%%/themes/bluemarine/screenshot.png
 %%DRUPDIR%%/themes/bluemarine/style.css
