@@ -7,6 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.0.1
+PORTREVISION=   1
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://grass.itc.it/pub/grass/grass60/source/\
@@ -25,26 +26,26 @@ MASTER_SITES=	ftp://grass.itc.it/pub/grass/grass60/source/\
 MAINTAINER=	lrntct@gmail.com
 COMMENT=	An open source Geographical Information System (GIS)
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		fftw.2:${PORTSDIR}/math/fftw \
-		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		gdal-config:${PORTSDIR}/graphics/gdal \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		gdal-config:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		png.5:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		fftw.2:${PORTSDIR}/math/fftw \
+		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_PGSQL=	yes
+USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_PERL5=	yes
 USE_XLIB=	yes
 USE_FREETYPE=	yes
+USE_PGSQL=	yes
 USE_FFTW=	yes
-USE_PERL5=	yes
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GETTEXT=	yes
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK=		yes
@@ -65,8 +66,21 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-cxx \
 		--enable-largefile
 
+GRASS_INST_DIR=	${PORTNAME}
+PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR}
+SUB_FILES=	grass.sh
+SUB_LIST=	GRASS_INST_DIR=${GRASS_INST_DIR}
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/%%GRASS_INST_DIR%%/lib
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/ make mo/ ${GMAKE} mo/g' \
 	${WRKSRC}/locale/Makefile
+	@${REINPLACE_CMD} -E '28s|/grass-.*|/${GRASS_INST_DIR}|g' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/grass.sh ${PREFIX}/etc/rc.d/000.grass.sh
+
+.include <bsd.port.post.mk>
