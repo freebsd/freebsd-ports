@@ -1,0 +1,10 @@
+Simian (Similarity Analyser) identifies duplication in Java, C#, C, C++, COBOL, 
+Ruby, JSP, ASP, HTML, XML, Visual Basic source code and even plain text files. 
+In fact, simian can be used on any human readable files such as ini files, 
+deployment descriptors, you name it.
+
+Note: The port uses the java version by default. You can select the .NET
+      version via WITH_MONO=yes, and disable installation of the java parts
+      with WITHOUT_JAVA=yes.
+
+WWW: http://www.redhillconsulting.com.au/products/simian/

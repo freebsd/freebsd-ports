@@ -1568,6 +1568,7 @@
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += simgear
+    SUBDIR += simian
     SUBDIR += simpletest
     SUBDIR += simulavr
     SUBDIR += skalibs

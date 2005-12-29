@@ -1,0 +1,10 @@
+bin/simian
+%%JAVA%%simian/bin/simian-%%VERSION%%.jar
+%%MONO%%simian/bin/simian-%%VERSION%%.exe
+%%MONO%%simian/bin/IKVM.GNU.Classpath.dll
+%%MONO%%simian/bin/IKVM.Runtime.dll
+share/xsl/simian/simian.xsl
+@dirrm simian/bin
+@dirrm simian
+@dirrm share/xsl/simian
+@dirrm share/xsl
