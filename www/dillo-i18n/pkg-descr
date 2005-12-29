@@ -1,4 +1,11 @@
 Dillo aims to be a multiplatform browser alternative that's small,
 stable, developer-friendly, usable, fast, and extensible.
 
-WWW: http://www.dillo.org/
+This package adds multilingualization and a lot of other features missing
+from plain dillo.  Please see http://teki.jpn.ph/pc/software/index-e.shtml
+for further information.
+
+NOTE:
+This patched version of dillo is not supported by the dillo developers.
+
+WWW: http://teki.jpn.ph/pc/software/index-e.shtml
