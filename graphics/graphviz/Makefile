@@ -59,6 +59,12 @@ MLINKS=		dot.1 circo.1 \
 MYPORTDOCS=	dotguide.pdf dottyguide.pdf leftyguide.pdf \
 		neatoguide.pdf Dot.ref FAQ.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4+
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -67,4 +73,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
