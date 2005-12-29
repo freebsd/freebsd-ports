@@ -143,6 +143,7 @@
     SUBDIR += p5-MP4-Info
     SUBDIR += p5-GStreamer
     SUBDIR += p5-RIFF-Info
+    SUBDIR += p5-Subtitles
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += pitivi
