@@ -76,6 +76,7 @@
     SUBDIR += py-lirc
     SUBDIR += py-serial
     SUBDIR += pyla
+    SUBDIR += qfaxreader
     SUBDIR += qico
     SUBDIR += qicosi
     SUBDIR += qpage
