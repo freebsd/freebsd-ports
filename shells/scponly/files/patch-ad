@@ -1,0 +1,11 @@
+--- setup_chroot.sh.in.orig	Wed Dec 28 06:55:52 2005
++++ setup_chroot.sh.in	Wed Dec 28 17:42:27 2005
+@@ -72,7 +72,7 @@ if [ `uname -s` = "OpenBSD" ]; then
+ 		GREP_LIST="$GREP_LIST -e $bin"
+ 	done
+ 	LIB_LIST=`/usr/bin/ldd $BINARIES 2> /dev/null | /usr/bin/tr -s " " | /usr/bin/cut -f5 -d" " | /usr/bin/grep -v "^Name" | /usr/bin/grep -v $GREP_LIST | /usr/bin/sort -u`
+-elif
++else
+ 	LIB_LIST=`@PROG_LDD@ $BINARIES 2> /dev/null | @PROG_CUT@ -f2 -d\> | @PROG_CUT@ -f1 -d\( | @PROG_GREP@ "^ " | @PROG_SORT@ -u`
+ fi
+ 
