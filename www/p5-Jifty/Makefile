@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty
-PORTVERSION=	0.51225
+PORTVERSION=	0.51228
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -52,6 +52,7 @@ BUILD_DEPENDS=	\
 		p5-String-Koremutake>0:${PORTSDIR}/textproc/p5-String-Koremutake \
 		p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
+		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-HTML-Lint>0:${PORTSDIR}/www/p5-HTML-Lint \
 		p5-Test-WWW-Mechanize>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
