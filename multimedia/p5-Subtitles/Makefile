@@ -7,6 +7,7 @@
 
 PORTNAME=	Subtitles
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Prima/KARASIK
@@ -27,11 +28,11 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prim
 
 PLIST_SUB+=	SUBPLAY=""
 MAN1+=		subplay.1
+.else
+PLIST_SUB+=	SUBPLAY="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\('subs'\), 'subplay'|\1|" ${WRKSRC}/Makefile.PL
-.else
-PLIST_SUB+=	SUBPLAY="@comment "
 .endif
 
 .include <bsd.port.mk>
