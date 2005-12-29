@@ -8,13 +8,16 @@
 PORTNAME=	smoke
 PORTVERSION=	0.5.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.chem.pwf.cam.ac.uk/~jdh30/programming/opengl/smoke/code/
+MASTER_SITES=	#
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Vector graphics OpenGL renderer
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-28
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
