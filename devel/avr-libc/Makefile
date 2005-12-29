@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -47,31 +47,12 @@ MAKE_ENV=	NO_CPU_CFLAGS=true
 CFLAGS=		-O
 CXXFLAGS=	-O
 
-DEMOFILES=	Makefile demo.c
-.if !defined(NOPORTDOCS)
-DEMOFILES+=	demo.bin demo.hex demo.pdf demo.srec
-.endif
-
 do-install:
 		${RM} -f ${TMPPLIST}; ${CAT} ${PLIST_DOC} ${PLIST} > ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
-		${MKDIR} ${PREFIX}/share/doc/avr-libc
-		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
-		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples/demo
-		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples/twitest
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
 			${PREFIX}/share/doc/avr-libc
-		@for f in ${DEMOFILES};\
-		do \
-			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/demo/$$f \
-				${PREFIX}/share/doc/avr-libc/examples/demo; \
-		done
-		@for f in Makefile twitest.c;\
-		do \
-			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/twitest/$$f \
-				${PREFIX}/share/doc/avr-libc/examples/twitest; \
-		done
 
 .include <bsd.port.mk>

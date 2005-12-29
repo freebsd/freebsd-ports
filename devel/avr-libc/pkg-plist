@@ -66,11 +66,15 @@ avr/include/avr/iotn13.h
 avr/include/avr/iotn15.h
 avr/include/avr/iotn22.h
 avr/include/avr/iotn2313.h
+avr/include/avr/iotn24.h
 avr/include/avr/iotn25.h
 avr/include/avr/iotn26.h
 avr/include/avr/iotn28.h
+avr/include/avr/iotn44.h
 avr/include/avr/iotn45.h
+avr/include/avr/iotn84.h
 avr/include/avr/iotn85.h
+avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
@@ -143,9 +147,9 @@ avr/lib/avr5/crtm329.o
 avr/lib/avr5/crtm3290.o
 avr/lib/avr5/crtm64.o
 avr/lib/avr5/crtm640.o
+avr/lib/avr5/crtm644.o
 avr/lib/avr5/crtm645.o
 avr/lib/avr5/crtm6450.o
-avr/lib/avr5/crtm644.o
 avr/lib/avr5/crtm649.o
 avr/lib/avr5/crtm6490.o
 avr/lib/avr5/libc.a
@@ -172,10 +176,13 @@ avr/lib/crttn13.o
 avr/lib/crttn15.o
 avr/lib/crttn22.o
 avr/lib/crttn2313.o
+avr/lib/crttn24.o
 avr/lib/crttn25.o
 avr/lib/crttn26.o
 avr/lib/crttn28.o
+avr/lib/crttn44.o
 avr/lib/crttn45.o
+avr/lib/crttn84.o
 avr/lib/crttn85.o
 avr/lib/libc.a
 avr/lib/libm.a
@@ -188,6 +195,18 @@ share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/LICENSE
 share/doc/avr-libc/examples/demo/Makefile
 share/doc/avr-libc/examples/demo/demo.c
+share/doc/avr-libc/examples/demo/iocompat.h
+share/doc/avr-libc/examples/largedemo/Makefile
+share/doc/avr-libc/examples/largedemo/largedemo.c
+share/doc/avr-libc/examples/stdiodemo/Makefile
+share/doc/avr-libc/examples/stdiodemo/defines.h
+share/doc/avr-libc/examples/stdiodemo/hd44780.c
+share/doc/avr-libc/examples/stdiodemo/hd44780.h
+share/doc/avr-libc/examples/stdiodemo/lcd.c
+share/doc/avr-libc/examples/stdiodemo/lcd.h
+share/doc/avr-libc/examples/stdiodemo/stdiodemo.c
+share/doc/avr-libc/examples/stdiodemo/uart.c
+share/doc/avr-libc/examples/stdiodemo/uart.h
 share/doc/avr-libc/examples/twitest/Makefile
 share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm avr/include/util
@@ -198,6 +217,8 @@ share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
 @dirrm share/doc/avr-libc/examples/twitest
+@dirrm share/doc/avr-libc/examples/stdiodemo
+@dirrm share/doc/avr-libc/examples/largedemo
 @dirrm share/doc/avr-libc/examples/demo
 @dirrm share/doc/avr-libc/examples
 @dirrm share/doc/avr-libc

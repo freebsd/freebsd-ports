@@ -35,7 +35,9 @@ share/doc/avr-libc/avr-libc-user-manual/group__ctype.html
 share/doc/avr-libc/avr-libc-user-manual/group__demo__project.html
 share/doc/avr-libc/avr-libc-user-manual/group__demos.html
 share/doc/avr-libc/avr-libc-user-manual/group__deprecated__items.html
+share/doc/avr-libc/avr-libc-user-manual/group__largedemo.html
 share/doc/avr-libc/avr-libc-user-manual/group__setjmp.html
+share/doc/avr-libc/avr-libc-user-manual/group__stdiodemo.html
 share/doc/avr-libc/avr-libc-user-manual/group__twi__demo.html
 share/doc/avr-libc/avr-libc-user-manual/group__util__crc.html
 share/doc/avr-libc/avr-libc-user-manual/group__util__delay.html
@@ -44,6 +46,8 @@ share/doc/avr-libc/avr-libc-user-manual/group__util__twi.html
 share/doc/avr-libc/avr-libc-user-manual/index.html
 share/doc/avr-libc/avr-libc-user-manual/inline_asm.html
 share/doc/avr-libc/avr-libc-user-manual/install_tools.html
+share/doc/avr-libc/avr-libc-user-manual/largedemo-setup.jpg
+share/doc/avr-libc/avr-libc-user-manual/largedemo-wiring.jpg
 share/doc/avr-libc/avr-libc-user-manual/malloc-std.png
 share/doc/avr-libc/avr-libc-user-manual/malloc-x1.png
 share/doc/avr-libc/avr-libc-user-manual/malloc-x2.png
@@ -53,15 +57,12 @@ share/doc/avr-libc/avr-libc-user-manual/modules.html
 share/doc/avr-libc/avr-libc-user-manual/pages.html
 share/doc/avr-libc/avr-libc-user-manual/release_method.html
 share/doc/avr-libc/avr-libc-user-manual/releases.png
+share/doc/avr-libc/avr-libc-user-manual/stdiodemo-setup.jpg
 share/doc/avr-libc/avr-libc-user-manual/structdiv__t.html
 share/doc/avr-libc/avr-libc-user-manual/structldiv__t.html
 share/doc/avr-libc/avr-libc-user-manual/todo.html
 share/doc/avr-libc/avr-libc-user-manual/using_avrprog.html
 share/doc/avr-libc/avr-libc-user-manual/using_tools.html
-share/doc/avr-libc/examples/demo/demo.bin
-share/doc/avr-libc/examples/demo/demo.hex
-share/doc/avr-libc/examples/demo/demo.pdf
-share/doc/avr-libc/examples/demo/demo.srec
 share/doc/avr-libc/man/man3/BOOTLOADER_SECTION.3
 share/doc/avr-libc/man/man3/DTOSTR_ALWAYS_SIGN.3
 share/doc/avr-libc/man/man3/DTOSTR_PLUS_SIGN.3
@@ -461,6 +462,7 @@ share/doc/avr-libc/man/man3/isupper.3
 share/doc/avr-libc/man/man3/isxdigit.3
 share/doc/avr-libc/man/man3/itoa.3
 share/doc/avr-libc/man/man3/labs.3
+share/doc/avr-libc/man/man3/largedemo.3
 share/doc/avr-libc/man/man3/ldexp.3
 share/doc/avr-libc/man/man3/ldiv.3
 share/doc/avr-libc/man/man3/ldiv_t.3
@@ -525,6 +527,9 @@ share/doc/avr-libc/man/man3/set_sleep_mode.3
 share/doc/avr-libc/man/man3/setjmp.3
 share/doc/avr-libc/man/man3/sin.3
 share/doc/avr-libc/man/man3/sinh.3
+share/doc/avr-libc/man/man3/sleep_cpu.3
+share/doc/avr-libc/man/man3/sleep_disable.3
+share/doc/avr-libc/man/man3/sleep_enable.3
 share/doc/avr-libc/man/man3/sleep_mode.3
 share/doc/avr-libc/man/man3/snprintf.3
 share/doc/avr-libc/man/man3/snprintf_P.3
@@ -538,6 +543,7 @@ share/doc/avr-libc/man/man3/sscanf.3
 share/doc/avr-libc/man/man3/sscanf_P.3
 share/doc/avr-libc/man/man3/stderr.3
 share/doc/avr-libc/man/man3/stdin.3
+share/doc/avr-libc/man/man3/stdiodemo.3
 share/doc/avr-libc/man/man3/stdout.3
 share/doc/avr-libc/man/man3/strcasecmp.3
 share/doc/avr-libc/man/man3/strcasecmp_P.3
@@ -569,6 +575,7 @@ share/doc/avr-libc/man/man3/strrchr.3
 share/doc/avr-libc/man/man3/strrev.3
 share/doc/avr-libc/man/man3/strsep.3
 share/doc/avr-libc/man/man3/strstr.3
+share/doc/avr-libc/man/man3/strstr_P.3
 share/doc/avr-libc/man/man3/strtod.3
 share/doc/avr-libc/man/man3/strtok_r.3
 share/doc/avr-libc/man/man3/strtol.3
