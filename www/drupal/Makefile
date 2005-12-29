@@ -48,6 +48,11 @@ do-install:
 	${CP} -R ${WRKSRC}/misc ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/modules ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/scripts ${PREFIX}/${DRUPDIR}
+	${MKDIR} ${PREFIX}/${DRUPDIR}/sites/default
+	${CP} ${WRKSRC}/sites/default/settings.php ${PREFIX}/${DRUPDIR}/sites/default/settings.php-dist
+	@if [ ! -f ${PREFIX}/${DRUPDIR}/sites/default/settings.php ]; then \
+		${CP} -p ${PREFIX}/${DRUPDIR}/sites/default/settings.php-dist ${PREFIX}/${DRUPDIR}/sites/default/settings.php ; \
+	fi
 	${CP} -R ${WRKSRC}/sites ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/themes ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/update.php ${PREFIX}/${DRUPDIR}
