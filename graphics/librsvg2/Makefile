@@ -60,6 +60,7 @@ CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
 PLIST_SUB+=	PLUGIN=""
 .else
 
+CONFIGURE_ARGS+=--enable-mozilla-plugin=no
 PLIST_SUB+=	PLUGIN="@comment "
 .endif
 .else
