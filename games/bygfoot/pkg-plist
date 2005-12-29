@@ -4,7 +4,7 @@ share/bygfoot/support_files/bygfoot.conf
 share/bygfoot/support_files/bygfoot_app
 share/bygfoot/support_files/bygfoot_constants
 share/bygfoot/support_files/bygfoot_help
-share/bygfoot/support_files/bygfoot_lg_tokens
+share/bygfoot/support_files/bygfoot_tokens
 share/bygfoot/support_files/bygfoot_user.conf
 share/bygfoot/support_files/definitions/argentina/league_argentina1.xml
 share/bygfoot/support_files/definitions/australia/country_australia.xml
@@ -46,26 +46,26 @@ share/bygfoot/support_files/definitions/brazil/cup_brazil_copa_do_brasil.xml
 share/bygfoot/support_files/definitions/brazil/cup_brazil_libertadores.xml
 share/bygfoot/support_files/definitions/brazil/cup_brazil_prom_games2.xml
 share/bygfoot/support_files/definitions/brazil/cup_brazil_prom_games3.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_prom_games4.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_prom_games5.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_prom_games6.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_ar.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_bo_ve.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_br1.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_br2.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_br3.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_br4.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_co_ec.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_ch_pe.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_knockout.xml
-share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_am_pa_ur.xml
+share/bygfoot/support_files/definitions/brazil/cup_brazil_sul_americana.xml
 share/bygfoot/support_files/definitions/brazil/cup_supercup_brazil_intercontinental.xml
 share/bygfoot/support_files/definitions/brazil/league_brazil1.xml
 share/bygfoot/support_files/definitions/brazil/league_brazil2.xml
-share/bygfoot/support_files/definitions/brazil/league_brazil3.xml
-share/bygfoot/support_files/definitions/brazil/league_brazil4.xml
-share/bygfoot/support_files/definitions/brazil/league_brazil5.xml
-share/bygfoot/support_files/definitions/brazil/league_brazil6.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil310.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil311.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil312.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil313.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil314.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil315.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil316.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil31.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil32.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil33.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil34.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil35.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil36.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil37.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil38.xml
+share/bygfoot/support_files/definitions/brazil/league_brazil39.xml
 share/bygfoot/support_files/definitions/bulgaria/country_bulgaria.xml
 share/bygfoot/support_files/definitions/bulgaria/cup_bulgaria_national.xml
 share/bygfoot/support_files/definitions/bulgaria/cup_bulgaria_prom_games2.xml
@@ -110,6 +110,10 @@ share/bygfoot/support_files/definitions/germany/league_germany1.xml
 share/bygfoot/support_files/definitions/germany/league_germany2.xml
 share/bygfoot/support_files/definitions/germany/league_germany3a.xml
 share/bygfoot/support_files/definitions/germany/league_germany3b.xml
+share/bygfoot/support_files/definitions/greece/country_greece.xml
+share/bygfoot/support_files/definitions/greece/cup_greece_cup.xml
+share/bygfoot/support_files/definitions/greece/league_greece1.xml
+share/bygfoot/support_files/definitions/greece/league_greece2.xml
 share/bygfoot/support_files/definitions/ireland/country_ireland.xml
 share/bygfoot/support_files/definitions/ireland/cup_ireland_cl.xml
 share/bygfoot/support_files/definitions/ireland/cup_ireland_cl_q.xml
@@ -169,7 +173,6 @@ share/bygfoot/support_files/definitions/scotland/league_scotland3.xml
 share/bygfoot/support_files/definitions/scotland/league_scotland4.xml
 share/bygfoot/support_files/definitions/short_leagues/league_czech1_short.xml
 share/bygfoot/support_files/definitions/short_leagues/league_denmark1_short.xml
-share/bygfoot/support_files/definitions/short_leagues/league_greece1_short.xml
 share/bygfoot/support_files/definitions/short_leagues/league_portugal1_short.xml
 share/bygfoot/support_files/definitions/short_leagues/league_russia1_short.xml
 share/bygfoot/support_files/definitions/short_leagues/league_switzerland1_short.xml
@@ -177,6 +180,7 @@ share/bygfoot/support_files/definitions/short_leagues/league_turkey1_short.xml
 share/bygfoot/support_files/definitions/short_leagues/league_ukraine1_short.xml
 share/bygfoot/support_files/definitions/short_leagues_south_america/league_bolivia1_short.xml
 share/bygfoot/support_files/definitions/short_leagues_south_america/league_colombia1_short.xml
+share/bygfoot/support_files/definitions/short_leagues_south_america/league_costa_rica1_short.xml
 share/bygfoot/support_files/definitions/short_leagues_south_america/league_ecuador1_short.xml
 share/bygfoot/support_files/definitions/short_leagues_south_america/league_chile1_short.xml
 share/bygfoot/support_files/definitions/short_leagues_south_america/league_mexico1_short.xml
@@ -227,7 +231,6 @@ share/bygfoot/support_files/definitions/wc06/cup_wc06_ncamerica.xml
 share/bygfoot/support_files/definitions/wc06/cup_wc06_oceania.xml
 share/bygfoot/support_files/definitions/wc06/cup_wc06_oceania_samerica.xml
 share/bygfoot/support_files/definitions/wc06/cup_wc06_samerica.xml
-share/bygfoot/support_files/definitions/wc06/fifa.txt
 share/bygfoot/support_files/definitions/wc06/league_wc06_africa_teams.xml
 share/bygfoot/support_files/definitions/wc06/league_wc06_asia_teams.xml
 share/bygfoot/support_files/definitions/wc06/league_wc06_europe_teams.xml
@@ -249,6 +252,7 @@ share/bygfoot/support_files/names/player_names_england.xml
 share/bygfoot/support_files/names/player_names_france.xml
 share/bygfoot/support_files/names/player_names_general.xml
 share/bygfoot/support_files/names/player_names_germany.xml
+share/bygfoot/support_files/names/player_names_greece.xml
 share/bygfoot/support_files/names/player_names_hungary.xml
 share/bygfoot/support_files/names/player_names_italy.xml
 share/bygfoot/support_files/names/player_names_latinoamerica.xml
@@ -259,6 +263,23 @@ share/bygfoot/support_files/names/player_names_scg.xml
 share/bygfoot/support_files/names/player_names_scotland.xml
 share/bygfoot/support_files/names/player_names_sweden.xml
 share/bygfoot/support_files/names/player_names_usa.xml
+share/bygfoot/support_files/mmedia/pics/match10.jpg
+share/bygfoot/support_files/mmedia/pics/match11.jpg
+share/bygfoot/support_files/mmedia/pics/match12.jpg
+share/bygfoot/support_files/mmedia/pics/match13.jpg
+share/bygfoot/support_files/mmedia/pics/match14.jpg
+share/bygfoot/support_files/mmedia/pics/match15.jpg
+share/bygfoot/support_files/mmedia/pics/match16.jpg
+share/bygfoot/support_files/mmedia/pics/match1.jpg
+share/bygfoot/support_files/mmedia/pics/match2.jpg
+share/bygfoot/support_files/mmedia/pics/match3.jpg
+share/bygfoot/support_files/mmedia/pics/match4.jpg
+share/bygfoot/support_files/mmedia/pics/match5.jpg
+share/bygfoot/support_files/mmedia/pics/match6.jpg
+share/bygfoot/support_files/mmedia/pics/match7.jpg
+share/bygfoot/support_files/mmedia/pics/match8.jpg
+share/bygfoot/support_files/mmedia/pics/match9.jpg
+share/bygfoot/support_files/mmedia/pics/soccerbabes.jpg
 share/bygfoot/support_files/pixmaps/boost_anti.png
 share/bygfoot/support_files/pixmaps/boost_off.png
 share/bygfoot/support_files/pixmaps/boost_on.png
@@ -311,11 +332,15 @@ share/bygfoot/support_files/pixmaps/menu_player_browse.png
 share/bygfoot/support_files/pixmaps/menu_player_contract.png
 share/bygfoot/support_files/pixmaps/menu_player_fire.png
 share/bygfoot/support_files/pixmaps/menu_player_info.png
+share/bygfoot/support_files/pixmaps/menu_player_move_to_team.png
+share/bygfoot/support_files/pixmaps/menu_player_move_to_ya.png
 share/bygfoot/support_files/pixmaps/menu_player_put_transfer.png
 share/bygfoot/support_files/pixmaps/menu_player_remove_transfer.png
 share/bygfoot/support_files/pixmaps/menu_player_shoots.png
 share/bygfoot/support_files/pixmaps/menu_rearrange.png
+share/bygfoot/support_files/pixmaps/menu_save_geometry.png
 share/bygfoot/support_files/pixmaps/menu_scout.png
+share/bygfoot/support_files/pixmaps/menu_season_res.png
 share/bygfoot/support_files/pixmaps/menu_stadium.png
 share/bygfoot/support_files/pixmaps/menu_structure.png
 share/bygfoot/support_files/pixmaps/menu_style.png
@@ -328,6 +353,13 @@ share/bygfoot/support_files/pixmaps/player_status_hot.png
 share/bygfoot/support_files/pixmaps/player_status_injury.png
 share/bygfoot/support_files/pixmaps/player_status_yellow.png
 share/bygfoot/support_files/pixmaps/preview.png
+share/bygfoot/support_files/strategy/strategy_attack1.xml
+share/bygfoot/support_files/strategy/strategy_attack2.xml
+share/bygfoot/support_files/strategy/strategy_defence.xml
+share/bygfoot/support_files/strategy/strategy_defend.xml
+share/bygfoot/support_files/strategy/strategy_fit.xml
+share/bygfoot/support_files/strategy/strategy_gy.xml
+share/bygfoot/support_files/strategy/strategy_normal2.xml
 share/bygfoot/support_files/pixmaps/style_all_atk.png
 share/bygfoot/support_files/pixmaps/style_all_def.png
 share/bygfoot/support_files/pixmaps/style_atk.png
@@ -380,7 +412,7 @@ share/bygfoot/support_files/pixmaps/symbols/flag_gabon.png
 share/bygfoot/support_files/pixmaps/symbols/flag_georgia.png
 share/bygfoot/support_files/pixmaps/symbols/flag_germany.png
 share/bygfoot/support_files/pixmaps/symbols/flag_ghana.png
-share/bygfoot/support_files/pixmaps/symbols/flag_gr.png
+share/bygfoot/support_files/pixmaps/symbols/flag_greece.png
 share/bygfoot/support_files/pixmaps/symbols/flag_guatemala.png
 share/bygfoot/support_files/pixmaps/symbols/flag_guinea.png
 share/bygfoot/support_files/pixmaps/symbols/flag_honduras.png
@@ -480,11 +512,18 @@ share/bygfoot/support_files/pixmaps/symbols/flag_yemen.png
 share/bygfoot/support_files/pixmaps/symbols/flag_zambia.png
 share/bygfoot/support_files/pixmaps/symbols/flag_zimbabwe.png
 share/bygfoot/support_files/pixmaps/symbols/map_ireland.png
+share/bygfoot/support_files/pixmaps/symbols/wc_africa.png
+share/bygfoot/support_files/pixmaps/symbols/wc_asia.png
+share/bygfoot/support_files/pixmaps/symbols/wc_europe.png
+share/bygfoot/support_files/pixmaps/symbols/wc_namerica.png
+share/bygfoot/support_files/pixmaps/symbols/wc_oceania.png
+share/bygfoot/support_files/pixmaps/symbols/wc_samerica.png
 share/bygfoot/support_files/pixmaps/table_down.png
 share/bygfoot/support_files/pixmaps/table_stay.png
 share/bygfoot/support_files/pixmaps/table_up.png
 share/bygfoot/support_files/pixmaps/transfers.png
 share/locale/bg/LC_MESSAGES/bygfoot.mo
+share/locale/da/LC_MESSAGES/bygfoot.mo
 share/locale/de/LC_MESSAGES/bygfoot.mo
 share/locale/es/LC_MESSAGES/bygfoot.mo
 share/locale/fr/LC_MESSAGES/bygfoot.mo
@@ -492,11 +531,14 @@ share/locale/nl/LC_MESSAGES/bygfoot.mo
 share/locale/pl/LC_MESSAGES/bygfoot.mo
 share/locale/ro/LC_MESSAGES/bygfoot.mo
 share/locale/zh/LC_MESSAGES/bygfoot.mo
+@dirrm share/bygfoot/support_files/strategy
 @dirrm share/bygfoot/support_files/pixmaps/symbols
 @dirrm share/bygfoot/support_files/pixmaps/live_game
 @dirrm share/bygfoot/support_files/pixmaps/history
 @dirrm share/bygfoot/support_files/pixmaps
 @dirrm share/bygfoot/support_files/names
+@dirrm share/bygfoot/support_files/mmedia/pics
+@dirrm share/bygfoot/support_files/mmedia
 @dirrm share/bygfoot/support_files/lg_commentary
 @dirrm share/bygfoot/support_files/definitions/wc06
 @dirrm share/bygfoot/support_files/definitions/wales
@@ -512,6 +554,7 @@ share/locale/zh/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/definitions/misc
 @dirrm share/bygfoot/support_files/definitions/italy
 @dirrm share/bygfoot/support_files/definitions/ireland
+@dirrm share/bygfoot/support_files/definitions/greece
 @dirrm share/bygfoot/support_files/definitions/germany
 @dirrm share/bygfoot/support_files/definitions/france
 @dirrm share/bygfoot/support_files/definitions/europe
