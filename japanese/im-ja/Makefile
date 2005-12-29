@@ -32,6 +32,7 @@ CONFIGURE_ENV+=	LIBS="${LIBS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ENV+=	INTLTOOL_PERL="${PERL}"
 
 MAN1=		im-ja-conf.1 im-ja-xim-server.1
+GCONF_SCHEMAS=	im-ja.schemas
 
 .include <bsd.port.pre.mk>
 
