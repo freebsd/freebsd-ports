@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
