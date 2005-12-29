@@ -1867,6 +1867,7 @@ dupfind		ports/sysutils/dupfind
 duplicity	ports/sysutils/duplicity
 durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
+dvbcut		ports/multimedia/dvbcut
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvd-slideshow	ports/multimedia/dvd-slideshow
 dvdauthor	ports/multimedia/dvdauthor
