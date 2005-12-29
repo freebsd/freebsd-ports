@@ -7109,6 +7109,7 @@ openbox-themes	ports/x11-themes/openbox-themes
 opencdk		ports/security/opencdk
 openclipart	ports/graphics/openclipart
 openct		ports/security/openct
+opencv		ports/graphics/opencv
 opencyc		ports/misc/opencyc
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
