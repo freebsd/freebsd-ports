@@ -11616,6 +11616,7 @@ sim6811		ports/emulators/sim6811
 simage		ports/graphics/simage
 simd-viterbi	ports/math/simd-viterbi
 simgear		ports/devel/simgear
+simian		ports/devel/simian
 simicq		ports/net-im/simicq
 simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
