@@ -369,6 +369,7 @@
     SUBDIR += oglext
     SUBDIR += ogre3d
     SUBDIR += openclipart
+    SUBDIR += opencv
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opendx-samples

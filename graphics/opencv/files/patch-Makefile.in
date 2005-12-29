@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Dec 29 14:20:44 2005
++++ Makefile.in	Thu Dec 29 14:21:13 2005
+@@ -194,7 +194,7 @@
+ 
+ # All the rest of the distributed files
+ EXTRA_DIST = THANKS COPYING INSTALL README NEWS ChangeLog opencv.spec opencv.spec.in opencv.pc.in opencv.pc autogen.sh _make utils
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
+ pkgconfig_DATA = opencv.pc
+ all: cvconfig.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
