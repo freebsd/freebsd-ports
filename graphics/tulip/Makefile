@@ -10,7 +10,7 @@ PORTNAME=	tulip
 PORTVERSION=	1.2.5
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/%SUBDIR%/
+MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
