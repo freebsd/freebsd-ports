@@ -17,6 +17,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/cosnaming.so
 lib/ethereal/plugins/%%PORTVERSION%%/docsis.so
 lib/ethereal/plugins/%%PORTVERSION%%/enttec.so
 lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
+lib/ethereal/plugins/%%PORTVERSION%%/h223.so
 lib/ethereal/plugins/%%PORTVERSION%%/irda.so
 lib/ethereal/plugins/%%PORTVERSION%%/lwres.so
 lib/ethereal/plugins/%%PORTVERSION%%/mate.so
@@ -44,6 +45,8 @@ lib/libwiretap.so.0
 %%DATADIR%%/cfilters
 %%DATADIR%%/colorfilters
 %%DATADIR%%/dfilters
+%%DATADIR%%/diameter/TGPPSh.xml
+%%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
 %%DATADIR%%/diameter/imscxdx.xml

@@ -1,5 +1,5 @@
---- epan/dissectors/packet-ieee80211.c.orig	Mon Oct 10 06:23:01 2005
-+++ epan/dissectors/packet-ieee80211.c	Tue Dec  6 18:53:33 2005
+--- epan/dissectors/packet-ieee80211.c.orig	Mon Dec 26 21:21:13 2005
++++ epan/dissectors/packet-ieee80211.c	Thu Dec 29 17:44:58 2005
 @@ -74,6 +74,10 @@
  #include <ctype.h>
  #include "isprint.h"
@@ -11,21 +11,16 @@
  /* Defragment fragmented 802.11 datagrams */
  static gboolean wlan_defragment = TRUE;
  
-@@ -635,11 +639,11 @@
+@@ -636,7 +640,7 @@ find_header_length (guint16 fcf)
    case DATA_FRAME:
      len = (COOK_ADDR_SELECTOR(fcf) == DATA_ADDR_T4) ? DATA_LONG_HDR_LEN :
  						      DATA_SHORT_HDR_LEN;
--    if( IS_DATA_QOS(fcf))
-+    if (fcf & 0x80)
+-    if( IS_DATA_QOS(COMPOSE_FRAME_TYPE(fcf)))
++    if(COMPOSE_FRAME_TYPE(fcf) & 0x80)
        return len + 2;
      else
        return len;
--  
-+
-   default:
-     return 4;	/* XXX */
-   }
-@@ -1922,6 +1926,23 @@
+@@ -1958,6 +1962,23 @@ set_dst_addr_cols(packet_info *pinfo, co
  		     ether_to_str(addr));
  }
  
@@ -49,7 +44,7 @@
  typedef enum {
      ENCAP_802_2,
      ENCAP_IPX,
-@@ -1935,7 +1956,7 @@
+@@ -1971,7 +1992,7 @@ static void
  dissect_ieee80211_common (tvbuff_t * tvb, packet_info * pinfo,
  			  proto_tree * tree, gboolean fixed_length_header,
  			  gboolean has_radio_information, gint fcs_len,
@@ -58,7 +53,7 @@
  {
    guint16 fcf, flags, frame_type_subtype;
    guint16 seq_control;
-@@ -1950,7 +1971,7 @@
+@@ -1986,7 +2007,7 @@ dissect_ieee80211_common (tvbuff_t * tvb
    proto_tree *hdr_tree = NULL;
    proto_tree *flag_tree;
    proto_tree *fc_tree;
@@ -67,7 +62,7 @@
    gboolean has_fcs;
    gint len, reported_len, ivlen;
    gboolean save_fragmented;
-@@ -1994,6 +2015,9 @@
+@@ -2030,6 +2051,9 @@ dissect_ieee80211_common (tvbuff_t * tvb
      hdr_len = DATA_LONG_HDR_LEN;
    else
      hdr_len = find_header_length (fcf);
@@ -76,8 +71,8 @@
 +    hdr_len = roundup2(hdr_len, 4);
    frame_type_subtype = COMPOSE_FRAME_TYPE(fcf);
  
-   /*if (check_col (pinfo->cinfo, COL_INFO))
-@@ -2495,9 +2519,13 @@
+   if (check_col (pinfo->cinfo, COL_PROTOCOL))
+@@ -2526,9 +2550,13 @@ dissect_ieee80211_common (tvbuff_t * tvb
  	  reported_len -= 4;
  	  if (tree)
  	    {
@@ -92,11 +87,11 @@
  	      if (fcs == sent_fcs)
  		proto_tree_add_uint_format(hdr_tree, hf_fcs, tvb,
  			hdr_len + len, 4, sent_fcs,
-@@ -2530,35 +2558,46 @@
+@@ -2561,35 +2589,46 @@ dissect_ieee80211_common (tvbuff_t * tvb
  	  proto_item *qos_fields;
  	  proto_tree *qos_tree;
  
-+          guint16 qosoff;
++	  guint16 qosoff;
            guint16 qos_control;
  	  guint16 qos_priority;
            guint16 qos_ack_policy;
@@ -111,7 +106,7 @@
 +	   * this must be done relative to true header size, not
 +	   * the padded/aligned value.  To simplify this work we
 +	   * stash the original header size in ohdr_len instead
-+	   * of recalculating it. 
++	   * of recalculating it.
 +	   */
 +	  qosoff = ohdr_len - 2;
 +	  qos_fields = proto_tree_add_text(hdr_tree, tvb, qosoff, 2,
@@ -132,7 +127,7 @@
  	      qos_priority, qos_tags[qos_priority], qos_acs[qos_priority]);
  
      	  if(flags & FLAG_FROM_DS)	{
- 	    proto_tree_add_boolean (qos_tree, hf_qos_eosp, tvb, 
+ 	    proto_tree_add_boolean (qos_tree, hf_qos_eosp, tvb,
 -	      hdr_len - 2, 1, qos_eosp);
 +	      qosoff, 1, qos_eosp);
  
@@ -141,10 +136,10 @@
  	      proto_tree_add_uint_format (qos_tree, hf_qos_field_content, tvb,
 -      		  hdr_len - 1, 1, qos_field_content, "TXOP Limit: %d ", qos_field_content);
 +      		  qosoff + 1, 1, qos_field_content, "TXOP Limit: %d ", qos_field_content);
- 	      
+ 
  	    }else {
  	      /* qap ps buffer state */
-@@ -2572,7 +2611,7 @@
+@@ -2603,7 +2642,7 @@ dissect_ieee80211_common (tvbuff_t * tvb
  	      buf_ac	= COOK_PS_BUF_AC(qos_field_content);  /*access category */
  	      buf_load	= COOK_PS_BUF_LOAD(qos_field_content);
  
@@ -153,18 +148,18 @@
  	      "QAP PS Buffer State: 0x%x", qos_field_content);
      	      qos_ps_buf_state_tree = proto_item_add_subtree (qos_ps_buf_state_fields, ett_qos_ps_buf_state);
  
-@@ -2581,25 +2620,25 @@
+@@ -2612,25 +2651,25 @@ dissect_ieee80211_common (tvbuff_t * tvb
      		  1, 1, buf_state);
- 	      
+ 
  	      proto_tree_add_uint_format (qos_ps_buf_state_tree, hf_qos_buf_ac, tvb,
 -		  hdr_len - 1, 1, buf_ac, "Priority: %d (%s)",
 +		  qosoff + 1, 1, buf_ac, "Priority: %d (%s)",
  		  buf_ac, wme_acs[buf_ac]);
- 	      
+ 
  	      proto_tree_add_uint_format (qos_ps_buf_state_tree, hf_qos_buf_load, tvb,
 -      		  hdr_len - 1, 1, buf_load, "Buffered load: %d ", (buf_load * 4096));
 +      		  qosoff + 1, 1, buf_load, "Buffered load: %d ", (buf_load * 4096));
- */	      
+ */
  
  	    }
  	  } else  if(qos_eosp)  {
@@ -178,13 +173,13 @@
 -		  hdr_len - 1, 1, qos_field_content, "TXOP Limit Requested: %d ", qos_field_content);
 +		  qosoff + 1, 1, qos_field_content, "TXOP Limit Requested: %d ", qos_field_content);
  	  }
- 	  
+ 
 -	  proto_tree_add_uint (qos_tree, hf_qos_ack_policy, tvb, hdr_len - 2, 1,
 +	  proto_tree_add_uint (qos_tree, hf_qos_ack_policy, tvb, qosoff, 1,
- 	      qos_ack_policy); 
+ 	      qos_ack_policy);
  
        	} /* end of qos control field */
-@@ -2957,7 +2996,17 @@
+@@ -2988,7 +3027,17 @@ static void
  dissect_ieee80211 (tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree)
  {
    dissect_ieee80211_common (tvb, pinfo, tree, FALSE, FALSE,
@@ -203,7 +198,7 @@
  }
  
  /*
-@@ -2968,7 +3017,7 @@
+@@ -2999,7 +3048,7 @@ static void
  dissect_ieee80211_radio (tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree)
  {
    dissect_ieee80211_common (tvb, pinfo, tree, FALSE, TRUE,
@@ -212,7 +207,7 @@
  }
  
  /*
-@@ -2979,7 +3028,7 @@
+@@ -3010,7 +3059,7 @@ dissect_ieee80211_radio (tvbuff_t * tvb,
  static void
  dissect_ieee80211_bsfc (tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree)
  {
@@ -221,7 +216,7 @@
  }
  
  /*
-@@ -2989,7 +3038,7 @@
+@@ -3020,7 +3069,7 @@ dissect_ieee80211_bsfc (tvbuff_t * tvb, 
  static void
  dissect_ieee80211_fixed (tvbuff_t * tvb, packet_info * pinfo, proto_tree * tree)
  {
@@ -230,7 +225,7 @@
  }
  
  static void
-@@ -3773,6 +3822,7 @@
+@@ -3809,6 +3858,7 @@ proto_register_ieee80211 (void)
    register_dissector("wlan", dissect_ieee80211, proto_wlan);
    register_dissector("wlan_fixed", dissect_ieee80211_fixed, proto_wlan);
    register_dissector("wlan_bsfc", dissect_ieee80211_bsfc, proto_wlan);
