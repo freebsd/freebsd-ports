@@ -8,7 +8,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.12.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
@@ -50,6 +50,7 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the SVG browser plug-in" no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 499999
 .if defined(WITH_MOZILLA_PLUGIN)
 USE_GECKO=	firefox mozilla
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
@@ -58,9 +59,12 @@ CONFIGURE_ARGS+=--enable-mozilla-plugin=yes
 
 PLIST_SUB+=	PLUGIN=""
 .else
-CONFIGURE_ARGS+=--enable-mozilla-plugin=no
 
 PLIST_SUB+=	PLUGIN="@comment "
+.endif
+.else
+PLIST_SUB+=	PLUGIN="@comment "
+CONFIGURE_ARGS+=--enable-mozilla-plugin=no
 .endif
 
 post-patch:
