@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the SHA-2 algorithms
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
@@ -26,7 +26,12 @@ MAN3=		Digest::SHA2.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again.
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-SHA2.xs
+
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/SHA2.pm
+	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/SHA2.pm ${WRKSRC}/t/*.t
+	${PERL} -pi -e 's/\)/, char **env\)/ if m{int main}' ${WRKSRC}/_sha2.c
 .endif
 
 .include <bsd.port.post.mk>
