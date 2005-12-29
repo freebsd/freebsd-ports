@@ -23,5 +23,4 @@ libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
 @unexec rmdir %D/libexec/gcc/%%GNU_HOST%% 2>/dev/null || true
 @unexec rmdir %D/libexec/gcc 2>/dev/null || true
 info/gcc%%SUFFIX%%/dir
-@unexec rmdir %D/info/gcc%%SUFFIX%% 2>/dev/null || true
 @comment Insert PLIST.lib here
