@@ -10662,6 +10662,7 @@ qdvdauthor	ports/multimedia/qdvdauthor
 qemacs		ports/editors/qemacs
 qemu		ports/emulators/qemu
 qextmdi		ports/devel/qextmdi
+qfaxreader	ports/comms/qfaxreader
 qfsm		ports/cad/qfsm
 qgfe		ports/math/qgfe
 qglviewer	ports/graphics/qglviewer
