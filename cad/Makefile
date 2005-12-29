@@ -26,6 +26,7 @@
     SUBDIR += gmsh
     SUBDIR += gnetlist
     SUBDIR += gnucap
+    SUBDIR += gplcver
     SUBDIR += gschem
     SUBDIR += gtkwave
     SUBDIR += gwave
