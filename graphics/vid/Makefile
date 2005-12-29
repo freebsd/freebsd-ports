@@ -7,20 +7,17 @@
 
 PORTNAME=	vid
 PORTVERSION=	1.0.1
-PORTREVSION=	1
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://members.home.com/housel/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab images from USB Cameras using the OV511 and OV511+ chipset
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-BROKEN=		requires FreeBSD 4.0 or later
-.endif
-
 LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-02-28
 
 PLIST_FILES=	bin/vid
 # The port does not understand 'make all' or 'make install'
@@ -31,4 +28,4 @@ ALL_TARGET=
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vid ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
