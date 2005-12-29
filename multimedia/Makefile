@@ -17,6 +17,7 @@
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
+    SUBDIR += dvbcut
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
     SUBDIR += dvdrip
