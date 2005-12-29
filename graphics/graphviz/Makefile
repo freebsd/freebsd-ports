@@ -32,12 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBA
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
 		TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
-		MISSING=${TRUE} \
-		OCAML=/nonexistent \
-		PERL=/nonexistent \
-		PHP=/nonexistent \
-		PYTHON=/nonexistent \
-		RUBY=/nonexistent
+		MISSING=${TRUE}
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--with-iconvlibdir=${LOCALBASE}/lib \
