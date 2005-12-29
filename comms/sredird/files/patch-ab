@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- README.orig	Thu Nov 14 11:29:17 2002
-+++ README	Mon Feb 17 15:25:24 2003
+--- README.orig	Wed Dec 28 15:40:48 2005
++++ README	Wed Dec 28 15:42:52 2005
 @@ -101,21 +101,19 @@
  
  5 - Installation
@@ -13,7 +10,7 @@ $FreeBSD$
  configuration file (usually /etc/inetd.conf) should look like this:
  
 -sredir          stream  tcp     nowait  root    /usr/sbin/tcpd /usr/sbin/sredird -i 5 /dev/modem /var/lock/LCK..modem
-+sredir		stream	tcp	nowait	root	/usr/local/libexec/sredird	sredird -i 5 /dev/cuaa0 /var/spool/lock/LCK..cuaa0
++sredir         stream  tcp     nowait  root    /usr/local/libexec/sredird      sredird -i 5 /dev/cuaa0 /var/spool/lock/LCK..cuaa0
  
  Of course, "sredir" should be defined in the services file (usually
 -/etc/services, usual values start at port 7000) and "/dev/modem" should
