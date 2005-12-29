@@ -2994,6 +2994,7 @@ gld		ports/mail/gld
 gle		ports/graphics/gle
 glean		ports/graphics/glean
 glens		ports/science/glens
+glest		ports/games/glest
 glew		ports/graphics/glew
 gleyes		ports/games/gleyes
 glflow		ports/net/glflow
