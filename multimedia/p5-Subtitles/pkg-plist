@@ -1,0 +1,5 @@
+bin/subs
+%%SUBPLAY%%bin/subplay
+%%SITE_PERL%%/Subtitles.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Subtitles/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Subtitles
