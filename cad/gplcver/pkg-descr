@@ -1,0 +1,18 @@
+GPL Cver is a full 1995 P1364 Verilog standard HDL simulator. It also
+implements some of the 2001 P1364 standard features including all three
+PLI interfaces (tf_, acc_ and vpi_) as defined in the 2001 Language
+Reference Manual (LRM).
+
+Verilog is the name for both a language for describing electronic hardware
+called a hardware description language (HDL) and the name of the program
+that simulates HDL circuit descriptions to verify that described circuits
+will function correctly when the are constructed. Verilog is used only for
+describing digital logic circuits. Other HDLs such as Spice are used for
+describing analog circuits. There is an IEEE standard named P1364 that
+standardizes the Verilog HDL and the behavior of Verilog simulators.
+Verilog is officially defined in the IEEE P1364 Language Reference
+Manual (LRM) that can be purchased from IEEE. There are many good books
+for learning that teach the Verilog HDL and/or that teach digital circuit
+design using Verilog.
+
+WWW: http://www.pragmatic-c.com/gpl-cver/
