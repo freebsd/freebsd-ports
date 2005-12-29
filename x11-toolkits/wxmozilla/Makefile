@@ -26,6 +26,7 @@ USE_GECKO=	mozilla
 WXGTK_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -34,5 +35,9 @@ INSTALLS_SHLIB=	yes
 .if ${OSVERSION} < 500000
 IGNORE=	does not build on 4.X
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|mozilla-nspr|nspr|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
