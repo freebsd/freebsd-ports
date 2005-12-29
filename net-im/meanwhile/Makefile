@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	meanwhile
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
-
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
