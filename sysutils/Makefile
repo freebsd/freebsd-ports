@@ -328,6 +328,7 @@
     SUBDIR += muse
     SUBDIR += nagios-statd
     SUBDIR += nautilus-cd-burner
+    SUBDIR += nctop
     SUBDIR += ndir
     SUBDIR += netdump-server
     SUBDIR += newportsversioncheck
