@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX} \
 		http://distro.ibiblio.org/pub/linux/distributions/fedora/linux/core/${SUBDIR}/ \
@@ -19,13 +19,12 @@ COMMENT=	GTK+ library, version 2.X, Linux binary
 
 # these libraries are required by gtk-query-immodules-2.0 or
 # gdk-pixbuf-query-loaders
-BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST=		${PKGDIR}/pkg-plist
