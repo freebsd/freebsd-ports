@@ -93,6 +93,7 @@
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
     SUBDIR += qemu
+    SUBDIR += qemu-launcher
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
