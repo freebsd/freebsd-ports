@@ -67,8 +67,9 @@ case ${arpwatch_interfaces} in
 	 if [ "$1" = "start" ]; then
  	     for interface in ${arpwatch_interfaces}; do
 		 eval options=\$arpwatch_${interface}_options
-	         command_args="-i ${interface} ${options} -f arp.${interface}.dat" 
-                 run_rc_command "$1"
+		 command_args="-i ${interface} ${options} -f arp.${interface}.dat"
+		 pidfile="/var/run/arpwatch-${interface}.pid"
+		 run_rc_command "$1"
 	     done
 	 else
              run_rc_command "$1"
