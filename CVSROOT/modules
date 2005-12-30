@@ -5246,6 +5246,7 @@ ldapscripts	ports/net/ldapscripts
 ldapsdk		ports/net/ldapsdk
 ldapsh		ports/net/ldapsh
 ldmud		ports/games/ldmud
+ldns		ports/dns/ldns
 ldouble		ports/math/ldouble
 ldvd		ports/multimedia/ldvd
 le		ports/editors/le
