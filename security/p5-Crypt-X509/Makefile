@@ -22,7 +22,11 @@ MAN3=		Crypt::X509.3
 WRKSRC=		${WRKDIR}/Crypt-X509
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE= requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/lib/Crypt/X509.pm
+	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/lib/Crypt/X509.pm
 .endif
+
 .include <bsd.port.post.mk>
