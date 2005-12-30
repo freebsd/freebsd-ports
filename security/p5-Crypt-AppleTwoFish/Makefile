@@ -18,7 +18,11 @@ PERL_CONFIGURE=	yes
 MAN3=		Crypt::AppleTwoFish.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE= requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
+
+.if ${PERL_LEVEL} < 500800
+post-patch:
+	${PERL} -pi -e '$$_="" if m{5.008|warnings}' ${WRKSRC}/t/*.t \
+		${WRKSRC}/lib/Crypt/AppleTwoFish.pm ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+
 .include <bsd.port.post.mk>
