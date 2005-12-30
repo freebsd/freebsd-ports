@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.eecs.umich.edu/~addi/perl/%SUBDIR%/
