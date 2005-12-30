@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 MAN1=	cu.1 uuconv.1 uucp.1 uulog.1 uuname.1 uupick.1 uustat.1 \
 	uuto.1 uux.1
@@ -41,6 +42,8 @@ CONFLICTS?=	freebsd-uucp-pam-1.*
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
+	${REINPLACE_CMD} -e 's|doc ||' \
+		${WRKSRC}/uucp/Makefile
 
 do-configure:
 .for i in ${FIXME}
@@ -70,7 +73,7 @@ do-configure:
 
 post-install:
 	-${MKDIR} ${DESTDIR}${PREFIX}/info
-	install-info ${DESTDIR}${PREFIX}/info/uucp.info ${DESTDIR}${PREFIX}/info/dir
+	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${DESTDIR}${PREFIX}/info/
 	@${CHOWN} uucp:uucp ${PREFIX}/etc/uucp
 	@${CHMOD} 750 ${PREFIX}/etc/uucp
 	@${ECHO_CMD} "updating ${DESTDIR}/etc/services"
