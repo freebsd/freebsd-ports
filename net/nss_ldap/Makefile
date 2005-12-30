@@ -16,7 +16,7 @@ COMMENT=	RFC 2307 NSS module
 
 USE_OPENLDAP=	yes
 
-NSS_LDAP_VERSION=239
+NSS_LDAP_VERSION=244
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -26,8 +26,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+= \
-		--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
+CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret \
 		--enable-rfc2307bis \
 		--enable-schema-mapping \
