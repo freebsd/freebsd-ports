@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.15
+PORTVERSION=		0.8.17
 CATEGORIES=		games
 MASTER_SITES=		http://epfl.ysagoon.com/~glob2/data/
 
