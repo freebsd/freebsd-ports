@@ -28,9 +28,10 @@ MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
 
 .include <bsd.port.pre.mk>
 
-# p5-HTML-Tree -> p5-HTML-Parser
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or above
+post-patch:
+	${PERL} -pi -e 's/our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/t/*.t
+	${PERL} -pi -e 's,-Tw,-,; s/(use|no) warnings;.*//' ${WRKSRC}/t/*.t
 .endif
 
 .include <bsd.port.post.mk>
