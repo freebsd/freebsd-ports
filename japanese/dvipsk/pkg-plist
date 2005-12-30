@@ -11,11 +11,14 @@ bin/udvips
 %%DVIPSDIR%%/base/color.pro
 %%DVIPSDIR%%/base/crop.pro
 %%DVIPSDIR%%/base/hps.pro
+@unexec %%UPDMAP_SYS_PTEX%% --disable psfonts_jp.map
+%%FONTSMAPDIR%%/dvips/psfonts_jp.map
 %%DVIPSCONFIGDIR%%/config/config.ps
+%%DVIPSCONFIGDIR_DIST%%/config/config.ps
+@exec %%MKTEXLSR%%
+@exec %%UPDMAP_SYS_PTEX%% --enable Map=psfonts_jp.map
 @dirrm %%DVIPSDIR%%/base
 @dirrm %%DVIPSCONFIGDIR%%/config
-%%FONTSMAPDIR%%/dvips/kanji.map
-@exec %%MKTEXLSR%%
-@exec %%UPDMAP_SYS_PTEX%% --enable Map=kanji.map
-@unexec %%UPDMAP_SYS_PTEX%% --disable kanji.map
+@dirrm %%DVIPSCONFIGDIR%%
+@dirrm %%DVIPSCONFIGDIR_DIST%%/config
 @unexec %%MKTEXLSR%%
