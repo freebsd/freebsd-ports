@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
+FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
