@@ -1,0 +1,15 @@
+Light Squid  - light squid report parser and visualizer
+
+    fast and simple install
+    fast log parser generatesmall per user data file
+    perl based cgi script for dynamic generated report pages
+    html template for design
+    no database required
+    no additional perl module
+    varios reports
+    user group support
+    graphics report
+    multilanguage interface
+
+Author: Sergey Erokhin <lightsquid@gmail.com>
+WWW: http://lightsquid.sourceforge.net/

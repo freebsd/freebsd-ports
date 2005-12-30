@@ -211,6 +211,7 @@
     SUBDIR += libgtkhtml
     SUBDIR += libhttpd-persistent
     SUBDIR += libwww
+    SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += linkcheck
     SUBDIR += linkchecker
