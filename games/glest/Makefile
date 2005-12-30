@@ -7,6 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	1.2.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,13 +32,10 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+			LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}
-
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ENV=	${MAKE_ENV}
 
 GLESTDIRE=	${PREFIX}/lib/${PORTNAME}
 
@@ -46,12 +44,15 @@ SUB_FILES=	glest-wrapper
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt|sh|ac|sub|ini|m4|jam|guess|rpath)" \
 		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
+	@${RM} ${WRKDIR}/${PORTNAME}_game/glest.ini
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%ACLOCAL%%|${ACLOCAL}|g" -e "s|%%AUTOCONF%%|${AUTOCONF}|g" \
 		${WRKSRC}/mk/linux/autogen.sh
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/mk/linux/configure.ac ${WRKSRC}/mk/linux/mk/autoconf/binreloc.m4
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|PTHREAD_LIBS="-l[$$]flag"|PTHREAD_LIBS="${PTHREAD_LIBS}"|g ; \
+		s|pthreads library -l[$$]flag|pthreads library ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/mk/linux/configure.ac ${WRKSRC}/mk/linux/mk/autoconf/*
 	@${FIND} -E ${WRKDIR} -type f -name '*.bak' -o -name '*.orig' | ${XARGS} ${RM}
 
 pre-configure:
@@ -70,10 +71,10 @@ do-install:
 	@${RM} ${WRKDIR}/${PORTNAME}_game/license.txt
 	@${RM} ${WRKDIR}/${PORTNAME}_game/readme.txt
 	@${MKDIR} ${GLESTDIRE}
+	@${INSTALL_PROGRAM} ${WRKSRC}/glest ${GLESTDIRE}
+	@${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${GLESTDIRE}
+	@${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/glest
 	@cd ${WRKDIR}/${PORTNAME}_game && \
-		${INSTALL_PROGRAM} ${WRKSRC}/glest ${GLESTDIRE} && \
-		${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${GLESTDIRE} && \
-		${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/glest && \
 		${FIND} * -type d -exec ${MKDIR} "${GLESTDIRE}/{}" \; && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${GLESTDIRE}/{}" \;
 
