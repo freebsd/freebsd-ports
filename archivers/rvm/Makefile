@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	rvm
-DISTVERSION=	0.90.3-beta
+PORTVERSION=	1.0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	rvm_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	An archive manager that uses rsync to manage backups
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		"Configure script attempts to allocate an infinite amount of memory to see what happens when it runs out"
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	gnometarget
