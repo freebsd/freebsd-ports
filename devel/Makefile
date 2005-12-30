@@ -1344,6 +1344,7 @@
     SUBDIR += picprog
     SUBDIR += pinstall
     SUBDIR += pkgconfig
+    SUBDIR += plan9port
     SUBDIR += ply
     SUBDIR += pmake
     SUBDIR += pmk
