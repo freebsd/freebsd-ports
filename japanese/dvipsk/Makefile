@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,} \
@@ -37,8 +37,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
-BROKEN=		Incomplete pkg-plist
-
 PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk
 EXTRA_PATCHES=	${WRKDIR}/dvipsk-${PORTVERSION}-p1.7a.diff
 CONFIGURE_WRKSRC=${WRKDIR}/${TETEX_SRC}
@@ -47,6 +45,7 @@ INSTALL_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk/dvipsk
 
 PLIST_SUB=	DVIPSDIR=${DVIPSDIR} \
 		DVIPSCONFIGDIR=${DVIPSCONFIGDIR} \
+		DVIPSCONFIGDIR_DIST=${DVIPSCONFIGDIR_DIST} \
 		MKTEXLSR=${MKTEXLSR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		FONTSMAPDIR=${FONTSMAPDIR} \
@@ -83,6 +82,7 @@ TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 FONTSMAPDIR=	${TEXMFDIR}/fonts/map/ptex
 DVIPSDIR?=	${TEXMFDIR}/dvips/ptex
 DVIPSCONFIGDIR?=${TEXMFCONFIGDIR}/dvips/ptex
+DVIPSCONFIGDIR_DIST?=${TEXMFDIR}/dvips/ptex
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
@@ -114,12 +114,15 @@ do-install:
 		${PREFIX}/bin
 	${INSTALL_DATA} \
 		${FILESDIR}/ptex-kanji.map \
-		${PREFIX}/${FONTSMAPDIR}/dvips/kanji.map
+		${PREFIX}/${FONTSMAPDIR}/dvips/psfonts_jp.map
+	${RM} -f ${PREFIX}/${FONTSMAPDIR}/../dvips/ptex/psfonts_jp.map
+	${RMDIR} ${PREFIX}/${FONTSMAPDIR}/../dvips/ptex
 	${MKTEXLSR}
-	${SH} ${UPDMAP_SYS_PTEX} --enable Map=kanji.map
+	${SH} ${UPDMAP_SYS_PTEX} --enable Map=psfonts_jp.map
 
 post-install:
 	${TEXCONFIGBIN} dvips printcmd -
 	${MKTEXLSR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
