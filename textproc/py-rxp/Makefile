@@ -27,7 +27,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-rxp
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4", "freebsd5", "freebsd6/g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4", "freebsd5", "freebsd6", "freebsd7/g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
