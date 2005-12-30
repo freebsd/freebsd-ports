@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script that creates a slideshow-style DVD with some simple menus
@@ -46,9 +45,9 @@ MAN1=		dvd-slideshow.1 \
 DOC_FILES=	README.html changelog.html gallery2slideshow.html \
 		dir2slideshow.html jigl2slideshow.html \
 		dvd-menu.html dvd-slideshow.html
-PLIST_FILES+=   ${DOC_FILES:S,^,%%DOCSDIR%%/,}
+PLIST_FILES+=	${DOC_FILES:S,^,%%DOCSDIR%%/,}
 PLIST_FILES+=	%%DOCSDIR%%/dvd-slideshowrc
-PLIST_DIRS+=    %%DOCSDIR%%
+PLIST_DIRS+=	%%DOCSDIR%%
 .endif
 
 .include <bsd.port.pre.mk>
@@ -73,7 +72,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-pre-patch:
+post-patch:
 .for FILE in dvd-slideshow dvd-menu dir2slideshow gallery2slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g' ${WRKSRC}/${FILE}
 .endfor
