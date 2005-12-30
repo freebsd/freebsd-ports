@@ -280,6 +280,9 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Melbourne.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Perth.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Sydney.pm
+%%SITE_PERL%%/DateTime/TimeZone/CST6CDT.pm
+%%SITE_PERL%%/DateTime/TimeZone/EST.pm
+%%SITE_PERL%%/DateTime/TimeZone/EST5EDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Amsterdam.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Andorra.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Athens.pm
@@ -323,6 +326,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zaporozhye.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
 %%SITE_PERL%%/DateTime/TimeZone/Floating.pm
+%%SITE_PERL%%/DateTime/TimeZone/HST.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Antananarivo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Chagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Christmas.pm
@@ -335,8 +339,11 @@
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Mayotte.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Reunion.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local.pm
+%%SITE_PERL%%/DateTime/TimeZone/MST.pm
+%%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB.pm
+%%SITE_PERL%%/DateTime/TimeZone/PST8PDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Chatham.pm
