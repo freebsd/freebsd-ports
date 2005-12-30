@@ -7,6 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,8 +41,8 @@ MAN1=		inkscape.1 inkview.1
 IGNORE=	Requires symbols not present on 4.X
 .endif
 
-.if ${HAVE_GNOME:Mlibgnomeprint} != ""
-USE_GNOME+=		libgnomeprint
+.if ${HAVE_GNOME:Mlibgnomeprintui} != ""
+USE_GNOME+=		libgnomeprintui
 CONFIGURE_ARGS+=	--with-gnome-print
 .else
 CONFIGURE_ARGS+=	--without-gnome-print
