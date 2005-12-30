@@ -25,29 +25,17 @@ zeo_instances=${zeo_instances:-""}    # List of instancehome dirs
 name="zeo"
 rcvar=`set_rcvar`
 load_rc_config $name
+extra_commands="status"
 
 if checkyesno zeo_enable; then
-
-	case "$1" in
-		start)
-			echo "Starting Zeo"
-		;;
-		stop)
-			echo "Stopping Zeo"
-		;;
-		restart)
-			echo "Restarting Zeo"
-		;;
-		*)
-			echo "Unknown action \"$1\""
-		;;
-	esac
-
-	for instance in $zeo_instances
-	do
-		if [ -r ${instance}/etc/${name}.conf -a -x ${instance}/bin/zeoctl ]; then
-			echo -n "       Instance ${instance} -> "
-			${instance}/bin/zeoctl $1
-		fi
-	done
+    for instance in $zeo_instances; do
+	required_files="${instance}/etc/${name}.conf ${instance}/bin/zeoctl"
+	zeo_command="${instance}/bin/zeoctl"
+	start_cmd="${zeo_command} start"
+	stop_cmd="${zeo_command} stop"
+	restart_cmd="${zeo_command} restart"
+	status_cmd="${zeo_command} status"
+	echo -n "Zeo instance ${instance} -> "
+	run_rc_command "$1"
+    done
 fi
