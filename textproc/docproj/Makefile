@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -51,6 +51,7 @@ IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
 .endif
 .if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
+RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex
 .endif
 
 .if ${PERL_LEVEL} < 500804
