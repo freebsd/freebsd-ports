@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.5 2005-02-18 16:52:17 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.6 2005-12-30 23:37:16 girgen Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
@@ -25,29 +25,17 @@ zope_instances=${zope_instances:-""}    # List of instancehome dirs
 name="zope"
 rcvar=`set_rcvar`
 load_rc_config $name
+extra_commands="status"
 
 if checkyesno zope_enable; then
-
-	case "$1" in
-		start)
-			echo "Starting Zope"
-		;;
-		stop)
-			echo "Stopping Zope"
-		;;
-		restart)
-			echo "Restarting Zope"
-		;;
-		*)
-			echo "Unknown action \"$1\""
-		;;
-	esac
-
-	for instance in $zope_instances
-	do
-		if [ -r ${instance}/etc/${name}.conf -a -x ${instance}/bin/zopectl ]; then
-			echo -n "       Instance ${instance} -> "
-			${instance}/bin/zopectl $1
-		fi
-	done
+    for instance in $zope_instances; do
+	required_files="${instance}/etc/${name}.conf ${instance}/bin/zopectl"
+	zope_command="${instance}/bin/zopectl"
+	start_cmd="${zope_command} start"
+	stop_cmd="${zope_command} stop"
+	restart_cmd="${zope_command} restart"
+	status_cmd="${zope_command} status"
+	echo -n "Zope instance ${instance} -> "
+	run_rc_command "$1"
+    done
 fi
