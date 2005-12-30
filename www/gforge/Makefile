@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	4.5.0.1
+PORTVERSION=	4.5.3
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/frs/download.php/103/
+MASTER_SITES=	http://gforge.org/frs/download.php/138/
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Open Source collaborative software development tool
@@ -150,7 +150,7 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gforge is a huge project and complex to configure."
 	@${ECHO_MSG} "If you have some great ideas for this port please"
-	@${ECHO_MSG} "contract me directly (${MAINTAINER})."
+	@${ECHO_MSG} "contact me directly (${MAINTAINER})."
 	@${ECHO_MSG} "--------------------------------------------------------"
 
 .include <bsd.port.post.mk>

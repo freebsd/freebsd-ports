@@ -387,6 +387,7 @@
 %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_dirview.html
 %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs.php
 %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs_utils.php
+%%BACKEND_DIR%%/plugins/scmsvn/cgi-bin/viewcvs.cgi
 %%BACKEND_DIR%%/plugins/scmsvn/bin/svn-create.php
 %%BACKEND_DIR%%/plugins/scmsvn/bin/db-upgrade.pl
 %%BACKEND_DIR%%/plugins/scmsvn/bin/install-svn.sh
@@ -395,7 +396,6 @@
 %%BACKEND_DIR%%/plugins/scmsvn/bin/svn_update.pl
 %%BACKEND_DIR%%/plugins/scmsvn/bin/snapshots.sh
 %%BACKEND_DIR%%/plugins/scmsvn/bin/db-delete.pl
-%%BACKEND_DIR%%/plugins/scmsvn/cgi-bin/viewcvs.cgi
 %%BACKEND_DIR%%/plugins/scmsvn/debian/prerm
 %%BACKEND_DIR%%/plugins/scmsvn/debian/changelog
 %%BACKEND_DIR%%/plugins/scmsvn/debian/control
@@ -456,16 +456,6 @@
 %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cron.d/gforge-plugin-scmcvs
 %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cronjobs/.keepme
 %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/languages/.keepme
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/css/cvsweb.css
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/text.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/binary.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/dir.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/miniback.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minidir.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minigraph.png
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minitext.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/back.gif
-%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb.php
 %%BACKEND_DIR%%/plugins/scmcvs/cronjobs/tarballs.php
 %%BACKEND_DIR%%/plugins/scmcvs/lib/scmcvs-init.sql
 %%BACKEND_DIR%%/plugins/scmcvs/cgi-bin/cvsweb
@@ -499,6 +489,16 @@
 %%BACKEND_DIR%%/plugins/scmcvs/include/languages/Base.tab
 %%BACKEND_DIR%%/plugins/scmcvs/include/CVSPlugin.class
 %%BACKEND_DIR%%/plugins/scmcvs/include/scmcvs-init.php
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/css/cvsweb.css
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/text.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/binary.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/dir.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/miniback.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minidir.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minigraph.png
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/minitext.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb/icons/back.gif
+%%BACKEND_DIR%%/plugins/scmcvs/www/cvsweb.php
 %%BACKEND_DIR%%/plugins/scmcvs/TODO
 %%BACKEND_DIR%%/plugins/scmcvs/COPYING
 %%BACKEND_DIR%%/plugins/scmcvs/README
@@ -510,7 +510,6 @@
 %%BACKEND_DIR%%/plugins/cvstracker/include/Snoopy.class
 %%BACKEND_DIR%%/plugins/cvstracker/include/cvstracker-init.php
 %%BACKEND_DIR%%/plugins/cvstracker/include/cvstrackerPlugin.class
-%%BACKEND_DIR%%/plugins/cvstracker/www/newcommit.php
 %%BACKEND_DIR%%/plugins/cvstracker/lib/cvstracker-init.sql
 %%BACKEND_DIR%%/plugins/cvstracker/lib/20050305.sql
 %%BACKEND_DIR%%/plugins/cvstracker/bin/db-delete.pl
@@ -529,6 +528,7 @@
 %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins/cvstracker/cvstracker.conf
 %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins/cvstracker/config.php
 %%BACKEND_DIR%%/plugins/cvstracker/rpm-specific/cron.d/gforge-plugin-cvstracker
+%%BACKEND_DIR%%/plugins/cvstracker/www/newcommit.php
 %%BACKEND_DIR%%/plugins/cvstracker/httpd.conf
 %%BACKEND_DIR%%/plugins/cvstracker/README
 %%BACKEND_DIR%%/plugins/cvstracker/AUTHORS
@@ -582,6 +582,10 @@
 %%DATADIR%%/db/FTI-20050530.sql
 %%DATADIR%%/db/FTI-20050401.sql
 %%DATADIR%%/db/FTI-20050315.sql
+%%DATADIR%%/db/20051027-2.php
+%%DATADIR%%/db/20051027-1.sql
+%%DATADIR%%/db/20051003.sql
+%%DATADIR%%/db/20050906.sql
 %%DATADIR%%/db/20050711.sql
 %%DATADIR%%/db/20050628.sql
 %%DATADIR%%/db/20050617.php
@@ -693,6 +697,7 @@
 %%DATADIR%%/db/20001214.sql
 %%DATADIR%%/db/gforge2.6.sql
 %%DATADIR%%/db/20001209.sql
+%%WWW_ROOT%%/gforge/common/pm/import_utils.php
 %%WWW_ROOT%%/gforge/common/pm/ProjectTask.class
 %%WWW_ROOT%%/gforge/common/pm/ProjectGroup.class
 %%WWW_ROOT%%/gforge/common/pm/ProjectGroupFactory.class
@@ -750,6 +755,7 @@
 %%WWW_ROOT%%/gforge/common/tracker/ArtifactMessage.class
 %%WWW_ROOT%%/gforge/common/tracker/ArtifactBoxOptions.class
 %%WWW_ROOT%%/gforge/common/tracker/ArtifactExtraFieldElement.class
+%%WWW_ROOT%%/gforge/common/tracker/ArtifactQueryFactory.class
 %%WWW_ROOT%%/gforge/common/tracker/Artifact.class
 %%WWW_ROOT%%/gforge/common/mail/MailingList.class
 %%WWW_ROOT%%/gforge/common/mail/MailingListFactory.class
@@ -1053,7 +1059,10 @@
 %%WWW_ROOT%%/gforge/www/softwaremap/trove_list.php
 %%WWW_ROOT%%/gforge/www/soap/common/group.php
 %%WWW_ROOT%%/gforge/www/soap/common/user.php
+%%WWW_ROOT%%/gforge/www/soap/docman/docman.php
 %%WWW_ROOT%%/gforge/www/soap/tracker/tracker.php
+%%WWW_ROOT%%/gforge/www/soap/tracker/query.php
+%%WWW_ROOT%%/gforge/www/soap/scm/scm.php
 %%WWW_ROOT%%/gforge/www/soap/pm/pm.php
 %%WWW_ROOT%%/gforge/www/soap/frs/frs.php
 %%WWW_ROOT%%/gforge/www/soap/index.php
@@ -1252,18 +1261,6 @@
 %%WWW_ROOT%%/gforge/www/pm/add_task.php
 %%WWW_ROOT%%/gforge/www/pm/browse_task.php
 %%WWW_ROOT%%/gforge/www/pm/calendar.php
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/css/cvsweb.css
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/text.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/binary.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/dir.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/miniback.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/minidir.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/minigraph.png
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/minitext.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons/back.gif
-%%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb.php
-%%WWW_ROOT%%/gforge/www/plugins/scmsvn/cgi-bin/viewcvs.cgi
-%%WWW_ROOT%%/gforge/www/plugins/cvstracker/newcommit.php
 %%WWW_ROOT%%/gforge/www/people/admin/index.php
 %%WWW_ROOT%%/gforge/www/people/createjob.php
 %%WWW_ROOT%%/gforge/www/people/editjob.php
@@ -1274,6 +1271,9 @@
 %%WWW_ROOT%%/gforge/www/people/viewprofile.php
 %%WWW_ROOT%%/gforge/www/people/people_utils.php
 %%WWW_ROOT%%/gforge/www/people/skills_utils.php
+%%WWW_ROOT%%/gforge/www/plugins/scmcvs
+%%WWW_ROOT%%/gforge/www/plugins/scmsvn
+%%WWW_ROOT%%/gforge/www/plugins/cvstracker
 %%WWW_ROOT%%/gforge/www/forum/admin/index.php
 %%WWW_ROOT%%/gforge/www/forum/include/ForumHTML.class
 %%WWW_ROOT%%/gforge/www/forum/index.php
@@ -1360,6 +1360,7 @@
 %%WWW_ROOT%%/gforge/www/users
 %%WWW_ROOT%%/gforge/www/notepad.php
 %%WWW_ROOT%%/gforge/www/favicon.ico
+%%WWW_ROOT%%/gforge/www/gfginstaller.png
 %%WWW_ROOT%%/gforge/www/projects
 %%WWW_ROOT%%/gforge/www/download.php
 %%WWW_ROOT%%/gforge/www/sendmessage.php
@@ -1411,7 +1412,6 @@
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/www
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/bin
-@dirrm %%BACKEND_DIR%%/plugins/scmsvn/cgi-bin
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/debian
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates
@@ -1424,6 +1424,7 @@
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/include
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/lib
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/cronjobs
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/cgi-bin
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/bin
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cron.d
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cronjobs
@@ -1502,6 +1503,8 @@
 @dirrm %%WWW_ROOT%%/gforge/www/admin
 @dirrm %%WWW_ROOT%%/gforge/www/softwaremap
 @dirrm %%WWW_ROOT%%/gforge/www/soap/common
+@dirrm %%WWW_ROOT%%/gforge/www/soap/docman
+@dirrm %%WWW_ROOT%%/gforge/www/soap/scm
 @dirrm %%WWW_ROOT%%/gforge/www/soap/tracker
 @dirrm %%WWW_ROOT%%/gforge/www/soap/pm
 @dirrm %%WWW_ROOT%%/gforge/www/soap/frs
@@ -1529,13 +1532,6 @@
 @dirrm %%WWW_ROOT%%/gforge/www/pm/reporting
 @dirrm %%WWW_ROOT%%/gforge/www/pm/admin
 @dirrm %%WWW_ROOT%%/gforge/www/pm
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/css
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb/icons
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmcvs/cvsweb
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmsvn/cgi-bin
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmcvs
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/scmsvn
-@dirrm %%WWW_ROOT%%/gforge/www/plugins/cvstracker
 @dirrm %%WWW_ROOT%%/gforge/www/plugins
 @dirrm %%WWW_ROOT%%/gforge/www/people/admin
 @dirrm %%WWW_ROOT%%/gforge/www/people
