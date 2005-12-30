@@ -23,8 +23,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jce
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S,${PREFIX}/,,}
 
-.if !exists(${DISTDIR}/${EXTRACT_ONLY}) && !defined(PACKAGE_BUILDING)
-IGNORE=		Please get jce_policy-1_4_2.zip from http://java.sun.com/products/jce/index-14.html
+.include <bsd.port.pre.mk>
+.if  !exists(${DISTDIR}/${DISTNAME}.zip)
+IGNORE=		: Please get jce_policy-1_4_2.zip from
+IGNORE+=	http://java.sun.com/products/jce/index-14.html
 .endif
 
 do-install:
@@ -35,4 +37,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/local_policy.jar     ${JAVA_HOME}/jre/lib/security
 	@${INSTALL_DATA} ${WRKSRC}/US_export_policy.jar ${JAVA_HOME}/jre/lib/security
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
