@@ -1,0 +1,14 @@
+bin/q3base
+lib/quake3/baseq3/cgame.so
+lib/quake3/baseq3/qagame.so
+lib/quake3/baseq3/ui.so
+lib/quake3/missionpack/cgame.so
+lib/quake3/missionpack/qagame.so
+lib/quake3/missionpack/ui.so
+@dirrm lib/quake3/baseq3
+@dirrm lib/quake3/missionpack
+@unexec rmdir %D/lib/quake3 2>/dev/null || true
+@unexec rmdir %D/share/quake3/q3base 2>/dev/null || true
+@unexec rmdir %D/share/quake3/missionpack 2>/dev/null || true
+@unexec rmdir %D/share/quake3/baseq3 2>/dev/null || true
+@unexec rmdir %D/share/quake3 2>/dev/null || true
