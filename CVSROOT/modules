@@ -1679,6 +1679,7 @@ digikam-doc	ports/graphics/digikam-doc
 digikamimageplugins	ports/graphics/digikamimageplugins
 digikamimageplugins-doc	ports/graphics/digikamimageplugins-doc
 dillo		ports/www/dillo
+dillo-i18n	ports/www/dillo-i18n
 dim		ports/sysutils/dim
 dinotrace	ports/cad/dinotrace
 dirac		ports/multimedia/dirac
