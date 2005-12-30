@@ -8,7 +8,7 @@
 PORTNAME=	chgrep
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bmk-it.com/__data/page/63/
+MASTER_SITES=	http://www.bmk-it.com/projects/chgrep/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
