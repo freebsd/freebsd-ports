@@ -12,8 +12,8 @@ CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
 MASTER_SITE_SUBDIR=	GnuPG/:cpan gnupg-interface/:sf
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:cpan,sf
 PKGNAMEPREFIX=	p5-
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:cpan,sf
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
@@ -36,4 +36,11 @@ MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::SubKey.3 \
 	GnuPG::UserId.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# p5-GnuPG-Interface -> p5-Class-MethodMaker
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
