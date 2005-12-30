@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	MSN Messenger
@@ -22,46 +21,23 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tcllib1.7/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/amsn-0_94
 
-LIBDIR=		${PREFIX}/lib/msn
-DOCSDIR=	${PREFIX}/share/doc/amsn
-CORE=		FAQ HELP README amsn langlist amsn-remote remote.help \
-		*tcl *htm*
-SUBDIR=		icons lang skins plugins utils docs
-DOC_FILES=	README TODO
+CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
+		--with-tk=${LOCALBASE}/lib/tk8.4
 
-post-extract:
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -rf
-	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -rf
+CONFIGURE_ENV=	TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
 
-do-configure:
-	export WISH=`which wish8.4` && ${SED} s=!!PREFIX!!=`dirname $${WISH}|${SED} sx/binxxg`=g ${FILESDIR}/Makefile.traydoc | ${SED} s=!!X11BASE!!=${X11BASE}=g > ${WRKSRC}/plugins/traydock/Makefile
-
-do-build:
-	cd ${WRKSRC}/plugins/traydock && make && ${RM} Makefile
-do-install:
-	@${MKDIR} ${LIBDIR}
-	@cd ${WRKSRC}; tar cf - ${CORE} | ( cd ${LIBDIR}; tar xpf - )
-.for i in ${SUBDIR}
-	@cd ${WRKSRC}; tar cf - ${i} | ( cd ${LIBDIR}; tar xpf - )
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOC_FILES}
-	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
-	${LN} -s ${PREFIX}/lib/msn/amsn ${PREFIX}/bin/amsn
-	@${CHMOD} 555 ${PREFIX}/bin/amsn
-	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
-	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn-remote
-	@${CHMOD} 555 ${PREFIX}/lib/msn/utils/amsnctl.pl
-	@uudecode -o ${PREFIX}/lib/msn/skins/default/pixmaps/logolinmsn.gif \
-		${FILESDIR}/logolinmsn.gif.uue
+	@${MKDIR} ${DATADIR}/utils/TkCximage
+	@${INSTALL_DATA} ${WRKSRC}/utils/TkCximage/TkCximage.so ${DATADIR}/utils/TkCximage
+	@${INSTALL_DATA} ${WRKSRC}/utils/TkCximage/pkgIndex.tcl ${DATADIR}/utils/TkCximage
 
 .include <bsd.port.mk>

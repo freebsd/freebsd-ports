@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Thu Dec 22 04:19:50 2005
++++ Makefile.in	Fri Dec 30 19:43:14 2005
+@@ -138,10 +138,10 @@
+ 
+ install:: $(FILES_TO_INSTALL)
+ 	rm -Rf $(dstdir)/$(PACKAGE)
+-	mkdir --parents $(dstdir)/$(PACKAGE)
++	mkdir -p $(dstdir)/$(PACKAGE)
+ 	mkdir -p $(slnkdir)
+ 	@for p in $?; do \
+-			cp -Rf --parents $(srcdir)/$$p $(dstdir)/$(PACKAGE); \
++			cp -Rf $(srcdir)/$$p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
+ 		done
+ 	find $(dstdir)/$(PACKAGE) -name CVS -print | xargs rm -Rf
+ 	@for p in $(FILES_TO_EXCLUDE); do \
