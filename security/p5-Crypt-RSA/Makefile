@@ -47,10 +47,4 @@ MAN3=	Crypt::RSA.3 \
 	Crypt::RSA::SS::PKCS1v15.3 \
 	Crypt::RSA::SS::PSS.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6 or above due to dependencies
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
