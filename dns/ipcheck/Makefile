@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	0.231
+PORTVERSION=	0.233
 PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
