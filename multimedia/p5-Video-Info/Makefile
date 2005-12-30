@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Video-Info
-PORTVERSION=	0.993
+PORTVERSION=	0.999
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video
@@ -35,4 +35,10 @@ MAN3=	Video::Info.3 \
 	Video::Info::Quicktime.3 \
 	Video::Info::RIFF.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
