@@ -1,19 +1,17 @@
 $FreeBSD$
 
---- configure.orig	Fri Aug 13 10:22:18 2004
-+++ configure	Fri Dec 16 17:50:05 2005
-@@ -3486,8 +3486,9 @@
+--- configure	Fri Aug 13 10:22:18 2004
++++ configure	Fri Dec 30 23:37:25 2005
+@@ -3486,7 +3486,7 @@
  
  
  case "${host}" in
 -	i?86-*-freebsd*)
 +	i?86-*-freebsd* | amd64-*-freebsd*)
    		CC=cc
-+		HOSTDEF="-DSMBUS_IOCTL"
  		;;
  	i?86-*-linux-*)
-   		CC=gcc
-@@ -3946,7 +3947,7 @@
+@@ -3946,7 +3946,7 @@
  done
  
  

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 .if defined(WITHOUT_X11)
@@ -42,10 +42,14 @@ pre-everything::
 	@${ECHO_CMD} "Definable build options"
 	@${ECHO_CMD} "-----------------------"
 	@${ECHO_CMD} "WITHOUT_X11	- Self explanatory"
+	@${ECHO_CMD} "WITHOUT_SMB	- disable smb(4) support"
 	@${ECHO_CMD} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' ${WRKSRC}/mbmon.1
+.if !defined(WITHOUT_SMB)
+	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
