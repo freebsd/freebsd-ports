@@ -1,16 +1,48 @@
-bin/catalogs
-bin/finder
-bin/supercosmos
-%%SITE_PERL%%/Astro/Catalog.pm
-%%SITE_PERL%%/Astro/Catalog/GSC/Query.pm
-%%SITE_PERL%%/Astro/Catalog/Star.pm
-%%SITE_PERL%%/Astro/Catalog/SuperCOSMOS/Query.pm
-%%SITE_PERL%%/Astro/Catalog/USNOA2/Query.pm
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/sss.cfg %D/etc/sss.cfg.default; then rm -f %D/etc/sss.cfg; fi
+etc/sss.cfg.default
+@exec [ -f %B/sss.cfg ] || cp %B/%f %B/sss.cfg
+@unexec if cmp -s %D/etc/skycat.cfg %D/etc/skycat.cfg.default; then rm -f %D/etc/skycat.cfg; fi
+etc/skycat.cfg.default
+@exec [ -f %B/skycat.cfg ] || cp %B/%f %B/skycat.cfg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog/.packlist
-@dirrm %%SITE_PERL%%/Astro/Catalog/GSC
-@dirrm %%SITE_PERL%%/Astro/Catalog/SuperCOSMOS
-@dirrm %%SITE_PERL%%/Astro/Catalog/USNOA2
-@dirrm %%SITE_PERL%%/Astro/Catalog
+%%SITE_PERL%%/Astro/Catalog.pm
+%%SITE_PERL%%/Astro/Catalog/Query.pm
+%%SITE_PERL%%/Astro/Catalog/Star.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Simple.pm
+%%SITE_PERL%%/Astro/Catalog/IO/FINDOFF.pm
+%%SITE_PERL%%/Astro/Catalog/IO/SExtractor.pm
+%%SITE_PERL%%/Astro/Catalog/IO/GaiaPick.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Binary.pm
+%%SITE_PERL%%/Astro/Catalog/IO/STL.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Cluster.pm
+%%SITE_PERL%%/Astro/Catalog/IO/VOTable.pm
+%%SITE_PERL%%/Astro/Catalog/IO/Astrom.pm
+%%SITE_PERL%%/Astro/Catalog/IO/JCMT.pm
+%%SITE_PERL%%/Astro/Catalog/IO/FITSTable.pm
+%%SITE_PERL%%/Astro/Catalog/IO/UKIRTBS.pm
+%%SITE_PERL%%/Astro/Catalog/IO/TST.pm
+%%SITE_PERL%%/Astro/Catalog/IO/ASCII.pm
+%%SITE_PERL%%/Astro/Catalog/Query/SkyCat.pm
+%%SITE_PERL%%/Astro/Catalog/Query/2MASS.pm
+%%SITE_PERL%%/Astro/Catalog/Query/SuperCOSMOS.pm
+%%SITE_PERL%%/Astro/Catalog/Query/USNOA2.pm
+%%SITE_PERL%%/Astro/Catalog/Query/Vizier.pm
+%%SITE_PERL%%/Astro/Catalog/Query/Sesame.pm
+%%SITE_PERL%%/Astro/Catalog/Query/SIMBAD.pm
+%%SITE_PERL%%/Astro/Catalog/Query/MPC.pm
+%%SITE_PERL%%/Astro/Catalog/Query/CMC.pm
+%%SITE_PERL%%/Astro/Catalog/Query/GSC.pm
+%%SITE_PERL%%/Astro/Catalog/Star/Morphology.pm
+%%SITE_PERL%%/Astro/Catalog/Transport/REST.pm
+%%SITE_PERL%%/Astro/Catalog/Transport/WebService.pm
+%%SITE_PERL%%/Tk/AstroCatalog.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Catalog
+@dirrm %%SITE_PERL%%/Astro/Catalog/IO
+@dirrm %%SITE_PERL%%/Astro/Catalog/Query
+@dirrm %%SITE_PERL%%/Astro/Catalog/Star
+@dirrm %%SITE_PERL%%/Astro/Catalog/Transport
+@dirrm %%SITE_PERL%%/Astro/Catalog
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Astro 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Tk 2>/dev/null || true
