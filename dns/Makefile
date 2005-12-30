@@ -50,6 +50,7 @@
     SUBDIR += inadyn
     SUBDIR += ipcheck
     SUBDIR += ldapdns
+    SUBDIR += ldns
     SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += maradns
