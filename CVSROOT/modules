@@ -9825,6 +9825,7 @@ pl-tleenx2	ports/polish/tleenx2
 pl-trf		ports/polish/trf
 pl-webalizer2	ports/polish/webalizer2
 plan		ports/deskutils/plan
+plan9port	ports/devel/plan9port
 planet		ports/www/planet
 planets		ports/astro/planets
 planner		ports/deskutils/planner
