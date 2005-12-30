@@ -1,0 +1,13 @@
+Add these to your profile environment.
+PLAN9=%%PREFIX%%/plan9; export PLAN9
+PATH=$PATH:$PLAN9/bin; export PATH
+
+This port can cause some problems if you install certain
+ports
+www/mozilla -> $PLAN9/bin/zip (mozilla doesn't build if
+archivers/zip is not already installed)
+x11/kdebase3 -> build crash in a fish.cpp file
+
+I suggest you to unset $PLAN9 before building any other ports
+if you don't want to fall into these problems et reset it after.
+
