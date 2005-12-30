@@ -1,0 +1,14 @@
+--- configure.orig	Tue Dec  6 06:56:37 2005
++++ configure	Thu Dec 29 21:10:40 2005
+@@ -2894,8 +2894,9 @@
+ fi
+ 
+ 
+-TCLSH=`which tclsh`
+-VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
++TCLSH=`which tclsh8.4`
++#VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
++VERSION=8.4
+ # Check whether --enable-version-check or --disable-version-check was given.
+ if test "${enable_version_check+set}" = set; then
+   enableval="$enable_version_check"
