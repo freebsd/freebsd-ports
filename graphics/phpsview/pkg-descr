@@ -3,7 +3,8 @@ Philips USB Cameras Utilities for NetBSD/FreeBSD
 
 1. What is it?
 	phpsshot ... simple image capture program ( output stdout PPM file )
-	phpsview ... sequential image viewer program ( about 3fps )
+	phpsview ... sequential image viewer program 
+                     ( about 3fps, even with decompression )
 
 2. What is supported USB camera?
 
@@ -27,4 +28,4 @@ Philips USB Cameras Utilities for NetBSD/FreeBSD
 	- Samsung MPC-C30
 	- Visionite VCS-UC300
 
-WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#qcamPro
+WWW: http://vinvin.dyndns.org/projects/pwc_bsd.html

@@ -6,21 +6,16 @@
 #
 
 PORTNAME=	phpsview
-PORTVERSION=	9.0.2
+PORTVERSION=	10.0.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.smcc.demon.nl/webcam/
+MASTER_SITES=	http://vinvin.dyndns.org/projects/
 MASTER_SITE_SUBDIR=	${REALNAME}
-DISTNAME=	${REALNAME}-${PORTVERSION}
-
-PATCH_SITES=	http://www2.starcat.ne.jp/~takam/bsd/
-PATCHFILES=	${DISTNAME}-bsd-0.03.patch.gz
-PATCH_DIST_STRIP=	-p2
+DISTNAME=	${REALNAME}-${PORTVERSION}-bsd
 
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	Philips USB Cameras Utilities for NetBSD/FreeBSD
 
 REALNAME=	pwc
-WRKSRC=		${WRKDIR}/${DISTNAME}/2.4
 
 .if defined(WITHOUT_X11)
 COMPONENTS=	phpsshot

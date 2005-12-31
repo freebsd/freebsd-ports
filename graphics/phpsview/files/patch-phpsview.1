@@ -1,0 +1,23 @@
+--- phpsview.1.orig	Mon Dec 26 07:19:22 2005
++++ phpsview.1	Sat Dec 31 17:33:25 2005
+@@ -32,7 +32,7 @@
+ .Nd sequential image capture and view program for Philips Cameras
+ .Sh SYNOPSIS
+ .Nm phpsview
+-.Op /dev/ugen?.00
++.Op /dev/ugen?
+ .Op 320x240
+ .Sh DESCRIPTION
+ .Nm
+@@ -42,9 +42,9 @@
+ .Pp
+ The following options are supported:
+ .Bl -tag -width indent
+-.It /dev/ugen?.00
++.It /dev/ugen?
+ Specifies the ugen device name. If no device name is specified,
+-the program will cycle through the /dev/ugen0.00, /dev/ugen1.00, ... 
++the program will cycle through the /dev/ugen0, /dev/ugen1, ... 
+ devices until it finds an attached target camera.
+ .It 320x240
+ Sets the capture resolution to 320x240. Can also be 160x120, 640x480 or whatever.
