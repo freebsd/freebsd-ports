@@ -8,7 +8,8 @@
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
 CATEGORIES=	audio
-MASTER_SITES=	http://projects.raphnet.net/festalon/
+MASTER_SITES=	http://projects.raphnet.net/festalon/ \
+		http://critical.ch/distfiles/
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org
