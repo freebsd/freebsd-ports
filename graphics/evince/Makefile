@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-djvu
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus
 .endif
 
 post-patch:
