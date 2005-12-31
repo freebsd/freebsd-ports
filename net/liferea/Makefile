@@ -57,7 +57,7 @@ PLIST_SUB=	MOZ="@comment "
 .ifdef WITHOUT_DBUS
 CONFIGURE_ARGS+=--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 .endif
 
 post-patch:

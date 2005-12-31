@@ -49,7 +49,7 @@ LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 USE_GECKO=	firefox mozilla seamonkey
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 PLIST_SUB+=	MOZILLA=""
-LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--with-mozilla=${GECKO}
 .else
 PLIST_SUB+=	MOZILLA="@comment "

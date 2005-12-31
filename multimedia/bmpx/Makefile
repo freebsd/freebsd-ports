@@ -7,7 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.12.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
@@ -40,7 +40,7 @@ MAN1=		bmpx.1
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 .endif
 
 .if defined(WITHOUT_PERL)

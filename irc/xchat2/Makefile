@@ -7,7 +7,7 @@
 
 PORTNAME=	xchat2
 PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.6/
@@ -60,7 +60,7 @@ PLIST_SUB+=	TCL="@comment "
 .endif
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--enable-dbus
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS=	apps_xchat_url_handler.schemas

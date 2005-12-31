@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-DBus
 PORTVERSION=	0.32.3
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Perl extension for the DBus message system
 
-LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	pkgconfig
 PERL_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.freedesktop.org/~lennart/
 
@@ -16,7 +16,7 @@ COMMENT=	Service discovery on a local network
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		daemon.2:${PORTSDIR}/devel/libdaemon \
-		dbus-1.1:${PORTSDIR}/devel/dbus \
+		dbus-1.2:${PORTSDIR}/devel/dbus \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	gnomehack ltverhack glib20
