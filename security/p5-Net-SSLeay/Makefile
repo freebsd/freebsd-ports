@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Net-SSLeay
-PORTVERSION=	1.25
+PORTVERSION=	1.30
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Net_SSLeay.pm-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to SSL
 
 PERL_CONFIGURE=	yes
@@ -32,4 +32,13 @@ post-install:
 	${INSTALL_DATA} ${SRCDIR}/req.conf ${EXAMPLESDIR}/req.conf
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-SSLeay.xs
+
+post-patch:
+	${PERL} -pi -e 's/\$\^V/\$\]/' ${WRKSRC}/Net-SSLeay-Handle-*/Handle.pm
+.endif
+
+.include <bsd.port.post.mk>
