@@ -18,8 +18,7 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
-.if		 ${OSVERSION} >= 700009 || \
-		(${OSVERSION} <  700000 && ${OSVERSION} >= 600102)
+.if		 ${OSVERSION} >= 700009
 IGNORE=		doesn't support ELF symbol versioning, yet.
 .endif
 
