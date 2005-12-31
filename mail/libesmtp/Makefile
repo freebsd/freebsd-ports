@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
 		http://www.borgsdemons.com/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}r1
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A library for posting electronic mail
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15:inc
-USE_PERL5_BUILD=yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -31,15 +29,35 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # require-all-recipients (implied by enable-all) is required for Balsa
 CONFIGURE_ARGS=	--enable-all --disable-isoc
 
+OPTIONS=	OPENSSL	"Enable TLS support"	on \
+		DEBUG	"Enables debugging support"	off
+
 DOCS=		AUTHORS ChangeLog NEWS Notes README TODO
 EXAMPLES=	examples/*
 
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+PLIST_SUB+=		NEED_OPENSSL=""
+.else
+CONFIGURE_ARGS+=	--without-openssl
+PLIST_SUB+=		NEED_OPENSSL="@comment "
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${EXAMPLES} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
