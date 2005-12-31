@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu-launcher
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://emeitner.f2o.org/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
@@ -15,7 +16,8 @@ MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A GTK front-end to Qemu
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML/:${PORTSDIR}/x11-toolkits/p5-Glade2
+		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML/:${PORTSDIR}/x11-toolkits/p5-Glade2 \
+		${SITE_PERL}/${PERL_ARCH}/Gnome2.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2 \
 
 WRKSRC=		${WRKDIR}/trunk
 
