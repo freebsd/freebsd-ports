@@ -11015,6 +11015,7 @@ rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
+rssyl		ports/mail/rssyl
 rsync		ports/net/rsync
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
