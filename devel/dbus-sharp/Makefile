@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-sharp
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono interface to the D-BUS messaging system
 
-LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	monodoc:${PORTSDIR}/devel/mono-tools
 RUN_DEPENDS=	monodoc:${PORTSDIR}/devel/mono-tools
 

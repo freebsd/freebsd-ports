@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 #.if defined(WITH_DBUS)
-#LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+#LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 #CONFIGURE_ARGS+=	--with-dbus \
 #			--with-dbus-dir=${LOCALBASE}/share/dbus-1/services
 #PLIST_SUB+=	DBUS:=""

@@ -30,12 +30,12 @@ GCONF_SCHEMAS=	mlview.schemas
 .include <bsd.port.pre.mk>
 
 # Autodetect dbus
-.if exists (${LOCALBASE}/lib/libdbus-1.so.1)
+.if exists (${LOCALBASE}/lib/libdbus-1.so.2)
 WITH_DBUS=	yes
 .endif
 
 .if defined (WITH_DBUS)
-LIB_DEPENDS+=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+="--enable-dbus=yes"
 .endif
 
