@@ -19,6 +19,7 @@ CONFLICTS?=	uim-el-xemacs21-mule-[0-9]*
 
 RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
