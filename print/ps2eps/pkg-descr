@@ -1,0 +1,6 @@
+ps2eps is a tool (written in Perl) to produce Encapsulated PostScript Files
+(EPS/EPSF) from usual one-paged Postscript documents. It calculates correct
+Bounding Boxes for those EPS files and filters some special postscript command
+sequences that can produce erroneous results on printers.
+
+WWW: http://www.tm.uka.de/~bless/ps2eps
