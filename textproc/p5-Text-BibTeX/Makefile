@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:text \
 		btparse-${BTPARSE_VER}${EXTRACT_SUFX}:btparse
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate BibTeX files from perl
 
 BTPARSE_VER=	0.35
