@@ -1,6 +1,18 @@
 --- Makefile.in.orig	Thu Dec 22 04:19:50 2005
-+++ Makefile.in	Fri Dec 30 19:43:14 2005
-@@ -138,10 +138,10 @@
++++ Makefile.in	Sat Dec 31 12:18:14 2005
+@@ -110,6 +110,11 @@
+ FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
+ endif
+ 
++ifeq ($(FOUND_OS),bsd)
++FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl
++FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
++endif
++
+ CONFIGURE_ARGS := @CONFIGURE_ARGS@
+ 
+ #########################################################
+@@ -138,10 +143,11 @@
  
  install:: $(FILES_TO_INSTALL)
  	rm -Rf $(dstdir)/$(PACKAGE)
@@ -9,7 +21,21 @@
  	mkdir -p $(slnkdir)
  	@for p in $?; do \
 -			cp -Rf --parents $(srcdir)/$$p $(dstdir)/$(PACKAGE); \
++			mkdir -p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
 +			cp -Rf $(srcdir)/$$p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
  		done
  	find $(dstdir)/$(PACKAGE) -name CVS -print | xargs rm -Rf
  	@for p in $(FILES_TO_EXCLUDE); do \
+@@ -235,6 +241,12 @@
+   endif
+ endif
+ 
++ifeq ($(FOUND_OS),bsd)
++  ifeq ($(FOUND_X11),yes)
++      ADDLIBS    += ${X_LIBS}
++      include $(tray_dir)/Rules.mk
++  endif
++endif
+ 
+ #########################################################
+ # some rules ...

@@ -2,7 +2,6 @@ bin/amsn
 bin/amsn-remote
 bin/amsn-remote-CLI
 share/amsn/AGREEMENT
-share/amsn/AppMain.tcl
 share/amsn/CREDITS
 share/amsn/FAQ
 share/amsn/GNUGPL
@@ -178,21 +177,21 @@ share/amsn/plugins/WebcamShooter/camshoot.tcl
 share/amsn/plugins/WebcamShooter/lang/langen
 share/amsn/plugins/WebcamShooter/lang/langnl
 share/amsn/plugins/WebcamShooter/plugininfo.xml
-share/amsn/plugins/inkdraw.tcl
-share/amsn/plugins/pencils/pencil1.png
-share/amsn/plugins/pencils/pencil2.png
-share/amsn/plugins/pixmaps/butdraw.png
-share/amsn/plugins/pixmaps/butdraw_hover.png
-share/amsn/plugins/pixmaps/butgridoff.png
-share/amsn/plugins/pixmaps/butgridoff_hover.png
-share/amsn/plugins/pixmaps/butgridon.png
-share/amsn/plugins/pixmaps/butgridon_hover.png
-share/amsn/plugins/pixmaps/buttext.png
-share/amsn/plugins/pixmaps/buttext_hover.png
-share/amsn/plugins/pixmaps/butwipe.png
-share/amsn/plugins/pixmaps/butwipe_hover.png
-share/amsn/plugins/pixmaps/grid.png
-share/amsn/plugins/plugininfo.xml
+share/amsn/plugins/inkdraw/inkdraw.tcl
+share/amsn/plugins/inkdraw/pencils/pencil1.png
+share/amsn/plugins/inkdraw/pencils/pencil2.png
+share/amsn/plugins/inkdraw/pixmaps/grid.png
+share/amsn/plugins/inkdraw/pixmaps/butdraw_hover.png
+share/amsn/plugins/inkdraw/pixmaps/butgridoff.png
+share/amsn/plugins/inkdraw/pixmaps/butgridoff_hover.png
+share/amsn/plugins/inkdraw/pixmaps/butgridon.png
+share/amsn/plugins/inkdraw/pixmaps/butgridon_hover.png
+share/amsn/plugins/inkdraw/pixmaps/buttext.png
+share/amsn/plugins/inkdraw/pixmaps/buttext_hover.png
+share/amsn/plugins/inkdraw/pixmaps/butwipe.png
+share/amsn/plugins/inkdraw/pixmaps/butwipe_hover.png
+share/amsn/plugins/inkdraw/pixmaps/butdraw.png
+share/amsn/plugins/inkdraw/plugininfo.xml
 share/amsn/pluginslog.tcl
 share/amsn/preferences.tcl
 share/amsn/progressbar.tcl
@@ -530,7 +529,10 @@ share/amsn/utils/BWidget-1.7.0/wizard.tcl
 share/amsn/utils/BWidget-1.7.0/xpm2image.tcl
 share/amsn/utils/TkCximage/TkCximage.so
 share/amsn/utils/TkCximage/pkgIndex.tcl
-share/amsn/utils/base64.tcl
+share/amsn/utils/base64/base64.tcl
+share/amsn/utils/base64/pkgIndex.tcl
+share/amsn/utils/base64/uuencode.tcl
+share/amsn/utils/base64/yencode.tcl
 share/amsn/utils/drawboard/drawboard.tcl
 share/amsn/utils/drawboard/grid.png
 share/amsn/utils/drawboard/pkgIndex.tcl
@@ -538,6 +540,8 @@ share/amsn/utils/framec/framec.tcl
 share/amsn/utils/framec/pkgIndex.tcl
 share/amsn/utils/http2.4/http.tcl
 share/amsn/utils/http2.4/pkgIndex.tcl
+share/amsn/utils/linux/traydock/libtray.so
+share/amsn/utils/linux/traydock/pkgIndex.tcl
 share/amsn/utils/pixmapscroll/horizontal/arrow1.gif
 share/amsn/utils/pixmapscroll/horizontal/arrow1_disabled.gif
 share/amsn/utils/pixmapscroll/horizontal/arrow1_hover.gif
@@ -591,7 +595,6 @@ share/amsn/utils/pixmapscroll/vertical/slidertop_disabled.gif
 share/amsn/utils/pixmapscroll/vertical/slidertop_hover.gif
 share/amsn/utils/pixmapscroll/vertical/slidertop_pressed.gif
 share/amsn/utils/pixmapscroll/vertical/trough.gif
-share/amsn/utils/pkgIndex.tcl
 share/amsn/utils/scalable-bg/pkgIndex.tcl
 share/amsn/utils/scalable-bg/scalable-bg.tcl
 share/amsn/utils/scalable-bg/test.tcl
@@ -601,8 +604,6 @@ share/amsn/utils/snit0.97/license.txt
 share/amsn/utils/snit0.97/pkgIndex.tcl
 share/amsn/utils/snit0.97/snit-83.tcl
 share/amsn/utils/snit0.97/snit.tcl
-share/amsn/utils/uuencode.tcl
-share/amsn/utils/yencode.tcl
 share/applications/amsn.desktop
 share/icons/hicolor/128x128/aMSN_128.png
 share/icons/hicolor/128x128/tux-128x128.png
@@ -636,12 +637,13 @@ share/icons/hicolor/96x96/tux-96x96.png
 @dirrm share/amsn/icons/96x96
 @dirrm share/amsn/icons
 @dirrm share/amsn/lang
-@dirrm share/amsn/plugins/pencils
-@dirrm share/amsn/plugins/pixmaps
 @dirrm share/amsn/plugins/Nudge/lang
 @dirrm share/amsn/plugins/Nudge
 @dirrm share/amsn/plugins/WebcamShooter/lang
 @dirrm share/amsn/plugins/WebcamShooter
+@dirrm share/amsn/plugins/inkdraw/pencils
+@dirrm share/amsn/plugins/inkdraw/pixmaps
+@dirrm share/amsn/plugins/inkdraw
 @dirrm share/amsn/plugins
 @dirrm share/amsn/skins/default/displaypic
 @dirrm share/amsn/skins/default/winicons
@@ -654,9 +656,12 @@ share/icons/hicolor/96x96/tux-96x96.png
 @dirrm share/amsn/utils/BWidget-1.7.0/lang
 @dirrm share/amsn/utils/BWidget-1.7.0
 @dirrm share/amsn/utils/TkCximage
+@dirrm share/amsn/utils/base64
 @dirrm share/amsn/utils/drawboard
 @dirrm share/amsn/utils/framec
 @dirrm share/amsn/utils/http2.4
+@dirrm share/amsn/utils/linux/traydock
+@dirrm share/amsn/utils/linux
 @dirrm share/amsn/utils/pixmapscroll/horizontal
 @dirrm share/amsn/utils/pixmapscroll/vertical
 @dirrm share/amsn/utils/pixmapscroll
