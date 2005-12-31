@@ -8,7 +8,8 @@
 PORTNAME=	xmms-sexypsf
 PORTVERSION=	0.4.8
 CATEGORIES=	audio
-MASTER_SITES=	http://projects.raphnet.net/sexypsf/
+MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
+		http://critical.ch/distfiles/
 DISTNAME=	sexypsf-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
