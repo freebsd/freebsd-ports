@@ -10196,6 +10196,7 @@ proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
 prtunnel	ports/net/prtunnel
 prune		ports/sysutils/prune
+ps2eps		ports/print/ps2eps
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psdim		ports/print/psdim
