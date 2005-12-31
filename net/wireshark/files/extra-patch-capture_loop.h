@@ -1,6 +1,6 @@
---- capture_loop.c.orig	Thu Jul 22 00:23:01 2004
-+++ capture_loop.c	Thu Jul 22 00:23:15 2004
-@@ -126,7 +126,7 @@
+--- capture_loop.h.orig	Sat Dec 31 01:44:43 2005
++++ capture_loop.h	Sat Dec 31 01:45:19 2005
+@@ -68,7 +68,7 @@ extern void capture_loop_stop(void);
   * XXX - the various BSDs appear to define BSD in <sys/param.h>; we don't
   * want to include it if it's not present on this platform, however.
   */
