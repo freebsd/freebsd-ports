@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ferite
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -27,9 +28,18 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}
 
 MAN1=		builder.1 ferite.1
+PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
+		${WRKSRC}/src/ferite_scanner.c
+	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
+	${REINPLACE_CMD} -e "s|-lferite|-lferite -L${WRKSRC}/src/.libs|g"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

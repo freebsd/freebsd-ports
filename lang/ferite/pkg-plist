@@ -32,26 +32,20 @@ include/ferite/fbuffer.h
 include/ferite/fthread.h
 include/ferite/fobj.h
 include/ferite/stream/util_stream.h
-@dirrm include/ferite/stream
 include/ferite/fmem_jedi.h
 include/ferite.h
-@dirrm include/ferite
 lib/libferite.a
 lib/libferite.so
 lib/libferite.so.1
 lib/ferite/module-source/rmi/transport/tcpip.fe
 lib/ferite/module-source/rmi/transport/debug.fe
-@dirrm lib/ferite/module-source/rmi/transport
 lib/ferite/module-source/rmi/translation/std.fe
-@dirrm lib/ferite/module-source/rmi/translation
 lib/ferite/module-source/rmi/protocol/std.fe
-@dirrm lib/ferite/module-source/rmi/protocol
 lib/ferite/module-source/rmi/RMIProtocolLayer.fe
 lib/ferite/module-source/rmi/RMIRemoteObject.fe
 lib/ferite/module-source/rmi/RMITranslationLayer.fe
 lib/ferite/module-source/rmi/RMITransportLayer.fe
 lib/ferite/module-source/rmi/RMILocalVariable.fe
-@dirrm lib/ferite/module-source/rmi
 lib/ferite/module-source/rmi.fe
 lib/ferite/module-source/stream.fec
 lib/ferite/module-source/array.fec
@@ -80,10 +74,8 @@ lib/ferite/module-source/unixsocket.fec
 lib/ferite/module-source/cgi/cgi.fe
 lib/ferite/module-source/cgi/cookies.fe
 lib/ferite/module-source/cgi/template.fe
-@dirrm lib/ferite/module-source/cgi
 lib/ferite/module-source/GetOptLong.fe
 lib/ferite/module-source/freezethaw.fe
-@dirrm lib/ferite/module-source
 lib/ferite/module-descriptions/rmi.xml
 lib/ferite/module-descriptions/stream.xml
 lib/ferite/module-descriptions/array.xml
@@ -104,7 +96,6 @@ lib/ferite/module-descriptions/thread.xml
 lib/ferite/module-descriptions/unix.xml
 lib/ferite/module-descriptions/xml.xml
 lib/ferite/module-descriptions/misc.xml
-@dirrm lib/ferite/module-descriptions
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/stream.so
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/array.so
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/date.so
@@ -122,196 +113,83 @@ lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/test.so
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/thread.so
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/unix.so
 lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%/xml.so
-@dirrm lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%
-@dirrm lib/ferite/module-native
-@dirrm lib/ferite
 lib/libferitestream.a
 lib/libferitestream.so
 lib/libferitestream.so.1
 share/aclocal/ferite.m4
-%%PORTDOCS%%@dirrm share/doc/ferite/api
-%%PORTDOCS%%@dirrm share/doc/ferite/capi
-%%PORTDOCS%%share/doc/ferite/examples/rmi/test.fe
-%%PORTDOCS%%share/doc/ferite/examples/rmi/server.fe
-%%PORTDOCS%%@dirrm share/doc/ferite/examples/rmi
-%%PORTDOCS%%share/doc/ferite/examples/accessors.fe
-%%PORTDOCS%%share/doc/ferite/examples/alias.fe
-%%PORTDOCS%%share/doc/ferite/examples/array_in_script.fe
-%%PORTDOCS%%share/doc/ferite/examples/attrreturn.fe
-%%PORTDOCS%%share/doc/ferite/examples/autoload.fe
-%%PORTDOCS%%share/doc/ferite/examples/bofh.fe
-%%PORTDOCS%%share/doc/ferite/examples/byref.fe
-%%PORTDOCS%%share/doc/ferite/examples/class.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure_class.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure_params.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure_foreach.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure_examples.fe
-%%PORTDOCS%%share/doc/ferite/examples/closure_private.fe
-%%PORTDOCS%%share/doc/ferite/examples/complex.fe
-%%PORTDOCS%%share/doc/ferite/examples/dot_self.fe
-%%PORTDOCS%%share/doc/ferite/examples/error.fe
-%%PORTDOCS%%share/doc/ferite/examples/error_in_function.fe
-%%PORTDOCS%%share/doc/ferite/examples/escape.fe
-%%PORTDOCS%%share/doc/ferite/examples/fail_uses.fe
-%%PORTDOCS%%share/doc/ferite/examples/foreach.fe
-%%PORTDOCS%%share/doc/ferite/examples/foreach2.fe
-%%PORTDOCS%%share/doc/ferite/examples/helloworld.fe
-%%PORTDOCS%%share/doc/ferite/examples/huge_but_small.fe
-%%PORTDOCS%%share/doc/ferite/examples/implements.fe
-%%PORTDOCS%%share/doc/ferite/examples/initialisers_non_function.fe
-%%PORTDOCS%%share/doc/ferite/examples/ipc_test.fe
-%%PORTDOCS%%share/doc/ferite/examples/logical.fe
-%%PORTDOCS%%share/doc/ferite/examples/loop.fe
-%%PORTDOCS%%share/doc/ferite/examples/mem.fe
-%%PORTDOCS%%share/doc/ferite/examples/multi_mods.fe
-%%PORTDOCS%%share/doc/ferite/examples/method_overloading.fe
-%%PORTDOCS%%share/doc/ferite/examples/namespace.fe
-%%PORTDOCS%%share/doc/ferite/examples/native_inheiritance.fe
-%%PORTDOCS%%share/doc/ferite/examples/naughty.fe
-%%PORTDOCS%%share/doc/ferite/examples/numbers.fe
-%%PORTDOCS%%share/doc/ferite/examples/nested.fe
-%%PORTDOCS%%share/doc/ferite/examples/object_bug.fe
-%%PORTDOCS%%share/doc/ferite/examples/odd_overloading.fe
-%%PORTDOCS%%share/doc/ferite/examples/passnscls.fe
-%%PORTDOCS%%share/doc/ferite/examples/pipe.fe
-%%PORTDOCS%%share/doc/ferite/examples/rename.fe
-%%PORTDOCS%%share/doc/ferite/examples/questioncolon.fe
-%%PORTDOCS%%share/doc/ferite/examples/recurse.fe
-%%PORTDOCS%%share/doc/ferite/examples/reflection.fe
-%%PORTDOCS%%share/doc/ferite/examples/regex.fe
-%%PORTDOCS%%share/doc/ferite/examples/rusage.fe
-%%PORTDOCS%%share/doc/ferite/examples/select.fe
-%%PORTDOCS%%share/doc/ferite/examples/serialize.fe
-%%PORTDOCS%%share/doc/ferite/examples/sets.fe
-%%PORTDOCS%%share/doc/ferite/examples/signal.fe
-%%PORTDOCS%%share/doc/ferite/examples/sort.fe
-%%PORTDOCS%%share/doc/ferite/examples/static.fe
-%%PORTDOCS%%share/doc/ferite/examples/super.fe
-%%PORTDOCS%%share/doc/ferite/examples/switch.fe
-%%PORTDOCS%%share/doc/ferite/examples/t3.fe
-%%PORTDOCS%%share/doc/ferite/examples/test.fe
-%%PORTDOCS%%share/doc/ferite/examples/test2.fe
-%%PORTDOCS%%share/doc/ferite/examples/testfncparams.fe
-%%PORTDOCS%%share/doc/ferite/examples/thread.fe
-%%PORTDOCS%%share/doc/ferite/examples/thread_exception.fe
-%%PORTDOCS%%share/doc/ferite/examples/tracevar.fe
-%%PORTDOCS%%share/doc/ferite/examples/uarray.fe
-%%PORTDOCS%%share/doc/ferite/examples/udp.fe
-%%PORTDOCS%%share/doc/ferite/examples/uname.fe
-%%PORTDOCS%%share/doc/ferite/examples/var_args.fe
-%%PORTDOCS%%@dirrm share/doc/ferite/examples
-%%PORTDOCS%%share/doc/ferite/template/html/jse_form.js
-%%PORTDOCS%%share/doc/ferite/template/html/results.html
-%%PORTDOCS%%share/doc/ferite/template/html/jse_search.js
-%%PORTDOCS%%share/doc/ferite/template/html/namespace.png
-%%PORTDOCS%%share/doc/ferite/template/html/class.png
-%%PORTDOCS%%share/doc/ferite/template/html/empty.png
-%%PORTDOCS%%share/doc/ferite/template/html/back.png
-%%PORTDOCS%%share/doc/ferite/template/html/var.png
-%%PORTDOCS%%share/doc/ferite/template/html/function.png
-%%PORTDOCS%%share/doc/ferite/template/html/group.png
-%%PORTDOCS%%share/doc/ferite/template/html/protocol.png
-%%PORTDOCS%%share/doc/ferite/template/html/warning.png
-%%PORTDOCS%%share/doc/ferite/template/html/style.css
-%%PORTDOCS%%@dirrm share/doc/ferite/template/html
-%%PORTDOCS%%share/doc/ferite/template/text.fe
-%%PORTDOCS%%share/doc/ferite/template/html.fe
-%%PORTDOCS%%@dirrm share/doc/ferite/template
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo_black.png
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo_colour.png
-%%PORTDOCS%%@dirrm share/doc/ferite/images
-%%PORTDOCS%%share/doc/ferite/html-manuals/embed/docs-background.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/embed/http-int.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/embed/http.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/embed/index.html
-%%PORTDOCS%%share/doc/ferite/html-manuals/embed/style.css
-%%PORTDOCS%%@dirrm share/doc/ferite/html-manuals/embed
-%%PORTDOCS%%share/doc/ferite/html-manuals/feritedoc/docs-background.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/feritedoc/http-int.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/feritedoc/http.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/feritedoc/index.html
-%%PORTDOCS%%share/doc/ferite/html-manuals/feritedoc/style.css
-%%PORTDOCS%%@dirrm share/doc/ferite/html-manuals/feritedoc
-%%PORTDOCS%%share/doc/ferite/html-manuals/manual/docs-background.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/manual/http-int.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/manual/http.png
-%%PORTDOCS%%share/doc/ferite/html-manuals/manual/index.html
-%%PORTDOCS%%share/doc/ferite/html-manuals/manual/style.css
-%%PORTDOCS%%@dirrm share/doc/ferite/html-manuals/manual
-%%PORTDOCS%%@dirrm share/doc/ferite/html-manuals
-%%PORTDOCS%%share/doc/ferite/manual.pdf
-%%PORTDOCS%%share/doc/ferite/embed.pdf
-%%PORTDOCS%%share/doc/ferite/feritedoc.pdf
-%%PORTDOCS%%share/doc/ferite/LICENSE
-%%PORTDOCS%%share/doc/ferite/AUTHORS
-%%PORTDOCS%%share/doc/ferite/TODO
-%%PORTDOCS%%share/doc/ferite/ROADMAP
-%%PORTDOCS%%share/doc/ferite/DEVELOPERS
-%%PORTDOCS%%share/doc/ferite/ABOUT
-%%PORTDOCS%%share/doc/ferite/RELEASE.NOTES
-%%PORTDOCS%%@dirrm share/doc/ferite
-share/ferite/test-suite/array.fe
-share/ferite/test-suite/console.fe
-share/ferite/test-suite/date.fe
-share/ferite/test-suite/filesystem.fe
-share/ferite/test-suite/ipc.fe
-share/ferite/test-suite/math.fe
-share/ferite/test-suite/network.fe
-share/ferite/test-suite/posix.fe
-share/ferite/test-suite/reflection.fe
-share/ferite/test-suite/regexp.fe
-share/ferite/test-suite/rmi.fe
-share/ferite/test-suite/serialize.fe
-share/ferite/test-suite/stream.fe
-share/ferite/test-suite/string.fe
-share/ferite/test-suite/sys.fe
-share/ferite/test-suite/thread.fe
-share/ferite/test-suite/unix.fe
-share/ferite/test-suite/xml.fe
-share/ferite/test-suite/README
-@dirrm share/ferite/test-suite
-share/ferite/generate-module/skel/AUTHORS
-share/ferite/generate-module/skel/autogen.sh
-share/ferite/generate-module/skel/ChangeLog
-share/ferite/generate-module/skel/config.h.in
-share/ferite/generate-module/skel/configure.ac
-share/ferite/generate-module/skel/Makefile.am
-share/ferite/generate-module/skel/README
-share/ferite/generate-module/skel/stamp-h.in
-share/ferite/generate-module/skel/udcl.sh
-@dirrm share/ferite/generate-module/skel
-share/ferite/generate-module/generate-module.fe
-@dirrm share/ferite/generate-module
-share/ferite/doc/deannotate-code.fe
-share/ferite/doc/annotate-code.fe
-share/ferite/doc/parser.fe
-share/ferite/doc/structs.fe
-share/ferite/doc/doc.fe
-share/ferite/doc/template.fe
-@dirrm share/ferite/doc
-share/ferite/farm/rulesets/RuleSets.fe
-share/ferite/farm/rulesets/Darwin.fe
-share/ferite/farm/rulesets/Linux.fe
-@dirrm share/ferite/farm/rulesets
-share/ferite/farm/farm.fe
-share/ferite/farm/Actions.fe
-share/ferite/farm/Targets.fe
-share/ferite/farm/Yard.fe
-@dirrm share/ferite/farm
-share/ferite/manual-builder/ManualBuilder/Filters/HTML.feh
-share/ferite/manual-builder/ManualBuilder/Filters/PDF.feh
-@dirrm share/ferite/manual-builder/ManualBuilder/Filters
-share/ferite/manual-builder/ManualBuilder/Support/Images/docs-background.png
-share/ferite/manual-builder/ManualBuilder/Support/Images/http-int.png
-share/ferite/manual-builder/ManualBuilder/Support/Images/http.png
-@dirrm share/ferite/manual-builder/ManualBuilder/Support/Images
-share/ferite/manual-builder/ManualBuilder/Support/CSS/Default.css
-@dirrm share/ferite/manual-builder/ManualBuilder/Support/CSS
-@dirrm share/ferite/manual-builder/ManualBuilder/Support
-share/ferite/manual-builder/ManualBuilder/DocumentFilter.feh
-share/ferite/manual-builder/ManualBuilder/DocUtils.feh
-@dirrm share/ferite/manual-builder/ManualBuilder
-share/ferite/manual-builder/manual-builder.fe
-@dirrm share/ferite/manual-builder
-@dirrm share/ferite
+%%DATADIR%%/test-suite/array.fe
+%%DATADIR%%/test-suite/console.fe
+%%DATADIR%%/test-suite/date.fe
+%%DATADIR%%/test-suite/filesystem.fe
+%%DATADIR%%/test-suite/ipc.fe
+%%DATADIR%%/test-suite/math.fe
+%%DATADIR%%/test-suite/network.fe
+%%DATADIR%%/test-suite/posix.fe
+%%DATADIR%%/test-suite/reflection.fe
+%%DATADIR%%/test-suite/regexp.fe
+%%DATADIR%%/test-suite/rmi.fe
+%%DATADIR%%/test-suite/serialize.fe
+%%DATADIR%%/test-suite/stream.fe
+%%DATADIR%%/test-suite/string.fe
+%%DATADIR%%/test-suite/sys.fe
+%%DATADIR%%/test-suite/thread.fe
+%%DATADIR%%/test-suite/unix.fe
+%%DATADIR%%/test-suite/xml.fe
+%%DATADIR%%/test-suite/README
+%%DATADIR%%/generate-module/skel/AUTHORS
+%%DATADIR%%/generate-module/skel/autogen.sh
+%%DATADIR%%/generate-module/skel/ChangeLog
+%%DATADIR%%/generate-module/skel/config.h.in
+%%DATADIR%%/generate-module/skel/configure.ac
+%%DATADIR%%/generate-module/skel/Makefile.am
+%%DATADIR%%/generate-module/skel/README
+%%DATADIR%%/generate-module/skel/stamp-h.in
+%%DATADIR%%/generate-module/skel/udcl.sh
+%%DATADIR%%/generate-module/generate-module.fe
+%%DATADIR%%/doc/deannotate-code.fe
+%%DATADIR%%/doc/annotate-code.fe
+%%DATADIR%%/doc/parser.fe
+%%DATADIR%%/doc/structs.fe
+%%DATADIR%%/doc/doc.fe
+%%DATADIR%%/doc/template.fe
+%%DATADIR%%/farm/rulesets/RuleSets.fe
+%%DATADIR%%/farm/rulesets/Darwin.fe
+%%DATADIR%%/farm/rulesets/Linux.fe
+%%DATADIR%%/farm/farm.fe
+%%DATADIR%%/farm/Actions.fe
+%%DATADIR%%/farm/Targets.fe
+%%DATADIR%%/farm/Yard.fe
+%%DATADIR%%/manual-builder/ManualBuilder/Filters/HTML.feh
+%%DATADIR%%/manual-builder/ManualBuilder/Filters/PDF.feh
+%%DATADIR%%/manual-builder/ManualBuilder/Support/Images/docs-background.png
+%%DATADIR%%/manual-builder/ManualBuilder/Support/Images/http-int.png
+%%DATADIR%%/manual-builder/ManualBuilder/Support/Images/http.png
+%%DATADIR%%/manual-builder/ManualBuilder/Support/CSS/Default.css
+%%DATADIR%%/manual-builder/ManualBuilder/DocumentFilter.feh
+%%DATADIR%%/manual-builder/ManualBuilder/DocUtils.feh
+%%DATADIR%%/manual-builder/manual-builder.fe
+@dirrm include/ferite/stream
+@dirrm include/ferite
+@dirrm lib/ferite/module-source/rmi/transport
+@dirrm lib/ferite/module-source/rmi/translation
+@dirrm lib/ferite/module-source/rmi/protocol
+@dirrm lib/ferite/module-source/rmi
+@dirrm lib/ferite/module-source/cgi
+@dirrm lib/ferite/module-source
+@dirrm lib/ferite/module-descriptions
+@dirrm lib/ferite/module-native/freebsd%%OSREL%%-%%MACHINE_ARCH%%
+@dirrm lib/ferite/module-native
+@dirrm lib/ferite
+@dirrm %%DATADIR%%/test-suite
+@dirrm %%DATADIR%%/generate-module/skel
+@dirrm %%DATADIR%%/generate-module
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/farm/rulesets
+@dirrm %%DATADIR%%/farm
+@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Filters
+@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support/Images
+@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support/CSS
+@dirrm %%DATADIR%%/manual-builder/ManualBuilder/Support
+@dirrm %%DATADIR%%/manual-builder/ManualBuilder
+@dirrm %%DATADIR%%/manual-builder
+@dirrm %%DATADIR%%
