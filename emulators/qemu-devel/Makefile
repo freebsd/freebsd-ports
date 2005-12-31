@@ -12,8 +12,14 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
-		http://qemu.dad-answers.com/download/qemu/:snapshot
+		http://qemu.dad-answers.com/download/qemu/:snapshot \
+		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
+.if defined (WITH_HACKS)
+DISTFILES+=	qemu_dma_patch.tar.gz:idedma
+.endif
+DIST_SUBDIR=	qemu
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -54,6 +60,11 @@ pre-everything::
 	@${ECHO_MSG} "Notice: you can build qemu with the (alpha!) kqemu accelerator kernel module"
 	@${ECHO_MSG} "by defining WITH_KQEMU."
 .endif
+.if !defined(WITH_HACKS)
+	@${ECHO_MSG} "You can build qemu with some hacks (esp. for speedup)"
+	@${ECHO_MSG} "by defining WITH_HACKS."
+	@${ECHO_MSG} "1. IDE Bus-master DMA Support by John Coiner"
+.endif
 .if !defined(WITH_SAMBA) && !exists(${LOCALBASE}/sbin/smbd)
 	@${ECHO_MSG} "Notice: if you need qemu's -smb option (smb-export local dir to guest)"
 	@${ECHO_MSG} "then you also need samba, you can have this port install it by defining"
@@ -69,6 +80,11 @@ pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \
 		${MKDIR} ${WRKSRC}/bsd/$$A; \
 	done
+
+post-patch:
+.if defined(WITH_HACKS)
+	@cd ${WRKDIR} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/qemu_dma_patch.tar.gz ; ${CP} new_qemu_dma_patch/bios.bin ${WRKSRC}/pc-bios; cd ${WRKSRC}; ${PATCH} -p1 < ../new_qemu_dma_patch/qemu-piix4-udma.patch
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
