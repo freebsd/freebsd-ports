@@ -23,16 +23,14 @@ CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
 ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
-INFODIR?=	info
 
-INFO+=		emacs-w3m-ja emacs-w3m
+INFO=		emacs-w3m-ja emacs-w3m
 
 USE_AUTOTOOLS=	autoconf:213
 ALL_TARGET=	default
 
 PLIST_SUB+=	LISPDIR=${LISPDIR} \
 		ICONDIR=${ICONDIR} \
-		INFODIR=${INFODIR} \
 		ETCDIR=${ETCDIR} \
 		SHIMBUN=${SHIMBUN}
 
