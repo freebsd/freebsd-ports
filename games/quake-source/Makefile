@@ -43,6 +43,9 @@ pre-patch:
 		${GREP} 'CRLF' | ${SED} -e 's/:.*//' | \
 		${XARGS} ${REINPLACE_CMD} -i "" -e "s/`${PRINTF} '\r'`$$//"
 
+post-patch:
+	@${RM} ${WRKSRC}/send/v101qc/progs.src.orig
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${CP} -R ${WRKSRC}/send/v101qc ${DATADIR}
