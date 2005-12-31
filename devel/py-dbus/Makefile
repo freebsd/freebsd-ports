@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the D-BUS messaging system
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 MASTERDIR=	${.CURDIR}/../dbus
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-python \
 		--disable-mono \
 		--disable-mono-docs \
 		--disable-gtk \
-		--disable-qt \
+		--disable-qt3 \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \
