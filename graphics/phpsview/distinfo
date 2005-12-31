@@ -1,4 +1,3 @@
-MD5 (pwc-9.0.2.tar.gz) = c2febfc5ac59ed669cf99969f38976da
-SIZE (pwc-9.0.2.tar.gz) = 230499
-MD5 (pwc-9.0.2-bsd-0.03.patch.gz) = 506996f9a527cc6c32b043b2ecda7bf5
-SIZE (pwc-9.0.2-bsd-0.03.patch.gz) = 19679
+MD5 (pwc-10.0.5-bsd.tar.gz) = 91d0459e36c4ceb744d47301bb6971ac
+SHA256 (pwc-10.0.5-bsd.tar.gz) = a1ab77fe3086aa9464791dc8c7f7be01298fc2c164d7b250f2bbba5b886e5f4c
+SIZE (pwc-10.0.5-bsd.tar.gz) = 66721

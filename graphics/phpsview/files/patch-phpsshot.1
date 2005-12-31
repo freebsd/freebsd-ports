@@ -1,0 +1,25 @@
+--- phpsshot.1.orig	Thu Nov 25 21:03:01 2004
++++ phpsshot.1	Sat Dec 31 17:32:45 2005
+@@ -32,18 +32,18 @@
+ .Nd simple image capture program for Philips USB Cameras
+ .Sh SYNOPSIS
+ .Nm phpsshot
+-.Op /dev/ugen?.00
++.Op /dev/ugen?
+ .Sh DESCRIPTION
+ .Nm
+ is a simple program to capture image for Philips USB Cameras.
+ .Pp
+-The captured image is PPM format as 320x240 size. It is written to the standard output.
++The captured image is PPM format as 640x480 size. It is written to the standard output.
+ .Pp
+ The following options are supported:
+ .Bl -tag -width indent
+-.It /dev/ugen?.00
++.It /dev/ugen?
+ Specifies the ugen device name. If no device name is specified,
+-the program will cycle through the /dev/ugen0.00, /dev/ugen1.00, ... 
++the program will cycle through the /dev/ugen0, /dev/ugen1, ... 
+ devices until it finds an attached target camera.
+ .El
+ .Sh EXAMPLES
