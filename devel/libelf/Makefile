@@ -25,6 +25,10 @@ USE_GETTEXT=	yes
 
 NOMAN=		defined
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600102
+
 USE_REINPLACE=	yes
 
 FILES_TO_PATCH=lib/32.fsize.c lib/64.xlatetof.c lib/cook.c lib/gelf.h lib/gelftrans.c
@@ -35,4 +39,6 @@ post-patch:
 	-e 's/Elf64_Sxword/Elf64_Sword/g' \
 	${FILES_TO_PATCH:S,^,${WRKSRC}/,}
 
-.include <bsd.port.mk>
+.endif
+
+.include <bsd.port.post.mk>
