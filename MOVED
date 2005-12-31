@@ -2044,3 +2044,7 @@ x11-themes/metacity-theme-iridium-rounded||2005-12-22|Obsolete by x11-themes/gno
 converters/intel2gas|lang/intel2gas|2005-12-22|Duplicate port entry
 x11-themes/metacity-theme-alloy-c||2005-12-26|Obsolete by x11-themes/gnome-art
 mail/masqmail-devel|mail/masqmail|2005-12-26|Merged
+chinese/cdict5||2005-12-31|Unfetchable
+devel/py-ansistyle||2005-12-31|Replaced by py-ll-core
+devel/py-ll-url||2005-12-31|Replaced by py-ll-core
+misc/gkrellmaflag||2005-12-31|Unfetchable

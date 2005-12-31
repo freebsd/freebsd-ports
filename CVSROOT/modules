@@ -2944,7 +2944,6 @@ gkrellm-trayicons	ports/sysutils/gkrellm-trayicons
 gkrellm-xkb	ports/misc/gkrellm-xkb
 gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
-gkrellmaflag	ports/misc/gkrellmaflag
 gkrellmbgchg	ports/misc/gkrellmbgchg
 gkrellmbgchg2	ports/misc/gkrellmbgchg2
 gkrellmearth	ports/astro/gkrellmearth
@@ -10296,7 +10295,6 @@ py-SciParam	ports/x11-toolkits/py-SciParam
 py-adns		ports/dns/py-adns
 py-albatross	ports/www/py-albatross
 py-anonfunc	ports/devel/py-anonfunc
-py-ansistyle	ports/devel/py-ansistyle
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
 py-asv		ports/textproc/py-asv
@@ -10424,7 +10422,6 @@ py-libxml2	ports/textproc/py-libxml2
 py-libxslt	ports/textproc/py-libxslt
 py-lirc		ports/comms/py-lirc
 py-ll-core	ports/devel/py-ll-core
-py-ll-url	ports/devel/py-ll-url
 py-log4py	ports/devel/py-log4py
 py-logging	ports/devel/py-logging
 py-logilab-common	ports/devel/py-logilab-common
@@ -13893,7 +13890,6 @@ zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
-zh-cdict5	ports/chinese/cdict5
 zh-celvis	ports/chinese/celvis
 zh-chinput2	ports/chinese/chinput2
 zh-chinput3	ports/chinese/chinput3

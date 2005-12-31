@@ -1,9 +1,0 @@
-Chinese-English / English-Chinese dictionary
-- suppoer 21 Century Dictionary v5.0
-- Chinese-English / English-Chinese query
-- English-Chinese support wild card query and shell globbing
-- Chinese-English support prefix query
-- can query by different spelling
-- support ANSI color
-- interactive mode support doskey function
-- support ET2000 English-Chinese dictionary (not fully tested)
