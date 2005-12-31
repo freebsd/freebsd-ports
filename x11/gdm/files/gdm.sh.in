@@ -2,8 +2,12 @@
 # $FreeBSD$
 
 # PROVIDE: gdm
-# REQUIRE: DAEMON LOGIN cleanvar
-# KEYWORD: FreeBSD
+# REQUIRE: LOGIN cleanvar moused
+#
+# Add the following to /etc/rc.conf to start GDM at boot time:
+#
+# gdm_enable="YES"
+#
 
 gdm_enable=${gdm_enable-"NO"}
 
