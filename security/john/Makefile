@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  john
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
@@ -7,18 +6,20 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6.39
+PORTVERSION=	1.6.40
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/a/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-1.6.tar.gz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 USE_REINPLACE=	yes
-PORTDOCS=	*
+
+DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
+PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README RULES
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.pre.mk>
 
@@ -27,42 +28,45 @@ OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
 ALL_TARGET=	generic
 .if ${ARCH} == "i386"
 . if ${MACHINE_CPU:Mmmx}
-ALL_TARGET=	${OSNAME}-x86-mmx-elf
+ALL_TARGET=	${OSNAME}-x86-mmx
 . else
-ALL_TARGET=	${OSNAME}-x86-any-elf
+ALL_TARGET=	${OSNAME}-x86-any
 . endif
 .elif ${ARCH} == "alpha"
 ALL_TARGET=	${OSNAME}-alpha
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-OLDSRC=		${WRKDIR}/${PORTNAME}-1.6/run
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$JOHN|${DATADIR}|g' \
+		${WRKDIR}/${DISTNAME}/run/john.conf
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g; s|%%DATADIR%%|${DATADIR}|g'\
+			${WRKSRC}/params.h
 
 pre-build:
 	@${ECHO} "Building for ${ALL_TARGET}"
 
-do-configure:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKDIR}/${DISTNAME}/src/params.h \
-		${WRKDIR}/${DISTNAME}/run/john.conf
-
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
-	@cd ${PREFIX}/bin ; ${LN} -sf john xtract
-	@cd ${PREFIX}/bin ; ${LN} -sf john unshadow
-	@${INSTALL_DATA} \
-		${OLDSRC}/all.chr \
-		${OLDSRC}/alpha.chr \
-		${OLDSRC}/digits.chr \
-		${OLDSRC}/lanman.chr \
-		${WRKDIR}/${DISTNAME}/run/password.lst \
-		${WRKDIR}/${DISTNAME}/run/john.conf \
-			${DATADIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
+.for l in xtract unshadow
+	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/${l}
+.endfor
+	${MKDIR} ${DATADIR}
+.for f in ${DATAFILES}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/${f} ${DATADIR}
+.endfor
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/john.conf \
+		${PREFIX}/etc/john.conf.default
+.if !exists(${PREFIX}/etc/john.conf)
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/john.conf \
+		${PREFIX}/etc/john.conf
+.endif
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${OLDSRC}/../doc/* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>

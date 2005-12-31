@@ -1,10 +1,13 @@
 bin/john
 bin/unshadow
 bin/xtract
+@unexec if cmp -s %D/etc/john.conf %D/etc/john.conf.default; then rm -f %D/etc/john.conf; fi
+etc/john.conf.default
+@exec [ -f %B/john.conf ] || cp %B/%f %B/john.conf
 %%DATADIR%%/all.chr
+%%DATADIR%%/alnum.chr
 %%DATADIR%%/alpha.chr
 %%DATADIR%%/digits.chr
 %%DATADIR%%/lanman.chr
-%%DATADIR%%/john.conf
 %%DATADIR%%/password.lst
-@dirrm share/john
+@dirrm %%DATADIR%%
