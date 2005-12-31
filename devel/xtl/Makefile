@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	xtl
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
-MASTER_SITES=	http://xtl.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A library for R/W structured data to/from an external representation
 
 NO_BUILD=	yes
