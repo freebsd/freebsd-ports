@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:13
+USE_GNOME=	pkgconfig
 CONFIGURE_ARGS+=	--without-pam --without-pgsql
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
