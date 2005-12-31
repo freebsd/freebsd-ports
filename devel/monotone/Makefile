@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 		http://norton.kettering.edu/freebsd/
@@ -14,10 +14,7 @@ MASTER_SITES=	http://www.venge.net/monotone/downloads/ \
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
-PLIST_FILES=	bin/monotone
-INFO=		monotone
-MAN1=		monotone.1
-PORTDOCS=	NEWS UPGRADE
+LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost
 
 USE_GCC=	3.4+
 USE_REINPLACE=	yes
@@ -29,12 +26,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
 
+PLIST_FILES=	bin/monotone
+INFO=		monotone
+MAN1=		monotone.1
+PORTDOCS=	NEWS UPGRADE
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost-gcc3
-.else
-LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost
+BROKEN=		"wcswidth() not present in libc on FreeBSD < 5.0"
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -42,7 +42,8 @@ CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
 PLIST_FILES+=	share/locale/fr/LC_MESSAGES/monotone.mo \
-		share/locale/ja/LC_MESSAGES/monotone.mo
+		share/locale/ja/LC_MESSAGES/monotone.mo \
+		share/locale/pt_BR/LC_MESSAGES/monotone.mo
 .endif
 
 post-extract:
