@@ -7,6 +7,7 @@
 
 PORTNAME=	amsn
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,6 @@ COMMENT=	MSN Messenger
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		convert:${PORTSDIR}/graphics/ImageMagick \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/tcllib1.7/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -34,10 +34,5 @@ CONFIGURE_ENV=	TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
-post-install:
-	@${MKDIR} ${DATADIR}/utils/TkCximage
-	@${INSTALL_DATA} ${WRKSRC}/utils/TkCximage/TkCximage.so ${DATADIR}/utils/TkCximage
-	@${INSTALL_DATA} ${WRKSRC}/utils/TkCximage/pkgIndex.tcl ${DATADIR}/utils/TkCximage
 
 .include <bsd.port.mk>
