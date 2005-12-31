@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.50
-PORTREVISION?=	1
+PORTVERSION=	0.60
+PORTREVISION?=	0
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -26,6 +26,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--disable-gtk \
 		--disable-python \
 		--disable-gcj \
+		--disable-qt \
 		--disable-mono \
 		--disable-mono-docs \
 		--with-system-pid-file=/var/run/dbus.pid \
@@ -50,12 +51,11 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 
 .if !defined(DBUS_SLAVE)
 .if defined(WITH_QT) && !defined(WITHOUT_QT)
-CONFIGURE_ARGS+=--enable-qt
+CONFIGURE_ARGS+=--enable-qt3
 CONFIGURE_ENV+=	QTDIR=${X11BASE}
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 PLIST_SUB+=	QT=""
 .else
-CONFIGURE_ARGS+=--disable-qt
 PLIST_SUB+=	QT="@comment "
 .endif
 
@@ -76,6 +76,7 @@ post-install:
 .else
 .if defined(PKGNAMEPREFIX)
 .if ${PKGNAMEPREFIX}==${PYTHON_PKGNAMEPREFIX} && ${OSVERSION} < 500000
+# Ignore for py-dbus
 IGNORE=	Does not build on 4.X
 .endif
 .endif

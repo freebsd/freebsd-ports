@@ -1,14 +1,14 @@
---- configure.orig	Sun Sep 11 15:30:46 2005
-+++ configure	Sun Sep 11 15:30:46 2005
-@@ -1059,6 +1059,7 @@
-                           optimize for fast installation [default=yes]
-   --disable-libtool-lock  avoid locking (might break parallel builds)
-   --disable-dnotify         Disable using dnotify on Linux
-+  --disable-kqueue          Disable using kqueue on FreeBSD
- 
- Optional Packages:
-   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-@@ -4485,7 +4486,7 @@
+--- configure.orig	Sat Dec 31 13:22:23 2005
++++ configure	Sat Dec 31 13:30:51 2005
+@@ -1053,6 +1053,7 @@
+   --enable-python       build python bindings
+   --enable-selinux      build with SELinux support
+   --enable-dnotify      build with dnotify support (linux only)
++  --enable-kqueue       build with kqueue support (FreeBSD only)
+   --enable-shared[=PKGS]
+                           build shared libraries [default=yes]
+   --enable-static[=PKGS]
+@@ -4500,7 +4501,7 @@
  
    case " $CFLAGS " in
    *[\ \	]-Wfloat-equal[\ \	]*) ;;
@@ -17,7 +17,7 @@
    esac
  
    case " $CFLAGS " in
-@@ -28088,6 +28089,32 @@
+@@ -28240,6 +28241,31 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX 1
@@ -29,21 +29,20 @@
 +case "${target_os}" in
 +    freebsd*)
 +    	# Check whether --enable-kqueue or --disable-kqueue was given.
-+if test "${enable_kqueue+set}" = set; then
-+    enableval="$enable_kqueue"
-+    case "${enableval}" in
-+	yes) kqueue=false ;;
-+	no) kqueue=true ;;
-+	*) { { echo "$as_me:$LINENO: error: bad value ${enableval} for --disable-kqueue" >&5
-+echo "$as_me: error: bad value ${enableval} for --disable-kqueue" >&2;}
-+   { (exit 1); exit 1; }; } ;;
-+        esac
-+else
-+    kqueue=true
-+fi;
++    if test "${enable_kqueue+set}" = set; then
++        enableval="$enable_kqueue"
++        enable_kqueue=$enableval
++    else
++        enable_kqueue=auto
++    fi;
++    if test x$enable_kqueue = xno ; then
++	have_kqueue=no;
++    else
++	have_kqueue=yes;
++    fi
 +;;
 +esac
-+if test x$kqueue = xtrue; then
++if test x$have_kqueue = xyes; then
 +
 +cat >>confdefs.h <<\_ACEOF
 +#define DBUS_BUS_ENABLE_KQUEUE_ON_FREEBSD 1
