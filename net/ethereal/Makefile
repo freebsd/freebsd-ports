@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--enable-ipv6=no
 .endif
 
 .if ${OSVERSION} < 504103
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-capture_loop.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-capture_loop.h
 .endif
 
 .if exists(/usr/include/openssl/crypto.h)
