@@ -1,5 +1,9 @@
 %%SITE_PERL%%/File/HomeDir.pm
+%%SITE_PERL%%/File/HomeDir/MacOS9.pm
+%%SITE_PERL%%/File/HomeDir/Unix.pm
+%%SITE_PERL%%/File/HomeDir/Windows.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HomeDir
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@dirrm %%SITE_PERL%%/File/HomeDir
 @unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
