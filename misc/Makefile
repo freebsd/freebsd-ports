@@ -103,7 +103,6 @@
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
-    SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
     SUBDIR += gkrellmbgchg2
     SUBDIR += gkrellmfmonitor

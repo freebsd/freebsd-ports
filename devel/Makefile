@@ -1376,7 +1376,6 @@
     SUBDIR += publib
     SUBDIR += pwlib
     SUBDIR += py-anonfunc
-    SUBDIR += py-ansistyle
     SUBDIR += py-bison
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
@@ -1403,7 +1402,6 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-ll-core
-    SUBDIR += py-ll-url
     SUBDIR += py-log4py
     SUBDIR += py-logging
     SUBDIR += py-logilab-common
