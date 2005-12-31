@@ -7,8 +7,6 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
-BROKEN=		Install fails
-
 EMACS_PORT_NAME=	xemacs21-mule
 COMMENT=	Simple front-end to w3m for xemacs21-mule
 
@@ -20,6 +18,8 @@ ICONDIR=		${EMACS_PACKAGESDIR}/etc/images/w3m
 INFODIR=		${EMACS_PACKAGESDIR}/info
 PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
 INSTALL_TARGET=		install-package
+
+INFO_PATH=		${INFODIR}
 
 PLIST=			${.CURDIR}/pkg-plist
 PLIST_SUB+=		PKGINFODIR=${PKGINFODIR} EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
