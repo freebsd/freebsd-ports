@@ -8,5 +8,6 @@
 5) Change dbconf.php permission
 	chmod 440 dbconf.php
 6) Remove install directory and install.php file
-7) Enjoy it ;)
+7) Install additional modules www/gekko-modules
+8) Enjoy it ;)
 **************************************************
