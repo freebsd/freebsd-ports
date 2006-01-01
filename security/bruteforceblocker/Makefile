@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://danger.rulez.sk/projects/bruteforceblocker/ \
 		${MASTER_SITE_LOCAL}
