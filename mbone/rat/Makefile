@@ -35,6 +35,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 ENABLE_IPv6=	--enable-ipv6
 .endif
 
+.if ${OSVERSION} >= 700011
+EXTRA_PATCHES=  ${FILESDIR}/timet.patch
+.endif
+
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
 .endif
