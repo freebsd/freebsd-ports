@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20051204
+PORTVERSION=	2.0.0
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dists.lovepeers.org/distfiles/portupgrade/
 DISTNAME=	pkgtools-${DISTVERSION}
