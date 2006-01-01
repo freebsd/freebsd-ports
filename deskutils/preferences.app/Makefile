@@ -25,6 +25,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
+LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
 
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
