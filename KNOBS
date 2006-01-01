@@ -85,6 +85,7 @@ SSE			Adds support for x86 SSE optimizations
 SSL			Adds support for SSL (Secure Socket Layer)
 STATIC			Build statically linked executables
 THEORA			Theora video codec support
+TREMOR			Tremor (integer-only Vorbis) audio support
 VORBIS			OGG/Vorbis audio support
 X11			Support for X11
 X264			H.264/AVC (MPEG4 part 10) multimedia codec
