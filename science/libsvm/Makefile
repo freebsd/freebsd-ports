@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.8
+PORTVERSION=	2.81
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	science math
@@ -34,7 +34,7 @@ TXT_DOCS=	COPYRIGHT README FAQ.html README.python
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${TXT_DOCS}
 .endif
-TOOLS=		tools/grid.py tools/easy.py
+TOOLS=		tools/grid.py tools/easy.py tools/subset.py
 
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message

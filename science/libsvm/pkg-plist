@@ -3,6 +3,7 @@ bin/svm-scale
 bin/svm-train
 %%DATADIR%%/grid.py
 %%DATADIR%%/easy.py
+%%DATADIR%%/subset.py
 %%LIBSVM_PYTHON%%%%EXAMPLESDIR%%/cross_validation.py
 %%LIBSVM_PYTHON%%%%EXAMPLESDIR%%/svm_test.py
 %%LIBSVM_PYTHON%%%%EXAMPLESDIR%%/test_cross_validation.py
