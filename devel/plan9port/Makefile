@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20051228
+PORTVERSION=	20051231
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -84,6 +84,7 @@ MAN8=		listen1.8 vbackup.8 venti-backup.8 venti-fmt.8 venti.8
 MAN9=		0intro.9p attach.9p clunk.9p error.9p flush.9p open.9p \
 		openfd.9p read.9p remove.9p stat.9p version.9p walk.9p
 MANCOMPRESSED=	no
+NOMANCOMPRESS=	yes
 
 EMPTY_DIRS=	plan9/log \
 		plan9/bin/lpbin \
