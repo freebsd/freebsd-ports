@@ -28,7 +28,11 @@ OPTIONS=	SKEM_MILTER421 "Sendmail was built with -D_FFR_MILTER_421" off \
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700011
+EXTRA_PATCHES=  files/timet.patch
+.endif
 
 .if defined(PTHREAD_LIBS)
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -42,3 +46,5 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 MAKE_ARGS+=	-D$o
 .	endif
 .endfor
+
+.include <bsd.port.post.mk>
