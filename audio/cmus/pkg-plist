@@ -8,9 +8,9 @@ lib/cmus/ip/wav.so
 %%ARTS%%lib/cmus/op/arts.so
 lib/cmus/op/oss.so
 %%DATADIR%%/cmus-status-display
-%%DATADIR%%/doc/cmus.html
 %%DATADIR%%/keybindings
-@dirrm %%DATADIR%%/doc
+%%DOCSDIR%%/cmus.html
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/cmus/op
 @dirrm lib/cmus/ip
