@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dits
-PORTVERSION=	1.0
+PORTVERSION=	2.2.30
 CATEGORIES=	devel
 MASTER_SITES=	http://vdmvm.org/ http://codeconcepts.com/
 
