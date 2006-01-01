@@ -369,7 +369,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>curl</name>
-	<range><ge>7.11.2</ge><lt>7.15.0</lt></range>
+	<range><ge>7.11.2</ge><lt>7.15.1</lt></range>
       </package>
     </affects>
     <description>
@@ -407,6 +407,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-12-07</discovery>
       <entry>2005-12-09</entry>
+      <modified>2006-01-01</modified>
     </dates>
   </vuln>
 
