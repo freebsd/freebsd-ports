@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 
@@ -34,6 +34,9 @@ WITH_VORBIS=	yes
 .if exists(${LOCALBASE}/lib/libmodplug.so)
 WITH_MODPLUG=	yes
 .endif
+.if exists(${LOCALBASE}/lib/libvorbisidec.so)
+WITH_TREMOR=	yes
+.endif
 .if exists(${LOCALBASE}/lib/libartsc.so)
 WITH_ARTS=	yes
 .endif
@@ -52,6 +55,13 @@ PLIST_SUB+=	MODPLUG=""
 .else
 PLIST_SUB+=	MODPLUG="@comment "
 PREMSG+=	Define WITH_MODPLUG=yes to enable module music files.\n
+.endif
+
+.if defined(WITH_TREMOR)
+LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
+CONFIGURE_ARGS+=--with-tremor
+.else
+PREMSG+=	Define WITH_TREMOR=yes to enable libtremor support.\n
 .endif
 
 .if defined(WITH_ARTS)
