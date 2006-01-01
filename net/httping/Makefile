@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		${MASTER_SITE_LOCAL}
