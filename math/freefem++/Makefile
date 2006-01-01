@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.1-2
+DISTVERSION=	2.2-0
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -17,9 +17,11 @@ LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
 		f2c.2:${PORTSDIR}/lang/f2c				\
 		gsl.7:${PORTSDIR}/math/gsl				\
 		lapack.3:${PORTSDIR}/math/lapack			\
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
+		fftw3.3:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
+		convert:${PORTSDIR}/graphics/ImageMagick		\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
@@ -44,8 +46,8 @@ CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
-DOC_TARGET=	manual-full.pdf
-PORTDOCS=	AUTHORS BUGS COPYING HISTORY README TODO ${DOC_TARGET}
+#DOC_TARGET=	manual-full.pdf
+PORTDOCS=	AUTHORS BUGS COPYING HISTORY HISTORY_BEFORE_2005 INNOVATION README TODO ${DOC_TARGET}
 BADSAMPLES=	load/myfunction.o
 
 .include <bsd.port.pre.mk>
@@ -80,7 +82,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
 		${WRKSRC}/src/mpi/Makefile.in
 
-post-build:
+post-build-MANUAL-PDF-IS-BROKEN:
 .if !defined(NOPORTDOCS)
 	@(cd ${BUILD_WRKSRC}/DOC;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${DOC_TARGET}; \
