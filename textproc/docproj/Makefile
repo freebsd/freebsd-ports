@@ -7,6 +7,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -59,11 +60,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Di
 .endif
 
 NO_BUILD=		yes
-USE_GHOSTSCRIPT=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 USE_PERL5_RUN=		yes
 PLIST_FILES=		#empty
 
-WITHOUT_X11=	yes
 DEPENDS_ARGS+=	BATCH=yes WITHOUT_X11=${WITHOUT_X11}
 
 message-jadetex:
