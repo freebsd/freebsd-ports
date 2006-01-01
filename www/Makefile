@@ -152,6 +152,7 @@
     SUBDIR += gecko-sharp20
     SUBDIR += geeklog
     SUBDIR += gekko
+    SUBDIR += gekko-modules
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += gforge

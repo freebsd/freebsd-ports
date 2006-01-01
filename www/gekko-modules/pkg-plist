@@ -1,0 +1,365 @@
+%%BACKUP%%%%GEKKODIR%%/media/icons/default/48/backup.png
+%%BLOG%%%%GEKKODIR%%/media/icons/default/48/blog.png
+%%CATEGORIES%%%%GEKKODIR%%/media/icons/default/48/categories.png
+%%CONTACT%%%%GEKKODIR%%/media/icons/default/48/contact.png
+%%DOWNLOADS%%%%GEKKODIR%%/media/icons/default/48/downloads.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ebuild.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/txt.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/doc.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/deb.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gpg.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/default.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tmp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/exe.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/html.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/midi.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/c.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/log.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cdr.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ttf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pdf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/jar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/mov.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rpm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/sh.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/ps.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/css.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/patch.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/php.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/video.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/tpl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/gz.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/pl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/image.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/audio.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/rm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/folder.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/source.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/py.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/cpp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/xcf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files/unknown.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/48/files.png
+%%FORUMS%%%%GEKKODIR%%/media/icons/default/48/forums.png
+%%GALLERY%%%%GEKKODIR%%/media/icons/default/48/gallery.png
+%%NEWS%%%%GEKKODIR%%/media/icons/default/48/news.png
+%%PAGES%%%%GEKKODIR%%/media/icons/default/48/pages.png
+%%POLLS%%%%GEKKODIR%%/media/icons/default/48/polls.png
+%%STATISTICS%%%%GEKKODIR%%/media/icons/default/48/statistics.png
+%%TAGBOARD%%%%GEKKODIR%%/media/icons/default/48/tagboard.png
+%%BACKUP%%%%GEKKODIR%%/media/icons/default/16/backup.png
+%%BLOG%%%%GEKKODIR%%/media/icons/default/16/blog.png
+%%CATEGORIES%%%%GEKKODIR%%/media/icons/default/16/categories.png
+%%COMMENTS%%%%GEKKODIR%%/media/icons/default/16/comments.png
+%%CONTACT%%%%GEKKODIR%%/media/icons/default/16/contact.png
+%%DOWNLOADS%%%%GEKKODIR%%/media/icons/default/16/downloads.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/deb.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/bin.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tmp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/html.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/exe.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/msg.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ttf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/folder_open.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/xcf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/audio.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/unknown.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/jar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/log.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sxc.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/mid.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/readme.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/pdf.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/diff.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/ps.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rpm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/mov.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/rm.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/sh.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cpp.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/o.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/c.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/h.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tar.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/tpl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/php.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/css.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/pl.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/py.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/gz.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/cdr.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/default.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/text.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/video.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files/image.png
+%%FILES%%%%GEKKODIR%%/media/icons/default/16/files.png
+%%FORUMS%%%%GEKKODIR%%/media/icons/default/16/forums.png
+%%GALLERY%%%%GEKKODIR%%/media/icons/default/16/gallery.png
+%%NEWS%%%%GEKKODIR%%/media/icons/default/16/news.png
+%%PAGES%%%%GEKKODIR%%/media/icons/default/16/pages.png
+%%POLLS%%%%GEKKODIR%%/media/icons/default/16/polls.png
+%%STATISTICS%%%%GEKKODIR%%/media/icons/default/16/statistics.png
+%%TAGBOARD%%%%GEKKODIR%%/media/icons/default/16/tagboard.png
+%%BACKUP%%%%GEKKODIR%%/modules/backup/admin.inc.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/main.act.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/lang/es/core.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/lang/es/main.php
+%%BACKUP%%%%GEKKODIR%%/modules/backup/package.xml
+%%BACKUP%%%%GEKKODIR%%/modules/backup/module.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/admin.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/module.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/categories.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/archive.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/blocks/recent_posts.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/package.xml
+%%BLOG%%%%GEKKODIR%%/modules/blog/admin.panel.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/mod_categories.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/main.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/core.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/main.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/main.act.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/main.lib.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.inc.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.lib.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.act.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/core.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/main.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.inc.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.panel.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/package.xml
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/module.inc.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/main.lib.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/main.act.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/main.inc.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/main.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/lang/es/core.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/package.xml
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/blocks/recent.php
+%%COMMENTS%%%%GEKKODIR%%/modules/comments/module.inc.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/admin.inc.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/main.act.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/admin.panel.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/core.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/main.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/lang/es/feedback.letter
+%%CONTACT%%%%GEKKODIR%%/modules/contact/package.xml
+%%CONTACT%%%%GEKKODIR%%/modules/contact/main.inc.php
+%%CONTACT%%%%GEKKODIR%%/modules/contact/module.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.lib.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.act.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/main.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/main.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/lang/es/core.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/package.xml
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/blocks/random.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/admin.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/admin.panel.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/module.inc.php
+%%DOWNLOADS%%%%GEKKODIR%%/modules/downloads/mod_categories.inc.php
+%%FILES%%%%GEKKODIR%%/modules/files/admin.panel.php
+%%FILES%%%%GEKKODIR%%/modules/files/lang/es/main.php
+%%FILES%%%%GEKKODIR%%/modules/files/lang/es/core.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.inc.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.act.php
+%%FILES%%%%GEKKODIR%%/modules/files/main.lib.php
+%%FILES%%%%GEKKODIR%%/modules/files/admin.inc.php
+%%FILES%%%%GEKKODIR%%/modules/files/package.xml
+%%FILES%%%%GEKKODIR%%/modules/files/module.inc.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/admin.inc.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/main.lib.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/main.act.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/lang/es/core.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/lang/es/main.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/main.inc.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/admin.panel.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/package.xml
+%%FORUMS%%%%GEKKODIR%%/modules/forums/module.inc.php
+%%FORUMS%%%%GEKKODIR%%/modules/forums/blocks/recent_posts.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.lib.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.act.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/main.inc.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/main.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/core.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/package.xml
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/blocks/random.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/admin.inc.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/admin.panel.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/module.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/admin.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.lib.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.act.php
+%%NEWS%%%%GEKKODIR%%/modules/news/main.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/lang/es/core.php
+%%NEWS%%%%GEKKODIR%%/modules/news/lang/es/main.php
+%%NEWS%%%%GEKKODIR%%/modules/news/mod_categories.inc.php
+%%NEWS%%%%GEKKODIR%%/modules/news/admin.panel.php
+%%NEWS%%%%GEKKODIR%%/modules/news/package.xml
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/archive.php
+%%NEWS%%%%GEKKODIR%%/modules/news/blocks/recent.php
+%%NEWS%%%%GEKKODIR%%/modules/news/module.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/admin.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.lib.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.act.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/main.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/lang/es/core.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/lang/es/main.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/mod_categories.inc.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/admin.panel.php
+%%PAGES%%%%GEKKODIR%%/modules/pages/package.xml
+%%PAGES%%%%GEKKODIR%%/modules/pages/module.inc.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/admin.inc.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/main.act.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/admin.panel.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/lang/es/core.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/lang/es/main.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/package.xml
+%%POLLS%%%%GEKKODIR%%/modules/polls/main.inc.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/main.lib.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/blocks/show.php
+%%POLLS%%%%GEKKODIR%%/modules/polls/module.inc.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.inc.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.lib.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.act.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/core.inc.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/lang/es/core.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/lang/es/main.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.panel.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/package.xml
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/blocks/whosonline.php
+%%STATISTICS%%%%GEKKODIR%%/modules/statistics/module.inc.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/admin.inc.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/main.lib.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/main.act.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/blocks/tagboard.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/lang/es/core.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/lang/es/main.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/admin.panel.php
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/package.xml
+%%TAGBOARD%%%%GEKKODIR%%/modules/tagboard/module.inc.php
+%%BACKUP%%%%GEKKODIR%%/templates/default/backup/index.admin.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/index.admin.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/blog.form.tpl
+%%BLOG%%%%GEKKODIR%%/templates/default/blog/post.tpl
+%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/category.form.tpl
+%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/index.admin.tpl
+%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/category.tpl
+%%CATEGORIES%%%%GEKKODIR%%/templates/default/categories/index.tpl
+%%COMMENTS%%%%GEKKODIR%%/templates/default/comments/comment.tpl
+%%COMMENTS%%%%GEKKODIR%%/templates/default/comments/comment.form.tpl
+%%CONTACT%%%%GEKKODIR%%/templates/default/contact/send.form.tpl
+%%CONTACT%%%%GEKKODIR%%/templates/default/contact/contact.form.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/items.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/index.admin.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/item.form.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/view.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.form.tpl
+%%DOWNLOADS%%%%GEKKODIR%%/templates/default/downloads/category.admin.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/index.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/upload.form.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/index.admin.tpl
+%%FILES%%%%GEKKODIR%%/templates/default/files/file.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/index.admin.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/index.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/forum.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/category.admin.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread-index.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/post.form.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread.tpl
+%%FORUMS%%%%GEKKODIR%%/templates/default/forums/summary.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.admin.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/item.form.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.admin.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/view_gallery.tpl
+%%GALLERY%%%%GEKKODIR%%/templates/default/gallery/view_item.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/news.form.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/index.admin.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/intro.tpl
+%%NEWS%%%%GEKKODIR%%/templates/default/news/read.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/editor.form.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/index.admin.tpl
+%%PAGES%%%%GEKKODIR%%/templates/default/pages/page.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/send.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/contact.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/index.admin.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/poll.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/index.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/vote.form.tpl
+%%POLLS%%%%GEKKODIR%%/templates/default/polls/show.block.tpl
+%%STATISTICS%%%%GEKKODIR%%/templates/default/statistics/index.admin.tpl
+%%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/index.admin.tpl
+%%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/post.block.tpl
+%%FILES%%@dirrm %%GEKKODIR%%/media/icons/default/16/files
+%%FILES%%@dirrm %%GEKKODIR%%/media/icons/default/48/files
+%%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup/lang/es
+%%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup/lang
+%%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/blocks
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/es
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/es
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/lang/es
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/lang
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments/blocks
+%%COMMENTS%%@dirrm %%GEKKODIR%%/modules/comments
+%%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact/lang/es
+%%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact/lang
+%%CONTACT%%@dirrm %%GEKKODIR%%/modules/contact
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/lang/es
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/lang
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads/blocks
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/modules/downloads
+%%FILES%%@dirrm %%GEKKODIR%%/modules/files/lang/es
+%%FILES%%@dirrm %%GEKKODIR%%/modules/files/lang
+%%FILES%%@dirrm %%GEKKODIR%%/modules/files
+%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/lang/es
+%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/lang
+%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/blocks
+%%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/es
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/blocks
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery
+%%NEWS%%@dirrm %%GEKKODIR%%/modules/news/lang/es
+%%NEWS%%@dirrm %%GEKKODIR%%/modules/news/lang
+%%NEWS%%@dirrm %%GEKKODIR%%/modules/news/blocks
+%%NEWS%%@dirrm %%GEKKODIR%%/modules/news
+%%PAGES%%@dirrm %%GEKKODIR%%/modules/pages/lang/es
+%%PAGES%%@dirrm %%GEKKODIR%%/modules/pages/lang
+%%PAGES%%@dirrm %%GEKKODIR%%/modules/pages
+%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/lang/es
+%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/lang
+%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/blocks
+%%POLLS%%@dirrm %%GEKKODIR%%/modules/polls
+%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang/es
+%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang
+%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/blocks
+%%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics
+%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/blocks
+%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/lang/es
+%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard/lang
+%%TAGBOARD%%@dirrm %%GEKKODIR%%/modules/tagboard
+%%BACKUP%%@dirrm %%GEKKODIR%%/templates/default/backup
+%%BLOG%%@dirrm %%GEKKODIR%%/templates/default/blog
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/templates/default/categories
+%%COMMENTS%%@dirrm %%GEKKODIR%%/templates/default/comments
+%%CONTACT%%@dirrm %%GEKKODIR%%/templates/default/contact
+%%DOWNLOADS%%@dirrm %%GEKKODIR%%/templates/default/downloads
+%%FILES%%@dirrm %%GEKKODIR%%/templates/default/files
+%%FORUMS%%@dirrm %%GEKKODIR%%/templates/default/forums
+%%GALLERY%%@dirrm %%GEKKODIR%%/templates/default/gallery
+%%NEWS%%@dirrm %%GEKKODIR%%/templates/default/news
+%%PAGES%%@dirrm %%GEKKODIR%%/templates/default/pages
+%%POLLS%%@dirrm %%GEKKODIR%%/templates/default/polls
+%%STATISTICS%%@dirrm %%GEKKODIR%%/templates/default/statistics
+%%TAGBOARD%%@dirrm %%GEKKODIR%%/templates/default/tagboard
