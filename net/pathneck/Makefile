@@ -7,6 +7,7 @@
 
 PORTNAME=	pathneck
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gs274.sp.cs.cmu.edu/www/pathneck/
 EXTRACT_SUFX=	.tgz
