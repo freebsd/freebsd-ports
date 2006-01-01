@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	coreblog2
-PORTVERSION=	0.7b
+PORTVERSION=	0.8b
 CATEGORIES=	www zope
 MASTER_SITES=	http://coreblog.org/junk/
 PKGNAMEPREFIX=	zope-
-DISTNAME=	COREBlog2_07b
+DISTNAME=	COREBlog2_08b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yasi@yasi.to
@@ -24,22 +24,10 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=COREBlog2
 
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@cd ${WRKDIR} ;\
-	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
-		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
-	done; \
-	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
-		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
-	done; \
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
