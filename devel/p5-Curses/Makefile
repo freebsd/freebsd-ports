@@ -24,4 +24,12 @@ pre-configure:
 	@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \
 		${WRKSRC}/c-config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${REINPLACE_CMD} -e '/warnings/d' ${WRKSRC}/Makefile.PL ${WRKSRC}/test.syms
+	${REINPLACE_CMD} -e "s/.<.,//" ${WRKSRC}/test.syms
+.endif
+
+.include <bsd.port.post.mk>
