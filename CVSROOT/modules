@@ -2828,6 +2828,7 @@ geist		ports/graphics/geist
 geki2		ports/games/geki2
 geki3		ports/games/geki3
 gekko		ports/www/gekko
+gekko-modules	ports/www/gekko-modules
 gemcal		ports/deskutils/gemcal
 gemdropx	ports/games/gemdropx
 geminifonts	ports/x11-fonts/geminifonts
