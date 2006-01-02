@@ -1,0 +1,45 @@
+--- configure.orig	Sun Jan  1 18:01:13 2006
++++ configure	Mon Jan  2 14:38:53 2006
+@@ -21195,11 +21195,7 @@
+   done
+ 
+     else
+-            echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-      { { echo "$as_me:$LINENO: error: cannot find ${with_dv_raw1394}/include/libraw1394/raw1394.h" >&5
+-echo "$as_me: error: cannot find ${with_dv_raw1394}/include/libraw1394/raw1394.h" >&2;}
+-   { (exit 1); exit 1; }; }
++	echo "not found"
+     fi
+   else
+ 
+@@ -21361,8 +21357,7 @@
+         if test -n "${enable_dv}"
+         then
+           { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
+-echo "$as_me: error: cannot find libraw1394 headers" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot find libraw1394 headers" >&2;} ;}
+         fi
+ 
+ fi
+@@ -21381,8 +21376,7 @@
+             echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+       { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
+-echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;} ;}
+     fi
+     if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
+     then
+@@ -21610,8 +21604,7 @@
+         if test -n "${enable_dv}"
+         then
+           { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
+-echo "$as_me: error: cannot find libavc1394 headers" >&2;}
+-   { (exit 1); exit 1; }; }
++echo "$as_me: error: cannot find libavc1394 headers" >&2;} ; }
+         fi
+ 
+ fi

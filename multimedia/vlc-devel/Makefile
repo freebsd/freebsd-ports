@@ -228,11 +228,10 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5.20051128
+DISTVERSION=	0.8.5.20060102
 PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download2.videolan.org/pub/vlc/snapshots/ \
-		http://download.videolan.org/pub/vlc/snapshots/
+MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -250,7 +249,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 CONFLICTS=	vlc-*-0.8.4*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-snapshot-${PORTVERSION:S/0.8.5.//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-svn
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
@@ -279,7 +278,8 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg-zlib \
 			--disable-gnome \
 			--disable-gtk \
-			--without-libintl-prefix
+			--without-libintl-prefix \
+			--without-dv-raw1394
 
 MAN1=		vlc.1 \
 		vlc-config.1
@@ -298,11 +298,6 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 .if ${PERL_LEVEL} < 500800
 BROKEN=	"Does not compile with perl ${PERL_VERSION}"
 .endif
-
-#.if ${ARCH}=="amd64"
-# Maybe this works now??
-#WITH_WXGTK_VER=	2.4
-#.endif
 
 # compatible knobs.
 .if defined(WITH_DEBUG)
@@ -407,9 +402,9 @@ CONFIGUE_ARGS+=		--disable-bonjour
 LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		cdio.6:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
-		--enable-libcddb \
-		--enable-libcdio \
-		--enable-cddax
+		--disable-libcdio \
+		--disable-libcddb \
+		--disable-cddax
 .else
 CONFIGURE_ARGS+=--disable-vcd \
 		--disable-libcddb \
