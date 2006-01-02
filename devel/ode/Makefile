@@ -28,10 +28,6 @@ OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g' \
