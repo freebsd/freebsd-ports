@@ -14,7 +14,7 @@ DISTFILES=	${EBFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
 
-MAINTAINER=	takamune2004@yahoo.co.jp
+MAINTAINER=	yasu@utahime.org
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}

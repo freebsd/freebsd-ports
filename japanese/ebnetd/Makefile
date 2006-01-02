@@ -12,7 +12,7 @@ CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
 
-MAINTAINER=	takamune2004@yahoo.co.jp
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb
