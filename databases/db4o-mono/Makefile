@@ -12,6 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.db4o.com/downloads/
 PKGNAMESUFFIX=	-mono
 DISTNAME=	${PORTNAME}-5.0${PKGNAMESUFFIX}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	A database engine for storing object into files
