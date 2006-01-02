@@ -27,10 +27,10 @@ MAN1=		pkg-config.1
 PC_PATH=${PREFIX}/libdata/pkgconfig
 .if ${LOCALBASE} != ${PREFIX}
 PC_PATH:=	${PC_PATH}:${LOCALBASE}/libdata/pkgconfig
-.endif 
+.endif
 .if ${X11BASE} != ${PREFIX}
 PC_PATH:=	${PC_PATH}:${X11BASE}/libdata/pkgconfig
-.endif 
+.endif
 
 CONFIGURE_ARGS=	--disable-threads \
 		--with-pc-path="${PC_PATH}"
