@@ -13578,6 +13578,7 @@ xmmsctrl	ports/audio/xmmsctrl
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
 xmon		ports/x11/xmon
+xmoontool	ports/astro/xmoontool
 xmorph		ports/graphics/xmorph
 xmotd		ports/x11/xmotd
 xmoto		ports/games/xmoto
