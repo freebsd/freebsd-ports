@@ -51,7 +51,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}" DOCSDIR="share/doc/scilab"
 .include <bsd.port.pre.mk>
 
 # Scilab broken with GCC 3.3 on FreeBSD 5.3
-.if ${OSVERSION} >= 503000
+.if ${OSVERSION} >= 503000 && ${OSVERSION} < 600000
 USE_GCC=	3.2
 .endif
 
