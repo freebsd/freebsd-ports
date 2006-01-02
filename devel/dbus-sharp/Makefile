@@ -6,7 +6,7 @@
 #   $Id: Makefile,v 1.14 2005/11/01 05:04:07 tmclau02 Exp $
 #
 
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-sharp
 
