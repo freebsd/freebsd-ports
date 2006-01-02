@@ -6769,6 +6769,7 @@ nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
 neowebscript	ports/www/neowebscript
+nepenthes	ports/net/nepenthes
 nepim		ports/net/nepim
 nessus		ports/security/nessus
 nessus-devel	ports/security/nessus-devel
