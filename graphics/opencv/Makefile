@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opencvlibrary
 DISTNAME=	opencv-${PORTVERSION}
 
-MAINTAINER=	OpenCV@yahoogroups.com
+MAINTAINER=	msabramo@yahoo.com
 COMMENT=	Open Source Computer Vision Library from Intel
 
 HAS_CONFIGURE=	yes
