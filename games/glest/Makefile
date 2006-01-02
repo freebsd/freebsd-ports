@@ -41,6 +41,12 @@ GLESTDIRE=	${PREFIX}/lib/${PORTNAME}
 
 SUB_FILES=	glest-wrapper
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	"does not build on 4.x"
+.endif
+
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt|sh|ac|sub|ini|m4|jam|guess|rpath)" \
 		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
@@ -84,4 +90,4 @@ post-install:
 	@${ECHO_MSG} "* Configuration file ${GLESTDIRE}/glest.ini"
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
