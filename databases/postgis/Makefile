@@ -7,6 +7,7 @@
 
 PORTNAME=	postgis
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/download/
 
@@ -30,7 +31,8 @@ OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgis \
 		--bindir=${PREFIX}/bin \
-		--libdir=${PREFIX}/lib
+		--libdir=${PREFIX}/lib \
+		--with-proj
 
 .include <bsd.port.pre.mk>
 
