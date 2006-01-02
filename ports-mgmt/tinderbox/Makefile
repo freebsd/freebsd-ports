@@ -6,7 +6,7 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
