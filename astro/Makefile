@@ -63,6 +63,7 @@
     SUBDIR += xearth
     SUBDIR += xephem
     SUBDIR += xglobe
+    SUBDIR += xmoontool
     SUBDIR += xphoon
     SUBDIR += xplanet
     SUBDIR += xtide
