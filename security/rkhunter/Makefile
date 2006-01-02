@@ -41,4 +41,7 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
 .endif
 
+post-install:
+	    @${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
