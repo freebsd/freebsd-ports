@@ -361,6 +361,7 @@
     SUBDIR += ncp
     SUBDIR += ncplib
     SUBDIR += nemesis
+    SUBDIR += nepenthes
     SUBDIR += nepim
     SUBDIR += net-http
     SUBDIR += net6
