@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.2.9.b.7
+PORTVERSION=	1.2.9.b.9
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/975/
+MASTER_SITES=	http://alioth.debian.org/download.php/1289/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
-MAINTAINER=	toni@soth.at
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
 
 GNU_CONFIGURE=	yes
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15:inc
 
-WRKSRC=		${WRKDIR}/pcsc-lite-1.2.9-beta7
+WRKSRC=		${WRKDIR}/pcsc-lite-1.2.9-beta9
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
@@ -42,7 +42,7 @@ MAN8=		pcscd.8
 
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-CONFIGURE_ARGS+=--enable-libusb=${PREFIX}
+CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
 .endif
 
 post-patch:
@@ -50,10 +50,12 @@ post-patch:
 	${REINPLACE_CMD} -e "s,^confdir,#sysconfdir,; s,^conf_DATA,#sysconf_DATA,; s,^EXTRA_DIST,#EXTRA_DIST," ${WRKSRC}/etc/Makefile.in
 
 pre-everything::
+.if !defined(WITHOUT_USB)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "pcsc-lite has the following option(s):"
 	@${ECHO_MSG} "  WITHOUT_USB=yes            Disable USB support"
 	@${ECHO_MSG}
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
