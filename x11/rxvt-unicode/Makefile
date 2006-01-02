@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -156,7 +156,7 @@ pre-everything::
 	@${ECHO_MSG} "WITH_HALF_SHADOW      	use half width/height shadows on rxvt scrollbar"
 	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY	disable handling of the backspace key"
 	@${ECHO_MSG} "WITHOUT_DELETE_KEY	disable handling of the delete key"
-	@${ECHO_MSG} "WITHOUT_LINESPACE		disable support for line-spacing"
+	@${ECHO_MSG} "WITHOUT_LINESPACE	disable support for line-spacing"
 	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
 	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
 	@${ECHO_MSG}
