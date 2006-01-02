@@ -523,6 +523,7 @@
     SUBDIR += p5-Catalyst-Plugin-Session-Store-DBI
     SUBDIR += p5-Catalyst-Plugin-Session-Store-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Session-Store-File
+    SUBDIR += p5-Catalyst-Plugin-Session-Store-Memcached
     SUBDIR += p5-Catalyst-Plugin-Singleton
     SUBDIR += p5-Catalyst-Plugin-Static
     SUBDIR += p5-Catalyst-Plugin-SubRequest
