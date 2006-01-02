@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	db4o
-PORTVERSION=	5.0
+PORTVERSION=	5.0.18
 CATEGORIES=	databases
 MASTER_SITES=	http://www.db4o.com/downloads/
 PKGNAMESUFFIX=	-mono
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-5.0${PKGNAMESUFFIX}
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	A database engine for storing object into files
