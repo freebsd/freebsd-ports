@@ -1,0 +1,31 @@
+--- conf/nepenthes.conf.dist.orig	Sat Dec  3 17:23:03 2005
++++ conf/nepenthes.conf.dist	Sat Dec  3 17:23:56 2005
+@@ -87,8 +87,8 @@
+ 
+     logmanager
+     {
+-	ring_logging_file		"var/log/nepenthes.%d.log";
+-	file_logging_file		"var/log/nepenthes.log";
++	ring_logging_file		"var/log/nepenthes/nepenthes.%d.log";
++	file_logging_file		"var/log/nepenthes/nepenthes.log";
+     };
+ 
+     modulemanager
+@@ -100,7 +100,7 @@
+     {
+         strictfiletype              "1";
+         // where does submit-file write to? set this to the same dir
+-        filesdir                    "var/binaries/"; 
++        filesdir                    "var/nepenthes/binaries/"; 
+     };
+ 
+     downloadmanager
+@@ -116,7 +116,7 @@
+     
+     utilities
+     {
+-	hexdump_path                "var/hexdumps/";
++	hexdump_path                "var/nepenthes/hexdumps/";
+     };
+     
+     geolocationmanager
