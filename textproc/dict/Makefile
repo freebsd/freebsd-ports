@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.4
 PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install.dict
 MAN1=		dict.1 dictl.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1
+	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1.in
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/dict.conf ]; then \
