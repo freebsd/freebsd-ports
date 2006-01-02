@@ -14,6 +14,7 @@ include/botan/base64.h
 include/botan/basefilt.h
 include/botan/ber_dec.h
 include/botan/bigint.h
+include/botan/bit_ops.h
 include/botan/blinding.h
 include/botan/blowfish.h
 include/botan/botan.h
@@ -71,6 +72,7 @@ include/botan/idea.h
 include/botan/if_algo.h
 include/botan/init.h
 include/botan/isaac.h
+include/botan/kasumi.h
 include/botan/kdf.h
 include/botan/keypair.h
 include/botan/lion.h
@@ -101,7 +103,9 @@ include/botan/numthry.h
 include/botan/ofb.h
 include/botan/oids.h
 include/botan/openpgp.h
+include/botan/out_buf.h
 include/botan/par_hash.h
+include/botan/parsing.h
 include/botan/pbe.h
 include/botan/pbe_pkcs.h
 include/botan/pem.h
@@ -138,7 +142,6 @@ include/botan/sha160.h
 include/botan/sha256.h
 include/botan/sha_64.h
 include/botan/skipjack.h
-include/botan/socket.h
 include/botan/square.h
 include/botan/symkey.h
 include/botan/tea.h
