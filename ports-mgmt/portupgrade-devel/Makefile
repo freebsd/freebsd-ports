@@ -7,7 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dists.lovepeers.org/distfiles/portupgrade/
