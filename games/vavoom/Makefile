@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +22,11 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-sdl --with-opengl --without-openal
-CONFIGURE_ENV=	"CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ARGS=	--with-sdl --with-opengl --without-openal --without-vorbis \
+		--without-libmad --without-mikmod --without-flac
+CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include" \
+		"CPPFLAGS=${CPPFLAGS} -I${LOCALBASE}/include" \
+		"CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		"LDFLAGS=-L${LOCALBASE}/lib -L${X11BASE}/lib"
 ALL_TARGET=	all sv
 USE_SDL=	mixer sdl
@@ -46,9 +49,46 @@ OPENAL_CONFIG?=	${LOCALBASE}/bin/openal-config
 WITH_OPENAL=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libvorbis.so.3)
+WITH_VORBIS=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libmad.so.2)
+WITH_LIBMAD=	yes
+.endif
+
+MIKMOD_CONFIG?=	${LOCALBASE}/bin/libmikmod-config
+.if exists(${MIKMOD_CONFIG})
+WITH_MIKMOD=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libFLAC.so.7)
+WITH_FLAC=	yes
+.endif
+
 .ifdef (WITH_OPENAL)
 CONFIGURE_ARGS+=	--with-openal
 LIB_DEPENDS+=		openal.0:${PORTSDIR}/audio/openal
+.endif
+
+.ifdef (WITH_VORBIS)
+CONFIGURE_ARGS+=	--with-vorbis
+LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
+
+.ifdef (WITH_LIBMAD)
+CONFIGURE_ARGS+=	--with-libmad
+LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
+.endif
+
+.ifdef (WITH_MIKMOD)
+CONFIGURE_ARGS+=	--with-mikmod
+LIB_DEPENDS+=		mikmod.2:${PORTSDIR}/audio/libmikmod
+.endif
+
+.ifdef (WITH_FLAC)
+CONFIGURE_ARGS+=	--with-flac
+LIB_DEPENDS+=		FLAC.7:${PORTSDIR}/audio/flac
 .endif
 
 # -fno-strict-aliasing (default on FreeBSD 6.0+) produces run-working
@@ -61,7 +101,19 @@ CXXFLAGS=	-O -pipe
 pre-everything::
 	@${ECHO_CMD} ""
 .ifndef (WITH_OPENAL)
-	@${ECHO_CMD} "Define WITH_OPENAL=yes to build Vavoom with 3D sound support"
+	@${ECHO_CMD} "Define WITH_OPENAL=yes to build with 3D sound support"
+.endif
+.ifndef (WITH_VORBIS)
+	@${ECHO_CMD} "Define WITH_VORBIS=yes to build with Vorbis support"
+.endif
+.ifndef (WITH_LIBMAD)
+	@${ECHO_CMD} "Define WITH_LIBMAD=yes to build MP3 music support"
+.endif
+.ifndef (WITH_MIKMOD)
+	@${ECHO_CMD} "Define WITH_MIKMOD=yes to build with MikMod support"
+.endif
+.ifndef (WITH_FLAC)
+	@${ECHO_CMD} "Define WITH_FLAC=yes to build with FLAC support"
 .endif
 .ifndef (WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_CMD} "Define WITH_OPTIMIZED_CFLAGS=yes to build Vavoom optimized for speed"
@@ -73,7 +125,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/utils/acc/parse.c ${WRKSRC}/utils/acc/strlist.c
 	@${REINPLACE_CMD} -e 's|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
-		s|%%OPENAL_CONFIG%%|${OPENAL_CONFIG}|g' ${WRKSRC}/configure.ac
+			s|%%OPENAL_CONFIG%%|${OPENAL_CONFIG}|g; \
+		s|%%MIKMOD_CONFIG%%|${MIKMOD_CONFIG}|g' ${WRKSRC}/configure.ac
 	@(cd ${WRKSRC} && ${SH} ./fixunix.sh)
 
 do-install:
@@ -109,11 +162,11 @@ do-install:
 # required symlinks in users home directory. This should be done only once.
 installuser:
 	cd ${DATADIR} && \
-	${FIND} . -type d -exec ${MKDIR} -p ~/.${PORTNAME}/{} \; && \
+	${FIND} . -type d -exec ${MKDIR} ~/.${PORTNAME}/{} \; && \
 	${FIND} . -type f -exec ${LN} -sf ${DATADIR}/{} ~/.${PORTNAME}/{} \;
 .if exists(${DMDIR})
 	cd ${DMDIR} && \
-	${FIND} . -type d -exec ${MKDIR} -p ~/.${PORTNAME}/{} \; && \
+	${FIND} . -type d -exec ${MKDIR} ~/.${PORTNAME}/{} \; && \
 	${FIND} . -type f -exec ${LN} -sf ${DMDIR}/{} ~/.${PORTNAME}/{} \;
 .endif
 
