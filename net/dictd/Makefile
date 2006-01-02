@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dictd
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.4
 PORTREVISION=	0
 CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,20 +36,13 @@ ALL_TARGET=	dictd dictzip
 INSTALL_TARGET=	install.dictd install.dictzip
 
 post-patch:
-.for i in Makefile.in dict.1 dictd.8
+.for i in Makefile.in dict.1.in dictd.8.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
-.for i in example.conf
-	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
-.endfor
-	@${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
 	@${REINPLACE_CMD} -e "s|\([\ \t(]\)T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
 	@${MKDIR} ${DATADIR}
-.for i in example.conf example.dictrc example.site example2.conf example3.conf
-	${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}
-.endfor
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || ${CP} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/${PORTNAME}.sh > ${PREFIX}/etc/rc.d/${PORTNAME}.sh
