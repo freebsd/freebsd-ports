@@ -5523,7 +5523,6 @@ libmsn		ports/net-im/libmsn
 libmspack	ports/archivers/libmspack
 libmt_client	ports/games/libmt_client
 libmtrie	ports/devel/libmtrie
-libmusclecard	ports/devel/libmusclecard
 libmusicbrainz	ports/audio/libmusicbrainz
 libnaji		ports/devel/libnaji
 libnet		ports/net/libnet
