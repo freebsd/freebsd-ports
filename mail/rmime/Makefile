@@ -19,7 +19,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Decode MIME messages inside Emacs (works with RMAIL, VM, and mh-e)
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
+EMACS_PORT_NAME?=	emacs20
 RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
 
 NO_WRKSUBDIR=	yes
@@ -27,7 +27,7 @@ STRIP=		# empty
 
 do-build:
 	${CP} ${DISTDIR}/rmime.el ${WRKDIR}
-	emacs -batch -f batch-byte-compile ${WRKDIR}/rmime.el
+	${EMACS_CMD} -batch -f batch-byte-compile ${WRKDIR}/rmime.el
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/rmime.el ${WRKDIR}/rmime.elc\

@@ -13,8 +13,7 @@ MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Emacs major mode for editing Caml code
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
+EMACS_PORT_NAME?=	emacs20
 
 DOC_FILES=	README HISTORY append-tuareg.el custom-tuareg.el
 DOC_DIR=	share/doc/tuareg-mode
@@ -30,7 +29,7 @@ do-build:
 .for __f in ${ELISP_FILES}
 	cd ${WRKSRC} && echo '(setq load-path (cons "." load-path)) \
 			      (batch-byte-compile)' | \
-			emacs -batch -q -l /dev/stdin ${__f} 2> /dev/null
+			${EMACS_CMD} -batch -q -l /dev/stdin ${__f} 2> /dev/null
 .endfor
 
 do-install:
