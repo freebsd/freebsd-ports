@@ -7,7 +7,7 @@
 
 PORTNAME=	smm++
 PORTVERSION=	6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smm
@@ -16,7 +16,7 @@ DISTNAME=	smm
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical mudclient with mapper
 
-RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets3.0.0/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
+RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets4.0.1/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libitk32.so:${PORTSDIR}/x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl32.so:${PORTSDIR}/lang/itcl
 
