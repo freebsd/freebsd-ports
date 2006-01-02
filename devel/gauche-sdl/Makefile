@@ -19,8 +19,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 		${X11BASE}/lib/X11/rgb.txt:${X_CLIENTS_PORT}
 
-BROKEN=		Does not compile
-
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"
 WRKSRC=		${WRKDIR}/${PORTFAKENAME}
@@ -40,5 +38,7 @@ pre-configure:
 			-e "s|SDL/SDL|SDL|g"\
 			-e "s|%%SDL_CFLAGS%%|`${SDL_CONFIG} --cflags`|"\
 			${WRKSRC}/configure
+		${REINPLACE_CMD} -e "s|^CFLAGS.*|& `${SDL_CONFIG} --cflags`|" \
+			${WRKSRC}/src/gfx/Makefile.in
 
 .include <bsd.port.mk>
