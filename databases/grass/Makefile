@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.0.1
-PORTREVISION=   1
+PORTREVISION=   2
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://grass.itc.it/pub/grass/grass60/source/\

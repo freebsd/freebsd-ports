@@ -2,7 +2,7 @@
 
 case "$1" in
 	start)
-		/sbin/ldconfig -m %%PREFIX%%/%%PORTNAME%%/lib
+		/sbin/ldconfig -m %%PREFIX%%/%%GRASS_INST_DIR%%/lib
 		;;
 	stop)
 		;;
