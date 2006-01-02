@@ -1,0 +1,7 @@
+The Cache::Memcached::Managed module provides an API to values, cached in
+one or more memcached servers.  Apart from being very similar to the API
+of Cache::Memcached, the Cached::Memcached::Managed API allows for
+management of groups of values, for simplified key generation and expiration,
+as well as version and namespace management and a few other goodies.
+
+WWW: http://search.cpan.org/dist/Cache-Memcached-Managed/
