@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-XBase
-PORTVERSION=	0.234
+PORTVERSION=	0.241
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to XBase (dBase, Fox*) database files through DBI
 
 PERL_CONFIGURE=	yes
