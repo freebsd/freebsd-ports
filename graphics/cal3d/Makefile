@@ -7,6 +7,7 @@
 
 PORTNAME=	cal3d
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +19,7 @@ COMMENT=	Skeletal based 3d character animation library written in C++
 CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_BZIP2=		yes
+USE_REINPLACE=		yes
 USE_GNOME=		pkgconfig
 USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15:inc
 AUTOMAKE_ARGS=		"--add-missing"
@@ -25,6 +27,9 @@ INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--disable-static
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^all_libraries/d' ${WRKSRC}/src/cal3d/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
