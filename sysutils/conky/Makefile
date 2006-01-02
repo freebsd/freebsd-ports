@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+CONFIGURE_ARGS+=	--disable-portmon --disable-proc-uptime
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
@@ -25,6 +26,15 @@ MAN1=		conky.1
 
 PORTDOCS=	README AUTHORS ChangeLog TODO \
 		docs.html variables.html config_settings.html
+
+.if defined(WITH_BMPX)
+BUILD_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
+RUN_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
+LIB_DEPENDS+=		dbus-1.1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-bmpx
+.else
+CONFIGURE_ARGS+=	--disable-bmpx
+.endif
 
 .if defined(WITH_XFT)
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
@@ -49,8 +59,15 @@ CONFIGURE_ARGS+=	--disable-mpd
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e "s|== xyes|= xyes|g" ${WRKSRC}/configure
+pre-everything::
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_BMPX=yes to enable BMPx support"
+	@${ECHO_MSG} "WITH_XFT=yes to enable XFT support"
+	@${ECHO_MSG} "WITHOUT_OWN_WINDOW=yes to disable own window support"
+	@${ECHO_MSG} "WITH_MPD=yes to enable MPD support"
+	@${ECHO_MSG} "WITHOUT_DOUBLE_BUFFER=yes to disable double buffer support"
+	@${ECHO_MSG} " "
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
