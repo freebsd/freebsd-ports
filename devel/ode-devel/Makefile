@@ -28,10 +28,6 @@ OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile."
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/configurator.c
