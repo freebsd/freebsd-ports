@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.4.9
-PORTREVISION=	0
+PORTVERSION=	1.4.10
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/
 DISTNAME=	Botan-${PORTVERSION}
@@ -46,7 +45,7 @@ post-patch:
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
