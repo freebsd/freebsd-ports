@@ -493,7 +493,6 @@
     SUBDIR += libmcve
     SUBDIR += libmimedir
     SUBDIR += libmtrie
-    SUBDIR += libmusclecard
     SUBDIR += libnaji
     SUBDIR += libnotify
     SUBDIR += liboil
