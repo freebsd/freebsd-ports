@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwox
-PORTVERSION=	5.30.0
+PORTVERSION=	5.33.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_htm
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Netwox a network testing toolbox
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/netwib${SHORTPORTVERSION}-config:${PORTSDIR}/net/netwib
+BUILD_DEPENDS=	netwib-config:${PORTSDIR}/net/netwib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
