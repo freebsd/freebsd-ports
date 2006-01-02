@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	L-Breeder
 # Date created:				30 May 2002
 # Whom:					David Yeske <dyeske@yahoo.com> et al
@@ -5,26 +6,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	L-Breeder
+PORTNAME=	LBreeder
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
-MASTER_SITES=	http://pixie.oum.ox.ac.uk/L-Breeder/
-DISTNAME=	LBreeder
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.simonyi.ox.ac.uk/dawkins/software/yan/L-Breeder/
+DISTNAME=	${PORTNAME}-source
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
-LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
+LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
+		glut.3:${PORTSDIR}/graphics/libglut
 
-DEPRECATED=	"mastersite disappeared, no longer maintained by author"
-EXPIRATION_DATE=	2005-12-31
+NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/Unix
 
-WRKSRC=		${WRKDIR}/LBreeder/LBreeder
-PATCH_WRKSRC=	${WRKDIR}/LBreeder
-PLIST_FILES=	bin/L-Breeder
-
+USE_ZIP=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
@@ -42,26 +40,14 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
-post-patch:
-	@${FIND} ${WRKDIR} -type f -name Makefile | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
-		's|/usr/lib/libm.a||; \
-		s|-ldl||; \
-		s|-lgtk||; \
-		s|-lgmodule||; \
-		s|-lpthread||; \
-		s|-lgthread||; \
-		s|/usr/lib/libGL.a|-lGL|; \
-		s|/usr/lib/libGLU.so|-lGLU|; \
-		s|-O2|"${CFLAGS} ${PTHREAD_CFLAGS}"|; \
-		s|-lglib||; \
-		s|g\+\+|${CXX} -I${X11BASE}/include|; \
-		s|-lgdk||; \
-		s|wx-config|${WX_CONFIG}|; \
-		s|-lwx_gtk[[:space:]]|`${WX_CONFIG} --libs`|; \
-		s|-lwx_gtk_gl|-lwx_gtk2_gl-2.4|'
-
+ 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/L-Breeder ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
+.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Lsystems/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
