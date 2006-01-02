@@ -7,7 +7,7 @@
 
 PORTNAME=	qtorrent
 PORTVERSION=	0.9.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	http://thegraveyard.org/files/
 
