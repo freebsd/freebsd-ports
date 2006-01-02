@@ -11749,6 +11749,7 @@ smpeg-xmms	ports/multimedia/smpeg-xmms
 sms_client	ports/comms/sms_client
 smssend		ports/misc/smssend
 smstools	ports/comms/smstools
+smtp-gated	ports/mail/smtp-gated
 smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
