@@ -11033,7 +11033,7 @@ Note:  Please add new entries to the beginning of this file.
             <li>A Content-length header should only appear once in a
               valid request or response. Multiple Content-length
               headers, in conjunction with specially crafted requests,
-              may allow Squid's cache to be poisioned with bad content
+              may allow Squid's cache to be poisoned with bad content
               in certain situations.</li>
             <li>CR characters is only allowed as part of the CR NL
               line terminator, not alone. This to ensure that all
@@ -11055,7 +11055,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-01-24</discovery>
       <entry>2005-01-24</entry>
-      <modified>2005-02-07</modified>
+      <modified>2006-01-02</modified>
     </dates>
   </vuln>
 
