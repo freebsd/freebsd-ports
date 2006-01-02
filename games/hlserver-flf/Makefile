@@ -10,7 +10,8 @@
 PORTNAME?=	flf
 PORTVERSION?=	1.8b
 CATEGORIES?=	games linux
-MASTER_SITES?=	http://nephilim.net/files/
+MASTER_SITES?=	http://hex-hosting.com/pub/mod/frontline/ \
+		ftp://ftp.wireplay.co.uk/pub/halflife/mods/frontlineforce/patches/linux/
 PKGNAMEPREFIX=	hlserver-
 .if (${PORTNAME}==flf)
 PORTREVISION=	1
