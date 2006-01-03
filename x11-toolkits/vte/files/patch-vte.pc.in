@@ -1,0 +1,17 @@
+===================================================================
+RCS file: /cvs/gnome/vte/vte.pc.in,v
+retrieving revision 1.11
+retrieving revision 1.12
+diff -u -r1.11 -r1.12
+--- vte.pc.in	2005/12/12 18:46:15	1.11
++++ vte.pc.in	2005/12/31 11:27:56	1.12
+@@ -8,7 +8,6 @@
+ Name: vte
+ Description: Vte terminal widget.
+ Version: @VERSION@
+-Requires.private: @NEEDEDPACKAGES@
+-Libs: -L${libdir} -lvte
+-Libs.private: @FT2_LIBS@ @OTHERLIBS@
++Requires: @NEEDEDPACKAGES@
++Libs: -L${libdir} -lvte @FT2_LIBS@ @OTHERLIBS@
+ Cflags: -I${includedir} @FT2_CFLAGS@ @OTHERCFLAGS@
