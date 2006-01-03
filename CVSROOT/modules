@@ -5378,6 +5378,7 @@ libdnd		ports/x11/libdnd
 libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
 libdomainkeys	ports/mail/libdomainkeys
+libdrm		ports/graphics/libdrm
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
 libdts		ports/multimedia/libdts
