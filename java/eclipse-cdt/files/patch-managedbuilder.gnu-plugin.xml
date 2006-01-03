@@ -1,0 +1,110 @@
+--- eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.1/plugin.xml.orig	Thu Nov  3 05:32:10 2005
++++ eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.1/plugin.xml	Fri Dec  2 23:55:19 2005
+@@ -1334,7 +1334,7 @@
+ 			   errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser">
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Dbg"
+                      targetTool="cdt.managedbuild.tool.gnu.c.linker.exe.debug;cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1343,7 +1343,7 @@
+ 		              id="cdt.managedbuild.target.gnu.platform.exe.debug"
+ 		              name="%PlatformName.Dbg"
+ 		              binaryParser="org.eclipse.cdt.core.ELF"
+-		              osList="solaris,linux,hpux,aix,qnx"
++		              osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 		              archList="all">
+ 	              </targetPlatform>
+ 				  <builder
+@@ -1403,7 +1403,7 @@
+ 			   errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser">               
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Rel"
+                      targetTool="cdt.managedbuild.tool.gnu.c.linker.exe.release;cdt.managedbuild.tool.gnu.cpp.linker.exe.release"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1412,7 +1412,7 @@
+ 		              id="cdt.managedbuild.target.gnu.platform.exe.release"
+ 		              name="%PlatformName.Rel"		             
+ 		              binaryParser="org.eclipse.cdt.core.ELF"
+-		              osList="solaris,linux,hpux,aix,qnx"
++		              osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 		              archList="all">		              
+ 		          </targetPlatform>
+ 				  <builder
+@@ -1480,7 +1480,7 @@
+                id="cdt.managedbuild.config.gnu.so.debug">
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Dbg"
+                      targetTool="cdt.managedbuild.tool.gnu.c.linker.so.debug;cdt.managedbuild.tool.gnu.cpp.linker.so.debug"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1489,7 +1489,7 @@
+ 		              id="cdt.managedbuild.target.gnu.platform.so.debug"
+ 		              name="%PlatformName.Dbg"
+ 		              binaryParser="org.eclipse.cdt.core.ELF"		            
+-		              osList="solaris,linux,hpux,aix,qnx"
++		              osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 		              archList="all">
+ 		          </targetPlatform>
+ 				  <builder
+@@ -1574,7 +1574,7 @@
+                id="cdt.managedbuild.config.gnu.so.release">
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Rel"
+                      targetTool="cdt.managedbuild.tool.gnu.c.linker.so.release;cdt.managedbuild.tool.gnu.cpp.linker.so.release"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1583,7 +1583,7 @@
+ 		              id="cdt.managedbuild.target.gnu.platform.so.release"
+ 		              name="%PlatformName.Rel"
+ 		              binaryParser="org.eclipse.cdt.core.ELF"		            
+-		              osList="solaris,linux,hpux,aix,qnx"
++		              osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 		              archList="all">
+ 		          </targetPlatform>
+ 				  <builder
+@@ -1675,7 +1675,7 @@
+ 			   id="cdt.managedbuild.config.gnu.lib.debug">
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Dbg"
+                      targetTool="cdt.managedbuild.tool.gnu.archiver.lib.debug"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1684,7 +1684,7 @@
+ 					  id="cdt.managedbuild.target.gnu.platform.lib.debug"
+ 				 	  name="%PlatformName.Dbg"
+ 					  binaryParser="org.eclipse.cdt.core.ELF"		            
+-					  osList="solaris,linux,hpux,aix,qnx"
++					  osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 					  archList="all">
+ 				  </targetPlatform>
+ 			  	  <builder
+@@ -1741,7 +1741,7 @@
+                id="cdt.managedbuild.config.gnu.lib.release">
+                <toolChain
+                      archList="all"
+-                     osList="solaris,linux,hpux,aix,qnx"
++                     osList="solaris,linux,hpux,aix,qnx,freebsd"
+                      name="%ToolChainName.Rel"
+                      targetTool="cdt.managedbuild.tool.gnu.archiver.lib.release"
+                      scannerConfigDiscoveryProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile"
+@@ -1750,7 +1750,7 @@
+ 		              id="cdt.managedbuild.target.gnu.platform.lib.release"
+ 		              name="%PlatformName.Rel"
+ 		              binaryParser="org.eclipse.cdt.core.ELF"		            
+-		              osList="solaris,linux,hpux,aix,qnx"
++		              osList="solaris,linux,hpux,aix,qnx,freebsd"
+ 		              archList="all">
+ 		          </targetPlatform>
+ 				  <builder

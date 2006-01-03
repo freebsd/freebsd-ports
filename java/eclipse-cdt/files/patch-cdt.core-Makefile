@@ -1,0 +1,24 @@
+--- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/src/org.eclipse.cdt.core.freebsd_3.0.1/library/Makefile.orig	Sat Dec  3 01:27:30 2005
++++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/src/org.eclipse.cdt.core.freebsd_3.0.1/library/Makefile	Sat Dec  3 01:28:54 2005
+@@ -5,17 +5,17 @@
+ endif
+ 
+ # Defaults which can be overridden.
+-OS = linux
+-ARCH = x86
++#OS = linux
++#ARCH = x86
+ 
+ JDK_INCLUDES= $(JAVA_HOME)/include
+-JDK_OS_INCLUDES= $(JAVA_HOME)/include/$(OS)
++JDK_OS_INCLUDES= $(JAVA_HOME)/include/$(ECLIPSE_OS)
+ 
+ CC=gcc
+ CPPFLAGS = -I. -I$(JDK_INCLUDES) -I$(JDK_OS_INCLUDES)
+ CFLAGS +=-fpic -D_REENTRANT -D_GNU_SOURCE
+ 
+-INSTALL_DIR = ../../org.eclipse.cdt.core.linux.$(ARCH)/os/$(OS)/$(ARCH)
++INSTALL_DIR = ../../../../org.eclipse.cdt.core.freebsd.$(ECLIPSE_ARCH)_${PORTVERSION}/os/$(ECLIPSE_OS)/$(ECLIPSE_ARCH)
+ 
+ LIB_NAME_SPAWNER = libspawner.so
+ LIB_NAME_FULL_SPAWNER = $(INSTALL_DIR)/libspawner.so
