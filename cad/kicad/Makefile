@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2005-12-22
+DISTVERSION=		2006-01-03
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -89,7 +89,9 @@ pre-configure:
 pre-install:
 	${MKDIR} ${PREFIX}/${INSTDIR}/${OPSYS}/plugins
 	(cd ${PREFIX} && ${TAR} -xzopf ${_DISTDIR}/${PORTNAME}-${DISTVERSION}.tgz)
-	${RM} -rf ${PREFIX}/${INSTDIR}/linux ${PREFIX}/${INSTDIR}/wings3d
+	${RM} -rf ${PREFIX}/${INSTDIR}/linux-non_unicode		\
+		${PREFIX}/${INSTDIR}/linux ${PREFIX}/${INSTDIR}/wings3d	\
+		${PREFIX}/${INSTDIR}/LINUX.README
 	${RMDIR} ${PREFIX}/${INSTDIR}/modules/packages3d/conn_HExx
 
 post-install:
