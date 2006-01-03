@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Curses
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for terminal screen handling and optimization
 
 PERL_CONFIGURE=	yes
