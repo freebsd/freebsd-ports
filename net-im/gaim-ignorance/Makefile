@@ -19,6 +19,8 @@ COMMENT=	Adds filtering capabilities to gaim
 BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
+DEPRECATED=	The author has taken down his site and has ceased developing this program
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
