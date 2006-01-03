@@ -26,6 +26,7 @@
 %%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
+%%INSTDIR%%/demos/interf_u/interf_u.tmp
 %%INSTDIR%%/demos/microwave/microwave.brd
 %%INSTDIR%%/demos/microwave/microwave.pro
 %%INSTDIR%%/demos/microwave/shape1.txt
@@ -33,12 +34,12 @@
 %%INSTDIR%%/demos/pspice/pspice.cir
 %%INSTDIR%%/demos/pspice/pspice.pro
 %%INSTDIR%%/demos/pspice/pspice.sch
-%%INSTDIR%%/demos/sonde xilinx/sonde.brd
-%%INSTDIR%%/demos/sonde xilinx/sonde.cache.lib
-%%INSTDIR%%/demos/sonde xilinx/sonde.cmp
-%%INSTDIR%%/demos/sonde xilinx/sonde.net
-%%INSTDIR%%/demos/sonde xilinx/sonde.pro
-%%INSTDIR%%/demos/sonde xilinx/sonde.sch
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.brd
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.cache.lib
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.cmp
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.net
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.pro
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.sch
 %%INSTDIR%%/demos/test_xil_95108/carte_test.brd
 %%INSTDIR%%/demos/test_xil_95108/carte_test.cache.lib
 %%INSTDIR%%/demos/test_xil_95108/carte_test.cmp
