@@ -9,8 +9,7 @@ PORTNAME=	xzgv
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://xzgv.browser.org/ \
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 
 MAINTAINER=	nosuzuki@postcard.st
