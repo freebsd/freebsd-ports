@@ -23,7 +23,7 @@ OPTIONS=	PGSQL "With pgsql" On \
 
 NO_BUILD=	yes
 USE_APACHE=	yes
-USE_PHP=	pgsql mysql session
+USE_PHP=	session
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -31,10 +31,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
+USE_PHP+=	pgsql
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_MYSQL)
+USE_PHP+=	mysql
 USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
