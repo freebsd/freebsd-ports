@@ -51,9 +51,15 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>apache_fp</name>
 	<name>apache+ipv6</name>
-	<name>ru-apache</name>
-	<name>ru-apache+mod_ssl</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>ru-apache</name>
+	<range><lt>1.3.34+30.22_1</lt></range>
+      </package>
+      <package>
+	<name>ru-apache+mod_ssl</name>
+	<range><lt>1.3.34+30.22+2.8.25_1</lt></range>
       </package>
       <package>
 	<name>apache+ssl</name>
@@ -98,6 +104,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-11-01</discovery>
       <entry>2006-01-01</entry>
+      <modified>2006-01-03</modified>
     </dates>
   </vuln>
 
