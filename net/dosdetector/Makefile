@@ -7,18 +7,18 @@
 # The port will be at version 0.0 (based on dated CVS snapshots)
 # until the release of DosDetector 0.1
 
-PORTNAME=		dosdetector
-PORTVERSION=		20060101
-CATEGORIES=		net
-MASTER_SITES=		http://darkzone.ma.cx/resources/unix/dosdetector/
+PORTNAME=	dosdetector
+PORTVERSION=	20060103
+CATEGORIES=	net
+MASTER_SITES=	http://darkzone.ma.cx/resources/unix/dosdetector/
 
-MAINTAINER=		msciciel@darkzone.ma.cx
-COMMENT=		Detect suspicious network traffic
+MAINTAINER=	msciciel@darkzone.ma.cx
+COMMENT=	Detect suspicious network traffic
 
-HAS_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoheader:259
+HAS_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoheader:259
 
-PLIST_FILES=		bin/dosdetector
-MAN1=			dosdetector.1
+PLIST_FILES=	bin/dosdetector
+MAN1=		dosdetector.1
 
 .include <bsd.port.mk>
