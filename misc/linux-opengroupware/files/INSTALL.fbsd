@@ -144,8 +144,15 @@ INSTALLATION WALKTHROUGH:
 
 6)	Start OpenGroupware:
 
+	Copy /usr/local/etc.rc.d/ogo.sh.sample to ogo.sh and zidestore.sh.sample too.
 
-		`/usr/local/etc/rc.d/ogo.sh.sample start`
+	Now edit both these files and find:
+	"./WOApps/ZideStore.woa/ix86/linux-gnu/gnu-fd-nil/ZideStore -WOHttpAllowHost '(localhost, you.yourdomain.org)'>>${LOG} 2>&1 &" in it.
+	Next, you have to modifie you.yourdomain.org to reflect your configuration.
+
+	After you have modified these files, just do a
+		`/usr/local/etc/rc.d/ogo.sh. start`
+		`/usr/local/etc/rc.d/zidetore.sh. start`
 
 7)	There are some other startscripts in /usr/local/etc/rc.d too:
 
