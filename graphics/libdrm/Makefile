@@ -7,7 +7,7 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	2.0
-CATEGORIES=	x11
+CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
 MAINTAINER=	x11@FreeBSD.org
