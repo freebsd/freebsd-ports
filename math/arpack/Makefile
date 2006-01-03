@@ -22,12 +22,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c \
-		${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
+		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
 WRKSRC=		${WRKDIR}/ARPACK
 ALL_TARGET=	lib
 
-BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
+BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
 
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
