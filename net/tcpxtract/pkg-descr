@@ -1,0 +1,6 @@
+tcpxtract is a tool for extracting files from network traffic based on file
+signatures. It supports 26 file formats and you can add new format by editing
+its config file. You can extract files from live network or pcap format capture
+file.
+
+WWW: http://tcpxtract.sourceforge.net/

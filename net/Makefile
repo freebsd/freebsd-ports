@@ -757,6 +757,7 @@
     SUBDIR += tcptraceroute
     SUBDIR += tcpview
     SUBDIR += tcpwatch
+    SUBDIR += tcpxtract
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
