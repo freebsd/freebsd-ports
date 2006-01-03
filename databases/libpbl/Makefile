@@ -16,7 +16,7 @@ COMMENT=	Peter Graf's Program Base Library
 
 ALL_TARGET=	libpbl.a
 MAKEFILE=	makefile
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 PLIST_FILES=	lib/libpbl.a include/pbl.h
 
 .ifndef(NOPORTDOCS)
