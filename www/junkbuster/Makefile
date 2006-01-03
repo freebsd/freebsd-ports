@@ -12,7 +12,6 @@ MASTER_SITES=	http://f2.org/download/ \
 		http://www.junkbusters.com/ht/en/
 DISTNAME=	ijb-zlib-10
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	An HTTP proxy server that eliminates ads
