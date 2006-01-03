@@ -1,0 +1,3 @@
+Userspace interface to kernel DRM (Direct Rendering Module) services.
+
+WWW: http://dri.freedesktop.org

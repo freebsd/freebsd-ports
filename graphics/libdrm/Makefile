@@ -1,0 +1,25 @@
+# New ports collection makefile for:	libdrm
+# Date created:				29 Dec 2005
+# Whom:					lesi@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libdrm
+PORTVERSION=	2.0
+CATEGORIES=	x11
+MASTER_SITES=	http://dri.freedesktop.org/libdrm/
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	Userspace interface to kernel Direct Rendering Module services
+
+ONLY_FOR_ARCHS=	alpha amd64 i386
+USE_AUTOTOOLS=	libtool:15
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+
+pre-patch:
+	${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
+	    ${WRKSRC}/configure
+
+.include <bsd.port.mk>
