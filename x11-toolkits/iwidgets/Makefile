@@ -12,14 +12,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	iwidgets${PORTVERSION}
 DISTFILES=	itcl3.2.1_src.tgz ${PORTNAME}${PORTVERSION}.tar.gz
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Iwidgets - [incr Widgets]
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		itk32.1:${PORTSDIR}/x11-toolkits/itk
+LIB_DEPENDS=	itk32.1:${PORTSDIR}/x11-toolkits/itk
 
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes
