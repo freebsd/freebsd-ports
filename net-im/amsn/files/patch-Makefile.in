@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Dec 22 04:19:50 2005
-+++ Makefile.in	Sat Dec 31 12:18:14 2005
+--- Makefile.in.orig	Thu Dec 22 10:06:24 2005
++++ Makefile.in	Tue Jan  3 08:41:04 2006
 @@ -110,6 +110,11 @@
  FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
  endif
  
 +ifeq ($(FOUND_OS),bsd)
-+FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl
++FILES_TO_INSTALL += utils/TkCximage/TkCximage.so utils/TkCximage/pkgIndex.tcl utils/linux/traydock/libtray.so utils/linux/traydock/pkgIndex.tcl utils/webcamsn/pkgIndex.tcl utils/webcamsn/webcamsn.so
 +FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
 +endif
 +

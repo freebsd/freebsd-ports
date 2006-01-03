@@ -604,6 +604,8 @@ share/amsn/utils/snit0.97/license.txt
 share/amsn/utils/snit0.97/pkgIndex.tcl
 share/amsn/utils/snit0.97/snit-83.tcl
 share/amsn/utils/snit0.97/snit.tcl
+share/amsn/utils/webcamsn/pkgIndex.tcl
+share/amsn/utils/webcamsn/webcamsn.so
 share/applications/amsn.desktop
 share/icons/hicolor/128x128/aMSN_128.png
 share/icons/hicolor/128x128/tux-128x128.png
@@ -668,5 +670,6 @@ share/icons/hicolor/96x96/tux-96x96.png
 @dirrm share/amsn/utils/scalable-bg
 @dirrm share/amsn/utils/sha1
 @dirrm share/amsn/utils/snit0.97
+@dirrm share/amsn/utils/webcamsn
 @dirrm share/amsn/utils
 @dirrm share/amsn
