@@ -10345,6 +10345,7 @@ py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
 py-dateutil	ports/devel/py-dateutil
 py-dbus		ports/devel/py-dbus
+py-dbutils	ports/databases/py-dbutils
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
 py-django	ports/www/py-django
