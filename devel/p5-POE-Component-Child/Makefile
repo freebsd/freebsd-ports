@@ -1,27 +1,34 @@
 # New ports collection makefile for:	POE-Component-Child
 # Date created:	   31 January 2004
-# Whom:		   Zach Thompson <lin-chi@lastamericanempire.com>
+# Whom:		   Zach Thompson <hideo@lastamericanempire.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	POE-Component-Child
-PORTVERSION=	1.33
+PORTVERSION=	1.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lin-chi@lastamericanempire.com
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	POE child management
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Child.3
 
-post-install:
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /^use warnings/o' \
+		${WRKSRC}/Child.pm
+.endif
+
+.include <bsd.port.post.mk>
