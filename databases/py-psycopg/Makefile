@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psycopg
-PORTVERSION=	1.1.18
+PORTVERSION=	1.1.21
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/ \
 		http://initd.org/pub/software/psycopg/PSYCOPG-1-1/
