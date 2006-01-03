@@ -1,0 +1,19 @@
+--- parser/parser.c	Fri Sep 12 19:38:11 2003
++++ parser/parser.c	Tue Jan  3 15:09:30 2006
+@@ -29,6 +29,7 @@
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <inttypes.h>
+ 
+ #include "parser.h"
+ 
+@@ -65,7 +66,7 @@
+ 
+ 	if (!parser.state) {
+ 		if (parser.flags & DUMP_TSTAMP)
+-			printf("%8lu.%06lu ", f->ts.tv_sec, f->ts.tv_usec);
++			printf("%8jd.%06lu ", (intmax_t)f->ts.tv_sec, f->ts.tv_usec);
+ 		printf("%c ", (f->in ? '>' : '<'));
+ 		parser.state = 1;
+ 	} else
