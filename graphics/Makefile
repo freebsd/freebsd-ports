@@ -289,6 +289,7 @@
     SUBDIR += libaux
     SUBDIR += libcaca
     SUBDIR += libdjvu++
+    SUBDIR += libdrm
     SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk

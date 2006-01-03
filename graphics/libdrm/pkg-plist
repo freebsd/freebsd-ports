@@ -1,0 +1,18 @@
+include/drm/drm.h
+include/drm/drm_sarea.h
+include/drm/i915_drm.h
+include/drm/mach64_drm.h
+include/drm/mga_drm.h
+include/drm/r128_drm.h
+include/drm/r300_reg.h
+include/drm/radeon_drm.h
+include/drm/savage_drm.h
+include/drm/sis_drm.h
+include/drm/via_3d_reg.h
+include/drm/via_drm.h
+include/xf86drm.h
+lib/libdrm.a
+lib/libdrm.so
+lib/libdrm.so.2
+libdata/pkgconfig/libdrm.pc
+@dirrm include/drm
