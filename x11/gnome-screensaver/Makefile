@@ -38,6 +38,12 @@ PLIST=	${WRKDIR}/pkg-plist
 
 XSCREENSAVER_DIR=	${X11BASE}/share/xscreensaver/config
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/configure
@@ -60,4 +66,4 @@ post-install:
 			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
