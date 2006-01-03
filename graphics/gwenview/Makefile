@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	An image viewer and browser for the KDE environment
 
-LIB_DEPENDS=	kipi.0:${PORTSDIR}/graphics/libkipi
+LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

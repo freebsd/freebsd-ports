@@ -16,7 +16,7 @@ MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
 LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
-		kipi.0:${PORTSDIR}/graphics/libkipi \
+		kipi.1:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
