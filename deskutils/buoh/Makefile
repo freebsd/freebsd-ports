@@ -33,6 +33,12 @@ CFLAGS+=		-g
 STRIP=
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not build on 4.X"
+.endif
+
 pre-everything::
 .if !defined(WITH_DEBUG)
 	@${ECHO_MSG} "You may specify the following on the command line:"
@@ -54,4 +60,4 @@ post-install:
 	@${LN} -sf ${DATADIR}/pixmaps/buoh64x64.png \
 		${X11BASE}/share/pixmaps/buoh64x64.png
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
