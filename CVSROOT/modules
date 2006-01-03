@@ -5560,6 +5560,7 @@ libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
 libparsifal	ports/textproc/libparsifal
 libpathan	ports/textproc/libpathan
+libpbl		ports/databases/libpbl
 libpcapnav	ports/net/libpcapnav
 libpcd		ports/graphics/libpcd
 libpci		ports/devel/libpci
