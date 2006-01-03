@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	Crypt-Blowfish
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	patrick@mindstep.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the Blowfish encryption alogorithm
+
+BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Blowfish.3
-
 
 .include <bsd.port.mk>
