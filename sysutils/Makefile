@@ -557,6 +557,7 @@
     SUBDIR += vii
     SUBDIR += virtualmin
     SUBDIR += vobcopy
+    SUBDIR += vstrip
     SUBDIR += vttest
     SUBDIR += wait_on
     SUBDIR += watchdog
