@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdwizard
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	udrecsuite
@@ -32,6 +32,13 @@ RUN_DEPENDS=	\
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+
+MANLANG=	de.ISO8859-1
+MAN1=		chaptercheck.1 \
+		dvdcpics.1 \
+		dvdtguess.1 \
+		dvdwizard.1
+MAN5=		dvdwizard.conf.5
 
 SCRIPT_FILES=	\
 		chaptercheck \
@@ -84,6 +91,13 @@ do-install:
 # emulation
 	@${INSTALL_SCRIPT} ${FILESDIR}/dvdwizard_seq \
 		${PREFIX}/bin
+# man
+.for file in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/../man/${file} ${MAN1PREFIX}/man/${MANLANG}/man1
+.endfor
+.for file in ${MAN5}
+	@${INSTALL_MAN} ${WRKSRC}/../man/${file} ${MAN1PREFIX}/man/${MANLANG}/man5
+.endfor
 # docs
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
