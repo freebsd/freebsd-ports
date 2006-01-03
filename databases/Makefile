@@ -90,6 +90,7 @@
     SUBDIR += libiodbc
     SUBDIR += libmemcache
     SUBDIR += libodbc++
+    SUBDIR += libpbl
     SUBDIR += libsdb
     SUBDIR += libudbc
     SUBDIR += linux-oracle-instantclient-basic
