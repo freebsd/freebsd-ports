@@ -339,6 +339,7 @@
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
+    SUBDIR += py-dbutils
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
     SUBDIR += py-memcached
