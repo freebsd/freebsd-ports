@@ -7,6 +7,7 @@
     SUBDIR += PDL
     SUBDIR += R
     SUBDIR += aamath
+    SUBDIR += abakus
     SUBDIR += abs
     SUBDIR += add
     SUBDIR += algae
