@@ -1,0 +1,11 @@
+--- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/fragment.xml.orig	Thu Nov  3 05:32:08 2005
++++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/fragment.xml	Sat Dec  3 00:06:43 2005
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <?eclipse version="3.0"?>
+ <fragment
+-   id="org.eclipse.cdt.source.linux.gtk.x86"
++   id="org.eclipse.cdt.source.freebsd.gtk.x86"
+    name="%pluginName"
+    version="3.0.1"
+    provider-name="Eclipse.org"

@@ -1,0 +1,43 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/java/eclipse-cdt/scripts/pre-patch,v 1.1 2006-01-03 03:28:05 edwin Exp $
+
+copy_dir()
+{
+	srcdir="$1"
+	dstdir="$2"
+
+	rm -rf "$dstdir"
+	cp -r "$srcdir" "$dstdir" || exit 1
+
+	if [ -d "$dstdir" ]
+	then
+		find "$dstdir" -name \*.so -delete
+	fi 
+}
+
+prepare_files()
+{
+	# Copy the files and rename/change them appropriately
+	for src in $COPY_LIST
+	do
+		dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g; s/x86_64/amd64/g'`
+		echo Copying $src into $dst
+		if [ -d ${WRKSRC}/$src ]
+		then
+			copy_dir ${WRKSRC}/$src ${WRKSRC}/$dst
+		fi
+	done
+	find ${WRKSRC} -type d -name linux | xargs rm -r
+}
+
+COPY_LIST="
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1/os/linux
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1/os/linux/x86
+eclipse/plugins/org.eclipse.cdt.core.linux_3.0.1
+eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.1
+eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.1/src/org.eclipse.cdt.core.linux_3.0.1
+"
+
+prepare_files
+exit 0
