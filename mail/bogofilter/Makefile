@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	Fast, teachable, learning spam detector
 
+# cannot switch to USE_BDB here, as we want slave ports
+# to override this easily
 LIB_DEPENDS?=	db-4.3:${PORTSDIR}/databases/db43
 
 OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
