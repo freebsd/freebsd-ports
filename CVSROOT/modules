@@ -12188,6 +12188,7 @@ tcptraceroute	ports/net/tcptraceroute
 tcptrack	ports/net-mgmt/tcptrack
 tcpview		ports/net/tcpview
 tcpwatch	ports/net/tcpwatch
+tcpxtract	ports/net/tcpxtract
 tcsh-bofh	ports/shells/tcsh-bofh
 tcshrc		ports/shells/tcshrc
 tct		ports/sysutils/tct
