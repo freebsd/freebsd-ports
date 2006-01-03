@@ -27,6 +27,7 @@
     SUBDIR += gaim-latex
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader
+    SUBDIR += gaim-slashexec
     SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gicq
