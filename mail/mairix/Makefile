@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	mairix
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/mairix/
 
