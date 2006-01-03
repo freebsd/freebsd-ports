@@ -175,8 +175,8 @@
 # WITH_DVDREAD=yes
 #  Enable Regular DVD support (non-menu)
 #
-# WITH_MOZILLA=	[mozilla|mozilla-devel|firefox]
-# WITH_MOZILLA_PLUGIN= yes
+# WITH_GECKO= [firefox|mozilla|seamonkey|nvu]
+# WITH_VLC_MOZILLA_PLUGIN= yes
 #  Enable A mozilla plugin for VLC
 #  See http://www.videolan.org/doc/vlc-user-guide/en/ch07.html#id2529837
 #  for more info on using this plugin.
@@ -223,7 +223,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.4a
 PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
@@ -279,31 +279,14 @@ MAN1=		vlc.1 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-### Remove comment when gnome 2.12 hits the streets.
-#WITH_MOZILLA?=	firefox
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/bin/firefox-config" \
-		XPIDL="${X11BASE}/lib/firefox/xpidl"\
-		XPIDL_INCL="-I${X11BASE}/share/idl/firefox"
-.else
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
-
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${X11BASE}/lib/mozilla${HEADERS_SUFX}/mozilla-config" \
-		XPIDL="${X11BASE}/lib/mozilla${HEADERS_SUFX}/xpidl" \
-		XPIDL_INCL="-I${X11BASE}/share/idl/mozilla${HEADERS_SUFX}"
-.endif
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
+USE_GECKO=      firefox mozilla seamonkey nvu
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
+		XPIDL="${XPIDL}" \
+		XPIDL_INCL="${XPIDL_INCL}"
 MOZILLA_SUFFIX=-mozilla
 CONFIGURE_ARGS+=--enable-mozilla
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="mozilla-devel"
-HEADERS_SUFX=	-devel
-.else
-HEADERS_SUFX=
-.endif
 .endif
 
 .if defined(WITH_WXGTK_VER) && ${WITH_WXGTK_VER}=="2.4"
@@ -321,13 +304,6 @@ BROKEN=	"Does not compile with perl ${PERL_VERSION}"
 
 .if ${ARCH}=="amd64"
 WITH_WXGTK_VER=	2.4
-.endif
-
-.if ${OSVERSION} < 500000 && defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
-.if ${WITH_MOZILLA}=="mozilla-devel"
-USE_GCC=	3.4
-WITHOUT_LIVEMEDIA=	yes
-.endif
 .endif
 
 # compatible knobs.
@@ -851,7 +827,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
@@ -872,7 +848,7 @@ do-install:
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
 	cd ${FAKEDIR}/share && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${SHAREOWN} ${PREFIX}/share
-.if defined(WITH_MOZILLA_PLUGIN) && !defined(WITHOUT_MOZILLA_PLUGIN)
+.if defined(WITH_VLC_MOZILLA_PLUGIN) && !defined(WITHOUT_VLC_MOZILLA_PLUGIN)
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_DATA} ${FAKEDIR}/mozilla/* ${PREFIX}/lib/browser_plugins
 .endif
