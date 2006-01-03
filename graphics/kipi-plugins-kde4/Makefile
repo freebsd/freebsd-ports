@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.0.b.2
+PORTVERSION=	0.1.0.r1
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./-beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	KDE Image Plugin Interface plugins
 
 LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
-		kipi.0:${PORTSDIR}/graphics/libkipi \
+		kipi.1:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
@@ -27,9 +27,11 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		CALENDAR "create calendars" on \
 		CDARCHIVING "create album CDs" on \
 		FINDIMAGES "find duplicate images in albums" on \
+		FLICKREXPORT "export images to flickr account" on \
 		GALLERYEXPORT "album to remote Gallery server export" on \
 		IMAGESGALLERY "album to HTML gallery export" on \
 		JPEGLOSSLESS "batch processing without losing meta info" on \
+		KAMERAKLIENT "GPhoto2 interface (import from cameras)" on \
 		MPEGENCODER "tool to build a video from images" on \
 		PRINTWIZARD "a print wizard" on \
 		RAWCONVERTER "convert RAW images from digital cameras" on \
@@ -87,6 +89,13 @@ SUBDIRS+=	findimages
 PLIST_SUB+=	FINDIMAGES:="@comment "
 .endif
 
+.if !defined(WITHOUT_FLICKREXPORT)
+PLIST_SUB+=	FLICKREXPORT:=""
+SUBDIRS+=	flickrexport
+.else
+PLIST_SUB+=	FLICKREXPORT:="@comment "
+.endif
+
 .if !defined(WITHOUT_GALLERYEXPORT)
 PLIST_SUB+=	GALLERYEXPORT:=""
 SUBDIRS+=	galleryexport
@@ -106,6 +115,14 @@ PLIST_SUB+=	JPEGLOSSLESS:=""
 SUBDIRS+=	jpeglossless
 .else
 PLIST_SUB+=	JPEGLOSSLESS:="@comment "
+.endif
+
+.if !defined(WITHOUT_KAMERAKLIENT)
+PLIST_SUB+=	KAMERAKLIENT:=""
+SUBDIRS+=	kameraklient
+LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+.else
+PLIST_SUB+=	KAMERAKLIENT:="@comment "
 .endif
 
 .if !defined(WITHOUT_MPEGENCODER)
