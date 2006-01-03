@@ -7,6 +7,7 @@
 
 PORTNAME=	ipa
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
