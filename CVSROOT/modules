@@ -4771,6 +4771,7 @@ jzip.org	ports/archivers/jzip.org
 jzlib		ports/archivers/jzlib
 k3b		ports/sysutils/k3b
 k3b-i18n	ports/misc/k3b-i18n
+k3bmonkeyaudioplugin	ports/audio/k3bmonkeyaudioplugin
 k3d		ports/graphics/k3d
 k9copy		ports/multimedia/k9copy
 kaddressbook-plugins	ports/misc/kaddressbook-plugins
