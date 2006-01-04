@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	multimedia audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
-MAINTAINER=	bh@izb.knu.ac.kr
+MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
@@ -60,10 +60,11 @@ do-build:
 .endif
 
 pre-install:
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	@${MKDIR} ${PREFIX}/share/applications
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/plugins
-	@${INSTALL_DATA} ${FILESDIR}/qlscrobbler.py ${PREFIX}/lib/${PORTNAME}/plugins
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}/plugins
+	@${INSTALL_DATA} ${FILESDIR}/qlscrobbler.py ${PREFIX}/share/${PORTNAME}/plugins
 
 .include <bsd.port.post.mk>

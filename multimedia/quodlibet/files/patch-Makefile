@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Nov 11 16:06:26 2005
-+++ Makefile	Wed Dec 28 01:50:43 2005
-@@ -10,7 +10,6 @@
+--- Makefile.orig	2005-12-13 19:46:30.000000000 -0700
++++ Makefile	2006-01-04 03:20:58.787760884 -0700
+@@ -13,7 +13,6 @@
  	@./check.py
  
  make-install-dirs:
@@ -8,17 +8,26 @@
  	mkdir -p $(DESTDIR)$(PREFIX)/bin
  	mkdir -p $(DESTDIR)$(PREFIX)/$(TO)
  
-@@ -27,10 +26,10 @@
+@@ -24,7 +23,7 @@
+ # installing the SVN version will have intltool and so it will build fine.
+ install: make-install-dirs install-dirs install-programs
+ 	install -m 644 $(MODULES) rhythmbox-*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	-for E in $(EXTENSIONS); do (test -e $$E && install -m 755 -D $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
++	-for E in $(EXTENSIONS); do (test -e $$E && install -m 755 $$E $(DESTDIR)$(PREFIX)/$(TODEP)/$$E); done
+ 	-cd po && make install-po DESTDIR=$(DESTDIR)
  
- install-%: make-install-dirs
+ install-dirs: $(addprefix dir-install-, $(MODULE_DIRS))
+@@ -37,10 +36,10 @@
+ 
+ app-install-%: make-install-dirs %.desktop
  	install -m 755 $*.py $(DESTDIR)$(PREFIX)/$(TO)
 -	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/share/man/man1/$*.1
 -	install -D -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
 +	install -m 644 $*.1 $(DESTDIR)$(PREFIX)/man/man1/$*.1
 +	install -m 644 $*.png $(DESTDIR)$(PREFIX)/share/pixmaps/$*.png
- 	install -m 644 $*.png $(DESTDIR)$(PREFIX)/$(TO)
--	install -D -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
-+	install -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
+ 	install -m 644 $*.svg $*.png $(DESTDIR)$(PREFIX)/$(TO)
+-	-install -D -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
++	-install -m 644 $*.desktop $(DESTDIR)$(PREFIX)/share/applications/$*.desktop
  	ln -sf ../$(TO)/$*.py $(DESTDIR)$(PREFIX)/bin/$*
  
  clean:
