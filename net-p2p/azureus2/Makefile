@@ -23,7 +23,7 @@ BUILD_DEPENDS=	\
 		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
-		${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31
 
 ONLY_FOR_ARCHS=	i386
 
