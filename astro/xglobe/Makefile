@@ -7,7 +7,7 @@
 
 PORTNAME=	xglobe
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
 

@@ -1,5 +1,14 @@
---- renderer.cpp.orig	Mon Dec  6 17:13:35 1999
-+++ renderer.cpp	Sun Jan 26 09:32:22 2003
+--- renderer.cpp.orig	Tue Dec  7 03:13:35 1999
++++ renderer.cpp	Wed Jan  4 23:17:40 2006
+@@ -1434,7 +1434,7 @@
+     
+     for(wx=0 ; wx<visiblerect.width(); wx++)
+     {
+-      switch(*src++)
++      switch((*src++)&0x00FFFFFF)
+       {
+         case 0x00000000:
+           *dest++ = 0;
 @@ -1483,8 +1483,8 @@
    labelstring.sprintf("%s, %s %d. %d, %d:%02d %s\n"
                        "View pos %2.2f° %c %2.2f° %c\n"
