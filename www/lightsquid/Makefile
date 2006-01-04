@@ -7,6 +7,7 @@
 
 PORTNAME=	lightsquid
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +24,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-SUB_FILES=	pkg-message
-
 DSTDIR?=	${PREFIX}/www/${PORTNAME}
+SUB_LIST=	DSTDIR=${DSTDIR}
+SUB_FILES=	pkg-message
 
 do-patch:
 	@${MV} ${WRKSRC}/lightsquid.cfg ${WRKSRC}/lightsquid.cfg.dist
