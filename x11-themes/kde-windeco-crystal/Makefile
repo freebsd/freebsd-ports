@@ -5,21 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	crystal
-PORTVERSION=	0.9.6
+PORTNAME=	kde-windeco-crystal
+PORTVERSION=	0.9.7
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.saschahlusiak.de/linux/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	crystal-${PORTVERSION}
 
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Transparent KDE window decoration
-
-BROKEN=		Size mismatch
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
