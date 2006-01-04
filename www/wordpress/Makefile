@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.5.2
+PORTVERSION=	2.0.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
@@ -26,6 +26,11 @@ PLIST_SUB+=	WORDPRESS=${WORDPRESS}
 PLIST=		${WRKDIR}/pkg-plist
 
 PORTDOCS=	license.txt readme.html
+
+pre-everything::
+	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
+	@${ECHO_CMD} ""
+	@sleep 1
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
