@@ -1,0 +1,7 @@
+Note: Analog includes an optional form and perl script to request
+analyses via a web interface. The form and script both require
+customization before use. If you would like to use them, first copy
+%%EXAMPLESDIR%%/etc/anlgform.pl to $$CGI-BIN, and then edit
+$$HTDOCS/anlgform.html and $$CGI-BIN/anlgform.pl for your local
+configuration. Both files are extensively commented with instructions
+for customization.

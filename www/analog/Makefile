@@ -7,7 +7,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	6.0
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
@@ -35,6 +35,8 @@ PLIST_SUB=	IMGDIR=${LIMGDIR}
 
 MAN1=		analog.1
 ALL_TARGET=	analog
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +55,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${EXAMPLESDIR}
 	${MKDIR} ${EXAMPLESDIR}/css
 	${INSTALL_DATA} ${WRKSRC}/examples/css/Readme.txt ${EXAMPLESDIR}/css
 	${INSTALL_DATA} ${WRKSRC}/examples/css/default.css ${EXAMPLESDIR}/css
@@ -60,5 +64,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/css/jreeves/* ${EXAMPLESDIR}/css/jreeves
 .endif
 	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
