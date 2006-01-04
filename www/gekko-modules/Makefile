@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gekko-modules
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
@@ -31,10 +31,12 @@ OPTIONS=	BACKUP	"Backup module"	on \
 		DOWNLOADS	"Downlodas module"	on \
 		FILES	"Files module"	on \
 		FORUMS	"Forums module"	on \
+		FRIENDS	"Friends module"	on \
 		GALLERY	"Gallery module"	on \
 		NEWS	"News module"	on \
 		PAGES	"Pages module"	on \
 		POLLS	"Polls module"	on \
+		PHRASES	"Phrases module"	on \
 		STATISTICS	"Statistics module"	on \
 		TAGBOARD	"Tagboard module"	on
 
@@ -97,15 +99,23 @@ PLIST_SUB+=	FILES="@comment "
 .endif
 
 .if !defined(WITHOUT_FORUMS)
-DISTFILES+=	forums-0.5.8.module.tgz
+DISTFILES+=	forums-0.5.9.module.tgz
 PLIST_SUB+=	FORUMS=""
 FLAG_MODULE=	true
 .else
 PLIST_SUB+=	FORUMS="@comment "
 .endif
 
+.if !defined(WITHOUT_FRIENDS)
+DISTFILES+=	friends-0.1.module.tgz
+PLIST_SUB+=	FRIENDS=""
+FLAG_MODULE=	true
+.else
+PLIST_SUB+=	FRIENDS="@comment "
+.endif
+
 .if !defined(WITHOUT_GALLERY)
-DISTFILES+=	gallery-0.5.7.module.tgz
+DISTFILES+=	gallery-0.5.8.module.tgz
 PLIST_SUB+=	GALLERY=""
 FLAG_MODULE=	true
 .else
@@ -129,11 +139,19 @@ PLIST_SUB+=	PAGES="@comment "
 .endif
 
 .if !defined(WITHOUT_POLLS)
-DISTFILES+=	polls-0.5.6.module.tgz
+DISTFILES+=	polls-0.5.7.module.tgz
 PLIST_SUB+=	POLLS=""
 FLAG_MODULE=	true
 .else
 PLIST_SUB+=	POLLS="@comment "
+.endif
+
+.if !defined(WITHOUT_PHRASES)
+DISTFILES+=	phrases-0.1.module.tgz
+PLIST_SUB+=	PHRASES=""
+FLAG_MODULE=	true
+.else
+PLIST_SUB+=	PHRASES="@comment "
 .endif
 
 .if !defined(WITHOUT_STATISTICS)
