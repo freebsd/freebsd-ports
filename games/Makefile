@@ -282,6 +282,7 @@
     SUBDIR += hlserver-wizwars
     SUBDIR += hlstats
     SUBDIR += hohlin
+    SUBDIR += holotz-castle
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += ifm
