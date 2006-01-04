@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	darts
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A C++ template library that implements Double-Array
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=   --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 EXAMPLES=	darts.cpp mkdarts.cpp
 DOCS=		AUTHORS ChangeLog README doc
