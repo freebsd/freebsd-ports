@@ -44,6 +44,10 @@ server.errorlog             = "/var/log/lighttpd.error.log"
 server.indexfiles           = ( "index.php", "index.html",
                                 "index.htm", "default.htm" )
 
+# set the event-handler (read the performance section in the manual)
+server.event-handler = "freebsd-kqueue" # needed on OS X
+
+
 # mimetype mapping
 mimetype.assign             = (
   ".pdf"          =>      "application/pdf",
@@ -264,4 +268,3 @@ server.groupname           = "www"
 #### setenv
 #setenv.add-request-header  = ( "TRAV_ENV" => "mysql://user@host/db" )
 #setenv.add-response-header = ( "X-Secret-Message" => "42" )
-
