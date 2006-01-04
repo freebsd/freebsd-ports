@@ -1,10 +1,10 @@
-Workrave is a RSI prevention tool. It knows 2 types of breaks and
-had a day limit. 
+Workrave is a program that assists in the recovery and prevention of
+Repetitive Strain Injury (RSI). The program frequently alerts you to
+take micro-pauses, rest breaks and restricts you to your daily limit.
+These can be customized and it stops the counter when you stop.
 
-The time of the breaks, the time between and the day limit are fully 
-customizable.
-
-When not typing or moving the mouse the counter stops.
-So it will only count the time you use the computer.
+The program can be run distributed on one or more PCs. All connected
+PCs share the same timing information. When you switch computers, you
+will still be asked to pause on time.
 
 WWW: http://www.workrave.org/
