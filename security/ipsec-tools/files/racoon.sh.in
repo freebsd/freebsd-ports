@@ -21,7 +21,7 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-[ -z "$racoon_enable" ] && racoon_enable="YES"	# Enable racoon
+[ -z "$racoon_enable" ] && racoon_enable="NO"	# Disable by default
 #racoon_program="${prefix}/sbin/racoon"		# Location of racoon
 #racoon_flags=""				# Flags to racoon program
 
