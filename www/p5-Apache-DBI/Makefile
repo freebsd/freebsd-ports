@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	Apache-DBI
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	www databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Apache
+MASTER_SITES=	http://people.apache.org/~pgollucci/CPAN/Apache-DBI/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	DBI persistent connection, authentication and authorization
 
 .if defined(WITH_MODPERL2)
