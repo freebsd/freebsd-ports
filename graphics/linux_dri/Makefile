@@ -25,7 +25,7 @@ USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
 USE_XLIB=	yes
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 MODULELIST=	gamma_dri.so i810_dri.so i830_dri.so mga_dri.so r128_dri.so \
 		r200_dri.so radeon_dri.so sis_dri.so tdfx_dri.so
