@@ -545,6 +545,7 @@ atris-sounds	ports/games/atris-sounds
 aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
+audacious	ports/multimedia/audacious
 audacity	ports/audio/audacity
 audit		ports/security/audit
 august		ports/www/august
