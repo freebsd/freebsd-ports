@@ -5,17 +5,37 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.1.4
-PORTEPOCH=	0
+PORTNAME=	rdiff-backup
+PORTVERSION=	1.1.5
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vd@datamax.bg
+COMMENT=	Local/remote mirroring+incremental backup
 
-MASTERDIR=	${.CURDIR}/../rdiff-backup
+LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 
 CONFLICTS=	rdiff-backup-[0-9]*
 
-MD5_FILE=	${.CURDIR}/distinfo
-PLIST=		${.CURDIR}/pkg-plist
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 
-.include "${MASTERDIR}/Makefile"
+MAN1=		rdiff-backup.1 rdiff-backup-statistics.1
+
+DOCFILES=	CHANGELOG README COPYING FAQ.html
+
+post-install:
+.for man in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${man} ${PREFIX}/man/man1
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
