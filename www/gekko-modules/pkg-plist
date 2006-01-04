@@ -43,10 +43,12 @@
 %%FILES%%%%GEKKODIR%%/media/icons/default/48/files/unknown.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/48/files.png
 %%FORUMS%%%%GEKKODIR%%/media/icons/default/48/forums.png
+%%FRIENDS%%%%GEKKODIR%%/media/icons/default/48/friends.png
 %%GALLERY%%%%GEKKODIR%%/media/icons/default/48/gallery.png
 %%NEWS%%%%GEKKODIR%%/media/icons/default/48/news.png
 %%PAGES%%%%GEKKODIR%%/media/icons/default/48/pages.png
 %%POLLS%%%%GEKKODIR%%/media/icons/default/48/polls.png
+%%PHRASES%%%%GEKKODIR%%/media/icons/default/48/phrases.png
 %%STATISTICS%%%%GEKKODIR%%/media/icons/default/48/statistics.png
 %%TAGBOARD%%%%GEKKODIR%%/media/icons/default/48/tagboard.png
 %%BACKUP%%%%GEKKODIR%%/media/icons/default/16/backup.png
@@ -97,10 +99,12 @@
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files/image.png
 %%FILES%%%%GEKKODIR%%/media/icons/default/16/files.png
 %%FORUMS%%%%GEKKODIR%%/media/icons/default/16/forums.png
+%%FRIENDS%%%%GEKKODIR%%/media/icons/default/16/friends.png
 %%GALLERY%%%%GEKKODIR%%/media/icons/default/16/gallery.png
 %%NEWS%%%%GEKKODIR%%/media/icons/default/16/news.png
 %%PAGES%%%%GEKKODIR%%/media/icons/default/16/pages.png
 %%POLLS%%%%GEKKODIR%%/media/icons/default/16/polls.png
+%%PHRASES%%%%GEKKODIR%%/media/icons/default/16/phrases.png
 %%STATISTICS%%%%GEKKODIR%%/media/icons/default/16/statistics.png
 %%TAGBOARD%%%%GEKKODIR%%/media/icons/default/16/tagboard.png
 %%BACKUP%%%%GEKKODIR%%/modules/backup/admin.inc.php
@@ -178,6 +182,14 @@
 %%FORUMS%%%%GEKKODIR%%/modules/forums/package.xml
 %%FORUMS%%%%GEKKODIR%%/modules/forums/module.inc.php
 %%FORUMS%%%%GEKKODIR%%/modules/forums/blocks/recent_posts.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/admin.inc.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/admin.panel.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/main.act.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/module.inc.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/package.xml
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/blocks/my_friends.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/lang/es/core.php
+%%FRIENDS%%%%GEKKODIR%%/modules/friends/lang/es/main.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.lib.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.act.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.inc.php
@@ -220,6 +232,14 @@
 %%POLLS%%%%GEKKODIR%%/modules/polls/main.lib.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/blocks/show.php
 %%POLLS%%%%GEKKODIR%%/modules/polls/module.inc.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/admin.inc.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/admin.panel.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/main.act.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/module.inc.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/package.xml
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/blocks/my_phrases.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/lang/es/core.php
+%%PHRASES%%%%GEKKODIR%%/modules/phrases/lang/es/main.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/admin.inc.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.lib.php
 %%STATISTICS%%%%GEKKODIR%%/modules/statistics/main.act.php
@@ -272,6 +292,8 @@
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/post.form.tpl
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/thread.tpl
 %%FORUMS%%%%GEKKODIR%%/templates/default/forums/summary.tpl
+%%FRIENDS%%%%GEKKODIR%%/templates/default/friends/index.admin.tpl
+%%FRIENDS%%%%GEKKODIR%%/templates/default/friends/friends.form.tpl
 %%GALLERY%%%%GEKKODIR%%/templates/default/gallery/gallery.form.tpl
 %%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.tpl
 %%GALLERY%%%%GEKKODIR%%/templates/default/gallery/index.admin.tpl
@@ -293,6 +315,8 @@
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/index.tpl
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/vote.form.tpl
 %%POLLS%%%%GEKKODIR%%/templates/default/polls/show.block.tpl
+%%PHRASES%%%%GEKKODIR%%/templates/default/phrases/index.admin.tpl
+%%PHRASES%%%%GEKKODIR%%/templates/default/phrases/phrases.form.tpl
 %%STATISTICS%%%%GEKKODIR%%/templates/default/statistics/index.admin.tpl
 %%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/index.admin.tpl
 %%TAGBOARD%%%%GEKKODIR%%/templates/default/tagboard/post.block.tpl
@@ -326,6 +350,10 @@
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/lang
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums/blocks
 %%FORUMS%%@dirrm %%GEKKODIR%%/modules/forums
+%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/blocks
+%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang/es
+%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang
+%%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/es
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/blocks
@@ -341,6 +369,10 @@
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/lang
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls/blocks
 %%POLLS%%@dirrm %%GEKKODIR%%/modules/polls
+%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/blocks
+%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/lang/es
+%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases/lang
+%%PHRASES%%@dirrm %%GEKKODIR%%/modules/phrases
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang/es
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/lang
 %%STATISTICS%%@dirrm %%GEKKODIR%%/modules/statistics/blocks
@@ -357,9 +389,11 @@
 %%DOWNLOADS%%@dirrm %%GEKKODIR%%/templates/default/downloads
 %%FILES%%@dirrm %%GEKKODIR%%/templates/default/files
 %%FORUMS%%@dirrm %%GEKKODIR%%/templates/default/forums
+%%FRIENDS%%@dirrm %%GEKKODIR%%/templates/default/friends
 %%GALLERY%%@dirrm %%GEKKODIR%%/templates/default/gallery
 %%NEWS%%@dirrm %%GEKKODIR%%/templates/default/news
 %%PAGES%%@dirrm %%GEKKODIR%%/templates/default/pages
 %%POLLS%%@dirrm %%GEKKODIR%%/templates/default/polls
+%%PHRASES%%@dirrm %%GEKKODIR%%/templates/default/phrases
 %%STATISTICS%%@dirrm %%GEKKODIR%%/templates/default/statistics
 %%TAGBOARD%%@dirrm %%GEKKODIR%%/templates/default/tagboard
