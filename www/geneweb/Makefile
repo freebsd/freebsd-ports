@@ -7,24 +7,24 @@
 
 PORTNAME=	geneweb
 PORTVERSION=	4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
+DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-1${DISTVERSIONSUFFIX}
 
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-BROKEN=		Does not build
-
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwu.1
 
 SUB_FILES+=	pkg-message
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${PREFIX}/share/geneweb
-	${INSTALL_SCRIPT} files/install.sh ${PREFIX}/share/geneweb
+	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/share/geneweb
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
