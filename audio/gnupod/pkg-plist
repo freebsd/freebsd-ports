@@ -8,11 +8,11 @@ bin/gnupod_otgsync.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
 bin/tunes2pod.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/FileMagic.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/FooBar.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/iTunesDB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/QTfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/XMLhelper.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FileMagic.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FooBar.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/iTunesDB.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/QTfile.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/XMLhelper.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/gnupodrc.example
 %%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
@@ -23,4 +23,4 @@ bin/tunes2pod.pl
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
 %%PORTDOCS%%%%DOCSDIR%%/ipod.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GNUpod
+@dirrm lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod
