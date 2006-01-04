@@ -234,6 +234,8 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%%%DOCSDIR%%/wasnew5.html
 %%PORTDOCS%%%%DOCSDIR%%/webworks.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/anlgform.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/anlgform.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/big.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigbyrep.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/css/Readme.txt
