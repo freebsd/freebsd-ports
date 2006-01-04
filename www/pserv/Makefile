@@ -38,7 +38,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
 	${MKDIR} ${PREFIX}/etc/pserv
 	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/pserv/mime.types
-	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/pserv/
+	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/pserv/pserv.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.post.mk>
