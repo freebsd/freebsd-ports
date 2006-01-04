@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/amule/
 
@@ -32,10 +31,8 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-wx-config=${WX_CONFIG} \
-		--with-wxbase-config=${WX_CONFIG} \
 		--with-curl-config=${CURL_CONFIG} \
 		--enable-embedded_crypto \
-		--enable-utf8-systray \
 		--enable-monolithic
 #		--with-gdlib-prefix=${LOCALBASE} \
 #		--with-libpng-prefix=${LOCALBASE}
@@ -45,8 +42,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 OPTIONS=	OPTIMIZE "Build with optimization" on \
 		ED2K "Compile aMule ed2k links handler" on \
-		AMULECMD "Compile aMule command line client (+GUI)" on \
-		AMULEWEBSRV "Compile aMule WebServer (+GUI)" on \
+		AMULECMD "Compile aMule command line client" on \
+		AMULEWEBSRV "Compile aMule WebServer" on \
 		CAS "Compile C aMule Statistics (+GUI)" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off
@@ -76,18 +73,18 @@ PLIST_SUB+=		PL_ED2K="@comment "
 .endif
 
 .if defined(WITH_AMULECMD)
-CONFIGURE_ARGS+=	--enable-amulecmd --enable-amulecmdgui
+CONFIGURE_ARGS+=	--enable-amulecmd
 PLIST_SUB+=		PL_AMULECMD=""
 .else
-CONFIGURE_ARGS+=	--disable-amulecmd --disable-amulecmdgui
+CONFIGURE_ARGS+=	--disable-amulecmd
 PLIST_SUB+=		PL_AMULECMD="@comment "
 .endif
 
 .if defined(WITH_AMULEWEBSRV)
-CONFIGURE_ARGS+=	--enable-webserver --enable-webservergui
+CONFIGURE_ARGS+=	--enable-webserver
 PLIST_SUB+=		PL_AMULEWEBSRV=""
 .else
-CONFIGURE_ARGS+=	--disable-webserver --disable-webservergui
+CONFIGURE_ARGS+=	--disable-webserver
 PLIST_SUB+=		PL_AMULEWEBSRV="@comment "
 .endif
 
@@ -144,14 +141,6 @@ post-install:
 .endif
 .if defined(WITH_ALC)
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/alcc.1
-.endif
-.if defined(WITH_AMULECMD)
-	${RM} ${PREFIX}/man/fr/man1/amulecmdDLG.1
-	${LN} ${PREFIX}/man/fr/man1/amulecmd.1.gz ${PREFIX}/man/fr/man1/amulecmdDLG.1.gz
-.endif
-.if defined(WITH_AMULEWEBSRV)
-	${RM} ${PREFIX}/man/fr/man1/amulewebDLG.1
-	${LN} ${PREFIX}/man/fr/man1/amuleweb.1.gz ${PREFIX}/man/fr/man1/amulewebDLG.1.gz
 .endif
 
 .include <bsd.port.post.mk>

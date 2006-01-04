@@ -1,6 +1,6 @@
---- src/amuleDlg.cpp.orig	Tue May  3 20:37:09 2005
-+++ src/amuleDlg.cpp	Tue May  3 20:39:53 2005
-@@ -502,9 +502,9 @@
+--- src/amuleDlg.cpp.orig	Sun Jan  1 06:17:25 2006
++++ src/amuleDlg.cpp	Tue Jan  3 19:12:04 2006
+@@ -413,9 +413,9 @@
  {
  	wxString msg = wxT(" ");
  #ifdef CLIENT_GUI
@@ -12,7 +12,7 @@
  #endif
  	msg << wxT(" ");
  #ifdef CVSDATE
-@@ -514,7 +514,8 @@
+@@ -425,7 +425,8 @@
  		" 'All-Platform' p2p client based on eMule \n\n"
  		" Website: http://www.amule.org \n"
  		" Forum: http://forum.amule.org \n"
@@ -20,5 +20,5 @@
 +		" FAQ: http://wiki.amule.org \n"
 +		" FreeBSD port: http://contribs.martymac.com \n\n"
  		" Contact: admin@amule.org (administrative issues) \n"
- 		" Copyright (C) 2003-2005 aMule Team \n");
- 	if (is_safe_state) {
+ 		" Copyright (C) 2003-2006 aMule Team \n\n"
+ 		" Part of aMule is based on \n"

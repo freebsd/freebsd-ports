@@ -11,11 +11,9 @@ MAN1+=	alcc.1
 .endif
 .if defined(WITH_AMULEWEBSRV)
 MAN1+=	amuleweb.1
-MLINKS+=	amuleweb.1 amulewebDLG.1
 .endif
 .if defined(WITH_AMULECMD)
 MAN1+=	amulecmd.1
-MLINKS+=	amulecmd.1 amulecmdDLG.1
 .endif
 .if defined(WITH_ED2K)
 MAN1+=	ed2k.1
