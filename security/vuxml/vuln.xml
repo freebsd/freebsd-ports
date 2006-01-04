@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c2fdb3bc-7d72-11da-b96e-000fb586ba73">
+    <topic>rxvt-unicode -- restore permissions on tty devices</topic>
+    <affects>
+      <package>
+	<name>rxvt-unicode</name>
+	<range><lt>6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A rxvt-unicode changelog reports:</p>
+	<blockquote cite="http://dist.schmorp.de/rxvt-unicode/Changes">
+	  <p>SECURITY FIX: on systems using openpty, permissions were
+	    not correctly updated on the tty device and were left as
+	    world-readable and world-writable (likely in original rxvt,
+	    too), and were not restored properly. Affected are only
+	    systems where non-unix ptys were used (such as most BSDs).
+	    Found, patched and debugged by Ryan Beasley.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://dist.schmorp.de/rxvt-unicode/Changes</url>
+    </references>
+    <dates>
+      <discovery>2005-12-31</discovery>
+      <entry>2006-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9fff8dc8-7aa7-11da-bf72-00123f589060">
     <topic>apache -- mod_imap cross-site scripting flaw</topic>
     <affects>
