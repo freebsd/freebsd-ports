@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	criticalmass
-PORTVERSION=	0.9.12
+PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	CriticalMass-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	An SDL/OpenGL space shoot\'em up game
 
-CONFLICTS=	shaaft-*
+CONFLICTS=	shaaft-[0-9]*
 
+USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		yes
