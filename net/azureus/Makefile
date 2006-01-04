@@ -19,7 +19,7 @@ COMMENT=	A BitTorrent client written in Java
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${LOCALBASE}/eclipse/plugins/org.junit_3.8.1/junit.jar:${PORTSDIR}/java/junit \
+		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
