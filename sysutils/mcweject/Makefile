@@ -1,32 +1,27 @@
-# New ports collection Makefile for:   mcweject
-# Date created:        11 Jan 2005
-# Whom:                jbacon@mcw.edu
+# New ports collection Makefile for:	mcweject
+# Date created:				11 Jan 2005
+# Whom:					Jason Bacon <jbacon@mcw.edu>
 #
 # $FreeBSD$
 #
 
-PORTNAME=       mcweject
-PORTVERSION=    0.9
-CATEGORIES=     sysutils
-MASTER_SITES=   http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
+PORTNAME=	mcweject
+PORTVERSION=	0.9
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
 
-MAINTAINER=     jbacon@mcw.edu
-COMMENT=        Removable media eject
+MAINTAINER=	jbacon@mcw.edu
+COMMENT=	Removable media eject
 
-MAN1=           eject.1
-MANCOMPRESSED=  yes
+MAN1=		eject.1
+MANCOMPRESSED=	yes
 SUB_FILES=	pkg-message
 
-CONFLICTS=      eject-[0-9]*
+CONFLICTS=	eject-[0-9]*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_FILES=	sbin/eject share/examples/mcweject/eject.allow
 PLIST_DIRS=	share/examples/mcweject
-
-post-extract:
-.for f in eject eject.o eject.1.gz
-	${RM} ${WRKSRC}/${f}
-.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/share/examples/mcweject
