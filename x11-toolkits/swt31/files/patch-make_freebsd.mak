@@ -1,5 +1,5 @@
---- make_freebsd.mak.orig	Thu Dec 15 18:14:06 2005
-+++ make_freebsd.mak	Thu Dec 15 18:25:59 2005
+--- make_freebsd.mak.orig	Wed Jan  4 08:43:21 2006
++++ make_freebsd.mak	Wed Jan  4 08:44:07 2006
 @@ -9,7 +9,7 @@
  #     IBM Corporation - initial API and implementation
  #*******************************************************************************
@@ -9,16 +9,19 @@
  
  include make_common.mak
  
-@@ -61,7 +61,7 @@
+@@ -61,32 +61,34 @@
  	-fPIC \
  	-I./ \
  	-I$(JAVA_HOME)/include \
 -	-I$(JAVA_HOME)/include/linux \
 +	-I$(JAVA_HOME)/include/freebsd \
  	${GECKO_INCLUDES} \
- 	${SWT_PTR_CFLAGS}
+-	${SWT_PTR_CFLAGS}
++	${SWT_PTR_CFLAGS} \
++	$(CFLAGS)
  	
-@@ -70,7 +70,7 @@
+ MOZILLALIBS = -shared -s -Wl,--version-script=mozilla_exports -Bsymbolic ${GECKO_LIBS}
+ 	
  SWT_OBJECTS = swt.o callback.o
  AWT_OBJECTS = swt_awt.o
  SWTPI_OBJECTS = swt.o os.o os_structs.o os_custom.o os_stats.o
@@ -27,8 +30,9 @@
  ATK_OBJECTS = swt.o atk.o atk_structs.o atk_custom.o atk_stats.o
  GNOME_OBJECTS = swt.o gnome.o gnome_structs.o gnome_stats.o
  MOZILLA_OBJECTS = swt.o xpcom.o xpcom_custom.o xpcom_structs.o xpcom_stats.o
-@@ -78,15 +78,16 @@
- CFLAGS = -O -Wall \
+  
+-CFLAGS = -O -Wall \
++CFLAGS += -Wall \
  		-DSWT_VERSION=$(SWT_VERSION) \
  		$(NATIVE_STATS) \
 -		-DLINUX -DGTK \
@@ -49,7 +53,7 @@
  
  #
  # SWT libs
-@@ -123,8 +124,6 @@
+@@ -123,8 +125,6 @@
  
  cairo.o: cairo.c cairo.h swt.h
  	$(CC) $(CFLAGS) $(CAIROCFLAGS) -c cairo.c

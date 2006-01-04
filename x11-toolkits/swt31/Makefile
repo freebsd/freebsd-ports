@@ -31,6 +31,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/swt.jar \
 		lib/libswt-pi-gtk-%%BUILD%%.so
 
 USE_JAVA=	yes
+USE_REINPLACE=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
@@ -98,13 +99,17 @@ post-patch:
 	  + "cairo_structs.c" \
 	  + "cairo_structs.h"
 .endif
+	@${REINPLACE_CMD} -E \
+		-e 's|%%CC%%|${CC}|' \
+		-e 's|%%CXX%%|${CXX}|' \
+		${WRKSRC}/build.sh
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build.sh)
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/libswt-*.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libswt-*.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/swt.jar ${JAVAJARDIR}/
 
 .include <bsd.port.post.mk>

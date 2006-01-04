@@ -1,12 +1,13 @@
---- build.sh.orig	Fri May 13 11:37:09 2005
-+++ build.sh	Sat May 14 21:02:00 2005
-@@ -100,6 +100,33 @@
+--- build.sh.orig	Wed May  4 19:44:42 2005
++++ build.sh	Wed Jan  4 08:43:08 2006
+@@ -100,6 +100,34 @@
  				;;	
  		esac
  		;;
 +	"FreeBSD")
-+		CC=gcc
-+		LD=gcc
++		CC=%%CC%%
++		CXX=%%CXX%%
++		LD=%%CC%%
 +		XTEST_LIB_PATH=$X11BASE/lib
 +		GECKO_I=${X11BASE}/include/${BROWSER}
 +		GECKO_INCLUDES="-I${GECKO_I} -I${LOCALBASE}/include/nspr -I${GECKO_I}/xpcom -I${GECKO_I}/string -I${GECKO_I}/embed_base -I${GECKO_I}/embedstring"
@@ -34,9 +35,12 @@
  	"SunOS")
  		CC=gcc
  		LD=gcc
-@@ -128,4 +155,4 @@
+@@ -126,6 +154,6 @@
+ 	;;
+ esac
  
- export CC LD JAVA_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK GECKO_INCLUDES GECKO_LIBS SWT_PTR_CFLAGS CDE_HOME OUTPUT_DIR
+-export CC LD JAVA_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK GECKO_INCLUDES GECKO_LIBS SWT_PTR_CFLAGS CDE_HOME OUTPUT_DIR
++export CC CXX LD JAVA_HOME AWT_LIB_PATH XTEST_LIB_PATH GECKO_SDK GECKO_INCLUDES GECKO_LIBS SWT_PTR_CFLAGS CDE_HOME OUTPUT_DIR
  
 -make -f $makefile ${1} ${2} ${3} ${4}
 +gmake -f $makefile ${1} ${2} ${3} ${4}
