@@ -285,6 +285,7 @@
 %%GEKKODIR%%/media/icons/default/48/groups.png
 %%GEKKODIR%%/media/icons/default/48/info.png
 %%GEKKODIR%%/media/icons/default/48/ok.png
+%%GEKKODIR%%/media/icons/default/48/printer.png
 %%GEKKODIR%%/media/icons/default/toolbar/attach.png
 %%GEKKODIR%%/media/icons/default/toolbar/block.png
 %%GEKKODIR%%/media/icons/default/toolbar/bold.png
@@ -407,9 +408,13 @@
 %%GEKKODIR%%/temp/.htaccess
 %%GEKKODIR%%/templates/default/css/default/buttonbg.png
 %%GEKKODIR%%/templates/default/css/default/buttondiv.png
+%%GEKKODIR%%/templates/default/css/default/block-u.png
 %%GEKKODIR%%/templates/default/css/default/logo-top.png
 %%GEKKODIR%%/templates/default/css/default/bgtitle.png
+%%GEKKODIR%%/templates/default/css/default/toplink.png
+%%GEKKODIR%%/templates/default/css/default/framebg.png
 %%GEKKODIR%%/templates/default/css/default/logo-top-gekko.png
+%%GEKKODIR%%/templates/default/css/default/bodybg.png
 %%GEKKODIR%%/templates/default/packages/index.admin.tpl
 %%GEKKODIR%%/templates/default/default.css
 %%GEKKODIR%%/templates/default/blocks/blocks.form.tpl
