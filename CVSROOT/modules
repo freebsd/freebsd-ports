@@ -12702,6 +12702,7 @@ valgrind-snapshot	ports/devel/valgrind-snapshot
 validator	ports/www/validator
 valknut		ports/net/valknut
 vamos		ports/games/vamos
+vamps		ports/multimedia/vamps
 varconf		ports/devel/varconf
 varkon		ports/cad/varkon
 vat		ports/mbone/vat
