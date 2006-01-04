@@ -634,6 +634,7 @@
     SUBDIR += xwipower
     SUBDIR += xwlans
     SUBDIR += yawho
+    SUBDIR += zeroer
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
 
