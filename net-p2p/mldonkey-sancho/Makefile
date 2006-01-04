@@ -28,7 +28,7 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/startup.jar:${PORTSDIR}/java/eclipse \
-	${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
+	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
