@@ -1,17 +1,7 @@
 bin/exfalso
 bin/quodlibet
-lib/quodlibet/exfalso.png
-lib/quodlibet/exfalso.py
-%%EXTENSIONS:%%lib/quodlibet/mmkeys.so
-lib/quodlibet/plugins/qlscrobbler.py
-lib/quodlibet/ql-volume-max.png
-lib/quodlibet/ql-volume-medium.png
-lib/quodlibet/ql-volume-min.png
-lib/quodlibet/ql-volume-zero.png
-lib/quodlibet/quodlibet.png
-lib/quodlibet/quodlibet.py
-lib/quodlibet/quodlibet.zip
-%%EXTENSIONS:%%lib/quodlibet/trayicon.so
+%%EXTENSIONS:%%lib/quodlibet/_mmkeys.so
+%%EXTENSIONS:%%lib/quodlibet/_trayicon.so
 share/applications/exfalso.desktop
 share/applications/quodlibet.desktop
 share/locale/bg/LC_MESSAGES/quodlibet.mo
@@ -30,8 +20,103 @@ share/locale/pt/LC_MESSAGES/quodlibet.mo
 share/locale/ru/LC_MESSAGES/quodlibet.mo
 share/pixmaps/exfalso.png
 share/pixmaps/quodlibet.png
+share/quodlibet/browsers/__init__.py
+share/quodlibet/browsers/_base.py
+share/quodlibet/browsers/albums.py
+share/quodlibet/browsers/audiofeeds.py
+share/quodlibet/browsers/filesystem.py
+share/quodlibet/browsers/iradio.py
+share/quodlibet/browsers/paned.py
+share/quodlibet/browsers/playlists.py
+share/quodlibet/browsers/search.py
+share/quodlibet/config.py
+share/quodlibet/const.py
+share/quodlibet/exfalso.png
+share/quodlibet/exfalso.py
+share/quodlibet/exfalso.svg
+share/quodlibet/formats/__init__.py
+share/quodlibet/formats/_apev2.py
+share/quodlibet/formats/_audio.py
+share/quodlibet/formats/_vorbis.py
+share/quodlibet/formats/ape.py
+share/quodlibet/formats/flac_.py
+share/quodlibet/formats/mod.py
+share/quodlibet/formats/mp3.py
+share/quodlibet/formats/mp4.py
+share/quodlibet/formats/mpc.py
+share/quodlibet/formats/oggvorbis.py
+share/quodlibet/formats/remote.py
+share/quodlibet/formats/wavpack.py
+share/quodlibet/library.py
+share/quodlibet/mutagen/__init__.py
+share/quodlibet/mutagen/_constants.py
+share/quodlibet/mutagen/apev2.py
+share/quodlibet/mutagen/id3.py
+share/quodlibet/parse/__init__.py
+share/quodlibet/parse/_match.py
+share/quodlibet/parse/_pattern.py
+share/quodlibet/parse/_query.py
+share/quodlibet/player.py
+share/quodlibet/plugins.py
+share/quodlibet/plugins/qlscrobbler.py
+share/quodlibet/qltk/__init__.py
+share/quodlibet/qltk/about.py
+share/quodlibet/qltk/browser.py
+share/quodlibet/qltk/cbes.py
+share/quodlibet/qltk/ccb.py
+share/quodlibet/qltk/chooser.py
+share/quodlibet/qltk/completion.py
+share/quodlibet/qltk/controls.py
+share/quodlibet/qltk/count.py
+share/quodlibet/qltk/cover.py
+share/quodlibet/qltk/delete.py
+share/quodlibet/qltk/downloader.py
+share/quodlibet/qltk/entry.py
+share/quodlibet/qltk/exfalso.py
+share/quodlibet/qltk/filesel.py
+share/quodlibet/qltk/getstring.py
+share/quodlibet/qltk/info.py
+share/quodlibet/qltk/information.py
+share/quodlibet/qltk/mmkeys.py
+share/quodlibet/qltk/msg.py
+share/quodlibet/qltk/playorder.py
+share/quodlibet/qltk/pluginwin.py
+share/quodlibet/qltk/prefs.py
+share/quodlibet/qltk/properties.py
+share/quodlibet/qltk/queue.py
+share/quodlibet/qltk/quodlibet.py
+share/quodlibet/qltk/remote.py
+share/quodlibet/qltk/sliderbutton.py
+share/quodlibet/qltk/songlist.py
+share/quodlibet/qltk/trayicon.py
+share/quodlibet/qltk/views.py
+share/quodlibet/qltk/watcher.py
+share/quodlibet/qltk/wlw.py
+share/quodlibet/qltk/x.py
+share/quodlibet/quodlibet.png
+share/quodlibet/quodlibet.py
+share/quodlibet/quodlibet.svg
+share/quodlibet/rhythmbox-volume-max.png
+share/quodlibet/rhythmbox-volume-medium.png
+share/quodlibet/rhythmbox-volume-min.png
+share/quodlibet/rhythmbox-volume-zero.png
+share/quodlibet/stock.py
+share/quodlibet/util.py
+share/quodlibet/widgets.py
 @unexec rmdir %D/share/applications 2>/dev/null || true
-@exec mkdir -p %D/lib/quodlibet/plugins
-@dirrm lib/quodlibet/plugins
+@exec mkdir -p %D/share/quodlibet/plugins
+@dirrm share/quodlibet/plugins
 @exec mkdir -p %D/lib/quodlibet
 @dirrm lib/quodlibet
+@exec mkdir -p %D/share/quodlibet/browsers
+@dirrm share/quodlibet/browsers
+@exec mkdir -p %D/share/quodlibet/formats
+@dirrm share/quodlibet/formats
+@exec mkdir -p %D/share/quodlibet/mutagen
+@dirrm share/quodlibet/mutagen
+@exec mkdir -p %D/share/quodlibet/parse
+@dirrm share/quodlibet/parse
+@exec mkdir -p %D/share/quodlibet/qltk
+@dirrm share/quodlibet/qltk
+@exec mkdir -p %D/share/quodlibet
+@dirrm share/quodlibet
