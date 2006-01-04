@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.48.4.orig/docs/man/MailScanner.conf.5	Wed Dec  7 18:33:04 2005
-+++ docs/man/MailScanner.conf.5	Wed Dec  7 18:33:54 2005
+--- ../MailScanner-install-4.49.7.orig/docs/man/MailScanner.conf.5	Wed Jan  4 13:36:45 2006
++++ docs/man/MailScanner.conf.5	Wed Jan  4 13:46:12 2006
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.42.9" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.48.4" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.49.7" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -30,7 +30,81 @@
  .TP 
  \fBMaximum Attachments Per Message\fR
  Default: 200
-@@ -853,6 +870,15 @@
+@@ -819,6 +836,36 @@
+ Do you want to allow <Form> tags in email messages? This is a bad idea as these are used as scams to pursuade people to part with credit card information and other personal data. This can also be the filename of a ruleset.
+ .SH "Attachment filename checking"
+ .TP 
++\fBAllow Filenames\fR
++Default:
++.br 
++
++.br 
++Allow any attachment filenames matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filename of a ruleset.
++.br 
++
++.br 
++To simplify web\-based configuration systems, there are now two extra settings here. They are both intended for use with normal rulesets that you would expect to find in %rules\-dir%. The first gives a list of patterns to match against the attachment filenames, and a filename is allowed if it matches any of these patterns. The second gives the the equivalent list for patterns that are used to deny filenames. If either of these match at all, then filename.rules.conf is ignored  for that filename. So you can easily have a set like this:
++.br 
++
++.br 
++Allow Filenames = \.txt$ \.pdf$
++.br 
++Deny  Filenames = \.com$ \.exe$ \.cpl$ \.pif$
++.br 
++
++.br 
++which is a lot simpler than having to handle filename.rules.conf! It is far simpler when you want to change the allowed+denied list for different domains/addresses, as you can use the filename of a simple ruleset here instead.
++
++.TP 
++\fBDeny Filenames\fR
++Default: 
++.br 
++
++.br 
++Deny any attachment filenames matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filename of a ruleset.
++
++.TP 
+ \fBFilename Rules\fR
+ Default: %etc\-dir%/filename.rules.conf
+ .br 
+@@ -827,6 +874,36 @@
+ File in which to store the attachment filename ruleset. This can be a ruleset allowing different filename rules to apply to different users or domains. The syntax of this file is described in section "Attachment Filename Ruleset".
+ 
+ .TP 
++\fBAllow Filetypes\fR
++Default: 
++.br 
++
++.br 
++Allow any attachment filetypes matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filetype of a ruleset.
++.br 
++
++.br 
++To simplify web\-based configuration systems, there are now two extra settings here. They are both intended for use with normal rulesets that you would expect to find in %rules\-dir%. The first gives a list of patterns to match against the attachment filetypes, and a filetype is allowed if it matches any of these patterns. The second gives the the equivalent list for patterns that are used to deny filetypes. If either of these match at all, then filetype.rules.conf is ignored for that filetype. So you can easily have a set like this:
++.br 
++
++.br 
++Allow Filetypes = \.txt$ \.pdf$
++.br 
++Deny  Filetypes = \.com$ \.exe$ \.cpl$ \.pif$
++.br 
++
++.br 
++which is a lot simpler than having to handle filetype.rules.conf! It is far simpler when you want to change the allowed+denied list for different domains/addresses, as you can use the filetype of a simple ruleset here instead.
++
++.TP 
++\fBDeny Filetypes\fR
++Default: 
++.br 
++
++.br 
++Deny any attachment filetypes matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filetype of a ruleset.
++
++.TP 
+ \fBFiletype Rules\fR
+ Default: %etc\-dir%/filetype.rules.conf
+ .br 
+@@ -853,6 +930,15 @@
  There is no point quarantining most viruses these days, so if you set this to "no" then no infections listed in your "Silent Viruses" setting will be quarantined, even if you have chosen to quarantine infections in general. This is currently set to "yes" so the behaviour is the same as it was in in previous versions. This can also be the filename of a ruleset.
  
  .TP 
@@ -46,7 +120,7 @@
  \fBQuarantine Whole Message\fR
  Default: no
  .br 
-@@ -885,6 +911,16 @@
+@@ -885,6 +971,16 @@
  .br 
  Set where to find all the strings used so they can be translated into your local language. This can also be the filename of a ruleset so you can produce different languages for different messages.
  
@@ -63,7 +137,7 @@
  .TP 
  \fBDeleted Bad Filename Message Report\fR
  Default: %reports\-dir%/deleted.filename.message.txt
-@@ -1701,12 +1737,64 @@
+@@ -1701,12 +1797,64 @@
  .br 
  
  .br 
@@ -74,13 +148,13 @@
 +The Bayesian database rebuild and expiry may take a 2 or 3 minutes to complete. During this time you can either wait, or simply disable SpamAssassin checks until it has completed.
 +
 +
-+
+ 
 +.SH "Custom Spam Scanner Plugin"
 +.TP 
 +\fBUse Custom Spam Scanner\fR
 +Default: no
 +.br 
-+
+ 
 +.br 
 +Use the Custom Spam Scanner. This is code you will have to write yourself, a function called "GenericSpamScanner" stored in the file "MailScanner/lib/MailScanner/CustomFunctions/GenericSpamScanner.pm". A sample function is given in the correct file in the distribution. This sample function also includes code to show you how to make it run an external program to produce a spam score. This can also be the filename of a ruleset. The function will be passed
 +.br 
@@ -101,10 +175,10 @@
 +\fBMax Custom Spam Scanner Size\fR
 +Default: 20000
 +.br 
- 
++
 +.br 
 +How much of the message should be passed tot he Custom Spam Scanner. Most spam tools only need the first 20kbytes of the message to determine if it is spam or not. Passing more than is necessary only slows things down. This can also be the filename of a ruleset.
- 
++
 +.TP 
 +\fBCustom Spam Scanner Timeout\fR
 +Default: 20
