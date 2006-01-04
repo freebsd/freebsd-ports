@@ -1,9 +1,9 @@
---- ../MailScanner-install-4.48.4.orig/docs/man/MailScanner.conf.5.html	Wed Dec  7 18:33:07 2005
-+++ docs/man/MailScanner.conf.5.html	Wed Dec  7 18:34:00 2005
+--- ../MailScanner-install-4.49.7.orig/docs/man/MailScanner.conf.5.html	Wed Jan  4 13:36:45 2006
++++ docs/man/MailScanner.conf.5.html	Wed Jan  4 13:46:14 2006
 @@ -1,5 +1,5 @@
  <!-- Creator     : groff version 1.19 -->
 -<!-- CreationDate: Wed Jun  1 11:29:47 2005 -->
-+<!-- CreationDate: Tue Dec  6 20:28:14 2005 -->
++<!-- CreationDate: Wed Jan  4 13:45:56 2006 -->
  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/loose.dtd">
  <html>
@@ -77,7 +77,149 @@
  <p><b>Maximum Attachments Per Message</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -2523,6 +2579,27 @@
+@@ -2423,6 +2479,70 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Allow Filenames</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>Allow any attachment filenames matching any of the
++patters listed here. If this setting is empty, it is ignored
++and no matches are made. This can also be the filename of a
++ruleset.</p>
++<!-- INDENTATION -->
++<p>To simplify web&minus;based configuration systems, there
++are now two extra settings here. They are both intended for
++use with normal rulesets that you would expect to find in
++%rules&minus;dir%. The first gives a list of patterns to
++match against the attachment filenames, and a filename is
++allowed if it matches any of these patterns. The second
++gives the the equivalent list for patterns that are used to
++deny filenames. If either of these match at all, then
++filename.rules.conf is ignored for that filename. So you can
++easily have a set like this:</p>
++<!-- INDENTATION -->
++<p>Allow Filenames = .txt$ .pdf$<br>
++Deny Filenames = .com$ .exe$ .cpl$ .pif$</p>
++<!-- INDENTATION -->
++<p>which is a lot simpler than having to handle
++filename.rules.conf! It is far simpler when you want to
++change the allowed+denied list for different
++domains/addresses, as you can use the filename of a simple
++ruleset here instead.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Deny Filenames</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>Deny any attachment filenames matching any of the patters
++listed here. If this setting is empty, it is ignored and no
++matches are made. This can also be the filename of a
++ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Filename Rules</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2446,6 +2566,70 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Allow Filetypes</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>Allow any attachment filetypes matching any of the
++patters listed here. If this setting is empty, it is ignored
++and no matches are made. This can also be the filetype of a
++ruleset.</p>
++<!-- INDENTATION -->
++<p>To simplify web&minus;based configuration systems, there
++are now two extra settings here. They are both intended for
++use with normal rulesets that you would expect to find in
++%rules&minus;dir%. The first gives a list of patterns to
++match against the attachment filetypes, and a filetype is
++allowed if it matches any of these patterns. The second
++gives the the equivalent list for patterns that are used to
++deny filetypes. If either of these match at all, then
++filetype.rules.conf is ignored for that filetype. So you can
++easily have a set like this:</p>
++<!-- INDENTATION -->
++<p>Allow Filetypes = .txt$ .pdf$<br>
++Deny Filetypes = .com$ .exe$ .cpl$ .pif$</p>
++<!-- INDENTATION -->
++<p>which is a lot simpler than having to handle
++filetype.rules.conf! It is far simpler when you want to
++change the allowed+denied list for different
++domains/addresses, as you can use the filetype of a simple
++ruleset here instead.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Deny Filetypes</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:</p>
++<!-- INDENTATION -->
++<p>Deny any attachment filetypes matching any of the patters
++listed here. If this setting is empty, it is ignored and no
++matches are made. This can also be the filetype of a
++ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Filetype Rules</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -2523,6 +2707,27 @@
  <tr valign="top" align="left">
  <td width="11%"></td>
  <td width="89%">
@@ -105,7 +247,7 @@
  <p><b>Quarantine Whole Message</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -2621,6 +2698,27 @@
+@@ -2621,6 +2826,27 @@
  <tr valign="top" align="left">
  <td width="11%"></td>
  <td width="89%">
@@ -133,7 +275,7 @@
  <p><b>Deleted Bad Filename Message Report</b></p></td>
  </table>
  <!-- INDENTATION -->
-@@ -4909,10 +5007,239 @@
+@@ -4909,10 +5135,239 @@
  <td width="78%">
  <p>Default: no</p>
  <!-- INDENTATION -->
