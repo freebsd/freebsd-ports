@@ -183,6 +183,7 @@
     SUBDIR += sdl_gui
     SUBDIR += slingshot
     SUBDIR += soqt
+    SUBDIR += swt31
     SUBDIR += tix
     SUBDIR += tk80
     SUBDIR += tk82
