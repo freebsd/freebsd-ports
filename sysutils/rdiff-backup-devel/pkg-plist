@@ -1,4 +1,5 @@
 bin/rdiff-backup
+bin/rdiff-backup-statistics
 %%PYTHON_SITELIBDIR%%/rdiff_backup/C.so
 %%PYTHON_SITELIBDIR%%/rdiff_backup/FilenameMapping.py
 %%PYTHON_SITELIBDIR%%/rdiff_backup/FilenameMapping.pyc
