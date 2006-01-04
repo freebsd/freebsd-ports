@@ -1,0 +1,96 @@
+bin/audacious
+include/audacious/beepctrl.h
+include/audacious/configdb.h
+include/audacious/configfile.h
+include/audacious/dirbrowser.h
+include/audacious/formatter.h
+include/audacious/fullscreen.h
+include/audacious/plugin.h
+include/audacious/rcfile.h
+include/audacious/titlestring.h
+include/audacious/util.h
+include/audacious/vfs.h
+lib/audacious/Effect/libladspa.so
+lib/audacious/General/libsong_change.so
+lib/audacious/Input/libcdaudio.so
+lib/audacious/Input/libconsole.so
+lib/audacious/Input/libmpg123.so
+lib/audacious/Input/libtonegen.so
+%%VORBISPLUGIN:%%lib/audacious/Input/libvorbis.so
+%%FLACPLUGIN:%%lib/audacious/Input/libflac.so
+lib/audacious/Input/libwav.so
+lib/audacious/Input/libwma.so
+lib/audacious/Output/libOSS.so
+%%ESDPLUGIN:%%lib/audacious/Output/libesdout.so
+lib/audacious/Output/libcrossfade.a
+lib/audacious/Output/libcrossfade.so
+lib/audacious/Output/libcrossfade.so.0
+lib/audacious/Output/libdisk_writer.so
+lib/audacious/Visualization/libbscope.so
+lib/libaudacious.a
+lib/libaudacious.so
+lib/libaudacious.so.2
+libdata/pkgconfig/audacious.pc
+share/applications/audacious.desktop
+%%DATADIR%%/Skins/Default/balance.bmp
+%%DATADIR%%/Skins/Default/cbuttons.bmp
+%%DATADIR%%/Skins/Default/eq_ex.bmp
+%%DATADIR%%/Skins/Default/eqmain.bmp
+%%DATADIR%%/Skins/Default/main.bmp
+%%DATADIR%%/Skins/Default/monoster.bmp
+%%DATADIR%%/Skins/Default/nums_ex.bmp
+%%DATADIR%%/Skins/Default/playpaus.bmp
+%%DATADIR%%/Skins/Default/pledit.bmp
+%%DATADIR%%/Skins/Default/pledit.txt
+%%DATADIR%%/Skins/Default/posbar.bmp
+%%DATADIR%%/Skins/Default/shufrep.bmp
+%%DATADIR%%/Skins/Default/text.bmp
+%%DATADIR%%/Skins/Default/titlebar.bmp
+%%DATADIR%%/Skins/Default/viscolor.txt
+%%DATADIR%%/Skins/Default/volume.bmp
+%%DATADIR%%/glade/addfiles.glade
+%%DATADIR%%/glade/prefswin.glade
+%%DATADIR%%/images/appearance.png
+%%DATADIR%%/images/eq.png
+%%DATADIR%%/images/mouse.png
+%%DATADIR%%/images/playlist.png
+%%DATADIR%%/images/plugins.png
+share/locale/br/LC_MESSAGES/audacious.mo
+share/locale/cs/LC_MESSAGES/audacious.mo
+share/locale/cy/LC_MESSAGES/audacious.mo
+share/locale/de/LC_MESSAGES/audacious.mo
+share/locale/el/LC_MESSAGES/audacious.mo
+share/locale/es/LC_MESSAGES/audacious.mo
+share/locale/fi/LC_MESSAGES/audacious.mo
+share/locale/fr/LC_MESSAGES/audacious.mo
+share/locale/hi/LC_MESSAGES/audacious.mo
+share/locale/hu/LC_MESSAGES/audacious.mo
+share/locale/it/LC_MESSAGES/audacious.mo
+share/locale/ja/LC_MESSAGES/audacious.mo
+share/locale/ka/LC_MESSAGES/audacious.mo
+share/locale/ko/LC_MESSAGES/audacious.mo
+share/locale/lt/LC_MESSAGES/audacious.mo
+share/locale/mk/LC_MESSAGES/audacious.mo
+share/locale/nl/LC_MESSAGES/audacious.mo
+share/locale/pl/LC_MESSAGES/audacious.mo
+share/locale/pt_BR/LC_MESSAGES/audacious.mo
+share/locale/ro/LC_MESSAGES/audacious.mo
+share/locale/ru/LC_MESSAGES/audacious.mo
+share/locale/sk/LC_MESSAGES/audacious.mo
+share/locale/sv/LC_MESSAGES/audacious.mo
+share/locale/uk/LC_MESSAGES/audacious.mo
+share/locale/zh_CN/LC_MESSAGES/audacious.mo
+share/locale/zh_TW/LC_MESSAGES/audacious.mo
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/Skins/Default
+@dirrm %%DATADIR%%/Skins
+@dirrm %%DATADIR%%
+@dirrm share/applications
+@dirrm lib/audacious/Visualization
+@dirrm lib/audacious/Output
+@dirrm lib/audacious/Input
+@dirrm lib/audacious/General
+@dirrm lib/audacious/Effect
+@dirrm lib/audacious
+@dirrm include/audacious
