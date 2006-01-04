@@ -7,6 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.3.0.6
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,23 +16,18 @@ DISTNAME=	Azureus_${PORTVERSION}_source
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
-EXTRACT_DEPENDS= \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${LOCALBASE}/eclipse/plugins/org.junit_3.8.1/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
 
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
-JAVA_EXTRACT=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
 JAVA_VERSION=	1.4
@@ -50,27 +46,15 @@ CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/${PORTNAME}
 
-# hack for eclipse 3.1
-PLIST_DIRS=	%%DATADIR%%
-PLIST_FILES+=	\
-		%%DATADIR%%/libswt-atk-gtk-3139.so \
-		%%DATADIR%%/libswt-awt-gtk-3139.so \
-		%%DATADIR%%/libswt-cairo-gtk-3139.so \
-		%%DATADIR%%/libswt-gnome-gtk-3139.so \
-		%%DATADIR%%/libswt-gtk-3139.so \
-		%%DATADIR%%/libswt-pi-gtk-3139.so
-
-post-extract:
-	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar
-		
 do-configure:
 	${SED} -e "s+%%PREFIX%%+${PREFIX}+" -e "s+%%LOCALBASE%%+${LOCALBASE}+" \
-		-e "s|%%DATADIR%%|${DATADIR}|" \
+		-e "s|%%LIBDIR%%|${LOCALBASE}/lib|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR}|" \
 		-e "s|%%JAVA%%|${LOCALBASE}/bin/java|" \
 		-e "s|%%JAVA_VERSION%%|${JAVA_VERSION}|" \
 		-e "s|%%JAVA_OS%%|${JAVA_OS}|" \
 		-e "s|%%JARFILE%%|${JARFILE}|" \
+		-e "s|%%SWTJAR%%|${JAVALIBDIR}/swt.jar|" \
 		${FILESDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}
 
 do-install:
@@ -78,18 +62,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} \
 		${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-# hack for eclipse 3.1
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/eclipse/*so ${DATADIR}
 
 .include <bsd.port.pre.mk>
-
-#.if exists(${PORTSDIR}/java/eclipse)
-#ECLIPSE_PORT=		${PORTSDIR}/java/eclipse
-#ECLIPSE_VERSION!=	cd ${ECLIPSE_PORT} && ${MAKE} -V PORTVERSION
-#.else
-ECLIPSE_VERSION=	3.1
-#.endif
 
 CLASSPATH=.
 .for jar in ${CLASSPATH_JARS}

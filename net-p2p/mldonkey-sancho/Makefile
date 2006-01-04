@@ -7,7 +7,7 @@
 
 PORTNAME=	sancho
 DISTVERSION=	0.9.4-23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	http://sancho-gui.sourceforge.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dl/tmp94
@@ -17,21 +17,18 @@ DISTNAME=	${PORTNAME}-src
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java GUI for the MLDonkey core
 
-EXTRACT_DEPENDS= \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse
 BUILD_DEPENDS=	\
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
+	${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
 RUN_DEPENDS=	\
 	${LOCALBASE}/eclipse/plugins/org.eclipse.core.runtime_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt_${ECLIPSE_VERSION}.0.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/startup.jar:${PORTSDIR}/java/eclipse \
+	${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
@@ -39,7 +36,6 @@ RUN_DEPENDS=	\
 ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	yes
-JAVA_EXTRACT=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jre
 JAVA_VERSION=	1.4+
@@ -60,19 +56,6 @@ PLIST_FILES=	\
 		bin/${PKGNAMEPREFIX}${PORTNAME} \
 		%%JAVAJARDIR%%/${JARFILE}
 
-# hack for eclipse 3.1
-PLIST_DIRS+=	%%DATADIR%%
-PLIST_FILES+=	\
-		%%DATADIR%%/libswt-atk-gtk-3139.so \
-		%%DATADIR%%/libswt-awt-gtk-3139.so \
-		%%DATADIR%%/libswt-cairo-gtk-3139.so \
-		%%DATADIR%%/libswt-gnome-gtk-3139.so \
-		%%DATADIR%%/libswt-gtk-3139.so \
-		%%DATADIR%%/libswt-pi-gtk-3139.so
-
-post-extract:
-	@${MKDIR} ${WRKDIR}/eclipse && cd ${WRKDIR}/eclipse && ${JAR} -xf ${LOCALBASE}/eclipse/plugins/org.eclipse.swt.gtk.freebsd.x86_${ECLIPSE_VERSION}.1.jar
-
 do-install:
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
@@ -80,9 +63,6 @@ do-install:
 # jar
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${JARFILE}
-# hack for eclipse 3.1
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/eclipse/*so ${DATADIR}
 
 .include <bsd.port.pre.mk>
 
@@ -118,13 +98,7 @@ post-patch:
 		-e "s|%%JAVA_OS%%|${JAVA_OS}|" \
 		-e "s|%%JAVAJARDIR%%|${JAVAJARDIR:S,^${PREFIX}/,,}|" \
 		-e "s|%%CLASSPATH%%|${RUN_CLASSPATH}|" \
-		-e "s|%%JAVALIBPATH%%|${DATADIR}|" \
+		-e "s|%%JAVALIBPATH%%|${LOCALBASE}/lib|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
 .include <bsd.port.post.mk>
-
-# hack to protect against eclipse + mozilla
-.if exists(${WRKDIR}/eclipse/libswt-mozilla-gtk-3138.so)
-PLIST_FILES+=	\
-		%%DATADIR%%/libswt-mozilla-gtk-3138.so
-.endif
