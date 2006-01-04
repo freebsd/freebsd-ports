@@ -20,7 +20,7 @@ COMMENT=	A Java GUI for the MLDonkey core
 BUILD_DEPENDS=	\
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${JAVALIBDIR}/gnu-regexp.jar:${PORTSDIR}/java/gnu-regexp \
-	${JAVALIBDIR}/swt.jar:${PORTSDIR}/java/swt31 \
+	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
 RUN_DEPENDS=	\
