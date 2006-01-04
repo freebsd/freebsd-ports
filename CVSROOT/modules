@@ -13888,6 +13888,7 @@ zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
 zenity		ports/x11/zenity
 zephulor	ports/games/zephulor
+zeroer		ports/sysutils/zeroer
 zerowait-httpd	ports/www/zerowait-httpd
 zgv		ports/graphics/zgv
 zh-BBMan	ports/chinese/BBMan
