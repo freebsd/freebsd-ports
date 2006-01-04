@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	6.2
+PORTVERSION=	6.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -17,7 +17,6 @@ COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_PERL5_BUILD=	yes
 USE_X_PREFIX=		yes
 USE_XPM=		yes
 GNU_CONFIGURE=		yes
@@ -32,6 +31,17 @@ MAN7=		urxvt.7
 PORTDOCS1=	Changes
 PORTDOCS=	README.menu ${PORTDOCS1}
 EXAMPLES=	example.menu jedmenu.sl menu rxvt.menu rxvt.zh-menu terminal.menu
+
+# disable the embedded perl interpreter
+.if defined(WITHOUT_PERL)
+CONFIGURE_ARGS+=	--disable-perl
+USE_PERL5_BUILD=	yes
+PLIST_SUB=		PERL="@comment "
+.else
+USE_PERL5=		yes
+MAN3=			urxvtperl.3
+PLIST_SUB=		PERL=""
+.endif
 
 # disable XIM (X Input Method) protocol support
 .if defined(WITHOUT_XIM)
@@ -147,6 +157,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "WITHOUT_PERL		disable the embedded Perl interpreter"
 	@${ECHO_MSG} "WITHOUT_XIM		disable support for XIM (X Input Method) protocol"
 	@${ECHO_MSG} "WITHOUT_MENUBAR		disable support for menu bar system"
 	@${ECHO_MSG} "WITHOUT_RXVT_SCROLLBAR	disable support for the original rxvt scrollbar"
