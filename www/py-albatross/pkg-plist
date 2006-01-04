@@ -370,6 +370,9 @@ bin/al-httpd
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-bug.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-bug-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rel-1.32-start-page.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.33.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.33-bug.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rel-1.33-set-value.html
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-2.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-3.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/simple-4.txt
