@@ -6,7 +6,7 @@
 
 PORTNAME=	opengroupware
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc www linux
 MASTER_SITES=	http://download.opengroupware.org/nightly/packages/freebsd/linux-opengroupware/RPMS/:ogo \
 		http://download.opengroupware.org/nightly/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
@@ -202,7 +202,7 @@ post-install:
 	@${ECHO} '/usr/kerberos/lib' >>${LINUXBASE}/etc/ld.so.conf
 	@${LN} -sf ${LINUXBASE}/usr/lib/libpq.so.2 ${LINUXBASE}/usr/lib/libpq.so.3
 	@${LN} -sf ${LINUXBASE}/lib/libssl.so.0.9.6b ${LINUXBASE}/lib/libssl.so.9.6
-	@${LN} -sf ${LINUXBASE}/lib/ibcrypto.so.0.9.6b ${LINUXBASE}/lib/libcrypto.so.2
+	@${LN} -sf ${LINUXBASE}/lib/libcrypto.so.0.9.6b ${LINUXBASE}/lib/libcrypto.so.2
 	@${PREFIX}/sbin/ldconfig
 	@${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CHOWN} -Rh ogo:skyrix ${LINUXBASE}/opt/skyrix
