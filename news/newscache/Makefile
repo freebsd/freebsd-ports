@@ -24,7 +24,7 @@ AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
-SUB_FILES=	newscache.sh
+USE_RC_SUBR=	${PORTNAME}.sh
 
 MAN5=	newscache.conf.5
 MAN8=	newscache.8 newscacheclean.8 updatenews.8
@@ -35,8 +35,5 @@ post-patch:
 
 pre-configure:
 	(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
-
-post-install:
-	cp ${WRKDIR}/newscache.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
