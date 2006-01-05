@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.2.2.1
+PORTVERSION=	6.2.5.5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Image processing tools
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -121,7 +121,8 @@ CONFIGURE_ARGS+=	--without-jp2
 
 # GraphViz dot graphs
 .if defined(WITH_IMAGEMAGICK_DOT)
-LIB_DEPENDS+=		dotneato.0:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz  
 .else
 CONFIGURE_ARGS+=	--without-dot
 .endif
