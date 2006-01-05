@@ -9265,7 +9265,6 @@ pathrate	ports/benchmarks/pathrate
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
 pbasic		ports/lang/pbasic
-pbl		ports/databases/pbl
 pbnc		ports/net/pbnc
 pbs		ports/misc/pbs
 pbzip2		ports/archivers/pbzip2

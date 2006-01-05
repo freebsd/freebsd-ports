@@ -250,7 +250,6 @@
     SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-qdbm
     SUBDIR += p5-sqlrelay
-    SUBDIR += pbl
     SUBDIR += pear-DB
     SUBDIR += pear-DB_DataObject
     SUBDIR += pear-DB_DataObject_FormBuilder
