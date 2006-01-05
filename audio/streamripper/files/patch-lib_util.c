@@ -1,7 +1,7 @@
 Argh, FreeBSD 4.X has a wctype.h header that does nothing.
 
---- lib/util.c.orig	Sat Nov 13 17:41:09 2004
-+++ lib/util.c	Wed Jan 19 07:01:41 2005
+--- lib/util.c.orig	Sun Sep 11 12:46:20 2005
++++ lib/util.c	Sun Sep 11 12:46:20 2005
 @@ -28,9 +28,7 @@
  #if defined HAVE_WCHAR_H
  #include <wchar.h>
@@ -13,7 +13,7 @@ Argh, FreeBSD 4.X has a wctype.h header that does nothing.
  #endif
  #include <locale.h>
  #include <time.h>
-@@ -464,7 +462,7 @@ strip_invalid_chars_testing(char *str)
+@@ -450,7 +448,7 @@
  
      /* Replace illegals to legal */
      for (wstrp = w_in; *wstrp; wstrp++) {
@@ -22,7 +22,7 @@ Argh, FreeBSD 4.X has a wctype.h header that does nothing.
  	    continue;
  	*wstrp = replacement;
      }
-@@ -543,7 +541,7 @@ strip_invalid_chars_stable(char *str)
+@@ -525,7 +523,7 @@
  
      /* Replace illegals to legal */
      for (wstrp = w_in; *wstrp; wstrp++) {
