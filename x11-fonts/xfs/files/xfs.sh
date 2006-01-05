@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/x11-fonts/xfs/files/Attic/xfs.sh,v 1.1 2005-01-23 19:50:40 lesi Exp $
+# $FreeBSD: /tmp/pcvs/ports/x11-fonts/xfs/files/Attic/xfs.sh,v 1.2 2006-01-05 17:08:06 lesi Exp $
 #
 
 # PROVIDE: xfs
-# REQUIRE: cleartmp
+# REQUIRE: cleartmp ldconfig
 # BEFORE:  LOGIN
 # KEYWORD: FreeBSD
 

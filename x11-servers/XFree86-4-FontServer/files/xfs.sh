@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: xfs
-# REQUIRE: cleartmp
+# REQUIRE: cleartmp ldconfig
 # BEFORE:  LOGIN
 # KEYWORD: FreeBSD
 
