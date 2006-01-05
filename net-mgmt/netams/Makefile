@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.3.1a
+PORTVERSION=	3.3.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.netams.com/files/
