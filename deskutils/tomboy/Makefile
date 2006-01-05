@@ -8,7 +8,7 @@
 
 PORTNAME=	tomboy
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
