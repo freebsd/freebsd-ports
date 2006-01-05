@@ -1,0 +1,10 @@
+This module can be used to more easily spot the place where a program or a
+module generates errors. Its use is extremely simple, reduced to just'use'ing
+it.
+
+This is achieved by modifying the functions warn() and die() in order to
+replace the standard messages by complete stack traces that precisely indicates
+how and where the error or warning occurred. Other than this, their use should
+stay unchanged, even when using die() inside eval().
+
+WWW: http://search.cpan.org/dist/Devel-SimpleTrace/
