@@ -7,6 +7,7 @@
 %%CACTIDIR%%/cdef.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
+%%CACTIDIR%%/copy_cacti_user.php
 %%CACTIDIR%%/data_input.php
 %%CACTIDIR%%/data_queries.php
 %%CACTIDIR%%/data_sources.php
@@ -88,7 +89,10 @@
 %%CACTIDIR%%/images/button_create.gif
 %%CACTIDIR%%/images/button_default.gif
 %%CACTIDIR%%/images/button_delete.gif
+%%CACTIDIR%%/images/button_export.gif
 %%CACTIDIR%%/images/button_go.gif
+%%CACTIDIR%%/images/button_help.gif
+%%CACTIDIR%%/images/button_import.gif
 %%CACTIDIR%%/images/button_no.gif
 %%CACTIDIR%%/images/button_refresh.gif
 %%CACTIDIR%%/images/button_save.gif
@@ -135,9 +139,11 @@
 %%CACTIDIR%%/include/db-settings.php.orig
 @exec [ -f %D/%%CACTIDIR%%/include/db-settings.php ] || cp %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php
 %%CACTIDIR%%/include/html/inc_data_source_filter_table.php
+%%CACTIDIR%%/include/html/inc_data_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_device_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_items_filter_table.php
+%%CACTIDIR%%/include/html/inc_graph_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
 %%CACTIDIR%%/include/html/inc_timespan_selector.php
 %%CACTIDIR%%/include/html/inc_timespan_settings.php
@@ -204,6 +210,7 @@
 %%CACTIDIR%%/install/0_8_6c_to_0_8_6d.php
 %%CACTIDIR%%/install/0_8_6d_to_0_8_6e.php
 %%CACTIDIR%%/install/0_8_6f_to_0_8_6g.php
+%%CACTIDIR%%/install/0_8_6g_to_0_8_6h.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -294,9 +301,6 @@
 %%CACTIDIR%%/lib/adodb/lang/adodb-ru1251.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-sv.inc.php
 %%CACTIDIR%%/lib/adodb/license.txt
-%%CACTIDIR%%/lib/adodb/pivottable.inc.php
-%%CACTIDIR%%/lib/adodb/rsfilter.inc.php
-%%CACTIDIR%%/lib/adodb/server.php
 %%CACTIDIR%%/lib/adodb/toexport.inc.php
 %%CACTIDIR%%/lib/adodb/tohtml.inc.php
 %%CACTIDIR%%/lib/api_data_source.php
@@ -334,6 +338,8 @@
 %%CACTIDIR%%/poller.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_export.php
+%%CACTIDIR%%/poller_reindex_hosts.php
+%%CACTIDIR%%/rebuild_poller_cache.php
 %%CACTIDIR%%/resource/script_queries/host_cpu.xml
 %%CACTIDIR%%/resource/script_queries/host_disk.xml
 %%CACTIDIR%%/resource/script_queries/unix_disk.xml

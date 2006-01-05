@@ -1,24 +1,23 @@
---- include/config.php.orig	Tue Jun 21 04:46:46 2005
-+++ include/config.php	Tue Jun 21 16:27:29 2005
-@@ -24,13 +24,6 @@
+--- include/config.php.orig	Fri Jan  6 00:27:51 2006
++++ include/config.php	Fri Jan  6 00:28:39 2006
+@@ -24,7 +24,11 @@
   +-------------------------------------------------------------------------+
  */
  
 -/* make sure these values refect your actual database/host/user/password */
--$database_type = "mysql";
--$database_default = "cacti";
--$database_hostname = "localhost";
--$database_username = "cactiuser";
--$database_password = "cactiuser";
--
- /* ----- you probably do not need to change anything below this line ----- */
- $config = array();
- 
-@@ -44,6 +37,9 @@
- $config["base_path"] = ereg_replace("(.*)[\/\\]include", "\\1", dirname(__FILE__));
++/*
++ * these are default values. do not change them. set your actual
++ * database/host/user/password in db-settings.php file instead.
++ *
++ */
+ $database_type = "mysql";
+ $database_default = "cacti";
+ $database_hostname = "localhost";
+@@ -64,6 +68,9 @@
+ $config["base_path"] = strtr(ereg_replace("(.*)[\/\\]include", "\\1", dirname(__FILE__)), "\\", "/");
  $config["library_path"] = ereg_replace("(.*[\/\\])include", "\\1lib", dirname(__FILE__));
  $config["include_path"] = dirname(__FILE__);
-+
++ 
 +/* load user defined DB settings */
 +include($config["include_path"] . "/db-settings.php");
  
