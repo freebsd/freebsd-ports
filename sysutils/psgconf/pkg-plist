@@ -25,6 +25,7 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Action.pm
 %%SITE_PERL%%/PSGConf/Action/ChMod.pm
 %%SITE_PERL%%/PSGConf/Action/CopyFile.pm
+%%SITE_PERL%%/PSGConf/Action/CreateFile.pm
 %%SITE_PERL%%/PSGConf/Action/Crontab.pm
 %%SITE_PERL%%/PSGConf/Action/File.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile.pm
@@ -77,6 +78,7 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/workers_properties.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/xinetd_conf.pm
 %%SITE_PERL%%/PSGConf/Action/HomeDir.pm
+%%SITE_PERL%%/PSGConf/Action/lpadmin.pm
 %%SITE_PERL%%/PSGConf/Action/MkDir.pm
 %%SITE_PERL%%/PSGConf/Action/MkNod.pm
 %%SITE_PERL%%/PSGConf/Action/ModifyFile.pm
@@ -92,9 +94,12 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Action/Remove.pm
 %%SITE_PERL%%/PSGConf/Action/RemoveCrontab.pm
 %%SITE_PERL%%/PSGConf/Action/RestartDaemon.pm
+%%SITE_PERL%%/PSGConf/Action/RPMImportGPGKey.pm
 %%SITE_PERL%%/PSGConf/Action/RunCommand.pm
 %%SITE_PERL%%/PSGConf/Action/Symlink.pm
 %%SITE_PERL%%/PSGConf/Action/TouchFile.pm
+%%SITE_PERL%%/PSGConf/Action/UntarFile.pm
+%%SITE_PERL%%/PSGConf/Action/svcs/import.pm
 %%SITE_PERL%%/PSGConf/Action/svcs/setprop.pm
 %%SITE_PERL%%/PSGConf/Control.pm
 %%SITE_PERL%%/PSGConf/Control/AIX.pm
