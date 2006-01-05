@@ -7,7 +7,7 @@
 
 PORTNAME=	geneweb
 PORTVERSION=	4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
 DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-1${DISTVERSIONSUFFIX}
@@ -25,6 +25,7 @@ SUB_FILES+=	pkg-message
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${PREFIX}/share/geneweb
 	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/share/geneweb
+	${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} go+r
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
