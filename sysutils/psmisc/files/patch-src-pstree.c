@@ -1,5 +1,5 @@
---- src/pstree.c.orig	Tue Oct 11 05:18:48 2005
-+++ src/pstree.c	Wed Nov 16 17:31:59 2005
+--- src/pstree.c.orig	Fri Nov 25 23:14:48 2005
++++ src/pstree.c	Thu Jan  5 23:34:36 2006
 @@ -590,7 +590,7 @@
        {
  	if (!(path = malloc (strlen (PROC_BASE) + strlen (de->d_name) + 10)))
@@ -9,7 +9,7 @@
  	if ((file = fopen (path, "r")) != NULL)
  	  {
  	    empty = 0;
-@@ -608,90 +608,10 @@
+@@ -608,95 +608,8 @@
  		perror (path);
  		exit (1);
  	      }
@@ -53,9 +53,15 @@
 -			 if ((thread=atoi(dt->d_name)) !=0) {
 -			    if (thread != pid) {
 -#ifdef WITH_SELINUX
--			       add_proc(threadname, thread, pid, st.st_uid, NULL, 0, scontext);
+-			       if (print_args)
+-				 add_proc(threadname, thread, pid, st.st_uid, threadname, strlen(threadname)+1, scontext);
+-			       else 
+-				 add_proc(threadname, thread, pid, st.st_uid, NULL, 0, scontext);
 -#else  /*WITH_SELINUX*/
--			       add_proc(threadname, thread, pid, st.st_uid, NULL, 0);
+-			       if (print_args)
+-				 add_proc(threadname, thread, pid, st.st_uid, threadname, strlen(threadname)+1);
+-			       else
+-				 add_proc(threadname, thread, pid, st.st_uid, NULL, 0);
 -#endif /*WITH_SELINUX*/
 -			    }
 -			 }
@@ -99,7 +105,5 @@
 +	    if (fscanf(file, "%s %*d %d", comm, &ppid) == 2) {
 +		add_proc(comm,pid,ppid,st.st_uid,NULL,0);
  	    }
-+
  	    (void) fclose (file);
  	  }
- 	free (path);

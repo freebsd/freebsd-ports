@@ -1,5 +1,5 @@
---- src/killall.c.orig	Tue Sep 20 05:31:38 2005
-+++ src/killall.c	Wed Nov 16 17:40:13 2005
+--- src/killall.c.orig	Thu Dec  1 22:32:19 2005
++++ src/killall.c	Thu Jan  5 23:32:33 2006
 @@ -59,35 +59,31 @@
             quiet = 0, wait_until_dead = 0, process_group = 0,
             ignore_case = 0, pidof;
@@ -70,7 +70,7 @@
  	  continue;
  	}
        free (path);
--      okay = fscanf (file, "%*d (%[^)]", comm) == 1;
+-      okay = fscanf (file, "%*d (%15[^)]", comm) == 1;
 +      okay = fscanf (file, "%s", comm) == 1;
        (void) fclose (file);
        if (!okay)
