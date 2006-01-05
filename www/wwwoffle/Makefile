@@ -17,7 +17,7 @@ COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}d.sh
 
 # $SPOOL seems like a common name which could be used for other things, so
 # use $WWWOFFLE_SPOOL as the overriding setting.
@@ -47,15 +47,10 @@ post-configure:
 
 .endif
 
-post-build:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/wwwoffled.sh > ${WRKDIR}/wwwoffled.sh
-
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.5-2.6.pl ${WWWOFFLE_SPOOL}
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.x-2.5.pl ${WWWOFFLE_SPOOL}
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
-	@${INSTALL_SCRIPT} ${WRKDIR}/wwwoffled.sh ${PREFIX}/etc/rc.d/wwwoffled.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

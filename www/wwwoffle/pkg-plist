@@ -6,7 +6,6 @@ bin/wwwoffle-read
 bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
-etc/rc.d/wwwoffled.sh
 @unexec if cmp -s %D/etc/wwwoffle.conf.install %D/etc/wwwoffle.conf; then rm -f %D/etc/wwwoffle.conf; fi
 etc/wwwoffle.conf.install
 sbin/wwwoffled
