@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 
@@ -19,7 +19,8 @@ USE_REINPLACE=	yes
 PLIST_FILES=	bin/pbzip2
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread -lpthread,${PTHREAD_LIBS},g" \
+	@${REINPLACE_CMD} \
+		-e "s,-pthread -lpthread,${PTHREAD_LIBS},g" \
 		-e "s,-O3,${CXXFLAGS}," \
 		-e "s,^CC,#CC," \
 		-e "s,CC,CXX," ${WRKSRC}/Makefile
