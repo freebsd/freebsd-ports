@@ -1,16 +1,8 @@
 bin/mllex
+bin/mlnlffigen
 bin/mlprof
 bin/mlton
 bin/mlyacc
-lib/mlton/include/platform/cygwin.h
-lib/mlton/include/platform/darwin.h
-lib/mlton/include/platform/freebsd.h
-lib/mlton/include/platform/linux.h
-lib/mlton/include/platform/mingw.h
-lib/mlton/include/platform/netbsd.h
-lib/mlton/include/platform/openbsd.h
-lib/mlton/include/platform/setenv.h
-lib/mlton/include/platform/solaris.h
 lib/mlton/include/assert.h
 lib/mlton/include/bytecode-main.h
 lib/mlton/include/bytecode.h
@@ -21,11 +13,27 @@ lib/mlton/include/gc.h
 lib/mlton/include/interpret.h
 lib/mlton/include/main.h
 lib/mlton/include/platform.h
+lib/mlton/include/platform/cygwin.h
+lib/mlton/include/platform/darwin.h
+lib/mlton/include/platform/feround.h
+lib/mlton/include/platform/freebsd.h
+lib/mlton/include/platform/linux.h
+lib/mlton/include/platform/mingw.h
+lib/mlton/include/platform/netbsd.h
+lib/mlton/include/platform/openbsd.h
+lib/mlton/include/platform/setenv.h
+lib/mlton/include/platform/solaris.h
 lib/mlton/include/types.h
 lib/mlton/include/x86-main.h
+lib/mlton/mlb-path-map
+lib/mlton/mlton-compile
+lib/mlton/opcodes
+lib/mlton/platform
 lib/mlton/self/constants
 lib/mlton/self/libgdtoa.a
 lib/mlton/self/libmlton.a
+lib/mlton/sml/basis/Makefile
+lib/mlton/sml/basis/README
 lib/mlton/sml/basis/arrays-and-vectors/array-slice.sig
 lib/mlton/sml/basis/arrays-and-vectors/array.sig
 lib/mlton/sml/basis/arrays-and-vectors/array.sml
@@ -46,6 +54,12 @@ lib/mlton/sml/basis/arrays-and-vectors/slice.sig
 lib/mlton/sml/basis/arrays-and-vectors/vector-slice.sig
 lib/mlton/sml/basis/arrays-and-vectors/vector.sig
 lib/mlton/sml/basis/arrays-and-vectors/vector.sml
+lib/mlton/sml/basis/basis-1997.mlb
+lib/mlton/sml/basis/basis-2002.mlb
+lib/mlton/sml/basis/basis-none.mlb
+lib/mlton/sml/basis/basis.mlb
+lib/mlton/sml/basis/default.mlb
+lib/mlton/sml/basis/equal.mlb
 lib/mlton/sml/basis/general/bool.sig
 lib/mlton/sml/basis/general/bool.sml
 lib/mlton/sml/basis/general/general.sig
@@ -54,6 +68,7 @@ lib/mlton/sml/basis/general/option.sig
 lib/mlton/sml/basis/general/option.sml
 lib/mlton/sml/basis/general/sml90.sig
 lib/mlton/sml/basis/general/sml90.sml
+lib/mlton/sml/basis/infixes.mlb
 lib/mlton/sml/basis/integer/embed-int.sml
 lib/mlton/sml/basis/integer/embed-word.sml
 lib/mlton/sml/basis/integer/int-inf.sig
@@ -81,6 +96,7 @@ lib/mlton/sml/basis/io/text-io.sig
 lib/mlton/sml/basis/io/text-io.sml
 lib/mlton/sml/basis/io/text-prim-io.sml
 lib/mlton/sml/basis/io/text-stream-io.sig
+lib/mlton/sml/basis/libs/all.mlb
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/array.sig
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/mono-array.sig
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/mono-array2.sig
@@ -88,6 +104,7 @@ lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/mono-vector-array-array2-
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/mono-vector.sig
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/vector-array-convert.fun
 lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors/vector.sig
+lib/mlton/sml/basis/libs/basis-1997/basis-1997.mlb
 lib/mlton/sml/basis/libs/basis-1997/integer/word.sig
 lib/mlton/sml/basis/libs/basis-1997/io/bin-io-convert.fun
 lib/mlton/sml/basis/libs/basis-1997/io/bin-io.sig
@@ -136,7 +153,8 @@ lib/mlton/sml/basis/libs/basis-1997/top-level/basis.sml
 lib/mlton/sml/basis/libs/basis-1997/top-level/infixes.sml
 lib/mlton/sml/basis/libs/basis-1997/top-level/overloads.sml
 lib/mlton/sml/basis/libs/basis-1997/top-level/top-level.sml
-lib/mlton/sml/basis/libs/basis-1997/basis-1997.mlb
+lib/mlton/sml/basis/libs/basis-2002-strict/top-level/top-level.sml
+lib/mlton/sml/basis/libs/basis-2002/basis-2002.mlb
 lib/mlton/sml/basis/libs/basis-2002/top-level/Makefile
 lib/mlton/sml/basis/libs/basis-2002/top-level/basis-equal.sig
 lib/mlton/sml/basis/libs/basis-2002/top-level/basis-exns.sig
@@ -154,19 +172,16 @@ lib/mlton/sml/basis/libs/basis-2002/top-level/pervasive-exns.sml
 lib/mlton/sml/basis/libs/basis-2002/top-level/pervasive-types.sml
 lib/mlton/sml/basis/libs/basis-2002/top-level/pervasive-vals.sml
 lib/mlton/sml/basis/libs/basis-2002/top-level/top-level.sml
-lib/mlton/sml/basis/libs/basis-2002/basis-2002.mlb
-lib/mlton/sml/basis/libs/basis-2002-strict/top-level/top-level.sml
+lib/mlton/sml/basis/libs/basis-extra/basis-extra.mlb
 lib/mlton/sml/basis/libs/basis-extra/top-level/basis-funs.sml
 lib/mlton/sml/basis/libs/basis-extra/top-level/basis-sigs.sml
 lib/mlton/sml/basis/libs/basis-extra/top-level/basis.sig
 lib/mlton/sml/basis/libs/basis-extra/top-level/basis.sml
 lib/mlton/sml/basis/libs/basis-extra/top-level/top-level.sml
-lib/mlton/sml/basis/libs/basis-extra/basis-extra.mlb
 lib/mlton/sml/basis/libs/basis-none/top-level/basis.sig
 lib/mlton/sml/basis/libs/basis-none/top-level/basis.sml
 lib/mlton/sml/basis/libs/basis-none/top-level/infixes.sml
 lib/mlton/sml/basis/libs/basis-none/top-level/top-level.sml
-lib/mlton/sml/basis/libs/all.mlb
 lib/mlton/sml/basis/libs/primitive.mlb
 lib/mlton/sml/basis/list/list-pair.sig
 lib/mlton/sml/basis/list/list-pair.sml
@@ -185,10 +200,14 @@ lib/mlton/sml/basis/misc/reader.sml
 lib/mlton/sml/basis/misc/unique-id.fun
 lib/mlton/sml/basis/misc/unique-id.sig
 lib/mlton/sml/basis/misc/util.sml
+lib/mlton/sml/basis/mlton.mlb
 lib/mlton/sml/basis/mlton/array.sig
 lib/mlton/sml/basis/mlton/bin-io.sig
+lib/mlton/sml/basis/mlton/call-stack.sig
+lib/mlton/sml/basis/mlton/call-stack.sml
 lib/mlton/sml/basis/mlton/cont.sig
 lib/mlton/sml/basis/mlton/cont.sml
+lib/mlton/sml/basis/mlton/exit.sml
 lib/mlton/sml/basis/mlton/exn.sig
 lib/mlton/sml/basis/mlton/exn.sml
 lib/mlton/sml/basis/mlton/ffi.sig
@@ -253,6 +272,13 @@ lib/mlton/sml/basis/net/socket.sig
 lib/mlton/sml/basis/net/socket.sml
 lib/mlton/sml/basis/net/unix-sock.sig
 lib/mlton/sml/basis/net/unix-sock.sml
+lib/mlton/sml/basis/notes.txt
+lib/mlton/sml/basis/overloads.mlb
+lib/mlton/sml/basis/pervasive-exns.mlb
+lib/mlton/sml/basis/pervasive-types.mlb
+lib/mlton/sml/basis/pervasive-vals.mlb
+lib/mlton/sml/basis/pervasive.mlb
+lib/mlton/sml/basis/platform/cygwin.sml
 lib/mlton/sml/basis/posix/error.sig
 lib/mlton/sml/basis/posix/error.sml
 lib/mlton/sml/basis/posix/file-sys.sig
@@ -284,6 +310,7 @@ lib/mlton/sml/basis/real/real.fun
 lib/mlton/sml/basis/real/real.sig
 lib/mlton/sml/basis/real/real32.sml
 lib/mlton/sml/basis/real/real64.sml
+lib/mlton/sml/basis/sml-nj.mlb
 lib/mlton/sml/basis/sml-nj/sml-nj.sig
 lib/mlton/sml/basis/sml-nj/sml-nj.sml
 lib/mlton/sml/basis/sml-nj/unsafe.sig
@@ -325,23 +352,446 @@ lib/mlton/sml/basis/text/text.sig
 lib/mlton/sml/basis/text/text.sml
 lib/mlton/sml/basis/top-level/arithmetic.sml
 lib/mlton/sml/basis/top-level/infixes.sml
-lib/mlton/sml/basis/Makefile
-lib/mlton/sml/basis/README
-lib/mlton/sml/basis/basis-1997.mlb
-lib/mlton/sml/basis/basis-2002.mlb
-lib/mlton/sml/basis/basis-none.mlb
-lib/mlton/sml/basis/basis.mlb
-lib/mlton/sml/basis/equal.mlb
-lib/mlton/sml/basis/infixes.mlb
-lib/mlton/sml/basis/mlton.mlb
-lib/mlton/sml/basis/notes.txt
-lib/mlton/sml/basis/overloads.mlb
-lib/mlton/sml/basis/pervasive-exns.mlb
-lib/mlton/sml/basis/pervasive-types.mlb
-lib/mlton/sml/basis/pervasive-vals.mlb
-lib/mlton/sml/basis/pervasive.mlb
-lib/mlton/sml/basis/sml-nj.mlb
 lib/mlton/sml/basis/unsafe.mlb
+lib/mlton/sml/ckit-lib/BUGS
+lib/mlton/sml/ckit-lib/HISTORY
+lib/mlton/sml/ckit-lib/README
+lib/mlton/sml/ckit-lib/README.mlton
+lib/mlton/sml/ckit-lib/README.mlton.orig
+lib/mlton/sml/ckit-lib/ckit-lib.mlb
+lib/mlton/sml/ckit-lib/ckit-lib.mlb.orig
+lib/mlton/sml/ckit-lib/doc/overview
+lib/mlton/sml/ckit-lib/doc/overview.html
+lib/mlton/sml/ckit-lib/doc/todo
+lib/mlton/sml/ckit-lib/regression/README
+lib/mlton/sml/ckit-lib/regression/invalid-programs/a208.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/a37.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/counter-example.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r1.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r10.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r11.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r12.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r13.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r14.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r15.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r16.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r17.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r18.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r19.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r2.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r20.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r21.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r22.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r23.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r24.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r25.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r26.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r27.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r28.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r29.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r3.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r30.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r31.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r32.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r33.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r34.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r35.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r36.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r37.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r38.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r39.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r4.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r40.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r41.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r42.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r43.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r44.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r45.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r46.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r47.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r48.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r49.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r5.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r50.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r51.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r52.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r53.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r54.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r55.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r56.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r57.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r59.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r6.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r60.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r61.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r62.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r63.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r64.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r65.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r66.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r7.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r8.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/r9.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/t15.c
+lib/mlton/sml/ckit-lib/regression/invalid-programs/t2.c
+lib/mlton/sml/ckit-lib/regression/output/a1.c
+lib/mlton/sml/ckit-lib/regression/output/a10.c
+lib/mlton/sml/ckit-lib/regression/output/a100.c
+lib/mlton/sml/ckit-lib/regression/output/a101.c
+lib/mlton/sml/ckit-lib/regression/output/a102.c
+lib/mlton/sml/ckit-lib/regression/output/a103.c
+lib/mlton/sml/ckit-lib/regression/output/a104.c
+lib/mlton/sml/ckit-lib/regression/output/a105.c
+lib/mlton/sml/ckit-lib/regression/output/a106.c
+lib/mlton/sml/ckit-lib/regression/output/a107.c
+lib/mlton/sml/ckit-lib/regression/output/a108.c
+lib/mlton/sml/ckit-lib/regression/output/a109.c
+lib/mlton/sml/ckit-lib/regression/output/a11.c
+lib/mlton/sml/ckit-lib/regression/output/a110.c
+lib/mlton/sml/ckit-lib/regression/output/a111.c
+lib/mlton/sml/ckit-lib/regression/output/a112.c
+lib/mlton/sml/ckit-lib/regression/output/a113.c
+lib/mlton/sml/ckit-lib/regression/output/a114.c
+lib/mlton/sml/ckit-lib/regression/output/a115.c
+lib/mlton/sml/ckit-lib/regression/output/a116.c
+lib/mlton/sml/ckit-lib/regression/output/a117.c
+lib/mlton/sml/ckit-lib/regression/output/a118.c
+lib/mlton/sml/ckit-lib/regression/output/a12.c
+lib/mlton/sml/ckit-lib/regression/output/a13.c
+lib/mlton/sml/ckit-lib/regression/output/a14.c
+lib/mlton/sml/ckit-lib/regression/output/a15.c
+lib/mlton/sml/ckit-lib/regression/output/a16.c
+lib/mlton/sml/ckit-lib/regression/output/a17.c
+lib/mlton/sml/ckit-lib/regression/output/a18.c
+lib/mlton/sml/ckit-lib/regression/output/a19.c
+lib/mlton/sml/ckit-lib/regression/output/a2.c
+lib/mlton/sml/ckit-lib/regression/output/a20.c
+lib/mlton/sml/ckit-lib/regression/output/a200.c
+lib/mlton/sml/ckit-lib/regression/output/a201.c
+lib/mlton/sml/ckit-lib/regression/output/a202.c
+lib/mlton/sml/ckit-lib/regression/output/a203.c
+lib/mlton/sml/ckit-lib/regression/output/a204.c
+lib/mlton/sml/ckit-lib/regression/output/a205.c
+lib/mlton/sml/ckit-lib/regression/output/a206.c
+lib/mlton/sml/ckit-lib/regression/output/a207.c
+lib/mlton/sml/ckit-lib/regression/output/a208.c
+lib/mlton/sml/ckit-lib/regression/output/a209.c
+lib/mlton/sml/ckit-lib/regression/output/a21.c
+lib/mlton/sml/ckit-lib/regression/output/a210.c
+lib/mlton/sml/ckit-lib/regression/output/a22.c
+lib/mlton/sml/ckit-lib/regression/output/a23.c
+lib/mlton/sml/ckit-lib/regression/output/a24.c
+lib/mlton/sml/ckit-lib/regression/output/a25.c
+lib/mlton/sml/ckit-lib/regression/output/a26.c
+lib/mlton/sml/ckit-lib/regression/output/a27.c
+lib/mlton/sml/ckit-lib/regression/output/a28.c
+lib/mlton/sml/ckit-lib/regression/output/a29.c
+lib/mlton/sml/ckit-lib/regression/output/a3.c
+lib/mlton/sml/ckit-lib/regression/output/a30.c
+lib/mlton/sml/ckit-lib/regression/output/a31.c
+lib/mlton/sml/ckit-lib/regression/output/a32.c
+lib/mlton/sml/ckit-lib/regression/output/a33.c
+lib/mlton/sml/ckit-lib/regression/output/a34.c
+lib/mlton/sml/ckit-lib/regression/output/a35.c
+lib/mlton/sml/ckit-lib/regression/output/a36.c
+lib/mlton/sml/ckit-lib/regression/output/a37.c
+lib/mlton/sml/ckit-lib/regression/output/a38.c
+lib/mlton/sml/ckit-lib/regression/output/a39.c
+lib/mlton/sml/ckit-lib/regression/output/a4.c
+lib/mlton/sml/ckit-lib/regression/output/a40.c
+lib/mlton/sml/ckit-lib/regression/output/a43.c
+lib/mlton/sml/ckit-lib/regression/output/a44.c
+lib/mlton/sml/ckit-lib/regression/output/a5.c
+lib/mlton/sml/ckit-lib/regression/output/a50.c
+lib/mlton/sml/ckit-lib/regression/output/a6.c
+lib/mlton/sml/ckit-lib/regression/output/a7.c
+lib/mlton/sml/ckit-lib/regression/output/a8.c
+lib/mlton/sml/ckit-lib/regression/output/a9.c
+lib/mlton/sml/ckit-lib/regression/output/b2.c
+lib/mlton/sml/ckit-lib/regression/output/b3.c
+lib/mlton/sml/ckit-lib/regression/output/c100.c.c
+lib/mlton/sml/ckit-lib/regression/output/fact1.c
+lib/mlton/sml/ckit-lib/regression/output/i100.c.c
+lib/mlton/sml/ckit-lib/regression/output/kf.c
+lib/mlton/sml/ckit-lib/regression/output/primes.c.c
+lib/mlton/sml/ckit-lib/regression/output/ps2ascii.c.c
+lib/mlton/sml/ckit-lib/regression/output/summary
+lib/mlton/sml/ckit-lib/regression/output/t1.c
+lib/mlton/sml/ckit-lib/regression/output/t10.c
+lib/mlton/sml/ckit-lib/regression/output/t11.c
+lib/mlton/sml/ckit-lib/regression/output/t12.c
+lib/mlton/sml/ckit-lib/regression/output/t13.c
+lib/mlton/sml/ckit-lib/regression/output/t14.c
+lib/mlton/sml/ckit-lib/regression/output/t15.c
+lib/mlton/sml/ckit-lib/regression/output/t22.c
+lib/mlton/sml/ckit-lib/regression/output/t3.c
+lib/mlton/sml/ckit-lib/regression/output/t4.c
+lib/mlton/sml/ckit-lib/regression/output/t5.c
+lib/mlton/sml/ckit-lib/regression/output/t6.c
+lib/mlton/sml/ckit-lib/regression/output/t7.c
+lib/mlton/sml/ckit-lib/regression/output/t8.c
+lib/mlton/sml/ckit-lib/regression/output/t9.c
+lib/mlton/sml/ckit-lib/regression/output/test.c
+lib/mlton/sml/ckit-lib/regression/output/test1.c
+lib/mlton/sml/ckit-lib/regression/output/test10.c
+lib/mlton/sml/ckit-lib/regression/output/test2.c
+lib/mlton/sml/ckit-lib/regression/output/test4.c
+lib/mlton/sml/ckit-lib/regression/output/test5.c
+lib/mlton/sml/ckit-lib/regression/output/typedef.c
+lib/mlton/sml/ckit-lib/regression/output/typedef2.c
+lib/mlton/sml/ckit-lib/regression/output/words.c.c
+lib/mlton/sml/ckit-lib/regression/sources.cm
+lib/mlton/sml/ckit-lib/regression/test-fn.sml
+lib/mlton/sml/ckit-lib/regression/tests/simplify/simplify-test.sml
+lib/mlton/sml/ckit-lib/regression/tests/simplify/sources.cm
+lib/mlton/sml/ckit-lib/regression/tests/typecheck/sources.cm
+lib/mlton/sml/ckit-lib/regression/tests/typecheck/typecheck-test.sml
+lib/mlton/sml/ckit-lib/regression/valid-programs.obs/c100.c.c
+lib/mlton/sml/ckit-lib/regression/valid-programs.obs/i100.c.c
+lib/mlton/sml/ckit-lib/regression/valid-programs.obs/ps2ascii.c.c
+lib/mlton/sml/ckit-lib/regression/valid-programs.obs/t22.c
+lib/mlton/sml/ckit-lib/regression/valid-programs.obs/t7.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a1.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a10.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a100.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a101.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a102.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a103.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a104.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a105.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a106.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a107.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a108.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a109.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a11.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a110.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a111.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a112.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a113.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a114.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a115.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a116.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a117.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a118.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a12.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a13.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a14.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a15.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a16.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a17.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a18.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a19.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a2.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a20.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a200.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a201.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a202.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a203.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a204.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a205.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a206.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a207.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a209.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a21.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a210.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a211.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a212.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a213.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a214.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a215.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a216.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a217.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a22.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a220.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a221.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a222.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a223.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a224.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a225.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a226.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a227.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a228.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a229.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a23.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a230.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a231.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a232.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a233.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a234.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a235.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a236.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a237.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a238.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a239.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a24.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a25.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a26.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a27.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a28.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a29.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a3.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a30.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a31.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a32.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a33.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a34.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a35.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a36.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a37.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a38.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a39.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a4.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a40.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a43.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a44.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a45.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a5.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a50.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a6.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a60.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a61.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a62.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a63.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a64.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a65.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a66.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a67.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a7.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a8.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/a9.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/b2.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/b3.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/fact1.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/kf.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/primes.c.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t1.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t10.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t11.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t12.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t13.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t14.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t3.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t4.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t5.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t6.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t8.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/t9.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test1.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test10.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test2.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test4.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/test5.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/typedef.c
+lib/mlton/sml/ckit-lib/regression/valid-programs/typedef2.c
+lib/mlton/sml/ckit-lib/src/ast-utils/copy/copy-ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/copy/copy-ast.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/equality/eq-ast-ext-sig.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/equality/eq-ast.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/equality/eq-ctype.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/extensions/c/copy-ast-ext.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/extensions/c/simplify-ast-ext.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/simplify-ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/simplify-ast.sml
+lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/sources.cm
+lib/mlton/sml/ckit-lib/src/ast/aid.sml
+lib/mlton/sml/ckit-lib/src/ast/aidtab.sml
+lib/mlton/sml/ckit-lib/src/ast/anonymous-structs.sml
+lib/mlton/sml/ckit-lib/src/ast/ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/ast-sig.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/ast.sml
+lib/mlton/sml/ckit-lib/src/ast/bindings.sml
+lib/mlton/sml/ckit-lib/src/ast/build-ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/build-ast.sml
+lib/mlton/sml/ckit-lib/src/ast/build-ast.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/cnv-ext-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/ctype-eq.sml
+lib/mlton/sml/ckit-lib/src/ast/extensions/c/ast-ext-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/extensions/c/ast-ext.sml
+lib/mlton/sml/ckit-lib/src/ast/extensions/c/cnv-ext.sml
+lib/mlton/sml/ckit-lib/src/ast/extensions/c/eq-ast-ext.sml
+lib/mlton/sml/ckit-lib/src/ast/extensions/c/pp-ast-ext-fn.sml
+lib/mlton/sml/ckit-lib/src/ast/group.cm
+lib/mlton/sml/ckit-lib/src/ast/initializer-normalizer-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/initializer-normalizer.sml
+lib/mlton/sml/ckit-lib/src/ast/initializer-normalizer.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/parse-to-ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/parse-to-ast.sml
+lib/mlton/sml/ckit-lib/src/ast/pid.sml
+lib/mlton/sml/ckit-lib/src/ast/pidtab.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-adornment-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-adornment-sig.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-ext-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-ext-sig.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-fn.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-ast.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-lib.sml
+lib/mlton/sml/ckit-lib/src/ast/pp/pp-lib.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/simplify-assign-ops.sml
+lib/mlton/sml/ckit-lib/src/ast/sizeof-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/sizeof.sml
+lib/mlton/sml/ckit-lib/src/ast/sizeof.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/sizes-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/sizes.sml
+lib/mlton/sml/ckit-lib/src/ast/sources.cm
+lib/mlton/sml/ckit-lib/src/ast/state-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/state.sml
+lib/mlton/sml/ckit-lib/src/ast/symbol-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/symbol.sml
+lib/mlton/sml/ckit-lib/src/ast/tables.sml
+lib/mlton/sml/ckit-lib/src/ast/tid.sml
+lib/mlton/sml/ckit-lib/src/ast/tidtab.sml
+lib/mlton/sml/ckit-lib/src/ast/type-util-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/type-util-sig.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/type-util.sml
+lib/mlton/sml/ckit-lib/src/ast/type-util.sml.orig
+lib/mlton/sml/ckit-lib/src/ast/uid-fn.sml
+lib/mlton/sml/ckit-lib/src/ast/uid-sig.sml
+lib/mlton/sml/ckit-lib/src/ast/uidtabimp-fn.sml
+lib/mlton/sml/ckit-lib/src/ast/uidtabimp-sig.sml
+lib/mlton/sml/ckit-lib/src/c-util/sizes.c
+lib/mlton/sml/ckit-lib/src/ckit-lib.cm
+lib/mlton/sml/ckit-lib/src/ckit-lib.mlb
+lib/mlton/sml/ckit-lib/src/ckit-lib.mlb.orig
+lib/mlton/sml/ckit-lib/src/ckit.cm
+lib/mlton/sml/ckit-lib/src/parser/extensions/c/parse-tree-ext-sig.sml
+lib/mlton/sml/ckit-lib/src/parser/extensions/c/parse-tree-ext.sml
+lib/mlton/sml/ckit-lib/src/parser/grammar/Makefile
+lib/mlton/sml/ckit-lib/src/parser/grammar/README
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.grm
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.grm.desc
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.grm.sig
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.grm.sml
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.grm.sml.orig
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.lex
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.lex.sml
+lib/mlton/sml/ckit-lib/src/parser/grammar/c.lex.sml.orig
+lib/mlton/sml/ckit-lib/src/parser/grammar/tdefs.sml
+lib/mlton/sml/ckit-lib/src/parser/grammar/tokentable.sml
+lib/mlton/sml/ckit-lib/src/parser/group.cm
+lib/mlton/sml/ckit-lib/src/parser/parse-tree-sig.sml
+lib/mlton/sml/ckit-lib/src/parser/parse-tree-sig.sml.orig
+lib/mlton/sml/ckit-lib/src/parser/parse-tree.sml
+lib/mlton/sml/ckit-lib/src/parser/parse-tree.sml.orig
+lib/mlton/sml/ckit-lib/src/parser/parser-sig.sml
+lib/mlton/sml/ckit-lib/src/parser/parser.sml
+lib/mlton/sml/ckit-lib/src/parser/sources.cm
+lib/mlton/sml/ckit-lib/src/parser/util/ascii.sml
+lib/mlton/sml/ckit-lib/src/parser/util/error-sig.sml
+lib/mlton/sml/ckit-lib/src/parser/util/error.sml
+lib/mlton/sml/ckit-lib/src/parser/util/old-pp.sml
+lib/mlton/sml/ckit-lib/src/parser/util/sourcemap-sig.sml
+lib/mlton/sml/ckit-lib/src/parser/util/sourcemap.sml
+lib/mlton/sml/ckit-lib/src/sources.cm
+lib/mlton/sml/ckit-lib/src/test.c
+lib/mlton/sml/ckit-lib/src/variants/ansic/config.sml
+lib/mlton/sml/ckit-lib/src/variants/config-sig.sml
+lib/mlton/sml/ckit-lib/src/variants/group.cm
+lib/mlton/sml/ckit-lib/src/variants/parse-control-sig.sml
+lib/mlton/sml/ckit-lib/src/variants/sources.cm
+lib/mlton/sml/ckit-lib/src/variants/type-check-control-sig.sml
+lib/mlton/sml/cml/TODO
 lib/mlton/sml/cml/cml-lib/cml-lib.mlb
 lib/mlton/sml/cml/cml-lib/multicast.sig
 lib/mlton/sml/cml/cml-lib/multicast.sml
@@ -352,6 +802,7 @@ lib/mlton/sml/cml/cml-lib/simple-rpc.sml
 lib/mlton/sml/cml/cml-lib/trace-cml.cm
 lib/mlton/sml/cml/cml-lib/trace-cml.sig
 lib/mlton/sml/cml/cml-lib/trace-cml.sml
+lib/mlton/sml/cml/cml.mlb
 lib/mlton/sml/cml/core-cml/channel.sig
 lib/mlton/sml/cml/core-cml/channel.sml
 lib/mlton/sml/cml/core-cml/cml.sig
@@ -419,9 +870,44 @@ lib/mlton/sml/cml/util/local-debug.fun
 lib/mlton/sml/cml/util/timeit.sig
 lib/mlton/sml/cml/util/timeit.sml
 lib/mlton/sml/cml/util/util.mlb
-lib/mlton/sml/cml/README
-lib/mlton/sml/cml/TODO
-lib/mlton/sml/cml/cml.mlb
+lib/mlton/sml/mlnlffi-lib/README
+lib/mlton/sml/mlnlffi-lib/README.mlton
+lib/mlton/sml/mlnlffi-lib/c-debug.sig
+lib/mlton/sml/mlnlffi-lib/c.mlb
+lib/mlton/sml/mlnlffi-lib/c.sig
+lib/mlton/sml/mlnlffi-lib/internals/c-debug.sml
+lib/mlton/sml/mlnlffi-lib/internals/c-int.mlb
+lib/mlton/sml/mlnlffi-lib/internals/c-int.sig
+lib/mlton/sml/mlnlffi-lib/internals/c-int.sml
+lib/mlton/sml/mlnlffi-lib/internals/c-int.x86-linux.mlb
+lib/mlton/sml/mlnlffi-lib/internals/c.sml
+lib/mlton/sml/mlnlffi-lib/internals/tag.sml
+lib/mlton/sml/mlnlffi-lib/internals/zstring.sml
+lib/mlton/sml/mlnlffi-lib/memory/bitop-fn.sml
+lib/mlton/sml/mlnlffi-lib/memory/linkage-libdl.sml
+lib/mlton/sml/mlnlffi-lib/memory/linkage.sig
+lib/mlton/sml/mlnlffi-lib/memory/memaccess-a4c1s2i4l4ll8f4d8.sml
+lib/mlton/sml/mlnlffi-lib/memory/memaccess.sig
+lib/mlton/sml/mlnlffi-lib/memory/memalloc-a4-unix.sml
+lib/mlton/sml/mlnlffi-lib/memory/memalloc.sig
+lib/mlton/sml/mlnlffi-lib/memory/memory.32bit-unix.mlb
+lib/mlton/sml/mlnlffi-lib/memory/memory.mlb
+lib/mlton/sml/mlnlffi-lib/memory/memory.sig
+lib/mlton/sml/mlnlffi-lib/memory/memory.sml
+lib/mlton/sml/mlnlffi-lib/memory/mlrep-i8i16i32i32i64f32f64.sml
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.hppa-linux.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.powerpc-darwin.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.powerpc-linux.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.sparc-linux.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.sparc-solaris.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-cygwin.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-freebsd.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-linux.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-mingw.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-netbsd.mlb
+lib/mlton/sml/mlnlffi-lib/memory/platform/memory.x86-openbsd.mlb
+lib/mlton/sml/mlnlffi-lib/mlnlffi-lib.mlb
+lib/mlton/sml/mlnlffi-lib/zstring.sig
 lib/mlton/sml/mlyacc-lib/base.sig
 lib/mlton/sml/mlyacc-lib/join.sml
 lib/mlton/sml/mlyacc-lib/lrtable.sml
@@ -430,37 +916,348 @@ lib/mlton/sml/mlyacc-lib/parser1.sml
 lib/mlton/sml/mlyacc-lib/parser2.sml
 lib/mlton/sml/mlyacc-lib/sources.cm
 lib/mlton/sml/mlyacc-lib/stream.sml
-lib/mlton/mlb-path-map
-lib/mlton/mlton-compile
-lib/mlton/opcodes
-lib/mlton/platform
+lib/mlton/sml/smlnj-lib/CHANGES
+lib/mlton/sml/smlnj-lib/CPP/README
+lib/mlton/sml/smlnj-lib/Controls/README
+lib/mlton/sml/smlnj-lib/Controls/control-reps.sml
+lib/mlton/sml/smlnj-lib/Controls/control-set-sig.sml
+lib/mlton/sml/smlnj-lib/Controls/control-set.sml
+lib/mlton/sml/smlnj-lib/Controls/control-util-sig.sml
+lib/mlton/sml/smlnj-lib/Controls/control-util.sml
+lib/mlton/sml/smlnj-lib/Controls/controls-lib.cm
+lib/mlton/sml/smlnj-lib/Controls/controls-lib.mlb
+lib/mlton/sml/smlnj-lib/Controls/controls-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/Controls/controls-sig.sml
+lib/mlton/sml/smlnj-lib/Controls/controls.sml
+lib/mlton/sml/smlnj-lib/Controls/registry-sig.sml
+lib/mlton/sml/smlnj-lib/Controls/registry.sml
+lib/mlton/sml/smlnj-lib/Doc/CATALOG
+lib/mlton/sml/smlnj-lib/Doc/Config.cfg
+lib/mlton/sml/smlnj-lib/Doc/Entities.sgml
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/HashCons/hash-cons.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/engine-sig.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/match-tree.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/parser-sig.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-intro.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-lib-part.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/regexp-sig.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp/syntax.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-qsort-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-qsort.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/array-sort.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/atom.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/binary-map-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/binary-set-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bit-array.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bit-vector.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/bsearch.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/char-map.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/dynamic-array.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/fifo.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/iterate.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/lib-base.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-format.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-map-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-set-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/list-xprod.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/listsort.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/mono-array-sort.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/mono-dynamic-array.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-key.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-map.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/ord-set.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/queue.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/rand.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/random.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splay-map-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splay-set-fn.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/splaytree.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/uref.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util/util-lib-part.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/intro-part.mldoc
+lib/mlton/sml/smlnj-lib/Doc/ML-Doc/smlnj-lib.mldoc
+lib/mlton/sml/smlnj-lib/Doc/Makefile
+lib/mlton/sml/smlnj-lib/Doc/index.template
+lib/mlton/sml/smlnj-lib/Doc/input
+lib/mlton/sml/smlnj-lib/Doc/page.template
+lib/mlton/sml/smlnj-lib/Doc/toc.template
+lib/mlton/sml/smlnj-lib/HTML/HTML32.dtd
+lib/mlton/sml/smlnj-lib/HTML/README
+lib/mlton/sml/smlnj-lib/HTML/check-html-fn.sml
+lib/mlton/sml/smlnj-lib/HTML/html-attr-vals.sml
+lib/mlton/sml/smlnj-lib/HTML/html-attrs-fn.sml
+lib/mlton/sml/smlnj-lib/HTML/html-attrs-fn.sml.orig
+lib/mlton/sml/smlnj-lib/HTML/html-attrs-sig.sml
+lib/mlton/sml/smlnj-lib/HTML/html-cons-lib.mlb
+lib/mlton/sml/smlnj-lib/HTML/html-cons-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/HTML/html-defaults.sml
+lib/mlton/sml/smlnj-lib/HTML/html-elements-fn.sml
+lib/mlton/sml/smlnj-lib/HTML/html-elements-fn.sml.orig
+lib/mlton/sml/smlnj-lib/HTML/html-error-sig.sml
+lib/mlton/sml/smlnj-lib/HTML/html-gram
+lib/mlton/sml/smlnj-lib/HTML/html-gram.desc
+lib/mlton/sml/smlnj-lib/HTML/html-gram.sig
+lib/mlton/sml/smlnj-lib/HTML/html-gram.sml
+lib/mlton/sml/smlnj-lib/HTML/html-gram.sml.orig
+lib/mlton/sml/smlnj-lib/HTML/html-lex
+lib/mlton/sml/smlnj-lib/HTML/html-lex.sml
+lib/mlton/sml/smlnj-lib/HTML/html-lex.sml.orig
+lib/mlton/sml/smlnj-lib/HTML/html-lib.cm
+lib/mlton/sml/smlnj-lib/HTML/html-lib.mlb
+lib/mlton/sml/smlnj-lib/HTML/html-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/HTML/html-parser-fn.sml
+lib/mlton/sml/smlnj-lib/HTML/html-sig.sml
+lib/mlton/sml/smlnj-lib/HTML/html.sml
+lib/mlton/sml/smlnj-lib/HTML/make-html.sml
+lib/mlton/sml/smlnj-lib/HTML/pr-html.sml
+lib/mlton/sml/smlnj-lib/HTML/test-parser.sml
+lib/mlton/sml/smlnj-lib/HashCons/README
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-atom.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-ground-fn.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-lib.cm
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-lib.mlb
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-map-sig.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-map.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-set-sig.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-set.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-sig.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons-string.sml
+lib/mlton/sml/smlnj-lib/HashCons/hash-cons.sml
+lib/mlton/sml/smlnj-lib/INet/inet-lib.cm
+lib/mlton/sml/smlnj-lib/INet/inet-lib.mlb
+lib/mlton/sml/smlnj-lib/INet/inet-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/INet/sock-util-sig.sml
+lib/mlton/sml/smlnj-lib/INet/sock-util.sml
+lib/mlton/sml/smlnj-lib/INet/unix-sock-util.sml
+lib/mlton/sml/smlnj-lib/PORTING
+lib/mlton/sml/smlnj-lib/PP/README
+lib/mlton/sml/smlnj-lib/PP/devices/ansi-term-dev.sml
+lib/mlton/sml/smlnj-lib/PP/devices/ansi-term-pp.sml
+lib/mlton/sml/smlnj-lib/PP/devices/html-dev.sml
+lib/mlton/sml/smlnj-lib/PP/devices/simple-textio-dev.sml
+lib/mlton/sml/smlnj-lib/PP/devices/sources.cm
+lib/mlton/sml/smlnj-lib/PP/devices/string-token.sml
+lib/mlton/sml/smlnj-lib/PP/devices/textio-pp.sml
+lib/mlton/sml/smlnj-lib/PP/examples/old-pp.sml
+lib/mlton/sml/smlnj-lib/PP/pp-lib.cm
+lib/mlton/sml/smlnj-lib/PP/pp-lib.mlb
+lib/mlton/sml/smlnj-lib/PP/pp-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/PP/src/FORMAT
+lib/mlton/sml/smlnj-lib/PP/src/pp-debug-fn.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-desc-fn.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-desc-sig.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-device-sig.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-stream-fn.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-stream-sig.sml
+lib/mlton/sml/smlnj-lib/PP/src/pp-token-sig.sml
+lib/mlton/sml/smlnj-lib/PP/src/sources.cm
+lib/mlton/sml/smlnj-lib/PP/tests/base.sml
+lib/mlton/sml/smlnj-lib/PP/tests/out
+lib/mlton/sml/smlnj-lib/PP/tests/sources.cm
+lib/mlton/sml/smlnj-lib/PP/tests/test-html.sml
+lib/mlton/sml/smlnj-lib/PP/tests/test.sml
+lib/mlton/sml/smlnj-lib/PP/tests/typp.sml
+lib/mlton/sml/smlnj-lib/README
+lib/mlton/sml/smlnj-lib/README.mlton
+lib/mlton/sml/smlnj-lib/README.mlton.orig
+lib/mlton/sml/smlnj-lib/Reactive/README
+lib/mlton/sml/smlnj-lib/Reactive/instruction.sml
+lib/mlton/sml/smlnj-lib/Reactive/machine.sml
+lib/mlton/sml/smlnj-lib/Reactive/reactive-lib.cm
+lib/mlton/sml/smlnj-lib/Reactive/reactive-lib.mlb
+lib/mlton/sml/smlnj-lib/Reactive/reactive-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/Reactive/reactive-sig.sml
+lib/mlton/sml/smlnj-lib/Reactive/reactive.sml
+lib/mlton/sml/smlnj-lib/RegExp/BackEnd/bt-engine.sml
+lib/mlton/sml/smlnj-lib/RegExp/BackEnd/dfa-engine.sml
+lib/mlton/sml/smlnj-lib/RegExp/BackEnd/engine-sig.sml
+lib/mlton/sml/smlnj-lib/RegExp/BackEnd/fsm.sml
+lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/awk-syntax.sml
+lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/parser-sig.sml
+lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/syntax-sig.sml
+lib/mlton/sml/smlnj-lib/RegExp/FrontEnd/syntax.sml
+lib/mlton/sml/smlnj-lib/RegExp/Glue/match-tree.sml
+lib/mlton/sml/smlnj-lib/RegExp/Glue/regexp-fn.sml
+lib/mlton/sml/smlnj-lib/RegExp/Glue/regexp-sig.sml
+lib/mlton/sml/smlnj-lib/RegExp/README
+lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.cm
+lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.mlb
+lib/mlton/sml/smlnj-lib/RegExp/regexp-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/TODO
+lib/mlton/sml/smlnj-lib/Unix/unix-env-sig.sml
+lib/mlton/sml/smlnj-lib/Unix/unix-env.sml
+lib/mlton/sml/smlnj-lib/Unix/unix-lib.cm
+lib/mlton/sml/smlnj-lib/Unix/unix-lib.mlb
+lib/mlton/sml/smlnj-lib/Unix/unix-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/Unix/unix-path-sig.sml
+lib/mlton/sml/smlnj-lib/Unix/unix-path.sml
+lib/mlton/sml/smlnj-lib/Util/README
+lib/mlton/sml/smlnj-lib/Util/TODO
+lib/mlton/sml/smlnj-lib/Util/ansi-term.sml
+lib/mlton/sml/smlnj-lib/Util/array-qsort-fn.sml
+lib/mlton/sml/smlnj-lib/Util/array-qsort.sml
+lib/mlton/sml/smlnj-lib/Util/array-sort-sig.sml
+lib/mlton/sml/smlnj-lib/Util/array2-sig.sml
+lib/mlton/sml/smlnj-lib/Util/array2.sml
+lib/mlton/sml/smlnj-lib/Util/atom-binary-map.sml
+lib/mlton/sml/smlnj-lib/Util/atom-binary-set.sml
+lib/mlton/sml/smlnj-lib/Util/atom-map.sml
+lib/mlton/sml/smlnj-lib/Util/atom-redblack-map.sml
+lib/mlton/sml/smlnj-lib/Util/atom-redblack-set.sml
+lib/mlton/sml/smlnj-lib/Util/atom-set.sml
+lib/mlton/sml/smlnj-lib/Util/atom-sig.sml
+lib/mlton/sml/smlnj-lib/Util/atom-table.sml
+lib/mlton/sml/smlnj-lib/Util/atom.sml
+lib/mlton/sml/smlnj-lib/Util/binary-map-fn.sml
+lib/mlton/sml/smlnj-lib/Util/binary-set-fn.sml
+lib/mlton/sml/smlnj-lib/Util/bit-array-sig.sml
+lib/mlton/sml/smlnj-lib/Util/bit-array.sml
+lib/mlton/sml/smlnj-lib/Util/bit-array.sml.orig
+lib/mlton/sml/smlnj-lib/Util/bit-vector-sig.sml
+lib/mlton/sml/smlnj-lib/Util/bit-vector.sml
+lib/mlton/sml/smlnj-lib/Util/bsearch-fn.sml
+lib/mlton/sml/smlnj-lib/Util/char-map-sig.sml
+lib/mlton/sml/smlnj-lib/Util/char-map.sml
+lib/mlton/sml/smlnj-lib/Util/dynamic-array-fn.sml
+lib/mlton/sml/smlnj-lib/Util/dynamic-array-sig.sml
+lib/mlton/sml/smlnj-lib/Util/dynamic-array.sml
+lib/mlton/sml/smlnj-lib/Util/engine.mlton.sml
+lib/mlton/sml/smlnj-lib/Util/engine.mlton.sml.orig
+lib/mlton/sml/smlnj-lib/Util/fifo-sig.sml
+lib/mlton/sml/smlnj-lib/Util/fifo.sml
+lib/mlton/sml/smlnj-lib/Util/fmt-fields.sml
+lib/mlton/sml/smlnj-lib/Util/format-comb-sig.sml
+lib/mlton/sml/smlnj-lib/Util/format-comb.sml
+lib/mlton/sml/smlnj-lib/Util/format-sig.sml
+lib/mlton/sml/smlnj-lib/Util/format.sml
+lib/mlton/sml/smlnj-lib/Util/getopt-sig.sml
+lib/mlton/sml/smlnj-lib/Util/getopt.sml
+lib/mlton/sml/smlnj-lib/Util/graph-scc-fn.sml
+lib/mlton/sml/smlnj-lib/Util/graph-scc-fn.sml.orig
+lib/mlton/sml/smlnj-lib/Util/graph-scc-sig.sml
+lib/mlton/sml/smlnj-lib/Util/hash-key-sig.sml
+lib/mlton/sml/smlnj-lib/Util/hash-string.sml
+lib/mlton/sml/smlnj-lib/Util/hash-table-fn.sml
+lib/mlton/sml/smlnj-lib/Util/hash-table-rep.sml
+lib/mlton/sml/smlnj-lib/Util/hash-table-sig.sml
+lib/mlton/sml/smlnj-lib/Util/hash-table.sml
+lib/mlton/sml/smlnj-lib/Util/hash2-table-fn.sml
+lib/mlton/sml/smlnj-lib/Util/int-binary-map.sml
+lib/mlton/sml/smlnj-lib/Util/int-binary-set.sml
+lib/mlton/sml/smlnj-lib/Util/int-hash-table.sml
+lib/mlton/sml/smlnj-lib/Util/int-inf-sig.sml
+lib/mlton/sml/smlnj-lib/Util/int-inf.sml
+lib/mlton/sml/smlnj-lib/Util/int-list-map.sml
+lib/mlton/sml/smlnj-lib/Util/int-list-set.sml
+lib/mlton/sml/smlnj-lib/Util/int-redblack-map.sml
+lib/mlton/sml/smlnj-lib/Util/int-redblack-set.sml
+lib/mlton/sml/smlnj-lib/Util/interval-domain-sig.sml
+lib/mlton/sml/smlnj-lib/Util/interval-set-fn.sml
+lib/mlton/sml/smlnj-lib/Util/interval-set-sig.sml
+lib/mlton/sml/smlnj-lib/Util/io-util-sig.sml
+lib/mlton/sml/smlnj-lib/Util/io-util.sml
+lib/mlton/sml/smlnj-lib/Util/iterate-sig.sml
+lib/mlton/sml/smlnj-lib/Util/iterate.sml
+lib/mlton/sml/smlnj-lib/Util/keyword-fn.sml
+lib/mlton/sml/smlnj-lib/Util/left-priorityq-fn.sml
+lib/mlton/sml/smlnj-lib/Util/lib-base-sig.sml
+lib/mlton/sml/smlnj-lib/Util/lib-base.sml
+lib/mlton/sml/smlnj-lib/Util/list-format-sig.sml
+lib/mlton/sml/smlnj-lib/Util/list-format.sml
+lib/mlton/sml/smlnj-lib/Util/list-map-fn.sml
+lib/mlton/sml/smlnj-lib/Util/list-mergesort.sml
+lib/mlton/sml/smlnj-lib/Util/list-set-fn.sml
+lib/mlton/sml/smlnj-lib/Util/list-xprod-sig.sml
+lib/mlton/sml/smlnj-lib/Util/list-xprod.sml
+lib/mlton/sml/smlnj-lib/Util/listsort-sig.sml
+lib/mlton/sml/smlnj-lib/Util/load
+lib/mlton/sml/smlnj-lib/Util/mono-array-fn.sml
+lib/mlton/sml/smlnj-lib/Util/mono-array-sort-sig.sml
+lib/mlton/sml/smlnj-lib/Util/mono-dynamic-array-sig.sml
+lib/mlton/sml/smlnj-lib/Util/mono-hash-table-sig.sml
+lib/mlton/sml/smlnj-lib/Util/mono-hash2-table-sig.sml
+lib/mlton/sml/smlnj-lib/Util/mono-priorityq-sig.sml
+lib/mlton/sml/smlnj-lib/Util/ord-key-sig.sml
+lib/mlton/sml/smlnj-lib/Util/ord-map-sig.sml
+lib/mlton/sml/smlnj-lib/Util/ord-set-sig.sml
+lib/mlton/sml/smlnj-lib/Util/parser-comb-sig.sml
+lib/mlton/sml/smlnj-lib/Util/parser-comb.sml
+lib/mlton/sml/smlnj-lib/Util/path-util-sig.sml
+lib/mlton/sml/smlnj-lib/Util/path-util.sml
+lib/mlton/sml/smlnj-lib/Util/plist-sig.sml
+lib/mlton/sml/smlnj-lib/Util/plist.sml
+lib/mlton/sml/smlnj-lib/Util/prime-sizes.sml
+lib/mlton/sml/smlnj-lib/Util/priority-sig.sml
+lib/mlton/sml/smlnj-lib/Util/queue-sig.sml
+lib/mlton/sml/smlnj-lib/Util/queue.sml
+lib/mlton/sml/smlnj-lib/Util/rand-sig.sml
+lib/mlton/sml/smlnj-lib/Util/rand.sml
+lib/mlton/sml/smlnj-lib/Util/random-sig.sml
+lib/mlton/sml/smlnj-lib/Util/random.sml
+lib/mlton/sml/smlnj-lib/Util/real-format.sml
+lib/mlton/sml/smlnj-lib/Util/real-order-stats.sml
+lib/mlton/sml/smlnj-lib/Util/redblack-map-fn.sml
+lib/mlton/sml/smlnj-lib/Util/redblack-map-fn.sml.orig
+lib/mlton/sml/smlnj-lib/Util/redblack-set-fn.sml
+lib/mlton/sml/smlnj-lib/Util/redblack-set-fn.sml.orig
+lib/mlton/sml/smlnj-lib/Util/scan-sig.sml
+lib/mlton/sml/smlnj-lib/Util/scan.sml
+lib/mlton/sml/smlnj-lib/Util/simple-uref.sml
+lib/mlton/sml/smlnj-lib/Util/smlnj-lib.cm
+lib/mlton/sml/smlnj-lib/Util/smlnj-lib.mlb
+lib/mlton/sml/smlnj-lib/Util/smlnj-lib.mlb.orig
+lib/mlton/sml/smlnj-lib/Util/splay-map-fn.sml
+lib/mlton/sml/smlnj-lib/Util/splay-set-fn.sml
+lib/mlton/sml/smlnj-lib/Util/splaytree-sig.sml
+lib/mlton/sml/smlnj-lib/Util/splaytree.sml
+lib/mlton/sml/smlnj-lib/Util/time-limit.mlb
+lib/mlton/sml/smlnj-lib/Util/time-limit.mlb.orig
+lib/mlton/sml/smlnj-lib/Util/time-limit.mlton.sml
+lib/mlton/sml/smlnj-lib/Util/time-limit.mlton.sml.orig
+lib/mlton/sml/smlnj-lib/Util/time-limit.sml
+lib/mlton/sml/smlnj-lib/Util/univariate-stats.sml
+lib/mlton/sml/smlnj-lib/Util/uref-sig.sml
+lib/mlton/sml/smlnj-lib/Util/uref.sml
+lib/mlton/sml/smlnj-lib/Util/word-hash-table.sml
+lib/mlton/sml/smlnj-lib/Util/word-redblack-map.sml
+lib/mlton/sml/smlnj-lib/Util/word-redblack-set.sml
+lib/mlton/sml/smlnj-lib/smlnj-lib.mlb
+lib/mlton/sml/smlnj-lib/smlnj-lib.mlb.orig
 lib/mlton/target-map
 lib/mlton/world.mlton
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changelog
+%%PORTDOCS%%%%DOCSDIR%%/cm2mlb/cm2mlb-map
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/cm2mlb.sml
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/gen-mlb.sml
 %%PORTDOCS%%%%DOCSDIR%%/cm2mlb/sources.cm
 %%PORTDOCS%%%%DOCSDIR%%/cmcat/cmcat.sml
 %%PORTDOCS%%%%DOCSDIR%%/cmcat/sources.cm
+%%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/callcc.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/command-line.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/c_quot.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/export.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/ffi-export.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/ffi-import.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/iimport.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/ffi/import.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/import2.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/ffi/test_quot.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/cons.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/finalizable/finalizable.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/profiling/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/examples/profiling/fib-tak.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/profiling/list-rev.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/profiling/tak.sml
+%%PORTDOCS%%%%DOCSDIR%%/examples/same-fringe.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/save-world/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/examples/save-world/save-world.sml
-%%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/examples/callcc.sml
-%%PORTDOCS%%%%DOCSDIR%%/examples/command-line.sml
-%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world.sml
-%%PORTDOCS%%%%DOCSDIR%%/examples/same-fringe.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/signals.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/size.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/taut.sml
@@ -468,93 +1265,422 @@ lib/mlton/world.mlton
 %%PORTDOCS%%%%DOCSDIR%%/examples/thread1.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/thread2.sml
 %%PORTDOCS%%%%DOCSDIR%%/examples/timeout.sml
+%%PORTDOCS%%%%DOCSDIR%%/guide/AST
+%%PORTDOCS%%%%DOCSDIR%%/guide/AccessControl
+%%PORTDOCS%%%%DOCSDIR%%/guide/AdmitsEquality
+%%PORTDOCS%%%%DOCSDIR%%/guide/Alice
+%%PORTDOCS%%%%DOCSDIR%%/guide/AllocateRegisters
+%%PORTDOCS%%%%DOCSDIR%%/guide/AndreiFormiga
+%%PORTDOCS%%%%DOCSDIR%%/guide/BasisLibrary
+%%PORTDOCS%%%%DOCSDIR%%/guide/Bug
+%%PORTDOCS%%%%DOCSDIR%%/guide/Bugs20041109
+%%PORTDOCS%%%%DOCSDIR%%/guide/CKitLibrary
+%%PORTDOCS%%%%DOCSDIR%%/guide/CallGraph
+%%PORTDOCS%%%%DOCSDIR%%/guide/CallingFromCToSML
+%%PORTDOCS%%%%DOCSDIR%%/guide/CallingFromSMLToC
+%%PORTDOCS%%%%DOCSDIR%%/guide/CallingFromSMLToCFunctionPointer
+%%PORTDOCS%%%%DOCSDIR%%/guide/ChrisClearwater
+%%PORTDOCS%%%%DOCSDIR%%/guide/Chunkify
+%%PORTDOCS%%%%DOCSDIR%%/guide/Closure
+%%PORTDOCS%%%%DOCSDIR%%/guide/ClosureConvert
+%%PORTDOCS%%%%DOCSDIR%%/guide/CommonArg
+%%PORTDOCS%%%%DOCSDIR%%/guide/CommonBlock
+%%PORTDOCS%%%%DOCSDIR%%/guide/CommonSubexp
+%%PORTDOCS%%%%DOCSDIR%%/guide/CompilationManager
+%%PORTDOCS%%%%DOCSDIR%%/guide/CompileTimeOptions
+%%PORTDOCS%%%%DOCSDIR%%/guide/CompilerOverview
+%%PORTDOCS%%%%DOCSDIR%%/guide/CompilerPassTemplate
+%%PORTDOCS%%%%DOCSDIR%%/guide/ConcurrentML
+%%PORTDOCS%%%%DOCSDIR%%/guide/ConcurrentMLImplementation
+%%PORTDOCS%%%%DOCSDIR%%/guide/ConstantPropagation
+%%PORTDOCS%%%%DOCSDIR%%/guide/Contact
+%%PORTDOCS%%%%DOCSDIR%%/guide/Contify
+%%PORTDOCS%%%%DOCSDIR%%/guide/CoreML
+%%PORTDOCS%%%%DOCSDIR%%/guide/CoreMLSimplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/CreatingPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/Credits
+%%PORTDOCS%%%%DOCSDIR%%/guide/CrossCompiling
+%%PORTDOCS%%%%DOCSDIR%%/guide/DeadCode
+%%PORTDOCS%%%%DOCSDIR%%/guide/DeepFlatten
+%%PORTDOCS%%%%DOCSDIR%%/guide/DefineTypeBeforeUse
+%%PORTDOCS%%%%DOCSDIR%%/guide/DefinitionOfStandardML
+%%PORTDOCS%%%%DOCSDIR%%/guide/Defunctorize
+%%PORTDOCS%%%%DOCSDIR%%/guide/Developers
+%%PORTDOCS%%%%DOCSDIR%%/guide/Development
+%%PORTDOCS%%%%DOCSDIR%%/guide/Documentation
+%%PORTDOCS%%%%DOCSDIR%%/guide/Drawbacks
+%%PORTDOCS%%%%DOCSDIR%%/guide/Eclipse
+%%PORTDOCS%%%%DOCSDIR%%/guide/EditingPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/Elaborate
+%%PORTDOCS%%%%DOCSDIR%%/guide/Emacs
+%%PORTDOCS%%%%DOCSDIR%%/guide/Enscript
+%%PORTDOCS%%%%DOCSDIR%%/guide/EqualityType
+%%PORTDOCS%%%%DOCSDIR%%/guide/EqualityTypeVariable
+%%PORTDOCS%%%%DOCSDIR%%/guide/Experimental
+%%PORTDOCS%%%%DOCSDIR%%/guide/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/guide/Features
+%%PORTDOCS%%%%DOCSDIR%%/guide/FirstClassPolymorphism
+%%PORTDOCS%%%%DOCSDIR%%/guide/Flatten
+%%PORTDOCS%%%%DOCSDIR%%/guide/ForLoops
+%%PORTDOCS%%%%DOCSDIR%%/guide/ForeignFunctionInterface
+%%PORTDOCS%%%%DOCSDIR%%/guide/ForeignFunctionInterfaceSyntax
+%%PORTDOCS%%%%DOCSDIR%%/guide/ForeignFunctionInterfaceTypes
+%%PORTDOCS%%%%DOCSDIR%%/guide/FrontEnd
+%%PORTDOCS%%%%DOCSDIR%%/guide/FunctionalRecordUpdate
+%%PORTDOCS%%%%DOCSDIR%%/guide/GarbageCollection
+%%PORTDOCS%%%%DOCSDIR%%/guide/GenerativeDatatype
+%%PORTDOCS%%%%DOCSDIR%%/guide/GenerativeException
+%%PORTDOCS%%%%DOCSDIR%%/guide/Glade
+%%PORTDOCS%%%%DOCSDIR%%/guide/Globalize
+%%PORTDOCS%%%%DOCSDIR%%/guide/GnuMP
+%%PORTDOCS%%%%DOCSDIR%%/guide/HaMLet
+%%PORTDOCS%%%%DOCSDIR%%/guide/HenryCejtin
+%%PORTDOCS%%%%DOCSDIR%%/guide/History
+%%PORTDOCS%%%%DOCSDIR%%/guide/Home
+%%PORTDOCS%%%%DOCSDIR%%/guide/HowProfilingWorks
+%%PORTDOCS%%%%DOCSDIR%%/guide/Identifier
+%%PORTDOCS%%%%DOCSDIR%%/guide/Immutable
+%%PORTDOCS%%%%DOCSDIR%%/guide/ImperativeTypeVariable
+%%PORTDOCS%%%%DOCSDIR%%/guide/ImplementExceptions
+%%PORTDOCS%%%%DOCSDIR%%/guide/ImplementHandlers
+%%PORTDOCS%%%%DOCSDIR%%/guide/ImplementProfiling
+%%PORTDOCS%%%%DOCSDIR%%/guide/ImplementSuffix
+%%PORTDOCS%%%%DOCSDIR%%/guide/Index
+%%PORTDOCS%%%%DOCSDIR%%/guide/InfixingOperators
+%%PORTDOCS%%%%DOCSDIR%%/guide/Inline
+%%PORTDOCS%%%%DOCSDIR%%/guide/InsertLimitChecks
+%%PORTDOCS%%%%DOCSDIR%%/guide/InsertSignalChecks
+%%PORTDOCS%%%%DOCSDIR%%/guide/Installation
+%%PORTDOCS%%%%DOCSDIR%%/guide/IntermediateLanguage
+%%PORTDOCS%%%%DOCSDIR%%/guide/IntroduceLoops
+%%PORTDOCS%%%%DOCSDIR%%/guide/JesperLouisAndersen
+%%PORTDOCS%%%%DOCSDIR%%/guide/JohnnyAndersen
+%%PORTDOCS%%%%DOCSDIR%%/guide/KnownCase
+%%PORTDOCS%%%%DOCSDIR%%/guide/LambdaFree
+%%PORTDOCS%%%%DOCSDIR%%/guide/LanguageChanges
+%%PORTDOCS%%%%DOCSDIR%%/guide/Lazy
+%%PORTDOCS%%%%DOCSDIR%%/guide/Libraries
+%%PORTDOCS%%%%DOCSDIR%%/guide/License
+%%PORTDOCS%%%%DOCSDIR%%/guide/LineDirective
+%%PORTDOCS%%%%DOCSDIR%%/guide/LocalFlatten
+%%PORTDOCS%%%%DOCSDIR%%/guide/LocalRef
+%%PORTDOCS%%%%DOCSDIR%%/guide/LoopInvariant
+%%PORTDOCS%%%%DOCSDIR%%/guide/ML
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasis
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisAnnotationExamples
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisAnnotations
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisAvailableLibraries
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisExamples
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisPathMap
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLBasisSyntaxAndSemantics
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLKit
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLNLFFI
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLNLFFIImplementation
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLj
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonArray
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonBinIO
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonCont
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonExn
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonFinalizable
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonGC
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonIO
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonIntInf
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonItimer
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonPlatform
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonPointer
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonProcEnv
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonProcess
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonProfile
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonRandom
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonRlimit
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonRusage
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonSignal
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonSocket
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonStructure
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonSyslog
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonTextIO
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonThread
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonVector
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonWeak
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonWord
+%%PORTDOCS%%%%DOCSDIR%%/guide/MLtonWorld
+%%PORTDOCS%%%%DOCSDIR%%/guide/Machine
+%%PORTDOCS%%%%DOCSDIR%%/guide/ManualPage
+%%PORTDOCS%%%%DOCSDIR%%/guide/MatchCompilation
+%%PORTDOCS%%%%DOCSDIR%%/guide/MatchCompile
+%%PORTDOCS%%%%DOCSDIR%%/guide/MatthewFluet
+%%PORTDOCS%%%%DOCSDIR%%/guide/MichaelNorrish
+%%PORTDOCS%%%%DOCSDIR%%/guide/MikeThomas
+%%PORTDOCS%%%%DOCSDIR%%/guide/MoinMoin
+%%PORTDOCS%%%%DOCSDIR%%/guide/Monomorphise
+%%PORTDOCS%%%%DOCSDIR%%/guide/MoscowML
+%%PORTDOCS%%%%DOCSDIR%%/guide/Multi
+%%PORTDOCS%%%%DOCSDIR%%/guide/Mutable
+%%PORTDOCS%%%%DOCSDIR%%/guide/OCaml
+%%PORTDOCS%%%%DOCSDIR%%/guide/ObjectOrientedProgramming
+%%PORTDOCS%%%%DOCSDIR%%/guide/OpenGL
+%%PORTDOCS%%%%DOCSDIR%%/guide/OperatorPrecedence
+%%PORTDOCS%%%%DOCSDIR%%/guide/OptionalArguments
+%%PORTDOCS%%%%DOCSDIR%%/guide/OrphanedPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/OtherSites
+%%PORTDOCS%%%%DOCSDIR%%/guide/Overloading
+%%PORTDOCS%%%%DOCSDIR%%/guide/PackedRepresentation
+%%PORTDOCS%%%%DOCSDIR%%/guide/PageSize
+%%PORTDOCS%%%%DOCSDIR%%/guide/ParallelMove
+%%PORTDOCS%%%%DOCSDIR%%/guide/Performance
+%%PORTDOCS%%%%DOCSDIR%%/guide/PhantomType
+%%PORTDOCS%%%%DOCSDIR%%/guide/PlatformSpecificNotes
+%%PORTDOCS%%%%DOCSDIR%%/guide/PolyEqual
+%%PORTDOCS%%%%DOCSDIR%%/guide/PolyML
+%%PORTDOCS%%%%DOCSDIR%%/guide/PolymorphicEquality
+%%PORTDOCS%%%%DOCSDIR%%/guide/Polyvariance
+%%PORTDOCS%%%%DOCSDIR%%/guide/Poplog
+%%PORTDOCS%%%%DOCSDIR%%/guide/PortingMLton
+%%PORTDOCS%%%%DOCSDIR%%/guide/PrecedenceParse
+%%PORTDOCS%%%%DOCSDIR%%/guide/Printf
+%%PORTDOCS%%%%DOCSDIR%%/guide/PrintfGentle
+%%PORTDOCS%%%%DOCSDIR%%/guide/ProductType
+%%PORTDOCS%%%%DOCSDIR%%/guide/Profiling
+%%PORTDOCS%%%%DOCSDIR%%/guide/ProfilingAllocation
+%%PORTDOCS%%%%DOCSDIR%%/guide/ProfilingCounts
+%%PORTDOCS%%%%DOCSDIR%%/guide/ProfilingTheStack
+%%PORTDOCS%%%%DOCSDIR%%/guide/ProfilingTime
+%%PORTDOCS%%%%DOCSDIR%%/guide/Projects
+%%PORTDOCS%%%%DOCSDIR%%/guide/Pronounce
+%%PORTDOCS%%%%DOCSDIR%%/guide/PropertyList
+%%PORTDOCS%%%%DOCSDIR%%/guide/RSSA
+%%PORTDOCS%%%%DOCSDIR%%/guide/RSSAShrink
+%%PORTDOCS%%%%DOCSDIR%%/guide/RSSASimplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/RayRacine
+%%PORTDOCS%%%%DOCSDIR%%/guide/Redundant
+%%PORTDOCS%%%%DOCSDIR%%/guide/RedundantTests
+%%PORTDOCS%%%%DOCSDIR%%/guide/RefFlatten
+%%PORTDOCS%%%%DOCSDIR%%/guide/References
+%%PORTDOCS%%%%DOCSDIR%%/guide/Regions
+%%PORTDOCS%%%%DOCSDIR%%/guide/ReleaseChecklist
+%%PORTDOCS%%%%DOCSDIR%%/guide/RemoveUnused
+%%PORTDOCS%%%%DOCSDIR%%/guide/Restore
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunTimeOptions
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnCygwin
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnDarwin
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnFreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnLinux
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnMinGW
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnNetBSD
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnOpenBSD
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnPowerPC
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnSolaris
+%%PORTDOCS%%%%DOCSDIR%%/guide/RunningOnSparc
+%%PORTDOCS%%%%DOCSDIR%%/guide/SMLNET
+%%PORTDOCS%%%%DOCSDIR%%/guide/SMLNJ
+%%PORTDOCS%%%%DOCSDIR%%/guide/SMLNJDeviations
+%%PORTDOCS%%%%DOCSDIR%%/guide/SMLNJLibrary
+%%PORTDOCS%%%%DOCSDIR%%/guide/SMLofNJStructure
+%%PORTDOCS%%%%DOCSDIR%%/guide/SSA
+%%PORTDOCS%%%%DOCSDIR%%/guide/SSA2
+%%PORTDOCS%%%%DOCSDIR%%/guide/SSA2Simplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/SSASimplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/SXML
+%%PORTDOCS%%%%DOCSDIR%%/guide/SXMLShrink
+%%PORTDOCS%%%%DOCSDIR%%/guide/SXMLSimplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/ScopeInference
+%%PORTDOCS%%%%DOCSDIR%%/guide/SelfCompiling
+%%PORTDOCS%%%%DOCSDIR%%/guide/Serialization
+%%PORTDOCS%%%%DOCSDIR%%/guide/ShowBasis
+%%PORTDOCS%%%%DOCSDIR%%/guide/Shrink
+%%PORTDOCS%%%%DOCSDIR%%/guide/SimplifyTypes
+%%PORTDOCS%%%%DOCSDIR%%/guide/Sources
+%%PORTDOCS%%%%DOCSDIR%%/guide/SpaceSafety
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardML
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLBooks
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLHistory
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLImplementations
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLPortability
+%%PORTDOCS%%%%DOCSDIR%%/guide/StandardMLTutorials
+%%PORTDOCS%%%%DOCSDIR%%/guide/StephenWeeks
+%%PORTDOCS%%%%DOCSDIR%%/guide/StyleGuide
+%%PORTDOCS%%%%DOCSDIR%%/guide/Subversion
+%%PORTDOCS%%%%DOCSDIR%%/guide/SureshJagannathan
+%%PORTDOCS%%%%DOCSDIR%%/guide/Survey
+%%PORTDOCS%%%%DOCSDIR%%/guide/SurveyDone
+%%PORTDOCS%%%%DOCSDIR%%/guide/Swerve
+%%PORTDOCS%%%%DOCSDIR%%/guide/SyntacticConventions
+%%PORTDOCS%%%%DOCSDIR%%/guide/SystemInfo
+%%PORTDOCS%%%%DOCSDIR%%/guide/TILT
+%%PORTDOCS%%%%DOCSDIR%%/guide/Talk
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkDiveIn
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkFolkLore
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkFromSMLTo
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkHowHigherOrder
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkHowModules
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkHowPolymorphism
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkMLtonApproach
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkMLtonFeatures
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkMLtonHistory
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkStandardML
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkTemplate
+%%PORTDOCS%%%%DOCSDIR%%/guide/TalkWholeProgram
+%%PORTDOCS%%%%DOCSDIR%%/guide/ToMachine
+%%PORTDOCS%%%%DOCSDIR%%/guide/ToRSSA
+%%PORTDOCS%%%%DOCSDIR%%/guide/ToSSA2
+%%PORTDOCS%%%%DOCSDIR%%/guide/TomMurphy
+%%PORTDOCS%%%%DOCSDIR%%/guide/TrustedGroup
+%%PORTDOCS%%%%DOCSDIR%%/guide/TypeChecking
+%%PORTDOCS%%%%DOCSDIR%%/guide/TypeConstructor
+%%PORTDOCS%%%%DOCSDIR%%/guide/TypeVariableScope
+%%PORTDOCS%%%%DOCSDIR%%/guide/Unicode
+%%PORTDOCS%%%%DOCSDIR%%/guide/UniversalType
+%%PORTDOCS%%%%DOCSDIR%%/guide/UnresolvedBugs
+%%PORTDOCS%%%%DOCSDIR%%/guide/UnsafeStructure
+%%PORTDOCS%%%%DOCSDIR%%/guide/Useless
+%%PORTDOCS%%%%DOCSDIR%%/guide/Users
+%%PORTDOCS%%%%DOCSDIR%%/guide/ValueRestriction
+%%PORTDOCS%%%%DOCSDIR%%/guide/Variant
+%%PORTDOCS%%%%DOCSDIR%%/guide/VesaKarvonen
+%%PORTDOCS%%%%DOCSDIR%%/guide/WantedPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/WebSite
+%%PORTDOCS%%%%DOCSDIR%%/guide/WesleyTerpstra
+%%PORTDOCS%%%%DOCSDIR%%/guide/WholeProgramOptimization
+%%PORTDOCS%%%%DOCSDIR%%/guide/WikiMacros
+%%PORTDOCS%%%%DOCSDIR%%/guide/WikiName
+%%PORTDOCS%%%%DOCSDIR%%/guide/WikiTool
+%%PORTDOCS%%%%DOCSDIR%%/guide/XML
+%%PORTDOCS%%%%DOCSDIR%%/guide/XMLShrink
+%%PORTDOCS%%%%DOCSDIR%%/guide/XMLSimplify
+%%PORTDOCS%%%%DOCSDIR%%/guide/XMLSimplifyTypes
+%%PORTDOCS%%%%DOCSDIR%%/guide/ZZZOrphanedPages
+%%PORTDOCS%%%%DOCSDIR%%/guide/Zone
+%%PORTDOCS%%%%DOCSDIR%%/guide/common.css
+%%PORTDOCS%%%%DOCSDIR%%/guide/eXene
+%%PORTDOCS%%%%DOCSDIR%%/guide/fxp
+%%PORTDOCS%%%%DOCSDIR%%/guide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/mGTK
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-bottom.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-email.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-ftp.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-news.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-top.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/moin-www.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/print.css
+%%PORTDOCS%%%%DOCSDIR%%/guide/screen.css
 %%PORTDOCS%%%%DOCSDIR%%/license/MLKit-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/MLton-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/NJ-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/README
+%%PORTDOCS%%%%DOCSDIR%%/license/SMLNJ-LIB-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/gdtoa-LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/license/gmp-LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Basis_library.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Bugs.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/CM.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Compiling_MLton.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Credits.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Cross_compiling.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Deviations_SML_NJ_from.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Drawbacks_MLton.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Features_MLton.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Foreign_function_interface.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Getting_started.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/MLBs.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/MLton_extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Manual_page.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Platform_specific_notes.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Profiling.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/Type_checking.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/contents_motif.gif
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/index.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/main.haux
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/main.htoc
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/main017.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/main019.html
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/next_motif.gif
-%%PORTDOCS%%%%DOCSDIR%%/user-guide/previous_motif.gif
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/changelog
 %%PORTDOCS%%%%DOCSDIR%%/mllex.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/mlton-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mlyacc.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/user-guide.ps.gz
+@dirrm lib/mlton/self
 @dirrm lib/mlton/include/platform
 @dirrm lib/mlton/include
-@dirrm lib/mlton/self
-@dirrm lib/mlton/sml/basis/arrays-and-vectors
-@dirrm lib/mlton/sml/basis/general
+@dirrm lib/mlton/sml/basis/text
+@dirrm lib/mlton/sml/basis/system
 @dirrm lib/mlton/sml/basis/integer
-@dirrm lib/mlton/sml/basis/io
-@dirrm lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors
-@dirrm lib/mlton/sml/basis/libs/basis-1997/integer
-@dirrm lib/mlton/sml/basis/libs/basis-1997/io
-@dirrm lib/mlton/sml/basis/libs/basis-1997/posix
-@dirrm lib/mlton/sml/basis/libs/basis-1997/real
-@dirrm lib/mlton/sml/basis/libs/basis-1997/system
-@dirrm lib/mlton/sml/basis/libs/basis-1997/text
-@dirrm lib/mlton/sml/basis/libs/basis-1997/top-level
-@dirrm lib/mlton/sml/basis/libs/basis-1997
-@dirrm lib/mlton/sml/basis/libs/basis-2002/top-level
-@dirrm lib/mlton/sml/basis/libs/basis-2002
+@dirrm lib/mlton/sml/basis/sml-nj
+@dirrm lib/mlton/sml/basis/posix
+@dirrm lib/mlton/sml/basis/top-level
+@dirrm lib/mlton/sml/basis/general
+@dirrm lib/mlton/sml/basis/real
 @dirrm lib/mlton/sml/basis/libs/basis-2002-strict/top-level
 @dirrm lib/mlton/sml/basis/libs/basis-2002-strict
+@dirrm lib/mlton/sml/basis/libs/basis-2002/top-level
+@dirrm lib/mlton/sml/basis/libs/basis-2002
 @dirrm lib/mlton/sml/basis/libs/basis-extra/top-level
 @dirrm lib/mlton/sml/basis/libs/basis-extra
+@dirrm lib/mlton/sml/basis/libs/basis-1997/text
+@dirrm lib/mlton/sml/basis/libs/basis-1997/posix
+@dirrm lib/mlton/sml/basis/libs/basis-1997/real
+@dirrm lib/mlton/sml/basis/libs/basis-1997/arrays-and-vectors
+@dirrm lib/mlton/sml/basis/libs/basis-1997/system
+@dirrm lib/mlton/sml/basis/libs/basis-1997/io
+@dirrm lib/mlton/sml/basis/libs/basis-1997/top-level
+@dirrm lib/mlton/sml/basis/libs/basis-1997/integer
+@dirrm lib/mlton/sml/basis/libs/basis-1997
 @dirrm lib/mlton/sml/basis/libs/basis-none/top-level
 @dirrm lib/mlton/sml/basis/libs/basis-none
 @dirrm lib/mlton/sml/basis/libs
-@dirrm lib/mlton/sml/basis/list
-@dirrm lib/mlton/sml/basis/misc
+@dirrm lib/mlton/sml/basis/platform
+@dirrm lib/mlton/sml/basis/arrays-and-vectors
 @dirrm lib/mlton/sml/basis/mlton
+@dirrm lib/mlton/sml/basis/misc
+@dirrm lib/mlton/sml/basis/list
 @dirrm lib/mlton/sml/basis/net
-@dirrm lib/mlton/sml/basis/posix
-@dirrm lib/mlton/sml/basis/real
-@dirrm lib/mlton/sml/basis/sml-nj
-@dirrm lib/mlton/sml/basis/system
-@dirrm lib/mlton/sml/basis/text
-@dirrm lib/mlton/sml/basis/top-level
+@dirrm lib/mlton/sml/basis/io
 @dirrm lib/mlton/sml/basis
+@dirrm lib/mlton/sml/cml/tests
 @dirrm lib/mlton/sml/cml/cml-lib
 @dirrm lib/mlton/sml/cml/core-cml
-@dirrm lib/mlton/sml/cml/tests
 @dirrm lib/mlton/sml/cml/util
 @dirrm lib/mlton/sml/cml
+@dirrm lib/mlton/sml/ckit-lib/doc
+@dirrm lib/mlton/sml/ckit-lib/src/parser/extensions/c
+@dirrm lib/mlton/sml/ckit-lib/src/parser/extensions
+@dirrm lib/mlton/sml/ckit-lib/src/parser/grammar
+@dirrm lib/mlton/sml/ckit-lib/src/parser/util
+@dirrm lib/mlton/sml/ckit-lib/src/parser
+@dirrm lib/mlton/sml/ckit-lib/src/c-util
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils/copy
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils/equality
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/extensions/c
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils/simplifier/extensions
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils/simplifier
+@dirrm lib/mlton/sml/ckit-lib/src/ast-utils
+@dirrm lib/mlton/sml/ckit-lib/src/variants/ansic
+@dirrm lib/mlton/sml/ckit-lib/src/variants
+@dirrm lib/mlton/sml/ckit-lib/src/ast/pp
+@dirrm lib/mlton/sml/ckit-lib/src/ast/extensions/c
+@dirrm lib/mlton/sml/ckit-lib/src/ast/extensions
+@dirrm lib/mlton/sml/ckit-lib/src/ast
+@dirrm lib/mlton/sml/ckit-lib/src
+@dirrm lib/mlton/sml/ckit-lib/regression/valid-programs.obs
+@dirrm lib/mlton/sml/ckit-lib/regression/valid-programs
+@dirrm lib/mlton/sml/ckit-lib/regression/invalid-programs
+@dirrm lib/mlton/sml/ckit-lib/regression/tests/simplify
+@dirrm lib/mlton/sml/ckit-lib/regression/tests/typecheck
+@dirrm lib/mlton/sml/ckit-lib/regression/tests
+@dirrm lib/mlton/sml/ckit-lib/regression/output
+@dirrm lib/mlton/sml/ckit-lib/regression
+@dirrm lib/mlton/sml/ckit-lib
+@dirrm lib/mlton/sml/mlnlffi-lib/internals
+@dirrm lib/mlton/sml/mlnlffi-lib/memory/platform
+@dirrm lib/mlton/sml/mlnlffi-lib/memory
+@dirrm lib/mlton/sml/mlnlffi-lib
 @dirrm lib/mlton/sml/mlyacc-lib
+@dirrm lib/mlton/sml/smlnj-lib/CPP
+@dirrm lib/mlton/sml/smlnj-lib/Util
+@dirrm lib/mlton/sml/smlnj-lib/Unix
+@dirrm lib/mlton/sml/smlnj-lib/RegExp/FrontEnd
+@dirrm lib/mlton/sml/smlnj-lib/RegExp/BackEnd
+@dirrm lib/mlton/sml/smlnj-lib/RegExp/Glue
+@dirrm lib/mlton/sml/smlnj-lib/RegExp
+@dirrm lib/mlton/sml/smlnj-lib/Reactive
+@dirrm lib/mlton/sml/smlnj-lib/PP/tests
+@dirrm lib/mlton/sml/smlnj-lib/PP/devices
+@dirrm lib/mlton/sml/smlnj-lib/PP/examples
+@dirrm lib/mlton/sml/smlnj-lib/PP/src
+@dirrm lib/mlton/sml/smlnj-lib/PP
+@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/RegExp
+@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/Util
+@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc/HashCons
+@dirrm lib/mlton/sml/smlnj-lib/Doc/ML-Doc
+@dirrm lib/mlton/sml/smlnj-lib/Doc
+@dirrm lib/mlton/sml/smlnj-lib/HTML
+@dirrm lib/mlton/sml/smlnj-lib/HashCons
+@dirrm lib/mlton/sml/smlnj-lib/Controls
+@dirrm lib/mlton/sml/smlnj-lib/INet
+@dirrm lib/mlton/sml/smlnj-lib
 @dirrm lib/mlton/sml
 @dirrm lib/mlton
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/finalizable
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/save-world
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/ffi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/profiling
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cm2mlb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/ffi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/finalizable
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/profiling
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/save-world
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/license
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/user-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
