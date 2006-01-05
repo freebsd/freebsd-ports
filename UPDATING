@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060105:
+  AFFECTS: users of www/wwwoffle, security/ipsec-tools
+  AUTHOR: edwin@FreeBSD.org
+
+  The startup of the rc.d scripts for these two ports are now
+  by default disabled.
+
 20051228:
   AFFECTS: users of multimedia/tovid
   AUTHOR: lioux@FreeBSD.org
