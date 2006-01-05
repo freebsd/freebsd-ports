@@ -1,0 +1,19 @@
+--- qvamps.orig	Sat Oct  8 06:04:37 2005
++++ qvamps	Thu Jan  5 18:46:57 2006
+@@ -19,14 +19,14 @@
+   {
+     print STDERR "qVamps: loading modules from $qvamps_home/share/lib\n";
+     unshift @INC, "$qvamps_home/share/lib";
+-    unshift @INC, "$qvamps_home/lib/$archname";
++    unshift @INC, "$qvamps_home/lib";
+   }
+   elsif ($load_prefix && -e "$load_prefix/share/qvamps")
+   {
+     print STDERR "qVamps: loading modules from " .
+                  "$load_prefix/share/qvamps/lib\n";
+     unshift @INC, "$load_prefix/share/qvamps/lib";
+-    unshift @INC, "$load_prefix/lib/qvamps/$archname";
++    unshift @INC, "$load_prefix/lib/qvamps";
+   }
+ }
+ 
