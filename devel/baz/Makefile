@@ -7,6 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar.canonical.com/releases/src/
 DISTNAME=	bazaar_${PORTVERSION}
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon \
 		gpgme.15:${PORTSDIR}/security/gpgme
 
 USE_GMAKE=	yes

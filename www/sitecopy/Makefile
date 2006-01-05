@@ -7,13 +7,14 @@
 
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.1
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
 
-LIB_DEPENDS=	neon:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
