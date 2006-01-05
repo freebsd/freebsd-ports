@@ -88,8 +88,6 @@ sbin/task_manager.pl
 %%NLS%%share/locale/tr/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sympa.mo
-%%NLS%%share/nls/POSIX
-%%NLS%%share/nls/en_US.US-ASCII
 %%DATADIR%%/README
 %%DATADIR%%/auth.conf
 %%DATADIR%%/ca-bundle.crt
