@@ -13,9 +13,9 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-wwwoffled_enable="NO"
-wwwoffled_flags=""
-wwwoffled_pidfile="/var/run/wwwoffled.pid"
+wwwoffled_enable=${wwwoffled_enable-"NO"}
+wwwoffled_flags=${wwwoffled_flags-""}
+wwwoffled_pidfile=${wwwoffled_pidfile-"/var/run/wwwoffled.pid"}
 wwwoffled_conffile="%%PREFIX%%/etc/wwwoffle.conf"
 
 . %%RC_SUBR%%
