@@ -36,7 +36,6 @@
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
-    SUBDIR += gdesklets-ltvariations
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-displayconstraints
     SUBDIR += gdesklets-starterbar
