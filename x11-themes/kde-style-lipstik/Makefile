@@ -7,8 +7,10 @@
 
 PORTNAME=	lipstik
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
+PKGNAMEPREFIX=	kde-style-
 DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	decept0@gmail.com
@@ -16,15 +18,8 @@ COMMENT=	Modified Plastik KDE style
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lkdefx|-lkdefx ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/style/Makefile.in
-post-configure:
-	@${REINPLACE_CMD} -e 's|-ljpeg|-ljpeg ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/style/config/Makefile
 
 .include <bsd.port.mk>
