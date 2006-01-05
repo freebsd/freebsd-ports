@@ -1,11 +1,13 @@
---- Makefile.in.orig	Sun Jul  9 09:26:42 2000
-+++ Makefile.in	Mon Nov  6 05:13:09 2000
-@@ -22,11 +22,11 @@
+--- Makefile.in.orig	Wed Feb  4 13:52:26 2004
++++ Makefile.in	Fri Dec  9 22:42:45 2005
+@@ -22,13 +22,13 @@
  
  # Where the installed binary goes.
  bindir = @bindir@
 -binprefix = 
 +binprefix = j
+ 
+ sysconfdir = @sysconfdir@
  
  mandir = @mandir@
  manext = 1
