@@ -5865,6 +5865,7 @@ linux_devtools	ports/devel/linux_devtools
 linux_dri	ports/graphics/linux_dri
 linux_glide	ports/graphics/linux_glide
 linux_glx	ports/graphics/linux_glx
+linux_kdump	ports/devel/linux_kdump
 linuxdoc	ports/textproc/linuxdoc
 linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
