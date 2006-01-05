@@ -1,6 +1,6 @@
---- Imakefile.orig	Wed Aug 25 07:00:29 2004
-+++ Imakefile	Sun Nov 21 13:48:06 2004
-@@ -1,15 +1,17 @@
+--- Imakefile.orig	Tue Aug  2 00:13:59 2005
++++ Imakefile	Fri Nov 25 18:21:34 2005
+@@ -1,18 +1,18 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
 +DESTDIR=${PREFIX}
@@ -16,12 +16,14 @@
  XCOMM Name of share subdirectory of DESTDIR:
  SHAREDIR=/share/sunclock
  
+ XCOMM Name of DOCDIR's subdirectories of DESTDIR:
+ DOCDIR=/X11R6/lib/X11/doc 
+-DOCHTMLDIR=/X11R6/lib/X11/doc/html
 +DOCHTMLDIR=/lib/X11/doc/html
-+
+ 
  XCOMM
  XCOMM Compile options:
- XCOMM
-@@ -38,13 +40,13 @@
+@@ -42,13 +42,13 @@
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -42,7 +44,7 @@
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-@@ -52,7 +54,7 @@
+@@ -56,7 +56,7 @@
  OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
       readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
  LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \

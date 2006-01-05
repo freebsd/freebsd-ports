@@ -1,4 +1,5 @@
 bin/sunclock
+bin/emx
 share/sunclock/Sunclockrc
 share/sunclock/earthmaps/vmf/landwater.vmf
 share/sunclock/earthmaps/vmf/timezones.vmf
@@ -11,7 +12,11 @@ share/sunclock/i18n/Sunclock.nl
 share/sunclock/i18n/Sunclock.no
 share/sunclock/i18n/Sunclock.pl
 share/sunclock/i18n/Sunclock.se
+share/editkit/rc.common
+share/editkit/emxrc
+share/editkit/README
 @dirrm share/sunclock/i18n
 @dirrm share/sunclock/earthmaps/vmf
 @dirrm share/sunclock/earthmaps
 @dirrm share/sunclock
+@dirrm share/editkit
