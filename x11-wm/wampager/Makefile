@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	wampager
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3.20041204
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.waimea.org/wampager/
+MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
+		http://www.daemon.li/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A mini pager for the waimea window manager
 
 PLIST_FILES=	bin/wampager
-USE_X_PREFIX=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wampager ${PREFIX}/bin
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
