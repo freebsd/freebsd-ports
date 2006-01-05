@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Dec  1 17:05:11 2005
++++ configure.in	Thu Dec  1 17:05:25 2005
+@@ -341,6 +341,6 @@
+   if test "x$smr_have_freetype2_library" != xyes; then
+     AC_MSG_WARN([Couldn't find FreeType]);
+   fi
+-  AC_MSG_WARN([-- You will be able to compile pdftops, pdftotext,
+-        pdfinfo, pdffonts, and pdfimages, but not xpdf or pdftoppm])
++  AC_MSG_WARN([-- You will be able to compile pdftoppm, pdftops, pdftotext,
++        pdfinfo, pdffonts, and pdfimages, but not xpdf])
+ fi

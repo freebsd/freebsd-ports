@@ -25,15 +25,12 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
 
-USE_X_PREFIX=	yes
-USE_MOTIF=	yes
-
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
+CONFIGURE_ARGS=	--with-gzip --enable-opi \
 		--with-t1-library="${LOCALBASE}/lib" \
 		--with-t1-includes="${LOCALBASE}/include" \
 		--with-freetype2-library="${LOCALBASE}/lib" \
@@ -47,9 +44,20 @@ MAN1=		pdffonts.1 \
 		pdfinfo.1 \
 		pdftoppm.1 \
 		pdftops.1 \
-		pdftotext.1 \
-		xpdf.1
+		pdftotext.1
 MAN5=		xpdfrc.5
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX+=		-nox11
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=             X11='@comment '
+.else
+CONFIGURE_ARGS+=	--with-x
+USE_X_PREFIX=	yes
+USE_MOTIF=	yes
+MAN1+=			xpdf.1
+PLIST_SUB+=             X11=''
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

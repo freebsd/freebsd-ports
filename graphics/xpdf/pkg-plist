@@ -4,7 +4,7 @@ bin/pdfinfo
 bin/pdftoppm
 bin/pdftops
 bin/pdftotext
-bin/xpdf
+%%X11%%bin/xpdf
 etc/xpdfrc
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

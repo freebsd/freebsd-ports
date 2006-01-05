@@ -1,0 +1,15 @@
+--- configure.orig	Thu Dec  1 17:06:03 2005
++++ configure	Thu Dec  1 17:06:25 2005
+@@ -11776,8 +11776,8 @@
+     { echo "$as_me:$LINENO: WARNING: Couldn't find FreeType" >&5
+ echo "$as_me: WARNING: Couldn't find FreeType" >&2;};
+   fi
+-  { echo "$as_me:$LINENO: WARNING: -- You will be able to compile pdftops, pdftotext,
+-        pdfinfo, pdffonts, and pdfimages, but not xpdf or pdftoppm" >&5
+-echo "$as_me: WARNING: -- You will be able to compile pdftops, pdftotext,
+-        pdfinfo, pdffonts, and pdfimages, but not xpdf or pdftoppm" >&2;}
++  { echo "$as_me:$LINENO: WARNING: -- You will be able to compile pdftoppm, pdftops, pdftotext,
++        pdfinfo, pdffonts, and pdfimages, but not xpdf" >&5
++echo "$as_me: WARNING: -- You will be able to compile pdftoppm, pdftops, pdftotext,
++        pdfinfo, pdffonts, and pdfimages, but not xpdf" >&2;}
+ fi
