@@ -107,6 +107,8 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/permissionEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/roleEdit.dtml
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/userFolderProps.dtml
+%%ZOPEBASEDIR%%/lib/python/AccessControl/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/README
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.pyc
@@ -152,6 +154,8 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testPermissionRole.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testSecurity.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testSecurity.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testSecurityManager.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testSecurityManager.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testUserFolder.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testUserFolder.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeGuards.py
@@ -2865,6 +2869,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/maybe_lock.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/generate_conflicts.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/generate_conflicts.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBaseRequest.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBaseRequest.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
