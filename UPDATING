@@ -7,6 +7,16 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060105:
+  AFFECTS: users of mail/fetchmail >= 6.3.0
+  AUTHOR: barner@FreeBSD.org
+
+  Beginning with release 6.3.0, fetchmail needs not only need write
+  access to the idfile ($HOME/.fetchids), but also to the directory
+  holding this file. For end users running fetchmail with default
+  idfile on their own account, nothing changes: they have write
+  access to their home directory.
+
+20060105:
   AFFECTS: users of www/wwwoffle, security/ipsec-tools
   AUTHOR: edwin@FreeBSD.org
 
