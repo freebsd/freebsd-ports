@@ -4,6 +4,6 @@ code, has a fast C FFI, profiling, and many useful libraries,
 including an interface to the GNU multiprecision library.  For more
 information, go to the MLton home page.
 
-WWW:	http://www.mlton.org/
+WWW:	http://mlton.org/
     
 Stephen Weeks <sweeks@sweeks.com>
