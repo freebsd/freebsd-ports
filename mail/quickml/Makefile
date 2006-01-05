@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://namazu.org/%7esatoru/quickml/
 

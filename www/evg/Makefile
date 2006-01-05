@@ -7,6 +7,7 @@
 
 PORTNAME=	evg
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.zurich.ibm.com//pub/sob/www/halloween/ \
 		http://www.chg.ru/~dima/

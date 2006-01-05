@@ -8,6 +8,7 @@
 
 PORTNAME=	tex2im
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 

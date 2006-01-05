@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	muttprint
+PORTREVISION=	1
 CATEGORIES=	russian print
 
 MAINTAINER=	alexs@snark.rinet.ru
