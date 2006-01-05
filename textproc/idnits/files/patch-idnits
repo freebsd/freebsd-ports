@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- idnits.orig
++++ idnits
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ #    'idnits' looks for violations of Section 2.1 and 2.2 of the
+ #    requirements listed on http://www.ietf.org/ID-Checklist.html
