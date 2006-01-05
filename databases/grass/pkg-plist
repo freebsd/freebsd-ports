@@ -1623,8 +1623,6 @@ etc/rc.d/000.grass.sh
 %%GRASS_INST_DIR%%/scripts/v.in.e00
 %%GRASS_INST_DIR%%/scripts/v.in.garmin
 %%GRASS_INST_DIR%%/scripts/v.in.sites.all
-share/nls/en_US.US-ASCII
-share/nls/POSIX
 @dirrm %%GRASS_INST_DIR%%/scripts
 @dirrm %%GRASS_INST_DIR%%/man/man1
 @dirrm %%GRASS_INST_DIR%%/man
