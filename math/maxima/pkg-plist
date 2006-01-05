@@ -1085,8 +1085,6 @@ libexec/maxima/%%PORTVERSION%%/omplotdata
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/maxima-new.png
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/msgs/ru.msg
 %%DATADIR%%/%%PORTVERSION%%/xmaxima/plotmaxima.html
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DATADIR%%/%%PORTVERSION%%/xmaxima/msgs
 @dirrm %%DATADIR%%/%%PORTVERSION%%/xmaxima
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tests
