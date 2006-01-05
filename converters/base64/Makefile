@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	base64
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
 		http://dl.droso.net/ports/
