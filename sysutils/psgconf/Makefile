@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
@@ -16,8 +16,8 @@ COMMENT=	Controls system configuration
 BUILD_DEPENDS= ${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
  	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod
-RUN_DEPENDS=   ${BUILD_DEPENDS}
+	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
+	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 
 PERL_CONFIGURE=	YES
 
@@ -26,6 +26,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action.3 \
 		PSGConf::Action::ChMod.3 \
 		PSGConf::Action::CopyFile.3 \
+		PSGConf::Action::CreateFile.3 \
 		PSGConf::Action::Crontab.3 \
 		PSGConf::Action::File.3 \
 		PSGConf::Action::GenerateFile.3 \
@@ -78,6 +79,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::GenerateFile::workers_properties.3 \
 		PSGConf::Action::GenerateFile::xinetd_conf.3 \
 		PSGConf::Action::HomeDir.3 \
+		PSGConf::Action::lpadmin.3 \
 		PSGConf::Action::MkDir.3 \
 		PSGConf::Action::MkNod.3 \
 		PSGConf::Action::ModifyFile.3 \
@@ -93,9 +95,12 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::Remove.3 \
 		PSGConf::Action::RemoveCrontab.3 \
 		PSGConf::Action::RestartDaemon.3 \
+		PSGConf::Action::RPMImportGPGKey.3 \
 		PSGConf::Action::RunCommand.3 \
 		PSGConf::Action::Symlink.3 \
 		PSGConf::Action::TouchFile.3 \
+		PSGConf::Action::UntarFile.3 \
+		PSGConf::Action::svcs::import.3 \
 		PSGConf::Action::svcs::setprop.3 \
 		PSGConf::Control.3 \
 		PSGConf::Control::AIX.3 \
@@ -156,12 +161,17 @@ MAN3=		PSGConf.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+.endif
+RUN_DEPENDS=   ${BUILD_DEPENDS}
+
 .if ${PERL_LEVEL} < 500600
-IGNORE=		this port requires perl 5.6 or newer
+IGNORE=		requires perl 5.6 or newer
 .endif
 
 post-patch:
-	${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 	-@${MKDIR} ${PREFIX}/etc

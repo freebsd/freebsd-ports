@@ -21,12 +21,21 @@ case $2 in
 	POST-INSTALL)
 		if [ ! -r ${PKG_PREFIX}/etc/psg.conf ]; then
 			echo "installing ${PKG_PREFIX}/etc/psg.conf";
-			cp ${PKG_PREFIX}/etc/psg.conf ${PKG_PREFIX}/etc/psg.conf;
+			cp ${PKG_PREFIX}/etc/psg.conf.sample ${PKG_PREFIX}/etc/psg.conf;
 		fi
 
+		if [ -f ${PORTSDIR}/Makefile ]; then
+			echo "configuring ${PKG_PREFIX}/etc/psgconf_modules to use ports collection";
+			sed -e 's/FreeBSD::Packages$/FreeBSD::Ports/' < ${PKG_PREFIX}/etc/psgconf_modules.sample > ${PKG_PREFIX}/etc/psgconf_modules.sample.new
+			if [ $? -eq 0 ]; then
+				mv ${PKG_PREFIX}/etc/psgconf_modules.sample.new ${PKG_PREFIX}/etc/psgconf_modules.sample
+			else
+				rm -f ${PKG_PREFIX}/etc/psgconf_modules.sample.new
+			fi
+		fi
 		if [ ! -r ${PKG_PREFIX}/etc/psgconf_modules ]; then
 			echo "installing ${PKG_PREFIX}/etc/psgconf_modules";
-			cp ${PKG_PREFIX}/etc/psgconf_modules ${PKG_PREFIX}/etc/psgconf_modules
+			cp ${PKG_PREFIX}/etc/psgconf_modules.sample ${PKG_PREFIX}/etc/psgconf_modules
 		fi
 		;;
 esac
