@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.22.2
+PORTVERSION=	0.22.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	neon:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon
 
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
