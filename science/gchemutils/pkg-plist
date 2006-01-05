@@ -121,6 +121,7 @@ share/locale/de/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/it/LC_MESSAGES/gnome-chemistry-utils.mo
 share/locale/pl/LC_MESSAGES/gnome-chemistry-utils.mo
+share/locale/ru/LC_MESSAGES/gnome-chemistry-utils.mo
 share/mime/chemical/x-mdl-molfile.xml
 share/mime/chemical/x-pdb.xml
 share/mime/chemical/x-xyz.xml
