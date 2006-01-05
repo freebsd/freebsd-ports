@@ -548,6 +548,7 @@
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
+    SUBDIR += linux_kdump
     SUBDIR += linuxthreads
     SUBDIR += llvm
     SUBDIR += log4c
