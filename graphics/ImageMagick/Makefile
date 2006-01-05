@@ -125,6 +125,7 @@ BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz  
 .else
 CONFIGURE_ARGS+=	--without-dot
+CONFIGURE_ARGS+=	--without-gvc
 .endif
 
 # LCMS (Little CMS) color management
