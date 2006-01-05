@@ -1670,8 +1670,6 @@ interchange/src/tlink.pl
 interchange/src/vlink.c
 interchange/src/vlink.pl
 interchange/locale.error
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%SITE_PERL%%/Vend/SQL_Parser.pm
 %%SITE_PERL%%/Vend/UserDB.pm
 %%SITE_PERL%%/Vend/Glimpse.pm
