@@ -7,9 +7,10 @@
 
 PORTNAME=	tiblit
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/
+PKGNAMEPREFIX=	kde-style-
 DISTNAME=	20798-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	decept0@gmail.com
@@ -17,12 +18,7 @@ COMMENT=	KDE style focused on customization
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lkdefx|-lkdefx ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/widget-engine/Makefile.in
+CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>

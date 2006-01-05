@@ -7,8 +7,10 @@
 
 PORTNAME=	comix
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
+PKGNAMEPREFIX=	kde-style-
 DISTNAME=	16028-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	decept0@gmail.com
