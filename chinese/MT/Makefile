@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.661
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	http://mtbook.net/download/
 DISTFILES=	MT-${PORTVERSION}-full-lib.new.tar.gz mt.diff mt.no-htmlarea.diff

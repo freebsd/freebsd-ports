@@ -8,6 +8,7 @@
 PORTNAME=	html2ps-${PAPERSIZE}
 PORTVERSION=	1.0.b4
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/
 DISTNAME=	html2ps-1.0b4

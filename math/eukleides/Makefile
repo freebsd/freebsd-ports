@@ -8,6 +8,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +30,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		cdio.6:${PORTSDIR}/sysutils/libcdio \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		Wand.8:${PORTSDIR}/graphics/ImageMagick
+		Wand.9:${PORTSDIR}/graphics/ImageMagick
 PATCH_DEPENDS=	libtool15:${PORTSDIR}/devel/libtool15
 
 USE_GETTEXT=	yes

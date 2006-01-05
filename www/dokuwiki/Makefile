@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	20051109
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://bbs.ilc.edu.tw/chinsan/distfiles/ \
 		http://bbs.ilc.edu.tw/chinsan/ports/dokuwiki/ \
