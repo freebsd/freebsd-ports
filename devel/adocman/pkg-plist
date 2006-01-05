@@ -1,0 +1,13 @@
+bin/adocman
+bin/atracker
+bin/xml_export
+%%SITE_PERL%%/Alexandria/Client.pm
+%%SITE_PERL%%/Alexandria/Docman.pm
+%%SITE_PERL%%/Alexandria/Tracker.pm
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/adocman.html
+%%PORTDOCS%%%%DOCSDIR%%/xml_export.html
+@dirrm %%SITE_PERL%%/Alexandria
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
