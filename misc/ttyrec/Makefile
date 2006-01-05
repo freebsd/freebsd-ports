@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ttyrec
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	misc
 MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
 
