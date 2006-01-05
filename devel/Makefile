@@ -22,6 +22,7 @@
     SUBDIR += adacurses
     SUBDIR += adasdl
     SUBDIR += adime
+    SUBDIR += adocman
     SUBDIR += agenda-headers
     SUBDIR += agenda-libs
     SUBDIR += agenda-snow-libs
