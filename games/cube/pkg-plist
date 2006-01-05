@@ -790,8 +790,6 @@ libexec/cube_server
 %%DATADIR%%/packages/than_ind/trim21.jpg
 %%DATADIR%%/packages/than_ind/trlight01.jpg
 %%DATADIR%%/packages/than_ind/trlight06.jpg
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%DATADIR%%/savegames
 @dirrm %%DATADIR%%/packages/than_ind
 @dirrm %%DATADIR%%/packages/tech1soc
