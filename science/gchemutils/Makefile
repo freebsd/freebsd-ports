@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.8
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	C++ classes and Gtk2 widgets related to chemistry
 
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
-		openbabel.0:${PORTSDIR}/science/openbabel
+		openbabel.1:${PORTSDIR}/science/openbabel
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -27,4 +26,10 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"does not link with openbabel"
+.endif
+
+.include <bsd.port.post.mk>
