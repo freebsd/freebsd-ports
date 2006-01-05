@@ -7,7 +7,7 @@
 
 PORTNAME=	policyd
 PORTVERSION=	1.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_RC_SUBR=	policyd.sh
 
-REALNAME=	${PKGNAME:S/-${PORTVERSION}//}
+REALNAME=	${PKGNAME:C/-${PORTVERSION}.*//}
 
 SUB_LIST+=	REALNAME=${REALNAME}
 
