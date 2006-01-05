@@ -463,8 +463,6 @@ share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%ARTS%%share/services/amarok_artsengine_plugin.desktop
 %%GSTREAMER%%share/services/amarok_gstengine_plugin.desktop
 %%XINE%%share/services/amarok_xine-engine.desktop
