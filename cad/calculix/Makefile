@@ -51,7 +51,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_GL=	yes
 USE_REINPLACE=	yes
-BLAS_LIBS=	-lf77blas -latlas
+BLAS_LIBS?=	-lf77blas -latlas
 
 BROWSER?=	mozilla
 PSVIEWER?=	gv
@@ -104,9 +104,9 @@ pre-build:
 		${WRKSRC}/ccx_1.4/src/ccx_1.4.c
 
 do-build:
-	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
+	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
 	@(cd ${WRKSRC}/libSNL/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
-	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
+	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ccx_${PORTVERSION}/src/ccx_${PORTVERSION} \
