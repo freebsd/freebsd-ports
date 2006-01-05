@@ -6,7 +6,7 @@
 
 PORTNAME=		kimdaba
 PORTVERSION=		2.1
-PORTREVISION=	1
+PORTREVISION=		3
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
 
