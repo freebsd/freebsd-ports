@@ -28,7 +28,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 #
 # User Configurable Variables
 #
-# PREFIX		- Where to install ircd-hybrid. Default is /usr/local/ircd
+# PREFIX		- Where to install ircd-hybrid. Default is /usr/local
 # WITH_OPENSSL	- Enable openssl. Allows use of CHALLENGE and encrypted links.
 # WITHOUT_SHARED_MODULES - Disable shared modules. More secure but reduces flexability.
 # WITHOUT_ASSERT	- Disable parts of the debugging code.
@@ -42,7 +42,11 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLINC}/openssl
+CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLINC}
+.endif
+
+.if defined(WITH_HALFOPS)
+CONFIGURE_ARGS+=	--enable-halfops
 .endif
 
 .if defined(WITHOUT_SHARED_MODULES)
