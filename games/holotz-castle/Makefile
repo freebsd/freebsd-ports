@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mainreactor.net/holotzcastle/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ppl@nbnet.nb.ca
-COMMENT=	A platform game with high dosis of mistery
+COMMENT=	A platform game with high doses of mystery
 
 MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/
 
