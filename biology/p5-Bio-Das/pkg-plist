@@ -50,8 +50,6 @@
 %%SITE_PERL%%/Bio/Das/TypeHandler.pm
 %%SITE_PERL%%/Bio/Das/Util.pm
 %%SITE_PERL%%/mach/auto/Bio/Das/.packlist
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%SITE_PERL%%/mach/auto/Bio/Das
 @dirrm %%SITE_PERL%%/Bio/Das/Request
 @dirrm %%SITE_PERL%%/Bio/Das/ProServer/SourceAdaptor/Transport

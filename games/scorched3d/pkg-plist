@@ -1123,8 +1123,6 @@ games/scorched3d/documentation/html/screenshots/tooltip1.gif
 games/scorched3d/documentation/html/screenshots/weapon.gif
 games/scorched3d/documentation/html/screenshots/wind.gif
 games/scorched3d/documentation/html/serverfiles.html
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm games/scorched3d/documentation/html/screenshots
 @dirrm games/scorched3d/documentation/html/numbers
 @dirrm games/scorched3d/documentation/html/buttons
