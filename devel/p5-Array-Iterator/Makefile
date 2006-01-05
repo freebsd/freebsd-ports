@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Array-Iterator
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Array
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A set of array iterators
 
 MAN3=		Array::Iterator.3 Array::Iterator::Circular.3 \
@@ -23,7 +23,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"This port requires perl 5.6 or above."
+IGNORE=		requires perl 5.6 or above
 .endif
 
 .include <bsd.port.post.mk>
