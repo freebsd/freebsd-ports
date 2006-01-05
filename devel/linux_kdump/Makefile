@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	marcel@FreeBSD.org
 COMMENT=	Linux-compatability ktrace.out processor
 
-BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-8
+BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
 ONLY_FOR_ARCHS=	i386
 MAN1=		linux_kdump.1
