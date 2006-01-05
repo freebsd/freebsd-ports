@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	Looks for problems in internet draft formatting
 
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 NO_BUILD=	YES
 
 do-install:
