@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Thu Dec  1 17:04:10 2005
++++ Makefile.in	Thu Dec  1 17:04:31 2005
+@@ -82,7 +82,7 @@
+ 	$(INSTALL_PROGRAM) xpdf/pdftotext$(EXE) $(DESTDIR)@bindir@/pdftotext$(EXE)
+ 	$(INSTALL_PROGRAM) xpdf/pdfinfo$(EXE) $(DESTDIR)@bindir@/pdfinfo$(EXE)
+ 	$(INSTALL_PROGRAM) xpdf/pdffonts$(EXE) $(DESTDIR)@bindir@/pdffonts$(EXE)
+-@X@	$(INSTALL_PROGRAM) xpdf/pdftoppm$(EXE) $(DESTDIR)@bindir@/pdftoppm$(EXE)
++	$(INSTALL_PROGRAM) xpdf/pdftoppm$(EXE) $(DESTDIR)@bindir@/pdftoppm$(EXE)
+ 	$(INSTALL_PROGRAM) xpdf/pdfimages$(EXE) $(DESTDIR)@bindir@/pdfimages$(EXE)
+ 	-mkdir -p $(DESTDIR)@mandir@/man1
+ @X@	$(INSTALL_DATA) $(srcdir)/doc/xpdf.1 $(DESTDIR)@mandir@/man1/xpdf.1
+@@ -90,7 +90,7 @@
+ 	$(INSTALL_DATA) $(srcdir)/doc/pdftotext.1 $(DESTDIR)@mandir@/man1/pdftotext.1
+ 	$(INSTALL_DATA) $(srcdir)/doc/pdfinfo.1 $(DESTDIR)@mandir@/man1/pdfinfo.1
+ 	$(INSTALL_DATA) $(srcdir)/doc/pdffonts.1 $(DESTDIR)@mandir@/man1/pdffonts.1
+-@X@	$(INSTALL_DATA) $(srcdir)/doc/pdftoppm.1 $(DESTDIR)@mandir@/man1/pdftoppm.1
++	$(INSTALL_DATA) $(srcdir)/doc/pdftoppm.1 $(DESTDIR)@mandir@/man1/pdftoppm.1
+ 	$(INSTALL_DATA) $(srcdir)/doc/pdfimages.1 $(DESTDIR)@mandir@/man1/pdfimages.1
+ 	-mkdir -p $(DESTDIR)@mandir@/man5
+ 	$(INSTALL_DATA) $(srcdir)/doc/xpdfrc.5 $(DESTDIR)@mandir@/man5/xpdfrc.5
