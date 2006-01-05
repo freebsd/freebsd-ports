@@ -2049,3 +2049,4 @@ devel/py-ansistyle||2005-12-31|Replaced by py-ll-core
 devel/py-ll-url||2005-12-31|Replaced by py-ll-core
 misc/gkrellmaflag||2005-12-31|Unfetchable
 devel/libmusclecard|devel/pcsc-lite|2006-01-02|Reintegrated into pcsc-lite port
+deskutils/gdesklets-ltvariations||2006-01-04|Deleted; dead and unfetchable
