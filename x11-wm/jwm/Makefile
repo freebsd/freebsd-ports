@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwm
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/ \
 		http://joesbox.xmgfree.com/jwm/
@@ -14,16 +14,22 @@ MASTER_SITES=	http://joewing.net/programs/jwm/ \
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Joe's Window Manager
 
-MAN1=		jwm.1
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+
+#CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-icons \
+#		--enable-png --enable-xpm --enable-shape \
+#		--enable-xinerama --enable-xft --enable-xrender
+
+CONFIGURE_ARGS+=	--enable-icons --enable-png --enable-xpm \
+			--enable-shape --enable-xinerama --enable-xft \
+			--enable-xrender
+
+MAN1=		jwm.1
 PLIST_FILES=	bin/jwm etc/system.jwmrc
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-icons \
-		--enable-png --enable-xpm --enable-shape \
-		--enable-xinerama --enable-xft --enable-xrender
 
 post-patch:
 	    @${REINPLACE_CMD} -e 's,^CC =,CC ?=,' \
