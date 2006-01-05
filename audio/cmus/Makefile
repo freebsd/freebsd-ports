@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 
@@ -41,6 +41,8 @@ WITH_TREMOR=	yes
 WITH_ARTS=	yes
 .endif
 
+PREMSG=		\n
+
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
@@ -73,7 +75,6 @@ PREMSG+=	Define WITH_ARTS=yes to enable arts output support.\n
 .endif
 
 pre-everything::
-	@${ECHO_CMD}
 	@${PRINTF} "${PREMSG}"
 	@${ECHO_CMD}
 
