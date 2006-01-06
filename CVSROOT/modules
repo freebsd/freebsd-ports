@@ -2877,6 +2877,7 @@ gfortran	ports/lang/gfortran
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggiterm		ports/x11/ggiterm
+ggrab		ports/multimedia/ggrab
 ggsd		ports/net/ggsd
 ggv		ports/print/ggv
 ggz-client-libs	ports/games/ggz-client-libs
