@@ -6,10 +6,11 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.3.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/1.1/:book
+		http://svnbook.red-bean.com:9000/en/1.1/:bookhtml \
+		http://svnbook.red-bean.com/en/1.1/:bookpdf
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -195,7 +196,7 @@ PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 PORTDOCS+=	book
-DISTFILES+=	svn-book.html:book svn-book.pdf:book
+DISTFILES+=	svn-book.html:bookhtml svn-book.pdf:bookpdf
 .endif
 
 SCRIPTS=
