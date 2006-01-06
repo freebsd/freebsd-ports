@@ -197,6 +197,7 @@
     SUBDIR += p5-DBI-137
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBIWrapper
+    SUBDIR += p5-DBIx-Abstract
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
