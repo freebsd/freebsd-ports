@@ -987,6 +987,7 @@
 %%INSTDIR%%/modules/packages3d/support/supp_plcc84.wrl
 %%INSTDIR%%/modules/packages3d/support/support_so8_zif.wings
 %%INSTDIR%%/modules/packages3d/support/support_so8_zif.wrl
+%%INSTDIR%%/modules/packages3d/test.wrl
 %%INSTDIR%%/modules/pin_array.brd
 %%INSTDIR%%/modules/pin_array.mdc
 %%INSTDIR%%/modules/pin_array.mod
