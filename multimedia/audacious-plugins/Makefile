@@ -45,6 +45,10 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 503000
+IGNORE=		requires include/tgmath.h, which isn't available until FreeBSD 5.3
+.endif
+
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
