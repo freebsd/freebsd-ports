@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	textpattern
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.textpattern.com/dload/
 
@@ -20,7 +20,6 @@ WWWOWN?=	www
 WWWGRP?=	www
 TEXTPATTERN?=	www/data-dist/${PORTNAME}
 PLIST_SUB+=	TEXTPATTERN=${TEXTPATTERN}
-
 USE_PHP=	mbstring xml
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
