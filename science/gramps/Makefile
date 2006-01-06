@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTVERSION=	2.0.9
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
 
-MAINTAINER=	stefan.tell@crashmail.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A GTK/GNOME-based genealogy program written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
