@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	security
-MASTER_SITES=	http://www.iki.fi/shd/foss/cksfv/files/ \
-		http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/
+MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/ \
+		http://critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 
 MAN1=		cksfv.1
 PLIST_FILES=	bin/cksfv
 PORTDOCS=	README ChangeLog
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^\(CC\)=|\1?=|' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
