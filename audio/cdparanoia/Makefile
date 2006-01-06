@@ -7,13 +7,13 @@
 
 PORTNAME=	cdparanoia
 PORTVERSION=	3.9.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio sysutils
 MASTER_SITES=	http://www.xiph.org/paranoia/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
 USE_GETOPT_LONG=yes
