@@ -1,4 +1,3 @@
-MD5 (logjam-4.5.1.tar.bz2) = ccae70dc36644cd1529c581443484ebe
-SIZE (logjam-4.5.1.tar.bz2) = 748283
-MD5 (logjam_link.c.diff) = 944d94d47e0b3252098b3738dd5c8432
-SIZE (logjam_link.c.diff) = 2991
+MD5 (logjam-4.5.2.tar.bz2) = 4c06324355ba01a2a1cf1ad5b48f4c85
+SHA256 (logjam-4.5.2.tar.bz2) = 00ba33099f7bb6b85f522c6c63ddb564314a5e78ac0a13100392fcb78a7a38e5
+SIZE (logjam-4.5.2.tar.bz2) = 748780

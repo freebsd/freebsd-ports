@@ -6,18 +6,11 @@
 #
 
 PORTNAME=	logjam
-PORTVERSION=	4.5.1
-PORTREVISION=	1
+PORTVERSION=	4.5.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
-.if defined (WITH_EXTRA_PATCH)
-PATCH_SITES=	http://bmp-plugins.berlios.de/misc/patches/
-PATCHFILES=	logjam_link.c.diff
-PATCH_DIST_STRIP=	-p0
-.endif
-
-MAINTAINER=	mike.patterson@unb.ca
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
