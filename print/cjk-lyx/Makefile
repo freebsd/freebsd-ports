@@ -20,7 +20,7 @@ DIST_SUBDIR=	CJK-LyX
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		lyx-platex-patch-${FORM}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
