@@ -20,4 +20,10 @@ USE_SDL=	image mixer sdl ttf
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		doesn't work on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
