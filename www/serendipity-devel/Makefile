@@ -7,7 +7,7 @@
 
 PORTNAME=	serendipity
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	php-blog
@@ -23,10 +23,20 @@ USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
 
+LOCALBASE?=	/usr/local
+
 OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend (PHP5)" off \
-		MAGICK "Use ImageMagick Library" on
+		PGSQL "Use PostgreSQL backend" off
+
+.if exists(${LOCALBASE}/etc/php.conf)
+.include "${LOCALBASE}/etc/php.conf"
+.endif
+
+.if defined(PHP_VER) && ${PHP_VER} == 5
+OPTIONS+=	SQLITE "Use SQLite backend" off
+.endif
+
+OPTIONS+=	MAGICK "Use ImageMagick Library" on
 
 PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
@@ -54,8 +64,9 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 
 do-install:
 	@-${MKDIR} ${PREFIX}/${SERENDIPITY}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SERENDIPITY}
+	@${CHMOD} 755 ${PREFIX}/${SERENDIPITY}
 	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${SERENDIPITY}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SERENDIPITY}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
