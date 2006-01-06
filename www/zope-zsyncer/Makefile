@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsyncer
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zsyncer
@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/ZSyncer
 PRODUCTNAME=	ZSyncer
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
 	@${CHMOD} -R og+rX ${WRKSRC}/
 
 do-install:
