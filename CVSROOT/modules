@@ -7730,6 +7730,7 @@ p5-DBI		ports/databases/p5-DBI
 p5-DBI-137	ports/databases/p5-DBI-137
 p5-DBI-Shell	ports/databases/p5-DBI-Shell
 p5-DBIWrapper	ports/databases/p5-DBIWrapper
+p5-DBIx-Abstract	ports/databases/p5-DBIx-Abstract
 p5-DBIx-AnyDBD	ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse	ports/databases/p5-DBIx-Browse
 p5-DBIx-Class	ports/databases/p5-DBIx-Class
