@@ -37,6 +37,7 @@
 %%TEXTPATTERN%%/textpattern/lib/admin_config.php
 %%TEXTPATTERN%%/textpattern/lib/class.thumb.php
 %%TEXTPATTERN%%/textpattern/lib/classTextile.php
+%%TEXTPATTERN%%/textpattern/lib/constants.php
 %%TEXTPATTERN%%/textpattern/lib/i18n-ascii.txt
 %%TEXTPATTERN%%/textpattern/lib/taglib.php
 %%TEXTPATTERN%%/textpattern/lib/txplib_db.php
@@ -58,6 +59,7 @@
 %%TEXTPATTERN%%/textpattern/setup/setup-langs.php
 %%TEXTPATTERN%%/textpattern/setup/txpsql.php
 %%TEXTPATTERN%%/textpattern/textpattern.css
+%%TEXTPATTERN%%/textpattern/textpattern.js
 %%TEXTPATTERN%%/textpattern/txp_img/button.gif
 %%TEXTPATTERN%%/textpattern/txp_img/carver.gif
 %%TEXTPATTERN%%/textpattern/txp_img/down.gif
@@ -84,10 +86,12 @@
 %%TEXTPATTERN%%/textpattern/txp_img/up2.gif
 %%TEXTPATTERN%%/textpattern/update/_to_1.0.0.php
 %%TEXTPATTERN%%/textpattern/update/_to_4.0.2.php
+%%TEXTPATTERN%%/textpattern/update/_to_4.0.3.php
 %%TEXTPATTERN%%/textpattern/update/_update.php
 %%TEXTPATTERN%%/textpattern/update/index.html
 @dirrm %%TEXTPATTERN%%/textpattern/update
 @dirrm %%TEXTPATTERN%%/textpattern/txp_img
+@dirrm %%TEXTPATTERN%%/textpattern/tmp/\
 @dirrm %%TEXTPATTERN%%/textpattern/tmp
 @dirrm %%TEXTPATTERN%%/textpattern/setup
 @dirrm %%TEXTPATTERN%%/textpattern/publish
@@ -97,5 +101,6 @@
 @dirrm %%TEXTPATTERN%%/textpattern/include
 @dirrm %%TEXTPATTERN%%/textpattern
 @dirrm %%TEXTPATTERN%%/images
+@dirrm %%TEXTPATTERN%%/files/\
 @dirrm %%TEXTPATTERN%%/files
 @dirrm %%TEXTPATTERN%%
