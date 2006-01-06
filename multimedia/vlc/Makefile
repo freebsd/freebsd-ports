@@ -224,7 +224,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.4a
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download2.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/ \
 		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
