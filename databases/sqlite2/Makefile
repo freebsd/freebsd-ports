@@ -12,16 +12,29 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	2.8.16
+PORTVERSION=	2.8.17
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
+USE_GMAKE=	YES
+USE_GNOME=	pkgconfig
+USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	YES
+USE_REINPLACE=	YES
+INSTALLS_SHLIB=	YES
+
+CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/sqlite2
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite2
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2
+
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude CVS
 
 # Defaults, for building the docs:
 TCL_V=		8.4
@@ -54,50 +67,30 @@ MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
 .endif
 
-USE_GMAKE=	YES
-USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	YES
-USE_REINPLACE=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-ALL_TARGET=	all
-#.if defined(WITH_TCL)
-#ALL_TARGET+=	libtclsqlite.la
-#.endif
-
-INSTALLS_SHLIB=	YES
-
 .include <bsd.port.pre.mk>
-
-DOCFILES!=	${AWK} 'BEGIN {FS="/"}; /^%%PORTDOCS%%%%DOCSDIR%%/{print $$2}' ${.CURDIR}/pkg-plist
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
-			 -e "s|\./libtool|${LIBTOOL}|g" \
-			 ${WRKSRC}/Makefile.in
+		 -e "s|\./libtool|${LIBTOOL}|g" ${WRKSRC}/Makefile.in
 	@${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" >${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_SHORT_V}\"" >>${WRKSRC}/freebsd.hints
-	#@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
 
 post-build:
-	# Build the docs
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc
+	@${ECHO_MSG} "===> Building docs"
+	@(cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc)
 .endif
 
 post-install:
 .if defined(WITH_TCL)
-	cd ${WRKSRC} && ${GMAKE} install-tcl
+	@(cd ${WRKSRC} && ${GMAKE} install-tcl)
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.post.mk>
