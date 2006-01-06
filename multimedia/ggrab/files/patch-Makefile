@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Jan  6 21:38:33 2006
++++ Makefile	Fri Jan  6 21:39:06 2006
+@@ -13,7 +13,7 @@
+ #
+ #
+ 
+-CPPFLAGS=-DREENTRANT -D_LARGEFILE64_SOURCE  -Wall -Wshadow -O3
++CPPFLAGS=-DREENTRANT -D_LARGEFILE64_SOURCE  -Wall -Wshadow
+ 
+ LDFLAGS= -s -static
+ 
