@@ -15,8 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Perl5 module for parsing HTML documents
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
@@ -31,7 +32,11 @@ MAN3=		HTML::Entities.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl version 5.6 or above
+RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
+
+post-patch:
+	${REINPLACE_CMD} -e '/require 5.006/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e '/open/s/", $$file/ $$file"/g' ${WRKSRC}/t/unicode.t
 .endif
 
 .include <bsd.port.post.mk>
