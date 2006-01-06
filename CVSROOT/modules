@@ -7743,6 +7743,7 @@ p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
 p5-DBIx-SQLEngine	ports/databases/p5-DBIx-SQLEngine
 p5-DBIx-SearchBuilder	ports/databases/p5-DBIx-SearchBuilder
+p5-DBIx-Sequence	ports/databases/p5-DBIx-Sequence
 p5-DBIx-Simple	ports/databases/p5-DBIx-Simple
 p5-DBIx-Table	ports/databases/p5-DBIx-Table
 p5-DBIx-TableHash	ports/databases/p5-DBIx-TableHash
