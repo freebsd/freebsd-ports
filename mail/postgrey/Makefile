@@ -7,6 +7,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
@@ -32,25 +33,13 @@ PGY_DIR?=	/var/db/postgrey
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-pre-extract:
-.if !defined(SKIP_BDB_CHECK) && !defined(PACKAGE_BUILDING)
-.if !defined(WITH_BDB_VER)
-	@${ECHO} "This port requires databases/p5-BerkeleyDB to be built with"
-	@${ECHO} "WITH_BDB_VER=41 or later."
-	exit 1
-.else
-.if ${WITH_BDB_VER} < 41
-	@${ECHO} "This port requires databases/p5-BerkeleyDB to be built with"
-	@${ECHO} "WITH_BDB_VER=41 or later."
-	exit 1
-.endif
-.endif
-.endif
-
 .include <bsd.port.pre.mk>
 
+# Sys::Syslog::openlog won't return 1 for success in perl 5.00503, and causes
+# "Couldn't open syslog[] at ... Net/Server.pm line ..." problem.
+# See the thread of http://lists.ee.ethz.ch/postgrey/msg00001.html
 .if ${PERL_LEVEL} < 500600
-IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
+IGNORE=	needs perl 5.6.0 or higher, install lang/perl5.8 and try again
 .endif
 
 post-patch:
@@ -64,13 +53,11 @@ pre-install:
 		-e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%ETCFILES%%#${ETCFILES}#g' \
 		-e 's#%%POSTGREYDIR%%#${PGY_DIR}#g' ${MASTERDIR}/pkg-install > \
 		${PKGINSTALL}
-.if !defined(SKIP_BDB_CHECK) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGREQ} INSTALL
-.endif
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/postgrey.sh ${PREFIX}/etc/rc.d
 	${MKDIR} ${PREFIX}/etc/postfix
 .for i in ${ETCFILES}
