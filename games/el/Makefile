@@ -37,6 +37,10 @@ MAKEFILE=	Makefile.bsd
 CFLAGS+=	-DX86_64
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"does not compile"
+.endif
+
 do-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
 	${ECHO} "cd ${DATADIR}; ./el.x86.bsd.bin" >> ${WRKDIR}/el
