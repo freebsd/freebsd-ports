@@ -27,6 +27,7 @@ lib/audacious/Output/libcrossfade.so
 lib/audacious/Output/libcrossfade.so.0
 lib/audacious/Output/libdisk_writer.so
 lib/audacious/Visualization/libbscope.so
+%%LIBVISUAL:%%lib/audacious/Visualization/libvisual_proxy.so
 lib/libaudacious.a
 lib/libaudacious.so
 lib/libaudacious.so.2
