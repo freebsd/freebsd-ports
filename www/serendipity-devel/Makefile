@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 SERENDIPITY?=	www/${PORTNAME}
 PLIST_SUB+=	SERENDIPITY=${SERENDIPITY}
-USE_PHP=	session pcre gd openssl mbstring iconv zlib
+USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
 
