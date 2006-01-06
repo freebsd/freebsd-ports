@@ -16,10 +16,11 @@
 # On FreeBSD 4 with OpenSSL 0.9.7d, the configure script refuses to enable
 # ssl at all and on FreeBSD 5 and up, linking is broken.
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-i18n
 
 PATCH_SITES=	http://teki.jpn.ph/pc/software/
-PATCHFILES=	dillo-0.8.5-i18n-misc-20051207.diff.bz2
+PATCHFILES=	dillo-0.8.5-i18n-misc-20060105.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
