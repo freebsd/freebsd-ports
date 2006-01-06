@@ -23,13 +23,13 @@ RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
-OPTIONS=	GLADE "With glade support" OFF \
-		GNOMECANVAS "With gnomecanvas support" OFF \
-		GNOMEPANEL "With gnomepanel support" OFF \
-		GNOMEUI "With gnomeui support" OFF \
-		GTKSPELL "With gtkspell support" OFF \
+OPTIONS=	GLADE "With glade support" ON \
+		GNOMECANVAS "With gnomecanvas support" ON \
+		GNOMEPANEL "With gnomepanel support" ON \
+		GNOMEUI "With gnomeui support" ON \
+		GTKSPELL "With gtkspell support" ON \
 		GTKTL "With gtkglarea support" ON \
-		RSVG "With rsvg support" OFF
+		RSVG "With rsvg support" ON
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
