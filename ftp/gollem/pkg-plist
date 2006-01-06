@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.gollem
+%%HORDE_INC%%/httpd-gollem.conf
 %%GOLLEMDIR%%/clipboard.php
 %%GOLLEMDIR%%/config/backends.php
 %%GOLLEMDIR%%/config/backends.php.dist

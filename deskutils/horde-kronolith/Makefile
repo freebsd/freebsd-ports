@@ -25,14 +25,14 @@ COMMENT=	Kronolith is the Horde calendar application
 #----------------------------------------------------------------------------
 # You may define this option:
 #
-# - WITHOUT_MCAL:	you won't use the MCAL driver but a database backend
-#			(only for PHP4).
+# - WITH_MCAL:	you want to use the MCAL driver (deprecated, and only for PHP4).
 #
 #----------------------------------------------------------------------------
 
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_PHP=	yes	# modules set by Horde, but needed to get PHP_VER
 USE_REINPLACE=	yes
 
@@ -46,17 +46,22 @@ LHORDEDIR?=	www/horde
 LKRONOLITHDIR?=	${LHORDEDIR}/kronolith
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	KRONOLITHDIR=${KRONOLITHDIR}
-PLIST_SUB=	KRONOLITHDIR=${LKRONOLITHDIR}
+PLIST_SUB=	KRONOLITHDIR=${LKRONOLITHDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 
 KRONOLITHDIR=	${PREFIX}/${LKRONOLITHDIR}
 CONFDIR=	${KRONOLITHDIR}/config
 VAR_CAL=	/var/calendar
 
-HORDE_INC=	${LOCALBASE}/etc/horde
-
 .include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
+HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
 
 .if exists(${LOCALBASE}/sbin/htpasswd)
 HTPASSWD=	${LOCALBASE}/sbin/htpasswd
@@ -67,7 +72,7 @@ HTPASSWD=	${LOCALBASE}/bin/htpasswd
 pre-configure:
 	@${RM} ${WRKSRC}/config/conf.xml.orig
 	@${SED} -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:"	\
-		${FILESDIR}/httpd.conf.kronolith > ${WRKDIR}/httpd.conf.kronolith
+		${FILESDIR}/httpd.conf.kronolith > ${WRKDIR}/httpd-kronolith.conf
 
 do-install:
 	@${MKDIR}  ${KRONOLITHDIR}
@@ -82,7 +87,7 @@ do-install:
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${KRONOLITHDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.kronolith ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-kronolith.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -92,13 +97,13 @@ do-install:
 .endif
 
 post-install:
-.if !defined(WITHOUT_MCAL) && (${PHP_VER} == 4)
+.if defined(WITH_MCAL) && (${PHP_VER} == 4)
 	@if [ ! -d ${VAR_CAL} ]; then \
 	  ${ECHO_MSG} "===> Creating ${VAR_CAL}" ; \
 	  ${MKDIR} ${VAR_CAL} ; \
 	  ${CHMOD} 1777 ${VAR_CAL} ; \
 	fi
-.if !defined(BATCH)
+. if !defined(BATCH)
 	@if [ ! -f ${LOCALBASE}/etc/mpasswd ] ; then \
 	  ${ECHO_MSG} "===> Creating ${LOCALBASE}/etc/mpasswd" ; \
 	  ${ECHO} -n "Please enter a password for www's calendar: " ; \

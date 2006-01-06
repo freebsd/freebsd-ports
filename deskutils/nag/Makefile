@@ -25,11 +25,12 @@ COMMENT=	Nag is a simple, multiuser task list manager
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 
-PLIST_SUB=	NAGDIR=${LNAGDIR}
+PLIST_SUB=	NAGDIR=${LNAGDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	NAGDIR=${NAGDIR}
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -43,11 +44,17 @@ LNAGDIR?=	${LHORDEDIR}/nag
 NAGDIR=		${PREFIX}/${LNAGDIR}
 CONFDIR=	${NAGDIR}/config
 
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
 HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
 
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/nag:${NAGDIR}:g"		\
-		${FILESDIR}/httpd.conf.nag > ${WRKDIR}/httpd.conf.nag
+		${FILESDIR}/httpd.conf.nag > ${WRKDIR}/httpd-nag.conf
 
 do-install:
 	@${MKDIR}  ${NAGDIR}
@@ -62,7 +69,7 @@ do-install:
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${NAGDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.nag ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-nag.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -76,4 +83,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -26,10 +26,13 @@ COMMENT=	A password changing module for Horde
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 
-PLIST_SUB=	LPWDDIR=${LPWDDIR} PWDDIR=${PWDDIR}
+PLIST_SUB=	LPWDDIR=${LPWDDIR} PWDDIR=${PWDDIR}	\
+		HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PWDDIR=${PWDDIR} CONFDIR=${CONFDIR} HORDEDIR=${HORDEDIR}
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -44,11 +47,17 @@ HORDEDIR=	${PREFIX}/${LHORDEDIR}
 PWDDIR=		${PREFIX}/${LPWDDIR}
 CONFDIR=	${PWDDIR}/config
 
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
 HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
 
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/passwd:${PWDDIR}:g"	\
-		${FILESDIR}/httpd.conf.pwd > ${WRKDIR}/httpd.conf.pwd
+		${FILESDIR}/httpd.conf.pwd > ${WRKDIR}/httpd-pwd.conf
 
 do-install:
 	@${MKDIR}  ${PWDDIR}
@@ -63,7 +72,7 @@ do-install:
 .endfor
 	@${CHOWN} -R www:www ${PWDDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${CP} -p ${FILESDIR}/httpd.conf.pwd ${HORDE_INC}/httpd.conf.pwd
+	@${INSTALL_DATA} ${WRKDIR}/httpd-pwd.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -77,4 +86,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

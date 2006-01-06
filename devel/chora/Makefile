@@ -49,6 +49,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/cvsgraph:${PORTSDIR}/devel/cvsgraph
 .endif
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_REINPLACE=	yes
 
 # Specify where your repository belongs.
@@ -62,23 +63,32 @@ DOCS=		COPYING README docs/BUGS docs/CHANGES docs/CREDITS \
 CONFFILE=	cvsgraph.conf longIntro.txt mime_drivers.php prefs.php	\
 		sourceroots.php
 SUB_DIRS=	config lib locale po templates themes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LHORDEDIR?=	www/horde
 LCHORADIR=	${LHORDEDIR}/chora
 
-PLIST_SUB=	CHORADIR=${LCHORADIR}
+PLIST_SUB=	CHORADIR=${LCHORADIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	CHORADIR=${CHORADIR} CONFDIR=${CONFDIR}
 
 CHORADIR=	${PREFIX}/${LCHORADIR}
 CONFDIR=	${CHORADIR}/config
 
-HORDE_INC=	${LOCALBASE}/etc/horde
-
 PATCH2RM=	sourceroots.php.dist.orig sourceroots.php.dist.bak conf.xml.bak
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
+HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
 
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/chora:${CHORADIR}:"	\
-		${FILESDIR}/httpd.conf.chora > ${WRKDIR}/httpd.conf.chora
+		${FILESDIR}/httpd.conf.chora > ${WRKDIR}/httpd-chora.conf
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"		\
 		-e "s|/usr/bin/cvsgraph|${LOCALBASE}/bin/cvsgraph|"	\
 		-e "s|/usr/bin/svn|${LOCALBASE}/bin/svn|"		\
@@ -111,7 +121,7 @@ do-install:
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${CHORADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.chora ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-chora.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -121,10 +131,8 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%CHORADIR%%:${CHORADIR}:;s:%%CONFDIR%%:${CONFDIR}:"	\
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

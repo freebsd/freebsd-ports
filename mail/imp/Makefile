@@ -104,6 +104,7 @@ RUN_DEPENDS+=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i.beforeIMP
 
@@ -117,16 +118,14 @@ LHORDEDIR?=	www/horde
 LIMPDIR=	${LHORDEDIR}/imp
 PEARDIR?=	${LOCALBASE}/share/pear
 
-PLIST_SUB=	IMPDIR=${LIMPDIR}
-SUB_LIST=	IMPDIR=${IMPDIR} PORTSDIR=${PORTSDIR} CONFDIR=${CONFDIR}
-
+PLIST_SUB=	IMPDIR=${LIMPDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	IMPDIR=${IMPDIR} PORTSDIR=${PORTSDIR} CONFDIR=${CONFDIR}
 
 IMPDIR=		${PREFIX}/${LIMPDIR}
 CONFDIR=	${IMPDIR}/config
-
-HORDE_INC=	${LOCALBASE}/etc/horde
 
 HOSTNAME?=	`/bin/hostname`
 SERVOS?=	${OPSYS}-${OSREL}
@@ -156,6 +155,12 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/imap:${PORTSDIR}/mail/dovecot
 . else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
 . endif
+.endif
+
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
+HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
 pre-everything::
@@ -200,7 +205,7 @@ pre-configure:
 . endif
 .endif
 	@${SED} -e "s:/home/httpd/html/horde/imp:${IMPDIR}:"		\
-		${FILESDIR}/httpd.conf.imp > ${WRKDIR}/httpd.conf.imp
+		${FILESDIR}/httpd.conf.imp > ${WRKDIR}/httpd-imp.conf
 .for fc in ${PATCH2RM}
 	@${RM} ${WRKSRC}/config/${fc}
 .endfor
@@ -228,7 +233,7 @@ do-install:
 	fi
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.imp ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-imp.conf ${HORDE_INC}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${IMPDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 .if !defined(NOPORTDOCS)

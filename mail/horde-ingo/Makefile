@@ -33,10 +33,13 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_PHP=	imap
-USE_REINPLACE=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 
-PLIST_SUB=	INGODIR=${LINGODIR}
+PLIST_SUB=	INGODIR=${LINGODIR}  HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	INGODIR=${INGODIR}
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO
@@ -50,17 +53,21 @@ PEARDIR?=	${LOCALBASE}/share/pear
 INGODIR=	${PREFIX}/${LINGODIR}
 CONFDIR=	${INGODIR}/config
 
-HORDE_INC=	${LOCALBASE}/etc/horde
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SIEVE) || exists(${LOCALBASE}/cyrus/bin/timsieved)
 RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
 .endif
 
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
+HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
+
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/ingo:${INGODIR}:g"		\
-		${FILESDIR}/httpd.conf.ingo >${WRKDIR}/httpd.conf.ingo
+		${FILESDIR}/httpd.conf.ingo >${WRKDIR}/httpd-ingo.conf
 
 do-install:
 	@${MKDIR}  ${INGODIR}
@@ -75,7 +82,7 @@ do-install:
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INGODIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.ingo ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-ingo.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -85,8 +92,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%INGODIR%%:${INGODIR}:g;s:%%DOCSDIR%%:${DOCSDIR}:g"	\
-		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

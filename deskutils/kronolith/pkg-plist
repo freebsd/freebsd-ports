@@ -195,7 +195,7 @@
 %%KRONOLITHDIR%%/viewevent.php
 %%KRONOLITHDIR%%/week.php
 %%KRONOLITHDIR%%/workweek.php
-etc/horde/httpd.conf.kronolith
+%%HORDE_INC%%/httpd-kronolith.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%KRONOLITHDIR%%/themes/simplex
 @dirrm %%KRONOLITHDIR%%/themes/print
