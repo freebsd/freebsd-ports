@@ -1,0 +1,15 @@
+DBIx::Sequence - A simple SQL92 ID generator
+
+his module is intended to give easier portability to Perl database
+application by providing a database independant unique ID generator.
+This way, an application developer is not bound to use his database's
+SEQUENCE or auto_increment thus making his application portable on
+multiple database environnements.
+
+This module implements a simple Spin Locker mechanism and is garanteed
+to return a unique value every time it is called, even with concurrent
+processes. It uses your database for its state storage with ANSI SQL92
+compliant SQL. All SQL queries inside DBIx::Sequence are pre cached and
+very efficient especially under mod_perl.
+
+WWW: http://search.cpan.org/dist/DBIx-Sequence/
