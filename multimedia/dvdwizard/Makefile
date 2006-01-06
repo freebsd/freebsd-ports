@@ -29,6 +29,8 @@ RUN_DEPENDS=	\
 		y4mscaler:${PORTSDIR}/multimedia/y4mscaler \
 		bash:${PORTSDIR}/shells/bash
 
+IGNORE=		has an incomplete dependency list
+
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
