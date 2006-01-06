@@ -1,11 +1,5 @@
-Index: interface/cdda_interface.h
-===================================================================
-RCS file: /home/cvs/cdparanoia/interface/cdda_interface.h,v
-retrieving revision 1.1.1.1
-retrieving revision 1.3
-diff -u -r1.1.1.1 -r1.3
---- interface/cdda_interface.h	2003/01/05 09:46:26	1.1.1.1
-+++ interface/cdda_interface.h	2003/01/06 21:26:23	1.3
+--- interface/cdda_interface.h.orig	Sat Mar 24 02:15:46 2001
++++ interface/cdda_interface.h	Thu Jan  5 22:27:11 2006
 @@ -21,6 +21,11 @@
  #include <sys/types.h>
  #include <signal.h>
@@ -18,12 +12,11 @@ diff -u -r1.1.1.1 -r1.3
  #define MAXTRK 100
  
  typedef struct TOC {	/* structure of table of contents */
-@@ -46,14 +51,20 @@
- 
+@@ -47,13 +52,19 @@
    int opened; /* This struct may just represent a candidate for opening */
  
-+#ifdef Linux
    char *cdda_device_name;
++#ifdef Linux
    char *ioctl_device_name;
  
    int cdda_fd;

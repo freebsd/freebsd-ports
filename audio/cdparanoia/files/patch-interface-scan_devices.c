@@ -1,5 +1,5 @@
---- interface/scan_devices.c.orig	Sun Mar 25 21:44:01 2001
-+++ interface/scan_devices.c	Fri Nov  7 17:47:38 2003
+--- interface/scan_devices.c.orig	Mon Mar 26 07:44:01 2001
++++ interface/scan_devices.c	Thu Jan  5 22:27:44 2006
 @@ -1,6 +1,8 @@
  /******************************************************************
   * CopyPolicy: GNU Public License 2 applies
@@ -72,7 +72,7 @@
  cdrom_drive *cdda_identify_cooked(const char *dev, int messagedest,
  				  char **messages){
  
-@@ -275,6 +299,60 @@
+@@ -275,6 +299,61 @@
    return(d);
  }
  
@@ -109,6 +109,7 @@
 +		goto cdda_identify_cooked_fail;
 +	}
 +
++	d->cdda_device_name = copystring(dev);
 +	d->drive_model = copystring("Generic cooked ioctl CDROM");
 +	d->interface = COOKED_IOCTL;
 +	d->bigendianp = -1;
@@ -133,7 +134,7 @@
  struct  sg_id {
    long    l1; /* target | lun << 8 | channel << 16 | low_ino << 24 */
    long    l2; /* Unique id */
-@@ -390,6 +468,7 @@
+@@ -390,6 +469,7 @@
    if(dev!=-1)close(dev);
    return(NULL);
  }
@@ -141,7 +142,7 @@
  
  void strscat(char *a,char *b,int n){
    int i;
-@@ -401,6 +480,7 @@
+@@ -401,6 +481,7 @@
    strcat(a," ");
  }
  
@@ -149,7 +150,7 @@
  /* At this point, we're going to punt compatability before SG2, and
     allow only SG2 and SG3 */
  static int verify_SG_version(cdrom_drive *d,int messagedest,
-@@ -653,6 +733,88 @@
+@@ -653,6 +734,89 @@
    if(g_fd!=-1)close(g_fd);
    return(NULL);
  }
@@ -201,6 +202,7 @@
 +		goto cdda_identify_scsi_fail;
 +	}
 +
++	d->cdda_device_name = copystring(devname);
 +	d->ioctl_fd = -1;
 +	d->bigendianp = -1;
 +	d->nsectors = -1;
