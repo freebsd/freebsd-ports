@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Data-FormValidator
-PORTVERSION=		4.10
+PORTVERSION=		4.11
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -15,14 +15,14 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Validates user input (usually from an HTML form) based
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_MODBUILD=		yes
 
@@ -36,7 +36,7 @@ MAN3=		Data::FormValidator.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
+.if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
