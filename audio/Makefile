@@ -395,6 +395,7 @@
     SUBDIR += py-ao
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
+    SUBDIR += py-flac
     SUBDIR += py-id3
     SUBDIR += py-libmpdclient
     SUBDIR += py-mad
