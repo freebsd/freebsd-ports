@@ -7,12 +7,11 @@
 
 PORTNAME=	prosper
 PORTVERSION=	1.00.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PPRblends.sty.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} contrib-prosper-1.0.0.tar.gz
 
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	LaTeX class for writing transparencies
@@ -48,8 +47,7 @@ pre-fetch:
 .endif
 
 post-extract:
-	@${GZCAT} -c ${DISTDIR}/PPRblends.sty.gz > \
-			${WRKSRC}/contrib/PPRblends.sty
+	@${CP} -r ${WRKDIR}/contrib-prosper-1.0.0/* ${WRKSRC}/contrib/
 
 do-install:
 	@${MKDIR} ${PROSPERDIR}/contrib/img
