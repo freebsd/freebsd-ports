@@ -41,8 +41,6 @@ IGNORE=		requires newer version of perl
 
 USE_AUTOTOOLS=	autoconf:259:env
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
-		glut.3:${PORTSDIR}/graphics/libglut \
-		openal.0:${PORTSDIR}/audio/openal \
 		readline.5:${PORTSDIR}/devel/readline
 
 MAINTAINER=	simonmar@microsoft.com
@@ -52,9 +50,20 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GL=		yes
 
-PLIST_SUB=	GHC_VERSION=${PORTVERSION}
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--without-x --without-x11 --without-openal --without-hgl --without-opengl --without-glut
+PLIST_SUB+=	X11="@comment " OPENAL="@comment "
+PKGNAMESUFFIX=	-nox11
+.else
+LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut \
+		openal.0:${PORTSDIR}/audio/openal
+USE_GL=		yes
+PLIST_SUB+=	X11="" OPENAL=""
+CONFIGURE_ARGS+=--enable-openal
+.endif
+
+PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
 .if defined(WITHOUT_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
@@ -66,8 +75,7 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC} \
-		--enable-openal
+CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
@@ -95,6 +103,13 @@ pre-configure:
 	@(cd ${WRKSRC}/libraries/OpenAL && ${AUTOCONF})
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
+
+post-configure:
+.if defined(WITHOUT_X11)
+.for d in GLUT HGL OpenGL X11
+	${REINPLACE_CMD} -e 's/^\(.*BUILD_PACKAGE\)=yes/\1=no/' ${WRKSRC}/libraries/${d}/config.mk
+.endfor
+.endif
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
