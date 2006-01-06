@@ -36,6 +36,7 @@
     SUBDIR += gavl
     SUBDIR += gcfilms
     SUBDIR += gdvrecv
+    SUBDIR += ggrab
     SUBDIR += gmencoder
     SUBDIR += gnonlin
     SUBDIR += goggles
