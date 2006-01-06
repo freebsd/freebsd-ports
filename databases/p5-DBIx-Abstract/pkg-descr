@@ -1,0 +1,22 @@
+DBIx::Abstract - DBI SQL abstraction.
+
+This module provides methods for doing manipulating database tables
+This module provides methods retrieving and storing data in SQL
+databases. It provides methods for all of the more important SQL
+commands (like SELECT, INSERT, REPLACE, UPDATE, DELETE).
+
+It endeavors to produce an interface that will be intuitive to those
+already familiar with SQL.
+
+Notable features include:
+
+  * data_source generation for some DBD drivers.
+  * Can check to make sure the connection is not stale and reconnect
+    if it is.
+  * Controls statement handles for you.
+  * Can delay writes.
+  * Generates complex where clauses from hashes and arrays.
+  * Shortcuts (convenience functions) for some common cases. (Like
+    select_all_to_hashref.)
+
+WWW: http://search.cpan.org/dist/DBIx-Abstract/
