@@ -18,6 +18,7 @@ include/botan/bit_ops.h
 include/botan/blinding.h
 include/botan/blowfish.h
 include/botan/botan.h
+include/botan/botan.py
 include/botan/buf_es.h
 include/botan/buf_filt.h
 include/botan/cast128.h
