@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.horde
+%%HORDE_INC%%/httpd-horde.conf
 %%HORDESBIN%%/horde_set_perms.sh
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CODING_STANDARDS
@@ -1590,4 +1590,4 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/admin
 @unexec rmdir %D/%%HORDEDIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/horde 2>/dev/null || true
+%%RMDIRINC%%@unexec rmdir %D/%%HORDE_INC%% 2>/dev/null || true

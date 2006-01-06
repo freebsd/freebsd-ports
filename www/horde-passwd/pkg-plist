@@ -102,7 +102,7 @@
 %%LPWDDIR%%/test.php
 %%LPWDDIR%%/themes/graphics/favicon.ico
 %%LPWDDIR%%/themes/graphics/passwd.png
-etc/horde/httpd.conf.pwd
+%%HORDE_INC%%/httpd-pwd.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LPWDDIR%%/themes/graphics
 @dirrm %%LPWDDIR%%/themes

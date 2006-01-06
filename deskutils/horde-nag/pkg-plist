@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.nag
+%%HORDE_INC%%/httpd-nag.conf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

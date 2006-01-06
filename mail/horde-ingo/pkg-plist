@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.ingo
+%%HORDE_INC%%/httpd-ingo.conf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

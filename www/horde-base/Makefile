@@ -27,8 +27,6 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #----------------------------------------------------------------------------
 # You may define these options:
 #
-# - WITH_APACHE2:	if you run Apache2.
-#
 # - WITH_PHP5: 		if you run PHP5 (you could use www/horde-php5).
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree.
@@ -45,7 +43,7 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 # - WITHOUT_FTP:	if you do not need the VFS FTP driver.
 #
-# - WITHOUT_MCAL:	if you don't plan to install Kronolith.
+# - WITH_MCAL:		if you plan to install Kronolith with mcal (deprecated).
 #
 # - WITH_IMSP:		use IMSP as a preferences backend.
 #
@@ -94,6 +92,7 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 CONFLICTS=	horde-2.*
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+
 USE_PHP=	ctype gettext session
 USE_REINPLACE=	yes
 SUB_FILES=	pkg-message pkg-deinstall pkg-install
@@ -221,9 +220,10 @@ SUB_DIRS=	admin config js lib locale po scripts services templates themes util
 LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
 
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
-SUB_LIST+=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}	\
-		HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
+PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}	\
+		HORDE_INC=${LHORDE_INC}
+SUB_LIST+=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF}	\
+		HORDESBIN=${HORDESBIN} HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
@@ -231,19 +231,13 @@ CONFDIR=	${HORDEDIR}/config
 
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PEARDIR?=	${LOCALBASE}/share/pear
-.if defined(WITH_APACHE2)
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
-.else
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache
-.endif
-HORDE_INC=	${PREFIX}/etc/horde
 LOG_FILE?=	/var/log/horde.log
 
 .if defined(WITH_PHP5)
 USE_PHP+=	dom
 .else
 USE_PHP+=	domxml
-. if !defined(WITHOUT_MCAL)
+. if defined(WITH_MCAL)
 USE_PHP+=	mcal
 . endif
 .endif
@@ -253,16 +247,28 @@ PATCHES2RM=	po/translation.php config/conf.xml scripts/sql/README	\
 SEDIN2RM=	lib/Horde/Auth/mcal.php config/conf.xml docs/INSTALL	\
 		config/mime_drivers.php.dist
 
-.include <bsd.port.pre.mk>	# Required to test PHP_VER
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} >= 20
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}
+HORDE_INC=	${APACHE_CNFDIR}/Includes
+LHORDE_INC=	${HORDE_INC:S|^${LOCALBASE}/||}
+PLIST_SUB+=	RMDIRINC="@comment "
+.else
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache
+HORDE_INC=	${PREFIX}/etc/horde
+LHORDE_INC=	${HORDE_INC:S|^${PREFIX}/||}
+PLIST_SUB+=	RMDIRINC=""
+.endif
 
 pre-configure:
 	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
 	@${SED} -e "s:/home/httpd/html/horde:${HORDEDIR}:"				\
 		-e "s:php_value auto_prepend_file:# php_value auto_prepend_file:"	\
 		-e "s:/home/httpd/phplib:${PEARDIR}:"					\
-		${FILESDIR}/httpd.conf.horde > ${WRKDIR}/httpd.conf.horde
+		${FILESDIR}/httpd.conf.horde > ${WRKDIR}/httpd-horde.conf
 .if ${PHP_VER} == 5
-	@${REINPLACE_CMD} -e "s:mod_php4.c:mod_php5.c:" ${WRKDIR}/httpd.conf.horde
+	@${REINPLACE_CMD} -e "s:mod_php4.c:mod_php5.c:" ${WRKDIR}/httpd-horde.conf
 .endif
 	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/config/mime_drivers.php.dist
 .if !defined(WITHOUT_X11)
@@ -336,13 +342,20 @@ do-install:
 .endfor
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
 	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
+.if ${APACHE_VERSION} >= 20
+	${INSTALL_DATA} ${WRKDIR}/httpd-horde.conf ${HORDE_INC}
+.else
 	@${MKDIR} ${HORDE_INC}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.horde ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-horde.conf ${HORDE_INC}
+. if !defined(PACKAGE_BUILDING)
 	@(if [ -f ${APACHE_CONF} ] ; then \
 		${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
+		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
 		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
+. endif
+.endif
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${TOUCH} ${LOG_FILE}

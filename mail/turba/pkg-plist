@@ -167,7 +167,7 @@
 %%TURBADIR%%/themes/graphics/turba.png
 %%TURBADIR%%/themes/screen.css
 %%TURBADIR%%/vcard.php
-etc/horde/httpd.conf.turba
+%%HORDE_INC%%/httpd-turba.conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%TURBADIR%%/lib/Block
 @dirrm %%TURBADIR%%/lib/Driver

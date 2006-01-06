@@ -38,6 +38,7 @@ USE_PHP=	ldap
 .endif
 
 NO_BUILD=	yes
+USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_REINPLACE=	yes
 
 REINPLACE_ARGS=	-i ""
@@ -49,15 +50,16 @@ SUB_DIRS=	config lib locale po scripts templates themes
 LHORDEDIR?=	www/horde
 LTURBADIR?=	${LHORDEDIR}/turba
 
-PLIST_SUB=	TURBADIR=${LTURBADIR}
+PLIST_SUB=	TURBADIR=${LTURBADIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	TURBADIR=${TURBADIR} CONFDIR=${CONFDIR}
 
 TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
 
-HORDE_INC=	${LOCALBASE}/etc/horde
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/sbin/imspd)
 WITH_IMSP=	yes
@@ -66,10 +68,16 @@ WITH_IMSP=	yes
 RUN_DEPENDS+=	imspd:${PORTSDIR}/databases/cyrus-imspd
 .endif
 
+.if ${APACHE_VERSION} >= 20
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+.else
+HORDE_INC=	${LOCALBASE}/etc/horde
+.endif
+
 pre-configure:
 	@${RM} ${WRKSRC}/config/sources.php.dist.orig
 	@${SED} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
-		${FILESDIR}/httpd.conf.turba > ${WRKDIR}/httpd.conf.turba
+		${FILESDIR}/httpd.conf.turba > ${WRKDIR}/httpd-turba.conf
 	@${REINPLACE_CMD} -e "s:/usr/bin/ldapadd:${LOCALBASE}/bin/ldapadd:"	\
 		${WRKSRC}/scripts/ldap/addou.pl
 .if defined(WITH_IMSP)
@@ -89,7 +97,7 @@ do-install:
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TURBADIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd.conf.turba ${HORDE_INC}
+	@${INSTALL_DATA} ${WRKDIR}/httpd-turba.conf ${HORDE_INC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -103,4 +111,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

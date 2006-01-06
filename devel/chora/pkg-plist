@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.chora
+%%HORDE_INC%%/httpd-chora.conf
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

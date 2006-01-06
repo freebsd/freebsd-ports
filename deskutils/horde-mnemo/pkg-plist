@@ -1,4 +1,4 @@
-etc/horde/httpd.conf.mnemo
+%%HORDE_INC%%/httpd-mnemo.conf
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
