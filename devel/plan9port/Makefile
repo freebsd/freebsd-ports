@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20051231
+PORTVERSION=	20060101
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -27,9 +27,6 @@ ONLY_FOR_ARCHS=	i386
 
 PLAN9=		${PREFIX}/plan9
 MANPREFIX=	${PLAN9}
-# Files's name in this directory are utf-8 encoded and not
-# handled by pkg_delete
-UTF8_DIR=	plan9/troff/font/devutf/charlib
 
 MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		calendar.1 cat.1 cleanname.1 cmp.1 comm.1 date.1 db.1 \
@@ -89,27 +86,29 @@ NOMANCOMPRESS=	yes
 EMPTY_DIRS=	plan9/log \
 		plan9/bin/lpbin \
 		plan9/9pm/Windows/386/bin \
-		plan9/9pm/Plan9/386/lib
+		plan9/9pm/Plan9/386/lib \
+		plan9/dist/debian \
+		plan9/dist/pkg
 
-pre-build:
-	@${REINPLACE_CMD} -e 's|cc=gcc|cc=${CC}|' ${WRKSRC}/bin/9c
-	@${REINPLACE_CMD} -e 's|cc=gcc|cc=${CC}|' ${WRKSRC}/bin/9l
+post-patch:
+	${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
+	 | ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}|'
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
 
 post-build:
+	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
 	${RM} -rf `${FIND} ${WRKSRC} -name CVS -o -name .cvsignore`
-	( ${FIND} ${WRKSRC}/ -type f | ${SORT} \
-		| ${GREP} -v ".*plan9/man/man[0-9]/.*\.[0-9?]$\" \
-		| ${GREP} -v charlib ; \
+	( cd ${WRKDIR} && \
+	  ${FIND} plan9 -type f \
+	    -a ! -path "plan9/man/man[0-9]/*.[0-9]*"; \
 	  for D in ${EMPTY_DIRS}; do \
 	    ${ECHO_CMD} "@exec ${MKDIR} ${PREFIX}/$${D}"; \
 	  done; \
-	  ${FIND} ${WRKSRC}/ -type d | ${SORT} -r \
+	  ${FIND} plan9 -type d | ${SORT} -r \
 		| ${SED} -e 's|^|@dirrm |'; \
-	) | ${SED} -e 's|${WRKDIR}/||' \
-	| ${SED} -e 's|@dirrm ${UTF8_DIR}|@unexec ${RM} -rf ${PREFIX}/${UTF8_DIR}|' >${PLIST}
+	) > ${PLIST}
 
 do-install:
 	${CP} -rp ${WRKSRC} ${PREFIX}
