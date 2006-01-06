@@ -10,5 +10,5 @@ libdata/pkgconfig/sqlite3.pc
 %%WITH_TCL%%lib/sqlite/libtclsqlite3.a
 %%WITH_TCL%%lib/sqlite/pkgIndex.tcl
 %%WITH_TCL%%@dirrm lib/sqlite
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.tcl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%EXAMPLESDIR%%/example.tcl
+@dirrm %%EXAMPLESDIR%%
