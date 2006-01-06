@@ -18,8 +18,6 @@ share/locale/ro/LC_MESSAGES/lyx.mo
 share/locale/sk/LC_MESSAGES/lyx.mo
 share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/ko/LC_MESSAGES/lyx.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%DATADIR%%/reLyX/Text/TeX.pm
 %%DATADIR%%/reLyX/BasicLyX.pm
 %%DATADIR%%/reLyX/CleanTeX.pm
