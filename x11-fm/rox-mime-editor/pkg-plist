@@ -4,6 +4,7 @@ apps/MIME-Editor/AppRun
 apps/MIME-Editor/Help/COPYING
 apps/MIME-Editor/Help/Changes
 apps/MIME-Editor/Help/README
+apps/MIME-Editor/MIME-Editor.xml
 apps/MIME-Editor/Messages/dist
 apps/MIME-Editor/Messages/fr.gmo
 apps/MIME-Editor/Messages/fr.po
