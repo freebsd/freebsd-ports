@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060106:
+  AFFECTS: users of deskutils/kronolith <= 2.0.6 with MCAL backend
+  AUTHOR: thierry@FreeBSD.org
+
+  Beginning with release 2.1, the support of MCAL will be removed
+  from Kronolith. To prepare your migration, you can already switch
+  to a SQL back-end, with the script provided at
+  /usr/local/www/horde/kronolith/scripts/migrate_to_sql_driver.php.
+
 20060105:
   AFFECTS: users of mail/fetchmail >= 6.3.0
   AUTHOR: barner@FreeBSD.org
