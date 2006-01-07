@@ -5511,8 +5511,6 @@ bin/freedroidRPG
 %%DATADIR%%/sound/speeches/Tux_STO_Some_Of_My_0.ogg
 %%DATADIR%%/sound/speeches/Tux_See_You_Later_0.ogg
 %%DATADIR%%/sound/speeches/Tux_Why_Did_I_0.ogg
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%DATADIR%%/sound/speeches/Spencer
 @dirrm %%DATADIR%%/sound/speeches/OldTown614Guard
 @dirrm %%DATADIR%%/sound/speeches/Michelangelo
