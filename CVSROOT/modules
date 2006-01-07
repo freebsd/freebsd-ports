@@ -9712,6 +9712,7 @@ phpmyfaq	ports/www/phpmyfaq
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phprojekt	ports/deskutils/phprojekt
+phproxy		ports/www/phproxy
 phpsurveyor	ports/www/phpsurveyor
 phpsview	ports/graphics/phpsview
 phptags		ports/devel/phptags
