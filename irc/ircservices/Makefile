@@ -7,6 +7,7 @@
 
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 	http://www.ircservices.esper.net/download/ \

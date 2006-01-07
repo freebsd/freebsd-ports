@@ -7,7 +7,7 @@
 
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
 		${MASTER_SITE_SOURCEFORGE}

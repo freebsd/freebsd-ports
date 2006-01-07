@@ -9,7 +9,7 @@
 # ircservices_enable="YES"
 #
 
-ircservices_enable="NO"
+ircservices_enable="${ircservices_enable-NO}"
 
 . %%RC_SUBR%%
 

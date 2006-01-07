@@ -5,7 +5,7 @@
 # REQUIRE: DAEMON
 # KEYWORD: FreeBSD shutdown
 
-mdnsd_enable="NO"
+mdnsd_enable="${mdnsd_enable-NO}"
 
 . %%RC_SUBR%%
 

@@ -13,7 +13,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-apache_enable="NO"
+apache_enable="${apache_enable-NO}"
 apache_flags="-DSSL"
 apache_pidfile="/var/run/httpd.pid"
 

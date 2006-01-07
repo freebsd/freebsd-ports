@@ -13,7 +13,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-smartd_enable="NO"
+smartd_enable="${smartd_enable-NO}"
 smartd_pidfile="/var/run/smartd.pid"
 
 . %%RC_SUBR%%

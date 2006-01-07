@@ -15,7 +15,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-est_enable="NO"
+est_enable="${est_enable-NO}"
 est_verbose="NO"
 
 . %%RC_SUBR%%

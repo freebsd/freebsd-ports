@@ -11,7 +11,7 @@
 #
 # Tweakable parameters for users to override in rc.conf
 
-aolserver_enable=NO
+aolserver_enable="${aolserver_enable-NO}"
 aolserver_home=%%PREFIX%%/aolserver
 aolserver_conf=${aolserver_home}/sample-config.tcl 
 aolserver_flags="-u nobody -g nobody"

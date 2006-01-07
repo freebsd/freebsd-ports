@@ -7,7 +7,7 @@
 
 PORTNAME=	bsnmpd
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
 DISTNAME=	bsnmp-${PORTVERSION}a

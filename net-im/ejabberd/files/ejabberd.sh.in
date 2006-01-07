@@ -13,7 +13,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-ejabberd_enable="NO"
+ejabberd_enable="${ejabberd_enable-NO}"
 
 . %%RC_SUBR%%
 

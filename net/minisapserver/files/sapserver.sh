@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/minisapserver/files/Attic/sapserver.sh,v 1.1 2004-05-25 09:17:51 krion Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/minisapserver/files/Attic/sapserver.sh,v 1.2 2006-01-07 06:29:53 dougb Exp $
 #
 
 # PROVIDE: sapserver
@@ -12,7 +12,7 @@
 #
 #sapserver_enable="YES"
 #
-sapserver_enable="NO"
+sapserver_enable="${sapserver_enable-NO}"
 
 . %%RC_SUBR%%
 

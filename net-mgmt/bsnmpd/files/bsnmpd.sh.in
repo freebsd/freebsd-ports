@@ -5,7 +5,7 @@
 # REQUIRE: NETWORKING syslogd
 # KEYWORD: nojail
 
-bsnmpd_enable="NO"
+bsnmpd_enable="${bsnmpd_enable-NO}"
 
 . %%RC_SUBR%%
 

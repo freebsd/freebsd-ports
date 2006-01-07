@@ -11,7 +11,7 @@
 # usermin_enable="YES"
 #
 
-usermin_enable="NO"
+usermin_enable="${usermin_enable-NO}"
 
 . %%RC_SUBR%%
 
