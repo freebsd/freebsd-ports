@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	k9copy
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://k9copy.free.fr/
 
@@ -14,13 +14,17 @@ COMMENT=	A DVD-9 to DVD-5 shrinking application for KDE
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		dvdauthor:${PORTSDIR}/multimedia/dvdauthor
+                dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+                vamps:${PORTSDIR}/multimedia/vamps
 
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}b
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+INSTALLS_SHLIB=	yes
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/k9copy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \
@@ -28,5 +32,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,$$(LIB_KDEUI),$$(LIB_KDEUI) $$(LIBPTHREAD) -lcam,g' \
 		${WRKSRC}/src/Makefile.in
+
+post-configure:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|doc libk3bdevice libk9copy po src|libk3bdevice libk9copy po src|g' ${WRKSRC}/Makefile
+.endif
 
 .include <bsd.port.mk>
