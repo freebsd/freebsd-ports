@@ -6,8 +6,6 @@ bin/squeak
 %%DOCSDIR%%/README.Contributing.gz
 %%DOCSDIR%%/README.Keyboard.gz
 %%DOCSDIR%%/README.Sound.gz
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%PLIST_X%%share/squeak/%%VMVERSION%%/B3DAcceleratorPlugin
 share/squeak/%%VMVERSION%%/UnixOSProcessPlugin
 %%PLIST_X%%share/squeak/%%VMVERSION%%/XDisplayControlPlugin
