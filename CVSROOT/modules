@@ -4018,6 +4018,7 @@ ion-2		ports/x11-wm/ion-2
 ion-3ds		ports/x11-wm/ion-3ds
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
+ip4r		ports/databases/ip4r
 ip6_int		ports/net/ip6_int
 ipa		ports/sysutils/ipa
 ipa_ip6fw	ports/net/ipa_ip6fw
