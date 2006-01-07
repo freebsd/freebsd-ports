@@ -1,6 +1,6 @@
---- src/Makefile.in.orig       Tue Dec 20 16:07:46 2005
-+++ src/Makefile.in    Tue Dec 20 16:09:14 2005
-@@ -459,7 +459,7 @@
+--- src/Makefile.in.orig       Tue Jan  3 04:57:30 2006
++++ src/Makefile.in    Tue Jan  3 04:57:42 2006
+@@ -439,7 +439,7 @@
  shellrcdir = $(kde_datadir)/k9copy
  shellrc_DATA = k9copyui.rc
  applnkApplication_DATA = K9copy.desktop
