@@ -1,5 +1,6 @@
 bin/trackballs
 share/locale/de/LC_MESSAGES/trackballs.mo
+share/locale/fr/LC_MESSAGES/trackballs.mo
 share/locale/it/LC_MESSAGES/trackballs.mo
 share/locale/sv/LC_MESSAGES/trackballs.mo
 %%DATADIR%%/fonts/menuFont.ttf
@@ -141,9 +142,20 @@ share/locale/sv/LC_MESSAGES/trackballs.mo
 %%DATADIR%%/levels/mhm2.scm
 %%DATADIR%%/levels/mhm3.map
 %%DATADIR%%/levels/mhm3.scm
+%%DATADIR%%/levels/test1.map
+%%DATADIR%%/levels/boxofun.set
 %%DATADIR%%/levels/tmp.map
 %%DATADIR%%/levels/tmp.scm
 %%DATADIR%%/sfx/badpill.wav
+%%DATADIR%%/sfx/ball_sinks.wav
+%%DATADIR%%/sfx/ball_sinks2.wav
+%%DATADIR%%/sfx/capuch_monkey.wav
+%%DATADIR%%/sfx/click.wav
+%%DATADIR%%/sfx/crash.wav
+%%DATADIR%%/sfx/fall_death.wav
+%%DATADIR%%/sfx/kill_death.wav
+%%DATADIR%%/sfx/machine_loop.wav
+%%DATADIR%%/sfx/roll_sound.wav
 %%DATADIR%%/sfx/blackDie.wav
 %%DATADIR%%/sfx/capuchmonk.wav
 %%DATADIR%%/sfx/crazylaugh.wav
