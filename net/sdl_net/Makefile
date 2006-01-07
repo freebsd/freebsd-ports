@@ -15,8 +15,6 @@ DISTNAME=	SDL_net-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
-LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib
-
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
