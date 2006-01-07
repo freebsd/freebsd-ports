@@ -17,7 +17,6 @@ COMMENT=	An advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwu.1
 
 SUB_FILES+=	pkg-message
@@ -25,7 +24,6 @@ SUB_FILES+=	pkg-message
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/a.gwf ${PREFIX}/share/geneweb
 	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/share/geneweb
-	${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} go+r
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
