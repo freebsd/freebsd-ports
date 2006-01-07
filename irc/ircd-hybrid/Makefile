@@ -33,6 +33,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 # WITHOUT_SHARED_MODULES - Disable shared modules. More secure but reduces flexability.
 # WITHOUT_ASSERT	- Disable parts of the debugging code.
 # WITH_SMALL_NET	- Tunes the memory allocation for small networks.
+# WITH_HALFOPS		- Enable halfops on the server.
 # NICKLEN		- Nick length. Default is 9. Must be consistant across the network.
 # MAXCLIENTS		- Set this to the maximum number of clients supported by this server. Default is 200
 
