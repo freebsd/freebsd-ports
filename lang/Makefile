@@ -174,6 +174,7 @@
     SUBDIR += p5-JavaScript-SpiderMonkey
     SUBDIR += p5-JavaScript-Squish
     SUBDIR += p5-List-MoreUtils
+    SUBDIR += p5-Perl6-Subs
     SUBDIR += p5-Scalar-List-Utils
     SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
