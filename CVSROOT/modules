@@ -11414,6 +11414,7 @@ sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
 samhain-client	ports/security/samhain-client
+samhain-server	ports/security/samhain-server
 samplicator	ports/net/samplicator
 sancp		ports/security/sancp
 sanduhr		ports/x11-clocks/sanduhr
