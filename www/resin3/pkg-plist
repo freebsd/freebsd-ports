@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 %%APP_NAME%%/lib/aopalliance.jar
-%%APP_NAME%%/lib/default.xsl
 %%APP_NAME%%/lib/eclipse-compiler.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar

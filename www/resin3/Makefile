@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.16
+PORTVERSION=		3.0.17
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -59,6 +59,7 @@ COPYDIRS=		lib libexec webapps
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
 			--with-openssl-lib=${OPENSSLLIB} \
 			--with-openssl-include=${OPENSSLINC}
+LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
@@ -128,8 +129,9 @@ defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 .endif
 
 post-build:
-	cd ${WRKSRC}/modules/c/src && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
 
+# Resin does not handle installation, so proceed now
 do-install:
 	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
