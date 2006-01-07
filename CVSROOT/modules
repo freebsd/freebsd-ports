@@ -6330,6 +6330,7 @@ mmosaic		ports/www/mmosaic
 mmpython	ports/multimedia/mmpython
 mmr		ports/mail/mmr
 mmsclient	ports/multimedia/mmsclient
+mmsrip		ports/multimedia/mmsrip
 mmtk		ports/science/mmtk
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
