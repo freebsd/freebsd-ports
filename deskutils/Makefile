@@ -12,6 +12,7 @@
     SUBDIR += babytrans
     SUBDIR += basket
     SUBDIR += bigyear
+    SUBDIR += bitcollider
     SUBDIR += blogtk
     SUBDIR += bmp-docklet
     SUBDIR += buoh
