@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
@@ -19,7 +19,8 @@ COMMENT=	OCaml modules for Internet applications
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
+		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 
 .if !defined(WITHOUT_NETHTTPD)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
