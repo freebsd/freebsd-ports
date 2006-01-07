@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	A rather neat animated clock
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
