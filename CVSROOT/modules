@@ -749,6 +749,7 @@ bison		ports/devel/bison
 bison2		ports/devel/bison2
 bisongen	ports/devel/bisongen
 bitchx		ports/irc/bitchx
+bitcollider	ports/deskutils/bitcollider
 bitedit		ports/editors/bitedit
 bitkeeper	ports/devel/bitkeeper
 bitlbee		ports/irc/bitlbee
