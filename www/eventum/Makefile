@@ -19,7 +19,6 @@ USE_PHP=	pcre session mysql gd
 WANT_PHP_WEB=	YES
 
 EVENTUM?=	www/data-dist/eventum
-PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB+=	EVENTUM=${EVENTUM}
 SUB_LIST+=	EVENTUM=${EVENTUM}
 SUB_FILES=	pkg-message
@@ -47,11 +46,6 @@ pre-everything::
 pre-install:
 	@${MV} ${WRKSRC}/setup.conf.php ${WRKSRC}/setup.conf.php-dist
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-dist
-	@cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${EVENTUM}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${EVENTUM}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${EVENTUM} >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${EVENTUM_DIST}
