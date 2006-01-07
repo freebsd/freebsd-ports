@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=		dhid
-PORTVERSION=		5.2
-CATEGORIES=		dns
-MASTER_SITES=		ftp://ftp.dhis.org/pub/dhis/
+PORTNAME=	dhid
+PORTVERSION=	5.3
+CATEGORIES=	dns
+MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHIS client for updating dynamic DNS entries in dhisd DNS tables
