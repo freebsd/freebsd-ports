@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		miau
-PORTVERSION=		0.5.4
+PORTVERSION=		0.6.0.2
 CATEGORIES=		irc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	miau
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		laszlof@vonostingroup.com
 COMMENT=		A fully featured easy to use IRC-bouncer
 
 USE_BZIP2=		yes
