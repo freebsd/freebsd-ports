@@ -12,7 +12,7 @@
 #
 # kaid_enable="YES"
 #
-kaid_enable="NO"
+kaid_enable="${kaid_enable-NO}"
 
 . /etc/rc.subr
 

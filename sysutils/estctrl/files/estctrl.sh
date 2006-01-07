@@ -14,7 +14,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-estctrl_enable="NO"
+estctrl_enable="${estctrl_enable-NO}"
 estctrl_speed_ac="adaptive"
 estctrl_speed_battery="adaptive"
 estctrl_speed_default="adaptive"

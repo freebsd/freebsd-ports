@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/multimedia/ffmpeg/files/Attic/ffserver.sh,v 1.1 2004-12-05 18:12:41 lioux Exp $
+# $FreeBSD: /tmp/pcvs/ports/multimedia/ffmpeg/files/Attic/ffserver.sh,v 1.2 2006-01-07 06:29:51 dougb Exp $
 #
 
 # PROVIDE: ffserver
@@ -12,7 +12,7 @@
 #
 #ffserver_enable="YES"
 #
-ffserver_enable="NO"
+ffserver_enable="${ffserver_enable-NO}"
 
 . %%RC_SUBR%%
 

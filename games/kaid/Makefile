@@ -7,6 +7,7 @@
 
 PORTNAME=		kaid
 PORTVERSION=		7.0.0.4b
+PORTREVISION=		1
 CATEGORIES=		games net
 MASTER_SITES=		http://www.teamxlink.co.uk/binary/
 MASTER_SITE_SUBDIR=

@@ -9,12 +9,12 @@
 # dependencies, but we can't do that at the moment and gmetad doesn't
 # work without a running gmond.
 
-gmond_enable="NO"
+gmond_enable="${gmond_enable-NO}"
 gmond_conf="%%PREFIX%%/etc/gmond.conf"
 
-gmetad_enable="NO"
+gmetad_enable="${gmetad_enable-NO}"
 gmetad_conf="%%PREFIX%%/etc/gmetad.conf"
-gmetasnap_enable="NO"
+gmetasnap_enable="${gmetasnap_enable-NO}"
 gmetasnap_rrddir="/var/db/ganglia/rrds"
 gmetasnap_snapdir="/var/db/ganglia/snaps"
 gmetasnap_snapname="snap"

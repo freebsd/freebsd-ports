@@ -30,7 +30,7 @@ upclient_precmd ()
 	:
 }
 
-upclient_enable=NO
+upclient_enable="${upclient_enable-NO}"
 upclient_flags=
 
 . %%RC_SUBR%%

@@ -14,7 +14,7 @@ prefix=%%PREFIX%%
 #       /etc/rc.conf.local
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-amavisd_enable=no
+amavisd_enable="${amavisd_enable-NO}"
 amavisd_flags=""
 amavisd_user=%%AMAVISUSER%%
 

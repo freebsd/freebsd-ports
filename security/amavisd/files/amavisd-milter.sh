@@ -14,7 +14,7 @@ prefix=%%PREFIX%%
 #	/etc/rc.conf.local
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-amavisd_milter_enable=no
+amavisd_milter_enable="${amavisd_milter_enable-NO}"
 amavisd_milter_flags="-D"
 amavisd_milter_user=%%AMAVISUSER%%
 #amavisd_milter_socket="inet:9999@127.0.0.1"

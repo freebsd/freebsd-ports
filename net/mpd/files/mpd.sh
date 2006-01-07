@@ -12,7 +12,7 @@
 #
 
 mpd_flags="-b"
-mpd_enable="NO"
+mpd_enable="${mpd_enable-NO}"
 
 . %%RC_SUBR%%
 
