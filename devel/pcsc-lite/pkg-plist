@@ -1,4 +1,5 @@
 bin/formaticc
+etc/rc.d/pcscd.sh.sample
 etc/reader.conf.sample
 include/PCSC/debuglog.h
 include/PCSC/ifdhandler.h
