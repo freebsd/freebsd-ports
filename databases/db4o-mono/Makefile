@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	db4o
-PORTVERSION=	5.0.18
+PORTVERSION=	${REALVERSION}.18
 CATEGORIES=	databases
 MASTER_SITES=	http://www.db4o.com/downloads/
 PKGNAMESUFFIX=	-mono
-DISTNAME=	${PORTNAME}-5.0${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-${REALVERSION}${PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
@@ -19,17 +19,20 @@ COMMENT=	A database engine for storing object into files
 
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+REALVERSION=	5.0
+
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
 
 do-install:
-	@(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/dll ; ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${PREFIX}/lib /gacdir ${PREFIX}/lib /package 1.0 /i db4o.dll)
+	@(cd ${WRKSRC}/dll ; ${SETENV} MONO_SHARED_DIR=${WRKDIR} ${LOCALBASE}/bin/gacutil /root ${PREFIX}/lib /gacdir ${PREFIX}/lib /package 1.0 /i db4o.dll)
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/; ${FIND} api \
+	@cd ${WRKSRC}/doc/; ${FIND} api \
 	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/; ${FIND} tutorial \
+	@cd ${WRKSRC}/doc/; ${FIND} tutorial \
 	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
 	@${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
 .endif
