@@ -8,7 +8,7 @@
 
 PORTNAME=	dict
 PORTVERSION=	1.10.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -33,8 +33,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1.in
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/dict.conf ${PREFIX}/etc/dict.conf.sample
 	if [ ! -f ${PREFIX}/etc/dict.conf ]; then \
-		${INSTALL_DATA} ${FILESDIR}/dict.conf ${PREFIX}/etc; \
+		${CP} -p ${PREFIX}/etc/dict.conf.sample ${PREFIX}/etc/dict.conf; \
 	fi
 
 .include <bsd.port.mk>
