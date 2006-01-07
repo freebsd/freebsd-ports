@@ -9473,6 +9473,7 @@ pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-big_int	ports/math/pecl-big_int
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-fribidi	ports/converters/pecl-fribidi
+pecl-hash	ports/databases/pecl-hash
 pecl-imagick	ports/graphics/pecl-imagick
 pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
