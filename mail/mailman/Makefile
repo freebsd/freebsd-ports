@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTVERSION=	2.1.7
 CATEGORIES?=	mail
-MASTER_SITES=	http://www.list.org/ \
-		${MASTER_SITE_GNU} \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.list.org/
 MASTER_SITE_SUBDIR=	mailman
 .if defined(WITH_HTDIG)
 PKGNAMESUFFIX=	-with-htdig
