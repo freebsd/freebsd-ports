@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Dvd rip gui written in qt that uses vamps and dvdauthor
 
 BUILD_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
-		swig:${PORTSDIR}/devel/swig13
+		swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
 		vamps:${PORTSDIR}/multimedia/vamps
@@ -64,7 +64,7 @@ PLIST_DIRS=	%%DATADIR%%/translations \
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|puic|${LOCALBASE}/bin/puic|' \
-		-e 's|swig|${LOCALBASE}/bin/swig|' \
+		-e 's|swig|${LOCALBASE}/bin/swig1.3|' \
 		-e 's|\$$\(PREFIX\)/share/qvamps|%%DATADIR%%|' \
 		-e 's|[[:space:]]perl[[:space:]]| ${PERL} |' \
 		${BUILD_WRKSRC}/${MAKEFILE}
