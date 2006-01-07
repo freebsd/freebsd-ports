@@ -36,10 +36,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_tmp_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_digest.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_plain.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/extauth.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_iq_handler.beam
@@ -73,6 +75,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_stats.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_time.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_ldap.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_version.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sha.beam
@@ -96,19 +99,26 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/pt.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ru.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/sv.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/uk.msg
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/dev.html
 %%PORTDOCS%%%%DOCSDIR%%/dev.tex
 %%PORTDOCS%%%%DOCSDIR%%/disco.png
 %%PORTDOCS%%%%DOCSDIR%%/discorus.png
+%%PORTDOCS%%%%DOCSDIR%%/features.tex
 %%PORTDOCS%%%%DOCSDIR%%/flow.dot
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%%%DOCSDIR%%/guide.tex
+%%PORTDOCS%%%%DOCSDIR%%/hevea.sty
+%%PORTDOCS%%%%DOCSDIR%%/introduction.tex
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_%%PORTVERSION%%.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.txt
+%%PORTDOCS%%%%DOCSDIR%%/version.tex
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
+%%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/%%PORTNAME%%
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs
