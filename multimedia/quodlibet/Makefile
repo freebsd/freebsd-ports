@@ -7,28 +7,49 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	multimedia audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
 MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
-		${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg \
-		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
-		${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg \
-		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 
 USE_PYTHON=	2.3+
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GSTREAMER=	ogg vorbis mad
+USE_GSTREAMER=	yes
 
 MAN1=		exfalso.1 quodlibet.1
+
+# Supported formats: ogg vorbis mad flac
+QUODLIBET_FORMATS?=	ogg vorbis mad flac
+.for format in ${QUODLIBET_FORMATS}
+WANT_QUODLIBET_${format:U}=	yes
+.endfor
+
+.if defined(WANT_QUODLIBET_OGG)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
+USE_GSTREAMER+=	ogg
+.endif
+
+.if defined(WANT_QUODLIBET_VORBIS)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
+USE_GSTREAMER+=	vorbis
+.endif
+
+.if defined(WANT_QUODLIBET_MAD)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
+USE_GSTREAMER+=	mad
+.endif
+
+.if defined(WANT_QUODLIBET_FLAC)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/flac/__init__.py:${PORTSDIR}/audio/py-flac
+USE_GSTREAMER+=	flac
+.endif
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
@@ -37,7 +58,6 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 
 .if defined(WITH_EXTENSIONS)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
 PLIST_SUB+=	EXTENSIONS:=""
 .else
 PLIST_SUB+=	EXTENSIONS:="@comment "
