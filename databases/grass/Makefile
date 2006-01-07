@@ -73,12 +73,18 @@ SUB_LIST=	GRASS_INST_DIR=${GRASS_INST_DIR}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%GRASS_INST_DIR%%/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	FBSD4=""
+.else
+PLIST_SUB+=	FBSD4="@comment "
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/ make mo/ ${GMAKE} mo/g' \
 	${WRKSRC}/locale/Makefile
 	@${REINPLACE_CMD} -E '28s|/grass-.*|/${GRASS_INST_DIR}|g' ${WRKSRC}/Makefile
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/grass.sh ${PREFIX}/etc/rc.d/000.grass.sh
