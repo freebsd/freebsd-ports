@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xteddy
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.itn.liu.se/~stegu/xteddy/
 
@@ -22,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 USE_GNOME=	imlib
 
-MAN1=		xteddy.1
+MAN6=		xteddy.6
 
 post-patch:
 .for f in xteddy.c Makefile.in xteddy_test
