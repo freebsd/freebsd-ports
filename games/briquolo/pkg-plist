@@ -1,5 +1,6 @@
 bin/briquolo
 %%DATADIR%%/%%VERSION%%
+%%DATADIR%%/data/DejaVuSans.ttf
 %%DATADIR%%/data/Environment.1.png
 %%DATADIR%%/data/Environment.2.png
 %%DATADIR%%/data/Environment.3.png
@@ -59,13 +60,11 @@ bin/briquolo
 %%DATADIR%%/data/petit.png
 %%DATADIR%%/data/petite_brique.png
 %%DATADIR%%/data/petite_brique.tri
-%%DATADIR%%/data/petite_police.ftx
 %%DATADIR%%/data/pierre.png
 %%DATADIR%%/data/plateau.png
 %%DATADIR%%/data/plateau_droite.tri
 %%DATADIR%%/data/plateau_gauche.tri
 %%DATADIR%%/data/plateau_milieu.tri
-%%DATADIR%%/data/police.ftx
 %%DATADIR%%/data/rebond.wav
 %%DATADIR%%/data/slow.png
 %%DATADIR%%/data/superpuissance.png
@@ -98,10 +97,20 @@ bin/briquolo
 %%DATADIR%%/tableau/old/015.tab
 %%DATADIR%%/tableau/old/016.tab
 %%DATADIR%%/tableau/old/description
+share/pixmaps/briquolo.svg
 share/locale/fr/LC_MESSAGES/briquolo.mo
 share/locale/nl/LC_MESSAGES/briquolo.mo
+share/locale/de/LC_MESSAGES/briquolo.mo
+share/locale/ru/LC_MESSAGES/briquolo.mo
+share/locale/be/LC_MESSAGES/briquolo.mo
+share/locale/pl/LC_MESSAGES/briquolo.mo
+share/locale/pt/LC_MESSAGES/briquolo.mo
+share/locale/sk/LC_MESSAGES/briquolo.mo
 @dirrm %%DATADIR%%/tableau/old
 @dirrm %%DATADIR%%/tableau/new
 @dirrm %%DATADIR%%/tableau
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrm share/pixmaps
+share/applications/briquolo.desktop
+@unexec rmdir %D/share/applications 2>/dev/null || true
