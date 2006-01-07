@@ -13,7 +13,17 @@ share/gnome/applications/gtkam.desktop
 %%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_start_window.png
 %%GNOME:%%share/gnome/help/gtkam/C/gtkam.xml
 %%GNOME:%%share/gnome/help/gtkam/C/legal.xml
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_enhanced_window.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_window.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_fileinfo.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_makedir.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_save.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_save_all.png
+%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_start_window.png
+%%GNOME:%%share/gnome/help/gtkam/ru/gtkam.xml
+%%GNOME:%%share/gnome/help/gtkam/ru/legal.xml
 %%GNOME:%%share/gnome/omf/gtkam/gtkam-C.omf
+%%GNOME:%%share/gnome/omf/gtkam/gtkam-ru.omf
 share/gnome/pixmaps/gtkam.png
 %%DATADIR%%/images/gtkam-audio.png
 %%DATADIR%%/images/gtkam-camera.png
@@ -35,7 +45,8 @@ share/locale/fr/LC_MESSAGES/gtkam.mo
 share/locale/hu/LC_MESSAGES/gtkam.mo
 share/locale/it/LC_MESSAGES/gtkam.mo
 share/locale/ja/LC_MESSAGES/gtkam.mo
-share/locale/no/LC_MESSAGES/gtkam.mo
+share/locale/nb/LC_MESSAGES/gtkam.mo
+share/locale/pl/LC_MESSAGES/gtkam.mo
 share/locale/pt_BR/LC_MESSAGES/gtkam.mo
 share/locale/pt_PT/LC_MESSAGES/gtkam.mo
 share/locale/ru/LC_MESSAGES/gtkam.mo
@@ -46,6 +57,8 @@ share/locale/uk/LC_MESSAGES/gtkam.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 %%GNOME:%%@dirrm share/gnome/omf/gtkam
+%%GNOME:%%@dirrm share/gnome/help/gtkam/ru/figures
+%%GNOME:%%@dirrm share/gnome/help/gtkam/ru
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C/figures
 %%GNOME:%%@dirrm share/gnome/help/gtkam/C
 %%GNOME:%%@dirrm share/gnome/help/gtkam
