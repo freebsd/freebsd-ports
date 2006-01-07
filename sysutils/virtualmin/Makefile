@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.webmin.com/download/virtualmin/
 DISTNAME=	virtual-server-${PORTVERSION}
 EXTRACT_SUFX=	.wbm.gz
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A virtual hosting management system based on webmin
 
 RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
