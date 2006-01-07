@@ -302,11 +302,6 @@ do-configure:
 		>> ${WCONF}/site.config.m4
 .endfor
 .endif
-.if defined(SENDMAIL_WITH_SMTPS)
-	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_SMTP_SSL'\'')' \
-		>> ${WCONF}/site.config.m4
-.endif
 .if defined(SENDMAIL_WITH_SOCKETMAP)
 	${ECHO_CMD} \
 	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DSOCKETMAP'\'')' \
