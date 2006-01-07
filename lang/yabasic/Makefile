@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.761
+PORTVERSION=	2.763
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
@@ -20,14 +20,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		yabasic.1
-PLIST_FILES=	bin/yabasic
-
 PORTDOCS=	yabasic.htm
+PLIST_FILES=	bin/yabasic
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= -DUNIX|= @X_CFLAGS@ -DUNIX|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/bison.c
-	@${REINPLACE_CMD} -e "s|setpgrp();|setpgid(0,0);|g" ${WRKSRC}/main.c
 
 post-build test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
