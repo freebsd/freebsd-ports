@@ -733,6 +733,7 @@
     SUBDIR += phpbb
     SUBDIR += phpgedview
     SUBDIR += phpmyfaq
+    SUBDIR += phproxy
     SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
