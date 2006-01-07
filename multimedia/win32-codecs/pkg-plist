@@ -84,6 +84,26 @@ lib/win32/vsslight.dll
 lib/win32/vsswlt.dll
 lib/win32/ultimo.dll
 lib/win32/vp4vfw.dll
+lib/win32/DECVW_32.DLL
+lib/win32/LCMW2.dll
+lib/win32/LCODCCMW2E.dll
+lib/win32/VDODEC32.dll
+lib/win32/ViVD2.dll
+lib/win32/aslcodec_dshow.dll
+lib/win32/aslcodec_vfw.dll
+lib/win32/cook.so
+lib/win32/ctadp32.acm
+lib/win32/drvc.so
+lib/win32/iac25_32.ax
+lib/win32/lsvxdec.dll
+lib/win32/mi-sc4.acm
+lib/win32/scg726.acm
+lib/win32/tsd32.dll
+lib/win32/tvqdec.dll
+lib/win32/vdowave.drv
+lib/win32/vmnc.dll
+lib/win32/wmsdmod.dll
+lib/win32/wmvadvd.dll
 @comment qt63dlls
 lib/win32/ACTLComponent.qtx
 lib/win32/AvidQTAVUICodec.qtx

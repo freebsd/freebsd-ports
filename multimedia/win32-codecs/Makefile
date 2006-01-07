@@ -12,18 +12,19 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/codecs/ \
+		http://www4.mplayerhq.hu/MPlayer/releases/codecs/ \
+		http://ftp.lug.udel.edu/MPlayer/releases/codecs/ \
 		http://www.mplayerhq.hu/MPlayer/releases/codecs/ \
-		http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/codecs/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/releases/codecs/ \
+		ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/ \
+		ftp://ftp2.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/
-DISTFILES=	win32codecs-20040703.tar.bz2 \
+DISTFILES=	all-20050412.tar.bz2 \
 		${ADDITIONAL_CODECS_DISTFILES}
 DIST_SUBDIR=	win32
-EXTRACT_ONLY=	win32codecs-20040703.tar.bz2
+EXTRACT_ONLY=	all-20050412.tar.bz2
 
 MAINTAINER=	holger@e-gitt.net
-COMMENT=	Huge compilation of Win32 binary codecs, including MPEG-4(DivX ;-))
+COMMENT=	Huge compilation of Win32 binary video codecs
 
 RESTRICTED=	Unsure of codec\'s license
 
@@ -34,7 +35,7 @@ WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
-CODEC_MPLAYER_VERSION=	1.0pre5
+CODEC_MPLAYER_VERSION=	1.0pre7
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
