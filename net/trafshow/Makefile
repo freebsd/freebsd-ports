@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_NETBSD} \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ryan@sasknow.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic
 
 USE_REINPLACE=	yes
