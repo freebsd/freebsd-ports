@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doc
 
 INFO=		xnee
-PLIST_FILES=	bin/cnee lib/libxnee.a
+PLIST_FILES=	bin/cnee \
+		lib/libxnee.a \
+		share/Xnee/example1.xns \
+		share/Xnee/simple_bash.sh \
+		share/Xnee/xnee.sh
+PLIST_DIRS=	share/Xnee
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +38,10 @@ PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=	--disable-gui
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^#!/bin|!#!${LOCALBASE}/bin|g' \
+		${WRKSRC}/examples/simple_bash.sh
 
 post-install:
 	cd ${WRKSRC}/doc && makeinfo --no-split xnee.texi
