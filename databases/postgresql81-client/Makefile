@@ -9,13 +9,13 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-client
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql81-server
 
-BUILD_DIRS=	src/include src/interfaces src/bin doc src/makefiles
+BUILD_DIRS=	config src/include src/interfaces src/bin doc src/makefiles
 CLIENT_ONLY=	yes
 INSTALLS_SHLIB=	yes
 
