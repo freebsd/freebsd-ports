@@ -10,8 +10,8 @@ PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/XFree86/nvidia-settings/ \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=     bland/:local
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
