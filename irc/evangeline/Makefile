@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	evangeline
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	irc tcl84
-MASTER_SITES=	http://www.averse.piasta.pl/_data/evangeline/1.1.0/
+MASTER_SITES=	http://www.averse.piasta.pl/_data/evangeline/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Bot based on Eggdrop
