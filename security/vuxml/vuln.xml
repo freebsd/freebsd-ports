@@ -34,6 +34,75 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b747b2a9-7be0-11da-8ec4-0002b3b60e4c">
+    <topic>bogofilter -- heap corruption through excessively long words</topic>
+    <affects>
+      <package>
+	<name>bogofilter</name>
+	<range><ge>0.96.2</ge><lt>0.96.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-02">
+	  <p>Bogofilter's/bogolexer's input handling in version 0.96.2 was not
+	    keeping track of its output buffers properly and could overrun a
+	    heap buffer if the input contained words whose length exceeded
+	    16,384 bytes, the size of flex's input buffer. A "word" here refers
+	    to a contiguous run of input octets that was not '_' and did not
+	    match at least one of ispunct(), iscntrl() or isspace().</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-4592</cvename>
+      <url>http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-02</url>
+    </references>
+    <dates>
+      <discovery>2005-10-23</discovery>
+      <entry>2006-01-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="92140bc9-7bde-11da-8ec4-0002b3b60e4c">
+    <topic>bogofilter -- heap corruption through malformed input</topic>
+    <affects>
+      <package>
+	<name>bogofilter</name>
+	<range><ge>0.93.5</ge><lt>0.96.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01">
+	  <p>When using Unicode databases (default in more recent bogofilter
+	    installations), upon encountering invalid input sequences,
+	    bogofilter or bogolexer could overrun a malloc()'d buffer,
+	    corrupting the heap, while converting character sets.  Bogofilter
+	    would usually be processing untrusted data received from the
+	    network at that time.</p>
+
+	  <p>This problem was aggravated by an unrelated bug that made
+	    bogofilter process binary attachments as though they were text, and
+	    attempt charset conversion on them.  Given the MIME default
+	    character set, US-ASCII, all input octets in the range 0x80...0xff
+	    were considered invalid input sequences and could trigger the heap
+	    corruption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-4591</cvename>
+      <url>http://bogofilter.sourceforge.net/security/bogofilter-SA-2005-01</url>
+    </references>
+    <dates>
+      <discovery>2005-10-22</discovery>
+      <entry>2006-01-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2fdb3bc-7d72-11da-b96e-000fb586ba73">
     <topic>rxvt-unicode -- restore permissions on tty devices</topic>
     <affects>
