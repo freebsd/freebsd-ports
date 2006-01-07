@@ -49,7 +49,7 @@ exec > ${WRKDIRPREFIX}${CURDIR2}/Makefile.inc
 while [ "$1" ]; do
 	case $1 in
 		\"OldDLZ\")
-			echo WITH_OLD_DLZ=YES
+			echo WITH_DLZ_OLD=YES
 			;;
 		\"OpenSSL\")
 			echo WITH_OPENSSL=YES
