@@ -8,6 +8,7 @@
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.2.9.b.9
 PORTEPOCH=	2
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://alioth.debian.org/download.php/1289/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
@@ -38,7 +39,7 @@ USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		formaticc.1
 MAN5=		reader.conf.5
-MAN8=		pcscd.8
+MAN8=		pcscd.8 bundleTool.8
 
 .if !defined(WITHOUT_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
@@ -72,9 +73,8 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/pcsc/services
 	${TOUCH} ${PREFIX}/lib/pcsc/drivers/.keep_me
 	${TOUCH} ${PREFIX}/lib/pcsc/services/.keep_me
-	${MKDIR} ${PREFIX}/etc/reader.conf.d
 	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \
-		${PREFIX}/etc/reader.conf.d/reader.conf.sample
+		${PREFIX}/etc/reader.conf.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pcscd.sh \
 		${PREFIX}/etc/rc.d/pcscd.sh.sample
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \

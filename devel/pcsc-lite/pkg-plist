@@ -1,6 +1,5 @@
 bin/formaticc
-etc/rc.d/pcscd.sh.sample
-etc/reader.conf.d/reader.conf.sample
+etc/reader.conf.sample
 include/PCSC/debuglog.h
 include/PCSC/ifdhandler.h
 include/PCSC/mscdefines.h
@@ -26,10 +25,10 @@ sbin/update-reader.conf
 %%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
 %%PORTDOCS%%%%DOCSDIR%%/pcsc-lite.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ifdhandler-3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/muscle-api-1.3.0.pdf
 %%EXAMPLESDIR%%/Makefile.am
 %%EXAMPLESDIR%%/Makefile.in
 %%EXAMPLESDIR%%/pcsc_demo.c
-@dirrm etc/reader.conf.d
 @dirrm include/PCSC
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
