@@ -136,6 +136,7 @@
     SUBDIR += sugarcrm
     SUBDIR += sunbird
     SUBDIR += superkaramba
+    SUBDIR += superswitcher
     SUBDIR += taskjuggler
     SUBDIR += teapot
     SUBDIR += timer-applet
