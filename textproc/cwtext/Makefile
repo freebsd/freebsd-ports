@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	cwtext
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Morse Code Generator
 
 USE_PYTHON=	yes
@@ -23,13 +22,11 @@ MAKEFILE=	makefile
 ALL_TARGET=	ALL
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g ; \
-		s,gcc,${CC} ${CFLAGS},g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g" \
+		-e "s,gcc,${CC} ${CFLAGS},g" \
+		-e "s,install -sc,${INSTALL_PROGRAM},g" ${WRKSRC}/${MAKEFILE}
 
-do-install:
-.for file in cwmm cwpcm cwtext
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
