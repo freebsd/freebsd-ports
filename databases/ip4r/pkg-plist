@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+lib/postgresql/ip4r.so
+share/doc/postgresql/contrib/README.ip4r
+share/postgresql/contrib/ip4r.sql
+@unexec rmdir %D/share/doc/postgresql/contrib 2>/dev/null || true
+@unexec rmdir %D/share/postgresql/contrib 2>/dev/null || true
