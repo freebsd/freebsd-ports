@@ -9,8 +9,8 @@ PORTNAME=	nvidia-xconfig
 PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/XFree86/nvidia-xconfig/ \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=     bland/:local
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bland
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Tool to manipulate X configuration files for the NVidia driver
