@@ -1,5 +1,8 @@
---- Makefile.orig	Sat Jun 16 23:12:10 2001
-+++ Makefile	Sat Jun 16 23:13:07 2001
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -6,7 +6,7 @@
  #
  ############################################################################
@@ -9,28 +12,25 @@
  
  #
  # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
-@@ -27,10 +27,10 @@
- ###########################
- # LINUX (testet with ncurses 5.2)
- ###########################
--COLOR       = -DCOLOR_SUPPORT 
-+#COLOR       = -DCOLOR_SUPPORT 
+@@ -32,8 +32,8 @@
+ COLOR       = -DCOLOR_SUPPORT 
  #CLOCK	    = -DCLOCK_SUPPORT # Experimental!
--CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
--LIBS        = -lncurses
-+#CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
-+#LIBS        = -lncurses
+ READLINE    = -DREADLINE_SUPPORT
+-CFLAGS      = -D_GNU_SOURCE $(ADD_CFLAGS) $(COLOR) $(CLOCK) $(READLINE)
+-LIBS        = -lncurses -lreadline
++#CFLAGS      = -D_GNU_SOURCE $(ADD_CFLAGS) $(COLOR) $(CLOCK) $(READLINE)
++#LIBS        = -lncurses -lreadline
  
  ###########################
- # LINUX (X11 using PDCurses) thanks to  Mark Hessling
-@@ -54,8 +54,8 @@
+ # LINUX with Wide character support (testet with ncurses 5.4)
+@@ -87,8 +87,8 @@
  ###########################
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LIBS        = -lncurses -lmytinfo -lcompat
 +CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
-+LIBS        = -lncurses -lmytinfo -lcompat
++LIBS        = -lreadline -lncurses -lmytinfo -lcompat
  
  ###########################
- # DOS/Windows with DJGPP
+ # MAC OS X

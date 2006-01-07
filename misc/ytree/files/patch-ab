@@ -1,5 +1,8 @@
---- freesp.c.orig	Sat Jun 16 23:20:49 2001
-+++ freesp.c	Sat Jun 16 23:20:55 2001
+
+$FreeBSD$
+
+--- freesp.c.orig
++++ freesp.c
 @@ -9,7 +9,7 @@
  
  #include "ytree.h"
