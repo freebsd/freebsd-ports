@@ -466,7 +466,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # 				  ${PREFIX}/etc/rc.d and added to the packing list.
 # 				  pairs will be added to ${SUB_LIST}. These files will be
 # 				  installed in ${PREFIX}/etc/rc.d and added to the packing list.
-# USE_RCORDER		- List of rcNG startup scripts to be called early in the boot
+# USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
 # 				  process. This acts exactly like USE_RC_SUBR except that
 # 				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
@@ -3355,6 +3355,7 @@ patch-dos2unix:
 	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
 	@${REINPLACE_CMD} -i"" -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/${f}
 .endfor
+.endif
 .else
 	${DO_NADA}
 .endif
@@ -3363,7 +3364,6 @@ patch-dos2unix:
 .if !target(do-patch)
 do-patch:
 .if defined(PATCHFILES)
-.endif
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@(cd ${_DISTDIR}; \
 	  for i in ${_PATCHFILES}; do \
@@ -3837,9 +3837,9 @@ security-check:
 			${ECHO_MSG}; \
 		fi; \
 		${ECHO_MSG} "      If there are vulnerabilities in these programs there may be a security"; \
-		${ECHO_MSG} "      risk to the system. FreeBSD makes no guarantee about the security of"; \
-		${ECHO_MSG} "      ports included in the Ports Collection. Please type 'make deinstall'"; \
-		${ECHO_MSG} "      to deinstall the port if this is a concern."; \
+		${ECHO_MSG} "      risk to the system. The FreeBSD Project makes no guarantee about the"; \
+		${ECHO_MSG} "      security of ports included in the Ports Collection."; \
+		${ECHO_MSG} "      Please type 'make deinstall' to deinstall the port if this is a concern."; \
 		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
 	    if [ ! -z "$${www_site}" ]; then \
 			${ECHO_MSG}; \
@@ -5192,7 +5192,7 @@ add-plist-post:
 install-rc-script:
 .if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 .if defined(USE_RCORDER)
-	@${ECHO_CMD} "===> Installing early rcNG startup script(s)"
+	@${ECHO_CMD} "===> Installing early rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
 	@for i in ${USE_RCORDER}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} /etc/rc.d/$${i%.sh}; \
@@ -5201,7 +5201,7 @@ install-rc-script:
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
-	@${ECHO_CMD} "===> Installing rcNG startup script(s)"
+	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .if ${OSVERSION} >= 700007
 	@for i in ${USE_RC_SUBR}; do \

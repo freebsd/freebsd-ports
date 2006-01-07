@@ -26,73 +26,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
-# Compatibility shims for the old method of using autotools.  These are
-# slated for removal on January 1st 2006
-#---------------------------------------------------------------------------
-
-USE_AUTOTOOLS_COMPAT=
-
-.if defined(USE_AUTOMAKE_VER)
-USE_AUTOTOOLS_COMPAT+=	automake:${USE_AUTOMAKE_VER}
-.endif
-
-.if defined(WANT_AUTOMAKE_VER)
-USE_AUTOTOOLS_COMPAT+=	automake:${WANT_AUTOMAKE_VER}:env
-.endif
-
-.if defined(USE_ACLOCAL_VER)
-USE_AUTOTOOLS_COMPAT+=	aclocal:${USE_ACLOCAL_VER}
-.endif
-
-.if defined(USE_AUTOHEADER_VER)
-USE_AUTOTOOLS_COMPAT+=	autoheader:${USE_AUTOHEADER_VER}
-.endif
-
-.if defined(USE_AUTOCONF_VER)
-USE_AUTOTOOLS_COMPAT+=	autoconf:${USE_AUTOCONF_VER}
-.endif
-
-.if defined(WANT_AUTOCONF_VER)
-USE_AUTOTOOLS_COMPAT+=	autoconf:${WANT_AUTOCONF_VER}:env
-.endif
-
-.if defined(USE_LIBLTDL)
-USE_AUTOTOOLS_COMPAT+=	libltdl:15
-.endif
-
-.if defined(USE_LIBTOOL_VER)
-USE_AUTOTOOLS_COMPAT+=	libtool:${USE_LIBTOOL_VER}
-.endif
-
-.if defined(USE_INC_LIBTOOL_VER)
-USE_AUTOTOOLS_COMPAT+=	libtool:${USE_INC_LIBTOOL_VER}:inc
-.endif
-
-.if defined(WANT_LIBTOOL_VER)
-USE_AUTOTOOLS_COMPAT+=	libtool:${WANT_LIBTOOL_VER}:env
-.endif
-
-# Ensure that we're not mixing and matching old and new systems
-#
-.if ${USE_AUTOTOOLS_COMPAT}!=""
-. if defined(USE_AUTOTOOLS)
-BROKEN+=	Mix and match of old and new autotools system prohibited
-. else
-USE_AUTOTOOLS=	${USE_AUTOTOOLS_COMPAT}
-_AUTOTOOLS_PN=	${.CURDIR:C/${PORTSDIR}\///}
-pre-everything::
-	@${ECHO} "*** AUTOTOOLS WARNING for ${_AUTOTOOLS_PN}"
-	@${ECHO} "This port is using old autotools constructs which will be"
-	@${ECHO} "disappearing on 1st January 2006"
-	@${ECHO} ""
-	@${ECHO} "In most cases, this warning can be fixed by removing"
-	@${ECHO} "all the old constructs and replacing them with:"
-	@${ECHO} "  USE_AUTOTOOLS= ${USE_AUTOTOOLS_COMPAT}"
-	@${ECHO} ""
-. endif
-.endif
-
-#---------------------------------------------------------------------------
 # Entry point into the autotools system
 #---------------------------------------------------------------------------
 #
@@ -338,8 +271,8 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # the order of autotools running.
 
 .if !target(run-autotools)
-run-autotools:: run-autotools-aclocal patch-autotools run-autotools-automake \
-		run-autotools-autoconf run-autotools-autoheader
+run-autotools:: run-autotools-aclocal patch-autotools run-autotools-autoheader \
+		run-autotools-autoconf run-autotools-automake
 .endif
 
 .if !target(run-autotools-aclocal)
