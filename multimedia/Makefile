@@ -113,6 +113,7 @@
     SUBDIR += mkxvcd
     SUBDIR += mmpython
     SUBDIR += mmsclient
+    SUBDIR += mmsrip
     SUBDIR += motion
     SUBDIR += mpeg
     SUBDIR += mpeg2codec
