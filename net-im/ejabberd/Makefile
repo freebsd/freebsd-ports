@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
@@ -38,7 +37,6 @@ pre-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${WRKSRC}/../tools/${PORTNAME}ctl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
 
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.defaults ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.defaults.example
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.inetrc ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.inetrc.example
