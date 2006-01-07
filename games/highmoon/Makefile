@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highmoon
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
