@@ -1,15 +1,15 @@
---- man/tpb.1.orig	Mon Aug 23 13:01:45 2004
-+++ man/tpb.1	Fri Jun 10 15:06:52 2005
+--- man/tpb.1.orig	Mon Dec  5 11:01:51 2005
++++ man/tpb.1	Mon Dec  5 11:06:07 2005
 @@ -7,7 +7,7 @@
  With TPB it is possible to bind a program to the ThinkPad, Mail, Home and Search button.
  TPB can also run a callback program on each state change with the changed state and the new state as options. 
  So it is possible to trigger several actions on different events.
 -TPB	has a on-screen display (OSD) to show volume, mute, brightness and some other informations.
-+TPB	has an on-screen display (OSD) to show volume, mute, brightness and some other information.
++TPB	has an on-screen display (OSD) to show volume, mute, brightness and some other informations.
  Furthermore TPB supports a software mixer, as the R series ThinkPads have no hardware mixer to change the volume.
  .SH OPTIONS
  .TP 8
-@@ -86,7 +86,7 @@
+@@ -94,7 +94,7 @@
  builtin defaults
  .TP
  \(bu
@@ -18,32 +18,32 @@
  .TP
  \(bu
  configuration in $HOME/.tpbrc
-@@ -112,7 +112,8 @@
+@@ -121,7 +121,8 @@
  .TP 8
  .B NVRAM
  Should define the nvram device from where the information about the key states
 -is read. Default is to try /dev/nvram, followed by /dev/misc/nvram.
-+is read. Default is to try /dev/nvram, followed by /dev/misc/nvram. This has no
-+effect on FreeBSD, since it uses the acpi_ibm(4) driver instead.
++is read. Default is to try /dev/nvram, followed by /dev/misc/nvram.  This has
++no effect on FreeBSD, since it uses the acpi_ibm(4) driver instead.
  .TP 8
  .B POLLTIME
- Defines the delay between polls in microseconds. Default is 200000.
-@@ -266,14 +267,16 @@
- .B OSDALIGN
- Defines the alignment of the osd. Possible values are left, center and right. Default is left.
+ Defines the delay between polls in microseconds.
+@@ -332,14 +333,16 @@
+ Possible values are left, center and right.
+ Default is left.
  .SH "NOTES"
--Requires NVRAM device /dev/nvram. This must be enabled in your kernel.
-+Requires NVRAM device /dev/nvram on Linux. This must be enabled in your kernel.
- Although the device file must exist. The device file could be created with
- \'mknod /dev/nvram c 10 144\'
+-Requires NVRAM device /dev/nvram.
++Requires NVRAM device /dev/nvram on Linux.
+ This must be enabled in your kernel.
+ Although the device file must exist.
+ The device file could be created with \'mknod /dev/nvram c 10 144\'
  
 +On FreeBSD you have to load the acpi_ibm(4) driver prior to using TPB.
 +
- This program was developed on a Thinkpad Model T21. I don't know if it works on
- other models.
+ This program was developed on a Thinkpad Model T21.
  .SH EXAMPLE
 -tpb \-\-osd=off \-\-verbose \-\-thinkpad="xterm \-T ntpctl \-e ntpctl"
 +tpb \-\-osd=off \-\-verbose \-\-thinkpad="%%X11BASE%%/bin/xterm"
  .SH COPYRIGHT
- Copyright 2002-2004, Markus Braun <markus.braun@krawel.de>
+ Copyright 2002-2005, Markus Braun <markus.braun@krawel.de>
  .PP
