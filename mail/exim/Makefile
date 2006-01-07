@@ -630,6 +630,9 @@ post-build:
 .if !defined(EXIMON_ONLY)
 
 pre-install:
+	if ! /usr/sbin/pw groupshow ${EXIM_GROUP}; then /usr/sbin/pw groupadd ${EXIM_GROUP} -g 125; fi
+	if ! /usr/sbin/pw usershow ${EXIM_USER}; then /usr/sbin/pw useradd ${EXIM_USER} -g ${EXIM_GROUP} -u 125 \
+	-h - -d /var/spool/exim -s /nonexistent -c "Exim User"; fi
 	@[ -d "${DESTDIR}/etc" ] || ${MKDIR} "${DESTDIR}/etc"
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
