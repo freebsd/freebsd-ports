@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	0.0.10
-PORTREVISION=	1
+PORTVERSION=	0.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	oz@nixil.net
 COMMENT=	QT graphical frontend for dvdauthor
 
-BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
+		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
+		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow
 
 PLIST_FILES=	bin/qdvdauthor \
 		bin/qslideshow \
@@ -38,7 +36,6 @@ OPTIONS=	NETPBM "Create mpeg2 streams for movie menus" on \
 		MJPEGTOOLS "Convert background images into mpeg2 movie" on \
 		CDRTOOLS "Create iso images of DVD on the Hard Drive" on \
 		TRANSCODE "Support for movie format conversion" on \
-		DVDSLIDE "Creates slideshow-style dvd with menus" on \
 		DVDRWTOOLS "Optional DVD recording/burning prog" off \
 		MPLAYER "Optional support for mplayer playback" off \
 		TOOLAME "Optional support for audio conversion" off \
@@ -54,9 +51,6 @@ WITH_MJPEGTOOLS=yes
 .endif
 .if exists(${LOCALBASE}/bin/mkisofs)
 WITH_CDRTOOLS=yes
-.endif
-.if exists(${LOCALBASE}/bin/dvd-slideshow)
-WITH_DVDSLIDE=yes
 .endif
 .if exists(${LOCALBASE}/bin/growisofs)
 WITH_DVDRWTOOLS=yes
@@ -82,9 +76,6 @@ RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 .endif
 .if !defined(WITHOUT_CDRTOOLS)
 RUN_DEPENDS+=	mkisofs:${PORTSDIR}/sysutils/cdrtools
-.endif
-.if !defined(WITHOUT_DVDSLIDE)
-RUN_DEPENDS+=	dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow
 .endif
 .if defined(WITH_DVDRWTOOLS)
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
