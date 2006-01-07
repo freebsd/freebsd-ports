@@ -7,6 +7,7 @@
 
 PORTNAME=	sulci
 PORTVERSION=	0.5.a.20050918
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/sulci/
