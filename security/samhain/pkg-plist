@@ -2,6 +2,7 @@
 %%YULE%%etc/yulerc.sample
 %%YULE%%sbin/yule_setpwd
 %%YULE%%sbin/yule
+%%YULE%%sbin/yulectl
 %%YULE%%etc/rc.d/yule.sh.sample
 %%YULE%%@unexec rmdir /var/lib/yule 2>/dev/null || true
 %%SAMHAIN%%sbin/samhain

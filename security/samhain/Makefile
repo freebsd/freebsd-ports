@@ -3,23 +3,9 @@
 # Whom:					lx
 #
 # $FreeBSD$
-#
-#
-# This port recognizes the following non-boolean tunables:
-#
-# WITH_RUNAS_USER:
-#	Whe building with "WITH_SERVER" defined, the username of the
-#	account Yule will run as. Defaults to "yule". If using
-#	WITH_GPG, ensure that this user exists and has a pgp
-#	keypair before installing.
-#
-# WITH_LOG_SERVER, WITH_ALT_LOG_SERVER. When "WITH_CLIENT" is defined,
-#	these specify what server the client will fetch configuration
-#	and database files from. This can also be defined at runtime.
-#
 
 PORTNAME=	samhain
-PORTVERSION=	2.0.10
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -33,11 +19,11 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		MYSQL "Enable MySQL logging" off \
 		POSTGRESQL "Enable PostgreSQL logging" off \
 		XML_LOGS "Enable XML-formatted logs" on \
-		LIBWRAP "Enable TCP wrapper support" on \
-		CLIENT "Build as Samhain network client" off \
-		SERVER "Build as Yule network server" off
+		LIBWRAP "Enable TCP wrapper support" on
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+CONFLICTS=	samhain-client-2*
 
 .include <bsd.port.pre.mk>
 
@@ -105,15 +91,15 @@ pre-everything::
 
 .if !defined(WITH_CLIENT) && !defined(WITH_SERVER)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Building in standalone mode."
+	@${ECHO_MSG} "Building Samhain in standalone mode."
 	@${ECHO_MSG} "If you wish to enable networked mode, please hit CTRL-C"
-	@${ECHO_MSG} "now, review the options in the Makefile, and make"
-	@${ECHO_MSG} "with WITH_SERVER=yes or WITH_CLIENT=yes."
+	@${ECHO_MSG} "now, and build samhain from the samhain-client and"
+	@${ECHO_MSG} "samhain-server ports."
 	@${ECHO_MSG}
 .endif
 
 .if defined(WITH_CLIENT) && defined(WITH_SERVER)
-IGNORE=		Can't build client and server at once
+IGNORE=		can't build client and server at once
 .endif
 
 .if defined(WITH_KCHECK)
