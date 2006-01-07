@@ -262,6 +262,7 @@ pre-build-linuxcheck:
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
+.if !defined(WITH_JAIL)
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You have to have LINPROCFS mounted before" ; \
@@ -277,6 +278,7 @@ pre-build-linuxcheck:
 		${ECHO_MSG} "" ; \
 		exit 1 ; \
 	fi
+.endif
 .endif
 
 pre-build:	pre-build-linuxcheck
