@@ -434,12 +434,15 @@ lib/libpq.so.4
 lib/libpgtypes.a
 lib/libpgtypes.so
 lib/libpgtypes.so.2
+lib/postgresql/pgxs/config/install-sh
+lib/postgresql/pgxs/config/mkinstalldirs
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
-@dirrm lib/postgresql/pgxs/src/makefiles
 lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/nls-global.mk
+@dirrm lib/postgresql/pgxs/src/makefiles
+@dirrm lib/postgresql/pgxs/config
 @dirrm lib/postgresql/pgxs/src
 @dirrm lib/postgresql/pgxs
 @dirrm lib/postgresql
