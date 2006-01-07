@@ -11413,6 +11413,7 @@ samba3		ports/net/samba3
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
+samhain-client	ports/security/samhain-client
 samplicator	ports/net/samplicator
 sancp		ports/security/sancp
 sanduhr		ports/x11-clocks/sanduhr
