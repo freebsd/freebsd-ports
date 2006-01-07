@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	6.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -188,7 +189,7 @@ pre-configure:
 		${WRKSRC}/src/ptytty.C
 
 post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/urxvt
+	${CHMOD} 4711 ${PREFIX}/bin/urxvt ${PREFIX}/bin/urxvtd
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
