@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.14
-PORTREVISION=	1
+PORTVERSION=	0.5.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -20,6 +19,7 @@ USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
+CONFIGURE_ARGS=	--with-lfs
 USE_REINPLACE=	yes
 
 ALL_TARGET=	${PORTNAME}
@@ -31,6 +31,9 @@ PORTDOCS=	COPYING Changelog README Release-Notes TODO \
 		alternative_programs.txt
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(fopen\("/etc/)mtab|\1fstab|; \
@@ -53,6 +56,10 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|FreeBSD_Version|FreeBSD_version|' \
 		${WRKSRC}/dvd.c
+# no such flag under FreeBSD
+	@${REINPLACE_CMD} -E \
+		-e 's|O_LARGEFILE|0|' \
+		${WRKSRC}/vobcopy.c
 
 post-configure:
 	@${REINPLACE_CMD} -E -e 's|^CC.+||; s|^PREFIX.+||; \
