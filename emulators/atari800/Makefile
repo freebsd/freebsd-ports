@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	1.3.6
+PORTVERSION=	2.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -88,9 +88,7 @@ pre-everything::
 post-patch:
 	@${CP} ${FILESDIR}/atari800.cfg ${WRKSRC}
 	@${REINPLACE_CMD} -e 's|GUMBY|${DATADIR}|g' ${WRKSRC}/atari800.cfg
-	@${REINPLACE_CMD} -e 's|/etc|${DATADIR}|g' ${WRKSRC}/rt-config.c
-	@${REINPLACE_CMD} -e 's|tmpnam|mkstemp|g' ${WRKSRC}/devices.c \
-		${WRKSRC}/compfile.c
+	@${REINPLACE_CMD} -e 's|/etc|${DATADIR}|g' ${WRKSRC}/atari.c
 	@${REINPLACE_CMD} -e 's|sdl-config|$$SDL_CONFIG|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
