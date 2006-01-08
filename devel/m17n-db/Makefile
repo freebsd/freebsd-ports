@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -24,7 +24,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 
 M17N_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
-GLIBC_VERSION=	2.3.3
+GLIBC_VERSION=	2.3.6
 GLIBC_DISTFILE=	glibc-${GLIBC_VERSION}.tar.bz2
 CHARMAPSDIR=	glibc-${GLIBC_VERSION}/localedata/charmaps
 
