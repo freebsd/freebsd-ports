@@ -9,10 +9,10 @@ PORTNAME=	proggy_fonts
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.proggyfonts.com/download/
-DISTFILES=	ProggyClean.pcf.gz ProggySquare.pcf.gz	\
-		ProggySmall.pcf.gz ProggyTiny.pcf.gz	\
-		ProggyCleanSZ.pcf.gz ProggySquareSZ.pcf.gz	\
-		ProggyTinySZ.pcf.gz ProggyCleanSZBP.pcf.gz	\
+DISTFILES=	ProggyClean.pcf.zip ProggySquare.pcf.zip	\
+		ProggySmall.pcf.zip ProggyTiny.pcf.zip	\
+		ProggyCleanSZ.pcf.zip ProggySquareSZ.pcf.zip	\
+		ProggyTinySZ.pcf.zip ProggyCleanSZBP.pcf.zip	\
 		ProggyCleanCP.pcf.zip
 
 MAINTAINER=	llwang@infor.org
@@ -25,12 +25,6 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 XFONTDIR=	${PREFIX}/lib/X11/fonts/local
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	${WRKDIR}
-
-post-extract:
-	@(cd ${WRKDIR}; for i in *.zip; do ${UNZIP_CMD} $$i; done)
 
 do-install:
 	@${MKDIR} ${XFONTDIR}
