@@ -49,6 +49,7 @@ libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_func.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_type.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_vars.html
+%%DOCS%%share/jack-audio-connection-kit/reference/html/hierarchy.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/index.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/inprocess_8c.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/intclient_8h-source.html
