@@ -1,0 +1,20 @@
+%%SLIMDIR%%/Plugins/Scrobbler.pm
+%%SLIMDIR%%/Plugins/ScrobblerReadMe.txt
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Digest/Perl/MD5.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/vssver.scc
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/LWP/UserAgent.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/List/Util.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Math/Round.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Scrobbler/BackgroundHTTP.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Scrobbler/Session.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Scrobbler/Track.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Time/Countdown.pm
+%%SLIMDIR%%/Plugins/SlimScrobbleSupport/Time/Stopwatch.pm
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/Time
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/Scrobbler
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/Math
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/List
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/LWP
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/Digest/Perl
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport/Digest
+@dirrm %%SLIMDIR%%/Plugins/SlimScrobbleSupport
