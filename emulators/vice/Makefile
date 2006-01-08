@@ -9,6 +9,7 @@ PORTVERSION=	1.18
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
+		http://fresh.t-systems-sfr.com/linux/src/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
