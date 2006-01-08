@@ -35,6 +35,8 @@ MOZ_OPTIONS+=	--enable-application=suite	\
 		--enable-canvas
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=suite
 
+NOT_FOR_ARCHS=	ia64
+
 OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 	COMPOSER "Enable the HTML Composer module" on \
 	LDAP "Enable LDAP support for Mailnews" on \

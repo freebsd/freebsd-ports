@@ -38,6 +38,8 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
 CONFLICTS=	thunderbird*-1.5*
 
+NOT_FOR_ARCHS=	ia64
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
 
