@@ -1,3 +1,2 @@
 lib/libakode_mpeg_decoder.la
 lib/libakode_mpeg_decoder.so
-lib/mcop/akodeMPEGPlayObject.mcopclass

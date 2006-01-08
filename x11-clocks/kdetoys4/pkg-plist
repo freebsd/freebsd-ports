@@ -462,13 +462,13 @@ share/apps/kmoon/pics/moon8.png
 share/apps/kmoon/pics/moon9.png
 share/apps/kodo/numbers.png
 share/apps/kteatime/eventsrc
-share/apps/kteatime/icons/crystalsvg/16x16/apps/kteatime.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/mug.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim1.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim2.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_not_ready.png
-share/apps/kteatime/icons/crystalsvg/32x32/apps/kteatime.png
-share/apps/kteatime/icons/crystalsvg/48x48/apps/kteatime.png
+share/apps/kteatime/icons/hicolor/16x16/apps/kteatime.png
+share/apps/kteatime/icons/hicolor/32x32/apps/kteatime.png
+share/apps/kteatime/icons/hicolor/48x48/apps/kteatime.png
 share/apps/ktux/sprites/anim0001.png
 share/apps/ktux/sprites/anim0002.png
 share/apps/ktux/sprites/anim0003.png
@@ -585,26 +585,28 @@ share/doc/HTML/en/kworldclock/screenshot-rmb-flags.png
 share/doc/HTML/en/kworldclock/screenshot-withclocks.png
 share/doc/HTML/en/kworldclock/screenshot-withflags.png
 share/doc/HTML/en/kworldclock/screenshot.png
-share/icons/crystalsvg/16x16/apps/amor.png
-share/icons/crystalsvg/16x16/apps/kmoon.png
-share/icons/crystalsvg/16x16/apps/kodo.png
-share/icons/crystalsvg/16x16/apps/kteatime.png
-share/icons/crystalsvg/16x16/apps/kweather.png
-share/icons/crystalsvg/16x16/apps/kworldclock.png
-share/icons/crystalsvg/32x32/apps/amor.png
-share/icons/crystalsvg/32x32/apps/kmoon.png
-share/icons/crystalsvg/32x32/apps/kodo.png
-share/icons/crystalsvg/32x32/apps/kteatime.png
-share/icons/crystalsvg/32x32/apps/kweather.png
-share/icons/crystalsvg/32x32/apps/kworldclock.png
-share/icons/crystalsvg/48x48/apps/amor.png
-share/icons/crystalsvg/48x48/apps/kmoon.png
-share/icons/crystalsvg/48x48/apps/kodo.png
-share/icons/crystalsvg/48x48/apps/kteatime.png
-share/icons/crystalsvg/48x48/apps/kweather.png
-share/icons/crystalsvg/48x48/apps/kworldclock.png
-share/icons/locolor/16x16/apps/ktux.png
-share/icons/locolor/32x32/apps/ktux.png
+share/icons/hicolor/16x16/apps/amor.png
+share/icons/hicolor/16x16/apps/kmoon.png
+share/icons/hicolor/16x16/apps/kodo.png
+share/icons/hicolor/16x16/apps/kteatime.png
+share/icons/hicolor/16x16/apps/ktux.png
+share/icons/hicolor/16x16/apps/kweather.png
+share/icons/hicolor/16x16/apps/kworldclock.png
+share/icons/hicolor/22x22/apps/amor.png
+share/icons/hicolor/22x22/apps/kworldclock.png
+share/icons/hicolor/32x32/apps/amor.png
+share/icons/hicolor/32x32/apps/kmoon.png
+share/icons/hicolor/32x32/apps/kodo.png
+share/icons/hicolor/32x32/apps/kteatime.png
+share/icons/hicolor/32x32/apps/ktux.png
+share/icons/hicolor/32x32/apps/kweather.png
+share/icons/hicolor/32x32/apps/kworldclock.png
+share/icons/hicolor/48x48/apps/amor.png
+share/icons/hicolor/48x48/apps/kmoon.png
+share/icons/hicolor/48x48/apps/kodo.png
+share/icons/hicolor/48x48/apps/kteatime.png
+share/icons/hicolor/48x48/apps/kweather.png
+share/icons/hicolor/48x48/apps/kworldclock.png
 share/services/kcmweather.desktop
 share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
@@ -623,14 +625,15 @@ share/services/kweatherservice.desktop
 @dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
 @dirrm share/apps/ktux
-@dirrm share/apps/kteatime/icons/crystalsvg/48x48/apps
-@dirrm share/apps/kteatime/icons/crystalsvg/48x48
-@dirrm share/apps/kteatime/icons/crystalsvg/32x32/apps
-@dirrm share/apps/kteatime/icons/crystalsvg/32x32
+@dirrm share/apps/kteatime/icons/hicolor/48x48/apps
+@dirrm share/apps/kteatime/icons/hicolor/48x48
+@dirrm share/apps/kteatime/icons/hicolor/32x32/apps
+@dirrm share/apps/kteatime/icons/hicolor/32x32
+@dirrm share/apps/kteatime/icons/hicolor/16x16/apps
+@dirrm share/apps/kteatime/icons/hicolor/16x16
+@dirrm share/apps/kteatime/icons/hicolor
 @dirrm share/apps/kteatime/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kteatime/icons/crystalsvg/22x22
-@dirrm share/apps/kteatime/icons/crystalsvg/16x16/apps
-@dirrm share/apps/kteatime/icons/crystalsvg/16x16
 @dirrm share/apps/kteatime/icons/crystalsvg
 @dirrm share/apps/kteatime/icons
 @dirrm share/apps/kteatime

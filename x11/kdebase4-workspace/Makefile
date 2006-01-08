@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -23,7 +22,7 @@ LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		usb-0.1:${PORTSDIR}/devel/libusb
 
-CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-3]* kdeutils-3.[0-2]*
+CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-4]* kdeutils-3.[0-2]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

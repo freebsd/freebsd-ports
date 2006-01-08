@@ -2037,7 +2037,7 @@ net-im/xicq||2005-12-15|Mastersite disappeared
 java/jde-emacs20||2005-12-15|Dependency cedet-emacs20 no longer exists
 net/beacon-server||2005-12-15|Integrated in net/beacon
 misc/xrmap|astro/xrmap|2005-12-17|Move to a more appropriate category
-devel/opentop||2005-12-17|Obsoleted. New versions are comercial
+devel/opentop||2005-12-17|Obsoleted. New versions are commercial
 x11-themes/metacity-theme-hacked-2||2005-12-22|Obsolete by x11-themes/gnome-art
 x11-themes/metacity-theme-iridium-rounded||2005-12-22|Obsolete by x11-themes/gnome-art
 converters/intel2gas|lang/intel2gas|2005-12-22|Duplicate port entry
@@ -2049,3 +2049,4 @@ devel/py-ll-url||2005-12-31|Replaced by py-ll-core
 misc/gkrellmaflag||2005-12-31|Unfetchable
 devel/libmusclecard|devel/pcsc-lite|2006-01-02|Reintegrated into pcsc-lite port
 deskutils/gdesklets-ltvariations||2006-01-04|Deleted; dead and unfetchable
+editors/vimpart||2006-01-08|As of 3.5.0, vimpart is no longer part of KDE.

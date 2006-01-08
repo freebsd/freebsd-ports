@@ -7,6 +7,7 @@ bin/kmdr-plugins
 bin/kxsldbg
 bin/quanta
 bin/xsldbg
+include/kommander_export.h
 include/kommanderfactory.h
 include/kommanderplugin.h
 include/kommanderwidget.h
@@ -18,6 +19,8 @@ lib/kde3/libklinkstatuspart.la
 lib/kde3/libklinkstatuspart.so
 lib/kde3/libkxsldbgpart.la
 lib/kde3/libkxsldbgpart.so
+lib/kde3/quantadebuggerdbgp.la
+lib/kde3/quantadebuggerdbgp.so
 lib/kde3/quantadebuggergubed.la
 lib/kde3/quantadebuggergubed.so
 lib/libkommanderplugin.la
@@ -499,6 +502,7 @@ share/apps/quanta/dtep/php/ifx.tag
 share/apps/quanta/dtep/php/iisfunc.tag
 share/apps/quanta/dtep/php/image.tag
 share/apps/quanta/dtep/php/imap.tag
+share/apps/quanta/dtep/php/includes.tag
 share/apps/quanta/dtep/php/info.tag
 share/apps/quanta/dtep/php/ingres-ii.tag
 share/apps/quanta/dtep/php/ircg.tag
@@ -1146,6 +1150,7 @@ share/apps/quanta/templates/scripts/php/demo.php
 share/apps/quanta/templates/text/.dirinfo
 share/apps/quanta/templates/text/html/demo.html
 share/apps/quanta/templates/text/others/demo.txt
+share/apps/quanta/templates/text/scripts/demo.php
 share/apps/quanta/tips
 share/apps/quanta/toolbar/ball.png
 share/apps/quanta/toolbar/check.png
@@ -1379,7 +1384,6 @@ share/apps/quanta/toolbars/wml-1-2/table.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/tasks.toolbar.tgz
 share/apps/quanta/toolbars/wml-1-2/text.toolbar.tgz
 share/apps/quanta/toolbars/xml/fonts.toolbar.tgz
-share/apps/templates/text/scripts/demo.php
 share/config.kcfg/klinkstatus.kcfg
 share/doc/HTML/en/kfilereplace/addstringsdialog_window.png
 share/doc/HTML/en/kfilereplace/backup_option.png
@@ -1558,7 +1562,13 @@ share/doc/HTML/en/xsldbg/index.docbook
 share/doc/HTML/en/xsldbg/introduction.docbook
 share/doc/HTML/en/xsldbg/usage.docbook
 share/doc/HTML/en/xsldbg/xsldbghelp.xml
+share/icons/crystalsvg/128x128/apps/kommander.png
 share/icons/crystalsvg/16x16/actions/bug.png
+share/icons/crystalsvg/16x16/apps/kommander.png
+share/icons/crystalsvg/22x22/apps/kommander.png
+share/icons/crystalsvg/32x32/apps/kommander.png
+share/icons/crystalsvg/64x64/apps/kommander.png
+share/icons/hicolor/128x128/apps/klinkstatus.png
 share/icons/hicolor/16x16/actions/1downarrow.png
 share/icons/hicolor/16x16/actions/configure.png
 share/icons/hicolor/16x16/actions/exit.png
@@ -1605,6 +1615,7 @@ share/icons/hicolor/22x22/actions/xsldbg_source.png
 share/icons/hicolor/22x22/actions/xsldbg_stepdown.png
 share/icons/hicolor/22x22/actions/xsldbg_stepup.png
 share/icons/hicolor/22x22/apps/kfilereplace.png
+share/icons/hicolor/22x22/apps/klinkstatus.png
 share/icons/hicolor/22x22/apps/quanta.png
 share/icons/hicolor/32x32/apps/kfilereplace.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
@@ -1612,7 +1623,9 @@ share/icons/hicolor/32x32/apps/klinkstatus.png
 share/icons/hicolor/32x32/apps/quanta.png
 share/icons/hicolor/48x48/apps/kfilereplace.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
+share/icons/hicolor/48x48/apps/klinkstatus.png
 share/icons/hicolor/48x48/apps/quanta.png
+share/icons/hicolor/64x64/apps/klinkstatus.png
 share/icons/locolor/16x16/apps/kimagemapeditor.png
 share/icons/locolor/32x32/apps/kimagemapeditor.png
 share/mimelnk/application/x-kommander.desktop
@@ -1622,6 +1635,7 @@ share/services/kimagemapeditorpart.desktop
 share/services/klinkstatus_part.desktop
 share/services/kxsldbg_part.desktop
 share/services/quanta_preview_config.desktop
+share/services/quantadebuggerdbgp.desktop
 share/services/quantadebuggergubed.desktop
 share/servicetypes/quantadebugger.desktop
 @dirrm share/doc/HTML/en/xsldbg
@@ -1630,9 +1644,6 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/doc/HTML/en/kommander
 @dirrm share/doc/HTML/en/klinkstatus
 @dirrm share/doc/HTML/en/kfilereplace
-@dirrm share/apps/templates/text/scripts
-@dirrm share/apps/templates/text
-@dirrm share/apps/templates
 @dirrm share/apps/quanta/toolbars/xml
 @dirrm share/apps/quanta/toolbars/wml-1-2
 @dirrm share/apps/quanta/toolbars/tagxml
@@ -1644,6 +1655,7 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/quanta/toolbars/cfml
 @dirrm share/apps/quanta/toolbars
 @dirrm share/apps/quanta/toolbar
+@dirrm share/apps/quanta/templates/text/scripts
 @dirrm share/apps/quanta/templates/text/others
 @dirrm share/apps/quanta/templates/text/html
 @dirrm share/apps/quanta/templates/text

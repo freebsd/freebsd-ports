@@ -27,8 +27,10 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
+post-patch:
+	${REINPLACE_CMD} -e \
+	's|pkgconfigdir =.*|pkgconfigdir = ${LOCALBASE}/libdata/pkgconfig|g' \
+		${WRKSRC}/knetworkconf/backends/Makefile.in
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,6 +18,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 MAINTAINER=	mranner@inode.at
 COMMENT=	IRC client for QT and KDE
 
+CONFLICTS=	kdenetwork-3.5.[0-9]*
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=		yes
 USE_BZIP2=	yes

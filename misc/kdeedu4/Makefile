@@ -15,7 +15,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
 
-CONFLICTS=	kwordquiz-[0-9]*
+LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
+
+CONFLICTS+=	kwordquiz-[0-9]* kgeography-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -25,6 +27,8 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3

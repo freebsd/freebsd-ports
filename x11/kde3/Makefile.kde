@@ -99,7 +99,7 @@ pre-configure: kde-fix-configure kde-fix-ltmain.sh
 kde-fix-configure:
 
 kde-fix-ltmain.sh:
-	${REINPLACE_CMD} "s, | .*freebsd\*)$$,*),g" ${WRKSRC}/admin/ltmain.sh
+
 .endif
 
 kde-version-check:

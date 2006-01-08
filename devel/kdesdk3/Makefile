@@ -33,12 +33,12 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-CONFIGURE_ARGS+=--with-db-include-dir=/usr/local/include/db4 \
-		--with-db-lib-dir=/usr/local/lib --with-db-name=db4 \
+CONFIGURE_ARGS+=--with-db-include-dir=${LOCALBASE}/include/db4 \
+		--with-db-lib-dir=${LOCALBASE}/lib --with-db-name=db4 \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config
 
-MAN1=		cervisia.1 cvsblame.1 cvscheck.1 cvsversion.1 includemocs.1 kde-build.1 noncvslist.1
+MAN1=		cervisia.1 cvsblame.1 cvscheck.1 cvsversion.1 includemocs.1 kde-build.1 kdesvn-build.1 noncvslist.1
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

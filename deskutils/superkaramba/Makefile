@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	netdragon
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE tool that allows interactive eye-candy on the desktop
 
+CONFLICTS=		kdeutils-3.5.[0-9]*
+
 WRKSRC=			${WRKDIR}/${PORTNAME}
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes

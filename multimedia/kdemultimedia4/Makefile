@@ -4,11 +4,9 @@
 # Whom:					Alan Eldridge <alane@freebsd.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -20,6 +18,7 @@ COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 CONFLICTS=	juk-1*
 
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
+		akode:${PORTSDIR}/audio/akode \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		ogg:${PORTSDIR}/audio/libogg \
@@ -38,6 +37,7 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" --disable-xinetest
+CONFIGURE_ENV+=	AKODE_CONFIG=${LOCALBASE}/bin/akode-config
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=akode juk mpeglib mpeglib_artsplug xine_artsplugin

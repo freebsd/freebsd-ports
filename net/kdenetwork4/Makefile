@@ -20,7 +20,7 @@ LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
 		slp:${PORTSDIR}/net/openslp
 RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 
-CONFLICTS=	kopete-[0-9]*
+CONFLICTS=	kopete-[0-9]* kvirc-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
@@ -28,6 +28,7 @@ PREFIX=		${KDE_PREFIX}
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
@@ -35,6 +36,8 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=lanbrowsing
 _NO_KDE_FINAL=	yes
+
+CONFIGURE_ARGS+=--with-ssl-dir=/
 
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=DO_NOT_COMPILE="${DO_NOT_COMPILE}"

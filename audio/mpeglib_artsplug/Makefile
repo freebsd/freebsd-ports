@@ -17,8 +17,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Legacy KDE audio backend
 
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
-
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 

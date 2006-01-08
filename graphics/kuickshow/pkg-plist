@@ -18,10 +18,9 @@ share/doc/HTML/en/kuickshow/common
 share/doc/HTML/en/kuickshow/index.cache.bz2
 share/doc/HTML/en/kuickshow/index.docbook
 share/doc/HTML/en/kuickshow/screenshot.png
-share/icons/crystalsvg/16x16/apps/kuickshow.png
-share/icons/crystalsvg/32x32/apps/kuickshow.png
-share/icons/locolor/16x16/apps/kuickshow.png
-share/icons/locolor/32x32/apps/kuickshow.png
+share/icons/hicolor/16x16/apps/kuickshow.png
+share/icons/hicolor/22x22/apps/kuickshow.png
+share/icons/hicolor/32x32/apps/kuickshow.png
 @dirrm share/doc/HTML/en/kuickshow
 @dirrm share/apps/kuickshow/pics
 @dirrm share/apps/kuickshow
