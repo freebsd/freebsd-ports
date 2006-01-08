@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	visual
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.5
 PORTREVISION=	1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.vpython.org/download/
+MASTER_SITES=	http://www.vpython.org/download/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	visualpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@email.it
