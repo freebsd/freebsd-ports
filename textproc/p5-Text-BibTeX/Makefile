@@ -36,4 +36,10 @@ MAN3=		Text::BibTeX.3 \
 		Text::BibTeX::Value.3 \
 		btool_faq.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
