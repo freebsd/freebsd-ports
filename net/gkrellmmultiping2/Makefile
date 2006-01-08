@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	gkrellmmultiping
-PORTVERSION=	2.0.10
-PORTREVISION=	1
-CATEGORIES=	net
+PORTVERSION=	2.0.11
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/ \
 		http://depot.fsck.ch/mirror/distfiles/
 DISTNAME=	gkrellm-multiping-${PORTVERSION}
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 PLIST_FILES=	libexec/gkrellm2/plugins/multiping.so libexec/gkrellm2/plugins/pinger
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
