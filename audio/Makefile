@@ -453,6 +453,7 @@
     SUBDIR += simplemod
     SUBDIR += slimserver
     SUBDIR += slimserver-lastfm
+    SUBDIR += slimserver-slimscrobbler
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
