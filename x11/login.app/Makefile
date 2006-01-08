@@ -19,6 +19,9 @@ COMMENT=	Graphical login interface for X that is themable
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author (x11/slim is the successor)
+EXPIRATION_DATE=	2006-02-28
+
 WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}
 
 USE_X_PREFIX=	yes
