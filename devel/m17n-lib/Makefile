@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 
