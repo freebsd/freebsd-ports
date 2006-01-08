@@ -173,6 +173,7 @@
     SUBDIR += settitle
     SUBDIR += silo
     SUBDIR += sisctrl
+    SUBDIR += slim
     SUBDIR += startup-notification
     SUBDIR += sxpc
     SUBDIR += temperature.app

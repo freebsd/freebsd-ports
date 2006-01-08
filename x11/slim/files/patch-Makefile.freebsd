@@ -1,0 +1,26 @@
+--- Makefile.freebsd.orig	Sun Sep 11 18:50:36 2005
++++ Makefile.freebsd	Sun Jan  8 12:17:45 2006
+@@ -3,15 +3,15 @@
+ # Edit the following section to adjust the options
+ # to fit into your operating system / distribution
+ #######################################################
+-CXX=/usr/bin/g++
+-CC=/usr/bin/gcc
+-CFLAGS=-I. -I/usr/X11R6/include -I/usr/local/include/freetype2 -I/usr/local/include/freetype2/config -I/usr/local/include/libpng -I/usr/local/include -I/usr/include
+-CXXLAGS=$(CFLAGS)
+-LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lcrypt -lXpm -lXmu -lpng -ljpeg
++CXX?=/usr/bin/g++
++CC?=/usr/bin/gcc
++CFLAGS+=-I%%X11BASE%%/include `freetype-config --cflags` `libpng-config --cflags`
++CXXLAGS+=$(CFLAGS)
++LDFLAGS=-L%%X11BASE%%/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXpm -lXmu -ljpeg
+ CUSTOM=-DNEEDS_BASENAME
+-PREFIX=/usr
+-CFGDIR=/etc
+-MANDIR=/usr/share/man
++PREFIX=%%X11BASE%%
++CFGDIR=%%X11BASE%%/etc
++MANDIR=%%X11BASE%%/man
+ DESTDIR=
+ #######################################################
+ 

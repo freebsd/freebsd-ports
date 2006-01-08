@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: slim
+# REQUIRE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable slim:
+# slim_enable (bool):      Set to "NO" by default.
+#                          Set it to "YES" to enable slim
+#
+
+. %%RC_SUBR%%
+
+name="slim"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${slim_enable="NO"}
+
+command=%%X11BASE%%/bin/slim
+command_args="-d"
+pidfile=/var/run/slim.pid
+
+run_rc_command "$1"
