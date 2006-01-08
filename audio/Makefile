@@ -452,6 +452,7 @@
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += slimserver
+    SUBDIR += slimserver-lastfm
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
