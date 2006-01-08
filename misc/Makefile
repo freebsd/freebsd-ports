@@ -276,6 +276,7 @@
     SUBDIR += kwatch
     SUBDIR += latex-mk
     SUBDIR += lc
+    SUBDIR += ldconfig_compat
     SUBDIR += lesspipe
     SUBDIR += libhome
     SUBDIR += libmcal
