@@ -19,6 +19,12 @@ USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+DESKTOP_ENTRIES="Capture Video" \
+		"Capture from FireWire Camera" \
+		"${PREFIX}/share/pixmaps/gdvrecv/camcorder.png" \
+		"gdvrecv" \
+		"Application;AudioVideo;" \
+		true
 
 CONFLICTS=	dvts-[0-9]*
 
