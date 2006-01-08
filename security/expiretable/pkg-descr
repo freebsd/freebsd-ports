@@ -1,0 +1,7 @@
+Expiretable is a utility used to remove entries from the pf(4) table
+based on their age.
+
+The age in question being the amount of time that has passed since
+the statistics for each entry in the target table was last cleared.
+
+WWW: http://expiretable.fnord.se/

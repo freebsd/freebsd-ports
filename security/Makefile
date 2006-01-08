@@ -96,6 +96,7 @@
     SUBDIR += drweb-qmail
     SUBDIR += drweb-sendmail
     SUBDIR += dsniff
+    SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += f-prot-sig
     SUBDIR += fakebo
