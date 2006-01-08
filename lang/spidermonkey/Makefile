@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	spidermonkey
-DISTVERSION=	1.5-rc6a
-PORTREVISION=	1
+DISTVERSION=	1.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	js
@@ -16,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
-CONFLICTS=	njs-*
+CONFLICTS=	njs-[0-9]*
 
 .if !defined(WITHOUT_TEST)
 USE_PERL5_BUILD=test harness
@@ -25,7 +24,13 @@ PATCHFILES=	spidermonkey-patch-tests-ecma.bz2	\
 		spidermonkey-patch-tests-js.bz2
 PATCH_SITES=	http://virtual-estates.net/~mi/port-stuff/
 BUILD_DEPENDS+=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
-DISTFILES+=	js-tests-20021118${EXTRACT_SUFX}
+LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
+MAKE_ARGS+=	JS_THREADSAFE=YES \
+		PROG_LIBS="-lreadline -ltermcap -lm ${PTHREAD_LIBS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include/nspr
+
+DISTFILES+=	older-packages/js-tests-20021118${EXTRACT_SUFX}
 post-build:	test
 post-patch:
 	#
