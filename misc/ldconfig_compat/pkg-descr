@@ -1,0 +1,5 @@
+This port installs a compatibility script that enable old
+FreeBSD systems to use ldconfig local directories.
+
+- Florent Thoumie
+flz@FreeBSD.org
