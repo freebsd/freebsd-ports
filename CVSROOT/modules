@@ -2202,6 +2202,7 @@ exmars		ports/games/exmars
 exmh2		ports/mail/exmh2
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
+expiretable	ports/security/expiretable
 explosions	ports/misc/explosions
 expocity	ports/x11-wm/expocity
 exportvideo	ports/multimedia/exportvideo
