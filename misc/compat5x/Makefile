@@ -11,7 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -23,13 +23,11 @@ COMMENT=	A convenience package to install the compat5x libraries
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
 USE_BZIP2=	yes
-NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
-USE_RC_SUBR=	000.${PORTNAME}.sh
 
 .include <bsd.port.pre.mk>
 
@@ -37,11 +35,19 @@ USE_RC_SUBR=	000.${PORTNAME}.sh
 IGNORE=	is for FreeBSD 6.x and newer
 .endif
 
+.if ${OSVERSION} > 700011
+USE_LDCONFIG=	${TARGET_DIR}
+PLIST_SUB+=	USE_LDCONFIG=""
+.else
+NO_MTREE=	yes
+USE_RC_SUBR=	000.${PORTNAME}.sh
+SUB_LIST+=	LDCONFIG="${LDCONFIG}"
+PLIST_SUB+=	USE_LDCONFIG="@comment "
+.endif
+
 .if ${OSVERSION} >= 600016
 RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
 .endif
-
-SUB_LIST+=	LDCONFIG="${LDCONFIG}"
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA=""
@@ -51,10 +57,14 @@ PLIST_SUB+=	ALPHA="@comment "
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64=""
 PLIST_SUB+=	LDCONFIG_LIB32="${LDCONFIG} -32"
+.if defined(USE_RC_SUBR)
 SUB_LIST+=	AMD64="" TARGET32_DIR="${TARGET32_DIR}"
+.endif
 .else
 PLIST_SUB+=	AMD64="@comment "
+.if defined(USE_RC_SUBR)
 SUB_LIST+=	AMD64="@comment "
+.endif
 .endif
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
@@ -68,6 +78,7 @@ PLIST_SUB+=	SPARC64="@comment "
 .endif
 
 post-extract:
+.if defined(USE_RC_SUBR)
 	@( ${ECHO} ""; \
 	   ${ECHO} "******************************************************"; \
 	   ${ECHO} "To enable the ldconfig of these libraries at boot time"; \
@@ -75,8 +86,8 @@ post-extract:
 	   ${ECHO} "/etc/rc.conf.local or /etc/rc.conf"; \
 	   ${ECHO} "******************************************************"; \
 	   ${ECHO} ""; ) > ${WRKDIR}/pkg-message
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
+.endif
 
 NO_BUILD=	yes
 
@@ -90,6 +101,13 @@ do-install:
 .endif
 
 post-install:
+.if defined(USE_LDCONFIG)
+	@${ECHO} ${USE_LDCONFIG} > ${PREFIX}/libdata/ldconfig/${UNIQUENAME}
+.if ${ARCH} == amd64
+	@${ECHO} ${TARGET32_DIR} > ${PREFIX}/libdata/ldconfig32/${UNIQUENAME}
+.endif
+.else
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>

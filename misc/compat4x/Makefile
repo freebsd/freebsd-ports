@@ -7,7 +7,7 @@
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${COMPAT4X_MASTER_SITE_SUBDIR}
@@ -19,18 +19,24 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A convenience package to install the compat4x libraries
 
 WRKSRC=		${WRKDIR}/usr/lib/compat
-NO_MTREE=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
-USE_RC_SUBR=	000.${PORTNAME}.sh
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700011
+USE_LDCONFIG=	${TARGET_DIR}
+PLIST_SUB+=	USE_LDCONFIG=""
+.else
+NO_MTREE=	yes
+USE_RC_SUBR=	000.${PORTNAME}.sh
 SUB_LIST+=	LDCONFIG="${LDCONFIG}"
+PLIST_SUB+=	USE_LDCONFIG="@comment "
+.endif
 
 .if ${OSVERSION} >= 600016
 RUN_DEPENDS=		${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/localedata
@@ -82,10 +88,14 @@ PLIST_SUB+=		I386_ONLY="@comment "
 .if ${ARCH} == amd64
 PLIST_SUB+=		AMD64_ONLY=""
 PLIST_SUB+=		LDCONFIG_LIB32="${LDCONFIG} -32"
+.if defined(USE_RC_SUBR)
 SUB_LIST+=		AMD64="" TARGET32_DIR="${TARGET32_DIR}"
+.endif
 .else
 PLIST_SUB+=		AMD64_ONLY="@comment "
+.if defined(USE_RC_SUBR)
 SUB_LIST+=		AMD64="@comment "
+.endif
 .endif
 
 OPENSSL_LIBS=		libcrypto.so.1 libcrypto.so.2 libssl.so.1 libssl.so.2
@@ -128,6 +138,7 @@ do-extract:
 .endif
 
 post-extract:
+.if defined(USE_RC_SUBR)
 	@( ${ECHO} ""; \
 	   ${ECHO} "******************************************************"; \
 	   ${ECHO} "To enable the ldconfig of these libraries at boot time"; \
@@ -135,8 +146,8 @@ post-extract:
 	   ${ECHO} "/etc/rc.conf.local or /etc/rc.conf"; \
 	   ${ECHO} "******************************************************"; \
 	   ${ECHO} ""; ) > ${WRKDIR}/pkg-message
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
+.endif
 
 NO_BUILD=	yes
 
@@ -154,6 +165,13 @@ do-install:
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+.if defined(USE_LDCONFIG)
+	@${ECHO} ${USE_LDCONFIG} > ${PREFIX}/libdata/ldconfig/${UNIQUENAME}
+.if ${ARCH} == amd64
+	@${ECHO} ${TARGET32_DIR} > ${PREFIX}/libdata/ldconfig32/${UNIQUENAME}
+.endif
+.else
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
