@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
