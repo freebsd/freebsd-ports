@@ -2,8 +2,6 @@ lib/kde3/katecppsymbolviewerplugin.la
 lib/kde3/katecppsymbolviewerplugin.so
 lib/kde3/katefiletemplates.la
 lib/kde3/katefiletemplates.so
-lib/kde3/katefll_initplugin.la
-lib/kde3/katefll_initplugin.so
 lib/kde3/katefll_plugin.la
 lib/kde3/katefll_plugin.so
 lib/kde3/katehtmltoolsplugin.la
@@ -24,7 +22,7 @@ lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
 lib/kde3/libkatetabbarextensionplugin.la
 lib/kde3/libkatetabbarextensionplugin.so
-share/applications/kdeaddons-kate-plugins-3.4.3
+share/applications/kdeaddons-kate-plugins-3.5.0
 share/applnk/.hidden/katefll.desktop
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
@@ -72,7 +70,6 @@ share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/services/katecppsymbolviewer.desktop
 share/services/katefiletemplates.desktop
-share/services/katefll_initplugin.desktop
 share/services/katefll_plugin.desktop
 share/services/katehtmltools.desktop
 share/services/katemodeline.desktop
@@ -98,3 +95,4 @@ share/services/katexmltools.desktop
 @dirrm share/apps/kate/plugins/katefiletemplates/templates
 @dirrm share/apps/kate/plugins/katefiletemplates
 @dirrm share/apps/kate/plugins/katecppsymbolviewer
+@dirrm share/apps/kate/plugins

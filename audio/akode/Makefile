@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	akode
-PORTVERSION=	${KDE_VERSION}
+PORTVERSION=	2.0.r1
+PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
-PKGNAMEPREFIX=	kdemultimedia-
-DISTNAME=	kdemultimedia-${PORTVERSION}
-DIST_SUBDIR=	KDE
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.kde-apps.org/content/
+MASTER_SITE_SUBDIR=lofi
+DISTNAME=	'download.php?content=30375'
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Default KDE audio backend
 
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
-
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
-
 CONFLICTS=	kdemultimedia-3.[1-3]*
+
+FETCH_CMD=	/usr/bin/fetch -Rr
 
 OPTIONS=	JACK "Jack output plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \
@@ -32,14 +30,18 @@ OPTIONS=	JACK "Jack output plugin" off \
 		RESAMPLER "Resampler processing plugin" on \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
-USE_BZIP2=	yes
+USE_AUTOTOOLS=	libltdl
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.0rc1
 INSTALLS_SHLIB=	yes
+PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH}
+
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--program-transform-name= \
+		--with-extra-libs=${LOCALBASE}/lib \
+		--with-extra-includes=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +50,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_jack_sink.so:${PORTSDIR}/audio/akode-plu
 .endif
 
 .if !defined(WITHOUT_MPC)
-RUN_DEPENDS+=   ${LOCALBASE}/lib/libakode_mpc_decoder.so:${PORTSDIR}/audio/akode-plugins-mpc
+RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_mpc_decoder.so:${PORTSDIR}/audio/akode-plugins-mpc
 .endif
 
 .if !defined(WITHOUT_MPEG)
@@ -71,12 +73,16 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_src_resampler.so:${PORTSDIR}/audio/akode
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_xiph_decoder.so:${PORTSDIR}/audio/akode-plugins-xiph
 .endif
 
+post-patch:
+	@${SETENV} TZ=UTC ${TOUCH} -t 200511231529.06 ${WRKSRC}/akode/lib/akode_export.h.in
+	${REINPLACE_CMD} -e 's|akodeplay_LDFLAGS =.*|akodeplay_LDFLAGS = \
+	$$(all_libraries) ${PTHREAD_LIBS}|g' \
+		${WRKSRC}/akode/akodeplay/Makefile.in
+
 do-build:
-	cd ${WRKSRC}/arts/runtime && gmake
-	cd ${WRKSRC}/akode && gmake
+	cd ${WRKSRC}/akode && ${GMAKE}
 
 do-install:
-	cd ${WRKSRC}/akode && gmake install
+	cd ${WRKSRC}/akode && ${GMAKE} install
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>

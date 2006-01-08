@@ -96,10 +96,8 @@ lib/libmpeg.la
 lib/libmpeg.so
 lib/libyafcore.la
 lib/libyafcore.so
-lib/libyafcore.so.0
 lib/libyafxplayer.la
 lib/libyafxplayer.so
-lib/libyafxplayer.so.0
 lib/mcop/CDDAPlayObject.mcopclass
 lib/mcop/MP3PlayObject.mcopclass
 lib/mcop/NULLPlayObject.mcopclass

@@ -175,7 +175,6 @@
     SUBDIR += vim-lite
     SUBDIR += vim5
     SUBDIR += vim6+ruby
-    SUBDIR += vimpart
     SUBDIR += wily
     SUBDIR += winefish
     SUBDIR += xcoral

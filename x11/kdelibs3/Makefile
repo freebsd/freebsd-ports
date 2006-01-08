@@ -4,7 +4,6 @@
 # Whom:					will@cvs.kde.org
 #
 # $FreeBSD$
-#
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
@@ -27,6 +26,7 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/dns/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
+		lua.5:${PORTSDIR}/lang/lua \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	iceauth:${X_CLIENTS_PORT} \
 		${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
-CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-3]* kdepim-3.2*
+CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3.[0-4]* kdepim-3.2*
 .if defined(WITHOUT_CUPS) || defined(KDE_WITHOUT_CUPS)
 CONFLICTS+=	kdelibs-[0-9]*
 PKGNAMESUFFIX=	-nocups
@@ -60,9 +60,13 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=# empty
 CONFIGURE_ARGS+=--disable-ltdl-install	\
+		--disable-as-needed \
 		--enable-mt \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
+		--with-lua-dir=${LOCALBASE} \
+		--with-lua-libraries=${LOCALBASE}/libs \
+		--with-lua-includes=${LOCALBASE}/include
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf

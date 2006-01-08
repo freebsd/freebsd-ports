@@ -6,42 +6,46 @@
 #
 
 PORTNAME=	akode-plugins-${PORTNAMESUFX}
-PORTVERSION=	${KDE_VERSION}
+PORTVERSION=	2.0.r1
+PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
-PKGNAMEPREFIX=	kdemultimedia-
-DISTNAME=	kdemultimedia-${PORTVERSION}
-DIST_SUBDIR=	KDE
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.kde-apps.org/content/
+MASTER_SITE_SUBDIR=lofi
+DISTNAME=	'download.php?content=30375'
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Musepack decoder plugin for akode
 
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
-
 CONFLICTS=	kdemultimedia-3.[1-3]*
+
+FETCH_CMD=	/usr/bin/fetch -Rr
 
 PLUGIN=		mpc_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
-USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
-
-USE_BZIP2=	yes
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
+USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/akode-2.0rc1
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
+		--with-extra-includes=${LOCALBASE}/include
+
+post-patch:
+	@${SETENV} TZ=UTC \
+	${TOUCH} -t 200511231529.06 ${WRKSRC}/akode/lib/akode_export.h.in
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${PLUGIN}@g' ${WRKSRC}/akode/plugins/Makefile.in
 
 do-build:
-	cd ${WRKSRC}/arts/runtime && gmake
-	cd ${WRKSRC}/akode && gmake
+	cd ${WRKSRC}/akode && ${GMAKE}
 
 do-install:
-	cd ${WRKSRC}/akode/plugins/${PLUGIN} && gmake install
+	cd ${WRKSRC}/akode/plugins/${PLUGIN} && ${GMAKE} install
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>

@@ -13,5 +13,5 @@ share/icons/crystalsvg/22x22/devices/camera.png
 share/icons/crystalsvg/22x22/filesystems/camera.png
 share/icons/crystalsvg/32x32/devices/camera.png
 share/icons/crystalsvg/32x32/filesystems/camera.png
-share/services/kamera.protocol
+share/services/camera.protocol
 @dirrm share/doc/HTML/en/kamera

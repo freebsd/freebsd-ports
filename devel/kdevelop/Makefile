@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.0
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
@@ -14,10 +14,12 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
-COMMENT=	Powerful IDE for developing KDE/Qt-based apps
+COMMENT=	IDE for a wide variety of programming tasks
 
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		msgfmt:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
+		svn_client-1.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
@@ -33,11 +35,21 @@ RUN_DEPENDS+=	kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
 
 # KDE_DISTNAME=		${PORTNAME}-${PORTVERSION}_for_KDE_3.1
 
+INSTALLS_SHLIB=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html
+CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
+		--with-db-includedir=${LOCALBASE}/include/db4 \
+		--with-db-libdir=${LOCALBASE}/lib --with-db-lib=db4 \
+		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
+		--with-apu-config=${LOCALBASE}/bin/apu-1-config \
+		--with-subversion-dir=${LOCALBASE} \
+		--with-svn-include=${LOCALBASE}/include \
+		--with-svn-lib=${LOCALBASE}/lib \
+		--with-neon-config=${LOCALBASE}/bin/neon-config
+
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/gnu-autotools/bin:${PATH}
 USE_REINPLACE=	yes
 
@@ -61,10 +73,6 @@ post-configure:
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' < ${FILESDIR}/kdevelop \
 		> ${WRKDIR}/kdevelop
-.if ${ARCH} == "amd64"
-	@${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -fPIC," \
-		${WRKSRC}/bdb/build_unix/Makefile ${WRKSRC}/bdb/Makefile
-.endif
 
 post-install:
 	@${MV} ${PREFIX}/bin/kdevelop ${PREFIX}/bin/kdevelop-bin

@@ -16,6 +16,8 @@ DISTNAME=	smooth-blend-${PORTVERSION}
 MAINTAINER=	decept0@gmail.com
 COMMENT=	A window decoration for KDE
 
+CONFLICTS=	kdeartwork-3.5.[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3

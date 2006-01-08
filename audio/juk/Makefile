@@ -17,8 +17,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE audio player
 
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
-
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		tag:${PORTSDIR}/audio/taglib \
@@ -62,12 +60,11 @@ pre-everything::
 .endif
 
 do-build:
-	cd ${WRKSRC}/arts/runtime && gmake
-	cd ${WRKSRC}/akode && gmake
-	cd ${WRKSRC}/juk && gmake
+	cd ${WRKSRC}/arts/runtime && ${GMAKE}
+	cd ${WRKSRC}/juk && ${GMAKE}
 
 do-install:
-	cd ${WRKSRC}/juk && gmake install
+	cd ${WRKSRC}/juk && ${GMAKE} install
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>

@@ -1,3 +1,2 @@
 lib/libakode_mpc_decoder.la
 lib/libakode_mpc_decoder.so
-lib/mcop/akodeMPCPlayObject.mcopclass

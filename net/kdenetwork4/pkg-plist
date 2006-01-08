@@ -24,6 +24,8 @@ include/kopete/kopeteaway.h
 include/kopete/kopeteawayaction.h
 include/kopete/kopeteawaydialog.h
 include/kopete/kopeteblacklister.h
+include/kopete/kopetechatsession.h
+include/kopete/kopetechatsessionmanager.h
 include/kopete/kopetecommandhandler.h
 include/kopete/kopetecontact.h
 include/kopete/kopetecontactlist.h
@@ -36,11 +38,8 @@ include/kopete/kopetemessage.h
 include/kopete/kopetemessageevent.h
 include/kopete/kopetemessagehandler.h
 include/kopete/kopetemessagehandlerchain.h
-include/kopete/kopetemessagemanager.h
-include/kopete/kopetemessagemanagerfactory.h
 include/kopete/kopetemetacontact.h
 include/kopete/kopetemimetypehandler.h
-include/kopete/kopetenotifyclient.h
 include/kopete/kopetenotifydataobject.h
 include/kopete/kopeteonlinestatus.h
 include/kopete/kopeteonlinestatusmanager.h
@@ -52,15 +51,21 @@ include/kopete/kopetesimplemessagehandler.h
 include/kopete/kopetetask.h
 include/kopete/kopetetransfermanager.h
 include/kopete/kopeteuiglobal.h
+include/kopete/kopeteversion.h
 include/kopete/kopetexsl.h
 include/kopete/managedconnectionaccount.h
 include/kopete/ui/accountselector.h
 include/kopete/ui/addcontactpage.h
+include/kopete/ui/addressbookselectordialog.h
+include/kopete/ui/addressbookselectorwidget.h
 include/kopete/ui/editaccountwidget.h
 include/kopete/ui/fileconfirmbase.h
 include/kopete/ui/kopeteawaydialogbase.h
 include/kopete/ui/kopetecontactaction.h
 include/kopete/ui/kopetefileconfirmdialog.h
+include/kopete/ui/kopetelistview.h
+include/kopete/ui/kopetelistviewitem.h
+include/kopete/ui/kopetelistviewsearchline.h
 include/kopete/ui/kopetepassworddialog.h
 include/kopete/ui/kopetepasswordwidget.h
 include/kopete/ui/kopetepasswordwidgetbase.h
@@ -92,6 +97,8 @@ lib/kde3/kcm_kopete_appearanceconfig.la
 lib/kde3/kcm_kopete_appearanceconfig.so
 lib/kde3/kcm_kopete_autoreplace.la
 lib/kde3/kcm_kopete_autoreplace.so
+lib/kde3/kcm_kopete_avdeviceconfig.la
+lib/kde3/kcm_kopete_avdeviceconfig.so
 lib/kde3/kcm_kopete_behaviorconfig.la
 lib/kde3/kcm_kopete_behaviorconfig.so
 lib/kde3/kcm_kopete_cryptography.la
@@ -100,6 +107,8 @@ lib/kde3/kcm_kopete_highlight.la
 lib/kde3/kcm_kopete_highlight.so
 lib/kde3/kcm_kopete_history.la
 lib/kde3/kcm_kopete_history.so
+lib/kde3/kcm_kopete_identityconfig.la
+lib/kde3/kcm_kopete_identityconfig.so
 lib/kde3/kcm_kopete_latex.la
 lib/kde3/kcm_kopete_latex.so
 lib/kde3/kcm_kopete_msn.la
@@ -122,12 +131,16 @@ lib/kde3/kded_dnssdwatcher.la
 lib/kde3/kded_dnssdwatcher.so
 lib/kde3/kded_kinetd.la
 lib/kde3/kded_kinetd.so
+lib/kde3/kdict.la
+lib/kde3/kdict.so
 lib/kde3/kdict_panelapplet.la
 lib/kde3/kdict_panelapplet.so
 lib/kde3/kfile_torrent.la
 lib/kde3/kfile_torrent.so
 lib/kde3/khtml_kget.la
 lib/kde3/khtml_kget.so
+lib/kde3/kio_jabberdisco.la
+lib/kde3/kio_jabberdisco.so
 lib/kde3/kio_zeroconf.la
 lib/kde3/kio_zeroconf.so
 lib/kde3/knewsticker_panelapplet.la
@@ -176,6 +189,8 @@ lib/kde3/kopete_sms.la
 lib/kde3/kopete_sms.so
 lib/kde3/kopete_statistics.la
 lib/kde3/kopete_statistics.so
+lib/kde3/kopete_testbed.la
+lib/kde3/kopete_testbed.so
 lib/kde3/kopete_texteffect.la
 lib/kde3/kopete_texteffect.so
 lib/kde3/kopete_translator.la
@@ -196,6 +211,8 @@ lib/kde3/libkntsrcfilepropsdlg.la
 lib/kde3/libkntsrcfilepropsdlg.so
 lib/kde3/libkrichtexteditpart.la
 lib/kde3/libkrichtexteditpart.so
+lib/libkdeinit_kdict.la
+lib/libkdeinit_kdict.so
 lib/libkdeinit_ksirc.la
 lib/libkdeinit_ksirc.so
 lib/libkopete.la
@@ -207,6 +224,9 @@ lib/libkopete_msn_shared.so.0
 lib/libkopete_oscar.la
 lib/libkopete_oscar.so
 lib/libkopete_oscar.so.2
+lib/libkopete_videodevice.la
+lib/libkopete_videodevice.so
+lib/libkopete_videodevice.so.0
 lib/librss.la
 lib/librss.so
 lib/librss.so.1
@@ -243,6 +263,7 @@ share/apps/kdict/icons/crystalsvg/16x16/actions/query_erase.png
 share/apps/kdict/icons/crystalsvg/22x22/actions/define_clip.png
 share/apps/kdict/icons/crystalsvg/32x32/actions/define_clip.png
 share/apps/kdict/kdictui.rc
+share/apps/kget/eventsrc
 share/apps/kget/icons/crystalsvg/22x22/actions/bar0.png
 share/apps/kget/icons/crystalsvg/22x22/actions/bar1.png
 share/apps/kget/icons/crystalsvg/22x22/actions/bar2.png
@@ -251,6 +272,7 @@ share/apps/kget/icons/crystalsvg/22x22/actions/bar4.png
 share/apps/kget/icons/crystalsvg/22x22/actions/bar5.png
 share/apps/kget/icons/crystalsvg/22x22/actions/bar6.png
 share/apps/kget/icons/crystalsvg/22x22/actions/kget_dock.png
+share/apps/kget/icons/crystalsvg/22x22/actions/kget_dock_download.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_clipboard.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_delay.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_disconnect.png
@@ -261,9 +283,7 @@ share/apps/kget/icons/crystalsvg/22x22/actions/tool_logwindow.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_normal.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_offline_mode_off.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_offline_mode_on.png
-share/apps/kget/icons/crystalsvg/22x22/actions/tool_paste.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_pause.png
-share/apps/kget/icons/crystalsvg/22x22/actions/tool_preferences.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_queue.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_restart.png
 share/apps/kget/icons/crystalsvg/22x22/actions/tool_resume.png
@@ -293,10 +313,6 @@ share/apps/kget/pics/try4.png
 share/apps/kget/pics/try5.png
 share/apps/kget/pics/try6.png
 share/apps/kget/pics/try7.png
-share/apps/kget/sounds/added.wav
-share/apps/kget/sounds/finished.wav
-share/apps/kget/sounds/finishedall.wav
-share/apps/kget/sounds/started.wav
 share/apps/khtml/kpartplugins/kget_plug_in.desktop
 share/apps/khtml/kpartplugins/kget_plug_in.rc
 share/apps/kicker/applets/kdictapplet.desktop
@@ -304,24 +320,34 @@ share/apps/kicker/applets/knewsticker.desktop
 share/apps/kicker/applets/kpfapplet.desktop
 share/apps/kinetd/eventsrc
 share/apps/knewsticker/eventsrc
+share/apps/konqueror/servicemenus/kget_download.desktop
 share/apps/konqueror/servicemenus/smb2rdc.desktop
 share/apps/kopete/eventsrc
 share/apps/kopete/icons/crystalsvg/128x128/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/kopete_avdevice.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/128x128/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/128x128/apps/yahoo_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/account_offline_overlay.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/aim_away.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/aim_connecting.mng
 share/apps/kopete/icons/crystalsvg/16x16/actions/aim_offline.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/aim_online.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_away_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_busy_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_food_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_invisible_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_phone_overlay.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/contact_xa_overlay.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/emoticon.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_away.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_busy_d.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_con.mng
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_connecting.png
+share/apps/kopete/icons/crystalsvg/16x16/actions/gg_description_overlay.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_ignored.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi.png
 share/apps/kopete/icons/crystalsvg/16x16/actions/gg_invi_d.png
@@ -403,12 +429,14 @@ share/apps/kopete/icons/crystalsvg/16x16/apps/irc_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/jabber_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/16x16/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/16x16/apps/yahoo_protocol.png
 share/apps/kopete/icons/crystalsvg/22x22/actions/account_offline_overlay.png
 share/apps/kopete/icons/crystalsvg/22x22/actions/kopeteavailable.png
 share/apps/kopete/icons/crystalsvg/22x22/actions/kopeteaway.png
 share/apps/kopete/icons/crystalsvg/22x22/actions/logging.png
 share/apps/kopete/icons/crystalsvg/22x22/apps/groupwise_protocol.png
+share/apps/kopete/icons/crystalsvg/22x22/apps/kopete_avdevice.png
 share/apps/kopete/icons/crystalsvg/32x32/actions/account_offline_overlay.png
 share/apps/kopete/icons/crystalsvg/32x32/actions/kopeteavailable.png
 share/apps/kopete/icons/crystalsvg/32x32/actions/kopeteaway.png
@@ -427,9 +455,11 @@ share/apps/kopete/icons/crystalsvg/32x32/apps/highlight.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/irc_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/jabber_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/kopete_avdevice.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/latex.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/32x32/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/texteffect.png
 share/apps/kopete/icons/crystalsvg/32x32/apps/yahoo_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/actions/kopeteavailable.png
@@ -444,13 +474,16 @@ share/apps/kopete/icons/crystalsvg/48x48/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/jabber_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/48x48/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/48x48/apps/yahoo_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/actions/logging.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/aim_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/groupwise_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/icq_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/kopete_avdevice.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/sms_protocol.png
+share/apps/kopete/icons/crystalsvg/64x64/apps/testbed_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/yahoo_protocol.png
 share/apps/kopete/icons/crystalsvg/scalable/actions/account_offline_overlay.svgz
 share/apps/kopete/icons/hicolor/16x16/actions/aim_away.png
@@ -515,11 +548,15 @@ share/apps/kopete/styles/Enclosed.xsl
 share/apps/kopete/styles/Gaim.xsl
 share/apps/kopete/styles/Keramik.xsl
 share/apps/kopete/styles/Konsole.xsl
+share/apps/kopete/styles/Kopete-old.xsl
 share/apps/kopete/styles/Kopete.xsl
 share/apps/kopete/styles/MSN.xsl
 share/apps/kopete/styles/Minimal.xsl
 share/apps/kopete/styles/XChat.xsl
 share/apps/kopete/styles/data/Adium/adium.js
+share/apps/kopete/styles/data/Kopete/action.png
+share/apps/kopete/styles/data/Kopete/important.png
+share/apps/kopete/styles/data/Kopete/system.png
 share/apps/kopete/styles/data/iChat-Trans/blue/From/bl.png
 share/apps/kopete/styles/data/iChat-Trans/blue/From/bm.png
 share/apps/kopete/styles/data/iChat-Trans/blue/From/br.png
@@ -841,19 +878,23 @@ share/apps/kopete/styles/data/iChat/yellow/To/tr.png
 share/apps/kopete/styles/data/iChat/yellow/me.png
 share/apps/kopete/styles/data/iChat/yellow/them.png
 share/apps/kopete/styles/iChat.xsl
-share/apps/kopete/webpresence/webpresencedefault.xsl
-share/apps/kopete/webpresence/wpimages.xsl
+share/apps/kopete/webpresence/webpresence_html.xsl
+share/apps/kopete/webpresence/webpresence_html_images.xsl
+share/apps/kopete/webpresence/webpresence_xhtml.xsl
+share/apps/kopete/webpresence/webpresence_xhtml_images.xsl
 share/apps/kopete_contactnotes/contactnotesui.rc
 share/apps/kopete_cryptography/cryptographychatui.rc
 share/apps/kopete_cryptography/cryptographyui.rc
 share/apps/kopete_groupwise/gwchatui.rc
 share/apps/kopete_history/historychatui.rc
 share/apps/kopete_history/historyui.rc
+share/apps/kopete_latex/latexchatui.rc
 share/apps/kopete_msn/msnchatui.rc
 share/apps/kopete_netmeeting/netmeetingchatui.rc
 share/apps/kopete_statistics/statisticsui.rc
 share/apps/kopete_translator/translatorchatui.rc
 share/apps/kopete_translator/translatorui.rc
+share/apps/kopete_yahoo/yahoochatui.rc
 share/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
 share/apps/kppp/Provider/Austria/.directory
 share/apps/kppp/Provider/Austria/Simon%032Media
@@ -899,14 +940,12 @@ share/apps/kppp/Provider/Irland/UTV
 share/apps/kppp/Provider/Irland/UVT
 share/apps/kppp/Provider/Netherlands/.directory
 share/apps/kppp/Provider/Netherlands/12Move
-share/apps/kppp/Provider/Netherlands/Avades
 share/apps/kppp/Provider/Netherlands/Bart
 share/apps/kppp/Provider/Netherlands/Betuwenet%032BFree
 share/apps/kppp/Provider/Netherlands/Betuwenet%032BQuality
 share/apps/kppp/Provider/Netherlands/Cistron
 share/apps/kppp/Provider/Netherlands/Concepts%032ICT
 share/apps/kppp/Provider/Netherlands/Cubic%032Circle
-share/apps/kppp/Provider/Netherlands/Cybercomm
 share/apps/kppp/Provider/Netherlands/Dataweb
 share/apps/kppp/Provider/Netherlands/Daxis%032Internet
 share/apps/kppp/Provider/Netherlands/Demon%032Internet
@@ -1358,12 +1397,13 @@ share/apps/krfb/pics/eyes-open24.png
 share/apps/ksirc/autodcc.pl
 share/apps/ksirc/eventsrc
 share/apps/ksirc/filters.pl
-share/apps/ksirc/icons/crystalsvg/16x16/apps/ksirc.png
 share/apps/ksirc/icons/crystalsvg/22x22/actions/info.png
 share/apps/ksirc/icons/crystalsvg/22x22/actions/ksirc_dock.png
-share/apps/ksirc/icons/crystalsvg/32x32/apps/ksirc.png
-share/apps/ksirc/icons/crystalsvg/48x48/apps/ksirc.png
-share/apps/ksirc/icons/crystalsvg/64x64/apps/ksirc.png
+share/apps/ksirc/icons/hicolor/16x16/apps/ksirc.png
+share/apps/ksirc/icons/hicolor/22x22/apps/ksirc.png
+share/apps/ksirc/icons/hicolor/32x32/apps/ksirc.png
+share/apps/ksirc/icons/hicolor/48x48/apps/ksirc.png
+share/apps/ksirc/icons/hicolor/64x64/apps/ksirc.png
 share/apps/ksirc/ksirc.pl
 share/apps/ksirc/pics/X.png
 share/apps/ksirc/pics/action.png
@@ -1434,7 +1474,10 @@ share/apps/zeroconf/_rfb._tcp
 share/apps/zeroconf/_ssh._tcp
 share/apps/zeroconf/_webdav._tcp
 share/config.kcfg/historyconfig.kcfg
+share/config.kcfg/kopete.kcfg
+share/config.kcfg/kopeteidentityconfigpreferences.kcfg
 share/config.kcfg/latexconfig.kcfg
+share/config.kcfg/nowlisteningconfig.kcfg
 share/config/ksircrc
 share/config/ktalkdrc
 share/doc/HTML/en/kcontrol/kcmtalkd/common
@@ -1443,7 +1486,6 @@ share/doc/HTML/en/kcontrol/kcmtalkd/index.docbook
 share/doc/HTML/en/kcontrol/lanbrowser/common
 share/doc/HTML/en/kcontrol/lanbrowser/index.cache.bz2
 share/doc/HTML/en/kcontrol/lanbrowser/index.docbook
-share/doc/HTML/en/kdenetwork-apidocs/common
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/common
 share/doc/HTML/en/kdict/conf.png
@@ -1452,22 +1494,6 @@ share/doc/HTML/en/kdict/index.docbook
 share/doc/HTML/en/kdict/mainwin.png
 share/doc/HTML/en/kdict/seteditor.png
 share/doc/HTML/en/kget/common
-share/doc/HTML/en/kget/cr22-action-tool_delay.png
-share/doc/HTML/en/kget/cr22-action-tool_delete.png
-share/doc/HTML/en/kget/cr22-action-tool_disconnect.png
-share/doc/HTML/en/kget/cr22-action-tool_drop_target.png
-share/doc/HTML/en/kget/cr22-action-tool_expert.png
-share/doc/HTML/en/kget/cr22-action-tool_logwindow.png
-share/doc/HTML/en/kget/cr22-action-tool_offline_mode_off.png
-share/doc/HTML/en/kget/cr22-action-tool_offline_mode_on.png
-share/doc/HTML/en/kget/cr22-action-tool_paste.png
-share/doc/HTML/en/kget/cr22-action-tool_pause.png
-share/doc/HTML/en/kget/cr22-action-tool_queue.png
-share/doc/HTML/en/kget/cr22-action-tool_restart.png
-share/doc/HTML/en/kget/cr22-action-tool_resume.png
-share/doc/HTML/en/kget/cr22-action-tool_shutdown.png
-share/doc/HTML/en/kget/cr22-action-tool_timer.png
-share/doc/HTML/en/kget/cr22-action-tool_uselastdir.png
 share/doc/HTML/en/kget/fileopen.png
 share/doc/HTML/en/kget/index.cache.bz2
 share/doc/HTML/en/kget/index.docbook
@@ -1589,52 +1615,62 @@ share/doc/HTML/en/ktalkd/index.docbook
 share/doc/HTML/en/kwifimanager/common
 share/doc/HTML/en/kwifimanager/index.cache.bz2
 share/doc/HTML/en/kwifimanager/index.docbook
-share/icons/crystalsvg/128x128/apps/kdict.png
-share/icons/crystalsvg/128x128/apps/kopete.png
-share/icons/crystalsvg/128x128/apps/kppp.png
 share/icons/crystalsvg/128x128/apps/ktalkd.png
-share/icons/crystalsvg/16x16/apps/kdict.png
-share/icons/crystalsvg/16x16/apps/knewsticker.png
-share/icons/crystalsvg/16x16/apps/kopete.png
+share/icons/crystalsvg/16x16/apps/kget.png
 share/icons/crystalsvg/16x16/apps/kpf.png
-share/icons/crystalsvg/16x16/apps/kppp.png
-share/icons/crystalsvg/16x16/apps/ksirc.png
+share/icons/crystalsvg/16x16/apps/krfb.png
 share/icons/crystalsvg/16x16/apps/ktalkd.png
+share/icons/crystalsvg/16x16/mimetypes/kget_list.png
 share/icons/crystalsvg/16x16/mimetypes/kopete_emoticons.png
 share/icons/crystalsvg/22x22/actions/khtml_kget.png
-share/icons/crystalsvg/22x22/apps/kopete.png
+share/icons/crystalsvg/22x22/apps/kget.png
 share/icons/crystalsvg/22x22/apps/kopete_all_away.png
 share/icons/crystalsvg/22x22/apps/kopete_offline.png
 share/icons/crystalsvg/22x22/apps/kopete_some_away.png
 share/icons/crystalsvg/22x22/apps/kopete_some_online.png
+share/icons/crystalsvg/22x22/apps/ktalkd.png
+share/icons/crystalsvg/22x22/mimetypes/kget_list.png
 share/icons/crystalsvg/22x22/mimetypes/kopete_emoticons.png
-share/icons/crystalsvg/32x32/apps/kdict.png
-share/icons/crystalsvg/32x32/apps/knewsticker.png
-share/icons/crystalsvg/32x32/apps/kopete.png
+share/icons/crystalsvg/32x32/apps/kget.png
 share/icons/crystalsvg/32x32/apps/kpf.png
-share/icons/crystalsvg/32x32/apps/kppp.png
 share/icons/crystalsvg/32x32/apps/krdc.png
 share/icons/crystalsvg/32x32/apps/krfb.png
-share/icons/crystalsvg/32x32/apps/ksirc.png
 share/icons/crystalsvg/32x32/apps/ktalkd.png
-share/icons/crystalsvg/48x48/apps/kdict.png
+share/icons/crystalsvg/32x32/mimetypes/kget_list.png
 share/icons/crystalsvg/48x48/apps/kget.png
-share/icons/crystalsvg/48x48/apps/knewsticker.png
-share/icons/crystalsvg/48x48/apps/kopete.png
 share/icons/crystalsvg/48x48/apps/kpf.png
-share/icons/crystalsvg/48x48/apps/kppp.png
 share/icons/crystalsvg/48x48/apps/krdc.png
 share/icons/crystalsvg/48x48/apps/krfb.png
-share/icons/crystalsvg/48x48/apps/ksirc.png
 share/icons/crystalsvg/48x48/apps/ktalkd.png
 share/icons/crystalsvg/48x48/mimetypes/kget_list.png
-share/icons/crystalsvg/64x64/apps/kdict.png
-share/icons/crystalsvg/64x64/apps/kopete.png
-share/icons/crystalsvg/64x64/apps/kppp.png
-share/icons/crystalsvg/64x64/apps/ksirc.png
-share/icons/crystalsvg/scalable/apps/kdict.svgz
-share/icons/crystalsvg/scalable/apps/kopete2.svgz
+share/icons/hicolor/128x128/apps/kdict.png
+share/icons/hicolor/128x128/apps/kopete.png
+share/icons/hicolor/128x128/apps/kppp.png
 share/icons/hicolor/16x16/apps/kcmsambaconf.png
+share/icons/hicolor/16x16/apps/kdict.png
+share/icons/hicolor/16x16/apps/knewsticker.png
+share/icons/hicolor/16x16/apps/kopete.png
+share/icons/hicolor/16x16/apps/kppp.png
+share/icons/hicolor/16x16/apps/ksirc.png
+share/icons/hicolor/22x22/apps/kopete.png
+share/icons/hicolor/22x22/apps/kppp.png
+share/icons/hicolor/22x22/apps/ksirc.png
+share/icons/hicolor/32x32/apps/kdict.png
+share/icons/hicolor/32x32/apps/knewsticker.png
+share/icons/hicolor/32x32/apps/kopete.png
+share/icons/hicolor/32x32/apps/kppp.png
+share/icons/hicolor/32x32/apps/ksirc.png
+share/icons/hicolor/48x48/apps/kdict.png
+share/icons/hicolor/48x48/apps/knewsticker.png
+share/icons/hicolor/48x48/apps/kopete.png
+share/icons/hicolor/48x48/apps/kppp.png
+share/icons/hicolor/48x48/apps/ksirc.png
+share/icons/hicolor/64x64/apps/kdict.png
+share/icons/hicolor/64x64/apps/kopete.png
+share/icons/hicolor/64x64/apps/kppp.png
+share/icons/hicolor/64x64/apps/ksirc.png
+share/icons/hicolor/scalable/apps/kdict.svgz
+share/icons/hicolor/scalable/apps/kopete2.svgz
 share/icons/locolor/16x16/apps/krfb.png
 share/icons/locolor/32x32/apps/krfb.png
 share/mimelnk/application/x-icq.desktop
@@ -1644,7 +1680,9 @@ share/services/aim.protocol
 share/services/chatwindow.desktop
 share/services/emailwindow.desktop
 share/services/fileshare_propsdlgplugin.desktop
+share/services/invitation.protocol
 share/services/irc.protocol
+share/services/jabberdisco.protocol
 share/services/kconfiguredialog/kopete_addbookmarks_config.desktop
 share/services/kconfiguredialog/kopete_alias_config.desktop
 share/services/kconfiguredialog/kopete_autoreplace_config.desktop
@@ -1670,6 +1708,7 @@ share/services/kopete_aim.desktop
 share/services/kopete_alias.desktop
 share/services/kopete_appearanceconfig.desktop
 share/services/kopete_autoreplace.desktop
+share/services/kopete_avdeviceconfig.desktop
 share/services/kopete_behaviorconfig.desktop
 share/services/kopete_connectionstatus.desktop
 share/services/kopete_contactnotes.desktop
@@ -1679,6 +1718,7 @@ share/services/kopete_groupwise.desktop
 share/services/kopete_highlight.desktop
 share/services/kopete_history.desktop
 share/services/kopete_icq.desktop
+share/services/kopete_identityconfig.desktop
 share/services/kopete_irc.desktop
 share/services/kopete_jabber.desktop
 share/services/kopete_latex.desktop
@@ -1687,6 +1727,7 @@ share/services/kopete_netmeeting.desktop
 share/services/kopete_nowlistening.desktop
 share/services/kopete_sms.desktop
 share/services/kopete_statistics.desktop
+share/services/kopete_testbed.desktop
 share/services/kopete_texteffect.desktop
 share/services/kopete_translator.desktop
 share/services/kopete_webpresence.desktop
@@ -1700,6 +1741,10 @@ share/servicetypes/kinetdmodule.desktop
 share/servicetypes/kopeteplugin.desktop
 share/servicetypes/kopeteprotocol.desktop
 share/servicetypes/kopeteui.desktop
+share/sounds/KGet_Added.ogg
+share/sounds/KGet_Finished.ogg
+share/sounds/KGet_Finished_All.ogg
+share/sounds/KGet_Started.ogg
 share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg
@@ -1707,8 +1752,11 @@ share/sounds/Kopete_User_is_Online.ogg
 share/sounds/ktalkd.wav
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/html
 @dirrm share/services/kconfiguredialog
 @dirrm share/doc/HTML/en/kwifimanager
 @dirrm share/doc/HTML/en/ktalkd
@@ -1723,6 +1771,7 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kdict
 @dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
 @dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete
+@dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete/html
 @dirrm share/doc/HTML/en/kdenetwork-apidocs/kopete
 @dirrm share/doc/HTML/en/kdenetwork-apidocs
 @dirrm share/doc/HTML/en/kcontrol/lanbrowser
@@ -1730,16 +1779,19 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/remoteview
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
-@dirrm share/apps/ksirc/icons/crystalsvg/64x64/apps
-@dirrm share/apps/ksirc/icons/crystalsvg/64x64
-@dirrm share/apps/ksirc/icons/crystalsvg/48x48/apps
-@dirrm share/apps/ksirc/icons/crystalsvg/48x48
-@dirrm share/apps/ksirc/icons/crystalsvg/32x32/apps
-@dirrm share/apps/ksirc/icons/crystalsvg/32x32
+@dirrm share/apps/ksirc/icons/hicolor/64x64/apps
+@dirrm share/apps/ksirc/icons/hicolor/64x64
+@dirrm share/apps/ksirc/icons/hicolor/48x48/apps
+@dirrm share/apps/ksirc/icons/hicolor/48x48
+@dirrm share/apps/ksirc/icons/hicolor/32x32/apps
+@dirrm share/apps/ksirc/icons/hicolor/32x32
+@dirrm share/apps/ksirc/icons/hicolor/22x22/apps
+@dirrm share/apps/ksirc/icons/hicolor/22x22
+@dirrm share/apps/ksirc/icons/hicolor/16x16/apps
+@dirrm share/apps/ksirc/icons/hicolor/16x16
+@dirrm share/apps/ksirc/icons/hicolor
 @dirrm share/apps/ksirc/icons/crystalsvg/22x22/actions
 @dirrm share/apps/ksirc/icons/crystalsvg/22x22
-@dirrm share/apps/ksirc/icons/crystalsvg/16x16/apps
-@dirrm share/apps/ksirc/icons/crystalsvg/16x16
 @dirrm share/apps/ksirc/icons/crystalsvg
 @dirrm share/apps/ksirc/icons
 @dirrm share/apps/ksirc
@@ -1822,10 +1874,12 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Provider
 @dirrm share/apps/kppp
 @dirrm share/apps/kopeterichtexteditpart
+@dirrm share/apps/kopete_yahoo
 @dirrm share/apps/kopete_translator
 @dirrm share/apps/kopete_statistics
 @dirrm share/apps/kopete_netmeeting
 @dirrm share/apps/kopete_msn
+@dirrm share/apps/kopete_latex
 @dirrm share/apps/kopete_history
 @dirrm share/apps/kopete_groupwise
 @dirrm share/apps/kopete_cryptography
@@ -1881,6 +1935,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kopete/styles/data/iChat-Trans/blue
 @dirrm share/apps/kopete/styles/data/iChat-Trans
 @dirrm share/apps/kopete/styles/data/iChat
+@dirrm share/apps/kopete/styles/data/Kopete
 @dirrm share/apps/kopete/styles/data/Adium
 @dirrm share/apps/kopete/styles/data
 @dirrm share/apps/kopete/styles
@@ -1923,7 +1978,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/knewsticker
 @dirrm share/apps/kinetd
 @dirrm share/apps/khtml/kpartplugins
-@dirrm share/apps/kget/sounds
 @dirrm share/apps/kget/pics
 @dirrm share/apps/kget/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kget/icons/crystalsvg/22x22

@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,15 +15,17 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Utilities for the KDE integrated X11 desktop
 
-LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-CONFLICTS=	kgpg-*
+CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
 
 USE_KDELIBS_VER=3
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 
+USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
@@ -32,8 +33,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 DO_NOT_COMPILE+=klaptopdaemon kmilo
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-
-CONFLICTS=	kgpg-[0-9]*
+CONFIGURE_ARGS+=--with-pythondir=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3

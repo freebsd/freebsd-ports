@@ -138,7 +138,10 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0059-qpopup_has_mouse.patch \
 		${PATCHDIR}/0060-qpopup_ignore_mousepos.patch \
 		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch \
-		${PATCHDIR}/0064-fix_gcc4.patch
+		${PATCHDIR}/0064-fix_gcc4.patch \
+		${PATCHDIR}/0065-fix_werror_with_gcc4.patch \
+		${PATCHDIR}/0066-fcsort2fcmatch.patch \
+		${PATCHDIR}/0067-nofclist.patch
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*

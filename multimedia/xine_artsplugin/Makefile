@@ -7,7 +7,6 @@
 
 PORTNAME=	xine_artsplugin
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,8 +16,6 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Xine-based multimedia backend for KDE
-
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/kdemultimedia3/files/patch-configure
 
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 

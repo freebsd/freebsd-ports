@@ -1,8 +1,13 @@
+bin/akode-config
+bin/akodeplay
+include/akode/akode_export.h
 include/akode/akodelib.h
 include/akode/audiobuffer.h
 include/akode/audioconfiguration.h
 include/akode/audioframe.h
 include/akode/auto_sink.h
+include/akode/buffered_decoder.h
+include/akode/bytebuffer.h
 include/akode/converter.h
 include/akode/crossfader.h
 include/akode/decoder.h
@@ -10,7 +15,6 @@ include/akode/encoder.h
 include/akode/fast_resampler.h
 include/akode/file.h
 include/akode/framedecoder.h
-include/akode/frametostream_decoder.h
 include/akode/localfile.h
 include/akode/magic.h
 include/akode/mmapfile.h
@@ -18,16 +22,10 @@ include/akode/player.h
 include/akode/pluginhandler.h
 include/akode/resampler.h
 include/akode/sink.h
-include/akode/streamdecoder.h
-include/akode/streamtoframe_decoder.h
+include/akode/void_sink.h
 include/akode/volumefilter.h
 include/akode/wav_decoder.h
 lib/libakode.la
 lib/libakode.so
-lib/libakode.so.1
-lib/libarts_akode.la
-lib/libarts_akode.so
-lib/mcop/akodePlayObject.mcopclass
-lib/mcop/akodearts.mcopclass
-lib/mcop/akodearts.mcoptype
+lib/libakode.so.2
 @dirrm include/akode

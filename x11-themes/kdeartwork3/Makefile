@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
 
-CONFLICTS=	phase-[0-9]*
+CONFLICTS=	phase-[0-9]* kde-windeco-smoothblend-[0.9]*
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}

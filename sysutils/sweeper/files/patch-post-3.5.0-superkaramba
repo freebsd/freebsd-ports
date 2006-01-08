@@ -1,0 +1,156 @@
+--- superkaramba/src/memsensor.cpp.orig	Wed Dec 21 12:35:21 2005
++++ superkaramba/src/memsensor.cpp	Wed Dec 21 12:41:09 2005
+@@ -14,7 +14,7 @@
+ #include <qstring.h>
+ #include <qregexp.h>
+ 
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+ #include <sys/time.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+@@ -32,14 +32,14 @@
+ #include <sys/swap.h>
+ #endif
+ 
+-#if defined __FreeBSD__ || defined(Q_OS_NETBSD)
++#if defined Q_OS_FREEBSD || defined(Q_OS_NETBSD)
+ /* define pagetok in terms of pageshift */
+ #define pagetok(size) ((size) << pageshift)
+ #endif
+ 
+ MemSensor::MemSensor(int msec) : Sensor(msec)
+ {
+-#if defined __FreeBSD__ || defined(Q_OS_NETBSD)
++#if defined Q_OS_FREEBSD || defined(Q_OS_NETBSD)
+    /* get the page size with "getpagesize" and calculate pageshift from it */
+     int pagesize = getpagesize();
+     pageshift = 0;
+@@ -51,7 +51,7 @@
+ 
+     /* we only need the amount of log(2)1024 for our conversion */
+     pageshift -= 10;
+-# if (defined(__FreeBSD__) && __FreeBSD_version < 500018)
++# if (defined(Q_OS_FREEBSD) && __FreeBSD_version < 500018)
+     connect(&ksp, SIGNAL(receivedStdout(KProcess *, char *, int )),
+             this,SLOT(receivedStdout(KProcess *, char *, int )));
+     connect(&ksp, SIGNAL(processExited(KProcess *)),
+@@ -62,7 +62,7 @@
+     MaxSet = false;
+ 
+     readValues();
+-# elif defined __FreeBSD__
++# elif defined Q_OS_FREEBSD
+     kd = kvm_open("/dev/null", "/dev/null", "/dev/null", O_RDONLY, "kvm_open");
+ # endif
+ #else
+@@ -73,7 +73,7 @@
+ MemSensor::~MemSensor()
+ {}
+ 
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+ void MemSensor::receivedStdout(KProcess *, char *buffer, int len )
+ {
+     buffer[len] = 0;
+@@ -87,7 +87,7 @@
+ 
+ void MemSensor::processExited(KProcess *)
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+     QStringList stringList = QStringList::split('\n',sensorResult);
+     sensorResult = "";
+     QStringList itemsList = QStringList::split(' ', stringList[1]);
+@@ -99,7 +99,7 @@
+ 
+ int MemSensor::getMemTotal()
+ {
+-#if defined __FreeBSD || defined(Q_OS_NETBSD)
++#if defined Q_OS_FREEBSD || defined(Q_OS_NETBSD)
+     static int mem = 0;
+     size_t size = sizeof(mem);
+ 
+@@ -114,7 +114,7 @@
+ 
+ int MemSensor::getMemFree()
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+     static int mem = 0;
+     size_t size = sizeof(mem);
+ 
+@@ -138,7 +138,7 @@
+ 
+ int MemSensor::getBuffers()
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+     static int mem = 0;
+     size_t size = sizeof(mem);
+ 
+@@ -159,7 +159,7 @@
+ 
+ int MemSensor::getCached()
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+     static int mem = 0;
+     size_t size = sizeof(mem);
+ 
+@@ -179,7 +179,7 @@
+ 
+ int MemSensor::getSwapTotal()
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+ # if __FreeBSD_version < 500018
+     return(swapTotal);
+ # else
+@@ -221,7 +221,7 @@
+ 
+ int MemSensor::getSwapFree()
+ {
+-#ifdef __FreeBSD__
++#ifdef Q_OS_FREEBSD
+ # if __FreeBSD_version < 500018
+     return(swapTotal - swapUsed);
+ # else
+@@ -266,8 +266,8 @@
+ 
+ void MemSensor::readValues()
+ {
+-#if defined __FreeBSD__ || defined(Q_OS_NETBSD)
+-# if (defined(__FreeBSD__) && __FreeBSD_version < 500018)
++#if defined Q_OS_FREEBSD || defined(Q_OS_NETBSD)
++# if (defined(Q_OS_FREEBSD) && __FreeBSD_version < 500018)
+     ksp.clearArguments();
+     ksp << "swapinfo";
+     ksp.start( KProcess::NotifyOnExit,KProcIO::Stdout);
+@@ -291,7 +291,7 @@
+     SensorParams *sp;
+     Meter *meter;
+     QObjectListIt it( *objList );
+-#if (defined(__FreeBSD__) && __FreeBSD_version < 500018)
++#if (defined(Q_OS_FREEBSD) && __FreeBSD_version < 500018)
+     bool set = false;
+ #endif
+     int totalMem = getMemTotal();
+@@ -303,7 +303,7 @@
+     while (it != 0)
+     {
+         sp = (SensorParams*)(*it);
+-#if (defined(__FreeBSD__) && __FreeBSD_version < 500018)
++#if (defined(Q_OS_FREEBSD) && __FreeBSD_version < 500018)
+         if ( (!MaxSet) && (totalSwap > 0) ) {
+            setMaxValue(sp);
+            bool set = true;
+@@ -331,7 +331,7 @@
+         meter->setValue(format);
+         ++it;
+     }
+-#if (defined(__FreeBSD__) && __FreeBSD_version < 500018)
++#if (defined(Q_OS_FREEBSD) && __FreeBSD_version < 500018)
+     if (set)
+         MaxSet = true;
+ #endif
