@@ -1309,6 +1309,7 @@
     SUBDIR += pear-apd
     SUBDIR += pecl-runkit
     SUBDIR += pecl-statgrab
+    SUBDIR += pecl-svn
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy
