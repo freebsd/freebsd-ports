@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	5.67
+PORTVERSION=	5.87
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Image
@@ -19,20 +19,25 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::RandomAccess.3 \
 		Image::ExifTool.3 \
+		Image::ExifTool::APP12.3 \
 		Image::ExifTool::BMP.3 \
 		Image::ExifTool::BuildTagLookup.3 \
 		Image::ExifTool::Canon.3 \
 		Image::ExifTool::CanonCustom.3 \
 		Image::ExifTool::CanonRaw.3 \
 		Image::ExifTool::Casio.3 \
+		Image::ExifTool::DICOM.3 \
 		Image::ExifTool::Exif.3 \
 		Image::ExifTool::Fixup.3 \
 		Image::ExifTool::FujiFilm.3 \
+		Image::ExifTool::GIF.3 \
 		Image::ExifTool::GPS.3 \
 		Image::ExifTool::GeoTiff.3 \
+		Image::ExifTool::HtmlDump.3 \
 		Image::ExifTool::ICC_Profile.3 \
 		Image::ExifTool::ID3.3 \
 		Image::ExifTool::IPTC.3 \
+		Image::ExifTool::JVC.3 \
 		Image::ExifTool::Jpeg2000.3 \
 		Image::ExifTool::Kodak.3 \
 		Image::ExifTool::Leaf.3 \
@@ -41,6 +46,7 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::MakerNotes.3 \
 		Image::ExifTool::Minolta.3 \
 		Image::ExifTool::Nikon.3 \
+		Image::ExifTool::NikonCapture.3 \
 		Image::ExifTool::Olympus.3 \
 		Image::ExifTool::PDF.3 \
 		Image::ExifTool::PICT.3 \
@@ -54,8 +60,10 @@ MAN3=		File::RandomAccess.3 \
 		Image::ExifTool::QuickTime.3 \
 		Image::ExifTool::Ricoh.3 \
 		Image::ExifTool::Sanyo.3 \
+		Image::ExifTool::Shift.3 \
 		Image::ExifTool::Shortcuts.3 \
 		Image::ExifTool::Sigma.3 \
+		Image::ExifTool::SigmaRaw.3 \
 		Image::ExifTool::Sony.3 \
 		Image::ExifTool::TagLookup.3 \
 		Image::ExifTool::TagNames.3 \

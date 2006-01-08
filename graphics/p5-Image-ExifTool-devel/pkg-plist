@@ -3,20 +3,25 @@ bin/exiftool
 %%SITE_PERL%%/File/RandomAccess.pod
 %%SITE_PERL%%/Image/ExifTool.pm
 %%SITE_PERL%%/Image/ExifTool.pod
+%%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
 %%SITE_PERL%%/Image/ExifTool/CanonCustom.pm
 %%SITE_PERL%%/Image/ExifTool/CanonRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Casio.pm
+%%SITE_PERL%%/Image/ExifTool/DICOM.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
 %%SITE_PERL%%/Image/ExifTool/FujiFilm.pm
+%%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
+%%SITE_PERL%%/Image/ExifTool/HtmlDump.pm
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
+%%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
@@ -25,6 +30,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
+%%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
@@ -39,8 +45,10 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
+%%SITE_PERL%%/Image/ExifTool/Shift.pl
 %%SITE_PERL%%/Image/ExifTool/Shortcuts.pm
 %%SITE_PERL%%/Image/ExifTool/Sigma.pm
+%%SITE_PERL%%/Image/ExifTool/SigmaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Sony.pm
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
@@ -62,8 +70,10 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldump.html
 %%PORTDOCS%%%%DOCSDIR%%/idiosyncracies.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/models.html
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APP12.html
@@ -73,6 +83,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/CanonRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Casio.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Composite.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/DICOM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
@@ -82,6 +93,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ID3.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JFIF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/JVC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Leaf.html
@@ -89,6 +101,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/NikonCapture.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Olympus.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PDF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PICT.html
@@ -102,6 +115,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sigma.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/SigmaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sony.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/WAV.html
