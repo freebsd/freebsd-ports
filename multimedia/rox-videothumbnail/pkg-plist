@@ -1,0 +1,18 @@
+apps/VideoThumbnail/.DirIcon
+apps/VideoThumbnail/AppInfo.xml
+apps/VideoThumbnail/AppRun
+apps/VideoThumbnail/Help/COPYING
+apps/VideoThumbnail/Help/Changes
+apps/VideoThumbnail/Help/README
+apps/VideoThumbnail/Options.xml
+apps/VideoThumbnail/findrox.py
+apps/VideoThumbnail/findrox.pyc
+apps/VideoThumbnail/options.py
+apps/VideoThumbnail/options.pyc
+apps/VideoThumbnail/thumb.py
+apps/VideoThumbnail/thumb.pyc
+apps/VideoThumbnail/vidthumb.py
+apps/VideoThumbnail/vidthumb.pyc
+@dirrm apps/VideoThumbnail/Help
+@dirrm apps/VideoThumbnail
+@unexec rmdir %D/apps 2>/dev/null || true

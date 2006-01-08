@@ -160,6 +160,7 @@
     SUBDIR += qvamps
     SUBDIR += recmpeg
     SUBDIR += replex
+    SUBDIR += rox-videothumbnail
     SUBDIR += ruby-gst
     SUBDIR += slideshow
     SUBDIR += smpeg
