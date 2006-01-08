@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	burgerspace
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	games
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A BurgerTime clone
 
-LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng
+LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
+		flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
