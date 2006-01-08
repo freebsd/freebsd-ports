@@ -27,9 +27,10 @@
 +	$(CC) -o $@ $(CFLAGS) $(PROG_OBJS) -L$(OBJDIR) -ljs $(LDFLAGS) $(OTHER_LIBS) \
  	    $(PROG_LIBS)
  endif
---- config/Linux_All.mk	Thu May 15 20:21:08 2003
-+++ config/Linux_All.mk	Wed Aug 10 23:46:05 2005
-@@ -37,7 +37,7 @@
+--- config/Linux_All.mk.orig	Tue May 10 15:53:44 2005
++++ config/Linux_All.mk	Sat Dec 10 21:17:45 2005
+@@ -41,9 +41,9 @@
+ # Config for all versions of Linux
  #
  
 -CC = gcc
@@ -40,14 +41,18 @@
 +CFLAGS +=  -Wall -Werror	# XXX do these work with non-gcc and non-icc?
  OS_CFLAGS = -DXP_UNIX -DSVR4 -DSYSV -D_BSD_SOURCE -DPOSIX_SOURCE -DHAVE_LOCALTIME_R
  
-@@ -70,5 +70,5 @@
+ RANLIB = echo
+@@ -74,7 +74,7 @@
+ 
  GFX_ARCH = x
  
 -OS_LIBS = -lm -lc
 +OS_LIBS = -lm
  
  ASFLAGS += -x assembler-with-cpp
-@@ -84,15 +84,11 @@
+ 
+@@ -88,16 +88,12 @@
+ endif
  
  # Use the editline library to provide line-editing support.
 -JS_EDITLINE = 1
@@ -56,7 +61,7 @@
 -ifeq ($(CPU_ARCH),x86_64)
 -# Use VA_COPY() standard macro on x86-64
 -# FIXME: better use it everywhere
- OS_CFLAGS += -DHAVE_VA_COPY
+ OS_CFLAGS += -DHAVE_VA_COPY -DVA_COPY=va_copy
 -endif
  
 -ifeq ($(CPU_ARCH),x86_64)
