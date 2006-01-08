@@ -5257,6 +5257,7 @@ ldapdns		ports/dns/ldapdns
 ldapscripts	ports/net/ldapscripts
 ldapsdk		ports/net/ldapsdk
 ldapsh		ports/net/ldapsh
+ldconfig_compat		ports/misc/ldconfig_compat
 ldmud		ports/games/ldmud
 ldns		ports/dns/ldns
 ldouble		ports/math/ldouble
