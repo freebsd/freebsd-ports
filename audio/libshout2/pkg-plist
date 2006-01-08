@@ -1,10 +1,11 @@
 include/shout/shout.h
 lib/libshout.a
 lib/libshout.so
-lib/libshout.so.4
+lib/libshout.so.5
 libdata/pkgconfig/shout.pc
 share/aclocal/shout.m4
 share/doc/libshout/COPYING
+share/doc/libshout/NEWS
 share/doc/libshout/README
 share/doc/libshout/example.c
 share/doc/libshout/nonblocking.c
