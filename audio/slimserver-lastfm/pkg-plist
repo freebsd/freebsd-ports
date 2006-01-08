@@ -1,0 +1,7 @@
+%%SLIMDIR%%/Plugins/LastFM/HTML/EN/plugins/LastFM/index.html
+%%SLIMDIR%%/Plugins/LastFM/Plugin.pm
+@dirrm %%SLIMDIR%%/Plugins/LastFM/HTML/EN/plugins/LastFM
+@dirrm %%SLIMDIR%%/Plugins/LastFM/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/LastFM/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/LastFM/HTML
+@dirrm %%SLIMDIR%%/Plugins/LastFM

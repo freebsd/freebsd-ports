@@ -1,0 +1,5 @@
+This is a SlimServer plug-in to listen to a LastFM internet radio
+stream, send feedback on the currently playing track and change
+stations.
+
+WWW:	http://www.jamescraig.co.uk/SlimServer/#LastFM
