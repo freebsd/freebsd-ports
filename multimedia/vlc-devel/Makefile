@@ -595,7 +595,7 @@ CONFIGURE_ARGS+=	--enable-real
 .endif
 
 .if (defined(WITH_SHOUT) || exists(${LOCALBASE}/lib/libshout.a)) && !defined(WITHOUT_SHOUT)
-LIB_DEPENDS+=	shout.4:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
 CONFIGURE_AGRS+=	--enable-shout
 .endif
 
