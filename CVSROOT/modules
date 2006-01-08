@@ -13579,6 +13579,7 @@ xmms-mac	ports/audio/xmms-mac
 xmms-mad	ports/audio/xmms-mad
 xmms-mailnotify	ports/audio/xmms-mailnotify
 xmms-midi	ports/audio/xmms-midi
+xmms-modplug	ports/audio/xmms-modplug
 xmms-mp3cue	ports/audio/xmms-mp3cue
 xmms-musepack	ports/audio/xmms-musepack
 xmms-nas	ports/audio/xmms-nas
