@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.50
-PORTREVISION=	2
+PORTVERSION=	7.6.64
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -84,10 +83,7 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Build fails on !i386"
-.endif
-
+ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
