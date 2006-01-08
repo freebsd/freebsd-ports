@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -68,6 +69,12 @@ MAN8=		afpd.8 atalkd.8 cnid_dbd.8 cnid_metad.8 papd.8 papstatus.8 \
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1*
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+.if defined(WITH_SRVLOC)
+RC_SCRIPTS_SUB+=	SRVLOC="slpd"
+.else
+RC_SCRIPTS_SUB+=	SRVLOC=""
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
