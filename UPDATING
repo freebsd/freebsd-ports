@@ -19,7 +19,7 @@ upgrades.
   AFFECTS: users of mail/fetchmail >= 6.3.0
   AUTHOR: barner@FreeBSD.org
 
-  Beginning with release 6.3.0, fetchmail needs not only need write
+  Beginning with release 6.3.0, fetchmail not only needs write
   access to the idfile ($HOME/.fetchids), but also to the directory
   holding this file. For end users running fetchmail with default
   idfile on their own account, nothing changes: they have write
