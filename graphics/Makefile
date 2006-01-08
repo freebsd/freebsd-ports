@@ -586,6 +586,7 @@
     SUBDIR += wings
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
+    SUBDIR += wxsvg
     SUBDIR += xaos
     SUBDIR += xbmbrowser
     SUBDIR += xd3d
