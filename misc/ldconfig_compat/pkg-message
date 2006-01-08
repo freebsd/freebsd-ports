@@ -1,0 +1,10 @@
+-------------------------------------------------------------
+For the script to work correctly, you need to add the
+following to your /etc/rc.conf file (these lines are only
+wrapped to fit console width):
+
+  ldconfig_local_dirs="/usr/local/libdata/ldconfig
+	/usr/X11R6/libdata/ldconfig"
+  ldconfig_local32_dirs="/usr/local/libdata/ldconfig32
+	/usr/X11R6/libdata/ldconfig32"
+-------------------------------------------------------------
