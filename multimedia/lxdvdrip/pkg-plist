@@ -1,6 +1,5 @@
 bin/lxdvdrip
 bin/lxac3scan
-%%VAMPS%%bin/vamps
 @unexec if cmp -s %D/etc/lxdvdrip.conf %D/etc/lxdvdrip.conf.sample; then rm -f %D/etc/lxdvdrip.conf; fi
 etc/lxdvdrip.conf.sample
 @exec [ -f %B/lxdvdrip.conf ] || cp %B/%f %B/lxdvdrip.conf

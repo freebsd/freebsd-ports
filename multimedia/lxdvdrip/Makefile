@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	lxdvdrip
-PORTVERSION=	1.47
-PORTREVISION=	5
+PORTVERSION=	1.51
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		dvdbackup:${PORTSDIR}/sysutils/dvdbackup \
-		dvdwizard:${PORTSDIR}/multimedia/dvdwizard \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		mpgtx:${PORTSDIR}/multimedia/mpgtx \
-		transcode:${PORTSDIR}/multimedia/transcode
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		transcode:${PORTSDIR}/multimedia/transcode \
+		vamps:${PORTSDIR}/multimedia/vamps
+
+USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-VAMPSRC=	vamps.c requant.c
+LXDVDRIPSRC=	${PORTNAME}.c streamanalyze.c
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -ldvdread -lm
 
@@ -41,22 +43,16 @@ MAN1=		lxdvdrip.1
 
 .include <bsd.port.pre.mk>
 
-# vamps needs strtof()
-.if ${OSVERSION} > 500000
-PLIST_SUB=	VAMPS=""
-.else
-PLIST_SUB=	VAMPS="@comment "
-.endif
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's|playwave[[:space:]]+-r[[:space:]]+|wavplay -s|' \
+		-e 's|playwave|wavplay|' \
+		-e 's|/usr/local/share/lxdvdrip.wav|${DATADIR}/lxdvdrip.wav|' \
+		${WRKSRC}/${PORTNAME}.c
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/${PORTNAME} ${LXDVDRIPSRC:C/^/${WRKSRC}\//}
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/lxac3scan ${WRKSRC}/lxac3scan.c
-.if ${OSVERSION} > 500000
-.for f in ${VAMPSRC}
-	${CC} ${CFLAGS} -c ${WRKSRC}/vamps/${f} -o ${WRKSRC}/vamps/${f:C/\.c$/.o/}
-.endfor
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/vamps/vamps ${VAMPSRC:C/(.*)\.c$/${WRKSRC}\/vamps\/\1.o/}
-.endif
 
 do-install:
 .for f in lxdvdrip lxac3scan
@@ -67,13 +63,12 @@ do-install:
 .if !exists(${PREFIX}/etc/lxdvdrip.conf)
 	${INSTALL_DATA} ${WRKSRC}/doc-pak/lxdvdrip.conf.EN ${PREFIX}/etc/lxdvdrip.conf
 .endif
-.if ${OSVERSION} > 500000
-	${INSTALL_PROGRAM} ${WRKSRC}/vamps/vamps ${PREFIX}/bin
-.endif
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in lxdvdrip.conf.DE lxdvdrip.conf.EN lxdvdrip.conf.FR
 	${INSTALL_DATA} ${WRKSRC}/doc-pak/${f} ${EXAMPLESDIR}
 .endfor
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.wav ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
