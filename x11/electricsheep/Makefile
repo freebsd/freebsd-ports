@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -24,8 +24,6 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 .if defined(WITH_XSCREENSAVER)
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
-
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
@@ -84,7 +82,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg2dec/src/mpeg2dec_onroot ${PREFIX}/bin
 	@${INSTALL} -d -m 0755 ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.tif ${DATADIR}
 .if defined(WITH_XSCREENSAVER)
 	@${INSTALL_DATA} ${WRKSRC}/electricsheep.xml ${PREFIX}/share/xscreensaver/config
 .endif
@@ -93,4 +90,3 @@ do-install:
 .endif
 
 .include <bsd.port.post.mk>
-
