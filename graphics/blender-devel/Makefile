@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.37a
+PORTVERSION=	2.40
 CATEGORIES=	graphics games
-MASTER_SITES=	http://public.planetmirror.com/pub/blender/source/ \
-		http://download.blender.org/source/ \
-		ftp://ftp.cs.umn.edu/pub/blender.org/source/
+MASTER_SITES=	http://download.blender.org/source/ \
+		ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
+		http://public.planetmirror.com/pub/blender/source/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dyeske@yahoo.com
@@ -18,7 +18,8 @@ COMMENT=	3D modeling/rendering/animation/gaming package
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
@@ -30,8 +31,6 @@ USE_GL=		yes
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
