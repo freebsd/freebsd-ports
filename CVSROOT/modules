@@ -11730,6 +11730,7 @@ slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slides		ports/textproc/slides
 slideshow	ports/multimedia/slideshow
+slim		ports/x11/slim
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
 slimserver-lastfm	ports/audio/slimserver-lastfm
