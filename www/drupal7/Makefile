@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.6.4
+PORTVERSION=	4.6.5
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	CMS that supports pgsql and mysql
 
 USE_PHP=	session
