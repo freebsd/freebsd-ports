@@ -11731,6 +11731,7 @@ slides		ports/textproc/slides
 slideshow	ports/multimedia/slideshow
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
+slimserver-lastfm	ports/audio/slimserver-lastfm
 slingshot	ports/x11-toolkits/slingshot
 slirc		ports/irc/slirc
 slirp		ports/net/slirp
