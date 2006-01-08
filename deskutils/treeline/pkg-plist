@@ -1,6 +1,8 @@
 bin/treeline
 lib/treeline/cmdline.py
 lib/treeline/cmdline.pyc
+lib/treeline/conditional.py
+lib/treeline/conditional.pyc
 lib/treeline/fieldformat.py
 lib/treeline/fieldformat.pyc
 lib/treeline/genboolean.py
@@ -17,6 +19,8 @@ lib/treeline/helpview.py
 lib/treeline/helpview.pyc
 lib/treeline/icondict.py
 lib/treeline/icondict.pyc
+lib/treeline/immoduletr.py
+lib/treeline/immoduletr.pyc
 lib/treeline/nodeformat.py
 lib/treeline/nodeformat.pyc
 lib/treeline/numbering.py
@@ -69,6 +73,7 @@ lib/treeline/treexmlparse.py
 lib/treeline/treexmlparse.pyc
 lib/treeline/undo.py
 lib/treeline/undo.pyc
+%%HTTPLOAD%%lib/treeline/plugins/httpload.py
 %%DATADIR%%/icons/anchor.png
 %%DATADIR%%/icons/arrow_1.png
 %%DATADIR%%/icons/arrow_2.png
@@ -126,9 +131,9 @@ lib/treeline/undo.pyc
 %%DATADIR%%/icons/hand.png
 %%DATADIR%%/icons/heart.png
 %%DATADIR%%/icons/helpback.png
+%%DATADIR%%/icons/helpcontents.png
 %%DATADIR%%/icons/helpforward.png
 %%DATADIR%%/icons/helphome.png
-%%DATADIR%%/icons/helpreadme.png
 %%DATADIR%%/icons/home.png
 %%DATADIR%%/icons/lock_1.png
 %%DATADIR%%/icons/lock_2.png
@@ -177,14 +182,21 @@ lib/treeline/undo.pyc
 %%DATADIR%%/icons/x_1.png
 %%DATADIR%%/icons/x_2.png
 %%DATADIR%%/icons/x_3.png
+%%PORTDOCS%%%%DOCSDIR%%/condition_dlg.png
+%%PORTDOCS%%%%DOCSDIR%%/config_dlg.png
+%%PORTDOCS%%%%DOCSDIR%%/field_dlg.png
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.trl
-%%PORTDOCS%%%%DOCSDIR%%/sample_basic.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_basic_booklist.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_basic_contacts.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_basic_longtext.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_bookmarks.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_char_format.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_color_items.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_conditional_todo.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_intern_links.trl
-%%PORTDOCS%%%%DOCSDIR%%/sample_table.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_other_fields.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_table_booklist.trl
 @dirrm lib/treeline/plugins
 @dirrm lib/treeline
 @dirrm %%DATADIR%%/icons
