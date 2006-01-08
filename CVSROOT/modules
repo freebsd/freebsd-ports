@@ -11732,6 +11732,7 @@ slideshow	ports/multimedia/slideshow
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
 slimserver-lastfm	ports/audio/slimserver-lastfm
+slimserver-slimscrobbler	ports/audio/slimserver-slimscrobbler
 slingshot	ports/x11-toolkits/slingshot
 slirc		ports/irc/slirc
 slirp		ports/net/slirp
