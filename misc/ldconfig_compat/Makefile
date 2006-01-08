@@ -7,6 +7,7 @@
 
 PORTNAME=	ldconfig_compat
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -50,5 +51,8 @@ do-install:
 	@${ECHO_CMD} "@dirrm ${dir}" >> ${TMPPLIST}
 .endfor
 .endfor
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
