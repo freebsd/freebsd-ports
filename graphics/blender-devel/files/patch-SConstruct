@@ -1,6 +1,6 @@
---- SConstruct.orig	Tue Dec 28 20:56:41 2004
-+++ SConstruct	Tue Dec 28 20:57:28 2004
-@@ -663,7 +663,7 @@
+--- SConstruct.orig	Tue Dec 20 10:56:12 2005
++++ SConstruct	Fri Dec 30 16:43:44 2005
+@@ -735,7 +735,7 @@
  	openal_libpath = ['/usr/lib']
  	openal_include = ['/usr/include']
  	
@@ -9,3 +9,14 @@
  	print "Building for FreeBSD"
  	use_international = 'false'
  	use_gameengine = 'false'
+@@ -773,6 +773,10 @@
+ 	jpeg_lib = ['jpeg']
+ 	jpeg_libpath = ['/usr/local/lib']
+ 	jpeg_include = ['/usr/local/include']
++	# Tiff Library information
++	tiff_lib = ['libtiff']
++	tiff_libpath = ['#../lib/windows/tiff/lib']
++	tiff_include = ['#../lib/windows/tiff/include']
+ 	# OpenGL library information
+ 	opengl_lib = ['GL', 'GLU']
+ 	opengl_static = ['/usr/lib/libGL.a', '/usr/lib/libGLU.a']
