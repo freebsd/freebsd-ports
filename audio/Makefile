@@ -570,6 +570,7 @@
     SUBDIR += xmms-mad
     SUBDIR += xmms-mailnotify
     SUBDIR += xmms-midi
+    SUBDIR += xmms-modplug
     SUBDIR += xmms-mp3cue
     SUBDIR += xmms-musepack
     SUBDIR += xmms-nas
