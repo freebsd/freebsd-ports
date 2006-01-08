@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phppdflib
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	print
 MASTER_SITES=	http://www.potentialtech.com/
 EXTRACT_SUFX=	.tbz
@@ -14,10 +14,14 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	An easy to use API for creating PDF files dynamically
 
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+USE_PHP=	yes
+WANT_PHP_MOD=	yes
+PHP_PORT?=	${PORTSDIR}/www/mod_php4
+
+BROKEN_WITH_PHP=5
+
+.if defined(WITH_APACHE)
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/libphp4.so:${PHP_PORT}
 .endif
 
 WRKSRC=		${WRKDIR}/phppdflib
