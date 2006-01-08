@@ -126,7 +126,7 @@ sbin/cnid_metad
 sbin/papd
 %%TIMELORD%%sbin/timelord
 share/aclocal/netatalk.m4
-share/netatalk/pagecount.ps
+%%DATADIR%%/pagecount.ps
 @dirrm share/netatalk
 @dirrm include/netatalk
 @dirrm include/atalk
