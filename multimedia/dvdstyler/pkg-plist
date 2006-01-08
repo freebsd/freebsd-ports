@@ -19,8 +19,22 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/backgrounds/23_lava.jpg
 %%DATADIR%%/backgrounds/30_brushed_aluminiun.jpg
 %%DATADIR%%/backgrounds/31_texture_border.jpg
-%%DATADIR%%/buttons/simple.xml
+%%DATADIR%%/buttons/arrow-down.xml
+%%DATADIR%%/buttons/arrow-left.xml
+%%DATADIR%%/buttons/arrow-next.xml
+%%DATADIR%%/buttons/arrow-right.xml
+%%DATADIR%%/buttons/arrow-up.xml
+%%DATADIR%%/buttons/buttons.lst
+%%DATADIR%%/buttons/cancel.xml
+%%DATADIR%%/buttons/ellipse.xml
+%%DATADIR%%/buttons/frame.xml
+%%DATADIR%%/buttons/ok.xml
+%%DATADIR%%/buttons/text.xml
 %%DATADIR%%/data/silence.mp2
+%%DATADIR%%/objects/frame.xml
+%%DATADIR%%/objects/image.xml
+%%DATADIR%%/objects/rectangle.xml
+%%DATADIR%%/objects/text.xml
 %%DATADIR%%/rc/dvdstyler.png
 %%DATADIR%%/rc/files.png
 %%DATADIR%%/rc/folder1.png
@@ -46,9 +60,11 @@ share/locale/it/LC_MESSAGES/dvdstyler.mo
 share/locale/ja/LC_MESSAGES/dvdstyler.mo
 share/locale/pl/LC_MESSAGES/dvdstyler.mo
 share/locale/pt/LC_MESSAGES/dvdstyler.mo
+share/locale/pt_BR/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
 share/locale/sr/LC_MESSAGES/dvdstyler.mo
 @dirrm %%DATADIR%%/rc
+@dirrm %%DATADIR%%/objects
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/buttons
 @dirrm %%DATADIR%%/backgrounds

@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	dvdstyler
-PORTVERSION=	1.4
-PORTREVISION=	3
+DISTVERSION=	1.5b3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvdstyler
-DISTNAME=	DVDStyler-${PORTVERSION}
+DISTNAME=	DVDStyler-${DISTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		lavfile-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
-		wx_base-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+		wxsvg.0:${PORTSDIR}/graphics/wxsvg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 #RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
@@ -34,8 +33,6 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
-PORTDOCS=	AUTHORS COPYING INSTALL ChangeLog README
 
 .include <bsd.port.pre.mk>
 
