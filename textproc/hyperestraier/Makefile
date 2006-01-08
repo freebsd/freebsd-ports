@@ -7,7 +7,7 @@
 
 PORTNAME=	hyperestraier
 PORTVERSION=	1.1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system
 
 BUILD_DEPENDS=	qdbm>=1.8.35:${PORTSDIR}/databases/qdbm
-LIB_DEPENDS=	qdbm.11:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	qdbm.12:${PORTSDIR}/databases/qdbm
 
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
