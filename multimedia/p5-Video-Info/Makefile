@@ -1,13 +1,13 @@
-# ex:ts=8
 # Ports collection makefile for:	p5-Video-Info
-# Date Created:			Feb 25, 2004
-# Whom:				ijliao
+# Date Created:				Feb 25, 2004
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Video-Info
 PORTVERSION=	0.999
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video
@@ -22,18 +22,9 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/MakeMethods/Emulator.pm:${PORTSDIR}/devel/p5-C
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+MANCOMPRESSED=	no
 
-MAN3=	Video::Info.3 \
-	Video::Info::ASF.3 \
-	Video::Info::FOO.3 \
-	Video::Info::MPEG.3 \
-	Video::Info::MPEG::Audio.3 \
-	Video::Info::MPEG::Constants.3 \
-	Video::Info::MPEG::System.3 \
-	Video::Info::MPEG::Video.3 \
-	Video::Info::Magic.3 \
-	Video::Info::Quicktime.3 \
-	Video::Info::RIFF.3
+MAN3=		Video::Info.3
 
 .include <bsd.port.pre.mk>
 
