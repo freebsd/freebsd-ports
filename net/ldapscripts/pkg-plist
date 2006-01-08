@@ -4,6 +4,7 @@ etc/ldapscripts/README
 etc/ldapscripts/CHANGELOG
 etc/ldapscripts/COPYING
 etc/ldapscripts/VERSION
+etc/ldapscripts/TODO
 @unexec rmdir %D/etc/ldapscripts 2>/dev/null || true
 bin/_ldapdeletemachine
 bin/_ldapinit
@@ -16,3 +17,6 @@ bin/ldapdeletegroup
 bin/ldapdeleteuser
 bin/ldapdeleteuserfromgroup
 bin/ldapsetprimarygroup
+bin/ldaprenameuser
+bin/_ldaprenamemachine
+bin/_ldaprenamegroup
