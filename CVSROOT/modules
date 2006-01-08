@@ -11027,6 +11027,7 @@ rox-filer	ports/x11-fm/rox-filer
 rox-memo	ports/deskutils/rox-memo
 rox-mime-editor	ports/x11-fm/rox-mime-editor
 rox-session	ports/x11-fm/rox-session
+rox-videothumbnail	ports/multimedia/rox-videothumbnail
 rox-wallpaper	ports/x11/rox-wallpaper
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
