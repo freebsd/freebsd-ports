@@ -43,7 +43,7 @@ LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 .endif
 
 .if defined(WITH_HTTPLOAD)
-DISTFILES+=	httpload.py
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} httpload.py
 PLIST_SUB+=	HTTPLOAD=""
 .else
 PLIST_SUB+=	HTTPLOAD="@comment "
