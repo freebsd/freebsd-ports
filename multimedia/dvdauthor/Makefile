@@ -35,7 +35,7 @@ WITH_FRIBIDI=		yes
 .if exists(${LOCALBASE}/lib/libiconv.so)
 WITH_ICONV=		yes
 .endif
-.if exists(${LOCALBASE}/lib/libMagick.so.8)
+.if exists(${LOCALBASE}/lib/libMagick.so.9)
 WITH_IMAGEMAGICK=	yes
 .endif
 
@@ -50,7 +50,7 @@ USE_ICONV=	yes
 CONFIGURE_ENV+=	CFLAGS="-DICONV_CONV=yes"
 .endif
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
