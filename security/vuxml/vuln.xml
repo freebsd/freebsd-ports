@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d9a28f8-8152-11da-817c-0001020eed82">
+    <topic>milter-bogom -- headerless message crash</topic>
+    <affects>
+      <package>
+	<name>milter-bogom</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Juan J. Marítnez reports:</p>
+	<blockquote cite="http://www.usebox.net/jjm/bogom/errata/bogom-errata-2006-1.txt">
+	  <p>The milter crashes while processing a headerless
+	    message</p>
+	  <p>Impact: bogom crashes and sendmail moves it to error
+	    state</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.usebox.net/jjm/bogom/errata/bogom-errata-2006-1.txt</url>
+      <mlist>http://alf.dyndns.ws/pipermail/milter/2006-January/000076.html</mlist>
+    </references>
+    <dates>
+      <discovery>2006-01-05</discovery>
+      <entry>2006-01-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b747b2a9-7be0-11da-8ec4-0002b3b60e4c">
     <topic>bogofilter -- heap corruption through excessively long words</topic>
     <affects>
