@@ -5,14 +5,14 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig

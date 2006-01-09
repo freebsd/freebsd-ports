@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -31,7 +31,7 @@ MAN1=	xmlsec1.1 xmlsec1-config.1
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
-LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif

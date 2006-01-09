@@ -7,6 +7,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
 		http://get.bitlbee.org/patches/:patches
@@ -39,7 +40,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
 .if defined(WITH_MSN)
-LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--msn=1
 .else
 CONFIGURE_ARGS+=--msn=0 --ssl=bogus

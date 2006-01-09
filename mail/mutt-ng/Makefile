@@ -7,6 +7,7 @@
 
 PORTNAME=	mutt-ng
 PORTVERSION=	20051110
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/
 DISTNAME=	muttng-${PORTVERSION}
@@ -80,7 +81,7 @@ CONFIGURE_ARGS+=	--enable-imap
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
-LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
 .endif
 .endif
 

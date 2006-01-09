@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.4.29
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.0x50.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
@@ -35,7 +36,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--enable-tls=openssl
 LDFLAGS+=	-lssl -lcrypto
 .else
-LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-tls=gnutls
 .endif
 
