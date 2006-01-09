@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.research.att.com/areas/stat/xgobi/
 DISTNAME=	xgobi
 EXTRACT_SUFX=	.sh.gz
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Graphical data visualisation tool
 
 NO_CDROM=	"Restrictive copyright (do not sell for profit)"

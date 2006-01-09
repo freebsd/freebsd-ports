@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://megasun.bch.umontreal.ca/pub/flip/
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Flip is used to find/translate orfs
 
 DEPRECATED=	mastersite disappeared, no longer maintained by author
