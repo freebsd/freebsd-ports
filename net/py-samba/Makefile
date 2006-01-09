@@ -25,18 +25,6 @@ USE_PYDISTUTILS=	yes
 PYSETUP=		python/setup.py
 
 CONFIGURE_ARGS+=	--with-python
-# This is taken from SAMBA_PORT(grep without)
-CONFIGURE_ARGS+=	--disable-cups
-CONFIGURE_ARGS+=	--without-libsmbclient
-CONFIGURE_ARGS+=	--without-syslog
-CONFIGURE_ARGS+=	--without-quotas
-CONFIGURE_ARGS+=	--without-utmp
-CONFIGURE_ARGS+=	--without-winbind
-CONFIGURE_ARGS+=	--without-ldapsam
-CONFIGURE_ARGS+=	--without-pam_smbpass
-
-CONFIGURE_ARGS+=--without-krb5
-CONFIGURE_ARGS+=--without-ads
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
@@ -45,6 +33,7 @@ do-build:
 post-install:
 	-@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/shares/python/* ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/shares/python/* \
+	    ${EXAMPLESDIR}
 
 .include "${MASTERDIR}/Makefile"

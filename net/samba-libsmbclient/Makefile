@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		2
+PORTREVISION=		0
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
-COMMENT=		The shared lib from the samba packages
+COMMENT=		Shared libs from the samba package
 
 CONFLICTS=
 
@@ -21,10 +21,26 @@ PKGDIR=			${.CURDIR}
 
 INSTALLS_SHLIB=		yes
 
-# We WANT libsmbclient support :)
+# We WANT shared libs
 CONFIGURE_ARGS+=	--with-libsmbclient
-# This is taken from SAMBA_PORT(grep without)
-CONFIGURE_ARGS+=	--disable-cups
+SAMBA_INSTALL_LIBS=	libsmbclient
+
+.if defined(WITH_SHAREMODES)
+CONFIGURE_ARGS+=	--with-libsmbsharemodes
+SAMBA_INSTALL_LIBS+=	libsmbsharemodes
+PLIST_SUB+=		SHAREMODES=""
+.else
+PLIST_SUB+=		SHAREMODES="@comment "
+.endif
+
+.if defined(WITH_MSRPC)
+CONFIGURE_ARGS+=	--with-libmsrpc
+SAMBA_INSTALL_LIBS+=	libmsrpc
+PLIST_SUB+=		MSRPC=""
+.else
+PLIST_SUB+=		MSRPC="@comment "
+.endif
+# Don't check for python presence
 CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-syslog
 CONFIGURE_ARGS+=	--without-quotas
@@ -38,19 +54,33 @@ MAN8=			libsmbclient.8
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
 	cd ${WRKSRC} && ${MAKE} libsmbclient
+.if defined(WITH_SHAREMODES)
+	cd ${WRKSRC} && ${MAKE} libsmbsharemodes
+.endif
+.if defined(WITH_MSRPC)
+	cd ${WRKSRC} && ${MAKE} cac
+.endif
 
 do-install:
-	-@${MKDIR} ${MAN8PREFIX}/man/man8
-.for man in ${MAN8}
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN8PREFIX}/man/man8
+	-@${MKDIR} ${MAN8PREFIX}/man/man7
+.for man in ${MAN7}
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/manpages/${man} ${MAN7PREFIX}/man/man7
 .endfor
 	-@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
+.if defined(WITH_MSRPC)
+	${INSTALL_DATA} ${WRKSRC}/include/libmsrpc.h ${PREFIX}/include
+.endif
 	-@${MKDIR} ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.a ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/libsmbclient.so.0 ${PREFIX}/lib
-	${LN} -snf libsmbclient.so.0 ${PREFIX}/lib/libsmbclient.so
+.for lib in ${SAMBA_INSTALL_LIBS}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${lib}.a ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${lib}.so ${PREFIX}/lib/${lib}.so.0
+	${LN} -snf ${lib}.so.0 ${PREFIX}/lib/${lib}.so
+.endfor
 	-@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient/* ${EXAMPLESDIR}
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient ${EXAMPLESDIR}
+.if defined(WITH_MSRPC)
+	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libmsrpc ${EXAMPLESDIR}
+.endif
 
 .include "${MASTERDIR}/Makefile"
