@@ -9,7 +9,7 @@ PORTNAME=	jwm
 PORTVERSION=	1.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/ \
-		http://joesbox.xmgfree.com/jwm/
+		http//bsdgeek.no-ip.org/jwm/
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Joe's Window Manager
@@ -20,13 +20,9 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
-#CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-icons \
-#		--enable-png --enable-xpm --enable-shape \
-#		--enable-xinerama --enable-xft --enable-xrender
-
-CONFIGURE_ARGS+=	--enable-icons --enable-png --enable-xpm \
-			--enable-shape --enable-xinerama --enable-xft \
-			--enable-xrender
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-icons --enable-png \
+			--enable-xpm --enable-shape --enable-xinerama \
+			--enable-xft --enable-xrender
 
 MAN1=		jwm.1
 PLIST_FILES=	bin/jwm etc/system.jwmrc
