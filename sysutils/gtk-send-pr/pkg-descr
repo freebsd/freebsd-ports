@@ -3,8 +3,8 @@ features:
 
 - User friendly UI
 - Uses libesmtp to deliver mail to any SMTP server
-- Really free code (BSD licensed)
+- Free software (BSD licensed)
 
-WWW: http://www.energyhq.es.eu.org/gtk-send-pr.html
+WWW: http://gtk-send-pr.berlios.de/index.html
 
--Miguel Mendez <flynn@energyhq.es.eu.org>
+-Miguel Mendez <mmendez@energyhq.be>
