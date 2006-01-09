@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.ucdavis.edu/~gusfield/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	A set of C functions which can read/write biological sequence files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

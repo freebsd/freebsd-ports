@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://frodo.wi.mit.edu/primer3/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tonym@biolateral.com.au
+MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
 USE_REINPLACE=	yes
