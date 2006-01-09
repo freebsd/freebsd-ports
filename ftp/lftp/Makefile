@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.0
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	\
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
+MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/ \
 		ftp://ftp.130th.net/pub/mirror/lftp/old/ \
@@ -59,7 +58,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MAN1=		lftp.1
+MAN1=		lftp.1 lftpget.1
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
