@@ -1,0 +1,4 @@
+@unexec if cmp -s %D/etc/stone.cnf %D/etc/stone.cnf.sample; then rm -f %D/etc/stone.cnf; fi
+etc/stone.cnf.sample
+@exec [ -f %B/stone.cnf ] || cp %B/%f %B/stone.cnf
+bin/stone

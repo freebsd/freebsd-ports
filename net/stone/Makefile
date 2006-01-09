@@ -6,48 +6,44 @@
 #
 
 PORTNAME=	stone
-PORTVERSION=	2.2c
-CATEGORIES=	net
+PORTVERSION=	2.3
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	Stone is a TCP/IP packet repeater in the application layer
 
-MAN1=		${PORTNAME}.1
+MAN1=		stone.1
 MANLANG=	"" ja
-PLIST_FILES=	bin/stone
 
-USE_REINPLACE=   yes
+USE_RC_SUBR=	stone.sh
+USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 
-.if exists(${PREFIX}/lib/libssl.so)
-ALL_TARGET=	bsd-ssl
-MAKE_ARGS=	-e SSL_FLAGS="-DUSE_SSL -I${PREFIX}/include" SSL_LIBS="-L${PREFIX}/lib -lssl -lcrypto"
-.elif exists(/usr/lib/libssl.so)
-ALL_TARGET=	bsd-ssl
-MAKE_ARGS=	-e SSL_FLAGS="-DUSE_SSL" SSL_LIBS="-lssl -lcrypto"
-.else
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_SSL)
+.undef USE_OPENSSL
 ALL_TARGET=	bsd-pop
-MAKE_ARGS=	-e POP_LIBS="-lmd"
-NEED_GLOBAL_H=	yes
-.endif
-
-pre-everything::
-.if ${ALL_TARGET} != bsd-ssl
-	@${ECHO_CMD} "You can build stone with SSL support by installing OpenSSL."
-.endif
-
-pre-patch:
-	${REINPLACE_CMD} -e "s/-D_THREAD_SAFE/${PTHREAD_CFLAGS}/g;s/-pthread/${PTHREAD_LIBS}/g" ${WRKSRC}/Makefile
-
-pre-build:
-.if defined(NEED_GLOBAL_H)
+MAKE_ARGS=	POP_LIBS="-lmd" LIBS="-DUNIX_DAEMON"
+post-extract:
 	${TOUCH} ${WRKSRC}/global.h
+.else
+ALL_TARGET=	bsd-ssl
+MAKE_ARGS=	SSL_FLAGS="-DUSE_SSL -I${OPENSSLINC}" \
+		SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" LIBS="-DUNIX_DAEMON"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stone ${PREFIX}/bin/stone
-	${INSTALL_MAN} ${WRKSRC}/stone.1 ${PREFIX}/man/man1/stone.1
-	${INSTALL_MAN} ${WRKSRC}/stone.1.ja ${PREFIX}/man/ja/man1/stone.1
+	${INSTALL_MAN} ${FILESDIR}/stone.1 ${PREFIX}/man/man1/stone.1
+	${INSTALL_MAN} ${FILESDIR}/stone.1.ja ${PREFIX}/man/ja/man1/stone.1
+	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${PREFIX}/etc/stone.cnf.sample
+.if !exists(${PREFIX}/etc/stone.cnf)
+	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${PREFIX}/etc
+.endif
 
-#.include <bsd.port.post.mk>
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
