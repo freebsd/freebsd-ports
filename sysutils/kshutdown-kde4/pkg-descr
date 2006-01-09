@@ -1,0 +1,15 @@
+KShutDown is an advanced shutdown utility for KDE.
+
+Features:
+  o Turn Off Computer (logout and halt the system)
+  o Restart Computer (logout and reboot the system)
+  o Lock Screen (lock the screen using a screen saver)
+  o End Current Session (end the current KDE session and logout the user)
+  o Extras (additional, external user commands)
+  o Time and delay options
+  o Command line and DCOP support
+  o System tray icon and panel applet
+  o Visual and sound notifications
+  o KDE Kiosk support
+
+WWW: http://kshutdown.sourceforge.net/
