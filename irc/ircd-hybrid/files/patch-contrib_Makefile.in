@@ -1,5 +1,5 @@
---- contrib/Makefile.in.orig	Sat Jul 23 10:40:46 2005
-+++ contrib/Makefile.in	Sat Jul 23 10:41:30 2005
+--- contrib/Makefile.in.orig	Fri Dec  9 00:52:55 2005
++++ contrib/Makefile.in	Sun Jan  8 23:05:43 2006
 @@ -19,7 +19,7 @@
  
  prefix		= $(DESTDIR)@prefix@
@@ -9,14 +9,3 @@
  
  SSL_LIBS	= @SSL_LIBS@
  SSL_INCLUDES	= @SSL_INCLUDES@
-@@ -29,8 +29,8 @@
- INCLUDES	= -I../include $(SSL_INCLUDES)
- CPPFLAGS	= ${INCLUDES} @CPPFLAGS@
- 
--uhelpdir	= ${prefix}/help/users
--ohelpdir	= ${prefix}/help/opers
-+uhelpdir	= @uhelpdir@
-+ohelpdir	= @ohelpdir@
- 
- SYMLINKS	= topic accept cmode admin names links away whowas \
- 		  version kick who invite quit join list nick oper part \
