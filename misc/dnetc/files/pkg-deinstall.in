@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
@@ -8,21 +10,21 @@ CLIENTUSER=%%CLIENTUSER%%
 CLIENTGROUP=%%CLIENTGROUP%%
 
 if /usr/sbin/pw usershow "$CLIENTUSER" 2>/dev/null 1>&2; then
-        if /usr/sbin/pw userdel -n $CLIENTUSER; then
-                echo "=> Removed user \"$CLIENTUSER\"."
-        else
-                echo "=> Removing user \"$CLIENTUSER\" failed..."
-                exit 1
-        fi
+	if /usr/sbin/pw userdel -n $CLIENTUSER; then
+		echo "=> Removed user \"$CLIENTUSER\"."
+	else
+		echo "=> Removing user \"$CLIENTUSER\" failed."
+		exit 1
+	fi
 fi
 
 if /usr/sbin/pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
 	if /usr/sbin/pw groupdel -n $CLIENTGROUP; then
 		echo "=> Removed group \"$CLIENTGROUP\"."
 	else
-                echo "=> Removing group \"$CLIENTGROUP\" failed..."
-                exit 1
-        fi
+		echo "=> Removing group \"$CLIENTGROUP\" failed."
+	exit 1
+	fi
 fi
 
 exit 0

@@ -7,7 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -25,7 +25,7 @@ MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64 amd64
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	dnetc.sh
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net
@@ -34,13 +34,17 @@ CLIENTUSER=	dnetc
 CLIENTGROUP=	${CLIENTUSER}
 CLIENTUID=	105
 
-BINMODE=	700
-
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		dnetc.1
+
+SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_LIST=	BINDIR="${BINDIR}" \
+		CLIENTUSER="${CLIENTUSER}" \
+		CLIENTGROUP="${CLIENTGROUP}" \
+		CLIENTUID="${CLIENTUID}"
 
 .include <bsd.port.pre.mk>
 
@@ -61,17 +65,6 @@ MASTER_SITE_SUBDIR=	prerelease/rc
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
 
-post-extract:
-	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
-		-e 's#%%CLIENTUID%%#${CLIENTUID}#g' ${MASTERDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} -e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' -e 's#%%CLIENTGROUP%%#${CLIENTGROUP}#' \
-		${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} -e 's#%%BINDIR%%#${BINDIR}#' \
-		-e 's#%%CLIENTUSER%%#${CLIENTUSER}#g' \
-		-e 's#%%RC_SUBR%%#${RC_SUBR}#g' \
-		${FILESDIR}/dnetc.sh > ${WRKDIR}/dnetc.sh
-
 do-configure:
 	@if [ ! -f ${PREFIX}/dnetc.ini ]; then \
 		${INSTALL} -c -m 644 ${FILESDIR}/dnetc.ini ${WRKSRC}; \
@@ -88,11 +81,9 @@ do-install:
 	${CHOWN} ${CLIENTUSER}:${CLIENTGROUP} ${BINDIR}
 	${CHMOD} 775 ${BINDIR}
 
-	${INSTALL} -c -m ${BINMODE} -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
+	${INSTALL} -c -m 755 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
 
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-
-	${INSTALL_SCRIPT} ${WRKDIR}/dnetc.sh ${PREFIX}/etc/rc.d/dnetc.sh
 
 	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.sample
 .if !exists(${BINDIR}/dnetc.ini)
