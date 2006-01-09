@@ -3,7 +3,7 @@ LDCONFIG32_DIR=	libdata/ldconfig32
 
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
 .if (${OSVERSION} < 700012)
-RUN_DEPENDS+=	${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
+RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
 .endif
 .endif
 
