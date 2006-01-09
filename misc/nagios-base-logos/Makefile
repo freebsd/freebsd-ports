@@ -17,7 +17,10 @@ COMMENT=	A collection of basic OS and device logos for Nagios
 
 NO_BUILD=yes
 
-NAGIOS_LOGOS_DIR=	${PREFIX}/share/nagios/images/logos
+NAGIOSWWWDIR?=		www/nagios
+NAGIOS_LOGOS_DIR=	${PREFIX}/${NAGIOSWWWDIR}/images/logos
+
+PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR}
 
 do-install:
 	${MKDIR} ${NAGIOS_LOGOS_DIR}
