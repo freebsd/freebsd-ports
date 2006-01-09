@@ -254,6 +254,7 @@
     SUBDIR += klaptopdaemon
     SUBDIR += knutclient
     SUBDIR += krename
+    SUBDIR += kshutdown
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
