@@ -7,6 +7,7 @@
 
 PORTNAME=	moftpd
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
 		${MASTER_SITE_LOCAL}
@@ -30,7 +31,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 CONFIGURE_ARGS+=	--without-tls
 .elif defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--without-openssl
-LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.15:${PORTSDIR}/security/gnutls
 LIBS=			-L${LOCALBASE}/lib -lgnutls
 CFLAGS+=		-I${LOCALBASE}/include
 .else

@@ -8,6 +8,7 @@
 
 PORTNAME=	libsoup
 PORTVERSION=	2.2.7
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -31,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_SUB=	VERSION="2.2"
 
 .if !defined(WITHOUT_SSL)
-LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif
