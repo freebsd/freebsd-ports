@@ -883,8 +883,8 @@ post-patch:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${FIND} -E ${WRKSRC} -type f -print0 \
-		-iregex ".*(configure|.sh|Makefile)" | \
+	@${FIND} -E ${WRKSRC} -type f \
+		-iregex ".*(configure|.sh|Makefile)" -print0 | \
 		${XARGS} -x -0 -n 10 \
 		${REINPLACE_CMD} -E \
 			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
