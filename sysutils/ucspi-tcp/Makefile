@@ -26,6 +26,10 @@ ALL_TARGET=	prog install instcheck
 SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
 
+.if defined(WITH_SSL)
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MAN)
@@ -46,6 +50,11 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://www.nrg4u.com/qmail/
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
 PATCH_DIST_STRIP=	-p1
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \
+			s|-lcrypto|-L${OPENSSLBASE}/lib |g' ${WRKSRC}/Makefile
 .endif
 
 post-configure:
