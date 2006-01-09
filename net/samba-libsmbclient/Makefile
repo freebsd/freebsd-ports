@@ -42,14 +42,8 @@ PLIST_SUB+=		MSRPC="@comment "
 .endif
 # Don't check for python presence
 CONFIGURE_ARGS+=	--without-python
-CONFIGURE_ARGS+=	--without-syslog
-CONFIGURE_ARGS+=	--without-quotas
-CONFIGURE_ARGS+=	--without-utmp
-CONFIGURE_ARGS+=	--without-winbind
-CONFIGURE_ARGS+=	--without-ldapsam
-CONFIGURE_ARGS+=	--without-pam_smbpass
 
-MAN8=			libsmbclient.8
+MAN7=			libsmbclient.7
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
