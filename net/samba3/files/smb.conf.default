@@ -165,6 +165,11 @@
 ;    map system = no
 ;    map archive = no
 
+# Use inherited ACLs for directories
+;    nt acl support = yes
+;    inherit acls = yes
+;    map acl inherit = yes 
+
 # These scripts are used on a domain controller or stand-alone 
 # machine to add or delete corresponding unix accounts
 ;  add user script = /usr/sbin/useradd %u
