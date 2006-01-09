@@ -6,6 +6,7 @@
 @exec chown %%NAGIOSUSER%%:%%WWWGRP%% %%NAGIOSDIR%%/rw
 bin/nagios
 bin/nagiostats
+%%EMBEDDED_PERL%%bin/p1.pl
 etc/nagios/bigger.cfg-sample
 etc/nagios/cgi.cfg-sample
 etc/nagios/checkcommands.cfg-sample
