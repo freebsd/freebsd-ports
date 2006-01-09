@@ -8,7 +8,7 @@
 PORTNAME=	xgobi
 PORTVERSION=	2002.06.20
 CATEGORIES=	math graphics
-MASTER_SITES=	http://www.research.att.com/areas/stat/xgobi/
+MASTER_SITES=	http://public.research.att.com/~stat/xgobi/
 DISTNAME=	xgobi
 EXTRACT_SUFX=	.sh.gz
 
