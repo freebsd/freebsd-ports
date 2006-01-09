@@ -1,0 +1,4 @@
+bin/colordiff
+@unexec if cmp -s %D/etc/colordiffrc %D/etc/colordiffrc.default; then rm -f %D/etc/colordiffrc; fi
+etc/colordiffrc.default
+@exec [ -f %B/colordiffrc ] || cp %B/%f %B/colordiffrc
