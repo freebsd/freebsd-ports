@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	sipp
-PORTVERSION=	1.1.r2
+PORTVERSION=	1.1.r4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	sipp
-DISTNAME=	${PORTNAME}.1.1rc2
+DISTNAME=	${PORTNAME}-1.1rc4
 
 MAINTAINER=	jesper@jdn.dk
 COMMENT=	SIP testing tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}.cumulus.2005-12-21
+
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
-MAKE_ENV=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
+MAKE_ENV+=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
 
 .include <bsd.port.pre.mk>
 
@@ -27,11 +28,8 @@ MAKE_ENV=	CPP="${CXX}" CPPFLAGS="${CXXFLAGS}" CCLINK="${CXX}"
 BROKEN=		"Does not compile - patch needed by someone who can test it"
 .endif
 
-pre-install:
-	@${CP} ${FILESDIR}/${MAN1} ${WRKSRC}/
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sipp.1 ${PREFIX}/man/man1/sipp.1
+	${INSTALL_MAN} ${FILESDIR}/sipp.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
