@@ -1158,6 +1158,7 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.dk.xemacs.org/pub/emacs/xemacs/%SUBDIR%/ \
 	ftp://ftp.fi.xemacs.org/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/%SUBDIR%/ \
 	ftp://ftp.fr.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.hk.xemacs.org/pub/xemacsftp/%SUBDIR%/ \
 	ftp://ftp.ie.xemacs.org/mirrors/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.it.xemacs.org/unix/packages/XEMACS/%SUBDIR%/ \
 	ftp://ftp.kr.xemacs.org/pub/tools/emacs/xemacs/%SUBDIR%/ \
