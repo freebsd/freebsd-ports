@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	Fri Dec 23 15:49:38 2005
++++ Makefile	Fri Dec 23 15:51:24 2005
 @@ -64,7 +64,7 @@
  CC_tru64=cc  
  CC_SunOS=gcc
@@ -25,8 +25,8 @@ $FreeBSD$
  CFLAGS_tru64=-D__OSF1 -pthread
  CFLAGS_SunOS=-g
  CFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
--CFLAGS=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
-+CFLAGS+=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
+-CFLAGS=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
++CFLAGS+=$(CFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
  
  #C++ Compiler Flags
  CPPFLAGS_hpux=-AA -mt -D__HPUX +W829 
@@ -34,8 +34,8 @@ $FreeBSD$
  CPPFLAGS_tru64=-D__OSF1 -pthread
  CPPFLAGS_SunOS=-g
  CPPFLAGS_Cygwin=-D__CYGWIN -Dsocklen_t=int
--CPPFLAGS=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
-+CPPFLAGS+=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS)
+-CPPFLAGS=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
++CPPFLAGS+=$(CPPFLAGS_$(SYSTEM)) -D__3PCC__ $(TLS) $(PCAPPLAY)
  
  #Linker mapping
  CCLINK_hpux=aCC
