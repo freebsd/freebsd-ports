@@ -1,25 +1,27 @@
---- include/defaults.h.orig	Sat Oct  4 15:31:17 2003
-+++ include/defaults.h	Sat Jul 23 14:00:15 2005
-@@ -41,17 +41,11 @@
-  * DPATH       = root directory of installation,
-  * BINPATH     = directory for binary files,
-  * ETCPATH     = directory for configuration files,
-- * LOGPATH     = directory for logfiles,
-- * MSGPATH     = directory for language files.
+--- include/defaults.h.orig	Fri Dec  9 00:52:49 2005
++++ include/defaults.h	Mon Jan  9 00:44:02 2006
+@@ -42,19 +42,11 @@
+  * BINPATH     = directory for binary files
+  * MSGPATH     = directory for language files
+  * ETCPATH     = directory for configuration files
+- * LOGPATH     = directory for logfiles
+- * MODPATH     = directory for modules
+- * AUTOMODPATH = directory for autoloaded modules
   */
  
  /* dirs */
- #define DPATH   IRCD_PREFIX                                                     
- #define BINPATH IRCD_PREFIX "/bin/"
--#define MSGPATH IRCD_PREFIX "/messages/"
--#define ETCPATH IRCD_PREFIX "/etc"
--#define LOGPATH IRCD_PREFIX "/logs"
--#define MODPATH IRCD_PREFIX "/modules/"
+ #define DPATH       IRCD_PREFIX                                                     
+ #define BINPATH     IRCD_PREFIX "/bin/"
+-#define MSGPATH     IRCD_PREFIX "/messages/"
+-#define ETCPATH     IRCD_PREFIX "/etc"
+-#define LOGPATH     IRCD_PREFIX "/logs"
+-#define MODPATH     IRCD_PREFIX "/modules/"
+-#define AUTOMODPATH IRCD_PREFIX "/modules/autoload/"
  
  /* files */
  #define SPATH   BINPATH "/ircd"                 /* ircd executable */
-@@ -65,7 +59,7 @@
- #define XPATH   ETCPATH "/xline.conf"           /* xline file */
+@@ -70,7 +62,7 @@
+ #define RKPATH  ETCPATH "/rkline.conf"
  #define MPATH   ETCPATH "/ircd.motd"            /* MOTD file */
  #define LPATH   LOGPATH "/ircd.log"             /* ircd logfile */
 -#define PPATH   ETCPATH "/ircd.pid"             /* pid file */

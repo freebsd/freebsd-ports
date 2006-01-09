@@ -1,5 +1,5 @@
---- configure.orig	Sat Jul  9 09:09:19 2005
-+++ configure	Sat Jul 23 16:23:25 2005
+--- configure.orig	Fri Dec  9 00:53:00 2005
++++ configure	Mon Jan  9 03:11:02 2006
 @@ -351,6 +351,12 @@
  oldincludedir='/usr/include'
  infodir='${prefix}/info'
@@ -48,12 +48,12 @@
  do
    eval ac_val=$`echo $ac_var`
    case $ac_val in
-@@ -10693,6 +10718,13 @@
+@@ -10800,6 +10825,13 @@
  
  cat >>confdefs.h <<_ACEOF
  #define IRCD_PREFIX "$ac_default_prefix"
 +#define MODPATH "$moduledir/"
-+#define AMODPATH "$automoduledir/"
++#define AUTOMODPATH "$automoduledir/"
 +#define UHPATH "$uhelpdir/"
 +#define HPATH "$ohelpdir/"
 +#define MSGPATH "$messagedir/"
@@ -62,12 +62,12 @@
  _ACEOF
  
  
-@@ -10703,6 +10735,13 @@
+@@ -10810,12 +10842,19 @@
  
  cat >>confdefs.h <<_ACEOF
  #define IRCD_PREFIX "$prefix"
 +#define MODPATH "$moduledir/"
-+#define AMODPATH "$automoduledir/"
++#define AUTOMODPATH "$automoduledir/"
 +#define UHPATH "$uhelpdir/"
 +#define HPATH "$ohelpdir/"
 +#define MSGPATH "$messagedir/"
@@ -76,7 +76,23 @@
  _ACEOF
  
  
-@@ -11323,6 +11362,12 @@
+ fi
+ 
+-                                                                                                                                  ac_config_files="$ac_config_files Makefile etc/Makefile servlink/Makefile contrib/Makefile contrib/help/Makefile src/Makefile messages/Makefile modules/Makefile tools/Makefile doc/Makefile help/Makefile lib/Makefile lib/pcre/Makefile"
++                                                                                                                                  ac_config_files="$ac_config_files Makefile etc/Makefile servlink/Makefile contrib/Makefile contrib/help/Makefile help/Makefile src/Makefile messages/Makefile modules/Makefile tools/Makefile doc/Makefile help/Makefile lib/Makefile lib/pcre/Makefile"
+ 
+ 
+ cat >confcache <<\_ACEOF
+@@ -11418,6 +11457,8 @@
+ s,@PACKAGE_VERSION@,$PACKAGE_VERSION,;t t
+ s,@PACKAGE_STRING@,$PACKAGE_STRING,;t t
+ s,@PACKAGE_BUGREPORT@,$PACKAGE_BUGREPORT,;t t
++s,@UPATH@,$uhelpdir,;t t
++s,@HPATH@,$ohelpdir,;t t
+ s,@exec_prefix@,$exec_prefix,;t t
+ s,@prefix@,$prefix,;t t
+ s,@program_transform_name@,$program_transform_name,;t t
+@@ -11433,6 +11474,12 @@
  s,@oldincludedir@,$oldincludedir,;t t
  s,@infodir@,$infodir,;t t
  s,@mandir@,$mandir,;t t

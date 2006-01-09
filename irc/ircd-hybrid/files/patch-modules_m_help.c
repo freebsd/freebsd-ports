@@ -1,5 +1,5 @@
---- contrib/m_help.c.orig	Sat Jul 23 15:52:17 2005
-+++ contrib/m_help.c	Sat Jul 23 15:50:40 2005
+--- modules/m_help.c.orig	Mon Jan  9 01:33:47 2006
++++ modules/m_help.c	Mon Jan  9 01:33:51 2006
 @@ -36,8 +36,6 @@
  #include "modules.h"
  #include "irc_string.h"
@@ -8,4 +8,4 @@
 -#define UHPATH IRCD_PREFIX "/help/users"
  #define HELPLEN 400
  
- static void m_help(struct Client*, struct Client*, int, char *[]);
+ static void m_help(struct Client *, struct Client *, int, char *[]);
