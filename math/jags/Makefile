@@ -8,6 +8,7 @@
 
 PORTNAME=	jags
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -37,14 +38,14 @@ CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
+BROKEN=		"Does not compile on 4.x"
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
-	${MKDIR} -p ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}
 	( cd ${EXAMPLESDIR}; \
 	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/bugs-examples.tar.gz \
 	    -s ':^bugs-examples/*::' )
