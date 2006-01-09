@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libRmath
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -32,20 +32,19 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	eric+fbports@vangyzen.net
 COMMENT=	The standalone math library from R
 
-CONFIGURE_ARGS=	--without-x
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+
+CONFIGURE_ARGS+=	--without-x
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
 
 do-build:
-	(cd ${WRKSRC}/src/include; ${MAKE} Rmath.h)
 	(cd ${WRKSRC}/src/nmath/standalone; ${MAKE})
 
 do-install:
-	${MKDIR} -p ${PREFIX}/include ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/src/nmath/standalone/libRmath.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/nmath/standalone/libRmath.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/src/nmath/standalone/libRmath.so \
 		${PREFIX}/lib/libRmath.so.0
 	(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.0 libRmath.so)
