@@ -1,25 +1,14 @@
---- Makefile.in.orig	Tue Jul 12 18:42:55 2005
-+++ Makefile.in	Fri Jul 22 04:03:37 2005
-@@ -97,6 +97,7 @@
- LIBSMBCLIENT_MAJOR=0
- LIBSMBCLIENT_MINOR=1
+--- Makefile.in.orig	Wed Dec 14 13:45:49 2005
++++ Makefile.in	Sun Jan  1 03:35:30 2006
+@@ -676,6 +676,7 @@
+ 
+ CAC_PICOBJS = $(CAC_OBJ:.o=.@PICSUFFIX@)
  
 +NSS_VERSION=1
  
- FLAGS1 = $(CFLAGS) @FLAGS1@ -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx @SMBWRAP_INC@ -I. $(CPPFLAGS) -I$(srcdir)
- FLAGS2 = 
-@@ -987,8 +988,8 @@
- 		@SONAMEFLAG@`basename $@`
- 
- bin/libsmbclient.@SHLIBEXT@: $(LIBSMBCLIENT_PICOBJS)
--	@echo Linking libsmbclient shared library $@
--	@$(SHLD) $(LDSHFLAGS) -o $@ $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
-+	@echo Linking libsmbclient shared library $@.$(LIBSMBCLIENT_MAJOR)
-+	@$(SHLD) $(LDSHFLAGS) -o $@.$(LIBSMBCLIENT_MAJOR) $(LIBSMBCLIENT_PICOBJS) $(LDFLAGS) $(LIBS) \
- 		$(KRB5LIBS) $(LDAP_LIBS) \
- 		@SONAMEFLAG@`basename $@`.$(LIBSMBCLIENT_MAJOR)
- 
-@@ -1082,13 +1083,13 @@
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+                pam_smbpass/pam_smb_acct.o pam_smbpass/support.o \
+@@ -1172,13 +1173,13 @@
  @WINBIND_NSS@: $(WINBIND_NSS_PICOBJS)
  	@echo "Linking $@"
  	@$(SHLD) $(WINBIND_NSS_LDSHFLAGS) -o $@ $(WINBIND_NSS_PICOBJS) \
@@ -35,11 +24,11 @@
  
  nsswitch/pam_winbind.@SHLIBEXT@: $(PAM_WINBIND_PICOBJ) bin/.dummy
  	@echo "Linking $@"
-@@ -1295,7 +1296,7 @@
+@@ -1389,7 +1390,7 @@
  
  bin/t_snprintf@EXEEXT@: lib/snprintf.c
  	$(CC) $(FLAGS) @PIE_LDFLAGS@ -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm
--install: installbin installman installscripts installdat installswat installmodules @INSTALLCLIENT@
+-install: installbin installman installscripts installdat installswat installmodules @INSTALL_LIBSMBCLIENT@ @INSTALL_LIBMSRPC@
 +install: installbin installscripts installdat installswat installmodules
  
  install-everything: install installmodules

@@ -1,3 +1,4 @@
+bin/eventlogadm
 bin/findsmb
 bin/make_smbpasswd
 bin/net
@@ -10,6 +11,7 @@ bin/smbcacls
 bin/smbclient
 bin/smbcontrol
 bin/smbcquotas
+bin/smbget
 bin/smbpasswd
 bin/smbspool
 bin/smbstatus
@@ -79,6 +81,15 @@ sbin/swat
 %%EXAMPLESDIR%%/pdb/mysql/smb.conf
 %%EXAMPLESDIR%%/pdb/sambapdb.dtd
 %%EXAMPLESDIR%%/pdb/test.c
+%%EXAMPLESDIR%%/perfcounter/Makefile
+%%EXAMPLESDIR%%/perfcounter/perf.h
+%%EXAMPLESDIR%%/perfcounter/perf_writer.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_cpu.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_disk.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_mem.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_process.c
+%%EXAMPLESDIR%%/perfcounter/perf_writer_util.c
+%%EXAMPLESDIR%%/perfcounter/perfcountd.init
 %%EXAMPLESDIR%%/printer-accounting/README
 %%EXAMPLESDIR%%/printer-accounting/acct-all
 %%EXAMPLESDIR%%/printer-accounting/acct-sum
@@ -93,6 +104,7 @@ sbin/swat
 %%EXAMPLESDIR%%/scripts/debugging/linux/backtrace
 %%EXAMPLESDIR%%/scripts/debugging/solaris/README
 %%EXAMPLESDIR%%/scripts/debugging/solaris/solaris-oops.sh
+%%EXAMPLESDIR%%/scripts/eventlog/parselog.pl
 %%EXAMPLESDIR%%/scripts/printing/cups/smbaddprinter.pl
 %%EXAMPLESDIR%%/scripts/printing/cups/smbdelprinter.pl
 %%EXAMPLESDIR%%/scripts/shares/perl/modify_samba_config.pl
@@ -124,12 +136,14 @@ sbin/swat
 @dirrm %%EXAMPLESDIR%%/scripts/shares
 @dirrm %%EXAMPLESDIR%%/scripts/printing/cups
 @dirrm %%EXAMPLESDIR%%/scripts/printing
+@dirrm %%EXAMPLESDIR%%/scripts/eventlog
 @dirrm %%EXAMPLESDIR%%/scripts/debugging/solaris
 @dirrm %%EXAMPLESDIR%%/scripts/debugging/linux
 @dirrm %%EXAMPLESDIR%%/scripts/debugging
 @dirrm %%EXAMPLESDIR%%/scripts
 @dirrm %%EXAMPLESDIR%%/printing
 @dirrm %%EXAMPLESDIR%%/printer-accounting
+@dirrm %%EXAMPLESDIR%%/perfcounter
 @dirrm %%EXAMPLESDIR%%/pdb/mysql
 @dirrm %%EXAMPLESDIR%%/pdb
 @dirrm %%EXAMPLESDIR%%/nss
@@ -169,7 +183,6 @@ sbin/swat
 %%PORTDOCS%%%%DOCSDIR%%/registry/Win9X-CacheHandling.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/WinME_PlainPassword.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_SignOrSeal.reg
 %%PORTDOCS%%%%DOCSDIR%%/registry/WindowsTerminalServer.reg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/registry
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -376,7 +389,6 @@ share/swat/help/Samba3-HOWTO/type.html
 share/swat/help/Samba3-HOWTO/unicode.html
 share/swat/help/Samba3-HOWTO/upgrading-to-3.0.html
 share/swat/help/Samba3-HOWTO/winbind.html
-share/swat/help/manpages/editreg.1.html
 share/swat/help/manpages/findsmb.1.html
 share/swat/help/manpages/index.html
 share/swat/help/manpages/lmhosts.5.html
@@ -386,7 +398,7 @@ share/swat/help/manpages/net.8.html
 share/swat/help/manpages/nmbd.8.html
 share/swat/help/manpages/nmblookup.1.html
 share/swat/help/manpages/ntlm_auth.1.html
-share/swat/help/manpages/pam_winbind.8.html
+share/swat/help/manpages/pam_winbind.7.html
 share/swat/help/manpages/pdbedit.8.html
 share/swat/help/manpages/profiles.1.html
 share/swat/help/manpages/rpcclient.1.html
@@ -413,7 +425,6 @@ share/swat/help/manpages/swat.8.html
 share/swat/help/manpages/tdbbackup.8.html
 share/swat/help/manpages/tdbdump.8.html
 share/swat/help/manpages/testparm.1.html
-share/swat/help/manpages/testprns.1.html
 share/swat/help/manpages/umount.cifs.8.html
 share/swat/help/manpages/vfstest.1.html
 share/swat/help/manpages/wbinfo.1.html

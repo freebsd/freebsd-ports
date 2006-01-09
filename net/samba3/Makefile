@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.20b
+PORTVERSION?=		3.0.21a
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -20,8 +20,8 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
-GNU_CONFIGURE=		yes
-#USE_AUTOTOOLS=		autoconf:259 autoheader:259
+#GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		autoconf:259 autoheader:259
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -54,8 +54,25 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
-.if !defined(SAMBA_SUBPORT)
+.if defined(SAMBA_SUBPORT)
+# Switch off all extra functionality
+CONFIGURE_ARGS+=	--disable-cups
 
+CONFIGURE_ARGS+=	--without-ldap
+CONFIGURE_ARGS+=	--without-krb5
+CONFIGURE_ARGS+=	--without-ads
+
+CONFIGURE_ARGS+=	--without-winbind
+
+CONFIGURE_ARGS+=	--without-syslog
+CONFIGURE_ARGS+=	--without-quotas
+CONFIGURE_ARGS+=	--without-utmp
+CONFIGURE_ARGS+=	--without-ldapsam
+CONFIGURE_ARGS+=	--without-pam
+CONFIGURE_ARGS+=	--without-pam_smbpass
+CONFIGURE_ARGS+=	--without-aio-support
+.else
+# Samba server itself
 OPTIONS=	LDAP		"With LDAP support" on \
 		ADS		"With Active Directory support" off \
 		CUPS		"With CUPS printing support" on \
@@ -82,7 +99,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 USE_RC_SUBR=		yes
 
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
-			--without-libsmbclient --without-python
+			--without-libsmbclient --without-libmsrpc \
+			--without-libsmbsharemodes --without-python
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
@@ -198,7 +216,8 @@ CONFIGURE_ARGS+=	--with-acl-support
 .endif
 
 .if defined(WITH_AIO_SUPPORT)
-CONFIGURE_ARGS+=	--with-aio-support
+# Yes, it doesn't work for now
+CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -207,16 +226,11 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-# !SAMBA_SUBPORT
-.endif
-
-# Common part
-
 # For 4.8 - 4.11 combination of Kerberos and OpenLDAP is broken
 # due the conflict between system and OpenSSL port libcrypto libraries
 .if ${OSVERSION} > 470103 && ${OSVERSION} < 500000
 .if defined(WITH_ADS)
-IGNORE=			"Broken dependency between OpenSSL, OpenLDAP and Heimdal for FreeBSD 4.x. Disable ADS support"
+IGNORE=			broken dependency between OpenSSL, OpenLDAP and Heimdal for FreeBSD 4.x. Disable ADS support
 .endif
 WITHOUT_ADS=		on
 .endif
@@ -251,18 +265,18 @@ CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if !defined(SAMBA_SUBPORT)
 MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbsh.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 \
-		testprns.1 vfstest.1
+		vfstest.1
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		nmbd.8 smbd.8 net.8 pdbedit.8 smbpasswd.8 smbspool.8 \
-		swat.8 tdbdump.8 tdbbackup.8
+MAN8=		net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 smbspool.8 \
+		swat.8 tdbbackup.8 tdbdump.8
 .if !defined(WITHOUT_WINBIND)
 MAN1+=		wbinfo.1
-MAN8+=		pam_winbind.8 winbindd.8
+MAN7+=		pam_winbind.7
+MAN8+=		winbindd.8
 .endif
 
 .if !defined(WITHOUT_WINBIND)
@@ -294,10 +308,9 @@ pre-fetch:
 post-patch:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/LDAP/smbldap-tools-*
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
+	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libmsrpc
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
-	-@${MV} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages-3 \
-	    ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages
-	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.8.html
+	@${RM} -f ${WRKDIR}/${DISTNAME}/docs/htmldocs/manpages/libsmbclient.7.html
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
@@ -383,6 +396,7 @@ post-install:
 		WHATSNEW.txt docs/THANKS docs/history
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${f} ${DOCSDIR}
 .endfor
+# !NOPORTDOCS
 .endif
 	@${CAT} ${PKGMESSAGE}
 # !SAMBA_SUBPORT
