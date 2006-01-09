@@ -109,7 +109,7 @@ sql-ledger/doc/UPGRADE-2.4.0-2.4.2
 sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
-sql-ledger/doc/UPGRADE-2.6.0-2.6-3
+sql-ledger/doc/UPGRADE-2.6.0-2.6.4
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -1637,6 +1637,7 @@ sql-ledger/sql/Pg-upgrade-2.5.2-2.6.0.sql
 sql-ledger/sql/Pg-upgrade-2.6.0-2.6.1.sql
 sql-ledger/sql/Pg-upgrade-2.6.1-2.6.2.sql
 sql-ledger/sql/Pg-upgrade-2.6.2-2.6.3.sql
+sql-ledger/sql/Pg-upgrade-2.6.3-2.6.4.sql
 sql-ledger/sql/Poland-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
