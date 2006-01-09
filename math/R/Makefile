@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -56,7 +56,7 @@ USE_PERL5=	yes
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
-		rdocdir=${PREFIX}/share/doc/R
+		rdocdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
