@@ -6320,8 +6320,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>jabber</name>
-	<name>bnc</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>bnc</name>
+	<range><lt>2.9.3</lt></range>
       </package>
       <package>
 	<name>rinetd</name>
@@ -6352,13 +6355,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <url>http://www.gotbnc.com/changes.html#2.9.3</url>
       <url>http://www.security.nnov.ru/advisories/sockets.asp</url>
       <mlist msgid="1473827718.20050124233008@security.nnov.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110660879328901</mlist>
     </references>
     <dates>
       <discovery>2004-12-12</discovery>
       <entry>2005-06-17</entry>
-      <modified>2005-10-04</modified>
+      <modified>2006-01-09</modified>
     </dates>
   </vuln>
 
