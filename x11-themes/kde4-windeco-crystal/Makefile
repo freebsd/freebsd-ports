@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde-windeco-crystal
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.saschahlusiak.de/linux/
 DISTNAME=	crystal-${PORTVERSION}
