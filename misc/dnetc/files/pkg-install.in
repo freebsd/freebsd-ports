@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+CLIENTUSER=%%CLIENTUSER%%
+CLIENTGROUP=%%CLIENTGROUP%%
+UID=%%CLIENTUID%%
+GID=$UID
+
+if ! /usr/sbin/pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
+	if /usr/sbin/pw groupadd $CLIENTGROUP -g $GID; then
+		echo "=> Added group \"$CLIENTGROUP\"."
+	else
+		echo "=> Adding group \"$CLIENTGROUP\" failed."
+		exit 1
+	fi
+fi
+
+if ! /usr/sbin/pw usershow "$CLIENTUSER" 2>/dev/null 1>&2; then
+	if /usr/sbin/pw useradd $CLIENTUSER -u $UID -g $CLIENTGROUP -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "distributed.net client and proxy pseudo-user"; \
+	then
+		echo "=> Added user \"$CLIENTUSER\"."
+	else
+		echo "=> Adding user \"$CLIENTUSER\" failed."
+		exit 1
+	fi
+fi
+
+exit 0
