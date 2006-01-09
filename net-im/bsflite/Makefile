@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsflite
-DISTVERSION=	0.80
+DISTVERSION=	0.81
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=bsflite
@@ -16,24 +16,14 @@ COMMENT=	A lightweight command line AIM client
 
 USE_REINPLACE=	yes
 
-OSCAR_PORT?=	5190
+PLIST_FILES=	bin/bsflite %%EXAMPLESDIR%%/config-example
+PLIST_DIRS=	%%EXAMPLESDIR%%
+PORTDOCS=	COPYING ChangeLog README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSCAR_PORT} == "5190"
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Note:"
-	@${ECHO_MSG} "If you're behind a firewall you might want to set OSCAR_PORT"
-	@${ECHO_MSG} "a port other than ${OSCAR_PORT}."
-	@${ECHO_MSG} ""
-.endif
-
-.if ${OSCAR_PORT} != 5190
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(#define OSCAR_PORT\) 5190|\1 ${OSCAR_PORT}|' \
-		${WRKSRC}/imcomm/imcomm.h
-.endif
+	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' \
+		${WRKSRC}/${MAKEFILE} \
+		${WRKSRC}/imcomm/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsflite ${PREFIX}/bin
@@ -42,9 +32,9 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in COPYING ChangeLog README
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
