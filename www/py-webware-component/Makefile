@@ -8,7 +8,7 @@
 PORTNAME=	Component
 PORTVERSION=	0.1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.webwareforpython.org/downloads/
+MASTER_SITES=	http://www.webwareforpython.org/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}webware-
 
 MAINTAINER=	whitekid@gmail.com
