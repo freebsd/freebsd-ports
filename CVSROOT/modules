@@ -5150,6 +5150,7 @@ kscope		ports/devel/kscope
 kseg		ports/math/kseg
 ksh93		ports/shells/ksh93
 kshowmail	ports/mail/kshowmail
+kshutdown	ports/sysutils/kshutdown
 ksig		ports/misc/ksig
 kslide		ports/games/kslide
 ksmoothdock	ports/deskutils/ksmoothdock
