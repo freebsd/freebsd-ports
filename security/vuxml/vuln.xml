@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="612a34ec-81dc-11da-a043-0002a5c3d308">
+    <topic>clamav -- possible heap overflow in the UPX code</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.88</lt></range>
+      </package>
+      <package>      
+        <name>clamav-devel</name>
+        <range><lt>20060110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luca Gibelli reports about clamav 0.88:</p>
+	<blockquote cite="http://lurker.clamav.net/message/20060109.213247.a16ae8db.en.html">
+	  <p>A possible heap overflow in the UPX code has been fixed</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist>http://lurker.clamav.net/message/20060109.213247.a16ae8db.en.html</mlist>
+      <url>http://secunia.com/advisories/18379/</url>
+    </references>
+    <dates>
+      <discovery>2006-01-09</discovery>
+      <entry>2006-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d9a28f8-8152-11da-817c-0001020eed82">
     <topic>milter-bogom -- headerless message crash</topic>
     <affects>
