@@ -3,7 +3,7 @@
 @@ -6,7 +6,6 @@
  
  bldPRODUCT_START(`library', `libar')
- define(`bldSOURCES', `ar.c ')
+ define(`bldSOURCES', `ar.c fix.c ')
 -define(`bldINSTALLABLE', `true')
  bldPRODUCT_END
  
