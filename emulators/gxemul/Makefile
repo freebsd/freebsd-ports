@@ -47,6 +47,10 @@ OPTIONS=	ALWAYS32 "ALWAYS_SIGNEXTEND_32" off \
 
 .include <bsd.port.pre.mk>
 
+.if ( ${OSVERSION} < 500000 )
+USE_GCC=	3.2+
+.endif
+
 .if defined(WITH_ALWAYS32)
 CONFIGURE_ARGS+=--always32
 .endif
