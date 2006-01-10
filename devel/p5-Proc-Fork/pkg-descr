@@ -1,0 +1,8 @@
+This module provides an intuitive, Perl-ish way to write forking
+programs by letting you use blocks to illustrate which code section
+executes in which fork. The code for the parent, child, retry handler
+and error handler are grouped together in a "fork block". The clauses
+may appear in any order, but they must be consecutive (without any other
+statements in between).
+
+WWW: http://search.cpan.org/dist/Proc-Fork/
