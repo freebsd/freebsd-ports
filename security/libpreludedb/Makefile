@@ -5,13 +5,14 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.2:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.4:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
