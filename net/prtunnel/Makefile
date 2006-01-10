@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	prtunnel
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@datamax.bg
 COMMENT=	Tunnel for TCP connections using an HTTP or SOCKS5 proxy
 
 USE_REINPLACE=	yes
@@ -18,19 +18,18 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=		prtunnel.1
 
-PORTDOCS=	README
+PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/prtunnel
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^PREFIX=|#PREFIX=|g ; \
-	s|CC=gcc|CC?=gcc|g ; \
-	s|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|PREFIX)/d' \
+		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
