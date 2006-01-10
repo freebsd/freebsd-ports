@@ -7,7 +7,7 @@
 
 PORTNAME=	buoh
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils www gnome
 MASTER_SITES=	http://buoh.steve-o.org/downloads/
 
