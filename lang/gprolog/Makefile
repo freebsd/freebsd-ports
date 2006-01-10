@@ -36,8 +36,12 @@ PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not build on FreeBSD >= 6.0"
+.if (${OSVERSION} >= 600000) || defined(WITHOUT_FD)
+CONFIGURE_ARGS+=--disable-fd-solver
+PLIST_SUB+=	FD="@comment "
+PKGNAMESUFFIX=	-nofd
+.else
+PLIST_SUB+=	FD=""
 .endif
 
 .if ${OSVERSION} >= 502126
