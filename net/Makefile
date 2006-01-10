@@ -300,6 +300,7 @@
     SUBDIR += limewire
     SUBDIR += linc
     SUBDIR += link-monitor-applet
+    SUBDIR += linneighborhood
     SUBDIR += linphone
     SUBDIR += linphone-base
     SUBDIR += linux-agsatellite
