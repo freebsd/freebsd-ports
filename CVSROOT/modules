@@ -8679,6 +8679,7 @@ p5-PostScript-Simple	ports/print/p5-PostScript-Simple
 p5-Prima	ports/x11-toolkits/p5-Prima
 p5-Proc-Background	ports/devel/p5-Proc-Background
 p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
+p5-Proc-Fork	ports/devel/p5-Proc-Fork
 p5-Proc-PID-File	ports/devel/p5-Proc-PID-File
 p5-Proc-PIDFile	ports/devel/p5-Proc-PIDFile
 p5-Proc-ProcessTable	ports/devel/p5-Proc-ProcessTable
