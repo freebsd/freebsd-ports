@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	phpwebapp
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	munggo@pmy.lv
 COMMENT=	A web application framework
 
 USE_PHP=	yes
@@ -21,6 +21,7 @@ NO_BUILD=	yes
 PHPWEBAPP?=	${PREFIX}/www/data/web_app
 
 do-install:
+	${MKDIR} -p ${PREFIX}/www/data
 	${CP} -R ${WRKSRC}/web_app/ ${PHPWEBAPP}
 	@${FIND} ${PHPWEBAPP} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
