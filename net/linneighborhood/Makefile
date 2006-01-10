@@ -8,7 +8,7 @@
 PORTNAME=	LinNeighborhood
 PORTVERSION=	0.6.5
 PORTREVISION=	5
-CATEGORIES=	sysutils
+CATEGORIES=	net
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 
 MAINTAINER=	ports@FreeBSD.org
