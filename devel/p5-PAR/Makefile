@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.89
-PORTREVISION=	0
+PORTVERSION=	0.90
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -42,7 +41,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		p5-PAR only supports the ports versions of Perl.
+IGNORE=		only supports the ports versions of Perl,
 IGNORE+=If you have installed a Perl port, and are getting this message,
 IGNORE+=please make sure you have given the command \'use.perl port\'
 .endif # ${PERL_LEVEL} < 500601
