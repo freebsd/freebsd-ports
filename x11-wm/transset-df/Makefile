@@ -16,6 +16,7 @@ COMMENT=	Make your windows transparent
 USE_X_PREFIX=	yes
 ALL_TARGET=	transset-df
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
+USE_GETOPT_LONG=yes
 
 PLIST_FILES=	bin/transset-df
 
