@@ -30,12 +30,12 @@ OPTIONS=	RAW "Latest Release Of Apache & mySQL" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_RAW)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
 .endif
 
 .if defined(WITH_MATURE)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache \
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql41-server
 .endif
 
