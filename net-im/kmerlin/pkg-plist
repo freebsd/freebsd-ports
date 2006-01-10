@@ -2,8 +2,6 @@ bin/kmerlin
 share/doc/HTML/en/kmerlin/index.cache.bz2
 share/doc/HTML/en/kmerlin/index.docbook
 share/doc/HTML/en/kmerlin/common
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/apps/kmerlin/icons/hicolor/16x16/actions/hotmail.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmaway.png
 share/apps/kmerlin/icons/hicolor/16x16/actions/kmback.png
