@@ -25,7 +25,7 @@ MAN1=		msmtp.1
 INFO=	msmtp
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls-devel
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes

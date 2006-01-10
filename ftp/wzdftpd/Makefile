@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls-devel
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
