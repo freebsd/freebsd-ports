@@ -7,7 +7,7 @@
 
 PORTNAME=	Subtitles
 PORTVERSION=	0.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Prima/KARASIK
@@ -22,6 +22,11 @@ PERL_CONFIGURE=	yes
 MAN1=	subs.1
 MAN3=	Subtitles.3
 
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500800
+IGNORE= requires at least Perl 5.8. Install lang/perl5.8, and try again
+.endif
+
 .if defined(WITH_SUBTITLES_SUBPLAY)
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
@@ -35,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\('subs'\), 'subplay'|\1|" ${WRKSRC}/Makefile.PL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
