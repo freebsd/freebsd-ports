@@ -1,0 +1,27 @@
+You now need to create the DB where Drupal is going to live
+
+ PostgreSQL::
+   createdb -U pgsql -W drupal
+   createuser -U pgsql -P -e drupal
+   createlang -U pgsql -W plpgsql drupal
+   psql -U drupal drupal < %%PREFIX%%/%%DRUPDIR%%/database/database.pgsql
+
+ MySQL::
+   mysqladmin -u dba_user -p create drupal
+   mysql -u dba_user -p
+   GRANT ALL PRIVILEGES ON drupal.* TO drupal@localhost IDENTIFIED BY 'passwd';
+   mysql -u drupal -p drupal < %%PREFIX%%/%%DRUPDIR%%/database/database.mysql"
+
+Then edit the %%PREFIX%%/%%DRUPDIR%%/sites/default/settings.php
+to your needs.  Once you have done that you must add appropriate
+configuration directives to your apache configuration file
+(%%PREFIX%%/etc/apache(2)/httpd.conf).  A typical configuration would be:
+
+    Alias /drupal "%%PREFIX%%/%%DRUPDIR%%"
+
+    <Directory "%%PREFIX%%/%%DRUPDIR%%">
+        Options Indexes FollowSymlinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+    </Directory>
