@@ -5736,7 +5736,7 @@ linkchecker	ports/www/linkchecker
 linklint	ports/www/linklint
 links		ports/www/links
 links1		ports/www/links1
-linneighborhood	ports/sysutils/linneighborhood
+linneighborhood	ports/net/linneighborhood
 linpack		ports/math/linpack
 linphone	ports/net/linphone
 linphone-base	ports/net/linphone-base
