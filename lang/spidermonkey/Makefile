@@ -6,11 +6,13 @@
 
 PORTNAME=	spidermonkey
 DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	js
+MASTER_SITES=	${MASTER_SITE_MOZILLA:S/$/:src/} \
+		${MASTER_SITE_MOZILLA:S/$/:older/}
+MASTER_SITE_SUBDIR=	js/:src js/older-packages/:older
 DISTNAME=	js-${DISTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
@@ -30,7 +32,7 @@ MAKE_ARGS+=	JS_THREADSAFE=YES \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
-DISTFILES+=	older-packages/js-tests-20021118${EXTRACT_SUFX}
+DISTFILES+=	js-tests-20021118${EXTRACT_SUFX}:older
 post-build:	test
 post-patch:
 	#
