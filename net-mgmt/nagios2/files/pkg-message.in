@@ -27,3 +27,10 @@
   Alias %%NAGIOSHTMURL%%/  %%PREFIX%%/%%NAGIOSWWWDIR%%/
 
 **********************************************************************
+
+ Users experiencing troubles with logos used in the Status Map CGI
+ should first check the value of the physical_html_path variable
+ defined in %%PREFIX%%/etc/nagios/cgi.cfg.  Refer to the example in
+ %%PREFIX%%/etc/nagios/cgi.cfg-sample for the correct value.
+
+**********************************************************************
