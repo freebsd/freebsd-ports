@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	cedric@cedric.trix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
 USE_KDELIBS_VER=3
