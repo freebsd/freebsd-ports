@@ -73,9 +73,10 @@ CONFIGURE_ARGS+=	--enable-cpu=jitc_x86
 CONFIGURE_ARGS+=	--enable-cpu=generic
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-CFLAGS+=	-DFREEBSD_MB_SUPPORT
+.if ${OSVERSION} < 503001
+#USE_GCC=	3.4
+#CFLAGS+=	-DFREEBSD_MB_SUPPORT
+BROKEN=		"Missing truncf()"
 .endif
 
 pre-everything::
