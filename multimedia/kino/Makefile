@@ -28,8 +28,10 @@ USE_GNOME=	gnomehack gnomeprefix libgnomeui libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	CPPFLAGS=-"I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
+			-I${LOCALBASE}/include -I${X11BASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib/libquicktime	\
+			-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAN1=	kino.1
 
