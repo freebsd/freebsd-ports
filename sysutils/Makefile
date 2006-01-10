@@ -272,7 +272,6 @@
     SUBDIR += lineak_kdeplugins
     SUBDIR += lineak_xosdplugin
     SUBDIR += lineakd
-    SUBDIR += linneighborhood
     SUBDIR += linux-acu
     SUBDIR += linux-afaapps
     SUBDIR += linuxfdisk
