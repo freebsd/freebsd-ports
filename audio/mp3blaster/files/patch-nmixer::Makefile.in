@@ -1,45 +1,40 @@
-
-$FreeBSD$
-
---- nmixer/Makefile.in.orig	Sat Nov 29 05:07:25 2003
-+++ nmixer/Makefile.in	Sat Dec  6 00:13:22 2003
-@@ -87,9 +87,8 @@
+--- nmixer/Makefile.in.orig	Tue Jan 10 11:33:30 2006
++++ nmixer/Makefile.in	Tue Jan 10 11:33:59 2006
+@@ -134,8 +134,7 @@
  LDADD = @LIBNMIXER@ @NCURSES_LIBS@
  INCLUDES = -I/usr/include/ncurses -I$(srcdir) -I$(includedir)
  noinst_LIBRARIES = libnmixer.a
--libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h                       getopt.c getopt1.c getopt.h
--
--CXXFLAGS = @NAS_CFLAGS@
+-libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h \
+-                      getopt.c getopt1.c getopt.h
 +libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h
-+CXXFLAGS = @CXXFLAGS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
-@@ -105,8 +104,7 @@
- X_EXTRA_LIBS = @X_EXTRA_LIBS@
- X_PRE_LIBS = @X_PRE_LIBS@
- libnmixer_a_LIBADD = 
--libnmixer_a_OBJECTS =  nmixer.o mixers.o ossmixer.o nasmixer.o getopt.o \
--getopt1.o
-+libnmixer_a_OBJECTS =  nmixer.o mixers.o ossmixer.o nasmixer.o
- AR = ar
- PROGRAMS =  $(bin_PROGRAMS)
  
-@@ -250,13 +248,11 @@
- 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
- 	  fi; \
- 	done
--getopt.o: getopt.c ../config.h
--getopt1.o: getopt1.c ../config.h getopt.h
--main.o: main.cc nmixer.h ../config.h getopt.h
--mixers.o: mixers.cc nmixer.h ../config.h getopt.h
-+main.o: main.cc nmixer.h ../config.h
-+mixers.o: mixers.cc nmixer.h ../config.h
- nasmixer.o: nasmixer.cc
--nmixer.o: nmixer.cc nmixer.h ../config.h getopt.h
--ossmixer.o: ossmixer.cc nmixer.h ../config.h getopt.h
-+nmixer.o: nmixer.cc nmixer.h ../config.h
-+ossmixer.o: ossmixer.cc nmixer.h ../config.h
+ subdir = nmixer
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -147,8 +146,7 @@
+ libnmixer_a_AR = $(AR) cru
+ libnmixer_a_LIBADD =
+ am_libnmixer_a_OBJECTS = nmixer.$(OBJEXT) mixers.$(OBJEXT) \
+-	ossmixer.$(OBJEXT) nasmixer.$(OBJEXT) getopt.$(OBJEXT) \
+-	getopt1.$(OBJEXT)
++	ossmixer.$(OBJEXT) nasmixer.$(OBJEXT)
+ libnmixer_a_OBJECTS = $(am_libnmixer_a_OBJECTS)
+ bin_PROGRAMS = nmixer$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS)
+@@ -161,7 +159,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
++@AMDEP_TRUE@DEP_FILES = \
+ @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mixers.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/nasmixer.Po ./$(DEPDIR)/nmixer.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/ossmixer.Po
+@@ -231,8 +229,6 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
  
- info-am:
- info: info-am
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mixers.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nasmixer.Po@am__quote@
