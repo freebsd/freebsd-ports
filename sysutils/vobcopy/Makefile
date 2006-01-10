@@ -47,11 +47,6 @@ post-patch:
 		-e 's|-lgnugetopt||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|#include <stdint.h>||' \
-		${WRKSRC}/vobcopy.c
-.endif
 # fix typo
 	@${REINPLACE_CMD} -E \
 		-e 's|FreeBSD_Version|FreeBSD_version|' \
