@@ -142,12 +142,12 @@
 @dirrm %%DRUPDIR%%/themes/chameleon
 @dirrm %%DRUPDIR%%/themes/bluemarine
 @dirrm %%DRUPDIR%%/themes
-@dirrm %%DRUPDIR%%/sites/default
-@dirrm %%DRUPDIR%%/sites
+@unexec rmdir %D/%%DRUPDIR%%/sites/default 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/%%DRUPDIR%%/sites 2>/dev/null || /usr/bin/true
 @dirrm %%DRUPDIR%%/scripts
 @dirrm %%DRUPDIR%%/modules
 @dirrm %%DRUPDIR%%/misc
 @dirrm %%DRUPDIR%%/includes
 %%PORTDOCS%%@dirrm %%DRUPDIR%%/doc
 @dirrm %%DRUPDIR%%/database
-@dirrm %%DRUPDIR%%
+@unexec rmdir %D/%%DRUPDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%DRUPDIR%% and its contents manually.")

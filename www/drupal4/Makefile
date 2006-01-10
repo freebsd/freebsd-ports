@@ -7,14 +7,14 @@
 
 PORTNAME=	drupal
 PORTVERSION=	4.6.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	CMS that supports pgsql and mysql
 
-USE_PHP=	session
+USE_PHP=	session xml
 
 .include <bsd.port.pre.mk>
 
@@ -22,20 +22,23 @@ USE_PHP=	session
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
-pre-fetch:
 .if !defined(DRUPDIR)
+pre-fetch:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define DRUPDIR to override default of 'www/data/drupal'."
+	@${ECHO_MSG} "Define DRUPDIR to override default of 'www/drupal'."
 	@${ECHO_MSG} ""
 .endif
 
-DRUPDIR?=	www/data/drupal
+DRUPDIR?=	www/drupal
 WWWOWN?=	www
 WWWGRP?=	www
 
 NO_BUILD=	yes
 DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
 PLIST_SUB+=	DRUPDIR=${DRUPDIR}
+SUB_LIST+=	DRUPDIR=${DRUPDIR}
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
 	${MKDIR} ${PREFIX}/${DRUPDIR}
@@ -53,37 +56,16 @@ do-install:
 	@if [ ! -f ${PREFIX}/${DRUPDIR}/sites/default/settings.php ]; then \
 		${CP} -p ${PREFIX}/${DRUPDIR}/sites/default/settings.php-dist ${PREFIX}/${DRUPDIR}/sites/default/settings.php ; \
 	fi
-	${CP} -R ${WRKSRC}/sites ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/themes ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/update.php ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${PREFIX}/${DRUPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DRUPDIR}/doc
-.for FILE in ${DOCS}
-	${CP} ${WRKSRC}/${FILE} ${PREFIX}/${DRUPDIR}/doc
-.endfor
+	${CP} ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${DRUPDIR}/doc
 .endif
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DRUPDIR}
 
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " You now need to create the DB"
-	@${ECHO_MSG} " where Drupal is going to live"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " PostgreSQL::"
-	@${ECHO_MSG} "    createdb -U pgsql -W drupal"
-	@${ECHO_MSG} "    createuser -U pgsql -e drupal"
-	@${ECHO_MSG} "    createlang -U pgsql -W plpgsql drupal"
-	@${ECHO_MSG} "    psql -U drupal drupal < ${PREFIX}/${DRUPDIR}/database/database.pgsql"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " MySQL::"
-	@${ECHO_MSG} "    mysqladmin -u dba_user -p create drupal"
-	@${ECHO_MSG} "    mysql -u dba_user -p"
-	@${ECHO_MSG} "    GRANT ALL PRIVILEGES ON drupal.* TO nobody@localhost IDENTIFIED BY 'password';"
-	@${ECHO_MSG} "    mysql -u nobody -p drupal <  ${PREFIX}/${DRUPDIR}/database/database.mysql"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Then edit the ${PREFIX}/${DRUPDIR}/sites/default/settings.php to your needs."
-	@${ECHO_MSG} " Once you have done that"
-	@${ECHO_MSG} " GoTo: http://<your_website>/drupal"
-	@${ECHO_MSG} ""
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
