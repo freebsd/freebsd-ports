@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	MP3 console ncurses-based player

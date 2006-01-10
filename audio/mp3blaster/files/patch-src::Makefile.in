@@ -1,64 +1,45 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Sat Nov 29 05:07:27 2003
-+++ src/Makefile.in	Sat Dec  6 00:10:10 2003
-@@ -83,7 +83,7 @@
+--- src/Makefile.in.orig	Tue Jan 10 11:35:46 2006
++++ src/Makefile.in	Tue Jan 10 11:37:07 2006
+@@ -133,12 +133,9 @@
+ mp3blaster_SOURCES = fileman.cc \
+ 			  main.cc \
+ 			  scrollwin.cc \
+-			  getopt.c \
+-			  getopt1.c \
+ 			  fileman.h \
+ 			  genretab.h \
+-			  getopt.h \
+-				id3parse.cc \
++			  id3parse.cc \
+ 			  id3parse.h \
+ 			  mp3blaster.h \
+ 			  global.cc \
+@@ -176,7 +173,7 @@
+ PROGRAMS = $(bin_PROGRAMS)
  
- bin_PROGRAMS = mp3blaster mp3tag splay
- #bin_PROGRAMS		= mp3blaster mp3tag
--mp3blaster_SOURCES = fileman.cc 			  main.cc 			  scrollwin.cc 			  getopt.c 			  getopt1.c 			  fileman.h 			  genretab.h 			  getopt.h 				id3parse.cc 			  id3parse.h 			  mp3blaster.h 			  global.cc 			  global.h 			  config.cc 			  scrollwin.h 			  winitem.cc 			  winitem.h 			  mp3win.cc 			  mp3win.h 			  mp3item.cc 			  mp3item.h 				keybindings.h 				history.cc 				history.h 				getinput.cc 				getinput.h 				interface.cc 				interface.h
-+mp3blaster_SOURCES = fileman.cc 			  main.cc 			  scrollwin.cc 			  fileman.h 			  genretab.h 				id3parse.cc 			  id3parse.h 			  mp3blaster.h 			  global.cc 			  global.h 			  config.cc 			  scrollwin.h 			  winitem.cc 			  winitem.h 			  mp3win.cc 			  mp3win.h 			  mp3item.cc 			  mp3item.h 				keybindings.h 				history.cc 				history.h 				getinput.cc 				getinput.h 				interface.cc 				interface.h
- 
- splay_SOURCES = splay.cc splay.h splay_common.cc
- splay_DEPENDENCIES = ../mpegsound/libmpegsound.a
-@@ -110,9 +110,8 @@
- X_LIBS = @X_LIBS@
- X_EXTRA_LIBS = @X_EXTRA_LIBS@
- X_PRE_LIBS = @X_PRE_LIBS@
--mp3blaster_OBJECTS =  fileman.o main.o scrollwin.o getopt.o getopt1.o \
--id3parse.o global.o config.o winitem.o mp3win.o mp3item.o history.o \
--getinput.o interface.o
-+mp3blaster_OBJECTS =  fileman.o main.o scrollwin.o id3parse.o global.o \
-+config.o winitem.o mp3win.o mp3item.o history.o getinput.o interface.o
- mp3blaster_LDFLAGS = 
- mp3tag_OBJECTS =  id3parse.o mp3tag.o
- mp3tag_LDFLAGS = 
-@@ -249,30 +248,28 @@
- 	  fi; \
- 	done
- config.o: config.cc mp3blaster.h ../config.h global.h
--fileman.o: fileman.cc mp3blaster.h ../config.h getopt.h fileman.h \
-+fileman.o: fileman.cc mp3blaster.h ../config.h fileman.h \
- 	scrollwin.h winitem.h global.h
- getinput.o: getinput.cc getinput.h ../config.h
--getopt.o: getopt.c ../config.h
--getopt1.o: getopt1.c ../config.h getopt.h
--global.o: global.cc getopt.h mp3blaster.h ../config.h id3parse.h
--history.o: history.cc ../config.h history.h getopt.h
-+global.o: global.cc mp3blaster.h ../config.h id3parse.h
-+history.o: history.cc ../config.h history.h
- id3parse.o: id3parse.cc id3parse.h genretab.h
- interface.o: interface.cc
--main.o: main.cc ../config.h history.h getopt.h mp3blaster.h global.h \
-+main.o: main.cc ../config.h history.h mp3blaster.h global.h \
- 	scrollwin.h winitem.h mp3win.h fileman.h \
- 	../mpegsound/mpegsound.h ../nmixer/nmixer.h keybindings.h \
- 	getinput.h
- mp3item.o: mp3item.cc mp3item.h winitem.h mp3blaster.h ../config.h \
- 	mp3win.h scrollwin.h
--mp3tag.o: mp3tag.cc mp3blaster.h ../config.h getopt.h \
-+mp3tag.o: mp3tag.cc mp3blaster.h ../config.h \
- 	../mpegsound/mpegsound.h id3parse.h
- mp3win.o: mp3win.cc mp3win.h scrollwin.h mp3blaster.h ../config.h \
- 	winitem.h mp3item.h
- scrollwin.o: scrollwin.cc mp3blaster.h ../config.h global.h scrollwin.h \
- 	winitem.h
--splay.o: splay.cc ../config.h getopt.h ../mpegsound/mpegsound.h splay.h
-+splay.o: splay.cc ../config.h ../mpegsound/mpegsound.h splay.h
- splay_common.o: splay_common.cc ../config.h ../mpegsound/mpegsound.h \
--	getopt.h splay.h
-+	splay.h
- winitem.o: winitem.cc mp3blaster.h ../config.h scrollwin.h winitem.h
- 
- info-am:
+ am_mp3blaster_OBJECTS = fileman.$(OBJEXT) main.$(OBJEXT) \
+-	scrollwin.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT) \
++	scrollwin.$(OBJEXT) \
+ 	id3parse.$(OBJEXT) global.$(OBJEXT) config.$(OBJEXT) \
+ 	winitem.$(OBJEXT) mp3win.$(OBJEXT) mp3item.$(OBJEXT) \
+ 	history.$(OBJEXT) getinput.$(OBJEXT)
+@@ -193,8 +190,8 @@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/config.Po ./$(DEPDIR)/fileman.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/getinput.Po ./$(DEPDIR)/getopt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/getopt1.Po ./$(DEPDIR)/global.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/getinput.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/global.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/history.Po ./$(DEPDIR)/id3parse.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mp3item.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/mp3tag.Po ./$(DEPDIR)/mp3win.Po \
+@@ -265,8 +262,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/config.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fileman.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getinput.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/global.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/history.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/id3parse.Po@am__quote@

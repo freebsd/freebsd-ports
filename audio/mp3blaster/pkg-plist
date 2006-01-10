@@ -3,14 +3,14 @@ bin/mp3blaster
 bin/mp3tag
 bin/nmixer
 bin/splay
-share/mp3blaster/charmap/README
-share/mp3blaster/charmap/chargen.c
-share/mp3blaster/charmap/koi8-r
-share/mp3blaster/charmap/makefile.charmap
-share/mp3blaster/charmap/maketbl.c
-share/mp3blaster/charmap/win1251
-share/mp3blaster/charmap/win2koi.tbl
-share/mp3blaster/commands.txt
-share/mp3blaster/sample.mp3blasterrc
-@dirrm share/mp3blaster/charmap
-@dirrm share/mp3blaster
+%%DATADIR%%/charmap/README
+%%DATADIR%%/charmap/chargen.c
+%%DATADIR%%/charmap/koi8-r
+%%DATADIR%%/charmap/makefile.charmap
+%%DATADIR%%/charmap/maketbl.c
+%%DATADIR%%/charmap/win1251
+%%DATADIR%%/charmap/win2koi.tbl
+%%DATADIR%%/commands.txt
+%%DATADIR%%/sample.mp3blasterrc
+@dirrm %%DATADIR%%/charmap
+@dirrm %%DATADIR%%
