@@ -304,6 +304,7 @@
     SUBDIR += p5-Hash-Merge
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-IO-CSVHeaderFile
+    SUBDIR += p5-JSON-Syck
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Conjunction
     SUBDIR += p5-Lingua-EN-AddressParse
