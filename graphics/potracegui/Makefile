@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	potracegui
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.3.4
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,6 +36,8 @@ RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 .endif
 
 post-patch:
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/config.h.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
