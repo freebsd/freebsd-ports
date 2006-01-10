@@ -27,7 +27,7 @@ command="%%PREFIX%%/bin/stone"
 start_precmd="stone_precmd"
 restart_precmd="stone_precmd"
 
-stone_enable="NO"
+stone_enable=${stone_enable:-"NO"}
 
 load_rc_config $name
 
