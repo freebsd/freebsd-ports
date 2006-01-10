@@ -1,10 +1,19 @@
 bin/ysh
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/.packlist
-%%SITE_PERL%%/YAML/Transfer.pm
-%%SITE_PERL%%/YAML/Node.pm
-%%SITE_PERL%%/YAML/Error.pm
-%%SITE_PERL%%/YAML/Family.pm
-%%SITE_PERL%%/YAML.pod
+%%SITE_PERL%%/Test/YAML.pm
 %%SITE_PERL%%/YAML.pm
+%%SITE_PERL%%/YAML/Base.pm
+%%SITE_PERL%%/YAML/Dumper.pm
+%%SITE_PERL%%/YAML/Dumper/Base.pm
+%%SITE_PERL%%/YAML/Error.pm
+%%SITE_PERL%%/YAML/Loader.pm
+%%SITE_PERL%%/YAML/Loader/Base.pm
+%%SITE_PERL%%/YAML/Marshall.pm
+%%SITE_PERL%%/YAML/Node.pm
+%%SITE_PERL%%/YAML/Tag.pm
+%%SITE_PERL%%/YAML/Types.pm
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/YAML/Dumper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/YAML/Loader 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/YAML 2>/dev/null || true
