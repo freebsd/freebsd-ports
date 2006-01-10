@@ -30,8 +30,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-fastalloc --enable-optimize="${CXXFLAGS}" \
+CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}" \
 		--with-iconv="${LOCALBASE}"
+
 MAKE_ARGS=	CP="${CP} -R -f"
 ALL_TARGET=	${PORTNAME:U}
 
@@ -41,6 +42,12 @@ MANCOMPRESSED=	yes
 .if !defined(WITHOUT_IMLIB2)
 LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 CONFIGURE_ARGS+=	--with-imlib2
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+CONFIGURE_ARGS+=--disable-fastalloc
 .endif
 
 post-patch:
@@ -53,4 +60,4 @@ post-install:
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libexec/TeXmacs
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/TeXmacs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
