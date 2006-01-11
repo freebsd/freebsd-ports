@@ -9,10 +9,10 @@ PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 PORTREVISION=	0
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/32/
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/40/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	sge-V60u6_TAG-src
+DISTNAME=	sge-V60u7_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -42,11 +42,17 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
 
+# We have to use fetch because the master site required cookies to
+# download the file.
+FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+DISABLE_SIZE=	yes
+FETCH_CMD=	wget -c
+
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	6.0.6
-SGE_RELEASE=	6.0u6
+SGE_VERSION=	6.0.7
+SGE_RELEASE=	6.0u7
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -166,7 +172,7 @@ do-build:
 	cd ${WRKSRC} && ./scripts/zerodepend
 	cd ${WRKSRC} && ${AIMK_CMD} depend
 	cd ${WRKSRC} && \
-	    ${AIMK_CMD} -secure -debug && \
+	    ${AIMK_CMD} -debug && \
 	    ${AIMK_CMD} -man ${SGE_PRODUCT} &&
 	${MKDIR} ${TMP_SGE_ROOT}
 	cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
