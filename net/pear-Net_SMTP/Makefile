@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	antonio@php.net
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	Net
 FILES=		SMTP.php
 DOCS=		guide.txt
-TESTS=		auth.phpt basic.phpt config.php.dist
+TESTS=		auth.phpt basic.phpt config.php.dist quotedata.phpt
 EXAMPLES=	basic.php
 _EXAMPLESDIR=	docs/examples
 
