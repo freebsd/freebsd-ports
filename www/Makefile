@@ -214,6 +214,7 @@
     SUBDIR += libwww
     SUBDIR += lightsquid
     SUBDIR += lighttpd
+    SUBDIR += lifetype
     SUBDIR += linkcheck
     SUBDIR += linkchecker
     SUBDIR += linklint
@@ -739,7 +740,6 @@
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
     SUBDIR += planet
-    SUBDIR += plog
     SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
