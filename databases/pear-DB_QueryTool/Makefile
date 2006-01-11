@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_QueryTool
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -20,9 +20,10 @@ CATEGORY=	DB
 FILES=		QueryTool.php QueryTool/Query.php QueryTool/EasyJoin.php \
 		QueryTool/Result.php QueryTool/Result/Object.php
 EXAMPLES=	example.php mysql.sql pgsql.sql
-TESTS=		Common.php Get.php GetAll.php GetCount.php GetQueryString.php index.php \
-		Having.php Limit.php sql.php UnitTest.php Where.php SetDbInstance.php \
-		simpletest_tests/all_tests.php simpletest_tests/db_querytool_include.php \
+TESTS=		Common.php Get.php GetAll.php GetCount.php GetQueryString.php \
+		index.php Having.php Limit.php sql.php UnitTest.php Where.php \
+		SetDbInstance.php simpletest_tests/all_tests.php \
+		simpletest_tests/db_querytool_include.php \
 		simpletest_tests/db_querytool_test_base.php \
 		simpletest_tests/db_querytool_testDbInstance.php \
 		simpletest_tests/db_querytool_testGet.php \
