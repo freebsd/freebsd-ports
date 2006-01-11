@@ -29,6 +29,8 @@ PREFIX=		${KDE_PREFIX}
 
 USE_GETOPT_LONG=yes
 USE_OPENLDAP=	yes
+USE_OPENSSL=	yes
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
@@ -45,7 +47,8 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
 CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
-		--with-xdmdir=${X11BASE}/lib/X11/xdm
+		--with-xdmdir=${X11BASE}/lib/X11/xdm \
+		--with-ssl-dir=/
 
 OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on
 
