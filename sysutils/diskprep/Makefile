@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	diskprep
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/ \
 		${MASTER_SITE_LOCAL}
