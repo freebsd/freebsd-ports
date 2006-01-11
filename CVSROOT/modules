@@ -12044,6 +12044,7 @@ subcalc		ports/net-mgmt/subcalc
 subclipse	ports/devel/subclipse
 subconv		ports/multimedia/subconv
 subtitleripper	ports/multimedia/subtitleripper
+subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
 subversion-perl	ports/devel/subversion-perl
 subversion-python	ports/devel/subversion-python
