@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avarice
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	avarice
@@ -16,6 +16,7 @@ COMMENT=	Atmel AVR JTAG programmer and debugging interface for avr-gdb
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty
+LIB_DEPENDES=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
