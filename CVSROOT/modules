@@ -6682,6 +6682,7 @@ myghty		ports/www/myghty
 mymoon		ports/astro/mymoon
 myodbc		ports/databases/myodbc
 myphpmoney	ports/finance/myphpmoney
+mysar		ports/www/mysar
 mysql++		ports/databases/mysql++
 mysql++1	ports/databases/mysql++1
 mysql-administrator	ports/databases/mysql-administrator
