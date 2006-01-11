@@ -13,7 +13,7 @@ MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	remember-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
 EMACS_PORT_NAME?=	emacs21

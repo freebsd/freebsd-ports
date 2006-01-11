@@ -12,7 +12,7 @@ MASTER_SITES=	http://quixote.idyll.org/session2/ \
 		http://bsdchat.com/dist/dryice/
 DISTNAME=	session2-${PORTVERSION}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A quixote session manager with persistence support
 
 USE_PYTHON=	2.3+

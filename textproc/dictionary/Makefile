@@ -12,7 +12,7 @@ MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/ \
 		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A dictionary client for Emacs
 
 EMACS_PORT_NAME?=	emacs21

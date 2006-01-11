@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Code to efficiently read/write XML data with Elisp
 
 EMACS_PORT_NAME?=	emacs21

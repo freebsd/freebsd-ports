@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	feedparser
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	An RSS feed parser written in Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

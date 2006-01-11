@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
 EMACS_PORT_NAME?=	emacs21

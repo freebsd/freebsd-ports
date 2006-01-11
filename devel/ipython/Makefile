@@ -12,7 +12,7 @@ MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://bsdchat.com/dist/dryice/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	An enhanced Interactive Python shell
 
 MAN1=		ipython.1 pycolor.1

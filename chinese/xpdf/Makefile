@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	support/xpdf
 DISTFILES=	xpdf-chinese-simplified-2004-jul-27.tar.gz \
 		xpdf-chinese-traditional-2004-jul-27.tar.gz
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Chinese xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\

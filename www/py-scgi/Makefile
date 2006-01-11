@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 
 USE_PYTHON=	yes

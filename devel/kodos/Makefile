@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	The Python Regular Expression Debugger
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt

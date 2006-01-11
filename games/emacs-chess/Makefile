@@ -15,7 +15,7 @@ DISTFILES=		chess-${PORTVERSION}.tar.bz2 \
 			sounds.tar.bz2 \
 			pieces.tar.bz2
 
-MAINTAINER=		dryice@liu.com.cn
+MAINTAINER=		dryice@dryice.name
 COMMENT=		Play chess with emacs
 
 EMACS_PORT_NAME=	emacs21

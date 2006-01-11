@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
 PKGNAMEPREFIX=	mod_
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 USE_APACHE=	yes
