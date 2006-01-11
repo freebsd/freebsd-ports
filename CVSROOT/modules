@@ -3028,6 +3028,7 @@ global		ports/devel/global
 globus2		ports/misc/globus2
 glom		ports/databases/glom
 glpk		ports/math/glpk
+glpuzzle	ports/games/glpuzzle
 glrparser	ports/devel/glrparser
 gltk		ports/graphics/gltk
 gltron		ports/games/gltron
