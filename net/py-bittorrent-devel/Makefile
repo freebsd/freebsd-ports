@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -68,8 +68,11 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/queued.png \
 		share/pixmaps/BitTorrent/remove.png \
 		share/pixmaps/BitTorrent/running.png \
+		share/pixmaps/BitTorrent/status-broken.png \
 		share/pixmaps/BitTorrent/status-natted.png \
+		share/pixmaps/BitTorrent/status-pre-natted.png \
 		share/pixmaps/BitTorrent/status-running.png \
+		share/pixmaps/BitTorrent/status-starting.png \
 		share/pixmaps/BitTorrent/status-stopped.png
 
 PLIST_SUB+=	GUI=""
