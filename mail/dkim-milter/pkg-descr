@@ -1,0 +1,7 @@
+implements DomainKeys Identified Mail draft standard for signing
+and verifying e-mail messages.
+
+Details regarding the protocol and other issues related to the
+draft standard can be found at http://mipassoc.org/dkim/
+
+WWW: http://sourceforge.net/projects/dkim-milter/
