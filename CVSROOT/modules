@@ -12871,6 +12871,7 @@ vqregister	ports/mail/vqregister
 vrflash		ports/comms/vrflash
 vrfy		ports/mail/vrfy
 vscan		ports/security/vscan
+vserver		ports/net/vserver
 vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
 vsound		ports/audio/vsound
