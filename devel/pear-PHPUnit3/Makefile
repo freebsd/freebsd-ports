@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -15,22 +15,12 @@ COMMENT=	PEAR regression testing framework for unit tests
 BUILD_DEPENDS=	${PEARDIR}/Benchmark/Timer.php:${PORTSDIR}/benchmarks/pear-Benchmark
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=	PEAR_LOG "PEAR::Log support" off \
-		DOM "PHP DOM extension support" off
-
-PORT_DBDIR?=	/var/db/ports
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+OPTIONS=	PEAR_LOG "PEAR::Log support" off
 
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+USE_PHP=	dom pcre
 
-.if defined(WITH_DOM)
-USE_PHP=	dom
-.endif
-
-NO_PACKAGE=	Conflicting dependences between PHP4 and PHP5
+NO_PACKAGE=	"Conflicting dependences between PHP4 and PHP5"
 
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
@@ -38,51 +28,68 @@ BROKEN_WITH_PHP=4
 USE_REINPLACE=	yes
 
 CATEGORY=	PHPUnit2
-FILES=		Extensions/CodeCoverage/Renderer/HTML.php \
-		Extensions/CodeCoverage/Renderer/Text.php \
-		Extensions/CodeCoverage/Renderer.php Extensions/Log/PEAR.php \
-		Extensions/Log/XML.php Extensions/TestDox/ResultPrinter/HTML.php \
-		Extensions/TestDox/ResultPrinter/Text.php \
-		Extensions/TestDox/NamePrettifier.php \
-		Extensions/TestDox/ResultPrinter.php \
-		Extensions/ExceptionTestCase.php Extensions/PerformanceTestCase.php \
-		Extensions/RepeatedTest.php \
+FILES=		Extensions/ExceptionTestCase.php \
+		Extensions/PerformanceTestCase.php Extensions/RepeatedTest.php \
 		Extensions/TestDecorator.php Extensions/TestSetup.php \
 		Framework/Assert.php Framework/AssertionFailedError.php \
 		Framework/Error.php Framework/ComparisonFailure.php \
 		Framework/IncompleteTest.php Framework/IncompleteTestError.php \
-		Framework/Test.php Framework/TestCase.php Framework/TestFailure.php \
-		Framework/TestListener.php Framework/TestResult.php \
-		Framework/TestSuite.php Framework/Warning.php \
-		Runner/BaseTestRunner.php Runner/IncludePathTestCollector.php \
+		Framework/Test.php Framework/TestCase.php \
+		Framework/TestFailure.php Framework/TestListener.php \
+		Framework/TestResult.php Framework/TestSuite.php \
+		Framework/Warning.php Runner/BaseTestRunner.php \
+		Runner/IncludePathTestCollector.php \
 		Runner/StandardTestSuiteLoader.php Runner/TestCollector.php \
-		Runner/TestRunListener.php Runner/TestSuiteLoader.php \
-		Runner/Version.php Tests/Framework/AllTests.php \
-		Tests/Framework/AssertTest.php \
-		Tests/Framework/ComparisonFailureTest.php Tests/Framework/SuiteTest.php \
-		Tests/Framework/TestCaseTest.php Tests/Framework/TestImplementorTest.php \
-		Tests/Framework/TestListenerTest.php Tests/Extensions/TestDox/AllTests.php \
-		Tests/Extensions/TestDox/NamePrettifierTest.php \
-		Tests/Extensions/AllTests.php Tests/Extensions/ExceptionTestCaseTest.php \
-		Tests/Extensions/ExtensionTest.php \
-		Tests/Extensions/PerformanceTestCaseTest.php \
-		Tests/Extensions/RepeatedTestTest.php Tests/Runner/AllTests.php \
-		Tests/Runner/BaseTestRunnerTest.php Tests/AllTests.php \
-		Tests/DoubleTestCase.php Tests/Error.php Tests/Failure.php \
-		Tests/InheritedTestCase.php Tests/Iterator.php Tests/MockRunner.php \
-		Tests/NoArgTestCaseTest.php Tests/NonStatic.php Tests/NoTestCaseClass.php \
-		Tests/NoTestCases.php Tests/NotPublicTestCase.php Tests/NotVoidTestCase.php \
-		Tests/OneTestCase.php Tests/OverrideTestCase.php Tests/SetupFailure.php \
-		Tests/Sleep.php Tests/Success.php Tests/TearDownFailure.php \
-		Tests/ThrowExceptionTestCase.php Tests/ThrowNoExceptionTestCase.php \
-		Tests/TornDown.php Tests/TornDown2.php Tests/TornDown3.php \
-		Tests/TornDown4.php Tests/TornDown5.php Tests/WasRun.php \
-		TextUI/ResultPrinter.php TextUI/TestRunner.php Util/Filter.php \
+		Runner/TestSuiteLoader.php Runner/Version.php \
+		TextUI/ResultPrinter.php TextUI/TestRunner.php \
+		Util/CodeCoverage/Renderer/HTML.php \
+		Util/CodeCoverage/Renderer/Text.php \
+		Util/CodeCoverage/Renderer.php Util/Log/PEAR.php \
+		Util/Log/XML.php Util/TestDox/ResultPrinter/HTML.php \
+		Util/TestDox/ResultPrinter/Text.php \
+		Util/TestDox/NamePrettifier.php Util/TestDox/ResultPrinter.php \
+		Util/ErrorHandler.php Util/Fileloader.php Util/Filter.php \
 		Util/Printer.php Util/Skeleton.php
+EXAMPLES=	BankAccount/BankAccount.php BankAccount/BankAccountTest.php \
+		Money/IMoney.php Money/Money.php Money/MoneyBag.php \
+		Money/MoneyTest.php
+TESTS=		Framework/AllTests.php Framework/AssertTest.php \
+		Framework/ComparisonFailureTest.php Framework/SuiteTest.php \
+		Framework/TestCaseTest.php Framework/TestImplementorTest.php \
+		Framework/TestListenerTest.php Extensions/AllTests.php \
+		Extensions/ExceptionTestCaseTest.php \
+		Extensions/ExtensionTest.php \
+		Extensions/PerformanceTestCaseTest.php \
+		Extensions/RepeatedTestTest.php Runner/AllTests.php \
+		Runner/BaseTestRunnerTest.php Util/TestDox/AllTests.php \
+		Util/TestDox/NamePrettifierTest.php AllTests.php \
+		DoubleTestCase.php Error.php Failure.php InheritedTestCase.php \
+		MockRunner.php NoArgTestCaseTest.php NonStatic.php \
+		NoTestCaseClass.php NoTestCases.php NotPublicTestCase.php \
+		NotVoidTestCase.php OneTestCase.php OverrideTestCase.php \
+		SetupFailure.php Sleep.php Success.php TearDownFailure.php \
+		TestIterator.php ThrowExceptionTestCase.php \
+		ThrowNoExceptionTestCase.php TornDown.php TornDown2.php \
+		TornDown3.php TornDown4.php TornDown5.php TornDown6.php \
+		WasRun.php Util/AllTests.php
 SCRIPTFILES=	phpunit
+_EXAMPLESDIR=	Samples
+_TESTSDIR=	Tests
+
+post-extract:
+	@${CP} ${WRKSRC}/${_TESTSDIR}/AllTests.php ${WRKSRC}/${_TESTSDIR}/Util
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/Runner/Version.php
+. for FILE in ${FILES}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/${FILE}
+. endfor
+. for FILE in ${EXAMPLES}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/${_EXAMPLESDIR}/${FILE}
+. endfor
+. for FILE in ${TESTS}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/${_TESTSDIR}/${FILE}
+. endfor
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/pear-${SCRIPTFILES}
 
 .include <bsd.port.pre.mk>
 
