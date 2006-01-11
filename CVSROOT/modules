@@ -5711,6 +5711,7 @@ licq-qt-gui	ports/net-im/licq-qt-gui
 liedentd	ports/security/liedentd
 lifelines	ports/misc/lifelines
 liferea		ports/net/liferea
+lifetype	ports/www/lifetype
 lightning	ports/devel/lightning
 lightsquid	ports/www/lightsquid
 lighttpd	ports/www/lighttpd
@@ -9876,7 +9877,6 @@ plib		ports/x11-toolkits/plib
 plman		ports/math/plman
 pload		ports/net/pload
 plod		ports/sysutils/plod
-plog		ports/www/plog
 plone		ports/www/plone
 plonx		ports/games/plonx
 plor		ports/news/plor
