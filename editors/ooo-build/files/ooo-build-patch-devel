@@ -40,15 +40,18 @@ gnu patch is gpatch for FreeBSD.
  
  [ TemporaryHacks ]
  # adding glib-2.0 and ORBit-2.0 to pkgconfig modules; i#47923
-@@ -338,7 +340,7 @@
+@@ -306,9 +308,9 @@
  
  [ Shrink ]
  # strip 450k of .comment sections - i#57063
 -size-strip.diff
-+# size-strip.diff #break the build of FBSD see my comment on #i57063#
++# size-strip.diff
  # save 1.7Mb of (shared) memory for non-asian locales
- cws-i18nshrink.diff
+-cws-i18nshrink.diff
++# cws-i18nshrink.diff
  
+ 
+ [ QuickStarter ]
 @@ -587,7 +589,7 @@
  # Fix missing __cxa_guard_acquire/__cxa_guard_release - #34676 (for FC3)
  sal-cxa-guard.diff
