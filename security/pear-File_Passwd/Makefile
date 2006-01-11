@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Passwd
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	security pear
 
 MAINTAINER=	antonio@php.net
@@ -24,9 +24,9 @@ FILES=		Passwd.php Passwd/Common.php Passwd/Unix.php Passwd/Cvs.php \
 		Passwd/Custom.php
 TESTS=		testsuite.php test_file_passwd.php test_common.php test_unix.php \
 		test_smb.php test_cvs.php test_authbasic.php test_authdigest.php \
-		test_custom.php README.txt common.txt passwd.unix.txt passwd.cvs.txt \
-		passwd.smb.txt passwd.authbasic.txt passwd.authdigest.txt \
-		passwd.custom.txt
+		test_custom.php README.txt common.txt passwd.unix.txt \
+		passwd.cvs.txt passwd.smb.txt passwd.authbasic.txt \
+		passwd.authdigest.txt passwd.custom.txt
 
 .include <bsd.port.pre.mk>
 
