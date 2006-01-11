@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 #DISTNAME=       ${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A lexer, parser-generator, and parser for Emacs
 
 EMACS_PORT_NAME?=	emacs21

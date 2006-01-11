@@ -11,7 +11,7 @@ CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
 		http://bsdchat.com/dist/dryice/
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Manage your projects or tasks within GNU Emacs
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \

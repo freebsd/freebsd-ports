@@ -13,7 +13,7 @@ MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	planner-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 EMACS_PORT_NAME?=	emacs21

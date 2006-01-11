@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.fcitx.org/download/ \
 		http://bsdchat.com/dist/dryice/
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

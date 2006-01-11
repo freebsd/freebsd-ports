@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	wqy
 DISTNAME=	${PORTNAME}-yhunifont-bdf-${PORTVERSION}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-yhunifont

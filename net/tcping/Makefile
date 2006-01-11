@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.linuxco.de/tcping/ \
 		http://bsdchat.com/dist/dryice/
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	Do a TCP connect to the given IP/port combination
 
 DOCS=		README

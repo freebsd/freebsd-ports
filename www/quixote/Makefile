@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/ \
 		http://bsdchat.com/dist/dryice/
 DISTNAME=	Quixote-${PORTVERSION}
 
-MAINTAINER=	dryice@liu.com.cn
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A framework for developing web applications in Python
 
 USE_PYTHON=	2.3+
