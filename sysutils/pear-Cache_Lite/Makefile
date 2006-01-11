@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
@@ -17,9 +17,16 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Cache
-FILES=		Lite/Output.php Lite/Function.php Lite.php
+FILES=		Lite/Output.php Lite/Function.php Lite/File.php Lite.php
 DOCS=		docs/technical docs/examples LICENSE TODO
-TESTS=		test.php test2.php test3.php bench.php bench2.php bench3.php readme
+TESTS=		Cache_Lite_classical.phpt Cache_Lite_eternal.phpt \
+		Cache_Lite_fatest.phpt Cache_Lite_File_classical.phpt \
+		Cache_Lite_Function_classical.phpt Cache_Lite_Function_drop.phpt \
+		Cache_Lite_hashed.phpt Cache_Lite_memorycache.phpt \
+		Cache_Lite_Output_classical.phpt Cache_Lite_serialization.phpt \
+		pearbug513.phpt cache_lite_base.inc cache_lite_file_base.inc \
+		cache_lite_function_base.inc cache_lite_output_base.inc \
+		callcache.inc tmpdir.inc bench.php bench2.php bench3.php readme
 _DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
