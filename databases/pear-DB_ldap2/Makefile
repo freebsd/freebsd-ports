@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_ldap
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	databases net pear
 
 MAINTAINER=	antonio@php.net
