@@ -17,16 +17,31 @@ bin/pgworksheet
 %%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.py
 %%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.pyc
 %%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.pyo
+%%PYTHON_SITELIBDIR%%/pgw/Syntax.py
+%%PYTHON_SITELIBDIR%%/pgw/Syntax.pyc
+%%PYTHON_SITELIBDIR%%/pgw/Syntax.pyo
+%%PYTHON_SITELIBDIR%%/pgw/Undo.py
+%%PYTHON_SITELIBDIR%%/pgw/Undo.pyc
+%%PYTHON_SITELIBDIR%%/pgw/Undo.pyo
+%%PYTHON_SITELIBDIR%%/pgw/Lexical.py
+%%PYTHON_SITELIBDIR%%/pgw/Lexical.pyc
+%%PYTHON_SITELIBDIR%%/pgw/Lexical.pyo
+share/applications/pgworksheet.desktop
+share/pixmaps/pgworksheet.png
 share/pixmaps/pgworksheet/connect.png
 share/pixmaps/pgworksheet/disconnect.png
 share/pixmaps/pgworksheet/about.png
 share/pixmaps/pgworksheet/pgworksheet.png
 share/pixmaps/pgworksheet/pgworksheet-32.png
 share/locale/fr/LC_MESSAGES/pgworksheet.mo
+share/locale/ja/LC_MESSAGES/pgworksheet.mo
 @dirrm %%PYTHON_SITELIBDIR%%/pgw
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2> /dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2> /dev/null || true
 @dirrm share/pixmaps/pgworksheet
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true

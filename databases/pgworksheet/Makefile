@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pgworksheet
-PORTVERSION=	1.7
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/619/
 
 MAINTAINER=	hmichelon@e-cml.org
 COMMENT=	Simple PostreSQL GUI front end
