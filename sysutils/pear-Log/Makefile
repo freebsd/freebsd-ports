@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	antonio@php.net
@@ -17,10 +17,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 
-FILES=		Log/composite.php Log/console.php Log/daemon.php \
-		Log/display.php Log/error_log.php Log/file.php Log/mail.php \
-		Log/mcal.php Log/mdb2.php Log/null.php Log/observer.php \
-		Log/sql.php Log/sqlite.php Log/syslog.php Log/win.php Log.php
+FILES=		Log/composite.php Log/console.php Log/daemon.php Log/display.php \
+		Log/error_log.php Log/file.php Log/mail.php Log/mcal.php \
+		Log/mdb2.php Log/null.php Log/observer.php Log/sql.php \
+		Log/sqlite.php Log/syslog.php Log/win.php Log.php
 DOCS=		guide.txt
 EXAMPLES=	composite.php console.php display.php error_log.php file.php \
 		mail.php null.php observer_mail.php pear_error_handler.php \
