@@ -107,7 +107,7 @@ $FreeBSD$
        Execute cp -r MANSBUILD_$MANSRCDIR/SEDMAN/man $DEST_SGE_ROOT
  
        if [ -d MANSBUILD_$MANSRCDIR/ASCMAN/catman ]; then
-@@ -1146,7 +1147,7 @@
+@@ -1148,7 +1149,7 @@
  
        for prog in $PROG; do
           case $prog in
@@ -116,7 +116,7 @@ $FreeBSD$
                 : 
                 ;;
              qmake)
-@@ -1224,18 +1225,12 @@
+@@ -1226,13 +1227,7 @@
           echo "---------------------------"
           for prog in $UTILITYBINARIES; do
              if [ $prog = openssl ]; then
@@ -130,10 +130,13 @@ $FreeBSD$
 +               LinkFile $OPENSSLBASE/bin/openssl
              elif [ $prog = testsuidroot ]; then
                 InstallProgSUID $prog
-             elif [ $prog = berkeley_db_svc -o $prog = db_archive -o $prog = db_checkpoint -o $prog = db_deadlock -o $prog = db_dump -o $prog = db_load -o $prog = db_printlog -o $prog = db_recover -o $prog = db_stat -o $prog = db_upgrade -o $prog = db_verify ]; then
+             elif [ $prog = berkeley_db_svc -o $prog = db_archive \
+@@ -1242,7 +1237,7 @@
+                    -o $prog = db_stat -o $prog = db_upgrade \
+                    -o $prog = db_verify ]; then
                 if [ "$DSTARCH" != "win32-x86" ]; then
 -                  InstallProg $BERKELEYDBBASE/$DSTARCH/bin/$prog
-+                  LinkFile $BERKELEYDBBASE/bin/${prog}-4.2
++		  LinkFile $BERKELEYDBBASE/bin/${prog}-4.2
                 fi
              elif [ $prog = spoolinit -o $prog = spooldefaults ]; then
-                if [ $instclassictargets = false ]; then
+                if [ "$DSTARCH" != "win32-x86" ]; then
