@@ -1,0 +1,10 @@
+--- Makefile.orig	Mon Jan  9 03:32:53 2006
++++ Makefile	Tue Jan 10 02:57:36 2006
+@@ -23,6 +23,6 @@
+ 	chmod +x $(PREFIX)/bin/glpuzzle
+ 
+ glpuzzle: main.cxx version.h
+-	g++ -O2 -Wall -I/usr/include/SDL main.cxx -lpthread -lSDL -lGL -lpthread -lpng -ljpeg -o glpuzzle
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -lGL -lpng -ljpeg -o glpuzzle main.cxx
+ 
+ 

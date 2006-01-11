@@ -213,6 +213,7 @@
     SUBDIR += glife
     SUBDIR += glmaze
     SUBDIR += glob2
+    SUBDIR += glpuzzle
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gnarr
