@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060111:
+  AFFECTS: users of devel/perforce
+  AUTHOR: lth@FreeBSD.org
+
+  Perforce has been updated to version 2005.2. As usual, there has
+  been significant schema upgrades, so even though upgrading to
+  2005.2 is straightforward, it is still highly recommended to
+  follow the upgrading instructions in the release notes:
+
+    http://www.perforce.com/perforce/doc.052/user/relnotes.txt
+
 20060110:
   AFFECTS: users of www/drupal
   AUTHOR: brooks@FreeBSD.org
