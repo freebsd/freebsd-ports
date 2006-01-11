@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_IPv6
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
 MAINTAINER=	antonio@php.net
