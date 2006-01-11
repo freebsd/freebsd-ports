@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pager
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -23,8 +23,8 @@ TESTS=		all_tests.php pager_include.php pager_jumping_noData_test.php \
 		pager_noData_test.php pager_sliding_noData_test.php \
 		pager_sliding_notExpanded_test.php pager_sliding_test.php \
 		pager_sliding_tests.php pager_test.php pager_test_xss.php \
-		pager_tests.php pager_wrapper_include.php \
-		pager_wrapper_test.php simple_include.php README
+		pager_tests.php pager_wrapper_include.php pager_wrapper_test.php \
+		simple_include.php README
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
