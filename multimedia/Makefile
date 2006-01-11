@@ -171,6 +171,7 @@
     SUBDIR += streamdvd
     SUBDIR += subconv
     SUBDIR += subtitleripper
+    SUBDIR += subtools
     SUBDIR += tcmplex-panteltje
     SUBDIR += tkxanim
     SUBDIR += tosvcd
