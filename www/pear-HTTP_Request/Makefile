@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Request
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	www pear
 
 MAINTAINER=	antonio@php.net
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTTP
 FILES=		Request.php Request/Listener.php
-EXAMPLES=	download-progress.php example.php
+EXAMPLES=	example.php download-progress.php
 _EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
