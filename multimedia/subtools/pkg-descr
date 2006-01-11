@@ -1,0 +1,10 @@
+subtools is a port of DivX Subtitles MiniTools, command-line
+tools for movie subtitles in SubRipper format (.srt files).
+"srtshift" can adjust the subtitles by shifting them to the
+beginning or to the end. "srtrate" does the same by changing
+the supposed frame rate.
+
+It's in early stages of development (and have been there for
+a few years now), but it does its job well.
+
+WWW: http://subtools.sourceforge.net/
