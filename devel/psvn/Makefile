@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	16961
+PORTVERSION=	17982
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://svn.collab.net/viewcvs/*checkout*/svn/trunk/contrib/client-side/psvn/
 DISTNAME=	psvn.el\?rev=${PORTVERSION}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 EMACS_PORT_NAME?=	emacs21
 
-DISABLE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
