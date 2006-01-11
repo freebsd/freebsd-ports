@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Event_Dispatcher
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	antonio@php.net
@@ -19,7 +19,8 @@ USE_REINPLACE=	yes
 
 CATEGORY=	Event
 FILES=		Dispatcher.php Notification.php
-EXAMPLES=	bubbling.php cancel.php notification-class.php object.php
+EXAMPLES=	bubbling.php cancel.php debugging.php notification-class.php \
+		object.php
 TESTS=		Console_TestListener.php Dispatcher_testcase.php test.php
 
 post-extract:
