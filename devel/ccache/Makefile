@@ -14,6 +14,7 @@ MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
+BROKEN=		"Examples provided break buildworld"
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
