@@ -52,7 +52,7 @@ USE_PHP+=	zlib
 .endif
 
 .if defined(WITH_IMAGICK)
-LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:
