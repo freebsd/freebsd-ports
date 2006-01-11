@@ -7,9 +7,11 @@
 
 PORTNAME=	diskprep
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/
+MASTER_SITES=	http://people.freebsd.org/~brooks/diskprep/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A program to prepare disks for use based on a config file
