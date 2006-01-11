@@ -1,0 +1,11 @@
+gpsd is a service daemon that monitors one or more GPSes 
+attached to a host computer through serial or USB ports, 
+making all data on the location/course/velocity of the 
+sensors available to be queried on TCP port 2947 of the 
+host computer. With gpsd, multiple GPS client applications 
+(such as navigational and wardriving software) can share 
+access to GPSes without contention or loss of data. Also, 
+gpsd responds to queries with a format that is substantially 
+easier to parse than the NMEA 0183 emitted by most GPSes.
+
+WWW: http://gpsd.berlios.de/

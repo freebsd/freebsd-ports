@@ -1,0 +1,17 @@
+%%X11%%bin/xgpsspeed
+%%X11%%bin/xgps
+sbin/gpsd
+bin/cgps
+bin/gpsflash
+bin/gpsprof
+bin/sirfmon
+bin/gpsfake
+bin/gpspipe
+bin/rtcmdecode
+include/gps.h
+include/gpsd.h
+include/libgpsmm.h
+lib/libgps.a
+lib/libgps.la
+lib/libgps.so
+lib/libgps.so.15
