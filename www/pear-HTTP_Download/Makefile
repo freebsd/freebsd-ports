@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Download
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	antonio@php.net
