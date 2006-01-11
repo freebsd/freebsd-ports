@@ -585,6 +585,7 @@
     SUBDIR += p5-HTML-TokeParser-Simple
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTML-Webmake
+    SUBDIR += p5-HTML-Widget
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
     SUBDIR += p5-HTTP-Body

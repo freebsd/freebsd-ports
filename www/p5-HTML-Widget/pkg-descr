@@ -1,0 +1,10 @@
+Create easy to maintain HTML widgets!
+
+Everything is optional, use validation only or just generate forms, you
+can embed and merge them later.
+
+The API was designed similar to other popular modules like Data::Form-
+Validator and FormValidator::Simple, HTML::FillInForm is also built in
+(and much faster).
+
+WWW: http://search.cpan.org/dist/HTML-Widget/
