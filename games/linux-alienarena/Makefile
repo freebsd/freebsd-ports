@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2006
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/:full \
 		ftp://download1.gamershell.com/pub/pc/games/gamershell/demo/:full \
@@ -17,11 +18,13 @@ MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/:full \
 		ftp://download9.gamershell.com/pub/pc/games/gamershell/demo/:full \
 		ftp://download11.gamershell.com/pub/pc/gamershell/demo/:full \
 		ftp://download12.gamershell.com/pub/pc/gamershell/demo/:full \
-		http://offload1.icculus.org/~ravage/alienarena2006/:patch
+		ftp://download12.gamershell.com/pub/pc/gamershell/patch/:patch1 \
+		http://offload1.icculus.org/~ravage/alienarena2006/:patch2
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-x86.run:full \
-		${PORTNAME}-${PORTVERSION}-sdl-i386.tar.gz:patch \
-		${PORTNAME}-${PORTVERSION}-sdl-x86_64.tar.gz:patch
+		aa2k6-update-12-30.tar.gz:patch1 \
+		${PORTNAME}-${PORTVERSION}-i386-update-12-30.tar.gz:patch2 \
+		${PORTNAME}-${PORTVERSION}-x86_64-update-12-30.tar.gz:patch2
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Alien Arena 2006 (Linux version)
@@ -84,7 +87,8 @@ do-extract:
 	@${TAR} xfj ${WRKSRC}/alienarena-2006-data.tar.bz2 -C ${WRKSRC}
 
 	@${CP} -R ${WRKSRC}/engine/${ENGINE_ARCH}/* ${WRKSRC}
-	@${TAR} xfz ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-sdl-${SDL_ARCH}.tar.gz -C ${WRKSRC}
+	@${TAR} xfz ${_DISTDIR}/aa2k6-update-12-30.tar.gz -C ${WRKSRC}
+	@${TAR} xfz ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-${SDL_ARCH}-update-12-30.tar.gz -C ${WRKSRC}
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -100,7 +104,8 @@ do-install:
 	${FIND} ${LIBDIRS} -type f -exec ${INSTALL_DATA} "{}" "${ALIENDIR}/{}" \;
 
 	${INSTALL_SCRIPT} ${WRKDIR}/AlienArena ${WRKDIR}/AlienArenaDedicated ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/crded ${WRKSRC}/crx ${ALIENDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/crded ${ALIENDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/crx.sdl ${ALIENDIR}/crx
 
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/alienarena.xpm ${PREFIX}/share/pixmaps
