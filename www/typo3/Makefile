@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,13 +41,7 @@ OPTIONS=	GD "Configure with GDlib/freetype support" off \
 		ZLIB "Configure with zlib support" off \
 		IMAGICK "Configure with ImageMagick support" off
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_GD)
 USE_PHP+=	gd
@@ -77,4 +71,4 @@ post-install:
 	@${FIND} -d ${PREFIX}/${SITEDIR} -type d \
 	  | ${SED} -ne 's,^${PREFIX}/${SITEDIR},@dirrm ${SITEDIR},p' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
