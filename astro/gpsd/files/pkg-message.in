@@ -1,0 +1,9 @@
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+* NOTE:
+
+%%PREFIX%%/bin/gpsfake and %%PREFIX%%/bin/gpsprof
+are Python script text executables.
+To use them, please ensure you have appropriate 
+Python install.
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
