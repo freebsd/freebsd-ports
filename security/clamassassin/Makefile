@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamassassin
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	security
 MASTER_SITES=	http://drivel.com/clamassassin/
 
