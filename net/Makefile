@@ -814,6 +814,7 @@
     SUBDIR += vnc2swf
     SUBDIR += vncreflector
     SUBDIR += vomit
+    SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += vyqchat
     SUBDIR += wais
