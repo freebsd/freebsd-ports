@@ -386,6 +386,7 @@
     SUBDIR += mplayer-plugin
     SUBDIR += myfaces
     SUBDIR += myghty
+    SUBDIR += mysar
     SUBDIR += nanoblogger
     SUBDIR += nd
     SUBDIR += neon
