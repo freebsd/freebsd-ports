@@ -10358,6 +10358,7 @@ py-cddb		ports/audio/py-cddb
 py-cgkit	ports/graphics/py-cgkit
 py-chart	ports/graphics/py-chart
 py-cheetah	ports/devel/py-cheetah
+py-cherrypy	ports/www/py-cherrypy
 py-ciphon	ports/devel/py-ciphon
 py-cjkcodecs	ports/converters/py-cjkcodecs
 py-clamav	ports/security/py-clamav
