@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	System_Command
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	antonio@php.net
