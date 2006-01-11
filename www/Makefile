@@ -764,6 +764,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
     SUBDIR += py-beautifulsoup
+    SUBDIR += py-cherrypy
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
     SUBDIR += py-django
