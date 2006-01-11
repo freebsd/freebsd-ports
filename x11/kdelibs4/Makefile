@@ -4,6 +4,7 @@
 # Whom:					will@cvs.kde.org
 #
 # $FreeBSD$
+#
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
@@ -49,7 +50,6 @@ USE_GETTEXT=	yes
 USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 USE_OPENSSL=	yes
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -66,7 +66,8 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--with-lua-dir=${LOCALBASE} \
 		--with-lua-libraries=${LOCALBASE}/libs \
-		--with-lua-includes=${LOCALBASE}/include
+		--with-lua-includes=${LOCALBASE}/include \
+		--with-ssl-dir=/
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
@@ -89,6 +90,7 @@ post-configure:
 	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
 	${TOUCH} ${WRKSRC}/kdecore/kdemacros.h.in
 	${TOUCH} ${WRKSRC}/kio/kssl/ksslconfig.h.in
+	${TOUCH} ${WRKSRC}/kjs/global.h.in
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/rc.d
