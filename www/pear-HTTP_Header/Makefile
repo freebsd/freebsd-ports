@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Header
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	antonio@php.net
@@ -17,7 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTTP
 FILES=		Header.php Header/Cache.php
-TESTS=		README.txt cacheresponse.php header.php header_cache.php response.php
+TESTS=		response.php cacheresponse.php header.php header_cache.php \
+		README.txt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
