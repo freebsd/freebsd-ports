@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	0.9.36
+PORTVERSION=	0.9.103
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/27309/
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/29017
 DISTNAME=	site.${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -20,7 +20,7 @@ FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	phpeclipse-[0-9]*
 
-WRKSRC=		${WRKDIR}/update
+WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_ZIP=	yes
 
