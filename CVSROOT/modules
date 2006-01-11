@@ -7513,6 +7513,7 @@ p5-Catalyst-Plugin-DefaultEnd	ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormValidator	ports/www/p5-Catalyst-Plugin-FormValidator
 p5-Catalyst-Plugin-FormValidator-Simple	ports/www/p5-Catalyst-Plugin-FormValidator-Simple
+p5-Catalyst-Plugin-HTML-Widget	ports/www/p5-Catalyst-Plugin-HTML-Widget
 p5-Catalyst-Plugin-I18N	ports/www/p5-Catalyst-Plugin-I18N
 p5-Catalyst-Plugin-PageCache	ports/www/p5-Catalyst-Plugin-PageCache
 p5-Catalyst-Plugin-Pluggable	ports/www/p5-Catalyst-Plugin-Pluggable
