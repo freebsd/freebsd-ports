@@ -21,7 +21,7 @@ gnu patch is gpatch for FreeBSD.
      }
 
 --- patches/src680/apply.orig	Thu Dec 22 18:47:08 2005
-+++ patches/src680/apply	Sat Dec 24 01:46:07 2005
++++ patches/src680/apply	Wed Jan 11 19:30:14 2006
 @@ -64,6 +64,8 @@
  Gentoo64: GentooBase, 64bit
  # Win32
@@ -31,15 +31,18 @@ gnu patch is gpatch for FreeBSD.
  
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
-@@ -306,7 +308,7 @@
+@@ -306,9 +308,9 @@
  
  [ Shrink ]
  # strip 450k of .comment sections - i#57063
 -size-strip.diff
 +# size-strip.diff
  # save 1.7Mb of (shared) memory for non-asian locales
- cws-i18nshrink.diff
+-cws-i18nshrink.diff
++# cws-i18nshrink.diff
  
+ 
+ [ QuickStarter ]
 @@ -557,7 +559,7 @@
  # Fix missing __cxa_guard_acquire/__cxa_guard_release - #34676 (for FC3)
  sal-cxa-guard.diff
@@ -49,3 +52,12 @@ gnu patch is gpatch for FreeBSD.
  # Fix ODK Java bits
  odk-java-wizpanel.diff
  # add possibility to set ARCH_FLAGS when building libnas
+@@ -665,7 +667,7 @@
+ # declared, i#58972, CWS gcc41
+ buildfix-gcc41-friend-decl-configmgr.diff
+ buildfix-gcc41-friend-decl-desktop.diff
+-buildfix-gcc41-friend-decl-i18npool.diff
++# buildfix-gcc41-friend-decl-i18npool.diff
+ buildfix-gcc41-friend-decl-svx.diff
+ buildfix-gcc41-friend-decl-sw.diff
+ # fixes usage of the String classes; I wonder how it could work in the past :-)
