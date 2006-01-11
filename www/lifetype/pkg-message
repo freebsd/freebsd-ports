@@ -1,12 +1,12 @@
 ======================================================================
                             **** NOTE ****
-For first use of pLog, remember to point your browser to
+For first use of LifeType, remember to point your browser to
 
-http://your.plog.host/%%PLOGURL%%/wizard.php
+http://your.lifetype.host/%%PLOGURL%%/wizard.php
 
 and, remember to load your templates at
 
-http://your.plog.host/%%PLOGURL%%/admin.php?op=adminSettings
+http://your.lifetype.host/%%PLOGURL%%/admin.php?op=adminSettings
 
 and then click 'scanTemplates'
 ======================================================================

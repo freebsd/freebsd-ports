@@ -1,19 +1,19 @@
-# New ports collection makefile for:	plog
-# Date created:		2004-10-27
+# New ports collection makefile for:	lifetype
+# Date created:		Wed Jan 11 09:37:54 CST 2006
 # Whom:			clsung
 #
 # $FreeBSD$
 #
 
-PORTNAME=	plog
+PORTNAME=	lifetype
 PORTVERSION=	1.0.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	plog
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+MASTER_SITE_SUBDIR=	lifetype
+DISTFILES=	plog-${PORTVERSION}${EXTRACT_SUFX} \
 		_all_plugins${EXTRACT_SUFX} \
 		_all_templates${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	plog-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
@@ -27,9 +27,10 @@ PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www/data
-PLOGURL?=	plog
+PLOGURL?=	lifetype
 WWWOWN?=	www
 WWWGRP?=	www
+WRKSRC=		${WRKDIR}/plog-${PORTVERSION}
 PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
