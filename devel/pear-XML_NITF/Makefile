@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_NITF
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	antonio@php.net
