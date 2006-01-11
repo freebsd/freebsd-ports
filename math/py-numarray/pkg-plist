@@ -1,4 +1,5 @@
 %%PYTHON_INCLUDEDIR%%/numarray/arraybase.h
+%%PYTHON_INCLUDEDIR%%/numarray/arrayif.h
 %%PYTHON_INCLUDEDIR%%/numarray/arrayobject.h
 %%PYTHON_INCLUDEDIR%%/numarray/cfunc.h
 %%PYTHON_INCLUDEDIR%%/numarray/ieeespecial.h
@@ -44,6 +45,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/array_persist.py
 %%PYTHON_SITELIBDIR%%/numarray/array_persist.pyc
 %%PYTHON_SITELIBDIR%%/numarray/array_persist.pyo
+%%PYTHON_SITELIBDIR%%/numarray/array_protocol.py
+%%PYTHON_SITELIBDIR%%/numarray/array_protocol.pyc
+%%PYTHON_SITELIBDIR%%/numarray/array_protocol.pyo
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.py
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyc
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyo
@@ -282,14 +286,12 @@
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Announce.txt
 %%PORTDOCS%%%%DOCSDIR%%/CVS-files
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Design.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/Repackaging.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/doctest.py
 %%PORTDOCS%%%%DOCSDIR%%/header_pep.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/manual/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/manual/README
 %%PORTDOCS%%%%DOCSDIR%%/manual/StyleGuide
@@ -341,12 +343,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.2.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.3
 %%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.4
+%%PORTDOCS%%%%DOCSDIR%%/release_notes/ANNOUNCE-1.5
 %%PORTDOCS%%%%DOCSDIR%%/sitecustomize.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/__init__.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/bench.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/ChangeLog
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/__init__.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/benchmark.py
