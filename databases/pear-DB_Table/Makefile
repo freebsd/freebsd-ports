@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_Table
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
