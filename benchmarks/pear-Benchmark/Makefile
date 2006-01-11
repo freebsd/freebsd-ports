@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	benchmarks devel www pear
 
 MAINTAINER=	antonio@php.net
