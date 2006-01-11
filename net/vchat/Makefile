@@ -8,16 +8,18 @@
 PORTNAME=	vchat
 PORTVERSION=	2.42c
 CATEGORIES=	net
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://www.enforcer.cc/vchat/filez/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mickey@netassembly.de
 COMMENT=	Client software for taking part in VChat conferences
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
-MAN1=	vchat.1
-MAN5=	vchatrc.5
-MAN8=	vchatd.8
+MAN1=		vchat.1
+MAN5=		vchatrc.5
+MAN8=		vchatd.8
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_FILES=	bin/vchat libexec/vchatd
 
 .include <bsd.port.mk>
