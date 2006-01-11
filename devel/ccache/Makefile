@@ -7,14 +7,13 @@
 
 PORTNAME=	ccache
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
-BROKEN=		"Examples provided break buildworld"
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -35,7 +34,7 @@ PLIST_DIRS=	${CCLINKDIR}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_COMPILER_LINKS)
-GNU_COMPILERS=		295 32 33 34 35 40 41
+GNU_COMPILERS=		295 32 33 34 35 40 41 42
 CCACHE_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc
