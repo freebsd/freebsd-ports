@@ -27,6 +27,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_BISON=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -34,7 +35,8 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
-		--with-gpgsm=${LOCALBASE}/bin/gpgsm
+		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
+		--with-ssl-dir=/
 
 OPTIONS=	GNOKII "KAdressbook import/export for Nokia phones" off
 
