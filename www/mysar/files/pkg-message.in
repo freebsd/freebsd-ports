@@ -6,3 +6,6 @@ Add the following contents to %%MYSARDIR%%/etc/config.ini
 	dbPass = mysar
 	dbHost = localhost
 	dbName = mysar
+
+Point your webbrowser to http://localhost/mysar/ and the program
+will configure itself.
