@@ -6,8 +6,6 @@
 # BEFORE: fsck localswap
 # KEYWORD: nojail
 
-rc_debug=YES
-
 . /etc/rc.subr
 
 name="diskprep"
@@ -20,7 +18,7 @@ diskprep_prestart()
 {
 	if [ -n "${diskprep_label}" ]; then
 		# If our label exists, we're done.
-		if [ -c /dev/label/${curlabel} ]; then
+		if [ -c /dev/label/${diskprep_label} ]; then
 			return 0
 		fi
 		command_args="$command_args -l $diskprep_label"
