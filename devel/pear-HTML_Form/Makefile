@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Form
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	antonio@php.net
