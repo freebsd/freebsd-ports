@@ -3314,6 +3314,7 @@ gpredict	ports/comms/gpredict
 gprename	ports/x11-fm/gprename
 gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
+gpsd		ports/astro/gpsd
 gpsdrive	ports/astro/gpsdrive
 gpsk31		ports/comms/gpsk31
 gpsman		ports/astro/gpsman
