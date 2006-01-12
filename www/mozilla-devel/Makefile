@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 DEPRECATED=	"The mozilla team has shifted the development branch of \
 		mozilla to seamonkey, this port is outdated and has many \
-		vulnerabilities"
+		vulnerabilities. Consider using www/seamonkey instead"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MOZILLA?=	mozilla-devel
