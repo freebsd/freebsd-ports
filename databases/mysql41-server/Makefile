@@ -20,10 +20,6 @@ SLAVEDIRS=	databases/mysql41-client
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
-.if ${PKGNAMESUFFIX} == "-server"
-USE_RC_SUBR=	mysql-server.sh
-.endif
-
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
@@ -114,6 +110,8 @@ LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
+USE_RC_SUBR=	mysql-server.sh
+
 .if defined(WITH_NDB)
 PLIST_SUB+=	NDB=""
 .else
@@ -175,6 +173,8 @@ MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
+USE_LDCONFIG=	${PREFIX}/lib/mysql
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 CONFIGURE_ARGS+=--without-server
 
@@ -190,9 +190,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
 .endif
 
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
+post-install: install-ldconfig-file
 
 .else
 # MySQL-Scripts part

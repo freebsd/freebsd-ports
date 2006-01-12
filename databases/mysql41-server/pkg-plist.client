@@ -11,7 +11,6 @@ bin/mysqlmanager-pwgen
 bin/mysqlmanagerc
 bin/mysqlshow
 bin/mysqltest
-etc/rc.d/000.mysql-client.sh
 include/mysql/errmsg.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h
