@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	6.2.1
+PORTVERSION=	6.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -17,20 +17,21 @@ DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=
-MAKE_ARGS=	SUBDIRS=progs/demos
+MAKE_ARGS=	SUBDIRS="progs/demos progs/osdemos"
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 DATADIR=	${PREFIX}/share/mesa-demos
 
 DEMO_PROGS=	bounce clearspd cubemap drawpix fire gamma gears geartrain \
 		glinfo gloss gltestperf glutfx ipers isosurf lodbias morph3d \
-		multiarb occlude osdemo paltex pixeltex pointblast ray \
+		multiarb occlude paltex pixeltex pointblast ray \
 		readpix reflect renormal shadowtex spectex stex3d teapot \
 		terrain tessdemo texcyl texdown texenv texobj trispd tunnel \
 		tunnel2
@@ -39,6 +40,7 @@ DEMO_IMAGES=	bw.rgb girl.rgb reflect.rgb s128.rgb tile.rgb tree2.rgba \
 DEMO_DATA=	geartrain.dat isosurf.dat terrain.dat
 
 # Generate packing list
+PLIST_FILES=	bin/osdemo
 .for prog in ${DEMO_PROGS}
 PLIST_FILES+=	bin/${prog}
 .endfor
@@ -63,6 +65,8 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/$$prog \
 			${PREFIX}/bin ; \
 	done
+	${INSTALL_PROGRAM} ${WRKSRC}/progs/osdemos/osdemo \
+		${PREFIX}/bin ; \
 	${MKDIR} ${PREFIX}/share/mesa-demos/images
 	${MKDIR} ${PREFIX}/share/mesa-demos/data
 	@for img in ${DEMO_IMAGES}; do \
