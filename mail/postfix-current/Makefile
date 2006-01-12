@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20051229
+DISTVERSION=	2.3-20060103
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -27,6 +27,7 @@ NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
+USE_RC_SUBR=	postfix.sh
 
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
@@ -82,6 +83,9 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
 .include <bsd.port.pre.mk>
+
+# Default requirement for postfix rcNG
+_REQUIRE=	DAEMON
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
@@ -203,12 +207,14 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db43/ -ldb
 USE_MYSQL=YES
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
+_REQUIRE+=		mysql
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=YES
 POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
+_REQUIRE+=		postgresql
 .endif
 
 .if defined(WITH_OPENLDAP)
@@ -218,6 +224,7 @@ WANT_OPENLDAP_VER=${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+_REQUIRE+=		slapd
 .endif
 
 .if defined(WITH_CDB)
@@ -228,6 +235,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
 
 .if defined(WITH_NIS)
 POSTFIX_CCARGS+=	 -DHAS_NIS
+_REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_TEST)
@@ -244,6 +252,8 @@ READMEDIR=no
 .else
 READMEDIR=${PREFIX}/share/doc/postfix
 .endif
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
 .	if defined(POSTFIX_OPTIONS)
