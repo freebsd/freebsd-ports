@@ -7,6 +7,29 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060111:
+  AFFECTS: users of multimedia/lxdvdrip
+  AUTHOR: lioux@FreeBSD.org
+
+  lxdvdrip has been updated to version 1.51 depending on port
+  multimedia/vamps. However, multimedia/vamps needs to know beforehand
+  how many bytes will be processed in order to work. Unfortunaly,
+  lxdvdrip cannot provide such information. Therefore, vamps and
+  playcell specific tailored versions shipped within the lxdvdrip
+  distribution will be used. They will be named so that lxdvdrip
+  does not conflict with multimedia/vamps. This is for lxdvdrip
+  version 1.51_1.
+
+  However, users that used lxdvdrip previously to this update, are
+  required to modify their configuration file in order to comply
+  to the new naming scheme.
+
+  File: ~/.lxdvdrip.conf
+  From: play_cell_name=play_cell
+        vamps_name=vamps
+  To:   play_cell_name=play_cell_lxdvdrip
+        vamps_name=vamps_lxdvdrip
+
+20060111:
   AFFECTS: users of devel/perforce
   AUTHOR: lth@FreeBSD.org
 
