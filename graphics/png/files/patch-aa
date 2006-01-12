@@ -1,6 +1,21 @@
---- scripts/makefile.freebsd.orig	Sat May 18 18:46:45 2002
-+++ scripts/makefile.freebsd	Sun Jan 30 17:33:45 2005
-@@ -24,10 +24,11 @@
+--- scripts/makefile.freebsd.orig	Sat May 18 08:46:45 2002
++++ scripts/makefile.freebsd	Tue Jan 10 12:05:18 2006
+@@ -12,22 +12,22 @@
+ NOOBJ=          YES
+ 
+ # where make install puts libpng.a and png.h
+-DESTDIR=	${PREFIX}
+-LIBDIR=		/lib
++LIBDIR=		${PREFIX}/lib
+ INCS=		png.h pngconf.h
+-INCSDIR=	/include/libpng
++INCSDIR=	${PREFIX}/include/libpng
+ INCDIR=		${INCSDIR}		# for 4.x bsd.lib.mk
+ MAN=		libpng.3 libpngpf.3 png.5
+-MANDIR=		/man/man
++MANDIR=		${PREFIX}/man/man
+ SYMLINKS=       libpng/png.h ${INCSDIR}/../png.h \
+ 		libpng/pngconf.h ${INCSDIR}/../pngconf.h
  LDADD+=         -lm -lz
  DPADD+=         ${LIBM} ${LIBZ}
  
@@ -15,7 +30,7 @@
  
  SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
  	pngread.c pngrio.c pngwio.c pngwrite.c pngrtran.c \
-@@ -44,5 +45,23 @@
+@@ -44,5 +44,23 @@
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
  	chmod a-w *.[ch35] $(DOCS) scripts/*
