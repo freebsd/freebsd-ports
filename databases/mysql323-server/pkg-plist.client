@@ -8,7 +8,6 @@ bin/mysqldump
 bin/mysqlimport
 bin/mysqlshow
 bin/mysqltest
-etc/rc.d/000.mysql-client.sh
 include/mysql/dbug.h
 include/mysql/errmsg.h
 include/mysql/m_ctype.h

@@ -20,10 +20,6 @@ SLAVEDIRS=	databases/mysql323-client
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
-.if ${PKGNAMESUFFIX} == "-server"
-USE_RC_SUBR=	mysql-server.sh
-.endif
-
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
@@ -96,6 +92,8 @@ LATEST_LINK=	mysql323-server
 
 CONFLICTS=	mysql-server-4.* mysql-server-5.*
 
+USE_RC_SUBR=	mysql-server.sh
+
 PLIST_SUB=	VER=${DISTVERSION}
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
@@ -158,6 +156,8 @@ MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
+USE_LDCONFIG=	${PREFIX}/lib/mysql
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 CONFIGURE_ARGS+=--without-server
 
@@ -167,9 +167,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 
-post-install:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
+post-install: install-ldconfig-file
 
 .else
 # MySQL-Scripts part
