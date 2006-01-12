@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	13.2
+PORTVERSION=	13.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
@@ -46,13 +46,13 @@ DISTFILES=	\
 		eudc-1.39-pkg.tar.gz \
 		footnote-1.16-pkg.tar.gz \
 		forms-1.15-pkg.tar.gz \
-		fortran-modes-1.04-pkg.tar.gz \
+		fortran-modes-1.05-pkg.tar.gz \
 		frame-icon-1.11-pkg.tar.gz \
 		fsf-compat-1.15-pkg.tar.gz \
 		games-1.17-pkg.tar.gz \
 		general-docs-1.04-pkg.tar.gz \
 		gnats-1.17-pkg.tar.gz \
-		gnus-1.87-pkg.tar.gz \
+		gnus-1.89-pkg.tar.gz \
 		haskell-mode-1.07-pkg.tar.gz \
 		hm--html-menus-1.23-pkg.tar.gz \
 		hyperbole-1.16-pkg.tar.gz \
@@ -82,7 +82,7 @@ DISTFILES=	\
 		ps-print-1.11-pkg.tar.gz \
 		psgml-1.44-pkg.tar.gz \
 		psgml-dtds-1.03-pkg.tar.gz \
-		python-modes-1.06-pkg.tar.gz \
+		python-modes-1.07-pkg.tar.gz \
 		reftex-1.34-pkg.tar.gz \
 		re-builder-1.05-pkg.tar.gz \
 		riece-1.21-pkg.tar.gz \
@@ -115,11 +115,11 @@ DISTFILES=	\
 		view-process-1.13-pkg.tar.gz \
 		viper-1.47-pkg.tar.gz \
 		vm-7.22-pkg.tar.gz \
-		w3-1.31-pkg.tar.gz \
+		w3-1.32-pkg.tar.gz \
 		x-symbol-1.10-pkg.tar.gz \
-		xemacs-base-2.00-pkg.tar.gz \
+		xemacs-base-2.01-pkg.tar.gz \
 		xemacs-devel-1.72-pkg.tar.gz \
-		xetla-1.00-pkg.tar.gz \
+		xetla-1.01-pkg.tar.gz \
 		xlib-1.14-pkg.tar.gz \
 		xslide-1.09-pkg.tar.gz \
 		xslt-process-1.12-pkg.tar.gz \
