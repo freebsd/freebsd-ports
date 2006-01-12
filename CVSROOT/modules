@@ -12180,6 +12180,7 @@ tamago		ports/editors/tamago
 tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
+tapidbus	ports/net/tapidbus
 tardy		ports/archivers/tardy
 tas		ports/net-mgmt/tas
 taskjuggler	ports/deskutils/taskjuggler
