@@ -10,16 +10,14 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.0.1rc2
+DISTVERSION=	1.0.1
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/v1.0/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.0/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
-
-BROKEN=		Unfetchable
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
