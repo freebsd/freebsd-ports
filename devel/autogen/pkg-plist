@@ -10,9 +10,10 @@ lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.26
+lib/libopts.so.27
 libdata/pkgconfig/autoopts.pc
 share/aclocal/autoopts.m4
+share/aclocal/liboptschk.m4
 %%DATADIR%%/aginfo.tpl
 %%DATADIR%%/aginfo3.tpl
 %%DATADIR%%/agman-lib.tpl
@@ -25,7 +26,7 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-26.0.1.tar.gz
+%%DATADIR%%/libopts-27.0.2.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
