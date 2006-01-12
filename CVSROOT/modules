@@ -3116,6 +3116,7 @@ gnome-icons-stylish	ports/x11-themes/gnome-icons-stylish
 gnome-icons-ximian-south	ports/x11-themes/gnome-icons-ximian-south
 gnome-industrial-theme	ports/x11-themes/gnome-industrial-theme
 gnome-jabber	ports/net-im/gnome-jabber
+gnome-launch-box	ports/x11/gnome-launch-box
 gnome-look	ports/x11-themes/gnome-look
 gnome-menu-editor	ports/deskutils/gnome-menu-editor
 gnome-menus	ports/x11/gnome-menus
