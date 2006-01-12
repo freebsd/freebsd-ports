@@ -13,6 +13,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	1.1.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -29,10 +30,12 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	An alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+LATEST_LINK=	postfix1
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	postfix.sh
+
 PATCH_STRIP=	-p1
-LATEST_LINK=	postfix1
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
@@ -65,6 +68,9 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .include <bsd.port.pre.mk>
 
+# Default requirement for postfix rcNG
+_REQUIRE=	DAEMON
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
 
@@ -72,10 +78,13 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-post-patch:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
-	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO_CMD} "all: default" >> Makefile)
+.if defined(NOPORTDOCS)
+READMEDIR=no
+.else
+READMEDIR=${PREFIX}/share/doc/postfix
+.endif
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
 .for file in ${MAN1}
@@ -98,14 +107,18 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
 .endfor
 
+post-patch:
+# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
+		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
+
+do-configure:
+	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
+	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
+	${ECHO_CMD} "all: default" >> Makefile)
+
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-.if defined(NOPORTDOCS)
-READMEDIR=no
-.else
-READMEDIR=${PREFIX}/share/doc/postfix
-.endif
 
 do-install:
 	cd ${WRKSRC}; sh postfix-install -non-interactive install_root=/ tempdir=/tmp \
