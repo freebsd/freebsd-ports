@@ -7,7 +7,7 @@
 
 PORTNAME=	ldconfig_compat
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -21,6 +21,9 @@ USE_RC_SUBR=	yes
 
 LOCAL_DIRS=	${LDCONFIG_DIR} \
 		${LDCONFIG32_DIR}
+
+SUB_LIST=	LDCONFIG_DIR=${LDCONFIG_DIR} \
+		LDCONFIG32_DIR=${LDCONFIG32_DIR}
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/bsd.ldconfig.mk"
@@ -48,11 +51,9 @@ do-install:
 	@${ECHO_CMD} "@cwd ${prefix}" >> ${TMPPLIST}
 .for dir in ${LOCAL_DIRS}
 	@${MKDIR} ${prefix}/${dir}
-	@${ECHO_CMD} "@dirrm ${dir}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec mkdir %D/${dir}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${dir} 2>/dev/null || true" >> ${TMPPLIST}
 .endfor
 .endfor
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
