@@ -16,6 +16,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -36,6 +37,7 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.3.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	postfix.sh
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
@@ -70,6 +72,9 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
+# Default requirement for postfix rcNG
+_REQUIRE=	DAEMON
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
 
@@ -80,7 +85,7 @@ pre-fetch:
 .if defined(WITHOUT_PCRE)
 POSTFIX_CCARGS+=	-DNO_PCRE
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
@@ -90,6 +95,8 @@ READMEDIR=no
 .else
 READMEDIR=${PREFIX}/share/doc/postfix
 .endif
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
 	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \

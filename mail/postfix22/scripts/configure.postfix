@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.69 2005-11-30 22:25:35 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.70 2006-01-12 16:23:59 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -196,6 +196,7 @@ while [ "$1" ]; do
 				fi
 			fi
 			echo "MYSQL_SUFFIX=	+mysql"
+			echo "_REQUIRE+=	mysql"
 			MYSQL_SELECTED="YES"
 			;;
 		PgSQL)
@@ -203,12 +204,14 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include	-I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
+			echo "_REQUIRE+=	postgresql"
 			;;
 		OpenLDAP)
 			echo "USE_OPENLDAP=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
  			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lldap -llber"
 			echo "OPENLDAP_SUFFIX=	+openldap"
+			echo "_REQUIRE+=	slapd"
 			echo ".if defined(WITH_OPENLDAP_VER)"
 			echo "WANT_OPENLDAP_VER=\${WITH_OPENLDAP_VER}"
 			echo ".endif"
@@ -222,6 +225,7 @@ while [ "$1" ]; do
 		NIS)
 			echo "POSTFIX_CCARGS+=	-DHAS_NIS"
 			echo "NIS_SUFFIX=	+nis"
+			echo "_REQUIRE+=	ypserv"
 			;;
 		VDA)
 			echo "PATCH_SITES+=	http://web.onda.com.br/nadal/postfix/VDA/"
