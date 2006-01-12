@@ -1,0 +1,15 @@
+GNOME Launch Box is generally an application launcher. It's very influenced by
+Quicksilver (http://quicksilver.blacktree.com/) for Mac OS X.
+
+Currently supported modules are:
+
+	* Application starting and launch
+	* Evolution contacts lookup and mail to
+	* Recent files lookup and open
+	* Files in your desktop and open
+	* Firefox bookmarks lookup and opening 
+
+WWW: http://developer.imendio.com/wiki/GNOME_Launch_Box
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
