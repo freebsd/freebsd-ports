@@ -60,6 +60,7 @@
     SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
+    SUBDIR += gnome-launch-box
     SUBDIR += gnome-menus
     SUBDIR += gnome-screensaver
     SUBDIR += gnome-swallow

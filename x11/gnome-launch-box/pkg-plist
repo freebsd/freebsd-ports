@@ -1,0 +1,10 @@
+bin/gnome-launch-box
+share/lb/images/lb-bottom-left.png
+share/lb/images/lb-bottom-right.png
+share/lb/images/lb-middle.png
+share/lb/images/lb-top-left.png
+share/lb/images/lb-top-right.png
+share/locale/fr/LC_MESSAGES/gnome-launch-box.mo
+share/locale/sv/LC_MESSAGES/gnome-launch-box.mo
+@dirrm share/lb/images
+@dirrm share/lb
