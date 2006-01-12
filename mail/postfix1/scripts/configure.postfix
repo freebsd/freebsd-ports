@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.42 2005-11-09 10:46:13 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.43 2006-01-12 16:23:08 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -106,6 +106,7 @@ for i; do
 			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			echo "MYSQL_SUFFIX=	+mysql"
+			echo "_REQUIRE+=	mysql"
 			;;
 		PgSQL)
 			echo "USE_PGSQL=	yes"
@@ -115,12 +116,14 @@ for i; do
 			echo "PATCH_SITES+=	http://mat.cc/postfix/"
 			echo "PATCHFILES+=	postfix-pg.postfix-1.1.8.patch"
 			echo "PATCH_DIST_STRIP= -p1"
+			echo "_REQUIRE+=	postgresql"
 			;;
 		OpenLDAP)
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
 			echo "OPENLDAP_SUFFIX=	+openldap"
+			echo "_REQUIRE+=	slapd"
 			;;
 		Test)
 			echo "BIN1=		smtp-sink smtp-source"
