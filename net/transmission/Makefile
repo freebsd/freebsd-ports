@@ -8,7 +8,9 @@
 PORTNAME=	transmission
 PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://download.m0k.org/${PORTNAME}/files/
+MASTER_SITE_SUBDIR=mezz
 DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
