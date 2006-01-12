@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060112:
+  AFFECTS: users of security/gnutls and any port that depends on it
+  AUTHOR: novel@FreeBSD.org
+
+  gnutls has been updated to 1.2.9 and all shared libraries' versions
+  have been bumped. So you need to rebuild all applications that 
+  depend on gnutls. Do something like:
+
+	portupgrade -rf gnutls
+
 20060111:
   AFFECTS: users of multimedia/lxdvdrip
   AUTHOR: lioux@FreeBSD.org
