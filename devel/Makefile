@@ -1150,6 +1150,7 @@
     SUBDIR += p5-String-Random
     SUBDIR += p5-String-RexxParse
     SUBDIR += p5-String-Similarity
+    SUBDIR += p5-Sub-Installer
     SUBDIR += p5-Sub-Name
     SUBDIR += p5-Sub-Override
     SUBDIR += p5-Sub-Uplevel
