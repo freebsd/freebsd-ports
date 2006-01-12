@@ -158,6 +158,7 @@
     SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += gnome-user-share
+    SUBDIR += gnome-web-photo
     SUBDIR += gnuinfo
     SUBDIR += google-sitemapgen
     SUBDIR += goose
