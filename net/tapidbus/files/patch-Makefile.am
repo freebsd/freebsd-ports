@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Thu Jan 12 17:32:26 2006
++++ Makefile.am	Thu Jan 12 17:33:19 2006
+@@ -9,7 +9,7 @@
+ %-@TAPIDBUS_MAJORMINOR@.pc: %.pc
+ 	cp $< $@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = $(pcfiles)
+ 
+ include aminclude.am
