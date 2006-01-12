@@ -1,27 +1,27 @@
-# ex:ts=8
 # New ports collection makefile for:	gsk
-# Date created:			May 1, 2001
-# Whom:				ijliao
+# Date created:				May 1, 2001
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gsk
-PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTVERSION=	1.0.17
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack gnometarget
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-gtk-doc
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ARGS+=	--disable-gtk-doc
+
+PORTDOCS=	*
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl
@@ -32,7 +32,14 @@ PLIST_SUB+=	OPENSSL=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS =/s|programs tests||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(HTML_DIR\).*|\1 = ${PREFIX}/share/doc|' \
+		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|programs tests||' \
+		${WRKSRC}/src/Makefile.in
+
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = \).*|\1 src|' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
