@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
@@ -17,7 +18,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
+# wine/dlls/glut32/ depends on the presence of libglut.
+LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
@@ -30,7 +33,6 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_MESA=	yes	# wine/dlls/glut32/ depends on the presence of libglut.
 USE_XPM=	yes
 
 SUB_FILES=	pkg-message wine.sh

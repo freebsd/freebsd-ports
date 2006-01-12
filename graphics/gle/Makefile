@@ -7,6 +7,7 @@
 
 PORTNAME=	gle
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linas.org/gle/pub/ \
@@ -17,8 +18,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@dclg.ca
 COMMENT=	A GL Tubing and Extrusion Library
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:13:inc

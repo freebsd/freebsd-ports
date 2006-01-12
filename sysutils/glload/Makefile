@@ -7,13 +7,14 @@
 
 PORTNAME=	glload
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://reality.exsgi.org/eile/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gl base load monitor
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	egoboo
 PORTVERSION=	2.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -16,10 +16,10 @@ MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
 
 PATCH_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_SDL=	sdl
-USE_MESA=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

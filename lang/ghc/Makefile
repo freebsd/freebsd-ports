@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.4.1
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=--without-x --without-x11 --without-openal --without-hgl --witho
 PLIST_SUB+=	X11="@comment " OPENAL="@comment "
 PKGNAMESUFFIX=	-nox11
 .else
-LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut \
 		openal.0:${PORTSDIR}/audio/openal
 USE_GL=		yes
 PLIST_SUB+=	X11="" OPENAL=""

@@ -7,6 +7,7 @@
 
 PORTNAME=	glbiff
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/code/projects/
 EXTRACT_SUFX=	.tgz
@@ -14,8 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Xbiff-like program for X Window System with nice 3D output
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS:S/"//g}

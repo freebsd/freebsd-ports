@@ -7,6 +7,7 @@
 
 PORTNAME=	3ddesktop
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	desk3d
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	desk3d
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Virtual Desktop Switcher
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_GL=		yes

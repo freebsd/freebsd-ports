@@ -7,6 +7,7 @@
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -18,7 +19,7 @@ COMMENT=	Quake3 map viewer
 .if defined(WITH_FREEGLUT)
 LIB_DEPENDS=	glut.11:${PORTSDIR}/x11-toolkits/freeglut
 .else
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 .endif
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	renderpark
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	RenderPark
@@ -19,8 +19,10 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	System for physically based photo-realistic image synthesis
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 .ifdef (WITH_XRML)
-LIB_DEPENDS=	xrml.0:${PORTSDIR}/graphics/xrml
+LIB_DEPENDS+=	xrml.0:${PORTSDIR}/graphics/xrml
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -28,7 +30,6 @@ WRKSRC2=	${WRKDIR}/Scenes
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 

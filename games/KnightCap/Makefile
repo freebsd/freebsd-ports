@@ -7,7 +7,7 @@
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.samba.org/pub/KnightCap/
 DISTNAME=	KnightCap-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	KnightCap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess program with 3D interface for X Window System
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/Export
 

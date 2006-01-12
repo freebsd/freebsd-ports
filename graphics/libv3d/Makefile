@@ -8,7 +8,7 @@
 
 PORTNAME=	libv3d
 PORTVERSION=	0.1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 EXTRACT_SUFX=	.tgz
@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	V3D IO Library
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_REINPLACE=	yes
-USE_MESA=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	UNIX --prefix=${PREFIX}
 USE_GMAKE=	yes

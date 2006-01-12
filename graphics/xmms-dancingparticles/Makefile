@@ -7,6 +7,7 @@
 
 PORTNAME=	dancingparticles
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://tardyp.free.fr/dancingparticles/
 PKGNAMEPREFIX=	xmms-
@@ -17,7 +18,7 @@ MAINTAINER=	alejandro@varnet.biz
 COMMENT=	Makes particles dance with very pretty neon colors
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
-		glut.3:${PORTSDIR}/graphics/libglut \
+		glut.4:${PORTSDIR}/graphics/libglut \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes

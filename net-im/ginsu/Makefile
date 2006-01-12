@@ -7,6 +7,7 @@
 
 PORTNAME=	ginsu
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://repetae.net/john/computer/ginsu/drop/
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	LBreeder
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	biology
 MASTER_SITES=	http://www.simonyi.ox.ac.uk/dawkins/software/yan/L-Breeder/
 DISTNAME=	${PORTNAME}-source
@@ -17,7 +17,7 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
 LIB_DEPENDS=	wx_gtk2_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
-		glut.3:${PORTSDIR}/graphics/libglut
+		glut.4:${PORTSDIR}/graphics/libglut
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/Unix

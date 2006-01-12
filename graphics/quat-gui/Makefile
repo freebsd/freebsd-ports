@@ -7,6 +7,7 @@
 
 PORTNAME=	quat
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 PKGNAMESUFFIX=	-gui
@@ -15,10 +16,10 @@ DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A Three-dimensional fractal creator (X11 GUI)
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -L${X11BASE}/lib" \

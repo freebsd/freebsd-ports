@@ -7,6 +7,7 @@
 
 PORTNAME?=	FlightGear
 PORTVERSION?=	${FGVERSION}
+PORTREVISION=	1
 PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES+=	ftp://ftp.flightgear.org/pub/fgfs/Source/:fg \

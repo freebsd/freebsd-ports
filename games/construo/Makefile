@@ -7,6 +7,7 @@
 
 PORTNAME=	construo
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	construo
@@ -29,7 +30,7 @@ OPTIONS=	GLUT "Use glut" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GLUT)
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 PLIST_SUB+=	GLUTBIN:=""
 .else
 PLIST_SUB+=	GLUTBIN:="@comment "

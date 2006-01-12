@@ -7,7 +7,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
 DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
@@ -16,10 +16,11 @@ DIST_SUBDIR=	blender
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Fully functional 3D modeling/rendering/animation/gaming package
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_X_PREFIX=	YES
 NO_BUILD=	YES
 ONLY_FOR_ARCHS=	i386
-USE_MESA=	YES
 
 .include <bsd.port.pre.mk>
 

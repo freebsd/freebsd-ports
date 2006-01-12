@@ -7,6 +7,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.44
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.lsw.uni-heidelberg.de/users/rwichman/
 
@@ -52,7 +53,7 @@ CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 .if defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=	--disable-opengl
 .else
-LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut \
 		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 CONFIGURE_ARGS+=	--with-lib-GL
 .endif

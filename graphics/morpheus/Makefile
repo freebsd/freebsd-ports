@@ -7,7 +7,7 @@
 
 PORTNAME=	morpheus
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
@@ -15,10 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mesh (3D model) viewer for GNOME desktop
 
 LIB_DEPENDS=	morph.0:${PORTSDIR}/graphics/libmorph \
-		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
