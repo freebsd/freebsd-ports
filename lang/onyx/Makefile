@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
-MAINTAINER=	jasone@canonware.com
+MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
-LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit \
+LIB_DEPENDS=	edit.6:${PORTSDIR}/devel/libedit \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
