@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-General
-PORTVERSION=	2.30
+PORTVERSION=	2.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -25,9 +25,8 @@ MAN3=		Config::General::Extended.3 Config::General::Interpolated.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} <= 500600
-post-patch:
-	@${REINPLACE_CMD} -e 's|::Heavy||' ${WRKSRC}/General.pm
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
