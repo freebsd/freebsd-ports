@@ -7,6 +7,7 @@
 
 PORTNAME=	vvv
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.ufes.br/~thomas/graphics/vvv/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +19,7 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A tutorial tool for understanding viewing and projection in OpenGL
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

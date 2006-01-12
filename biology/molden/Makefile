@@ -7,6 +7,7 @@
 
 PORTNAME=	molden
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,8 +17,9 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_XLIB=	yes
-USE_MESA=	yes
 
 RESTRICTED=	"free for academic, non profit usage;"
 NO_CDROM=	"Do not re-distribute source and executable."

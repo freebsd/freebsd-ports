@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-fishmatic
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic
@@ -17,12 +17,12 @@ COMMENT=	An XMMS non-static OpenGL stereogram visualization plugin
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 PLIST_FILES=	lib/xmms/Visualization/libfishmatic.so
 USE_X_PREFIX=   yes
 USE_GNOME=      gtk12
 USE_GMAKE=	yes
-USE_MESA=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=  yes
 

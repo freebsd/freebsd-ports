@@ -7,7 +7,7 @@
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	4.07.20050601
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	http://setiweb.ssl.berkeley.edu/sah/seti_source/nightly/ \
 		${MASTER_SITE_LOCAL}

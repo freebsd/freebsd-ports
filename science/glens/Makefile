@@ -8,7 +8,7 @@
 
 PORTNAME=	glens
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	# no longer available
 
@@ -19,9 +19,9 @@ DEPRECATED=	no longer available from mastersite
 EXPIRATION_DATE=	2006-01-25
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_REINPLACE=	yes
-USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-glui=${X11BASE}

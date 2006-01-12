@@ -7,7 +7,7 @@
 
 PORTNAME=	leocad
 PORTVERSION=	0.73
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -19,10 +19,10 @@ COMMENT=	A CAD program that uses bricks similar to those found in many toys
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes

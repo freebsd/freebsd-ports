@@ -7,7 +7,7 @@
 
 PORTNAME=	xracer
 PORTVERSION=	0.94
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://xracer.annexia.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
@@ -17,10 +17,10 @@ COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
 BROKEN=		"Unfetchable"
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_XLIB=	yes
-USE_MESA=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \

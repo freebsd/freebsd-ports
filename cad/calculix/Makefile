@@ -7,6 +7,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -34,7 +35,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 		${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis	\
 		${LOCALBASE}/lib/libtaucs.a:${PORTSDIR}/math/taucs
 LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas \
-		glut.3:${PORTSDIR}/graphics/libglut
+		glut.4:${PORTSDIR}/graphics/libglut
 
 USE_BZIP2=	yes
 

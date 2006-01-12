@@ -7,6 +7,7 @@
 
 PORTNAME=	darcs
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 

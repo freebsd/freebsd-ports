@@ -7,7 +7,7 @@
 
 PORTNAME=	geomview
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geomview
@@ -15,9 +15,10 @@ MASTER_SITE_SUBDIR=	geomview
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 
 USE_AUTOTOOLS=	autoconf:213
 

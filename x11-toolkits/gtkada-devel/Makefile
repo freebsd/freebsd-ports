@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	1.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://cesnet.linux.tucows.com/files/ \
 		http://aranea.linux.tucows.com/files/ \
@@ -19,10 +19,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk binding for Ada
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 SHLIB_VERSION=	${PORTVERSION:S/1.2.//}
 
-USE_MESA=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libcapplet libglade
 USE_GMAKE=	yes

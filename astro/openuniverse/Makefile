@@ -7,7 +7,7 @@
 
 PORTNAME=	openuniverse
 PORTVERSION=	1.0.b3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openuniverse
@@ -16,11 +16,11 @@ DISTNAME=	${PORTNAME}-1.0beta3
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	OpenGL Solar System simulator for X Window System
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_MESA=	yes
 
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib" \

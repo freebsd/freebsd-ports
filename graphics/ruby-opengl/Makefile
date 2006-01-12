@@ -7,7 +7,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	0.32b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,10 +18,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-
-USE_MESA=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"

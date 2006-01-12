@@ -7,6 +7,7 @@
 
 PORTNAME=	ensemblist
 PORTVERSION=	040126
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Assemble given shapes from primitives
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
 		png.5:${PORTSDIR}/graphics/png
 

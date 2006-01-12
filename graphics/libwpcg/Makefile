@@ -8,6 +8,7 @@
 
 PORTNAME=	libwpcg
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.paassen.tmfweb.nl/
 DISTNAME=	libWPCG-${PORTVERSION}
@@ -15,8 +16,9 @@ DISTNAME=	libWPCG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A basic 2D/3D computer graphics library which uses OpenGL
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_GCC=	3.4
-USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

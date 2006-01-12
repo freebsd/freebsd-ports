@@ -6,6 +6,7 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/alex/dist/ \
 		http://www.haskell.org/alex/doc/:doc

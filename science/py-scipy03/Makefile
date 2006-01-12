@@ -8,6 +8,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://www.scipy.org/download/scipy/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

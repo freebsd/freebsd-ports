@@ -7,7 +7,7 @@
 
 PORTNAME=	gleyes
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
 		ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
@@ -21,7 +21,7 @@ COMMENT=	GLUT version of Xeyes
 DEPRECATED=	"mastersite disappeared, no longer maintained by author"
 EXPIRATION_DATE=	2006-01-06
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
 USE_GL=		yes

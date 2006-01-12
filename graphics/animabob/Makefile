@@ -7,6 +7,7 @@
 
 PORTNAME=	animabob
 PORTVERSION=	1.3.0b
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	#
 
@@ -16,8 +17,9 @@ COMMENT=	Interactive 3D volume renderer
 DEPRECATED=	mastersite disappeared, no longer maintained by author
 EXPIRATION_DATE=	2006-02-16
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_IMAKE=	yes
-USE_MESA=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	build

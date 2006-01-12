@@ -8,7 +8,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 
@@ -17,13 +17,13 @@ COMMENT=	SlimKit Surface Modeling Tools
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		forms.1:${PORTSDIR}/x11-toolkits/xforms
+		forms.1:${PORTSDIR}/x11-toolkits/xforms \
+		glut.4:${PORTSDIR}/graphics/libglut
 
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
 BUILD_WRKSRC=	${WRKSRC}/mixkit/src
 
 USE_GETOPT_LONG=	yes
-USE_MESA=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

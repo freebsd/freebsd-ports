@@ -7,6 +7,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
@@ -16,7 +17,7 @@ MAINTAINER=	rk@ronald.org
 COMMENT=	OpenGL interface for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_GL=		yes

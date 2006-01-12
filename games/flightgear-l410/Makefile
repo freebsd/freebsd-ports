@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear-l410
 PORTVERSION=	4.0
-PORTREVISION=	0
+PORTREVISION=	1
 MASTER_SITES=	http://javky.rozhled.cz/download/fgfsl410/:l410
 DISTNAME=	FlightGear-${FGVERSION}
 DISTFILES=	${DATADIST}:l410 ${SRCDIST}:l410

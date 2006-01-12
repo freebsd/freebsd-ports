@@ -7,7 +7,7 @@
 
 PORTNAME=		BillardGL
 PORTVERSION=		1.75
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	billardgl
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	billardgl
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	An OpenGL billiard simulator
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

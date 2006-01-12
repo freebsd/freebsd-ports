@@ -7,7 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	4.68.20050601
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/ \
 		${MASTER_SITE_LOCAL}

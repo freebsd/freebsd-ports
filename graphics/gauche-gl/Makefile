@@ -7,6 +7,7 @@
 
 PORTNAME=	gl
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -18,7 +19,7 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	OpenGL binding for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		yes

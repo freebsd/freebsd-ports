@@ -8,6 +8,7 @@
 
 PORTNAME=	white_dune
 PORTVERSION=	0.28.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical VRML97 Editor and animation tool
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.3:${PORTSDIR}/graphics/libglut \
+		glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_MOTIF=	yes

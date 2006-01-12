@@ -7,7 +7,7 @@
 
 PORTNAME=	glasteroids
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 DISTNAME=	Glasteriods
@@ -15,7 +15,7 @@ DISTNAME=	Glasteriods
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Asteroids game for X Window System
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/Glasteroids
 

@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 LIB=		glut
-SHLIB_MAJOR=	3
+SHLIB_MAJOR=	4
 CFLAGS+=	-I../../../include -I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib -lGLU -lX11 -lXext -lGL -lXmu -lXi
 LIBDIR=		${PREFIX}/lib

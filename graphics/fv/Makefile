@@ -7,6 +7,7 @@
 
 PORTNAME=	fv
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eaflux.com/fv/sources/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A viewer of hdr/pfm images
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes

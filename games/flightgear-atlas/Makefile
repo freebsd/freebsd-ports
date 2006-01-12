@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear-atlas
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	atlas
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.3:${PORTSDIR}/graphics/libglut
+		glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base

@@ -6,7 +6,7 @@
 
 PORTNAME=	crack-attack
 PORTVERSION=	1.1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	OpenGL game based on Super Nintendo classic Tetris Attack
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20

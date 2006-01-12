@@ -7,6 +7,7 @@
 
 PORTNAME=	airrox
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-0.04
 MAINTAINER=	alejandro@varnet.biz
 COMMENT=	An 3D Air Hockey, which uses SDL & OpenGL
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GMAKE=	yes
 USE_SDL=	mixer net sdl

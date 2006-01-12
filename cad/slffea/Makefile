@@ -8,7 +8,7 @@
 
 PORTNAME=	slffea
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	San Le's Free Finite Element Analysis
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*
 

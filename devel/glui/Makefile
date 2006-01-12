@@ -7,7 +7,7 @@
 
 PORTNAME=	glui
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.cs.unc.edu/~rademach/glui/src/release/
 DISTNAME=	glui_v2_1_beta
@@ -15,7 +15,7 @@ DISTNAME=	glui_v2_1_beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GL=		yes
 USE_GMAKE=	yes

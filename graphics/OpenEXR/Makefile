@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenEXR
 PORTVERSION=	1.2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	openexr
@@ -27,11 +27,11 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_X11) && defined(WITH_FLTK)
 CONFIGURE_ARGS+=--with-fltk-config=${X11BASE}/bin/fltk-config
-USE_MESA=	YES
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 PLIST_SUB+=	WITH_FLTK=
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads \
+		glut.4:${PORTSDIR}/graphics/libglut
 .else
 CONFIGURE_ARGS+=--with-fltk-config=${FALSE} --without-x
 PLIST_SUB+=	WITH_FLTK="@comment "

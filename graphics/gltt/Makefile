@@ -7,15 +7,16 @@
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
 USE_X_PREFIX=	yes
-USE_MESA=	yes
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:13:inc

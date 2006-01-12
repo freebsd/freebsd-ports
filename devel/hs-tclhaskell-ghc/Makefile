@@ -6,7 +6,7 @@
 
 PORTNAME=	tclhaskell
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell tcl83
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/TclHaskell/
 PKGNAMEPREFIX=	hs-

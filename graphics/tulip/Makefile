@@ -8,7 +8,7 @@
 
 PORTNAME=	tulip
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_BZIP2=	yes
 USE_QT_VER=	3

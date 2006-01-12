@@ -7,14 +7,14 @@
 
 PORTNAME=	glclock
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Spinning pocketwatch demo and benchmark utility
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
