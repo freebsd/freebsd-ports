@@ -10,7 +10,7 @@ archivers/zip is not already installed)
 x11/kdebase3 -> build crash in a fish.cpp file
 
 I suggest you to unset $PLAN9 before building any other ports
-if you don't want to fall into these problems et reset it after.
+if you don't want to fall into these problems and reset it after.
 
 venti/fmt* commands works only with normal files but the
 author is actually working on it.
