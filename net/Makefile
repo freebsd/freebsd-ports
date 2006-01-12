@@ -741,6 +741,7 @@
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tacshell
+    SUBDIR += tapidbus
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
     SUBDIR += tcpdump
