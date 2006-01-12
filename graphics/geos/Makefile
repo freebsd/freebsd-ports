@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://geos.refractions.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,17 +16,12 @@ COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	YES
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	YES
 USE_BZIP2=	YES
-
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.4+
 
 INSTALLS_SHLIB=	YES
 
-.include <bsd.port.pre.mk>
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.if ${OSVERSION} < 500000
-BROKEN=		"C++ code does not compile on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
