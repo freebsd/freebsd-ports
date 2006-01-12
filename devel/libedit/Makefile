@@ -7,7 +7,7 @@
 
 PORTNAME=	libedit
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.astron.com/pub/libedit/ \
 		http://www.canonware.com/download/libedit/
@@ -43,6 +43,6 @@ MANCOMPRESSED=	no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS -O|CFLAGS|g ; \
-		 s|MAJOR="2"|MAJOR="5"|g' ${WRKSRC}/configure
+		 s|MAJOR="2"|MAJOR="6"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
