@@ -3,16 +3,15 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/mail/thunderbird/Makefile,v 1.13 2005/11/24 01:43:41 ahze Exp $
+#    $MCom: ports/mail/thunderbird-devel/Makefile,v 1.16 2005/11/27 18:53:59 marcus Exp $
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	1.0.7
-PORTREVISION=	6
+DISTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/source
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -24,21 +23,21 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GCC=	3.4+
+CFLAGS+=	-I${X11BASE}/include
 
 MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices
 MOZ_PROTOCOLS=	http,file,jar,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
-MOZ_OPTIONS=	--enable-single-profile --disable-profilesharing \
-		--enable-official-branding
-MOZ_EXPORT=	MOZ_THUNDERBIRD=1
+MOZ_OPTIONS=	--enable-single-profile --disable-profilesharing	\
+		--enable-application=mail -enable-official-branding
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1
+MOZ_EXPORT=	MOZ_THUNDERBIRD=1
 
-PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/chrome/icons/default/default.xpm
+PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/icons/default.xpm
+
+SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
-
-CONFLICTS=	thunderbird*-1.5*
-
-NOT_FOR_ARCHS=	ia64
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
@@ -80,8 +79,8 @@ pre-install:
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults/isp 2>/dev/null || ${TRUE}" >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/defaults 2>/dev/null || ${TRUE}" >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/ 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
