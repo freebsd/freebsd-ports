@@ -81,7 +81,8 @@ upgrades.
 
 20060108:
   AFFECTS: users of x11/kdelibs3, x11/kdebase3, deskutils/superkaramba,
-	            x11-themes/kde-windeco-smoothblend, irc/kvirc
+	            x11-themes/kde-windeco-smoothblend, irc/kvirc,
+	            editors/vimpart
   AUTHOR: kde@FreeBSD.org
 
   A number of files have been moved from kdebase to kdelibs between
@@ -98,7 +99,8 @@ upgrades.
       ports.
 
         pkg_deinstall -f kdebase-\[0-9\]\* superkaramba-\[0-9\]\* \
-	kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\*
+        kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \ 
+        kdeaddons-vimpart-\[0-9\]\*
 
   2.) Now update the remaining KDE ports.
 
@@ -115,6 +117,8 @@ upgrades.
   Superkaramba is now included in misc/kdeutils3.
   
   The smoothblend window decoration is now included in x11-themes/kdeartwork3.
+
+  Vimpart is being discontinued and no longer part of KDE.
 
   KNOWN ISSUES:
   =============
