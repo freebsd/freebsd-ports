@@ -16,6 +16,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -36,6 +37,7 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.2.* postfix-2.3.* \
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	postfix.sh
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
@@ -81,6 +83,9 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
+# Default requirement for postfix rcNG
+_REQUIRE=	DAEMON
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
 
@@ -91,34 +96,42 @@ pre-fetch:
 .if defined(WITHOUT_PCRE)
 POSTFIX_CCARGS+=	-DNO_PCRE
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
+.if defined(NOPORTDOCS)
+READMEDIR=no
+.else
+READMEDIR=${PREFIX}/share/doc/postfix
+.endif
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
+
 pre-patch:
 	${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
 		> ${WRKSRC}/html/body_checks.5.html
-.	for file in ${MAN1}
+.	for f in ${MAN1}
 		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-			${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
+			${WRKSRC}/man/man1/${f} ${WRKSRC}/html/${f}.html
 .	endfor
-.	for file in ${MAN5}
+.	for f in ${MAN5}
 		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-			${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
+			${WRKSRC}/man/man5/${f} ${WRKSRC}/html/${f}.html
 .	endfor
-.	for file in ${MAN8base}
+.	for f in ${MAN8base}
 		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-			${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
+			${WRKSRC}/man/man8/${f} ${WRKSRC}/html/${f}.html
 .	endfor
-.	for file in ${README}
+.	for f in ${README}
 		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-			${WRKSRC}/html/${file}.html
+			${WRKSRC}/html/${f}.html
 		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-			${WRKSRC}/README_FILES/${file}
+			${WRKSRC}/README_FILES/${f}
 .	endfor
-.	for file in ${CONF1}
-		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
+.	for f in ${CONF1}
+		@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${f}
 .	endfor
 
 post-patch:
@@ -133,12 +146,6 @@ do-configure:
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-.if defined(NOPORTDOCS)
-READMEDIR=no
-.else
-READMEDIR=${PREFIX}/share/doc/postfix
-.endif
 
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
@@ -157,13 +164,13 @@ do-install:
 
 	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 
-.	for file in ${BINTEST}
-		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
+.	for f in ${BINTEST}
+		@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
 .	endfor
 
-.	for file in ${CONF1}
-		${INSTALL_DATA} ${WRKSRC}/conf/${file} \
-			${PREFIX}/etc/postfix/dist-${file}
+.	for f in ${CONF1}
+		${INSTALL_DATA} ${WRKSRC}/conf/${f} \
+			${PREFIX}/etc/postfix/dist-${f}
 .	endfor
 
 .	if !defined(NOPORTDOCS)

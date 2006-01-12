@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.61 2005-10-14 14:24:15 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.62 2006-01-12 16:23:30 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -172,18 +172,21 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			echo "MYSQL_SUFFIX=	+mysql"
+			echo "_REQUIRE+=	mysql"
 			;;
 		PgSQL)
 			echo "USE_PGSQL=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
+			echo "_REQUIRE+=	postgresql"
 			;;
 		OpenLDAP)
 			echo "USE_OPENLDAP=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
  			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lldap -llber"
 			echo "OPENLDAP_SUFFIX=	+openldap"
+			echo "_REQUIRE+=	slapd"
 			echo ".if defined(WITH_OPENLDAP_VER)"
 			echo "WANT_OPENLDAP_VER=\${WITH_OPENLDAP_VER}"
 			echo ".endif"
