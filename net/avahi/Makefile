@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.6.3
 CATEGORIES=	net dns
-MASTER_SITES=	http://www.freedesktop.org/~lennart/
+MASTER_SITES=	http://www.avahi.org/download/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Service discovery on a local network
