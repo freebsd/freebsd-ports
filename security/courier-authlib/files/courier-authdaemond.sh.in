@@ -3,7 +3,7 @@
 # An rc.subr-style startup script for courier-authdaemond service.
 
 # PROVIDE: courier_authdaemond
-# REQUIRE: DAEMON mysql
+# REQUIRE: DAEMON mysql ldconfig ldconfig_compat
 # BEFORE: mail imap
 # KEYWORD: FreeBSD shutdown
 
