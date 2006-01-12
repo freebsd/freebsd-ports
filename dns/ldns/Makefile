@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/
 
@@ -24,6 +24,10 @@ INSTALLS_SHLIB=	yes
 OPTIONS=	EXAMPLES "With example programs" Off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Doxygen fails to create manpages on 4.x"
+.endif
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
