@@ -323,6 +323,11 @@
 %%DIR%%/theme/upcoming_events.css
 %%DIR%%/theme/upcoming_events.js
 %%DIR%%/us_english.pl
+%%DIR%%/danish.pl
+%%DIR%%/de_german.pl
+%%DIR%%/fr_french.pl
+%%DIR%%/nl_dutch.pl
+%%DIR%%/zh_tw.pl
 @dirrm %%DIR%%/theme/icons
 @dirrm %%DIR%%/theme/graphics
 @unexec rmdir %D/%%DIR%%/theme 2>/dev/null || true
