@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060113:
+  AFFECTS: users of multimedia/qvamps
+  AUTHOR: lioux@FreeBSD.org
+
+  Some program location pathnames have been corrected. Therefore,
+  a new configuration file has to be generated. First, close qvamps.
+  Then, remove the previous configuration file. Finally, start qvamps
+  again. The configuration file can be removed with:
+
+  $ rm ~/.qvamps/qvampsrc
+
 20060112:
   AFFECTS: users of mail/postfix, mail/postfix1, mail/postfix21,
 		    mail/postfix-current
