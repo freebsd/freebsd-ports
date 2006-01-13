@@ -1,11 +1,13 @@
 bin/nfsen
+bin/nfsen-reconfigure
 bin/nfsen-run
 bin/nfsen.rc
 bin/pid_check.pl
 bin/testPlugin
+@unexec if cmp -s %D/etc/nfsen.conf %D/etc/nfsen-dist.conf; then rm -f %D/etc/nfsen.conf; fi
 etc/nfsen-dist.conf
-etc/nfsen-dist.conf.orig
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
+etc/nfsen-shell-param
 libexec/%%PORTNAME%%/GenGraph.pl
 libexec/%%PORTNAME%%/Log.pm
 libexec/%%PORTNAME%%/NfConf.pm

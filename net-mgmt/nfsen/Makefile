@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://nfsen.sourceforge.net/
@@ -30,21 +30,20 @@ PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 pre-everything::
 .if ${PERL_LEVEL} < 500600
-IGNORE=	This backage requires at least perl 5.6.0
+IGNORE=		requires at least perl 5.6.0
 .endif
 
 do-configure:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' -e 's,%%PORTNAME%%,${PORTNAME},' \
 		${WRKSRC}/etc/nfsen-dist.conf
 	${REINPLACE_CMD} -e 's,%%PERL%%,${PERL},' ${WRKSRC}/install.pl
+	${RM} ${WRKSRC}/etc/nfsen-dist.conf.*
 
 do-install:
 	${MKDIR} ${PREFIX}/var/${PORTNAME}/profiles/live
 	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl ${WRKSRC}/etc/nfsen-dist.conf
+	${INSTALL_SCRIPT} ${WRKSRC}/install.pl ${PREFIX}/bin/nfsen-reconfigure
 	@${ECHO_MSG} "Configure your ${LOCALBASE}/etc/nfsen.conf to have necessary profiles ";
-	@${ECHO_MSG} "Then run 'make reconfigure' to correctly setup profile files";
-
-reconfigure:
-	cd ${WRKSRC} ;${PERL} ${WRKSRC}/install.pl ${LOCALBASE}/etc/nfsen.conf
+	@${ECHO_MSG} "Then run 'nfsen-reconfigure ${LOCALBASE}/etc/nfsen.conf' to correctly setup profile files";
 
 .include <bsd.port.post.mk>
