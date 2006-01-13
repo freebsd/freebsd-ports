@@ -7,12 +7,19 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.5.3
+PORTVERSION=	7.5.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
+		http://www.planscalendar.com/addons/:addons \
 		http://www.freebsd.org/gifs/:logo
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:plans \
+		danish.pl:addons \
+		nl_dutch.pl:addons \
+		fr_french.pl:addons \
+		de_german.pl:addons \
+		zh_tw.pl:addons \
 		powerani.gif:logo
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	infofarmer@gmail.com
@@ -31,17 +38,19 @@ PLIST_SUB+=	DIR=${PLANSDIR}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DIR=		${PREFIX}/${PLANSDIR}
+SUB_LIST+=	DIR=${DIR}
 
 post-extract:
-	${CP} ${DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
+	${CP} ${_DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
+	${CP} ${_DISTDIR}/*.pl ${WRKSRC}/
 
 post-patch:
 	@${RM} -f ${WRKSRC}/theme/plans.template.orig
 
 do-install:
 	@${INSTALL} -d ${DIR}
-	@${CP} -nR ${WRKSRC}/ ${DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}
+	@${CP} -nR ${WRKSRC}/ ${DIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}/
 	@${FIND} ${DIR} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${DIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
 	@${FIND} ${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
