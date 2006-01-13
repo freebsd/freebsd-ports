@@ -1,12 +1,12 @@
 # New ports collection makefile for:   monit
-# Date created:        4 Januar 2005
+# Date created:        4 January 2005
 # Whom:                Martin Pala <martinp@tildeslash.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	monit
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tildeslash.com/monit/dist/
 
