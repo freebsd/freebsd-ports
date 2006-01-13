@@ -7,6 +7,7 @@
 
 PORTNAME=	qvamps
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	vamps
@@ -17,8 +18,19 @@ COMMENT=	Dvd rip gui written in qt that uses vamps and dvdauthor
 BUILD_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
 		swig1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
+RUN_DEPENDS=	\
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
+		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
+		mplex:${PORTSDIR}/multimedia/mjpegtools \
+		ppmtoy4m:${PORTSDIR}/multimedia/mjpegtools \
+		puic:${PORTSDIR}/x11-toolkits/p5-qt \
+		spumux:${PORTSDIR}/multimedia/dvdauthor \
+		play_cell:${PORTSDIR}/multimedia/vamps \
 		vamps:${PORTSDIR}/multimedia/vamps
+
+CONFLICTS=	lxdvdrip-{{0.,1.[0-3],1.4[0-7]}*
+OPTIONS=	MPLAYER "Enable DVD playing using mplayer" on
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -61,6 +73,11 @@ PLIST_DIRS=	%%DATADIR%%/translations \
 		%%DATADIR%% \
 		lib/qvamps
 
+FILES_FIX_2K_SECTOR_SIZE=	\
+		TitleListItems.pm \
+		VTSListItems.pm \
+		mainwindow.ui.pm
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|puic|${LOCALBASE}/bin/puic|' \
@@ -69,8 +86,21 @@ post-patch:
 		-e 's|[[:space:]]perl[[:space:]]| ${PERL} |' \
 		${BUILD_WRKSRC}/${MAKEFILE}
 .for file in fakelupd.pl qvamps
-	${REINPLACE_CMD} -E \
+	@${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/${file}
+.endfor
+# PREFIX,DATADIR safeness
+.for file in QVamps.pm mainwindow.ui qvamps
+	@${REINPLACE_CMD} -E \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%DATADIR%%|${DATADIR}|' \
+		${WRKSRC}/${file}
+.endfor
+# use 2 Kbytes sector size instead of 512 bytes
+.for file in ${FILES_FIX_2K_SECTOR_SIZE}
+	@${REINPLACE_CMD} -E \
+		-e 's|512\.|2048\.|' \
 		${WRKSRC}/${file}
 .endfor
 
@@ -98,6 +128,10 @@ do-install:
 MAKE_ENV+=	STRIP="${STRIP_CMD}"
 .else
 MAKE_ENV+=	STRIP="${TRUE}"
+.endif
+
+.ifdef(WITH_MPLAYER)
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .include <bsd.port.post.mk>
