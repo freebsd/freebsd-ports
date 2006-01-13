@@ -1,5 +1,7 @@
 bin/recoll
 bin/recollindex
+%%DATADIR%%/doc/docbook.css
+%%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/mimeconf
 %%DATADIR%%/examples/mimemap
 %%DATADIR%%/examples/recoll.conf
@@ -23,6 +25,7 @@ bin/recollindex
 %%DATADIR%%/images/txt.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_fr.qm
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/filters
 @dirrm %%DATADIR%%/images
