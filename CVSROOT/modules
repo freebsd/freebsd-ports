@@ -5424,6 +5424,7 @@ libfame		ports/multimedia/libfame
 libffi		ports/devel/libffi
 libflash	ports/graphics/libflash
 libformat	ports/devel/libformat
+libfov		ports/games/libfov
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net/libfreenet
 libfs++		ports/devel/libfs++
