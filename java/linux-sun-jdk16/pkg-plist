@@ -1703,7 +1703,6 @@
 %%T%%/jre/lib/zi/Africa/Ouagadougou
 %%T%%/jre/lib/zi/Africa/Porto-Novo
 %%T%%/jre/lib/zi/Africa/Sao_Tome
-%%T%%/jre/lib/zi/Africa/Timbuktu
 %%T%%/jre/lib/zi/Africa/Tripoli
 %%T%%/jre/lib/zi/Africa/Tunis
 %%T%%/jre/lib/zi/Africa/Windhoek
@@ -1714,7 +1713,6 @@
 %%T%%/jre/lib/zi/America/Araguaina
 %%T%%/jre/lib/zi/America/Argentina/Buenos_Aires
 %%T%%/jre/lib/zi/America/Argentina/Catamarca
-%%T%%/jre/lib/zi/America/Argentina/ComodRivadavia
 %%T%%/jre/lib/zi/America/Argentina/Cordoba
 %%T%%/jre/lib/zi/America/Argentina/Jujuy
 %%T%%/jre/lib/zi/America/Argentina/La_Rioja
@@ -1740,6 +1738,7 @@
 %%T%%/jre/lib/zi/America/Cayman
 %%T%%/jre/lib/zi/America/Chicago
 %%T%%/jre/lib/zi/America/Chihuahua
+%%T%%/jre/lib/zi/America/Coral_Harbour
 %%T%%/jre/lib/zi/America/Costa_Rica
 %%T%%/jre/lib/zi/America/Cuiaba
 %%T%%/jre/lib/zi/America/Curacao
@@ -1765,19 +1764,19 @@
 %%T%%/jre/lib/zi/America/Halifax
 %%T%%/jre/lib/zi/America/Havana
 %%T%%/jre/lib/zi/America/Hermosillo
+%%T%%/jre/lib/zi/America/Indiana/Indianapolis
 %%T%%/jre/lib/zi/America/Indiana/Knox
 %%T%%/jre/lib/zi/America/Indiana/Marengo
 %%T%%/jre/lib/zi/America/Indiana/Vevay
-%%T%%/jre/lib/zi/America/Indianapolis
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
 %%T%%/jre/lib/zi/America/Juneau
+%%T%%/jre/lib/zi/America/Kentucky/Louisville
 %%T%%/jre/lib/zi/America/Kentucky/Monticello
 %%T%%/jre/lib/zi/America/La_Paz
 %%T%%/jre/lib/zi/America/Lima
 %%T%%/jre/lib/zi/America/Los_Angeles
-%%T%%/jre/lib/zi/America/Louisville
 %%T%%/jre/lib/zi/America/Maceio
 %%T%%/jre/lib/zi/America/Managua
 %%T%%/jre/lib/zi/America/Manaus
@@ -1931,6 +1930,7 @@
 %%T%%/jre/lib/zi/Australia/Adelaide
 %%T%%/jre/lib/zi/Australia/Brisbane
 %%T%%/jre/lib/zi/Australia/Broken_Hill
+%%T%%/jre/lib/zi/Australia/Currie
 %%T%%/jre/lib/zi/Australia/Darwin
 %%T%%/jre/lib/zi/Australia/Hobart
 %%T%%/jre/lib/zi/Australia/Lindeman
@@ -1972,7 +1972,6 @@
 %%T%%/jre/lib/zi/Europe/Amsterdam
 %%T%%/jre/lib/zi/Europe/Andorra
 %%T%%/jre/lib/zi/Europe/Athens
-%%T%%/jre/lib/zi/Europe/Belfast
 %%T%%/jre/lib/zi/Europe/Belgrade
 %%T%%/jre/lib/zi/Europe/Berlin
 %%T%%/jre/lib/zi/Europe/Brussels
@@ -2063,7 +2062,6 @@
 %%T%%/jre/lib/zi/Pacific/Truk
 %%T%%/jre/lib/zi/Pacific/Wake
 %%T%%/jre/lib/zi/Pacific/Wallis
-%%T%%/jre/lib/zi/Pacific/Yap
 %%T%%/jre/lib/zi/WET
 %%T%%/jre/lib/zi/ZoneInfoMappings
 %%T%%/jre/plugin/desktop/sun_java.desktop
