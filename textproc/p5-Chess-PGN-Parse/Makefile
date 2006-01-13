@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Chess-PGN-Parse
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	textproc games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GM/GMAX
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@daltons.ca
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Reads and parses PGN (Portable Game Notation) Chess files
 
 PERL_CONFIGURE=	yes
