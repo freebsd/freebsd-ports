@@ -271,7 +271,6 @@
     SUBDIR += pecl-PDO_ODBC
     SUBDIR += pecl-PDO_PGSQL
     SUBDIR += pecl-PDO_SQLITE
-    SUBDIR += pecl-hash
     SUBDIR += pecl-memcache
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
