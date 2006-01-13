@@ -13,7 +13,7 @@
 
 . %%RC_SUBR%%
 
-name=clamsmtpd
+name="clamsmtpd"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
