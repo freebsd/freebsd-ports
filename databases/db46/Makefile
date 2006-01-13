@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db44
-PORTVERSION=	4.4.16
+PORTVERSION=	4.4.20
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
