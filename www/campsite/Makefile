@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	campsite
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +27,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/share/pear/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util \
 		${LOCALBASE}/share/pear/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 
-USE_RC_SUBR=	zcampsite.sh
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_APACHE=	YES
