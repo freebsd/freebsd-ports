@@ -7,7 +7,7 @@
 
 PORTNAME=	ldconfig_compat
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -24,6 +24,12 @@ LOCAL_DIRS=	${LDCONFIG_DIR} \
 
 SUB_LIST=	LDCONFIG_DIR=${LDCONFIG_DIR} \
 		LDCONFIG32_DIR=${LDCONFIG32_DIR}
+
+.if !defined(WITHOUT_X11)
+LOCAL_PREFIXES=	${PREFIX} ${X11BASE}
+.else
+LOCAL_PREFIXES=	${PREFIX}
+.endif
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/bsd.ldconfig.mk"
@@ -47,11 +53,11 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/ldconfig_compat.sh ${PREFIX}/etc/rc.d/000.ldconfig_compat.sh
 	@${ECHO_CMD} "etc/rc.d/000.ldconfig_compat.sh" >> ${TMPPLIST}
 .endif
-.for prefix in ${PREFIX} ${X11BASE}
+.for prefix in ${LOCAL_PREFIXES}
 	@${ECHO_CMD} "@cwd ${prefix}" >> ${TMPPLIST}
 .for dir in ${LOCAL_DIRS}
-	@${MKDIR} ${prefix}/${dir}
-	@${ECHO_CMD} "@exec mkdir %D/${dir}" >> ${TMPPLIST}
+	@${MKDIR} -p ${prefix}/${dir}
+	@${ECHO_CMD} "@exec mkdir -p %D/${dir}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${dir} 2>/dev/null || true" >> ${TMPPLIST}
 .endfor
 .endfor
