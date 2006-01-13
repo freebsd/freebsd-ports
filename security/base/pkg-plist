@@ -91,6 +91,7 @@ www/base/languages/russian.lang.php
 www/base/languages/simplified_chinese.lang.php
 www/base/languages/spanish.lang.php
 www/base/languages/swedish.lang.php
+www/base/languages/turkish.lang.php
 www/base/setup/base_conf_contents.php
 www/base/setup/index.php
 www/base/setup/setup1.php
