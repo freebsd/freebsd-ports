@@ -1,5 +1,5 @@
---- implementation/search/install_search.orig	Tue Sep 20 09:38:31 2005
-+++ implementation/search/install_search	Sat Nov 19 00:33:12 2005
+--- implementation/search/install_search.orig	Fri Nov 11 19:34:40 2005
++++ implementation/search/install_search	Fri Jan 13 15:17:55 2006
 @@ -6,10 +6,10 @@
  
  if $USER_INSTALL; then exit 0; fi
@@ -8,12 +8,12 @@
 -if [ -f /etc/crontab ]; then
 -    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab
 -fi
--install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$BIN_DIR/gather" /etc/cron.d/campsite_gather -c || exit 1
+-install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_indexer" /etc/cron.d/campsite_indexer -c || exit 1
 -restart_cron || exit 1
 +#. ${INSTALL_CONF}/cron_functions
 +#if [ -f /etc/crontab ]; then
 +#    uninstall_cron_task "$BIN_DIR/gather" /etc/crontab
 +#fi
-+#install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$BIN_DIR/gather" /etc/cron.d/campsite_gather -c || exit 1
++#install_cron_task "0" "*/4" "*" "*" "*" "$ROOT_USER" "$SBIN_DIR/campsite_indexer" /etc/cron.d/campsite_indexer -c || exit 1
 +#restart_cron || exit 1
  exit 0
