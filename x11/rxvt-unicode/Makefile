@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	6.3
-PORTREVISION=	1
+PORTVERSION=	7.0
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -29,8 +28,8 @@ USE_GMAKE=		yes
 MAN1=		urxvt.1 urxvtc.1 urxvtd.1
 MAN7=		urxvt.7
 
-PORTDOCS1=	Changes
-PORTDOCS=	README.menu ${PORTDOCS1}
+PORTDOCS1=	Changes README.FAQ README.configure
+PORTDOCS=	README.menu README.xvt ${PORTDOCS1}
 EXAMPLES=	example.menu jedmenu.sl menu rxvt.menu rxvt.zh-menu terminal.menu
 
 # disable the embedded perl interpreter
