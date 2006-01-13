@@ -7,7 +7,7 @@
 
 PORTNAME=	hash
 DISTVERSION=	1.1
-CATEGORIES=	databases www
+CATEGORIES=	security www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
