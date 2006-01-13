@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmail-rblchk
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://morettoni.net/qmail/
 
@@ -28,13 +27,13 @@ INSTALL_TARGET=	setup
 
 USE_REINPLACE=	yes
 
-PLIST_FILES=	bin/qmail-rblchk %%EXAMPLESDIR%%/spam-report.sh \
-		%%EXAMPLESDIR%%/rbllist.sh
+PLIST_FILES=	bin/qmail-rblchk bin/getsenderip \
+		%%EXAMPLESDIR%%/spam-report.sh %%EXAMPLESDIR%%/rbllist.sh
 PLIST_DIRS=	%%EXAMPLESDIR%%
-MAN1=		qmail-rblchk.1
+MAN1=		qmail-rblchk.1 getsenderip.1
 
 post-patch:
-	@${REINPLACE_CMD} '/"cat/d' ${WRKSRC}/hier.c
+	@${REINPLACE_CMD} -e '/"cat/d; s|,02755|,0755|' ${WRKSRC}/hier.c
 
 do-configure:
 	${PRINTF}   "${PREFIX}\n\n.../bin.\n"	> ${WRKSRC}/conf-home
