@@ -1,0 +1,10 @@
+LIB=		fov
+SHLIB_MAJOR=	0
+SHLIB_MINOR=	1
+SRCS=	fov.c
+INCS=	fov.h
+LIBDIR=	${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include
+
+.include <bsd.lib.mk>
+

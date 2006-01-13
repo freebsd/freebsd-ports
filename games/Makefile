@@ -327,6 +327,7 @@
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
+    SUBDIR += libfov
     SUBDIR += libggz
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client

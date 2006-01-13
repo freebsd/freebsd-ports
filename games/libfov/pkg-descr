@@ -1,0 +1,8 @@
+This is a C library which implements a course-grained lighting algorithm 
+suitable for tile-based games such as roguelikes.
+
+WWW: http://members.optushome.com.au/puyo/libfov.html
+Author: Greg <greg@puyo.cjb.net>
+
+- Aaron Dalton
+aaron@FreeBSD.org
