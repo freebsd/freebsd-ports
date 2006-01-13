@@ -128,7 +128,6 @@ BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
 
-.if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 PTHREAD_FILES=	common/Defs.gmk \
 	common/Program.gmk \
 	java/hpi/native/Makefile \
@@ -137,7 +136,6 @@ PTHREAD_FILES=	common/Defs.gmk \
 	../../hotspot1.3.1/build/linux/platform_i486 \
 	../../hotspot1.3.1/build/bsd/makefiles/gcc.make \
 	../../hotspot1.3.1/build/linux/makefiles/vm.make
-.endif
 
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
@@ -206,14 +204,12 @@ post-patch:
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
-.if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 	@for file in ${PTHREAD_FILES}; do \
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
 			-e "s:-lc_r:${PTHREAD_LIBS}:g" \
 			-e "s:-lpthread:${PTHREAD_LIBS}:g" \
 			${WRKSRC}/$${file}; \
 	done
-.endif
 
 pre-build:
 .if defined(WITH_LINUX_BOOTSTRAP)
