@@ -553,6 +553,7 @@
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stratagus
+    SUBDIR += stroq
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sudsol
