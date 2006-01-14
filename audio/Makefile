@@ -341,7 +341,6 @@
     SUBDIR += musiccontrol
     SUBDIR += musicpd
     SUBDIR += mutemix
-    SUBDIR += mziq
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += ncmpc
@@ -409,7 +408,6 @@
     SUBDIR += pysol-sound-server
     SUBDIR += q-audio
     SUBDIR += quelcom
-    SUBDIR += radio
     SUBDIR += raproxy
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
@@ -546,7 +544,6 @@
     SUBDIR += xmms-arts_output
     SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
-    SUBDIR += xmms-cdparanoia
     SUBDIR += xmms-cdread
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality

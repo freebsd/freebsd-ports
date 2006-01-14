@@ -190,7 +190,6 @@
     SUBDIR += cvsmapfs
     SUBDIR += cvsmonitor
     SUBDIR += cvsnt
-    SUBDIR += cvspadm
     SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
@@ -211,7 +210,6 @@
     SUBDIR += dbus
     SUBDIR += dbus-sharp
     SUBDIR += ddd
-    SUBDIR += decompyle
     SUBDIR += desktop-file-utils
     SUBDIR += devhelp
     SUBDIR += devtodo
@@ -538,7 +536,6 @@
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
     SUBDIR += libxalloc
-    SUBDIR += libzt
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += lincvs
@@ -1449,7 +1446,6 @@
     SUBDIR += py-unit
     SUBDIR += py-urwid
     SUBDIR += py-vmaps
-    SUBDIR += py-wsdllib
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
@@ -1513,9 +1509,7 @@
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
-    SUBDIR += ruby-mock
     SUBDIR += ruby-ncurses
-    SUBDIR += ruby-nodedump
     SUBDIR += ruby-p4
     SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-poll

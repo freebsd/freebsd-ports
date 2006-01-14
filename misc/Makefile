@@ -444,7 +444,6 @@
     SUBDIR += wminfo
     SUBDIR += wmjulia
     SUBDIR += wmpal
-    SUBDIR += wmproxyper
     SUBDIR += wmtunlo
     SUBDIR += wmweather
     SUBDIR += wmweather+

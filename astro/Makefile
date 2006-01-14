@@ -10,7 +10,6 @@
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += gdesklets-goodweather
-    SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2
     SUBDIR += gkrellsun

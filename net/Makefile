@@ -5,7 +5,6 @@
 
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
-    SUBDIR += 4g8
     SUBDIR += 6tunnel
     SUBDIR += AquaGatekeeper
     SUBDIR += AquaGatekeeper2

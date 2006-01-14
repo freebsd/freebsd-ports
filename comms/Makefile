@@ -106,7 +106,6 @@
     SUBDIR += uticom
     SUBDIR += viewfax
     SUBDIR += vpb-driver
-    SUBDIR += vpb2
     SUBDIR += vrflash
     SUBDIR += wwl
     SUBDIR += wy60

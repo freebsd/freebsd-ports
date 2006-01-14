@@ -566,7 +566,6 @@
     SUBDIR += xmailbox
     SUBDIR += xmailwatcher
     SUBDIR += xpbiff
-    SUBDIR += yadda
     SUBDIR += yuzu
     SUBDIR += zabit
     SUBDIR += zmailer

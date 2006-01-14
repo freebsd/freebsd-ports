@@ -68,7 +68,6 @@ taginfo		CVSROOT taginfo
 44bsd-hunt	ports/games/44bsd-hunt
 44bsd-more	ports/sysutils/44bsd-more
 44bsd-rdist	ports/net/44bsd-rdist
-4g8		ports/net/4g8
 4stattack	ports/games/4stattack
 4va		ports/graphics/4va
 54321		ports/games/54321
@@ -738,7 +737,6 @@ bindtest	ports/net/bindtest
 bing		ports/net/bing
 binkd		ports/net/binkd
 bins		ports/www/bins
-bioflip		ports/biology/flip
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
@@ -1086,7 +1084,6 @@ checkservice	ports/sysutils/checkservice
 cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
 chef		ports/misc/chef
-chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
 chemtool-devel	ports/science/chemtool-devel
 cherokee	ports/www/cherokee
@@ -1438,7 +1435,6 @@ cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvsmonitor	ports/devel/cvsmonitor
 cvsnt		ports/devel/cvsnt
-cvspadm		ports/devel/cvspadm
 cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
 cvsps-devel	ports/devel/cvsps-devel
@@ -1599,14 +1595,12 @@ de-webalizer2	ports/german/webalizer2
 deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
 deco		ports/misc/deco
-decompyle	ports/devel/decompyle
 decss		ports/www/decss
 decurs		ports/x11/decurs
 dedit		ports/editors/dedit
 deep_zoom	ports/graphics/deep_zoom
 deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
-deft		ports/biology/deft
 dejagnu		ports/misc/dejagnu
 dejavu		ports/x11-fonts/dejavu
 dekagen		ports/audio/dekagen
@@ -2048,7 +2042,6 @@ emh-emacs20	ports/mail/emh-emacs20
 emh-xemacs21-mule	ports/mail/emh-xemacs21-mule
 emiclock	ports/x11-clocks/emiclock
 emil		ports/mail/emil
-emirror		ports/ftp/emirror
 emma		ports/finance/emma
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
@@ -2956,7 +2949,6 @@ gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmbgchg	ports/misc/gkrellmbgchg
 gkrellmbgchg2	ports/misc/gkrellmbgchg2
-gkrellmearth	ports/astro/gkrellmearth
 gkrellmfmonitor	ports/misc/gkrellmfmonitor
 gkrellmfmonitor2	ports/misc/gkrellmfmonitor2
 gkrellmlaunch	ports/misc/gkrellmlaunch
@@ -3007,7 +2999,6 @@ glean		ports/graphics/glean
 glens		ports/science/glens
 glest		ports/games/glest
 glew		ports/graphics/glew
-gleyes		ports/games/gleyes
 glflow		ports/net/glflow
 glfw		ports/graphics/glfw
 glgraph		ports/math/glgraph
@@ -4733,7 +4724,6 @@ john		ports/security/john
 jomp		ports/java/jomp
 jools		ports/games/jools
 joomla		ports/www/joomla
-journal		ports/deskutils/journal
 jove		ports/editors/jove
 jpatch		ports/graphics/jpatch
 jpeg		ports/graphics/jpeg
@@ -5708,7 +5698,6 @@ libxml2		ports/textproc/libxml2
 libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
 libyahoo2	ports/net-im/libyahoo2
-libzt		ports/devel/libzt
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net-im/licq
@@ -6717,7 +6706,6 @@ mysqlman	ports/databases/mysqlman
 mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
-mziq		ports/audio/mziq
 nInvaders	ports/games/nInvaders
 nab		ports/biology/nab
 nadar		ports/games/nadar
@@ -10620,7 +10608,6 @@ py-webware	ports/www/py-webware
 py-webware-component	ports/www/py-webware-component
 py-wmgeneral	ports/x11-toolkits/py-wmgeneral
 py-wordnet	ports/textproc/py-wordnet
-py-wsdllib	ports/devel/py-wsdllib
 py-wxPython24	ports/x11-toolkits/py-wxPython24
 py-wxPython26	ports/x11-toolkits/py-wxPython26
 py-wxPython26-common	ports/x11-toolkits/py-wxPython26-common
@@ -10856,7 +10843,6 @@ racoon2		ports/security/racoon2
 raddump		ports/net/raddump
 radeontool	ports/sysutils/radeontool
 radiator	ports/net/radiator
-radio		ports/audio/radio
 radiusclient	ports/net/radiusclient
 radiusd-cistron	ports/net/radiusd-cistron
 radiusniff	ports/security/radiusniff
@@ -11266,7 +11252,6 @@ ruby-mime-types	ports/mail/ruby-mime-types
 ruby-ming	ports/graphics/ruby-ming
 ruby-mmap	ports/devel/ruby-mmap
 ruby-mnogosearch	ports/www/ruby-mnogosearch
-ruby-mock	ports/devel/ruby-mock
 ruby-mode.el	ports/lang/ruby-mode.el
 ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
@@ -11282,7 +11267,6 @@ ruby-ncurses	ports/devel/ruby-ncurses
 ruby-net-geoip	ports/net/ruby-net-geoip
 ruby-netcdf	ports/math/ruby-netcdf
 ruby-nis	ports/net/ruby-nis
-ruby-nodedump	ports/devel/ruby-nodedump
 ruby-nora	ports/www/ruby-nora
 ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-numru_misc	ports/math/ruby-numru_misc
@@ -12874,7 +12858,6 @@ vorbis-tools	ports/audio/vorbis-tools
 vorbisgain	ports/audio/vorbisgain
 vp		ports/graphics/vp
 vpb-driver	ports/comms/vpb-driver
-vpb2		ports/comms/vpb2
 vpce		ports/emulators/vpce
 vpnc		ports/security/vpnc
 vpnd		ports/security/vpnd
@@ -13111,7 +13094,6 @@ wmpiki		ports/net/wmpiki
 wmpinboard	ports/deskutils/wmpinboard
 wmping		ports/net/wmping
 wmpop3		ports/mail/wmpop3
-wmproxyper	ports/misc/wmproxyper
 wmpuzzle	ports/games/wmpuzzle
 wmq3		ports/net/wmq3
 wmqstat		ports/games/wmqstat
@@ -13566,7 +13548,6 @@ xmms-avi	ports/multimedia/xmms-avi
 xmms-bluecurve-theme	ports/x11-themes/xmms-bluecurve-theme
 xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
-xmms-cdparanoia	ports/audio/xmms-cdparanoia
 xmms-cdread	ports/audio/xmms-cdread
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
@@ -13877,7 +13858,6 @@ yabasic		ports/lang/yabasic
 yabb		ports/www/yabb
 yabm		ports/net-mgmt/yabm
 yacas		ports/math/yacas
-yadda		ports/mail/yadda
 yadex		ports/games/yadex
 yafc		ports/ftp/yafc
 yafic		ports/security/yafic
@@ -13944,7 +13924,6 @@ zh-BBMan	ports/chinese/BBMan
 zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
-zh-MT		ports/chinese/MT
 zh-acroread5-chsfont	ports/chinese/acroread5-chsfont
 zh-acroread5-chtfont	ports/chinese/acroread5-chtfont
 zh-arnettf	ports/chinese/arnettf
@@ -13961,7 +13940,6 @@ zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
 zh-celvis	ports/chinese/celvis
-zh-chinput2	ports/chinese/chinput2
 zh-chinput3	ports/chinese/chinput3
 zh-chm2html	ports/chinese/chm2html
 zh-cless	ports/chinese/cless
@@ -14059,10 +14037,8 @@ zh-ttf2pt1	ports/chinese/ttf2pt1
 zh-ttfm		ports/chinese/ttfm
 zh-unrar	ports/chinese/unrar
 zh-unzip	ports/chinese/unzip
-zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
 zh-vim-scdoc	ports/chinese/vim-scdoc
-zh-wangttf	ports/chinese/wangttf
 zh-wenju	ports/chinese/wenju
 zh-xcin25	ports/chinese/xcin25
 zh-xemacs	ports/chinese/xemacs
