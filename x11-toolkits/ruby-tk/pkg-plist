@@ -1,4 +1,5 @@
 %%RUBY18_ONLY%%%%RUBY_ARCHLIBDIR%%/tcltklib.so
+%%RUBY18_ONLY%%%%RUBY_ARCHLIBDIR%%/tkutil.so
 %%RUBY_LIBDIR%%/tk.rb
 %%RUBY_LIBDIR%%/tkafter.rb
 %%RUBY_LIBDIR%%/tkbgerror.rb
