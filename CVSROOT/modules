@@ -12035,6 +12035,7 @@ streamtranscoder	ports/audio/streamtranscoder
 streamtuner	ports/audio/streamtuner
 stress		ports/sysutils/stress
 strobe		ports/security/strobe
+stroq		ports/games/stroq
 stuffit		ports/archivers/stuffit
 stund		ports/net/stund
 stunnel		ports/security/stunnel
