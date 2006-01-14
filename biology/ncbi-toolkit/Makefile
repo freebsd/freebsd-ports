@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ncbi-toolkit
-PORTVERSION=	2005.06.05
+PORTVERSION=	2005.12.06
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -32,12 +32,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 # change in the future with the addition of selectable knobs or
 # new slave ports
 
-TOOLKIT_EXE=	asn2ff asn2gb asn2xml asndhuff checksub debruijn \
-		entrcmd fa2htgs findspl getseq getfeat getmesh \
+TOOLKIT_EXE=	asn2ff asn2gb asn2idx asn2xml asndhuff asntool checksub \
+		debruijn entrcmd fa2htgs findspl getseq getfeat getmesh \
 		getpub gil2bin idfetch indexpub makeset tbl2asn vecscreen
 BLAST_EXE=	bl2seq blast blastall blastcl3 blastclust blastpgp copymat \
 		fastacmd formatdb impala makemat megablast rpsblast seedtop
-X11_EXE=	Nentrez Psequin ddv entrez2 netentcf udv
+X11_EXE=	Nentrez Psequin ddv entrez2 netentcf sbtedit udv
 
 # and these are the man pages we have
 MAN1=	Nentrez.1 Psequin.1 asn2asn.1 asn2ff.1 asn2gb.1 asn2xml.1 asndhuff.1 \
@@ -93,7 +93,7 @@ post-install:
 .endif
 
 .if !defined(BATCH)
-	@ ${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@ ${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
