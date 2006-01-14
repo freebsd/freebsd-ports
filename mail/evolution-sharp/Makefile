@@ -3,12 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.18 2005/10/22 22:55:02 tmclau02 Exp $
+#   $Id: Makefile,v 1.21 2005/12/03 04:03:17 tmclau02 Exp $
 #
 
 PORTNAME=	evolution-sharp
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10

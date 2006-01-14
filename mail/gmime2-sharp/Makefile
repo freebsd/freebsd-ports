@@ -3,10 +3,10 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.13 2005/11/01 05:03:44 tmclau02 Exp $
+#   $Id: Makefile,v 1.15 2005/11/23 01:39:36 tmclau02 Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sharp
 
