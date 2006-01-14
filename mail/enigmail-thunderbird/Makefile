@@ -14,6 +14,8 @@ RUN_DEPENDS=	thunderbird:${PORTSDIR}/${LOCAL_SRCDIR}
 
 MASTERDIR=	${.CURDIR}/../enigmail
 
+BROKEN=		"enigmail cannot be installed as global extension in TB 1.5 anymore"
+
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
