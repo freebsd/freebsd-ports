@@ -6,7 +6,7 @@
 # the FreeBSD ports system.
 #
 # $FreeBSD$
-#   $Id: bsd.mono.mk,v 1.5 2005/11/06 03:26:36 tmclau02 Exp $
+#   $Id: bsd.mono.mk,v 1.7 2005/11/15 03:09:57 tmclau02 Exp $
 #
 
 # Set the location of the .wapi directory so we write to a location we

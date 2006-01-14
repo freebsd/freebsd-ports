@@ -1,11 +1,8 @@
---- mono/mini/exceptions-amd64.c.orig	Tue Aug  2 17:53:06 2005
-+++ mono/mini/exceptions-amd64.c	Tue Aug  2 17:53:20 2005
-@@ -573,11 +573,27 @@
-  * @obj: the exception object
-  */
+--- mono/mini/exceptions-amd64.c.orig	Sat Oct 29 15:34:30 2005
++++ mono/mini/exceptions-amd64.c	Wed Nov 16 21:22:58 2005
+@@ -620,9 +620,25 @@
  gboolean
--mono_arch_handle_exception (void *sigctx, gpointer obj, gboolean test_only)
-+mono_arch_handle_exception (void *sigctx, gpointer obj,	gboolean test_only)
+ mono_arch_handle_exception (void *sigctx, gpointer obj, gboolean test_only)
  {
 -	ucontext_t *ctx = (ucontext_t*)sigctx;
 -	MonoContext mctx;
@@ -31,7 +28,7 @@
  	mctx.rax = ctx->uc_mcontext.gregs [REG_RAX];
  	mctx.rbx = ctx->uc_mcontext.gregs [REG_RBX];
  	mctx.rcx = ctx->uc_mcontext.gregs [REG_RCX];
-@@ -591,9 +607,25 @@
+@@ -636,9 +652,25 @@
  	mctx.r13 = ctx->uc_mcontext.gregs [REG_R13];
  	mctx.r14 = ctx->uc_mcontext.gregs [REG_R14];
  	mctx.r15 = ctx->uc_mcontext.gregs [REG_R15];
@@ -57,7 +54,7 @@
  	ctx->uc_mcontext.gregs [REG_RAX] = mctx.rax;
  	ctx->uc_mcontext.gregs [REG_RBX] = mctx.rbx;
  	ctx->uc_mcontext.gregs [REG_RCX] = mctx.rcx;
-@@ -607,14 +639,20 @@
+@@ -652,6 +684,7 @@
  	ctx->uc_mcontext.gregs [REG_R13] = mctx.r13;
  	ctx->uc_mcontext.gregs [REG_R14] = mctx.r14;
  	ctx->uc_mcontext.gregs [REG_R15] = mctx.r15;
@@ -65,10 +62,9 @@
  
  	return TRUE;
  }
- 
+@@ -659,7 +692,12 @@
  gpointer
--mono_arch_ip_from_context (void *sigctx)
-+mono_arch_ip_from_context (void	*sigctx)
+ mono_arch_ip_from_context (void *sigctx)
  {
 -	ucontext_t *ctx = (ucontext_t*)sigctx;
 -	return (gpointer)ctx->uc_mcontext.gregs [REG_RIP];
