@@ -171,6 +171,7 @@
     SUBDIR += gltk
     SUBDIR += gltt
     SUBDIR += gmt
+    SUBDIR += gnash
     SUBDIR += gnofract4d
     SUBDIR += gnome-colorscheme
     SUBDIR += gnomecanvas
