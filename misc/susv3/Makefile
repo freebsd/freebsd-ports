@@ -18,8 +18,7 @@ RESTRICTED=	"Redistribution of the documents is not permitted"
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-
-PLIST=		${WRKDIR}/pkg-plist
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -29,11 +28,9 @@ IGNORE=		"may not be redistributed because of licensing reasons. Please visit ht
 
 do-install:
 	@${MKDIR} ${DOCSDIR}
-	@> ${PLIST}
 	@${FIND} ${WRKSRC} | ${SED} -e 's#^${WRKSRC}##' | while read file; do \
 		if ${TEST} -d "${WRKSRC}$$file"; then \
 			${MKDIR} "${DOCSDIR}$$file"; \
-			${ECHO} "@dirrm ${DOCSDIR:S#^${PREFIX}/##}$$file" >> ${PLIST}; \
 		else \
 			if ${TEST} -L "${WRKSRC}$$file"; then \
 				${LN} -s "`${LS} -l \"${WRKSRC}$$file\" | ${SED} -e 's/^.*> //'`" \
@@ -41,9 +38,7 @@ do-install:
 			else \
 				${INSTALL_DATA} "${WRKSRC}$$file" "${DOCSDIR}$$file"; \
 			fi; \
-			${ECHO} "${DOCSDIR:S#^${PREFIX}/##}$$file" >> ${PLIST}; \
 		fi; \
 	done
-	@(${RM} -f ${PLIST}; ${SED} -ne '/^@/{G;h;};/^@/!p;$${g;p;}' > ${PLIST}) < ${PLIST}
 
 .include <bsd.port.post.mk>
