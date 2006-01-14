@@ -1382,6 +1382,7 @@
     SUBDIR += pwlib
     SUBDIR += py-anonfunc
     SUBDIR += py-bison
+    SUBDIR += py-celementtree
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-clientcookie

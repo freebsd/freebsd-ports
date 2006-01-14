@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/cElementTree.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple-ns.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple.xml
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
