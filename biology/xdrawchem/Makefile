@@ -7,6 +7,7 @@
 
 PORTNAME=	xdrawchem
 PORTVERSION=	1.7.8
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdrawchem
@@ -15,9 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Chemical drawing program
 
-LIB_DEPENDS=	openbabel.0:${PORTSDIR}/science/openbabel
-
-BROKEN=		Broken dependency
+LIB_DEPENDS=	openbabel.1:${PORTSDIR}/science/openbabel
 
 CFLAGS+=	-O0
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
