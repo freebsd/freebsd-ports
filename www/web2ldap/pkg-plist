@@ -6,7 +6,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-sidebar.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/fixed.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/commandlink.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
@@ -81,6 +80,8 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ppolicy.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/dirx.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/dirx.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/krb5.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/krb5.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/fastcgi.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/hosts.py
