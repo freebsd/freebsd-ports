@@ -1,0 +1,11 @@
+--- src/core/Makefile.in.orig	Mon Oct 10 00:03:44 2005
++++ src/core/Makefile.in	Sat Jan 14 23:13:58 2006
+@@ -253,7 +253,7 @@
+ libpcmanx_core_la_LIBADD = $(GUI_LIBS)
+ libpcmanx_core_la_LDFLAGS = \
+ 	-export-dynamic \
+-	@LIBTOOL_EXPORT_OPTIONS@ \
++	-export-symbols-regex "^[[^_]].*" \
+ 	-rpath $(libdir)
+ 
+ libpcmanx_core_la_SOURCES = \
