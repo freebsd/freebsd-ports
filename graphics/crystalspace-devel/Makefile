@@ -59,6 +59,10 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 BROKEN=		"Does not compile"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 .if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
 .else
