@@ -1,13 +1,12 @@
 bin/ewl-config
-bin/ewl_edb_ed
 bin/ewl_embed_test
 bin/ewl_simple_test
 bin/ewl_test
 include/ewl/Ewl.h
+include/ewl/ewl_attach.h
 include/ewl/ewl_border.h
 include/ewl/ewl_box.h
 include/ewl/ewl_button.h
-include/ewl/ewl_button_stock.h
 include/ewl/ewl_calendar.h
 include/ewl/ewl_callback.h
 include/ewl/ewl_colordialog.h
@@ -21,6 +20,7 @@ include/ewl/ewl_container.h
 include/ewl/ewl_datepicker.h
 include/ewl/ewl_debug.h
 include/ewl/ewl_dialog.h
+include/ewl/ewl_dnd.h
 include/ewl/ewl_embed.h
 include/ewl/ewl_entry.h
 include/ewl/ewl_enums.h
@@ -28,7 +28,9 @@ include/ewl/ewl_events.h
 include/ewl/ewl_filedialog.h
 include/ewl/ewl_fileselector.h
 include/ewl/ewl_floater.h
+include/ewl/ewl_freebox.h
 include/ewl/ewl_grid.h
+include/ewl/ewl_icon.h
 include/ewl/ewl_iconbox.h
 include/ewl/ewl_image.h
 include/ewl/ewl_imenu.h
@@ -36,6 +38,7 @@ include/ewl/ewl_label.h
 include/ewl/ewl_macros.h
 include/ewl/ewl_menu.h
 include/ewl/ewl_menu_base.h
+include/ewl/ewl_menu_item.h
 include/ewl/ewl_menubar.h
 include/ewl/ewl_misc.h
 include/ewl/ewl_notebook.h
@@ -49,8 +52,6 @@ include/ewl/ewl_row.h
 include/ewl/ewl_scrollbar.h
 include/ewl/ewl_scrollpane.h
 include/ewl/ewl_seeker.h
-include/ewl/ewl_selectionbar.h
-include/ewl/ewl_selectionbook.h
 include/ewl/ewl_separator.h
 include/ewl/ewl_spacer.h
 include/ewl/ewl_spectrum.h
@@ -59,8 +60,8 @@ include/ewl/ewl_statusbar.h
 include/ewl/ewl_table.h
 include/ewl/ewl_text.h
 include/ewl/ewl_theme.h
-include/ewl/ewl_tooltip.h
 include/ewl/ewl_tree.h
+include/ewl/ewl_tree2.h
 include/ewl/ewl_widget.h
 include/ewl/ewl_window.h
 lib/libewl.a
@@ -82,6 +83,8 @@ share/aclocal/ewl.m4
 %%DATADIR%%/examples/ewl_filedialog_test.c
 %%DATADIR%%/examples/ewl_fileselector_test.c
 %%DATADIR%%/examples/ewl_floater_test.c
+%%DATADIR%%/examples/ewl_freebox_test.c
+%%DATADIR%%/examples/ewl_icon_test.c
 %%DATADIR%%/examples/ewl_iconbox_test.c
 %%DATADIR%%/examples/ewl_image_test.c
 %%DATADIR%%/examples/ewl_imenu_test.c
@@ -92,22 +95,46 @@ share/aclocal/ewl.m4
 %%DATADIR%%/examples/ewl_password_test.c
 %%DATADIR%%/examples/ewl_progressbar_test.c
 %%DATADIR%%/examples/ewl_seeker_test.c
-%%DATADIR%%/examples/ewl_selectionbar_test.c
-%%DATADIR%%/examples/ewl_selectionbook_test.c
 %%DATADIR%%/examples/ewl_spinner_test.c
 %%DATADIR%%/examples/ewl_statusbar_test.c
 %%DATADIR%%/examples/ewl_table_test.c
 %%DATADIR%%/examples/ewl_test.c
 %%DATADIR%%/examples/ewl_test.h
+%%DATADIR%%/examples/ewl_text_editor_test.c
 %%DATADIR%%/examples/ewl_text_test.c
 %%DATADIR%%/examples/ewl_theme_test.c
 %%DATADIR%%/examples/ewl_tooltip_test.c
 %%DATADIR%%/examples/ewl_tree_test.c
-%%DATADIR%%/themes/default.edj
+%%DATADIR%%/images/Draw.png
+%%DATADIR%%/images/End.png
+%%DATADIR%%/images/NewBCard.png
+%%DATADIR%%/images/Open.png
+%%DATADIR%%/images/Package.png
+%%DATADIR%%/images/World.png
+%%DATADIR%%/images/banner-top.png
+%%DATADIR%%/images/e-logo.png
+%%DATADIR%%/images/elicit.png
+%%DATADIR%%/images/elicit1.png
+%%DATADIR%%/images/elicit2.png
+%%DATADIR%%/images/elicit3.png
+%%DATADIR%%/images/entice.png
+%%DATADIR%%/images/entice1.png
+%%DATADIR%%/images/entice2.png
+%%DATADIR%%/images/entice3.png
+%%DATADIR%%/images/entrance.png
+%%DATADIR%%/images/entrance1.png
+%%DATADIR%%/images/entrance2.png
+%%DATADIR%%/images/entrance3.png
+%%DATADIR%%/images/evidence.png
+%%DATADIR%%/images/evidence1.png
+%%DATADIR%%/images/evidence2.png
+%%DATADIR%%/images/evidence3.png
+%%DATADIR%%/images/evidence4.png
+%%DATADIR%%/images/lilbottom.png
+%%DATADIR%%/images/lilgrad.png
 %%DATADIR%%/themes/e17.edj
-%%DATADIR%%/themes/skeleton.edj
-%%DATADIR%%/themes/zero.edj
 @dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm include/ewl

@@ -5,7 +5,6 @@ include/Esmart/Esmart_Container.h
 include/Esmart/Esmart_Draggies.h
 include/Esmart/Esmart_File_Dialog.h
 include/Esmart/Esmart_Text_Entry.h
-include/Esmart/Esmart_Textarea.h
 include/Esmart/Esmart_Thumb.h
 include/Esmart/Esmart_Trans_X11.h
 lib/libesmart_container.a
@@ -20,9 +19,6 @@ lib/libesmart_file_dialog.so.0
 lib/libesmart_text_entry.a
 lib/libesmart_text_entry.so
 lib/libesmart_text_entry.so.0
-lib/libesmart_textarea.a
-lib/libesmart_textarea.so
-lib/libesmart_textarea.so.0
 lib/libesmart_thumb.a
 lib/libesmart_thumb.so
 lib/libesmart_thumb.so.0
