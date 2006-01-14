@@ -1,0 +1,11 @@
+--- monodoc.in.orig	Sun May  1 13:48:01 2005
++++ monodoc.in	Mon Dec  5 21:50:59 2005
+@@ -82,7 +82,7 @@
+ fi
+ 
+ if test -e $monodocdir/browser.exe; then
+-    exec mono --debug $monodocdir/browser.exe $OPTIONS "$@" $REST
++    exec mono --debug $monodocdir/browser.exe --no-gecko $OPTIONS "$@" $REST
+ else
+     echo "The monodoc GUI component is not installed. Install it from the mono-tools package."
+ fi
