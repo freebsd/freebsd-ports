@@ -8,7 +8,7 @@
 
 PORTNAME=	wu-blast
 PORTVERSION=	2.0
-PORTREVISION=	20050316
+PORTREVISION=	20060101
 CATEGORIES=	biology
 MASTER_SITES=	#
 EXTRACT_SUFX=	.tar.Z
@@ -30,7 +30,7 @@ NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	COPYRIGHT FAQ-Indexing.html HISTORY LICENSE Memory.html \
-		README.html parameters.html parameters.pdf
+		README.html parameters.html
 BINS=		blasta gb2fasta gt2fasta memfile nrdb pam patdb \
 		pir2fasta sp2fasta xdformat xdget
 SCRIPTS=	wu-blastall wu-formatdb
