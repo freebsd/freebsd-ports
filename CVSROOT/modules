@@ -10359,6 +10359,7 @@ py-bzip2	ports/archivers/py-bzip2
 py-cairo	ports/graphics/py-cairo
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
+py-celementtree	ports/devel/py-celementtree
 py-cgkit	ports/graphics/py-cgkit
 py-chart	ports/graphics/py-chart
 py-cheetah	ports/devel/py-cheetah
