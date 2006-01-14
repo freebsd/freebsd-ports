@@ -40,7 +40,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared --enable-pthread \
-		--with-openssl-include=${OPENSSLBASE}/include
+		--with-openssl-include=${OPENSSLINC}
 
 .if defined(DEBUG)
 CFLAGS+=	-g
