@@ -1,7 +1,4 @@
 This is an iconv wrapper class for Ruby.
 
-Note that this version is still experimental.  Report any problems to
-the author.
-
 Author:	Nobuyoshi.Nakada <nobu.nokada@softhome.net>
 WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=iconv
