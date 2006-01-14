@@ -16,7 +16,6 @@ COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323 40
 TCL_VERSION?=	tcl8.4
 TCL_NODOT=	${TCL_VERSION:S/.//}
 SQL_DIR=	${PREFIX}/lib/${TCL_VERSION}/mysqltcl
@@ -31,15 +30,22 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ''
 
 pre-patch:
-	${REINPLACE_CMD} -e 's, *,,' ${WRKSRC}/generic/*.[ch]
+	@${REINPLACE_CMD} -e 's, *,,' ${WRKSRC}/generic/*.[ch]
 
 do-install:
-	${MKDIR} ${SQL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/${LIB_NAME} ${SQL_DIR}
-	${ECHO} "package ifneeded mysqltcl ${PORTVERSION} {load ${SQL_DIR}/${LIB_NAME}}" \
+	@${MKDIR} ${SQL_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${LIB_NAME} ${SQL_DIR}
+	@${ECHO} "package ifneeded mysqltcl ${PORTVERSION} {load ${SQL_DIR}/${LIB_NAME}}" \
 		> ${SQL_DIR}/pkgIndex.tcl
-	${INSTALL_MAN} ${WRKSRC}/doc/${MANN} ${PREFIX}/man/mann
+	@${INSTALL_MAN} ${WRKSRC}/doc/${MANN} ${PREFIX}/man/mann
+
+post-install:
+	@${TEST} ! -f ${PKGMESSAGE} || ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
+
+.if ${MYSQL_VER} == 323 || ${MYSQL_VER} == 40
+PKGMESSAGE=	${PKGDIR}/pkg-message-legacy
+.endif
 
 LIB_NAME!=	${MAKE_ENV} ${MAKE} -f ${FILESDIR}/Makefile.bsd -V SHLIB_NAME
