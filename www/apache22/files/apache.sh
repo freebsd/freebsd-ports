@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.10 2005-12-13 22:26:57 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.11 2006-01-14 16:03:43 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -12,6 +12,8 @@
 # Add the following lines to /etc/rc.conf to enable apache22:
 # apache22_enable (bool):      Set to "NO" by default.
 #                             Set it to "YES" to enable apache22
+# apache22_profiles (str):     Set to "" by default.
+#                              Define your profiles here.
 # apache22limits_enable (bool):Set to "NO" by default.
 #                             Set it to yes to run `limits $limits_args`
 #                             just before apache starts.
@@ -33,46 +35,113 @@ reload_precmd="apache22_checkconfig"
 reload_cmd="apache22_graceful"
 graceful_cmd="apache22_graceful"
 gracefulstop_cmd="apache22_gracefulstop"
+configtest_cmd="apache22_checkconfig"
 command="%%PREFIX%%/sbin/httpd"
-pidfile="/var/run/httpd.pid"
+_pidprefix="/var/run/httpd"
+pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache22/httpd.conf
 
 [ -z "$apache22_enable" ]       && apache22_enable="NO"
+[ -z "$apache22_profiles" ]     && apache22_profiles=""
 [ -z "$apache22_flags" ]        && apache22_flags=""
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
 [ -z "$apache22limits_args" ]   && apache22limits_args="-e -C daemon"
 [ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"
 
+apache22_accf() {
+	if checkyesno apache22_http_accept_enable
+	then
+		/sbin/kldstat | grep accf_http 2>&1 > /dev/null
+		retcode=${?}
+		if [ ${retcode} -ne 0 ]
+		then
+			/sbin/kldload accf_http 2> /dev/null
+			retcode=${?}
+		fi
+	else
+		apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
+	fi
+	[ ${retcode} -ne 0 ] && echo "Unable to load accf_http module"
+	return ${retcode}
+}
+
 load_rc_config $name
 
-if checkyesno apache22_http_accept_enable
-then
-	if ! /sbin/kldstat -q -m accf_http
-	then
-		/sbin/kldload accf_http
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${apache22_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		eval apache22_configfile="\${apache22_${profile}_configfile:-}"
+		if [ "x${apache22_configfile}" = "x" ]; then
+			echo "You must define a configuration file (apache22_${profile}_configfile)"
+			exit 1
+		fi
+		required_files="${apache22_configfile}"
+		eval apache22_enable="\${apache22_${profile}_enable:-${apache22_enable}}"
+		eval apache22_flags="\${apache22_${profile}_flags:-${apache22_flags}}"
+		eval apache22_http_accept_enable="\${apache22_${profile}_http_accept_enable:-${apache22_http_accept_enable}}"
+		eval apache22limits_enable="\${apache22limits_${profile}_enable:-${apache22limits_enable}}"
+		eval apache22limits_args="\${apache22limits_${profile}_args:-${apache22limits_args}}"
+		apache22_flags="-f ${apache22_configfile} -c \"PidFile ${pidfile}\" ${apache22_flags}"
+	else
+		echo "$0: extra argument ignored"
 	fi
 else
-	apache22_flags="-DNOHTTPACCEPT $apache22_flags"
+	if [ "x${apache22_profiles}" != "x" -a "x$1" != "x" ]; then
+		if [ "x$1" != "xrestart" ]; then
+			for profile in ${apache22_profiles}; do
+				echo "===> apache22 profile: ${profile}"
+				%%PREFIX%%/etc/rc.d/apache22.sh $1 ${profile}
+				retcode="$?"
+				if [ "0${retcode}" -ne 0 ]; then
+					failed="${profile} (${retcode}) ${failed:-}"
+				else
+					success="${profile} ${success:-}"
+				fi
+			done
+			exit 0
+		else
+			restart_precmd=""
+		fi
+	fi
 fi
+
+if [ "${1}" != "stop" ] ; then \
+	apache22_accf || apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
+fi
+
+apache22_requirepidfile()
+{
+	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
+		echo "${name} not running? (check $pidfile)."
+		exit 1
+	fi
+}
 
 apache22_checkconfig()
 {
 	echo "Performing sanity check on apache22 configuration:"
-	${command} ${apache22_flags} -t
+	eval ${command} ${apache22_flags} -t
 }
 
 apache22_graceful() {
+	apache22_requirepidfile
+
 	echo "Performing a graceful restart"
-	${command} -k graceful
+	eval ${command} ${apache22_flags} -k graceful
 }
 
 apache22_gracefulstop() {
+	apache22_requirepidfile
+
 	echo "Performing a graceful stop"
-	${command} -k graceful-stop
+	eval ${command} ${apache22_flags} -k graceful-stop
 }
 
 apache22_precmd() 
 {
+	apache22_checkconfig
+
 	if test -f %%PREFIX%%/sbin/envvars
 	then
 		. %%PREFIX%%/sbin/envvars
@@ -87,5 +156,5 @@ apache22_precmd()
 
 }
 
-extra_commands="reload graceful gracefulstop"
+extra_commands="reload graceful gracefulstop configtest"
 run_rc_command "$1"
