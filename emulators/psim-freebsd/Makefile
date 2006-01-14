@@ -17,6 +17,8 @@ DISTNAME=	gdb-${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

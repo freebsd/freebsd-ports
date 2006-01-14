@@ -16,6 +16,8 @@ COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
 CONFLICTS=	libmusicbrainz-*
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -24,6 +24,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 OPTIONS=	SDL "Enable SDL support" off
 
+BROKEN=		Does not build
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SDL)
