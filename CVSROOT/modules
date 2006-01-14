@@ -4462,7 +4462,6 @@ ja-ruby-rdic	ports/japanese/ruby-rdic
 ja-ruby-refe	ports/japanese/ruby-refe
 ja-ruby-romkan	ports/japanese/ruby-romkan
 ja-ruby-slang	ports/japanese/ruby-slang
-ja-ruby-tcltklib	ports/japanese/ruby-tcltklib
 ja-ruby-tk	ports/japanese/ruby-tk
 ja-ruby-uconv	ports/japanese/ruby-uconv
 ja-ruby-usersguide	ports/japanese/ruby-usersguide
@@ -11348,7 +11347,6 @@ ruby-sqlite3	ports/databases/ruby-sqlite3
 ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
-ruby-tcltklib	ports/lang/ruby-tcltklib
 ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-tempura	ports/textproc/ruby-tempura
