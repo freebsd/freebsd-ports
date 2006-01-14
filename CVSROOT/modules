@@ -8097,6 +8097,7 @@ p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
 p5-HTML		ports/www/p5-HTML
 p5-HTML-Breadcrumbs	ports/www/p5-HTML-Breadcrumbs
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
+p5-HTML-Chunks	ports/www/p5-HTML-Chunks
 p5-HTML-Clean	ports/www/p5-HTML-Clean
 p5-HTML-Diff	ports/www/p5-HTML-Diff
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
@@ -8181,6 +8182,7 @@ p5-IO-CaptureOutput	ports/devel/p5-IO-CaptureOutput
 p5-IO-Digest	ports/devel/p5-IO-Digest
 p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
+p5-IO-KQueue	ports/devel/p5-IO-KQueue
 p5-IO-LockedFile	ports/devel/p5-IO-LockedFile
 p5-IO-Multiplex	ports/devel/p5-IO-Multiplex
 p5-IO-NestedCapture	ports/devel/p5-IO-NestedCapture
@@ -14125,5 +14127,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-p5-HTML-Chunks	ports/www/p5-HTML-Chunks
-p5-IO-KQueue	ports/devel/p5-IO-KQueue
