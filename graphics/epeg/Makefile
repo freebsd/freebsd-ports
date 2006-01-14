@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epeg
-PORTVERSION=	0.9.0.004
+PORTVERSION=	0.9.0.005
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 

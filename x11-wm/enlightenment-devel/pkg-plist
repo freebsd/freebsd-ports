@@ -17,6 +17,7 @@ include/enlightenment/e_bindings.h
 include/enlightenment/e_border.h
 include/enlightenment/e_box.h
 include/enlightenment/e_canvas.h
+include/enlightenment/e_color_class.h
 include/enlightenment/e_config.h
 include/enlightenment/e_config_dialog.h
 include/enlightenment/e_configure.h
@@ -29,6 +30,8 @@ include/enlightenment/e_dnd.h
 include/enlightenment/e_eap_editor.h
 include/enlightenment/e_entry.h
 include/enlightenment/e_error.h
+include/enlightenment/e_exebuf.h
+include/enlightenment/e_exehist.h
 include/enlightenment/e_file_dialog.h
 include/enlightenment/e_file_selector.h
 include/enlightenment/e_fileman.h
@@ -37,6 +40,7 @@ include/enlightenment/e_fileman_icon.h
 include/enlightenment/e_fileman_smart.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
+include/enlightenment/e_gadget.h
 include/enlightenment/e_gadman.h
 include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
@@ -46,6 +50,12 @@ include/enlightenment/e_icon_grid.h
 include/enlightenment/e_ilist.h
 include/enlightenment/e_includes.h
 include/enlightenment/e_init.h
+include/enlightenment/e_int_config_general.h
+include/enlightenment/e_int_config_menus.h
+include/enlightenment/e_int_config_modules.h
+include/enlightenment/e_int_config_performance.h
+include/enlightenment/e_int_config_theme.h
+include/enlightenment/e_int_config_winlist.h
 include/enlightenment/e_int_border_border.h
 include/enlightenment/e_int_border_locks.h
 include/enlightenment/e_int_border_menu.h
@@ -131,6 +141,7 @@ lib/enlightenment/modules/dropshadow/menu_icon_very_light.png
 lib/enlightenment/modules/dropshadow/menu_icon_very_sharp.png
 lib/enlightenment/modules/dropshadow/module.so
 lib/enlightenment/modules/dropshadow/module_icon.png
+lib/enlightenment/modules/gadget_test/module.so
 lib/enlightenment/modules/ibar/module.so
 lib/enlightenment/modules/ibar/module_icon.png
 lib/enlightenment/modules/ibox/module.so
@@ -219,6 +230,7 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/randr
 @dirrm lib/enlightenment/modules/ibox
 @dirrm lib/enlightenment/modules/ibar
+@dirrm lib/enlightenment/modules/gadget_test
 @dirrm lib/enlightenment/modules/dropshadow
 @dirrm lib/enlightenment/modules/cpufreq
 @dirrm lib/enlightenment/modules/clock

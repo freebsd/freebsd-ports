@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	esmart
-PORTVERSION=	0.9.0.004
-PORTREVISION=	1
+PORTVERSION=	0.9.0.005
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 

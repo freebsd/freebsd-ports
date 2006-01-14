@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ewl
-PORTVERSION=	0.0.4.004
-pORTREVISION=	1
+PORTVERSION=	0.0.4.005
+pORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -19,8 +19,6 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		evas.1:${PORTSDIR}/graphics/evas \
 		edje.5:${PORTSDIR}/graphics/edje \
 		ecore.1:${PORTSDIR}/x11/ecore
-
-BROKEN=		Does not build
 
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
