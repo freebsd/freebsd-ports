@@ -326,7 +326,6 @@
     SUBDIR += ruby-refe
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
-    SUBDIR += ruby-tcltklib
     SUBDIR += ruby-tk
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide

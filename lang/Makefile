@@ -241,7 +241,6 @@
     SUBDIR += ruby-perl
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
-    SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
     SUBDIR += ruby16
     SUBDIR += ruby16-shim-ruby18
