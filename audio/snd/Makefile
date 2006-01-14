@@ -80,6 +80,12 @@ USE_X_PREFIX=	yes
 USE_XLIB=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-build:
 	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
 
@@ -163,4 +169,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
