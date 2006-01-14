@@ -1,8 +1,8 @@
 
 *******************************************************************
-  Enable gld in /etc/rc.conf with the following line:
+  Enable gld in /etc/rc.conf[.local] with the following line:
   
-      gld_enable="YES"
+  gld_enable="YES"
 
  To complete the installation, you need to create the neccesary
  database and tables. An example configuration file is available in

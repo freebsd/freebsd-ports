@@ -7,7 +7,7 @@
 
 PORTNAME=	gld
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gasmi.net/down/
 EXTRACT_SUFX=	.tgz
@@ -16,17 +16,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting daemon for Postfix
 
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	gld
 HAS_CONFIGURE=	yes
 
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+SUB_FILES=	pkg-message
 
 OPTIONS=	MYSQL   "MySQL support"         on \
-		PGSQL   "PgSQL support"         off
-
-SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+		PGSQL   "PgSQL support"         off \
+		LOCAL_DB_SERVER "RUN_DEPEND also on selected DB server" off
 
 .include <bsd.port.pre.mk>
 
@@ -35,13 +32,27 @@ BROKEN=		"Cannot compile with both MySQL and PgSQL support"
 .endif
 
 .if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 USE_MYSQL=	yes
+.	if defined(WITH_LOCAL_DB_SERVER)
+RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+SUB_LIST+=	MYSQL=mysql
+SUB_LIST+=	PGSQL=
+.	else
+SUB_LIST+=	MYSQL=
+.	endif
 .endif
 
 .if defined(WITH_PGSQL)
-CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 USE_PGSQL=	yes
+.	if defined(WITH_LOCAL_DB_SERVER)
+RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+SUB_LIST+=	PGSQL=postgresql
+SUB_LIST+=	MYSQL=
+.	else
+SUB_LIST+=	PGSQL=
+.	endif
 .endif
 
 post-patch:
@@ -50,17 +61,12 @@ post-patch:
 
 pre-build:
 	${REINPLACE_CMD} -e 's,"/etc/gld.conf","${PREFIX}/etc/gld.conf",' ${WRKSRC}/gld.h
-	for f in gld.sh MESSAGE; do \
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl >> ${WRKDIR}/$${f}; \
-	done
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gld ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf-dist
 .if !exists(${PREFIX}/etc/gld.conf)
 	${INSTALL_DATA} ${WRKSRC}/gld.conf ${PREFIX}/etc/gld.conf
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/gld.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in HISTORY LICENCE README table-whitelist.sql tables.mysql tables.pgsql
