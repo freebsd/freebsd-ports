@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onigd${PORTVERSION:S/./_/g}
@@ -21,10 +21,6 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 DOCS=		HISTORY README doc/*
-
-# Use patch for ruby 1.8.2 rather than 1.8.3
-post-patch:
-	${REINPLACE_CMD} 's,18: 183,18: 182,' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
