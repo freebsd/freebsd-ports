@@ -25,7 +25,7 @@ USE_PYTHON=	yes
 
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@ ${PERL} -pi -e 's#/usr/bin/python#${PYTHON_CMD}# ; \
