@@ -41,26 +41,38 @@ Note:  Please add new entries to the beginning of this file.
 	<name>clamav</name>
 	<range><lt>0.88</lt></range>
       </package>
-      <package>      
+      <package>
         <name>clamav-devel</name>
         <range><lt>20060110</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Luca Gibelli reports about clamav 0.88:</p>
-	<blockquote cite="http://lurker.clamav.net/message/20060109.213247.a16ae8db.en.html">
-	  <p>A possible heap overflow in the UPX code has been fixed</p>
+	<p>The Zero Day Initiative reports:</p>
+	<blockquote cite="http://www.zerodayinitiative.com/advisories/ZDI-06-001.html">
+	  <p>This vulnerability allows remote attackers to execute
+	    arbitrary code on vulnerable Clam AntiVirus
+	    installations. Authentication is not required to exploit
+	    this vulnerability.</p>
+	  <p>This specific flaw exists within libclamav/upx.c during
+	    the unpacking of executable files compressed with UPX. Due
+	    to an invalid size calculation during a data copy from the
+	    user-controlled file to heap allocated memory, an
+	    exploitable memory corruption condition is created.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <bid>16191</bid>
+      <cvename>CVE-2006-0162</cvename>
       <mlist>http://lurker.clamav.net/message/20060109.213247.a16ae8db.en.html</mlist>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-06-001.html</url>
       <url>http://secunia.com/advisories/18379/</url>
     </references>
     <dates>
       <discovery>2006-01-09</discovery>
       <entry>2006-01-10</entry>
+      <modified>2006-01-15</modified>
     </dates>
   </vuln>
 
