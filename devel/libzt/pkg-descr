@@ -1,7 +1,0 @@
-LibZT is a collection of utility code for C application/server
-development. It contains a ubiquitous logging subsystem,
-configuration file parser, commandline option parser, and
-numerous handy tools that need to be written for just about any
-project (wrappers to malloc, etc).
-
-WWW: http://www.zerotao.org/downloads/libzt/

@@ -67,7 +67,6 @@
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jlj
-    SUBDIR += journal
     SUBDIR += karamba
     SUBDIR += kbirthday
     SUBDIR += kblticker

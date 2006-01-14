@@ -7,7 +7,6 @@
     SUBDIR += CJK
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
-    SUBDIR += MT
     SUBDIR += acroread-zh_CN
     SUBDIR += acroread-zh_TW
     SUBDIR += acroread5-chsfont
@@ -26,7 +25,6 @@
     SUBDIR += c2t
     SUBDIR += cce
     SUBDIR += celvis
-    SUBDIR += chinput2
     SUBDIR += chinput3
     SUBDIR += chm2html
     SUBDIR += cless
@@ -126,10 +124,8 @@
     SUBDIR += ttfm
     SUBDIR += unrar
     SUBDIR += unzip
-    SUBDIR += ve
     SUBDIR += vflib
     SUBDIR += vim-scdoc
-    SUBDIR += wangttf
     SUBDIR += wenju
     SUBDIR += xcin25
     SUBDIR += xemacs

@@ -10,11 +10,9 @@
     SUBDIR += babel
     SUBDIR += biojava
     SUBDIR += blast
-    SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += coalesce
     SUBDIR += crimap
-    SUBDIR += deft
     SUBDIR += distribfold
     SUBDIR += dna-qc
     SUBDIR += embassy
@@ -23,7 +21,6 @@
     SUBDIR += fasta3
     SUBDIR += fastdnaml
     SUBDIR += finchtv
-    SUBDIR += flip
     SUBDIR += fluctuate
     SUBDIR += garlic
     SUBDIR += genpak

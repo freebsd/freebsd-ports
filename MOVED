@@ -2057,3 +2057,27 @@ databases/pecl-hash|security/pecl-hash|2006-01-13|Moved to a better category
 multimedia/kino-dvtitler||2006-01-14|Merged into multimedia/kino
 lang/ruby-tcltklib||2006-01-14|Merged into x11-toolkits/ruby-tk
 japanese/ruby-tcltklib||2006-01-14|Merged into japanese/ruby-tk
+astro/gkrellmearth||2006-01-14|Mastersite disappeared
+audio/mziq||2006-01-14|Mastersite disappeared
+audio/radio||2006-01-14|Mastersite disappeared
+audio/xmms-cdparanoia||2006-01-14|Mastersite disappeared
+biology/chemeq||2006-01-14|Mastersite disappeared
+biology/deft||2006-01-14|Mastersite disappeared
+biology/flip||2006-01-14|Mastersite disappeared
+chinese/MT||2006-01-14|Does not work with MT 3
+chinese/chinput2||2006-01-14|Mastersite disappeared
+chinese/ve||2006-01-14|Mastersite disappeared
+chinese/wangttf||2006-01-14|Mastersite disappeared
+comms/vpb2||2006-01-14|Mastersite disappeared
+deskutils/journal||2006-01-14|Mastersite disappeared
+devel/cvspadm||2006-01-14|Mastersite disappeared
+devel/decompyle||2006-01-14|Mastersite disappeared
+devel/libzt||2006-01-14|Mastersite disappeared
+devel/py-wsdllib||2006-01-14|Mastersite disappeared
+devel/ruby-mock||2006-01-14|Mastersite disappeared
+devel/ruby-nodedump||2006-01-14|Mastersite disappeared
+ftp/emirror||2006-01-14|Does not work
+games/gleyes||2006-01-14|Mastersite disappeared
+mail/yadda||2006-01-14|Mastersite disappeared
+misc/wmproxyper||2006-01-14|Mastersite disappeared
+net/4g8||2006-01-14|No longer developed; authors suggests ettercap instead

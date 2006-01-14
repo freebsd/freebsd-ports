@@ -210,7 +210,6 @@
     SUBDIR += glbsp
     SUBDIR += glchess
     SUBDIR += glest
-    SUBDIR += gleyes
     SUBDIR += glife
     SUBDIR += glmaze
     SUBDIR += glob2
