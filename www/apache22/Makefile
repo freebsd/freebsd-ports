@@ -127,6 +127,9 @@ CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
+.include "${APACHEDIR}/Makefile.doc"
+.include "${APACHEDIR}/Makefile.modules"
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APR_FROM_PORTS)
@@ -144,34 +147,10 @@ CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//:S/-//}
 WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
 
-.include "${APACHEDIR}/Makefile.doc"
-.include "${APACHEDIR}/Makefile.modules"
-
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
-
-show-categories:
-.for category in ${ALL_MODULES_CATEGORIES}
-	@${ECHO_MSG} "${category} contains these modules:"
-	@${ECHO_MSG} "  ${${category}_MODULES}"
-.endfor
-
-show-modules:
-	@for module in ${AVAILABLE_MODULES} ; do \
-	${ECHO_MSG} -n "$${module}: ";\
-	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
-			${ECHO_CMD} -n "enabled "; \
-				if ${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
-					${ECHO_CMD} "(static)" ; \
-				else \
-					${ECHO_CMD} "(shared)" ;\
-				fi;\
-			else\
-			${ECHO_CMD} disabled ;\
-		fi;\
-	done
 
 pre-everything::
 	@${ECHO_MSG}	""

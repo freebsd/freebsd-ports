@@ -52,7 +52,7 @@ IGNORE=		${_ERROR_MSG} Illegal use of USE_APACHE
 .if defined(AP_PORT_IS_SERVER)
 # For slave ports:
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-IGNORE=	"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
+IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync
 .endif
 
 .if defined(SLAVE_PORT_MODULES)
@@ -149,6 +149,7 @@ WITH_ALL_STATIC_MODULES=	YES
 SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
 .elif ${USE_APACHE:Mcommon2*} != ""
+_APACHE_MODULES+=		${SUEXEC_MODULES}
 SUEXEC_CONFARGS=	with-suexec
 .endif
 
@@ -160,15 +161,17 @@ SUEXEC_LOGFILE?=		/var/log/httpd-suexec.log
 SUEXEC_UIDMIN?=			1000
 SUEXEC_GIDMIN?=			1000
 SUEXEC_CALLER?=			${WWWOWN}
-_APACHE_MODULES+=		${SUEXEC_MODULES}
 CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-caller=${SUEXEC_CALLER} \
 				--${SUEXEC_CONFARGS}-uidmin=${SUEXEC_UIDMIN} \
 				--${SUEXEC_CONFARGS}-gidmin=${SUEXEC_GIDMIN} \
 				--${SUEXEC_CONFARGS}-userdir="${SUEXEC_USERDIR}" \
 				--${SUEXEC_CONFARGS}-docroot="${SUEXEC_DOCROOT}" \
 				--${SUEXEC_CONFARGS}-safepath="${SUEXEC_SAFEPATH}" \
-				--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}" \
-				--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
+				--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}"
+.if ${USE_APACHE:Mcommon2*} != ""
+CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
+.endif
+
 .   if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${WITH_SUEXEC_UMASK}
 .   endif
@@ -334,6 +337,33 @@ AP_EXTRAS+=	-L ${AP_LIB}
 .endif
 
 .if defined(AP_PORT_IS_SERVER)
+
+.if !target(show-categories)
+show-categories:
+.for category in ${ALL_MODULES_CATEGORIES}
+	@${ECHO_MSG} "${category} contains these modules:"
+	@${ECHO_MSG} "  ${${category}_MODULES}"
+.endfor
+.endif
+
+.if !target(show-modules)
+show-modules:
+	@for module in ${AVAILABLE_MODULES} ; do \
+	${ECHO_MSG} -n "$${module}: "; \
+	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; \
+	then \
+		${ECHO_CMD} -n "enabled "; \
+			if ${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
+				${ECHO_CMD} "(static)" ; \
+			else \
+				${ECHO_CMD} "(shared)" ;\
+			fi;\
+	else \
+		${ECHO_CMD} disabled ;\
+	fi;\
+	done
+.endif
+
 .elif defined(AP_PORT_IS_MODULE)
 
 .if defined(AP_FAST_BUILD)
