@@ -11,6 +11,8 @@ CATEGORIES=	x11-themes
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT?=	Meta-port for Bluecurve themes
 
+BROKEN=		Unfetchable
+
 .if ${PORTNAME} == "bluecurve-themes"	# meta-port
 
 PORTVERSION=	1.0
