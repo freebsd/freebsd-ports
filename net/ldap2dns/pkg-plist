@@ -1,8 +1,9 @@
 bin/ldap2dns
 bin/ldap2dnsd
-share/ldap2dns/README.html
-share/ldap2dns/dns.schema
-share/ldap2dns/example.ldif
-share/ldap2dns/import.pl
-share/ldap2dns/ldap2tinydns-conf
-@dirrm share/ldap2dns
+%%DATADIR%%/README.html
+%%DATADIR%%/ldap2dns.schema
+%%DATADIR%%/example.ldif
+%%DATADIR%%/axfr2ldap.pl
+%%DATADIR%%/data2ldap.pl
+%%DATADIR%%/ldap2tinydns-conf
+@dirrm %%DATADIR%%
