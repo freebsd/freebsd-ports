@@ -1,8 +1,13 @@
---- configure.orig	Sun Sep 25 21:38:24 2005
-+++ configure	Sun Sep 25 21:46:15 2005
-@@ -1,12 +1,12 @@
+--- configure.orig	Sat Jan 14 18:08:41 2006
++++ configure	Sat Jan 14 18:12:44 2006
+@@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
+ 
+ if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" ]; then
+     echo "** valid options:"
+@@ -9,12 +9,12 @@
+ fi
  
  MAKE=make
 -which gmake >& /dev/null
@@ -16,7 +21,7 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
-@@ -65,7 +65,7 @@
+@@ -70,7 +70,7 @@
  QT_IM='N'
  for i in qt3 qt4
  do
@@ -25,7 +30,7 @@
    echo "testing if you have QT_IM_MODULE dir:$QT_IM_DIR support"
    if [ -d  $QT_IM_DIR ]; then
      QT_IM='Y'
-@@ -83,7 +83,7 @@
+@@ -88,7 +88,7 @@
  
  bindir=$prefix/bin
  datadir=$prefix/share
@@ -34,7 +39,7 @@
  libdir=$prefix/lib
  includedir=$prefix/include
  optdir=/opt
-@@ -96,8 +96,8 @@
+@@ -101,8 +101,8 @@
    GCIN_SETUP_DESKTOP=/opt/gnome/share/control-center-2.0/capplets
    GCIN_SETUP_DESKTOP_rpm='$(optdir)/gnome/share/control-center-2.0/capplets'
  else
@@ -45,19 +50,19 @@
  fi
  
  
-@@ -106,21 +106,12 @@
+@@ -111,21 +111,13 @@
    grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
  fi
  
 -grep Cooker /etc/mandriva-release 2>&1 | grep 2006 >& /dev/null
 -if [ $? = 0 ]; then
--  NEW_GTK_IM='Y'
+-  new_gtk_im='Y'
 -  echo "!!!! new gtk-im(im-gcin.so) will be enabled because you are using Cooker 2006."
 -  echo "!!!! You have to install the latest libwidget_gtk2.so"
 -  echo "http://www.csie.nctu.edu.tw/~cp76/linux/mozilla/mdk-firefox-thunderbird-1.0.6/cooker-new-gtkim-libwidget_gtk2.so.gz"
 -fi
 -
--
+ 
  OPTFLAGS="-g"
  if [ $prefix = /usr ]; then
    OPTFLAGS="-O"
@@ -68,7 +73,7 @@
  echo "MAKE=$MAKE" >> config.mak
  echo "GTKINC=$GTKINC" >> config.mak
  echo "prefix=$prefix" >> config.mak
-@@ -140,8 +131,8 @@
+@@ -145,8 +137,8 @@
  echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
  echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
  echo "OPTFLAGS=$OPTFLAGS" >> config.mak
