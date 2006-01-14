@@ -9,7 +9,6 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
-PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -32,14 +31,17 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
-APACHE_VERSION=		1.3.33
-APACHE_SSL_VERSION=	1.55
+APACHE_VERSION=		1.3.34
+APACHE_SSL_VERSION=	1.57
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes
 USE_RC_SUBR=		yes
 RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} WWWOWN=${WWWOWN}
 MAKE_ENV+=		EXAMPLESDIR=${EXAMPLESDIR}
+USE_APACHE=		common13
+
+.include "${.CURDIR}/Makefile.modules"
 
 MASTER_SITES_APACHE_SSL= \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
@@ -48,54 +50,14 @@ MASTER_SITES_APACHE_SSL= \
 
 APACHE_HARD_SERVER_LIMIT?=	512
 
-.if defined(WITH_APACHE_SUEXEC)
-
-APACHE_SUEXEC_DOCROOT?=	${DOCUMENT_ROOT}
-APACHE_SUEXEC_LOG?=	/var/log/httpsd-suexec.log
-APACHE_SUEXEC_USERDIR?=	public_html
-APACHE_SUEXEC_UIDMIN?=	1000
-APACHE_SUEXEC_GIDMIN?=	1000
-APACHE_SUEXEC_CALLER?=	www
-
-SUEXEC_CONF=\
-	--enable-suexec \
-	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-	--suexec-caller=${APACHE_SUEXEC_CALLER} \
-	--suexec-uidmin=${APACHE_SUEXEC_UIDMIN} \
-	--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
-	--suexec-logfile=${APACHE_SUEXEC_LOG} \
-	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
-	--suexec-safepath=${DEFAULT_PATH}
-
-.if defined(APACHE_SUEXEC_UMASK)
-SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
-.endif
-
-PLIST_SUB+=	SUB_SUEXEC=""
-SUEXEC_MAN=	suexec.8
-
-.else	# !SUEXEC
-
-SUEXEC_CONF=
-PLIST_SUB+=	SUB_SUEXEC="@comment "
-SUEXEC_MAN=
-
-.endif  # !SUEXEC
-
-#
-# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
-#
 CFLAGS+=	-I${OPENSSLINC}/openssl
-CONFIGURE_ARGS=	\
+CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} \
 		--server-uid=www \
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
 		--without-confadjust \
-		--enable-shared=remain \
-		--enable-module=most \
-		--enable-module=auth_db \
 		--disable-module=auth_dbm \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--includedir=${PREFIX}/include/apache \
@@ -103,8 +65,9 @@ CONFIGURE_ARGS=	\
 		--datadir=${PREFIX}/www \
 		--proxycachedir=${PREFIX}/www/proxy \
 		--libexecdir=${PREFIX}/libexec/apache \
-		--target=httpsd \
-		${SUEXEC_CONF}
+		--target=httpsd
+
+#		--enable-shared=remain \
 
 OPTIM=		-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT} \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
@@ -119,6 +82,13 @@ CFLAGS+=	-O6 -fomit-frame-pointer
 
 CONFIGURE_ENV+=	OPTIM='${OPTIM}'
 CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
+
+.if defined(WITH_SUEXEC)
+SUEXEC_MAN=	suexec.8
+PLIST_SUB+=	SUB_SUEXEC=""
+.else
+PLIST_SUB+=	SUB_SUEXEC="@comment "
+.endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8 \
