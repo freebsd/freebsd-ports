@@ -1437,6 +1437,7 @@
     SUBDIR += py-spark
     SUBDIR += py-statgrab
     SUBDIR += py-tables
+    SUBDIR += py-testgears
     SUBDIR += py-tconfpy
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
