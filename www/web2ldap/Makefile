@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	0.16.6
+PORTVERSION=	0.16.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
 		ftp://ftp.ipt.ru/pub/download/
@@ -35,12 +35,15 @@ do-install:
 	@${ECHO_CMD} "==> Installing program files..."
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}; \
+		${FIND} * -type d | ${GREP} -vE "^htdocs" | ${CPIO} -p ${DATADIR}; \
 		${FIND} * -type f | ${GREP} -vE "^htdocs" | ${CPIO} -pd ${DATADIR})
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "==> Installing document files..."
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}; \
+		${FIND} * -type d | ${GREP} "^htdocs" | ${CPIO} -p ${DOCSDIR}; \
 		${FIND} * -type f | ${GREP} "^htdocs" | ${CPIO} -pd ${DOCSDIR})
 .endif
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
