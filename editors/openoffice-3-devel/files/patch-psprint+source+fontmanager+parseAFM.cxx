@@ -16,8 +16,8 @@ diff -u -r1.6 parseAFM.cxx
      
 -    int getc() { return (m_nPos < m_nLen) ? int(m_pMemory[m_nPos++]) : -1; }
 -    void ungetc()
-+    int getc_() { return (m_nPos < m_nLen) ? int(m_pMemory[m_nPos++]) : -1; }
-+    void ungetc_()
++    int getChar() { return (m_nPos < m_nLen) ? int(m_pMemory[m_nPos++]) : -1; }
++    void ungetChar()
      {
          if( m_nPos > 0 )
              m_nPos--;
@@ -26,7 +26,7 @@ diff -u -r1.6 parseAFM.cxx
      /* skip over white space */
      // relies on EOF = -1
 -    while( is_white_Array[ (ch = stream->getc()) & 255 ] )
-+    while( is_white_Array[ (ch = stream->getc_()) & 255 ] )
++    while( is_white_Array[ (ch = stream->getChar()) & 255 ] )
          ;
      
      idx = 0;
@@ -34,12 +34,12 @@ diff -u -r1.6 parseAFM.cxx
      {
          ident[idx++] = ch;
 -        ch = stream->getc();
-+        ch = stream->getc_();
++        ch = stream->getChar();
      }
  
      if (ch == -1 && idx < 1) return ((char *)NULL);
 -    if (idx >= 1 && ch != ':' ) stream->ungetc();
-+    if (idx >= 1 && ch != ':' ) stream->ungetc_();
++    if (idx >= 1 && ch != ':' ) stream->ungetChar();
      if (idx < 1 ) ident[idx++] = ch;    /* single-character token */
      ident[idx] = 0;
      rLen = idx;
@@ -48,18 +48,18 @@ diff -u -r1.6 parseAFM.cxx
      int ch, idx;
  
 -    while ((ch = stream->getc()) == ' ' || ch == '\t' ); 
-+    while ((ch = stream->getc_()) == ' ' || ch == '\t' ); 
++    while ((ch = stream->getChar()) == ' ' || ch == '\t' ); 
      
      idx = 0;
      while (ch != -1 && ch != lineterm && ch != '\r') 
      {
          ident[idx++] = ch;
 -        ch = stream->getc();
-+        ch = stream->getc_();
++        ch = stream->getChar();
      } /* while */
      
 -    stream->ungetc();
-+    stream->ungetc_();
++    stream->ungetChar();
      ident[idx] = 0;
  
      return(ident);  /* returns pointer to the token */
