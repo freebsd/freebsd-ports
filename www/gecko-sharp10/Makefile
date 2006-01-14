@@ -7,7 +7,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/archive/1.0.3/
 
@@ -15,32 +15,16 @@ MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for embeding mozilla
 
 BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
-RUN_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
-		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
 
-.if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
-.else
-.if ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
-.else
-MOZILLA=	mozilla
-.endif
-.endif
-
+USE_GECKO=	mozilla firefox
 USE_GNOME=	gnomehack gnometarget
 LATEST_LINK=	gecko-sharp10
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default ${PORTNAME} uses www/mozilla for html rendering, but you can"
-	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  firefox       "
-	@${ECHO_MSG} ""
-
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include <bsd.port.post.mk>
