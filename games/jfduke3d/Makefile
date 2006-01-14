@@ -37,16 +37,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not build on ia64"
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Can't build on 4.x"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386 (hardcodes i386-specific compiler flags)"
 .endif
 
 pre-build:
