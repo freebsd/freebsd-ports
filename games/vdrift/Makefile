@@ -43,6 +43,10 @@ SCONS_ARGS+=	release=1
 BROKEN=		"does not compile"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC}/src/* -type f -exec ${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' "{}" \;
 	@${FIND} ${WRKSRC}/include/* -type f -exec ${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' "{}" \;
