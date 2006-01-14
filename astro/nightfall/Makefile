@@ -9,7 +9,7 @@ PORTNAME=	nightfall
 PORTVERSION=	1.44
 PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	http://www.lsw.uni-heidelberg.de/users/rwichman/
+MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
