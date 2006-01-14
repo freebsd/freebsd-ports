@@ -46,4 +46,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|round|rint|g' ${WRKSRC}/src/lib/color_helpers.c
 
+# Kludge to keep it from touching Makefile.in files (configure.in is newer)
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
+
 .include <bsd.port.post.mk>
