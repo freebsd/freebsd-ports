@@ -7658,8 +7658,8 @@ p5-Crypt-DES_PP	ports/security/p5-Crypt-DES_PP
 p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
-p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-Enigma	ports/security/p5-Crypt-Enigma
+p5-Crypt-GeneratePassword	ports/security/p5-Crypt-GeneratePassword
 p5-Crypt-GOST	ports/security/p5-Crypt-GOST
 p5-Crypt-GOST_PP	ports/security/p5-Crypt-GOST_PP
 p5-Crypt-GPG	ports/security/p5-Crypt-GPG
