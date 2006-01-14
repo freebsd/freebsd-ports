@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
-		acroread5:${PORTSDIR}/print/acroread \
+		acroread7:${PORTSDIR}/print/acroread7 \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		mikmod:${PORTSDIR}/audio/mikmod \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
@@ -26,7 +26,7 @@ RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
 		alsaplayer:${PORTSDIR}/audio/alsaplayer \
 		xpdf:${PORTSDIR}/graphics/xpdf \
 		gqview:${PORTSDIR}/graphics/gqview \
-		plugger-${PORTVERSION}:${PORTSDIR}/www/plugger \
+		plugger-controller:${PORTSDIR}/www/plugger \
 		gv:${PORTSDIR}/print/gv \
 		xmp:${PORTSDIR}/audio/xmp \
 		${X11BASE}/bin/xscreensaver-hacks/molecule:${PORTSDIR}/x11/xscreensaver-gnome \
