@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=     bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
 
+BROKEN=		Size mismatch
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
