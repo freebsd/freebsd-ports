@@ -7,19 +7,18 @@
 
 PORTNAME=	Video-Info
 PORTVERSION=	0.999
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve video properties such as: height width codec fps
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/MakeMethods/Emulator.pm:${PORTSDIR}/devel/p5-Class-MakeMethods \
-		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${SITE_PERL}/${PERL_ARCH}/Video/OpenQuicktime.pm:${PORTSDIR}/multimedia/p5-Video-OpenQuicktime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 MANCOMPRESSED=	no
@@ -28,8 +27,12 @@ MAN3=		Video::Info.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+post-patch:
+.if ${PERL_LEVEL} < 500600
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/lib/Video/Info.pm
+.endif
+.if ${PERL_LEVEL} < 500803
+	${PERL} -pi -e '$$_="" if m{5.008|warnings}' ${WRKSRC}/Makefile.PL ${WRKSRC}/lib/Video/Info.pm
 .endif
 
 .include <bsd.port.post.mk>
