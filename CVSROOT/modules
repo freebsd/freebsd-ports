@@ -36,7 +36,6 @@ world		-a .
 # CVSROOT support
 CVSROOT		CVSROOT
 access		CVSROOT access
-avahi		ports/net/avahi
 avail		CVSROOT avail
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
@@ -575,6 +574,7 @@ autosig		ports/mail/autosig
 autossh		ports/security/autossh
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
+avahi		ports/net/avahi
 avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
