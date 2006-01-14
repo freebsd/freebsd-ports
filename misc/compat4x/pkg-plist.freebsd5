@@ -38,7 +38,7 @@
 %%LIBDIR%%/compat/pam_tacplus.so
 %%LIBDIR%%/compat/pam_unix.so
 %%USE_LDCONFIG%%libdata/ldconfig/compat4x
-%%USE_LDCONFIG%%%%AMD64%%libdata/ldconfig32/compat4x
+%%USE_LDCONFIG%%%%AMD64_ONLY%%libdata/ldconfig32/compat4x
 %%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
 @unexec rmdir %D/%%LIBDIR%%/compat 2>/dev/null || true
 @comment Hardcode lib32 since we should not remove lib.
