@@ -1,16 +1,14 @@
---- mono/mini/mini-amd64.c.orig	Tue Aug  2 17:52:50 2005
-+++ mono/mini/mini-amd64.c	Tue Aug  2 17:53:27 2005
-@@ -15,6 +15,9 @@
+--- mono/mini/mini-amd64.c.orig	Sun Oct 30 14:33:12 2005
++++ mono/mini/mini-amd64.c	Sun Nov 13 18:39:16 2005
+@@ -13,6 +13,7 @@
+ #include "mini.h"
+ #include <string.h>
  #include <math.h>
- #include <unistd.h>
- #include <sys/mman.h>
-+#include <sys/ucontext.h>
-+
-+#include <pthread_np.h>
++#include <ucontext.h>
  
  #include <mono/metadata/appdomain.h>
  #include <mono/metadata/debug-helpers.h>
-@@ -55,6 +58,10 @@
+@@ -49,6 +49,10 @@
  #define ARGS_OFFSET 16
  #define GP_SCRATCH_REG AMD64_R11
  
@@ -21,7 +19,7 @@
  /*
   * AMD64 register usage:
   * - callee saved registers are used for global register allocation
-@@ -5683,6 +5690,7 @@
+@@ -4639,6 +4643,7 @@
  
  #define IS_REX(inst) (((inst) >= 0x40) && ((inst) <= 0x4f))
  
@@ -29,7 +27,7 @@
  static int reg_to_ucontext_reg [] = {
  	REG_RAX, REG_RCX, REG_RDX, REG_RBX, REG_RSP, REG_RBP, REG_RSI, REG_RDI,
  	REG_R8, REG_R9, REG_R10, REG_R11, REG_R12, REG_R13, REG_R14, REG_R15,
-@@ -5694,27 +5702,37 @@
+@@ -4650,27 +4655,37 @@
   * integer overflow.
   */
  gboolean
@@ -73,35 +71,11 @@
 -		if (ctx->uc_mcontext.gregs [reg_to_ucontext_reg [reg]] == -1)
 +#if defined(__FreeBSD__)
 +		if (gregs[reg_to_ucontext_reg[reg]] == -1)
- 			return TRUE;
++			return TRUE;
 +#else
 +		if (ctx->uc_mcontext.gregs [reg_to_ucontext_reg	[reg]] == -1)
-+			return TRUE;
+ 			return TRUE;
 +#endif
  	}
  
  	return FALSE;
-@@ -5888,10 +5906,10 @@
- #ifdef HAVE_PTHREAD_GETATTR_NP
- 	pthread_getattr_np( self, &attr );
- #else
-+	pthread_attr_init( &attr );
- #ifdef HAVE_PTHREAD_ATTR_GET_NP
- 	pthread_attr_get_np( self, &attr );
- #elif defined(sun)
--	pthread_attr_init( &attr );
- 	pthread_attr_getstacksize( &attr, &stsize );
- #else
- #error "Not implemented"
-@@ -5925,6 +5943,11 @@
- 	sa.ss_size = SIGNAL_STACK_SIZE;
- 	sa.ss_flags = SS_ONSTACK;
- 	sigaltstack (&sa, NULL);
-+
-+#if !defined(HAVE_PTHREAD_GETATTR_NP)
-+	pthread_attr_destroy(&attr);
-+#endif
-+
- }
- 
- #endif

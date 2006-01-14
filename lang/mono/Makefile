@@ -3,12 +3,11 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.47 2005/11/06 03:26:36 tmclau02 Exp $
+#   $Id: Makefile,v 1.53 2006/01/03 03:33:54 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.9.2
-PORTREVISION=	3
+PORTVERSION=	1.1.12.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/
 
@@ -33,7 +32,7 @@ CONFIGURE_ARGS=	--program-transform-name=\'\' \
 MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
 		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
-		monoburg.1 monodis.1 monop.1 monostyle.1 oldmono.1 \
+		monoburg.1 monodis.1 monop.1 monostyle.1 mozroots.1 oldmono.1 \
 		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
 		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1
 MAN5=		mono-config.5
