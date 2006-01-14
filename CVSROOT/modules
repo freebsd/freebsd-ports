@@ -1043,6 +1043,7 @@ cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cduce		ports/lang/cduce
 cedet		ports/devel/cedet
+ceferino	ports/games/ceferino
 cegui		ports/graphics/cegui
 celestia	ports/astro/celestia
 cenon		ports/graphics/cenon
