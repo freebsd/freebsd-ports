@@ -18,9 +18,8 @@ COMMENT=	MusicBrainz bindings for Python
 
 BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	musicbrainz.4:${LIBMUSICBRAINZ_PORTDIR}
+LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
-LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 EXAMPLES=	cd2trm.py findartist.py getcdtracklengths.py cdid.py \
 		findtrack.py gettrm.py cdlookup.py generatetrm.py \
