@@ -14,6 +14,8 @@ MASTER_SITES=	http://llvm.cs.uiuc.edu/releases/${PORTVERSION}/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
+BROKEN=		Configure fails
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
