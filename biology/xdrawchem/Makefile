@@ -17,6 +17,8 @@ COMMENT=	Chemical drawing program
 
 LIB_DEPENDS=	openbabel.0:${PORTSDIR}/science/openbabel
 
+BROKEN=		Broken dependency
+
 CFLAGS+=	-O0
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
