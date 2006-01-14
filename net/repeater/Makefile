@@ -7,6 +7,7 @@
 
 PORTNAME=	repeater
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://koti.mbnet.fi/jtko/uvncrepeater/
 DISTNAME=	repeater${PORTVERSION:C/\.//}

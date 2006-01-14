@@ -25,6 +25,6 @@ repeater_log=${repeater_log:-"/var/run/repeater.log"}
 command=/usr/local/sbin/repeater
 procname=repeater
 start_precmd="echo Starting ${procname}."
-start_cmd="daemon ${procname} ${repeater_viewer_port} ${repeater_server_port} > ${repeater_log} 2>&1"
+start_cmd="daemon ${command} ${repeater_viewer_port} ${repeater_server_port} > ${repeater_log} 2>&1"
 
 run_rc_command "$1"
