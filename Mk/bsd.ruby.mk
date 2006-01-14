@@ -476,7 +476,4 @@ PLIST_SUB+=		RUBY_RD_HTML_FILES="@comment "
 BUILD_DEPENDS+=		${DEPEND_RUBY_RDTOOL}
 .endif
 
-MASTER_SITE_BACKUP+=	\
-	ftp://ftp.iDaemons.org/pub/distfiles/${DIST_SUBDIR}/
-
 .endif
