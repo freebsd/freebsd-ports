@@ -228,7 +228,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5.20060102
+DISTVERSION=	0.8.5.20060114
 PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
@@ -237,8 +237,7 @@ MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
 #		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
 #		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
-MASTER_SITE_SUBDIR=	ahze/:mozilla
-PKGNAMESUFFIX?=	-devel${ESOUND_SUFFIX}${MOZILLA_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.5.//}
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -247,7 +246,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	vlc-*-0.8.4*
+CONFLICTS=	vlc-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5-svn
 
@@ -451,7 +450,6 @@ CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
 .if (defined(WITH_ESOUND) || ${HAVE_GNOME:Mesound}!="") && !defined(WITHOUT_ESOUND)
-ESOUND_SUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
 .else
@@ -579,7 +577,6 @@ USE_GECKO=	firefox mozilla seamonkey nvu
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
 		XPIDL="${XPIDL}" \
 		XPIDL_INCL="${XPIDL_INCL}"
-MOZILLA_SUFFIX=-mozilla
 CONFIGURE_ARGS+=--enable-mozilla
 .endif
 
