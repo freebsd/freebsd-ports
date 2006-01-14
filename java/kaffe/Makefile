@@ -23,6 +23,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		javavm:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64

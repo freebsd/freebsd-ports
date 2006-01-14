@@ -13,6 +13,8 @@ MASTER_SITES=	http://chewing.csie.net/download/libchewing/
 MAINTAINER=	kcwu@csie.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
+BROKEN=		Does not build
+
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
