@@ -1401,6 +1401,7 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-istring
+    SUBDIR += py-json-py
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
