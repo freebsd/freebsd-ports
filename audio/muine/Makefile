@@ -3,12 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.39 2005/11/06 06:58:39 tmclau02 Exp $
+#   $Id: Makefile,v 1.43 2006/01/11 03:11:16 tmclau02 Exp $
 #
 
 PORTNAME=	muine
 PORTVERSION=	0.8.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
