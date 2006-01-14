@@ -19,6 +19,8 @@ DISTNAME=	tutorial
 MAINTAINER=	ringworm01@gmail.com
 COMMENT=	Official Java 2 SDK tutorial
 
+BROKEN=		Size mismatch
+
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
 NO_BUILD=	yes
