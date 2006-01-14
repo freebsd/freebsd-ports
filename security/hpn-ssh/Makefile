@@ -24,6 +24,8 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	High Performance Enabled SSH/SCP
 
+BROKEN=		Checksum mismatch
+
 HPNVERSION=	11
 OPENSSHVERSION=	3.9p1
 WRKSRC=		${WRKDIR}/openssh-${OPENSSHVERSION}
