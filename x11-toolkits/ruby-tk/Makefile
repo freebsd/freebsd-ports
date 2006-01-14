@@ -8,7 +8,7 @@
 PORTNAME=	tk
 PORTVERSION=	${RUBY_PORTVERSION}
 PORTEPOCH=	1
-CATEGORIES+=	x11-toolkits ruby tk${TK_VERSION}
+CATEGORIES+=	x11-toolkits ruby tk${TK_VERSION:C/[^0-9]//g} tcl${TK_VERSION:C/[^0-9]//g}
 MASTER_SITES=	# none
 DISTFILES=	# none
 
@@ -16,21 +16,31 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Ruby interface to the Tk widget set
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
-RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/tcltklib.so:${PORTSDIR}/${TCLTKLIB_CATEGORY}/ruby-tcltklib
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-TK_VERSION?=	84
+TK_VERSION?=	8.4
 .if defined(WITH_TCLTK_JP)
-TCLTKLIB_CATEGORY?=	japanese
+TCLPORTDIR?=	${PORTSDIR}/japanese/tcl
+TKPORTDIR?=	${PORTSDIR}/japanese/tk
 .else
-TCLTKLIB_CATEGORY?=	lang
+TCLPORTDIR?=	${PORTSDIR}/lang/tcl
+TKPORTDIR?=	${PORTSDIR}/x11-toolkits/tk
 .endif
 
+LIB_DEPENDS=	tcl${TK_VERSION:S/.//}:${TCLPORTDIR}${TK_VERSION:C/[^0-9]//g} \
+		tk${TK_VERSION:S/.//}:${TKPORTDIR}${TK_VERSION:C/[^0-9]//g}
+
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
+		--with-X11-dir=${X11BASE} \
+		--with-tcl-include=${LOCALBASE}/include/tcl${TK_VERSION} \
+		--with-tk-include=${LOCALBASE}/include/tk${TK_VERSION}
 
 .if ${RUBY_VER} >= 1.7
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
@@ -52,7 +62,9 @@ post-install:
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 .if ${RUBY_VER} >= 1.8
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.fork ${RUBY_MODDOCDIR}/
+.for d in MANUAL_tcltklib.eng MANUAL_tcltklib.eucj README.fork README.1st README.ActiveTcl README.tcltklib
+	${INSTALL_DATA} ${WRKSRC}/${d} ${RUBY_MODDOCDIR}/
+.endfor
 .endif
 .endif
 
