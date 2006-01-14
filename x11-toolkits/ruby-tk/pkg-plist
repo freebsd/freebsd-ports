@@ -1,4 +1,4 @@
-%%RUBY_ARCHLIBDIR%%/tkutil.so
+%%RUBY18_ONLY%%%%RUBY_ARCHLIBDIR%%/tcltklib.so
 %%RUBY_LIBDIR%%/tk.rb
 %%RUBY_LIBDIR%%/tkafter.rb
 %%RUBY_LIBDIR%%/tkbgerror.rb
@@ -13,6 +13,7 @@
 %%RUBY_LIBDIR%%/tkscrollbox.rb
 %%RUBY_LIBDIR%%/tktext.rb
 %%RUBY_LIBDIR%%/tkvirtevent.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tcltk.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkconsole.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkmacpkg.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkwinpkg.rb
@@ -140,6 +141,7 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/notebook.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/pagesmanager.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/panedwindow.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/panelframe.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/passwddlg.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/progressbar.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/progressdlg.rb
@@ -150,6 +152,7 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/selectfont.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/separator.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/setup.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/statusbar.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/spinbox.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/titleframe.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/bwidget/tree.rb
@@ -221,24 +224,50 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/autoscroll.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ctext.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/cursor.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/dialog.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/datefield.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/getstring.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/history.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ico.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ip_entry.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/panelframe.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/plotchart.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/ruler.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/screenruler.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/scrollwin.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/setup.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/superframe.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/swaplist.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/style.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/tablelist.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/tablelist_core.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/tablelist_tile.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/tkpiechart.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/tooltip.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tcllib/widget.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tclx.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tclx/setup.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tclx/tclx.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/dialog.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/setup.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/style.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tbutton.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tcheckbutton.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tcombobox.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tentry.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tframe.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tlabelframe.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tlabel.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tmenubutton.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tnotebook.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tpaned.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tprogressbar.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/treeview.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tscale.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tscrollbar.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tseparator.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tsquare.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tile/tradiobutton.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tkDND.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/tkDND/setup.rb
@@ -284,6 +313,9 @@
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/winico.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/winico/setup.rb
 %%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/winico/winico.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/trofs/setup.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/trofs/trofs.rb
+%%RUBY18_ONLY%%%%RUBY_LIBDIR%%/tkextlib/trofs.rb
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/winico
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/vu
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/treectrl
@@ -302,6 +334,7 @@
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/blt
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/bwidget
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/ICONS
+%%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib/trofs
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tkextlib
 %%RUBY18_ONLY%%@dirrm %%RUBY_LIBDIR%%/tk
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkbiff.rb
@@ -323,6 +356,8 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/README.1st
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/README.tkencoding
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/arrow.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/anilabel.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/aniwave.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/bind.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/bitmap.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/browse1
@@ -348,6 +383,7 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/floor.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/floor2.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/form.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/goldberg.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/hello
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/hscale.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/icon.rb
@@ -366,6 +402,7 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/paned1.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/paned2.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/patch_1.1c1
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/pendulum.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/plot.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/puzzle.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/radio.rb
@@ -382,7 +419,6 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/states.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/style.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tcolor
-%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tcolor.bak
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/text.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/timer
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-en/tkencoding.rb
@@ -394,6 +430,8 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/README
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/README.1st
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/arrow.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/anilabel.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/aniwave.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/bind.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/bitmap.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/browse1
@@ -419,6 +457,7 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/floor.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/floor2.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/form.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/goldberg.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/hello
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/hscale.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/icon.rb
@@ -437,6 +476,7 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/msgbox.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/paned1.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/paned2.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/pendulum.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/plot.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/puzzle.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/demos-jp/radio.rb
@@ -721,11 +761,228 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/canvItems.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/canvSticker.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/canvSticker2.rb
-%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/dial.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/dial_demo.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/m128_000.xbm
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/oscilloscope.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/pie.rb
-%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/vu.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/vu/vu_demo.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/sample2.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/lines0.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/lines1.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/lines2.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/lines3.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/lines4.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/maru.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/safeTk.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/sample0.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/sample1.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tcltklib/batsu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/vslider.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowdown-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowdown.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowleft-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowleft-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowleft.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowright-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowright-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowright.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowup-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowup-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowup.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/button-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/button-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/button-n.xcf
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/button-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/check-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/check-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/check-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/check-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/radio-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/radio-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/radio-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/radio-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/sb-thumb-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/sb-thumb.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/sb-vthumb-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/sb-vthumb.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/slider-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/slider.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/vslider-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue/arrowdown-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/pkgIndex.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/vslider-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowdown-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowleft-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowleft-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowright-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowright-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowup-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowup-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/button-d.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/button-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/button-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/button-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/button-s.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/check-c.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/check-u.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/hsb-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/hsb-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/hslider-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/mbut-a.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/mbut-arrow-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/mbut-d.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/mbut-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/radio-c.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/radio-u.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/tab-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/tab-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/tbar-a.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/tbar-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/tbar-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/vsb-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/vsb-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik/arrowdown-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/pkgIndex.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/radio-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/button-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/button-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/check-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/check-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/check-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/check-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/radio-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/radio-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/radio-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc/button-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/pkgIndex.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/vslider-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowdown-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowleft-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowleft-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowright-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowright-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowup-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowup-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/button-h.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/button-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/button-p.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/check-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/check-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/check-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/check-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/check-pc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/hsb-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/hslider-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/radio-hc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/radio-hu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/radio-nc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/radio-nu.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/radio-pc.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/vsb-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik/arrowdown-n.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/pkgIndex.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/Orig_LICENSE.txt
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/demo.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/readme.txt
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/repeater.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/toolbutton.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/iconlib.tcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images/buckskin.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images/chalk.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images/qv100.t.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images/rain.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images/sample.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/scripts/stipples.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/barchart5.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/graph6.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/graph7.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/graph7a.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/graph7b.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/graph7c.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/pareto.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/plot1.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/plot1b.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/readme.txt
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/winop1.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/winop2.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/calendar.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tkimg/readme.txt
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tkimg/demo.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/tkimg/license_terms_of_Img_extension
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/unchecked.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/big-exe.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/big-file.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/big-folder.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/big-txt.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/checked.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/file.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/folder-closed.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/folder-open.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/help-book-closed.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/help-book-open.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/help-page.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-01.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-02.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-03.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-04.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-05.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-06.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/imovie-07.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-check-off.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-check-on.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-print.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-radio-off.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-radio-on.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-search.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/internet-security.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/mac-collapse.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/mac-expand.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-arrow.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-clip.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-deleted.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-draft.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-folder.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-group.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-inbox.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-local.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-main.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/sky.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-outbox.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-read-2.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-read.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-sent.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-server.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-unread.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/outlook-watch.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/small-dll.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/small-exe.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/small-file.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/small-folder.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/small-txt.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics/big-dll.gif
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/bitmaps.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/demo.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/explorer.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/help.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/imovie.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/layout.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/mailwasher.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/outlook-folders.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/outlook-newgroup.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/random.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/readme.txt
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/www-options.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/scrollframe.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/irbtk.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/cd_timer.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/24hr_clock.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tktextio.rb
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkrttimer.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkmenubutton.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkmsgcat-load_rb.rb
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODEXAMPLESDIR%%/tkmsgcat-load_rb2.rb
@@ -754,7 +1011,24 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/iwidgets
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/bwidget
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/ICONS
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue/blue
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/blue
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik/keramik
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/keramik
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc/kroc
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/kroc
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik/plastik
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes/plastik
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile/themes
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tile
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/images
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/blt/scripts
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/blt
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/tkimg
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl/pics
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib/treectrl
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tkextlib
+%%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tcltklib
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/msgs_tk
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/msgs_rb2
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/msgs_rb
@@ -764,5 +1038,10 @@
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/demos-en/doc.org
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%/demos-en
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/MANUAL_tcltklib.eng
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/MANUAL_tcltklib.eucj
 %%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/README.fork
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/README.1st
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/README.ActiveTcl
+%%PORTDOCS%%%%RUBY18_ONLY%%%%RUBY_MODDOCDIR%%/README.tcltklib
 %%PORTDOCS%%%%RUBY18_ONLY%%@dirrm %%RUBY_MODDOCDIR%%
