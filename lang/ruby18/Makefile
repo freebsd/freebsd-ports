@@ -52,7 +52,7 @@ MAN1=		${RUBY_NAME}.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENSSL_PORT)
+.if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=--with-openssl-include=${LOCALBASE}/include
 .endif
 
