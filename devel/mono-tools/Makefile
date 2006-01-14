@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.10 2005/10/22 06:02:35 tmclau02 Exp $
+#   $Id: Makefile,v 1.13 2006/01/03 03:35:56 tmclau02 Exp $
 #
 
 PORTNAME=	mono-tools
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 

@@ -4,12 +4,11 @@
 # Whom:                 Christopher Nehren
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.27 2005/10/22 06:02:36 tmclau02 Exp $
+#   $Id: Makefile,v 1.32 2006/01/03 03:35:28 tmclau02 Exp $
 #
 
 PORTNAME=	monodoc
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.11
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 
