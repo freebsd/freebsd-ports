@@ -1,0 +1,9 @@
+RSCM - Ruby Source Control Management is to SCM what DBI/JDBC/ODBC
+are to databases - an SCM-independent API for accessing a wide
+variety of SCMs.
+
+RSCM currently supports CVS and Subversion.  Support for ClearCase,
+Darcs, Monotone, Perforce and StarTeam is in progress and partly
+available.
+
+WWW: http://rubyforge.org/projects/rscm

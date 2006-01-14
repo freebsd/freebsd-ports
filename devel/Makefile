@@ -1541,6 +1541,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
+    SUBDIR += rubygem-rscm
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rudiments
