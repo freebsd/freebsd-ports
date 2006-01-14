@@ -29,6 +29,7 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
 %%DATADIR%%/table/kana-nippon.gtab
+%%DATADIR%%/table/latin-letters.gtab
 %%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
