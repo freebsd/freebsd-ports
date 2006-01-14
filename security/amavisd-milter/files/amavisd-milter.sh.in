@@ -23,11 +23,12 @@ load_rc_config $name
 
 # Set defaults
 : ${amavisd_milter_enable:="NO"}
-: ${amavisd_milter_flags:=""}
-: ${amavisd_milter_pidfile:="%%AMAVISDIR%%/amavisd-milter.pid"}
+: ${amavisd_milter_flags:="-w %%AMAVISDIR%%/tmp"}
 : ${amavisd_milter_user:="%%AMAVISUSER%%"}
 
+pidfile="${amavisd_milter_pidfile:-%%AMAVISDIR%%/amavisd-milter.pid}"
 command="%%PREFIX%%/sbin/amavisd-milter"
+command_args="-p ${pidfile}"
 required_files="%%PREFIX%%/etc/amavisd.conf"
 
 run_rc_command "$1"
