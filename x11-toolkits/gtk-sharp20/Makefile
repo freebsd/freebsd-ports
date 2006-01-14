@@ -3,11 +3,12 @@
 # Whom:                 Juli Mallett
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.9 2005/11/05 20:36:01 tmclau02 Exp $
+#   $Id: Makefile,v 1.13 2005/12/03 04:03:19 tmclau02 Exp $
 #
 
 PORTNAME=	gtk-sharp
-PORTVERSION=	2.3.92
+PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/gtk-sharp-2.0/
 
