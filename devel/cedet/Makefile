@@ -7,6 +7,7 @@
 
 PORTNAME=	cedet
 PORTVERSION=	1.0.pre3
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
@@ -24,7 +25,8 @@ CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 INFO=		bovine cogre ede eieio grammar-fw semantic \
 		semantic-appdev semantic-langdev semantic-user \
-		wisent speedbar
+		wisent
+#		wisent speedbar
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
 		semantic-langdev.info semantic-user.info semantic.info \

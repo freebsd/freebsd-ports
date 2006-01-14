@@ -7,7 +7,7 @@
 
 PORTNAME=	speedbar
 PORTVERSION=	0.14.b4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
@@ -23,7 +23,6 @@ EMACS_PORT_NAME?=	emacs21
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CONFLICTS=	cedet*
-INFO=		speedbar
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar
 
