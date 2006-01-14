@@ -82,6 +82,7 @@
     SUBDIR += cake
     SUBDIR += cardpics
     SUBDIR += cavezofphear
+    SUBDIR += ceferino
     SUBDIR += cgoban
     SUBDIR += cgoban2
     SUBDIR += childsplay

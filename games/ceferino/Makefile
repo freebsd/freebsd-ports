@@ -1,0 +1,53 @@
+# New ports collection makefile for:	ceferino
+# Date created:		2006-01-11
+# Whom:			Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ceferino
+PORTVERSION=	0.96
+CATEGORIES=	games
+MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
+
+MAINTAINER=	acardenas@bsd.org.pe
+COMMENT=	Game similar to Super Pang
+
+USE_X_PREFIX=	yes
+USE_SDL=	sdl mixer image
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CEFEDIRS=	ima musicas niveles sonidos
+
+post-extract:
+	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cpp|h)" \
+		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/'
+
+post-configure:
+	@${REINPLACE_CMD} -e 's/LIBS = -lSDL -lSDL_image -lSDL_mixer/LIBS = \
+		-lSDL-1.1 -lSDL_image -lSDL_mixer -pthread -lintl/g' ${WRKSRC}/src/Makefile
+
+do-install:
+	@cd ${WRKSRC}/src && \
+		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${PREFIX}/bin && \
+		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+.for FILE in es ca fr
+	${MKDIR} ${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
+		${INSTALL_DATA} ${WRKSRC}/po/${FILE}.gmo ${PREFIX}/share/locale/${FILE}/LC_MESSAGES/${PORTNAME}.mo
+.endfor
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && \
+		${INSTALL_DATA} AUTHORS ChangeLog README README_ES ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
