@@ -15,16 +15,17 @@ bin/testrb%%RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
+
 %%RUBY_ARCHLIBDIR%%/bigdecimal.so
 %%RUBY_ARCHLIBDIR%%/config.h
 %%RUBY_ARCHLIBDIR%%/curses.so
 %%RUBY_ARCHLIBDIR%%/dbm.so
 %%RUBY_ARCHLIBDIR%%/defines.h
-%%RUBY_ARCHLIBDIR%%/digest.so
 %%RUBY_ARCHLIBDIR%%/digest/md5.so
 %%RUBY_ARCHLIBDIR%%/digest/rmd160.so
 %%RUBY_ARCHLIBDIR%%/digest/sha1.so
 %%RUBY_ARCHLIBDIR%%/digest/sha2.so
+%%RUBY_ARCHLIBDIR%%/digest.so
 %%RUBY_ARCHLIBDIR%%/dl.h
 %%RUBY_ARCHLIBDIR%%/dl.so
 %%RUBY_ARCHLIBDIR%%/dlconfig.h
@@ -71,16 +72,15 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/ludcmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/math.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/newton.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/nlsolve.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/util.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session/pstore.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi-lib.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session/pstore.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/complex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/csv.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date/format.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date2.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/debug.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/delegate.rb
@@ -88,7 +88,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/struct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/types.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/dl/win32.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/drb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/acl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/drb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/eq.rb
@@ -100,6 +99,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/timeridconv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/drb/unix.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/drb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/e2mmap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/erb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/eregex.rb
@@ -116,9 +116,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/importenv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/io/nonblock.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ipaddr.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/irb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/chws.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/fork.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/help.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/load.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/nop.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/pushws.rb
@@ -130,6 +130,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/loader.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/math-mode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/multi-irb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/save-history.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/tracer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/use-loader.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ext/workspaces.rb
@@ -143,6 +144,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/ja/error.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/ja/help-message
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/locale.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/notifier.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/output-method.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ruby-lex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ruby-token.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/slex.rb
@@ -150,6 +153,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/workspace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/logger.rb
@@ -167,26 +171,25 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/imap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/pop.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/protocol.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/net/protocols.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/smtp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnets.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/observer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open-uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open3.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/bn.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/buffering.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/cipher.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/digest.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/x509.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/optparse.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/time.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/optparse.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsearg.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsedate.rb
@@ -216,7 +219,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/xml_generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/sample/rdoc2latex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/sample/sample.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/fragments.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/inline.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/lines.rb
@@ -224,6 +226,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_flow.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_latex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/AllTests.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/TestInline.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/TestParse.rb
@@ -297,6 +300,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/sax2listener.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/source.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/streamlistener.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/syncenumerator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/text.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/validation/relaxng.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/validation/validation.rb
@@ -314,15 +318,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/content.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/converter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/dublincore.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rss/image.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/0.9.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/1.0.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/2.0.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/base.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/content.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/dublincore.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/image.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/syndication.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker/trackback.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rss/maker.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/rexmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/rss.rb
@@ -333,6 +339,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/xml-stylesheet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/xmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rss/xmlscanner.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rss.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rubyunit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/assert.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/cui/testrunner.rb
@@ -344,7 +351,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/scanf.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/set.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sha1.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/shell.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/builtin-command.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/command-processor.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/error.rb
@@ -352,6 +358,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/process-controller.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/system-command.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/singleton.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/attachment.rb
@@ -365,15 +372,15 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/header/handler.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/header/handlerset.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/header/simplehandler.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/httpconfigloader.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/factory.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/mapping.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/registry.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/rubytypeFactory.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/typeMap.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/wsdlRegistry.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/wsdlencodedregistry.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping/wsdlliteralregistry.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mapping.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/marshal.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/mimemessage.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/netHttpClient.rb
@@ -394,13 +401,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/wsdlDriver.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sync.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tempfile.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/assertionfailederror.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/assertions.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/autorunner.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector/dir.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector/objectspace.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/collector.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/error.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/failure.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/testcase.rb
@@ -416,6 +422,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/backtracefilter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/observable.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/procwrapper.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thread.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thwait.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/time.rb
@@ -424,7 +431,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tracer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tsort.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/un.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/common.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ftp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/generic.rb
@@ -432,15 +438,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/https.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ldap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/mailto.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/accesslog.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/compat.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/config.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cookie.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/htmlutils.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/authenticator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/basicauth.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/digestauth.rb
@@ -448,18 +453,19 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/htgroup.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/htpasswd.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/userdb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpproxy.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httprequest.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpresponse.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/https.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpserver.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/abstract.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/cgi_runner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/cgihandler.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/erbhandler.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/filehandler.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/prochandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpstatus.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httputils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpversion.rb
@@ -468,6 +474,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/utils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/binding.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/data.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/definitions.rb
@@ -504,9 +511,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/operation.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/servantSkeltonCreator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/standaloneServerStubCreator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/soap/wsdl2ruby.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/types.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/wsdl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/all.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/annotation.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/any.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/attribute.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/choice.rb
@@ -517,13 +526,19 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/element.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/enumeration.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/import.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/importer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/include.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/length.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/pattern.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/schema.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/sequence.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/simpleContent.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/simpleExtension.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/simpleRestriction.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/simpleType.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/unique.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/wsdl/xmlSchema/xsd2ruby.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/base64.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/client.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/config.rb
@@ -535,29 +550,28 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/server.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/utils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/charset.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen/classdef.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen/commentdef.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen/gensupport.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen/methoddef.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen/moduledef.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/codegen.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/datatypes.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/datatypes1999.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/iconvcharset.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/mapping.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/namedelements.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/ns.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/qname.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/rexmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/xmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser/xmlscanner.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xsd/xmlparser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/baseemitter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/basenode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/constants.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/dbm.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/emitter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/encoding.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/error.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/loader.rb
@@ -566,87 +580,90 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/stream.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/stringio.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/syck.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/tag.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/types.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/yamlnode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/ypath.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml.rb
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
 @unexec /bin/rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/xmlparser
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/codegen
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xmlrpc
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/xmlSchema
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/soap
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpservlet
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpauth
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/util
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/tk
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk2
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/fox
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/console
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/collector
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/rpc
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/mapping
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/header
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/encodingstyle
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit/cui
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rss/maker
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rss
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rinda
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/validation
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/parsers
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/light
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/dtd
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/ri
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/parsers
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/test
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/simple_markup
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/sample
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/xml
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/html
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/chm
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/dot
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/racc
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/optparse
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/openssl
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/ext
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/cmd
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/io
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/drb
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/date
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/bigdecimal
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi/session
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
-%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/bigdecimal
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/date
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/drb
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/io
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/cmd
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/ext
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/openssl
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/optparse
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/racc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/dot
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/chm
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/html
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/xml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/sample
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/simple_markup
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/test
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/parsers
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/ri
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/dtd
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/light
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/parsers
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/validation
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rinda
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rss/maker
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rss
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit/cui
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/runit
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/encodingstyle
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/header
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/mapping
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap/rpc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/soap
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/collector
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/console
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/fox
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk2
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/tk
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/util
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpauth
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpservlet
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/soap
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl/xmlSchema
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/wsdl
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xmlrpc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/codegen
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd/xmlparser
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xsd
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec /bin/rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 %%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%
 @unexec /bin/rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
 @unexec /bin/rmdir %D/lib/ruby 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/.keep_me
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
@@ -680,12 +697,15 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/syslog.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/zlib.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
-%%RUBY_DOCDIR%%/.keep_me
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
 @unexec /bin/rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/.keep_me
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bigdecimal/linear.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bigdecimal/nlsolve.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bigdecimal/pi.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/biorhythm.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cbreak.rb
@@ -803,75 +823,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/regx.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/blend.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/list_description.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/re_read.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/rss_recent.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/tdiary_plugin/rss-recent.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sieve.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/authheader/authmgr.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/authheader/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/authheader/client2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/authheader/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/authheader/server2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/babelfish.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/calc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/calc2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/client2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/samplehttpd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/calc/server2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/digraph.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/exchange.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/samplehttpd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/server.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/exchange/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_c.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_c_gzip.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_s.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/helloworld/hw_s_gzip.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/icd/IICD.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/icd/icd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa/iRAA.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa/soap4r.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa2.4/raa.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa2.4/raaDriver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa2.4/raaServiceClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/raa2.4/sample.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/iSampleStruct.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/sampleStruct.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/samplehttpd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/server.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/sampleStruct/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/samplehttpd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/servant.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/server.cgi
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/scopesample/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/ca.cert
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/client.cert
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/client.key
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/server.cert
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/server.key
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/sslclient.properties
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/sslclient_require_noserverauth.properties
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/sslclient_with_clientauth.properties
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/files/subca.cert
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslclient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslclient_require_noserverauth.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslclient_with_clientauth.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslserver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslserver_noauth.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ssl/sslserver_require_clientauth.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/swa/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/swa/server.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/svr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/testunit/adder.rb
@@ -890,53 +844,19 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/hello.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpproxy.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpsd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearch.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearchDriver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/sampleClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/wsdlDriver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/GoogleSearch.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/GoogleSearchDriver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/httpd.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/sampleClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/samplehttpd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/sjissearch.sh
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/googleSearch/wsdlDriver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa/raa.wsdl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa/soap4r.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa2.4/raa.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/raa2.4/wsdlDriver.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/raa2.4
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/raa
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/googleSearch
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/amazon
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/testunit
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/swa
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ssl/files
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ssl
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/scopesample
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/sampleStruct
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/raa2.4
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/raa
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/icd
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/helloworld
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/exchange
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/calc
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/authheader
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rss/tdiary_plugin
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rss
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/logger
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bigdecimal
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
-%%RUBY_EXAMPLESDIR%%/.keep_me
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/logger
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rss
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/testunit
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick
 @unexec /bin/rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_RIDIR%%/Abbrev/abbrev-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Abbrev/cdesc-Abbrev.yaml
@@ -1067,13 +987,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/eql%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/hash-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/modulo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/power%21-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/quo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/rdiv-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/remainder-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/rpower-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/size-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/to_f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Bignum/to_s-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Binding/cdesc-Binding.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Binding/clone-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Binding/dup-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Cookie/cdesc-Cookie.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Cookie/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/CGI/Cookie/parse-c.yaml
@@ -1162,7 +1086,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/allocate-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/cdesc-Class.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/inherited-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Class/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/new-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Class/superclass-i.yaml
@@ -1305,6 +1228,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/DateTime/parse-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/DateTime/strptime-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/DateTime/valid_time%3f-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/__getobj__-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/cdesc-Delegator.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/marshal_dump-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/marshal_load-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/method_missing-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Delegator/respond_to%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/%5b%5d-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/cdesc-Dir.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/chdir-c.yaml
@@ -1328,15 +1258,45 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/rmdir-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/seek-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/tell-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Dir/tmpdir-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Dir/unlink-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/EOFError/cdesc-EOFError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/Buffer/cdesc-Buffer.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/ExplicitScanner/cdesc-ExplicitScanner.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/PercentLine/cdesc-PercentLine.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/PercentScanner/cdesc-PercentScanner.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/Scanner/cdesc-Scanner.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/SimpleScanner/cdesc-SimpleScanner.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/SimpleScanner2/cdesc-SimpleScanner2.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/TrimScanner/cdesc-TrimScanner.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Compiler/cdesc-Compiler.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/DefMethod/cdesc-DefMethod.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Util/cdesc-Util.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Util/h-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Util/html_escape-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Util/u-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/Util/url_encode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/cdesc-ERB.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/result-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/run-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/set_eoutvar-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/ERB/version-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/Enumerator/cdesc-Enumerator.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/Enumerator/each-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/Enumerator/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/all%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/any%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/cdesc-Enumerable.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/collect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/detect-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/each_cons-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/each_slice-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/each_with_index-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/entries-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/enum_cons-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/enum_slice-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/enum_with_index-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/find-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/find_all-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Enumerable/grep-i.yaml
@@ -1390,7 +1350,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/ftype-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/gid-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/grpowned%3f-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/ino-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/Stat/mode-i.yaml
@@ -1442,6 +1401,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/fnmatch-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/ftype-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/grpowned%3f-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/File/identical%3f-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/join-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/lchmod-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/File/lchown-c.yaml
@@ -1486,6 +1446,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/exists%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/file%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/grpowned%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/identical%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/owned%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/pipe%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/readable%3f-i.yaml
@@ -1500,24 +1461,25 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/writable%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/writable_real%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileTest/zero%3f-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/_copy_content-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/_copy_entry-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/cdesc-CopyContext_.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/chmod-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/chown-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/copy_content-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/copy_entry-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/new-c.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/preserve-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/CopyContext_/stat-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/DryRun/cdesc-DryRun.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/Entry_/cdesc-Entry_.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/NoWrite/cdesc-NoWrite.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/StreamUtils_/cdesc-StreamUtils_.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/StreamUtils_/fu_blksize-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/StreamUtils_/fu_default_blksize-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/StreamUtils_/fu_stream_blksize-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/StreamUtils_/fu_windows%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/Verbose/cdesc-Verbose.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/cd-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/cdesc-FileUtils.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/chdir-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/chmod-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/chmod_R-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/chown-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/chown_R-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/cmp-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/collect_method-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/commands-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/compare_file-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/compare_stream-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/copy-i.yaml
@@ -1526,19 +1488,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/copy_stream-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/cp-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/cp_r-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_blksize-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_check_options-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_default_blksize-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_each_src_dest-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_each_src_dest0-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_list-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_mkdir-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_output_message-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_same%3f-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_stream_blksize-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_update_option-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_have_symlink%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/fu_world_writable%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/getwd-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/have_st_ino%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/have_option%3f-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/identical%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/install-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/link-i.yaml
@@ -1551,8 +1504,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/mkpath-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/move-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/mv-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/options-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/options_of-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/pwd-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/remove-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/remove_dir-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/remove_entry-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/remove_entry_secure-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/remove_file-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/rm-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/rm_f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FileUtils/rm_r-i.yaml
@@ -1593,7 +1552,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/id2name-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/induced_from-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/modulo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/power%21-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/quo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/rdiv-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/rpower-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/size-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/to_f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Fixnum/to_s-i.yaml
@@ -1633,6 +1595,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Float/truncate-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Float/zero%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/FloatDomainError/cdesc-FloatDomainError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Forwardable/cdesc-Forwardable.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Forwardable/def_delegator-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Forwardable/def_delegators-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Forwardable/def_instance_delegator-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Forwardable/def_instance_delegators-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/GC/cdesc-GC.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/GC/disable-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/GC/enable-c.yaml
@@ -1718,7 +1685,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/fsync-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/getc-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/gets-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/IO/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/ioctl-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/isatty-i.yaml
@@ -1741,6 +1707,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/readline-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/readlines-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/readlines-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/IO/readpartial-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/reopen-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/rewind-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/IO/seek-i.yaml
@@ -1763,16 +1730,23 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/cdesc-Integer.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/ceil-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/chr-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/denominator-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/downto-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/floor-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/gcd-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/gcd2-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/gcdlcm-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/induced_from-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/integer%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/lcm-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/next-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/numerator-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/round-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/succ-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/times-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/to_i-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/to_int-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Integer/to_r-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/truncate-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Integer/upto-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Interrupt/cdesc-Interrupt.yaml
@@ -1781,6 +1755,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/Float-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/Integer-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/String-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/URI-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/abort-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/at_exit-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Kernel/autoload%3f-i.yaml
@@ -1857,34 +1832,42 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Application/set_log-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Application/start-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Error/cdesc-Error.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Formatter/call-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Formatter/cdesc-Formatter.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Formatter/format_datetime-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Formatter/msg2str-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Formatter/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/LogDeviceMutex/cdesc-LogDeviceMutex.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/add_log_header-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/cdesc-LogDevice.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/check_shift_log-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/close-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/create_logfile-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/eod-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/open_logfile-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/shift_log%3f-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/shift_log-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/previous_period_end-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/shift_log_age-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/shift_log_period-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/LogDevice/write-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/Severity/cdesc-Severity.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/ShiftingError/cdesc-ShiftingError.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/add-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/cdesc-Logger.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/close-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/datetime_format%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/datetime_format-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/debug%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/debug-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/error%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/error-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/fatal%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/fatal-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/format_datetime-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/format_message-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/format_severity-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/info%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/info-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/log-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Logger/msg2str-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/unknown-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Logger/warn%3f-i.yaml
@@ -1898,7 +1881,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/captures-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/cdesc-MatchData.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/end-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/length-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/MatchData/offset-i.yaml
@@ -2028,6 +2010,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/autoload-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/cdesc-Module.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/class_eval-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Module/class_variable_get-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Module/class_variable_set-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/class_variables-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/const_defined%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/const_get-i.yaml
@@ -2043,7 +2027,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/include-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/included-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/included_modules-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Module/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/instance_method-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/instance_methods-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Module/method_added-i.yaml
@@ -2080,11 +2063,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Mutex/try_lock-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Mutex/unlock-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/NameError/cdesc-NameError.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/NameError/message/%21-c.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/NameError/message/_dump-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/NameError/message/_load-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/NameError/message/cdesc-message.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/NameError/message/to_str-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/NameError/name-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/NameError/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/NameError/to_s-i.yaml
@@ -2121,7 +2100,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/im-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/imag-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/image-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/integer%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/modulo-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Numeric/nonzero%3f-i.yaml
@@ -2145,6 +2123,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/clone-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/display-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/dup-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Object/enum_for-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/eql%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/equal%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/extend-i.yaml
@@ -2152,7 +2131,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/frozen%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/hash-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/id-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Object/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/instance_eval-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/instance_of%3f-i.yaml
@@ -2179,6 +2157,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/taint-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/tainted%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/to_a-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Object/to_enum-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/to_s-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/type-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Object/untaint-i.yaml
@@ -2200,6 +2179,22 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Observable/delete_observer-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Observable/delete_observers-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Observable/notify_observers-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/%5b%5d%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/%5b%5d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/Error/cdesc-Error.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/abort-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/cdesc-PStore.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/commit-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/commit_new-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/delete-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/fetch-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/in_transaction-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/in_transaction_wr-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/root%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/roots-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/PStore/transaction-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/%2b-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/%3c%3d%3e-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Pathname/%3d%3d%3d-i.yaml
@@ -2431,6 +2426,27 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Range/step-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Range/to_s-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/RangeError/cdesc-RangeError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%25-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%2a%2a-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%2a-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%2b-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%2d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%2f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%3c%3d%3e-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/%3d%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/abs-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/cdesc-Rational.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/coerce-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/divmod-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/hash-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/inspect-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/new%21-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/reduce-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/to_f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/to_i-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/to_r-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Rational/to_s-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/%3d%3d%3d-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/%3d%3d-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/%3d%7e-i.yaml
@@ -2441,7 +2457,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/eql%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/escape-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/hash-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/kcode-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Regexp/last_match-c.yaml
@@ -2505,6 +2520,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Signal/list-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Signal/trap-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/SignalException/cdesc-SignalException.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/__getobj__-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/__setobj__-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/cdesc-SimpleDelegator.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/clone-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/dup-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SimpleDelegator/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SingleForwardable/cdesc-SingleForwardable.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SingleForwardable/def_delegator-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SingleForwardable/def_delegators-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SingleForwardable/def_singleton_delegator-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/SingleForwardable/def_singleton_delegators-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Singleton/_dump-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Singleton/cdesc-Singleton.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Singleton/clone-i.yaml
@@ -2613,6 +2639,59 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/String/upcase%21-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/String/upcase-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/String/upto-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/%3c%3c-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/binmode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/cdesc-StringIO.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/close-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/close_read-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/close_write-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/closed%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/closed_read%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/closed_write%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/each-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/each_byte-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/each_line-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/eof%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/eof-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/fcntl-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/fileno-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/flush-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/fsync-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/getc-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/gets-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/isatty-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/length-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/lineno%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/lineno-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/open-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/pid-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/pos%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/pos-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/print-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/printf-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/putc-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/puts-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/read-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/readchar-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/readline-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/readlines-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/reopen-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/rewind-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/seek-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/size-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/string%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/string-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/sync%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/sync-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/sysread-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/syswrite-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/tell-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/truncate-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/tty%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/ungetc-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/StringIO/write-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/StringScanner/%3c%3c-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/StringScanner/%5b%5d-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/StringScanner/Error/cdesc-Error.yaml
@@ -2668,7 +2747,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/each_pair-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/eql%3f-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/hash-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Struct/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/length-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Struct/members-i.yaml
@@ -2778,6 +2856,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/%3c%3d%3e-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/_dump-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/_load-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Time/apply_offset-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/asctime-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/at-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/cdesc-Time.yaml
@@ -2797,12 +2876,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/hour-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/httpdate-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/httpdate-i.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Time/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/inspect-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/isdst-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/iso8601-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/local-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/localtime-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Time/make_time-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/marshal_dump-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/marshal_load-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/mday-i.yaml
@@ -2810,6 +2889,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/mktime-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/mon-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/month-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Time/month_days-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/now-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/parse-c.yaml
@@ -2838,13 +2918,156 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/year-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/zone-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Time/zone_offset-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Time/zone_utc%3f-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TimeExtentionTest/cdesc-TimeExtentionTest.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Timeout/Error/cdesc-Error.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Timeout/cdesc-Timeout.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Timeout/timeout-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TrueClass/%26-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TrueClass/%5e-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TrueClass/%7c-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TrueClass/cdesc-TrueClass.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TrueClass/to_s-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/TypeError/cdesc-TypeError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/BadURIError/cdesc-BadURIError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Error/cdesc-Error.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Escape/cdesc-Escape.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Escape/decode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Escape/encode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Escape/escape-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Escape/unescape-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/build-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/cdesc-FTP.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/check_typecode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/new2-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/set_typecode-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/to_s-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/FTP/typecode%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/%2b-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/%2d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/%3d%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/absolute%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/absolute-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/build-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/build2-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/cdesc-Generic.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_fragment-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_host-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_opaque-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_password-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_port-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_query-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_registry-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_scheme-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_user-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/check_userinfo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/coerce-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/component-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/component-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/component_ary-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/default_port-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/default_port-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/eql%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/escape_userpass-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/fragment%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/hash-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/hierarchical%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/host%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/inspect-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/merge%21-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/merge-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/merge0-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/merge_path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/normalize%21-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/normalize-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/opaque%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/password%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/password-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/path%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/path_query-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/port%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/query%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/registry%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/relative%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/replace%21-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/route_from-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/route_from0-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/route_from_path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/route_to-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/scheme%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/select-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_fragment-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_host-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_opaque-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_password-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_port-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_query-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_registry-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_scheme-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_user-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/set_userinfo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/split_path-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/split_userinfo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/to_s-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/use_registry-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/user%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/user-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/userinfo%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Generic/userinfo-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/HTTP/build-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/HTTP/cdesc-HTTP.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/HTTP/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/HTTP/request_uri-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/HTTPS/cdesc-HTTPS.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/InvalidComponentError/cdesc-InvalidComponentError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/InvalidURIError/cdesc-InvalidURIError.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/attributes%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/attributes-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/build-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/build_path_query-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/cdesc-LDAP.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/dn%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/dn-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/extensions%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/extensions-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/filter%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/filter-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/hierarchical%3f-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/parse_dn-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/parse_query-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/scope%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/scope-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/set_attributes-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/set_dn-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/set_extensions-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/set_filter-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/LDAP/set_scope-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/build-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/cdesc-MailTo.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/check_headers-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/check_to-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/headers%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/new-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/set_headers-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/set_to-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/to%3d-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/to_mailtext-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/to_rfc822text-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/MailTo/to_s-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/REGEXP/PATTERN/cdesc-PATTERN.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/REGEXP/cdesc-REGEXP.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/Util/cdesc-Util.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/cdesc-URI.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/extract-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/join-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/parse-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/regexp-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/URI/split-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/UnboundMethod/%3d%3d-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/UnboundMethod/arity-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/UnboundMethod/bind-i.yaml
@@ -2889,6 +3112,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/dump_stream-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/each_document-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/each_node-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/YAML/emitter-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/YAML/generic_parser-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/load-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/load_documents-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/load_file-c.yaml
@@ -2897,8 +3122,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/parse-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/parse_documents-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/parse_file-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/YAML/parser-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/quick_emit-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/read_type_class-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/YAML/resolver-c.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/YAML/tagurize-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/transfer-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/YAML/try_implicit-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/ZeroDivisionError/cdesc-ZeroDivisionError.yaml
@@ -2906,10 +3134,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/DataError/cdesc-DataError.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/%3c%3c-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/cdesc-Deflate.yaml
-%%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/clone-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/deflate-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/deflate-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/flush-i.yaml
+%%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/initialize_copy-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/new-c.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/params-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/Deflate/set_dictionary-i.yaml
@@ -3006,166 +3234,208 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_RIDIR%%/Zlib/zlib_version-i.yaml
 %%PORTDOCS%%%%RUBY_RIDIR%%/created.rid
 %%PORTDOCS%%%%RUBY_RIDIR%%/fatal/cdesc-fatal.yaml
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/fatal
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/ZStream
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/VersionError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/StreamError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/StreamEnd
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/NeedDict
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/MemError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Inflate
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipWriter
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipReader
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/NoFooter
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/LengthError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/Error
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/CRCError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Error
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Deflate
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/DataError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/BufError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ZeroDivisionError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/YAML
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Vector
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/UnboundMethod
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TypeError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TrueClass
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TimeExtentionTest
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Time
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadsWait
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadGroup
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Thread
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Test/Unit
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Test
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Tempfile
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemStackError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemExit
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemCallError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SyntaxError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SyncEnumerator
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Symbol
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Struct
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StringScanner/Error
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StringScanner
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/String
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StandardError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SortedSet
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SizedQueue
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SingletonClassMethods
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Singleton
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SignalException
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Signal
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Shellwords
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Set
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SecurityError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ScriptError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RuntimeError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RegexpError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Regexp
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RangeError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Range
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Queue
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/UID
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/Sys
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/Status
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/GID
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Proc
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Precision
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PathnameTest/AnotherStringLike
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PathnameTest
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Pathname
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Observable
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ObjectSpace
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Object
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Numeric
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NotImplementedError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NoMethodError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NoMemoryError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NilClass
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NameError/message
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NameError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Mutex
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Module
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Method
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Matrix/Scalar
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Matrix
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Math
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/MatchData
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Marshal
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/ShiftingError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Severity
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/LogDevice
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Error
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Application
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/LocalJumpError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/LoadError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Kernel
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Interrupt
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Integer
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IndexError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IOError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IO
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Hash
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Generator
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/GC
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FloatDomainError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Float
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Fixnum
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Find
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/Verbose
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/NoWrite
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/DryRun
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/CopyContext_
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileTest
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File/Stat
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File/Constants
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FalseClass
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ExceptionForMatrix
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Exception
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Errno
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Enumerable
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/EOFError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Dir
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/DateTime
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Date
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Data
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Continuation
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ConditionVariable
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Complex
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Comparable
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Class
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/TagMaker
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/NoSession
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/MemoryStore
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/FileStore
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/QueryExtension/Value
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/QueryExtension
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/HtmlExtension
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4Tr
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4Fr
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html3
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Cookie
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Binding
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Bignum
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Tms
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Report
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Job
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark
+
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Abbrev
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ArgumentError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Array
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Base64/Deprecated
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Base64
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Array
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ArgumentError
-%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Abbrev
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Job
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Report
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark/Tms
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Benchmark
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Bignum
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Binding
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Cookie
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html3
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4Fr
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Html4Tr
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/HtmlExtension
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/QueryExtension/Value
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/QueryExtension
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/FileStore
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/MemoryStore
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session/NoSession
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/Session
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI/TagMaker
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/CGI
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Class
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Comparable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Complex
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ConditionVariable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Continuation
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Data
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Date
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/DateTime
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Delegator
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Dir
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/EOFError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/Buffer
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/ExplicitScanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/PercentLine
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/PercentScanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/Scanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/SimpleScanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/SimpleScanner2
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler/TrimScanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Compiler
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/DefMethod
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB/Util
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ERB
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Enumerable/Enumerator
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Enumerable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Errno
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Exception
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ExceptionForMatrix
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FalseClass
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File/Constants
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File/Stat
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/File
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileTest
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/DryRun
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/Entry_
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/NoWrite
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/StreamUtils_
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils/Verbose
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FileUtils
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Find
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Fixnum
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Float
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/FloatDomainError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Forwardable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/GC
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Generator
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Hash
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IO
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IOError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/IndexError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Integer
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Interrupt
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Kernel
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/LoadError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/LocalJumpError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Application
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Formatter
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/LogDevice/LogDeviceMutex
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/LogDevice
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/Severity
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger/ShiftingError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Logger
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Marshal
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/MatchData
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Math
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Matrix/Scalar
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Matrix
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Method
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Module
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Mutex
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NameError/message
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NameError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NilClass
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NoMemoryError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NoMethodError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/NotImplementedError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Numeric
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Object
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ObjectSpace
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Observable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PStore/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PStore
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Pathname
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PathnameTest/AnotherStringLike
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/PathnameTest
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Precision
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Proc
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/GID
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/Status
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/Sys
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process/UID
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Process
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Queue
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Range
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RangeError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Rational
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Regexp
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RegexpError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/RuntimeError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ScriptError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SecurityError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Set
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Shellwords
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Signal
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SignalException
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SimpleDelegator
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SingleForwardable
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Singleton
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SingletonClassMethods
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SizedQueue
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SortedSet
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StandardError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/String
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StringIO
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StringScanner/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/StringScanner
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Struct
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Symbol
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SyncEnumerator
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SyntaxError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemCallError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemExit
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/SystemStackError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Tempfile
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Test/Unit
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Test
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Thread
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadGroup
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ThreadsWait
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Time
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TimeExtentionTest
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Timeout/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Timeout
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TrueClass
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/TypeError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/BadURIError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/Escape
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/FTP
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/Generic
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/HTTP
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/HTTPS
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/InvalidComponentError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/InvalidURIError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/LDAP
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/MailTo
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/REGEXP/PATTERN
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/REGEXP
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI/Util
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/URI
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/UnboundMethod
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Vector
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/YAML
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/ZeroDivisionError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/BufError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/DataError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Deflate
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/CRCError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/Error
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/LengthError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile/NoFooter
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipFile
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipReader
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/GzipWriter
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/Inflate
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/MemError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/NeedDict
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/StreamEnd
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/StreamError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/VersionError
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib/ZStream
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/Zlib
+%%PORTDOCS%%@dirrm %%RUBY_RIDIR%%/fatal
 %%PORTDOCS%%@dirrm %%RUBY_RIDIR%%
 @exec /bin/mkdir -p %D/%%RUBY_RIDIR%%
 @exec env LC_TIME=C /bin/date > %D/%%RUBY_RIDIR%%/created.rid

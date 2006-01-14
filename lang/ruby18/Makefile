@@ -7,19 +7,11 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
-DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
-
-PATCH_SITES=	${MASTER_SITE_RUBY}
-#PATCH_SITE_SUBDIR=	snapshots
-PATCH_SITE_SUBDIR=	1.8
-PATCHFILES=	${RUBY_PATCHFILES}
-#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented interpreted scripting language
@@ -34,7 +26,6 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-#USE_BZIP2=	yes
 USE_OPENSSL=	yes
 
 RUBY_VER=	1.8
@@ -43,12 +34,12 @@ USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-#USE_AUTOCONF=	yes	# does not work with 2.13; requires 2.53 or later
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared
+		--enable-shared \
+		--with-openssl-include=${PREFIX}/include
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
@@ -60,18 +51,15 @@ STRIP=		# none
 INSTALLS_SHLIB=	yes
 MAN1=		${RUBY_NAME}.1
 
-LATEST_LINK=	ruby-devel
-
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 502102
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
 
-.if ${ARCH} == "ia64"
-BROKEN=		"Segfault during build on ia64"
-.endif
-
-MAKE_ARGS=	-j3
+# Uncomment if it still segfaults with 1.8.4
+#.if ${ARCH} == "ia64"
+#BROKEN=		"Segfault during build on ia64"
+#.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
@@ -137,10 +125,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-l$$pthread_lib|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
-.for d in Win32API
+.for d in Win32API win32ole
 	${RM} -rf ${BUILD_WRKSRC}/ext/${d}
 .endfor
-.for d in gdbm iconv tcltklib tk
+.for d in gdbm iconv tk
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
@@ -176,6 +164,8 @@ post-install:
 	${SETENV} LC_TIME=C /bin/date > ${RUBY_SITERIDIR}/created.rid
 .if !defined(NOPORTDOCS)
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/bigdecimal
+	${INSTALL_DATA} ${WRKSRC}/ext/bigdecimal/sample/*.rb ${RUBY_EXAMPLESDIR}/bigdecimal
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/dl
