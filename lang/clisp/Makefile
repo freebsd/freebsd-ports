@@ -17,6 +17,8 @@ COMMENT=	A Common Lisp implementation
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
 		dvipdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
