@@ -35,8 +35,8 @@
 +             '-use-the-force-luke=dao ' .
 +             '-use-the-force-luke=notray ' .
 +             '-use-the-force-luke=tty ' .
-+             '-speed=%s -Z %d ' .
-+             '%i -V "%v" ' ,
++             '-V "%v" ' .
++             '-speed=%s -Z %d %i ' ,
    "/Vamps/evaporate_cell"            =>
                       'play_cell %d %v %g %c | vamps -E %E -a %a%o -S %S -i %i',
    "/Vamps/select_subtitles"          => '-s %s',
