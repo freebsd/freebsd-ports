@@ -6,14 +6,10 @@ ports since they require extra dependencies:
 
 	databases/ruby-gdbm:	GDBM module
 
-	lang/ruby-tcltklib:	Tcl/Tk libraries
-	japanese/ruby-tcltklib:	Tcl/Tk libraries for Japanized Tcl/Tk
-
-	x11-toolkits/ruby-tk:	Tk modules
-	japanese/ruby-tk:	Tk modules for Japanized Tcl/Tk
+	x11-toolkits/ruby-tk:	Tcl/Tk modules
+	japanese/ruby-tk:	Tcl/Tk modules for Japanized Tcl/Tk
 
 	lang/ruby-mode.el:	Emacs lisp modules
 
-Install them as occasion demands. (Make sure to define RUBY_VER=1.8
-when you build and install them)
+Install them as occasion demands.
 ====
