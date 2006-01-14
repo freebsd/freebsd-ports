@@ -19,6 +19,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 		prime:${PORTSDIR}/japanese/prime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
