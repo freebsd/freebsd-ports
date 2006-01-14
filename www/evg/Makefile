@@ -9,16 +9,18 @@ PORTNAME=	evg
 PORTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.zurich.ibm.com//pub/sob/www/halloween/ \
-		http://www.chg.ru/~dima/
+MASTER_SITES=	#
 DISTNAME=	evg-1_3_1
 EXTRACT_SUFX=	_tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create index pages in HTML for photo galleries
 
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS+=	xv:${PORTSDIR}/graphics/xv
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+		xv:${PORTSDIR}/graphics/xv
+
+DEPRECATED=	Disappeared from the internet
+EXPIRATION_DATE=2006-03-14
 
 USE_PERL5_BUILD=yes
 USE_PYTHON=	yes
@@ -37,7 +39,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/eclipthtml.py ${PYTHON_SITELIBDIR}
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/evg ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/evg
+	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
