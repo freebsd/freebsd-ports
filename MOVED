@@ -2054,3 +2054,4 @@ sysutils/linneighborhood|net/linneighborhood|2006-01-10|Move to a more appropria
 www/plog|www/lifetype|2006-01-11|project renamed
 mail/thunderbird-devel|mail/thunderbird|2006-01-12|Thunderbird 1.5 is now stable
 databases/pecl-hash|security/pecl-hash|2006-01-13|Moved to a better category
+multimedia/kino-dvtitler||2006-01-14|Merged into multimedia/kino
