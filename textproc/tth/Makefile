@@ -18,6 +18,8 @@ COMMENT=	A TeX to HTML translator
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
+BROKEN=		Size mismatch
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 MAN1=		tth.1
