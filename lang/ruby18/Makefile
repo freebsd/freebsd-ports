@@ -38,8 +38,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared \
-		--with-openssl-include=${PREFIX}/include
+		--enable-shared
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
@@ -52,6 +51,11 @@ INSTALLS_SHLIB=	yes
 MAN1=		${RUBY_NAME}.1
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL_PORT)
+CONFIGURE_ARGS+=--with-openssl-include=${LOCALBASE}/include
+.endif
+
 .if ${OSVERSION} < 502102
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
