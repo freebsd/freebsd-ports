@@ -2059,6 +2059,7 @@ endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
 engradient	ports/x11-themes/engradient
 enigmail	ports/mail/enigmail
+enigmail-seamonkey	ports/mail/enigmail-seamonkey
 enigmail-thunderbird	ports/mail/enigmail-thunderbird
 enjoympeg	ports/multimedia/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
