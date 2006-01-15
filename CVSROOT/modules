@@ -12287,6 +12287,7 @@ terraform	ports/misc/terraform
 testdisk	ports/sysutils/testdisk
 tet		ports/misc/tet
 tet-aspell	ports/textproc/tet-aspell
+tetgen		ports/math/tetgen
 tethereal	ports/net/tethereal
 tethereal-lite	ports/net/tethereal-lite
 tetradraw	ports/editors/tetradraw
