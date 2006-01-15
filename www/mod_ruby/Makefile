@@ -33,8 +33,15 @@ DOCS_EN=	COPYING ChangeLog LEGAL LICENSE.apreq NOTICE \
 		README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
+.include <bsd.port.pre.mk>
+
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
+# dirty hack to force mod_ruby.so linked with lpthread.so, otherwise unresolved
+# symbols happen
+.if ${OSVERSION} >= 502102
+	@${REINPLACE_CMD} -e 's|-pthread|-pthread -lpthread|' ${WRKSRC}/Makefile
+.endif
 
 post-install: doc-install
 	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf `${APXS} -q SYSCONFDIR`/httpd.conf.${PORTNAME}
@@ -43,8 +50,6 @@ post-install: doc-install
 		-e 's,%%LIBEXECDIR%%,'`${APXS} -q LIBEXECDIR | ${SED} 's:${LOCALBASE}/::'`',g;' \
 		-e 's,%%SYSCONFDIR%%,'`${APXS} -q SYSCONFDIR | ${SED} 's:${LOCALBASE}/::'`',g;' \
 		${TMPPLIST}
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -60,3 +65,5 @@ doc-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

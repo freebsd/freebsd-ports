@@ -190,6 +190,7 @@
     SUBDIR += instiki
     SUBDIR += interchange
     SUBDIR += ismail
+    SUBDIR += iwebcal
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat3
     SUBDIR += jakarta-tomcat4
