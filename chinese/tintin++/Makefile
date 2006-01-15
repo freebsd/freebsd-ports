@@ -13,4 +13,6 @@ MASTERDIR=	${.CURDIR}/../../net/tintin++-devel
 
 CONFIGURE_ARGS=	--enable-big5
 
+NO_LATEST_LINK=	yes
+
 .include "${MASTERDIR}/Makefile"
