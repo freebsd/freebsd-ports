@@ -32,6 +32,7 @@
     SUBDIR += bdc
     SUBDIR += beecrypt
     SUBDIR += bfbtester
+    SUBDIR += bioapi
     SUBDIR += bjorb
     SUBDIR += borzoi
     SUBDIR += botan
