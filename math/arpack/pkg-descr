@@ -19,6 +19,6 @@ of Schur basis vectors for the desired k-dimensional eigen-space is computed
 which is numerically orthogonal to working precision. Numerically accurate 
 eigenvectors are available on request.
 
-	WWW:	http://www.caam.rice.edu/ARPACK/
+WWW:	http://www.caam.rice.edu/software/ARPACK/
 
 NOTE: You MUST link with BLAS library or a replacement like ATLAS.
