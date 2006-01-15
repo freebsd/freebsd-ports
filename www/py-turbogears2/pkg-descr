@@ -1,0 +1,13 @@
+TurboGears brings together four major pieces to create an easy to install, easy
+to use web megaframework. It covers everything from front end (MochiKit
+JavaScript for the browser, Kid for templates in Python) to the controllers
+(CherryPy) to the back end (SQLObject).
+
+The TurboGears project is focused on providing documentation and integration
+with these tools without losing touch with the communities that already exist
+around those tools.
+
+TurboGears is easy to use for a wide range of web applications.
+
+Author:	Kevin Dangoor et alii
+WWW:	http://www.turbogears.org/

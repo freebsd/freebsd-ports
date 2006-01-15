@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+PKGNAME=$1
+#
+case $2 in
+    DEINSTALL)
+	for f in %%EGGS%%
+	do easy_install -x -m -D "%%PYTHON_SITELIBDIR%%/${f}"
+	done
+	;;
+    POST-DEINSTALL)
+	exit 0
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0
