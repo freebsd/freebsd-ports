@@ -738,6 +738,7 @@ bing		ports/net/bing
 binkd		ports/net/binkd
 bins		ports/www/bins
 bioapi		ports/security/bioapi
+bioapitool	ports/security/bioapitool
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
@@ -9238,6 +9239,7 @@ palmpower	ports/palm/palmpower
 pam-mysql	ports/security/pam-mysql
 pam-pgsql	ports/security/pam-pgsql
 pam_alreadyloggedin	ports/security/pam_alreadyloggedin
+pam_bsdbioapi	ports/security/pam_bsdbioapi
 pam_ldap	ports/security/pam_ldap
 pam_mkhomedir	ports/security/pam_mkhomedir
 pam_pgina	ports/security/pam_pgina
