@@ -7,8 +7,8 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.16
-PORTREVISION=	2
-CATEGORIES=	multimedia audio python
+PORTREVISION=	3
+CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
 MAINTAINER=	changbom.yoon@gmail.com
@@ -21,46 +21,57 @@ USE_PYTHON=	2.3+
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	gconf
 
 MAN1=		exfalso.1 quodlibet.1
 
-# Supported formats: ogg vorbis mad flac
-QUODLIBET_FORMATS?=	ogg vorbis mad flac
+# Supported formats: ogg vorbis mad flac remote
+QUODLIBET_FORMATS?=	ogg vorbis mad flac remote
 .for format in ${QUODLIBET_FORMATS}
 WANT_QUODLIBET_${format:U}=	yes
 .endfor
 
 .if defined(WANT_QUODLIBET_OGG)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 USE_GSTREAMER+=	ogg
 .endif
 
 .if defined(WANT_QUODLIBET_VORBIS)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 USE_GSTREAMER+=	vorbis
 .endif
 
 .if defined(WANT_QUODLIBET_MAD)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
+RUN_DEPNDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 USE_GSTREAMER+=	mad
 .endif
 
 .if defined(WANT_QUODLIBET_FLAC)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/flac/__init__.py:${PORTSDIR}/audio/py-flac
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/flac/__init__.py:${PORTSDIR}/audio/py-flac
 USE_GSTREAMER+=	flac
+.endif
+
+.if defined(WANT_QUODLIBET_REMOTE)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
+USE_GSTREAMER+=	gnomevfs
+.endif
+
+.if defined(WITH_EXTENSIONS)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
+PLIST_SUB+=	EXTENSIONS:=""
+.else
+PLIST_SUB+=	EXTENSIONS:="@comment "
 .endif
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
-
-.if defined(WITH_EXTENSIONS)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
-PLIST_SUB+=	EXTENSIONS:=""
-.else
-PLIST_SUB+=	EXTENSIONS:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
