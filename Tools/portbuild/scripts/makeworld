@@ -57,7 +57,7 @@ echo "==> Starting make buildworld"
 make buildworld $*
 error=$?
 if [ "$error" != "0" ]; then
-	exit $?
+	exit $error
 fi
 
 echo "==> Cleaning up chroot"
@@ -72,7 +72,7 @@ if [ "$client" = "0" ]; then
 	make installworld DESTDIR=/var/chroot
 	error=$?
 	if [ "$error" != "0" ]; then
-		exit $?
+		exit $error
 	fi
 
 	echo "==> Starting make distribute"
@@ -82,7 +82,7 @@ if [ "$client" = "0" ]; then
 	make distribute DISTRIBUTION=/var/chroot/
 	error=$?
 	if [ "$error" != "0" ]; then
-		exit $?
+		exit $error
 	fi
 else
 	echo "==> Not doing installworld of client source tree"
