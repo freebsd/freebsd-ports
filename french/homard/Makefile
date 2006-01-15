@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homard
-PORTVERSION=	7.1
-PORTREVISION=	2
+PORTVERSION=	7.7
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -35,13 +34,13 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	8.1
+ASTER_VER=	8.2
 vaster=		STA${ASTER_VER}
 ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
-AHPY5=		aster_homard_V5x_py
-AHPY6=		aster_homard_V6x_py
+AHPY5=		aster_homard_v5x_py
+AHPY6=		aster_homard_v6x_py
 HOMARDSCRIPT=	${WRKSRC}/${PORTNAME}_base
 # This name is requested to run aster's make test
 HOMARDPG=	${PORTNAME:U}_V${PORTVERSION}.out

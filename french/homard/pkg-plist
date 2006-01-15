@@ -50,9 +50,9 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%AHPY5%%/aster_homard_8.py
 %%AHPY5%%/aster_homard_8.pyc
 %%AHPY5%%/aster_homard_8.pyo
-%%AHPY5%%/aster_homard_V5x.py
-%%AHPY5%%/aster_homard_V5x.pyc
-%%AHPY5%%/aster_homard_V5x.pyo
+%%AHPY5%%/aster_homard_v5x.py
+%%AHPY5%%/aster_homard_v5x.pyc
+%%AHPY5%%/aster_homard_v5x.pyo
 %%AHPY5%%/aster_homard_utilitaires.py
 %%AHPY5%%/aster_homard_utilitaires.pyc
 %%AHPY5%%/aster_homard_utilitaires.pyo
@@ -74,9 +74,9 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 %%AHPY6%%/aster_homard_5.py
 %%AHPY6%%/aster_homard_5.pyc
 %%AHPY6%%/aster_homard_5.pyo
-%%AHPY6%%/aster_homard_V6x.py
-%%AHPY6%%/aster_homard_V6x.pyc
-%%AHPY6%%/aster_homard_V6x.pyo
+%%AHPY6%%/aster_homard_v6x.py
+%%AHPY6%%/aster_homard_v6x.pyc
+%%AHPY6%%/aster_homard_v6x.pyo
 %%AHPY6%%/aster_homard_utilitaires.py
 %%AHPY6%%/aster_homard_utilitaires.pyc
 %%AHPY6%%/aster_homard_utilitaires.pyo
