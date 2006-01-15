@@ -7,12 +7,15 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
+
+USE_RC_SUBR=	milter-dk.sh
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
@@ -59,8 +62,6 @@ post-install:
 	-${STRIP_CMD} ${PREFIX}/libexec/dk-filter
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
 		${PREFIX}/sbin/gentxt
-	${INSTALL_DATA} ${WRKDIR}/milter-dk.sh \
-		${PREFIX}/etc/rc.d/milter-dk.sh.sample
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
