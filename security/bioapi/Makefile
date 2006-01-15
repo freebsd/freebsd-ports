@@ -7,6 +7,7 @@
 
 PORTNAME=	bioapi
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.qrivy.net/~michael/blua/bioapi/ \
 		http://shapeshifter.se/pub/bioapi/
@@ -19,6 +20,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--localstatedir=/var/db/ --with-Qt-dir=no
 
 INSTALLS_SHLIB=	yes
+# @cwd in plist vs ldconfig workaround
+LDCONFIG_DIRS=	${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 
