@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -89,20 +89,16 @@
+@@ -90,23 +90,19 @@
  	$(CC) $(CFLAGS) -o $@ $(FT2NF_OBJ) $(FT_LDFLAGS) $(FT_LIBS)
  
  install: $(OBJECTS)
@@ -31,5 +31,10 @@ $FreeBSD$
 +	$(BSD_INSTALL_MAN) nfprofile.1 $(MANDIR)/man1
 +	$(BSD_INSTALL_MAN) nfreplay.1 $(MANDIR)/man1
  	if test -f ft2nfdump; then \
- 		$(INSTALL) -o root -g bin -m 755 ft2nfdump $(PREFIX)/bin;   \
- 		$(INSTALL) -o root -g bin -m 644 ft2nfdump.1 $(MANDIR)/man1;    \
+-		$(INSTALL) -o root -g bin -m 755 ft2nfdump $(PREFIX)/bin;   \
+-		$(INSTALL) -o root -g bin -m 644 ft2nfdump.1 $(MANDIR)/man1;    \
++		$(BSD_INSTALL_PROGRAM) ft2nfdump $(PREFIX)/bin;   \
++		$(BSD_INSTALL_MAN) ft2nfdump.1 $(MANDIR)/man1;    \
+ 	fi;
+ 
+ uninstall:
