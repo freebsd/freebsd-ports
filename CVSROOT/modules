@@ -9859,6 +9859,7 @@ pl-ispell	ports/polish/ispell
 pl-kadu		ports/polish/kadu
 pl-kde3-i18n	ports/polish/kde3-i18n
 pl-koffice-i18n	ports/polish/koffice-i18n
+pl-libgadu	ports/polish/libgadu
 pl-libtlen	ports/polish/libtlen
 pl-sap		ports/polish/sap
 pl-sms2		ports/polish/sms2
