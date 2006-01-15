@@ -337,6 +337,17 @@ AP_EXTRAS+=	-L ${AP_LIB}
 .endif
 
 .if defined(AP_PORT_IS_SERVER)
+.if !target(print-closest-mirrors)
+print-closest-mirrors:
+	@${ECHO_MSG} -n "Fetching list of nearest mirror: " >&2
+	@MIRRORS=`${FETCH_CMD} -T 30 -qo - http://www.apache.org/dyn/closer.cgi/httpd/ 2> /dev/null\
+	| ${GREP} /httpd/ | ${SED} 's/.*href="\(.*\)"><str.*/\1/g' | \
+	${HEAD} -7 | ${TAIL} -6` ; \
+	${ECHO_MSG} done >&2; if [ "x$$MIRRORS" != "x" ]; then \
+	${ECHO_MSG} -n "MASTER_SITE_APACHE_HTTPD?= ";\
+	${ECHO_MSG} $$MIRRORS; else \
+	${ECHO_MSG} "No mirrors found!">&2 ; fi
+.endif
 
 .if !target(show-categories)
 show-categories:

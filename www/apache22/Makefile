@@ -48,9 +48,11 @@ USE_PERL5=		yes
 USE_RC_SUBR=		yes
 USE_REINPLACE=		yes
 LIBTOOLFILES=		configure
+
 .if !defined(WITH_APR_FROM_PORTS)
 INSTALLS_SHLIB=		yes
 .endif
+
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
@@ -81,16 +83,11 @@ EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
 CONFIGURE_ARGS+=	--disable-ipv6
 .else
 CATEGORIES+=		ipv6
-.   if defined(WITH_IPV6_V6ONLY) && defined(WITHOUT_V4MAPPED)
+.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
 CONFIGURE_ARGS+=	--disable-v4-mapped
 .   else
 CONFIGURE_ARGS+=	--enable-v4-mapped
 .   endif
-.endif
-
-#backward compatibility
-.if defined(WITHOUT_SSL)
-WITHOUT_SSL_MODULES=	YES
 .endif
 
 .if !defined(WITHOUT_SSL_MODULES)
@@ -127,10 +124,9 @@ CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
-
-.include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
@@ -144,13 +140,18 @@ CONFLICTS+=	apr-1.*
 CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .endif
 
-WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//:S/-//}
-WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+.   if ${OSVERSION} > 500023
+CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
+			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.     if ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-nonportable-atomics
+.     endif
+.   endif
+.endif
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
-
-show-options:
-	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 pre-everything::
 	@${ECHO_MSG}	""
@@ -167,6 +168,9 @@ pre-everything::
 	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 
+show-options:
+	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
+
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/apr_dbd_mysql.c \
 		${WRKSRC}/srclib/apr-util/dbd
@@ -175,8 +179,6 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
-	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
-	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," \
