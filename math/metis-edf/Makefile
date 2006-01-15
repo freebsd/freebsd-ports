@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	metis-edf
-PORTVERSION=	4.0
+DISTVERSION=	4.0-2
 CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1.noarch
+DISTNAME=	${PORTNAME}-src-${DISTVERSION}.noarch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
@@ -24,7 +24,7 @@ REINPLACE_ARGS=	-i ""
 F77?=		f77
 FFLAGS?=	-O2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PROGS=		kmetis onmetis.exe pmetis
 
