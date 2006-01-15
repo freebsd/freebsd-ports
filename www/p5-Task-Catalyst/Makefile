@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	1.30
+PORTVERSION=	1.50
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -15,18 +15,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.58:${PORTSDIR}/www/p5-Catalyst \
-		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
-		p5-Catalyst-Plugin-FormValidator-Simple>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator-Simple \
-		p5-Catalyst-Plugin-FillInForm>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FillInForm \
+BUILD_DEPENDS=	p5-Catalyst>=5.61:${PORTSDIR}/www/p5-Catalyst \
+		p5-Catalyst-Log-Log4perl>=0:${PORTSDIR}/www/p5-Catalyst-Log-Log4perl \
+		p5-Catalyst-Plugin-HTML-Widget>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-HTML-Widget \
+		p5-Catalyst-Plugin-StackTrace>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-StackTrace \
 		p5-Catalyst-Plugin-Prototype>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Prototype \
 		p5-Catalyst-Plugin-Singleton>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Singleton \
 		p5-Catalyst-Plugin-DefaultEnd>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-DefaultEnd \
 		p5-Catalyst-Plugin-SubRequest>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-SubRequest \
 		p5-Catalyst-Plugin-Session>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
+		p5-Catalyst-Plugin-Session-Store-File>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-Store-File \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Catalyst-Plugin-Session-State-URI>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-URI \
-		p5-Catalyst-Plugin-Session-Store-File>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-Store-File \
+		p5-Catalyst-Plugin-Authentication>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
+		p5-Catalyst-Plugin-Authentication-Store-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication-Store-DBIC \
+		p5-Catalyst-Plugin-Authentication-Store-Htpasswd>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd \
+		p5-Catalyst-Plugin-Authorization-ACL>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-ACL \
+		p5-Catalyst-Plugin-Authorization-Roles>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Plugin-I18N>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
 		p5-Catalyst-Plugin-XMLRPC>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-XMLRPC \
 		p5-Catalyst-Plugin-Pluggable>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Pluggable \
@@ -41,6 +46,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Task::Catalyst.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,^features, .. m,^\);,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500800
