@@ -57,6 +57,7 @@
     SUBDIR += clamassassin
     SUBDIR += clamav
     SUBDIR += clamav-devel
+    SUBDIR += clamcour
     SUBDIR += clamsmtp
     SUBDIR += clusterssh
     SUBDIR += cmd5checkpw
