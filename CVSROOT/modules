@@ -2154,6 +2154,7 @@ evangeline	ports/irc/evangeline
 evas		ports/graphics/evas
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
+everygui	ports/deskutils/everygui
 evg		ports/www/evg
 evidence	ports/x11-fm/evidence
 evilfinder	ports/games/evilfinder
