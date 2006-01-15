@@ -71,7 +71,7 @@ libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client-ecore.pc
 libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
-%%DATADIR%%/dismantled-the_swarm_clip.ogg
+%%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
 @dirrm include/xmms2/xmms
 @dirrm include/xmms2/xmmsc
