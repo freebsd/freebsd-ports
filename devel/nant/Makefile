@@ -2,8 +2,8 @@
 # Date created:		2005-5-21
 # Whom:		Christopher Nehren <apeiron+ports@coitusmentis.info>
 #
-# $Id: Makefile,v 1.7 2005/07/10 22:29:48 mezz7 Exp $
 # $FreeBSD$
+#   $Id: Makefile,v 1.10 2006/01/11 03:54:20 tmclau02 Exp $
 #
 
 PORTNAME=	nant
@@ -43,4 +43,5 @@ post-install:
 	@${CHMOD} -R ugo-w,ugo+rX ${EXAMPLESDIR}
 .endif
 
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
