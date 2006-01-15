@@ -11704,6 +11704,7 @@ sisc		ports/lang/sisc
 sisctrl		ports/x11/sisctrl
 sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
+siteframe	ports/www/siteframe
 sitemapgen	ports/www/sitemapgen
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
