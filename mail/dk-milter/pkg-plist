@@ -1,4 +1,3 @@
-etc/rc.d/milter-dk.sh.sample
 libexec/dk-filter
 sbin/gentxt
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES
