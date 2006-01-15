@@ -63,6 +63,8 @@ STRIP=		# none
 INSTALLS_SHLIB=	yes
 MAN1=		${RUBY_NAME}.1
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS=	-j3
