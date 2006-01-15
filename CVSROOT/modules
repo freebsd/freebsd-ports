@@ -9851,7 +9851,6 @@ pkg_rmleaves	ports/sysutils/pkg_rmleaves
 pkg_trackinst	ports/sysutils/pkg_trackinst
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
-pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
@@ -10066,6 +10065,7 @@ ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
 ports_pkg_install	ports/sysutils/pkg_install
 ports_pkg_install-devel	ports/sysutils/pkg_install-devel
+ports_pkill	ports/sysutils/pkill
 ports_polish	ports/polish
 ports_portuguese	ports/portuguese
 ports_pr	ports/comms/pr
