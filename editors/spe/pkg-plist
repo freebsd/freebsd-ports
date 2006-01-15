@@ -24,6 +24,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/__init__.pyo
 %%PYTHON_SITELIBDIR%%/_spe/defaults.cfg
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.py
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.pyc
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/RunTerminalDialog.pyo
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/__init__.pyo
@@ -43,6 +46,7 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.pyo
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runDialog.wxg
+%%PYTHON_SITELIBDIR%%/_spe/dialogs/runTerminalDialog.wxg
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.py
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.pyc
 %%PYTHON_SITELIBDIR%%/_spe/dialogs/runWinPdbDialog.pyo
@@ -876,8 +880,10 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/index_char_win.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/locals.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/lookup.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/note.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/notes.png
+%%PYTHON_SITELIBDIR%%/_spe/skins/default/output.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/pychecker.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/recent.png
 %%PYTHON_SITELIBDIR%%/_spe/skins/default/redo.png
@@ -932,12 +938,12 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/NotebookCtrl.pyo
-%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/_NotebookCtrl.py
-%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/_NotebookCtrl.pyc
-%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/_NotebookCtrl.pyo
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/pil.py
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/pil.pyc
+%%PYTHON_SITELIBDIR%%/_spe/sm/wxp/pil.pyo
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/realtime.py
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/realtime.pyc
 %%PYTHON_SITELIBDIR%%/_spe/sm/wxp/realtime.pyo
@@ -984,6 +990,9 @@ bin/spe
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Notes.py
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Notes.pyc
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Notes.pyo
+%%PYTHON_SITELIBDIR%%/_spe/tabs/Output.py
+%%PYTHON_SITELIBDIR%%/_spe/tabs/Output.pyc
+%%PYTHON_SITELIBDIR%%/_spe/tabs/Output.pyo
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Recent.py
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Recent.pyc
 %%PYTHON_SITELIBDIR%%/_spe/tabs/Recent.pyo
