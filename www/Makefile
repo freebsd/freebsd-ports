@@ -781,6 +781,7 @@
     SUBDIR += py-nevow
     SUBDIR += py-pullparser
     SUBDIR += py-scgi
+    SUBDIR += py-turbogears
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
     SUBDIR += py-webware
