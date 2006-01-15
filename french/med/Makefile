@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	med
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	french cad converters
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}_fichier${PORTVERSION}.src
