@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aster
-PORTVERSION=	8.1.0
+DISTVERSION=	8.2.0-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
@@ -51,7 +51,7 @@ HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:R}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/${vaster}/outils
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITHOUT_ASTK_CLI)
@@ -163,7 +163,7 @@ RUN_DEPENDS+=	${X11BASE}/bin/xedit:${X_CLIENTS_PORT}
 . endif
 .endif
 
-vaster=		STA${PORTVERSION:S/.0//}
+vaster=		STA${PORTVERSION:R:R}
 INST_DAT=	LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
 		elements etude materiau
 INST_PY=	bibpyt commande
@@ -175,9 +175,10 @@ SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
 hdf_dir=	${LOCALBASE}
 .if defined(WITH_BLAS)
-lib_blas=	-lblas
+lib_blas=	blas
 .else
-lib_blas=	-lf77blas -latlas
+lib_blas=	f77blas
+lib_atlas=	atlas
 .endif
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
@@ -186,6 +187,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
 		-e 's|/usr/bin/gcc|${CC}|;s|/usr/bin/g77|${F77}|'	\
 		${WRKSRC}/setup.cfg
+.if !defined(WITH_BLAS)
+	@${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
+		${WRKSRC}/products.py
+.endif
 	@${ECHO_CMD} "_install_hdf5 = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_med = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_tcl = False"			>> ${WRKSRC}/setup.cfg
@@ -201,11 +206,16 @@ pre-configure:
 	@${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_SCOTCH = ''"				>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "LAPACKLIB='-llapack'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "ATLASLIB='${lib_atlas}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
@@ -224,8 +234,8 @@ do-configure:
 		| tee ${CONFIGURE_LOG})
 
 pre-build:
-	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf
-	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'	\
+	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf ${WRKSRC}/instdir/outils
+	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'		\
 		< ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/config		\
 		> ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf/config
 	${CP} ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/aster_profile.sh	\

@@ -1,12 +1,11 @@
---- products.py.orig	Thu Jun 30 09:38:46 2005
-+++ products.py	Fri Jul  1 23:22:35 2005
-@@ -781,6 +781,19 @@
+--- products.py.orig	Wed Jan  4 15:55:33 2006
++++ products.py	Fri Jan 13 00:06:44 2006
+@@ -866,6 +866,18 @@
        cxxlibs.extend(['stdc++', 'supc++'])
        zmat_platform='Linux4'
        mpilibs.extend(['mpich'])
 +   elif cfg['IFDEF']=='FREEBSD':
-+      opt['BLASLIB']    = cfg['BLASLIB']
-+      opt['LAPACKLIB']  = cfg['LAPACKLIB']
++      opt['MATH_LIST']  = [cfg['LAPACKLIB'], cfg['BLASLIB'], 'g2c']
 +      opt['SYSLIB']     = cfg['SYSLIB']
 +      opt['LDFLAGS']    = cfg['LDFLAGS']
 +      opt['CFLAGS_DBG'] = cfg['CFLAGS_DBG']
@@ -18,5 +17,5 @@
 +      zmat_platform=''
 +      mpilibs.extend(['mpich'])
     elif cfg['IFDEF']=='x86_64':
-       opt['BLASLIB']    = '-lblas'
-       opt['LAPACKLIB']  = '-llapack'
+       opt['MATH_LIST']  = ['lapack', 'blas', 'g2c']
+       opt['SYSLIB']     = '-Wl,--export-dynamic -lieee -ldl -lpthread -lutil -lm'
