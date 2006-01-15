@@ -12,8 +12,10 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to interact with a t/test_manifest file
+
+BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	YES
 
@@ -21,8 +23,10 @@ MAN3=		Test::Manifest.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		Requires perl 5.6.1 or above
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_="" if m{5.006}' ${WRKSRC}/Makefile.PL ${WRKSRC}/lib/Manifest.pm
+	${PERL} -pi -e 's/(my\( )?\$$fh( \))?/FH/' ${WRKSRC}/lib/Manifest.pm
 .endif
 
 .include <bsd.port.post.mk>
