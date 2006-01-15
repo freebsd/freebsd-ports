@@ -1147,43 +1147,6 @@ diff -p -u -b -r1.10 -r1.10.30.2
 +#endif
 +
  #endif /* SQUID_UTIL_H */
-Index: lib/Makefile.am
-===================================================================
-RCS file: /cvsroot/squid/squid/lib/Makefile.am,v
-retrieving revision 1.4
-retrieving revision 1.4.26.2
-diff -p -u -b -r1.4 -r1.4.26.2
---- lib/Makefile.am	21 Nov 2001 23:48:57 -0000	1.4
-+++ lib/Makefile.am	6 Apr 2004 13:04:38 -0000	1.4.26.2
-@@ -8,6 +8,19 @@ SNPRINTFSOURCE=snprintf.c
- else
- SNPRINTFSOURCE=
- endif
-+
-+if NEED_OWN_STRNSTR
-+STRNSTRSOURCE=strnstr.c
-+else
-+STRNSTRSOURCE=
-+endif
-+
-+if NEED_OWN_STRCASESTR
-+STRCASESTRSOURCE=strcasestr.c
-+else
-+STRCASESTRSOURCE=
-+endif
-+
- if NEED_OWN_MD5
- MD5SOURCE=md5.c
- else
-@@ -43,6 +56,8 @@ libmiscutil_a_SOURCES = \
- 	$(SNPRINTFSOURCE) \
- 	splay.c \
- 	Stack.c \
-+	$(STRNSTRSOURCE) \
-+	$(STRCASESTRSOURCE) \
- 	stub_memaccount.c \
- 	util.c \
- 	uudecode.c
 Index: lib/strcasestr.c
 ===================================================================
 RCS file: lib/strcasestr.c
