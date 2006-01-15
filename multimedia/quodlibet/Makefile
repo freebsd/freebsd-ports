@@ -80,6 +80,10 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 IGNORE=		is unsupported on FreeBSD 4.x
 .endif
 
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
+BROKEN=		"Does not configure"
+.endif
+
 do-configure:
 	@${PYTHON_CMD} ${WRKSRC}/check.py
 
