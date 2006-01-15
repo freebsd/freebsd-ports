@@ -1,0 +1,5 @@
+EveryGUI provides Chameleon, which is a dynamic GUI for virtually any tool
+or OS command, and Designer which is a visual environment for editing config
+files that determine Chameleon's different behaviors for each tool/command.
+
+WWW: http://everygui.sourceforge.net/

@@ -28,6 +28,7 @@
     SUBDIR += drivel
     SUBDIR += egroupware
     SUBDIR += etask
+    SUBDIR += everygui
     SUBDIR += evolution-jescs
     SUBDIR += freemind
     SUBDIR += fusenshi
