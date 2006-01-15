@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eficas
-PORTVERSION=	1.8.0
+DISTVERSION=	1.9.1-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-sansdoc-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
@@ -24,15 +23,13 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
-DISTNAME+=	${PORTNAME}-doc-${PORTVERSION}-1
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
 PLIST_SUB=	EFICASDIR=${LEFICASDIR} STAV=STA8
+SUB_FILES=	eficas
+SUB_LIST=	EFICASDIR=${EFICASDIR} PYTHON_CMD=${PYTHON_CMD}
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
 EF_LANG=	fr
@@ -42,12 +39,15 @@ EF_LANG=	ang
 
 ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 
-post-patch:
-	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig	\
-		${WRKSRC}/Editeur/bureau.py.orig
-	@${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
+post-extract:
+	@${MV} ${WRKSRC}/Aster/Doc ${WRKDIR}
 
 pre-configure:
+	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig	\
+		${WRKSRC}/Editeur/bureau.py.orig		\
+		${WRKSRC}/Editeur/change_comm.py.orig		\
+		${WRKSRC}/generator/generator_python.py.orig
+	@${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
 .for FILE in ${ENV2PYTHON}
 	@${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
 		-e "s|^#!*./bin/env python|#!${PYTHON_CMD}|" ${WRKSRC}/${FILE}
@@ -55,6 +55,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
 	@${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
+		-e "s#os.path.join(prefs.REPINI,'../Pmw')#'${PYTHON_SITELIBDIR}/Pmw'#"	\
 		${WRKSRC}/Aster/editeur.ini
 
 do-install:
@@ -62,9 +63,6 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${EFICASDIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
-	@${SED} -e "s#%%EFICASDIR%%#${EFICASDIR}#"	\
-		-e "s#%%PYTHON_CMD%%#${PYTHON_CMD}#"	\
-		< ${FILESDIR}/eficas > ${WRKDIR}/eficas
 	@${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
