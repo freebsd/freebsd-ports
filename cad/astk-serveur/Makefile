@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.2.4
+DISTVERSION=	1.3.0-1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-full-src-${ASTER_VER}-1
+DISTNAME=	${PORTNAME}-${DISTVERSION}.noarch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -41,14 +41,12 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-EXTDIR=		${WRKDIR}/aster-src-${ASTER_VER}/SRC
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
-S_SCRIPTS=	bin/as_actu bin/as_del bin/as_edit bin/as_exec bin/as_info	\
-		bin/as_serv bin/as_tail bin/tool_stanley lib/sub_script
-S_PYLIBS=	as_config.py as_system.py
+S_SCRIPTS=	bin/as_exec bin/as_run bin/as_serv bin/tool_stanley lib/sub_script
+S_PYLIBS=	alamain.py as_timer.py
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${aster_dir}/outils
 conf_dir=	${WRKSRC}/lib/ASTK/astkrc
@@ -56,14 +54,14 @@ conf_dir=	${WRKSRC}/lib/ASTK/astkrc
 .include <bsd.port.pre.mk>
 
 .if !defined(CLIENT_SEUL)
-WRKSRC=		${EXTDIR}/astk-${PORTVERSION}/ASTK_SERV
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
 .else
-RUN_DEPENDS+=	xterm:${X_CLIENTS_PORT}	\
+RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-WRKSRC=		${EXTDIR}/astk-${PORTVERSION}/ASTK_CLIENT
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
 		BWidget_DIR=${LINSTDIR}/ASTK_CLIENT/share/BWidget-${BWidget_VER}
@@ -77,8 +75,8 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	8.1.0
-vaster=		STA${ASTER_VER:S/.0//}
+ASTER_VER=	8.2.0
+vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2000
 
@@ -142,15 +140,12 @@ ASTK_LANG=	FR
 ASTK_LANG=	ENG
 .endif
 
-post-extract:
-	@(cd ${EXTDIR} && \
-	${TAR} xfz ${EXTDIR}/astk-${PORTVERSION}-1.noarch.tar.gz)
-
 post-patch:
 .if !defined(CLIENT_SEUL)
-	@${RM} ${WRKSRC}/conf/config.orig ${WRKSRC}/bin/as_exec.orig			\
-		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig		\
-		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/lib/as_system.py.orig
+	@${RM} ${WRKSRC}/conf/config.orig ${WRKSRC}/bin/as_exec.orig		\
+		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig	\
+		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/lib/as_system.py.orig	\
+		${WRKSRC}/conf/aster_profile.sh.orig
 .else
 	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig	${WRKSRC}/lib/ASTK/astkrc/outils.orig	\
 		${WRKSRC}/share/tkselecteur.tcl.orig
@@ -177,7 +172,8 @@ do-configure:
 	-e "s#LOCALBASE#${LOCALBASE}#"						\
 	-e "s#%%v_ifdef%%#${v_ifdef}#" ${WRKSRC}/conf/config
 .for libs in ${S_PYLIBS}
-	@${REINPLACE_CMD} -e "s#/opt/aster/NEW7#${aster_dir}#" ${WRKSRC}/lib/${libs}
+	@${REINPLACE_CMD} -e "s#/opt/aster/NEW8#${aster_dir}#"			\
+		-e "s#/opt/aster/ASTK#${inst_dir}#" ${WRKSRC}/lib/${libs}
 . endfor
 . if defined(WITH_PBS)
 	@${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
