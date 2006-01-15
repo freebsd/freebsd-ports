@@ -737,6 +737,7 @@ bindtest	ports/net/bindtest
 bing		ports/net/bing
 binkd		ports/net/binkd
 bins		ports/www/bins
+bioapi		ports/security/bioapi
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
