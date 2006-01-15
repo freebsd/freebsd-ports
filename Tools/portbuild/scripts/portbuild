@@ -11,8 +11,7 @@ mount_fs()
     if [ ${disconnected} = 1 ]; then
 	mount -t nullfs -r ${fs} ${mntpt}
     else
-	#mount -o nfsv3,intr -r ${master}:${fs} ${mntpt}
-	mount_nfs -3 -r 8192 -w 8192 -i ${master}:${fs} ${mntpt}
+	mount -o nfsv3,intr -r ${master}:${fs} ${mntpt}
     fi
 }
 
@@ -85,9 +84,7 @@ cleanup()
   cleanup_mount ${chroot} /a/ports
   cleanup_mount ${chroot} /usr/opt/doc
   cleanup_mount ${chroot} /usr/src
-  if [ "${arch}" != "i386" || "${branch}" != "4" ]; then
-    cleanup_mount ${chroot} /dev
-  fi
+  cleanup_mount ${chroot} /dev
   test -d ${chroot}/root/.ccache && cleanup_mount ${chroot} /root/.ccache
 
   if [ $noclean = 0 -o $error = 0 ]; then
@@ -227,19 +224,22 @@ if [ -f ${chroot}/.notready ]; then
   if [ "${branch}" = "4" -o "${branch}" = "4-exp" ]; then
     mkdir -p ${chroot}/libexec
     mkdir -p ${chroot}/lib
-  fi
-  if [ "${branch}" != "4foo" ]; then
-    cp -p /sbin/mount_linprocfs /sbin/mount /sbin/umount ${chroot}/sbin
-    cp -p /lib/libufs.so.3 ${chroot}/lib
-    cp -p /rescue/ps ${chroot}/bin
-    #cp -p /bin/ps ${chroot}/bin
-    cp -p /usr/bin/killall ${chroot}/usr/bin
-    cp -p /libexec/ld-elf.so.1 ${chroot}/libexec
-    cp -p /lib/libkvm.so.3 /lib/libm.so.4 ${chroot}/lib
-    if [ "${branch}" != "6" -a "${branch}" != "7" ]; then
-      cp -p /lib/libc.so.6 ${chroot}/lib
+    if [ "${arch}" = "i386" ]; then
+      cp -p /sbin/mount_linprocfs /sbin/mount /sbin/umount ${chroot}/sbin
+      cp -p /lib/libufs.so.2 ${chroot}/lib
     fi
+    cp -p /libexec/ld-elf.so.1 ${chroot}/libexec
+    cp -p /lib/libkvm.so.2 /lib/libm.so.3 ${chroot}/lib
+    if [ -f /lib/libc.so.6 ]; then
+      cp -p /lib/libc.so.6 ${chroot}/lib
+    else
+      cp -p /lib/libc.so.5 ${chroot}/lib
+    fi
+  elif [ "${branch}" = "6" ]; then
+    cp -p /lib/libc.so.5 ${chroot}/lib
   fi
+  cp -p /rescue/ps ${chroot}/bin
+  cp -p /usr/bin/killall ${chroot}/usr/bin
   rm ${chroot}/.notready
   touch ${chroot}/.ready
 fi
@@ -286,9 +286,7 @@ mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 mount_fs ${pb}/${arch}/${branch}/src ${chroot}/usr/src ${master}
 mount_fs ${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc ${master}
 
-if [ "${arch}" != "i386" -o "${branch}" != "4foo" ]; then
-	mount -t devfs foo ${chroot}/dev
-fi
+mount -t devfs foo ${chroot}/dev
 
 umount -f ${chroot}/compat/linux/proc > /dev/null 2>&1
 
