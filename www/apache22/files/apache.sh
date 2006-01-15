@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.11 2006-01-14 16:03:43 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.12 2006-01-15 01:11:11 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -49,6 +49,7 @@ required_files=%%PREFIX%%/etc/apache22/httpd.conf
 [ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"
 
 apache22_accf() {
+	retcode=0
 	if checkyesno apache22_http_accept_enable
 	then
 		/sbin/kldstat | grep accf_http 2>&1 > /dev/null
