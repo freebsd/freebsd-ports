@@ -270,6 +270,7 @@
     SUBDIR += surf
     SUBDIR += tablix
     SUBDIR += taucs
+    SUBDIR += tetgen
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle

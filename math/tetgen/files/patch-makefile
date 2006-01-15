@@ -1,0 +1,25 @@
+--- makefile.orig	Mon Jan  9 11:33:37 2006
++++ makefile	Mon Jan  9 11:35:33 2006
+@@ -6,7 +6,7 @@
+ 
+ # CC should be set to the name of your favorite C++ compiler.
+ 
+-CC = g++
++CC = $(CXX)
+ 
+ # OPT is the level of optimiztion, default is -O. One should try -O2, -O3
+ #   ... to find the best optimization level.
+@@ -23,11 +23,11 @@
+ #   down the speed of TetGen.  They can be skipped by define the -DNDEBUG
+ #   switch.
+ 
+-CFLAGS = 
++CFLAGS ?= $(CXXFLAGS)  
+ 
+ # RM should be set to the name of your favorite rm (file deletion program).
+ 
+-RM = /bin/rm
++RM ?= /bin/rm
+ 
+ # The action starts here.
+ 
