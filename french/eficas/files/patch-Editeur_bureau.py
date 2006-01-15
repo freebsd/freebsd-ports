@@ -1,11 +1,6 @@
---- Editeur/bureau.py.orig	Fri Dec 10 14:07:17 2004
-+++ Editeur/bureau.py	Wed Apr 27 23:11:46 2005
-@@ -565,11 +565,11 @@
-           commande = self.appli.CONFIGURATION.exec_acrobat
-           nom_fichier = cle_doc+".pdf"
-           rep_fichier = cle_doc[0:2]
--          fichier = os.path.abspath(os.path.join(self.appli.CONFIGURATION.path_doc,rep_fichier,nom_fichier))
-+          fichier = os.path.abspath(os.path.join(self.appli.CONFIGURATION.path_doc,nom_fichier))
+--- Editeur/bureau.py.orig	Tue Jan  3 18:02:45 2006
++++ Editeur/bureau.py	Mon Jan  9 22:26:41 2006
+@@ -638,7 +638,7 @@
            if os.name == 'nt':
                os.spawnv(os.P_NOWAIT,commande,(commande,fichier,))
            elif os.name == 'posix':
