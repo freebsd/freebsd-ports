@@ -4,6 +4,7 @@ bin/cactid
 @exec [ -f %D/etc/cactid.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/cactid.conf
 include/cactid/cactid.h
 include/cactid/common.h
+include/cactid/keywords.h
 include/cactid/locks.h
 include/cactid/nft_popen.h
 include/cactid/php.h
