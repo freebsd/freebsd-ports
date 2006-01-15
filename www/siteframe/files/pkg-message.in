@@ -1,0 +1,25 @@
+
+      ============================================================
+      Siteframe has been installed in %%DIR%%
+
+      You will need to manually configure your siteframe.ini file;
+      see the README.txt file in the installation directory for
+      complete details, or check http://siteframe.org for further
+      installation instructions.
+
+      SOME NOTES:
+      - You will want to copy _htaccess to .htaccess to ensure
+        the security of your system as well as to enable clean
+        URLs.
+      - If you are upgrading an existing installation, remember to
+	run the "Update database" command from the Administrator
+	menu.
+
+      Please send comments or bug reporrts to
+        feedback@siteframe.org.
+
+      You can access our bugzilla at:
+        http://bugs.broadpool.com
+      ============================================================
+
+

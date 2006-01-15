@@ -839,6 +839,7 @@
     SUBDIR += simplog
     SUBDIR += sitebar
     SUBDIR += sitecopy
+    SUBDIR += siteframe
     SUBDIR += sitemapgen
     SUBDIR += skytemplate
     SUBDIR += slash
