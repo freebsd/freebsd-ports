@@ -12,6 +12,7 @@
     SUBDIR += kadu
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
+    SUBDIR += libgadu
     SUBDIR += libtlen
     SUBDIR += php_doc
     SUBDIR += sap
