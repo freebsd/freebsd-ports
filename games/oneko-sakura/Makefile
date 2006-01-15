@@ -20,6 +20,8 @@ MAN6=		oneko.6
 PLIST_FILES=	bin/oneko
 NO_CDROM=	"Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp-net.com/ -> INFORMATION"
 
+NO_LATEST_LINK=	yes
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/\*\*/# Cannot compile in using Gcc,/* Cannot compile using Gcc */,' \
 		${WRKSRC}/Imakefile
