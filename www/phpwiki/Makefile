@@ -33,6 +33,8 @@ DOCFILES=	CREDITS ChangeLog DBLIB.txt HISTORY INSTALL \
 		INSTALL.mysql INSTALL.pgsql LICENSE README \
 		UPGRADING.readme
 
+NO_LATEST_LINK=	yes
+
 do-configure:
 .for i in ${USERFILES}
 	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}-dist
