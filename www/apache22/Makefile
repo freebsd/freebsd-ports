@@ -127,10 +127,10 @@ CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
-.include "${APACHEDIR}/Makefile.doc"
-.include "${APACHEDIR}/Makefile.modules"
 
 .include <bsd.port.pre.mk>
+.include "${APACHEDIR}/Makefile.doc"
+.include "${APACHEDIR}/Makefile.modules"
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
