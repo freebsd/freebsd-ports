@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xmms2
-DISTVERSION=	0.2DrAlban
+PORTVERSION=	0.2.d.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${DISTVERSION}
+DISTNAME=	${PORTNAME}-0.2DrBombay
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Rewrite of xmms as a client/server system (developer release)
