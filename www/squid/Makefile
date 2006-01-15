@@ -73,7 +73,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -86,7 +86,9 @@ DISTNAME=	squid-2.5.STABLE12
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE12-SMB_BadFetch.patch
+PATCHFILES=	squid-2.5.STABLE12-SMB_BadFetch.patch \
+		squid-2.5.STABLE12-wbinfo_group.patch \
+		squid-2.5.STABLE12-asyncio_counters.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
