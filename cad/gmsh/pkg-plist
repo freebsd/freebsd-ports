@@ -20,6 +20,7 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/anim.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.i1
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/cone.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/cube.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/encode.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
