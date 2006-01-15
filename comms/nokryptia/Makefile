@@ -8,9 +8,10 @@
 PORTNAME=	nokryptia
 PORTVERSION=	1.3
 CATEGORIES=	comms
-MASTER_SITES=	http://tuxmobil.org/software/nokryptia/
+MASTER_SITES=	http://tuxmobil.org/software/nokryptia/ \
+		http://www.bsdguru.org/distfiles/
 
-MAINTAINER=	alex@fafula.com
+MAINTAINER=	alex@bsdguru.org
 COMMENT=	A tool for fast loading mp3s into Nokia 5510
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib
