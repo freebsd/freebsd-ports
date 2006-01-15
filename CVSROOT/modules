@@ -1160,6 +1160,7 @@ cl-uffi-sbcl	ports/devel/cl-uffi-sbcl
 clamassassin	ports/security/clamassassin
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
+clamcour	ports/security/clamcour
 clamfilter	ports/mail/clamfilter
 clamsmtp	ports/security/clamsmtp
 clanbomber	ports/games/clanbomber
