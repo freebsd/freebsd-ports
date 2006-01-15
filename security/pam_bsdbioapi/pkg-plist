@@ -1,0 +1,3 @@
+lib/libpam_bsdbioapi.a
+lib/libpam_bsdbioapi_p.a
+lib/pam_bsdbioapi.so

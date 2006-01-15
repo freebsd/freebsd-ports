@@ -1,0 +1,4 @@
+The (BSD) BioAPI service module for PAM provides authentication management
+through BioAPI BSPs.
+
+WWW: http://shapeshifter.se/code/pam_bsdbioapi
