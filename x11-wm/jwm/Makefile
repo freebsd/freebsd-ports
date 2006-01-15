@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	jwm
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/ \
-		http//bsdgeek.no-ip.org/jwm/
+		http://bsdgeek.no-ip.org/jwm/
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Joe's Window Manager
