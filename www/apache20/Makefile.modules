@@ -92,19 +92,6 @@ IGNORE=		"Unknown DBM"
 CONFIGURE_ARGS+=	--with-dbm=sdbm
 .endif
 
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-.   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
-CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
-			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
-.     if ${ARCH} == i386
-CONFIGURE_ARGS+=	--enable-nonportable-atomics
-.     endif
-.  else
-CFLAGS+=		-DFREEBSD_THREAD_HACK
-.   endif
-.endif
-
 .if !defined(WITHOUT_SSL)
 WITH_SSL_MODULES=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}

@@ -57,6 +57,7 @@ USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
 USE_RC_SUBR=		yes
 USE_REINPLACE=		yes
+USE_APACHE=		common20
 LIBTOOLFILES=		configure
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		${PREFIX}/lib/apache2
@@ -89,7 +90,7 @@ WITH_HTTP_PORT?=	80
 CONFIGURE_ARGS+=	--disable-ipv6
 .else
 CATEGORIES+=		ipv6
-.   if defined(WITH_IPV6_V6ONLY) && defined(WITHOUT_V4MAPPED)
+.   if defined(WITH_IPV6_V6ONLY) || defined(WITHOUT_V4MAPPED)
 CONFIGURE_ARGS+=	--disable-v4-mapped
 .   else
 CONFIGURE_ARGS+=	--enable-v4-mapped
@@ -139,45 +140,31 @@ CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
+.include "${APACHEDIR}/Makefile.doc"
+.include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libapr-0.so) || defined(WITH_APR_FROM_PORTS)
 IGNORE=	: apr from ports (WITH_APR_FROM_PORTS) is no longer supported
 .endif
 
-WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//:S/-//}
-WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
-
-.include "${APACHEDIR}/Makefile.doc"
-.include "${APACHEDIR}/Makefile.modules"
-WANT_APACHE=	common2
-.include "${APACHEDIR}/Makefile.modules.3rd"
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+.   if ${OSVERSION} > 500023
+CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
+			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.     if ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-nonportable-atomics
+.     endif
+.  else
+CFLAGS+=		-DFREEBSD_THREAD_HACK
+.   endif
+.endif
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
 show-options:
 	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
-
-show-categories:
-.for category in ${ALL_MODULES_CATEGORIES}
-	@${ECHO_MSG} "${category} contains these modules:"
-	@${ECHO_MSG} "  ${${category}_MODULES}"
-.endfor
-
-show-modules:
-	@for module in ${AVAILABLE_MODULES} ; do \
-	${ECHO_MSG} -n "$${module}: ";\
-	if ${ECHO_CMD} ${APACHE_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
-			${ECHO_CMD} -n "enabled "; \
-				if ${ECHO_CMD} ${WITH_STATIC_MODULES} | ${GREP} -wq $${module} 2> /dev/null ; then \
-					${ECHO_CMD} "(static)" ; \
-				else \
-					${ECHO_CMD} "(shared)" ;\
-				fi;\
-			else\
-			${ECHO_CMD} disabled ;\
-		fi;\
-	done
 
 pre-everything::
 	@${ECHO_MSG}	""

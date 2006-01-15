@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache21/files/Attic/apache.sh,v 1.8 2005-01-11 13:45:05 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache21/files/Attic/apache.sh,v 1.9 2006-01-15 18:58:38 clement Exp $
 #
 
 # PROVIDE: apache21
 # REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: FreeBSD shutdown
 
 #
