@@ -6,6 +6,7 @@
 
 PORTNAME=	activerecord
 PORTVERSION=	1.13.2
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 
 MAINTAINER=	jw@innerewut.de
