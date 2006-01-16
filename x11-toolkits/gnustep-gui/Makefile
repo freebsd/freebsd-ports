@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -52,6 +53,13 @@ PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif 
 .endif 
+
+.if !defined(WITHOUT_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+PLIST_SUB+=	WITH_CUPS=""
+.else
+PLIST_SUB+=	WITH_CUPS="@comment "
+.endif
 
 pre-configure:
 .for file in config.guess config.sub install-sh
