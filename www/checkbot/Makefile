@@ -8,7 +8,7 @@
 PORTNAME=	checkbot
 PORTVERSION=	1.77
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_SOUREFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://degraaff.org/checkbot/ \
 		http://wolfram.schneider.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
