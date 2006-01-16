@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.250
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -23,8 +23,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=    yes
+USE_RC_SUBR=    webmin.sh
 USE_REINPLACE=	yes
+SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=	acl-1.250-2.wbm.gz
 
@@ -62,11 +63,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
-	@${SED} -e "s=%%RC_SUBR%%=${RC_SUBR}=" \
-		-e "s=%%PREFIX%%=${PREFIX}=" \
-		-e "s=%%PERL5%%=${PERL}=" \
-		< ${FILESDIR}/webmin.sh.sample > ${PREFIX}/etc/rc.d/webmin.sh
-	@${CHMOD} 555 ${PREFIX}/etc/rc.d/webmin.sh
 
 post-install:
 	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
