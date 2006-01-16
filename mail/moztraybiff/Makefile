@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moztraybiff
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://mozdev.oregonstate.edu/moztraybiff/
 DISTNAME=	mozTrayBiff-${PORTVERSION}
@@ -30,7 +30,7 @@ USE_GNOME=	libgnome
 USE_REINPLACE=	yes
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER}
 
-FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb${TBVER}.xpi
+FILENAME=	mozTrayBiff-${PORTVERSION}-tb${TBVER}.xpi
 PLIST_FILES=	share/${PORTNAME}/${FILENAME}
 PLIST_DIRS=	share/${PORTNAME}
 
@@ -44,6 +44,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-fshort-wchar||" \
 		${WRKSRC}/components/Makefile
 .endif
+	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!/bin/sh|" \
+		${WRKSRC}/get-platform
 
 do-install:
 	@${MKDIR} ${DATADIR}
