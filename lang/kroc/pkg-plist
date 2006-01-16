@@ -1,0 +1,116 @@
+@comment $FreeBSD$
+bin/cputimerutil
+bin/ilibr
+bin/kmakef
+bin/kroc
+bin/mkoccdeps
+bin/occ21
+bin/tranx86
+etc/kroc.conf
+etc/kroc_clock
+include/kroc/cifccsp.h
+include/kroc/dmem_if.h
+include/kroc/mobproc.h
+include/kroc/spunixhdr.h
+include/kroc/typedesc.h
+include/kroc/udc.h
+lib/kroc/libcif.so
+lib/kroc/libconvert.so
+lib/kroc/libcourse.so
+lib/kroc/libcspdrv.so
+lib/kroc/libdblmath.so
+lib/kroc/libfile.so
+lib/kroc/libhostio.so
+lib/kroc/libhostsp.so
+lib/kroc/libhttp.so
+lib/kroc/libkroc.so
+lib/kroc/liboccam8.so
+lib/kroc/liboccamutl.so
+lib/kroc/libproc.so
+lib/kroc/libsdlraster.so
+lib/kroc/libsnglmath.so
+lib/kroc/libsock.so
+lib/kroc/libss.so
+lib/kroc/libstream.so
+lib/kroc/libstring.so
+lib/kroc/libudc.so
+%%DATADIR%%/vtinclude/barrier.inc
+%%DATADIR%%/vtinclude/bucket.inc
+%%DATADIR%%/vtinclude/cifccsp.inc
+%%DATADIR%%/vtinclude/consts.inc
+%%DATADIR%%/vtinclude/crew.inc
+%%DATADIR%%/vtinclude/cspdrvlib.inc
+%%DATADIR%%/vtinclude/filelib.inc
+%%DATADIR%%/vtinclude/hostio.inc
+%%DATADIR%%/vtinclude/httplib.inc
+%%DATADIR%%/vtinclude/mathhdr.inc
+%%DATADIR%%/vtinclude/mathvals.inc
+%%DATADIR%%/vtinclude/proclib.inc
+%%DATADIR%%/vtinclude/sdlraster.inc
+%%DATADIR%%/vtinclude/semaphore.inc
+%%DATADIR%%/vtinclude/shared_screen.inc
+%%DATADIR%%/vtinclude/socklib.inc
+%%DATADIR%%/vtinclude/udc.inc
+%%DATADIR%%/vtlib/convert.lib
+%%DATADIR%%/vtlib/course.lib
+%%DATADIR%%/vtlib/cspdrv.lib
+%%DATADIR%%/vtlib/dblmath.lib
+%%DATADIR%%/vtlib/file.lib
+%%DATADIR%%/vtlib/hostio.lib
+%%DATADIR%%/vtlib/hostsp.lib
+%%DATADIR%%/vtlib/http.lib
+%%DATADIR%%/vtlib/occam8.lib
+%%DATADIR%%/vtlib/occamutl.lib
+%%DATADIR%%/vtlib/proc.lib
+%%DATADIR%%/vtlib/sdlraster.lib
+%%DATADIR%%/vtlib/snglmath.lib
+%%DATADIR%%/vtlib/sock.lib
+%%DATADIR%%/vtlib/ss.lib
+%%DATADIR%%/vtlib/stream.lib
+%%DATADIR%%/vtlib/string.lib
+%%DATADIR%%/vtlib/udc.lib
+%%PORTDOCS%%%%DATADIR%%/doc/html/kroc-faq.html
+%%PORTDOCS%%%%DATADIR%%/doc/html/occ21-extensions.html
+%%PORTDOCS%%%%DATADIR%%/doc/html/udo.html
+%%PORTDOCS%%%%DATADIR%%/doc/lib/blackboard.inc
+%%PORTDOCS%%%%DATADIR%%/doc/lib/college.lbb
+%%PORTDOCS%%%%DATADIR%%/doc/lib/control_info.inc
+%%PORTDOCS%%%%DATADIR%%/doc/lib/controller.occ
+%%PORTDOCS%%%%DATADIR%%/doc/lib/crew_test.occ
+%%PORTDOCS%%%%DATADIR%%/doc/lib/display.inc
+%%PORTDOCS%%%%DATADIR%%/doc/lib/display.occ
+%%PORTDOCS%%%%DATADIR%%/doc/lib/philosopher.occ
+%%PORTDOCS%%%%DATADIR%%/doc/lib/timekeeper.occ
+%%PORTDOCS%%%%DATADIR%%/doc/ps/blocking-native.ps
+%%PORTDOCS%%%%DATADIR%%/doc/ps/bsclib.ps
+%%PORTDOCS%%%%DATADIR%%/doc/ps/native-call.ps
+%%PORTDOCS%%%%DATADIR%%/doc/ps/o2cl.ps
+%%PORTDOCS%%%%DATADIR%%/doc/ps/udc.ps
+%%PORTDOCS%%%%DATADIR%%/doc/ps/udo.ps
+%%PORTDOCS%%%%DATADIR%%/doc/sc/blackboard.inc
+%%PORTDOCS%%%%DATADIR%%/doc/sc/control_info.inc
+%%PORTDOCS%%%%DATADIR%%/doc/sc/controller.occ
+%%PORTDOCS%%%%DATADIR%%/doc/sc/crew_test.occ
+%%PORTDOCS%%%%DATADIR%%/doc/sc/display.inc
+%%PORTDOCS%%%%DATADIR%%/doc/sc/display.occ
+%%PORTDOCS%%%%DATADIR%%/doc/sc/philosopher.occ
+%%PORTDOCS%%%%DATADIR%%/doc/sc/timekeeper.occ
+%%PORTDOCS%%%%DATADIR%%/doc/txt/AUTHORS
+%%PORTDOCS%%%%DATADIR%%/doc/txt/OLD-AUTHORS
+%%PORTDOCS%%%%DATADIR%%/doc/txt/about-kroc.txt
+%%PORTDOCS%%%%DATADIR%%/doc/txt/essentially-kroc.txt
+%%PORTDOCS%%%%DATADIR%%/doc/txt/hlps.txt
+%%PORTDOCS%%%%DATADIR%%/doc/txt/hostio.txt
+%%PORTDOCS%%%%DATADIR%%/doc/txt/o2cl.txt
+%%PORTDOCS%%%%DATADIR%%/doc/txt/pragma.txt
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/txt 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/sc 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/ps 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/lib 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/html 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/vtlib 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/vtinclude 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@unexec rmdir %D/lib/kroc 2>/dev/null || true
+@unexec rmdir %D/include/kroc 2>/dev/null || true

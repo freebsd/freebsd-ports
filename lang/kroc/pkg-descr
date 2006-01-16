@@ -1,0 +1,13 @@
+KRoC, the Kent Retargettable occam-pi Compiler, is a collection
+of programs/libraries which facilitates the execution of occam-pi
+programs on various platforms. The main components are:
+
+ * occ21, the Inmos occam compiler
+ * tranx86, a translator from extended transputer code (ETC) to
+   intel i386 object code
+ * CCSP, the run-time kernel, providing the virtual transputer
+
+As well as these are various libraries, example programs, fun
+animations, etc.
+
+WWW: http://www.cs.kent.ac.uk/projects/ofa/kroc/
