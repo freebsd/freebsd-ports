@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--enable-hcache --without-qdbm
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 .elif defined (WITH_HCACHE_QDBM)
 CONFIGURE_ARGS+=	--enable-hcache
-LIB_DEPENDS+=		qdbm.11:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=		qdbm.12:${PORTSDIR}/databases/qdbm
 .endif
 
 .if defined (WITH_FLOCK)
