@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.15
-PORTREVISION=	0
+PORTVERSION=	1.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WordNet
@@ -20,8 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet
 		${SITE_PERL}/Text/OverlapFinder.pm:${PORTSDIR}/textproc/p5-Text-Similarity
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WNHOME?=	${LOCALBASE}/share/WordNet-2.0
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WNHOME?=	${LOCALBASE}/share/WordNet
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
@@ -52,7 +50,7 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
-		'/wnUnixPath/s|/usr/local/WordNet-2.0|${WNHOME}|; \
+		'/wnUnixPath/s|/usr/local/WordNet-2.1|${WNHOME}|; \
 		 /wnUnixPath/s|."/dict"||' ${WRKSRC}/Makefile.PL
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|; \
@@ -61,7 +59,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
