@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crip
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	audio
 MASTER_SITES=	http://bach.dynet.com/crip/src/
 
