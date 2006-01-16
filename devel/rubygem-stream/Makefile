@@ -7,6 +7,7 @@
 
 PORTNAME=	stream
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.galgenberg.net/~q/
 
