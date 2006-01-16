@@ -56,7 +56,7 @@ post-install:
 
 .else
 
-LIB_DEPENDS+=	qdbm.11:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	qdbm.12:${PORTSDIR}/databases/qdbm
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
