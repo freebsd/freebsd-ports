@@ -7,6 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/0.90/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
