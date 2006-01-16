@@ -124,6 +124,7 @@
     SUBDIR += fnlib
     SUBDIR += fracplanet
     SUBDIR += fraqtive
+    SUBDIR += freeglut
     SUBDIR += freeimage
     SUBDIR += frontline
     SUBDIR += ftgl
