@@ -9,6 +9,7 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -40,8 +41,6 @@ USE_RC_SUBR=		yes
 RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} WWWOWN=${WWWOWN}
 MAKE_ENV+=		EXAMPLESDIR=${EXAMPLESDIR}
 USE_APACHE=		common13
-
-.include "${.CURDIR}/Makefile.modules"
 
 MASTER_SITES_APACHE_SSL= \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
@@ -84,16 +83,16 @@ CONFIGURE_ENV+=	OPTIM='${OPTIM}'
 CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
 
 .if defined(WITH_SUEXEC)
-SUEXEC_MAN=	suexec.8
+MAN8=		suexec.8
 PLIST_SUB+=	SUB_SUEXEC=""
 .else
 PLIST_SUB+=	SUB_SUEXEC="@comment "
 .endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8 \
-		${SUEXEC_MAN}
+MAN8+=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
 
+.include "${.CURDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
 
 post-extract:
