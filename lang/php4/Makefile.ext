@@ -457,6 +457,11 @@ pre-configure:
 	/usr/bin/ar rcs liboracle.a *.o
 .endif
 
+.if ${PHP_MODNAME} == "pcre"
+post-extract:
+	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
+.endif
+
 .if ${PHP_MODNAME} == "snmp"
 .	if defined(WITH_SNMP4) || exists(${LOCALBASE}/lib/libsnmp.so.4)
 LIB_DEPENDS+=   snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
