@@ -26,12 +26,13 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		libbonobo ltverhack
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
