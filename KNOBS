@@ -60,6 +60,7 @@ MAD			Mad MP3 audio decoder support
 MATROSKA		Matroska multimedia container support
 MMX			Adds support for x86 MMX optimizations
 MPEG4IP			MPEG4 multimedia support
+MUSEPACK		Musepack (MPC, musicpd, libmpcdec) support
 MYSQL			MySQL database support
 NAS			Adds support for NAS (Network Audio Sound)
 NCURSES			Adds ncurses console graphics support
