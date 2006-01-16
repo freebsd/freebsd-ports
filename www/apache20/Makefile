@@ -186,16 +186,6 @@ pre-everything::
 	@${ECHO_MSG}	"make print-closest-mirrors >> /etc/make.conf"
 	@${ECHO_MSG}	""
 
-print-closest-mirrors:
-	@${ECHO_MSG} -n "Fetching list of nearest mirror: " >&2
-	@MIRRORS=`${FETCH_CMD} -T 30 -qo - http://www.apache.org/dyn/closer.cgi/httpd/ 2> /dev/null\
-	| ${GREP} /httpd/ | ${SED} 's/.*href="\(.*\)"><str.*/\1/g' | \
-	${HEAD} -7 | ${TAIL} -6` ; \
-	${ECHO_MSG} done >&2; if [ "x$$MIRRORS" != "x" ]; then \
-	${ECHO_MSG} -n "MASTER_SITE_APACHE_HTTPD?= ";\
-	${ECHO_MSG} $$MIRRORS; else \
-	${ECHO_MSG} "No mirrors found!">&2 ; fi
-
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
 
