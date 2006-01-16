@@ -32,6 +32,8 @@ WITH_SIMPLEXML=	yes
 WITH_SQLITE=	yes
 WITH_TOKENIZER=	yes
 WITH_XML=	yes
+WITH_XMLREADER=	yes
+WITH_XMLWRITER=	yes
 
 OPTIONS=	BCMATH          "bc style precision math functions" off \
 		BZ2             "bzip2 library support" off \
@@ -88,8 +90,9 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		TOKENIZER       "tokenizer support" on \
 		WDDX            "WDDX support (implies XML)" off \
 		XML             "XML support" on \
-		XMLREADER       "XMLReader support" off \
+		XMLREADER       "XMLReader support" on \
 		XMLRPC          "XMLRPC-EPI support" off \
+		XMLWRITER       "XMLWriter support" on \
 		XSL             "XSL support (Implies DOM)" off \
 		YAZ             "YAZ support (ANSI/NISO Z39.50)" off \
 		ZIP             "ZIP support" off \
@@ -110,7 +113,8 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
 		NCURSES ODBC OPENSSL PANDA PCNTL PCRE PDF PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
-		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XSL YAZ ZIP ZLIB
+		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
+		YAZ ZIP ZLIB
 
 SEL_OPTIONS=	yes
 .for opt in ${ALL_OPTIONS}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--enable-versioning \
 		--disable-all \
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
+		--enable-reflection \
 		--enable-spl
 
 USE_GNOME=	libxml2

@@ -56,7 +56,6 @@ include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_qsort.h
-include/php/Zend/zend_reflection_api.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
 include/php/Zend/zend_stream.h
@@ -127,7 +126,6 @@ include/php/ext/standard/php_smart_str.h
 include/php/ext/standard/php_smart_str_public.h
 include/php/ext/standard/php_standard.h
 include/php/ext/standard/php_string.h
-include/php/ext/standard/php_sunfuncs.h
 include/php/ext/standard/php_type.h
 include/php/ext/standard/php_uuencode.h
 include/php/ext/standard/php_var.h
