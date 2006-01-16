@@ -122,6 +122,7 @@
     SUBDIR += kawa
     SUBDIR += klogoturtle
     SUBDIR += klone
+    SUBDIR += kroc
     SUBDIR += lafontaine
     SUBDIR += libjit
     SUBDIR += librep
