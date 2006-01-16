@@ -16,8 +16,6 @@ DISTNAME=	pcmanx-pure-gtk2-${PORTVERSION}
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	BBS client using GTK+ 2.x
 
-BROKEN=		Does not build
-
 USE_GNOME=	gtk20 intlhack
 USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
