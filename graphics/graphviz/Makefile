@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -56,7 +56,12 @@ MLINKS=		dot.1 circo.1 \
 MYPORTDOCS=	dotguide.pdf dottyguide.pdf leftyguide.pdf \
 		neatoguide.pdf Dot.ref FAQ.html
 
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4+
@@ -65,7 +70,7 @@ USE_GCC=	3.4+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'
 
-post-install:
+post-install: install-ldconfig-file
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${MYPORTDOCS}
