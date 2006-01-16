@@ -10,7 +10,7 @@ PORTVERSION=	0.9.6
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.raqdevil.com/
 
-MAINTAINER=	dodell@offmyserver.com
+MAINTAINER=	dodell@iXsystems.com
 COMMENT=	A port of the Sun Cobalt RaQ550 software to FreeBSD
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}	\
