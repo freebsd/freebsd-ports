@@ -12,9 +12,9 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/stem.pm
 %%SITE_PERL%%/vectorFile.pm
 %%SITE_PERL%%/WordNet/lesk-relation.dat
-%%SITE_PERL%%/WordNet/treedepths-2.0.dat
+%%SITE_PERL%%/WordNet/treedepths-2.1.dat
 %%SITE_PERL%%/WordNet/ic-semcor.dat
-%%SITE_PERL%%/WordNet/synsetdepths-2.0.dat
+%%SITE_PERL%%/WordNet/synsetdepths-2.1.dat
 %%SITE_PERL%%/WordNet/wordvectors.dat
 %%SITE_PERL%%/WordNet/vector-pairs-relation.dat
 %%SITE_PERL%%/WordNet/vector-relation.dat
