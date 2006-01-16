@@ -17,7 +17,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake3 map viewer
 
 .if defined(WITH_FREEGLUT)
-LIB_DEPENDS=	glut.11:${PORTSDIR}/x11-toolkits/freeglut
+LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 .endif

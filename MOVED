@@ -2080,3 +2080,4 @@ games/gleyes||2006-01-14|Mastersite disappeared
 mail/yadda||2006-01-14|Mastersite disappeared
 misc/wmproxyper||2006-01-14|Mastersite disappeared
 net/4g8||2006-01-14|No longer developed; authors suggests ettercap instead
+x11-toolkits/freeglut|graphics/freeglut|2006-01-16|Move to category where libglut is

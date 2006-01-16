@@ -59,7 +59,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL
 .endif
 
 .if !defined(WITHOUT_FREEGLUT)
-LIB_DEPENDS+=	glut.11:${PORTSDIR}/x11-toolkits/freeglut
+LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		yes
 .endif
