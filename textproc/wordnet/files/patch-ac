@@ -1,17 +1,28 @@
---- src/wnb/stubs.c	Fri Nov 14 17:01:44 1997
-+++ src/wnb/stubs.c	Sat Feb 26 20:09:19 2000
-@@ -24,3 +24,2 @@
+--- src/stubs.c	Wed Jul  6 14:49:05 2005
++++ src/stubs.c	Sun Jan 15 07:16:57 2006
+@@ -12,8 +12,7 @@
+ #include <string.h>
  #include <tcl.h>
 -#include <tk.h>
  #include <wn.h>
-@@ -37,5 +36,4 @@
- int wn_findvalidsearches (ClientData clientData, Tcl_Interp *interp, 
+ 
+-static Id = "$Id: stubs.c,v 1.7 2005/04/29 19:01:57 wn Exp $";
++__FBSDID("$Id: stubs.c,v 1.7 2005/04/29 19:01:57 wn Exp $");
+ 
+ static char resultbuf[SEARCHBUF];
+@@ -34,24 +33,24 @@
+ */
+ 
+-int wn_findvalidsearches (ClientData clientData, Tcl_Interp *interp, 
 -   int argc, char *argv[]) {
-+   int argc, Tcl_Obj *objv[]) {
++static int
++wn_findvalidsearches (ClientData clientData, Tcl_Interp *interp, 
++   int argc, Tcl_Obj * const objv[]) {
     unsigned int bitfield;
 -   static char bitfieldstr[32];
-    char *morph;
-@@ -43,9 +41,10 @@
+-   char *morph;
++   const char *morph;
+    int pos;
     if (argc != 3) {
 -      interp -> result = 
 -         "usage: findvalidsearches searchword partofspeechnum";
@@ -27,18 +38,24 @@
 +   bitfield = is_defined (Tcl_GetString(objv[1]), pos);
 +   if ((morph = morphstr (Tcl_GetString(objv[1]), pos)) != NULL) {
        do {
-@@ -54,4 +53,3 @@
+          bitfield |= is_defined (morph, pos);
+       } while ((morph = morphstr (NULL, pos)) != NULL);
     }
 -   sprintf (bitfieldstr, "%u", bitfield);
 -   interp -> result = bitfieldstr;
 +   Tcl_SetObjResult(interp, Tcl_NewIntObj(bitfield));
     return TCL_OK;
-@@ -67,14 +65,11 @@
- int wn_bit (ClientData clientData, Tcl_Interp *interp,
+ }
+@@ -64,17 +63,15 @@
+ */
+ 
+-int wn_bit (ClientData clientData, Tcl_Interp *interp,
 -   int argc, char *argv[]) {
 -   unsigned int bitfield;
 -   static char bitfieldstr[32];
-+   int argc, Tcl_Obj *objv[]) {
++static int
++wn_bit (ClientData clientData, Tcl_Interp *interp,
++   int argc, Tcl_Obj * const objv[]) {
     int whichbit;
     if (argc != 2) {
 -      interp -> result = "usage: bit bitnum";
@@ -53,16 +70,193 @@
 +	return TCL_ERROR;
 +   Tcl_SetObjResult(interp, Tcl_NewIntObj(bit(whichbit)));
     return TCL_OK;
-@@ -275,5 +270,5 @@
+ } 
+@@ -85,8 +82,9 @@
+ */
+ 
+-int wn_search (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_search (ClientData clientData, Tcl_Interp *interp,
++   int argc, const char * argv[]) {
+    int pos, searchtype, sense;
+-   char *morph;
++   const char *morph;
+    if (argc != 5) {
+       interp -> result = 
+@@ -112,6 +110,7 @@
+ */
+  
+-int wn_glosses (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_glosses (ClientData clientData, Tcl_Interp *interp,
++   int argc, const char *argv[]) {
+    if (argc != 2) {
+       interp -> result = "usage: glosses [1 | 0]";
+@@ -127,6 +126,7 @@
+ */
+  
+-int wn_fileinfo (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_fileinfo (ClientData clientData, Tcl_Interp *interp,
++   int argc, const char *argv[]) {
+    if (argc != 2) {
+       interp -> result = "usage: fileinfo [1 | 0]";
+@@ -142,6 +142,7 @@
+ */
+  
+-int wn_byteoffset (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_byteoffset (ClientData clientData, Tcl_Interp *interp,
++   int argc, const char *argv[]) {
+    if (argc != 2) {
+       interp -> result = "usage: byteoffset [1 | 0]";
+@@ -157,11 +158,15 @@
+ */
+  
+-int wn_senseflag (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_senseflag (ClientData clientData, Tcl_Interp *interp,
++   int argc, Tcl_Obj * const objv[]) {
+    if (argc != 2) {
+-      interp -> result = "usage: senseflag [1 | 0]";
++      Tcl_WrongNumArgs(interp, 0, objv, "?1|0?"); 
+       return TCL_ERROR;
+    }
+-   wnsnsflag = atoi (argv[1]);
++   if (Tcl_GetBooleanFromObj(interp, objv[1], &argc) != TCL_OK)
++      return TCL_ERROR;
++
++   wnsnsflag = argc; /* argc got recycled here */
+    return TCL_OK;
+ }
+@@ -172,6 +177,7 @@
+ */
+ 
+-int wn_contextualhelp (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_contextualhelp (ClientData clientData, Tcl_Interp *interp,
++   int argc, Tcl_Obj * const objv[]) {
+    int pos, searchtype;
+    if (argc != 3) {
+@@ -179,7 +185,9 @@
+       return TCL_ERROR;
+    }
+-   pos = atoi (argv[1]);
+-   searchtype = atoi (argv[2]);
+-   interp -> result = helptext[pos][searchtype];
++   if (Tcl_GetIntFromObj(interp, objv[1], &pos) != TCL_OK ||
++       Tcl_GetIntFromObj(interp, objv[2], &searchtype) != TCL_OK)
++	return TCL_ERROR;
++   /* Dropping const-ness below is Ok, because TCL_STATIC tells Tcl to DTRT */
++   Tcl_SetResult(interp, (char *)helptext[pos][searchtype], TCL_STATIC);
+    return TCL_OK;
+ }
+@@ -188,6 +196,7 @@
+ */
+ 
+-int wn_reopendb (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_reopendb (ClientData clientData, Tcl_Interp *interp,
++   int argc, Tcl_Obj * const objv[]) {
+    if (argc != 1) {
+       interp -> result = "usage: reopendb";
+@@ -202,6 +211,7 @@
+ */
+ 
+-int wn_abortsearch (ClientData clientData, Tcl_Interp *interp,
+-   int argc, char *argv[]) {
++static int
++wn_abortsearch (ClientData clientData, Tcl_Interp *interp,
++   int argc, Tcl_Obj * const objv[]) {
+    if (argc != 1) {
+       interp -> result = "usage: abortsearch";
+@@ -212,4 +222,20 @@
+ }
+ 
++/* Return text of the license. The license is compiled in anyway, so
++** there is not point in keeping another copy in a separate file.
++*/
++static int
++wn_license(ClientData clientData, Tcl_Interp *interp,
++   int objc, Tcl_Obj * const objv[]) {
++   if (objc != 1) {
++      Tcl_WrongNumArgs(interp, 0, objv, "no arguments");
++      return TCL_ERROR;
++   }
++   /* Dropping the const is Ok, as we supply TCL_STATIC to TCL API */
++   Tcl_SetResult(interp, (char *)license, TCL_STATIC);
++   return TCL_OK;
++}
++    
++
+ /* This is a callback function invoked by the WordNet search engine every so
+ ** often, to allow the interface to respond to events (especially the pressing
+@@ -217,5 +242,6 @@
+ */
+ 
+-void tkwn_doevents (void) {
++static void
++tkwn_doevents (void) {
+    while (Tcl_DoOneEvent (TCL_WINDOW_EVENTS | TCL_DONT_WAIT) != 0) {}
+ }
+@@ -226,5 +252,6 @@
+ */
+ 
+-int tkwn_displayerror (char *msg) {
++static int
++tkwn_displayerror (const char *msg) {
+ #ifdef _WINDOWS
+    MessageBeep (MB_ICONEXCLAMATION);
+@@ -232,5 +259,5 @@
+       MB_ICONEXCLAMATION | MB_OK | MB_TASKMODAL | MB_SETFOREGROUND);
+ #else
+-   fprintf (stderr, "%s", msg);
++   fputs(msg, stderr);
+ #endif
+    return -1;
+@@ -246,25 +273,26 @@
+    display_message = tkwn_displayerror;
     wninit ();
 -   Tcl_CreateCommand (interp, "findvalidsearches", (void *) 
-+   Tcl_CreateObjCommand (interp, "findvalidsearches", (void *) 
++   Tcl_CreateObjCommand (interp, "findvalidsearches",
        wn_findvalidsearches, (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
 -   Tcl_CreateCommand (interp, "bit", (void *) wn_bit, (ClientData) NULL, 
-+   Tcl_CreateObjCommand (interp, "bit", (void *) wn_bit, (ClientData) NULL, 
++   Tcl_CreateObjCommand (interp, "bit", wn_bit, (ClientData) NULL, 
        (Tcl_CmdDeleteProc *) NULL);
-@@ -295,3 +290,3 @@
+-   Tcl_CreateCommand (interp, "search", (void *) wn_search, (ClientData) 
++   Tcl_CreateCommand (interp, "search", wn_search, (ClientData) 
+       NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "glosses", (void *) wn_glosses, (ClientData) 
++   Tcl_CreateCommand (interp, "glosses", wn_glosses, (ClientData) 
+       NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "fileinfo", (void *) wn_fileinfo, (ClientData) 
++   Tcl_CreateCommand (interp, "fileinfo", wn_fileinfo, (ClientData) 
+       NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "byteoffset", (void *) wn_byteoffset, 
++   Tcl_CreateCommand (interp, "byteoffset", wn_byteoffset, 
+       (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "senseflag", (void *) wn_senseflag, 
++   Tcl_CreateObjCommand (interp, "senseflag", wn_senseflag, 
+       (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "contextualhelp", (void *) wn_contextualhelp,
++   Tcl_CreateObjCommand (interp, "contextualhelp", wn_contextualhelp,
+       (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "reopendb", (void *) wn_reopendb, (ClientData)
++   Tcl_CreateObjCommand (interp, "reopendb", wn_reopendb, (ClientData)
+       NULL, (Tcl_CmdDeleteProc *) NULL);
+-   Tcl_CreateCommand (interp, "abortsearch", (void *) wn_abortsearch, 
++   Tcl_CreateObjCommand (interp, "abortsearch", wn_abortsearch, 
        (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
 -   return TCL_OK;
-+   return Tcl_PkgProvide(interp, "Wordnet", "2.0");
++   Tcl_CreateObjCommand (interp, "wnlicense", wn_license, 
++      (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
++   return Tcl_PkgProvide(interp, "Wordnet", "2.1");
  }
+-

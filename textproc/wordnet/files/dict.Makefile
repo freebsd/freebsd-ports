@@ -1,8 +1,8 @@
-WN_INSTALLDIR=	${PREFIX}/share/WordNet-${VER}
-WN_FILES=	data.noun data.verb data.adj data.adv index.noun \
-		index.verb index.adj index.adv noun.exc verb.exc \
-		adj.exc adv.exc index.sense cntlist.rev \
-		cntlist lexnames sentidx.vrb sents.vrb
+WN_INSTALLDIR=	${PREFIX}/share/WordNet
+WN_FILES=	adj.exc adv.exc cntlist cntlist.rev data.adj \
+		data.adv data.noun data.verb frames.vrb index.adj \
+		index.adv index.noun index.sense index.verb \
+		noun.exc sentidx.vrb sents.vrb verb.Framestext verb.exc
 
 all: $(WN_FILES)
 
@@ -13,11 +13,10 @@ ${WN_INSTALLDIR}:
 INSTALLED+=	${WN_INSTALLDIR}/$f
 
 ${WN_INSTALLDIR}/$f: $f
-	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} \
-		$f ${WN_INSTALLDIR}/$f
+	${BSD_INSTALL_DATA} $f ${WN_INSTALLDIR}/$f
 .endfor
 
 install: ${WN_INSTALLDIR} ${INSTALLED}
 
-NOOBJ=  noobj
+NO_OBJ=  noobj
 .include <bsd.prog.mk>
