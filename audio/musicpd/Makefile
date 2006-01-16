@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -54,7 +54,7 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .ifdef(WITHOUT_WAV)
 CONFIGURE_ARGS+=--disable-audiofile
 .else
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .ifdef(WITH_AAC)
