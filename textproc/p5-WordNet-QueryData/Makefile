@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-QueryData
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,9 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to the WordNet database files
 
-LIB_DEPENDS=	wn2:${PORTSDIR}/textproc/wordnet
+LIB_DEPENDS=	WN.2:${PORTSDIR}/textproc/wordnet
 
-WNHOME?=	${LOCALBASE}/share/WordNet-2.0
+WNHOME?=	${LOCALBASE}/share/WordNet
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
@@ -28,7 +28,7 @@ MAN3=		WordNet::QueryData.3
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
-		'/wnHomeUnix/s|/usr/local/WordNet-2.0|${WNHOME}|; \
+		'/wnHomeUnix/s|/usr/local/WordNet-2.1|${WNHOME}|; \
 		 /wnPrefixUnix/s|/dict||' ${WRKSRC}/QueryData.pm
 
 .include <bsd.port.mk>
