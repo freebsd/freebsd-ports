@@ -2549,7 +2549,7 @@ freefem		ports/math/freefem
 freefem++	ports/math/freefem++
 freefont-ttf	ports/x11-fonts/freefont-ttf
 freefonts	ports/x11-fonts/freefonts
-freeglut	ports/x11-toolkits/freeglut
+freeglut	ports/graphics/freeglut
 freegrep	ports/textproc/freegrep
 freeguide	ports/misc/freeguide
 freeimage	ports/graphics/freeimage
