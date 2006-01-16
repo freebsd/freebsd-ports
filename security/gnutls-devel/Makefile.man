@@ -123,6 +123,7 @@ MAN3=	gnutls_anon_set_server_params_function.3 \
 	gnutls_session_set_data.3 \
 	gnutls_session_get_client_random.3 \
 	gnutls_session_get_server_random.3 \
+	gnutls_session_get_master_secret.3 \
 	gnutls_srp_free_client_credentials.3 \
 	gnutls_srp_set_client_credentials.3 \
 	gnutls_srp_allocate_client_credentials.3 \
