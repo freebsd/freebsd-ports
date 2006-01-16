@@ -70,7 +70,6 @@ libexec/apache/httpd.exp
 %%MOD_ACCESS%%libexec/apache/mod_access.so
 %%MOD_ACTIONS%%libexec/apache/mod_actions.so
 %%MOD_ALIAS%%libexec/apache/mod_alias.so
-@comment %%MOD_APACHE_SSL%%libexec/apache/mod_apache_ssl.so
 %%MOD_ASIS%%libexec/apache/mod_asis.so
 %%MOD_AUTH%%libexec/apache/mod_auth.so
 %%MOD_AUTH_ANON%%libexec/apache/mod_auth_anon.so
@@ -81,7 +80,6 @@ libexec/apache/httpd.exp
 %%MOD_CERN_META%%libexec/apache/mod_cern_meta.so
 %%MOD_CGI%%libexec/apache/mod_cgi.so
 %%MOD_DIGEST%%libexec/apache/mod_digest.so
-@comment %%MOD_DIR%%libexec/apache/mod_dir.so
 %%MOD_DIR%%libexec/apache/mod_dir.so
 %%MOD_ENV%%libexec/apache/mod_env.so
 %%MOD_EXPIRES%%libexec/apache/mod_expires.so
