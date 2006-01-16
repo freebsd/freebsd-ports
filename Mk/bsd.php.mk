@@ -262,7 +262,7 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml mcal mcve \
 		mnogosearch oracle overload xslt yp
 _USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli simplexml soap sqlite \
-		tidy xmlreader xsl
+		tidy xmlreader xmlwriter xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
@@ -331,6 +331,7 @@ wddx_DEPENDS=	textproc/php${PHP_VER}-wddx
 xml_DEPENDS=	textproc/php${PHP_VER}-xml
 xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
+xmlwriter_DEPENDS=	textproc/php${PHP_VER}-xmlwriter
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
 xslt_DEPENDS=	textproc/php${PHP_VER}-xslt
 yaz_DEPENDS=	net/pecl-yaz
