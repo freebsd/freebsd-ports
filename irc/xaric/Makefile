@@ -9,7 +9,7 @@ PORTNAME=	xaric
 PORTVERSION=	0.13.1
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://rf.cx/code/xaric/releases/
+MASTER_SITES=	http://rf.cx/software/xaric/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
