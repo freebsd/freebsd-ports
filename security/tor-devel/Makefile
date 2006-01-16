@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.10
+PORTVERSION=	0.1.1.12
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 PKGNAMESUFFIX=	-devel
@@ -21,6 +21,7 @@ LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 
 CONFLICTS=	tor-[0-9]*
 
@@ -32,7 +33,8 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-# uphold CFLAGS
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/contrib/torctl.in
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E \
 		-e 's!-g -O2!!' \
@@ -42,6 +44,14 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/contrib/tor.sh ${PREFIX}/etc/rc.d/tor.sh.sample
-
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tor.sh ${PREFIX}/etc/rc.d/tor.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/torctl ${PREFIX}/bin/torctl
+	@${MKDIR} /var/run/tor
+	@${CHOWN} _tor:_tor /var/run/tor
+	@${TOUCH} /var/log/tor
+	@${CHOWN} _tor:_tor /var/log/tor
+	@${MKDIR} /var/db/tor
+	@${MKDIR} /var/db/tor/data
+	@${CHOWN} -R _tor:_tor /var/db/tor
+	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>
