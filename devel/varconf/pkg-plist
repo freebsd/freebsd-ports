@@ -1,4 +1,5 @@
 include/varconf-1.0/varconf/Config.h
+include/varconf-1.0/varconf/config.h
 include/varconf-1.0/varconf/dynbase.h
 include/varconf-1.0/varconf/dyncmp.h
 include/varconf-1.0/varconf/dyntypes.h
@@ -8,7 +9,7 @@ include/varconf-1.0/varconf/varconf.h
 include/varconf-1.0/varconf/variable.h
 lib/libvarconf-1.0.la
 lib/libvarconf-1.0.so
-lib/libvarconf-1.0.so.5
+lib/libvarconf-1.0.so.6
 libdata/pkgconfig/varconf-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
