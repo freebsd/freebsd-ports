@@ -1,3 +1,6 @@
+%%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS
+%%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources/Info-gnustep.plist
+%%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/stamp.make
 System/Library/Bundles/GSPrinting/GSLPR.bundle/GSLPR
 System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/GSPrinting/GSLPR.bundle/stamp.make
@@ -687,5 +690,7 @@ System/Tools/set_show_service
 @dirrm System/Library/Bundles/TextConverters
 @dirrm System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources
 @dirrm System/Library/Bundles/GSPrinting/GSLPR.bundle
+%%WITH_CUPS%%@dirrm System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources
+%%WITH_CUPS%%@dirrm System/Library/Bundles/GSPrinting/GSCUPS.bundle
 @dirrm System/Library/Bundles/GSPrinting
 %%PORTDOCS%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/ProgrammingManual
