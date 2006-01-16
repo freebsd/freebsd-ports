@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -62,7 +63,7 @@ CONFLICTS+=	mldonkey-devel-[0-9]*
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net-im/ocaml-jabbr
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
