@@ -3,13 +3,15 @@ bin/cmus-remote
 lib/cmus/ip/flac.so
 lib/cmus/ip/mad.so
 %%MODPLUG%%lib/cmus/ip/modplug.so
+%%MPC%%lib/cmus/ip/mpc.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
 lib/cmus/ip/wav.so
 %%ARTS%%lib/cmus/op/arts.so
 lib/cmus/op/oss.so
-%%DATADIR%%/cmus-status-display
 %%DATADIR%%/keybindings
 %%DOCSDIR%%/cmus.html
+%%DOCSDIR%%/examples/cmus-status-display
+@dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/cmus/op
