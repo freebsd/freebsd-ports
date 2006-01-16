@@ -627,6 +627,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/django/views/rss/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/Django-0.90-py2.4.egg/EGG-INFO/scripts/django-admin.py
