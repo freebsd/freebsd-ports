@@ -1,0 +1,9 @@
+To use GNUstep you need to source the envoroment in your shell:
+
+for sh/bash:
+. /usr/local/GNUstep/System/Library/Makefiles/GNUstep.sh
+
+for csh:
+. /usr/local/GNUstep/System/Library/Makefiles/GNUstep.csh
+
+then start your applications with "openapp <name>".
