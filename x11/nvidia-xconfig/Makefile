@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 
-BROKEN=		Unfetchable
-
 USE_GMAKE=	yes
 
 MAKE_ENV=	ROOT=${PREFIX} \
