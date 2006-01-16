@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/bin/WFUT.jar:${PORTSDIR}/devel/wfut
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		OgreMain.9:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
-		varconf-1.0.5:${PORTSDIR}/devel/varconf \
+		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal
 
