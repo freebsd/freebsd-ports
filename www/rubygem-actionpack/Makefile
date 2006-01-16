@@ -6,6 +6,7 @@
 
 PORTNAME=	actionpack
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7644/
 
