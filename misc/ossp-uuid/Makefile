@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 USE_GCC=	3.2+
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-shared --enable-static
 
 MAN1=	uuid-config.1 uuid.1
