@@ -7,7 +7,7 @@
 
 PORTNAME=	jce_policy
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security java
 MASTER_SITES=	#http://java.sun.com/products/jce/index-14.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}
@@ -34,6 +34,7 @@ do-install:
 		${JAVA_HOME}/jre/lib/security/local_policy.jar.orig
 	@${MV}	${JAVA_HOME}/jre/lib/security/US_export_policy.jar \
 		${JAVA_HOME}/jre/lib/security/US_export_policy.jar.orig
+	@${TOUCH} ${JAVA_HOME}/jre/lib/security/.jce_policy14
 	@${INSTALL_DATA} ${WRKSRC}/local_policy.jar     ${JAVA_HOME}/jre/lib/security
 	@${INSTALL_DATA} ${WRKSRC}/US_export_policy.jar ${JAVA_HOME}/jre/lib/security
 
