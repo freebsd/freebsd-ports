@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]*$/-&/:C/-\./-/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
+BROKEN=		DOES NOT BUILD: /usr/lib/libpthread.so: undefined reference to __usleep
 
 LATEST_LINK=	${PORTNAME}
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
