@@ -27,7 +27,7 @@ OPTIONS=	BROKEN_PARAMETER "Detect unwanted extensions properly" off \
 			MULTI_RCPT "Allow multiple recipients" off \
 			PARANOIA "Detect faked mails from AOL, Hotmail" off \
 			SPAM_STATS "Add spam statistics to messagewallstats" off
-WRKSRC=		${WRKDIR}/messagewall
+WRKSRC=		${WRKDIR}/messagewall-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
