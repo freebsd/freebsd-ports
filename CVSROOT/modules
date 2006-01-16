@@ -5143,6 +5143,7 @@ krecipes	ports/misc/krecipes
 krefty		ports/deskutils/krefty
 krename		ports/sysutils/krename
 kripp		ports/security/kripp
+kroc		ports/lang/kroc
 kronolith	ports/deskutils/kronolith
 krosswordplayer	ports/games/krosswordplayer
 krss		ports/deskutils/krss
