@@ -76,7 +76,7 @@ post-patch:
 	${FIND} ${WRKSRC} -name \*.orig -print0 | ${XARGS} -0 ${RM}
 
 do-install:
-	${INSTALl} -d -o ${WWWOWN} -g ${WWWGRP} /var/log/xgate
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} /var/log/xgate
 	@cd ${WRKSRC} && ${FIND} xgate | \
 		${CPIO} -pdm -L -R ${WWWOWN}:${WWWGRP} ${APP_HOME}/webapps/
 .for conf in ${CNFLSTS}
