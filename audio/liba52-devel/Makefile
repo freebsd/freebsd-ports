@@ -56,7 +56,7 @@ post-install:
 ###
 ## specific ARCH information
 ###
-.if ${ARCH} == "i386" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386" || ${ARCH} == "ia64"
 CFLAGS+=	-DARCH_X86
 . if ${ARCH} == "ia64" || ${ARCH} == "amd64"
 CFLAGS+=	-DARCH_X86_64
