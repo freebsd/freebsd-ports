@@ -4541,6 +4541,7 @@ ja-xemacs-devel-canna+wnn6	ports/japanese/xemacs-devel-canna+wnn6
 ja-xemacs-devel-freewnn	ports/japanese/xemacs-devel-freewnn
 ja-xemacs-devel-wnn6	ports/japanese/xemacs-devel-wnn6
 ja-xemacs21-canna	ports/japanese/xemacs21-canna
+ja-xgate	ports/japanese/xgate
 ja-xjman	ports/japanese/xjman
 ja-xjman-3	ports/japanese/xjman-3
 ja-xjtext	ports/japanese/xjtext
