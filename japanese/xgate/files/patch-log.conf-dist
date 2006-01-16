@@ -1,0 +1,18 @@
+--- xgate/WEB-INF/conf/log.conf-dist.orig	Wed Nov 16 11:35:47 2005
++++ xgate/WEB-INF/conf/log.conf-dist	Wed Nov 16 11:38:07 2005
+@@ -2,7 +2,7 @@
+ #Fri Oct 10 17:21:19 JST 2003
+ log4j.appender.A.layout.ConversionPattern=%d{MM/dd HH\:mm\:ss} [%-5p] %m%n
+ log4j.appender.E.DatePattern='.'yyyy-MM-dd
+-log4j.appender.E.File=/usr/local/xgate/log/logfile.html
++log4j.appender.E.File=/var/log/xgate/logfile.html
+ log4j.appender.D.layout.ConversionPattern=%d{yyyy-MM-dd HH\:mm\:ss} [%-5p]/ %m%n
+ log4j.appender.A.DatePattern='.'MM/dd
+ log4j.appender.A.layout=org.apache.log4j.PatternLayout
+@@ -12,5 +12,5 @@
+ log4j.appender.E.layout=org.apache.log4j.HTMLLayout
+ log4j.appender.A=org.apache.log4j.ConsoleAppender
+ log4j.appender.D.layout=org.apache.log4j.PatternLayout
+-log4j.appender.D.File=/usr/local/xgate/log/logfile.txt
++log4j.appender.D.File=/var/log/xgate/logfile.txt
+ log4j.rootCategory=DEBUG,D,A

@@ -1,0 +1,8 @@
+xGate is a webmail system.
+o Implement as Java Servlet.
+o Support IMAP4rev1 and POP3 back-end mail engine.
+o Provide mails to PC, mobile-phones and PDA with
+  high security method.
+o Supported by Orangesoft Inc with low cost management.
+
+WWW:	http://www.orangesoft.co.jp/xGate/

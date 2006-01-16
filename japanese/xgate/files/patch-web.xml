@@ -1,0 +1,13 @@
+--- xgate/WEB-INF/web.xml.orig	Sat Dec 17 23:52:08 2005
++++ xgate/WEB-INF/web.xml	Sun Dec 18 15:17:15 2005
+@@ -90,6 +90,10 @@
+         <session-timeout>10</session-timeout>
+     </session-config>
+     <mime-mapping>
++        <extension>html</extension>
++        <mime-type>text/html;charset=Shift_JIS</mime-type>
++    </mime-mapping>
++    <mime-mapping>
+         <extension>hdml</extension>
+         <mime-type>text/x-hdml;charset=Shift_JIS</mime-type>
+     </mime-mapping>
