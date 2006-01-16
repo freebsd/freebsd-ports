@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An object-oriented interpreted scripting language
+COMMENT?=	An object-oriented interpreted scripting language
 
 .if defined(WITH_ONIGURUMA)
 PKGNAMESUFFIX=	+oniguruma
@@ -39,8 +39,14 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared --enable-pthread \
-		--with-openssl-include=${OPENSSLINC}
+		--enable-shared --with-openssl-include=${OPENSSLINC}
+
+.if defined(WITHOUT_PTHREADS)
+CONFIGURE_ARGS+=--disable-pthread
+PKGNAMESUFFIX=	-nopthreads
+.else
+CONFIGURE_ARGS+=--enable-pthread
+.endif
 
 .if defined(DEBUG)
 CFLAGS+=	-g
