@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sipcalc
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Sipcalc is an IP subnet calculator with IPv6 support
 
 USE_GETOPT_LONG=	yes
@@ -18,7 +18,7 @@ USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 MAN1=		sipcalc.1
 
-DOC_FILES=	doc/sipcalc.txt
+DOC_FILES=	doc/sipcalc.txt ChangeLog README
 
 post-install:
 .ifndef(NOPORTDOCS)

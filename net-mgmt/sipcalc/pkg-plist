@@ -1,3 +1,5 @@
 bin/sipcalc
-%%PORTDOCS%%share/doc/sipcalc/sipcalc.txt
-%%PORTDOCS%%@dirrm share/doc/sipcalc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/sipcalc.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
