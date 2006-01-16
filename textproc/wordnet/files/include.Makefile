@@ -1,7 +1,6 @@
-WN_INSTALLDIR = ${PREFIX}/include/WordNet-${VER}
+WN_INSTALLDIR = ${PREFIX}/include/WordNet
 
-WN_FILES=	license.h setutil.h wn.h wnconsts.h wnglobal.h \
-		wnhelp.h wnrtl.h wntypes.h
+WN_FILES=	wn.h wngrind.h
 
 all: $(WN_FILES)
 
@@ -12,6 +11,6 @@ install: ${WN_INSTALLDIR}
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
 		${WN_FILES} ${WN_INSTALLDIR}/
 
-NOOBJ=		noobj
+NO_OBJ=		noobj
 
 .include <bsd.prog.mk>

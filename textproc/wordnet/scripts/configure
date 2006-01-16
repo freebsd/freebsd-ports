@@ -1,12 +1,27 @@
 #!/bin/sh
 for mf in ${FILESDIR}/*Makefile ; do \
-	dir=${WRKSRC}/`basename $mf | sed -e s%Makefile%% -e 's%\.%/%g'` ; \
+	dir=`basename $mf | sed -e s%Makefile%% -e 's%\.%/%g'`
+	case "$dir" in
+	"man/")
+		dir=doc/man/
+		;;
+	"src/lib/")
+		dir=lib/
+		;;
+	"src/wn/")
+		dir=src/
+		;;
+	"src/wnb/")
+		dir=lib/wnres/
+		;;
+	esac
+	dir=${WRKSRC}/$dir
 	test -f ${dir}Makefile.orig && continue
-	mv ${dir}Makefile ${dir}Makefile.orig ; \
-	cp -p $mf ${dir}Makefile ; \
+	test -f ${dir}Makefile && mv ${dir}Makefile ${dir}Makefile.orig
+	cp -p $mf ${dir}Makefile
 done
 
-patch -d ${WRKSRC}/src/wnb -p << EOPATCH
+patch -d ${WRKSRC}/src -p << EOPATCH
 Configuring the wnb script to call the right wish-binary directly
 --- wnb	Sun Feb 22 12:49:56 1998
 +++ wnb	Sat Feb 26 17:41:06 2000

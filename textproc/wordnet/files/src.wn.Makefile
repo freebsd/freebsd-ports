@@ -1,11 +1,11 @@
 PROG=		wn
-NOMAN=		True	# man pages installed separately
+NO_MAN=		True	# man pages installed separately
 
-CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
+CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\""
 
-CFLAGS+=	-I${.CURDIR}/../../include
-LDADD+=		-L../lib -lwn2
+CFLAGS+=	-I${.CURDIR:H}/include
+LDADD+=		-L../lib -lWN
 
 BINDIR=		${PREFIX}/bin
 

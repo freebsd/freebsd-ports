@@ -1,0 +1,57 @@
+This patch makes wnb use man(1) to access its own man-pages instead
+of relying on textual copies of them being in the $resourcedir.
+
+Similarly, it looks for the compiled-in license instead of opening
+its textual copy.
+
+These leave wn.xbm as the only "resource" file, thus removing the need
+for a separate resource directory. FreeBSD port installs all -- the
+dictionaries and the bitmap into ${PREFIX}/share/WordNet.
+
+	-mi
+
+--- src/wnb	Tue Jun  7 15:19:22 2005
++++ src/wnb	Sun Jan 15 07:42:38 2006
+@@ -103,9 +100,15 @@
+ 
+ if {$tcl_platform(platform) == "unix"} {
+-   if {[lsearch -exact [array names env] WNHOME] == -1} {
+-	set resourcedir "/usr/local/WordNet-2.1/lib/wnres"
+-   } else {
+-	set resourcedir "$env(WNHOME)/lib/wnres"
++   set resourcedirs {
++	/usr/local/WordNet-2.1
++	/usr/local/WordNet-2.1/lib/wnres
++   }
++   if {[info exists env(WNHOME)]} {
++	lappend resourcedirs $env(WNHOME) $env(WNHOME)/lib/wnres
+    }
++   foreach resourcedir $resourcedirs {
++	if {[file exists $resourcedir/wn.xbm]} break
++   }
++   unset resourcedirs
+    set configfile "$env(HOME)/.wnrc"
+    if [ file exists $configfile ] {
+@@ -575,7 +578,19 @@
+    .$w.top.text configure \
+       -state normal
+-   set fileid [open $filename "r"]
+-   set filetext [read $fileid]
+-   close $fileid
++   switch -glob -- $filename {
++      *.man {
++	set manpage [file tail $filename]
++	set manpage [string range $manpage 0 end-4]
++	set fileid [open "|man $manpage"]
++      } */license.txt {
++	set filetext [wnlicense]
++      } default {
++	set fileid [open $filename]
++      }
++   }
++   if {[info exists fileid]} {
++	set filetext [read $fileid]
++	close $fileid
++   }
+    regsub -all ".\b" $filetext "" filetext
+    .$w.top.text insert end $filetext

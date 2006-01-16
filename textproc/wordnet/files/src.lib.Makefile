@@ -1,13 +1,14 @@
-SRCS=		binsrch.c morph.c search.c setutil.c wnglobal.c \
+SRCS=		binsrch.c morph.c search.c wnglobal.c \
 		wnhelp.c wnrtl.c wnutil.c
 
-CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
+CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet\""\
 		-DDEFAULTBIN="\"${PREFIX}/bin\""
 
-CFLAGS+=	-I${.CURDIR}/../../include
+CFLAGS+=	-I${.CURDIR:H}/include
 
-LIB=		wn2
-SHLIB_MAJOR=	0
+LIB=		WN
+WARNS=		5
+SHLIB_MAJOR=	2
 NOPROFILE=	True
 
 LIBDIR=		${PREFIX}/lib

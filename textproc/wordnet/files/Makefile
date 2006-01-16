@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 SUBDIR=		include \
-		dict \
+		lib \
+		lib/wnres \
 		src \
-		man
+		dict \
+		doc/man
 
 .include <bsd.subdir.mk>
