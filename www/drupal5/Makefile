@@ -7,14 +7,14 @@
 
 PORTNAME=	drupal
 PORTVERSION=	4.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://drupal.org/files/projects/
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
 
-USE_PHP=	session xml
+USE_PHP=	gd pcre session xml
 
 .include <bsd.port.pre.mk>
 
