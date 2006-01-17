@@ -42,8 +42,8 @@ PLIST_SUB+=	CURL="@comment "
 .endif
 
 .if defined(WITH_SID)
-LIB_DEPENDS+=	resid.0:${PORTSDIR}/audio/resid \
-		sidplay.2:${PORTSDIR}/audio/libsidplay2
+LIB_DEPENDS+=	resid.[0-9]:${PORTSDIR}/audio/resid \
+		sidplay2.[0-9]:${PORTSDIR}/audio/libsidplay2
 PLIST_SUB+=	SID=""
 .else
 EXCLUDE+=	sid
@@ -67,7 +67,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if defined(WITH_ECORE)
-BUILD_DEPENDS+=	ecore.1:${PORTSDIR}/x11/ecore
+LIB_DEPENDS+=	lecore.1:${PORTSDIR}/x11/ecore
 PLIST_SUB+=	ECORE=""
 .else
 EXCLUDE+=	xmmsclient-ecore
@@ -75,7 +75,7 @@ PLIST_SUB+=	ECORE="@comment "
 .endif
 
 .if defined(WITH_FLAC)
-BUILD_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 EXCLUDE+=	flac
@@ -83,7 +83,7 @@ PLIST_SUB+=	FLAC="@comment "
 .endif
 
 .if defined(WITH_FAAD)
-BUILD_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 #EXTRA_PATCHES+=	${FILESDIR}/extraPatch-src::clients::faad::Plugin
 .else
@@ -101,7 +101,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_MUSEPACK)
-BUILD_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec
 PLIST_SUB+=	MUSEPACK=""
 .else
 EXCLUDE+=	musepack
