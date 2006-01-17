@@ -7,6 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.21
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -62,8 +63,8 @@ CONFIGURE_ARGS+=	--without-mesa --without-opengl
 CONFIGURE_ARGS+=	--enable-nice-only
 .endif
 
-.if defined(WITH_BAD_PAM) && !defined(WITH_PAM)
-WITH_PAM=	yes
+.if defined(WITH_BAD_PAM)
+CONFIGURE_ARGS+=	--enable-bad-pam
 .endif
 
 .if defined(WITH_PAM)
@@ -108,9 +109,6 @@ pre-extract:
 post-configure:
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
-.endif
-.if defined(WITH_BAD_PAM)
-	 ${REINPLACE_CMD} -e 's|/\* #define BAD_PAM \*/|#define BAD_PAM|g' ${WRKSRC}/config.h
 .endif
 
 PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
