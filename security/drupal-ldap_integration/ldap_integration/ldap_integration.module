@@ -1,0 +1,797 @@
+<?php
+// $Id: ldap_integration.module,v 1.2.2.4.2.15 2005-12-13 20:30:27 pablobm Exp $
+
+include_once('ldap_integration/conf.php');
+include_once('ldap_integration/LDAPInterface.php');
+
+/*
+ * Private constants. Do not touch
+ */
+define(LDAP_PERM_SEARCH, 'perform ldap searches');
+define(LDAP_SETTINGS_GROUP_STRING, 'LDAP attributes');
+define(LDAP_USER_DATA_EDIT_TAB, 'LDAP entry');
+define(LDAP_CATEGORY_USER_DATA, 'ldap_user_data');
+
+define(LDAP_STANDARD_SYSTEM, 0);
+define(LDAP_AD_SYSTEM, 1);
+
+define(LDAP_FIRST_DRUPAL, 0);
+define(LDAP_FIRST_LDAP, 1);
+
+define(LDAP_MAP_ATTRIBUTES, 0);
+define(LDAP_MAP_ONLY_LOST_PASSWORDS, 1);
+define(LDAP_MAP_NOTHING, 2);
+
+define(LDAP_GROUP_IN_DN, 'ldap_group_in_dn');
+define(LDAP_GROUP_IN_ATTR, 'ldap_group_in_attr');
+define(LDAP_GROUP_AS_ENTRIES, 'ldap_group_as_entries');
+
+/*
+ * Private constants (default values). Do not touch either
+ */
+define(LDAP_DEFAULT_ORG, 'Home');
+define(LDAP_DEFAULT_PATTERN, '/(\S+)@(\S+)\.(\S+)/i');
+define(LDAP_DEFAULT_REPLACEMENT, 'cn=$1,dc=$2,dc=$3');
+define(LDAP_DEFAULT_BASE_DN, 'ou=Users,dc=drupal,dc=org');
+define(LDAP_DEFAULT_GROUP_DN_PATTERN, '/cn=\S+,ou=(\S+),dc=\S+,dc=\S+/i');
+define(LDAP_DEFAULT_GROUP_ATTR, 'userGroups');
+define(LDAP_DEFAULT_GROUP_ENTRIES, 'cn=Group,dc=example,dc=com');
+define(LDAP_DEFAULT_GROUP_ENTRIES_ATTRIBUTE, 'memberUid');
+
+$GLOBALS['ldap'] = new LDAPInterface();
+$GLOBALS['ldap']->setServer(variable_get('ldap_server', 'localhost'));
+$GLOBALS['ldap']->setPort(variable_get('ldap_port', 389));
+$GLOBALS['ldap']->setOption('TLS', variable_get('ldap_use_TLS', false));
+
+
+/*********************************
+ *       1. Drupal hooks         *
+ *********************************/
+
+function ldap_integration_help($section) {
+  $output = '';
+
+  switch ($section) {
+    case 'admin/modules#ldap_integration':
+      $output = 'ldap_integration';
+      break;
+    case 'admin/modules#description':
+    case 'admin/help#ldap_integration':
+      $output = t('Enables authentication via LDAP. <strong>IMPORTANT:</strong> module <em>zcallbacks</em> down below must be enabled for this one to work.');
+      break;
+    case 'user/help#ldap_integration':
+      $output = t('<p>If you are registered in %org LDAP directory, you\'ll probably be able to login this site by using your LDAP login and password</p>', array('%org' => variable_get('ldap_org_name', '')));
+      break;
+  }
+
+  return $output;
+}
+
+function ldap_integration_settings($section = 'server') {
+  // Reminding admins about conf.php
+  $output = '<p><strong style="color: red;">PLEASE NOTE</strong>: do not forget there are further and important settings to be set in the module\'s config file, located at <code>modules/ldap_integration/conf.php</code> in your Drupal install.</p>';
+
+  // Server settings
+  $output .= form_textfield(t('Organisation name'), 'ldap_org_name', variable_get('ldap_org_name', ''), 50, 255, t('Name of the organisation the LDAP directory belongs to.'));
+  $output .= form_textfield(t('LDAP server'), 'ldap_server', variable_get('ldap_server', 'localhost'), 50, 255, t('The domain name or IP address of your LDAP Server.'));
+  $output .= form_textfield(t('LDAP port'), 'ldap_port', variable_get('ldap_port', 389), 50, 255, t('The TCP/IP port on the above server which accepts LDAP connections. Must be an integer.'));  
+  $output .= form_checkbox(t('Use TLS encryption'), 'ldap_use_TLS', 1, variable_get('ldap_use_TLS', 0), t('Secure the connection between the Drupal and the LDAP servers using TLS.'));
+  $output .= form_checkbox(t('Store passwords in encrypted form'), 'ldap_store_encrypted_pass', 1, variable_get('ldap_store_encrypted_pass', 0), t('Secure the password in LDAP by storing it MD5 encrypted (use with care, as some LDAP directories may do this automatically, what would cause logins problems).'));
+
+  return $output;
+}
+
+function ldap_integration_settings_login_procedure() {
+  system_settings_save();
+  $output = '<p>' . t('Here you can specify the details of the login procedure') . '</p>';
+
+  // Login string format
+  $output .= form_checkbox(t('Logins must be on the form <em>user@server</em>'), 'ldap_login_string_with_server', 1, variable_get('ldap_login_string_with_server', 1), t('Drupal requires login strings from external sources to be in the form <em>user@server</em>. Disabling this setting will circumvent such limitation.'));
+
+  // Login process
+  $options_login_process = array(
+      LDAP_FIRST_DRUPAL => t('Drupal\'s own database. If it fails, will look on the LDAP directory'),
+      LDAP_FIRST_LDAP => t('LDAP directory only'));
+
+  $output .= form_radios(t('When logging in, Drupal will look up for the user on'), 'ldap_login_process', variable_get('ldap_login_process', LDAP_FIRST_DRUPAL), $options_login_process, NULL, true);
+
+  $options_attribute_mapping = array(
+      LDAP_MAP_ATTRIBUTES => t('Changes in account fields will be mapped to LDAP attributes and back (see <code>modules/ldap_integration/conf.php</code>).'),
+      LDAP_MAP_ONLY_LOST_PASSWORDS => t('No attribute mapping will be done, except for lost passwords. They will be randomly re-generated and sent to the user\'s mailbox.'),
+      LDAP_MAP_NOTHING => t('No attribute mapping will be done at all'));
+
+  $output .= form_radios(t('Should Drupal account fields be mapped to LDAP attributes?'), 'ldap_attr_mapping', variable_get('ldap_attr_mapping', LDAP_MAP_NOTHING), $options_attribute_mapping, NULL, true);
+
+  // System type and user mapping
+  $option_system_type_1  = form_textfield(t('LDAP login pattern'), 'ldap_login_pattern', variable_get('ldap_login_pattern', LDAP_DEFAULT_PATTERN), 50, 255, t('Regular expression matching logins for this module, that will be in the form of an e-mail address. <em>Example: %s </em>.', array('%s' => LDAP_DEFAULT_PATTERN)));
+  $option_system_type_1 .= form_textfield(t('LDAP login replacement'), 'ldap_login_replacement', variable_get('ldap_login_replacement', LDAP_DEFAULT_REPLACEMENT), 50, 255, t('Replacement to convert the above regular expression into the user\'s LDAP DN. <em>Example: %s</em>.', array('%s' => LDAP_DEFAULT_REPLACEMENT)));
+
+  $option_system_type_2 = form_textarea(t('Base DNs'), 'ldap_base_dn', variable_get('ldap_base_dn', LDAP_DEFAULT_BASE_DN), 50, 6, t('Base DN for users, to be used in eDirectory or Active Directory logins'));
+  $option_system_type_2 .= form_textfield(t('UserName attribute'), 'ldap_user_attribute', variable_get('ldap_user_attribute', 'sAMAccountName'), 50, 255, t('The attribute that holds the Users Loginname. (eg. <em>cn</em> for eDir or <em>sAMAccountName</em> for AD)'));
+
+  $options_system_type = array(
+    LDAP_STANDARD_SYSTEM => array('choice' => t('Standard LDAP system'), 'extended' => $option_system_type_1),
+    LDAP_AD_SYSTEM => array('choice' => t('eDirectory or Active Directory system'), 'extended' => $option_system_type_2));
+
+  $output .= form_complex_radios(t('System type and user mapping'), 'ldap_system_type', variable_get('ldap_system_type', LDAP_STANDARD_SYSTEM), $options_system_type, NULL, true);
+
+  print(theme('page', system_settings_form($output)));
+}
+
+function ldap_integration_settings_groups() {
+  system_settings_save();
+  $output = '<p>' . t('You may want your users to attain Drupal roles according to their LDAP groups. If that is the case, this is the place to tell the module how.') . '</p>';
+
+  // LDAP groups <-> Drupal roles
+  $option_grouproles_1 = form_textfield(t('Regular expression representing the pattern'), 'ldap_group_dn_pattern', variable_get('ldap_group_dn_pattern', LDAP_DEFAULT_GROUP_DN_PATTERN), 50, 255, t('Regular expression matching users\' DNs. Each <strong>parenthesized</strong> subexpression points out a group name. <em>Example: ' . LDAP_DEFAULT_GROUP_DN_PATTERN . '. In this example, \'ou=\' is followed by a group name that Drupal will associate to a role name</em>.'));
+  $option_grouproles_2 = form_textarea(t('Attribute names (one per line)'), 'ldap_group_attr', variable_get('ldap_group_attr', LDAP_DEFAULT_GROUP_ATTR), 50, 6, t('Name of the LDAP attributes containing the group names for each user.'));
+
+  $option_grouproles_3  = form_textarea(t('Entries containing groups (one per line)'), 'ldap_group_entries', variable_get('ldap_group_entries', LDAP_DEFAULT_GROUP_ENTRIES), 50, 6, t('Name of the LDAP entries representing user groups.'));
+  $option_grouproles_3 .= form_textfield(t('Attribute holding group members'), 'ldap_group_entries_attribute', variable_get('ldap_group_entries_attribute', LDAP_DEFAULT_GROUP_ENTRIES_ATTRIBUTE), 50, 255, t('Name of the multivalued attribute which holds the CNs of group members, for example: <em>' . LDAP_DEFAULT_GROUP_ENTRIES_ATTRIBUTE . '</em>.'));
+
+  $options_grouproles = array(
+    LDAP_GROUP_IN_DN => array('choice' => t('Group is specified in user\'s DN'), 'extended' => $option_grouproles_1),
+    LDAP_GROUP_IN_ATTR => array('choice' => t('Groups are specified by LDAP attributes'), 'extended' => $option_grouproles_2),
+    LDAP_GROUP_AS_ENTRIES => array('choice' => t('Groups exist as LDAP entries where a multivalued attribute contains the members\' CNs'), 'extended' => $option_grouproles_3));
+
+  $output .= form_complex_checkboxes(t('Should LDAP groups be reflected as Drupal roles?'), 'ldap_group_roles', variable_get('ldap_group_roles', array()), $options_grouproles);
+  $output .= form_checkbox(t('Map group sign offs'), 'ldap_map_group_signoffs', true, variable_get('ldap_map_group_signoffs', true), t('If you enable this, users signed off LDAP groups will be denied the respective Drupal roles, according to the rules set on <code>modules/ldap_integration/conf.php</code>.'));
+
+  print(theme('page', system_settings_form($output)));
+}
+
+function ldap_integration_settings_attributes() {
+  system_settings_save();
+  // LDAP attributes viewing/editing
+  global $ldap_attributes;
+
+  // Explanatory text
+  $output = '<p>' . t('Users may be able to view their LDAP attributes\' values, as well as edit them. You can configure this feature here.') . '</p>';
+
+  foreach ($ldap_attributes as $key => $field) {
+    $fields[$key] = $field[2];
+  }
+
+  // These two hidden forms are a workaround for a bug I seem to have found
+  // in Drupal, for I can't make the following two form_select() to work when
+  // no elements are selected.
+  $output .= form_hidden('ldap_user_attributes', null);
+  $output .= form_hidden('ldap_useredit_attributes', null);
+
+  $output .= form_select(t('Attributes displayed on user pages'), 'ldap_user_attributes', variable_get('ldap_user_attributes', array()), $fields, t('Select the attributes which will be displayed on user pages. Blank attributes will be omitted. You may add attributes to this list by editing the relevant global variable at the beginning of the module\'s code'), 'size="6"', true, false);
+  $output .= form_select(t('Attributes that can be edited by users'), 'ldap_useredit_attributes', variable_get('ldap_useredit_attributes', array()), $fields, t('Select the attributes users will be able to edit on their user pages. Blank attributes will be omitted. You may add attributes to this list by editing the relevant global variable at the beginning of the module\'s code'), 'size="6"', true, false);
+
+  print(theme('page', system_settings_form($output)));
+}
+
+function ldap_integration_auth($name, $pass, $server) {
+  global $ldap;
+
+  $ret = false;
+
+  if(variable_get('ldap_system_type', LDAP_STANDARD_SYSTEM) == LDAP_STANDARD_SYSTEM) {
+    $dn = _ldap_integration_login2dn($server ? "$name@$server" : $name);
+    $ret = $ldap->connect($dn, $pass);
+  }
+  else {
+    $possible_base_dns = explode("\r\n", variable_get('ldap_base_dn', ''));
+    foreach ($possible_base_dns as $base_dn) {
+      if($base_dn && $ret = $ldap->connect_ADstyle(variable_get('ldap_user_attribute', ''), $name, $base_dn, $pass)) {
+          break;
+      }
+    }
+  }
+
+  return $ret;
+}
+
+function ldap_integration_menu($may_cache) {
+  $items = array();
+
+  if ($may_cache) {
+    $items[] = array(
+      'path' => 'admin/settings/ldap_integration/server',
+      'title' => t('LDAP server settings'),
+      'callback' => 'system_site_settings',
+      'callback_arguments' => array('ldap_integration'),
+      'weight' => 0,
+      'type' => MENU_DEFAULT_LOCAL_TASK);
+    $items[] = array(
+      'path' => 'admin/settings/ldap_integration/login_procedure',
+      'title' => t('Login procedure'),
+      'callback' => 'ldap_integration_settings_login_procedure',
+      'weight' => 1,
+      'type' => MENU_LOCAL_TASK);
+    $items[] = array(
+      'path' => 'admin/settings/ldap_integration/groups',
+      'title' => t('Groups and roles'),
+      'callback' => 'ldap_integration_settings_groups',
+      'weight' => 2,
+      'type' => MENU_LOCAL_TASK);
+    $items[] = array(
+      'path' => 'admin/settings/ldap_integration/attributes',
+      'title' => t('LDAP attributes'),
+      'callback' => 'ldap_integration_settings_attributes',
+      'weight' => 3,
+      'type' => MENU_LOCAL_TASK);
+  }
+  return $items;
+}
+
+function ldap_integration_user($op, &$edit, &$user, $category = NULL) {
+//msg("$op (uid: $user->uid; cat: $category)");
+  switch($op) {
+    case 'categories':
+      return ldap_integration_user_categories();
+    case 'form':
+      return ldap_integration_user_form($user, $category);
+    case 'load':
+      ldap_integration_user_load($user);
+      break;
+    case 'login':
+      ldap_integration_user_login($user);
+      break;
+    case 'update':
+      ldap_integration_user_update($edit, $user, $category);
+      break;
+    case 'view':
+      return ldap_integration_user_view($user);
+  }
+}
+
+
+/*********************************
+ *     2. Delegate functions     *
+ *********************************/
+
+function ldap_integration_user_categories() {
+  global $user;
+
+  $ret = null;
+
+  if ($user->ldap_authentified && variable_get('ldap_useredit_attributes', array())) {
+    $ret = array(array('name' => LDAP_CATEGORY_USER_DATA, 'title' => t(LDAP_USER_DATA_EDIT_TAB), 'weight' => 10));
+  }
+
+  return $ret;
+}
+
+function ldap_integration_user_form($user, $category) {
+  global $ldap_attributes, $ldap;
+
+  if (!$user->ldap_authentified || $category != LDAP_CATEGORY_USER_DATA || ! $attributes = variable_get('ldap_useredit_attributes', array())) {
+    return;
+  }
+
+  $ldap->disconnect();
+  if (!$ldap->connect(LDAP_READER_USER_DN, LDAP_READER_USER_PASS)) {
+    watchdog('user', "User load: user $user->name's data could not be read in the LDAP directory");
+    return;
+  }
+
+  $entry = $ldap->retrieveAttributes($user->ldap_dn);
+
+  $output = '';
+  foreach($attributes as $attribute) {
+    $attr_info = $ldap_attributes[$attribute];
+    if ($attr_info) {
+      array_shift($attr_info);
+      $value = $entry[strtolower($attribute)][0];
+      $output .= _ldap_integration_attribute_form($attribute, $value, $attr_info);
+    }
+  }
+  $element = array(
+    'title' => t(LDAP_SETTINGS_GROUP_STRING),
+    'data' => $output,
+    'weight' => 0);
+  $ret = array($element);
+
+  $ldap->disconnect();
+
+  return $ret;
+}
+
+function ldap_integration_user_load(&$user) {
+  global $ldap, $ldap_drupal_mappings;
+
+  if (!$user->ldap_authentified || !variable_get('ldap_attr_mapping', LDAP_MAP_ATTRIBUTES) == LDAP_MAP_ATTRIBUTES) {
+    return;
+  }
+
+  if (!$ldap->connect(LDAP_READER_USER_DN, LDAP_READER_USER_PASS)) {
+    watchdog('user', "User load: user $user->name's data could not be read in the LDAP directory");
+    return;
+  }
+
+  $newuser = $user;
+  foreach ($ldap_drupal_mappings as $ldap_attr => $drupal_field) {
+    if ($drupal_field != 'pass') {
+      $newuser->$drupal_field = $ldap->retrieveAttribute($user->ldap_dn, $ldap_attr);
+    } else {
+      $cleartext_pass = $ldap->retrieveAttribute($user->ldap_dn, $ldap_attr);
+    }
+  }
+
+  if ($newuser != $user) {
+    $newuser->pass = $cleartext_pass; // Drupal will do the md5 hash
+    $user = user_save($user, get_object_vars($newuser));
+  }
+
+  $ldap->disconnect();
+}
+
+function ldap_integration_user_login(&$user) {
+  global $ldap, $ldap_group_role_mappings;
+
+  // Mapping LDAP groups to Drupal roles
+  if (!$user->ldap_authentified || !variable_get('ldap_group_roles', 0)) {
+    return;
+  }
+
+  if (!$ldap->connect(LDAP_READER_USER_DN, LDAP_READER_USER_PASS)) {
+    watchdog('user', "User login: user $user->name's data could not be read in the LDAP directory");
+    return;
+  }
+
+  if (variable_get('ldap_map_group_signoffs', false)) {
+    // First, we take every mapped role from the user, later below
+    // we'll grant back those deserved.
+    foreach ($ldap_group_role_mappings as $role) {
+      _ldap_integration_take_role_from_user($user, $role);
+//msg("_ldap_integration_take_role_from_user($user, $role);");
+    }
+  }
+
+  $where_groups_are = variable_get('ldap_group_roles', array());
+  $groups_in_attr = (array_search('ldap_group_in_attr', $where_groups_are) !== FALSE);
+  $groups_in_dn = (array_search('ldap_group_in_dn', $where_groups_are) !== FALSE);
+  $groups_as_entries = (array_search('ldap_group_as_entries', $where_groups_are) !== FALSE);
+
+  $dn_groups = array(); 
+  if ($groups_in_dn && $dn_groups_regexp = variable_get('ldap_group_dn_pattern', '')) {
+    preg_match($dn_groups_regexp, $user->ldap_dn, $matches);
+    $dn_groups = array_slice($matches, 1);
+  }
+
+  $attrib_groups = array();
+  if ($groups_in_attr && $attributes = variable_get('ldap_group_attr', '')) {
+    $attributes_array = explode("\r\n", $attributes);
+    foreach ($attributes_array as $attribute) {
+      $tmp = $ldap->retrieveMultiAttribute($user->ldap_dn, $attribute);
+      $attrib_groups = array_merge($attrib_groups, $tmp);
+    }
+  }
+
+  $entries_groups = array();
+  if ($groups_as_entries && $entries = variable_get('ldap_group_entries', '')) {
+    $entries_array = explode("\r\n", $entries);
+    foreach ($entries_array as $entry) {
+      $tmp = $ldap->retrieveMultiAttribute($entry, variable_get('ldap_group_entries_attribute', LDAP_DEFAULT_GROUP_ENTRIES_ATTRIBUTE));
+      if (in_array($user->name, $tmp)) {
+        $entries_groups[] = $entry;
+      }
+    }
+  }
+
+  $groups = array_merge($dn_groups, $attrib_groups, $entries_groups);
+
+  foreach ($groups as $key => $group) {
+    if ($role = $ldap_group_role_mappings[$group]) {
+      _ldap_integration_create_role($role);
+      _ldap_integration_give_role_to_user($user, $role);
+//msg("_ldap_integration_give_role_to_user($user, $role);");
+    }
+  }
+
+  $ldap->disconnect();
+}
+
+function ldap_integration_user_update(&$edit, $user, $category) {
+  global $ldap;
+
+  if (!$user->ldap_authentified) {
+    return;
+  }
+
+  // Three cases here:
+  //   1. User logged on and editing his LDAP entry attributes ($category == LDAP_CATEGORY_USER_DATA).
+  //   2. User logged on and editing his Drupal account settings ($category == 'account').
+  //   3. Password lost and being updated (category == 'account').
+
+  // So, case 1
+  if ($category == LDAP_CATEGORY_USER_DATA && variable_get('ldap_useredit_attributes', array())) {
+    ldap_integration_user_update_ldap_attributes($edit, $user);
+  }
+  // Cases 2 && 3
+  else if ($category == 'account') {
+    ldap_integration_user_update_drupal_account($edit, $user);
+  }
+}
+
+function ldap_integration_user_update_ldap_attributes(&$edit, $user) {
+  global $ldap;
+
+  $ldap->disconnect();
+  if(!$ldap->connect(LDAP_WRITER_USER_DN, LDAP_WRITER_USER_PASS)) {
+    watchdog('user', "User update: user $user->name's data could not be updated in the LDAP directory");
+    return;
+  }
+
+  $writeout = array();
+  $editables = variable_get('ldap_useredit_attributes', array());
+
+  foreach ($edit as $edit_attr => $edit_val) {
+    // Preventing a POST data injection: we check allowance to write value.
+    if (array_search($edit_attr, $editables) !== FALSE) {
+      $writeout[$edit_attr] = $edit_val;
+      $edit[$edit_attr] = null;
+    }
+  }
+
+  if ($writeout) {
+    $ldap->writeAttributes($user->ldap_dn, $writeout);
+  }
+
+  $ldap->disconnect();
+}
+
+function ldap_integration_user_update_drupal_account(&$edit, $user) {
+  global $ldap, $ldap_drupal_mappings;
+
+  $ldap->disconnect();
+  if(!$ldap->connect(LDAP_WRITER_USER_DN, LDAP_WRITER_USER_PASS)) {
+    watchdog('user', "User update: user $user->name's data could not be updated in the LDAP directory");
+    return;
+  }
+
+  $password_updated_in_ldap =
+       variable_get('ldap_attr_mapping', LDAP_MAP_NOTHING) == LDAP_MAP_ONLY_LOST_PASSWORDS
+    || variable_get('ldap_attr_mapping', LDAP_MAP_NOTHING) == LDAP_MAP_ATTRIBUTES;
+
+  $account_updated_in_ldap = (variable_get('ldap_attr_mapping', LDAP_MAP_NOTHING) == LDAP_MAP_ATTRIBUTES);
+
+  if ($edit['pass'] && sizeof($edit) == 1 && $password_updated_in_ldap) {
+    // Case 3: password lost and new one generated randomly => update LDAP password
+    $drupal2ldap_mappings = array_flip($ldap_drupal_mappings);
+    $pass_ldap_attribute = $drupal2ldap_mappings['pass'];
+    $pw = variable_get('ldap_store_encrypted_pass', false) ? '{md5}' . base64_encode(pack('H*', md5($edit['pass']))) : $edit['pass'];
+    $ldap->writeAttributes($user->ldap_dn, array($pass_ldap_attribute => $pw));
+  }
+  else if ($edit['pass'] && sizeof($edit) == 1 && !$password_updated_in_ldap) {
+    //   Same, but NOT having permission to update passwords
+    drupal_set_message('Lost passwords recovery has been disabled for LDAP users. Please contact your system administrator in order to get a new password.');
+    //   Nulling out this field should suffice for Drupal not to try
+    // to regenerate the password, but it doesn't, so I add a drupal_goto()
+    $edit['pass'] = null; 
+    drupal_goto('user/login');
+  }
+  else if ($user->ldap_authentified && $account_updated_in_ldap) {
+    // Case 2: updating account data
+    $drupal2ldap_mappings = array_flip($ldap_drupal_mappings);
+    $writeout = array();
+    foreach ($edit as $key => $value) {
+      $ldap_attr = $drupal2ldap_mappings[$key];
+      // $writeout[$ldap_attr] = $value;
+      if ($ldap_attr) {
+        if ($key == 'pass') {
+          $pw = variable_get('ldap_store_encrypted_pass', false) ? '{md5}' . base64_encode(pack('H*', md5($value))) : $value;
+          $writeout[$ldap_attr] = $pw;
+        } else {
+          $writeout[$ldap_attr] = $value;
+        }
+      }
+    }
+    $ldap->writeAttributes($user->ldap_dn, $writeout);
+  }
+
+  $ldap->disconnect();
+}
+
+function ldap_integration_user_view($user) {
+  global $ldap;
+
+  if (!$user->ldap_authentified) {
+    return;
+  }
+
+  $ldap->disconnect();
+  if (!$ldap->connect(LDAP_READER_USER_DN, LDAP_READER_USER_PASS)) {
+    watchdog('user', "User load: user $user->name's data could not be read in the LDAP directory");
+    return;
+  }
+
+  $entry = $ldap->retrieveAttributes($user->ldap_dn);
+
+  $ret = array();
+  $allowed_attrs = variable_get('ldap_user_attributes', array()) ? variable_get('ldap_user_attributes', array()) : array();
+
+  foreach($allowed_attrs as $attribute) {
+    $shown_attrs[$attribute] = $entry[strtolower($attribute)][0];
+  }
+
+  $ret[LDAP_SETTINGS_GROUP_STRING] = theme('ldap_integration_ldap_entry', $shown_attrs);
+
+  // Disconnecting just in case, for the sake of security  
+  $ldap->disconnect();
+
+  return $ret;
+}
+
+
+/*********************************
+ *    3. Auxiliary functions     *
+ *********************************/
+
+// Patched (2005-09-06) by sfrancis@drupal.org
+function _ldap_integration_login2dn($login) {
+  global $ldap;
+
+  if(variable_get('ldap_system_type', LDAP_STANDARD_SYSTEM) == LDAP_STANDARD_SYSTEM) {
+    $string = $login;
+    $pattern = variable_get('ldap_login_pattern', LDAP_DEFAULT_PATTERN);
+    $replacement = variable_get('ldap_login_replacement', LDAP_DEFAULT_REPLACEMENT);
+    $ret = preg_replace($pattern, $replacement, $string);
+  } else {
+    $possible_base_dns = explode("\r\n", variable_get('ldap_base_dn',''));
+    foreach ($possible_base_dns as $dn) {
+      if ($ret = $ldap->name_to_dn_AD(variable_get('ldap_user_attribute', ''), $login, $dn)) {
+        break;
+      }
+    }
+    //$ret = $ldap->name_to_dn_AD(variable_get('ldap_user_attribute', ''), $login, variable_get('ldap_base_dn',''));
+//msg_r($ret);
+  }
+
+  return $ret;
+}
+
+function _ldap_integration_attribute_form($attrname, $value, $info) {
+  $type = array_shift($info);
+
+  switch($type) {
+    case 'textfield':
+      $output = form_textfield(array_shift($info), $attrname, $value, array_shift($info), array_shift($info), array_shift($info), array_shift($info), array_shift($info));
+      break;
+    case 'password':
+      $output = form_password(array_shift($info), $attrname, $value, array_shift($info), array_shift($info), array_shift($info), array_shift($info), array_shift($info));
+      break;
+  }
+
+  return $output;
+}
+
+function _ldap_integration_give_role_to_user($user, $rolename) {
+  $result = db_query("SELECT * FROM {role} WHERE name = '$rolename'");
+  $role_exists = db_num_rows($result);
+
+  if ($role_exists) {
+    $role = db_fetch_object($result);
+    $result = db_query("SELECT * FROM {users_roles} WHERE uid = $user->uid AND rid = $role->rid");
+    $role_already_given = db_num_rows($result);
+    if (!$role_already_given) {
+     db_query("INSERT {users_roles} SET uid = $user->uid, rid = $role->rid");
+    }
+  }
+}
+
+function _ldap_integration_take_role_from_user($user, $rolename) {
+  $result = db_query("SELECT * FROM {role} WHERE name = '$rolename'");
+  $role_exists = db_num_rows($result);
+
+  if ($role_exists) {
+    $role = db_fetch_object($result);
+    $result = db_query("SELECT * FROM {users_roles} WHERE uid = $user->uid AND rid = $role->rid");
+    $role_present = db_num_rows($result);
+    if ($role_present) {
+      db_query("DELETE FROM {users_roles} WHERE uid = $user->uid AND rid = $role->rid");
+    }
+  }
+}
+
+function _ldap_integration_create_role($rolename) {
+  $result = db_query("SELECT * FROM {role} WHERE name = '$rolename'");
+  $role_exists = db_num_rows($result);
+
+  if (!$role_exists) {
+     db_query("INSERT {role} SET name = '$rolename'");
+  }
+}
+
+
+
+/*********************************
+ *  4. user.module faking stuff  *
+ *********************************/
+
+function _ldap_integration_fake_user_login($edit = array(), $msg = '') {
+  global $user, $base_url;
+
+  // If we are already logged on, go to the user page instead.
+  if ($user->uid) {
+    drupal_goto('user');
+  }
+
+  if (user_deny('user', $edit['name'])) {
+    $error = t('The name %s has been denied access.', array('%s' => theme('placeholder', $edit['name'])));
+  }
+  else if ($edit['name'] && $edit['pass']) {
+
+    // === HACK STARTS ===
+    // --- New code starts
+    $user = _ldap_integration_code_added_user_login($edit['name'], $edit['pass']);
+    // --- New code ends
+
+    // --- Drupal's original code starts
+    //if (!$user->uid) {
+    //  $user = user_authenticate($edit['name'], $edit['pass']);      
+    //}
+    // --- Drupal's original code ends
+    // === HACK ENDS ===
+
+    if ($user->uid) {
+      watchdog('user', t('Session opened for %name.', array('%name' => theme('placeholder', $user->name))));
+
+      // Update the user table timestamp noting user has logged in.
+      db_query("UPDATE {users} SET changed = '%d' WHERE uid = '%s'", time(), $user->uid);
+
+      user_module_invoke('login', $edit, $user);
+
+      // Redirect the user to the page he logged on from.
+      drupal_goto();
+    }
+    else {
+      if (!$error) {
+        $error = t('Sorry. Unrecognized username or password.') .' '. l(t('Have you forgotten your password?'), 'user/password');
+      }
+      watchdog('user', t('Login attempt failed for %user: %error.', array('%user' => theme('placeholder', $edit['name']), '%error' => theme('placeholder', $error))));
+    }
+  }
+
+  // Display error message (if any):
+  if ($error) {
+    drupal_set_message($error, 'error');
+  }
+
+  // Display login form:
+  if ($msg) {
+    $output .= "<p>$msg</p>";
+  }
+  if (count(user_auth_help_links()) > 0) {
+    $output .= form_textfield(t('Username'), 'name', $edit['name'], 30, 64, t('Enter your %s username, or an ID from one of our affiliates: %a.', array('%s' => variable_get('site_name', 'local'), '%a' => implode(', ', user_auth_help_links()))));
+  }
+  else {
+    $output .= form_textfield(t('Username'), 'name', $edit['name'], 30, 64, t('Enter your %s username.', array('%s' => variable_get('site_name', 'local'))));
+  }
+  $output .= form_password(t('Password'), 'pass', $pass, 30, 64, t('Enter the password that accompanies your username.'));
+  $output .= form_submit(t('Log in'));
+
+  return form($output, 'post', url('user/login', drupal_get_destination()));
+}
+
+function _ldap_integration_code_added_user_login($name, $pass) {
+  $user = null;
+
+  if (_ldap_integration_is_ldap_login_only($name) == false) {
+    // Authenticate locally only if not initially authenticated by LDAP, or if configured to do so
+    $user = user_authenticate($name, $pass);
+  }
+
+  // If not succesful, try LDAP authentication directly
+  if (!$user->uid) {
+    $user = _ldap_integration_ldap_login($name, $pass);
+  }
+
+  return $user;
+}
+
+function _ldap_integration_is_ldap_login_only($name) {
+  return variable_get('ldap_login_process', LDAP_FIRST_LDAP) && db_num_rows(db_query("SELECT name FROM {users} WHERE locate('ldap_authentified',data) AND name='%s'",$name));
+}
+
+function _ldap_integration_ldap_login($login_string, $pass) {
+  global $ldap;
+
+  $user = null;
+
+  // Strip name and server from ID:
+  if ($server = strrchr($login_string, '@')) {
+    $name = substr($login_string, 0, strlen($login_string) - strlen($server));
+    $at = '@';
+    $server = substr($server, 1);
+  }
+  else {
+    $name = $login_string;
+    $at = '';
+    $server = '';
+  }
+
+  if (ldap_integration_auth($name, $pass, $server)) {
+    $user = user_load(array('name' => "$name$at$server"));
+    $tmp_user->name = "$name$at$server";
+    if (!$user->uid) { // Register this new user.
+      // Changes to this user_save():
+      //   1. 'pass' => $pass . Obviously. What I wonder is how it could
+      //      be otherwise. Really.
+      //   2. 'mail' => value of LDAP_EMAIL_ATTRIBUTE in the LDAP directory
+      //   3. 'init' => same. BTW: what's the use of this field?
+      //   4. 'ldap_authentified' => TRUE . There is a need to mark
+      //      people as externally authentified.
+      $dn = _ldap_integration_login2dn("$name$at$server");
+      $mail = $ldap->retrieveAttribute($dn, LDAP_EMAIL_ATTRIBUTE);
+      $user = user_save('', array('name' => "$name$at$server", 'pass' => $pass, 'mail' => $mail, 'init' => $mail, 'status' => 1, "authname_ldap_integration" => "$name$at$server", 'roles' => array(_user_authenticated_id()), 'ldap_authentified' => TRUE, 'ldap_dn' => $dn));
+      watchdog('user', t('New external user: %user using module %module.', array('%user' => theme('placeholder', $name .'@'. $server), '%module' => theme('placeholder', $module))), WATCHDOG_NOTICE, l(t('edit'), 'user/'. $user->uid .'/edit'));
+    }
+  }
+
+  return $user;
+}
+
+
+/*********************************
+ *          5. Forms             *
+ *********************************/
+
+function form_complex_radios($title, $name, $value, $options, $description = NULL, $required = FALSE, $attributes = NULL) {
+  if (count($options) > 0) {
+    $choices = '<dl>';
+    foreach ($options as $key => $choice) {
+      $choices .= '<dt><label class="option"><input type="radio" class="form-radio" name="edit['. $name .']" value="'. $key .'"'. ($key == $value ? ' checked="checked"' : ''). drupal_attributes($attributes). ' /> '. $choice['choice'] .'</label></dt>';
+      $choices .= '<dd style="border-left: 5px solid #DDDDDD; padding-left: 1em; margin-left: 1em;">' . $choice['extended'] . '</dd>';
+    }
+    $choices .= '</dl>';
+    return theme('form_element', $title, $choices, $description, NULL, $required, _form_get_error($name));
+  }
+}
+
+function form_complex_checkboxes($title, $name, $values, $options, $description = NULL, $attributes = FALSE, $required = NULL) {
+  if (count($options) > 0) {
+    $choices = '<dl>';
+    foreach ($options as $key => $choice) {
+      $choices .= '<dt><label class="option"><input type="checkbox" class="form-checkbox" name="edit['. $name .'][]" value="'. $key .'"'. ($values && in_array($key, $values) ? ' checked="checked"' : ''). drupal_attributes($attributes) .' /> '. $choice['choice'] .'</label></dt>';
+      $choices .= '<dd style="border-left: 5px solid #DDDDDD; padding-left: 1em; margin-left: 1em;">' . $choice['extended'] . '</dd>';
+    }
+    $choices .= '</dl>';
+    // Note: because unchecked boxes are not included in the POST data, we 
+    // include a form_hidden() which will be overwritten as soon as there is at 
+    // least one checked box. 
+    return form_hidden($name, 0) . theme('form_element', $title, $choices, $description, NULL, $required, _form_get_error($name)); 
+  }
+}
+
+
+/*********************************
+ *          6. Themes            *
+ *********************************/
+
+function theme_ldap_integration_ldap_entry($attributes) {
+  global $ldap_attributes;
+
+  $attributes = $attributes ? $attributes : array();
+  $output = "<dl>\n";
+  foreach($attributes as $attribute => $value) {
+    $attribute_title = $ldap_attributes[$attribute][2];
+    $output .= "<dt>$attribute_title</dt><dd>$value</dd>\n";
+  }
+  $output .= "</dl>\n";
+
+  return $output;
+}
+
+/*********************************
+ *        7. Debug utils         *
+ *********************************/
+
+function msg($string) {
+  drupal_set_message("<pre style=\"border: 0; margin: 0; padding: 0;\">$string</pre>");
+}
+
+function msg_r($object) {
+  ob_start();
+  print_r($object);
+  $output = ob_get_contents();
+  ob_end_clean();
+  msg($output);
+}
+
+?>
+

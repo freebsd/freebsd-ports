@@ -1,0 +1,50 @@
+<?php
+// $Id: zcallbacks.module,v 1.1.2.1.2.3 2005-12-13 20:30:27 pablobm Exp $
+
+/*
+ *    This mini-module just redefines a callback originally defined in user.module, so it
+ *  serves better our interests in the ldap_integration module.
+ *    It has to be separated from the rest of the module because modules are loaded in
+ *  alphabetic order and this callback must be loaded after that of user.module.
+ */
+
+function zcallbacks_help($section) {
+  $output = '';
+
+  switch ($section) {
+    case 'admin/modules#zcallbacks':
+      $output = 'zcallbacks';
+      break;
+    case 'admin/modules#description':
+    case 'admin/help#zcallbacks':
+      $output = t('<strong>Needed</strong> to make <em>ldap_integration</em> module work.');
+      break;
+    case 'user/help#zcallbacks':
+      $output = t('<p>This module <strong>must be enabled</strong> for LDAP authentication to work with em>ldap_integration</em> module</p>');
+      break;
+  }
+
+  return $output;
+}
+
+function zcallbacks_menu($may_cache) {
+  $items = array();
+  
+  if ($may_cache) {
+    // Hack callback. It replaces one set in user.module
+    $items[] = array(
+      'path' => 'user/login',
+      'title' => t('log in'),
+      'callback' => '_zcallbacks_call',
+      'access' => TRUE,
+      'type' => MENU_CALLBACK);
+  }
+  
+  return $items;
+}
+
+function _zcallbacks_call() {
+  print theme('page', _ldap_integration_fake_user_login($_POST['edit']));
+}
+
+?>

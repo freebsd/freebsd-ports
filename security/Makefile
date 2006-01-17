@@ -94,6 +94,7 @@
     SUBDIR += doorman
     SUBDIR += doscan
     SUBDIR += dropbear
+    SUBDIR += drupal-ldap_integration
     SUBDIR += drweb
     SUBDIR += drweb-postfix
     SUBDIR += drweb-qmail
