@@ -1,0 +1,4 @@
+PyGObject provides a convenient wrapper for the GObject+ library for use
+in Python programs, and takes care of many of the boring details such as
+managing memory and type casting.  When combined with PyGTK, PyORBit and
+gnome-python, it can be used to write full featured Gnome applications.
