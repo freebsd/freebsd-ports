@@ -143,8 +143,6 @@ CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .   if ${OSVERSION} > 500023
-CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
-			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .     if ${ARCH} == i386
 CONFIGURE_ARGS+=	--enable-nonportable-atomics
 .     endif
