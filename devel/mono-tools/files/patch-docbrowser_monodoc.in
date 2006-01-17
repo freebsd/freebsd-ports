@@ -1,0 +1,8 @@
+--- docbrowser/monodoc.in.orig	Thu Oct 27 15:17:41 2005
++++ docbrowser/monodoc.in	Tue Jan 17 03:25:50 2006
+@@ -80,4 +80,4 @@
+ fi
+ 
+ 
+-exec @RUNTIME@ $monodocdir/browser.exe $OPTIONS "$@" $REST
++exec @RUNTIME@ $monodocdir/browser.exe --no-gecko $OPTIONS "$@" $REST
