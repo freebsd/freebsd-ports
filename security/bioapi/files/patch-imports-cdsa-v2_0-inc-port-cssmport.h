@@ -1,5 +1,5 @@
 --- imports/cdsa/v2_0/inc/port/cssmport.h	Wed Jun  8 02:51:05 2005
-+++ imports/cdsa/v2_0/inc/port/cssmport.h	Fri Nov 25 15:34:49 2005
++++ imports/cdsa/v2_0/inc/port/cssmport.h	Tue Jan 17 16:44:06 2006
 @@ -17,9 +17,9 @@
  #ifndef _CSSMPORT_H
  #define _CSSMPORT_H    
@@ -163,7 +163,23 @@
  #include <stdarg.h> 
  
  void port_syslog(int Facility, int Priority, char* format, ...);
-@@ -719,7 +718,7 @@
+@@ -647,6 +646,7 @@
+ #define __arch64__
+ #endif /* __ia64__ */
+ 
++#if 0
+ #ifdef __arch64__
+ typedef Elf64_Addr Elf_Addr;
+ typedef Elf64_Word Elf_Word;
+@@ -670,6 +670,7 @@
+ typedef Elf32_Shdr Elf_Shdr;
+ #define ELF_R_TYPE ELF32_R_TYPE
+ #endif /* __arch64__ */
++#endif
+ 
+ #endif /* ELF_FORMAT */
+ 
+@@ -719,7 +720,7 @@
  #define DLL_STR "so"
  #endif
  
