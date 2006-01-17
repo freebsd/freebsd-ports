@@ -3,9 +3,9 @@
 # $FreeBSD$
 #
 
-# PROVIDE: milterdkim
+# PROVIDE: milter-dkim
 # REQUIRE: DAEMON
-# BEFORE: sendmail
+# BEFORE: mail
 # KEYWORD: shutdown
 
 # Define these milterdkim_* variables in one of these files:
@@ -13,28 +13,83 @@
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/milterdkim
 #
+# milterdkim_enable (bool):   Set to "NO" by default.
+#                             Set it to "YES" to enable dkim-milter
+# milterdkim_profiles (list): Set to "" by default.
+#                             Define your profiles here.
+# milterdkim_socket (str):    Path to the milter socket.
+# milterdkim_domain (str):    Domainpart of From: in mails to sign.
+# milterdkim_key (str):       Path to the private key file to sign with.
+# milterdkim_flags (str):     Flags passed to start command.
+#
+# milterdkim_${profile}_* :   Variables per profile.
+#                             Sockets must be different from each other.
+#
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 milterdkim_enable=${milterdkim_enable:-"NO"}
+milterdkim_profiles=${milterdkim_profiles:-}
 milterdkim_socket=${milterdkim_socket:-"local:/var/run/dkim-filter"}
-milterdkim_pid=${milterdkim_pid:-"/var/run/dkim-filter.pid"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
 milterdkim_key=${milterdkim_key:-"/var/db/domainkeys/default.key.pem"}
-milterdkim_flags=${milterdkim_flags:-"-d ${milterdkim_domain} -c nowsp -m MSA \
--s ${milterdkim_key} -S default"}
+## milterdkim_flags expands escaped variables later.
+milterdkim_flags=${milterdkim_flags:-"-d \${milterdkim_domain\} -c nowsp -m MSA \
+-s \${milterdkim_key\} -S default"}
 
 . %%RC_SUBR%%
 
 name="milterdkim"
-pidfile=${milterdkim_pid}
 rcvar=`set_rcvar`
+
+start_precmd="dkim_prepcmd"
+stop_postcmd="dkim_prepcmd"
 command="%%PREFIX%%/libexec/dkim-filter"
-command_args="-l -p ${milterdkim_socket} -P ${milterdkim_pid}"
-stop_postcmd="dkim_postcmd"
+_pidprefix="/var/run/dkim-filter"
+pidfile="${_pidprefix}.pid"
 
 load_rc_config $name
 
-dkim_postcmd ()
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${milterdkim_profiles}" != "x" ]; then
+	pidfile="${_pidprefix}.${profile}.pid"
+	eval milterdkim_enable="\${milterdkim_${profile}_enable:-${milterdkim_enable}}"
+	eval milterdkim_socket="\${milterdkim_${profile}_socket:-}"
+	if [ "x${milterdkim_socket}" = "x" ];then
+	    echo "You must define a socket (milterdkim_${profile}_socket)"
+	    exit 1
+	fi
+	eval milterdkim_domain="\${milterdkim_${profile}_domain:-${milterdkim_domain}}"
+	eval milterdkim_key="\${milterdkim_${profile}_key:-${milterdkim_key}}"
+	eval milterdkim_flags="\${milterdkim_${profile}_flags:-${milterdkim_flags}}"
+	command_args="-l -p ${milterdkim_socket} -P ${pidfile}"
+    else
+	echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${milterdkim_profiles}" != "x" -a "x$1" != "x" ]; then
+	if [ "x$1" != "xrestart" ]; then
+	    for profile in ${milterdkim_profiles}; do
+		echo "===> milterdkim profile: ${profile}"
+		%%PREFIX%%/etc/rc.d/milter-dkim.sh $1 ${profile}
+		retcode="$?"
+		if [ "0${retcode}" -ne 0 ]; then
+		    failed="${profile} (${retcode}) ${failed:-}"
+		else
+		    success="${profile} ${success:-}"
+		fi
+	    done
+	    exit 0
+	else
+	    restart_precmd=""
+	fi
+    else
+	milterdkim_flags=${milterdkim_flags}
+	command_args="-l -p ${milterdkim_socket} -P ${pidfile}"
+    fi
+fi
+
+dkim_prepcmd ()
 {
     if [ -S ${milterdkim_socket##local:} ] ; then
         rm -f ${milterdkim_socket##local:}
