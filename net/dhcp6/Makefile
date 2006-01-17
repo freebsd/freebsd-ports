@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	dhcp6
-PORTVERSION=	20050723a
+PORTVERSION=	20060114
+PORTREVISION=	0
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-DISTNAME=	kame-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	wide-dhcpv6
+DISTNAME= wide-dhcpv6-${PORTVERSION}
 
-MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=		KAME DHCP6 client and server
+MAINTAINER=	suz@FreeBSD.org
+COMMENT=	KAME DHCP6 client, server, and relay
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
@@ -28,10 +30,6 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
 post-patch:
-.for file in ${MAN5} ${MAN8}
-	${REINPLACE_CMD} -e 's|/usr/local/v6/etc|${LOCALBASE}/etc|' \
-		${WRKSRC}/${file}
-.endfor
 .for f in ${RC_SCRIPTS}
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/${f} > ${WRKDIR}/${f}
