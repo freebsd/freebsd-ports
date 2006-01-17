@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut/.packlist
+%%SITE_PERL%%/Object/InsideOut.pm
+%%SITE_PERL%%/Object/InsideOut/Results.pm
+%%SITE_PERL%%/Object/InsideOut/Util.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Object/InsideOut 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Object 2>/dev/null || true
