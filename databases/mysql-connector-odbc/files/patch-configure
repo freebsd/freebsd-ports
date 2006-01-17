@@ -1,0 +1,19 @@
+--- configure.orig	Sat Oct 29 20:43:26 2005
++++ configure	Sat Oct 29 21:00:14 2005
+@@ -1650,11 +1650,11 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
+-am__api_version="1.9"
++# test -n "$target_alias" &&
++#   test "$program_prefix$program_suffix$program_transform_name" = \
++#     NONENONEs,x,x, &&
++#   program_prefix=${target_alias}-
++# am__api_version="1.9"
+ # Find a good install program.  We prefer a C program (faster),
+ # so one script is as good as another.  But avoid the broken or
+ # incompatible versions:

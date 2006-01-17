@@ -1,4 +1,4 @@
-MyODBC is an ODBC driver for interfacing to MySQL databases.
+MySQL Connector ODBC is an ODBC driver for interfacing to MySQL databases.
 
-- Erik H. Bakke
+Author: Erik H. Bakke
 WWW: http://www.mysql.com/

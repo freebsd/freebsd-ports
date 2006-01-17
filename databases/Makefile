@@ -109,11 +109,11 @@
     SUBDIR += msql
     SUBDIR += msql3
     SUBDIR += mtop
-    SUBDIR += myodbc
     SUBDIR += mysql++
     SUBDIR += mysql++1
     SUBDIR += mysql-administrator
     SUBDIR += mysql-connector-java
+    SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
     SUBDIR += mysql2odbc
