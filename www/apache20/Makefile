@@ -151,8 +151,6 @@ IGNORE=	: apr from ports (WITH_APR_FROM_PORTS) is no longer supported
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .   if ${OSVERSION} > 500023
-CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
-			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 .     if ${ARCH} == i386
 CONFIGURE_ARGS+=	--enable-nonportable-atomics
 .     endif
