@@ -7,6 +7,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	1.62.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -21,14 +22,21 @@ LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl \
 
 .if defined(PACKAGE_BUILDING)
 WITHOUT_TRIANGLE=	yes
+WITHOUT_TETGEN=		yes
 .endif
 
 .if !defined(WITHOUT_TRIANGLE)
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${TRIANGLE_PORTDIR}:patch
+TRIANGLE_PORTDIR=	${PORTSDIR}/math/triangle
+.endif
+
+.if !defined(WITHOUT_TETGEN)
+EXTRACT_DEPENDS+=	${NONEXISTENT}:${TETGEN_PORTDIR}:patch
+TETGEN_PORTDIR=		${PORTSDIR}/math/tetgen
+TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-TRIANGLE_PORTDIR=	${PORTSDIR}/math/triangle
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -45,6 +53,10 @@ MAN1=		gmsh.1
 NO_CDROM=	"Triangle must not be sold for profit"
 .endif
 
+.if !defined(WITHOUT_TETGEN)
+NO_CDROM+=	"Tetgen must not be sold for profit"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -56,6 +68,10 @@ post-extract:
 .if !defined(WITHOUT_TRIANGLE)
 	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.*	\
 		${WRKSRC}/contrib/Triangle
+.endif
+.if !defined(WITHOUT_TETGEN)
+	${CP} ${TETGEN_SRC:S|^|`cd ${TETGEN_PORTDIR}; ${MAKE} -V WRKSRC`/|}	\
+		${WRKSRC}/contrib/Tetgen
 .endif
 
 pre-configure:
