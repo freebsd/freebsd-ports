@@ -158,7 +158,6 @@ x11-toolkits/qt30|x11-toolkits/qt31|2003-01-28|qt30 replaced by qt31
 x11-toolkits/qt31|x11-toolkits/qt32|2003-09-18|qt31 replaced by qt32
 misc/kde3-i18n-pt|portuguese/kde3-i18n|2003-01-28|new category
 misc/kde3-i18n-pt_BR|portuguese/kde3-i18n-pt_BR|2003-01-28|new category
-lang/php4||2003-01-29|integrated into www/mod_php4
 biology/gaussian||2003-01-31|deleted maintain is hard and gray in license
 graphics/xine_dvdnav_plugin||2003-02-01|integrated into graphics/libxine
 devel/ossp-mm||2003-02-01|accidental dupe of devel/mm
@@ -337,7 +336,6 @@ misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
 devel/p5-File-Tools||2003-05-22|Newer version included into Perl distribution
-lang/php4|lang/php4|2003-05-22|re-separated from www/mod_php4
 x11-servers/XttXF98srv-EGC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-GA968||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-GANBWAP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
@@ -963,7 +961,6 @@ archivers/gshar+gunshar|archivers/sharutils|2004-03-19|port renamed
 devel/imake|devel/imake-4|2004-03-19|removed, obsoleted by imake-4 long ago
 net/arpwatch-devel|net-mgmt/arpwatch-devel|2004-03-20|moved to better fitting category
 multimedia/ffmpeg045|multimedia/ffmpeg|2004-03-20|latest stable version is better
-editors/emacs|editors/emacs19|2004-03-20|emacs 19.x moved to a non-default port location
 editors/emacs21|editors/emacs|2004-03-20|emacs 21.x moved to default port location
 editors/openoffice-1.1-gr|editors/openoffice-1.1-el|2004-03-20|correct ISO code
 print/rubber|textproc/rubber|2004-03-22|remove duplicate port
