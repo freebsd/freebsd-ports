@@ -1833,6 +1833,7 @@ drpython	ports/devel/drpython
 drscheme	ports/lang/drscheme
 drumpiler	ports/audio/drumpiler
 drupal		ports/www/drupal
+drupal-ldap_integration	ports/security/drupal-ldap_integration
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
