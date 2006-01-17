@@ -20,10 +20,13 @@ CONFIGURE_ARGS=	--with-devicepath='/dev' \
 		--with-deviceentry='urio0' \
 		--with-id3support
 
+USE_REINPLACE=	yes
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,byteswap.h,sys/endian.h," \
+		${WRKSRC}/lib/libfon.c \
+		${WRKSRC}/lib/librio500.c
 
 .include <bsd.port.post.mk>
