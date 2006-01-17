@@ -43,6 +43,9 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-X11-dir=${X11BASE} \
 		--with-tcl-include=${LOCALBASE}/include/tcl${TK_VERSION} \
 		--with-tk-include=${LOCALBASE}/include/tk${TK_VERSION}
+.if defined(WITH_TCLTK_JP)
+CONFIGURE_ARGS+=--with-tcllib=tcl${TK_VERSION:S/.//} --with-tklib=tk${TK_VERSION:S/.//}
+.endif
 
 .if ${RUBY_VER} >= 1.7
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
