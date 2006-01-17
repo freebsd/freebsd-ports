@@ -49,7 +49,6 @@ share/icons/hicolor/32x32/apps/ktorrent.png
 share/icons/hicolor/48x48/apps/ktorrent.png
 share/icons/hicolor/64x64/apps/ktorrent.png
 share/icons/hicolor/scalable/apps/ktorrent.svgz
-share/locale/bg/LC_MESSAGES/ktorrent.mo
 share/locale/br/LC_MESSAGES/ktorrent.mo
 share/locale/cs/LC_MESSAGES/ktorrent.mo
 share/locale/cy/LC_MESSAGES/ktorrent.mo
@@ -61,9 +60,7 @@ share/locale/es/LC_MESSAGES/ktorrent.mo
 share/locale/et/LC_MESSAGES/ktorrent.mo
 share/locale/fr/LC_MESSAGES/ktorrent.mo
 share/locale/ga/LC_MESSAGES/ktorrent.mo
-share/locale/hu/LC_MESSAGES/ktorrent.mo
 share/locale/it/LC_MESSAGES/ktorrent.mo
-share/locale/ja/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
 share/locale/pa/LC_MESSAGES/ktorrent.mo
@@ -71,7 +68,6 @@ share/locale/pl/LC_MESSAGES/ktorrent.mo
 share/locale/pt/LC_MESSAGES/ktorrent.mo
 share/locale/pt_BR/LC_MESSAGES/ktorrent.mo
 share/locale/ru/LC_MESSAGES/ktorrent.mo
-share/locale/rw/LC_MESSAGES/ktorrent.mo
 share/locale/sr/LC_MESSAGES/ktorrent.mo
 share/locale/sr@Latn/LC_MESSAGES/ktorrent.mo
 share/locale/sv/LC_MESSAGES/ktorrent.mo
@@ -91,8 +87,6 @@ share/servicetypes/ktorrentplugin.desktop
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
 @unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sr 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
