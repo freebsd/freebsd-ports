@@ -42,6 +42,7 @@ VISUALIZATION_PLUGINS=	blur_scope
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		FLAC	"Enable flac input" on \
+		MODPLUG	"Enable modplug input" off \
 		ESOUND	"Enable Esound output"  off \
 		VISUAL  "Enable libvisual plugin" off \
 		ID3V2	"Enable id3v2 editing" off \
@@ -52,31 +53,40 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-EXTRA_PATCHES= ${PATCHDIR}/extra-patch-Plugins_Input_wma_iir.h
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Plugins_Input_wma_iir.h
 .endif
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
-PLIST_SUB+=	VORBISPLUGIN:=""
+PLIST_SUB+=	VORBISPLUGIN=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	VORBISPLUGIN:="@comment "
+PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_FLAC)
 INPUT_PLUGINS+=	flac
-PLIST_SUB+=	FLACPLUGIN:=""
+PLIST_SUB+=	FLACPLUGIN=""
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 .else
-PLIST_SUB+=	FLACPLUGIN:="@comment "
+PLIST_SUB+=	FLACPLUGIN="@comment "
 CONFIGURE_ARGS+=	--disable-flac
+.endif
+
+.if !defined(WITHOUT_MODPLUG)
+INPUT_PLUGINS+=	modplug
+PLIST_SUB+=	MODPLUG=""
+LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+.else
+PLIST_SUB+=	MODPLUG="@comment "
+CONFIGURE_ARGS+=	--disable-modplug
 .endif
 
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
 OUTPUT_PLUGINS+=	esd
-PLIST_SUB+=	ESDPLUGIN:=""
+PLIST_SUB+=	ESDPLUGIN=""
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 .else
@@ -84,15 +94,15 @@ PKGNAMESUFFIX=	-esound
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESDPLUGIN:="@comment "
+PLIST_SUB+=	ESDPLUGIN="@comment "
 .endif
 
 .if defined(WITH_VISUAL)
-PLIST_SUB+=	LIBVISUAL:=""
+PLIST_SUB+=	LIBVISUAL=""
 VISUALIZATION_PLUGINS+=	libvisual-proxy
 LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 .else
-PLIST_SUB+=	LIBVISUAL:="@comment "
+PLIST_SUB+=	LIBVISUAL="@comment "
 .endif
 
 .if defined(WITH_ID3V2)

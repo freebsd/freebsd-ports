@@ -16,18 +16,19 @@ lib/audacious/Input/libcdaudio.so
 lib/audacious/Input/libconsole.so
 lib/audacious/Input/libmpg123.so
 lib/audacious/Input/libtonegen.so
-%%VORBISPLUGIN:%%lib/audacious/Input/libvorbis.so
-%%FLACPLUGIN:%%lib/audacious/Input/libflac.so
+%%VORBISPLUGIN%%lib/audacious/Input/libvorbis.so
+%%FLACPLUGIN%%lib/audacious/Input/libflac.so
+%%MODPLUG%%lib/audacious/Input/libmodplug.so
 lib/audacious/Input/libwav.so
 lib/audacious/Input/libwma.so
 lib/audacious/Output/libOSS.so
-%%ESDPLUGIN:%%lib/audacious/Output/libesdout.so
+%%ESDPLUGIN%%lib/audacious/Output/libesdout.so
 lib/audacious/Output/libcrossfade.a
 lib/audacious/Output/libcrossfade.so
 lib/audacious/Output/libcrossfade.so.0
 lib/audacious/Output/libdisk_writer.so
 lib/audacious/Visualization/libbscope.so
-%%LIBVISUAL:%%lib/audacious/Visualization/libvisual_proxy.so
+%%LIBVISUAL%%lib/audacious/Visualization/libvisual_proxy.so
 lib/libaudacious.a
 lib/libaudacious.so
 lib/libaudacious.so.2
@@ -87,7 +88,6 @@ share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm %%DATADIR%%/Skins/Default
 @dirrm %%DATADIR%%/Skins
 @dirrm %%DATADIR%%
-@dirrm share/applications
 @dirrm lib/audacious/Visualization
 @dirrm lib/audacious/Output
 @dirrm lib/audacious/Input
@@ -95,3 +95,4 @@ share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm lib/audacious/Effect
 @dirrm lib/audacious
 @dirrm include/audacious
+@unexec rmdir %D/share/applications 2>/dev/null || true
