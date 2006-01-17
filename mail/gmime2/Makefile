@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.17
+PORTVERSION=	2.1.18
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -28,9 +28,7 @@ INSTALLS_SHLIB=		yes
 
 LATEST_LINK?=	gmime2
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
