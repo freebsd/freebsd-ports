@@ -7,7 +7,7 @@
 
 PORTNAME=	bioapi
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.qrivy.net/~michael/blua/bioapi/ \
 		http://shapeshifter.se/pub/bioapi/
