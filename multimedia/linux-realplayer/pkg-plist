@@ -7,6 +7,10 @@ lib/RealPlayer/codecs/atrc.so
 lib/RealPlayer/codecs/colorcvt.so
 lib/RealPlayer/codecs/cook.so
 lib/RealPlayer/codecs/cvt1.so
+lib/RealPlayer/codecs/ddnt.so.6.0
+lib/RealPlayer/codecs/dnet.so.6.0
+lib/RealPlayer/codecs/ddnt.so
+lib/RealPlayer/codecs/dnet.so
 lib/RealPlayer/codecs/drv1.so
 lib/RealPlayer/codecs/drv2.so
 lib/RealPlayer/codecs/drvc.so
