@@ -5,21 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		pfqueue
-PORTVERSION=		0.5.0
-CATEGORIES=		mail
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	pfqueue
+PORTVERSION=	0.5.1
+DISTVERSIONSUFFIX=	-src
+CATEGORIES=	mail
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		mnag@FreeBSD.org
-COMMENT=		A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
-USE_REINPLACE=		yes
+WRKSRC=		${WRKDIR}/${DISTNAME:S/${DISTVERSIONSUFFIX}//}
+
+USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=		yes
-CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS}"
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=			pfqueue.1
+MAN1=		pfqueue.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
