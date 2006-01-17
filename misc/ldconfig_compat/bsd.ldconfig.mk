@@ -2,8 +2,8 @@ LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
 
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if ${OSVERSION} < 504105 || 
- 	(${OSVERSION} >= 700000 && ${OSVERSION} < 700012) || 
+.if ${OSVERSION} < 504105 || \
+ 	(${OSVERSION} >= 700000 && ${OSVERSION} < 700012) || \
 	(${OSVERSION} >= 600000 && ${OSVERSION} < 600104)
 RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
 .endif
