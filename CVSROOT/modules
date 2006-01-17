@@ -8571,6 +8571,7 @@ p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-OOTools	ports/devel/p5-OOTools
 p5-ORBit	ports/devel/p5-ORBit
 p5-Object-Accessor	ports/devel/p5-Object-Accessor
+p5-Object-InsideOut	ports/devel/p5-Object-InsideOut
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
 p5-Object-Signature	ports/devel/p5-Object-Signature
