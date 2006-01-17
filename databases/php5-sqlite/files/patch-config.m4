@@ -1,5 +1,5 @@
---- config.m4.orig	Tue Jun 14 03:44:16 2005
-+++ config.m4	Thu Dec  8 14:15:18 2005
+--- config.m4.orig	Wed Nov 30 05:50:03 2005
++++ config.m4	Tue Jan 17 12:51:21 2006
 @@ -48,14 +48,6 @@
  
  
@@ -30,18 +30,15 @@
      sqlite_extra_sources="libsqlite/src/opcodes.c \
          libsqlite/src/parse.c libsqlite/src/encode.c \
          libsqlite/src/auth.c libsqlite/src/btree.c libsqlite/src/build.c \
-@@ -107,13 +98,12 @@
-         libsqlite/src/where.c libsqlite/src/trigger.c"
-  
-     PHP_ADD_EXTENSION_DEP(sqlite, spl)
--    PHP_ADD_EXTENSION_DEP(sqlite, pdo)
-   fi
- 
+@@ -109,10 +100,9 @@
    dnl
    dnl Common for both bundled/external
    dnl
 -  sqlite_sources="sqlite.c sess_sqlite.c pdo_sqlite2.c $sqlite_extra_sources" 
 +  sqlite_sources="sqlite.c sess_sqlite.c $sqlite_extra_sources" 
    PHP_NEW_EXTENSION(sqlite, $sqlite_sources, $ext_shared,,$PHP_SQLITE_CFLAGS)
+   PHP_ADD_EXTENSION_DEP(sqlite, spl, true)
+-  PHP_ADD_EXTENSION_DEP(sqlite, pdo, true)
+ 
    PHP_ADD_MAKEFILE_FRAGMENT
    PHP_SUBST(SQLITE_SHARED_LIBADD)
