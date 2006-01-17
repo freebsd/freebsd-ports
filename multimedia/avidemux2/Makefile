@@ -7,6 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -15,13 +16,13 @@ DISTNAME=	avidemux-${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
-PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}
+PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake19
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
@@ -29,7 +30,7 @@ WANT_SDL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/a52dec" \
 		LIBFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-warnings \
@@ -41,13 +42,18 @@ OPTIONS=	OPTIMIZED_CFLAGS "build with -O3 for lavcodec" off \
 		X264 "H.264 encoding" off \
 		A52 "A52 audio" off \
 		XVID "Xvid video" off \
-		SDL "SDL audio/video framework" off
+		SDL "SDL audio/video framework" off \
+		VORBIS "OGG/Vorbis audio support" off
 
 .include <bsd.port.pre.mk>
 
 #.if ${HAVE_SDL:Msdl}!=""
 #WITH_SDL=	yes
 #.endif
+
+.if exists(${LOCALBASE}/lib/libvorbis.so)
+WITH_VORBIS=	yes
+.endif
 
 .if exists(${LOCALBASE}/lib/libx264.so)
 WITH_X264=	yes
@@ -94,6 +100,10 @@ LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 LIB_DEPENDS+=	x264.1:${PORTSDIR}/multimedia/x264
 .endif
 
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=		"does not compile"
 .endif
@@ -116,9 +126,6 @@ post-patch:
 		${WRKSRC}/avidemux/ADM_audiodevice/ADM_deviceSDL.cpp \
 		${WRKSRC}/avidemux/ADM_gui2/GUI_sdlDraw.cpp \
 		${WRKSRC}/avidemux/main.cpp
-#	 ACLOCAL hack see PR ports/41945
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
-		--acdir=${ACLOCAL_DIR})
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} 's|-falign-loops=16||' ${WRKSRC}/configure \
 		${WRKSRC}/adm_lavcodec/Makefile.in \
