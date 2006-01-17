@@ -43,6 +43,8 @@ COMMENT=		(L)GPL sources for linux_base-8, to comply with licences
 RUN_DEPENDS=		${LINUXBASE}/usr/src:${PORTSDIR}/emulators/linux_base-8
 
 BROKEN=			Broken dependency
+DEPRECATED=		original port should use ALWAYS_KEEP_DISTFILES    
+EXPIRATION_DATE=	2006-02-01
 
 .undef USE_LINUX
 
