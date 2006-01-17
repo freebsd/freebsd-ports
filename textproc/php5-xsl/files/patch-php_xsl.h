@@ -1,14 +1,10 @@
---- php_xsl.h.orig	Tue Jan 17 14:50:15 2006
-+++ php_xsl.h	Tue Jan 17 14:50:53 2006
-@@ -43,7 +43,11 @@
+--- php_xsl.h.orig	Sun Jan  1 13:50:17 2006
++++ php_xsl.h	Tue Jan 17 16:23:10 2006
+@@ -43,7 +43,7 @@
  #include <libexslt/exsltconfig.h>
  #endif
  
 -#include "../dom/xml_common.h"
-+#ifdef HAVE_CONFIG_H
-+#include "config.h"
-+#endif
-+
 +#include "ext/dom/xml_common.h"
  #include "xsl_fe.h"
  
