@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eficas
-DISTVERSION=	1.9.1-1
+DISTVERSION=	1.9.2-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 
@@ -44,9 +44,7 @@ post-extract:
 
 pre-configure:
 	@${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig	\
-		${WRKSRC}/Editeur/bureau.py.orig		\
-		${WRKSRC}/Editeur/change_comm.py.orig		\
-		${WRKSRC}/generator/generator_python.py.orig
+		${WRKSRC}/Editeur/bureau.py.orig
 	@${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
 .for FILE in ${ENV2PYTHON}
 	@${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
