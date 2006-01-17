@@ -14,7 +14,6 @@ etc/nagios/minimal.cfg-sample
 etc/nagios/misccommands.cfg-sample
 etc/nagios/nagios.cfg-sample
 etc/nagios/resource.cfg-sample
-etc/rc.d/nagios.sh
 %%NAGIOSWWWDIR%%/cgi-bin/avail.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/cmd.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/config.cgi
