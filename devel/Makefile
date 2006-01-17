@@ -1397,6 +1397,7 @@
     SUBDIR += py-game
     SUBDIR += py-gamin
     SUBDIR += py-getargs
+    SUBDIR += py-gobject
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
     SUBDIR += py-ice
