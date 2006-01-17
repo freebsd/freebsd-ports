@@ -8,4 +8,8 @@ INPUT_MAIL_FILTER(`dk-filter', `S=unix:/var/run/dk-filter, F=T, T=R:2m')
 define(`confMILTER_MACROS_CONNECT', `j, {daemon_name}')
 define(`confMILTER_MACROS_ENVFROM', `i, {auth_type}')
 
+And to run the milter from startup, add milterdk_enable="YES" in
+your /etc/rc.conf.
+Extra options can be found in startup script.
+
 ************************************************************************
