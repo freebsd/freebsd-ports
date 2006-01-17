@@ -8,7 +8,9 @@
 PORTNAME=	koi8u
 PORTVERSION=	1.0
 CATEGORIES=	ukrainian elisp
+MASTER_SITES=	# none
 PKGNAMEPREFIX=	emacs-
+DISTFILES=	# none
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	KOI8-U coding system for [X]Emacs.
