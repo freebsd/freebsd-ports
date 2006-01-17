@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION=	10.0.6
+PORTVERSION=	10.0.6.776
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/1589/
-DISTNAME=	RealPlayer-10.0.6.776-20050915.i586
+MASTER_SITES=	https://helixcommunity.org/download.php/1589/:player \
+		ftp://rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
+DISTFILES=	RealPlayer-${PORTVERSION}-20050915.i586.rpm:player \
+		mplayer-codecs-linux-real-20040626-1.i386.rpm:codecs
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ports@FreeBSD.org
@@ -60,8 +62,10 @@ PLIST_SUB+=	X11="@comment "
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${CPIO} -id --quiet
+	@set -x; for f in ${_DISTFILES}; do\
+		cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/$$f | \
+		    ${CPIO} -id --quiet; \
+	done
 
 post-patch:
 	@${SED} 's|/usr/local|${PREFIX}|' \
@@ -72,10 +76,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${RADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/realplay.bin ${RADIR}
 	${BRANDELF} -t Linux ${RADIR}/realplay.bin
-
 .for dir in codecs common lib plugins share/default share/realplay
 	${MKDIR} ${RADIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${RADIR}/${dir}
+.endfor
+
+# Extra codecs from the RealPlayer-9 -- no longer shipped by Real,
+# but still in use by major content providers, such as Amazon:
+.for c in dnet ddnt
+	${INSTALL_DATA} ${WRKDIR}/usr/lib/codecs/$c.so.6.0	\
+		${RADIR}/codecs/
+	${LN} -s $c.so.6.0 ${RADIR}/codecs/$c.so
 .endfor
 
 .if !defined(WITHOUT_NLS)
