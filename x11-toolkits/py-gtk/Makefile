@@ -34,7 +34,7 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
-CONFLICTS=	py*-gtk-2*
+CONFLICTS=	py*-gtk-2* py*-gobject-[0-9]*
 
 .if !defined(NOPORTDOCS)
 post-install:
