@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- apps/app_rxfax.c.orig
-+++ apps/app_rxfax.c
-@@ -0,0 +1,371 @@
+--- /dev/null	Thu Jan 12 17:44:40 2006
++++ apps/app_rxfax.c	Thu Jan 12 17:41:53 2006
+@@ -0,0 +1,373 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
 + *
@@ -17,6 +17,7 @@ $FreeBSD$
 + * the GNU General Public License
 + */
 + 
++#include <stdio.h>
 +#include <asterisk/lock.h>
 +#include <asterisk/file.h>
 +#include <asterisk/logger.h>
@@ -26,6 +27,7 @@ $FreeBSD$
 +#include <asterisk/translate.h>
 +#include <asterisk/dsp.h>
 +#include <asterisk/manager.h>
++#include <asterisk/version.h>
 +#include <string.h>
 +#include <stdlib.h>
 +#if defined(__FreeBSD__) && __FreeBSD_version < 500028
@@ -100,7 +102,7 @@ $FreeBSD$
 +                      "FaxReceived", "Channel: %s\nExten: %s\nCallerID: %s\nRemoteStationID: %s\nLocalStationID: %s\nPagesTransferred: %i\nResolution: %i\nTransferRate: %i\nFileName: %s\n",
 +                      chan->name,
 +                      chan->exten,
-+#if (ASTERISK_VERSION_NUM <= 011000)
++#if ASTERISK_VERSION_NUM <= 010010
 +                      chan->callerid,
 +#else
 +                      (chan->cid.cid_num)  ?  chan->cid.cid_num  :  "",

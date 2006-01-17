@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- formats/format_g723_1.c.orig	Sun Oct 10 15:59:18 2004
-+++ formats/format_g723_1.c	Sun Oct 10 16:05:05 2004
-@@ -0,0 +1,345 @@
+--- /dev/null	Fri Jan 13 12:18:51 2006
++++ formats/format_g723_1.c	Fri Jan 13 12:18:41 2006
+@@ -0,0 +1,348 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
 + *
@@ -16,6 +16,7 @@ $FreeBSD$
 + * the GNU General Public License
 + */
 +
++#include <stdio.h>
 +#include <asterisk/lock.h>
 +#include <asterisk/channel.h>
 +#include <asterisk/file.h>
@@ -26,7 +27,6 @@ $FreeBSD$
 +#include <arpa/inet.h>
 +#include <stdlib.h>
 +#include <sys/time.h>
-+#include <stdio.h>
 +#include <unistd.h>
 +#include <errno.h>
 +#include <string.h>
@@ -48,7 +48,7 @@ $FreeBSD$
 +struct ast_filestream {
 +	void *reserved[AST_RESERVED_POINTERS];
 +	/* This is what a filestream means to us */
-+	int fd; 				/* Descriptor */
++	FILE *f; 				/* Descriptor */
 +	struct ast_frame fr;			/* Frame information */
 +	char waste[AST_FRIENDLY_OFFSET];	/* Buffer for sending frames, etc */
 +	char empty;				/* Empty character */
@@ -85,7 +85,7 @@ $FreeBSD$
 +	return -1;
 +}
 +
-+static struct ast_filestream *g723_open(int fd)
++static struct ast_filestream *g723_open(FILE *f)
 +{
 +	/* We don't have any header to read or anything really, but
 +	   if we did, it would go here.  We also might want to check
@@ -98,7 +98,7 @@ $FreeBSD$
 +			free(tmp);
 +			return NULL;
 +		}
-+		tmp->fd = fd;
++		tmp->f = f;
 +		tmp->fr.data = tmp->g723;
 +		tmp->fr.frametype = AST_FRAME_VOICE;
 +		tmp->fr.subclass = AST_FORMAT_G723_1;
@@ -112,7 +112,7 @@ $FreeBSD$
 +	return tmp;
 +}
 +
-+static struct ast_filestream *g723_rewrite(int fd, char *comment)
++static struct ast_filestream *g723_rewrite(FILE *f, const char *comment)
 +{
 +	/* We don't have any header to read or anything really, but
 +	   if we did, it would go here.  We also might want to check
@@ -125,7 +125,7 @@ $FreeBSD$
 +			free(tmp);
 +			return NULL;
 +		}
-+		tmp->fd = fd;
++		tmp->f = f;
 +		glistcnt++;
 +		ast_mutex_unlock(&g723_lock);
 +		ast_update_use_count();
@@ -143,7 +143,7 @@ $FreeBSD$
 +	glistcnt--;
 +	ast_mutex_unlock(&g723_lock);
 +	ast_update_use_count();
-+	close(s->fd);
++	fclose(s->f);
 +	free(s);
 +	s = NULL;
 +}
@@ -158,7 +158,7 @@ $FreeBSD$
 +	s->fr.samples = 240;
 +	s->fr.mallocd = 0;
 +	s->fr.data = s->g723;
-+	if ((res = read(s->fd, s->g723, 1)) != 1) {
++	if ((res = fread(s->g723, 1, 1, s->f)) != 1) {
 +		if (res)
 +			ast_log(LOG_WARNING, "Short read (%d) (%s)!\n", res, strerror(errno));
 +		return NULL;
@@ -168,7 +168,7 @@ $FreeBSD$
 +		ast_log(LOG_WARNING, "Invalid G723.1 frame!\n");
 +		return NULL;
 +	}
-+	if (s->fr.datalen > 1 && (res = read(s->fd, s->g723 + 1, s->fr.datalen - 1)) != s->fr.datalen - 1) {
++	if (s->fr.datalen > 1 && (res = fread(s->g723 + 1, 1, s->fr.datalen - 1, s->f)) != s->fr.datalen - 1) {
 +		if (res)
 +			ast_log(LOG_WARNING, "Short read (%d) (%s)!\n", res, strerror(errno));
 +		return NULL;
@@ -200,7 +200,7 @@ $FreeBSD$
 +		ast_log(LOG_WARNING, "Invalid G723.1 data length, %d\n", f->datalen);
 +		return -1;
 +	}
-+	if ((res = write(fs->fd, f->data, f->datalen)) != f->datalen) {
++	if ((res = fwrite(f->data, 1, f->datalen, fs->f)) != f->datalen) {
 +		ast_log(LOG_WARNING, "Bad write %d: %s\n", res, strerror(errno));
 +		return -1;
 +	}
@@ -229,9 +229,12 @@ $FreeBSD$
 +		}
 +		offset = cur + sample_offset;
 +	}
-+	if ((moffset = lseek(fs->fd, 0, SEEK_END)) == -1) {
++	if (fseeko(fs->f, 0, SEEK_END) == -1) {
 +		ast_log(LOG_WARNING, "Can't seek stream to an end!\n");
 +		return -1;
++	}
++	else {
++		moffset = ftello(fs->f);
 +	}
 +	if (whence == SEEK_END) {
 +		if ((max = g723_tell(fs)) == -1) {
@@ -244,11 +247,11 @@ $FreeBSD$
 +		offset = 0;
 +	soffset = -1;
 +	for (coffset = 0; coffset < moffset && offset > 0; coffset += res) {
-+		if (lseek(fs->fd, coffset, SEEK_SET) != coffset) {
++		if (fseeko(fs->f, coffset, SEEK_SET) == -1) {
 +			ast_log(LOG_WARNING, "Can't seek to offset %lli!\n", coffset);
 +			return -1;
 +		}
-+		if (read(fs->fd, &c, 1) != 1) {
++		if (fread(&c, 1, 1, fs->f) != 1) {
 +			ast_log(LOG_WARNING, "Can't read from offset %lli!\n", coffset);
 +			return -1;
 +		}
@@ -260,7 +263,7 @@ $FreeBSD$
 +		if (res > 1)
 +			offset -= 240;
 +	}
-+	if (soffset != -1 && lseek(fs->fd, soffset, SEEK_SET) != soffset) {
++	if (soffset != -1 && fseeko(fs->f, soffset, SEEK_SET) == -1) {
 +		ast_log(LOG_WARNING, "Can't seek to offset %lli!\n", soffset);
 +		return -1;
 +	}
@@ -271,7 +274,7 @@ $FreeBSD$
 +static int g723_trunc(struct ast_filestream *fs)
 +{
 +	/* Truncate file to current length */
-+	if (ftruncate(fs->fd, lseek(fs->fd, 0, SEEK_CUR)) < 0)
++	if (ftruncate(fileno(fs->f), ftello(fs->f)) < 0)
 +		return -1;
 +	return 0;
 +}
@@ -283,14 +286,14 @@ $FreeBSD$
 +	long rval;
 +	unsigned char c;
 +
-+	offset = lseek(fs->fd, 0, SEEK_CUR);
++	offset = ftello(fs->f);
 +	rval = 0;
 +	for (coffset = 0; coffset < offset; coffset += res) {
-+		if (lseek(fs->fd, coffset, SEEK_SET) != coffset) {
++		if (fseeko(fs->f, coffset, SEEK_SET) == -1) {
 +			ast_log(LOG_WARNING, "Can't seek to offset %llu!\n", coffset);
 +			return -1;
 +		}
-+		if (read(fs->fd, &c, 1) != 1) {
++		if (fread(&c, 1, 1, fs->f) != 1) {
 +			ast_log(LOG_WARNING, "Can't read from offset %llu!\n", coffset);
 +			return -1;
 +		}
@@ -301,7 +304,7 @@ $FreeBSD$
 +		if (res > 1)
 +			rval += 240;
 +	}
-+	if (lseek(fs->fd, offset, SEEK_SET) != offset) {
++	if (fseeko(fs->f, offset, SEEK_SET) == -1) {
 +		ast_log(LOG_WARNING, "Can't seek to offset %llu!\n", offset);
 +		return -1;
 +	}

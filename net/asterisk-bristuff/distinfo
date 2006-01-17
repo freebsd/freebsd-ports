@@ -1,4 +1,3 @@
-MD5 (asterisk-1.0.9.tar.gz) = 0d7f1c680ae53a739f26a069ef8b580a
-SIZE (asterisk-1.0.9.tar.gz) = 9604582
-MD5 (asterisk-1.0.8-bristuff-0.2.0-RC8h.patch.gz) = 42172c5b04af9080f22b883296c34002
-SIZE (asterisk-1.0.8-bristuff-0.2.0-RC8h.patch.gz) = 56589
+MD5 (asterisk-1.2.1.tar.gz) = 04657086791e80f319c0d728af705001
+SHA256 (asterisk-1.2.1.tar.gz) = f0d3ed36353c1f5726225d2794bea7d1d1a92c9e58336b02b293f43dd4b97948
+SIZE (asterisk-1.2.1.tar.gz) = 10517194
