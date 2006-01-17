@@ -553,9 +553,6 @@
 %%EFICASDIR%%/Editeur/centerwindow.py
 %%EFICASDIR%%/Editeur/centerwindow.pyc
 %%EFICASDIR%%/Editeur/centerwindow.pyo
-%%EFICASDIR%%/Editeur/change_comm.py
-%%EFICASDIR%%/Editeur/change_comm.pyc
-%%EFICASDIR%%/Editeur/change_comm.pyo
 %%EFICASDIR%%/Editeur/comploader.py
 %%EFICASDIR%%/Editeur/comploader.pyc
 %%EFICASDIR%%/Editeur/comploader.pyo
