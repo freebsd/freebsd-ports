@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyblosxom
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
