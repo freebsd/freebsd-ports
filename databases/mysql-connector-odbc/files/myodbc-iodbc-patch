@@ -1,11 +1,11 @@
---- driver/results.c.orig	Sun Feb 27 00:59:11 2005
-+++ driver/results.c	Sun Feb 27 00:59:19 2005
-@@ -544,7 +544,7 @@
- 		SQLPOINTER  CharacterAttributePtr,
- 		SQLSMALLINT BufferLength,
- 		SQLSMALLINT *StringLengthPtr,
--		SQLPOINTER  NumericAttributePtr)
-+		SQLLEN * NumericAttributePtr)
+--- driver/results.c.orig	Sun Oct  9 22:33:40 2005
++++ driver/results.c	Thu Oct 27 16:30:17 2005
+@@ -558,7 +558,7 @@
+                                    SQLPOINTER  CharacterAttributePtr,
+                                    SQLSMALLINT BufferLength,
+                                    SQLSMALLINT *StringLengthPtr,
+-                                   SQLPOINTER  NumericAttributePtr )
++                                   SQLLEN *NumericAttributePtr )
+ #endif
  {
-   return get_col_attr(StatementHandle, ColumnNumber,
- 		      FieldIdentifier, CharacterAttributePtr,
+     return get_col_attr( StatementHandle, 
