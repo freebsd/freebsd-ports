@@ -6,6 +6,7 @@
 
 PORTNAME=	everygui
 PORTVERSION=	0.99.b
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	everygui
@@ -22,7 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e\
-		's,/usr/share,${PREFIX}/share,g'
+		's,/usr/share,${PREFIX}/share,g' -e\
+		's,/usr/src,${PREFIX}/src,g'
 	@${REINPLACE_CMD} -e 's,/usr/src/everygui,${PREFIX}/src/everygui,g' \
 		${WRKSRC}/everygui
 	@${REINPLACE_CMD} -e 's,/usr/src,${PREFIX}/src,g' \
