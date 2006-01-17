@@ -1,0 +1,27 @@
+#!/bin/sh
+
+PREFIX=%%PREFIX%%
+CONF_FILES="%%CONF_FILES%%"
+CONF_DIRS="%%CONF_DIRS%%"
+
+case $2 in
+POST-INSTALL)
+	for cfgfile in "${CONF_FILES}"; do
+		if [ ! -e ${PREFIX}/${cfgfile} ]; then
+			cp ${PREFIX}/${cfgfile}-dist ${PREFIX}/${cfgfile}
+		fi
+	done
+	;;
+DEINSTALL)
+	for cfgfile in "${CONF_FILES}"; do
+		if cmp -s ${PREFIX}/${cfgfile} ${PREFIX}/${cfgfile}-dist ]; then
+			rm ${PREFIX}/${cfgfile}
+		fi
+	done
+	;;
+POST-DEINSTALL)
+	for cfgdir in "${CONF_DIRS}"; do
+		rmdir ${PREFIX}/${cfgdir} 2> /dev/null || true
+	done
+	;;
+esac
