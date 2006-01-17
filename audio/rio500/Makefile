@@ -7,6 +7,7 @@
 
 PORTNAME=	rio500
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,5 +29,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s,byteswap.h,sys/endian.h," \
 		${WRKSRC}/lib/libfon.c \
 		${WRKSRC}/lib/librio500.c
+	${REINPLACE_CMD} -e "s,getopt.h,," ${WRKSRC}/include/Makefile.in
 
 .include <bsd.port.post.mk>

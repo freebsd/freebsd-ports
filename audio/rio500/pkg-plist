@@ -6,7 +6,6 @@ bin/rio_font_info
 bin/rio_format
 bin/rio_get_song
 bin/rio_stat
-include/getopt.h
 include/libfon.h
 include/libpsf.h
 include/librio500.h
