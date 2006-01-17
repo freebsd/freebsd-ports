@@ -8,11 +8,7 @@
 PORTNAME=	koi8u
 PORTVERSION=	1.0
 CATEGORIES=	ukrainian elisp
-MASTER_SITES=	http://santinel.bas-net.by/files/
 PKGNAMEPREFIX=	emacs-
-DISTNAME=	ukr-koi8u.el
-EXTRACT_SUFX=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	KOI8-U coding system for [X]Emacs.
@@ -29,7 +25,7 @@ PLIST_DIRS=	lib/xemacs/site-lisp lib/xemacs
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
-	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${EMACSLISPDIR}/ukr-koi8u.el
+	${INSTALL_DATA} ${FILESDIR}/ukr-koi8u.el ${EMACSLISPDIR}/ukr-koi8u.el
 	${LN} -sf ${EMACSLISPDIR}/ukr-koi8u.el ${XEMACSLISPDIR}
 
 post-install:
