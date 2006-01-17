@@ -1,85 +1,65 @@
 
 $FreeBSD$
 
---- channels/chan_zap.c.orig	Sun Feb 17 18:01:44 2002
-+++ channels/chan_zap.c	Sun Feb 17 18:03:26 2002
-@@ -46,7 +46,9 @@
- #include <sys/signal.h>
- #include <errno.h>
- #include <stdlib.h>
-+#ifndef __FreeBSD__
- #include <stdint.h>
-+#endif
- #include <unistd.h>
- #include <sys/ioctl.h>
- #ifdef __linux__
-@@ -320,7 +322,7 @@
- #define CALLWAITING_REPEAT_SAMPLES	( (10000 * 8) / READ_SIZE) /* 300 ms */
- #define CIDCW_EXPIRE_SAMPLES		( (500 * 8) / READ_SIZE) /* 500 ms */
- #define MIN_MS_SINCE_FLASH			( (2000) )	/* 2000 ms */
--#define RINGT 						( (8000 * 8) / READ_SIZE)
-+#define RINGT 						( (8000 * 8) / READ_SIZE) /* 8000 ms */
- 
- struct zt_pvt;
- 
-@@ -535,6 +537,7 @@
- 	int cidpos;
+--- channels/chan_zap.c.orig	Tue Nov 29 20:24:39 2005
++++ channels/chan_zap.c	Fri Jan 13 13:28:33 2006
+@@ -638,6 +638,7 @@ static struct zt_pvt {
  	int cidlen;
  	int ringt;
+ 	int ringt_base;
 +	int waitnorings;
  	int stripmsd;
- 	int callwaiting;
  	int callwaitcas;
-@@ -2134,12 +2137,20 @@
- 
- 	if (option_debug)
- 		ast_log(LOG_DEBUG, "zt_hangup(%s)\n", ast->name);
-+
- 	if (!ast->pvt->pvt) {
- 		ast_log(LOG_WARNING, "Asked to hangup channel not connected\n");
- 		return 0;
+ 	int callwaitrings;
+@@ -2308,6 +2309,19 @@ static int zt_hangup(struct ast_channel 
  	}
  	
  	ast_mutex_lock(&p->lock);
++	switch (p->sig) {
++	case SIG_FXSGS:
++	case SIG_FXSKS:
++	case SIG_FXSLS:
++		if((ast->_state == AST_STATE_RING) && (p->ringt > 1))
++		{
++			p->waitnorings = 1;
++		}
++		break;
++	default:
++		break;
++	};
 +
-+	
-+	if((p->sig == SIG_FXSGS) || (p->sig == SIG_FXSKS) || (p->sig == SIG_FXSLS))
-+	if((ast->_state == AST_STATE_RING) && (p->ringt > 1))
-+	{
-+		p->waitnorings = 1;
-+	}
  	
  	index = zt_get_index(ast, p, 1);
  
-@@ -5717,7 +5728,37 @@
+@@ -6129,7 +6143,37 @@ static void *ss_thread(void *data)
  		ast_setstate(chan, AST_STATE_RING);
  		chan->rings = 1;
- 		p->ringt = RINGT;
+ 		p->ringt = p->ringt_base;
 +		p->waitnorings = 0;
  		res = ast_pbx_run(chan);
 +
 +		if(p->waitnorings)
 +		{
-+			p->ringt = RINGT;
++			p->ringt = p->ringt_base;
 +			for(;;)
 +			{
 +				int i,j=0;
 +				i = ZT_IOMUX_SIGEVENT | ZT_IOMUX_NOWAIT;
-+				if (ioctl(p->subs[index].zfd, ZT_IOMUX, &i) == -1) 
++				if (ioctl(p->subs[index].zfd, ZT_IOMUX, &i) == -1)
 +					break;
-+	
-+				if (ioctl(p->subs[index].zfd, ZT_GETEVENT, &j) == -1) 
++
++				if (ioctl(p->subs[index].zfd, ZT_GETEVENT, &j) == -1)
 +					break;
-+	
++
 +				if(j == ZT_EVENT_RINGOFFHOOK)
-+					p->ringt = RINGT;
++					p->ringt = p->ringt_base;
 +
 +				usleep(20000);
 +
 +				if (p->ringt <= 0)
 +					break;
 +
-+				else if (p->ringt > 0) 
++				else if (p->ringt > 0)
 +					p->ringt--;
 +			}
 +			p->ringt = 0;
@@ -89,7 +69,7 @@ $FreeBSD$
  		if (res) {
  			ast_hangup(chan);
  			ast_log(LOG_WARNING, "PBX exited non-zero\n");
-@@ -6018,7 +6059,7 @@
+@@ -6431,7 +6475,7 @@ static void *do_monitor(void *data)
  		i = iflist;
  		while(i) {
  			if ((i->subs[SUB_REAL].zfd > -1) && i->sig && (!i->radio)) {

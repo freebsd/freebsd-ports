@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.0.9
+PORTVERSION=	1.2.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
 		ftp://ftp.digium.com/pub/libpri/old/
 
-PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	fjoe
-PATCH_DIST_STRIP=	-p1
+#PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
+#PATCH_SITES=	${MASTER_SITE_LOCAL}
+#PATCH_SITE_SUBDIR=	fjoe
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	gonzo@univ.kiev.ua
 COMMENT=	A C implementation of the Primary Rate ISDN specification

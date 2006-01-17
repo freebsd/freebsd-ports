@@ -1,18 +1,20 @@
 
 $FreeBSD$
 
---- pbx/Makefile.orig	Sun Oct 26 20:50:49 2003
-+++ pbx/Makefile	Fri Jan 30 01:47:34 2004
-@@ -16,7 +16,7 @@
- PBX_LIBS=pbx_config.so pbx_wilcalu.so pbx_spool.so     # pbx_gtkconsole.so pbx_kdeconsole.so
- 
- # Add GTK console if appropriate
--PBX_LIBS+=$(shell gtk-config --cflags >/dev/null 2>/dev/null && echo "pbx_gtkconsole.so")
-+#PBX_LIBS+=$(shell gtk-config --cflags >/dev/null 2>/dev/null && echo "pbx_gtkconsole.so")
+--- pbx/Makefile.orig
++++ pbx/Makefile
+@@ -23,8 +23,8 @@
  # Add KDE Console if appropriate
  #PBX_LIBS+=$(shell [ "$$QTDIR" != "" ] && echo "pbx_kdeconsole.so")
  
-@@ -62,7 +62,7 @@
+-GTK_FLAGS=`${CROSS_COMPILE_BIN}gtk-config --cflags gthread`
+-GTK_LIBS=`${CROSS_COMPILE_BIN}gtk-config --libs gthread`
++#GTK_FLAGS=`${CROSS_COMPILE_BIN}gtk-config --cflags gthread`
++#GTK_LIBS=`${CROSS_COMPILE_BIN}gtk-config --libs gthread`
+ MOC=$(QTDIR)/bin/moc
+ KDE_FLAGS=-I$(KDEDIR)/include -I$(KDEDIR)/include/kde -I$(QTDIR)/include
+ KDE_LIBS=-L$(KDEDIR)/lib -L$(QTDIR)/lib -lqt -lkdecore -lkdeui
+@@ -72,7 +72,7 @@
  endif
  
  install: all

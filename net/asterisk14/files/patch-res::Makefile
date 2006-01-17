@@ -1,33 +1,35 @@
---- res/Makefile.orig	Tue Aug  9 17:18:55 2005
-+++ res/Makefile	Tue Aug  9 17:33:36 2005
-@@ -13,15 +13,18 @@
+
+$FreeBSD$
+
+--- res/Makefile
++++ res/Makefile
+@@ -37,8 +37,8 @@
+ endif
  
- MODS=res_adsi.so res_features.so res_crypto.so res_musiconhold.so res_indications.so res_monitor.so \
-      res_agi.so res_watchdog.so
--MODS+=$(shell if [ -f "/usr/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
--MODS+=$(shell if [ -f "/usr/local/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
-+#MODS+=$(shell if [ -f "/usr/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
-+#MODS+=$(shell if [ -f "/usr/local/include/odbcinst.h" ]; then echo "res_odbc.so res_config_odbc.so"; fi)
- MODS+=$(shell if [ -f "/usr/include/osp/osp.h" ]; then echo "res_osp.so"; fi)
+ ifeq ($(findstring BSD,${OSARCH}),BSD)
+-  CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/include
+-  SOLINK+=-L$(CROSS_COMPILE_TARGET)/usr/local/lib
++  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include
++  SOLINK+=-L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib
+ endif
  
- CRYPTO_LIBS=-lssl -lcrypto
- 
+ ifeq (${OSARCH},CYGWIN)
+@@ -55,9 +55,7 @@
  CFLAGS+=
- CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo " -DZAPATA_MOH")
--CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo " -DZAPATA_MOH")
-+CFLAGS+=-I$(LOCALBASE)/include
-+ifdef WITH_ZAPTEL
-+CFLAGS+=-DZAPATA_MOH
-+endif
+ 
+ ifndef WITHOUT_ZAPTEL
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h),)
+   CFLAGS+=-DZAPATA_MOH
+-endif
+ endif # WITHOUT_ZAPTEL
+ 
  #
- # Work around buggy RedHat 9.0
- #
-@@ -34,7 +37,7 @@
+@@ -75,7 +73,7 @@
  	rm -f $(DESTDIR)$(ASTHEADERDIR)/parking.h
  	rm -f $(DESTDIR)$(MODULES_DIR)/app_agi.so 
  	rm -f $(DESTDIR)$(MODULES_DIR)/res_parking.so
 -	for x in $(MODS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
 +	for x in $(MODS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
- 
- res_crypto.so: res_crypto.o
- 	$(CC) $(SOLINK) -o $@ $< $(CRYPTO_LIBS)
+ 	@if [ x`which mpg123 2>/dev/null | grep -v '^no'` != x ] ; then \
+ 	  if mpg123 --longhelp 2>&1 | grep -q .59r 2>&1 >/dev/null ; then echo ; else \
+ 			echo "*************************************************************";\

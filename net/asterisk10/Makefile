@@ -6,30 +6,24 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.0.9
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
-PATCHFILES=	${PORTNAME}-1.0.8-${BRIVER}.patch.gz
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	fjoe
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt
+		newt.51:${PORTSDIR}/devel/newt \
+		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
-BRIVER=		bristuff-0.2.0-RC8h
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
@@ -44,7 +38,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 
-MAN8=		asterisk.8
+MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 .include <bsd.port.pre.mk>
 
@@ -68,8 +62,9 @@ MAKE_ENV+=	WITH_H323=1
 .if defined(WITHOUT_ZAPTEL)
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .else
+BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
+		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 MAKE_ENV+=	WITH_ZAPTEL=1
@@ -86,10 +81,6 @@ PLIST_SUB+=	WITH_ODBC=""
 MAKE_ENV+=	WITH_ODBC=1
 .endif
 
-.if !defined(WITHOUT_MYSQL)
-USE_MYSQL=	yes
-.endif
-
 .if defined(WITHOUT_FAX)
 PLIST_SUB+=	WITH_FAX="@comment "
 .else
@@ -99,7 +90,6 @@ PLIST_SUB+=	WITH_FAX=""
 .endif
 
 post-patch:
-	${CP} ${FILESDIR}/chan_oss.c ${WRKSRC}/channels
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 .include <bsd.port.post.mk>
