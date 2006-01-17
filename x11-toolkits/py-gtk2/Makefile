@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
-CONFLICTS=	py*-gtk-0*
+CONFLICTS=	py*-gtk-0* py*-gobject-[0-9]*
 
 #
 # Use the same way as the Python port to determine if we want
