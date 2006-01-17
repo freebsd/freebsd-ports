@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.479
+PORTVERSION=	2.485
 PORTREVISION=	0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 module for WWW searches
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
@@ -26,7 +26,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline \
 		${SITE_PERL}/User.pm:${PORTSDIR}/sysutils/p5-User \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		p5-IO-Capture>0:${PORTSDIR}/devel/p5-IO-Capture \
+		p5-Test-File>0:${PORTSDIR}/devel/p5-Test-File
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
