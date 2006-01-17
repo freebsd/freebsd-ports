@@ -10,7 +10,7 @@ CATEGORIES=	japanese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to the Japanized Tk widget set
 
-TK_VERSION?=	80
+TK_VERSION?=	8.0jp
 WITH_TCLTK_JP=	yes
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/ruby-tk
