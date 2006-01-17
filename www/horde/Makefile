@@ -106,7 +106,7 @@ WANT_PHP_CGI=	yes
 HORDEADMUSR?=	horde
 SUB_LIST=	WITH_SUPHP=yes
 .else
-WANT_PHP_MOD=	yes
+WANT_PHP_WEB=	yes
 .endif
 
 .if !defined(WITHOUT_FILEINFO)
