@@ -7,7 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -88,6 +88,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 # Fix build on 4.x
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
+.endif
+
+# FreeBSD has reentrant dns code
+.if ( ((${OSVERSION} >= 504102) && (${OSVERSION} < 600000)) || (${OSVERSION} >= 600029) )
+PTHREAD_CFLAGS+=	-D_REENTRANT
 .endif
 
 ### Development version
