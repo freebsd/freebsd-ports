@@ -15,7 +15,7 @@
 @@ -1156,10 +1161,6 @@
  	    }
  	    return FALSE;
- 	};
+ 	}
 -    GtkTreeModel *model;
 -    gboolean have_iter = FALSE;
 -    GtkTreeIter i;

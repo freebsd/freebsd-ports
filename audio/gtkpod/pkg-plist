@@ -19,13 +19,17 @@ bin/gtkpod
 %%DATADIR%%/pixmaps/gtkpod-sync.png
 %%DATADIR%%/pixmaps/gtkpod.glade
 %%DATADIR%%/pixmaps/gtkpod.gladep
+%%DATADIR%%/scripts/ldif2vcf.sh
 %%DATADIR%%/scripts/mab2vcard
 %%DATADIR%%/scripts/sync-abook.sh
 %%DATADIR%%/scripts/sync-evocalendar.sh
 %%DATADIR%%/scripts/sync-evolution.sh
 %%DATADIR%%/scripts/sync-kaddressbook.sh
+%%DATADIR%%/scripts/sync-knotes.sh
 %%DATADIR%%/scripts/sync-korganizer.sh
+%%DATADIR%%/scripts/sync-ldif.sh
 %%DATADIR%%/scripts/sync-notes.sh
+%%DATADIR%%/scripts/sync-palm-jppy.py
 %%DATADIR%%/scripts/sync-thunderbird.sh
 %%DATADIR%%/scripts/sync-webcalendar.sh
 share/locale/de/LC_MESSAGES/gtkpod.mo
