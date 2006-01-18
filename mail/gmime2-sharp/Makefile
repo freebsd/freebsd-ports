@@ -35,8 +35,6 @@ NOPORTDOCS=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|.@GMIME_VERSION@||g' \
 		${WRKSRC}/mono/gmime-sharp.dll.config.in
-	@${REINPLACE_CMD} -e 's|libglib-2.0.so.0|libglib-2.0.so|g' \
-		${WRKSRC}/mono/ObjectStream.cs ${WRKSRC}/mono/Stream.custom
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include "${MASTERDIR}/Makefile"
