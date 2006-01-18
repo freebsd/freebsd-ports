@@ -10159,6 +10159,7 @@ postmark	ports/benchmarks/postmark
 postnuke	ports/www/postnuke
 potrace		ports/graphics/potrace
 potracegui	ports/graphics/potracegui
+pouetchess	ports/games/pouetchess
 pound		ports/www/pound
 povchem		ports/biology/povchem
 povray		ports/graphics/povray
