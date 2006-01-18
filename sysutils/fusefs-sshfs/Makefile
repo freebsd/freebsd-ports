@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	sshfs
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -18,6 +17,8 @@ COMMENT=	Mount remote directories over ssh
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+
+CONFLICTS=	fusefs-kmod-0.2.19*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"

@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -17,12 +17,14 @@ COMMENT=	FUSE allows filesystem implementation in userspace
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin \
-		PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX}
+CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_REINPLACE=	yes
+TXT_DOCS=	how-fuse-works \
+		kernel.txt
 
 .include <bsd.port.pre.mk>
 
@@ -40,5 +42,12 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/include/fuse_kernel.h ${PREFIX}/include/fuse
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/libs
+.for i in ${TXT_DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}/libs
+.endfor
+.endif
 
 .include <bsd.port.post.mk>

@@ -7,4 +7,5 @@ set the following settings:
  - Add fusefs_enable="YES" to your /etc/rc.conf
 
 %%PREFIX%%/etc/rc.d/fuse.sh start will load the module for the first time
-after the installation.
+after the installation.  Set "sysctl vfs.usermount=1" if you want to be able
+to mount fuse devices as an ordinary user.
