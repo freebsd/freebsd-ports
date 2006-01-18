@@ -455,6 +455,7 @@
     SUBDIR += pmars
     SUBDIR += pmars-sdl
     SUBDIR += polypuzzle
+    SUBDIR += pouetchess
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += ppracer
