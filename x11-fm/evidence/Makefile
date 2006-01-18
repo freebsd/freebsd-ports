@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--disable-ecore
 CONFIGURE_ARGS+=--disable-plugin-extractor
 PLIST_SUB+=	EXTRACTOR:="@comment "
 .else
-LIB_DEPENDS+=	extractor.1:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS+=	extractor.2:${PORTSDIR}/textproc/libextractor
 CONFIGURE_ARGS+=--enable-plugin-extractor
 PLIST_SUB+=	EXTRACTOR:=""
 .endif
@@ -99,7 +99,7 @@ PLIST_SUB+=	VORBIS:=""
 CONFIGURE_ARGS+=--disable-thumbnailer-xine
 PLIST_SUB+=	XINE:="@comment "
 .else
-LIB_DEPENDS+=	xine.14:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE:=""
 .endif
