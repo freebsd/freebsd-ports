@@ -1,0 +1,5 @@
+pouetChess is an open-source 3D chess game with very few and basic
+dependencies. Moreover, pouetChess has an embedded Artificial Intelligence so
+engines such as GNUChess are not even needed.
+
+WWW: http://pouetchess.sourceforge.net/
