@@ -22,7 +22,7 @@ load_rc_config "$name"
 : ${vsftpd_enable:="NO"}
 : ${vsftpd_flags:=""}
 
-command="%%PREFIX%%/libexec/$name ${vsftpd_flags}"
+command="%%PREFIX%%/libexec/$name"
 required_files="%%PREFIX%%/etc/$name.conf"
 start_precmd="vsftpd_check"
 
