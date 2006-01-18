@@ -18,7 +18,9 @@ LDCONFIG_DIRS=		${TARGLIB}
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
-GNUSTEP_WITH_GCC33=	yes
+.if !defined(GNUSTEP_WITH_GCC40) && !defined(GNUSTEP_WITH_GCC41) && !defined(GNUSTEP_WITH_GCC42)
+GNUSTEP_WITH_GCC34=	yes
+.endif
 .endif
 
 .if defined(GNUSTEP_WITH_GCC32)
@@ -36,6 +38,21 @@ COMMENT2=		3.3.x
 MASTERDIR?=		${.CURDIR}/../gcc34
 CONFLICTS?=		gcc-3.4*
 COMMENT2=		3.4.x
+.endif
+.if defined(GNUSTEP_WITH_GCC40)
+MASTERDIR?=		${.CURDIR}/../gcc40
+CONFLICTS?=		gcc-4.0*
+COMMENT2=		4.0.x
+.endif
+.if defined(GNUSTEP_WITH_GCC41)
+MASTERDIR?=		${.CURDIR}/../gcc41
+CONFLICTS?=		gcc-4.1*
+COMMENT2=		4.1.x
+.endif
+.if defined(GNUSTEP_WITH_GCC42)
+MASTERDIR?=		${.CURDIR}/../gcc42
+CONFLICTS?=		gcc-4.2*
+COMMENT2=		4.2.x
 .endif
 
 .if exists(${.CURDIR}/Makefile.local)
