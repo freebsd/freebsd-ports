@@ -36,6 +36,7 @@ share/cook/g77
 share/cook/gcc
 share/cook/home
 share/cook/host_lists.pl
+share/cook/java
 share/cook/lex
 share/cook/library
 share/cook/print

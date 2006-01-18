@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	devel
-MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/
+MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/ \
+		http://www.canb.auug.org.au/~millerp/cook/
 
 MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Like make(1), but more powerful and clean
