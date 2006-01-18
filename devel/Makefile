@@ -190,6 +190,7 @@
     SUBDIR += cvsmapfs
     SUBDIR += cvsmonitor
     SUBDIR += cvsnt
+    SUBDIR += cvspadm
     SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
