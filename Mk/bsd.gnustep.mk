@@ -8,14 +8,39 @@
 # Options for user to customize in /etc/make.conf:
 # ================================================
 #
+# WITH_GNUSTEP_XLIB=yes
+#	use xlib as backend (default)
+#
 # WITH_GNUSTEP_XDPS=yes
-#	use xdps as backend instead of xlib.
+#	use xdps as backend while build instead of xlib.
 #
 # WITH_GNUSTEP_LIBART=yes
-#	use libart as backend instead of xlib.
+#	use libart as backend while build instead of xlib.
 #
 # WITH_GNUSTEP_CAIRO=yes
-#	use cairo as backend instead of xlib.
+#	use cairo as backend while build instead of xlib.
+#
+# GNUSTEP_WITH_BASE_GCC=yes
+#	use system compiler (does not work on all architectures).
+#
+# GNUSTEP_WITH_GCC32=yes
+#	use gcc 3.2.x with objective C shared libraries.
+#
+# GNUSTEP_WITH_GCC33=yes
+#	use gcc 3.3.x with objective C shared libraries.
+#
+# GNUSTEP_WITH_GCC34=yes
+#	use gcc 3.4.x with objective C shared libraries (default).
+#
+# GNUSTEP_WITH_GCC40=yes
+#	use gcc 4.0.x with objective C shared libraries.
+#
+# GNUSTEP_WITH_GCC41=yes
+#	use gcc 4.1.x with objective C shared libraries.
+#
+# GNUSTEP_WITH_GCC42=yes
+#	use gcc 4.2.x with objective C shared libraries.
+#
 #
 # Options for a port before include this file:
 # ============================================
@@ -95,7 +120,9 @@ PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
 .if !defined(GNUSTEP_WITH_BASE_GCC)
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
-GNUSTEP_WITH_GCC33=	yes
+.if !defined(GNUSTEP_WITH_GCC40) && !defined(GNUSTEP_WITH_GCC41) && !defined(GNUSTEP_WITH_GCC42)
+GNUSTEP_WITH_GCC34=	yes
+.endif
 .endif
 .if defined(GNUSTEP_WITH_GCC32)
 CC=		gcc32
@@ -108,6 +135,18 @@ CXX=		g++33
 .if defined(GNUSTEP_WITH_GCC34)
 CC=		gcc34
 CXX=		g++34
+.endif
+.if defined(GNUSTEP_WITH_GCC40)
+CC=		gcc40
+CXX=		g++40
+.endif
+.if defined(GNUSTEP_WITH_GCC41)
+CC=		gcc41
+CXX=		g++41
+.endif
+.if defined(GNUSTEP_WITH_GCC42)
+CC=		gcc42
+CXX=		g++42
 .endif
 .endif
 
@@ -138,7 +177,10 @@ GNUSTEP_WITH_XDPS=yes
 USE_GNUSTEP_LIBART=yes
 .elif defined(WITH_GNUSTEP_CAIRO)
 USE_GNUSTEP_CAIRO=yes
+.elif defined(WITH_GNUSTEP_XLIB)
+USE_GNUSTEP_XLIB=yes
 .else
+# default:
 USE_GNUSTEP_XLIB=yes
 .endif
 .endif
