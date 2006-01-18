@@ -7,9 +7,9 @@
 
 PORTNAME=	gtodo
 PORTVERSION=	0.2.5.a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://voidtrance.home.comcast.net/software/files/gtodo/ \
+MASTER_SITES=	http://voidtrance.home.comcast.net/ \
 		http://depot.fsck.ch/mirror/distfiles/
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-0.2.5a
