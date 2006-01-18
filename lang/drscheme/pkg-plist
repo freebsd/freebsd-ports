@@ -2465,6 +2465,15 @@ drscheme/collects/frtime/demos/calculator.ss
 drscheme/collects/frtime/demos/circles.ss
 drscheme/collects/frtime/demos/delay-mouse.ss
 drscheme/collects/frtime/demos/growing-points.ss
+drscheme/collects/frtime/demos/gui/demo/bindec.ss
+drscheme/collects/frtime/demos/gui/demo/instr.ss
+drscheme/collects/frtime/demos/gui/demo/timer.ss
+drscheme/collects/frtime/demos/gui/doc.txt
+drscheme/collects/frtime/demos/gui/fred.ss
+drscheme/collects/frtime/demos/gui/mixin-macros.ss
+drscheme/collects/frtime/demos/gui/mod-mrpanel.ss
+drscheme/collects/frtime/demos/gui/mod-wx-panel.ss
+drscheme/collects/frtime/demos/gui/simple.ss
 drscheme/collects/frtime/demos/mouse.ss
 drscheme/collects/frtime/demos/needles.ss
 drscheme/collects/frtime/demos/net-pong-client.ss
@@ -2477,9 +2486,13 @@ drscheme/collects/frtime/demos/push-pull-ball.ss
 drscheme/collects/frtime/demos/rotation.ss
 drscheme/collects/frtime/demos/spreadsheet/data-synthesis.ss
 drscheme/collects/frtime/demos/spreadsheet/distributions.ss
+drscheme/collects/frtime/demos/spreadsheet/ft-spread.ss
 drscheme/collects/frtime/demos/spreadsheet/preprocessor2.ss
 drscheme/collects/frtime/demos/spreadsheet/quotes.ss
+drscheme/collects/frtime/demos/spreadsheet/spread-doc.txt
 drscheme/collects/frtime/demos/spreadsheet/spread.ss
+drscheme/collects/frtime/demos/spreadsheet/ss-canvas.ss
+drscheme/collects/frtime/demos/spreadsheet/ss-database.ss
 drscheme/collects/frtime/demos/spreadsheet/ss-funcs.ss
 drscheme/collects/frtime/demos/ufo.ss
 drscheme/collects/frtime/doc.txt
@@ -3256,6 +3269,55 @@ drscheme/collects/hierlist/hierlist-sig.ss
 drscheme/collects/hierlist/hierlist-unit.ss
 drscheme/collects/hierlist/hierlist.ss
 drscheme/collects/hierlist/info.ss
+drscheme/collects/htdch/compiled/info.dep
+drscheme/collects/htdch/compiled/info.zo
+drscheme/collects/htdch/draw/Black.java
+drscheme/collects/htdch/draw/Blue.java
+drscheme/collects/htdch/draw/Canvas-native-methods.ss
+drscheme/collects/htdch/draw/Canvas.java
+drscheme/collects/htdch/draw/Color.java
+drscheme/collects/htdch/draw/Green.java
+drscheme/collects/htdch/draw/Posn.java
+drscheme/collects/htdch/draw/Red.java
+drscheme/collects/htdch/draw/White.java
+drscheme/collects/htdch/draw/World-native-methods.ss
+drscheme/collects/htdch/draw/World.java
+drscheme/collects/htdch/draw/Yellow.java
+drscheme/collects/htdch/draw/compiled/Black.jinfo
+drscheme/collects/htdch/draw/compiled/Black.zo
+drscheme/collects/htdch/draw/compiled/Blue.jinfo
+drscheme/collects/htdch/draw/compiled/Blue.zo
+drscheme/collects/htdch/draw/compiled/Canvas-native-methods.dep
+drscheme/collects/htdch/draw/compiled/Canvas-native-methods.zo
+drscheme/collects/htdch/draw/compiled/Canvas.jinfo
+drscheme/collects/htdch/draw/compiled/Canvas.zo
+drscheme/collects/htdch/draw/compiled/Color.jinfo
+drscheme/collects/htdch/draw/compiled/Color.zo
+drscheme/collects/htdch/draw/compiled/Green.jinfo
+drscheme/collects/htdch/draw/compiled/Green.zo
+drscheme/collects/htdch/draw/compiled/Posn.jinfo
+drscheme/collects/htdch/draw/compiled/Posn.zo
+drscheme/collects/htdch/draw/compiled/Red.jinfo
+drscheme/collects/htdch/draw/compiled/Red.zo
+drscheme/collects/htdch/draw/compiled/White.jinfo
+drscheme/collects/htdch/draw/compiled/White.zo
+drscheme/collects/htdch/draw/compiled/World-native-methods.dep
+drscheme/collects/htdch/draw/compiled/World-native-methods.zo
+drscheme/collects/htdch/draw/compiled/World.jinfo
+drscheme/collects/htdch/draw/compiled/World.zo
+drscheme/collects/htdch/draw/compiled/Yellow.jinfo
+drscheme/collects/htdch/draw/compiled/Yellow.zo
+drscheme/collects/htdch/draw/compiled/info.dep
+drscheme/collects/htdch/draw/compiled/info.zo
+drscheme/collects/htdch/draw/compiled/installer.dep
+drscheme/collects/htdch/draw/compiled/installer.zo
+drscheme/collects/htdch/draw/compiled/pre-installer.dep
+drscheme/collects/htdch/draw/compiled/pre-installer.zo
+drscheme/collects/htdch/draw/doc.txt
+drscheme/collects/htdch/draw/info.ss
+drscheme/collects/htdch/draw/installer.ss
+drscheme/collects/htdch/draw/pre-installer.ss
+drscheme/collects/htdch/info.ss
 drscheme/collects/htdp/HtDPv0/ping-play-unit.ss
 drscheme/collects/htdp/HtDPv0/pingp-play.ss
 drscheme/collects/htdp/HtDPv0/pingp-sig.ss
@@ -6723,13 +6785,13 @@ drscheme/include/stypes.h
 drscheme/include/uconfig.h
 drscheme/install
 drscheme/lib/buildinfo
-drscheme/lib/libmred-300.so
+drscheme/lib/libmred-301.so
 drscheme/lib/libmred.la
 drscheme/lib/libmred.so
-drscheme/lib/libmzgc-300.so
+drscheme/lib/libmzgc-301.so
 drscheme/lib/libmzgc.la
 drscheme/lib/libmzgc.so
-drscheme/lib/libmzscheme-300.so
+drscheme/lib/libmzscheme-301.so
 drscheme/lib/libmzscheme.la
 drscheme/lib/libmzscheme.so
 drscheme/lib/mzdyn.o
@@ -7056,6 +7118,10 @@ drscheme/teachpack/value-turtles.ss
 @dirrm drscheme/collects/htdp/Test
 @dirrm drscheme/collects/htdp/HtDPv0
 @dirrm drscheme/collects/htdp
+@dirrm drscheme/collects/htdch/draw/compiled
+@dirrm drscheme/collects/htdch/draw
+@dirrm drscheme/collects/htdch/compiled
+@dirrm drscheme/collects/htdch
 @dirrm drscheme/collects/hierlist/compiled
 @dirrm drscheme/collects/hierlist
 @dirrm drscheme/collects/help/web-root/conf
@@ -7130,6 +7196,8 @@ drscheme/teachpack/value-turtles.ss
 @dirrm drscheme/collects/frtime/private/compiled
 @dirrm drscheme/collects/frtime/private
 @dirrm drscheme/collects/frtime/demos/spreadsheet
+@dirrm drscheme/collects/frtime/demos/gui/demo
+@dirrm drscheme/collects/frtime/demos/gui
 @dirrm drscheme/collects/frtime/demos
 @dirrm drscheme/collects/frtime/compiled
 @dirrm drscheme/collects/frtime
