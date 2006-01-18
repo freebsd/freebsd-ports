@@ -8755,6 +8755,7 @@ p5-SQLite-Work	ports/databases/p5-SQLite-Work
 p5-SVG	ports/textproc/p5-SVG
 p5-SVG-Graph	ports/graphics/p5-SVG-Graph
 p5-SVG-Metadata	ports/graphics/p5-SVG-Metadata
+p5-SVN-ACL	ports/devel/p5-SVN-ACL
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Notif	ports/devel/p5-SVN-Notify
 p5-SVN-Simple	ports/devel/p5-SVN-Simple
