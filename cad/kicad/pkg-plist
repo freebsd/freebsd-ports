@@ -465,6 +465,8 @@
 %%INSTDIR%%/internat/es/kicad.po
 %%INSTDIR%%/internat/fr/kicad.mo
 %%INSTDIR%%/internat/fr/kicad.po
+%%INSTDIR%%/internat/hu/kicad.mo
+%%INSTDIR%%/internat/hu/kicad.po
 %%INSTDIR%%/internat/it/kicad.mo
 %%INSTDIR%%/internat/it/kicad.po
 %%INSTDIR%%/internat/pt/kicad.mo
@@ -1057,6 +1059,7 @@
 @dirrm %%INSTDIR%%/internat/sl
 @dirrm %%INSTDIR%%/internat/pt
 @dirrm %%INSTDIR%%/internat/it
+@dirrm %%INSTDIR%%/internat/hu
 @dirrm %%INSTDIR%%/internat/fr
 @dirrm %%INSTDIR%%/internat/es
 @dirrm %%INSTDIR%%/internat
