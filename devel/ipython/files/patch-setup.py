@@ -1,9 +1,9 @@
---- setup.py.orig	Wed Dec  1 07:32:32 2004
-+++ setup.py	Wed Dec  1 16:31:21 2004
+--- setup.py.orig	Thu Jan 12 12:45:02 2006
++++ setup.py	Thu Jan 12 12:45:29 2006
 @@ -99,8 +99,8 @@
- 
- # I can't find how to make distutils create a nested dir. structure, so
- # in the meantime do it manually. Butt ugly.
+ # Note that http://www.redbrick.dcu.ie/~noel/distutils.html, ex. 2/3, contain
+ # information on how to do this more cleanly once python 2.4 can be assumed.
+ # Thanks to Noel for the tip.
 -docdirbase  = 'share/doc/ipython-%s' % version
 -manpagebase = 'share/man/man1'
 +docdirbase  = 'share/doc/ipython'
