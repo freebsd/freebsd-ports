@@ -43,7 +43,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
-USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 .endif
@@ -90,7 +89,7 @@ CONFIGURE_ARGS+=--enable-debug=no --enable-error-checking=no
 .endif
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=--with-xft=all
 .elif defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
