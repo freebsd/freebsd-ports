@@ -8,7 +8,9 @@
 PORTNAME=	rssyl
 PORTVERSION=	0.3
 CATEGORIES=	mail
-MASTER_SITES=	http://ticho.yweb.sk/rssyl/
+MASTER_SITES=	http://ticho.yweb.sk/rssyl/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	v.velox@vvelox.net
 COMMENT=	A RSS/Atom plugin for sylheed-claws
