@@ -7,6 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
@@ -20,7 +21,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		jpeg.9:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
 		expat.5:${PORTSDIR}/textproc/expat2\
-		mspack.1:${PORTSDIR}/archivers/libmspack
+		mspack.1:${PORTSDIR}/archivers/libmspack\
+		gstinterfaces-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -38,6 +40,7 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-opengl\
 		--with-mspack\
 		--with-gtk\
+		--enable-mediactrl\
 		--disable-backtrace
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
