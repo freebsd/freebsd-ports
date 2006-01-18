@@ -12514,6 +12514,7 @@ trafd		ports/net-mgmt/trafd
 traff		ports/net/traff
 traffic		ports/net/traffic
 trafshow	ports/net/trafshow
+trafshow3	ports/net/trafshow3
 traindirector	ports/games/traindirector
 tramp		ports/net/tramp
 trang		ports/textproc/trang
