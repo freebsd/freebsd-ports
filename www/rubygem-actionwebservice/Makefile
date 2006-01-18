@@ -6,6 +6,7 @@
 
 PORTNAME=	actionwebservice
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7650/
 

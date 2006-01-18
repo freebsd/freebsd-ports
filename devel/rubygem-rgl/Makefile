@@ -7,6 +7,7 @@
 
 PORTNAME=	rgl
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/3958/
 
