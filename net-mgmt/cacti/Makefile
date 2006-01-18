@@ -7,7 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6h
-PORTREVISION=	0
+PORTREVISION=	4
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -16,7 +16,10 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${PORTVERSION}/
-PATCHFILES=	
+PATCHFILES=	fix_search_session_clear_issue.patch \
+		fix_sql_syntax_related_to_default_rra_id.patch \
+		nth_percentile_empty_return_set_issue.patch \
+		mysql_5x_strict.patch
 
 PATCH_DIST_STRIP=-p1
 
