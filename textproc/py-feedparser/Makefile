@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	feedparser
-PORTVERSION=	3.3
+PORTVERSION=	4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bsdchat.com/dist/dryice/
@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	An RSS feed parser written in Python
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}
 USE_PYTHON=	2.1+
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
@@ -28,9 +28,11 @@ post-install:
 .for i in *.html
 	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/images
+.for j in images css examples
+	@${MKDIR} ${DOCSDIR}/${j}
 .for i in *
-	@${INSTALL_DATA} ${WRKSRC}/docs/images/${i} ${DOCSDIR}/images
+	@${INSTALL_DATA} ${WRKSRC}/docs/${j}/${i} ${DOCSDIR}/${j}
+.endfor
 .endfor
 .endif
 
