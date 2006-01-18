@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpuzzle
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/
 EXTRACT_SUFX=	.tgz
@@ -30,6 +30,7 @@ MAKE_ENV=	CXX="${CXX}" \
 post-patch:
 	@${REINPLACE_CMD} -e "s|font/|${DATADIR}/font/|g" ${WRKSRC}/main.cxx
 	@${REINPLACE_CMD} -e "s|puzzle-preview/|${DATADIR}/puzzle-preview/|g" ${WRKSRC}/main.cxx
+	@${REINPLACE_CMD} -e "s|terminate|terminate_|g" ${WRKSRC}/main.cxx
 	@${REINPLACE_CMD} -e "s|puzzle-maps/|${DATADIR}/puzzle-maps/|g" ${WRKSRC}/puzzle-preview/preview.map
 	@${RM} -f ${WRKSRC}/puzzle-preview/preview.map.bak
 
