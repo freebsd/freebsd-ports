@@ -1,0 +1,17 @@
+Needle is a dependency injection (also, inversion of control) container
+for Ruby. Ultimately, it can reduce the amount of code that you have to
+write, simplifying many common programming tasks for you. This has the
+two-fold benefit of both decreasing application development time, and of
+decreasing the effort needed to maintain your application.
+
+Specifically, Needle can do:
+
+ - Log Method Execution
+ - Reference Another Service
+ - Unit Testing
+ - Lifestyle Management
+
+WWW: http://needle.rubyforge.org/
+
+- Roderick van Domburg
+r.s.a.vandomburg@student.utwente.nl

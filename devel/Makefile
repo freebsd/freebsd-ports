@@ -1537,6 +1537,7 @@
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-zoom
     SUBDIR += rubygem-activesupport
+    SUBDIR += rubygem-needle
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
