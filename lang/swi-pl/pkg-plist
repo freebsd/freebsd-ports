@@ -1,8 +1,6 @@
 bin/pl
 bin/plld
 bin/plrc
-include/SWI-Prolog.h
-include/SWI-Stream.h
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/pl
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plld
 lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%/plrc
@@ -35,23 +33,22 @@ lib/%%DISTNAME%%/include/SWI-Prolog.h
 lib/%%DISTNAME%%/include/SWI-Stream.h
 lib/%%DISTNAME%%/include/stub.c
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libpl.a
-lib/%%DISTNAME%%/library/clp/bounds.pl
-lib/%%DISTNAME%%/library/option.pl
-lib/%%DISTNAME%%/library/assoc.pl
-lib/%%DISTNAME%%/library/dif.pl
-lib/%%DISTNAME%%/library/when.pl
-lib/%%DISTNAME%%/library/operators.pl
-lib/%%DISTNAME%%/library/prolog_stack.pl
 lib/%%DISTNAME%%/library/INDEX.pl
 lib/%%DISTNAME%%/library/MANUAL
 lib/%%DISTNAME%%/library/am_match.pl
+lib/%%DISTNAME%%/library/assoc.pl
 lib/%%DISTNAME%%/library/backcomp.pl
 lib/%%DISTNAME%%/library/bim.pl
 lib/%%DISTNAME%%/library/check.pl
-lib/%%DISTNAME%%/library/checkselect.pl
 lib/%%DISTNAME%%/library/checklast.pl
+lib/%%DISTNAME%%/library/checkselect.pl
+lib/%%DISTNAME%%/library/clp/bounds.pl
+lib/%%DISTNAME%%/library/clp/clp_distinct.pl
+lib/%%DISTNAME%%/library/clp/clp_events.pl
+lib/%%DISTNAME%%/library/clp/simplex.pl
 lib/%%DISTNAME%%/library/ctypes.pl
 lib/%%DISTNAME%%/library/debug.pl
+lib/%%DISTNAME%%/library/dif.pl
 lib/%%DISTNAME%%/library/edinburgh.pl
 lib/%%DISTNAME%%/library/edit.pl
 lib/%%DISTNAME%%/library/emacs_interface.pl
@@ -64,10 +61,15 @@ lib/%%DISTNAME%%/library/listing.pl
 lib/%%DISTNAME%%/library/lists.pl
 lib/%%DISTNAME%%/library/main.pl
 lib/%%DISTNAME%%/library/make.pl
+lib/%%DISTNAME%%/library/nb_set.pl
 lib/%%DISTNAME%%/library/netscape.pl
 lib/%%DISTNAME%%/library/occurs.pl
+lib/%%DISTNAME%%/library/operators.pl
+lib/%%DISTNAME%%/library/option.pl
 lib/%%DISTNAME%%/library/ordsets.pl
 lib/%%DISTNAME%%/library/oset.pl
+lib/%%DISTNAME%%/library/prolog_clause.pl
+lib/%%DISTNAME%%/library/prolog_stack.pl
 lib/%%DISTNAME%%/library/qpforeign.pl
 lib/%%DISTNAME%%/library/qsave.pl
 lib/%%DISTNAME%%/library/quintus.pl
@@ -79,9 +81,13 @@ lib/%%DISTNAME%%/library/statistics.pl
 lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
+lib/%%DISTNAME%%/library/unicode/blocks.pl
+lib/%%DISTNAME%%/library/unicode/unicode_data.pl
 lib/%%DISTNAME%%/library/url.pl
+lib/%%DISTNAME%%/library/when.pl
 lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/library/clp
+@dirrm lib/%%DISTNAME%%/library/unicode
 @dirrm lib/%%DISTNAME%%/library
 @dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/lib
