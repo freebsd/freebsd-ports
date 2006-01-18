@@ -8,7 +8,7 @@
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.2.9.b.9
 PORTEPOCH=	2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel security
 MASTER_SITES=	http://alioth.debian.org/download.php/1289/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
