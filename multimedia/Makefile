@@ -161,6 +161,7 @@
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += ruby-gst
+    SUBDIR += sabbu
     SUBDIR += slideshow
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
