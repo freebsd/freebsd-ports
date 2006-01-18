@@ -9,18 +9,19 @@
 @exec touch /etc/mail/access
 @exec mkdir -p /var/log/admserv
 @unexec rm -rf /var/log/admserv 2>&1 >/dev/null || true
+@exec echo "Updating crontab"; cp /etc/crontab /etc/crontab.bak; (grep -v "%D/sbin/swatch" /etc/crontab.bak; echo "*/15	*	*	*	*	root %D/sbin/swatch -c %D/etc/swatch.conf") > /etc/crontab; rm -f /etc/crontab.bak
+@unexec echo "Updating crontab"; cp /etc/crontab /etc/crontab.bak; (grep -v "%D/sbin/swatch" /etc/crontab.bak;) > /etc/crontab; rm -f /etc/crontab.bak
 @exec echo "Updating /etc/ssh/sshd_config"; cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak; (grep -v "Banner %D/etc/ssh_banner" /etc/ssh/sshd_config.bak; echo "Banner %D/etc/ssh_banner") > /etc/ssh/sshd_config; rm -f /etc/ssh/sshd_config.bak
 @unexec echo "Updating /etc/ssh/sshd_config"; cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak; (grep -v "Banner %D/etc/ssh_banner" /etc/ssh/sshd_config.bak) > /etc/ssh/sshd_config; rm -f /etc/ssh/sshd_config.bak
 @exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v /usr/sbin/nologin /etc/shells.bak; echo /usr/sbin/nologin) >/etc/shells; rm -f /etc/shells.bak
 @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v /usr/sbin/nologin /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+@exec touch etc/apache2/httpd.raqdevil.conf
+@exec touch etc/apache2/httpd.local.conf
 admserv/conf.d/php.conf
 admserv/conf.d/ssl.conf
 admserv/conf/admserv.conf
 admserv/conf/magic
 admserv/conf/php.ini
-admserv/certs/certificate
-admserv/certs/key
-admserv/certs/request
 admserv/libexec
 bin/clamfilter.pl
 bin/generateGraph.pl
@@ -36,6 +37,7 @@ etc/rc.d/admserv.sh
 etc/rc.d/cced.sh
 etc/ssh_banner
 etc/snmp/snmpd.conf
+etc/swatch.conf
 etc/xinetd.conf
 etc/xinetd/xinetd.d/imap
 etc/xinetd/xinetd.d/imaps
@@ -50,6 +52,7 @@ etc/xinetd/xinetd.d/proftpd
 lib/php/20020429/cce.so
 lib/php/20020429/i18n.so
 lib/security/pam_cce.so
+libexec/apache2/mod_raqdevil.so
 raqdevil/bin/cce_construct
 raqdevil/bin/ccewrap
 raqdevil/bin/i18n_get
@@ -307,6 +310,7 @@ raqdevil/perl/CCE.pm
 raqdevil/perl/I18n.pm
 raqdevil/perl/I18nMail.pm
 raqdevil/perl/JConv.pl
+raqdevil/perl/AM/Util.pm
 raqdevil/perl/Sauce/Config.pm
 raqdevil/perl/Sauce/Service.pm
 raqdevil/perl/Sauce/Service/Client.pm
@@ -329,9 +333,14 @@ raqdevil/sbin/ssl_get.pl
 raqdevil/sbin/update.php
 raqdevil/sbin/vacation.pl
 raqdevil/sbin/vsite_destroy.pl
+raqdevil/schemas/base/am/admserv-am.schema
 raqdevil/schemas/base/am/am.schema
 raqdevil/schemas/base/am/am_base.schema
+raqdevil/schemas/base/am/apache-am.schema
+raqdevil/schemas/base/am/dns-am.schema
 raqdevil/schemas/base/am/fans-am.schema
+raqdevil/schemas/base/am/ftp-am.schema
+raqdevil/schemas/base/am/network-am.schema
 raqdevil/schemas/base/am/temperature-am.schema
 raqdevil/schemas/base/apache/apache.schema
 raqdevil/schemas/base/apache/apache_caps.schema
@@ -377,6 +386,8 @@ raqdevil/schemas/base/vsite/vsite_rules.schema
 raqdevil/schemas/basetypes.schema
 raqdevil/skel/dot.ftphelp
 raqdevil/skel/dot.procmailrc
+raqdevil/skel/quarantine
+raqdevil/skel/spam
 raqdevil/skel/web/bsd.gif
 raqdevil/skel/web/grad.gif
 raqdevil/skel/web/index.html
@@ -390,15 +401,18 @@ raqdevil/skel/web/error/index.html
 raqdevil/skel/web/error/warning.gif
 raqdevil/swatch/bin/am_admserv.exp
 raqdevil/swatch/bin/am_apache.exp
+raqdevil/swatch/bin/am_cpu.sh
 raqdevil/swatch/bin/am_disk.pl
 raqdevil/swatch/bin/am_dns.sh
 raqdevil/swatch/bin/am_ftp.exp
 raqdevil/swatch/bin/am_imap.exp
+raqdevil/swatch/bin/am_mem.pl
 raqdevil/swatch/bin/am_network.sh
 raqdevil/swatch/bin/am_pop.exp
 raqdevil/swatch/bin/am_smtp.exp
 raqdevil/swatch/bin/am_snmp.pl
-raqdevil/swatch/bin/am_telnet.exp
+raqdevil/swatch/statecodes
+raqdevil/swatch/statecodes.tcl
 raqdevil/ui/conf/ui.cfg
 raqdevil/ui/extensions/create.User/Apop.php
 raqdevil/ui/extensions/create.User/Shell.php
@@ -1012,9 +1026,10 @@ raqdevil/ui/web/uiLog.php
 raqdevil/ui/web/uifc/MultiFileUpload.php
 raqdevil/ui/web/uifc/MultiFileUploadHandler.php
 sbin/ftplog2commonlog
+sbin/grab_logs.pl
 sbin/maillog2commonlog.pl
 sbin/split_logs
-sbin/grab_logs.pl
+sbin/swatch
 share/locale/de/LC_MESSAGES/base-am.mo
 share/locale/de/LC_MESSAGES/base-apache.mo
 share/locale/de/LC_MESSAGES/base-cce.mo
@@ -1035,6 +1050,7 @@ share/locale/de/LC_MESSAGES/base-telnet.mo
 share/locale/de/LC_MESSAGES/base-time.mo
 share/locale/de/LC_MESSAGES/base-user.mo
 share/locale/de/LC_MESSAGES/palette.mo
+share/locale/de/LC_MESSAGES/swatch.mo
 share/locale/de/LC_MESSAGES/trueBlue.mo
 share/locale/en/LC_MESSAGES/base-alpine.mo
 share/locale/en/LC_MESSAGES/base-am.mo
@@ -1071,6 +1087,7 @@ share/locale/en/LC_MESSAGES/base-user.mo
 share/locale/en/LC_MESSAGES/base-vsite.mo
 share/locale/en/LC_MESSAGES/base-websitestats.mo
 share/locale/en/LC_MESSAGES/palette.mo
+share/locale/en/LC_MESSAGES/swatch.mo
 share/locale/en/LC_MESSAGES/trueBlue.mo
 share/locale/es/LC_MESSAGES/base-am.mo
 share/locale/es/LC_MESSAGES/base-apache.mo
@@ -1091,6 +1108,7 @@ share/locale/es/LC_MESSAGES/base-telnet.mo
 share/locale/es/LC_MESSAGES/base-time.mo
 share/locale/es/LC_MESSAGES/base-user.mo
 share/locale/es/LC_MESSAGES/palette.mo
+share/locale/es/LC_MESSAGES/swatch.mo
 share/locale/es/LC_MESSAGES/trueBlue.mo
 share/locale/fr/LC_MESSAGES/base-am.mo
 share/locale/fr/LC_MESSAGES/base-apache.mo
@@ -1111,6 +1129,7 @@ share/locale/fr/LC_MESSAGES/base-telnet.mo
 share/locale/fr/LC_MESSAGES/base-time.mo
 share/locale/fr/LC_MESSAGES/base-user.mo
 share/locale/fr/LC_MESSAGES/palette.mo
+share/locale/fr/LC_MESSAGES/swatch.mo
 share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/ui/web/uifc
 @dirrm raqdevil/ui/web/nav
@@ -1190,8 +1209,6 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/swatch
 @dirrm raqdevil/skel/web/error
 @dirrm raqdevil/skel/web
-@dirrm raqdevil/skel/spam
-@dirrm raqdevil/skel/quarantine
 @dirrm raqdevil/skel
 @dirrm raqdevil/sessions
 @dirrm raqdevil/schemas/base/vsite

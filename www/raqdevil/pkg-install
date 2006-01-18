@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREF=${PREFIX:-$PKG_PREFIX}
-PATH=/bin:/usr/sbin
+PATH=/bin:/usr/sbin:/usr/bin
 
 case $2 in
 POST-INSTALL)
@@ -18,13 +18,38 @@ POST-INSTALL)
 		fi
 	fi
 
-	/usr/bin/touch /etc/mail/access
+	/usr/bin/touch /etc/mail/access;
 
 	mkdir -p ${PREF}/raqdevil/ui/web/base/sitestats/img;
 	chown www:wheel ${PREF}/raqdevil/ui/web/base/sitestats/img;
-	mkdir -p ${PREF}/raqdevil/skel/spam;
-	mkdir -p ${PREF}/raqdevil/skel/quarantine;
 	mkdir -p ${PREF}/raqdevil/sessions;
+
+	/usr/bin/touch ${PREF}/etc/apache2/httpd.local.conf
+	/usr/bin/touch ${PREF}/etc/apache2/httpd.raqdevil.conf
+
+	# generate certificates if required
+	CERTPATH=${PREF}/admserv/certs
+	KEYPATH=${CERTPATH}/key
+	CSRPATH=${CERTPATH}/request
+	CRTPATH=${CERTPATH}/certificate
+
+	mkdir -p ${CERTPATH}
+
+	if [ ! -f ${KEYPATH} ]; then
+	        openssl genrsa -out ${KEYPATH} 2048
+	fi
+	if [ ! -f ${CSRPATH} ]; then
+	        openssl req -new -key ${KEYPATH} -out ${CSRPATH}
+	fi
+	if [ ! -f ${CRTPATH} ]; then
+	        openssl x509 -req -days 365 -in ${CSRPATH} -signkey ${KEYPATH} -out ${CRTPATH}
+	fi
+
+	# fix up the apache httpd.conf file using database values
+	# probably should use /usr/local/raqdevil/bin/cce_construct instead
+	# to make a package install work correctly
+	${PREF}/raqdevil/constructor/base/apache/processAdvise.pl
+
 
 	( cd /etc/namedb; sh /etc/namedb/make-localhost )
 	;;
