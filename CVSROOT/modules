@@ -11397,6 +11397,7 @@ rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-needle	ports/devel/rubygem-needle
+rubygem-net-ssh	ports/security/rubygem-net-ssh
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rake	ports/devel/rubygem-rake
