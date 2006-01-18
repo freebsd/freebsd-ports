@@ -49,6 +49,8 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo3.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/chess.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/colors.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/comments1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/comments2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/convertA1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/copyformat.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/csv2xls.pl
@@ -74,6 +76,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge3.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge4.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge5.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/merge6.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/mod_perl1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/mod_perl2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/outline.pl
@@ -82,6 +85,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/regions.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/repeat.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/republic.bmp
+%%PORTDOCS%%%%EXAMPLESDIR%%/right_to_left.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sendmail.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.pl
