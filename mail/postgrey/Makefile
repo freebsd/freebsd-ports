@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.24
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
