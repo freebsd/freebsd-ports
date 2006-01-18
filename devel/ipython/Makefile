@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.6.15
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://bsdchat.com/dist/dryice/
@@ -18,7 +18,7 @@ COMMENT=	An enhanced Interactive Python shell
 MAN1=		ipython.1 pycolor.1
 MANCOMPRESSED=	yes
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
