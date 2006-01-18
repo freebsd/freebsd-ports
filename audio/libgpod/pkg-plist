@@ -1,0 +1,15 @@
+include/gpod-1.0/gpod/itdb.h
+include/gpod-1.0/gpod/ipod-device.h
+@dirrm include/gpod-1.0/gpod
+@dirrm include/gpod-1.0
+lib/libgpod.so.300
+lib/libgpod.so
+lib/libgpod.la
+lib/libgpod.a
+libdata/pkgconfig/libgpod-1.0.pc
+share/locale/de/LC_MESSAGES/libgpod.mo
+share/locale/fr/LC_MESSAGES/libgpod.mo
+share/locale/he/LC_MESSAGES/libgpod.mo
+share/locale/it/LC_MESSAGES/libgpod.mo
+share/locale/ja/LC_MESSAGES/libgpod.mo
+share/locale/sv/LC_MESSAGES/libgpod.mo
