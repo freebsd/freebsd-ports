@@ -12,8 +12,7 @@ mini, iPod photo, iPod shuffle, iPod nano, and iPod video.  It allows you to:
     * Extract tag information (artist, album, title, etc.) from the filename
     * Detect duplicates when adding songs (optional)
     * Remove and export tracks from your iPod
-    * Modify ID3 tags, optionally updating the original file
-    * Refresh ID3 tags from file (after changing tags in the original file)
+    * Modify/Refresh ID3 tags, optionally updating the original file
     * Synchronize directories
     * Normalize the volume of your tracks (via mp3gain or the replay-gain tag)
     * Write the updated iTunesDB and added songs to your iPod
@@ -22,4 +21,4 @@ mini, iPod photo, iPod shuffle, iPod nano, and iPod video.  It allows you to:
       webcalendar/... data to the iPod (scripts for other programs can be
       easily added)
 
-WWW: http://gtkpod.sourceforge.net/
+WWW: http://www.gtkpod.org/
