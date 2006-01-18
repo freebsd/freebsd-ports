@@ -1,0 +1,6 @@
+An interface to a local CVS repository using pserver for authentication.
+This script can add, delete, suspend, or enable non-system users for read
+and write access to a CVS repository.
+
+- Pete
+petef@databits.net
