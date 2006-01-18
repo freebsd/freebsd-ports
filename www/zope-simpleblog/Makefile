@@ -7,6 +7,7 @@
 
 PORTNAME=	simpleblog
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
@@ -14,11 +15,10 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	SimpleBlog${PORTVERSION}
 DIST_SUBDIR=	zope
 
-MAINTAINER=	saturnero@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SimpleBlog is an easy to use Plone based weblog application
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
-		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/Archetypes/__init__.py:${PORTSDIR}/www/zope-archetypes
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 
 WRKSRC=${WRKDIR}
 USE_ZOPE=	yes
