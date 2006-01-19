@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@infor.org
 COMMENT=	Provides interfaces between strings and the rest of the system
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN1=		piconv.1 enc2xs.1
