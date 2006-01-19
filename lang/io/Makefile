@@ -27,6 +27,10 @@ BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on ia64 or sparc64"
+.endif
+
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4+
 .endif
