@@ -23,6 +23,8 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
+BROKEN=		Configure fails
+
 DIST_SUBDIR=	hylafax
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
