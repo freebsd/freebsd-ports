@@ -18,6 +18,7 @@ WITH_XIM=	--with-xim=xlib
 BUILD_INPUT_METHOD=	xcin2.5:${PORTSDIR}/chinese/xcin25
 
 # xemacs21-mule-common needs this.
+PATCHDIR=	${.CURDIR}/../../editors/xemacs21-mule/files
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs21-mule/work
 
 SLAVE_PORT=	yes
