@@ -15,12 +15,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
 
-OPTIONS=	LIBEXIF "Build with libexif" on
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		exif.12:${PORTSDIR}/graphics/libexif
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -36,14 +35,6 @@ PORTDOCS=	README TODO INSTALL
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
 
 .include <bsd.port.pre.mk>
-
-pre-fetch:
-.if exists(${LOCALBASE}/lib/libexif.so)
-WITH_LIBEXIF=	yes
-.endif
-.if defined(WITH_LIBEXIF)
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
-.endif
 
 post-patch:
 .if ${OSVERSION} < 500000
