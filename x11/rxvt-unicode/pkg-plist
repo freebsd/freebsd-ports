@@ -1,6 +1,7 @@
 bin/urxvt
 bin/urxvtc
 bin/urxvtd
+%%PERL%%lib/urxvt/perl/automove-background
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
@@ -9,15 +10,9 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/searchable-scrollback
 %%PERL%%lib/urxvt/perl/selection
 %%PERL%%lib/urxvt/perl/selection-autotransform
+%%PERL%%lib/urxvt/perl/selection-pastebin
 %%PERL%%lib/urxvt/perl/selection-popup
 %%PERL%%lib/urxvt/perl/urxvt-popup
 %%PERL%%lib/urxvt/urxvt.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.menu
-%%PORTDOCS%%%%EXAMPLESDIR%%/jedmenu.sl
-%%PORTDOCS%%%%EXAMPLESDIR%%/menu
-%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.menu
-%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.zh-menu
-%%PORTDOCS%%%%EXAMPLESDIR%%/terminal.menu
 %%PERL%%@dirrm lib/urxvt/perl
 %%PERL%%@dirrm lib/urxvt
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

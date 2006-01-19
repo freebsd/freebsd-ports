@@ -1,13 +1,14 @@
---- configure.orig	Wed Feb  2 09:04:01 2005
-+++ configure	Thu Feb  3 22:23:31 2005
-@@ -3267,24 +3267,16 @@
+--- configure.orig	Thu Jan 19 13:03:00 2006
++++ configure	Thu Jan 19 22:14:30 2006
+@@ -3060,25 +3060,16 @@
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
 -if test -z "$orig_CXXFLAGS"; then
--  CXXFLAGS='-O'
 -  if test x$GCC = xyes && test "x$GXX" = xyes; then
 -    CXXFLAGS="-g -O3"
+-  else
+-    CXXFLAGS="-O"
 -  fi
 -  CFLAGS="$CXXFLAGS"
 -fi
@@ -28,7 +29,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3338,7 +3330,7 @@
+@@ -3132,7 +3123,7 @@
  if test $ac_cv_lib_supcpp_main = yes; then
  
        LINKER="$CC"
@@ -36,4 +37,12 @@
 +      LIBS="$LIBS -lstdc++ -lsupc++"
  
  fi
+ 
+@@ -11729,6 +11720,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <stddef.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
  
