@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	3.71
+PORTVERSION=	3.72
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 DISTNAME=	tth_C
@@ -17,8 +17,6 @@ COMMENT=	A TeX to HTML translator
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
-
-BROKEN=		Size mismatch
 
 USE_GHOSTSCRIPT_RUN=	yes
 
