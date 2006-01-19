@@ -3243,6 +3243,7 @@ gnurobots	ports/games/gnurobots
 gnus-emacs20	ports/news/gnus-emacs20
 gnuserv		ports/editors/gnuserv
 gnuserv-emacs20	ports/editors/gnuserv-emacs20
+gnusget		ports/ftp/gnusget
 gnushogi	ports/games/gnushogi
 gnustep		ports/devel/gnustep
 gnustep-art	ports/x11-toolkits/gnustep-art
