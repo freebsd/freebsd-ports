@@ -21,4 +21,10 @@ USE_GETOPT_LONG=	yes
 
 MAN1=		gensig.1 cattag.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700013
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
+.include <bsd.port.post.mk>
