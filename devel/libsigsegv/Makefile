@@ -17,10 +17,16 @@ COMMENT=	Handling page faults in user mode
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
 check: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
