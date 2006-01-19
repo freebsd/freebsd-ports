@@ -1,5 +1,5 @@
---- wrapper/asteriskaudio.cxx.orig	Fri Jun 17 13:32:45 2005
-+++ wrapper/asteriskaudio.cxx	Fri Jun 17 13:33:19 2005
+--- wrapper/asteriskaudio.cxx.orig	Wed Jan 18 11:01:05 2006
++++ wrapper/asteriskaudio.cxx	Wed Jan 18 11:01:34 2006
 @@ -164,7 +164,7 @@ PAsteriskSoundChannel::~PAsteriskSoundCh
  	WRAPTRACE(3, "Total I/Os: read=" << readCount << ", write=" << writeCount);
  	WRAPTRACE(3, "Short I/Os: write=" << shortWriteCount);
