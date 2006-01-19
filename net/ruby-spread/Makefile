@@ -17,6 +17,8 @@ COMMENT=	Ruby interface to the Spread library
 
 LIB_DEPENDS=	tspread.1:${PORTSDIR}/net/spread
 
+BROKEN=		Unfetchable
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
