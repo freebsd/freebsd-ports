@@ -15,12 +15,14 @@ install-ldconfig-file:
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .if defined(USE_LDCONFIG)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
+	@${MKDIR} ${PREFIX}/${LDCONFIG_DIR}
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
 .if defined(USE_LDCONFIG32)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
+	@${MKDIR} ${PREFIX}/${LDCONFIG32_DIR}
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
