@@ -14,6 +14,8 @@ COMMENT=	Framework library for access to Prelude NIDS database
 
 LIB_DEPENDS=	prelude.4:${PORTSDIR}/security/libprelude
 
+BROKEN=		Unfetchable
+
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_REINPLACE=		yes
