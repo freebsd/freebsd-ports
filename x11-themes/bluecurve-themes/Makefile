@@ -11,8 +11,6 @@ CATEGORIES=	x11-themes
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT?=	Meta-port for Bluecurve themes
 
-BROKEN=		Unfetchable
-
 .if ${PORTNAME} == "bluecurve-themes"	# meta-port
 
 PORTVERSION=	1.0
@@ -33,12 +31,12 @@ do-install:	# empty
 
 .else					# master port
 
-PORTVERSION=	0.131
+PORTVERSION=	0.234
 RPMREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	development/SRPMS
-DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:local|}
+MASTER_SITE_SUBDIR=	development/SRPMS/:fedora jylefort/:local
+DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm:fedora,local
 
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -53,7 +51,7 @@ FILESDIR=	${.CURDIR}/files
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
-	rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | ${CPIO} -id --quiet && \
+	rpm2cpio.pl ${_DISTDIR}/${_DISTFILES} | ${CPIO} -id --quiet && \
 	${TAR} -zxf redhat-artwork-${PORTVERSION}.tar.gz
 
 .if defined(BC_HIERS)
