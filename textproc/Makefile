@@ -147,6 +147,7 @@
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gtkspell2
+    SUBDIR += gu-aspell
     SUBDIR += gutenmark
     SUBDIR += gv-aspell
     SUBDIR += gxditview
