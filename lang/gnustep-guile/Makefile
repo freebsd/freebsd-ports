@@ -17,7 +17,8 @@ COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=

@@ -15,7 +15,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 NO_BUILD=	yes
 USE_GNUSTEP=	yes

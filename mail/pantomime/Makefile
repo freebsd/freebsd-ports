@@ -15,7 +15,8 @@ DISTNAME=	Pantomime-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime
 USE_GMAKE=	yes

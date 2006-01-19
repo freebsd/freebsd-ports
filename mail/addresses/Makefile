@@ -15,7 +15,8 @@ DISTNAME=	Addresses-${PORTVERSION}
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A versatile addressbook for GNUstep
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Addresses-${PORTVERSION}
 USE_GMAKE=	yes

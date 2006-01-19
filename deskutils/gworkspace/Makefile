@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GUN_CONFIGURE=	yes

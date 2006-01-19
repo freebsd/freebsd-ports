@@ -15,7 +15,8 @@ MASTER_SITES=	http://www.linuks.mine.nu/easydiff/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep graphical diff
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes

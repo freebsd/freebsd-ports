@@ -15,7 +15,8 @@ DISTNAME=	ProjectCenter-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A development environment for GNUstep
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
