@@ -18,6 +18,8 @@ COMMENT=	Firefox Korean(ko) Language Pack
 BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
