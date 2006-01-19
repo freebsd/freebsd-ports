@@ -3591,6 +3591,7 @@ gtubeclock	ports/x11-clocks/gtubeclock
 gturing		ports/games/gturing
 gtweakui	ports/deskutils/gtweakui
 gtypist		ports/games/gtypist
+gu-aspell	ports/textproc/gu-aspell
 guavac		ports/java/guavac
 gubby		ports/mail/gubby
 gucharmap	ports/deskutils/gucharmap
