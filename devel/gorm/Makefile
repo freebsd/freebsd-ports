@@ -15,7 +15,8 @@ DISTNAME=	Gorm-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes

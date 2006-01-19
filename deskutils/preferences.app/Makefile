@@ -17,7 +17,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
 USE_BZIP2=	yes
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes

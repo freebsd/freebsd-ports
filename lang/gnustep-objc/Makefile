@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A snapshot of libobjc, meant to be used with GNUstep
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BUILD=	yes

@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
@@ -28,7 +29,7 @@ LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-MAKE_ARGS+=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
+MAKE_ARGS+=	GNUSTEP_PREFIX=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep
 WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}

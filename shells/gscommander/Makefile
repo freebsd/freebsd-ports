@@ -15,7 +15,8 @@ DISTNAME=	GSCommander-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep simple unix command monitor
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/GSCommander
 GUN_CONFIGURE=	yes
