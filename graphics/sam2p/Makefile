@@ -19,7 +19,7 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		tifftopnm:${PORTSDIR}/graphics/netpbm \
 		zip:${PORTSDIR}/archivers/zip \
-		bash:${PORTSDIR}/shells/bash2
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_GHOSTSCRIPT_RUN=	yes
