@@ -29,8 +29,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) 
-BROKEN=        "Tinderbox is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL"
+.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL)
+IGNORE=        is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
 .if defined(WITH_PGSQL)
