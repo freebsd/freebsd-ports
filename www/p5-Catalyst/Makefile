@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.61
+PORTVERSION=	5.62
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -32,15 +32,16 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Text-SimpleTable>=0:${PORTSDIR}/textproc/p5-Text-SimpleTable \
+		p5-Text-SimpleTable>=0.03:${PORTSDIR}/textproc/p5-Text-SimpleTable \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
+		p5-Test-NoWarnings>=0.082:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-ExtUtils-AutoInstall>=0:${PORTSDIR}/devel/p5-ExtUtils-AutoInstall
+		p5-Module-Install>=0.45:${PORTSDIR}/devel/p5-Module-Install \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -91,7 +92,7 @@ post-install:
 	@${CAT} pkg-message
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,^features, .. m,^\);,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless m,^feature, .. m,;$$,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
