@@ -21,6 +21,8 @@ COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
+BROKEN=		Incorrect SHA hash
+
 NO_BUILD=		yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
