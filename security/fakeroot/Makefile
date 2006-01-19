@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	Simulate the root user behaviour
 
+BROKEN=		Unfetchable
+
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
