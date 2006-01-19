@@ -1,18 +1,18 @@
-*** scripts/refdb.orig	Sat Apr 30 16:45:49 2005
---- scripts/refdb	Sat Apr 30 16:46:18 2005
+*** scripts/refdb.orig	Thu Nov 10 12:29:22 2005
+--- scripts/refdb	Thu Nov 10 12:29:40 2005
 ***************
-*** 43,49 ****
-  # set to 'YES' if the OS uses a BSD-style daemon startup system (this is
+*** 45,51 ****
   # true for BSD-UNIX and Unices derived thereof, as well as for the
-  # Slackware Linux distribution)
+  # Slackware Linux distribution). This setting does not perform any black
+  # magic, but it makes the screen messages at startup match the OS style
 ! BSDSTYLE=NO
   
   # don't get interrupted
   trap "" 1
---- 43,49 ----
-  # set to 'YES' if the OS uses a BSD-style daemon startup system (this is
+--- 45,51 ----
   # true for BSD-UNIX and Unices derived thereof, as well as for the
-  # Slackware Linux distribution)
+  # Slackware Linux distribution). This setting does not perform any black
+  # magic, but it makes the screen messages at startup match the OS style
 ! BSDSTYLE=YES
   
   # don't get interrupted

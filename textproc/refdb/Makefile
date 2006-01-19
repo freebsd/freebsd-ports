@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	refdb
-PORTVERSION=	0.9.5a
+PORTVERSION=	0.9.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	paulh@logicsquad.net
 COMMENT=	Bibliographic reference database
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+		dbi.0:${PORTSDIR}/databases/libdbi
 
-WRKSRC=		${WRKDIR}/refdb-0.9.5
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
@@ -28,9 +28,6 @@ CONFIGURE_ARGS+=	--with-classpath-root=${PREFIX}/share/java/classes
 CONFIGURE_ARGS+=	--with-refdb-url=http://localhost/refdb
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-
-# For testing:
-#CONFIGURE_ARGS+=	--prefix=/home/paulh/ports/textproc/refdb/install
 
 OPTIONS=	MYSQL	"Use MySQL" on \
 		PGSQL	"Use PostgreSQL" off \
@@ -86,10 +83,17 @@ post-install:
 	@${ECHO_MSG} "To complete RefDB installation:"
 .if defined(WITH_MYSQL)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "1. To initialise MySQL, run the following commands:"
+	@${ECHO_MSG} "1. To initialise MySQL, run the following command:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "   mysql -u root -e \"CREATE DATABASE refdb\""
-	@${ECHO_MSG} "   mysql -u root refdb < ${PREFIX}/share/refdb/sql/refdb.dump"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   Then, for MySQL older than 4.1, run:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   mysql -u root refdb < ${PREFIX}/share/refdb/sql/refdb.dump.mysql"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   For MySQL 4.1 and later, run:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   mysql -u root refdb < ${PREFIX}/share/refdb/sql/refdb.dump.mysql41"
 	@${ECHO_MSG} ""
 .elif defined(WITH_PGSQL)
 	@${ECHO_MSG} ""
@@ -114,6 +118,6 @@ post-install:
 	@${ECHO_MSG} "3. Customise the configuration scripts in ${PREFIX}/etc/refdb,"
 	@${ECHO_MSG} "   as described in the RefDB documentation at:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "   http://refdb.sourceforge.net/manual/x1390.html#AEN1484"
+	@${ECHO_MSG} "   http://refdb.sourceforge.net/manual/x593.html#SECT1-MYSTERY-INIT-FILES"
 
 .include <bsd.port.post.mk>
