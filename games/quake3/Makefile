@@ -34,9 +34,9 @@ PLIST_FILES=	bin/q3ded bin/quake3
 
 .include <bsd.port.pre.mk>
 
-# Anyone to play with this on IA64?
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on IA64 (feel free to submit fixes)"
+# Anyone to play with this on !i386
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386 (feel free to submit fixes)"
 .endif
 
 .if ${PERL_LEVEL} < 500600
