@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+bin/chemeq
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.stuff
+%%PORTDOCS%%%%EXAMPLESDIR%%/chemreport
+%%PORTDOCS%%%%EXAMPLESDIR%%/chemreport.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/chemtest
+%%PORTDOCS%%%%EXAMPLESDIR%%/chemtest.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
