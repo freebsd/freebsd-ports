@@ -19,6 +19,8 @@ COMMENT=	Firefox Traditional Chinese(zh-TW) Language Pack
 BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
+BROKEN=		Incorrect pkg-plist
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
