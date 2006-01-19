@@ -986,5 +986,3 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/db
 @dirrm www/dotproject/classes
 @dirrm www/dotproject
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX

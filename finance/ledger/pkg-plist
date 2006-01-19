@@ -47,8 +47,6 @@ lib/libledger.a
 %%EXAMPLESDIR%%/scripts/to
 %%EXAMPLESDIR%%/scripts/trend
 %%EXAMPLESDIR%%/setup.py
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%EXAMPLESDIR%%/scripts
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/ledger
