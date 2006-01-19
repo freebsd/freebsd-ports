@@ -17,30 +17,7 @@
  #define NETDB_BUFFER_SIZE 10000
  
 -#ifdef _WIN32
-+#if ( defined(__FreeBSD_version) && ( ((__FreeBSD_version >= 504102) && (__FreeBSD_version < 600000)) || (__FreeBSD_version >= 600029) ) )
++#if defined(_WIN32) || ( defined(__FreeBSD_version) && ( ((__FreeBSD_version >= 504102) && (__FreeBSD_version < 600000)) || (__FreeBSD_version >= 600029) ) )
  #define GETHOSTBYADDR_IS_REENTRANT 1
  #define GETHOSTBYNAME_IS_REENTRANT 1
  #endif
-@@ -738,11 +743,11 @@
-     if (rc != 0) hp = NULL;
-   }
- #else
--#ifdef GETHOSTBYNAME_IS_REENTRANT
-+#ifndef GETHOSTBYNAME_IS_REENTRANT
-   enter_blocking_section();
- #endif
-   hp = gethostbyname(hostname);
--#ifdef GETHOSTBYNAME_IS_REENTRANT
-+#ifndef GETHOSTBYNAME_IS_REENTRANT
-   leave_blocking_section();
- #endif
- #endif
-@@ -787,7 +792,7 @@
-   End_roots();
- }
- 
--#if !defined(HAVE_PTHREAD) || !(HAS_GETHOSTBYNAME_R || GETHOSTBYNAME_IS_REENTRANT)
-+#if !defined(HAVE_PTHREAD) || (!(HAS_GETHOSTBYNAME_R || GETHOSTBYNAME_IS_REENTRANT) && !defined(HAS_SIGWAIT))
- 
- value ml_ip_job_start(value job_v)
- {
