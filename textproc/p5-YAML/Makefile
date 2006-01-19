@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	YAML
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.52
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	YAML
@@ -17,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	YAML implementation in Perl
 
 BUILD_DEPENDS=	\
-	p5-Spiffy>=0.26:${PORTSDIR}/devel/p5-Spiffy \
+	p5-Spiffy>=0.27:${PORTSDIR}/devel/p5-Spiffy \
 	p5-Test-Base>=0.46:${PORTSDIR}/devel/p5-Test-Base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
