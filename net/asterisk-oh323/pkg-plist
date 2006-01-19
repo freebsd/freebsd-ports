@@ -1,0 +1,5 @@
+@unexec if cmp -s %D/etc/asterisk/oh323.conf %D/etc/asterisk/oh323.conf.sample; then rm -f %D/etc/asterisk/oh323.conf; fi
+etc/asterisk/oh323.conf.sample
+@exec [ -f %B/oh323.conf ] || cp %B/%f %B/oh323.conf
+lib/liboh323wrap_s.a
+lib/asterisk/modules/chan_oh323.so

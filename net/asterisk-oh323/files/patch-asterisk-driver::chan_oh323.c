@@ -1,28 +1,25 @@
---- asterisk-driver/chan_oh323.c.orig	Tue Dec 21 17:28:11 2004
-+++ asterisk-driver/chan_oh323.c	Fri Jun 17 13:23:19 2005
-@@ -56,6 +56,7 @@
+--- asterisk-driver/chan_oh323.c.orig	Wed Jan 18 11:25:02 2006
++++ asterisk-driver/chan_oh323.c	Wed Jan 18 11:37:09 2006
+@@ -43,10 +43,12 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <math.h>
 +#include <netinet/in_systm.h>
  #include <netinet/ip.h>
  #include <sys/signal.h>
++#include <stdio.h>
  
-@@ -1155,7 +1156,7 @@ static struct ast_frame *oh323_exception
- 	p->fr.src = type;
- 	p->fr.offset = 0;
- 	p->fr.mallocd = 0;
--	p->fr.src = __FUNCTION__;
-+	p->fr.src = "oh323_exception";
+-#include "asterisk.h"
++//#include "asterisk.h"
  
- 	/* -- User input */
- 	if (p->except_struct.type == OH323EXC_USER_INPUT_TONE) {
-@@ -1770,7 +1771,7 @@ static struct ast_frame *oh323_read(stru
- 	p->fr.src = type;
- 	p->fr.offset = AST_FRIENDLY_OFFSET;
- 	p->fr.samples = 0;
--	p->fr.src = __FUNCTION__;
-+	p->fr.src = "oh323_read";
- 
- 	/* Check the event pipe */
- 	//CHECK_BLOCKING(c);
+ #include "asterisk/lock.h"
+ #include "asterisk/channel.h"
+@@ -4429,7 +4431,7 @@ static int kill_monitor(void)
+ 				return(-1);
+ 			}
+ 		}
+-		monitor_thread = -2;
++		monitor_thread = AST_PTHREADT_STOP;
+ 	} else {
+ 		ast_log(LOG_WARNING, "Unable to lock the monitor.\n");
+ 		return(-1);
