@@ -5,7 +5,8 @@ bin/cherokee_logrotate
 etc/cherokee/advanced.conf
 etc/cherokee/cherokee.conf
 etc/cherokee/icons.conf
-etc/cherokee/mime.conf
+etc/cherokee/mime.compression.types
+etc/cherokee/mime.types
 etc/cherokee/mods-available/admin
 etc/cherokee/mods-available/ssl
 etc/cherokee/sites-available/default
@@ -29,6 +30,7 @@ include/cherokee/list_merge_sort.h
 include/cherokee/logger.h
 include/cherokee/macros.h
 include/cherokee/mime.h
+include/cherokee/mime_entry.h
 include/cherokee/module.h
 include/cherokee/module_loader.h
 include/cherokee/nonce.h
@@ -129,8 +131,8 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/cherokee.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 www/images/cherokee-logo.png
+www/images/default-bg.png
 www/images/powered_by_cherokee.png
-www/images/top-layer.png
 www/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/icons
