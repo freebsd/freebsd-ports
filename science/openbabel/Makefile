@@ -24,6 +24,12 @@ MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64 (gcc internal error)"
+.endif
+
 post-extract:
 	@${LN} -sf babel.1 ${WRKSRC}/doc/openbabel.1
 
@@ -36,4 +42,4 @@ post-patch:
 		 s|(babel|(openbabel|g ; \
 		 s|= babel|= openbabel|g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
