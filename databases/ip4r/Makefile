@@ -15,7 +15,7 @@ COMMENT=	IPv4 and IPv4 range index type for PostgreSQL
 
 USE_PGSQL=	YES
 USE_GMAKE=	YES
-WANT_PGSQL_VER?=	81
+DEFAULT_PGSQL_VER=	81
 
 # 74 is not strictly true, but requires extracting the appropriate
 # postgresql-contrib tarball, and associated heavy lifting.
