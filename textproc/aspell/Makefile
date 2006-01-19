@@ -7,7 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.60.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -70,9 +70,9 @@ DESCR=		${.CURDIR}/pkg-descr
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
 AVAIL_DICT=	af am az be bg bn br ca cs csb cy da de de-alt el en eo es et fa fi fo	\
-		fr ga gd gl gv he hi hil hr hsb hu ia id is it la lt lv mi mk mn mr ms	\
-		mt nb nds nl nn ny or pa pl pt qu ro ru rw sc sk sl sr sv sw ta te tet	\
-		tl tn tr uk uz vi wa yi zu
+		fr ga gd gl gu gv he hi hil hr hsb hu ia id is it la lt lv mi mk mn mr	\
+		ms mt nb nds nl nn ny or pa pl pt qu ro ru rw sc sk sl sr sv sw ta te	\
+		tet tl tn tr uk uz vi wa yi zu
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -130,6 +130,7 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - German                       ASPELL_DE=yes         *'
 	@${ECHO_MSG} '*  - German (orig spelling rules) ASPELL_DE-ALT=yes     *'
 	@${ECHO_MSG} '*  - Greek                        ASPELL_EL=yes         *'
+	@${ECHO_MSG} '*  - Gujarati                     ASPELL_GU=yes         *'
 	@${ECHO_MSG} '*  - Hebrew                       ASPELL_HE=yes         *'
 	@${ECHO_MSG} '*  - Hiligaynon                   ASPELL_HIL=yes        *'
 	@${ECHO_MSG} '*  - Hindi                        ASPELL_HI=yes         *'
