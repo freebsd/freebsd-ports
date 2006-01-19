@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ipfcount
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
