@@ -22,7 +22,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
 
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19:env
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
