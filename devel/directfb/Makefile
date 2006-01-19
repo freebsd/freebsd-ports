@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	directfb
-PORTVERSION=	0.9.16
-PORTREVISION=	4
+PORTVERSION=	0.9.22
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/download/DirectFB/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -17,6 +16,8 @@ COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
+
+BROKEN=		Hard-wires libc_r thread library
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
