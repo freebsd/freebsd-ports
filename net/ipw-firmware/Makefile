@@ -57,6 +57,10 @@ IS_INTERACTIVE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700013
+BROKEN=		"Incorrect pkg-plist"
+.endif
+
 # That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be
 # compiled on FreeBSD previous to 5.3-RELEASE. This is just too old, people
 # should move on. I may change this if I get successful reports though.
