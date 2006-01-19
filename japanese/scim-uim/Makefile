@@ -20,6 +20,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim.0:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
