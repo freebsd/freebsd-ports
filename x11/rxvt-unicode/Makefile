@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	7.0
+PORTVERSION=	7.1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -29,8 +29,7 @@ MAN1=		urxvt.1 urxvtc.1 urxvtd.1
 MAN7=		urxvt.7
 
 PORTDOCS1=	Changes README.FAQ README.configure
-PORTDOCS=	README.menu README.xvt ${PORTDOCS1}
-EXAMPLES=	example.menu jedmenu.sl menu rxvt.menu rxvt.zh-menu terminal.menu
+PORTDOCS=	README.xvt ${PORTDOCS1}
 
 # disable the embedded perl interpreter
 .if defined(WITHOUT_PERL)
@@ -194,9 +193,6 @@ post-install:
 	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/doc/menu/|} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
 .include <bsd.port.post.mk>
