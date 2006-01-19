@@ -8,7 +8,7 @@
 PORTNAME=	dits
 PORTVERSION=	2.2.30
 CATEGORIES=	devel
-MASTER_SITES=	http://vdmvm.org/ http://codeconcepts.com/
+MASTER_SITES=	http://vdmvm.org/
 
 MAINTAINER=	greg@codeconcepts.com
 COMMENT=	A data integrity verifying disk exercising test suite
