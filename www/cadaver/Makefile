@@ -18,6 +18,8 @@ COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon
 
+BROKEN=		Does not compile
+
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_GETOPT_LONG=	yes
