@@ -25,6 +25,10 @@ COMMENT=	FSF OBJC-gcc-3.2.1 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+BROKEN=		"Configure fails on FreeBSD 7.0"
+.endif
+
 LCLTARGET?=	i386-rtems
 
 GCCVERSION=	3.2.3
