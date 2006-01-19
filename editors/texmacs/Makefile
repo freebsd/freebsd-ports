@@ -8,8 +8,11 @@
 PORTNAME=	texmacs
 PORTVERSION=	1.0.6
 CATEGORIES=	editors print
-MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
-		ftp://ftp.texmacs.org/pub/TeXmacs/old-targz/
+MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
+		ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
+		http://gd.tuwien.ac.at/editors/TeXmacs/targz/ \
+		ftp://gd.tuwien.ac.at/editors/TeXmacs/targz/
+MASTER_SITE_SUBDIR=	targz old-targz
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
