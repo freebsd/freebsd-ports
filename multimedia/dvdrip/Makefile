@@ -15,25 +15,20 @@ DISTNAME=	Video-DVDRip-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
-.if !defined(WITHOUT_CLUSTER)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
-		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
-		pstree:${PORTSDIR}/sysutils/pstree
-.endif
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
-		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
 		${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf \
 		${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl
+
+OPTIONS=	CLUSTER		"Enable cluster mode"	on \
+		SUBTITLE	"Enable support for getting subtitles"	on \
+		VORBIS		"OGG/Vorbis audio support" on
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
@@ -42,6 +37,22 @@ MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
 MAN3=		Video::DVDRip.3 Video::DVDRip::CPAN::Scanf.3
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CLUSTER)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
+		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
+		pstree:${PORTSDIR}/sysutils/pstree
+.endif
+
+.if !defined(WITHOUT_VORBIS)
+RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools
+.endif
+
+.if !defined(WITHOUT_SUBTITLE)
+RUN_DEPENDS+=	subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper
+.endif
 
 .if ${OSVERSION} < 500000
 BROKEN=	"Broken dependencies"
