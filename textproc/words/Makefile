@@ -17,14 +17,6 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	A Latin-English Dictionary Program
 
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
-.if defined(PACKAGE_BUILDING)
-STATIC=		yes
-.endif
-.if defined(STATIC)
-GNATLINK_ARGS=	-largs -static
-.else
-LIB_DEPENDS=	gnat-3.15.1:${PORTSDIR}/lang/gnat
-.endif
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes
