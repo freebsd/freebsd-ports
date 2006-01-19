@@ -32,7 +32,12 @@
 %%SITE_PERL%%/HTML/Widget/Element/Upload.pm
 %%SITE_PERL%%/HTML/Widget/Error.pm
 %%SITE_PERL%%/HTML/Widget/Filter.pm
+%%SITE_PERL%%/HTML/Widget/Filter/Callback.pm
+%%SITE_PERL%%/HTML/Widget/Filter/HTMLEscape.pm
+%%SITE_PERL%%/HTML/Widget/Filter/HTMLStrip.pm
+%%SITE_PERL%%/HTML/Widget/Filter/LowerCase.pm
 %%SITE_PERL%%/HTML/Widget/Filter/TrimEdges.pm
+%%SITE_PERL%%/HTML/Widget/Filter/UpperCase.pm
 %%SITE_PERL%%/HTML/Widget/Filter/Whitespace.pm
 %%SITE_PERL%%/HTML/Widget/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widget/.packlist
