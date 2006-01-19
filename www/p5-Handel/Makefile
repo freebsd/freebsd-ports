@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Handel
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -24,7 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Strict.pm:${PORTSDIR}/devel/p5-Test-Strict \
 	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
-	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
+	${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
+	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
@@ -51,6 +52,7 @@ MAN3=	Handel::Iterator.3 \
 	AxKit::XSP::Handel::Order.3 \
 	Handel.3 \
 	Handel::Checkout::Plugin.3 \
+	Handel::Checkout::Stash.3 \
 	Catalyst::Helper::Model::Handel::Cart.3 \
 	Handel::L10N.3 \
 	Catalyst::Helper::Controller::Handel::Order.3 \

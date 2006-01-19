@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Handel/L10N/fr.pm
 %%SITE_PERL%%/Handel/L10N/en_us.pm
 %%SITE_PERL%%/Handel/Checkout/Message.pm
+%%SITE_PERL%%/Handel/Checkout/Stash.pm
 %%SITE_PERL%%/AxKit/XSP/Handel/Order.pm
 %%SITE_PERL%%/Handel.pm
 %%SITE_PERL%%/Handel/Checkout/Plugin.pm
@@ -53,4 +54,4 @@
 @unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/AxKit/XSP 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/AxKit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel 2>dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel 2>/dev/null || true
