@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	strijar@urai.ru
 COMMENT=	Screensaver for console (matrix_saver.ko) "Matrix" like
 
+BROKEN=		Unfetchable
+
 KMODDIR=	${PREFIX}/modules
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
