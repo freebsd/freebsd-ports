@@ -33,6 +33,7 @@
     SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gftp
+    SUBDIR += gnusget
     SUBDIR += gollem
     SUBDIR += greed
     SUBDIR += gwget
