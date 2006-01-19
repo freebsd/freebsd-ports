@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
+		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -59,7 +61,12 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Element::Upload.3 \
 	HTML::Widget::Error.3 \
 	HTML::Widget::Filter.3 \
+	HTML::Widget::Filter::Callback.3 \
+	HTML::Widget::Filter::HTMLEscape.3 \
+	HTML::Widget::Filter::HTMLStrip.3 \
+	HTML::Widget::Filter::LowerCase.3 \
 	HTML::Widget::Filter::TrimEdges.3 \
+	HTML::Widget::Filter::UpperCase.3 \
 	HTML::Widget::Filter::Whitespace.3 \
 	HTML::Widget::Result.3
 
