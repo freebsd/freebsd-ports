@@ -9,13 +9,10 @@ PORTNAME=	xgalaga
 PORTVERSION=	2.0.34
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	#
+MASTER_SITES=	http://people.FreeBSD.org/~linimon/public_distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Galaga resurrected on X
-
-DEPRECATED=	mastersite disappeared, no longer maintained by author
-EXPIRATION_DATE=2006-02-15
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
