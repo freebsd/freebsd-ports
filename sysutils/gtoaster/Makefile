@@ -33,6 +33,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 504104 && ${OSVERSION} < 600000
+BROKEN=		"Does not compile on FreeBSD 5.x"
+.endif
+
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomelibs
