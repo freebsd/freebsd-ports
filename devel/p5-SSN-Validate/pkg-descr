@@ -1,0 +1,8 @@
+This module is intented to do some Social Security Number validation
+(not verification) beyond just seeing if it contains 9 digits and isn't
+all 0s. The data is taken from the Social Security Admin. website,
+specifically:
+
+http://www.ssa.gov/foia/stateweb.html
+
+WWW:	http://search.cpan.org/dist/SSN-Validate
