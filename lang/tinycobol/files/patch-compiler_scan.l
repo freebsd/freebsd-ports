@@ -1,5 +1,5 @@
---- compiler/scan.l.orig       Tue Nov 23 04:47:01 2004
-+++ compiler/scan.l    Thu Apr 14 18:46:07 2005
+--- compiler/scan.l.orig	Thu Jul 21 14:57:46 2005
++++ compiler/scan.l	Thu Jan 19 21:08:45 2006
 @@ -24,7 +24,6 @@
  */
  
@@ -8,7 +8,7 @@
  #include "htglobals.h"
  #include <ctype.h>
  
-@@ -91,6 +90,7 @@
+@@ -93,6 +92,7 @@
  
  #include "htcoboly.h"
  #include "htcobol.tab.h"    /* definitions from YACC */

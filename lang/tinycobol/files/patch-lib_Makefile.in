@@ -1,0 +1,26 @@
+--- lib/Makefile.in.orig	Thu Jul 21 14:57:47 2005
++++ lib/Makefile.in	Thu Jan 19 22:19:28 2006
+@@ -32,7 +32,7 @@
+ GREP  = grep -v
+ 
+ MAKEDEPEND=@MAKEDEPEND@
+-LIBS=-ldl @htg_ld_args_m@ @htg_ld_args_db@ -lncurses
++LIBS=@htg_ld_args_m@ @htg_ld_args_db@ -lncurses
+ #
+ # Default install directory is set in htconfig.h
+ #
+@@ -113,12 +113,12 @@
+ # Rules for building the shared library
+ #
+ ${SHARED_LIB1}: ${OBJD1}
+-	${CCX} -shared -Wl,-soname,lib${lib_name1}.so.0 -o ${SHARED_LIB1} $(OBJD1) ${LIBS} 
++	${CCX} @LDFLAGS@ -shared -Wl,-soname,lib${lib_name1}.so.0 -o ${SHARED_LIB1} $(OBJD1) ${LIBS} 
+ 	${LNK} $(SHARED_LIB1) lib$(lib_name1).so.0
+ 	${LNK} $(SHARED_LIB1) lib$(lib_name1).so
+ 
+ ${SHARED_LIB2}: ${OBJD2}
+-	${CCX} -shared -Wl,-soname,lib${lib_name2}.so.0 -o ${SHARED_LIB2} $(OBJD2) ${LIBS}
++	${CCX} @LDFLAGS@ -shared -Wl,-soname,lib${lib_name2}.so.0 -o ${SHARED_LIB2} $(OBJD2) ${LIBS}
+ 	${LNK} $(SHARED_LIB2) lib$(lib_name2).so.0
+ 	${LNK} $(SHARED_LIB2) lib$(lib_name2).so
+ 

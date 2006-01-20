@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinycobol
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tiny-cobol
@@ -23,9 +23,9 @@ HAS_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--with-libdb=3 --with-readline
+CONFIGURE_ARGS=	--with-libdb=3
 CPPFLAGS=	-I${LOCALBASE}/include
-CFLAGS=		${CPPFGLAGS}
+CFLAGS=		${CPPFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -37,4 +37,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/info/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# doesn't work with readline on FreeBSD 4.x
+.if ${OSVERSION} >= 500000
+CONFIGURE_ARGS+=	--with-readline
+.endif
+
+.include <bsd.port.post.mk>

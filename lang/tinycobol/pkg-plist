@@ -1,5 +1,9 @@
 bin/htcobol
+bin/htcobrun
 lib/libhtcobol.a
+lib/libhtcobol.so
+lib/libhtcobol.so.0
+lib/libhtcobol.so.0.63.0
 share/htcobol/htcobolrc
 share/htcobol/htrtconf
 share/htcobol/copybooks/screen.cpy
