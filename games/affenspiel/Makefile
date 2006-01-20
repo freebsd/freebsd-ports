@@ -8,30 +8,27 @@
 PORTNAME=	affenspiel
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/strategy
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/affenspiel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little puzzle game with monkey for X Window System
 
-WRKSRC=		${WRKDIR}/affenspiel
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_X_PREFIX=	yes
-CFLAGS+=	-I${X11BASE}/include
-MAKE_ARGS=	CC="${CC}" LIBS="-L${X11BASE}/lib -lX11" DEBUG="${CFLAGS}" \
+MAKE_ARGS=	CC="${CC}" LIBS="-L${X11BASE}/lib -lX11" \
+		DEBUG="${CFLAGS} -I${X11BASE}/include" \
 		FILE_CONFIG=-DSAVED_GAME_NAME='\"affenspiel.saved\"'
 
-PLIST_FILES=	bin/affenspiel
-.if !defined(NOPORTDOCS)
 PORTDOCS=	COPYRIGHT README
-.endif
+PLIST_FILES=	bin/affenspiel
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/affenspiel ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/affenspiel
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/affenspiel
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/affenspiel
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
