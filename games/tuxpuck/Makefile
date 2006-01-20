@@ -27,8 +27,14 @@ MANCOMPRESSED=	yes
 MAN6=		tuxpuck.6
 PLIST_FILES=	bin/tuxpuck
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700013
+BROKEN=		"Does not compile on FreeBSD >= 7.0"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tuxpuck ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/tuxpuck.6.gz ${MANPREFIX}/man/man6
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
