@@ -9,7 +9,8 @@ PORTNAME=	CJK
 PORTVERSION=	4.6.0
 PORTREVISION=	0
 CATEGORIES=	chinese
-MASTER_SITES=	http://cjk.ffii.org/
+MASTER_SITES=	http://cjk.ffii.org/ \
+		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
 DISTNAME=	cjk-${PORTVERSION}
 
 MAINTAINER=	rafan@infor.org
