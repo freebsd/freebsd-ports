@@ -1,5 +1,5 @@
---- cli/Makefile.in.orig	Wed Oct 22 06:22:31 2003
-+++ cli/Makefile.in	Sun Oct 26 10:19:56 2003
+--- cli/Makefile.in.orig	Fri Sep 10 22:16:11 2004
++++ cli/Makefile.in	Sun Jan 15 14:18:39 2006
 @@ -9,12 +9,16 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
@@ -32,7 +32,7 @@
  
  $(CLI): .deps $(OBJS)
 -	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) 
-+	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS) $(LDFLAGS)
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(OBJS) $(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS)
  
  .deps:
  	mkdir $@

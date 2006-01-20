@@ -1,5 +1,5 @@
---- gui2/Makefile.in.orig	Wed Mar 17 22:34:09 2004
-+++ gui2/Makefile.in	Thu Apr  1 19:37:11 2004
+--- gui2/Makefile.in.orig	Mon Nov 21 23:02:28 2005
++++ gui2/Makefile.in	Sun Jan 15 14:51:18 2006
 @@ -4,6 +4,7 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
@@ -52,8 +52,23 @@
  tooldir = $(topsrc)/tools
  libsrc = $(topsrc)/lib/src
  clisrc = $(topsrc)/cli
-@@ -124,10 +125,10 @@
+@@ -149,23 +150,23 @@
+ 	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
+ 
+ $(PROG): .deps $(OBJS) $(HACK_OBJ) $(GTKEXTRA_LITE) $(MY_SOURCEVIEW_LIB)
+-	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB)
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB)
+ 
+ $(HACK_OBJ): $(HACK_SRC) $(HACK_HDR)
  	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
+ 
+ mklang: mklang.c
+ 	$(CC) -c -I.. -I$(libsrc) $<
+-	$(LIBTOOL) --mode=link $(CC) -o $@ mklang.o ../lib/libgretl-1.0.la
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ mklang.o ../lib/libgretl-1.0.la
+ 
+ gretl.lang: mklang
+ 	./mklang > $@
  
  $(GTKEXTRA_LITE): 
 -	make -C gtkextra-lite
@@ -65,7 +80,7 @@
  
  .deps:
  	mkdir $@
-@@ -142,7 +143,7 @@
+@@ -180,7 +181,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
  
  install-data: installdirs

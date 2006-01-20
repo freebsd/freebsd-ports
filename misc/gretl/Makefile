@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,10 +40,13 @@ MAN1=		gretl.1 gretl-config.1
 BROKEN=		"math/lapack appears to be broken on alpha"
 .endif
 
+.if ${OSVERSION} < 500018
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
-INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gretl.schemas
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
