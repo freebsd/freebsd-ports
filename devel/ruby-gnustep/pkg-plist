@@ -63,8 +63,8 @@
 %%RUBY_SITELIBDIR%%/rigs/NSWindow.rb
 %%RUBY_SITEARCHLIBDIR%%/librigs.so
 @dirrm %%RUBY_SITELIBDIR%%/rigs
-GNUstep/Local/Library/Libraries/librigs.so.0.2.1
-GNUstep/Local/Library/Libraries/librigs.so.0
+GNUstep/Local/Library/Libraries/librigs.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/librigs.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/librigs.so
 @dirrm GNUstep/Local/Library/Libraries
 @dirrm GNUstep/Local/Library
@@ -75,6 +75,12 @@ GNUstep/Local/Library/Libraries/librigs.so
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/GNUmakefile
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/GNUmakefile.postamble
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/fake.m
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/Resources/Info-gnustep.plist
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/Resources/FirstApp.desktop
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/Resources/FirstAppIcon.tiff
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/FirstApp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/library_paths.openapp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/stamp.make
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstAppIcon.tiff
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstAppInfo.plist
@@ -84,6 +90,8 @@ GNUstep/Local/Library/Libraries/librigs.so
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/README
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Base
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app/Resources
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp/FirstApp.app
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui/FirstApp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/Gui
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
