@@ -1,6 +1,14 @@
 --- server.c.orig	Sun Feb 23 13:12:06 2003
-+++ server.c	Sun Mar  7 12:30:02 2004
-@@ -55,7 +55,7 @@
++++ server.c	Fri Jan 20 16:45:29 2006
+@@ -38,6 +38,7 @@
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
+ #include <sys/wait.h>
++#include <limits.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdarg.h>
+@@ -55,7 +56,7 @@
  
  #define VERSION "0.30.6-dev"
  
@@ -9,7 +17,7 @@
  #define PIDFILE "/var/run/xbms.pid"
  #define C_SERVER_PORT 1400
  #define MAX_MSG_LENGTH 4096
-@@ -465,9 +465,10 @@
+@@ -465,9 +466,10 @@
        if (main_config->debug_lvl >= 1) d_log("OPEN\n");
        
        /* Get the argument after comma */
@@ -23,7 +31,7 @@
        fileName = (char *)malloc(strlen(ptr)+1);
    //    targetfileName = (char *)malloc(strlen(TARGET_PATH)+strlen(ptr)+2);
        
-@@ -508,7 +509,8 @@
+@@ -508,7 +510,8 @@
  	    }
  	}
        else d_log("Illegal string in filename: %s\n", fileName); 
@@ -33,7 +41,7 @@
  
    /***************************** READ A PART OF A FILE ****************/
    if (strcmp(cmd,"READ") == 0)
-@@ -632,13 +634,14 @@
+@@ -632,13 +635,14 @@
    /* mp3 playlists work from now on                          */
    if (strcmp(cmd,"*CAT") == 0) {
  	  if (main_config->debug_lvl >= 5) 
@@ -52,7 +60,7 @@
  			  /* We can't go back if the current path is empty ! */
  			if (main_config->current_path!=NULL && main_config->current_path[0] != 0) {
  				  fileName = (char *)malloc(strlen(main_config->current_path)+1);
-@@ -654,7 +657,7 @@
+@@ -654,7 +658,7 @@
  			  if (main_config->current_path!=NULL) free(main_config->current_path);
  			  main_config->current_path=strdup(ptr);
  		  }
