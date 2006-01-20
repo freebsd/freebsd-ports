@@ -24,6 +24,10 @@ MAN8=		magicfilter.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700014
+BROKEN=		"Does not build on FreeBSD >= 7.0"
+.endif
+
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
