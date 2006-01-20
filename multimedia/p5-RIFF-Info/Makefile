@@ -15,10 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Probe DivX and AVI files for attributes
 
-BUILD_DEPENDS=	${SITE_PERL}/Video/Info/RIFF.pm:${PORTSDIR}/multimedia/p5-Video-Info
-RUN_DEPENDS=	${SITE_PERL}/Video/Info/RIFF.pm:${PORTSDIR}/multimedia/p5-Video-Info
-
-BROKEN=		Broken dependency
+BUILD_DEPENDS=	${SITE_PERL}/Video/Info.pm:${PORTSDIR}/multimedia/p5-Video-Info
+RUN_DEPENDS=	${SITE_PERL}/Video/Info.pm:${PORTSDIR}/multimedia/p5-Video-Info
 
 PERL_CONFIGURE=	YES
 
