@@ -14,7 +14,6 @@ DISTNAME=       ${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xbms, the unix streaming server for xbox mediaplayer
 
-ONLY_FOR_ARCHS=	i386 alpha
 USE_REINPLACE=	yes
 
 post-patch:
