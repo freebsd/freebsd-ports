@@ -6,6 +6,7 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.9
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -49,7 +50,9 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
 		TEXMFDIR=${TEXMFDIR} \
 		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX} \
-		SETENV=${SETENV}
+		MAPDIR=${MAPDIR} \
+		VFDIR=${VFDIR} \
+		TFMDIR=${TFMDIR}
 CONFLICTS=	ja-ptex-base-[0-9]*
 .if !make(do-patch)
 WRKSRC=		${WRKDIR}/${TETEX_SRC}/texk/web2c/ptex-${VER_PTEX}
@@ -62,7 +65,7 @@ WRKSRC_PTEX=	${WRKDIR}/ptex-src-${VER_PTEX}
 
 TETEX_SRC=	tetex-src-3.0
 VER_PTEX=	${PORTVERSION}
-VER_PTEXTEXMF=	2.3
+VER_PTEXTEXMF=	2.4
 KANJICODE?=	euc
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
@@ -78,7 +81,9 @@ FONTSMAPDIR=	${TEXMFDIR}/fonts/map/ptex
 FONTSMAPVARDIR=	${TEXMFVARDIR}/fonts/map/ptex
 
 UPDMAP_SYS_PTEX=${PREFIX}/bin/updmap-sys-ptex
-UPDMAP_SUB=	PREFIX=${PREFIX} \
+
+SUB_FILES=	updmap-ptex updmap-sys-ptex
+SUB_LIST=	PREFIX=${PREFIX} \
 		TEXMFDIR=${TEXMFDIR} \
 		DVIPSDIR=${DVIPSDIR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
@@ -88,60 +93,9 @@ UPDMAP_SUB=	PREFIX=${PREFIX} \
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
-MAPDIR=		${PREFIX}/${TEXMFDIR}/dvips/ptex
-MAPFILES=	morisawa/morisawa.map jis/jis.map
-
-VFDIR=		${PREFIX}/${TEXMFDIR}/fonts/vf/ptex
-VFFILES=	jis/vf/jis.vf jis/vf/jisg.vf \
-		jis/vf/jis-v.vf jis/vf/jisg-v.vf \
-		jis/vf/jisgn-v.vf jis/vf/jisgn.vf \
-		jis/vf/jisn-v.vf jis/vf/jisn.vf \
-		morisawa/vf/FutoGoB101-Bold-H.vf \
-		morisawa/vf/FutoGoB101-Bold-J.vf \
-		morisawa/vf/FutoGoB101-Bold-V.vf \
-		morisawa/vf/FutoMinA101-Bold-H.vf \
-		morisawa/vf/FutoMinA101-Bold-J.vf \
-		morisawa/vf/FutoMinA101-Bold-V.vf \
-		morisawa/vf/GothicBBB-Medium-H.vf \
-		morisawa/vf/GothicBBB-Medium-J.vf \
-		morisawa/vf/GothicBBB-Medium-V.vf \
-		morisawa/vf/Jun101-Light-H.vf \
-		morisawa/vf/Jun101-Light-J.vf \
-		morisawa/vf/Jun101-Light-V.vf \
-		morisawa/vf/Ryumin-Light-H.vf \
-		morisawa/vf/Ryumin-Light-J.vf \
-		morisawa/vf/Ryumin-Light-V.vf
-
-TFMDIR=		${PREFIX}/${TEXMFDIR}/fonts/tfm/ptex
-TFMFILES=	jis/tfm/ptex/jis.tfm jis/tfm/ptex/jisg.tfm \
-		jis/tfm/ptex/jis-v.tfm jis/tfm/ptex/jisg-v.tfm \
-		jis/tfm/ptex/jisgn-v.tfm jis/tfm/ptex/jisgn.tfm \
-		jis/tfm/ptex/jisn-v.tfm jis/tfm/ptex/jisn.tfm \
-		morisawa/tfm/dvips/futogo-b-v.tfm \
-		morisawa/tfm/dvips/futogo-b.tfm \
-		morisawa/tfm/dvips/futomin-b-v.tfm \
-		morisawa/tfm/dvips/futomin-b.tfm \
-		morisawa/tfm/dvips/gtbbb-m-v.tfm \
-		morisawa/tfm/dvips/gtbbb-m.tfm \
-		morisawa/tfm/dvips/jun101-l-v.tfm \
-		morisawa/tfm/dvips/jun101-l.tfm \
-		morisawa/tfm/dvips/ryumin-l-v.tfm \
-		morisawa/tfm/dvips/ryumin-l.tfm \
-		morisawa/tfm/ptex/FutoGoB101-Bold-H.tfm \
-		morisawa/tfm/ptex/FutoMinA101-Bold-H.tfm \
-		morisawa/tfm/ptex/GothicBBB-Medium-H.tfm \
-		morisawa/tfm/ptex/Jun101-Light-H.tfm \
-		morisawa/tfm/ptex/Ryumin-Light-H.tfm \
-		morisawa/tfm/ptex/FutoGoB101-Bold-J.tfm \
-		morisawa/tfm/ptex/FutoMinA101-Bold-J.tfm \
-		morisawa/tfm/ptex/GothicBBB-Medium-J.tfm \
-		morisawa/tfm/ptex/Jun101-Light-J.tfm \
-		morisawa/tfm/ptex/Ryumin-Light-J.tfm \
-		morisawa/tfm/ptex/FutoGoB101-Bold-V.tfm \
-		morisawa/tfm/ptex/FutoMinA101-Bold-V.tfm \
-		morisawa/tfm/ptex/GothicBBB-Medium-V.tfm \
-		morisawa/tfm/ptex/Jun101-Light-V.tfm \
-		morisawa/tfm/ptex/Ryumin-Light-V.tfm
+MAPDIR=		${TEXMFDIR}/dvips/ptex
+VFDIR=		${TEXMFDIR}/fonts/vf/ptex
+TFMDIR=		${TEXMFDIR}/fonts/tfm/ptex
 
 post-extract:
 	${MV} ${WRKSRC_PTEX} ${WRKSRC}
@@ -172,22 +126,13 @@ pre-configure:
 			--without-etex && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
 
-pre-install:
-	${SED} ${UPDMAP_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/updmap-ptex.in > ${WRKDIR}/updmap-ptex
-	${SED} ${UPDMAP_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/updmap-sys-ptex.in > ${WRKDIR}/updmap-sys-ptex
-
 post-install:
 	cd ${WRKDIR}/texmf-tmp && \
 		${TAR} cf - ${INSTDIRS} | \
 			(cd ${PREFIX}/${TEXMFDIR} && ${TAR} xf -)
 	cd ${WRKDIR} && \
 		${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/${TEXMFDIR}/doc/ptex
-.for D in MAP VF TFM
-	${MKDIR} ${${D}DIR}
-	cd ${WRKDIR} && ${INSTALL_DATA} ${${D}FILES} ${${D}DIR}
-.endfor
+	${AWK} '/@comment INSTALL_DATA/{printf "${MKDIR} ${PREFIX}/%s && ${INSTALL_DATA} ${WRKDIR}/%s ${PREFIX}/%s\n",$$4,$$3,$$4}' < ${TMPPLIST} | ${SH}
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
 	${INSTALL_DATA} ${FILESDIR}/tcfmgr.map \
 		${PREFIX}/${TEXMFCONFIGDIR}/texconfig
@@ -204,7 +149,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/bin/updmap-ptex
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-sys-ptex ${PREFIX}/bin/updmap-sys-ptex
 	${MKTEXLSR}
-	${SETENV} PATH=$${PATH}:${LOCALBASE}/bin ${SH} ${UPDMAP_SYS_PTEX}
+	${SH} ${UPDMAP_SYS_PTEX}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
