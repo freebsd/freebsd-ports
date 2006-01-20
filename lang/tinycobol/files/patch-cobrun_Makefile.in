@@ -1,0 +1,27 @@
+--- cobrun/Makefile.in.orig	Thu Jul 21 14:57:52 2005
++++ cobrun/Makefile.in	Thu Jan 19 21:52:38 2006
+@@ -19,11 +19,11 @@
+ 
+ CCX=@CC@
+ 
+-INCLUDES=-I../lib -I../
++INCLUDES=@INCLUDES@
+ LIBS=
+-LIBS1=-lncurses -ldb -lm -ldl
+-LIBS2=-L../lib -lhtcobol -lncurses -ldb -lm -ldl
+-LDFLAGS=
++LIBS1=-lncurses @htg_ld_args_m@ @htg_ld_args_db@ @htg_ld_args_readline@
++LIBS2=-L../lib -lhtcobol -lncurses @htg_ld_args_m@ @htg_ld_args_db@ 
++LDFLAGS=@LDFLAGS@
+ CCXFLAGS=${INCLUDES}
+ 
+ 
+@@ -54,7 +54,7 @@
+ ${PROG1}: 
+ 	${CCX} ${SRC1} -Wl,-export-dynamic -o ${PROG1} \
+ 	${INCLUDES} -Wl,-whole-archive ${tc_library} \
+-	-Wl,-no-whole-archive $(LIBS1)
++	-Wl,-no-whole-archive $(LDFLAGS) $(LIBS1)
+ 
+ # Shared library version
+ ${PROG2}: ${OBJ2}
