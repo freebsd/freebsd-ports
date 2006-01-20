@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.18
+PORTVERSION=	2.1.19
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -22,11 +22,11 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-			LIBS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=		yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
 
-LATEST_LINK?=	gmime2
+LATEST_LINK?=	${PORTNAME}2
 
 PORTDOCS=	*
 
