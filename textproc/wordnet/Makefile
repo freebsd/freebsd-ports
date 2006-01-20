@@ -32,4 +32,10 @@ post-patch:
 	    ${WRKSRC}/src/wnb ${WRKSRC}/doc/man/*.?
 	${REINPLACE_CMD} -e 's,  *\\n,\\n,' ${WRKSRC}/include/wn.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.for s in 1 3 5 7
+MAN$s	!=	${MAKE} -f ${FILESDIR}/man.Makefile -V MAN$s
+.endfor
+
+.include <bsd.port.post.mk>
