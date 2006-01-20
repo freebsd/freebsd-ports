@@ -4,3 +4,5 @@ share/apps/abakus/abakusui.rc
 share/doc/HTML/en/abakus/index.cache.bz2
 share/doc/HTML/en/abakus/index.docbook
 share/icons/hicolor/64x64/apps/abakus.png
+@dirrm share/doc/HTML/en/abakus
+@dirrm share/apps/abakus
