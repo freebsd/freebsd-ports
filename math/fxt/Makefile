@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2005.10.06
+PORTVERSION=	2005.11.20
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
@@ -22,6 +22,12 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}" OFLAGS="${CXXFLAGS}"
+
+PLIST_FILES=	lib/libfxt.a
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^OFLAGS|#OFLAGS|g ; \
@@ -40,9 +46,13 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAROWN}:${SHAREGRP} ${PREFIX}/include/fxt
 	@${FIND} ${PREFIX}/include/fxt -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${FIND} ${PREFIX}/include/fxt -type d | ${XARGS} ${CHMOD} ${BINMODE}
+	@${FIND} ${PREFIX}/include/fxt ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/fxt -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/00*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/00*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
