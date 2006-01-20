@@ -282,6 +282,7 @@
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
+    SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-Apache-XBEL
