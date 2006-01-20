@@ -1,0 +1,16 @@
+OpenVanilla (OV) is an input method (IM)/output filter (OF) framework
+designed for better end-user text processing experiences. For example,
+OpenVanilla provides a comprehensive set of Traditional Chinese input
+methods that are lacking or of which counterparts are functionally
+deficient/unsatisfactory in Apple's Mac OS X. Many Simplified Chinese
+users also find this framework useful. A Tibetan IM module is also
+available.
+
+scim-openvanilla is an OpenVanilla loader as a SCIM IM engine that
+enables the input method modules of OpenVanilla to be used through
+SCIM.
+
+WWW: http://openvanilla.org/
+
+-- Leland Wang
+llwang@infor.org
