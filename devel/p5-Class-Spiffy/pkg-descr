@@ -1,0 +1,7 @@
+Class::Spiffy is a framework and methodology for doing object oriented
+(OO) programming in Perl. Class::Spiffy combines the best parts of
+Exporter.pm, base.pm, mixin.pm and SUPER.pm into one magic foundation
+class. It attempts to fix all the nits and warts of traditional Perl OO,
+in a clean, straightforward and (perhaps someday) standard way.
+
+WWW: http://search.cpan.org/dist/Class-Spiffy/

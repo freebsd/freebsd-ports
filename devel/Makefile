@@ -758,6 +758,7 @@
     SUBDIR += p5-Class-ReturnValue
     SUBDIR += p5-Class-Roles
     SUBDIR += p5-Class-Singleton
+    SUBDIR += p5-Class-Spiffy
     SUBDIR += p5-Class-StateMachine
     SUBDIR += p5-Class-Tangram
     SUBDIR += p5-Class-Throwable
