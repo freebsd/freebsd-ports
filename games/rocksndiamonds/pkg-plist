@@ -764,6 +764,25 @@ bin/rocksndiamonds
 %%DATADIR%%/levels/Tutorials/rnd_tutorial_niko_boehm/tapes/038.tape
 %%DATADIR%%/levels/Tutorials/rnd_tutorial_niko_boehm/tapes/039.tape
 %%DATADIR%%/levels/Tutorials/rnd_tutorial_niko_boehm/tapes/040.tape
+%%DATADIR%%/music/mus_classic/alchemy.txt
+%%DATADIR%%/music/mus_classic/alchemy.wav
+%%DATADIR%%/music/mus_classic/chase.txt
+%%DATADIR%%/music/mus_classic/chase.wav
+%%DATADIR%%/music/mus_classic/czardasz.txt
+%%DATADIR%%/music/mus_classic/czardasz.wav
+%%DATADIR%%/music/mus_classic/mod.apoplexy
+%%DATADIR%%/music/mus_classic/mod.chiptune
+%%DATADIR%%/music/mus_classic/mod.cream_of_the_earth
+%%DATADIR%%/music/mus_classic/musicinfo.conf
+%%DATADIR%%/music/mus_classic/network.txt
+%%DATADIR%%/music/mus_classic/network.wav
+%%DATADIR%%/music/mus_classic/rhythmloop.wav
+%%DATADIR%%/music/mus_classic/twilight.txt
+%%DATADIR%%/music/mus_classic/twilight.wav
+%%DATADIR%%/music/mus_classic/tyger.txt
+%%DATADIR%%/music/mus_classic/tyger.wav
+%%DATADIR%%/music/mus_classic/voyager.txt
+%%DATADIR%%/music/mus_classic/voyager.wav
 %%DATADIR%%/sounds/snd_classic/amoebe.wav
 %%DATADIR%%/sounds/snd_classic/autsch.wav
 %%DATADIR%%/sounds/snd_classic/base.wav
@@ -803,6 +822,8 @@ bin/rocksndiamonds
 @exec mkdir -p %D/%%DATADIR%%/scores
 @dirrm %%DATADIR%%/sounds/snd_classic
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music/mus_classic
+@dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/levels/Tutorials/rnd_tutorial_niko_boehm/tapes
 @dirrm %%DATADIR%%/levels/Tutorials/rnd_tutorial_niko_boehm
 @dirrm %%DATADIR%%/levels/Tutorials/rnd_tutorial_aaron_davidson/tapes

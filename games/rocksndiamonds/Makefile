@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -16,9 +16,9 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" X11_PATH="${X11BASE}" \
-		RO_GAME_DIR=${DATADIR} RW_GAME_DIR=${DATADIR}/scores \
-		X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
+		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
+		X11_PATH="${X11BASE}"
 
 MAN1=		rocksndiamonds.1
 
@@ -39,10 +39,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/rocksndiamonds.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC} -cf - graphics levels scores sounds | \
+	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \
 		${TAR} -C ${DATADIR} -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHMOD} 777 ${DATADIR}/scores
-.if !defined(NOPPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in CHANGES CREDITS HARDWARE README TODO
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
