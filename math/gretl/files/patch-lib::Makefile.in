@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Sat Jan 29 02:45:42 2005
-+++ lib/Makefile.in	Tue Feb  1 20:14:33 2005
+--- lib/Makefile.in.orig	Thu Dec  8 00:25:48 2005
++++ lib/Makefile.in	Sun Jan 15 14:54:18 2006
 @@ -22,6 +22,11 @@
  
  have_gtk = @have_gtk@
@@ -32,7 +32,7 @@
  
  #### End of system configuration section. ####
  
-@@ -119,7 +124,7 @@
+@@ -186,7 +191,7 @@
  LIBTOOL = ../libtool
  
  override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) \
@@ -41,12 +41,12 @@
  
  COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
  
-@@ -130,7 +135,7 @@
- $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)
- 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
- 	-rpath $(prefix)/lib $(LIBS) \
--	-version-info $(CURRENT):$(REVISION):$(AGE)
-+	-version-info $(CURRENT):$(REVISION):$(AGE) $(LDFLAGS)
+@@ -195,7 +200,7 @@
+ 	$(CC) $(CFLAGS) -MM -MT $*.lo $< > .deps/$*.d
  
- .deps:
- 	mkdir $@
+ $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)
+-	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(LOBJS) $(AUX_LOBJ) \
+ 	-rpath $(prefix)/lib $(LIBS) \
+ 	-version-info $(CURRENT):$(REVISION):$(AGE)
+ 
