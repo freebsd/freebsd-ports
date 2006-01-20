@@ -10,7 +10,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
-MAINTAINER=	vd@datamax.bg
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Tunnel for TCP connections using an HTTP or SOCKS5 proxy
 
 USE_REINPLACE=	yes
