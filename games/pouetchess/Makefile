@@ -7,6 +7,7 @@
 
 PORTNAME=	pouetchess
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +25,13 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/pouetChess
 
 MAKE_ENV=	CXX="${CXX}"
+
+DESKTOP_ENTRIES="pouetChess" \
+		"Play chess" \
+		"${DATADIR}/textures/1.png" \
+		"pouetChess" \
+		"Application;Game;" \
+		false
 
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name Makefile \
