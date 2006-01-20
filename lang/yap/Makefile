@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/%SUBDIR%/
-MASTER_SITE_SUBDIR=	Yap-${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	Yap-${PORTVERSION}
 DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,8 +32,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/docs/*.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@value{VERSION}|${PORTVERSION}|g' ${WRKSRC}/docs/yap.tex
+	@${REINPLACE_CMD} -e 's|VERSION}|VERSION:}|g' ${WRKSRC}/docs/yap.tex
 
 post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
