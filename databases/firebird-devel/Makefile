@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	firebird
 PKGNAMESUFFIX=	-devel
 DISTNAME=	firebird2-20050726
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BZIP2=		yes
@@ -43,13 +43,8 @@ BROKEN=	"Does not build on FreeBSD-4.x"
 .endif
 
 pre-everything::
-	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
-	@${ECHO_MSG} "require NFS client locking support for the build to"
-	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
-	@${ECHO_MSG} "or greater."
-	@${ECHO_MSG}
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
-	@${ECHO_MSG} "changed since version 1.0.x."
+	@${ECHO_MSG} "changed since version 1.5.x."
 	@${ECHO_MSG} "Cancel this installation now and backup your databases"
 	@${ECHO_MSG} "if you have not already done so."
 .if !defined(BATCH)
