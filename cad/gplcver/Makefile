@@ -24,10 +24,6 @@ PLIST_FILES=	bin/cver
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/cver ${PREFIX}/bin
 
