@@ -24,6 +24,7 @@ USE_PYTHON=		2.1+
 USE_PYDISTUTILS=	yes
 PYSETUP=		python/setup.py
 
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-python
 
 do-build:
