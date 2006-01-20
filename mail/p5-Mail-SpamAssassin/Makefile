@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -41,7 +41,7 @@ OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SPF_QUERY)
-RUN_DEPENDS+=	spfd:${PORTSDIR}/mail/p5-Mail-SPF-Query
+RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF/Query.pm:${PORTSDIR}/mail/p5-Mail-SPF-Query
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -165,6 +165,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${REINPLACE_CMD} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
 		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
+		-e 's#B_CONFDIR)/v310.pre#B_CONFDIR)/v310.pre.sample#g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 .if defined(WITH_RAZOR)
@@ -189,6 +190,9 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/init.pre
+	@[ -f ${PREFIX}/etc/mail/spamassassin/v310.pre ] || \
+		${CP} ${PREFIX}/etc/mail/spamassassin/v310.pre.sample \
+			${PREFIX}/etc/mail/spamassassin/v310.pre
 .if defined(WITH_TOOLS)
 	@${MKDIR} ${DATADIR}/tools
 	@for f in ${WRKSRC}/tools/*; do \

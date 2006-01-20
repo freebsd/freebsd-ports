@@ -8,7 +8,9 @@ etc/mail/spamassassin/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
 etc/mail/spamassassin/init.pre.sample
 @exec [ -f %B/init.pre ] || cp %B/%f %B/init.pre
-etc/mail/spamassassin/v310.pre
+@unexec if cmp -s %B/v310.pre.sample %B/v310.pre; then rm -f %B/v310.pre; fi
+etc/mail/spamassassin/v310.pre.sample
+@exec [ -f %B/v310.pre ] || cp %B/%f %B/v310.pre
 etc/rc.d/sa-spamd.sh
 %%SITE_PERL%%/Mail/SpamAssassin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
