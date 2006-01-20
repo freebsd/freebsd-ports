@@ -7,7 +7,7 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060114:
-  AFFECTS: users of www/apache13-ssl wit suexec enabled.
+  AFFECTS: users of www/apache13-ssl with suexec enabled.
   AUTHOR: clement@FreeBSD.org
 
   The port has been converted to new apache framework, using bsd.apache.mk.
