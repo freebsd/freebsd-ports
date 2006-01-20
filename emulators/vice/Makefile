@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		http://fresh.t-systems-sfr.com/linux/src/ \
@@ -26,6 +25,7 @@ RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
