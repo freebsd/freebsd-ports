@@ -48,6 +48,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|function[[:space:]]*||' \
