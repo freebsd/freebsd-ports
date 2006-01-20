@@ -48,6 +48,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
