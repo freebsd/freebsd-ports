@@ -30,8 +30,12 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 || ${ARCH} == "sparc64"
-BROKEN="Does not build"
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build on FreeBSD 4.x"
+.endif
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
 pre-everything::
