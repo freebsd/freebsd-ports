@@ -7196,6 +7196,7 @@ openthreads	ports/devel/openthreads
 openttd		ports/games/openttd
 openuniverse	ports/astro/openuniverse
 openupsd	ports/sysutils/openupsd
+openvanilla-framework	ports/textproc/openvanilla-framework
 openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
