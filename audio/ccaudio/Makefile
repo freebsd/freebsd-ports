@@ -29,13 +29,11 @@ MAN3=		Audio.3cc AudioCodec.3cc AudioCopy.3cc AudioFile.3cc \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<stdlib.h>|g' ${WRKSRC}/src/dtmf.cpp
+	@${REINPLACE_CMD} -e \
+		's|@CXXFLAGS@|& $$(g_711_CXXFLAGS)|' ${WRKSRC}/dso/Makefile.in
 
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}/config
