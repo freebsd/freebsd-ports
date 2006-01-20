@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://xracer.annexia.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
 
-MAINTAINER=	troll@digitalspark.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
 BROKEN=		"Unfetchable"
