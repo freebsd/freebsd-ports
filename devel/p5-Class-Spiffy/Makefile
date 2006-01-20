@@ -1,0 +1,31 @@
+# New ports collection makefile for:	devel/p5-Class-Spiffy
+# Date created:				20 January 2006
+# Whom:					Anton Berezin <tobez@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Class-Spiffy
+PORTVERSION=	0.12
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Class
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Class::Spiffy - Spiffy Perl Interface Framework For You
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Class::Spiffy.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
