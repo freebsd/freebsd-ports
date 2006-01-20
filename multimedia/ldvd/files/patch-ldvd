@@ -1,0 +1,11 @@
+--- ldvd.orig	Fri Jan 20 00:47:51 2006
++++ ldvd	Fri Jan 20 00:49:53 2006
+@@ -1325,7 +1325,7 @@
+   elsif ($SETTINGS{'BURN_MODE'} == 2) ## DVD brennen
+   { my $dvd_device = $brenner_entry->get_text ();
+     if ($dvd_device ne "" && -d $SETTINGS{'PATH'} . "/" . $DVD_INFO{'DISC_TITLE'} . "/dvd")
+-    { my $extra_opts = " -V \'" . $entry_title->get_text () . "\' -dvd-video -udf";
++    { my $extra_opts = " -V \'" . $entry_title->get_text () . "\' -dvd-video -use-the-force-luke=dao -udf";
+       if ($SETTINGS{'DVD_COMPAT'} == 1)
+       { $extra_opts .= " -dvd-compat";
+       }
