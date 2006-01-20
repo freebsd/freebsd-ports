@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTEPOCH?=		1
 CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
