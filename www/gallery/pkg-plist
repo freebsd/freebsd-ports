@@ -5,6 +5,7 @@
 %%GALLERYDIR%%/add_photos_frame.php
 %%GALLERYDIR%%/add_photos_refresh.php
 %%GALLERYDIR%%/admin-page.php
+%%GALLERYDIR%%/administer_startpage.php
 %%GALLERYDIR%%/album_permissions.php
 %%GALLERYDIR%%/albums.php
 %%GALLERYDIR%%/block-random.php
@@ -47,6 +48,15 @@
 %%GALLERYDIR%%/classes/remote/GalleryRemoteProperties.php
 %%GALLERYDIR%%/configure.sh
 %%GALLERYDIR%%/contrib/GeekLog/CREDITS
+%%GALLERYDIR%%/contrib/joomla/HowTo.txt
+%%GALLERYDIR%%/contrib/joomla/admin.gallery.html.php
+%%GALLERYDIR%%/contrib/joomla/admin.gallery.php
+%%GALLERYDIR%%/contrib/joomla/classes/mambo.php
+%%GALLERYDIR%%/contrib/joomla/gallery.php
+%%GALLERYDIR%%/contrib/joomla/gallery.xml
+%%GALLERYDIR%%/contrib/joomla/images/logo-228x67.png
+%%GALLERYDIR%%/contrib/joomla/includes/frontend.php
+%%GALLERYDIR%%/contrib/joomla/toolbar.gallery.php
 %%GALLERYDIR%%/contrib/mambo/HowTo.txt
 %%GALLERYDIR%%/contrib/mambo/admin.gallery.html.php
 %%GALLERYDIR%%/contrib/mambo/admin.gallery.php
@@ -60,7 +70,6 @@
 %%GALLERYDIR%%/contrib/phpBB2/HowTo.txt
 %%GALLERYDIR%%/contrib/phpBB2/modules.php
 %%GALLERYDIR%%/contrib/phpBB2/phpBB2-manual_changes.txt
-%%GALLERYDIR%%/contrib/phpBB2/phpBB2.patch
 %%GALLERYDIR%%/contrib/phpnuke/block-Random_Image.php.sample
 %%GALLERYDIR%%/contrib/phpnuke/modules.php.MOD
 %%GALLERYDIR%%/contrib/phpnuke/modules.php.patch
@@ -163,6 +172,7 @@
 %%GALLERYDIR%%/docs/index.html
 %%GALLERYDIR%%/docs/preface.html
 %%GALLERYDIR%%/docs/pretty-html.css
+%%GALLERYDIR%%/download.php
 %%GALLERYDIR%%/ecard_form.php
 %%GALLERYDIR%%/ecard_preview.php
 %%GALLERYDIR%%/edit_appearance.php
@@ -173,7 +183,8 @@
 %%GALLERYDIR%%/extra_fields.php
 %%GALLERYDIR%%/gallery_remote.php
 %%GALLERYDIR%%/gallery_remote2.php
-%%GALLERYDIR%%/html/errorRow.inc
+%%GALLERYDIR%%/help/imagemap.php
+%%GALLERYDIR%%/help/metadataOnUpload.php
 %%GALLERYDIR%%/html/userData.inc
 %%GALLERYDIR%%/html_wrap/album.footer.default
 %%GALLERYDIR%%/html_wrap/album.header.default
@@ -272,6 +283,7 @@
 %%GALLERYDIR%%/html_wrap/stats.header.default
 %%GALLERYDIR%%/html_wrap/wrapper.footer.default
 %%GALLERYDIR%%/html_wrap/wrapper.header.default
+%%GALLERYDIR%%/imagemap.php
 %%GALLERYDIR%%/images/BB1.gif
 %%GALLERYDIR%%/images/BL1.gif
 %%GALLERYDIR%%/images/BR1.gif
@@ -292,6 +304,7 @@
 %%GALLERYDIR%%/images/albumthumb_RR.gif
 %%GALLERYDIR%%/images/albumthumb_TR.gif
 %%GALLERYDIR%%/images/bar.gif
+%%GALLERYDIR%%/images/collapse.gif
 %%GALLERYDIR%%/images/colorpicker.png
 %%GALLERYDIR%%/images/colorscale.png
 %%GALLERYDIR%%/images/computer.gif
@@ -330,13 +343,17 @@
 %%GALLERYDIR%%/images/ecard_images/icon_square.gif
 %%GALLERYDIR%%/images/ecard_images/leer.gif
 %%GALLERYDIR%%/images/ecard_images/postcard.gif
+%%GALLERYDIR%%/images/expand.gif
 %%GALLERYDIR%%/images/favicon.ico
 %%GALLERYDIR%%/images/g1-phpBB2-icon.png
 %%GALLERYDIR%%/images/gallery-tag.png
+%%GALLERYDIR%%/images/green_trafficlight.gif
 %%GALLERYDIR%%/images/icons/1leftarrow.gif
 %%GALLERYDIR%%/images/icons/1rightarrow.gif
 %%GALLERYDIR%%/images/icons/2downarrow.gif
+%%GALLERYDIR%%/images/icons/behavior-capplet.gif
 %%GALLERYDIR%%/images/icons/camera.gif
+%%GALLERYDIR%%/images/icons/compressed.png
 %%GALLERYDIR%%/images/icons/decrypted.gif
 %%GALLERYDIR%%/images/icons/delete.gif
 %%GALLERYDIR%%/images/icons/display.gif
@@ -345,17 +362,27 @@
 %%GALLERYDIR%%/images/icons/exit.gif
 %%GALLERYDIR%%/images/icons/folder_new.gif
 %%GALLERYDIR%%/images/icons/frame_query.gif
+%%GALLERYDIR%%/images/icons/help.gif
 %%GALLERYDIR%%/images/icons/history.gif
 %%GALLERYDIR%%/images/icons/idea.gif
 %%GALLERYDIR%%/images/icons/identity.gif
 %%GALLERYDIR%%/images/icons/info.gif
 %%GALLERYDIR%%/images/icons/kcmfontinst.gif
 %%GALLERYDIR%%/images/icons/kdf.gif
+%%GALLERYDIR%%/images/icons/nav_first.gif
+%%GALLERYDIR%%/images/icons/nav_last.gif
+%%GALLERYDIR%%/images/icons/nav_next.gif
+%%GALLERYDIR%%/images/icons/nav_prev.gif
 %%GALLERYDIR%%/images/icons/no_idea.gif
 %%GALLERYDIR%%/images/icons/reload.gif
 %%GALLERYDIR%%/images/icons/showcomment.gif
 %%GALLERYDIR%%/images/icons/tab_duplicate.gif
 %%GALLERYDIR%%/images/icons/thumbnail.gif
+%%GALLERYDIR%%/images/icons/tree/join-left.gif
+%%GALLERYDIR%%/images/icons/tree/join-right.gif
+%%GALLERYDIR%%/images/icons/tree/joinbottom-left.gif
+%%GALLERYDIR%%/images/icons/tree/joinbottom-right.gif
+%%GALLERYDIR%%/images/icons/unsortedList.gif
 %%GALLERYDIR%%/images/icons/viewmag1.gif
 %%GALLERYDIR%%/images/icons/window_fullscreen.gif
 %%GALLERYDIR%%/images/icons/window_nofullscreen.gif
@@ -366,17 +393,15 @@
 %%GALLERYDIR%%/images/nav_dot.gif
 %%GALLERYDIR%%/images/nav_dot_left.gif
 %%GALLERYDIR%%/images/nav_dot_right.gif
-%%GALLERYDIR%%/images/nav_first.gif
 %%GALLERYDIR%%/images/nav_home.gif
-%%GALLERYDIR%%/images/nav_last.gif
-%%GALLERYDIR%%/images/nav_next.gif
 %%GALLERYDIR%%/images/nav_page.gif
-%%GALLERYDIR%%/images/nav_prev.gif
 %%GALLERYDIR%%/images/pixel_trans.gif
+%%GALLERYDIR%%/images/red_trafficlight.gif
 %%GALLERYDIR%%/images/simplex-bkg.gif
 %%GALLERYDIR%%/images/tab_bottom.gif
 %%GALLERYDIR%%/images/uploading.gif
-%%GALLERYDIR%%/includes/add_photos/add_admin.inc
+%%GALLERYDIR%%/images/yellow_red_trafficlight.gif
+%%GALLERYDIR%%/images/yellow_trafficlight.gif
 %%GALLERYDIR%%/includes/add_photos/add_applet.cfg
 %%GALLERYDIR%%/includes/add_photos/add_applet.inc
 %%GALLERYDIR%%/includes/add_photos/add_applet_mini.cfg
@@ -386,6 +411,8 @@
 %%GALLERYDIR%%/includes/add_photos/add_url.inc
 %%GALLERYDIR%%/includes/add_photos/captionOptions.inc.php
 %%GALLERYDIR%%/includes/definitions/albumProperties.php
+%%GALLERYDIR%%/includes/definitions/mime.mapping.php
+%%GALLERYDIR%%/includes/definitions/navIcons.php
 %%GALLERYDIR%%/includes/definitions/services.php
 %%GALLERYDIR%%/includes/ecard/templates/ecard_1.tpl
 %%GALLERYDIR%%/includes/ecard/templates/error.htm
@@ -408,7 +435,12 @@
 %%GALLERYDIR%%/java/metadata-extractor-2.1.jar
 %%GALLERYDIR%%/js/client_sniff.js
 %%GALLERYDIR%%/js/fitToWindow.js.php
+%%GALLERYDIR%%/js/imagemap.js
+%%GALLERYDIR%%/js/multifile.js.php
 %%GALLERYDIR%%/js/sectionTabs.js.php
+%%GALLERYDIR%%/js/toggle.js
+%%GALLERYDIR%%/js/wz_jsgraphics.js
+%%GALLERYDIR%%/js/wz_tooltip.js
 %%GALLERYDIR%%/layout/adminAlbumCommands.inc
 %%GALLERYDIR%%/layout/adminbox.inc
 %%GALLERYDIR%%/layout/breadcrumb.inc
@@ -425,8 +457,11 @@
 %%GALLERYDIR%%/layout/searchdraw.inc
 %%GALLERYDIR%%/layout/watermarkform.inc
 %%GALLERYDIR%%/lib/Form.php
+%%GALLERYDIR%%/lib/album.php
 %%GALLERYDIR%%/lib/albumItem.php
 %%GALLERYDIR%%/lib/colorpicker.php
+%%GALLERYDIR%%/lib/content.php
+%%GALLERYDIR%%/lib/imageManipulation.php
 %%GALLERYDIR%%/lib/lang.php
 %%GALLERYDIR%%/lib/mail.php
 %%GALLERYDIR%%/lib/messages.php
@@ -645,8 +680,10 @@
 %%GALLERYDIR%%/po/copyright-header.txt
 %%GALLERYDIR%%/po/create_po_template.sh
 %%GALLERYDIR%%/po/edit_changelog.sh
+%%GALLERYDIR%%/po/filelist-common
 %%GALLERYDIR%%/po/filelist-config
 %%GALLERYDIR%%/po/filelist-core
+%%GALLERYDIR%%/po/gallery-common.pot
 %%GALLERYDIR%%/po/gallery-config.pot
 %%GALLERYDIR%%/po/gallery-core.pot
 %%GALLERYDIR%%/po/make_mo_files.sh
@@ -1089,6 +1126,7 @@
 @dirrm %%GALLERYDIR%%/includes/definitions
 @dirrm %%GALLERYDIR%%/includes/add_photos
 @dirrm %%GALLERYDIR%%/includes
+@dirrm %%GALLERYDIR%%/images/icons/tree
 @dirrm %%GALLERYDIR%%/images/icons
 @dirrm %%GALLERYDIR%%/images/ecard_images
 @dirrm %%GALLERYDIR%%/images
@@ -1103,6 +1141,7 @@
 @dirrm %%GALLERYDIR%%/html_wrap/frames
 @dirrm %%GALLERYDIR%%/html_wrap
 @dirrm %%GALLERYDIR%%/html
+@dirrm %%GALLERYDIR%%/help
 @dirrm %%GALLERYDIR%%/docs/images
 @dirrm %%GALLERYDIR%%/docs/g1package/images
 @dirrm %%GALLERYDIR%%/docs/g1package
@@ -1116,6 +1155,10 @@
 @dirrm %%GALLERYDIR%%/contrib/mambo/images
 @dirrm %%GALLERYDIR%%/contrib/mambo/classes
 @dirrm %%GALLERYDIR%%/contrib/mambo
+@dirrm %%GALLERYDIR%%/contrib/joomla/includes
+@dirrm %%GALLERYDIR%%/contrib/joomla/images
+@dirrm %%GALLERYDIR%%/contrib/joomla/classes
+@dirrm %%GALLERYDIR%%/contrib/joomla
 @dirrm %%GALLERYDIR%%/contrib/GeekLog
 @dirrm %%GALLERYDIR%%/contrib
 @dirrm %%GALLERYDIR%%/classes/remote
@@ -1132,5 +1175,4 @@
 @dirrm %%GALLERYDIR%%/classes/Mail
 @dirrm %%GALLERYDIR%%/classes/HTML
 @dirrm %%GALLERYDIR%%/classes
-@dirrm %%GALLERYDIR%%/RCS
 @unexec rmdir %D/%%GALLERYDIR%% 2>/dev/null || true
