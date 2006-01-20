@@ -1,6 +1,6 @@
---- lxdvdrip.c.orig	Tue May 31 23:26:37 2005
-+++ lxdvdrip.c	Wed Jul  6 18:34:10 2005
-@@ -763,6 +763,9 @@
+--- lxdvdrip.c.orig	Wed Dec 28 14:17:02 2005
++++ lxdvdrip.c	Fri Jan 20 00:53:53 2006
+@@ -775,6 +775,9 @@
    FILE *filehandle = 0;
    int i;
  
@@ -10,7 +10,7 @@
    if (!(filehandle = fopen (dvd_device, "r")))
      {
        switch (lSprache)
-@@ -782,7 +785,7 @@
+@@ -794,7 +797,7 @@
        return -1;
      }
  
@@ -19,7 +19,7 @@
      {
        fclose (filehandle);
        switch (lSprache)
-@@ -802,7 +805,7 @@
+@@ -814,7 +817,7 @@
        return -1;
      }
  
@@ -28,7 +28,7 @@
      {
        fclose (filehandle);
        switch (lSprache)
-@@ -820,7 +823,8 @@
+@@ -832,7 +835,8 @@
        strcpy (title, "unknown");
        return -1;
      }
@@ -38,16 +38,16 @@
    fclose (filehandle);
  
    title[32] = '\0';
-@@ -5986,7 +5990,7 @@
+@@ -6228,7 +6232,7 @@
  	      if (strstr (buffer_name, "mbuffer"))
  		sprintf (szBufferBefehl, "%s -s 64k -q -i", buffer_name);	// nehme mbuffer
  	      else
 -		sprintf (szBufferBefehl, "%s -s 64k -m 16m -i", buffer_name);	// nehme buffer
 +		sprintf (szBufferBefehl, "%s -s 64k -m 10m -i", buffer_name);	// nehme buffer
  	    }
-           // Behandlung von Forced Subtitles
-           printf ("Wert Untertitel: %ld\n", lUntertitel);
-@@ -7633,7 +7637,7 @@
+ 	  // Behandlung von Forced Subtitles
+ 	  printf ("Wert Untertitel: %ld\n", lUntertitel);
+@@ -7924,7 +7928,7 @@
  	    strcat (szFilmVerzeichnis, "/");
  	  strcat (szFilmVerzeichnis, szDVDName);
  	  // Verzeichnis AUDIO_TS anlegen
@@ -56,3 +56,12 @@
  	  printf ("%s\n", szBefehl);
  	  system (szBefehl);
  	}
+@@ -9401,7 +9405,7 @@
+ 		strcpy (szDVDCompat, "");
+ 	      check_program (growisofs_name, lSprache, 1);
+ 	      // Growisofs
+-	      sprintf (szBefehl, "%s %s %s %s -Z %s -V %s %s -dvd-video %s",
++	      sprintf (szBefehl, "%s %s %s %s -use-the-force-luke=dao -Z %s -V %s %s -dvd-video %s",
+ 		       growisofs_name, szBurnParam, szSpeed, szDVDCompat,
+ 		       szDVDBrenner, szDVDNameOverwrite, szMkisofsParam,
+ 		       szFilmVerzeichnis);
