@@ -23,7 +23,6 @@ OPTIONS=	PGSQL "With pgsql" On \
 
 NO_BUILD=	yes
 USE_APACHE=	yes
-USE_PHP=	session
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -32,6 +31,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL)
 IGNORE=        is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
+
+USE_PHP=	session
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
@@ -44,6 +45,8 @@ USE_PHP+=	mysql
 USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
+
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 post-extract:
 .for f in inc_ds.php inc_tinderbox.php
