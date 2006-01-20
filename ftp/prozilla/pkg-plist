@@ -1,5 +1,5 @@
 bin/proz
-include/common.h
+@comment include/common.h
 include/netrc.h
 include/prozilla.h
 lib/libprozilla.a
