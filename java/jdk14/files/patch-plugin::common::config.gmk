@@ -2,12 +2,20 @@ $FreeBSD$
 
 --- ../../deploy/make/plugin/common/config.gmk.orig	Wed Nov 12 16:53:30 2003
 +++ ../../deploy/make/plugin/common/config.gmk	Wed Nov 12 16:53:43 2003
-@@ -57,7 +57,7 @@
+@@ -52,7 +52,6 @@
+ 
+ ifeq ($(PLATFORM), bsd)
+   PLUGIN_PLATFORM_SRC := $(PLUGIN_TOP)/src/plugin/src/solaris
+-  X11BASE = /usr/X11R6
+   OTHER_LDFLAGS = -L$(X11BASE)/lib
+   ifeq (,$(filter-out DragonFly NetBSD,$(TRUE_PLATFORM)))
+     OTHER_LDFLAGS += -Wl,-R$(X11BASE)/lib
+@@ -61,7 +60,7 @@
  
    # include search paths
    # XXXBSD: these should be defined in other place
--  CPPFLAGS1 += -I/usr/X11R6/include -I/usr/local/include
-+  CPPFLAGS1 += -I/usr/X11R6/include -I${LOCALBASE}/include
+-  CPPFLAGS1 += -I$(X11BASE)/include -I/usr/local/include
++  CPPFLAGS1 += -I$(X11BASE)/include -I${LOCALBASE}/include
  
-   ifeq ($(TRUE_PLATFORM), FreeSBD)
-     ifeq ($(FREEBSD_4STABLE), true)
+   ifeq ($(TRUE_PLATFORM), FreeBSD)
+       LDFLAGS_COMMON += -pthread
