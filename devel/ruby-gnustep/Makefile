@@ -6,66 +6,31 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTVERSION=	0.2.2
 CATEGORIES=	devel ruby
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	rigs-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
-BUILD_DEPENDS=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \
-		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall \
-		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
-		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
-		${BACKBUNDLEDIR}/libgnustep-back${BACKSUFFIX}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-RUN_DEPENDS=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \
-		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
-		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
-		${BACKBUNDLEDIR}/libgnustep-back${BACKSUFFIX}:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-.if !defined(GNUSTEP_WITH_BASE_GCC)
-BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-.else
-BUILD_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-.endif
-
 USE_RUBY=	yes
 USE_GMAKE=	yes
-CC=		gcc32
-CXX=		g++32
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
 
-GNUSTEP_GCC_PORT?=	lang/gcc-objc
-GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
-GNUSTEP_MAKE_PORT?=	devel/gnustep-make
-GNUSTEP_BASE_PORT?=	lang/gnustep-base
-GNUSTEP_GUI_PORT?=	x11-toolkits/gnustep-gui
-GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
-BACKSUFFIX?=		-010
-GNUSTEP_PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
 GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
 GNUSTEP_SYSTEM_ROOT=	${GNUSTEP_PREFIX}/System
 GNUSTEP_NETWORK_ROOT=	${GNUSTEP_PREFIX}/Network
 GNUSTEP_USER_ROOT=	${GNUSTEP_PREFIX}/Local/Users
 GNUSTEP_MAKEFILES=	${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles
 
-BACKBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-back${BACKSUFFIX}.bundle
-SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Library/Libraries
-SYSMAKEDIR=	${GNUSTEP_MAKEFILES}
-COMBOLIBDIR=	${SYSLIBDIR}
 MAKE_ENV+=	GNUSTEP_FLATTENED=yes
 
 .include <bsd.port.pre.mk>
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
 
 MAKEFILE=	GNUmakefile
 MAKE_ENV+=	GNUSTEP_LOCAL_ROOT=${GNUSTEP_LOCAL_ROOT} \
@@ -78,6 +43,7 @@ NO_FILTER_SHLIBS=	yes
 
 post-extract:
 	${FIND} ${WRKSRC}/ -type f -name '.cvsignore' -delete
+	${FIND} -d ${WRKSRC}/ -type d -name CVS -exec ${RM} -rf "{}" ";"
 
 post-patch:
 	${RUBY} -i~ -p \
