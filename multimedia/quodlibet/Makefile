@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	0.16
-PORTREVISION=	3
+PORTVERSION=	0.17.1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
@@ -50,8 +49,6 @@ USE_GSTREAMER+=	mad
 .endif
 
 .if defined(WANT_QUODLIBET_FLAC)
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/flac/__init__.py:${PORTSDIR}/audio/py-flac
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/flac/__init__.py:${PORTSDIR}/audio/py-flac
 USE_GSTREAMER+=	flac
 .endif
 
@@ -89,9 +86,10 @@ do-configure:
 
 do-build:
 .if defined(WITH_EXTENSIONS)
+	@cd ${WRKSRC}/po && ${GMAKE} po
 	@cd ${WRKSRC} && ${GMAKE} extensions
 .else
-	@${ECHO_MSG} "Build done."
+	@cd ${WRKSRC}/po && ${GMAKE} po
 .endif
 
 pre-install:
