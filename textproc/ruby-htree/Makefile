@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to manipulate HTML/XML tree data structure
 
+BROKEN=		Unfetchable
+
 USE_RUBY=	yes
 USE_RUBY_RD2=		yes
 USE_RUBY_RDOC=		yes
