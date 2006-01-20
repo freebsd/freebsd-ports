@@ -11,7 +11,7 @@ CATEGORIES=	mail news
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
-MAINTAINER=	vd@datamax.bg
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	OSSP mail to news gateway
 
 LIB_DEPENDS=	str.9:${PORTSDIR}/devel/str \

@@ -11,7 +11,7 @@ CATEGORIES=		databases devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
-MAINTAINER=		vd@datamax.bg
+MAINTAINER=		vd@FreeBSD.org
 COMMENT=		GNATS, the GNU Problem Report Management System
 
 GNU_CONFIGURE=		yes

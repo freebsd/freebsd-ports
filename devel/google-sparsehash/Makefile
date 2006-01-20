@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	goog-sparsehash
 DISTNAME=	sparsehash-${PORTVERSION}
 
-MAINTAINER=	vd@datamax.bg
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Google's hashtable implementations optimized for space or speed
 
 GNU_CONFIGURE=	yes

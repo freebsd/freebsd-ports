@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	vd@datamax.bg
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Defines an abstract type of buffer that can move data without copying
 
 LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
