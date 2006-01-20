@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
@@ -17,8 +17,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX \
-		makepsres:${X_CLIENTS_PORT}
+		latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
@@ -47,6 +46,12 @@ post-configure:
 	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
 
 .include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/bin/makepsres)
+PLIST_SUB+=	PSRES=
+.else
+PLIST_SUB+=	PSRES='@comment '
+.endif
 
 .if defined(WITH_QT)
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
