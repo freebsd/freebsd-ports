@@ -18,6 +18,8 @@ COMMENT=	Probe DivX and AVI files for attributes
 BUILD_DEPENDS=	${SITE_PERL}/Video/Info/RIFF.pm:${PORTSDIR}/multimedia/p5-Video-Info
 RUN_DEPENDS=	${SITE_PERL}/Video/Info/RIFF.pm:${PORTSDIR}/multimedia/p5-Video-Info
 
+BROKEN=		Broken dependency
+
 PERL_CONFIGURE=	YES
 
 MAN3=	RIFF::Info.3 \
