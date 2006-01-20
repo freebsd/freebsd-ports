@@ -19,6 +19,5 @@ bin/udvips
 @exec %%UPDMAP_SYS_PTEX%% --enable Map=psfonts_jp.map
 @dirrm %%DVIPSDIR%%/base
 @dirrm %%DVIPSCONFIGDIR%%/config
-@dirrm %%DVIPSCONFIGDIR%%
 @dirrm %%DVIPSCONFIGDIR_DIST%%/config
 @unexec %%MKTEXLSR%%
