@@ -1,0 +1,11 @@
+--- libprozilla/src/Makefile.in.orig	Sun Dec 11 21:19:15 2005
++++ libprozilla/src/Makefile.in	Thu Jan 19 17:11:36 2006
+@@ -114,7 +114,7 @@
+ #      example...)
+ libprozilla_la_LDFLAGS = -version-info 1:0:1
+ 
+-include_HEADERS = prozilla.h common.h netrc.h 
++include_HEADERS = prozilla.h netrc.h 
+ CPPFLAGS = @CPPFLAGS@ -DLOCALEDIR=\"$(datadir)/locale\"  
+ INCLUDES = -I../intl -I@includedir@
+ #AM_CPPFLAGS =  -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
