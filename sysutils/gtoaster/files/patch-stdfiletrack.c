@@ -8,7 +8,7 @@ $FreeBSD$
  
  #ifndef __svr4__
 +#include <osreldate.h>
-+#if __FreeBSD_version >= 600007
++#if __FreeBSD_version >= 504102
 +void swab(const void *from,void *to,ssize_t n);
 +#else
  void swab(const void *from,void *to,size_t n);
