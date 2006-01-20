@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JavaScript-Squish
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
@@ -17,6 +17,7 @@ COMMENT=	Reduce/Compact JavaScript code to as few characters as possible
 
 PERL_CONFIGURE=	yes
 
+MAN1=	js_compactor.1
 MAN3=	JavaScript::Squish.3
 
 .include <bsd.port.mk>
