@@ -8,6 +8,7 @@ eclipse/plugins/com.quantum.Quantum_%%VERSION%%/CPLv1.0.htm
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/LICENSE.txt
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/add.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/add_schema.gif
+eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/all_procedures.GIF
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/append.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/autocommit.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/beanshell.gif
@@ -65,6 +66,7 @@ eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/paste.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/paste_2x.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/play.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/previous.gif
+eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/procedure.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/qmodel.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/quantum-ng.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/quantum.gif
@@ -75,7 +77,9 @@ eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/rollback.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/sample.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/schema.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/script.gif
+eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/search_results_view.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/sequence.gif
+eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/sp.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/statement.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/stop.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/subset.gif
@@ -99,6 +103,7 @@ eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/unused/table_group.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/unused/view.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/unused/view_group.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/user.gif
+eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/value.GIF
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/view.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/warning.gif
 eclipse/plugins/com.quantum.Quantum_%%VERSION%%/icons/xml.gif
@@ -112,7 +117,6 @@ eclipse/plugins/com.quantum.Quantum_%%VERSION%%/schema/metadata.exsd
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/CPLv1.0.htm
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/LGPL.txt
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/LICENSE.txt
-eclipse/plugins/com.quantum.dbunit_%%VERSION%%/dbunit-2.1-src.zip
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/dbunit-2.1.jar
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/icons/dbunit.gif
 eclipse/plugins/com.quantum.dbunit_%%VERSION%%/icons/dbunitImport.gif
@@ -139,6 +143,7 @@ eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/changelog_2_4_3.txt
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/changelog_2_4_4.txt
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/changelog_2_4_5.html
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/changelog_3_0_0.html
+eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/changelog_3_0_1.html
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/images/add_driver.jpg
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/images/collapse_all.gif
 eclipse/plugins/com.quantum.help_%%VERSION%%/doc/changelog/images/quantum_bookmark_properties_options.jpg
