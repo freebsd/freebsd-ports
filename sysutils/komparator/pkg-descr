@@ -1,0 +1,9 @@
+Komparator is an application that searches and synchronizes two directories.
+It discovers duplicate, newer or missing files and empty folders.
+It works on local and some network / kioslave protocol folders
+
+It is still in an early stage; please try on test directories first.
+
+WWW: http://sourceforge.net/projects/komparator
+
+- Alexander V. Ribchansky triosoft@triosoft.com.ua

@@ -253,6 +253,7 @@
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
     SUBDIR += knutclient
+    SUBDIR += komparator
     SUBDIR += krename
     SUBDIR += kshutdown
     SUBDIR += lavaps
