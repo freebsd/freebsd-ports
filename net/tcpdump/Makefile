@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
+BROKEN=		Broken dependency
+
 # TODO: Add strict sanity check that we're compiling against a
 # version of libpcap with which this tcpdump release is compatible.
 #
