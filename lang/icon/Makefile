@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Icon programming language
 
-ONLY_FOR_ARCHS=	alpha i386
-
 USE_REINPLACE=	yes
 ALL_TARGET=	All
 
