@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.26
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -24,6 +23,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	YES
 
+MAN1=		ptardiff.1 ptar.1
 MAN3=		Archive::Tar.3 Archive::Tar::File.3
 
 OPTIONS=	TEXT_DIFF "Text::Diff support for ptardiff" off
