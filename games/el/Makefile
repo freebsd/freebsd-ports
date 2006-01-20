@@ -41,6 +41,10 @@ CFLAGS+=	-DX86_64
 BROKEN=		"does not compile"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
 	${ECHO} "cd ${DATADIR}; ./el.x86.bsd.bin" >> ${WRKDIR}/el
