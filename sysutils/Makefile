@@ -416,6 +416,7 @@
     SUBDIR += port-maintenance-tools
     SUBDIR += portbrowser
     SUBDIR += portdowngrade
+    SUBDIR += portmanager
     SUBDIR += portsman
     SUBDIR += portsnap
     SUBDIR += portupgrade

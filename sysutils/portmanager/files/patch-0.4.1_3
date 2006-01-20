@@ -1,0 +1,133 @@
+diff -ruN ../0.4.1_2/libMGPM/src/MGPMrUpdate.c ./libMGPM/src/MGPMrUpdate.c
+--- ../0.4.1_2/libMGPM/src/MGPMrUpdate.c	Mon Dec 19 11:45:50 2005
++++ ./libMGPM/src/MGPMrUpdate.c	Wed Dec 21 22:16:31 2005
+@@ -979,114 +979,29 @@
+ 	/************************************************************************/
+ 	/*			Command "9" " make"				*/
+ 	/************************************************************************/
+-	env	= malloc( sizeof( char** ) * 4 );
+-	env[0]	= malloc( MAXSTRINGSIZE );
+-	env[1]	= malloc( MAXSTRINGSIZE );
+-	env[2]	= malloc( MAXSTRINGSIZE );
+-	env[3]	= malloc( MAXSTRINGSIZE );
+-	env[4]	= 0;
+-
+-	/*
+-	 * setup environment
+-	 */
+-	MGmStrcpy( env[0], "PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin" );
+-
+-	MGmStrcpy( env[1], "TERM=" );
+-	MGmStrcat( env[1], getenv( "TERM" ) );
+-
+-	if( getenv( "CCACHE_DIR" ) != NULL )
+-	{
+-		MGmStrcpy( env[2], "CCACHE_DIR=" );
+-		MGmStrcat( env[2], getenv( "CCACHE_DIR" ) );
+-	}
+-	else
+-	{
+-		env[2][0]	= 0;
+-	}
+-
+-	if( getenv( "CCACHE_PATH" ) != NULL )
+-	{
+-		MGmStrcpy( env[3], "CCACHE_PATH=/usr/bin:/usr/local/bin" );
+-	}
+-	else
+-	{
+-		env[3][0]	= 0;
+-	}
+-
++	MGmStrcpy( localProperty.command, "cd " );
++	MGmStrcat( localProperty.command, PORTSDIR );
++	MGmStrcat( localProperty.command, oldPortDir );
++	MGmStrcat( localProperty.command, " && make " );
+ 	if( MGrStrlen( localProperty.options ) > 0 )
+ 	{
+-		cmd	= malloc( sizeof( char** ) * 3 );
+-		cmd[0]	= malloc( MAXSTRINGSIZE );
+-		cmd[1]	= malloc( MAXBUFFERSIZE );
+-		cmd[2]	= 0;
+-		MGmStrcpy( cmd[0], PORTSDIR );
+-		MGmStrcat( cmd[0], oldPortDir );
+-		if( chdir( cmd[0] ) != 0 )
+-		{
+-			fprintf( stderr, "%s error: chdir %s failed\n", id, cmd[0] ); 
+-			perror( "chroot" );
+-			while( fflush( stderr ) );
+-			assert( 0 );
+-		}
+-		MGmStrcpy( cmd[0], "/usr/bin/make" );
+-		MGmBuffercpy( cmd[1], localProperty.options, MAXBUFFERSIZE );
+-		fprintf( stdout, "%s\n", SINGLE_LINES );
+-		fprintf( stdout, "update %s \n", oldPortName );
+-		fprintf( stdout, "%s %s command: #9 of 14  %s\nOPTIONS-=>%s\n", id, PACKAGE_VERSION, cmd[0], cmd[1] );
+-		fprintf( stdout, "%s\n", SINGLE_LINES );
+-		while( fflush( stdout ) );
+-		MGmSystem( cmd, env );	
+-		free( cmd[0] );
+-		free( cmd[1] );
+-		free( cmd );
+-	}
+-	else
+-	{
+-		cmd	= malloc( sizeof( char** ) * 2 );
+-		cmd[0]	= malloc( MAXSTRINGSIZE );
+-		cmd[1]	= 0;
+-		MGmStrcpy( cmd[0], PORTSDIR );
+-		MGmStrcat( cmd[0], oldPortDir );
+-		if( chdir( cmd[0] ) != 0 )
+-		{
+-			fprintf( stderr, "%s error: chdir %s failed\n", id, cmd[0] ); 
+-			perror( "chroot" );
+-			while( fflush( stderr ) );
+-			assert( 0 );
+-		}
+-		MGmStrcpy( cmd[0], "/usr/bin/make" );
+-		fprintf( stdout, "%s\n", SINGLE_LINES );
+-		fprintf( stdout, "update %s \n", oldPortName );
+-		fprintf( stdout, "%s %s command: #9 of 14  %s\n", id, PACKAGE_VERSION, cmd[0] );
+-		fprintf( stdout, "%s\n", SINGLE_LINES );
+-		while( fflush( stdout ) );
+-		MGmSystem( cmd, env );	
+-		free( cmd[0] );
+-		free( cmd );
++		MGmStrcat( localProperty.command, localProperty.options );
+ 	}
+ 
+-	if( MGrIfDirEntry( localProperty.workFullPath, ".build_done" ) == 0 )
++	fprintf( stdout, "%s\n", SINGLE_LINES );
++	fprintf( stdout, "update %s \n", oldPortName );
++	fprintf( stdout, "%s %s command: #9 of 14  %s\n", id, PACKAGE_VERSION, localProperty.command );
++	fprintf( stdout, "%s\n", SINGLE_LINES );
++	while( fflush( stdout ) );
++	if( ( errorCode = system(localProperty.command) ) )
+ 	{
+-		fprintf( stderr, "%s\n", SINGLE_LINES );
+-		fprintf( stderr, "%s error:  %s %s failed during make, adding to ignore.db\n", id, oldPortName, oldPortDir );
+-		fprintf( stderr, "%s\n", SINGLE_LINES );
+-		while( fflush( stderr ) );
+-		MGPMlogAdd( property, oldPortName, oldPortDir, "port failed to build during make, adding to ignore.db", " ",  " " );
+-		MGdbAdd( property->ignoreDb, oldPortDir, "port failed to build during make\n", NULL );
++		MGPMlogAdd( property, oldPortName, oldPortDir, "failed during make, adding to ignore.db", " ", " " );
++		fprintf( stdout, "%s %s error: make returned an error, adding %s to ignore.db\n", id, PACKAGE_VERSION, oldPortDir );
++		while( fflush( stdout ) );
++		MGdbAdd( property->ignoreDb, oldPortDir, "failed during make", NULL );
+ 		rCleanUp( property, &localProperty );
+-		free( env[0] );
+-		free( env[1] );
+-		free( env[2] );
+-		free( env );
+ 		return(0);
+ 	}
+-
+-	free( env[0] );
+-	free( env[1] );
+-	free( env[2] );
+-	free( env[3] );
+-	free( env );
+-
+ 	/************************************************************************/
+ 	/*			Command "10" pkg_create -b			*/
+ 	/************************************************************************/

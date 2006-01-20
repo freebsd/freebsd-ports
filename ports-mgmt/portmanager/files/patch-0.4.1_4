@@ -1,0 +1,24 @@
+diff -ruN ../0.4.1_3/libMGPM/src/MGPMrInitialize.c ./libMGPM/src/MGPMrInitialize.c
+--- ../0.4.1_3/libMGPM/src/MGPMrInitialize.c	Thu Dec 22 06:42:13 2005
++++ ./libMGPM/src/MGPMrInitialize.c	Mon Dec 26 20:00:02 2005
+@@ -47,7 +47,7 @@
+ 	 */
+ 	property->configConfFileName		= calloc( stringSize + 1, 1 );
+ 	MGmStrcpy(property->configConfFileName, ETCDIR);
+-	MGmStrcat(property->configConfFileName, "/portmanager/" );
++	MGmStrcat(property->configConfFileName, "/portmanager" );
+ 	MGmStrcat(property->configConfFileName, CONFIGURE_CONF);
+ 
+ 	/*
+diff -ruN ../0.4.1_3/libMGPM/src/MGPMrReadConfigure.c ./libMGPM/src/MGPMrReadConfigure.c
+--- ../0.4.1_3/libMGPM/src/MGPMrReadConfigure.c	Thu Dec 22 06:42:13 2005
++++ ./libMGPM/src/MGPMrReadConfigure.c	Mon Dec 26 20:05:15 2005
+@@ -156,7 +156,7 @@
+ 
+ 		MGmStrcpy( cmd[0], "/bin/cp" );
+ 		MGmStrcpy( cmd[1], property->configConfFileName );
+-		MGmStrcat( cmd[1], ".SAMPLE " );
++		MGmStrcat( cmd[1], ".SAMPLE" );
+ 		MGmStrcpy( cmd[2], property->configConfFileName );
+ 
+ 		MGmSystem( cmd, NULL );
