@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
