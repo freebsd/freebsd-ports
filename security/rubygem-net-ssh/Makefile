@@ -7,6 +7,7 @@
 
 PORTNAME=	net-ssh
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/8149/
 
@@ -16,15 +17,15 @@ COMMENT=	Non-interactive SSH processing
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/needle-1.3.0.gemspec:${PORTSDIR}/devel/rubygem-needle
 
 OPTIONS=	PROMPT_PASSPHRASES "Prompt for passphrases on keys" On
-OPTIONSFILE=	${PORTS_DBDIR}/rubygem-${PORTNAME}/options
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-# to get RUBY_SITELIBDIR
+# to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PROMPT_PASSPHRASES)
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/password.rb:${PORTSDIR}/security/ruby-password
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 .endif
 
 post-install:
