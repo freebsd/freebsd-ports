@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xfe
-PORTVERSION=	0.80
+PORTVERSION=	0.84
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
@@ -30,8 +30,7 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|-I${LOCALBASE}/include/|g' \
-		${WRKSRC}/src/Makefile.in ${WRKSRC}/xfq/Makefile.in \
-		${WRKSRC}/xfv/Makefile.in
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings| ; \
 		s|-lFOX|${PTHREAD_LIBS} &|g' ${WRKSRC}/configure
 

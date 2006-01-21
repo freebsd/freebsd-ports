@@ -30,6 +30,8 @@ lib/foxicons/config_32x32.png
 lib/foxicons/copy_big.png
 lib/foxicons/core_16x16.png
 lib/foxicons/core_32x32.png
+lib/foxicons/deb_16x16.png
+lib/foxicons/deb_32x32.png
 lib/foxicons/details.png
 lib/foxicons/dirup.png
 lib/foxicons/djvu_16x16.png
@@ -37,6 +39,8 @@ lib/foxicons/djvu_32x32.png
 lib/foxicons/dot_c_32x32.png
 lib/foxicons/dot_h_32x32.png
 lib/foxicons/dot_o_32x32.png
+lib/foxicons/exe_16x16.png
+lib/foxicons/exe_32x32.png
 lib/foxicons/file_16x16.png
 lib/foxicons/file_32x32.png
 lib/foxicons/fileopen.png
@@ -148,13 +152,19 @@ share/locale/de/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
+share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
 share/locale/pt_BR/LC_MESSAGES/xfe.mo
+share/locale/pt_PT/LC_MESSAGES/xfe.mo
 share/locale/pl/LC_MESSAGES/xfe.mo
 share/locale/tr/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png
+share/pixmaps/xfi.png
+share/pixmaps/xfq.png
+share/pixmaps/xfv.png
 @dirrm lib/foxicons
 @dirrm lib/foxrc
 @dirrm share/pixmaps
 @unexec rmdir %D/share/locale/es_AR/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/es_AR 2> /dev/null || true
+@unexec rmdir %D/share/locale/pt_PT 2> /dev/null || true
