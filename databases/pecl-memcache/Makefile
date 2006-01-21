@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	1.5
+PORTVERSION=	2.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,11 +16,16 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	tux@pinguru.net
 COMMENT=	Memcached extension
 
+USE_REINPLACE=	yes
 USE_PHP=	zlib
 USE_PHPEXT=	yes
 PHP_MODNAME=	memcache
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
+
+post-extract:
+	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|cpp|h|txt|php)" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 .if !defined(NOPORTDOCS)
 post-install:
