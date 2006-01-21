@@ -169,8 +169,6 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@unexec rmdir %D/share/locale/ml/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ml 2> /dev/null || true
 @unexec rmdir %D/share/locale/ne/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ne 2> /dev/null || true
 @unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
