@@ -7,9 +7,8 @@
 PORTNAME=	tex-omegaware-old
 PORTVERSION=	2.0.2
 CATEGORIES=	print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
-		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     hrs/teTeX
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 EXTRACT_ONLY=	${TETEX_SRC}
 
