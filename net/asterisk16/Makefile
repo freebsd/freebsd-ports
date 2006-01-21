@@ -61,6 +61,7 @@ MAKE_ENV+=	WITH_H323=1
 
 .if defined(WITHOUT_ZAPTEL)
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
+MAKE_ENV+=	WITHOUT_ZAPTEL=1
 .else
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
