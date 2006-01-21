@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	ljsm
-PORTVERSION=    2.5
-PORTREVISION=	1
+PORTVERSION=    2.7
 CATEGORIES=	www perl5 deskutils
-MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
+MASTER_SITES=	http://www.offtopia.net/ljsm/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Livejournal.com postings recusive copy utility
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTML/SimpleLinkExtor.pm:${PORTSDIR}/www/p5-HTML-SimpleLinkExtor \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Unicode/MapUTF8.pm:${PORTSDIR}/converters/p5-Unicode-MapUTF8
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 
 PLIST_FILES=	bin/ljsm
 NO_WRKSUBDIR=	yes
