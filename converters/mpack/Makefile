@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External MIME packer/unpacker
 
 WRKSRC=		${WRKDIR}/mpack
