@@ -87,8 +87,8 @@ pre-patch:
 
 post-patch:
 .if defined(WITH_HACKS)
-	@cd ${WRKDIR} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/qemu_dma_patch.tar.gz ; ${CP} new_qemu_dma_patch/bios.bin ${WRKSRC}/pc-bios; cd ${WRKSRC}; ${PATCH} --quiet -p1 < ../new_qemu_dma_patch/qemu-piix4-udma.patch
-	cd ${WRKSRC} ; ${PATCH} < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
+	@cd ${WRKDIR} ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/qemu_dma_patch.tar.gz ; ${CP} new_qemu_dma_patch/bios.bin ${WRKSRC}/pc-bios; cd ${WRKSRC}; ${PATCH} --quiet -p1 < ../new_qemu_dma_patch/qemu-piix4-udma.patch
+	@cd ${WRKSRC} ; ${PATCH} --quiet < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
 .endif
 
 post-install:
