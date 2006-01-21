@@ -8,7 +8,7 @@
 PORTNAME?=	ipw-firmware
 RELNAME?=	ipw2100
 PORTVERSION?=	1.3
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -57,10 +57,6 @@ IS_INTERACTIVE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700013
-BROKEN=		"Incorrect pkg-plist"
-.endif
-
 # That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be
 # compiled on FreeBSD previous to 5.3-RELEASE. This is just too old, people
 # should move on. I may change this if I get successful reports though.
@@ -71,16 +67,26 @@ IGNORE=		needs at least FreeBSD 5.3-RELEASE
 
 .if ${OSVERSION} > ${MIN7OSVERSION}
 SUB_LIST+=	DONT_NEED_CONTROL="@comment "
-PLIST_SUB+=	MTREE_DIRRM="@comment "
+MTREE_DIRRM=	"@comment "
 . if !defined(WITHOUT_CONTROL)
 IGNORE=		is configured with ${DRIVERNAME}control(8) which you don't need
 . endif
 .else
 SUB_LIST+=	DONT_NEED_CONTROL=""
-PLIST_SUB+=	MTREE_DIRRM=""
+MTREE_DIRRM=	""
 MAN8+=		${DRIVERNAME}control.8
 USE_RCORDER=	${DRIVERNAME}.sh
 .endif
+
+# Hack because ipw(4) and iwi(4) behavior are not in sync: as of 20/01/2006,
+# iwi(4) loads firmware from /boot/firmware, but ipw(4) does not). Hopefully,
+# sam or mlaier will commit generic firmware loading support and new firmware
+# ports will be created once ipw(4) and iwi(4) have been patched to use it.
+.if ${DRIVERNAME} == "ipw" && ${OSVERSION} > 700006
+MTREE_DIRRM=	"@comment "
+.endif
+
+PLIST_SUB+=	MTREE_DIRRM=${MTREE_DIRRM}
 
 .if defined(WITH_MODULE)
 . if ${OSVERSION} > 600023
