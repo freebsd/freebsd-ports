@@ -65,6 +65,6 @@ games/liquidwar
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
 
-@unexec rmdir %D/share/games 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/games
+@dirrmtry share/pixmaps
+@dirrmtry share/applications

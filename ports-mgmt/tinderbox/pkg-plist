@@ -113,6 +113,6 @@ tinderbox/scripts/tinderbox-pgsql.schema
 @dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc
-@unexec rmdir %D/tinderbox/scripts/www-exp 2>/dev/null || true
-@unexec rmdir %D/tinderbox/scripts 2>/dev/null || true
-@unexec rmdir %D/tinderbox 2>/dev/null || true
+@dirrmtry tinderbox/scripts/www-exp
+@dirrmtry tinderbox/scripts
+@dirrmtry tinderbox
