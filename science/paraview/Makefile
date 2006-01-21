@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
@@ -20,6 +20,9 @@ USE_GL=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	VERMAJORMINOR=2.4
+CMAKE2INST=	Utilities/ParaViewConfig.cmake ParaViewConfig.cmake \
+		ParaViewLibraryDepends.cmake cmake_install.cmake
+LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
 do-configure:
 	${MKDIR} ${WRKSRC}
@@ -31,6 +34,16 @@ do-configure:
 		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
 		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 		-DPARAVIEW_USE_SYSTEM_HDF5=1 \
+		-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1
+
+post-install:
+.for c2f in ${CMAKE2INST}
+	${SED} -e 's|${PATCH_WRKSRC}|${LIB_INSTDIR}|g' \
+		-e 's|${WRKSRC}|${LIB_INSTDIR}|g' \
+		${WRKSRC}/${c2f} > ${LIB_INSTDIR}/`${BASENAME} ${c2f}`
+.endfor
+	${INSTALL_DATA} ${PATCH_WRKSRC}/ParaViewUse.cmake \
+		${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.mk>
