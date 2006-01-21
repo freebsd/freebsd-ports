@@ -283,6 +283,7 @@
     SUBDIR += opensched
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
+    SUBDIR += openvanilla-modules
     SUBDIR += or-aspell
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-Apache-XBEL
