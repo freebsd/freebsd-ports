@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	kaffe
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTVERSION=	1.1.7.r1
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
+#MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
+MASTER_SITES=	http://www.kaffe.org/~robilad/
+DISTNAME=	${PORTNAME}-1.1.7-rc1
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
@@ -23,9 +24,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		javavm:${PORTSDIR}/java/javavmwrapper
 
-BROKEN=		Does not build
-
-WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
+#WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -37,6 +36,8 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib \
 		--with-iconv-prefix=${LOCALBASE}
 PREFIX=		${LOCALBASE}/kaffe
 NO_MTREE=	yes
@@ -44,14 +45,14 @@ NO_MTREE=	yes
 USE_GNOME=	esound gtk20 libartlgpl2
 WANT_GNOME=	esound
 
-MAN1=		kaffe.1
+MAN1=		fastjar.1 kaffe.1
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-PLIST_SUB+=    PORTVER=${PORTVERSION} ARCH=x86_64
+PLIST_SUB+=    PORTVER=1.1.7-rc1 ARCH=x86_64
 .else
-PLIST_SUB+=    PORTVER=${PORTVERSION} ARCH=${ARCH}
+PLIST_SUB+=    PORTVER=1.1.7-rc1 ARCH=${ARCH}
 .endif
 
 post-install:
