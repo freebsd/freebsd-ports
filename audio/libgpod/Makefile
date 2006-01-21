@@ -25,5 +25,6 @@ post-extract:
 	@${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '19323,19345d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
