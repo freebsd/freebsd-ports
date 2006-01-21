@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.94 2005/12/17 16:35:05 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.99 2006/01/21 21:51:52 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -610,10 +610,8 @@ sub checkplist {
 					&perror("WARN: $file [$.]: use \"%D\" or \"%B\" to ".
 						"specify prefix.");
 				}
-				if ($_ !~ /true$/) {
-				&perror("WARN: $file [$.]: use \"\@dirrm\" ".
+				&perror("WARN: $file [$.]: use \"\@dirrmtry\" ".
 					"instead of \"\@unexec rmdir\".");
-				}
 			} elsif (!$autoinfo && $_ =~ /^\@exec[ \t]+install-info\s+(.+)\s+(.+)$/) {
 				$infoinstallseen = $.;
 				push(@exec_info, $1);
@@ -1190,19 +1188,6 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: BROKEN et al.
-	#
-	my($var);
-	foreach $var (qw(BROKEN FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
-		print "OK: checking ${var}.\n" if ($verbose);
-		if ($whole =~ /\n${var}[+?]?=[ \t]?[^"]+\w+/) {
-			my $lineno = &linenumber($`);
-			&perror("WARN: $file [$lineno]: ${var} messages should be ".
-				"quoted.");
-		}
-	}
-
-	#
 	# whole file: DEPRECATED
 	#
 	print "OK: checking DEPRECATED.\n" if ($verbose);
@@ -1229,13 +1214,16 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: IGNORE
+	# whole file: BROKEN et al.
 	#
-	print "OK: checking IGNORE.\n" if ($verbose);
-	if ($whole =~ /\nIGNORE[+?]?=[ \t]+"/) {
-		my $lineno = &linenumber($`);
-		&perror("WARN: $file [$lineno]: IGNORE messages should not ".
-			"be quoted.");
+	my ($var);
+	foreach $var (qw(IGNORE BROKEN FORBIDDEN MANUAL_PACKAGE_BUILD NO_CDROM NO_PACKAGE RESTRICTED)) {
+		print "OK: checking ${var}.\n" if ($verbose);
+		if ($whole =~ /\n${var}[+?]?=[ \t]+"/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN: $file [$lineno]: ${var} messages should not ".
+				"be quoted.");
+		}
 	}
 
 	if ($whole =~ /\nIGNORE[+?]?=[ \t]+[^a-z \t]/ ||
@@ -1253,6 +1241,16 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: PKGNAME is obsoleted by PORTNAME, ".
 			"PORTVERSION, PKGNAMEPREFIX and PKGNAMESUFFIX.");
+	}
+
+	#
+	# whole file: USE_REINPLACE
+	#
+	print "OK: checking for USE_REINPLACE.\n" if ($verbose);
+	if ($whole =~ /\nUSE_REINPLACE.?=/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN: $file [$lineno]: USE_REINPLACE is now obsolete. ".
+				"You can safely use REINPLACE_CMD without it.");
 	}
 
 	#
