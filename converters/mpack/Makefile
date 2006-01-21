@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	mpack
-PORTVERSION=	1.5
-PORTREVISION=	3
+PORTVERSION=	1.6
 CATEGORIES=	converters mail news
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External MIME packer/unpacker
 
-WRKSRC=		${WRKDIR}/mpack
-MAKEFLAGS=	-f
-MAKE_ENV+=	DESTDIR=${PREFIX}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+GNU_CONFIGURE=	yes
+
 MAN1=		mpack.1 munpack.1
+
+PLIST_FILES=	bin/mpack bin/munpack
 
 .include <bsd.port.mk>
