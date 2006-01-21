@@ -17,7 +17,6 @@ MAINTAINER=	mux@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 MAN6=		wtf.6
 

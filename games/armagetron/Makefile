@@ -16,7 +16,6 @@ DISTNAME=	armagetronad-${PORTVERSION}
 MAINTAINER=	mux@FreeBSD.org
 COMMENT=	A multiplayer networked Tron clone in 3D
 
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_SDL=	sdl image
 USE_GMAKE=	yes
