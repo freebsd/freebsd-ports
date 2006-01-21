@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.101
-PORTREVISION=	1
+PORTVERSION=	1.103
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -25,14 +24,13 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-
 
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	disable-threadsafe
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
 
 post-install:
