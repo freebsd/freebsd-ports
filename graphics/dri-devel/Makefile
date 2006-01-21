@@ -59,6 +59,7 @@ IGNORE=	requires libGL from X.Org.
 .endif
 
 do-install:
+	${MKDIR} ${DRIMODDIR}
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
