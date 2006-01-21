@@ -10,6 +10,33 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060121:
+AUTHOR: portmgr@FreeBSD.org
+The following changes affecting ports developers were introduced:
+
+  * Gamin is a default FAM system
+
+  * New virtual categories: hamradio and rubygems
+
+  * Virtual category offix was removed
+
+  * New USE_DOS2UNIX variable for converting DOS linefeeds to UNIX
+
+  * New variables PERL_RUN_DEPENDS and PERL_BUILD_DEPENDS which take
+    module:portdir tuples
+
+  * Variables like BROKEN and FORBIDDEN should no longer be quoted
+
+  * New NOFETCHFILES variable to prevent downloading from MASTER_SITES
+    while still allowing MASTER_SITE_OVERRIDE
+
+  * New plist macro @dirrmtry with functionality of @unexec rmdir || true
+
+  * USE_REINPLACE no longer needs to be defined, REINPLACE_CMD is always
+    available
+
+Detailed documentation of new features is available in Porter's Handbook.
+
 20051108:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were introduced:
