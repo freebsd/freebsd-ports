@@ -9,7 +9,7 @@
 PORTNAME=	curlpp
 PORTVERSION=	0.5.2
 CATEGORIES=	ftp
-MASTER_SITES=	http://rrette.com/
+MASTER_SITES=	http://rrette.com/downloads/sources/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
