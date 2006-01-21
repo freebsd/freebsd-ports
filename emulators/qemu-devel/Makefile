@@ -13,10 +13,11 @@ MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://qemu.dad-answers.com/download/qemu/:snapshot \
-		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma
+		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
+		http://people.freebsd.org/~maho/qemu/:misc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 .if defined (WITH_HACKS)
-DISTFILES+=	qemu_dma_patch.tar.gz:idedma
+DISTFILES+=	qemu_dma_patch.tar.gz:idedma patch3_cirrus:misc
 .endif
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -64,6 +65,9 @@ pre-everything::
 	@${ECHO_MSG} "You can build qemu with some hacks (esp. for speedup)"
 	@${ECHO_MSG} "by defining WITH_HACKS."
 	@${ECHO_MSG} "1. IDE Bus-master DMA Support by John Coiner"
+	@${ECHO_MSG} "http://people.brandeis.edu/~jcoiner/qemu_idedma/qemu_dma_patch.html"
+	@${ECHO_MSG} "2. higher speed on large display (cirrus_vga) by Juergen Pfennig"
+	@${ECHO_MSG} "http://lists.gnu.org/archive/html/qemu-devel/2006-01/msg00208.html"
 .endif
 .if !defined(WITH_SAMBA) && !exists(${LOCALBASE}/sbin/smbd)
 	@${ECHO_MSG} "Notice: if you need qemu's -smb option (smb-export local dir to guest)"
@@ -84,6 +88,7 @@ pre-patch:
 post-patch:
 .if defined(WITH_HACKS)
 	@cd ${WRKDIR} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/qemu_dma_patch.tar.gz ; ${CP} new_qemu_dma_patch/bios.bin ${WRKSRC}/pc-bios; cd ${WRKSRC}; ${PATCH} --quiet -p1 < ../new_qemu_dma_patch/qemu-piix4-udma.patch
+	cd ${WRKSRC} ; ${PATCH} < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
 .endif
 
 post-install:
