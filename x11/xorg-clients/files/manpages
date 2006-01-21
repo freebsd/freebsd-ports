@@ -7,8 +7,6 @@ MAN1=	Xmark.1 \
 	bmtoa.1 \
 	cxpm.1 \
 	dga.1 \
-	dpsexec.1 \
-	dpsinfo.1 \
 	editres.1 \
 	fslsfonts.1 \
 	fstobdf.1 \
@@ -18,7 +16,6 @@ MAN1=	Xmark.1 \
 	ico.1 \
 	listres.1 \
 	luit.1 \
-	makepsres.1 \
 	mkcfm.1 \
 	mkfontdir.1 \
 	mkfontscale.1 \
@@ -33,7 +30,6 @@ MAN1=	Xmark.1 \
 	smproxy.1 \
 	startx.1 \
 	sxpm.1 \
-	texteroids.1 \
 	twm.1 \
 	viewres.1 \
 	x11perf.1 \
@@ -47,8 +43,10 @@ MAN1=	Xmark.1 \
 	xconsole.1 \
 	xcursorgen.1 \
 	xcutsel.1 \
+	xdbedizzy.1 \
 	xditview.1 \
 	xdm.1 \
+	xdpr.1 \
 	xdpyinfo.1 \
 	xdriinfo.1 \
 	xedit.1 \
@@ -82,6 +80,7 @@ MAN1=	Xmark.1 \
 	xphelloworld.1 \
 	xplsprinters.1 \
 	xprehashprinterlist.1 \
+	xpr.1 \
 	xprop.1 \
 	xpsimplehelloworld.1 \
 	xpxthelloworld.1 \

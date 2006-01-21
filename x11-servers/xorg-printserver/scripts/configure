@@ -16,5 +16,6 @@ echo "#define BuildXF86DRI NO"			>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 echo "#define UseInstalledLibraries YES"	>> $LOCALDEF
 echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
+echo "#define InstallSecurityConfig NO"		>> $LOCALDEF
 
 sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen

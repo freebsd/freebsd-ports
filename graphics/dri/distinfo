@@ -1,4 +1,3 @@
-MD5 (Mesa-6.2.1-20050213.tar.bz2) = c6904904735489f728d79897c55260cb
-SIZE (Mesa-6.2.1-20050213.tar.bz2) = 4131581
-MD5 (drm-20050109.tar.bz2) = c16b1f51a589eb6cad8dc85c4db0e1ce
-SIZE (drm-20050109.tar.bz2) = 507130
+MD5 (MesaLib-6.4.1.tar.bz2) = ea148c828ec6f645526451db1b8556f1
+SHA256 (MesaLib-6.4.1.tar.bz2) = 2c1c8784cccab416a52ef9512e3539a0063b88dcc9b0abbcf1a407f9808758cf
+SIZE (MesaLib-6.4.1.tar.bz2) = 2913887

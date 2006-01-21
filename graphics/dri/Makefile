@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.2.1
+PORTVERSION=	6.4.1
 PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~anholt/dri/
-MASTER_SITE_SUBDIR=	anholt
-DISTFILES=	Mesa-6.2.1-20050213.tar.bz2	\
-		drm-20050109.tar.bz2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=mesa3d
+DISTNAME=	MesaLib-${PORTVERSION}
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
 CONFLICTS=	xfree86-dri-* dri-6.2.2005*
 
-WRKSRC=		${WRKDIR}/Mesa
+WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -41,6 +40,7 @@ IGNORE=	requires libGL from X.Org.
 .endif
 
 do-install:
+	${MKDIR} ${DRIMODDIR}
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
@@ -54,6 +54,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/r128_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/r200_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/r300_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/radeon_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/savage_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sis_dri.so ${DRIMODDIR}

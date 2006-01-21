@@ -15,6 +15,7 @@ bin/rman
 bin/xmkmf
 lib/X11/config/Amoeba.cf
 lib/X11/config/DGUX.cf
+lib/X11/config/DragonFly.cf
 lib/X11/config/FreeBSD.cf
 lib/X11/config/Imake.cf
 lib/X11/config/Imake.rules
@@ -74,6 +75,9 @@ lib/X11/config/luna.cf
 lib/X11/config/lynx.cf
 lib/X11/config/macII.cf
 lib/X11/config/mach.cf
+lib/X11/config/mingw.cf
+lib/X11/config/mingw.rules
+lib/X11/config/mingw.tmpl
 lib/X11/config/minix.cf
 lib/X11/config/moto.cf
 lib/X11/config/ncr.cf

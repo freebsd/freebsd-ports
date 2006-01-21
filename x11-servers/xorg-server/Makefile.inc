@@ -17,7 +17,6 @@ WRKSRC?=	${WRKDIR}/xc
 USE_X_PREFIX?=	no
 PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-MTREE_FILE=	${PORTSDIR}/x11-servers/xorg-server/files/BSD.x11-xorg.dist
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 USE_IMAKE=	YES
@@ -43,16 +42,8 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-alpha_video.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-atimobility \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-man-Imakefile \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-os-Imakefile \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-pc98kbd \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-radeon_driver.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-savage-pci-id \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xorgconfig.c
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-servermd.h \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c
 
 .if !target(do-configure)
 do-configure:
