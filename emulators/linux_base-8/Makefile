@@ -8,14 +8,22 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		10
+PORTREVISION=		11
 CATEGORIES=		emulators linux
-MASTER_SITES=		http://download.fedoralegacy.org/redhat/%SUBDIR%/ \
+MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
 MASTER_SITE_SUBDIR=	${PORTVERSION}/os/${ARCH} \
 			${PORTVERSION}/updates/${ARCH} \
 			${PORTVERSION}/os/SRPMS \
 			${PORTVERSION}/updates/SRPMS
+DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
+EXTRACT_ONLY=
+
+MAINTAINER=	freebsd-emulation@FreeBSD.org
+COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
+
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+
 BIN_DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			glibc-common-2.3.2-4.80.8.${ARCH}.rpm \
 			glibc-2.3.2-4.80.8.${ARCH}.rpm \
@@ -49,7 +57,6 @@ BIN_DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			libgcc-3.2-7.${ARCH}.rpm \
 			freetype-2.1.5-0.ximian.5.1.${ARCH}.rpm:ft \
 			zlib-1.1.4-8.8x.${ARCH}.rpm
-EXTRACT_ONLY=
 
 .if defined(PACKAGE_BUILDING)
 SRC_DISTFILES+=	acl-2.0.11-2.src.rpm \
@@ -84,13 +91,6 @@ SRC_DISTFILES+=	acl-2.0.11-2.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-DISTFILES=	${BIN_DISTFILES} ${SRC_DISTFILES}
-
-MAINTAINER=		freebsd-emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
-
-BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
-
 CONFLICTS=	linux_base-7* linux_base-deb* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=		i386 amd64
@@ -103,13 +103,19 @@ MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700013
+LDCONFIG_TARGET=	/var/run/linux-ld.so.cache
+.else
+LDCONFIG_TARGET=	${PREFIX}/etc/ld.so.cache
+.endif
+
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
 RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
 			--replacepkgs --ignoreos --ignorearch
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
-REMOVE_DIRS=		boot dev home initrd root tmp var/tmp usr/local usr/tmp
+REMOVE_DIRS=		boot dev home initrd root tmp var/run var/tmp usr/tmp
 REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 			etc/motd etc/passwd etc/printcap etc/services \
 			etc/protocols
@@ -149,10 +155,10 @@ do-install:
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@test -f ${PREFIX}/etc/nsswitch.conf || cp ${PREFIX}/etc/nsswitch.conf.dist \
+	@test -f ${PREFIX}/etc/nsswitch.conf || ${CP} ${PREFIX}/etc/nsswitch.conf.dist \
 		${PREFIX}/etc/nsswitch.conf
 	@${FIND} ${PREFIX}/bin ${PREFIX}/sbin/ ${PREFIX}/usr/bin \
-		${PREFIX}/usr/sbin -type f -print0 | ${XARGS} -0 file \
+		${PREFIX}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
 #
@@ -184,7 +190,10 @@ do-install:
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
-	@${PREFIX}/sbin/ldconfig
+.if ${OSVERSION} >= 700013
+	@${LN} -sf ${LDCONFIG_TARGET} ${PREFIX}/etc/ld.so.cache
+.endif
+	@${PREFIX}/sbin/ldconfig -C ${LDCONFIG_TARGET}
 
 post-install:
 	@${ECHO} ''
