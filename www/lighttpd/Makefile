@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTVERSION=	1.4.9
 CATEGORIES=	www
-MASTER_SITES=	http://www.lighttpd.net/download/ \
-		http://dl.fkb.wormulon.net/lighttpd/ \
-		http://dl.kel.wormulon.net/lighttpd/
+MASTER_SITES=	http://www.lighttpd.net/download/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
@@ -19,11 +16,11 @@ COMMENT=	A secure, fast, compliant, and very flexible Web Server
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-USE_REINPLACE=		yes
-USE_RC_SUBR=		lighttpd.sh
-USE_GNOME=		lthack
+GNU_CONFIGURE=	yes
+USE_GNOME=	lthack
+USE_RC_SUBR=	lighttpd.sh
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd
 
 MAN1=		lighttpd.1 spawn-fcgi.1
 
@@ -35,6 +32,9 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on  \
 
 .include <bsd.port.pre.mk>
 
+# Default REQUIRE to rc.d script
+_REQUIRE=	DEAMON
+
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl \
@@ -43,13 +43,15 @@ CONFIGURE_ARGS+=	--with-openssl \
 .endif
 
 .if defined(WITH_OPENLDAP)
-USE_OPENLDAP=	yes
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
+_REQUIRE+=		slapd
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=	yes
+USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
+_REQUIRE+=		mysql
 .endif
 
 .if defined(WITHOUT_IPV6)
@@ -61,6 +63,8 @@ LIB_DEPENDS+=		lua.5:${PORTSDIR}/lang/lua
 CONFIGURE_ARGS+=	--with-lua
 CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L/${LOCALBASE}/lib
 .endif
+
+SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc
