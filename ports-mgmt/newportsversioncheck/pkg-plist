@@ -19,4 +19,4 @@ newportsversioncheck/etc/email_header.txt
 
 @dirrm newportsversioncheck/bin
 @dirrm newportsversioncheck/etc
-@unexec rmdir %D/newportsversioncheck 2>/dev/null || true
+@dirrmtry newportsversioncheck
