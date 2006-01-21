@@ -19,7 +19,7 @@ COMMENT=		Oracle 10 InstantClient SDK. Works with Oracle RDBMS 8.1.2+
 
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${PORTVERSION}/client/lib/libocci.so.10.1:${.CURDIR}/../linux-oracle-instantclient-basic
 
-ONLY_FOR_ARCHS=		i386 ia64 amd64
+ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
@@ -65,7 +65,7 @@ DEMO_LIST=		cdemo81.c	\
 			occiobj.cpp	\
 			occiobj.typ
 
-WRKSRC=			${WRKDIR}/instantclient10_2/sdk
+WRKSRC=			${WRKDIR}/instantclient_10_2/sdk
 
 INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
 INSTINCSDIR=		${PREFIX}/usr/include/oracle/${PORTVERSION}/client
@@ -81,9 +81,6 @@ DISTDATE=		20050713
 .elif		${ARCH} == "amd64"
 LINUXARCH=		linux-x86-64
 DISTDATE=		20051025
-.elif		${ARCH} == "ia64"
-LINUXARCH=		linux-ia64
-DISTDATE=		20051213
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})

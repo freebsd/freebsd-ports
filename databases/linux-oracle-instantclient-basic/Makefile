@@ -17,7 +17,7 @@ DIST_SUBDIR=		oracle
 MAINTAINER=		nork@FreeBSD.org
 COMMENT=		Oracle 10 InstantClient basics. Works with Oracle RDBMS 8.1.2+
 
-ONLY_FOR_ARCHS=		i386 ia64 amd64
+ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
@@ -34,7 +34,7 @@ LIBS_LIST=		libclntsh.so.10.1	\
 			libocijdbc10.so		\
 			ojdbc14.jar
 
-WRKSRC=			${WRKDIR}/instantclient10_2
+WRKSRC=			${WRKDIR}/instantclient_10_2
 
 INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
 
@@ -48,9 +48,6 @@ DISTDATE=		20050713
 .elif		${ARCH} == "amd64"
 LINUXARCH=		linux-x86-64
 DISTDATE=		20051025
-.elif		${ARCH} == "ia64"
-LINUXARCH=		linux-ia64
-DISTDATE=		20051213
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
