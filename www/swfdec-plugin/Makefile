@@ -24,8 +24,6 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${P
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 .endif
 
-BROKEN=		Does not compile
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
@@ -35,7 +33,7 @@ USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/nspr" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
