@@ -26,11 +26,14 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall/' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall/' \
+		-e 's/^CC=/CC?=/' ${WRKSRC}/makefile
+.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e 's/%d/%zd/' ${WRKSRC}/pbl.c
+.endif
 	@${REINPLACE_CMD} -e 's/dir\.h/dirent\.h/' ${WRKSRC}/pbl.h
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib\.h/' \
-		${WRKSRC}/pbl.h ${WRKSRC}/pbl.c ${WRKSRC}/pblhash.c
+		${WRKSRC}/pbl.c ${WRKSRC}/pblhash.c
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libpbl.a ${LOCALBASE}/lib
