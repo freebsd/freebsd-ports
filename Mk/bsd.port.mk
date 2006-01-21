@@ -3249,7 +3249,7 @@ patch-dos2unix:
 .endfor
 .endif
 .else
-	${DO_NADA}
+	@${DO_NADA}
 .endif
 .endif
 
