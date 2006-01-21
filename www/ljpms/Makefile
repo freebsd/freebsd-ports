@@ -8,7 +8,7 @@
 PORTNAME=	ljpms
 PORTVERSION=    1.2
 CATEGORIES=	www perl5 deskutils
-MASTER_SITES=	http://ryzh.kiev.ua/ljsm/
+MASTER_SITES=	http://ljsm.feechki.org/
 DISTFILES=	ljpms-1_2.zip
 
 MAINTAINER=	ache@freebsd.org
