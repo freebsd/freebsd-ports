@@ -22,12 +22,6 @@ MAN1=		bricons.1
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	NEWMTREE=""
-.else
-PLIST_SUB+=	NEWMTREE="@comment "
-.endif
-
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Xbricons
 

@@ -39,10 +39,4 @@ PATCHFILES+=    cjk-patch-libXft-20050716.diff.gz
 IGNORE=	Xft requires Render extension headers/library to build.
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	NEWMTREE=""
-.else
-PLIST_SUB+=	NEWMTREE="@comment "
-.endif
-
 .include <bsd.port.post.mk>

@@ -39,12 +39,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/X-Files.xpm ${X11BASE}/include/X11/pixmaps
 	@${INSTALL_MAN} ${WRKSRC}/X-Files.1x ${X11BASE}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	NEWMTREE=""
-.else
-PLIST_SUB+=	NEWMTREE="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
