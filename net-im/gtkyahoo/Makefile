@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkyahoo
-PORTVERSION=	0.18.2
-PORTREVISION=	1
+PORTVERSION=	0.18.3
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkyahoo
@@ -18,12 +17,15 @@ COMMENT=	Yahoo Messenger Client using GTK
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_BISON=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/@INSTALL@/s/$$INSTALL/${INSTALL}/' \
+		${WRKSRC}/libyahoo/configure
 
 .include <bsd.port.post.mk>

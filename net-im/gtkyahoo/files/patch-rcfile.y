@@ -1,9 +1,9 @@
---- rcfile.y.orig	Sun Dec  1 22:51:31 2002
-+++ rcfile.y	Sun Dec  1 22:53:42 2002
-@@ -253,11 +253,13 @@
- 	| config_options idle_time_option
- 	| config_options show_notify_messages_option
+--- rcfile.y.orig	Tue Dec 18 14:41:08 2001
++++ rcfile.y	Fri Jan 20 21:05:00 2006
+@@ -261,11 +261,13 @@
  	| config_options display_real_names_option
+ 	| config_options show_chat_button_option
+ 	| config_options show_status_option
 +	;
  
  contact_options: /* empty */
@@ -14,7 +14,7 @@
  
  name_option: NAME QSTRING {
  		DBG_Print("rcfile", "[RC] Got contact name (%s)\n", $2);
-@@ -278,17 +280,14 @@
+@@ -286,17 +288,14 @@
      if ( images.status.away ) 
  	    free(images.status.away);
  	images.status.away = strdup($2); } 
@@ -32,7 +32,7 @@
      | IMAGE_STATUS_OFFLINE QSTRING { 	
      if ( images.status.offline ) 
  	    free(images.status.offline);
-@@ -327,7 +326,6 @@
+@@ -335,7 +334,6 @@
  			DBG_Print("rcfile", "[RC] Set proxy host to '%s'\n", $2);
  			proxy_host = strdup($2); }
  		}
