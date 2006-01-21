@@ -4,5 +4,12 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 export PATH
 
 if [ "$2" = "POST-INSTALL" ]; then
-	chroot %%LINUXBASE%% /sbin/ldconfig
+	grep -q /usr/X11R6/lib %%LINUXBASE%%/etc/ld.so.conf
+	if [ $? -eq 0 ]; then
+		%%LINUXBASE%%/sbin/ldconfig
+	else
+		echo '*************************'
+		echo 'WARNING: You do not have /usr/X11R6/lib in %%LINUXBASE%%/etc/ld.so.conf (probably because you do not use the default linux_base port and those non-default linux_base ports have a bug in this regard), please add it and run %%LINUXBASE%%/sbin/ldconfig as root to be able to use applications which make use of the linux X11 port.' | fmt
+		echo '*************************'
+	fi
 fi
