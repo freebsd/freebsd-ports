@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1710_F2
+DISTVERSION=	1711_B04
 PORTEPOCH=	3
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
 		http://download.mercury.to/
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
-DISTNAME=	${DISTVERSION}
+#DISTNAME=	${DISTVERSION}
+DISTNAME=	55	# DISTNAME changed to 10th Fibonacci number ;-)
 DIST_SUBDIR=	${PORTNAME}
 
 # Maintainership available: drop me a line if interested
@@ -57,7 +58,9 @@ do-install:
 	cd ${WRKDIR} && ${FIND} ${sd} -type d -exec ${MKDIR} ${INSTDIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/{} \;
 .endfor
-	@${RMDIR} ${DIR2PRUNE:S|^|${INSTDIR}/|}
+.for ed in ${DIR2PRUNE}
+	${TOUCH} ${INSTDIR}/${ed}/.keep_me
+.endfor
 .if defined(WITH_VIDEO)
 	${INSTALL_DATA} ${_DISTDIR}/${VIDJAR} ${INSTDIR}/lib
 .endif
