@@ -45,6 +45,7 @@ bin/tkabber
 %%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibcomponent.tcl
+%%DATADIR%%/jabberlib-tclxml/jlibcompress.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
 %%DATADIR%%/jabberlib-tclxml/jlibtls.tcl
 %%DATADIR%%/jabberlib-tclxml/namespaces.tcl
@@ -499,13 +500,11 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/clear.tcl
 %%DATADIR%%/plugins/chat/complete_last_nick.tcl
 %%DATADIR%%/plugins/chat/completion.tcl
-%%DATADIR%%/plugins/chat/draw_encrypted.tcl
 %%DATADIR%%/plugins/chat/draw_error.tcl
 %%DATADIR%%/plugins/chat/draw_info.tcl
 %%DATADIR%%/plugins/chat/draw_message.tcl
 %%DATADIR%%/plugins/chat/draw_normal_message.tcl
 %%DATADIR%%/plugins/chat/draw_server_message.tcl
-%%DATADIR%%/plugins/chat/draw_signed.tcl
 %%DATADIR%%/plugins/chat/draw_timestamp.tcl
 %%DATADIR%%/plugins/chat/draw_xhtml_message.tcl
 %%DATADIR%%/plugins/chat/empty_body.tcl
@@ -536,9 +535,9 @@ bin/tkabber
 %%DATADIR%%/plugins/general/headlines.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
 %%DATADIR%%/plugins/general/offline.tcl
-%%DATADIR%%/plugins/general/presenceinfo.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
 %%DATADIR%%/plugins/general/roster_delimiter.tcl
+%%DATADIR%%/plugins/general/rosterx.tcl
 %%DATADIR%%/plugins/general/sound.tcl
 %%DATADIR%%/plugins/general/stats.tcl
 %%DATADIR%%/plugins/general/subscribe_gateway.tcl
