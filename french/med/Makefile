@@ -7,6 +7,7 @@
 
 PORTNAME=	med
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	french cad converters
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}_fichier${PORTVERSION}.src
@@ -16,6 +17,7 @@ COMMENT=	Modélisation et Échanges de Données
 
 BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
+RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -23,7 +25,7 @@ SHORT_TK_VER=	${TK_VER:S/.//}
 #CONFIGURE_ARGS=	--disable-shared
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
-		LDFLAGS="${PTHREAD_LIBS}"
+		LDFLAGS="${PTHREAD_LIBS}" WISH=${LOCALBASE}/bin/wish${TK_VER}
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
