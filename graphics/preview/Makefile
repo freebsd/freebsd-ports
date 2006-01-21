@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	preview
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 PKGNAMEPREFIX=	gnustep-
@@ -15,10 +15,10 @@ DISTNAME=	Preview-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple image viewer
 
-USE_BZIP2=	yes
 GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
 PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
+WRKSRC=		${WRKDIR}/Preview
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
