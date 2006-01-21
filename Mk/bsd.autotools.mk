@@ -99,7 +99,7 @@ AUTOMAKE_VERSION=	${AUTOTOOL_automake_env}
 # Make sure we specified a legal version of automake
 #
 . if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}/Makefile)
-BROKEN+=	"Unknown AUTOMAKE version: ${AUTOMAKE_VERSION}"
+BROKEN+=	Unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
 . endif
 
 # Set up the automake environment
@@ -145,7 +145,7 @@ AUTOCONF_VERSION=	${AUTOTOOL_autoconf_env}
 # Make sure we specified a legal version of autoconf
 #
 . if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_VERSION}/Makefile)
-BROKEN+=	"Unknown AUTOCONF version: ${AUTOCONF_VERSION}"
+BROKEN+=	Unknown AUTOCONF version: ${AUTOCONF_VERSION}
 . endif
 
 # Set up the autoconf/autoheader environment
@@ -193,7 +193,7 @@ LIBTOOL_VERSION=		${AUTOTOOL_libtool_env}
 # Make sure we specified a legal version of libtool
 #
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
-BROKEN+=	"Unknown LIBTOOL version: ${LIBTOOL_VERSION}"
+BROKEN+=	Unknown LIBTOOL version: ${LIBTOOL_VERSION}
 . endif
 
 # Set up the libtool environment
@@ -271,7 +271,7 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # the order of autotools running.
 
 .if !target(run-autotools)
-run-autotools:: run-autotools-aclocal run-autotools-autoheader \
+run-autotools:: run-autotools-aclocal patch-autotools run-autotools-autoheader \
 		run-autotools-autoconf run-autotools-automake
 .endif
 

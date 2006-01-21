@@ -7,7 +7,7 @@
 
 PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
-QMAIL_DIR=%%QMAIL_DIR%%
+QMAIL_PREFIX=%%QMAIL_PREFIX%%
 
 UNIX_TYPE=freebsd
 
@@ -128,7 +128,7 @@ then
 	cp ${LOCALBASE}/etc/proftpd.conf.default ${LOCALBASE}/etc/proftpd.conf
 fi
 PATH_PROFTPD_CONF="${LOCALBASE}/etc/proftpd.conf"
-PATH_QMAIL_CTRL="${QMAIL_DIR}/control"
+PATH_QMAIL_CTRL="${QMAIL_PREFIX}/control"
 PATH_PHP_CGI="${LOCALBASE}/bin/php"
 PATH_DTC_SHARED="${PREFIX}/www/dtc"
 

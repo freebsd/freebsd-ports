@@ -7,20 +7,18 @@
 
 PORTNAME=	qmail-activedir
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://fo2k.com/qmail-activedir/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Programs to allow qmail to authenticate users through a MS ad
 
-BUILD_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:${PORTSDIR}/mail/qmail
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
+USE_QMAIL_RUN=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	QMAIL_PREFIX=${QMAIL_PREFIX}
 USE_OPENLDAP=	yes
 USE_REINPLACE=	yes
-QMAIL_PREFIX?=	/var/qmail
 
 BINARIES=	checkadpassword qmail-adgetpw create_alias_files
 

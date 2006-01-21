@@ -7,6 +7,7 @@
 
 PORTNAME=	mailfront
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
@@ -18,6 +19,7 @@ COMMENT=	Mail server network protocol front-ends
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs \
 		${CVM_LIB}/libcvm-v2client.a:${PORTSDIR}/security/cvm
 
+WANT_QMAIL=	yes
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 QMAIL_PREFIX?=	/var/qmail

@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,23 +16,22 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
 
-BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
-		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
-		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+USE_QMAIL=	yes
 
 CONFLICTS=	vpopmail-5.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
-USE_PERL5_BUILD=	YES
+USE_PERL5=	YES
 
 VCFGDIR?=	${WRKDIR}/vcfg
 VCFGFILES?=	inc_deps lib_deps tcp.smtp
 
 CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
-CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
+CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
 
@@ -74,7 +73,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITHOUT_AUTH_LOG - disables authentication logging
 # WITH_MYSQL_LOG - enable logging to a MySQL database
 # WITH_PGSQL_LOG - enable logging to a PostgreSQL database
-# QMAIL_DIR     - location of qmail directory
+# QMAIL_PREFIX   - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
 # VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
@@ -169,12 +168,6 @@ CONFIGURE_ARGS+=	--enable-pgsql-logging
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
 
 # Uncomment this, or set PREFIX to /home if you have an existing
 # vpopmail install with the vpopmail users' home directory set to
@@ -327,10 +320,11 @@ post-install:
 	${MKDIR} ${PREFIX}/vpopmail/etc
 	if [ ! -e "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
 		if [ -e "${VCFGDIR}/tcp.smtp" ]; then \
-			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/; \
+			${INSTALL_DATA} ${VCFGDIR}/tcp.smtp ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
 		else \
-			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
+			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp-dist; \
 		fi; \
+		${CP} -p ${PREFIX}/vpopmail/etc/tcp.smtp-dist ${PREFIX}/vpopmail/etc/tcp.smtp; \
 	fi
 .if defined(DEFAULT_DOMAIN)
 	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain

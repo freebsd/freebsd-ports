@@ -7,28 +7,24 @@
 
 PORTNAME=	qscan
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	ftp://ftp.c9x.org/qscan/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A mail filter for Qmail that scans messages with ClamAV
 
-RUN_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail \
-		clamdscan:${PORTSDIR}/security/clamav \
+RUN_DEPENDS=	clamdscan:${PORTSDIR}/security/clamav \
 		ripmime:${PORTSDIR}/mail/ripmime
+USE_QMAIL_RUN=	yes
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/qmail/bin/qmail-queue)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-QMAIL_QUEUE=	${QMAIL_DIR}/bin/qmail-queue
-QSCAN_VAR?=	${QMAIL_DIR}/${PORTNAME}
+QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
+QSCAN_VAR?=	${QMAIL_PREFIX}/${PORTNAME}
 PLIST_SUB+=	QSCAN_VAR="${QSCAN_VAR}" \
 		QMAIL_QUEUE="${QMAIL_QUEUE}"
 

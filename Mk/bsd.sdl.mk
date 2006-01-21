@@ -145,7 +145,7 @@ USE_SDL=	sdl
 _USE_SDL=
 .for component in ${USE_SDL}
 . if ${_USE_SDL_ALL:M${component}}==""
-BROKEN=	"Unknown SDL component ${component}"
+BROKEN=	Unknown SDL component ${component}
 . endif
 _USE_SDL+=	${_REQUIRES_${component}} ${component}
 .endfor

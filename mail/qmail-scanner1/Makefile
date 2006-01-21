@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +17,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	freebsd@simplerezo.com
 COMMENT=	Content/Anti-virus Scanner for qmail
 
-BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail \
-		reformime:${PORTSDIR}/mail/maildrop \
+BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-# A normal qmail installation puts everything into /var/qmail/.
-# Must match your qmail installation
-QMAIL_DIR?=	/var/qmail
-QMAIL_QUEUE=	${QMAIL_DIR}/bin/qmail-queue
+QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -79,12 +75,14 @@ CONFIGURE_ARGS+=	--spams-tosuffix "${QMAILSCAN_SPAMSTOSUFFIX}"
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_QMAIL=	yes
+
 SPOOLDIR=	${PREFIX}/qmailscan
 PLIST_SUB=	SPOOLDIR="${SPOOLDIR:S,${PREFIX}/,,}"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
-		--qmaildir "${QMAIL_DIR}" --spooldir "${SPOOLDIR}" \
+		--qmaildir "${QMAIL_PREFIX}" --spooldir "${SPOOLDIR}" \
 		--bindir "${PREFIX}/bin" --qmail-queue-binary "${QMAIL_QUEUE}" \
 		--admin "${QMAILSCAN_ADMIN}" --notify "${QMAILSCAN_NOTIFY}" \
 		--silent-viruses "${QMAILSCAN_SILENTVIRUSES}" \
@@ -137,7 +135,7 @@ pre-configure:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 	@if ! ${TEST} -f ${QMAIL_QUEUE}; then \
 		${ECHO_MSG} "Unable to found qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
-		${ECHO_MSG} "Please set QMAIL_DIR to your qmail installation directory !"; \
+		${ECHO_MSG} "Please set QMAIL_PREFIX to your qmail installation directory !"; \
 		exit 1; \
 	fi
 

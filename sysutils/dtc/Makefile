@@ -7,7 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.12.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 
@@ -15,13 +15,11 @@ MAINTAINER=	thomas@goirand.fr
 COMMENT=	A hosting web GUI for admin and accounting apache/named/proftpd/qmail
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
-		${LOCALBASE}/libexec/proftpd:${PORTSDIR}/ftp/proftpd-mysql \
-		${LOCALBASE}/libexec/apache2/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2 \
+		${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd-mysql \
+		${LOCALBASE}/libexec/apache/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2 \
 		${LOCALBASE}/bin/webalizer:${PORTSDIR}/www/webalizer \
-		${QMAIL_DIR}/bin/qmail-start:${PORTSDIR}/mail/qmail
 
 USE_PHP=	session mysql sockets gd
-QMAIL_DIR?=	/var/qmail
 
 DTCROOT?=	www/dtc
 DTCDIR=		${PREFIX}/${DTCROOT}
@@ -34,14 +32,16 @@ IGNORE=		Untested
 NO_BUILD=	yes
 USE_MYSQL=	yes
 
+USE_QMAIL_RUN=	yes
+
 do-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},;\
 		s,%%LOCALBASE%%,${LOCALBASE},;\
-		s,%%QMAIL_DIR%%,${QMAIL_DIR},' \
+		s,%%QMAIL_PREFIX%%,${QMAIL_PREFIX},' \
 		${FILESDIR}/dtc-install.in > ${WRKDIR}/dtc-install
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},;\
 		s,%%LOCALBASE%%,${LOCALBASE},;\
-		s,%%QMAIL_DIR%%,${QMAIL_DIR},' \
+		s,%%QMAIL_PREFIX%%,${QMAIL_PREFIX},' \
 		${FILESDIR}/dtc-deinstall.in > ${WRKDIR}/dtc-deinstall
 
 do-install:

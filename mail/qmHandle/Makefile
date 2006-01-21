@@ -7,7 +7,7 @@
 
 PORTNAME=	qmHandle
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qmhandle
@@ -16,17 +16,11 @@ DISTNAME=	qmhandle-${PORTVERSION}
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-qstat:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
-
-.if exists(${LOCALBASE}/qmail/bin/qmail-qstat)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
 
 .include <bsd.port.pre.mk>
 

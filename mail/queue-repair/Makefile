@@ -7,6 +7,7 @@
 
 PORTNAME=	queue-repair
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
@@ -14,8 +15,7 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A qmail queue diagnostic and repair tool
 
 .if !defined(WITHOUT_QMAIL_PORT)
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-QMAIL_DIR?=	/var/qmail
+USE_QMAIL_RUN=	yes
 .endif
 
 USE_PYTHON=	yes

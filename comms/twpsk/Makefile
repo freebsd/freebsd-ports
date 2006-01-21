@@ -7,7 +7,7 @@
 
 PORTNAME=	twpsk
 PORTVERSION=	2.1
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/
 
 MAINTAINER=	xride@x12.dk

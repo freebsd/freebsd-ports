@@ -7,6 +7,7 @@
 
 PORTNAME=	amavis-perl
 PORTVERSION=	11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	amavis
@@ -54,13 +55,7 @@ CONFIGURE_ARGS+=	--with-virusdir=/var/spool/quarantine --with-runtime-dir=/var/l
 MTA?=	qmail
 DIROWNER?=	qmailq:qmail
 CONFIGURE_ARGS+=	--enable-qmail
-.if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-BUILD_DEPENDS+=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-RUN_DEPENDS=	${BUILD_DEPENDS}
+USE_QMAIL=	yes
 .endif
 
 .if defined(MTA)

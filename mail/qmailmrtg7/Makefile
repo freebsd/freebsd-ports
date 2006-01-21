@@ -7,29 +7,23 @@
 
 PORTNAME=	qmailmrtg7
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://www.inter7.com/qmailmrtg7/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A program to create mrtg graphs for qmail activity
 
-BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-queue:${PORTSDIR}/mail/qmail
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-queue:${PORTSDIR}/mail/qmail \
-		mrtg:${PORTSDIR}/net-mgmt/mrtg
+RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
+USE_QMAIL=	yes
 
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/qmail/bin/qmail-queue)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} "s|cc|${CC}|g;s|-s -O|${CFLAGS}|g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g;s|/var/qmail|${QMAIL_DIR}|g" \
+	@${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g;s|/var/qmail|${QMAIL_PREFIX}|g" \
 		${WRKSRC}/checkq.c ${WRKSRC}/qmail.mrtg.cfg
 
 do-install:

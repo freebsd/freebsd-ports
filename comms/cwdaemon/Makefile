@@ -7,7 +7,7 @@
 
 PORTNAME=	cwdaemon
 PORTVERSION=	0.9.2
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/
 DIST_SUBDIR=	${PORTNAME}
 

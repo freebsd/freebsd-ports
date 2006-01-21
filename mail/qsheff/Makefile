@@ -7,6 +7,7 @@
 
 PORTNAME=	qsheff
 PORTVERSION=	1.0.r4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,9 +17,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail-queue replacement to filter mail traffic
 
-BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-queue:${PORTSDIR}/mail/qmail \
-		${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
+BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 RUN_DEPENDS=	${BUILD_DEPENDS}
+USE_QMAIL=	yes
 
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
@@ -29,13 +30,7 @@ PORTDOCS=	spamass-qsheff.en.html README COPYING AUTHORS ChangeLog \
 
 OPTIONS=	CLAMAV "Integrate with Clam AntiVirus" on
 
-.if exists(${LOCALBASE}/qmail/bin/qmail-queue)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-
-CONFIGURE_ARGS+=	--with-qmaildir=${QMAIL_DIR}
+CONFIGURE_ARGS+=	--with-qmaildir=${QMAIL_PREFIX}
 
 .include <bsd.port.pre.mk>
 

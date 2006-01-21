@@ -7,6 +7,7 @@
 
 PORTNAME=	ezmlm
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.fu-berlin.de/unix/mail/qmail/ \
@@ -19,14 +20,11 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-idx-*
 
 NO_PACKAGE=	Unsure of DJB license
-
-# QMAIL_DIR is the directory where qmail is installed
-QMAIL_DIR?=	/var/qmail
 
 ALL_TARGET=	it
 
@@ -43,7 +41,7 @@ post-patch:
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${QMAIL_PREFIX} > ${WRKSRC}/conf-qmail
 
 do-install:
 	cd ${WRKSRC} && \

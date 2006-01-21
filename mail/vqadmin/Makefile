@@ -7,6 +7,7 @@
 
 PORTNAME=	vqadmin
 PORTVERSION=	2.3.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vqadmin
@@ -21,14 +22,14 @@ RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	YES
+WANT_QMAIL=	yes
 
 CGIBINDIR?=	www/cgi-bin-dist
 WEBDATADIR?=	www/data-dist
-QMAIL_DIR?=	/var/qmail
 
 CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR} \
 		--enable-htmldir=${PREFIX}/${WEBDATADIR} \
-		--enable-qmaildir=${QMAIL_DIR}
+		--enable-qmaildir=${QMAIL_PREFIX}
 
 .include <bsd.port.pre.mk>
 

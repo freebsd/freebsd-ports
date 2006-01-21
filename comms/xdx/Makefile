@@ -7,7 +7,7 @@
 PORTNAME=	xdx
 PORTVERSION=	1.2
 PORTREVISION=	3
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/pg4i/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav

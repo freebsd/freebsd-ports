@@ -237,7 +237,7 @@ BUILD_DEPENDS+= ${_GST_LIB_BASE}/libgst${ext}.so:${PORTSDIR}/${${ext}_DEPENDS}
 RUN_DEPENDS+=   ${_GST_LIB_BASE}/libgst${ext}.so:${PORTSDIR}/${${ext}_DEPENDS}
 .  endif
 . else
-BROKEN=	"Unknown gstreamer-plugin -- ${ext}"
+BROKEN=	Unknown gstreamer-plugin -- ${ext}
 . endif
 .endfor
 

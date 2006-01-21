@@ -7,6 +7,7 @@
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +17,9 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 BUILD_DEPENDS=	\
-	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail-devel
 RUN_DEPENDS=	\
-	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail-devel
 
@@ -36,6 +35,7 @@ CONFLICTS=	qmailadmin-1.*
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+WANT_QMAIL=	yes
 
 #
 # User-configurable variables
@@ -73,20 +73,10 @@ PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
 
 .include <bsd.port.pre.mk>
 
-#
-# QMAIL_DIR     - location of qmail directory
-#
-
-.if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-
 # End of user-configurable variables
 
 CONFIGURE_ARGS+=	\
-	--enable-qmaildir=${QMAIL_DIR} \
+	--enable-qmaildir=${QMAIL_PREFIX} \
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \

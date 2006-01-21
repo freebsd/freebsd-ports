@@ -7,14 +7,14 @@
 
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
@@ -24,19 +24,13 @@ MAN1=		matchup.1 xqp.1 xsender.1 xrecipient.1 columnt.1
 
 PLIST_SUB+=	MYSUBDIR=${MYSUBDIR}
 
-.if exists(${PREFIX}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${PREFIX}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-
 .if !defined(NOSUBDIR)
 MYSUBDIR?=	qmailanalog/
 .else
 MYSUBDIR?=
 .endif
 
-PREFIX?=	${QMAIL_DIR}
+PREFIX?=	${QMAIL_PREFIX}
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
 NO_MTREE=	yes
@@ -44,8 +38,8 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PREFIX} != ${QMAIL_DIR}
-BROKEN=	"Cannot Make and Install with different PREFIX or QMAIL_DIR"
+.if ${PREFIX} != ${QMAIL_PREFIX}
+BROKEN=	"Cannot Make and Install with different PREFIX or QMAIL_PREFIX"
 .endif
 
 post-patch:

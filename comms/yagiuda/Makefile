@@ -6,7 +6,7 @@
 
 PORTNAME=	yagiuda
 PORTVERSION=	1.19
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.g8wrb.org/yagi/
 
 MAINTAINER=	db@db.net
