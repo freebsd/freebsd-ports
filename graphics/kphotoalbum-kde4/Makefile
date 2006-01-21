@@ -8,7 +8,7 @@ PORTNAME=		kimdaba
 PORTVERSION=		2.1
 PORTREVISION=		3
 CATEGORIES=		graphics kde
-MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
+MASTER_SITES=		http://ktown.kde.org/kphotoalbum/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
