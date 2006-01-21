@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Sun Jan 14 08:33:28 2001
++++ Makefile.in	Sat Jan 21 21:55:42 2006
+@@ -1,8 +1,8 @@
+-CC=@CC@
+-DEBUG=@DEBUG@
++CC?=@CC@
++DEBUG=
+ DEFINES=@DEFINES@
+-CFLAGS=-Wall ${DEFINES} ${DEBUG} -c
+-LFLAGS=-Wall ${DEFINES} ${DEBUG} -o
++CFLAGS+=-Wall ${DEFINES} ${DEBUG} -c
++LFLAGS+=-Wall ${DEFINES} ${DEBUG} -o
+ OBJS=radauth.o md5.o
+ BIN=radauth
+ LIBS=@LIBS@
+@@ -17,8 +17,8 @@
+ 	${CC} ${CFLAGS} md5.c -o md5.o
+ 
+ install: ${OBJS}
+-	cp radauth /usr/local/bin/radauth
+-	chmod 755 /usr/local/bin/radauth
++	cp radauth @bindir@/check_radauth
++	chmod 555 @bindir@/check_radauth
+ 
+ distclean:
+ 	rm -f core ${BIN} *.o config.status config.cache Makefile config.log

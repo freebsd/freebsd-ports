@@ -79,6 +79,7 @@
     SUBDIR += mrtg
     SUBDIR += nagios
     SUBDIR += nagios-plugins
+    SUBDIR += nagios-radauth-plugin
     SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-spamd-plugin
