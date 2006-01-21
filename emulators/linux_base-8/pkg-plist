@@ -9227,8 +9227,6 @@ var/mail
 @exec /bin/mkdir -p %D/var/spool/lpd
 @dirrm var/spool/lpd
 @dirrm var/spool
-@exec /bin/mkdir -p %D/var/run
-@dirrm var/run
 @exec /bin/mkdir -p %D/var/preserve
 @dirrm var/preserve
 @exec /bin/mkdir -p %D/var/opt
