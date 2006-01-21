@@ -6,7 +6,7 @@
 
 PORTNAME=	syntax
 PORTVERSION=	1.0.0
-CATEGORIES=	textproc ruby
+CATEGORIES=	textproc rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/4953/
 
 MAINTAINER=	dinoex@FreeBSD.org

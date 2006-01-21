@@ -8,7 +8,7 @@
 PORTNAME=	stream
 PORTVERSION=	0.5
 PORTREVISION=	1
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://www.galgenberg.net/~q/
 
 MAINTAINER=	q@galgenberg.net

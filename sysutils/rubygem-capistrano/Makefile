@@ -7,7 +7,7 @@
 
 PORTNAME=	switchtower
 PORTVERSION=	0.10.0
-CATEGORIES=	sysutils ruby
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7932/
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl

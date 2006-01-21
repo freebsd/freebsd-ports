@@ -7,7 +7,7 @@
 PORTNAME=	rake
 PORTVERSION=	0.6.2
 PORTREVISION=	1
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/6356/
 
 MAINTAINER=	jw@innerewut.de

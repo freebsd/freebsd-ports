@@ -7,7 +7,7 @@
 PORTNAME=	activerecord
 PORTVERSION=	1.13.2
 PORTREVISION=	1
-CATEGORIES=	databases ruby
+CATEGORIES=	databases rubygems
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Object-relational mapping layer for Rails MVC Framework

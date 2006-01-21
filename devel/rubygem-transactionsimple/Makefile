@@ -6,7 +6,7 @@
 
 PORTNAME=	transactionsimple
 PORTVERSION=	1.3.0
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/4334/
 DISTNAME=	transaction-simple-${PORTVERSION}
 

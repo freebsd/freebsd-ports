@@ -8,7 +8,7 @@ PORTNAME=	redcloth
 PORTVERSION=	3.0.3
 PORTREVISION=	1
 DISTNAME=	RedCloth-${PORTVERSION}
-CATEGORIES=	www ruby
+CATEGORIES=	www rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/2898/
 
 MAINTAINER=	jw@innerewut.de

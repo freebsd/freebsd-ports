@@ -6,7 +6,7 @@
 
 PORTNAME=	colortools
 PORTVERSION=	1.3.0
-CATEGORIES=	print ruby
+CATEGORIES=	print rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/5476/
 DISTNAME=	color-tools-${PORTVERSION}
 

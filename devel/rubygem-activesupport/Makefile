@@ -6,7 +6,7 @@
 
 PORTNAME=	activesupport
 PORTVERSION=	1.2.5
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7637/
 
 MAINTAINER=	jw@innerewut.de
