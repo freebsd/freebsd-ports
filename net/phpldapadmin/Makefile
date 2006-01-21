@@ -7,6 +7,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +18,7 @@ MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer LDAP servers over the web
 
 NO_BUILD=	yes
-USE_PHP=	ldap openssl pcre session
+USE_PHP=	gettext ldap openssl pcre session
 
 .if defined(WITH_SUPHP)
 
@@ -50,7 +51,7 @@ SUB_FILES+=	pkg-message
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PLADIR=${PLADIR} PLAGRP=${PLAGRP}
 
-sedSTART=	@unexec rmdir %D/%%PLADIR%%
+sedSTART=	@unexec ${RMDIR} %D/%%PLADIR%%
 sedEND=		2>/dev/null || true
 
 .SILENT:
