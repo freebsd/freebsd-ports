@@ -8,7 +8,7 @@
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
 PORTREVISION=	3
-CATEGORIES=	comms audio
+CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://gmfsk.connect.fi/
 
 MAINTAINER=	carl@stagecraft.cx

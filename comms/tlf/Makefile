@@ -7,7 +7,7 @@
 
 PORTNAME=	tlf
 PORTVERSION=	0.9.19
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.wwns.com/tlf/ \
 		http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/
 DIST_SUBDIR=	${PORTNAME}

@@ -7,26 +7,36 @@
 
 PORTNAME=	vmailmgr
 PORTVERSION=	0.96.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.vmailmgr.org/archive/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Virtual MAIL ManaGeR for virtual mailboxes and domains
 
-RUN_DEPENDS=	/var/qmail/bin/qmail-start:${PORTSDIR}/mail/qmail \
-		unixserver:${PORTSDIR}/sysutils/ucspi-unix
+USE_APACHE=	yes
+USE_QMAIL_RUN=	yes
 
-HAS_CONFIGURE=yes
+HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-SVC_DIR=	"/var/qmail/service/vmailmgrd"
+SVC_DIR=	"${QMAIL_PREFIX}/service/vmailmgrd"
+PHP_DIR=	${PREFIX}/www/data-dist/${PORTNAME}
+CGI_DIR=	${PREFIX}/www/cgi-bin-dist
+
+PLIST_SUB+=	PHP_DIR=${PHP_DIR} CGI_DIR=${CGI_DIR}
 
 MAN1=		checkvpw.1 vauthenticate.1 vpasswd2cdb.1 vrehash.1 \
 		listvdomain.1 vadduser.1 vchattr.1 vchforwards.1 \
-		vcheckquota.1 vdeliver.1 vdeluser.1 vpasswd.1
+		vcheckquota.1 vdeliver.1 vdeluser.1 vpasswd.1 \
+		vpasswd2db.1 vpasswds.1 vpopbull.1 vsetup.1
 MAN7=		vmailmgr.7
 MAN8=		vmailmgrd.8
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|phpdir=".home.httpd.php"|phpdir="${PHP_DIR}"|g' \
+			  -e 's|cgidir=...prefix./cgi-bin.|cgidir="${CGI_DIR}"|g' \
+		${WRKSRC}/configure ${WRKSRC}/configure.in
 post-install:
 	${MKDIR} ${PREFIX}/etc/vmailmgr
 	${CP} ${WRKSRC}/scripts/autoresponder.sh ${PREFIX}/etc/vmailmgr/vdeliver-postdeliver

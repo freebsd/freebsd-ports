@@ -7,6 +7,7 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.inter7.com/simscan/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +16,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
 
-BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail
+USE_QMAIL_BUILD=	yes
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-# A normal qmail installation puts everything into /var/qmail/.
-# Must match your qmail installation
-QMAIL_DIR?=	/var/qmail
-WORKDIR?=	${QMAIL_DIR}/${PORTNAME}
-QMAIL_QUEUE=	${QMAIL_DIR}/bin/qmail-queue
-PLIST_SUB=	QMAIL_DIR=${QMAIL_DIR} \
+WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
+QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
+PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 		SIMSCAN_DIR=${PORTNAME}
 
 OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
@@ -41,7 +39,7 @@ OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
-		--enable-qmaildir=${QMAIL_DIR} \
+		--enable-qmaildir=${QMAIL_PREFIX} \
 	  	--enable-spamc-user=n \
 		--enable-workdir=${WORKDIR} \
 		--enable-user=nobody
@@ -109,7 +107,7 @@ PORTDOCS=	AUTHORS ChangeLog README TODO
 
 if ! ${TEST} -f ${QMAIL_QUEUE}; then \
 	${ECHO_MSG} "Unable to found qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
-	${ECHO_MSG} "Please set QMAIL_DIR to your qmail installation directory !"; \
+	${ECHO_MSG} "Please set QMAIL_PREFIX to your qmail installation directory !"; \
 	exit 1; \
 fi
 
@@ -118,7 +116,7 @@ pre-configure:
 	@${ECHO_MSG} "=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~="
 	@${ECHO_MSG} "You may also use the following build options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "QMAIL_DIR		Base qmail directory. Default is /var/qmail"
+	@${ECHO_MSG} "QMAIL_PREFIX		Base qmail directory. Default is /var/qmail"
 	@${ECHO_MSG} "WORKDIR		Directory to unpack emails. Default is /var/qmail/simscan"
 	@${ECHO_MSG} "QMAIL_QUEUE		Define full path and name of the qmail-queue program"
 	@${ECHO_MSG} "			Incoming mail is passed to this program after being"

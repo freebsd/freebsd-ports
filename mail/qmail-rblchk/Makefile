@@ -13,14 +13,13 @@ MASTER_SITES=	http://morettoni.net/qmail/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A qmail RBL filter
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 LDFLAGS?=	-s
 CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \
 		-Wshadow -Wcast-qual -Wcast-align -Wwrite-strings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-QMAIL_DIR?=	/var/qmail
 
 ALL_TARGET=	default
 INSTALL_TARGET=	setup

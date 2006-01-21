@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-contrib
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
 		ftp://rucus.ru.ac.za/pub/mail/qmail/src/
@@ -16,7 +17,7 @@ DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Contributed programs for qmail
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 NO_PACKAGE=	Unsure of djb\'s license
 
@@ -28,19 +29,7 @@ MAN1+=		newaliases.1 printmaillist.1 setmaillist.1 newinclude.1
 
 PLIST_SUB=	DOCDIR=${DOCDIR}
 
-.if exists(${PREFIX}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${PREFIX}/qmail
-PREFIX?=	${PREFIX}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-PREFIX?=	/var/qmail
-.endif
-
-.if (${PREFIX} == ${LOCALBASE})
-DOCDIR=		share/doc/qmail
-.else
-DOCDIR=		doc
-.endif
+PREFIX?=	${QMAIL_PREFIX}
 
 FF_VER=		0.51
 DF_VER=		0.71
@@ -53,12 +42,19 @@ NO_MTREE=	yes
 
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if (${PREFIX} == ${LOCALBASE})
+DOCDIR=		share/doc/qmail
+.else
+DOCDIR=		doc
+.endif
+
 pre-patch:
 	@cd ${WRKFF} \
 	&& ${PATCH} -s <${PATCHDIR}/extra-patch-newaliases
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKFF}/conf-cc
 	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKFF}/conf-qmail
 	@${REINPLACE_CMD} -e '/cat/d' ${WRKFF}/hier.c
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKDF}/conf-cc
@@ -77,4 +73,4 @@ do-install:
 	@cd ${WRKDIR}/fastforward-${FF_VER} \
 	&& make ${INSTALL_TARGET}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

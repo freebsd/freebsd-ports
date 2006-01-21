@@ -41,7 +41,9 @@ vpopmail/doc/man_html/vsetuserquota.html
 @unexec if [ -f %D/vpopmail/etc/defaultdomain ]; then rm -f %D/vpopmail/etc/defaultdomain; fi
 vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
-@unexec if [ -f %D/vpopmail/etc/tcp.smtp -a ! -s %D/vpopmail/etc/tcp.smtp ]; then rm -f %D/vpopmail/etc/tcp.smtp; fi
+@unexec if cmp -s %D/vpopmail/etc/tcp.smtp %D/vpopmail/etc/tcp.smtp-dist; then rm -f %D/vpopmail/etc/tcp.smtp; fi
+vpopmail/etc/tcp.smtp-dist
+@exec if [ ! -f %D/vpopmail/etc/tcp.smtp ] ; then cp -p %D/%F %B/tcp.smtp; fi
 @unexec if cmp -s %D/vpopmail/etc/vlimits.default %D/vpopmail/etc/vlimits.default-dist; then rm -f %D/vpopmail/etc/vlimits.default; fi
 vpopmail/etc/vlimits.default-dist
 @unexec if [ -f %D/vpopmail/etc/vpopmail.mysql ]; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi

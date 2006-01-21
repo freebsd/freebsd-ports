@@ -102,7 +102,7 @@ IGNORE=		Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL $
 .endif # BROKEN_WITH_MYSQL
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .else
-IGNORE=		"Unknown MySQL version: ${MYSQL_VER}"
+IGNORE=		Unknown MySQL version: ${MYSQL_VER}
 .endif # Check for correct libs
 .endif # USE_MYSQL
 
@@ -135,13 +135,13 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .if defined(BROKEN_WITH_PGSQL)
 .	for VER in ${BROKEN_WITH_PGSQL}
 .		if (${PGSQL_VER} == "${VER}")
-IGNORE=		"Does not work with postgresql${PGSQL_VER}-client PostgresSQL \(${BROKEN_WITH_PGSQL} not supported\)"
+IGNORE=		Does not work with postgresql${PGSQL_VER}-client PostgresSQL (${BROKEN_WITH_PGSQL} not supported)
 .		endif
 .	endfor
 .endif # BROKEN_WITH_PGSQL
 LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .else
-IGNORE=		"Unknown PostgreSQL version: ${PGSQL_VER}"
+IGNORE=		Unknown PostgreSQL version: ${PGSQL_VER}
 .endif # Check for correct version
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -206,7 +206,7 @@ _FOUND=	yes
 
 # USE_BDB is specified incorrectly, so mark this as IGNORE
 .if ${_FOUND} == "no"
-IGNORE=	"Unknown bdb version: ${USE_BDB}"
+IGNORE=	Unknown bdb version: ${USE_BDB}
 .endif
 
 .endif # USE_BDB
@@ -226,7 +226,7 @@ LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
 LIB_DEPENDS+=	sqlite.${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 .else
-IGNORE=	"Unknown sqlite version: ${_SQLITE_VER}"
+IGNORE=	Unknown sqlite version: ${_SQLITE_VER}
 .endif
 
 .endif # defined(USE_SQLITE)

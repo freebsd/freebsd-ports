@@ -4,20 +4,17 @@
 #
 # $FreeBSD$
 #
-# Tunables: QMAIL_DIR: Where qmail resides (default: /var/qmail)
 
 PORTNAME=	usendmail
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ohse.de/uwe/usendmail/
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	A replacement for qmail's sendmail drop-in
 
-BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-
-QMAIL_DIR?=	/var/qmail
+USE_QMAIL=	yes
 
 NO_SIZE=	yes
 USE_REINPLACE=	yes
@@ -26,10 +23,10 @@ WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 PLIST_FILES=	sbin/usendmail
 PORTDOCS=	NEWS README
 SUB_FILES=	pkg-message
-SUB_LIST=	QMAIL_DIR=${QMAIL_DIR}
+SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_DIR},' \
+	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},' \
 	    ${WRKSRC}/src/usendmail.c
 	@${REINPLACE_CMD} -e 's,^CC=,CC\?=,' \
 	    ${WRKSRC}/src/Makefile

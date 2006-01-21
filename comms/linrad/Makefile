@@ -7,7 +7,7 @@
 
 PORTNAME=	linrad
 PORTVERSION=	0.16a
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/
 DISTNAME=	lir01-20
 EXTRACT_SUFX=	.tbz

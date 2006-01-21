@@ -7,7 +7,7 @@
 
 PORTNAME=	serialmail
 PORTVERSION=	0.75
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.gbnet.net/pub/qmail/ \
@@ -17,11 +17,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
-		${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
-
-# QMAIL_DIR is the directory where qmail is installed
-QMAIL_DIR?=	/var/qmail
+RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+USE_QMAIL_RUN=	yes
 
 NO_PACKAGE=	Unsure of DJB license
 
@@ -65,7 +62,7 @@ post-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
-	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${QMAIL_PREFIX} > ${WRKSRC}/conf-qmail
 
 do-install:
 	cd ${WRKSRC} && \

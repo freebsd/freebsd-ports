@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
 
-BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
-		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
-		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+USE_QMAIL=	yes
 
 CONFLICTS=	vpopmail-devel-5.*
 
@@ -31,7 +30,7 @@ VCFGDIR?=	${WRKDIR}/vcfg
 VCFGFILES?=	inc_deps lib_deps tcp.smtp
 
 CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
-CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
+CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_PREFIX} \
 		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -79,7 +78,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_MYSQL_LOG - enable auth logging to a MySQL database [deprecateed]
 # WITH_PGSQL_LOG - enable auth logging to a PostgreSQL database [deprecated]
 # WITH_SQL_LOG  - enable auth logging to the selected SQL database
-# QMAIL_DIR     - location of qmail directory
+# QMAIL_PREFIX  - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
 # VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
@@ -197,12 +196,6 @@ EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${LOCALBASE}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
 
 .if !defined(WITHOUT_FPIC) && ${ARCH} == "amd64"
 CFLAGS+=	-fPIC

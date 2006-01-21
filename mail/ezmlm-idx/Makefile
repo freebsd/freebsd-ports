@@ -7,7 +7,7 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	0.40
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
@@ -22,12 +22,9 @@ PATCHFILES=	ezmlm-cgi.patch
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-0.*
-
-# QMAIL_DIR is the directory where qmail is installed
-QMAIL_DIR?=	/var/qmail
 
 # LANGUAGE is the ISO code for the language to use in ezmlmrc
 LANGUAGE?=	en_US
@@ -91,7 +88,7 @@ post-patch:
 	@${ECHO_CMD} ${EXTRACT_LIB} > ${WRKSRC}/sub_pgsql/conf-sqlld
 .endif
 	@${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
-	@${ECHO_CMD} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} ${QMAIL_PREFIX} > ${WRKSRC}/conf-qmail
 	@${REINPLACE_CMD} -e 's,/etc/ezmlm/,${PREFIX}/etc/ezmlm/,' \
 		${WRKSRC}/idx.h
 

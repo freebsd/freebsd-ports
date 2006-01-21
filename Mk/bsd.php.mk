@@ -74,7 +74,7 @@ PHP_EXT_INC?=	""
 .if defined(BROKEN_WITH_PHP)
 .	for VER in ${BROKEN_WITH_PHP}
 .		if ${PHP_VER} == "${VER}"
-BROKEN=		"Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})"
+BROKEN=		Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})
 .		endif
 .	endfor
 .endif

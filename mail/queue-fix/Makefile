@@ -7,16 +7,16 @@
 
 PORTNAME=	queue-fix
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.netmeridian.com/e-huss/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
-QMAIL_DIR?=	/var/qmail
-PREFIX?=	${QMAIL_DIR}
+PREFIX?=	${QMAIL_PREFIX}
 
 OPTIONS=	BIG_TODO "Use big_todo patch" off
 
@@ -31,13 +31,13 @@ PLIST_FILES+=	%%DOCDIR%%/README
 PLIST_DIRS+=	%%DOCDIR%%
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if (${PREFIX} == ${LOCALBASE})
 DOCDIR=	share/doc/qmail/queue-fix
 .else
 DOCDIR=	doc/queue-fix
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_BIG_TODO)
 PATCH_SITES+=		http://www.qmail.org/

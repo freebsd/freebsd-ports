@@ -19,18 +19,24 @@ bin/vconf2dir
 bin/vauthenticate
 bin/checkvpw
 bin/showvconfig
-cgi-bin/vpasswd
-cgi-bin/vadduser
-cgi-bin/vdeluser
-cgi-bin/vaddalias
-cgi-bin/vchattr
-cgi-bin/vchforwards
-cgi-bin/listvdomain
+%%CGI_DIR%%/vpasswd
+%%CGI_DIR%%/vadduser
+%%CGI_DIR%%/vdeluser
+%%CGI_DIR%%/vaddalias
+%%CGI_DIR%%/vchattr
+%%CGI_DIR%%/vchforwards
+%%CGI_DIR%%/listvdomain
+@unexec rmdir %D/%%CGI_DIR%% 2>/dev/null || true
 etc/vmailmgr/default-username
 etc/vmailmgr/vdeliver-postdeliver
 lib/courier-imap/libexec/authlib/authvmailmgr
+@dirrm lib/courier-imap/libexec/authlib
+@dirrm lib/courier-imap/libexec
+@dirrm lib/courier-imap
 sbin/vmailmgrd
 @dirrm etc/vmailmgr
+%%PHP_DIR%%/vmail.inc
+@dirrm %%PHP_DIR%%
 @cwd /var/qmail/service
 vmailmgrd/log/run
 vmailmgrd/run

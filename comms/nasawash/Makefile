@@ -7,7 +7,7 @@
 
 PORTNAME=	nasawash
 PORTVERSION=	0.50
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/
 DISTNAME=	nasawash
 EXTRACT_SUFX=	.tgz

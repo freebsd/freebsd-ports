@@ -7,7 +7,7 @@
 
 PORTNAME=	trustedqsl
 PORTVERSION=	1.11
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trustedqsl
 DISTFILES=	tqsllib-1.4.tar.gz TrustedQSL-1.11.tar.gz

@@ -134,11 +134,18 @@ print-index:	${.CURDIR}/${INDEXFILE}
 
 CVS?= cvs
 SUP?= cvsup
+PORTSNAP?= portsnap
+PORTSNAP_FLAGS?= -p ${.CURDIR}
 .if defined(SUPHOST)
 SUPFLAGS+=	-h ${SUPHOST}
 .endif
 update:
-.if defined(SUP_UPDATE) && defined(PORTSSUPFILE)
+.if defined(PORTSNAP_UPDATE)
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Running ${PORTSNAP}"
+	@echo "--------------------------------------------------------------"
+	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch update
+.elif defined(SUP_UPDATE) && defined(PORTSSUPFILE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${SUP}"
 	@echo "--------------------------------------------------------------"
@@ -152,5 +159,5 @@ update:
 	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
 	@exit 1
 .else
-	@${ECHO_MSG} "Error: Please define either SUP_UPDATE or CVS_UPDATE first."
+	@${ECHO_MSG} "Error: Please define either PORTSNAP_UPDATE, SUP_UPDATE, or CVS_UPDATE first."
 .endif

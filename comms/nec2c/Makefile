@@ -6,7 +6,7 @@
 
 PORTNAME=	nec2c
 PORTVERSION=	.9
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.si-list.org/NEC_Archives/
 DISTNAME=	nec2c
 DIST_SUBDIR=	${PORTNAME}

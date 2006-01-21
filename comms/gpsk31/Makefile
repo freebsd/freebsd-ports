@@ -6,7 +6,7 @@
 
 PORTNAME=	gpsk31
 PORTVERSION=	0.3
-CATEGORIES=	comms
+CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	xride@x12.dk

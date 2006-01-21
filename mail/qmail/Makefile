@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -98,10 +98,7 @@ PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota
 NO_PACKAGE=	"djb\'s packaging license does not allow non-standard \
 		qmail binary distributions"
 
-# A normal qmail installation puts everything into /var/qmail/.
-# If you want to install to /usr/local/, then "/usr/local/qmail" is
-# suggested instead of "/usr/local", but both will work.
-PREFIX?=		/var/qmail
+PREFIX?=		${QMAIL_PREFIX}
 QMAIL_VERSION?=		1.03
 
 .if !defined(BARRIER_SMTP_AUTH_PATCH)
@@ -198,6 +195,10 @@ MAN8+=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 	qmail-tcpto.8 qmail-pop3d.8 qmail-popup.8 qmail-qmqpc.8 qmail-qmqpd.8 \
 	qmail-qmtpd.8 qmail-smtpd.8 qmail-command.8
 
+.if defined(SLAVE_MYSQL)
+PKGMESSAGE_SUFFIX=	mysql
+.endif
+
 .if defined(SLAVE_SPAMCONTROL)
 EXTRA_MAN8=	qmail-badloadertypes.8 qmail-badmimetypes.8 qmail-recipients.8
 ALL_TARGET+=	${EXTRA_MAN8}
@@ -211,7 +212,7 @@ PLIST_SUB+=	README_AUTH="@comment "
 .endif
 
 .if defined(SLAVE_LDAP)
-PKGMESSAGE_SUFFIX=	-ldap
+PKGMESSAGE_SUFFIX=	ldap
 PLIST_SUB+=	LDAP="" NOT_LDAP="@comment "
 .else
 PLIST_SUB+=	LDAP="@comment " NOT_LDAP=""
@@ -224,16 +225,27 @@ PLIST_SUB+=	SPAMCONTROL="@comment "
 .endif
 
 .if defined(SLAVE_TLS)
-PKGMESSAGE_SUFFIX=	-tls
+PKGMESSAGE_SUFFIX=	tls
 PLIST_SUB+=	TLS=""
 .else
 PLIST_SUB+=	TLS="@comment "
 .endif
 
-SUB_FILES+=	pkg-message${PKGMESSAGE_SUFFIX} mailer.conf.sample \
-		bootfiles.sed enable-qmail
+.if defined(PKGMESSAGE_SUFFIX)
+SLAVEPORT_LINE=	${PKGMESSAGE_SUFFIX}
+.elif defined(SLAVE_SPAMCONTROL)
+SLAVEPORT_LINE=	spamcontrol
+.endif
+
+SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail
 PKGINSTALL?=	${WRKDIR}/pkg-install
-PKGMESSAGE?=	${WRKDIR}/pkg-message${PKGMESSAGE_SUFFIX}
+
+.if defined(PKGMESSAGE_SUFFIX)
+SUB_FILES+=	pkg-message-${PKGMESSAGE_SUFFIX}
+PKGMESSAGE?=	${WRKDIR}/pkg-message-${PKGMESSAGE_SUFFIX}
+.else
+SUB_FILES+=	pkg-message
+.endif
 
 CSH?=	/bin/csh
 
@@ -291,6 +303,8 @@ CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
 CONFIGUREFILES=	${WRKSRC}/config ${WRKSRC}/config-fast
 
+.include "${.CURDIR}/../../Mk/bsd.mail.mk"
+
 .if (${PREFIX} != ${LOCALBASE})
 DOCSDIR=	${PREFIX}/doc
 .endif
@@ -308,10 +322,8 @@ CFLAGS+=	-DDEBUG
 .endif
 
 .if defined(SLAVE_LDAP)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}2
 
 .if !defined(WITHOUT_TLS)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with_tls
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
@@ -469,6 +481,18 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+.if !defined(QMAIL_PREFIX)
+	@${ECHO_MSG} "QMAIL_PREFIX=PREFIX_PATH"
+	@${ECHO_MSG} "		(default PREFIX_PATH=${PREFIX})"
+	@${ECHO_MSG} "		A normal qmail installation puts"
+	@${ECHO_MSG} "		everything into /var/qmail/."
+	@${ECHO_MSG} "		If you want to install to ${LOCALBASE},"
+	@${ECHO_MSG} "		then \"${LOCALBASE}/qmail\" is suggested"
+	@${ECHO_MSG} "		instead of \"${LOCALBASE}\", but both will"
+	@${ECHO_MSG} "		work."
+ 	@${ECHO_MSG} ""
+.endif
+ 
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
@@ -596,6 +620,17 @@ do-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
+.if defined(SLAVEPORT_LINE)
+	@${ECHO_CMD} "============================================="
+	@${ECHO_CMD}
+	@${ECHO_CMD} "ATTENTION"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Add the following line to your /etc/make.conf"
+	@${ECHO_CMD} "QMAIL_SLAVEPORT=${SLAVEPORT_LINE}"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "============================================="
+	@${ECHO_CMD}
+.endif
 
 certificate:
 .if defined(SLAVE_TLS) || defined(SLAVE_LDAP)
