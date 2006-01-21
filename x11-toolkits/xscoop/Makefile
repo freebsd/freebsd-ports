@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.datazygte.com/ports/x11-toolkits/xscoop/
 MAINTAINER=	rscheckelhoff@yahoo.com
 COMMENT=	An X library detective
 
+BROKEN=		"Unfetchable"
+
 MAN7=		xscoop.7
 PLIST_FILES=	bin/xscoop
 PORTDOCS=	xscoop.pdf
