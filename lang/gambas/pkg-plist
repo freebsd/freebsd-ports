@@ -246,6 +246,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.gambas/FRMACERCA
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.gambas/FRMINSTRUCCIONES
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.gambas/FUNCIONES
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.gambas/PRINCIPAL
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.icon/16.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.icon/32.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/.icon/48.png
@@ -271,7 +272,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/frmInstrucciones.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/funciones.module
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/imagenes/an1.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/imagenes/an10.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/imagenes/an11.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/imagenes/an12.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Concent/imagenes/an13.gif
@@ -3836,7 +3836,6 @@ lib/gambas/lib.gb.vb.so.0
 %%XML%%%%DATADIR%%/info/gb.xml.libxml.xslt.info
 %%XML%%%%DATADIR%%/info/gb.xml.libxml.xslt.list
 @dirrm %%DATADIR%%/info
-%%PORTDOCS%%@dirrm %%DATADIR%%/help/hello-world
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WidgetsListBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WebSiteScreenshots
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WebHome
@@ -3931,14 +3930,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.icon
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous
@@ -3960,17 +3956,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Concent/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Concent
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/Console/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/Console/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/Console
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/Clock/img
@@ -3980,7 +3973,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/AnalogWatch/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/AnalogWatch
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/pic
@@ -3989,25 +3981,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/TreeView/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/TreeView
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Object
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/DragNDrop/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/DragNDrop
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Collection
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Blights/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Blights/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Blights
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/Scripting/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/Scripting/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/Scripting
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.icon
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser
