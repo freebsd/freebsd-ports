@@ -21,8 +21,6 @@ LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		"Broken with libglut 6.4.1"
-
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
