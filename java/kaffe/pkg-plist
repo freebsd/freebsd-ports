@@ -81,7 +81,7 @@ share/locale/fr/LC_MESSAGES/kaffe.mo
 share/locale/zh_CN/LC_MESSAGES/kaffe.mo
 share/locale/zh_TW/LC_MESSAGES/kaffe.mo
 @dirrm bin
-@dirrm lib/awt
+@dirrm lib/security
 @dirrm lib
 @dirrm include/kaffe
 @dirrm include
