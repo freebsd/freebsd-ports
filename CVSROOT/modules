@@ -7255,6 +7255,7 @@ ossp-val	ports/devel/ossp-val
 ossp-var	ports/devel/ossp-var
 ossp-xds	ports/devel/ossp-xds
 otcl		ports/lang/otcl
+otk		ports/x11-toolkits/otk
 ourmon		ports/net-mgmt/ourmon
 outguess	ports/security/outguess
 ovt		ports/science/ovt
