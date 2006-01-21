@@ -6727,6 +6727,7 @@ nag		ports/deskutils/nag
 nagios		ports/net-mgmt/nagios
 nagios-base-logos	ports/misc/nagios-base-logos
 nagios-plugins	ports/net-mgmt/nagios-plugins
+nagios-radauth-plugin	ports/net-mgmt/nagios-radauth-plugin
 nagios-silfreed-plugins	ports/net-mgmt/nagios-silfreed-plugins
 nagios-snmp-plugins	ports/net-mgmt/nagios-snmp-plugins
 nagios-spamd-plugin	ports/net-mgmt/nagios-spamd-plugin
