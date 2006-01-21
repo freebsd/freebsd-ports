@@ -2,42 +2,38 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: lighttpd
-# REQUIRE: DAEMON
+# REQUIRE: %%REQUIRE%%
 # BEFORE: LOGIN
 # KEYWORD: FreeBSD shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable lighttpd:
 #
-#lighttpd_enable="YES"
-#
-# See lighttpd(1) for manual
+# lighttpd_enable (bool):	Set it to "YES" to enable lighttpd
+#				Default is "NO".
+# lighttpd_conf (path):		Set full path to config file.
+#				Default is "%%PREFIX%%/etc/lighttpd.conf".
 #
 
 . %%RC_SUBR%%
 
-name=lighttpd
+name="lighttpd"
 rcvar=`set_rcvar`
 
+load_rc_config $name
+
+: ${lighttpd_enable="NO"}
+: ${lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"}
+
 command=%%PREFIX%%/sbin/lighttpd
+command_args="-f ${lighttpd_conf}"
 pidfile=/var/run/lighttpd.pid
 required_files=${lighttpd_conf}
-
 stop_postcmd=stop_postcmd
 
 stop_postcmd()
 {
-  rm -f $pidfile
+	rm -f ${pidfile}
 }
 
-# set defaults
-
-lighttpd_enable=${lighttpd_enable:-"NO"}
-lighttpd_conf=${lighttpd_conf:-"%%PREFIX%%/etc/lighttpd.conf"}
-
-load_rc_config $name
-
-command_args="-f ${lighttpd_conf}"
 run_rc_command "$1"

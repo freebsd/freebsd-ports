@@ -11,6 +11,7 @@ lib/lighttpd/mod_cgi.so
 lib/lighttpd/mod_cml.so
 lib/lighttpd/mod_compress.so
 lib/lighttpd/mod_dirlisting.so
+lib/lighttpd/mod_evasive.so
 lib/lighttpd/mod_evhost.so
 lib/lighttpd/mod_expire.so
 lib/lighttpd/mod_fastcgi.so
