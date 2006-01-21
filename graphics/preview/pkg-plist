@@ -9,7 +9,6 @@ Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm/data.info
 Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm/fitWidth.tiff
 Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm/fitWindow.tiff
 Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm/objects.gorm
-Local/Applications/Preview.app/Resources/English.lproj/Preview.help
 Local/Applications/Preview.app/Resources/FileIcon_gif.tiff
 Local/Applications/Preview.app/Resources/FileIcon_jpeg.tiff
 Local/Applications/Preview.app/Resources/FileIcon_png.tiff
@@ -24,6 +23,7 @@ Local/Applications/Preview.app/Resources/hand.tiff
 Local/Applications/Preview.app/Resources/last_page.tiff
 Local/Applications/Preview.app/library_paths.openapp
 Local/Applications/Preview.app/stamp.make
+@dirrm Local/Applications/Preview.app/Resources/English.lproj/Preview.help
 @dirrm Local/Applications/Preview.app/Resources/English.lproj/Preview.gorm
 @dirrm Local/Applications/Preview.app/Resources/English.lproj/Main.gorm
 @dirrm Local/Applications/Preview.app/Resources/English.lproj
