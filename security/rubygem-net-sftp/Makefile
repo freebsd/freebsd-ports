@@ -7,7 +7,7 @@
 
 PORTNAME=	net-sftp
 PORTVERSION=	1.1.0
-CATEGORIES=	security ruby
+CATEGORIES=	security rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7928/
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl

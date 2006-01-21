@@ -6,7 +6,7 @@
 
 PORTNAME=	rscm
 PORTVERSION=	0.3.16
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7244/
 
 MAINTAINER=	daniel@roe.ch

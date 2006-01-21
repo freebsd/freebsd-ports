@@ -6,7 +6,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	1.0.0
-CATEGORIES=	www ruby
+CATEGORIES=	www rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7653/
 
 MAINTAINER=	jw@innerewut.de

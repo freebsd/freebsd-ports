@@ -7,7 +7,7 @@
 
 PORTNAME=	needle
 PORTVERSION=	1.3.0
-CATEGORIES=	devel ruby
+CATEGORIES=	devel rubygems
 MASTER_SITES=	http://rubyforge.lauschmusik.de/needle/
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl

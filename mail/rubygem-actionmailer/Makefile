@@ -6,7 +6,7 @@
 
 PORTNAME=	actionmailer
 PORTVERSION=	1.1.5
-CATEGORIES=	mail ruby
+CATEGORIES=	mail rubygems
 MASTER_SITES=	http://rubyforge.org/frs/download.php/7647/
 
 MAINTAINER=	jw@innerewut.de
