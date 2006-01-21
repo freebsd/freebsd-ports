@@ -21,6 +21,7 @@ CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
 USE_REINPLACE=	yes
+NOFETCHFILES=	hcwPVRP2.sys
 
 RESTRICTED_FILES=	hcwPVRP2.sys
 RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
