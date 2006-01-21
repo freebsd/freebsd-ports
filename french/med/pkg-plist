@@ -4,6 +4,7 @@ bin/medimport
 bin/xmdump
 include/med.h
 include/med.hf
+include/med/med_config.h
 include/med_hdfi.h
 include/med_misc.h
 include/med_outils.h
@@ -305,4 +306,5 @@ lib/libmedC.so.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%/testf
 @dirrm %%EXAMPLESDIR%%/testc
+@dirrm include/med
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
