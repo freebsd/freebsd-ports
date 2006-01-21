@@ -8,9 +8,8 @@
 PORTNAME=	flwm
 PORTVERSION=	1.00
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://flwm.sourceforge.net/ \
-		http://www.cinenet.net/users/spitzak/flwm/ \
-		ftp://ftp.sai.msu.su/pub/X11/win_man/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gj
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gj@FreeBSD.org
