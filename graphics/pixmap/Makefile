@@ -23,4 +23,6 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		pixmap.1
 
+CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)=
+
 .include <bsd.port.mk>
