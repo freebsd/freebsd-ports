@@ -23,14 +23,15 @@ COMMENT=	Logfile analyse toolkit for multiple applications
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		\
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
-		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
-		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl
+PERL_BUILD_DEPENDS= \
+		Digest-MD5:${PORTSDIR}/security/p5-Digest-MD5 \
+		MIME-Tools:${PORTSDIR}/mail/p5-MIME-Tools \
+		Time-Timezone:${PORTSDIR}/devel/p5-Time-modules \
+		DBD-SQLite2:${PORTSDIR}/databases/p5-DBD-SQLite2 \
+		XML-Parser:${PORTSDIR}/textproc/p5-XML-Parser \
+		Curses:${PORTSDIR}/devel/p5-Curses \
+		Curses-UI:${PORTSDIR}/devel/p5-Curses-UI \
+		Locale-TextDomain:${PORTSDIR}/devel/p5-Locale-libintl
 
 OPTIONS=	CHARTS "Have Charts output format" On \
 		HTML "Have HTML or DocBook output format" On \
@@ -259,7 +260,7 @@ IGNORE=		sysutils/lire requires are least Perl 5.6.1, while Perl 5.8.2 is recomm
 .ifdef(WITH_CHARTS)
 RUN_DEPENDS+=	ploticus:${PORTSDIR}/math/ploticus-nox11 \
 		dia:${PORTSDIR}/graphics/dia
-BUILD_DEPENDS+=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+PERL_BUILD_DEPENDS+=	GD-Graph:${PORTSDIR}/graphics/p5-GD-Graph
 .endif
 .ifdef(WITH_HTML)
 RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
@@ -277,6 +278,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-S
 .endif
 
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+PERL_RUN_DEPENDS+=	${PERL_BUILD_DEPENDS}
 
 post-install:
 	@${CAT} pkg-message
