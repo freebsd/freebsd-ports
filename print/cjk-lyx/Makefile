@@ -24,7 +24,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		makepsres:${X_CLIENTS_PORT}
+		xvinfo:${X_CLIENTS_PORT}
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=	lyx-[0-9]*
