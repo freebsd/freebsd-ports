@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		1.0.13
+PORTVERSION=		1.0.14
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,6 +42,14 @@ SRC2FIX1=		configure src/comp/gbi.c src/exec/gbx_library.c
 SRC2FIX2=		src/comp/gbc_archive.c src/comp/gbi.c		\
 			src/exec/gbx_library.c src/share/gb_component.h
 SRC2FIX3=		Makefile.in src/exec/gbx_project.c
+
+DIR2PRUNE1=		help/hello-world
+DIR2PRUNE2=		Miscellaneous/Notepad/.lang Drawing/ImageViewer/.lang	\
+			Miscellaneous/Evaluator/.lang Exec/MoviePlayer/.lang	\
+			Miscellaneous/Explorer/.lang Database/Database/.lang	\
+			Drawing/OnScreenDisplay/.lang Basic/Timer/.lang		\
+			Basic/Object/.lang Basic/Collection/.lang		\
+			Automation/Scripting/.lang Automation/KateBrowser/.lang
 
 .if defined(WITHOUT_MYSQL)
 CONFIGURE_ARGS+=	--disable-mysql
@@ -146,6 +154,12 @@ pre-configure:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|# FreeBSD-Doc-Comment||" ${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+	@${RMDIR} ${DIR2PRUNE1:S|^|${DATADIR}/|}
+.if !defined(NOPORTDOCS)
+	@${RMDIR} ${DIR2PRUNE2:S|^|${EXAMPLESDIR}/|}
 .endif
 
 .include <bsd.port.post.mk>
