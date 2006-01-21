@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Finance/Quote/BMONesbittBurns.pm
 %%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
 %%SITE_PERL%%/Finance/Quote/DWS.pm
+%%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTPortfolios.pm
 %%SITE_PERL%%/Finance/Quote/Fidelity.pm
 %%SITE_PERL%%/Finance/Quote/FinanceCanada.pm
@@ -21,6 +22,7 @@
 %%SITE_PERL%%/Finance/Quote/Tiaacref.pm
 %%SITE_PERL%%/Finance/Quote/Troweprice.pm
 %%SITE_PERL%%/Finance/Quote/Trustnet.pm
+%%SITE_PERL%%/Finance/Quote/USFedBonds.pm
 %%SITE_PERL%%/Finance/Quote/Union.pm
 %%SITE_PERL%%/Finance/Quote/UserAgent.pm
 %%SITE_PERL%%/Finance/Quote/VWD.pm
@@ -31,7 +33,7 @@
 %%SITE_PERL%%/Finance/Quote/Yahoo/Europe.pm
 %%SITE_PERL%%/Finance/Quote/Yahoo/NZ.pm
 %%SITE_PERL%%/Finance/Quote/Yahoo/USA.pm
-%%SITE_PERL%%/Finance/Quote/ZI.pm
+%%SITE_PERL%%/Finance/Quote/ZA.pm
 @dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
 @dirrm %%SITE_PERL%%/Finance/Quote
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
