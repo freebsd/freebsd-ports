@@ -39,33 +39,48 @@ include/GL/glxmd.h
 include/GL/glxproto.h
 include/GL/glxtokens.h
 include/GL/osmesa.h
+include/X11/CallbackI.h
 include/X11/Composite.h
 include/X11/CompositeP.h
 include/X11/ConstrainP.h
 include/X11/Constraint.h
+include/X11/ConvertI.h
 include/X11/Core.h
 include/X11/CoreP.h
+include/X11/CreateI.h
 include/X11/DECkeysym.h
+include/X11/EventI.h
 include/X11/HPkeysym.h
+include/X11/HookObjI.h
 include/X11/ICE/ICE.h
 include/X11/ICE/ICEconn.h
 include/X11/ICE/ICElib.h
 include/X11/ICE/ICEmsg.h
 include/X11/ICE/ICEproto.h
 include/X11/ICE/ICEutil.h
+include/X11/ImUtil.h
+include/X11/InitialI.h
+include/X11/IntrinsicI.h
 include/X11/Intrinsic.h
 include/X11/IntrinsicP.h
 include/X11/Object.h
 include/X11/ObjectP.h
+include/X11/PassivGraI.h
 include/X11/RectObj.h
 include/X11/RectObjP.h
+include/X11/ResourceI.h
 include/X11/SM/SM.h
 include/X11/SM/SMlib.h
 include/X11/SM/SMproto.h
+include/X11/SelectionI.h
 include/X11/Shell.h
+include/X11/ShellI.h
 include/X11/ShellP.h
 include/X11/StringDefs.h
 include/X11/Sunkeysym.h
+include/X11/ThreadsI.h
+include/X11/TranslateI.h
+include/X11/VarargsI.h
 include/X11/Vendor.h
 include/X11/VendorP.h
 include/X11/X.h
@@ -157,6 +172,7 @@ include/X11/Xdmcp.h
 include/X11/Xfuncproto.h
 include/X11/Xfuncs.h
 include/X11/Xlib.h
+include/X11/XlibConf.h
 include/X11/Xlibint.h
 include/X11/Xlocale.h
 include/X11/Xmd.h
@@ -190,6 +206,7 @@ include/X11/XprintAppUtil/xpapputil.h
 include/X11/XprintUtil/xprintutil.h
 include/X11/Xproto.h
 include/X11/Xprotostr.h
+include/X11/Xregion.h
 include/X11/Xresource.h
 include/X11/Xthreads.h
 include/X11/Xutil.h
@@ -370,13 +387,31 @@ include/X11/extensions/xtrapemacros.h
 include/X11/extensions/xtraplib.h
 include/X11/extensions/xtraplibp.h
 include/X11/extensions/xtrapproto.h
+include/X11/extensions/vldXvMC.h
 include/X11/fonts/FS.h
 include/X11/fonts/FSlib.h
 include/X11/fonts/FSproto.h
+include/X11/fonts/bdfint.h
+include/X11/fonts/bitmap.h
+include/X11/fonts/bufio.h
+include/X11/fonts/fntfil.h
+include/X11/fonts/fntfilio.h
+include/X11/fonts/fntfilst.h
+include/X11/fonts/font.h
 include/X11/fonts/fontenc.h
+include/X11/fonts/fontencc.h
+include/X11/fonts/fontmisc.h
+include/X11/fonts/fontmod.h
+include/X11/fonts/fontshow.h
+include/X11/fonts/fontstruct.h
+include/X11/fonts/fontutil.h
+include/X11/fonts/fontxlfd.h
 include/X11/fonts/fsmasks.h
+include/X11/fonts/pcf.h
 include/X11/keysym.h
 include/X11/keysymdef.h
+include/X11/misc.h
+include/X11/os.h
 include/X11/xpm.h
 include/xf86Optrec.h
 include/xf86Parser.h
@@ -514,15 +549,23 @@ lib/X11/locale/vi_VN.viscii/XI18N_OBJS
 lib/X11/locale/vi_VN.viscii/XLC_LOCALE
 lib/X11/locale/zh_CN.UTF-8/XI18N_OBJS
 lib/X11/locale/zh_CN.UTF-8/XLC_LOCALE
+lib/X11/locale/zh_CN.gb18030/Compose
+lib/X11/locale/zh_CN.gb18030/XI18N_OBJS
+lib/X11/locale/zh_CN.gb18030/XLC_LOCALE
 lib/X11/locale/zh_CN.gbk/Compose
 lib/X11/locale/zh_CN.gbk/XI18N_OBJS
 lib/X11/locale/zh_CN.gbk/XLC_LOCALE
 lib/X11/locale/zh_CN/Compose
 lib/X11/locale/zh_CN/XI18N_OBJS
 lib/X11/locale/zh_CN/XLC_LOCALE
+lib/X11/locale/zh_HK.big5/Compose
+lib/X11/locale/zh_HK.big5/XI18N_OBJS
 lib/X11/locale/zh_HK.big5/XLC_LOCALE
+lib/X11/locale/zh_HK.big5hkscs/Compose
 lib/X11/locale/zh_HK.big5hkscs/XI18N_OBJS
 lib/X11/locale/zh_HK.big5hkscs/XLC_LOCALE
+lib/X11/locale/zh_HK.UTF-8/XI18N_OBJS
+lib/X11/locale/zh_HK.UTF-8/XLC_LOCALE
 lib/X11/locale/zh_TW.UTF-8/XI18N_OBJS
 lib/X11/locale/zh_TW.UTF-8/XLC_LOCALE
 lib/X11/locale/zh_TW.big5/Compose
@@ -648,9 +691,6 @@ lib/libXxf86vm.so.1
 lib/libdps.a
 lib/libdps.so
 lib/libdps.so.1
-lib/libdpstk.a
-lib/libdpstk.so
-lib/libdpstk.so.1
 lib/libfntstubs.a
 lib/libfontenc.a
 lib/libfontenc.so
@@ -658,9 +698,6 @@ lib/libfontenc.so.1
 lib/liboldX.a
 lib/liboldX.so
 lib/liboldX.so.6
-lib/libpsres.a
-lib/libpsres.so
-lib/libpsres.so.1
 lib/libxf86config.a
 lib/libxkbfile.a
 lib/libxkbfile.so
@@ -731,13 +768,16 @@ libdata/pkgconfig/xrender.pc
 @dirrm lib/X11/locale/vi_VN.tcvn
 @dirrm lib/X11/locale/vi_VN.viscii
 @dirrm lib/X11/locale/zh_CN
+@dirrm lib/X11/locale/zh_CN.gb18030
 @dirrm lib/X11/locale/zh_CN.gbk
 @dirrm lib/X11/locale/zh_CN.UTF-8
 @dirrm lib/X11/locale/zh_HK.big5
 @dirrm lib/X11/locale/zh_HK.big5hkscs
+@dirrm lib/X11/locale/zh_HK.UTF-8
 @dirrm lib/X11/locale/zh_TW
 @dirrm lib/X11/locale/zh_TW.big5
 @dirrm lib/X11/locale/zh_TW.UTF-8
 @dirrm lib/X11/locale/el_GR.UTF-8
+@unexec rmdir %D/include/X11/bitmaps 2>/dev/null || true
 @unexec rmdir %D/include/X11/fonts 2>/dev/null || true
 @unexec rmdir %D/lib/X11/locale 2>/dev/null || true

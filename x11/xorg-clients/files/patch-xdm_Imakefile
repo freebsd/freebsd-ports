@@ -1,0 +1,11 @@
+--- programs/xdm/Imakefile.orig	Thu Nov 24 21:24:10 2005
++++ programs/xdm/Imakefile	Thu Nov 24 21:25:17 2005
+@@ -107,7 +107,7 @@
+ #endif
+ #endif
+ 
+-#if !defined(i386IscArchitecture) && !defined(i386ScoArchitecture) && !defined(LinuxArchitecture) && !defined(NTOArchitecture) && !defined(SGIArchitecture) && !defined(AIXArchitecture)
++#if !defined(i386IscArchitecture) && !defined(i386ScoArchitecture) && !defined(LinuxArchitecture) && !defined(NTOArchitecture) && !defined(SGIArchitecture) && !defined(AIXArchitecture) && !defined(FreeBSDArchitecture)
+ SYS_LIBRARIES3 = -lresolv
+ #endif
+ #if SystemV || defined(SequentArchitecture)

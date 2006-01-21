@@ -214,9 +214,11 @@ lib/X11/xserver/C/print/models/SPSPARC2/fonts/Times-Roman.pmf
 lib/X11/xserver/C/print/models/SPSPARC2/model-config
 lib/X11/xserver/POSIX
 lib/X11/xserver/README
-lib/X11/xserver/SecurityPolicy
+lib/X11/xserver/af
 lib/X11/xserver/af_ZA
 lib/X11/xserver/af_ZA.iso88591
+lib/X11/xserver/af_ZA.utf8
+lib/X11/xserver/afrikaans
 lib/X11/xserver/ar
 lib/X11/xserver/ar_AE
 lib/X11/xserver/ar_AE.iso88596
@@ -279,10 +281,17 @@ lib/X11/xserver/bg_BG
 lib/X11/xserver/bg_BG.ISO8859-5
 lib/X11/xserver/bg_BG.cp1251
 lib/X11/xserver/bg_BG.utf8
+lib/X11/xserver/bn_IN.UTF-8
+lib/X11/xserver/bn_IN.utf8
 lib/X11/xserver/bokmal
 lib/X11/xserver/br_FR
 lib/X11/xserver/br_FR.iso88591
+lib/X11/xserver/bs
 lib/X11/xserver/bs_BA
+lib/X11/xserver/bs_BA.ISO-8859-2
+lib/X11/xserver/bs_BA.ISO8859-2
+lib/X11/xserver/bs_BA.ISO_8859-2
+lib/X11/xserver/bs_BA.UTF-8
 lib/X11/xserver/bs_BA.iso88592
 lib/X11/xserver/ca
 lib/X11/xserver/ca.ISO8859-1
@@ -546,6 +555,8 @@ lib/X11/xserver/gl_ES.iso88591
 lib/X11/xserver/gl_ES.iso885915@euro
 lib/X11/xserver/gl_ES.utf8
 lib/X11/xserver/gl_ES@euro
+lib/X11/xserver/gu_IN.UTF-8
+lib/X11/xserver/gu_IN.utf8
 lib/X11/xserver/gv_GB
 lib/X11/xserver/gv_GB.iso88591
 lib/X11/xserver/he
@@ -622,6 +633,9 @@ lib/X11/xserver/korean
 lib/X11/xserver/korean.euc
 lib/X11/xserver/kw_GB
 lib/X11/xserver/kw_GB.iso88591
+lib/X11/xserver/ky_KG
+lib/X11/xserver/ky_KG.UTF-8
+lib/X11/xserver/ky_KG.utf8
 lib/X11/xserver/lithuanian
 lib/X11/xserver/lt
 lib/X11/xserver/lt.ISO8859-13
@@ -648,6 +662,7 @@ lib/X11/xserver/mt_MT
 lib/X11/xserver/mt_MT.iso88593
 lib/X11/xserver/nb_NO
 lib/X11/xserver/nb_NO.ISO-8859-1
+lib/X11/xserver/ndebele
 lib/X11/xserver/nl
 lib/X11/xserver/nl.ISO8859-1
 lib/X11/xserver/nl.ISO8859-15
@@ -675,8 +690,18 @@ lib/X11/xserver/no_NO.ISO8859-1@nynorsk
 lib/X11/xserver/no_NO.iso88591
 lib/X11/xserver/no_NO.utf8
 lib/X11/xserver/norwegian
+lib/X11/xserver/nr
+lib/X11/xserver/nr_ZA
+lib/X11/xserver/nr_ZA.iso88591
+lib/X11/xserver/nr_ZA.utf8
+lib/X11/xserver/nso
+lib/X11/xserver/nso_ZA
+lib/X11/xserver/nso_ZA.iso885915
+lib/X11/xserver/nso_ZA.utf8
 lib/X11/xserver/oc_FR
 lib/X11/xserver/oc_FR.iso88591
+lib/X11/xserver/pa_IN.UTF-8
+lib/X11/xserver/pa_IN.utf8
 lib/X11/xserver/pl_PL
 lib/X11/xserver/pl_PL.ISO8859-2
 lib/X11/xserver/pl_PL.UTF-8
@@ -728,12 +753,20 @@ lib/X11/xserver/ru_UA.koi8u
 lib/X11/xserver/russian
 lib/X11/xserver/se_NO
 lib/X11/xserver/se_NO.utf8
+lib/X11/xserver/sepedi
+lib/X11/xserver/sesotho
+lib/X11/xserver/setswana
 lib/X11/xserver/sh
 lib/X11/xserver/sh.ISO8859-2
 lib/X11/xserver/sh_BA.ISO8859-2@bosnia
 lib/X11/xserver/sh_YU
 lib/X11/xserver/sh_YU.iso88592
 lib/X11/xserver/sh_YU.utf8
+lib/X11/xserver/si
+lib/X11/xserver/si_LK
+lib/X11/xserver/si_LK.UTF8
+lib/X11/xserver/sinhala
+lib/X11/xserver/siswati
 lib/X11/xserver/sk
 lib/X11/xserver/sk.ISO8859-2
 lib/X11/xserver/sk_SK
@@ -760,6 +793,14 @@ lib/X11/xserver/sr_YU.iso88592
 lib/X11/xserver/sr_YU.iso88595@cyrillic
 lib/X11/xserver/sr_YU.utf8
 lib/X11/xserver/sr_YU@cyrillic
+lib/X11/xserver/ss
+lib/X11/xserver/ss_ZA
+lib/X11/xserver/ss_ZA.iso88591
+lib/X11/xserver/ss_ZA.utf8
+lib/X11/xserver/st
+lib/X11/xserver/st_ZA
+lib/X11/xserver/st_ZA.iso88591
+lib/X11/xserver/st_ZA.utf8
 lib/X11/xserver/su
 lib/X11/xserver/su.ISO8859-1
 lib/X11/xserver/sv
@@ -795,6 +836,10 @@ lib/X11/xserver/th_TH.utf8
 lib/X11/xserver/thai
 lib/X11/xserver/tl_PH
 lib/X11/xserver/tl_PH.iso88591
+lib/X11/xserver/tn
+lib/X11/xserver/tn_ZA
+lib/X11/xserver/tn_ZA.iso885915
+lib/X11/xserver/tn_ZA.utf8
 lib/X11/xserver/tr
 lib/X11/xserver/tr.ISO8859-9
 lib/X11/xserver/tr_TR
@@ -802,6 +847,11 @@ lib/X11/xserver/tr_TR.ISO8859-9
 lib/X11/xserver/tr_TR.UTF-8
 lib/X11/xserver/tr_TR.iso88599
 lib/X11/xserver/tr_TR.utf8
+lib/X11/xserver/ts
+lib/X11/xserver/ts_ZA
+lib/X11/xserver/ts_ZA.iso88591
+lib/X11/xserver/ts_ZA.utf8
+lib/X11/xserver/tsonga
 lib/X11/xserver/turkish
 lib/X11/xserver/uk_UA
 lib/X11/xserver/uk_UA.koi8u
@@ -810,6 +860,10 @@ lib/X11/xserver/ur_PK
 lib/X11/xserver/ur_PK.utf8
 lib/X11/xserver/uz_UZ
 lib/X11/xserver/uz_UZ.iso88591
+lib/X11/xserver/ve
+lib/X11/xserver/ve_ZA
+lib/X11/xserver/ve_ZA.utf8
+lib/X11/xserver/venda
 lib/X11/xserver/vi_VN
 lib/X11/xserver/vi_VN.tcvn
 lib/X11/xserver/vi_VN.utf8
@@ -817,6 +871,11 @@ lib/X11/xserver/wa_BE
 lib/X11/xserver/wa_BE.iso88591
 lib/X11/xserver/wa_BE.iso885915@euro
 lib/X11/xserver/wa_BE@euro
+lib/X11/xserver/xh
+lib/X11/xserver/xh_ZA
+lib/X11/xserver/xh_ZA.iso88591
+lib/X11/xserver/xh_ZA.utf8
+lib/X11/xserver/xhosa
 lib/X11/xserver/yi_US
 lib/X11/xserver/yi_US.cp1255
 lib/X11/xserver/zh
@@ -871,6 +930,11 @@ lib/X11/xserver/zh_TW.UTF-8@zhuyin
 lib/X11/xserver/zh_TW.big5
 lib/X11/xserver/zh_TW.euctw
 lib/X11/xserver/zh_TW.utf8
+lib/X11/xserver/zu
+lib/X11/xserver/zu_ZA
+lib/X11/xserver/zu_ZA.iso88591
+lib/X11/xserver/zu_ZA.utf8
+lib/X11/xserver/zulu
 @dirrm lib/X11/xserver/C/print/attributes
 @dirrm lib/X11/xserver/C/print/ddx-config/raster
 @dirrm lib/X11/xserver/C/print/ddx-config
@@ -889,7 +953,8 @@ lib/X11/xserver/zh_TW.utf8
 @dirrm lib/X11/xserver/C/print/models/HPLJ4family
 @dirrm lib/X11/xserver/C/print/models
 @dirrm lib/X11/xserver/C/print
+@dirrm lib/X11/xserver/C
 @dirrm lib/X11/xserver/en_US/print/attributes
 @dirrm lib/X11/xserver/en_US/print
 @dirrm lib/X11/xserver/en_US
-@dirrm lib/X11/xserver/C
+@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true

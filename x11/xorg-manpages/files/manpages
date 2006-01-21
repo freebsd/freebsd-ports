@@ -10,6 +10,15 @@ MAN3=	AllPlanes.3 \
 	ClientWhitePointOfCCC.3 \
 	ConnectionNumber.3 \
 	DBE.3 \
+	DPMSCapable.3 \
+	DPMSDisable.3 \
+	DPMSEnable.3 \
+	DPMSForceLevel.3 \
+	DPMSGetTimeouts.3 \
+	DPMSGetVersion.3 \
+	DPMSInfo.3 \
+	DPMSQueryExtension.3 \
+	DPMSSetTimeouts.3 \
 	DefaultColormap.3 \
 	DefaultColormapOfScreen.3 \
 	DefaultDepth.3 \
@@ -45,7 +54,7 @@ MAN3=	AllPlanes.3 \
 	IsFunctionKey.3 \
 	IsKeypadKey.3 \
 	IsMiscFunctionKey.3 \
-	IsModiferKey.3 \
+	IsModifierKey.3 \
 	IsPFKey.3 \
 	IsPrivateKeypadKey.3 \
 	LastKnownRequestProcessed.3 \
@@ -227,6 +236,7 @@ MAN3=	AllPlanes.3 \
 	XFreeColors.3 \
 	XFreeCursor.3 \
 	XFreeDeviceList.3 \
+	XFreeExtensionList.3 \
 	XFreeFont.3 \
 	XFreeFontInfo.3 \
 	XFreeFontNames.3 \
@@ -321,6 +331,7 @@ MAN3=	AllPlanes.3 \
 	XKeysymToString.3 \
 	XKillClient.3 \
 	XListDepths.3 \
+	XListExtensions.3 \
 	XListFonts.3 \
 	XListFontsWithInfo.3 \
 	XListHosts.3 \
@@ -382,12 +393,29 @@ MAN3=	AllPlanes.3 \
 	XQueryColor.3 \
 	XQueryColors.3 \
 	XQueryDeviceState.3 \
+	XQueryExtension.3 \
 	XQueryFont.3 \
 	XQueryKeymap.3 \
 	XQueryPointer.3 \
 	XQueryTextExtents.3 \
 	XQueryTextExtents16.3 \
 	XQueryTree.3 \
+	XRRConfig.3 \
+	XRRConfigCurrentConfiguration.3 \
+	XRRConfigCurrentRate.3 \
+	XRRConfigRates.3 \
+	XRRConfigRotations.3 \
+	XRRConfigSizes.3 \
+	XRRConfigTimes.3 \
+	XRRFreeScreenConfigInfo.3 \
+	XRRGetScreenInfo.3 \
+	XRRQueryExtension.3 \
+	XRRQueryVersion.3 \
+	XRRRootToScreen.3 \
+	XRRScreenConfig.3 \
+	XRRSelectInput.3 \
+	XRRSetScreenConfig.3 \
+	XRRSetScreenConfigAndRate.3 \
 	XRaiseWindow.3 \
 	XReadBitmapFile.3 \
 	XReadBitmapFileData.3 \
@@ -610,6 +638,9 @@ MAN3=	AllPlanes.3 \
 	XcmsTekHVCQueryMaxVC.3 \
 	XcmsTekHVCQueryMaxVSamples.3 \
 	XcmsTekHVCQueryMinV.3 \
+	XcupGetReservedColormapEntries.3 \
+	XcupQueryVersion.3 \
+	XcupStoreColors.3 \
 	Xcursor.3 \
 	XdbeAllocateBackBufferName.3 \
 	XdbeBeginIdiom.3 \
@@ -721,6 +752,7 @@ MAN3=	AllPlanes.3 \
 	XtAddRawEventHandler.3 \
 	XtAddTimeOut.3 \
 	XtAddTimeout.3 \
+	XtAddWorkProc.3 \
 	XtAllocateGC.3 \
 	XtAppAddActionHook.3 \
 	XtAppAddActions.3 \

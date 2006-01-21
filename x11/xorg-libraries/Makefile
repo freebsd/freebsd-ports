@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-libraries
-PORTVERSION=	6.8.2
+PORTVERSION=	6.9.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -16,7 +16,8 @@ DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 libraries and headers from X.Org
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm \
+		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS=	Mesa-* XFree86-libraries-* \

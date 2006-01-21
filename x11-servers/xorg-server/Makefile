@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	6.8.2
-PORTREVISION=	7
+PORTVERSION=	6.9.0
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -131,8 +130,7 @@ PLIST_SUB+=	I386=""
 MAN1+=		scanpci.1
 MAN4+=		i740.4x \
 		nsc.4x \
-		via.4x \
-		vmware.4x
+		via.4x
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
@@ -147,7 +145,8 @@ MAN4+=		apm.4x \
 		neomagic.4x \
 		sis.4x \
 		trident.4x \
-		tseng.4x
+		tseng.4x \
+		vmware.4x
 .else
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif

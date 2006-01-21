@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	6.8.2
+PORTVERSION=	6.9.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -32,7 +32,7 @@ SCRIPTS_ENV=	CC=${CC}
 
 DIST_SUBDIR=	xorg
 WRKSRC=		${WRKDIR}/xc/config
-MTREE_FILE=	${PORTSDIR}/x11-servers/xorg-server/files/BSD.x11-xorg.dist
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 MAN1=		ccmakedep.1 \
 		cleanlinks.1 \
 		gccmakedep.1 \
