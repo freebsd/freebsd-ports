@@ -30,12 +30,6 @@ MAN1=		msgfmt.1 xgettext.1 xview.1
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == "xorg"
-PLIST_SUB+=	XORG="@comment "
-.else
-PLIST_SUB+=	XORG=""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/X11R6+${PREFIX}+;' \
 	  ${WRKSRC}/config/XView.cf

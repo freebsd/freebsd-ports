@@ -29,10 +29,6 @@ include/X11/bitmaps/shorter.xbm
 include/X11/bitmaps/taller.xbm
 include/X11/bitmaps/up.xbm
 include/X11/bitmaps/wider.xbm
-include/X11/fonts/bdfint.h
-include/X11/fonts/pcf.h
-include/X11/misc.h
-include/X11/os.h
 include/X11/pixmaps/card.xpm
 include/X11/pixmaps/computer.xpm
 include/X11/pixmaps/keyboard.xpm
@@ -209,4 +205,8 @@ lib/modules/multimedia/uda1380_drv.so
 @dirrm lib/modules/extensions
 @dirrm lib/modules/drivers
 @dirrm lib/X11/getconfig
+@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
 @unexec rmdir %D/lib/X11/doc 2>/dev/null || true
+@unexec rmdir %D/lib/X11/etc 2>/dev/null || true
+@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true
+@unexec rmdir %D/lib/modules 2>/dev/null || true
