@@ -62,6 +62,10 @@ MAN1=		${RUBY_NAME}.1
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
 
+.if ${CPUTYPE} == "athlon64" || ${CPUTYPE} == "athlon-xp"
+WITHOUT_CPU_CFLAGS=     yes
+.endif
+
 # Uncomment if it still segfaults with 1.8.4
 #.if ${ARCH} == "ia64"
 #BROKEN=		"Segfault during build on ia64"
