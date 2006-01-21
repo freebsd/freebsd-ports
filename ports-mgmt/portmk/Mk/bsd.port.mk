@@ -1346,9 +1346,8 @@ PERL=		${LOCALBASE}/bin/perl
 .if defined(USE_LOCAL_MK)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
-# not yet:
-#.else
-#.include "${PORTSDIR}/Mk/bsd.local.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
 .endif
 
@@ -1573,15 +1572,6 @@ MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 
 .if defined(USE_DOS2UNIX)
 USE_REINPLACE=	yes
-.endif
-
-.if defined(USE_LOCAL_MK)
-.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
-.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
-# not yet:
-#.else
-#.include "${PORTSDIR}/Mk/bsd.local.mk"
-.endif
 .endif
 
 .if defined(USE_GCC)
@@ -1869,6 +1859,14 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
+.if defined(USE_LOCAL_MK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.local.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.local.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.local.mk"
+.endif
+.endif
+
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
 	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
 	defined(USE_BDB) || defined(USE_SQLITE)
@@ -1879,19 +1877,19 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
-.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
-.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
-.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
-.else
-.include "${PORTSDIR}/Mk/bsd.gnome.mk"
-.endif
-.endif
-
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.gstreamer.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
+.endif
+.endif
+
+.if defined(USE_LINUX_RPM)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.linux-rpm.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.linux-rpm.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
 .endif
 
@@ -1927,17 +1925,18 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
-# XXX: (not yet): .if defined(USE_AUTOTOOLS)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 .endif
-# XXX: (not yet): .endif
 
-
-.if defined(USE_LINUX_RPM)
-.include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
+.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -2125,8 +2124,6 @@ EXTRACT_CMD?=			${GZIP_CMD}
 # uses X
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.elif ${X_WINDOW_SYSTEM:L} == xorg
-MTREE_FILE=	${PORTSDIR}/x11-servers/xorg-server/files/BSD.x11-xorg.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
@@ -3417,6 +3414,12 @@ do-patch:
 		fi; \
 	fi
 .endif
+
+# XXX - To be tested later
+#.if !target(run-autotools) && !defined(USE_AUTOTOOLS)
+#run-autotools:
+#	${DO_NADA}
+#.endif
 
 # Configure
 
