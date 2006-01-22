@@ -1,5 +1,5 @@
 @comment $FreeBSD$
 bin/c2t
 share/chinese/gb/TONEPY.tit
-@unexec rmdir %D/share/chinese/gb 2>/dev/null || true
-@unexec rmdir %D/share/chinese 2>/dev/null || true
+@dirrmtry share/chinese/gb
+@dirrmtry share/chinese

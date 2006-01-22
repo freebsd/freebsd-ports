@@ -12,5 +12,5 @@
 %%SITE_PERL%%/Inline/Java/Protocol.pm
 @dirrm %%SITE_PERL%%/Inline/Java
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/Java
-@unexec rmdir %D/%%SITE_PERL%%/Inline 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Inline
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline

@@ -5,5 +5,5 @@ bin/xml2sql.pl
 %%SITE_PERL%%/DBIx/xml2sql.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/XML_RDB
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx

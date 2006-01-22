@@ -4,5 +4,5 @@
 %%SITE_PERL%%/auto/Memoize/ExpireLRU/autosplit.ix
 %%SITE_PERL%%/Memoize/ExpireLRU.pm
 @dirrm %%SITE_PERL%%/auto/Memoize/ExpireLRU
-@unexec rmdir %D/%%SITE_PERL%%/auto/Memoize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Memoize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize/ExpireLRU

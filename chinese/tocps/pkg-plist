@@ -4,5 +4,5 @@ share/chinese/gb/cfang24.ccf
 share/chinese/gb/chei24.ccf
 share/chinese/gb/ckai24.ccf
 share/chinese/gb/csong24.ccf
-@unexec rmdir %D/share/chinese/gb 2>/dev/null || true
-@unexec rmdir %D/share/chinese 2>/dev/null || true
+@dirrmtry share/chinese/gb
+@dirrmtry share/chinese

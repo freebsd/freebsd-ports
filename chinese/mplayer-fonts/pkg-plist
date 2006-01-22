@@ -223,5 +223,5 @@
 @dirrm %%MF%%/gbsn00lp24
 @dirrm %%MF%%/gbsn00lp16
 @dirrm %%MF%%
-@unexec rmdir %D/share/mplayer/fonts 2>/dev/null || true
-@unexec rmdir %D/share/mplayer 2>/dev/null || true
+@dirrmtry share/mplayer/fonts
+@dirrmtry share/mplayer

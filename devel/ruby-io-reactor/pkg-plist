@@ -1,5 +1,5 @@
 %%RUBY_SITELIBDIR%%/io/reactor.rb
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/io 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/io
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

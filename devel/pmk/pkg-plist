@@ -4,7 +4,7 @@ bin/pmkpc
 bin/pmkscan
 @unexec if cmp -s %D/etc/pmk/pmk.conf %D/etc/pmk/pmk.conf.dist; then rm -f %D/etc/pmk/pmk.conf; fi
 @unexec rm -f %D/etc/pmk/pmk.conf.dist
-@unexec rmdir %D/etc/pmk 2>/dev/null || true
+@dirrmtry etc/pmk
 bin/pmksetup
 %%DATADIR%%/pmkcfgtool.dat
 %%DATADIR%%/pmkcomp.dat

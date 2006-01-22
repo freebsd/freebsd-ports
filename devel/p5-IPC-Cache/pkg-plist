@@ -1,5 +1,5 @@
 %%SITE_PERL%%/IPC/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Cache/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Cache
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/IPC 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrmtry %%SITE_PERL%%/IPC

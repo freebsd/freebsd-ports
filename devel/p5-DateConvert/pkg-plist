@@ -2,4 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Convert/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Convert
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
-@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Date

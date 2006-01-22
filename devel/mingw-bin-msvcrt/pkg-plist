@@ -284,4 +284,4 @@ i386-mingw32msvc/lib/libwst.a
 @dirrm i386-mingw32msvc/include/sys
 @dirrm i386-mingw32msvc/include
 @dirrm i386-mingw32msvc/lib
-@unexec rmdir %D/i386-mingw32msvc 2>/dev/null || true
+@dirrmtry i386-mingw32msvc
