@@ -900,4 +900,4 @@ lib/fonts/pk118/msym9.118pk
 lib/fonts/pk118/msym9.129pk
 lib/fonts/pk118/msym9.142pk
 @dirrm lib/fonts/pk118
-@unexec rmdir %D/lib/fonts 2>/dev/null || true
+@dirrmtry lib/fonts

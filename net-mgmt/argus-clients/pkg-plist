@@ -68,4 +68,4 @@ lib/argus_parse.a
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/argus/archive %D/argus >/dev/null 2>&1 || true
+@dirrmtry argus/archive %D/argus

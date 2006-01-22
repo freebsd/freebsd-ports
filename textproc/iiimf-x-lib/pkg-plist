@@ -2,4 +2,4 @@ lib/iiim/xiiimp.a
 lib/iiim/xiiimp.la
 lib/iiim/xiiimp.so
 lib/iiim/xiiimp.so.2
-@unexec rmdir %D/lib/iiim > /dev/null 2>&1 || true
+@dirrmtry lib/iiim

@@ -38,7 +38,6 @@ do-install:
 .endfor
 
 post-install:
-	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
-		>> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry share/bbtools" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -77,4 +77,4 @@ share/applnk/Applications/Apollon.desktop
 @dirrmtry share/icons/crystalsvg/128x128/apps
 @dirrmtry share/applnk/Applications
 %%PORTDOCS%%@unexec rmdir %D/share/doc/HTML/en/apollon
-%%PORTDOCS%%@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry share/doc/HTML/en

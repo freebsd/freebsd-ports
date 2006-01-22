@@ -4360,22 +4360,22 @@ share/locale/uk/LC_MESSAGES/gimp-print.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/figures
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%CUPS%%@unexec rmdir %D/share/cups/model/uk 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/sv 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/sk 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/pt 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/pl 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/no 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/nl 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/nb 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/ja 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/hu 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/fr 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/es 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/en_GB 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/el 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/de 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/da 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/cs 2>/dev/null || true
-%%CUPS%%@unexec rmdir %D/share/cups/model/C 2>/dev/null || true
+%%CUPS%%@dirrmtry share/cups/model/uk
+%%CUPS%%@dirrmtry share/cups/model/sv
+%%CUPS%%@dirrmtry share/cups/model/sk
+%%CUPS%%@dirrmtry share/cups/model/pt
+%%CUPS%%@dirrmtry share/cups/model/pl
+%%CUPS%%@dirrmtry share/cups/model/no
+%%CUPS%%@dirrmtry share/cups/model/nl
+%%CUPS%%@dirrmtry share/cups/model/nb
+%%CUPS%%@dirrmtry share/cups/model/ja
+%%CUPS%%@dirrmtry share/cups/model/hu
+%%CUPS%%@dirrmtry share/cups/model/fr
+%%CUPS%%@dirrmtry share/cups/model/es
+%%CUPS%%@dirrmtry share/cups/model/en_GB
+%%CUPS%%@dirrmtry share/cups/model/el
+%%CUPS%%@dirrmtry share/cups/model/de
+%%CUPS%%@dirrmtry share/cups/model/da
+%%CUPS%%@dirrmtry share/cups/model/cs
+%%CUPS%%@dirrmtry share/cups/model/C
 @dirrm include/gimp-print

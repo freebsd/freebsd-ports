@@ -2,4 +2,4 @@ lib/iiim/csconv/csconv.la
 lib/iiim/csconv/csconv.so
 lib/iiim/csconv/encoding.norm
 @dirrm lib/iiim/csconv
-@unexec rmdir %D/lib/iiim > /dev/null 2>&1 || true
+@dirrmtry lib/iiim

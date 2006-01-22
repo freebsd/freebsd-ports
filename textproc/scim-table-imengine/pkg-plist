@@ -22,10 +22,10 @@ share/locale/it/LC_MESSAGES/scim-tables.mo
 %%SKIM%%share/locale/it/LC_MESSAGES/skim-scim-tables.mo
 %%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-tables.mo
 %%SKIM%%share/apps/skim/pics/scim-tables.png
-%%SKIM%%@unexec rmdir %D/share/apps/skim/pics 2>/dev/null || true
-%%SKIM%%@unexec rmdir %D/share/apps/skim 2>/dev/null || true
-%%SKIM%%@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
-%%SKIM%%@unexec rmdir %D/share/services/skimconfiguredialog 2>/dev/null || true
+%%SKIM%%@dirrmtry share/apps/skim/pics
+%%SKIM%%@dirrmtry share/apps/skim
+%%SKIM%%@dirrmtry share/config.kcfg
+%%SKIM%%@dirrmtry share/services/skimconfiguredialog
 %%SKIM%%@cwd %%X11BASE%%
 @dirrmtry lib/scim-1.0/IMEngine
 @dirrmtry lib/scim-1.0/SetupUI

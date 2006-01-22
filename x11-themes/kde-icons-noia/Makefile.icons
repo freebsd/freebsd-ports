@@ -86,8 +86,7 @@ generate-tmpplist:
 			-e 's|^\.|@dirrm share/icons/${PORT_SHAREDIR:S/"//g}|' \
 			>> ${TMPPLIST}
 	@${ECHO_CMD} \
-		'@unexec rmdir %D/share/icons 2>/dev/null || true' \
-		>> ${TMPPLIST}
+		'@dirrmtry share/icons' >> ${TMPPLIST}
 
 # use generated installation scripts
 install-run-scripts:

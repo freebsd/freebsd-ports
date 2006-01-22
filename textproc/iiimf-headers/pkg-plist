@@ -13,4 +13,4 @@ include/iiim/iml/SunIMProt.h
 include/iiim/iml/SunIMPub.h
 include/iiim/iml/iml_fop.h
 @dirrm include/iiim/iml
-@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true
+@dirrmtry include/iiim

@@ -552,4 +552,4 @@ lib/fonts/pk600/linew10.657pk
 lib/fonts/pk600/linew10.720pk
 lib/fonts/pk600/linew10.864pk
 @dirrm lib/fonts/pk600
-@unexec rmdir %D/lib/fonts 2>/dev/null || true
+@dirrmtry lib/fonts

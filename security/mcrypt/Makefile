@@ -44,8 +44,8 @@ pre-install:
 	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
 .for i in cs de el es_AR pl
 	${ECHO_CMD} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
-	${ECHO_CMD} @unexec rmdir %D/share/locale/${i}/LC_MESSAGES '2>/dev/null | true' >> ${PLIST}
-	${ECHO_CMD} @unexec rmdir %D/share/locale/${i} '2>/dev/null | true' >> ${PLIST}
+	${ECHO_CMD} @dirrmtry share/locale/${i}/LC_MESSAGES >> ${PLIST}
+	${ECHO_CMD} @dirrmtry share/locale/${i} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 	${ECHO_CMD} share/examples/${PORTNAME}/sample.mcryptrc >> ${PLIST}

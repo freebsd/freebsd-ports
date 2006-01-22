@@ -62,5 +62,5 @@ sbin/lprng_index_certs
 %%SYSCONFDIR%%/lpd.conf.sample
 %%SYSCONFDIR%%/lpd.perms.sample
 %%SYSCONFDIR%%/printcap.sample
-%%CWD%%@unexec rmdir %D/etc/rc.d 2> /dev/null || true
-%%CWD%%@unexec rmdir %D/etc 2> /dev/null || true
+%%CWD%%@dirrmtry etc/rc.d
+%%CWD%%@dirrmtry etc

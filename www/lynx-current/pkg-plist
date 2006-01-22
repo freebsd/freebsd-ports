@@ -118,5 +118,5 @@ share/lynx_help/lynx_url_support.html
 @dirrm %%DOCSDIR%%
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
-%%NLS%%@unexec rmdir %D/share/locale/rw/LC_MESSAGES > /dev/null 2>&1 || true
-%%NLS%%@unexec rmdir %D/share/locale/rw > /dev/null 2>&1 || true
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw

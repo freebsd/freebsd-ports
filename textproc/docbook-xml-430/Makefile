@@ -52,7 +52,7 @@ pre-install:
 			${ECHO_CMD} "${DTDDIR}/$${F}"; \
 		done;\
 	${ECHO_CMD} "@dirrm ${DTDDIR}";\
-	${ECHO_CMD} "@unexec rmdir %D/${XMLCATBASE}/${DTD_NAME} 2> /dev/null || true"; ) >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry ${XMLCATBASE}/${DTD_NAME}"; ) >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	(for F in ${DOC_FILES}; do \
 			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \

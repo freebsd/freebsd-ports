@@ -12,8 +12,8 @@ include/iiim/lexmlconf.h
 share/iiim/gdbcmd
 @dirrm etc/iiim
 @dirrm share/iiim
-@unexec rmdir %D/lib/iiim > /dev/null 2>&1 || true
-@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true
+@dirrmtry lib/iiim
+@dirrmtry include/iiim
 @exec mkdir -p /var/log/iiim
 @unexec rm -f /var/log/iiim/*.log
 @unexec rmdir /var/log/iiim > /dev/null 2>&1 || true

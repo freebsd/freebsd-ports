@@ -31,8 +31,8 @@ sbin/gkrellmd
 %%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%@exec mkdir -p %D/libexec/gkrellm2/plugins
 %%CLIENT%%@exec mkdir -p %D/share/gkrellm2/themes
-%%CLIENT%%@unexec rmdir %D/libexec/gkrellm2/plugins 2>/dev/null || true
-%%CLIENT%%@unexec rmdir %D/libexec/gkrellm2 2>/dev/null || true
-%%CLIENT%%@unexec rmdir %D/share/gkrellm2/themes 2>/dev/null || true
-%%CLIENT%%@unexec rmdir %D/share/gkrellm2 2>/dev/null || true
+%%CLIENT%%@dirrmtry libexec/gkrellm2/plugins
+%%CLIENT%%@dirrmtry libexec/gkrellm2
+%%CLIENT%%@dirrmtry share/gkrellm2/themes
+%%CLIENT%%@dirrmtry share/gkrellm2
 @cwd %%PREFIX%%

@@ -34,7 +34,7 @@ pre-install:
 .for v in 1 2
 	@${ECHO_CMD} '${GTK${v}_ENGINEDIR}/libbluecurve.so' >> ${PLIST}
 .  for d in ${GTK${v}_ENGINEDIRS}
-	@${ECHO_CMD} '@unexec rmdir %D/${d} 2>/dev/null || true' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry ${d}' >> ${PLIST}
 .  endfor
 .  for t in ${THEMES}
 	@${ECHO_CMD} 'usr/share/themes/${t}/${GTK${v}_RCDIR}/gtkrc' >> ${PLIST}
@@ -44,7 +44,7 @@ pre-install:
 .for t in ${THEMES}
 	@${ECHO_CMD} '@dirrm usr/share/themes/${t}' >> ${PLIST}
 .endfor
-	@${ECHO_CMD} '@unexec rmdir %D/usr/share/themes 2>/dev/null || true' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry usr/share/themes' >> ${PLIST}
 
 do-install:
 .for v in 1 2

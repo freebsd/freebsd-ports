@@ -63,7 +63,7 @@ pre-install:
 	@${ECHO_CMD} "@dirrm share/themes/Bluecurve-${s}/${GTK${v}_RCDIR}" >> ${PLIST}
 .  endfor
 .endfor
-	@${ECHO_CMD} "@unexec rmdir %D/share/themes/Bluecurve 2>/dev/null || true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/themes/Bluecurve" >> ${PLIST}
 .for s in ${EXTRA_STYLES}
 	@${ECHO_CMD} "@dirrm share/themes/Bluecurve-${s}" >> ${PLIST}
 .endfor

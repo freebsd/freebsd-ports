@@ -10,7 +10,7 @@ bin/ldapwhoami
 @unexec if cmp -s %D/etc/openldap/ldap.conf %D/etc/openldap/ldap.conf.default; then rm -f %D/etc/openldap/ldap.conf; fi
 etc/openldap/ldap.conf.default
 @exec [ -f %B/ldap.conf ] || cp %B/%f %B/ldap.conf
-@unexec rmdir %D/etc/openldap 2>/dev/null || true
+@dirrmtry etc/openldap
 include/lber.h
 include/lber_types.h
 include/ldap.h

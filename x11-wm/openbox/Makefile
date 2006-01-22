@@ -76,8 +76,7 @@ pre-install:
 	${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
 .endfor
 .for ii in gnome/wm-properties gnome
-	${ECHO_CMD} "@unexec rmdir %D/share/${ii} 2>/dev/null || true" \
-		>> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/${ii}" >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 .for ii in ${DOCS}

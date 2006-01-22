@@ -7,4 +7,4 @@ lib/libiiimcf.so
 lib/libiiimcf.la
 lib/libiiimcf.a
 libdata/pkgconfig/iiimf-lib-client.pc
-@unexec rmdir %D/include/iiim > /dev/null 2>&1 || true
+@dirrmtry include/iiim

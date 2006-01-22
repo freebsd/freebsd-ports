@@ -230,17 +230,17 @@ etc/gentoorc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.cp1251/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.cp1251 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.CP1251/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.CP1251 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.KOI8-R/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.KOI8-R 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.koi8r/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.koi8r 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.UTF-8/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.UTF-8 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ja_JP.UTF-8/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ja_JP.UTF-8 2> /dev/null || true
+%%NLS%%@dirrmtry share/locale/ru_RU.cp1251/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.cp1251
+%%NLS%%@dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.CP1251
+%%NLS%%@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.KOI8-R
+%%NLS%%@dirrmtry share/locale/ru_RU.koi8r/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.koi8r
+%%NLS%%@dirrmtry share/locale/ru_RU.UTF-8/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.UTF-8
+%%NLS%%@dirrmtry share/locale/ru_RU.utf8/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU.utf8
+%%NLS%%@dirrmtry share/locale/ja_JP.UTF-8/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja_JP.UTF-8
