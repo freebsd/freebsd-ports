@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Mac/Macbinary.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/Macbinary/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/Macbinary
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Mac 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac
+@dirrmtry %%SITE_PERL%%/Mac

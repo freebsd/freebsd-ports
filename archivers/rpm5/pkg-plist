@@ -137,28 +137,28 @@ share/locale/zh/LC_MESSAGES/rpm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/rpm.mo
 @dirrm lib/rpm
 @dirrm include/rpm
-@unexec rmdir %D/src/portbld/SRPMS 2>/dev/null || true
-@unexec rmdir %D/src/portbld/SPECS 2>/dev/null || true
-@unexec rmdir %D/src/portbld/SOURCES 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/x86_64 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/sparcv9 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/sparc64 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/sparc 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/ppc64 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/ppc 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/noarch 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/ia64 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/i686 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/i586 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/i486 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/i386 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/athlon 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/amd64 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/alphaev6 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS/alpha 2>/dev/null || true
-@unexec rmdir %D/src/portbld/RPMS 2>/dev/null || true
-@unexec rmdir %D/src/portbld/BUILD 2>/dev/null || true
-@unexec rmdir %D/src/portbld 2>/dev/null || true
-@unexec rmdir %D/src 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_RN/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/en_RN 2> /dev/null || true
+@dirrmtry src/portbld/SRPMS
+@dirrmtry src/portbld/SPECS
+@dirrmtry src/portbld/SOURCES
+@dirrmtry src/portbld/RPMS/x86_64
+@dirrmtry src/portbld/RPMS/sparcv9
+@dirrmtry src/portbld/RPMS/sparc64
+@dirrmtry src/portbld/RPMS/sparc
+@dirrmtry src/portbld/RPMS/ppc64
+@dirrmtry src/portbld/RPMS/ppc
+@dirrmtry src/portbld/RPMS/noarch
+@dirrmtry src/portbld/RPMS/ia64
+@dirrmtry src/portbld/RPMS/i686
+@dirrmtry src/portbld/RPMS/i586
+@dirrmtry src/portbld/RPMS/i486
+@dirrmtry src/portbld/RPMS/i386
+@dirrmtry src/portbld/RPMS/athlon
+@dirrmtry src/portbld/RPMS/amd64
+@dirrmtry src/portbld/RPMS/alphaev6
+@dirrmtry src/portbld/RPMS/alpha
+@dirrmtry src/portbld/RPMS
+@dirrmtry src/portbld/BUILD
+@dirrmtry src/portbld
+@dirrmtry src
+@dirrmtry share/locale/en_RN/LC_MESSAGES
+@dirrmtry share/locale/en_RN

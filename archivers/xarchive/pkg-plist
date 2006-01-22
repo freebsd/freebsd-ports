@@ -12,6 +12,6 @@ share/doc/xarchive/xarchive.1.html
 share/doc/xarchive/xarchive.1.txt
 share/pixmaps/xarchive.xpm
 @dirrm share/doc/xarchive
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 @dirrm lib/xarchive/wrappers
 @dirrm lib/xarchive
