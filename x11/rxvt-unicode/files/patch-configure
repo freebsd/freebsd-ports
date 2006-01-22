@@ -1,48 +1,19 @@
---- configure.orig	Thu Jan 19 13:03:00 2006
-+++ configure	Thu Jan 19 22:14:30 2006
-@@ -3060,25 +3060,16 @@
- ac_compiler_gnu=$ac_cv_c_compiler_gnu
+--- configure.orig	Sun Jan 22 21:58:53 2006
++++ configure	Sun Jan 22 22:29:29 2006
+@@ -3235,7 +3235,7 @@
+    save_CXX="$CXX"
+    save_LIBS="$LIBS"
+    CXX="$CC"
+-   LIBS="$LIBS -lsupc++"
++   LIBS="$LIBS -lstdc++ -lsupc++"
+    LINKER="$CC"
  
- 
--if test -z "$orig_CXXFLAGS"; then
--  if test x$GCC = xyes && test "x$GXX" = xyes; then
--    CXXFLAGS="-g -O3"
--  else
--    CXXFLAGS="-O"
--  fi
--  CFLAGS="$CXXFLAGS"
--fi
--
- LINKER="$CXX"
- if test x$GCC = xyes && test x$GXX = xyes; then
- 
--echo "$as_me:$LINENO: checking for main in -lsupc++" >&5
--echo $ECHO_N "checking for main in -lsupc++... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for main in -lstdc++ -lsupc++" >&5
-+echo $ECHO_N "checking for main in -lstdc++ -lsupc++... $ECHO_C" >&6
- if test "${ac_cv_lib_supcpp_main+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lsupc++  $LIBS"
-+LIBS="-lstdc++ -lsupc++  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -3132,7 +3123,7 @@
- if test $ac_cv_lib_supcpp_main = yes; then
- 
-       LINKER="$CC"
--      LIBS="$LIBS -lsupc++"
-+      LIBS="$LIBS -lstdc++ -lsupc++"
- 
- fi
- 
-@@ -11729,6 +11720,7 @@
+@@ -12722,6 +12722,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
 +#include <stddef.h>
  #include <sys/types.h>
- #include <sys/socket.h>
- 
+ #include <sys/stat.h>
+ #include <unistd.h>
