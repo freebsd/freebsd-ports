@@ -43,6 +43,6 @@ libdata/pkgconfig/suikyo.pc
 %%PORTDOCS%%%%DOCSDIR%%/elisp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ruby/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/elisp 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/ruby 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/elisp
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ruby
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

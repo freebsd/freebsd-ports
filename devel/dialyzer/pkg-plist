@@ -28,8 +28,8 @@ lib/erlang/lib/dialyzer-%%VERSION%%/src/hipe_icode_type.hrl
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/src
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/dialyzer-%%VERSION%%/doc
-@unexec rmdir %D/lib/erlang/lib/dialyzer-%%VERSION%%/plt >/dev/null 2>&1 || true
-@unexec rmdir %D/lib/erlang/lib/dialyzer-%%VERSION%% >/dev/null 2>&1 || true
+@dirrmtry lib/erlang/lib/dialyzer-%%VERSION%%/plt
+@dirrmtry lib/erlang/lib/dialyzer-%%VERSION%%
 @exec ln -sf dialyzer-%%VERSION%% %D/lib/erlang/lib/dialyzer
 @unexec rm -f %D/lib/erlang/lib/dialyzer >/dev/null 2>&1 || true
 @exec ln -sf %D/lib/erlang/lib/dialyzer-%%VERSION%%/dialyzer %D/bin/dialyzer

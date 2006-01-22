@@ -2,4 +2,4 @@ lib/iiim/le/ude/ude.so
 lib/iiim/le/ude/data/pinyin.mb
 @dirrm lib/iiim/le/ude/data
 @dirrm lib/iiim/le/ude
-@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true
+@dirrmtry lib/iiim/le

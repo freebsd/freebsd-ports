@@ -81,7 +81,8 @@ do-install:
 
 post-install:
 .if defined(PACKAGE_BUILDING)
-	${ECHO_CMD} "@unexec rmdir %D/${CGIDIR} %D/${ICONSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrmtry ${CGIDIR}" >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrmtry ${ICONSDIR}" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -138,8 +138,8 @@ share/postgresql/contrib/tsearch.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/untsearch2.sql
 share/postgresql/contrib/user_locks.sql
-@unexec rmdir %D/share/postgresql/contrib >&2 2> /dev/null || true
-@unexec rmdir %D/share/postgresql >&2 2> /dev/null || true
-@unexec rmdir %D/%%DOCSDIR%%/contrib >&2 2> /dev/null || true
-@unexec rmdir %D/%%DOCSDIR%% >&2 2> /dev/null || true
-@unexec rmdir %D/lib/postgresql >&2 2> /dev/null || true
+@dirrmtry share/postgresql/contrib >&2
+@dirrmtry share/postgresql >&2
+@dirrmtry %%DOCSDIR%%/contrib >&2
+@dirrmtry %%DOCSDIR%% >&2
+@dirrmtry lib/postgresql >&2

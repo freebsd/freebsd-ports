@@ -40,6 +40,6 @@ post-install:
 		${ECHO_CMD} ${_FORTUNE_DIR}/${FORTUNE_FILE_O} >> ${TMPPLIST}; \
 		${ECHO_CMD} ${_FORTUNE_DIR}/${FORTUNE_FILE_O}.dat >> ${TMPPLIST}; \
 	fi
-	@${ECHO_CMD} "@unexec rmdir %D/${_FORTUNE_DIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/games 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${_FORTUNE_DIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry share/games" >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}

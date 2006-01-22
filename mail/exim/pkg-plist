@@ -37,7 +37,7 @@ sbin/exiwhat
 %%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
 %%PORTDOCS%%%%DOCSDIR%%/spec.txt
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
 %%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
 %%PORTDOCS%%%%EXAMPLESDIR%%/pcretest
@@ -45,8 +45,8 @@ sbin/exiwhat
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%DAEMON%%etc/periodic/daily/150.exim-tidydb
 %%DAEMON%%etc/periodic/daily/460.exim-mail-rejects
-%%DAEMON%%@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
-%%DAEMON%%@unexec rmdir %D/etc/periodic 2>/dev/null || true
+%%DAEMON%%@dirrmtry etc/periodic/daily
+%%DAEMON%%@dirrmtry etc/periodic
 @unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
 etc/exim/configure.default
 @exec [ -f %B/configure ] || cp %B/%f %B/configure

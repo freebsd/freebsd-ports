@@ -109,7 +109,7 @@ post-patch:
 	    ${SED} -e "s,^\.,%%MYADMDIR%%,"           >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk             >>${PLIST} ; \
 	${FIND} . -type d | ${SORT} -r | ${SED} \
-	     -e "s,^\.$$,@unexec rmdir %D/%%MYADMDIR%% 2>/dev/null || true," \
+	     -e "s,^\.$$,@dirrmtry %%MYADMDIR%%," \
 	     -e "s,^\.,@dirrm %%MYADMDIR%%,"         >>${PLIST}
 
 pre-install:

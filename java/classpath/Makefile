@@ -43,6 +43,6 @@ post-install:
 	@${FIND} ${dir} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD} '@unexec rmdir %D/lib/security 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrmtry lib/security' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

@@ -4,8 +4,8 @@ bin/byaccr
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calfunc.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/main.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%

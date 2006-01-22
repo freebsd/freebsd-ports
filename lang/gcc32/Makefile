@@ -135,7 +135,7 @@ post-install:
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g' \
 		>>${WRKDIR}/PLIST.gcc-lib
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	(${ECHO_CMD} "@dirrmtry lib/gcc-lib/${CONFIGURE_TARGET}" ; ${ECHO_CMD} "@dirrmtry lib/gcc-lib") >> ${WRKDIR}/PLIST.gcc-lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script

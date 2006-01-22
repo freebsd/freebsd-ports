@@ -76,4 +76,4 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch.el
 %%LISPDIR%%/navi2ch/navi2ch.elc
 @dirrm %%LISPDIR%%/navi2ch
-%%FSF%%@unexec rmdir %D/%%LISPDIR%% 2>/dev/null || true
+%%FSF%%@dirrmtry %%LISPDIR%%

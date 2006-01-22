@@ -239,8 +239,8 @@ share/services/mmst.protocol
 share/services/mmsu.protocol
 share/services/pnm.protocol
 share/services/rtsp.protocol
-@unexec rmdir %D/lib/kde3 >/dev/null 2>&1 || true
-@unexec rmdir %D/share/services >/dev/null 2>&1 || true
+@dirrmtry lib/kde3
+@dirrmtry share/services
 @dirrm share/doc/HTML/en/kplayer
 @dirrm share/apps/kplayer/icons/hicolor/32x32/actions
 @dirrm share/apps/kplayer/icons/hicolor/32x32

@@ -28,6 +28,6 @@ post-install:
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/logilab/pyreverse -type d | ${SORT} -r | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/%%PYTHSON_SITELIBDIR%%/logilab 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry %%PYTHSON_SITELIBDIR%%/logilab" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

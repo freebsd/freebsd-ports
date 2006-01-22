@@ -855,7 +855,7 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
 @dirrm BBBike/data/sehenswuerdigkeit_img
 @dirrm BBBike/ext/StrassenNetz-CNetFile
 @dirrm BBBike/lib/%%LOCAL_PERL_ARCH%%
-@unexec rmdir %D/BBBike/lib/%%PERL_VER%% 2>/dev/null || true
+@dirrmtry BBBike/lib/%%PERL_VER%%
 @dirrm BBBike/ext/VectorUtil-Inline/t
 @dirrm BBBike/ext/Strassen-Inline2/t
 @dirrm BBBike/ext/VectorUtil-Inline

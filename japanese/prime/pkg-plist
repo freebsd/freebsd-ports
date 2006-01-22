@@ -72,7 +72,7 @@ etc/prime/Custom_prime.rb
 %%PORTDOCS%%%%DOCSDIR%%/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/taiyaki.css
 %%PORTDOCS%%%%DOCSDIR%%/taiyaki.png
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/examples 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/figures 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/uim 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/figures
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/uim
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

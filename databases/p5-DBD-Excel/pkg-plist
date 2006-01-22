@@ -16,4 +16,4 @@
 @dirrmtry %%SITE_PERL%%/DBD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Excel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-%%PORTDOCS%%@unexec rmdir %D/share/examples/DBD-Excel 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry share/examples/DBD-Excel

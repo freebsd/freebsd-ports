@@ -11,6 +11,6 @@
 %%TEAMARENA%%%%DATADIR%%/missionpack/pak3.pk3
 share/pixmaps/quake3.xpm
 @dirrmtry share/pixmaps
-%%TEAMARENA%%@unexec rmdir %D/%%DATADIR%%/missionpack 2>/dev/null || true
+%%TEAMARENA%%@dirrmtry %%DATADIR%%/missionpack
 @dirrmtry %%DATADIR%%/baseq3
 @unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt

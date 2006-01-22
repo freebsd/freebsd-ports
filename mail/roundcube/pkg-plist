@@ -358,8 +358,8 @@
 @dirrm %%RCUBEDIR%%/program/include
 @dirrm %%RCUBEDIR%%/program
 @dirrm %%RCUBEDIR%%/SQL
-@unexec rmdir %D/%%RCUBEDIR%%/temp 2>&1 >/dev/null || true
-@unexec rmdir %D/%%RCUBEDIR%%/logs 2>&1 >/dev/null || true
-@unexec rmdir %D/%%RCUBEDIR%%/config 2>&1 >/dev/null || true
-@unexec rmdir %D/%%RCUBEDIR%% 2>&1 >/dev/null || true
+@dirrmtry %%RCUBEDIR%%/temp
+@dirrmtry %%RCUBEDIR%%/logs
+@dirrmtry %%RCUBEDIR%%/config
+@dirrmtry %%RCUBEDIR%%
 @dirrm %%DOCSDIR%%

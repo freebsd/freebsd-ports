@@ -410,9 +410,9 @@ lib/libpgtypes.a
 lib/libpgtypes.so
 lib/libpgtypes.so.1
 %%DOCSDIR%%/README-client
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%
 share/postgresql/pg_service.conf.sample
-@unexec rmdir %D/share/postgresql 2>/dev/null || true
+@dirrmtry share/postgresql
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_dump.mo
@@ -490,12 +490,12 @@ share/postgresql/pg_service.conf.sample
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql.mo
-%%GETTEXT%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/sl 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/cs
+%%GETTEXT%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/sl
+%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/zh_CN
+%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%GETTEXT%%@dirrmtry share/locale/zh_TW
 @dirrm include/postgresql

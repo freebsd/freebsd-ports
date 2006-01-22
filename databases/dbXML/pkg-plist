@@ -1386,10 +1386,10 @@ bin/dbxmlctl
 @dirrm %%T%%/docs/src
 @dirrm %%T%%/docs/licenses
 @dirrm %%T%%/docs/notes
-@unexec rmdir %D/%%T%%/docs > /dev/null 2>&1 || true
+@dirrmtry %%T%%/docs
 @dirrm %%T%%/icons
-@unexec rmdir %D/%%T%%/config > /dev/null 2>&1 || true
+@dirrmtry %%T%%/config
 @dirrm %%T%%/idl
-@unexec rmdir %D/%%T%%/logs > /dev/null 2>&1 || true
+@dirrmtry %%T%%/logs
 @dirrm %%T%%/xml
-@unexec rmdir %D/%%T%% > /dev/null 2>&1 || true
+@dirrmtry %%T%%

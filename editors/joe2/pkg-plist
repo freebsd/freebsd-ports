@@ -15,5 +15,5 @@ etc/joe/jpicorc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry etc/joe

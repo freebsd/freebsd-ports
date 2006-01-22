@@ -231,14 +231,14 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-ogg_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-rv_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-swf_48x48.png
-%%GNOME%%@unexec rmdir %D/share/gnome/application-registry 2>/dev/null || true
-%%GNOME%%@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
-%%GNOME%%@unexec rmdir %D/share/gnome/mime-info 2>/dev/null || true
-%%GNOME%%@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/192x192/apps 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/192x192/mimetypes 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor/192x192 2>/dev/null || true
-%%ICONS%%@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+%%GNOME%%@dirrmtry share/gnome/application-registry
+%%GNOME%%@dirrmtry share/gnome/applications
+%%GNOME%%@dirrmtry share/gnome/mime-info
+%%GNOME%%@dirrmtry share/gnome/pixmaps
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/48x48
+%%ICONS%%@dirrmtry share/icons/hicolor/192x192/apps
+%%ICONS%%@dirrmtry share/icons/hicolor/192x192/mimetypes
+%%ICONS%%@dirrmtry share/icons/hicolor/192x192
+%%ICONS%%@dirrmtry share/icons/hicolor

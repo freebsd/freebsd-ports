@@ -7,4 +7,4 @@
 @dirrmtry %%SITE_PERL%%/Business
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/UPS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
-%%PORTDOCS%%@unexec rmdir %D/share/examples/Business-UPS 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry share/examples/Business-UPS

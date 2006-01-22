@@ -1692,4 +1692,4 @@
 @dirrm %%GLOBUS_BASE%%bin/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%bin/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%bin
-@unexec rmdir %D/%%GLOBUS_BASE%% || /usr/bin/true
+@dirrmtry %%GLOBUS_BASE%%

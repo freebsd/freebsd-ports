@@ -18,7 +18,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/threadsafe.java
 %%JAVAJARDIR%%/postgresql.jar
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/jdbc/corba
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/jdbc 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/jdbc
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry share/postgresql
 @dirrmtry %%DOCSDIR%%

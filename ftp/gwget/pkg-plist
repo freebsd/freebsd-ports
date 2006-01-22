@@ -55,6 +55,6 @@ share/locale/tr/LC_MESSAGES/gwget.mo
 share/locale/zh_CN/LC_MESSAGES/gwget.mo
 share/locale/zh_TW/LC_MESSAGES/gwget.mo
 @dirrm include/gwget
-%%EPIPHANY:%%@unexec rmdir %D/lib/epiphany-%%VERSION%%/extensions 2>/dev/null || true
-%%EPIPHANY:%%@unexec rmdir %D/lib/epiphany-%%VERSION%% 2>/dev/null || true
+%%EPIPHANY:%%@dirrmtry lib/epiphany-%%VERSION%%/extensions
+%%EPIPHANY:%%@dirrmtry lib/epiphany-%%VERSION%%
 @dirrm share/gnome/gwget

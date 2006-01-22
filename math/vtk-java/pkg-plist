@@ -47,5 +47,5 @@ share/java/classes/vtk.jar
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/README
 @dirrmtry %%DOCSDIR%%
 %%TESTING_ONLY%%@dirrm share/examples/vtk/Testing/Java
-%%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk/Testing 2>/dev/null || true
-%%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk 2>/dev/null || true
+%%TESTING_ONLY%%@dirrmtry share/examples/vtk/Testing
+%%TESTING_ONLY%%@dirrmtry share/examples/vtk

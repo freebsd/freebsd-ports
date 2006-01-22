@@ -50,6 +50,6 @@ share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/xchat.mo
 %%NOGNOME:%%share/pixmaps/xchat.png
-%%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk/Internet 2>/dev/null || true
-%%NOGNOME:%%@unexec rmdir %D/etc/X11/applnk 2>/dev/null || true
-%%NOGNOME:%%@unexec rmdir %D/etc/X11 2>/dev/null || true
+%%NOGNOME:%%@dirrmtry etc/X11/applnk/Internet
+%%NOGNOME:%%@dirrmtry etc/X11/applnk
+%%NOGNOME:%%@dirrmtry etc/X11

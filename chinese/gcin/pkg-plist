@@ -49,7 +49,7 @@ share/gnome/control-center-2.0/capplets/gcin-setup.desktop
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%  2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%% 
 @dirrmtry share/icons/gcin 
 @dirrmtry share/icons
 @dirrmtry share/gnome/control-center-2.0/capplets

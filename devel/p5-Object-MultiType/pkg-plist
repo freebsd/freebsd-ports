@@ -1,6 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/MultiType/.packlist
 %%SITE_PERL%%/Object/MultiType.pm
 @dirrm %%SITE_PERL%%/mach/auto/Object/MultiType
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Object 2>/dev/null
+@dirrmtry %%SITE_PERL%%/mach/auto/Object
 @dirrmtry %SITE_PERL%%/%%PERL_ARCH%%/Object
 @dirrmtry %%SITE_PERL%%/Object

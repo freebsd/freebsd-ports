@@ -207,7 +207,7 @@ PLIST_FILES=	include/gstreamer-0.8/gst/gconf/gconf.h \
 		lib/libgstgconf-0.8.so \
 		lib/libgstgconf-0.8.so.1 \
 		libdata/pkgconfig/gstreamer-gconf-0.8.pc \
-		'@unexec rmdir %D/include/gstreamer-0.8/gst/gconf 2>/dev/null || true'
+		'@dirrmtry include/gstreamer-0.8/gst/gconf'
 .endif
 
 # gdkpixbuf

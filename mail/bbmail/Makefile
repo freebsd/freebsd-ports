@@ -22,7 +22,7 @@ MAN1=		bbmail.1
 PLIST_FILES=	bin/bbmail share/bbtools/bbmail.bb
 
 post-install:
-	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
+	@${ECHO_CMD} "@dirrmtry share/bbtools" \
 		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

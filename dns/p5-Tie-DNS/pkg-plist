@@ -10,4 +10,4 @@
 @dirrmtry %%SITE_PERL%%/Tie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-%%PORTDOCS%%@unexec rmdir %D/share/examples/p5-Tie-DNS 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry share/examples/p5-Tie-DNS

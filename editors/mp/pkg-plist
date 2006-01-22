@@ -14,8 +14,8 @@ bin/mp
 %%NLS%%share/locale/es/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/it/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/minimum-profit.mo
-%%NLS%%@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 @dirrm %%DOCSDIR%%

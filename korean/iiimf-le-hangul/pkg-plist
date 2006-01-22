@@ -3,4 +3,4 @@ lib/iiim/le/hangul/hangul.conf
 lib/iiim/le/hangul/tables/candidate.txt
 @dirrm lib/iiim/le/hangul/tables
 @dirrm lib/iiim/le/hangul
-@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true
+@dirrmtry lib/iiim/le

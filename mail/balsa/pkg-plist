@@ -139,7 +139,7 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrmtry share/locale/rw
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/omf/balsa
-%%GTKICON%%@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true
+%%GTKICON%%@dirrmtry share/icons/hicolor/48x48/mimetypes
 @dirrm share/gnome/help/balsa/C/figures
 @dirrm share/gnome/help/balsa/C
 @dirrm share/gnome/help/balsa

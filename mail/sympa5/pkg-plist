@@ -372,26 +372,26 @@ sympa/icons/right.png
 sympa/icons/sound1.png
 sympa/icons/text.png
 sympa/icons/unknown.png
-%%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/en_US 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/oc/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/oc 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
 @dirrm sympa/spool/tmp
 @dirrm sympa/spool/task
 @dirrm sympa/spool/outgoing

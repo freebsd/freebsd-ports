@@ -1192,4 +1192,4 @@
 @unexec rmdir %D/%%COMPILERDIR%%/licenses >/dev/null 2>&1 || echo '*** License directory (%D/%%COMPILERDIR%%/licenses/) not removed, it may contain a license.'
 @dirrm %%COMPILERDIR%%/man/man1
 @dirrm %%COMPILERDIR%%/man
-@unexec rmdir %D/%%COMPILERDIR%% >/dev/null 2>&1 || true
+@dirrmtry %%COMPILERDIR%%

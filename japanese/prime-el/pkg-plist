@@ -39,8 +39,8 @@ etc/prime/Custom_prime-el.el
 %%PORTDOCS%%%%DOCSDIR%%/emacs/customize.html
 %%PORTDOCS%%%%DOCSDIR%%/emacs/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/Custom_prime-el.el
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs/figures/screenshots 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs/figures 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/emacs 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%%/examples 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/emacs/figures/screenshots
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/emacs/figures
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/emacs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

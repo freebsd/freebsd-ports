@@ -1768,5 +1768,5 @@ alliance/examples/alliance-examples/tuner/tuner_io.c
 @dirrm alliance/examples/alliance-examples/tuner
 @dirrm alliance/examples/alliance-examples
 @dirrm alliance/examples
-@unexec rmdir %D/alliance/etc > /dev/null 2>&1 || true
-@unexec rmdir %D/alliance > /dev/null 2>&1 || true
+@dirrmtry alliance/etc
+@dirrmtry alliance

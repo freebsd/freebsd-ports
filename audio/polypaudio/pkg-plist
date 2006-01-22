@@ -211,4 +211,4 @@ libdata/pkgconfig/polyplib-simple.pc
 libdata/pkgconfig/polyplib.pc
 @dirrm lib/polypaudio-%%VERSION%%
 @dirrm include/polyp
-@unexec rmdir %D/etc/polypaudio 2> /dev/null || /usr/bin/true
+@dirrmtry etc/polypaudio

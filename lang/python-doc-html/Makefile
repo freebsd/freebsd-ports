@@ -62,7 +62,7 @@ pre-install:
 	@cd ${WRKSRC} && (${FIND} * -type d | \
 		${SED} -e 's,^,@dirrm share/doc/${PYTHON_VERSION}/,' | \
 			${SORT} -r) >> ${PLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/doc/%%PYTHON_VERSION%%" >> ${PLIST}
 .endif
 
 do-install:

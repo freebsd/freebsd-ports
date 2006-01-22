@@ -129,14 +129,14 @@ do-generate-plist:
 	if [ -n "${DOCS}" ]; then echo "%%PORTDOCS%%@dirrm ${LDOCSDIR}"; fi; \
 	if [ -n "${EXAMPLES}" ]; then echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}"; fi; \
 	echo "@dirrm ${LPKGREGDIR}"; \
-	if [ -n "${CATEGORY}" ]; then echo "@unexec rmdir %D/${LINSTDIR} 2> /dev/null || true"; fi; \
-	if [ -n "${CATEGORY:M*/*}" ]; then echo "@unexec rmdir %D/${LINSTDIR:H} 2> /dev/null || true"; fi; \
-	echo "@unexec rmdir %D/${LPKGREGDIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LDOCSDIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LEXAMPLESDIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LTESTSDIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LDATADIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LSQLSDIR:H} 2> /dev/null || true") > ${PLIST}
+	if [ -n "${CATEGORY}" ]; then echo "@dirrmtry ${LINSTDIR}"; fi; \
+	if [ -n "${CATEGORY:M*/*}" ]; then echo "@dirrmtry ${LINSTDIR:H}"; fi; \
+	echo "@dirrmtry ${LPKGREGDIR:H}"; \
+	echo "@dirrmtry ${LDOCSDIR:H}"; \
+	echo "@dirrmtry ${LEXAMPLESDIR:H}"; \
+	echo "@dirrmtry ${LTESTSDIR:H}"; \
+	echo "@dirrmtry ${LDATADIR:H}"; \
+	echo "@dirrmtry ${LSQLSDIR:H}") > ${PLIST}
 . endif
 
 . for t in files docs tests sqls scriptfiles examples data
