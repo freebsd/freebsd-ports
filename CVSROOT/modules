@@ -2861,6 +2861,7 @@ geomview	ports/graphics/geomview
 geonext		ports/math/geonext
 geos		ports/graphics/geos
 geotrace	ports/net/geotrace
+gephex		ports/graphics/gephex
 geramik		ports/x11-themes/geramik
 gerbv		ports/cad/gerbv
 gerris		ports/science/gerris
