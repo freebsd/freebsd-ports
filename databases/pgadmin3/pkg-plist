@@ -473,6 +473,7 @@ share/pgadmin3/docs/en_US/pg/release-7-2.html
 share/pgadmin3/docs/en_US/pg/release-7-3-1.html
 share/pgadmin3/docs/en_US/pg/release-7-3-10.html
 share/pgadmin3/docs/en_US/pg/release-7-3-11.html
+share/pgadmin3/docs/en_US/pg/release-7-3-12.html
 share/pgadmin3/docs/en_US/pg/release-7-3-2.html
 share/pgadmin3/docs/en_US/pg/release-7-3-3.html
 share/pgadmin3/docs/en_US/pg/release-7-3-4.html
@@ -483,6 +484,7 @@ share/pgadmin3/docs/en_US/pg/release-7-3-8.html
 share/pgadmin3/docs/en_US/pg/release-7-3-9.html
 share/pgadmin3/docs/en_US/pg/release-7-3.html
 share/pgadmin3/docs/en_US/pg/release-7-4-1.html
+share/pgadmin3/docs/en_US/pg/release-7-4-10.html
 share/pgadmin3/docs/en_US/pg/release-7-4-2.html
 share/pgadmin3/docs/en_US/pg/release-7-4-3.html
 share/pgadmin3/docs/en_US/pg/release-7-4-4.html
@@ -496,7 +498,9 @@ share/pgadmin3/docs/en_US/pg/release-8-0-1.html
 share/pgadmin3/docs/en_US/pg/release-8-0-2.html
 share/pgadmin3/docs/en_US/pg/release-8-0-3.html
 share/pgadmin3/docs/en_US/pg/release-8-0-4.html
+share/pgadmin3/docs/en_US/pg/release-8-0-5.html
 share/pgadmin3/docs/en_US/pg/release-8-0.html
+share/pgadmin3/docs/en_US/pg/release-8-1.html
 share/pgadmin3/docs/en_US/pg/release.html
 share/pgadmin3/docs/en_US/pg/resources.html
 share/pgadmin3/docs/en_US/pg/role-attributes.html
@@ -964,6 +968,7 @@ share/pgadmin3/docs/en_US/slony/table.sl-setsync.html
 share/pgadmin3/docs/en_US/slony/table.sl-subscribe.html
 share/pgadmin3/docs/en_US/slony/table.sl-table.html
 share/pgadmin3/docs/en_US/slony/table.sl-trigger.html
+share/pgadmin3/docs/en_US/slony/testbed.html
 share/pgadmin3/docs/en_US/slony/usingslonik.html
 share/pgadmin3/docs/en_US/slony/versionupgrade.html
 share/pgadmin3/docs/en_US/slony/view.sl-seqlastvalue.html
@@ -1031,8 +1036,12 @@ share/pgadmin3/i18n/nl_NL/pgadmin3.mo
 share/pgadmin3/i18n/nl_NL/wxstd.mo
 share/pgadmin3/i18n/pg_settings.csv
 share/pgadmin3/i18n/pgadmin3.lng
+share/pgadmin3/i18n/pl_PL/pgadmin3.mo
+share/pgadmin3/i18n/pl_PL/wxstd.mo
 share/pgadmin3/i18n/sl_SI/pgadmin3.mo
 share/pgadmin3/i18n/sl_SI/wxstd.mo
+share/pgadmin3/i18n/tr_TR/pgadmin3.mo
+share/pgadmin3/i18n/tr_TR/wxstd.mo
 share/pgadmin3/i18n/wxstd.mo
 share/pgadmin3/pgagent.sql
 share/pgadmin3/ui/dlgAggregate.xrc
@@ -1092,7 +1101,9 @@ share/pgadmin3/ui/frmRestore.xrc
 share/pgadmin3/ui/frmStatus.xrc
 share/pgadmin3/ui/frmUpdate.xrc
 @dirrm share/pgadmin3/ui
+@dirrm share/pgadmin3/i18n/tr_TR
 @dirrm share/pgadmin3/i18n/sl_SI
+@dirrm share/pgadmin3/i18n/pl_PL
 @dirrm share/pgadmin3/i18n/nl_NL
 @dirrm share/pgadmin3/i18n/ja_JP
 @dirrm share/pgadmin3/i18n/fr_FR
