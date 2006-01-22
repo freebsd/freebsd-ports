@@ -20,7 +20,7 @@ etc/gnats/defaults/states
 etc/gnats/defaults/submitters
 etc/gnats/send-pr.conf
 @dirrm etc/gnats/defaults
-@unexec rmdir %D/etc/gnats 2>/dev/null || true
+@dirrmtry etc/gnats
 %%SERVER%%libexec/gnats/at-pr
 %%SERVER%%libexec/gnats/check-db
 %%SERVER%%libexec/gnats/delete-pr

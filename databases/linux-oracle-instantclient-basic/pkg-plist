@@ -8,8 +8,8 @@ usr/lib/oracle/%%PORTVERSION%%/client/lib/ojdbc14.jar
 @dirrm usr/lib/oracle/%%PORTVERSION%%/client
 @dirrm usr/lib/oracle/%%PORTVERSION%%
 @dirrm usr/lib/oracle
-@unexec rmdir %D/usr/lib 2>/dev/null || true
-@unexec rmdir %D/usr     2>/dev/null || true
+@dirrmtry usr/lib
+@dirrmtry usr    
 @unexec cp %D/etc/ld.so.conf %D/etc/ld.so.conf.bak && sed "/\/usr\/lib\/oracle\/%%PORTVERSION%%\/client\/lib/d" %D/etc/ld.so.conf.bak > %D/etc/ld.so.conf && rm %D/etc/ld.so.conf.bak
 @exec echo /usr/lib/oracle/%%PORTVERSION%%/client/lib >> %D/etc/ld.so.conf
 @exec %D/sbin/ldconfig

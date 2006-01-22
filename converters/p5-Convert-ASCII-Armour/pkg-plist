@@ -1,8 +1,8 @@
 %%SITE_PERL%%/Convert/ASCII/Armor.pm
 %%SITE_PERL%%/Convert/ASCII/Armour.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Convert/ASCII 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Convert 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII/Armour
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/ASCII
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrmtry %%SITE_PERL%%/Convert/ASCII
+@dirrmtry %%SITE_PERL%%/Convert

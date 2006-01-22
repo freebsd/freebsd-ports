@@ -1,8 +1,8 @@
 %%SITE_PERL%%/DBD/SQLRelay.pm
-@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/DBD
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLRelay/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLRelay
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
 %%SITE_PERL%%/%%PERL_ARCH%%/SQLRelay/Connection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SQLRelay/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Connection/.packlist

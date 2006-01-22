@@ -52,4 +52,4 @@ share/locale/uk/LC_MESSAGES/xfcalendar.mo
 share/locale/vi/LC_MESSAGES/xfcalendar.mo
 share/locale/zh_CN/LC_MESSAGES/xfcalendar.mo
 share/locale/zh_TW/LC_MESSAGES/xfcalendar.mo
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@dirrmtry lib/xfce4/mcs-plugins

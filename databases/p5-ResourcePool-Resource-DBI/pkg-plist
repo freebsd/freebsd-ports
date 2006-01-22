@@ -12,6 +12,6 @@
 %%SITE_PERL%%/ResourcePool/Factory/DBI.pod
 @dirrm %%SITE_PERL%%/ResourcePool/Command/DBI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/DBI
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Resource 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Factory 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
+@dirrmtry %%SITE_PERL%%/ResourcePool/Resource
+@dirrmtry %%SITE_PERL%%/ResourcePool/Factory

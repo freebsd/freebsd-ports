@@ -13,7 +13,7 @@ etc/minicom/minicom.users
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/minicom.mo
 @exec /usr/sbin/chown uucp %D/etc/minicom
-@unexec rmdir %D/etc/minicom 2>/dev/null || true
+@dirrmtry etc/minicom
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

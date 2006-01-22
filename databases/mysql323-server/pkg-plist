@@ -100,7 +100,7 @@ libexec/mysqld
 %%DATADIR%%/swedish/errmsg.txt
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.txt
-@unexec rmdir %D/lib/mysql 2> /dev/null || true
+@dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
 @dirrm %%DATADIR%%/danish

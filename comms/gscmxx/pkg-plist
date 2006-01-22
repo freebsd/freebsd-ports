@@ -38,4 +38,4 @@ share/gscmxx/i18n/italian
 @dirrm share/gscmxx
 @dirrm share/pixmaps/gscmxx/groups
 @dirrm share/pixmaps/gscmxx
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps

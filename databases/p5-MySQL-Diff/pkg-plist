@@ -5,5 +5,5 @@
 bin/mysqldiff
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/MySQL 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL
+@dirrmtry %%SITE_PERL%%/MySQL

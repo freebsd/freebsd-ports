@@ -13,4 +13,4 @@
 @unexec rm -f %D/etc/xpdfrc.chinese-traditional
 @dirrm %%DATADIR%%/chinese-simplified
 @dirrm %%DATADIR%%/chinese-traditional
-@unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
+@dirrmtry %%DATADIR%%

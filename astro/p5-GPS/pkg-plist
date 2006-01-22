@@ -11,6 +11,6 @@
 @dirrm %%SITE_PERL%%/auto/GPS/Garmin
 @dirrm %%SITE_PERL%%/auto/GPS/Serial
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/Garmin
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/GPS 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/GPS 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS
+@dirrmtry %%SITE_PERL%%/GPS
+@dirrmtry %%SITE_PERL%%/auto/GPS

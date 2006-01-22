@@ -384,8 +384,8 @@ share/locale/uk/LC_MESSAGES/libgnomedb-3.mo
 share/locale/vi/LC_MESSAGES/libgnomedb-3.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomedb-3.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-3.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/pixmaps/libgnomedb
 @dirrm share/gnome/omf/libgnomedb
 @dirrm share/gnome/libgnomedb/dtd

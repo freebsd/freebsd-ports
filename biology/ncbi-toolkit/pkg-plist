@@ -759,4 +759,4 @@ lib/ncbi/libvibrant.a
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/seq_install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

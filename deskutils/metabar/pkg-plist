@@ -7,15 +7,15 @@ share/apps/metabar/html/layout.html
 share/apps/metabar/iconsrc
 share/icons/hicolor/16x16/apps/metabar.png
 share/icons/hicolor/32x32/apps/metabar.png
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/apps/metabar/html
 @dirrm share/apps/metabar
-@unexec rmdir %D/share/apps/konqsidebartng/entries 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqsidebartng/add 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqsidebartng 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrmtry share/apps/konqsidebartng/entries
+@dirrmtry share/apps/konqsidebartng/add
+@dirrmtry share/apps/konqsidebartng
+@dirrmtry share/apps

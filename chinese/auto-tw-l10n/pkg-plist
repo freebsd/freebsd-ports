@@ -10,4 +10,4 @@ share/skel/zh_TW.Big5/dot.vimrc
 share/skel/zh_TW.Big5/dot.xinitrc
 share/skel/zh_TW.Big5/make.conf
 share/skel/zh_TW.Big5/outta-port.supfile
-@unexec rmdir %D/share/skel/zh_TW.Big5 2>/dev/null || true
+@dirrmtry share/skel/zh_TW.Big5

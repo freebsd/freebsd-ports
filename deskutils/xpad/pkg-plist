@@ -19,4 +19,4 @@ share/locale/sk/LC_MESSAGES/xpad.mo
 share/locale/sl/LC_MESSAGES/xpad.mo
 share/locale/vi/LC_MESSAGES/xpad.mo
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

@@ -66,7 +66,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Utils.pm
 %%SITE_PERL%%/Test/SQL/Translator.pm
 @dirrm %%SITE_PERL%%/Test/SQL
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema/Graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Schema
 @dirrm %%SITE_PERL%%/SQL/Translator/Producer/XML
@@ -77,4 +77,4 @@ bin/sqlt-graph
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser/DB2
 @dirrm %%SITE_PERL%%/SQL/Translator/Parser
 @dirrm %%SITE_PERL%%/SQL/Translator
-@unexec rmdir %D/%%SITE_PERL%%/SQL 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SQL

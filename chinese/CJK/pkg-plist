@@ -475,7 +475,7 @@ share/texmf/tex/latex/CJK/thai/thaicjk.ldf
 @dirrm share/texmf/fonts/tfm/arphic/argbkai
 @dirrm share/texmf/fonts/tfm/arphic/argbsung
 @dirrm share/texmf/fonts/tfm/arphic
-@unexec rmdir %D/share/texmf/fonts/truetype/arphic 2>/dev/null || true
+@dirrmtry share/texmf/fonts/truetype/arphic
 @dirrm share/texmf/hbf2gf
 @dirrm share/texmf/tex/latex/CJK/Bg5
 @dirrm share/texmf/tex/latex/CJK/CEF

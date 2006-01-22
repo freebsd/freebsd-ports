@@ -5,6 +5,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase/InterBase.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/InterBase
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/InterBase
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

@@ -7375,7 +7375,7 @@ www/data-dist/egroupware/wiki/templates/jerryr/images/navbar-over.png
 www/data-dist/egroupware/wiki/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/wiki/templates/literati/images/navbar.png
 www/data-dist/egroupware/xmlrpc.php
-@unexec rmdir %D/www/data-dist/egroupware 2>/dev/null || true
+@dirrmtry www/data-dist/egroupware
 @dirrm www/data-dist/egroupware/wiki/templates/literati/images
 @dirrm www/data-dist/egroupware/wiki/templates/literati
 @dirrm www/data-dist/egroupware/wiki/templates/jerryr/images
@@ -8126,5 +8126,5 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/addressbook/inc/export
 @dirrm www/data-dist/egroupware/addressbook/inc
 @dirrm www/data-dist/egroupware/addressbook
-@unexec rmdir %D/www/data-dist/egroupware/fudforum 2>/dev/null || true
-@unexec rmdir %D/www/data-dist/egroupware 2>/dev/null || true
+@dirrmtry www/data-dist/egroupware/fudforum
+@dirrmtry www/data-dist/egroupware

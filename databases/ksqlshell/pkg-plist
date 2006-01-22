@@ -68,19 +68,19 @@ share/doc/HTML/en/ksqlshell/index.docbook
 share/icons/hicolor/32x32/apps/ksqlshell.png
 share/icons/locolor/16x16/apps/ksqlshell.png
 share/locale/de/LC_MESSAGES/ksqlshell.mo
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/hicolor
+@dirrmtry share/icons
+@dirrmtry share/doc/HTML
 @dirrm share/doc/HTML/en/ksqlshell
 @dirrm share/doc/HTML/de/ksqlshell
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
 @dirrm share/apps/ksqlshell/icons/hicolor/32x32/actions
 @dirrm share/apps/ksqlshell/icons/hicolor/32x32
 @dirrm share/apps/ksqlshell/icons/hicolor/16x16/actions
@@ -88,6 +88,6 @@ share/locale/de/LC_MESSAGES/ksqlshell.mo
 @dirrm share/apps/ksqlshell/icons/hicolor
 @dirrm share/apps/ksqlshell/icons
 @dirrm share/apps/ksqlshell
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk

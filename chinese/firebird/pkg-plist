@@ -591,5 +591,5 @@ bbs/boards/notepad/M.960994672.A
 @dirrm bbs/0Announce/bms
 @dirrm bbs/0Announce/bbslist
 @dirrm bbs/0Announce
-@unexec rmdir %D/bbs/log 2>/dev/null || true
+@dirrmtry bbs/log
 @dirrm bbs

@@ -25,23 +25,23 @@ share/locale/fr/LC_MESSAGES/kickpim.mo
 share/locale/it/LC_MESSAGES/kickpim.mo
 share/locale/nl/LC_MESSAGES/kickpim.mo
 share/locale/pl/LC_MESSAGES/kickpim.mo
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale
 @dirrm share/doc/HTML/en/kickpim
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
 @dirrm share/apps/kickpim/info
 @dirrm share/apps/kickpim/icons
 @dirrm share/apps/kickpim
-@unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
-@unexec rmdir %D/share/apps/kicker 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrmtry share/apps/kicker/applets
+@dirrmtry share/apps/kicker
+@dirrmtry share/apps

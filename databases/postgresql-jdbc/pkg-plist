@@ -21,4 +21,4 @@
 %%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/jdbc 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%

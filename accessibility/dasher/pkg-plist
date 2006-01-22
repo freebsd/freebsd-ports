@@ -250,8 +250,8 @@ share/locale/ug/LC_MESSAGES/dasher.mo
 share/locale/uk/LC_MESSAGES/dasher.mo
 share/locale/zh_CN/LC_MESSAGES/dasher.mo
 share/locale/zh_TW/LC_MESSAGES/dasher.mo
-@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrm share/gnome/omf/dasher
 @dirrm share/gnome/help/dasher/eu/figures
 @dirrm share/gnome/help/dasher/eu

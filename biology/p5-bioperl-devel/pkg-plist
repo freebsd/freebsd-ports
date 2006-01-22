@@ -1456,7 +1456,7 @@ bin/bp_unflatten_seq.pl
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
 @dirrm %%SITE_PERL%%/Bio/Variation/IO
 @dirrm %%SITE_PERL%%/Bio/Variation
 @dirrm %%SITE_PERL%%/Bio/TreeIO
@@ -1568,4 +1568,4 @@ bin/bp_unflatten_seq.pl
 @dirrm %%SITE_PERL%%/Bio/Annotation
 @dirrm %%SITE_PERL%%/Bio/AlignIO
 @dirrm %%SITE_PERL%%/Bio/Align
-@unexec rmdir %D/%%SITE_PERL%%/Bio 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bio
