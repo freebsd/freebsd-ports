@@ -38,17 +38,17 @@ share/icons/hicolor/16x16/apps/ktagebuch.png
 share/icons/hicolor/32x32/apps/ktagebuch.png
 share/locale/de/LC_MESSAGES/ktagebuch.mo
 share/locale/es/LC_MESSAGES/ktagebuch.mo
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/ktagebuch
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/ktagebuch
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
 @dirrm share/apps/ktagebuch/icons/crystalsvg/32x32/actions
 @dirrm share/apps/ktagebuch/icons/crystalsvg/32x32
 @dirrm share/apps/ktagebuch/icons/crystalsvg/16x16/actions
@@ -56,6 +56,6 @@ share/locale/es/LC_MESSAGES/ktagebuch.mo
 @dirrm share/apps/ktagebuch/icons/crystalsvg
 @dirrm share/apps/ktagebuch/icons
 @dirrm share/apps/ktagebuch
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk

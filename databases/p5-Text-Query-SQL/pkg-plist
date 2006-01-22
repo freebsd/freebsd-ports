@@ -7,7 +7,7 @@
 %%SITE_PERL%%/Text/Query/SolveSQL.pm
 %%SITE_PERL%%/Bundle/Text/Query/BuildSQL.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Query/SQL
-@unexec rmdir %D/%%SITE_PERL%%/Bundle/Text/Query 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Text/Query 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle/Text/Query
+@dirrmtry %%SITE_PERL%%/Bundle/Text
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/Text/Query

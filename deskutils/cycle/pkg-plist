@@ -29,14 +29,14 @@ share/locale/es/LC_MESSAGES/cycle.mo
 share/locale/gl/LC_MESSAGES/cycle.mo
 share/locale/ru/LC_MESSAGES/cycle.mo
 share/locale/sk/LC_MESSAGES/cycle.mo
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README_de.html
 %%DOCSDIR%%/README_ru.html

@@ -10,5 +10,5 @@ bin/dbimon
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Msql-Mysql-modules
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Mysql
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBD
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

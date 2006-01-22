@@ -4,7 +4,7 @@
 %%SQLITE3%%lib/dbd/libsqlite3.so
 %%FIREBIRD%%lib/dbd/libfirebird.so
 %%FREETDS%%lib/dbd/libfreetds.so
-@unexec rmdir %D/lib/dbd 2>/dev/null || true
+@dirrmtry lib/dbd
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql.pdf
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql/c136.html
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql/c35.html
@@ -52,4 +52,4 @@
 %%SQLITE2%%@dirrm %%DOCSDIR%%/dbd_sqlite
 %%SQLITE3%%@dirrm %%DOCSDIR%%/dbd_sqlite3
 %%FREETDS%%@dirrm %%DOCSDIR%%/dbd_freetds
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%

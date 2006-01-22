@@ -985,8 +985,8 @@ lib/konwert/aux/512bold1
 %%DATADIR%%/filters/winwest-macroman
 %%DATADIR%%/filters/xjp-UTF8
 %%DATADIR%%/filters/xmetodo-UTF8
-@unexec rmdir %D/man/pl/man1 2>/dev/null || true
-@unexec rmdir %D/man/pl 2>/dev/null || true
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
 @dirrm lib/konwert/aux
 @dirrm lib/konwert/devel
 @dirrm lib/konwert

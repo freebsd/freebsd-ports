@@ -14,11 +14,11 @@ share/locale/ru/LC_MESSAGES/scmxx.mo
 %%EXAMPLESDIR%%/vCalendar.vcs
 %%EXAMPLESDIR%%/vCard.vcf
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/man/de/man1 2>/dev/null || true
-@unexec rmdir %D/man/de/ 2>/dev/null || true
-@unexec rmdir %D/man/ru/man1 2>/dev/null || true
-@unexec rmdir %D/man/ru/ 2>/dev/null || true
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry man/de/man1
+@dirrmtry man/de/
+@dirrmtry man/ru/man1
+@dirrmtry man/ru/

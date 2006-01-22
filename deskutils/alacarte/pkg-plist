@@ -6,7 +6,7 @@ share/locale/nb/LC_MESSAGES/alacarte.mo
 share/locale/nl/LC_MESSAGES/alacarte.mo
 share/locale/no/LC_MESSAGES/alacarte.mo
 share/applications/alacarte.desktop
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 @cwd %%LOCALBASE%%
 %%PYTHON_SITELIBDIR%%/Alacarte/MenuHandler.py
 %%PYTHON_SITELIBDIR%%/Alacarte/PyXDGMenuHandler.py

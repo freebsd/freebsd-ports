@@ -13,10 +13,10 @@
 %%SITE_PERL%%/Data/ICal/Entry/Todo.pm
 %%SITE_PERL%%/Data/ICal/Property.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/Data/ICal/Entry/TimeZone 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Data/ICal/Entry/Alarm 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Data/ICal/Entry/TimeZone
+@dirrmtry %%SITE_PERL%%/Data/ICal/Entry/Alarm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ICal
 @dirrm %%SITE_PERL%%/Data/ICal/Entry
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Data/ICal 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/ICal
+@dirrmtry %%SITE_PERL%%/Data

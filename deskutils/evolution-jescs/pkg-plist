@@ -34,7 +34,7 @@ share/locale/uk/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
-@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zh_HK 2> /dev/null || true
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/evolution-jescs/glade
 @dirrm share/gnome/evolution-jescs

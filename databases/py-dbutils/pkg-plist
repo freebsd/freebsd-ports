@@ -66,7 +66,7 @@
 %%PYTHON_SITELIBDIR%%/DBUtils/SolidDB.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/SolidPg.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyo
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/DBUtils/Testing 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/DBUtils/Examples 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/DBUtils/Docs 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/DBUtils 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%/DBUtils/Testing
+@dirrmtry %%PYTHON_SITELIBDIR%%/DBUtils/Examples
+@dirrmtry %%PYTHON_SITELIBDIR%%/DBUtils/Docs
+@dirrmtry %%PYTHON_SITELIBDIR%%/DBUtils

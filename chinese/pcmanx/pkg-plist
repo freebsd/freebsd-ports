@@ -14,7 +14,7 @@ lib/libpcmanx_core.so.0
 %%DATADIR%%/nancy_bot/example_usages.data
 share/applications/pcmanx.desktop
 share/pixmaps/pcmanx.png
-@unexec rmdir %D/share/applications 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/nancy_bot 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/script 2>/dev/null || true
+@dirrmtry share/applications
+@dirrmtry %%DATADIR%%/nancy_bot
+@dirrmtry %%DATADIR%%/script
 @dirrm %%DATADIR%%

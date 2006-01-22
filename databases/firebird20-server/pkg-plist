@@ -11,7 +11,7 @@ sbin/gds_drop
 @unexec (cmp -s %D/%%CONFDIR%%/aliases.conf %D/%%CONFDIR%%/aliases.conf.sample && rm -f %D/%%CONFDIR%%/aliases.conf) || true
 %%CONFDIR%%/aliases.conf.sample
 @exec [ -f %B/aliases.conf ] || cp %B/%f %B/aliases.conf
-@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
+@dirrmtry %%CONFDIR%%
 @cwd /
 @unexec (cmp -s %D/%%LOCALSTATEDIR%%/security.fdb %D/%%LOCALSTATEDIR%%/security.fdb.sample && rm -f %D/%%LOCALSTATEDIR%%/security.fdb) || true
 %%LOCALSTATEDIR%%/security.fdb.sample
@@ -30,4 +30,4 @@ sbin/gds_drop
 @dirrm %%LOCALSTATEDIR%%/UDF
 @dirrm %%LOCALSTATEDIR%%/help
 @dirrm %%LOCALSTATEDIR%%/intl
-@unexec rmdir %D/%%LOCALSTATEDIR%% 2>/dev/null || true
+@dirrmtry %%LOCALSTATEDIR%%

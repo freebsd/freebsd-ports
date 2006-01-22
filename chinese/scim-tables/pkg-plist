@@ -32,4 +32,4 @@ share/scim/icons/Wu.png
 share/scim/icons/Wubi.png
 share/scim/icons/ZhuYin.png
 share/scim/icons/Ziranma.png
-@unexec rmdir %D/share/scim/tables 2>/dev/null || true
+@dirrmtry share/scim/tables

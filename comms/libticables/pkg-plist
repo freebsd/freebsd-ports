@@ -10,4 +10,4 @@ lib/libticables.so
 lib/libticables.so.12
 libdata/pkgconfig/ticables.pc
 share/locale/fr/LC_MESSAGES/libticables.mo
-@unexec rmdir %D/include/tilp 2>/dev/null || true
+@dirrmtry include/tilp

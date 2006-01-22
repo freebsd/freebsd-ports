@@ -18,4 +18,4 @@ share/doc/geda-doc/readmes/README.gsch2pcb
 share/doc/geda-doc/readmes/README.olib
 share/doc/geda-doc/readmes/README.tragesym
 share/gEDA/system-gschlasrc
-@unexec rmdir %D/share/doc/geda-doc/readmes 2>/dev/null || true
+@dirrmtry share/doc/geda-doc/readmes

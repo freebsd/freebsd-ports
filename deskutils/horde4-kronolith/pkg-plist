@@ -283,5 +283,5 @@
 @dirrm %%KRONOLITHDIR%%/lib/Driver
 @dirrm %%KRONOLITHDIR%%/lib/Block
 @dirrm %%KRONOLITHDIR%%/lib
-@unexec rmdir %D/%%KRONOLITHDIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%KRONOLITHDIR%% 2>/dev/null || true
+@dirrmtry %%KRONOLITHDIR%%/config
+@dirrmtry %%KRONOLITHDIR%%

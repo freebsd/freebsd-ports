@@ -1,4 +1,4 @@
 @comment $FreeBSD$
 bin/lunar
 share/chinese/lunar.bitmap
-@unexec rmdir %D/share/chinese 2>/dev/null || true
+@dirrmtry share/chinese

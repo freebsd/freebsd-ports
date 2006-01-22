@@ -42,4 +42,4 @@ apps/Memo/pretty_time.pyo
 @dirrm apps/Memo/Messages
 @dirrm apps/Memo/Help
 @dirrm apps/Memo
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

@@ -13,7 +13,7 @@ lib/postgresql/liblwgeom.so.1
 %%DATADIR%%/utils/create_undef.pl
 %%DATADIR%%/utils/README
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
-@unexec rmdir %D/lib/postgresql 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/utils 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/lib 2>/dev/null || true
+@dirrmtry lib/postgresql
+@dirrmtry %%DATADIR%%/utils
+@dirrmtry %%DATADIR%%
+@dirrmtry lib

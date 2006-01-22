@@ -38,5 +38,5 @@ usr/include/oracle/%%PORTVERSION%%/client/xa.h
 @dirrm usr/share/oracle/%%PORTVERSION%%/client
 @dirrm usr/share/oracle/%%PORTVERSION%%
 @dirrm usr/share/oracle
-@unexec rmdir %D/usr/include 2>/dev/null || true
-@unexec rmdir %D/usr/share   2>/dev/null || true
+@dirrmtry usr/include
+@dirrmtry usr/share  

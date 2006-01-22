@@ -19,4 +19,4 @@ share/guile/app/gwave/export.scm
 share/guile/app/gwave/gtk-helpers.scm
 share/guile/app/gwave/utils.scm
 @dirrm share/guile/app/gwave
-@unexec rmdir %D/share/guile/app 2>/dev/null || true
+@dirrmtry share/guile/app

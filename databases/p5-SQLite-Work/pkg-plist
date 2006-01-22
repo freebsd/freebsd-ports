@@ -5,5 +5,5 @@ bin/sqlw_import
 %%SITE_PERL%%/SQLite/Work/Template.pm
 %%SITE_PERL%%/SQLite/Work/CGI.pm
 %%SITE_PERL%%/SQLite/Work/Mail.pm
-@unexec rmdir %D/%%SITE_PERL%%/SQLite/Work 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SQLite 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SQLite/Work
+@dirrmtry %%SITE_PERL%%/SQLite

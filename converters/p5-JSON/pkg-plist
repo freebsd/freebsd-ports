@@ -9,4 +9,4 @@
 @dirrm %%SITE_PERL%%/JSONRPC/Transport
 @dirrm %%SITE_PERL%%/JSONRPC
 @dirrm %%SITE_PERL%%/JSON
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Apache

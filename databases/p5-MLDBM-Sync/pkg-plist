@@ -2,6 +2,6 @@
 %%SITE_PERL%%/MLDBM/Sync/SDBM_File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM/Sync/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM/Sync
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM
 @dirrm %%SITE_PERL%%/MLDBM/Sync
-@unexec rmdir %D/%%SITE_PERL%%/MLDBM 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/MLDBM

@@ -1877,8 +1877,8 @@
 @dirrm %%SUGARCRMDIR%%/cache/layout
 @dirrm %%SUGARCRMDIR%%/cache/pdf
 @dirrm %%SUGARCRMDIR%%/cache/upload
-@unexec rmdir %D/%%SUGARCRMDIR%%/cache/xml 2>/dev/null || true
-@unexec rmdir %D/%%SUGARCRMDIR%%/cache 2>/dev/null || true
+@dirrmtry %%SUGARCRMDIR%%/cache/xml
+@dirrmtry %%SUGARCRMDIR%%/cache
 @unexec rmdir %D/%%SUGARCRMDIR%% 2>/dev/null ||( echo "===>  There are files/directories remaining under %D/%%SUGARCRMDIR%%. If you wish to deinstall sugarcrm completely, inspect this directory for any files you may want to keep and then remove it.  Deinstall process kept these files/directories intact:" | fmt && for i in $(find %D/%%SUGARCRMDIR%%); do echo "    - $i"; done)
 %%PORTDOCS%%%%DOCSDIR%%/INSTALLATION.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

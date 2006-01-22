@@ -11,5 +11,5 @@ lib/libpgeasy.so.3
 %%PORTDOCS%%%%DOCSDIR%%/libpgeasy.html
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/examples/postgresql 2>/dev/null || true
-@unexec rmdir %D/share/doc/postgresql 2>/dev/null || true
+@dirrmtry share/examples/postgresql
+@dirrmtry share/doc/postgresql

@@ -4,4 +4,4 @@ etc/yaps.rc.sample
 %%PORTDOCS%%%%DOCSDIR%%/yaps.doc
 %%PORTDOCS%%%%DOCSDIR%%/yaps.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/yaps 2>/dev/null || true
+@dirrmtry share/yaps

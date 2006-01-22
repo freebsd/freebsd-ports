@@ -104,4 +104,4 @@ firebird/security2.fdb
 @dirrm firebird/include
 @dirrm firebird/intl
 @dirrm firebird/lib
-@unexec rmdir %D/firebird 2>/dev/null || true
+@dirrmtry firebird

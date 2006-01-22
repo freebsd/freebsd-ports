@@ -93,7 +93,7 @@ sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
 sbin/vgetty
-@unexec rmdir %D/etc/mgetty+sendfax 2>/dev/null || true
+@dirrmtry etc/mgetty+sendfax
 @dirrm lib/mgetty+sendfax/samples/new_fax.all
 @dirrm lib/mgetty+sendfax/samples
 @dirrm lib/mgetty+sendfax

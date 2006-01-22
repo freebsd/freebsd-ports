@@ -11,9 +11,9 @@
 @dirrm %%SITE_PERL%%/Search/InvertedIndex/Query
 @dirrm %%SITE_PERL%%/Search/InvertedIndex
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex
-@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex/DB 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex/Query 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Search 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Search/InvertedIndex/DB
+@dirrmtry %%SITE_PERL%%/Search/InvertedIndex/Query
+@dirrmtry %%SITE_PERL%%/Search/InvertedIndex
+@dirrmtry %%SITE_PERL%%/Search
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search

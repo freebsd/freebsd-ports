@@ -279,12 +279,12 @@ systemc/include/sysc/utils/sc_vector.h
 systemc/include/systemc
 systemc/include/systemc.h
 systemc/lib-freebsd/libsystemc.a
-@unexec rmdir %D/systemc/docs 2>/dev/null || true
+@dirrmtry systemc/docs
 @dirrm systemc/examples/sysc/2.1
 @dirrm systemc/examples/sysc/fft
 @dirrm systemc/examples/sysc
 @dirrm systemc/examples/systemc
-@unexec rmdir %D/systemc/examples 2>/dev/null || true
+@dirrmtry systemc/examples
 @dirrm systemc/include/sysc/communication
 @dirrm systemc/include/sysc/datatypes/bit
 @dirrm systemc/include/sysc/datatypes/fx
@@ -306,6 +306,6 @@ systemc/lib-freebsd/libsystemc.a
 @dirrm systemc/include/sysc/tracing
 @dirrm systemc/include/sysc/utils
 @dirrm systemc/include/sysc
-@unexec rmdir %D/systemc/include 2>/dev/null || true
-@unexec rmdir %D/systemc/lib-freebsd 2>/dev/null || true
-@unexec rmdir %D/systemc 2>/dev/null || true
+@dirrmtry systemc/include
+@dirrmtry systemc/lib-freebsd
+@dirrmtry systemc

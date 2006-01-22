@@ -3,4 +3,4 @@ bin/efax-0.9a
 bin/efix-0.9a
 etc/efax-gtkrc
 share/applications/efax-gtk.desktop
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

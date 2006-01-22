@@ -16,7 +16,7 @@ lib/iiim/locale/zh_TW/xcin/tab/sys.tab
 lib/iiim/locale/zh_TW/xcin/tab/telecode.tab
 @dirrm lib/iiim/locale/zh_TW/xcin/tab
 @dirrm lib/iiim/locale/zh_TW/xcin
-@unexec rmdir %D/lib/iiim/locale/zh_TW 2>/dev/null || true
-@unexec rmdir %D/lib/iiim/locale 2>/dev/null || true
-@unexec rmdir %D/lib/iiim/le/xcin 2>/dev/null || true
-@unexec rmdir %D/lib/iiim/le 2>/dev/null || true
+@dirrmtry lib/iiim/locale/zh_TW
+@dirrmtry lib/iiim/locale
+@dirrmtry lib/iiim/le/xcin
+@dirrmtry lib/iiim/le

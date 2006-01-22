@@ -25,5 +25,5 @@ bin/dbfcstocs
 %%SITE_PERL%%/Cz/Time.pm
 @dirrm %%SITE_PERL%%/Cz/Cstocs/enc
 @dirrm %%SITE_PERL%%/Cz/Cstocs
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cz 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz
+@dirrmtry %%SITE_PERL%%/Cz

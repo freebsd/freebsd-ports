@@ -2,5 +2,5 @@
 %%SITE_PERL%%/AsciiDB/TagFile.pm
 %%SITE_PERL%%/AsciiDB/TagRecord.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB/TagFile
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/AsciiDB 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB
+@dirrmtry %%SITE_PERL%%/AsciiDB

@@ -204,5 +204,5 @@
 @dirrm %%NAGDIR%%/lib/Driver
 @dirrm %%NAGDIR%%/lib/Block
 @dirrm %%NAGDIR%%/lib
-@unexec rmdir %D/%%NAGDIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%NAGDIR%% 2>/dev/null || true
+@dirrmtry %%NAGDIR%%/config
+@dirrmtry %%NAGDIR%%

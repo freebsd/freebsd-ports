@@ -185,5 +185,5 @@
 @dirrm %%MNEMODIR%%/lib/Driver
 @dirrm %%MNEMODIR%%/lib/Block
 @dirrm %%MNEMODIR%%/lib
-@unexec rmdir %D/%%MNEMODIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%MNEMODIR%% 2>/dev/null || true
+@dirrmtry %%MNEMODIR%%/config
+@dirrmtry %%MNEMODIR%%

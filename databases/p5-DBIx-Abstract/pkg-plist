@@ -2,7 +2,7 @@
 %%SITE_PERL%%/DBIx/Abstract.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/DBIx/Abstract 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Abstract
+@dirrmtry %%SITE_PERL%%/DBIx

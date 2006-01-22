@@ -17,6 +17,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Record
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Handle
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/DBIx/SearchBuilder 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/SearchBuilder
+@dirrmtry %%SITE_PERL%%/DBIx

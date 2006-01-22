@@ -4,4 +4,4 @@ usr/lib/oracle/%%PORTVERSION%%/client/lib/glogin.sql
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libsqlplus.so
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libsqlplusic.so
 @dirrm usr/lib/oracle/%%PORTVERSION%%/client/bin
-@unexec rmdir %D/usr/bin 2>/dev/null || true
+@dirrmtry usr/bin

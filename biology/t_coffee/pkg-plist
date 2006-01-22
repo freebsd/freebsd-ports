@@ -51,7 +51,7 @@ bin/t_coffee
 %%DATADIR%%/license.txt
 %%DATADIR%%/html/t_coffee.html
 %%DATADIR%%/html/t_coffee4html.cgi
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%
+@dirrmtry %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/html
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
