@@ -144,6 +144,7 @@
     SUBDIR += geist
     SUBDIR += geomview
     SUBDIR += geos
+    SUBDIR += gephex
     SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
