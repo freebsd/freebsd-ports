@@ -1,4 +1,6 @@
 MD5 (gdb-5.1.1.tar.bz2) = ad07a75320fd04fa4f80ac0f38cbd2eb
+SHA256 (gdb-5.1.1.tar.bz2) = ef36d3913f6d14d4adfd07bf8c7ceed05182227f3c7c1663a6fff1e089d34845
 SIZE (gdb-5.1.1.tar.bz2) = 10698836
 MD5 (msp430-gdb-5.1.1.20030909.tar.bz2) = a93e0c5fb79b3bbdd59164e54eefbec2
+SHA256 (msp430-gdb-5.1.1.20030909.tar.bz2) = 4561288c0ed109f6b17bb458185667a06efd05970a584899ab0a4fe055acc562
 SIZE (msp430-gdb-5.1.1.20030909.tar.bz2) = 265438
