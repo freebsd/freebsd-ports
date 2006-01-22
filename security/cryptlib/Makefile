@@ -16,6 +16,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A powerful security programming toolkit
 
 ONLY_FOR_ARCHS=		i386
+BROKEN=			Hard-codes libc_r linkage
 
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
