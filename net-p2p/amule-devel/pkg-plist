@@ -57,7 +57,7 @@ share/gnome/doc/aMule-2.1.0/socks4.protocol
 @dirrmtry share/gnome/doc
 %%PL_CAS%%share/gnome/cas/tmp.html
 %%PL_CAS%%share/gnome/cas/stat.png
-%%PL_CAS%%@unexec rmdir %D/share/gnome/cas 2>/dev/null || true
+%%PL_CAS%%@dirrmtry share/gnome/cas
 %%PL_CAS%%share/gnome/pixmaps/wxcas.xpm
 %%PL_ALC%%share/gnome/pixmaps/alc.xpm
 share/gnome/pixmaps/amule.xpm
@@ -225,11 +225,11 @@ share/gnome/applications/amule.desktop
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/stat_tree.php
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/login.html
 %%PL_AMULEWEBSRV%%share/gnome/amule/webserver/chicane/index.php
-%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/default 2>/dev/null || true
-%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/php-default 2>/dev/null || true
-%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver/chicane 2>/dev/null || true
-%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule/webserver 2>/dev/null || true
-%%PL_AMULEWEBSRV%%@unexec rmdir %D/share/gnome/amule 2>/dev/null || true
+%%PL_AMULEWEBSRV%%@dirrmtry share/gnome/amule/webserver/default
+%%PL_AMULEWEBSRV%%@dirrmtry share/gnome/amule/webserver/php-default
+%%PL_AMULEWEBSRV%%@dirrmtry share/gnome/amule/webserver/chicane
+%%PL_AMULEWEBSRV%%@dirrmtry share/gnome/amule/webserver
+%%PL_AMULEWEBSRV%%@dirrmtry share/gnome/amule
 lib/xchat/plugins/xas.pl
 @dirrmtry lib/xchat/plugins
 @dirrmtry lib/xchat

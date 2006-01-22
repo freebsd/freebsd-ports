@@ -1755,7 +1755,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/extensions
 @dirrm share/xsl/docbook/common
 @dirrm share/xsl/docbook
-@unexec rmdir %D/share/xsl || true
+@dirrmtry share/xsl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/website
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template

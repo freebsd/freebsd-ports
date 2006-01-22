@@ -70,8 +70,7 @@ pre-install:
 	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
 	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
 	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
-	${ECHO} '@unexec rmdir %D/share/xml/dtd 2>/dev/null || true' >> \
-	    ${PLIST}
+	${ECHO} '@dirrmtry share/xml/dtd' >> ${PLIST}
 	${ECHO} "@dirrm ${dir_DOC}/images" >> ${PLIST}
 	${ECHO} "@dirrm ${dir_DOC}" >> ${PLIST}
 	${ECHO} "@dirrm ${dir_TEMPLATES}" >> ${PLIST}

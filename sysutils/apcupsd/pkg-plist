@@ -28,4 +28,4 @@ etc/apcupsd/onbattery
 %%CGI%%etc/apcupsd/cgi/upsstats.cgi
 etc/rc.d/%%STARTUP_SCRIPT%%
 %%CGI%%@dirrm etc/apcupsd/cgi
-@unexec rmdir %D/etc/apcupsd 2>/dev/null || /usr/bin/true
+@dirrmtry etc/apcupsd

@@ -1590,4 +1590,4 @@
 @dirrm %%HORDEDIR%%/admin
 @dirrmtry %%HORDEDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%RMDIRINC%%@unexec rmdir %D/%%HORDE_INC%% 2>/dev/null || true
+%%RMDIRINC%%@dirrmtry %%HORDE_INC%%

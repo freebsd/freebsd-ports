@@ -67,9 +67,9 @@ build-plist: Makefile
 	${FIND} ${PREFIX}/${MPIDIR}/* -type d | \
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|@dirrm %%MPIDIR%%|' | \
 	    ${SORT} -r >> pkg-plist
-	${ECHO} "@unexec rmdir %D/%%MPIDIR%% 2>/dev/null || true" \
+	${ECHO} "@dirrmtry %%MPIDIR%%" \
 	    >> pkg-plist
-	${ECHO} "@unexec rmdir %D/%%MPIBASE%% 2>/dev/null || true" \
+	${ECHO} "@dirrmtry %D/%%MPIBASE%%" \
 	    >> pkg-plist
 
 .include <bsd.port.post.mk>

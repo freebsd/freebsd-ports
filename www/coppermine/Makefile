@@ -87,7 +87,6 @@ build-plist:
 	${FIND} ${DOCSDIR} -type d | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> pkg-plist
-	${ECHO} "@unexec rmdir %D/%%CPGDIR%% 2>/dev/null || true" \
-	    >> pkg-plist
+	${ECHO} "@dirrmtry %%CPGDIR%%" >> pkg-plist
 
 .include <bsd.port.mk>

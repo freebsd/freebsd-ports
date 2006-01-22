@@ -99,7 +99,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/gnome-pilot/glade
 @dirrm include/libgpilotdCM
 @dirrm include/gpilotd
-@unexec rmdir %D/share/gnome/gnome-pilot/conduits 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/share/gnome/gnome-pilot 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/lib/gnome-pilot/conduits 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/lib/gnome-pilot 2>/dev/null || /usr/bin/true
+@dirrmtry share/gnome/gnome-pilot/conduits
+@dirrmtry share/gnome/gnome-pilot
+@dirrmtry lib/gnome-pilot/conduits
+@dirrmtry lib/gnome-pilot

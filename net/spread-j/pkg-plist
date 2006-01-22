@@ -3,4 +3,4 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/java/recThread.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/java/User.java
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%

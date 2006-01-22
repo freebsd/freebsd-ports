@@ -14,9 +14,9 @@ lib/libpreludedb.so
 lib/libpreludedb.a
 lib/libpreludedb/plugins/formats/classic.so
 %%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
-%%WITH_MYSQL%%@unexec rmdir %D/lib/libpreludedb/plugins/sql 2> /dev/null || true
+%%WITH_MYSQL%%@dirrmtry lib/libpreludedb/plugins/sql
 %%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
-%%WITH_PGSQL%%@unexec rmdir %D/lib/libpreludedb/plugins/sql 2> /dev/null || true
+%%WITH_PGSQL%%@dirrmtry lib/libpreludedb/plugins/sql
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.bs

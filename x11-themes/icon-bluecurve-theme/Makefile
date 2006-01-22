@@ -44,6 +44,6 @@ do-build:
 
 pre-install:
 	@${ECHO_CMD} "@dirrm share/icons/Bluecurve" >> ${PLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/icons 2>/dev/null || true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/icons" >> ${PLIST}
 
 .include "${MASTERDIR}/Makefile"

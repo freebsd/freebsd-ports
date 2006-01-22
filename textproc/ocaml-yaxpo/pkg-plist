@@ -7,4 +7,4 @@ lib/ocaml/yaxpo.cmi
 lib/ocaml/yaxpo.cmxa
 lib/ocaml/yaxpodom.cmi
 lib/ocaml/yaxposax.cmi
-@unexec rmdir %Dlib/ocaml 2>/dev/null || true
+@dirrmtry lib/ocaml

@@ -1,7 +1,7 @@
 bin/lavaps
 %%NLS%%share/locale/es/LC_MESSAGES/lavaps.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lavaps.mo
-%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
 @exec chgrp kmem %D/bin/lavaps
 @exec chmod g+s %D/bin/lavaps

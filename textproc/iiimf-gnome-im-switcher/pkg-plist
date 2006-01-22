@@ -21,8 +21,8 @@ share/locale/ta/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/zh_CN/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/zh_TW/LC_MESSAGES/iiimf-im-switcher.mo
 share/locale/zh_HK/LC_MESSAGES/iiimf-im-switcher.mo
-@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES > /dev/null 2>&1 || true
-@unexec rmdir %D/share/locale/zh_HK > /dev/null 2>&1 || true
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 share/icons/hicolor/48x48/apps/gnome-settings-im.png
 share/gnome/pixmaps/gnome-settings-im.png
 share/gnome/pixmaps/gimlet-off.png
@@ -30,7 +30,7 @@ share/gnome/pixmaps/gimlet-on.png
 share/gnome/pixmaps/gimlet-disable.png
 share/gnome/control-center-2.0/capplets/gnome-im-properties.desktop
 share/gnome/control-center-2.0/interfaces/gnome-im-properties.glade2
-@unexec rmdir %D/share/gnome/control-center-2.0/interfaces > /dev/null 2>&1 || true
+@dirrmtry share/gnome/control-center-2.0/interfaces
 share/gnome/help/imswitcher/C/legal.xml
 share/gnome/help/imswitcher/C/imswitcher.xml
 @dirrm share/gnome/help/imswitcher/C

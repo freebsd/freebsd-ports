@@ -152,37 +152,37 @@ bin/gyes
 %%NLS%%share/locale/zh_CN/LC_TIME/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_TIME/coreutils.mo
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/tr/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sv/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sl/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sk/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pt_BR/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pt/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/pl/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/nl/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/nb/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ms/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/lg/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/lg/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/lg 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ko/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ja/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/hu/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/gl/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ga/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fi/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/et/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/da/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/cs/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ca/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/be/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/af/LC_TIME 2>/dev/null || true
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_TIME
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_TIME
+%%NLS%%@dirrmtry share/locale/tr/LC_TIME
+%%NLS%%@dirrmtry share/locale/sv/LC_TIME
+%%NLS%%@dirrmtry share/locale/sl/LC_TIME
+%%NLS%%@dirrmtry share/locale/sk/LC_TIME
+%%NLS%%@dirrmtry share/locale/ru/LC_TIME
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_TIME
+%%NLS%%@dirrmtry share/locale/pt/LC_TIME
+%%NLS%%@dirrmtry share/locale/pl/LC_TIME
+%%NLS%%@dirrmtry share/locale/no/LC_TIME
+%%NLS%%@dirrmtry share/locale/nl/LC_TIME
+%%NLS%%@dirrmtry share/locale/nb/LC_TIME
+%%NLS%%@dirrmtry share/locale/ms/LC_TIME
+%%NLS%%@dirrmtry share/locale/lg/LC_TIME
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg
+%%NLS%%@dirrmtry share/locale/ko/LC_TIME
+%%NLS%%@dirrmtry share/locale/ja/LC_TIME
+%%NLS%%@dirrmtry share/locale/it/LC_TIME
+%%NLS%%@dirrmtry share/locale/hu/LC_TIME
+%%NLS%%@dirrmtry share/locale/gl/LC_TIME
+%%NLS%%@dirrmtry share/locale/ga/LC_TIME
+%%NLS%%@dirrmtry share/locale/fr/LC_TIME
+%%NLS%%@dirrmtry share/locale/fi/LC_TIME
+%%NLS%%@dirrmtry share/locale/et/LC_TIME
+%%NLS%%@dirrmtry share/locale/es/LC_TIME
+%%NLS%%@dirrmtry share/locale/el/LC_TIME
+%%NLS%%@dirrmtry share/locale/de/LC_TIME
+%%NLS%%@dirrmtry share/locale/da/LC_TIME
+%%NLS%%@dirrmtry share/locale/cs/LC_TIME
+%%NLS%%@dirrmtry share/locale/ca/LC_TIME
+%%NLS%%@dirrmtry share/locale/be/LC_TIME
+%%NLS%%@dirrmtry share/locale/af/LC_TIME

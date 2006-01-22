@@ -388,4 +388,4 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications > /dev/null 2>&1 | true
+@dirrmtry share/applications

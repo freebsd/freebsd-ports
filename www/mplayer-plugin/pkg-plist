@@ -26,4 +26,4 @@ share/locale/pt_BR/LC_MESSAGES/mplayerplug-in.mo
 share/locale/ru/LC_MESSAGES/mplayerplug-in.mo
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
-@unexec rmdir %D/lib/browser_plugins 2>/dev/null || /usr/bin/true
+@dirrmtry lib/browser_plugins

@@ -40,7 +40,7 @@ etc/openldap/slapd.conf.default
 %%BACK_SQL%%libexec/openldap/back_sql.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.2.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.2.so.7
-%%MODULES%%@unexec rmdir %D/libexec/openldap 2>/dev/null || true
+%%MODULES%%@dirrmtry libexec/openldap
 libexec/slapd
 libexec/slurpd
 @comment sbin/slapacl

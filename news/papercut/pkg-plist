@@ -49,9 +49,7 @@ bin/papercut
 @unexec [ -f %D/%%DATADIR%%/storage/phpbb_mysql.pyc ] && rm %D/%%DATADIR%%/storage/phpbb_mysql.pyc || true
 @unexec [ -f %D/%%DATADIR%%/storage/strutil.pyc ] && rm %D/%%DATADIR%%/storage/strutil.pyc || true
 @dirrm %%DATADIR%%/auth
-@unexec [ -d %D/%%DATADIR%%/cache ] && rmdir %%DATADIR%%/cache 2>/dev/null || true
-@unexec [ -d %D/%%DATADIR%%/logs ] && rmdir %%DATADIR%%/logs 2>/dev/null || true
 @dirrm %%DATADIR%%/storage
-@unexec rmdir %D/%%DATADIR%%/cache || true
-@unexec rmdir %D/%%DATADIR%%/logs || true
+@dirrmtry %%DATADIR%%/cache
+@dirrmtry %%DATADIR%%/logs
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt

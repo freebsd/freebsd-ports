@@ -30,4 +30,4 @@ include/poly1305/poly1305aes_ppro.h
 include/poly1305/poly1305aes_sparc.h
 lib/cpucycles.a
 lib/poly1305aes.a
-@unexec rmdir %D/include/poly1305 || true
+@dirrmtry include/poly1305

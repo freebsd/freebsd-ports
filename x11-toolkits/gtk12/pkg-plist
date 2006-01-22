@@ -220,8 +220,8 @@ share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @exec mkdir -p %D/lib/gtk/themes/engines
-%%NLS%%@unexec rmdir %D/share/locale/sp/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sp 2> /dev/null || true
+%%NLS%%@dirrmtry share/locale/sp/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sp
 @dirrm lib/gtk/themes/engines
 @dirrm lib/gtk/themes
 @dirrm lib/gtk

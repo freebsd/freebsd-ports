@@ -53,12 +53,12 @@ pre-install:
 	@${ECHO_CMD} "${DTDDIR}/${F}" >> ${PLIST}
 .endfor
 	@${ECHO_CMD} "@dirrm ${DTDDIR}" >> ${PLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${XMLCATBASE}/${DTD_NAME} 2> /dev/null || true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${XMLCATBASE}/${DTD_NAME}" >> ${PLIST}
 .ifndef NOPORTDOCS
 .for F in ${DOC_FILES}
 	@${ECHO_CMD} "${DOCSDIR:S!^${PREFIX}/!!}/${F}.${PORTVERSION}" >> ${PLIST}
 .endfor
-	@${ECHO_CMD} "@unexec rmdir %D/${DOCSDIR:S!^${PREFIX}/!!} 2> /dev/null || true" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!}" >> ${PLIST}
 .endif
 	@${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_XML}" >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_XML}" >> ${PLIST}

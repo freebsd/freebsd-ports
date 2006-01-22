@@ -142,8 +142,8 @@
 @dirrm %%DRUPDIR%%/themes/chameleon
 @dirrm %%DRUPDIR%%/themes/bluemarine
 @dirrm %%DRUPDIR%%/themes
-@unexec rmdir %D/%%DRUPDIR%%/sites/default 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/%%DRUPDIR%%/sites 2>/dev/null || /usr/bin/true
+@dirrmtry %%DRUPDIR%%/sites/default
+@dirrmtry %%DRUPDIR%%/sites
 @dirrm %%DRUPDIR%%/scripts
 @dirrm %%DRUPDIR%%/modules
 @dirrm %%DRUPDIR%%/misc

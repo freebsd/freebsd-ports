@@ -49,17 +49,17 @@ libexec/apache2/mod_apreq2.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.bs
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/APR/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/ 2>/dev/null || true
-%%WITH_MODPERL2%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/ 2>/dev/null || true
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/
 %%WITH_MODPERL2%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
 @dirrm include/apache2/apreq2
 @dirrm include/apreq2
