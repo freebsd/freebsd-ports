@@ -10,4 +10,4 @@ bin/rtjshow
 include/movtar.h
 lib/libmovtar.a
 share/aclocal/movtar.m4
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
+@dirrmtry share/aclocal

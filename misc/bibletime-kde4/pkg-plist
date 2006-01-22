@@ -162,29 +162,29 @@ share/icons/hicolor/48x48/actions/bt_tile_auto.png
 share/icons/hicolor/48x48/apps/bibletime.png
 share/icons/hicolor/64x64/apps/bibletime.png
 share/doc/HTML/en/common/common
-@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48/actions
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
 @dirrm share/doc/HTML/en/bibletime/howto
 @dirrm share/doc/HTML/en/bibletime/handbook
 @dirrm share/doc/HTML/en/bibletime
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrmtry share/config
 @unexec rmdir %D/share/apps/bibletime/pics
-@unexec rmdir %D/share/apps/bibletime 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps/bibletime
+@dirrmtry share/apps
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk

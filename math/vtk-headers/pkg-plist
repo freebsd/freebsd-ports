@@ -978,11 +978,11 @@ share/vtk/doxygen/paper-clip.gif
 share/vtk/doxygen/pic.gif
 share/vtk/doxygen/vtk-logo.gif
 @dirrm share/vtk/doxygen
-@unexec rmdir %D/share/vtk 2>/dev/null || true
+@dirrmtry share/vtk
 @dirrm %%DOCSDIR%%
 @dirrm lib/vtk/CMake
-@unexec rmdir %D/lib/vtk 2>/dev/null || true
+@dirrmtry lib/vtk
 @dirrm include/vtk/vtkstd
 @dirrm include/vtk/DICOMParser
 @dirrm include/vtk
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%

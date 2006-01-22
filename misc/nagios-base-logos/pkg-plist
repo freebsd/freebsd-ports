@@ -124,6 +124,6 @@
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.gif
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.jpg
 %%NAGIOSWWWDIR%%/images/logos/yellowdog.png
-@unexec rmdir %D/%%NAGIOSWWWDIR%%/images/logos 2>/dev/null || true
-@unexec rmdir %D/%%NAGIOSWWWDIR%%/images 2>/dev/null || true
-@unexec rmdir %D/%%NAGIOSWWWDIR%% 2>/dev/null || true
+@dirrmtry %%NAGIOSWWWDIR%%/images/logos
+@dirrmtry %%NAGIOSWWWDIR%%/images
+@dirrmtry %%NAGIOSWWWDIR%%

@@ -96,7 +96,7 @@ bin/mplayer
 %%DATADIR%%/input.conf
 %%DATADIR%%/menu.conf
 @dirrm %%DATADIR%%/tools
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%VIDIX%%@dirrm lib/mplayer/vidix
 %%VIDIX%%@dirrm lib/mplayer

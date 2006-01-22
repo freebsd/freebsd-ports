@@ -22,5 +22,5 @@
 @dirrm %%SITE_PERL%%/Graph/AdjacencyMap
 @dirrm %%SITE_PERL%%/Graph/TransitiveClosure
 @dirrm %%SITE_PERL%%/Graph/Traversal
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
+@dirrmtry %%SITE_PERL%%/Graph

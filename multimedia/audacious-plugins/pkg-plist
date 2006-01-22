@@ -95,4 +95,4 @@ share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm lib/audacious/Effect
 @dirrm lib/audacious
 @dirrm include/audacious
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

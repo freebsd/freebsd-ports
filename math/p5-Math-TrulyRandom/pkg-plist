@@ -8,5 +8,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/truerand.h
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/TrulyRandom
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Math 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

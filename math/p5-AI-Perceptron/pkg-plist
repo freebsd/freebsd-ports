@@ -1,2 +1,2 @@
 %%SITE_PERL%%/AI/Perceptron.pm
-@unexec rmdir %D/%%SITE_PERL%%/AI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/AI

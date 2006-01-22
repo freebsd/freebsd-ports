@@ -70,4 +70,4 @@ share/locale/sr/LC_MESSAGES/dvdstyler.mo
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications

@@ -7,15 +7,15 @@ share/apps/noatun/icons/hicolor/22x22/actions/noatunshuffle.png
 share/apps/noatun/icons/hicolor/32x32/actions/nextsection.png
 share/apps/noatun/icons/hicolor/32x32/actions/prevsection.png
 share/services/noatunhayessetcurrent.desktop
-@unexec rmdir %D/share/services 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons/hicolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons/hicolor/22x22/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun/icons 2>/dev/null || true
-@unexec rmdir %D/share/apps/noatun 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/lib/kde3 2>/dev/null || true
+@dirrmtry share/services
+@dirrmtry share/apps/noatun/icons/hicolor/32x32/actions
+@dirrmtry share/apps/noatun/icons/hicolor/32x32
+@dirrmtry share/apps/noatun/icons/hicolor/22x22/actions
+@dirrmtry share/apps/noatun/icons/hicolor/22x22
+@dirrmtry share/apps/noatun/icons/hicolor
+@dirrmtry share/apps/noatun/icons
+@dirrmtry share/apps/noatun
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps
+@dirrmtry lib/kde3

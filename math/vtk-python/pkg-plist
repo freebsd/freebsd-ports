@@ -172,7 +172,7 @@ lib/vtk/python/wxVTKRenderWindow.pyo
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README.patented-classes
 %%DOCSDIR%%/vtkLogo.jpg
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%
 @dirrm lib/vtk/python/vtk/wx
 @dirrm lib/vtk/python/vtk/util
 @dirrm lib/vtk/python/vtk/tk
@@ -181,5 +181,5 @@ lib/vtk/python/wxVTKRenderWindow.pyo
 @dirrm lib/vtk/python/vtk/gtk
 @dirrm lib/vtk/python/vtk
 @dirrm lib/vtk/python
-@unexec rmdir %D/lib/vtk 2>/dev/null || true
+@dirrmtry lib/vtk
 @unexec rm %%VTK_PTH_LOCATION_DIR%%/vtk.pth 2>/dev/null || true

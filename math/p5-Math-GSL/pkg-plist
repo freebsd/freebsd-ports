@@ -3,5 +3,5 @@
 %%SITE_PERL%%/mach/auto/Math/GSL/.packlist
 %%SITE_PERL%%/mach/Math/GSL.pm
 @dirrm %%SITE_PERL%%/mach/auto/Math/GSL
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Math 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/Math 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/mach/auto/Math
+@dirrmtry %%SITE_PERL%%/mach/Math

@@ -26,6 +26,6 @@ share/applications/freeguide.desktop
 %%JAVASHAREDIR%%/pixmaps/freeguide/logo-72x72.png
 %%JAVASHAREDIR%%/pixmaps/freeguide/logo-96x96.png
 @dirrm %%JAVASHAREDIR%%/pixmaps/freeguide
-@unexec rmdir %D/%%JAVASHAREDIR%%/pixmaps 2>/dev/null || true
+@dirrmtry %%JAVASHAREDIR%%/pixmaps
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

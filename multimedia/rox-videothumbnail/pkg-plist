@@ -15,4 +15,4 @@ apps/VideoThumbnail/vidthumb.py
 apps/VideoThumbnail/vidthumb.pyc
 @dirrm apps/VideoThumbnail/Help
 @dirrm apps/VideoThumbnail
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

@@ -418,17 +418,17 @@ share/mime/video/x-msvideo.xml
 share/mime/video/x-nsv.xml
 share/mime/video/x-real-video.xml
 share/mime/video/x-sgi-movie.xml
-@unexec rmdir %D/share/mime/video 2>/dev/null || true
-@unexec rmdir %D/share/mime/text 2>/dev/null || true
-@unexec rmdir %D/share/mime/packages 2>/dev/null || true
-@unexec rmdir %D/share/mime/multipart 2>/dev/null || true
-@unexec rmdir %D/share/mime/model 2>/dev/null || true
-@unexec rmdir %D/share/mime/message 2>/dev/null || true
-@unexec rmdir %D/share/mime/inode 2>/dev/null || true
-@unexec rmdir %D/share/mime/image 2>/dev/null || true
-@unexec rmdir %D/share/mime/audio 2>/dev/null || true
-@unexec rmdir %D/share/mime/application 2>/dev/null || true
-@unexec rmdir %D/share/mime 2>/dev/null || true
+@dirrmtry share/mime/video
+@dirrmtry share/mime/text
+@dirrmtry share/mime/packages
+@dirrmtry share/mime/multipart
+@dirrmtry share/mime/model
+@dirrmtry share/mime/message
+@dirrmtry share/mime/inode
+@dirrmtry share/mime/image
+@dirrmtry share/mime/audio
+@dirrmtry share/mime/application
+@dirrmtry share/mime
 @unexec [ -f %%X11BASE%%/share/mime/XMLnamespaces ] && rm -f %%X11BASE%%/share/mime/XMLnamespaces || true
 @unexec [ -f %%X11BASE%%/share/mime/globs ] && rm -f %%X11BASE%%/share/mime/globs || true
 @unexec [ -f %%X11BASE%%/share/mime/magic ] && rm -f %%X11BASE%%/share/mime/magic || true

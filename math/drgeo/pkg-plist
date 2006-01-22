@@ -211,11 +211,11 @@ share/locale/sv/LC_MESSAGES/drgeo.mo
 share/locale/uk/LC_MESSAGES/drgeo.mo
 share/locale/zh_CN/LC_MESSAGES/drgeo.mo
 share/locale/zh_TW/LC_MESSAGES/drgeo.mo
-@unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo/progs 2>/dev/null || true
-@unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo 2>/dev/null || true
-@unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins 2>/dev/null || true
-@unexec rmdir %D/share/gnome/texmacs/TeXmacs 2>/dev/null || true
-@unexec rmdir %D/share/gnome/texmacs 2>/dev/null || true
+@dirrmtry share/gnome/texmacs/TeXmacs/plugins/drgeo/progs
+@dirrmtry share/gnome/texmacs/TeXmacs/plugins/drgeo
+@dirrmtry share/gnome/texmacs/TeXmacs/plugins
+@dirrmtry share/gnome/texmacs/TeXmacs
+@dirrmtry share/gnome/texmacs
 @dirrm share/gnome/drgeo/scm
 @dirrm share/gnome/drgeo/glade
 @dirrm share/gnome/drgeo/examples/scheme

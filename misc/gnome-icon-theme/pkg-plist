@@ -2707,10 +2707,10 @@ share/icons/hicolor/96x96/apps/gnome-globe.png
 share/icons/hicolor/96x96/apps/gnome-starthere.png
 share/icons/hicolor/scalable/apps/evolution.svg
 share/icons/hicolor/scalable/apps/volume-knob.svg
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @unexec /bin/rmdir %D/share/icons/hicolor/96x96 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/icons/hicolor/72x72 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/generic 2>/dev/null || /usr/bin/true

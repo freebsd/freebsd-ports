@@ -47,9 +47,9 @@ share/xfce4/weather/icons/liquid/6.png
 share/xfce4/weather/icons/liquid/7.png
 share/xfce4/weather/icons/liquid/8.png
 share/xfce4/weather/icons/liquid/9.png
-@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/weather/icons/liquid 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/weather/icons 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/weather 2>/dev/null || true
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
+@dirrmtry share/xfce4/weather/icons/liquid
+@dirrmtry share/xfce4/weather/icons
+@dirrmtry share/xfce4/weather
+@dirrmtry share/xfce4

@@ -15,8 +15,8 @@ share/doc/i18n-man/byte-compile
 @dirrm lib/xemacs/site-packages/lisp/i18n-man-de
 @dirrm lib/xemacs/site-packages/lisp/i18n-man-en
 @dirrm lib/xemacs/site-packages/lisp/i18n-man-ja
-@unexec rmdir %D/lib/xemacs/site-packages/lisp 2> /dev/null || true
-@unexec rmdir %D/lib/xemacs/site-packages/pkginfo 2> /dev/null || true
-@unexec rmdir %D/lib/xemacs/site-packages 2> /dev/null || true
-@unexec rmdir %D/lib/xemacs 2> /dev/null || true
+@dirrmtry lib/xemacs/site-packages/lisp
+@dirrmtry lib/xemacs/site-packages/pkginfo
+@dirrmtry lib/xemacs/site-packages
+@dirrmtry lib/xemacs
 @dirrm share/doc/i18n-man

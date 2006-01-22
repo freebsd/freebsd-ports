@@ -102,7 +102,7 @@ bin/dvdrip-master
 %%SITE_PERL%%/LocaleData/sr/LC_MESSAGES/video.dvdrip.mo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/DVDRip
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video
 @dirrm %%SITE_PERL%%/Video/DVDRip/RPC
 @dirrm %%SITE_PERL%%/Video/DVDRip/Job
 @dirrm %%SITE_PERL%%/Video/DVDRip/GUI/Setting
@@ -113,17 +113,17 @@ bin/dvdrip-master
 @dirrm %%SITE_PERL%%/Video/DVDRip/Cluster
 @dirrm %%SITE_PERL%%/Video/DVDRip/CPAN
 @dirrm %%SITE_PERL%%/Video/DVDRip
-@unexec rmdir %D/%%SITE_PERL%%/Video 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/sr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/cs 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/de 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/es 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/fr 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/it 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData/sr 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/LocaleData 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Video
+@dirrmtry %%SITE_PERL%%/LocaleData/cs/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/de/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/es/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/fr/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/it/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/sr/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/cs
+@dirrmtry %%SITE_PERL%%/LocaleData/de
+@dirrmtry %%SITE_PERL%%/LocaleData/es
+@dirrmtry %%SITE_PERL%%/LocaleData/fr
+@dirrmtry %%SITE_PERL%%/LocaleData/it
+@dirrmtry %%SITE_PERL%%/LocaleData/sr
+@dirrmtry %%SITE_PERL%%/LocaleData

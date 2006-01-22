@@ -212,8 +212,8 @@ share/xine/libxine1/fonts/serif-64.xinefont.gz
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%/faq
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
 @dirrm share/xine/libxine1/fonts
 @dirrm share/xine/libxine1
 @dirrm share/xine

@@ -132,6 +132,6 @@ bin/smssend
 %%DATADIR%%/vizzaviuk.sms
 %%DATADIR%%/vodacom.sms
 %%DATADIR%%/yab.sms
-@unexec rmdir %D/man/fr/man1 2>/dev/null || true
-@unexec rmdir %D/man/fr 2>/dev/null || true
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
 @dirrm %%DATADIR%%

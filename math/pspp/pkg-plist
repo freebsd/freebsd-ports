@@ -4,4 +4,4 @@ etc/pspp/devices
 etc/pspp/html-prologue
 etc/pspp/papersize
 etc/pspp/ps-prologue
-@unexec rmdir %D/etc/pspp 2>/dev/null || true
+@dirrmtry etc/pspp

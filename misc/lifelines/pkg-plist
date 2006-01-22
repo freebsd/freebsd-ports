@@ -22,24 +22,24 @@ bin/llines
 %%NLS%%share/locale/pl/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/lifelines.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/lifelines.mo
-@unexec rmdir %D/share/locale/da/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/da 2> /dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/de 2> /dev/null || true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/el 2> /dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/fr 2> /dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/it 2> /dev/null || true
-@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sv 2> /dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/pl 2> /dev/null || true
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/nl 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 %%DATADIR%%/2ppage.ll
 %%DATADIR%%/4gen1.ll
 %%DATADIR%%/6gen1.ll

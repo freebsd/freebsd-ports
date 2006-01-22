@@ -206,4 +206,4 @@ lib/compat/snmp_netgraph.so.2
 %%AMD64%%@exec %%LDCONFIG_LIB32%% -m %D/lib32/compat
 %%AMD64%%@unexec rmdir %D/lib32/compat 2>/dev/null || true
 %%AMD64%%@unexec rmdir %D/lib32 2>/dev/null || true
-@unexec rmdir %D/lib/compat 2>/dev/null || true
+@dirrmtry lib/compat

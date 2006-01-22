@@ -881,7 +881,7 @@
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Install
 @dirrm %%EXAMPLESDIR%%/Testing/Common/Cxx
 @dirrm %%EXAMPLESDIR%%/Testing/Common
-@unexec rmdir %D/%%EXAMPLESDIR%%/Testing 2>/dev/null || true
+@dirrmtry %%EXAMPLESDIR%%/Testing
 @dirrm %%EXAMPLESDIR%%/Examples/VolumeRendering/Tcl
 @dirrm %%EXAMPLESDIR%%/Examples/VolumeRendering/Python
 @dirrm %%EXAMPLESDIR%%/Examples/VolumeRendering
@@ -993,5 +993,5 @@
 @dirrm %%EXAMPLESDIR%%/Examples/AMR/Cxx
 @dirrm %%EXAMPLESDIR%%/Examples/AMR
 @dirrm %%EXAMPLESDIR%%/Examples
-@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DOCSDIR%%
