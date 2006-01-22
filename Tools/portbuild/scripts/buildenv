@@ -7,6 +7,8 @@ buildenv () {
     arch=$2
     branch=$3
 
+    export X11BASE=/usr/X11R6
+    export LOCALBASE=/usr/local
     case "x$branch" in
 	x4)
     	export PKGSUFFIX=.tgz
