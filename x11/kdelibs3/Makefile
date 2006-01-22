@@ -42,6 +42,7 @@ CONFLICTS+=	kdeadmin-3.[0-3].* kdeadmin-3.4.[0-1]* kdeartwork-3.[2-3]* kdebase-3
 CONFLICTS+=	kdelibs-[0-9]*
 PKGNAMESUFFIX=	-nocups
 CONFIGURE_ARGS+=--disable-cups
+PLIST=		${.CURDIR}/../kdelibs3-nocups/pkg-plist
 .else
 CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
