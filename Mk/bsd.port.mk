@@ -5002,8 +5002,8 @@ generate-plist:
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
 .for reinplace in ${PLIST_REINPLACE}
-.if defined(PLIST_REINPLACE_${reinplace})
-	@${SED} -e '${PLIST_REINPLACE_${reinplace:U}}' ${PLIST} >> ${TMPPLIST}
+.if defined(PLIST_REINPLACE_${reinplace:U})
+	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:U}}' ${TMPPLIST}
 .endif
 .endfor
  
