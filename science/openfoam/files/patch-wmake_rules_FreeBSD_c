@@ -1,0 +1,11 @@
+--- wmake/rules/FreeBSD/c.orig	Mon Nov 22 18:30:37 2004
++++ wmake/rules/FreeBSD/c	Sat Dec 17 23:56:13 2005
+@@ -2,7 +2,7 @@
+ 
+ cWARN        = -Wall
+ 
+-cc          = gcc -m32
++cc          = $(CC)
+ 
+ include $(RULES)/c$(WM_COMPILE_OPTION)
+ 

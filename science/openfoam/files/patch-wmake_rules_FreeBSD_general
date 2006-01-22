@@ -1,0 +1,9 @@
+--- wmake/rules/FreeBSD/general.orig	Mon Apr 18 20:22:21 2005
++++ wmake/rules/FreeBSD/general	Sat Dec 24 00:40:11 2005
+@@ -1,5 +1,4 @@
+-CPP        = /lib/cpp -D$(WM_ARCH)
+-LD         = ld -melf_i386
++CPP 	+= -D$(WM_ARCH)
+ 
+ include $(RULES)/X
+ 

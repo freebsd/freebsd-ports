@@ -1,0 +1,10 @@
+--- wmake/Makefile.orig	Tue Jun 21 18:10:23 2005
++++ wmake/Makefile	Sun Dec 18 21:16:33 2005
+@@ -143,6 +143,7 @@
+ $(EXE):  $(OBJECTS)
+ 	     $(WM_SCRIPTS)/mkObjectDir $(EXE)
+ 	     $(LINKEXE) $(OBJECTS) -L$(LIB_WM_OPTIONS_DIR) \
++	     -rpath-link $(LIB_WM_OPTIONS_DIR) -rpath-link $(FOAM_MPI_LIBBIN) \
+ 	     $(EXE_LIBS) -l$(WM_PROJECT) $(SYS_LIBS) $(LINK_LIBS) $(GLIBS) -o $(EXE)
+ 
+ exe:     $(SEXE)

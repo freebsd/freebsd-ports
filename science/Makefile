@@ -49,6 +49,7 @@
     SUBDIR += oases
     SUBDIR += omnetpp
     SUBDIR += openbabel
+    SUBDIR += openfoam
     SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += paraview
