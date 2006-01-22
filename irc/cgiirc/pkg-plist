@@ -122,4 +122,4 @@ www/cgiirc/nph-irc.cgi
 @dirrm www/cgiirc/images
 @dirrm www/cgiirc/formats
 @dirrm www/cgiirc/docs
-@unexec rmdir %D/www/cgiirc >/dev/null 2>&1 || true
+@dirrmtry www/cgiirc

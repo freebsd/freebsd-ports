@@ -2103,7 +2103,7 @@ etc/rc.d/mailman.sh
 @dirrmtry %%MMDIR%%/data
 @dirrmtry %%MMDIR%%/archives/public
 @dirrmtry %%MMDIR%%/archives/private
-%%SUB_HTDIG%%@unexec rmdir %D/%%MMDIR%%/archives/htdig 2>/dev/null || true
+%%SUB_HTDIG%%@dirrmtry %%MMDIR%%/archives/htdig
 @dirrmtry %%MMDIR%%/archives
 @dirrmtry %%MMDIR%%/Mailman
 @dirrmtry %%MMDIR%%/

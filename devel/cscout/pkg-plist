@@ -13,7 +13,7 @@ etc/cscout/cscout_incs.GENERIC
 etc/cscout/cscout_incs.LINUX_GCC
 etc/cscout/cscout_incs.WIN32_MINGW
 etc/cscout/cscout_incs.WIN32_MSC
-@unexec rmdir %D/etc/cscout || true
+@dirrmtry etc/cscout
 %%PORTDOCS%%%%DOCSDIR%%/access.html
 %%PORTDOCS%%%%DOCSDIR%%/contents.html
 %%PORTDOCS%%%%DOCSDIR%%/cvs.html

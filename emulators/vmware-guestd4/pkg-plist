@@ -2,8 +2,8 @@ sbin/vmware-checkvm
 sbin/vmware-guestd
 etc/rc.d/vmware-guestd.sh
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
-%%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools/modules 2>/dev/null || true
-%%VMWARE_VMMEMCTL:%%@unexec rmdir %D/lib/vmware-tools 2>/dev/null || true
+%%VMWARE_VMMEMCTL:%%@dirrmtry lib/vmware-tools/modules
+%%VMWARE_VMMEMCTL:%%@dirrmtry lib/vmware-tools
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/suspend-vm-default

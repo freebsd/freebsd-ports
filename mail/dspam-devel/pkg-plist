@@ -110,7 +110,7 @@ libdata/pkgconfig/dspam.pc
 %%CGI%%@dirrm www/vhosts/dspam/templates
 %%CGI%%@dirrm www/vhosts/dspam
 %%CGI%%@dirrm www/vhosts
-%%CGI%%@unexec rmdir %D/www 2>/dev/null || true
+%%CGI%%@dirrmtry www
 @dirrm include/dspam
 @cwd %%DSPAM_HOME%%
 firstrun.txt.sample

@@ -5006,5 +5006,5 @@ usr/X11R6/man/man3/gluUnProject.3x.gz
 @dirrm usr/X11R6/include/X11
 @dirrm usr/X11R6/lib/X11/config
 @dirrm usr/X11R6/lib/X11
-@unexec rmdir %D/usr/X11R6/man/man1 >/dev/null 2>&1 || true
-@unexec rmdir %D/usr/X11R6/man/man3 >/dev/null 2>&1 || true
+@dirrmtry usr/X11R6/man/man1
+@dirrmtry usr/X11R6/man/man3

@@ -4,4 +4,4 @@ lib/iiim/le/CannaLE/aux.la
 lib/iiim/le/CannaLE/aux.a
 lib/iiim/le/CannaLE/auxmenu
 @dirrm lib/iiim/le/CannaLE
-@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true
+@dirrmtry lib/iiim/le

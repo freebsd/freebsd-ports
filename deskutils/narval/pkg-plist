@@ -535,4 +535,4 @@ etc/narval/narval.conf.bak
 @dirrm %%PYTHON_SITELIBDIR%%/narval/communication
 @dirrm %%PYTHON_SITELIBDIR%%/narval/actions
 @dirrm %%PYTHON_SITELIBDIR%%/narval
-@unexec rmdir %D/etc/narval >/dev/null 2>&1 || true
+@dirrmtry etc/narval

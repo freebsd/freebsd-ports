@@ -103,9 +103,9 @@ pre-install:
 		${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 	${FIND} data -type d ! -empty | ${SORT} -r | \
 		${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} '@unexec rmdir %D/share/applications 2>/dev/null || true' >> ${PLIST}
-	@${ECHO_CMD} '@unexec rmdir %D/man/ru.KOI8-R/man1 2>/dev/null || true' >> ${PLIST}
-	@${ECHO_CMD} '@unexec rmdir %D/man/ru.KOI8-R 2>/dev/null || true' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry man/ru.KOI8-R/man1' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry man/ru.KOI8-R' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hydrogen ${WRKSRC}/hydrogenPlayer ${PREFIX}/bin

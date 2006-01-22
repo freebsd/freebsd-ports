@@ -20,4 +20,4 @@ bin/sortshp
 %%WITH_PHP%%@unexec grep -v php_mapscript\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true
 %%WITH_PHP%%@unexec rm %D/etc/php/extensions.ini.orig
 %%WITH_PHP%%@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini
-%%WITH_PHP%%@unexec rmdir %D/etc/php 2> /dev/null || true
+%%WITH_PHP%%@dirrmtry etc/php

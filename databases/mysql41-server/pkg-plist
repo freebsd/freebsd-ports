@@ -162,7 +162,7 @@ libexec/mysqld
 %%NDB%%@dirrm include/mysql/ndb/mgmapi
 %%NDB%%@dirrm include/mysql/ndb/ndbapi
 %%NDB%%@dirrm include/mysql/ndb
-%%NDB%%@unexec rmdir %D/include/mysql 2> /dev/null || true
+%%NDB%%@dirrmtry include/mysql
 @dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech

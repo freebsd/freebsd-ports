@@ -2,7 +2,7 @@ bin/version.pl
 %%SITE_PERL%%/Module/Info/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/File/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/File
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info 2>/dev/null | true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null | true
-@unexec rmdir %D/%%SITE_PERL%%/Module/Info 2>/dev/null | true
-@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null | true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Info
+@dirrmtry %%SITE_PERL%%/Module

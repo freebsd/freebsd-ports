@@ -394,4 +394,4 @@ share/postgresql/pgaccess/utils/mkkit.tcl
 @dirrmtry share/postgresql
 %%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess/tutorial
 %%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess
-%%PORTDOCS%%@unexec rmdir %D/share/doc/postgresql 2> /dev/null || true
+%%PORTDOCS%%@dirrmtry share/doc/postgresql

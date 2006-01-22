@@ -27,14 +27,14 @@ bin/wpro
 %%NLS%%share/locale/uk/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wpro.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wpro.mo
-%%NLS%%@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/el/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES

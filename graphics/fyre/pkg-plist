@@ -14,4 +14,4 @@ share/mime/packages/fyre.xml
 share/mime/application/x-fyre-animation.xml
 @dirrm share/fyre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%WITH_FDO%%@unexec rmdir %D/share/applications 2> /dev/null || true
+%%WITH_FDO%%@dirrmtry share/applications

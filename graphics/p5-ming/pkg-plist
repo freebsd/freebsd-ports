@@ -24,4 +24,4 @@
 %%PORTDOCS%%share/examples/perl5/ming/shape.cgi
 %%PORTDOCS%%share/examples/perl5/ming/sprite.cgi
 %%PORTDOCS%%@dirrm share/examples/perl5/ming
-%%PORTDOCS%%@unexec rmdir %D/share/examples/perl5 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry share/examples/perl5

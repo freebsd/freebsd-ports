@@ -873,4 +873,4 @@ share/doc/%%PYTHON_VERSION%%/tut/tut.html
 @dirrm share/doc/%%PYTHON_VERSION%%/doc
 @dirrm share/doc/%%PYTHON_VERSION%%/dist
 @dirrm share/doc/%%PYTHON_VERSION%%/api
-@unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true
+@dirrmtry share/doc/%%PYTHON_VERSION%%

@@ -44,6 +44,6 @@ post-install:
 	  ${TAR} ztf ${WRKSRC}/doc/postgres.tar.gz | ${GREP} /$$ | \
 	  ${SED} "s,^,@dirrm\ ," >> ${TMPPLIST} ;\
 	  ${ECHO} @dirrm ${DOCSDIR:S,^${PREFIX}/,,}/html >> ${TMPPLIST} ;\
-	  ${ECHO} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2> /dev/null || true" >> ${TMPPLIST}
+	  ${ECHO} "@dirrmtry ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 
 .include "${MASTERDIR}/Makefile"

@@ -12,6 +12,6 @@ bin/g2b.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
 %%OLD%%@dirrm %%SITE_PERL%%/Encode/HanConvert
-%%OLD%%@unexec rmdir %D/%%SITE_PERL%%/Encode 2>/dev/null || true
+%%OLD%%@dirrmtry %%SITE_PERL%%/Encode
 %%NEW%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert
-%%NEW%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
+%%NEW%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

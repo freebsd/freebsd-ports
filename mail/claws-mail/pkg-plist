@@ -206,8 +206,8 @@ libdata/pkgconfig/sylpheed-claws.pc
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpcore
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpinline
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpmime
-@unexec rmdir %D/include/sylpheed-claws/plugins 2>/dev/null >/dev/null || true
-@dirrm include/sylpheed-claws
+@dirrmtry include/sylpheed-claws/plugins
+@dirrmtry include/sylpheed-claws
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.deps

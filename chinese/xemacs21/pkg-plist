@@ -17,8 +17,8 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/config.values
 
 @exec ln -sf ja %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
 @unexec rm -f %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
-@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages/etc/app-defaults 2>/dev/null || true
-@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages/etc 2>/dev/null || true
-@unexec rmdir %%PREFIX%%/lib/xemacs/mule-packages 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/etc/app-defaults
+@dirrmtry lib/xemacs/mule-packages/etc
+@dirrmtry lib/xemacs/mule-packages
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/zh_TW.Big5

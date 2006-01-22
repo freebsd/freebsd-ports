@@ -15,7 +15,7 @@
  		sed -e "s,^${PREFIX}/,,"
 +	sudo find ${LOCALBASE}/ -type d | sed "s,^${LOCALBASE}/,," | sort > ${PREFIX}.PLIST_DIRS.before
 +	sudo find ${PREFIX}/ -type d | sed "s,^${PREFIX}/,," | sort > ${PREFIX}.PLIST_DIRS.after
-+	comm -13 ${PREFIX}.PLIST_DIRS.before ${PREFIX}.PLIST_DIRS.after | sort -r | awk '{print "@unexec rmdir %D/"$1" 2>/dev/null || true"}'
++	comm -13 ${PREFIX}.PLIST_DIRS.before ${PREFIX}.PLIST_DIRS.after | sort -r | awk '{print "@dirrmtry "$1}'
  fi
  
  # Finish with a clean workspace

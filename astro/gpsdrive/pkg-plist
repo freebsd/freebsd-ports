@@ -59,7 +59,7 @@ share/pixmaps/gpsicon.png
 %%NLS%%share/locale/sk/LC_MESSAGES/gpsdrive.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gpsdrive.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gpsdrive.mo
-%%NLS%%@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/gr 2> /dev/null || true
+%%NLS%%@dirrmtry share/locale/gr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gr
 @dirrmtry share/applications
 @dirrm %%DATADIR%%

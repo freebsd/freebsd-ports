@@ -377,14 +377,14 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/wakeup
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
 @exec ln -sf ja %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 @unexec rm -f %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
-@unexec rmdir %D/lib/xemacs/mule-packages/etc/app-defaults 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/etc/app-defaults
+@dirrmtry lib/xemacs/mule-packages/etc
+@dirrmtry lib/xemacs/mule-packages
 @dirrm lib/xemacs/site-lisp
 @dirrm lib/xemacs/site-modules
 @dirrm lib/xemacs
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
-@unexec rmdir %D/lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules 2>/dev/null || true
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%

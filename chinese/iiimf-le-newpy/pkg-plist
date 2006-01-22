@@ -14,4 +14,4 @@ lib/iiim/le/newpy/data/UdCiku.dat
 %%WANT_XAUX%%lib/iiim/le/newpy/help.gif
 @dirrm lib/iiim/le/newpy/data
 @dirrm lib/iiim/le/newpy
-@unexec rmdir %D/lib/iiim/le > /dev/null 2>&1 || true
+@dirrmtry lib/iiim/le

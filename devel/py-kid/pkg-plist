@@ -78,8 +78,8 @@ bin/kid
 %%PORTDOCS%%%%EXAMPLESDIR%%/basic/sysinfo.kid
 %%PORTDOCS%%%%EXAMPLESDIR%%/basic/tutorial.kid
 %%PORTDOCS%%%%EXAMPLESDIR%%/basic/tutorial2.kid
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/cgi 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/basic 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/cgi
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/basic
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%/kid/test
 @dirrmtry %%PYTHON_SITELIBDIR%%/kid

@@ -3,4 +3,4 @@
 lib/compat/libfetch.so.2
 %%FORBIDDEN:%%lib/compat/libssl.so.1
 %%FORBIDDEN:%%lib/compat/libssl.so.2
-@unexec rmdir %D/lib/compat 2>/dev/null || true
+@dirrmtry lib/compat

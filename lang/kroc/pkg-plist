@@ -103,12 +103,12 @@ lib/kroc/libudc.so
 %%PORTDOCS%%%%DATADIR%%/doc/txt/hostio.txt
 %%PORTDOCS%%%%DATADIR%%/doc/txt/o2cl.txt
 %%PORTDOCS%%%%DATADIR%%/doc/txt/pragma.txt
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/txt 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/sc 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/ps 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/lib 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/html 2>/dev/null || true
-%%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc/txt
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc/sc
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc/ps
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc/lib
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc/html
+%%PORTDOCS%%@dirrmtry %%DATADIR%%/doc
 @dirrmtry %%DATADIR%%/vtlib
 @dirrmtry %%DATADIR%%/vtinclude
 @dirrmtry %%DATADIR%%

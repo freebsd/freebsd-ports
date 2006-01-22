@@ -22,9 +22,9 @@ share/pixmaps/cantus/warning.xpm
 share/pixmaps/cantus/addrecursive.xpm
 share/gnome/apps/Applications/cantus.desktop
 @dirrm share/pixmaps/cantus
-@unexec rmdir %D/share/pixmaps
-@unexec rmdir %D/share/gnome/apps/Applications
-@unexec rmdir %D/share/gnome/apps
-@unexec rmdir %D/share/gnome
+@dirrmtry share/pixmaps
+@dirrmtry share/gnome/apps/Applications
+@dirrmtry share/gnome/apps
+@dirrmtry share/gnome
 @dirrm doc/Cantus
 @dirrm doc

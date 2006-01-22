@@ -77,6 +77,6 @@ etc/infobot/sane-is.txt
 @dirrm %%DATADIR%%/extras
 @dirrm %%DATADIR%%/files
 @dirrm %%DATADIR%%/scripts
-@unexec rmdir %D/etc/infobot > /dev/null 2>&1 || true
-@unexec rmdir %D/share/infobot/src > /dev/null 2>&1 || true
-@unexec rmdir %D/share/infobot > /dev/null 2>&1 || true
+@dirrmtry etc/infobot
+@dirrmtry share/infobot/src
+@dirrmtry share/infobot

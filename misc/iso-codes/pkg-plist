@@ -307,118 +307,118 @@ share/xml/iso-codes/iso_3166_2.xml
 share/xml/iso-codes/iso_4217.xml
 share/xml/iso-codes/iso_639.xml
 @dirrm share/xml/iso-codes
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/share/locale/zu 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/share/locale/zh_TW 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/zh_CN 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/xh 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/wo/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/wo 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/wal/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/wal 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ve/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ve 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/uz/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/uz 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ur/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ur 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/uk 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tt/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tt 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tl 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tk/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tk 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tig/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/tig 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ti/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ti 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/te/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/te 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/syr/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/syr 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sw 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sr 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/so/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/so 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sl 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sk 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sid/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sid 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sa/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/sa 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/rw 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ro 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/pt 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ps/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ps 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/pl 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/om/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/om 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/oc/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/oc/ 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/nso 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/no 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/nn/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/nn 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mr 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mi/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/mi 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ky 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kw 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kok/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kok 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ko 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kl 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kk/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/kk 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/iu/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/iu 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/hy 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/haw/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/haw 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gv/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gv 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gl 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gez/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/gez 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/fo/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/fo 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/fi 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/el 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/dv/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/dv 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/cs 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/ca 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/byn/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/byn 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/be 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/aa/LC_MESSAGES 2>/dev/null ||/usr/bin/true
-@unexec rmdir %D/share/locale/aa 2>/dev/null ||/usr/bin/true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/wo/LC_MESSAGES
+@dirrmtry share/locale/wo
+@dirrmtry share/locale/wal/LC_MESSAGES
+@dirrmtry share/locale/wal
+@dirrmtry share/locale/ve/LC_MESSAGES
+@dirrmtry share/locale/ve
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/tig/LC_MESSAGES
+@dirrmtry share/locale/tig
+@dirrmtry share/locale/ti/LC_MESSAGES
+@dirrmtry share/locale/ti
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/syr/LC_MESSAGES
+@dirrmtry share/locale/syr
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/so/LC_MESSAGES
+@dirrmtry share/locale/so
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/sid/LC_MESSAGES
+@dirrmtry share/locale/sid
+@dirrmtry share/locale/sa/LC_MESSAGES
+@dirrmtry share/locale/sa
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/om/LC_MESSAGES
+@dirrmtry share/locale/om
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc/
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/kw/LC_MESSAGES
+@dirrmtry share/locale/kw
+@dirrmtry share/locale/kok/LC_MESSAGES
+@dirrmtry share/locale/kok
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/kl/LC_MESSAGES
+@dirrmtry share/locale/kl
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/iu/LC_MESSAGES
+@dirrmtry share/locale/iu
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/haw/LC_MESSAGES
+@dirrmtry share/locale/haw
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/gez/LC_MESSAGES
+@dirrmtry share/locale/gez
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dv/LC_MESSAGES
+@dirrmtry share/locale/dv
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/byn/LC_MESSAGES
+@dirrmtry share/locale/byn
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/aa/LC_MESSAGES
+@dirrmtry share/locale/aa
 @dirrm share/iso-codes

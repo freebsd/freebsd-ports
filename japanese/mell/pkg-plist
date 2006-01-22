@@ -10,4 +10,4 @@ share/emacs/site-lisp/mell/mell-string.el
 share/emacs/site-lisp/mell/mell.el
 @dirrmtry share/emacs/site-lisp/mell
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
