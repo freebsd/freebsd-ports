@@ -6,7 +6,7 @@ share/emacs/site-lisp/cweb.el
 share/texmf/tex/generic/misc/cwebmac.tex
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/texmf/tex/generic/misc 2>/dev/null || true
-@unexec rmdir %D/share/texmf/tex/generic 2>/dev/null || true
-@unexec rmdir %D/share/texmf/tex 2>/dev/null || true
-@unexec rmdir %D/share/texmf 2>/dev/null || true
+@dirrmtry share/texmf/tex/generic/misc
+@dirrmtry share/texmf/tex/generic
+@dirrmtry share/texmf/tex
+@dirrmtry share/texmf

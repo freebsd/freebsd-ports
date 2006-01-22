@@ -1062,4 +1062,4 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/yellowball.gif
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/X_EXAMPLES
 @dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS
 @dirrm share/doc/HTML/en/kdevelop/reference/GRAPHICS
-@unexec rmdir %D/share/doc/HTML/en/kdevelop/reference/ 2> /dev/null || true
+@dirrmtry share/doc/HTML/en/kdevelop/reference/

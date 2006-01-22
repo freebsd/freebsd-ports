@@ -126,4 +126,4 @@ lib/libtemplate.so.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/AdministratorManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/etc/ODBCDataSources 2>/dev/null || true
-@unexec rmdir %D/etc/ODBCDataSources 2>/dev/null || true
+@dirrmtry etc/ODBCDataSources

@@ -92,4 +92,4 @@ share/postgresql/postgresql.conf.sample
 @dirrm include/postgresql
 @dirrm lib/postgresql
 @dirrm share/postgresql
-@unexec rmdir %D/pgsql 2>/dev/null || true
+@dirrmtry pgsql

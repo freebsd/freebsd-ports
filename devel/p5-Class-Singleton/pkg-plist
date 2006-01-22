@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Class/Singleton.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Singleton/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Singleton
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class

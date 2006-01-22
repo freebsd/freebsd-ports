@@ -2,5 +2,5 @@ bin/dirsync
 %%SITE_PERL%%/File/DirSync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File

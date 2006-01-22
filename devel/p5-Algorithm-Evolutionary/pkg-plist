@@ -1,6 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 %%SITE_PERL%%/Algorithm/Evolutionary.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Experiment.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
@@ -39,4 +39,4 @@
 @dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Individual
 @dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op
 @dirrm %%SITE_PERL%%/Algorithm/Evolutionary
-@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Algorithm

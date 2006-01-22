@@ -1,5 +1,5 @@
 %%SITE_PERL%%/CDB_File/Generator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File/Generator/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File/Generator
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/CDB_File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CDB_File
+@dirrmtry %%SITE_PERL%%/CDB_File

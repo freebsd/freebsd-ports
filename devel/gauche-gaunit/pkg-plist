@@ -9,7 +9,7 @@ share/gauche/site/lib/test/unit/ui/gtk.scm
 share/gauche/site/lib/test/unit/ui/text.scm
 @dirrm share/gauche/site/lib/test/unit/ui
 @dirrm share/gauche/site/lib/test/unit
-@unexec rmdir %D/share/gauche/site/lib/test 2>/dev/null || true
+@dirrmtry share/gauche/site/lib/test
 %%EXAMPLESDIR%%/site-lisp/run-test-setting.el
 %%EXAMPLESDIR%%/site-lisp/run-test.el
 %%EXAMPLESDIR%%/symdiff/lib/symdiff.scm

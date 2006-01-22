@@ -162,8 +162,8 @@ etc/sms/sms_services
 @dirrm var/spool/sms/errors/a1
 @dirrm var/spool/sms/errors
 @dirrm var/spool/sms
-@unexec rmdir %D/var/spool 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var/spool
+@dirrmtry var
 @dirrm etc/sms/services
 @dirrm etc/sms/scripts
 @dirrm etc/sms

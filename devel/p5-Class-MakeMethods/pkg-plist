@@ -60,15 +60,15 @@
 %%SITE_PERL%%/Class/MakeMethods/Utility/Ref.pm
 %%SITE_PERL%%/Class/MakeMethods/Utility/TextBuilder.pm
 
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Basic 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Composite 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Docs 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Emulator 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Evaled 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Standard 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Template 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods/Utility 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class/MakeMethods 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Basic
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Composite
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Docs
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Emulator
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Evaled
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Standard
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Template
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods/Utility
+@dirrmtry %%SITE_PERL%%/Class/MakeMethods
+@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MakeMethods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

@@ -2,4 +2,4 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%RUBY_SITEARCHLIBDIR%%/DBD/SQLite/SQLite.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/DBD/SQLite
-@unexec rmdir %D/%%RUBY_SITEARCHLIBDIR%%/DBD 2>/dev/null || true
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%/DBD

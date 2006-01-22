@@ -1,4 +1,4 @@
 %%SITE_PERL%%/Algorithm/MarkovChain.pm
 %%SITE_PERL%%/Algorithm/MarkovChain/Base.pm
 @dirrm %%SITE_PERL%%/Algorithm/MarkovChain
-@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Algorithm

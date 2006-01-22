@@ -13,7 +13,7 @@
 %%PORTDOCS%%share/examples/DBD-Excel/texj.pl
 %%PORTDOCS%%share/examples/DBD-Excel/thidden.pl
 %%PORTDOCS%%share/examples/DBD-Excel/thidden.xls
-@unexec rmdir %D/%%SITE_PERL%%/DBD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Excel 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/DBD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Excel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
 %%PORTDOCS%%@unexec rmdir %D/share/examples/DBD-Excel 2>/dev/null || true

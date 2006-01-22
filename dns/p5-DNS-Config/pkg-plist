@@ -14,4 +14,4 @@
 @dirrm %%SITE_PERL%%/DNS/Config/Statement
 @dirrm %%SITE_PERL%%/DNS/Config/File
 @dirrm %%SITE_PERL%%/DNS/Config
-@unexec rmdir %D/%%SITE_PERL%%/DNS 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/DNS

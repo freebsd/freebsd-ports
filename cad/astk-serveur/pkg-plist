@@ -257,5 +257,5 @@
 %%SERV%%@dirrm %%ASTKDIR%%/conf
 %%SERV%%@dirrm %%ASTKDIR%%/lib
 @dirrm %%ASTKDIR%%
-@unexec rmdir %D/aster/ASTK 2>/dev/null || true
-@unexec rmdir %D/aster 2>/dev/null || true
+@dirrmtry aster/ASTK
+@dirrmtry aster

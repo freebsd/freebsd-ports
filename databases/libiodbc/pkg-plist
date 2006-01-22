@@ -40,4 +40,4 @@ libdata/pkgconfig/libiodbc.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/iodbctest.c
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/libiodbc 2>/dev/null || true
+@dirrmtry etc/libiodbc

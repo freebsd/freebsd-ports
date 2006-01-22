@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Convert/Morse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Morse/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Morse
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Convert 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrmtry %%SITE_PERL%%/Convert

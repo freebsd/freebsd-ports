@@ -4,4 +4,4 @@ bin/b2g
 bin/g2b
 share/chinese/hc.tab
 share/chinese/hc-supp.tab
-@unexec rmdir %D/share/chinese 2>/dev/null || true
+@dirrmtry share/chinese

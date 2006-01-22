@@ -36,9 +36,9 @@ lib/perl5/site_perl/Penguin/doc/TODO
 @dirrm %%SITE_PERL%%/Penguin/Frame
 @dirrm %%SITE_PERL%%/Penguin/Trivial
 @dirrm %%SITE_PERL%%/Penguin/Wrapper
-@unexec rmdir %D/%%SITE_PERL%%/Penguin 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Penguin
 @dirrm lib/perl5/site_perl/Penguin/bin
 @dirrm lib/perl5/site_perl/Penguin/misc
 @dirrm lib/perl5/site_perl/Penguin/doc
-@unexec rmdir %D/lib/perl5/site_perl/Penguin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin 2>/dev/null || true
+@dirrmtry lib/perl5/site_perl/Penguin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin

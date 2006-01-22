@@ -228,4 +228,4 @@ lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/vector.h
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%
 @dirrm lib/gcc-lib/i386-mingw32msvc
-@unexec rmdir %D/lib/gcc-lib 2>/dev/null || true
+@dirrmtry lib/gcc-lib

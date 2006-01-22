@@ -115,4 +115,4 @@ lib/libcwnn.so.0
 @dirrm lib/wnn/zh_CN/rk_p
 @dirrm lib/wnn/zh_CN/rk
 @dirrm lib/wnn/zh_CN
-@unexec rmdir %D/lib/wnn 2> /dev/null || true
+@dirrmtry lib/wnn
