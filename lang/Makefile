@@ -295,6 +295,7 @@
     SUBDIR += tensile
     SUBDIR += tinycobol
     SUBDIR += tolua
+    SUBDIR += tolua++
     SUBDIR += tolua4
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
