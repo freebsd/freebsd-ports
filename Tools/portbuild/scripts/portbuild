@@ -82,7 +82,6 @@ cleanup()
   fi
 
   cleanup_mount ${chroot} /a/ports
-  cleanup_mount ${chroot} /usr/opt/doc
   cleanup_mount ${chroot} /usr/src
   cleanup_mount ${chroot} /dev
   test -d ${chroot}/root/.ccache && cleanup_mount ${chroot} /root/.ccache
@@ -199,13 +198,13 @@ ulimit -f 614400
 ulimit -t 3600
 
 # directories to clean
-cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
+cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
 
 # 15 minutes
 export FTP_TIMEOUT=900
 export HTTP_TIMEOUT=900
 
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 
 echo "building $pkgname in $chroot"
 
@@ -281,10 +280,9 @@ fi
 mount_fs ${pb}/${arch}/${branch}/ports ${chroot}/a/ports ${master}
 ln -sf ../a/ports ${chroot}/usr/ports
 
-mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
+mkdir -p ${chroot}/usr/src 
 
 mount_fs ${pb}/${arch}/${branch}/src ${chroot}/usr/src ${master}
-mount_fs ${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc ${master}
 
 mount -t devfs foo ${chroot}/dev
 
@@ -306,18 +304,16 @@ mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
   >/dev/null 2>&1
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
   >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}/usr/local \
+mkdir -p ${chroot}${LOCALBASE}
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.local.dist -p ${chroot}${LOCALBASE} \
   >/dev/null 2>&1
 
-mkdir ${chroot}/usr/X11R6
+mkdir -p ${chroot}${X11BASE}
 if [ $X_WINDOW_SYSTEM = "xfree86-3" ]; then
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}/usr/X11R6 \
-    >/dev/null 2>&1
-elif [ $X_WINDOW_SYSTEM = "xorg" ]; then
-  mtree -deU -f ${chroot}/a/ports/x11-servers/xorg-server/files/BSD.x11-xorg.dist -p ${chroot}/usr/X11R6 \
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11.dist -p ${chroot}${X11BASE} \
     >/dev/null 2>&1
 else
-  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}/usr/X11R6 \
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.x11-4.dist -p ${chroot}${X11BASE} \
     >/dev/null 2>&1
 fi
 
