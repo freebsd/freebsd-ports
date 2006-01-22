@@ -8,7 +8,7 @@
 PORTNAME=	cloop-utils
 PORTVERSION=	${CLOOP_VERSION}.${CLOOP_REVISION}
 CATEGORIES=	sysutils
-MASTER_SITES=	http://developer.linuxtag.net/knoppix/sources/
+MASTER_SITES=	http://debian-knoppix.alioth.debian.org/sources/
 DISTNAME=	cloop_${CLOOP_VERSION}-${CLOOP_REVISION}
 
 MAINTAINER=	fjoe@FreeBSD.org
