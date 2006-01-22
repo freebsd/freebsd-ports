@@ -16,12 +16,13 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Linux libgcc support library
 
 ONLY_FOR_ARCHS=	i386 amd64
-DESCR=		${PKGDIR}/pkg-descr
+USE_LINUX_RPM=	yes
+AUTOMATIC_PLIST=yes
 
 # Do not conflict with linux_base's libgcc: install in /lib/libgcc
-# (note that we do not set INSTALLS_LINUX_SHLIB because we must
-# prepend /lib/libgcc to /etc/ld.so.conf before running ldconfig,
-# which we do in pkg-install).
+# (note that we do not set INSTALLS_SHLIB because we must prepend
+# /lib/libgcc to /etc/ld.so.conf before running ldconfig, which we do
+# in pkg-install).
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib/libgcc
@@ -30,4 +31,4 @@ post-extract:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
+.include <bsd.port.mk>

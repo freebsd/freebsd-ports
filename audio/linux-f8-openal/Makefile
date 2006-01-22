@@ -23,6 +23,9 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \
 		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
 
 ONLY_FOR_ARCHS=	i386 amd64
-INSTALLS_LINUX_SHLIB=	yes
+USE_LINUX_RPM=	yes
+INSTALLS_SHLIB=	yes
+AUTOMATIC_PLIST=yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
+.include <bsd.port.mk>
