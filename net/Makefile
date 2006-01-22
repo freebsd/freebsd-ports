@@ -428,6 +428,7 @@
     SUBDIR += ortp
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
+    SUBDIR += p54u
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Archie
     SUBDIR += p5-EasyTCP

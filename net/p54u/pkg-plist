@@ -1,0 +1,5 @@
+lib/p54u/p54u.ko
+lib/p54u/linker.hints
+bin/p54ctl
+bin/p54term
+@dirrm lib/p54u
