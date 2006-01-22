@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-46-9].*
