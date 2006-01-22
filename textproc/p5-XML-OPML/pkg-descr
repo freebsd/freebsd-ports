@@ -1,0 +1,13 @@
+This experimental module is designed to allow for easy creation and
+manipulation of OPML files. OPML files are most commonly used for the sharing
+of blogrolls or subscriptions - an outlined list of what other blogs an
+Internet blogger reads.
+
+This is purely experimental at this point and has a few limitations. This
+module may now support attributes in the <outline> element of an embedded
+hierarchy, but these are limited to the following attributes: date_added,
+date_downloaded, description, email, filename, htmlurl, keywords, text,
+title, type, version, and xmlurl. Additionally, the following alternate
+spellings are also supported: dateAdded, dateDownloaded, htmlUrl, and xmlUrl.
+
+WWW: http://search.cpan.org/dist/XML-OPML/
