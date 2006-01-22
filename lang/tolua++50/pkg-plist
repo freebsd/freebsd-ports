@@ -1,0 +1,3 @@
+bin/tolua++
+include/tolua++.h
+lib/libtolua++.a
