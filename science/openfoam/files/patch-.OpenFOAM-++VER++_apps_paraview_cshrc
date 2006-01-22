@@ -1,0 +1,29 @@
+--- ./.OpenFOAM-1.2/apps/paraview/cshrc.orig	Thu Aug 18 11:10:08 2005
++++ ./.OpenFOAM-1.2/apps/paraview/cshrc	Thu Dec 22 23:44:08 2005
+@@ -38,24 +38,15 @@
+     endif
+ endif
+ 
+-setenv CMAKE_HOME $WM_PROJECT_INST_DIR/$WM_ARCH/cmake-2.0.3
++setenv CMAKE_HOME /usr/local
+ 
+-if ( -r $CMAKE_HOME ) then
+-    set path=($path $CMAKE_HOME/bin )
+-endif
+-
+-#setenv ParaView_VERSION 1.8.5
+ setenv ParaView_VERSION 2.2.0
+ 
+-setenv ParaView_INST_DIR $WM_PROJECT_INST_DIR/$WM_ARCH/paraview-$ParaView_VERSION
+-#setenv ParaView_DIR $ParaView_INST_DIR/lib/paraview-1.8
++setenv ParaView_INST_DIR /usr/local
+ setenv ParaView_DIR $ParaView_INST_DIR/lib/paraview-2.2
+ 
+ if ( -r $ParaView_INST_DIR ) then
+     setenv PV_INTERFACE_PATH $FOAM_UTILITIES/postProcessing/graphics/PVFoamReader/PVFoamReader/Make
+-
+-    set path=($path $ParaView_INST_DIR/bin )
+-    setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${ParaView_INST_DIR}/lib:${ParaView_INST_DIR}/lib/vtk
+ endif
+ 
+ if ( -r $ParaView_DIR ) then

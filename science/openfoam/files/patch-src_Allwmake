@@ -1,0 +1,21 @@
+--- src/Allwmake.orig	Mon Aug 15 11:37:17 2005
++++ src/Allwmake	Thu Dec 29 22:25:52 2005
+@@ -1,6 +1,7 @@
+ #!/bin/sh
+ 
+-wmake libso zlib-1.2.1
++# Use system zlib
++#wmake libso zlib-1.2.1
+ wmake libso foamUser
+ 
+ FOAM_SRC_DIR=`pwd`
+@@ -123,7 +124,8 @@
+ 
+ wmake libso Gstream
+ 
+-(cd malloc ; ./Allwmake)
++# Don't build FreeBSD malloc
++#(cd malloc ; ./Allwmake)
+ 
+ if [ ! -r $MICO_ARCH_PATH/lib/libmico${MICO_VERSION}.a ]
+ then

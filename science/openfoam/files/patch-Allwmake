@@ -1,0 +1,20 @@
+--- Allwmake.orig	Wed Jan  5 16:00:46 2005
++++ Allwmake	Sat Dec 17 23:42:15 2005
+@@ -1,4 +1,6 @@
+-#!/bin/sh
++#! /bin/csh -f
++
++source .cshrc
+ 
+ (cd wmake ; ./makeWmake)
+ 
+@@ -6,7 +8,6 @@
+ 
+ (cd applications ; ./Allwmake)
+ 
+-if [ $# = 1 -a "$1" = "doc" ]
+-then
++if ($# == 1 && "$1" == "doc") then
+     (cd doc ; ./Allwmake)
+-fi
++endif
