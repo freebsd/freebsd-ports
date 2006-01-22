@@ -72,6 +72,7 @@ for i in ${old2}; do
 	  for j in ${mounts}; do
 	    umount ${j} || cleanup_mount ${j}
 	  done
+	  umount ${i}/compat/linux/proc || cleanup_mount ${i}/compat/linux/proc
 	fi
 	if [ "${use_md_swap}" = "1" ]; then
 		chrootnum=$(basename $i)
