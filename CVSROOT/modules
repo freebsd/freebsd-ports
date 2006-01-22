@@ -12482,6 +12482,7 @@ tochnog		ports/cad/tochnog
 togl		ports/graphics/togl
 tolkien-ttf	ports/x11-fonts/tolkien-ttf
 tolua		ports/lang/tolua
+tolua++		ports/lang/tolua++
 tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
