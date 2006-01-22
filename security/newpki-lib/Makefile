@@ -25,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/newpki
 
 .if defined(WITHOUT_NLS)
+BROKEN=		"Does not build without gettext"
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .else
