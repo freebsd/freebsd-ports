@@ -515,6 +515,7 @@
     SUBDIR += p5-XML-NamespaceSupport
     SUBDIR += p5-XML-Node
     SUBDIR += p5-XML-NodeFilter
+    SUBDIR += p5-XML-OPML
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
     SUBDIR += p5-XML-Parser-Lite-Tree
