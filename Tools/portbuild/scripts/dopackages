@@ -18,7 +18,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-nodoccvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
+  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
   errorexit 1
 }
 
@@ -166,7 +166,6 @@ noindex=0
 noduds=0
 nocvs=0
 noportscvs=0
-nodoccvs=0
 norestr=0
 noplistcheck=0
 cdrom=0
@@ -200,9 +199,6 @@ while [ $# -gt 2 ]; do
       ;;
     x-noportscvs)
       noportscvs=1
-      ;;
-    x-nodoccvs)
-      nodoccvs=1
       ;;
     x-norestr)
       norestr=1
@@ -299,15 +295,6 @@ if [ "$skipstart" = 0 ]; then
     # XXX Check for conflicts
   fi
   date > ${pb}/${arch}/${branch}/cvsdone
-
-  if [ "$nodoccvs" = 0 ]; then
-    echo "================================================"
-    echo "running cvs update on ${pb}/${arch}/doc"
-    echo "================================================"
-    cd ${pb}/${arch}/${branch}/doc
-    cvs -qR update -PdA
-    # XXX Check for conflicts
-  fi
 
   if [ "$nocvs" = 0 ]; then
     echo "================================================"
