@@ -16,4 +16,4 @@ etc/joe/jpicorc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
-@unexec rmdir %D/etc/joe 2>/dev/null || true
+@dirrmtry etc/joe

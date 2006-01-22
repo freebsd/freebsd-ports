@@ -4,4 +4,4 @@
 %%SITE_PERL%%/Path/Class/Dir.pm
 %%SITE_PERL%%/Path/Class/File.pm
 @dirrm %%SITE_PERL%%/Path/Class
-@unexec rmdir %D/%%SITE_PERL%%/Path 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Path

@@ -10,4 +10,4 @@ lib/monodoc/GtkHtmlHtmlRender.dll
 lib/monodoc/browser.exe
 share/applications/monodoc.desktop
 share/pixmaps/monodoc.png
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications

@@ -52,19 +52,19 @@ bin/enc2xs
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header/ISO_2022_JP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN/HZ.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Byte
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/EBCDIC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/KR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Symbol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/TW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/KR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME/Header
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/MIME
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode

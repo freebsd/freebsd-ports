@@ -7,7 +7,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/Simple.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple/Simple.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Simple
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Date 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date
+@dirrmtry %%SITE_PERL%%/Date

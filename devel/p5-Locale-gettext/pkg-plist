@@ -3,5 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext/gettext.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Locale/gettext.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/gettext
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Locale 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Locale
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale

@@ -98,12 +98,12 @@ bin/git-write-blob
 bin/git-write-tree
 bin/gitfeedmaillist.sh
 bin/ciabot.pl
-@unexec rmdir %D/bin/ 2>/dev/null || true
+@dirrmtry bin/
 lib/cogito/cg-Xlib
 lib/cogito/cg-Xmergefile
 lib/cogito/cg-Xnormid
 @dirrm lib/cogito
-@unexec rmdir %D/lib/ 2>/dev/null || true
+@dirrmtry lib/
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/diff-format.txt
 %%PORTDOCS%%%%DOCSDIR%%/cvs-migration.txt
@@ -149,5 +149,5 @@ lib/cogito/cg-Xnormid
 %%PORTDOCS%%%%DOCSDIR%%/git.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/doc/ 2>/dev/null || true
-@unexec rmdir %D/share/ 2>/dev/null || true
+@dirrmtry share/doc/
+@dirrmtry share/

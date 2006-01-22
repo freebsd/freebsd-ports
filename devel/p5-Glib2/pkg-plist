@@ -40,4 +40,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib

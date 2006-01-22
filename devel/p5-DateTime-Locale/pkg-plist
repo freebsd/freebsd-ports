@@ -304,4 +304,4 @@
 %%SITE_PERL%%/DateTime/LocaleCatalog.pm
 @dirrm %%SITE_PERL%%/DateTime/Locale/Alias
 @dirrm %%SITE_PERL%%/DateTime/Locale
-@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/DateTime

@@ -7,6 +7,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params/Validate.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Attribute/Params
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Attribute
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Params 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Params
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params/Validate
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Params 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Params

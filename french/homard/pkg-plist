@@ -92,5 +92,5 @@ bin/%%UNAMES%%/%%HOMARDPG%%
 @exec ln -sf %%HOMARDDIR%%/homard %%ASTER_TOOLS%%
 @unexec rm -f %%ASTER_TOOLS%%/aster_homard_py
 @unexec rm -f %%ASTER_TOOLS%%/homard
-@unexec rmdir %D/bin/%%UNAMES%% 2>/dev/null || true
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry bin/%%UNAMES%%
+@dirrmtry apps

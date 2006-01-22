@@ -46,4 +46,4 @@
 @dirrm %%SITE_PERL%%/Curses/UI/Dialog
 @dirrm %%SITE_PERL%%/Curses/UI/Language
 @dirrm %%SITE_PERL%%/Curses/UI
-@unexec rmdir %D/%%SITE_PERL%%/Curses 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Curses

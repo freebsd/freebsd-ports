@@ -26,8 +26,8 @@ bin/raine
 %%DATADIR%%/raine.dat
 share/gnome/applications/raine.desktop
 share/gnome/pixmaps/raine.png
-@unexec rmdir %D/%%DATADIR%%/roms 2> /dev/null || true
-@unexec rmdir %D/%%DATADIR%%/emudx 2> /dev/null || true
-@unexec rmdir %D/%%DATADIR%%/artwork 2> /dev/null || true
+@dirrmtry %%DATADIR%%/roms
+@dirrmtry %%DATADIR%%/emudx
+@dirrmtry %%DATADIR%%/artwork
 @dirrm %%DATADIR%%/languages
-@unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
+@dirrmtry %%DATADIR%%

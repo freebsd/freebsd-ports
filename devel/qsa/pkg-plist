@@ -218,8 +218,8 @@ share/doc/qsa/html/windowmenu1.png
 share/doc/qsa/html/windowmenu2.png
 share/doc/qsa/html/wrappers.html
 share/qt/mkspecs/features/qsa.prf
-@unexec rmdir %D/share/qt/mkspecs/features 2>/dev/null || true
-@unexec rmdir %D/share/qt/mkspecs 2>/dev/null || true
-@unexec rmdir %D/share/qt 2>/dev/null || true
+@dirrmtry share/qt/mkspecs/features
+@dirrmtry share/qt/mkspecs
+@dirrmtry share/qt
 @dirrm share/doc/qsa/html
 @dirrm share/doc/qsa

@@ -1,7 +1,7 @@
 %%SITE_PERL%%/VCP/Dest/svk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest/svk/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/VCP/Dest 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/VCP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest/svk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/VCP/Dest
+@dirrmtry %%SITE_PERL%%/VCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest/svk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/Dest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP

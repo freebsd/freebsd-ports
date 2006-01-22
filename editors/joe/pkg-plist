@@ -57,7 +57,7 @@ etc/joe/doc/HACKING
 etc/joe/doc/HINTS
 etc/joe/doc/NEWS
 etc/joe/doc/README
-@unexec rmdir %D/etc/joe/doc 2>/dev/null || true
-@unexec rmdir %D/etc/joe/charmaps 2>/dev/null || true
-@unexec rmdir %D/etc/joe/syntax 2>/dev/null || true
-@unexec rmdir %D/etc/joe 2>/dev/null || true
+@dirrmtry etc/joe/doc
+@dirrmtry etc/joe/charmaps
+@dirrmtry etc/joe/syntax
+@dirrmtry etc/joe

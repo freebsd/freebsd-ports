@@ -2,7 +2,7 @@
 %%SITE_PERL%%/Mac/FileSpec/Unixish.pm
 %%SITE_PERL%%/Mac/FileSpec/unixish_guts_test.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec/Unixish
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Mac/FileSpec 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Mac 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac/FileSpec
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mac
+@dirrmtry %%SITE_PERL%%/Mac/FileSpec
+@dirrmtry %%SITE_PERL%%/Mac

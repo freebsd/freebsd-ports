@@ -72,4 +72,4 @@
 @dirrm %%DATADIR%%
 @dirrm %%PEARDIR%%/simpletest/extensions
 @dirrm %%PEARDIR%%/simpletest
-@unexec rmdir %D/%%PEARDIR%% 2>/dev/null || true
+@dirrmtry %%PEARDIR%%

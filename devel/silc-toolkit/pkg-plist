@@ -1128,8 +1128,8 @@ lib/silcsim/twofish.sim.so
 %%EXAMPLESDIR%%/Makefile.in
 %%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/toolkit
-@unexec rmdir %D/%%PORTDOCS%%%%DOCSDIR%% 2>/dev/null || true
-@unexec rmdir %D/lib/silcsim 2>/dev/null || true
-@unexec rmdir %D/include/silc 2>/dev/null || true
-@unexec rmdir %D/share/examples/silc/mybot 2>/dev/null || true
-@unexec rmdir %D/share/examples/silc 2>/dev/null || true
+@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+@dirrmtry lib/silcsim
+@dirrmtry include/silc
+@dirrmtry share/examples/silc/mybot
+@dirrmtry share/examples/silc

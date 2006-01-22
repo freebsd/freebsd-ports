@@ -36,8 +36,8 @@
 %%SITE_PERL%%/ExtUtils/testlib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto//ExtUtils/MakeMaker/.packlist
 @dirrm %%SITE_PERL%%/ExtUtils/MakeMaker
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/ExtUtils/Command 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/ExtUtils/Liblist 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/ExtUtils 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/MakeMaker
+@dirrmtry %%SITE_PERL%%/ExtUtils/Command
+@dirrmtry %%SITE_PERL%%/ExtUtils/Liblist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
+@dirrmtry %%SITE_PERL%%/ExtUtils

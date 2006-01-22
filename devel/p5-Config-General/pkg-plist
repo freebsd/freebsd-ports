@@ -5,5 +5,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/General/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/General
 @dirrm %%SITE_PERL%%/Config/General
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Config 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config

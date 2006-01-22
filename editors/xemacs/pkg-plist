@@ -1262,5 +1262,5 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
 @dirrm lib/xemacs-%%XEMACS_VER%%
-@unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs 2>/dev/null || true
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs

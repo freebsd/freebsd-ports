@@ -76,10 +76,10 @@ sbin/ndc
 %%PORTDOCS%%%%DOCSDIR%%/misc/rfc2317-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc/style.txt
 share/misc/nslookup.help
-@unexec rmdir %D/%%INCLUDE_PATH%%/arpa 2>/dev/null || true
-@unexec rmdir %D/%%INCLUDE_PATH%%/isc 2>/dev/null || true
-@unexec rmdir %D/%%INCLUDE_PATH%%/sys 2>/dev/null || true
-@unexec rmdir %D/%%INCLUDE_PATH%% 2>/dev/null || true
+@dirrmtry %%INCLUDE_PATH%%/arpa
+@dirrmtry %%INCLUDE_PATH%%/isc
+@dirrmtry %%INCLUDE_PATH%%/sys
+@dirrmtry %%INCLUDE_PATH%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/recursive/pri
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/recursive
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/conf/workstation/pri

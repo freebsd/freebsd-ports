@@ -121,4 +121,4 @@
 @dirrm %%CVSMON%%/static/style
 @dirrm %%CVSMON%%/static/images
 @dirrm %%CVSMON%%/static
-@unexec rmdir %D/%%CVSMON%% 2>/dev/null || true
+@dirrmtry %%CVSMON%%

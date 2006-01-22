@@ -5,7 +5,7 @@ bin/pfunc
 %%SITE_PERL%%/Module/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module
 @dirrm %%SITE_PERL%%/B/Module
-@unexec rmdir %D/%%SITE_PERL%%/B 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/B

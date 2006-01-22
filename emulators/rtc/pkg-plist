@@ -3,5 +3,5 @@ include/rtc.h
 modules/rtc.ko
 %%EXAMPLESDIR%%/test.c
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/modules 2>/dev/null || true
+@dirrmtry modules
 @unexec rm -f /dev/rtc

@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/sample.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/File/ShareDir.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

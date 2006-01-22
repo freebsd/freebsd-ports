@@ -5,6 +5,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty/Constant.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Tty
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Tty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO

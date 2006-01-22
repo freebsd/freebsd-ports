@@ -210,13 +210,13 @@ share/servicetypes/kbearsiteimportfilterplugin.desktop
 @dirrm share/apps/kbear/icons
 @dirrm share/apps/kbear
 @dirrm include/kbear
-@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@dirrmtry share/doc/HTML/sv
+@dirrmtry share/doc/HTML/fr
+@dirrmtry share/doc/HTML/es
+@dirrmtry share/doc/HTML/cs
+@dirrmtry share/locale/ro
+@dirrmtry share/applnk/Internet
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48

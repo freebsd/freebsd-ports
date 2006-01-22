@@ -13,7 +13,7 @@
 @dirrm %%SITE_PERL%%/auto/Business/WorldPay/Junior
 @dirrm %%SITE_PERL%%/auto/Business/WorldPay
 @dirrm %%SITE_PERL%%/Business/WorldPay
-@unexec rmdir %D/%%SITE_PERL%%/auto/Business 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Business
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business

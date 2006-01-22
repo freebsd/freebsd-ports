@@ -10,6 +10,6 @@
 %%SITE_PERL%%/PatchReader/DiffPrinter/template.pm
 %%SITE_PERL%%/PatchReader/DiffPrinter/raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader
 @dirrm %%SITE_PERL%%/PatchReader/DiffPrinter
-@unexec rmdir %D/%%SITE_PERL%%/PatchReader 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/PatchReader

@@ -1,5 +1,5 @@
 %%SITE_PERL%%/SSN/Validate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN/Validate/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN/Validate 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SSN 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN/Validate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SSN
+@dirrmtry %%SITE_PERL%%/SSN

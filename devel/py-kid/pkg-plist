@@ -81,5 +81,5 @@ bin/kid
 %%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/cgi 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/basic 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/kid/test 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/kid 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%/kid/test
+@dirrmtry %%PYTHON_SITELIBDIR%%/kid

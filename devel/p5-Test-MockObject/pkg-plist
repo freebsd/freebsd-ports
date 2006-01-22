@@ -2,6 +2,6 @@
 %%SITE_PERL%%/Test/MockObject/Extends.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockObject/.packlist
 @dirrm %%SITE_PERL%%/Test/MockObject
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/MockObject
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test

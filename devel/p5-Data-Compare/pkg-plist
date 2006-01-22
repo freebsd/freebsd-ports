@@ -3,8 +3,8 @@
 %%SITE_PERL%%/Data/Compare/Plugins/Scalar/Properties.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Compare/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Compare
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Compare/Plugins/Scalar
 @dirrm %%SITE_PERL%%/Data/Compare/Plugins
 @dirrm %%SITE_PERL%%/Data/Compare
-@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Data

@@ -12,8 +12,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/Calc.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc/Calc.bs
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Calc
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Date/Calendar 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Date/Calc 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Date 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Calendar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date/Calc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Date
+@dirrmtry %%SITE_PERL%%/Date

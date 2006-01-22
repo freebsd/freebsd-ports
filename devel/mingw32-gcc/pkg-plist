@@ -2371,5 +2371,5 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/jvgenmain
 @dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
 @dirrm libexec/gcc/%%GCC_TARG%%
 @dirrm libexec/gcc
-@unexec rmdir %D/lib/gcc 2> /dev/null || true
-@unexec rmdir %D/%%GCC_TARG%%/share 2> /dev/null || true
+@dirrmtry lib/gcc
+@dirrmtry %%GCC_TARG%%/share

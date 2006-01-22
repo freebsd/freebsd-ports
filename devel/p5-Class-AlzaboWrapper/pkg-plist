@@ -2,4 +2,4 @@
 %%SITE_PERL%%/Class/AlzaboWrapper.pm
 %%SITE_PERL%%/Class/AlzaboWrapper/Cursor.pm
 @dirrm %%SITE_PERL%%/Class/AlzaboWrapper
-@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Class

@@ -122,6 +122,6 @@ lib/sfslite-%%VERSION%%/%%TAG%%/libsfsmisc.so.0
 lib/sfslite-%%VERSION%%/%%TAG%%/mallock.o
 lib/sfslite-%%VERSION%%/%%TAG%%/mmcd
 @dirrm lib/sfslite-%%VERSION%%/%%TAG%%
-@unexec rmdir %D/lib/sfslite-%%VERSION%% 2>/dev/null || true
+@dirrmtry lib/sfslite-%%VERSION%%
 @dirrm include/sfslite-%%VERSION%%/%%TAG%%
-@unexec rmdir %D/include/sfslite-%%VERSION%% 2>/dev/null || true
+@dirrmtry include/sfslite-%%VERSION%%

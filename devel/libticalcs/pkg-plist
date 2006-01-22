@@ -17,4 +17,4 @@ lib/libticalcs.so
 lib/libticalcs.so.9
 libdata/pkgconfig/ticalcs.pc
 share/locale/fr/LC_MESSAGES/libticalcs.mo
-@unexec rmdir %D/include/tilp 2>/dev/null || true
+@dirrmtry include/tilp

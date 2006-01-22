@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Return/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Value/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Value 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Return 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Return 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return/Value
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Return
+@dirrmtry %%SITE_PERL%%/Return

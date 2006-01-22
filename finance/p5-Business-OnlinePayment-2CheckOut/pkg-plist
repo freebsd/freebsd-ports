@@ -3,4 +3,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut
 @dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/2CheckOut
-@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Business/OnlinePayment

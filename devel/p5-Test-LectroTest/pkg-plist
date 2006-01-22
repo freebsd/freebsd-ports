@@ -5,4 +5,4 @@
 %%SITE_PERL%%/Test/LectroTest/TestRunner.pm
 %%SITE_PERL%%/Test/LectroTest/Tutorial.pod
 @dirrm %%SITE_PERL%%/Test/LectroTest
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Test

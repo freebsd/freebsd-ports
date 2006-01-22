@@ -123,7 +123,7 @@ etc/pear.conf
 %%DATADIR%%/tests/XML_RPC/tests/types.php
 @dirrm %%DOCSDIR%%/Archive_Tar/docs
 @dirrm %%DOCSDIR%%/Archive_Tar
-@unexec rmdir %D/share/doc/pear 2> /dev/null || true
+@dirrmtry share/doc/pear
 @unexec rm %D/share/pear/.channels/.alias/pear.txt 2> /dev/null || true
 @unexec rm %D/share/pear/.channels/.alias/pecl.txt 2> /dev/null || true
 @unexec rm %D/share/pear/.channels/__uri.reg 2> /dev/null || true
@@ -133,11 +133,11 @@ etc/pear.conf
 @unexec rm %D/share/pear/.depdblock 2> /dev/null || true
 @unexec rm %D/share/pear/.filemap 2> /dev/null || true
 @unexec rm %D/share/pear/.lock 2> /dev/null || true
-@unexec rmdir %D/share/pear/.channels/.alias 2> /dev/null || true
-@unexec rmdir %D/share/pear/.channels 2> /dev/null || true
-@unexec rmdir %D/share/pear/.registry/.channel.__uri 2> /dev/null || true
-@unexec rmdir %D/share/pear/.registry/.channel.pecl.php.net 2> /dev/null || true
-@unexec rmdir %D/share/pear/.registry 2> /dev/null || true
+@dirrmtry share/pear/.channels/.alias
+@dirrmtry share/pear/.channels
+@dirrmtry share/pear/.registry/.channel.__uri
+@dirrmtry share/pear/.registry/.channel.pecl.php.net
+@dirrmtry share/pear/.registry
 @dirrm %%DATADIR%%/Archive
 @dirrm %%DATADIR%%/Console
 @dirrm %%DATADIR%%/OS
@@ -160,10 +160,10 @@ etc/pear.conf
 @dirrm %%DATADIR%%/PEAR/Validator
 @dirrm %%DATADIR%%/PEAR
 @dirrm %%DATADIR%%/XML/RPC
-@unexec rmdir %D/share/pear/XML 2> /dev/null || true
+@dirrmtry share/pear/XML
 @dirrm %%DATADIR%%/data/PEAR
-@unexec rmdir %D/share/pear/data 2> /dev/null || true
+@dirrmtry share/pear/data
 @dirrm %%DATADIR%%/tests/XML_RPC/tests
 @dirrm %%DATADIR%%/tests/XML_RPC
-@unexec rmdir %D/share/pear/tests 2> /dev/null || true
-@unexec rmdir %D/share/pear 2> /dev/null || true
+@dirrmtry share/pear/tests
+@dirrmtry share/pear

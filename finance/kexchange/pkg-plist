@@ -28,30 +28,30 @@ share/icons/locolor/16x16/apps/kexchange.png
 share/icons/locolor/32x32/apps/kexchange.png
 share/locale/de/LC_MESSAGES/kexchange.mo
 share/locale/fi/LC_MESSAGES/kexchange.mo
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kexchange
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
 @dirrm share/apps/kexchange/icons/hicolor/16x16/actions
 @dirrm share/apps/kexchange/icons/hicolor/16x16
 @dirrm share/apps/kexchange/icons/hicolor
 @dirrm share/apps/kexchange/icons
 @dirrm share/apps/kexchange
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk

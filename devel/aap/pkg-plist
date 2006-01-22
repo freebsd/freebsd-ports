@@ -163,4 +163,4 @@ lib/aap/Exec-%%PORTVERSION%%/tools/msvc.pyc
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc/html
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc
 @dirrm lib/aap/Exec-%%PORTVERSION%%
-@unexec rmdir %D/lib/aap 2>/dev/null || true
+@dirrmtry lib/aap

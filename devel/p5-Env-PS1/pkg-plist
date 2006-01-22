@@ -11,5 +11,5 @@
 %%SITE_PERL%%/auto/Env/PS1/autosplit.ix
 %%SITE_PERL%%/auto/Env/PS1/dollar.al
 @dirrm %%SITE_PERL%%/auto/Env/PS1
-@unexec rmdir %D/%%SITE_PERL%%/Env 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/Env 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Env
+@dirrmtry %%SITE_PERL%%/auto/Env

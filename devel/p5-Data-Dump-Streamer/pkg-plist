@@ -6,9 +6,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Data

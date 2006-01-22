@@ -90,4 +90,4 @@ bin/svk
 @dirrm %%SITE_PERL%%/SVK/Command
 @dirrm %%SITE_PERL%%/SVK/Target
 @dirrm %%SITE_PERL%%/SVK
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK

@@ -1,3 +1,3 @@
 %%SITE_PERL%%/Devel/StackTrace.pm
-@unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

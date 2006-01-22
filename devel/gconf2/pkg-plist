@@ -111,8 +111,8 @@ share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/sgml/gconf
-@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku 2> /dev/null || true
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrm share/doc/gconf
 %%LDAP%%@dirrm share/GConf/schema
 %%LDAP%%@dirrm share/GConf

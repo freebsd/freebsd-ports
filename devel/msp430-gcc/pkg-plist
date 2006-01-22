@@ -42,9 +42,9 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/msp2
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%
 @dirrm lib/gcc/%%GCC_TARG%%
-@unexec rmdir %D/lib/gcc 2> /dev/null || true
+@dirrmtry lib/gcc
 @dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools
 @dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
 @dirrm libexec/gcc/%%GCC_TARG%%
-@unexec rmdir %D/libexec/gcc 2> /dev/null || true
+@dirrmtry libexec/gcc
 

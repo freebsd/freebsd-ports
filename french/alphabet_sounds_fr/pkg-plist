@@ -36,4 +36,4 @@ share/childsplay/Data/AlphabetSounds/fr/y.ogg
 share/childsplay/Data/AlphabetSounds/fr/z.ogg
 share/childsplay/Data/AlphabetSounds/fr/10.ogg
 @dirrm share/childsplay/Data/AlphabetSounds/fr
-@unexec rmdir %D/share/childsplay/Data/AlphabetSounds 2>/dev/null || true
+@dirrmtry share/childsplay/Data/AlphabetSounds

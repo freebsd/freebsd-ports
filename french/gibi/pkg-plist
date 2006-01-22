@@ -2158,4 +2158,4 @@ bin/gibi2000
 @exec ln -sf %D/bin/gibi2000 %%ASTER_TOOLS%%/gibi
 @unexec rm -f %%ASTER_TOOLS%%/gibi
 @unexec rm -f %%ASTER_TOOLS%%/gibi2000
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps
