@@ -7151,6 +7151,7 @@ opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
 opendx-samples	ports/graphics/opendx-samples
+openfoam	ports/science/openfoam
 openfts		ports/textproc/openfts
 opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
