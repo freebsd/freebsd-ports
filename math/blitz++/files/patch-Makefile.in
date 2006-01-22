@@ -1,23 +1,15 @@
---- ./Makefile.in.orig	Thu Jan  6 21:51:56 2005
-+++ Makefile.in	Thu Jan  6 23:01:59 2005
-@@ -276,13 +276,18 @@
- target_os = @target_os@
+--- Makefile.in.orig	Fri Jan 20 18:04:40 2006
++++ Makefile.in	Fri Jan 20 18:05:51 2006
+@@ -291,8 +291,11 @@
  target_vendor = @target_vendor@
  ACLOCAL_AMFLAGS = -I m4
-+
+ @FORTRAN_ENABLED_TRUE@FORTRAN_DIRS = benchmarks
 +ifndef NOPORTDOCS
 +DOCS = doc
 +endif
-+
  SUBDIRS = bin blitz random lib testsuite \
--	examples benchmarks doc
-+	examples benchmarks $(DOCS) 
+-	examples $(FORTRAN_DIRS) doc
++	examples $(FORTRAN_DIRS) $(DOCS)
  
  EXTRA_DIST = LEGAL LICENSE README.binutils README-VS.NET.txt Blitz-VS.NET.zip \
  	ChangeLog.1 
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = libdata/pkgconfig
- pkgconfig_DATA = blitz.pc blitz-uninstalled.pc
- all: all-recursive
- 
