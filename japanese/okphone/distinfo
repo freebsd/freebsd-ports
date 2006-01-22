@@ -1,4 +1,6 @@
 MD5 (okphone-1.2.tar.gz) = e09ccdfd12c6738de6805ddabe0a12c3
+SHA256 (okphone-1.2.tar.gz) = 331ce042bec92323e14fc0318fe1c973c7c78cc9b5d938983c7ba16c959aa42c
 SIZE (okphone-1.2.tar.gz) = 68490
 MD5 (okphone-1.2.FreeBSD-patch.rev2.gz) = e71a0edc3b97259e5ad0c22acc4f5380
+SHA256 (okphone-1.2.FreeBSD-patch.rev2.gz) = 7aa1a5630ee5d68d926a64d589e87a166b9165240c5cc6b5a2d4eebff0f99868
 SIZE (okphone-1.2.FreeBSD-patch.rev2.gz) = 4616
