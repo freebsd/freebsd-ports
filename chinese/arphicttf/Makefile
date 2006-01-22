@@ -20,10 +20,6 @@ WRKSRC=		${WRKDIR}/arphic
 
 TTF=		bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf
 
-.if defined(WITHOUT_X11)
-BROKEN=		Incorrect pkg-plist
-.endif
-
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for ttf in ${TTF}
