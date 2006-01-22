@@ -69,20 +69,20 @@ share/locale/sv/LC_MESSAGES/rpm.mo
 share/locale/tr/LC_MESSAGES/rpm.mo
 @dirrm lib/rpm
 @dirrm include/rpm
-@unexec rmdir %D/src/redhat/SRPMS 2>/dev/null || true
-@unexec rmdir %D/src/redhat/SPECS 2>/dev/null || true
-@unexec rmdir %D/src/redhat/SOURCES 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/noarch 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/amd64 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/athlon 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/i686 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/i586 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/i486 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS/i386 2>/dev/null || true
-@unexec rmdir %D/src/redhat/RPMS 2>/dev/null || true
-@unexec rmdir %D/src/redhat/BUILD 2>/dev/null || true
-@unexec rmdir %D/src/redhat 2>/dev/null || true
-@unexec rmdir %D/src 2>/dev/null || true
+@dirrmtry src/redhat/SRPMS
+@dirrmtry src/redhat/SPECS
+@dirrmtry src/redhat/SOURCES
+@dirrmtry src/redhat/RPMS/noarch
+@dirrmtry src/redhat/RPMS/amd64
+@dirrmtry src/redhat/RPMS/athlon
+@dirrmtry src/redhat/RPMS/i686
+@dirrmtry src/redhat/RPMS/i586
+@dirrmtry src/redhat/RPMS/i486
+@dirrmtry src/redhat/RPMS/i386
+@dirrmtry src/redhat/RPMS
+@dirrmtry src/redhat/BUILD
+@dirrmtry src/redhat
+@dirrmtry src
 @unexec rmdir /var/lib/rpm 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @exec mkdir -p /var/lib

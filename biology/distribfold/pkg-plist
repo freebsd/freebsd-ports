@@ -23,6 +23,6 @@ distribfold/cpu0/toph19_eef1.inp
 distribfold/cpu0/whatsnew.txt
 distribfold/cpu0/zhangatm.txt
 distribfold/cpu0/zhangeij.txt
-@unexec rmdir %D/distribfold/cpu0 2>/dev/null || true
+@dirrmtry distribfold/cpu0
 etc/rc.d/distribfold.sh
 @unexec rmdir %D/distribfold 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/distribfold`` to remove any binary, configuration and log files left." | fmt

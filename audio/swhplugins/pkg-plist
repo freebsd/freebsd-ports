@@ -97,6 +97,6 @@ share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
 share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
-@unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
-@unexec rmdir %D/share/ladspa 2>/dev/null || true
-@unexec rmdir %D/lib/ladspa 2>/dev/null || true
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa
+@dirrmtry lib/ladspa

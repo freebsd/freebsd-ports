@@ -403,6 +403,6 @@ etc/gnump3d/mime.types
 @dirrm %%SITE_PERL%%/gnump3d/plugins
 @dirrm %%SITE_PERL%%/gnump3d/lang
 @dirrm %%SITE_PERL%%/gnump3d
-@unexec rmdir %D/etc/gnump3d 2>/dev/null || true
+@dirrmtry etc/gnump3d
 @unexec rmdir /var/log/gnump3d 2>/dev/null || true
 @exec mkdir -p /var/log/gnump3d

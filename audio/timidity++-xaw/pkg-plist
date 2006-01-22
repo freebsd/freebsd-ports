@@ -19,5 +19,5 @@ lib/timidity/interface_a.so
 %%PORTDOCS%%share/doc/ja/timidity++/README.xaw
 @dirrm lib/timidity/bitmaps
 @cwd /usr/X11R6
-@unexec rmdir %D/lib/X11/%%EUCJP_LOCALE%%/app-defaults 2>/dev/null || true
-@unexec rmdir %D/lib/X11/%%EUCJP_LOCALE%% 2>/dev/null || true
+@dirrmtry lib/X11/%%EUCJP_LOCALE%%/app-defaults
+@dirrmtry lib/X11/%%EUCJP_LOCALE%%

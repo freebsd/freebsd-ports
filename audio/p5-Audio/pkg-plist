@@ -36,7 +36,7 @@ bin/tkscope
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Tk 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Play
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio/Data
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Audio
