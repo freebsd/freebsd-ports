@@ -944,5 +944,5 @@
 @dirrm %%HLDSDIR%%esf/dlls
 @dirrm %%HLDSDIR%%esf/classes
 @dirrm %%HLDSDIR%%esf/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%esf/SAVE 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%esf/SAVE
 @unexec rmdir %D/%%HLDSDIR%%esf 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%esf`` to remove any configuration files and logs left." | fmt

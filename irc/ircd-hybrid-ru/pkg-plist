@@ -332,5 +332,5 @@ help/opers/whowas
 @exec mkdir -m 755 /var/log/ircd-hybrid-ru
 @exec chown ircdru:ircdru /var/log/ircd-hybrid-ru
 @unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true
-@unexec rmdir %D/etc/ircd-hybrid-ru/codepage 2>/dev/null || true
-@unexec rmdir %D/etc/ircd-hybrid-ru 2>/dev/null || true
+@dirrmtry etc/ircd-hybrid-ru/codepage
+@dirrmtry etc/ircd-hybrid-ru

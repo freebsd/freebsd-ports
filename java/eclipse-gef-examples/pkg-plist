@@ -27,6 +27,6 @@ eclipse/features/org.eclipse.gef.examples_3.0.0/feature.properties
 @dirrm eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0
 @dirrm eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0
 @dirrm eclipse/features/org.eclipse.gef.examples_3.0.0
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse/features 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

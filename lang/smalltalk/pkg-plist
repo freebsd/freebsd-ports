@@ -454,4 +454,4 @@ share/smalltalk/xml/XSL.st
 @dirrm share/smalltalk
 @dirrm lib/smalltalk
 @exec mkdir -p %D/include/snprintfv
-@unexec rmdir %D/include/snprintfv 2>/dev/null || true
+@dirrmtry include/snprintfv

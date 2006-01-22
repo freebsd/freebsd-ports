@@ -73,11 +73,11 @@ share/xfce4/tips/tips.dat
 @dirrm share/xfce4/eyes/themes
 @dirrm share/xfce4/eyes
 @dirrm share/xfce4/tips
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
+@dirrmtry share/xfce4
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO

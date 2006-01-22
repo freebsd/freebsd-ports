@@ -485,9 +485,9 @@ share/xarchon/xarchon.default
 @dirrm share/xarchon/archon/wav/side/dark
 @dirrm share/xarchon/archon/wav/side
 @dirrm share/xarchon/archon/wav/generic
-@unexec rmdir %D/share/xarchon/archon/wav/actor/weapon 2>/dev/null || true
-@unexec rmdir %D/share/xarchon/archon/wav/actor/piece 2>/dev/null || true
-@unexec rmdir %D/share/xarchon/archon/wav/actor 2>/dev/null || true
+@dirrmtry share/xarchon/archon/wav/actor/weapon
+@dirrmtry share/xarchon/archon/wav/actor/piece
+@dirrmtry share/xarchon/archon/wav/actor
 @dirrm share/xarchon/archon/wav
 @dirrm share/xarchon/archon/floor
 @dirrm share/xarchon/archon/cursor

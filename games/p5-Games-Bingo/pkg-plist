@@ -6,4 +6,4 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bingo.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/Games/Bingo
-@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Games

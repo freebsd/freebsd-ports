@@ -498,5 +498,5 @@
 @dirrm %%IMPDIR%%/lib/Auth
 @dirrm %%IMPDIR%%/lib
 @dirrm %%IMPDIR%%/js
-@unexec rmdir %D/%%IMPDIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%IMPDIR%% 2>/dev/null || true
+@dirrmtry %%IMPDIR%%/config
+@dirrmtry %%IMPDIR%%

@@ -798,7 +798,7 @@
 %%T%%/man/man1/tnameserv.1
 %%T%%/src.jar
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
 @dirrm %%T%%/man/man1
 @dirrm %%T%%/man/ja_JP.eucJP/man1

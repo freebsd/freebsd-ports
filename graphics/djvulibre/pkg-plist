@@ -61,8 +61,8 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm lib/djvulibre/plugins
 @dirrm lib/djvulibre
 @dirrm include/libdjvu
-@unexec rmdir %D/man/fr/man1 2>/dev/null || true
-@unexec rmdir %D/man/fr 2>/dev/null || true
-@unexec rmdir %D/man/de/man1 2>/dev/null || true
-@unexec rmdir %D/man/de 2>/dev/null || true
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/de/man1
+@dirrmtry man/de
 @unexec rmdir %%X11BASE%%/lib/browser_plugins 2>/dev/null || true

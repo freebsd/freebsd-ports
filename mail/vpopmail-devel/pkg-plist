@@ -55,10 +55,10 @@ vpopmail/include/vpopmail_config.h
 vpopmail/lib/libvpopmail.a
 @dirrm vpopmail/lib
 @dirrm vpopmail/include
-@unexec rmdir %D/vpopmail/etc 2>/dev/null || true
-@unexec rmdir %D/vpopmail/domains 2>/dev/null || true
+@dirrmtry vpopmail/etc
+@dirrmtry vpopmail/domains
 @dirrm vpopmail/doc/man_html
 @dirrm vpopmail/doc/doc_html
 @dirrm vpopmail/doc
 @dirrm vpopmail/bin
-@unexec rmdir %D/vpopmail 2>/dev/null || true
+@dirrmtry vpopmail

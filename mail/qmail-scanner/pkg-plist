@@ -7,17 +7,17 @@ share/examples/qs2mrtg/mrtg-qmail-scanner.cfg
 %%SPOOLDIR%%/quarantine-attachments.sample
 @exec [ ! -f %D/%%SPOOLDIR%%/quarantine-attachments.txt ] && cp %D/%%SPOOLDIR%%/quarantine-attachments.sample %D/%%SPOOLDIR%%/quarantine-attachments.txt
 %%SPOOLDIR%%/qmail-scanner-queue-version.txt
-@unexec rmdir %D/%%SPOOLDIR%%/archives/cur 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/archives/new 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/archives/tmp 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/archives 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/quarantine/cur 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/quarantine/new 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/quarantine/tmp 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/quarantine 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/working/cur 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/working/new 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/working/tmp 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/working 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%%/tmp 2>/dev/null || true
-@unexec rmdir %D/%%SPOOLDIR%% 2>/dev/null || true
+@dirrmtry %%SPOOLDIR%%/archives/cur
+@dirrmtry %%SPOOLDIR%%/archives/new
+@dirrmtry %%SPOOLDIR%%/archives/tmp
+@dirrmtry %%SPOOLDIR%%/archives
+@dirrmtry %%SPOOLDIR%%/quarantine/cur
+@dirrmtry %%SPOOLDIR%%/quarantine/new
+@dirrmtry %%SPOOLDIR%%/quarantine/tmp
+@dirrmtry %%SPOOLDIR%%/quarantine
+@dirrmtry %%SPOOLDIR%%/working/cur
+@dirrmtry %%SPOOLDIR%%/working/new
+@dirrmtry %%SPOOLDIR%%/working/tmp
+@dirrmtry %%SPOOLDIR%%/working
+@dirrmtry %%SPOOLDIR%%/tmp
+@dirrmtry %%SPOOLDIR%%

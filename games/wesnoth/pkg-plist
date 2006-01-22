@@ -4015,14 +4015,14 @@ share/locale/tr/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/campaigns
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/la/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/la 2> /dev/null || true
-@unexec rmdir %D/man/sv/man6 2> /dev/null || true
-@unexec rmdir %D/man/sv 2> /dev/null || true
-@unexec rmdir %D/man/hu/man6 2> /dev/null || true
-@unexec rmdir %D/man/hu 2> /dev/null || true
-@unexec rmdir %D/man/de/man6 2> /dev/null || true
-@unexec rmdir %D/man/de 2> /dev/null || true
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry man/sv/man6
+@dirrmtry man/sv
+@dirrmtry man/hu/man6
+@dirrmtry man/hu
+@dirrmtry man/de/man6
+@dirrmtry man/de
 %%GNOME:%%share/gnome/applications/wesnoth.desktop
 %%GNOME:%%share/gnome/pixmaps/wesnoth-icon.png
 

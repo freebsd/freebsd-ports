@@ -6,6 +6,6 @@
 %%SITE_PERL%%/GD/Graph/lines3d.pm
 %%SITE_PERL%%/GD/Graph/pie3d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/GD/Graph 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/GD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/GD/Graph
+@dirrmtry %%SITE_PERL%%/GD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/Graph3d

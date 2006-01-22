@@ -2,7 +2,7 @@
 bin/bincimapd
 bin/bincimap-up
 etc/bincimap/bincimap.conf.sample
-@unexec rmdir %D/etc/bincimap 2>/dev/null || true
+@dirrmtry etc/bincimap
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

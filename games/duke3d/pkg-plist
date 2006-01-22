@@ -12,4 +12,4 @@ bin/duke3d-build
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/gnu.txt
 @dirrm share/duke3d/testdata
-@unexec rmdir %D/share/duke3d 2> /dev/null || true
+@dirrmtry share/duke3d

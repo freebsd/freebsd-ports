@@ -47,11 +47,11 @@ share/courier-imap/mkpop3dcert
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.couriertls
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/courier-imap
-@unexec rmdir %D/%%LIBEXECDIR%%/authlib 2>/dev/null || true
+@dirrmtry %%LIBEXECDIR%%/authlib
 @dirrm %%LIBEXECDIR%%
 @dirrm %%CONFDIR%%/shared
 @dirrm %%CONFDIR%%/shared.tmp
-@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
+@dirrmtry %%CONFDIR%%

@@ -1540,7 +1540,7 @@
 %%T%%/man/man1/tnameserv.1.gz
 %%T%%/src.zip
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Blackdown-JDK%%PORTVERSION%%"
 @dirrm %%T%%/man/man1
 @dirrm %%T%%/man/ja_JP.eucJP/man1

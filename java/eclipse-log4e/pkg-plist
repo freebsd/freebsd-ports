@@ -21,6 +21,6 @@ eclipse/plugins/de.jayefem.log4e_0.7.6/welcome.xml
 @dirrm eclipse/plugins/de.jayefem.log4e_0.7.6/lib
 @dirrm eclipse/plugins/de.jayefem.log4e_0.7.6
 @dirrm eclipse/plugins/de.jayefem.log4e.help_0.7.6
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse/features 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

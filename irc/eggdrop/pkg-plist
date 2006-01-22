@@ -183,4 +183,4 @@ lib/eggdrop/wire.so
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/text
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

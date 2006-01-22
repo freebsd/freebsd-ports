@@ -324,20 +324,20 @@ share/locale/ru/LC_MESSAGES/freeciv.mo
 share/locale/sv/LC_MESSAGES/freeciv.mo
 share/locale/uk/LC_MESSAGES/freeciv.mo
 share/applications/freeciv.desktop
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/locale/he_IL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/he_IL 2>/dev/null || true
-@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/no 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/he_IL/LC_MESSAGES
+@dirrmtry share/locale/he_IL
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrm %%DATADIR%%/trident
 @dirrm %%DATADIR%%/scenario
 @dirrm %%DATADIR%%/nation
@@ -350,4 +350,4 @@ share/applications/freeciv.desktop
 @dirrm %%DATADIR%%/flags
 @dirrm %%DATADIR%%/isophex
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

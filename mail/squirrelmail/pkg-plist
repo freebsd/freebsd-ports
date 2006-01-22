@@ -948,8 +948,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/themes/spice_of_life.php
 %%SQUIRRELDIR%%/themes/spice_of_life_dark.php
 %%SQUIRRELDIR%%/themes/spice_of_life_lite.php
-@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
-@unexec rmdir %D/etc/periodic 2>/dev/null || true
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/abook_take
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/administrator
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/bug_report
@@ -996,7 +996,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/plugins/bug_report
 @dirrm %%SQUIRRELDIR%%/plugins/administrator
 @dirrm %%SQUIRRELDIR%%/plugins/abook_take
-@unexec rmdir %D/%%SQUIRRELDIR%%/plugins 2>/dev/null || true
+@dirrmtry %%SQUIRRELDIR%%/plugins
 @dirrm %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/zh_TW
 @dirrm %%SQUIRRELDIR%%/locale/zh_CN/LC_MESSAGES
@@ -1116,9 +1116,9 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/functions/decode
 @dirrm %%SQUIRRELDIR%%/functions
 @dirrm %%SQUIRRELDIR%%/data
-@unexec rmdir %D/%%SQUIRRELDIR%%/config 2>/dev/null || true
+@dirrmtry %%SQUIRRELDIR%%/config
 @dirrm %%SQUIRRELDIR%%/class/mime
 @dirrm %%SQUIRRELDIR%%/class/helper
 @dirrm %%SQUIRRELDIR%%/class/deliver
 @dirrm %%SQUIRRELDIR%%/class
-@unexec rmdir %D/%%SQUIRRELDIR%% 2>/dev/null || true
+@dirrmtry %%SQUIRRELDIR%%

@@ -18,7 +18,7 @@ etc/qsheff/uninstall-wrapper.sh
 %%DATADIR%%/sample-OK.msg
 %%DATADIR%%/sample-SPAM.msg
 %%DATADIR%%/sample-VIRUS.msg
-@unexec rmdir %D/etc/qsheff 2>/dev/null || true
+@dirrmtry etc/qsheff
 @dirrm %%DATADIR%%
 @unexec echo
 @unexec echo "Type '%%PREFIX%%/etc/qsheff/uninstall-wrapper.sh' to uninstall qSheff completely."

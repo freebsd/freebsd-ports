@@ -120,19 +120,19 @@ etc/courier/webmail.authpam
 @exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
 @exec [ -f %D/etc/courier/pop3d.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
 @exec [ -f %D/etc/courier/sqwebmaild.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/sqwebmaild.dist
-@unexec rmdir %D/etc/courier/aliasdir 2>/dev/null || true
-@unexec rmdir %D/etc/courier/aliases 2>/dev/null || true
-@unexec rmdir %D/etc/courier/esmtpacceptmailfor.dir 2>/dev/null || true
-@unexec rmdir %D/etc/courier/esmtppercentrelay.dir 2>/dev/null || true
-@unexec rmdir %D/etc/courier/filters/active 2>/dev/null || true
-@unexec rmdir %D/etc/courier/filters 2>/dev/null || true
-@unexec rmdir %D/etc/courier/shared 2>/dev/null || true
-@unexec rmdir %D/etc/courier/shared.tmp 2>/dev/null || true
-@unexec rmdir %D/etc/courier/smtpaccess 2>/dev/null || true
-@unexec rmdir %D/etc/courier/webadmin/added 2>/dev/null || true
-@unexec rmdir %D/etc/courier/webadmin/removed 2>/dev/null || true
-@unexec rmdir %D/etc/courier/webadmin 2>/dev/null || true
-@unexec rmdir %D/etc/courier 2>/dev/null || true
+@dirrmtry etc/courier/aliasdir
+@dirrmtry etc/courier/aliases
+@dirrmtry etc/courier/esmtpacceptmailfor.dir
+@dirrmtry etc/courier/esmtppercentrelay.dir
+@dirrmtry etc/courier/filters/active
+@dirrmtry etc/courier/filters
+@dirrmtry etc/courier/shared
+@dirrmtry etc/courier/shared.tmp
+@dirrmtry etc/courier/smtpaccess
+@dirrmtry etc/courier/webadmin/added
+@dirrmtry etc/courier/webadmin/removed
+@dirrmtry etc/courier/webadmin
+@dirrmtry etc/courier
 libexec/courier/aliascombine
 libexec/courier/aliascreate
 libexec/courier/aliasexp

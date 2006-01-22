@@ -4,6 +4,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Scalar/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/List/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/Util
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Scalar 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/List 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Scalar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/List

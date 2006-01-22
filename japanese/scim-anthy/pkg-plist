@@ -19,6 +19,6 @@ share/scim/Anthy/style/wnn.sty
 share/scim/icons/scim-anthy.png
 share/scim/icons/scim-anthy-dict.png
 share/scim/icons/scim-anthy-swap-colors.png
-@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
-@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
-@unexec rmdir %D/lib/scim-1.0/icons 2>/dev/null || true
+@dirrmtry lib/scim-1.0/IMEngine
+@dirrmtry lib/scim-1.0/SetupUI
+@dirrmtry lib/scim-1.0/icons

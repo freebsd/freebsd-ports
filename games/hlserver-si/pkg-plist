@@ -869,6 +869,6 @@
 @dirrm %%HLDSDIR%%si/events
 @dirrm %%HLDSDIR%%si/dlls
 @dirrm %%HLDSDIR%%si/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%si/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%si/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%si/SAVE
+@dirrmtry %%HLDSDIR%%si/logs
 @unexec rmdir %D/%%HLDSDIR%%si 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%si`` to remove any configuration files and logs left." | fmt

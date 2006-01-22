@@ -124,7 +124,7 @@ share/pixmaps/gimv.png
 @dirrm lib/gimageview/archiver
 @dirrm lib/gimageview/image_loader
 @dirrm lib/gimageview/image_saver
-@unexec rmdir %D/lib/gimageview/image_view 2>/dev/null || true
+@dirrmtry lib/gimageview/image_view
 @dirrm lib/gimageview/io_stream
 @dirrm lib/gimageview/thumbnail
 @dirrm lib/gimageview/thumbnail_view
@@ -138,4 +138,4 @@ share/pixmaps/gimv.png
 @dirrm share/gimageview/pixmaps/default
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
-@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@dirrmtry share/locale/ja/LC_MESSAGES

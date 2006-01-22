@@ -2,6 +2,6 @@ lib/scim-1.0/IMEngine/prime.so
 lib/scim-1.0/SetupUI/prime-imengine-setup.so
 share/locale/ja/LC_MESSAGES/scim-prime.mo
 share/scim/icons/scim-prime.png
-@unexec rmdir %D/share/scim/icons 2>/dev/null || true
-@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
-@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
+@dirrmtry share/scim/icons
+@dirrmtry lib/scim-1.0/IMEngine
+@dirrmtry lib/scim-1.0/SetupUI

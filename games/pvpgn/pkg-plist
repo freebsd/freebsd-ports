@@ -119,6 +119,6 @@ sbin/bntrackd
 @dirrm %%DATADIR%%/teams
 @dirrm %%DATADIR%%/users
 @dirrm %%DATADIR%%/userscdb
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
 @dirrm etc/pvpgn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

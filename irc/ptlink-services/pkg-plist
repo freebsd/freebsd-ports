@@ -122,4 +122,4 @@ var/modules/sql/os_sysstats.sql
 @dirrm utils
 @dirrm etc/ptlink-services/mails
 @dirrm bin/modules
-@unexec rmdir %D/etc/ptlink-services 2> /dev/null || true
+@dirrmtry etc/ptlink-services

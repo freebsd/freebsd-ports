@@ -170,4 +170,4 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/virtual.8.html
 %%PORTDOCS%%@dirrm share/doc/postfix
 @dirrm libexec/postfix
-@unexec rmdir %D/etc/postfix  2>/dev/null || true
+@dirrmtry etc/postfix 

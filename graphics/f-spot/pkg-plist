@@ -44,6 +44,6 @@ share/locale/sr@Latn/LC_MESSAGES/f-spot.mo
 share/locale/sv/LC_MESSAGES/f-spot.mo
 share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm lib/f-spot

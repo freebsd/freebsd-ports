@@ -1381,13 +1381,13 @@ eclipse/plugins/%%OTS%%.subclipse_%%OTSVER%%/plugin.xml
 @dirrm eclipse/features/org.eclipse.team.extras_%%TEAMVER%%
 @dirrm eclipse/features/%%NSP%%_%%VER%%
 @dirrm eclipse/features/net.sf.eclipsetidy.feature_%%TIDYVER%%
-@unexec rmdir %D/eclipse/features/%%QVER%%/lib 2>/dev/null || true
-@unexec rmdir %D/eclipse/features/%%QVER%%/icons/unused 2>/dev/null || true
-@unexec rmdir %D/eclipse/features/%%QVER%%/icons/.xvpics 2>/dev/null || true
-@unexec rmdir %D/eclipse/features/%%QVER%%/icons 2>/dev/null || true
-@unexec rmdir %D/eclipse/features/%%QVER%%/doc/images 2>/dev/null || true
-@unexec rmdir %D/eclipse/features/%%QVER%%/doc 2>/dev/null || true
+@dirrmtry eclipse/features/%%QVER%%/lib
+@dirrmtry eclipse/features/%%QVER%%/icons/unused
+@dirrmtry eclipse/features/%%QVER%%/icons/.xvpics
+@dirrmtry eclipse/features/%%QVER%%/icons
+@dirrmtry eclipse/features/%%QVER%%/doc/images
+@dirrmtry eclipse/features/%%QVER%%/doc
 @dirrm eclipse/features/%%QVER%%
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse/features 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

@@ -281,10 +281,10 @@ sbin/saned
 @exec mkdir %D/share/sane/artec_eplus48u
 @exec mkdir %D/share/sane/gt68xx
 @exec mkdir %D/share/sane/snapscan
-@unexec rmdir %D/share/sane/snapscan 2>/dev/null || true
-@unexec rmdir %D/share/sane/gt68xx 2>/dev/null || true
-@unexec rmdir %D/share/sane/artec_eplus48u 2>/dev/null || true
-@unexec rmdir %D/share/sane 2>/dev/null || true
+@dirrmtry share/sane/snapscan
+@dirrmtry share/sane/gt68xx
+@dirrmtry share/sane/artec_eplus48u
+@dirrmtry share/sane
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/umax
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/u12
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/teco

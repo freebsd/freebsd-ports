@@ -251,4 +251,4 @@ lib/gj/%%JDKSUBDIR%%/com/sun/java/util/collections/Vector.class
 @dirrm lib/gj/%%JDKSUBDIR%%/gjc/v6
 @dirrm lib/gj/%%JDKSUBDIR%%/gjc
 @dirrm lib/gj/%%JDKSUBDIR%%
-@unexec rmdir %D/lib/gj 2>/dev/null || true
+@dirrmtry lib/gj

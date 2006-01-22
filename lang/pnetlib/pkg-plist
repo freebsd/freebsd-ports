@@ -130,15 +130,15 @@ lib/cscc/lib/pinvoke.map
 lib/cscc/lib/sysglobl.dll
 share/cscc/config/machine.default
 @dirrm share/cscc/config
-@unexec rmdir %D/share/cscc 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/8.0.1200.0/de 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/8.0.1200.0/ca 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/8.0.1200.0 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/2.0.3600.0/de 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/2.0.3600.0/ca 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/2.0.3600.0 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/0.81.0.1407 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/ca 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/de 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib 2>/dev/null || true
-@unexec rmdir %D/lib/cscc 2>/dev/null || true
+@dirrmtry share/cscc
+@dirrmtry lib/cscc/lib/8.0.1200.0/de
+@dirrmtry lib/cscc/lib/8.0.1200.0/ca
+@dirrmtry lib/cscc/lib/8.0.1200.0
+@dirrmtry lib/cscc/lib/2.0.3600.0/de
+@dirrmtry lib/cscc/lib/2.0.3600.0/ca
+@dirrmtry lib/cscc/lib/2.0.3600.0
+@dirrmtry lib/cscc/lib/0.81.0.1407
+@dirrmtry lib/cscc/lib/ca
+@dirrmtry lib/cscc/lib/de
+@dirrmtry lib/cscc/lib
+@dirrmtry lib/cscc

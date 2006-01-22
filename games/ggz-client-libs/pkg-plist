@@ -13,7 +13,7 @@ lib/libggzmod.so.4
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
 share/locale/de/LC_MESSAGES/ggz-config.mo
-@unexec rmdir %D/share/desktop-directories 2>/dev/null || true
-@unexec rmdir %D/etc/xdg/menus/applications-merged 2>/dev/null || true
-@unexec rmdir %D/etc/xdg/menus 2>/dev/null || true
-@unexec rmdir %D/etc/xdg 2>/dev/null || true
+@dirrmtry share/desktop-directories
+@dirrmtry etc/xdg/menus/applications-merged
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg

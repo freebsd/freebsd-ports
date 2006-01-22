@@ -32,5 +32,5 @@ lib/libepix.a
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/notes
 @dirrm %%DATADIR%%/config
-@unexec rmdir %D/%%DATADIR%%/tutorial 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/tutorial
+@dirrmtry %%DATADIR%%

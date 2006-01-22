@@ -625,7 +625,7 @@
 @dirrm %%HLDSDIR%%existence/sound/radio/accent_agent
 @dirrm %%HLDSDIR%%existence/sound/radio
 @dirrm %%HLDSDIR%%existence/sound/player
-@unexec rmdir %D/%%HLDSDIR%%existence/sound/plats 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%existence/sound/plats
 @dirrm %%HLDSDIR%%existence/sound/oldman
 @dirrm %%HLDSDIR%%existence/sound/misc
 @dirrm %%HLDSDIR%%existence/sound/items
@@ -660,5 +660,5 @@
 @dirrm %%HLDSDIR%%existence/events
 @dirrm %%HLDSDIR%%existence/dlls
 @dirrm %%HLDSDIR%%existence/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%existence/SAVE 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%existence/SAVE
 @unexec rmdir %D/%%HLDSDIR%%existence 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%existence`` to remove any configuration files and logs left." | fmt

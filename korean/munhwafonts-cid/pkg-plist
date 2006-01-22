@@ -30,5 +30,5 @@ share/ghostscript/fonts/MunhwaGothic-Bold-KSC-EUC-H.gsf
 share/ghostscript/fonts/MunhwaGothic-Regular
 share/ghostscript/fonts/MunhwaGothic-Regular-KSC-EUC-H.gsf
 @dirrm share/ghostscript/fonts/CMap
-@unexec rmdir %D/share/ghostscript/fonts 2> /dev/null || true
-@unexec rmdir %D/share/ghostscript 2> /dev/null || true
+@dirrmtry share/ghostscript/fonts
+@dirrmtry share/ghostscript

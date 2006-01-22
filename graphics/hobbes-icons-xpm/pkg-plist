@@ -3417,4 +3417,4 @@ include/X11/pixmaps/z/zug2.xpm
 @dirrm include/X11/pixmaps/x
 @dirrm include/X11/pixmaps/y
 @dirrm include/X11/pixmaps/z
-@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
+@dirrmtry include/X11/pixmaps

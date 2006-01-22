@@ -6,11 +6,11 @@ bin/prime-userdict-convert
 bin/prime-userdict-update
 libdata/pkgconfig/prime.pc
 etc/prime/Custom_prime.rb
-@unexec rmdir %D/etc/prime 2>/dev/null || true
+@dirrmtry etc/prime
 %%DATADIR%%/grammar/prime-grammar
 %%DATADIR%%/makedict/canna2prime.table
-@unexec rmdir %D/%%DATADIR%%/grammar 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/makedict 2>/dev/null || true
+@dirrmtry %%DATADIR%%/grammar
+@dirrmtry %%DATADIR%%/makedict
 %%RUBY_SITELIBDIR%%/prime/engine/engine-adambnc.rb
 %%RUBY_SITELIBDIR%%/prime/engine/engine-alphabet.rb
 %%RUBY_SITELIBDIR%%/prime/engine/engine-basic.rb
@@ -53,10 +53,10 @@ etc/prime/Custom_prime.rb
 %%RUBY_SITELIBDIR%%/prime/session-prime08.rb
 %%RUBY_SITELIBDIR%%/prime/session.rb
 %%RUBY_SITELIBDIR%%/prime/taiyaki.rb
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/engine 2>/dev/null || true
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/grammar 2>/dev/null || true
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime/makedict 2>/dev/null || true
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/prime/engine
+@dirrmtry %%RUBY_SITELIBDIR%%/prime/grammar
+@dirrmtry %%RUBY_SITELIBDIR%%/prime/makedict
+@dirrmtry %%RUBY_SITELIBDIR%%/prime
 %%PORTDOCS%%%%DOCSDIR%%/examples/Custom_prime.rb
 %%PORTDOCS%%%%DOCSDIR%%/figures/dict-format.png
 %%PORTDOCS%%%%DOCSDIR%%/figures/predictive-input.png

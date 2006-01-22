@@ -340,6 +340,6 @@ eclipse/features/org.eclipse.sdk.examples_3.0.0/license.html
 @dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html
 @dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0
 @dirrm eclipse/features/org.eclipse.sdk.examples_3.0.0
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse/features 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

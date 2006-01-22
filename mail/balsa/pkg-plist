@@ -135,8 +135,8 @@ share/locale/vi/LC_MESSAGES/balsa.mo
 share/locale/wa/LC_MESSAGES/balsa.mo
 share/locale/zh_CN/LC_MESSAGES/balsa.mo
 share/locale/zh_TW/LC_MESSAGES/balsa.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/sounds/balsa
 @dirrm share/gnome/omf/balsa
 %%GTKICON%%@unexec rmdir %D/share/icons/hicolor/48x48/mimetypes 2>/dev/null || true

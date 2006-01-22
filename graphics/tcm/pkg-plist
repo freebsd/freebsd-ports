@@ -346,7 +346,7 @@ tcm/lib/help/Version
 tcm/lib/help/Welcome
 tcm/lib/tcm.conf
 @dirrm tcm/man/man1
-@unexec rmdir %D/tcm/man 2>/dev/null || true
+@dirrmtry tcm/man
 @dirrm tcm/lib/help
 @dirrm tcm/lib
 @dirrm tcm/doc/wishlist

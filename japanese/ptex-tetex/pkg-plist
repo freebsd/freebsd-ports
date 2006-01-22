@@ -319,13 +319,13 @@ bin/updmap-sys-ptex
 @dirrm %%TEXMFDIR%%/ptex/platex/config
 %%TEXMFDIR%%/dvips/ptex/jis.map
 %%TEXMFDIR%%/dvips/ptex/morisawa.map
-@unexec rmdir %D/%%TEXMFDIR%%/dvips/ptex 2> /dev/null || true
+@dirrmtry %%TEXMFDIR%%/dvips/ptex
 @exec /bin/mkdir -p %D/%%TEXMFCONFIGDIR%%/dvips/ptex
-@unexec rmdir %D/%%TEXMFCONFIGDIR%%/dvips/ptex 2> /dev/null || true
+@dirrmtry %%TEXMFCONFIGDIR%%/dvips/ptex
 %%TEXMFCONFIGDIR%%/texconfig/tcfmgr.map
 @dirrm %%TEXMFCONFIGDIR%%/texconfig
 %%TEXMFCONFIGDIR%%/web2c/ptex/updmap.cfg
-@unexec rmdir %D/%%TEXMFCONFIGDIR%%/web2c/ptex 2> /dev/null || true
+@dirrmtry %%TEXMFCONFIGDIR%%/web2c/ptex
 @exec %%MKTEXLSR%%
 @exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvips/updmap
 @exec /bin/mkdir -p %D/%%TEXMFDIR%%/fonts/map/ptex/dvipdfm/updmap

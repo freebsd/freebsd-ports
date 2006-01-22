@@ -222,9 +222,9 @@ share/pixmaps/WolfSP.xpm
 @dirrm %%DATADIR%%/pb/htm
 @dirrm %%DATADIR%%/pb
 @dirrm %%DATADIR%%/main/scripts
-@unexec rmdir %D/%%DATADIR%%/main 2>/dev/null || true
+@dirrmtry %%DATADIR%%/main
 @unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster/players
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster/admins
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Docs/PunkBuster

@@ -6,4 +6,4 @@ share/fonts/bdf/k14.bdf.gz
 share/fonts/bdf/8x16rk.bdf.gz
 share/fonts/bdf/jiskan16.bdf.gz
 @dirrm share/fonts/bdf
-@unexec rmdir %D/share/fonts 2>/dev/null || true
+@dirrmtry share/fonts

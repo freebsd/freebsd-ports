@@ -11,6 +11,6 @@
 %%DATADIR%%/dict/prime-dict-en-pos_literal.ary
 %%DATADIR%%/dict/prime-dict-en.ary
 %%DATADIR%%/dict/prime-dict-en_literal.ary
-@unexec rmdir %D/%%DATADIR%%/dict 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/prime 2>/dev/null || true
+@dirrmtry %%DATADIR%%/dict
+@dirrmtry %%DATADIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/prime

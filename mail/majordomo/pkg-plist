@@ -48,7 +48,7 @@ majordomo/doc/post-install-notes
 @dirrm majordomo/digests
 @dirrm majordomo/lists/test-l-digest.archive
 @dirrm majordomo/lists/test-l.archive
-@unexec rmdir %D/majordomo/lists 2>/dev/null || true
+@dirrmtry majordomo/lists
 @dirrm majordomo/tmp
 @dirrm majordomo/Tools
-@unexec rmdir %D/majordomo 2>/dev/null || true
+@dirrmtry majordomo

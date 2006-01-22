@@ -1158,7 +1158,7 @@ games/scorched3d/documentation/html/serverfiles.html
 @dirrm games/scorched3d/data/tanks/tiger2
 @dirrm games/scorched3d/data/tanks/thel
 @dirrm games/scorched3d/data/tanks/t90
-@unexec rmdir %D/games/scorched3d/data/tanks/sonicring 2>/dev/null || true
+@dirrmtry games/scorched3d/data/tanks/sonicring
 @dirrm games/scorched3d/data/tanks/sonic
 @dirrm games/scorched3d/data/tanks/sa6
 @dirrm games/scorched3d/data/tanks/photoncannon
@@ -1179,7 +1179,7 @@ games/scorched3d/documentation/html/serverfiles.html
 @dirrm games/scorched3d/data/tanks/bm13
 @dirrm games/scorched3d/data/tanks/bender
 @dirrm games/scorched3d/data/tanks/battleship
-@unexec rmdir %D/games/scorched3d/data/tanks/CannonTower 2>/dev/null || true
+@dirrmtry games/scorched3d/data/tanks/CannonTower
 @dirrm games/scorched3d/data/tanks/CF-104
 @dirrm games/scorched3d/data/tanks
 @dirrm games/scorched3d/data/talk/polish
@@ -1207,44 +1207,44 @@ games/scorched3d/documentation/html/serverfiles.html
 @dirrm games/scorched3d/data/globalmods/apoc/data/landscapes/masks
 @dirrm games/scorched3d/data/globalmods/apoc/data/landscapes
 @dirrm games/scorched3d/data/globalmods/apoc/data/accessories/weapons
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/store1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/smalloak 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/shotgun 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/redhornet 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/office3 2>/dev/null || true
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/trailorhouse1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/store1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/smalloak
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/skyscraper1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/shotgun
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/shockrocket
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/shockbomblet
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/remorcebomblet
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/redhornet
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/officeplaza1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/office3
 @dirrm games/scorched3d/data/globalmods/apoc/data/accessories/objects
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/napalm 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/house1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/grenade 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/gasstation1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/farm1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/factory1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/deer 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/common 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/church1 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/cactus 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/bullet 2>/dev/null || true
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/napalm
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/m7a3grenade
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/logcabin1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/house1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/grenade
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/gasstation1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/fusionbarrel
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/farm1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/factory1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/deer
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/common
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/cityoffice
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/church1
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/cactus
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/bullet
 @dirrm games/scorched3d/data/globalmods/apoc/data/accessories/buildings
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/boulders 2>/dev/null || true
-@unexec rmdir %D/games/scorched3d/data/globalmods/apoc/data/accessories/50cal 2>/dev/null || true
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/brownboulders
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/boulders
+@dirrmtry games/scorched3d/data/globalmods/apoc/data/accessories/50cal
 @dirrm games/scorched3d/data/globalmods/apoc/data/accessories
 @dirrm games/scorched3d/data/globalmods/apoc/data
 @dirrm games/scorched3d/data/globalmods/apoc
 @dirrm games/scorched3d/data/globalmods
 @dirrm games/scorched3d/data/fonts
 @dirrm games/scorched3d/data/avatars
-@unexec rmdir %D/games/scorched3d/data/acessories 2>/dev/null || true
+@dirrmtry games/scorched3d/data/acessories
 @dirrm games/scorched3d/data/accessories/v2missile
 @dirrm games/scorched3d/data/accessories/teleport
 @dirrm games/scorched3d/data/accessories/sonicring
@@ -1275,4 +1275,4 @@ games/scorched3d/documentation/html/serverfiles.html
 @dirrm games/scorched3d/data/accessories
 @dirrm games/scorched3d/data
 @dirrm games/scorched3d
-@unexec rmdir %D/games 2>/dev/null || true
+@dirrmtry games

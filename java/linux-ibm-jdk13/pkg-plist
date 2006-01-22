@@ -887,7 +887,7 @@
 %%T%%/demo/jfc/TableExample/src/TableMap.java
 %%T%%/demo/jfc/TableExample/src/TableSorter.java
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-IBM-JDK%%PORTVERSION%%"
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/lib/security

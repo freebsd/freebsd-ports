@@ -35,4 +35,4 @@ sbin/pserv
 sbin/ringd
 @dirrm include/popular
 @dirrm lib/popular
-@unexec rmdir %D/etc/popular 2>/dev/null || true
+@dirrmtry etc/popular

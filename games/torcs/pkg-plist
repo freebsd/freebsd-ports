@@ -2810,7 +2810,7 @@ lib/torcs/trackgen-bin
 @dirrm %%TORCSDIR%%/cars/155-DTM
 @dirrm %%TORCSDIR%%/cars
 @dirrm %%TORCSDIR%%
-@unexec rmdir %D/share/games 2>/dev/null || true
+@dirrmtry share/games
 @dirrm lib/torcs/modules/track
 @dirrm lib/torcs/modules/telemetry
 @dirrm lib/torcs/modules/simu

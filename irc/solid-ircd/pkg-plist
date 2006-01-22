@@ -12,5 +12,5 @@ solid-ircd/ssl/ssl.rnd
 solid-ircd/ssl/vgc.pem
 solid-ircd/ssl/vgckey.pem
 @dirrm solid-ircd/ssl/CVS
-@unexec rmdir %D/solid-ircd/ssl 2>/dev/null || true
-@unexec rmdir %D/solid-ircd 2>/dev/null || true
+@dirrmtry solid-ircd/ssl
+@dirrmtry solid-ircd

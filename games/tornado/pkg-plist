@@ -1,5 +1,5 @@
 bin/tornado
-@unexec rmdir %D/share/games 2>/dev/null || true
+@dirrmtry share/games
 share/games/tornado.scores
 share/locale/de/LC_MESSAGES/tornado.mo
 share/locale/es/LC_MESSAGES/tornado.mo

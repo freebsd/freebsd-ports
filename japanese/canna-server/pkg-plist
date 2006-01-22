@@ -122,8 +122,8 @@ sbin/cannakill
 @dirrm lib/canna/dic/group
 @dirrm lib/canna/dic
 @dirrm lib/canna
-@unexec rmdir %D/share/canna/dic/user/user 2>/dev/null || true
-@unexec rmdir %D/share/canna/dic/user      2>/dev/null || true
-@unexec rmdir %D/share/canna/dic/group     2>/dev/null || true
-@unexec rmdir %D/share/canna/dic           2>/dev/null || true
-@unexec rmdir %D/share/canna               2>/dev/null || true
+@dirrmtry share/canna/dic/user/user
+@dirrmtry share/canna/dic/user     
+@dirrmtry share/canna/dic/group    
+@dirrmtry share/canna/dic          
+@dirrmtry share/canna              

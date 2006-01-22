@@ -109,8 +109,8 @@ lib/kroc/libudc.so
 %%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/lib 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc/html 2>/dev/null || true
 %%PORTDOCS%%@unexec rmdir %D/%%DATADIR%%/doc 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/vtlib 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/vtinclude 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/lib/kroc 2>/dev/null || true
-@unexec rmdir %D/include/kroc 2>/dev/null || true
+@dirrmtry %%DATADIR%%/vtlib
+@dirrmtry %%DATADIR%%/vtinclude
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/kroc
+@dirrmtry include/kroc

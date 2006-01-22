@@ -137,18 +137,18 @@ share/locale/xh/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
-@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/nso 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku 2> /dev/null || true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures

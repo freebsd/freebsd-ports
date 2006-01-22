@@ -1856,10 +1856,10 @@
 @dirrm %%HLDSDIR%%dmc/events
 @dirrm %%HLDSDIR%%dmc/dlls
 @dirrm %%HLDSDIR%%dmc/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%valve 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%reslists 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%ricochet 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%dmc 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%valve
+@dirrmtry %%HLDSDIR%%reslists
+@dirrmtry %%HLDSDIR%%tfc
+@dirrmtry %%HLDSDIR%%ricochet
+@dirrmtry %%HLDSDIR%%dmc
 @unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
-@unexec rmdir %D/%%HLDSBASE%% 2>/dev/null || true
+@dirrmtry %%HLDSBASE%%

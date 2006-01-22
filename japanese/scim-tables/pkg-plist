@@ -6,4 +6,4 @@ share/scim/tables/TUT-Code.bin
 share/scim/icons/HIRAGANA.png
 share/scim/icons/KATAKANA.png
 share/scim/icons/Nippon.png
-@unexec rmdir %D/share/scim/tables 2>/dev/null || true
+@dirrmtry share/scim/tables

@@ -181,6 +181,6 @@ share/noegnud-0.8.0/slashem-0.0.6E4F8/wizhelp
 share/noegnud-0.8.0/slashem-0.0.6E4F8/yeenoghu.lev
 @exec chown games:bin %D/share/noegnud-0.8.0/slashem-0.0.6E4F8
 @exec chmod 775 %D/share/noegnud-0.8.0/slashem-0.0.6E4F8
-@unexec rmdir %D/share/noegnud-0.8.0/slashem-0.0.6E4F8/save 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/slashem-0.0.6E4F8 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0 2>/dev/null || true
+@dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8/save
+@dirrmtry share/noegnud-0.8.0/slashem-0.0.6E4F8
+@dirrmtry share/noegnud-0.8.0

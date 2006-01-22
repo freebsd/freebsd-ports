@@ -35,26 +35,26 @@ share/locale/es/LC_MESSAGES/kshowmail.mo
 share/locale/fr/LC_MESSAGES/kshowmail.mo
 share/locale/hu/LC_MESSAGES/kshowmail.mo
 share/locale/sv/LC_MESSAGES/kshowmail.mo
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/sv/kshowmail
-@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrmtry share/doc/HTML/sv
 @dirrm share/doc/HTML/hu/kshowmail
-@unexec rmdir %D/share/doc/HTML/hu 2>/dev/null || true
+@dirrmtry share/doc/HTML/hu
 @dirrm share/doc/HTML/fr/kshowmail
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@dirrmtry share/doc/HTML/fr
 @dirrm share/doc/HTML/es/kshowmail
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@dirrmtry share/doc/HTML/es
 @dirrm share/doc/HTML/en/kshowmail
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/kshowmail
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
 @dirrm share/apps/kshowmail/sounds
 @dirrm share/apps/kshowmail/pics
 @dirrm share/apps/kshowmail
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps
+@dirrmtry share/applnk/Internet
+@dirrmtry share/applnk

@@ -52,7 +52,7 @@ share/Eterm/pix/tile/violetta.png
 share/Eterm/pix/tile/water_into_wine.png
 share/Eterm/pix/tile/wormhole.png
 share/Eterm/pix/tile/woven_memories.png
-@unexec rmdir %D/share/Eterm/pix/scale 2>/dev/null || true
-@unexec rmdir %D/share/Eterm/pix/tile 2>/dev/null || true
-@unexec rmdir %D/share/Eterm/pix 2>/dev/null || true
-@unexec rmdir %D/share/Eterm 2>/dev/null || true
+@dirrmtry share/Eterm/pix/scale
+@dirrmtry share/Eterm/pix/tile
+@dirrmtry share/Eterm/pix
+@dirrmtry share/Eterm

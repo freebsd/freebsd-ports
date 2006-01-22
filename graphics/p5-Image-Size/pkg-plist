@@ -17,6 +17,6 @@ bin/imgsize
 %%SITE_PERL%%/auto/Image/Size/xpmsize.al
 @dirrm %%SITE_PERL%%/auto/Image/Size
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size
-@unexec rmdir %D/%%SITE_PERL%%/auto/Image 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Image 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image

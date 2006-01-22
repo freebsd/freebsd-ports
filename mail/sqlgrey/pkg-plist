@@ -20,5 +20,5 @@
 bin/sqlgrey-logstats.pl
 sbin/sqlgrey
 sbin/update_sqlgrey_config
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%

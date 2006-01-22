@@ -130,9 +130,9 @@ diablo-jre%%JRE_VERSION%%/man/man1/tnameserv.1
 %%PLUGIN:%%diablo-jre%%JRE_VERSION%%/plugin/i386/ns600/libjavaplugin_oji.so
 %%PLUGIN:%%diablo-jre%%JRE_VERSION%%/plugin/i386/ns600/libjavaplugin_oji_g.so
 @exec   mkdir -p %D/diablo-jre%%JRE_VERSION%%/lib/ext/
-@unexec rmdir %D/diablo-jre%%JRE_VERSION%%/lib/ext 2>/dev/null || true
+@dirrmtry diablo-jre%%JRE_VERSION%%/lib/ext
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte%%JRE_VERSION%%"
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns600
 %%PLUGIN:%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns4

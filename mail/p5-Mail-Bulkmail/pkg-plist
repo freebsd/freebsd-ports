@@ -5,6 +5,6 @@
 %%SITE_PERL%%/Mail/Bulkmail/DummyServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Bulkmail/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Bulkmail
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/Bulkmail
-@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Mail

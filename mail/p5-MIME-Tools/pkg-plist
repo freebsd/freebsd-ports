@@ -37,4 +37,4 @@
 @dirrm %%SITE_PERL%%/MIME/Field
 @dirrm %%SITE_PERL%%/MIME/Decoder
 @dirrm %%SITE_PERL%%/MIME/Parser
-@unexec rmdir %D/%%SITE_PERL%%/MIME 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/MIME

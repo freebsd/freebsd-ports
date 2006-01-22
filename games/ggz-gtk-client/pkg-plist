@@ -19,7 +19,7 @@ share/locale/de/LC_MESSAGES/ggz-gtk.mo
 share/locale/es/LC_MESSAGES/ggz-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/ggz-gtk.mo
 share/locale/sv/LC_MESSAGES/ggz-gtk.mo
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 @dirrm share/ggz/ggz-gtk/help
 @dirrm share/ggz/ggz-gtk
-@unexec rmdir %D/share/ggz 2>/dev/null || true
+@dirrmtry share/ggz

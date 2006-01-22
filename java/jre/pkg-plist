@@ -49,7 +49,7 @@ jre%%JRE_VERSION%%/lib/rt.jar
 jre%%JRE_VERSION%%/lib/security/java.security
 jre%%JRE_VERSION%%/lib/serialver.properties
 @exec mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec %%LOCALBASE%%/bin/registervm "%D/jre%%JRE_VERSION%%/bin/java # JRE%%JRE_VERSION%%"
 @dirrm jre%%JRE_VERSION%%/lib/security
 @dirrm jre%%JRE_VERSION%%/lib/i386/green_threads

@@ -53,4 +53,4 @@
 %%RUBY_MODDOCDIR%%/variable.html
 %%RUBY_MODDOCDIR%%/yacc.html
 @dirrm %%RUBY_MODDOCDIR%%
-@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@dirrmtry %%RUBY_DOCDIR%%

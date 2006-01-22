@@ -925,9 +925,9 @@ jdk%%JDK_VERSION%%/man/man1/serialver.1
 jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 jdk%%JDK_VERSION%%/src.jar
 @exec   mkdir -p %D/jdk%%JDK_VERSION%%/jre/lib/ext/
-@unexec rmdir %D/jdk%%JDK_VERSION%%/jre/lib/ext 2>/dev/null || true
+@dirrmtry jdk%%JDK_VERSION%%/jre/lib/ext
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
 @dirrm jdk%%JDK_VERSION%%/man/man1
 @dirrm jdk%%JDK_VERSION%%/man

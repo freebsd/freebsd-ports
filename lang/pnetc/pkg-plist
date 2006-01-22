@@ -118,14 +118,14 @@ share/cscc/include/varargs.h
 share/cscc/include/wchar.h
 share/cscc/include/wctype.h
 share/cscc/include/xlocale.h
-@unexec rmdir %D/share/cscc/include/sys 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include/netinet 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include/gnu 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include/bits 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include/assembly 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include/arpa 2>/dev/null || true
-@unexec rmdir %D/share/cscc/include 2>/dev/null || true
-@unexec rmdir %D/share/cscc 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/2.0.3600.0 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib 2>/dev/null || true
-@unexec rmdir %D/lib/cscc 2>/dev/null || true
+@dirrmtry share/cscc/include/sys
+@dirrmtry share/cscc/include/netinet
+@dirrmtry share/cscc/include/gnu
+@dirrmtry share/cscc/include/bits
+@dirrmtry share/cscc/include/assembly
+@dirrmtry share/cscc/include/arpa
+@dirrmtry share/cscc/include
+@dirrmtry share/cscc
+@dirrmtry lib/cscc/lib/2.0.3600.0
+@dirrmtry lib/cscc/lib
+@dirrmtry lib/cscc

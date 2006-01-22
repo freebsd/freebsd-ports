@@ -12,8 +12,8 @@ bin/emacsclient
 etc/rc.d/emacs.sh
 @comment these two can fail if other ports are installed, no need to
 @comment scare user in that case
-@unexec rmdir %D/share/hanemacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/hanemacs/19.34/site-lisp 2>/dev/null || true
+@dirrmtry share/hanemacs/site-lisp
+@dirrmtry share/hanemacs/19.34/site-lisp
 @unexec install-info --delete %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
@@ -126,7 +126,7 @@ libexec/hanemacs/19.34/i386--freebsd/vcdiff
 libexec/hanemacs/19.34/i386--freebsd/yow
 @dirrm libexec/hanemacs/19.34/i386--freebsd
 @dirrm libexec/hanemacs/19.34
-@unexec rmdir %D/libexec/hanemacs 2>/dev/null || true
+@dirrmtry libexec/hanemacs
 share/hanemacs/19.34/etc/3B-MAXMEM
 share/hanemacs/19.34/etc/AIX.DUMP
 share/hanemacs/19.34/etc/BABYL
