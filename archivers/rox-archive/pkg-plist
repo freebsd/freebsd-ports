@@ -36,4 +36,4 @@ apps/Archive/tests/testall.pyo
 @dirrm apps/Archive/Messages
 @dirrm apps/Archive/Help
 @dirrm apps/Archive
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps
