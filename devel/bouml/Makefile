@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
 QTDIR?=		${X11BASE}
-USE_REINPLACE=	yes
 ALL_TARGET=	compile
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 		QTDIR="${QTDIR}"
