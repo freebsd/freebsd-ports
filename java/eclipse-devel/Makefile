@@ -79,7 +79,7 @@ ECLIPSE_ARCH=	x86
 ECLIPSE_SWT=	gtk
 .endif
 
-.if (${BROWSER} == "firefox")
+.if (!defined(WITH_MOTIF) && ${BROWSER} == "firefox")
 BROKEN=	Firefox integration doesn\'t work yet
 .endif
 
