@@ -1,17 +1,17 @@
 bin/afio
-%%PORTDOCS%%share/doc/afio/README
-%%PORTDOCS%%share/doc/afio/SCRIPTS
-%%PORTDOCS%%share/examples/afio/DONTDUMP
-%%PORTDOCS%%share/examples/afio/README
-%%PORTDOCS%%share/examples/afio/afiodump.example
-%%PORTDOCS%%share/examples/afio/backup
-%%PORTDOCS%%share/examples/afio/gnupg_read
-%%PORTDOCS%%share/examples/afio/gnupg_write
-%%PORTDOCS%%share/examples/afio/pgp_read
-%%PORTDOCS%%share/examples/afio/pgp_write
-%%PORTDOCS%%share/examples/afio/restore
-%%PORTDOCS%%share/examples/afio/tapechange
-%%PORTDOCS%%share/examples/afio/x.dot
-%%PORTDOCS%%share/examples/afio/x.home
-%%PORTDOCS%%@dirrm share/doc/afio
-%%PORTDOCS%%@dirrm share/examples/afio
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SCRIPTS
+%%PORTDOCS%%%%EXAMPLESDIR%%/DONTDUMP
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/afiodump.example
+%%PORTDOCS%%%%EXAMPLESDIR%%/backup
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnupg_read
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnupg_write
+%%PORTDOCS%%%%EXAMPLESDIR%%/pgp_read
+%%PORTDOCS%%%%EXAMPLESDIR%%/pgp_write
+%%PORTDOCS%%%%EXAMPLESDIR%%/restore
+%%PORTDOCS%%%%EXAMPLESDIR%%/tapechange
+%%PORTDOCS%%%%EXAMPLESDIR%%/x.dot
+%%PORTDOCS%%%%EXAMPLESDIR%%/x.home
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

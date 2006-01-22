@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afio
-PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
@@ -23,12 +22,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; ${INSTALL_MAN} README SCRIPTS ${DOCSDIR})
-	@${MKDIR} ${PREFIX}/share/examples/afio
-	@${INSTALL_SCRIPT} ${FILESDIR}/afiodump.example ${PREFIX}/share/examples/afio
-	@${INSTALL_DATA} ${WRKSRC}/script1/DONTDUMP ${PREFIX}/share/examples/afio
-	@${INSTALL_SCRIPT} ${WRKSRC}/script2/* ${PREFIX}/share/examples/afio
-	@${INSTALL_SCRIPT} ${WRKSRC}/script3/* ${PREFIX}/share/examples/afio
-	@${INSTALL_SCRIPT} ${WRKSRC}/script4/* ${PREFIX}/share/examples/afio
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/afiodump.example ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/script1/DONTDUMP ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/script2/* ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/script3/* ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/script4/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
