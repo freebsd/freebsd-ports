@@ -24,7 +24,6 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
 		aspell:${PORTSDIR}/textproc/aspell \
-		fam.0:${PORTSDIR}/devel/fam \
 		dns_sd:${PORTSDIR}/net/mDNSResponder \
 		idn:${PORTSDIR}/dns/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
@@ -48,13 +47,14 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-base
 .endif
 
-USE_GETTEXT=	yes
-USE_QT_VER=	3
-PREFIX=		${KDE_PREFIX}
-USE_OPENSSL=	yes
 USE_BZIP2=	yes
+USE_FAM=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
+USE_QT_VER=	3
 USE_REINPLACE=	yes
+PREFIX=		${KDE_PREFIX}
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
