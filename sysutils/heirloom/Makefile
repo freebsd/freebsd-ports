@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heirloom
-PORTVERSION=	040603
+PORTVERSION=	051118
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,11 +18,10 @@ BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC=${CC}
 MAKEFILE=	makefile
-ALL_TARGET=	bsd
+ALL_TARGET=
 DATADIR=	${PREFIX}/${PORTNAME}
 REINPLACE_SUB=	DATADIR="${DATADIR}"
 
@@ -43,9 +42,11 @@ _MAN1=		apropos.1 awk.1 banner.1 basename.1 bc.1 cal.1 calendar.1 \
 		spell.1 split.1 stty.1 su.1 sum.1 tabs.1 tail.1 tape.1 \
 		tapecntl.1 tar.1 tcopy.1 tee.1 time.1 touch.1 tr.1 tsort.1 \
 		tty.1 ul.1 uname.1 unexpand.1 uniq.1 units.1 uptime.1 users.1 \
-		w.1 wc.1 what.1 whatis.1 who.1 whoami.1 whodo.1 xargs.1 yes.1
-_MAN1B=		basename.1b chown.1b deroff.1b df.1b du.1b groups.1b \
-		install.1b ln.1b ls.1b ps.1b stty.1b sum.1b tr.1b
+		w.1 wc.1 what.1 whatis.1 who.1 whoami.1 whodo.1 xargs.1 yes.1 \
+		bdiff.1 bfs.1 dircmp.1 echo.1 fmtmsg.1 getconf.1 getopt.1 kill.1 \
+		mesg.1 mvdir.1 pathchk.1 printf.1 pwd.1 test.1 false.1 true.1
+_MAN1B=		basename.1b chown.1b deroff.1b df.1b du.1b groups.1b echo.1b \
+		install.1b ln.1b ls.1b ps.1b stty.1b sum.1b tr.1b test.1b
 _MAN1M=		mknod.1m sync.1m
 _MAN5=		fspec.5
 _MAN7=		man.7
@@ -70,9 +71,9 @@ _MLINKS_PREPEND+=${_M${sect}LINKS:S%^%${_MANPREFIX}/man${sect:L}/%:S%$%${MANEXT}
 
 DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
 		LICENSE/README LICENSE/COPYING.LGPL README intro.txt
-NOTE_FILES=	cp/NOTES cpio/TODO dd/NOTES grep/NOTES libuxre/NOTES \
-		more/NOTES nawk/NOTES oawk/EXPLAIN oawk/NOTES \
-		oawk/README ps/NOTES shl/NOTES tar/NOTES
+#NOTE_FILES=	cp/NOTES cpio/TODO dd/NOTES grep/NOTES libuxre/NOTES \
+#		more/NOTES nawk/NOTES oawk/EXPLAIN oawk/NOTES \
+#		oawk/README ps/NOTES shl/NOTES tar/NOTES
 
 .include <bsd.port.pre.mk>
 
@@ -93,9 +94,9 @@ install-doc:
 . for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
 . endfor
-. for file in ${NOTE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file:T}.${file:H}
-. endfor
+#. for file in ${NOTE_FILES}
+#	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file:T}.${file:H}
+#. endfor
 .endif
 
 .include <bsd.port.post.mk>
