@@ -438,7 +438,8 @@ _PORTSEARCH=	\
 	      if (i in disp) \
 	        printf("%s:\t%s\n", names[i], $$i); \
 	    print(""); \
-	  }' ${INDEXDIR}/${INDEXFILE}
+	  }' ${INDEXDIR}/${INDEXFILE}; \
+	fi
 
 search:
 	@${_PORTSEARCH}
