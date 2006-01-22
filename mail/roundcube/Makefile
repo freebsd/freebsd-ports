@@ -45,6 +45,10 @@ OPTIONS+=       SQLITE "Use SQLite backend" off
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
+IGNORE=		needs a database backend
+.endif
+
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
 .endif
@@ -56,6 +60,9 @@ USE_PHP+=	pgsql
 .if defined(WITH_SQLITE)
 USE_PHP+=	sqlite
 .endif
+
+# Avoid INDEX breakage when WITHOUT_MYSQL is defined.
+USE_PHP?=	yes
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 
