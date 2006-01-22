@@ -6,4 +6,4 @@ bin/othello-demo
 %%SITE_PERL%%/Games/Sequential/Position.pm
 @dirrm %%SITE_PERL%%/Games/AlphaBeta
 @dirrm %%SITE_PERL%%/Games/Sequential
-@unexec rmdir %D/%%SITE_PERL%%/Games 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Games

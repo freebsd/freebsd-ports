@@ -21,4 +21,4 @@
 @dirrm %%LINSTDIR%%/sound
 @dirrm %%LINSTDIR%%/graphics
 @dirrm %%LINSTDIR%%
-@unexec rmdir %D/share/games 2>/dev/null || true
+@dirrmtry share/games

@@ -16,4 +16,4 @@ lib/typespeed/words.portuguese
 lib/typespeed/words.prog
 lib/typespeed/words.spanish
 lib/typespeed/words.unix
-@unexec rmdir %D/lib/typespeed 2>/dev/null || true
+@dirrmtry lib/typespeed

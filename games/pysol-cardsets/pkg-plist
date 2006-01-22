@@ -6049,5 +6049,5 @@ share/pysol/cardset-xskat-german/shadow13.gif
 @dirrm share/pysol/cardset-1815
 @dirrm share/pysol/cardset-1750
 @dirrm share/pysol/cardset-1567
-@unexec rmdir %D/share/pysol/data 2>/dev/null || true
-@unexec rmdir %D/share/pysol 2>/dev/null || true
+@dirrmtry share/pysol/data
+@dirrmtry share/pysol

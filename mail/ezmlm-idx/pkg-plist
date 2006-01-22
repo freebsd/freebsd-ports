@@ -30,7 +30,7 @@ bin/ezmlm-weed
 etc/ezmlm/ezmlmglrc.sample
 etc/ezmlm/ezmlmrc.sample
 etc/ezmlm/ezmlmsubrc.sample
-@unexec rmdir %D/etc/ezmlm 2>/dev/null || true
+@dirrmtry etc/ezmlm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.idx
 %%PORTDOCS%%%%DOCSDIR%%/DOWNGRADE.idx
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.idx

@@ -202,35 +202,35 @@ share/services/showimgpart.desktop
 share/services/showimg_kexidb_sqlite3driver.desktop
 share/services/showimg_kexidb_sqlite2driver.desktop
 share/servicetypes/showimg_kexidb_driver.desktop
-@unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/mimelnk/image
+@dirrmtry share/mimelnk
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/showimg
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/da/showimg
-@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@dirrmtry share/doc/HTML/da
 @dirrm share/doc/HTML/es/showimg
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@dirrmtry share/doc/HTML/es
 @dirrm share/doc/HTML/et/showimg
-@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrmtry share/doc/HTML/et
 @dirrm share/doc/HTML/fr/showimg
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@dirrmtry share/doc/HTML/fr
 @dirrm share/doc/HTML/it/showimg
-@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/pt/showimg
-@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrmtry share/doc/HTML/pt
 @dirrm share/doc/HTML/ru/showimg
-@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
+@dirrmtry share/doc/HTML/ru
 @dirrm share/doc/HTML/sv/showimg
-@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/sv
+@dirrmtry share/doc/HTML
 @dirrm share/apps/showimg/pics
 @dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/showimg/icons/hicolor/64x64
@@ -254,9 +254,9 @@ share/servicetypes/showimg_kexidb_driver.desktop
 @dirrm share/apps/showimg/icons/crystalsvg
 @dirrm share/apps/showimg/icons
 @dirrm share/apps/showimg
-@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
-@unexec rmdir %D/share/apps/showimgpart 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps/showimgpart
+@dirrmtry share/apps
+@dirrmtry share/applnk/Graphics
+@dirrmtry share/applnk

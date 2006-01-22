@@ -839,7 +839,7 @@ bin/rocksndiamonds
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/graphics/gfx_classic
 @dirrm %%DATADIR%%/graphics
-@unexec rmdir %D/%%DATADIR%%/scores 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/scores
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/elements
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

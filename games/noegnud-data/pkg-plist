@@ -1542,25 +1542,25 @@ share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_scrollbararea.theme
 share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_title.theme
 share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_title_active.theme
 share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_window.theme
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/title 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/shades 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbararea 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbar 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/minimap 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/default 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/button 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/variant-reference 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/tomb 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/tilesets/nethack 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/tilesets 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/textcolouring 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/minimap-fonts 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/lang 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/images 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/gui 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data/char 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/data 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0 2>/dev/null || true
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/title
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/shades
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbararea
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbar
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/minimap
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/default
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden/button
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes/wooden
+@dirrmtry share/noegnud-0.8.0/data/widgetthemes
+@dirrmtry share/noegnud-0.8.0/data/variant-reference
+@dirrmtry share/noegnud-0.8.0/data/tomb
+@dirrmtry share/noegnud-0.8.0/data/tilesets/nethack
+@dirrmtry share/noegnud-0.8.0/data/tilesets
+@dirrmtry share/noegnud-0.8.0/data/textcolouring
+@dirrmtry share/noegnud-0.8.0/data/minimap-fonts
+@dirrmtry share/noegnud-0.8.0/data/lang
+@dirrmtry share/noegnud-0.8.0/data/images
+@dirrmtry share/noegnud-0.8.0/data/gui
+@dirrmtry share/noegnud-0.8.0/data/char
+@dirrmtry share/noegnud-0.8.0/data
+@dirrmtry share/noegnud-0.8.0

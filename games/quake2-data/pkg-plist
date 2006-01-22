@@ -338,7 +338,7 @@
 @dirrm %%DATADIR%%/baseq2/players/cyborg
 @dirrm %%DATADIR%%/baseq2/players/crakhor
 @dirrm %%DATADIR%%/baseq2/players
-@unexec rmdir %D/%%DATADIR%%/baseq2 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/rogue 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/xatrix 2>/dev/null || true
+@dirrmtry %%DATADIR%%/baseq2
+@dirrmtry %%DATADIR%%/rogue
+@dirrmtry %%DATADIR%%/xatrix
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "If you are permanently removing this port, you should remove any configuration files, data files, and mods left in %D/%%DATADIR%%." | fmt

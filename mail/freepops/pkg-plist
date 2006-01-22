@@ -45,5 +45,5 @@ etc/freepops/config.lua.sample
 @dirrm %%DATADIR%%/lua
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/freepops 2>/dev/null || true
+@dirrmtry etc/freepops
 @exec mkdir -p %D/share/freepops/lua_unofficial

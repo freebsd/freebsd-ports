@@ -14,4 +14,4 @@ share/pixmaps/comix/stock-rotate-270-16.png
 share/pixmaps/comix/stock-rotate-90-16.png
 @dirrm share/pixmaps/comix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications

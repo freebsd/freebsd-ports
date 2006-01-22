@@ -6,4 +6,4 @@
 %%DATADIR%%/build.cfg
 bin/duke3d
 bin/duke3d-build
-@unexec rmdir %D/share/jfduke3d 2> /dev/null || true
+@dirrmtry share/jfduke3d

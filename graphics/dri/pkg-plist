@@ -12,4 +12,4 @@ lib/modules/dri/sis_dri.so
 %%I386%%lib/modules/dri/tdfx_dri.so
 %%I386%%lib/modules/dri/unichrome_dri.so
 @dirrm lib/modules/dri
-@unexec rmdir %D/lib/modules 2>/dev/null || true
+@dirrmtry lib/modules

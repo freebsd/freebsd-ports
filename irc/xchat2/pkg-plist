@@ -18,7 +18,7 @@ share/locale/sq/LC_MESSAGES/xchat.mo
 share/locale/vi/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
 share/pixmaps/xchat.png
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications
 @exec mkdir -p %D/lib/xchat/plugins
 @dirrm lib/xchat/plugins
 @dirrm lib/xchat

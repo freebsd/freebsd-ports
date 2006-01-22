@@ -16,5 +16,5 @@ lib/enemyterritory/tcetest/ui.mp.i386.so
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/description.txt
 @dirrm lib/enemyterritory/tcetest
-@unexec rmdir %D/lib/enemyterritory 2>/dev/null || true
+@dirrmtry lib/enemyterritory
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

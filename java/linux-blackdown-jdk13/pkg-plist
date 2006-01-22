@@ -966,7 +966,7 @@
 %%T%%/COPYRIGHT
 %%T%%/src.jar
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Blackdown-JDK%%PORTVERSION%%"
 @dirrm %%T%%/jre/bin/i386/green_threads
 @dirrm %%T%%/jre/bin/i386/native_threads

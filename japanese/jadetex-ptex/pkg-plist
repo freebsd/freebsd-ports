@@ -8,4 +8,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%%%PKGNAMESUFFIX%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/ptex/jadetex 2> /dev/null || true
+@dirrmtry %%TEXMFLOCALDIR%%/ptex/jadetex

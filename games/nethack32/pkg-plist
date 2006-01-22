@@ -5,7 +5,7 @@ bin/%%HACKNAME%%
 @exec chmod -R 775 %D/%%DATADIR%%
 @exec chmod 2755 %D/%%DATADIR%%/%%HACKNAME%%
 @exec chown games:games %D/%%DATADIR%%/save
-@unexec rmdir %D/%%DATADIR%%/save 2>/dev/null || true
+@dirrmtry %%DATADIR%%/save
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/rip.xpm
@@ -125,5 +125,5 @@ bin/%%HACKNAME%%
 @exec touch %D/%%DATADIR%%/logfile && chmod 664 %D/%%DATADIR%%/logfile
 @unexec [ -s %D/%%DATADIR%%/record ] || rm -f %D/%%DATADIR%%/record
 @exec touch %D/%%DATADIR%%/record && chmod 664 %D/%%DATADIR%%/record
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

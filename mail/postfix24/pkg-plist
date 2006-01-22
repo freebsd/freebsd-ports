@@ -231,4 +231,4 @@ bin/mailq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/postfix
 @dirrm etc/postfix/dist
-@unexec rmdir %D/etc/postfix  2>/dev/null || true
+@dirrmtry etc/postfix 

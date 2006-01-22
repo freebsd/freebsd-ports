@@ -3280,11 +3280,11 @@ var/crossfire/temp.maps
 @exec mkdir -p %D/var/crossfire/maps
 @exec mkdir -p %D/var/crossfire/players
 @exec mkdir -p %D/var/crossfire/unique-items
-@unexec rmdir %D/var/crossfire/unique-items 2>/dev/null || true
-@unexec rmdir %D/var/crossfire/players 2>/dev/null || true
-@unexec rmdir %D/var/crossfire/maps 2>/dev/null || true
-@unexec rmdir %D/var/crossfire/datafiles 2>/dev/null || true
-@unexec rmdir %D/var/crossfire 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
-@unexec rmdir %D/lib/crossfire/plugins 2>/dev/null || true
-@unexec rmdir %D/lib/crossfire 2>/dev/null || true
+@dirrmtry var/crossfire/unique-items
+@dirrmtry var/crossfire/players
+@dirrmtry var/crossfire/maps
+@dirrmtry var/crossfire/datafiles
+@dirrmtry var/crossfire
+@dirrmtry var
+@dirrmtry lib/crossfire/plugins
+@dirrmtry lib/crossfire

@@ -37,6 +37,6 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/libobjc.a
 @dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include
 @dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1
 @dirrm lib/gcc-lib/%%GNUHOST%%
-@unexec rmdir %D/lib/gcc-lib 2>/dev/null || true
+@dirrmtry lib/gcc-lib
 @dirrm %%GNUHOST%%/include
 @dirrm %%GNUHOST%%

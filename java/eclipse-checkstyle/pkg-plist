@@ -70,6 +70,6 @@ eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/xmlParserAPIs.jar
 @dirrm eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/doc/csdocs
 @dirrm eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0/doc
 @dirrm eclipse/plugins/com.atlassw.tools.eclipse.checkstyle_3.4.1.0
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse
 

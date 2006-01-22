@@ -975,7 +975,7 @@ share/applications/lincity-ng.desktop
 %%DATADIR%%/sounds/WindowClose.wav
 %%DATADIR%%/sounds/WindowOpen.wav
 share/pixmaps/lincity-ng.png
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/opening
 @dirrm %%DATADIR%%/music
@@ -1023,4 +1023,4 @@ share/pixmaps/lincity-ng.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

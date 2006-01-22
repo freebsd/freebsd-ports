@@ -13,10 +13,10 @@ share/emacs/site-lisp/prime-el/prime-socialite.el
 share/emacs/site-lisp/prime-el/prime-style.el
 share/emacs/site-lisp/prime-el/prime.el
 share/emacs/site-lisp/init-prime.el
-@unexec rmdir %D/share/emacs/site-lisp/prime-el/contrib 2>/dev/null || true
-@unexec rmdir %D/share/emacs/site-lisp/prime-el 2>/dev/null || true
+@dirrmtry share/emacs/site-lisp/prime-el/contrib
+@dirrmtry share/emacs/site-lisp/prime-el
 etc/prime/Custom_prime-el.el
-@unexec rmdir %D/etc/prime 2>/dev/null || true
+@dirrmtry etc/prime
 %%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_1.png
 %%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_2.png
 %%PORTDOCS%%%%DOCSDIR%%/emacs/figures/screenshots/conversion_3.png

@@ -2736,12 +2736,12 @@ share/locale/it/LC_MESSAGES/enigma.mo
 share/locale/nl/LC_MESSAGES/enigma.mo
 share/pixmaps/enigma.png
 
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/applications/ 2>/dev/null || true
+@dirrmtry share/pixmaps
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications/
 
 @dirrm share/enigma/sound
 @dirrm share/enigma/levels/patches

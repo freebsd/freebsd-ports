@@ -738,8 +738,8 @@
 @dirrm %%HLDSDIR%%wizwars/conclaves
 @dirrm %%HLDSDIR%%wizwars/class
 @dirrm %%HLDSDIR%%wizwars/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%wizwars/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%wizwars/save 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%wizwars/music 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%wizwars/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%wizwars/SAVE
+@dirrmtry %%HLDSDIR%%wizwars/save
+@dirrmtry %%HLDSDIR%%wizwars/music
+@dirrmtry %%HLDSDIR%%wizwars/logs
 @unexec rmdir %D/%%HLDSDIR%%wizwars 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%wizwars`` to remove any configuration files and logs left." | fmt

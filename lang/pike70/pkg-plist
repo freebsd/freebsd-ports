@@ -441,7 +441,7 @@ pike/%%PORTVERSION%%/man/man1/pike.1
 @dirrm pike/%%PORTVERSION%%/lib/modules/Calendar.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/Debug.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/Filesystem.pmod
-@unexec rmdir %D/pike/%%PORTVERSION%%/lib/modules/GDKSupport.pmod 2> /dev/null || true
+@dirrmtry pike/%%PORTVERSION%%/lib/modules/GDKSupport.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/GTKSupport.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/Graphics.pmod/Graph.pmod
 @dirrm pike/%%PORTVERSION%%/lib/modules/Graphics.pmod

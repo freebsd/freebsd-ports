@@ -3,4 +3,4 @@ bin/qmail-pop3d-conf
 bin/qmail-qmqpd-conf
 bin/qmail-qmtpd-conf
 bin/qmail-smtpd-conf
-@unexec rmdir %D/service 2>/dev/null || true
+@dirrmtry service

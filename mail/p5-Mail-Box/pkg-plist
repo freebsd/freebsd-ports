@@ -225,6 +225,6 @@
 @dirrm %%SITE_PERL%%/Mail/Box/Dir
 @dirrm %%SITE_PERL%%/Mail/Box/Dbx
 @dirrm %%SITE_PERL%%/Mail/Box
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Mail/Message 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/Message
+@dirrmtry %%SITE_PERL%%/Mail

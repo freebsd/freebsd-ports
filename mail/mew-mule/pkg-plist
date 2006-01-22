@@ -150,7 +150,7 @@ bin/uumerge
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mew
 @dirrm %%EMACS_LIBDIR%%/etc/mew/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew
-@unexec rmdir %D/%%EMACS_LIBDIR%%/etc 2>/dev/null || true
+@dirrmtry %%EMACS_LIBDIR%%/etc
 @dirrm %%MEW_DOCDIR%%/patches
 @dirrm %%MEW_DOCDIR%%/contrib
 @dirrm %%MEW_DOCDIR%%

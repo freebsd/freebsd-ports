@@ -9,6 +9,6 @@ share/noegnud-0.8.0/nethack-3.4.2-deet/record
 share/noegnud-0.8.0/nethack-3.4.2-deet/recover
 @exec chown games:bin %D/share/noegnud-0.8.0/nethack-3.4.2-deet
 @exec chmod 775 %D/share/noegnud-0.8.0/nethack-3.4.2-deet
-@unexec rmdir %D/share/noegnud-0.8.0/nethack-3.4.2-deet/save 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0/nethack-3.4.2-deet 2>/dev/null || true
-@unexec rmdir %D/share/noegnud-0.8.0 2>/dev/null || true
+@dirrmtry share/noegnud-0.8.0/nethack-3.4.2-deet/save
+@dirrmtry share/noegnud-0.8.0/nethack-3.4.2-deet
+@dirrmtry share/noegnud-0.8.0

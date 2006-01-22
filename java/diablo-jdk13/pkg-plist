@@ -749,9 +749,9 @@ diablo-jdk%%JDK_VERSION%%/man/man1/serialver.1
 diablo-jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 diablo-jdk%%JDK_VERSION%%/src.jar
 @exec   mkdir -p %D/diablo-jdk%%JDK_VERSION%%/jre/lib/ext/
-@unexec rmdir %D/diablo-jdk%%JDK_VERSION%%/jre/lib/ext 2>/dev/null || true
+@dirrmtry diablo-jdk%%JDK_VERSION%%/jre/lib/ext
 @exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@dirrmtry share/doc/java
 @exec   %%LOCALBASE%%/bin/registervm "%D/diablo-jdk%%JDK_VERSION%%/bin/java # DiabloCaffe%%JDK_VERSION%%"
 @dirrm diablo-jdk%%JDK_VERSION%%/man/man1
 @dirrm diablo-jdk%%JDK_VERSION%%/man

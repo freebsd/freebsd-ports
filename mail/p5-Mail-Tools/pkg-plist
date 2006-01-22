@@ -29,10 +29,10 @@
 %%SITE_PERL%%/auto/Mail/Util/maildomain.al
 %%SITE_PERL%%/auto/Mail/Util/read_mbox.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/auto/Mail/Util
 @dirrm %%SITE_PERL%%/auto/Mail/Internet
 @dirrm %%SITE_PERL%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/Mailer
 @dirrm %%SITE_PERL%%/Mail/Field
-@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Mail

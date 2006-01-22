@@ -2095,15 +2095,15 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/Mailman/Cgi
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
-@unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/locks 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/lists 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/data 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
+@dirrmtry %%MMDIR%%/spam
+@dirrmtry %%MMDIR%%/qfiles
+@dirrmtry %%MMDIR%%/logs
+@dirrmtry %%MMDIR%%/locks
+@dirrmtry %%MMDIR%%/lists
+@dirrmtry %%MMDIR%%/data
+@dirrmtry %%MMDIR%%/archives/public
+@dirrmtry %%MMDIR%%/archives/private
 %%SUB_HTDIG%%@unexec rmdir %D/%%MMDIR%%/archives/htdig 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
-@unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true
+@dirrmtry %%MMDIR%%/archives
+@dirrmtry %%MMDIR%%/Mailman
+@dirrmtry %%MMDIR%%/

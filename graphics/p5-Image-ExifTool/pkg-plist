@@ -122,9 +122,9 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrm %%SITE_PERL%%/Image/ExifTool
-@unexec rmdir %D/%%SITE_PERL%%/Image 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Image
+@dirrmtry %%SITE_PERL%%/File
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/TagNames
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

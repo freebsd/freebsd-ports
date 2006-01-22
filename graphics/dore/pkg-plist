@@ -98,4 +98,4 @@ share/dore/fonts/unused.df
 @dirrm share/dore
 @dirrm include/dore_develop/private
 @dirrm include/dore_develop
-@unexec rmdir %D/include/fortran 2>/dev/null || true
+@dirrmtry include/fortran

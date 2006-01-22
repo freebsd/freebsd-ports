@@ -141,7 +141,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
-@unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
+@dirrmtry lib/ruby/site_ruby
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
@@ -153,8 +153,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 %%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%
-@unexec rmdir %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
-@unexec rmdir %D/lib/ruby 2>/dev/null || true
+@dirrmtry %%RUBY_ELISPDIR%%
+@dirrmtry lib/ruby
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
@@ -190,7 +190,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/net
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%RUBY_DOCDIR%%/.keep_me
-@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@dirrmtry %%RUBY_DOCDIR%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/biorhythm.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cal.rb
@@ -248,4 +248,4 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%RUBY_EXAMPLESDIR%%/.keep_me
-@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
+@dirrmtry %%RUBY_EXAMPLESDIR%%

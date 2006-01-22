@@ -230,4 +230,4 @@
 @dirrm %%HLDSDIR%%Adminmod/config/Samples
 @dirrm %%HLDSDIR%%Adminmod/config
 @dirrm %%HLDSDIR%%Adminmod/.amdd
-@unexec rmdir %D/%%HLDSDIR%%Adminmod 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%Adminmod

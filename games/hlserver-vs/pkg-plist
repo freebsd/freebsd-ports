@@ -687,7 +687,7 @@
 @dirrm %%HLDSDIR%%VS/classes
 @dirrm %%HLDSDIR%%VS/cl_dlls
 @dirrm %%HLDSDIR%%VS/bots
-@unexec rmdir %D/%%HLDSDIR%%VS/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%VS/save 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%VS/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%VS/SAVE
+@dirrmtry %%HLDSDIR%%VS/save
+@dirrmtry %%HLDSDIR%%VS/logs
 @unexec rmdir %D/%%HLDSDIR%%VS 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%VS`` to remove any configuration files and logs left." | fmt

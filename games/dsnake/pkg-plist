@@ -11,4 +11,4 @@ bin/dsnake
 %%DATADIR%%/midi/The_Jayomon_Beat.mid
 @dirrm %%DATADIR%%/midi
 @dirrm %%DATADIR%%/data
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

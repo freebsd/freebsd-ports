@@ -1,9 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object/.packlist
 %%SITE_PERL%%/POE/Component/IRC/Object.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/Object
-@unexec rmdir %D/%%SITE_PERL%%/POE/Component/IRC 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/POE/Component  2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC
+@dirrmtry %%SITE_PERL%%/POE/Component 
+@dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 %%PORTDOCS%%%%EXAMPLESDIR%%/elizabot.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

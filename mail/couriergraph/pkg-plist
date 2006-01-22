@@ -1,4 +1,4 @@
 etc/rc.d/couriergraph.sh
 www/cgi-bin/couriergraph.cgi
 sbin/couriergraph.pl
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
+@dirrmtry www/cgi-bin

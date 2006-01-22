@@ -16,4 +16,4 @@ share/ggz/ttt3d/lines.bmp
 @dirrm lib/ggz
 @dirrm share/ggz/geekgame
 @dirrm share/ggz/ttt3d
-@unexec rmdir %D/share/ggz 2>/dev/null || true
+@dirrmtry share/ggz

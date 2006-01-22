@@ -20,8 +20,8 @@
 %%SITE_PERL%%/SVG/Graph/Glyph/heatmap.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/scatter.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/Graph
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
 @dirrm %%SITE_PERL%%/SVG/Graph/Data
 @dirrm %%SITE_PERL%%/SVG/Graph/Glyph
 @dirrm %%SITE_PERL%%/SVG/Graph
-@unexec rmdir %D/%%SITE_PERL%%/SVG 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SVG

@@ -38,5 +38,5 @@ lib/wnn/ja_JP/dic/wnncons/tankan3.dic
 @dirrm lib/wnn/ja_JP/dic/pubdic
 @dirrm lib/wnn/ja_JP/dic/src
 @dirrm lib/wnn/ja_JP/dic/wnncons
-@unexec rmdir %D/lib/wnn/ja_JP/dic/usr 2> /dev/null || true
-@unexec rmdir %D/lib/wnn/ja_JP/dic 2> /dev/null || true
+@dirrmtry lib/wnn/ja_JP/dic/usr
+@dirrmtry lib/wnn/ja_JP/dic

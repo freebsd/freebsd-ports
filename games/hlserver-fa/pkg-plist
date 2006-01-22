@@ -1611,6 +1611,6 @@
 @dirrm %%HLDSDIR%%firearms/events
 @dirrm %%HLDSDIR%%firearms/dlls
 @dirrm %%HLDSDIR%%firearms/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%firearms/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%firearms/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%firearms/SAVE
+@dirrmtry %%HLDSDIR%%firearms/logs
 @unexec rmdir %D/%%HLDSDIR%%firearms 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%firearms`` to remove any configuration files and logs left." | fmt

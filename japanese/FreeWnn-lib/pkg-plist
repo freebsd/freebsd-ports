@@ -80,7 +80,7 @@ lib/libwnn.so
 lib/libwnn.so.0
 @dirrm lib/wnn/ja_JP/rk
 @dirrm lib/wnn/ja_JP/rk.vi
-@unexec rmdir %D/lib/wnn/ja_JP 2> /dev/null || true
+@dirrmtry lib/wnn/ja_JP
 @dirrm lib/wnn/lt_LN/rk
 @dirrm lib/wnn/lt_LN
-@unexec rmdir %D/lib/wnn 2> /dev/null || true
+@dirrmtry lib/wnn

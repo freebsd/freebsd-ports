@@ -257,5 +257,5 @@
 @dirrm %%TURBADIR%%/themes/graphics/menu
 @dirrm %%TURBADIR%%/themes/graphics
 @dirrm %%TURBADIR%%/themes
-@unexec rmdir %D/%%TURBADIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%TURBADIR%% 2>/dev/null || true
+@dirrmtry %%TURBADIR%%/config
+@dirrmtry %%TURBADIR%%

@@ -12,9 +12,9 @@ share/locale/rw/LC_MESSAGES/gliv.mo
 share/locale/sk/LC_MESSAGES/gliv.mo
 share/locale/tr/LC_MESSAGES/gliv.mo
 share/locale/vi/LC_MESSAGES/gliv.mo
-@unexec rmdir %D/man/ru/man1 2>/dev/null || true
-@unexec rmdir %D/man/ru 2>/dev/null || true
-@unexec rmdir %D/man/fr/man1 2>/dev/null || true
-@unexec rmdir %D/man/fr 2>/dev/null || true
-@unexec rmdir %D/man/de/man1 2>/dev/null || true
-@unexec rmdir %D/man/de 2>/dev/null || true
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/de/man1
+@dirrmtry man/de

@@ -158,4 +158,4 @@
 @dirrm %%RUBY_MODDOCDIR%%/html
 @dirrm %%RUBY_MODDOCDIR%%/xml
 @dirrm %%RUBY_MODDOCDIR%%
-@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@dirrmtry %%RUBY_DOCDIR%%

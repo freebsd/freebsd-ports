@@ -2997,4 +2997,4 @@ lib/X11/xfig/CompKeyDB
 %%PORTDOCS%%@dirrm lib/X11/xfig/Libraries/Audiovisual
 %%PORTDOCS%%@dirrm lib/X11/xfig/Libraries/Arrows
 %%PORTDOCS%%@dirrm lib/X11/xfig/Libraries
-@unexec rmdir %D/lib/X11/xfig 2>/dev/null || true
+@dirrmtry lib/X11/xfig

@@ -6,6 +6,6 @@
 %%SITE_PERL%%/Graphics/ColourNames.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrm %%SITE_PERL%%/Graphics/ColorNames
-@unexec rmdir %D/%%SITE_PERL%%/Graphics 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Graphics

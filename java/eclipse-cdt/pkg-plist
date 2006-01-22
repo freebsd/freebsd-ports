@@ -601,6 +601,6 @@ eclipse/features/org.eclipse.cdt_3.0.1/epl-v10.html
 @dirrm eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os
 @dirrm eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1
 @dirrm eclipse/features/org.eclipse.cdt_3.0.1
-@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
-@unexec rmdir %D/eclipse/features 2>/dev/null || true
-@unexec rmdir %D/eclipse 2>/dev/null || true
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

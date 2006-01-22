@@ -172,9 +172,9 @@ lib/php/build/shtool
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/standard
-@unexec rmdir %D/include/php/ext 2> /dev/null || true
+@dirrmtry include/php/ext
 @dirrm include/php/main
 @dirrm include/php/regex
-@unexec rmdir %D/include/php 2> /dev/null || true
+@dirrmtry include/php
 @dirrm lib/php/build
-@unexec rmdir %D/lib/php 2> /dev/null || true
+@dirrmtry lib/php

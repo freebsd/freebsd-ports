@@ -8,8 +8,8 @@
 %%SITE_PERL%%/Net/Server/Mail/SMTP.pm
 @dirrm %%SITE_PERL%%/Net/Server/Mail/ESMTP
 @dirrm %%SITE_PERL%%/Net/Server/Mail
-@unexec rmdir %D/%%SITE_PERL%%/Net/Server 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net/Server
+@dirrmtry %%SITE_PERL%%/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/Mail
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

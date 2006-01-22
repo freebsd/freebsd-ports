@@ -157,9 +157,9 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%
-@unexec rmdir %D/%%EMACS_LIBDIR%%/site-lisp 2>/dev/null || true
+@dirrmtry %%EMACS_LIBDIR%%/site-lisp
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%
-@unexec rmdir %D/%%EMACS_LIBDIR%%/etc 2>/dev/null || true
+@dirrmtry %%EMACS_LIBDIR%%/etc
 @dirrm share/doc/mew%%MEW_MAJOR_VER%%/contrib
 @dirrm share/doc/mew%%MEW_MAJOR_VER%%

@@ -28,4 +28,4 @@ lib/mulberry/Plug-ins/vCardAdbkIOPlugin.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/pixmaps/mulberry.png
 share/pixmaps/mulberry.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps

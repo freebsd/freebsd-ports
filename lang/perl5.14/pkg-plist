@@ -1515,112 +1515,112 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN
 @unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto/POSIX/SigAction 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto/POSIX 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/XS 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attrs 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/Typemap 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/APItest 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/ByteLoader 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/C 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DynaLoader 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/IO/Socket 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/B 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/warnings 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/User 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Time 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Search 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/IPC 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Exporter 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Scalar 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/List 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Digest 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Devel 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/DBM_Filter 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/CN 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/MIME 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/KR 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/JP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/CPAN 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Carp 2>/dev/null || true
+@dirrmtry lib/perl5/%%PERL_VER%%/auto/POSIX/SigAction
+@dirrmtry lib/perl5/%%PERL_VER%%/auto/POSIX
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/XS
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/MIME
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Encode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Digest
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Data
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/B
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/re
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/attrs
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/Typemap
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/APItest
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Syslog
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys/Hostname
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Socket
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/sdbm
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/SDBM_File
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/via
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/scalar
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO/encoding
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/PerlIO
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/POSIX
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Opcode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/NDBM_File
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/List
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/SysV
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/Langinfo
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Glob
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Fcntl
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Unicode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/TW
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Symbol
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/KR
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/JP
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/EBCDIC
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/CN
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode/Byte
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Encode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Peek
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/PPPort
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Dumper
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cwd
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/ByteLoader
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/C
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/B
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/DynaLoader
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Time
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/PerlIO
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IPC
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/I18N
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Filter
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/File
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Devel
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE
+@dirrmtry lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%
+@dirrmtry lib/perl5/%%PERL_VER%%/IO/Socket
+@dirrmtry lib/perl5/%%PERL_VER%%/IO
+@dirrmtry lib/perl5/%%PERL_VER%%/B
+@dirrmtry lib/perl5/%%PERL_VER%%/warnings
+@dirrmtry lib/perl5/%%PERL_VER%%/User
+@dirrmtry lib/perl5/%%PERL_VER%%/Time
+@dirrmtry lib/perl5/%%PERL_VER%%/Search
+@dirrmtry lib/perl5/%%PERL_VER%%/IPC
+@dirrmtry lib/perl5/%%PERL_VER%%/Exporter
+@dirrmtry lib/perl5/%%PERL_VER%%/Scalar
+@dirrmtry lib/perl5/%%PERL_VER%%/List
+@dirrmtry lib/perl5/%%PERL_VER%%/Digest
+@dirrmtry lib/perl5/%%PERL_VER%%/Devel
+@dirrmtry lib/perl5/%%PERL_VER%%/DBM_Filter
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode/CN
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode/MIME
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode/KR
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode/JP
+@dirrmtry lib/perl5/%%PERL_VER%%/CPAN
+@dirrmtry lib/perl5/%%PERL_VER%%/Carp
 @dirrm lib/perl5/%%PERL_VER%%/unicore/To
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/gc_sc
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/dt
@@ -1632,73 +1632,73 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/nt
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/ccc
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/unicore 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Unicode/Collate 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Unicode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Tie 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Thread 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Text/TabsWrap 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Text/Balanced 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Text 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Test/Simple 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Test/Harness 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Test 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Term/ANSIColor 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Term 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Switch 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Pod/Text 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Pod/Perldoc 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Pod 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/PerlIO/via 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/PerlIO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/NEXT 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Net/Ping 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Net/FTP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Net/demos 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Memoize 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Math/BigInt 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Math/BigFloat 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Math 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Locale/Maketext 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Locale/Codes 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Locale 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/I18N/LangTags 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/I18N 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Hash 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Getopt/Long 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Getopt 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Filter/Simple 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Filter 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/File/Spec 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode/Unicode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Encode 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/ExtUtils/Command 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/ExtUtils/Constant 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/ExtUtils/Liblist 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/ExtUtils 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Class/ISA 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Class 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/CGI/eg 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/CGI 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Attribute/Handlers/demo 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Attribute/Handlers 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/Attribute 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/pod 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/perl/man/man3 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/perl/man 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/perl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/man/man3 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/man 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%%/auto 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/%%PERL_VER%% 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/sys 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/machine 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5 2>/dev/null || true
+@dirrmtry lib/perl5/%%PERL_VER%%/unicore
+@dirrmtry lib/perl5/%%PERL_VER%%/Unicode/Collate
+@dirrmtry lib/perl5/%%PERL_VER%%/Unicode
+@dirrmtry lib/perl5/%%PERL_VER%%/Tie
+@dirrmtry lib/perl5/%%PERL_VER%%/Thread
+@dirrmtry lib/perl5/%%PERL_VER%%/Text/TabsWrap
+@dirrmtry lib/perl5/%%PERL_VER%%/Text/Balanced
+@dirrmtry lib/perl5/%%PERL_VER%%/Text
+@dirrmtry lib/perl5/%%PERL_VER%%/Test/Simple
+@dirrmtry lib/perl5/%%PERL_VER%%/Test/Harness
+@dirrmtry lib/perl5/%%PERL_VER%%/Test
+@dirrmtry lib/perl5/%%PERL_VER%%/Term/ANSIColor
+@dirrmtry lib/perl5/%%PERL_VER%%/Term
+@dirrmtry lib/perl5/%%PERL_VER%%/Switch
+@dirrmtry lib/perl5/%%PERL_VER%%/Pod/Text
+@dirrmtry lib/perl5/%%PERL_VER%%/Pod/Perldoc
+@dirrmtry lib/perl5/%%PERL_VER%%/Pod
+@dirrmtry lib/perl5/%%PERL_VER%%/PerlIO/via
+@dirrmtry lib/perl5/%%PERL_VER%%/PerlIO
+@dirrmtry lib/perl5/%%PERL_VER%%/NEXT
+@dirrmtry lib/perl5/%%PERL_VER%%/Net/Ping
+@dirrmtry lib/perl5/%%PERL_VER%%/Net/FTP
+@dirrmtry lib/perl5/%%PERL_VER%%/Net/demos
+@dirrmtry lib/perl5/%%PERL_VER%%/Net
+@dirrmtry lib/perl5/%%PERL_VER%%/Memoize
+@dirrmtry lib/perl5/%%PERL_VER%%/Math/BigInt
+@dirrmtry lib/perl5/%%PERL_VER%%/Math/BigFloat
+@dirrmtry lib/perl5/%%PERL_VER%%/Math
+@dirrmtry lib/perl5/%%PERL_VER%%/Locale/Maketext
+@dirrmtry lib/perl5/%%PERL_VER%%/Locale/Codes
+@dirrmtry lib/perl5/%%PERL_VER%%/Locale
+@dirrmtry lib/perl5/%%PERL_VER%%/I18N/LangTags
+@dirrmtry lib/perl5/%%PERL_VER%%/I18N
+@dirrmtry lib/perl5/%%PERL_VER%%/Hash
+@dirrmtry lib/perl5/%%PERL_VER%%/Getopt/Long
+@dirrmtry lib/perl5/%%PERL_VER%%/Getopt
+@dirrmtry lib/perl5/%%PERL_VER%%/Filter/Simple
+@dirrmtry lib/perl5/%%PERL_VER%%/Filter
+@dirrmtry lib/perl5/%%PERL_VER%%/File/Spec
+@dirrmtry lib/perl5/%%PERL_VER%%/File
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode/Unicode
+@dirrmtry lib/perl5/%%PERL_VER%%/Encode
+@dirrmtry lib/perl5/%%PERL_VER%%/ExtUtils/Command
+@dirrmtry lib/perl5/%%PERL_VER%%/ExtUtils/Constant
+@dirrmtry lib/perl5/%%PERL_VER%%/ExtUtils/Liblist
+@dirrmtry lib/perl5/%%PERL_VER%%/ExtUtils/MakeMaker
+@dirrmtry lib/perl5/%%PERL_VER%%/ExtUtils
+@dirrmtry lib/perl5/%%PERL_VER%%/Class/ISA
+@dirrmtry lib/perl5/%%PERL_VER%%/Class
+@dirrmtry lib/perl5/%%PERL_VER%%/CGI/eg
+@dirrmtry lib/perl5/%%PERL_VER%%/CGI
+@dirrmtry lib/perl5/%%PERL_VER%%/Attribute/Handlers/demo
+@dirrmtry lib/perl5/%%PERL_VER%%/Attribute/Handlers
+@dirrmtry lib/perl5/%%PERL_VER%%/Attribute
+@dirrmtry lib/perl5/%%PERL_VER%%/pod
+@dirrmtry lib/perl5/%%PERL_VER%%/perl/man/man3
+@dirrmtry lib/perl5/%%PERL_VER%%/perl/man
+@dirrmtry lib/perl5/%%PERL_VER%%/perl
+@dirrmtry lib/perl5/%%PERL_VER%%/man/man3
+@dirrmtry lib/perl5/%%PERL_VER%%/man
+@dirrmtry lib/perl5/%%PERL_VER%%/auto
+@dirrmtry lib/perl5/%%PERL_VER%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/auto
+@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5

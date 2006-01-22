@@ -164,5 +164,5 @@
 @dirrm %%INGODIR%%/lib/Script
 @dirrm %%INGODIR%%/lib/Driver
 @dirrm %%INGODIR%%/lib
-@unexec rmdir %D/%%INGODIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%INGODIR%% 2>/dev/null || true
+@dirrmtry %%INGODIR%%/config
+@dirrmtry %%INGODIR%%

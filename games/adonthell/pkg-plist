@@ -472,4 +472,4 @@ share/pixmaps/wastesedge_32x32.xpm
 @dirrm %%DATADIR%%/games
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps

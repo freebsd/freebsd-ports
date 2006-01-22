@@ -115,10 +115,10 @@ share/locale/xh/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ang 2> /dev/null || true
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ang/LC_MESSAGES
+@dirrmtry share/locale/ang
 @dirrm %%DOCSDIR%%
 @dirrm include/libgnomecanvas-2.0/libgnomecanvas
 @dirrm include/libgnomecanvas-2.0

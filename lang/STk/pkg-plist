@@ -550,7 +550,7 @@ lib/stk/%%STK_VERSION%%/STk/www-url.stk
 lib/stk/%%STK_VERSION%%/STk/www.stk
 @exec ln -sf %D/lib/stk/%%STK_VERSION%%/man %D/lib/stk/man
 @exec mkdir -p %D/lib/stk/site-scheme
-@unexec rmdir %D/lib/stk/site-scheme 2>/dev/null || true
+@dirrmtry lib/stk/site-scheme
 @unexec rm -f %D/lib/stk/man
 @dirrm lib/stk/%%STK_VERSION%%/STk/Match
 @dirrm lib/stk/%%STK_VERSION%%/STk

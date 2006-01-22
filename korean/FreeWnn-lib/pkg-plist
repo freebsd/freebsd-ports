@@ -38,4 +38,4 @@ lib/libkwnn.so
 lib/libkwnn.so.0
 @dirrm lib/wnn/ko_KR/rk
 @dirrm lib/wnn/ko_KR
-@unexec rmdir %D/lib/wnn 2> /dev/null || true
+@dirrmtry lib/wnn

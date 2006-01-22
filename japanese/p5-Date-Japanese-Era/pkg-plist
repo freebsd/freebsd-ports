@@ -6,8 +6,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era/.packlist
 @dirrm %%SITE_PERL%%/Date/Japanese/Era/Table
 @dirrm %%SITE_PERL%%/Date/Japanese/Era
-@unexec rmdir %D/%%SITE_PERL%%/Date/Japanese 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Date/Japanese
+@dirrmtry %%SITE_PERL%%/Date
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese/Era
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Japanese
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date

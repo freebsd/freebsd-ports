@@ -24,4 +24,4 @@ etc/ptlink-ircd/network.dconf
 etc/ptlink-ircd/opers.motd
 etc/ptlink-ircd/version.info
 @dirrm etc/ptlink-ircd/codepage
-@unexec rmdir %D/etc/ptlink-ircd 2> /dev/null || true
+@dirrmtry etc/ptlink-ircd

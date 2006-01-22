@@ -7,5 +7,5 @@ lib/ici4/ici4core1.ici
 lib/ici4/ici4core2.ici
 lib/ici4/ici4core3.ici
 share/doc/ici4/ici.pdf
-@unexec rmdir %D/lib/ici4 2>/dev/null || true
+@dirrmtry lib/ici4
 @dirrm share/doc/ici4

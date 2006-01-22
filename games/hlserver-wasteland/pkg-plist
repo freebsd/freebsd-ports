@@ -77,6 +77,6 @@
 @dirrm %%HLDSDIR%%wasteland/events
 @dirrm %%HLDSDIR%%wasteland/dlls
 @dirrm %%HLDSDIR%%wasteland/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%wasteland/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%wasteland/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%wasteland/SAVE
+@dirrmtry %%HLDSDIR%%wasteland/logs
 @unexec rmdir %D/%%HLDSDIR%%wasteland 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%wasteland`` to remove any configuration files and logs left." | fmt

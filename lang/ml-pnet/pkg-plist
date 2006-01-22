@@ -61,6 +61,6 @@ lib/cscc/lib/nunit.framework.dll
 lib/cscc/lib/nunit.util.dll
 lib/cscc/lib/sqlsharp-pnet.exe
 lib/cscc/lib/wsdl-pnet.exe
-@unexec rmdir %D/lib/cscc/lib/2.2.0.0 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/1.0.5000.0 2>/dev/null || true
-@unexec rmdir %D/lib/cscc/lib/0.7.6.1 2>/dev/null || true
+@dirrmtry lib/cscc/lib/2.2.0.0
+@dirrmtry lib/cscc/lib/1.0.5000.0
+@dirrmtry lib/cscc/lib/0.7.6.1

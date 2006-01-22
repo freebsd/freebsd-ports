@@ -376,7 +376,7 @@ share/games/pydance/util.py
 @dirrm share/games/pydance/songs
 @dirrm share/games/pydance/images
 @dirrm share/games/pydance
-@unexec rmdir %D/share/games 2>/dev/null || true
+@dirrmtry share/games
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

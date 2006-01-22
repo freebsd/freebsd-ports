@@ -3,6 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/Kakasi.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi/Kakasi.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Kakasi
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

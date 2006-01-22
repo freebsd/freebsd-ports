@@ -19,11 +19,11 @@
 %%SITE_PERL%%/Graph/Easy/Node/Empty.pm
 %%SITE_PERL%%/Graph/Easy/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Layout 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Group 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Node 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy/Edge 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph/Easy 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Graph 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Layout
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Group
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Node
+@dirrmtry %%SITE_PERL%%/Graph/Easy/Edge
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph
+@dirrmtry %%SITE_PERL%%/Graph/Easy
+@dirrmtry %%SITE_PERL%%/Graph

@@ -1092,7 +1092,7 @@
 @dirrm %%HLDSDIR%%opera/sound
 @dirrm %%HLDSDIR%%opera/schemes
 @exec mkdir %D/%%HLDSDIR%%opera/nodes
-@unexec rmdir %D/%%HLDSDIR%%opera/nodes 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%opera/nodes
 @dirrm %%HLDSDIR%%opera/models/player/yun
 @dirrm %%HLDSDIR%%opera/models/player/ying
 @dirrm %%HLDSDIR%%opera/models/player/yamishiro
@@ -1169,7 +1169,7 @@
 @dirrm %%HLDSDIR%%opera/manual/images
 @dirrm %%HLDSDIR%%opera/manual
 @exec mkdir %D/%%HLDSDIR%%opera/logs
-@unexec rmdir %D/%%HLDSDIR%%opera/logs 2>/dev/null || true
+@dirrmtry %%HLDSDIR%%opera/logs
 @dirrm %%HLDSDIR%%opera/gfx/shell
 @dirrm %%HLDSDIR%%opera/gfx
 @dirrm %%HLDSDIR%%opera/events

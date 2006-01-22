@@ -681,14 +681,14 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/sw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sw 2>/dev/null || true
-@unexec rmdir %D/share/locale/gos/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gos 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
-@unexec rmdir %D/share/locale/tlh/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/tlh 2>/dev/null || true
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/gos/LC_MESSAGES
+@dirrmtry share/locale/gos
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/tlh/LC_MESSAGES
+@dirrmtry share/locale/tlh
 @dirrm %%DOCSDIR%%/zh_tw/html
 @dirrm %%DOCSDIR%%/zh_tw
 @dirrm %%DOCSDIR%%/zh_cn
@@ -744,4 +744,4 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DOCSDIR%%/af
 @dirrm %%DOCSDIR%%
 @dirrm etc/tuxpaint
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps

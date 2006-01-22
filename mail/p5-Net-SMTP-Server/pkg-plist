@@ -6,13 +6,13 @@
 %%SITE_PERL%%/auto/Net/SMTP/Server/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/Server/.packlist
 @dirrm %%SITE_PERL%%/Net/SMTP/Server
-@unexec rmdir %D/%%SITE_PERL%%/Net/SMTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net/SMTP
+@dirrmtry %%SITE_PERL%%/Net
 @dirrm %%SITE_PERL%%/auto/Net/SMTP/Server/Client
 @dirrm %%SITE_PERL%%/auto/Net/SMTP/Server/Relay
 @dirrm %%SITE_PERL%%/auto/Net/SMTP/Server
-@unexec rmdir %D/%%SITE_PERL%%/auto/Net/SMTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Net/SMTP
+@dirrmtry %%SITE_PERL%%/auto/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/Server
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

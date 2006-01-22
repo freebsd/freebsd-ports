@@ -5,7 +5,7 @@ bin/%%HACKNAME%%
 @exec chmod -R 775 %D/%%HACKDIR%%
 @exec chmod 2755 %D/%%HACKDIR%%/%%HACKNAME%%
 @exec chown games:games %D/%%HACKDIR%%/save
-@unexec rmdir %D/%%HACKDIR%%/save 2>/dev/null || true
+@dirrmtry %%HACKDIR%%/save
 %%HACKDIR%%/Arc-fila.lev
 %%HACKDIR%%/Arc-filb.lev
 %%HACKDIR%%/Arc-goal.lev

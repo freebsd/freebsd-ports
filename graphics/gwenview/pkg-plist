@@ -199,36 +199,36 @@ share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zu/LC_MESSAGES/gwenview.mo
 share/services/gvdirpart.desktop
 share/services/gvimagepart.desktop
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zu 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/xh 2>/dev/null || true
-@unexec rmdir %D/share/locale/ven/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ven 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nso 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl 2>/dev/null || true
-@unexec rmdir %D/share/locale/fo/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fo 2>/dev/null || true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/el 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ven/LC_MESSAGES
+@dirrmtry share/locale/ven
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/ru/gwenview
 @dirrm share/doc/HTML/pt_BR/gwenview
 @dirrm share/doc/HTML/nl/gwenview
@@ -238,7 +238,7 @@ share/services/gvimagepart.desktop
 @dirrm share/doc/HTML/en/gwenview
 @dirrm share/doc/HTML/de/gwenview
 @dirrm share/doc/HTML/da/gwenview
-@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
+@dirrmtry share/apps/kconf_update
 @dirrm share/apps/gwenview/tools
 @dirrm share/apps/gwenview/thumbnail
 @dirrm share/apps/gwenview/icons/hicolor/scalable/actions
@@ -257,4 +257,4 @@ share/services/gvimagepart.desktop
 @dirrm share/apps/gwenview
 @dirrm share/apps/gvimagepart
 @dirrm share/apps/gvdirpart
-@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@dirrmtry share/applications/kde

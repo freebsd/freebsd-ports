@@ -112,6 +112,6 @@ libexec/wserv4
 %%DATADIR%%/script/window
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DATADIR%%/help
-@unexec rmdir %D/%%DATADIR%%/help 2>/dev/null || true
+@dirrmtry %%DATADIR%%/help
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%

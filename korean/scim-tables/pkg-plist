@@ -3,4 +3,4 @@ share/scim/tables/HangulRomaja.bin
 share/scim/tables/Hanja.bin
 share/scim/icons/Hangul.png
 share/scim/icons/Hanja.png
-@unexec rmdir %D/share/scim/tables 2>/dev/null || true
+@dirrmtry share/scim/tables

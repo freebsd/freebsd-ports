@@ -17,9 +17,9 @@ libexec/anope/listnicks
 %%DATADIR%%/languages/ru
 %%DATADIR%%/languages/tr
 %%DATADIR%%/tables.sql
-@unexec rmdir %D/%%DATADIR%%/logs 2>/dev/null || true
+@dirrmtry %%DATADIR%%/logs
 @dirrm %%DATADIR%%/languages
-@unexec rmdir %D/%%DATADIR%%/backups 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/backups
+@dirrmtry %%DATADIR%%
 @dirrm libexec/anope
 @dirrm lib/anope

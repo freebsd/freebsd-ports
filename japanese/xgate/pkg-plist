@@ -2774,10 +2774,10 @@
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/com/happysize
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/com
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes
-@unexec rmdir %D/%%T%%/webapps/xgate/WEB-INF/conf    2>/dev/null || true
-@unexec rmdir %D/%%T%%/webapps/xgate/WEB-INF/address 2>/dev/null || true
-@unexec rmdir %D/%%T%%/webapps/xgate/WEB-INF/account 2>/dev/null || true
-@unexec rmdir %D/%%T%%/webapps/xgate/WEB-INF         2>/dev/null || true
-@unexec rmdir %D/%%T%%/webapps/xgate                 2>/dev/null || true
+@dirrmtry %%T%%/webapps/xgate/WEB-INF/conf   
+@dirrmtry %%T%%/webapps/xgate/WEB-INF/address
+@dirrmtry %%T%%/webapps/xgate/WEB-INF/account
+@dirrmtry %%T%%/webapps/xgate/WEB-INF        
+@dirrmtry %%T%%/webapps/xgate                
 @unexec rmdir /var/log/xgate                         2>/dev/null || true
 @exec   install -d -o %%WWWUID%% -g %%WWWGID%% /var/log/xgate

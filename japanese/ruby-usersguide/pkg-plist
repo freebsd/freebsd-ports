@@ -26,4 +26,4 @@
 %%RUBY_MODDOCDIR%%/uguide24.html
 %%RUBY_MODDOCDIR%%/uguide25.html
 @dirrm %%RUBY_MODDOCDIR%%
-@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@dirrmtry %%RUBY_DOCDIR%%

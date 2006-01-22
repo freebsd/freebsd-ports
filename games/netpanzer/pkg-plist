@@ -9,4 +9,4 @@ share/applications/netpanzer.desktop
 share/pixmaps/netpanzer.png
 share/pixmaps/netpanzer.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

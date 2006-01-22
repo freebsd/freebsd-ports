@@ -26,7 +26,7 @@ bin/showvconfig
 %%CGI_DIR%%/vchattr
 %%CGI_DIR%%/vchforwards
 %%CGI_DIR%%/listvdomain
-@unexec rmdir %D/%%CGI_DIR%% 2>/dev/null || true
+@dirrmtry %%CGI_DIR%%
 etc/vmailmgr/default-username
 etc/vmailmgr/vdeliver-postdeliver
 lib/courier-imap/libexec/authlib/authvmailmgr

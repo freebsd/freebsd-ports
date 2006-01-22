@@ -4,5 +4,5 @@
 %%SITE_PERL%%/Email/Folder/Maildir.pm
 %%SITE_PERL%%/Email/Folder/Mbox.pm
 %%SITE_PERL%%/Email/Folder/Reader.pm
-@unexec rmdir %D/%%SITE_PERL%%/Email/Folder 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Email/Folder
+@dirrmtry %%SITE_PERL%%/Email

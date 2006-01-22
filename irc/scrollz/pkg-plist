@@ -716,18 +716,18 @@ share/scrollz/translation/SWISS
 share/scrollz/translation/UNITED_KINGDOM
 share/scrollz/translation/UNITED_KINGDOM_COM
 @exec mkdir %D/share/scrollz/script
-@unexec rmdir %D/share/scrollz/translation 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/script 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/bind 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/alias 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/cdcc 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/dcc 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/note 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/on 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/scrollz 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/set 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/window 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help/ctcp 2>/dev/null || true
-@unexec rmdir %D/share/scrollz/help 2>/dev/null || true
+@dirrmtry share/scrollz/translation
+@dirrmtry share/scrollz/script
+@dirrmtry share/scrollz/help/bind
+@dirrmtry share/scrollz/help/alias
+@dirrmtry share/scrollz/help/cdcc
+@dirrmtry share/scrollz/help/dcc
+@dirrmtry share/scrollz/help/note
+@dirrmtry share/scrollz/help/on
+@dirrmtry share/scrollz/help/scrollz
+@dirrmtry share/scrollz/help/set
+@dirrmtry share/scrollz/help/window
+@dirrmtry share/scrollz/help/ctcp
+@dirrmtry share/scrollz/help
 @dirrm share/scrollz/doc
-@unexec rmdir %D/share/scrollz 2>/dev/null || true
+@dirrmtry share/scrollz

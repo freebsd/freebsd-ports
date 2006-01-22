@@ -79,6 +79,6 @@ share/xchat/red.png
 share/xchat/voice.png
 @exec mkdir -p %D/lib/xchat/plugins
 @dirrm share/xchat
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 @dirrm lib/xchat/plugins
 @dirrm lib/xchat

@@ -1,6 +1,6 @@
 bin/leafrogue
 share/rogue/leaf.msg
-@unexec rmdir %D/share/rogue 2>/dev/null || true
+@dirrmtry share/rogue
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/lf_rogue.html
 %%PORTDOCS%%%%DOCSDIR%%/lf_rogue.txt
