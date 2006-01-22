@@ -23,5 +23,5 @@ share/locale/bg/LC_MESSAGES/kkbswitch.mo
 @dirrm share/apps/kkbswitch
 @dirrm %%DOCSDIR%%/common
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk

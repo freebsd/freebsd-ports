@@ -12,7 +12,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel/.packlist
 @dirrm %%SITE_PERL%%/LWP/Parallel/Protocol
 @dirrm %%SITE_PERL%%/LWP/Parallel
-@unexec rmdir %D/%%SITE_PERL%%/LWP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/LWP
+@dirrmtry %%SITE_PERL%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP

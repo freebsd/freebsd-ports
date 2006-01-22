@@ -37,4 +37,4 @@ share/xca/xca-9.html
 share/xca/xca.html
 @dirrm share/xca
 @unexec rmdir %D/share/pixmaps || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

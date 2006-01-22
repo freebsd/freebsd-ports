@@ -40,15 +40,15 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/View.pm
 %%SITE_PERL%%/Module/Install/Catalyst.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2> /dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/DispatchType 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Engine 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Manual 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Static 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Request 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Module/Install 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine
+@dirrmtry %%SITE_PERL%%/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Static
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst/Request
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/Module/Install
+@dirrmtry %%SITE_PERL%%/Module

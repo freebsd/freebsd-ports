@@ -183,5 +183,5 @@
 @dirrm %%MPIDIR%%/include
 @dirrm %%MPIDIR%%/etc
 @dirrm %%MPIDIR%%/bin
-@unexec rmdir %D/%%MPIDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%MPIBASE%% 2>/dev/null || true
+@dirrmtry %%MPIDIR%%
+@dirrmtry %%MPIBASE%%

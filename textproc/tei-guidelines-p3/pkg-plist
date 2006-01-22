@@ -726,4 +726,4 @@
 %%PDF%%@dirrm share/doc/tei/p3/pdf
 %%P3X%%@dirrm share/doc/tei/p3/p3x
 @dirrm share/doc/tei/p3
-@unexec rmdir %D/share/doc/tei 2> /dev/null || true
+@dirrmtry share/doc/tei

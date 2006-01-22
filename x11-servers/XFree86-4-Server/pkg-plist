@@ -176,7 +176,7 @@ lib/modules/libxf8_32bpp.a
 @dirrm lib/modules/fonts
 @dirrm lib/modules/freebsd
 @dirrm lib/modules/input
-@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
-@unexec rmdir %D/lib/modules 2>/dev/null || true
-@unexec rmdir %D/share/doc/XFree86/Japanese 2>/dev/null || true
-@unexec rmdir %D/share/doc/XFree86 2>/dev/null || true
+@dirrmtry include/X11/pixmaps
+@dirrmtry lib/modules
+@dirrmtry share/doc/XFree86/Japanese
+@dirrmtry share/doc/XFree86

@@ -8,4 +8,4 @@ share/xsl/resume-extensions/params.xsl
 @dirrm share/xsl/resume-extensions/lib
 @dirrm share/xsl/resume-extensions/format
 @dirrm share/xsl/resume-extensions
-@unexec rmdir %D/share/xsl 2>/dev/null || true
+@dirrmtry share/xsl

@@ -50,7 +50,7 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-4.0/gtk-2.0
 @dirrm share/themes/Xfce-4.0
 @dirrm share/themes/Xfce/gtk-2.0
-@unexec rmdir %D/share/themes/Xfce 2>/dev/null || true
+@dirrmtry share/themes/Xfce
 @dirrm share/themes/Xfce-cadmium/gtk-2.0
 @dirrm share/themes/Xfce-cadmium
 @dirrm share/themes/Xfce-dawn/gtk-2.0

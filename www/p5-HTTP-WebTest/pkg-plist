@@ -27,10 +27,10 @@ bin/wt
 %%SITE_PERL%%/HTTP/WebTest/TestResult.pm
 %%SITE_PERL%%/HTTP/WebTest/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/WebTest/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/Bundle/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTTP/WebTest/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTTP/WebTest 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%//%%PERL_ARCH%%/auto/HTTP/WebTest 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%//%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle/HTTP
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/HTTP/WebTest/Plugin
+@dirrmtry %%SITE_PERL%%/HTTP/WebTest
+@dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%//%%PERL_ARCH%%/auto/HTTP/WebTest
+@dirrmtry %%SITE_PERL%%//%%PERL_ARCH%%/auto/HTTP

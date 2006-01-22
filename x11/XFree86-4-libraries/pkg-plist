@@ -721,5 +721,5 @@ libdata/pkgconfig/xcursor.pc
 @dirrm lib/X11/locale/zh_TW.big5
 @dirrm lib/X11/locale
 @exec if [ ! -f %D/lib/X11/xserver/SecurityPolicy ]; then cp %D/lib/X11/xserver/SecurityPolicy.default %D/lib/X11/xserver/SecurityPolicy; fi
-@unexec rmdir %D/include/X11/bitmaps 2>/dev/null || true
-@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true
+@dirrmtry include/X11/bitmaps
+@dirrmtry lib/X11/xserver

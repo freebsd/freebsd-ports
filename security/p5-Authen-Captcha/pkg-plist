@@ -43,5 +43,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Captcha
 @dirrm %%SITE_PERL%%/Authen/Captcha/images
 @dirrm %%SITE_PERL%%/Authen/Captcha
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Authen 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen

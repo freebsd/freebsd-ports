@@ -75,4 +75,4 @@ lib/X11/icons/PolarCursorTheme/cursors/watch
 lib/X11/icons/PolarCursorTheme/cursors/xterm
 @dirrm lib/X11/icons/PolarCursorTheme/cursors
 @dirrm lib/X11/icons/PolarCursorTheme
-@unexec rmdir %D/lib/X11/icons 2>/dev/null || true
+@dirrmtry lib/X11/icons

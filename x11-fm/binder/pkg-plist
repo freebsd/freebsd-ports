@@ -183,4 +183,4 @@ bin/Processes.app
 @dirrm JDE/Binder/modules
 @dirrm JDE/Binder/tools
 @dirrm JDE/Binder
-@unexec rmdir %D/JDE 2>/dev/null || true
+@dirrmtry JDE

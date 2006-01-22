@@ -20,11 +20,11 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/wwwshell.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WWW/Mechanize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Display/Win32 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Display/OSX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Display 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrmtry %%SITE_PERL%%/HTML/Display/Win32
+@dirrmtry %%SITE_PERL%%/HTML/Display/OSX
+@dirrmtry %%SITE_PERL%%/HTML/Display
+@dirrmtry %%SITE_PERL%%/HTML

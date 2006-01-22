@@ -4,7 +4,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Business/PayPal/EWP.pm.orig
 %%SITE_PERL%%/%%PERL_ARCH%%/Business/PayPal/EWP.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/EWP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Business/PayPal 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Business 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Business/PayPal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Business

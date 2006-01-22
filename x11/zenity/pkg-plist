@@ -134,8 +134,8 @@ share/locale/vi/LC_MESSAGES/zenity-0.1.mo
 share/locale/xh/LC_MESSAGES/zenity-0.1.mo
 share/locale/zh_CN/LC_MESSAGES/zenity-0.1.mo
 share/locale/zh_TW/LC_MESSAGES/zenity-0.1.mo
-@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug 2> /dev/null || true
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrm share/gnome/zenity/clothes
 @dirrm share/gnome/zenity
 @dirrm share/gnome/omf/zenity

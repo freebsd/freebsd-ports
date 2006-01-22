@@ -532,11 +532,11 @@ www/apache22/icons/world2.png
 @dirrm share/apache22
 %%APR_PORTS%%@dirrm include/apr-1
 %%APR_PORTS%%@dirrm build-1
-@unexec rmdir %D/libexec/apache22 2> /dev/null || true
+@dirrmtry libexec/apache22
 @dirrm include/apache22
-@unexec rmdir %D/www/apache22 2> /dev/null || true
-@unexec rmdir %D/etc/apache22/Includes 2> /dev/null || true
+@dirrmtry www/apache22
+@dirrmtry etc/apache22/Includes
 @unexec rm -f %D/etc/apache22/httpd.conf.bak 2> /dev/null || true
-@unexec rmdir %D/etc/apache22/envvars.d 2> /dev/null || true
-@unexec rmdir %D/etc/apache22/extra 2> /dev/null || true
+@dirrmtry etc/apache22/envvars.d
+@dirrmtry etc/apache22/extra
 @unexec rmdir %D/etc/apache22 2> /dev/null || echo "===> If you plan to do not reinstall apache22, you can safely remove %D/etc/apache22."

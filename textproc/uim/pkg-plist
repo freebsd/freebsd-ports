@@ -129,7 +129,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrm include/uim
 @dirrm lib/uim/plugin
 @dirrm lib/uim
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 %%GNOME%%@dirrm %%DATADIR%%/helperdata
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

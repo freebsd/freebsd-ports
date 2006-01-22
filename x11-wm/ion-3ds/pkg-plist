@@ -82,4 +82,4 @@ share/locale/fi/LC_MESSAGES/ion3.mo
 @dirrm lib/ion3
 @dirrm share/ion3
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/ion3 2>/dev/null || true
+@dirrmtry etc/ion3

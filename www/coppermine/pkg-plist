@@ -699,4 +699,4 @@
 @dirrm %%CPGDIR%%/albums/edit
 @dirrm %%CPGDIR%%/albums
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/%%CPGDIR%% 2>/dev/null || true
+@dirrmtry %%CPGDIR%%

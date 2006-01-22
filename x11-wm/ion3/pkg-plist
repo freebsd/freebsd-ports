@@ -60,4 +60,4 @@ share/doc/ion/ChangeLog
 @dirrm lib/ion
 @dirrm share/ion
 @dirrm share/doc/ion
-@unexec rmdir %D/etc/ion 2>/dev/null || true
+@dirrmtry etc/ion

@@ -3,7 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/Bits/.packlist
 @dirrm %%SITE_PERL%%/File/Stat/Bits
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/Bits
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File/Stat 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File/Stat
+@dirrmtry %%SITE_PERL%%/File

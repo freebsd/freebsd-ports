@@ -5,6 +5,6 @@
 %%SITE_PERL%%/HTML/Prototype/Helper.pm
 %%SITE_PERL%%/HTML/Prototype/Helper/Tag.pm
 %%SITE_PERL%%/HTML/Prototype/Js.pm
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Prototype/Helper 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Prototype 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTML/Prototype/Helper
+@dirrmtry %%SITE_PERL%%/HTML/Prototype
+@dirrmtry %%SITE_PERL%%/HTML

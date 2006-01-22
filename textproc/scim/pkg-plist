@@ -110,7 +110,7 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 @dirrm include/scim-1.0/x11
 @dirrm include/scim-1.0/gtk
 @dirrm include/scim-1.0
-@unexec rmdir %D/lib/gtk-2.0/immodules 2>/dev/null || true
+@dirrmtry lib/gtk-2.0/immodules
 @dirrm lib/scim-1.0/1.4.0/Config
 @dirrm lib/scim-1.0/1.4.0/Filter
 @dirrm lib/scim-1.0/1.4.0/FrontEnd

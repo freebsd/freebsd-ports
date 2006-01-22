@@ -47,32 +47,32 @@ share/apps/klamav/about/wait.html
 share/apps/klamav/about/aboutklamav.html
 share/apps/klamav/about/klam.png
 share/apps/klamav/about/tshirt.png
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/klamav02 2>/dev/null || true
-@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/22x22/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/32x32/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/16x16/actions 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/icons 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav/about 2>/dev/null || true
-@unexec rmdir %D/share/apps/klamav 2>/dev/null || true
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/doc/HTML/en/klamav02
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32/actions
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/locolor/16x16/actions
+@dirrmtry share/apps/klamav/icons/locolor/32x32/apps
+@dirrmtry share/apps/klamav/icons/hicolor/32x32/actions
+@dirrmtry share/apps/klamav/icons/hicolor/32x32/apps
+@dirrmtry share/apps/klamav/icons/hicolor/22x22/actions
+@dirrmtry share/apps/klamav/icons/locolor/32x32/actions
+@dirrmtry share/apps/klamav/icons/locolor/16x16/apps
+@dirrmtry share/apps/klamav/icons/hicolor/48x48/apps
+@dirrmtry share/apps/klamav/icons/locolor/16x16/actions
+@dirrmtry share/apps/klamav/icons/locolor/32x32
+@dirrmtry share/apps/klamav/icons/locolor/16x16
+@dirrmtry share/apps/klamav/icons/locolor
+@dirrmtry share/apps/klamav/icons/hicolor/32x32
+@dirrmtry share/apps/klamav/icons/hicolor/22x22
+@dirrmtry share/apps/klamav/icons/hicolor/48x48
+@dirrmtry share/apps/klamav/icons/hicolor
+@dirrmtry share/apps/klamav/icons
+@dirrmtry share/apps/klamav/about
+@dirrmtry share/apps/klamav

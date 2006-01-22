@@ -27,13 +27,13 @@ www/cgi-bin/munin-cgi-graph
 @unexec rm -f /var/run/munin/munin-*.lock
 @unexec rmdir /var/run/munin 2>/dev/null || true
 @unexec rmdir /var/log/munin-main 2>/dev/null || true
-@unexec rmdir %D/www/data/munin 2>/dev/null || true
-@unexec rmdir %D/www/data 2>/dev/null || true
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
-@unexec rmdir %D/var/munin 2>/dev/null || true
-@unexec rmdir %D/share/munin 2>/dev/null || true
-@unexec rmdir %D/etc/munin/templates 2>/dev/null || true
-@unexec rmdir %D/etc/munin 2>/dev/null || true
+@dirrmtry www/data/munin
+@dirrmtry www/data
+@dirrmtry www/cgi-bin
+@dirrmtry var/munin
+@dirrmtry share/munin
+@dirrmtry etc/munin/templates
+@dirrmtry etc/munin
 @unexec echo
 @unexec echo '********************************************************************'
 @unexec echo "If you want to *completely* remove munin-main, you have to"

@@ -14,6 +14,6 @@ bin/pod2projdocs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs/.packlist
 @dirrm %%SITE_PERL%%/Pod/ProjectDocs/Parser
 @dirrm %%SITE_PERL%%/Pod/ProjectDocs
-@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/ProjectDocs
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod

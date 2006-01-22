@@ -4,4 +4,4 @@
 %%SITE_PERL%%/HTML/Formatter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Format/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Format
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTML

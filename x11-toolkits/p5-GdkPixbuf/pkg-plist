@@ -10,8 +10,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk

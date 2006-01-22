@@ -42,6 +42,6 @@ libexec/bannerfilter/redirector.pl
 %%WWW_ROOT%%/bannerfilter/xbbackground.gif
 %%WWW_ROOT%%/bannerfilter/xoom.html
 %%WWW_ROOT%%/bannerfilter/yahoo.html
-@unexec rmdir %D/etc/bannerfilter 2> /dev/null || true
+@dirrmtry etc/bannerfilter
 @dirrm libexec/bannerfilter
 @dirrm %%WWW_ROOT%%/bannerfilter

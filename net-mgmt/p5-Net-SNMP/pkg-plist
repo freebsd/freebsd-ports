@@ -14,8 +14,8 @@ bin/snmpkey
 %%SITE_PERL%%/Net/SNMP/Transport/UDP6.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/SNMP/Transport
 @dirrm %%SITE_PERL%%/Net/SNMP/Security
 @dirrm %%SITE_PERL%%/Net/SNMP
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net

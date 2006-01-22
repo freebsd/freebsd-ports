@@ -31,7 +31,7 @@ bin/pdfstamp.plx
 %%SITE_PERL%%/Text/PDF/examples/test.pdf
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/PDF/examples
 @dirrm %%SITE_PERL%%/Text/PDF
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Text

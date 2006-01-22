@@ -6,10 +6,10 @@
 %%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource
 @dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite
 @dirrm %%SITE_PERL%%/ResourcePool/Command/SOAP
 @dirrm %%SITE_PERL%%/ResourcePool/Resource/SOAP
-@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Resource 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/ResourcePool/Resource
 @dirrm %%SITE_PERL%%/ResourcePool/Factory/SOAP
-@unexec rmdir %D/%%SITE_PERL%%/ResourcePool/Factory 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/ResourcePool/Factory

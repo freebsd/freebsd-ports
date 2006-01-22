@@ -10,6 +10,6 @@ etc/rc.d/trafd.sh
 etc/traflog.format
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/WhatsNew
-@unexec rmdir %D/var/bpft 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var/bpft
+@dirrmtry var
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

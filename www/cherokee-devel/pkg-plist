@@ -146,5 +146,5 @@ www/index.html
 @dirrm etc/cherokee/mods-enabled
 @dirrm etc/cherokee/mods-available
 @dirrm etc/cherokee
-@unexec rmdir %D/www/images 2>/dev/null || true
-@unexec rmdir %D/www/data 2>/dev/null || true
+@dirrmtry www/images
+@dirrmtry www/data

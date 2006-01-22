@@ -13,5 +13,5 @@ bin/podlint
 @dirrm %%SITE_PERL%%/Pod/POM/View
 @dirrm %%SITE_PERL%%/Pod/POM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/POM
-@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod

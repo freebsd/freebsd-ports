@@ -264,8 +264,8 @@ frontpage/version%%FP_VER%%/set_default_perms.sh
 @dirrm frontpage/version%%FP_VER%%/apache2
 @dirrm frontpage/version%%FP_VER%%/admin/1033
 @dirrm frontpage/version%%FP_VER%%/admin
-@unexec rmdir %D/frontpage/version%%FP_VER%% 2> /dev/null || true
-@unexec rmdir %D/frontpage 2> /dev/null || true
+@dirrmtry frontpage/version%%FP_VER%%
+@dirrmtry frontpage
 %%PORTDOCS%%%%DOCSDIR%%/readme.htm
 %%PORTDOCS%%%%DOCSDIR%%/readme_apache_dso.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT

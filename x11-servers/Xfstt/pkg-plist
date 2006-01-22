@@ -8,4 +8,4 @@ etc/rc.d/xfstt.sh
 @exec mkdir -p %D/lib/X11/fonts/TrueType
 @unexec rm -f %D/lib/X11/fonts/TrueType/ttname.dir
 @unexec rm -f %D/lib/X11/fonts/TrueType/ttinfo.dir
-@unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true
+@dirrmtry lib/X11/fonts/TrueType

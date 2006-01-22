@@ -2,5 +2,5 @@
 %%SITE_PERL%%/Tk/enscript.cfg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Enscript/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Enscript
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Tk 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrmtry %%SITE_PERL%%/Tk

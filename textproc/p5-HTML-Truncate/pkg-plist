@@ -1,5 +1,5 @@
 %%SITE_PERL%%/HTML/Truncate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Truncate/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Truncate 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Truncate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML

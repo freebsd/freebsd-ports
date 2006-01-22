@@ -280,7 +280,7 @@ share/netsaint/stylesheets/status.css
 share/netsaint/stylesheets/statusmap.css
 share/netsaint/stylesheets/tac.css
 share/netsaint/stylesheets/trends.css
-@unexec rmdir %D/etc/netsaint 2>/dev/null || true
+@dirrmtry etc/netsaint
 @dirrm share/netsaint/docs/developer/images
 @dirrm share/netsaint/docs/developer
 @dirrm share/netsaint/docs/images
@@ -291,7 +291,7 @@ share/netsaint/stylesheets/trends.css
 @dirrm share/netsaint/sbin
 @dirrm share/netsaint/stylesheets
 @dirrm share/netsaint
-@unexec rmdir %D/var/netsaint/archives 2>/dev/null || true
-@unexec rmdir %D/var/netsaint/rw 2>/dev/null || true
-@unexec rmdir %D/var/netsaint 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var/netsaint/archives
+@dirrmtry var/netsaint/rw
+@dirrmtry var/netsaint
+@dirrmtry var

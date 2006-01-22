@@ -10,4 +10,4 @@ bin/mibcompiler
 @dirrm %%SITE_PERL%%/SNMP
 @dirrm %%SITE_PERL%%/Bundle/SNMP/MIB
 @dirrm %%SITE_PERL%%/Bundle/SNMP
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle

@@ -16,5 +16,5 @@ bin/dtdparse
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse
 @dirrm %%SITE_PERL%%/SGML/DTDParse/Format
 @dirrm %%SITE_PERL%%/SGML/DTDParse
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SGML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML
+@dirrmtry %%SITE_PERL%%/SGML

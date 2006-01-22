@@ -1,2 +1,2 @@
 lib/xfce4/panel-plugins/libgenmon.so
-@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
+@dirrmtry lib/xfce4/panel-plugins

@@ -85,14 +85,14 @@ usr/local/share/stsmon/pixmaps/Inkg_sp.xpm
 usr/local/share/stsmon/pixmaps/Inkg_ye.xpm
 @dirrm usr/local/share/stsmon/pixmaps
 @dirrm usr/local/share/stsmon
-@unexec rmdir %D/usr/local/share/printui 2>/dev/null || true
-@unexec rmdir %D/usr/local/share/locale/ja/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/usr/local/share/locale/ja 2>/dev/null || true
-@unexec rmdir %D/usr/local/share/locale 2>/dev/null || true
-@unexec rmdir %D/usr/local/share 2>/dev/null || true
-@unexec rmdir %D/usr/local 2>/dev/null || true
-@unexec rmdir %D/usr/lib/bjlib 2>/dev/null || true
-@unexec rmdir %D/usr/lib 2>/dev/null || true
-@unexec rmdir %D/usr 2>/dev/null || true
+@dirrmtry usr/local/share/printui
+@dirrmtry usr/local/share/locale/ja/LC_MESSAGES
+@dirrmtry usr/local/share/locale/ja
+@dirrmtry usr/local/share/locale
+@dirrmtry usr/local/share
+@dirrmtry usr/local
+@dirrmtry usr/lib/bjlib
+@dirrmtry usr/lib
+@dirrmtry usr
 @exec /compat/linux/sbin/ldconfig ; true
 @unexec /compat/linux/sbin/ldconfig ; true

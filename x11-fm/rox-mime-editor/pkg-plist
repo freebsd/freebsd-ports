@@ -29,4 +29,4 @@ apps/MIME-Editor/type.pyo
 @dirrm apps/MIME-Editor/Messages
 @dirrm apps/MIME-Editor/Help
 @dirrm apps/MIME-Editor
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

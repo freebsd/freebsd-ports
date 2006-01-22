@@ -34,5 +34,5 @@
 @dirrm %%SITE_PERL%%/Nmap/Scanner/Util
 @dirrm %%SITE_PERL%%/Nmap/Scanner
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner
-@unexec rmdir %D/%%SITE_PERL%%/Nmap 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Nmap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap

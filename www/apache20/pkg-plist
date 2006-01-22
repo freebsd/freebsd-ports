@@ -518,12 +518,12 @@ share/apache2/build/special.mk
 @dirrm %%EXAMPLESDIR%%
 @dirrm share/apache2/build
 @dirrm share/apache2
-@unexec rmdir %D/libexec/apache2 2> /dev/null || true
+@dirrmtry libexec/apache2
 @dirrm lib/apache2
 @dirrm include/apache2
 @exec mkdir -p %D/etc/apache2/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache2/envvars.d 2> /dev/null || true
-@unexec rmdir %D/etc/apache2/Includes 2> /dev/null || true
-@unexec rmdir %D/etc/apache2/envvars.d 2> /dev/null || true
+@dirrmtry etc/apache2/Includes
+@dirrmtry etc/apache2/envvars.d
 @unexec rm -f %D/etc/apache2/httpd.conf.bak 2> /dev/null || true
 @unexec rmdir %D/etc/apache2 2> /dev/null || echo "===> If you plan to do not reinstall apache2, you can safely remove %D/etc/apache2."

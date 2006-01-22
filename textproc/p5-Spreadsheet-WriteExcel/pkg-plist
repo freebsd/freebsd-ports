@@ -128,6 +128,6 @@ bin/chartex
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
 @dirrm %%SITE_PERL%%/Spreadsheet/WriteExcel
-@unexec rmdir %D/%%SITE_PERL%%/Spreadsheet 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Spreadsheet

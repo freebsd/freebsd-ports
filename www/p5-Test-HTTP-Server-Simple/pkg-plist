@@ -1,9 +1,9 @@
 %%SITE_PERL%%/Test/HTTP/Server/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/Server/Simple/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/Server/Simple 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/Server 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Test/HTTP/Server 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Test/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/Server/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTTP
+@dirrmtry %%SITE_PERL%%/Test/HTTP/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/HTTP
+@dirrmtry %%SITE_PERL%%/Test

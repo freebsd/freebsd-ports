@@ -111,4 +111,4 @@ share/silc/scripts/silc-mime.pl
 @dirrm share/silc/scripts
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/silc 2>/dev/null || true
+@dirrmtry etc/silc

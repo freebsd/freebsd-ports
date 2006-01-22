@@ -1754,6 +1754,6 @@ interchange/standard/variables/THEME_CSS
 @dirrm interchange/code/Filter
 @dirrm interchange/code/ActionMap
 @dirrm interchange/code
-@unexec rmdir %D/interchange/src 2>/dev/null || true
-@unexec rmdir %D/interchange/etc 2>/dev/null || true
-@unexec rmdir %D/interchange 2>/dev/null || true
+@dirrmtry interchange/src
+@dirrmtry interchange/etc
+@dirrmtry interchange

@@ -1578,16 +1578,16 @@
 @dirrm %%HORDEDIR%%/lib/File/PDF
 @dirrm %%HORDEDIR%%/lib/File
 @dirrm %%HORDEDIR%%/lib/Block
-@unexec rmdir %D/%%HORDEDIR%%/lib/data 2>/dev/null || true
+@dirrmtry %%HORDEDIR%%/lib/data
 @dirrm %%HORDEDIR%%/lib
 @dirrm %%HORDEDIR%%/js
-@unexec rmdir %D/%%HORDEDIR%%/config 2>/dev/null || true
+@dirrmtry %%HORDEDIR%%/config
 @dirrm %%HORDEDIR%%/admin/setup
 @dirrm %%HORDEDIR%%/admin/perms
 @dirrm %%HORDEDIR%%/admin/locale/fi_FI
 @dirrm %%HORDEDIR%%/admin/locale/en_US
 @dirrm %%HORDEDIR%%/admin/locale
 @dirrm %%HORDEDIR%%/admin
-@unexec rmdir %D/%%HORDEDIR%% 2>/dev/null || true
+@dirrmtry %%HORDEDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%RMDIRINC%%@unexec rmdir %D/%%HORDE_INC%% 2>/dev/null || true

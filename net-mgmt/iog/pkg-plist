@@ -11,5 +11,5 @@ iog/iog-%%VERSION%%/iog.cfg.sample
 iog/iog-%%VERSION%%/ioglogo.gif
 iog/iog-%%VERSION%%/out.gif
 iog/iog
-@unexec rmdir %D/iog/iog-%%VERSION%% 2>/dev/null || true
-@unexec rmdir %D/iog 2>/dev/null || true
+@dirrmtry iog/iog-%%VERSION%%
+@dirrmtry iog

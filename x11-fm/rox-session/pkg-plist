@@ -74,4 +74,4 @@ bin/rox-session
 @dirrm apps/ROX-Session/Help
 @dirrm apps/ROX-Session/%%BINARIES%%
 @dirrm apps/ROX-Session
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

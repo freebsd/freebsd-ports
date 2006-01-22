@@ -47,13 +47,13 @@ share/applications/Terminal.desktop
 share/icons/hicolor/48x48/apps/Terminal.png
 share/icons/hicolor/scalable/apps/Terminal.svg
 share/pixmaps/terminal.xpm
-@unexec rmdir %D/share/icons/hicolor/scalable 2> /dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2> /dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2> /dev/null || true
-@unexec rmdir %D/icons 2> /dev/null || true
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications
 @dirrm share/Terminal/apps
 @dirrm share/Terminal

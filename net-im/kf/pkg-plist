@@ -126,4 +126,4 @@ share/locale/ru/LC_MESSAGES/kf.mo
 share/pixmaps/kf.png
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications

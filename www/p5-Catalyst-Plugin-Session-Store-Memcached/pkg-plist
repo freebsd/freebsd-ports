@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/Memcached.pm
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Session/Store 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Session 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

@@ -20,13 +20,13 @@ bin/slrsh
 @dirrm %%SITE_PERL%%/Schedule/Load
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load
 @dirrm lib/rschedule
-@unexec rmdir %D/%%SITE_PERL%%/Schedule 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Schedule
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule
 @dirrm %%SITE_PERL%%/auto/Schedule/Load/Hosts/Host
 @dirrm %%SITE_PERL%%/auto/Schedule/Load/Hosts/Proc
 @dirrm %%SITE_PERL%%/auto/Schedule/Load/Hosts
 @dirrm %%SITE_PERL%%/auto/Schedule/Load
-@unexec rmdir %D/%%SITE_PERL%%/auto/Schedule 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Schedule
 %%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slchoosed
 %%PORTDOCS%%%%EXAMPLESDIR%%/init.d/slreportd
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/init.d

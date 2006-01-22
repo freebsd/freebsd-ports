@@ -88,5 +88,5 @@ lib/X11/xfig/bitmaps/vert_rightshingle.bmp
 lib/X11/xfig/bitmaps/vert_saw.bmp
 lib/X11/xfig/bitmaps/vertical.bmp
 @dirrm lib/X11/xfig/bitmaps
-@unexec rmdir %D/lib/X11/xfig 2> /dev/null || true
+@dirrmtry lib/X11/xfig
 @dirrm lib/X11/fig2dev

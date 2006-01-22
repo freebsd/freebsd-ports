@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Parse/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Syslog/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Syslog
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
+@dirrmtry %%SITE_PERL%%/Parse

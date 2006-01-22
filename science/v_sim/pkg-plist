@@ -122,7 +122,7 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/v_sim.res
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%REFDOC%%@dirrm %%DOCSDIR%%/APIreference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

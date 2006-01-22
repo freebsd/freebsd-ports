@@ -178,9 +178,9 @@ bin/fop
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%/build
 @dirrm %%DATADIR%%
-@unexec rmdir %D/%%DOCSDIR%%/skin/css 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%/skin/css
 @dirrm %%DOCSDIR%%/skin/images
-@unexec rmdir %D/%%DOCSDIR%%/skin/scripts 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%/skin/scripts
 @dirrm %%DOCSDIR%%/skin
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/fo/images

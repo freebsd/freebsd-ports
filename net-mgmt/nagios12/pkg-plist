@@ -298,7 +298,7 @@ share/nagios/stylesheets/statusmap.css
 share/nagios/stylesheets/summary.css
 share/nagios/stylesheets/tac.css
 share/nagios/stylesheets/trends.css
-@unexec rmdir %D/etc/nagios 2>/dev/null || true
+@dirrmtry etc/nagios
 @dirrm share/nagios/cgi-bin
 @dirrm share/nagios/contexthelp
 @dirrm share/nagios/docs/images

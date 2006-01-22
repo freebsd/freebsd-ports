@@ -96,34 +96,34 @@ share/icons/locolor/22x22/apps/kkeyled.png
 share/icons/locolor/32x32/apps/kkeyled.png
 share/icons/locolor/48x48/apps/kkeyled.png
 share/locale/de/LC_MESSAGES/kkeyled.mo
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale
+@dirrmtry share/icons/locolor/48x48/apps
+@dirrmtry share/icons/locolor/48x48
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/22x22/apps
+@dirrmtry share/icons/locolor/22x22
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kkeyled
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/kkeyled
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrmtry share/doc/HTML/de
+@dirrmtry share/doc/HTML
+@dirrmtry share/config
 @dirrm share/apps/kkeyled/pics/theme/round
 @dirrm share/apps/kkeyled/pics/theme/red
 @dirrm share/apps/kkeyled/pics/theme/lock
@@ -134,6 +134,6 @@ share/locale/de/LC_MESSAGES/kkeyled.mo
 @dirrm share/apps/kkeyled/pics/theme
 @dirrm share/apps/kkeyled/pics
 @dirrm share/apps/kkeyled
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/apps
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk

@@ -1,7 +1,7 @@
 bin/tr2latex
 share/texmf/tex/latex/misc/troffman.sty
 share/texmf/tex/latex/misc/troffms.sty
-@unexec rmdir %D/share/texmf/tex/latex/misc 2> /dev/null || true
-@unexec rmdir %D/share/texmf/tex/latex 2> /dev/null || true
-@unexec rmdir %D/share/texmf/tex 2> /dev/null || true
-@unexec rmdir %D/share/texmf 2> /dev/null || true
+@dirrmtry share/texmf/tex/latex/misc
+@dirrmtry share/texmf/tex/latex
+@dirrmtry share/texmf/tex
+@dirrmtry share/texmf

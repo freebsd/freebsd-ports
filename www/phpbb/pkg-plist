@@ -304,26 +304,26 @@
 @exec touch %B/config.php
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/doc 2>/dev/null || true
+@dirrmtry share/doc
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
 @dirrm %%PHPBBDIR%%/admin
 @dirrm %%PHPBBDIR%%/cache
 @dirrm %%PHPBBDIR%%/db
 @dirrm %%PHPBBDIR%%/images/smiles
-@unexec rmdir %D/%%PHPBBDIR%%/images/avatars/gallery 2>/dev/null || true
-@unexec rmdir %D/%%PHPBBDIR%%/images/avatars/upload 2>/dev/null || true
-@unexec rmdir %D/%%PHPBBDIR%%/images/avatars 2>/dev/null || true
-@unexec rmdir %D/%%PHPBBDIR%%/images 2>/dev/null || true
+@dirrmtry %%PHPBBDIR%%/images/avatars/gallery
+@dirrmtry %%PHPBBDIR%%/images/avatars/upload
+@dirrmtry %%PHPBBDIR%%/images/avatars
+@dirrmtry %%PHPBBDIR%%/images
 @dirrm %%PHPBBDIR%%/includes
 @dirrm %%PHPBBDIR%%/install/schemas
 @dirrm %%PHPBBDIR%%/install
 @dirrm %%PHPBBDIR%%/language/lang_english/email
 @dirrm %%PHPBBDIR%%/language/lang_english
-@unexec rmdir %D/%%PHPBBDIR%%/language 2>/dev/null || true
+@dirrmtry %%PHPBBDIR%%/language
 @dirrm %%PHPBBDIR%%/templates/subSilver/admin
 @dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
-@unexec rmdir %D/%%PHPBBDIR%%/templates/subSilver/images 2>/dev/null || true
-@unexec rmdir %D/%%PHPBBDIR%%/templates/subSilver 2>/dev/null || true
-@unexec rmdir %D/%%PHPBBDIR%%/templates 2>/dev/null || true
+@dirrmtry %%PHPBBDIR%%/templates/subSilver/images
+@dirrmtry %%PHPBBDIR%%/templates/subSilver
+@dirrmtry %%PHPBBDIR%%/templates
 @unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"

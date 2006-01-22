@@ -261,6 +261,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TreeSortable
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

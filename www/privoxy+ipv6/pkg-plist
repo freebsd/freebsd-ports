@@ -87,7 +87,7 @@ sbin/privoxy
 %%DOCSDIR%%/user-manual/templates.html
 %%DOCSDIR%%/user-manual/upgradersnote.html
 @dirrm etc/privoxy/templates
-@unexec rmdir %D/etc/privoxy 2>/dev/null || true
+@dirrmtry etc/privoxy
 @dirrm %%DOCSDIR%%/developer-manual
 @dirrm %%DOCSDIR%%/faq
 @dirrm %%DOCSDIR%%/images

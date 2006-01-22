@@ -61,8 +61,8 @@
 %%SITE_PERL%%/Font/TTF/Ttc.pm
 %%SITE_PERL%%/ttfmod.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Font 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
 @dirrm %%SITE_PERL%%/Font/TTF/Mort
 @dirrm %%SITE_PERL%%/Font/TTF/Kern
-@unexec rmdir %D/%%SITE_PERL%%/Font/TTF 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Font 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Font/TTF
+@dirrmtry %%SITE_PERL%%/Font

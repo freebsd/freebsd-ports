@@ -19,4 +19,4 @@
 @dirrm %%SITE_PERL%%/HTTP/Proxy/Engine
 @dirrm %%SITE_PERL%%/HTTP/Proxy/BodyFilter
 @dirrm %%SITE_PERL%%/HTTP/Proxy
-@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTTP

@@ -16,4 +16,4 @@ bin/gnome-art
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

@@ -5,6 +5,6 @@ etc/tfconfig.php.default
 etc/rc.d/torrentflux.sh
 libexec/btphptornado.py
 %%DATADIR%%/torrentflux.sqlite
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

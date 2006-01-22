@@ -11,4 +11,4 @@ etc/amap/appdefs.trig.default
 %%AMAPINCDIR%%/amap-lib.h
 @dirrm %%AMAPLIBDIR%%
 @dirrm %%AMAPINCDIR%%
-@unexec rmdir %D/etc/amap 2>/dev/null || true
+@dirrmtry etc/amap

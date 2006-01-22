@@ -40,6 +40,6 @@ lib/jabber/pyicq/xmlconfig.py
 @dirrm lib/jabber/pyicq/tlib
 @dirrm lib/jabber/pyicq/webadmin
 @dirrm lib/jabber/pyicq
-@unexec rmdir %D/lib/jabber 2>/dev/null || true
+@dirrmtry lib/jabber
 @dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%

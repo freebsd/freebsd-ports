@@ -9,7 +9,7 @@ etc/snort/sid-msg.map-sample
 etc/snort/snort.conf-sample
 etc/snort/threshold.conf-sample
 etc/snort/unicode.map-sample
-@unexec rmdir %D/etc/snort 2>/dev/null || true
+@dirrmtry etc/snort
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

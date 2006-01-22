@@ -41,8 +41,8 @@ share/locale/sv/LC_MESSAGES/bakery.mo
 share/locale/uk/LC_MESSAGES/bakery.mo
 share/locale/zh_CN/LC_MESSAGES/bakery.mo
 share/locale/zh_TW/LC_MESSAGES/bakery.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm include/bakery-%%API_VERSION%%/bakery/View
 @dirrm include/bakery-%%API_VERSION%%/bakery/Utilities
 @dirrm include/bakery-%%API_VERSION%%/bakery/Document

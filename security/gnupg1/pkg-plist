@@ -53,26 +53,26 @@ libexec/gnupg/gpgkeys_http
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/be 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/el 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gl 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrm %%DOCSDIR%%

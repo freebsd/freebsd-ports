@@ -404,8 +404,8 @@ sbin/snmptrapd
 @dirrm %%DATADIR%%/snmpconf-data/snmpd-data
 @dirrm %%DATADIR%%/snmpconf-data/snmp-data
 @dirrm %%DATADIR%%/snmpconf-data
-@unexec rmdir %D/%%DATADIR%%/mibs 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/mibs
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store
@@ -425,4 +425,4 @@ sbin/snmptrapd
 @dirrm include/net-snmp/library
 @dirrm include/net-snmp/agent
 @dirrm include/net-snmp
-@unexec rmdir %D/etc/snmp 2>/dev/null || true
+@dirrmtry etc/snmp

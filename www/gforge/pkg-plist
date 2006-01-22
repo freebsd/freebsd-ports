@@ -1370,19 +1370,19 @@
 %%WWW_ROOT%%/gforge/www/tarballs.php
 %%WWW_ROOT%%/gforge/www/\
 %%WWW_ROOT%%/gforge/www/index.php
-@unexec rmdir %D/%%ETC_DIR%% 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/backend/zones 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/backend/shell 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/backend 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/mail 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/tarballs 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/dav-svn/mail 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/dav-svn/www 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/dav-svn 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/cvs-cron/mail 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/cvs-cron/www 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs/cvs-cron 2>/dev/null || true
-@unexec rmdir %D/%%BACKEND_DIR%%/cronjobs 2>/dev/null || true
+@dirrmtry %%ETC_DIR%%
+@dirrmtry %%BACKEND_DIR%%/backend/zones
+@dirrmtry %%BACKEND_DIR%%/backend/shell
+@dirrmtry %%BACKEND_DIR%%/backend
+@dirrmtry %%BACKEND_DIR%%/cronjobs/mail
+@dirrmtry %%BACKEND_DIR%%/cronjobs/tarballs
+@dirrmtry %%BACKEND_DIR%%/cronjobs/dav-svn/mail
+@dirrmtry %%BACKEND_DIR%%/cronjobs/dav-svn/www
+@dirrmtry %%BACKEND_DIR%%/cronjobs/dav-svn
+@dirrmtry %%BACKEND_DIR%%/cronjobs/cvs-cron/mail
+@dirrmtry %%BACKEND_DIR%%/cronjobs/cvs-cron/www
+@dirrmtry %%BACKEND_DIR%%/cronjobs/cvs-cron
+@dirrmtry %%BACKEND_DIR%%/cronjobs
 @dirrm %%BACKEND_DIR%%/monitor
 @dirrm %%BACKEND_DIR%%/utils/underworld-dummy
 @dirrm %%BACKEND_DIR%%/utils/cvs1

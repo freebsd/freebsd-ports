@@ -53,11 +53,11 @@ sbin/oops
 sbin/oopsctl
 @dirrm libexec/oops
 @dirrm etc/oops/tables
-@unexec rmdir %D/etc/oops 2>/dev/null || true
-@unexec rmdir %D/oops/DB 2>/dev/null || true
-@unexec rmdir %D/oops/logs 2>/dev/null || true
-@unexec rmdir %D/oops/storages 2>/dev/null || true
-@unexec rmdir %D/oops 2>/dev/null || true
+@dirrmtry etc/oops
+@dirrmtry oops/DB
+@dirrmtry oops/logs
+@dirrmtry oops/storages
+@dirrmtry oops
 @unexec rmdir /var/log/oops 2>/dev/null || true
 @unexec rm -f /var/run/oops/oopsctl 2>/dev/null || true
 @unexec rm -f /var/run/oops/oops_statfile 2>/dev/null || true

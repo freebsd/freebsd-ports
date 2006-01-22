@@ -153,26 +153,26 @@ share/xfce4/doc/he/images/panel-settings.png
 share/xfce4/doc/he/images/systembuttons-properties.png
 share/xfce4/doc/he/xfce4-panel.html
 @dirrm etc/xdg/xfce4/panel
-@unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
-@unexec rmdir %D/etc/xdg 2>/dev/null || true
-@unexec rmdir %D/etc/xfce4 2>/dev/null || true
+@dirrmtry etc/xdg/xfce4
+@dirrmtry etc/xdg
+@dirrmtry etc/xfce4
 @dirrm include/xfce4/panel
-@unexec rmdir %D/include/xfce4 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
+@dirrmtry include/xfce4
+@dirrmtry lib/xfce4/mcs-plugins
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
+@dirrmtry share/applications
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/xfce4/doc/C/images
+@dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc/fr/images
+@dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/he/images
+@dirrmtry share/xfce4/doc/he
+@dirrmtry share/xfce4/doc
+@dirrmtry share/xfce4
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO

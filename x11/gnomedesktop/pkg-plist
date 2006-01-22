@@ -195,14 +195,14 @@ share/locale/yo/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
-@unexec rmdir %D/share/locale/yo/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/yo 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku 2> /dev/null || true
-@unexec rmdir %D/share/locale/hy/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/hy 2> /dev/null || true
+@dirrmtry share/locale/yo/LC_MESSAGES
+@dirrmtry share/locale/yo
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrm share/gnome/omf/lgpl
 @dirrm share/gnome/omf/gpl
 @dirrm share/gnome/omf/gnome-feedback

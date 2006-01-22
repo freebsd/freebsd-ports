@@ -12,6 +12,6 @@ etc/dcd/dcd.welcome.default
 etc/dcd/nicks.allow.default
 @exec install -d -m 751 -o daemon -g daemon /var/log/dcd
 @unexec rmdir /var/log/dcd 2>/dev/null || true
-@unexec rmdir %D/etc/dcd 2>/dev/null || true
-@unexec rmdir %D/man/pl.ISO8859-2/man8 2>/dev/null || true
-@unexec rmdir %D/man/pl.ISO8859-2 2>/dev/null || true
+@dirrmtry etc/dcd
+@dirrmtry man/pl.ISO8859-2/man8
+@dirrmtry man/pl.ISO8859-2

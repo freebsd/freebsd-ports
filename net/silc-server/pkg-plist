@@ -10,5 +10,5 @@ etc/rc.d/silcd.sh-dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/cell_server1.conf
 %%PORTDOCS%%%%EXAMPLESDIR%%/cell_server2.conf
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/etc/silc 2>/dev/null || true
-@unexec rmdir %D/var/log/silc 2>/dev/null || true
+@dirrmtry etc/silc
+@dirrmtry var/log/silc

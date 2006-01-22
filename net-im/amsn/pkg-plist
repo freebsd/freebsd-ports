@@ -623,14 +623,14 @@ share/icons/hicolor/64x64/aMSN_64.png
 share/icons/hicolor/64x64/tux-64x64.png
 share/icons/hicolor/96x96/aMSN_96.png
 share/icons/hicolor/96x96/tux-96x96.png
-@unexec rmdir %D/share/icons/hicolor/96x96 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm share/amsn/docs
 @dirrm share/amsn/icons/128x128
 @dirrm share/amsn/icons/32x32

@@ -12,7 +12,7 @@ bin/nmap
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/man/pt.ISO8859-1/man1 2>/dev/null || true
-@unexec rmdir %D/man/pt_BR.ISO8859-1/man1 2>/dev/null || true
-@unexec rmdir %D/man/pt.ISO8859-1 2>/dev/null || true
-@unexec rmdir %D/man/pt_BR.ISO8859-1 2>/dev/null || true
+@dirrmtry man/pt.ISO8859-1/man1
+@dirrmtry man/pt_BR.ISO8859-1/man1
+@dirrmtry man/pt.ISO8859-1
+@dirrmtry man/pt_BR.ISO8859-1

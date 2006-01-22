@@ -51,7 +51,7 @@ etc/prelude-lml/plugins.rules-dist
 include/prelude-lml/prelude-lml.h
 lib/prelude-lml/debug.so
 lib/prelude-lml/pcre.so
-@unexec rmdir %D/etc/prelude-lml/ruleset 2>/dev/null || true
+@dirrmtry etc/prelude-lml/ruleset
 @unexec rmdir %D/etc/prelude-lml 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/prelude-lml`` to remove any configuration files left." | fmt
 @dirrm include/prelude-lml
 @dirrm lib/prelude-lml

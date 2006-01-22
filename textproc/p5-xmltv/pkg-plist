@@ -83,5 +83,5 @@ bin/tv_to_text
 @dirrm %%SITE_PERL%%/XMLTV/ProgressBar
 @dirrm %%SITE_PERL%%/XMLTV/Ask
 @dirrm %%SITE_PERL%%/XMLTV
-@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
-@unexec rmdir %D/%%CGIDIR%% 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%
+@dirrmtry %%CGIDIR%%

@@ -5,5 +5,5 @@ lib/liblrdf.so
 lib/liblrdf.so.2
 libdata/pkgconfig/lrdf.pc
 share/ladspa/rdf/ladspa.rdfs
-@unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
-@unexec rmdir %D/share/ladspa 2>/dev/null || true
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa

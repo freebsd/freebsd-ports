@@ -3,4 +3,4 @@ share/guile/www/http.scm
 share/guile/www/main.scm
 share/guile/www/url.scm
 @dirrm share/guile/www
-@unexec rmdir %D/share/guile 2>/dev/null || true
+@dirrmtry share/guile

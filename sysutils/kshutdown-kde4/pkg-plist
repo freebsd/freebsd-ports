@@ -50,14 +50,14 @@ share/locale/ru/LC_MESSAGES/kshutdown.mo
 share/locale/sk/LC_MESSAGES/kshutdown.mo
 share/locale/sv/LC_MESSAGES/kshutdown.mo
 share/locale/zh_CN/LC_MESSAGES/kshutdown.mo
-@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm share/doc/HTML/en/kshutdown
 @dirrm share/doc/HTML/de/kshutdown
 @dirrm share/apps/kshutdown/sounds
@@ -67,4 +67,4 @@ share/locale/zh_CN/LC_MESSAGES/kshutdown.mo
 @dirrm share/apps/kshutdown/extras/multimedia
 @dirrm share/apps/kshutdown/extras
 @dirrm share/apps/kshutdown
-@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
+@dirrmtry share/apps/kconf_update

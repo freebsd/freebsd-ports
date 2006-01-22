@@ -818,4 +818,4 @@ share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 @dirrm etc/lire/config
 @dirrm etc/lire
 
-@unexec rmdir %D/share/perl5 2>/dev/null || true
+@dirrmtry share/perl5

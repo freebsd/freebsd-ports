@@ -19,5 +19,5 @@
 @dirrm %%SITE_PERL%%/X11/Protocol/Ext
 @dirrm %%SITE_PERL%%/X11/Protocol/Connection
 @dirrm %%SITE_PERL%%/X11/Protocol
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/X11 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
+@dirrmtry %%SITE_PERL%%/X11

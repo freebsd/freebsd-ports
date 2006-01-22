@@ -46,12 +46,12 @@
 @dirrm %%SITE_PERL%%/Handel/Order
 @dirrm %%SITE_PERL%%/Handel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel
-@unexec rmdir %D/%%SITE_PERL%%/Template/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/Controller 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/Model 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/AxKit/XSP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/AxKit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/AxKit/XSP
+@dirrmtry %%SITE_PERL%%/AxKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel

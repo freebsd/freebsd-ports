@@ -776,5 +776,5 @@
 @dirrm %%WWW_ROOT%%/jwchat/images/emoticons
 @dirrm %%WWW_ROOT%%/jwchat/images/CVS
 @dirrm %%WWW_ROOT%%/jwchat/images
-@unexec rmdir %D/%%WWW_ROOT%%/jwchat 2> /dev/null || true
+@dirrmtry %%WWW_ROOT%%/jwchat
 @dirrm %%DATADIR%%

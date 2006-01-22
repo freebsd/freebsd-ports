@@ -2,7 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred/.packlist
 %%SITE_PERL%%/auto/Lingua/Preferred/autosplit.ix
 @dirrm %%SITE_PERL%%/auto/Lingua/Preferred
-@unexec rmdir %D/%%SITE_PERL%%/auto/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Lingua
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Preferred
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua

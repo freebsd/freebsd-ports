@@ -13,4 +13,4 @@
 @dirrm %%SITE_PERL%%/XML/Stream/Parser
 @dirrm %%SITE_PERL%%/XML/Stream/XPath
 @dirrm %%SITE_PERL%%/XML/Stream
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

@@ -1035,6 +1035,6 @@ share/texmf/web2c/latex.fmt
 @dirrm share/texmf/fonts/vf/adobe
 @dirrm share/texmf/tex/latex/psnfss
 @dirrm share/texmf/tex/latex
-@unexec rmdir %D/share/texmf/makeindx 2>/dev/null || true
-@unexec rmdir %D/share/texmf/documentation 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/vf 2>/dev/null || true
+@dirrmtry share/texmf/makeindx
+@dirrmtry share/texmf/documentation
+@dirrmtry share/texmf/fonts/vf

@@ -142,5 +142,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis/ds
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis/dns
 @dirrm %%PYTHON_SITELIBDIR%%/kenosis
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

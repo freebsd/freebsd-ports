@@ -743,4 +743,4 @@
 @dirrm %%DOCSDIR%%/DTD
 @dirrm %%DOCSDIR%%/Figures
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/doc/tei/ 2>/dev/null || true
+@dirrmtry share/doc/tei/

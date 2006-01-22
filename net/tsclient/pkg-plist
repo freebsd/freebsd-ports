@@ -47,16 +47,16 @@ share/locale/se/LC_MESSAGES/tsclient.mo
 share/locale/xh/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
 share/locale/zh_TW/LC_MESSAGES/tsclient.mo
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/xh 2>/dev/null || true
-@unexec rmdir %D/share/locale/se/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/se 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
-@unexec rmdir %D/share/locale/no_nb/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/no_nb 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl_NL 2>/dev/null || true
-@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/gr 2>/dev/null || true
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/no_nb/LC_MESSAGES
+@dirrmtry share/locale/no_nb
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
+@dirrmtry share/locale/gr/LC_MESSAGES
+@dirrmtry share/locale/gr
 @dirrm share/gnome/pixmaps/tsclient

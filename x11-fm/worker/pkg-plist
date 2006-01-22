@@ -31,7 +31,7 @@ share/pixmaps/WorkerIcon.xpm
 share/pixmaps/WorkerIcon16.xpm
 share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/pixmaps
 @dirrm share/worker/catalogs
 @dirrm share/worker/scripts
 @dirrm share/worker

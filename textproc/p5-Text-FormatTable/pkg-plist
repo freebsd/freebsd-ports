@@ -1,6 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable/.packlist
 %%SITE_PERL%%/Text/FormatTable.pm
 %%SITE_PERL%%/Text/example.pl
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/FormatTable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

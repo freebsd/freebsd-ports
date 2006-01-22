@@ -11,7 +11,7 @@ share/locale/sv/LC_MESSAGES/gkrellm.mo
 @dirrm include/gkrellm
 @exec mkdir -p %D/libexec/gkrellm/plugins
 @exec mkdir -p %D/share/gkrellm/themes
-@unexec rmdir %D/libexec/gkrellm/plugins 2>/dev/null || true
-@unexec rmdir %D/libexec/gkrellm 2>/dev/null || true
-@unexec rmdir %D/share/gkrellm/themes 2>/dev/null || true
-@unexec rmdir %D/share/gkrellm 2>/dev/null || true
+@dirrmtry libexec/gkrellm/plugins
+@dirrmtry libexec/gkrellm
+@dirrmtry share/gkrellm/themes
+@dirrmtry share/gkrellm

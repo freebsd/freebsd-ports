@@ -1,4 +1,4 @@
 lib/scim-1.0/IMEngine/OVLoader-SCIM.a
 lib/scim-1.0/IMEngine/OVLoader-SCIM.la
 lib/scim-1.0/IMEngine/OVLoader-SCIM.so
-@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@dirrmtry lib/scim-1.0/IMEngine

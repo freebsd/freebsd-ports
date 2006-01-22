@@ -14,12 +14,12 @@
 %%SITE_PERL%%/XML/SAX/Pipeline.pm
 %%SITE_PERL%%/XML/SAX/Tap.pm
 @dirrm %%SITE_PERL%%/XML/SAX/Machines
-@unexec rmdir %D/%%SITE_PERL%%/XML/Filter 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML/SAX
+@dirrmtry %%SITE_PERL%%/XML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Machines
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 %%EXAMPLESDIR%%/append_to_xml_file
 %%EXAMPLESDIR%%/output_to_process
 %%EXAMPLESDIR%%/xml_records_thru_libxslt

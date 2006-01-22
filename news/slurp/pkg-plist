@@ -1,5 +1,5 @@
 news/bin/slurp
 news/lib/slurp.sys.sample
-@unexec rmdir %D/news/lib 2> /dev/null || true
-@unexec rmdir %D/news/bin 2> /dev/null || true
-@unexec rmdir %D/news 2> /dev/null || true
+@dirrmtry news/lib
+@dirrmtry news/bin
+@dirrmtry news

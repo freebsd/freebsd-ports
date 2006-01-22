@@ -47,6 +47,6 @@ lib/jabber/pymsn/xmlconfig.py
 @dirrm lib/jabber/pymsn/legacy
 @dirrm lib/jabber/pymsn/baseproto
 @dirrm lib/jabber/pymsn
-@unexec rmdir %D/lib/jabber 2>/dev/null || true
+@dirrmtry lib/jabber
 @dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%

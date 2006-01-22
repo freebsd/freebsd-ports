@@ -8,9 +8,9 @@
 %%SITE_PERL%%/Spreadsheet/ParseExcel/Utility.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet
 @dirrm %%SITE_PERL%%/Spreadsheet/ParseExcel
-@unexec rmdir %D/%%SITE_PERL%%/Spreadsheet 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Spreadsheet
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK95.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/FmtTest.xls

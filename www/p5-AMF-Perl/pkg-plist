@@ -14,5 +14,5 @@
 @dirrm %%SITE_PERL%%/AMF/Perl/Util
 @dirrm %%SITE_PERL%%/AMF/Perl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF/Perl
-@unexec rmdir %D/%%SITE_PERL%%/AMF 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/AMF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AMF

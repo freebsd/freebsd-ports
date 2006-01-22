@@ -3,8 +3,8 @@ bin/xupdate
 %%SITE_PERL%%/XML/XUpdate/LibXML.pm
 %%SITE_PERL%%/XML/Normalize/LibXML.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML/XUpdate 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML/Normalize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/XUpdate
+@dirrmtry %%SITE_PERL%%/XML/Normalize
+@dirrmtry %%SITE_PERL%%/XML

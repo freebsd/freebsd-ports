@@ -25,14 +25,14 @@ bin/stubmaker.pl
 %%SITE_PERL%%/XMLRPC/Transport/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Lite
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
 @dirrm %%SITE_PERL%%/Apache/XMLRPC
 @dirrm %%SITE_PERL%%/SOAP/Transport
 @dirrm %%SITE_PERL%%/UDDI
 @dirrm %%SITE_PERL%%/XMLRPC/Transport
 @dirrm %%SITE_PERL%%/XMLRPC
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SOAP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML/Parser 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Apache
+@dirrmtry %%SITE_PERL%%/IO
+@dirrmtry %%SITE_PERL%%/SOAP
+@dirrmtry %%SITE_PERL%%/XML/Parser
+@dirrmtry %%SITE_PERL%%/XML

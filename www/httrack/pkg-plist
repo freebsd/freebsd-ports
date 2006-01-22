@@ -215,5 +215,5 @@ share/pixmaps/httrack.xpm
 @dirrm %%DOCSDIR%%
 @dirrm lib/httrack
 @dirrm include/httrack
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/pixmaps
+@dirrmtry share/applications

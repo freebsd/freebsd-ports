@@ -14,11 +14,11 @@
 %%SITE_PERL%%/Crypt/RSA/SS/PSS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/RSA
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrm %%SITE_PERL%%/Crypt/RSA/SS
 @dirrm %%SITE_PERL%%/Crypt/RSA/Key/Public
 @dirrm %%SITE_PERL%%/Crypt/RSA/Key/Private
 @dirrm %%SITE_PERL%%/Crypt/RSA/Key
 @dirrm %%SITE_PERL%%/Crypt/RSA/ES
 @dirrm %%SITE_PERL%%/Crypt/RSA
-@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Crypt

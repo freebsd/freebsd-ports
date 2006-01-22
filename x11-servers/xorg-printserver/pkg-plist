@@ -957,4 +957,4 @@ lib/X11/xserver/zulu
 @dirrm lib/X11/xserver/en_US/print/attributes
 @dirrm lib/X11/xserver/en_US/print
 @dirrm lib/X11/xserver/en_US
-@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true
+@dirrmtry lib/X11/xserver

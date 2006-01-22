@@ -324,5 +324,5 @@
 %%PORTDOCS%%@dirrm share/doc/ja/emacs-w3m
 %%PORTDOCS%%@dirrm share/doc/emacs-w3m
 @dirrm %%ICONDIR%%
-@unexec rmdir %D/%%EMACS_PACKAGESDIR%%/etc/images 2>/dev/null || true
+@dirrmtry %%EMACS_PACKAGESDIR%%/etc/images
 @dirrm %%LISPDIR%%

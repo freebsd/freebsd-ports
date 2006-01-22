@@ -6,4 +6,4 @@ bin/javadc
 %%JAR_DIR%%/%%JAR_FILE%%
 @dirrm %%JAR_DIR%%
 %%PORTDOCS%%@dirrm share/doc/javadc
-@unexec rmdir %D/share/java/jar 2>/dev/null || true
+@dirrmtry share/java/jar

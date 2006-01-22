@@ -133,7 +133,7 @@ v6eval/man/man1/pktsend.1.gz
 @dirrm v6eval/include
 @dirrm v6eval/man/man1
 @dirrm v6eval/man
-@unexec rmdir %D/v6eval/etc 2>/dev/null || true
+@dirrmtry v6eval/etc
 @dirrm v6eval
 lib/perl5/%%PERL_VERSION%%/man/man3/V6evalRemote.3
 lib/perl5/%%PERL_VERSION%%/man/man3/V6evalTool.3
@@ -143,6 +143,6 @@ lib/perl5/%%PERL_VERSION%%/man/man3/V6evalTool.3
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalCommon/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalRemote/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalTool/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalCommon 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalRemote 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalTool 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalCommon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalRemote
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalTool

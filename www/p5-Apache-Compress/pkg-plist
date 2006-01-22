@@ -3,5 +3,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Compress
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache

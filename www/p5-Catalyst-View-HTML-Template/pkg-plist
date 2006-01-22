@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template.pm
 %%SITE_PERL%%/Catalyst/View/HTML/Template.pm
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/View/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/View 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/View/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/View 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/View/HTML
+@dirrmtry %%SITE_PERL%%/Catalyst/View

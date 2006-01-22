@@ -81,7 +81,7 @@
 %%PORTDOCS%%@dirrm share/examples/Apache-PageKit/Config
 %%PORTDOCS%%@dirrm share/examples/Apache-PageKit
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/PageKit
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache/PageKit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache/PageKit
+@dirrmtry %%SITE_PERL%%/Apache
+@dirrmtry %%SITE_PERL%%/XML

@@ -70,15 +70,15 @@ share/gnome/pixmaps/nxclient-wizard.png
 @dirrm lib/linux-nx-client/share/images
 @dirrm lib/linux-nx-client/share
 @dirrm lib/linux-nx-client
-@unexec rmdir %D/share/applications 2>/dev/null || true
-@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+@dirrmtry share/applications
+@dirrmtry share/gnome/pixmaps
+@dirrmtry share/gnome
 @cwd %%LOCALBASE%%
 share/icons/crystalsvg/48x48/nx-desktop.png
 share/icons/crystalsvg/32x32/nx.png
 share/icons/crystalsvg/32x32/nxclient-admin.png
 share/icons/crystalsvg/32x32/nxclient-wizard.png
-@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons/crystalsvg/48x48
+@dirrmtry share/icons/crystalsvg/32x32
+@dirrmtry share/icons/crystalsvg
+@dirrmtry share/icons

@@ -1,7 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP/.packlist
 %%SITE_PERL%%/Tie/NetAddr/IP.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Tie/NetAddr 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Tie 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie/NetAddr
+@dirrmtry %%SITE_PERL%%/Tie

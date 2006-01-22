@@ -1,9 +1,9 @@
 www/cgi-bin/wiliki.cgi.dist
 www/cgi-bin/wiliki2.cgi.dist
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
+@dirrmtry www/cgi-bin
 www/data/wiliki.css
 www/data/wiliki2.css
-@unexec rmdir %D/www/data 2>/dev/null || true
+@dirrmtry www/data
 share/gauche/site/lib/.packages/WiLiKi.gpd
 share/gauche/site/lib/wiliki.scm
 share/gauche/site/lib/wiliki/db.scm

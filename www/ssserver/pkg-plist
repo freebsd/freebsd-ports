@@ -62,4 +62,4 @@ www/cgi-bin/ssserverdata/template7.txt
 www/cgi-bin/ssserverdata/template8.txt
 @mode
 @unexec rm -fR %B>/dev/null || true
-@unexec rmdir %D/www/cgi-bin 2> /dev/null || true
+@dirrmtry www/cgi-bin

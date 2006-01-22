@@ -322,8 +322,8 @@ www/snortsms/variables/qry_variables.php
 @dirrm www/snortsms/css
 @dirrm www/snortsms/contrib
 @dirrm www/snortsms/configs
-@unexec rmdir %D/www/snortsms/conf 2>/dev/null || true
+@dirrmtry www/snortsms/conf
 @dirrm www/snortsms/classifications
 @dirrm www/snortsms/barnyard
 @dirrm www/snortsms/barnctrl
-@unexec rmdir %D/www/snortsms 2>/dev/null || true
+@dirrmtry www/snortsms

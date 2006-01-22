@@ -5,6 +5,6 @@ sbin/hdup
 %%DOCSDIR%%/FAQ.html
 %%EXAMPLESDIR%%/hdup.cron
 %%EXAMPLESDIR%%/no-history-post-run.sh
-@unexec rmdir %D/etc/hdup 2> /dev/null || true
+@dirrmtry etc/hdup
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%

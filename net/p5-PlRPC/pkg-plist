@@ -8,6 +8,6 @@
 @dirrm %%SITE_PERL%%/RPC/PlServer
 @dirrm %%SITE_PERL%%/RPC/PlClient
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/PlServer
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/RPC 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC

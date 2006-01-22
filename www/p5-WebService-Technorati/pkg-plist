@@ -15,11 +15,11 @@
 %%SITE_PERL%%/WebService/Technorati/SearchTerm.pm
 @dirrm %%SITE_PERL%%/WebService/Technorati
 %%SITE_PERL%%/WebService/pod2html.pl
-@unexec rmdir %D/%%SITE_PERL%%/WebService 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/WebService
 %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject/autosplit.ix
 @dirrm %%SITE_PERL%%/auto/WebService/Technorati/BaseTechnoratiObject
 @dirrm %%SITE_PERL%%/auto/WebService/Technorati
-@unexec rmdir %D/%%SITE_PERL%%/auto/WebService 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/WebService
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Technorati
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService

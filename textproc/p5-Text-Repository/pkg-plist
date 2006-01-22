@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Repository/.packlist
 %%SITE_PERL%%/Text/Repository.pm
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Repository 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Repository
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

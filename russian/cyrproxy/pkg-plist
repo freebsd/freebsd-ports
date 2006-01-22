@@ -23,4 +23,4 @@ libexec/tcpspy
 www/cgi-bin/cyrwww
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/www/cgi-bin 2> /dev/null || true
+@dirrmtry www/cgi-bin

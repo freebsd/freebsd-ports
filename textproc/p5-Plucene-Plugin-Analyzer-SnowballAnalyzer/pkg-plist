@@ -2,10 +2,10 @@
 %%SITE_PERL%%/Plucene/Plugin/Analyzer/SnowballFilter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer/SnowballAnalyzer/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer/SnowballAnalyzer
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Plucene/Plugin/Analyzer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Plucene/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Plucene 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin/Analyzer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/Plugin
+@dirrmtry %%SITE_PERL%%/Plucene/Plugin/Analyzer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene
+@dirrmtry %%SITE_PERL%%/Plucene/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Plucene

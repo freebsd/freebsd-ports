@@ -753,8 +753,8 @@ www/icons/world2.png
 @dirrm %%DOCSDIR%%/howto
 @dirrm %%DOCSDIR%%/programs
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/www/data-dist 2>/dev/null || true
-@unexec rmdir %D/www/cgi-bin-dist 2>/dev/null || true
+@dirrmtry www/data-dist
+@dirrmtry www/cgi-bin-dist
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy

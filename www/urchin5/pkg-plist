@@ -627,12 +627,12 @@ urchin/var/server.key.sample
 urchin/var/urchinwebd.conf
 @unexec rm -rf %D/urchin/var/urchinwebd.conf.template.dist 2>/dev/null || true
 @dirrm urchin/bin
-@unexec rmdir %D/urchin/data/admin 2>/dev/null || true
+@dirrmtry urchin/data/admin
 @unexec rm -rf %D/urchin/data/cache 2>/dev/null
-@unexec rmdir %D/urchin/data/history 2>/dev/null || true
-@unexec rmdir %D/urchin/data/logs 2>/dev/null || true
-@unexec rmdir %D/urchin/data/reports 2>/dev/null || true
-@unexec rmdir %D/urchin/data/session 2>/dev/null || true
+@dirrmtry urchin/data/history
+@dirrmtry urchin/data/logs
+@dirrmtry urchin/data/reports
+@dirrmtry urchin/data/session
 @dirrm urchin/doc
 @dirrm urchin/htdocs/ucss
 @dirrm urchin/htdocs/uicons/default/ee/images
@@ -647,16 +647,16 @@ urchin/var/urchinwebd.conf
 @dirrm urchin/lib/admin/templates
 @dirrm urchin/lib/admin/views
 @dirrm urchin/lib/admin
-@unexec rmdir %D/urchin/lib/custom/cobrands 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/languages 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/logformats 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/lookuptables 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/profiletypes/Campaign_Website 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/profiletypes/Campaign_with_E-Commerce_Website 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/profiletypes/E-Commerce_Website 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/profiletypes/Standard_Website 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom/profiletypes 2>/dev/null || true
-@unexec rmdir %D/urchin/lib/custom 2>/dev/null || true
+@dirrmtry urchin/lib/custom/cobrands
+@dirrmtry urchin/lib/custom/languages
+@dirrmtry urchin/lib/custom/logformats
+@dirrmtry urchin/lib/custom/lookuptables
+@dirrmtry urchin/lib/custom/profiletypes/Campaign_Website
+@dirrmtry urchin/lib/custom/profiletypes/Campaign_with_E-Commerce_Website
+@dirrmtry urchin/lib/custom/profiletypes/E-Commerce_Website
+@dirrmtry urchin/lib/custom/profiletypes/Standard_Website
+@dirrmtry urchin/lib/custom/profiletypes
+@dirrmtry urchin/lib/custom
 @dirrm urchin/lib/reporting/languages
 @dirrm urchin/lib/reporting/logformats
 @dirrm urchin/lib/reporting/lookuptables
@@ -670,6 +670,6 @@ urchin/var/urchinwebd.conf
 @dirrm urchin/lib/session/languages
 @dirrm urchin/lib/session/templates
 @dirrm urchin/lib/session
-@unexec rmdir %D/urchin/lib 2>/dev/null || true
+@dirrmtry urchin/lib
 @dirrm urchin/util/utm
-@unexec rmdir %D/urchin/util 2>/dev/null || true
+@dirrmtry urchin/util

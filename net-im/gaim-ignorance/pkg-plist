@@ -5,4 +5,4 @@ lib/gaim/ignorance.so
 etc/gaim/ignorance.conf.sample
 @exec [ -f %B/ignorance.conf ] || cp %B/%f %B/ignorance.conf
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/etc/gaim/ 2>/dev/null || true
+@dirrmtry etc/gaim/

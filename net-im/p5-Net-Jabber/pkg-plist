@@ -21,5 +21,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
 @dirrm %%SITE_PERL%%/Net/Jabber/Dialback
 @dirrm %%SITE_PERL%%/Net/Jabber
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

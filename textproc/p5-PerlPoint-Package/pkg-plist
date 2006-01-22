@@ -24,9 +24,9 @@ bin/pp2tdo
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2tree
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PerlPoint/Tags 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint
+@dirrmtry %%SITE_PERL%%/PerlPoint/Tags
 @dirrm %%SITE_PERL%%/PerlPoint/Generator/SDF
 @dirrm %%SITE_PERL%%/PerlPoint/Generator/Object
 @dirrm %%SITE_PERL%%/PerlPoint/Generator
-@unexec rmdir %D/%%SITE_PERL%%/PerlPoint 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/PerlPoint

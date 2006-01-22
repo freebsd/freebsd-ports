@@ -1425,8 +1425,8 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/xrc/WinPrintDlgWX.xrc
 share/applications/amaya-8.8.1.desktop
 share/pixmaps/amaya-8.8.1.png
-@unexec rmdir %D/share/applications 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/resources/xrc
 @dirrm %%DATADIR%%/resources/icons/misc
 @dirrm %%DATADIR%%/resources/icons/22x22

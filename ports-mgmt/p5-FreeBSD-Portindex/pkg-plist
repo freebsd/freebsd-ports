@@ -11,5 +11,5 @@ etc/portindex.cfg.sample
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex/.packlist
 @dirrm %%SITE_PERL%%/FreeBSD/Portindex
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex
-@unexec rmdir %D/%%SITE_PERL%%/FreeBSD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/FreeBSD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD

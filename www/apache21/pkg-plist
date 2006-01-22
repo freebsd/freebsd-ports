@@ -536,12 +536,12 @@ share/apache21/build/special.mk
 @dirrm share/apache21
 %%APR_PORTS%%@dirrm include/apr-1
 %%APR_PORTS%%@dirrm build-1
-@unexec rmdir %D/libexec/apache21 2> /dev/null || true
+@dirrmtry libexec/apache21
 @dirrm include/apache21
 @exec mkdir -p %D/etc/apache21/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache21/envvars.d 2> /dev/null || true
-@unexec rmdir %D/etc/apache21/Includes 2> /dev/null || true
+@dirrmtry etc/apache21/Includes
 @unexec rm -f %D/etc/apache21/httpd.conf.bak 2> /dev/null || true
-@unexec rmdir %D/etc/apache21/envvars.d 2> /dev/null || true
-@unexec rmdir %D/etc/apache21/extra 2> /dev/null || true
+@dirrmtry etc/apache21/envvars.d
+@dirrmtry etc/apache21/extra
 @unexec rmdir %D/etc/apache21 2> /dev/null || echo "===> If you plan to do not reinstall apache21, you can safely remove %D/etc/apache21."

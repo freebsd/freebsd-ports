@@ -20,4 +20,4 @@ etc/ion/sample.conf
 %%PORTDOCS%%share/doc/ion/config.txt
 %%PORTDOCS%%share/doc/ion/functions.txt
 %%PORTDOCS%%@dirrm share/doc/ion
-@unexec rmdir %D/etc/ion 2>/dev/null || true
+@dirrmtry etc/ion

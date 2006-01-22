@@ -81,17 +81,17 @@ share/xfce4/doc/he/images/keyboard_settings.png
 share/xfce4/doc/he/images/mouse_settings.png
 share/xfce4/doc/he/images/user_interface_settings.png
 share/xfce4/doc/he/xfce-mcs-plugins.html
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
+@dirrmtry lib/xfce4/mcs-plugins
+@dirrmtry lib/xfce4
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/xfce4/doc/C/images
+@dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc/fr/images
+@dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/he/images
+@dirrmtry share/xfce4/doc/he
+@dirrmtry share/xfce4/doc
+@dirrmtry share/xfce4

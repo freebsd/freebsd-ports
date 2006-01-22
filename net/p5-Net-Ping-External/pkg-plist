@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Net/Ping/External.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ping/External/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/Net/Ping 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net/Ping
+@dirrmtry %%SITE_PERL%%/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ping/External
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ping 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Ping
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

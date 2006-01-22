@@ -11,10 +11,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/TableMatrix.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Tk 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%

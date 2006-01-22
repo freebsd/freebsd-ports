@@ -29,4 +29,4 @@
 @dirrm %%SITE_PERL%%/WWW/Link/Reporter
 @dirrm %%SITE_PERL%%/WWW/Link/Repair
 @dirrm %%SITE_PERL%%/WWW/Link
-@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/WWW

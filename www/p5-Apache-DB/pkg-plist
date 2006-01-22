@@ -6,5 +6,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

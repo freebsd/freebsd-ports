@@ -1615,4 +1615,4 @@ share/fvwm/themes/unsafe/menustyle.cfg
 @dirrm share/fvwm/images/32x32
 @dirrm share/fvwm/images/16x16-kde
 @dirrm share/fvwm/images
-@unexec rmdir %D/share/fvwm 2>/dev/null || true
+@dirrmtry share/fvwm

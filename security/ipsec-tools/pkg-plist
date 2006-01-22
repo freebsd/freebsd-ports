@@ -38,11 +38,11 @@ sbin/racoonctl
 %%EXAMPLESDIR%%/roadwarrior/client/racoon.conf
 %%EXAMPLESDIR%%/roadwarrior/server/racoon.conf
 %%EXAMPLESDIR%%/roadwarrior/server/racoon.conf-radius
-@unexec rmdir %D/etc/racoon 2>/dev/null || true
+@dirrmtry etc/racoon
 @dirrm include/racoon
 @dirrm include/libipsec
 @dirrm %%EXAMPLESDIR%%/roadwarrior/server
 @dirrm %%EXAMPLESDIR%%/roadwarrior/client
 @dirrm %%EXAMPLESDIR%%/roadwarrior
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/var/racoon 2>/dev/null || true
+@dirrmtry var/racoon

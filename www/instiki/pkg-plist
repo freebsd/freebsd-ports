@@ -1025,6 +1025,6 @@ etc/rc.d/instiki.sh
 @dirrm %%INSTIKIDIR%%app/views
 @dirrm %%INSTIKIDIR%%app
 @dirrm %%INSTIKIDIR%%lib
-@unexec rmdir %D/%%INSTIKIDIR%%storage/2500 2>/dev/null || true
-@unexec rmdir %D/%%INSTIKIDIR%%storage 2>/dev/null || true
-@unexec rmdir %D/%%INSTIKIDIR%% 2>/dev/null || true
+@dirrmtry %%INSTIKIDIR%%storage/2500
+@dirrmtry %%INSTIKIDIR%%storage
+@dirrmtry %%INSTIKIDIR%%

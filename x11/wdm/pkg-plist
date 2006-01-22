@@ -37,10 +37,10 @@ share/locale/es/LC_MESSAGES/wdm.mo
 share/locale/fr_FR/LC_MESSAGES/wdm.mo
 share/locale/ja/LC_MESSAGES/wdm.mo
 share/locale/ru/LC_MESSAGES/wdm.mo
-@unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true
+@dirrmtry lib/X11/wdm/pixmaps
 @exec mkdir -p %D/lib/X11/wdm/authdir
-@unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
-@unexec rmdir %D/lib/X11/wdm/authdir 2>/dev/null || true
-@unexec rmdir %D/lib/X11/wdm 2>/dev/null || true
+@dirrmtry lib/X11/wdm/authdir/authfiles
+@dirrmtry lib/X11/wdm/authdir
+@dirrmtry lib/X11/wdm
 %%PAM%%@cwd %%LOCALBASE%%
 %%PAM%%etc/pam.d/wdm

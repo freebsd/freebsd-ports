@@ -156,10 +156,10 @@ share/locale/yi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/pixmaps/nautilus
 @dirrm share/gnome/nautilus/ui
 @dirrm share/gnome/nautilus/patterns

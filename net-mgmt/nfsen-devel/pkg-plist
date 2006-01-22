@@ -99,9 +99,9 @@ var/%%PORTNAME%%/profiles/live/profile.dat
 @exec mkdir -p %D/var/%%PORTNAME%%/filters
 @dirrm var/%%PORTNAME%%/run
 @dirrm var/%%PORTNAME%%/filters
-@unexec rmdir %D/var/%%PORTNAME%%/profiles/live/upstream1 2>/dev/null || true
-@unexec rmdir %D/var/%%PORTNAME%%/profiles/live 2>/dev/null || true
-@unexec rmdir %D/var/%%PORTNAME%%/profiles 2>/dev/null || true
-@unexec rmdir %D/var/%%PORTNAME%% 2>/dev/null || true
+@dirrmtry var/%%PORTNAME%%/profiles/live/upstream1
+@dirrmtry var/%%PORTNAME%%/profiles/live
+@dirrmtry var/%%PORTNAME%%/profiles
+@dirrmtry var/%%PORTNAME%%
 @dirrm libexec/%%PORTNAME%%/plugins
 @dirrm libexec/%%PORTNAME%%

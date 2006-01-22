@@ -3,5 +3,5 @@ bin/make_encmap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding/.packlist
 %%SITE_PERL%%/XML/Encoding.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Encoding
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

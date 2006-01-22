@@ -104,16 +104,16 @@ share/locale/xh/LC_MESSAGES/yelp.mo
 share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ug 2> /dev/null || true
-@unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/nso 2> /dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/mr 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku 2> /dev/null || true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrm share/gnome/yelp/xslt
 @dirrm share/gnome/yelp/ui
 @dirrm share/gnome/yelp/icons

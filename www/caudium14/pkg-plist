@@ -723,13 +723,13 @@ caudium/server/testca.pem
 caudium/server/install
 caudium/server/configvar
 caudium/server/.cvsignore
-@unexec rmdir %D/caudium/configurations 2>/dev/null || true
-@unexec rmdir %D/caudium/local/modules 2>/dev/null || true
-@unexec rmdir %D/caudium/local/nfonts 2>/dev/null || true
-@unexec rmdir %D/caudium/local 2>/dev/null || true
-@unexec rmdir %D/caudium/logs 2>/dev/null || true
-@unexec rmdir %D/caudium/var 2>/dev/null || true
-@unexec rmdir %D/caudium/server/include 2>/dev/null || true
+@dirrmtry caudium/configurations
+@dirrmtry caudium/local/modules
+@dirrmtry caudium/local/nfonts
+@dirrmtry caudium/local
+@dirrmtry caudium/logs
+@dirrmtry caudium/var
+@dirrmtry caudium/server/include
 @dirrm caudium/readme
 @dirrm caudium/server/more_modules
 @dirrm caudium/server/base_server/config

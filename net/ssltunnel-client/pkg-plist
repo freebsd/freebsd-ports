@@ -4,4 +4,4 @@ etc/ssltunnel/client.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/LISEZ-MOI
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/ssltunnel 2>/dev/null || true
+@dirrmtry etc/ssltunnel

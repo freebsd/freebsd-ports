@@ -11,4 +11,4 @@ share/applications/gnome-splashscreen-manager.desktop
 @dirrm %%RUBY_SITELIBDIR%%/gnome-splashscreen-manager
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

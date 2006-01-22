@@ -27,5 +27,5 @@ sbin/spread
 %%EXAMPLESDIR%%/test.pl
 @exec mkdir -p /var/run/spread %B/var/run
 @unexec rmdir /var/run/spread 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread 2>/dev/null || true
-@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spread
+@dirrmtry %%EXAMPLESDIR%%

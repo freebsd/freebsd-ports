@@ -17,4 +17,4 @@ www/cgi-bin/kdedictionary/sessiondb
 www/cgi-bin/kdedictionary/userdb
 www/cgi-bin/kdedictionary/users
 @dirrm www/cgi-bin/kdedictionary
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
+@dirrmtry www/cgi-bin

@@ -453,7 +453,7 @@ share/ghostscript/Resource/rksj-cmaps/TCVN-RKSJ-H
 @dirrm share/ghostscript/Resource/CMap
 @exec mkdir -p %D/share/ghostscript/Resource/CIDFont
 @exec mkdir -p %D/share/ghostscript/Resource/Font
-@unexec rmdir %D/share/ghostscript/Resource/Font 2>/dev/null || true
-@unexec rmdir %D/share/ghostscript/Resource/CIDFont 2>/dev/null || true
-@unexec rmdir %D/share/ghostscript/Resource 2>/dev/null || true
-@unexec rmdir %D/share/ghostscript 2>/dev/null || true
+@dirrmtry share/ghostscript/Resource/Font
+@dirrmtry share/ghostscript/Resource/CIDFont
+@dirrmtry share/ghostscript/Resource
+@dirrmtry share/ghostscript

@@ -721,37 +721,37 @@ share/xfce4/doc/he/images/workspace_margins.png
 share/xfce4/doc/he/images/xfwm_workspaces.png
 share/xfce4/doc/he/xfwm4.html
 share/xfwm4/defaults
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he/images 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc/he 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
+@dirrmtry lib/xfce4/mcs-plugins
+@dirrmtry lib/xfce4
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/xfce4/doc/C/images
+@dirrmtry share/xfce4/doc/C
+@dirrmtry share/xfce4/doc/fr/images
+@dirrmtry share/xfce4/doc/fr
+@dirrmtry share/xfce4/doc/he/images
+@dirrmtry share/xfce4/doc/he
+@dirrmtry share/xfce4/doc
+@dirrmtry share/xfce4
 @dirrm share/themes/Default/xfwm4
-@unexec rmdir %D/share/themes/Default 2>/dev/null || true
+@dirrmtry share/themes/Default
 @dirrm share/themes/Default-4.0/xfwm4
-@unexec rmdir %D/share/themes/Default-4.0 2>/dev/null || true
+@dirrmtry share/themes/Default-4.0
 @dirrm share/themes/Opta/xfwm4
-@unexec rmdir %D/share/themes/Opta 2>/dev/null || true
+@dirrmtry share/themes/Opta
 @dirrm share/themes/Symphony/xfwm4
-@unexec rmdir %D/share/themes/Symphony 2>/dev/null || true
+@dirrmtry share/themes/Symphony
 @dirrm share/themes/Therapy/xfwm4
-@unexec rmdir %D/share/themes/Therapy 2>/dev/null || true
+@dirrmtry share/themes/Therapy
 @dirrm share/themes/Tyrex/xfwm4
-@unexec rmdir %D/share/themes/Tyrex 2>/dev/null || true
+@dirrmtry share/themes/Tyrex
 @dirrm share/themes/Waza/xfwm4
-@unexec rmdir %D/share/themes/Waza 2>/dev/null || true
+@dirrmtry share/themes/Waza
 @dirrm share/themes/Wildbush/xfwm4
-@unexec rmdir %D/share/themes/Wildbush 2>/dev/null || true
-@unexec rmdir %D/share/xfwm4/themes 2>/dev/null || true
-@unexec rmdir %D/share/xfwm4 2>/dev/null || true
+@dirrmtry share/themes/Wildbush
+@dirrmtry share/xfwm4/themes
+@dirrmtry share/xfwm4

@@ -24,4 +24,4 @@ share/doc/tac_plus/users_guide
 @dirrm tac_plus/parrot
 @dirrm tac_plus
 @cwd /var/log
-@unexec rmdir %D/tac_plus 2>/dev/null || true
+@dirrmtry tac_plus

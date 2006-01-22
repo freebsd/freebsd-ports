@@ -1,7 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple/.packlist
 %%SITE_PERL%%/XML/SAX/Simple.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX/Simple
-@unexec rmdir %D/%%SITE_PERL%%/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML/SAX
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/SAX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

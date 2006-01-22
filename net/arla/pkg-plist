@@ -111,4 +111,4 @@ share/gnats/stacken
 @dirrm include/rxkad
 @dirrm include/ss
 @dirrm share/gnats
-@unexec rmdir %D/cache 2>/dev/null || true
+@dirrmtry cache

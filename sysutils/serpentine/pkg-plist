@@ -81,9 +81,9 @@ bin/serpentine
 share/applications/serpentine.desktop
 %%DATADIR%%/serpentine.glade
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/serpentine/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/serpentine
 %%MUINE%%@unexec rmdir %D/lib/muine/plugins 2> /dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2> /dev/null || true
-@unexec rmdir %D/%%PYTHON_LIBDIR%% 2> /dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

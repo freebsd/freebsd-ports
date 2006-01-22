@@ -12,9 +12,9 @@ bin/xsh
 %%SITE_PERL%%/XML/XSH/LibXMLCompat.pm
 %%SITE_PERL%%/XML/XSH/Parser.pm
 @dirrm %%SITE_PERL%%/XML/XSH
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XSH
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 %%SITE_PERL%%/Inline/XSH.pm
-@unexec rmdir %D/%%SITE_PERL%%/Inline 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Inline

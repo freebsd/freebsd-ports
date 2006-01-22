@@ -2003,4 +2003,4 @@ share/icons/%%DIRNAME%%/index.desktop.bak
 @dirrm share/icons/%%DIRNAME%%/128x128/actions
 @dirrm share/icons/%%DIRNAME%%/128x128
 @dirrm share/icons/%%DIRNAME%%
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons

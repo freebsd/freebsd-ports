@@ -755,9 +755,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/wxPython 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%/wxPython
+@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm include/wx-%%WX_VERSION%%/wx/wxPython/i_files
 @dirrm include/wx-%%WX_VERSION%%/wx/wxPython
-@unexec rmdir %D/include/wx-%%WX_VERSION%%/wx 2>/dev/null || true
-@unexec rmdir %D/include/wx-%%WX_VERSION%% 2>/dev/null || true
+@dirrmtry include/wx-%%WX_VERSION%%/wx
+@dirrmtry include/wx-%%WX_VERSION%%

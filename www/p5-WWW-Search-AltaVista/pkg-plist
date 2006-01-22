@@ -10,8 +10,8 @@
 %%SITE_PERL%%/WWW/Search/AltaVista/Web.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/AltaVista
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/Search/AltaVista
-@unexec rmdir %D/%%SITE_PERL%%/WWW/Search 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/WWW/Search
+@dirrmtry %%SITE_PERL%%/WWW

@@ -2,8 +2,8 @@
 %%SITE_PERL%%/Lingua/PT/Stemmer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT/Stemmer/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT/Stemmer
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/PT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrm %%SITE_PERL%%/Lingua/PT
 @dirrm %%SITE_PERL%%/Lingua/GL
-@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Lingua

@@ -3,8 +3,8 @@ include/gkrellm2/gkrellmd.h
 libdata/pkgconfig/gkrellmd.pc
 sbin/gkrellmd
 @exec mkdir -p %D/libexec/gkrellm2/plugins-gkrellmd
-@unexec rmdir %D/libexec/gkrellm2/plugins-gkrellmd 2>/dev/null || true
-@unexec rmdir %D/libexec/gkrellm2 2>/dev/null || true
+@dirrmtry libexec/gkrellm2/plugins-gkrellmd
+@dirrmtry libexec/gkrellm2
 @unexec if cmp -s %D/etc/gkrellmd.conf %D/%%EXAMPLESDIR%%/gkrellmd.conf; then rm -f %D/etc/gkrellmd.conf; fi
 %%EXAMPLESDIR%%/gkrellmd.conf
 @exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
