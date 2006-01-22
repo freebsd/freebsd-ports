@@ -8,7 +8,9 @@
 PORTNAME=	gnusget
 PORTVERSION=	0.5.1
 CATEGORIES=	ftp
-MASTER_SITES=	http://edge.pp.ru/gnusget/
+MASTER_SITES=	http://edge.pp.ru/gnusget/ \
+		http://fb.roolz.org/gnusget/ \
+		http://dragomir.best-hosting.ru/gnusget/
 
 MAINTAINER=	ilya.otyutskiy@gmail.com
 COMMENT=	Shell-extension for wget, which uses download- and history-file
