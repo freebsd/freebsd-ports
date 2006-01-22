@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	javasvn
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://tmate.org/svn/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The only pure Java Subversion client library in the world
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
