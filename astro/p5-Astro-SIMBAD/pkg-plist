@@ -7,5 +7,5 @@
 @dirrm %%SITE_PERL%%/Astro/SIMBAD
 @dirrm %%SITE_PERL%%/Astro
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SIMBAD
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Astro 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/Astro

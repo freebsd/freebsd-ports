@@ -20,4 +20,4 @@ bin/catbuilder
 %%DATADIR%%/pixmaps/venus-small.xpm
 %%DATADIR%%/pixmaps/nova_logo.png
 @dirrm %%DATADIR%%/pixmaps
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

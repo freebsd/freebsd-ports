@@ -4,6 +4,6 @@
 %%SITE_PERL%%/MP3/Tag/ID3v2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/MP3/Tag 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/MP3 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
+@dirrmtry %%SITE_PERL%%/MP3/Tag
+@dirrmtry %%SITE_PERL%%/MP3

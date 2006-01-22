@@ -16,4 +16,4 @@
 %%DATADIR%%/catalogs/sky2000.ncd
 @dirrm %%DATADIR%%/catalogs/sky2000
 @dirrm %%DATADIR%%/catalogs
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

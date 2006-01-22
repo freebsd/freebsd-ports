@@ -18,6 +18,6 @@ lib/ladspa/tap_tremolo.so
 lib/ladspa/tap_tubewarmth.so
 lib/ladspa/tap_vibrato.so
 share/ladspa/rdf/tap-plugins.rdf
-@unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
-@unexec rmdir %D/share/ladspa 2>/dev/null || true
-@unexec rmdir %D/lib/ladspa 2>/dev/null || true
+@dirrmtry share/ladspa/rdf
+@dirrmtry share/ladspa
+@dirrmtry lib/ladspa
