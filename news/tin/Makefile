@@ -10,7 +10,7 @@ PORTVERSION=	1.8.0
 PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/stable/ \
-		ftp://mirrors.rcn.net/pub/news/tin/stable/ \
+		ftp://ftp.stikman.com/pub/tin/stable/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/
 
