@@ -358,6 +358,7 @@
     SUBDIR += lmarbles
     SUBDIR += ltris
     SUBDIR += lucidlife
+    SUBDIR += luola
     SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom

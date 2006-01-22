@@ -1,0 +1,61 @@
+bin/luola
+%%DATADIR%%/font/font1.png
+%%DATADIR%%/font/font2.png
+%%DATADIR%%/font/fonts.cfg
+%%DATADIR%%/font/freesans.ttf
+%%DATADIR%%/gfx/critter.ldat
+%%DATADIR%%/gfx/explosion.ldat
+%%DATADIR%%/gfx/misc.ldat
+%%DATADIR%%/gfx/player.ldat
+%%DATADIR%%/gfx/special.ldat
+%%DATADIR%%/gfx/xmit.ldat
+%%DATADIR%%/levels/LEVELS
+%%DATADIR%%/levels/citadel.compact.lev
+%%DATADIR%%/levels/cottages.lev
+%%DATADIR%%/levels/cottages.png
+%%DATADIR%%/levels/cottages.thumb.png
+%%DATADIR%%/levels/cottagesc.png
+%%DATADIR%%/levels/outpost.lev
+%%DATADIR%%/levels/outpost.png
+%%DATADIR%%/levels/outpost.thumb.png
+%%DATADIR%%/levels/outpostc.png
+%%DATADIR%%/levels/twilight.compact.lev
+%%DATADIR%%/levels/twincities.compact.lev
+%%DATADIR%%/levels/urban.lev
+%%DATADIR%%/levels/urban.png
+%%DATADIR%%/levels/urban.thumb.png
+%%DATADIR%%/levels/urbanc.png
+%%DATADIR%%/levels/valley.lev
+%%DATADIR%%/levels/valley.png
+%%DATADIR%%/levels/valley.thumb.png
+%%DATADIR%%/levels/valleyc.png
+%%DATADIR%%/levels/winter.lev
+%%DATADIR%%/levels/winter.png
+%%DATADIR%%/levels/winter.thumb.png
+%%DATADIR%%/levels/winterc.png
+%%DATADIR%%/sounds/bird.wav
+%%DATADIR%%/sounds/blip.wav
+%%DATADIR%%/sounds/blip2.wav
+%%DATADIR%%/sounds/burn.wav
+%%DATADIR%%/sounds/cow.wav
+%%DATADIR%%/sounds/crash.wav
+%%DATADIR%%/sounds/dart.wav
+%%DATADIR%%/sounds/explosion.wav
+%%DATADIR%%/sounds/fire.wav
+%%DATADIR%%/sounds/fire2.wav
+%%DATADIR%%/sounds/jump.wav
+%%DATADIR%%/sounds/largexpl.wav
+%%DATADIR%%/sounds/laser.wav
+%%DATADIR%%/sounds/missile.wav
+%%DATADIR%%/sounds/snowball.wav
+%%DATADIR%%/sounds/steam.wav
+%%DATADIR%%/sounds/swoosh.wav
+%%DATADIR%%/sounds/zap.wav
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+@dirrm %%DATADIR%%/font
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
