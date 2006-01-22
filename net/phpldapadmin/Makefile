@@ -51,9 +51,6 @@ SUB_FILES+=	pkg-message
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PLADIR=${PLADIR} PLAGRP=${PLAGRP}
 
-sedSTART=	@unexec ${RMDIR} %D/%%PLADIR%%
-sedEND=		2>/dev/null || true
-
 .SILENT:
 
 pre-everything::
@@ -70,8 +67,8 @@ post-patch:
 	    ${SORT} | ${SED} -e "s!^\.!%%PLADIR%%!"             >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk                       >>${PLIST} ; \
 	${FIND} . -type d | ${SORT} -r | ${SED}                             \
-	    -e 's!^\./${CFGDIR}$$!${sedSTART}/${CFGDIR} ${sedEND}!'         \
-	    -e 's!^\.$$!${sedSTART} ${sedEND}!'                             \
+	    -e 's!^\./${CFGDIR}$$!@dirrmtry %%PLADIR%%/${CFGDIR}!'          \
+	    -e 's!^\.$$!@dirrmtry %%PLADIR%%!'                              \
 	    -e 's!^\.!@dirrm %%PLADIR%%!'                      >>${PLIST}
 
 pre-install:
