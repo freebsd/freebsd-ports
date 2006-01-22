@@ -5977,6 +5977,7 @@ luasocket	ports/net/luasocket
 lucidlife	ports/games/lucidlife
 luma		ports/sysutils/luma
 luna		ports/astro/luna
+luola		ports/games/luola
 lupe		ports/x11/lupe
 lush		ports/lang/lush
 lv		ports/misc/lv
