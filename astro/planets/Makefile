@@ -24,6 +24,10 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=	planets.1
 
+.if defined(WITHOUT_X11)
+BROKEN=		Does not build without X11 support
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/planets.1 ${MANPREFIX}/man/man1
