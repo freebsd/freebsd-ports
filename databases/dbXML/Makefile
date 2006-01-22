@@ -9,7 +9,8 @@ PORTNAME=	dbXML
 PORTVERSION=	1.0b2
 PORTREVISION=	1
 CATEGORIES=	databases java
-MASTER_SITES=	http://mirror.optusnet.com.au/sourceforge/d/db/dbxml-core/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}-core
 DISTNAME=	dbXML-Core-${PORTVERSION}
 
 MAINTAINER=	rws@procopia.com
