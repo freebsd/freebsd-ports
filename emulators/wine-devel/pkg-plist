@@ -393,6 +393,7 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/cfgmgr32.h
+include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winsplp.h
 lib/libwine.so
@@ -677,6 +678,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/secur32.dll.so
+lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
 lib/wine/serialui.dll.so
 lib/wine/setupapi.dll.so
