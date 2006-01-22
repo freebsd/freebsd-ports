@@ -1,4 +1,6 @@
 MD5 (mtools-3.9.9.tar.gz) = 3e68b857b4e1f3a6521d1dfefbd30a36
+SHA256 (mtools-3.9.9.tar.gz) = af083a73425d664d4607ef6c6564fd9319a0e47ee7c105259a45356cb834690e
 SIZE (mtools-3.9.9.tar.gz) = 322805
 MD5 (mtools-3.9.9-20050228.diff.gz) = 58e1eb2a88f84d7286e235f32307e3e5
+SHA256 (mtools-3.9.9-20050228.diff.gz) = 24dff3410c284aee3fe6a0aa9983cdd007a93230e6ad4226a50f88d78e5eb678
 SIZE (mtools-3.9.9-20050228.diff.gz) = 66208
