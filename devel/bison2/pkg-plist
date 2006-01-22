@@ -57,4 +57,3 @@ share/aclocal/bison-i18n.m4
 %%NLS%%@dirrmtry share/locale/rw
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%
-@dirrmtry share/aclocal
