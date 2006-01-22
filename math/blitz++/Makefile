@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	blitz++
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blitz
@@ -17,16 +17,15 @@ MAINTAINER=	olivier.saut@gmail.com
 COMMENT=	A C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
-BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=		blitz
 .else
 MAKE_ARGS=	NOPORTDOCS=yes
 .endif
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget gnomehack
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
