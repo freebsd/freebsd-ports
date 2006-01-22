@@ -144,10 +144,10 @@ share/locale/xh/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_HK/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
-@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zh_HK 2> /dev/null || true
-@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/en_US 2> /dev/null || true
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrm share/gnome/omf/gcalctool
 @dirrm share/gnome/help/gcalctool/zh_TW/figures
 @dirrm share/gnome/help/gcalctool/zh_TW

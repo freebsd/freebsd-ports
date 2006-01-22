@@ -3,8 +3,8 @@ share/doc/HTML/en/pgcalc2/common
 share/doc/HTML/en/pgcalc2/index.docbook
 share/doc/HTML/en/pgcalc2/index.cache.bz2
 @dirrm share/doc/HTML/en/pgcalc2
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
 %%DOCSDIR%%/alg_mode1.png
 %%DOCSDIR%%/alg_mode2.png
 %%DOCSDIR%%/apps_menu.png
@@ -126,10 +126,10 @@ share/doc/HTML/en/pgcalc2/index.cache.bz2
 %%DOCSDIR%%/var_dlg1.png
 @dirrm %%DOCSDIR%%
 share/icons/hicolor/32x32/apps/pgcalc2.png
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 share/applnk/Office/PGCalculator/pgcalc2.desktop
 share/applnk/Office/PGCalculator/pgcalc2-BHP49G.desktop
 share/applnk/Office/PGCalculator/pgcalc2-Metallic.desktop
@@ -138,8 +138,8 @@ share/applnk/Office/PGCalculator/pgcalc2-FX20.desktop
 share/applnk/Office/PGCalculator/pgcalc2-HP48GX.desktop
 share/applnk/Office/PGCalculator/pgcalc2-HP49G+.desktop
 @dirrm share/applnk/Office/PGCalculator
-@unexec rmdir %D/share/applnk/Office 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/applnk/Office
+@dirrmtry share/applnk
 share/apps/pgcalc2/pgcalc2ui.rc
 share/apps/pgcalc2/skins/BHP49G/Backgrnd.bmp
 share/apps/pgcalc2/skins/BHP49G/HP49GFon.bmp
@@ -178,4 +178,4 @@ share/apps/pgcalc2/skins/HP49G+/skin.csk
 @dirrm share/apps/pgcalc2/skins/HP49G+
 @dirrm share/apps/pgcalc2/skins
 @dirrm share/apps/pgcalc2
-@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrmtry share/apps

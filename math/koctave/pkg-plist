@@ -13,17 +13,17 @@ share/icons/locolor/32x32/apps/koctave3.png
 @dirrm share/doc/HTML/en/koctave3
 @dirrm share/apps/koctave3
 @dirrm share/applnk/share/apps/koctave3
-@unexec rmdir %D/share/applnk/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/share 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@dirrmtry share/applnk/share/apps
+@dirrmtry share/applnk/share
+@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor

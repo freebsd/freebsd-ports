@@ -5,4 +5,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math-BigInt/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math-BigInt
 @dirrm %%SITE_PERL%%/Math/BigInt
-@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Math

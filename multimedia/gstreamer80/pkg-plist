@@ -122,7 +122,7 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @unexec rm %D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @dirrm share/gnome/cache/gstreamer-%%VERSION%%
-@unexec rmdir %D/share/gnome/cache 2>/dev/null || true
+@dirrmtry share/gnome/cache
 @dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/getbits
 @dirrm include/gstreamer-%%VERSION%%/gst/dataprotocol

@@ -1730,4 +1730,4 @@ share/mplayer/Skin/%%PKGNAME%%
 %%ABYSS%%@dirrm share/mplayer/Skin/Abyss
 %%WINDOWSMEDIAPLAYER6%%@dirrm share/mplayer/Skin/WMP6
 @dirrm share/mplayer/Skin
-@unexec rmdir %D/share/mplayer/ 2>/dev/null || true
+@dirrmtry share/mplayer/

@@ -3,4 +3,4 @@
 %%SITE_PERL%%/Math/Currency/GBP.pm
 %%SITE_PERL%%/Math/Currency/JPY.pm
 @dirrm %%SITE_PERL%%/Math/Currency
-@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Math

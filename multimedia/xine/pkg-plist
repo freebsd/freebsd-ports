@@ -126,37 +126,37 @@ share/xine/skins/xinetic/SmallArrowDown.png
 share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
 share/xine/visuals/default.avi
-@unexec rmdir %D/man/de/man1 2>/dev/null || true
-@unexec rmdir %D/man/de 2>/dev/null || true
-@unexec rmdir %D/man/es/man1 2>/dev/null || true
-@unexec rmdir %D/man/es 2>/dev/null || true
-@unexec rmdir %D/man/fr/man1 2>/dev/null || true
-@unexec rmdir %D/man/fr 2>/dev/null || true
-@unexec rmdir %D/man/pl/man1 2>/dev/null || true
-@unexec rmdir %D/man/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale
 @dirrm share/xine/visuals
 @dirrm share/xine/skins/xinetic
 @dirrm share/xine/oxine
 @dirrm share/xine/desktop
 @dirrm share/xine/skins
-@unexec rmdir %D/share/xine 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@dirrmtry share/xine
+@dirrmtry share/pixmaps
 @dirrm share/doc/xine-ui
 @dirrm share/doc/xitk

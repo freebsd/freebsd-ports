@@ -3,6 +3,6 @@
 %%SITE_PERL%%/RIFF/Info/DivX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF/Info/.packlist
 @dirrm %%SITE_PERL%%/RIFF/Info
-@unexec rmdir %D/%%SITE_PERL%%/RIFF 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/RIFF
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF/Info
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RIFF

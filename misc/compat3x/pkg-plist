@@ -26,4 +26,4 @@ lib/compat/libutil.so.2
 lib/compat/libvgl.so.1
 lib/compat/libwrap.so.2
 lib/compat/libxpg4.so.2
-@unexec rmdir %D/lib/compat 2>/dev/null || true
+@dirrmtry lib/compat

@@ -177,8 +177,8 @@ lib/linux-mozilla/plugins/nphelix.xpt
 @dirrm lib/RealPlayer/share/realplay
 @dirrm lib/RealPlayer/share
 @dirrm lib/RealPlayer
-@unexec rmdir %D/lib/linux-mozilla/plugins 2>/dev/null || true
-@unexec rmdir %D/lib/linux-mozilla 2>/dev/null || true
+@dirrmtry lib/linux-mozilla/plugins
+@dirrmtry lib/linux-mozilla
 %%X11%%@cwd %%X11BASE%%
 %%GNOME%%share/gnome/application-registry/realplay.applications
 %%GNOME%%share/gnome/applications/realplay.desktop

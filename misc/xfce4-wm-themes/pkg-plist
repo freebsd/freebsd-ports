@@ -3632,161 +3632,161 @@ share/themes/Xfce/xfwm4/top-left-inactive.xpm
 share/themes/Xfce/xfwm4/top-right-active.xpm
 share/themes/Xfce/xfwm4/top-right-inactive.xpm
 @dirrm share/themes/Adept/xfwm4
-@unexec rmdir %D/share/themes/Adept 2>/dev/null || true
+@dirrmtry share/themes/Adept
 @dirrm share/themes/Agua/xfwm4
-@unexec rmdir %D/share/themes/Agua 2>/dev/null || true
+@dirrmtry share/themes/Agua
 @dirrm share/themes/Agualemon/xfwm4
-@unexec rmdir %D/share/themes/Agualemon 2>/dev/null || true
+@dirrmtry share/themes/Agualemon
 @dirrm share/themes/Alternate/xfwm4
-@unexec rmdir %D/share/themes/Alternate 2>/dev/null || true
+@dirrmtry share/themes/Alternate
 @dirrm share/themes/Atlanta/xfwm4
-@unexec rmdir %D/share/themes/Atlanta 2>/dev/null || true
+@dirrmtry share/themes/Atlanta
 @dirrm share/themes/Atlanta2/xfwm4
-@unexec rmdir %D/share/themes/Atlanta2 2>/dev/null || true
+@dirrmtry share/themes/Atlanta2
 @dirrm share/themes/B5/xfwm4
-@unexec rmdir %D/share/themes/B5 2>/dev/null || true
+@dirrmtry share/themes/B5
 @dirrm share/themes/B6/xfwm4
-@unexec rmdir %D/share/themes/B6 2>/dev/null || true
+@dirrmtry share/themes/B6
 @dirrm share/themes/BBS/xfwm4
-@unexec rmdir %D/share/themes/BBS 2>/dev/null || true
+@dirrmtry share/themes/BBS
 @dirrm share/themes/Basix/xfwm4
-@unexec rmdir %D/share/themes/Basix 2>/dev/null || true
+@dirrmtry share/themes/Basix
 @dirrm share/themes/Beastie/xfwm4
-@unexec rmdir %D/share/themes/Beastie 2>/dev/null || true
+@dirrmtry share/themes/Beastie
 @dirrm share/themes/Biz/xfwm4
-@unexec rmdir %D/share/themes/Biz 2>/dev/null || true
+@dirrmtry share/themes/Biz
 @dirrm share/themes/Blackwall/xfwm4
-@unexec rmdir %D/share/themes/Blackwall 2>/dev/null || true
+@dirrmtry share/themes/Blackwall
 @dirrm share/themes/Buzz/xfwm4
-@unexec rmdir %D/share/themes/Buzz 2>/dev/null || true
+@dirrmtry share/themes/Buzz
 @dirrm share/themes/Coldsteel/xfwm4
-@unexec rmdir %D/share/themes/Coldsteel 2>/dev/null || true
+@dirrmtry share/themes/Coldsteel
 @dirrm share/themes/Coolclean/xfwm4
-@unexec rmdir %D/share/themes/Coolclean 2>/dev/null || true
+@dirrmtry share/themes/Coolclean
 @dirrm share/themes/Crux/xfwm4
-@unexec rmdir %D/share/themes/Crux 2>/dev/null || true
+@dirrmtry share/themes/Crux
 @dirrm share/themes/Cruxish/xfwm4
-@unexec rmdir %D/share/themes/Cruxish 2>/dev/null || true
+@dirrmtry share/themes/Cruxish
 @dirrm share/themes/Curve/xfwm4
-@unexec rmdir %D/share/themes/Curve 2>/dev/null || true
+@dirrmtry share/themes/Curve
 @dirrm share/themes/Defcon-IV/xfwm4
-@unexec rmdir %D/share/themes/Defcon-IV 2>/dev/null || true
+@dirrmtry share/themes/Defcon-IV
 @dirrm share/themes/Eazel-blue/xfwm4
-@unexec rmdir %D/share/themes/Eazel-blue 2>/dev/null || true
+@dirrmtry share/themes/Eazel-blue
 @dirrm share/themes/Elberg/xfwm4
-@unexec rmdir %D/share/themes/Elberg 2>/dev/null || true
+@dirrmtry share/themes/Elberg
 @dirrm share/themes/Exocet/xfwm4
-@unexec rmdir %D/share/themes/Exocet 2>/dev/null || true
+@dirrmtry share/themes/Exocet
 @dirrm share/themes/Fbx/xfwm4
-@unexec rmdir %D/share/themes/Fbx 2>/dev/null || true
+@dirrmtry share/themes/Fbx
 @dirrm share/themes/G2/xfwm4
-@unexec rmdir %D/share/themes/G2 2>/dev/null || true
+@dirrmtry share/themes/G2
 @dirrm share/themes/Galaxy/xfwm4
-@unexec rmdir %D/share/themes/Galaxy 2>/dev/null || true
+@dirrmtry share/themes/Galaxy
 @dirrm share/themes/Gaudy/xfwm4
-@unexec rmdir %D/share/themes/Gaudy 2>/dev/null || true
+@dirrmtry share/themes/Gaudy
 @dirrm share/themes/Gelly/xfwm4
-@unexec rmdir %D/share/themes/Gelly 2>/dev/null || true
+@dirrmtry share/themes/Gelly
 @dirrm share/themes/Gnububble/xfwm4
-@unexec rmdir %D/share/themes/Gnububble 2>/dev/null || true
+@dirrmtry share/themes/Gnububble
 @dirrm share/themes/Gorilla/xfwm4
-@unexec rmdir %D/share/themes/Gorilla 2>/dev/null || true
+@dirrmtry share/themes/Gorilla
 @dirrm share/themes/Gtk/xfwm4
-@unexec rmdir %D/share/themes/Gtk 2>/dev/null || true
+@dirrmtry share/themes/Gtk
 @dirrm share/themes/Iceg/xfwm4
-@unexec rmdir %D/share/themes/Iceg 2>/dev/null || true
+@dirrmtry share/themes/Iceg
 @dirrm share/themes/Kde/xfwm4
-@unexec rmdir %D/share/themes/Kde 2>/dev/null || true
+@dirrmtry share/themes/Kde
 @dirrm share/themes/Kde1/xfwm4
-@unexec rmdir %D/share/themes/Kde1 2>/dev/null || true
+@dirrmtry share/themes/Kde1
 @dirrm share/themes/Keramik/xfwm4
-@unexec rmdir %D/share/themes/Keramik 2>/dev/null || true
+@dirrmtry share/themes/Keramik
 @dirrm share/themes/Kindaker/xfwm4
-@unexec rmdir %D/share/themes/Kindaker 2>/dev/null || true
+@dirrmtry share/themes/Kindaker
 @dirrm share/themes/Kleanux/xfwm4
-@unexec rmdir %D/share/themes/Kleanux 2>/dev/null || true
+@dirrmtry share/themes/Kleanux
 @dirrm share/themes/Koynacity/xfwm4
-@unexec rmdir %D/share/themes/Koynacity 2>/dev/null || true
+@dirrmtry share/themes/Koynacity
 @dirrm share/themes/LineArt/xfwm4
-@unexec rmdir %D/share/themes/LineArt 2>/dev/null || true
+@dirrmtry share/themes/LineArt
 @dirrm share/themes/Linea/xfwm4
-@unexec rmdir %D/share/themes/Linea 2>/dev/null || true
+@dirrmtry share/themes/Linea
 @dirrm share/themes/Meenee/xfwm4
-@unexec rmdir %D/share/themes/Meenee 2>/dev/null || true
+@dirrmtry share/themes/Meenee
 @dirrm share/themes/Metabox/xfwm4
-@unexec rmdir %D/share/themes/Metabox 2>/dev/null || true
+@dirrmtry share/themes/Metabox
 @dirrm share/themes/Microcurve/xfwm4
-@unexec rmdir %D/share/themes/Microcurve 2>/dev/null || true
+@dirrmtry share/themes/Microcurve
 @dirrm share/themes/Microdeck/xfwm4
-@unexec rmdir %D/share/themes/Microdeck 2>/dev/null || true
+@dirrmtry share/themes/Microdeck
 @dirrm share/themes/Microdeck2/xfwm4
-@unexec rmdir %D/share/themes/Microdeck2 2>/dev/null || true
+@dirrmtry share/themes/Microdeck2
 @dirrm share/themes/Microdeck3/xfwm4
-@unexec rmdir %D/share/themes/Microdeck3 2>/dev/null || true
+@dirrmtry share/themes/Microdeck3
 @dirrm share/themes/Microgui/xfwm4
-@unexec rmdir %D/share/themes/Microgui 2>/dev/null || true
+@dirrmtry share/themes/Microgui
 @dirrm share/themes/Mofit/xfwm4
-@unexec rmdir %D/share/themes/Mofit 2>/dev/null || true
+@dirrmtry share/themes/Mofit
 @dirrm share/themes/Next/xfwm4
-@unexec rmdir %D/share/themes/Next 2>/dev/null || true
+@dirrmtry share/themes/Next
 @dirrm share/themes/Ops/xfwm4
-@unexec rmdir %D/share/themes/Ops 2>/dev/null || true
+@dirrmtry share/themes/Ops
 @dirrm share/themes/Oroborus/xfwm4
-@unexec rmdir %D/share/themes/Oroborus 2>/dev/null || true
+@dirrmtry share/themes/Oroborus
 @dirrm share/themes/Perl/xfwm4
-@unexec rmdir %D/share/themes/Perl 2>/dev/null || true
+@dirrmtry share/themes/Perl
 @dirrm share/themes/Pills/xfwm4
-@unexec rmdir %D/share/themes/Pills 2>/dev/null || true
+@dirrmtry share/themes/Pills
 @dirrm share/themes/Piranha/xfwm4
-@unexec rmdir %D/share/themes/Piranha 2>/dev/null || true
+@dirrmtry share/themes/Piranha
 @dirrm share/themes/Platinum/xfwm4
-@unexec rmdir %D/share/themes/Platinum 2>/dev/null || true
+@dirrmtry share/themes/Platinum
 @dirrm share/themes/Prune/xfwm4
-@unexec rmdir %D/share/themes/Prune 2>/dev/null || true
+@dirrmtry share/themes/Prune
 @dirrm share/themes/Quiet-purple/xfwm4
-@unexec rmdir %D/share/themes/Quiet-purple 2>/dev/null || true
+@dirrmtry share/themes/Quiet-purple
 @dirrm share/themes/Quinx/xfwm4
-@unexec rmdir %D/share/themes/Quinx 2>/dev/null || true
+@dirrmtry share/themes/Quinx
 @dirrm share/themes/R9X/xfwm4
-@unexec rmdir %D/share/themes/R9X 2>/dev/null || true
+@dirrmtry share/themes/R9X
 @dirrm share/themes/Redmond/xfwm4
-@unexec rmdir %D/share/themes/Redmond 2>/dev/null || true
+@dirrmtry share/themes/Redmond
 @dirrm share/themes/RedmondXP/xfwm4
-@unexec rmdir %D/share/themes/RedmondXP 2>/dev/null || true
+@dirrmtry share/themes/RedmondXP
 @dirrm share/themes/Retro/xfwm4
-@unexec rmdir %D/share/themes/Retro 2>/dev/null || true
+@dirrmtry share/themes/Retro
 @dirrm share/themes/Silverado/xfwm4
-@unexec rmdir %D/share/themes/Silverado 2>/dev/null || true
+@dirrmtry share/themes/Silverado
 @dirrm share/themes/Slick/xfwm4
-@unexec rmdir %D/share/themes/Slick 2>/dev/null || true
+@dirrmtry share/themes/Slick
 @dirrm share/themes/Slimline/xfwm4
-@unexec rmdir %D/share/themes/Slimline 2>/dev/null || true
+@dirrmtry share/themes/Slimline
 @dirrm share/themes/Smallscreen/xfwm4
-@unexec rmdir %D/share/themes/Smallscreen 2>/dev/null || true
+@dirrmtry share/themes/Smallscreen
 @dirrm share/themes/Smoothwall/xfwm4
-@unexec rmdir %D/share/themes/Smoothwall 2>/dev/null || true
+@dirrmtry share/themes/Smoothwall
 @dirrm share/themes/Synthetic/xfwm4
-@unexec rmdir %D/share/themes/Synthetic 2>/dev/null || true
+@dirrmtry share/themes/Synthetic
 @dirrm share/themes/TUX/xfwm4
-@unexec rmdir %D/share/themes/TUX 2>/dev/null || true
+@dirrmtry share/themes/TUX
 @dirrm share/themes/Tabs/xfwm4
-@unexec rmdir %D/share/themes/Tabs 2>/dev/null || true
+@dirrmtry share/themes/Tabs
 @dirrm share/themes/Tgc-large/xfwm4
-@unexec rmdir %D/share/themes/Tgc-large 2>/dev/null || true
+@dirrmtry share/themes/Tgc-large
 @dirrm share/themes/Tgc/xfwm4
-@unexec rmdir %D/share/themes/Tgc 2>/dev/null || true
+@dirrmtry share/themes/Tgc
 @dirrm share/themes/Today/xfwm4
-@unexec rmdir %D/share/themes/Today 2>/dev/null || true
+@dirrmtry share/themes/Today
 @dirrm share/themes/Totem/xfwm4
-@unexec rmdir %D/share/themes/Totem 2>/dev/null || true
+@dirrmtry share/themes/Totem
 @dirrm share/themes/Trench/xfwm4
-@unexec rmdir %D/share/themes/Trench 2>/dev/null || true
+@dirrmtry share/themes/Trench
 @dirrm share/themes/Triviality/xfwm4
-@unexec rmdir %D/share/themes/Triviality 2>/dev/null || true
+@dirrmtry share/themes/Triviality
 @dirrm share/themes/Tubular/xfwm4
-@unexec rmdir %D/share/themes/Tubular 2>/dev/null || true
+@dirrmtry share/themes/Tubular
 @dirrm share/themes/Variation/xfwm4
-@unexec rmdir %D/share/themes/Variation 2>/dev/null || true
+@dirrmtry share/themes/Variation
 @dirrm share/themes/Xfce/xfwm4
-@unexec rmdir %D/share/themes/Xfce 2>/dev/null || true
-@unexec rmdir %D/share/themes 2>/dev/null || true
+@dirrmtry share/themes/Xfce
+@dirrmtry share/themes

@@ -144,5 +144,5 @@ share/mime/packages/kino.xml
 @dirrm share/gnome/kino/scripts/publish
 @dirrm share/gnome/kino/scripts
 @dirrm share/gnome/kino
-@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
-@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@dirrmtry share/gnome/applications
+@dirrmtry share/gnome/pixmaps

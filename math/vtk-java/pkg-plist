@@ -45,7 +45,7 @@ share/java/classes/vtk.jar
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/TestVTKCanvas.class
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/TestVTKCanvas.java
 %%TESTING_ONLY%%share/examples/vtk/Testing/Java/README
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%
 %%TESTING_ONLY%%@dirrm share/examples/vtk/Testing/Java
 %%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk/Testing 2>/dev/null || true
 %%TESTING_ONLY%%@unexec rmdir %D/share/examples/vtk 2>/dev/null || true

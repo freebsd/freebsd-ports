@@ -136,8 +136,8 @@ share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/uk/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/quick-lounge/glade
 @dirrm share/gnome/quick-lounge
 @dirrm share/gnome/omf/quick-lounge-applet

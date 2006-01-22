@@ -182,7 +182,7 @@ share/locale/zh_TW/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/colorbalance
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
-@unexec rmdir %D/include/gstreamer-%%VERSION%%/gst 2>/dev/null || true
-@unexec rmdir %D/include/gstreamer-%%VERSION%% 2>/dev/null || true
+@dirrmtry include/gstreamer-%%VERSION%%/gst
+@dirrmtry include/gstreamer-%%VERSION%%
 @exec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @unexec %D/bin/gst-register-${VERSION} --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true

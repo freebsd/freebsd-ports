@@ -10,18 +10,18 @@ share/icons/locolor/16x16/apps/kwatch.png
 share/icons/locolor/32x32/apps/kwatch.png
 share/locale/de/LC_MESSAGES/kwatch.mo
 @comment directories
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
 @dirrm share/doc/HTML/default/kwatch
-@unexec rmdir %D/share/doc/HTML/default 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrmtry share/doc/HTML/default
+@dirrmtry share/doc/HTML
 @dirrm share/apps/kwatch
-@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@dirrmtry share/applnk/Utilities

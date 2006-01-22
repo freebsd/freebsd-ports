@@ -46,7 +46,7 @@ lib/vtk/tcl/vtktesting/vtktesting.tcl
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README.patented-classes
 %%DOCSDIR%%/vtkLogo.jpg
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%
 @dirrm lib/vtk/tcl/vtktesting
 @dirrm lib/vtk/tcl/vtkrendering
 @dirrm lib/vtk/tcl/vtkpatented
@@ -61,4 +61,4 @@ lib/vtk/tcl/vtktesting/vtktesting.tcl
 @dirrm lib/vtk/tcl/vtkbase
 @dirrm lib/vtk/tcl/vtk
 @dirrm lib/vtk/tcl
-@unexec rmdir %D/lib/vtk 2>/dev/null || true
+@dirrmtry lib/vtk

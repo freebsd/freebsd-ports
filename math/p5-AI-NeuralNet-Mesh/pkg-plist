@@ -1,7 +1,7 @@
 %%SITE_PERL%%/AI/NeuralNet/Mesh.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/AI/NeuralNet 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/AI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI
+@dirrmtry %%SITE_PERL%%/AI/NeuralNet
+@dirrmtry %%SITE_PERL%%/AI

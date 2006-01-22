@@ -770,4 +770,4 @@
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline/Filtering
 @dirrm %%EXAMPLESDIR%%/VTKData/Baseline
 @dirrm %%EXAMPLESDIR%%/VTKData
-@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+@dirrmtry %%EXAMPLESDIR%%

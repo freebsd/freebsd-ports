@@ -4,7 +4,7 @@
 %%RUBY_SITELIBDIR%%/numru/misc/md_iterators.rb
 %%RUBY_SITELIBDIR%%/numru/misc/misc.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/misc
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/emath.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
