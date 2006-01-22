@@ -7,6 +7,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	0.2.99.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
@@ -16,9 +17,7 @@ DISTNAME=	fuse4bsd-0.3.0-pre1
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Kernel module for fuse
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fuse/fuse_kernel.h:${PORTSDIR}/sysutils/fusefs-libs
-
-CONFLICTS=	fusefs-libs-2.4*
+BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
 OPTIONS=	AUTOSETUP "Automatic global config file setup" off
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
