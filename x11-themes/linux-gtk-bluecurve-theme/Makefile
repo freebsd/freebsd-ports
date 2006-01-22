@@ -8,13 +8,14 @@
 PORTNAME=	gtk-bluecurve-theme
 DISTVERSION=	0.117-1
 CATEGORIES=	x11-themes linux
-MASTER_SITE_SUBDIR=	3/${LINUX_ARCH}/os/Fedora/RPMS/
 DISTNAME=	redhat-artwork-${DISTVERSION}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_LINUX_RPM=	yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 # GTK+ 1.x theme engine
 GTK1_RCDIR=	gtk
@@ -56,4 +57,4 @@ do-install:
 .  endfor
 .endfor
 
-.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
+.include <bsd.port.mk>

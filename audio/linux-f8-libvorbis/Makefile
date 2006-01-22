@@ -9,7 +9,6 @@ PORTNAME=	libvorbis
 DISTVERSION=	1.1.0-1
 PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	3/${LINUX_ARCH}/os/Fedora/RPMS/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Audio compression codec library (Linux version)
@@ -17,6 +16,9 @@ COMMENT=	Audio compression codec library (Linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg
 
 ONLY_FOR_ARCHS=	i386 amd64
-INSTALLS_LINUX_SHLIB=	yes
+USE_LINUX_RPM=	yes
+INSTALLS_SHLIB=	yes
+AUTOMATIC_PLIST=yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
-.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
+.include <bsd.port.mk>

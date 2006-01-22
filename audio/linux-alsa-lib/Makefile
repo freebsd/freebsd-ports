@@ -16,7 +16,8 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	The Advanced Linux Sound Architecture libraries
 
 ONLY_FOR_ARCHS=	i386 amd64
-INSTALLS_LINUX_SHLIB=	yes
-DESCR=		${PKGDIR}/pkg-descr
+USE_LINUX_RPM=	yes
+INSTALLS_SHLIB=	yes
+AUTOMATIC_PLIST=yes
 
-.include "${.CURDIR}/../../audio/linux-openal/bsd.linux.mk"
+.include <bsd.port.mk>
