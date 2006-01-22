@@ -35,6 +35,7 @@ bin/bouml
 %%DATADIR%%/cpp_utilities/1664.bodies
 %%DATADIR%%/cpp_utilities/1792.bodies
 %%DATADIR%%/cpp_utilities/1920.bodies
+%%DATADIR%%/cpp_utilities/2.session
 %%DATADIR%%/cpp_utilities/2048.bodies
 %%DATADIR%%/cpp_utilities/2176.bodies
 %%DATADIR%%/cpp_utilities/2304.bodies
@@ -107,6 +108,7 @@ bin/bouml
 %%DATADIR%%/empty/1664.bodies
 %%DATADIR%%/empty/1792.bodies
 %%DATADIR%%/empty/1920.bodies
+%%DATADIR%%/empty/2.session
 %%DATADIR%%/empty/2048.bodies
 %%DATADIR%%/empty/2176.bodies
 %%DATADIR%%/empty/2304.bodies
@@ -161,6 +163,7 @@ bin/bouml
 %%DATADIR%%/genpro/1664.bodies
 %%DATADIR%%/genpro/1792.bodies
 %%DATADIR%%/genpro/1920.bodies
+%%DATADIR%%/genpro/2.session
 %%DATADIR%%/genpro/2176.bodies
 %%DATADIR%%/genpro/2304.bodies
 %%DATADIR%%/genpro/2432.bodies
@@ -207,6 +210,7 @@ bin/bouml
 %%DATADIR%%/gxmi
 %%DATADIR%%/html/1024.bodies
 %%DATADIR%%/html/1152.bodies
+%%DATADIR%%/html/12.session
 %%DATADIR%%/html/1280.bodies
 %%DATADIR%%/html/128002.bodies
 %%DATADIR%%/html/128036
@@ -255,6 +259,7 @@ bin/bouml
 %%DATADIR%%/html/1664.bodies
 %%DATADIR%%/html/1792.bodies
 %%DATADIR%%/html/1920.bodies
+%%DATADIR%%/html/2.session
 %%DATADIR%%/html/2048.bodies
 %%DATADIR%%/html/2176.bodies
 %%DATADIR%%/html/2304.bodies
@@ -340,6 +345,7 @@ bin/bouml
 %%DATADIR%%/rose/1664.bodies
 %%DATADIR%%/rose/1792.bodies
 %%DATADIR%%/rose/1920.bodies
+%%DATADIR%%/rose/2.session
 %%DATADIR%%/rose/2176.bodies
 %%DATADIR%%/rose/2304.bodies
 %%DATADIR%%/rose/2432.bodies
@@ -405,6 +411,7 @@ bin/bouml
 %%DATADIR%%/singleton/1664.bodies
 %%DATADIR%%/singleton/1792.bodies
 %%DATADIR%%/singleton/1920.bodies
+%%DATADIR%%/singleton/2.session
 %%DATADIR%%/singleton/2176.bodies
 %%DATADIR%%/singleton/2304.bodies
 %%DATADIR%%/singleton/2432.bodies
@@ -489,6 +496,7 @@ bin/bouml
 %%DATADIR%%/sm_generator/1664.bodies
 %%DATADIR%%/sm_generator/1792.bodies
 %%DATADIR%%/sm_generator/1920.bodies
+%%DATADIR%%/sm_generator/2.session
 %%DATADIR%%/sm_generator/2048.bodies
 %%DATADIR%%/sm_generator/2176.bodies
 %%DATADIR%%/sm_generator/2304.bodies
@@ -537,6 +545,7 @@ bin/bouml
 %%DATADIR%%/stmgen
 %%DATADIR%%/xmi/1024.bodies
 %%DATADIR%%/xmi/1152.bodies
+%%DATADIR%%/xmi/12.session
 %%DATADIR%%/xmi/1280.bodies
 %%DATADIR%%/xmi/128002
 %%DATADIR%%/xmi/128002.bodies
@@ -571,6 +580,7 @@ bin/bouml
 %%DATADIR%%/xmi/1664.bodies
 %%DATADIR%%/xmi/1792.bodies
 %%DATADIR%%/xmi/1920.bodies
+%%DATADIR%%/xmi/2.session
 %%DATADIR%%/xmi/2048.bodies
 %%DATADIR%%/xmi/2176.bodies
 %%DATADIR%%/xmi/2304.bodies
