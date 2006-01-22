@@ -42,6 +42,8 @@ REAL_PORTVERSION=	0.5
 REAL_MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 DIST_SUBDIR=		ruby
 
+BROKEN=			Not fetchable
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
