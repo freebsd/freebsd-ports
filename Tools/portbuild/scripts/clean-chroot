@@ -40,9 +40,11 @@ noclean=$4
 pb=/var/portbuild
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
+. ${pb}/scripts/buildenv
+buildenv ${pb} ${arch} ${branch}
 
 # directories to clean
-cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
+cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
 
 if [ ! -d "${chroot}" ]; then
   exit 0
@@ -59,7 +61,7 @@ if [ ${arch} = "i386" ]; then
   cleanup_mount ${chroot} /compat/linux/proc
 fi
 
-for i in /a/ports /usr/opt/doc /usr/src /dev; do
+for i in /a/ports /usr/src /dev; do
   cleanup_mount ${chroot} ${i}
 done
 
