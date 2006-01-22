@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://savannah.gnu.org/download/alive/
 DISTNAME=	qadsl-${PORTVERSION}
 
-MAINTAINER=	arlu@telia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable and Tiscali Internet
 
 USE_RC_SUBR=	qadsl.sh
