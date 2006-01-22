@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/etc/default/man
 %%DATADIR%%/etc/default/ps
 %%DATADIR%%/etc/default/su
@@ -115,6 +114,50 @@
 %%DATADIR%%/usr/5bin/posix/tr
 %%DATADIR%%/usr/5bin/posix/wc
 %%DATADIR%%/usr/5bin/posix/who
+%%DATADIR%%/usr/5bin/posix/echo
+%%DATADIR%%/usr/5bin/posix/file
+%%DATADIR%%/usr/5bin/posix/getconf
+%%DATADIR%%/usr/5bin/posix/od
+%%DATADIR%%/usr/5bin/posix/test
+%%DATADIR%%/usr/5bin/posix/pax
+%%DATADIR%%/usr/5bin/posix2001/pax
+%%DATADIR%%/usr/5bin/posix2001/csplit
+%%DATADIR%%/usr/5bin/posix2001/ed
+%%DATADIR%%/usr/5bin/posix2001/expr
+%%DATADIR%%/usr/5bin/posix2001/find
+%%DATADIR%%/usr/5bin/posix2001/getconf
+%%DATADIR%%/usr/5bin/posix2001/grep
+%%DATADIR%%/usr/5bin/posix2001/egrep
+%%DATADIR%%/usr/5bin/posix2001/fgrep
+%%DATADIR%%/usr/5bin/posix2001/ls
+%%DATADIR%%/usr/5bin/posix2001/nawk
+%%DATADIR%%/usr/5bin/posix2001/nl
+%%DATADIR%%/usr/5bin/posix2001/pg
+%%DATADIR%%/usr/5bin/posix2001/sed
+%%DATADIR%%/usr/5bin/posix2001/basename
+%%DATADIR%%/usr/5bin/posix2001/chmod
+%%DATADIR%%/usr/5bin/posix2001/cp
+%%DATADIR%%/usr/5bin/posix2001/date
+%%DATADIR%%/usr/5bin/posix2001/du
+%%DATADIR%%/usr/5bin/posix2001/echo
+%%DATADIR%%/usr/5bin/posix2001/file
+%%DATADIR%%/usr/5bin/posix2001/id
+%%DATADIR%%/usr/5bin/posix2001/ln
+%%DATADIR%%/usr/5bin/posix2001/mkdir
+%%DATADIR%%/usr/5bin/posix2001/mv
+%%DATADIR%%/usr/5bin/posix2001/nohup
+%%DATADIR%%/usr/5bin/posix2001/pr
+%%DATADIR%%/usr/5bin/posix2001/ps
+%%DATADIR%%/usr/5bin/posix2001/rm
+%%DATADIR%%/usr/5bin/posix2001/rmdir
+%%DATADIR%%/usr/5bin/posix2001/sort
+%%DATADIR%%/usr/5bin/posix2001/test
+%%DATADIR%%/usr/5bin/posix2001/touch
+%%DATADIR%%/usr/5bin/posix2001/tr
+%%DATADIR%%/usr/5bin/posix2001/wc
+%%DATADIR%%/usr/5bin/posix2001/who
+%%DATADIR%%/usr/5bin/posix2001/od
+%%DATADIR%%/usr/5bin/posix2001/awk
 %%DATADIR%%/usr/5bin/pr
 %%DATADIR%%/usr/5bin/printenv
 %%DATADIR%%/usr/5bin/priocntl
@@ -159,6 +202,12 @@
 %%DATADIR%%/usr/5bin/s42/tr
 %%DATADIR%%/usr/5bin/s42/wc
 %%DATADIR%%/usr/5bin/s42/who
+%%DATADIR%%/usr/5bin/s42/getconf
+%%DATADIR%%/usr/5bin/s42/echo
+%%DATADIR%%/usr/5bin/s42/file
+%%DATADIR%%/usr/5bin/s42/od
+%%DATADIR%%/usr/5bin/s42/pax
+%%DATADIR%%/usr/5bin/s42/test
 %%DATADIR%%/usr/5bin/sdiff
 %%DATADIR%%/usr/5bin/sed
 %%DATADIR%%/usr/5bin/setpgrp
@@ -199,6 +248,22 @@
 %%DATADIR%%/usr/5bin/whodo
 %%DATADIR%%/usr/5bin/xargs
 %%DATADIR%%/usr/5bin/yes
+%%DATADIR%%/usr/5bin/bdiff
+%%DATADIR%%/usr/5bin/bfs
+%%DATADIR%%/usr/5bin/dircmp
+%%DATADIR%%/usr/5bin/echo
+%%DATADIR%%/usr/5bin/fmtmsg
+%%DATADIR%%/usr/5bin/getopt
+%%DATADIR%%/usr/5bin/kill
+%%DATADIR%%/usr/5bin/mesg
+%%DATADIR%%/usr/5bin/mvdir
+%%DATADIR%%/usr/5bin/pathchk
+%%DATADIR%%/usr/5bin/printf
+%%DATADIR%%/usr/5bin/pwd
+%%DATADIR%%/usr/5bin/test
+%%DATADIR%%/usr/5bin/true
+%%DATADIR%%/usr/5bin/false
+%%DATADIR%%/usr/5bin/getconf
 %%DATADIR%%/usr/5lib/calprog
 %%DATADIR%%/usr/5lib/diff3prog
 %%DATADIR%%/usr/5lib/diffh
@@ -208,8 +273,10 @@
 %%DATADIR%%/usr/5lib/spell/hlistb
 %%DATADIR%%/usr/5lib/spell/hstop
 %%DATADIR%%/usr/5lib/spell/spellin
-%%DATADIR%%/usr/5lib/spell/spellout
 %%DATADIR%%/usr/5lib/spell/spellprog
+%%DATADIR%%/usr/5lib/spell/hashcheck
+%%DATADIR%%/usr/5lib/spell/hashmake
+%%DATADIR%%/usr/5lib/spell/compress
 %%DATADIR%%/usr/5lib/tmac/an-old.tmac
 %%DATADIR%%/usr/5lib/tmac/tmac.an
 %%DATADIR%%/usr/5lib/unittab
@@ -242,28 +309,17 @@
 %%DATADIR%%/usr/ucb/w
 %%DATADIR%%/usr/ucb/whatis
 %%DATADIR%%/usr/ucb/whoami
+%%DATADIR%%/usr/ucb/echo
+%%DATADIR%%/usr/ucb/test
 @exec umask 000; touch /var/db/spellhist
 @exec umask 066; touch /var/log/sulog
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/EXPLAIN.oawk
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING.LGPL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/LUCENT
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE/README
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.cp
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.dd
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.grep
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.libuxre
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.more
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.nawk
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.oawk
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.ps
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.shl
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.tar
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.oawk
-%%PORTDOCS%%%%DOCSDIR%%/TODO.cpio
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -286,6 +342,7 @@
 @dirrm %%DATADIR%%/usr/5lib
 @dirrm %%DATADIR%%/usr/5bin/s42
 @dirrm %%DATADIR%%/usr/5bin/posix
+@dirrm %%DATADIR%%/usr/5bin/posix2001
 @dirrm %%DATADIR%%/usr/5bin
 @dirrm %%DATADIR%%/usr
 @dirrm %%DATADIR%%/etc/default
