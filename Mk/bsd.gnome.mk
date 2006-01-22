@@ -677,7 +677,6 @@ MTREE_FILE?=	${GNOME_MTREE}
 .endif
 
 .if defined(GNOME_PRE_PATCH)
-USE_REINPLACE=	yes
 
 pre-patch: gnome-pre-patch
 
