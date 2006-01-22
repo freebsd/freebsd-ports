@@ -414,8 +414,8 @@ post-install:
 		${ECHO_CMD} "etc/openldap/schema/$${schema}.schema.default"; \
 		${ECHO_CMD} "@exec [ -f %B/$${schema}.schema ] || cp %B/%f %B/$${schema}.schema"; \
 	done >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry etc/openldap/schema" >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry %D/etc/openldap" >>${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
 	@[ "${RC_DIR:S/\/$//}" = "${PREFIX}" ] || ${ECHO_CMD} "@cwd ${RC_DIR}" >>${TMPPLIST}
 .for script in slapd slurpd
 	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${RC_DIR:S/\/$//}/etc/rc.d/${script}${RC_SUFX}
