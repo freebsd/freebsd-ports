@@ -4,5 +4,5 @@ share/festival/lib/voices/italian/pc_ogi_diphone/group/pc_ogi_diphone.group-READ
 @dirrm share/festival/lib/voices/italian/pc_ogi_diphone/festvox
 @dirrm share/festival/lib/voices/italian/pc_ogi_diphone/group
 @dirrm share/festival/lib/voices/italian/pc_ogi_diphone
-@unexec rmdir %D/share/festival/lib/voices/italian 2>/dev/null || true
-@unexec rmdir %D/share/festival/lib/voices 2>/dev/null || true
+@dirrmtry share/festival/lib/voices/italian
+@dirrmtry share/festival/lib/voices

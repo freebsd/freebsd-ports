@@ -54,4 +54,4 @@ lib/libtag_c.la
 lib/libtag_c.so
 lib/libtag_c.so.0
 @dirrm include/taglib
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
+@dirrmtry lib/pkgconfig

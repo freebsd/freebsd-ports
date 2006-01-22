@@ -13,5 +13,5 @@ bin/timidity
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%TIMID_LIBDIR%%
 @exec mkdir -p %D/share/timidity
-@unexec rmdir %D/%%TIMID_LIBDIR%% 2>/dev/null || true
-@unexec rmdir %D/share/timidity 2>/dev/null || true
+@dirrmtry %%TIMID_LIBDIR%%
+@dirrmtry share/timidity

@@ -523,7 +523,7 @@
 %%DATADIR%%/release.cfg
 %%DATADIR%%/sfx.cfg
 %%DATADIR%%/timidity.cfg
-@unexec rmdir %D/%%TIMIDITY_DATADIR%% 2>/dev/null || true
+@dirrmtry %%TIMIDITY_DATADIR%%
 @dirrm %%DATADIR%%/inst/wowpats
 @dirrm %%DATADIR%%/inst/wime
 @dirrm %%DATADIR%%/inst/roland

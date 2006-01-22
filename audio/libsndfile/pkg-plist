@@ -30,7 +30,7 @@ libdata/pkgconfig/sndfile.pc
 share/octave/site/m/sndfile_load.m
 share/octave/site/m/sndfile_play.m
 share/octave/site/m/sndfile_save.m
-@unexec rmdir %D/share/octave/site/m 2>/dev/null || true
-@unexec rmdir %D/share/octave/site 2>/dev/null || true
-@unexec rmdir %D/share/octave 2>/dev/null || true
+@dirrmtry share/octave/site/m
+@dirrmtry share/octave/site
+@dirrmtry share/octave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

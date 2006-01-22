@@ -17,8 +17,8 @@ share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/pixmaps/EasyTAG.xpm
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps/Multimedia 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+@dirrmtry share/pixmaps
+@dirrmtry share/gnome/apps/Multimedia
+@dirrmtry share/gnome/apps
+@dirrmtry share/gnome
 @dirrm share/easytag

@@ -31,7 +31,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ReadMe-j.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/VupHistory-j.txt.gz
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt.gz
-@unexec rmdir %D/%%TIMIDITY_DATADIR%% 2>/dev/null || true
+@dirrmtry %%TIMIDITY_DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/inst/tamupat
 @dirrm %%DATADIR%%/inst/GUS/power
