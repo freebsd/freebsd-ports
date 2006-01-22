@@ -4,7 +4,7 @@
 %%SITE_PERL%%/mach/auto/Net/FreeDB/FreeDB.so
 %%SITE_PERL%%/mach/auto/Net/FreeDB/autosplit.ix
 @dirrm %%SITE_PERL%%/mach/auto/Net/FreeDB
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/mach/auto/Net
+@dirrmtry %%SITE_PERL%%/mach/auto
+@dirrmtry %%SITE_PERL%%/mach/Net
+@dirrmtry %%SITE_PERL%%/mach

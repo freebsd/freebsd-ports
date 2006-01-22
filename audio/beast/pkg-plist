@@ -282,7 +282,7 @@ share/mime/packages/beast.xml
 @dirrm share/gnome/bse/v0.6.6/scripts
 @dirrm share/gnome/bse/v0.6.6
 @dirrm share/gnome/bse
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rw 2>/dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

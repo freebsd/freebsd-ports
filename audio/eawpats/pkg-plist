@@ -383,7 +383,7 @@ share/timidity/timidity.cfg-eawpats
 @dirrm %%DATADIR%%/gsdrum08
 @dirrm %%DATADIR%%/ethnic
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/timidity 2>/dev/null || true 
+@dirrmtry share/timidity 
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/wime
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/power
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gsdrum40

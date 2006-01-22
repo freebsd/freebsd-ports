@@ -54,13 +54,13 @@ share/locale/uk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/vi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
-@unexec rmdir %D/lib/xfce4/modules 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/bn_IN 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mr 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
+@dirrmtry lib/xfce4/modules
+@dirrmtry lib/xfce4/mcs-plugins
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO

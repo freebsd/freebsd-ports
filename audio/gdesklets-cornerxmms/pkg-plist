@@ -40,4 +40,4 @@ share/gnome/gdesklets/Displays/CornerXMMS/gfx/textmask-br1.png
 @dirrm share/gnome/gdesklets/Controls/KXmms
 @dirrm share/gnome/gdesklets/Displays/CornerXMMS/gfx
 @dirrm share/gnome/gdesklets/Displays/CornerXMMS
-@unexec rmdir %D/share/gnome/gdesklets/Controls 2>/dev/null || true
+@dirrmtry share/gnome/gdesklets/Controls
