@@ -27,5 +27,5 @@ bin/gunshar
 %%NLS%%share/locale/tr/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/sharutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sharutils.mo
-%%NLS%%@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
