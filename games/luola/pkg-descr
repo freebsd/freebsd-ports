@@ -1,0 +1,22 @@
+Luola is a 2D arcade game where you fly a small V shaped ship in
+different kinds of levels. It's genre "Luolalentely" (Cave-flying)
+is (or was) very popular here in Finland. Though cavern-flying games
+are not originally Finnish, nowdays most of them are.
+
+Features
+- 2-4 players
+- Team play
+- Ability to eject the pilot and walk around the level as a human
+- Supports truecolor level artwork and over a dozen terrain types
+  ranging from watercurrents to explosives
+- Supports custom level palettes thus can load levels from practically
+  any caveflying game such as V-Wing or Wings
+- Level specials such as snowfall, critters, auto-turrets and
+  jump-gates
+- Supports keyboard and gamepad input
+- Sound effects and background music thru SDL_mixer library
+- Transparency and antialiasing effects thru SDL_gfx library
+- Can use Truetype fonts thru SDL_ttf library
+- Multiplatform: supports Linux and Windows
+
+WWW: http://www.luolamies.org/software/luola/
