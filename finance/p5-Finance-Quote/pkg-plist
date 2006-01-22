@@ -37,5 +37,5 @@
 @dirrm %%SITE_PERL%%/Finance/Quote/Yahoo
 @dirrm %%SITE_PERL%%/Finance/Quote
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Quote
-@unexec rmdir %D/%%SITE_PERL%%/Finance 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Finance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance

@@ -3,4 +3,4 @@ share/applications/gresolver.desktop
 share/pixmaps/gresolver.png
 %%DATADIR%%/gresolver.glade
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

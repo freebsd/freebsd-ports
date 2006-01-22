@@ -18,5 +18,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/GConf
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/GConf
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2

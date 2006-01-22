@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Assert/.packlist
 %%SITE_PERL%%/Carp/Assert.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Assert
-@unexec rmdir %D/%%SITE_PERL%%/Carp 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Carp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp

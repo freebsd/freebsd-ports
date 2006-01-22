@@ -2,5 +2,5 @@
 %%SITE_PERL%%/Parse/CPAN/Packages/Distribution.pm
 %%SITE_PERL%%/Parse/CPAN/Packages/Package.pm
 @dirrm %%SITE_PERL%%/Parse/CPAN/Packages
-@unexec rmdir %D/%%SITE_PERL%%/Parse/CPAN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Parse/CPAN
+@dirrmtry %%SITE_PERL%%/Parse

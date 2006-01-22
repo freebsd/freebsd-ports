@@ -4,6 +4,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/Size.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/Size
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Term 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Term 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term
+@dirrmtry %%SITE_PERL%%/Term

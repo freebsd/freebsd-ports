@@ -25,4 +25,4 @@ lib/libtifiles.so
 lib/libtifiles.so.6
 libdata/pkgconfig/tifiles.pc
 share/locale/fr/LC_MESSAGES/libtifiles.mo
-@unexec rmdir %D/include/tilp 2>/dev/null || true
+@dirrmtry include/tilp

@@ -2,8 +2,8 @@
 %%SITE_PERL%%/App/CLI.pm
 %%SITE_PERL%%/App/CLI/Command.pm
 %%SITE_PERL%%/App/CLI/Command/Help.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/App 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/App/CLI/Command 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/App/CLI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App/CLI/Command
+@dirrmtry %%SITE_PERL%%/App/CLI
+@dirrmtry %%SITE_PERL%%/App

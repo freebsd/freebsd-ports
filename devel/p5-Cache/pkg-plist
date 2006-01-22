@@ -15,9 +15,9 @@
 %%SITE_PERL%%/Cache/RemovalStrategy/LRU.pm
 %%SITE_PERL%%/Cache/Tester.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/Cache/RemovalStrategy 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cache/Memory 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cache/File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cache/Null 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Cache/RemovalStrategy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/Cache/Memory
+@dirrmtry %%SITE_PERL%%/Cache/File
+@dirrmtry %%SITE_PERL%%/Cache/Null
+@dirrmtry %%SITE_PERL%%/Cache

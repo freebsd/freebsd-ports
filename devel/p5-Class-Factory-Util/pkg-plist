@@ -1,7 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Factory/Util/.packlist
 %%SITE_PERL%%/Class/Factory/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Factory/Util
-@unexec rmdir %D/%%SITE_PERL%%/Class/Factory 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Factory 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Class/Factory
+@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Factory
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

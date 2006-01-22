@@ -23,7 +23,7 @@ share/examples/p5-Rcs/test1.pl
 share/examples/p5-Rcs/test2.pl
 share/examples/p5-Rcs/test3.pl
 share/examples/p5-Rcs/unlock.pl
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rcs 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rcs
 @dirrm share/examples/p5-Rcs/project/RCS
 @dirrm share/examples/p5-Rcs/project/src
 @dirrm share/examples/p5-Rcs/project

@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Config/IniFiles.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniFiles/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniFiles
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Config 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config

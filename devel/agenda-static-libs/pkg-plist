@@ -28,5 +28,5 @@ mipsel-linux/lib/libsupc++.a
 mipsel-linux/lib/libsupc++.la
 mipsel-linux/lib/libtermcap.a
 mipsel-linux/lib/libutil.a
-@unexec rmdir %D/mipsel-linux/lib 2> /dev/null || true
-@unexec rmdir %D/mipsel-linux 2> /dev/null || true
+@dirrmtry mipsel-linux/lib
+@dirrmtry mipsel-linux

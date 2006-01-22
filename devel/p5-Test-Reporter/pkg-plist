@@ -5,9 +5,9 @@ bin/cpantest
 %%SITE_PERL%%/Test/Reporter/Time/Zone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrm %%SITE_PERL%%/Test/Reporter/Time
 @dirrm %%SITE_PERL%%/Test/Reporter/Mail
 @dirrm %%SITE_PERL%%/Test/Reporter/Date
 @dirrm %%SITE_PERL%%/Test/Reporter
-@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Test

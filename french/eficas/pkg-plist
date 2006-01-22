@@ -1387,4 +1387,4 @@ bin/eficas
 @dirrm %%EFICASDIR%%/AIDE/fichiers
 @dirrm %%EFICASDIR%%/AIDE
 @dirrm %%EFICASDIR%%
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

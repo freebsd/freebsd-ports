@@ -1,5 +1,5 @@
 %%SITE_PERL%%/SVN/ACL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/ACL/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/ACL
-@unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SVN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

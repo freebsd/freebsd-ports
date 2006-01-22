@@ -2119,8 +2119,8 @@ sql-ledger/templates/Spanish_Letter-work_order.tex
 sql-ledger/users/sql-ledger.eps
 sql-ledger/users/sql-ledger.png
 etc/sql-ledger-httpd.conf
-@unexec rmdir %D/sql-ledger/users 2>/dev/null || true
-@unexec rmdir %D/sql-ledger/templates 2>/dev/null || true
+@dirrmtry sql-ledger/users
+@dirrmtry sql-ledger/templates
 @dirrm sql-ledger/sql
 @dirrm sql-ledger/spool
 @dirrm sql-ledger/locale/ve
@@ -2175,4 +2175,4 @@ etc/sql-ledger-httpd.conf
 @dirrm sql-ledger/bin/lynx
 @dirrm sql-ledger/bin
 @dirrm sql-ledger/SL
-@unexec rmdir %D/sql-ledger 2>/dev/null || true
+@dirrmtry sql-ledger

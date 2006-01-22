@@ -10,4 +10,4 @@ bin/its-user-install
 @comment We specify to delete %%IMAGE_HOME%%.  In most cases, it's the
 @comment same as the klh10 port is using, so it won't be empty (and thus
 @comment not deleted).  This dirrm command is for the exceptions to that.
-@unexec rmdir %D/%%IMAGE_HOME%% 2>/dev/null || true
+@dirrmtry %%IMAGE_HOME%%

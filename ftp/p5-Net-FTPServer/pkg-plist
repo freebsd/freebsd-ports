@@ -40,11 +40,11 @@ sbin/ro-ftpd.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/FTPServer/RO
 @dirrm %%SITE_PERL%%/Net/FTPServer/Proxy
 @dirrm %%SITE_PERL%%/Net/FTPServer/InMem
 @dirrm %%SITE_PERL%%/Net/FTPServer/Full
 @dirrm %%SITE_PERL%%/Net/FTPServer/DBeg1
 @dirrm %%SITE_PERL%%/Net/FTPServer
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net

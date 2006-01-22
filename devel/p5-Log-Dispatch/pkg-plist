@@ -15,4 +15,4 @@
 @dirrm %%SITE_PERL%%/Log/Dispatch/File
 @dirrm %%SITE_PERL%%/Log/Dispatch/Email
 @dirrm %%SITE_PERL%%/Log/Dispatch
-@unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Log

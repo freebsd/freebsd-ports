@@ -161,5 +161,5 @@
 @dirrm %%CHORADIR%%/locale/cs_CZ
 @dirrm %%CHORADIR%%/locale
 @dirrm %%CHORADIR%%/lib
-@unexec rmdir %D/%%CHORADIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%CHORADIR%% 2>/dev/null || true
+@dirrmtry %%CHORADIR%%/config
+@dirrmtry %%CHORADIR%%

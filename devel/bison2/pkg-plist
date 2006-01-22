@@ -57,4 +57,4 @@ share/aclocal/bison-i18n.m4
 %%NLS%%@unexec rmdir %D/share/locale/rw 2>/dev/null || true
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
+@dirrmtry share/aclocal

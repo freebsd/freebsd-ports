@@ -9,6 +9,6 @@ bin/pod_cover
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Pod 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Pod

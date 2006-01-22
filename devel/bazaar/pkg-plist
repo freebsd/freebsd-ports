@@ -24,15 +24,15 @@ share/locale/nl_BE/LC_MESSAGES/bazaar.mo
 share/locale/pt_BR/LC_MESSAGES/bazaar.mo
 share/locale/pt_PT/LC_MESSAGES/bazaar.mo
 share/locale/zh_CN/LC_MESSAGES/bazaar.mo
-@unexec rmdir %D/share/locale/nl_BE/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl_BE 2>/dev/null || true
-@unexec rmdir %D/share/locale/it_IT/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it_IT 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr_FR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr_FR 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr_BE/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr_BE 2>/dev/null || true
-@unexec rmdir %D/share/locale/es_AR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es_AR 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_AU/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_AU 2>/dev/null || true
+@dirrmtry share/locale/nl_BE/LC_MESSAGES
+@dirrmtry share/locale/nl_BE
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/fr_BE/LC_MESSAGES
+@dirrmtry share/locale/fr_BE
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU

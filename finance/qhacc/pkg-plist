@@ -191,8 +191,8 @@ lib/plugins/report/libtrans.so
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/lib/plugins/report 2>/dev/null || true
-@unexec rmdir %D/lib/plugins/import 2>/dev/null || true
-@unexec rmdir %D/lib/plugins/graph 2>/dev/null || true
-@unexec rmdir %D/lib/plugins/export 2>/dev/null || true
-@unexec rmdir %D/lib/plugins/db 2>/dev/null || true
+@dirrmtry lib/plugins/report
+@dirrmtry lib/plugins/import
+@dirrmtry lib/plugins/graph
+@dirrmtry lib/plugins/export
+@dirrmtry lib/plugins/db

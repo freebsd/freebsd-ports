@@ -16,7 +16,7 @@ bin/tkpp
 %%SITE_PERL%%/PAR/Packer.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/App/Packer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PAR/Filter 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PAR 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/App/Packer
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/PAR/Filter
+@dirrmtry %%SITE_PERL%%/PAR

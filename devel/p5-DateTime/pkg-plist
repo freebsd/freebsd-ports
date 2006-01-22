@@ -8,5 +8,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/DateTime.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/DateTime.so
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DateTime 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DateTime

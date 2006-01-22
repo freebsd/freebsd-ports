@@ -5,5 +5,5 @@ bin/maketext
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext-Gettext/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Maketext-Gettext
 @dirrm %%SITE_PERL%%/Locale/Maketext/Gettext
-@unexec rmdir %D/%%SITE_PERL%%/Locale/Maketext 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Locale 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Locale/Maketext
+@dirrmtry %%SITE_PERL%%/Locale

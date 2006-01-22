@@ -6,8 +6,8 @@ bin/poepp
 %%SITE_PERL%%/POE/Devel/Profiler/Visualizer/BasicSummary.pm
 @dirrm %%SITE_PERL%%/POE/Devel/Profiler/Visualizer
 @dirrm %%SITE_PERL%%/POE/Devel/Profiler
-@unexec rmdir %D/%%SITE_PERL%%/POE/Devel 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/POE/Devel
+@dirrmtry %%SITE_PERL%%/POE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel/Profiler
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE

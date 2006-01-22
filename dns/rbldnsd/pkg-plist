@@ -11,4 +11,4 @@ etc/rc.d/rbldnsd.sh
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.spec
 %%PORTDOCS%%%%DOCSDIR%%/rbldnsd.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/rbldnsd/ 2>/dev/null || true
+@dirrmtry etc/rbldnsd/

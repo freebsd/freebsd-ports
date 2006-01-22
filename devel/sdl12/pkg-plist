@@ -81,4 +81,4 @@ share/aclocal/sdl11.m4
 %%EXAMPLESDIR%%/threadwin.c
 %%EXAMPLESDIR%%/torturethread.c
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/include/SDL11 2>/dev/null || true
+@dirrmtry include/SDL11

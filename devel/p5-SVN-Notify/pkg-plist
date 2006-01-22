@@ -2,6 +2,6 @@ bin/svnnotify
 %%SITE_PERL%%/SVN/Notify.pm
 %%SITE_PERL%%/SVN/Notify/HTML.pm
 %%SITE_PERL%%/SVN/Notify/HTML/ColorDiff.pm
-@unexec rmdir %D/%%SITE_PERL%%/SVN/Notify/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SVN/Notify 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SVN/Notify/HTML
+@dirrmtry %%SITE_PERL%%/SVN/Notify
+@dirrmtry %%SITE_PERL%%/SVN

@@ -30,5 +30,5 @@ share/locale/it/LC_MESSAGES/pureadmin.mo
 share/locale/sv/LC_MESSAGES/pureadmin.mo
 @dirrm share/gnome/pureadmin/docs
 @dirrm share/gnome/pureadmin
-@unexec rmdir %D/share/icons/hicolor/24x24/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/24x24 2>/dev/null || true
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24

@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Parse/PerlConfig.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/PerlConfig/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/PerlConfig
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
+@dirrmtry %%SITE_PERL%%/Parse

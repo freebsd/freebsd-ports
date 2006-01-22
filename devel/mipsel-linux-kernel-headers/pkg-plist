@@ -759,4 +759,4 @@ mipsel-linux/include/asm
 @dirrm mipsel-linux/include/linux/sunrpc
 @dirrm mipsel-linux/include/linux
 @dirrm mipsel-linux/include
-@unexec rmdir %D/mipsel-linux 2> /dev/null || true
+@dirrmtry mipsel-linux

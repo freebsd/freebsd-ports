@@ -311,8 +311,8 @@ share/locale/uk/LC_MESSAGES/goffice.mo
 share/locale/vi/LC_MESSAGES/goffice.mo
 share/locale/zh_CN/LC_MESSAGES/goffice.mo
 share/locale/zh_TW/LC_MESSAGES/goffice.mo
-@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/mr 2> /dev/null || true
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrm share/gnome/pixmaps/goffice
 @dirrm share/gnome/goffice/%%VERSION%%/patterns
 @dirrm share/gnome/goffice/%%VERSION%%/glade

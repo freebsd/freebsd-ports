@@ -693,46 +693,46 @@ share/locale/sr@Latn/LC_MESSAGES/kile.mo
 share/locale/sv/LC_MESSAGES/kile.mo
 share/locale/ta/LC_MESSAGES/kile.mo
 share/mimelnk/text/x-kilepr.desktop
-@unexec rmdir %D/share/mimelnk/text 2>/dev/null || true
-@unexec rmdir %D/share/mimelnk 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sr 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fi 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/mimelnk/text
+@dirrmtry share/mimelnk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/sv/kile
-@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrmtry share/doc/HTML/sv
 @dirrm share/doc/HTML/pt/kile
-@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrmtry share/doc/HTML/pt
 @dirrm share/doc/HTML/nl/kile
-@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
+@dirrmtry share/doc/HTML/nl
 @dirrm share/doc/HTML/it/kile
-@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/et/kile
-@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrmtry share/doc/HTML/et
 @dirrm share/doc/HTML/en/kile
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/da/kile
-@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/config.kcfg 2>/dev/null || true
+@dirrmtry share/doc/HTML/da
+@dirrmtry share/doc/HTML
+@dirrmtry share/config.kcfg
 @dirrm share/apps/kile/test
 @dirrm share/apps/kile/templates
 @dirrm share/apps/kile/pics
@@ -754,7 +754,7 @@ share/mimelnk/text/x-kilepr.desktop
 @dirrm share/apps/kile/complete/abbreviation
 @dirrm share/apps/kile/complete
 @dirrm share/apps/kile
-@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applications/kde 2>/dev/null || true
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/apps/kconf_update
+@dirrmtry share/apps
+@dirrmtry share/applications/kde
+@dirrmtry share/applications

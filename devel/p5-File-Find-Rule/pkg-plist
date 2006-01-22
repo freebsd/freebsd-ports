@@ -2,6 +2,6 @@ bin/findrule
 %%SITE_PERL%%/File/Find/Rule.pm
 %%SITE_PERL%%/File/Find/Rule/Extending.pod
 %%SITE_PERL%%/File/Find/Rule/Procedural.pod
-@unexec rmdir %D/%%SITE_PERL%%/File/Find/Rule 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File/Find 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/File/Find/Rule
+@dirrmtry %%SITE_PERL%%/File/Find
+@dirrmtry %%SITE_PERL%%/File

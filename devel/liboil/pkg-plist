@@ -44,7 +44,7 @@ share/gtk-doc/html/liboil/right.png
 share/gtk-doc/html/liboil/style.css
 share/gtk-doc/html/liboil/up.png
 @dirrm share/gtk-doc/html/liboil
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/liboil-%%VERSION%%/liboil
 @dirrm include/liboil-%%VERSION%%

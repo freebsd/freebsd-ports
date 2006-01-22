@@ -57,5 +57,5 @@ lib/libgii.so.1
 @dirrm include/ggi/internal
 @dirrm include/ggi/input
 @dirrm include/ggi
-@unexec rmdir %D/etc/ggi/filter 2>/dev/null || true
-@unexec rmdir %D/etc/ggi 2>/dev/null || true
+@dirrmtry etc/ggi/filter
+@dirrmtry etc/ggi

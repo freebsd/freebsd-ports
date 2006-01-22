@@ -8,4 +8,4 @@ lib/libpreps.so.2
 %%DATADIR%%/new_pr.msg
 %%DATADIR%%/update.msg
 @dirrm include/preps
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

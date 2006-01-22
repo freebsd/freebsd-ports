@@ -533,7 +533,7 @@
 @dirrm %%BUGZILLADIR%%/template/en/default/account
 @dirrm %%BUGZILLADIR%%/template/en/default
 @dirrm %%BUGZILLADIR%%/template/en
-@unexec rmdir %D/%%BUGZILLADIR%%/template 2>/dev/null || true
+@dirrmtry %%BUGZILLADIR%%/template
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/gnatsparse
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/bugzilla-submit
@@ -548,16 +548,16 @@
 @dirrm %%BUGZILLADIR%%/Bugzilla/Auth/Login/WWW
 @dirrm %%BUGZILLADIR%%/Bugzilla/Auth/Login
 @dirrm %%BUGZILLADIR%%/Bugzilla/Auth
-@unexec rmdir %D/%%BUGZILLADIR%%/Bugzilla 2>/dev/null || true
-@unexec rmdir %D/%%BUGZILLADIR%%/data 2>/dev/null || true
-@unexec rmdir %D/%%BUGZILLADIR%%/graphs 2>/dev/null || true
+@dirrmtry %%BUGZILLADIR%%/Bugzilla
+@dirrmtry %%BUGZILLADIR%%/data
+@dirrmtry %%BUGZILLADIR%%/graphs
 @dirrm %%BUGZILLADIR%%/images
 @dirrm %%BUGZILLADIR%%/js
 @dirrm %%BUGZILLADIR%%/skins/standard/index
 @dirrm %%BUGZILLADIR%%/skins/standard/global
 @dirrm %%BUGZILLADIR%%/skins/standard
 @dirrm %%BUGZILLADIR%%/skins
-@unexec rmdir %D/%%BUGZILLADIR%% 2>/dev/null || true
+@dirrmtry %%BUGZILLADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf

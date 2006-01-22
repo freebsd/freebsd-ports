@@ -185,5 +185,5 @@ mipsel-linux/lib/snow/specs
 @dirrm mipsel-linux/etc
 @dirrm mipsel-linux/lib/snow-specs
 @dirrm mipsel-linux/lib/snow
-@unexec rmdir %D/mipsel-linux/lib 2> /dev/null || true
-@unexec rmdir %D/mipsel-linux 2> /dev/null || true
+@dirrmtry mipsel-linux/lib
+@dirrmtry mipsel-linux

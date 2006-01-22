@@ -4,5 +4,5 @@ bin/dprofpp
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf/DProf.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/DProf
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Devel 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel

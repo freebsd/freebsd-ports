@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Net/Domain/TLD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain/TLD/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain/TLD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net/Domain 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain/TLD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Domain
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Domain
+@dirrmtry %%SITE_PERL%%/Net

@@ -28,5 +28,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
 @dirrm %%SITE_PERL%%/Date/Language
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate
-@unexec rmdir %D/%%SITE_PERL%%/Time 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Time
+@dirrmtry %%SITE_PERL%%/Date

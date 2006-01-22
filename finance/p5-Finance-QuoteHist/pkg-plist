@@ -3,6 +3,6 @@
 %%SITE_PERL%%/Finance/QuoteHist/Generic.pm
 %%SITE_PERL%%/Finance/QuoteHist/QuoteMedia.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo.pm
-@unexec rmdir %D/%%SITE_PERL%%/Finance/QuoteHist 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Finance 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Finance/QuoteHist
+@dirrmtry %%SITE_PERL%%/Finance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist

@@ -81,4 +81,4 @@ bin/vcp
 @dirrm %%SITE_PERL%%/VCP/Utils
 @dirrm %%SITE_PERL%%/VCP
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCP

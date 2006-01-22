@@ -153,4 +153,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libintl-perl
 @dirrm %%SITE_PERL%%/Locale/RecodeData
 @dirrm %%SITE_PERL%%/Locale/Recode
-@unexec rmdir %D/%%SITE_PERL%%/Locale 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Locale

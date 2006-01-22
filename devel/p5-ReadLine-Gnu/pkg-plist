@@ -8,7 +8,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/XS
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Term/ReadLine/Gnu
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Term/ReadLine 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Term 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/ReadLine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term/ReadLine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Term

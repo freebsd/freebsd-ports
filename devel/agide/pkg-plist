@@ -71,4 +71,4 @@ lib/aap/Agide-%%PORTVERSION%%/startup.vim
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Tools
 @dirrm lib/aap/Agide-%%PORTVERSION%%
-@unexec rmdir %D/lib/aap 2>/dev/null || true
+@dirrmtry lib/aap

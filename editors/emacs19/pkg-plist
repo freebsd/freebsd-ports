@@ -12,7 +12,7 @@ bin/emacsclient
 etc/rc.d/emacs.sh
 @comment This can fail if other ports are installed, no need to
 @comment scare user in that case
-@unexec rmdir %D/share/emacs/%%EMACS_VERSION%%/site-lisp 2>/dev/null || true
+@dirrmtry share/emacs/%%EMACS_VERSION%%/site-lisp
 @unexec install-info --delete %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
@@ -125,7 +125,7 @@ libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/vcdiff
 libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/yow
 @dirrm libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VERSION%%
-@unexec rmdir %D/libexec/emacs 2>/dev/null || true
+@dirrmtry libexec/emacs
 share/emacs/%%EMACS_VERSION%%/etc/3B-MAXMEM
 share/emacs/%%EMACS_VERSION%%/etc/AIX.DUMP
 share/emacs/%%EMACS_VERSION%%/etc/BABYL

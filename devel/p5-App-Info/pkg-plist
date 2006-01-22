@@ -18,4 +18,4 @@
 @dirrm %%SITE_PERL%%/App/Info/RDBMS
 @dirrm %%SITE_PERL%%/App/Info/HTTPD
 @dirrm %%SITE_PERL%%/App/Info
-@unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/App

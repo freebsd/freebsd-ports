@@ -26,4 +26,4 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 @dirrm %%CSSDIR%%/cvsweb
 share/enscript/hl/lang_cvsweb.st
 share/enscript/hl/lang_cvsweb_diff.st
-@unexec rmdir %D/share/enscript/hl 2>/dev/null || true
+@dirrmtry share/enscript/hl

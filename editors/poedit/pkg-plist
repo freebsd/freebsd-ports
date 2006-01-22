@@ -62,23 +62,23 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help.zip
 %%DATADIR%%/resources.zip
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/tt/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/tt 2> /dev/null || true
-@unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sv_SE 2> /dev/null || true
-@unexec rmdir %D/share/locale/sq_AL/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sq_AL 2> /dev/null || true
-@unexec rmdir %D/share/locale/ky/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ky 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ku 2> /dev/null || true
-@unexec rmdir %D/share/locale/fur/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/fur 2> /dev/null || true
-@unexec rmdir %D/share/locale/es_PR/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/es_PR 2> /dev/null || true
-@unexec rmdir %D/share/locale/ast/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ast 2> /dev/null || true
-@unexec rmdir %D/share/locale/am_ET/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/am_ET 2> /dev/null || true
-@unexec rmdir %D/share/locale/af_ZA/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/af_ZA 2> /dev/null || true
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/sq_AL/LC_MESSAGES
+@dirrmtry share/locale/sq_AL
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
+@dirrmtry share/locale/es_PR/LC_MESSAGES
+@dirrmtry share/locale/es_PR
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/am_ET/LC_MESSAGES
+@dirrmtry share/locale/am_ET
+@dirrmtry share/locale/af_ZA/LC_MESSAGES
+@dirrmtry share/locale/af_ZA

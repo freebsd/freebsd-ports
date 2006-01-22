@@ -169,22 +169,22 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
-@unexec rmdir %D/share/locale/ne/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ne 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
-@unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
-@unexec rmdir %D/share/locale/te/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/te 2> /dev/null || true
-@unexec rmdir %D/share/locale/tl/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/tl 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/xh 2> /dev/null || true
-@unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/yi 2> /dev/null || true
-@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zh_HK 2> /dev/null || true
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrm share/glib-2.0/gettext/po
 @dirrm share/glib-2.0/gettext
 @dirrm share/glib-2.0

@@ -5,5 +5,5 @@
 %%SITE_PERL%%/Time/ParseDate.pm
 %%SITE_PERL%%/Time/Timezone.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules
-@unexec rmdir %D/%%SITE_PERL%%/Time 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Time
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time

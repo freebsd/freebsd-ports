@@ -12,8 +12,8 @@ bin/rcs-checkin
 @exec if [ ! -d %d/share/mule/%%EMACS_VERSION%%/site-lisp ]; then mkdir -p %D/share/mule/%%EMACS_VERSION%%/site-lisp; fi
 @comment these two can fail if other ports are installed, no need to
 @comment scare user in that case
-@unexec rmdir %D/share/mule/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/mule/%%EMACS_VERSION%%/site-lisp 2>/dev/null || true
+@dirrmtry share/mule/site-lisp
+@dirrmtry share/mule/%%EMACS_VERSION%%/site-lisp
 @unexec install-info --delete %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
@@ -152,7 +152,7 @@ info/terminology
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).			Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 @comment
 @exec [ -f %D/share/mule/%%EMACS_VERSION%%/info/dir ] || mkdir -p %D/share/mule/%%EMACS_VERSION%%/info
-@unexec rmdir %D/share/mule/%%EMACS_VERSION%%/info 2>/dev/null || true
+@dirrmtry share/mule/%%EMACS_VERSION%%/info
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/cvtmail
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/digest-doc
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/emacsserver

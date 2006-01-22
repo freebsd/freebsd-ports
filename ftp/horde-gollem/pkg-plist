@@ -160,5 +160,5 @@
 @dirrm %%GOLLEMDIR%%/lib/Auth
 @dirrm %%GOLLEMDIR%%/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/%%GOLLEMDIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%GOLLEMDIR%% 2>/dev/null || true
+@dirrmtry %%GOLLEMDIR%%/config
+@dirrmtry %%GOLLEMDIR%%

@@ -7,7 +7,7 @@
 %%SITE_PERL%%/Algorithm/Dependency/Weight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Dependency
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 @dirrm %%SITE_PERL%%/Algorithm/Dependency/Source
 @dirrm %%SITE_PERL%%/Algorithm/Dependency
-@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Algorithm

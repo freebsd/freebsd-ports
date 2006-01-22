@@ -9,4 +9,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Lock/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/File
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Lock
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

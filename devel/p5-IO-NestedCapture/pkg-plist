@@ -1,2 +1,2 @@
 %%SITE_PERL%%/IO/NestedCapture.pm
-@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/IO

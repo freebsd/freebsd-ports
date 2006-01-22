@@ -1,11 +1,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/.packlist
 %%SITE_PERL%%/Finance/Currency/Convert.pm
 %%SITE_PERL%%/auto/Finance/Currency/Convert/autosplit.ix
-@unexec rmdir %D/%%SITE_PERL%%/auto/Finance/Currency/Convert 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/Finance/Currency 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/Finance 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Finance/Currency 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Finance 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Finance/Currency/Convert
+@dirrmtry %%SITE_PERL%%/auto/Finance/Currency
+@dirrmtry %%SITE_PERL%%/auto/Finance
+@dirrmtry %%SITE_PERL%%/Finance/Currency
+@dirrmtry %%SITE_PERL%%/Finance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/Currency
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance

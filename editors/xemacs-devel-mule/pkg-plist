@@ -1,30 +1,30 @@
 @exec mkdir -p %D/lib/xemacs/site-packages/etc
-@unexec rmdir %D/lib/xemacs/site-packages/etc 2>/dev/null || true
+@dirrmtry lib/xemacs/site-packages/etc
 @exec mkdir -p %D/lib/xemacs/site-packages/info
-@unexec rmdir %D/lib/xemacs/site-packages/info 2>/dev/null || true
+@dirrmtry lib/xemacs/site-packages/info
 @exec mkdir -p %D/lib/xemacs/site-packages/man
-@unexec rmdir %D/lib/xemacs/site-packages/man 2>/dev/null || true
+@dirrmtry lib/xemacs/site-packages/man
 @exec mkdir -p %D/lib/xemacs/site-packages/pkginfo
-@unexec rmdir %D/lib/xemacs/site-packages/pkginfo 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/site-packages 2>/dev/null || true
+@dirrmtry lib/xemacs/site-packages/pkginfo
+@dirrmtry lib/xemacs/site-packages
 @exec mkdir -p %D/lib/xemacs/mule-packages/etc
-@unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/etc
 @exec mkdir -p %D/lib/xemacs/mule-packages/info
-@unexec rmdir %D/lib/xemacs/mule-packages/info 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/info
 @exec mkdir -p %D/lib/xemacs/mule-packages/man
-@unexec rmdir %D/lib/xemacs/mule-packages/man 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/man
 @exec mkdir -p %D/lib/xemacs/mule-packages/pkginfo
-@unexec rmdir %D/lib/xemacs/mule-packages/pkginfo 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
+@dirrmtry lib/xemacs/mule-packages/pkginfo
+@dirrmtry lib/xemacs/mule-packages
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/etc
-@unexec rmdir %D/lib/xemacs/xemacs-packages/etc 2>/dev/null || true
+@dirrmtry lib/xemacs/xemacs-packages/etc
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/info
-@unexec rmdir %D/lib/xemacs/xemacs-packages/info 2>/dev/null || true
+@dirrmtry lib/xemacs/xemacs-packages/info
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/man
-@unexec rmdir %D/lib/xemacs/xemacs-packages/man 2>/dev/null || true
+@dirrmtry lib/xemacs/xemacs-packages/man
 @exec mkdir -p %D/lib/xemacs/xemacs-packages/pkginfo
-@unexec rmdir %D/lib/xemacs/xemacs-packages/pkginfo 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@dirrmtry lib/xemacs/xemacs-packages/pkginfo
+@dirrmtry lib/xemacs/xemacs-packages
 @exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 bin/b2m
 bin/ctags
@@ -1497,4 +1497,4 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom/example-themes
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
-@unexec rmdir %D/lib/xemacs-%%XEMACS_VER%% 2>/dev/null || true
+@dirrmtry lib/xemacs-%%XEMACS_VER%%

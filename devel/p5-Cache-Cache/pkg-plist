@@ -20,5 +20,5 @@
 %%SITE_PERL%%/Cache/SizeAwareSharedMemoryCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Cache/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Cache
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Cache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/Cache

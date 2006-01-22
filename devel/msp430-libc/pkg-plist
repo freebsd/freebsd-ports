@@ -819,4 +819,4 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples
 @dirrm %%LIBC_TARG%%/share/mspgcc/doc
 @dirrm %%LIBC_TARG%%/share/mspgcc
-@unexec rmdir %D/%%LIBC_TARG%%/share 2>/dev/null || true
+@dirrmtry %%LIBC_TARG%%/share

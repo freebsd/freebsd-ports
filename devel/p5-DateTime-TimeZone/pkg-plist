@@ -398,4 +398,4 @@
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Africa
 @dirrm %%SITE_PERL%%/DateTime/TimeZone
-@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/DateTime

@@ -4,5 +4,5 @@
 %%SITE_PERL%%/mach/auto/Text/LevenshteinXS/.packlist
 %%SITE_PERL%%/mach/Text/LevenshteinXS.pm
 @dirrm %%SITE_PERL%%/mach/auto/Text/LevenshteinXS
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/mach/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/mach/auto/Text
+@dirrmtry %%SITE_PERL%%/mach/Text

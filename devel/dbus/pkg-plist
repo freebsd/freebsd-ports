@@ -45,8 +45,8 @@ libdata/pkgconfig/dbus-glib-1.pc
 @exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %D/share/dbus-1/services
 @exec mkdir -p %%X11BASE%%/share/dbus-1/services
-@unexec rmdir %D/share/dbus-1/services 2>/dev/null || true
-@unexec rmdir %D/share/dbus-1 2>/dev/null || true
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1
 @unexec rmdir %%X11BASE%%/share/dbus-1/services 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/dbus-1 2>/dev/null || true
 @dirrm include/dbus-%%VERSION%%/include/dbus
