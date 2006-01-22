@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	ldap_integration
-PORTVERSION=	4.6.0
+DISTVERSION=	${DRUPVERSION}
+PORTREVISION=	20060117
 CATEGORIES=	security www
-MASTER_SITES=	http://drupal.org/files/projects/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	drupal-
 DIST_SUBDIR=	drupal
 
@@ -57,6 +59,7 @@ pre-fetch:
 .endif
 
 DRUPDIR?=	www/drupal
+DRUPVERSION?=	4.6.0
 
 do-install:
 .if defined(MODULE_CONF_DIRS)
