@@ -3,8 +3,8 @@ bin/emiclock
 lib/X11/app-defaults/EmiClock
 lib/X11/ja_JP.EUC/app-defaults/EmiClock
 lib/X11/ja_JP.eucJP/app-defaults/EmiClock
-@unexec rmdir %D/lib/X11/ja_JP.eucJP/app-defaults 2>/dev/null || true
-@unexec rmdir %D/lib/X11/ja_JP.eucJP 2>/dev/null || true
-@unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
-@unexec rmdir %D/lib/X11/ja_JP.EUC 2>/dev/null || true
-@unexec rmdir %D/lib/X11/EmiClock 2>/dev/null || true
+@dirrmtry lib/X11/ja_JP.eucJP/app-defaults
+@dirrmtry lib/X11/ja_JP.eucJP
+@dirrmtry lib/X11/ja_JP.EUC/app-defaults
+@dirrmtry lib/X11/ja_JP.EUC
+@dirrmtry lib/X11/EmiClock

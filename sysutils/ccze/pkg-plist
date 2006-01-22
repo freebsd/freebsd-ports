@@ -21,6 +21,6 @@ lib/ccze/syslog.so
 lib/ccze/ulogd.so
 lib/ccze/vsftpd.so
 lib/ccze/xferlog.so
-@unexec rmdir %D/lib/ccze 2>/dev/null || true
+@dirrmtry lib/ccze
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%@dirrm share/doc/ccze

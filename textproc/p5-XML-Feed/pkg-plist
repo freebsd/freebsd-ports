@@ -4,4 +4,4 @@
 %%SITE_PERL%%/XML/Feed/Entry.pm
 %%SITE_PERL%%/XML/Feed/RSS.pm
 @dirrm %%SITE_PERL%%/XML/Feed
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

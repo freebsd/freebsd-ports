@@ -2,7 +2,7 @@
 %%SITE_PERL%%/Net/Divert.pm
 %%SITE_PERL%%/auto/Net/Divert/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Divert
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/auto/Net/Divert
-@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net

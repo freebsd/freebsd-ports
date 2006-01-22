@@ -3,4 +3,4 @@ bin/mkdtdskel
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DT/.packlist
 %%SITE_PERL%%/XML/DT.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DT
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

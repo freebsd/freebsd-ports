@@ -44,7 +44,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrib.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynetcdf.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/numru 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb

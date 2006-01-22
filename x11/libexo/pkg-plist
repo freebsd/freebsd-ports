@@ -60,13 +60,13 @@ share/gtk-doc/html/exo/style.css
 share/gtk-doc/html/exo/up.png
 %%PYTHON%%share/pygtk/2.0/defs/exo-0.3/exo.defs
 %%PYTHON%%@dirrm share/pygtk/2.0/defs/exo-0.3
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
 %%PYTHON%%@unexec rmdir %D/share/pygtk/2.0/defs 2> /dev/null || true
 %%PYTHON%%@unexec rmdir %D/share/pygtk/2.0 2> /dev/null || true
 %%PYTHON%%@unexec rmdir %D/share/pygtk 2> /dev/null || true
 @dirrm share/gtk-doc/html/exo
-@unexec rmdir %D/share/gtk-doc/html 2> /dev/null || true
-@unexec rmdir %D/share/gtk-doc 2> /dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 %%PYTHON%%@dirrm lib/python2.4/site-packages/exo-0.3/exo
 %%PYTHON%%@dirrm lib/python2.4/site-packages/exo-0.3
 %%PYTHON%%@unexec rmdir %D/lib/python2.4/site-packages 2> /dev/null || true

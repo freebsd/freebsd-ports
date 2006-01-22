@@ -6,8 +6,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus/Cyrus.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL/Cyrus
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Authen 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen/SASL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Authen
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/Cyrus
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen

@@ -16,4 +16,4 @@ share/sgml/docbook/4.2/docbookx.dtd
 share/sgml/docbook/4.2/soextblx.dtd
 share/sgml/docbook/4.2/README
 @dirrm share/sgml/docbook/4.2
-@unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
+@dirrmtry share/sgml/docbook

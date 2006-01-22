@@ -10,4 +10,4 @@
 %%SITE_PERL%%/XML/Atom/Thing.pm
 %%SITE_PERL%%/XML/Atom/Util.pm
 @dirrm %%SITE_PERL%%/XML/Atom
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

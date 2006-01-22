@@ -2,6 +2,6 @@
 %%SITE_PERL%%/Text/Diff/Table.pm
 %%SITE_PERL%%/Text/Diff.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Diff
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/Diff
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Text

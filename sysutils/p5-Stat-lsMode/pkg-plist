@@ -1,5 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stat/lsMode/.packlist
 %%SITE_PERL%%/Stat/lsMode.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stat/lsMode
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Stat 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Stat 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stat
+@dirrmtry %%SITE_PERL%%/Stat

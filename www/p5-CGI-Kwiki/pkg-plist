@@ -43,4 +43,4 @@ bin/kwiki-install
 @dirrm %%SITE_PERL%%/CGI/Kwiki/I18N
 @dirrm %%SITE_PERL%%/CGI/Kwiki/Backup
 @dirrm %%SITE_PERL%%/CGI/Kwiki
-@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/CGI

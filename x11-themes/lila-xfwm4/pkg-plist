@@ -75,4 +75,4 @@ share/themes/Lila-light/xfwm4/title-2-active.xpm
 @dirrm share/themes/Lila/xfwm4
 @dirrm share/themes/Lila-light
 @dirrm share/themes/Lila
-@unexec rmdir %D/share/themes 2>/dev/null || true
+@dirrmtry share/themes

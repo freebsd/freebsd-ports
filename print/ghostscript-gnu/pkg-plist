@@ -365,7 +365,7 @@ share/ghostscript/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%
-@unexec rmdir %D/share/ghostscript 2>/dev/null || true
+@dirrmtry share/ghostscript
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k

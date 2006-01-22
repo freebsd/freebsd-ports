@@ -145,13 +145,13 @@ smokeping/lib/Smokeping/probes/skel.pm
 smokeping/lib/Smokeping/Examples.pm
 smokeping/lib/Smokeping/RRDtools.pm
 smokeping/lib/Config/Grammar.pm
-@unexec rmdir %D/etc/smokeping 2>/dev/null || true
+@dirrmtry etc/smokeping
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
 @unexec rm -rf %D/smokeping/htdocs/img 2>/dev/null || true
 @exec mkdir -p %D/var/smokeping
 @exec chown smokeping:smokeping %D/var/smokeping
-@unexec rmdir %D/var/smokeping 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var/smokeping
+@dirrmtry var
 @dirrm smokeping/htdocs
 @dirrm smokeping/lib/Config
 @dirrm smokeping/lib/Smokeping/probes
@@ -164,4 +164,4 @@ smokeping/lib/Config/Grammar.pm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/smokeping 2>/dev/null || true
+@dirrmtry smokeping

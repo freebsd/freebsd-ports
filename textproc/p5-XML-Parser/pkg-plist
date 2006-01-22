@@ -32,8 +32,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/LWPExternEnt.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Expat
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Style
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

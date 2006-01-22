@@ -227,7 +227,7 @@ news/lib/libstorage.a
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/news/tmp 2>/dev/null || true
+@dirrmtry news/tmp
 @dirrm news/spool/overview
 @dirrm news/spool/outgoing
 @dirrm news/spool/innfeed
@@ -241,7 +241,7 @@ news/lib/libstorage.a
 @dirrm news/lib
 @dirrm news/include/inn
 @dirrm news/include
-@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || true
+@dirrmtry %%ETCDIR%%
 @dirrm news/doc
 @dirrm news/db
 @dirrm news/bin/rnews.libexec

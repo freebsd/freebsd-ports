@@ -34,4 +34,4 @@ f-prot/tools/check-updates.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm f-prot/tools
 @dirrm f-prot/etc
-@unexec rmdir %D/f-prot 2>/dev/null || true
+@dirrmtry f-prot

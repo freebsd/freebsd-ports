@@ -158,5 +158,5 @@ libdata/pkgconfig/fontconfig.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/fontconfig-devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/fontconfig
-@unexec rmdir %D/etc/fonts/conf.d 2> /dev/null || true
-@unexec rmdir %D/etc/fonts 2> /dev/null || true
+@dirrmtry etc/fonts/conf.d
+@dirrmtry etc/fonts

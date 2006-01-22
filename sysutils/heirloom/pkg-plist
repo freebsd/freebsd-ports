@@ -270,11 +270,11 @@
 @dirrm %%DATADIR%%/usr/ucb
 @dirrm %%DATADIR%%/usr/share/man/5man/man8
 @dirrm %%DATADIR%%/usr/share/man/5man/man7
-@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man6 2>/dev/null || true
+@dirrmtry %%DATADIR%%/usr/share/man/5man/man6
 @dirrm %%DATADIR%%/usr/share/man/5man/man5
-@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man4 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man3 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man2 2>/dev/null || true
+@dirrmtry %%DATADIR%%/usr/share/man/5man/man4
+@dirrmtry %%DATADIR%%/usr/share/man/5man/man3
+@dirrmtry %%DATADIR%%/usr/share/man/5man/man2
 @dirrm %%DATADIR%%/usr/share/man/5man/man1m
 @dirrm %%DATADIR%%/usr/share/man/5man/man1b
 @dirrm %%DATADIR%%/usr/share/man/5man/man1

@@ -11,4 +11,4 @@
 @dirrm %%SITE_PERL%%/XML/Parser/Style
 @dirrm %%SITE_PERL%%/XML/Parser
 @dirrm %%SITE_PERL%%/XML/Elemental
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

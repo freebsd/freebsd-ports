@@ -63,11 +63,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/bind.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX/setdebug.al
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net/TCP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net/UNIX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Inet 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UDP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/TCP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/UNIX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Gen
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Inet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UDP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/UNIX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

@@ -81,12 +81,12 @@
 %%DALBUM_DIR%%/reindex.php
 %%DALBUM_DIR%%/showimg.php
 %%DALBUM_DIR%%/version.txt
-@unexec rmdir %D/%%DALBUM_DIR%%/pictures/Sample\ album 2>/dev/null || true
-@unexec rmdir %D/%%DALBUM_DIR%%/pictures 2>/dev/null || true
+@dirrmtry %%DALBUM_DIR%%/pictures/Sample\ album
+@dirrmtry %%DALBUM_DIR%%/pictures
 @dirrm %%DALBUM_DIR%%/include/lang
 @dirrm %%DALBUM_DIR%%/include
 @dirrm %%DALBUM_DIR%%/images/folder
 @dirrm %%DALBUM_DIR%%/images
 @dirrm %%DALBUM_DIR%%/config
-@unexec rmdir %D/%%DALBUM_DIR%%/.private 2>/dev/null || true
+@dirrmtry %%DALBUM_DIR%%/.private
 @dirrm %%DALBUM_DIR%%

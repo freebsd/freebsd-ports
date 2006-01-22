@@ -14,6 +14,6 @@
 %%SITE_PERL%%/XML/Smart/XPath.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrm %%SITE_PERL%%/XML/Smart
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

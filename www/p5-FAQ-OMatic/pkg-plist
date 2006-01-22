@@ -63,7 +63,7 @@
 %%SITE_PERL%%/FAQ/OMatic/API.pm
 %%SITE_PERL%%/FAQ/OMatic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ/OMatic/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/FAQ/OMatic 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/FAQ 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ/OMatic 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/FAQ/OMatic
+@dirrmtry %%SITE_PERL%%/FAQ
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ/OMatic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FAQ

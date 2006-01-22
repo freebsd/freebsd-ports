@@ -53,7 +53,7 @@ sbin/sshd2
 %%EXAMPLESDIR%%/ext_authorization_example.sh
 %%EXAMPLESDIR%%/kbdint_plugin_example.sh
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/etc/ssh2/hostkeys 2> /dev/null || true
-@unexec rmdir %D/etc/ssh2/knownhosts 2> /dev/null || true
-@unexec rmdir %D/etc/ssh2/subconfig 2> /dev/null || true
+@dirrmtry etc/ssh2/hostkeys
+@dirrmtry etc/ssh2/knownhosts
+@dirrmtry etc/ssh2/subconfig
 @unexec rmdir %D/etc/ssh2 2> /dev/null || echo "If permanently deleting this package, %D/etc/ssh2 and its contents must be removed manually."

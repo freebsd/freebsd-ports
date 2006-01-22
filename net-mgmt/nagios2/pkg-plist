@@ -286,7 +286,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/stylesheets/summary.css
 %%NAGIOSWWWDIR%%/stylesheets/tac.css
 %%NAGIOSWWWDIR%%/stylesheets/trends.css
-@unexec rmdir %D/etc/nagios 2>/dev/null || true
+@dirrmtry etc/nagios
 @dirrm %%NAGIOSWWWDIR%%/cgi-bin
 @dirrm %%NAGIOSWWWDIR%%/contexthelp
 @dirrm %%NAGIOSWWWDIR%%/docs/images
@@ -296,7 +296,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/media
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets
-@unexec rmdir %D/%%NAGIOSWWWDIR%% 2>/dev/null || true
+@dirrmtry %%NAGIOSWWWDIR%%
 @unexec rmdir %%NAGIOSDIR%%/archives 2>/dev/null || true
 @unexec rmdir %%NAGIOSDIR%%/rw 2>/dev/null || true
 @unexec rmdir %%NAGIOSDIR%% 2>/dev/null || true

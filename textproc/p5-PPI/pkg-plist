@@ -79,10 +79,10 @@
 @dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
 @dirrm %%SITE_PERL%%/PPI/Token/Regexp
 @dirrm %%SITE_PERL%%/PPI/Token/Quote
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI/Statement 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI/Structure 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI/Document 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI/Normal 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI/Token 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PPI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
+@dirrmtry %%SITE_PERL%%/PPI/Statement
+@dirrmtry %%SITE_PERL%%/PPI/Structure
+@dirrmtry %%SITE_PERL%%/PPI/Document
+@dirrmtry %%SITE_PERL%%/PPI/Normal
+@dirrmtry %%SITE_PERL%%/PPI/Token
+@dirrmtry %%SITE_PERL%%/PPI

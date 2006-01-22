@@ -260,32 +260,32 @@ share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
 %%GUI%%@dirrm share/pixmaps/BitTorrent
 %%GUI%%@unexec rmdir %D/share/pixmaps 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sl 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ko 2>/dev/null || true
-@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/el 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

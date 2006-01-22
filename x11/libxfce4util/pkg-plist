@@ -44,10 +44,10 @@ share/xfce4/m4/debug.m4
 share/xfce4/m4/depends.m4
 share/xfce4/m4/i18n.m4
 @dirrm include/xfce4/libxfce4util
-@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@dirrmtry include/xfce4
 @dirrm share/gtk-doc/html/libxfce4util
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm share/xfce4/m4
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
-@unexec rmdir %D/sbin 2>/dev/null || true
+@dirrmtry share/xfce4
+@dirrmtry sbin

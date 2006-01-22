@@ -544,30 +544,30 @@ share/locale/sv/cups_sv
 share/locale/uk/cups_uk
 share/locale/uk_UA/cups_uk_UA
 share/locale/zh_CN/cups_zh_CN
-@unexec rmdir %D/man/fr/man8 2>/dev/null || true
-@unexec rmdir %D/man/fr/man5 2>/dev/null || true
-@unexec rmdir %D/man/fr/man1 2>/dev/null || true
-@unexec rmdir %D/man/fr 2>/dev/null || true
-@unexec rmdir %D/man/es/man8 2>/dev/null || true
-@unexec rmdir %D/man/es/man5 2>/dev/null || true
-@unexec rmdir %D/man/es/man1 2>/dev/null || true
-@unexec rmdir %D/man/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk_UA 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv 2>/dev/null || true
-@unexec rmdir %D/share/locale/ru_RU 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/he 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/en 2>/dev/null || true
-@unexec rmdir %D/share/locale/en_US 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/be 2>/dev/null || true
-@unexec rmdir %D/share/locale/C 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrmtry man/fr/man8
+@dirrmtry man/fr/man5
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man8
+@dirrmtry man/es/man5
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk_UA
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/it
+@dirrmtry share/locale/he
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/es
+@dirrmtry share/locale/en
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/de
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/be
+@dirrmtry share/locale/C
+@dirrmtry share/locale
 @dirrm share/doc/cups/images
 @dirrm share/doc/cups/be/images
 @dirrm share/doc/cups/be
@@ -604,4 +604,4 @@ share/locale/zh_CN/cups_zh_CN
 @exec mkdir %D/etc/cups/ppd || true
 @exec mkdir %D/etc/cups/interfaces || true
 @unexec rm -rf /var/spool/cups
-@unexec rmdir %D/etc/cups 2>/dev/null || true
+@dirrmtry etc/cups

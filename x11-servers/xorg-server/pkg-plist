@@ -200,8 +200,8 @@ lib/modules/multimedia/uda1380_drv.so
 @dirrm lib/modules/input
 @dirrm lib/modules/internal
 @dirrm lib/modules/multimedia
-@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
-@unexec rmdir %D/lib/X11/doc 2>/dev/null || true
-@unexec rmdir %D/lib/X11/etc 2>/dev/null || true
-@unexec rmdir %D/lib/X11/xserver 2>/dev/null || true
-@unexec rmdir %D/lib/modules 2>/dev/null || true
+@dirrmtry include/X11/pixmaps
+@dirrmtry lib/X11/doc
+@dirrmtry lib/X11/etc
+@dirrmtry lib/X11/xserver
+@dirrmtry lib/modules

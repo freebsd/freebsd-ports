@@ -10,6 +10,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/SSLeay.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

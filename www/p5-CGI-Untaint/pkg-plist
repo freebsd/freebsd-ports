@@ -6,6 +6,6 @@
 %%SITE_PERL%%/CGI/Untaint/printable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrm %%SITE_PERL%%/CGI/Untaint
-@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/CGI

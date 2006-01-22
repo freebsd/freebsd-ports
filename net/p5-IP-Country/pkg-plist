@@ -15,4 +15,4 @@ bin/ip2cc
 @dirrm %%SITE_PERL%%/IP/Country/Fast
 @dirrm %%SITE_PERL%%/IP/Country
 @dirrm %%SITE_PERL%%/IP/Authority
-@unexec rmdir %D/%%SITE_PERL%%/IP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/IP

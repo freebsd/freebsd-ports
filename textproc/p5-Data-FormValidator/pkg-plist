@@ -7,4 +7,4 @@
 %%SITE_PERL%%/Data/FormValidator/Results.pm
 @dirrm %%SITE_PERL%%/Data/FormValidator/Constraints
 @dirrm %%SITE_PERL%%/Data/FormValidator
-@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Data

@@ -460,4 +460,4 @@ slash/slash.sites
 @dirrm slash/plugins
 @dirrm slash/httpd
 @dirrm slash/bin
-@unexec rmdir %D/slash 2>/dev/null || true
+@dirrmtry slash

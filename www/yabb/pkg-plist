@@ -144,32 +144,32 @@
 %%YABBCGI%%/Variables/index.html
 %%YABBCGI%%/YaBB.pl
 %%YABBCGI%%/index.html
-@unexec rmdir %D/%%YABBCGI%%/Variables 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Templates/default 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Templates 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Sources 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Modules/Upload/CGI 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Modules/Upload 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Modules/Time 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Modules/Digest 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Modules 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Messages 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Members 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Languages/English 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Languages 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help/English/User 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help/English/Moderator 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help/English/Gmod 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help/English/Admin 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help/English 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Help 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Convert/Variables 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Convert/Messages 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Convert/Members 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Convert/Boards 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Convert 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Boards 2>/dev/null || true
-@unexec rmdir %D/%%YABBCGI%%/Admin 2>/dev/null || true
+@dirrmtry %%YABBCGI%%/Variables
+@dirrmtry %%YABBCGI%%/Templates/default
+@dirrmtry %%YABBCGI%%/Templates
+@dirrmtry %%YABBCGI%%/Sources
+@dirrmtry %%YABBCGI%%/Modules/Upload/CGI
+@dirrmtry %%YABBCGI%%/Modules/Upload
+@dirrmtry %%YABBCGI%%/Modules/Time
+@dirrmtry %%YABBCGI%%/Modules/Digest
+@dirrmtry %%YABBCGI%%/Modules
+@dirrmtry %%YABBCGI%%/Messages
+@dirrmtry %%YABBCGI%%/Members
+@dirrmtry %%YABBCGI%%/Languages/English
+@dirrmtry %%YABBCGI%%/Languages
+@dirrmtry %%YABBCGI%%/Help/English/User
+@dirrmtry %%YABBCGI%%/Help/English/Moderator
+@dirrmtry %%YABBCGI%%/Help/English/Gmod
+@dirrmtry %%YABBCGI%%/Help/English/Admin
+@dirrmtry %%YABBCGI%%/Help/English
+@dirrmtry %%YABBCGI%%/Help
+@dirrmtry %%YABBCGI%%/Convert/Variables
+@dirrmtry %%YABBCGI%%/Convert/Messages
+@dirrmtry %%YABBCGI%%/Convert/Members
+@dirrmtry %%YABBCGI%%/Convert/Boards
+@dirrmtry %%YABBCGI%%/Convert
+@dirrmtry %%YABBCGI%%/Boards
+@dirrmtry %%YABBCGI%%/Admin
 @unexec rmdir %D/%%YABBCGI%% 2>/dev/null || echo "Note: %D/%%YABBCGI%% not empty -- not deleted!"
 %%YABBFILES%%/Buttons/English/addfav.png
 %%YABBFILES%%/Buttons/English/admin.png

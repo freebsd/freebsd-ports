@@ -39,6 +39,6 @@ sbin/smbldap-usershow
 %%PORTDOCS%%%%DOCSDIR%%/html/smbldap-tools010.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/etc/smbldap-tools 2> /dev/null || true
+@dirrmtry etc/smbldap-tools
 @dirrm %%EXAMPLESDIR%%/etc
 @dirrm %%EXAMPLESDIR%%

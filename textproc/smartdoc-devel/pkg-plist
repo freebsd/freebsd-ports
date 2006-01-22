@@ -18,4 +18,4 @@ share/xml/smartdoc/catalog
 @dirrm %%EXAMPLESDIR%%/pure
 @dirrm %%EXAMPLESDIR%%/html4
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
+@dirrmtry lib/xemacs/site-lisp

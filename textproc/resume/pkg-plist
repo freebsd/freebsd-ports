@@ -67,7 +67,7 @@ share/xsl/resume/params.xsl
 @dirrm share/xsl/resume/format
 @dirrm share/xsl/resume/country
 @dirrm share/xsl/resume
-@unexec rmdir %D/share/xsl 2>/dev/null || true
+@dirrmtry share/xsl
 %%JAVAJARDIR%%/xmlresume-filter.jar
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/addressing/Makefile

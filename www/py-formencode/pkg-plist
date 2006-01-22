@@ -72,8 +72,8 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/WebwareExamples/__init__.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/WebwareExamples/index.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/webware_example.ini
-@unexec rmdir %D/%%PORTDOCS%%%%EXAMPLESDIR%%/WebwareExamples 2>/dev/null || true
-@unexec rmdir %D/%%PORTDOCS%%%%EXAMPLESDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/formencode/util 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/formencode/javascript 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/formencode 2>/dev/null || true
+@dirrmtry %%PORTDOCS%%%%EXAMPLESDIR%%/WebwareExamples
+@dirrmtry %%PORTDOCS%%%%EXAMPLESDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/formencode/util
+@dirrmtry %%PYTHON_SITELIBDIR%%/formencode/javascript
+@dirrmtry %%PYTHON_SITELIBDIR%%/formencode

@@ -4,4 +4,4 @@
 %%SITE_PERL%%/XML/parse-testsuite.pl
 %%SITE_PERL%%/%%PERL_ARCH%%//auto/XML/Node/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Node
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML

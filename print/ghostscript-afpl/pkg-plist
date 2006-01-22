@@ -510,8 +510,8 @@ bin/wftopfa
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CMap
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
-@unexec rmdir %D/%%DATADIR%%/%%GS_VERSION%% 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/%%GS_VERSION%%
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/md2k
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/lxm3200

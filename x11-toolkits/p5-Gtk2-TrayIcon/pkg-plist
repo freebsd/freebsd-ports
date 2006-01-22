@@ -6,7 +6,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install/trayicon.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/TrayIcon
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/TrayIcon
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

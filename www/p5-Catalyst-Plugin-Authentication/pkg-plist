@@ -5,10 +5,10 @@
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User/Hash.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication.pm
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/User 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication/Credential 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin/Authentication 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/User
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Credential
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst

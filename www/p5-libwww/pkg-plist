@@ -61,17 +61,17 @@ bin/lwp-rget
 %%SITE_PERL%%/lwptut.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
 @dirrm %%SITE_PERL%%/WWW/RobotRules
-@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/WWW
 @dirrm %%SITE_PERL%%/Net/HTTP
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net
 @dirrm %%SITE_PERL%%/LWP/Authen
 @dirrm %%SITE_PERL%%/LWP/Protocol
-@unexec rmdir %D/%%SITE_PERL%%/LWP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/LWP
 @dirrm %%SITE_PERL%%/HTTP/Cookies
 @dirrm %%SITE_PERL%%/HTTP/Headers
 @dirrm %%SITE_PERL%%/HTTP/Request
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/HTTP

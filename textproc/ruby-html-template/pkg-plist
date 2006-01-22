@@ -1,5 +1,5 @@
 %%RUBY_SITELIBDIR%%/html/template.rb
-@unexec rmdir %D/%%RUBY_SITELIBDIR%%/html 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cond.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cond.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/env.html

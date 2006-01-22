@@ -9,5 +9,5 @@ bin/dave
 %%SITE_PERL%%/HTTP/DAV/Utils.pm
 @dirrm %%SITE_PERL%%/HTTP/DAV
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/DAV
-@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

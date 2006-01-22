@@ -3,4 +3,4 @@ sbin/pptpd
 sbin/pptpctrl
 lib/pptpd/pptpd-logwtmp.so
 etc/pptpd.conf.sample
-@unexec rmdir %D/lib/pptpd 2> /dev/null || true
+@dirrmtry lib/pptpd

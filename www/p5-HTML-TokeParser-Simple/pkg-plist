@@ -10,9 +10,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser/Simple
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TokeParser
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrm %%SITE_PERL%%/HTML/TokeParser/Simple/Token/Tag
 @dirrm %%SITE_PERL%%/HTML/TokeParser/Simple/Token
 @dirrm %%SITE_PERL%%/HTML/TokeParser/Simple
 @dirrm %%SITE_PERL%%/HTML/TokeParser
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTML

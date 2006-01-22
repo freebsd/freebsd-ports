@@ -15,7 +15,7 @@ share/bbtools/README.bbsmount
 %%DATADIR%%/images/unmounteddisk.xpm
 %%DATADIR%%/images/unmounted.xpm
 %%DATADIR%%/images/unmountedzip.xpm
-@unexec rmdir %D/share/bbtools 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/examples 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/images 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry share/bbtools
+@dirrmtry %%DATADIR%%/examples
+@dirrmtry %%DATADIR%%/images
+@dirrmtry %%DATADIR%%

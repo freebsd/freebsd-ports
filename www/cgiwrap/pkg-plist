@@ -2,4 +2,4 @@ www/cgi-bin/cgiwrap
 %%DEBUGFLAG%%www/cgi-bin/cgiwrapd
 %%NPHFLAG%%www/cgi-bin/nph-cgiwrap
 %%NPHFLAG%%%%DEBUGFLAG%%www/cgi-bin/nph-cgiwrapd
-@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
+@dirrmtry www/cgi-bin

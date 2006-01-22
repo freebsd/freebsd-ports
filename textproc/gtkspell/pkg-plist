@@ -37,5 +37,5 @@ share/locale/zh_TW/LC_MESSAGES/gtkspell.mo
 @dirrm %%DOCSDIR%%
 @dirrm include/gtkspell-2.0/gtkspell
 @dirrm include/gtkspell-2.0
-@unexec rmdir %D/share/locale/rm/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/rm 2>/dev/null || true
+@dirrmtry share/locale/rm/LC_MESSAGES
+@dirrmtry share/locale/rm

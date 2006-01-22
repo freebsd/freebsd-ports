@@ -78,5 +78,5 @@ share/gtk-doc/html/roadrunner/x9.html
 @dirrm include/roadrunner-1.0/librr/message
 @dirrm include/roadrunner-1.0/librr
 @dirrm include/roadrunner-1.0
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc

@@ -3,4 +3,4 @@ bin/tabmerge
 %%SITE_PERL%%/Text/RecordParser.pm
 %%SITE_PERL%%/Text/RecordParser/Tab.pm
 @dirrm %%SITE_PERL%%/Text/RecordParser
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Text

@@ -1,11 +1,11 @@
 %%SITE_PERL%%/Apache/AxKit/Plugin/AddXSLParams/Request.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin/AddXSLParams/Request/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin/AddXSLParams/Request
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin/AddXSLParams 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache/AxKit/Plugin/AddXSLParams 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache/AxKit/Plugin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache/AxKit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin/AddXSLParams
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AxKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/Apache/AxKit/Plugin/AddXSLParams
+@dirrmtry %%SITE_PERL%%/Apache/AxKit/Plugin
+@dirrmtry %%SITE_PERL%%/Apache/AxKit
+@dirrmtry %%SITE_PERL%%/Apache

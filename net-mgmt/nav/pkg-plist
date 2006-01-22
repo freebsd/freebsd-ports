@@ -578,12 +578,12 @@ nav/lib/python/rotater.py
 @exec install -d -m 0755 -o navcron -g nav %D/nav/var/rrd %D/nav/var/run %D/nav/var/pg_backup %D/nav/var/log
 @unexec rm %D/nav/var/log/thresholdMon.log 2>/dev/null || true
 @unexec rm %D/nav/var/run/*.pid 2>/dev/null || true
-@unexec rmdir %D/nav/var/log/* 2>/dev/null || true
-@unexec rmdir %D/nav/var/log 2>/dev/null || true
-@unexec rmdir %D/nav/var/rrd 2>/dev/null || true
-@unexec rmdir %D/nav/var/run 2>/dev/null || true
-@unexec rmdir %D/nav/var/pg_backup 2>/dev/null || true
-@unexec rmdir %D/nav/var 2>/dev/null || true
+@dirrmtry nav/var/log/*
+@dirrmtry nav/var/log
+@dirrmtry nav/var/rrd
+@dirrmtry nav/var/run
+@dirrmtry nav/var/pg_backup
+@dirrmtry nav/var
 @unexec find %D/nav/lib/python/nav -type f -name "*.pyc" -delete 2>/dev/null || true
 @dirrm nav/apache/tools
 @dirrm nav/apache/webapps
@@ -675,5 +675,5 @@ nav/lib/python/rotater.py
 @dirrm nav/lib/python/nav
 @dirrm nav/lib/python
 @dirrm nav/lib
-@unexec rmdir %D/nav 2>/dev/null || true
+@dirrmtry nav
 @unexec echo "Some files/directories may be left in %D/nav/var."

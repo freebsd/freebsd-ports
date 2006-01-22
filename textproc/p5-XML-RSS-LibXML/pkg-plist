@@ -10,5 +10,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RSS-LibXML/.packlist
 @dirrm %%SITE_PERL%%/XML/RSS/LibXML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RSS-LibXML
-@unexec rmdir %D/%%SITE_PERL%%/XML/RSS 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML/RSS
+@dirrmtry %%SITE_PERL%%/XML

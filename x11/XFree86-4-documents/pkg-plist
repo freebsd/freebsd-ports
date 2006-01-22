@@ -90,7 +90,7 @@ share/doc/XFree86/xsmp.txt
 share/doc/XFree86/xtest.txt
 share/doc/XFree86/xtestlib.txt
 share/doc/XFree86/xv-protocol-v2.txt
-@unexec rmdir %D/share/doc/XFree86/PDF 2>/dev/null || true
-@unexec rmdir %D/share/doc/XFree86/PostScript 2>/dev/null || true
-@unexec rmdir %D/share/doc/XFree86/html 2>/dev/null || true
-@unexec rmdir %D/share/doc/XFree86 2>/dev/null || true
+@dirrmtry share/doc/XFree86/PDF
+@dirrmtry share/doc/XFree86/PostScript
+@dirrmtry share/doc/XFree86/html
+@dirrmtry share/doc/XFree86

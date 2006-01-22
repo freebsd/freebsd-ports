@@ -20,7 +20,7 @@ libdata/pkgconfig/libgadu.pc
 %%DATADIR%%/themes/sic.theme
 %%DATADIR%%/themes/tohver.theme
 %%DATADIR%%/vars.txt
-@unexec rmdir %D/man/pl/man1 2>/dev/null || true
-@unexec rmdir %D/man/pl 2>/dev/null || true
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%

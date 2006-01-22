@@ -2,9 +2,9 @@
 %%SITE_PERL%%/Catalyst/Model/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/DBIC
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper/Model 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Helper 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst/Model 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Catalyst 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst

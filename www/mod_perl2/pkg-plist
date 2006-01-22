@@ -324,11 +324,11 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Base64
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/APR
 @dirrm include/apache2/modules/perl
-@unexec rmdir %D/include/apache2/modules 2>/dev/null || true
-@unexec rmdir %D/include/apache2 2>/dev/null || true
+@dirrmtry include/apache2/modules
+@dirrmtry include/apache2

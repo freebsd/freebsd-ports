@@ -147,6 +147,6 @@ share/mime/packages/rox.xml
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
 @dirrm apps/ROX-Filer
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps
 @exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime

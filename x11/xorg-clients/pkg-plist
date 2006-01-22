@@ -808,4 +808,4 @@ lib/X11/xsm/system.xsm
 @dirrm lib/X11/icons/handhelds
 @dirrm lib/X11/icons
 @dirrm lib/X11/xinit
-@unexec rmdir %D/lib/X11/fonts/util 2>/dev/null || true
+@dirrmtry lib/X11/fonts/util

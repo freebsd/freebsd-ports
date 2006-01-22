@@ -166,5 +166,5 @@
 @dirrm %%LPWDDIR%%/locale
 @dirrm %%LPWDDIR%%/lib/Driver
 @dirrm %%LPWDDIR%%/lib
-@unexec rmdir %D/%%LPWDDIR%%/config 2>/dev/null || true
-@unexec rmdir %D/%%LPWDDIR%% 2>/dev/null || true
+@dirrmtry %%LPWDDIR%%/config
+@dirrmtry %%LPWDDIR%%

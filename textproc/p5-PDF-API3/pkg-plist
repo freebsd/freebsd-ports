@@ -167,7 +167,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/unipaper.txt
 %%SITE_PERL%%/PDF/API2/Content/Text.pm
 @dirrm %%SITE_PERL%%/mach/auto/PDF/API2
-@unexec rmdir %D/%%SITE_PERL%%/mach/auto/PDF 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/mach/auto/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/TTF/Mort
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/TTF/Kern
@@ -188,4 +188,4 @@
 @dirrm %%SITE_PERL%%/PDF/API2/Resource
 @dirrm %%SITE_PERL%%/PDF/API2/Content
 @dirrm %%SITE_PERL%%/PDF/API2
-@unexec rmdir %D/%%SITE_PERL%%/PDF 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/PDF

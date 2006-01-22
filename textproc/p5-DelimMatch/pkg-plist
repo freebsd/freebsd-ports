@@ -3,6 +3,6 @@
 %%SITE_PERL%%/Text/DelimMatch.pm
 @dirrm %%SITE_PERL%%/auto/Text/DelimMatch
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/DelimMatch
-@unexec rmdir %D/%%SITE_PERL%%/auto/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text

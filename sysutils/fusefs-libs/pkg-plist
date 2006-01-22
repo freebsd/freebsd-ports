@@ -14,4 +14,4 @@ libdata/pkgconfig/fuse.pc
 %%PORTDOCS%%%%DOCSDIR%%/libs/how-fuse-works
 %%PORTDOCS%%%%DOCSDIR%%/libs/kernel.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs
-@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@dirrmtry %%DOCSDIR%%

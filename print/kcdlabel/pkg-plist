@@ -15,17 +15,17 @@ share/locale/de/LC_MESSAGES/kcdlabel.mo
 share/locale/fr/LC_MESSAGES/kcdlabel.mo
 share/locale/hu/LC_MESSAGES/kcdlabel.mo
 share/locale/it/LC_MESSAGES/kcdlabel.mo
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/icons/small/locolor/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/small/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/small 2>/dev/null || true
-@unexec rmdir %D/share/icons/medium/locolor/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/medium/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/medium 2>/dev/null || true
-@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/icons/small/locolor/apps
+@dirrmtry share/icons/small/locolor
+@dirrmtry share/icons/small
+@dirrmtry share/icons/medium/locolor/apps
+@dirrmtry share/icons/medium/locolor
+@dirrmtry share/icons/medium
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/kcdlabel
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrmtry share/applnk/Multimedia
+@dirrmtry share/applnk

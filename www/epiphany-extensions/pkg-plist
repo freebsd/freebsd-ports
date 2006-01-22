@@ -75,11 +75,11 @@ share/locale/uk/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/wa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
-@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/rw 2> /dev/null || true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/epiphany-extensions/xml
 @dirrm share/gnome/epiphany-extensions/glade
 @dirrm share/gnome/epiphany-extensions
-@unexec rmdir %D/lib/epiphany/%%VERSION%%/extensions 2>/dev/null || true
-@unexec rmdir %D/lib/epiphany/%%VERSION%% 2>/dev/null || true
-@unexec rmdir %D/lib/epiphany 2>/dev/null || true
+@dirrmtry lib/epiphany/%%VERSION%%/extensions
+@dirrmtry lib/epiphany/%%VERSION%%
+@dirrmtry lib/epiphany

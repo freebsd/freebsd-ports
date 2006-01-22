@@ -17,8 +17,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_public_key.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/use_sslv23_padding.al
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL     2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt             2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL          2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt                  2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL    
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt            
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL         
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt                 

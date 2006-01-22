@@ -217,5 +217,5 @@ share/themes/Industrial/index.theme
 @dirrm share/icons/Industrial
 @dirrm share/gnome/themes/Industrial/metacity-1
 @dirrm share/gnome/themes/Industrial
-@unexec rmdir %D/share/themes/Industrial 2>/dev/null || true
+@dirrmtry share/themes/Industrial
 %%XMMS%%@dirrm share/xmms/Skins/Industrial

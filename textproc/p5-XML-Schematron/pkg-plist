@@ -3,7 +3,7 @@
 %%SITE_PERL%%/XML/Schematron/LibXSLT.pm
 %%SITE_PERL%%/XML/Schematron/Sablotron.pm
 %%SITE_PERL%%/XML/Schematron/XPath.pm
-@unexec rmdir %D/%%SITE_PERL%%/XML/Schematron 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/XML/Schematron
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

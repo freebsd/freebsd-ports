@@ -3,6 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/mac-cyrillic.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/koi8-r.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/windows-1251.enc
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/XML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/XML

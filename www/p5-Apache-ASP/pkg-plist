@@ -32,8 +32,8 @@ bin/asp-perl
 @dirrm %%SITE_PERL%%/Apache/ASP/Share/CORE
 @dirrm %%SITE_PERL%%/Apache/ASP/Share
 @dirrm %%SITE_PERL%%/Apache/ASP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrm %%SITE_PERL%%/Bundle/Apache/ASP
 @dirrm %%SITE_PERL%%/Bundle/Apache
-@unexec rmdir %D/%%SITE_PERL%%/Bundle/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle/Apache
+@dirrmtry %%SITE_PERL%%/Apache

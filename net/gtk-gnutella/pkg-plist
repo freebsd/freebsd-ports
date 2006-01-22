@@ -50,7 +50,7 @@ share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
 share/locale/uk/LC_MESSAGES/gtk-gnutella.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/el
 @dirrm %%DATADIR%%/en

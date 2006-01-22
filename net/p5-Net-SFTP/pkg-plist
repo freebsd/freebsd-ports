@@ -5,6 +5,6 @@
 %%SITE_PERL%%/Net/SFTP/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/SFTP
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net

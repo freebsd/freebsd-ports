@@ -16,4 +16,4 @@ share/sgml/docbook/3.1/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/%%DTD_VERSION%%/catalog
 share/sgml/docbook/3.1/readme.txt
 @dirrm share/sgml/docbook/3.1
-@unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
+@dirrmtry share/sgml/docbook

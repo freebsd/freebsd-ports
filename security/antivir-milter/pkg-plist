@@ -13,7 +13,7 @@ AntiVir/antivir2.vdf-dist_avmilter
 @unexec if cmp -s %D/AntiVir/antivir3.vdf-dist_avmilter %D/AntiVir/antivir3.vdf; then rm -f %D/AntiVir/antivir3.vdf; fi
 AntiVir/antivir3.vdf-dist_avmilter
 @exec [ -f %B/antivir3.vdf ] || cp -p %B/%f %B/antivir3.vdf
-@unexec rmdir %D/AntiVir/updcomp 2> /dev/null || true
+@dirrmtry AntiVir/updcomp
 @unexec rmdir %D/AntiVir 2> /dev/null || echo "If permanently deleting this package, %D/AntiVir and its contents must be removed manually."
 bin/avq
 bin/avqrm

@@ -11,6 +11,6 @@ share/scim/input-pad/base.pad
 share/scim/input-pad/chinese.pad
 share/scim/input-pad/japanese.pad
 share/scim/input-pad/keyboard.pad
-@unexec rmdir %D/lib/scim-1.0/Helper 2>/dev/null || true
-@unexec rmdir %D/lib 2>/dev/null || true
-@unexec rmdir %D/share/scim/input-pad 2>/dev/null || true
+@dirrmtry lib/scim-1.0/Helper
+@dirrmtry lib
+@dirrmtry share/scim/input-pad

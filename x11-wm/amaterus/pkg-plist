@@ -1,4 +1,4 @@
 bin/amaterus
 share/gnome/wm-properties/Amaterus.desktop
-@unexec rmdir %D/share/gnome/wm-properties 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+@dirrmtry share/gnome/wm-properties
+@dirrmtry share/gnome

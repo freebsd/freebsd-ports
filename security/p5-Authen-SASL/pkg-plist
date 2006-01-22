@@ -12,7 +12,7 @@
 %%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrm %%SITE_PERL%%/Authen/SASL/Perl
 @dirrm %%SITE_PERL%%/Authen/SASL
-@unexec rmdir %D/%%SITE_PERL%%/Authen 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Authen

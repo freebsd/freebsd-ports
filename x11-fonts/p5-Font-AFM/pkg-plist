@@ -13,6 +13,6 @@
 %%SITE_PERL%%/Font/Metrics/TimesRoman.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/AFM/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/AFM
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Font 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
 @dirrm %%SITE_PERL%%/Font/Metrics
-@unexec rmdir %D/%%SITE_PERL%%/Font 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Font

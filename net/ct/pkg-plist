@@ -2353,7 +2353,7 @@ v6eval/ct/tunnel/tunnel.pm
 v6eval/doc/00README.ct
 v6eval/doc/CHANGELOG.ct
 v6eval/doc/INSTALL.ct
-@unexec rmdir %D/v6eval/doc 2>/dev/null || true
+@dirrmtry v6eval/doc
 @dirrm v6eval/ct/dd
 @dirrm v6eval/ct/default-addr-select
 @dirrm v6eval/ct/icmp

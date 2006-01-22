@@ -35,7 +35,7 @@ bin/semCorFreq.pl
 %%SITE_PERL%%/WordNet/Similarity/ICFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/PathFinder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WordNet/Similarity 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WordNet 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet/Similarity
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WordNet
+@dirrmtry %%SITE_PERL%%/WordNet/Similarity
+@dirrmtry %%SITE_PERL%%/WordNet

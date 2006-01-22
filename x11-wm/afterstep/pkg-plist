@@ -59,4 +59,4 @@ lib/X11/afterstep/system.steprc
 @dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/sounds
 @dirrm lib/X11/afterstep
-@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
+@dirrmtry include/X11/pixmaps

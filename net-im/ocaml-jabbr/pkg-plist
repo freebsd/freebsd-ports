@@ -51,4 +51,4 @@ lib/ocaml/xmlstream.cmi
 %%PORTDOCS%%share/doc/jabbr/type_Xmlstream.xml_stream_reader.html
 %%PORTDOCS%%share/doc/jabbr/type_Xmlstream.xml_stream_writer.html
 %%PORTDOCS%%@dirrm share/doc/jabbr
-@unexec rmdir %D/lib/ocaml 2>/dev/null || true
+@dirrmtry lib/ocaml

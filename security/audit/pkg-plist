@@ -10,4 +10,4 @@ lib/alat/libauth_raw.so.1
 lib/alat/libia_syslog.so.1
 lib/alat/libres_local.so.1
 sbin/auditd
-@unexec rmdir %D/lib/alat 2>/dev/null || true
+@dirrmtry lib/alat

@@ -1,8 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
 %%SITE_PERL%%/CGI/XMLApplication.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
-@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/CGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex2_finish.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex2_form.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.pl

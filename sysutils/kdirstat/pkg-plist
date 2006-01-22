@@ -36,4 +36,4 @@ share/locale/ja/LC_MESSAGES/kdirstat.mo
 @dirrm share/apps/kdirstat/icons/hicolor
 @dirrm share/apps/kdirstat/icons
 @dirrm share/apps/kdirstat
-@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
+@dirrmtry share/apps/kconf_update

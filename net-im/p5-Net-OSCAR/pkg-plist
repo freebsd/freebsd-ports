@@ -18,4 +18,4 @@
 @dirrm %%SITE_PERL%%/Net/OSCAR/XML
 @dirrm %%SITE_PERL%%/Net/OSCAR/Connection
 @dirrm %%SITE_PERL%%/Net/OSCAR
-@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Net

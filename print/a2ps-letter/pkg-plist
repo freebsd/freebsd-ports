@@ -272,17 +272,17 @@ share/locale/tr/LC_MESSAGES/a2ps.mo
 @dirrm %%DATADIR%%
 %%WITHEMACS%%@dirrm lib/xemacs/site-lisp
 %%WITHEMACS%%@dirrm lib/xemacs
-@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ca 2> /dev/null || true
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/cs 2> /dev/null || true
-@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ko 2> /dev/null || true
-@unexec rmdir %D/share/locale/no/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/no 2> /dev/null || true
-@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/pl 2> /dev/null || true
-@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/pt 2> /dev/null || true
-@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/sl 2> /dev/null || true
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl

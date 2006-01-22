@@ -261,9 +261,9 @@ share/doc/heartbeat-1.2.3/startstop
 @dirrm include/clplumbing
 @dirrm etc/ha.d/resource.d
 @dirrm etc/ha.d/rc.d
-@unexec rmdir %D/etc/ha.d/conf 2>/dev/null || true
-@unexec rmdir %D/etc/ha.d 2>/dev/null || true
+@dirrmtry etc/ha.d/conf
+@dirrmtry etc/ha.d
 @cwd /
-@unexec rmdir %D/var/lib/heartbeat/ckpt 2>/dev/null || true
-@unexec rmdir %D/var/lib/heartbeat/ccm 2>/dev/null || true
-@unexec rmdir %D/var/lib/heartbeat 2>/dev/null || true
+@dirrmtry var/lib/heartbeat/ckpt
+@dirrmtry var/lib/heartbeat/ccm
+@dirrmtry var/lib/heartbeat

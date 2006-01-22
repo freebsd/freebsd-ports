@@ -1,6 +1,6 @@
 %%SITE_PERL%%/Lingua/Ident.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ident/.packlist
 bin/trainlid
-@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ident 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ident
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

@@ -67,4 +67,4 @@ bin/perlcritic
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy
 @dirrm %%SITE_PERL%%/Perl/Critic
-@unexec rmdir %D/%%SITE_PERL%%/Perl 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Perl

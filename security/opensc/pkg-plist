@@ -14,7 +14,7 @@ libdata/pkgconfig/libscam.pc
 libdata/pkgconfig/libscconf.pc
 libdata/pkgconfig/libscldap.pc
 lib/security/pam_opensc.so
-@unexec rmdir %D/lib/security 2>/dev/null || true
+@dirrmtry lib/security
 lib/pkcs11/pkcs11-spy.so
 lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/libpkcs11.so.1

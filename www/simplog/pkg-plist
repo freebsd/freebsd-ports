@@ -351,4 +351,4 @@ www/simplog/xmlrpcs.inc
 @dirrm www/simplog/adodb/contrib
 @dirrm www/simplog/adodb/xsl
 @dirrm www/simplog/adodb
-@unexec rmdir %D/www/simplog 2>/dev/null || true
+@dirrmtry www/simplog

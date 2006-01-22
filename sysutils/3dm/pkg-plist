@@ -139,4 +139,4 @@ share/3dm2/en/scripts/seealso.js
 @unexec unlink /etc/3dm2/3dm2.conf
 @unexec unlink /etc/3dm2/3dm2.pem
 @unexec unlink /etc/3dm2/msg
-@unexec rmdir %D/share/3dm2/en/scripts %D/share/3dm2/en/images %D/share/3dm2/en %D/share/3dm2 /etc/3dm2 %D/etc/3dm2/msg %D/etc/3dm2 2>/dev/null || true
+@dirrmtry share/3dm2/en/scripts %D/share/3dm2/en/images %D/share/3dm2/en %D/share/3dm2 /etc/3dm2 %D/etc/3dm2/msg %D/etc/3dm2

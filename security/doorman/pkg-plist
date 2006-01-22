@@ -13,4 +13,4 @@ etc/doormand/iptables_delete
 etc/doormand/pfctl_add
 etc/doormand/pfctl_delete
 sbin/doormand
-@unexec rmdir %D/etc/doormand 2>/dev/null || true
+@dirrmtry etc/doormand

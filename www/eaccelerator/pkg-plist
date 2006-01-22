@@ -1,6 +1,6 @@
 bin/encoder
 lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
-@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2> /dev/null || true
+@dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%EXAMPLESDIR%%/eaccelerator.ini
 %%EXAMPLESDIR%%/eaccelerator.php
 %%EXAMPLESDIR%%/eaccelerator_password.php

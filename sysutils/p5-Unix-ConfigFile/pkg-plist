@@ -5,5 +5,5 @@
 %%SITE_PERL%%/Unix/PasswdFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Unix 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
+@dirrmtry %%SITE_PERL%%/Unix

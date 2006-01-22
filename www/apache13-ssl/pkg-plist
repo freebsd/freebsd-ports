@@ -656,7 +656,7 @@ www/icons/world2.gif
 www/icons/world2.png
 @exec mkdir -p %D/www/proxy
 @unexec rm -f %D/etc/apache/httpsd.conf.bak 2> /dev/null || true
-@unexec rmdir %D/etc/apache 2> /dev/null || true
+@dirrmtry etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache

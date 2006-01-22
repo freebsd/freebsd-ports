@@ -39,8 +39,8 @@
 @dirrm %%SITE_PERL%%/HTML/Mason/Resolver
 @dirrm %%SITE_PERL%%/HTML/Mason
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/Bundle/HTML
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/Apache

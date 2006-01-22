@@ -19,4 +19,4 @@ share/applications/jpilot.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jpilot.mo
-@unexec rmdir %D/share/applications 2>/dev/null || true
+@dirrmtry share/applications

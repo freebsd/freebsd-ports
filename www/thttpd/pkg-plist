@@ -6,5 +6,5 @@ sbin/thttpd
 www/cgi-bin/phf
 www/cgi-bin/redirect
 www/cgi-bin/ssi
-@unexec rmdir %D/www/cgi-bin 2> /dev/null || true
-@unexec rmdir %D/www/data 2> /dev/null || true
+@dirrmtry www/cgi-bin
+@dirrmtry www/data

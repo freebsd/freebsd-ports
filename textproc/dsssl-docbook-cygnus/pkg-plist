@@ -9,4 +9,4 @@ share/sgml/docbook/dsssl/cygnus/catalog
 share/sgml/docbook/dsssl/cygnus/cygnus-both.dsl
 share/sgml/docbook/dsssl/cygnus/dbtohtml.dsl
 @dirrm share/sgml/docbook/dsssl/cygnus
-@unexec rmdir %D/share/sgml/docbook/dsssl 2>/dev/null || true
+@dirrmtry share/sgml/docbook/dsssl

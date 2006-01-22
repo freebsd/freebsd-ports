@@ -34,17 +34,17 @@ share/icons/locolor/32x32/apps/kcpuload.png
 @dirrm share/apps/kcpuload
 @dirrm share/doc/HTML/en/kcpuload/common
 @dirrm share/doc/HTML/en/kcpuload
-@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
-@unexec rmdir %D/share/applnk/System 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@dirrmtry share/icons/crystalsvg/16x16/apps
+@dirrmtry share/icons/crystalsvg/16x16
+@dirrmtry share/icons/crystalsvg/32x32/apps
+@dirrmtry share/icons/crystalsvg/32x32
+@dirrmtry share/icons/crystalsvg/48x48/apps
+@dirrmtry share/icons/crystalsvg/48x48
+@dirrmtry share/icons/crystalsvg
+@dirrmtry share/applnk/System
+@dirrmtry share/applnk
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor

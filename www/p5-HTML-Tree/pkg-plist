@@ -11,4 +11,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Tree
 @dirrm %%SITE_PERL%%/HTML/Element
 @dirrm %%SITE_PERL%%/HTML/Tree
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTML

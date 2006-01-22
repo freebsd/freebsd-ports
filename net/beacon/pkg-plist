@@ -4,9 +4,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/Beacon.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
 www/beacon-%%VERSION%%/beacon
 @dirrm www/beacon-%%VERSION%%
 etc/beacon.conf.sample

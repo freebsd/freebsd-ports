@@ -110,7 +110,7 @@ share/locale/ru/LC_MESSAGES/radius.mo
 %%PORTDOCS%%%%EXAMPLESDIR%%/pam.conf
 %%PORTDOCS%%%%EXAMPLESDIR%%/radius.php
 @dirrm etc/raddb/dict
-@unexec rmdir %D/etc/raddb 2>/dev/null || true
+@dirrmtry etc/raddb
 @dirrm include/radius
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scheme
@@ -118,7 +118,7 @@ share/locale/ru/LC_MESSAGES/radius.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/modules
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-@unexec rmdir %D/lib/security 2>/dev/null || true
+@dirrmtry lib/security
 @unexec rm -f /var/run/radiusd.pid
 @unexec rm -rf /var/log/radius
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."

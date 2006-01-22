@@ -62,5 +62,5 @@ bin/webmake
 @dirrm %%SITE_PERL%%/HTML/WebMake/PerlLib
 @dirrm %%SITE_PERL%%/HTML/WebMake
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WebMake
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

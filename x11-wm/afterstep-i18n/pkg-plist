@@ -66,4 +66,4 @@ share/doc/afterstep/CHANGES.I18N
 share/doc/afterstep/README.I18N
 share/doc/afterstep/README.I18N.jis
 @dirrm share/doc/afterstep
-@unexec rmdir %D/include/X11/pixmaps 2>/dev/null || true
+@dirrmtry include/X11/pixmaps

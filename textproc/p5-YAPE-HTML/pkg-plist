@@ -2,8 +2,8 @@
 %%SITE_PERL%%/YAPE/HTML/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE/HTML/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE/HTML
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE
 @dirrm %%SITE_PERL%%/YAPE/HTML
-@unexec rmdir %D/%%SITE_PERL%%/YAPE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/YAPE
 @unexec rmdir %D%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAPE 2>/dev/null || true
 @unexec rmdir %D%%SITE_PERL%%/YAPE 2>/dev/null || true

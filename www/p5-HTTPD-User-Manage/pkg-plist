@@ -22,4 +22,4 @@
 @dirrm %%SITE_PERL%%/HTTPD/GroupAdmin/DBM
 @dirrm %%SITE_PERL%%/HTTPD/GroupAdmin
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD-User-Manage
-@unexec rmdir %D/%%SITE_PERL%%/HTTPD 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/HTTPD

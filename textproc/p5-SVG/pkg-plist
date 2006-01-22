@@ -5,8 +5,8 @@
 %%SITE_PERL%%/SVG/Extension.pm
 %%SITE_PERL%%/SVG/Manual.pm
 %%SITE_PERL%%/SVG/XML.pm
-@unexec rmdir %D/%%SITE_PERL%%/SVG 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SVG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
 %%PORTDOCS%%%%EXAMPLESDIR%%/SVG_02_sample.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/attributeManip.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/image_sample.pl

@@ -2,5 +2,5 @@
 etc/settings/qtrc.bluecurve
 @exec [ -f %B/qtrc ] || cp %B/qtrc.bluecurve %B/qtrc
 lib/plugins/styles/bluecurve.so
-@unexec rmdir %D/etc/settings 2>/dev/null || true
-@unexec rmdir %D/lib/plugins/styles 2>/dev/null || true
+@dirrmtry etc/settings
+@dirrmtry lib/plugins/styles

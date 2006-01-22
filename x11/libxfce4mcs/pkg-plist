@@ -23,6 +23,6 @@ share/gtk-doc/html/libxfce4mcs/right.png
 share/gtk-doc/html/libxfce4mcs/up.png
 @dirrm include/xfce4/libxfce4mcs
 @dirrm share/gtk-doc/html/libxfce4mcs
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
-@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrmtry include/xfce4

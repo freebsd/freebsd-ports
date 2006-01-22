@@ -2,7 +2,7 @@
 %%SITE_PERL%%/Sys/Hostname/testall.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/Long/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/Long
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Sys/Hostname 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Sys 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
+@dirrmtry %%SITE_PERL%%/Sys/Hostname
+@dirrmtry %%SITE_PERL%%/Sys

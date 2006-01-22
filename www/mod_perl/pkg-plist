@@ -71,9 +71,9 @@ libexec/apache/libperl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/include
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Leak
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Symbol
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Constants
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache 2>/dev/null || true
-@unexec rmdir %D/etc/apache 2> /dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
+@dirrmtry etc/apache

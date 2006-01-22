@@ -362,4 +362,4 @@ rt2/README
 @dirrm rt2/WebRT/html
 @dirrm rt2/WebRT/data
 @dirrm rt2/WebRT
-@unexec rmdir %D/rt2 2>/dev/null || true
+@dirrmtry rt2

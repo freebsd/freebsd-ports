@@ -146,7 +146,7 @@
 @dirrm %%ICKLEDATADIR%%ickle/icons/doors
 @dirrm %%ICKLEDATADIR%%ickle/icons
 @dirrm %%ICKLEDATADIR%%ickle
-@unexec rmdir %D/%%ICKLEDATADIR%%applets/Network 2>/dev/null || true
-@unexec rmdir %D/%%ICKLEDATADIR%%applets 2>/dev/null || true
-@unexec rmdir %D/etc/CORBA/servers 2>/dev/null || true
-@unexec rmdir %D/etc/CORBA 2>/dev/null || true
+@dirrmtry %%ICKLEDATADIR%%applets/Network
+@dirrmtry %%ICKLEDATADIR%%applets
+@dirrmtry etc/CORBA/servers
+@dirrmtry etc/CORBA

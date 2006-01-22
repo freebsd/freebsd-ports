@@ -108,12 +108,12 @@ sbin/munin-run
 %%DATADIR%%/plugins/vmstat
 @unexec rm -f /var/run/munin/munin-node.pid
 @unexec rmdir /var/run/munin 2>/dev/null || true
-@unexec rmdir %D/var/munin/plugin-state 2>/dev/null || true
-@unexec rmdir %D/var/munin 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/plugins 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/etc/munin/plugin-conf.d 2>/dev/null || true
-@unexec rmdir %D/etc/munin 2>/dev/null || true
+@dirrmtry var/munin/plugin-state
+@dirrmtry var/munin
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/munin/plugin-conf.d
+@dirrmtry etc/munin
 @unexec rmdir %%LOCALBASE%%/%%SITE_PERL%%/Munin/Plugin 2>/dev/null || true
 @unexec rmdir %%LOCALBASE%%/%%SITE_PERL%%/Munin 2>/dev/null || true
 @unexec echo

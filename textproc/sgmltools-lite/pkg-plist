@@ -40,6 +40,6 @@ share/sgml/misc/sgmltools/VERSION
 @dirrm share/sgml/misc/sgmltools/python
 @dirrm share/sgml/misc/sgmltools
 @dirrm etc/sgml/catalog.d
-@unexec rmdir %D/etc/sgml 2>/dev/null || true
-@unexec rmdir %D/share/sgml/dtd 2>/dev/null || true
-@unexec rmdir %D/share/sgml/misc 2>/dev/null || true
+@dirrmtry etc/sgml
+@dirrmtry share/sgml/dtd
+@dirrmtry share/sgml/misc

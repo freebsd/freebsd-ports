@@ -15,5 +15,5 @@ share/examples/messarge/s.shtml
 share/examples/messarge/t.shtml
 share/examples/messarge/write.shtml
 @dirrm share/examples/messarge
-@unexec rmdir %D/man/ru_RU.KOI8-R/man1 2> /dev/null || true
-@unexec rmdir %D/man/ru_RU.KOI8-R 2> /dev/null || true
+@dirrmtry man/ru_RU.KOI8-R/man1
+@dirrmtry man/ru_RU.KOI8-R

@@ -778,6 +778,6 @@ libdata/pkgconfig/xrender.pc
 @dirrm lib/X11/locale/zh_TW.big5
 @dirrm lib/X11/locale/zh_TW.UTF-8
 @dirrm lib/X11/locale/el_GR.UTF-8
-@unexec rmdir %D/include/X11/bitmaps 2>/dev/null || true
-@unexec rmdir %D/include/X11/fonts 2>/dev/null || true
-@unexec rmdir %D/lib/X11/locale 2>/dev/null || true
+@dirrmtry include/X11/bitmaps
+@dirrmtry include/X11/fonts
+@dirrmtry lib/X11/locale

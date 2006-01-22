@@ -32,5 +32,5 @@ share/games/fortune/rus/windows_errors.dat
 share/games/fortune/rus/pavlenka
 share/games/fortune/rus/pavlenka.dat
 @dirrm share/games/fortune/rus
-@unexec rmdir %D/share/games/fortune 2>/dev/null || true
-@unexec rmdir %D/share/games 2>/dev/null || true
+@dirrmtry share/games/fortune
+@dirrmtry share/games

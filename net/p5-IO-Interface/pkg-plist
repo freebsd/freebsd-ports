@@ -4,5 +4,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/Interface.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Interface
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/IO 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO

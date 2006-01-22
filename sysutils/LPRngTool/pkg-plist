@@ -6,7 +6,7 @@ libexec/filters/printerdb
 libexec/filters/testpage.asc
 libexec/filters/testpage.ps
 libexec/filters/testpage-a4.ps
-@unexec rmdir %D/libexec/filters 2> /dev/null || true
+@dirrmtry libexec/filters
 %%CWD%%@cwd /
 @unexec if cmp -s %D/%%SYSCONFDIR%%/lprngtool.conf %D/%%SYSCONFDIR%%/lprngtool.conf.sample; then rm -f %D/%%SYSCONFDIR%%/lprngtool.conf; fi
 %%SYSCONFDIR%%/lprngtool.conf.sample

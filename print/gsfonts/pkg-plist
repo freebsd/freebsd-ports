@@ -158,4 +158,4 @@
 %%PORTDOCS%%share/doc/gsfonts/TODO
 @dirrm %%FONTSDIR%%
 %%PORTDOCS%%@dirrm share/doc/gsfonts
-@unexec rmdir %D/share/ghostscript 2>/dev/null || true
+@dirrmtry share/ghostscript

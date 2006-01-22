@@ -4,5 +4,5 @@
 @dirrm %%SITE_PERL%%/Apache/AuthCookie
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Apache2 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Apache
+@dirrmtry %%SITE_PERL%%/Apache2

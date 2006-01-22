@@ -1060,4 +1060,4 @@ bin/xmlproc_val
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/dom/de
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/dom
 @dirrm %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%% 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%

@@ -7,6 +7,6 @@ bin/pp2latex
 %%SITE_PERL%%/PerlPoint/Tags/LaTeX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint-Converters/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint-Converters
-@unexec rmdir %D/%%SITE_PERL%%/PerlPoint/Tags 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PerlPoint 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/PerlPoint/Tags
+@dirrmtry %%SITE_PERL%%/PerlPoint
+@dirrmtry %%SITE_PERL%%/Bundle

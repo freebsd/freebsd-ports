@@ -2,8 +2,8 @@
 %%SITE_PERL%%/SOAP/Data/Builder/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data/Builder/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data/Builder
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
 @dirrm %%SITE_PERL%%/SOAP/Data/Builder
-@unexec rmdir %D/%%SITE_PERL%%/SOAP/Data 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/SOAP 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/SOAP/Data
+@dirrmtry %%SITE_PERL%%/SOAP

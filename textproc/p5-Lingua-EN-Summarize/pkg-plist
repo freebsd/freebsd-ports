@@ -1,9 +1,9 @@
 %%SITE_PERL%%/Lingua/EN/Summarize.pm
 %%SITE_PERL%%/Lingua/EN/Summarize/Filters.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Lingua/EN/Summarize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Lingua/EN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN/Summarize
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua

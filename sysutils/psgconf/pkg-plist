@@ -158,18 +158,18 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/DataStore/ConfigFile.pm
 %%SITE_PERL%%/PSGConf/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PSGConf
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/PackageManager 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/GenerateFile 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action/svcs 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Action 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control/Library 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Control 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/Data 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf/DataStore 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/PSGConf 2>/dev/null || true
-@unexec rmdir %D/share/psgconf/config 2>/dev/null || true
-@unexec rmdir %D/share/psgconf/files 2>/dev/null || true
-@unexec rmdir %D/share/psgconf 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat
+@dirrmtry %%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD
+@dirrmtry %%SITE_PERL%%/PSGConf/Action/PackageManager
+@dirrmtry %%SITE_PERL%%/PSGConf/Action/GenerateFile
+@dirrmtry %%SITE_PERL%%/PSGConf/Action/svcs
+@dirrmtry %%SITE_PERL%%/PSGConf/Action
+@dirrmtry %%SITE_PERL%%/PSGConf/Control/Apache
+@dirrmtry %%SITE_PERL%%/PSGConf/Control/Library
+@dirrmtry %%SITE_PERL%%/PSGConf/Control
+@dirrmtry %%SITE_PERL%%/PSGConf/Data
+@dirrmtry %%SITE_PERL%%/PSGConf/DataStore
+@dirrmtry %%SITE_PERL%%/PSGConf
+@dirrmtry share/psgconf/config
+@dirrmtry share/psgconf/files
+@dirrmtry share/psgconf

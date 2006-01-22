@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Regexp/Log.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Log/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Log 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Regexp 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Log
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
+@dirrmtry %%SITE_PERL%%/Regexp

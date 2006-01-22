@@ -21,12 +21,12 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/XMPPTester.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Jabber
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Server/Socket
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Server
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Client/XMPP
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Client
 @dirrm %%SITE_PERL%%/POE/Component/Jabber
-@unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

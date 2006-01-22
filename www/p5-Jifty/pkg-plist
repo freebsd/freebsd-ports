@@ -157,37 +157,37 @@ bin/jifty
 %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Model/Schema.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Test/WWW/Mechanize.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Email/Send/Jifty/Test.pm
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js/ie7 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js/scriptaculous 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/css 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/images 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/online_docs 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/_elements 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/fragments/list 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/fragments 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/error 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/_elements 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/let 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web/Form/Field 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web/Form 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Action/Record 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Action 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Manual 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/JSON 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Script 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Request 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Model 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Test/WWW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Test 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Jifty 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Email/Send/Jifty 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Email/Send 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Email 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js/ie7
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js/scriptaculous
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/js
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/css
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static/images
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/static
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/online_docs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/_elements
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/fragments/list
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin/fragments
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/admin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty/error
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/__jifty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/_elements
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates/let
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web/templates
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/web
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web/Form/Field
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web/Form
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Web
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Action/Record
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Action
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Manual
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/JSON
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Script
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Request
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Test/WWW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jifty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Email/Send/Jifty
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Email/Send
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Email
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty

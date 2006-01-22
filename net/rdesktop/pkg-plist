@@ -46,5 +46,5 @@ bin/rdesktop
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-@unexec rmdir %D/%%DATADIR%%/keymaps 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%/keymaps
+@dirrmtry %%DATADIR%%

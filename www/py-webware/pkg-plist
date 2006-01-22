@@ -1577,153 +1577,153 @@ www/webkit/Launch.py
 www/webkit/WebKit.cgi
 www/webkit/MyContext/Main.py
 www/webkit/MyContext/__init__.py
-@unexec rmdir %D/share/webware/bin 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebUtils 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tests/Basic/TestContext 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tests/Basic/Configs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tests/Basic/Cache 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tests/Basic 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/vhosts 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test5join2 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test5join1 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test5 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test4 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test3 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test2 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL/test1 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/URL 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing/Dir 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Testing 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Tasks 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/StartScripts 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Sessions 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Research 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Logs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Experimental 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Examples 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/ErrorMsgs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Configs 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Cache 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Admin 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters/wkcgi 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters/wkISAPI 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters/mod_webkit2 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters/mod_webkit 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters/common 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit/Adapters 2>/dev/null || true
-@unexec rmdir %D/share/webware/WebKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Tests/UserManagerTest.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/UserKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/TaskKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Examples 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/PSP 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Testing 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiscUtils 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/WebBrowser/Help 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/WebBrowser 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKTypeValueChecking.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKString.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKRefresh.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKObjRefReuse.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKObjRef.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKNone.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKMultipleThreads.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKMultipleStores.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKModelInh3.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKModelInh2.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKModelInh1.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKList.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKInheritanceAbstract.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKInheritance.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKExcel.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKEnums.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKDump.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKDeleteMark.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKDelete.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKDefaultMinMax.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKDateTime.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKClone.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKBasic.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests/MKBackRef.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Tests 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Run 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Resources/Template.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Resources 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Videos/Middle/Videos.mkmodel 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Videos/Middle 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Videos/Command 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Videos 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Design 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit/Core 2>/dev/null || true
-@unexec rmdir %D/share/webware/MiddleKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Examples 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/KidKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/DocSupport 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Examples 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/COMKit 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Examples 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Docs/Source/Summaries 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Docs/Source/Files 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Docs/Source/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Docs/Source 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper/Docs 2>/dev/null || true
-@unexec rmdir %D/share/webware/CGIWrapper 2>/dev/null || true
-@unexec rmdir %D/share/webware 2>/dev/null || true
-@unexec rmdir %D/www/webkit/Sessions 2>/dev/null || true
-@unexec rmdir %D/www/webkit/MyContext 2>/dev/null || true
-@unexec rmdir %D/www/webkit/Logs 2>/dev/null || true
-@unexec rmdir %D/www/webkit/ErrorMsgs 2>/dev/null || true
-@unexec rmdir %D/www/webkit/Configs 2>/dev/null || true
-@unexec rmdir %D/www/webkit/Cache 2>/dev/null || true
-@unexec rmdir %D/www/webkit 2>/dev/null || true
+@dirrmtry share/webware/bin
+@dirrmtry share/webware/WebUtils/Tests
+@dirrmtry share/webware/WebUtils/Docs/Source/Summaries
+@dirrmtry share/webware/WebUtils/Docs/Source/Files
+@dirrmtry share/webware/WebUtils/Docs/Source/Docs
+@dirrmtry share/webware/WebUtils/Docs/Source
+@dirrmtry share/webware/WebUtils/Docs
+@dirrmtry share/webware/WebUtils
+@dirrmtry share/webware/WebKit/Tests/Basic/TestContext
+@dirrmtry share/webware/WebKit/Tests/Basic/Configs
+@dirrmtry share/webware/WebKit/Tests/Basic/Cache
+@dirrmtry share/webware/WebKit/Tests/Basic
+@dirrmtry share/webware/WebKit/Tests
+@dirrmtry share/webware/WebKit/Testing/URL/vhosts
+@dirrmtry share/webware/WebKit/Testing/URL/test5join2
+@dirrmtry share/webware/WebKit/Testing/URL/test5join1
+@dirrmtry share/webware/WebKit/Testing/URL/test5
+@dirrmtry share/webware/WebKit/Testing/URL/test4
+@dirrmtry share/webware/WebKit/Testing/URL/test3
+@dirrmtry share/webware/WebKit/Testing/URL/test2
+@dirrmtry share/webware/WebKit/Testing/URL/test1
+@dirrmtry share/webware/WebKit/Testing/URL
+@dirrmtry share/webware/WebKit/Testing/Dir
+@dirrmtry share/webware/WebKit/Testing
+@dirrmtry share/webware/WebKit/Tasks
+@dirrmtry share/webware/WebKit/StartScripts
+@dirrmtry share/webware/WebKit/Sessions
+@dirrmtry share/webware/WebKit/Research
+@dirrmtry share/webware/WebKit/Logs
+@dirrmtry share/webware/WebKit/Experimental
+@dirrmtry share/webware/WebKit/Examples
+@dirrmtry share/webware/WebKit/ErrorMsgs
+@dirrmtry share/webware/WebKit/Docs/Source/Summaries
+@dirrmtry share/webware/WebKit/Docs/Source/Files
+@dirrmtry share/webware/WebKit/Docs/Source/Docs
+@dirrmtry share/webware/WebKit/Docs/Source
+@dirrmtry share/webware/WebKit/Docs
+@dirrmtry share/webware/WebKit/Configs
+@dirrmtry share/webware/WebKit/Cache
+@dirrmtry share/webware/WebKit/Admin
+@dirrmtry share/webware/WebKit/Adapters/wkcgi
+@dirrmtry share/webware/WebKit/Adapters/wkISAPI
+@dirrmtry share/webware/WebKit/Adapters/mod_webkit2
+@dirrmtry share/webware/WebKit/Adapters/mod_webkit
+@dirrmtry share/webware/WebKit/Adapters/common
+@dirrmtry share/webware/WebKit/Adapters
+@dirrmtry share/webware/WebKit
+@dirrmtry share/webware/UserKit/Tests/UserManagerTest.mkmodel
+@dirrmtry share/webware/UserKit/Tests
+@dirrmtry share/webware/UserKit/Docs/Source/Summaries
+@dirrmtry share/webware/UserKit/Docs/Source/Files
+@dirrmtry share/webware/UserKit/Docs/Source/Docs
+@dirrmtry share/webware/UserKit/Docs/Source
+@dirrmtry share/webware/UserKit/Docs
+@dirrmtry share/webware/UserKit
+@dirrmtry share/webware/TaskKit/Tests
+@dirrmtry share/webware/TaskKit/Docs/Source/Summaries
+@dirrmtry share/webware/TaskKit/Docs/Source/Files
+@dirrmtry share/webware/TaskKit/Docs/Source/Docs
+@dirrmtry share/webware/TaskKit/Docs/Source
+@dirrmtry share/webware/TaskKit/Docs
+@dirrmtry share/webware/TaskKit
+@dirrmtry share/webware/PSP/Tests
+@dirrmtry share/webware/PSP/Examples
+@dirrmtry share/webware/PSP/Docs/Source/Summaries
+@dirrmtry share/webware/PSP/Docs/Source/Files
+@dirrmtry share/webware/PSP/Docs/Source/Docs
+@dirrmtry share/webware/PSP/Docs/Source
+@dirrmtry share/webware/PSP/Docs
+@dirrmtry share/webware/PSP
+@dirrmtry share/webware/MiscUtils/Testing
+@dirrmtry share/webware/MiscUtils/Docs/Source/Summaries
+@dirrmtry share/webware/MiscUtils/Docs/Source/Files
+@dirrmtry share/webware/MiscUtils/Docs/Source/Docs
+@dirrmtry share/webware/MiscUtils/Docs/Source
+@dirrmtry share/webware/MiscUtils/Docs
+@dirrmtry share/webware/MiscUtils
+@dirrmtry share/webware/MiddleKit/WebBrowser/Help
+@dirrmtry share/webware/MiddleKit/WebBrowser
+@dirrmtry share/webware/MiddleKit/Tests/MKTypeValueChecking.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKString.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKRefresh.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKObjRefReuse.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKObjRef.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKNone.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKMultipleThreads.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKMultipleStores.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKModelInh3.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKModelInh2.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKModelInh1.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKList.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKInheritanceAbstract.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKInheritance.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKExcel.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKEnums.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKDump.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKDeleteMark.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKDelete.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKDefaultMinMax.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKDateTime.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKClone.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKBasic.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests/MKBackRef.mkmodel
+@dirrmtry share/webware/MiddleKit/Tests
+@dirrmtry share/webware/MiddleKit/Run
+@dirrmtry share/webware/MiddleKit/Resources/Template.mkmodel
+@dirrmtry share/webware/MiddleKit/Resources
+@dirrmtry share/webware/MiddleKit/Docs/Videos/Middle/Videos.mkmodel
+@dirrmtry share/webware/MiddleKit/Docs/Videos/Middle
+@dirrmtry share/webware/MiddleKit/Docs/Videos/Command
+@dirrmtry share/webware/MiddleKit/Docs/Videos
+@dirrmtry share/webware/MiddleKit/Docs/Source/Summaries
+@dirrmtry share/webware/MiddleKit/Docs/Source/Files
+@dirrmtry share/webware/MiddleKit/Docs/Source/Docs
+@dirrmtry share/webware/MiddleKit/Docs/Source
+@dirrmtry share/webware/MiddleKit/Docs
+@dirrmtry share/webware/MiddleKit/Design
+@dirrmtry share/webware/MiddleKit/Core
+@dirrmtry share/webware/MiddleKit
+@dirrmtry share/webware/KidKit/Examples
+@dirrmtry share/webware/KidKit/Docs/Source/Summaries
+@dirrmtry share/webware/KidKit/Docs/Source/Files
+@dirrmtry share/webware/KidKit/Docs/Source/Docs
+@dirrmtry share/webware/KidKit/Docs/Source
+@dirrmtry share/webware/KidKit/Docs
+@dirrmtry share/webware/KidKit
+@dirrmtry share/webware/Docs
+@dirrmtry share/webware/DocSupport
+@dirrmtry share/webware/COMKit/Examples
+@dirrmtry share/webware/COMKit/Docs/Source/Summaries
+@dirrmtry share/webware/COMKit/Docs/Source/Files
+@dirrmtry share/webware/COMKit/Docs/Source/Docs
+@dirrmtry share/webware/COMKit/Docs/Source
+@dirrmtry share/webware/COMKit/Docs
+@dirrmtry share/webware/COMKit
+@dirrmtry share/webware/CGIWrapper/Examples
+@dirrmtry share/webware/CGIWrapper/Docs/Source/Summaries
+@dirrmtry share/webware/CGIWrapper/Docs/Source/Files
+@dirrmtry share/webware/CGIWrapper/Docs/Source/Docs
+@dirrmtry share/webware/CGIWrapper/Docs/Source
+@dirrmtry share/webware/CGIWrapper/Docs
+@dirrmtry share/webware/CGIWrapper
+@dirrmtry share/webware
+@dirrmtry www/webkit/Sessions
+@dirrmtry www/webkit/MyContext
+@dirrmtry www/webkit/Logs
+@dirrmtry www/webkit/ErrorMsgs
+@dirrmtry www/webkit/Configs
+@dirrmtry www/webkit/Cache
+@dirrmtry www/webkit

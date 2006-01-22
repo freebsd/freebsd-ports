@@ -58,5 +58,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Bonobo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Config
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2

@@ -34,6 +34,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestUtil.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Test
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Apache 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache

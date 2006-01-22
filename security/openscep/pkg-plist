@@ -70,4 +70,4 @@ www/openscep/updatecrl.8.html
 www/openscep/welcome.html
 @dirrm www/cgi-bin/openscep
 @dirrm www/openscep
-@unexec rmdir %D/etc/openscep 2>/dev/null || true
+@dirrmtry etc/openscep

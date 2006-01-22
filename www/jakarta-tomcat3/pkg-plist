@@ -146,11 +146,11 @@ etc/rc.d/020.jakarta-tomcat3.sh
 @exec mkdir -p %D/%%T%%/conf/auto || true
 @exec mkdir -p %D/%%T%%/modules || true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
-@unexec rmdir %D/%%T%%/conf/users 2>/dev/null || true
-@unexec rmdir %D/%%T%%/conf/auto 2>/dev/null || true
-@unexec rmdir %D/%%T%%/conf/jserv 2>/dev/null || true
-@unexec rmdir %D/%%T%%/conf/jk 2>/dev/null || true
-@unexec rmdir %D/%%T%%/conf 2>/dev/null || true
+@dirrmtry %%T%%/conf/users
+@dirrmtry %%T%%/conf/auto
+@dirrmtry %%T%%/conf/jserv
+@dirrmtry %%T%%/conf/jk
+@dirrmtry %%T%%/conf
 @dirrm %%T%%/logs
 @dirrm %%T%%/doc/images
 @dirrm %%T%%/doc/appdev/sample/etc
@@ -172,4 +172,4 @@ etc/rc.d/020.jakarta-tomcat3.sh
 @dirrm %%T%%/webapps
 @dirrm %%T%%/bin
 @dirrm %%T%%/ant
-@unexec rmdir %D/%%T%% 2>/dev/null || true
+@dirrmtry %%T%%

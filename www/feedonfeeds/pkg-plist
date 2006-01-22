@@ -38,4 +38,4 @@
 @dirrm %%DATADIR%%/frames
 @dirrm %%DATADIR%%/magpierss/extlib
 @dirrm %%DATADIR%%/magpierss
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrmtry %%DATADIR%%

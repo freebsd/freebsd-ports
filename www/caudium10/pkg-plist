@@ -558,12 +558,12 @@ caudium/server/install
 caudium/server/configvar
 caudium/server/.cvsignore
 @unexec rm %D/caudium/server/lib/7.0.361/PiXSL.so 2>/dev/null || true
-@unexec rmdir %D/caudium/configurations 2>/dev/null || true
-@unexec rmdir %D/caudium/local/modules 2>/dev/null || true
-@unexec rmdir %D/caudium/local/nfonts 2>/dev/null || true
-@unexec rmdir %D/caudium/local 2>/dev/null || true
-@unexec rmdir %D/caudium/logs 2>/dev/null || true
-@unexec rmdir %D/caudium/server/include 2>/dev/null || true
+@dirrmtry caudium/configurations
+@dirrmtry caudium/local/modules
+@dirrmtry caudium/local/nfonts
+@dirrmtry caudium/local
+@dirrmtry caudium/logs
+@dirrmtry caudium/server/include
 @dirrm caudium/readme
 @dirrm caudium/server/more_modules
 @dirrm caudium/server/base_server/config

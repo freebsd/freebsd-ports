@@ -62,5 +62,5 @@ share/epylog/modules/weeder_mod.pyc
 @dirrm share/doc/epylog-1.0.3/doc
 @dirrm share/doc/epylog-1.0.3
 @dirrm %%PYTHON_SITELIBDIR%%/epylog
-@unexec rmdir %D/etc/epylog/modules.d 2>/dev/null || true
-@unexec rmdir %D/etc/epylog 2>/dev/null || true
+@dirrmtry etc/epylog/modules.d
+@dirrmtry etc/epylog

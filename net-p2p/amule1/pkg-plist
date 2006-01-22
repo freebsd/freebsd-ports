@@ -74,8 +74,8 @@ share/locale/pl/LC_MESSAGES/amule.mo
 share/locale/pt_BR/LC_MESSAGES/amule.mo
 share/locale/ru/LC_MESSAGES/amule.mo
 @dirrm share/gnome/doc/aMule-1.2.8
-@unexec rmdir %D/share/gnome/doc 2>/dev/null || true
-@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ee 2>/dev/null || true
+@dirrmtry share/gnome/doc
+@dirrmtry share/locale/ee/LC_MESSAGES
+@dirrmtry share/locale/ee
 @dirrm share/gnome/amuleweb/webserver
 @dirrm share/gnome/amuleweb

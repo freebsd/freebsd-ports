@@ -44,4 +44,4 @@
 @dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key
 @dirrm %%SITE_PERL%%/Crypt/OpenPGP/Signature
 @dirrm %%SITE_PERL%%/Crypt/OpenPGP
-@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Crypt

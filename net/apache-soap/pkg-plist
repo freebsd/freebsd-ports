@@ -676,5 +676,5 @@ share/doc/apache-soap
 @dirrm %%T%%/docs/trouble
 @dirrm %%T%%/docs
 @dirrm %%T%%
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
+@dirrmtry share/java/classes
+@dirrmtry share/java

@@ -1,6 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
 %%SITE_PERL%%/auto/RPC/XML/Server/timeout.al
 %%SITE_PERL%%/auto/RPC/XML/Server/share_procs.al
 %%SITE_PERL%%/auto/RPC/XML/Server/share_methods.al
@@ -42,7 +42,7 @@
 %%SITE_PERL%%/auto/RPC/XML/Function/autosplit.ix
 @dirrm %%SITE_PERL%%/auto/RPC/XML/Function
 @dirrm %%SITE_PERL%%/auto/RPC/XML
-@unexec rmdir %D/%%SITE_PERL%%/auto/RPC 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/auto/RPC
 %%SITE_PERL%%/RPC/XML.pm
 %%SITE_PERL%%/RPC/XML/status.xpl
 %%SITE_PERL%%/RPC/XML/multicall.xpl
@@ -58,10 +58,10 @@
 %%SITE_PERL%%/RPC/XML/Function.pm
 %%SITE_PERL%%/RPC/XML/Client.pm
 @dirrm %%SITE_PERL%%/RPC/XML
-@unexec rmdir %D/%%SITE_PERL%%/RPC 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/RPC
 %%SITE_PERL%%/Apache/RPC/status.xpl
 %%SITE_PERL%%/Apache/RPC/Status.pm
 %%SITE_PERL%%/Apache/RPC/Server.pm
 @dirrm %%SITE_PERL%%/Apache/RPC
-@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Apache
 bin/make_method

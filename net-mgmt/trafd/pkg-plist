@@ -13,6 +13,6 @@ etc/rc.d/trafd.sh.sample
 @exec mkdir %D/var 2>/dev/null || true
 @exec mkdir %D/var/log 2>/dev/null || true
 @exec mkdir %D/var/trafd 2>/dev/null || true
-@unexec rmdir %D/var/trafd 2>/dev/null || true
-@unexec rmdir %D/var/log 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@dirrmtry var/trafd
+@dirrmtry var/log
+@dirrmtry var

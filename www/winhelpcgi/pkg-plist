@@ -1,2 +1,2 @@
 www/winhelpcgi/winhelpcgi.cgi
-@unexec rmdir %D/www/winhelpcgi 2>/dev/null || true
+@dirrmtry www/winhelpcgi

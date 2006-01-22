@@ -23,4 +23,4 @@ lib/X11/fonts/misc/teletext4i.pcf.gz
 @unexec rm %D/lib/X11/fonts/misc/fonts.cache-1 || true
 @unexec fc-cache -f -v %D/lib/X11/fonts/misc || true
 @unexec if [ ! -s %D/lib/X11/fonts/misc/fonts.cache-1 ]; then rm %D/lib/X11/fonts/misc/fonts.cache-1; fi
-@unexec rmdir %D/lib/X11/fonts/misc 2>/dev/null || true
+@dirrmtry lib/X11/fonts/misc

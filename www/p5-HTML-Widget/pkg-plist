@@ -41,10 +41,10 @@
 %%SITE_PERL%%/HTML/Widget/Filter/Whitespace.pm
 %%SITE_PERL%%/HTML/Widget/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widget/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widget 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Widget/Constraint 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Widget/Element 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Widget/Filter 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Widget 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Widget
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Widget/Constraint
+@dirrmtry %%SITE_PERL%%/HTML/Widget/Element
+@dirrmtry %%SITE_PERL%%/HTML/Widget/Filter
+@dirrmtry %%SITE_PERL%%/HTML/Widget
+@dirrmtry %%SITE_PERL%%/HTML

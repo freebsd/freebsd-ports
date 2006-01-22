@@ -25,6 +25,6 @@ share/foomatic/templates/pjl_num_option.xml
 @dirrm %%SITE_PERL%%/Foomatic
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic
 @dirrm share/foomatic/templates
-@unexec rmdir %D/share/foomatic 2>/dev/null || true
+@dirrmtry share/foomatic
 @unexec rmdir %D/etc/foomatic
 @exec mkdir -p %D/etc/foomatic

@@ -123,4 +123,4 @@ www/base/styles/acid_style.css
 @dirrm www/base/images
 @dirrm www/base/help
 @dirrm www/base/admin
-@unexec rmdir %D/www/base 2>/dev/null || true
+@dirrmtry www/base

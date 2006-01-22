@@ -69,7 +69,7 @@ etc/zoidrc
 @dirrm %%SITE_PERL%%/auto/Zoidberg/Fish/Log
 @dirrm %%SITE_PERL%%/auto/Zoidberg/Fish
 @dirrm %%SITE_PERL%%/auto/Zoidberg
-@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/Bundle
 %%DATADIR%%/AppInfo.xml
 %%DATADIR%%/pixmaps/zoid16.png
 %%DATADIR%%/pixmaps/zoid32.png

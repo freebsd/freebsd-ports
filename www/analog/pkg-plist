@@ -393,4 +393,4 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/css
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true
+@dirrmtry %%IMGDIR%%

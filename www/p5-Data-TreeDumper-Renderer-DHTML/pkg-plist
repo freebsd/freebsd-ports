@@ -4,7 +4,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/DHTML/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer/DHTML
 @dirrm %%SITE_PERL%%/auto/Data/TreeDumper/Renderer/DHTML
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/auto/Data/TreeDumper/Renderer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Data/TreeDumper/Renderer 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Data/TreeDumper 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/TreeDumper/Renderer
+@dirrmtry %%SITE_PERL%%/auto/Data/TreeDumper/Renderer
+@dirrmtry %%SITE_PERL%%/Data/TreeDumper/Renderer
+@dirrmtry %%SITE_PERL%%/Data/TreeDumper

@@ -52,6 +52,6 @@ etc/rc.d/amphetadesk.sh
 @dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk/OS
 @dirrm %%SITE_PERL%%/AmphetaDesk/AmphetaDesk
 @dirrm %%SITE_PERL%%/AmphetaDesk
-@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5

@@ -18,4 +18,4 @@ apps/Wallpaper/options.pyc
 apps/Wallpaper/options.pyo
 @dirrm apps/Wallpaper/Help
 @dirrm apps/Wallpaper
-@unexec rmdir %D/apps 2>/dev/null || true
+@dirrmtry apps

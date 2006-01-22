@@ -113,14 +113,14 @@
 %%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt8.pfa
 %%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced/ectt9.pfa
 @dirrm %%TEXMFLOCALDIR%%/fonts/type1/public/ec-fonts-mftraced
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/type1/public 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/type1 2>/dev/null || true
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/type1/public
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/type1
 @dirrm %%TEXMFLOCALDIR%%/fonts/tfm/public/ec-fonts-mftraced
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/tfm/public 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/tfm 2>/dev/null || true
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/tfm/public
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/tfm
 @dirrm %%TEXMFLOCALDIR%%/fonts/map/dvips/ec-fonts-mftraced
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/map/dvips 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts/map 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/fonts 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%%/dvips 2>/dev/null || true
-@unexec rmdir %D/%%TEXMFLOCALDIR%% 2>/dev/null || true
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/map/dvips
+@dirrmtry %%TEXMFLOCALDIR%%/fonts/map
+@dirrmtry %%TEXMFLOCALDIR%%/fonts
+@dirrmtry %%TEXMFLOCALDIR%%/dvips
+@dirrmtry %%TEXMFLOCALDIR%%

@@ -22,5 +22,5 @@ bin/embpexec.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Embperl/Embperl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Embperl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Embperl
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/HTML 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

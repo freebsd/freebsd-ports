@@ -265,7 +265,7 @@ www/icons/htdig/star_blank.png
 @dirrm lib/htdig
 @dirrm lib/htdig_db
 @dirrm www/icons/htdig
-@unexec rmdir %D/%%DATADIR%%/common 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%%/database 2>/dev/null || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
-@unexec rmdir %D/etc/htdig 2>/dev/null || true
+@dirrmtry %%DATADIR%%/common
+@dirrmtry %%DATADIR%%/database
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/htdig

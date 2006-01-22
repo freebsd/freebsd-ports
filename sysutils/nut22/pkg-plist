@@ -10,7 +10,7 @@ etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
-@unexec rmdir %D/etc/nut 2>/dev/null || true
+@dirrmtry etc/nut
 etc/rc.d/nut.sh
 libexec/nut/apcsmart
 libexec/nut/bcmxcp
@@ -98,6 +98,6 @@ sbin/upssched
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cables
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/libexec/nut 2>/dev/null || true
+@dirrmtry libexec/nut
 @unexec rmdir /var/db/nut 2>/dev/null || true
 %%CGIDIRRM%%

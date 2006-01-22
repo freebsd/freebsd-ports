@@ -3,9 +3,9 @@ share/texmf/doc/latex/lgrind/lgrind.dvi
 share/texmf/tex/latex/lgrind/lgrind.sty
 share/texmf/tex/latex/lgrind/lgrindef
 @dirrm share/texmf/tex/latex/lgrind
-@unexec rmdir %D/share/texmf/tex/latex 2>/dev/null || true
-@unexec rmdir %D/share/texmf/tex 2>/dev/null || true
+@dirrmtry share/texmf/tex/latex
+@dirrmtry share/texmf/tex
 @dirrm share/texmf/doc/latex/lgrind
-@unexec rmdir %D/share/texmf/doc/latex 2>/dev/null || true
-@unexec rmdir %D/share/texmf/doc 2>/dev/null || true
-@unexec rmdir %D/share/texmf 2>/dev/null || true
+@dirrmtry share/texmf/doc/latex
+@dirrmtry share/texmf/doc
+@dirrmtry share/texmf

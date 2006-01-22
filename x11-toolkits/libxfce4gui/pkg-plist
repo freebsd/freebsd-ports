@@ -86,12 +86,12 @@ share/gtk-doc/html/libxfcegui4/right.png
 share/gtk-doc/html/libxfcegui4/up.png
 share/xfce4/hicolor-index.theme
 @dirrm include/xfce4/libxfcegui4
-@unexec rmdir %D/include/xfce4/xfce4-modules 2>/dev/null || true
-@unexec rmdir %D/include/xfce4 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/modules 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4 2>/dev/null || true
-@unexec rmdir %D/share/xfce4/mime 2>/dev/null || true
-@unexec rmdir %D/share/xfce4 2>/dev/null || true
+@dirrmtry include/xfce4/xfce4-modules
+@dirrmtry include/xfce4
+@dirrmtry lib/xfce4/modules
+@dirrmtry lib/xfce4
+@dirrmtry share/xfce4/mime
+@dirrmtry share/xfce4
 @dirrm share/gtk-doc/html/libxfcegui4
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc

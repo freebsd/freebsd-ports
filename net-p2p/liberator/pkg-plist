@@ -24,4 +24,4 @@ lib/ocaml/hlfreenet.mli
 %%DATADIR%%/liber_mimetypes
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/lib/ocaml 2>/dev/null || true
+@dirrmtry lib/ocaml

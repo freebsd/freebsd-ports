@@ -14,7 +14,7 @@
 @dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random
 @dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value
 @dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WWW/Mechanize 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/WWW
