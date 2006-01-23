@@ -7,13 +7,16 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}.${SGE_SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	Sun Grid Engine, a batch queueing system
+
+DEPRECATED=	SGE 5.3 is no longer maintained. \
+		Please consider sysutils/sge instead
 
 NO_LATEST_LINK=	yes
 
