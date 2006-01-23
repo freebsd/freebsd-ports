@@ -14,21 +14,19 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-jabber_pyicq_dir=${jabberd_pyicq_dir-"%%PREFIX%%/lib/jabber/pyicq"}
-jabber_pyicq_piddir=${jabberd_pyicq_piddir-"/var/jabberd/pid"}
-jabber_pyicq_enable=${jabberd_pyicq_enable-"NO"}
-
+jabber_pyicq_dir=${jabber_pyicq_dir:-"%%PREFIX%%/lib/jabber/pyicq"}
+jabber_pyicq_piddir=${jabber_pyicq_piddir:-"/var/jabberd/pid"}
+jabber_pyicq_enable=${jabber_pyicq_enable:-"NO"}
 
 . %%RC_SUBR%%
 
 name="jabber_pyicq"
 rcvar=`set_rcvar`
+load_rc_config $name
+
+pidfile="${jabber_pyicq_piddir}/pyicq.pid"
 command_interpreter="%%PYTHON_CMD%%"
 command="${jabber_pyicq_dir}/main.py"
-command_args="&"
+command_args="-o pid=${pidfile} &"
 
-#procname="${PYTHON} ${jabber_pyicq_dir}/main.py"
-pidfile="${jabber_pyicq_piddir}/pyicq.pid"
-
-load_rc_config $name
 run_rc_command "$1"
