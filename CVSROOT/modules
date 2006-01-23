@@ -14130,6 +14130,7 @@ zope-FileSystemSite	ports/www/zope-FileSystemSite
 zope-annotations	ports/www/zope-annotations
 zope-archetypes	ports/www/zope-archetypes
 zope-btreefolder2	ports/www/zope-btreefolder2
+zope-calendaring	ports/www/zope-calendaring
 zope-cmf	ports/www/zope-cmf
 zope-cmfactionicons	ports/www/zope-cmfactionicons
 zope-cmfformcontroller	ports/www/zope-cmfformcontroller
