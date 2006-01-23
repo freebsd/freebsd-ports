@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aster
-DISTVERSION=	8.2.0-2
+DISTVERSION=	8.2.0-3
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
@@ -48,7 +48,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 #USE_GCC=	3.4	# Helps on 4.x, but not sufficient.
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:R}
