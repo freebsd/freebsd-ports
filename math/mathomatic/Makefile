@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.5.0
+PORTVERSION=	12.5.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
+USE_BZIP2=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	-DREADLINE
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/mathomatic
 PORTDOCS=	*
