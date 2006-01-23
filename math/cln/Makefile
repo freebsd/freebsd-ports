@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
