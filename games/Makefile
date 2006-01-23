@@ -327,6 +327,7 @@
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
+    SUBDIR += libdungeonmaker
     SUBDIR += libfov
     SUBDIR += libggz
     SUBDIR += libmaitretarot
