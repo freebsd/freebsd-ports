@@ -60,7 +60,7 @@ do-install:
 .for dir in ${LOCAL_DIRS}
 	@${MKDIR} -p ${prefix}/${dir}
 	@${ECHO_CMD} "@exec mkdir -p %D/${dir}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry ${dir}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${dir} 2>/dev/null || true" >> ${TMPPLIST}
 .endfor
 .endfor
 
