@@ -79,8 +79,6 @@ libdata/pkgconfig/ftgl.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/FTTextureGlyph_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FTVectoriser_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FTVectoriser_8cpp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_000000.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
@@ -88,6 +86,10 @@ libdata/pkgconfig/ftgl.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/FTGL
