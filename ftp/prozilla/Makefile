@@ -16,6 +16,7 @@ COMMENT=	ProZilla is a fast download accelerator
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
