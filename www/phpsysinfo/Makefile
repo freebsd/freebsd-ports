@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	so14k@so14k.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A php script that displays info about the host being accessed
 
 USE_PHP=	pcre xml

@@ -10,7 +10,7 @@ PORTREVISION=	4
 CATEGORIES=	net-im kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/
 
-MAINTAINER=	so14k@so14k.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE program for sending and receiving MS Windows WinPopup messages
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
