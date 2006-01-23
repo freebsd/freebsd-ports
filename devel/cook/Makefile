@@ -22,9 +22,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=	c_incl.1 cook.1 cook_bom.1 cook_lic.1 cook_rsh.1 cookfp.1 cooktime.1 \
 	find_libs.1 make2cook.1 roffpp.1
 MANCOMPRESSED=	no
-.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-.endif
 
 # Make sure that the whole directory tree exists.
 pre-install:
