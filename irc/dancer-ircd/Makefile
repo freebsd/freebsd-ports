@@ -9,20 +9,17 @@ PORTNAME=	dancer-ircd
 PORTVERSION=	1.0.35
 PORTREVISION=	1
 CATEGORIES=	irc
-#CATEGORIES=	irc ipv6
-MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/ \
-		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc1 \
-		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc2
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases \
-			dancer-oper-guide:doc1 \
-			dancer-user-guide:doc2
+MASTER_SITES=	#
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		dancer-oper-guide.txt:doc1 \
-		dancer-user-guide.txt:doc2
+		dancer-oper-guide.txt \
+		dancer-user-guide.txt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daemon based on hybrid ircd
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-03-23
 
 IGNOREFILES=	dancer-oper-guide.txt \
 		dancer-user-guide.txt
