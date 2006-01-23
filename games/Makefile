@@ -205,6 +205,7 @@
     SUBDIR += ggz-gtk-client
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
+    SUBDIR += gillo
     SUBDIR += gl-117
     SUBDIR += glasteroids
     SUBDIR += glaxium
