@@ -1,0 +1,10 @@
+Calendaring is a product for Plone
+
+Calendaring imports events from an iCalendar (.ics) file and creates Plone
+event objects. You can also publish the calendar directly to a Plone site using
+iCal or Mozilla Calendar.
+ 
+WWW: http://plone.org/products/calendaring
+
+- Khairil Yusof
+kaeru@inigo-tech.com
