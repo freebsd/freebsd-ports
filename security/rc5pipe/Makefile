@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://people.fruitsalad.org/bdavis/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	so14k@so14k.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RC5 en-/decryption via UNIX pipes
 
 PLIST_FILES=	bin/rc5pipe

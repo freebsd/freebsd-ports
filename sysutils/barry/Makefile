@@ -12,7 +12,7 @@ CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 		http://freebsd.so14k.com/barry/
 
-MAINTAINER=	so14k@so14k.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice KDE frontend to the ports system
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/portsdb:${PORTSDIR}/sysutils/portupgrade

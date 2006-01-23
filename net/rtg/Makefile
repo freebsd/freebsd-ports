@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rtg
 
-MAINTAINER=	so14k@so14k.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql41-client \
