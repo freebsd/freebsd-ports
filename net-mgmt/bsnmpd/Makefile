@@ -7,7 +7,7 @@
 
 PORTNAME=	bsnmpd
 PORTVERSION=	1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://people.freebsd.org/~harti/bsnmp/
 DISTNAME=	bsnmp-${PORTVERSION}a
@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libbegemot=${LOCALBASE}
 
-USE_AUTOTOOLS=	automake:19 autoconf:259
+# Currently autotools is not needed
+#USE_AUTOTOOLS=	automake:19 autoconf:259
 INSTALLS_SHLIB=		yes
 
 USE_GCC=	3.2+
@@ -38,7 +39,7 @@ MAN3=	asn1.3 bsnmplib.3 bsnmpclient.3 bsnmpagent.3 snmpmod.3 \
 IGNORE=	bsnmpd already in base system
 .endif
 
-run-autotools:: run-autotools-aclocal run-autotools-autoconf
+#run-autotools:: run-autotools-aclocal run-autotools-autoconf
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc
