@@ -120,6 +120,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${MASTER_SITE_OVERRIDE})
 # EXTRACT_ONLY	- If set, a subset of ${DISTFILES} you want to
 #				  actually extract.
+# ALWAYS_KEEP_DISTFILES - If set, the package building cluster will save the distfiles along
+#				  with the packages. This may be required to comply with some
+#				  licenses, e.g. GPL in some cases.
+#				  Default: not set.
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
@@ -1561,10 +1565,6 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
-.if defined(USE_DOS2UNIX)
-USE_REINPLACE=	yes
-.endif
-
 .if defined(USE_GCC)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gcc.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.gcc.mk"
@@ -1912,11 +1912,14 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
+# XXX
+#.if defined(USE_AUTOTOOLS)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.autotools.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
 .endif
+#.endif
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
@@ -3345,7 +3348,7 @@ patch-dos2unix:
 .endfor
 .endif
 .else
-	${DO_NADA}
+	@${DO_NADA}
 .endif
 .endif
 
@@ -4546,6 +4549,16 @@ ${deptype:L}-depends:
 				else \
 					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
 					notfound=1; \
+				fi; \
+				if [ $$notfound != 0 ]; then \
+					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
+						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
+						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
+					pkg_info=`${PKG_INFO} -E "$$inverse_dep" || ${TRUE}`; \
+					if [ "$$pkg_info" != "" ]; then \
+						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
+						exit 1; \
+					fi; \
 				fi; \
 			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
