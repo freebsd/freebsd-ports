@@ -12863,6 +12863,7 @@ vigra		ports/graphics/vigra
 vii		ports/sysutils/vii
 vile		ports/editors/vile
 vilearn		ports/editors/vilearn
+vils		ports/sysutils/vils
 vim		ports/editors/vim
 vim-lite	ports/editors/vim-lite
 vim5		ports/editors/vim5
