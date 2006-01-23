@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.bazaar-ng.org/pkg/
 MASTER_SITE_SUBDIR=	gnu-arch
@@ -23,7 +23,7 @@ USE_PYDISTUTILS=	yes
 MAN1=		bzr.1
 
 post-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} bzr-man.py
+	cd ${WRKSRC} && ${PYTHON_CMD} bzr_man.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${MAN1PREFIX}/man/man1
