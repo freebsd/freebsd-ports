@@ -65,9 +65,6 @@ share/doc/avr-libc/avr-libc-user-manual/todo.html
 share/doc/avr-libc/avr-libc-user-manual/using_avrprog.html
 share/doc/avr-libc/avr-libc-user-manual/using_tools.html
 share/doc/avr-libc/man/man3/BOOTLOADER_SECTION.3
-share/doc/avr-libc/man/man3/DTOSTR_ALWAYS_SIGN.3
-share/doc/avr-libc/man/man3/DTOSTR_PLUS_SIGN.3
-share/doc/avr-libc/man/man3/DTOSTR_UPPERCASE.3
 share/doc/avr-libc/man/man3/EDOM.3
 share/doc/avr-libc/man/man3/EEMEM.3
 share/doc/avr-libc/man/man3/EMPTY_INTERRUPT.3
@@ -384,8 +381,6 @@ share/doc/avr-libc/man/man3/deprecated.3
 share/doc/avr-libc/man/man3/deprecated_items.3
 share/doc/avr-libc/man/man3/div.3
 share/doc/avr-libc/man/man3/div_t.3
-share/doc/avr-libc/man/man3/dtostre.3
-share/doc/avr-libc/man/man3/dtostrf.3
 share/doc/avr-libc/man/man3/eeprom_busy_wait.3
 share/doc/avr-libc/man/man3/eeprom_is_ready.3
 share/doc/avr-libc/man/man3/eeprom_read_block.3
