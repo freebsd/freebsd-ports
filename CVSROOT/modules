@@ -2924,6 +2924,7 @@ giftoxic	ports/net/giftoxic
 giftrans	ports/graphics/giftrans
 giftui		ports/net/giftui
 gigabase	ports/databases/gigabase
+gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
 gimp		ports/graphics/gimp
 gimp-help	ports/graphics/gimp-help
