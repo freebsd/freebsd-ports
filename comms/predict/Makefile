@@ -7,7 +7,7 @@
 
 PORTNAME=	predict
 PORTVERSION=	2.2.2
-CATEGORIES=	comms astro
+CATEGORIES=	comms astro hamradio
 MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/
 
 MAINTAINER=	db@db.net
