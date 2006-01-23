@@ -406,12 +406,16 @@ _PORTSEARCH=	\
 	    fields["rdeps"] = 9;  names[9]  = "R-deps"; \
 	    fields["www"]   = 10; names[10] = "WWW"; \
 	    split(display, d, /,[ \t]*/); \
-	    for (i in d) { \
-	      disp[fields[d[i]]] = 1; \
-	    } \
 	    split(xdisplay, xd, /,[ \t]*/); \
-	    for (i in xd) { \
-	      delete disp[fields[xd[i]]]; \
+	    for (i in d) { \
+            toprint = 1;\
+	      for (j in xd) { \
+                if (d[i] == xd[j] ) { \
+                       toprint=0; \
+                       break;\
+                 }\
+	      } \
+      	    if (toprint == 1 ) disp[fields[d[i]]] = 1; \
 	    } \
 	  } \
 	  { \
