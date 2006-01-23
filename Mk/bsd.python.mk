@@ -381,9 +381,9 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
 # Zope-related variables
 .if defined(USE_ZOPE)
-.if ${ZOPE_VERSION} == "3.1"
-SZOPEBASEDIR?=			www/Zope31
-ZOPE_PORTSDIR=			${PORTSDIR}/www/zope31
+.if ${ZOPE_VERSION} == "3.2"
+SZOPEBASEDIR?=			www/Zope3
+ZOPE_PORTSDIR=			${PORTSDIR}/www/zope3
 .elif ${ZOPE_VERSION} == "2.8"
 SZOPEBASEDIR?=			www/Zope28
 ZOPE_PORTSDIR=			${PORTSDIR}/www/zope28
@@ -393,7 +393,7 @@ ZOPE_PORTSDIR=			${PORTSDIR}/www/zope
 .else
 check-makevars::
 	@${ECHO} "Makefile error: bad value for ZOPE_VERSION: ${ZOPE_VERSION}."
-	@${ECHO} "Legal values are:	2.7 (default), 2.8, 3.1"
+	@${ECHO} "Legal values are:	2.7 (default), 2.8, 3.2"
 	@${FALSE}
 .endif
 ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
