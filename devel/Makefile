@@ -1032,6 +1032,7 @@
     SUBDIR += p5-Module-Pluggable-Fast
     SUBDIR += p5-Module-Pluggable-Ordered
     SUBDIR += p5-Module-Refresh
+    SUBDIR += p5-Module-Release
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-Reload-Sel
     SUBDIR += p5-Module-ScanDeps
@@ -1250,7 +1251,6 @@
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-mixin
     SUBDIR += p5-prefork
-    SUBDIR += p5-release
     SUBDIR += p5-version
     SUBDIR += p65
     SUBDIR += patch
