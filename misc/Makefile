@@ -311,6 +311,7 @@
     SUBDIR += muuz
     SUBDIR += nagios-base-logos
     SUBDIR += najitool
+    SUBDIR += newer
     SUBDIR += nserver
     SUBDIR += nsf
     SUBDIR += numchar
