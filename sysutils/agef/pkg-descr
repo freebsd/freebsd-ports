@@ -1,0 +1,9 @@
+This is the third revision of the AGEF (please pronounce this
+AGE-F, for "age files") program, which was initially posted to
+net.sources March 2, 1987.
+
+This version of the program can age by inode change time (-c),
+file modification time (-m), or time of last access (-a).
+
+This program is useful for cleaning up disks and maintaining
+large collections of small files, such as mail or news spools.

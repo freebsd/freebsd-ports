@@ -15,6 +15,7 @@
     SUBDIR += adtool
     SUBDIR += afbinit
     SUBDIR += afio
+    SUBDIR += agef
     SUBDIR += ah-tty
     SUBDIR += am-utils
     SUBDIR += anacron

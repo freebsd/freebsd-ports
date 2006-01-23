@@ -1,0 +1,49 @@
+*** Makefile.orig	Sun Feb 26 17:37:21 1989
+--- Makefile	Sat Jan 21 23:10:07 2006
+***************
+*** 32,43 ****
+  
+  
+  #	Standard things you may wish to change:
+  #
+  #	INSTALL		directory to install agef in
+  
+! INSTALL	=	/usr/local/bin
+  
+  
+  #	The following OPTIONS may be defined:
+  #
+  #	LSTAT		we have the lstat(2) system call (BSD only)
+--- 32,45 ----
+  
+  
+  #	Standard things you may wish to change:
+  #
+  #	INSTALL		directory to install agef in
++ #	INSTALLMAN	directory to install agef.8 in
+  
+! INSTALL	=	${PREFIX}/bin
+! INSTALLMAN =	${PREFIX}/man/man8
+  
+  
+  #	The following OPTIONS may be defined:
+  #
+  #	LSTAT		we have the lstat(2) system call (BSD only)
+***************
+*** 53,64 ****
+--- 55,69 ----
+  CFLAGS=	-O $(SYS) $(OPTIONS)
+  SRCS=	agef.c	hash.c	direct.c	\
+  	hash.h	customize.h	patchlevel.h
+  OBJS=	agef.o	hash.o
+  
++ all:	agef
++ 
+  install:	agef
+  	install -m 0511 agef $(INSTALL)
++ 	install -m 0644 agef.8 $(INSTALLMAN)
+  
+  clean:
+  	rm -f $(OBJS) agef *~
+  
+  agef:	$(OBJS)
