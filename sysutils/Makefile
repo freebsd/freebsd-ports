@@ -449,6 +449,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
+    SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
