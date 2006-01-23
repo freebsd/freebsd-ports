@@ -1,14 +1,5 @@
 --- configure.orig	Sun Jan 22 21:58:53 2006
-+++ configure	Sun Jan 22 22:29:29 2006
-@@ -3235,7 +3235,7 @@
-    save_CXX="$CXX"
-    save_LIBS="$LIBS"
-    CXX="$CC"
--   LIBS="$LIBS -lsupc++"
-+   LIBS="$LIBS -lstdc++ -lsupc++"
-    LINKER="$CC"
- 
- cat >conftest.$ac_ext <<_ACEOF
++++ configure	Mon Jan 23 22:24:00 2006
 @@ -12722,6 +12722,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
