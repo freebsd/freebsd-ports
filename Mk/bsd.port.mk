@@ -4602,7 +4602,7 @@ ALL-DEPENDS-LIST= \
 				continue;				\
 			fi;						\
 			${ECHO_CMD} $$d;				\
-			if ! children=$$(${MAKE} -C $$d -V _DEPEND_DIRS); then\
+			if ! children=$$(cd $$d && ${MAKE} -V _DEPEND_DIRS); then\
 				${ECHO_MSG} "${PKGNAME}: \"$$d\" erroneous -- dependency list incomplete" >&2; \
 				continue;				\
 			fi;						\
