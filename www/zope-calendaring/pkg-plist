@@ -1,0 +1,131 @@
+%%ZOPEPRODUCTDIR%%/Calendaring/plone_calendar/plone_calendar.py
+%%ZOPEPRODUCTDIR%%/Calendaring/plone_calendar/plone_calendar.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/LICENSE
+%%ZOPEPRODUCTDIR%%/Calendaring/version.txt
+%%ZOPEPRODUCTDIR%%/Calendaring/tool.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/locales/calendaring.pot
+%%ZOPEPRODUCTDIR%%/Calendaring/locales/de/LC_MESSAGES/calendaring.po
+%%ZOPEPRODUCTDIR%%/Calendaring/locales/fr/LC_MESSAGES/calendaring.po
+%%ZOPEPRODUCTDIR%%/Calendaring/config.py
+%%ZOPEPRODUCTDIR%%/Calendaring/refresh.txt
+%%ZOPEPRODUCTDIR%%/Calendaring/INSTALL
+%%ZOPEPRODUCTDIR%%/Calendaring/content/calendar.py
+%%ZOPEPRODUCTDIR%%/Calendaring/content/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/content/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/content/calendar.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/common.py
+%%ZOPEPRODUCTDIR%%/Calendaring/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/interface/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/interface/model.py
+%%ZOPEPRODUCTDIR%%/Calendaring/interface/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/interface/model.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/parser.py
+%%ZOPEPRODUCTDIR%%/Calendaring/makefile.in
+%%ZOPEPRODUCTDIR%%/Calendaring/tools/calendar.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tools/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tools/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tools/calendar.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/README
+%%ZOPEPRODUCTDIR%%/Calendaring/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/Calendaring/Extensions/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/Extensions/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/export.txt
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_model.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_content.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_cal.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/runalltests.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/framework.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_calevent.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_traversal.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/utils.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/helpers.py
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/sunbird.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/outlook2.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/example.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/frisco.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/korganizer.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/tasks.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/outlook3.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/data/outlook1.ics
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/helpers.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/runalltests.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_cal.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_calevent.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_content.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_model.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/utils.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/tests/test_traversal.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/week.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/traversal.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/__init__.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/_cal.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/year.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/day.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/_base.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/hour.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/month.py
+%%ZOPEPRODUCTDIR%%/Calendaring/model/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/_base.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/_cal.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/day.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/hour.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/month.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/traversal.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/week.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/model/year.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/TODO
+%%ZOPEPRODUCTDIR%%/Calendaring/COPYRIGHT
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarWeek2.css.dtml
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/dhtml.js.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendar.js.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calLinkOpaque.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarMonth.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarWeek.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarMonth.css.dtml
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/portlet_calendaring.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarDay.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarWeek2.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarWeek.css.dtml
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/portlet_calendaring_search_helper.py
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendarDay.css.dtml
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar/calendar.css.dtml
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_view.cpt.metadata
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/day_view.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_upload.cpy
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/eventsfeed.xml.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/month_view.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_view.cpt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_upload.cpy.metadata
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/week_icon.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_export.py
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/day_icon.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/month_icon.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/inline_event_view.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/subscribe_ical_icon.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/week_view.pt
+%%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring/calendar_icon.gif
+%%ZOPEPRODUCTDIR%%/Calendaring/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/common.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/config.pyc
+%%ZOPEPRODUCTDIR%%/Calendaring/parser.pyc
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/plone_calendar
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/locales/de/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/locales/de
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/locales/fr/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/locales/fr
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/locales
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/content
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/interface
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/tools
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/tests/data
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/tests
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/model
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/skins/plone_calendar
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/skins/calendaring
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring/skins
+@dirrm %%ZOPEPRODUCTDIR%%/Calendaring

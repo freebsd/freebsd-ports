@@ -1,0 +1,6 @@
+Installation
+
+- Restart your Zope instance
+
+- Use the QuickInstaller tool or Plone's Control Panel 'Add/Remove
+  Products' feature to install Calendaring

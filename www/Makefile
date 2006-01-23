@@ -952,6 +952,7 @@
     SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
     SUBDIR += zope-btreefolder2
+    SUBDIR += zope-calendaring
     SUBDIR += zope-cmf
     SUBDIR += zope-cmfactionicons
     SUBDIR += zope-cmfformcontroller
