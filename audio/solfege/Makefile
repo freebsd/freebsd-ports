@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,10 +34,6 @@ post-patch:
 		${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|g'
 .for file in lessonfile_editor.py.in run-solfege.py.in
 	@${REINPLACE_CMD} -e 's|share", "solfege|share", "gnome", "solfege|g' \
-		${WRKSRC}/${file}
-.endfor
-.for file in src/inputwidgets.py src/runtime.py
-	@${REINPLACE_CMD} -e 's|gnome.canvas|gnomecanvas|g' \
 		${WRKSRC}/${file}
 .endfor
 .for file in default.config
