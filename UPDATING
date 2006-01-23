@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060123:
+  AFFECTS: users of mail/qmail, mail/qmail-ldap, mail/qmail-mysql,
+           mail/qmail-spamcontrol, mail/qmail-tls and all dependant
+           ports.
+  AUTHOR: garga@FreeBSD.org
+
+  If you use qmail installed on a PREFIX different of /var/qmail,
+  please, set a var on /etc/make.conf named QMAIL_PREFIX with this
+  value. It'll be used for many ports that depends of qmail.
+
+  To prevent stale dependencies, when you use one of qmail slave ports,
+  now you just need to set a var named QMAIL_SLAVEPORT on /etc/make.conf
+  assigning to it the name of slaveport you are using.
+
+  The valid options for now are:
+  * ldap
+  * mysql
+  * spamcontrol
+  * tls
+
 20060114:
   AFFECTS: users of www/apache13-ssl with suexec enabled.
   AUTHOR: clement@FreeBSD.org
