@@ -1,0 +1,8 @@
+*** Makefile.orig	Sun Jan 22 01:18:50 2006
+--- Makefile	Sun Jan 22 01:20:04 2006
+***************
+*** 0 ****
+--- 1,3 ----
++ install:
++ 	install -m 755 dusage.pl ${PREFIX}/bin/dusage
++ 	install -m 644 dusage.1 ${PREFIX}/man/man1

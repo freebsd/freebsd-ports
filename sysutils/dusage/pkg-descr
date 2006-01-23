@@ -1,0 +1,18 @@
+Guarding disk space is one of the problems of system management.
+
+Using a list of pathnames, this program filters the output of du(1) to
+find the amount of disk space used for each of the paths (actually, it
+collects all values in one single du run). It adds the new value to
+the list, shifting old values up. It then generates a nice report of
+the amount of disk space occupied in each of the specified paths,
+together with the amount it grew (or shrinked) since the previous run,
+and since 7 runs ago. When run daily, this gives daily and weekly
+figures.
+
+This program requires perl version 3.0, patchlevel 4 or higher.
+
+Copyright 1990 Johan Vromans, all rights reserved.
+
+Peaceware. This program may be used, modified and distributed as long as
+this copyright notice remains part of the source. It may not be sold, or
+be used to harm any living creature including the world and the universe.
