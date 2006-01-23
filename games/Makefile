@@ -207,6 +207,7 @@
     SUBDIR += ggz-txt-client
     SUBDIR += gl-117
     SUBDIR += glasteroids
+    SUBDIR += glaxium
     SUBDIR += glbsp
     SUBDIR += glchess
     SUBDIR += glest
