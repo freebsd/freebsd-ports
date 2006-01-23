@@ -433,6 +433,7 @@ share/gnome/solfege/src/identifybpm.py
 share/gnome/solfege/src/idtone.py
 share/gnome/solfege/src/inputwidgets.py
 share/gnome/solfege/src/instrumentselector.py
+share/gnome/solfege/src/languages.py
 share/gnome/solfege/src/learning_tree_editor.py
 share/gnome/solfege/src/lessonfile.py
 share/gnome/solfege/src/lessonfile_editor_main.py
@@ -482,6 +483,7 @@ share/locale/it/LC_MESSAGES/solfege.mo
 share/locale/nl/LC_MESSAGES/solfege.mo
 share/locale/no/LC_MESSAGES/solfege.mo
 share/locale/ru/LC_MESSAGES/solfege.mo
+share/locale/sv/LC_MESSAGES/solfege.mo
 share/locale/tr/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/themes/svg
 @dirrm share/gnome/solfege/themes
