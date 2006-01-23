@@ -8461,6 +8461,7 @@ p5-Module-Pluggable	ports/devel/p5-Module-Pluggable
 p5-Module-Pluggable-Fast	ports/devel/p5-Module-Pluggable-Fast
 p5-Module-Pluggable-Ordered	ports/devel/p5-Module-Pluggable-Ordered
 p5-Module-Refresh	ports/devel/p5-Module-Refresh
+p5-Module-Release	ports/devel/p5-Module-Release
 p5-Module-Reload	ports/devel/p5-Module-Reload
 p5-Module-Reload-Sel	ports/devel/p5-Module-Reload-Sel
 p5-Module-ScanDeps	ports/devel/p5-Module-ScanDeps
@@ -9245,7 +9246,6 @@ p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
 p5-prefork	ports/devel/p5-prefork
 p5-qdbm		ports/databases/p5-qdbm
 p5-qt		ports/x11-toolkits/p5-qt
-p5-release	ports/devel/p5-release
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
