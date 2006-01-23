@@ -1432,6 +1432,7 @@ cvsadmin	ports/devel/cvsadmin
 cvsbook		ports/devel/cvsbook
 cvschk		ports/devel/cvschk
 cvsd		ports/devel/cvsd
+cvsdadm		ports/devel/cvsdadm
 cvsdelta	ports/devel/cvsdelta
 cvsdiff2patch	ports/devel/cvsdiff2patch
 cvsgraph	ports/devel/cvsgraph
