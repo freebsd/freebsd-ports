@@ -1,7 +1,7 @@
 bin/module_info
 bin/pfunc
 %%SITE_PERL%%/B/Module/Info.pm
-%%SITE_PERL%%/B/Utils.pm
+%%SITE_PERL%%/B/BUtils.pm
 %%SITE_PERL%%/Module/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info

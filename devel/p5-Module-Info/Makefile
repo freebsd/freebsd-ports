@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Module-Info
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MB/MBARBON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
@@ -21,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		module_info.1 pfunc.1
-MAN3=		B::Utils.3 Module::Info.3
+MAN3=		B::BUtils.3 Module::Info.3
 
 .include <bsd.port.mk>
