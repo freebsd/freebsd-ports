@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	clearsilver
-PORTVERSION=	0.9.14
+PORTVERSION=	0.10.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.clearsilver.net/downloads/ \
-		http://depot.fsck.ch/mirror/distfiles/
+MASTER_SITES=	http://www.clearsilver.net/downloads/
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	A fast, powerful, and language-neutral template system
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 MANCOMPRESSED=	no
 
 CONFIGURE_ARGS=	--disable-apache --disable-perl --disable-ruby \
@@ -74,8 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,(\$$\(PYTHON\)),CFLAGS="" \1,g' ${WRKSRC}/python/Makefile
 	@# insert -fPIC into CFLAGS to fix non-i386 builds
 	@${REINPLACE_CMD} -e 's|= @CFLAGS@|= @CFLAGS@ -fPIC|g' ${WRKSRC}/rules.mk.in
-	@# Avoid rebuilding man pages
-	@${REINPLACE_CMD} -e 's,all man,all,g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|`$$python_bin -c "import site; print site.sitedirs\[0\]"`|"${PYTHON_SITELIBDIR}"|' ${WRKSRC}/configure
+	@# Set PYTHON_SITE
+	@${REINPLACE_CMD} -E 's|(PYTHON=\$$.*)|\1;PYTHON_SITE="${PYTHONPREFIX_SITELIBDIR}"|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
