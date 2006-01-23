@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/
 DISTNAME=	php_simple_test_1.0RC1
 
-MAINTAINER=	neuhauser@chello.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit testing, mock objects and web testing framework for PHP
 
 USE_PHP=	pcre

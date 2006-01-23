@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	neuhauser@sigpipe.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
 MAKEFILE=	makefile

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	neuhauser@chello.cz
+MAINTAINER=	port@FreeBSD.org
 COMMENT=	Xdebug extension for PHP
 
 USE_PHP=	yes
