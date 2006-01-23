@@ -1,0 +1,6 @@
+SmbFTPD is a FTP daemon modified from the FTP daemon of FreeBSD 5.4. Besides
+original FreeBSD ftpd features, it enhances the user permission control,
+integrate configuration files, and more useful features.  SmbFTPD also support
+SSL/TLS encryption.
+
+WWW:	http://www.twbsd.org/enu/smbftpd/index.php
