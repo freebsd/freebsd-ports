@@ -120,9 +120,7 @@ do-install:
 
 post-install:
 .if defined(PACKAGE_BUILDING)
-	${ECHO_CMD} "@dirrmtry ${CGIDIR}" >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrmtry ${ICONSDIR}" >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrmtry ${CSSDIR}" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec rmdir -p %D/${CGIDIR} %D/${ICONSDIR} %D/${CSSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

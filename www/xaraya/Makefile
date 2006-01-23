@@ -56,7 +56,7 @@ post-install:
 		-or -name upgrade.php ')' | ${SED} -e \
 		's,^${PREFIX}/\(.*\),@unexec rm -f %D/\1 >/dev/null 2>\&1 || true,' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${XARAYADIR} -type d -and -path "*var*" | \
-		${SED} -e 's,^${PREFIX}/\(.*\),@dirrmtry \1,' | \
+		${SED} -e 's,^${PREFIX}/\(.*\),@unexec rmdir %D/\1 >/dev/null 2>\&1 || true,' | \
 		${SORT} -r >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${XARAYADIR} -type d -and ! -path "*var*" | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' | \
