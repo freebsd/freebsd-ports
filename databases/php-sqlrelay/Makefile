@@ -50,7 +50,7 @@ pre-install:
 post-install:
 	dir=`php-config --extension-dir | ${SED} 's,^${LOCALBASE}/,,'`; \
 	${ECHO_CMD} "$$dir/sql_relay.so" >> ${TMPPLIST}; \
-	${ECHO_CMD} "@dirrmtry $$dir" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec rmdir %D/$$dir 2>/dev/null || true" >> ${TMPPLIST}
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=sql_relay.so \
 		>> ${PREFIX}/etc/php/extensions.ini
@@ -64,7 +64,7 @@ post-install:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry etc/php" \
+	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
 		>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

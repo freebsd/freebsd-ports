@@ -22,6 +22,7 @@ PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \
 		share/bbtools/bbdate.style share/bbtools/bbtoolsrc.in
 
 post-install:
-	@${ECHO_CMD} "@dirrmtry share/bbtools" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
