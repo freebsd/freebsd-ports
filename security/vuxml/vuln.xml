@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57a0242d-8c4e-11da-8ddf-000ae42e9b93">
+    <topic>sge -- local root exploit in bundled rsh executable</topic>
+    <affects>
+      <package>
+	<name>sge</name>
+	<name>sgeee</name>
+	<range><lt>5.3.6.20040330_1</lt></range>
+	<range><gt>6.*</gt><lt>6.0.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sun Microsystems reports:</p>
+	<blockquote cite="http://gridengine.sunsource.net/project/gridengine/news/SGE60u7_1-announce.html">
+	  <p>The SGE 6.0u7_1 release fixes a security bug which can
+	  allow malicious users to gain root access.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://gridengine.sunsource.net/project/gridengine/news/SGE60u7_1-announce.html</url>
+    </references>
+    <dates>
+      <discovery>2005-12-23</discovery>
+      <entry>2006-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f11d3b22-88c6-11da-a7b2-0060084a00e5">
     <topic>fetchmail -- crash when bouncing a message</topic>
     <affects>
