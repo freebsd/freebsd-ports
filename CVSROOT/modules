@@ -11823,6 +11823,7 @@ smarty		ports/www/smarty
 smb2www		ports/www/smb2www
 smb4k		ports/net/smb4k
 smb_auth	ports/www/smb_auth
+smbftpd		ports/ftp/smbftpd
 smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
 smc-milter	ports/mail/smc-milter
