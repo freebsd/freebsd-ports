@@ -1,0 +1,38 @@
+*** Makefile.orig	Sun Jan 22 05:15:13 2006
+--- Makefile	Sun Jan 22 05:22:31 2006
+***************
+*** 1,14 ****
+  VERSION=0.19
+  
+! CFLAGS=-Wall -Wshadow -Wconversion -Wwrite-strings -Winline -O2 -DVERSION=\"$(VERSION)\"
+  LDFLAGS=
+  
+  OBJSr=recoverdm.o dev.o io.o utils.o error.o
+  OBJSm=mergebad.o io.o utils.o error.o
+  
+  all: recoverdm mergebad
+  
+  recoverdm: $(OBJSr)
+  	$(CC) -Wall -W $(OBJSr) $(LDFLAGS) -o recoverdm
+  	strip recoverdm
+  	echo
+--- 1,19 ----
+  VERSION=0.19
+  
+! CFLAGS+=-Wall -DVERSION=\"$(VERSION)\"
+  LDFLAGS=
+  
+  OBJSr=recoverdm.o dev.o io.o utils.o error.o
+  OBJSm=mergebad.o io.o utils.o error.o
+  
+  all: recoverdm mergebad
++ 
++ install:
++ 	${INSTALL} -m 755 recoverdm ${PREFIX}/bin
++ 	${INSTALL} -m 755 mergebad ${PREFIX}/bin
++ 	${INSTALL} -m 644 recoverdm.1 ${PREFIX}/man/man1
+  
+  recoverdm: $(OBJSr)
+  	$(CC) -Wall -W $(OBJSr) $(LDFLAGS) -o recoverdm
+  	strip recoverdm
+  	echo
