@@ -8705,6 +8705,7 @@ p5-Pod-Parser	ports/textproc/p5-Pod-Parser
 p5-Pod-ProjectDocs	ports/textproc/p5-Pod-ProjectDocs
 p5-Pod-Simple	ports/textproc/p5-Pod-Simple
 p5-Pod-Stripper	ports/textproc/p5-Pod-Stripper
+p5-Pod-Tests	ports/devel/p5-Pod-Tests
 p5-Pod-Tree	ports/textproc/p5-Pod-Tree
 p5-PodToHTML	ports/www/p5-PodToHTML
 p5-PostScript-Simple	ports/print/p5-PostScript-Simple
