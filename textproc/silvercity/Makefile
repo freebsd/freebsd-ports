@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	silvercity
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +18,6 @@ COMMENT=	A lexing package for over 20 programming and markup langauges
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
-
-# convert scripts EOL from DOS to NIX
-post-extract:
-	@${REINPLACE_CMD} -e 's,$$,,' ${WRKSRC}/PySilverCity/Scripts/*.py
+USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>
