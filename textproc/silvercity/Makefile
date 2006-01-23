@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	SilverCity-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lexing package for over 20 programming and markup langauges
+COMMENT=	A lexing package for over 20 programming and markup languages
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
