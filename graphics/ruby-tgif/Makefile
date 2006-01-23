@@ -36,8 +36,8 @@ DOCS_JA=	ChangeLog.ja	README.ja
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (missing -fPIC)"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		Does not build on amd64 or ia64 (missing -fPIC)
 .endif
 
 post-extract:
