@@ -183,6 +183,7 @@
     SUBDIR += cvsbook
     SUBDIR += cvschk
     SUBDIR += cvsd
+    SUBDIR += cvsdadm
     SUBDIR += cvsdelta
     SUBDIR += cvsdiff2patch
     SUBDIR += cvsgraph
