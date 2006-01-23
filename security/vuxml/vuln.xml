@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f11d3b22-88c6-11da-a7b2-0060084a00e5">
+    <topic>fetchmail -- crash when bouncing a message</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>6.3.0</ge><lt>6.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2006-01.txt">
+	  <p>Fetchmail contains a bug that causes itself to crash when
+	    bouncing a message to the originator or to the local
+	    postmaster. The crash happens after the bounce message has
+	    been sent, when fetchmail tries to free the dynamic array
+	    of failed addresses, and calls the free() function with an
+	    invalid pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0321</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2006-01.txt</url>
+      <url>http://bugs.debian.org/348747</url>
+    </references>
+    <dates>
+      <discovery>2006-01-22</discovery>
+      <entry>2006-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="612a34ec-81dc-11da-a043-0002a5c3d308">
     <topic>clamav -- possible heap overflow in the UPX code</topic>
     <affects>
