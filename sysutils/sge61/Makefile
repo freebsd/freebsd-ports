@@ -9,10 +9,10 @@ PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 PORTREVISION=	0
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/40/
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/51/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	sge-V60u7_TAG-src
+DISTNAME=	sge-V60u7_1_TAG-src
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -51,8 +51,8 @@ FETCH_CMD=	wget -c
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	6.0.7
-SGE_RELEASE=	6.0u7
+SGE_VERSION=	6.0.7.1
+SGE_RELEASE=	6.0u7_1
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
