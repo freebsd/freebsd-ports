@@ -5404,6 +5404,7 @@ libdrm		ports/graphics/libdrm
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
 libdts		ports/multimedia/libdts
+libdungeonmaker	ports/games/libdungeonmaker
 libdv		ports/multimedia/libdv
 libdvbpsi	ports/multimedia/libdvbpsi
 libdvdcss	ports/multimedia/libdvdcss
