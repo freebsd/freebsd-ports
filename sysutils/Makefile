@@ -559,6 +559,7 @@
     SUBDIR += vcp
     SUBDIR += videogen
     SUBDIR += vii
+    SUBDIR += vils
     SUBDIR += virtualmin
     SUBDIR += vobcopy
     SUBDIR += vstrip
