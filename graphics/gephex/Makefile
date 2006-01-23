@@ -172,7 +172,4 @@ post-patch:
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_DOCS}|' ${WRKSRC}/Makefile.am
 
-run-autotools: run-autotools-aclocal patch-autotools run-autotools-automake \
-	run-autotools-autoconf run-autotools-autoheader
-
 .include <bsd.port.post.mk>
