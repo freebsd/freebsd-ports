@@ -38,6 +38,7 @@ PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/weechat.mo
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
+BROKEN=		"Does not compile without gettext"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
