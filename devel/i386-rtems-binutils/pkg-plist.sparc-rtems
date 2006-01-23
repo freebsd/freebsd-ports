@@ -11,12 +11,13 @@ bin/sparc-rtems-strip
 bin/sparc-rtems-as
 bin/sparc-rtems-ld
 lib/libiberty.a
-sparc-rtems/bin/nm
-sparc-rtems/bin/strip
 sparc-rtems/bin/ar
-sparc-rtems/bin/ranlib
 sparc-rtems/bin/as
 sparc-rtems/bin/ld
+sparc-rtems/bin/nm
+sparc-rtems/bin/objdump
+sparc-rtems/bin/strip
+sparc-rtems/bin/ranlib
 sparc-rtems/lib/ldscripts/elf32_sparc.x
 sparc-rtems/lib/ldscripts/elf32_sparc.xbn
 sparc-rtems/lib/ldscripts/elf32_sparc.xn
@@ -25,52 +26,52 @@ sparc-rtems/lib/ldscripts/elf32_sparc.xs
 sparc-rtems/lib/ldscripts/elf32_sparc.xu
 sparc-rtems/lib/ldscripts/elf32_sparc.xc
 sparc-rtems/lib/ldscripts/elf32_sparc.xsc
-share/locale/fr/LC_MESSAGES/bfd.mo
-share/locale/fr/LC_MESSAGES/opcodes.mo
-share/locale/fr/LC_MESSAGES/binutils.mo
-share/locale/fr/LC_MESSAGES/gas.mo
-share/locale/fr/LC_MESSAGES/ld.mo
-share/locale/tr/LC_MESSAGES/bfd.mo
-share/locale/tr/LC_MESSAGES/opcodes.mo
-share/locale/tr/LC_MESSAGES/binutils.mo
-share/locale/tr/LC_MESSAGES/gas.mo
-share/locale/tr/LC_MESSAGES/ld.mo
-share/locale/ja/LC_MESSAGES/bfd.mo
-share/locale/ja/LC_MESSAGES/binutils.mo
+sparc-rtems/lib/ldscripts/elf32_sparc.xd
+sparc-rtems/lib/ldscripts/elf32_sparc.xdc
+sparc-rtems/lib/ldscripts/elf32_sparc.xdw
+sparc-rtems/lib/ldscripts/elf32_sparc.xsw
+sparc-rtems/lib/ldscripts/elf32_sparc.xw
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
+share/locale/da/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
 share/locale/es/LC_MESSAGES/bfd.mo
 share/locale/es/LC_MESSAGES/opcodes.mo
 share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
 share/locale/es/LC_MESSAGES/ld.mo
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/nl/LC_MESSAGES/opcodes.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/bfd.mo
+share/locale/ro/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/binutils.mo
+share/locale/ru/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/bfd.mo
 share/locale/sv/LC_MESSAGES/opcodes.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
-share/locale/da/LC_MESSAGES/bfd.mo
-share/locale/da/LC_MESSAGES/binutils.mo
-share/locale/da/LC_MESSAGES/opcodes.mo
-share/locale/de/LC_MESSAGES/opcodes.mo
-share/locale/id/LC_MESSAGES/opcodes.mo
-share/locale/pt_BR/LC_MESSAGES/opcodes.mo
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/zh_CN/LC_MESSAGES/bfd.mo
+share/locale/zh_CN/LC_MESSAGES/binutils.mo
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm sparc-rtems/lib/ldscripts
 @dirrm sparc-rtems/lib
 @dirrm sparc-rtems/bin
