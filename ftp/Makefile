@@ -88,6 +88,7 @@
     SUBDIR += py-curl
     SUBDIR += quftp
     SUBDIR += rexx-curl
+    SUBDIR += smbftpd
     SUBDIR += spegla
     SUBDIR += tftp-hpa
     SUBDIR += tnftp

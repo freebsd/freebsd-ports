@@ -1,0 +1,13 @@
+--- Makefile.in.old	Mon Jan 23 12:43:31 2006
++++ Makefile.in	Mon Jan 23 12:44:39 2006
+@@ -110,8 +110,8 @@
+ 	fi;
+ 
+ 	@if [ "$(OSTYPE)" = "FreeBSD" ]; then \
+-		echo "install -c -m 755 os/FreeBSD/smbftpd.sh /usr/local/etc/rc.d/"; \
+-		install -c -m 755 os/FreeBSD/smbftpd.sh /usr/local/etc/rc.d/; \
++		echo "install -c -m 755 os/FreeBSD/smbftpd.sh $(PREFIX)/etc/rc.d/"; \
++		install -c -m 755 os/FreeBSD/smbftpd.sh $(PREFIX)/etc/rc.d/; \
+ 	elif [ "$(OSTYPE)" = "linux" ]; then \
+ 		if [ ! -f /etc/pam.d/ftpd ]; then       \
+ 			echo "install install -c -m 644 os/linux/ftpd.pam /etc/pam.d/ftpd"; \

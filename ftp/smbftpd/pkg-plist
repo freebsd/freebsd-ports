@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+etc/rc.d/smbftpd.sh
+etc/smbftpd/smbftpd.conf
+etc/smbftpd/smbftpd_share.conf
+sbin/smbftpd
+@dirrmtry etc/smbftpd
