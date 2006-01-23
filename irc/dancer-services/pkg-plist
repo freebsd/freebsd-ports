@@ -30,197 +30,197 @@ etc/dancer-services/settings.conf.sample
 etc/rc.d/dancer-services.sh
 @exec install -d -o ircd -g ircd -m 700 /var/log/dancer-services /var/run/dancer-services
 @unexec rmdir %D/etc/dancer-services /var/log/dancer-services /var/run/dancer-services 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/dancer-services /var/log/dancer-services /var/run/dancer-services`` to remove any configuration files and log files left." | fmt
-share/dancer-services/help/chanserv/access/add
-share/dancer-services/help/chanserv/access/del
-share/dancer-services/help/chanserv/access/index
-share/dancer-services/help/chanserv/access/list
-share/dancer-services/help/chanserv/akick/add
-share/dancer-services/help/chanserv/akick/del
-share/dancer-services/help/chanserv/akick/index
-share/dancer-services/help/chanserv/akick/list
-share/dancer-services/help/chanserv/autorem/add
-share/dancer-services/help/chanserv/autorem/del
-share/dancer-services/help/chanserv/autorem/index
-share/dancer-services/help/chanserv/autorem/list
-share/dancer-services/help/chanserv/clear
-share/dancer-services/help/chanserv/clearnoexp
-share/dancer-services/help/chanserv/drop
-share/dancer-services/help/chanserv/forbid
-share/dancer-services/help/chanserv/forget
-share/dancer-services/help/chanserv/identify
-share/dancer-services/help/chanserv/index
-share/dancer-services/help/chanserv/info
-share/dancer-services/help/chanserv/invite
-share/dancer-services/help/chanserv/level/index
-share/dancer-services/help/chanserv/level/list
-share/dancer-services/help/chanserv/level/reset
-share/dancer-services/help/chanserv/level/set
-share/dancer-services/help/chanserv/list
-share/dancer-services/help/chanserv/noexpire
-share/dancer-services/help/chanserv/op
-share/dancer-services/help/chanserv/register
-share/dancer-services/help/chanserv/resetlevels
-share/dancer-services/help/chanserv/set/email
-share/dancer-services/help/chanserv/set/entrymsg
-share/dancer-services/help/chanserv/set/forget
-share/dancer-services/help/chanserv/set/founder
-share/dancer-services/help/chanserv/set/guard
-share/dancer-services/help/chanserv/set/index
-share/dancer-services/help/chanserv/set/mlock
-share/dancer-services/help/chanserv/set/password
-share/dancer-services/help/chanserv/set/private
-share/dancer-services/help/chanserv/set/restricted
-share/dancer-services/help/chanserv/set/secure
-share/dancer-services/help/chanserv/set/secureops
-share/dancer-services/help/chanserv/set/splitops
-share/dancer-services/help/chanserv/set/successor
-share/dancer-services/help/chanserv/set/topiclock
-share/dancer-services/help/chanserv/set/url
-share/dancer-services/help/chanserv/set/verbose
-share/dancer-services/help/chanserv/setpass
-share/dancer-services/help/chanserv/status
-share/dancer-services/help/chanserv/unban
-share/dancer-services/help/chanserv/unforbid
-share/dancer-services/help/chanserv/voice
-share/dancer-services/help/global/gchannote
-share/dancer-services/help/global/gcmemo
-share/dancer-services/help/global/gmemo
-share/dancer-services/help/global/gnote
-share/dancer-services/help/global/index
-share/dancer-services/help/global/motd
-share/dancer-services/help/helpserv/chanserv
-share/dancer-services/help/helpserv/index
-share/dancer-services/help/helpserv/memoserv
-share/dancer-services/help/helpserv/nickserv
-share/dancer-services/help/helpserv/operserv
-share/dancer-services/help/helpserv/statserv
-share/dancer-services/help/memoserv/del
-share/dancer-services/help/memoserv/forward
-share/dancer-services/help/memoserv/index
-share/dancer-services/help/memoserv/list
-share/dancer-services/help/memoserv/purge
-share/dancer-services/help/memoserv/read
-share/dancer-services/help/memoserv/reply
-share/dancer-services/help/memoserv/send
-share/dancer-services/help/memoserv/undel
-share/dancer-services/help/nickserv/access/add
-share/dancer-services/help/nickserv/access/del
-share/dancer-services/help/nickserv/access/index
-share/dancer-services/help/nickserv/access/list
-share/dancer-services/help/nickserv/collide
-share/dancer-services/help/nickserv/drop
-share/dancer-services/help/nickserv/droplink
-share/dancer-services/help/nickserv/flag
-share/dancer-services/help/nickserv/forbid
-share/dancer-services/help/nickserv/ghost
-share/dancer-services/help/nickserv/identify
-share/dancer-services/help/nickserv/index
-share/dancer-services/help/nickserv/info
-share/dancer-services/help/nickserv/link
-share/dancer-services/help/nickserv/list
-share/dancer-services/help/nickserv/noexpire
-share/dancer-services/help/nickserv/recover
-share/dancer-services/help/nickserv/register
-share/dancer-services/help/nickserv/release
-share/dancer-services/help/nickserv/set/automask
-share/dancer-services/help/nickserv/set/email
-share/dancer-services/help/nickserv/set/gsm
-share/dancer-services/help/nickserv/set/hide
-share/dancer-services/help/nickserv/set/index
-share/dancer-services/help/nickserv/set/kill
-share/dancer-services/help/nickserv/set/master
-share/dancer-services/help/nickserv/set/memos
-share/dancer-services/help/nickserv/set/notify
-share/dancer-services/help/nickserv/set/oper
-share/dancer-services/help/nickserv/set/password
-share/dancer-services/help/nickserv/set/phone
-share/dancer-services/help/nickserv/set/private
-share/dancer-services/help/nickserv/set/secure
-share/dancer-services/help/nickserv/set/signon
-share/dancer-services/help/nickserv/set/uin
-share/dancer-services/help/nickserv/set/unsecure
-share/dancer-services/help/nickserv/set/url
-share/dancer-services/help/nickserv/setpass
-share/dancer-services/help/nickserv/showlink
-share/dancer-services/help/nickserv/unforbid
-share/dancer-services/help/nickserv/unlink
-share/dancer-services/help/operserv/channel
-share/dancer-services/help/operserv/clones
-share/dancer-services/help/operserv/dcc/boot
-share/dancer-services/help/operserv/dcc/index
-share/dancer-services/help/operserv/dcc/link
-share/dancer-services/help/operserv/dcc/motd
-share/dancer-services/help/operserv/dcc/quit
-share/dancer-services/help/operserv/dcc/unlink
-share/dancer-services/help/operserv/dcc/who
-share/dancer-services/help/operserv/die
-share/dancer-services/help/operserv/dump
-share/dancer-services/help/operserv/floodoff
-share/dancer-services/help/operserv/gline
-share/dancer-services/help/operserv/help
-share/dancer-services/help/operserv/htm
-share/dancer-services/help/operserv/hub
-share/dancer-services/help/operserv/identify
-share/dancer-services/help/operserv/ignore
-share/dancer-services/help/operserv/index
-share/dancer-services/help/operserv/join
-share/dancer-services/help/operserv/jump
-share/dancer-services/help/operserv/jupe
-share/dancer-services/help/operserv/kill
-share/dancer-services/help/operserv/killchan
-share/dancer-services/help/operserv/killhost
-share/dancer-services/help/operserv/kline
-share/dancer-services/help/operserv/off
-share/dancer-services/help/operserv/omode
-share/dancer-services/help/operserv/on
-share/dancer-services/help/operserv/part
-share/dancer-services/help/operserv/rehash
-share/dancer-services/help/operserv/reload
-share/dancer-services/help/operserv/restart
-share/dancer-services/help/operserv/save
-share/dancer-services/help/operserv/secure
-share/dancer-services/help/operserv/set
-share/dancer-services/help/operserv/stats
-share/dancer-services/help/operserv/status
-share/dancer-services/help/operserv/trace
-share/dancer-services/help/operserv/umode
-share/dancer-services/help/operserv/ungline
-share/dancer-services/help/operserv/unjupe
-share/dancer-services/help/seenserv/index
-share/dancer-services/help/seenserv/seen
-share/dancer-services/help/seenserv/seennick
-share/dancer-services/help/seenserv/seenstat
-share/dancer-services/help/seenserv/unseen
-share/dancer-services/help/statserv/clearstats
-share/dancer-services/help/statserv/domain
-share/dancer-services/help/statserv/greplog
-share/dancer-services/help/statserv/host
-share/dancer-services/help/statserv/index
-share/dancer-services/help/statserv/refresh
-share/dancer-services/help/statserv/server
-share/dancer-services/help/statserv/showadmins
-share/dancer-services/help/statserv/showopers
-share/dancer-services/help/statserv/showstats
-share/dancer-services/help/statserv/split
-share/dancer-services/help/statserv/stats
-@dirrm share/dancer-services/help/statserv
-@dirrm share/dancer-services/help/seenserv
-@dirrm share/dancer-services/help/operserv/dcc
-@dirrm share/dancer-services/help/operserv
-@dirrm share/dancer-services/help/nickserv/set
-@dirrm share/dancer-services/help/nickserv/access
-@dirrm share/dancer-services/help/nickserv
-@dirrm share/dancer-services/help/memoserv
-@dirrm share/dancer-services/help/helpserv
-@dirrm share/dancer-services/help/global
-@dirrm share/dancer-services/help/chanserv/set
-@dirrm share/dancer-services/help/chanserv/level
-@dirrm share/dancer-services/help/chanserv/autorem
-@dirrm share/dancer-services/help/chanserv/akick
-@dirrm share/dancer-services/help/chanserv/access
-@dirrm share/dancer-services/help/chanserv
-@dirrm share/dancer-services/help
-@dirrm share/dancer-services
+%%DATADIR%%/help/chanserv/access/add
+%%DATADIR%%/help/chanserv/access/del
+%%DATADIR%%/help/chanserv/access/index
+%%DATADIR%%/help/chanserv/access/list
+%%DATADIR%%/help/chanserv/akick/add
+%%DATADIR%%/help/chanserv/akick/del
+%%DATADIR%%/help/chanserv/akick/index
+%%DATADIR%%/help/chanserv/akick/list
+%%DATADIR%%/help/chanserv/autorem/add
+%%DATADIR%%/help/chanserv/autorem/del
+%%DATADIR%%/help/chanserv/autorem/index
+%%DATADIR%%/help/chanserv/autorem/list
+%%DATADIR%%/help/chanserv/clear
+%%DATADIR%%/help/chanserv/clearnoexp
+%%DATADIR%%/help/chanserv/drop
+%%DATADIR%%/help/chanserv/forbid
+%%DATADIR%%/help/chanserv/forget
+%%DATADIR%%/help/chanserv/identify
+%%DATADIR%%/help/chanserv/index
+%%DATADIR%%/help/chanserv/info
+%%DATADIR%%/help/chanserv/invite
+%%DATADIR%%/help/chanserv/level/index
+%%DATADIR%%/help/chanserv/level/list
+%%DATADIR%%/help/chanserv/level/reset
+%%DATADIR%%/help/chanserv/level/set
+%%DATADIR%%/help/chanserv/list
+%%DATADIR%%/help/chanserv/noexpire
+%%DATADIR%%/help/chanserv/op
+%%DATADIR%%/help/chanserv/register
+%%DATADIR%%/help/chanserv/resetlevels
+%%DATADIR%%/help/chanserv/set/email
+%%DATADIR%%/help/chanserv/set/entrymsg
+%%DATADIR%%/help/chanserv/set/forget
+%%DATADIR%%/help/chanserv/set/founder
+%%DATADIR%%/help/chanserv/set/guard
+%%DATADIR%%/help/chanserv/set/index
+%%DATADIR%%/help/chanserv/set/mlock
+%%DATADIR%%/help/chanserv/set/password
+%%DATADIR%%/help/chanserv/set/private
+%%DATADIR%%/help/chanserv/set/restricted
+%%DATADIR%%/help/chanserv/set/secure
+%%DATADIR%%/help/chanserv/set/secureops
+%%DATADIR%%/help/chanserv/set/splitops
+%%DATADIR%%/help/chanserv/set/successor
+%%DATADIR%%/help/chanserv/set/topiclock
+%%DATADIR%%/help/chanserv/set/url
+%%DATADIR%%/help/chanserv/set/verbose
+%%DATADIR%%/help/chanserv/setpass
+%%DATADIR%%/help/chanserv/status
+%%DATADIR%%/help/chanserv/unban
+%%DATADIR%%/help/chanserv/unforbid
+%%DATADIR%%/help/chanserv/voice
+%%DATADIR%%/help/global/gchannote
+%%DATADIR%%/help/global/gcmemo
+%%DATADIR%%/help/global/gmemo
+%%DATADIR%%/help/global/gnote
+%%DATADIR%%/help/global/index
+%%DATADIR%%/help/global/motd
+%%DATADIR%%/help/helpserv/chanserv
+%%DATADIR%%/help/helpserv/index
+%%DATADIR%%/help/helpserv/memoserv
+%%DATADIR%%/help/helpserv/nickserv
+%%DATADIR%%/help/helpserv/operserv
+%%DATADIR%%/help/helpserv/statserv
+%%DATADIR%%/help/memoserv/del
+%%DATADIR%%/help/memoserv/forward
+%%DATADIR%%/help/memoserv/index
+%%DATADIR%%/help/memoserv/list
+%%DATADIR%%/help/memoserv/purge
+%%DATADIR%%/help/memoserv/read
+%%DATADIR%%/help/memoserv/reply
+%%DATADIR%%/help/memoserv/send
+%%DATADIR%%/help/memoserv/undel
+%%DATADIR%%/help/nickserv/access/add
+%%DATADIR%%/help/nickserv/access/del
+%%DATADIR%%/help/nickserv/access/index
+%%DATADIR%%/help/nickserv/access/list
+%%DATADIR%%/help/nickserv/collide
+%%DATADIR%%/help/nickserv/drop
+%%DATADIR%%/help/nickserv/droplink
+%%DATADIR%%/help/nickserv/flag
+%%DATADIR%%/help/nickserv/forbid
+%%DATADIR%%/help/nickserv/ghost
+%%DATADIR%%/help/nickserv/identify
+%%DATADIR%%/help/nickserv/index
+%%DATADIR%%/help/nickserv/info
+%%DATADIR%%/help/nickserv/link
+%%DATADIR%%/help/nickserv/list
+%%DATADIR%%/help/nickserv/noexpire
+%%DATADIR%%/help/nickserv/recover
+%%DATADIR%%/help/nickserv/register
+%%DATADIR%%/help/nickserv/release
+%%DATADIR%%/help/nickserv/set/automask
+%%DATADIR%%/help/nickserv/set/email
+%%DATADIR%%/help/nickserv/set/gsm
+%%DATADIR%%/help/nickserv/set/hide
+%%DATADIR%%/help/nickserv/set/index
+%%DATADIR%%/help/nickserv/set/kill
+%%DATADIR%%/help/nickserv/set/master
+%%DATADIR%%/help/nickserv/set/memos
+%%DATADIR%%/help/nickserv/set/notify
+%%DATADIR%%/help/nickserv/set/oper
+%%DATADIR%%/help/nickserv/set/password
+%%DATADIR%%/help/nickserv/set/phone
+%%DATADIR%%/help/nickserv/set/private
+%%DATADIR%%/help/nickserv/set/secure
+%%DATADIR%%/help/nickserv/set/signon
+%%DATADIR%%/help/nickserv/set/uin
+%%DATADIR%%/help/nickserv/set/unsecure
+%%DATADIR%%/help/nickserv/set/url
+%%DATADIR%%/help/nickserv/setpass
+%%DATADIR%%/help/nickserv/showlink
+%%DATADIR%%/help/nickserv/unforbid
+%%DATADIR%%/help/nickserv/unlink
+%%DATADIR%%/help/operserv/channel
+%%DATADIR%%/help/operserv/clones
+%%DATADIR%%/help/operserv/dcc/boot
+%%DATADIR%%/help/operserv/dcc/index
+%%DATADIR%%/help/operserv/dcc/link
+%%DATADIR%%/help/operserv/dcc/motd
+%%DATADIR%%/help/operserv/dcc/quit
+%%DATADIR%%/help/operserv/dcc/unlink
+%%DATADIR%%/help/operserv/dcc/who
+%%DATADIR%%/help/operserv/die
+%%DATADIR%%/help/operserv/dump
+%%DATADIR%%/help/operserv/floodoff
+%%DATADIR%%/help/operserv/gline
+%%DATADIR%%/help/operserv/help
+%%DATADIR%%/help/operserv/htm
+%%DATADIR%%/help/operserv/hub
+%%DATADIR%%/help/operserv/identify
+%%DATADIR%%/help/operserv/ignore
+%%DATADIR%%/help/operserv/index
+%%DATADIR%%/help/operserv/join
+%%DATADIR%%/help/operserv/jump
+%%DATADIR%%/help/operserv/jupe
+%%DATADIR%%/help/operserv/kill
+%%DATADIR%%/help/operserv/killchan
+%%DATADIR%%/help/operserv/killhost
+%%DATADIR%%/help/operserv/kline
+%%DATADIR%%/help/operserv/off
+%%DATADIR%%/help/operserv/omode
+%%DATADIR%%/help/operserv/on
+%%DATADIR%%/help/operserv/part
+%%DATADIR%%/help/operserv/rehash
+%%DATADIR%%/help/operserv/reload
+%%DATADIR%%/help/operserv/restart
+%%DATADIR%%/help/operserv/save
+%%DATADIR%%/help/operserv/secure
+%%DATADIR%%/help/operserv/set
+%%DATADIR%%/help/operserv/stats
+%%DATADIR%%/help/operserv/status
+%%DATADIR%%/help/operserv/trace
+%%DATADIR%%/help/operserv/umode
+%%DATADIR%%/help/operserv/ungline
+%%DATADIR%%/help/operserv/unjupe
+%%DATADIR%%/help/seenserv/index
+%%DATADIR%%/help/seenserv/seen
+%%DATADIR%%/help/seenserv/seennick
+%%DATADIR%%/help/seenserv/seenstat
+%%DATADIR%%/help/seenserv/unseen
+%%DATADIR%%/help/statserv/clearstats
+%%DATADIR%%/help/statserv/domain
+%%DATADIR%%/help/statserv/greplog
+%%DATADIR%%/help/statserv/host
+%%DATADIR%%/help/statserv/index
+%%DATADIR%%/help/statserv/refresh
+%%DATADIR%%/help/statserv/server
+%%DATADIR%%/help/statserv/showadmins
+%%DATADIR%%/help/statserv/showopers
+%%DATADIR%%/help/statserv/showstats
+%%DATADIR%%/help/statserv/split
+%%DATADIR%%/help/statserv/stats
+@dirrm %%DATADIR%%/help/statserv
+@dirrm %%DATADIR%%/help/seenserv
+@dirrm %%DATADIR%%/help/operserv/dcc
+@dirrm %%DATADIR%%/help/operserv
+@dirrm %%DATADIR%%/help/nickserv/set
+@dirrm %%DATADIR%%/help/nickserv/access
+@dirrm %%DATADIR%%/help/nickserv
+@dirrm %%DATADIR%%/help/memoserv
+@dirrm %%DATADIR%%/help/helpserv
+@dirrm %%DATADIR%%/help/global
+@dirrm %%DATADIR%%/help/chanserv/set
+@dirrm %%DATADIR%%/help/chanserv/level
+@dirrm %%DATADIR%%/help/chanserv/autorem
+@dirrm %%DATADIR%%/help/chanserv/akick
+@dirrm %%DATADIR%%/help/chanserv/access
+@dirrm %%DATADIR%%/help/chanserv
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
