@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.12 2006-01-15 01:11:11 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.13 2006-01-23 11:37:04 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -52,7 +52,7 @@ apache22_accf() {
 	retcode=0
 	if checkyesno apache22_http_accept_enable
 	then
-		/sbin/kldstat | grep accf_http 2>&1 > /dev/null
+		/sbin/kldstat -v | grep accf_http 2>&1 > /dev/null
 		retcode=${?}
 		if [ ${retcode} -ne 0 ]
 		then
