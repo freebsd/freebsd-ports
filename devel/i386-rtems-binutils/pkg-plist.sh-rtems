@@ -11,12 +11,13 @@ bin/sh-rtems-strip
 bin/sh-rtems-as
 bin/sh-rtems-ld
 lib/libiberty.a
-sh-rtems/bin/nm
-sh-rtems/bin/strip
 sh-rtems/bin/ar
-sh-rtems/bin/ranlib
 sh-rtems/bin/as
 sh-rtems/bin/ld
+sh-rtems/bin/nm
+sh-rtems/bin/objdump
+sh-rtems/bin/ranlib
+sh-rtems/bin/strip
 sh-rtems/lib/ldscripts/sh.x
 sh-rtems/lib/ldscripts/sh.xbn
 sh-rtems/lib/ldscripts/sh.xn
@@ -27,52 +28,67 @@ sh-rtems/lib/ldscripts/shl.xbn
 sh-rtems/lib/ldscripts/shl.xn
 sh-rtems/lib/ldscripts/shl.xr
 sh-rtems/lib/ldscripts/shl.xu
-share/locale/fr/LC_MESSAGES/bfd.mo
-share/locale/fr/LC_MESSAGES/opcodes.mo
-share/locale/fr/LC_MESSAGES/binutils.mo
-share/locale/fr/LC_MESSAGES/gas.mo
-share/locale/fr/LC_MESSAGES/ld.mo
-share/locale/tr/LC_MESSAGES/bfd.mo
-share/locale/tr/LC_MESSAGES/opcodes.mo
-share/locale/tr/LC_MESSAGES/binutils.mo
-share/locale/tr/LC_MESSAGES/gas.mo
-share/locale/tr/LC_MESSAGES/ld.mo
-share/locale/ja/LC_MESSAGES/bfd.mo
-share/locale/ja/LC_MESSAGES/binutils.mo
+sh-rtems/lib/ldscripts/shelf.x
+sh-rtems/lib/ldscripts/shelf.xbn
+sh-rtems/lib/ldscripts/shelf.xc
+sh-rtems/lib/ldscripts/shelf.xn
+sh-rtems/lib/ldscripts/shelf.xr
+sh-rtems/lib/ldscripts/shelf.xs
+sh-rtems/lib/ldscripts/shelf.xsc
+sh-rtems/lib/ldscripts/shelf.xsw
+sh-rtems/lib/ldscripts/shelf.xu
+sh-rtems/lib/ldscripts/shelf.xw
+sh-rtems/lib/ldscripts/shlelf.x
+sh-rtems/lib/ldscripts/shlelf.xbn
+sh-rtems/lib/ldscripts/shlelf.xc
+sh-rtems/lib/ldscripts/shlelf.xn
+sh-rtems/lib/ldscripts/shlelf.xr
+sh-rtems/lib/ldscripts/shlelf.xs
+sh-rtems/lib/ldscripts/shlelf.xsc
+sh-rtems/lib/ldscripts/shlelf.xsw
+sh-rtems/lib/ldscripts/shlelf.xu
+sh-rtems/lib/ldscripts/shlelf.xw
+share/locale/da/LC_MESSAGES/bfd.mo
+share/locale/da/LC_MESSAGES/binutils.mo
+share/locale/da/LC_MESSAGES/ld.mo
+share/locale/da/LC_MESSAGES/opcodes.mo
+share/locale/de/LC_MESSAGES/opcodes.mo
 share/locale/es/LC_MESSAGES/bfd.mo
 share/locale/es/LC_MESSAGES/opcodes.mo
 share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
 share/locale/es/LC_MESSAGES/ld.mo
+share/locale/fr/LC_MESSAGES/bfd.mo
+share/locale/fr/LC_MESSAGES/opcodes.mo
+share/locale/fr/LC_MESSAGES/binutils.mo
+share/locale/fr/LC_MESSAGES/gas.mo
+share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/id/LC_MESSAGES/opcodes.mo
+share/locale/ja/LC_MESSAGES/bfd.mo
+share/locale/ja/LC_MESSAGES/binutils.mo
+share/locale/nl/LC_MESSAGES/opcodes.mo
+share/locale/pt_BR/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/bfd.mo
+share/locale/ro/LC_MESSAGES/opcodes.mo
+share/locale/ro/LC_MESSAGES/binutils.mo
+share/locale/ru/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/bfd.mo
 share/locale/sv/LC_MESSAGES/opcodes.mo
 share/locale/sv/LC_MESSAGES/binutils.mo
 share/locale/sv/LC_MESSAGES/ld.mo
-share/locale/da/LC_MESSAGES/bfd.mo
-share/locale/da/LC_MESSAGES/binutils.mo
-share/locale/da/LC_MESSAGES/opcodes.mo
-share/locale/de/LC_MESSAGES/opcodes.mo
-share/locale/id/LC_MESSAGES/opcodes.mo
-share/locale/pt_BR/LC_MESSAGES/opcodes.mo
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale
+share/locale/tr/LC_MESSAGES/bfd.mo
+share/locale/tr/LC_MESSAGES/opcodes.mo
+share/locale/tr/LC_MESSAGES/binutils.mo
+share/locale/tr/LC_MESSAGES/gas.mo
+share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/zh_CN/LC_MESSAGES/bfd.mo
+share/locale/zh_CN/LC_MESSAGES/binutils.mo
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm sh-rtems/lib/ldscripts
 @dirrm sh-rtems/lib
 @dirrm sh-rtems/bin

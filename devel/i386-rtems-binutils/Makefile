@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.13.2.1
-PORTREVISION=	3
+PORTVERSION=	2.16.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
-#PATCHFILES=	${BINNAME}-rtems-20010622.diff
-#PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
-#		http://rtems.thehousleys.net/
+PATCHFILES=	${BINNAME}-rtems-20050816.diff
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/binutils-2.16.1-rtems-20050816.diff \
+		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	FSF binutils-2.13.2.1 base-port for RTEMS development
 
 LCLTARGET?=	i386-rtems
 
-BINNAME=	binutils-2.13.2.1
+BINNAME=	binutils-2.16.1
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
 PKGNAMEPREFIX=	${LCLTARGET}-
