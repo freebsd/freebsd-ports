@@ -948,6 +948,7 @@
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope28
+    SUBDIR += zope3
     SUBDIR += zope-FileSystemSite
     SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
@@ -988,6 +989,5 @@
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
-    SUBDIR += zope31
 
 .include <bsd.port.subdir.mk>

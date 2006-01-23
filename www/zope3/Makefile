@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Zope-3.1.x
+# New ports collection makefile for:	Zope 3
 # Date created:				Thu Sep 22 14:26:16 MSD 2005
 # Whom:					Denis Shaposhnikov <dsh@vlink.ru>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope3/${PORTVERSION}final/
 DISTNAME=	Zope-${PORTVERSION}
@@ -16,9 +16,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
-LATEST_LINK=	zope31
+LATEST_LINK=	zope3
 USE_PYTHON=	yes
-USE_RC_SUBR=	${PORTNAME}31.sh zeo31.sh
+USE_RC_SUBR=	${PORTNAME}3.sh zeo3.sh
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -26,7 +26,7 @@ USE_RC_SUBR=	${PORTNAME}31.sh zeo31.sh
 
 # Change these, if you like, via the environment.
 WEBBASEDIR?=		www
-SZOPEBASEDIR?=		${WEBBASEDIR}/Zope31
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope3
 
 # Do not change anything below this line.
 
@@ -47,8 +47,6 @@ post-patch:
 .endfor
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}31.sh ${WRKDIR}/zeo31.sh \
-		${PREFIX}/etc/rc.d
 	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
 
 	@${CAT} ${PKGMESSAGE}
