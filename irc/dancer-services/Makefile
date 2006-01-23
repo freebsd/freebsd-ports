@@ -9,15 +9,16 @@ PORTNAME=	dancer-services
 PORTVERSION=	1.8.0.6.9
 PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-03-23
+
 USE_AUTOTOOLS=	automake:15:env autoconf:253:env
 USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -72,7 +73,7 @@ post-install:
 		${XARGS} -0 ${CHMOD} 600
 	${CHOWN} -R ircservices:ircservices ${PREFIX}/etc/dancer-services
 	${INSTALL_SCRIPT} ${WRKDIR}/dancer-services.sh ${PREFIX}/etc/rc.d/
-	${SED} -e "s,/usr/local/,${PREFIX}/,g" ${PKGMESSAGE}
+	${SED} -e "s,%%PREFIX%%,${PREFIX}/,g" ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ChangeLog README
