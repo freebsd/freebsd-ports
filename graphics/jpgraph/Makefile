@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.19
+PORTVERSION=	1.20.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
 
@@ -16,12 +16,11 @@ COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
 USE_PHP=	gd
+BROKEN_WITH_PHP=5
 
-NO_CDROM=	"The free version cannot be used in a commercial context"
+NO_CDROM=	The free version cannot be used in a commercial context
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -30,7 +29,7 @@ do-install:
 	${CP} ${WRKSRC}/src/*.dat ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/src/Examples/* ${EXAMPLESDIR}
 .endif
