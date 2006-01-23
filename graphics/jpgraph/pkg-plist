@@ -34,6 +34,7 @@
 %%DATADIR%%/jpgraph_regstat.php
 %%DATADIR%%/jpgraph_scatter.php
 %%DATADIR%%/jpgraph_stock.php
+%%DATADIR%%/jpgraph_utils.inc
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/accbarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/alphabarex1.php
@@ -77,6 +78,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex4.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex5.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bartutex6.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/bezierex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/bkgimgflagex3.php
@@ -99,6 +101,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/centeredlineex02.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/centeredlineex03.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/centerlinebarex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/combgraphex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/dateaxisex3.php
@@ -178,6 +181,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex01.1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex02.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/filledlineex03.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/filledstepstyleex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/fixscale_radarex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/funcex1.php
@@ -257,8 +261,12 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/manscaleex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/manscaleex3.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/manscaleex4.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/manualtickex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/manualtickex2.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/markflagex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/multconstganttex01.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/mulyaxiscsimex1.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/mulyaxisex1.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/negbarvalueex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/nullvalueex01.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/partiallyfilledlineex1.php
