@@ -1094,6 +1094,7 @@
     SUBDIR += p5-PerlIO-via-symlink
     SUBDIR += p5-PerlMenu
     SUBDIR += p5-Pod-Coverage
+    SUBDIR += p5-Pod-Tests
     SUBDIR += p5-Proc-Background
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-Fork
