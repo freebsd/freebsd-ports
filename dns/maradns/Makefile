@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.2.01
+PORTVERSION=	1.2.03.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 		http://kapranoff.ru/~kappa/files/
@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	DNS server with focus on security and simplicity
 
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_BZIP2=	yes
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
