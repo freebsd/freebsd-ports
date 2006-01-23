@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	7.94
+PORTVERSION=	8.00
 CATEGORIES=	graphics
 MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
 		http://www.piwebs.com/distfiles/${PORTNAME}/
@@ -14,7 +14,8 @@ MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Decoder for RAW files from digital cameras
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_BZIP2=	yes
 
