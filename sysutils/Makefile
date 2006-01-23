@@ -121,6 +121,7 @@
     SUBDIR += dupfind
     SUBDIR += duplicity
     SUBDIR += durep
+    SUBDIR += dusage
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp
