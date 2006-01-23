@@ -10951,6 +10951,7 @@ recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recoll		ports/deskutils/recoll
 recombine	ports/biology/recombine
+recoverdm	ports/sysutils/recoverdm
 recoverjpeg	ports/graphics/recoverjpeg
 recvnet		ports/net/recvnet
 redet		ports/textproc/redet
