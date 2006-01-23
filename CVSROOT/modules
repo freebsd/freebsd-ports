@@ -2998,6 +2998,7 @@ glademm		ports/devel/glademm
 glame		ports/audio/glame
 glark		ports/textproc/glark
 glasteroids	ports/games/glasteroids
+glaxium		ports/games/glaxium
 glbiff		ports/mail/glbiff
 glbsp		ports/games/glbsp
 glchess		ports/games/glchess
