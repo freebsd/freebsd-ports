@@ -6,17 +6,37 @@
 
 PORTNAME=	activerecord
 PORTVERSION=	1.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases rubygems
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7641/
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7641/
-
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.2.5.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=	NATIVE_MYSQL "Use native MySQL bindings" Off\
+		NATIVE_POSTGRESQL "Use native PostgreSQL bindings" Off\
+		NATIVE_SQLITE3 "Use native SQLite3 bindings" Off
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
+
+# to get RUBY_SITEARCHLIBDIR
+USE_RUBY=	yes
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_NATIVE_MYSQL)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
+.endif
+
+.if defined(WITH_NATIVE_POSTGRESQL)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/postgres.so:${PORTSDIR}/databases/ruby-postgres
+.endif
+
+.if defined(WITH_NATIVE_SQLITE3)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/sqlite3_api.so:${PORTSDIR}/databases/ruby-sqlite3
+.endif
+
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
