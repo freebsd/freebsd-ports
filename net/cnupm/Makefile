@@ -9,8 +9,7 @@ PORTNAME=	cnupm
 PORTVERSION=	3.11
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://pdp-11.org.ru/~form/cnupm/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
+		ftp://cvs.1system.ru/pub/local/src/cnupm/
 
 MAINTAINER=	null@1system.ru
 COMMENT=	The BPF Traffic Collector (IPv4/IPv6)
