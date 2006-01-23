@@ -10,7 +10,7 @@ PORTNAME=		linux_base-8
 PORTVERSION=		8.0
 PORTREVISION=		11
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
+MASTER_SITES=		http://download.fedoralegacy.org/redhat/%SUBDIR%/ \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
 MASTER_SITE_SUBDIR=	${PORTVERSION}/os/${ARCH} \
 			${PORTVERSION}/updates/${ARCH} \
