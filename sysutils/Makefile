@@ -494,6 +494,7 @@
     SUBDIR += sleuthkit
     SUBDIR += slmon
     SUBDIR += sloth
+    SUBDIR += slst
     SUBDIR += smartmontools
     SUBDIR += snowlog
     SUBDIR += socket
