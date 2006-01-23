@@ -6,27 +6,14 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	irc
-MASTER_SITES=	http://get.bitlbee.org/src/:bitlbee \
-		http://get.bitlbee.org/patches/:patches
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:bitlbee
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://get.bitlbee.org/src/
 
 PATCH_SITES=	http://get.bitlbee.org/patches/
 
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
-
-.if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
-# don't use DISTNAME as old patch applies fine to new release
-DISTFILES+=	${PORTNAME}-1.0-msn6.akke.patch:patches
-.endif
-
-.if defined(WITH_LDAP)
-PATCHFILES+=	${DISTNAME}-ldap.diff
-.endif
 
 MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
@@ -37,9 +24,23 @@ USE_GNOME=	glib20
 USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS=	MSN "Enable MSN protocol support" On \
+		MSN6_FEATURES "Enable MSN6 features (icons, etc)" Off \
+		LDAP "Enable LDAP authentication support" Off
+
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
-.if defined(WITH_MSN)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MSN6_FEATURES)
+PATCHFILES+=	${DISTNAME}-msn6.akke.diff
+.endif
+
+.if defined(WITH_LDAP)
+PATCHFILES+=	${PORTNAME}-1.0-ldap.diff
+.endif
+
+.if !defined(WITHOUT_MSN) || defined(WITH_MSN6_FEATURES)
 LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--msn=1
 .else
@@ -49,30 +50,6 @@ CONFIGURE_ARGS+=--msn=0 --ssl=bogus
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--ldap=${LOCALBASE}
-.endif
-
-pre-configure:
-.if !defined(WITH_MSN)
-	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN and Jabber/SSL support."
-.else
-	@${ECHO_CMD} "MSN and Jabber/SSL support will be enabled."
-
-. if !defined(WITH_MSN6_FEATURES)
-	@${ECHO_CMD} "Type \"make -DWITH_MSN6_FEATURES\" if you want to enable MSN 6 features, like buddy icons"
-. else
-	@${ECHO_CMD} "MSN 6 features will be enabled."
-. endif
-.endif
-
-.if !defined(WITH_LDAP)
-	@${ECHO_CMD} "Type \"make -DWITH_LDAP\" if you want to enable LDAP authentication."
-.else
-	@${ECHO_CMD} "LDAP authentication will be enabled."
-.endif
-
-post-patch:
-.if defined(WITH_MSN) && defined(WITH_MSN6_FEATURES)
-	@${PATCH} ${PATCH_ARGS} -p1 < ${DISTDIR}/${PORTNAME}-1.0-msn6.akke.patch
 .endif
 
 post-build:
@@ -86,4 +63,4 @@ post-install:
 	@${CP} ${WRKSRC}/motd.txt ${PREFIX}/etc/bitlbee/motd.txt.orig
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

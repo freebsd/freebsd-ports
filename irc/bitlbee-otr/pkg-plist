@@ -4,4 +4,4 @@ sbin/bitlbee
 etc/bitlbee/bitlbee.conf.orig
 etc/bitlbee/motd.txt.orig
 @dirrm %%DATADIR%%
-@dirrm etc/bitlbee
+@dirrmtry etc/bitlbee
