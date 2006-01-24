@@ -9973,6 +9973,7 @@ pngquant	ports/graphics/pngquant
 pngrewrite	ports/graphics/pngrewrite
 pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
+po4a		textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 podcastamatic	ports/www/podcastamatic
