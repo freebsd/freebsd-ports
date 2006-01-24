@@ -1,6 +1,16 @@
 --- build.orig	Wed May  4 14:22:22 2005
-+++ build	Tue Oct 11 15:49:30 2005
-@@ -451,7 +451,7 @@
++++ build	Tue Jan 24 14:44:41 2006
+@@ -423,8 +423,7 @@
+ 	   echo "| unencrypted.                                              |"
+ 	   echo "+-----------------------------------------------------------+"
+ 	   echo ""
+-	   echo "Do you want to continue this build anyway? Type y or n please:"
+-	   read ans
++	   ans=y
+ 	   case "$ans" in
+ 	       y)   echo "Building without SSL ..."
+ 		    touch sslnone
+@@ -451,7 +450,7 @@
  	fi
          echo ''
  
@@ -9,7 +19,7 @@
          cd "$PHOME/pico"
          eval echo make "$makeargs" -f makefile.$picotarg
          eval make "$makeargs" -f makefile.$picotarg
-@@ -480,14 +480,13 @@
+@@ -480,14 +479,13 @@
          cd "$PHOME"
          if [ ! -d bin ] ;  then    mkdir bin;        fi
          cd "$PHOME/bin"
@@ -25,7 +35,7 @@
          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot     ; fi
          if [ -s ../pine/rpload ] ;    then ln ../pine/rpload rpload   ; fi
          if [ -s ../pine/rpdump ] ;    then ln ../pine/rpdump rpdump   ; fi
-@@ -502,10 +501,10 @@
+@@ -502,10 +500,10 @@
          cd "$PHOME"
          echo ''
          echo "Links to executables are in bin directory:"
