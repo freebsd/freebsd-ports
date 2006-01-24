@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		libsexymm
-PORTVERSION=		0.1.3
+PORTVERSION=		0.1.5
 CATEGORIES=		x11-toolkits devel
 MASTER_SITES=		http://osiris.chipx86.com/projects/libsexy/releases/
 
