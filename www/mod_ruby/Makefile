@@ -37,10 +37,14 @@ DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
+.if !defined(WITHOUT_PTHREADS)
 # dirty hack to force mod_ruby.so linked with lpthread.so, otherwise unresolved
 # symbols happen
 .if ${OSVERSION} >= 502102
 	@${REINPLACE_CMD} -e 's|-pthread|-pthread -lpthread|' ${WRKSRC}/Makefile
+.endif
+.else
+PKGNAMESUFFIX=	-nopthreads
 .endif
 
 post-install: doc-install
