@@ -7,12 +7,12 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.16.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PATCHFILES=	${BINNAME}-rtems-20050816.diff
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/binutils-2.16.1-rtems-20050816.diff \
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
