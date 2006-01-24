@@ -21,13 +21,11 @@ COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
-BROKEN=		Incorrect SHA hash
-
-NO_BUILD=		yes
-NO_MTREE=		yes
-PLIST=			${WRKDIR}/pkg-plist
-PREFIX=			${X11BASE}
-WRKSRC=			${WRKDIR}/csound-${PORTVERSION}/manual
+NO_BUILD=	yes
+NO_MTREE=	yes
+PLIST=		${WRKDIR}/pkg-plist
+PREFIX=		${X11BASE}
+WRKSRC=		${WRKDIR}/csound-${PORTVERSION}/manual
 
 pre-install:
 	@${RM} -f ${PLIST}
