@@ -6,10 +6,11 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.102
+PORTVERSION?=	0.103
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.energyhq.es.eu.org/files/:xmame \
+		http://www.energyhq.be/files/:xmame \
 		http://www.pkix.net/mirror/x.mame.net/:xmame \
 		http://www.arcade-history.com/download/:history \
 		http://www.energyhq.es.eu.org/files/:history \
@@ -30,7 +31,6 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 MAKE_ARGS+=	ARCH=freebsd
-USE_REINPLACE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
 
@@ -116,9 +116,9 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 .include <bsd.port.pre.mk>
 
 #.if ${OSVERSION} < 500000
-#BROKEN=	"Doesn't build on FreeBSD < 5.x"
+#BROKEN=	Doesn't build on FreeBSD < 5.x
 #.elif (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
-#BROKEN=	"Doesn't build on FreeBSD < 6.x"
+#BROKEN=	Doesn't build on FreeBSD < 6.x
 #.endif
 
 # Option WITH_DATFILES
@@ -211,7 +211,7 @@ ESOUNDCOMMENT=\#
 # XXX Network support is *broken* in 0.85+, leave commented out for now
 # Option WITH_NETWORK
 .if defined(WITH_NETWORK)
-BROKEN=	"Networking support is currently broken"
+BROKEN=	Networking support is currently broken
 NETWORK=
 .else
 NETWORK=\#
