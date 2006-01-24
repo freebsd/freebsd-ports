@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20051028
-PORTREVISION=	1
+PORTVERSION=	20060117
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fontforge
-DISTFILES=	${EXTRACT_ONLY} ${DOCFILE}
+DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
 EXTRACT_ONLY=	${PORTNAME}_full-${PORTVERSION}.tar.bz2
+.if defined(FONTFORGE_WITH_TTF_DEBUGGER)
+FREETYPE_VERSION=	2.1.10
+EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
+.endif
 
 MAINTAINER=	kanou@khdd.net
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -25,33 +28,69 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOC_VERSION=	${PORTVERSION}
-DOCFILE=	${PORTNAME}_htdocs-${DOC_VERSION}.tgz
+DOC_VERSION=	20060114
+DOCFILES=	${DOCFILE_IN_TAR_GZ} ${DOCFILE_IN_TAR_BZ2}
+DOCFILE_IN_TAR_GZ=	${PORTNAME}_htdocs-${DOC_VERSION}.tgz
+DOCFILE_IN_TAR_BZ2=	${PORTNAME}_ja_htdocs-${DOC_VERSION}.tar.bz2
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
 PATCH_STRIP=	-l
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if !defined(FONTFORGE_NO_MULTILAYER)
-CONFIGURE_ARGS=	--with-multilayer --with-devicetables --without-freetype-src
-.else
-CONFIGURE_ARGS=	--with-devicetables --without-freetype-src
+WITH_MULTILAYER=	--with-multilayer
 .endif
+.if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
+WITH_FREETYPE_SRC=	--with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
+.else
+WITH_FREETYPE_SRC=	--without-freetype-src
+.endif
+CONFIGURE_ARGS=	${WITH_MULTILAYER} --with-devicetables ${WITH_FREETYPE_SRC}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/freetype2"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:13
 
 MAN1=		fontforge.1 sfddiff.1
 
+pre-everything::
+.if defined(WITHOUT_EXTRA_ENCODINGS)
+	@${ECHO_MSG} "WARNING: You should not compile libiconv with WITHOUT_EXTRA_ENCODINGS"
+	@${ECHO_MSG} "defined, because libiconv must be configured with --enable-extra-encoding"
+	@${ECHO_MSG} "as FontForge requires Shift-JIS."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && !defined(FONTFORGE_WITH_TTF_DEBUGGER)
+	@${ECHO_MSG} "If you have built freetype2 port with bytecode interpreter enabled,"
+	@${ECHO_MSG} "You can use TTF instruction debugger by compiling fontforge port"
+	@${ECHO_MSG} "with FONTFORGE_WITH_TTF_DEBUGGER defined."
+	@${ECHO_MSG} "Note that you must put the source archive of FreeType in ${DISTDIR}."
+	@${ECHO_MSG} "If you have installed freetype2 from a package, chdir to ${PORTSDIR}/print/"
+	@${ECHO_MSG} "and execute 'make fetch' before building this port".
+	@${ECHO_MSG} ""
+.endif
+.if !defined(FONTFORGE_NO_MULTILAYER)
+	@${ECHO_MSG} "If your machine has small memory and you have to edit fonts with a lot"
+	@${ECHO_MSG} "of glyphs, you can save memory by defining FONTFORGE_NO_MULTILAYER."
+	@${ECHO_MSG} "Enabling multilayer editing increases memory consumption per glyph."
+	@${ECHO_MSG} ""
+.endif
+
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
-	${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/${DOCFILE}
+	for doc in ${DOCFILE_IN_TAR_GZ} ; \
+		do ${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
+	done
+	for doc in ${DOCFILE_IN_TAR_BZ2} ; \
+		do ${TAR} -xyC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
+	done
 	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 
@@ -59,7 +98,10 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/flags ${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKDIR}/html/*.* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/html/flags/* ${DOCSDIR}/flags
+	${INSTALL_DATA} ${WRKDIR}/html/ja/* ${DOCSDIR}/ja
 .endif
 
 .include <bsd.port.mk>
