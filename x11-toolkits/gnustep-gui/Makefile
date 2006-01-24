@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -60,6 +60,14 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 PLIST_SUB+=	WITH_CUPS=""
 .else
 PLIST_SUB+=	WITH_CUPS="@comment "
+.endif
+
+ASPELL_PORT?=	german/aspell
+.if !defined(WITHOUT_ASPELL)
+LIB_DEPENDS+=	aspell:${PORTSDIR}/${ASPELL_PORT}
+PLIST_SUB+=	WITH_ASPELL=""
+.else
+PLIST_SUB+=	WITH_ASPELL="@comment "
 .endif
 
 pre-configure:
