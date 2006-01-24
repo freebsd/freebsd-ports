@@ -19,6 +19,7 @@ COMMENT=	Backend system admin scripts for gnome-system-tools
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 PREFIX?=	${X11BASE}
 USE_GNOME=	gnomehack gnometarget intlhack
 GNU_CONFIGURE=	yes
