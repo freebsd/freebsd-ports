@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES+=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -82,6 +83,10 @@ DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 PORTDOCS=	${DOCFILES}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+# build additional tools
+ALL_TARGET+=	\
+		mld_hash
+
 .include <bsd.port.pre.mk>
 
 # Fix build on 4.x
@@ -146,9 +151,11 @@ pre-install:
 
 do-install:
 .ifndef(WITHOUT_CORE)
+	@${INSTALL_PROGRAM} ${WRKSRC}/mld_hash		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlnet		${PREFIX}/bin/mlnet-real
-	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mlnet
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${EXAMPLESDIR}
 .endif
 .ifndef(WITHOUT_GUI)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlchat		${PREFIX}/bin
