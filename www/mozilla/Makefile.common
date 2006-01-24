@@ -185,7 +185,7 @@ WITH_OPTIMIZE?=	-O
 
 .if defined(WITH_SMB)
 USE_GNOME+=	gnomevfs2
-MOZ_OPTIONS+=	--disable-gnomevfs
+MOZ_OPTIONS+=	--enable-gnomevfs
 .endif
 
 .if defined(WITH_DEBUG)
