@@ -1,161 +1,6 @@
-diff -ru JLib/JLib/Graphics/JControlImage.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JControlImage.h
---- JLib/JLib/Graphics/JControlImage.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JControlImage.h	Tue Jan  3 20:16:47 2006
-@@ -33,7 +33,7 @@
- #include <JLib/Util/JTypes.h>
- #include <JLib/Graphics/JControl.h>
- #include <JLib/Graphics/JImage.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- 
- /** Control de interfaz de usuario compuesto por imágenes.
-  */
-diff -ru JLib/JLib/Graphics/JFont.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JFont.h
---- JLib/JLib/Graphics/JFont.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JFont.h	Tue Jan  3 20:16:47 2006
-@@ -31,7 +31,7 @@
- #define _JFONT_INCLUDED
- 
- #include <JLib/Graphics/JImage.h>
--#include <SDL/SDL_ttf.h>
-+#include <SDL_ttf.h>
- #include <stdarg.h>
- 
- /** Alineación del texto a renderizar.
-diff -ru JLib/JLib/Graphics/JGLAxes.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLAxes.h
---- JLib/JLib/Graphics/JGLAxes.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLAxes.h	Tue Jan  3 20:16:47 2006
-@@ -31,7 +31,7 @@
- 
- #include <JLib/Util/JTypes.h>
- #include <JLib/Graphics/JDrawable.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- 
- class JGLAxes : public JDrawable
-diff -ru JLib/JLib/Graphics/JGLCamera.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLCamera.h
---- JLib/JLib/Graphics/JGLCamera.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLCamera.h	Tue Jan  3 20:16:47 2006
-@@ -40,7 +40,7 @@
- #include <JLib/Util/JTypes.h>
- #include <JLib/Util/JObject.h>
- #include <JLib/Math/JMath.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- #include <GL/glu.h>
- 
-diff -ru JLib/JLib/Graphics/JGLGrid.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLGrid.h
---- JLib/JLib/Graphics/JGLGrid.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLGrid.h	Tue Jan  3 20:16:47 2006
-@@ -32,7 +32,7 @@
- #include <JLib/Util/JTypes.h>
- #include <JLib/Graphics/JDrawable.h>
- #include <JLib/Graphics/JGLColor.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- 
- class JGLGrid : public JDrawable
-diff -ru JLib/JLib/Graphics/JGLLight.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLLight.h
---- JLib/JLib/Graphics/JGLLight.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLLight.h	Tue Jan  3 20:16:47 2006
-@@ -33,7 +33,7 @@
- #include <JLib/Util/JObject.h>
- #include <JLib/Math/JVector.h>
- #include <JLib/Graphics/JGLColor.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- 
- // Clase para gestión de texturas
-diff -ru JLib/JLib/Graphics/JGLText.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLText.h
---- JLib/JLib/Graphics/JGLText.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLText.h	Tue Jan  3 20:16:47 2006
-@@ -33,7 +33,7 @@
- #include <JLib/Util/JString.h>
- #include <JLib/Util/JGLApp.h>
- #include <JLib/Graphics/JFont.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- 
- class JGLText : public JObject
-diff -ru JLib/JLib/Graphics/JGLVector.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLVector.h
---- JLib/JLib/Graphics/JGLVector.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JGLVector.h	Tue Jan  3 20:16:47 2006
-@@ -32,7 +32,7 @@
- 
- #include <JLib/Util/JTypes.h>
- #include <JLib/Math/JVector.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- 
- /** Vector en pantalla para OpenGL.
-diff -ru JLib/JLib/Graphics/JImage.h holotz-castle-1.3.7-src/JLib/JLib/Graphics/JImage.h
---- JLib/JLib/Graphics/JImage.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Graphics/JImage.h	Tue Jan  3 20:16:47 2006
-@@ -36,8 +36,8 @@
- #include <JLib/Graphics/JDrawable.h>
- #include <JLib/Util/JString.h>
- #include <JLib/Util/JUtil.h>
--#include <SDL/SDL.h>
--#include <SDL/SDL_image.h>
-+#include <SDL.h>
-+#include <SDL_image.h>
- 
- /** Imágen genérica.
-  */
-diff -ru JLib/JLib/Sound/JChunk.h holotz-castle-1.3.7-src/JLib/JLib/Sound/JChunk.h
---- JLib/JLib/Sound/JChunk.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Sound/JChunk.h	Tue Jan  3 20:16:47 2006
-@@ -30,7 +30,7 @@
- #ifndef _JCHUNK_INCLUDED
- #define _JCHUNK_INCLUDED
- 
--#include <SDL/SDL_mixer.h>
-+#include <SDL_mixer.h>
- 
- /** Encapsula una muestra de audio.
-  */
-diff -ru JLib/JLib/Sound/JMixer.h holotz-castle-1.3.7-src/JLib/JLib/Sound/JMixer.h
---- JLib/JLib/Sound/JMixer.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Sound/JMixer.h	Tue Jan  3 20:16:47 2006
-@@ -30,7 +30,7 @@
- #ifndef _JMIXER_INCLUDED
- #define _JMIXER_INCLUDED
- 
--#include <SDL/SDL_mixer.h>
-+#include <SDL_mixer.h>
- #include <JLib/Util/JTypes.h>
- #include <JLib/Sound/JChunk.h>
- 
-diff -ru JLib/JLib/Util/JApp.h holotz-castle-1.3.7-src/JLib/JLib/Util/JApp.h
---- JLib/JLib/Util/JApp.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JApp.h	Tue Jan  3 20:16:47 2006
-@@ -35,7 +35,7 @@
- #include <JLib/Util/JTimer.h>
- #include <JLib/Graphics/JFont.h>
- #include <JLib/Sound/JMixer.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <stdio.h>
- #include <stdlib.h>
- 
-@@ -53,7 +53,7 @@
-  * <pre>
-  * 
-  * #include <JLib/Util/JApp.h>
-- * #include <SDL/SDL_keysym.h>
-+ * #include <SDL_keysym.h>
-  * #include <stdio.h>
-  * 
-  * class MyApp : public JApp
-diff -ru JLib/JLib/Util/JFS.cpp holotz-castle-1.3.7-src/JLib/JLib/Util/JFS.cpp
---- JLib/JLib/Util/JFS.cpp	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JFS.cpp	Wed Jan  4 01:20:59 2006
+diff -ru JLib/JLib/Util/JFS.cpp holotz-castle-1.3.8-src/JLib/JLib/Util/JFS.cpp
+--- JLib/JLib/Util/JFS.cpp	Fri Jan 20 08:59:37 2006
++++ holotz-castle-1.3.8-src/JLib/JLib/Util/JFS.cpp	Mon Jan 23 21:21:36 2006
 @@ -886,8 +886,8 @@
  		s32 n, k;
  
@@ -167,184 +12,29 @@ diff -ru JLib/JLib/Util/JFS.cpp holotz-castle-1.3.7-src/JLib/JLib/Util/JFS.cpp
  
  		if (n < 0)
  		{
-diff -ru JLib/JLib/Util/JFile.h holotz-castle-1.3.7-src/JLib/JLib/Util/JFile.h
---- JLib/JLib/Util/JFile.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JFile.h	Tue Jan  3 20:16:47 2006
-@@ -38,7 +38,7 @@
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <stdarg.h>
--#include <SDL/SDL_endian.h>
-+#include <SDL_endian.h>
- #include <zlib.h>
- #include <JLib/Util/JCompatibility.h>
- 
-diff -ru JLib/JLib/Util/JGLApp.h holotz-castle-1.3.7-src/JLib/JLib/Util/JGLApp.h
---- JLib/JLib/Util/JGLApp.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JGLApp.h	Tue Jan  3 20:16:47 2006
-@@ -35,7 +35,7 @@
- #endif
- 
- #include <JLib/Util/JApp.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <GL/gl.h>
- #include <GL/glu.h>
- #include <stdio.h>
-diff -ru JLib/JLib/Util/JRW.h holotz-castle-1.3.7-src/JLib/JLib/Util/JRW.h
---- JLib/JLib/Util/JRW.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JRW.h	Tue Jan  3 20:16:47 2006
-@@ -33,8 +33,8 @@
- #include <JLib/Util/JTypes.h>
- #include <JLib/Util/JObject.h>
- #include <zlib.h>
--#include <SDL/SDL.h>
--#include <SDL/SDL_endian.h>
-+#include <SDL.h>
-+#include <SDL_endian.h>
- 
- /** Encapsulates a SDL_RWops object. It's a simple wrapper.
-  */
-diff -ru JLib/JLib/Util/JTextUtil.h holotz-castle-1.3.7-src/JLib/JLib/Util/JTextUtil.h
---- JLib/JLib/Util/JTextUtil.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JTextUtil.h	Tue Jan  3 20:16:47 2006
-@@ -30,7 +30,7 @@
- #define _JTEXTUTIL_INCLUDED
- 
- #include <JLib/Util/JTypes.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- //#include <JLib/Graphics/JText.h>
- 
- // Crea una superficie en formato RGBA de 32 bits con los caracteres en
-diff -ru JLib/JLib/Util/JThread.h holotz-castle-1.3.7-src/JLib/JLib/Util/JThread.h
---- JLib/JLib/Util/JThread.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JThread.h	Tue Jan  3 20:16:47 2006
-@@ -31,8 +31,8 @@
- #define _JTHREAD_INCLUDED
- 
- #include <JLib/Util/JTypes.h>
--#include <SDL/SDL.h>
--#include <SDL/SDL_thread.h>
-+#include <SDL.h>
-+#include <SDL_thread.h>
- 
- /** Base class for threads.
-  */
-diff -ru JLib/JLib/Util/JTimer.h holotz-castle-1.3.7-src/JLib/JLib/Util/JTimer.h
---- JLib/JLib/Util/JTimer.h	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/JLib/Util/JTimer.h	Tue Jan  3 20:16:47 2006
-@@ -32,7 +32,7 @@
- 
- #include <JLib/Util/JTypes.h>
- #include <JLib/Util/JObject.h>
--#include <SDL/SDL.h>
-+#include <SDL.h>
- #include <sys/types.h>
- #include <sys/timeb.h>
- #include <time.h>
-diff -ru JLib/Makefile holotz-castle-1.3.7-src/JLib/Makefile
---- JLib/Makefile	Tue Jan  3 13:42:42 2006
-+++ holotz-castle-1.3.7-src/JLib/Makefile	Wed Jan  4 12:23:28 2006
-@@ -15,8 +15,8 @@
- 					$(UTIL)/JApp.o $(UTIL)/JFS.o $(UTIL)/JThread.o $(UTIL)/JRW.o $(MATH)/J2DPolygon.o
- 
- # Definir -D_JLIB_DEBUG para hacer debug de JLib. Compilar el programa a debugear también con este flag
--CFLAGS=-I. -O3 -ffast-math -fPIC -Wall -Wshadow -Winline
--LDFLAGS=-L. -ffast-math -lSDL -lSDL_image -lSDL_ttf -lSDL_mixer
-+CFLAGS=`sdl11-config --cflags` -I/usr/X11R6/include -I. -O3 -ffast-math -fPIC -Wall -Wshadow -Winline
-+LDFLAGS=`sdl11-config --libs` -L/usr/X11R6/lib -L. -ffast-math -lSDL -lSDL_image -lSDL_ttf -lSDL_mixer
- 
- all: libJLib
- 
-diff -ru Makefile holotz-castle-1.3.7-src/Makefile
---- Makefile	Tue Jan  3 13:42:45 2006
-+++ holotz-castle-1.3.7-src/Makefile	Wed Jan  4 12:11:52 2006
-@@ -5,11 +5,11 @@
- HC_VERSION=1.3.7
- 
- all: 
--	make -C src
-+	$(MAKE) -C src
- 
- distro-src:
- 	find . -iname "*~" -exec 'rm' '{}' ';';
--	make clean;
-+	$(MAKE) clean;
- 	rm -rf _DISTRO/SRC;
- 	mkdir -p _DISTRO/SRC/holotz-castle-$(HC_VERSION)-src;\
- 	cp -RL [^_h]* _DISTRO/SRC/holotz-castle-$(HC_VERSION)-src &&\
-@@ -20,7 +20,7 @@
- 
- distro-i486:
- 	find . -iname "*~" -exec 'rm' '{}' ';';
--	make I486_BUILD=1 CPU_OPTS="-march=i486 -mcpu=i486" &&\
-+	$(MAKE) I486_BUILD=1 CPU_OPTS="-march=i486 -mcpu=i486" &&\
- 	rm -rf _DISTRO/I486;
- 	mkdir -p _DISTRO/I486/holotz-castle-$(HC_VERSION)-linux-i486;
- 	cp -RL holotz-castle holotz-castle-editor res HCedHome doc LICENSE.txt MANUAL* _DISTRO/I486/holotz-castle-$(HC_VERSION)-linux-i486 &&\
-@@ -39,11 +39,11 @@
- 	rm -rf _DISTRO/WIN32/HC;
- 
- install:
--	make -C src install
-+	$(MAKE) -C src install
- 
- uninstall:
--	make -C src uninstall;
-+	$(MAKE) -C src uninstall;
- 
- .PHONY: clean
- clean:
--	make -C src clean
-+	$(MAKE) -C src clean
-diff -ru src/Makefile holotz-castle-1.3.7-src/src/Makefile
---- src/Makefile	Tue Jan  3 13:42:45 2006
-+++ holotz-castle-1.3.7-src/src/Makefile	Wed Jan  4 13:29:39 2006
-@@ -18,10 +18,10 @@
- # comenta estas líneas si no quieres instalar el juego (y descomenta las de arriba)
- 
- ifndef I486_BUILD
--HC_BASE = /usr/share/games/holotz-castle/
-+#HC_BASE = /usr/share/games/holotz-castle/
- HC_DATA = $(HC_BASE)game/
- HCED_DATA = $(HC_BASE)editor/
--HC_BIN_DIR = /usr/local/bin/
-+#HC_BIN_DIR = /usr/local/bin/
+diff -ru JLib/Makefile holotz-castle-1.3.8-src/JLib/Makefile
+--- JLib/Makefile	Fri Jan 20 08:59:37 2006
++++ holotz-castle-1.3.8-src/JLib/Makefile	Mon Jan 23 21:20:53 2006
+@@ -19,7 +19,7 @@
  endif
  
- DEFINES = -DHC_DATA_DIR=\"$(HC_DATA)\" -DHCED_DATA_DIR=\"$(HCED_DATA)\"
-@@ -38,22 +38,22 @@
+ # Define -D_JLIB_DEBUG to debug JLib. Compile the app to debug also with this flag
+-CFLAGS=-I. -O3 -ffast-math -fPIC -Wall -Wshadow `$(SDL_CONFIG) --cflags`
++CFLAGS=-I$(X11BASE)/include -I. -O3 -ffast-math -fPIC -Wall -Wshadow `$(SDL_CONFIG) --cflags`
+ 
+ # Sample LDFLAGS for applications
+ # LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
+diff -ru src/Makefile holotz-castle-1.3.8-src/src/Makefile
+--- src/Makefile	Fri Jan 20 08:59:38 2006
++++ holotz-castle-1.3.8-src/src/Makefile	Mon Jan 23 21:12:33 2006
+@@ -42,8 +42,8 @@
  
  # Definir -D_JLIB_DEBUG para debug con JLib. Ponerlo tambiÃ©n en el Makefile de JLib.
  # Define -D_JLIB_DEBUG for JLib debug mode. Put it also in JLib's Makefile.
--CFLAGS=-I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c $(shell sdl-config --cflags)
--LDFLAGS=-L/usr/X11R6/lib -ffast-math -lSDL -lSDL_image -lSDL_mixer -lSDL_ttf
-+CFLAGS=-I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c $(shell sdl11-config --cflags)
-+LDFLAGS=-L/usr/X11R6/lib `sdl11-config --libs ` -ffast-math -lSDL_image -lSDL_mixer -lSDL_ttf
+-CFLAGS=-I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c `$(SDL_CONFIG) --cflags`
+-LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
++CFLAGS=-I$(X11BASE)/include -I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c `$(SDL_CONFIG) --cflags`
++LDFLAGS=-L$(X11BASE)/lib -L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
+ 
  
  JLib: 
--	make -C ../JLib;
-+	$(MAKE) -C ../JLib;
- 
- %.o: %.cpp %.h
- 	g++ $(CFLAGS) $(DEFINES) $< -o $@
- 
- HC: $(HC_OBJS) $(HC_OBJ_MAIN) ../JLib/libJLib.a
--	g++ $(LDFLAGS) $? -o $@;\
-+	g++ $(LDFLAGS) $? -o $@ -l compat;\
- 	mv HC ../holotz-castle
- 
- # HCed (Holotz's Castle editor).
- HCed: $(HC_OBJS) $(HCED_OBJ_MAIN) ../JLib/libJLib.a
--	g++ $(LDFLAGS) $? -o $@;\
-+	g++ $(LDFLAGS) $? -o $@ -lcompat;\
- 	mv HCed ../holotz-castle-editor
- 
- install:
-@@ -75,4 +75,4 @@
- 	rm -f ../holotz-castle;\
- 	rm -f ../holotz-castle-editor;\
- 	rm -f *\.o;\
--  make -C ../JLib clean
-+	$(MAKE) -C ../JLib clean
