@@ -285,6 +285,7 @@
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += lingoteach
+    SUBDIR += linm
     SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-opengroupware
     SUBDIR += localedata
