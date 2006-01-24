@@ -5661,8 +5661,8 @@ libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtcp4u	ports/net/libtcp4u
 libtecla	ports/devel/libtecla
-libtext-charwidth-perl	textproc/libtext-charwidth-perl
-libtext-wrapi18n-perl	textproc/libtext-wrapi18n-perl
+libtext-charwidth-perl	ports/textproc/libtext-charwidth-perl
+libtext-wrapi18n-perl	ports/textproc/libtext-wrapi18n-perl
 libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
@@ -9973,7 +9973,7 @@ pngquant	ports/graphics/pngquant
 pngrewrite	ports/graphics/pngrewrite
 pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
-po4a		textproc/po4a
+po4a		ports/textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 podcastamatic	ports/www/podcastamatic
