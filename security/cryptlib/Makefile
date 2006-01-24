@@ -16,7 +16,6 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A powerful security programming toolkit
 
 ONLY_FOR_ARCHS=		i386
-BROKEN=			Hard-codes libc_r linkage
 
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
@@ -28,6 +27,9 @@ ALL_TARGET=		default FreeBSD shared
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endian ${PREFIX}/bin
