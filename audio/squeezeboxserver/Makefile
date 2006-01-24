@@ -138,8 +138,6 @@ do-install:
 	@cd ${TMP_SLIMDIR} && \
 	    ${FIND} . | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/slimserver.sh \
-	    ${PREFIX}/etc/rc.d/slimserver${PKGNAMESUFFIX}.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
