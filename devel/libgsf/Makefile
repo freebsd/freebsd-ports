@@ -29,7 +29,8 @@ USE_GNOME?=	gnomehack glib20 libxml2 gconf2 ltverhack intlhack
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc --without-gnome --with-bz2 \
-		--mandir=${PREFIX}/man
+		--mandir=${PREFIX}/man \
+		--with-gconf-source=${GCONF_CONFIG_SOURCE}
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
