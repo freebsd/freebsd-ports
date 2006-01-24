@@ -223,6 +223,7 @@
     SUBDIR += libparsifal
     SUBDIR += libpathan
     SUBDIR += libtext-charwidth-perl
+    SUBDIR += libtext-wrapi18n-perl
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
