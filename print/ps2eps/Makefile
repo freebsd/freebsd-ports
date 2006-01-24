@@ -8,7 +8,8 @@
 PORTNAME=	ps2eps
 PORTVERSION=	1.58
 CATEGORIES=	print
-MASTER_SITES=	http://www.ipv6.tm.uka.de/~bless/
+MASTER_SITES=	http://www.tm.uka.de/~bless/ \
+		http://www.ipv6.tm.uka.de/~bless/
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Generate Encapsulated Postscript file from Postscript document
