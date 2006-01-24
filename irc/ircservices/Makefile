@@ -7,7 +7,6 @@
 
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
-PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 	http://www.ircservices.esper.net/download/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
 DISTNAME=	${PORTNAME}-5.0.0
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL=	56
+PATCHLEVEL=	57
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
