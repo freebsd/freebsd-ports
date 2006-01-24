@@ -19,7 +19,7 @@ BUILD_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
 USE_PYTHON=	2.3+
-MAKE_ARGS=	dict WORDNETDICT="${LOCALBASE}/share/WordNet-*"
+MAKE_ARGS=	dict WORDNETDICT="${LOCALBASE}/share/WordNet"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	address.png index-e.html index.html
