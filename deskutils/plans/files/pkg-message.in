@@ -1,4 +1,6 @@
-Plans is now available via http://localhost/plans/
-Please make sure that your webserver is configured to accept
-CGI scripts in %%DIR%%
-Plans can be configured by editing %%DIR%%/plans_config.pl
+===========================================================
+Plans is now installed at %%DIR%%
+You'll need to configure your server to accept CGI scripts
+in the directory. Plans can be configured by editing
+%%DIR%%/plans_config.pl
+===========================================================
