@@ -1,4 +1,6 @@
 MD5 (signing-party_0.4.4.orig.tar.gz) = 1cf7a1e0bcf58fad4270477f767d91e7
+SHA256 (signing-party_0.4.4.orig.tar.gz) = cc3041d00d7a7ad9bf5593404957c2e8f5c51b117d9a4878fbf8629c9b109e07
 SIZE (signing-party_0.4.4.orig.tar.gz) = 42499
 MD5 (signing-party_0.4.4-2.diff.gz) = d22fdae6381e80800388aab1f82e00b1
+SHA256 (signing-party_0.4.4-2.diff.gz) = 7afae9ead47cca8d70404bb7086f37991463e06ed93a4964993a4c75a6027501
 SIZE (signing-party_0.4.4-2.diff.gz) = 6247
