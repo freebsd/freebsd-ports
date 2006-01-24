@@ -30,14 +30,14 @@ PLIST_FILES=	bin/${PORTNAME}
 BROKEN=		"Does not compile on sparc64"
 .endif
 
-post-extract:
-	@${FIND} -E ${WRKDIR} -type f -print0 | \
+post-extract: .SILENT
+	${FIND} -E ${WRKDIR} -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
-	@${REINPLACE_CMD} -e 's/ifdef BIG_ENDIAN/if BYTE_ORDER == BIG_ENDIAN/' \
+	${REINPLACE_CMD} -e 's/ifdef BIG_ENDIAN/if BYTE_ORDER == BIG_ENDIAN/' \
 		-e 's/ifndef BIG_ENDIAN/if BYTE_ORDER == LITTLE_ENDIAN/' \
 		${WRKSRC}/dzip.h ${WRKSRC}/conmain.c
-	@${REINPLACE_CMD} -e '4s,^,#include <machine/endian.h>,' ${WRKSRC}/dzip.h
-	@${REINPLACE_CMD} -e 's/) $$(OBJECTS/&:T/' ${WRKSRCK}/${MAKEFILE}
+	${REINPLACE_CMD} -e '4s,^,#include <machine/endian.h>,' ${WRKSRC}/dzip.h
+	${REINPLACE_CMD} -e 's/) $$(OBJECTS/&:T/' ${WRKSRCK}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
