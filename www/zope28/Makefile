@@ -68,9 +68,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}28.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/zeo28.sh         ${PREFIX}/etc/rc.d
-
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 
