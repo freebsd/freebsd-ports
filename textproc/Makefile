@@ -222,6 +222,7 @@
     SUBDIR += liblrdf
     SUBDIR += libparsifal
     SUBDIR += libpathan
+    SUBDIR += libtext-charwidth-perl
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
