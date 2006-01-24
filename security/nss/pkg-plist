@@ -1,21 +1,12 @@
-bin/atob
-bin/addbuiltin
-bin/bltest
-bin/btoa
 bin/certcgi
 bin/certutil
 bin/checkcert
-bin/client
 bin/cmsutil
 bin/crlutil
-bin/dbtest
 bin/derdump
-bin/digest
-bin/instinit
 bin/makepqg
 bin/mangle
 bin/modutil
-bin/newuser
 bin/ocspclnt
 bin/oidcalc
 bin/p7content
@@ -23,18 +14,13 @@ bin/p7env
 bin/p7sign
 bin/p7verify
 bin/pk12util
-bin/pp
 bin/rsaperf
-bin/sdrtest
-bin/selfserv
-bin/server
 bin/shlibsign
 bin/signtool
 bin/signver
 bin/ssltap
 bin/strsclnt
 bin/symkeyutil
-bin/tstclnt
 bin/vfychain
 bin/vfyserv
 include/nss/nss/base64.h
@@ -126,11 +112,9 @@ include/nss/nss/ssl.h
 include/nss/nss/sslerr.h
 include/nss/nss/sslproto.h
 include/nss/nss/sslt.h
-include/nss/nss/swfort.h
-include/nss/nss/swfortt.h
 include/nss/nss/watcomfx.h
-lib/libfort.so
-lib/libfort.so.1
+lib/libfreebl3.so
+lib/libfreebl3.so.1
 lib/libnss3.so
 lib/libnss3.so.1
 lib/libnssckbi.so
@@ -141,7 +125,5 @@ lib/libsoftokn3.so
 lib/libsoftokn3.so.1
 lib/libssl3.so
 lib/libssl3.so.1
-lib/libswft.so
-lib/libswft.so.1
 @dirrm include/nss/nss
 @dirrm include/nss

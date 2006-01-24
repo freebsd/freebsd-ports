@@ -160,15 +160,6 @@ and the db-implementation from -lc. Seems to work on FreeBSD.
 +#include <db.h>
  
  NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
---- lib/fortcrypt/swfort/swfortti.h	Sun Apr 25 11:03:07 2004
-+++ lib/fortcrypt/swfort/swfortti.h	Fri Jul 22 01:07:34 2005
-@@ -45,5 +45,5 @@
- #include "maci.h"
- #include "seccomon.h"
--#include "mcom_db.h"  /* really should be included by certt.h */
-+#include <db.h>  /* really should be included by certt.h */
- #include "certt.h"
- /*#include "keyt.h"*/
 --- lib/freebl/mac_rand.c	Sun Apr 25 11:03:08 2004
 +++ lib/freebl/mac_rand.c	Fri Jul 22 01:08:19 2005
 @@ -40,5 +40,4 @@
@@ -186,37 +177,3 @@ and the db-implementation from -lc. Seems to work on FreeBSD.
 +#include <db.h>
  #include "secoidt.h"
  #include "secdert.h"
---- lib/fortcrypt/swfort/swflib.c	Sun Apr 25 11:03:07 2004
-+++ lib/fortcrypt/swfort/swflib.c	Fri Jul 22 01:11:20 2005
-@@ -43,6 +43,7 @@
-  */
- 
--#include "prtypes.h"
--#include "prio.h"
-+#include <fcntl.h>
-+#include <prtypes.h>
-+#include <prio.h>
- 
- #include "swforti.h"
---- lib/fortcrypt/swfort/swfutl.c	Sun Apr 25 11:03:07 2004
-+++ lib/fortcrypt/swfort/swfutl.c	Fri Jul 22 01:14:05 2005
-@@ -38,7 +38,7 @@
-  */
- 
--#include "prtypes.h"
--#include "prsystem.h"
--#include "prio.h"
-+#include <prtypes.h>
-+#include <prsystem.h>
-+#include <prio.h>
- 
- #include "swforti.h"
-@@ -48,7 +48,6 @@
- #include "secport.h"
- #include "secrng.h"
--#ifdef XP_OS2
-+#include <sys/types.h>
- #include <sys/stat.h>
--#endif
- 
- #ifdef XP_WIN
