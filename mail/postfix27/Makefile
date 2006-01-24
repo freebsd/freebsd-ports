@@ -36,7 +36,6 @@ COMMENT=	A secure alternative to widely-used Sendmail
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.3.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	postfix.sh
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.70 2006-01-12 16:23:59 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.71 2006-01-24 20:09:39 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -192,7 +192,7 @@ while [ "$1" ]; do
 				if /usr/bin/nm ${LOCALBASE}/lib/mysql/libmysqlclient.a | grep -wq "SSL_new"; then
 					echo "USE_OPENSSL=	yes"
 					echo "POSTFIX_CCARGS+=	-I\${OPENSSLLIB}"
-					echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
+					echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} \${LDFLAGS} -lssl -lcrypto"
 				fi
 			fi
 			echo "MYSQL_SUFFIX=	+mysql"
@@ -258,7 +258,7 @@ if [ -z "${BATCH}" ]; then
 				if /usr/bin/nm ${LOCALBASE}/lib/mysql/libmysqlclient.a | grep -wq "SSL_new"; then
 					echo "USE_OPENSSL=	yes"
 					echo "POSTFIX_CCARGS+=	-I\${OPENSSLLIB}"
-					echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
+					echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} \${LDFLAGS} -lssl -lcrypto"
 				fi
 			fi
 		fi
