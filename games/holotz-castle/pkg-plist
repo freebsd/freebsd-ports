@@ -77,6 +77,14 @@ share/holotz-castle/game/menu/eu/menu.txt
 share/holotz-castle/game/menu/fr/menu.txt
 share/holotz-castle/game/menu/ru/menu.txt
 share/holotz-castle/game/menu/ua/menu.txt
+share/holotz-castle/game/messages/cs/messages.txt
+share/holotz-castle/game/messages/de/messages.txt
+share/holotz-castle/game/messages/en/messages.txt
+share/holotz-castle/game/messages/es/messages.txt
+share/holotz-castle/game/messages/eu/messages.txt
+share/holotz-castle/game/messages/fr/messages.txt
+share/holotz-castle/game/messages/ru/messages.txt
+share/holotz-castle/game/messages/ua/messages.txt
 share/holotz-castle/game/playlist.txt
 share/holotz-castle/game/savedata/empty.txt
 share/holotz-castle/game/sound/HCBeginLevel.wav
@@ -1415,6 +1423,15 @@ share/holotz-castle/game/theme/dungeons/rope/2/top.tga
 @dirrm share/holotz-castle/game/stories
 @dirrm share/holotz-castle/game/sound
 @dirrm share/holotz-castle/game/savedata
+@dirrm share/holotz-castle/game/messages/ua
+@dirrm share/holotz-castle/game/messages/ru
+@dirrm share/holotz-castle/game/messages/fr
+@dirrm share/holotz-castle/game/messages/eu
+@dirrm share/holotz-castle/game/messages/es
+@dirrm share/holotz-castle/game/messages/en
+@dirrm share/holotz-castle/game/messages/de
+@dirrm share/holotz-castle/game/messages/cs
+@dirrm share/holotz-castle/game/messages
 @dirrm share/holotz-castle/game/menu/ua
 @dirrm share/holotz-castle/game/menu/ru
 @dirrm share/holotz-castle/game/menu/fr
