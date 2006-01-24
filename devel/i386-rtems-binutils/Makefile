@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
-COMMENT=	FSF binutils-2.13.2.1 base-port for RTEMS development
+COMMENT=	FSF binutils-2.16.1 base-port for RTEMS development
 
 LCLTARGET?=	i386-rtems
 
