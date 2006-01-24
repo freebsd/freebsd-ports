@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5
 		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Tree>3:${PORTSDIR}/www/p5-HTML-Tree
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
@@ -36,7 +37,7 @@ MAN3=		XML::Twig.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		Needs 5.6.1 or newer, try installing lang/perl5.8 and try again
+IGNORE=		requires Perl 5.6.1 or newer, install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
