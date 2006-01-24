@@ -30,6 +30,9 @@ getopt('d:v',\%opts);
 $UP=$opts{d} if (defined $opts{d});
 $verbose=1 if (defined $opts{v});
 
+my $errors=0;
+my $checked=0;
+
 opendir(DHUP,$UP);
 while (my $c=readdir(DHUP)) {
 
@@ -56,33 +59,56 @@ while (my $c=readdir(DHUP)) {
 	my %SIZE=();
 
 	foreach my $line (@lines) {
-	    $MD5{$1}=$2 if ($line=~/^MD5 \((.+?)\) = (.+?)$/);
-	    $SHA256{$1}=$2 if ($line=~/^SHA256 \((.+?)\) = (.+?)$/);
-	    $SIZE{$1}=$2 if ($line=~/^SIZE \((.+?)\) = (.+?)$/);
+	    if ($line=~/^MD5 \((.+?)\) = (.+?)$/) {
+		if (defined $MD5{$1}) {
+		    print "$c/$p - Duplicate MD5 for $1\n";
+		    $errors++;
+		}
+		$MD5{$1}=$2;
+	    }
+	    if ($line=~/^SHA256 \((.+?)\) = (.+?)$/) {
+		if (defined $SHA256{$1}) {
+		    print "$c/$p - Duplicate SHA256 for $1\n";
+		    $errors++;
+		}
+		$SHA256{$1}=$2;
+	    }
+	    if ($line=~/^SIZE \((.+?)\) = (.+?)$/) {
+		if (defined $SIZE{$1}) {
+		    print "$c/$p - Duplicate SIZE for $1\n";
+		    $errors++;
+		}
+		$SIZE{$1}=$2;
+	    }
 	}
 
 	foreach my $f (sort(keys(%MD5))) {
 	    if (!defined ($SHA256{$f})) {
 		print "$c/$p - Missing SHA256 for $f\n";
 		$SHA256{$f}="missing";
+		$errors++;
 	    }
 	    if ($MD5{$f} ne "IGNORE") {
 		if (!defined ($SIZE{$f})) {
 		    print "$c/$p - Missing SIZE for $f\n";
 		    $SIZE{$f}="missing";
+		    $errors++;
 		}
 	    }
+	    $checked++;
 	}
 
 	foreach my $f (sort(keys(%SHA256))) {
 	    if (!defined ($MD5{$f})) {
 		print "$c/$p - Missing MD5 for $f\n";
 		$MD5{$f}="missing";
+		$errors++;
 	    }
 	    if ($SHA256{$f} ne "IGNORE") {
 		if (!defined ($SIZE{$f})) {
 		    print "$c/$p - Missing SIZE for $f\n";
 		    $SIZE{$f}="missing";
+		    $errors++;
 		}
 	    }
 	}
@@ -91,10 +117,12 @@ while (my $c=readdir(DHUP)) {
 	    if (!defined ($MD5{$f})) {
 		print "$c/$p - Missing MD5 for $f\n";
 		$MD5{$f}="missing";
+		$errors++;
 	    }
 	    if (!defined ($SHA256{$f})) {
 		print "$c/$p - Missing SHA256 for $f\n";
 		$SHA256{$f}="missing";
+		$errors++;
 	    }
 	}
 
@@ -103,3 +131,5 @@ while (my $c=readdir(DHUP)) {
     closedir(DHUPC);
 }
 closedir(DHUP);
+
+print "Errors: $errors\nChecked: $checked\n";
