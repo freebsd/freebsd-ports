@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-20060112
+DISTVERSION=	2.3-20060123
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -25,7 +25,6 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.2.* \
 
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
 
@@ -97,7 +96,7 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 
 .if defined(WITH_SASL)
 .if defined(WITH_SASL2) || defined(WITH_DOVECOT)
-BROKEN=			"Select only one SASL authentication method"
+BROKEN=			Select only one SASL authentication method
 .endif
 LIB_DEPENDS+=		sasl.8:${PORTSDIR}/security/cyrus-sasl
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl1
@@ -106,7 +105,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lpam -lcrypt
 
 .if defined(WITH_SASL2)
 .if defined(WITH_SASL) || defined(WITH_DOVECOT)
-BROKEN=			"Select only one SASL authentication method"
+BROKEN=			Select only one SASL authentication method
 .endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
@@ -115,7 +114,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 
 .if defined(WITH_DOVECOT)
 .if defined(WITH_SASL) || defined(WITH_SASL2)
-BROKEN=			"Select only one SASL authentication method"
+BROKEN=			Select only one SASL authentication method
 .endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SASL_SERVER=\"dovecot\"
@@ -123,21 +122,21 @@ POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SASL_SERVER=\"dovecot\"
 
 .if defined(WITH_SASLKRB)
 .if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			"Select only one SASL Kerberos option"
+BROKEN=			Select only one SASL Kerberos option
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
 
 .if defined(WITH_SASLKRB5)
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
-BROKEN=			"Select only one SASL Kerberos option"
+BROKEN=			Select only one SASL Kerberos option
 .endif
 POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
-BROKEN=			"Select only one SASL Kerberos option"
+BROKEN=			Select only one SASL Kerberos option
 .endif
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
@@ -151,7 +150,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 
 .if defined(WITH_DB3)
 .if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db3
@@ -160,7 +159,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb3
 
 .if defined(WITH_DB40)
 .if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
@@ -169,7 +168,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
 
 .if defined(WITH_DB40)
 .if defined(WITH_DB3) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db4
@@ -178,7 +177,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb4
 
 .if defined(WITH_DB41)
 .if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB42) || defined(WITH_DB43)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db41
@@ -187,7 +186,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -ldb41
 
 .if defined(WITH_DB42)
 .if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB43)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db42
@@ -196,7 +195,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/db42/ -ldb
 
 .if defined(WITH_DB43)
 .if defined(WITH_DB3) || defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42)
-BROKEN=			"Select only one Berkeley DB version"
+BROKEN=			Select only one Berkeley DB version
 .endif
 LIB_DEPENDS+=		db-4.3.0:${PORTSDIR}/databases/db43
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/db43
