@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Calendar product for Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${PYTHON_SITELIBDIR}/dateutil/__init__.py:${PORTSDIR}/devel/py-dateutil \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dateutil/__init__.py:${PORTSDIR}/devel/py-dateutil \
 		${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone
 
 NO_PACKAGE=	Double python dependency
