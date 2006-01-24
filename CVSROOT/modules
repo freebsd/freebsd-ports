@@ -794,6 +794,7 @@ blockade	ports/games/blockade
 blocksolve95	ports/math/blocksolve95
 blogbench	ports/benchmarks/blogbench
 blogtk		ports/deskutils/blogtk
+blokish		ports/games/blokish
 blop		ports/audio/blop
 blt		ports/x11-toolkits/blt
 blue		ports/games/blue
