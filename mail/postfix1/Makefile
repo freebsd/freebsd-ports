@@ -32,7 +32,6 @@ COMMENT=	An alternative to widely-used Sendmail
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 LATEST_LINK=	postfix1
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	postfix.sh
 
 PATCH_STRIP=	-p1
@@ -87,24 +86,24 @@ READMEDIR=${PREFIX}/share/doc/postfix
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
-.for file in ${MAN1}
+.for f in ${MAN1}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man1/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${MAN5}
+.for f in ${MAN5}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man5/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${MAN8base}
+.for f in ${MAN8base}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man8/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in faq rate rewrite uce
+.for f in faq rate rewrite uce
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/html/${file}.html
+		${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${CONF1}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
+.for f in ${CONF1}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${f}
 .endfor
 
 post-patch:
@@ -121,7 +120,7 @@ pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	cd ${WRKSRC}; sh postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
 	 config_directory=${PREFIX}/etc/postfix \
 	 daemon_directory=${PREFIX}/libexec/postfix \
 	 command_directory=${PREFIX}/sbin \
@@ -135,9 +134,9 @@ do-install:
 	 sample_directory=${PREFIX}/etc/postfix \
 	 readme_directory=${READMEDIR}
 
-.for file in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
-		${PREFIX}/etc/postfix/sample-${file}
+.for f in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${f} \
+		${PREFIX}/etc/postfix/sample-${f}
 .endfor
 
 	@${INSTALL_SCRIPT} \
@@ -145,9 +144,9 @@ do-install:
 		${PREFIX}/bin/rmail
 
 # optional TEST binaries
-.for file in ${BIN1}
+.for f in ${BIN1}
 	@${INSTALL_PROGRAM} \
-		${WRKSRC}/src/smtpstone/${file} \
+		${WRKSRC}/src/smtpstone/${f} \
 		${PREFIX}/sbin
 .endfor
 
