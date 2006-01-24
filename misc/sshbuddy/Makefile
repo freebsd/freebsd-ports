@@ -18,6 +18,10 @@ RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 NO_BUILD=	yes
 PLIST_FILES=	bin/sshbuddy
 
+.if defined(WITHOUT_X11)
+BROKEN=		Broken dependency
+.endif
+
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sshbuddy.expk ${PREFIX}/bin/sshbuddy
 
