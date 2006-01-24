@@ -60,6 +60,7 @@
     SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
+    SUBDIR += blokish
     SUBDIR += blue
     SUBDIR += bogged
     SUBDIR += bomb
