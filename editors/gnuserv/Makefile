@@ -21,6 +21,10 @@ BINSUFFIX?=	-emacs
 
 EMACS_PORT_NAME?=emacs21
 
+.if defined(WITHOUT_X11)
+BROKEN=		Configure fails without X support
+.endif
+
 # configure --program-suffix doesn't work somehow
 MAKE_ARGS=	binsuffix="${BINSUFFIX}"
 
