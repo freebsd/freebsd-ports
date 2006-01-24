@@ -592,6 +592,7 @@
     SUBDIR += php5-xmlreader
     SUBDIR += php5-xmlwriter
     SUBDIR += php5-xsl
+    SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += ppower4
     SUBDIR += print-n-times
