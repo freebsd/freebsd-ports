@@ -144,7 +144,8 @@ update:
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${PORTSNAP}"
 	@echo "--------------------------------------------------------------"
-	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch update
+	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
+	@${PORTSNAP} ${PORTSNAP_FLAGS} update
 .elif defined(SUP_UPDATE) && defined(PORTSSUPFILE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${SUP}"
