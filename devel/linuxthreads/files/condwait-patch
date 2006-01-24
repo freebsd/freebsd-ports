@@ -167,7 +167,7 @@ diff -ru ../../work.nc/linuxthreads-2.2.3_19/condvar.c ./condvar.c
 +				   oldcva,
 +				   oldcva | CVA_AVAIL));
 +      WRITE_MEMORY_BARRIER();
-+      if ((th->p_condvar_avail & CVA_EXTRA_RESTART) != 0)
++      if ((oldcva & CVA_EXTRA_RESTART) != 0)
 +	restart(th);
 +    } else {
 +      th->p_condvar_avail = CVA_AVAIL;
@@ -207,7 +207,7 @@ diff -ru ../../work.nc/linuxthreads-2.2.3_19/condvar.c ./condvar.c
 +				   oldcva,
 +				   oldcva | CVA_AVAIL));
 +      WRITE_MEMORY_BARRIER();
-+      if ((th->p_condvar_avail & CVA_EXTRA_RESTART) != 0)
++      if ((oldcva & CVA_EXTRA_RESTART) != 0)
 +	restart(th);
 +    } else {
 +      th->p_condvar_avail = CVA_AVAIL;
