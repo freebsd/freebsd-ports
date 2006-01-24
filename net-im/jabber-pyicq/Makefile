@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-op
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	jabber-pyicq-transport.sh
 
 SUB_FILES=	pkg-message
@@ -50,7 +49,6 @@ do-install:
 	${CP} -pPR ${WRKSRC}/src/* ${INST_DIR}/
 	${CHMOD} 755 ${INST_DIR}/main.py
 	[ -f ${INST_DIR}/config.py ] || ${CP} ${INST_DIR}/config.py.sample ${INST_DIR}/config.py
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/${PKGBASE}.sh ${PREFIX}/etc/rc.d/${PKGBASE}.sh
 	@${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${EXAMPLESDIR}/etc/jabber-pyicq.xml
 	[ -f ${PREFIX}/etc/jabber-pyicq.xml ] || ${CP} ${EXAMPLESDIR}/etc/jabber-pyicq.xml ${PREFIX}/etc/jabber-pyicq.xml

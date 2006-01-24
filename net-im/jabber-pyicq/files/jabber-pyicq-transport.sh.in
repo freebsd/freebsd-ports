@@ -1,8 +1,7 @@
 #!/bin/sh
-
-# Start or stop jabber-pyicq
+#
 # $FreeBSD$
-
+#
 # PROVIDE: jabber_pyicq
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
@@ -12,17 +11,17 @@
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-jabber_pyicq_dir=${jabber_pyicq_dir:-"%%PREFIX%%/lib/jabber/pyicq"}
-jabber_pyicq_piddir=${jabber_pyicq_piddir:-"/var/jabberd/pid"}
-jabber_pyicq_enable=${jabber_pyicq_enable:-"NO"}
 
 . %%RC_SUBR%%
 
 name="jabber_pyicq"
 rcvar=`set_rcvar`
+
 load_rc_config $name
+
+: ${jabber_pyicq_enable="NO"}
+: ${jabber_pyicq_dir="%%PREFIX%%/lib/jabber/pyicq"}
+: ${jabber_pyicq_piddir="/var/jabberd/pid"}
 
 pidfile="${jabber_pyicq_piddir}/pyicq.pid"
 command_interpreter="%%PYTHON_CMD%%"
