@@ -8,8 +8,8 @@
 PORTNAME=	irc
 PORTVERSION=	0.14
 CATEGORIES=	irc ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	fenner/ruby-contrib
+MASTER_SITES=	http://ibiblio.lsu.edu/main/pub/languages/ruby/contrib/ \
+		ftp://ftp.tms.ru/pub/ruby/libraries/irc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
