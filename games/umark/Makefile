@@ -15,6 +15,7 @@ DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Unreal Tournament 200x series benchmark utility
 
+USE_GCC=	3.3+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/UMark/src
