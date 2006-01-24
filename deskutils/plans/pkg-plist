@@ -1,13 +1,27 @@
-%%DIR%%/data/calendars.xml
-%%DIR%%/data/email_reminders.xml
-%%DIR%%/data/events.xml
-%%DIR%%/data/new_calendars.xml
-%%DIR%%/data/pending_actions.xml
-%%DIR%%/data/users.xml
+@unexec if cmp -s %D/%%DIR%%/data/calendars.xml.default %D/%%DIR%%/data/calendars.xml; then rm -f %D/%%DIR%%/data/calendars.xml; fi
+%%DIR%%/data/calendars.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/calendars.xml ] ; then cp -p %D/%F %B/calendars.xml; fi
+@unexec if cmp -s %D/%%DIR%%/data/email_reminders.xml.default %D/%%DIR%%/data/email_reminders.xml; then rm -f %D/%%DIR%%/data/email_reminders.xml; fi
+%%DIR%%/data/email_reminders.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/email_reminders.xml ] ; then cp -p %D/%F %B/email_reminders.xml; fi
+@unexec if cmp -s %D/%%DIR%%/data/events.xml.default %D/%%DIR%%/data/events.xml; then rm -f %D/%%DIR%%/data/events.xml; fi
+%%DIR%%/data/events.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/events.xml ] ; then cp -p %D/%F %B/events.xml; fi
+@unexec if cmp -s %D/%%DIR%%/data/new_calendars.xml.default %D/%%DIR%%/data/new_calendars.xml; then rm -f %D/%%DIR%%/data/new_calendars.xml; fi
+%%DIR%%/data/new_calendars.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/new_calendars.xml ] ; then cp -p %D/%F %B/new_calendars.xml; fi
+@unexec if cmp -s %D/%%DIR%%/data/pending_actions.xml.default %D/%%DIR%%/data/pending_actions.xml; then rm -f %D/%%DIR%%/data/pending_actions.xml; fi
+%%DIR%%/data/pending_actions.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/pending_actions.xml ] ; then cp -p %D/%F %B/pending_actions.xml; fi
+@unexec if cmp -s %D/%%DIR%%/data/users.xml.default %D/%%DIR%%/data/users.xml; then rm -f %D/%%DIR%%/data/users.xml; fi
+%%DIR%%/data/users.xml.default
+@exec   if [ ! -f %D/%%DIR%%/data/users.xml ] ; then cp -p %D/%F %B/users.xml; fi
+@unexec if cmp -s %D/%%DIR%%/plans_config.pl.default %D/%%DIR%%/plans_config.pl; then rm -f %D/%%DIR%%/plans_config.pl; fi
+%%DIR%%/plans_config.pl.default
+@exec   if [ ! -f %D/%%DIR%%/plans_config.pl ] ; then cp -p %D/%F %B/plans_config.pl; fi
 %%DIR%%/email_reminders.cgi
 %%DIR%%/gpl.txt
 %%DIR%%/plans.cgi
-%%DIR%%/plans_config.pl
 %%DIR%%/plans_lib.pl
 %%DIR%%/theme/color_select.css
 %%DIR%%/theme/color_select.js
@@ -323,6 +337,7 @@
 %%DIR%%/theme/upcoming_events.css
 %%DIR%%/theme/upcoming_events.js
 %%DIR%%/us_english.pl
+%%DIR%%/us_english_utf8.pl
 %%DIR%%/danish.pl
 %%DIR%%/de_german.pl
 %%DIR%%/fr_french.pl
@@ -333,4 +348,4 @@
 @dirrmtry %%DIR%%/theme
 @dirrmtry %%DIR%%/sessions
 @dirrmtry %%DIR%%/data
-@unexec rmdir %D/%%DIR%% 2>/dev/null || echo "Note: %D/%%DIR%% not empty -- not deleted!"
+@dirrmtry %%DIR%%

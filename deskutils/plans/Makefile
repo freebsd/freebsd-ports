@@ -8,6 +8,7 @@
 
 PORTNAME=	plans
 PORTVERSION=	7.5.4
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -31,7 +32,7 @@ USE_PERL5_RUN=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 PLANSSUBDIR?=	plans
 PLANSDIR?=	${WWWDOCROOT}/${PLANSSUBDIR}
 PLIST_SUB+=	DIR=${PLANSDIR}
@@ -40,9 +41,28 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DIR=		${PREFIX}/${PLANSDIR}
 SUB_LIST+=	DIR=${DIR}
 
+.include <bsd.port.pre.mk> # Need to exists() work
+
+pre-fetch:
+.if exists(${PREFIX}/www/data/plans)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "*** WARNING ***"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Previous version don't preserve config files."
+	@${ECHO_CMD} "If you need this files, press CTRL+C and"
+	@${ECHO_CMD} "copy manually your configuration files."
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} ""
+	@sleep 10
+.endif
+
 post-extract:
-	${CP} ${_DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
-	${CP} ${_DISTDIR}/*.pl ${WRKSRC}/
+	@${CP} ${_DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
+	@${CP} ${_DISTDIR}/*.pl ${WRKSRC}/
+	@(for i in ${WRKSRC}/data/*xml ${WRKSRC}/*config.pl; \
+		do ${MV} $$i $$i.default; done)
+	@${SED} -e 's/iso-8859-1/utf-8/' ${WRKSRC}/us_english.pl \
+		> ${WRKSRC}/us_english_utf8.pl
 
 post-patch:
 	@${RM} -f ${WRKSRC}/theme/plans.template.orig
@@ -56,6 +76,8 @@ do-install:
 	@${FIND} ${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
 
 post-install:
+	@(for i in ${DIR}/data/*default ${DIR}/*default; \
+		do ${CP} -np $$i $${i%.default}; done)
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
