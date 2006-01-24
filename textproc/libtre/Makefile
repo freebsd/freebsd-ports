@@ -32,6 +32,7 @@ MAN1=		agrep.1
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
+BROKEN=		Does not build without gettext
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
