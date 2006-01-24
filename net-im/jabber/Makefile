@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl
 .if defined(WITH_IPV6)
@@ -42,10 +41,11 @@ post-patch:
 	${ECHO} "${INSTALL_PROGRAM}" > ${WRKSRC}/.install_program-freebsd
 
 post-configure:
-	${REINPLACE_CMD} -e "s#-I\. -I\.\. #-I\. -I\.\. -I${LOCALBASE}/include #" -e "s#-L/usr/lib#-L/usr/lib -L${LOCALBASE}/lib#" ${WRKSRC}/platform-settings
+	${REINPLACE_CMD} -e "s#-I\. -I\.\. #-I\. -I\.\. -I${LOCALBASE}/include #" \
+			 -e "s#-L/usr/lib#-L/usr/lib -L${LOCALBASE}/lib#" \
+		${WRKSRC}/platform-settings
 
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_SCRIPT} ${WRKDIR}/jabberd.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
