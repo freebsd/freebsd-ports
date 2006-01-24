@@ -1,0 +1,9 @@
+ODS-2-READER reads files VMS Files-11 (ODS-2) file systems.
+
+Features:
+ - Copies files from VMS (ODS-2) file systems.
+ - Files may be copied to disk or to stdout.
+ - Supports "text" and "image" transfer modes.
+ - Produces directory listings for VMS file systems.
+
+WWW: http://vms.process.com/scripts/fileserv/fileserv.com?ODS-2-READER

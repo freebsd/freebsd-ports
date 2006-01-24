@@ -86,6 +86,7 @@
     SUBDIR += mupen64-sdlinput
     SUBDIR += mupen64-sound
     SUBDIR += o2em
+    SUBDIR += ods2reader
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu
