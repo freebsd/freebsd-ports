@@ -8,7 +8,7 @@
 PORTNAME=	xmill
 DISTVERSION=	0-7
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.research.att.com/sw/tools/XMILL/
+MASTER_SITES=
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 
 MAINTAINER=	danfe@FreeBSD.org
