@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnotify
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/libnotify/
 
@@ -17,22 +16,19 @@ COMMENT=	A library for desktop notifications
 LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOME=	gnomehack gnometarget intlhack glib20
+USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-
-USE_REINPLACE=	yes
-
 post-patch:
-	${REINPLACE_CMD} -e 's|tests||' ${WRKSRC}/Makefile.in
-
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|tests||' ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>

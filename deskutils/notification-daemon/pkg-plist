@@ -1,3 +1,10 @@
-etc/dbus-1/system.d/notification-daemon.conf
+lib/notification-daemon/engines/libbubble.a
+lib/notification-daemon/engines/libbubble.so
+lib/notification-daemon/engines/libbubble.so.0
+lib/notification-daemon/engines/libstandard.a
+lib/notification-daemon/engines/libstandard.so
+lib/notification-daemon/engines/libstandard.so.0
 libexec/notification-daemon
-share/dbus-1/services/org.freedesktop.Notifications.service
+share/dbus-1/services/notification-daemon.service
+@dirrm lib/notification-daemon/engines
+@dirrm lib/notification-daemon
