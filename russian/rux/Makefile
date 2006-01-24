@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rux
-PORTVERSION=	0.73
+PORTVERSION=	0.74
 CATEGORIES=	russian
 MASTER_SITES=	http://asdf2087.narod.ru/
 
