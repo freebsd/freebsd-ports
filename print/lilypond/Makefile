@@ -57,10 +57,6 @@ CFLAGS+=	${CPPFLAGS}
 .include <bsd.port.pre.mk>
 ALL_TARGET=	all
 
-.if ${OSVERSION} >= 502120
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
@@ -83,7 +79,7 @@ pre-configure:
 
 .if !defined(WITH_SELFBUILT_FONTS)
 post-configure:
-	cd ${WRKSRC} && ${GMAKE} -C mf get-pfa
+	cd ${WRKSRC} && ${GMAKE} -C mf get-pfa DISTDIR=${DISTDIR}
 .endif
 
 post-install:

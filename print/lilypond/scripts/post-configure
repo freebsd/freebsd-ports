@@ -7,8 +7,8 @@ cd ${WRKSRC} || exit 2
     gmake conf=$CONF -C lily $outdir/lexer.cc || true
 
     mv $file $file.orig
-    sed -e 's/istream\*/std::istream*/g' \
-        -e 's/ostream\*/std::ostream*/g' \
+    sed -e 's/[^:]istream\*/std::istream*/g' \
+        -e 's/[^:]ostream\*/std::ostream*/g' \
         -e 's/class istream;/#include \<iostream\>/g' \
         $file.orig > $file
     echo "done"

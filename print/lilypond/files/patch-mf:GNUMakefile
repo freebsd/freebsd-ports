@@ -10,7 +10,7 @@
  	@echo "For obtaining PFA fonts, either install mftrace "
  	@echo "(see http://www.xs4all.nl/~hanwen/mftrace/ ),"
 -	@echo "or try one of the following commands in this directory: "
-+	@echo "or try one of the following commands in /usr/ports/print/lilypond/work/lilypond-2.2.2"
++	@echo "or try one of the following commands in /usr/ports/print/lilypond/work/lilypond-$(TOPLEVEL_VERSION)"
  	@echo ""
 -	@echo " make get-pfa "
 -	@echo " make get-rpm-pfa "
