@@ -20,7 +20,8 @@
 # Europe
 #
 56.2,	10.2,	"ftp.FreeBSD.org"	# Skejby, Aarhus, Denmark (TDC Internet)
-48,	16,	"ftp.at.FreeBSD.org"	# Vienna, Austria (WU Wien)
+48.2316,  16.3590, "ftp.at.FreeBSD.org"	# Vienna, Austria (WU Wien)
+48.2143,  16.3580,"ftp2.at.FreeBSD.org"	# Vienna, Austria (University of Vienna)
 54.0,	-7.0,	"ftp.ie.FreeBSD.org"	# Dublin, Ireland
 50.46,	6.03,	"ftp8.de.FreeBSD.org"	# Aachen, DE (RWTH Aachen)
 53.5,	-0.2,	"ftp.uk.FreeBSD.org"	# UK (Imperial College)
