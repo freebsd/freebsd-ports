@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heirloom
-PORTVERSION=	051118
+PORTVERSION=	060122
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -91,8 +91,8 @@ install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/LICENSE
-. for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
+. for f in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
 . endfor
 #. for file in ${NOTE_FILES}
 #	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file:T}.${file:H}
