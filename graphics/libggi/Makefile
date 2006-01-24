@@ -7,6 +7,7 @@
 
 PORTNAME=	libggi
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
@@ -157,6 +158,7 @@ PLIST_SUB+=	WITH_SVGALIB="@comment "
 post-install:
 	${TOUCH} ${PREFIX}/lib/ggi/default/fbdev/.keep
 	${TOUCH} ${PREFIX}/lib/ggi/default/kgi/.keep
+	${TOUCH} ${PREFIX}/lib/ggi/helper/.keep
 	${INSTALL_DATA} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
 
 .include <bsd.port.post.mk>
