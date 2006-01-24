@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	Apache-DBI
-PORTVERSION=	0.98
+PORTVERSION=	0.9901
 CATEGORIES=	www databases perl5
-MASTER_SITES=	http://people.apache.org/~pgollucci/CPAN/Apache-DBI/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Apache
+
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	DBI persistent connection, authentication and authorization
 
+MAN3=		Apache::DBI.3 Apache::AuthDBI.3
+
+PERL_CONFIGURE=	yes
+USE_APACHE=	yes
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MODPERL2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+.if exists(${APXS})
+APACHE_MODULE_DIR!=${APXS} -q LIBEXECDIR
+.else
+APACHE_MODULE_DIR?=${PREFIX}/libexec/apache2
+.endif
+RUN_DEPENDS+=	${APACHE_MODULE_DIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 .endif
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-PERL_CONFIGURE=	yes
-
-MAN3=		Apache::DBI.3 Apache::AuthDBI.3
-
-.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
