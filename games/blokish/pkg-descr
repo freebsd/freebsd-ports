@@ -1,0 +1,15 @@
+Clone of the strategy board game 'Blokus'. Four players must place
+as many of their 21 pieces on the board as possible while preventing
+others from doing the same.
+
+This is made difficult by the fact that a piece played by a player
+must touch another of the player's pieces, but only at their corners
+(a player's first piece must touch a board corner).
+
+The game is over when no player can play any new pieces. The winner
+is the player with the fewest & smallest pieces remaining. Bonus
+points are awarded for playing all pieces.
+
+Features a tweakable AI to take the place of any human players.
+
+WWW: http://blokish.sourceforge.net/
