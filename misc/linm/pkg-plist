@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+bin/linm
+bin/linm.csh
+bin/linm.sh
+etc/linm/colorset.cfg
+etc/linm/default.cfg
+etc/linm/keyset.cfg
+@dirrm etc/linm
+lib/liblinmpluginarc.a
+lib/liblinmpluginarc.la
+lib/liblinmpluginarc.so
+lib/liblinmpluginarc.so.0
+lib/liblinmpluginftp.a
+lib/liblinmpluginftp.la
+lib/liblinmpluginftp.so
+lib/liblinmpluginftp.so.0
+lib/liblinmpluginsftp.a
+lib/liblinmpluginsftp.la
+lib/liblinmpluginsftp.so
+lib/liblinmpluginsftp.so.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ko_euckr
+%%PORTDOCS%%%%DOCSDIR%%/README.ko_utf8
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%share/locale/ko/LC_MESSAGES/linm_euckr.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/linm_utf8.mo
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
