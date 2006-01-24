@@ -10,8 +10,29 @@
 +    extern const char * const *environ;
  #endif
  #ifdef BEOS
---- lib/pk11wrap/pk11obj.c	Sun Feb 27 10:25:46 2005
-+++ lib/pk11wrap/pk11obj.c	Wed Jul 27 22:03:16 2005
+--- lib/pk11wrap/pk11obj.c	Thu Sep  8 22:03:57 2005
++++ lib/pk11wrap/pk11obj.c	Wed Jan 18 18:40:19 2006
+@@ -553,5 +553,4 @@
+     CK_ATTRIBUTE theTemplate = { CKA_EC_PARAMS, NULL, 0 };
+     SECItem params = {siBuffer, NULL, 0};
+-    int length; 
+ 
+     switch (key->keyType) {
+@@ -570,11 +569,12 @@
+ 			       &theTemplate, 1) == CKR_OK) {
+ 	    if (theTemplate.pValue != NULL) {
++		int length;
+ 	        params.len = theTemplate.ulValueLen;
+ 		params.data = (unsigned char *) theTemplate.pValue;
+ 	        length = SECKEY_ECParamsToKeySize(&params);
+ 	        PORT_Free(theTemplate.pValue);
++		return ((length + 7)/8) * 2;
+ 	    }
+-	    length = ((length + 7)/8) * 2;
+-	    return length;
++	    return 0;
+ 	}
+ 	break;
 @@ -1075,6 +1075,6 @@
   *    for (thisObj=firstObj; thisObj; 
   *				thisObj=PK11_GetNextGenericObject(thisObj)) {
@@ -61,15 +82,6 @@
 -    if (slot == NULL) {
  	PORT_SetError(SEC_ERROR_UNKNOWN_OBJECT_TYPE);
  	return SECFailure;
---- lib/pk11wrap/pk11util.c	Sat Apr  2 01:02:53 2005
-+++ lib/pk11wrap/pk11util.c	Wed Jul 27 22:07:54 2005
-@@ -862,5 +862,5 @@
-     int i, oldCount;
-     PRBool freeRef = PR_FALSE;
--    void *mark;
-+    void *mark = NULL;
-     CK_ULONG *slotIDs = NULL;
-     PK11SlotInfo **newSlots = NULL;
 --- cmd/certcgi/certcgi.c	Sat Apr  2 00:24:07 2005
 +++ cmd/certcgi/certcgi.c	Wed Jul 27 22:01:50 2005
 @@ -112,5 +112,5 @@
@@ -350,3 +362,88 @@
 -    
  
      while (*string == ' ') {
+--- cmd/crmftest/testcrmf.c	Fri Oct  7 20:57:31 2005
++++ cmd/crmftest/testcrmf.c	Wed Jan 18 18:52:23 2006
+@@ -965,16 +965,4 @@
+ }
+ 
+-static CK_MECHANISM_TYPE
+-mapWrapKeyType(KeyType keyType)
+-{
+-    switch (keyType) {
+-    case rsaKey:
+-        return CKM_RSA_PKCS;
+-    default:
+-        break;
+-    }
+-    return CKM_INVALID_MECHANISM;
+-} 
+-
+ #define KNOWN_MESSAGE_LENGTH 20 /*160 bits*/
+ 
+@@ -1329,5 +1317,5 @@
+ 	}
+ 	if (retrieved != randomNums[i]) {
+-	    printf ("Retrieved the number (%d), expected (%d)\n", retrieved,
++	    printf ("Retrieved the number (%ld), expected (%ld)\n", retrieved,
+ 		    randomNums[i]);
+ 	    return 913;
+@@ -1435,5 +1423,4 @@
+ DestroyPair(TESTKeyPair *pair)
+ {
+-    SECStatus rv  = SECSuccess;
+     int       irv = 0;
+ 
+--- cmd/fipstest/fipstest.c	Fri Oct 14 16:04:39 2005
++++ cmd/fipstest/fipstest.c	Wed Jan 18 18:59:34 2006
+@@ -426,5 +426,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, key, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -497,5 +497,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, key, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -569,5 +569,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, keyin, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -643,5 +643,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, keyin, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -705,5 +705,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, keyin, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -806,5 +806,5 @@
+ 	} else {
+ 	    to_hex_str(keystr, keyin, 8);
+-	    printf("%ld\tKEY=%s\t", i, keystr);
++	    printf("%d\tKEY=%s\t", i, keystr);
+ 	}
+ 	if (iv) {
+@@ -1981,6 +1981,6 @@
+     unsigned int mod;
+     SECItem digest = { 0 }, sig = { 0 };
+-    DSAPublicKey pubkey = { 0 };
+-    DSAPrivateKey privkey = { 0 };
++    DSAPublicKey pubkey = {{ 0 }};
++    DSAPrivateKey privkey = {{ 0 }};
+     PQGParams params;
+     PQGVerify verify;

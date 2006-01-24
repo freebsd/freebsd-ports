@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nss
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -30,16 +30,13 @@ CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 DIST=		${WRKSRC:H:H}/dist
 
-CONFLICTS=	btoa-5.* digest-[0-9]* emboss-2.* oases-2.* p5-PAR-0.* \
-		qmail-ldap2-[0-9]*
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on alpha during build
 .endif
 
-EXTERNALS=	CVS dbm security/nss/cmd/zlib
+EXTERNALS=	CVS dbm security/nss/cmd/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
 	${EXTERNALS:C,^,--exclude ${DISTNAME}/mozilla/,}
 
@@ -78,8 +75,9 @@ do-install:
 		${TAR} -C ${PREFIX}/include/nss -xf -
 	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
 		${PREFIX}/lib
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/* \
-		${PREFIX}/bin
+	${INSTALL_PROGRAM} `${SED}	\
+	    -e 's|^bin/|${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/|' \
+	    -e t -e d ${PLIST}` ${PREFIX}/bin/
 	cd ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib && \
 		${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib -xf -
 
