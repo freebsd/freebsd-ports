@@ -7,9 +7,9 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xfig.org/xfigdist/ \
+MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. previous_versions
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -26,7 +26,6 @@ CONFLICTS=	xfig-3.2.5*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
-USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xfig.1
