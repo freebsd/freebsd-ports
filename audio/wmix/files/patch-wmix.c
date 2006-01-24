@@ -8,3 +8,12 @@
  #include <unistd.h>
  
  #include <X11/X.h>
+@@ -134,7 +133,7 @@
+     }
+ 
+     /* handle writing PID file, silently ignore if we can't do it */
+-    pid = calloc(1, strlen(home) + 10);
++    pid = calloc(1, strlen(home) + 11);
+     sprintf(pid, "%s/.wmix.pid", home);
+     fp = fopen(pid, "w");
+     if (fp) {
