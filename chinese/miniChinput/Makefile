@@ -17,6 +17,7 @@ COMMENT=	A tiny version of Chinput
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 ALL_TARGET=	all data
