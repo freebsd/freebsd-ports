@@ -1,4 +1,6 @@
 MD5 (makepasswd_1.10.orig.tar.gz) = 55842bb4c064ebcdedffb4afd5f0945a
+SHA256 (makepasswd_1.10.orig.tar.gz) = 41491f361d810f9bb3e08b40df3c3034faec306d434dab15534e19023f91a75c
 SIZE (makepasswd_1.10.orig.tar.gz) = 12382
 MD5 (makepasswd_1.10-2.diff.gz) = 3525498bf730e11c3aa14721556110fb
+SHA256 (makepasswd_1.10-2.diff.gz) = 8542a328648e33e5618ab29d508be2c08708e262cf164567b91182cf93405a43
 SIZE (makepasswd_1.10-2.diff.gz) = 5350
