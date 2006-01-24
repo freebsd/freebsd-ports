@@ -1,4 +1,6 @@
 MD5 (apache_1.3.33.tar.gz) = 3dfd2c3778f37a2dfc22b97417a61407
+SHA256 (apache_1.3.33.tar.gz) = c7327891a6dba926e97d701463f9877fa164757189d192aac8d52100bf2a2484
 SIZE (apache_1.3.33.tar.gz) = 2468567
 MD5 (apache-1.3.33-v6-20041106.diff.gz) = a8d940d2624ba563da9dc812c243e4e2
+SHA256 (apache-1.3.33-v6-20041106.diff.gz) = 6a0a90cce4afed872423bf5d9300b2c5900d4dfe32cd8be38dfb1558097ae787
 SIZE (apache-1.3.33-v6-20041106.diff.gz) = 37909
