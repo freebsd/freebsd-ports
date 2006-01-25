@@ -97,6 +97,7 @@
     SUBDIR += py-jabber
     SUBDIR += py-twistedWords
     SUBDIR += ruby-xmpp4r
+    SUBDIR += sendxmpp
     SUBDIR += simicq
     SUBDIR += sulci
     SUBDIR += tik

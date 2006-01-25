@@ -1,0 +1,4 @@
+sendxmpp is a program to send XMPP (Jabber) messages from the command-line.
+Messages can be sent both to individual recipients and chatrooms.
+
+WWW: http://www.djcbsoftware.nl/code/sendxmpp/
