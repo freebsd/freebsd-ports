@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Dec  5 09:52:42 2005
++++ Makefile	Fri Jan 20 01:44:58 2006
+@@ -53,8 +53,8 @@
+ ARCH_COLDFIRE_CFLAGS = -I arch/coldfire/common
+ DEVICE_CFLAGS = -I device/ -I device/net -I device/lcd -I device/flash
+ UTILS_CFLAGS = -I utils/share -I utils/main -I utils/config
+-SIM_EXTRA_CFLAGS = -DMODET $(ARCH_ARM_CFLAGS) $(ARCH_BLACKFIN_CFLAGS) $(ARCH_COLDFIRE_CFLAGS) $(DEVICE_CFLAGS) $(UTILS_CFLAGS) 
+-SIM_EXTRA_LIBS = `pkg-config gtk+-2.0 --libs`
++SIM_EXTRA_CFLAGS = -DMODET $(ARCH_ARM_CFLAGS) $(ARCH_BLACKFIN_CFLAGS) $(ARCH_COLDFIRE_CFLAGS) $(DEVICE_CFLAGS) $(UTILS_CFLAGS) `pkg-config gtk+-2.0 --cflags` -I${LOCALBASE}/include
++SIM_EXTRA_LIBS = `pkg-config gtk+-2.0 --libs` -L${LOCALBASE}/lib
+ #CFLAGS = -g  -DSTANDALONE -DDEFAULT_INLINE=0  -DMODET $(SIM_EXTRA_CFLAGS) -I. -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/X11R6/include -I/usr/include/atk-1.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+ CFLAGS = -g -O2 -DSTANDALONE -DDEFAULT_INLINE=0  -DMODET $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/X11R6/include -I/usr/include/atk-1.0 -I/usr/include/pango-1.0 -I/usr/include/freetype2 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+ 
+@@ -157,7 +157,7 @@
+ 	rm -f binary/*.o
+ 	rm -f binary/*.a
+ 	rm -f binary/skyeye
+-	make -C arch/coldfire clean
++	$(MAKE) -C arch/coldfire clean
+ 
+ distclean mostlyclean maintainer-clean realclean: clean
+ 	rm -f TAGS tags
+@@ -189,7 +189,7 @@
+ CF_COMMON_PATH = arch/coldfire/common/
+ COLDFIRE_FLAG = -I arch/coldire/tracer
+ binary/libcoldfire.a:$(SIM_CF_OBJS) 
+-	make -C arch/coldfire
++	$(MAKE) -C arch/coldfire
+ 	$(AR) $(AR_FLAGS) binary/libcoldfire.a $(SIM_CF_OBJS) $(CF_COMMON_PATH)/*.o $(CF_PATH)/tracer/tracer.o $(CF_PATH)/i_5206/i.o
+ 	$(RANLIB) binary/libcoldfire.a
+ 

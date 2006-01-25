@@ -6,38 +6,24 @@
 #
 
 PORTNAME=	skyeye
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	1.2.0-RC4
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 
 MAINTAINER=	iamayan@gmail.com
 COMMENT=	An environment simulates typical ARM-base embedded computer systems
 
-BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
+BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
+		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
+RUN_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
+		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.2.0
 
-WRKSRC=		${WRKDIR}/skyeye
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/binary/skyeye ${PREFIX}/bin
 
-MAN1=		arm-elf-gdb.1 arm-elf-run.1
-INFO=		mmalloc
-
-ONLY_FOR_ARCHS=	i386
-
-SKYEYETARGET?=	arm-elf
-CONFIGURE_TARGET=	--target=${SKYEYETARGET}
-CONFIGURE_ARGS+=	--without-gtk-prefix \
-			--without-gtk-exec-prefix \
-			--disable-gtktest
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
