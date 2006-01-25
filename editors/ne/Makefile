@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/ \
 		${MASTER_SITE_GENTOO} \
