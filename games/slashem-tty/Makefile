@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-tty
 DISTNAME=	se${PORTVERSION:S/.//g:L}
 
-MAINTAINER=	adam-ports@blacktabby.org
+MAINTAINER=	clive@darkarts.co.za
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
 USE_GMAKE=	yes
