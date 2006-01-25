@@ -16,43 +16,52 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
+USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--enable-syspcap
 
-.ifdef DISABLE_CURSES
-CONFIGURE_ARGS+=	--disable-curses
-.endif
-
-.ifdef DISABLE_PANEL
-CONFIGURE_ARGS+=	--disable-panel
-.endif
-
-.ifdef DISABLE_SETUID
-CONFIGURE_ARGS+=	--disable-setuid
-.endif
-
-MAN1=		kismet.1 kismet_drone.1
-MAN5=		kismet.conf.5 kismet_drone.conf.5 kismet_ui.conf.5
+OPTIONS=	CURSES "libcurses interface" on \
+		PANEL "libpanels interface" on \
+		SETUID "Install kismet with setuid" on \
+		GPSMAP "Build gpsmap utility" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.if defined(WITHOUT_CURSES)
+CONFIGURE_ARGS+=--disable-curses
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-.ifndef DISABLE_CURSES
-	@${ECHO_MSG} " define DISABLE_CURSES to build without ncurses interface"
+.if defined(WITHOUT_PANEL)
+CONFIGURE_ARGS+=--disable-panel
 .endif
-.ifndef DISABLE_PANEL
-	@${ECHO_MSG} " define DISABLE_PANEL to build without libpanel interface"
+
+.if defined(WITHOUT_SETUID)
+CONFIGURE_ARGS+=--disable-setuid
 .endif
-.ifndef DISABLE_SETUID
-	@${ECHO_MSG} " define DISABLE_SETUID to disable setuid/privdrop ability (not reccomended)"
+
+.if defined(WITHOUT_GPSMAP)
+CONFIGURE_ARGS+=--disable-gpsmap
+PLIST_SUB+=	GPS="@comment "
+.else
+PLIST_SUB+=	GPS=""
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4 \
+		expat.5:${PORTSDIR}/textproc/expat2 \
+		Magick++.9:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 .endif
-	@${ECHO_MSG} ""
-	@${TRUE}
+
+MAN1=		kismet.1 kismet_drone.1 gpsmap.1
+MAN5=		kismet.conf.5 kismet_drone.conf.5 kismet_ui.conf.5
+
+.if ${OSVERSION} < 502000
+CONFIGURE_ARGS+=	--disable-pcap
+.endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/kismet.conf ${PREFIX}/etc/kismet.conf.sample
