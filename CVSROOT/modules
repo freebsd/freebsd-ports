@@ -11635,6 +11635,7 @@ sendmail-sasl	ports/mail/sendmail-sasl
 sendok		ports/mail/sendok
 sendsms		ports/net/sendsms
 sendsnpp	ports/net/sendsnpp
+sendxmpp	ports/net-im/sendxmpp
 senken		ports/games/senken
 senna		ports/textproc/senna
 senso		ports/games/senso
