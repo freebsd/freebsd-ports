@@ -6,6 +6,7 @@
 
 PORTNAME=	pymsn
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
@@ -21,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-op
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	jabber-pymsn-transport.sh
 
 SUB_FILES=	pkg-message
@@ -55,7 +55,6 @@ do-install:
 	${CP} -pPR ${WRKSRC}/src/* ${INST_DIR}/
 	${CHMOD} 755 ${INST_DIR}/main.py
 	[ -f ${INST_DIR}/config.py ] || ${CP} ${INST_DIR}/config.py.sample ${INST_DIR}/config.py
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/${PKGBASE}.sh ${PREFIX}/etc/rc.d/${PKGBASE}.sh
 	@${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/config-example.xml ${EXAMPLESDIR}/etc/jabber-pymsn.xml
 	[ -f ${PREFIX}/etc/jabber-pymsn.xml ] || ${CP} ${EXAMPLESDIR}/etc/jabber-pymsn.xml ${PREFIX}/etc/jabber-pymsn.xml
