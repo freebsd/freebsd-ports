@@ -16,6 +16,7 @@ COMMENT=	Breakout clone with an OpenGL 3D representation
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_SDL=	mixer sdl ttf
 USE_GCC=	3.4
 USE_REINPLACE=	yes
