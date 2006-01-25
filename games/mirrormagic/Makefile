@@ -6,38 +6,47 @@
 #
 
 PORTNAME=	mirrormagic
-PORTVERSION=	1.3
+PORTVERSION=	2.0.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade style game with stereo sound for X Window System
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
+		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
+		X11_PATH="${X11BASE}"
 
-post-extract:
-.for file in DoubleRayDoor DoubleRayFont DoubleRayFont2 DoubleRayScreen
-	@${GUNZIP_CMD} ${WRKSRC}/graphics/${file}.xpm
-.endfor
-	@(cd ${WRKDIR}; ${CP} ${FILESDIR}/RAY.* .; uudecode *.uu; ${RM} *.uu)
+.if defined(WITH_SDL)
+USE_SDL=	image mixer sdl
+ALL_TARGET=	sdl
+.else
+USE_XLIB=	yes
+ALL_TARGET=	x11
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sdl-config|$$(SDL_CONFIG)|g' \
+		${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
+		${WRKSRC}/src/libgame/sound.h
+	@${REINPLACE_CMD} -e 's|machine/joystick.h|sys/joystick.h|' \
+		${WRKSRC}/src/tools.c
 
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/mirrormagic ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/mirrormagic/graphics
-	${INSTALL_DATA} ${WRKSRC}/graphics/* ${PREFIX}/share/mirrormagic/graphics
-	@${MKDIR} ${PREFIX}/share/mirrormagic/sounds
-	${INSTALL_DATA} ${WRKSRC}/sounds/*.8svx ${PREFIX}/share/mirrormagic/sounds
-	@${MKDIR} ${PREFIX}/share/mirrormagic/data
-	${INSTALL_DATA} ${WRKSRC}/RAY.level ${PREFIX}/share/mirrormagic/data
-	${INSTALL_DATA} ${WRKDIR}/RAY.* ${PREFIX}/share/mirrormagic/data
-	@${MKDIR} ${PREFIX}/share/doc/mirrormagic
-.for file in CHANGES COPYRIGHT DISCLAIMER README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mirrormagic
+	${INSTALL_PROGRAM} ${WRKSRC}/mirrormagic ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \
+		${TAR} -C ${DATADIR} -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${CHMOD} 777 ${DATADIR}/scores
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in CHANGES CREDITS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-#	@${CHMOD} 664 ${PREFIX}/share/mirrormagic/data
-	@${CHOWN} root:games ${PREFIX}/share/mirrormagic/data/RAY.*
-	@${CHMOD} 664 ${PREFIX}/share/mirrormagic/data/RAY.*
+.endif
 
 .include <bsd.port.mk>
