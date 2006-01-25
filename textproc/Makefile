@@ -601,6 +601,7 @@
     SUBDIR += py-4suite-xml
     SUBDIR += py-HyperText
     SUBDIR += py-asv
+    SUBDIR += py-chardet
     SUBDIR += py-csv
     SUBDIR += py-docutils
     SUBDIR += py-dsv
