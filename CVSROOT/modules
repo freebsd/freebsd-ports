@@ -13283,6 +13283,7 @@ xantfarm	ports/x11/xantfarm
 xaos		ports/graphics/xaos
 xapian-core	ports/databases/xapian-core
 xapply		ports/sysutils/xapply
+xar		ports/archivers/xar
 xaraya		ports/www/xaraya
 xarchie		ports/net/xarchie
 xarchive	ports/archivers/xarchive
