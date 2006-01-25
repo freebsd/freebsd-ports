@@ -26,6 +26,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
+BROKEN=		Uses USE_RC_SUBR incorrectly; incorrect pkg-plist
+
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sqlgrey.sh
 USE_BZIP2=	yes
