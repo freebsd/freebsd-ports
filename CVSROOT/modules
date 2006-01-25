@@ -9608,6 +9608,7 @@ pgpool		ports/databases/pgpool
 pgpsendmail	ports/mail/pgpsendmail
 pgworksheet	ports/databases/pgworksheet
 phalanx		ports/games/phalanx
+phantom		ports/sysutils/phantom
 pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
 phatbeat	ports/audio/phatbeat
