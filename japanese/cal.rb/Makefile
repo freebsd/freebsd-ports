@@ -8,12 +8,15 @@
 PORTNAME=	cal.rb
 PORTVERSION=	1.19
 CATEGORIES=	japanese deskutils
-MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
+MASTER_SITES=	#
 DISTFILES=	cal.rb Calendar.rb era_name
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a Japanese calendar
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-03-25
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
