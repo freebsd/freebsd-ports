@@ -20,6 +20,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/fonts.dir:${PORTSDIR}/x11-fonts/bitstream-vera
 
 USE_X_PREFIX=	yes
+USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
