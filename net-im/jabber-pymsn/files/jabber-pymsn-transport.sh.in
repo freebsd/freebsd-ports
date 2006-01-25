@@ -1,8 +1,7 @@
 #!/bin/sh
-
-# Start or stop jabber-pymsn
+#
 # $FreeBSD$
-
+#
 # PROVIDE: jabber_pymsn
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
@@ -12,22 +11,23 @@
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-jabber_pymsn_dir=${jabberd_pymsn_dir-"%%PREFIX%%/lib/jabber/pymsn"}
-jabber_pymsn_piddir=${jabberd_pymsn_piddir-"/var/jabberd/pid"}
-jabber_pymsn_enable=${jabberd_pymsn_enable-"NO"}
 
 . %%RC_SUBR%%
 
 name="jabber_pymsn"
 rcvar=`set_rcvar`
-command_interpreter="%%PYTHON_CMD%%"
-command="${jabber_pymsn_dir}/main.py"
-command_args="&"
+
+load_rc_config $name
+
+: ${jabber_pymsn_dir="%%PREFIX%%/lib/jabber/pymsn"}
+: ${jabber_pymsn_piddir="/var/jabberd/pid"}
+: ${jabber_pymsn_enable="NO"}
+
 jabber_pymsn_chdir=${jabber_pymsn_dir}
 
 pidfile="${jabber_pymsn_piddir}/pymsn.pid"
+command_interpreter="%%PYTHON_CMD%%"
+command="${jabber_pymsn_dir}/main.py"
+command_args="-o pid=${pidfile} &"
 
-load_rc_config $name
 run_rc_command "$1"
