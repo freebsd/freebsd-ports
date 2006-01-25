@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		11
+PORTREVISION=		12
 CATEGORIES=		emulators linux
 MASTER_SITES=		http://download.fedoralegacy.org/redhat/%SUBDIR%/ \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
@@ -103,12 +103,6 @@ MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700013
-LDCONFIG_TARGET=	/var/run/linux-ld.so.cache
-.else
-LDCONFIG_TARGET=	${PREFIX}/etc/ld.so.cache
-.endif
-
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
 RPMFLAGS=		--root ${PREFIX} --dbpath ${DBPATH} --nodeps \
@@ -190,10 +184,7 @@ do-install:
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
-.if ${OSVERSION} >= 700013
-	@${LN} -sf ${LDCONFIG_TARGET} ${PREFIX}/etc/ld.so.cache
-.endif
-	@${PREFIX}/sbin/ldconfig -C ${LDCONFIG_TARGET}
+	@${PREFIX}/sbin/ldconfig -r ${PREFIX}
 
 post-install:
 	@${ECHO} ''
