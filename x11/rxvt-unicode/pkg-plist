@@ -8,6 +8,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/mark-urls
 %%PERL%%lib/urxvt/perl/option-popup
 %%PERL%%lib/urxvt/perl/readline
+%%PERL%%lib/urxvt/perl/remote-clipboard
 %%PERL%%lib/urxvt/perl/searchable-scrollback
 %%PERL%%lib/urxvt/perl/selection
 %%PERL%%lib/urxvt/perl/selection-autotransform
@@ -15,6 +16,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/selection-popup
 %%PERL%%lib/urxvt/perl/tabbed
 %%PERL%%lib/urxvt/perl/urxvt-popup
+%%PERL%%lib/urxvt/perl/xim-onthespot
 %%PERL%%lib/urxvt/urxvt.pm
 %%PERL%%@dirrm lib/urxvt/perl
 %%PERL%%@dirrm lib/urxvt
