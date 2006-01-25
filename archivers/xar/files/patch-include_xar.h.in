@@ -1,0 +1,10 @@
+--- include/xar.h.in.orig	Tue Jan 24 02:14:31 2006
++++ include/xar.h.in	Tue Jan 24 02:14:45 2006
+@@ -36,6 +36,7 @@
+ 
+ #define XAR_VERSION "@XAR_VERSION@"
+ 
++#include <sys/limits.h>
+ #include <sys/types.h>
+ #include <stdint.h>
+ 
