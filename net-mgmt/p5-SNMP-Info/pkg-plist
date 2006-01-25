@@ -45,3 +45,4 @@
 @dirrm %%SITE_PERL%%/SNMP/Info
 @dirrm %%SITE_PERL%%/SNMP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
