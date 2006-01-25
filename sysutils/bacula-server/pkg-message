@@ -10,4 +10,8 @@
   For USB support read the manual. It could be necessary 
   to configure/compile a new kernel!
 
+  Please note that bacula-server no longer installs the client
+  and that the documentation could be optional installed with the 
+  client port (see port sysutils/bacula-client)!
+
 ################################################################################
