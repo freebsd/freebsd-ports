@@ -29,7 +29,7 @@ dkfilter_out_flags=${dkfilter_out_flags:-" --header \
 	--selector=selector1 --domain=example.org --method=nofws \
 	127.0.0.1:10027 127.0.0.1:10028"}
 dkfilter_out_pidfile=${dkfilter_out_pidfile:-"/var/run/dkfilter_out.pid"}
-dkfilter_out_user=${dkfilter_user:-"dkfilter"}
+dkfilter_out_user=${dkfilter_out_user:-"dkfilter"}
 
 start_cmd="dkfilter_out_start"
 stop_cmd="dkfilter_out_stop"
@@ -43,7 +43,8 @@ dkfilter_out_start()
 	touch ${dkfilter_out_pidfile}
 	chown ${dkfilter_out_user} ${dkfilter_out_pidfile}
 	su -m ${dkfilter_out_user} -c "daemon -p ${dkfilter_out_pidfile} \
-		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}"
+		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}" \
+		> /dev/null 2>&1
 	echo "Starting ${name}."
 }
 

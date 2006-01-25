@@ -7,7 +7,7 @@
 
 PORTNAME=	dkfilter
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkfilter/
 DISTNAME=	${PORTNAME}
