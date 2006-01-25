@@ -17,6 +17,7 @@ COMMENT=	Window Manager designed for speed, usability and consistency
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
+USE_ICONV=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
