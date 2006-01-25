@@ -19,6 +19,7 @@ RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 CONFLICTS=	ion-2002* pwm-[0-9]* ion-2*
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	DEFINES="${IONDEFINES}"
 

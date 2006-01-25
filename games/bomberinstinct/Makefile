@@ -19,6 +19,7 @@ COMMENT=	A nice Bomberman-like multiplayer game
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_SDL=	mixer sdl
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
