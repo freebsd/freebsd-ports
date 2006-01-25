@@ -2,6 +2,8 @@ bin/kismet
 bin/kismet_client
 bin/kismet_drone
 bin/kismet_server
+%%GPS%%bin/gpsmap
+%%GPS%%bin/gpsmap-helper-earthamaps
 etc/ap_manuf
 etc/client_manuf
 @unexec if cmp -s %D/etc/kismet.conf %D/etc/kismet.conf.sample; then rm -f %D/etc/kismet.conf; fi
