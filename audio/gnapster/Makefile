@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client for the online mp3 community called napster
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 WANT_GNOME=	yes
