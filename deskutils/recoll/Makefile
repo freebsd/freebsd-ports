@@ -21,6 +21,7 @@ USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="freebsd-g++"
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 
 MAN1=		recoll.1 recollindex.1
 MAN5=		recoll.conf.5
