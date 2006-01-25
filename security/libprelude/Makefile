@@ -13,6 +13,8 @@ COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_REINPLACE=		yes
