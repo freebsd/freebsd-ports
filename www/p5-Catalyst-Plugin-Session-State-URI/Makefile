@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-State-URI
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/N/NU/NUFFIN
+MASTER_SITE_SUBDIR=	Catalyst
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -17,7 +17,8 @@ COMMENT=	Saves Catalyst Session IDs by rewriting URIs
 
 BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-URI-Find>=0.13:${PORTSDIR}/textproc/p5-URI-Find
+		p5-HTML-TokeParser-Simple>=0:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
+		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
