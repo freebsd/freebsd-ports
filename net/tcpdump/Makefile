@@ -15,13 +15,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
-BROKEN=		Broken dependency
-
 # TODO: Add strict sanity check that we're compiling against a
 # version of libpcap with which this tcpdump release is compatible.
 #
 .if defined(TCPDUMP_OVERWRITE_BASE) || !defined(WITH_LIBPCAP_BASE)
-LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
