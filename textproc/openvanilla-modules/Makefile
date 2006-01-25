@@ -21,6 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/scim-1.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textp
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15:env
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 OPTIONS=	OVIMArray		"Array Input Module"		on \
 		OVIMBig5		"Big5 Input Module"		off \
@@ -32,6 +33,11 @@ OPTIONS=	OVIMArray		"Array Input Module"		on \
 		OVIMUnicode		"Unicode Input Module"		off
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e  \
+		's|LIBTOOL=.*|LIBTOOL=${LIBTOOL}|;' \
+		${WRKSRC}/Mk/ov.vars.mk
 
 .if !defined(WITHOUT_OVIMArray)
 PLIST_SUB+=	OVIMArray=""
