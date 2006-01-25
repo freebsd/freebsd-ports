@@ -515,6 +515,7 @@
     SUBDIR += synergy
     SUBDIR += syslog-ng
     SUBDIR += system-tools-backends
+    SUBDIR += sysupdate
     SUBDIR += tcplist
     SUBDIR += tct
     SUBDIR += tdir
