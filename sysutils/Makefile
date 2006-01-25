@@ -398,6 +398,7 @@
     SUBDIR += personality
     SUBDIR += pfstat
     SUBDIR += pftop
+    SUBDIR += phantom
     SUBDIR += php4-posix
     SUBDIR += php5-posix
     SUBDIR += pib
