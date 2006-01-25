@@ -10,7 +10,8 @@ PORTVERSION=	2005.12.26
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.calodox.scene.org/morbac/cake/download/ \
-		http://freebsd.nsu.ru/distfiles/
+		${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
+MASTER_SITE_SUBDIR=	danfe
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
