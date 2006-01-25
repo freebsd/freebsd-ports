@@ -8414,6 +8414,7 @@ p5-Mail-Sendmail	ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
 p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
+p5-Mail-Transport-Dbx	ports/mail/p5-Mail-Transport-Dbx
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
 p5-Mail-Webmail-Gmail	ports/mail/p5-Mail-Webmail-Gmail
 p5-Make		ports/devel/p5-Make
