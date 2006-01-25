@@ -28,9 +28,9 @@
 @dirrm %%INSTALL_DIR%%/tools
 @dirrm %%INSTALL_DIR%%
 %%WWW%%%%WWW_DIR%%/ban/1x1.gif
+%%WWW%%%%WWW_DIR%%/ban/access_denied.html
 %%WWW%%%%WWW_DIR%%/ban/audio-video.html
 %%WWW%%%%WWW_DIR%%/ban/js.js
-%%WWW%%%%WWW_DIR%%/ban/mp3.html
 %%WWW%%%%WWW_DIR%%/ban/porno.html
-%%WWW%%%%WWW_DIR%%/ban/warez.html
+%%WWW%%%%WWW_DIR%%/ban/spyware.html
 %%WWW%%@dirrm %%WWW_DIR%%/ban

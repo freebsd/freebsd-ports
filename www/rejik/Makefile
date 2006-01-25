@@ -7,8 +7,10 @@
 
 PORTNAME=	rejik
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.rejik.ru/download/
+MASTER_SITES=	http://www.rejik.ru/download/ \
+				http://bio3k.softboard.ru/uploads/arch/
 DISTNAME=	redirector-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -89,6 +91,10 @@ post-install:
 .if defined(WITH_DBL)
 	@${TAR} -xzf ${DISTDIR}/dbl-2.0.tgz -C ${INSTALL_PATH}
 	@${CHOWN} -R ${SQUID_USER}:${SQUID_GROUP} ${INSTALL_PATH}/dbl
+	@${REINPLACE_CMD} -e 's|$WGET="/usr/bin/wget";|$WGET="${LOCALBASE}/wget";| ; \
+		s|$dir="/usr/local/rejik3/dbl";|$dir="${INSTALL_PATH}/dbl";|' \
+		${INSTALL_PATH}/dbl/Update ${INSTALL_PATH}/dbl/Update.Fast ${INSTALL_PATH}/dbl/dbl_expand
+	@${RM} ${INSTALL_PATH}/dbl/*.bak
 .endif
 .if !defined(WITHOUT_WWW)
 	@${TAR} -xzf ${DISTDIR}/squid-like-www-en.tgz -C ${WWW_PATH}
