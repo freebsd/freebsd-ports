@@ -7,12 +7,12 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.38.5
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
 PKGNAMESUFFIX?=	-server
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
+UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT?=	The network backup solution (server)
@@ -22,7 +22,6 @@ COMMENT?=	The network backup solution (server)
 #
 BACULA_DIR?=/var/db/bacula
 #
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
@@ -43,7 +42,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL
+ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL DOCS
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -58,13 +57,13 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
+OPTIONS+=	DOCS "Install documention" off
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
-
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
 # Prepare if gnome-console is selected this must be happen before
@@ -80,11 +79,19 @@ MAN8=           bacula.8
 
 .include <bsd.port.pre.mk>
 
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+.if defined(WITH_DOCS)
+DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
+.endif
+
+.if defined(WITH_DOCS)
+PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
+.endif
+
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
 CONFIGURE_ARGS+=	--enable-client-only
-PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
 PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build gnome-console
@@ -164,6 +171,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
+	@${ECHO_MSG} "  WITH_DOCS=yes  		if you want the documentation installed."
+	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
@@ -178,7 +187,7 @@ post-patch:
 # 	In client port only install startup script out of script dir (see below post-install)
 # 	Dont mkdir ${PREFIX}/share/bacule cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
@@ -227,8 +236,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
 .endif
 
-# Documentaion is only installed in -client port
-.if !defined(NOPORTDOCS)
+# Documentation is only installed in -client port
+.if defined(WITH_DOCS)
 	for na in manual bacula-web; do \
 		${MKDIR} ${DOCSDIR}/$$na ;\
 		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
@@ -316,7 +325,7 @@ post-install:
 	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
 	@${ECHO_MSG} "to configure/compile a new kernel!"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at $PREFIX/share/bacula/update_bacula_tables for"
+	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
 	@${ECHO_MSG} "database update procedure. Details can be found in the"
 	@${ECHO_MSG} "ReleaseNotes"
 .endif
