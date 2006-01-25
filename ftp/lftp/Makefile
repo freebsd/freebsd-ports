@@ -27,6 +27,7 @@ COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
+USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
