@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	haskell-mode
-PORTVERSION=	1.44
+PORTVERSION=	2.1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://www.haskell.org/haskell-mode/
+MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
 
-MAINTAINER=	jre@vineyard.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs lisp mode for editing haskell programs
 
 NO_BUILD=	yes
@@ -18,10 +18,16 @@ NO_BUILD=	yes
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
 ELISPFILES=	haskell-decl-scan.el haskell-doc.el haskell-font-lock.el \
 		haskell-ghci.el haskell-hugs.el haskell-indent.el \
-		haskell-mode.el haskell-simple-indent.el
+		haskell-mode.el haskell-simple-indent.el haskell-site-file.el \
+		inf-haskell.el
 
 PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
 PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs \
+		index.html installation-guide.html
+.endif
 
 do-install:
 	${MKDIR} ${ELISPDIR}
@@ -30,6 +36,12 @@ do-install:
 .endfor
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.  for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.  endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
