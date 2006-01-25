@@ -21,6 +21,7 @@ LIB_DEPENDS=	gsl.7:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 .if defined(PACKAGE_BUILDING)
+#Triangle and Tetgen are NO_CDROM
 WITHOUT_TRIANGLE=	yes
 WITHOUT_TETGEN=		yes
 .endif
@@ -48,14 +49,6 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
 ALL_TARGET=	all utils
 
 MAN1=		gmsh.1
-
-.if !defined(WITHOUT_TRIANGLE)
-NO_CDROM=	"Triangle must not be sold for profit"
-.endif
-
-.if !defined(WITHOUT_TETGEN)
-NO_CDROM+=	"Tetgen must not be sold for profit"
-.endif
 
 .include <bsd.port.pre.mk>
 
