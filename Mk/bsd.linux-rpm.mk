@@ -1,12 +1,12 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.1 2006-01-21 17:37:01 krion Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.2 2006-01-25 17:41:34 jylefort Exp $
 #
 
 .if !defined(_POSTMKINCLUDED) && !defined(Linux_RPM_Pre_Include)
 
-Linux_RPM_Include_MAINTAINER=	jylefort@FreeBSD.org
+Linux_RPM_Include_MAINTAINER=	emulation@FreeBSD.org
 Linux_RPM_Pre_Include=			bsd.linux-rpm.mk
 
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
