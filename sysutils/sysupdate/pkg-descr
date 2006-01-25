@@ -1,0 +1,6 @@
+sysupdate.sh will update your system and/or port collection files in part or in
+full to the latest cvs version. sysupdate.sh can be set to only download the
+latest system files or can be set to compile and install a complete system
+update.
+
+WWW: http://lvl.sourceforge.net/
