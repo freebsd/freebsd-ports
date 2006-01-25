@@ -5,6 +5,7 @@
 
     SUBDIR += 2dhf
     SUBDIR += abinit
+    SUBDIR += afni
     SUBDIR += at
     SUBDIR += bblimage
     SUBDIR += buddy
