@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Template/Plugin/Number/Format.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Number/Format/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Number/Format
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Number
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrm %%SITE_PERL%%/Template/Plugin/Number
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
