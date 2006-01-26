@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -23,6 +24,8 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_XLIB=	yes
+USE_GNUSTEP_LIBART=	yes
 
 do-install:	# empty
 
