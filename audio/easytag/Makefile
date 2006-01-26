@@ -23,6 +23,7 @@ MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \

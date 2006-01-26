@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	dopewars
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A UNIX rewrite of a game originally based on "Drug Wars"
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
