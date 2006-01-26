@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
