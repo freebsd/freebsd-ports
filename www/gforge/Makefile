@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	4.5.3
+PORTVERSION=	4.5.6
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/frs/download.php/138/
+MASTER_SITES=	http://gforge.org/frs/download.php/205/
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Open Source collaborative software development tool
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph
 
 USE_BZIP2=		YES
-USE_REINPLACE=		YES
 USE_PERL5=		YES
 HAS_CONFIGURE=		YES
 USE_APACHE=		YES
@@ -27,7 +26,7 @@ USE_PHP=		pgsql session pcre
 WANT_PHP_CLI=		YES
 WANT_PHP_MOD=		YES
 
-NO_PACKAGE=	"The configure process uses hostname."
+NO_PACKAGE=	The configure process uses hostname
 
 .include <bsd.port.pre.mk>
 
@@ -66,9 +65,9 @@ CONFIGURE_ENV+=	"WWWROOT=${WWWROOT}/gforge"
 WWW_STUFF=	common www
 BACKEND_STUFF=	backend cronjobs monitor utils plugins
 SHARE_STUFF=	contrib db
-ETC_STUFF=	database.inc.example gforge-httpd.conf.example gforge.conf.example \
-		httpd.conf.example httpd.secrets.example local.inc.example \
-		local.pl.example nss-pgsql.conf.example
+ETC_STUFF=	gforge-httpd.conf.example local.inc.example \
+		gforge-multi-host-httpd.conf.example
+
 pre-everything::
 .if defined(SYSTEM_NAME)
 	CONFIGURE_ARGS+= --with-sys-name=${SYSTEM_NAME}
@@ -116,10 +115,6 @@ do-install:
 .for f in ${ETC_STUFF}
 	@${CP} -Rvf ${WRKSRC}/etc/${f} ${ETCDIR}
 .endfor
-.for dir in httpd.d local.d templates
-	@${MKDIR} ${ETCDIR}/${dir}
-	@${CP} -Rvf ${WRKSRC}/etc/${dir} ${ETCDIR}/${dir}
-.endfor
 .for dir in ${WWW_STUFF}
 	@${MKDIR} ${WWWROOT}/gforge/${dir}
 	@${CP} -Rvf ${WRKSRC}/${dir}/* ${WWWROOT}/gforge/${dir}
@@ -145,8 +140,12 @@ post-install:
 	@${ECHO_MSG} "${ETCDIR}/sample-apache.vhost-dist"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usefull files:"
-	@${ECHO_MSG} "database template: ${DATADIR}/db/gforge3.sql"
+	@${ECHO_MSG} "database template: ${DATADIR}/db/gforge.sql"
 	@${ECHO_MSG} "crontab templates: ${BACKEND_DIR}/cronjobs/README.*"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you are having trouble displaying gantt charts,"
+	@${ECHO_MSG} "please try increasing PHP's memory limit. Thanks to"
+	@${ECHO_MSG} "Erik Greenwalk for pointing this issue out."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gforge is a huge project and complex to configure."
 	@${ECHO_MSG} "If you have some great ideas for this port please"
