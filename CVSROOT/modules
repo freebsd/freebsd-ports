@@ -629,6 +629,7 @@ bar		ports/textproc/bar
 barbecue	ports/graphics/barbecue
 barcode		ports/graphics/barcode
 barnyard	ports/security/barnyard
+barnyard-sguil6	ports/security/barnyard-sguil6
 barrage		ports/games/barrage
 barry		ports/sysutils/barry
 base		ports/security/base
