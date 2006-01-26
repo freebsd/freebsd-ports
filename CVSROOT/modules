@@ -7187,6 +7187,7 @@ openmap		ports/astro/openmap
 openmcu		ports/net/openmcu
 openmortal	ports/games/openmortal
 openmpi		ports/net/openmpi
+openmsx		ports/emulators/openmsx
 opennap		ports/audio/opennap
 openntpd	ports/net/openntpd
 openobex	ports/comms/openobex
