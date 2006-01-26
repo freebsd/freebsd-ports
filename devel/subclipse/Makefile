@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	0.9.104
+PORTVERSION=	0.9.105
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/29023
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/29070
 DISTNAME=	site.${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
