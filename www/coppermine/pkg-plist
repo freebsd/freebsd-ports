@@ -27,8 +27,6 @@
 %%CPGDIR%%/delete.php
 %%CPGDIR%%/displayecard.php
 %%CPGDIR%%/displayimage.php
-%%CPGDIR%%/docs/README.html
-%%CPGDIR%%/docs/credits.html
 %%CPGDIR%%/docs/faq.htm
 %%CPGDIR%%/docs/index.htm
 %%CPGDIR%%/docs/pics/admin_menu.gif
@@ -66,7 +64,6 @@
 %%CPGDIR%%/docs/pics/up.gif
 %%CPGDIR%%/docs/pics/user_folder_link.gif
 %%CPGDIR%%/docs/pics/util_re-size.gif
-%%CPGDIR%%/docs/tester-README.txt
 %%CPGDIR%%/docs/theme.htm
 %%CPGDIR%%/docs/translation.htm
 %%CPGDIR%%/ecard.php
@@ -85,6 +82,8 @@
 %%CPGDIR%%/images/down.gif
 %%CPGDIR%%/images/ecard.gif
 %%CPGDIR%%/images/edit.gif
+%%CPGDIR%%/images/flags/al.gif
+%%CPGDIR%%/images/flags/es_gln.gif
 %%CPGDIR%%/images/flags/ae.gif
 %%CPGDIR%%/images/flags/am.gif
 %%CPGDIR%%/images/flags/ar.gif
@@ -280,6 +279,12 @@
 %%CPGDIR%%/index.php
 %%CPGDIR%%/install.php
 %%CPGDIR%%/installer.css
+%%CPGDIR%%/lang/albanian-utf-8.php
+%%CPGDIR%%/lang/albanian.php
+%%CPGDIR%%/lang/galician-utf-8.php
+%%CPGDIR%%/lang/galician.php
+%%CPGDIR%%/lang/portuguese-utf-8.php
+%%CPGDIR%%/lang/portuguese.php
 %%CPGDIR%%/lang/arabic-utf-8.php
 %%CPGDIR%%/lang/arabic.php
 %%CPGDIR%%/lang/basque-utf-8.php
