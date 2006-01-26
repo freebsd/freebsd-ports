@@ -9,7 +9,7 @@ PORTNAME=	NetRexx
 PORTVERSION=	2.05
 PORTREVISION=	1
 CATEGORIES=	java lang
-MASTER_SITES=	http://www-306.ibm.com/software/awdtools/netrexx/
+MASTER_SITES=	ftp://ftp.software.ibm.com/software/awdtools/netrexx/
 DISTNAME=	NetRexx
 
 MAINTAINER=	ports@FreeBSD.org
