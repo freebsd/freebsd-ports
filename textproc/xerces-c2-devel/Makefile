@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
 DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
 OPTIONS=	THREADS "Build a thread enabled shared library." on \

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
 DISTNAME=	Xalan-C_${PORTVERSION:S/./_/g}-src:msax
 DISTFILES+=	Xalan-C_${PORTVERSION:S/./_/g}-src${EXTRACT_SUFX}:msax
 
-MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT processor from the Apache XML Project
 
 OPTIONS=	INMEM "Use inmem locale system." on \
