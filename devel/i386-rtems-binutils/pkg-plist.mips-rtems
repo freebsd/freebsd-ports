@@ -26,6 +26,8 @@ mips-rtems/lib/ldscripts/elf32ebmip.xs
 mips-rtems/lib/ldscripts/elf32ebmip.xu
 mips-rtems/lib/ldscripts/elf32ebmip.xc
 mips-rtems/lib/ldscripts/elf32ebmip.xsc
+mips-rtems/lib/ldscripts/elf32ebmip.xsw
+mips-rtems/lib/ldscripts/elf32ebmip.xw
 share/locale/da/LC_MESSAGES/bfd.mo
 share/locale/da/LC_MESSAGES/binutils.mo
 share/locale/da/LC_MESSAGES/ld.mo
