@@ -24,6 +24,10 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/arrow-next.xml
 %%DATADIR%%/buttons/arrow-right.xml
 %%DATADIR%%/buttons/arrow-up.xml
+%%DATADIR%%/buttons/arrow2-down.xml
+%%DATADIR%%/buttons/arrow2-left.xml
+%%DATADIR%%/buttons/arrow2-right.xml
+%%DATADIR%%/buttons/arrow2-up.xml
 %%DATADIR%%/buttons/buttons.lst
 %%DATADIR%%/buttons/cancel.xml
 %%DATADIR%%/buttons/ellipse.xml

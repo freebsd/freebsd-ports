@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-DISTVERSION=	1.5b3
+DISTVERSION=	1.5b4
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -32,7 +32,8 @@ USE_AUTOTOOLS=	libtool:15:inc
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
