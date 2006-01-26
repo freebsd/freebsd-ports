@@ -26,7 +26,8 @@ USE_REINPLACE=	yes
 WANT_GNOME=	yes
 
 OPTIONS=	X11 "Build with X11 frontend" on \
-		GTK2 "gtk2 instead of gtk12" off
+		GTK2 "gtk2 instead of gtk12" off \
+		NLS "Native Language Support via gettext utilities" on
 
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
@@ -40,7 +41,9 @@ USE_GNOME+=	gnomehack
 CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 PKGNAMESUFFIX=	-nox11
 USE_GNOME+=	glib12
+PLIST_SUB+=	NOX11:="@comment "
 .else
+PLIST_SUB+=	NOX11:=""
 WANT_GNOME=	yes
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
@@ -54,10 +57,12 @@ CONFIGURE_ARGS+=--disable-gtk20
 
 MAN1=		gftp.1
 
-.if defined(WITHOUT_X11)
-PLIST_SUB+=	NOX11:="@comment "
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=	NOX11:=""
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" && !defined(WITH_GTK2)
@@ -73,5 +78,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		s|"-lssl |& -lcrypto|' ${WRKSRC}/configure
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e 's|: install-pkgdataDATA|: |' \
+		${WRKSRC}/docs/sample.gftp/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
