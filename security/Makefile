@@ -26,6 +26,7 @@
     SUBDIR += autossh
     SUBDIR += avcheck
     SUBDIR += barnyard
+    SUBDIR += barnyard-sguil6
     SUBDIR += base
     SUBDIR += bcrypt
     SUBDIR += bcwipe
