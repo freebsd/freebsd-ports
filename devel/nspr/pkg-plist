@@ -49,6 +49,8 @@ include/nspr/md/_reliantunix.cfg
 include/nspr/md/_reliantunix.h
 include/nspr/md/_rhapsody.cfg
 include/nspr/md/_rhapsody.h
+include/nspr/md/_riscos.cfg
+include/nspr/md/_riscos.h
 include/nspr/md/_scoos.cfg
 include/nspr/md/_scoos.h
 include/nspr/md/_solaris.cfg
