@@ -24,6 +24,10 @@ INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \
 		EUC-JP.unicodeMap Shift-JIS.unicodeMap \
 		README dot.xpdfrc
 
+.if defined(WITHOUT_X11)
+BROKEN=		"Broken dependency when WITHOUT_X11 set"
+.endif
+
 do-build:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	        -e 's|%%X11BASE%%|${X11BASE}|g' \

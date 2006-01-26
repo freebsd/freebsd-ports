@@ -22,6 +22,10 @@ USE_X_PREFIX=	yes
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
 		README dot.xpdfrc
 
+.if defined(WITHOUT_X11)
+BROKEN=		Broken dependency when WITHOUT_X11 set
+.endif
+
 do-build:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	        -e 's|%%X11BASE%%|${X11BASE}|g' \
