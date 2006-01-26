@@ -10,27 +10,25 @@ PORTVERSION=	0.2.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	barnyard
-#DISTNAME=	barnyard
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	An output system for Snort
+COMMENT?=	An output system for Snort
 
-RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
+RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 
 OPTIONS=	MYSQL "Enable MySQL support" off \
 		POSTGRESQL "Enable PostgreSQL support" off
 
 USE_AUTOTOOLS=	autoheader:259 autoconf:259
-USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
+USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+SLAVEDIRS=	security/barnyard-sguil6
+SUB_FILES=	pkg-message
 
-DOCS=		AUTHORS COPYING LICENSE.QPL README docs/BUGS docs/ChangeLog \
-		docs/FAQ docs/INSTALL docs/NEWS docs/USAGE
+DOCS=		AUTHORS COPYING LICENSE.QPL README
+PORTDOCS=	BUGS ChangeLog FAQ INSTALL NEWS USAGE
 
 .include <bsd.port.pre.mk>
 
@@ -44,12 +42,8 @@ USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-postgres
 .endif
 
-post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/barnyard.sh > ${WRKDIR}/barnyard.sh
-
 post-install:
-	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/barnyard.sh ${PREFIX}/etc/rc.d/barnyard.sh
+
 .for f in barnyard.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
 	[ -f ${PREFIX}/etc/${f} ] || \
@@ -58,6 +52,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
