@@ -3,10 +3,10 @@
 # Whom:					Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/misc/fortune-mod-ferengi_rules_of_acquisition/Makefile,v 1.5 2005/12/20 00:16:42 itetcu Exp $
+# $Tecnik: ports/misc/fortune-mod-ferengi_rules_of_acquisition/Makefile,v 1.7 2006/01/26 14:23:43 itetcu Exp $
 
 PORTNAME=	fortune-mod-ferengi_rules_of_acquisition
-PORTVERSION=	2005.12.19
+PORTVERSION=	2006.01.26
 CATEGORIES=	misc
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
