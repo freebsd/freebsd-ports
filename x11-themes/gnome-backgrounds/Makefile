@@ -18,6 +18,7 @@ COMMENT=	A collection of backgrounds for GNOME 2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnometarget gnomehack intlhack

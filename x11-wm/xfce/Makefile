@@ -20,6 +20,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

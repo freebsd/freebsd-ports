@@ -22,6 +22,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_SDL=	mixer sdl
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -63,6 +63,7 @@ WITH_TRANSPORT=	local esmtp dsn
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
