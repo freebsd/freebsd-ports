@@ -30,6 +30,10 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru --enable-kqueue
 MANCOMPRESSED=	no
 MAN8=		ircd.8
 
+.if defined(WITHOUT_NLS)
+BROKEN=		"Incorrect pkg-plist"
+.endif
+
 .if defined(WITH_SMALL_NET)
 CONFIGURE_ARGS+=-enable-small-net
 .endif
