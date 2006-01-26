@@ -21,6 +21,7 @@ COMMENT=	Simple GTK-based text/HTML editor
 
 DOCVERSION=	1.2.0
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_XPM=	yes

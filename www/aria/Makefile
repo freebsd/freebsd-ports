@@ -16,6 +16,7 @@ COMMENT=	Yet another download tool
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnometarget gtk12
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=yes

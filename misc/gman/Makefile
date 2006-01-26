@@ -28,6 +28,7 @@ RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
