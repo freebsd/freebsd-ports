@@ -12,6 +12,7 @@ bin/micq
 %%DATADIR%%/bg.i18n
 %%DATADIR%%/de.i18n
 %%DATADIR%%/de_CH.i18n
+%%DATADIR%%/cs.i18n
 %%DATADIR%%/en.i18n
 %%DATADIR%%/es.i18n
 %%DATADIR%%/fi.i18n
