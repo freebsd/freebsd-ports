@@ -36,8 +36,8 @@ OPTIONS=	ID3TAG	"ID3 tag support"		off \
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not build on ia64 or sparc64"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
