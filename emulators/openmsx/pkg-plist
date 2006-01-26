@@ -1,0 +1,488 @@
+bin/openmsx
+%%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/hardwareconfig.xml
+%%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms/SHA1SUMS
+%%DATADIR%%/extensions/Konami_EC-702/hardwareconfig.xml
+%%DATADIR%%/extensions/Konami_EC-702/roms/SHA1SUMS
+%%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge/hardwareconfig.xml
+%%DATADIR%%/extensions/Konami_Snatcher_Sound_Cartridge/hardwareconfig.xml
+%%DATADIR%%/extensions/MegaRAM_Disk/hardwareconfig.xml
+%%DATADIR%%/extensions/MegaRAM_Disk/roms/SHA1SUMS
+%%DATADIR%%/extensions/Microsol_CDX-2/hardwareconfig.xml
+%%DATADIR%%/extensions/Microsol_CDX-2/roms/SHA1SUMS
+%%DATADIR%%/extensions/Panasonic_FS-CA1/hardwareconfig.xml
+%%DATADIR%%/extensions/Panasonic_FS-CA1/roms/SHA1SUMS
+%%DATADIR%%/extensions/Philips_NMS_1205/hardwareconfig.xml
+%%DATADIR%%/extensions/Philips_NMS_1205/roms/SHA1SUMS
+%%DATADIR%%/extensions/Sony_HBD-F1/hardwareconfig.xml
+%%DATADIR%%/extensions/Sony_HBD-F1/roms/SHA1SUMS
+%%DATADIR%%/extensions/Sony_HBI-55/hardwareconfig.xml
+%%DATADIR%%/extensions/Sony_HBK-30/hardwareconfig.xml
+%%DATADIR%%/extensions/Sony_HBK-30/roms/SHA1SUMS
+%%DATADIR%%/extensions/Toshiba_HX-MU900/hardwareconfig.xml
+%%DATADIR%%/extensions/Toshiba_HX-MU900/roms/SHA1SUMS
+%%DATADIR%%/extensions/advram-p/hardwareconfig.xml
+%%DATADIR%%/extensions/advram-s/hardwareconfig.xml
+%%DATADIR%%/extensions/audio/hardwareconfig.xml
+%%DATADIR%%/extensions/audio2/hardwareconfig.xml
+%%DATADIR%%/extensions/debugdevice/hardwareconfig.xml
+%%DATADIR%%/extensions/fmpac/hardwareconfig.xml
+%%DATADIR%%/extensions/fmpac/roms/SHA1SUMS
+%%DATADIR%%/extensions/gfx9000/hardwareconfig.xml
+%%DATADIR%%/extensions/ide/hardwareconfig.xml
+%%DATADIR%%/extensions/ide/roms/SHA1SUMS
+%%DATADIR%%/extensions/mbstereo/hardwareconfig.xml
+%%DATADIR%%/extensions/mbstereo/roms/SHA1SUMS
+%%DATADIR%%/extensions/megaram/hardwareconfig.xml
+%%DATADIR%%/extensions/moonsound/hardwareconfig.xml
+%%DATADIR%%/extensions/moonsound/roms/SHA1SUMS
+%%DATADIR%%/extensions/msxdos2/hardwareconfig.xml
+%%DATADIR%%/extensions/msxdos2/roms/SHA1SUMS
+%%DATADIR%%/extensions/pac/hardwareconfig.xml
+%%DATADIR%%/extensions/ram1mb/hardwareconfig.xml
+%%DATADIR%%/extensions/ram2mb/hardwareconfig.xml
+%%DATADIR%%/extensions/ram4mb/hardwareconfig.xml
+%%DATADIR%%/extensions/ram512k/hardwareconfig.xml
+%%DATADIR%%/extensions/rs232/hardwareconfig.xml
+%%DATADIR%%/extensions/rs232/roms/SHA1SUMS
+%%DATADIR%%/extensions/scc+/hardwareconfig.xml
+%%DATADIR%%/extensions/scc/hardwareconfig.xml
+%%DATADIR%%/extensions/slotexpander/hardwareconfig.xml
+%%DATADIR%%/init.tcl
+%%DATADIR%%/keymaps/keymap.default
+%%DATADIR%%/keymaps/keymap.rus2eng
+%%DATADIR%%/machines/Boosted_MSX2_EN/README
+%%DATADIR%%/machines/Boosted_MSX2_EN/hardwareconfig.xml
+%%DATADIR%%/machines/Boosted_MSX2_EN/roms/README
+%%DATADIR%%/machines/C-BIOS_MSX1/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_main_msx1.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_main_msx2+.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_music.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_sub.rom
+%%DATADIR%%/machines/C-BIOS_MSX2/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_main_msx2.rom
+%%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_sub.rom
+%%DATADIR%%/machines/Canon_V-20/hardwareconfig.xml
+%%DATADIR%%/machines/Canon_V-20/roms/SHA1SUMS
+%%DATADIR%%/machines/Daewoo_CPC-300/hardwareconfig.xml
+%%DATADIR%%/machines/Daewoo_CPC-300/roms/SHA1SUMS
+%%DATADIR%%/machines/Daewoo_CPC-400S/hardwareconfig.xml
+%%DATADIR%%/machines/Daewoo_CPC-400S/roms/SHA1SUMS
+%%DATADIR%%/machines/Daewoo_DPC-100/hardwareconfig.xml
+%%DATADIR%%/machines/Daewoo_DPC-100/roms/SHA1SUMS
+%%DATADIR%%/machines/Daewoo_DPC-180/hardwareconfig.xml
+%%DATADIR%%/machines/Daewoo_DPC-180/roms/SHA1SUMS
+%%DATADIR%%/machines/Daewoo_DPC-200/hardwareconfig.xml
+%%DATADIR%%/machines/Daewoo_DPC-200/roms/SHA1SUMS
+%%DATADIR%%/machines/Goldstar_FC-200/hardwareconfig.xml
+%%DATADIR%%/machines/Goldstar_FC-200/roms/SHA1SUMS
+%%DATADIR%%/machines/Gradiente_Expert_1.0/hardwareconfig.xml
+%%DATADIR%%/machines/Gradiente_Expert_1.0/roms/SHA1SUMS
+%%DATADIR%%/machines/Gradiente_Expert_1.1/hardwareconfig.xml
+%%DATADIR%%/machines/Gradiente_Expert_1.1/roms/SHA1SUMS
+%%DATADIR%%/machines/Gradiente_Expert_DDPlus/hardwareconfig.xml
+%%DATADIR%%/machines/Gradiente_Expert_DDPlus/roms/SHA1SUMS
+%%DATADIR%%/machines/Gradiente_Expert_Plus/hardwareconfig.xml
+%%DATADIR%%/machines/Gradiente_Expert_Plus/roms/SHA1SUMS
+%%DATADIR%%/machines/JVC_HC-7GB/hardwareconfig.xml
+%%DATADIR%%/machines/JVC_HC-7GB/roms/SHA1SUMS
+%%DATADIR%%/machines/Mitsubishi_ML-F80/hardwareconfig.xml
+%%DATADIR%%/machines/Mitsubishi_ML-F80/roms/SHA1SUMS
+%%DATADIR%%/machines/Mitsubishi_ML-FX1/hardwareconfig.xml
+%%DATADIR%%/machines/Mitsubishi_ML-FX1/roms/SHA1SUMS
+%%DATADIR%%/machines/National_CF-1200/hardwareconfig.xml
+%%DATADIR%%/machines/National_CF-1200/roms/SHA1SUMS
+%%DATADIR%%/machines/National_CF-2000/hardwareconfig.xml
+%%DATADIR%%/machines/National_CF-2000/roms/SHA1SUMS
+%%DATADIR%%/machines/National_CF-2700/hardwareconfig.xml
+%%DATADIR%%/machines/National_CF-2700/roms/SHA1SUMS
+%%DATADIR%%/machines/National_CF-3000/hardwareconfig.xml
+%%DATADIR%%/machines/National_CF-3000/roms/SHA1SUMS
+%%DATADIR%%/machines/National_CF-3300/hardwareconfig.xml
+%%DATADIR%%/machines/National_CF-3300/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-1300/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-1300/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-4000/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-4000/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-4500/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-4500/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-4600/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-4600/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-4700/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-4700/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-5000/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-5000/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-5500F1/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-5500F1/roms/SHA1SUMS
+%%DATADIR%%/machines/National_FS-5500F2/hardwareconfig.xml
+%%DATADIR%%/machines/National_FS-5500F2/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1F/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1F/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1FM/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1FM/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1FX/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1FX/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1GT/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1GT/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1MK2/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1MK2/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1ST/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1ST/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1WSX/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1WSX/roms/SHA1SUMS
+%%DATADIR%%/machines/Panasonic_FS-A1WX/hardwareconfig.xml
+%%DATADIR%%/machines/Panasonic_FS-A1WX/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_NMS_8220/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_NMS_8220/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_NMS_8245/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_NMS_8245/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_NMS_8250/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_NMS_8250/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_NMS_8255/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_NMS_8255/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8020-20/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8020-20/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8020/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8020/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8230/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8230/roms/SHA1SUMS
+%%DATADIR%%/machines/Philips_VG_8235/hardwareconfig.xml
+%%DATADIR%%/machines/Philips_VG_8235/roms/SHA1SUMS
+%%DATADIR%%/machines/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_MPC100/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_MPC100/roms/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_PHC-35J/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_PHC-35J/roms/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_PHC-70FD/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_PHC-70FD/roms/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_PHC-70FD2/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_PHC-70FD2/roms/SHA1SUMS
+%%DATADIR%%/machines/Sharp_Epcom_HotBit_1.1/hardwareconfig.xml
+%%DATADIR%%/machines/Sharp_Epcom_HotBit_1.1/roms/SHA1SUMS
+%%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/hardwareconfig.xml
+%%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-101P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-201P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-201P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-501P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-501P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-75P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-75P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F1/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F1/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F1II/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F1II/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F1XD/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F1XD/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F500P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F500P/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F700D/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F700D/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F900/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F900/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F9P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F9P/roms/SHA1SUMS
+%%DATADIR%%/machines/Spectravideo_SVI-728/hardwareconfig.xml
+%%DATADIR%%/machines/Spectravideo_SVI-728/roms/SHA1SUMS
+%%DATADIR%%/machines/Toshiba_HX-10/hardwareconfig.xml
+%%DATADIR%%/machines/Toshiba_HX-10/roms/SHA1SUMS
+%%DATADIR%%/machines/msx1
+%%DATADIR%%/machines/msx2
+%%DATADIR%%/machines/msx2plus
+%%DATADIR%%/machines/turbor
+%%DATADIR%%/scripts/autoplug.tcl
+%%DATADIR%%/scripts/backwards_compatibility.tcl
+%%DATADIR%%/scripts/cheat.tcl
+%%DATADIR%%/scripts/convert_hardwareconfig.py
+%%DATADIR%%/scripts/convert_hardwareconfig2.py
+%%DATADIR%%/scripts/cpuregs.tcl
+%%DATADIR%%/scripts/cycle.tcl
+%%DATADIR%%/scripts/disasm.tcl
+%%DATADIR%%/scripts/guess_title.tcl
+%%DATADIR%%/scripts/load_icons.tcl
+%%DATADIR%%/scripts/multi_screenshot.tcl
+%%DATADIR%%/scripts/save_debuggable.tcl
+%%DATADIR%%/scripts/showmem.tcl
+%%DATADIR%%/scripts/slot.tcl
+%%DATADIR%%/scripts/stack.tcl
+%%DATADIR%%/scripts/toggle_freq.tcl
+%%DATADIR%%/scripts/trainers.tcl
+%%DATADIR%%/scripts/vdp.tcl
+%%DATADIR%%/scripts/vdrive.tcl
+%%DATADIR%%/settings.xml
+%%DATADIR%%/skins/ConsoleBackground.png
+%%DATADIR%%/skins/ConsoleBackground1.png
+%%DATADIR%%/skins/ConsoleBackground2.png
+%%DATADIR%%/skins/ConsoleBackground3.png
+%%DATADIR%%/skins/ConsoleBackground4.png
+%%DATADIR%%/skins/ConsoleBackground5.png
+%%DATADIR%%/skins/ConsoleBackground6.png
+%%DATADIR%%/skins/ConsoleBackgroundBlue.png
+%%DATADIR%%/skins/ConsoleBackgroundGrey.png
+%%DATADIR%%/skins/ConsoleFont.png
+%%DATADIR%%/skins/ConsoleFont1.png
+%%DATADIR%%/skins/ConsoleFontRave.png
+%%DATADIR%%/skins/ConsoleFontRaveL.png
+%%DATADIR%%/skins/ConsoleFontRaveLShaded.png
+%%DATADIR%%/skins/ConsoleFontRaveShaded.png
+%%DATADIR%%/skins/ConsoleFontShaded.png
+%%DATADIR%%/skins/led-off.png
+%%DATADIR%%/skins/led.png
+%%DATADIR%%/skins/none/skin.tcl
+%%DATADIR%%/skins/set1/caps-off.png
+%%DATADIR%%/skins/set1/caps-on.png
+%%DATADIR%%/skins/set1/code-off.png
+%%DATADIR%%/skins/set1/code-on.png
+%%DATADIR%%/skins/set1/fdd-off.png
+%%DATADIR%%/skins/set1/fdd-on.png
+%%DATADIR%%/skins/set1/kana-off.png
+%%DATADIR%%/skins/set1/kana-on.png
+%%DATADIR%%/skins/set1/pause-off.png
+%%DATADIR%%/skins/set1/pause-on.png
+%%DATADIR%%/skins/set1/power-off.png
+%%DATADIR%%/skins/set1/power-on.png
+%%DATADIR%%/skins/set1/skin.tcl
+%%DATADIR%%/skins/set1/turbo-off.png
+%%DATADIR%%/skins/set1/turbo-on.png
+%%DATADIR%%/skins/set2/caps-off.png
+%%DATADIR%%/skins/set2/caps-on.png
+%%DATADIR%%/skins/set2/fdd-off.png
+%%DATADIR%%/skins/set2/fdd-on.png
+%%DATADIR%%/skins/set2/kana-off.png
+%%DATADIR%%/skins/set2/kana-on.png
+%%DATADIR%%/skins/set2/pause-off.png
+%%DATADIR%%/skins/set2/pause-on.png
+%%DATADIR%%/skins/set2/power-off.png
+%%DATADIR%%/skins/set2/power-on.png
+%%DATADIR%%/skins/set2/skin.tcl
+%%DATADIR%%/skins/set2/turbo-off.png
+%%DATADIR%%/skins/set2/turbo-on.png
+%%DATADIR%%/skins/set4/caps-off.png
+%%DATADIR%%/skins/set4/caps-on.png
+%%DATADIR%%/skins/set4/fdd-off.png
+%%DATADIR%%/skins/set4/fdd-on.png
+%%DATADIR%%/skins/set4/kana-off.png
+%%DATADIR%%/skins/set4/kana-on.png
+%%DATADIR%%/skins/set4/pause-off.png
+%%DATADIR%%/skins/set4/pause-on.png
+%%DATADIR%%/skins/set4/power-off.png
+%%DATADIR%%/skins/set4/power-on.png
+%%DATADIR%%/skins/set4/skin.tcl
+%%DATADIR%%/skins/set4/turbo-off.png
+%%DATADIR%%/skins/set4/turbo-on.png
+%%DATADIR%%/softwaredb.xml
+%%DATADIR%%/systemroms/README
+@dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms
+@dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK
+@dirrm %%DATADIR%%/extensions/Konami_EC-702/roms
+@dirrm %%DATADIR%%/extensions/Konami_EC-702
+@dirrm %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge
+@dirrm %%DATADIR%%/extensions/Konami_Snatcher_Sound_Cartridge
+@dirrm %%DATADIR%%/extensions/MegaRAM_Disk/roms
+@dirrm %%DATADIR%%/extensions/MegaRAM_Disk
+@dirrm %%DATADIR%%/extensions/Microsol_CDX-2/roms
+@dirrm %%DATADIR%%/extensions/Microsol_CDX-2
+@dirrm %%DATADIR%%/extensions/Panasonic_FS-CA1/roms
+@dirrm %%DATADIR%%/extensions/Panasonic_FS-CA1
+@dirrm %%DATADIR%%/extensions/Philips_NMS_1205/roms
+@dirrm %%DATADIR%%/extensions/Philips_NMS_1205
+@dirrm %%DATADIR%%/extensions/Sony_HBD-F1/roms
+@dirrm %%DATADIR%%/extensions/Sony_HBD-F1
+@dirrm %%DATADIR%%/extensions/Sony_HBI-55
+@dirrm %%DATADIR%%/extensions/Sony_HBK-30/roms
+@dirrm %%DATADIR%%/extensions/Sony_HBK-30
+@dirrm %%DATADIR%%/extensions/Toshiba_HX-MU900/roms
+@dirrm %%DATADIR%%/extensions/Toshiba_HX-MU900
+@dirrm %%DATADIR%%/extensions/advram-p
+@dirrm %%DATADIR%%/extensions/advram-s
+@dirrm %%DATADIR%%/extensions/audio
+@dirrm %%DATADIR%%/extensions/audio2
+@dirrm %%DATADIR%%/extensions/debugdevice
+@dirrm %%DATADIR%%/extensions/fmpac/roms
+@dirrm %%DATADIR%%/extensions/fmpac
+@dirrm %%DATADIR%%/extensions/gfx9000
+@dirrm %%DATADIR%%/extensions/ide/roms
+@dirrm %%DATADIR%%/extensions/ide
+@dirrm %%DATADIR%%/extensions/mbstereo/roms
+@dirrm %%DATADIR%%/extensions/mbstereo
+@dirrm %%DATADIR%%/extensions/megaram
+@dirrm %%DATADIR%%/extensions/moonsound/roms
+@dirrm %%DATADIR%%/extensions/moonsound
+@dirrm %%DATADIR%%/extensions/msxdos2/roms
+@dirrm %%DATADIR%%/extensions/msxdos2
+@dirrm %%DATADIR%%/extensions/pac
+@dirrm %%DATADIR%%/extensions/ram1mb
+@dirrm %%DATADIR%%/extensions/ram2mb
+@dirrm %%DATADIR%%/extensions/ram4mb
+@dirrm %%DATADIR%%/extensions/ram512k
+@dirrm %%DATADIR%%/extensions/rs232/roms
+@dirrm %%DATADIR%%/extensions/rs232
+@dirrm %%DATADIR%%/extensions/scc
+@dirrm %%DATADIR%%/extensions/scc+
+@dirrm %%DATADIR%%/extensions/slotexpander
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%/keymaps
+@dirrm %%DATADIR%%/machines/Boosted_MSX2_EN/roms
+@dirrm %%DATADIR%%/machines/Boosted_MSX2_EN
+@dirrm %%DATADIR%%/machines/Canon_V-20/roms
+@dirrm %%DATADIR%%/machines/Canon_V-20
+@dirrm %%DATADIR%%/machines/Daewoo_CPC-300/roms
+@dirrm %%DATADIR%%/machines/Daewoo_CPC-300
+@dirrm %%DATADIR%%/machines/Daewoo_CPC-400S/roms
+@dirrm %%DATADIR%%/machines/Daewoo_CPC-400S
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-100/roms
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-100
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-180/roms
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-180
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-200/roms
+@dirrm %%DATADIR%%/machines/Daewoo_DPC-200
+@dirrm %%DATADIR%%/machines/Goldstar_FC-200/roms
+@dirrm %%DATADIR%%/machines/Goldstar_FC-200
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_1.0/roms
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_1.0
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_1.1/roms
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_1.1
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_DDPlus/roms
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_DDPlus
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_Plus/roms
+@dirrm %%DATADIR%%/machines/Gradiente_Expert_Plus
+@dirrm %%DATADIR%%/machines/JVC_HC-7GB/roms
+@dirrm %%DATADIR%%/machines/JVC_HC-7GB
+@dirrm %%DATADIR%%/machines/Mitsubishi_ML-F80/roms
+@dirrm %%DATADIR%%/machines/Mitsubishi_ML-F80
+@dirrm %%DATADIR%%/machines/Mitsubishi_ML-FX1/roms
+@dirrm %%DATADIR%%/machines/Mitsubishi_ML-FX1
+@dirrm %%DATADIR%%/machines/National_CF-1200/roms
+@dirrm %%DATADIR%%/machines/National_CF-1200
+@dirrm %%DATADIR%%/machines/National_CF-2000/roms
+@dirrm %%DATADIR%%/machines/National_CF-2000
+@dirrm %%DATADIR%%/machines/National_CF-2700/roms
+@dirrm %%DATADIR%%/machines/National_CF-2700
+@dirrm %%DATADIR%%/machines/National_CF-3000/roms
+@dirrm %%DATADIR%%/machines/National_CF-3000
+@dirrm %%DATADIR%%/machines/National_CF-3300/roms
+@dirrm %%DATADIR%%/machines/National_CF-3300
+@dirrm %%DATADIR%%/machines/National_FS-1300/roms
+@dirrm %%DATADIR%%/machines/National_FS-1300
+@dirrm %%DATADIR%%/machines/National_FS-4000/roms
+@dirrm %%DATADIR%%/machines/National_FS-4000
+@dirrm %%DATADIR%%/machines/National_FS-4500/roms
+@dirrm %%DATADIR%%/machines/National_FS-4500
+@dirrm %%DATADIR%%/machines/National_FS-4600/roms
+@dirrm %%DATADIR%%/machines/National_FS-4600
+@dirrm %%DATADIR%%/machines/National_FS-4700/roms
+@dirrm %%DATADIR%%/machines/National_FS-4700
+@dirrm %%DATADIR%%/machines/National_FS-5000/roms
+@dirrm %%DATADIR%%/machines/National_FS-5000
+@dirrm %%DATADIR%%/machines/National_FS-5500F1/roms
+@dirrm %%DATADIR%%/machines/National_FS-5500F1
+@dirrm %%DATADIR%%/machines/National_FS-5500F2/roms
+@dirrm %%DATADIR%%/machines/National_FS-5500F2
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1F/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1F
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1FM/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1FM
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1FX/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1FX
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1GT/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1GT
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1MK2/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1MK2
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1ST/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1ST
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1WSX/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1WSX
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1WX/roms
+@dirrm %%DATADIR%%/machines/Panasonic_FS-A1WX
+@dirrm %%DATADIR%%/machines/Philips_NMS_8220/roms
+@dirrm %%DATADIR%%/machines/Philips_NMS_8220
+@dirrm %%DATADIR%%/machines/Philips_NMS_8245/roms
+@dirrm %%DATADIR%%/machines/Philips_NMS_8245
+@dirrm %%DATADIR%%/machines/Philips_NMS_8250/roms
+@dirrm %%DATADIR%%/machines/Philips_NMS_8250
+@dirrm %%DATADIR%%/machines/Philips_NMS_8255/roms
+@dirrm %%DATADIR%%/machines/Philips_NMS_8255
+@dirrm %%DATADIR%%/machines/Philips_VG_8020/roms
+@dirrm %%DATADIR%%/machines/Philips_VG_8020
+@dirrm %%DATADIR%%/machines/Philips_VG_8020-20/roms
+@dirrm %%DATADIR%%/machines/Philips_VG_8020-20
+@dirrm %%DATADIR%%/machines/Philips_VG_8230/roms
+@dirrm %%DATADIR%%/machines/Philips_VG_8230
+@dirrm %%DATADIR%%/machines/Philips_VG_8235/roms
+@dirrm %%DATADIR%%/machines/Philips_VG_8235
+@dirrm %%DATADIR%%/machines/Sanyo_MPC100/roms
+@dirrm %%DATADIR%%/machines/Sanyo_MPC100
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-35J/roms
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-35J
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-70FD/roms
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-70FD
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-70FD2/roms
+@dirrm %%DATADIR%%/machines/Sanyo_PHC-70FD2
+@dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.1/roms
+@dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.1
+@dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2/roms
+@dirrm %%DATADIR%%/machines/Sharp_Epcom_HotBit_1.2
+@dirrm %%DATADIR%%/machines/Sony_HB-101P
+@dirrm %%DATADIR%%/machines/Sony_HB-201P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-201P
+@dirrm %%DATADIR%%/machines/Sony_HB-501P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-501P
+@dirrm %%DATADIR%%/machines/Sony_HB-75P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-75P
+@dirrm %%DATADIR%%/machines/Sony_HB-F1/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F1
+@dirrm %%DATADIR%%/machines/Sony_HB-F1II/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F1II
+@dirrm %%DATADIR%%/machines/Sony_HB-F1XD/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F1XD
+@dirrm %%DATADIR%%/machines/Sony_HB-F500P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F500P
+@dirrm %%DATADIR%%/machines/Sony_HB-F700D/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F700D
+@dirrm %%DATADIR%%/machines/Sony_HB-F900/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F900
+@dirrm %%DATADIR%%/machines/Sony_HB-F9P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F9P
+@dirrm %%DATADIR%%/machines/Spectravideo_SVI-728/roms
+@dirrm %%DATADIR%%/machines/Spectravideo_SVI-728
+@dirrm %%DATADIR%%/machines/Toshiba_HX-10/roms
+@dirrm %%DATADIR%%/machines/Toshiba_HX-10
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+
+@dirrm %%DATADIR%%/machines
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/skins/none
+@dirrm %%DATADIR%%/skins/set1
+@dirrm %%DATADIR%%/skins/set2
+@dirrm %%DATADIR%%/skins/set4
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/systemroms
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/GPL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/cbios.txt
+%%PORTDOCS%%%%DOCSDIR%%/commands.txt
+%%PORTDOCS%%%%DOCSDIR%%/exampleconfigs.xml
+%%PORTDOCS%%%%DOCSDIR%%/manual/compile.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-minty.css
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-purple.css
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/manual/nocartfound021.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/setup.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/user.html
+%%PORTDOCS%%%%DOCSDIR%%/release-history.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/using-diskmanipulator.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -87,6 +87,7 @@
     SUBDIR += mupen64-sound
     SUBDIR += o2em
     SUBDIR += ods2reader
+    SUBDIR += openmsx
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu
