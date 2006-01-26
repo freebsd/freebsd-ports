@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libotr
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 
