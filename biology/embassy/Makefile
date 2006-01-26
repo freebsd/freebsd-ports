@@ -20,6 +20,7 @@ COMMENT=	A collection of contributed EMBOSS applications
 LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss
 
 USE_SUBMAKE=	yes
+USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
