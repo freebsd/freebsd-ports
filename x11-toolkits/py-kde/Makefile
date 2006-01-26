@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	4.0.0
-PORTREVISION=	5
+PORTVERSION=	3.15.0
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-snapshot20051013
+DISTNAME=	PyKDE-snapshot20060122
 
 MAINTAINER=	danny@ricin.com
-COMMENT=	Python bindings for the KDE desktop
+COMMENT=	Python Bindings for KDE3
 
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -40,6 +40,9 @@ ARGS=		-k ${LOCALBASE} -v ${DATADIR} -d ${PYTHONPREFIX_SITELIBDIR}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
+.if ${ARCH} == "sparc64"
+ARGS+=		-j 3
+.endif
 ARGS+=		-j 2
 .endif
 .if defined(WITH_DEBUG)
@@ -73,27 +76,29 @@ post-patch:
 			allclasses.html && \
 		for i in `ls */*.html`; do \
 			${REINPLACE_CMD} -e \
-			's|file:/home/jim/PyKDE340rc1/doc/index.html|../../index.html|' \
+			's|file:/home/jim/PyKDE350/doc/classref/index.html|../../index.html|' \
 			$${i} ; done && \
 		for i in allclasses.html index.html; do \
 			${REINPLACE_CMD} -e \
-			's|file:/home/jim/PyKDE340rc1/doc/index.html|../index.html|' \
+			's|file:/home/jim/PyKDE350/doc/classref/index.html|../index.html|' \
 			$${i} ; done )
 .endif
 
 do-configure:
 	( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS} )
 
-.if !defined(WITHOUT_EXAMPLES)
 post-build:
+	( cd ${WRKSRC} && ${MKDIR} tmp && \
+		${CP} pykdeconfig.py extensions/* tmp && \
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py tmp )
+.if !defined(WITHOUT_EXAMPLES)
 	( cd ${WRKSRC} && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py examples )
 .endif
 
 post-install:
 	( ${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin && \
-		${PYTHON_CMD} -c "import pykdeconfig, dcopexport" && \
-		${PYTHON_CMD} -O -c "import pykdeconfig, dcopexport" )
+		${INSTALL_DATA} ${WRKSRC}/tmp/*.pyc ${PYTHONPREFIX_SITELIBDIR} )
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 	( cd ${WRKSRC}/doc && \
 		${MKDIR} -m 0755 ${DOCSDIR}/classref ${DOCSDIR}/images && \
