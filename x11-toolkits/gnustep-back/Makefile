@@ -88,6 +88,17 @@ ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
 MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 .endif
 
+.if defined(WITH_GNUSTEP_XDPS)
+.if ${X_WINDOW_SYSTEM:L} == xorg
+XORG_LIBRARIES_PORT!=   (cd ${PORTSDIR}/${GNUSTEP_GUI_PORT} && make -V X_LIBRARIES_PORT)
+XORG_PORTVERSION!=      (cd ${XORG_LIBRARIES_PORT} && make -V PORTVERSION)
+XORG_VERSION=           ${XORG_PORTVERSION:S=.==g}
+.if ${XORG_VERSION} >= 690
+BROKEN=         xdps is no longer supported by xorg version 6.9.0 and above
+.endif
+.endif
+.endif
+
 pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
