@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- codecs/gsm/Makefile
++++ codecs/gsm/Makefile
+@@ -49,7 +49,9 @@
+ ifneq (${PROC},arm)
+ ifneq (${PROC},ppc)
+ ifneq (${PROC},ppc64)
++ifneq (${PROC},amd64)
+ OPTIMIZE+=-march=$(PROC)
++endif
+ endif
+ endif
+ endif
