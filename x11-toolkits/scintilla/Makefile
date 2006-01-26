@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 
