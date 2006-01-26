@@ -7,7 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	2002.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
@@ -17,6 +17,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX documents to HTML
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
