@@ -89,6 +89,7 @@ PLIST_SUB+=	OPENSSLFLAG=
 CONFIGURE_ARGS+=--enable-ssl
 .else
 PLIST_SUB+=	OPENSSLFLAG="@comment "
+BROKEN=		"Incomplete pkg-plist"
 .endif
 
 .if defined(WITH_SYSLOG_FACILITY)
