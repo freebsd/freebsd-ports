@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cd /usr/local/share/tvbrowser && java -jar tvbrowser.jar
