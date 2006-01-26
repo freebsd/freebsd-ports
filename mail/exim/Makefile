@@ -343,8 +343,12 @@ LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.3
 DB_INCLUDES=	-I${LOCALBASE}/include/db43
 LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
+.elif (${WITH_BDB_VER} == 44)
+DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.4
+DB_INCLUDES=	-I${LOCALBASE}/include/db44
+LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
 .else
-BROKEN=		"WITH_BDB_VER must be either 1, 4, 41, 42 or 43"
+BROKEN=		"WITH_BDB_VER must be either 1, 4, 41, 42, 43 or 44"
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
