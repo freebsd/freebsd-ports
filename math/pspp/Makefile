@@ -20,6 +20,7 @@ LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

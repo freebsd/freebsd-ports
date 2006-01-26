@@ -17,6 +17,7 @@ COMMENT=	A virtual machine that emulates a Sharp X68000
 
 LIB_DEPENDS=	vm68k.4:${PORTSDIR}/emulators/libvm68k
 
+USE_GETTEXT=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15

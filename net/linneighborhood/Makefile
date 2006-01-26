@@ -17,6 +17,7 @@ COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
