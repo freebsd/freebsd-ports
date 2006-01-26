@@ -7,6 +7,7 @@
 
 PORTNAME=	tvbrowser
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	german java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	tvbrowser
@@ -14,14 +15,22 @@ MASTER_SITE_SUBDIR=	tvbrowser
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A digital tv guide
 
+USE_X_PREFIX=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+SUB_FILES=	tvbrowser
+
+DESKTOP_ENTRIES="TV-Browser" \
+		"Browse TV programs" \
+		"${DATADIR}/imgs/tvbrowser128.png" \
+		"tvbrowser" \
+		"Application;TV;" \
+		false
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/share/${PORTNAME}
-	@${CP} -r ${FILESDIR}/tvbrowser /${PREFIX}/bin/
-	@${CHMOD} 755 /${PREFIX}/bin/tvbrowser
+	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${PREFIX}/bin
 
 .include <bsd.port.mk>
