@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	otr
-PORTVERSION=	2.0.1
-PORTREVISION=	5
+PORTVERSION=	3.0.0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
 		http://www.xelerance.com/mirror/otr/
@@ -24,16 +23,7 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|g" \
-		${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/gaim-otr.so ${PREFIX}/lib/gaim
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib --with-libotr-inc-prefix=${LOCALBASE}/include
 
 .include <bsd.port.mk>
