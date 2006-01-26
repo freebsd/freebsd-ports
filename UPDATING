@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060126:
+  AFFECTS: ports that use Display Postscript libraries and xorg-libraries
+  AUTHOR: x11@FreeBSD.org
+
+  Support for Display Postscript has been deprecated in X.Org 6.9 release
+  and libraries and tools are no longer installed by default. If you have
+  installed a port that complains about missing libdpstk or libpsres, you
+  need to reinstall it so it will be build without DPS support.
+
 20060123:
   AFFECTS: users of mail/qmail, mail/qmail-ldap, mail/qmail-mysql,
            mail/qmail-spamcontrol, mail/qmail-tls and all dependant
