@@ -26,13 +26,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
-BROKEN=		Uses USE_RC_SUBR incorrectly; incorrect pkg-plist
-
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sqlgrey.sh
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 ETCFILES=	clients_fqdn_whitelist clients_ip_whitelist dyn_fqdn.regexp smtp_server.regexp sqlgrey.conf
 SGY_USERNAME?=	sqlgrey
@@ -41,7 +38,7 @@ ETCDIR?=	etc/sqlgrey
 
 SUB_FILES=	pkg-install
 MY_SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${SGY_USERNAME} GROUP=${SGY_GROUPNAME} PERL=${PERL}
-SUB_LIST=	${MY_SUB_LIST}
+SUB_LIST+=	${MY_SUB_LIST}
 PLIST_SUB=	TOUCH=${TOUCH} ${MY_SUB_LIST}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -64,7 +61,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKDIR}/sqlgrey.sh ${PREFIX}/etc/rc.d
 	@cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${MANPREFIX}/man/man1/sqlgrey.1
 	@${MKDIR} ${PREFIX}/${ETCDIR}
 .for i in ${ETCFILES}
