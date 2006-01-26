@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	1.0RC2
+PORTVERSION=	1.0RC3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
