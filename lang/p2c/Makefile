@@ -9,9 +9,8 @@ PORTNAME=	p2c
 PORTVERSION=	1.21a
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=   ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \
-		ftp://ftp.simcb.ru/pub/unix/src/
+MASTER_SITES=	http://darkstar.ist.utl.pt/slackware/slackware_source/d/p2c/ \
+		http://www.slackware.at/data/slackware-10.0/source/d/p2c/
 DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
