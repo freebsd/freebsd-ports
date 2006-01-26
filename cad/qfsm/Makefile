@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical tool for designing finite state machines
 
 USE_QT_VER=	3
+USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
