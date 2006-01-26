@@ -10,7 +10,7 @@ PORTVERSION=	0.44.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.jsd0.com/public/harbour/dgh/
 
-MAINTAINER=	harbour@netfang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Clipper-compatible compiler
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
