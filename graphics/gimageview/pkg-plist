@@ -138,4 +138,3 @@ share/pixmaps/gimv.png
 @dirrm share/gimageview/pixmaps/default
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
-@dirrmtry share/locale/ja/LC_MESSAGES
