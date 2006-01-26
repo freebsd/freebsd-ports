@@ -3,6 +3,9 @@
 # Whom:					Frerich Raabe <frerich.raabe@gmx.de>
 #
 # $FreeBSD$
+#
+# $Tecnik: ports/net-im/kpopup/Makefile,v 1.2 2006/01/25 23:29:03 itetcu Exp $
+#
 
 PORTNAME=	kpopup
 PORTVERSION=	0.9.1
@@ -10,7 +13,7 @@ PORTREVISION=	4
 CATEGORIES=	net-im kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	KDE program for sending and receiving MS Windows WinPopup messages
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
