@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.5.0.4
+PORTVERSION=	0.5.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
@@ -53,6 +53,9 @@ CONFIGURE_ARGS+=	--disable-tcl
 .if defined(WITHOUT_REMOTE)
 CONFIGURE_ARGS+=	--disable-remote
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc//' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.1 ${MANPREFIX}/man/man1
