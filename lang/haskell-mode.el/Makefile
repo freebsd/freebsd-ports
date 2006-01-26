@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	umq@ueo.co.jp
 COMMENT=	An Emacs lisp mode for editing haskell programs
 
 NO_BUILD=	yes
