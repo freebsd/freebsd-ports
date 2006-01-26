@@ -1,4 +1,4 @@
-# $Tecnik: ports/misc/fortune-mod-culmea-culmilor/Makefile.fortune,v 1.8 2005/12/24 15:16:48 itetcu Exp $
+# $Tecnik: ports/misc/fortune-mod-culmea-culmilor/Makefile.fortune,v 1.9 2006/01/26 14:25:23 itetcu Exp $
 
 NO_WRKSUBDIR=	yes
 
@@ -15,7 +15,7 @@ post-extract:
 	@( ${ECHO} ""; \
 		${ECHO} "******************************************************"; \
 		${ECHO} "Usage:"; \
-		${ECHO} "${_STRFILE} ${FORTUNE_DIR}/${FORTUNE_FILE}"; \
+		${ECHO} "fortune ${FORTUNE_DIR}/${FORTUNE_FILE}"; \
 		${ECHO} "See fortune(6) for details."; \
 		${ECHO} "******************************************************"; \
 		${ECHO} ""; ) > ${WRKDIR}/pkg-message
