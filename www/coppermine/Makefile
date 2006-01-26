@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	cpg${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Coppermine is a web picture gallery script
+COMMENT=	A web picture gallery script
 
 USE_PHP=	mysql pcre
 WANT_PHP_MOD=	yes
@@ -27,7 +27,7 @@ USE_PHP+=	gd
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/cpg133
+WRKSRC=		${WRKDIR}/cpg${PORTVERSION:S/.//g}
 DOCFILES=	CHANGELOG
 EXCEPTFILES=	${DOCFILES} COPYING docs/COPYING
 CPIOARGS=	--quiet -pdum -R
