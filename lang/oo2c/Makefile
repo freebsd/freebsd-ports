@@ -5,33 +5,30 @@
 # $FreeBSD$
 
 PORTNAME=	oo2c
-PORTVERSION=	1.5.2
+PORTVERSION=	2.1.10
 CATEGORIES=	lang
-MASTER_SITES=	http://www.uni-kl.de/OOC/files/oo2c/ \
-		http://www.breuninger.org/files/distfiles/ \
-		http://reality.sgi.com/boehm_mti/gc_source/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ooc
 DISTNAME=	${PORTNAME}_32-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gc4.14.tar.gz
 
 MAINTAINER=	ob@breuninger.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
-USE_AUTOTOOLS=	libtool:13
-CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-MAN1=		oo2c.1 oob.1 ooef.1 oocn.1 oowhereis.1
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-INFO=		OOCref
+DOCSDIR=	lib/${PORTNAME}
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+MAN1=		oo2c.1 oob.1 ooef.1 oowhereis.1
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+# This distribution is for 32-bit platforms.  A separate 64 bit distribution is available.
+ONLY_FOR_ARCHS=	i386
 
-post-extract:
-	@${MV} ${WRKDIR}/gc    ${WRKSRC}/gc
-
-post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/oo2 ${PREFIX}/bin
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
