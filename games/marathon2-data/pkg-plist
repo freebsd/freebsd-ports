@@ -4,4 +4,4 @@ share/AlephOne/Durandal.Map.resources
 share/AlephOne/Durandal.Music
 share/AlephOne/Durandal.Shapes
 share/AlephOne/Durandal.Sounds
-@dirrm share/AlephOne
+@dirrmtry share/AlephOne

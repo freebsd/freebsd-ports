@@ -10,7 +10,7 @@ mozilla/directory/include/mozlber.h
 mozilla/directory/include/mozldap.h
 mozilla/directory/include/srchpref.h
 @dirrm mozilla/directory/include
-@dirrm mozilla/directory/lib
+@dirrmtry mozilla/directory/lib
 @dirrm mozilla/directory
 @dirrm mozilla
 lib/libmozlber.so.1
