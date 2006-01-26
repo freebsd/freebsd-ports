@@ -17,7 +17,7 @@ COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
 
 OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		LAME "LAME support for MP3" off \
-		FAAD "FAAC support for AAC" off \
+		FAAC "FAAC support for AAC" off \
 		JACK "Jack support" off
 
 USE_REINPLACE=	yes
