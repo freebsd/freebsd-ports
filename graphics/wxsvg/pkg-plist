@@ -45,6 +45,7 @@ include/wxSVG/SVGColor.h
 include/wxSVG/SVGColorProfileElement.h
 include/wxSVG/SVGColorProfileRule.h
 include/wxSVG/SVGComponentTransferFunctionElement.h
+include/wxSVG/SVGCoordinates.h
 include/wxSVG/SVGCursorElement.h
 include/wxSVG/SVGDTD.h
 include/wxSVG/SVGDefinitionSrcElement.h
