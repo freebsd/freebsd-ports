@@ -22,8 +22,6 @@ COMMENT=	Japanese Morphological Analysis System
 
 BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 
-BROKEN=		Does not build
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include --with-libiconv=${LOCALBASE}
 USE_ICONV=	yes
