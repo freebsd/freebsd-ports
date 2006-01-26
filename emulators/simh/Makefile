@@ -6,48 +6,55 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv35-1
+DISTNAME=	${PORTNAME}hv35-2
 
 MAINTAINER=	mmendez@gmail.com
-COMMENT=	PDP-8, PDP-11, PDP-1, other 18b PDP, Nova, and IBM 1401 simulators
+COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-qoa
 USE_GMAKE=	yes
-RESTRICTED=	"Non-commercial use only"
+RESTRICTED=	Non-commercial use only
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
 SHELL=${SH}
 
-BIN_FILES=	pdp1 pdp4 pdp7 pdp8 pdp9 \
-		pdp15 pdp11 pdp10 vax nova \
-		eclipse h316 hp2100 i1401 \
-		i1620 s3 altair altairz80 \
-		gri ibm1130 id16 id32 sds lgp
+OPTIONS=	NETWORK	"Enable Sim_Ether module (and ports libpcap)"	on
+
+BIN_FILES=	altair    h316   ibm1130 nova  pdp15 pdp9 vax780 \
+		altairz80 hp2100 id16    pdp1  pdp4  s3          \
+		eclipse   i1401  id32    pdp10 pdp7  sds         \
+		gri       i1620  lgp     pdp11 pdp8  vax
 
 PORTDOCS=	0readme_35.txt simh_doc.txt simh_swre.txt \
 		0readme_ethernet.txt simh_faq.txt
 
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} share/sim/ka655.bin share/sim/ka655x.bin
-PLIST_DIRS=	share/sim
+PLIST_FILES=	${BIN_FILES:S/^/bin\//g} ${DATADIR}/ka655x.bin
+PLIST_DIRS=	${DATADIR}
+
+.include <bsd.port.pre.mk>
+
+# XXX How do we know that libpcap.a is really the correct >0.9.x version?!
+.if defined (WITH_NETWORK)
+RUN_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	${RUN_DEPENDS}
+MAKE_ENV=	USE_NETWORK=1
+.endif
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
-	@for i in ${WRKSRC}/makefile `${FIND} ${WRKSRC} -name "*.[hc]"`; do \
-		${CAT} $$i | ${TR} -d '\r' > $$i.new; \
-		${MV} $$i.new $$i; \
-	done
 
 do-install:
 .for file in ${BIN_FILES}
 	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
 .endfor
 
-	@${MKDIR} ${PREFIX}/share/sim
-	${INSTALL_DATA} ${WRKDIR}/VAX/ka655*.bin ${PREFIX}/share/sim
+	@${MKDIR} ${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${PREFIX}/${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -59,4 +66,4 @@ do-install:
 post-install:
 	@${CAT} pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
