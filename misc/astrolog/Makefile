@@ -10,7 +10,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \
@@ -22,8 +22,11 @@ DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+MAKE_ARGS=	-DX11
+.endif
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
@@ -31,9 +34,9 @@ DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
 NO_WRKSUBDIR=	yes
 
-pre-patch:
-	@${PERL} -pi.orig -e "s@malloc.h@stdlib.h@g" \
-	${WRKSRC}/astrolog.h ${WRKSRC}/placalc.h
+post-patch:
+	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
+		${WRKSRC}/astrolog.h ${WRKSRC}/placalc.h
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
