@@ -18,8 +18,8 @@ COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		curl.3:${PORTSDIR}/ftp/curl
 
-CONFLICTS=	bmp-scrobbler-* \
-		xmms-scrobbler-*
+CONFLICTS=	bmp-scrobbler-[0-9]* \
+		xmms-scrobbler-[0-9]*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -55,5 +55,22 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_APE)
 CONFIGURE_ARGS+=	--enable-prefer-ape
 .endif
+
+.if defined(WITH_ENCODINGS_PATCH)
+USE_ICONV=	yes
+
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${FILESDIR}/extra-encodings-patch
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_XMMS=yes to enable xmms support"
+	@${ECHO_MSG} "WITH_BMP=yes to enable beep-media-player support"
+	@${ECHO_MSG} "WITH_DEBUG=yes to turn on debug mode"
+	@${ECHO_MSG} "WITH_APE=yes to enable ape"
+	@${ECHO_MSG} "WITH_ENCODINGS_PATCH=yes to enable ID3 tags recoding support"
+	@${ECHO_MSG} " "
 
 .include <bsd.port.mk>
