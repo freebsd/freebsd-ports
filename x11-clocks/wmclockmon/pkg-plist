@@ -77,5 +77,3 @@ share/wmclockmon/parts_color.xpm
 share/wmclockmon/parts_new.xpm
 @dirrm %%EXAMPLESDIR%%
 @dirrm share/wmclockmon
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
