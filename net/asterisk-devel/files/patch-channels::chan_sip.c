@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- channels/chan_sip.c.orig	Thu Jan 12 18:43:37 2006
-+++ channels/chan_sip.c	Thu Jan 12 18:50:11 2006
-@@ -336,7 +336,7 @@ static char global_vmexten[AST_MAX_EXTEN
+--- channels/chan_sip.c.orig	Tue Jan 24 16:25:53 2006
++++ channels/chan_sip.c	Tue Jan 24 16:30:44 2006
+@@ -337,7 +337,7 @@ static char global_vmexten[AST_MAX_EXTEN
  
  static char default_language[MAX_LANGUAGE] = "";
  
@@ -12,7 +12,7 @@ $FreeBSD$
  static char default_callerid[AST_MAX_EXTENSION] = DEFAULT_CALLERID;
  
  static char default_fromdomain[AST_MAX_EXTENSION] = "";
-@@ -474,6 +474,7 @@ struct sip_invite_param {
+@@ -475,6 +475,7 @@ struct sip_invite_param {
  
  struct sip_route {
  	struct sip_route *next;
@@ -20,7 +20,7 @@ $FreeBSD$
  	char hop[0];
  };
  
-@@ -5993,6 +5994,7 @@ static void build_route(struct sip_pvt *
+@@ -6015,6 +6016,7 @@ static void build_route(struct sip_pvt *
  			/* Make a struct route */
  			thishop = malloc(sizeof(*thishop) + len);
  			if (thishop) {
@@ -28,7 +28,7 @@ $FreeBSD$
  				ast_copy_string(thishop->hop, rr, len);
  				ast_log(LOG_DEBUG, "build_route: Record-Route hop: <%s>\n", thishop->hop);
  				/* Link in */
-@@ -6018,31 +6020,41 @@ static void build_route(struct sip_pvt *
+@@ -6040,31 +6042,41 @@ static void build_route(struct sip_pvt *
  
  	/* Only append the contact if we are dealing with a strict router */
  	if (!head || (!ast_strlen_zero(head->hop) && strstr(head->hop,";lr") == NULL) ) {
@@ -94,7 +94,7 @@ $FreeBSD$
  			}
  		}
  	}
-@@ -10336,7 +10348,11 @@ static int handle_request_invite(struct 
+@@ -10352,7 +10364,11 @@ static int handle_request_invite(struct 
  		gotdest = get_destination(p, NULL);
  
  		get_rdnis(p, NULL);
@@ -107,7 +107,7 @@ $FreeBSD$
  		build_contact(p);
  
  		if (gotdest) {
-@@ -10364,7 +10380,6 @@ static int handle_request_invite(struct 
+@@ -10380,7 +10396,6 @@ static int handle_request_invite(struct 
  			c = sip_new(p, AST_STATE_DOWN, ast_strlen_zero(p->username) ? NULL : p->username );
  			*recount = 1;
  			/* Save Record-Route for any later requests we make on this dialogue */
@@ -115,15 +115,15 @@ $FreeBSD$
  			if (c) {
  				/* Pre-lock the call */
  				ast_mutex_lock(&c->lock);
-@@ -10450,6 +10465,13 @@ static int handle_request_invite(struct 
+@@ -10466,7 +10481,12 @@ static int handle_request_invite(struct 
  			transmit_response(p, "180 Ringing", req);
  			break;
  		case AST_STATE_UP:
+-                        /* Here we have reINVITE request - try to renegotiate codecs with */
 +			/* Assuming this to be reinvite, process new SDP portion */
 +			if (!ast_strlen_zero(get_header(req, "Content-Type"))) {
 +				process_sdp(p, req);
 +			} else {
-+				p->jointcapability = p->capability;
 +				ast_log(LOG_DEBUG, "Hm....  No sdp for the moment\n");
 +			}
  			transmit_response_with_sdp(p, "200 OK", req, 1);
