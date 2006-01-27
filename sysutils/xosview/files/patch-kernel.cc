@@ -1,5 +1,5 @@
---- bsd/kernel.cc.orig	Tue Oct 14 03:53:17 2003
-+++ bsd/kernel.cc	Thu Mar 17 23:26:49 2005
+--- bsd/kernel.cc.orig	Tue Oct 14 09:53:17 2003
++++ bsd/kernel.cc	Fri Jan 27 16:02:27 2006
 @@ -54,6 +54,7 @@
  #endif
  
@@ -217,14 +217,14 @@
      /* FreeBSD has an array of interrupt counts, indexed by device number.
         These are also indirected by IRQ num with intr_countp: */
      safe_kvm_read (nlst[INTRCOUNTP_SYM_INDEX].n_value,
-@@ -944,6 +1004,38 @@
+@@ -944,6 +1004,46 @@
  	    sizeof(unsigned long);
  	intrCount[i] = kvm_intrcnt[idx];
      }
 +#else /* FreeBSD 5.x and 6.x */
 +    /* This code is stolen from vmstat */
-+    unsigned long *kvm_intrcnt;
-+    char *kvm_intrname;
++    unsigned long *kvm_intrcnt, *base_intrcnt;
++    char *kvm_intrname, *base_intrname;
 +    size_t inamlen, intrcntlen;
 +    unsigned int i, nintr;
 +    int d;
@@ -236,6 +236,10 @@
 +    if (((kvm_intrcnt = (unsigned long *)malloc(intrcntlen)) == NULL) || 
 +	((kvm_intrname = (char *)malloc(inamlen)) == NULL))
 +      err(1, "malloc()");
++
++    // keep track of the mem we're given:
++    base_intrcnt = kvm_intrcnt;
++    base_intrname = kvm_intrname;
 +
 +    safe_kvm_read (nlst[INTRCNT_SYM_INDEX].n_value, kvm_intrcnt, intrcntlen);
 +    safe_kvm_read (nlst[INTRNAMES_SYM_INDEX].n_value, kvm_intrname, inamlen);
@@ -252,6 +256,10 @@
 +	kvm_intrcnt++;
 +	kvm_intrname += strlen(kvm_intrname) + 1;
 +    }
++
++    // Doh! somebody needs to free this stuff too... (pavel 20-Jan-2006)
++    free(base_intrcnt);
++    free(base_intrname);
 +#endif
  #elif defined (XOSVIEW_BSDI)
      int nintr = 16;
