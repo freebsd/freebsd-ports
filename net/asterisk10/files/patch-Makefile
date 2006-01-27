@@ -68,7 +68,7 @@ $FreeBSD$
    MODULES_DIR=$(ASTLIBDIR)/modules
    AGI_DIR=$(ASTVARLIBDIR)/agi-bin
  else
-@@ -218,13 +218,13 @@
+@@ -218,25 +218,25 @@
  endif
  
  INCLUDE+=-Iinclude -I../include
@@ -85,7 +85,11 @@ $FreeBSD$
  endif
  
  ifneq ($(PROC),ultrasparc)
-@@ -235,8 +235,8 @@
+-  ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
++#  ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ endif
+ 
+ ifeq ($(PROC),ppc)
    ASTCFLAGS+=-fsigned-char
  endif
  
@@ -455,10 +459,10 @@ $FreeBSD$
  	done
  	if [ "$(OVERWRITE)" = "y" ] || [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
  		( \
-@@ -759,25 +737,25 @@
- 		echo ";astctlowner = root" ; \
- 		echo ";astctlgroup = apache" ; \
- 		echo ";astctl = asterisk.ctl" ; \
+@@ -800,25 +778,25 @@
+ 		echo "; Default: strict"; \
+ 		echo ";"; \
+ 		echo ";translation_algorithm = strict"; \
 -		) > $(DESTDIR)$(ASTCONFPATH) ; \
 +		) > $(DESTDIR)$(ASTCONFPATH)-dist ; \
  	else \
@@ -487,7 +491,7 @@ $FreeBSD$
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -791,7 +769,7 @@
+@@ -832,7 +810,7 @@
  	@[ -d $(DESTDIR)$(HTTP_DOCSDIR)/ ] || ( printf "http docs directory not found.\nUpdate assignment of variable HTTP_DOCSDIR in Makefile!\n" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTP_CGIDIR) ] || ( printf "cgi-bin directory not found.\nUpdate assignment of variable HTTP_CGIDIR in Makefile!\n" && exit 1 )
  	$(INSTALL) -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTP_CGIDIR)/vmail.cgi
@@ -496,7 +500,7 @@ $FreeBSD$
  	for x in images/*.gif; do \
  		$(INSTALL) -m 644 $$x $(DESTDIR)$(HTTP_DOCSDIR)/_asterisk/; \
  	done
-@@ -820,10 +798,10 @@
+@@ -861,10 +839,10 @@
  
  __rpm: include/asterisk/version.h spec
  	rm -rf /tmp/asterisk ; \

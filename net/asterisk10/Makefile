@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
@@ -15,6 +15,9 @@ MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
+
+PATCHFILES=	asterisk122_codec_negotiation-20060125.diff.gz
+PATCH_SITES=	http://www.portaone.com/~bamby/public/
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
