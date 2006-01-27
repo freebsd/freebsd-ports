@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	libmusicbrainz
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
+MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
+		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
-CONFLICTS=	musicbrainz-*
+CONFLICTS=	musicbrainz-1.*
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
-		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
