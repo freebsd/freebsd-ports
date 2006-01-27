@@ -17,6 +17,9 @@
 # Keep this list sorted in the chronological order.  New entries must
 # be added at the tail.
 #
+# If previously removed port gets restored, make sure to delete the relevant
+# line.
+#
 # Port|Moved to|Date|Why
 net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
 chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
@@ -146,7 +149,6 @@ graphics/dvdrip|multimedia/dvdrip|2003-01-17|new category
 misc/pipebench|benchmarks/pipebench|2003-01-18|fix category
 math/xmgr||2003-01-19|removed, obsoleted, successor is grace
 x11/libhelp||2003-01-19|removed, didn't compile on current motif, only used by xmgr
-mail/xfaces||2003-01-19|removed, obsoleted, functionality taken over by faces
 devel/gnustep-devel|devel/gnustep|2003-01-20|merged
 devel/gnustep-devel|devel/gnustep|2003-01-20|merged
 x11-toolkits/gnustep-gui-devel|x11-toolkits/gnustep-gui|2003-01-20|merged
@@ -182,7 +184,6 @@ graphics/libxine|multimedia/libxine|2003-02-24|new category
 graphics/xine|multimedia/xine|2003-02-24|new category
 net/rdesktop-devel|net/rdesktop|2003-02-24|obsolete beta version
 java/jikes-devel|java/jikes|2003-02-24|stable version caught up with development version
-www/horde||2003-02-25|obsolete
 astro/kstars|misc/kdeedu3|2003-03-02|kstars included in kdeedu package
 devel/ruby-testunit||2003-03-03|integrated into ruby16-shim-ruby18
 graphics/qdraw||2003-03-24|obsolete
@@ -382,7 +383,6 @@ graphics/kpovmodeler||2003-07-03|now part of kdegraphics
 www/linux-opera7|www/linux-opera|2003-07-09|move to www/linux-opera
 www/xswallow||2003-07-12|port is obsolete
 net/gnut||2003-07-12|security vulnerability, and no active development
-www/mod_log_mysql|www/mod_log_sql|2003-07-12|renamed by author in new version
 x11/gnomecore||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnomeapplets||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -411,7 +411,6 @@ korean/acroread-korfont|korean/acroread5-korfont|2003-07-24|security vulnerabili
 chinese/acroread-chsfont|chinese/acroread5-chsfont|2003-07-24|security vulnerability
 chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerability
 x11-wm/xfwm4|x11-wm/xfce4-wm|2003-07-27|rename it to be consistent with other xfce4 ports
-misc/shc||2003-07-30|broken for nearly a year
 mail/icqmail||2003-07-30|port no longer works, and is no longer developed
 games/bnetd||2003-07-30|project was abandoned for legal reasons
 devel/gnome-devel||2003-07-30|no longer needed after GNOME 1.4 removal
@@ -420,7 +419,6 @@ x11-toolkits/Motif-dummy||2003-07-31|dummy port is no longer used
 korean/netdic||2003-08-05|not functional and not maintained anymore
 misc/gnomeutils2|deskutils/gnomeutils2|2003-08-06|repo move to a better category
 misc/gucharmap|deskutils/gucharmap|2003-08-06|repo move to a better category
-net/cphone||2003-08-06|port was marked broken for 3 months with no fix submitted
 devel/crystal||2003-08-06|port was marked broken for 3 months with no fix submitted
 net/cvsupit||2003-08-06|port was marked broken for 3 months with no fix submitted
 www/encompass||2003-08-06|port was marked broken for 3 months with no fix submitted
@@ -451,7 +449,6 @@ lang/ruby_r-devel|lang/ruby18_r|2003-08-07|renamed
 lang/ruby_static|lang/ruby16_static|2003-08-07|renamed
 lang/ruby_static-devel|lang/ruby18_static|2003-08-07|renamed
 x11-wm/metacity-setup||2003-08-07|distfiles have disappeared and functionality exists in x11-wm/metacity
-biology/p5-bioperl-devel|biology/p5-bioperl|2003-08-07|port was marked broken for 3 months with no fix submitted
 cad/pisces||2003-08-07|port was marked broken for 3 months with no fix submitted
 cad/sis||2003-08-07|port was marked broken for 3 months with no fix submitted
 chinese/dia||2003-08-07|port was marked broken for 3 months with no fix submitted
@@ -460,8 +457,6 @@ devel/uds||2003-08-07|port was marked broken for 3 months with no fix submitted
 devel/py-htmlkit||2003-08-07|port was marked broken for 3 months with no fix submitted
 devel/sdcc||2003-08-07|port was marked broken for 3 months with no fix submitted
 devel/ptl||2003-08-07|port was marked broken for 3 months with no fix submitted
-devel/silc-toolkit||2003-08-07|port was marked broken for 3 months with no fix submitted
-lang/pnet||2003-08-07|port was marked broken for 3 months with no fix submitted
 lang/wxbasic||2003-08-07|port was marked broken for 3 months with no fix submitted
 math/siag||2003-08-07|port was marked broken for 3 months with no fix submitted
 net/samba-tng||2003-08-07|port was marked broken for 3 months with no fix submitted
@@ -632,7 +627,6 @@ news/pan|news/pan2|2003-11-03|Stable release can be found in news/pan2
 misc/solfege|audio/solfege|2003-11-05|better category
 print/pktrace|print/mftrace|2003-11-05|program renamed
 databases/mysql-jdbc-mm|databases/mysql-connector-java|2003-11-05|renamed
-sysutils/prune|sysutils/fileprune|2003-11-06|renamed because of conflict with graphviz
 graphics/Mesa3|graphics/libglut|2003-11-06|split into graphics/mesagl and graphics/libglut
 japanese/openoffice|japanese/openoffice-1.0|2003-11-07|renamed
 japanese/openoffice-devel|japanese/openoffice-1.1|2003-11-07|renamed
@@ -704,7 +698,6 @@ sysutils/medusa||2003-11-27|Obsolete, and broken on 64-bit platforms
 databases/postgresql7-client|databases/postgresql-client|2003-12-04|Duplicate after postgresql update
 cad/metis-edf|math/metis-edf|2003-12-09|moved to math category
 textproc/ruby-rdoc||2003-12-15|integrated into ruby18 and ruby16-shim-ruby18
-mail/mailscanner|mail/MailScanner|2003-12-16|renamed port to MailScanner
 net/py-soap||2003-12-16|author no longer distributes the module
 deskutils/xfce4-notes|deskutils/xfce4-notes-plugin|2003-12-20|renamed
 devel/sip||2003-12-27|Integrated into py-sip
@@ -773,7 +766,6 @@ multimedia/WMxmms||2004-02-01|Port broken for >2 months
 devel/clo++||2004-02-01|Port broken for >2 months
 audio/evilbar||2004-02-01|Port broken for >2 months
 net/platero||2004-02-01|Port broken for >2 months
-math/ruby-gsl||2004-02-01|Port broken for >2 months
 x11-fm/vide||2004-02-01|Port broken for >2 months
 devel/gettext-old|devel/gettext|2004-02-03|Switch to latest stable version of gettext
 x11/kgamma|graphics/kdegraphics3|2004-02-05|Kgamma is now a part of kdegraphics
@@ -982,7 +974,6 @@ www/zope-cmf13|www/zope-cmf|2004-04-01|old version no longer needed
 multimedia/acme|sysutils/gnomecontrolcenter2|2004-04-04|merged into gnomecontrolcenter2
 x11/gswitchit|x11/gnomeapplets2|2004-04-04|merged into gnomeapplets2
 devel/gnomevfs-extras|devel/gnomevfs2|2004-04-04|merged into gnomevfs2
-games/scummvm|emulators/scummvm|2004-04-06|new category
 ftp/wget+ipv6|ftp/wget|2004-04-06|removed, ftp/wget has this function
 misc/metatheme2||2004-04-09|removed obsolete port
 x11-fm/apotheke||2004-04-10|removed obsolete port
@@ -1009,14 +1000,12 @@ x11-servers/XttXF86srv-W32||2004-04-10|removed broken port
 x11-servers/XttXF86srv-common||2004-04-10|removed broken port
 x11-servers/XttXF86srv-xfs||2004-04-10|removed broken port
 emulators/scummvm|games/scummvm|2004-04-13|new category
-www/mod_jk2|www/mod_jk-apache2|2004-04-18|prefer mod_jk2 for mod_jk 2.x branch
 mail/smunge||2004-04-19|removed port depending on OpenLDAP 1.2
 net/eudc-emacs20||2004-04-19|removed port depending on OpenLDAP 1.2
 net/openldap12||2004-04-19|removed ancient port
 net/py-ldap1||2004-04-19|removed port depending on OpenLDAP 1.2
 www/web500gw||2004-04-19|removed port depending on OpenLDAP 1.2
 games/neverputt|games/neverball|2004-04-19|merged into neverball
-emulators/linux-ePSXe||2004-04-19|removed port with broken dependencies
 net/papaya||2004-04-19|removed broken port
 www/scoop||2004-04-19|removed port with broken dependencies
 math/R-letter|math/R-project|2004-04-20|renamed
@@ -1128,7 +1117,6 @@ japanese/ptex-pkfonts300||2004-06-18|no longer maintained
 japanese/ptex-pkfonts360||2004-06-18|no longer maintained
 japanese/ptex-pkfonts400||2004-06-18|no longer maintained
 japanese/ptex-pkfonts600||2004-06-18|no longer maintained
-misc/gpt|misc/gpt31|2004-06-18|repocopy to preserve version 3.1 for misc/globus2
 textproc/p5-Search-OpenFTS|textproc/openfts|2004-06-19|duplicate of textproc/openfts
 devel/ORBacus||2004-06-20|port broken for >2 months
 devel/libcache||2004-06-20|port broken for >2 months
@@ -1214,7 +1202,6 @@ ftp/lukemftpd|ftp/tnftpd|2004-08-18|Vendor name change
 x11-toolkits/notif2|x11-themes/notif2|2004-08-20|Better category
 www/apache13-fp||2004-08-20|Obsolete and unfixed security vulnerabilities
 www/mod_csacek||2004-08-20|Obsolete and broken
-archivers/linux-unace||2004-08-20|Segfaults on startup
 misc/cheatah||2004-08-20|Abandoned by the upstream authors
 japanese/platex209-euc|japanese/platex209|2004-08-20|renamed
 japanese/platex209-jis|japanese/platex209|2004-08-20|renamed
@@ -1223,7 +1210,6 @@ japanese/xdvik-vflib|japanese/xdvik|2004-08-20|renamed
 japanese/dvipsk-vflib|japanese/dvipsk|2004-08-20|no longer maintained
 emulators/vmware_xf4mod||2004-08-20|This module is now part of XFree86 as of 4.1.0
 misc/bibletime-doc||2004-08-27|Documentation has included in base port
-security/keyprint|security/opieprint|2004-08-28|newer version with a new name
 www/quanta|www/kdewebdev|2004-08-30|renamed
 net/kontact-plugins||2004-08-30|removed
 palm/kpilot|deskutils/kdepim3|2004-08-30|kpilot has been reintegrated into kdepim
@@ -1319,7 +1305,6 @@ japanese/estraier|textproc/estraier|2004-12-11|accurate category
 math/gnumeric2|math/gnumeric|2004-12-11|renamed to gnumeric
 chinese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
 japanese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
-devel/bison|devel/bison-devel|2004-12-11|finished repocopy and needs alpha version
 sysutils/bacula|sysutils/bacula-server|2004-12-12|split into client and server
 x11-toolkits/gtkextra--||2004-12-12|removed obsolete port
 games/gnomoku||2004-12-12|removed obsolete port
@@ -1342,7 +1327,6 @@ palm/rapip|palm/synce-kde|2005-01-08|renamed
 benchmarks/bytebench|benchmarks/unixbench|2005-01-08|revived under new name
 audio/trm|audio/libtunepimp|2005-01-09|trm is now part of libtunepimp
 java/kaffe-devel|java/kaffe|2005-01-10|merge kaffe-devel into kaffe
-audio/gqmpeg|audio/gqmpeg-devel|2005-01-12|finished repocopy
 graphics/libtheora|multimedia/libtheora|2005-01-13|finished repocopy
 www/bluefish-devel|www/bluefish|2005-01-13|devel port no long needed after update
 irc/xchat-micryption|irc/xchat-mircryption|2005-01-17|Fix port name typo
@@ -1479,7 +1463,6 @@ x11-toolkits/wxgtk2-utils-devel|x11-toolkits/wxgtk2-contrib-utils|2005-05-12|ren
 mail/sendmail811|mail/sendmail|2005-05-13|obsolete
 games/xpilot-ng|games/xpilot-ng-server|2005-05-15|split into -client and -server
 devel/p5-POE-Component-EasyDBI|databases/p5-POE-Component-EasyDBI|2005-05-15|move to a better category
-www/mnogosearch|www/mnogosearch31|2005-05-15|finished repocopy
 net/amule|net/amule1|2005-05-16|port renamed
 net/amule-devel|net/amule2|2005-05-16|obsolete
 databases/firebird|databases/firebird-server|2005-05-17|split into -client and -server
@@ -1577,7 +1560,6 @@ devel/swarm||2005-07-18|failed to compile
 lang/gcc27|lang/gcc295|2005-07-18|long obsolete
 net/tramp-emacs20|net/tramp-emacs|2005-07-18|expired
 x11/eweather||2005-07-18|did not work with update wmweather
-sysutils/sge|sysutils/sge53|2005-07-28|SGE 6 is being imported and is incompatable with 5.3
 sysutils/sgeee|sysutils/sgeee53|2005-07-28|SGE 6 is being imported and is incompatable with 5.3
 lang/stackless_python||2005-07-29|outdated and unmaintained
 x11-wm/rox-pager||2005-07-30|libwnck incompatibility; no new version available
@@ -1592,7 +1574,6 @@ editors/openoffice-1.1-devel|editors/openoffice.org-1.1-devel|2005-08-29|port sh
 editors/openoffice-2.0-devel|editors/openoffice.org-2.0-devel|2005-08-29|port should have a correct PORTNAME
 shells/zsh-devel|shells/zsh|2005-08-29|Development version of Zsh is no longer being released
 russian/nagios||2005-08-30|Obsoleted; new version is not planned
-security/gnutls-devel|security/gnutls|2005-08-30|Development version of GnuTLS is no longer being released
 www/py-websvcs|net/py-soappy|2005-08-30|duplicate port
 x11-toolkits/wxgtk26-contrib-utils||2005-08-31|Deprecated
 deskutils/gdesklets-psi_displaypackage||2005-08-31|removed; broken with recent gdesklets
@@ -1623,14 +1604,12 @@ x11-toolkits/gtk-sharp|x11-toolkits/gtk-sharp10|2005-09-28|renamed to reflect AP
 x11-toolkits/gtk-sharp-devel|x11-toolkits/gtk-sharp20|2005-09-28|renamed to reflect API version
 print/preview-latex|print/auctex|2005-09-30|integrated into print/auctex
 lang/pyperl||2005-09-30|New port added without a maintainer
-mail/exim-monitor||2005-10-01|obsolete
 devel/beagle|devel/open-beagle|2005-10-02|renamed to reflect project's name
 games/pmars-doc||2005-10-04|Obsolete, merged with games/pmars
 russian/bogofilter||2005-10-04|obsoleted by utf-8 support in mail/bogofilter
 graphics/hs-HOpenGL||2005-10-05|Obsolete, now part of lang/ghc
 dns/ddup||2005-10-06|Project no longer exists
 x11-themes/fluxbox-fluxmod||2005-10-07|Project has gone
-sysutils/rdiff-backup-devel|sysutils/rdiff-backup|2005-10-08|obsolete
 games/py-balazar|games/balazar|2005-10-09|renamed to reflect right name
 multimedia/gpac-libm4systems|multimedia/gpac-libgpac|2005-10-09|Library renamed
 games/marbles|games/lmarbles|2005-10-10|renamed to reflect right name
@@ -1765,7 +1744,6 @@ japanese/openoffice-templates||2005-11-05|Port passed expiry date and was remove
 japanese/pgp.language||2005-11-05|Port passed expiry date and was removed.
 japanese/xemacs21-canna+freewnn||2005-11-05|Port passed expiry date and was removed.
 japanese/xemacs21-canna+wnn6||2005-11-05|Port passed expiry date and was removed.
-japanese/xemacs21-canna||2005-11-05|Port passed expiry date and was removed.
 japanese/xemacs21-freewnn||2005-11-05|Port passed expiry date and was removed.
 japanese/xemacs21-wnn6||2005-11-05|Port passed expiry date and was removed.
 japanese/zope-zmilocalizer||2005-11-05|Port passed expiry date and was removed.
@@ -1802,7 +1780,6 @@ x11-toolkits/hs-port||2005-11-05|Port passed expiry date and was removed.
 x11-toolkits/jx||2005-11-05|Port passed expiry date and was removed.
 x11-toolkits/qt145||2005-11-05|Port passed expiry date and was removed.
 x11/ruby-gnome||2005-11-05|Port passed expiry date and was removed.
-devel/linux_kdump||2005-11-05|Port depended on another that was removed.
 www/netscape-wrapper||2005-11-05|Port depended on another that was removed.
 x11-toolkits/hs-gio||2005-11-05|Port depended on another that was removed.
 x11/ruby-gnome-all||2005-11-05|Port depended on another that was removed.
@@ -1825,7 +1802,6 @@ graphics/ruby-gdk_pixbuf||2005-11-05|Port depended on another that was removed.
 news/t-gnus-emacs20||2005-11-05|Port depended on another that was removed.
 news/t-gnus-mule||2005-11-05|Port depended on another that was removed.
 news/t-gnus-xemacs21-mule||2005-11-05|Port depended on another that was removed.
-chinese/joe|chinese/joe2|2005-11-08|Move to joe2 in preparation to update to 3.x
 net/aim|net-im/aim|2005-11-09|Moved to a new net-im category
 net/amsn|net-im/amsn|2005-11-09|Moved to a new net-im category
 net/ari-yahoo|net-im/ari-yahoo|2005-11-09|Moved to a new net-im category
@@ -1937,7 +1913,6 @@ deskutils/gdesklets-sensor-psi_theme||2005-11-11|Deleted; dead and unfetchable
 deskutils/gdesklets-psi_themes||2005-11-11|Deleted; dead and unfetchable
 devel/libidn|dns/libidn|2005-11-12|Moved to a better category
 devel/p5-Net-LibIDN|dns/p5-Net-LibIDN|2005-11-12|Moved to a better category
-net/libnet|net/libnet10|2005-11-14|Moved
 net/libnet-devel/net/libnet|2005-11-14|Moved
 graphics/libpixman||2005-11-14|Project merged into cairo
 security/hping|net/hping|2005-11-15|Moved to a better category
