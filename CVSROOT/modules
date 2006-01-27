@@ -10808,7 +10808,6 @@ qmail-spamcontrol	ports/mail/qmail-spamcontrol
 qmail-tls	ports/mail/qmail-tls
 qmail-vida	ports/mail/qmail-vida
 qmailadmin	ports/mail/qmailadmin
-qmailadmin-devel	ports/mail/qmailadmin-devel
 qmailanalog	ports/mail/qmailanalog
 qmailmrtg7	ports/mail/qmailmrtg7
 qmake		ports/devel/qmake
