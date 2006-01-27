@@ -1,5 +1,5 @@
 --- install.sh.orig	Mon Nov 14 14:51:18 2005
-+++ install.sh	Tue Nov 22 21:53:58 2005
++++ install.sh	Wed Jan 25 18:59:13 2006
 @@ -381,7 +381,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -18,7 +18,7 @@
  	    wrapper_ibmjava="
  	    IBMJava2-142/jre \\
  	    IBMJava2-141/jre \\
-@@ -796,6 +796,12 @@
+@@ -796,10 +796,19 @@
  
      wrapper_contain="#!/bin/sh
  
@@ -31,7 +31,14 @@
  # Location of the Opera binaries
  OPERA_BINARYDIR=${str_localdirexec}
  export OPERA_BINARYDIR
-@@ -844,6 +850,9 @@
+ 
++# Make sure the compat libraries are found
++test -d %%LOCALBASE%%/lib/compat/ && LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:%%LOCALBASE%%/lib/compat/\"
++
+ # Parse commandline parameters
+ toset=
+ for arg
+@@ -844,6 +853,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -41,7 +48,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -867,65 +876,12 @@
+@@ -867,65 +879,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -110,7 +117,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -976,11 +932,8 @@
+@@ -976,11 +935,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -124,7 +131,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -991,12 +944,13 @@
+@@ -991,12 +947,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}\${LD_LIBRARY_PATH:+:}\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -140,7 +147,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done
-@@ -1086,7 +1040,7 @@
+@@ -1086,7 +1043,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -149,7 +156,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1300,49 +1254,13 @@
+@@ -1300,49 +1257,13 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -199,7 +206,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1487,48 +1405,43 @@
+@@ -1487,48 +1408,43 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -271,7 +278,7 @@
  
      elif test -d /usr/share/gnome/
      then
-@@ -1576,9 +1489,9 @@
+@@ -1576,9 +1492,9 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
@@ -283,7 +290,7 @@
  	if test -d "$DIR_HI" -a -w "$DIR_HI"
  	then
  	    if test -d "$DIR_HI"/48x48/apps -a -w "$DIR_HI"/48x48/apps
-@@ -1592,7 +1505,7 @@
+@@ -1592,7 +1508,7 @@
  	    fi
  	fi
  
@@ -292,7 +299,7 @@
  	if test -d $DIR_LO -a -w $DIR_LO
  	then
  	    if test -d $DIR_LO/32x32/apps -a -w $DIR_LO/32x32/apps
-@@ -1606,15 +1519,15 @@
+@@ -1606,15 +1522,15 @@
  	    fi
  	fi
  
