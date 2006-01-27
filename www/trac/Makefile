@@ -7,6 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-PySQLite2 \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
 		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
 		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 RUN_DEPENDS=	${BUILD_DEPENDS}

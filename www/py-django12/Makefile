@@ -7,7 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/0.90/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,7 +47,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite.so:${PORTSDIR}/databases/py-PySQLite2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 .endif
 
 post-install:
