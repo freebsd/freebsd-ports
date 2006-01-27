@@ -1,0 +1,32 @@
+--- doc/Makefile.in.orig	Fri Jun 18 01:19:00 2004
++++ doc/Makefile.in	Fri Jan 27 07:03:15 2006
+@@ -53,28 +53,9 @@
+ 	fi
+ 
+ install: install-mkdirs build
+-	@echo "ircd: installing example config files ($(CONFS))"
+-	@for i in $(CONFS); do \
+-		if test -f $(DESTDIR)$(confdir)/$$i; then \
+-			$(MV) $(DESTDIR)$(confdir)/$$i $(DESTDIR)$(confdir)/$$i.old; \
+-		fi; \
+-		$(INSTALL_DATA) $$i $(DESTDIR)$(confdir); \
+-	done
+-
+-	@for i in $(DEFAULTCONFS); do \
+-		if test ! -f $(DESTDIR)$(confdir)/$$i; then \
+-			echo "ircd: creating config file ($$i)"; \
+-			${TOUCH} $(DESTDIR)$(confdir)/$$i; \
+-		fi; \
+-	done
+-
+ 	-@if test ! -f $(DESTDIR)$(confdir)/ircd.motd; then \
+ 		echo "ircd: installing motd file (ircd.motd)"; \
+-		$(INSTALL_DATA) ircd.motd $(DESTDIR)$(confdir); \
+-	fi
+-
+-	-@if test -f $(DESTDIR)$(confdir)/links.txt; then \
+-		$(RM) $(DESTDIR)$(confdir)/links.txt; \
++		$(INSTALL_DATA) ircd.motd $(DESTDIR)$(confdir)/ircd.motd.sample; \
+ 	fi
+ 
+ 	@echo "ircd: installing manpage"

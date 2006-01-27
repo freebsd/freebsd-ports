@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Thu Feb 24 01:48:06 2005
++++ src/Makefile.in	Fri Jan 27 02:29:08 2006
+@@ -125,9 +125,6 @@
+ 	fi
+ 	@echo "ircd: installing ircd ($(PROGS))"
+ 	@for i in $(PROGS); do \
+-		if test -f $(DESTDIR)$(bindir)/$$i; then \
+-			$(MV) $(DESTDIR)$(bindir)/$$i $(DESTDIR)$(bindir)/$$i.old; \
+-		fi; \
+ 		$(INSTALL_BIN) $$i $(DESTDIR)$(bindir); \
+ 	done
+ 

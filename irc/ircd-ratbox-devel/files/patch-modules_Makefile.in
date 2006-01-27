@@ -1,0 +1,16 @@
+--- modules/Makefile.in.orig	Sun Jul 17 18:55:27 2005
++++ modules/Makefile.in	Mon Jan 23 23:19:03 2006
+@@ -147,13 +147,6 @@
+ 	-@if test ! -d $(DESTDIR)$(moduledir); then \
+                 mkdir $(DESTDIR)$(moduledir); \
+         fi
+-	-@if test -d $(DESTDIR)$(moduledir)-old; then \
+-		rm -rf $(DESTDIR)$(moduledir)-old; \
+-	fi
+-	-@if test -d $(DESTDIR)$(moduledir); then \
+-		echo "ircd: backing up modules"; \
+-		mv $(DESTDIR)$(moduledir) $(DESTDIR)$(moduledir)-old; \
+-	fi
+ 
+ 	@mkdir -p -m 755 $(DESTDIR)$(moduledir)
+ 	@mkdir -p -m 755 $(DESTDIR)$(automoduledir)

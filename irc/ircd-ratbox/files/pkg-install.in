@@ -1,0 +1,117 @@
+#!/bin/sh
+#
+# Adapted from irc/ircd-hybrid's script
+#
+
+ask() {
+	local question default answer
+
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	if [ x${answer} = x ]; then
+		answer=${default}
+	fi
+	echo ${answer}
+}
+
+yesno() {
+	local dflt question answer
+
+	question=$1
+	dflt=$2
+	while :; do
+		answer=$(ask "${question}" "${dflt}")
+		case "${answer}" in
+		[Yy]*)          return 0;;
+		[Nn]*)          return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
+}
+
+#-----------------------------------------------------------------------
+if [ "x$2" = "xPRE-INSTALL" ]; then
+#-----------------------------------------------------------------------
+
+if which -s pw ; then
+	:
+else
+	cat <<EOF
+Your system does not include the "pw" utility.  You should upgrade
+to a newer version of FreeBSD.  Without "pw" this script will not
+run.
+EOF
+	exit 1
+fi
+
+echo ""
+if pw groupshow ircd 2> /dev/null ; then
+	echo "You already have a group \"ircd\", so I will use it."
+else
+	if pw groupshow 72 2> /dev/null ; then
+		echo "You already have a gid \"72\".  Please create a user \"ircd\""
+		echo "with a default group of \"ircd\"."
+		exit 1
+	fi
+	echo "You need a group \"ircd\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw groupadd ircd -g 72 || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		if ! pw usershow ircd 2> /dev/null ; then
+			echo "While you're at it, please create a user \"ircd\""
+			echo 'too, with a default group of "ircd".'
+		fi
+		exit 1
+	fi
+fi
+
+if pw usershow ircd 2> /dev/null ; then
+	echo "You already have a user \"ircd\", so I will use it."
+else
+        if pw usershow 72 2> /dev/null ; then
+                echo "You already have a uid \"72\".  Please create a user \"irc
+d\""
+                echo "with a default group of \"ircd\"."
+                exit 1
+        fi
+	echo "You need a user \"ircd\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+		pw useradd ircd -g ircd -u 72 -h - -d /nonexistent \
+			-s /nonexistent -c "IRC Daemon" || exit
+		echo "Done."
+	else
+		echo "Please create it, and try again."
+		exit 1
+	fi
+fi
+
+#-----------------------------------------------------------------------
+elif [ "x$2" = "xPOST-INSTALL" ]; then
+#-----------------------------------------------------------------------
+
+mkdir -p %%LOGDIR%%           \
+&& chown ircd:ircd %%LOGDIR%% \
+&& chmod 750 %%LOGDIR%% 
+
+mkdir -p %%RUNDIR%%           \
+&& chown ircd:ircd %%RUNDIR%% \
+&& chmod 750 %%RUNDIR%%
+
+# Secure permissions if we think this is a fresh install
+
+if [ ! -f ${PKG_PREFIX}/etc/ircd-ratbox/ircd.conf ]; then
+	chown -R ircd:ircd ${PKG_PREFIX}/etc/ircd-ratbox/
+	chmod 750 ${PKG_PREFIX}/etc/ircd-ratbox/
+	chmod 640 ${PKG_PREFIX}/etc/ircd-ratbox/*
+fi
+
+#-----------------------------------------------------------------------
+fi
+#-----------------------------------------------------------------------
+
+exit 0

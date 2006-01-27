@@ -1,0 +1,12 @@
+--- servlink/Makefile.in.orig	Thu Jun 17 23:19:00 2004
++++ servlink/Makefile.in	Fri Jan 27 02:29:59 2006
+@@ -51,9 +51,6 @@
+ install: build
+ 	@echo "ircd: installing servlink ($(PROGS))"
+ 	@for i in $(PROGS); do \
+-                if test -f $(DESTDIR)$(bindir)/$$i; then \
+-                        $(MV) $(DESTDIR)$(bindir)/$$i $(DESTDIR)$(bindir)/$$i.old; \
+-                fi; \
+                 $(INSTALL_BIN) $$i $(DESTDIR)$(bindir); \
+         done
+ 

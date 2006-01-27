@@ -1,0 +1,12 @@
+--- tools/Makefile.in.orig	Thu Jun 17 23:19:00 2004
++++ tools/Makefile.in	Fri Jan 27 02:30:32 2006
+@@ -92,9 +92,6 @@
+ install: install-mkdirs build
+ 	@echo "ircd: installing tools ($(PROGS))"
+ 	@for i in $(PROGS); do \
+-		if test -f $(DESTDIR)$(bindir)/$$i; then \
+-			$(MV) $(DESTDIR)$(bindir)/$$i $(DESTDIR)$(bindir)/$$i.old; \
+-		fi; \
+ 		$(INSTALL_BIN) $$i $(DESTDIR)$(bindir); \
+ 	done; \
+ 	$(RM) -f $(DESTDIR)$(bindir)/vimotd $(DESTDIR)$(bindir)/viklines
