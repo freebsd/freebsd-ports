@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	1.0.b3
+PORTVERSION=	2.1.2
 PORTEPOCH=	1
 CATEGORIES=	audio python
-MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
+MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
+		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}-picard
+DISTNAME=	libmusicbrainz-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz bindings for Python
 
 BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
@@ -21,29 +22,31 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-EXAMPLES=	cd2trm.py findartist.py getcdtracklengths.py cdid.py \
-		findtrack.py gettrm.py cdlookup.py generatetrm.py \
-		fileinfolookup.py getalbum.py
+EXAMPLES=	cd2trm.py cdid.py cdlookup.py fileinfolookup.py findartist.py \
+		findtrack.py generatetrm.py getalbum.py getcdtracklengths.py \
+		gettrm.py
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+DESCR=		${PORTSDIR}/audio/libmusicbrainz/pkg-descr
+MD5_FILE=	${PORTSDIR}/audio/libmusicbrainz/distinfo
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/musicbrainz.py \
 		%%PYTHON_SITELIBDIR%%/musicbrainz.pyc \
 		%%PYTHON_SITELIBDIR%%/musicbrainz.pyo
 
 .ifndef(NOPORTDOCS)
-PLIST_FILES+=	${EXAMPLES:S/^/%%EXAMPLESDIR%%\//}
+PLIST_FILES+=	${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 .endif
 
+WRKSRC=		${WRKDIR}/libmusicbrainz-${PORTVERSION}/python
+
 post-install:
 .ifndef(NOPORTDOCS)
-		${MKDIR} ${EXAMPLESDIR}
-.for i in ${EXAMPLES}
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
