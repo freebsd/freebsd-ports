@@ -22,6 +22,7 @@
     SUBDIR += adgali
     SUBDIR += adom
     SUBDIR += adonthell
+    SUBDIR += aestats
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += airrox
