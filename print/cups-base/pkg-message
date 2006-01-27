@@ -30,3 +30,13 @@ To enable printing under Gimp do the following:
 3) Restart cupsd
 
 **********************************************************************
+
+The cups-base port now uses a new style rc.d startup
+script.  Please remove any old cups.sh* scripts you
+might have in /usr/local/etc/rc.d, or your local
+PREFIX.  You should also put the following line in
+/etc/rc.conf.local, or /etc/rc.conf to start cupsd
+automatically at boot time:
+
+cupsd_enable="yes"
+**********************************************************************

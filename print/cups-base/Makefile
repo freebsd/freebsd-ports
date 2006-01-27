@@ -9,7 +9,7 @@
 
 PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
@@ -19,6 +19,7 @@ COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	cupsd
 
 MANLANG=	"" es fr
 
@@ -33,8 +34,6 @@ post-patch:
 		${WRKSRC}/man/*.man
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${CP} ${WRKSRC}/cups.sh.in ${WRKSRC}/cups.sh.in.presed
-	@${SED} 40d ${WRKSRC}/cups.sh.in.presed > ${WRKSRC}/cups.sh.in
 
 pre-install:
 	@${ECHO_MSG} "===>" Stopping cupsd ...
@@ -47,7 +46,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor # classes.conf client.conf cupsd.conf printers.conf
-	cd ${CUPS_RCDIR}; ${MV} cups cups.sh.sample
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${MKDIR} ${CUPS_SPOOLDIR} ${CUPS_SPOOLDIR}/tmp
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}

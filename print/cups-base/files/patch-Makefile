@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar  7 01:36:00 2003
-+++ Makefile	Wed Jun 11 01:03:08 2003
+--- Makefile.orig	Mon Jan  3 11:29:44 2005
++++ Makefile	Fri Jan 27 00:04:20 2006
 @@ -28,8 +28,8 @@
  # Directories to make...
  #
@@ -20,3 +20,12 @@
  	echo Installing in data...
  	(cd data; $(MAKE) $(MFLAGS) install)
  	echo Installing in doc...
+@@ -109,8 +107,6 @@
+ 			$(INSTALL_DATA) cups.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
+ 			$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
+ 			$(INSTALL_DATA) cups.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
+-		else \
+-			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
+ 		fi \
+ 	fi
+ 

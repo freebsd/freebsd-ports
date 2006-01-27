@@ -20,7 +20,6 @@ etc/cups/mime.types.N
 @unexec if cmp -s %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; then rm -f %D/etc/cups/printers.conf; fi
 etc/cups/printers.conf.N
 @exec if test ! -f %D/etc/cups/printers.conf; then cp -p %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; fi
-etc/rc.d/cups.sh.sample
 include/cups/cups.h
 include/cups/http.h
 include/cups/image.h
