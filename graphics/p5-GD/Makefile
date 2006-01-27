@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD
-PORTVERSION=	2.25
+PORTVERSION=	2.30
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -24,12 +24,13 @@ CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
 		-lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
 
 MAN1=		bdf2gdfont.pl.1
-MAN3=		GD.3 GD::Polyline.3 GD::Simple.3
+MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \
+		GD::Image.3 GD::Polygon.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
