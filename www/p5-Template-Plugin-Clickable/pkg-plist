@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Template/Plugin/Clickable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Clickable/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Clickable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template

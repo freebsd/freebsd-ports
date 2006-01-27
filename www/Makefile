@@ -673,6 +673,7 @@
     SUBDIR += p5-Task-Catalyst
     SUBDIR += p5-Template-Multilingual
     SUBDIR += p5-Template-Plugin-Class
+    SUBDIR += p5-Template-Plugin-Clickable
     SUBDIR += p5-Template-Plugin-Comma
     SUBDIR += p5-Template-Plugin-MP3
     SUBDIR += p5-Template-Plugin-Monta
