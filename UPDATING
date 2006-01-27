@@ -27,7 +27,7 @@ upgrades.
 
   To prevent stale dependencies, when you use one of qmail slave ports,
   now you just need to set a var named QMAIL_SLAVEPORT on /etc/make.conf
-  assigning to it the name of slaveport you are using.
+  assigning to it the name of slave port you are using.
 
   The valid options for now are:
   * ldap
@@ -59,7 +59,7 @@ upgrades.
 		    mail/postfix-current
   AUTHOR: mnag@FreeBSD.org
 
-  Now all postfix ports use rcNG script to startup. If you have any file 
+  Now all postfix ports use rcNG script to startup. If you have any file
   in etc/rc.d directory linked to sbin/postfix, please remove.
   Do not forget to add 'postfix_enable="YES"' in your rc.conf
 
@@ -68,7 +68,7 @@ upgrades.
   AUTHOR: novel@FreeBSD.org
 
   gnutls has been updated to 1.2.9 and all shared libraries' versions
-  have been bumped. So you need to rebuild all applications that 
+  have been bumped. So you need to rebuild all applications that
   depend on gnutls. Do something like:
 
 	portupgrade -rf gnutls
@@ -79,7 +79,7 @@ upgrades.
 
   lxdvdrip has been updated to version 1.51 depending on port
   multimedia/vamps. However, multimedia/vamps needs to know beforehand
-  how many bytes will be processed in order to work. Unfortunaly,
+  how many bytes will be processed in order to work. Unfortunately,
   lxdvdrip cannot provide such information. Therefore, vamps and
   playcell specific tailored versions shipped within the lxdvdrip
   distribution will be used. They will be named so that lxdvdrip
@@ -147,7 +147,7 @@ upgrades.
       ports.
 
         pkg_deinstall -f kdebase-\[0-9\]\* superkaramba-\[0-9\]\* \
-        kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \ 
+        kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \
         kdeaddons-vimpart-\[0-9\]\*
 
   2.) Now update the remaining KDE ports.
@@ -163,7 +163,7 @@ upgrades.
         portinstall -O kdebase
 
   Superkaramba is now included in misc/kdeutils3.
-  
+
   The smoothblend window decoration is now included in x11-themes/kdeartwork3.
 
   Vimpart is being discontinued and no longer part of KDE.
@@ -182,10 +182,10 @@ upgrades.
   make ports depend on that rather than on security/openssl.
 
   FreeBSD 4.x users MUST install openssl-stable even if the base openssl is
-  present for SSL/TLS support in kmail/kontact to work. Unfortunatly, the
+  present for SSL/TLS support in kmail/kontact to work. Unfortunately, the
   kdepim3 port cannot depend on it automatically due to shortcomings/bugs in
   ports-collection's openssl infrastructure.
-  
+
 20060106:
   AFFECTS: users of deskutils/kronolith <= 2.0.6 with MCAL backend
   AUTHOR: thierry@FreeBSD.org
@@ -250,7 +250,7 @@ upgrades.
   AFFECTS: users of pear ports
   AUTHOR: ale@FreeBSD.org
 
-  A few old pear ports have been removed from the tree in favour of a
+  A few old pear ports have been removed from the tree in favor of a
   single devel/pear port.  If portupgrade complains about missing ports,
   you may safely remove pear-XML_RPC, pear-Console_Getopt, pear-Archive_Tar
   and php[45]-pear and then run:
@@ -283,7 +283,7 @@ upgrades.
 20051210:
   AFFECTS: users of mail/fetchmail using SSL encryption
   AUTHOR: barner@FreeBSD.org
- 
+
   Fetchmail now checks the validity of server certificates and complains
   verbosely in maillog if the validation fails.
 
@@ -386,9 +386,9 @@ upgrades.
   AUTHOR: burelle@lri.fr
 
   Upgrade to 3.09.0 will break binary compatibility at link time, so any
-  librairy build with old versions should be rebuild in order to be
+  library build with old versions should be rebuild in order to be
   usable (standalone binaries do not require rebuild since they are
-  staticaly linked.)
+  statically linked.)
 
 20051129:
   AFFECTS: users of devel/monotone
@@ -399,7 +399,7 @@ upgrades.
   this will automatically migrate the keys.
   Command line syntax for 'serve' has changed; please adjust
   startup scripts accordingly.
-  See /usr/local/share/doc/monotone/NEWS for details. 
+  See /usr/local/share/doc/monotone/NEWS for details.
 
 20051123:
   AFFECTS: users of www/lighttpd
@@ -823,7 +823,7 @@ upgrades.
 
 20050610:
   AFFECTS: users of ftp/wget built with SSL (default)
-  AUTHOR:  sf@FreeBSD.org
+  AUTHOR: sf@FreeBSD.org
 
   wget 1.10 now authenticates certificate of remote host before making a
   SSL connection. To make it work, you should have working CA root
