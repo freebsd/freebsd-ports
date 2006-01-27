@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.12 2005/12/13 21:09:01 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.16 2006/01/25 00:31:26 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -14,19 +14,26 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	1
+#PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	# set later
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.2
+PORTVER_MAJ=	3.6.3
 #SNAP_DATE=	.20051211.2134
 
 .ifdef(SNAP_DATE)
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
 .else
+MASTER_SITES=	http://dspam.irontec.com/sources/ \
+	http://dspam.nuclearelephant.com/sources/ \
+	http://dspam.systemadministrator.org/sources/ \
+	http://dspam.sourceforge.net/sources/ \
+	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
 
@@ -42,7 +49,7 @@ DISTFILES=	snapshot-devel.tar.gz
 FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
 .endif
 
-_UPD_LINE_NO=	6
+_UPD_LINE_NO=	19
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -98,7 +105,6 @@ OPTIONS+=	CGI "Install CGI (pulls in apache)" off
 OPTIONS+=	TRAIN_SCRIPT "Install trainning script (needs perl)" off
 
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

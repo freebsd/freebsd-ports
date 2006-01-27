@@ -11,6 +11,26 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.3
+#
+
+BUGFIX: fixed bug causing "no trusted delivery agent configured" error when
+calling dspam withot an agent configured, but not delivering - or when using
+--classify
+BUGFIX: fixed minor bug causing ChangeUserOnParse to format incorrectly
+
+Notable changes:
+- rewrote some routines that were strdup'ing message body repeatedly
+- changes to tokenization and probability assignment make a noticeable
+difference in accuracy
+- updated dspam_stats "-S" output to use more widely accepted readings:
+SHR: Spam Hit Rate (true positive rate)
+HSR: Ham Strike Rate (false positive rate)
+OCA: Overall Classification Accuracy
+-  add large-scale support to dspam_logrotate
+
+
+###########################################################################
 # dspam-devel-3.6.2_1 (2005-12-11 19:18)
 #
 
