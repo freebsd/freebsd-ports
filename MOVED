@@ -2054,3 +2054,4 @@ databases/myodbc|databases/mysql-connector-odbc|2006-01-17|Now called MySQL Conn
 devel/p5-release|devel/p5-Module-Release|2006-01-23|module was renamed
 www/zope31|www/zope3|2006-01-23|Renamed to zope3 when updated to 3.2
 mail/qmailadmin-devel|mail/qmailadmin|2006-01-27|Devel releases are no longer maintained
+databases/py-PySQLite2|databases/py-pysqlite20|2006-01-27|Moved

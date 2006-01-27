@@ -5,30 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=		PySQLite
-PORTVERSION=		1.1.6
-CATEGORIES=		databases python
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	PySQLite
+PORTVERSION=	1.1.6
+CATEGORIES=	databases python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		pysqlite-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pysqlite-${PORTVERSION}
 
-MAINTAINER=		mnag@FreeBSD.org
-COMMENT=		A DB-API v2 Python library for the SQLite 3 embedded SQL engine
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
-LIB_DEPENDS=		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-LATEST_LINK=		${PYTHON_PKGNAMEPREFIX}${PORTNAME}11
+CONFLICTS=	py*-PySQLite-1.0*
 
-CONFLICTS=		py*-PySQLite-1.0*
+NO_LATEST_LINK=	yes
 
-WRKSRC=			${WRKDIR}/pysqlite
-USE_PYTHON=		yes
+WRKSRC=		${WRKDIR}/pysqlite
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
-MAKE_ENV=		LOCALBASE="${LOCALBASE}"
+MAKE_ENV=	LOCALBASE="${LOCALBASE}"
 
-PORTDOCS=		*
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"freebsd5",|"freebsd5", "freebsd6", "freebsd7",|' \
