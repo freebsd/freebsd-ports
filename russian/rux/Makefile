@@ -8,7 +8,9 @@
 PORTNAME=	rux
 PORTVERSION=	0.74
 CATEGORIES=	russian
-MASTER_SITES=	http://asdf2087.narod.ru/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://asdf2087.narod.ru/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ghos@mail.ru
 COMMENT=	The best cyrillic text viewer and code page converter
