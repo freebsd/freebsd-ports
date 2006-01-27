@@ -33,8 +33,8 @@ BIN_FILES=	altair    h316   ibm1130 nova  pdp15 pdp9 vax780 \
 PORTDOCS=	0readme_35.txt simh_doc.txt simh_swre.txt \
 		0readme_ethernet.txt simh_faq.txt
 
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} ${DATADIR}/ka655x.bin
-PLIST_DIRS=	${DATADIR}
+PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
