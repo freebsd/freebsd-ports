@@ -10387,7 +10387,8 @@ py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite10	ports/databases/py-PySQLite10
 py-PySQLite11	ports/databases/py-PySQLite11
-py-PySQLite2	ports/databases/py-PySQLite2
+py-pysqlite20	ports/databases/py-pysqlite20
+py-pysqlite21	ports/databases/py-pysqlite21
 py-PyX		ports/graphics/py-PyX
 py-SQLDict	ports/databases/py-SQLDict
 py-SciParam	ports/x11-toolkits/py-SciParam
