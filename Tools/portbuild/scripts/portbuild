@@ -189,6 +189,7 @@ export PACKAGES=/tmp/packages
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
+export SRCBASE=/usr/src
 
 # wait 1 hour before killing build with no output
 export TIMEOUT=7200
