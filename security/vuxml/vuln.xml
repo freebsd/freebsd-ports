@@ -34,6 +34,194 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6b0215ae-8f26-11da-8c1d-000e0c2e438a">
+    <topic>cpio -- multiple vulnerabilities</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>6.0</ge><lt>6.0_2</lt></range>
+	<range><ge>5.4</ge><lt>5.4_9</lt></range>
+	<range><ge>5.3</ge><lt>5.3_24</lt></range>
+	<range><ge>4.11</ge><lt>4.11_14</lt></range>
+	<range><ge>4.10</ge><lt>4.10_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>A number of issues has been discovered in cpio:</p>
+	<p>When creating a new file, cpio closes the file before setting
+	  its permissions. (CVE-2005-1111)</p>
+	<p>When extracting files cpio does not properly sanitize file
+	  names to filter out ".." components, even if the
+	  --no-absolute-filenames option is used. (CVE-2005-1229)</p>
+	<p>When adding large files (larger than 4 GB) to a cpio archive
+	  on 64-bit platforms an internal buffer might overflow.
+	  (CVE-2005-4268)</p>
+	<p>Impact</p>
+	<p>The first problem can allow a local attacker to change the
+	  permissions of files owned by the user executing cpio providing
+	  that they have write access to the directory in which the file
+	  is being extracted. (CVE-2005-1111)</p>
+	<p>The lack of proper file name sanitation can allow an attacker
+	  to overwrite arbitrary local files when extracting files from
+	  a cpio archive. (CVE-2005-1229)</p>
+	<p>The buffer-overflow on 64-bit platforms could lead cpio to a
+	  Denial-of-Service situation (crash) or possibly execute
+	  arbitrary code with the permissions of the user running
+	  cpio. (CVE-2005-4268)</p>
+	<p>Workaround</p>
+	<p>Use a different utility to create and extract cpio archives,
+	  for example pax(1) or (on FreeBSD 5.3 or later) tar(1).  If
+	  this is not possible, do not extract untrusted archives and
+	  when running on 64-bit platforms do not add untrusted files
+	  to cpio archives.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-1111</cvename>
+      <cvename>CVE-2005-1229</cvename>
+      <cvename>CVE-2005-4268</cvename>
+      <freebsdsa>SA-06:03.cpio</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-FIXME</discovery>
+      <entry>2006-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="726dd9bd-8f25-11da-8c1d-000e0c2e438a">
+    <topic>ee -- temporary file privilege escalation</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>6.0</ge><lt>6.0_2</lt></range>
+	<range><ge>5.4</ge><lt>5.4_9</lt></range>
+	<range><ge>5.3</ge><lt>5.3_24</lt></range>
+	<range><ge>4.11</ge><lt>4.11_14</lt></range>
+	<range><ge>4.10</ge><lt>4.10_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description</p>
+	<p>The ispell_op function used by ee(1) while executing spell
+	  check operations employs an insecure method of temporary file
+	  generation.  This method produces predictable file names based
+	  on the process ID and fails to confirm which path will be over
+	  written with the user.<br />
+	  It should be noted that ispell does not have to be installed
+	  in order for this to be exploited.  The option simply needs to
+	  be selected.</p>
+	<p>Impact</p>
+	<p>These predictable temporary file names are problematic
+	  because they allow an attacker to take advantage of a race
+	  condition in order to execute a symlink attack, which could
+	  allow them to overwrite files on the system in the context of
+	  the user running the ee(1) editor.</p>
+	<p>Workaround</p>
+	<p>Instead of invoking ispell through ee(1), invoke it directly.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16207</bid>
+      <cvename>CVE-2006-0055</cvename>
+      <freebsdsa>SA-06:02.ee</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-11</discovery>
+      <entry>2006-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c01a25f5-8f20-11da-8c1d-000e0c2e438a">
+    <topic>texindex -- temporary file privilege escalation</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>6.0</ge><lt>6.0_2</lt></range>
+	<range><ge>5.4</ge><lt>5.4_9</lt></range>
+	<range><ge>5.3</ge><lt>5.3_24</lt></range>
+	<range><ge>4.11</ge><lt>4.11_14</lt></range>
+	<range><ge>4.10</ge><lt>4.10_20</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description</p>
+	<p>The "sort_offline" function used by texindex(1) employs the
+	  "maketempname" function, which produces predictable file names
+	  and fails to validate that the paths do not exist.</p>
+	<p>Impact</p>
+	<p>These predictable temporary file names are problematic because
+	  they allow an attacker to take advantage of a race condition in
+	  order to execute a symlink attack, which could enable them to
+	  overwrite files on the system in the context of the user running
+	  the texindex(1) utility.</p>
+	<p>Workaround</p>
+	<p>No workaround is available, but the problematic code is only
+	  executed if the input file being processed is 500kB or more in
+	  length; as a result, users working with documents of less than
+	  several hundred pages are very unlikely to be affected.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14854</bid>
+      <cvename>CAN-2005-3011</cvename>
+      <freebsdsa>SA-06:01.texindex</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-11</discovery>
+      <entry>2006-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c5c17ead-8f23-11da-8c1d-000e0c2e438a">
+    <topic>cvsbug -- race condition</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.4</ge><lt>5.4_7</lt></range>
+	<range><ge>5.3</ge><lt>5.3_22</lt></range>
+	<range><ge>4.11</ge><lt>4.11_12</lt></range>
+	<range><ge>4.10</ge><lt>4.10_18</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description</p>
+	<p>A temporary file is created, used, deleted, and then
+	  re-created with the same name.  This creates a window during
+	  which an attacker could replace the file with a link to
+	  another file.  While cvsbug(1) is based on the send-pr(1)
+	  utility, this problem does not exist in the version of
+	  send-pr(1) distributed with FreeBSD.<br />
+	  In FreeBSD 4.10 and 5.3, some additional problems exist
+	  concerning temporary file usage in both cvsbug(1) and
+	  send-pr(1).</p>
+	<p>Impact</p>
+	<p>A local attacker could cause data to be written to any file
+       	  to which the user running cvsbug(1) (or send-pr(1) in FreeBSD
+	  4.10 and 5.3) has write access.  This may cause damage in
+	  itself (e.g., by destroying important system files or
+	  documents) or may be used to obtain elevated privileges.</p>
+	<p>Workaround</p>
+	<p>Do not use the cvsbug(1) utility on any system with untrusted
+       	  users.<br />
+	  Do not use the send-pr(1) utility on a FreeBSD 4.10 or 5.3
+	  system with untrusted users.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-2693</cvename>
+      <freebsdsa>SA-05:20.cvsbug</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2005-09-07</discovery>
+      <entry>2006-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57a0242d-8c4e-11da-8ddf-000ae42e9b93">
     <topic>sge -- local root exploit in bundled rsh executable</topic>
     <affects>
