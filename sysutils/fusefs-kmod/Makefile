@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	0.2.99.1
-PORTREVISION=	1
+PORTVERSION=	0.2.99.2
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	fuse4bsd-0.3.0-pre1
+DISTNAME=	fuse4bsd-0.3.0-pre2
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Kernel module for fuse
