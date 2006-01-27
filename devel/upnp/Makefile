@@ -7,7 +7,7 @@
 
 PORTNAME=	upnp
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,12 +17,11 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
-LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs
+LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFLICTS=	upnp-1.[^2].*
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/upnp
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 MAKEFILE=	makefile

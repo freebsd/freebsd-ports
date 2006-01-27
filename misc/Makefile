@@ -68,6 +68,7 @@
     SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dvorakng
+    SUBDIR += e2fsprogs-libuuid
     SUBDIR += earthview
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
