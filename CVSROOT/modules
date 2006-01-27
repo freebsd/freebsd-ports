@@ -253,6 +253,7 @@ adzap		ports/www/adzap
 adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
+aestats		ports/games/aestats
 aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
 aewm++		ports/x11-wm/aewm++
