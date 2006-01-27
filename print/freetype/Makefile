@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 USE_REINPLACE=	yes
 
 .ifdef USE_FREETYPE
-.error You have `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+IGNORE=	Cannot install: you have the `USE_FREETYPE' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 post-patch:

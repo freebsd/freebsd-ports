@@ -27,7 +27,7 @@ USE_OPENLDAP=	yes
 .elif ${WITH_LDAP} == ldapsdk
 LIB_DEPENDS=	${LOCALBASE}/mozilla/directory/lib/libldap.so.1:${PORTSDIR}/net/ldapsdk
 .else
-.error WITH_LDAP must be set to one of "openldap1", "openldap2" and "ldapsdk".
+IGNORE=	Cannot install: WITH_LDAP must be set to one of "openldap1", "openldap2" and "ldapsdk"
 .endif
 
 USE_RUBY=	yes

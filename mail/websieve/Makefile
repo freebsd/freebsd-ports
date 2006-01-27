@@ -25,7 +25,7 @@ RUN_DEPENDS=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd22
 .elif ${WITH_CYRUS_IMAPD_VER} == 21
 RUN_DEPENDS=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd2
 .else
-.error WITH_CYRUS_IMAPD_VER must be 22 or 21
+IGNORE=	Cannot install: WITH_CYRUS_IMAPD_VER must be 22 or 21
 .endif
 .else
 RUN_DEPENDS=	${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \

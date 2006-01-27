@@ -21,7 +21,7 @@ MAKEFILE=	${PKGDIR}/src/Makefile
 MAKE_ENV=	PKGDIR="${PKGDIR}"
 
 .ifdef USE_REINPLACE
-.error You have `USE_REINPLACE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+IGNORE=	Cannot install: you have `USE_REINPLACE' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 .include <bsd.port.pre.mk>
