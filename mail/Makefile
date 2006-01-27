@@ -430,7 +430,6 @@
     SUBDIR += qmail-tls
     SUBDIR += qmail-vida
     SUBDIR += qmailadmin
-    SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qmailmrtg7
     SUBDIR += qmqtool
