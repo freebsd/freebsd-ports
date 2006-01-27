@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pysqlite
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.0/${PORTVERSION}/ \
+MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/2.1/${PORTVERSION}/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,18 +18,15 @@ COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}2
+CONFLICTS=	py*-pysqlite-2.0*
 
-USE_REINPLACE=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 DOCSBASE=	share/doc/py-${PORTNAME}2
 DOCSDIR=	${PREFIX}/${DOCSBASE}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/setup.cfg
