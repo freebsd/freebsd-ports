@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.109
+PORTVERSION=	1.110
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -15,15 +15,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Analyze and manipulate Perl code without using perl itself
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
-		${SITE_PERL}/Test/ClassAPI.pm:${PORTSDIR}/devel/p5-Test-ClassAPI \
-		${SITE_PERL}/Test/SubCalls.pm:${PORTSDIR}/devel/p5-Test-SubCalls
+BUILD_DEPENDS=	\
+		p5-Clone>=0.17:${PORTSDIR}/devel/p5-Clone \
+		p5-Scalar-List-Utils>=0.17:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Params-Util>=0.05:${PORTSDIR}/devel/p5-Params-Util \
+		p5-IO-stringy>=2.105:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Digest-MD5>=2.27:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Storable>=2.14:${PORTSDIR}/devel/p5-Storable \
+		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-ClassAPI>=1.02:${PORTSDIR}/devel/p5-Test-ClassAPI \
+		p5-Test-SubCalls>=0.01:${PORTSDIR}/devel/p5-Test-SubCalls \
+		p5-PathTools>=0.84:${PORTSDIR}/devel/p5-PathTools \
+		p5-File-Remove>=0.22:${PORTSDIR}/devel/p5-File-Remove
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
