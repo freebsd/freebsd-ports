@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 SUB_FILES=	epsxe-wrapper
 
