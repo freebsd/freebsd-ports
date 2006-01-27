@@ -7,7 +7,7 @@
 
 PORTNAME=	gcompris2
 PORTVERSION=	7.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -18,13 +18,13 @@ COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-PySQLite2
+		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		ao.3:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-PySQLite2
+		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
