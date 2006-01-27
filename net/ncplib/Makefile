@@ -23,10 +23,6 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 310000
-.error this program requires FreeBSD 3.1-stable or later.
-.endif
-
 MAN1=	ncpasswd.1 ncprint.1 ncpsend.1 ncpurge.1
 MAN8=	ipxping.8
 
