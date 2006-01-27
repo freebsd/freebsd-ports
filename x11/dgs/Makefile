@@ -32,13 +32,13 @@ MAN1=		dgs.1 dpsnx.agent.1
 MANN=		dpsexec.man makepsres.man xepsf.man
 
 .ifdef USE_DGS
-.error You have `USE_DGS' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+IGNORE=	Cannot install: you have the `USE_DGS' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
-IGNORE=		"is included in XFree86 4.x and above"
+IGNORE=		is included in XFree86 4.x and above
 .endif
 
 pre-fetch:
