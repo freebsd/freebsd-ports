@@ -85,8 +85,9 @@ Note:  Please add new entries to the beginning of this file.
       <freebsdsa>SA-06:03.cpio</freebsdsa>
     </references>
     <dates>
-      <discovery>2006-01-FIXME</discovery>
+      <discovery>2006-01-11</discovery>
       <entry>2006-01-27</entry>
+      <modified>2006-01-11</modified>
     </dates>
   </vuln>
 
