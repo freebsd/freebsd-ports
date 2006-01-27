@@ -679,6 +679,7 @@
     SUBDIR += p5-Template-Plugin-MP3
     SUBDIR += p5-Template-Plugin-Monta
     SUBDIR += p5-Template-Plugin-Number-Format
+    SUBDIR += p5-Template-Plugin-Subst
     SUBDIR += p5-Template-Timer
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-Test-HTTP-Server-Simple
