@@ -40,6 +40,7 @@
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-hybrid-ru
+    SUBDIR += ircd-ratbox
     SUBDIR += ircd-ru
     SUBDIR += ircd-rusnet
     SUBDIR += ircg

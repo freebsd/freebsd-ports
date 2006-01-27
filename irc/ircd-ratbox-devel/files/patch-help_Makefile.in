@@ -1,0 +1,17 @@
+--- help/Makefile.in.orig	Mon Sep 12 16:58:45 2005
++++ help/Makefile.in	Mon Jan 23 23:15:32 2006
+@@ -63,14 +63,6 @@
+ 	rm -f opers/index.tmp
+ 
+ install:
+-	-@if test -d $(DESTDIR)$(helpdir)-old; then \
+-		rm -rf $(DESTDIR)$(helpdir)-old; \
+-	fi
+-	-@if test -d $(DESTDIR)$(helpdir); then \
+-		echo "ircd: backing up old help files"; \
+-		mv $(DESTDIR)$(helpdir) $(DESTDIR)$(helpdir)-old; \
+-	fi
+-
+ 	@echo "ircd: setting up help directory structure"
+ 	@mkdir -p -m 755 $(DESTDIR)$(helpdir)
+ 	@mkdir -p -m 755 $(DESTDIR)$(helpdir)/opers

@@ -1,0 +1,7 @@
+This is a port of the ircd-ratbox IRC daemon.
+
+ircd-ratbox is the primary ircd used on EFnet; it combines the stability
+of an ircd required for a large production network together with a rich
+set of features, making it also suitable for use on smaller networks.
+
+WWW: http://www.ircd-ratbox.org/

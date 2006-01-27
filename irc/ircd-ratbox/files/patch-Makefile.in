@@ -1,0 +1,11 @@
+--- Makefile.in.orig    Fri Dec 10 21:28:20 2004
++++ Makefile.in Mon Jan 23 17:10:28 2006
+@@ -46,7 +46,7 @@
+ # the system one.
+ #CFLAGS= -DNDEBUG -g -O2 -D"FD_SETSIZE=1024"
+ SHELL=/bin/sh
+-SUBDIRS=modules adns src tools servlink doc help
++SUBDIRS=modules adns src tools servlink doc help contrib
+ CLEANDIRS = ${SUBDIRS} contrib
+ RSA_FILES=rsa_respond/README rsa_respond/respond.c rsa_respond/Makefile
+
