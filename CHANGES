@@ -42,7 +42,7 @@ AUTHOR: portmgr@FreeBSD.org
 The following changes were introduced:
   * Add bsd.database.mk
     - move out from bsd.port.mk USE_MYSQL and USE_PGSQL.
-    - add support for Berkley DB and SQLite (via USE_BDB and USE_SQLITE
+    - add support for Berkeley DB and SQLite (via USE_BDB and USE_SQLITE
       knobs).
 
   * Espace '+' in make search
@@ -107,14 +107,14 @@ AUTHOR: gnome@FreeBSD.org
 20050618:
 AUTHOR: netchild@FreeBSD.org
   - USE_LINUX now implies NO_FILTER_SHLIBS=yes. It also doesn't use FreeBSD
-    tools to strip binaries anymore, so it's not neccesary anymore to override
+    tools to strip binaries anymore, so it's not necessary anymore to override
     STRIP and STRIP_CMD.
   - USE_LINUX_PREFIX implies NO_MTREE now.
-  - In the USE_LINUX case, USE_XLIB now depends upon the linux X11 libraries
+  - In the USE_LINUX case, USE_XLIB now depends upon the Linux X11 libraries
     instead upon the native FreeBSD libraries.
   - The variable LINUX_BASE_PORT contains a string which is suitable as an
     item in *_DEPENDS, so if a port BATCH_DEPENDS or FETCH_DEPENDS upon the
-    default (or overriden) linux base, ${LINUX_BASE_PORT} should be used+
+    default (or overridden) Linux base, ${LINUX_BASE_PORT} should be used+
     instead of a hardcoded reference.
   - If USE_LINUX or OVERRIDE_LINUX_BASE doesn't point to an existing linux_base
     port and if USE_LINUX isn't set to "yes" (case insensitive), the port will
@@ -171,7 +171,7 @@ AUTHOR: jdp@FreeBSD.org
 
 20050321:
 AUTHOR: kwm@FreeBSD.org
-  The gstreamer-plugins gconf dependencie moved to its own port in devel.
+  The gstreamer-plugins gconf dependency moved to its own port in devel.
   When your application needs gstreamer-plug-gconf, just add
   USE_GSTREAMER=gconf to you Makefile
 
@@ -238,7 +238,7 @@ AUTHOR: portmgr@FreeBSD.org
 
   * Add WWW: line for 'search' target.
 
-  * Speedup check-vulnerable invokation, if portaudit is installed.
+  * Speedup check-vulnerable invocation, if portaudit is installed.
 
   * Run install-info for all .info files.
 
@@ -249,7 +249,7 @@ AUTHOR: portmgr@FreeBSD.org
     The results from these variables is only used as information for
     users.
 
-  * Honour OPTIONS if PACKAGE_BUILDING or BATCH are defined.
+  * Honor OPTIONS if PACKAGE_BUILDING or BATCH are defined.
 
   * Move all USE_GCC entries to new file - bsd.gcc.mk.  'test-gcc'
     target allows users to check gcc version if USE_GCC is used.
@@ -307,7 +307,7 @@ AUTHOR: portmgr@FreeBSD.org
     so that cutting and pasting from it no longer interferes
     with GNATS-tags.
 
-  * Honour configure arguments for USE_XLIB if USE/WITH_LIBTOOL_ is
+  * Honor configure arguments for USE_XLIB if USE/WITH_LIBTOOL_ is
     used.
 
   * Properly document 'describe' target.
@@ -332,9 +332,9 @@ AUTHOR: portmgr@FreeBSD.org
     it at top level, after the category README.html files have been
     created.
 
-  * Fix 'search' target and enable a case-insensetive search on 5-x.
+  * Fix 'search' target and enable a case-insensitive search on 5-x.
 
-  * Extend 'seach' target and enable search by categories.
+  * Extend 'search' target and enable search by categories.
 
   * Remove tk42 and tcl76 categories since they're obsolete.
 
@@ -463,7 +463,7 @@ AUTHOR: gnome@FreeBSD.org
 
 20040610:
 AUTHOR:	portmgr@FreeBSD.org
-  The following behavioural or feature changes were committed:
+  The following behavioral or feature changes were committed:
 
   * Support verbose index builds with INDEX_VERBOSE
 
@@ -542,7 +542,7 @@ AUTHOR:	portmgr@FreeBSD.org
       make search key=apache display=name,path,info keylim=1
 
     The following variables can be set e.g. in /etc/make.conf to
-    control default search behaviour:
+    control default search behavior:
 
       PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps
       PORTSEARCH_KEYLIM?=0
@@ -783,7 +783,7 @@ AUTHOR:	knu@FreeBSD.org
 AUTHOR:	gnome@FreeBSD.org
 	Mozilla will now default to using GTK2, and will only compile
 	against Gtk+-1.2 if explicitly requested.  This is in exact
-	opposite to the old behaviour.
+	opposite to the old behavior.
 
 	The valid values of WITH_MOZILLA are now:
 		mozilla			(www/mozilla, GTK2)
@@ -805,7 +805,7 @@ AUTHOR:	gnome@FreeBSD.org
 	update.
 
 	WITH_MOZILLA=mozilla-gtk2 and WITH_MOZILLA=mozilla-devel-gtk2
-	are still honoured for the time being, but their use is
+	are still honored for the time being, but their use is
 	now deprecated.  Any new ports are not required to consider
 	their values, and so eventually WITH_MOZILLA _will_ have to
 	be changed.
@@ -892,7 +892,7 @@ AUTHOR:	portmgr@FreeBSD.org
 	variables are cached and passed down through bsd.port.subdir.mk.
 	Perl is no longer invoked when a simple ``echo'' will do.  More
 	subshell variable assignments have been hidden behind
-	conditionals so that the commands are not spawned everytime.
+	conditionals so that the commands are not spawned every time.
 	Finally, dependency lists are only constructed if ports actually
 	declare dependencies.  These optimizations give make index
 	approximately a 43% speedup.
