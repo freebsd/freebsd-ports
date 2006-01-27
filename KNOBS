@@ -8,7 +8,7 @@
 #  - Knob names must be 12 characters or less
 #  - Knob descriptions must be 45 characters or less
 #
-#  - Nameing knobs:
+#  - Naming knobs:
 #     When a port has a lib-prefix (ie: libquicktime, libxine)
 #      the lib-prefix should be stripped from the knob name.
 #      (ie: QUICKTIME, XINE).
@@ -16,13 +16,13 @@
 #
 # Keep this list sorted in alphabetical order
 #
-# Knob name:		Knob Description:
+# Knob name:		Knob description:
 #  Length  |		|                   Length                   |
 
-A52			ATSC A/52 audio decoding (used in most dvds)
+A52			ATSC A/52 audio decoding (used in most DVDs)
 ARTS			aRts support via the KDE sound daemon
 APACHE2			Use www/apache2 port
-AVIFILE			Adds support for avi multimedia
+AVIFILE			Adds support for AVI multimedia
 CACA			Libcaca colored ASCII graphics
 CDDB			CDDB support
 CDPARANOIA		Support for cdparanoia CD extraction
@@ -31,16 +31,16 @@ CUPS			Cups support (Common Unix Printing System)
 CURL			Curl URL transfer library support
 DBUS			Adds support for dbus
 DEBUG			Enables debugging support
-DTS			DTS coherent acustics decoding (some dvds)
-DV			Dgital Video used by many digital camcorders
+DTS			DTS coherent acoustics decoding (some DVDs)
+DV			Digital Video used by many digital camcorders
 DVD			Enables General DVD support
 DVDNAV			Enables DVD Menu support
 DVDREAD			Enables DVD support
 ESOUND			Adds support for Esound
 EXAMPLES		Installs optional example code, graphics, etc
 EXIF			Support for EXIF headers in JPEG or TIFF files
-FAAD			Faad aac and MP4 audio decoder support
-FAAC			Faac aac and MP4 audio encder support
+FAAD			FAAD AAC and MP4 audio decoder support
+FAAC			FAAC AAC and MP4 audio encoder support
 FLAC			Flac audio support
 GNOME			Adds GNOME support
 GSTREAMER		Gstreamer multimedia support
@@ -53,7 +53,7 @@ JAVA			Adds support for Java
 KDE			Adds KDE support
 LAME			LAME MP3 audio encoder support
 LDAP			Adds LDAP support
-LINUX			Adds support for linux
+LINUX			Adds support for Linux
 LIVEMEDIA		LiveMedia rstp/rtp/sdp support
 LZO			LZO data compression support
 MAD			Mad MP3 audio decoder support
@@ -81,7 +81,7 @@ SLP			Adds SLP (Service Locator Protocol) support
 SNDFILE			Adds support for libsndfile
 SOX			Sox audio support
 SPEEX			Speex audio codec support
-SQLITE			Sqlite embedded sql database support
+SQLITE			SQLite embedded SQL database support
 SSE			Adds support for x86 SSE optimizations
 SSL			Adds support for SSL (Secure Socket Layer)
 STATIC			Build statically linked executables
@@ -91,5 +91,5 @@ VORBIS			OGG/Vorbis audio support
 X11			Support for X11
 X264			H.264/AVC (MPEG4 part 10) multimedia codec
 XINE			XINE multimedia support
-XVID			XVID multimedia mpeg4 codec support
+XVID			XVID multimedia MPEG4 codec support
 ZVBI			Adds support to access raw VBI capture devices
