@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//}-apache-${PORTVERSION}
@@ -24,7 +24,7 @@ APWRKSRC?=	${WRKSRC}/apache2
 APWRKSRC?=	${WRKSRC}/apache1
 .endif
 
-DOCS=		CHANGES INSTALL LICENSE README doc/modsecurity-apache-manual-1.9.pdf
+DOCS=		CHANGES INSTALL LICENSE README doc/modsecurity-manual.pdf
 PORTDOCS=	*
 
 do-build:
