@@ -430,6 +430,7 @@
     SUBDIR += ossp-sa
     SUBDIR += p54u
     SUBDIR += p5-AddressBook
+    SUBDIR += p5-Apache2-SOAP
     SUBDIR += p5-Archie
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
