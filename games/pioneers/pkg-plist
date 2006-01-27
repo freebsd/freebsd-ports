@@ -63,6 +63,16 @@ share/gnome/games/pioneers/themes/Tiny/sea-lorindol.png
 share/gnome/games/pioneers/themes/Tiny/theme.cfg
 share/gnome/games/pioneers/themes/Tiny/wool-lorindol.png
 share/gnome/games/pioneers/themes/Tiny/wool-port.png
+share/gnome/games/pioneers/themes/Wesnoth-like/board.png
+share/gnome/games/pioneers/themes/Wesnoth-like/desert.png
+share/gnome/games/pioneers/themes/Wesnoth-like/field.png
+share/gnome/games/pioneers/themes/Wesnoth-like/forest.png
+share/gnome/games/pioneers/themes/Wesnoth-like/gold.png
+share/gnome/games/pioneers/themes/Wesnoth-like/hill.png
+share/gnome/games/pioneers/themes/Wesnoth-like/mountain.png
+share/gnome/games/pioneers/themes/Wesnoth-like/pasture.png
+share/gnome/games/pioneers/themes/Wesnoth-like/sea.png
+share/gnome/games/pioneers/themes/Wesnoth-like/theme.cfg
 share/gnome/games/pioneers/themes/board.png
 share/gnome/games/pioneers/themes/cross.png
 share/gnome/games/pioneers/themes/desert.png
@@ -130,9 +140,11 @@ share/locale/fr/LC_MESSAGES/pioneers.mo
 share/locale/hu/LC_MESSAGES/pioneers.mo
 share/locale/it/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
+share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/gnome/games/pioneers/themes/FreeCIV-like
 @dirrm share/gnome/games/pioneers/themes/Iceland
 @dirrm share/gnome/games/pioneers/themes/Tiny
+@dirrm share/gnome/games/pioneers/themes/Wesnoth-like
 @dirrm share/gnome/games/pioneers/themes
 @dirrm share/gnome/games/pioneers
 %%LIBGNOME%%@dirrm share/gnome/help/pioneers/C/images

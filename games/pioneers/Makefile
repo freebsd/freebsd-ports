@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pioneers
-PORTVERSION=	0.9.40
+PORTVERSION=	0.9.49
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pio
 
 MAINTAINER=	sw@gegenunendlich.de
-COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK
+COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK+
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
