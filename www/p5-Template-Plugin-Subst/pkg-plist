@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Template/Plugin/Subst.pm
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
