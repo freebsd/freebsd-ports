@@ -8912,6 +8912,7 @@ p5-Template-Extract	ports/textproc/p5-Template-Extract
 p5-Template-Magic	ports/textproc/p5-Template-Magic
 p5-Template-Multilingual	ports/www/p5-Template-Multilingual
 p5-Template-Plugin-Class	ports/www/p5-Template-Plugin-Class
+p5-Template-Plugin-Clickable	ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-MP3	ports/www/p5-Template-Plugin-MP3
 p5-Template-Plugin-Monta	ports/www/p5-Template-Plugin-Monta
