@@ -1,54 +1,5 @@
 bin/chattr
-bin/compile_et
 bin/lsattr
-bin/mk_cmds
-bin/uuidgen
-include/blkid/blkid.h
-include/blkid/blkid_types.h
-include/e2p/e2p.h
-include/et/com_err.h
-include/ext2fs/bitops.h
-include/ext2fs/ext2_err.h
-include/ext2fs/ext2_ext_attr.h
-include/ext2fs/ext2_fs.h
-include/ext2fs/ext2_io.h
-include/ext2fs/ext2_types.h
-include/ext2fs/ext2fs.h
-include/ss/ss.h
-include/ss/ss_err.h
-include/uuid/uuid.h
-info/libext2fs.info.gz
-lib/e2initrd_helper
-lib/libblkid.a
-lib/libblkid.so.1.0
-lib/libblkid.so.1
-lib/libblkid.so
-lib/libcom_err.a
-lib/libcom_err.so.2.1
-lib/libcom_err.so.2
-lib/libcom_err.so
-lib/libe2p.a
-lib/libe2p.so
-lib/libe2p.so.2
-lib/libe2p.so.2.3
-lib/libext2fs.a
-lib/libext2fs.so
-lib/libext2fs.so.2
-lib/libext2fs.so.2.4
-libdata/pkgconfig/blkid.pc
-libdata/pkgconfig/com_err.pc
-libdata/pkgconfig/e2p.pc
-libdata/pkgconfig/ext2fs.pc
-libdata/pkgconfig/ss.pc
-libdata/pkgconfig/uuid.pc
-lib/libss.a
-lib/libss.so.2.0
-lib/libss.so.2
-lib/libss.so
-lib/libuuid.a
-lib/libuuid.so
-lib/libuuid.so.1
-lib/libuuid.so.1.2
 sbin/badblocks
 sbin/blkid
 sbin/debugfs
@@ -67,10 +18,6 @@ sbin/mkfs.ext3
 sbin/mklost+found
 sbin/resize2fs
 sbin/tune2fs
-share/et/et_c.awk
-share/et/et_h.awk
-share/ss/ct_c.awk
-share/ss/ct_c.sed
 %%NLS%%share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
@@ -82,11 +29,3 @@ share/ss/ct_c.sed
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%@unexec for i in cs de es fr it nl pl rw sv tr ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
-@dirrm share/ss
-@dirrm share/et
-@dirrm include/uuid
-@dirrm include/ss
-@dirrm include/ext2fs
-@dirrm include/et
-@dirrm include/e2p
-@dirrm include/blkid

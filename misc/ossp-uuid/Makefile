@@ -15,9 +15,8 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
-CONFLICTS=	e2fsprogs-[0-9]*
+CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 
-USE_REINPLACE=	yes
 USE_GCC=	3.2+
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

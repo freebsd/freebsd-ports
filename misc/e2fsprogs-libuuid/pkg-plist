@@ -1,0 +1,7 @@
+include/uuid/uuid.h
+lib/libuuid.so.1.2
+lib/libuuid.so.1
+lib/libuuid.so
+lib/libuuid.a
+libdata/pkgconfig/uuid.pc
+@dirrm include/uuid
