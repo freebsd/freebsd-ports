@@ -45,10 +45,6 @@ MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 IGNORE=		is unnecessary because libGL and libGLU come with XFree86 4.0 and higher
 .endif
 
-.ifdef USE_MESA
-.error You have `USE_MESA' variable defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
