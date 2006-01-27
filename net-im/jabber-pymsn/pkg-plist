@@ -22,8 +22,6 @@ lib/jabber/pymsn/legacy/legacylist.py
 lib/jabber/pymsn/legacy/msnw.py
 lib/jabber/pymsn/main.py
 lib/jabber/pymsn/misciq.py
-lib/jabber/pymsn/msnp11chl.py
-lib/jabber/pymsn/msnp2p.py
 lib/jabber/pymsn/register.py
 lib/jabber/pymsn/session.py
 lib/jabber/pymsn/tlib/__init__.py
@@ -37,8 +35,8 @@ lib/jabber/pymsn/tlib/jabber/xmpp_stringprep.py
 lib/jabber/pymsn/tlib/msn.py
 lib/jabber/pymsn/tlib/msnp11chl.py
 lib/jabber/pymsn/tlib/msnp2p.py
-lib/jabber/pymsn/tlib/proxy.py
 lib/jabber/pymsn/tlib/xmlstream.py
+lib/jabber/pymsn/tlib/xmlw.py
 lib/jabber/pymsn/utils.py
 lib/jabber/pymsn/xdb.py
 lib/jabber/pymsn/xmlconfig.py

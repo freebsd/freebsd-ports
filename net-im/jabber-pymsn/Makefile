@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/
 PKGNAMEPREFIX=	jabber-
@@ -14,7 +13,7 @@ PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	martijn@pacno.net
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Python MSN-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
@@ -52,15 +51,15 @@ post-patch:
 
 do-install:
 	${INSTALL} -d ${INST_DIR}
-	${CP} -pPR ${WRKSRC}/src/* ${INST_DIR}/
+	@${CP} -pPRv ${WRKSRC}/src/* ${INST_DIR}/
 	${CHMOD} 755 ${INST_DIR}/main.py
-	[ -f ${INST_DIR}/config.py ] || ${CP} ${INST_DIR}/config.py.sample ${INST_DIR}/config.py
-	@${MKDIR} ${EXAMPLESDIR}/etc
+	@[ -f ${INST_DIR}/config.py ] || ${CP} -v ${INST_DIR}/config.py.sample ${INST_DIR}/config.py
+	${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/config-example.xml ${EXAMPLESDIR}/etc/jabber-pymsn.xml
-	[ -f ${PREFIX}/etc/jabber-pymsn.xml ] || ${CP} ${EXAMPLESDIR}/etc/jabber-pymsn.xml ${PREFIX}/etc/jabber-pymsn.xml
+	@[ -f ${PREFIX}/etc/jabber-pymsn.xml ] || ${CP} -v ${EXAMPLESDIR}/etc/jabber-pymsn.xml ${PREFIX}/etc/jabber-pymsn.xml
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 .for portdoc in ${PORTDOCS}
-	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/
 .endfor
 .endif
