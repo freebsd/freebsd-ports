@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Template/Plugin/Clickable/Email.pm
+@dirrmtry %%SITE_PERL%%/Template/Plugin/Clickable
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
