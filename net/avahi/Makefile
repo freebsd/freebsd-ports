@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
