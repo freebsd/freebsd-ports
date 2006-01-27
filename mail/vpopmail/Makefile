@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -376,7 +376,7 @@ post-install:
 	${INSTALL_DATA} ${LDAP_FILES} ${PREFIX}/vpopmail/ldap
 .endif
 .if defined(WITH_SUID_VCHKPW)
-	${CHMOD} u+s ${PREFIX}/vpopmail/bin/vchkpw
+	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
 .endif
 
 .include <bsd.port.post.mk>
