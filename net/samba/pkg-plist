@@ -245,7 +245,6 @@ sbin/swat
 %%EXAMPLESDIR%%/VFS/Makefile.in
 %%EXAMPLESDIR%%/VFS/configure
 %%EXAMPLESDIR%%/VFS/configure.in
-@exec /bin/mkdir -p %D/VFS/recycle
 %%EXAMPLESDIR%%/appliance/Makefile
 %%EXAMPLESDIR%%/appliance/README
 %%EXAMPLESDIR%%/appliance/appliance.spec
