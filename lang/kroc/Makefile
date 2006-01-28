@@ -16,9 +16,10 @@ COMMENT=	The Kent Retargettable occam-pi Compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+ONLY_FOR_ARCHS=	i386
+
 USE_BZIP2=	yes
 USE_SDL=	sdl
-USE_REINPLACE=	yes
 
 MAN1=		cputimerutil.1 mkoccdeps.1 occ21.1 kroc.1 kmakef.1
 MAN3=		libconvert-inmos.3 libhostio-inmos.3 libmath-inmos.3 \
