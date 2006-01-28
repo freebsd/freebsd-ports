@@ -3437,3 +3437,4 @@
 @dirrm %%NUKEDIR%%/html/images
 @dirrm %%NUKEDIR%%/html/docs
 @dirrm %%NUKEDIR%%/html
+@dirrm %%NUKEDIR%%
