@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Test-Pod-Coverage
-PORTVERSION=	1.06
-PORTREVISION=	1
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -27,7 +26,7 @@ MAN3=		Test::Pod::Coverage.3
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
 post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use warnings;/;' \
+	@${PERL} -pi -e '$$_ = "" if m|use warnings;|;' \
 		     -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
 		${WRKSRC}/Makefile.PL \
 		${WRKSRC}/Coverage.pm
