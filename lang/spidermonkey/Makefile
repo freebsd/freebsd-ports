@@ -70,6 +70,14 @@ test:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
 do-configure:
 	${CP} ${WRKSRC}/config/Linux_All.mk \
 		${WRKSRC}/config/${OPSYS}`${UNAME} -r`.mk && \
