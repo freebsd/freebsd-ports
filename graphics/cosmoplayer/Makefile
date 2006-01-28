@@ -1,0 +1,34 @@
+# New ports collection makefile for:	cosmoplayer
+# Date created:		25 January 2006
+# Whom:			Thierry Thomas <thierry@pompo.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cosmoplayer
+PORTVERSION=	2.1.1
+CATEGORIES=	graphics
+MASTER_SITES=	http://opendx.npaci.edu/libs/
+DISTNAME=	${PORTNAME}-jar
+
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Java classes to support VRML
+
+RUN_DEPENDS=	${JAVALIBDIR}/java40.jar:${PORTSDIR}/devel/netscape-java40
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+NO_BUILD=	yes
+
+JARFILES=	npcosmop211.jar LICENSE.npcosmop211.txt
+
+PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|}
+
+post-extract:
+	${MV} ${WRKDIR}/comsoplayer-jar ${WRKSRC}
+	${MV} ${WRKSRC}/License ${WRKSRC}/LICENSE.npcosmop211.txt
+
+do-install:
+	${INSTALL_DATA} ${JARFILES:S|^|${WRKSRC}/|} ${JAVAJARDIR}
+
+.include <bsd.port.mk>
