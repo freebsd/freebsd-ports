@@ -4,15 +4,13 @@
 # $FreeBSD$
 
 PORTNAME=	c-hey
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.redbrick.dcu.ie/~c-hey/src.gzipped/
-DISTNAME=	c-hey2.0
+DISTNAME=	c-hey2.1
 
-MAINTAINER=	philip.reynolds@rfc-networks.ie
+MAINTAINER=	philip.reynolds@gmail.com
 COMMENT=	Terminal based instant messaging utility
-
-WRKSRC=		${WRKDIR}/c-hey_cvs_latest/c-hey
 
 GNU_CONFIGURE=	yes
 
