@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
