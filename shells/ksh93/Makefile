@@ -19,6 +19,8 @@ COMMENT=	Official AT&T release of KornShell 93
 VERSION=	2005-02-02
 RESTRICTED=    "Source recipient must acknowledge license"
 
+BROKEN=		Unfetchable
+
 FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
