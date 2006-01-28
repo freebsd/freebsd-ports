@@ -37,6 +37,8 @@ CONFIGURE_ARGS+=	--enable-extra-encodings
 
 .if defined(WITH_EXTRA_PATCHES)
 PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
+PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=     nork
 PATCHFILES+=	${DISTNAME}-cp932.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
