@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus \
 		sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20 gconf2
+USE_GNOME=	gnomehack gnometarget intlhack gconf2 libwnck
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
