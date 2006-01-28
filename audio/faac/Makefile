@@ -15,13 +15,14 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
+PATCH_DEPENDS=	${BUILD_DEPENDS}
+
 NO_PACKAGE=	Distribution in binary form is prohibited
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:13
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -40,8 +41,6 @@ WITH_MPEG4IP=yes
 .if defined(WITH_MPEG4IP)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 .endif
-
-pre-patch: build-depends
 
 post-patch:
 	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
