@@ -4,7 +4,7 @@ bin/xml_export
 %%SITE_PERL%%/Alexandria/Client.pm
 %%SITE_PERL%%/Alexandria/Docman.pm
 %%SITE_PERL%%/Alexandria/Tracker.pm
-%%SITE_PERL%%/mach/auto/Alexandria/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Alexandria/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
