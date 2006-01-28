@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,15 +28,14 @@ USE_GNOME=	gnometarget gnomehack pkgconfig
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-firewire
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-firewire --with-x
 CFLAGS+=	-fPIC
+MAN1=	lqtplay.1
 
 OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
-		GTK "Enable Gtk+2 Frontend" Off
-
-MAN1=	lqtplay.1
+		GTK2 "Enable Gtk+2 Frontend" Off
 
 PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_codecs.html qt4l_firewire.html qt4l_index.html \
@@ -46,7 +44,7 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK)
+.if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
 .else
