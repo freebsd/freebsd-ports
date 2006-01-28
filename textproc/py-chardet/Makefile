@@ -6,6 +6,7 @@
 
 PORTNAME=	chardet
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://chardet.feedparser.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
