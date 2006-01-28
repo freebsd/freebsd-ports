@@ -2234,6 +2234,20 @@ dx/include/dx/xform.h
 dx/include/dxconfig.h
 dx/include/dxl.h
 dx/include/dxstereo.h
+%%JAVA%%dx/java/htmlpages/dx.jar
+%%JAVA%%dx/java/output/README.output
+%%JAVA%%dx/java/server/bin/dxserver.paths
+%%JAVA%%dx/java/server/bin/startserver
+%%JAVA%%dx/java/server/bin/stopserver
+%%JAVA%%dx/java/server/class/dxserver.paths
+%%JAVA%%dx/java/server/class/server.jar
+%%JAVA%%dx/java/server/dxmacros/dxmac.net
+%%JAVA%%dx/java/server/dxmacros/gifmac.net
+%%JAVA%%dx/java/server/dxmacros/vrmlmac.net
+%%JAVA%%dx/java/server/dxmacros/weboptionsmac.net
+%%JAVA%%dx/java/server/lib_%%ARCH%%/libAnyDX.so
+%%JAVA%%dx/java/server/nets/.keepme
+%%JAVA%%dx/java/user/.keepme
 dx/lib/colors.txt
 dx/lib/dx.mdf
 dx/lib/dxexec.def
@@ -2246,9 +2260,17 @@ dx/lib/mdf2c.awk
 dx/lib/messages
 dx/lib/outboard.c
 dx/lib_%%ARCH%%/libDX.a
+dx/lib_%%ARCH%%/libDX.so
+dx/lib_%%ARCH%%/libDX.so.4
 dx/lib_%%ARCH%%/libDXL.a
+dx/lib_%%ARCH%%/libDXL.so
+dx/lib_%%ARCH%%/libDXL.so.4
 dx/lib_%%ARCH%%/libDXcallm.a
+dx/lib_%%ARCH%%/libDXcallm.so
+dx/lib_%%ARCH%%/libDXcallm.so.4
 dx/lib_%%ARCH%%/libDXlite.a
+dx/lib_%%ARCH%%/libDXlite.so
+dx/lib_%%ARCH%%/libDXlite.so.4
 dx/lib_%%UNAMEP%%/arch.mak
 dx/man/catl/dx.l
 dx/man/manl/dx.l
@@ -2304,6 +2326,16 @@ dx/ui/viewer.net
 %%ARCHDIR%%@dirrm dx/lib_%%UNAMEP%%
 @dirrm dx/lib_%%ARCH%%
 @dirrm dx/lib
+%%JAVA%%@dirrm dx/java/user
+%%JAVA%%@dirrm dx/java/server/nets
+%%JAVA%%@dirrm dx/java/server/lib_%%ARCH%%
+%%JAVA%%@dirrm dx/java/server/dxmacros
+%%JAVA%%@dirrm dx/java/server/class
+%%JAVA%%@dirrm dx/java/server/bin
+%%JAVA%%@dirrm dx/java/server
+%%JAVA%%@dirrm dx/java/output
+%%JAVA%%@dirrm dx/java/htmlpages
+%%JAVA%%@dirrm dx/java
 @dirrm dx/include/dx
 @dirrm dx/include
 @dirrm dx/html/pages
