@@ -1,20 +1,15 @@
 #!/bin/sh
-
-rc_file=${0##*/}
-
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
-        echo "${rc_file}: Cannot determine PREFIX." >&2
-        echo "Please use the complete pathname." >&2
-        exit 64
-fi
+#
+# $FreeBSD$
+# 
 
 smbspool=/var/spool/samba
 pidfiledir=/var/run
-smbd=${PREFIX}/sbin/smbd
-nmbd=${PREFIX}/sbin/nmbd
+smbd=%%PREFIX%%/sbin/smbd
+nmbd=%%PREFIX%%/sbin/nmbd
 
-# start
-if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
+case "$1" in
+start)
 	if [ -f $smbd ]; then
 		if [ -d $smbspool ]; then
 			rm -f $smbspool/*
@@ -23,9 +18,13 @@ if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
 		$smbd -D
 		$nmbd -D
 	fi
-
-# stop
-elif [ "x$1" = "xstop" ]; then
+	;;
+stop)
 	kill `cat $pidfiledir/smbd.pid`
 	kill `cat $pidfiledir/nmbd.pid`
-fi
+	;;
+*)
+	echo "Usage: ${0##*/}: { start | stop }" >&2
+	exit 64
+	;;
+esac
