@@ -22,4 +22,10 @@ USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 MAN1=		twolame.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Incorrect plist
+.endif
+
+.include <bsd.port.post.mk>
