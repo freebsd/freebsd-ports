@@ -1304,6 +1304,7 @@ corkscrew	ports/net/corkscrew
 corona		ports/graphics/corona
 cos		ports/java/cos
 cosmo		ports/games/cosmo
+cosmoplayer	ports/graphics/cosmoplayer
 cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
 countrycodes	ports/misc/countrycodes
