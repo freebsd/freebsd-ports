@@ -6,3 +6,4 @@ share/aclocal19/sysconftool.m4
 %%DATADIR%%/sysconftoolcheck
 %%DATADIR%%/sysconftoolize.am
 @dirrm %%DATADIR%%
+@dirrmtry share/aclocal19
