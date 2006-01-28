@@ -8,7 +8,7 @@
 
 PORTNAME=	csup
 PORTVERSION=	20060127
-CATEGORIES=	devel net
+CATEGORIES=	net devel
 MASTER_SITES=	http://www.mu.org/~mux/
 DISTNAME=	${PORTNAME}-snap-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
