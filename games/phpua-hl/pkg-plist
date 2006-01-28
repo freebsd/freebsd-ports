@@ -59,3 +59,4 @@
 @dirrm %%PHPUA%%/plugins/plugin_hl
 @dirrm %%PHPUA%%/images/templates/wap/plugin_hl
 @dirrm %%PHPUA%%/images/templates/default/plugin_hl
+@dirrmtry %%PHPUA%%/images/templates/wap/
