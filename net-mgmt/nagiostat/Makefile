@@ -19,6 +19,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
+BROKEN=		Does not install
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes

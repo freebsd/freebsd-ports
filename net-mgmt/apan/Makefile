@@ -18,6 +18,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios \
 		bash:${PORTSDIR}/shells/bash2
 
+BROKEN=		Does not install
+
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 NAGIOSDIR?=	/var/spool/nagios
