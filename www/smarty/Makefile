@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.11
+PORTVERSION=	2.6.12
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
+DISTFILES+=	Smarty-${DOCSVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
 MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	The PHP compiling template engine
 
-WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
+DOCSVERSION=	2.6.11
+
+WRKSRC=		${WRKDIR}/Smarty-${PORTVERSION}
 
 NO_BUILD=	yes
 USE_PHP=	yes
