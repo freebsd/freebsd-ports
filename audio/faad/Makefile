@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
+PATCH_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
@@ -38,8 +39,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
-
-pre-patch: build-depends
 
 post-patch:
 # make sure everything is prepared prior to configure stage
