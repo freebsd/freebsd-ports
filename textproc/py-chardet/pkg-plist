@@ -103,3 +103,4 @@
 %%PYTHON_SITELIBDIR%%/chardet/universaldetector.pyo
 %%PYTHON_SITELIBDIR%%/chardet/utf8prober.pyo
 %%PYTHON_SITELIBDIR%%/chardet/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/chardet
