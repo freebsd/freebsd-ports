@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	www
-MASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_5/frs2967?dl=1/:source1
+MASTER_SITES=	http://developer.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_7/frs3338?dl=1/:source1
 DISTFILES=	${JOOMLA_SRC}:source1
 
 MAINTAINER=	include@npf.pt.freebsd.org
@@ -15,7 +15,7 @@ COMMENT=	A dynamic web content management system (CMS)
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql zlib
+USE_PHP=	mysql pcre xml zlib
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -25,12 +25,11 @@ PLIST_SUB+=	JOOMLA_DIR=${JOOMLA_DIR}
 JOOMLA_DIR?=	www/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-JOOMLA_SRC=	Joomla_1.0.5-Stable-Full_Package.tar.gz
+JOOMLA_SRC=	Joomla_${PORTVERSION}-Stable-Full_Package.tar.bz2
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} -zxf ${DISTDIR}/${DIST_SUBDIR}/${JOOMLA_SRC} -C ${WRKSRC}
-	@${RM} -rf ${WRKSRC}/templates/rhuk_solarflare # remove empty
+	@${TAR} -yxf ${DISTDIR}/${DIST_SUBDIR}/${JOOMLA_SRC} -C ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${JOOMLA_DIR}

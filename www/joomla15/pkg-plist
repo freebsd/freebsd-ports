@@ -684,6 +684,7 @@ www/joomla/includes/class.pdf.php
 www/joomla/includes/compat.php41x.php
 www/joomla/includes/compat.php42x.php
 www/joomla/includes/compat.php50x.php
+www/joomla/includes/database.mysql5.php
 www/joomla/includes/database.mysqli.php
 www/joomla/includes/database.php
 www/joomla/includes/domit/dom_xmlrpc_array_document.php
@@ -1435,6 +1436,7 @@ www/joomla/offline.php
 www/joomla/offlinebar.php
 www/joomla/pathway.php
 www/joomla/robots.txt
+www/joomla/templates/404.php
 www/joomla/templates/css/index.html
 www/joomla/templates/css/offline.css
 www/joomla/templates/index.html
