@@ -1,0 +1,11 @@
+--- java/nets/Makefile.in.orig	Tue Jan  3 21:41:27 2006
++++ java/nets/Makefile.in	Sat Jan 28 15:48:56 2006
+@@ -323,7 +323,7 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(javanetsdir)
+-	chmod 777 $(DESTDIR)$(javanetsdir)
++	chmod 775 $(DESTDIR)$(javanetsdir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
