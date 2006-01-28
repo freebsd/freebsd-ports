@@ -1,0 +1,10 @@
+---------------------------------------------------------
+
+If you cannot connect to dxexec, try this:
+
+# Start the user interface by typing "dx -uionly &"
+# Start the executive by typing "dx -execonly &"
+# Use the connect menu in the user interface to "Connect
+to server", click the Options button, and select connect
+to already running server.
+

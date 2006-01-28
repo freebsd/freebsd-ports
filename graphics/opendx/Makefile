@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	opendx
-PORTVERSION=	4.3.2
-PORTREVISION=	5
+PORTVERSION=	4.4.0
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,27 +15,53 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick	\
+		tiff.4:${PORTSDIR}/graphics/tiff		\
+		cdf.0:${PORTSDIR}/science/cdf
 
-OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \
-		NETCDF "Build netcdf-support" off
-
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-javadx
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	ARCH="${OPSYS:L}" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if !defined(WITHOUT_HDF) && defined(WITH_NETCDF)
+BROKEN=	HDF and NETCDF are conflicting
+.endif
+
+.if !defined(WITHOUT_HDF)
+LIB_DEPENDS+=	mfhdf.2:${PORTSDIR}/science/hdf
+.else
+CONFIGURE_ARGS+=	--without-hdf
+.endif
+
+.if defined(WITH_NETCDF)
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/math/netcdf
+.else
+CONFIGURE_ARGS+=	--without-netcdf
+.endif
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	1.3+
+BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
+RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
+CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar	\
+			--with-java40jar-path=${JAVALIBDIR}/java40.jar
+PLIST_SUB+=	JAVA=""
+DIR2PRUNE=	dx/java/user dx/java/server/nets
+.else
+CONFIGURE_ARGS+=	--without-javadx
+PLIST_SUB+=	JAVA="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -46,19 +71,30 @@ PLIST_SUB+=	UNAMEP=${ARCH} ARCHDIR=""
 PLIST_SUB+=	UNAMEP=${OPSYS:L} ARCHDIR="@comment "
 .endif
 
-.if defined(WITH_HDF)
-LIB_DEPENDS+=	mfhdf.2:${PORTSDIR}/science/hdf
-.endif
-
-.if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/math/netcdf
-.endif
-
-post-patch:
+pre-configure:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
 .for dir in doc help html man
 	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
+	${REINPLACE_CMD} -e "s;-lpthread;${PTHREAD_LIBS};g"	\
+		-e "s;/usr/X11R6;${X11BASE};g"			\
+		${WRKSRC}/configure
+
+post-install:
+	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
+.if !defined(WITHOUT_JAVA)
+	@${RM} ${PREFIX}/dx/java/server/bin/startserver.bat
+	@${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
+	@${ECHO} "---------------------------------------------------------"	\
+		>> ${PKGMESSAGE}
+	@${ECHO} "Before starting ${PREFIX}/dx/java/server/bin/startserver"	\
+		>> ${PKGMESSAGE}
+	@${ECHO} "you must install the port graphics/opendx-samples."		\
+		>> ${PKGMESSAGE}
+.endif
+	@${ECHO} "---------------------------------------------------------"	\
+		>> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
