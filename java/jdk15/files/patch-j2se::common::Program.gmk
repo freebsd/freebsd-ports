@@ -1,0 +1,16 @@
+--- ../../j2se/make/common/Program.gmk	Tue Oct 19 14:44:50 2004
++++ ../../j2se/make/common/Program.gmk	Sat Oct 15 12:37:38 2005
+@@ -17,5 +17,4 @@
+ LAUNCHER_SHARE_SRC = $(SHARE_SRC)
+ endif
+-ZIP_SRC = $(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
+ 
+ .PHONY: all optimized debug classes clean clobber
+@@ -47,5 +46,6 @@
+ 	$(OBJDIR)/zutil.$(OBJECT_SUFFIX)
+ 
+-FILES_o = $(LAUNCHER_o) $(ZLIB_o)
++FILES_o = $(LAUNCHER_o)
++LDFLAGS += -lz
+ 
+ ifeq ($(PLATFORM), windows)
