@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipfcount
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 		http://users.netleader.com.au/~rob/
@@ -23,7 +23,6 @@ MAN1=		ipfcount.1
 SUB_FILES=	pkg-message
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +31,7 @@ IGNORE=		requires perl 5.6 or higher - see the lang/perl5.8 port
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfcount
+	@${REINPLACE_CMD} -e '1s,^#![^ ]*,#!${PERL},' ${WRKSRC}/ipfcount
 
 do-build:
 	cd ${WRKSRC} && pod2man ipfcount > ipfcount.1
