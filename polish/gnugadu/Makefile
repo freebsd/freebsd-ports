@@ -16,6 +16,8 @@ DISTNAME=	gg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GaduGadu client for X11/GTK
 
+BROKEN=		Needs to be converted to OPTIONS
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
