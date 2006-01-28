@@ -1,5 +1,28 @@
---- lib/python/StructuredText/DocumentClass.py.orig	Thu Aug 11 09:11:26 2005
-+++ lib/python/StructuredText/DocumentClass.py	Wed Sep  7 13:27:26 2005
+--- Dependencies/StructuredText-Zope-2.9.0/StructuredText/DocumentWithImages.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.0/StructuredText/DocumentWithImages.py	Sun Jan 15 10:23:46 2006
+@@ -27,7 +27,7 @@
+ 
+     def doc_img(
+         self, s,
+-        expr1=re.compile('\"([ _a-zA-Z0-9*.:/;,\[\]\'\-\n\~]+)\":img:([a-zA-Z0-9%\_\-.:/\?=;,\n\~]+)').search,
++        expr1=re.compile('\"((?:\w|[ *.:/;,\-\n\~])+)\":img:([a-zA-Z0-9\_\-.:/;,\n\~]+)', re.U).search,
+         ):
+ 
+ 
+--- Dependencies/StructuredText-Zope-2.9.0/StructuredText/ST.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.0/StructuredText/ST.py	Sun Jan 15 10:23:46 2006
+@@ -116,6 +116,9 @@
+     Structure => [paragraph,[sub-paragraphs]]
+     """
+ 
++    if type(paragraphs) == type(''):
++        paragraphs = unicode(paragraphs, 'utf-8')
++
+     currentlevel    = 0
+     currentindent  = 0
+     levels            = {0:0}
+--- Dependencies/StructuredText-Zope-2.9.0/StructuredText/DocumentClass.py.orig	Sat Jan  7 21:07:51 2006
++++ Dependencies/StructuredText-Zope-2.9.0/StructuredText/DocumentClass.py	Sun Jan 15 10:23:46 2006
 @@ -786,7 +786,7 @@
  
      def doc_literal(
@@ -62,26 +85,3 @@
                     ):
          return self.doc_href(s, expr)
  
---- lib/python/StructuredText/DocumentWithImages.py.orig	Thu Aug 11 09:11:26 2005
-+++ lib/python/StructuredText/DocumentWithImages.py	Wed Sep  7 13:30:10 2005
-@@ -27,7 +27,7 @@
- 
-     def doc_img(
-         self, s,
--        expr1=re.compile('\"([ _a-zA-Z0-9*.:/;,\[\]\'\-\n\~]+)\":img:([a-zA-Z0-9%\_\-.:/\?=;,\n\~]+)').search,
-+        expr1=re.compile('\"((?:\w|[ *.:/;,\-\n\~])+)\":img:([a-zA-Z0-9\_\-.:/;,\n\~]+)', re.U).search,
-         ):
- 
- 
---- lib/python/StructuredText/ST.py.orig	Thu Aug 11 09:11:26 2005
-+++ lib/python/StructuredText/ST.py	Wed Sep  7 13:27:26 2005
-@@ -116,6 +116,9 @@
-     Structure => [paragraph,[sub-paragraphs]]
-     """
- 
-+    if type(paragraphs) == type(''):
-+        paragraphs = unicode(paragraphs, 'utf-8')
-+
-     currentlevel    = 0
-     currentindent  = 0
-     levels            = {0:0}

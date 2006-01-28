@@ -1,25 +1,24 @@
-# New ports collection makefile for:	Zope-2.8.x
-# Date created:				Tue Sep 13 11:34:24 MSD 2005
-# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
+# New ports collection makefile for:	Zope-2.9.x
+# Date created:				Mon Jan 10 14:40:00 JST 2006
+# Whom:					Yasushi Hayashi <yasi@yasi.to>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.8.5
+PORTVERSION=	2.9.0
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
-DISTNAME=	Zope-${PORTVERSION}-final
+DISTNAME=	Zope-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-USE_RC_SUBR=	${PORTNAME}28.sh zeo28.sh
-USE_REINPLACE=	yes
-LATEST_LINK=	zope28
+USE_RC_SUBR=	${PORTNAME}29.sh zeo29.sh
+LATEST_LINK=	zope29
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -28,7 +27,7 @@ LATEST_LINK=	zope28
 # Change these, if you like, via the environment.
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
-SZOPEBASEDIR?=		${WEBBASEDIR}/Zope28
+SZOPEBASEDIR?=		${WEBBASEDIR}/Zope29
 
 # Do not change anything below this line.
 
@@ -41,11 +40,10 @@ ZOPEINSTANCEBASE?=	${PREFIX}/${SZOPEBASEDIR}
 ZOPEINSTANCEDIR?=	${ZOPEINSTANCEBASE}/${ZOPEINSTANCENAME}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${ZOPEBASEDIR}
+CONFIGURE_ARGS=	--prefix=${ZOPEBASEDIR} --force
 
 USE_GMAKE=	yes
 ALL_TARGET=	build
-MAKEFILE=	makefile
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
@@ -61,6 +59,7 @@ ISBATCH=	""
 .endif
 
 post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 -- ${RM}
 	${REINPLACE_CMD} \
 		-e 's,^\(ACCEPTABLE="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
 		-e 's,^\(TARGET="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
@@ -68,8 +67,8 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}28.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/zeo28.sh         ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}29.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/zeo29.sh         ${PREFIX}/etc/rc.d
 
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
