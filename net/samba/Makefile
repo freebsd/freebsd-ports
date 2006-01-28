@@ -252,6 +252,7 @@ post-install:
 			-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'	\
 			-e 's!%%SAMBA_CONFDIR%%!${SAMBA_CONFDIR}!'	\
 			-e 's!%%SAMBA_VFSDIR%%!${SAMBA_VFSDIR}!'	\
+			-e 's!%%PREFIXX%%!${PREFIX}!'			\
 			${FILESDIR}/smb.conf.default			\
 			> ${SAMPLE_CONFIG} ;				\
 	fi
