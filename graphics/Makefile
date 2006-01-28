@@ -55,6 +55,7 @@
     SUBDIR += comix
     SUBDIR += compupic
     SUBDIR += corona
+    SUBDIR += cosmoplayer
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += crystalentitylayer
