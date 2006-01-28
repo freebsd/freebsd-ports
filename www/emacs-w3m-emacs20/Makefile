@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 COMMENT=	Simple front-end to w3m for emacs20
 PLIST=			${.CURDIR}/pkg-plist

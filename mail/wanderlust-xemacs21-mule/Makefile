@@ -9,6 +9,7 @@ MASTERDIR=	${.CURDIR}/../../mail/wanderlust
 
 COMMENT=	Yet another message interface on Emacsen
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 MANIFEST=		MANIFEST.wl

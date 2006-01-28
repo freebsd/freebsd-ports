@@ -26,6 +26,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	base
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz \

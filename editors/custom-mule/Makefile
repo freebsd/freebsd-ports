@@ -14,6 +14,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/custom-emacs
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	mule
 
 # pkg/* files but PLIST are used in ${.CURDIR}

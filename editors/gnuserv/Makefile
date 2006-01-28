@@ -19,6 +19,7 @@ USE_REINPLACE=	yes
 
 BINSUFFIX?=	-emacs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=emacs21
 
 .if defined(WITHOUT_X11)

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Command shell implemented in emacs lisp
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 PCOMPLETE_VERSION=	1.1.7

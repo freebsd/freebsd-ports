@@ -19,6 +19,7 @@ COMMENT=	Canna Conversion Facility in Egg Input Method Architecture
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/egg/egg-sim.el:${PORTSDIR}/editors/tamago${EMACS_SUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} == emacs21

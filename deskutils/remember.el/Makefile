@@ -16,6 +16,7 @@ DISTNAME=	remember-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../pure-emacs20
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 
 .include "${MASTERDIR}/Makefile"

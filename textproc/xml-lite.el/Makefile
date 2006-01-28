@@ -17,6 +17,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple XML-editing for GNU Emacs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_BUILD_DEPENDS=	YES
 

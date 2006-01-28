@@ -12,6 +12,7 @@ COMMENT=	Message interface to Emacs Window for emacs20
 MASTERDIR=	${.CURDIR}/../mew
 
 # set emacs port
+USE_EMACS=	yes
 EMACS_PORT_NAME=emacs20
 
 # target name for make build and install

@@ -17,6 +17,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	sf@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 INFO=		navi2ch
 

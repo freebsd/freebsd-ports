@@ -12,6 +12,7 @@ COMMENT=	A major mode for editing SGML and XML documents for emacs20
 MASTERDIR=	${.CURDIR}/../psgml
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

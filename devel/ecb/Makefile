@@ -17,6 +17,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Emacs Code Browser
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

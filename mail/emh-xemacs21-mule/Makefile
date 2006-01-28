@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../emh
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 
 .include "${MASTERDIR}/Makefile"

@@ -8,6 +8,8 @@
 RUN_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
 
 MASTERDIR=	${.CURDIR}/../lookup
+
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include	"${MASTERDIR}/Makefile"

@@ -14,6 +14,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/semi
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
 # packages-subdirectories which this port requires

@@ -12,6 +12,7 @@ PORTCLASS=	slave
 
 MASTERDIR=	${.CURDIR}/../../converters/mule-ucs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

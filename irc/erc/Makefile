@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	karma@ez.pereslavl.ru
 COMMENT=	ERC is an Emacs InternetRelayChat client
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 ERC_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

@@ -14,6 +14,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/bitmap
 
 # Setup EMACS_PORT_NAME variable.
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

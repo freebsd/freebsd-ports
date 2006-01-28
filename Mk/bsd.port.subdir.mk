@@ -240,7 +240,7 @@ describe:
 .if defined(PORTSTOP)
 readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
 	@${ECHO_MSG} "===>   Creating README.html for all ports"
-	@perl ${PORTSDIR}/Tools/make_readmes < ${PORTSDIR}/${INDEXFILE}
+	@perl ${PORTSDIR}/Tools/make_readmes < ${INDEXDIR}/${INDEXFILE}
 .else
 readmes: readme
 .endif
@@ -265,6 +265,7 @@ README=	${TEMPLATES}/README.category
 .endif
 COMMENTFILE?=	${.CURDIR}/pkg/COMMENT
 DESCR?=		${.CURDIR}/pkg/DESCR
+INDEXDIR?=	${PORTSDIR}
 .if ${OSVERSION} >= 500036
 INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
 .else
@@ -333,7 +334,7 @@ PORTSEARCH_IGNORECASE?=1
 
 _PORTSEARCH=	\
 	here=${.CURDIR}; \
-	if [ ! -r ${PORTSDIR}/${INDEXFILE} ] ; then \
+	if [ ! -r ${INDEXDIR}/${INDEXFILE} ] ; then \
 		echo "The ${.TARGET} target requires ${INDEXFILE}. Please run make index or make fetchindex."; \
 	else \
 	cd ${PORTSDIR}; \
@@ -441,7 +442,8 @@ _PORTSEARCH=	\
 	      if (i in disp) \
 	        printf("%s:\t%s\n", names[i], $$i); \
 	    print(""); \
-	  }' ${PORTSDIR}/${INDEXFILE} ; fi
+	  }' ${INDEXDIR}/${INDEXFILE}; \
+	fi
 
 search:
 	@${_PORTSEARCH}

@@ -16,6 +16,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Weather Report in Japanese Regions
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 
 .if ${EMACS_PORT_NAME} != "emacs21"

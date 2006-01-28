@@ -12,6 +12,7 @@ PKGDIR=         ${.CURDIR}
 PLIST=          ${MASTERDIR}/pkg-plist
 PKGMESSAGE=     ${MASTERDIR}/pkg-message
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages

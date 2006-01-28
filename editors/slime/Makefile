@@ -14,6 +14,7 @@ MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Superior Lisp Interaction Mode for Emacs
 
 USE_GMAKE=	yes
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 INFO=		slime

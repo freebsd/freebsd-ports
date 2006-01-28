@@ -18,6 +18,7 @@ COMMENT=	Enhanced support for editing and running Scheme code
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 NO_WRKSUBDIR=	yes

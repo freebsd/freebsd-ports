@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-mule
 MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	Yet Another LaTeX mode and html mode on Emacs (for mule 2.3)
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=mule
 
 .include	"${MASTERDIR}/Makefile"

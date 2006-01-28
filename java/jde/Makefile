@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dougk@dougk-ff7.net
 COMMENT=	Java Development Environment for Emacs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

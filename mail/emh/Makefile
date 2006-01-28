@@ -20,6 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${D
 SEMI_TRUNK=	1.14
 SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} == "emacs21"

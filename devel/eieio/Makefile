@@ -18,6 +18,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Enhanced Integration of Emacs Interpreted Objects
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

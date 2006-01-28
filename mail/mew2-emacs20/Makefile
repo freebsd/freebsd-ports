@@ -18,6 +18,7 @@ MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
 PKGDIR=		${.CURDIR}
 
 # set emacs port
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

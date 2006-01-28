@@ -28,6 +28,7 @@ EMACS_SETUPEL=	${PORTNAME}-setup.el
 MEW_DOCDIR?=	share/doc/${PORTNAME}
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs19
 
 # target name for make build and install

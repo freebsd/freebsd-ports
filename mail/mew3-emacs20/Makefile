@@ -21,6 +21,7 @@ PKGDIR=		${.CURDIR}
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 
 # set emacs port
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

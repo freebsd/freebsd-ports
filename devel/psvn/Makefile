@@ -17,6 +17,7 @@ COMMENT=	Subversion interface for Emacs
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 NO_WRKSUBDIR=	yes

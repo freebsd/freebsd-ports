@@ -16,6 +16,7 @@ COMMENT=	A major mode for editing XML documents for emacs21
 # distfile version
 NXML_VER=	20041004
 NXML_STARTUPEL=	nxml-startup.el
+USE_EMACS=	yes
 EMACS_PORT_NAME=emacs21
 
 INFO=		nxml-mode

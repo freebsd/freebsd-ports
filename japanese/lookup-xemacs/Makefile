@@ -9,6 +9,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.cookie:$
 RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.cookie:${PORTSDIR}/editors/xemacs-packages
 
 MASTERDIR=	${.CURDIR}/../lookup
+USE_EMACS=	yes
 EMACS_PORT_NAME=xemacs21-mule
 
 .if defined(PARALLEL_PACKAGE_BUILD)

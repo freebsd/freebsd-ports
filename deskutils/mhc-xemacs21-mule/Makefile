@@ -8,6 +8,7 @@
 MASTERDIR=	${.CURDIR}/../mhc
 MAINTAINER=	yoichi@FreeBSD.org
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 IGNORE=		hangs during build
 

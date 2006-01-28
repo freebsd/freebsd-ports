@@ -19,6 +19,7 @@ COMMENT=	A popular newsreader for emacs20
 
 HAS_CONFIGURE=	yes
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=emacs20
 
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \

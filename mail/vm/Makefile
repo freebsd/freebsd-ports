@@ -25,6 +25,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	olive@oban.frmug.org
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 MAKE_ARGS=	prefix=${PREFIX} \
 		INFODIR=${PREFIX}/info \

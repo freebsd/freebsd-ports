@@ -30,6 +30,7 @@ PLIST_SUB=	PSGML_STARTUPEL=${PSGML_STARTUPEL}
 NOT_FOR_ARCHS=	ia64
 
 # This is a master port.
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule

@@ -14,6 +14,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/apel
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	mule
 
 .include <${MASTERDIR}/Makefile>

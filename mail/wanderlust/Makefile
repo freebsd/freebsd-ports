@@ -18,6 +18,7 @@ DISTNAME=	wl-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Yet another message interface on Emacsen
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 MIMEUI_PORT_NAME?=	${MIMEUI_PRODUCT}
