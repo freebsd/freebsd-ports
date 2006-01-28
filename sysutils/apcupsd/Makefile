@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 #
+# $Tecnik: ports/sysutils/apcupsd/Makefile,v 1.2 2006/01/26 00:35:21 itetcu Exp $
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.18
@@ -12,11 +13,10 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	A daemon for controlling APC UPS
 
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 
 STARTUP_SCRIPT=	apcupsd.sh.sample
 PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
