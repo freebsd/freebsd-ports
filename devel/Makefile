@@ -620,6 +620,7 @@
     SUBDIR += naturaldocs
     SUBDIR += ncnf
     SUBDIR += ncurses
+    SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += ngpt
