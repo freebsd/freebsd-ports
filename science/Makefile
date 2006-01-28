@@ -10,6 +10,7 @@
     SUBDIR += bblimage
     SUBDIR += buddy
     SUBDIR += cdcl
+    SUBDIR += cdf
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep

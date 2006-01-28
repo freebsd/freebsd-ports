@@ -1,0 +1,29 @@
+A set of script files named `definitions.<shell-type>' should now
+exist in the `bin' directory.
+`<shell-type>' specifies the type of shell (command interpreter)
+for which the script file was written: `C' (C-shell style), `K'
+(Korn shell style),  or `B' (Bourne shell style).  They are script
+files that a user would execute to set up the environment variables
+and aliases (where supported) necessary to use CDF.
+A user would then execute the appropriate script file to define
+aliases for the toolkit programs and environment variables for
+the locations of the include files, CDF library, etc.
+
+For the Korn, BASH, and POSIX shells, the following command
+would be used:
+
+       . %%PREFIX%%/bin/definitions.K
+
+For the Bourne shell, the following command would be used:
+
+       . %%PREFIX%%/bin/definitions.B
+
+For the C and `tcsh' shells, the following command would be
+used:
+
+       source %%PREFIX%%/bin/definitions.C
+
+Because aliases are not available when using the Bourne shell,
+the toolkit programs must be invoked by specifying the actual
+name of the executable file.  The script file `definitions.B'
+describes how to do this.
