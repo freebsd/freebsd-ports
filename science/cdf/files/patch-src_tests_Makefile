@@ -1,0 +1,29 @@
+--- src/tests/Makefile.orig	Thu May 12 19:12:49 2005
++++ src/tests/Makefile	Fri Jan 27 22:20:32 2006
+@@ -31,16 +31,16 @@
+ SHELL=/bin/sh
+ NULL=true
+ 
+-FORTRAN=
+-FCx=
+-CCx=
+-SHARED=
+-FOPTIONS=
+-FOPTIONSld=
+-COPTIONS=
+-COPTIONSld=
+-SYSLIBS=
+-SHAREDEXT=
++#FORTRAN=
++#FCx=
++#CCx=
++#SHARED=
++#FOPTIONS=
++#FOPTIONSld=
++#COPTIONS=
++#COPTIONSld=
++#SYSLIBS=
++#SHAREDEXT=
+ 
+ INCLUDEcdf=../include
+ 
