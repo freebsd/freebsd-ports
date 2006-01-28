@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WikiWikiWeb clone using PHP
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PHP=	mbstring
 PHP4_PORT?=	www/mod_php4
 WANT_PHP_WEB=	yes
