@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -120,7 +120,7 @@ CONFIGURE_ENV+=		LIBS="-lutil"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"missing wide-character functions in FreeBSD-4.x libc"
+BROKEN=		missing wide-character functions in FreeBSD-4.x libc
 .endif
 
 .if ${OSVERSION} < 502110
