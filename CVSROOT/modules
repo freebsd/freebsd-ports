@@ -1028,6 +1028,7 @@ cdbkup		ports/sysutils/cdbkup
 cdcl		ports/science/cdcl
 cdecl		ports/devel/cdecl
 cdf		ports/sysutils/cdf
+cdf3		ports/science/cdf
 cdialog		ports/devel/cdialog
 cdif		ports/textproc/cdif
 cdiff		ports/textproc/cdiff
