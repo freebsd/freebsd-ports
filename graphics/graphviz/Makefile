@@ -63,12 +63,11 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} 's|-Wno-unused-parameter||g' ${WRKSRC}/configure
+.endif
 
 post-install: install-ldconfig-file
 .if !defined(NOPORTDOCS)

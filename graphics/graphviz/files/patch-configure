@@ -1,5 +1,14 @@
 --- configure.orig	Sun Aug 28 15:09:28 2005
-+++ configure	Wed Dec 28 16:15:47 2005
++++ configure	Sat Jan 28 22:36:22 2006
+@@ -4690,7 +4690,7 @@
+ 	        *-dec-osf* )
+ 	            CFLAGS="${CFLAGS} -mieee -Wall"
+ 	            ;;
+-                *alpha*-*-linux* )
++                *alpha*-*-* )
+                     CFLAGS="${CFLAGS} -mieee -Wall"
+                     ;;
+ 	        *-apple-darwin* )
 @@ -23372,21 +23372,21 @@
  fi
  fi
