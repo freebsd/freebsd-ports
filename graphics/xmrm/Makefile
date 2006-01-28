@@ -28,6 +28,10 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on amd64 or sparc64
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/xmrm_mpeg ${PREFIX}/bin
