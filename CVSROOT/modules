@@ -1389,6 +1389,7 @@ cssc		ports/devel/cssc
 cssed		ports/www/cssed
 cstream		ports/misc/cstream
 cstringbuffer	ports/devel/cstringbuffer
+csup		ports/net/csup
 csv2latex	ports/textproc/csv2latex
 csv2xml		ports/textproc/csv2xml
 ct		ports/net/ct
