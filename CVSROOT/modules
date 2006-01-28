@@ -1389,7 +1389,6 @@ cssc		ports/devel/cssc
 cssed		ports/www/cssed
 cstream		ports/misc/cstream
 cstringbuffer	ports/devel/cstringbuffer
-csup		ports/net/csup
 csv2latex	ports/textproc/csv2latex
 csv2xml		ports/textproc/csv2xml
 ct		ports/net/ct
@@ -6830,6 +6829,7 @@ net-snmp	ports/net-mgmt/net-snmp
 net-snmp-tkmib	ports/net-mgmt/net-snmp-tkmib
 net-snmp4	ports/net-mgmt/net-snmp4
 net6		ports/net/net6
+net_csup	ports/net/csup
 netams		ports/net-mgmt/netams
 netatalk	ports/net/netatalk
 netbeans	ports/java/netbeans
