@@ -80,6 +80,7 @@
     SUBDIR += cphone
     SUBDIR += crescendo
     SUBDIR += cryptcat
+    SUBDIR += csup
     SUBDIR += ct
     SUBDIR += ctorrent
     SUBDIR += ctrace
