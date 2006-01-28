@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	nm@web.am
-COMMENT=	Library to bind applications on multihomed machines to specefic IP address
+COMMENT=	Library to bind applications on multihomed machines to specific IP address
 
 INSTALLS_SHLIB=	YES
 NOMAN=		YES
