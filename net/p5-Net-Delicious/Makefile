@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Net-Delicious
-PORTVERSION=	0.92
-PORTREVISION=	2
+PORTVERSION=	0.96
+PORTREVISION=	0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -31,6 +31,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=		Net::Delicious.3 \
+		Net::Delicious::Bundle.3 \
 		Net::Delicious::Constants.3 \
 		Net::Delicious::Constants::Api.3 \
 		Net::Delicious::Constants::Pause.3 \
@@ -38,6 +39,7 @@ MAN3=		Net::Delicious.3 \
 		Net::Delicious::Constants::Uri.3 \
 		Net::Delicious::Date.3 \
 		Net::Delicious::Iterator.3 \
+		Net::Delicious::Object.3 \
 		Net::Delicious::Post.3 \
 		Net::Delicious::Subscription.3 \
 		Net::Delicious::Tag.3 \

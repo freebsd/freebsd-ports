@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/Delicious.pm
+%%SITE_PERL%%/Net/Delicious/Bundle.pm
 %%SITE_PERL%%/Net/Delicious/Constants.pm
 %%SITE_PERL%%/Net/Delicious/Constants/Api.pm
 %%SITE_PERL%%/Net/Delicious/Constants/Pause.pm
@@ -6,6 +7,7 @@
 %%SITE_PERL%%/Net/Delicious/Constants/Uri.pm
 %%SITE_PERL%%/Net/Delicious/Date.pm
 %%SITE_PERL%%/Net/Delicious/Iterator.pm
+%%SITE_PERL%%/Net/Delicious/Object.pm
 %%SITE_PERL%%/Net/Delicious/Post.pm
 %%SITE_PERL%%/Net/Delicious/Subscription.pm
 %%SITE_PERL%%/Net/Delicious/Tag.pm
