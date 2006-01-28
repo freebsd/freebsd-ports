@@ -17,13 +17,25 @@ USE_X_PREFIX=	yes
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CEFEDIRS=	ima musicas niveles sonidos
+
+OPTIONS=	NLS "Native Language Support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+FLAG_NLS=	true
+.endif
 
 post-extract:
 	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cpp|h)" \
@@ -38,10 +50,12 @@ do-install:
 		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${PREFIX}/bin && \
 		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+.if defined(FLAG_NLS)
 .for FILE in es ca fr
 	${MKDIR} ${PREFIX}/share/locale/${FILE}/LC_MESSAGES && \
 		${INSTALL_DATA} ${WRKSRC}/po/${FILE}.gmo ${PREFIX}/share/locale/${FILE}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -50,4 +64,4 @@ post-install:
 		${INSTALL_DATA} AUTHORS ChangeLog README README_ES ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
