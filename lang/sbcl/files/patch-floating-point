@@ -1,10 +1,10 @@
 Index: src/code/float-trap.lisp
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/code/float-trap.lisp,v
-retrieving revision 1.18
-diff -u -r1.18 float-trap.lisp
---- src/code/float-trap.lisp	14 Jul 2005 16:30:34 -0000	1.18
-+++ src/code/float-trap.lisp	27 Sep 2005 22:36:42 -0000
+retrieving revision 1.19
+diff -u -r1.19 float-trap.lisp
+--- src/code/float-trap.lisp	6 Oct 2005 19:43:00 -0000	1.19
++++ src/code/float-trap.lisp	26 Jan 2006 20:43:33 -0000
 @@ -153,10 +153,28 @@
    `(not (zerop (logand ,(dpb (float-trap-mask traps) float-traps-byte 0)
                         (floating-point-modes)))))
@@ -38,12 +38,12 @@ diff -u -r1.18 float-trap.lisp
 Index: src/code/target-signal.lisp
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/code/target-signal.lisp,v
-retrieving revision 1.28
-diff -u -r1.28 target-signal.lisp
---- src/code/target-signal.lisp	4 Sep 2005 20:14:49 -0000	1.28
-+++ src/code/target-signal.lisp	27 Sep 2005 22:36:42 -0000
-@@ -149,6 +149,10 @@
- 
+retrieving revision 1.33
+diff -u -r1.33 target-signal.lisp
+--- src/code/target-signal.lisp	17 Oct 2005 09:18:47 -0000	1.33
++++ src/code/target-signal.lisp	26 Jan 2006 20:43:33 -0000
+@@ -164,6 +164,10 @@
+ 
  ;;;; etc.
  
 +;;; extract si_code from siginfo_t
@@ -56,20 +56,20 @@ diff -u -r1.28 target-signal.lisp
 Index: src/runtime/interrupt.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/interrupt.c,v
-retrieving revision 1.94
-diff -u -r1.94 interrupt.c
---- src/runtime/interrupt.c	13 Sep 2005 12:28:41 -0000	1.94
-+++ src/runtime/interrupt.c	27 Sep 2005 22:36:42 -0000
-@@ -426,7 +426,7 @@
-     if (sigismember(&deferrable_sigset,signal))
+retrieving revision 1.109
+diff -u -r1.109 interrupt.c
+--- src/runtime/interrupt.c	5 Jan 2006 14:13:14 -0000	1.109
++++ src/runtime/interrupt.c	26 Jan 2006 20:43:33 -0000
+@@ -454,7 +454,7 @@
          check_interrupts_enabled_or_lose(context);
+ #endif
  
 -#ifdef LISP_FEATURE_LINUX
 +#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
      /* Under Linux on some architectures, we appear to have to restore
         the FPU control word from the context, as after the signal is
         delivered we appear to have a null FPU control word. */
-@@ -606,7 +606,7 @@
+@@ -644,7 +644,7 @@
      os_context_t *context = arch_os_get_context(&void_context);
      struct thread *thread=arch_os_get_current_thread();
      struct interrupt_data *data=thread->interrupt_data;
@@ -78,7 +78,7 @@ diff -u -r1.94 interrupt.c
      os_restore_fp_control(context);
  #endif
      if(maybe_defer_handler(interrupt_handle_now,data,signal,info,context))
-@@ -623,7 +623,7 @@
+@@ -661,7 +661,7 @@
  {
      os_context_t *context = (os_context_t*)void_context;
  
@@ -87,7 +87,7 @@ diff -u -r1.94 interrupt.c
      os_restore_fp_control(context);
  #endif
      check_blockables_blocked_or_lose();
-@@ -641,7 +641,7 @@
+@@ -679,7 +679,7 @@
      os_context_t *context = arch_os_get_context(&void_context);
      struct thread *thread=arch_os_get_current_thread();
      struct interrupt_data *data=thread->interrupt_data;
@@ -96,9 +96,9 @@ diff -u -r1.94 interrupt.c
      os_restore_fp_control(context);
  #endif
      if(maybe_defer_handler(low_level_interrupt_handle_now,data,
-@@ -1139,3 +1139,9 @@
- 
+@@ -1276,3 +1276,9 @@
      SHOW("returning from interrupt_init()");
+ #endif
  }
 +
 +int
@@ -109,11 +109,11 @@ diff -u -r1.94 interrupt.c
 Index: src/runtime/x86-arch.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-arch.c,v
-retrieving revision 1.32
-diff -u -r1.32 x86-arch.c
---- src/runtime/x86-arch.c	27 Sep 2005 15:52:50 -0000	1.32
-+++ src/runtime/x86-arch.c	27 Sep 2005 22:36:42 -0000
-@@ -229,7 +229,7 @@
+retrieving revision 1.36
+diff -u -r1.36 x86-arch.c
+--- src/runtime/x86-arch.c	3 Jan 2006 09:52:38 -0000	1.36
++++ src/runtime/x86-arch.c	26 Jan 2006 20:43:33 -0000
+@@ -248,7 +248,7 @@
         single-stepping (as far as I can tell) this is somewhat moot,
         but it might be worth either moving this code up or deleting
         the single-stepping code entirely.  -- CSR, 2002-07-15 */
@@ -128,7 +128,7 @@ RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-bsd-os.c,v
 retrieving revision 1.7
 diff -u -r1.7 x86-bsd-os.c
 --- src/runtime/x86-bsd-os.c	14 Jul 2005 15:41:21 -0000	1.7
-+++ src/runtime/x86-bsd-os.c	27 Sep 2005 22:36:42 -0000
++++ src/runtime/x86-bsd-os.c	26 Jan 2006 20:43:33 -0000
 @@ -85,6 +85,52 @@
  #endif  /* __NetBSD__ */
  
@@ -185,11 +185,11 @@ diff -u -r1.7 x86-bsd-os.c
 Index: tools-for-build/grovel-headers.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/tools-for-build/grovel-headers.c,v
-retrieving revision 1.10
-diff -u -r1.10 grovel-headers.c
---- tools-for-build/grovel-headers.c	14 Jul 2005 20:24:19 -0000	1.10
-+++ tools-for-build/grovel-headers.c	27 Sep 2005 22:36:42 -0000
-@@ -223,5 +223,15 @@
+retrieving revision 1.12
+diff -u -r1.12 grovel-headers.c
+--- tools-for-build/grovel-headers.c	16 Jan 2006 15:39:58 -0000	1.12
++++ tools-for-build/grovel-headers.c	26 Jan 2006 20:43:33 -0000
+@@ -234,6 +234,16 @@
      defsignal("sigxcpu", SIGXCPU);
      defsignal("sigxfsz", SIGXFSZ);
  #endif
@@ -203,5 +203,6 @@ diff -u -r1.10 grovel-headers.c
 +    defconstant("fpe-fltinv", FPE_FLTINV);
 +    defconstant("fpe-fltsub", FPE_FLTSUB);
 +#endif
+ #endif // _WIN32
      return 0;
  }

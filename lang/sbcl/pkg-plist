@@ -32,6 +32,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Additional-Distributed-Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Automatic-Recompilation-of-Stale-Fasls.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Beyond-the-ANSI-Standard.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Bivalent-Streams.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Calling-Lisp-From-C.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Class-sb_002dbsd_002dsockets_003ahost_002dent.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Class-sb_002dbsd_002dsockets_003ainet_002dsocket.html
