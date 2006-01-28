@@ -952,6 +952,7 @@
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope28
+    SUBDIR += zope29
     SUBDIR += zope3
     SUBDIR += zope-FileSystemSite
     SUBDIR += zope-annotations
