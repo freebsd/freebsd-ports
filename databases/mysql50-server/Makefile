@@ -184,6 +184,12 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 CONFIGURE_ARGS+=--without-server
 
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	ZLIB=""
+.else
+PLIST_SUB+=     ZLIB="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @zlib_dir@ strings mysys dbug extra regex libmysql_r libmysql client scripts @man_dirs@|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in ${WRKSRC}/mysys/Makefile.in ${WRKSRC}/dbug/Makefile.in
