@@ -13,6 +13,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../devel/pcl-cvs-emacs
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 .include "${MASTERDIR}/Makefile"

@@ -14,6 +14,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/flim113
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs19
 
 .include "${MASTERDIR}/Makefile"

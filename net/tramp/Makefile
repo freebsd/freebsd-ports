@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent remote file access tool for emacsen
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 USE_GMAKE=	yes

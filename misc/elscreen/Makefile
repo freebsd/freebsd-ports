@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 .if (${EMACS_PORT_NAME} == "emacs21")
 DEPPORT_SUFFIX=	

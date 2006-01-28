@@ -20,6 +20,7 @@ BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
 		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/tree-widget/tree-widget.el:${PORTSDIR}/editors/tree-widget
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

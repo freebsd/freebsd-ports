@@ -19,6 +19,7 @@ COMMENT=	A Scheme interpreter and native code compiler
 USE_GMAKE=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install compile-bee install-bee
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 MAN1=		bigloo.1
 INFO=		bigloo

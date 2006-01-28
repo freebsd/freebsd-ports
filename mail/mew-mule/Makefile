@@ -12,6 +12,7 @@ COMMENT=	Message interface to Emacs Window for mule
 MASTERDIR=	${.CURDIR}/../mew
 
 # set emacs port
+USE_EMACS=	yes
 EMACS_PORT_NAME=mule
 
 # target name for make build and install

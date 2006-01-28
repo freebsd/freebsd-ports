@@ -16,6 +16,7 @@ COMMENT=	Lovely Sister Database
 
 BUILD_DEPENDS=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 .if (${EMACS_PORT_NAME} == emacs21)
 DEPPORT_SUFFIX=

@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../irchat-pj-emacs20
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 XEMACS_ONLY=		""
 LISPDIR=		lib/xemacs/site-packages/lisp/${PORTNAME}

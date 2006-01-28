@@ -12,6 +12,7 @@ COMMENT=	A major mode for editing SGML and XML documents for mule
 MASTERDIR=	${.CURDIR}/../psgml
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	mule
 
 BUILD_DEPENDS+=	makeinfo:${PORTSDIR}/print/texinfo

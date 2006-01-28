@@ -24,6 +24,7 @@ PORTCLASS?=	master
 
 # emacs port setup
 .if (${PORTCLASS} == "master")
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 .endif
 

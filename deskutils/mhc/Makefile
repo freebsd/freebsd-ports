@@ -16,6 +16,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Message Harmonized Calendaring system
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/emacs
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .include <bsd.port.pre.mk>

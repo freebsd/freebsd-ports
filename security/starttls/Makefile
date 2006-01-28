@@ -15,6 +15,7 @@ COMMENT=	Simple wrapper program for STARTTLS on ${EMACS_PORT_NAME}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 COMMENT=	Simple front-end to w3m for xemacs21-mule
 

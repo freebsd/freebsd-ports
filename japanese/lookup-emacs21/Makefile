@@ -18,6 +18,7 @@ COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
 FILESDIR=	${.CURDIR}/../lookup/files
 PKGDIR=		${.CURDIR}/../lookup
 PLIST=		${.CURDIR}/pkg-plist
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 INFO?=		lookup lookup-guide

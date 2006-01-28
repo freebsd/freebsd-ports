@@ -40,6 +40,7 @@ PORTCLASS?=	master
 
 # Setup EMACS_PORT_NAME variable.
 .if (${PORTCLASS} == "master")
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 DEPPORT_SUFFIX=		
 .else

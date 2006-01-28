@@ -12,6 +12,7 @@ PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs-devel-mule
 
 HAS_CONFIGURE=	yes

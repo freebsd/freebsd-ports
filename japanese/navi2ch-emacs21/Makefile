@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../navi2ch-emacs20
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 
 .if !defined(WITHOUT_X11)

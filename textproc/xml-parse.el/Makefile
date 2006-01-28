@@ -18,6 +18,7 @@ EXTRACT_ONLY=
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Code to efficiently read/write XML data with Elisp
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

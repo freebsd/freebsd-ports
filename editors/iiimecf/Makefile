@@ -18,6 +18,7 @@ COMMENT=	Internet/Intranet Input Method Emacs Client Framework for GNU Emacs 20
 BUILD_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 RUN_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
 UN_DEFINE=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/mule-ucs/un-define.el

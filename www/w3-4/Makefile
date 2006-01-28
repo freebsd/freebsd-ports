@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=yes
 INSTALL_TARGET=	install
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 INFO=		w3-faq w3

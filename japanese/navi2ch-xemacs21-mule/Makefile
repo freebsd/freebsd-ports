@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../navi2ch-emacs20
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-base:${PORTSDIR}/editors/xemacs-packages

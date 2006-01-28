@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

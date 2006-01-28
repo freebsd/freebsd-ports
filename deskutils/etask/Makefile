@@ -19,6 +19,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		ps2pdf:${PORTSDIR}/print/ghostscript-gnu \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"

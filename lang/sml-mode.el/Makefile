@@ -17,6 +17,7 @@ COMMENT=	An EMACS mode for editing Standard ML programs
 
 ALL_TARGET=	default
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 
 #

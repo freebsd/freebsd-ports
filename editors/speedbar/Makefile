@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Quick access to files and tags in an Emacs frame
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 USE_REINPLACE=	yes

@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Simple front-end to w3m for emacs21
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \

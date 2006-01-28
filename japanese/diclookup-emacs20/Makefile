@@ -18,6 +18,7 @@ COMMENT=	CDROM dictionary client for emacs. (needs ndtpd or dserver package)
 RUN_DEPENDS=	${FONTSDIR}/a18rk.pcf.gz:${PORTSDIR}/x11-fonts/intlfonts
 
 WRKSRC=		${WRKDIR}/diclookup-mule-${PORTVERSION}
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 MAKE_ARGS+=	LISPDIR="${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/diclookup"
 FONTSDIR=	${X11BASE}/lib/X11/fonts/local

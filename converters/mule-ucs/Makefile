@@ -25,6 +25,7 @@ MASTER_SITE_M17N+=	\
 PORTCLASS?=	master
 
 .if (${PORTCLASS} == "master")
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 .endif
 

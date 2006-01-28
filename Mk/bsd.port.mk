@@ -120,6 +120,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${MASTER_SITE_OVERRIDE})
 # EXTRACT_ONLY	- If set, a subset of ${DISTFILES} you want to
 #				  actually extract.
+# ALWAYS_KEEP_DISTFILES - If set, the package building cluster will save the distfiles along
+#				  with the packages. This may be required to comply with some
+#				  licenses, e.g. GPL in some cases.
+#				  Default: not set.
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
@@ -348,6 +352,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Some installations may wish to override the default
 #				  to specify a version without X11 and/or localized
 #				  versions for their nationality.
+# WITH_GHOSTSCRIPT_GPL
+#				- If set, this port uses the GPL version of the ghostscript
+#				  software instead of the GNU version, which is used otherwise.
 # WITH_GHOSTSCRIPT_AFPL
 #				- If set, this port uses the AFPL version of the ghostscript
 #				  software instead of the GNU version, which is used otherwise.
@@ -364,7 +371,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_FREETYPE	- If set, this port uses the freetype print libraries.
 # USE_GL		- If set, this port uses libGL (not needed with XFree86 4.x
 #				  which already includes this functionality).
-# USE_MESA		- If set, this port uses libGL/libglut (deprecated).
 # USE_MOTIF		- If set, this port uses a Motif toolkit.  Implies USE_XPM.
 # NO_OPENMOTIF	- If set, this port uses a custom Motif toolkit
 #				  instead of Openmotif.
@@ -992,14 +998,8 @@ NOPRECIOUSSOFTMAKEVARS= yes
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
 BRANDELF?=	/usr/bin/brandelf
-.if exists(/usr/bin/bzip2)
 BZCAT?=		/usr/bin/bzcat
 BZIP2_CMD?=	/usr/bin/bzip2
-.else
-BZCAT?=		${LOCALBASE}/bin/bzcat
-BZIP2_CMD?=	${LOCALBASE}/bin/bzip2
-BZIP2DEPENDS=	yes
-.endif
 CAT?=		/bin/cat
 CHGRP?=		/usr/bin/chgrp
 CHMOD?=		/bin/chmod
@@ -1224,6 +1224,7 @@ X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
+INDEXDIR?=		${PORTSDIR}
 .if ${OSVERSION} >= 500036
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
 .else
@@ -1350,7 +1351,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
-.if defined(EMACS_PORT_NAME)
+.if defined(USE_EMACS) || defined(EMACS_PORT_NAME)
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
@@ -1491,27 +1492,17 @@ MANCOMPRESSED?=	no
 .endif
 
 .if defined(PATCHFILES)
-.if ${PATCHFILES:M*.bz2}x != x && defined(BZIP2DEPENDS)
-PATCH_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 .if ${PATCHFILES:M*.zip}x != x
 PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
-.if defined(USE_BZIP2) && defined(BZIP2DEPENDS)
-EXTRACT_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
-.endif
-
-.if defined(USE_DOS2UNIX)
-USE_REINPLACE=	yes
 .endif
 
 .if defined(USE_GCC)
@@ -1743,10 +1734,6 @@ PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 PLIST_SUB+=			XAWVER=${XAWVER}
 
-.if defined(USE_MESA)
-LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/libglut
-.endif
-
 .if defined(USE_BISON)
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
@@ -1859,21 +1846,17 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 # compatible functionality.
 .if !defined(WITHOUT_X11)
 .if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
 GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
-.else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
-.endif
+.elif defined(WITH_GHOSTSCRIPT_GPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-gpl
 .else
 GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
 .endif
 .else
 .if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
 GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
-.else
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
-.endif
+.elif defined(WITH_GHOSTSCRIPT_GPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-gpl-nox11
 .else
 GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
 .endif
@@ -2008,7 +1991,11 @@ EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
 .else
 EXTRACT_BEFORE_ARGS?=	-dc
+.if defined(EXTRACT_PRESERVE_OWNERSHIP)
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
+.else
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+.endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
 .else
@@ -2089,7 +2076,11 @@ _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
-.if exists(${LOCALBASE}/sbin/pkg_info)
+
+.if (${OSVERSION} < 491101 && ${PKGORIGIN} != "sysutils/pkg_install") || exists(${LOCALBASE}/sbin/pkg_info)
+.if ${OSVERSION} < 491101 && ${PKGORIGIN} != "sysutils/pkg_install"
+EXTRACT_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
+.endif
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
 PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
 PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
@@ -2581,7 +2572,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	deskutils devel dns editors elisp emulators finance french ftp \
 	games geography german gnome graphics hamradio haskell hebrew hungarian \
 	ipv6 irc japanese java kde korean lang linux lisp \
-	mail math mbone misc multimedia net net-im net-mgmt news \
+	mail math mbone misc multimedia net net-im net-mgmt net-p2p news \
 	palm parallel pear perl5 picobsd plan9 polish portuguese print \
 	python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
@@ -2863,7 +2854,7 @@ clean:
 .if defined(IGNORE_SILENT)
 IGNORECMD=	${DO_NADA}
 .else
-IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.
+IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
 .endif
 
 .for target in check-sanity fetch checksum extract patch configure all build install reinstall package
@@ -3389,10 +3380,12 @@ check-conflicts:
 	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
 	conflicts_with=; \
 	for entry in $${found}; do \
-		prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-		orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
-		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-			conflicts_with="$${conflicts_with} $${entry}"; \
+		if ${PKG_INFO} -e $${entry} ; then \
+			prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
+			orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
+			if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+				conflicts_with="$${conflicts_with} $${entry}"; \
+			fi; \
 		fi; \
 	done; \
 	if [ -n "$${conflicts_with}" ]; then \
@@ -4449,6 +4442,16 @@ ${deptype:L}-depends:
 					${ECHO_MSG} "===>   ${PKGNAME} depends on package: $$prog - not found"; \
 					notfound=1; \
 				fi; \
+				if [ $$notfound != 0 ]; then \
+					inverse_dep=`${ECHO_CMD} $$prog | ${SED} \
+						-e 's/<=/=gt=/; s/</=ge=/; s/>=/=lt=/; s/>/=le=/' \
+						-e 's/=gt=/>/; s/=ge=/>=/; s/=lt=/</; s/=le=/<=/'`; \
+					pkg_info=`${PKG_INFO} -E "$$inverse_dep" || ${TRUE}`; \
+					if [ "$$pkg_info" != "" ]; then \
+						${ECHO_MSG} "===>   Found $$pkg_info, but you need to upgrade to $$prog."; \
+						exit 1; \
+					fi; \
+				fi; \
 			elif ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
@@ -4920,11 +4923,11 @@ ${.CURDIR}/README.html:
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
 _PRETTY_PRINT_DEPENDS_LIST=\
-	if [ ! -r ${PORTSDIR}/${INDEXFILE} ] ; then \
+	if [ ! -r ${INDEXDIR}/${INDEXFILE} ] ; then \
 		${ECHO_CMD} "${.TARGET} requires an INDEX file (${INDEXFILE}). Please run make index or make fetchindex."; \
 	else \
 		${ECHO_CMD} -n 'This port requires package(s) "' ; \
-		${ECHO_CMD} -n `${AWK} -F\| '$$1 ~ /^${PKGNAME}/ {print $$8;}' ${PORTSDIR}/${INDEXFILE}` ; \
+		${ECHO_CMD} -n `${AWK} -F\| '$$1 ~ /^${PKGNAME}/ {print $$8;}' ${INDEXDIR}/${INDEXFILE}` ; \
 		${ECHO_CMD} '" to ${.TARGET:C/pretty-print-(.*)-depends-list/\1/}.'; \
 	fi;
 

@@ -32,6 +32,7 @@ MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 
 .if exists(${PREFIX}/bin/emacs) || exists(${PREFIX}/bin/xemacs)
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
 EMACS_NO_BUILD_DEPENDS=	yes
 EMACS_NO_RUN_DEPENDS=	yes

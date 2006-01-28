@@ -14,6 +14,7 @@ MASTERDIR=	${.CURDIR}/../../editors/flim
 COMMENT=	FLIM, message representation or encoding elisp library for xemacs21-mule
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
 # packages-subdirectories which this port requires

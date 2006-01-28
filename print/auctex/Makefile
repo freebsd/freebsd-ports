@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR} \
 		--with-auto-dir=${PREFIX}/${LISPDIR}/auctex/auto \
 		--with-texmf-dir=${PREFIX}/${TEXMFDIR}
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 

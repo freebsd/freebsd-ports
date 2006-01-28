@@ -39,6 +39,7 @@ SUBDIR += multimedia
 SUBDIR += net
 SUBDIR += net-im
 SUBDIR += net-mgmt
+SUBDIR += net-p2p
 SUBDIR += news
 SUBDIR += palm
 SUBDIR += polish
@@ -67,14 +68,19 @@ PORTSTOP=	yes
 .include <bsd.port.subdir.mk>
 
 index:
-	@rm -f ${.CURDIR}/${INDEXFILE}
-	@cd ${.CURDIR} && make ${.CURDIR}/${INDEXFILE}
+	@rm -f ${INDEXDIR}/${INDEXFILE}
+	@cd ${.CURDIR} && make ${INDEXDIR}/${INDEXFILE}
 
-fetchindex:
-	@cd ${.CURDIR} && ${FETCHINDEX} ${MASTER_SITE_INDEX}/${INDEXFILE}.bz2 && bunzip2 -f ${INDEXFILE}.bz2 && chmod a+r ${INDEXFILE}
+fetchindex: ${INDEXDIR}/{INDEXFILE}.bz2
+	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
+	chmod a+r ${INDEXDIR}/${INDEXFILE}
+
+${INDEXDIR}/{INDEXFILE}.bz2: .PHONY
+	@${FETCHINDEX} -o ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
 
 MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
-FETCHINDEX?=	fetch -am
+SETENV?=	/usr/bin/env
+FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am
 INDEX_JOBS?=	2
 
 .if !defined(INDEX_VERBOSE)
@@ -85,7 +91,7 @@ INDEX_ECHO_MSG=		echo 1>&2
 INDEX_ECHO_1ST=		echo
 .endif
 
-${.CURDIR}/${INDEXFILE}:
+${INDEXDIR}/${INDEXFILE}:
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		export LOCALBASE=/nonexistentlocal; \
@@ -119,18 +125,18 @@ ${.CURDIR}/${INDEXFILE}:
 	cat $${tmpdir}/${INDEXFILE}.desc.* | perl ${.CURDIR}/Tools/make_index | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
-		sed -e 's../.g' > ${.CURDIR}/${INDEXFILE}.tmp; \
+		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		sed -e "s,$${LOCALBASE},/usr/local," -e "s,$${X11BASE},/usr/X11R6," \
-			${.CURDIR}/${INDEXFILE}.tmp > ${.CURDIR}/${INDEXFILE}; \
+			${INDEXDIR}/${INDEXFILE}.tmp > ${INDEXDIR}/${INDEXFILE}; \
 	else \
-		mv ${.CURDIR}/${INDEXFILE}.tmp ${.CURDIR}/${INDEXFILE}; \
+		mv ${INDEXDIR}/${INDEXFILE}.tmp ${INDEXDIR}/${INDEXFILE}; \
 	fi; \
 	rm -rf $${tmpdir}; \
 	echo " Done."
 
-print-index:	${.CURDIR}/${INDEXFILE}
-	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${.CURDIR}/${INDEXFILE}
+print-index:	${INDEXDIR}/${INDEXFILE}
+	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}
 
 CVS?= cvs
 SUP?= cvsup

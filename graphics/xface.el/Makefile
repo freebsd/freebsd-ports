@@ -23,6 +23,7 @@ COMMENT=	X-Face encoder/decoder/viewer for Emacsen
 
 RUN_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 LISP_FILES=	x-face

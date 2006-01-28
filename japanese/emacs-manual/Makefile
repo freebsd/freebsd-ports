@@ -19,6 +19,7 @@ COMMENT=	Japanese translation of the GNU Emacs Manual
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES
 USE_REINPLACE=	yes

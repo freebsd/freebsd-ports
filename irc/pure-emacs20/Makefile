@@ -21,6 +21,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Primitive Universal Relay-chat Environment
 
 USE_BZIP2=	yes
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 EMACS_ONLY?=	""

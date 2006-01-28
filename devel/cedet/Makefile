@@ -19,6 +19,7 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Collection of Emacs Development Environment Tools
 
 PORTCLASS=	master
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

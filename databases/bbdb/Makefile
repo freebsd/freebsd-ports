@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Big Brother Database
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
 ALL_TARGET=	bbdb info

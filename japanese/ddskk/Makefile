@@ -19,6 +19,7 @@ COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 .if (${EMACS_PORT_NAME} == emacs21)
 DEPPORT_SUFFIX=

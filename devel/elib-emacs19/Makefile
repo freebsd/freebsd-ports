@@ -13,6 +13,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../devel/elib
 
 # emacs port setup
+USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs19
 
 .include "${MASTERDIR}/Makefile"
