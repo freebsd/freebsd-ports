@@ -26,6 +26,12 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN8=		nepenthes.8
 DOCS=		README README.VFS logo-shaded.svg
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 #post-install:
 #.if !defined(NOPORTDOCS)
 #	${MKDIR} ${DOCSDIR}
@@ -34,4 +40,4 @@ DOCS=		README README.VFS logo-shaded.svg
 #.endfor
 #.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
