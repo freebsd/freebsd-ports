@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	xvid4conf
-PORTVERSION=	1.10
-PORTREVISION=	3
+PORTVERSION=	1.12
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	ftp://ftp.nerim.net/debian-marillat/pool/main/x/xvid4conf/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	XviD configuration panel for transcode
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
