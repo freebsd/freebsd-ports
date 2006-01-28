@@ -6,28 +6,18 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
 
-.if defined(PORTDOCS)
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
-.endif
-
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-
-PORTDOCS=	*
 MAN1=		exiv2.1
-
-.if defined(PORTDOCS)
-ALLTARGET=	all doc
-.endif
+ALLTARGET=	all
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +30,7 @@ USE_GCC=	3.4
 .endif
 
 post-install:
-.if defined(PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
 .endif
