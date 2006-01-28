@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.2-0
+DISTVERSION=	2.2-1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -27,12 +27,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base
 
-RESTRICTED=	"No resale or commercial use"
+RESTRICTED=	No resale or commercial use
 
 USE_GL=			yes
 USE_GCC=		3.4
 USE_GMAKE=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-download					\
@@ -46,7 +45,7 @@ CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
-#DOC_TARGET=	manual-full.pdf
+DOC_TARGET=	freefem++doc.pdf
 PORTDOCS=	AUTHORS BUGS COPYING HISTORY HISTORY_BEFORE_2005 INNOVATION README TODO ${DOC_TARGET}
 BADSAMPLES=	load/myfunction.o
 
@@ -82,9 +81,9 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
 		${WRKSRC}/src/mpi/Makefile.in
 
-post-build-MANUAL-PDF-IS-BROKEN:
+post-build:
 .if !defined(NOPORTDOCS)
-	@(cd ${BUILD_WRKSRC}/DOC;	\
+	(cd ${BUILD_WRKSRC}/DOC;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${DOC_TARGET}; \
 	${CP} ${DOC_TARGET} ${BUILD_WRKSRC})
 .endif
