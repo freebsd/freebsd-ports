@@ -16,6 +16,8 @@ DISTNAME=	YaBB_${PORTVERSION}
 MAINTAINER=	infofarmer@gmail.com
 COMMENT=	The original free open-source forum written in Perl
 
+BROKEN=		Left over files
+
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
