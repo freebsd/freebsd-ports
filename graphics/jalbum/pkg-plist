@@ -1215,6 +1215,7 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/World/up.gif
 %%DATADIR%%/skins/Chameleon/styles/World/up1.gif
 %%DATADIR%%/skins/Chameleon/texts/texts.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_da.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_de.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_en.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_es.properties
@@ -1222,7 +1223,10 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/texts/texts_hu.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_it.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_nl.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_pl.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sk.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_sr.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_sr_latin.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sv.properties
 %%DATADIR%%/skins/Colorful/defs.jap
 %%DATADIR%%/skins/Colorful/index.htt
@@ -1907,9 +1911,9 @@ bin/jalbum
 %%DATADIR%%/skins/Simple/hints.jap
 %%DATADIR%%/skins/Simple/index.htt
 %%DATADIR%%/skins/Simple/init.bsh
-%%DATADIR%%/skins/Simple/onload.bsh
 %%DATADIR%%/skins/Simple/res/au.gif
 %%DATADIR%%/skins/Simple/res/b_pil.gif
+%%DATADIR%%/skins/Simple/res/blank.html
 %%DATADIR%%/skins/Simple/res/f_pil.gif
 %%DATADIR%%/skins/Simple/res/folder.gif
 %%DATADIR%%/skins/Simple/res/la.gif
@@ -2103,7 +2107,9 @@ bin/jalbum
 %%DATADIR%%/texts/texts_pl.properties
 %%DATADIR%%/texts/texts_pt.properties
 %%DATADIR%%/texts/texts_ru.properties
+%%DATADIR%%/texts/texts_sh.properties
 %%DATADIR%%/texts/texts_sk.properties
+%%DATADIR%%/texts/texts_sr.properties
 %%DATADIR%%/texts/texts_sv.properties
 %%DATADIR%%/texts/texts_th.properties
 %%DATADIR%%/texts/texts_tr.properties
