@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pop-before-smtp
-PORTVERSION=	1.37
+PORTVERSION=	1.39
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	popbsmtp
@@ -22,14 +22,11 @@ RUN_DEPENDS=	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail \
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	pop-before-smtp.sh
+SUB_FILES=	pkg-message
 POD2MAN?=	pod2man
-PKGMESSAGE=	${WRKDIR}/.pkg-message
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 MAN8=		${PORTNAME}.8
-
-# Override this as you see fit
-POPBSMTP_RC_SCRIPT?=	${PREFIX}/etc/rc.d/pop-before-smtp.sh.sample
 
 post-patch:
 	@${REINPLACE_CMD} 's|^#!/usr/bin/perl|#!${PERL}|; \
@@ -44,9 +41,6 @@ do-install:
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/pop-before-smtp-conf.pl \
 		${PREFIX}/etc/pop-before-smtp-conf.pl.sample
-	@${SED} -e "s|%PREFIX%|${PREFIX}|g" \
-		< ${FILESDIR}/pop-before-smtp.sh > ${POPBSMTP_RC_SCRIPT}
-	@${CHMOD} 755 ${POPBSMTP_RC_SCRIPT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in COPYING ChangeLog README TODO
@@ -62,8 +56,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s|%PREFIX%|${PREFIX}|" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 etc/pop-before-smtp-conf.pl.sample
-etc/rc.d/pop-before-smtp.sh.sample
 sbin/pop-before-smtp
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
