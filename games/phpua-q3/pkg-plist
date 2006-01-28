@@ -74,3 +74,4 @@
 @dirrm %%PHPUA%%/images/templates/default/plugin_q3
 @dirrm %%PHPUA%%/images/plugin_q3/maps
 @dirrm %%PHPUA%%/images/plugin_q3
+@dirrmtry %%PHPUA%%/images/templates/wap/
