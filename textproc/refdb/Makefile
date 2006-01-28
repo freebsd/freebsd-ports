@@ -17,6 +17,8 @@ COMMENT=	Bibliographic reference database
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		dbi.0:${PORTSDIR}/databases/libdbi
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
