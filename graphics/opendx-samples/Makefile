@@ -7,22 +7,28 @@
 #
 
 PORTNAME=	opendx-samples
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.4.0
 CATEGORIES=	graphics math
-MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
-	        http://opendx.npaci.edu/source/
+MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dxsamples-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example files for IBM's OpenDX
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SHELL=/bin/sh
+BUILD_DEPENDS=	dx:${PORTSDIR}/graphics/opendx
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-# XXX
-# someone with some knowledge of Java should make this work
-post-configure:
-	@touch ${WRKSRC}/java/samples/samples.jar
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	SHELL=/bin/sh
+USE_GMAKE=	yes
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	1.3+
+PLIST_SUB+=	JAVA=""
+.else
+CONFIGURE_ARGS+=	--without-javadx
+PLIST_SUB+=	JAVA="@comment "
+.endif
 
 .include <bsd.port.mk>

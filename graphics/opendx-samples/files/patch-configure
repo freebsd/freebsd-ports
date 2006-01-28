@@ -1,0 +1,22 @@
+--- configure.orig	Tue Jan  3 21:41:37 2006
++++ configure	Sat Jan 28 16:16:24 2006
+@@ -1937,7 +1937,7 @@
+ 
+   test -n "$DX" && break
+ done
+-
++  PORTARCH=`uname -p`
+   DXARCH=`$DX -whicharch`
+   echo "$as_me:$LINENO: result: found $DXARCH" >&5
+ echo "${ECHO_T}found $DXARCH" >&6
+@@ -2253,8 +2253,8 @@
+ fi
+ DX_JAR=""
+ DX_JAVA_CLASSPATH=""
+-if test -r "$DXINST/lib_$DXARCH/arch.mak" ; then
+-  DX_JAVA_CLASSPATH=`grep DX_JAVA_CLASSPATH $DXINST/lib_$DXARCH/arch.mak | sed -e "s/DX_JAVA_CLASSPATH =//" -e "s/ //"`
++if test -r "$DXINST/lib_$PORTARCH/arch.mak" ; then
++  DX_JAVA_CLASSPATH=`grep DX_JAVA_CLASSPATH $DXINST/lib_$PORTARCH/arch.mak | sed -e "s/DX_JAVA_CLASSPATH =//" -e "s/ //"`
+ fi
+ if test -r "$DXINST/java/htmlpages/dx.jar" ; then
+   DX_JAR="$DXINST/java/htmlpages/dx.jar"
