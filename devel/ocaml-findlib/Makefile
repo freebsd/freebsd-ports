@@ -27,7 +27,11 @@ MAN1=	ocamlfind.1
 MAN5=	META.5 findlib.conf.5 site-lib.5
 
 # this list comes from the findlib configure script
-OCAML_DIRS=	dbm dynlink graphics num num-top str threads unix stdlib bigarray labltk camlp4
+OCAML_DIRS=	dbm dynlink graphics num num-top str threads unix stdlib bigarray camlp4
+
+.if !defined(WITHOUT_X11)
+OCAML_DIRS+=	labltk
+.endif
 
 post-install:
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/findlib -type f | \
