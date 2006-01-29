@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ceferino
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
 
@@ -22,7 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CEFEDIRS=	ima musicas niveles sonidos
+CEFEDIRS=	ima music levels sounds
 
 OPTIONS=	NLS "Native Language Support"	on
 
@@ -37,17 +37,22 @@ PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 post-extract:
-	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cpp|h)" \
+	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cc|h)" \
 		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/'
+	@${REINPLACE_CMD} -e 's/-lSDL /`sdl11-config --libs`/g' ${WRKSRC}/configure
 
 post-configure:
-	@${REINPLACE_CMD} -e 's/LIBS = -lSDL -lSDL_image -lSDL_mixer/LIBS = \
-		-lSDL-1.1 -lSDL_image -lSDL_mixer -pthread -lintl/g' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's/-pthread/-pthread -lintl/g' ${WRKSRC}/src/Makefile
 
 do-install:
 	@cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${PREFIX}/bin && \
+		${INSTALL_PROGRAM} ceferino ceferinoeditor ceferinosetup ${PREFIX}/bin
+	@cd ${WRKSRC}/data && \
 		${FIND} ${CEFEDIRS} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 		${FIND} -E ${CEFEDIRS} -type f -iregex ".*\.(png|jpg|xm|map|wav)" -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 .if defined(FLAG_NLS)
@@ -61,7 +66,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && \
-		${INSTALL_DATA} AUTHORS ChangeLog README README_ES ${DOCSDIR}
+		${INSTALL_DATA} AUTHORS ChangeLog README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,69 +1,67 @@
 bin/ceferino
-bin/ceferinosetup
 bin/ceferinoeditor
+bin/ceferinosetup
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
-%%DOCSDIR%%/README_ES
 %%NLS%%share/locale/ca/LC_MESSAGES/ceferino.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ceferino.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ceferino.mo
 %%DATADIR%%/ima/barra.png
 %%DATADIR%%/ima/cargando.png
 %%DATADIR%%/ima/editor.png
-%%DATADIR%%/ima/final_1.jpg
-%%DATADIR%%/ima/final_2.jpg
-%%DATADIR%%/ima/final_3.jpg
-%%DATADIR%%/ima/final_4.jpg
-%%DATADIR%%/ima/final_5.jpg
-%%DATADIR%%/ima/final_6.jpg
-%%DATADIR%%/ima/final_7.jpg
-%%DATADIR%%/ima/fondo.jpg
-%%DATADIR%%/ima/fondos.jpg
 %%DATADIR%%/ima/fuente1.png
 %%DATADIR%%/ima/fuente2.png
 %%DATADIR%%/ima/fuente.png
 %%DATADIR%%/ima/gaucho.png
+%%DATADIR%%/ima/how_to_play.png
 %%DATADIR%%/ima/icono.png
 %%DATADIR%%/ima/items.png
 %%DATADIR%%/ima/mate.png
-%%DATADIR%%/ima/menu.jpg
-%%DATADIR%%/ima/menu_oscuro.jpg
 %%DATADIR%%/ima/niveles.png
 %%DATADIR%%/ima/op_items.png
 %%DATADIR%%/ima/pelota_1.png
 %%DATADIR%%/ima/pelota_2.png
 %%DATADIR%%/ima/pelota_3.png
 %%DATADIR%%/ima/pelota_4.png
+%%DATADIR%%/ima/tiros.png
+%%DATADIR%%/ima/tit_1.png
+%%DATADIR%%/ima/tit_2.png
+%%DATADIR%%/ima/tit_3.png
+%%DATADIR%%/ima/final1.jpg
+%%DATADIR%%/ima/final2.jpg
+%%DATADIR%%/ima/final3.jpg
+%%DATADIR%%/ima/final4.jpg
+%%DATADIR%%/ima/final5.jpg
+%%DATADIR%%/ima/final6.jpg
+%%DATADIR%%/ima/fondo.jpg
+%%DATADIR%%/ima/fondos.jpg
+%%DATADIR%%/ima/menu.jpg
 %%DATADIR%%/ima/pres_casa.jpg
 %%DATADIR%%/ima/pres_lee.jpg
 %%DATADIR%%/ima/pres_losers.jpg
 %%DATADIR%%/ima/pres_rapto.jpg
 %%DATADIR%%/ima/pres_sentado.jpg
 %%DATADIR%%/ima/pres_vs.jpg
-%%DATADIR%%/ima/tiros.png
-%%DATADIR%%/ima/tit_1.png
-%%DATADIR%%/ima/tit_2.png
-%%DATADIR%%/ima/tit_3.png
-%%DATADIR%%/ima/how_to_play.png
-%%DATADIR%%/sonidos/alarma.wav
-%%DATADIR%%/sonidos/explo.wav
-%%DATADIR%%/sonidos/gancho.wav
-%%DATADIR%%/sonidos/item.wav
-%%DATADIR%%/sonidos/mata.wav
-%%DATADIR%%/sonidos/pierde.wav
-%%DATADIR%%/sonidos/romper.wav
-%%DATADIR%%/sonidos/tecla1.wav
-%%DATADIR%%/sonidos/tecla2.wav
-%%DATADIR%%/sonidos/tic.wav
-%%DATADIR%%/sonidos/tiro.wav
-%%DATADIR%%/sonidos/toc.wav
-%%DATADIR%%/sonidos/boom.wav
-%%DATADIR%%/niveles/base.map
-%%DATADIR%%/musicas/menu.xm
+%%DATADIR%%/ima/fuente_2.png
+%%DATADIR%%/music/menu.xm
+%%DATADIR%%/levels/base.map
+%%DATADIR%%/sounds/alarma.wav
+%%DATADIR%%/sounds/boom.wav
+%%DATADIR%%/sounds/explo.wav
+%%DATADIR%%/sounds/gancho.wav
+%%DATADIR%%/sounds/item.wav
+%%DATADIR%%/sounds/mata.wav
+%%DATADIR%%/sounds/pierde.wav
+%%DATADIR%%/sounds/romper.wav
+%%DATADIR%%/sounds/tecla1.wav
+%%DATADIR%%/sounds/tecla2.wav
+%%DATADIR%%/sounds/tic.wav
+%%DATADIR%%/sounds/tiro.wav
+%%DATADIR%%/sounds/toc.wav
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/ima
-@dirrm %%DATADIR%%/sonidos
-@dirrm %%DATADIR%%/niveles
-@dirrm %%DATADIR%%/musicas
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
