@@ -24,7 +24,13 @@ HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/xmms/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugxmms.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/modplugxmms/.libs/libmodplugxmms.so ${PREFIX}/${PLUGDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
