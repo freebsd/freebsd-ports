@@ -14,11 +14,8 @@ share/locale/eu/LC_MESSAGES/timer-applet.mo
 share/locale/fr/LC_MESSAGES/timer-applet.mo
 share/locale/pl/LC_MESSAGES/timer-applet.mo
 share/locale/sv/LC_MESSAGES/timer-applet.mo
-@exec mkdir -p %D/share/gnome/help/timer-applet/C/figures
-@exec mkdir -p %D/share/gnome/help/timer-applet/fr/figures
-@dirrm share/gnome/help/timer-applet/C/figures
+share/locale/tr/LC_MESSAGES/timer-applet.mo
 @dirrm share/gnome/help/timer-applet/C
-@dirrm share/gnome/help/timer-applet/fr/figures
 @dirrm share/gnome/help/timer-applet/fr
 @dirrm share/gnome/help/timer-applet
 @dirrm share/gnome/omf/timer-applet
