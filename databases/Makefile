@@ -392,6 +392,7 @@
     SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlite3
     SUBDIR += rubygem-activerecord
+    SUBDIR += rubygem-memcache-client
     SUBDIR += slony1
     SUBDIR += sqlite2
     SUBDIR += sqlite3
