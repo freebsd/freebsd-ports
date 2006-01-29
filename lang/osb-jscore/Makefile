@@ -12,7 +12,7 @@ CATEGORIES=	lang www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-webcore
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
 BROKEN=		Does not build
