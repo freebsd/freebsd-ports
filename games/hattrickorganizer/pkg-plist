@@ -190,6 +190,8 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayout.class
 %%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayoutConstants.class
 %%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout/TableLayoutConstraints.class
+%%DATADIR%%/hoplugins/commons/ui/renderer/HtmlCellRenderer.class
+%%DATADIR%%/hoplugins/commons/ui/renderer/TextAreaCellRenderer.class
 %%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter$1.class
 %%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter$2.class
 %%DATADIR%%/hoplugins/commons/ui/sorter/AbstractTableSorter.class
@@ -362,6 +364,8 @@ bin/hattrickorganizer
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapPanel.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingRecapTable.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/TrainingTable.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/bar/ColorBar$1.class
+%%DATADIR%%/hoplugins/trainingExperience/ui/bar/ColorBar.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/bar/ColorModus.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/bar/StateBar.class
 %%DATADIR%%/hoplugins/trainingExperience/ui/bar/VerticalIndicator.class
@@ -506,6 +510,7 @@ bin/hattrickorganizer
 @dirrm %%DATADIR%%/hoplugins/commons/vo
 @dirrm %%DATADIR%%/hoplugins/commons/utils
 @dirrm %%DATADIR%%/hoplugins/commons/ui/sorter
+@dirrm %%DATADIR%%/hoplugins/commons/ui/renderer
 @dirrm %%DATADIR%%/hoplugins/commons/ui/info/clearthought/layout
 @dirrm %%DATADIR%%/hoplugins/commons/ui/info/clearthought
 @dirrm %%DATADIR%%/hoplugins/commons/ui/info

@@ -1,10 +1,12 @@
 #!/bin/sh
 #
-# Start script for Hattrick Organizer v0.3
+# Start script for Hattrick Organizer v0.31
 # Originally created by patta, RAGtime and others
 # Last Change (2005-08-07) by Lars Engels (lars@bsd-geek.de)
 # 
 # List of changes: 
+#
+#       0.31    - configurable java memory (-m or $MAX_MEMORY)
 #
 # 	0.3	- Introduce the bourne shell as standard shell
 #		- Make HO! multi-user capable
@@ -27,7 +29,7 @@
 #  - edit the HODIR variable to this new directory (without the ``)    #
 #     and HOHOME to any user writable directory!                       #
 #                                                                      #
-#  - start HO! out of a terminal via e.g. 'hattrickorganizer'          #
+#  - start HO! out of a terminal via e.g. 'ho'		               #
 #                                                                      #
 #  - manage your team :)                                               #
 #                                                                      #
@@ -42,7 +44,7 @@
 #
 #HODIR=`pwd`
 
-HODIR="%%DATADIR%%"
+HODIR=`pwd`
 
 # Next comes HO!'s directory to store its user data.
 # This directory must be writable by the user,
@@ -56,14 +58,14 @@ HODIR="%%DATADIR%%"
 # 
 #HOHOME=~/.hattrickorganizer
 
-HOHOME=~/.hattrickorganizer
+HOHOME=$HODIR
 
 # Where can I find java?
 # Default is just looking at $PATH
 # (remember option -j)
 #JAVA=`which java`
 
-JAVA="%%LOCALBASE%%/bin/java"
+JAVA=`which java`
 
 # Enter the maximum amount of backups you do want to store.
 # Default is 5
@@ -71,6 +73,13 @@ JAVA="%%LOCALBASE%%/bin/java"
 #MAX_BACKUPS=5
 
 MAX_BACKUPS=5
+
+# Enter the maximum amount of memory available to the java VM.
+# Default is 256 MegaBytes!
+#
+#MAX_MEMORY=256m
+
+MAX_MEMORY=256m
 
 ########################################################################
 #        DO NOT EDIT ANY MORE UNTIL YOU KNOW WHAT YOU'RE DOING!        #
@@ -113,8 +122,6 @@ JAVAVERREQ=1.4.1
 
 # Which database files and name of backup file?
 
-# Which database files and name of backup file?
-
 BACKUPLIST="database.data database.script database.backup database.properties"
 PREFIX=database
 
@@ -126,9 +133,10 @@ DATE=`date "+%Y-%m-%d"`
 
 CHECK=true
 
-# Perform backup by default?
+# Perform NO backup by default (because HO does this now internally!
+# For old behavoir edit or start with option --backup/-b)
 
-BACKUP=true
+BACKUP=false
 
 # Restore by default? 
 # IMPORTANT! This is just for initialisation!
@@ -155,15 +163,17 @@ help(){
 		Usage: $HONAME [option]
 
 	Options:
-          -h  --help         This help text
-          -v  --version      Show HO! version
-          -f  --force        Start without checking java-version
-          -nb --nobackup     Start without backup
-          -j  --java <path>  Use this java
-          -r  --restore      Restore the last backup-file
-          -rd --restoredate  <date>
-                             Restore the backup-file from <date>
-          -bd --backupdir    Use this as the backup directory
+          -h  --help          This help text
+          -v  --version       Show HO! version
+          -f  --force         Start without checking java-version
+          -j  --java <path>   Use this java
+          -m  --memory <mem>  Max. size of memory allocation pool for java
+          -b  --backup        Do a database backup before HO starts
+          -nb --nobackup      Start without backup (by script)
+          -r  --restore       Restore the last backup-file
+          -rd --restoredate   <date>
+                              Restore the backup-file from <date>
+          -bd --backupdir     Use this as the backup directory
 	EOF
 	exit 1
 }
@@ -171,22 +181,24 @@ help(){
 # Start HO!
 
 start(){
-	echo "Starting HO from $HOHOME..."  
 	cd $HOHOME
-	JAVA_VERSION="%%JAVA_VERSION%%" "${JAVA}" -jar $HODIR/hocoded.jar
+        echo "Starting HO from $HOHOME..."  
+	
+        $JAVA -classpath $HODIR HOLauncher  
+  	$JAVA -Xmx$MAX_MEMORY -jar $HODIR/hocoded.jar
 
-          # check database and print warning
-	  if [ `grep modified $DATABASEDIR/database.properties | \
+        # check database and print warning
+	if [ `grep modified $DATABASEDIR/database.properties | \
 			cut -d= -f2` = "no" ] 
-	  then
+	then
 		echo "Database OK!"      
-	  else
+	else
 		cat <<-EOF >&2
 			Database was not relased correctly!
 			Probably next time you will have problems starting HO...
 			... but you can restore a backup with switches -r or -rd. :-)
 		EOF
-	  fi
+	fi 
 }
 
 # Backup 
@@ -286,7 +298,7 @@ checkjava(){
 
 ### MAIN
 
-# Run throuh the params
+# Run through the params
 
 until [ -z "$1" ]
 do
@@ -300,12 +312,24 @@ do
 			fi
 			shift
 			;;
+		-m|--memory)   
+			MAX_MEMORY=$2;
+			if [ -z $MAX_MEMORY ]
+			then
+				echo "Option m or memory needs a parameter!" >&2
+				exit 1
+			fi
+			shift
+			;;
 		-v|--version)
 			echo "This is HO! version $HOVERSION";
 			exit 0
 			;;
 		-nb|--nobackup)
 			BACKUP=false
+			;;
+		-b|--backup)
+			BACKUP=true
 			;;
 		-f|--force)
 			CHECK=false
@@ -378,6 +402,18 @@ then
 	cp -r $HODIR/sprache $HOHOME	
 fi
 
+# copy needed parameter files if not already there
+
+if [ ! -e $HOHOME/ratings.dat ]
+then
+   cp $HODIR/ratings.dat $HOHOME/ratings.dat
+fi
+if [ ! -e $HOHOME/epv.dat ]
+then
+   cp $HODIR/epv.dat $HOHOME/epv.dat
+fi
+
+
 # Perform backups or restore only if $DATABASEDIR exists
 
 if [ -d $DATABASEDIR ]
@@ -385,11 +421,10 @@ then
 	`$BACKUP`  && backup
 	`$RESTORE` && restore
 else
-	echo -e "No directory $DATABASEDIR found. \n
-		This is your first HO!-Session, isn't it? Have fun!"
+	echo -e "No directory $DATABASEDIR found. \n This is your first HO!-Session, isn't it? Have fun!"
 fi
 
-# Start HO!
+# Start HO! (or the Launcher)
 
 start
 
