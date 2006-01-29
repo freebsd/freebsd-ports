@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-x-plane
-PORTVERSION=	8.20
+PORTVERSION=	8.32
 CATEGORIES=	games linux
 MASTER_SITES=	# empty
 
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution prohibited"
-NO_PACKAGE=	"Package will be 348 MB, set FORCE_PACKAGE if you really want to build it"
+NO_PACKAGE=	"Package will be 482 MB, set FORCE_PACKAGE if you really want to build it"
 ONLY_FOR_ARCHS=	i386 amd64
 
 XDIR=		${PREFIX}/lib/x-plane
@@ -95,7 +95,7 @@ do-fetch:
 		${ECHO_CMD} "" ; \
 		${ECHO_CMD} "  - install the games/linux-x-plane-net-installer port" ; \
 		${ECHO_CMD} "  - as a normal user, run X-Plane-Net-Install, select a destination directory" ; \
-		${ECHO_CMD} "    with enough free space (you need about 550 MB), and install X-Plane" ; \
+		${ECHO_CMD} "    with enough free space (you need about 674 MB), and install X-Plane" ; \
 		${ECHO_CMD} "  - as root, create the distribution tarball:" ; \
 		${ECHO_CMD} "" ; \
 		${ECHO_CMD} "      cd ${MASTERDIR}" ; \
@@ -133,8 +133,7 @@ dist:
 
 post-patch:
 	@${FIND} ${WRKSRC} -type d -empty -exec ${TOUCH} "{}/.keep_me" \;
-	@${MKDIR} ${WRKSRC}/.programs/Resources
-	@${MV} -f ${WRKSRC}/Resources/plugins ${WRKSRC}/.programs/Resources
+	@${MKDIR} ${WRKSRC}/.programs
 .for p in ${PROGRAMS}
 	@${MV} -f ${WRKSRC}/${p}-* ${WRKSRC}/.programs
 .endfor
