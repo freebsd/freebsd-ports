@@ -4,6 +4,8 @@ share/gnome/application-registry/winefish.applications
 share/gnome/applications/winefish.desktop
 share/gnome/mime-info/winefish.mime
 share/gnome/mime-info/winefish.keys
+share/pixmaps/gnome-application-winefish-project.png
+share/pixmaps/winefish-icon.png
 share/locale/it/LC_MESSAGES/winefish.mo
 share/locale/vi/LC_MESSAGES/winefish.mo
 share/mime/packages/winefish.xml
@@ -23,3 +25,5 @@ share/mime/packages/winefish.xml
 %%DATADIR%%/winefish_splash.png
 %%DATADIR%%/words.default
 @dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
