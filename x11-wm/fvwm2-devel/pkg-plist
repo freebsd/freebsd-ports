@@ -47,6 +47,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmSave
 libexec/fvwm/%%FVWM_VERSION%%/FvwmSaveDesk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmScript
 libexec/fvwm/%%FVWM_VERSION%%/FvwmScroll
+libexec/fvwm/%%FVWM_VERSION%%/FvwmTabs
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTalk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTaskBar
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTheme
@@ -381,6 +382,8 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/ConfigFvwmIconMan
 %%DATADIR%%/ConfigFvwmIdent
 %%DATADIR%%/ConfigFvwmPager
+%%DATADIR%%/ConfigFvwmProxyDefaults
+%%DATADIR%%/ConfigFvwmTabs
 %%DATADIR%%/ConfigFvwmScroll
 %%DATADIR%%/ConfigFvwmSetup
 %%DATADIR%%/ConfigFvwmTaskBar
@@ -393,7 +396,6 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmForm-Setup
 %%DATADIR%%/FvwmForm-Talk
 %%DATADIR%%/FvwmForm-TalkHelp
-%%DATADIR%%/ConfigFvwmProxyDefaults
 %%DATADIR%%/FvwmScript-BaseConfig
 %%DATADIR%%/FvwmScript-BellSetup
 %%DATADIR%%/FvwmScript-Buttons
@@ -409,6 +411,7 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmScript-ScreenSetup
 %%DATADIR%%/FvwmScript-Setup95
 %%DATADIR%%/FvwmScript-WidgetDemo
+%%DATADIR%%/FvwmTabs-DefaultSetup
 %%DATADIR%%/fvwm-script-ComExample.pl
 %%DATADIR%%/fvwm-script-setup95.pl
 %%DATADIR%%/system.fvwm2rc-sample-95
@@ -446,8 +449,8 @@ man/man1/xpmroot.1.gz
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/fvwm.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
+@unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv_SE 2>/dev/null || true
 @dirrm %%DATADIR%%/perllib/General
 @dirrm %%DATADIR%%/perllib/FVWM/Tracker
 @dirrm %%DATADIR%%/perllib/FVWM/Module
