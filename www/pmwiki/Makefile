@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.13
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A WikiWikiWeb clone using PHP
-
-BROKEN=		Incomplete pkg-plist
 
 USE_PHP=	mbstring
 PHP4_PORT?=	www/mod_php4
@@ -27,7 +25,6 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_SUB+=	PMWIKIDIR=${PMWIKIDIR}
-PLIST=	${WRKDIR}/pkg-plist
 
 pre-fetch:
 .if !defined(PMWIKIDIR)
@@ -41,7 +38,7 @@ WWWUSER?=	www
 WWWGROUP?=	www
 
 post-configure:
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%PMWIKIDIR%%#${PMWIKIDIR}#g' pkg-message > ${PKGMESSAGE}
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%PMWIKIDIR%%#${PMWIKIDIR}#g' pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/${PMWIKIDIR}
@@ -56,6 +53,6 @@ pre-install:
 post-install:
 	@${MKDIR} -m 775 ${PREFIX}/${PMWIKIDIR}/wiki.d
 	@${CHOWN} ${WWWUSER}:${WWWGROUP} ${PREFIX}/${PMWIKIDIR}/wiki.d
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
