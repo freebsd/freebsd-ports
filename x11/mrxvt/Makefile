@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mrxvt
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	materm
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A tabbed version of rxvt
@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 .if defined(WITH_JAPANESE)
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
