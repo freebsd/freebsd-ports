@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vep
-PORTVERSION=	1.0.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-1.0.1.1-200410221351/
+MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/R-1.1.0.1-200509071822/
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	-examples
 DISTNAME=	VE-examples-${PORTVERSION}
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-PLIST_SUB=	RELEASEVERSION=1.0.1
+PLIST_SUB=	RELEASEVERSION=1.1.0.1
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
