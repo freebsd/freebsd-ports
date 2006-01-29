@@ -33,7 +33,7 @@
 %%PHPWEBFTPDIR%%/img/txt.gif
 %%PHPWEBFTPDIR%%/img/upload.gif
 %%PHPWEBFTPDIR%%/img/1px.gif
-%%PHPWEBFTPDIR%%/include/language/spanish.lang.php
+%%PHPWEBFTPDIR%%/include/language/bulgarian.lang.php
 %%PHPWEBFTPDIR%%/include/language/catalan.lang.php
 %%PHPWEBFTPDIR%%/include/language/chinese simplified.lang.php
 %%PHPWEBFTPDIR%%/include/language/chinese.lang.php
@@ -47,11 +47,14 @@
 %%PHPWEBFTPDIR%%/include/language/italian.lang.php
 %%PHPWEBFTPDIR%%/include/language/latvian.lang.php
 %%PHPWEBFTPDIR%%/include/language/latvian-utf8.lang.php
+%%PHPWEBFTPDIR%%/include/language/norwegian.lang.php
 %%PHPWEBFTPDIR%%/include/language/polish.lang.php
 %%PHPWEBFTPDIR%%/include/language/portuguese.lang.php
 %%PHPWEBFTPDIR%%/include/language/russian.lang.php
 %%PHPWEBFTPDIR%%/include/language/slovak.lang.php
-%%PHPWEBFTPDIR%%/include/language/bulgarian.lang.php
+%%PHPWEBFTPDIR%%/include/language/spanish.lang.php
+%%PHPWEBFTPDIR%%/include/language/swedish.lang.php
+%%PHPWEBFTPDIR%%/include/language/turkish.lang.php
 %%PHPWEBFTPDIR%%/include/functions.inc.php
 %%PHPWEBFTPDIR%%/include/index.html
 %%PHPWEBFTPDIR%%/include/script.js
