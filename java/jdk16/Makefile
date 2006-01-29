@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -29,8 +29,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 WITHOUT_WEB=	yes
 .endif
 
-USE_ICONV=	yes
-
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
 .else
@@ -45,6 +43,7 @@ BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/m
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
 MAKE_ENV+=	BROWSER=mozilla
 .endif
+USE_GNOME=	desktopfileutils
 MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
 .endif
 
@@ -104,6 +103,7 @@ EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
+USE_ICONV=	YES
 USE_REINPLACE=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
@@ -125,6 +125,9 @@ ALL_TARGET=	all
 
 PLIST_FILES=	jdk${JDK_VERSION}/jre/.systemPrefs/.system.lock \
 		jdk${JDK_VERSION}/jre/.systemPrefs/.systemRootModFile
+.if !defined(WITHOUT_WEB)
+PLIST_FILES+=	share/applications/sun_java15.desktop
+.endif
 PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 
 .if (${ARCH} == amd64)
@@ -230,6 +233,9 @@ post-patch:
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
 			${WRKSRC}/$${file}; \
 	done
+	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g"\
+		${WRKSRC}/../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
 
 .if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
@@ -289,9 +295,16 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+.if !defined(WITHOUT_WEB)
+	${INSTALL_DATA} ${JDKIMAGEDIR}/jre/plugin/desktop/sun_java.desktop \
+		${PREFIX}/share/applications/sun_java15.desktop
+.endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${JDKIMAGEDIR} -not -type d | \
 	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
+.if !defined(WITHOUT_WEB)
+	@${ECHO_MSG} '@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
+.endif
 .if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
@@ -301,10 +314,16 @@ do-install:
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
 	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
+.if !defined(WITHOUT_WEB)
+	@${ECHO_MSG} '@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || /usr/bin/true' >> ${TMPPLIST}
+.endif
 
 # XXX: put unregistervm into install script ?
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
+.if !defined(WITHOUT_WEB)
+	@-update-desktop-database
+.endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

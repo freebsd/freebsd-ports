@@ -1,0 +1,13 @@
+--- ../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop.orig	Sat Oct  1 20:14:45 2005
++++ ../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop	Sat Oct  1 20:16:12 2005
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Name=Java
+ Comment=Java Control Panel
+-Exec=INSTALL_DIR/JRE_NAME_VERSION/bin/ControlPanel
+-Icon=INSTALL_DIR/JRE_NAME_VERSION/plugin/desktop/sun_java.png
++Exec=%%PREFIX%%/jdk%%JDK_VERSION%%/bin/ControlPanel
++Icon=%%PREFIX%%/jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.png
+ Terminal=0
+ Type=Application
+ Categories=Application;Settings;X-Sun-Supported;X-Red-Hat-Base;
