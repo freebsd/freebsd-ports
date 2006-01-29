@@ -20,6 +20,22 @@ BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/rake-0.6.2.gemspec:${PORTSDIR}/devel/rub
 		${LOCALBASE}/${SPEC_DIR}/activerecord-1.13.2.gemspec:${PORTSDIR}/databases/rubygem-activerecord
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=	FCGI "FastCGI support" Off\
+		MEMCACHE_CLIENT "MemCache-Client support" Off
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
+
+# to get RUBY_SITEARCHLIBDIR
+USE_RUBY=	yes
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_FCGI)
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
+.endif
+
+.if defined(WITH_MEMCACHE_CLIENT)
+RUN_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/memcache-client-1.0.3.gemspec:${PORTSDIR}/databases/rubygem-memcache-client
+.endif
+
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
