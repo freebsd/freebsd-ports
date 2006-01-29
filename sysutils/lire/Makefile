@@ -35,7 +35,7 @@ PERL_BUILD_DEPENDS= \
 OPTIONS=	CHARTS "Have Charts output format" On \
 		HTML "Have HTML or DocBook output format" On \
 		PDF "Have PDF output format" Off \
-		EXCEL95 "Have Excel95 Spreadsheey output format" Off
+		EXCEL95 "Have Excel95 Spreadsheet output format" Off
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	yes
 USE_GMAKE=	yes
