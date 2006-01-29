@@ -27,6 +27,7 @@ MAN3=		Finance::Currency::Convert::WebserviceX.3
 .if ${PERL_LEVEL} < 500600
 post-patch:
 	@${PERL} -pi -e	'$$_ = "" if /^use warnings/o' \
+		${WRKSRC}/Makefile.PL \
 		${WRKSRC}/lib/Finance/Currency/Convert/WebserviceX.pm
 .endif
 
