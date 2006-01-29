@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	winefish
-DISTVERSION=	1.3.2-5
+DISTVERSION=	1.3.2.6c
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/
 EXTRACT_SUFX=	.tgz
@@ -25,7 +25,7 @@ RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 USE_GMAKE=	yes
-USE_GNOME=	libgnomeui
+USE_GNOME=	libgnomeui desktopfileutils
 USE_X_PREFIX=	yes
 
 OPTIONS=	CONTEXT	"Enable ConTexT support (Experimental)"	off \
@@ -49,5 +49,8 @@ CONFIGURE_ARGS+=	--with-vntex
 CONFIGURE_ARGS+=	--with-unikey-gtk
 .endif
 .endif
+
+post-install:
+	-@update-desktop-database
 
 .include <bsd.port.post.mk>
