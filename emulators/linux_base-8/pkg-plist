@@ -10184,3 +10184,49 @@ var/mail
 @dirrm etc/X11
 @dirrm etc
 @dirrm bin
+@exec /bin/mkdir -p %D/usr/local
+@exec /bin/mkdir -p %D/usr/local/bin
+@exec /bin/mkdir -p %D/usr/local/doc
+@exec /bin/mkdir -p %D/usr/local/etc
+@exec /bin/mkdir -p %D/usr/local/games
+@exec /bin/mkdir -p %D/usr/local/include
+@exec /bin/mkdir -p %D/usr/local/lib
+@exec /bin/mkdir -p %D/usr/local/libexec
+@exec /bin/mkdir -p %D/usr/local/sbin
+@exec /bin/mkdir -p %D/usr/local/share
+@exec /bin/mkdir -p %D/usr/local/share/info
+@exec /bin/mkdir -p %D/usr/local/share/man
+@exec /bin/mkdir -p %D/usr/local/share/man/man1
+@exec /bin/mkdir -p %D/usr/local/share/man/man2
+@exec /bin/mkdir -p %D/usr/local/share/man/man3
+@exec /bin/mkdir -p %D/usr/local/share/man/man4
+@exec /bin/mkdir -p %D/usr/local/share/man/man5
+@exec /bin/mkdir -p %D/usr/local/share/man/man6
+@exec /bin/mkdir -p %D/usr/local/share/man/man7
+@exec /bin/mkdir -p %D/usr/local/share/man/man8
+@exec /bin/mkdir -p %D/usr/local/share/man/man9
+@exec /bin/mkdir -p %D/usr/local/share/man/mann
+@exec /bin/mkdir -p %D/usr/local/src
+@dirrmtry usr/local/src
+@dirrmtry usr/local/share/man/mann
+@dirrmtry usr/local/share/man/man9
+@dirrmtry usr/local/share/man/man8
+@dirrmtry usr/local/share/man/man7
+@dirrmtry usr/local/share/man/man6
+@dirrmtry usr/local/share/man/man5
+@dirrmtry usr/local/share/man/man4
+@dirrmtry usr/local/share/man/man3
+@dirrmtry usr/local/share/man/man2
+@dirrmtry usr/local/share/man/man1
+@dirrmtry usr/local/share/man
+@dirrmtry usr/local/share/info
+@dirrmtry usr/local/share
+@dirrmtry usr/local/sbin
+@dirrmtry usr/local/libexec
+@dirrmtry usr/local/lib
+@dirrmtry usr/local/include
+@dirrmtry usr/local/games
+@dirrmtry usr/local/etc
+@dirrmtry usr/local/doc
+@dirrmtry usr/local/bin
+@dirrmtry usr/local
