@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${REALNAME}
 DISTNAME=	${REALNAME}-${PORTVERSION}
 
-PATCH_SITES=	http://www2.starcat.ne.jp/~takam/bsd/
+PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
 PATCHFILES=	${REALNAME}-bsd-0.04.patch.gz
 PATCH_DIST_STRIP=	-p1
 
