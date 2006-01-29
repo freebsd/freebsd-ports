@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.mor-pah.net/code/ \
 MAINTAINER=	vaida.bogdan@gmail.com
 COMMENT=	Deepmagic Information Gathering Tool
 
+BROKEN=		unfetchable
+
 HAS_CONFIGURE=	yes
 
 MAN1=		dmitry.1
