@@ -7,7 +7,7 @@
 
 # Please make sure all changes to this file are past through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-KDE_MAINTAINER=		will@FreeBSD.org
+KDE_MAINTAINER=		kde@FreeBSD.org
 
 # This section contains the USE_ definitions.
 # XXX: Write HAVE_ definitions sometime.
