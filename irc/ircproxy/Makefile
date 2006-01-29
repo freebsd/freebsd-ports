@@ -14,6 +14,8 @@ DISTNAME=	ircproxy-1.2.41d.pl2
 MAINTAINER=	jonaski@night-light.net
 COMMENT=	An IRC proxy server
 
+FORBIDDEN=	Sends email to authors after compilation
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}
 
