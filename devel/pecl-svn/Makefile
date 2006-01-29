@@ -14,7 +14,7 @@ DISTNAME=	svn-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kiesel@schlund.de
 COMMENT=	A PECL extension to the libsvn library
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
