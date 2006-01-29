@@ -1,39 +1,29 @@
---- pftop.c.orig	Tue Aug  5 03:20:39 2003
-+++ pftop.c	Wed May  4 18:41:13 2005
-@@ -1802,7 +1802,11 @@
- 			 PF_AZERO(PT_MASK(src), AF_INET6))
- 			tbprintf("any ");
- 		else {
-+#if OS_LEVEL > 35
-+			if (src->neg)
-+#else
- 			if (src->not)
-+#endif
- 				tbprintf("! ");
- #ifdef HAVE_ADDR_WRAP
- 			tb_print_addrw(&src->addr, PT_MASK(src), af);
-@@ -1823,7 +1827,11 @@
- 			 PF_AZERO(PT_MASK(dst), AF_INET6))
- 			tbprintf("any ");
- 		else {
-+#if OS_LEVEL > 35
-+			if (dst->neg)
-+#else
- 			if (dst->not)
-+#endif
- 				tbprintf("! ");
- #ifdef HAVE_ADDR_WRAP
- 			tb_print_addrw(&dst->addr, PT_MASK(dst), af);
-@@ -1983,10 +1991,10 @@
- #ifdef HAVE_RULE_UGID
- 	if (pr->uid.op)
- 		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
--		        "user", UID_MAX);
-+		        "user", UINT_MAX);
- 	if (pr->gid.op)
- 		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
--		        "group", GID_MAX);
-+		        "group", UINT_MAX);
- #endif
- 
- 	if (pr->flags || pr->flagset) {
+*** pftop.c.orig	Tue Jan 10 21:06:14 2006
+--- pftop.c	Sat Jan 21 04:47:06 2006
+***************
+*** 2215,2226 ****
+  	tb_print_fromto(&pr->src, &pr->dst, pr->af, pr->proto);
+  #ifdef HAVE_RULE_UGID
+  	if (pr->uid.op)
+  		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
+! 		        "user", UID_MAX);
+  	if (pr->gid.op)
+  		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
+! 		        "group", GID_MAX);
+  #endif
+  
+  	if (pr->flags || pr->flagset) {
+  		tbprintf(" flags ");
+--- 2215,2226 ----
+  	tb_print_fromto(&pr->src, &pr->dst, pr->af, pr->proto);
+  #ifdef HAVE_RULE_UGID
+  	if (pr->uid.op)
+  		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
+! 		        "user", UINT_MAX);
+  	if (pr->gid.op)
+  		tb_print_ugid(pr->gid.op, pr->gid.gid[0], pr->gid.gid[1],
+! 		        "group", UINT_MAX);
+  #endif
+  
+  	if (pr->flags || pr->flagset) {
+  		tbprintf(" flags ");
