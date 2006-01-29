@@ -224,12 +224,12 @@ class TdiaryInstall
     FileUtils16.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/tdiary", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
     FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
     FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.rb", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/README", *@fileutilOptions)
     if @lang == 'ja' then
        FileUtils16.ln_s("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/misc/plugin/jdate.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/plugin/000jdate.rb", *@fileutilOptions)
     end
