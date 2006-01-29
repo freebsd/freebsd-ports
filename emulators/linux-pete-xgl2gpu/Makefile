@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-pete-xgl2gpu
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 DISTNAME=	gpupetexgl${MAJOR}0${MINOR}
@@ -40,9 +40,8 @@ PSEMUPRO_CFGFILES_DIR=	${PREFIX}/share/psemupro/cfg
 
 # by default, disable options which may crash the plugin
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^NoRenderTexture/ s|= 0|= 1|; \
-		 /^TWinShader/ s|= 1|= 0|' ${WRKSRC}/gpuPeteXGL2.cfg
+	@${REINPLACE_CMD} -e '/^TWinShader/ s|= 1|= 0|' \
+		${WRKSRC}/gpuPeteXGL2.cfg
 
 do-install:
 	${MKDIR} ${PSEMUPRO_PLUGINS_DIR}
