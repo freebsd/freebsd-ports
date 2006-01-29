@@ -1,0 +1,58 @@
+%%CACHE_DIR%%/memcache-client-%%PORTVERSION%%.gem
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.src/M000021.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.src/M000022.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.src/M000023.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.src/M000024.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000001.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000002.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000003.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000004.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000005.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000006.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000007.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000008.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000009.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000010.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000011.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000012.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src/M000013.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/ClientError.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/InternalError.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/MemCacheError.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000015.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000016.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000017.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000018.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000019.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src/M000020.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/ServerError.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/ServerError.src/M000014.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/created.rid
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/files/lib/memcache_rb.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/files/lib/memcache_util_rb.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/fr_class_index.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/fr_file_index.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/fr_method_index.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/index.html
+%%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/Manifest.txt
+%%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/README
+%%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/Rakefile
+%%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/lib/memcache.rb
+%%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/lib/memcache_util.rb
+%%SPEC_DIR%%/memcache-client-%%PORTVERSION%%.gemspec
+@dirrm %%GEMS_DIR%%/memcache-client-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/memcache-client-%%PORTVERSION%%
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/files/lib
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/files
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/ServerError.src
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache/Server.src
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache.src
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/MemCache
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes/Cache.src
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc/classes
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%/rdoc
+@dirrm %%DOC_DIR%%/memcache-client-%%PORTVERSION%%
