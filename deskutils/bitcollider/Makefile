@@ -14,7 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	infofarmer@gmail.com
 COMMENT=	A Bitzi metadata generator
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
 HAS_CONFIGURE=	yes
 CFLAGS+=	-lm
+INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
