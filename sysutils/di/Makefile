@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	3.10
+PORTVERSION=	4.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.gentoo.com/di/
+MASTER_SITES=	http://www.gentoo.com/di/ \
+		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
 MAINTAINER=	bll@gentoo.com
 COMMENT=	Disk Information Utility
@@ -19,36 +20,36 @@ MAN1=		di.1
 
 do-configure:
 	(cd ${WRKSRC}; \
-		CC="$(CC)" CFLAGS="$(CFLAGS)" \
-		LDFLAGS="$(LDFLAGS)" prefix="$(PREFIX)" \
-		LOCALEDIR="$(PREFIX)/share/locale" \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" prefix="${PREFIX}" \
+		LOCALEDIR="${PREFIX}/share/locale" \
 		./Build config.h)
 
 do-build:
 	(cd ${WRKSRC}; \
-		CC="$(CC)" CFLAGS="$(CFLAGS)" \
-		LDFLAGS="$(LDFLAGS)" prefix="$(PREFIX)" \
-		LOCALEDIR="$(PREFIX)/share/locale" \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" prefix="${PREFIX}" \
+		LOCALEDIR="${PREFIX}/share/locale" \
 		./Build)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/di ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mi ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/di ${PREFIX}/bin/mi
 	${INSTALL_MAN} ${WRKSRC}/di.1 ${PREFIX}/man/man1
 	(cd ${WRKSRC}; \
-		CC="$(CC)" CFLAGS="$(CFLAGS)" \
-		LDFLAGS="$(LDFLAGS)" prefix="$(PREFIX)" \
-		LOCALEDIR="$(PREFIX)/share/locale" \
+		CC="${CC}" CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" prefix="${PREFIX}" \
+		LOCALEDIR="${PREFIX}/share/locale" \
 		./Build build-po)
 	-(cd ${WRKSRC}/po;for i in *.po; do \
-	j=`echo $$i | $(SED) 's,\\.po$$,,'`; \
+	j=`echo $$i | ${SED} 's,\\.po$$,,'`; \
 	test -d ${PREFIX}/share/locale/$$j || \
-		mkdir ${PREFIX}/share/locale/$$j; \
+		${MKDIR} ${PREFIX}/share/locale/$$j; \
 	test -d ${PREFIX}/share/locale/$$j/LC_MESSAGES || \
-		mkdir ${PREFIX}/share/locale/$$j/LC_MESSAGES; \
+		${MKDIR} ${PREFIX}/share/locale/$$j/LC_MESSAGES; \
 	${INSTALL_DATA} $$j.mo \
 	${PREFIX}/share/locale/$$j/LC_MESSAGES/di.mo; \
-        $(RM) -f $$j.mo; \
+	${RM} -f $$j.mo; \
 	done)
 
 .include <bsd.port.mk>
