@@ -7,11 +7,12 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
 DISTNAME=	cdf${VER}-dist-cdf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
 MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=ports	\
