@@ -39,7 +39,7 @@ MAN8=		honeyd.8
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
-LIB_DEPENDS+=	edit.5:${PORTSDIR}/devel/libedit
+LIB_DEPENDS+=	edit.6:${PORTSDIR}/devel/libedit
 .endif
 
 .if !defined(WITH_PYTHON)
