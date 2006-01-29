@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hattrickorganizer
-PORTVERSION=	1.36
+PORTVERSION=	1.38
 CATEGORIES=	games java
 MASTER_SITES=	http://www.wow-auctions.net/ho/download/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
@@ -17,16 +17,19 @@ COMMENT=	A management tool for Hattrick.org written in Java
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USE_ZIP=	yes
-NO_BUILD=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+USE_ZIP=	  yes
+NO_BUILD=	  yes
+USE_JAVA=	  yes
+JAVA_VERSION=	  1.4+
+USE_REINPLACE=	  yes
 
-SUB_FILES=	hattrickorganizer.sh
+SUB_FILES=	  hattrickorganizer.sh
 
 do-install:
 	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_SCRIPT} ${WRKDIR}/hattrickorganizer.sh ${PREFIX}/bin/hattrickorganizer
+	${REINPLACE_CMD} -e 's|HODIR=`pwd`|HODIR=${DATADIR}|'  ${WRKSRC}/HO.sh
+	${REINPLACE_CMD} 's|^HOHOME=.*|HOHOME=~/\.hattrickorganizer|' ${WRKSRC}/HO.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/HO.sh ${PREFIX}/bin/hattrickorganizer
 
 .include <bsd.port.mk>
