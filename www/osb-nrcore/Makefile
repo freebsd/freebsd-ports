@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-webcore
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-Webcore's browser engine
 
 LIB_DEPENDS=	jscore.0:${PORTSDIR}/lang/osb-jscore
