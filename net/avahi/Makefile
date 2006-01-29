@@ -7,6 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -33,7 +34,9 @@ CONFIGURE_ARGS=	--with-distro=freebsd \
 		--disable-doxygen-dot \
 		--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 USE_RC_SUBR=	yes
 
