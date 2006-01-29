@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozplugger
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.mozdev.org/mozplugger/
 
