@@ -8,7 +8,7 @@
 PORTNAME=	snx101util
 PORTVERSION=	0.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www2.starcat.ne.jp/~takam/bsd/
+MASTER_SITES=	http://www.medias.ne.jp/~takam/bsd/
 
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Image capture programs for Webcam based SN9C101
