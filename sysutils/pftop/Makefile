@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pftop
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5
+#PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -22,7 +22,7 @@ MANCOMPRESSED=	no
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502106
-IGNORE=		Only for 5.3 and above
+IGNORE=		only for 5.3 and above
 .endif
 
 .if ${OSVERSION} < 502116
