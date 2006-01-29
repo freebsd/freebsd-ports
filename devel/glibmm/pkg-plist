@@ -425,8 +425,10 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/convert_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/date_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/debug_8h.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fglibmm_2Fglib_2F.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fglibmm_2Fglib_2F_dep.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dispatcher_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.css
@@ -438,7 +440,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/files.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/fileutils_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_0x61.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_0x62.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_0x63.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_0x64.html
@@ -465,7 +466,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_enum.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_eval.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_func.html
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_func_0x61.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_func_0x62.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_func_0x63.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_func_0x64.html
@@ -671,11 +671,13 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/namespacemembers_func.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/namespacemembers_type.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/namespaces.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/newin2p6s.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/object_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/objectbase_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optioncontext_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optionentry_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optiongroup_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/pages.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/pattern_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/property_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/propertyproxy_8h.html
@@ -706,7 +708,6 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/structGlib_1_1TimeVal__inherit__graph.png
-%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/tabs.css
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_2dispatcher_8cc-example.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_2thread_8cc-example.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/thread_8h.html
