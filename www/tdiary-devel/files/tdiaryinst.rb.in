@@ -84,7 +84,7 @@ def usage
   STDERR.print "    --httpdir=<httpdir>       Specify apache UserDirectory  default: public_html\n"
   STDERR.print "    --name=<author_name>      Specify author name\n"
   STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
-  STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary\n"
+  STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary-devel\n"
   STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: @@@@LANG@@@@\n"
   STDERR.print "    --suexec                  Use suExec for CGI execution\n"
   STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
@@ -223,12 +223,12 @@ class TdiaryInstall
     FileUtils16.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/tdiary", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
     FileUtils16.cp_r("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
     FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
     FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.rb", *@fileutilOptions)
+    FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/README", *@fileutilOptions)
   end
 
   def installConfig
