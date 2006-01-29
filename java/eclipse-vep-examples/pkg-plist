@@ -24,6 +24,7 @@ eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/about.mappings
 eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/eclipse32.gif
 eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/about.ini
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/plugin.xml
+eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/META-INF/MANIFEST.MF
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm/javaexamplebeaninfosrc.zip
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm/javaexamplebeanssrc.zip
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/javaexamplessrc.zip
@@ -31,9 +32,9 @@ eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclips
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/proxy.jars
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/about.html
 eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/plugin.properties
+eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/epl-v10.html
 eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/feature.xml
 eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/eclipse_update_120.jpg
-eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/cpl-v10.html
 eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/license.html
 eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/feature.properties
 @dirrm eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm
@@ -49,6 +50,7 @@ eclipse/features/org.eclipse.ve.examples_%%RELEASEVERSION%%/feature.properties
 @dirrm eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/icons
 @dirrm eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%/examples
 @dirrm eclipse/plugins/org.eclipse.ve.examples_%%RELEASEVERSION%%
+@dirrm eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/META-INF
 @dirrm eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%/vm
 @dirrm eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src/org.eclipse.ve.examples_%%RELEASEVERSION%%
 @dirrm eclipse/plugins/org.eclipse.ve.examples.source_%%RELEASEVERSION%%/src
