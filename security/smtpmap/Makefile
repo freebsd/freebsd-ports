@@ -9,7 +9,7 @@ PORTNAME=	smtpmap
 PORTVERSION=	0.8
 PORTREVISION=	3
 CATEGORIES=	security mail net
-MASTER_SITES=	http://plasmahh.hopto.org/
+MASTER_SITES=	http://www.frbsd.org/dist/
 
 MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
@@ -17,7 +17,6 @@ COMMENT=	An SMTP software identifier
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GCC=	2.95
 MAKEFILE=	makefile
