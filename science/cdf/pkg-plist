@@ -13,6 +13,10 @@ bin/skeletoncdf
 bin/skeletontable
 include/cdf.h
 include/cdf.inc
+include/cdfconfig.h
+include/cdfdist.h
+include/cdflib.h
+include/cdflib64.h
 lib/cdf/help/cdf2skt.olh
 lib/cdf/help/cdf2sktj.olh
 lib/cdf/help/cdfbrow.ilh
