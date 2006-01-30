@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.9.100
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -100,11 +99,11 @@ WITH_CLAMAV=		yes
 .endif
 
 .if defined(WITH_CLAMAV) || defined(WITH_ALL)
-CONFIGURE_ARGS+=	--enable-clamav
+CONFIGURE_ARGS+=	--enable-clamav-plugin
 PLIST_SUB+=		CLAM_PLUG=""
 BUILD_DEPENDS=	   	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
 .else
-CONFIGURE_ARGS+=	--disable-clamav
+CONFIGURE_ARGS+=	--disable-clamav-plugin
 PLIST_SUB+=		CLAM_PLUG="@comment "
 .endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
@@ -130,7 +129,7 @@ CONFIGURE_ARGS+=	--disable-jpilot
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
-CONFIGURE_ARGS+=	--enable-ldap
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 .if defined(WITH_SA_PLUG) || defined(WITH_ALL)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
