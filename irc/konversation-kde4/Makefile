@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	konversation
-PORTVERSION=	0.18
-PORTREVISION=	2
+PORTVERSION=	0.19
 CATEGORIES=	irc kde
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
