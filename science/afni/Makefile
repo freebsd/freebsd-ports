@@ -18,10 +18,10 @@
 PORTNAME=	afni
 PORTVERSION=	2005.12.30.0934
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/
+MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/
 DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 \
 		Makefile.FreeBSD_PORT TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD
-DIST_SUBDIR=	AFNI
+DIST_SUBDIR=	AFNI-${PORTVERSION}
 EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
