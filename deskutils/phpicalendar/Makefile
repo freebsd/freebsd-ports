@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpicalendar
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,17 +16,19 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Webbased calendar with iCal support
 
 NO_BUILD=	yes
-WWWDIR=		${PREFIX}/www/phpicalendar
+PHPICALENDAR=	www/phpicalendar
+WWWDIR=		${PREFIX}/${PHPICALENDAR}
+PLIST_SUB+=	PHPICALENDAR=${PHPICALENDAR}
 
 do-install:
 .if !exists(${WWWDIR})
 	${MKDIR} ${WWWDIR}
 .endif
-.for dir in calendars functions images includes languages rss styles
+.for dir in admin calendars functions images includes languages rss templates
 	@${CP} -R ${WRKSRC}/${dir} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/${dir}
 .endfor
-.for f in index.php TIMEZONES admin.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
+.for f in index.php TIMEZONES error.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
 	@${CP} ${WRKSRC}/${f} ${WWWDIR}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${f}
 .endfor
