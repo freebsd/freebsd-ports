@@ -8,7 +8,7 @@
 PORTNAME=	mldonkey
 PORTVERSION=	0.0.1
 PORTREVISION=	2
-CATEGORIES=	net perl5
+CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://home.ircnet.de/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-urlslave
 DISTNAME=	mlurlslave-v${PORTVERSION:S/^0.0.//}

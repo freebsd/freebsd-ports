@@ -8,7 +8,7 @@
 PORTNAME=	hagelslag
 PORTVERSION=	0.13
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/hagelslag/ \
 		ftp://tiefighter.et.tudelft.nl/pub/hagelslag/v${PORTVERSION}/
 

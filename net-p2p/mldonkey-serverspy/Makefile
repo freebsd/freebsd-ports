@@ -8,7 +8,7 @@
 PORTNAME=	mldonkey
 PORTVERSION=	1.2
 PORTREVISION=	1
-CATEGORIES=	net perl5
+CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://www.moviegalaxy.com.ar/mlservspy/
 PKGNAMESUFFIX=	-serverspy
 DISTNAME=	mlservspy-${PORTVERSION}

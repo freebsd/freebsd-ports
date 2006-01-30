@@ -8,7 +8,7 @@
 PORTNAME=	edonkey
 PORTVERSION=	0.0.2
 PORTREVISION=	4
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://home.ircnet.de/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-gui-gtk-urlslave
 DISTNAME=	ed2k_urlslave-v2
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to ed2k GTK+ GUI
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-RUN_DEPENDS=	ed2k_gui:${PORTSDIR}/net/edonkey-gui-gtk
+RUN_DEPENDS=	ed2k_gui:${PORTSDIR}/net-p2p/edonkey-gui-gtk
 
 USE_PERL5=	yes
 NO_BUILD=	yes

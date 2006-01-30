@@ -1,7 +1,7 @@
 
 	1) You have to configure the 'core' client and add a password
 
-	Install the "net/edonkey-core" port and type 'donkey'
+	Install the "net-p2p/edonkey-core" port and type 'donkey'
 from the command line and then typing 'pass username password' (and
 hitting ENTER). Once you are finished, type 'q' (ENTER) and 'y'
 (ENTER) to quit and make the core save its preferences.
@@ -20,7 +20,7 @@ type 'donkey - !' from the command line.
 
 	3) Run the GUI and connect to the core client
 
-	Install the port "net/edonkey-gui-gtk" or "net/edonkey-gui-java",
+	Install the port "net-p2p/edonkey-gui-gtk" or "net-p2p/edonkey-gui-java",
 whichever one you prefer. Next run 'edonkey-gui-gtk' (if you chose
 the FreeBSD native GTK GUI client, or linux-edonkey-gui-gtk if Linux
 one) or 'edonkey-gui-java' (if you chose the Java GUI client). The

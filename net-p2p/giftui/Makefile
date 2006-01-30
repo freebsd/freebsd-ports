@@ -8,7 +8,7 @@
 PORTNAME=	giFTui
 PORTVERSION=	0.4.1
 PORTREVISION=	4
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	giftui
 DISTNAME=	giftui-0.4.1
@@ -16,7 +16,7 @@ DISTNAME=	giftui-0.4.1
 MAINTAINER=	joeldiaz@bellsouth.net
 COMMENT=	GTK2 client for giFT daemon
 
-LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
+LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

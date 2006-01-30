@@ -7,7 +7,7 @@
 
 PORTNAME=	fcptools
 PORTVERSION=	0.4.7.${RELEASE_DATE}
-CATEGORIES=	net security
+CATEGORIES=	net-p2p security
 MASTER_SITES=	http://freenetproject.org/snapshots/
 DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 EXTRACT_SUFX=	.tgz

@@ -8,7 +8,7 @@
 PORTNAME=	qtorrent
 PORTVERSION=	0.9.6.1
 PORTREVISION=	3
-CATEGORIES=	net python
+CATEGORIES=	net-p2p python
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org

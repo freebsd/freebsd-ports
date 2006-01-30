@@ -19,7 +19,7 @@ port up and running.
    - this port is pulled in either ways, but you may want to avoid installing
      TCL as a build dependency
 
-4. install port net/torrentflux with WITH_TF_DATADIR=/your/download/directory
+4. install port net-p2p/torrentflux with WITH_TF_DATADIR=/your/download/directory
    - The directory must be writable by the 'www' user and reside on a
      partition with enough free space to accommodate all files you plan
      to download. It will be created if it doesn't exist.

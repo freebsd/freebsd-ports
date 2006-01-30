@@ -7,7 +7,7 @@
 
 PORTNAME=	peercast
 PORTVERSION=	0.1214
-CATEGORIES=	net multimedia
+CATEGORIES=	net-p2p multimedia
 MASTER_SITES=	http://www.peercast.org/
 DISTNAME=	peercast-linux
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.8.3
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
 MAINTAINER=	flz@FreeBSD.org

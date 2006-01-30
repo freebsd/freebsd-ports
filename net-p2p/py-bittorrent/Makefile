@@ -8,7 +8,7 @@
 PORTNAME=	BitTorrent
 PORTVERSION=	4.2.2
 PORTEPOCH=	1
-CATEGORIES?=	net python
+CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}

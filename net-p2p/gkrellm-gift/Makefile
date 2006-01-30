@@ -8,7 +8,7 @@
 PORTNAME=	gift
 PORTVERSION=	0.2.3
 PORTREVISION=	4
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/gkrellm-gift/ \
 		http://depot.fsck.ch/mirror/distfiles/
 PKGNAMEPREFIX=	gkrellm-
@@ -17,7 +17,7 @@ DISTNAME=	${PKGNAMEPREFIX}giFT-${PORTVERSION}
 MAINTAINER=	ports@fsck.ch
 COMMENT=	GKrellM2 plugin that monitors active giFT transfers
 
-LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
+LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 

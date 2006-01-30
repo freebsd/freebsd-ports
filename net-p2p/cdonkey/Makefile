@@ -8,7 +8,7 @@
 
 PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://suche.org/
 DISTNAME=	cDonkey-${PORTVERSION}
 

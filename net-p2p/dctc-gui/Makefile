@@ -8,7 +8,7 @@
 PORTNAME=	dctc
 PORTVERSION=	0.66
 PORTREVISION=	2
-CATEGORIES=	net gnome
+CATEGORIES=	net-p2p gnome
 MASTER_SITES=	http://unixpages.org/distfiles/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	dc_gui-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	dc_gui-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A GUI to DirectConnect (www.neo-modus.com) text client
 
-BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
+BUILD_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GETTEXT=	yes

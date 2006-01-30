@@ -26,7 +26,7 @@
 PORTNAME=	gtk-gnutella
 DISTVERSION=	0.96b
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
 		ftp://gtk-gnutella.sourceforge.net/pub/gtk-gnutella/

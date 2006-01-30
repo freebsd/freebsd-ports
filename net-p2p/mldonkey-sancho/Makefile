@@ -8,7 +8,7 @@
 PORTNAME=	sancho
 DISTVERSION=	0.9.4-23
 PORTREVISION=	4
-CATEGORIES=	net java
+CATEGORIES=	net-p2p java
 MASTER_SITES=	http://sancho-gui.sourceforge.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dl/tmp94
 PKGNAMEPREFIX=	mldonkey-

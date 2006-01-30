@@ -7,7 +7,7 @@
 
 PORTNAME=	i2p
 PORTVERSION=	0.6.1.9
-CATEGORIES=	net java security
+CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
 MAINTAINER=	lioux@FreeBSD.org

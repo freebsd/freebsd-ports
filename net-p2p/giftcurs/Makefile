@@ -8,14 +8,14 @@
 PORTNAME=	giFTcurs
 PORTVERSION=	0.6.2
 PORTREVISION=	4
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	giftcurs
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A cursed frontend to the giFT daemon
 
-RUN_DEPENDS=	${LOCALBASE}/bin/giftd:${PORTSDIR}/net/gift
+RUN_DEPENDS=	${LOCALBASE}/bin/giftd:${PORTSDIR}/net-p2p/gift
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

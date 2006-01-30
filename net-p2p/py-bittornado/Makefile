@@ -9,7 +9,7 @@ PORTNAME=	BitTornado
 PORTVERSION=	0.3.14
 PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES?=	net python ipv6
+CATEGORIES?=	net-p2p python ipv6
 MASTER_SITES=	http://www.bittornado.com/download/ \
 		http://e.scarywater.net/bt/download/ \
 		http://mediahost.inetsalestech.com/shadow/ \

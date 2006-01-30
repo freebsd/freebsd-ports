@@ -7,7 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.1.2
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dc-qt
 PKGNAMESUFFIX=	-gui-qt
@@ -16,7 +16,7 @@ DISTNAME=	dc-qt-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 
-RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
+RUN_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes

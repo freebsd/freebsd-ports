@@ -7,7 +7,7 @@
 
 PORTNAME=	trackerbt
 PORTVERSION=	0.1.1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/trackerbt/
 
 MAINTAINER=	lioux@FreeBSD.org
