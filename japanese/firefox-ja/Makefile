@@ -8,26 +8,29 @@
 PORTNAME=	firefox
 PORTVERSION=	1.5
 CATEGORIES=	japanese www
-MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/
-PKGNAMESUFFIX=	-ja_JP
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/ja
+PKGNAMESUFFIX=	-ja
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	chinsan.tw@gmail.com
-COMMENT=	Firefox Japanese(ja-JP) Language Pack
+MAINTAINER=	hiroto.kagotani@gmail.com
+COMMENT=	Firefox Japanese(ja) Language Pack
 
-BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
-
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 FIREFOX=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${FIREFOX}
 FIREFOX_HOME=	${PREFIX}/lib/${FIREFOX}
-REGXPCOM=	${FIREFOX_HOME}/regxpcom
-FIREFOX_BIN=	${FIREFOX_HOME}/${PORTNAME}-bin
-
+LOCALE_FILES=	browserconfig.properties \
+		chrome/ja.jar \
+		chrome/ja.manifest \
+		defaults/pref/firefox-l10n.js \
+		defaults/profile/bookmarks.html \
+		searchplugins/*
 PLIST_SUB=	FIREFOX=${FIREFOX}
 
 .include <bsd.port.pre.mk>
@@ -42,14 +45,7 @@ do-install:
 	${CP} -f bookmarks.html bookmarks.html.orig)
 
 	@${ECHO_MSG} "===> Copying locale files..."
-	(cd ${WRKSRC}; ${TAR} -cf - *) | \
+	(cd ${WRKSRC}; ${TAR} -cf - ${LOCALE_FILES}) | \
 	${TAR} -xf - -C ${FIREFOX_HOME}
-
-	@${ECHO_MSG} "===> Building Chrome's registry..."
-	(cd ${FIREFOX_HOME} || exit 1 ; \
-	./run-mozilla.sh ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. \
-		${REGXPCOM} || true ; \
-	./run-mozilla.sh ${FIREFOX_BIN} -register )
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

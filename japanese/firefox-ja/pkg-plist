@@ -4,31 +4,22 @@
 lib/%%FIREFOX%%/browserconfig.properties
 lib/%%FIREFOX%%/chrome/ja.jar
 lib/%%FIREFOX%%/chrome/ja.manifest
-lib/%%FIREFOX%%/components/compreg.dat
-lib/%%FIREFOX%%/components/xpti.dat
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
-lib/%%FIREFOX%%/defaults/profile/user.js
-lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.png
-lib/%%FIREFOX%%/searchplugins/FreeBSD_PR.src
-lib/%%FIREFOX%%/searchplugins/amazon-ja.png
-lib/%%FIREFOX%%/searchplugins/amazon-ja.src
-lib/%%FIREFOX%%/searchplugins/freshports.png
-lib/%%FIREFOX%%/searchplugins/freshports.src
-lib/%%FIREFOX%%/searchplugins/google-ja.gif
-lib/%%FIREFOX%%/searchplugins/google-ja.src
-lib/%%FIREFOX%%/searchplugins/google_news.gif
-lib/%%FIREFOX%%/searchplugins/google_news.src
-lib/%%FIREFOX%%/searchplugins/kakaku.png
-lib/%%FIREFOX%%/searchplugins/kakaku.src
-lib/%%FIREFOX%%/searchplugins/mozillazine-ja.png
-lib/%%FIREFOX%%/searchplugins/mozillazine-ja.src
-lib/%%FIREFOX%%/searchplugins/wikipedia-ja.png
-lib/%%FIREFOX%%/searchplugins/wikipedia-ja.src
-lib/%%FIREFOX%%/searchplugins/wni.png
-lib/%%FIREFOX%%/searchplugins/wni.src
-lib/%%FIREFOX%%/searchplugins/yahoo-ja.png
-lib/%%FIREFOX%%/searchplugins/yahoo-ja.src
+lib/%%FIREFOX%%/searchplugins/amazon-jp.png
+lib/%%FIREFOX%%/searchplugins/amazon-jp.src
+lib/%%FIREFOX%%/searchplugins/goo.gif
+lib/%%FIREFOX%%/searchplugins/goo.src
+lib/%%FIREFOX%%/searchplugins/google-jp.gif
+lib/%%FIREFOX%%/searchplugins/google-jp.src
+lib/%%FIREFOX%%/searchplugins/rakuten.gif
+lib/%%FIREFOX%%/searchplugins/rakuten.src
+lib/%%FIREFOX%%/searchplugins/yahoo-jp-auctions.gif
+lib/%%FIREFOX%%/searchplugins/yahoo-jp-auctions.src
+lib/%%FIREFOX%%/searchplugins/yahoo-jp-shopping.gif
+lib/%%FIREFOX%%/searchplugins/yahoo-jp-shopping.src
+lib/%%FIREFOX%%/searchplugins/yahoo-jp.gif
+lib/%%FIREFOX%%/searchplugins/yahoo-jp.src
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html
