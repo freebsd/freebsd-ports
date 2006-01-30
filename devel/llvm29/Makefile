@@ -14,9 +14,8 @@ MASTER_SITES=	http://llvm.cs.uiuc.edu/releases/${PORTVERSION}/
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
-BROKEN=		Configure fails
-
 GNU_CONFIGURE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	ENABLE_OPTIMIZED=1 # strips binaries
