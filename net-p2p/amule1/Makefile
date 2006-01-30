@@ -8,7 +8,7 @@
 PORTNAME=	aMule
 PORTVERSION=	1.2.8
 PORTREVISION=	3
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/amule/
 
 MAINTAINER=	ganael.laplanche@martymac.com

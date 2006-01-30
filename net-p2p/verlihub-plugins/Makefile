@@ -7,7 +7,7 @@
 
 PORTNAME=       verlihub-plugins
 PORTVERSION=    0.1
-CATEGORIES=     net
+CATEGORIES=     net-p2p
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     verlihub
 DISTNAME=	vh_plugins-0.1
@@ -15,7 +15,7 @@ DISTNAME=	vh_plugins-0.1
 MAINTAINER=     hurbold@yahoo.com
 COMMENT=        Plugins for the Verlihub Linux/Unix Direct Connect Hub Software
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net/verlihub
+BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
 
 WRKSRC=         ${WRKDIR}/vh_plugins-0.1

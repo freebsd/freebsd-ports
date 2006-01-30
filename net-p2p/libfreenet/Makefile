@@ -9,7 +9,7 @@
 PORTNAME=	libfreenet
 PORTVERSION=	0.5.0
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://thalassocracy.org/libfreenet/
 
 MAINTAINER=	ports@FreeBSD.org

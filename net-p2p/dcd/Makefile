@@ -7,7 +7,7 @@
 
 PORTNAME=	dcd
 PORTVERSION=	0.5.9
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
 MAINTAINER=	mraleks@bk.ru

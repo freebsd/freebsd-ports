@@ -7,7 +7,7 @@
 
 PORTNAME=	ed2k
 PORTVERSION=	1.4
-CATEGORIES=	misc
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.sdalu.com/download/software/tools/
 PKGNAMESUFFIX=	-hash${PKGNAMESUFFIX2}
 DISTNAME=	ed2k.c

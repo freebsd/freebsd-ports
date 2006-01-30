@@ -7,7 +7,7 @@
 
 PORTNAME=	torrentsniff
 PORTVERSION=	0.3.0
-CATEGORIES=	net perl5
+CATEGORIES=	net-p2p perl5
 MASTER_SITES=	http://www.highprogrammer.com/alan/perl/
 
 MAINTAINER=	pav@FreeBSD.org

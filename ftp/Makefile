@@ -40,7 +40,6 @@
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
-    SUBDIR += jigdo
     SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += kasablanca

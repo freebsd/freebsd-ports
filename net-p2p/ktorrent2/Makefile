@@ -7,7 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	1.2.r2
-CATEGORIES=	net kde
+CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION:S/.r/rc/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 

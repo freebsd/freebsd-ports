@@ -50,7 +50,7 @@ actx-*			games/actx		Contains commercial character
 adom-*			games/adom		Copy of CD must be sent to
 						author
 aestats-*		games/aestats		Commercial use is prohibited
-AGSatellite0520*	net/linux-agsatellite	Unsure of licensing issues
+AGSatellite0520*	net-p2p/linux-agsatellite	Unsure of licensing issues
 AlephOne-*		games/alephone-data	Bungie/Microsoft do not
 						allow charging for Marathon
 						data files
@@ -375,7 +375,7 @@ libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 libSDLx11.so.tar.gz	multimedia/mtv		No redistribution
-LimeWireLinux.tgz	net/limewire		No redistribution allowed
+LimeWireLinux.tgz	net-p2p/limewire	No redistribution allowed
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 linux_devtools		devel/linux_devtools	GPL binaries
 linux-gtk2		x11-toolkits/linux-gtk2	LGPL binary, no source

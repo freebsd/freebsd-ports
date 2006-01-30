@@ -70,8 +70,6 @@
     SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += earthview
-    SUBDIR += ed2k
-    SUBDIR += edonkey-tool-hash
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
@@ -287,7 +285,6 @@
     SUBDIR += lile
     SUBDIR += lingoteach
     SUBDIR += linm
-    SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-opengroupware
     SUBDIR += localedata
     SUBDIR += logsurfer

@@ -8,7 +8,7 @@
 PORTNAME=	edonkey
 PORTVERSION=	0.6.4
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
 PKGNAMESUFFIX=	-gui-gtk
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
-RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
+RUN_DEPENDS=	donkey:${PORTSDIR}/net-p2p/linux-edonkey-core
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

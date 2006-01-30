@@ -7,7 +7,7 @@
 
 PORTNAME=	btpeer
 PORTVERSION=	0.2.1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/btpeer/
 
 MAINTAINER=	lioux@FreeBSD.org

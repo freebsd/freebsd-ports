@@ -8,7 +8,7 @@
 PORTNAME=	minder
 PORTVERSION=	1.2
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
 MAINTAINER=	lioux@FreeBSD.org

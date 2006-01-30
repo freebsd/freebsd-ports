@@ -7,7 +7,7 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.1.0
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/amule/
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -54,7 +54,7 @@ CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Won't compile on FreeBSD 4.x - See net/amule1 for 4.x compatibility."
+BROKEN=		"Won't compile on FreeBSD 4.x - See net-p2p/amule1 for 4.x compatibility."
 .endif
 
 # Configure options

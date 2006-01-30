@@ -7,7 +7,7 @@
 
 PORTNAME=		torrentflux
 DISTVERSION=		2.0beta1
-CATEGORIES=		net www
+CATEGORIES=		net-p2p www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -16,7 +16,7 @@ COMMENT=		A PHP based BitTorrent client that runs on a web server
 
 RUN_DEPENDS=		${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb \
 			${LOCALBASE}/bin/sqlite:${PORTSDIR}/databases/sqlite2 \
-			${LOCALBASE}/bin/btshowmetainfo.py:${PORTSDIR}/net/py-bittornado-core
+			${LOCALBASE}/bin/btshowmetainfo.py:${PORTSDIR}/net-p2p/py-bittornado-core
 
 NO_PACKAGE=		dependencies need manual installation, see ${FILESDIR}/install.txt.in
 

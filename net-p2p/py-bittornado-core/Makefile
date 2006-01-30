@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-core
-CATEGORIES=	net python
+CATEGORIES=	net-p2p python
 
 COMMENT=	An extended BitTorrent peer-to-peer core tool for distributing files
 

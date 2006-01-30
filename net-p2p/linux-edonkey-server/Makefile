@@ -8,7 +8,7 @@
 PORTNAME=	edonkey
 PORTVERSION=	16.39
 PORTREVISION=	1
-CATEGORIES=	net linux
+CATEGORIES=	net-p2p linux
 MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-server

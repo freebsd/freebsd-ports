@@ -7,7 +7,7 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.1
-CATEGORIES=	ftp
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://atterer.net/jigdo/
 
 MAINTAINER=	bra@fsn.hu

@@ -14,7 +14,7 @@ MAINTAINER=	piaip@csie.ntu.edu.tw
 COMMENT=	Client 'core' for MLDonkey with Traditional Chinese (Big5) support
 
 WITHOUT_GUI=	yes
-MASTERDIR=	${.CURDIR}/../../net/mldonkey
+MASTERDIR=	${.CURDIR}/../../net-p2p/mldonkey
 EXTRA_PATCHES=	${.CURDIR}/files/patch-driverControlers.ml
 
 WRAPPERPREFIX=  ${.CURDIR}/files/wrapper-prefix

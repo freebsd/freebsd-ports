@@ -7,7 +7,7 @@
 
 PORTNAME=	overnet
 PORTVERSION=	1.0.1
-CATEGORIES=	net linux
+CATEGORIES=	net-p2p linux
 MASTER_SITES=	http://www.zen18864.zen.co.uk/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-core

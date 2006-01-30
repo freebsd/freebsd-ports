@@ -8,14 +8,14 @@
 
 PORTNAME=	valknut
 PORTVERSION=	0.3.7
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
 
-LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \
+LIB_DEPENDS=	dc.0:${PORTSDIR}/net-p2p/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_QT_VER=	3

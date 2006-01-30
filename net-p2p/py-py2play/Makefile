@@ -7,7 +7,7 @@
 
 PORTNAME=	py2play
 PORTVERSION=	0.1.8
-CATEGORIES=	net python
+CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.gna.org/slune/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Py2Play-${PORTVERSION}

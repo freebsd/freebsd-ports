@@ -8,7 +8,7 @@
 
 PORTNAME=	dclib
 PORTVERSION=	0.3.7
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 

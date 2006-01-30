@@ -8,7 +8,7 @@
 PORTNAME=	hx
 PORTVERSION=	0.7.14
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://members.macconnect.com/users/j/jalex/
 
 MAINTAINER=	ports@FreeBSD.org

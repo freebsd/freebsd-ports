@@ -7,13 +7,13 @@
 
 PORTNAME=	giFT-FastTrack
 PORTVERSION=	0.8.9
-CATEGORIES=	net
+CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/gift-fasttrack/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A FastTrack plugin for giFT
 
-LIB_DEPENDS=	gift.0:${PORTSDIR}/net/gift
+LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

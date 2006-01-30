@@ -7,7 +7,7 @@
 
 PORTNAME=	limewire
 PORTVERSION=	4.9
-CATEGORIES=	net java
+CATEGORIES=	net-p2p java
 MASTER_SITES=	http://maverick.limewire.com/download/
 DISTNAME=	LimeWireOther
 
