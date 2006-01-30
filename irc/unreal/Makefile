@@ -24,7 +24,7 @@ MASTER_SITES=	http://unreal.atlanti-ka.org/ \
 #		ftp://unrealircd.za.net/pub/UnrealIRCd/ \    # connect refused
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Unreal - the next generation ircd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3.2
@@ -36,7 +36,6 @@ LOGDIR=		/var/log/ircd
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	unrealircd.sh
-USE_REINPLACE=	yes
 
 SUB_LIST+=	RUNDIR=${RUNDIR}
 
@@ -58,13 +57,7 @@ OPTIONS=	HUB "Configure as a hub (otherwise configure as a leaf)" on \
 		PREFIXAQ "Enable prefixes for chanadmin and chanowner" off
 #		REMOTE "Enable remote includes" off \ # this does not work at the moment
 
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
 DOCS=		Donation doc/Authors doc/coding-guidelines \
@@ -93,7 +86,8 @@ CONFIGURE_ARGS+=	--enable-inet6
 
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
-USE_OPENSSL=	yes
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
 .if defined(WITH_REMOTE)
@@ -111,7 +105,7 @@ SQLMOD=		${PORTNAME}/SQLMod.tar.gz
 USE_MYSQL=	yes
 WITH_SQLMOD=	yes
 MAKE_ARGS=	all custommodule MODULEFILE=m_sqlmod
-PLIST_FILES+=	etc/Unreal/m_sqlmod.conf lib/Unreal/m_sqlmod.so
+PLIST_FILES+=	etc/Unreal/m_sqlmod.conf lib/Unreal/m_sqlmod.so \
 		Unreal/doc/Changes.sqlmod Unreal/doc/README.sqlmod \
 		Unreal/doc/LICENSE.sqlmod
 .endif
@@ -135,7 +129,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/s_conf.c
 	@${REINPLACE_CMD} -e "s,%%RUNDIR%%,${RUNDIR}," ${WRKSRC}/src/url.c
 .if defined(WITH_SQLMOD)
-	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch
+	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch.old
 .endif
 
 do-install:
@@ -173,4 +167,4 @@ post-install:
 	@${CP} ${WRKSRC}/SQLMod/LICENSE ${DOCSDIR}/LICENSE.sqlmod
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
