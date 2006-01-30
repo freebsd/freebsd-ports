@@ -7,6 +7,7 @@
 
 PORTNAME=	mad_fcl
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

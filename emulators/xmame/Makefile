@@ -7,6 +7,7 @@
 
 PORTNAME?=	xmame
 PORTVERSION?=	0.103
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.energyhq.es.eu.org/files/:xmame \
@@ -23,7 +24,7 @@ DIST_SUBDIR=	xmame
 MAINTAINER?=	mmendez@energyhq.be
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 #BROKEN=		Unfetchable
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.0/
 
@@ -14,7 +15,7 @@ MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
 LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42 \
-		expat.5:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

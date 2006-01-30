@@ -7,6 +7,7 @@
 
 PORTNAME=	electricsheep
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://electricsheep.org/
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \

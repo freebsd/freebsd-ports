@@ -7,7 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.14.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -62,7 +62,7 @@ INFO=		autosprintf gettext
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--with-libexpat-prefix=${LOCALBASE}/lib
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
 pre-extract:

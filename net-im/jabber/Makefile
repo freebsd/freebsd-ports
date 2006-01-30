@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.4.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://devel.amessage.info/jabberd14/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
-		expat.5:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_RC_SUBR=	jabberd.sh
 USE_BZIP2=	yes

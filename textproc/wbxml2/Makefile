@@ -7,6 +7,7 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://czauner.onlineloop.com/pub/FreeBSD/distfiles/
@@ -16,7 +17,7 @@ DISTNAME=	wbxml2-0.9.0-src
 MAINTAINER=	czauner+ports@onlineloop.com
 COMMENT=	Library & tools for converting wbxml<->xml
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	automake:19 autoconf:259 libtool:15

@@ -8,7 +8,7 @@
 
 PORTNAME=	ulxmlrpcpp
 PORTVERSION=	1.4.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ultra lightweight xml-rpc library written in C++
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
 USE_ICONV=	yes

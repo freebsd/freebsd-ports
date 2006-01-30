@@ -7,6 +7,7 @@
 
 PORTNAME=	flood
 PORTVERSION=	0.20041105
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTNAME=	httpd-test_20041105052051
@@ -14,7 +15,7 @@ DISTNAME=	httpd-test_20041105052051
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		apr-1:${PORTSDIR}/devel/apr
 
 WRKSRC=		${WRKDIR}/httpd-test/flood

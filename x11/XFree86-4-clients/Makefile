@@ -7,7 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR= ${PORTVERSION}
@@ -22,7 +22,7 @@ COMMENT=	XFree86-4 client programs and related files
 
 RUN_DEPENDS=	xterm>0:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		expat.5:${PORTSDIR}/textproc/expat2 \
+		expat.6:${PORTSDIR}/textproc/expat2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft

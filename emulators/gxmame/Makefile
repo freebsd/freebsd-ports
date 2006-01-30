@@ -8,7 +8,7 @@
 PORTNAME=	gxmame
 DISTVERSION=	0.35beta2
 PORTEPOCH=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_X_PREFIX=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/
@@ -16,7 +17,7 @@ COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
