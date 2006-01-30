@@ -28,9 +28,11 @@ include/libfo-0.3/libfo/fo-xsl-formatter.h
 include/libfo-0.3/libfo/fo-xslt-transformer.h
 include/libfo-0.3/property/fo-property.h
 include/libfo-0.3/util/fo-hash-table.h
+include/libfo-0.3/util/fo-image.h
+include/libfo-0.3/util/fo-pixbuf.h
 lib/libfo-0.3.a
 lib/libfo-0.3.so
-lib/libfo-0.3.so.303
+lib/libfo-0.3.so.306
 libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
@@ -63,6 +65,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/FoEnum.html
 %%DOCSDIR%%/FoExpression.html
 %%DOCSDIR%%/FoFo.html
+%%DOCSDIR%%/FoHashTable.html
 %%DOCSDIR%%/FoId.html
 %%DOCSDIR%%/FoInlineFoIface.html
 %%DOCSDIR%%/FoInteger.html
@@ -129,6 +132,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/border-top-color.html
 %%DOCSDIR%%/border-top-style.html
 %%DOCSDIR%%/border-top-width.html
+%%DOCSDIR%%/border.html
 %%DOCSDIR%%/break-after.html
 %%DOCSDIR%%/break-before.html
 %%DOCSDIR%%/ch02.html
@@ -139,13 +143,14 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/column-number.html
 %%DOCSDIR%%/column-width.html
 %%DOCSDIR%%/conditional-page-master-reference.html
+%%DOCSDIR%%/conformance.html
 %%DOCSDIR%%/content-height.html
 %%DOCSDIR%%/content-type.html
 %%DOCSDIR%%/content-width.html
 %%DOCSDIR%%/context.html
 %%DOCSDIR%%/datatypes.html
-%%DOCSDIR%%/declarations.html
 %%DOCSDIR%%/debugging.html
+%%DOCSDIR%%/declarations.html
 %%DOCSDIR%%/direction.html
 %%DOCSDIR%%/directory-structure.html
 %%DOCSDIR%%/display-align.html
@@ -164,7 +169,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/footnote-body.html
 %%DOCSDIR%%/format.html
 %%DOCSDIR%%/formatting-objects.html
-%%DOCSDIR%%/generated-properties.html
 %%DOCSDIR%%/generating-source.html
 %%DOCSDIR%%/grouping-separator.html
 %%DOCSDIR%%/grouping-size.html
@@ -200,6 +204,9 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/master-name.html
 %%DOCSDIR%%/master-reference.html
 %%DOCSDIR%%/media-usage.html
+%%DOCSDIR%%/multi-case.html
+%%DOCSDIR%%/multi-switch.html
+%%DOCSDIR%%/multi-properties.html
 %%DOCSDIR%%/multi-property-set.html
 %%DOCSDIR%%/multi-toggle.html
 %%DOCSDIR%%/node.html
@@ -234,6 +241,8 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/region-end.html
 %%DOCSDIR%%/region-name.html
 %%DOCSDIR%%/region-start.html
+%%DOCSDIR%%/repeatable-page-master-alternatives.html
+%%DOCSDIR%%/repeatable-page-master-reference.html
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/role.html
 %%DOCSDIR%%/root.html
@@ -275,11 +284,15 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-FoDocGP.html
 %%DOCSDIR%%/xmlroff-FoError.html
 %%DOCSDIR%%/xmlroff-FoFontDesc.html
+%%DOCSDIR%%/xmlroff-FoImage.html
 %%DOCSDIR%%/xmlroff-FoLayout.html
 %%DOCSDIR%%/xmlroff-FoLibfoContext.html
 %%DOCSDIR%%/xmlroff-FoNeutralFoIface.html
 %%DOCSDIR%%/xmlroff-FoPcw.html
+%%DOCSDIR%%/xmlroff-FoPixbuf.html
+%%DOCSDIR%%/xmlroff-FoTblr.html
 %%DOCSDIR%%/xmlroff-FoWrapper.html
+%%DOCSDIR%%/xmlroff-FoWsc.html
 %%DOCSDIR%%/xmlroff-FoXmlDoc.html
 %%DOCSDIR%%/xmlroff-FoXslFormatter.html
 %%DOCSDIR%%/xmlroff-FoXsltTransformer.html
@@ -287,6 +300,12 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-block-progression-dimensionmaximum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionminimum.html
 %%DOCSDIR%%/xmlroff-block-progression-dimensionoptimum.html
+%%DOCSDIR%%/xmlroff-border-bottom.html
+%%DOCSDIR%%/xmlroff-border-left.html
+%%DOCSDIR%%/xmlroff-border-right.html
+%%DOCSDIR%%/xmlroff-border-style.html
+%%DOCSDIR%%/xmlroff-border-top.html
+%%DOCSDIR%%/xmlroff-border-width.html
 %%DOCSDIR%%/xmlroff-float.html
 %%DOCSDIR%%/xmlroff-fo-block-area.html
 %%DOCSDIR%%/xmlroff-fo-block-block-area.html
@@ -297,6 +316,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-fo-list-item-area.html
 %%DOCSDIR%%/xmlroff-fo-list-item-body-area.html
 %%DOCSDIR%%/xmlroff-fo-list-item-label-area.html
+%%DOCSDIR%%/xmlroff-fo-marker-parent.html
 %%DOCSDIR%%/xmlroff-fo-page-sequence-area.html
 %%DOCSDIR%%/xmlroff-fo-property-border-color.html
 %%DOCSDIR%%/xmlroff-fo-region-body-area.html
@@ -318,10 +338,6 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-line.html
 %%DOCSDIR%%/xmlroff-keep-with-previouswithin-page.html
 %%DOCSDIR%%/xmlroff-marker.html
-%%DOCSDIR%%/xmlroff-multi-case.html
-%%DOCSDIR%%/xmlroff-multi-switch.html
-%%DOCSDIR%%/xmlroff-repeatable-page-master-alternatives.html
-%%DOCSDIR%%/xmlroff-repeatable-page-master-reference.html
 %%DOCSDIR%%/xmlroff-space-afterconditionality.html
 %%DOCSDIR%%/xmlroff-space-aftermaximum.html
 %%DOCSDIR%%/xmlroff-space-afterminimum.html
@@ -343,21 +359,10 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-space-startoptimum.html
 %%DOCSDIR%%/xmlroff-space-startprecedence.html
 %%DOCSDIR%%/xmlroff.devhelp
-%%DOCSDIR%%/FoHashTable.html
-%%DOCSDIR%%/border.html
-%%DOCSDIR%%/multi-properties.html
-%%DOCSDIR%%/xmlroff-FoTblr.html
-%%DOCSDIR%%/xmlroff-FoWsc.html
-%%DOCSDIR%%/xmlroff-border-bottom.html
-%%DOCSDIR%%/xmlroff-border-left.html
-%%DOCSDIR%%/xmlroff-border-right.html
-%%DOCSDIR%%/xmlroff-border-style.html
-%%DOCSDIR%%/xmlroff-border-top.html
-%%DOCSDIR%%/xmlroff-border-width.html
-share/xml/libfo-0.3.3/catalog.xml
-share/xml/libfo-0.3.3/libfo-compat.xsl
-share/xml/libfo-0.3.3/xmlroff.fo
-@dirrm share/xml/libfo-0.3.3
+share/xml/libfo-0.3.8/catalog.xml
+share/xml/libfo-0.3.8/libfo-compat.xsl
+share/xml/libfo-0.3.8/xmlroff.fo
+@dirrm share/xml/libfo-0.3.8
 @dirrmtry share/xml
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.3/util
