@@ -24,8 +24,8 @@ MAN3=		XML::LibXML::XPathContext.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE="Need at least perl 5.6.1 to build"
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-XPathContext.xs
 .endif
 
 .include <bsd.port.post.mk>
