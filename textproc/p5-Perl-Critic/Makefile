@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -28,6 +28,7 @@ PERL_MODBUILD=	yes
 MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
+	Perl::Critic::DEVELOPER.3 \
 	Perl::Critic::Policy.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3 \
@@ -46,25 +47,35 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
+	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3 \
-	Perl::Critic::Policy::Modules::ProhibitSpecificModules.3 \
 	Perl::Critic::Policy::Modules::RequireBarewordIncludes.3 \
 	Perl::Critic::Policy::Modules::RequireExplicitPackage.3 \
 	Perl::Critic::Policy::Modules::RequireVersionVar.3 \
+	Perl::Critic::Policy::Modules::RequireEndWithOne.3 \
+	Perl::Critic::Policy::Modules::ProhibitEvilModules.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3 \
+	Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames.3 \
+	Perl::Critic::Policy::References::ProhibitDoubleSigils.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching.3 \
+	Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitBuiltinHomonyms.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitExplicitReturnUndef.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes.3 \
-	Perl::Critic::Policy::TestingAndDebugging::RequirePackageStricture.3 \
-	Perl::Critic::Policy::TestingAndDebugging::RequirePackageWarnings.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitExcessComplexity.3 \
+	Perl::Critic::Policy::Subroutines::RequireFinalReturn.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitAmpersandSigils.3 \
+	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoStrict.3 \
+	Perl::Critic::Policy::TestingAndDebugging::ProhibitNoWarnings.3 \
+	Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict.3 \
+	Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
@@ -77,6 +88,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitLocalVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
+	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
+	Perl::Critic::Policy::Variables::ProhibitMatchVars.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Violation.3
 
