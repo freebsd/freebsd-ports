@@ -18,7 +18,7 @@ COMMENT=	An OpenGL-based volumetric visualization program for scientific dataset
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf \
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

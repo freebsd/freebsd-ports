@@ -21,7 +21,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		gsl.7:${PORTSDIR}/math/gsl \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		fftw3.3:${PORTSDIR}/math/fftw3 \
-		netcdf:${PORTSDIR}/math/netcdf \
+		netcdf:${PORTSDIR}/science/netcdf \
 		qwtplot3d.0:${PORTSDIR}/math/qwtplot3d
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit
 

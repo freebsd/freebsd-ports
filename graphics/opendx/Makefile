@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--without-hdf
 .endif
 
 .if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 .endif

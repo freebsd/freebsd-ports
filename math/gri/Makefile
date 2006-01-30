@@ -15,7 +15,7 @@ DISTNAME=	gri-${PORTVERSION}-arch-indep
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible plotting language for producing scientific graphs
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

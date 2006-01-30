@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to the NetCDF scientific IO library
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 USE_RUBY=	yes

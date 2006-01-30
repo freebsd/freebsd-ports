@@ -133,7 +133,6 @@
     SUBDIR += naturalmath
     SUBDIR += nauty
     SUBDIR += ndiff
-    SUBDIR += netcdf
     SUBDIR += newmat
     SUBDIR += ngraph
     SUBDIR += nsc2ke

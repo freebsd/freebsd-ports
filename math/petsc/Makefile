@@ -143,7 +143,7 @@ CONFIGURE_ARGS+=	--with-parmetis=1					\
 #WITH_NETCDF=	yes
 #.endif
 #.if defined(WITH_NETCDF)
-#LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/math/netcdf
+#LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
 #CONFIGURE_ENV+=	NETCDF_INCLUDE=${LOCALBASE}/include	\
 #		NETCDF_LIB=${LOCALBASE}/lib
 #.endif
