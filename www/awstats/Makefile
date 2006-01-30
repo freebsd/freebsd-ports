@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.4
-PORTREVISION=	1
+PORTVERSION=	6.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	webmaster@lightningfire.net
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
@@ -20,7 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -31,10 +28,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storabl
 .endif
 
 post-patch:
-#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
-#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_configure.pl
-#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_updateall.pl
-#	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_configure.pl
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_updateall.pl
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/awstats
@@ -65,7 +62,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.5.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.6.wbm ${PREFIX}/www/awstats/tools/webmin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
@@ -101,6 +98,7 @@ do-install:
 	@${ECHO_CMD} "* Rename ${PREFIX}/www/awstats/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 	@${ECHO_CMD} ""
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
