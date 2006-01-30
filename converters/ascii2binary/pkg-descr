@@ -1,0 +1,20 @@
+These programs convert between textual and binary representations of numbers.
+ascii2binary reads input consisting of textual representations of numbers
+separated by whitespace and produces as output the binary equivalents. The type
+and precision of the binary output is selected using command line flags.
+
+binary2ascii reads input consisting of binary numbers and converts them to
+their textual representation. Command line flags specify the type and size
+of the binary numbers and provide control over the format of the output.
+Unsigned integers may be written out in binary, octal, decimal, or hexadecimal.
+Signed integers may be written out only in binary or decimal. Floating point
+numbers may be written out only decimal, either in standard or scientific
+notation. (If you want to examine the binary representation of floating point
+numbers, just treat the input as a sequence of unsigned characters.)
+
+The two programs are useful for generating test data, for inspecting binary
+files, and for interfacing programs that generate textual output to programs
+that require binary input and conversely. They can also be useful when it is
+desired to reformat numbers.
+
+WWW: http://billposer.org/Software/a2b.html
