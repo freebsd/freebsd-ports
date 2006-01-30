@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060130:
+  AFFECTS: users of sysutils/portsnap
+  AUTHOR: cperciva@FreeBSD.org
+
+  Due to configuration file changes, users of portsnap are encouraged
+  to copy the latest sample configuration file into place after updating
+  portsnap to version 1.0:
+
+  	# cd /usr/local/etc && cp portsnap.conf.sample portsnap.conf
+
 20060126:
   AFFECTS: ports that use Display Postscript libraries and xorg-libraries
   AUTHOR: x11@FreeBSD.org
