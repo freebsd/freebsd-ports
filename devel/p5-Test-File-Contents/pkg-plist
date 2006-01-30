@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/File/Contents.pm
+@dirrm %%SITE_PERL%%/Test/File
+@dirrmtry %%SITE_PERL%%/Test
