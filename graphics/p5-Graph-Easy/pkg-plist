@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Graph/Easy/Layout/Chain.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Grid.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Path.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Repair.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Scout.pm
 %%SITE_PERL%%/Graph/Easy/Node.pm
 %%SITE_PERL%%/Graph/Easy/Node/Anon.pm
