@@ -32,7 +32,7 @@ switch ($argv[2])
 case "PRE-INSTALL":
 	set groups  = (qmail qnofiles);
 	set gids    = (82 81);
-	set users   = (alias qmaild qmaill qmailp qmailq qmailr qmails);
+	set users   = (qalias qmaild qmaill qmailp qmailq qmailr qmails);
 	set users_g = (qnofiles qnofiles qnofiles qnofiles qmail qmail qmail);
 	set uids    = (81 82 83 84 85 86 87);
 
@@ -64,7 +64,7 @@ case "PRE-INSTALL":
 		pw usershow $user >& /dev/null;
 	
 		if ($status) then
-			if ($user == "alias") then
+			if ($user == "qalias") then
 				set home = ${PKG_PREFIX}/alias;
 			else
 				set home = ${PKG_PREFIX};
