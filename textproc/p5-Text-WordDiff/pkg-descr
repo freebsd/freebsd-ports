@@ -1,0 +1,9 @@
+This module is a variation on the lovely Text::Diff module. Rather
+than generating traditional line-oriented diffs, however, it generates
+word-oriented diffs. This can be useful for tracking changes in
+narrative documents or documents with very long lines. To diff
+source code, one is still best off using Text::Diff. But if you
+want to see how a short story changed from one version to the next,
+this module will do the job very nicely.
+
+WWW: http://search.cpan.org/dist/Text-WordDiff/
