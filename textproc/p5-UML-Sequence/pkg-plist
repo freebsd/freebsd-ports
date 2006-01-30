@@ -1,14 +1,17 @@
 bin/genericseq.pl
 bin/seq2svg.pl
+bin/seq2rast.pl
 %%SITE_PERL%%/Devel/CallSeq.pm
 %%SITE_PERL%%/Devel/OOCallSeq.pm
 %%SITE_PERL%%/UML/genericseq.pl
 %%SITE_PERL%%/UML/seq2svg.pl
+%%SITE_PERL%%/UML/seq2rast.pl
 %%SITE_PERL%%/UML/Sequence.pm
 %%SITE_PERL%%/UML/Sequence/Activation.pm
 %%SITE_PERL%%/UML/Sequence/JavaSeq.pm
 %%SITE_PERL%%/UML/Sequence/PerlOOSeq.pm
 %%SITE_PERL%%/UML/Sequence/PerlSeq.pm
+%%SITE_PERL%%/UML/Sequence/Raster.pm
 %%SITE_PERL%%/UML/Sequence/SimpleSeq.pm
 %%SITE_PERL%%/UML/Sequence/Svg.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence/.packlist
