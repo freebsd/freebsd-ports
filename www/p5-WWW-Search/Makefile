@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.485
+PORTVERSION=	2.486
 PORTREVISION=	0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -50,4 +50,10 @@ post-patch:
 	${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi.orig -e 's/\r//g'
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
