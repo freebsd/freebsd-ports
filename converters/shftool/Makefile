@@ -7,14 +7,14 @@
 
 PORTNAME=	shftool
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.df.lth.se/~triad/krad/shftool/
 
 MAINTAINER=	watchman@ludd.ltu.se
 COMMENT=	Converter for the Standard Hex Format (SHF)
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

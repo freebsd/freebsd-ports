@@ -8,6 +8,7 @@
 
 PORTNAME=	ocaml-expat
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 MAKE_ARGS=	EXPAT_LIBDIR=${LOCALBASE}/lib \

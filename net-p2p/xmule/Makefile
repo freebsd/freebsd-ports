@@ -7,6 +7,7 @@
 
 PORTNAME=	xmule
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
@@ -16,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

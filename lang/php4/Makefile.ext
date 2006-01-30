@@ -334,7 +334,7 @@ CONFIGURE_ARGS+=--enable-tokenizer
 .endif
 
 .if ${PHP_MODNAME} == "wddx"
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFIGURE_ARGS+=--enable-wddx \
 		--with-expat-dir=${LOCALBASE}
@@ -344,14 +344,14 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "xml"
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFIGURE_ARGS+=--enable-xml \
 		--with-expat-dir=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "xmlrpc"
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFIGURE_ARGS+=--with-xmlrpc \
 		--with-expat-dir=${LOCALBASE} \
@@ -364,7 +364,7 @@ PHP_HEADER_DIRS=libxmlrpc
 
 .if ${PHP_MODNAME} == "xslt"
 LIB_DEPENDS+=	sablot.70:${PORTSDIR}/textproc/sablotron \
-		expat.5:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2
 
 CONFIGURE_ARGS+=--enable-xslt \
 		--with-xslt-sablot=${LOCALBASE} \

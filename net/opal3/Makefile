@@ -7,6 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000

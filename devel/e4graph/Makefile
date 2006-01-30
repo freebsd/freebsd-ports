@@ -8,7 +8,7 @@
 
 PORTNAME=	e4graph
 PORTVERSION=	1.0a11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	A C++ library that persistently stores graph like data
 
 LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \
 		tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND} \
-		expat.5:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 

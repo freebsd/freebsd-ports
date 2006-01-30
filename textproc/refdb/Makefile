@@ -7,6 +7,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	paulh@logicsquad.net
 COMMENT=	Bibliographic reference database
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		dbi.0:${PORTSDIR}/databases/libdbi
 
 BROKEN=		Incorrect pkg-plist

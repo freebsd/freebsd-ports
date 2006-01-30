@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -50,7 +50,7 @@ WRKSRC_MODPERL=	${WRKDIR}/mod_perl-${VERSION_MODPERL}
 .if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
 EXPAT_CONF+=	--disable-rule=EXPAT
 .else
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 EXPAT_CONF+=	--enable-rule=EXPAT
 .endif
 

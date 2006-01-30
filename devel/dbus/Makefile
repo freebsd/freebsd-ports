@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.60
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -15,7 +15,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A message bus system for inter-application communication
 
 BUILD_DEPENDS?=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS?=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes

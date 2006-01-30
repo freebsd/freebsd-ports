@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+ipv6
 PORTVERSION=	1.3.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -55,7 +55,7 @@ RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 EXPAT_CONF+=    --disable-rule=EXPAT
 .else
 .if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
-LIB_DEPENDS+=   expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=   expat.6:${PORTSDIR}/textproc/expat2
 .endif
 EXPAT_CONF+=    --enable-rule=EXPAT
 .endif

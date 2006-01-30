@@ -7,6 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.openh323.org/bin/ \
@@ -17,7 +18,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

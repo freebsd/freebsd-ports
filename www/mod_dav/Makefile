@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_dav
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/mod_dav/
 DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 .if defined(WITHOUT_APACHE_EXPAT)
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
-LIB_DEPENDS+=		expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \

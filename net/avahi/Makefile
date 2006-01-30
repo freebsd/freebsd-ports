@@ -7,14 +7,14 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Service discovery on a local network
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		daemon.2:${PORTSDIR}/devel/libdaemon \
 		dbus-1.2:${PORTSDIR}/devel/dbus \
 		gdbm.3:${PORTSDIR}/databases/gdbm

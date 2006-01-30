@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
@@ -17,7 +18,7 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
 LIB_DEPENDS=	ggz.3:${PORTSDIR}/games/libggz \
-		expat.5:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes

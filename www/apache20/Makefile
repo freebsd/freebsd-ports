@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.55
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2 of Apache web server with ${WITH_MPM:L} MPM.
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 LATEST_LINK=	apache20
 

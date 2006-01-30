@@ -7,6 +7,7 @@
 
 PORTNAME=	treeline
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -39,7 +40,7 @@ BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 .if defined(WITHOUT_PYXML)
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
 .if defined(WITH_HTTPLOAD)

@@ -7,6 +7,7 @@
 
 PORTNAME=	neon
 PORTVERSION=	0.25.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.webdav.org/neon/ \
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 

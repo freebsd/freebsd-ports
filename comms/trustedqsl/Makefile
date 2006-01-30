@@ -7,6 +7,7 @@
 
 PORTNAME=	trustedqsl
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	trustedqsl
@@ -15,7 +16,7 @@ DISTFILES=	tqsllib-1.4.tar.gz TrustedQSL-1.11.tar.gz
 MAINTAINER=	db@db.net
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		wx_base-2.6:${PORTSDIR}/x11-toolkits/wxgtk26
 
 USE_PERL5=	yes

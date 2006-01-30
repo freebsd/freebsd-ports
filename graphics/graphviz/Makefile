@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		expat.5:${PORTSDIR}/textproc/expat2 \
+		expat.6:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
 
 USE_BISON=	yes

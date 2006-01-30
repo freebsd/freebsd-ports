@@ -8,7 +8,7 @@
 
 PORTNAME=	datadesigner
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dbdesign
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	dbdesign
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Schema Designer
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24
 
 USE_GNOME=	libxml2 libxslt

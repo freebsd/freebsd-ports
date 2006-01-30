@@ -7,6 +7,7 @@
 
 PORTNAME=	slimserver
 DISTVERSION?=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/${NIGHTLY}SlimServer_v${DISTVERSION}/
 DISTNAME=	SlimServer_v${DISTVERSION}
@@ -18,7 +19,7 @@ COMMENT=	Slim Devices audio streaming server
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 
 PKGINSTALL=	${WRKDIR}/pkg-install

@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.3.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com:9000/en/1.1/:bookhtml \
@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 
