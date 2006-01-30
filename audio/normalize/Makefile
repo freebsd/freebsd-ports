@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	normalize
-PORTVERSION=	0.7.6
-PORTREVISION=	3
+PORTVERSION=	0.7.7
 CATEGORIES=	audio
-MASTER_SITES=	http://www1.cs.columbia.edu/~cvaill/normalize/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/normalize/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	alex@fafula.com
 COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
-USE_BZIP2=	yes	# XXX set before OPTIONS
+USE_BZIP2=		yes
+USE_GETOPT_LONG=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=		-I${LOCALBASE}/include
+LDFLAGS=		-L${LOCALBASE}/lib
+
+MAN1=		normalize.1 normalize-mp3.1
+
 OPTIONS=	XMMS "Build XMMS plugin" off
+
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.endif
-
-USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.if defined(WITH_XMMS)
 PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	X11BASE="${X11BASE}"
 .else
@@ -42,10 +45,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-MAN1=		normalize.1 normalize-mp3.1
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.post.mk>
