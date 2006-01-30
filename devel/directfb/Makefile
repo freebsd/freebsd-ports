@@ -18,8 +18,6 @@ COMMENT=	Graphic development lightweight API
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-BROKEN=		Hard-wires libc_r thread library
-
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 USE_SDL=	sdl
@@ -27,7 +25,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 PLIST_SUB+=	DIRECTFB_VERSION=${PORTVERSION}
 
 .if exists(${LOCALBASE}/lib/libfreetype.so.9)
@@ -52,12 +49,9 @@ MAN5=		directfbrc.5
 BROKEN=		"Does not compile on alpha 5.x"
 .endif
 
-.if ${ARCH} == "ia64"
-BROKEN=		"Hard-codes references to libc_r"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
