@@ -2,18 +2,20 @@ oRTP - a Real-time Transport Protocol stack under LGPL.
 
 Features:
 
- o Written in C, based on glib for unix and windows portability. 
- o Implement the RFC1889 (RTP) with a easy to use API with high and low
-   level access.
- o Includes support for multiples profiles, AV profile (RFC1890) being the
-   one by default.
- o Includes a packet scheduler for synchronizing rtp recv and send. Scheduling
+ * Written in C
+ * Implement the RFC3550 (RTP) with a easy to use API with high and low level
+   access.
+ * Includes support for multiples profiles, AV profile (RFC1890) being the one
+   by default.
+ * Includes a packet scheduler for synchronizing rtp recv and send. Scheduling
    is optionnal, rtp sessions can remain not scheduled.
- o Implements blocking and non blocking IO for RTP sessions.
- o Supports mutiplexing IO, so that hundreds of RTP sessions can be managed by
+ * Implements blocking and non blocking IO for RTP sessions.
+ * Supports mutiplexing IO, so that hundreds of RTP sessions can be managed by
    a single thread.
- o Supports part of RFC2833 for telephone events over RTP.
- o The API is well documented using gtk-doc.
- o Licensed under the Lesser Gnu Public License.
+ * Supports part of RFC2833 for telephone events over RTP.
+ * The API is well documented using gtk-doc.
+ * Licensed under the Lesser Gnu Public License.
+ * RTCP messages sent periodically since 0.7.0 (compound packet including
+   sender report or receiver report + SDES)
 
 WWW: http://www.linphone.org/ortp/
