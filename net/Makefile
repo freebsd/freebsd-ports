@@ -218,6 +218,7 @@
     SUBDIR += ifdepd
     SUBDIR += ifstat
     SUBDIR += ifstated
+    SUBDIR += ilbc
     SUBDIR += imapproxy
     SUBDIR += ip6_int
     SUBDIR += ipa_ip6fw
