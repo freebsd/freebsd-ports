@@ -482,6 +482,7 @@ asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
 asc		ports/games/asc
 ascd		ports/audio/ascd
+ascii2binary	ports/converters/ascii2binary
 ascii2pdf	ports/textproc/ascii2pdf
 asciiquarium	ports/games/asciiquarium
 asclock		ports/x11-clocks/asclock
