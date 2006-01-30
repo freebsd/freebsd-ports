@@ -9,7 +9,9 @@ PORTNAME=	qmailanalog
 PORTVERSION=	0.70
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://cr.yp.to/software/
+MASTER_SITES=	http://cr.yp.to/software/ \
+		http://www.emaillab.org/djb/qmailanalog/ \
+		http://summersoft.fay.ar.us/pub/qmail/qmailanalog/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
@@ -34,12 +36,11 @@ PREFIX?=	${QMAIL_PREFIX}
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
 NO_MTREE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${PREFIX} != ${QMAIL_PREFIX}
-BROKEN=	"Cannot Make and Install with different PREFIX or QMAIL_PREFIX"
+BROKEN=	Cannot Make and Install with different PREFIX or QMAIL_PREFIX
 .endif
 
 post-patch:
