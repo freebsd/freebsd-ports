@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	shout
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://www.dingoskidneys.com/~jaredj/downloads/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7211/
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -22,7 +21,7 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-
+RUBY_EXTCONF=	ext/extconf.rb
 INSTALL_TARGET=	site-install
 
 DOCS=		README	doc
