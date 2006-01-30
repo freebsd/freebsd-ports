@@ -4,6 +4,7 @@
     COMMENT = Character code converters
 
     SUBDIR += aish
+    SUBDIR += ascii2binary
     SUBDIR += asr10
     SUBDIR += base64
     SUBDIR += btoa
