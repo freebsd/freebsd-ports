@@ -19,9 +19,9 @@ do Getopts('vf:');
 $verbose = 0 unless ($verbose = $opt_v);
 $aliases = $ALIASES unless ($aliases = $opt_f);
 
-if (($aliasdir = (getpwnam("qalias"))[7]) eq "")
+if (($aliasdir = (getpwnam("alias"))[7]) eq "")
 {
-	die "User qalias does not exist, bailing!\n";
+	die "User alias does not exist, bailing!\n";
 }
 
 if (($qmaildir = (getpwnam("qmaild"))[7]) eq "")
