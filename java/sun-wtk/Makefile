@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	sun-
 DISTNAME=	j2me_wireless_toolkit-${PORTVERSION:S/./_/}-linux-i386
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	past@noc.ntua.gr
+MAINTAINER=	past@ebs.gr
 COMMENT=	Sun J2ME Wireless Toolkit
 
 USE_JAVA=	yes
@@ -21,7 +21,7 @@ JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR&SiteId=JSC&TransactionId=try
 
 RESTRICTED=	License does not allow redistribution of any kind
 NO_CDROM=	${RESTRICTED}
