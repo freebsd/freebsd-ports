@@ -2,16 +2,15 @@ bin/konversation
 bin/konversationircprotocolhandler
 share/applications/kde/konversation.desktop
 share/apps/kconf_update/konversation-0.14-mainwindow.pl
+share/apps/kconf_update/konversation-0.19-appearance.pl
+share/apps/kconf_update/konversation-0.19-colorcodes.pl
+share/apps/kconf_update/konversation-0.19-colors.pl
+share/apps/kconf_update/konversation-0.19-custombrowser.pl
+share/apps/kconf_update/konversation-0.19-notifylists.pl
+share/apps/kconf_update/konversation-0.19-sortorder.pl
+share/apps/kconf_update/konversation-0.19-tabplacement.pl
 share/apps/kconf_update/konversation.upd
 share/apps/konversation/eventsrc
-share/apps/konversation/images/led_blue_off.png
-share/apps/konversation/images/led_blue_on.png
-share/apps/konversation/images/led_green_off.png
-share/apps/konversation/images/led_green_on.png
-share/apps/konversation/images/led_red_off.png
-share/apps/konversation/images/led_red_on.png
-share/apps/konversation/images/led_yellow_off.png
-share/apps/konversation/images/led_yellow_on.png
 share/apps/konversation/konversationui.rc
 share/apps/konversation/scripts/bug
 share/apps/konversation/scripts/cmd
@@ -90,13 +89,6 @@ share/doc/HTML/en/konversation/colorchooser_screen.png
 share/doc/HTML/en/konversation/colorize.png
 share/doc/HTML/en/konversation/common
 share/doc/HTML/en/konversation/configure.png
-share/doc/HTML/en/konversation/cr16-action-irc_admin.png
-share/doc/HTML/en/konversation/cr16-action-irc_away.png
-share/doc/HTML/en/konversation/cr16-action-irc_halfop.png
-share/doc/HTML/en/konversation/cr16-action-irc_normal.png
-share/doc/HTML/en/konversation/cr16-action-irc_op.png
-share/doc/HTML/en/konversation/cr16-action-irc_owner.png
-share/doc/HTML/en/konversation/cr16-action-irc_voice.png
 share/doc/HTML/en/konversation/dccstatus_screen_co.png
 share/doc/HTML/en/konversation/editserver_screen_co.png
 share/doc/HTML/en/konversation/first_channel_co.png
@@ -107,6 +99,13 @@ share/doc/HTML/en/konversation/identities_away_co.png
 share/doc/HTML/en/konversation/identities_gen_co.png
 share/doc/HTML/en/konversation/index.cache.bz2
 share/doc/HTML/en/konversation/index.docbook
+share/doc/HTML/en/konversation/irc_admin.png
+share/doc/HTML/en/konversation/irc_away.png
+share/doc/HTML/en/konversation/irc_halfop.png
+share/doc/HTML/en/konversation/irc_normal.png
+share/doc/HTML/en/konversation/irc_op.png
+share/doc/HTML/en/konversation/irc_owner.png
+share/doc/HTML/en/konversation/irc_voice.png
 share/doc/HTML/en/konversation/kaddressbook.png
 share/doc/HTML/en/konversation/kimproxy_create_screen2.png
 share/doc/HTML/en/konversation/kimproxy_create_screen_co.png
@@ -132,6 +131,52 @@ share/doc/HTML/en/konversation/serverlist_co.png
 share/doc/HTML/en/konversation/serverlist_screen_co.png
 share/doc/HTML/en/konversation/urlcatcher_screen_co.png
 share/doc/HTML/en/konversation/webbrowser_screen_co.png
+share/doc/HTML/es/konversation/addchannel.png
+share/doc/HTML/es/konversation/addnetwork_co.png
+share/doc/HTML/es/konversation/addserver_co.png
+share/doc/HTML/es/konversation/channel_screen_tour_co.png
+share/doc/HTML/es/konversation/channellist_screen_co.png
+share/doc/HTML/es/konversation/checkidentities.png
+share/doc/HTML/es/konversation/colorchooser_screen.png
+share/doc/HTML/es/konversation/colorize.png
+share/doc/HTML/es/konversation/configure.png
+share/doc/HTML/es/konversation/dccstatus_screen_co.png
+share/doc/HTML/es/konversation/first_channel_co.png
+share/doc/HTML/es/konversation/first_serverlist_co.png
+share/doc/HTML/es/konversation/highlighting_screen_co.png
+share/doc/HTML/es/konversation/identities_adv_co.png
+share/doc/HTML/es/konversation/identities_away_co.png
+share/doc/HTML/es/konversation/identities_gen_co.png
+share/doc/HTML/es/konversation/irc_admin.png
+share/doc/HTML/es/konversation/irc_away.png
+share/doc/HTML/es/konversation/irc_halfop.png
+share/doc/HTML/es/konversation/irc_normal.png
+share/doc/HTML/es/konversation/irc_op.png
+share/doc/HTML/es/konversation/irc_owner.png
+share/doc/HTML/es/konversation/irc_voice.png
+share/doc/HTML/es/konversation/kaddressbook.png
+share/doc/HTML/es/konversation/kimproxy_create_screen2.png
+share/doc/HTML/es/konversation/kimproxy_create_screen_co.png
+share/doc/HTML/es/konversation/led_blue_off.png
+share/doc/HTML/es/konversation/led_blue_on.png
+share/doc/HTML/es/konversation/led_green_off.png
+share/doc/HTML/es/konversation/led_green_on.png
+share/doc/HTML/es/konversation/led_red_off.png
+share/doc/HTML/es/konversation/led_red_on.png
+share/doc/HTML/es/konversation/led_yellow_off.png
+share/doc/HTML/es/konversation/led_yellow_on.png
+share/doc/HTML/es/konversation/logviewer_co.png
+share/doc/HTML/es/konversation/nicksonline_co.png
+share/doc/HTML/es/konversation/nickthemes_screen_co.png
+share/doc/HTML/es/konversation/notification_screen_co.png
+share/doc/HTML/es/konversation/notifylist_screen_co.png
+share/doc/HTML/es/konversation/osd_demo.png
+share/doc/HTML/es/konversation/osd_screen_co.png
+share/doc/HTML/es/konversation/quickbuttons_screen.png
+share/doc/HTML/es/konversation/quickconnect_screen.png
+share/doc/HTML/es/konversation/serverlist_co.png
+share/doc/HTML/es/konversation/urlcatcher_screen_co.png
+share/doc/HTML/es/konversation/webbrowser_screen_co.png
 share/doc/HTML/et/konversation/common
 share/doc/HTML/et/konversation/index.cache.bz2
 share/doc/HTML/et/konversation/index.docbook
@@ -214,9 +259,8 @@ share/icons/hicolor/32x32/apps/konversation.png
 share/icons/hicolor/48x48/apps/konversation.png
 share/icons/hicolor/64x64/apps/konversation.png
 share/icons/hicolor/scalable/apps/konversation.svgz
-share/locale/br/LC_MESSAGES/konversation.mo
-share/locale/ca/LC_MESSAGES/konversation.mo
-share/locale/cy/LC_MESSAGES/konversation.mo
+share/locale/bg/LC_MESSAGES/konversation.mo
+share/locale/cs/LC_MESSAGES/konversation.mo
 share/locale/da/LC_MESSAGES/konversation.mo
 share/locale/de/LC_MESSAGES/konversation.mo
 share/locale/el/LC_MESSAGES/konversation.mo
@@ -225,93 +269,38 @@ share/locale/es/LC_MESSAGES/konversation.mo
 share/locale/et/LC_MESSAGES/konversation.mo
 share/locale/fi/LC_MESSAGES/konversation.mo
 share/locale/fr/LC_MESSAGES/konversation.mo
-share/locale/ga/LC_MESSAGES/konversation.mo
-share/locale/he/LC_MESSAGES/konversation.mo
 share/locale/hi/LC_MESSAGES/konversation.mo
-share/locale/is/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
 share/locale/ja/LC_MESSAGES/konversation.mo
-share/locale/ko/LC_MESSAGES/konversation.mo
-share/locale/lt/LC_MESSAGES/konversation.mo
-share/locale/mt/LC_MESSAGES/konversation.mo
-share/locale/nb/LC_MESSAGES/konversation.mo
 share/locale/nl/LC_MESSAGES/konversation.mo
-share/locale/pl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
 share/locale/pt_BR/LC_MESSAGES/konversation.mo
-share/locale/ro/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
-share/locale/sl/LC_MESSAGES/konversation.mo
 share/locale/sr/LC_MESSAGES/konversation.mo
 share/locale/sr@Latn/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
 share/locale/ta/LC_MESSAGES/konversation.mo
 share/locale/tr/LC_MESSAGES/konversation.mo
-share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/services/konvirc.protocol
 share/services/konvirc6.protocol
-@dirrmtry share/services
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons/crystalsvg/scalable/actions
-@dirrmtry share/icons/crystalsvg/scalable
-@dirrmtry share/icons/crystalsvg/32x32/actions
-@dirrmtry share/icons/crystalsvg/32x32
-@dirrmtry share/icons/crystalsvg/22x22/actions
-@dirrmtry share/icons/crystalsvg/22x22
-@dirrmtry share/icons/crystalsvg/16x16/actions
-@dirrmtry share/icons/crystalsvg/16x16
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm share/doc/HTML/sv/konversation
-@dirrmtry share/doc/HTML/sv
 @dirrm share/doc/HTML/pt/konversation
-@dirrmtry share/doc/HTML/pt
 @dirrm share/doc/HTML/nl/konversation
-@dirrmtry share/doc/HTML/nl
 @dirrm share/doc/HTML/it/konversation
-@dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/et/konversation
-@dirrmtry share/doc/HTML/et
+@dirrm share/doc/HTML/es/konversation
 @dirrm share/doc/HTML/en/konversation
-@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/da/konversation
-@dirrmtry share/doc/HTML/da
-@dirrmtry share/doc/HTML
-@dirrmtry share/config.kcfg
 @dirrm share/apps/konversation/themes/square
 @dirrm share/apps/konversation/themes/smiling
 @dirrm share/apps/konversation/themes/default
@@ -320,9 +309,6 @@ share/services/konvirc6.protocol
 @dirrm share/apps/konversation/themes/alternative
 @dirrm share/apps/konversation/themes
 @dirrm share/apps/konversation/scripts
-@dirrm share/apps/konversation/images
 @dirrm share/apps/konversation
 @dirrmtry share/apps/kconf_update
-@dirrmtry share/apps
 @dirrmtry share/applications/kde
-@dirrmtry share/applications
