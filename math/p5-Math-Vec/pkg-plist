@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Math/Vec.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Vec/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Vec
 @dirrmtry %%SITE_PERL%%/Math
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
