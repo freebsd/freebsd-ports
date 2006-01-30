@@ -4,4 +4,5 @@ bin/normalize-ogg
 %%NLS%%share/locale/en_GB/LC_MESSAGES/normalize.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/normalize.mo
 @cwd %%X11BASE%%
+%%XMMS%%lib/xmms/Effect/librva.la
 %%XMMS%%lib/xmms/Effect/librva.so
