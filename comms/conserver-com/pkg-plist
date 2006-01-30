@@ -1,5 +1,4 @@
 bin/console
-etc/rc.d/conserver.sh
 %%EXAMPLESDIR%%/conserver.cf
 %%EXAMPLESDIR%%/conserver.passwd
 %%EXAMPLESDIR%%/conserver.rc
