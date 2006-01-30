@@ -8,13 +8,14 @@
 PORTNAME=	senna
 PORTVERSION=	0.${SNAPDATE}
 CATEGORIES=	textproc
-MASTER_SITES=	http://dev.razil.jp/archive/senna/
+MASTER_SITES=	http://dist.bsdlab.org/ \
+		http://dev.razil.jp/archive/senna/
 DISTNAME=	${PORTNAME}-${SNAPDATE}-svn
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
 
-LIB_DEPENDS=	mecab-razil:${PORTSDIR}/japanese/mecab-razil
+LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 USE_AUTOTOOLS=	automake:14 autoconf:259 libtool:15
 USE_GMAKE=	YES
@@ -24,11 +25,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SNAPDATE=	20050827
+SNAPDATE=	20060130
 SENNA_HOME?=	/var/senna
-
-post-patch:
-	cd ${WRKSRC}; \
-	${TOUCH} -r configure.ac.orig configure.ac
 
 .include <bsd.port.mk>
