@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Send
-PORTVERSION=	2.01
+PORTVERSION=	2.04
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -31,7 +31,8 @@ MAN3=	Email::Send.3 \
 	Email::Send::NNTP.3 \
 	Email::Send::Qmail.3 \
 	Email::Send::SMTP.3 \
-	Email::Send::Sendmail.3
+	Email::Send::Sendmail.3 \
+	Email::Send::Test.3
 
 .include <bsd.port.pre.mk>
 
