@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP-Data-Builder
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
@@ -25,7 +25,7 @@ MAN3=	SOAP::Data::Builder.3 SOAP::Data::Builder::Element.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	"requires perl 5.8.x or later. Install lang/perl5.8 and try again"
+IGNORE=	requires perl 5.8.x or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
