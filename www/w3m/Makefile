@@ -39,7 +39,7 @@ DOCS=		FAQ.html HISTORY MANUAL.html README \
 .if !defined(WITHOUT_SSL) && (exists(/usr/lib/libcrypto.so) || exists(${LOCALBASE}/lib/libcrypto.so))
 USE_OPENSSL=	yes
 .else
-CONFIGURE_ARGS+=	--without-ssl
+CONFIGURE_ARGS+=	--without-ssl --disable-digest-auth
 .endif
 
 .if defined(M17N)
