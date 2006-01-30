@@ -14,8 +14,6 @@ MASTER_SITES=	http://compression.ca/pbzip2/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/pbzip2
 
 post-patch:
@@ -24,6 +22,10 @@ post-patch:
 		-e "s,-O3,${CXXFLAGS}," \
 		-e "s,^CC,#CC," \
 		-e "s,CC,CXX," ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e "s,PRIu64 \"Lu\",PRIu64 Lu," \
+		-e "s,\"PRIu64\",#PRIu64,g" ${WRKSRC}/pbzip2.cpp
+	
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
