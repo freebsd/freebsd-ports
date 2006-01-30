@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppc
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	palm
 MASTER_SITES=	http://people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
@@ -16,7 +16,6 @@ COMMENT=	USB device driver for Windows CE handhelds
 
 MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 
 .if !exists(/usr/src/sys/dev/usb/usb.h)
 IGNORE=		Requires kernel source (/usr/src/sys) to build
@@ -31,6 +30,9 @@ BROKEN=		"Does not build on FreeBSD 4.x"
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
+.if ${OSVERSION} < 600000
+	@${REINPLACE_CMD} -e 's|cuaU|ucom|' ${WRKSRC}/uppcsetup
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uppc.ko ${PREFIX}/lib
