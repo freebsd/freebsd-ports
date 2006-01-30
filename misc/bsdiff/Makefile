@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdiff
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	misc devel
 MASTER_SITES=	http://www.daemonology.net/bsdiff/
 
