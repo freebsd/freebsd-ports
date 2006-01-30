@@ -9,7 +9,8 @@ PORTNAME=	ruby-reference
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	lang ruby
-MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ruby/
+MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ruby/ \
+		ftp://ftp.iDaemons.org/pub/distfiles/ruby/
 DISTNAME=	rubyref_html_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
