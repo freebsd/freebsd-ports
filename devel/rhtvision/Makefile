@@ -7,6 +7,7 @@
 
 PORTNAME=	rhtvision
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
@@ -24,6 +25,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
