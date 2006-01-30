@@ -2,6 +2,7 @@ bin/io
 bin/io2c
 bin/ioDesktop
 bin/ioServer
+include/io/IoActivationContext.h
 include/io/IoBlock.h
 include/io/IoCFunction.h
 include/io/IoCollector.h
@@ -109,7 +110,9 @@ lib/libIoAAVector.a
 lib/libIoBlowfish.a
 lib/libIoCurses.a
 lib/libIoFnmatch.a
+lib/libIoLZO.a
 lib/libIoMD5.a
+lib/libIoPostgres.a
 lib/libIoRegex.a
 lib/libIoSHA1.a
 lib/libIoSkipDB.a
@@ -117,23 +120,32 @@ lib/libIoSockets.a
 lib/libIoSyslog.a
 lib/libIoUser.a
 lib/libIoVM.a
+lib/libIoZlib.a
 %%DOCSDIR%%/docs.html
 %%DOCSDIR%%/embedding.html
 %%DOCSDIR%%/guide.html
-%%DOCSDIR%%/implementation.html
+%%DOCSDIR%%/guide.pages/.typeAttributes.dict
+%%DOCSDIR%%/guide.pages/Contents/PkgInfo
+%%DOCSDIR%%/guide.pages/color-profile
+%%DOCSDIR%%/guide.pages/index.xml.gz
+%%DOCSDIR%%/guide.pages/thumbs/page_thumb_1-22.tiff
+%%DOCSDIR%%/guide.pdf
+%%DOCSDIR%%/guide_files/guide.css
 %%DOCSDIR%%/licenseForCode.txt
 %%DOCSDIR%%/licenseForDocs.txt
 %%DOCSDIR%%/releaseHistory.txt
 %%EXAMPLESDIR%%/docgen/DocsExtractor.io
+%%EXAMPLESDIR%%/ioCode/A0_List.io
 %%EXAMPLESDIR%%/ioCode/A1_Object.io
-%%EXAMPLESDIR%%/ioCode/A2_Exception.io
+%%EXAMPLESDIR%%/ioCode/A2_List.io
+%%EXAMPLESDIR%%/ioCode/A3_Exception.io
 %%EXAMPLESDIR%%/ioCode/Actor.io
 %%EXAMPLESDIR%%/ioCode/B_Sequence.io
 %%EXAMPLESDIR%%/ioCode/Block.io
+%%EXAMPLESDIR%%/ioCode/CFunction.io
 %%EXAMPLESDIR%%/ioCode/Date.io
 %%EXAMPLESDIR%%/ioCode/Directory.io
 %%EXAMPLESDIR%%/ioCode/File.io
-%%EXAMPLESDIR%%/ioCode/List.io
 %%EXAMPLESDIR%%/ioCode/Number.io
 %%EXAMPLESDIR%%/ioCode/P_CGI.io
 %%EXAMPLESDIR%%/ioCode/Sandbox.io
@@ -184,9 +196,11 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/sampleCode/_tricks/Swap.io
 %%EXAMPLESDIR%%/sampleCode/except.io
 %%EXAMPLESDIR%%/sampleCode/metrics.io
+%%EXAMPLESDIR%%/unitTests/AlignTest.io
 %%EXAMPLESDIR%%/unitTests/BlockTest.io
 %%EXAMPLESDIR%%/unitTests/CoroutineTest.io
 %%EXAMPLESDIR%%/unitTests/DateTest.io
+%%EXAMPLESDIR%%/unitTests/IfTest.io
 %%EXAMPLESDIR%%/unitTests/ListTest.io
 %%EXAMPLESDIR%%/unitTests/LoopTest.io
 %%EXAMPLESDIR%%/unitTests/MapTest.io
@@ -195,6 +209,7 @@ lib/libIoVM.a
 %%EXAMPLESDIR%%/unitTests/NumberTest.io
 %%EXAMPLESDIR%%/unitTests/ObjectTest.io
 %%EXAMPLESDIR%%/unitTests/SequenceTest.io
+%%EXAMPLESDIR%%/unitTests/WeakLinkTest.io
 %%EXAMPLESDIR%%/unitTests/run.io
 @dirrm %%EXAMPLESDIR%%/unitTests
 @dirrm %%EXAMPLESDIR%%/sampleCode/_tricks
@@ -207,6 +222,10 @@ lib/libIoVM.a
 @dirrm %%EXAMPLESDIR%%/ioCode
 @dirrm %%EXAMPLESDIR%%/docgen
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/guide_files
+@dirrm %%DOCSDIR%%/guide.pages/thumbs
+@dirrm %%DOCSDIR%%/guide.pages/Contents
+@dirrm %%DOCSDIR%%/guide.pages
 @dirrm %%DOCSDIR%%
 @dirrm include/io/base
 @dirrm include/io/SkipDB

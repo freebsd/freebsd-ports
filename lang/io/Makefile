@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2005.12.21
+PORTVERSION=	0.0.2006.01.27
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -59,6 +59,9 @@ pre-patch:
 		-e 's,\( -lIoVM\), -L${LOCALBASE}/lib \1 -lncurses ,' \
 		${WRKSRC}/_build.io
 
+	${ECHO_CMD} 'Binding clone do (dependsOnLib("z"))' \
+		> ${WRKSRC}/bindings/Zlib/_build.io
+
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 .if ${OSVERSION} < 500000
@@ -81,7 +84,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/_docs/* ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/_docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 
 .for subdir in ioCode new sampleCode docgen unitTests
 	${MKDIR} ${EXAMPLESDIR}/${subdir}
