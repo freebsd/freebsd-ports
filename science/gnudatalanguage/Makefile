@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--with-hdf5=no
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE} --with-hdf=no
 .else
 CONFIGURE_ARGS+=--with-netcdf=no

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Perl5 module to read and write netCDF files
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
 
 USE_PERL5=	yes
 

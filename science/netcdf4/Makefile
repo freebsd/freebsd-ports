@@ -7,7 +7,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.0p1
-CATEGORIES=	math
+CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-p/}

@@ -48,6 +48,7 @@
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
+    SUBDIR += netcdf
     SUBDIR += oases
     SUBDIR += omnetpp
     SUBDIR += openbabel

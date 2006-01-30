@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful plotting tool (successor of xmgr)
 
 LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
-		netcdf.1:${PORTSDIR}/math/netcdf	\
+		netcdf.1:${PORTSDIR}/science/netcdf	\
 		fftw.2:${PORTSDIR}/math/fftw		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
