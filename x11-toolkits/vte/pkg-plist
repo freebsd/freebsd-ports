@@ -23,6 +23,7 @@ libexec/gnome-pty-helper
 %%DOCSDIR%%/VteTerminalAccessible.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/index.html
+%%DOCSDIR%%/style.css
 share/gnome/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
