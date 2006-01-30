@@ -17,6 +17,4 @@ notice.
 Warning: Even though I have recompressed them with bzip2, the
 distfiles for this port still total about 20 MB in size!
 
-WWW: http://m3.polymtl.ca/m3/
-
 John Polstra <jdp@FreeBSD.ORG>
