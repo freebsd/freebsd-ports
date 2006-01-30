@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
