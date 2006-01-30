@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Text/WordDiff.pm
+%%SITE_PERL%%/Text/WordDiff/HTML.pm
+%%SITE_PERL%%/Text/WordDiff/ANSIColor.pm
+@dirrm %%SITE_PERL%%/Text/WordDiff
+@dirrmtry %%SITE_PERL%%/Text
