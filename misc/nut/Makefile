@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	11.1
+PORTVERSION=	11.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://voodoo.bawue.com/download/
