@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.1.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -25,6 +25,7 @@ USE_BZIP2=	yes
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} == "-cgi" || ${PKGNAMESUFFIX} == "-cli"
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
