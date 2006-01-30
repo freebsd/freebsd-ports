@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Senna
-PORTVERSION=	0.08${SNAPREV}
+PORTVERSION=	0.11${SNAPREV}
 CATEGORIES=	textproc
 MASTER_SITES=	http://dist.bsdlab.org/
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ PERL_MODBUILD=	YES
 CFLAGS+=	-I${LOCALBASE}/include
 MAN3=		Senna.3 Senna::Cursor.3 Senna::Index.3 Senna::Result.3
 
-SNAPREV=	r39
+SNAPREV=	r41
 
 tardist:
 	svn export svn://dev.razil.jp/senna-perl/trunk Senna
