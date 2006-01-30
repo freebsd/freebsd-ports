@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Email/Send/Qmail.pm
 %%SITE_PERL%%/Email/Send/SMTP.pm
 %%SITE_PERL%%/Email/Send/Sendmail.pm
+%%SITE_PERL%%/Email/Send/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
