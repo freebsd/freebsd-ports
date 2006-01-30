@@ -634,6 +634,7 @@
     SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
+    SUBDIR += rast
     SUBDIR += re_graph
     SUBDIR += redet
     SUBDIR += redland
