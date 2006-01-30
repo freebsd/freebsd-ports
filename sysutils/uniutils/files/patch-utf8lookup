@@ -1,0 +1,11 @@
+--- utf8lookup.orig	Sun Jan 29 21:43:23 2006
++++ utf8lookup	Tue Jan 31 00:11:48 2006
+@@ -10,7 +10,7 @@
+ #
+ echo 0x$1 |		 # feed command-line argument to ascii2binary's stdin
+ ascii2binary -t ui |	 # convert text to unsigned integer
+-iconv -f utf32 -t utf8 | # convert utf-32 to utf-8 encoding
++iconv -f ucs-4le -t utf-8 | # convert utf-32 to utf-8 encoding
+ uniname -b -c -e -g      # feed to uniname, suppressing byte and character offsets,
+ 			 # UTF-8 encoding, and glyph
+ 
