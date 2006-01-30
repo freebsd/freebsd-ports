@@ -14219,3 +14219,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
+rast		ports/textproc/rast
