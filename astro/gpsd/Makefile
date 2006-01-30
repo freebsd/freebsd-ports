@@ -14,6 +14,8 @@ MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAN1=	gpsfake.1 gpsflash.1 gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1 xgps.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
 MAN5=	rtcm-104.5 srec.5
