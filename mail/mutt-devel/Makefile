@@ -145,7 +145,6 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:259
 USE_OPENSSL=	yes
 
@@ -180,14 +179,14 @@ DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-.error The WITH_MUTT_SIGNATURE_MENU does not work at the moment
+IGNORE=	cannot install: the WITH_MUTT_SIGNATURE_MENU does not work at the moment
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 .if defined(WITH_MUTT_NNTP)
-.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
+IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-.error The WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
+IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_SIGNATURE_MENU are not compatible
 .endif
 .endif
 
@@ -396,7 +395,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.10i.sidebar.20050816.txt
+SIDEBAR_PATCH=	patch-1.5.11.sidebar.20060127.txt
 DISTFILES+=	${SIDEBAR_PATCH}:thomer
 XML_NEEDED=	yes
 pre-patch::
