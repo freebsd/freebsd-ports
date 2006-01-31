@@ -85,6 +85,7 @@ share/locale/zh_TW/LC_MESSAGES/kaffe.mo
 @dirrm lib
 @dirrm include/kaffe
 @dirrm include
+@dirrm info
 @dirrm jre/bin
 @dirrm jre/lib/%%ARCH%%
 @dirrm jre/lib/security
