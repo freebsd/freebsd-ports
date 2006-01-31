@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 
@@ -57,8 +58,19 @@ CONFIGURE_ARGS+=	--without-oggvorbis
 LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC} -name "getopt*" -delete
+.if !defined(WITHOUT_SDL)
+CONFIGURE_ARGS+=	--with-sdl
+USE_SDL=	yes
+.else
+CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+.if ${HAVE_GNOME:Mesound} != ""
+USE_GNOME+=     esound
+CONFIGURE_ARGS+=	--with-esd
+.else
+CONFIGURE_ARGS+=	--without-esd
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
