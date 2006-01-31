@@ -344,6 +344,7 @@
     SUBDIR += openbgpd
     SUBDIR += opengk
     SUBDIR += openh323
+    SUBDIR += openh323-112
     SUBDIR += openldap22-client
     SUBDIR += openldap22-sasl-client
     SUBDIR += openldap22-sasl-server
