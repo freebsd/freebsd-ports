@@ -70,7 +70,7 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 PORTREVISION=	0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
