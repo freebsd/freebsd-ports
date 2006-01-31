@@ -15,7 +15,6 @@ COMMENT=	Input method library
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget glib20
@@ -44,6 +43,17 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_editline.c
+.endif
+
+.if ${PERL_LEVEL} >= 500600
+USE_PERL5_BUILD=yes
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/bin/perl:${PORTSDIR}/lang/perl5
+CONFIGURE_ENV+=	INTLTOOL_PERL="${LOCALBASE}/bin/perl"
+.endif
 
 .if defined(WITH_GTK) && !defined(WITHOUT_GTK)
 USE_GNOME+=	gtk20
