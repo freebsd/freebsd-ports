@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -42,7 +42,7 @@ USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf \
-		--with-xml-catalog=${LOCALBASE}/share/xml/catalog
+		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		LOCALBASE="${LOCALBASE}"

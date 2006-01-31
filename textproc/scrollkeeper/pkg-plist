@@ -131,6 +131,6 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/omf/scrollkeeper
 @unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/xmlcatalog --noout --del %D/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd %%LOCALBASE%%/share/xml/catalog || true
+@unexec %%LOCALBASE%%/bin/xmlcatalog --noout --del %D/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd %%LOCALBASE%%/share/xml/catalog.ports || true
 @exec touch -f /var/log/scrollkeeper.log
 @exec mkdir -p /var/db/scrollkeeper
