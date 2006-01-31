@@ -262,6 +262,11 @@ CONFIGURE_ARGS+=--with-pcre-regex=yes
 PHP_HEADER_DIRS=pcrelib
 .endif
 
+.if ${PHP_MODNAME} == "pfpro"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpfpro.so:${PORTSDIR}/finance/pfpro
+CONFIGURE_ARGS+=--with-pfpro
+.endif
+
 .if ${PHP_MODNAME} == "pgsql"
 USE_PGSQL=	YES
 
