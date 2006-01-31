@@ -4,8 +4,7 @@ PATH=${PATH}:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
 export PATH
 
 PREFIX=`xml2-config --prefix`
-ROOTCATALOG=${PREFIX}/share/xml/catalog
-CATALOG=${PREFIX}/share/xml/docbook/catalog
+ROOTCATALOG=${PREFIX}/share/xml/catalog.ports
 
 if [ "$2" = "POST-INSTALL" ]; then
     SKPREFIX=`scrollkeeper-config --prefix`
