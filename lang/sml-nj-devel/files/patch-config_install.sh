@@ -1,5 +1,5 @@
---- config/install.sh.orig	Wed May 18 18:59:22 2005
-+++ config/install.sh	Mon May 30 19:46:41 2005
+--- config/install.sh.orig	Sun Nov 20 06:32:27 2005
++++ config/install.sh	Thu Jan 12 15:13:59 2006
 @@ -18,6 +18,8 @@
      nolib=false
  fi
@@ -38,7 +38,7 @@
  this=$0
  
  
-@@ -308,7 +332,12 @@
+@@ -307,7 +331,12 @@
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -52,7 +52,7 @@
  
  #
  # build the run-time system
-@@ -317,6 +346,11 @@
+@@ -316,6 +345,11 @@
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -64,7 +64,7 @@
      cd "$SRCDIR"/runtime/objs
      echo $this: Compiling the run-time system.
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
-@@ -325,7 +359,7 @@
+@@ -324,7 +358,7 @@
  	if [ -f runx.$ARCH-$OPSYS ]; then
  	    mv runx.$ARCH-$OPSYS "$RUNDIR"
  	fi
@@ -73,16 +73,16 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -351,7 +385,7 @@
+@@ -350,7 +384,7 @@
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
 -    "$CONFIGDIR"/unpack "$ROOT" "$BOOT_ARCHIVE"
 +    [ -n "$RECOMPILEDIR" ] || "$CONFIGDIR"/unpack "$ROOT" "$BOOT_ARCHIVE"
  
-     fish "$ROOT"/"$BOOT_FILES"/basis.cm
+     fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -422,5 +456,12 @@
+@@ -421,5 +455,12 @@
  	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi
