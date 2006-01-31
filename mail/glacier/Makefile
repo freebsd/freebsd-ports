@@ -9,11 +9,13 @@ PORTNAME=	glacier
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://linuxberg.tele.net/files/gnome/network/
-# http://glacier.linuxave.net/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GNOME mail user agent
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-03-31
 
 PLIST_FILES=	bin/glacier
 USE_REINPLACE=	yes
