@@ -52,6 +52,7 @@
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
     SUBDIR += pfpro
+    SUBDIR += php4-pfpro
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
