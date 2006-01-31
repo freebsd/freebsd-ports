@@ -44,3 +44,5 @@ share/radius/dictionary.versanet
 @unexec rm -f /var/log/radius.log
 @unexec rm -f /var/run/radiusd.pid
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radacct alone."
+%%WITH_PAMD%%@cwd %%PAMBASE%%
+%%WITH_PAMD%%pam.d/radius

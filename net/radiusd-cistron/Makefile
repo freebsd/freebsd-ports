@@ -19,11 +19,11 @@ MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PAMBASE?=	etc
 
 MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
 MAN8=		radiusd.8 radrelay.8 radwatch.8
-
 DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
 		doc/README.cisco doc/README.pam doc/README.proxy \
 		doc/README.simul doc/README.usersfile
@@ -53,5 +53,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
+
+.if exists(${DESTDIR}/etc/pam.d)
+PLIST_SUB+=	WITH_PAMD=""
+.else
+PLIST_SUB+=	WITH_PAMD="@comment "
+.endif
+PLIST_SUB+=	PAMBASE="/${PAMBASE}"
 
 .include <bsd.port.mk>
