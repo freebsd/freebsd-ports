@@ -24,6 +24,7 @@ NO_PACKAGE=	"requires local database to be built"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 USE_GMAKE=	yes
+USE_PERL5=	yes
 ALL_TARGET=	release
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd
 IS_INTERACTIVE=	yes
