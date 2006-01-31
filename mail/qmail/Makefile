@@ -238,6 +238,7 @@ SLAVEPORT_LINE=	spamcontrol
 .endif
 
 SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail
+SUB_LIST+=	ECHO_CMD=${ECHO_CMD}
 PKGINSTALL?=	${WRKDIR}/pkg-install
 
 .if defined(PKGMESSAGE_SUFFIX)

@@ -35,7 +35,7 @@
    	socket.lib`
    
    qmail-smtpd.0: \
-@@ -174,30 +176,38 @@
+@@ -174,30 +176,40 @@
    stralloc greeting = {0};
    
  ***************
@@ -55,7 +55,7 @@
 -  void smtp_rset()
 ---- 241,255 ----
 -  }
-+--- 277,298 ----
++--- 277,300 ----
    void smtp_ehlo(arg) char *arg;
    {
 -!   smtp_greet("250-");
@@ -63,16 +63,18 @@
 +    smtp_greet("250-");
 ++ #ifdef AUTHCRAM
 +  #ifdef TLS
-+!   if (!ssl) out("\r\n250-STARTTLS AUTH LOGIN CRAM-MD5 PLAIN");
-+!   if (!ssl) out("\r\n250-STARTTLS AUTH=LOGIN CRAM-MD5 PLAIN");
++!   if (!ssl) out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
++!   if (!ssl) out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
++!   if (!ssl) out("\r\n250-STARTTLS");
 +! #else
  !   out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
  !   out("\r\n250-AUTH=LOGIN CRAM-MD5 PLAIN");
 +! #endif
 +! #else
 +! #ifdef TLS
-+!   if (!ssl) out("\r\n250-STARTTLS AUTH LOGIN PLAIN");
-+!   if (!ssl) out("\r\n250-STARTTLS AUTH=LOGIN PLAIN");
++!   if (!ssl) out("\r\n250-AUTH LOGIN PLAIN");
++!   if (!ssl) out("\r\n250-AUTH=LOGIN PLAIN");
++!   if (!ssl) out("\r\n250-STARTTLS");
  ! #else
  !   out("\r\n250-AUTH LOGIN PLAIN");
  !   out("\r\n250-AUTH=LOGIN PLAIN");
