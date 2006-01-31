@@ -12,6 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY?=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	garga@FreeBSD.org
 COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
@@ -95,8 +96,7 @@ PATCH_DIST_STRIP+=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 
-NO_PACKAGE=	"djb\'s packaging license does not allow non-standard \
-		qmail binary distributions"
+NO_PACKAGE=	djb's packaging license does not allow non-standard qmail binary distributions
 
 PREFIX?=		${QMAIL_PREFIX}
 QMAIL_VERSION?=		1.03
@@ -311,7 +311,6 @@ DOCSDIR=	${PREFIX}/doc
 .endif
 
 NO_MTREE=	yes
-USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -346,6 +345,9 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 .if defined(WITH_SMTP_AUTH_PATCH)
 MASTER_SITES+=	http://members.elysium.pl/brush/qmail-smtpd-auth/dist/:smtp_auth
 DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
+EXTRACT_ONLY+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz
+MASTER_SITES+=	http://tomclegg.net/qmail/:close3
+DISTFILES+=	qmail-smtpd-auth-close3.patch:close3
 .endif
 
 .if defined(WITH_MAILDIRQUOTA_PATCH) && !defined(BARRIER_MAILDIRQUOTA_PATCH)
@@ -493,7 +495,7 @@ pre-everything::
 	@${ECHO_MSG} "		work."
  	@${ECHO_MSG} ""
 .endif
- 
+
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
@@ -508,6 +510,7 @@ post-patch:
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch-tls
 . endif
 	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/qmail-smtpd-auth-close3.patch
 .endif
 .if defined(SLAVE_MYSQL)
 	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
