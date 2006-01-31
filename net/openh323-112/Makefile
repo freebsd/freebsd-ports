@@ -5,19 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openh323
+PORTNAME=	openh323-112
 PORTVERSION=	1.12.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.gnomemeeting.org/downloads/0.98.0/sources/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${NAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
+NAME=	openh323
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
@@ -31,7 +33,7 @@ PATCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 .endif
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${NAME}
 
 PLIST_FILES=	bin/simph323
 USE_BISON=	yes
@@ -40,7 +42,7 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib && make -V WRKSRC
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib152 && make -V WRKSRC
 CONFIGURE_ENV=	PWLIBDIR=${PWLIBDIR} OPENH323DIR=${WRKSRC}
 ALL_TARGET=	optnoshared
 MAKE_ENV=	PWLIBDIR=${PWLIBDIR} OPENH323DIR=${WRKSRC}
