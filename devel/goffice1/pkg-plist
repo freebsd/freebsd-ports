@@ -155,7 +155,7 @@ lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
 lib/libgoffice-1.a
 lib/libgoffice-1.so
-lib/libgoffice-1.so.1
+lib/libgoffice-1.so.2
 libdata/pkgconfig/libgoffice-1.pc
 share/gnome/goffice/%%VERSION%%/glade/go-font-sel.glade
 share/gnome/goffice/%%VERSION%%/glade/go-format-sel.glade
