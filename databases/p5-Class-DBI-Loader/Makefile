@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Loader
-PORTVERSION=	0.22
+PORTVERSION=	0.29
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -40,11 +40,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+IGNORE=		requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
