@@ -8,12 +8,9 @@
 PORTNAME=	rtcw
 DISTVERSION=	1.41-3
 CATEGORIES=	games linux
-MASTER_SITES=	http://public.planetmirror.com/pub/idgames2/idstuff/wolf/linux/ \
-		http://ftp.games.skynet.be/pub/ftp.idsoftware.com/wolf/linux/ \
-		ftp://ftp.chg.ru/.3/games/idgames/idstuff/wolf/linux/ \
-		http://kh.spoonix.com/game/ \
-		http://www.ftp-sunet-se.lkams.kernel.org/idgames2/idstuff/wolf/linux/ \
-		ftp://ftp.idsoftware.com/idstuff/wolf/linux/
+MASTER_SITES=	ftp://ftp.chg.ru/.3/games/idgames/idstuff/wolf/linux/ \
+		ftp://ftp.idsoftware.com/idstuff/wolf/linux/ \
+		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/returnwolfenstein/
 DISTNAME=	wolf-linux-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
