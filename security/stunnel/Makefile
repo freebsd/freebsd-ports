@@ -7,6 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.14
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -17,7 +18,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
-USE_REINPLACE=	YES
 USE_AUTOTOOLS=	libtool:15
 USE_RC_SUBR=	YES
 
@@ -98,11 +98,10 @@ post-install:
 cert:
 	@${ECHO} ""
 	@${ECHO} "**************************************************************************"
-	@${ECHO} "The new certificate will be saved into ${PREFIX}/etc/stunnel.pem"
+	@${ECHO} "The new certificate will be saved into ${PREFIX}/etc/stunnel/stunnel.pem"
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
-	@(cd ${WRKSRC}/tools/; make stunnel.pem)
-	${INSTALL} -m 600 ${WRKSRC}/tools/stunnel.pem ${PEM_DIR}/
+	@(cd ${WRKSRC}/tools/; make install-data-local)
 
 .if ${OSVERSION} > 500000
 .if !defined(WITH_STUNNEL_SSL_ENGINE)
