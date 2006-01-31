@@ -274,3 +274,4 @@ share/OffiX/Files.ad
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
 @dirrmtry include/bitmaps
+@dirrmtry include/pixmaps
