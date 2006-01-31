@@ -2095,6 +2095,7 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/Mailman/Cgi
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
+@dirrmtry %%IMGDIR%%
 @dirrmtry %%MMDIR%%/spam
 @dirrmtry %%MMDIR%%/qfiles
 @dirrmtry %%MMDIR%%/logs
