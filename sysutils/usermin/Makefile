@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.180
-PORTREVISION=	1
+PORTVERSION=	1.190
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=usermount-1.180-1.wbm.gz
+USERMIN_MODULES=schedule-1.190-1.wbm.gz
 
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
