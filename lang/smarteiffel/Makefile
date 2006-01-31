@@ -9,7 +9,8 @@ PORTNAME=	smarteiffel
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
+MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/ \
+		ftp://ftp.cs.rit.edu/pub/mirrors/SmartEiffel/Oldies
 DISTNAME=	SmartEiffel-${PORTVERSION}
 
 MAINTAINER=	berend@pobox.com
