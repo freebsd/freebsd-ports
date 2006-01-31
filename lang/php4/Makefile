@@ -104,8 +104,10 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
+CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
+
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
