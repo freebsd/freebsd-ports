@@ -9688,6 +9688,7 @@ php4-oracle	ports/databases/php4-oracle
 php4-overload	ports/lang/php4-overload
 php4-pcntl	ports/devel/php4-pcntl
 php4-pcre	ports/devel/php4-pcre
+php4-pfpro	ports/finance/php4-pfpro
 php4-pgsql	ports/databases/php4-pgsql
 php4-posix	ports/sysutils/php4-posix
 php4-pspell	ports/textproc/php4-pspell
