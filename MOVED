@@ -2157,3 +2157,4 @@ misc/ed2k|net-p2p/ed2k|2006-01-30|Moved to new category
 misc/edonkey-tool-hash|net-p2p/edonkey-tool-hash|2006-01-30|Moved to new category
 misc/linux-edonkey-tool-recovermet|net-p2p/linux-edonkey-tool-recovermet|2006-01-30|Moved to new category
 math/netcdf|science/netcdf|2006-01-30|Moved to a better category
+japanese/mecab-razil|japanese/mecab|2006-02-01|Patched library is not required now
