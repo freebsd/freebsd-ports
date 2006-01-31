@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Base
-PORTVERSION=	0.48
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Test::Base - A Data Driven Testing Framework
 
 BUILD_DEPENDS=	\
-		p5-Spiffy>=0.29:${PORTSDIR}/devel/p5-Spiffy \
+		p5-Spiffy>=0.30:${PORTSDIR}/devel/p5-Spiffy \
 		p5-MIME-Base64>0:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -24,7 +24,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Test::Base.3 \
-	Test::Base::Filter.3
+	Test::Base::Filter.3 \
+	Module::Install::TestBase.3
 
 .include <bsd.port.pre.mk>
 
