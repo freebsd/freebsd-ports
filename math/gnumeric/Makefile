@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	goffice-1.1:${PORTSDIR}/devel/goffice \
+LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
@@ -28,7 +28,6 @@ USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--without-guile --with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
