@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.5.4
-PORTREVISION=	1
+PORTVERSION=	7.5.5
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -43,14 +42,14 @@ SUB_LIST+=	DIR=${DIR}
 
 .include <bsd.port.pre.mk> # Need to exists() work
 
-pre-fetch:
+pre-build:
 .if exists(${PREFIX}/www/data/plans)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "*** WARNING ***"
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Previous version don't preserve config files."
-	@${ECHO_CMD} "If you need this files, press CTRL+C and"
-	@${ECHO_CMD} "copy manually your configuration files."
+	@${ECHO_CMD} "Versions before 7.5.4_1 don't preserve config"
+	@${ECHO_CMD} "files. If you need to back them up, press CTRL+C"
+	@${ECHO_CMD} "now to interrupt the installation process."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} ""
 	@sleep 10
