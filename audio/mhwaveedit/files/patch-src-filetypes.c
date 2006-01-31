@@ -1,6 +1,6 @@
---- src/filetypes.c.orig	Sat Aug 13 02:01:54 2005
-+++ src/filetypes.c	Sat Aug 13 15:45:17 2005
-@@ -97,15 +97,6 @@
+--- src/filetypes.c.orig	Sat Jan 14 22:39:51 2006
++++ src/filetypes.c	Sun Jan 29 12:48:53 2006
+@@ -104,15 +104,6 @@
       return FALSE;
  }
  
@@ -13,10 +13,10 @@
 -     return FALSE;
 -}
 -
- static void register_file_type(gchar *name, gchar *ext, 
- 			       gboolean (*typecheck)(gchar *filename),
- 			       Chunk *(*load)(gchar *filename, 
-@@ -927,7 +918,7 @@
+ static struct file_type *register_file_type
+ (gchar *name, gchar *ext, gboolean lossy,
+  gboolean (*typecheck)(gchar *filename), 
+@@ -971,7 +962,7 @@
       b = pipe_dialog_send_chunk(y,c,FALSE,dither_mode,bar);
       g_free(c);     
       if (x != NULL) gtk_object_sink(GTK_OBJECT(x));
@@ -25,7 +25,7 @@
       if (b || !file_exists(filename)) {
  	  *fatal = TRUE;
  	  return TRUE;
-@@ -985,7 +976,7 @@
+@@ -1240,7 +1231,7 @@
  	       gtk_object_sink(GTK_OBJECT(x));
  	  }
       }
@@ -34,7 +34,7 @@
       if (b || !file_exists(filename)) {
  	  *fatal = TRUE;
  	  return TRUE;
-@@ -999,7 +990,11 @@
+@@ -1254,7 +1245,11 @@
  static Chunk *try_mplayer(gchar *filename, int dither_mode, StatusBar *bar)
  {
       gchar *c,*d;
@@ -47,7 +47,7 @@
       Chunk *x;
       if (!program_exists("mplayer")) return NULL;
       tempname = get_temp_filename(0);
-@@ -1008,20 +1003,16 @@
+@@ -1263,20 +1258,16 @@
       if (xputenv(c)) { g_free(d); g_free(c); g_free(tempname); return NULL; }
       if (xputenv(d)) { 
  	  g_free(d); 
