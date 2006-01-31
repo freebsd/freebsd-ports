@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -18,7 +18,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile
+CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile \
+		--enable-sys-readline
 INSTALLS_SHLIB=	yes
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
@@ -32,6 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CFLAGS+=	-fpermissive
 .endif
 
@@ -54,7 +56,7 @@ CONFIGURE_ARGS+=	--disable-jack
 .endif
 
 .if defined(WITH_SAMPLERATE)
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
 .endif
