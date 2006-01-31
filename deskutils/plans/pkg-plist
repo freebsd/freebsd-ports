@@ -25,9 +25,11 @@
 %%DIR%%/plans_lib.pl
 %%DIR%%/theme/color_select.css
 %%DIR%%/theme/color_select.js
+%%DIR%%/theme/graphics/close_button1.gif
 %%DIR%%/theme/graphics/color_select_icon.gif
 %%DIR%%/theme/graphics/date_circle.gif
 %%DIR%%/theme/graphics/freebsd.gif
+%%DIR%%/theme/graphics/gradient_background1.png
 %%DIR%%/theme/graphics/green_check.gif
 %%DIR%%/theme/graphics/hue_blend.png
 %%DIR%%/theme/graphics/linux.gif
