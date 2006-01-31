@@ -2,8 +2,7 @@ An interface to a local CVSd repository using pserver for authentication.
 This script can add, delete, suspend, or enable non-system users for read
 and write access to a CVS repository.
 
-This program is a fork of cvspadm that was originally written by
-Raymond M Schneider ray@hackfoo.net
+This program is a fork of cvspadm.
 
 - Serge Gagnon
 serge.gagnon@b2b2c.ca
