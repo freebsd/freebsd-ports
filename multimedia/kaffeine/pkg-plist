@@ -5,15 +5,15 @@ include/kaffeine/kaffeine_part_iface.h
 include/kaffeine/kmediapart.h
 include/kaffeine/mrl.h
 include/kaffeine/playlistimport.h
-lib/kde3/libgstreamerpart.so
-lib/kde3/libgstreamerpart.la
+%%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
+%%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
 lib/kde3/libkaffeinepart.la
 lib/kde3/libkaffeinepart.so
 lib/libkmediapart.la
 lib/libkmediapart.so
 lib/libkmediapart.so.0
 share/applications/kde/kaffeine.desktop
-share/apps/gstreamerpart/gstreamer_part.rc
+%%NOGSTREAMER%%share/apps/gstreamerpart/gstreamer_part.rc
 share/apps/kaffeine/kaffeine_part.rc
 share/apps/kaffeine/kaffeineui.rc
 share/apps/kaffeine/logo
@@ -43,7 +43,7 @@ share/doc/HTML/en/kaffeine/dvbconfig.png
 share/doc/HTML/en/kaffeine/dvbtimers.png
 share/doc/HTML/en/kaffeine/gstpart.png
 share/icons/hicolor/128x128/apps/kaffeine.png
-share/icons/hicolor/16x16/apps/gstreamer.png
+%%NOGSTREAMER%%share/icons/hicolor/16x16/apps/gstreamer.png
 share/icons/hicolor/16x16/apps/kaffeine.png
 share/icons/hicolor/16x16/apps/kdvbra.png
 share/icons/hicolor/16x16/apps/kdvbrac.png
@@ -90,11 +90,10 @@ share/locale/tr/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
 share/mimelnk/application/x-mplayer2.desktop
-share/services/gstreamer_part.desktop
+%%NOGSTREAMER%%share/services/gstreamer_part.desktop
 share/services/kaffeine_part.desktop
 @dirrm include/kaffeine
 @dirrm share/apps/kaffeine
-@dirrm share/doc/HTML/zh_CN/kaffeine/
 @dirrm share/doc/HTML/en/kaffeine
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
