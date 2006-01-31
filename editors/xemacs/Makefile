@@ -21,7 +21,7 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 XEMACS_REL=	21.4
-XEMACS_VER=	21.4.18
+XEMACS_VER=	21.4.19
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 USE_BZIP2=	yes
