@@ -58,3 +58,6 @@ SIZE (qmail/qmail-1.03-tls-20021228-renato.patch) = 42095
 MD5 (qmail/qmail-smtpd-auth-0.31.tar.gz) = 6b202f71a99fb41e9e32906017270ba0
 SHA256 (qmail/qmail-smtpd-auth-0.31.tar.gz) = 1b439fa7e128de13fa80b86883f61a39d17b87b7e8916b6a0eab065bbe49b938
 SIZE (qmail/qmail-smtpd-auth-0.31.tar.gz) = 8798
+MD5 (qmail/qmail-smtpd-auth-close3.patch) = 0ba66d73dcba1c68ed714b07e47abd3e
+SHA256 (qmail/qmail-smtpd-auth-close3.patch) = d933e871261d6740cebe5c21cad81146525cfe06a464e277979f61c1242b5ad4
+SIZE (qmail/qmail-smtpd-auth-close3.patch) = 520
