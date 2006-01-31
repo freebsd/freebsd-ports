@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ksmoothdock
-PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTVERSION=	3.6.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,5 +17,7 @@ COMMENT=	A dock program for KDE with smooth zooming
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
