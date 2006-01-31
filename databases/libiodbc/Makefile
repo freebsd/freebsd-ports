@@ -9,7 +9,7 @@
 #        databases/unixODBC.
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.3
+PORTVERSION=	3.52.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	iodbc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
-CONFLICTS=	unixODBC-*
+CONFLICTS=	unixODBC-[0-9]*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
