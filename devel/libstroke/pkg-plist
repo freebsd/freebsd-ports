@@ -1,8 +1,8 @@
-include/gstroke.h
+%%GS%%include/gstroke.h
 include/stroke.h
-lib/libgstroke.a
-lib/libgstroke.so
-lib/libgstroke.so.0
+%%GS%%lib/libgstroke.a
+%%GS%%lib/libgstroke.so
+%%GS%%lib/libgstroke.so.0
 lib/libstroke.a
 lib/libstroke.so
 lib/libstroke.so.0
