@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions
@@ -215,6 +215,8 @@ post-build:
 pre-build:
 	${RM} -fr ${WRKSRC}/include/proto.h
 	(cd ${WRKSRC} && make proto)
+	${SED} -e 's!%%PREFIX%%!${PREFIX}!' \
+		${FILESDIR}/samba.sh.sample > ${WRKDIR}/samba.sh.sample
 
 post-install:
 .if defined(WITH_WINBIND_NSS)
@@ -243,7 +245,7 @@ post-install:
 .endif
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
-		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
+		${INSTALL_SCRIPT} ${WRKDIR}/samba.sh.sample 		\
 			${STARTUP_SCRIPT} ;				\
 	fi
 	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}
@@ -252,7 +254,6 @@ post-install:
 			-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'	\
 			-e 's!%%SAMBA_CONFDIR%%!${SAMBA_CONFDIR}!'	\
 			-e 's!%%SAMBA_VFSDIR%%!${SAMBA_VFSDIR}!'	\
-			-e 's!%%PREFIXX%%!${PREFIX}!'			\
 			${FILESDIR}/smb.conf.default			\
 			> ${SAMPLE_CONFIG} ;				\
 	fi
