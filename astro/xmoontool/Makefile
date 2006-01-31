@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoontool
-PORTVERSION=	3.0.1a
+PORTVERSION=	3.0.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.senax.net/xmoontool/
 
