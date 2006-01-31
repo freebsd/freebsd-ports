@@ -9,7 +9,7 @@ PORTNAME=	openal
 DISTVERSION=	0.0-0.2.20040726
 PORTREVISION=	1
 CATEGORIES=	audio linux
-MASTER_SITE_SUBDIR=	../extras/3/${LINUX_ARCH}/
+MASTER_SITE_SUBDIR=	../extras/3/${LINUX_RPM_ARCH}/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux version)
