@@ -6,7 +6,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -19,7 +19,14 @@ LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
+
+.ifndef (WITHOUT_GSTREAMER)
 USE_GSTREAMER=		yes
+PLIST_SUB+=		NOGSTREAMER="@comment "
+.else
+PLIST_SUB+=		NOGSTREAMER=""
+.endif
+
 USE_AUTOTOOLS=	libtool:15:inc
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
@@ -32,6 +39,10 @@ MANLANG=	"" de
 
 .if ${X_WINDOW_SYSTEM:L} == xorg
 CONFIGURE_ARGS+=	--with-xorg
+.endif
+
+.ifdef (WITHOUT_GSTREAMER)
+CONFIGURE_ARGS+=	--without-gstreamer
 .endif
 
 .include <bsd.port.post.mk>
