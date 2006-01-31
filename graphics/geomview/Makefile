@@ -17,6 +17,8 @@ COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
+BROKEN=		Incomplete pkg-plist (needs to use INFO_* macros)
+
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 
