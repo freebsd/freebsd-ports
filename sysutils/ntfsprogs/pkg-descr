@@ -3,7 +3,7 @@ file system (v1.2 and later 3.0), user space utilities (e.g. format, ntfs
 check, etc.) and a library to avoid code duplication and provide access to
 NTFS to other GPLed programs.
 
-WWW: http://linux-ntfs.sourceforge.net/
+WWW: http://www.linux-ntfs.org/
 
 - Florent Thoumie
 flz@xbsd.org
