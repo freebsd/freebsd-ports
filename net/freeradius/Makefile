@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
-		ftp://ftp.Awfulhak.org/pub/radius/
+		http://freeradius.portal-to-web.de/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
@@ -115,25 +115,40 @@ MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
 		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
 		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
 		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
-		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_unix.5 users.5
-MAN8=		radiusd.8 radrelay.8 radwatch.8 rlm_ippool_tool.8
+		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 users.5
+MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
 
-DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 \
-		dictionary.acc dictionary.alcatel dictionary.alteon \
-		dictionary.altiga dictionary.aptis dictionary.ascend \
-		dictionary.bay dictionary.bristol dictionary.cisco \
-		dictionary.cisco.bbsm dictionary.cisco.vpn3000 \
-		dictionary.cisco.vpn5000 dictionary.colubris \
-		dictionary.columbia_university dictionary.compat \
-		dictionary.erx dictionary.foundry dictionary.freeradius \
-		dictionary.gandalf dictionary.garderos dictionary.gemtek \
-		dictionary.juniper dictionary.karlnet dictionary.livingston \
-		dictionary.localweb dictionary.merit dictionary.microsoft \
-		dictionary.mikrotik dictionary.navini dictionary.nomadix \
-		dictionary.propel dictionary.quintum dictionary.redback \
-		dictionary.shasta dictionary.shiva dictionary.sonicwall \
-		dictionary.trapeze dictionary.tunnel dictionary.unix \
-		dictionary.usr dictionary.valemount dictionary.versanet
+DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
+		dictionary.airespace dictionary.alcatel dictionary.alteon \
+		dictionary.altiga dictionary.aptis dictionary.aruba dictionary.ascend \
+		dictionary.avaya dictionary.bay dictionary.bintec dictionary.bristol \
+		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
+		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
+		dictionary.colubris dictionary.columbia_university dictionary.compat \
+		dictionary.cosine dictionary.digest dictionary.epygi \
+		dictionary.ericsson dictionary.erx dictionary.extreme \
+		dictionary.fortinet dictionary.foundry dictionary.freeradius \
+		dictionary.freeradius.internal dictionary.gandalf dictionary.garderos \
+		dictionary.gemtek dictionary.ipunplugged dictionary.issanni \
+		dictionary.itk dictionary.juniper dictionary.karlnet \
+		dictionary.livingston dictionary.localweb dictionary.lucent \
+		dictionary.merit dictionary.microsoft dictionary.mikrotik \
+		dictionary.motorola dictionary.navini dictionary.netscreen \
+		dictionary.nokia dictionary.nomadix dictionary.ntua \
+		dictionary.packeteer dictionary.propel dictionary.quintum \
+		dictionary.redback dictionary.redcreek dictionary.rfc2865 \
+		dictionary.rfc2866 dictionary.rfc2867 dictionary.rfc2868 \
+		dictionary.rfc2869 dictionary.rfc3162 dictionary.rfc3576 \
+		dictionary.rfc3580 dictionary.roaringpenguin dictionary.shasta \
+		dictionary.shiva dictionary.sonicwall dictionary.springtide \
+		dictionary.starent dictionary.t_systems_nova dictionary.telebit \
+		dictionary.trapeze dictionary.unix dictionary.usr dictionary.valemount \
+		dictionary.versanet dictionary.waverider dictionary.wispr \
+		dictionary.xedia dictionary.xylan dictionary.zyxel
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
