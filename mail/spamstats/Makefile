@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamstats
-PORTVERSION=	0.6a
+PORTVERSION=	0.6b
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inl.fr/download/
 
