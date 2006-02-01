@@ -1,3 +1,6 @@
 MD5 (webmin-1.260.tar.gz) = c45fe387902405cb36a1a5c6a240ad0d
 SHA256 (webmin-1.260.tar.gz) = 876e37bc6e1792451e982704749580ff2363c5aef0b9e5a04fcf93d2a367df84
 SIZE (webmin-1.260.tar.gz) = 9014687
+MD5 (mount-1.260-2.wbm.gz) = 943ec1571caac0c6cfa61c36f1a14504
+SHA256 (mount-1.260-2.wbm.gz) = ba1138658b2e1c5387fc74aec733163302681f422a4d06d320124f0a810724a4
+SIZE (mount-1.260-2.wbm.gz) = 271111
