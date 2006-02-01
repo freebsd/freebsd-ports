@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-clients
 PORTVERSION=	6.9.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -83,6 +84,10 @@ post-install:
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502123
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-4x
+.endif
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
