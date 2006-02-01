@@ -303,6 +303,7 @@
     SUBDIR += managepkg
     SUBDIR += manck
     SUBDIR += mapchan
+    SUBDIR += mbmon
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdf2iso
