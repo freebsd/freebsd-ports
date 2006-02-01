@@ -239,7 +239,9 @@ share/locale/el/LC_MESSAGES/bittorrent.mo
 share/locale/es/LC_MESSAGES/bittorrent.mo
 share/locale/es_MX/LC_MESSAGES/bittorrent.mo
 share/locale/fr/LC_MESSAGES/bittorrent.mo
+share/locale/he/LC_MESSAGES/bittorrent.mo
 share/locale/hu/LC_MESSAGES/bittorrent.mo
+share/locale/is/LC_MESSAGES/bittorrent.mo
 share/locale/it/LC_MESSAGES/bittorrent.mo
 share/locale/ja/LC_MESSAGES/bittorrent.mo
 share/locale/ko/LC_MESSAGES/bittorrent.mo
@@ -257,9 +259,6 @@ share/locale/tr/LC_MESSAGES/bittorrent.mo
 share/locale/vi/LC_MESSAGES/bittorrent.mo
 share/locale/zh_CN/LC_MESSAGES/bittorrent.mo
 share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
-%%GUI%%@dirrm share/pixmaps/BitTorrent/logo
-%%GUI%%@dirrm share/pixmaps/BitTorrent
-%%GUI%%@dirrmtry share/pixmaps
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
