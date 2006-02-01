@@ -26,6 +26,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,= gcc,?= gcc,' -e 's,^CCFLAGS.*,CFLAGS += -Wall,' \
 		-e 's,CCFLAGS,CFLAGS,g' ${WRKSRC}/${f}/Makefile
 .endfor
+	${REINPLACE_CMD} -e 's,\(#define STRING_LENGTH\).*,\1 25600,g' \
+		-e 's,free(,//free(,g' ${WRKSRC}/makescanner.c
 
 do-install:
 	${TAR} -C ${WRKSRC}/spl -cf - . | ${TAR} -C ${PREFIX} -xf -
