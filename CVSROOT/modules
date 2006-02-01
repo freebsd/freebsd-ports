@@ -533,6 +533,7 @@ ataidle		ports/sysutils/ataidle
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
 atitd		ports/games/atitd
+atitvout	ports/sysutils/atitvout
 atk		ports/accessibility/atk
 atlantikdesigner	ports/games/atlantikdesigner
 atlas		ports/devel/atlas
