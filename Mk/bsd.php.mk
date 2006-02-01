@@ -254,13 +254,13 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 		exif fileinfo filepro fribidi ftp gd gettext gmp \
 		iconv imagick imap interbase ldap mbstring mcrypt \
 		mhash ming mssql mysql ncurses odbc \
-		openssl panda pcntl pcre pdf pfpro pgsql posix \
+		openssl panda pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
 		tokenizer wddx xml xmlrpc yaz zip zlib
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml mcal mcve \
-		mnogosearch oracle overload xslt yp
+		mnogosearch oracle overload pfpro xslt yp
 _USE_PHP_VER5=	${_USE_PHP_ALL} dom mysqli simplexml soap sqlite \
 		tidy xmlreader xmlwriter xsl
 
