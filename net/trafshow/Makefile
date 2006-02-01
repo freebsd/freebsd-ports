@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	trafshow
-PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTVERSION=	5.2.2
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_NETBSD} \
-		ftp://ftp.nsk.su/pub/RinetSoftware/
+MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic
 
 USE_REINPLACE=	yes
