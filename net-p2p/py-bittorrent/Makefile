@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.2.2
+PORTVERSION=	4.4.0
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -54,26 +54,49 @@ PLIST_FILES+=	\
 		bin/bittorrent \
 		bin/maketorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
-		share/pixmaps/BitTorrent/broken.png \
-		share/pixmaps/BitTorrent/finished.png \
-		share/pixmaps/BitTorrent/info.png \
+		share/pixmaps/BitTorrent/icons/default/abort.png \
+		share/pixmaps/BitTorrent/icons/default/broken.png \
+		share/pixmaps/BitTorrent/icons/default/finished.png \
+		share/pixmaps/BitTorrent/icons/default/info.png \
+		share/pixmaps/BitTorrent/icons/default/pause.png \
+		share/pixmaps/BitTorrent/icons/default/paused.png \
+		share/pixmaps/BitTorrent/icons/default/play.png \
+		share/pixmaps/BitTorrent/icons/default/queued.png \
+		share/pixmaps/BitTorrent/icons/default/remove.png \
+		share/pixmaps/BitTorrent/icons/default/running.png \
+		share/pixmaps/BitTorrent/icons/default/status-broken.png \
+		share/pixmaps/BitTorrent/icons/default/status-natted.png \
+		share/pixmaps/BitTorrent/icons/default/status-pre-natted.png \
+		share/pixmaps/BitTorrent/icons/default/status-running.png \
+		share/pixmaps/BitTorrent/icons/default/status-starting.png \
+		share/pixmaps/BitTorrent/icons/default/status-stopped.png \
+		share/pixmaps/BitTorrent/icons/default/trashcan.png \
+		share/pixmaps/BitTorrent/icons/old/broken.png \
+		share/pixmaps/BitTorrent/icons/old/finished.png \
+		share/pixmaps/BitTorrent/icons/old/info.png \
+		share/pixmaps/BitTorrent/icons/old/pause.png \
+		share/pixmaps/BitTorrent/icons/old/paused.png \
+		share/pixmaps/BitTorrent/icons/old/play.png \
+		share/pixmaps/BitTorrent/icons/old/queued.png \
+		share/pixmaps/BitTorrent/icons/old/remove.png \
+		share/pixmaps/BitTorrent/icons/old/running.png \
+		share/pixmaps/BitTorrent/icons/old/status-broken.png \
+		share/pixmaps/BitTorrent/icons/old/status-natted.png \
+		share/pixmaps/BitTorrent/icons/old/status-pre-natted.png \
+		share/pixmaps/BitTorrent/icons/old/status-running.png \
+		share/pixmaps/BitTorrent/icons/old/status-starting.png \
+		share/pixmaps/BitTorrent/icons/old/status-stopped.png \
 		share/pixmaps/BitTorrent/logo/bittorrent_32.png \
-		share/pixmaps/BitTorrent/logo/bittorrent_96.png \
-		share/pixmaps/BitTorrent/pause.png \
-		share/pixmaps/BitTorrent/paused.png \
-		share/pixmaps/BitTorrent/play.png \
-		share/pixmaps/BitTorrent/queued.png \
-		share/pixmaps/BitTorrent/remove.png \
-		share/pixmaps/BitTorrent/running.png \
-		share/pixmaps/BitTorrent/status-natted.png \
-		share/pixmaps/BitTorrent/status-running.png \
-		share/pixmaps/BitTorrent/status-stopped.png
+		share/pixmaps/BitTorrent/logo/bittorrent_96.png
 
-PLIST_SUB+=	GUI=""
+PLIST_DIRS+=	\
+		share/pixmaps/BitTorrent/logo \
+		share/pixmaps/BitTorrent/icons/old \
+		share/pixmaps/BitTorrent/icons/default \
+		share/pixmaps/BitTorrent/icons \
+		share/pixmaps/BitTorrent
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
-
-PLIST_SUB+=	GUI="@comment "
 .endif
 # required for PSYCO
 .ifndef(WITHOUT_PSYCO)
