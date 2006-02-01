@@ -1698,6 +1698,7 @@ share/locale/nl/LC_MESSAGES/konnector_qtopia.mo
 share/locale/nl/LC_MESSAGES/konnector_remote.mo
 share/locale/nl/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/nl/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/nl/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/nl/LC_MESSAGES/konqsidebar_news.mo
 share/locale/nl/LC_MESSAGES/konqueror.mo
 share/locale/nl/LC_MESSAGES/konquest.mo

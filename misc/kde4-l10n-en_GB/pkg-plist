@@ -687,6 +687,7 @@ share/locale/en_GB/LC_MESSAGES/kaccess.mo
 share/locale/en_GB/LC_MESSAGES/kaddressbook.mo
 share/locale/en_GB/LC_MESSAGES/kalarm.mo
 share/locale/en_GB/LC_MESSAGES/kalzium.mo
+share/locale/en_GB/LC_MESSAGES/kanagram.mo
 share/locale/en_GB/LC_MESSAGES/kandy.mo
 share/locale/en_GB/LC_MESSAGES/kappfinder.mo
 share/locale/en_GB/LC_MESSAGES/karm.mo
@@ -1003,6 +1004,7 @@ share/locale/en_GB/LC_MESSAGES/konnector_qtopia.mo
 share/locale/en_GB/LC_MESSAGES/konnector_remote.mo
 share/locale/en_GB/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/en_GB/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/en_GB/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/en_GB/LC_MESSAGES/konqsidebar_news.mo
 share/locale/en_GB/LC_MESSAGES/konqueror.mo
 share/locale/en_GB/LC_MESSAGES/konquest.mo
@@ -1132,6 +1134,7 @@ share/locale/en_GB/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/en_GB/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/en_GB/LC_MESSAGES/libkcal.mo
 share/locale/en_GB/LC_MESSAGES/libkcddb.mo
+share/locale/en_GB/LC_MESSAGES/libkdeedu.mo
 share/locale/en_GB/LC_MESSAGES/libkdegames.mo
 share/locale/en_GB/LC_MESSAGES/libkdepim.mo
 share/locale/en_GB/LC_MESSAGES/libkfaximgage.mo

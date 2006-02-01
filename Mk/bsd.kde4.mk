@@ -68,7 +68,7 @@ LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
 .else
-BROKEN=			Unknown value in USE_KDELIBS_VER
+IGNORE=			Unsupported value in USE_KDELIBS_VER
 .endif # ${USE_KDELIBS_VER} == 3
 .endif # defined(USE_KDELIBS_VER)
 
@@ -97,7 +97,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGL
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.5.0
+KDE_VERSION=		3.5.1
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 
@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
 .endif # !defined(QT_NONSTANDARD)
 .else
-BROKEN=Unsupported value of USE_QT_VER
+IGNORE=			Unsupported value of USE_QT_VER
 .endif # defined(USE_QT_VER)
 
 # End of USE_QT_VER section

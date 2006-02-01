@@ -629,6 +629,7 @@ share/locale/hu/LC_MESSAGES/kedit.mo
 share/locale/hu/LC_MESSAGES/keduca.mo
 share/locale/hu/LC_MESSAGES/kenolaba.mo
 share/locale/hu/LC_MESSAGES/kfax.mo
+share/locale/hu/LC_MESSAGES/kfaxview.mo
 share/locale/hu/LC_MESSAGES/kfifteenapplet.mo
 share/locale/hu/LC_MESSAGES/kfile_au.mo
 share/locale/hu/LC_MESSAGES/kfile_avi.mo
@@ -800,6 +801,7 @@ share/locale/hu/LC_MESSAGES/konnector_qtopia.mo
 share/locale/hu/LC_MESSAGES/konnector_remote.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/hu/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/hu/LC_MESSAGES/konqsidebar_news.mo
 share/locale/hu/LC_MESSAGES/konqueror.mo
 share/locale/hu/LC_MESSAGES/konquest.mo
@@ -830,13 +832,16 @@ share/locale/hu/LC_MESSAGES/krdc.mo
 share/locale/hu/LC_MESSAGES/kreadconfig.mo
 share/locale/hu/LC_MESSAGES/krec.mo
 share/locale/hu/LC_MESSAGES/kregexpeditor.mo
+share/locale/hu/LC_MESSAGES/kres_birthday.mo
 share/locale/hu/LC_MESSAGES/kres_blogging.mo
 share/locale/hu/LC_MESSAGES/kres_bugzilla.mo
 share/locale/hu/LC_MESSAGES/kres_exchange.mo
 share/locale/hu/LC_MESSAGES/kres_featureplan.mo
+share/locale/hu/LC_MESSAGES/kres_groupware.mo
 share/locale/hu/LC_MESSAGES/kres_groupwise.mo
 share/locale/hu/LC_MESSAGES/kres_kolab.mo
 share/locale/hu/LC_MESSAGES/kres_remote.mo
+share/locale/hu/LC_MESSAGES/kres_tvanytime.mo
 share/locale/hu/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/hu/LC_MESSAGES/kreversi.mo
 share/locale/hu/LC_MESSAGES/krfb.mo
@@ -929,6 +934,7 @@ share/locale/hu/LC_MESSAGES/libkcddb.mo
 share/locale/hu/LC_MESSAGES/libkdeedu.mo
 share/locale/hu/LC_MESSAGES/libkdegames.mo
 share/locale/hu/LC_MESSAGES/libkdepim.mo
+share/locale/hu/LC_MESSAGES/libkfaximgage.mo
 share/locale/hu/LC_MESSAGES/libkholidays.mo
 share/locale/hu/LC_MESSAGES/libkicker.mo
 share/locale/hu/LC_MESSAGES/libkickermenu_kdeprint.mo
@@ -972,6 +978,7 @@ share/locale/hu/LC_MESSAGES/rellinks.mo
 share/locale/hu/LC_MESSAGES/searchbarplugin.mo
 share/locale/hu/LC_MESSAGES/secpolicy.mo
 share/locale/hu/LC_MESSAGES/spy.mo
+share/locale/hu/LC_MESSAGES/superkaramba.mo
 share/locale/hu/LC_MESSAGES/synaescope.mo
 share/locale/hu/LC_MESSAGES/timezones.mo
 share/locale/hu/LC_MESSAGES/tippecanoe.mo

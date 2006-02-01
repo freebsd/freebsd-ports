@@ -75,6 +75,7 @@ share/locale/tg/LC_MESSAGES/katemodeline.mo
 share/locale/tg/LC_MESSAGES/kateopenheader.mo
 share/locale/tg/LC_MESSAGES/katepart.mo
 share/locale/tg/LC_MESSAGES/katepybrowse.mo
+share/locale/tg/LC_MESSAGES/katesnippets.mo
 share/locale/tg/LC_MESSAGES/katetabbarextension.mo
 share/locale/tg/LC_MESSAGES/katetextfilter.mo
 share/locale/tg/LC_MESSAGES/katexmlcheck.mo
@@ -88,6 +89,7 @@ share/locale/tg/LC_MESSAGES/kbinaryclock.mo
 share/locale/tg/LC_MESSAGES/kblackbox.mo
 share/locale/tg/LC_MESSAGES/kbounce.mo
 share/locale/tg/LC_MESSAGES/kbruch.mo
+share/locale/tg/LC_MESSAGES/kbstateapplet.mo
 share/locale/tg/LC_MESSAGES/kbugbuster.mo
 share/locale/tg/LC_MESSAGES/kcachegrind.mo
 share/locale/tg/LC_MESSAGES/kcalc.mo
@@ -196,6 +198,7 @@ share/locale/tg/LC_MESSAGES/kfifteenapplet.mo
 share/locale/tg/LC_MESSAGES/kfile_au.mo
 share/locale/tg/LC_MESSAGES/kfile_avi.mo
 share/locale/tg/LC_MESSAGES/kfile_bmp.mo
+share/locale/tg/LC_MESSAGES/kfile_cert.mo
 share/locale/tg/LC_MESSAGES/kfile_cpp.mo
 share/locale/tg/LC_MESSAGES/kfile_deb.mo
 share/locale/tg/LC_MESSAGES/kfile_desktop.mo
@@ -212,6 +215,7 @@ share/locale/tg/LC_MESSAGES/kfile_jpeg.mo
 share/locale/tg/LC_MESSAGES/kfile_kig.mo
 share/locale/tg/LC_MESSAGES/kfile_lnk.mo
 share/locale/tg/LC_MESSAGES/kfile_m3u.mo
+share/locale/tg/LC_MESSAGES/kfile_mhtml.mo
 share/locale/tg/LC_MESSAGES/kfile_mp3.mo
 share/locale/tg/LC_MESSAGES/kfile_ogg.mo
 share/locale/tg/LC_MESSAGES/kfile_palm.mo
@@ -320,6 +324,7 @@ share/locale/tg/LC_MESSAGES/kmouth.mo
 share/locale/tg/LC_MESSAGES/kmplot.mo
 share/locale/tg/LC_MESSAGES/kmrml.mo
 share/locale/tg/LC_MESSAGES/knetattach.mo
+share/locale/tg/LC_MESSAGES/knetworkconf.mo
 share/locale/tg/LC_MESSAGES/knewsticker.mo
 share/locale/tg/LC_MESSAGES/knode.mo
 share/locale/tg/LC_MESSAGES/knotes.mo
@@ -330,7 +335,9 @@ share/locale/tg/LC_MESSAGES/kolourpaint.mo
 share/locale/tg/LC_MESSAGES/kolourpicker.mo
 share/locale/tg/LC_MESSAGES/kommander.mo
 share/locale/tg/LC_MESSAGES/kompare.mo
+share/locale/tg/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/tg/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/tg/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/tg/LC_MESSAGES/konqsidebar_news.mo
 share/locale/tg/LC_MESSAGES/konqueror.mo
 share/locale/tg/LC_MESSAGES/konquest.mo
@@ -369,6 +376,7 @@ share/locale/tg/LC_MESSAGES/krfb.mo
 share/locale/tg/LC_MESSAGES/kruler.mo
 share/locale/tg/LC_MESSAGES/krunapplet.mo
 share/locale/tg/LC_MESSAGES/ksame.mo
+share/locale/tg/LC_MESSAGES/ksayit.mo
 share/locale/tg/LC_MESSAGES/kscd.mo
 share/locale/tg/LC_MESSAGES/kscreensaver.mo
 share/locale/tg/LC_MESSAGES/kshisen.mo
@@ -387,6 +395,7 @@ share/locale/tg/LC_MESSAGES/kstars.mo
 share/locale/tg/LC_MESSAGES/kstart.mo
 share/locale/tg/LC_MESSAGES/kstartperf.mo
 share/locale/tg/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/tg/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/tg/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/tg/LC_MESSAGES/ksvgplugin.mo
 share/locale/tg/LC_MESSAGES/ksync.mo
@@ -406,6 +415,7 @@ share/locale/tg/LC_MESSAGES/ktip.mo
 share/locale/tg/LC_MESSAGES/ktnef.mo
 share/locale/tg/LC_MESSAGES/ktouch.mo
 share/locale/tg/LC_MESSAGES/ktron.mo
+share/locale/tg/LC_MESSAGES/kttsd.mo
 share/locale/tg/LC_MESSAGES/ktuberling.mo
 share/locale/tg/LC_MESSAGES/kturtle.mo
 share/locale/tg/LC_MESSAGES/ktux.mo
@@ -438,6 +448,7 @@ share/locale/tg/LC_MESSAGES/kwriteconfig.mo
 share/locale/tg/LC_MESSAGES/kxkb.mo
 share/locale/tg/LC_MESSAGES/kxsconfig.mo
 share/locale/tg/LC_MESSAGES/kxsldbg.mo
+share/locale/tg/LC_MESSAGES/libKTTSD.mo
 share/locale/tg/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/tg/LC_MESSAGES/libkcal.mo
 share/locale/tg/LC_MESSAGES/libkcalsystem.mo
@@ -466,6 +477,7 @@ share/locale/tg/LC_MESSAGES/lskat.mo
 share/locale/tg/LC_MESSAGES/lyrics.mo
 share/locale/tg/LC_MESSAGES/mediaapplet.mo
 share/locale/tg/LC_MESSAGES/mediacontrol.mo
+share/locale/tg/LC_MESSAGES/mf_konqplugin.mo
 share/locale/tg/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tg/LC_MESSAGES/naughtyapplet.mo
 share/locale/tg/LC_MESSAGES/nexscope.mo

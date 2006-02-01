@@ -92,6 +92,7 @@ share/locale/uk/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/uk/LC_MESSAGES/audiorename_plugin.mo
 share/locale/uk/LC_MESSAGES/autorefresh.mo
 share/locale/uk/LC_MESSAGES/babelfish.mo
+share/locale/uk/LC_MESSAGES/blinken.mo
 share/locale/uk/LC_MESSAGES/cervisia.mo
 share/locale/uk/LC_MESSAGES/charlatanui.mo
 share/locale/uk/LC_MESSAGES/clockapplet.mo
@@ -438,6 +439,7 @@ share/locale/uk/LC_MESSAGES/konnector_qtopia.mo
 share/locale/uk/LC_MESSAGES/konnector_remote.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/uk/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/uk/LC_MESSAGES/konqsidebar_news.mo
 share/locale/uk/LC_MESSAGES/konqueror.mo
 share/locale/uk/LC_MESSAGES/konquest.mo
@@ -523,6 +525,7 @@ share/locale/uk/LC_MESSAGES/ktimemon.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktip.mo
 share/locale/uk/LC_MESSAGES/ktnef.mo
+share/locale/uk/LC_MESSAGES/ktouch.mo
 share/locale/uk/LC_MESSAGES/ktron.mo
 share/locale/uk/LC_MESSAGES/kttsd.mo
 share/locale/uk/LC_MESSAGES/ktuberling.mo
@@ -617,6 +620,7 @@ share/locale/uk/LC_MESSAGES/tippecanoe.mo
 share/locale/uk/LC_MESSAGES/trashapplet.mo
 share/locale/uk/LC_MESSAGES/tyler.mo
 share/locale/uk/LC_MESSAGES/uachangerplugin.mo
+share/locale/uk/LC_MESSAGES/umbrello.mo
 share/locale/uk/LC_MESSAGES/useraccount.mo
 share/locale/uk/LC_MESSAGES/validatorsplugin.mo
 share/locale/uk/LC_MESSAGES/wakeup.mo

@@ -15,6 +15,7 @@ share/locale/nb/LC_MESSAGES/artscontrol.mo
 share/locale/nb/LC_MESSAGES/artsmodules.mo
 share/locale/nb/LC_MESSAGES/atlantik.mo
 share/locale/nb/LC_MESSAGES/atlantikdesigner.mo
+share/locale/nb/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/nb/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/nb/LC_MESSAGES/audiorename_plugin.mo
 share/locale/nb/LC_MESSAGES/autorefresh.mo
@@ -192,6 +193,7 @@ share/locale/nb/LC_MESSAGES/kdgantt.mo
 share/locale/nb/LC_MESSAGES/kdialog.mo
 share/locale/nb/LC_MESSAGES/kdict.mo
 share/locale/nb/LC_MESSAGES/kdictapplet.mo
+share/locale/nb/LC_MESSAGES/kdjview.mo
 share/locale/nb/LC_MESSAGES/kdmconfig.mo
 share/locale/nb/LC_MESSAGES/kdmgreet.mo
 share/locale/nb/LC_MESSAGES/kdvi.mo
@@ -199,6 +201,7 @@ share/locale/nb/LC_MESSAGES/kedit.mo
 share/locale/nb/LC_MESSAGES/keduca.mo
 share/locale/nb/LC_MESSAGES/kenolaba.mo
 share/locale/nb/LC_MESSAGES/kfax.mo
+share/locale/nb/LC_MESSAGES/kfaxview.mo
 share/locale/nb/LC_MESSAGES/kfifteenapplet.mo
 share/locale/nb/LC_MESSAGES/kfile_au.mo
 share/locale/nb/LC_MESSAGES/kfile_avi.mo
@@ -225,6 +228,7 @@ share/locale/nb/LC_MESSAGES/kfile_m3u.mo
 share/locale/nb/LC_MESSAGES/kfile_mhtml.mo
 share/locale/nb/LC_MESSAGES/kfile_mp3.mo
 share/locale/nb/LC_MESSAGES/kfile_mpc.mo
+share/locale/nb/LC_MESSAGES/kfile_mpeg.mo
 share/locale/nb/LC_MESSAGES/kfile_ogg.mo
 share/locale/nb/LC_MESSAGES/kfile_palm.mo
 share/locale/nb/LC_MESSAGES/kfile_pcx.mo
@@ -257,6 +261,7 @@ share/locale/nb/LC_MESSAGES/kfontinst.mo
 share/locale/nb/LC_MESSAGES/kfouleggs.mo
 share/locale/nb/LC_MESSAGES/kgamma.mo
 share/locale/nb/LC_MESSAGES/kgantt.mo
+share/locale/nb/LC_MESSAGES/kgeography.mo
 share/locale/nb/LC_MESSAGES/kget.mo
 share/locale/nb/LC_MESSAGES/kghostview.mo
 share/locale/nb/LC_MESSAGES/kgoldrunner.mo
@@ -283,6 +288,7 @@ share/locale/nb/LC_MESSAGES/kio_groupwise.mo
 share/locale/nb/LC_MESSAGES/kio_help.mo
 share/locale/nb/LC_MESSAGES/kio_home.mo
 share/locale/nb/LC_MESSAGES/kio_imap4.mo
+share/locale/nb/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/nb/LC_MESSAGES/kio_lan.mo
 share/locale/nb/LC_MESSAGES/kio_ldap.mo
 share/locale/nb/LC_MESSAGES/kio_mac.mo
@@ -496,6 +502,7 @@ share/locale/nb/LC_MESSAGES/libkcddb.mo
 share/locale/nb/LC_MESSAGES/libkdeedu.mo
 share/locale/nb/LC_MESSAGES/libkdegames.mo
 share/locale/nb/LC_MESSAGES/libkdepim.mo
+share/locale/nb/LC_MESSAGES/libkfaximgage.mo
 share/locale/nb/LC_MESSAGES/libkholidays.mo
 share/locale/nb/LC_MESSAGES/libkicker.mo
 share/locale/nb/LC_MESSAGES/libkickermenu_kdeprint.mo
@@ -539,6 +546,7 @@ share/locale/nb/LC_MESSAGES/rellinks.mo
 share/locale/nb/LC_MESSAGES/searchbarplugin.mo
 share/locale/nb/LC_MESSAGES/secpolicy.mo
 share/locale/nb/LC_MESSAGES/spy.mo
+share/locale/nb/LC_MESSAGES/superkaramba.mo
 share/locale/nb/LC_MESSAGES/synaescope.mo
 share/locale/nb/LC_MESSAGES/timezones.mo
 share/locale/nb/LC_MESSAGES/tippecanoe.mo

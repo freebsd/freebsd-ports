@@ -835,6 +835,9 @@ share/doc/HTML/ru/kmplot/using.docbook
 share/doc/HTML/ru/knetattach/common
 share/doc/HTML/ru/knetattach/index.cache.bz2
 share/doc/HTML/ru/knetattach/index.docbook
+share/doc/HTML/ru/knetworkconf/common
+share/doc/HTML/ru/knetworkconf/index.cache.bz2
+share/doc/HTML/ru/knetworkconf/index.docbook
 share/doc/HTML/ru/knewsticker/common
 share/doc/HTML/ru/knewsticker/index.cache.bz2
 share/doc/HTML/ru/knewsticker/index.docbook
@@ -1943,6 +1946,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/knotes
 @dirrm share/doc/HTML/ru/knode
 @dirrm share/doc/HTML/ru/knewsticker
+@dirrm share/doc/HTML/ru/knetworkconf
 @dirrm share/doc/HTML/ru/knetattach
 @dirrm share/doc/HTML/ru/kmplot
 @dirrm share/doc/HTML/ru/kmouth

@@ -4,6 +4,7 @@
 # Whom:					Alan Eldridge <alane@freebsd.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}

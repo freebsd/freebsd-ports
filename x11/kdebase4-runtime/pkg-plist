@@ -334,8 +334,8 @@ lib/kde3/khelpcenter.la
 lib/kde3/khelpcenter.so
 lib/kde3/khotkeys.la
 lib/kde3/khotkeys.so
-lib/kde3/khotkeys_shared_arts.la
-lib/kde3/khotkeys_shared_arts.so
+lib/kde3/khotkeys_arts.la
+lib/kde3/khotkeys_arts.so
 lib/kde3/kicker.la
 lib/kde3/kicker.so
 lib/kde3/kickermenu_find.la
@@ -2199,6 +2199,7 @@ share/doc/HTML/en/khelpcenter/userguide/kmouth2.png
 share/doc/HTML/en/khelpcenter/userguide/kmouth3.png
 share/doc/HTML/en/khelpcenter/userguide/knode-identity.png
 share/doc/HTML/en/khelpcenter/userguide/knode-mail-account.png
+share/doc/HTML/en/khelpcenter/userguide/knode-news-account.png
 share/doc/HTML/en/khelpcenter/userguide/knode-start.png
 share/doc/HTML/en/khelpcenter/userguide/konq-sidebar.png
 share/doc/HTML/en/khelpcenter/userguide/konq-simple.png
@@ -2845,6 +2846,7 @@ share/icons/crystalsvg/32x32/apps/pan.png
 share/icons/crystalsvg/32x32/apps/penguin.png
 share/icons/crystalsvg/32x32/apps/personal.png
 share/icons/crystalsvg/32x32/apps/phppg.png
+share/icons/crystalsvg/32x32/apps/pinguin.png
 share/icons/crystalsvg/32x32/apps/plan.png
 share/icons/crystalsvg/32x32/apps/planner.png
 share/icons/crystalsvg/32x32/apps/proxy.png

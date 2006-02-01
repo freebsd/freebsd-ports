@@ -114,6 +114,7 @@ share/locale/he/LC_MESSAGES/kaccess.mo
 share/locale/he/LC_MESSAGES/kaddressbook.mo
 share/locale/he/LC_MESSAGES/kalarm.mo
 share/locale/he/LC_MESSAGES/kalzium.mo
+share/locale/he/LC_MESSAGES/kanagram.mo
 share/locale/he/LC_MESSAGES/kandy.mo
 share/locale/he/LC_MESSAGES/kappfinder.mo
 share/locale/he/LC_MESSAGES/karm.mo
@@ -252,6 +253,7 @@ share/locale/he/LC_MESSAGES/kfile_au.mo
 share/locale/he/LC_MESSAGES/kfile_avi.mo
 share/locale/he/LC_MESSAGES/kfile_bmp.mo
 share/locale/he/LC_MESSAGES/kfile_cpp.mo
+share/locale/he/LC_MESSAGES/kfile_dds.mo
 share/locale/he/LC_MESSAGES/kfile_deb.mo
 share/locale/he/LC_MESSAGES/kfile_desktop.mo
 share/locale/he/LC_MESSAGES/kfile_diff.mo
@@ -306,6 +308,7 @@ share/locale/he/LC_MESSAGES/kget.mo
 share/locale/he/LC_MESSAGES/kghostview.mo
 share/locale/he/LC_MESSAGES/kgpg.mo
 share/locale/he/LC_MESSAGES/kgreet_classic.mo
+share/locale/he/LC_MESSAGES/khangman.mo
 share/locale/he/LC_MESSAGES/khelpcenter.mo
 share/locale/he/LC_MESSAGES/khexedit.mo
 share/locale/he/LC_MESSAGES/khotkeys.mo
@@ -420,6 +423,7 @@ share/locale/he/LC_MESSAGES/krdc.mo
 share/locale/he/LC_MESSAGES/kreadconfig.mo
 share/locale/he/LC_MESSAGES/krec.mo
 share/locale/he/LC_MESSAGES/kregexpeditor.mo
+share/locale/he/LC_MESSAGES/kres_birthday.mo
 share/locale/he/LC_MESSAGES/kres_bugzilla.mo
 share/locale/he/LC_MESSAGES/kreversi.mo
 share/locale/he/LC_MESSAGES/krfb.mo
@@ -441,7 +445,6 @@ share/locale/he/LC_MESSAGES/ksokoban.mo
 share/locale/he/LC_MESSAGES/kspaceduel.mo
 share/locale/he/LC_MESSAGES/ksplash.mo
 share/locale/he/LC_MESSAGES/ksplashthemes.mo
-share/locale/he/LC_MESSAGES/kstars.mo
 share/locale/he/LC_MESSAGES/kstart.mo
 share/locale/he/LC_MESSAGES/kstartperf.mo
 share/locale/he/LC_MESSAGES/kstyle_keramik_config.mo
@@ -494,8 +497,10 @@ share/locale/he/LC_MESSAGES/kxsconfig.mo
 share/locale/he/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/he/LC_MESSAGES/libkcal.mo
 share/locale/he/LC_MESSAGES/libkcddb.mo
+share/locale/he/LC_MESSAGES/libkdeedu.mo
 share/locale/he/LC_MESSAGES/libkdegames.mo
 share/locale/he/LC_MESSAGES/libkdepim.mo
+share/locale/he/LC_MESSAGES/libkholidays.mo
 share/locale/he/LC_MESSAGES/libkicker.mo
 share/locale/he/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/he/LC_MESSAGES/libkickermenu_konsole.mo

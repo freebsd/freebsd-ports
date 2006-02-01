@@ -1484,6 +1484,7 @@ share/apps/ksgmltools2/customization/da/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/da/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/da/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/da/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/da/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/da/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/da/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/da/lang.entities
@@ -4302,10 +4303,12 @@ share/icons/crystalsvg/48x48/actions/lock.png
 share/icons/crystalsvg/48x48/actions/mail_new.png
 share/icons/crystalsvg/48x48/actions/mail_post_to.png
 share/icons/crystalsvg/48x48/actions/misc.png
+share/icons/crystalsvg/48x48/actions/next.png
 share/icons/crystalsvg/48x48/actions/player_playlist.png
 share/icons/crystalsvg/48x48/actions/presence_away.png
 share/icons/crystalsvg/48x48/actions/presence_offline.png
 share/icons/crystalsvg/48x48/actions/presence_online.png
+share/icons/crystalsvg/48x48/actions/previous.png
 share/icons/crystalsvg/48x48/actions/reload.png
 share/icons/crystalsvg/48x48/actions/reload_all_tabs.png
 share/icons/crystalsvg/48x48/actions/reload_page.png
@@ -4925,6 +4928,7 @@ share/mimelnk/application/fits.desktop
 share/mimelnk/application/illustrator.desktop
 share/mimelnk/application/java.desktop
 share/mimelnk/application/mathml+xml.desktop
+share/mimelnk/application/mbox.desktop
 share/mimelnk/application/msexcel.desktop
 share/mimelnk/application/mspowerpoint.desktop
 share/mimelnk/application/msword.desktop
@@ -4945,6 +4949,7 @@ share/mimelnk/application/smil.desktop
 share/mimelnk/application/vnd.mozilla.xul+xml.desktop
 share/mimelnk/application/vnd.ms-asf.desktop
 share/mimelnk/application/vnd.ms-excel.desktop
+share/mimelnk/application/vnd.ms-powerpoint.desktop
 share/mimelnk/application/vnd.ms-word.desktop
 share/mimelnk/application/vnd.oasis.opendocument.chart.desktop
 share/mimelnk/application/vnd.oasis.opendocument.formula.desktop
@@ -5140,6 +5145,7 @@ share/mimelnk/image/tiff.desktop
 share/mimelnk/image/wmf.desktop
 share/mimelnk/image/x-bmp.desktop
 share/mimelnk/image/x-dds.desktop
+share/mimelnk/image/x-djvu-2.desktop
 share/mimelnk/image/x-djvu.desktop
 share/mimelnk/image/x-eps.desktop
 share/mimelnk/image/x-exr.desktop

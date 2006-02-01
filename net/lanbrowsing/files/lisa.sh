@@ -7,7 +7,7 @@
 # REQUIRE: LOGIN
 # KEYWORD: FreeBSD
 
-lisa_enable="${lisa_enable-NO}"
+lisa_enable="NO"
 lisa_conffile="%%PREFIX%%/etc/lisarc"
 
 . %%RC_SUBR%%

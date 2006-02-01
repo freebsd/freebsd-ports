@@ -270,6 +270,7 @@ share/locale/fi/LC_MESSAGES/kedit.mo
 share/locale/fi/LC_MESSAGES/keduca.mo
 share/locale/fi/LC_MESSAGES/kenolaba.mo
 share/locale/fi/LC_MESSAGES/kfax.mo
+share/locale/fi/LC_MESSAGES/kfaxview.mo
 share/locale/fi/LC_MESSAGES/kfifteenapplet.mo
 share/locale/fi/LC_MESSAGES/kfile_au.mo
 share/locale/fi/LC_MESSAGES/kfile_avi.mo
@@ -296,6 +297,7 @@ share/locale/fi/LC_MESSAGES/kfile_m3u.mo
 share/locale/fi/LC_MESSAGES/kfile_mhtml.mo
 share/locale/fi/LC_MESSAGES/kfile_mp3.mo
 share/locale/fi/LC_MESSAGES/kfile_mpc.mo
+share/locale/fi/LC_MESSAGES/kfile_mpeg.mo
 share/locale/fi/LC_MESSAGES/kfile_ogg.mo
 share/locale/fi/LC_MESSAGES/kfile_palm.mo
 share/locale/fi/LC_MESSAGES/kfile_pcx.mo
@@ -309,6 +311,7 @@ share/locale/fi/LC_MESSAGES/kfile_rgb.mo
 share/locale/fi/LC_MESSAGES/kfile_rpm.mo
 share/locale/fi/LC_MESSAGES/kfile_sid.mo
 share/locale/fi/LC_MESSAGES/kfile_tga.mo
+share/locale/fi/LC_MESSAGES/kfile_theora.mo
 share/locale/fi/LC_MESSAGES/kfile_tiff.mo
 share/locale/fi/LC_MESSAGES/kfile_torrent.mo
 share/locale/fi/LC_MESSAGES/kfile_ts.mo
@@ -353,6 +356,7 @@ share/locale/fi/LC_MESSAGES/kio_groupwise.mo
 share/locale/fi/LC_MESSAGES/kio_help.mo
 share/locale/fi/LC_MESSAGES/kio_home.mo
 share/locale/fi/LC_MESSAGES/kio_imap4.mo
+share/locale/fi/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/fi/LC_MESSAGES/kio_lan.mo
 share/locale/fi/LC_MESSAGES/kio_ldap.mo
 share/locale/fi/LC_MESSAGES/kio_mac.mo
@@ -374,6 +378,7 @@ share/locale/fi/LC_MESSAGES/kio_system.mo
 share/locale/fi/LC_MESSAGES/kio_tar.mo
 share/locale/fi/LC_MESSAGES/kio_thumbnail.mo
 share/locale/fi/LC_MESSAGES/kio_trash.mo
+share/locale/fi/LC_MESSAGES/kio_zeroconf.mo
 share/locale/fi/LC_MESSAGES/kioexec.mo
 share/locale/fi/LC_MESSAGES/kiten.mo
 share/locale/fi/LC_MESSAGES/kjobviewer.mo
@@ -435,6 +440,7 @@ share/locale/fi/LC_MESSAGES/konnector_qtopia.mo
 share/locale/fi/LC_MESSAGES/konnector_remote.mo
 share/locale/fi/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/fi/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/fi/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/fi/LC_MESSAGES/konqsidebar_news.mo
 share/locale/fi/LC_MESSAGES/konqueror.mo
 share/locale/fi/LC_MESSAGES/konquest.mo
@@ -465,6 +471,7 @@ share/locale/fi/LC_MESSAGES/krdc.mo
 share/locale/fi/LC_MESSAGES/kreadconfig.mo
 share/locale/fi/LC_MESSAGES/krec.mo
 share/locale/fi/LC_MESSAGES/kregexpeditor.mo
+share/locale/fi/LC_MESSAGES/kres_birthday.mo
 share/locale/fi/LC_MESSAGES/kres_blogging.mo
 share/locale/fi/LC_MESSAGES/kres_bugzilla.mo
 share/locale/fi/LC_MESSAGES/kres_exchange.mo
@@ -473,6 +480,7 @@ share/locale/fi/LC_MESSAGES/kres_groupware.mo
 share/locale/fi/LC_MESSAGES/kres_groupwise.mo
 share/locale/fi/LC_MESSAGES/kres_kolab.mo
 share/locale/fi/LC_MESSAGES/kres_remote.mo
+share/locale/fi/LC_MESSAGES/kres_tvanytime.mo
 share/locale/fi/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/fi/LC_MESSAGES/kreversi.mo
 share/locale/fi/LC_MESSAGES/krfb.mo
@@ -547,6 +555,7 @@ share/locale/fi/LC_MESSAGES/kwin.mo
 share/locale/fi/LC_MESSAGES/kwin4.mo
 share/locale/fi/LC_MESSAGES/kwin_art_clients.mo
 share/locale/fi/LC_MESSAGES/kwin_clients.mo
+share/locale/fi/LC_MESSAGES/kwin_lib.mo
 share/locale/fi/LC_MESSAGES/kwireless.mo
 share/locale/fi/LC_MESSAGES/kwordquiz.mo
 share/locale/fi/LC_MESSAGES/kworldclock.mo
@@ -562,6 +571,7 @@ share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcddb.mo
 share/locale/fi/LC_MESSAGES/libkdegames.mo
 share/locale/fi/LC_MESSAGES/libkdepim.mo
+share/locale/fi/LC_MESSAGES/libkfaximgage.mo
 share/locale/fi/LC_MESSAGES/libkholidays.mo
 share/locale/fi/LC_MESSAGES/libkicker.mo
 share/locale/fi/LC_MESSAGES/libkickermenu_kdeprint.mo
@@ -573,9 +583,11 @@ share/locale/fi/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/fi/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/fi/LC_MESSAGES/libkmime.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
+share/locale/fi/LC_MESSAGES/libkpgp.mo
 share/locale/fi/LC_MESSAGES/libkpimexchange.mo
 share/locale/fi/LC_MESSAGES/libkscan.mo
 share/locale/fi/LC_MESSAGES/libkscreensaver.mo
+share/locale/fi/LC_MESSAGES/libksieve.mo
 share/locale/fi/LC_MESSAGES/libksirtet.mo
 share/locale/fi/LC_MESSAGES/libksync.mo
 share/locale/fi/LC_MESSAGES/libtaskbar.mo

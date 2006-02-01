@@ -253,6 +253,7 @@ share/apps/kttsd/kcmkttsd_testmessage.desktop
 share/apps/kttsd/sbd/polish_festival_sbdrc
 share/apps/kttsd/sbd/standard_sbdrc
 share/apps/kttsd/stringreplacer/abbreviations.xml
+share/apps/kttsd/stringreplacer/chat-de.xml
 share/apps/kttsd/stringreplacer/chat.xml
 share/apps/kttsd/stringreplacer/emoticons.xml
 share/apps/kttsd/stringreplacer/festival_unspeakable_chars.xml

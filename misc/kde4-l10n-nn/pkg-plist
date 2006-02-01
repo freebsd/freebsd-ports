@@ -43,6 +43,7 @@ share/locale/nn/LC_MESSAGES/kaboodle.mo
 share/locale/nn/LC_MESSAGES/kaccess.mo
 share/locale/nn/LC_MESSAGES/kaddressbook.mo
 share/locale/nn/LC_MESSAGES/kalarm.mo
+share/locale/nn/LC_MESSAGES/kalzium.mo
 share/locale/nn/LC_MESSAGES/kandy.mo
 share/locale/nn/LC_MESSAGES/kappfinder.mo
 share/locale/nn/LC_MESSAGES/karm.mo
@@ -69,6 +70,7 @@ share/locale/nn/LC_MESSAGES/kbackgammon.mo
 share/locale/nn/LC_MESSAGES/kbattleship.mo
 share/locale/nn/LC_MESSAGES/kblackbox.mo
 share/locale/nn/LC_MESSAGES/kbounce.mo
+share/locale/nn/LC_MESSAGES/kbruch.mo
 share/locale/nn/LC_MESSAGES/kcalc.mo
 share/locale/nn/LC_MESSAGES/kcharselect.mo
 share/locale/nn/LC_MESSAGES/kcharselectapplet.mo
@@ -219,6 +221,7 @@ share/locale/nn/LC_MESSAGES/kfontinst.mo
 share/locale/nn/LC_MESSAGES/kfouleggs.mo
 share/locale/nn/LC_MESSAGES/kgamma.mo
 share/locale/nn/LC_MESSAGES/kgantt.mo
+share/locale/nn/LC_MESSAGES/kgeography.mo
 share/locale/nn/LC_MESSAGES/kget.mo
 share/locale/nn/LC_MESSAGES/kghostview.mo
 share/locale/nn/LC_MESSAGES/kgreet_classic.mo
@@ -231,6 +234,7 @@ share/locale/nn/LC_MESSAGES/khtmlkttsd.mo
 share/locale/nn/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nn/LC_MESSAGES/kicker.mo
 share/locale/nn/LC_MESSAGES/kiconedit.mo
+share/locale/nn/LC_MESSAGES/kig.mo
 share/locale/nn/LC_MESSAGES/kinetd.mo
 share/locale/nn/LC_MESSAGES/kio.mo
 share/locale/nn/LC_MESSAGES/kio_audiocd.mo
@@ -398,6 +402,7 @@ share/locale/nn/LC_MESSAGES/kwin4.mo
 share/locale/nn/LC_MESSAGES/kwin_clients.mo
 share/locale/nn/LC_MESSAGES/kwin_lib.mo
 share/locale/nn/LC_MESSAGES/kwireless.mo
+share/locale/nn/LC_MESSAGES/kwordquiz.mo
 share/locale/nn/LC_MESSAGES/kworldclock.mo
 share/locale/nn/LC_MESSAGES/kwriteconfig.mo
 share/locale/nn/LC_MESSAGES/kxkb.mo

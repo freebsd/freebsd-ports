@@ -76,6 +76,16 @@ share/doc/HTML/ca/common/x11-license.html
 share/doc/HTML/ca/common/xml.dcl
 share/doc/HTML/ca/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML/ca/kapptemplate/man-kapptemplate.1.docbook
+share/doc/HTML/ca/kate-plugins/common
+share/doc/HTML/ca/kate-plugins/filetemplates.docbook
+share/doc/HTML/ca/kate-plugins/htmltools.docbook
+share/doc/HTML/ca/kate-plugins/index.cache.bz2
+share/doc/HTML/ca/kate-plugins/index.docbook
+share/doc/HTML/ca/kate-plugins/insertcommand.docbook
+share/doc/HTML/ca/kate-plugins/openheader.docbook
+share/doc/HTML/ca/kate-plugins/textfilter.docbook
+share/doc/HTML/ca/kate-plugins/xmlcheck.docbook
+share/doc/HTML/ca/kate-plugins/xmltools.docbook
 share/doc/HTML/ca/kate/advanced.docbook
 share/doc/HTML/ca/kate/common
 share/doc/HTML/ca/kate/configuring.docbook
@@ -404,6 +414,11 @@ share/doc/HTML/ca/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/ca/khelpcenter/visualdict/index.docbook
 share/doc/HTML/ca/khelpcenter/welcome.docbook
 share/doc/HTML/ca/khelpcenter/whatiskde.docbook
+share/doc/HTML/ca/kicker-applets/common
+share/doc/HTML/ca/kicker-applets/index.cache.bz2
+share/doc/HTML/ca/kicker-applets/index.docbook
+share/doc/HTML/ca/kicker-applets/kolourpicker.docbook
+share/doc/HTML/ca/kicker-applets/ktimemon.docbook
 share/doc/HTML/ca/kicker/common
 share/doc/HTML/ca/kicker/index.cache.bz2
 share/doc/HTML/ca/kicker/index.docbook
@@ -467,6 +482,9 @@ share/doc/HTML/ca/klickety/index.docbook
 share/doc/HTML/ca/klipper/common
 share/doc/HTML/ca/klipper/index.cache.bz2
 share/doc/HTML/ca/klipper/index.docbook
+share/doc/HTML/ca/kmag/common
+share/doc/HTML/ca/kmag/index.cache.bz2
+share/doc/HTML/ca/kmag/index.docbook
 share/doc/HTML/ca/kmag/man-kmag.1.docbook
 share/doc/HTML/ca/kmail/common
 share/doc/HTML/ca/kmail/configure.docbook
@@ -488,7 +506,13 @@ share/doc/HTML/ca/kmessedwords/index.docbook
 share/doc/HTML/ca/kmoon/common
 share/doc/HTML/ca/kmoon/index.cache.bz2
 share/doc/HTML/ca/kmoon/index.docbook
+share/doc/HTML/ca/kmousetool/common
+share/doc/HTML/ca/kmousetool/index.cache.bz2
+share/doc/HTML/ca/kmousetool/index.docbook
 share/doc/HTML/ca/kmousetool/man-kmousetool.1.docbook
+share/doc/HTML/ca/kmouth/common
+share/doc/HTML/ca/kmouth/index.cache.bz2
+share/doc/HTML/ca/kmouth/index.docbook
 share/doc/HTML/ca/kmouth/man-kmouth.1.docbook
 share/doc/HTML/ca/kompare/common
 share/doc/HTML/ca/kompare/index.cache.bz2
@@ -661,6 +685,9 @@ share/doc/HTML/ca/ktimer/index.docbook
 share/doc/HTML/ca/ktouch/common
 share/doc/HTML/ca/ktouch/index.cache.bz2
 share/doc/HTML/ca/ktouch/index.docbook
+share/doc/HTML/ca/kttsd/common
+share/doc/HTML/ca/kttsd/index.cache.bz2
+share/doc/HTML/ca/kttsd/index.docbook
 share/doc/HTML/ca/kturtle/glossary.docbook
 share/doc/HTML/ca/kuser/common
 share/doc/HTML/ca/kuser/index.cache.bz2
@@ -1074,6 +1101,7 @@ share/locale/ca/LC_MESSAGES/konnector_qtopia.mo
 share/locale/ca/LC_MESSAGES/konnector_remote.mo
 share/locale/ca/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/ca/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/ca/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/ca/LC_MESSAGES/konqsidebar_news.mo
 share/locale/ca/LC_MESSAGES/konqueror.mo
 share/locale/ca/LC_MESSAGES/konquest.mo
@@ -1274,6 +1302,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kwallet
 @dirrm share/doc/HTML/ca/kuser
 @dirrm share/doc/HTML/ca/kturtle
+@dirrm share/doc/HTML/ca/kttsd
 @dirrm share/doc/HTML/ca/ktouch
 @dirrm share/doc/HTML/ca/ktimer
 @dirrm share/doc/HTML/ca/ksysv
@@ -1319,6 +1348,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kioslave
 @dirrm share/doc/HTML/ca/kinfocenter/blockdevices
 @dirrm share/doc/HTML/ca/kinfocenter
+@dirrm share/doc/HTML/ca/kicker-applets
 @dirrm share/doc/HTML/ca/kicker
 @dirrm share/doc/HTML/ca/khelpcenter/visualdict
 @dirrm share/doc/HTML/ca/khelpcenter/userguide
@@ -1395,6 +1425,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kbruch
 @dirrm share/doc/HTML/ca/kbabel
 @dirrm share/doc/HTML/ca/katomic
+@dirrm share/doc/HTML/ca/kate-plugins
 @dirrm share/doc/HTML/ca/kate
 @dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/kappfinder

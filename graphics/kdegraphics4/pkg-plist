@@ -911,6 +911,7 @@ share/doc/HTML/en/kghostview/index.docbook
 share/doc/HTML/en/kiconedit/common
 share/doc/HTML/en/kiconedit/index.cache.bz2
 share/doc/HTML/en/kiconedit/index.docbook
+share/doc/HTML/en/kiconedit/kiconedit-configuration.png
 share/doc/HTML/en/kolourpaint/brush_shapes.png
 share/doc/HTML/en/kolourpaint/color_box.png
 share/doc/HTML/en/kolourpaint/common
@@ -931,6 +932,7 @@ share/doc/HTML/en/kolourpaint/image_skew.png
 share/doc/HTML/en/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/en/kolourpaint/index.cache.bz2
 share/doc/HTML/en/kolourpaint/index.docbook
+share/doc/HTML/en/kolourpaint/kolourpaint-main.png
 share/doc/HTML/en/kolourpaint/line_width.png
 share/doc/HTML/en/kolourpaint/lines_30_45_deg.png
 share/doc/HTML/en/kolourpaint/lines_30_deg.png
@@ -961,7 +963,9 @@ share/doc/HTML/en/kolourpaint/tool_rounded_rectangle.png
 share/doc/HTML/en/kolourpaint/tool_selections.png
 share/doc/HTML/en/kolourpaint/tool_spraycan.png
 share/doc/HTML/en/kolourpaint/tool_text.png
+share/doc/HTML/en/kolourpaint/view_thumbnails.png
 share/doc/HTML/en/kpdf/common
+share/doc/HTML/en/kpdf/configure.png
 share/doc/HTML/en/kpdf/index.cache.bz2
 share/doc/HTML/en/kpdf/index.docbook
 share/doc/HTML/en/kpovmodeler/cameraview.png
@@ -1027,6 +1031,8 @@ share/doc/HTML/en/ksnapshot/window.png
 share/doc/HTML/en/kview/common
 share/doc/HTML/en/kview/index.cache.bz2
 share/doc/HTML/en/kview/index.docbook
+share/doc/HTML/en/kview/kview-application-configuration.png
+share/doc/HTML/en/kview/kview-viewer-configuration.png
 share/icons/crystalsvg/16x16/apps/kviewshell.png
 share/icons/crystalsvg/16x16/apps/photobook.png
 share/icons/crystalsvg/16x16/mimetypes/kpovmodeler_doc.png

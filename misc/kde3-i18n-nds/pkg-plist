@@ -1,3 +1,4 @@
+share/locale/nds/LC_MESSAGES/akregator.mo
 share/locale/nds/LC_MESSAGES/alsaplayerui.mo
 share/locale/nds/LC_MESSAGES/appletproxy.mo
 share/locale/nds/LC_MESSAGES/ark.mo
@@ -30,6 +31,7 @@ share/locale/nds/LC_MESSAGES/kabc_dir.mo
 share/locale/nds/LC_MESSAGES/kabc_file.mo
 share/locale/nds/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/nds/LC_MESSAGES/kabc_net.mo
+share/locale/nds/LC_MESSAGES/kabc_slox.mo
 share/locale/nds/LC_MESSAGES/kabc_sql.mo
 share/locale/nds/LC_MESSAGES/kabcformat_binary.mo
 share/locale/nds/LC_MESSAGES/kaccess.mo
@@ -101,6 +103,7 @@ share/locale/nds/LC_MESSAGES/kcmlayout.mo
 share/locale/nds/LC_MESSAGES/kcmlilo.mo
 share/locale/nds/LC_MESSAGES/kcmlirc.mo
 share/locale/nds/LC_MESSAGES/kcmlocale.mo
+share/locale/nds/LC_MESSAGES/kcmmedia.mo
 share/locale/nds/LC_MESSAGES/kcmnic.mo
 share/locale/nds/LC_MESSAGES/kcmnotify.mo
 share/locale/nds/LC_MESSAGES/kcmperformance.mo
@@ -158,9 +161,11 @@ share/locale/nds/LC_MESSAGES/kgantt.mo
 share/locale/nds/LC_MESSAGES/kgeography.mo
 share/locale/nds/LC_MESSAGES/kgpg.mo
 share/locale/nds/LC_MESSAGES/kgreet_classic.mo
+share/locale/nds/LC_MESSAGES/kgreet_winbind.mo
 share/locale/nds/LC_MESSAGES/khelpcenter.mo
 share/locale/nds/LC_MESSAGES/khexedit.mo
 share/locale/nds/LC_MESSAGES/khotkeys.mo
+share/locale/nds/LC_MESSAGES/khtmlkttsd.mo
 share/locale/nds/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nds/LC_MESSAGES/kicker.mo
 share/locale/nds/LC_MESSAGES/kio.mo
@@ -170,6 +175,7 @@ share/locale/nds/LC_MESSAGES/kio_floppy.mo
 share/locale/nds/LC_MESSAGES/kio_help.mo
 share/locale/nds/LC_MESSAGES/kio_home.mo
 share/locale/nds/LC_MESSAGES/kio_imap4.mo
+share/locale/nds/LC_MESSAGES/kio_ldap.mo
 share/locale/nds/LC_MESSAGES/kio_mac.mo
 share/locale/nds/LC_MESSAGES/kio_man.mo
 share/locale/nds/LC_MESSAGES/kio_media.mo
@@ -186,6 +192,8 @@ share/locale/nds/LC_MESSAGES/kio_smb.mo
 share/locale/nds/LC_MESSAGES/kio_smtp.mo
 share/locale/nds/LC_MESSAGES/kio_system.mo
 share/locale/nds/LC_MESSAGES/kio_tar.mo
+share/locale/nds/LC_MESSAGES/kio_thumbnail.mo
+share/locale/nds/LC_MESSAGES/kio_trash.mo
 share/locale/nds/LC_MESSAGES/kioexec.mo
 share/locale/nds/LC_MESSAGES/kjobviewer.mo
 share/locale/nds/LC_MESSAGES/kjots.mo
@@ -210,6 +218,7 @@ share/locale/nds/LC_MESSAGES/kmobile.mo
 share/locale/nds/LC_MESSAGES/kmoon.mo
 share/locale/nds/LC_MESSAGES/kmousetool.mo
 share/locale/nds/LC_MESSAGES/kmouth.mo
+share/locale/nds/LC_MESSAGES/knetattach.mo
 share/locale/nds/LC_MESSAGES/knode.mo
 share/locale/nds/LC_MESSAGES/knotes.mo
 share/locale/nds/LC_MESSAGES/knotify.mo
@@ -245,6 +254,7 @@ share/locale/nds/LC_MESSAGES/ksplash.mo
 share/locale/nds/LC_MESSAGES/ksplashthemes.mo
 share/locale/nds/LC_MESSAGES/kstars.mo
 share/locale/nds/LC_MESSAGES/kstart.mo
+share/locale/nds/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/nds/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/nds/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/nds/LC_MESSAGES/ksync.mo
@@ -258,6 +268,7 @@ share/locale/nds/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/nds/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/nds/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/nds/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/nds/LC_MESSAGES/kthememanager.mo
 share/locale/nds/LC_MESSAGES/ktimemon.mo
 share/locale/nds/LC_MESSAGES/ktimer.mo
 share/locale/nds/LC_MESSAGES/ktip.mo
@@ -269,9 +280,11 @@ share/locale/nds/LC_MESSAGES/kwalletmanager.mo
 share/locale/nds/LC_MESSAGES/kweather.mo
 share/locale/nds/LC_MESSAGES/kwin.mo
 share/locale/nds/LC_MESSAGES/kwin_clients.mo
+share/locale/nds/LC_MESSAGES/kwin_lib.mo
 share/locale/nds/LC_MESSAGES/kwriteconfig.mo
 share/locale/nds/LC_MESSAGES/kxkb.mo
 share/locale/nds/LC_MESSAGES/kxsconfig.mo
+share/locale/nds/LC_MESSAGES/libdmctl.mo
 share/locale/nds/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/nds/LC_MESSAGES/libkcal.mo
 share/locale/nds/LC_MESSAGES/libkcalsystem.mo
@@ -281,6 +294,7 @@ share/locale/nds/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/nds/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/nds/LC_MESSAGES/libkonq.mo
@@ -308,6 +322,7 @@ share/locale/nds/LC_MESSAGES/spy.mo
 share/locale/nds/LC_MESSAGES/synaescope.mo
 share/locale/nds/LC_MESSAGES/timezones.mo
 share/locale/nds/LC_MESSAGES/tippecanoe.mo
+share/locale/nds/LC_MESSAGES/trashapplet.mo
 share/locale/nds/LC_MESSAGES/tyler.mo
 share/locale/nds/LC_MESSAGES/uachangerplugin.mo
 share/locale/nds/LC_MESSAGES/useraccount.mo
