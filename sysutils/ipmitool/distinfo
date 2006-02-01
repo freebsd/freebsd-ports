@@ -1,3 +1,4 @@
-MD5 (ipmitool-1.8.2.tar.gz) = d249ddd2176385fcea93753f5e103160
-SHA256 (ipmitool-1.8.2.tar.gz) = 21dec8166e0b5d89a9563f190a713a5bd1082ea8028047d1c9877818297034bb
+MD5 (ipmitool-1.8.6.tar.gz) = ee4196ccea99898c31b16099ac905260
+SHA256 (ipmitool-1.8.6.tar.gz) = dcfe5961dbdcffb4dbeac87f2b8bd854a659af101628c6fa94d8077f16f63050
+SIZE (ipmitool-1.8.6.tar.gz) = 611126
 SIZE (ipmitool-1.8.2.tar.gz) = 556042
