@@ -12,7 +12,6 @@ include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
 lib/libgcin-im-client.so
 %%DATADIR%%/script/gcin-user-setup
-%%DATADIR%%/script/gcin-utf8-setup
 %%DATADIR%%/script/utf8-edit
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/cj-punc.gtab
