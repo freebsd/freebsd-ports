@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	winefish
-DISTVERSION=	1.3.2.6c
+DISTVERSION=	1.3.2.6f
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/
 EXTRACT_SUFX=	.tgz
