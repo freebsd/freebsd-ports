@@ -618,6 +618,7 @@
     SUBDIR += nant
     SUBDIR += nasm
     SUBDIR += naturaldocs
+    SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
     SUBDIR += netscape-java40
