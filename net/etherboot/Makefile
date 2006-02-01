@@ -12,7 +12,8 @@ CATEGORIES=	net
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITE_SUBDIR=	${PORTNAME}
 #use development sources for now instead of standard ftp site.
-MASTER_SITES=	http://etherboot.sourceforge.net/
+MASTER_SITES=	http://etherboot.sourceforge.net/ \
+		http://etherboot.berlios.de/dist/
 
 MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels. Replaces/improves netboot.
