@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagasu
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/
