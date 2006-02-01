@@ -18,6 +18,7 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	Third party Pike 7.2 extensions
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike72/
+RUN_DEPENDS=	pike:${PORTSDIR}/lang/pike72/
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash/ \
 		mcrypt:${PORTSDIR}/security/libmcrypt/
 
