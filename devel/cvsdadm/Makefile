@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsdadm
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
