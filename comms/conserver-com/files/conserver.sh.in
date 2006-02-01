@@ -4,7 +4,8 @@
 #
 
 # PROVIDE: conserver
-# KEYWORD: FreeBSD
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
 
 . %%RC_SUBR%%
 
