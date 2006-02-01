@@ -1,8 +1,8 @@
---- setup.py.orig	Tue Aug 23 22:58:45 2005
-+++ setup.py	Tue Aug 23 23:09:21 2005
-@@ -25,8 +25,8 @@
- 
- import glob
+--- setup.py.orig	Tue Jan 31 18:17:23 2006
++++ setup.py	Wed Feb  1 21:41:07 2006
+@@ -38,8 +38,8 @@
+ os.rmdir('FOO')
+ # done detecting case-insensitive filesystem
  
 -symlinks = ["bittorrent" , "bittorrent-curses", "bittorrent-console",
 -           "maketorrent",                      "maketorrent-console",
@@ -11,11 +11,13 @@
                            "launchmany-curses", "launchmany-console",
                                                 "changetracker-console",
                                                 "torrentinfo-console",
-@@ -53,5 +53,5 @@
-     translations.append (("%s/%s/LC_MESSAGES"          % (locale_root, l),
-                           ["locale/%s/LC_MESSAGES/bittorrent.mo" % l]))
+@@ -68,7 +68,5 @@
+         translations.append((os.path.join(locale_root, l, 'LC_MESSAGES'), 
+                              [path,]))
  
 -data_files = [ (img_root        , glob.glob('images/*png')+['images/bittorrent.ico',]),
--               (img_root+'/logo', glob.glob('images/logo/bittorrent_[0-9]*.png')     ),
+-               (img_root+'/logo', glob.glob('images/logo/bittorrent_[0-9]*.png'     )),
+-               (img_root+'/icons/default', glob.glob('images/icons/default/*.png'   )),
+-               (img_root+'/icons/old'    , glob.glob('images/icons/old/*.png'       )),
 +data_files = [ 
-+               
++
