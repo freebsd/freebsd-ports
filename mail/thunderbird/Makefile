@@ -39,6 +39,8 @@ PORTNAME_ICON=	${PREFIX}/lib/${PORTNAME}/icons/default.xpm
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
+OPTIONS=
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
 
