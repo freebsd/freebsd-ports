@@ -1,0 +1,7 @@
+ncc is a compiler that produces program analysis information.
+ncc is a decent replacement of cflow and cscope able to analyse any
+program using the gcc compiler. The program also includes a graphical
+call-graph navigator and source browser which is extremely practical
+for hacking and comprehending large projects.
+
+WWW: http://students.ceid.upatras.gr/~sxanth/ncc/
