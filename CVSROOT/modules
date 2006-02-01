@@ -10169,6 +10169,7 @@ ports_x11_themes	ports/x11-themes
 ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
 portscanner	ports/security/portscanner
+portsearch	ports/sysutils/portsearch
 portsentry	ports/security/portsentry
 portsman	ports/sysutils/portsman
 portsnap	ports/sysutils/portsnap
