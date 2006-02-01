@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
 
 OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		LAME "LAME support for MP3" off \
+		TWOLAME "TwoLAME support for MP2" off \
 		FAAC "FAAC support for AAC" off \
 		JACK "Jack support" off
 
@@ -44,6 +45,13 @@ LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-lame
+.endif
+
+.if defined(WITH_TWOLAME)
+LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
+CONFIGURE_ARGS+=	--with-twolame-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-twolame
 .endif
 
 .if defined(WITH_FAAC)
