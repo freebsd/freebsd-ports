@@ -12,9 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.phatboydesigns.net/devel/
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=Has title bars, shading, resizing, automatic placement, window list
-
-BROKEN=		Incorrect SHA hash
+COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 
 HAS_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
