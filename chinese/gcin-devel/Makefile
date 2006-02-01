@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
-		http://edt1023.sayya.org/misc/ \
-		http://bbs.ilc.edu.tw/~chinsan/gcin/
+		http://edt1023.sayya.org/misc/
 .if defined(WITH_BOSHIAMY)
 DISTFILES=	${GCINFILE} ${BOSHIAMYFILE}
 EXTRACT_ONLY=	${GCINFILE}
