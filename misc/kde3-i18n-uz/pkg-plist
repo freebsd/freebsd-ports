@@ -9,6 +9,7 @@ share/locale/uz/LC_MESSAGES/drkonqi.mo
 share/locale/uz/LC_MESSAGES/extensionproxy.mo
 share/locale/uz/LC_MESSAGES/filetypes.mo
 share/locale/uz/LC_MESSAGES/htmlsearch.mo
+share/locale/uz/LC_MESSAGES/irkick.mo
 share/locale/uz/LC_MESSAGES/joystick.mo
 share/locale/uz/LC_MESSAGES/juk.mo
 share/locale/uz/LC_MESSAGES/kabc_dir.mo
@@ -23,6 +24,8 @@ share/locale/uz/LC_MESSAGES/kasbarextension.mo
 share/locale/uz/LC_MESSAGES/kate.mo
 share/locale/uz/LC_MESSAGES/katepart.mo
 share/locale/uz/LC_MESSAGES/kay.mo
+share/locale/uz/LC_MESSAGES/kcharselect.mo
+share/locale/uz/LC_MESSAGES/kcharselectapplet.mo
 share/locale/uz/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/uz/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/uz/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
@@ -53,6 +56,7 @@ share/locale/uz/LC_MESSAGES/kcmkonq.mo
 share/locale/uz/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/uz/LC_MESSAGES/kcmkonsole.mo
 share/locale/uz/LC_MESSAGES/kcmkurifilt.mo
+share/locale/uz/LC_MESSAGES/kcmkvaio.mo
 share/locale/uz/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/uz/LC_MESSAGES/kcmkwinrules.mo
 share/locale/uz/LC_MESSAGES/kcmkwm.mo
@@ -105,6 +109,7 @@ share/locale/uz/LC_MESSAGES/kfile_tiff.mo
 share/locale/uz/LC_MESSAGES/kfile_xbm.mo
 share/locale/uz/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/uz/LC_MESSAGES/kfindpart.mo
+share/locale/uz/LC_MESSAGES/kfloppy.mo
 share/locale/uz/LC_MESSAGES/kfmclient.mo
 share/locale/uz/LC_MESSAGES/kfontinst.mo
 share/locale/uz/LC_MESSAGES/kghostview.mo
@@ -158,6 +163,8 @@ share/locale/uz/LC_MESSAGES/korn.mo
 share/locale/uz/LC_MESSAGES/kpager.mo
 share/locale/uz/LC_MESSAGES/kpersonalizer.mo
 share/locale/uz/LC_MESSAGES/kpilot.mo
+share/locale/uz/LC_MESSAGES/kppp.mo
+share/locale/uz/LC_MESSAGES/kppplogview.mo
 share/locale/uz/LC_MESSAGES/kprinter.mo
 share/locale/uz/LC_MESSAGES/krandr.mo
 share/locale/uz/LC_MESSAGES/kreadconfig.mo

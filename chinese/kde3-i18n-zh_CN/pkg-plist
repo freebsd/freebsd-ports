@@ -383,7 +383,6 @@ share/locale/zh_CN/LC_MESSAGES/kmathapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kmcop.mo
 share/locale/zh_CN/LC_MESSAGES/kmenuapplet.mo
 share/locale/zh_CN/LC_MESSAGES/kmenuedit.mo
-share/locale/zh_CN/LC_MESSAGES/kmessedwords.mo
 share/locale/zh_CN/LC_MESSAGES/kmid.mo
 share/locale/zh_CN/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/zh_CN/LC_MESSAGES/kmilo_generic.mo
@@ -419,6 +418,7 @@ share/locale/zh_CN/LC_MESSAGES/konnector_qtopia.mo
 share/locale/zh_CN/LC_MESSAGES/konnector_remote.mo
 share/locale/zh_CN/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/zh_CN/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/zh_CN/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/zh_CN/LC_MESSAGES/konqsidebar_news.mo
 share/locale/zh_CN/LC_MESSAGES/konqueror.mo
 share/locale/zh_CN/LC_MESSAGES/konquest.mo

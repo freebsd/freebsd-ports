@@ -442,28 +442,6 @@ share/emoticons/RedOnes/sunglasses.png
 share/emoticons/RedOnes/tongue.png
 share/emoticons/RedOnes/unhappy.png
 share/emoticons/RedOnes/wink.png
-share/emoticons/Yazoo-Smileys-16/angry.png
-share/emoticons/Yazoo-Smileys-16/big_smile.png
-share/emoticons/Yazoo-Smileys-16/confused.png
-share/emoticons/Yazoo-Smileys-16/cool.png
-share/emoticons/Yazoo-Smileys-16/emoticons.xml
-share/emoticons/Yazoo-Smileys-16/lol.png
-share/emoticons/Yazoo-Smileys-16/ooooh.png
-share/emoticons/Yazoo-Smileys-16/sad.png
-share/emoticons/Yazoo-Smileys-16/smile.png
-share/emoticons/Yazoo-Smileys-16/tongue_out.png
-share/emoticons/Yazoo-Smileys-16/wink.png
-share/emoticons/Yazoo-Smileys-22/angry.png
-share/emoticons/Yazoo-Smileys-22/big_smile.png
-share/emoticons/Yazoo-Smileys-22/confused.png
-share/emoticons/Yazoo-Smileys-22/cool.png
-share/emoticons/Yazoo-Smileys-22/emoticons.xml
-share/emoticons/Yazoo-Smileys-22/lol.png
-share/emoticons/Yazoo-Smileys-22/ooooh.png
-share/emoticons/Yazoo-Smileys-22/sad.png
-share/emoticons/Yazoo-Smileys-22/smile.png
-share/emoticons/Yazoo-Smileys-22/tongue_out.png
-share/emoticons/Yazoo-Smileys-22/wink.png
 share/emoticons/ccmathteam.com/biggrin.png
 share/emoticons/ccmathteam.com/confused.png
 share/emoticons/ccmathteam.com/cry.png
@@ -1308,6 +1286,20 @@ share/icons/Locolor/32x32/mimetypes/vcalendar.png
 share/icons/Locolor/32x32/mimetypes/vcard.png
 share/icons/Locolor/32x32/mimetypes/video.png
 share/icons/Locolor/index.theme
+share/icons/hicolor/16x16/actions/show_side_panel.png
+share/icons/hicolor/16x16/actions/view_fit_width.png
+share/icons/hicolor/16x16/actions/view_fit_window.png
+share/icons/hicolor/16x16/apps/kmenu.png
+share/icons/hicolor/22x22/actions/show_side_panel.png
+share/icons/hicolor/22x22/actions/view_fit_width.png
+share/icons/hicolor/22x22/actions/view_fit_window.png
+share/icons/hicolor/22x22/apps/kmenu.png
+share/icons/hicolor/32x32/actions/show_side_panel.png
+share/icons/hicolor/32x32/actions/view_fit_width.png
+share/icons/hicolor/32x32/actions/view_fit_window.png
+share/icons/hicolor/32x32/apps/kmenu.png
+share/icons/hicolor/48x48/apps/kmenu.png
+share/icons/hicolor/scalable/apps/kmenu.svgz
 share/icons/ikons/16x16/actions/1day.png
 share/icons/ikons/16x16/actions/1downarrow.png
 share/icons/ikons/16x16/actions/1leftarrow.png
@@ -2225,7 +2217,6 @@ share/icons/kdeclassic/16x16/actions/series.png
 share/icons/kdeclassic/16x16/actions/servicenew_kdevelop.png
 share/icons/kdeclassic/16x16/actions/share.png
 share/icons/kdeclassic/16x16/actions/shear.png
-share/icons/kdeclassic/16x16/actions/show_side_panel.png
 share/icons/kdeclassic/16x16/actions/show_table_column.png
 share/icons/kdeclassic/16x16/actions/show_table_row.png
 share/icons/kdeclassic/16x16/actions/signature.png
@@ -2294,9 +2285,6 @@ share/icons/kdeclassic/16x16/actions/vertical_text.png
 share/icons/kdeclassic/16x16/actions/view_bottom.png
 share/icons/kdeclassic/16x16/actions/view_choose.png
 share/icons/kdeclassic/16x16/actions/view_detailed.png
-share/icons/kdeclassic/16x16/actions/view_fit_height.png
-share/icons/kdeclassic/16x16/actions/view_fit_width.png
-share/icons/kdeclassic/16x16/actions/view_fit_window.png
 share/icons/kdeclassic/16x16/actions/view_icon.png
 share/icons/kdeclassic/16x16/actions/view_left_right.png
 share/icons/kdeclassic/16x16/actions/view_multicolumn.png
@@ -3353,7 +3341,6 @@ share/icons/kdeclassic/22x22/actions/shadowR.png
 share/icons/kdeclassic/22x22/actions/shadowRB.png
 share/icons/kdeclassic/22x22/actions/shadowRU.png
 share/icons/kdeclassic/22x22/actions/shadowU.png
-share/icons/kdeclassic/22x22/actions/show_side_panel.png
 share/icons/kdeclassic/22x22/actions/show_table_column.png
 share/icons/kdeclassic/22x22/actions/show_table_row.png
 share/icons/kdeclassic/22x22/actions/showmenu.png
@@ -3429,9 +3416,6 @@ share/icons/kdeclassic/22x22/actions/vertical_text.png
 share/icons/kdeclassic/22x22/actions/view_bottom.png
 share/icons/kdeclassic/22x22/actions/view_choose.png
 share/icons/kdeclassic/22x22/actions/view_detailed.png
-share/icons/kdeclassic/22x22/actions/view_fit_height.png
-share/icons/kdeclassic/22x22/actions/view_fit_width.png
-share/icons/kdeclassic/22x22/actions/view_fit_window.png
 share/icons/kdeclassic/22x22/actions/view_icon.png
 share/icons/kdeclassic/22x22/actions/view_left_right.png
 share/icons/kdeclassic/22x22/actions/view_multicolumn.png
@@ -3681,7 +3665,6 @@ share/icons/kdeclassic/32x32/actions/rsub.png
 share/icons/kdeclassic/32x32/actions/rsup.png
 share/icons/kdeclassic/32x32/actions/run.png
 share/icons/kdeclassic/32x32/actions/share.png
-share/icons/kdeclassic/32x32/actions/show_side_panel.png
 share/icons/kdeclassic/32x32/actions/signature.png
 share/icons/kdeclassic/32x32/actions/sort_az.png
 share/icons/kdeclassic/32x32/actions/spellcheck.png
@@ -3711,9 +3694,6 @@ share/icons/kdeclassic/32x32/actions/up.png
 share/icons/kdeclassic/32x32/actions/view_bottom.png
 share/icons/kdeclassic/32x32/actions/view_choose.png
 share/icons/kdeclassic/32x32/actions/view_detailed.png
-share/icons/kdeclassic/32x32/actions/view_fit_height.png
-share/icons/kdeclassic/32x32/actions/view_fit_width.png
-share/icons/kdeclassic/32x32/actions/view_fit_window.png
 share/icons/kdeclassic/32x32/actions/view_icon.png
 share/icons/kdeclassic/32x32/actions/view_left_right.png
 share/icons/kdeclassic/32x32/actions/view_multicolumn.png
@@ -7843,8 +7823,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/emoticons/phpBB
 @dirrm share/emoticons/greggman.com
 @dirrm share/emoticons/ccmathteam.com
-@dirrm share/emoticons/Yazoo-Smileys-22
-@dirrm share/emoticons/Yazoo-Smileys-16
 @dirrm share/emoticons/RedOnes
 @dirrm share/emoticons/Plain
 @dirrm share/emoticons/KMess-Violet

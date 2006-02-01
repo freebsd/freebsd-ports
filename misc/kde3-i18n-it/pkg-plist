@@ -408,6 +408,9 @@ share/doc/HTML/it/kcontrol/kcmcss/index.docbook
 share/doc/HTML/it/kcontrol/kcmfontinst/common
 share/doc/HTML/it/kcontrol/kcmfontinst/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmfontinst/index.docbook
+share/doc/HTML/it/kcontrol/kcmkonsole/common
+share/doc/HTML/it/kcontrol/kcmkonsole/index.cache.bz2
+share/doc/HTML/it/kcontrol/kcmkonsole/index.docbook
 share/doc/HTML/it/kcontrol/kcmktalkd/common
 share/doc/HTML/it/kcontrol/kcmktalkd/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmktalkd/index.docbook
@@ -426,6 +429,12 @@ share/doc/HTML/it/kcontrol/kcmnotify/index.docbook
 share/doc/HTML/it/kcontrol/kcmsmserver/common
 share/doc/HTML/it/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmsmserver/index.docbook
+share/doc/HTML/it/kcontrol/kcmstyle/common
+share/doc/HTML/it/kcontrol/kcmstyle/index.cache.bz2
+share/doc/HTML/it/kcontrol/kcmstyle/index.docbook
+share/doc/HTML/it/kcontrol/kcmtaskbar/common
+share/doc/HTML/it/kcontrol/kcmtaskbar/index.cache.bz2
+share/doc/HTML/it/kcontrol/kcmtaskbar/index.docbook
 share/doc/HTML/it/kcontrol/kdm/common
 share/doc/HTML/it/kcontrol/kdm/index.cache.bz2
 share/doc/HTML/it/kcontrol/kdm/index.docbook
@@ -454,6 +463,9 @@ share/doc/HTML/it/kcontrol/mouse/index.docbook
 share/doc/HTML/it/kcontrol/netpref/common
 share/doc/HTML/it/kcontrol/netpref/index.cache.bz2
 share/doc/HTML/it/kcontrol/netpref/index.docbook
+share/doc/HTML/it/kcontrol/panel/common
+share/doc/HTML/it/kcontrol/panel/index.cache.bz2
+share/doc/HTML/it/kcontrol/panel/index.docbook
 share/doc/HTML/it/kcontrol/panelappearance/common
 share/doc/HTML/it/kcontrol/panelappearance/index.cache.bz2
 share/doc/HTML/it/kcontrol/panelappearance/index.docbook
@@ -508,6 +520,7 @@ share/doc/HTML/it/kdelirc/irkick/index.docbook
 share/doc/HTML/it/kdelirc/kcmlirc/common
 share/doc/HTML/it/kdelirc/kcmlirc/index.cache.bz2
 share/doc/HTML/it/kdelirc/kcmlirc/index.docbook
+share/doc/HTML/it/kdeprint/cups-config.docbook
 share/doc/HTML/it/kdeprint/extensions.docbook
 share/doc/HTML/it/kdeprint/external-command.docbook
 share/doc/HTML/it/kdeprint/getting-started.docbook
@@ -702,6 +715,7 @@ share/doc/HTML/it/khelpcenter/userguide/burning-cds.docbook
 share/doc/HTML/it/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/it/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/it/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/it/khelpcenter/userguide/file-sharing.docbook
 share/doc/HTML/it/khelpcenter/userguide/first-impressions.docbook
 share/doc/HTML/it/khelpcenter/userguide/font-installation.docbook
 share/doc/HTML/it/khelpcenter/userguide/getting-started.docbook
@@ -720,6 +734,7 @@ share/doc/HTML/it/khelpcenter/userguide/kdepim-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/kdetoys-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/kdeutils-apps.docbook
 share/doc/HTML/it/khelpcenter/userguide/koffice-apps.docbook
+share/doc/HTML/it/khelpcenter/userguide/konsole-intro.docbook
 share/doc/HTML/it/khelpcenter/userguide/migrator-dictionary.docbook
 share/doc/HTML/it/khelpcenter/userguide/more-help.docbook
 share/doc/HTML/it/khelpcenter/userguide/pdf-files.docbook
@@ -734,6 +749,7 @@ share/doc/HTML/it/khelpcenter/userguide/shared-sessions.docbook
 share/doc/HTML/it/khelpcenter/userguide/shortcuts.docbook
 share/doc/HTML/it/khelpcenter/userguide/staff.docbook
 share/doc/HTML/it/khelpcenter/userguide/switching-sessions.docbook
+share/doc/HTML/it/khelpcenter/userguide/troubleshooting-no-open.docbook
 share/doc/HTML/it/khelpcenter/userguide/ug-faq.docbook
 share/doc/HTML/it/khelpcenter/userguide/usenet.docbook
 share/doc/HTML/it/khelpcenter/userguide/where-next.docbook
@@ -1058,6 +1074,9 @@ share/doc/HTML/it/konsole/index.cache.bz2
 share/doc/HTML/it/konsole/index.docbook
 share/doc/HTML/it/konsole/konsole.png
 share/doc/HTML/it/konsole/tabbar.png
+share/doc/HTML/it/kontact/common
+share/doc/HTML/it/kontact/index.cache.bz2
+share/doc/HTML/it/kontact/index.docbook
 share/doc/HTML/it/kooka/common
 share/doc/HTML/it/kooka/index.cache.bz2
 share/doc/HTML/it/kooka/index.docbook
@@ -1116,9 +1135,12 @@ share/doc/HTML/it/kpoker/index.cache.bz2
 share/doc/HTML/it/kpoker/index.docbook
 share/doc/HTML/it/kppp/accounting.docbook
 share/doc/HTML/it/kppp/callback.docbook
+share/doc/HTML/it/kppp/chap.docbook
 share/doc/HTML/it/kppp/getting-online.docbook
 share/doc/HTML/it/kppp/global-settings.docbook
 share/doc/HTML/it/kppp/security.docbook
+share/doc/HTML/it/kppp/tricks.docbook
+share/doc/HTML/it/kppp/wizard.docbook
 share/doc/HTML/it/krdc/common
 share/doc/HTML/it/krdc/index.cache.bz2
 share/doc/HTML/it/krdc/index.docbook
@@ -1133,6 +1155,9 @@ share/doc/HTML/it/krec/using_krec.png
 share/doc/HTML/it/kreversi/common
 share/doc/HTML/it/kreversi/index.cache.bz2
 share/doc/HTML/it/kreversi/index.docbook
+share/doc/HTML/it/krfb/common
+share/doc/HTML/it/krfb/index.cache.bz2
+share/doc/HTML/it/krfb/index.docbook
 share/doc/HTML/it/kruler/common
 share/doc/HTML/it/kruler/index.cache.bz2
 share/doc/HTML/it/kruler/index.docbook
@@ -1286,6 +1311,9 @@ share/doc/HTML/it/ksysguard/index.docbook
 share/doc/HTML/it/ksysv/common
 share/doc/HTML/it/ksysv/index.cache.bz2
 share/doc/HTML/it/ksysv/index.docbook
+share/doc/HTML/it/ktalkd/common
+share/doc/HTML/it/ktalkd/index.cache.bz2
+share/doc/HTML/it/ktalkd/index.docbook
 share/doc/HTML/it/kteatime/common
 share/doc/HTML/it/kteatime/index.cache.bz2
 share/doc/HTML/it/kteatime/index.docbook
@@ -1373,6 +1401,9 @@ share/doc/HTML/it/kwatchgnupg/index.docbook
 share/doc/HTML/it/kweather/common
 share/doc/HTML/it/kweather/index.cache.bz2
 share/doc/HTML/it/kweather/index.docbook
+share/doc/HTML/it/kwifimanager/common
+share/doc/HTML/it/kwifimanager/index.cache.bz2
+share/doc/HTML/it/kwifimanager/index.docbook
 share/doc/HTML/it/kwin4/common
 share/doc/HTML/it/kwin4/index.cache.bz2
 share/doc/HTML/it/kwin4/index.docbook
@@ -1835,6 +1866,7 @@ share/locale/it/LC_MESSAGES/konnector_qtopia.mo
 share/locale/it/LC_MESSAGES/konnector_remote.mo
 share/locale/it/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/it/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/it/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/it/LC_MESSAGES/konqsidebar_news.mo
 share/locale/it/LC_MESSAGES/konqueror.mo
 share/locale/it/LC_MESSAGES/konquest.mo
@@ -2043,6 +2075,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kworldclock
 @dirrm share/doc/HTML/it/kwordquiz
 @dirrm share/doc/HTML/it/kwin4
+@dirrm share/doc/HTML/it/kwifimanager
 @dirrm share/doc/HTML/it/kweather
 @dirrm share/doc/HTML/it/kwatchgnupg
 @dirrm share/doc/HTML/it/kwallet
@@ -2059,6 +2092,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/ktnef
 @dirrm share/doc/HTML/it/ktimer
 @dirrm share/doc/HTML/it/kteatime
+@dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/it/ksysv
 @dirrm share/doc/HTML/it/ksysguard
 @dirrm share/doc/HTML/it/kstars
@@ -2075,6 +2109,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kscd
 @dirrm share/doc/HTML/it/ksame
 @dirrm share/doc/HTML/it/kruler
+@dirrm share/doc/HTML/it/krfb
 @dirrm share/doc/HTML/it/kreversi
 @dirrm share/doc/HTML/it/krec
 @dirrm share/doc/HTML/it/krdc
@@ -2089,6 +2124,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/korganizer
 @dirrm share/doc/HTML/it/kopete
 @dirrm share/doc/HTML/it/kooka
+@dirrm share/doc/HTML/it/kontact
 @dirrm share/doc/HTML/it/konsole
 @dirrm share/doc/HTML/it/konquest
 @dirrm share/doc/HTML/it/konqueror
@@ -2202,6 +2238,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kcontrol/powerctrl
 @dirrm share/doc/HTML/it/kcontrol/passwords
 @dirrm share/doc/HTML/it/kcontrol/panelappearance
+@dirrm share/doc/HTML/it/kcontrol/panel
 @dirrm share/doc/HTML/it/kcontrol/netpref
 @dirrm share/doc/HTML/it/kcontrol/mouse
 @dirrm share/doc/HTML/it/kcontrol/laptop
@@ -2211,12 +2248,15 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kcontrol/keys
 @dirrm share/doc/HTML/it/kcontrol/keyboard
 @dirrm share/doc/HTML/it/kcontrol/kdm
+@dirrm share/doc/HTML/it/kcontrol/kcmtaskbar
+@dirrm share/doc/HTML/it/kcontrol/kcmstyle
 @dirrm share/doc/HTML/it/kcontrol/kcmsmserver
 @dirrm share/doc/HTML/it/kcontrol/kcmnotify
 @dirrm share/doc/HTML/it/kcontrol/kcmlowbatwarn
 @dirrm share/doc/HTML/it/kcontrol/kcmlowbatcrit
 @dirrm share/doc/HTML/it/kcontrol/kcmlaunch
 @dirrm share/doc/HTML/it/kcontrol/kcmktalkd
+@dirrm share/doc/HTML/it/kcontrol/kcmkonsole
 @dirrm share/doc/HTML/it/kcontrol/kcmfontinst
 @dirrm share/doc/HTML/it/kcontrol/kcmcss
 @dirrm share/doc/HTML/it/kcontrol/kalarmd

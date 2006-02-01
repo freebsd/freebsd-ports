@@ -53,6 +53,7 @@ share/locale/af/LC_MESSAGES/katetextfilter.mo
 share/locale/af/LC_MESSAGES/katexmltools.mo
 share/locale/af/LC_MESSAGES/katomic.mo
 share/locale/af/LC_MESSAGES/kaudiocreator.mo
+share/locale/af/LC_MESSAGES/kay.mo
 share/locale/af/LC_MESSAGES/kbabel.mo
 share/locale/af/LC_MESSAGES/kbackgammon.mo
 share/locale/af/LC_MESSAGES/kbattleship.mo
@@ -103,6 +104,7 @@ share/locale/af/LC_MESSAGES/kcmlaunch.mo
 share/locale/af/LC_MESSAGES/kcmlayout.mo
 share/locale/af/LC_MESSAGES/kcmlilo.mo
 share/locale/af/LC_MESSAGES/kcmlocale.mo
+share/locale/af/LC_MESSAGES/kcmmedia.mo
 share/locale/af/LC_MESSAGES/kcmnic.mo
 share/locale/af/LC_MESSAGES/kcmnotify.mo
 share/locale/af/LC_MESSAGES/kcmperformance.mo
@@ -199,6 +201,7 @@ share/locale/af/LC_MESSAGES/kio_finger.mo
 share/locale/af/LC_MESSAGES/kio_fish.mo
 share/locale/af/LC_MESSAGES/kio_floppy.mo
 share/locale/af/LC_MESSAGES/kio_help.mo
+share/locale/af/LC_MESSAGES/kio_home.mo
 share/locale/af/LC_MESSAGES/kio_imap4.mo
 share/locale/af/LC_MESSAGES/kio_lan.mo
 share/locale/af/LC_MESSAGES/kio_ldap.mo
@@ -215,6 +218,8 @@ share/locale/af/LC_MESSAGES/kio_sftp.mo
 share/locale/af/LC_MESSAGES/kio_smb.mo
 share/locale/af/LC_MESSAGES/kio_smtp.mo
 share/locale/af/LC_MESSAGES/kio_system.mo
+share/locale/af/LC_MESSAGES/kio_tar.mo
+share/locale/af/LC_MESSAGES/kio_thumbnail.mo
 share/locale/af/LC_MESSAGES/kio_trash.mo
 share/locale/af/LC_MESSAGES/kioexec.mo
 share/locale/af/LC_MESSAGES/kiten.mo
@@ -296,6 +301,7 @@ share/locale/af/LC_MESSAGES/ksplashthemes.mo
 share/locale/af/LC_MESSAGES/kstars.mo
 share/locale/af/LC_MESSAGES/kstart.mo
 share/locale/af/LC_MESSAGES/kstartperf.mo
+share/locale/af/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/af/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/af/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/af/LC_MESSAGES/ksync.mo

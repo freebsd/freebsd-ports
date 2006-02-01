@@ -79,6 +79,7 @@ share/locale/bn/LC_MESSAGES/kfile_ogg.mo
 share/locale/bn/LC_MESSAGES/kfile_wav.mo
 share/locale/bn/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/bn/LC_MESSAGES/kfindpart.mo
+share/locale/bn/LC_MESSAGES/kfmclient.mo
 share/locale/bn/LC_MESSAGES/kfontinst.mo
 share/locale/bn/LC_MESSAGES/kfouleggs.mo
 share/locale/bn/LC_MESSAGES/kgoldrunner.mo
@@ -94,6 +95,7 @@ share/locale/bn/LC_MESSAGES/kio_fish.mo
 share/locale/bn/LC_MESSAGES/kio_floppy.mo
 share/locale/bn/LC_MESSAGES/kio_help.mo
 share/locale/bn/LC_MESSAGES/kio_imap4.mo
+share/locale/bn/LC_MESSAGES/kio_lan.mo
 share/locale/bn/LC_MESSAGES/kio_ldap.mo
 share/locale/bn/LC_MESSAGES/kio_mac.mo
 share/locale/bn/LC_MESSAGES/kio_man.mo
@@ -111,12 +113,14 @@ share/locale/bn/LC_MESSAGES/kmenuapplet.mo
 share/locale/bn/LC_MESSAGES/kmenuedit.mo
 share/locale/bn/LC_MESSAGES/kmessedwords.mo
 share/locale/bn/LC_MESSAGES/kmines.mo
+share/locale/bn/LC_MESSAGES/kminipagerapplet.mo
 share/locale/bn/LC_MESSAGES/kmplot.mo
 share/locale/bn/LC_MESSAGES/knode.mo
 share/locale/bn/LC_MESSAGES/knotify.mo
 share/locale/bn/LC_MESSAGES/konqueror.mo
 share/locale/bn/LC_MESSAGES/konsole.mo
 share/locale/bn/LC_MESSAGES/kpersonalizer.mo
+share/locale/bn/LC_MESSAGES/kppplogview.mo
 share/locale/bn/LC_MESSAGES/kreadconfig.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/krunapplet.mo
@@ -143,7 +147,9 @@ share/locale/bn/LC_MESSAGES/ktron.mo
 share/locale/bn/LC_MESSAGES/kturtle.mo
 share/locale/bn/LC_MESSAGES/kverbos.mo
 share/locale/bn/LC_MESSAGES/kvoctrain.mo
+share/locale/bn/LC_MESSAGES/kwifimanager.mo
 share/locale/bn/LC_MESSAGES/kwin.mo
+share/locale/bn/LC_MESSAGES/kwireless.mo
 share/locale/bn/LC_MESSAGES/kwordquiz.mo
 share/locale/bn/LC_MESSAGES/kwriteconfig.mo
 share/locale/bn/LC_MESSAGES/kxkb.mo

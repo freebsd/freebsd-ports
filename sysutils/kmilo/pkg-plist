@@ -1,0 +1,21 @@
+lib/kde3/kcm_thinkpad.la
+lib/kde3/kcm_thinkpad.so
+lib/kde3/kded_kmilod.la
+lib/kde3/kded_kmilod.so
+lib/kde3/kmilo_asus.la
+lib/kde3/kmilo_asus.so
+lib/kde3/kmilo_generic.la
+lib/kde3/kmilo_generic.so
+lib/kde3/kmilo_thinkpad.la
+lib/kde3/kmilo_thinkpad.so
+lib/libkmilo.la
+lib/libkmilo.so
+lib/libkmilo.so.1
+share/applications/kde/thinkpad.desktop
+share/services/kded/kmilod.desktop
+share/services/kmilo/kmilo_asus.desktop
+share/services/kmilo/kmilo_generic.desktop
+share/services/kmilo/kmilo_thinkpad.desktop
+share/servicetypes/kmilo/kmilopluginsvc.desktop
+@dirrm share/servicetypes/kmilo
+@dirrm share/services/kmilo

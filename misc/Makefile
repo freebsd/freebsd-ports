@@ -186,6 +186,8 @@
     SUBDIR += kde3-i18n-eu
     SUBDIR += kde3-i18n-fa
     SUBDIR += kde3-i18n-fi
+    SUBDIR += kde3-i18n-fy
+    SUBDIR += kde3-i18n-ga
     SUBDIR += kde3-i18n-gl
     SUBDIR += kde3-i18n-hi
     SUBDIR += kde3-i18n-hr
@@ -193,6 +195,7 @@
     SUBDIR += kde3-i18n-id
     SUBDIR += kde3-i18n-is
     SUBDIR += kde3-i18n-it
+    SUBDIR += kde3-i18n-km
     SUBDIR += kde3-i18n-lt
     SUBDIR += kde3-i18n-lv
     SUBDIR += kde3-i18n-mk
@@ -206,6 +209,7 @@
     SUBDIR += kde3-i18n-nso
     SUBDIR += kde3-i18n-pa
     SUBDIR += kde3-i18n-ro
+    SUBDIR += kde3-i18n-rw
     SUBDIR += kde3-i18n-se
     SUBDIR += kde3-i18n-sk
     SUBDIR += kde3-i18n-sl

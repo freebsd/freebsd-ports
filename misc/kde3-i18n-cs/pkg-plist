@@ -601,6 +601,7 @@ share/locale/cs/LC_MESSAGES/konnector_qtopia.mo
 share/locale/cs/LC_MESSAGES/konnector_remote.mo
 share/locale/cs/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/cs/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/cs/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/cs/LC_MESSAGES/konqsidebar_news.mo
 share/locale/cs/LC_MESSAGES/konqueror.mo
 share/locale/cs/LC_MESSAGES/konquest.mo
@@ -749,6 +750,7 @@ share/locale/cs/LC_MESSAGES/libkcddb.mo
 share/locale/cs/LC_MESSAGES/libkdeedu.mo
 share/locale/cs/LC_MESSAGES/libkdegames.mo
 share/locale/cs/LC_MESSAGES/libkdepim.mo
+share/locale/cs/LC_MESSAGES/libkfaximgage.mo
 share/locale/cs/LC_MESSAGES/libkholidays.mo
 share/locale/cs/LC_MESSAGES/libkicker.mo
 share/locale/cs/LC_MESSAGES/libkickermenu_kdeprint.mo
