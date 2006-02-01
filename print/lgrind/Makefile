@@ -19,7 +19,6 @@ DISTFILES=	${PORTNAME}/source/Makefile \
 		${PORTNAME}/README \
 		${PORTNAME}/Makefile \
 		${PORTNAME}/lgrind.dtx \
-		${PORTNAME}/lgrind.dtx \
 		${PORTNAME}/lgrind.gls \
 		${PORTNAME}/lgrind.ind \
 		${PORTNAME}/lgrind.ins \
