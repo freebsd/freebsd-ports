@@ -1,21 +1,16 @@
 # New ports collection makefile for:   see
 # Date created:        22 September 2004
-# Whom:                sime@logos.hr
+# Whom:                numisemis@yahoo.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	see
-PORTVERSION=	1.2
-PORTREVISION=	2
-CATEGORIES=	lang
-MASTER_SITES=	http://www.netsw.org/softeng/lang/js/ \
-		ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
-		http://mirror.arcticnetwork.ca/pub/FreeBSD/distfiles/ \
-		http://ftp3.ie.freebsd.org/pub/FreeBSD/distfiles/ \
-		http://www.adaptive-enterprises.com.au/~d/software/see/
+PORTVERSION=	1.3.1
+CATEGORIES=	lang devel
+MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/
 
-MAINTAINER=	sime@logos.hr
+MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
 CONFLICTS=	see-devel-[0-9]*
@@ -27,7 +22,6 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
@@ -35,7 +29,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O2 -fomit-frame-pointer
+CFLAGS+=	-O3 -fomit-frame-pointer
 .endif
 
 .if defined(WITH_GC)
@@ -47,7 +41,7 @@ PTHREAD_LIBS=
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|PACKAGE_BUGREPORT='dleonard@users|PACKAGE_BUGREPORT='dleonard\\\@users|" \
+	@${REINPLACE_CMD} -e "s|PACKAGE_BUGREPORT='leonard@users|PACKAGE_BUGREPORT='leonard\\\@users|" \
 		${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
