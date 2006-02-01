@@ -5981,6 +5981,7 @@ lpr-wrapper	ports/print/lpr-wrapper
 lprps-a4	ports/print/lprps-a4
 lprps-letter	ports/print/lprps-letter
 lr		ports/misc/lr
+lrmi		ports/devel/lrmi
 lrzsz		ports/comms/lrzsz
 lsdb		ports/databases/lsdb
 lsdb-emacs20	ports/databases/lsdb-emacs20
