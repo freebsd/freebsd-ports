@@ -7,6 +7,12 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060201:
+  AFFECTS: users of sysutils/xmbmon
+  AUTHOR: jylefort@FreeBSD.org
+
+  The tty program (mbmon) was moved into a separate port, sysutils/mbmon.
+
+20060201:
   AFFECTS: users of x11/tilda
   AUTHOR: barner@FreeBSD.org
 
