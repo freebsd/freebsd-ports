@@ -30,7 +30,7 @@ PORTDOCS=	README AUTHORS ChangeLog TODO \
 .if defined(WITH_BMPX)
 BUILD_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
 RUN_DEPENDS+=		bmpx:${PORTSDIR}/multimedia/bmpx
-LIB_DEPENDS+=		dbus-1.1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=		dbus-1.2:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-bmpx
 .else
 CONFIGURE_ARGS+=	--disable-bmpx
