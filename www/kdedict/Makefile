@@ -3,11 +3,12 @@
 # Whom:                Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/www/kdedict/Makefile,v 1.1 2005/12/16 16:44:16 itetcu Exp $
+# $Tecnik: ports/www/kdedict/Makefile,v 1.3 2006/01/30 19:27:22 itetcu Exp $
 #
 
 PORTNAME=	kdedict
 PORTVERSION=	20030925
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.i18n.kde.org/tools/${PORTNAME}/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -23,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_APACE=	yes
+USE_APACHE=	yes
 USE_REINPLACE=	yes
 
 CGI_DIR?=	${PREFIX}/www/cgi-bin
