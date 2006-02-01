@@ -264,7 +264,7 @@ PHP_HEADER_DIRS=pcrelib
 
 .if ${PHP_MODNAME} == "pfpro"
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libpfpro.so:${PORTSDIR}/finance/pfpro
-CONFIGURE_ARGS+=--with-pfpro
+CONFIGURE_ARGS+=--with-pfpro=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "pgsql"
