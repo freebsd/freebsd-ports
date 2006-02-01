@@ -78,7 +78,7 @@
     SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += expect
-    SUBDIR += firefox-ja_JP
+    SUBDIR += firefox-ja
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += freepwing
