@@ -100,7 +100,7 @@ EXTRA_DICT+=	${DEALTDISTFILE}:dealt
 .endif
 .if defined(ISPELL_NO)
 NODISTFILE=	ispell-norsk-2.0.tar.gz
-MASTER_SITES+=	http://www.uio.no/~runekl/:no
+MASTER_SITES+=	http://folk.uio.no/runekl/:no
 EXTRA_DICT+=	${NODISTFILE}:no
 EXTRACT_ONLY+=	${NODISTFILE}
 MASKBITS?=	64
