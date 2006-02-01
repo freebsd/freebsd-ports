@@ -19,7 +19,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-zlib
+CONFIGURE_ARGS=	--enable-zlib \
+		--disable-poppler-qt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
