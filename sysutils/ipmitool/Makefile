@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipmitool
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 # On FreeBSD only lan and lanplus interfaces are supported at this time
 CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
-		--disable-intf-open --disable-intf-imb --disable-intf-lipmi
+		--disable-intf-open --disable-intf-imb --disable-intf-lipmi \
+		--disable-intf-bmc
 PLIST_FILES=	bin/ipmitool sbin/ipmievd
 PLIST_DIRS=	share/${PORTNAME}
 PORTDOCS=	README AUTHORS ChangeLog COPYING
