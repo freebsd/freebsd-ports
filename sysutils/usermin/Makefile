@@ -7,11 +7,12 @@
 
 PORTNAME=	usermin
 PORTVERSION=	1.190
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webmin.com/uupdates/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webadmin
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${USERMIN_MODULES}
+MASTER_SITES=	http://www.webmin.com/uupdates/:up \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	webadmin/:sf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -22,10 +23,12 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	usermin.sh
 USE_REINPLACE=	yes
+SUB_LIST=	PERL5=${PERL}
 
-USERMIN_MODULES=schedule-1.190-1.wbm.gz
+USERMIN_MODULES=forward-1.190-1.wbm.gz \
+		schedule-1.190-1.wbm.gz
 
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
