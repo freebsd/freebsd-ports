@@ -422,6 +422,7 @@
     SUBDIR += portbrowser
     SUBDIR += portdowngrade
     SUBDIR += portmanager
+    SUBDIR += portsearch
     SUBDIR += portsman
     SUBDIR += portsnap
     SUBDIR += portupgrade
