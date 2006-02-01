@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	the
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hessling-editor
 DISTNAME=	THE-${PORTVERSION}
 
 PATCH_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/
-PATCHFILES=	${DISTNAME}-rexximc.patch
+PATCHFILES=	THE-3.1-rexximc.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--with-rexx=rexximc
 .endif
 
 post-install:
+	@${LN} -sf nthe ${PREFIX}/bin/the
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/THE
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/THE

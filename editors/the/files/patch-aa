@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Jun 14 21:08:43 2002
-+++ Makefile.in	Sun May 11 09:56:21 2003
-@@ -26,7 +26,9 @@
+--- Makefile.in.orig	Mon Jan 30 17:08:34 2006
++++ Makefile.in	Tue Jan 31 02:28:15 2006
+@@ -29,7 +29,9 @@
  contribdir		= $(srcdir)/contrib
  thisdir		=@thisdir@
  
@@ -11,72 +11,60 @@
  
  HTML_EXT		= @HTML_EXT@
  
-@@ -204,37 +206,37 @@
+@@ -276,32 +278,32 @@
  install: $(BASE_INSTALL)
  
- installbase: the the.man THE_Help.txt
--	$(INSTALL) -m 755 -d $(bindir)
--	$(INSTALL) -m 755 -d $(prefix)/man/man1
--	$(INSTALL) -m 755 -d $(prefix)/share/THE
--	$(INSTALL) -m 755 -c ./the $(bindir)/the
--	$(INSTALL) -m 644 -c $(srcdir)/the.1 $(prefix)/man/man1/the.1
--	$(INSTALL) -m 644 -c ./THE_Help.txt $(prefix)/share/THE/THE_Help.txt
--	$(INSTALL) -m 644 -c $(srcdir)/append.the   $(prefix)/share/THE/append.the
--	$(INSTALL) -m 644 -c $(srcdir)/comm.the     $(prefix)/share/THE/comm.the
--	$(INSTALL) -m 644 -c $(srcdir)/build.the    $(prefix)/share/THE/build.the
--	$(INSTALL) -m 644 -c $(srcdir)/uncomm.the   $(prefix)/share/THE/uncomm.the
--	$(INSTALL) -m 644 -c $(srcdir)/total.the    $(prefix)/share/THE/total.the
--	$(INSTALL) -m 644 -c $(srcdir)/match.the    $(prefix)/share/THE/match.the
--	$(INSTALL) -m 644 -c $(srcdir)/rm.the       $(prefix)/share/THE/rm.the
--	$(INSTALL) -m 644 -c $(srcdir)/nl.the       $(prefix)/share/THE/nl.the
--	$(INSTALL) -m 644 -c $(srcdir)/words.the    $(prefix)/share/THE/words.the
--	$(INSTALL) -m 644 -c $(srcdir)/l.the        $(prefix)/share/THE/l.the
--	$(INSTALL) -m 644 -c $(srcdir)/compile.the  $(prefix)/share/THE/compile.the
--	$(INSTALL) -m 644 -c $(srcdir)/spell.the    $(prefix)/share/THE/spell.the
--	$(INSTALL) -m 644 -c $(srcdir)/demo.the     $(prefix)/share/THE/demo.the
--	$(INSTALL) -m 644 -c $(srcdir)/cua.the      $(prefix)/share/THE/cua.the
--	$(INSTALL) -m 644 -c $(srcdir)/config.the   $(prefix)/share/THE/config.the
--	$(INSTALL) -m 644 -c $(srcdir)/tags.the     $(prefix)/share/THE/tags.the
--	$(INSTALL) -m 644 -c $(srcdir)/c.tld        $(prefix)/share/THE/c.tld
--	$(INSTALL) -m 644 -c $(srcdir)/cobol.tld    $(prefix)/share/THE/cobol.tld
--	$(INSTALL) -m 644 -c $(srcdir)/csh.tld      $(prefix)/share/THE/csh.tld
--	$(INSTALL) -m 644 -c $(srcdir)/html.tld     $(prefix)/share/THE/html.tld
--	$(INSTALL) -m 644 -c $(srcdir)/m4.tld       $(prefix)/share/THE/m4.tld
--	$(INSTALL) -m 644 -c $(srcdir)/make.tld     $(prefix)/share/THE/make.tld
--	$(INSTALL) -m 644 -c $(srcdir)/opl.tld      $(prefix)/share/THE/opl.tld
--	$(INSTALL) -m 644 -c $(srcdir)/rexx.tld     $(prefix)/share/THE/rexx.tld
--	$(INSTALL) -m 644 -c $(srcdir)/sh.tld       $(prefix)/share/THE/sh.tld
-+	$(INSTALL) -d $(bindir)
-+	$(INSTALL) -d $(prefix)/man/man1
-+	$(INSTALL) -d $(prefix)/share/THE
-+	$(INSTALL_PROGRAM) ./the $(bindir)/the
-+	$(INSTALL_DATA) $(srcdir)/the.1 $(prefix)/man/man1/the.1
-+	$(INSTALL_DATA) ./THE_Help.txt $(prefix)/share/THE/THE_Help.txt
-+	$(INSTALL_DATA) $(srcdir)/append.the   $(prefix)/share/THE/append.the
-+	$(INSTALL_DATA) $(srcdir)/comm.the     $(prefix)/share/THE/comm.the
-+	$(INSTALL_DATA) $(srcdir)/build.the    $(prefix)/share/THE/build.the
-+	$(INSTALL_DATA) $(srcdir)/uncomm.the   $(prefix)/share/THE/uncomm.the
-+	$(INSTALL_DATA) $(srcdir)/total.the    $(prefix)/share/THE/total.the
-+	$(INSTALL_DATA) $(srcdir)/match.the    $(prefix)/share/THE/match.the
-+	$(INSTALL_DATA) $(srcdir)/rm.the       $(prefix)/share/THE/rm.the
-+	$(INSTALL_DATA) $(srcdir)/nl.the       $(prefix)/share/THE/nl.the
-+	$(INSTALL_DATA) $(srcdir)/words.the    $(prefix)/share/THE/words.the
-+	$(INSTALL_DATA) $(srcdir)/l.the        $(prefix)/share/THE/l.the
-+	$(INSTALL_DATA) $(srcdir)/compile.the  $(prefix)/share/THE/compile.the
-+	$(INSTALL_DATA) $(srcdir)/spell.the    $(prefix)/share/THE/spell.the
-+	$(INSTALL_DATA) $(srcdir)/demo.the     $(prefix)/share/THE/demo.the
-+	$(INSTALL_DATA) $(srcdir)/cua.the      $(prefix)/share/THE/cua.the
-+	$(INSTALL_DATA) $(srcdir)/config.the   $(prefix)/share/THE/config.the
-+	$(INSTALL_DATA) $(srcdir)/tags.the     $(prefix)/share/THE/tags.the
-+	$(INSTALL_DATA) $(srcdir)/c.tld        $(prefix)/share/THE/c.tld
-+	$(INSTALL_DATA) $(srcdir)/cobol.tld    $(prefix)/share/THE/cobol.tld
-+	$(INSTALL_DATA) $(srcdir)/csh.tld      $(prefix)/share/THE/csh.tld
-+	$(INSTALL_DATA) $(srcdir)/html.tld     $(prefix)/share/THE/html.tld
-+	$(INSTALL_DATA) $(srcdir)/m4.tld       $(prefix)/share/THE/m4.tld
-+	$(INSTALL_DATA) $(srcdir)/make.tld     $(prefix)/share/THE/make.tld
-+	$(INSTALL_DATA) $(srcdir)/opl.tld      $(prefix)/share/THE/opl.tld
-+	$(INSTALL_DATA) $(srcdir)/rexx.tld     $(prefix)/share/THE/rexx.tld
-+	$(INSTALL_DATA) $(srcdir)/sh.tld       $(prefix)/share/THE/sh.tld
-
- binary: $(BASE_BINARY)
+ installbase: $(THEBIN) the.man THE_Help.txt
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(mandir)/man1
+-	$(INSTALL) -m 755 -d $(DESTDIR)$(datadir)/THE
+-	$(INSTALL) -m 755 -c ./$(THEBIN)            $(DESTDIR)$(bindir)/$(THEBIN)
+-	$(INSTALL) -m 644 -c $(srcdir)/the.1        $(DESTDIR)$(mandir)/man1/the.1
+-	$(INSTALL) -m 644 -c ./THE_Help.txt         $(DESTDIR)$(datadir)/THE/THE_Help.txt
+-	$(INSTALL) -m 644 -c $(srcdir)/append.the   $(DESTDIR)$(datadir)/THE/append.the
+-	$(INSTALL) -m 644 -c $(srcdir)/comm.the     $(DESTDIR)$(datadir)/THE/comm.the
+-	$(INSTALL) -m 644 -c $(srcdir)/build.the    $(DESTDIR)$(datadir)/THE/build.the
+-	$(INSTALL) -m 644 -c $(srcdir)/uncomm.the   $(DESTDIR)$(datadir)/THE/uncomm.the
+-	$(INSTALL) -m 644 -c $(srcdir)/total.the    $(DESTDIR)$(datadir)/THE/total.the
+-	$(INSTALL) -m 644 -c $(srcdir)/match.the    $(DESTDIR)$(datadir)/THE/match.the
+-	$(INSTALL) -m 644 -c $(srcdir)/rm.the       $(DESTDIR)$(datadir)/THE/rm.the
+-	$(INSTALL) -m 644 -c $(srcdir)/nl.the       $(DESTDIR)$(datadir)/THE/nl.the
+-	$(INSTALL) -m 644 -c $(srcdir)/words.the    $(DESTDIR)$(datadir)/THE/words.the
+-	$(INSTALL) -m 644 -c $(srcdir)/l.the        $(DESTDIR)$(datadir)/THE/l.the
+-	$(INSTALL) -m 644 -c $(srcdir)/compile.the  $(DESTDIR)$(datadir)/THE/compile.the
+-	$(INSTALL) -m 644 -c $(srcdir)/spell.the    $(DESTDIR)$(datadir)/THE/spell.the
+-	$(INSTALL) -m 644 -c $(srcdir)/demo.the     $(DESTDIR)$(datadir)/THE/demo.the
+-	$(INSTALL) -m 644 -c $(srcdir)/cua.the      $(DESTDIR)$(datadir)/THE/cua.the
+-	$(INSTALL) -m 644 -c $(srcdir)/config.the   $(DESTDIR)$(datadir)/THE/config.the
+-	$(INSTALL) -m 644 -c $(srcdir)/tags.the     $(DESTDIR)$(datadir)/THE/tags.the
+-	$(INSTALL) -m 644 -c $(srcdir)/codecomp.the $(DESTDIR)$(datadir)/THE/codecomp.the
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) -d $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -d $(DESTDIR)$(datadir)/THE
++	$(INSTALL_PROGRAM) -c ./$(THEBIN)            $(DESTDIR)$(bindir)/$(THEBIN)
++	$(INSTALL_DATA) -c $(srcdir)/the.1        $(DESTDIR)$(mandir)/man1/the.1
++	$(INSTALL_DATA) -c ./THE_Help.txt         $(DESTDIR)$(datadir)/THE/THE_Help.txt
++	$(INSTALL_DATA) -c $(srcdir)/append.the   $(DESTDIR)$(datadir)/THE/append.the
++	$(INSTALL_DATA) -c $(srcdir)/comm.the     $(DESTDIR)$(datadir)/THE/comm.the
++	$(INSTALL_DATA) -c $(srcdir)/build.the    $(DESTDIR)$(datadir)/THE/build.the
++	$(INSTALL_DATA) -c $(srcdir)/uncomm.the   $(DESTDIR)$(datadir)/THE/uncomm.the
++	$(INSTALL_DATA) -c $(srcdir)/total.the    $(DESTDIR)$(datadir)/THE/total.the
++	$(INSTALL_DATA) -c $(srcdir)/match.the    $(DESTDIR)$(datadir)/THE/match.the
++	$(INSTALL_DATA) -c $(srcdir)/rm.the       $(DESTDIR)$(datadir)/THE/rm.the
++	$(INSTALL_DATA) -c $(srcdir)/nl.the       $(DESTDIR)$(datadir)/THE/nl.the
++	$(INSTALL_DATA) -c $(srcdir)/words.the    $(DESTDIR)$(datadir)/THE/words.the
++	$(INSTALL_DATA) -c $(srcdir)/l.the        $(DESTDIR)$(datadir)/THE/l.the
++	$(INSTALL_DATA) -c $(srcdir)/compile.the  $(DESTDIR)$(datadir)/THE/compile.the
++	$(INSTALL_DATA) -c $(srcdir)/spell.the    $(DESTDIR)$(datadir)/THE/spell.the
++	$(INSTALL_DATA) -c $(srcdir)/demo.the     $(DESTDIR)$(datadir)/THE/demo.the
++	$(INSTALL_DATA) -c $(srcdir)/cua.the      $(DESTDIR)$(datadir)/THE/cua.the
++	$(INSTALL_DATA) -c $(srcdir)/config.the   $(DESTDIR)$(datadir)/THE/config.the
++	$(INSTALL_DATA) -c $(srcdir)/tags.the     $(DESTDIR)$(datadir)/THE/tags.the
++	$(INSTALL_DATA) -c $(srcdir)/codecomp.the $(DESTDIR)$(datadir)/THE/codecomp.the
+ 	for a in $(srcdir)/*.tld; do \
+ 		bn=`basename $$a`; \
+-		$(INSTALL) -m 644 -c $$a $(DESTDIR)$(datadir)/THE/$$bn; \
++		$(INSTALL_DATA) -c $$a $(DESTDIR)$(datadir)/THE/$$bn; \
+ 	done;
  
+ binary: $(BASE_BINARY)
