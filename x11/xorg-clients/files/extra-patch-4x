@@ -1,0 +1,79 @@
+--- programs/xedit/util.c.orig	Fri Jan 27 13:07:57 2006
++++ programs/xedit/util.c	Fri Jan 27 13:10:58 2006
+@@ -58,43 +58,14 @@
+ extern Widget vpanes[2], labels[3], texts[3], forms[3];
+ extern XawTextWrapMode wrapmodes[3];
+ 
+-#ifndef va_copy
+-# ifdef __va_copy
+-#  define va_copy __va_copy
+-# else
+-#  error "no working va_copy was found"
+-# endif
+-#endif
+-    
+ /*
+  * Implementation
+  */
+ void
+-XeditPrintf(const char *format, ...)
++XeditPrintf(char *str)
+ {
+-    char         *str;
+-    size_t        size;
+-    va_list       va,
+-                  va2;
+-    XawTextBlock  text;
+-    XawTextPosition pos;
+-    
+-    va_start(va, format);
+-
+-    va_copy(va2, va);
+-    size = vsnprintf(NULL, 0, format, va2);
+-    va_end(va2);
+-
+-    str = (char *)malloc(size + 1);
+-    if (str == NULL)
+-        return;
+-
+-    vsnprintf(str, size + 1, format, va);
+-    str[size] = 0;
+-    
+-    va_end(va);
+-    
+-    pos = XawTextSourceScan(XawTextGetSource(messwidget),
++    XawTextBlock text;
++    XawTextPosition pos = XawTextSourceScan(XawTextGetSource(messwidget),
+ 					    0, XawstAll, XawsdRight, 1, True);
+ 
+     text.length = strlen(str);
+@@ -106,7 +77,6 @@
+ 
+     XawTextSetInsertionPoint(messwidget, pos + text.length);
+     
+-    free(str);
+ }
+ 
+ Widget
+--- programs/xedit/xedit.h.orig	Fri Jan 27 13:11:42 2006
++++ programs/xedit/xedit.h	Fri Jan 27 13:12:55 2006
+@@ -106,7 +106,7 @@
+ void Feep(void);
+ 
+ /*	externals in util.c 	*/
+-void XeditPrintf(const char *format, ...);
++void XeditPrintf(char*);
+ Widget MakeCommandButton(Widget, char*, XtCallbackProc);
+ Widget MakeStringBox(Widget, String, String);
+ String GetString(Widget);
+--- programs/xmore/print.h.orig	Fri Jan 27 13:21:05 2006
++++ programs/xmore/print.h	Fri Jan 27 13:22:53 2006
+@@ -38,7 +38,7 @@
+ #if defined(XMORE)
+ #define PrintMsg(x) { printf("xmore: "); printf x ; }
+ #elif defined(XEDIT)
+-#define PrintMsg(x) { XeditPrintf x ; }
++#define PrintMsg(x) { printf("xedit: "); printf x ; }
+ #else
+ #error unknown application
+ #endif 
