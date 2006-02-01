@@ -5,45 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmbmon
+PORTNAME?=	mbmon
 PORTVERSION=	205
-PORTREVISION=	5
+PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-.endif
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	xmbmon${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.ORG
-COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
+MAINTAINER=	jylefort@FreeBSD.org
+COMMENT?=	A tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
-USE_REINPLACE=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
-.if defined(WITHOUT_X11)
-PLIST_SUB=	X11_ONLY="@comment "
-.else
-USE_XLIB=	yes
-PLIST_SUB=	X11_ONLY=""
-.endif
 
-MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}' PREFIX='${PREFIX}'
+MAKE_ARGS=	PROGRAM="${PORTNAME}"
 
-MAN1=		xmbmon.1x mbmon.1
+PLIST_FILES+=	bin/${PORTNAME}
+MAN1?=		mbmon.1
+PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
+
+OPTIONS=	SMB "enable smb(4) support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Definable build options"
-	@${ECHO_CMD} "-----------------------"
-	@${ECHO_CMD} "WITHOUT_X11	- Self explanatory"
-	@${ECHO_CMD} "WITHOUT_SMB	- disable smb(4) support"
-	@${ECHO_CMD} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' ${WRKSRC}/mbmon.1
@@ -51,10 +34,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
 .endif
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${CHMOD} u+s ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/|} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-man install-doc)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
