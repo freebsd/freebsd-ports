@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.260
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -26,7 +27,7 @@ USE_RC_SUBR=    webmin.sh
 USE_REINPLACE=	yes
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	mount-1.260-2.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
