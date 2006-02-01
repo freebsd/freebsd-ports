@@ -9,7 +9,7 @@
 PORTNAME=	ski
 PORTVERSION=	0.943l.2
 CATEGORIES=	emulators
-MASTER_SITES=	# ftp://www.software.hp.com/dist/swdepot/
+MASTER_SITES=	# http://www.hpl.hp.com/research/linux/ski/
 DISTNAME=	ski-0.943l-2.i386
 EXTRACT_SUFX=	.rpm
 
@@ -20,7 +20,7 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
 
-NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.software.hp.com/products/LIA64/overview1a.htm) and put it in ${DISTDIR} first. License restrictions disallow automatic downloads and redistribution of the software.
+NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first. License restrictions disallow automatic downloads and redistribution of the software.
 NO_PACKAGE=	${NOTICE}
 NO_CDROM=	${NOTICE}
 
