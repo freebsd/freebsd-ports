@@ -357,3 +357,4 @@ lib/libXm.so.2
 @cwd %%LOCALBASE%%
 share/aclocal/ac_find_motif.m4
 share/aclocal19/ac_find_motif.m4
+@dirrmtry share/aclocal19
