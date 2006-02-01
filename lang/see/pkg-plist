@@ -1,6 +1,7 @@
 bin/libsee-config
 bin/see-shell
 include/see/cfunction.h
+include/see/context.h
 include/see/debug.h
 include/see/error.h
 include/see/eval.h
@@ -13,9 +14,11 @@ include/see/no.h
 include/see/object.h
 include/see/see.h
 include/see/string.h
+include/see/system.h
 include/see/try.h
 include/see/type.h
 include/see/value.h
+include/see/version.h
 lib/libsee.a
 lib/libsee.la
 lib/libsee.so
