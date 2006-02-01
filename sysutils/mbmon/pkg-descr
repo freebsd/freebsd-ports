@@ -1,4 +1,4 @@
-This is an X/tty motherboard monitor which supports LM78/79, WINBond
+This is a X/tty motherboard monitor which supports LM78/79, WINBond
 83781D/83782D/83783S, ASUS 991227F, and VIA VT82C686A/B PC-health
 chips via 3 methods: ISA-I/O, SMBus, VIA-direct.
 

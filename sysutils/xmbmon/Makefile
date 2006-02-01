@@ -6,55 +6,20 @@
 #
 
 PORTNAME=	xmbmon
-PORTVERSION=	205
-PORTREVISION=	5
-CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
-.endif
-DISTNAME=	${PORTNAME}${PORTVERSION}
+PORTREVISION=	6
 
-MAINTAINER=	ports@FreeBSD.ORG
-COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
+COMMENT=	A X motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-.if defined(WITHOUT_X11)
-PLIST_SUB=	X11_ONLY="@comment "
-.else
-USE_XLIB=	yes
-PLIST_SUB=	X11_ONLY=""
-.endif
+MASTERDIR=	${.CURDIR}/../mbmon
 
-MAKE_ARGS+=	DOCSDIR='${DOCSDIR}' INSTALL_DATA='${INSTALL_DATA}' PREFIX='${PREFIX}'
+USE_X_PREFIX=	yes
+EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
-MAN1=		xmbmon.1x mbmon.1
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Definable build options"
-	@${ECHO_CMD} "-----------------------"
-	@${ECHO_CMD} "WITHOUT_X11	- Self explanatory"
-	@${ECHO_CMD} "WITHOUT_SMB	- disable smb(4) support"
-	@${ECHO_CMD} ""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's+/usr/share/doc/mbmon+${DOCSDIR}+' ${WRKSRC}/mbmon.1
-.if !defined(WITHOUT_SMB)
-	@${REINPLACE_CMD} -e 's/^DEFS=/&-DSMBUS_IOCTL /' ${WRKSRC}/Makefile.in
-.endif
+PLIST_FILES=	lib/X11/app-defaults/XMBmon
+MAN1=		xmbmon.1x
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}; ${MAKE} ${MAKE_ARGS} install-man install-doc)
-.endif
+	${MKDIR} ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/xmbmon.resources ${PREFIX}/lib/X11/app-defaults/XMBmon
 
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

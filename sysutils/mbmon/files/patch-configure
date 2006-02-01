@@ -1,17 +1,22 @@
-$FreeBSD$
-
---- configure	Fri Aug 13 10:22:18 2004
-+++ configure	Fri Dec 30 23:37:25 2005
-@@ -3486,7 +3486,7 @@
- 
+--- configure.orig	Wed Feb  1 20:34:58 2006
++++ configure	Wed Feb  1 20:35:38 2006
+@@ -3487,7 +3487,6 @@
  
  case "${host}" in
--	i?86-*-freebsd*)
-+	i?86-*-freebsd* | amd64-*-freebsd*)
-   		CC=cc
+ 	i?86-*-freebsd*)
+-  		CC=cc
  		;;
  	i?86-*-linux-*)
-@@ -3946,7 +3946,7 @@
+   		CC=gcc
+@@ -3499,7 +3498,6 @@
+ 		ADDLIBS="-li386"
+ 		;;
+ 	*)
+-  		CC=gcc
+ 		;;
+ esac
+ 
+@@ -3946,7 +3944,7 @@
  done
  
  

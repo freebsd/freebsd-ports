@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Wed Feb  1 20:12:01 2006
++++ Makefile.in	Wed Feb  1 20:12:22 2006
+@@ -27,9 +27,9 @@
+ 
+ #CC=/compat/linux/usr/bin/gcc
+ CC=@CC@
+-CFLAGS=-O3 $(INCLUDES) $(DEFS)
++CFLAGS+=$(INCLUDES) $(DEFS)
+ CFLAGSX=$(CFLAGS) @X_CFLAGS@
+-LDFLAGS=-s
++LDFLAGS=
+ 
+ LINT=lint
+ # LINT=$(CC) -c -Wall -Wshadow -Wpointer-arith
