@@ -25,7 +25,7 @@ Database_Include_MAINTAINER=	vsevolod@FreeBSD.org
 #				  Default: 41.
 # WANT_MYSQL_VER
 #				- Maintainer can set an arbitrary version of MySQL by using it.
-# IGNORE_WITH_MYSQL
+# BROKEN_WITH_MYSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more version of MySQL.
 # MYSQL_VER		- Internal variable for MySQL version.
@@ -43,7 +43,7 @@ Database_Include_MAINTAINER=	vsevolod@FreeBSD.org
 # WANT_PGSQL_VER
 #				- Maintainer can set an arbitrary version of PostgreSQL by
 #				  using it.
-# IGNORE_WITH_PGSQL
+# BROKEN_WITH_PGSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more versions of PostgreSQL.
 ##
@@ -72,7 +72,7 @@ _MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)
 
 .if defined(WANT_MYSQL_VER)
 .if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
-IGNORE=		The port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
+IGNORE=		Cannot install: the port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
 .endif
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
@@ -87,22 +87,22 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 
 .if defined(_MYSQL_VER)
 .if ${_MYSQL_VER} != ${MYSQL_VER}
-IGNORE=	MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
+IGNORE=	Cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
 .endif
 .endif
 
 # And now we are checking if we can use it
 .if defined(MYSQL${MYSQL_VER}_LIBVER)
-.if defined(IGNORE_WITH_MYSQL)
-.	for VER in ${IGNORE_WITH_MYSQL}
+.if defined(BROKEN_WITH_MYSQL)
+.	for VER in ${BROKEN_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-IGNORE=		Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${IGNORE_WITH_MYSQL})
+IGNORE=		Cannot install: doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})
 .		endif
 .	endfor
-.endif # IGNORE_WITH_MYSQL
+.endif # BROKEN_WITH_MYSQL
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .else
-IGNORE=		Unknown MySQL version: ${MYSQL_VER}
+IGNORE=		Cannot install: unknown MySQL version: ${MYSQL_VER}
 .endif # Check for correct libs
 .endif # USE_MYSQL
 
@@ -119,7 +119,7 @@ _PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9
 .endif
 
 .if defined(WANT_PGSQL_VER) && defined(_PGSQL_VER) && ${WANT_PGSQL_VER} != ${_PGSQL_VER}
-IGNORE=		the port wants postgresql${WANT_PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed
+IGNORE=		Cannot install: the port wants postgresql${WANT_PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed
 .endif
 
 .if defined(_PGSQL_VER)
@@ -132,16 +132,16 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 
 # And now we are checking if we can use it
 .if defined(PGSQL${PGSQL_VER}_LIBVER)
-.if defined(IGNORE_WITH_PGSQL)
-.	for VER in ${IGNORE_WITH_PGSQL}
+.if defined(BROKEN_WITH_PGSQL)
+.	for VER in ${BROKEN_WITH_PGSQL}
 .		if (${PGSQL_VER} == "${VER}")
-IGNORE=		Does not work with postgresql${PGSQL_VER}-client PostgresSQL (${IGNORE_WITH_PGSQL} not supported)
+IGNORE=		Cannot install: does not work with postgresql${PGSQL_VER}-client PostgresSQL (${BROKEN_WITH_PGSQL} not supported)
 .		endif
 .	endfor
-.endif # IGNORE_WITH_PGSQL
+.endif # BROKEN_WITH_PGSQL
 LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .else
-IGNORE=		Unknown PostgreSQL version: ${PGSQL_VER}
+IGNORE=		Cannot install: unknown PostgreSQL version: ${PGSQL_VER}
 .endif # Check for correct version
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -206,7 +206,7 @@ _FOUND=	yes
 
 # USE_BDB is specified incorrectly, so mark this as IGNORE
 .if ${_FOUND} == "no"
-IGNORE=	Unknown bdb version: ${USE_BDB}
+IGNORE=	Cannot install: unknown bdb version: ${USE_BDB}
 .endif
 
 .endif # USE_BDB
@@ -226,7 +226,7 @@ LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
 LIB_DEPENDS+=	sqlite.${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 .else
-IGNORE=	Unknown sqlite version: ${_SQLITE_VER}
+IGNORE=	Cannot install: unknown sqlite version: ${_SQLITE_VER}
 .endif
 
 .endif # defined(USE_SQLITE)
