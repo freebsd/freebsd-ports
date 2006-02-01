@@ -557,6 +557,7 @@
     SUBDIR += log4j
     SUBDIR += log4sh
     SUBDIR += looks
+    SUBDIR += lrmi
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
