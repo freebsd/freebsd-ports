@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060201:
+  AFFECTS: users of x11/tilda
+  AUTHOR: barner@FreeBSD.org
+
+  The configuration file syntax has changed. Users of x11/tilda must 
+  delete their old ones and re-create them.
+
 20060131:
   AFFECTS: users of security/stunnel
   AUTHOR: roam@FreeBSD.org
