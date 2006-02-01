@@ -4906,6 +4906,8 @@ kde3-i18n-et	ports/misc/kde3-i18n-et
 kde3-i18n-eu	ports/misc/kde3-i18n-eu
 kde3-i18n-fa	ports/misc/kde3-i18n-fa
 kde3-i18n-fi	ports/misc/kde3-i18n-fi
+kde3-i18n-fy	ports/misc/kde3-i18n-fy
+kde3-i18n-ga	ports/misc/kde3-i18n-ga
 kde3-i18n-gl	ports/misc/kde3-i18n-gl
 kde3-i18n-hi	ports/misc/kde3-i18n-hi
 kde3-i18n-hr	ports/misc/kde3-i18n-hr
@@ -4913,6 +4915,7 @@ kde3-i18n-hsb	ports/misc/kde3-i18n-hsb
 kde3-i18n-id	ports/misc/kde3-i18n-id
 kde3-i18n-is	ports/misc/kde3-i18n-is
 kde3-i18n-it	ports/misc/kde3-i18n-it
+kde3-i18n-km	ports/misc/kde3-i18n-km
 kde3-i18n-lt	ports/misc/kde3-i18n-lt
 kde3-i18n-lv	ports/misc/kde3-i18n-lv
 kde3-i18n-mk	ports/misc/kde3-i18n-mk
@@ -4926,6 +4929,7 @@ kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-nso	ports/misc/kde3-i18n-nso
 kde3-i18n-pa	ports/misc/kde3-i18n-pa
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
+kde3-i18n-rw	ports/misc/kde3-i18n-rw
 kde3-i18n-se	ports/misc/kde3-i18n-se
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
 kde3-i18n-sl	ports/misc/kde3-i18n-sl
@@ -5017,6 +5021,7 @@ kmamerun	ports/emulators/kmamerun
 kmenc15		ports/multimedia/kmenc15
 kmerlin		ports/net-im/kmerlin
 kmess		ports/net-im/kmess
+kmilo		ports/sysutils/kmilo
 kmldonkey	ports/net-p2p/kmldonkey
 kmovisto	ports/science/kmovisto
 kmp		ports/audio/kmp
