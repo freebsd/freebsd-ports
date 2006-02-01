@@ -1,5 +1,4 @@
-etc/rc.d/usermin.sh
 @comment Insert PLIST.lib-usermin here
 @comment -=[ begin PLIST.lib-usermin ]=-
 @comment -=[ end PLIST.lib-usermin ]=-
-@dirrm lib/usermin
+@dirrmtry lib/usermin
