@@ -1,0 +1,25 @@
+--- Makefile.bsd.orig	Tue Jan 31 12:52:42 2006
++++ Makefile.bsd	Tue Jan 31 14:18:23 2006
+@@ -0,0 +1,22 @@
++VERSION=	0.4-bsd2
++PREFIX?=	/usr/local
++CFLAGS+=	-DVERSION=\"${VERSION}\" ${INC}
++LIBS+=	-L${LOCALBASE}/lib -llrmi
++OS!=	uname -s
++.if ${OS}=="NetBSD" || ${OS}=="OpenBSD"
++LIBS+=	-li386
++.endif
++OBJS+=	atitvout.o ati.o vbeinfo.o vbecall.o mach64.o radeon.o
++INC+=	-I${LOCALBASE}/include/lrmi
++PROG=	atitvout
++
++all: ${PROG}
++
++${PROG}: ${OBJS}
++	${CC} ${LDFLAGS} ${OBJS} -o ${PROG} ${LIBS}
++
++install:
++	install -g wheel -o root -m 555 ${PROG} ${PREFIX}/sbin
++
++clean:
++	rm -rf ${OBJS} ${PROG}

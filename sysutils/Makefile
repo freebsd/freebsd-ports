@@ -31,6 +31,7 @@
     SUBDIR += asmon
     SUBDIR += asr-utils
     SUBDIR += ataidle
+    SUBDIR += atitvout
     SUBDIR += autopsy
     SUBDIR += bacula-client
     SUBDIR += bacula-server
