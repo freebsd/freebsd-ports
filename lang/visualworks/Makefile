@@ -77,10 +77,7 @@ DISTFILES+=	DLLC.tar.gz
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_DST)
 DISTFILES+=	DST.tar.gz
 .endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DATABASE)
-DISTFILES+=	Database.tar.gz
-.endif
-.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DOTNET)
+.if make(makesum) || defined(FETCH_ALL) || defined(WITH_DATABASE) || defined(WITH_DOTNET)
 DISTFILES+=	Database.tar.gz
 .endif
 .if make(makesum) || defined(FETCH_ALL) || defined(WITH_GOODIES)
