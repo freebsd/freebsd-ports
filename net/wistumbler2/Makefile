@@ -34,7 +34,15 @@ MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 # was not a FreeBSD version bump specifically for that.  Use the
 # nearest one.
 .if ${OSVERSION} < 501107
-IGNORE=		requires never kernel sources that include /sys/dev/owi/if_ieee80211.h
+IGNORE=		requires newer kernel sources
+.endif
+
+post-patch:
+# Abovementioned header was removed.  Patch for it.
+# This change is already included in the next version of wistumbler2
+.if ${OSVERSION} >= 700006
+	${REINPLACE_CMD} -e 's,dev/owi/if_ieee80211.h,net80211/ieee80211.h,g' \
+		${WRKSRC}/src/stumbler.h
 .endif
 
 pre-everything::
