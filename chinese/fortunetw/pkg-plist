@@ -1,7 +1,13 @@
+share/games/fortune/folksong
+share/games/fortune/folksong.dat
 share/games/fortune/liuyong
 share/games/fortune/liuyong.dat
+share/games/fortune/stephehchow
+share/games/fortune/stephehchow.dat
 share/games/fortune/tangshi
 share/games/fortune/tangshi.dat
+share/games/fortune/xiaoxing
+share/games/fortune/xiaoxing.dat
 share/games/fortune/yijing
 share/games/fortune/yijing.dat
 @dirrm share/games/fortune
