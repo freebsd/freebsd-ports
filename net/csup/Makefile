@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	csup
-PORTVERSION=	20060127
+PORTVERSION=	20060202
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.mu.org/~mux/
 DISTNAME=	${PORTNAME}-snap-${PORTVERSION}
@@ -17,6 +17,7 @@ MAINTAINER=	mux@FreeBSD.org
 COMMENT=	A rewrite of the CVSup file updating client in C
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/csup
+PLIST_FILES=	bin/csup \
+		man/man1/csup.1.gz
 
 .include <bsd.port.mk>
