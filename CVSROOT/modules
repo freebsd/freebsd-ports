@@ -1917,6 +1917,7 @@ dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
 dynamite	ports/archivers/dynamite
+dynamips	ports/emulators/dynamips
 dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
