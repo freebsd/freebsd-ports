@@ -3,6 +3,7 @@
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
+# $Tecnik: ports/x11-fm/endeavour/Makefile,v 1.3 2006/02/01 17:41:32 itetcu Exp $
 #
 
 PORTNAME=	endeavour
@@ -13,11 +14,10 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	A graphical file manager and image viewer aimed towards new users
 
 PLIST_FILES=	bin/endeavour
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
