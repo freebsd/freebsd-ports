@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Class/Data/Accessor.pm
+@dirrmtry %%SITE_PERL%%/Class/Data
+@dirrmtry %%SITE_PERL%%/Class
