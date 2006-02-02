@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060202:
+  AFFECTS: users of textproc/expat2
+  AUTHOR: kuriyama@FreeBSD.org
+
+  Users of expat2 (and its many dependencies) should do the following to
+  properly update expat2 and all of its dependencies:
+
+  portupgrade -rf textproc/expat2
+
 20060201:
   AFFECTS: users of sysutils/xmbmon
   AUTHOR: jylefort@FreeBSD.org
