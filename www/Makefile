@@ -231,6 +231,7 @@
     SUBDIR += linux-mozilla-devel
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
+    SUBDIR += linux-seamonkey
     SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
     SUBDIR += ljpms
