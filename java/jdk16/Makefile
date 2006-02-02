@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -119,6 +119,9 @@ MAKE_ENV+=	ALT_BOOTDIR="${JDK14DIR}" \
 		SKIP_COMPARE_IMAGES="YES"
 .if !defined(WITH_IPV6)
 MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
+.endif
+.if defined(HOTSPOT_BUILD_JOBS)
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 .endif
 
 ALL_TARGET=	all
@@ -311,6 +314,8 @@ do-install:
 	@${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
 	  ${SED} -ne 's#^${JDKIMAGEDIR_G}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .endif
+	${INSTALL_DATA} ${FILESDIR}/cacerts \
+	  ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
 	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
