@@ -1,5 +1,5 @@
---- encoder.php.orig	Mon Dec 27 07:35:20 2004
-+++ encoder.php	Wed Jan 19 08:14:49 2005
+--- encoder.php.orig	Fri May  6 10:26:43 2005
++++ encoder.php	Thu Feb  2 09:39:47 2006
 @@ -1,10 +1,12 @@
 +#!%%LOCALBASE%%/bin/php -f
 +
@@ -16,7 +16,7 @@
    echo "Options:\n";
    echo "\t-s suffix\n\t\tencode files only with following suffix (default is \"php\")\n";
    echo "\t-a\n\t\tencode all files (no by default)\n";
-@@ -16,10 +18,10 @@
+@@ -17,10 +19,10 @@
    echo               "\t\tfile name. If you encode directory or several files at once\n";
    echo               "\t\tthen 'target' specifyes an output directory name.\n";
    echo "\nExamples:\n";
