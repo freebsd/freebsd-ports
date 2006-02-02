@@ -74,6 +74,7 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} $
 				 s|[(]datadir[)]/mime"|(prefix)/share/mime"|g ; \
 				 s|[(]datadir[)]/mime;|(prefix)/share/mime;|g ; \
 				 s|[(]datadir[)]/mime$$|(prefix)/share/mime|g ; \
+				 s|[(]datadir[)]/dbus-1|(prefix)/share/dbus-1|g ; \
 				 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
 				 s|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g ; \
