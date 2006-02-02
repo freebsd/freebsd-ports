@@ -17,11 +17,10 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
-DISTVERSION=	3.95
+DISTVERSION=	4.00
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-localdirs
@@ -31,7 +30,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .ifndef BUILD_NMAPFE
 
 MAN1=		nmap.1
-MANLANG=	"" pt.ISO8859-1 pt_BR.ISO8859-1
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
@@ -53,13 +51,6 @@ post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
 
 post-install:
-	@for lang in pt.ISO8859-1=pt-pt pt_BR.ISO8859-1=pt-br; do \
-		llang="`expr $${lang} : '\([^=]*\)'`"; \
-		elang="`expr $${lang} : '.*=\([^=]*\)'`"; \
-		${MKDIR} ${DESTDIR}${MAN1PREFIX}/man/$${llang}/man1; \
-		${INSTALL_MAN} ${WRKSRC}/docs/man-$${elang}.1 \
-			${DESTDIR}${MAN1PREFIX}/man/$${llang}/man1/nmap.1; \
-	done
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \

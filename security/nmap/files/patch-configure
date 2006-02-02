@@ -1,41 +1,23 @@
---- configure.orig	Mon Oct  6 13:03:26 2003
-+++ configure	Mon Oct  6 13:03:38 2003
-@@ -2637,7 +2637,7 @@
-       CXXFLAGS="$CXXFLAGS -Wall "
-  fi
- # Extract the first word of ""$CXX"", so it can be a program name with args.
--set dummy "$CXX"; ac_word=$2
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -1395,7 +1395,7 @@
+ if test -z "$ac_cv_prog_CC"; then
+   ac_ct_CC=$CC
+   # Extract the first word of "gcc", so it can be a program name with args.
+-set dummy gcc; ac_word=$2
 +set dummy $CXX; ac_word=$2
  echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
- if test "${ac_cv_prog_CXXPROG+set}" = set; then
-@@ -2646,6 +2646,10 @@
-   if test -n "$CXXPROG"; then
-   ac_cv_prog_CXXPROG="$CXXPROG" # Let the user override the test.
- else
-+  case $ac_word in
-+  [\\/]* | ?:[\\/]* ) # absolute path given.
-+  ac_cv_prog_CXXPROG=$ac_word ;;
-+  *)
- as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
- for as_dir in $PATH
- do
-@@ -2658,7 +2662,8 @@
-     break 2
-   fi
- done
--done
-+done ;;
-+esac
- 
-   test -z "$ac_cv_prog_CXXPROG" && ac_cv_prog_CXXPROG=""MISSING""
- fi
-@@ -3505,7 +3510,7 @@
+ if test "${ac_cv_prog_ac_ct_CC+set}" = set; then
+@@ -3552,7 +3552,7 @@
  
  
  
--for ac_header in string.h getopt.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h pwd.h unistd.h
-+for ac_header in string.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h pwd.h unistd.h
+-for ac_header in string.h getopt.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h sys/stat.h fcntl.h termios.h pwd.h unistd.h
++for ac_header in string.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h sys/stat.h fcntl.h termios.h pwd.h unistd.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then

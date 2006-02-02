@@ -12,7 +12,3 @@ bin/nmap
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry man/pt.ISO8859-1/man1
-@dirrmtry man/pt_BR.ISO8859-1/man1
-@dirrmtry man/pt.ISO8859-1
-@dirrmtry man/pt_BR.ISO8859-1
