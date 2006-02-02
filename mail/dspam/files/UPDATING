@@ -1,4 +1,5 @@
 # $FreeBSD$
+# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.3 2006/02/01 02:15:42 itetcu Exp $
 #
 # for each PKGNAME or user option change an entry should be added in this file
 # each entry 
@@ -15,11 +16,24 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
+
 ###########################################################################
-# dspam-3.4.8 (2005/11/17)
+# dspam-3.6.3
 #
 
-fix RUN_DEPENDS for WITH_CGI=on by USE_APACHE=1.3+, nno need to upgrade if
+To manny things to note here, please see mail-dspam-devel/UPDATING and read
+UPGRADING and CHANGELOG and adjust your dspam.conf accordingly
+- you can now have the database drivers dynamically loaded at run time so
+you can select multiple drivers in the OPTIONS screen; see dspam.conf.
+- also algorithm selection is done exclusively via dspam.conf
+- !!! WARNING !!! MaxMessageSize is also applied to ClamAV virus scanning
+
+
+###########################################################################
+# dspam-3.4.8 (2005-11-17)
+#
+
+fix RUN_DEPENDS for WITH_CGI=on by USE_APACHE=1.3+, no need to upgrade if
 already installed
 
 
