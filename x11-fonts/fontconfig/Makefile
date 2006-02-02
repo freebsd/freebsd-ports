@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
-USE_REINPLACE=	yes
 
 MAN1=		fc-match.1
 MAN3=		FcAtomicCreate.3  \
