@@ -12,9 +12,10 @@ CATEGORIES?=	german cad linux
 MAINTAINER=	riggs@rrr.de
 COMMENT=	An easy to use, yet powerful tool for designing printed circuit boards
 
-CONFLICTS=	linux-eagle-*
+CONFLICTS=	linux-eagle-[0-9]*
 
 SLAVE_PORT=	yes
 MASTER_PORT=	cad/linux-eagle
+FILESDIR=	${.CURDIR}/../../${MASTER_PORT}/files
 
 .include "../../cad/linux-eagle/Makefile"
