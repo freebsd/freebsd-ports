@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adesklets
-PORTVERSION=	0.4.12
+PORTVERSION=	0.5.0
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,7 @@ USE_XLIB=	yes
 
 MAN1=		adesklets.1 \
 		adesklets_checkin.1 \
+		adesklets_installer.1 \
 		adesklets_submit.1
 INFO=		adesklets \
 		adesklets_fr
