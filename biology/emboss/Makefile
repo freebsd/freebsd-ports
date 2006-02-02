@@ -22,7 +22,7 @@ BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 
-CONFLICTS=	nss-* qmail-ldap2-* digest-*
+CONFLICTS=	qmail-ldap2-* digest-*
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes

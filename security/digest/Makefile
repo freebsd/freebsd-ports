@@ -15,7 +15,7 @@ MASTER_SITES?=	http://highsecure.ru/
 MAINTAINER?=	vsevolod@FreeBSD.org
 COMMENT?=	Message digest wrapper utility
 
-CONFLICTS?=	nss-[0-9]* emboss-[0-9]* qmail-ldap2-*
+CONFLICTS?=	emboss-[0-9]* qmail-ldap2-*
 
 GNU_CONFIGURE=	yes
 
