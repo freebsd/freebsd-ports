@@ -3,12 +3,11 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/firefox/Makefile,v 1.27 2005/11/28 19:28:49 ahze Exp $
+#   $MCom: ports/www/firefox/Makefile,v 1.29 2006/02/01 02:11:23 ahze Exp $
 #
 
 PORTNAME=	firefox
-DISTVERSION=	1.5
-PORTREVISION=	6
+DISTVERSION=	1.5.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -22,7 +21,6 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
