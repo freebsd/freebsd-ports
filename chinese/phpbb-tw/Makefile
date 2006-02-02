@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	chinese www
-MASTER_SITES=	ftp://bbs.ilc.edu.tw/chinsan/distfiles/ \
-		http://bbs.ilc.edu.tw/~chinsan/ports/phpbb/ \
-		ftp://news.giga.net.tw/chinsan/distfiles/ \
-		http://phpbb-tw.net/phpbb/download/
+MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
+		ftp://chinsan2.twbbs.org/distfiles/
 PKGNAMESUFFIX=	-tw
 DISTNAME=	phpBB-${PORTVERSION}
 
@@ -22,13 +20,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-[0-9]*
 
-USE_ZIP=	yes
+# Get HOSTNAME
+.if exists(/sbin/sysctl)
+HOSTNAME!=	/sbin/sysctl -n kern.hostname
+.else
+HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
+.endif
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
 WWWDOCROOT?=	www/data
-PHPBBURL?=	phpBB2
+PHPBB_URL?=	phpBB2
 WWWOWN?=	www
 WWWGRP?=	www
 #
@@ -40,7 +43,7 @@ WRKSRC=		${WRKDIR}/phpBB2
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 SUB_FILES=	pkg-message
-SUB_LIST=	PHPBBURL="${PHPBBURL}" \
+SUB_LIST=	PHPBB_URL="${PHPBB_URL}" \
 		PHPBBDIR="${PHPBBDIR}" \
 		DELETEFILES="${EXCEPTFILES}"
 PHPBB_VER=	${PORTVERSION:S/.//g:S/.//g}
@@ -49,7 +52,7 @@ PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
 
 # Set custom variables:
 #
-PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
+PHPBBDIR=	${WWWDOCROOT}/${PHPBB_URL}
 PKGOPTS=	${FILESDIR}/pkg-opts
 EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
 		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
@@ -68,7 +71,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
+	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBB_URL}/templates#" \
 	  ${WRKSRC}/docs/*.html
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
 
@@ -92,7 +95,8 @@ post-install:
 	@ cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \! -name \*.bak \
 	  \! -name COPYING -exec ${INSTALL_DATA} {} ${DOCSDIR} \;
 .if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
+	@${SED} -e 's|%%HOSTNAME%%|${HOSTNAME}|; s|%%PHPBB_URL%%|${PHPBB_URL}|' \
+		${PKGMESSAGE}
 .endif
 .endif
 

@@ -50,6 +50,7 @@
 %%PHPBBDIR%%/images/avatars/gallery/index.htm
 %%PHPBBDIR%%/images/avatars/index.htm
 %%PHPBBDIR%%/images/index.htm
+%%PHPBBDIR%%/images/rss.gif
 %%PHPBBDIR%%/images/smiles/icon_arrow.gif
 %%PHPBBDIR%%/images/smiles/icon_biggrin.gif
 %%PHPBBDIR%%/images/smiles/icon_confused.gif
@@ -89,6 +90,8 @@
 %%PHPBBDIR%%/includes/page_header.php
 %%PHPBBDIR%%/includes/page_tail.php
 %%PHPBBDIR%%/includes/prune.php
+%%PHPBBDIR%%/includes/rss_config.php
+%%PHPBBDIR%%/includes/rss_functions.php
 %%PHPBBDIR%%/includes/sessions.php
 %%PHPBBDIR%%/includes/smtp.php
 %%PHPBBDIR%%/includes/sql_parse.php
@@ -167,8 +170,10 @@
 %%PHPBBDIR%%/posting.php
 %%PHPBBDIR%%/privmsg.php
 %%PHPBBDIR%%/profile.php
+%%PHPBBDIR%%/rss.php
 %%PHPBBDIR%%/search.php
 %%PHPBBDIR%%/templates/index.htm
+%%PHPBBDIR%%/templates/rss.xsl
 %%PHPBBDIR%%/templates/subSilver/admin/admin_message_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/auth_forum_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/auth_select_body.tpl
@@ -209,6 +214,7 @@
 %%PHPBBDIR%%/templates/subSilver/admin/words_edit_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/words_list_body.tpl
 %%PHPBBDIR%%/templates/subSilver/agreement.tpl
+%%PHPBBDIR%%/templates/subSilver/atom_body.tpl
 %%PHPBBDIR%%/templates/subSilver/bbcode.tpl
 %%PHPBBDIR%%/templates/subSilver/confirm_body.tpl
 %%PHPBBDIR%%/templates/subSilver/error_body.tpl
@@ -217,6 +223,7 @@
 %%PHPBBDIR%%/templates/subSilver/groupcp_info_body.tpl
 %%PHPBBDIR%%/templates/subSilver/groupcp_pending_info.tpl
 %%PHPBBDIR%%/templates/subSilver/groupcp_user_body.tpl
+%%PHPBBDIR%%/templates/subSilver/images/Thumbs.db
 %%PHPBBDIR%%/templates/subSilver/images/cellpic.gif
 %%PHPBBDIR%%/templates/subSilver/images/cellpic1.gif
 %%PHPBBDIR%%/templates/subSilver/images/cellpic2.jpg
@@ -266,6 +273,7 @@
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/post.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply-locked.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply.gif
+%%PHPBBDIR%%/templates/subSilver/images/lang_english/Thumbs.db
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_aim.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_edit.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_email.gif
@@ -324,6 +332,7 @@
 %%PHPBBDIR%%/templates/subSilver/profile_send_email.tpl
 %%PHPBBDIR%%/templates/subSilver/profile_send_pass.tpl
 %%PHPBBDIR%%/templates/subSilver/profile_view_body.tpl
+%%PHPBBDIR%%/templates/subSilver/rss_body.tpl
 %%PHPBBDIR%%/templates/subSilver/search_body.tpl
 %%PHPBBDIR%%/templates/subSilver/search_results_posts.tpl
 %%PHPBBDIR%%/templates/subSilver/search_results_topics.tpl

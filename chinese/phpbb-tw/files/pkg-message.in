@@ -11,16 +11,18 @@ installation procedures may be found in:
 
   %%DOCSDIR%%/README.html
 
+
 Once these steps have been taken, you may connect to the following URL to
 configure your installation of phpBB2:
 
-  http://localhost/%%PHPBBURL%%/
+  http://%%HOSTNAME%%/%%PHPBB_URL%%
 
-After configuring phpBB2 and ensuring that it is operational, you MUST
-delete the following files manually for security purposes from
-%%PREFIX%%/%%PHPBBDIR%%:
 
-  %%DELETEFILES%%
+After configuring phpBB2 and ensuring that it is operational, you **MUST**
+delete the following files manually for security purposes:
+
+  # rm -rf %%PREFIX%%/%%PHPBBDIR%%/install
+
 
 Duplicates of these files have been installed to %%DATADIR%%.
 %%DATADIR%%/contrib contains contributed software for phpBB2.
