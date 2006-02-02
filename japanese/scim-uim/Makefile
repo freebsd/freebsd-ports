@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
@@ -17,10 +17,8 @@ MAINTAINER=	s_yanagita@ybb.ne.jp
 COMMENT=	SCIM IMEngine module using UIM input method library
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	uim.0:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Broken dependency
 
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes
