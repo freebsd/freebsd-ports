@@ -7,7 +7,7 @@
 
 PORTNAME=	dynamips
 PORTVERSION=	0.2.3b
-CATEGORIES=	sysutils
+CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
 MAINTAINER=	fjoe@FreeBSD.org
