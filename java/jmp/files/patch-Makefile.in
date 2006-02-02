@@ -5,9 +5,3 @@ $FreeBSD$
 @@ -332 +332 @@
 -	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
 +	  inst=$$inst.$$ext; \
-@@ -705 +705 @@
--	javac -sourcepath ${top_srcdir}/java -d . $<
-+	${JAVAC} -sourcepath ${top_srcdir}/java -d . $<
-@@ -710 +710 @@
--	javah -classpath . jmp.JMPController
-+	${JAVAH} -classpath . jmp.JMPController
