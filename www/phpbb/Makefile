@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	liukang@bjut.edu.cn
+MAINTAINER=	liukang@cn.freebsd.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
