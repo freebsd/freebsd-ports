@@ -1,33 +1,18 @@
---- configure.orig	Mon Nov 28 13:42:56 2005
-+++ configure	Mon Nov 28 13:44:13 2005
-@@ -22409,7 +22409,7 @@
+--- configure.orig	Thu Feb  2 02:03:39 2006
++++ configure	Thu Feb  2 02:04:34 2006
+@@ -21318,9 +21318,9 @@
  	enable_hal02=yes
  fi
- 	  fi
--	  if test x$enable_hal05 == xyes || test x$enable_hal02 == xyes; then
-+	  if test x$enable_hal05 = xyes || test x$enable_hal02 = xyes; then
-   	    enable_hal=yes
- 	  else
- 	    enable_hal=no
-@@ -22426,7 +22426,7 @@
- _ACEOF
- 
- 	     use_ipod=yes
--	     if test x$enable_hal05 == xyes; then
-+	     if test x$enable_hal05 = xyes; then
+   fi
+-  if test x$enable_hal05 == xyes || test x$enable_hal02 == xyes; then
++  if test x$enable_hal05 = xyes || test x$enable_hal02 = xyes; then
+       enable_hal=yes
+-      if test x$enable_hal05 == xyes; then
++      if test x$enable_hal05 = xyes; then
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_HAL_0_5 1
-@@ -22748,7 +22748,7 @@
- RHYTHMBOX_LIBS="$RHYTHMBOX_LIBS $SOUNDSYSTEM_LIBS"
- 
- 
--  if test "x$GST_INSPECT" == "x"; then
-+  if test "x$GST_INSPECT" = "x"; then
-     # Extract the first word of "gst-inspect-0.8", so it can be a program name with args.
- set dummy gst-inspect-0.8; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -23002,7 +23002,7 @@
+@@ -22121,7 +22121,7 @@
  	have_avahi_05=yes
  fi
  fi
@@ -36,7 +21,7 @@
     have_avahi=yes
  else
     have_avahi=no
-@@ -23089,7 +23089,7 @@
+@@ -22208,7 +22208,7 @@
  
        { echo "$as_me:$LINENO: Detected Avahi, using it for mDNS/DNS-SD" >&5
  echo "$as_me: Detected Avahi, using it for mDNS/DNS-SD" >&6;}
@@ -45,7 +30,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_AVAHI_0_6 1
-@@ -23156,7 +23156,7 @@
+@@ -22275,7 +22275,7 @@
     { echo "$as_me:$LINENO: Using Avahi for mDNS/DNS-SD" >&5
  echo "$as_me: Using Avahi for mDNS/DNS-SD" >&6;}
  
@@ -54,7 +39,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_AVAHI_0_6 1
-@@ -23811,7 +23811,7 @@
+@@ -23069,7 +23069,7 @@
  
  
  if test x"$x_includes" != x"NONE" && test -n "$x_includes" ; then

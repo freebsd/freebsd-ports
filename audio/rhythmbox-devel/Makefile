@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	0.9.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -38,7 +37,8 @@ GCONF_SCHEMAS=	rhythmbox.schemas
 
 OPTIONS=	IPOD "Enable iPod support" off \
 		DAAP "Enable iTunes music sharing" off \
-		FAAD "Enable FAAD decoder support" off
+		FAAD "Enable FAAD decoder support" off \
+		NOTIFY "Enable libnotify support" on
 
 .include <bsd.port.pre.mk>
 
@@ -73,6 +73,12 @@ LIB_DEPENDS+=		soup-2.2.8:${PORTSDIR}/devel/libsoup \
 LIB_DEPENDS+=		howl.0:${PORTSDIR}/net/howl
 .endif
 CONFIGURE_ARGS+=	--disable-daap
+.endif
+
+.if !defined(WITHOUT_NOTIFY)
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+.else
+CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
 pre-everything::
