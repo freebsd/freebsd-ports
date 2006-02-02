@@ -1,0 +1,68 @@
+--- Makefile.orig	Mon Jan 30 19:09:47 2006
++++ Makefile	Tue Jan 31 01:38:09 2006
+@@ -3,7 +3,7 @@
+ 
+ # Replace x86 by amd64 for a build on x86_64.
+ # Use "nojit" for architectures that are not x86 or x86_64.
+-ARCH=x86
++DYNAMIPS_ARCH=x86
+ 
+ # Change this to 0 if your system doesn't support RFC 2553 extensions
+ HAS_RFC2553=1
+@@ -11,21 +11,21 @@
+ # Current dynamips release
+ VERSION=0.2.3b
+ 
+-CC=gcc
++CC?=gcc
+ LD=ld
+ RM=rm
+ TAR=tar
+ CP=cp
+ LEX=flex
+-ARCH_INC_FILE=\"$(ARCH)_trans.h\"
+-CFLAGS=-g -Wall -O3 -fomit-frame-pointer -DJIT_ARCH=\"$(ARCH)\" \
++ARCH_INC_FILE=\"$(DYNAMIPS_ARCH)_trans.h\"
++CFLAGS+=-g -Wall -O3 -fomit-frame-pointer -DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" \
+ 	-DARCH_INC_FILE=$(ARCH_INC_FILE) \
+ 	-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE \
+ 	-DHAS_RFC2553=$(HAS_RFC2553)
+ 
+ ifeq ($(shell uname), FreeBSD)
+-   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf
+-   LIBS=-L/usr/local/lib -L. -lelf -pthread
++   CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf $(PTHREAD_CFLAGS)
++   LIBS=-L$(LOCALBASE)/lib -lelf $(PTHREAD_LIBS)
+ else
+ ifeq ($(shell uname -o), Cygwin)
+    CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf
+@@ -61,17 +61,17 @@
+ #SOURCES += profiler.c
+ #CFLAGS += -p -DPROFILE -DPROFILE_FILE=\"$(PROG).profile\"
+ 
+-ifeq ($(ARCH),x86)
++ifeq ($(DYNAMIPS_ARCH),x86)
+ HDR += x86-codegen.h x86_trans.h
+ SOURCES += x86_trans.c
+ endif
+ 
+-ifeq ($(ARCH),amd64)
++ifeq ($(DYNAMIPS_ARCH),amd64)
+ HDR += x86-codegen.h amd64-codegen.h amd64_trans.h
+ SOURCES += amd64_trans.c
+ endif
+ 
+-ifeq ($(ARCH),nojit)
++ifeq ($(DYNAMIPS_ARCH),nojit)
+ HDR += nojit_trans.h
+ SOURCES += nojit_trans.c
+ endif
+@@ -101,7 +101,7 @@
+ 
+ .PHONY: microcode
+ microcode: 
+-	@$(CC) -Wall -o rom2c rom2c.c $(LIBS)
++	@$(CC) -Wall $(CFLAGS) -o rom2c rom2c.c $(LIBS)
+ 	@./rom2c microcode microcode_dump.inc
+ 
+ .PHONY: clean
