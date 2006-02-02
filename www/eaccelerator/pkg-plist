@@ -1,4 +1,4 @@
-bin/encoder
+%%ENCODER%%bin/encoder
 lib/php/%%PHP_EXT_DIR%%/eaccelerator.so
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%EXAMPLESDIR%%/eaccelerator.ini
