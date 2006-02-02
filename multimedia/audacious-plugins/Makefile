@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/
 DISTNAME=	audacious-${PORTVERSION}
@@ -34,15 +33,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		audacious.1
 
-PORTDOCS=	README AUTHORS ChangeLog NEWS FAQ
+PORTDOCS=	README AUTHORS ChangeLog NEWS
 
-INPUT_PLUGINS=	cdaudio,mpg123,wav,tonegen,wma,console
+INPUT_PLUGINS=	cdaudio,mpg123,wav,tonegen,wma,console,sexypsf
 OUTPUT_PLUGINS=	OSS,disk_writer,crossfade
 VISUALIZATION_PLUGINS=	blur_scope
 
 OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		FLAC	"Enable flac input" on \
 		MODPLUG	"Enable modplug input" off \
+		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
 		VISUAL  "Enable libvisual plugin" off \
 		ID3V2	"Enable id3v2 editing" off \
@@ -81,6 +81,16 @@ LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 .else
 PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=	--disable-modplug
+.endif
+
+.if !defined(WITHOUT_MPC)
+INPUT_PLUGINS+=	musepack
+PLIST_SUB+=	MPCPLUGIN=""
+LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec \
+	tag.5:${PORTSDIR}/audio/taglib
+.else
+PLIST_SUB+=	MPCPLUGIN="@comment "
+CONFIGURE_ARGS+=	--disable-musepack
 .endif
 
 .if defined(WITH_ESOUND)
@@ -149,7 +159,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README AUTHORS ChangeLog NEWS FAQ
+.for i in README AUTHORS ChangeLog NEWS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
