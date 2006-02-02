@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.248
+PORTVERSION=	3.259
 PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
@@ -21,15 +21,26 @@ CONFLICTS=	iozone-2.*
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 
 MAKEFILE=	makefile
-MAKE_ARGS=	freebsd
+MAKE_ARGS=	freebsd	CFLAGS="${CFLAGS}"
 ALL_TARGET=
 
 MAN1=		iozone.1
 PLIST_FILES=	bin/iozone
+
+OPTIONS=	THREADS "Enable threading (uses pthreads)"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined (WITH_THREADS)
+CFLAGS+=	-pthread
+MAKE_ENV=	LDFLAGS=-lpthread
+.else
+CFLAGS+=-DNO_THREADS
+.endif
 
 do-install:
 	${STRIP_CMD} ${WRKSRC}/iozone
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/docs/iozone.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

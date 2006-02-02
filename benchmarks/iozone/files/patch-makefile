@@ -1,0 +1,32 @@
+--- makefile.orig	Fri Jan 20 09:02:11 2006
++++ makefile	Wed Feb  1 20:59:35 2006
+@@ -9,12 +9,12 @@
+ #		convex, FreeBSD, OpenBSD, OSFV3, OSFV4, OSFV5, SCO
+ #		SCO_Unixware_gcc,NetBSD,TRU64, Mac OS X
+ 
+-CC	= cc
++#CC	= cc
+ C89	= c89
+ GCC	= gcc
+ CCS	= /usr/ccs/bin/cc
+ NACC	= /opt/ansic/bin/cc
+-CFLAGS	=
++#CFLAGS	=
+ 
+ all:  
+ 	@echo ""
+@@ -914,10 +914,10 @@
+ 	@echo ""
+ 	@echo "Build iozone for FreeBSD"
+ 	@echo ""
+-	$(CC) -c ${CFLAGS}  -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
+-		-DNAME='"freebsd"' -DSHARED_MEM $(CFLAGS) iozone.c -o iozone_freebsd.o
+-	$(CC) -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
+-		-DSHARED_MEM $(CFLAGS) libbif.c -o libbif.o
++	${CC} -c ${CFLAGS}  -Dunix -Dbsd4_2 -DHAVE_ANSIC_C \
++		-DNAME='"freebsd"' -DSHARED_MEM iozone.c -o iozone_freebsd.o
++	${CC} -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C \
++		-DSHARED_MEM libbif.c -o libbif.o
+ 
+ iozone_macosx.o:	iozone.c libbif.c
+ 	@echo ""
