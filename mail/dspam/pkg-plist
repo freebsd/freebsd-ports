@@ -1,3 +1,7 @@
+%%HASH%%bin/cssstat
+%%HASH%%bin/csscompress
+%%HASH%%bin/cssclean
+%%HASH%%bin/cssconvert
 bin/dspam
 bin/dspamc
 bin/dspam_2sql
@@ -11,6 +15,7 @@ bin/dspam_logrotate
 bin/dspam_merge
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
+%%TRAIN_SCRIPT%%bin/dspam_train
 @unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
 include/dspam/buffer.h
@@ -24,37 +29,50 @@ include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
 include/dspam/storage_driver.h
+include/dspam/tokenizer.h
 lib/libdspam.a
 lib/libdspam.so
-lib/libdspam.so.6
+lib/libdspam.so.7
+%%DYNAMIC%%%%HASH%%lib/libhash_drv.so
+%%DYNAMIC%%%%HASH%%lib/libhash_drv.so.7
+%%DYNAMIC%%%%HASH%%lib/libhash_drv.a
+%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.so
+%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.so.7
+%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.a
+%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.so
+%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.so.7
+%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.a
+%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.so
+%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.so.7
+%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.a
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/appliance.txt
 %%PORTDOCS%%%%DOCSDIR%%/courier.txt
 %%PORTDOCS%%%%DOCSDIR%%/exim.txt
+%%PORTDOCS%%%%DOCSDIR%%/markov.txt
 %%PORTDOCS%%%%DOCSDIR%%/mysql_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/ora_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/pgsql_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/pop3filter.txt
 %%PORTDOCS%%%%DOCSDIR%%/postfix.txt
 %%PORTDOCS%%%%DOCSDIR%%/qmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/relay.txt
 %%PORTDOCS%%%%DOCSDIR%%/sendmail.txt
 %%PORTDOCS%%%%DOCSDIR%%/sqlite_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPDATING
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/310_to_320.my.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/neural.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/purge-4.1.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%
@@ -63,7 +81,8 @@ libdata/pkgconfig/dspam.pc
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%
-%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge.sql
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
 %%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
 %%SQLITE%%@dirrm %%EXAMPLESDIR%%
 %%CGI%%www/vhosts/dspam/admins.sample
