@@ -7,7 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -18,27 +18,28 @@ COMMENT=	High-performance distributed memory object cache system
 
 LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
 
-USE_REINPLACE=	YES
+USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
-
-CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-prefix=
+CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		memcached.1
 
-DOCS_LIST=	memory_management.txt protocol.txt
+PLIST_FILES=	bin/memcached
 
-USE_RC_SUBR=	memcached.sh
+PORTDOCS=	memory_management.txt protocol.txt
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${MAN1:S!^!${WRKSRC}/doc/!} ${MAN1PREFIX}/man/man1
-.ifndef(NOPORTDOCS)
+	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS_LIST:S!^!${WRKSRC}/doc/!} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
