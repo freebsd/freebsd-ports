@@ -10,7 +10,7 @@ PORTVERSION=	2.4ME
 CATEGORIES=	russian mail
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tune Elm with MIME for KOI8-R defaults
 
 RUN_DEPENDS+=	elm:${PORTSDIR}/mail/elm+ME
