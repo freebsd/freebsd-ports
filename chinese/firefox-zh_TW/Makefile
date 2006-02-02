@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.5b
+PORTVERSION=	1.5c
 CATEGORIES=	chinese www
-MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/firefox/ \
-		ftp://bbs.ilc.edu.tw/chinsan/distfiles/
+MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/firefox/ \
+		ftp://chinsan2.twbbs.org/distfiles/firefox/
 PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Firefox Traditional Chinese(zh-TW) Language Pack
 
-BUILD_DEPENDS=	${X11BASE}/lib/${FIREFOX}/regxpcom:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
-
-BROKEN=		Incorrect pkg-plist
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 FIREFOX=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${FIREFOX}
 FIREFOX_HOME=	${PREFIX}/lib/${FIREFOX}
-
 PLIST_SUB=	FIREFOX=${FIREFOX}
 
 .include <bsd.port.pre.mk>
@@ -34,9 +33,8 @@ PLIST_SUB=	FIREFOX=${FIREFOX}
 do-install:
 	@${ECHO_MSG} "===> Backup setting files..."
 	(cd ${FIREFOX_HOME}; \
-	${CP} -f browserconfig.properties browserconfig.properties.orig)
-	(cd ${FIREFOX_HOME}/chrome; \
-	${CP} -f en-US.manifest en-US.manifest.orig)
+	${CP} -f browserconfig.properties browserconfig.properties.orig; \
+	${CP} -f updater.ini updater.ini.orig)
 	(cd ${FIREFOX_HOME}/defaults/pref; \
 	${CP} -f firefox-l10n.js firefox-l10n.js.orig)
 	(cd ${FIREFOX_HOME}/defaults/profile; \
