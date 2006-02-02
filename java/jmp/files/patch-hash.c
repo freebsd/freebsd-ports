@@ -1,0 +1,7 @@
+$FreeBSD$
+
+--- hash.c.orig	Sun Jan 29 16:50:47 2006
++++ hash.c	Sun Jan 29 17:03:47 2006
+@@ -103 +103 @@
+-	PTHREAD_MUTEXATTR_SETTYPE (attr_mutexattr, PTHREAD_MUTEX_RECURSIVE_NP);
++	PTHREAD_MUTEXATTR_SETTYPE (attr_mutexattr, PTHREAD_MUTEX_RECURSIVE);
