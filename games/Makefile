@@ -466,6 +466,7 @@
     SUBDIR += powwow
     SUBDIR += ppracer
     SUBDIR += prboom
+    SUBDIR += primateplunge
     SUBDIR += ptkei
     SUBDIR += pvpgn
     SUBDIR += py-sgflib
