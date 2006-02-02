@@ -42,6 +42,8 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl
 
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Xext-xvmc.c \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-os-xprintf.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-servermd.h \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c
 
