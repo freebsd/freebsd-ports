@@ -1,31 +1,3 @@
-@exec mkdir -p %D/lib/xemacs/site-packages/etc
-@dirrmtry lib/xemacs/site-packages/etc
-@exec mkdir -p %D/lib/xemacs/site-packages/info
-@dirrmtry lib/xemacs/site-packages/info
-@exec mkdir -p %D/lib/xemacs/site-packages/man
-@dirrmtry lib/xemacs/site-packages/man
-@exec mkdir -p %D/lib/xemacs/site-packages/pkginfo
-@dirrmtry lib/xemacs/site-packages/pkginfo
-@dirrmtry lib/xemacs/site-packages
-@exec mkdir -p %D/lib/xemacs/mule-packages/etc
-@dirrmtry lib/xemacs/mule-packages/etc
-@exec mkdir -p %D/lib/xemacs/mule-packages/info
-@dirrmtry lib/xemacs/mule-packages/info
-@exec mkdir -p %D/lib/xemacs/mule-packages/man
-@dirrmtry lib/xemacs/mule-packages/man
-@exec mkdir -p %D/lib/xemacs/mule-packages/pkginfo
-@dirrmtry lib/xemacs/mule-packages/pkginfo
-@dirrmtry lib/xemacs/mule-packages
-@exec mkdir -p %D/lib/xemacs/xemacs-packages/etc
-@dirrmtry lib/xemacs/xemacs-packages/etc
-@exec mkdir -p %D/lib/xemacs/xemacs-packages/info
-@dirrmtry lib/xemacs/xemacs-packages/info
-@exec mkdir -p %D/lib/xemacs/xemacs-packages/man
-@dirrmtry lib/xemacs/xemacs-packages/man
-@exec mkdir -p %D/lib/xemacs/xemacs-packages/pkginfo
-@dirrmtry lib/xemacs/xemacs-packages/pkginfo
-@dirrmtry lib/xemacs/xemacs-packages
-@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 bin/b2m
 bin/ctags
 bin/ellcc
@@ -37,6 +9,7 @@ bin/ootags
 bin/rcs-checkin
 bin/xemacs
 bin/xemacs-%%XEMACS_VER%%
+@exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/COPYING
 lib/xemacs-%%XEMACS_VER%%/etc/ChangeLog
 lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.EBNF
@@ -1480,8 +1453,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/unicode/other
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/unicode/mule-ucs
@@ -1497,4 +1468,9 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom/example-themes
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
+@dirrmtry lib/xemacs/site-modules
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrmtry lib/xemacs-%%XEMACS_VER%%
