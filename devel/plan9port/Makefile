@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20060127
+PORTVERSION=	20060131
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -15,13 +15,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
-RESTRICTED=	"Redistribution is not permitted"
+RESTRICTED=	Redistribution is not permitted
 USE_PERL5=	YES
 USE_XLIB=	YES
 WRKSRC=		${WRKDIR}/plan9
 PLIST=		${WRKDIR}/.PLIST
 SUB_FILES=	pkg-message
-USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 ONLY_FOR_ARCHS=	i386
 
