@@ -32,8 +32,6 @@ MAN3=		App::Packer::PAR.3 PAR.3 \
 		PAR::Filter::Obfuscate.3 PAR::Filter::PatchContent.3 \
 		PAR::Filter::PodStrip.3 PAR::Heavy.3 PAR::Tutorial.3
 
-CONFLICTS=	nss-3.*
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
