@@ -7,7 +7,7 @@
 
 PORTNAME=	yabb
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,7 @@ DISTNAME=	YaBB_${PORTVERSION}
 MAINTAINER=	infofarmer@gmail.com
 COMMENT=	The original free open-source forum written in Perl
 
-BROKEN=		Left over files
-
+NO_PACKAGE=	complicated (de)installation paradigm
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
@@ -29,6 +28,7 @@ DIR=		${PREFIX}/${YABBDIR}
 WDIR=		${WRKDIR}/public_html/yabbfiles
 WCGI=		${WRKDIR}/cgi-bin/yabb2
 
+RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
 RUN_DEPENDS+=	${SITE_PERL}/CGI/Util.pm:${PORTSDIR}/www/p5-CGI.pm \
 	${SITE_PERL}/mach/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 	${SITE_PERL}/mach/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -51,12 +51,10 @@ post-extract:
 do-patch:
 	@${SED} -i.tmp -e 's/Upload:://' ${WCGI}/Sources/Subs.pl && \
 	${RM} -f ${WCGI}/Sources/Subs.pl.tmp
-.ifdef WITH_UTF8
-.	for _I in ${ISOFILES}
+.for _I in ${ISOFILES}
 	@${SED} -i.tmp -e 's/[iI][sS][oO]-8859-1/UTF-8/' ${WCGI}/${_I} && \
 	${RM} -f ${WCGI}/${_I}.tmp
-.	endfor
-.endif
+.endfor
 
 do-install:
 	@${INSTALL} -d ${DIR}
@@ -64,13 +62,18 @@ do-install:
 	@${CP} -npR ${WDIR}/ ${DIR}/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}
 	@${CHMOD} a=rx ${DIR}
+	@${CP} -fpR ${FILESDIR}/checksum.sha256 ${DIR}/
 	@${CAT} ${PKGMESSAGE}
 
 pre-clean:
-	@${CHMOD} -R =rwX ${WRKDIR}/*
+	@${CHMOD} -Rf +rwX ${WRKDIR}/* 2>/dev/null || true
 
 # Maintainer section
 #
 #grep -l 8859 `find yabb -type f`
+#echo '@unexec [ k`sha256 -q %D/%%YABBDIR%%/'$i'` = k`grep '\'$i\'' %D/%%YABBDIR%%/checksum.sha256 | cut -c-64` ] && rm -f %D/%%YABBDIR%%/'$i
+#echo '@unexec i='\'$i\'' ; if [ k`sha256 -q %D/%%YABBDIR%%/$i` = k`grep "$i" %D/%%YABBDIR%%/checksum.sha256 | cut -c-64` ] && rm -f %D/%%YABBDIR%%/$i'
+#echo '@unexec i='\'$i\''; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi'
+#@cd ${DIR} && ${SHA256} -r `${FIND} * -not -type d` > checksum.sha256
 
 .include <bsd.port.mk>

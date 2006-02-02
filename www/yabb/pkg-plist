@@ -512,6 +512,37 @@
 %%YABBDIR%%/fader.js
 %%YABBDIR%%/post.js
 %%YABBDIR%%/ubbc.js
+@unexec i='Boards/test.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/announcements.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/forum.control'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/forum.master'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/forum.totals'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/general.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Boards/recycle.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/members.ttl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.imstore'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.ims'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.log'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.outbox'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.rlog'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.vars'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberinfo.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberlist.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1131465600.ctb'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1131465600.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Paths.pl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep  "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/default.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Admin/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu0.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu1.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu2.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+%%YABBDIR%%/checksum.sha256
 @dirrmtry %%YABBDIR%%/Templates/default
 @dirrmtry %%YABBDIR%%/Templates/Admin/default
 @dirrmtry %%YABBDIR%%/Templates/Admin
@@ -538,7 +569,8 @@
 @dirrmtry %%YABBDIR%%/ModImages
 @dirrmtry %%YABBDIR%%/Buttons/English
 @dirrmtry %%YABBDIR%%/Buttons
-@unexec echo "================================================"
-@unexec echo "Note: %D/%%YABBDIR%% was not deleted."
-@unexec echo "Backup your data and remove it yourself, please."
-@unexec echo "================================================"
+@dirrmtry %%YABBDIR%%
+@unexec if [ -d %D/%%YABBDIR%% ]; then echo "================================================"; fi
+@unexec if [ -d %D/%%YABBDIR%% ]; then echo "Note: %D/%%YABBDIR%% was not deleted."           ; fi
+@unexec if [ -d %D/%%YABBDIR%% ]; then echo "Backup your data and remove it yourself, please."; fi
+@unexec if [ -d %D/%%YABBDIR%% ]; then echo "================================================"; fi
