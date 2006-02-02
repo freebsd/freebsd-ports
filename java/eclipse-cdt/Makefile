@@ -10,7 +10,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/eclipse3.1/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	org.eclipse.cdt.sdk-${PORTVERSION}-linux.${ECLIPSE_ARCH}
+DISTNAME=	org.eclipse.cdt.sdk-${PORTVERSION}-linux.x86
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -31,6 +31,8 @@ ECLIPSE_OS=	freebsd
 ECLIPSE_ARCH=	amd64
 .else
 ECLIPSE_ARCH=	x86
+PLIST_FILES+=	eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libpty.so \
+		eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libspawner.so
 .endif
 
 MAKE_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
@@ -44,8 +46,10 @@ do-build:
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.core.freebsd_${PORTVERSION}/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.core_${PORTVERSION}/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_${PORTVERSION}/*.orig
+.if (${ARCH} == "i386")
 		@(cd ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_${PORTVERSION}/src/org.eclipse.cdt.core.freebsd_${PORTVERSION}/library; \
 		${SETENV} ${MAKE_ENV} ${GMAKE})
+.endif
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse

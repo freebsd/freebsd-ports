@@ -531,8 +531,6 @@ eclipse/plugins/org.eclipse.cdt.core_3.0.1/cdtcore.jar
 eclipse/plugins/org.eclipse.cdt.core_3.0.1/plugin.properties
 eclipse/plugins/org.eclipse.cdt.core_3.0.1/about.html
 eclipse/plugins/org.eclipse.cdt.core_3.0.1/plugin.xml
-eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libspawner.so
-eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libpty.so
 eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/about.html
 eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/fragment.xml
 eclipse/plugins/org.eclipse.cdt.core.freebsd_3.0.1/cdt_linux.jar
