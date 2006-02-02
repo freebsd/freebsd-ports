@@ -735,6 +735,7 @@
     SUBDIR += p5-Class-C3
     SUBDIR += p5-Class-Container
     SUBDIR += p5-Class-Contract
+    SUBDIR += p5-Class-Data-Accessor
     SUBDIR += p5-Class-Data-Inheritable
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Default
