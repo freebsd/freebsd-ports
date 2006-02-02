@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	chinese
-MASTER_SITES=	http://bbs.ilc.edu.tw/~chinsan/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/auto-tw-l10n/
+MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
+		ftp://chinsan2.twbbs.org/distfiles/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chinsan.tw@gmail.com
