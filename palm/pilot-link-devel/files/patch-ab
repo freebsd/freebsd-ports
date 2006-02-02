@@ -1,0 +1,16 @@
+--- configure.orig	Tue Jul  1 14:08:40 2003
++++ configure	Wed Dec 17 23:43:55 2003
+@@ -1746,11 +1746,11 @@
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
+-test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
++INSTALL_PROGRAM='${INSTALL}'
+ 
+ test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
+ 
+-test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
++INSTALL_DATA='${INSTALL} -m 644'
+ 
+ echo "$as_me:$LINENO: checking whether build environment is sane" >&5
+ echo $ECHO_N "checking whether build environment is sane... $ECHO_C" >&6
