@@ -403,13 +403,17 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/sorted-doc
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/vcdiff
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/wakeup
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/yow
+@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
+@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
+@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
 @exec ln -sf ja %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 @unexec rm -f %D/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.eucJP
 @dirrmtry lib/xemacs/mule-packages/etc/app-defaults
 @dirrmtry lib/xemacs/mule-packages/etc
 @dirrmtry lib/xemacs/mule-packages
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs/site-modules
+@dirrmtry lib/xemacs
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
+@dirrmtry lib/xemacs-%%XEMACS_VER%%
