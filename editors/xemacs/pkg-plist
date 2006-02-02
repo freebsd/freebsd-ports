@@ -7,10 +7,9 @@ bin/gnuclient
 bin/gnudoit
 bin/ootags
 bin/rcs-checkin
+bin/xemacs
 bin/xemacs-%%XEMACS_VER%%
 %%PDUMP%%bin/xemacs-%%XEMACS_VER%%.dmp
-@exec ln -s %D/%F %B/xemacs
-@unexec rm %B/xemacs
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
 lib/xemacs-%%XEMACS_VER%%/etc/CHARSETS
@@ -1249,8 +1248,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/toolbar
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/tests/external-widget
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/tests
@@ -1261,6 +1258,9 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom/example-themes
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
-@dirrm lib/xemacs-%%XEMACS_VER%%
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
+@dirrmtry lib/xemacs-%%XEMACS_VER%%
 @dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs/site-modules
 @dirrmtry lib/xemacs
