@@ -127,27 +127,27 @@ while (<>) {
 # For each port perform the mapping between directory and pkgnames.
 foreach $name (keys %index) {
     my $pkg = $index{$name};
-  # first the build dependencies
+  # first the extract dependencies
     if (@{$pkg->{edep}}) {
 	my @edep = map { by_path($_, $name) } @{$pkg->{edep}};
 	$pkg->{edep} = \@edep;
     }
-  #
+  # then the patch dependencies
     if (@{$pkg->{pdep}}) {
 	my @pdep = map { by_path($_, $name) } @{$pkg->{pdep}};
 	$pkg->{pdep} = \@pdep;
     }
-  # first the build dependencies
+  # then the fetch dependencies
     if (@{$pkg->{fdep}}) {
 	my @fdep = map { by_path($_, $name) } @{$pkg->{fdep}};
 	$pkg->{fdep} = \@fdep;
     }
-  # first the build dependencies
+  # then the build dependencies
     if (@{$pkg->{bdep}}) {
 	my @bdep = map { by_path($_, $name) } @{$pkg->{bdep}};
 	$pkg->{bdep} = \@bdep;
     }
-  # first the build dependencies
+  # then the run dependencies
     if (@{$pkg->{rdep}}) {
 	my @rdep = map { by_path($_, $name) } @{$pkg->{rdep}};
 	$pkg->{rdep} = \@rdep;
