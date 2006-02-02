@@ -6,14 +6,14 @@
 #
 
 PORTNAME=		snmptt
-PORTVERSION=		1.0
+PORTVERSION=		1.1
 CATEGORIES=		net-mgmt
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nistor@snickers.org
 COMMENT=	SNMP trap handler/translator/swiss-army-knife
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp \
