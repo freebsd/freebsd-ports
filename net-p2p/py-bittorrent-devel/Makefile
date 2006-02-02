@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://www.bittorrent.com/dl/ \
@@ -149,8 +149,8 @@ post-install:
 # pixmaps
 	@${CHMOD} -R ${SHAREMODE} \
 		${PREFIX}/share/pixmaps/${PORTNAME}/*
-	@${CHMOD} a+X \
-		${PREFIX}/share/pixmaps/${PORTNAME}/logo
+	@${CHMOD} -R a+X \
+		${PREFIX}/share/pixmaps/${PORTNAME}
 .endif
 .ifndef(NOPORTDOCS)
 # docs
