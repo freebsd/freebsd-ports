@@ -1,11 +1,11 @@
---- lib-src/Makefile.in.in~	Tue Feb  8 11:54:39 2000
-+++ lib-src/Makefile.in.in	Thu Sep 21 22:26:13 2000
-@@ -224,7 +224,7 @@
- 	(cd ${archlibdir} && \
- 	 $(RM) ${UTILITIES} ${INSTALLABLES} ${SCRIPTS} ${INSTALLABLE_SCRIPTS})
+--- lib-src/Makefile.in.in.orig	Tue Nov 22 09:14:42 2005
++++ lib-src/Makefile.in.in	Mon Dec 19 14:01:40 2005
+@@ -270,7 +270,7 @@
+ 	cd ${bindir} && $(RM) ${PUBLIC_INSTALLABLES}
+ 	cd ${archlibdir} && $(RM) ${PRIVATE_INSTALLABLES}
  
 -.PHONY: mostlyclean clean distclean realclean extraclean
 +.PHONY: mostlyclean clean distclean realclean extraclean ${archlibdir}
+ .PHONY: distclean-noconfig realclean-noconfig extraclean-noconfig
  mostlyclean:
- 	$(RM) *.o *.i core
- clean: mostlyclean
+ 	-$(RM) *.o *.i core
