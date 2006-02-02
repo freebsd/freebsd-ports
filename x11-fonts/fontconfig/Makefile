@@ -8,7 +8,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
@@ -185,7 +185,8 @@ post-install:
 	else \
 		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
 	fi
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' < ${FILESDIR}/pkg-install.in \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
+		s|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)
 	@${LDCONFIG} -m ${PREFIX}/lib
