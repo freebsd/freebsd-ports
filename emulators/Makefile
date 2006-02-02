@@ -19,6 +19,7 @@
     SUBDIR += dlx
     SUBDIR += dosbox
     SUBDIR += doscmd
+    SUBDIR += dynamips
     SUBDIR += e-uae
     SUBDIR += extract-xiso
     SUBDIR += fceu
