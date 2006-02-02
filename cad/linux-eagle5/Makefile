@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-eagle
-EAGLEVERSION?=	4.15
+EAGLEVERSION?=	4.16
 EAGLELANG?=	eng
 PORTVERSION=	${EAGLEVERSION:S/r/./}
 CATEGORIES?=	cad linux
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER?=	riggs@rrr.de
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
-CONFLICTS?=	de-linux-eagle-*
+CONFLICTS?=	de-linux-eagle-[0-9]*
 
 ONLY_FOR_ARCHS=	i386
 
@@ -39,8 +39,9 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
 	@ cd ${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
-	@${LN} -sf ${DATADIR}/bin/eagle ${PREFIX}/bin/eagle
 	@${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
+	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${PREFIX}/bin/eagle
+	@${CHMOD} 0555 ${PREFIX}/bin/eagle
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
