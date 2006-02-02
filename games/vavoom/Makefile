@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.19
+PORTVERSION=	1.19.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sdl --with-opengl --without-openal --without-vorbis \
