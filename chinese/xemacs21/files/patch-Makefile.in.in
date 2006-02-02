@@ -1,0 +1,11 @@
+--- Makefile.in.in.orig	Fri Nov 25 10:38:19 2005
++++ Makefile.in.in	Fri Nov 25 10:38:28 2005
+@@ -429,7 +429,7 @@
+ 	     do (cd $${subdir} && $(RM) -r RCS CVS SCCS \#* *~) ; done ; \
+ 	else true; fi
+ #ifdef PDUMP
+-	${INSTALL_DATA} src/${PROGNAME}.dmp ${bindir}/${PROGNAME}-${version}-`src/${PROGNAME} -sd`.dmp
++	${INSTALL_DATA} src/${PROGNAME}.dmp ${bindir}/${PROGNAME}-${version}.dmp
+ #endif
+ #ifdef WIN32_NATIVE
+ 	${INSTALL_PROGRAM} src/${PROGNAME} ${bindir}/${PROGNAME}

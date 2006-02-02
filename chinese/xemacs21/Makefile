@@ -10,15 +10,14 @@ CATEGORIES=	chinese
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 
+MD5_FILE=	${.CURDIR}/../../editors/xemacs21-mule/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 XEMACS_MAJOR_VER=	21
-WITH_XIM=	--with-xim=xlib
-BUILD_INPUT_METHOD=	xcin2.5:${PORTSDIR}/chinese/xcin25
+WITH_XCIN25=	yes
 
 # xemacs21-mule-common needs this.
-PATCHDIR=	${.CURDIR}/../../editors/xemacs21-mule/files
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs21-mule/work
 
 SLAVE_PORT=	yes

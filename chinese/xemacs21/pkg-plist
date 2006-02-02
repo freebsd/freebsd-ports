@@ -20,5 +20,5 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/config.values
 @dirrmtry lib/xemacs/mule-packages/etc/app-defaults
 @dirrmtry lib/xemacs/mule-packages/etc
 @dirrmtry lib/xemacs/mule-packages
-@dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
+@dirrmtry lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/zh_TW.Big5
