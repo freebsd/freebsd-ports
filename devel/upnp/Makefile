@@ -17,8 +17,6 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
-LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
-
 CONFLICTS=	upnp-1.[^2].*
 
 USE_GMAKE=	yes
