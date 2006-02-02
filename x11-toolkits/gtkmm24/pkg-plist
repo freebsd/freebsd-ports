@@ -1301,22 +1301,22 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/deprecated.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/device_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dialog_8h.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fatk_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fatk_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fatk_2Fatkmm_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fatk_2Fatkmm_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgdk_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgdk_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgdk_2Fgdkmm_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgdk_2Fgdkmm_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgtk_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgtk_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgtk_2Fgtkmm_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fgtk_2Fgtkmm_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fpango_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fpango_2F_dep.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fpango_2Fpangomm_2F.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir__2Fhome_2Fmurrayc_2Fcvs_2Fgnome214_2Fgtkmm_2Fpango_2Fpangomm_2F_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000000.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000002.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000002_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000003.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000003_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000004.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000004_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000005.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000005_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000006.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000006_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000007.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000007_dep.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/display_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/displaymanager_8h.html
@@ -1894,7 +1894,6 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/structPango_1_1LayoutLineTraits.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/style_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/tabarray_8h.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/tabs.css
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/targetentry_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/targetlist_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/tearoffmenuitem_8h.html
@@ -2081,6 +2080,15 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch22s02.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch23.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/index.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/caution.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/home.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/important.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/next.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/note.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/prev.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/tip.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/up.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons/warning.png
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/arrow/arrow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/arrow/direction.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/alignment/examplewindow.cc
@@ -2384,6 +2392,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/arrow
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/icons
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial
@@ -2393,10 +2402,10 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ/html
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/doc/gtkmm-%%API_VERSION%% 2>/dev/null || /usr/bin/true
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books/gtkmm-%%API_VERSION%% 2> /dev/null || /usr/bin/true
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@dirrmtry %D/share/doc/gtkmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry %D/share/devhelp/books/gtkmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry %D/share/devhelp/books
+%%PORTDOCS%%@dirrmtry %D/share/devhelp
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
 @dirrm lib/gtkmm-%%API_VERSION%%/proc
 @dirrm lib/gtkmm-%%API_VERSION%%/include
