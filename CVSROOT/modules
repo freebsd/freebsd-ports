@@ -10276,6 +10276,7 @@ preps-gui	ports/devel/preps-gui
 prepstools	ports/devel/prepstools
 present		ports/devel/present
 preview		ports/graphics/preview
+primateplunge	ports/games/primateplunge
 primer3		ports/biology/primer3
 print-n-times	ports/textproc/print-n-times
 print_pmw	ports/print/pmw
