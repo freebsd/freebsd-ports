@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${NONEXISTENT}:${PORTSDIR}/${POSTGRESQL_PORT}:configure
 RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/plperl.so:${PORTSDIR}/databases/p5-postgresql-plperl
 
+USE_GMAKE=	yes
 USE_PGSQL=	yes
 PERL_CONFIGURE=	yes
 
