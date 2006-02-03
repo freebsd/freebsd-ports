@@ -16,6 +16,8 @@ COMMENT=	A utility used to retrieve very large files over the Internet
 BUILD_DEPENDS=	libwww-config:${PORTSDIR}/www/libwww \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Needs to be converted to use OPTIONS instead of home-grown configure script
+
 MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
 
 USE_BZIP2=	yes
