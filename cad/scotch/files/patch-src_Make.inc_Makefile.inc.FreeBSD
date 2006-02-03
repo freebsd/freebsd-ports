@@ -1,0 +1,18 @@
+--- ./src/Make.inc/Makefile.inc.FreeBSD.orig	Tue Jan 31 17:15:20 2006
++++ ./src/Make.inc/Makefile.inc.FreeBSD	Thu Feb  2 21:34:48 2006
+@@ -4,11 +4,11 @@
+ 
+ AR	= ar
+ CAT	= cat
+-CC	= gcc
+-CFLAGS	= -O3 -I. -I../../bin -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME
+-LDFLAGS	= -L../../bin -lm
++#CC	= gcc
++CFLAGS	+= -I. -I../../bin -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME
++LDFLAGS+= -L../../bin -lm
+ CP	= cp
+ LEX	= flex
+ MV	= mv
+ RANLIB	= ranlib
+-YACC	= bison -y
++#YACC	= bison -y

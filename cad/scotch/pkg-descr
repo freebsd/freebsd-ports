@@ -1,0 +1,13 @@
+SCOTCH is a software package and libraries for graph, mesh and hypergraph
+partitioning, static mapping, and sparse matrix block ordering.
+
+Its purpose of Scotch is to apply graph theory, with a divide and conquer
+approach, to scientific computing problems such as graph and mesh partitioning,
+static mapping, and sparse matrix ordering, in application domains ranging from
+structural mechanics to operating systems or bio-chemistry.
+
+The SCOTCH distribution is a set of programs and libraries which implement the
+static mapping and sparse matrix reordering algorithms developed within the
+SCOTCH project.
+
+WWW: http://www.labri.fr/perso/pelegrin/scotch/
