@@ -415,6 +415,7 @@
     SUBDIR += pkg_rmleaves
     SUBDIR += pkg_trackinst
     SUBDIR += pkg_tree
+    SUBDIR += pkgfe
     SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += plod
