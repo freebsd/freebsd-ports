@@ -10134,6 +10134,8 @@ ports_net_p2p	ports/net-p2p
 ports_netboot	ports/net/netboot
 ports_news	ports/news
 ports_ntp	ports/net/ntp
+ports_ntp-devel	ports/net/ntp-devel
+ports_ntp-stable	ports/net/ntp-stable
 ports_nut	ports/sysutils/nut
 ports_openssh	ports/security/openssh
 ports_openssl	ports/security/openssl
