@@ -43,10 +43,10 @@ fi
 
 args=${1+"$@"}
 flags=""
-noclean=0
+clean=1
 if [ "x$NOCLEAN" != "x" ]; then
   flags="${flags} -noclean"
-  noclean=1
+  clean=0
 fi
 if [ "x$NO_RESTRICTED" != "x" ]; then
   flags="${flags} -norestr"
@@ -126,7 +126,7 @@ while `true`; do
     lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
   fi
   
-  ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${noclean}
+  ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${clean}
   
   lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
 
