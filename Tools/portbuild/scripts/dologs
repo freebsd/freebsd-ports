@@ -22,5 +22,3 @@ for ver in latest full; do
 #  done
   cd $home && ${scripts}/bothlogs ${arch} 4-$ver 5-$ver
 done
-
-rm -f $lock
