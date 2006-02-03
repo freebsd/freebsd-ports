@@ -47,7 +47,7 @@ GRAPHICS=	GNOME_GRAPHICS
 GRAPHICS=	# none
 .if defined(WITH_MENUCOLORS)
 PATCHFILES+=	nh343-menucolor.diff
-PATCH_SITES+=	http://www.cs.joensuu.fi/~pkalli/code/
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis|}
 PATCH_DIST_STRIP=	-p1
 MAKE_ENV+=	LIBTTY="-lgnuregex"
 .endif
