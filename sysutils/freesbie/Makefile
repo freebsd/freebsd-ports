@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freesbie
-PORTVERSION=	1.1.20051018
+PORTVERSION=	2.0.20060202
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rrr.de/~riggs/freesbie/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/1.1.//}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/2.0.//}
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Yet another cool answer to the system-on-cd question
@@ -19,12 +19,12 @@ RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/cdrtools
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}2
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 504000
-IGNORE=		"Earlier FreeBSD versions then 5.4-RELEASE are not supported."
+IGNORE=		earlier FreeBSD versions then 5.4-RELEASE are not supported
 .endif
 
 do-install:
