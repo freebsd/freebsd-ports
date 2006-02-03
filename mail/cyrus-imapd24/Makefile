@@ -79,8 +79,7 @@ BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
 
 OPTIONS+=	DRAC		"Enable DRAC support"			off
-OPTIONS+=	IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
-		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on
+OPTIONS+=	IDLED		"Enable IMAP idled support"		off
 OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader"			off
 OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
 OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
@@ -149,18 +148,9 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
-.if defined(WITH_IDLE_IDLED) && defined(WITH_IDLE_POLL)
-BROKEN=		"Multiple IDLE methods selected.  Run 'make config' again!"
-.endif
-.if defined(WITH_IDLE_IDLED)
-CONFIGURE_ARGS+=--with-idle=idled
+.if defined(WITH_IDLED)
+CONFIGURE_ARGS+=--enable-idled
 PLIST_SUB+=	IDLED=""
-.elif defined(WITH_IDLE_POLL)
-CONFIGURE_ARGS+=--with-idle=poll
-PLIST_SUB+=	IDLED="@comment "
-.elif defined(WITHOUT_IDLE_IDLED) && defined(WITHOUT_IDLE_POLL)
-CONFIGURE_ARGS+=--with-idle=no
-PLIST_SUB+=	IDLED="@comment "
 .else
 PLIST_SUB+=	IDLED="@comment "
 .endif
