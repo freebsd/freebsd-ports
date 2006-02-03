@@ -35,7 +35,7 @@ cleanup_mount() {
 arch=$1
 branch=$2
 chroot=$3
-noclean=$4
+clean=$4
 
 pb=/var/portbuild
 . ${pb}/${arch}/portbuild.conf
@@ -67,12 +67,14 @@ done
 
 #kill_procs ${chroot}
 
-if [ $noclean = 0 ]; then
-  if [ "${use_md_swap}" = "1" ]; then
+if [ "${use_md_swap}" = "1" ]; then
+  if [ "${clean}" -gt "0" ]; then
     cleanup_mount ${chroot} ""
     mdconfig -d -u $(basename ${chroot})
     rm -rf ${chroot}
-  else
+  fi
+else
+  if [ "${clean}" = 1 ]; then
     rm -rf ${chroot}/tmp/*
     for dir in ${cleandirs}; do
       if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
@@ -86,5 +88,10 @@ if [ $noclean = 0 ]; then
     fi
     rm -rf ${chroot}/var/db/pkg/*
     rm -rf ${chroot}/used
+  elif [ "${clean}" = 2 ]; then
+    if ! rm -rf ${chroot} >/dev/null 2>&1; then
+      chflags -R noschg ${chroot} >/dev/null 2>&1
+      rm -rf ${chroot} >/dev/null 2>&1
+    fi
   fi
 fi
