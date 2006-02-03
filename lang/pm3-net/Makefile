@@ -13,9 +13,11 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-level networking libraries for the PM3 Modula-3 distribution
 
-BUILD_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base
+# Yes, this port is listed twice; it needs to be installed,
+# and we also need to run the configure script in the port
+BUILD_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base \
+		/nonexistent:${PORTSDIR}/lang/pm3-base:configure
 RUN_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base
-DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
@@ -28,6 +30,7 @@ BUILDDIRS=	network/tcplibs/tcp \
 		network/udp
 L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
+USE_GMAKE=	yes
 # hack to work around bsd.port.mk problem
 USE_BZIP2=	yes
 
