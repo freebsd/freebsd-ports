@@ -20,7 +20,7 @@ BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 		${NONEXISTENT}:${EMACSDL_DIR}:configure
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:213:env autoconf:253:env
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wnn6 \
