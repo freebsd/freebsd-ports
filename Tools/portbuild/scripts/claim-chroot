@@ -27,10 +27,14 @@ chrootdir=${buildroot}/${branch}/chroot
 found=0
 # Look for pre-existing chroot directories that are populated and unused
 for dir in ${chrootdir}/*; do
-  if [ -f ${dir}/.ready -a -d ${dir}/tmp ]; then
+  if [ -f ${dir}/.ready -o -f ${dir}/.dirty ]; then
     # Atomically claim the directory
     mkdir ${dir}/used 2>/dev/null || continue
     touch ${dir}/used/${pkgname}
+    if [ -f ${dir}/.dirty ]; then
+      ${pb}/scripts/clean-chroot ${arch} ${branch} ${dir} 2 &
+      continue
+    fi
     found=1
     chroot=${dir}
     break
