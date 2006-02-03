@@ -2160,3 +2160,4 @@ math/netcdf|science/netcdf|2006-01-30|Moved to a better category
 japanese/mecab-razil|japanese/mecab|2006-02-01|Patched library is not required now
 japanese/firefox-ja_JP|japanese/firefox-ja|2006-02-01|Project renamed
 lang/m3gdb||2006-02-03|Remove expired port
+misc/tvguide||2006-02-03|Remove expired port

@@ -425,7 +425,6 @@
     SUBDIR += translate
     SUBDIR += translator
     SUBDIR += ttyrec
-    SUBDIR += tvguide
     SUBDIR += txt2regex
     SUBDIR += uf-view
     SUBDIR += uk-phone

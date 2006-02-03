@@ -12675,7 +12675,6 @@ tuxracer_golf	ports/games/tuxracer_golf
 tuxtype		ports/games/tuxtype
 tv-fonts	ports/x11-fonts/tv-fonts
 tvark		ports/net/tvark
-tvguide		ports/misc/tvguide
 tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
