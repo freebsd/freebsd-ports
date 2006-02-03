@@ -1,0 +1,38 @@
+--- po/ko.po.orig	Wed Sep 21 02:37:42 2005
++++ po/ko.po	Fri Feb  3 15:58:18 2006
+@@ -98,7 +98,7 @@
+ #.
+ #: ../applets/clock/clock.c:279
+ msgid "%a %b %e"
+-msgstr "%b %e일 (%a)"
++msgstr "%B %e일 (%a)"
+ 
+ #. translators: reverse the order of these arguments
+ #. *              if the time should come before the
+@@ -125,7 +125,7 @@
+ #. Show date in tooltip
+ #: ../applets/clock/clock.c:378
+ msgid "%A %B %d"
+-msgstr "%b %e일 %A"
++msgstr "%B %e일 %A"
+ 
+ #: ../applets/clock/clock.c:390
+ msgid "Click to view your appointments and tasks"
+@@ -139,7 +139,7 @@
+ #. we will display the start date in the most abbreviated way possible.
+ #: ../applets/clock/clock.c:598
+ msgid "%b %d"
+-msgstr "%b %e일"
++msgstr "%B %e일"
+ 
+ #: ../applets/clock/clock.c:925
+ msgid "Tasks"
+@@ -171,7 +171,7 @@
+ 
+ #: ../applets/clock/clock.c:1767
+ msgid "%A, %B %d %Y"
+-msgstr "%Y년 %b %e일 %A"
++msgstr "%Y년 %B %e일 %A"
+ 
+ #: ../applets/clock/clock.c:1824
+ #, c-format
