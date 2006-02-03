@@ -129,9 +129,9 @@ branch=$1
 chroot=$2
 shift 2
 
-noclean=0
+clean=1
 if [ "x$1" = "x-noclean" ]; then
-  noclean=1
+  clean=0
   shift
 fi
 norestr=0
@@ -253,7 +253,7 @@ fi
 # Set up desired uname version
 echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
-#trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15
+#trap "cleanup ${chroot} ${clean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15
 trap "exit 255" 1 2 3 9 10 11 15
 
 rm -rf ${chroot}/tmp/*
