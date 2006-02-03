@@ -125,11 +125,14 @@ bin/iReport
 %%DATADIR%%/templates/grayT.xml
 %%DATADIR%%/templates/gray_landscapeT.gif
 %%DATADIR%%/templates/gray_landscapeT.xml
+%%JAVAJARDIR%%/LICENSE.barbecue-1.1.txt
+%%JAVAJARDIR%%/barbecue-1.1.jar
 %%JAVAJARDIR%%/groovy-all-1.0-beta-10.jar
 %%JAVAJARDIR%%/iReport.jar
 %%JAVAJARDIR%%/jdt-compiler.jar
 %%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jr-groovy-compiler.jar
+%%JAVAJARDIR%%/pngencoder.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/fonts

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	0.5.3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,28 +20,27 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks	\
 		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf	\
 		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline	\
-		${JAVALIBDIR}/barbecue.jar:${PORTSDIR}/graphics/barbecue	\
 		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PLIST_SUB=	VER=${PORTVERSION} VERMAN=0.2.0
 
-JARFILES=	groovy-all-1.0-beta-10.jar iReport.jar jdt-compiler.jar	\
-		jr-bsh-compiler.jar jr-groovy-compiler.jar
+JARFILES=	groovy-all-1.0-beta-10.jar iReport.jar jdt-compiler.jar		\
+		jr-bsh-compiler.jar jr-groovy-compiler.jar pngencoder.jar	\
+		barbecue-1.1.jar LICENSE.barbecue-1.1.txt
 
 BASEFILES=	Changelog.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
 # Jarfiles to be included in classpath
-CLSSPTH=	barbecue bsh commons-beanutils commons-collections commons-digester	\
+CLSSPTH=	barbecue-1.1 bsh commons-beanutils commons-collections commons-digester	\
 		commons-logging-api commons-logging groovy-all-1.0-beta-10 iReport	\
 		itext jasperreports jcmdline jcommon jdt-compiler jfreechart		\
 		jr-bsh-compiler jr-groovy-compiler log4j looks mysql-connector-java	\
-		postgresql poi tinylaf xalan xercesImpl xmlParserAPIs
+		postgresql poi tinylaf xalan xercesImpl xmlParserAPIs pngencoder
 
 .if !defined(NOPORTDOCS)
 SUBDIRS+=	docs
@@ -66,8 +65,7 @@ CLSSORA+=	ojdbc14.jar ocrs12.zip
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.bat" -exec ${RM} {} \;
-	@${RMDIR} -p ${WRKSRC}/docs/releases/Release0.3.2/Release\ Document\ 0.3.2_files	\
-		2>/dev/null | ${TRUE}
+	@${MV} ${WRKSRC}/lib/LICENSE.barbecue.txt ${WRKSRC}/lib/LICENSE.barbecue-1.1.txt
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%CLSSPTH%%|${CLSSPTH:S,^,${JAVALIBDIR}/,g:S,$,.jar£,g}|;	\
