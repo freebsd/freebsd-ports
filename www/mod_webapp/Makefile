@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
 
 USE_REINPLACE=	yes
 USE_APACHE=	yes
-USE_AUTOTOOLS=	autoconf:253:env libtool:13:env
+USE_PYTHON_BUILD=yes
+USE_AUTOTOOLS=	libtool:13:env automake:19:env autoconf:259:env libtool:15:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
