@@ -17,7 +17,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension library to draw Tgif graphics
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
+		imake:${X_IMAKE_PORT}
+
+# NB not USE_IMAKE; this is required for the tgif build but this
+# port doesn't use it directly.
 
 USE_GETTEXT=	yes
 USE_RUBY=	yes
