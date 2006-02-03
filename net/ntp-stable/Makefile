@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0a
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
-		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
-		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+YEAR=		2006
+MONTH=		01
+DAY=		27
+SNAPSHOT_DIR=	snapshots/ntp-stable/${YEAR}/${MONTH}
+MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/${SNAPSHOT_DIR}/ \
+		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${SNAPSHOT_DIR}/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/${SNAPSHOT_DIR} \
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/${SNAPSHOT_DIR}/
+DISTNAME=	${PORTNAME}-stable-${PORTVERSION:S/.r/-rc/}-${YEAR}${MONTH}${DAY}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution

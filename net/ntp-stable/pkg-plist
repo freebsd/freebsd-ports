@@ -11,9 +11,50 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
 %%PORTDOCS%%%%DOCSDIR%%/authopt.html
-%%PORTDOCS%%%%DOCSDIR%%/build.html
+%%PORTDOCS%%%%DOCSDIR%%/build/build.html
+%%PORTDOCS%%%%DOCSDIR%%/build/config.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/a-ux
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/aix
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/bsdi
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/changes
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/decosf1
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/decosf2
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/freebsd
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/hpux
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/linux
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/mpeix
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/netbsd
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/notes-xntp-v3
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/parse
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/refclocks
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/rs6000
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/sco.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/sgi
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris-dosynctodr.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris.xtra.4023118
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris.xtra.4095849
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris.xtra.S99ntpd
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/solaris.xtra.patchfreq
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/sun4
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/svr4-dell
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/svr4_package
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/todo
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/vxworks.html
+%%PORTDOCS%%%%DOCSDIR%%/build/hints/winnt.html
+%%PORTDOCS%%%%DOCSDIR%%/build/patches.html
+%%PORTDOCS%%%%DOCSDIR%%/build/porting.html
+%%PORTDOCS%%%%DOCSDIR%%/build/quick.html
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/footer.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links10.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links11.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links12.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links7.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links8.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/links9.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/scripts/style.css
 %%PORTDOCS%%%%DOCSDIR%%/clockopt.html
-%%PORTDOCS%%%%DOCSDIR%%/config.html
 %%PORTDOCS%%%%DOCSDIR%%/confopt.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/debug.html
@@ -35,6 +76,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver29.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver3.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver30.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/driver31.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver32.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver33.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver34.html
@@ -43,50 +85,22 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver37.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver38.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver39.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/driver4.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver40.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver42.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver43.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver44.html
-%%PORTDOCS%%%%DOCSDIR%%/drivers/driver4.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver5.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver6.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver7.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver8.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver9.html
-%%PORTDOCS%%%%DOCSDIR%%/drivers/oncore-shmem.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/drivers/icons/mail2.gif
+%%PORTDOCS%%%%DOCSDIR%%/drivers/oncore-shmem.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/scripts/footer.txt
+%%PORTDOCS%%%%DOCSDIR%%/drivers/scripts/style.css
 %%PORTDOCS%%%%DOCSDIR%%/extern.html
-%%PORTDOCS%%%%DOCSDIR%%/hints/a-ux
-%%PORTDOCS%%%%DOCSDIR%%/hints/aix
-%%PORTDOCS%%%%DOCSDIR%%/hints/bsdi
-%%PORTDOCS%%%%DOCSDIR%%/hints/changes
-%%PORTDOCS%%%%DOCSDIR%%/hints/decosf1
-%%PORTDOCS%%%%DOCSDIR%%/hints/decosf2
-%%PORTDOCS%%%%DOCSDIR%%/hints/freebsd
-%%PORTDOCS%%%%DOCSDIR%%/hints/hpux
-%%PORTDOCS%%%%DOCSDIR%%/hints/linux
-%%PORTDOCS%%%%DOCSDIR%%/hints/mpeix
-%%PORTDOCS%%%%DOCSDIR%%/hints/netbsd
-%%PORTDOCS%%%%DOCSDIR%%/hints/notes-xntp-v3
-%%PORTDOCS%%%%DOCSDIR%%/hints/parse
-%%PORTDOCS%%%%DOCSDIR%%/hints/refclocks
-%%PORTDOCS%%%%DOCSDIR%%/hints/rs6000
-%%PORTDOCS%%%%DOCSDIR%%/hints/sco.html
-%%PORTDOCS%%%%DOCSDIR%%/hints/sgi
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris-dosynctodr.html
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris.html
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris.xtra.4023118
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris.xtra.4095849
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris.xtra.S99ntpd
-%%PORTDOCS%%%%DOCSDIR%%/hints/solaris.xtra.patchfreq
-%%PORTDOCS%%%%DOCSDIR%%/hints/sun4
-%%PORTDOCS%%%%DOCSDIR%%/hints/svr4-dell
-%%PORTDOCS%%%%DOCSDIR%%/hints/svr4_package
-%%PORTDOCS%%%%DOCSDIR%%/hints/todo
-%%PORTDOCS%%%%DOCSDIR%%/hints/vxworks.html
-%%PORTDOCS%%%%DOCSDIR%%/hints/winnt.html
-%%PORTDOCS%%%%DOCSDIR%%/hints.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
 %%PORTDOCS%%%%DOCSDIR%%/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/icons/mail2.gif
@@ -110,7 +124,6 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/ntptrace.html
 %%PORTDOCS%%%%DOCSDIR%%/parsedata.html
 %%PORTDOCS%%%%DOCSDIR%%/parsenew.html
-%%PORTDOCS%%%%DOCSDIR%%/patches.html
 %%PORTDOCS%%%%DOCSDIR%%/pic/9400n.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/alice11.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/alice13.gif
@@ -161,10 +174,8 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/pic/stack1a.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/tonea.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/wingdorothy.gif
-%%PORTDOCS%%%%DOCSDIR%%/porting.html
 %%PORTDOCS%%%%DOCSDIR%%/pps.html
 %%PORTDOCS%%%%DOCSDIR%%/prefer.html
-%%PORTDOCS%%%%DOCSDIR%%/quick.html
 %%PORTDOCS%%%%DOCSDIR%%/rdebug.html
 %%PORTDOCS%%%%DOCSDIR%%/refclock.html
 %%PORTDOCS%%%%DOCSDIR%%/release.html
@@ -188,8 +199,11 @@ bin/tickadj
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pic
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hints
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/build/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/build/hints
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/build
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
