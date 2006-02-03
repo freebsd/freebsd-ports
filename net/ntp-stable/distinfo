@@ -1,3 +1,3 @@
-MD5 (ntp-4.2.0.tar.gz) = 0f8fabe87cf54f409b57c6283f0c0c3d
-SHA256 (ntp-4.2.0.tar.gz) = da784d5c0363d4f708a25f3aad23ba9a3486aafd464444d2aa6a9f8d29213f25
-SIZE (ntp-4.2.0.tar.gz) = 2514502
+MD5 (ntp-stable-4.2.0a-20060127.tar.gz) = 3d84ac15d9aa62f729d8fbf62b2e002b
+SHA256 (ntp-stable-4.2.0a-20060127.tar.gz) = 28930c0990b8b22b1e29bfacfb5eb9821b4a26ef3a49518575a5ff9f7628f6af
+SIZE (ntp-stable-4.2.0a-20060127.tar.gz) = 2447170
