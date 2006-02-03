@@ -1,3 +1,4 @@
-MD5 (quagga-0.98.5.tar.gz) = ec09c1ec624aea98e18aa19282666784
-SHA256 (quagga-0.98.5.tar.gz) = 300ea3f91f98db7e36014fd76cc0db3d86d39417830fbd43239f457b26624e81
+MD5 (quagga-0.99.3.tar.gz) = d11dfb2d0eb9fa93e1aca882541e45d8
+SHA256 (quagga-0.99.3.tar.gz) = 3e319fa854d84eaf6a57513256b903f0d068be85dbce27cb7ec3cbac08e26aac
+SIZE (quagga-0.99.3.tar.gz) = 2203788
 SIZE (quagga-0.98.5.tar.gz) = 2018058

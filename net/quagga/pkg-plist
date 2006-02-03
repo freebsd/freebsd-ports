@@ -18,6 +18,7 @@ lib/libzebra.a
 lib/libzebra.so
 lib/libzebra.so.0
 include/quagga/buffer.h
+include/quagga/checksum.h
 include/quagga/command.h
 include/quagga/distribute.h
 include/quagga/filter.h
@@ -29,8 +30,9 @@ include/quagga/jhash.h
 include/quagga/keychain.h
 include/quagga/linklist.h
 include/quagga/log.h
-include/quagga/md5-gnu.h
+include/quagga/md5.h
 include/quagga/memory.h
+include/quagga/memtypes.h
 include/quagga/network.h
 %%OSPFAPI_HEADER%%
 include/quagga/ospfd/ospf_api.h
@@ -58,6 +60,7 @@ include/quagga/thread.h
 include/quagga/vector.h
 include/quagga/version.h
 include/quagga/vty.h
+include/quagga/workqueue.h
 include/quagga/zassert.h
 include/quagga/zclient.h
 include/quagga/zebra.h
