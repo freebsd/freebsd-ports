@@ -60,9 +60,8 @@ PLIST_SUB+=	GNOMEVFS2="@comment "
 CONFIGURE_ARGS+=--enable-fuse-module
 PLIST_SUB+=	FUSE=""
 USE_GNOME+=	pkgconfig
-LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+BUILD_DEPENDS+=	fusefs-libs>2.4:${PORTSDIR}/sysutils/fusefs-libs
 MLINKS+=	ntfsmount.8 mount.ntfs-fuse.8
-CONFLICTS=	fusefs-kmod-0.2.19*
 .else
 CONFIGURE_ARGS+=--disable-fuse-module
 PLIST_SUB+=	FUSE="@comment "
