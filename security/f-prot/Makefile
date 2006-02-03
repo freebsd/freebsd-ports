@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.6.5
+PORTVERSION=	4.6.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
@@ -21,9 +21,9 @@ RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS+=	${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
 .endif
 
-NO_PACKAGE=	"Free for personal use only"
-NO_CDROM=	"Free for personal use only"
-RESTRICTED=	"Free for personal use only"
+NO_PACKAGE=	Free for personal use only
+NO_CDROM=	Free for personal use only
+RESTRICTED=	Free for personal use only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
