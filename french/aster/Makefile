@@ -7,12 +7,13 @@
 
 PORTNAME=	aster
 DISTVERSION=	8.2.0-4
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Analyse des structures et thermo-mécanique
+COMMENT=	Code_Aster finite element method solver
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -30,6 +31,7 @@ COMMENT=	Analyse des structures et thermo-mécanique
 # - WITHOUT_GRACE: don't install Grace (used to create 2D graph);
 # - WITHOUT_MACR_RECAL: don't install Numerical Python
 #			(required by the macro MACR_RECAL);
+# - WITHOUT_SCOTCH: don't install Scotch.
 #
 #-----------------------------------------------------------------------
 
@@ -68,14 +70,14 @@ FLAGARCH=	TRU64		# 64 bits
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
+BROKEN=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
 .endif
 .if ${ARCH} == "amd64"
-BROKEN=	"Seg. fault on ${ARCH} during compilation of elements."
+BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 .if defined(WITH_BLAS)
@@ -109,6 +111,9 @@ PLIST_SUB+=	GRACE="@comment "
 .endif
 .if !defined(WITHOUT_MACR_RECAL)
 RUN_DEPENDS+=	${PYNUMERIC}
+.endif
+.if !defined(WITHOUT_SCOTCH)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
 .endif
 
 .if !${OSVERSION} < 500039
@@ -206,7 +211,7 @@ pre-configure:
 	@${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HOME_SCOTCH = ''"				>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
