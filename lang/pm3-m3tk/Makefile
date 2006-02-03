@@ -13,9 +13,9 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modula-3 source code analysis and transformation toolkit (PM3 distribution)
 
-BUILD_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base
+BUILD_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base \
+		/nonexistent:${PORTSDIR}/lang/pm3-base:configure
 RUN_DEPENDS=	${L1}libm3${L2}:${PORTSDIR}/lang/pm3-base
-DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${PORTVERSION}
 BUILDDIRS=	language/modula3/m3tools/m3tk
 L1=		${PREFIX}/lib/m3/${TARGET}/
 SOVERSION=	7
+USE_GMAKE=	yes
 # hack to work around bsd.port.mk problem
 USE_BZIP2=	yes
 
