@@ -331,6 +331,8 @@
     SUBDIR += ntalk
     SUBDIR += ntop
     SUBDIR += ntp
+    SUBDIR += ntp-devel
+    SUBDIR += ntp-stable
     SUBDIR += ntraceroute
     SUBDIR += nvnet
     SUBDIR += nxserver
