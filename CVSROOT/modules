@@ -11590,6 +11590,7 @@ scmail		ports/mail/scmail
 scmxx		ports/comms/scmxx
 scons		ports/devel/scons
 scorched3d	ports/games/scorched3d
+scotch		ports/cad/scotch
 scotty3		ports/net-mgmt/scotty3
 scourge		ports/games/scourge
 scout		ports/www/scout
