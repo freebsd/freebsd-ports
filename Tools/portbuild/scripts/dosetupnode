@@ -32,9 +32,6 @@ fi
 
 scp -p ${pb}/scripts/setupnode ${client_user}@${node}:/tmp
 ssh -n ${client_user}@${node} ${sudo_cmd} sh /tmp/setupnode ${nocopy} $(hostname) ${pb} ${arch} ${branch} ${scratchdir} ${md5} ${disconnected}
-if [ ! -z "${sudo_cmd}" -a ${disconnected} = "1" ]; then
-  ssh -n ${client_user}@${node} ${sudo_cmd} "chown -R ${client_user} /var/portbuild/"
-fi
 
 if [ "${disconnected}" = 1 -a "${norsync}" = 0 ]; then
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/scripts ${client_user}@${node}:${pb}/
