@@ -29,6 +29,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	An alternative to widely-used Sendmail
 
+BROKEN=		Needs to be converted to OPTIONS instead of home-brewed configure script
+
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 LATEST_LINK=	postfix1
 USE_SUBMAKE=	yes
