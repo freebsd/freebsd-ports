@@ -5,6 +5,166 @@ lib/libgnome-mag.so
 lib/libgnome-mag.so.2
 libdata/bonobo/servers/GNOME_Magnifier.server
 libdata/pkgconfig/gnome-mag-1.0.pc
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-common_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-skels_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier-stubs_8c.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier_8h-source.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier_8h.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier_8idl-source.html
+%%DOCSDIR%%/reference/html/GNOME__Magnifier_8idl.html
+%%DOCSDIR%%/reference/html/annotated.html
+%%DOCSDIR%%/reference/html/classGNOME_1_1Magnifier_1_1Magnifier.html
+%%DOCSDIR%%/reference/html/classGNOME_1_1Magnifier_1_1ZoomRegion.html
+%%DOCSDIR%%/reference/html/damage-client_8c.html
+%%DOCSDIR%%/reference/html/damage-client_8h-source.html
+%%DOCSDIR%%/reference/html/damage-client_8h.html
+%%DOCSDIR%%/reference/html/dir_000000.html
+%%DOCSDIR%%/reference/html/dir_000001.html
+%%DOCSDIR%%/reference/html/dirs.html
+%%DOCSDIR%%/reference/html/doxygen.css
+%%DOCSDIR%%/reference/html/doxygen.png
+%%DOCSDIR%%/reference/html/files.html
+%%DOCSDIR%%/reference/html/functions.html
+%%DOCSDIR%%/reference/html/functions_0x61.html
+%%DOCSDIR%%/reference/html/functions_0x62.html
+%%DOCSDIR%%/reference/html/functions_0x63.html
+%%DOCSDIR%%/reference/html/functions_0x64.html
+%%DOCSDIR%%/reference/html/functions_0x65.html
+%%DOCSDIR%%/reference/html/functions_0x66.html
+%%DOCSDIR%%/reference/html/functions_0x67.html
+%%DOCSDIR%%/reference/html/functions_0x68.html
+%%DOCSDIR%%/reference/html/functions_0x69.html
+%%DOCSDIR%%/reference/html/functions_0x6c.html
+%%DOCSDIR%%/reference/html/functions_0x6d.html
+%%DOCSDIR%%/reference/html/functions_0x6e.html
+%%DOCSDIR%%/reference/html/functions_0x70.html
+%%DOCSDIR%%/reference/html/functions_0x71.html
+%%DOCSDIR%%/reference/html/functions_0x72.html
+%%DOCSDIR%%/reference/html/functions_0x73.html
+%%DOCSDIR%%/reference/html/functions_0x74.html
+%%DOCSDIR%%/reference/html/functions_0x75.html
+%%DOCSDIR%%/reference/html/functions_0x76.html
+%%DOCSDIR%%/reference/html/functions_0x77.html
+%%DOCSDIR%%/reference/html/functions_0x78.html
+%%DOCSDIR%%/reference/html/functions_0x79.html
+%%DOCSDIR%%/reference/html/functions_0x7a.html
+%%DOCSDIR%%/reference/html/functions_enum.html
+%%DOCSDIR%%/reference/html/functions_eval.html
+%%DOCSDIR%%/reference/html/functions_func.html
+%%DOCSDIR%%/reference/html/functions_vars.html
+%%DOCSDIR%%/reference/html/functions_vars_0x61.html
+%%DOCSDIR%%/reference/html/functions_vars_0x62.html
+%%DOCSDIR%%/reference/html/functions_vars_0x63.html
+%%DOCSDIR%%/reference/html/functions_vars_0x64.html
+%%DOCSDIR%%/reference/html/functions_vars_0x65.html
+%%DOCSDIR%%/reference/html/functions_vars_0x66.html
+%%DOCSDIR%%/reference/html/functions_vars_0x67.html
+%%DOCSDIR%%/reference/html/functions_vars_0x68.html
+%%DOCSDIR%%/reference/html/functions_vars_0x69.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6c.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6d.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6e.html
+%%DOCSDIR%%/reference/html/functions_vars_0x70.html
+%%DOCSDIR%%/reference/html/functions_vars_0x71.html
+%%DOCSDIR%%/reference/html/functions_vars_0x72.html
+%%DOCSDIR%%/reference/html/functions_vars_0x73.html
+%%DOCSDIR%%/reference/html/functions_vars_0x74.html
+%%DOCSDIR%%/reference/html/functions_vars_0x75.html
+%%DOCSDIR%%/reference/html/functions_vars_0x76.html
+%%DOCSDIR%%/reference/html/functions_vars_0x77.html
+%%DOCSDIR%%/reference/html/functions_vars_0x78.html
+%%DOCSDIR%%/reference/html/functions_vars_0x79.html
+%%DOCSDIR%%/reference/html/functions_vars_0x7a.html
+%%DOCSDIR%%/reference/html/globals.html
+%%DOCSDIR%%/reference/html/globals_0x62.html
+%%DOCSDIR%%/reference/html/globals_0x63.html
+%%DOCSDIR%%/reference/html/globals_0x64.html
+%%DOCSDIR%%/reference/html/globals_0x65.html
+%%DOCSDIR%%/reference/html/globals_0x67.html
+%%DOCSDIR%%/reference/html/globals_0x69.html
+%%DOCSDIR%%/reference/html/globals_0x6d.html
+%%DOCSDIR%%/reference/html/globals_0x6f.html
+%%DOCSDIR%%/reference/html/globals_0x70.html
+%%DOCSDIR%%/reference/html/globals_0x72.html
+%%DOCSDIR%%/reference/html/globals_0x73.html
+%%DOCSDIR%%/reference/html/globals_0x74.html
+%%DOCSDIR%%/reference/html/globals_0x7a.html
+%%DOCSDIR%%/reference/html/globals_defs.html
+%%DOCSDIR%%/reference/html/globals_defs_0x62.html
+%%DOCSDIR%%/reference/html/globals_defs_0x63.html
+%%DOCSDIR%%/reference/html/globals_defs_0x64.html
+%%DOCSDIR%%/reference/html/globals_defs_0x65.html
+%%DOCSDIR%%/reference/html/globals_defs_0x67.html
+%%DOCSDIR%%/reference/html/globals_defs_0x69.html
+%%DOCSDIR%%/reference/html/globals_defs_0x6d.html
+%%DOCSDIR%%/reference/html/globals_defs_0x6f.html
+%%DOCSDIR%%/reference/html/globals_defs_0x70.html
+%%DOCSDIR%%/reference/html/globals_defs_0x74.html
+%%DOCSDIR%%/reference/html/globals_defs_0x7a.html
+%%DOCSDIR%%/reference/html/globals_enum.html
+%%DOCSDIR%%/reference/html/globals_eval.html
+%%DOCSDIR%%/reference/html/globals_func.html
+%%DOCSDIR%%/reference/html/globals_type.html
+%%DOCSDIR%%/reference/html/globals_vars.html
+%%DOCSDIR%%/reference/html/index.html
+%%DOCSDIR%%/reference/html/magnifier-main_8c.html
+%%DOCSDIR%%/reference/html/magnifier-private_8h-source.html
+%%DOCSDIR%%/reference/html/magnifier-private_8h.html
+%%DOCSDIR%%/reference/html/magnifier_8c.html
+%%DOCSDIR%%/reference/html/magnifier_8h-source.html
+%%DOCSDIR%%/reference/html/magnifier_8h.html
+%%DOCSDIR%%/reference/html/namespaceGNOME.html
+%%DOCSDIR%%/reference/html/namespaceGNOME_1_1Magnifier.html
+%%DOCSDIR%%/reference/html/namespacemembers.html
+%%DOCSDIR%%/reference/html/namespacemembers_type.html
+%%DOCSDIR%%/reference/html/namespaces.html
+%%DOCSDIR%%/reference/html/structBonobo__EventSource__UnknownListener__type.html
+%%DOCSDIR%%/reference/html/structBonobo__Pair__type.html
+%%DOCSDIR%%/reference/html/structBonobo__PropertyBag__BackendFailed__type.html
+%%DOCSDIR%%/reference/html/structBonobo__PropertyBag__InvalidType__type.html
+%%DOCSDIR%%/reference/html/structBonobo__PropertyBag__NotFound__type.html
+%%DOCSDIR%%/reference/html/structBonobo__PropertyBag__ReadOnly__type.html
+%%DOCSDIR%%/reference/html/structCORBA__sequence__Bonobo__Pair.html
+%%DOCSDIR%%/reference/html/structCORBA__sequence__CORBA__Object.html
+%%DOCSDIR%%/reference/html/structCORBA__sequence__CORBA__string.html
+%%DOCSDIR%%/reference/html/structGNOME_1_1Magnifier_1_1Point.html
+%%DOCSDIR%%/reference/html/structGNOME_1_1Magnifier_1_1RectBounds.html
+%%DOCSDIR%%/reference/html/structGNOME__Magnifier__Point__type.html
+%%DOCSDIR%%/reference/html/structGNOME__Magnifier__RectBounds__type.html
+%%DOCSDIR%%/reference/html/structMagLoginHelper.html
+%%DOCSDIR%%/reference/html/structMagLoginHelperClass.html
+%%DOCSDIR%%/reference/html/structMagnifier.html
+%%DOCSDIR%%/reference/html/structMagnifierClass.html
+%%DOCSDIR%%/reference/html/structMagnifierOptions.html
+%%DOCSDIR%%/reference/html/structMagnifierZoomRegionSaveProps.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__ConfigDatabase.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__ConfigDatabase____epv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__ConfigDatabase____vepv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__EventSource.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__EventSource____epv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__EventSource____vepv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__Listener.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__Listener____epv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__Listener____vepv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__PropertyBag.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__PropertyBag____epv.html
+%%DOCSDIR%%/reference/html/structPOA__Bonobo__PropertyBag____vepv.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__Magnifier.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__Magnifier____epv.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__Magnifier____vepv.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__ZoomRegion.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__ZoomRegion____epv.html
+%%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__ZoomRegion____vepv.html
+%%DOCSDIR%%/reference/html/structZoomRegion.html
+%%DOCSDIR%%/reference/html/structZoomRegionClass.html
+%%DOCSDIR%%/reference/html/struct__MagnifierPrivate.html
+%%DOCSDIR%%/reference/html/struct__ZoomRegionPrivate.html
+%%DOCSDIR%%/reference/html/structtiming.html
+%%DOCSDIR%%/reference/html/zoom-region-private_8h-source.html
+%%DOCSDIR%%/reference/html/zoom-region-private_8h.html
+%%DOCSDIR%%/reference/html/zoom-region_8c.html
+%%DOCSDIR%%/reference/html/zoom-region_8h-source.html
+%%DOCSDIR%%/reference/html/zoom-region_8h.html
 share/gnome/gnome-mag/1_32/appstart.xpm
 share/gnome/gnome-mag/1_32/bottom_left_corner.xpm
 share/gnome/gnome-mag/1_32/bottom_side.xpm
@@ -61,6 +221,8 @@ share/locale/it/LC_MESSAGES/gnome-mag.mo
 share/locale/ja/LC_MESSAGES/gnome-mag.mo
 share/locale/ka/LC_MESSAGES/gnome-mag.mo
 share/locale/ko/LC_MESSAGES/gnome-mag.mo
+share/locale/ku/LC_MESSAGES/gnome-mag.mo
+share/locale/ky/LC_MESSAGES/gnome-mag.mo
 share/locale/lt/LC_MESSAGES/gnome-mag.mo
 share/locale/lv/LC_MESSAGES/gnome-mag.mo
 share/locale/mi/LC_MESSAGES/gnome-mag.mo
@@ -96,10 +258,17 @@ share/locale/zh_CN/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm share/gnome/idl/gnome-mag-1.0
 @dirrm share/gnome/gnome-mag/1_32
 @dirrm share/gnome/gnome-mag
+@dirrm %%DOCSDIR%%/reference/html
+@dirrm %%DOCSDIR%%/reference
+@dirrm %%DOCSDIR%%
 @dirrm include/gnome-mag-1.0/magnifier
 @dirrm include/gnome-mag-1.0
