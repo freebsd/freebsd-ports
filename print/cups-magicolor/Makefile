@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.minolta-qms.com/pub/crc/out_going/other/
 MAINTAINER=	frank@exit.com
 COMMENT=	CUPS support for the Konica-Minolta Magicolor 2430DL
 
-PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/print/cups-base:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/print/cups-base:configure
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		lcms.1:${PORTSDIR}/graphics/lcms
