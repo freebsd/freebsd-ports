@@ -9,7 +9,8 @@ PORTNAME=	cdf3
 PORTVERSION=	3.1
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
+MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/	\
+		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
 DISTNAME=	cdf${VER}-dist-cdf
 
 MAINTAINER=	thierry@FreeBSD.org
