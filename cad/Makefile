@@ -52,6 +52,7 @@
     SUBDIR += qmls
     SUBDIR += qucs
     SUBDIR += sceptre
+    SUBDIR += scotch
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += systemc
