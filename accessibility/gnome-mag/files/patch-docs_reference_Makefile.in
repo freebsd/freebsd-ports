@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in.orig	Fri Feb  3 00:25:58 2006
++++ docs/reference/Makefile.in	Fri Feb  3 00:26:09 2006
+@@ -220,7 +220,7 @@
+ target_alias = @target_alias@
+ doxygen_configfile = Doxyfile
+ EXTRA_DIST = README Doxyfile html
+-referencetopdir = $(datadir)/doc/gnome-mag-$(VERSION)/reference
++referencetopdir = $(prefix)/share/doc/gnome-mag-$(VERSION)/reference
+ referencedir = $(referencetopdir)/html
+ all: all-am
+ 

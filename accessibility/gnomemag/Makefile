@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomemag
-PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTVERSION=	0.12.3
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-mag/0.12
@@ -25,5 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+DOCSDIR=	${PREFIX}/share/doc/gnome-mag-${PORTVERSION}
 
 .include <bsd.port.mk>
