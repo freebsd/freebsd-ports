@@ -17,6 +17,8 @@ COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 
+USE_GMAKE=	yes
+USE_GCC=	3.2+
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Pari.3 Math::libPARI.3 \
