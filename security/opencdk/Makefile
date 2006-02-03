@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG} \
+MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/ \
+		${MASTER_SITE_GNUPG} \
 		http://www.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
 		ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
 		ftp://ftp.gnutls.org/pub/gnutls/opencdk/
@@ -21,9 +21,6 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig.asc
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
