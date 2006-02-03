@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gapped text buffer extention for Ruby
 
+BROKEN=		Inconsistent dependencies
+
 USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
