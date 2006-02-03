@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20060125
+PORTVERSION=	20060203
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/ \
 		http://updates.f-prot.com/files/
@@ -19,9 +19,9 @@ COMMENT=	F-Prot Antivirus Signatures
 # F-Prot does not version their .DEF files so the port always pulls the latest.
 IGNOREFILES=	${DISTFILES}
 
-NO_PACKAGE=	"Free for personal use only"
-NO_CDROM=	"Free for personal use only"
-RESTRICTED=	"Free for personal use only"
+NO_PACKAGE=	Free for personal use only
+NO_CDROM=	Free for personal use only
+RESTRICTED=	Free for personal use only
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
