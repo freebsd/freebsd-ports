@@ -1,5 +1,5 @@
---- ./src/include/cdfdist.h.orig	Mon Jul 11 23:50:59 2005
-+++ ./src/include/cdfdist.h	Fri Jan 27 22:06:09 2006
+--- src/include/cdfdist.h.orig	Mon Jan 30 20:05:49 2006
++++ src/include/cdfdist.h	Tue Jan 31 22:26:02 2006
 @@ -101,7 +101,7 @@
  #  define unix
  #endif
@@ -28,3 +28,12 @@
  #      define FOPEN64 fopen
  #    else
  #      define FOPEN64 fopen64
+@@ -513,7 +514,7 @@
+ *****************************************************************************/
+ 
+ #if defined(sun) || defined(MIPSEB) || defined(IBMRS) || defined(HP) || \
+-    defined(NeXT) || defined(mac) || defined(POWERPC)
++    defined(NeXT) || defined(mac) || defined(POWERPC) || defined(__sparc64__)
+ #  define FP1cpu
+ #endif
+ 
