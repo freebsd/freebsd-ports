@@ -43,7 +43,7 @@ DLCANNA_VER=	1.4
 # hack to allow parallel build to work
 .if defined(PACKAGE_BUILDING)
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:253:env
+USE_AUTOTOOLS=	autoconf:213:env autoconf:253:env
 .endif
 
 post-install:
