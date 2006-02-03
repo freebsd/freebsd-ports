@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -18,18 +18,18 @@ LIB_DEPENDS=	xapian.8:${PORTSDIR}/databases/xapian-core \
 		qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
 
 USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="freebsd-g++"
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="freebsd-g++"
+MAKE_ENV=	${CONFIGURE_ENV}
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
 MAN1=		recoll.1 recollindex.1
 MAN5=		recoll.conf.5
 
-.include <bsd.port.pre.mk>
+post-patch:
+	${REINPLACE_CMD} -e 's/^CXXFLAGS =/CXXFLAGS ?=/' \
+		${WRKSRC}/mk/localdefs.in
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
