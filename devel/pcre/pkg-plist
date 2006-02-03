@@ -5,6 +5,7 @@ include/pcre.h
 include/pcreposix.h
 include/pcre_scanner.h
 include/pcre_stringpiece.h
+include/pcrecpparg.h
 include/pcrecpp.h
 lib/libpcre.a
 lib/libpcre.so
