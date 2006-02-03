@@ -23,6 +23,7 @@ BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XLIB=	yes
+USE_AUTOTOOLS=	libtool:15:env
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
