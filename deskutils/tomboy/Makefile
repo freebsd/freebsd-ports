@@ -8,7 +8,7 @@
 
 PORTNAME=	tomboy
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/tomboy/releases/
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 
 USE_GNOME=	gnomehack gnometarget intltool gnomeprefix gnomepanel
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
