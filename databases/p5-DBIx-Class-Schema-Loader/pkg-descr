@@ -1,0 +1,19 @@
+THIS IS A DEVELOPMENT RELEASE. This is 0.01xxx, the first public
+releases. Expect things to be broken in various ways. Expect the entire
+design to be fatally flawed. Expect the interfaces to change if it
+becomes neccessary. It's mostly here for people to poke at it and find
+the flaws in it. 0.02 will hopefully have some sanity when we get there.
+
+DBIx::Class::Schema::Loader automates the definition of a
+DBIx::Class::Schema by scanning table schemas and setting up columns and
+primary keys.
+
+DBIx::Class::Schema::Loader supports MySQL, Postgres, SQLite and DB2.
+See DBIx::Class::Schema::Loader::Generic for more, and
+DBIx::Class::Schema::Loader::Writing for notes on writing your own
+db-specific subclass for an unsupported db.
+
+This module requires DBIx::Class 0.05 or later, and obsoletes
+DBIx::Class::Loader for DBIx::Class version 0.05 and later.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-Schema-Loader/
