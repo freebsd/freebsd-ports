@@ -1,0 +1,10 @@
+--- gmime-2.0.pc.in.orig	Tue May  3 19:34:20 2005
++++ gmime-2.0.pc.in	Wed Feb  1 00:51:53 2006
+@@ -7,6 +7,6 @@
+ Name: GMime
+ Version: @VERSION@
+ Description: MIME parser and utility library
+-Requires: glib-2.0,gobject-2.0
++Requires: glib-2.0,gobject-2.0,gthread-2.0
+ Libs: -L${libdir} @GMIME_LIBS@ @LIBS@
+ Cflags: -I${includedir}/gmime-2.0 @GMIME_CFLAGS@
