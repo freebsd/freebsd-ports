@@ -84,8 +84,8 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
-	${REINPLACE_CMD} "s,ac_cups_share_test=.*,ac_cups_share_test=\`\$$kde_cups_config --datadir\`,g" \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,ac_cups_share_test=.*,ac_cups_share_test=\`\$$kde_cups_config --datadir\`,g" \
+			 -e "s,pcreposix.h,pcre.h,g" ${WRKSRC}/configure
 
 post-configure:
 	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
