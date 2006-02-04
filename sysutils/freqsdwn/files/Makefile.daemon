@@ -1,0 +1,13 @@
+# $FreeBSD$
+
+PROG=		freqshpd
+SRCS=		freqmain.c
+NOMAN=		yes
+NO_MAN=		yes
+
+BINDIR=		${PREFIX}/sbin
+BINMODE=	0510
+
+CFLAGS+=	-DPREFIX='"${PREFIX}"'
+
+.include <bsd.prog.mk>

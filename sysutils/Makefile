@@ -169,6 +169,7 @@
     SUBDIR += freedt
     SUBDIR += freeipmi
     SUBDIR += freesbie
+    SUBDIR += freqsdwn
     SUBDIR += fsbackup
     SUBDIR += ftrace
     SUBDIR += fusefs-kmod
