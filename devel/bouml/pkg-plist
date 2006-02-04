@@ -35,7 +35,6 @@ bin/bouml
 %%DATADIR%%/cpp_utilities/1664.bodies
 %%DATADIR%%/cpp_utilities/1792.bodies
 %%DATADIR%%/cpp_utilities/1920.bodies
-%%DATADIR%%/cpp_utilities/2.session
 %%DATADIR%%/cpp_utilities/2048.bodies
 %%DATADIR%%/cpp_utilities/2176.bodies
 %%DATADIR%%/cpp_utilities/2304.bodies
@@ -108,7 +107,6 @@ bin/bouml
 %%DATADIR%%/empty/1664.bodies
 %%DATADIR%%/empty/1792.bodies
 %%DATADIR%%/empty/1920.bodies
-%%DATADIR%%/empty/2.session
 %%DATADIR%%/empty/2048.bodies
 %%DATADIR%%/empty/2176.bodies
 %%DATADIR%%/empty/2304.bodies
@@ -163,7 +161,6 @@ bin/bouml
 %%DATADIR%%/genpro/1664.bodies
 %%DATADIR%%/genpro/1792.bodies
 %%DATADIR%%/genpro/1920.bodies
-%%DATADIR%%/genpro/2.session
 %%DATADIR%%/genpro/2176.bodies
 %%DATADIR%%/genpro/2304.bodies
 %%DATADIR%%/genpro/2432.bodies
@@ -210,7 +207,6 @@ bin/bouml
 %%DATADIR%%/gxmi
 %%DATADIR%%/html/1024.bodies
 %%DATADIR%%/html/1152.bodies
-%%DATADIR%%/html/12.session
 %%DATADIR%%/html/1280.bodies
 %%DATADIR%%/html/128002.bodies
 %%DATADIR%%/html/128036
@@ -259,7 +255,6 @@ bin/bouml
 %%DATADIR%%/html/1664.bodies
 %%DATADIR%%/html/1792.bodies
 %%DATADIR%%/html/1920.bodies
-%%DATADIR%%/html/2.session
 %%DATADIR%%/html/2048.bodies
 %%DATADIR%%/html/2176.bodies
 %%DATADIR%%/html/2304.bodies
@@ -345,7 +340,6 @@ bin/bouml
 %%DATADIR%%/rose/1664.bodies
 %%DATADIR%%/rose/1792.bodies
 %%DATADIR%%/rose/1920.bodies
-%%DATADIR%%/rose/2.session
 %%DATADIR%%/rose/2176.bodies
 %%DATADIR%%/rose/2304.bodies
 %%DATADIR%%/rose/2432.bodies
@@ -411,7 +405,6 @@ bin/bouml
 %%DATADIR%%/singleton/1664.bodies
 %%DATADIR%%/singleton/1792.bodies
 %%DATADIR%%/singleton/1920.bodies
-%%DATADIR%%/singleton/2.session
 %%DATADIR%%/singleton/2176.bodies
 %%DATADIR%%/singleton/2304.bodies
 %%DATADIR%%/singleton/2432.bodies
@@ -496,7 +489,6 @@ bin/bouml
 %%DATADIR%%/sm_generator/1664.bodies
 %%DATADIR%%/sm_generator/1792.bodies
 %%DATADIR%%/sm_generator/1920.bodies
-%%DATADIR%%/sm_generator/2.session
 %%DATADIR%%/sm_generator/2048.bodies
 %%DATADIR%%/sm_generator/2176.bodies
 %%DATADIR%%/sm_generator/2304.bodies
@@ -543,9 +535,85 @@ bin/bouml
 %%DATADIR%%/sm_generator/stereotypes
 %%DATADIR%%/sm_generator/tools
 %%DATADIR%%/stmgen
+%%DATADIR%%/usecase_wizard/1024.bodies
+%%DATADIR%%/usecase_wizard/1152.bodies
+%%DATADIR%%/usecase_wizard/1280.bodies
+%%DATADIR%%/usecase_wizard/128002.diagram
+%%DATADIR%%/usecase_wizard/128130
+%%DATADIR%%/usecase_wizard/128130.diagram
+%%DATADIR%%/usecase_wizard/128256.bodies
+%%DATADIR%%/usecase_wizard/128258.diagram
+%%DATADIR%%/usecase_wizard/128386.diagram
+%%DATADIR%%/usecase_wizard/128512.bodies
+%%DATADIR%%/usecase_wizard/128768.bodies
+%%DATADIR%%/usecase_wizard/128896.bodies
+%%DATADIR%%/usecase_wizard/129.diagram
+%%DATADIR%%/usecase_wizard/129152.bodies
+%%DATADIR%%/usecase_wizard/129280.bodies
+%%DATADIR%%/usecase_wizard/129536.bodies
+%%DATADIR%%/usecase_wizard/129920.bodies
+%%DATADIR%%/usecase_wizard/130176.bodies
+%%DATADIR%%/usecase_wizard/130432.bodies
+%%DATADIR%%/usecase_wizard/130688.bodies
+%%DATADIR%%/usecase_wizard/130944.bodies
+%%DATADIR%%/usecase_wizard/131200.bodies
+%%DATADIR%%/usecase_wizard/131456.bodies
+%%DATADIR%%/usecase_wizard/131712.bodies
+%%DATADIR%%/usecase_wizard/131968.bodies
+%%DATADIR%%/usecase_wizard/132224.bodies
+%%DATADIR%%/usecase_wizard/132480.bodies
+%%DATADIR%%/usecase_wizard/132738.bodies
+%%DATADIR%%/usecase_wizard/132866.bodies
+%%DATADIR%%/usecase_wizard/1408.bodies
+%%DATADIR%%/usecase_wizard/1536.bodies
+%%DATADIR%%/usecase_wizard/1664.bodies
+%%DATADIR%%/usecase_wizard/1792.bodies
+%%DATADIR%%/usecase_wizard/1920.bodies
+%%DATADIR%%/usecase_wizard/2048.bodies
+%%DATADIR%%/usecase_wizard/2176.bodies
+%%DATADIR%%/usecase_wizard/2304.bodies
+%%DATADIR%%/usecase_wizard/2432.bodies
+%%DATADIR%%/usecase_wizard/256
+%%DATADIR%%/usecase_wizard/2560.bodies
+%%DATADIR%%/usecase_wizard/257.diagram
+%%DATADIR%%/usecase_wizard/2688.bodies
+%%DATADIR%%/usecase_wizard/2944.bodies
+%%DATADIR%%/usecase_wizard/3072.bodies
+%%DATADIR%%/usecase_wizard/3200.bodies
+%%DATADIR%%/usecase_wizard/3328.bodies
+%%DATADIR%%/usecase_wizard/3456.bodies
+%%DATADIR%%/usecase_wizard/3584.bodies
+%%DATADIR%%/usecase_wizard/3712.bodies
+%%DATADIR%%/usecase_wizard/384
+%%DATADIR%%/usecase_wizard/3840.bodies
+%%DATADIR%%/usecase_wizard/385.diagram
+%%DATADIR%%/usecase_wizard/3968.bodies
+%%DATADIR%%/usecase_wizard/4096.bodies
+%%DATADIR%%/usecase_wizard/4224.bodies
+%%DATADIR%%/usecase_wizard/4352.bodies
+%%DATADIR%%/usecase_wizard/4736.bodies
+%%DATADIR%%/usecase_wizard/4864.bodies
+%%DATADIR%%/usecase_wizard/4992.bodies
+%%DATADIR%%/usecase_wizard/512
+%%DATADIR%%/usecase_wizard/5120.bodies
+%%DATADIR%%/usecase_wizard/513.diagram
+%%DATADIR%%/usecase_wizard/5248.bodies
+%%DATADIR%%/usecase_wizard/641
+%%DATADIR%%/usecase_wizard/6528.bodies
+%%DATADIR%%/usecase_wizard/768.bodies
+%%DATADIR%%/usecase_wizard/8833.bodies
+%%DATADIR%%/usecase_wizard/896.bodies
+%%DATADIR%%/usecase_wizard/9729.bodies
+%%DATADIR%%/usecase_wizard/cpp_includes
+%%DATADIR%%/usecase_wizard/generation_settings
+%%DATADIR%%/usecase_wizard/idl_includes
+%%DATADIR%%/usecase_wizard/java_imports
+%%DATADIR%%/usecase_wizard/stereotypes
+%%DATADIR%%/usecase_wizard/tools
+%%DATADIR%%/usecase_wizard/usecase_wizard.prj
+%%DATADIR%%/usecasewizard
 %%DATADIR%%/xmi/1024.bodies
 %%DATADIR%%/xmi/1152.bodies
-%%DATADIR%%/xmi/12.session
 %%DATADIR%%/xmi/1280.bodies
 %%DATADIR%%/xmi/128002
 %%DATADIR%%/xmi/128002.bodies
@@ -580,7 +648,6 @@ bin/bouml
 %%DATADIR%%/xmi/1664.bodies
 %%DATADIR%%/xmi/1792.bodies
 %%DATADIR%%/xmi/1920.bodies
-%%DATADIR%%/xmi/2.session
 %%DATADIR%%/xmi/2048.bodies
 %%DATADIR%%/xmi/2176.bodies
 %%DATADIR%%/xmi/2304.bodies
@@ -637,6 +704,7 @@ bin/bouml
 %%DATADIR%%/xmi/tools
 %%DATADIR%%/xmi/xmi.prj
 @dirrm %%DATADIR%%/xmi
+@dirrm %%DATADIR%%/usecase_wizard
 @dirrm %%DATADIR%%/sm_generator
 @dirrm %%DATADIR%%/singleton
 @dirrm %%DATADIR%%/rose

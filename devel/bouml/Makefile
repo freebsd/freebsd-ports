@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.9
+PORTVERSION=	2.9.1
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -34,7 +34,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not compile with gcc-2.95"
+BROKEN=	Does not compile with gcc-2.95
 .endif
 
 pre-configure:
