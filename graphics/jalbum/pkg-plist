@@ -234,6 +234,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/includes/help.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/html-header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-bottom-navigation.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/index-remarks.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-top-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-topbar.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/setup-index.js
@@ -267,7 +268,6 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/plugins/Common.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/Common.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/Compile.bat
-%%DATADIR%%/skins/BluPlusPlus/plugins/Compile13.bat
 %%DATADIR%%/skins/BluPlusPlus/plugins/Constants.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/Constants.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/DynamicComboBoxModel.class
@@ -560,6 +560,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_hu.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_it.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_nl.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_nl.properties_old
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_no.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties_original
@@ -1224,10 +1225,12 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/texts/texts_it.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_nl.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_pl.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_pt.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sk.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sr.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sr_latin.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sv.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_uk.properties
 %%DATADIR%%/skins/Colorful/defs.jap
 %%DATADIR%%/skins/Colorful/index.htt
 %%DATADIR%%/skins/Colorful/preview.jpg
@@ -2125,6 +2128,7 @@ bin/jalbum
 %%DATADIR%%/tools/Replace spaces with underscores.bsh
 %%DATADIR%%/tools/Reset file date to camera date.bsh
 %%DATADIR%%/tools/Sample tool.bsh
+%%DATADIR%%/tools/Server mode.bsh
 %%DATADIR%%/tools/Show supported file types.bsh
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/texts
