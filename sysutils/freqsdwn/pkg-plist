@@ -1,0 +1,9 @@
+sbin/freqshpd
+sbin/freqshpk
+@unexec if cmp -s %D/etc/freqship/UPSFILE %D/etc/freqship/UPSFILE-dist; then rm -f %D/etc/freqship/UPSFILE; fi
+etc/freqship/UPSFILE-dist
+@exec [ -f %B/UPSFILE ] || cp -p %B/%f %B/UPSFILE
+@unexec if cmp -s %D/etc/freqship/UPSSTAT %D/etc/freqship/UPSSTAT-dist; then rm -f %D/etc/freqship/UPSSTAT; fi
+etc/freqship/UPSSTAT-dist
+@exec [ -f %B/UPSSTAT ] || cp -p %B/%f %B/UPSSTAT
+@dirrmtry etc/freqship

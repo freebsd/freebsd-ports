@@ -1,0 +1,29 @@
+===============================================================================
+
+	* IMPORTANT SETUP NOTICE * IMPORTANT SETUP NOTICE *
+
+o Set UPS's DIP SWITCH like following:
+	FREQUPS FW-F series
+		1:	ON	(must)
+		2:	ON	(require)
+		3:	OFF	(not use)
+		4:	ON	(must)
+		5:	OFF	(not use)
+		6:	ON	(recommended)
+
+o Set your /etc/rc.conf like following:
+
+	-------------------------------------
+	freqshpd_enable="YES"
+	freqshpk_enable="YES"
+	rcshutdown_timeout="60"    # if you use squid or etc..
+	-------------------------------------
+
+o Add following lines to /etc/syslog.conf
+
+	-------------------------------------
+	!freqshpd
+	daemon.*	/var/log/freqshpd.log
+	-------------------------------------
+
+===============================================================================
