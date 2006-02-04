@@ -235,4 +235,4 @@ bin/mailq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/postfix
 @dirrm etc/postfix/dist
-@dirrmtry etc/postfix 
+@dirrmtry etc/postfix

@@ -1,3 +1,3 @@
-MD5 (postfix/postfix-2.3-20060126.tar.gz) = bb0885a9d83cc9e1b8eb68e140a49e92
-SHA256 (postfix/postfix-2.3-20060126.tar.gz) = dba3f28fd05cedd328c04aabd07749d7cd70fee62b62e15e1937d61d8dcbf296
-SIZE (postfix/postfix-2.3-20060126.tar.gz) = 2588656
+MD5 (postfix/postfix-2.3-20060202.tar.gz) = 0e3cbcc3670ab7ab2c5616f211ba650b
+SHA256 (postfix/postfix-2.3-20060202.tar.gz) = 607d949e3856b31b3acb11c721b354e9f07c9407b45ea216bf8748fd443dce8d
+SIZE (postfix/postfix-2.3-20060202.tar.gz) = 2592139
