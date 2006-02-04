@@ -7,7 +7,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 

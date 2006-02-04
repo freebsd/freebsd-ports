@@ -79,6 +79,10 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 @dirrmtry src/redhat/RPMS/i586
 @dirrmtry src/redhat/RPMS/i486
 @dirrmtry src/redhat/RPMS/i386
+@dirrmtry src/redhat/RPMS/ia64
+@dirrmtry src/redhat/RPMS/sparc
+@dirrmtry src/redhat/RPMS/sparcv9
+@dirrmtry src/redhat/RPMS/sparc64
 @dirrmtry src/redhat/RPMS
 @dirrmtry src/redhat/BUILD
 @dirrmtry src/redhat
@@ -97,7 +101,11 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 @exec mkdir -p %D/src/redhat/RPMS/i486
 @exec mkdir -p %D/src/redhat/RPMS/i586
 @exec mkdir -p %D/src/redhat/RPMS/i686
+@exec mkdir -p $D/src/redhat/RPMS/ia64
 @exec mkdir -p %D/src/redhat/RPMS/noarch
+@exec mkdir -p %D/src/redhat/RPMS/sparc
+@exec mkdir -p %D/src/redhat/RPMS/sparcv9
+@exec mkdir -p %D/src/redhat/RPMS/sparc64
 @exec mkdir -p %D/src/redhat/SOURCES
 @exec mkdir -p %D/src/redhat/SPECS
 @exec mkdir -p %D/src/redhat/SRPMS
