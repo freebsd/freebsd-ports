@@ -7806,6 +7806,7 @@ p5-DBIx-AnyDBD	ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse	ports/databases/p5-DBIx-Browse
 p5-DBIx-Class	ports/databases/p5-DBIx-Class
 p5-DBIx-Class-Loader	ports/databases/p5-DBIx-Class-Loader
+p5-DBIx-Class-Schema-Loader	ports/databases/p5-DBIx-Class-Schema-Loader
 p5-DBIx-ContextualFetch	ports/databases/p5-DBIx-ContextualFetch
 p5-DBIx-DBSchema	ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource	ports/databases/p5-DBIx-DataSource
