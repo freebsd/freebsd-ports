@@ -7,7 +7,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +18,13 @@ COMMENT=	Bibliographic reference database
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		dbi.0:${PORTSDIR}/databases/libdbi
 
-BROKEN=		Incorrect pkg-plist
-
 USE_GMAKE=	yes
+USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
 CFLAGS+=	-I${LOCALBASE}/include
-# Change these:
+
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-classpath-root=${PREFIX}/share/java/classes
 CONFIGURE_ARGS+=	--with-refdb-url=http://localhost/refdb
@@ -37,17 +36,24 @@ OPTIONS=	MYSQL	"Use MySQL" on \
 		SQLITE	"Use SQLite" off \
 		CATALOG	"Install SGML catalog" off
 
+MAN1=	bib2ris.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
+	refdb-backup.1 refdb-ms.1 refdb-restore.1 refdba.1 \
+	refdbc.1 refdbctl.1 refdbd.1 refdbib.1 refdbjade.1 \
+	refdbnd.1 refdbxml.1 refdbxp.1 runbib.1
+MAN7=	RefDB.7
+MAN8=	refdb.8 refdb.sh.8
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
-IGNORE=		You must choose a back-end database
+IGNORE=		you must choose a back-end database
 .endif
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 # If libdbi-drivers has been built without MySQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libmysql.so)
-IGNORE=		Rebuild databases/libdbi-drivers with MySQL support
+IGNORE=		rebuild databases/libdbi-drivers with MySQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 .endif
@@ -57,7 +63,7 @@ CONFIGURE_ARGS+=	--with-db-server=mysql
 USE_PGSQL=	yes
 # If libdbi-drivers has been built without PostgreSQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libpgsql.so)
-IGNORE=		Rebuild databases/libdbi-drivers with PostgreSQL support
+IGNORE=		rebuild databases/libdbi-drivers with PostgreSQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 .endif
@@ -67,7 +73,7 @@ CONFIGURE_ARGS+=	--with-db-server=pgsql
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 # If libdbi-drivers has been built without SQLite driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libsqlite.so)
-IGNORE=		Rebuild databases/libdbi-drivers with SQLite support
+IGNORE=		rebuild databases/libdbi-drivers with SQLite support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 .endif

@@ -90,20 +90,26 @@ etc/refdb/med2riscgirc.example
 etc/refdb/marc2risrc.example
 etc/refdb/refdbxmlrc.example
 etc/refdb/refdbdrc.example
-bin/refdb-bug
-bin/refdbctl
-bin/refdbjade
-bin/runbib
 bin/db2ris
-bin/refdbxml
-bin/refdbnd
+bin/eenc
+bin/en2ris
+bin/marc2ris
+bin/med2ris
+bin/nmed2ris
+bin/refdb-bug
+bin/refdb-ms
+bin/refdb_dos2unix
+bin/refdb_tex2mail
+bin/refdba
+bin/refdbc
+bin/refdbctl
 bin/refdbd
 bin/refdbib
-bin/refdbc
-bin/refdba
+bin/refdbjade
+bin/refdbnd
+bin/refdbxml
 bin/refdbxp
-bin/nmed2ris
-bin/eenc
+bin/runbib
 @dirrm share/refdb/declarations
 @dirrm share/refdb/dsssl/html
 @dirrm share/refdb/dsssl/lib
