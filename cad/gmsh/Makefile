@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.63.0
+PORTVERSION=	1.63.2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
