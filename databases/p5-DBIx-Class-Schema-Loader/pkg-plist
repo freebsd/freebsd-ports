@@ -1,0 +1,11 @@
+%%SITE_PERL%%/DBIx/Class/Schema/Loader.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DB2.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Generic.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Pg.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Writing.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/mysql.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
