@@ -265,8 +265,10 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/imap/Userid.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/AttributeTable.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/InitializeTable.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/LdapAttributeTable.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/LdapConnection$PoolData.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/LdapConnection.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/LdapRequestFactory.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/LdapRequests.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/net/ldap/SearchThread.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/text/AnchorFormat.class
@@ -280,6 +282,7 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/AssertionException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/BadFormatTemplateException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/Bytes.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/CSVParser.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/CipherHelper.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/Code.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/CommentableProperties.class
@@ -291,12 +294,14 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/InsensitiveProperties.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/ItemReader.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/ItemWriter.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/LdapUtil.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/Logger.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/MD5$MD5_CTX.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/MD5.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/MyURLEncoder.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/PbeCipherEx.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/PrintWriterEx.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/SimpleLogger.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/StringSplitter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/StringUtil$1$Dumper.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/StringUtil.class
@@ -305,8 +310,15 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/TemplateWriter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/Text.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/UrlParser.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/Validator.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/BaseTerminal.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/DefaultHttpDeviceParser.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/DefaultTerminalParser.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/HttpDevice.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/HttpDeviceFactory.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/HttpDeviceParser$MatchPattern.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/HttpDeviceParser$TermData.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/HttpDeviceParser.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/TerminalFactory.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/TerminalParser$MatchPattern.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/util/terminal/TerminalParser$TermData.class
@@ -321,6 +333,9 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/ImapMailerContext$1$SpamTestThread.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/ImapMailerContext.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/JavacatConfig.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapAttribute.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapAttributes.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapInitializeTable.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapSearchAttribute$LdapSearchValue.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/LdapSearchAttribute.class
@@ -340,6 +355,7 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/ProductKey.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/PropertyNotFoundException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/RadiusConfig.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/RedirectParameter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/SearchCondition.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/SectionData.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/SessionName.class
@@ -356,6 +372,7 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/XGateVersion.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/XGateWriterFactory.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/AccountCache.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/AccountGroup.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/AccountImporter$ImportException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/AccountImporter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/GateAccount.class
@@ -371,9 +388,11 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/ImportAccount.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/ImportConfig.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/MailboxAlias.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/account/XGateAccountFlag.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBook$AddressComparator.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBook.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBookEntry.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBookItem.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBookManager.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBookManagerFile.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/addressbook/AddressBookManagerLdap.class
@@ -390,8 +409,10 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/astel/AstelTextConvertVisitor.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/astel/AstelWriter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/AuthenticateStateCommandAction.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/ChangeKeyPassAction.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/ChangeMailboxAction.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/ChangeMailboxEntryAction.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/ChangePasswordAction.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/CommandAction.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/CopyMessageAction.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/cmd/CopyMessageEntryAction.class
@@ -576,6 +597,8 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/core/TemporaryFileManager.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/core/XGateContextNotFoundException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/gateadmin/GateAccountServer.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/gateadmin/License.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/gateadmin/LoginUser.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/gateadmin/Template.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/imode/CHtmlAnchorFormat.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/imode/CHtmlErrorConvertVisitor.class
@@ -626,6 +649,7 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/spam/WordProperty.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/spam/WordPropertyComparator.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/spam/WordTable.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/test/TestEscapeSpace.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/AccessFilter.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/AccessFilterException.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/CarrierCheckBean.class
@@ -633,6 +657,7 @@
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/GenarateKeycode.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/HtmlTextExtractor$MyHTMLParserCallBack.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/HtmlTextExtractor.class
+%%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/HtmlTool.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/HttpRequestUtil.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/ImapVirtualText.class
 %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/InputModeTag.class
@@ -809,8 +834,6 @@
 %%T%%/webapps/xgate/WEB-INF/struts-config-configsetup-actionmappings.exadel
 %%T%%/webapps/xgate/WEB-INF/struts-config-configsetup-actionmappings.xml
 %%T%%/webapps/xgate/WEB-INF/struts-config-configsetup-forms.xml
-%%T%%/webapps/xgate/WEB-INF/struts-config-tbs-actionmappings.xml
-%%T%%/webapps/xgate/WEB-INF/struts-config-tbs-forms.xml
 %%T%%/webapps/xgate/WEB-INF/struts-config.exadel
 %%T%%/webapps/xgate/WEB-INF/struts-config.xml
 %%T%%/webapps/xgate/WEB-INF/targets.xml
@@ -2687,12 +2710,13 @@
 @dirrm %%T%%/webapps/xgate/help/ja
 @dirrm %%T%%/webapps/xgate/help/en
 @dirrm %%T%%/webapps/xgate/help
+@dirrm %%T%%/webapps/xgate/form/term/pc
 @dirrm %%T%%/webapps/xgate/form/term
 @dirrm %%T%%/webapps/xgate/form/gateadmin
 @dirrm %%T%%/webapps/xgate/form/configsetup
 @dirrm %%T%%/webapps/xgate/form
 @dirrm %%T%%/webapps/xgate/astel
-@dirrm %%T%%/webapps/xgate/META-INF
+@dirrm %%T%%/webapps/xgate/WEB-INF/work
 @dirrm %%T%%/webapps/xgate/WEB-INF/tlds
 @dirrm %%T%%/webapps/xgate/WEB-INF/template/wml/openwave/ja
 @dirrm %%T%%/webapps/xgate/WEB-INF/template/wml/openwave/en
@@ -2732,6 +2756,7 @@
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/wap
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util/media
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/util
+@dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/test
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/spam
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/servlet
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/jp/co/orangesoft/xgate/page/helper
@@ -2774,6 +2799,7 @@
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/com/happysize
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes/com
 @dirrm %%T%%/webapps/xgate/WEB-INF/classes
+@dirrm %%T%%/webapps/xgate/META-INF
 @dirrmtry %%T%%/webapps/xgate/WEB-INF/conf   
 @dirrmtry %%T%%/webapps/xgate/WEB-INF/address
 @dirrmtry %%T%%/webapps/xgate/WEB-INF/account
