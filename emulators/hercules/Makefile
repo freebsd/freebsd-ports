@@ -6,36 +6,54 @@
 #
 
 PORTNAME=	hercules
-PORTVERSION=	2.17.1
-PORTREVISION=	2
+PORTVERSION=	3.03.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
-MAINTAINER=	phk@FreeBSD.org
+MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	The Hercules System/370, ESA/390, and z/Architecture Emulator
 
-GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_REINPLACE=	yes
+OPTIONS=	PTHREADS "Build with pthreads instead of fthreads." on \
+		NLS "Build with native language support." on \
+		DEBUG "Enable for debugging hercules itself." off
+
+GNU_CONFIGURE=		yes
+INSTALLS_SHLIB=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's,intl m4 po util html man,intl m4 po util man,g' ${WRKSRC}/Makefile.in
+.else
+	@${REINPLACE_CMD} -e 's,^datadir = @datadir@,datadir = ${PREFIX}/share/doc/,' ${WRKSRC}/html/Makefile.in
+.endif
 
-do-install:
-.for i in hercules dasdinit dasdisup dasdload dasdls dasdpdsu \
-	tapecopy tapemap tapesplt cckd2ckd cckdcdsk ckd2cckd \
-	cckdcomp cckdswap hetget hetinit hetmap hetupd dmap2hrc
-	${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
-.endfor
+MAN1=			cckddiag.1 dasdseq.1
+MAN4=			cckd.4
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ../hercules.cnf cckddasd.html hercconf.html hercfaq.html \
-	hercinst.html herclic.html hercload.html hercnew.html herctcp.html \
-	hercules.css index.html
-	${INSTALL_DATA} ${WRKSRC}/html/$i ${DOCSDIR}
-.endfor
+PORTDOCS=		*
 .endif
+
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ENV+=		CFLAGS=-g
+.endif
+.if defined(WITH_PTHREADS)
+CONFIGURE_ARGS+=	--disable-fthreads
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+.else
+USE_GETTEXT=		yes
+.endif
+
+.include <bsd.port.post.mk>
