@@ -10398,6 +10398,7 @@ pwg		ports/sysutils/pwg
 pwgen		ports/sysutils/pwgen
 pwgen2		ports/sysutils/pwgen2
 pwlib		ports/devel/pwlib
+pwlib152	ports/devel/pwlib152
 pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
 pwsafe		ports/sysutils/pwsafe
