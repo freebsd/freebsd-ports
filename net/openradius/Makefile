@@ -7,12 +7,12 @@
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~evbergen/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
 
-MAINTAINER=	jettea46@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A RADIUS server with some actual documentation
 
 LOGFILE?=	/var/log/openradius.log
@@ -21,7 +21,10 @@ CONFLICTS=	freeradius-0.* gnu-radius-1.* radiusd-cistron-1.*
 
 CC?=		gcc
 CXX?=		g++
+
 USE_GMAKE=	yes
+USE_RC_SUBR=	openradius
+SUB_LIST=	LOGFILE="${LOGFILE}"
 
 OPTIONS=	LDAP	"With LDAP user database" off
 
@@ -34,10 +37,6 @@ SCRIPTS_ENV+=	USE_LDAP=yes
 .else
 PLIST_SUB+=	LDAP="@comment "
 .endif
-
-post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%LOGFILE%%|${LOGFILE}|g" \
-		< ${FILESDIR}/openradiusd.sh > ${WRKDIR}/openradiusd.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -80,7 +79,8 @@ post-install:
 	${INSTALL} -m 0600 ${WRKSRC}/etc/legacy/${FILE} \
 		${PREFIX}/etc/${PORTNAME}/legacy/${FILE}.sample
 .endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/openradiusd.sh ${PREFIX}/etc/rc.d
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

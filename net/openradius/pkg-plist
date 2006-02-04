@@ -47,7 +47,6 @@ bin/radclient
 bin/radtest
 
 sbin/radiusd
-etc/rc.d/openradiusd.sh
 
 %%PORTDOCS%%%%DOCSDIR%%/async-iface-notes
 %%PORTDOCS%%%%DOCSDIR%%/language.html
