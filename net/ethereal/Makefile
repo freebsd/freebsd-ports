@@ -20,7 +20,9 @@ USE_ICONV=	yes
 #USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
+CONFIGURE_ENV=	MIBDIRS="/dev/null"
 CONFIGURE_ARGS+=	--program-transform-name=""
+MAKE_ENV=	MIBDIRS="/dev/null"
 INSTALLS_SHLIB=	yes
 
 .for x in capinfos editcap idl2eth mergecap text2pcap
