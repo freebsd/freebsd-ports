@@ -1,8 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/SHA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SHA.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/sha_driver.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SHA/SHA.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SHA/SHA.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SHA/autosplit.ix
+%%SITE_PERL%%/SHA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SHA/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SHA
