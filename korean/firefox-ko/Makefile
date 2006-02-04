@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	korean www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/firefox/ \
 		ftp://chinsan2.twbbs.org/distfiles/firefox/
@@ -33,8 +34,7 @@ PLIST_SUB=	FIREFOX=${FIREFOX}
 do-install:
 	@${ECHO_MSG} "===> Backup setting files..."
 	(cd ${FIREFOX_HOME}; \
-	${CP} -f browserconfig.properties browserconfig.properties.orig; \
-	${CP} -f updater.ini updater.ini.orig)
+	${CP} -f browserconfig.properties browserconfig.properties.orig)
 	(cd ${FIREFOX_HOME}/defaults/pref; \
 	${CP} -f firefox-l10n.js firefox-l10n.js.orig)
 	(cd ${FIREFOX_HOME}/defaults/profile; \
