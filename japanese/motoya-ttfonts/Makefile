@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	motoya-ttfonts
-PORTVERSION=	0.20040116
-PORTREVISION=	1
+PORTVERSION=	0.20060201
+PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	#
 #		You must accept following MOTOYA freefont LICENSE[1], and regist
@@ -15,7 +15,7 @@ MASTER_SITES=	#
 #		contains download URL.
 #		http://www.motoyafont.jp/use_consent.htm [1]
 #		http://www.motoyafont.jp/toroku.html [2]
-DISTFILES=	nfa1.exe nfc1.exe
+DISTFILES=	nfa1.exe nfc1.exe nfbc1.exe
 DIST_SUBDIR=	motoya
 
 MAINTAINER=	nork@FreeBSD.org
@@ -37,9 +37,11 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 pre-fetch:
 	@[ -f ${DISTDIR}/${DIST_SUBDIR}/nfa1.exe \
-			-a -f ${DISTDIR}/${DIST_SUBDIR}/nfc1.exe ] || (	\
+	-a -f ${DISTDIR}/${DIST_SUBDIR}/nfc1.exe \
+	-a -f ${DISTDIR}/${DIST_SUBDIR}/nfbc1.exe \
+	] || (	\
 	${ECHO} "****************************************************";	\
-	${ECHO} "Please get nfa1.exe and nfc1.exe from";		\
+	${ECHO} "Please get nfa1.exe, nfc1.exe and nfbc1.exe from";		\
 	${ECHO} "       http://www.motoyafont.jp/toroku.html";		\
 	${ECHO} "And, you must accept following MOTOYA freefont LICENSE."; \
 	${ECHO} "	http://www.motoyafont.jp/use_consent.htm";	\
