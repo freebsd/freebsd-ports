@@ -1,5 +1,4 @@
 @exec mv %D/lib/%%FIREFOX%%/browserconfig.properties %D/lib/%%FIREFOX%%/browserconfig.properties.orig
-@exec mv %D/lib/%%FIREFOX%%/updater.ini %D/lib/%%FIREFOX%%/updater.ini.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig
 @exec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig
 lib/%%FIREFOX%%/browserconfig.properties
@@ -21,6 +20,5 @@ lib/%%FIREFOX%%/searchplugins/naver-ko.gif
 lib/%%FIREFOX%%/searchplugins/amazondotcom.png
 lib/%%FIREFOX%%/searchplugins/creativecommons.png
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
-@unexec mv %D/lib/%%FIREFOX%%/updater.ini.orig %D/lib/%%FIREFOX%%/updater.ini
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html
