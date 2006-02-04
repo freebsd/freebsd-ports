@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
