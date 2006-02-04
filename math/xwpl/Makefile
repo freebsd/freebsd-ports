@@ -15,8 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X Wavelet Packet Laboratory
 
 ONLY_FOR_ARCHS=	i386
+IGNORE=		does not run: binary for FreeBSD-1.0.2
+DEPRECATED=	source not available and no recent binary
+EXPIRATION_DATE=	2006-03-31
 
-NO_CDROM=	"Free for Non-Commercial Use Only"
+NO_CDROM=	Free for Non-Commercial Use Only
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xwpl
 STRIP=
