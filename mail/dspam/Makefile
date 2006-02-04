@@ -3,7 +3,7 @@
 # Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam/Makefile,v 1.4 2006/02/01 02:15:35 itetcu Exp $
+# $Tecnik: ports/mail/dspam/Makefile,v 1.7 2006/02/03 09:57:32 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -25,29 +25,16 @@ PORTVER_MAJ=	3.6.3
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
-WRKSRC=		${WRKDIR}/dspam-cvs${SNAP_DATE}
+WRKSRC=		${WRKDIR}/dspam-${SNAP_DATE}
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
 	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
-DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 .endif
 
-## maintainer only
-.ifdef(MAINT)
-MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
-DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
-NO_CHECKSUM=	yes
-.	ifdef(SNAP_DATE)
-DISTFILES=	snapshot-devel.tar.gz
-#FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
-.	endif
-FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
-.endif
-
-_UPD_LINE_NO=	19
+_UPD_LINE_NO=	13
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -536,13 +523,6 @@ pre-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|; \
-		s|%%PKGNAME%%|${PKGNAME}|; s|%%MAINTAINER%%|${MAINTAINER}|; \
-		s|%%LIBTOOLFLAGS%%|${LIBTOOLFLAGS}|g; \
-		s|-ldb-4.1|-ldb41|g;'  ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
 		${WRKSRC}/src/tools.mysql_drv/purge.sql
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
@@ -633,8 +613,6 @@ post-install:
 			purge-4.1.sql purge.sql \
 			virtual_user_aliases.sql \
 			virtual_users.sql ${EXAMPLESDIR}/mysql
-#	@${INSTALL_DATA} ${FILESDIR}/2x_to_3x_db.sql ${EXAMPLESDIR}/mysql
-#	@${INSTALL_DATA} ${FILESDIR}/310_to_320.my.sql ${EXAMPLESDIR}/mysql
 .endif
 .ifdef(WITH_POSTGRESQL)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
