@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	glebius
 DIST_SUBDIR=	mpd4
 
-MAINTAINER=	archie@freebsd.org
+MAINTAINER=	glebius@freebsd.org
 COMMENT=	Multi-link PPP daemon based on netgraph(4) [development version]
 
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
