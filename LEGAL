@@ -243,6 +243,8 @@ freefonts-*		x11-fonts/freefonts	Some of the fonts are
 						[not be] sold")
 freenet6-client-*	net/freenet6		Must agree to License Agreement
 						before downloading
+freqship/*		sysutils/freqsdwn	License agreement is required
+						to download
 ftree-*			misc/ftree		Cannot distribute commercially
 fwtk/*			security/fwtk		No redistribution allowed
 Frisk-*			games/xfrisk		Copyright/trademark violation?
