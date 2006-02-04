@@ -10149,7 +10149,6 @@ var/mail
 @exec /bin/mkdir -p %D/usr/X11R6/bin
 @dirrm usr/X11R6/bin
 @dirrm usr/X11R6
-@dirrm usr
 @dirrm sbin
 @exec /bin/mkdir -p %D/proc
 @dirrm proc
@@ -10230,3 +10229,4 @@ var/mail
 @dirrmtry usr/local/doc
 @dirrmtry usr/local/bin
 @dirrmtry usr/local
+@dirrmtry usr
