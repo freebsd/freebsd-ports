@@ -55,7 +55,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/perl:${PORTSDIR}/lang/perl5
 CONFIGURE_ENV+=	INTLTOOL_PERL="${LOCALBASE}/bin/perl"
 .endif
 
-.if defined(WITH_GTK) && !defined(WITHOUT_GTK)
+.if defined(WITH_GTK)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=--with-gtk2
 PLIST_SUB+=	GTK=""
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=--without-gtk2
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if defined(WITH_QT) && !defined(WITHOUT_QT)
+.if defined(WITH_QT)
 LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
 CONFIGURE_ARGS+=--with-qt
 CONFIGURE_ENV+=	QTDIR=${X11BASE}/lib QTINCDIR=${X11BASE}/include \
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--without-qt
 PLIST_SUB+=	QT="@comment "
 .endif
 
-.if defined(WITH_GNOME) && !defined(WITHOUT_GNOME)
+.if defined(WITH_GNOME)
 USE_GNOME+=	gnomepanel
 CONFIGURE_ARGS+=--with-gnome2 --enable-applet
 PLIST_SUB+=	GNOME=""
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=--without-gnome2 --disable-applet
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if defined(WITH_ANTHY) && !defined(WITHOUT_ANTHY)
+.if defined(WITH_ANTHY)
 LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
 CONFIGURE_ARGS+=--with-anthy
 PLIST_SUB+=	ANTHY=""
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=--without-anthy
 PLIST_SUB+=	ANTHY="@comment "
 .endif
 
-.if defined(WITH_CANNA) && !defined(WITHOUT_CANNA)
+.if defined(WITH_CANNA)
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
 CONFIGURE_ARGS+=--with-canna
 PLIST_SUB+=	CANNA=""
@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=--without-canna
 PLIST_SUB+=	CANNA="@comment "
 .endif
 
-.if defined(WITH_M17NLIB) && !defined(WITHOUT_M17NLIB)
+.if defined(WITH_M17NLIB)
 LIB_DEPENDS+=	m17n.1:${PORTSDIR}/devel/m17n-lib
 CONFIGURE_ARGS+=--with-m17nlib
 PLIST_SUB+=	M17NLIB=""
@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=--without-m17nlib
 PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
-.if defined(WITH_PRIME) && !defined(WITHOUT_PRIME)
+.if defined(WITH_PRIME)
 BUILD_DEPENDS+=	prime:${PORTSDIR}/japanese/prime
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--with-prime
@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=--without-prime
 PLIST_SUB+=	PRIME="@comment "
 .endif
 
-.if defined(WITH_SCIM) && !defined(WITHOUT_SCIM)
+.if defined(WITH_SCIM)
 USE_GCC=	3.4
 LIB_DEPENDS+=	scim-1.0.9:${PORTSDIR}/textproc/scim
 CONFIGURE_ARGS+=--with-scim
@@ -131,7 +131,7 @@ CONFIGURE_ARGS+=--without-scim
 PLIST_SUB+=	SCIM="@comment "
 .endif
 
-.if defined(WITH_SKK) && !defined(WITHOUT_SKK)
+.if defined(WITH_SKK)
 RUN_DEPENDS+=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo
 .endif
 
