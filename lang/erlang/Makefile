@@ -22,32 +22,50 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
+# The Java applications that are part of the Erlang distribution are
+# not strictly necessary - it is included for completeness sake. A
+# problem with the Erlang build procedure is that it only checks if
+# javac is in the regular path - and then assumes that all of the jdk
+# utilities is in the path as well. The only way to make sure that
+# this is the case (that I could think of at least) was to make sure
+# ${JAVA_HOME}/bin is added to the PATH, using the *_ENV macros.
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	1.4+
+JAVA_BUILD=	yes
+# Make sure ${JAVA_HOME}/bin is in the path
+CONFIGURE_ENV+= PATH=${PATH}:${JAVA_HOME}/bin
+MAKE_ENV+=      PATH=${PATH}:${JAVA_HOME}/bin
+SCRIPT_ENV+=    PATH=${PATH}:${JAVA_HOME}/bin
+.endif
+
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=		yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+WITHOUT_ODBC=	yes
 .endif
 
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=        iodbc
-
 .if ${DRIVER_MANAGER} == "unixodbc"
 LIB_DEPENDS+=           odbc.1:${PORTSDIR}/databases/unixODBC
-.else   # assume we're using iodbc
+.else # assume we're using iodbc
 LIB_DEPENDS+=           iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
-
-# Set JAVABINDIR to where you have javac, if different from below
-JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
-JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
 ERLANG_MAN=     otp_doc_man_R10B-9.tar.gz
 .if !defined(NOPORTDOCS)
 ERLANG_DOCS=	otp_doc_html_R10B-9.tar.gz
 .endif
+ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i
@@ -59,29 +77,7 @@ NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 CFLAGS+=        -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib
 CONFIGURE_ENV=  CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${JAVABINDIR}/java)
-WITHOUT_JAVA=	yes
-.endif
-
-.if !defined(WITHOUT_JAVA)
-# The Java applications that are part of the Erlang distribution are
-# not strictly necessary - it is included for completeness sake. A
-# problem with the Erlang build procedure is that it only checks if
-# javac is in the regular path - and then assumes that all of the jdk
-# utilities is in the path as well. The only way to make sure that
-# this is the case (that I could think of at least) was to make sure
-# JAVABINDIR is added to the PATH, using the *_ENV macros.
-
-BUILD_DEPENDS+=  ${JAVAPORT}
-
-# Make sure JAVABINDIR is in the path
-CONFIGURE_ENV+= PATH=${PATH}:${JAVABINDIR}
-MAKE_ENV+=      PATH=${PATH}:${JAVABINDIR}
-SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
-.endif
+PLIST_SUB+=	ERTS_VSN=${ERTS_VSN}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
@@ -101,11 +97,10 @@ post-patch:
 	@cd ${WRKSRC} && ${CAT} ${FILESDIR}/post-patch-configure | ${PATCH}
 
 pre-configure:
-# Check if javac is really in ${JAVABINDIR}.
+# Check if ${JAVAC} exists.
 .if !defined(WITHOUT_JAVA)
-	@if [ ! -x ${JAVABINDIR}/javac ]; then \
-		${ECHO_MSG} ">> Error: cannot find javac in JAVABINDIR."; \
-		${ECHO_MSG} ">> Please configure JAVABINDIR, or use the WITHOUT_JAVA option"; \
+	@if [ ! -x ${JAVAC} ]; then \
+		${ECHO_MSG} ">> Error: cannot find ${JAVAC}."; \
 		exit 1; \
 	fi
 .endif
@@ -113,6 +108,11 @@ pre-configure:
 # If X11 is not used, skip the gs application.
 .if defined(WITHOUT_X11)
 	@${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
+.endif
+
+# If ODBC is not used, skip the odbc application.
+.if defined(WITHOUT_ODBC)
+	@${ECHO_CMD} "WITHOUT_ODBC defined" > ${WRKSRC}/lib/odbc/SKIP
 .endif
 
 # Install documentation. (HTML docs need to be in same dir as the
@@ -136,25 +136,25 @@ post-install:
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 		| ${SORT} \
-		> ${WRKDIR}/PLIST.lib-erlang
+		> ${ERLANG_PLIST}
 
 # Stock OTP libraries.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
-	done | ${SORT} >> ${WRKDIR}/PLIST.lib-erlang
+	done | ${SORT} >> ${ERLANG_PLIST}
 
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
-		    	| ${SED} -e 's#^#@exec mkdir -p %D/#g'; \
-	done | ${SORT} >> ${WRKDIR}/PLIST.lib-erlang
+		    	| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
+	done | ${SORT} >> ${ERLANG_PLIST}
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 		    	| ${SED} -e 's/^/@dirrm /g'; \
-	done | ${SORT} -r >> ${WRKDIR}/PLIST.lib-erlang
+	done | ${SORT} -r >> ${ERLANG_PLIST}
 
 # Other directories.
 
@@ -162,14 +162,13 @@ post-install:
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 	    	| ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-erlang
+		>> ${ERLANG_PLIST}
 
-	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Insert PLIST.lib-erlang"		>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
-	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-erlang
+	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "/Insert PLIST here"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "d"			>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR} ; ex < ex.script
 
 .include "Makefile.lib"
