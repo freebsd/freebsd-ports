@@ -8,7 +8,7 @@
 # until the release of DosDetector 0.1
 
 PORTNAME=	dosdetector
-PORTVERSION=	20060103
+PORTVERSION=	20060203
 CATEGORIES=	net
 MASTER_SITES=	http://darkzone.ma.cx/resources/unix/dosdetector/
 
