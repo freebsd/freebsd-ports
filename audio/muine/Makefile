@@ -8,7 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine.gooeylinux.org/
 
@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
