@@ -1,0 +1,48 @@
+--- src/modules/rlm_otp/cardops/cryptocard.c.ORIG	Thu Dec  8 02:30:54 2005
++++ src/modules/rlm_otp/cardops/cryptocard.c	Sat Feb  4 18:30:55 2006
+@@ -20,6 +20,10 @@
+  */
+ 
+ #include <inttypes.h>
++#if (defined(__FreeBSD__) && __FreeBSD_version < 500000)
++#define PRIx32          "x"     /* uint32_t */
++#define SCNx32          "x"     /* uint32_t */
++#endif
+ #include <string.h>
+ #include <time.h>
+ 
+--- src/modules/rlm_otp/otp_state.c.ORIG	Sat Feb  4 18:22:14 2006
++++ src/modules/rlm_otp/otp_state.c	Sat Feb  4 18:33:48 2006
+@@ -28,6 +28,10 @@
+ 
+ #include <errno.h>
+ #include <inttypes.h>
++#if (defined(__FreeBSD__) && __FreeBSD_version < 500000)
++#define PRIx32          "x"     /* uint32_t */
++#define SCNx32          "x"     /* uint32_t */
++#endif
+ #include <stdio.h>
+ #include <string.h>
+ #include <sys/types.h>
+--- src/modules/rlm_otp/otp_cardops.c.ORIG	Thu Dec  8 02:30:50 2005
++++ src/modules/rlm_otp/otp_cardops.c	Sat Feb  4 18:37:22 2006
+@@ -30,6 +30,9 @@
+ #endif
+ #include <dlfcn.h>
+ #include <inttypes.h>
++#if (defined(__FreeBSD__) && __FreeBSD_version < 500000)
++#define     INT32_MAX       0x7fffffff
++#endif
+ #include <limits.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- src/modules/rlm_otp/Makefile.in.ORIG	Thu Dec  8 02:30:48 2005
++++ src/modules/rlm_otp/Makefile.in	Sat Feb  4 18:44:06 2006
+@@ -34,7 +34,7 @@
+ include ../rules.mak
+ 
+ # Not part of RLM_CFLAGS to avoid propagation to subdirs
+-CFLAGS     += -Wno-unused-label -Wno-cast-qual
++CFLAGS     += -Wno-cast-qual
+ 
+ $(STATIC_OBJS): $(HEADERS) $(CARDOPS_LTLIBS)

@@ -236,11 +236,11 @@ lib/rlm_passwd-%%PORTVERSION%%.so
 lib/rlm_passwd.a
 lib/rlm_passwd.la
 lib/rlm_passwd.so
-lib/rlm_perl-%%PORTVERSION%%.la
-lib/rlm_perl-%%PORTVERSION%%.so
-lib/rlm_perl.a
-lib/rlm_perl.la
-lib/rlm_perl.so
+%%RLMPERL%%lib/rlm_perl-%%PORTVERSION%%.la
+%%RLMPERL%%lib/rlm_perl-%%PORTVERSION%%.so
+%%RLMPERL%%lib/rlm_perl.a
+%%RLMPERL%%lib/rlm_perl.la
+%%RLMPERL%%lib/rlm_perl.so
 lib/rlm_preprocess-%%PORTVERSION%%.la
 lib/rlm_preprocess-%%PORTVERSION%%.so
 lib/rlm_preprocess.a

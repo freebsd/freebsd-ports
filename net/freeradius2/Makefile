@@ -20,7 +20,7 @@ LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	radiusd
 USE_AUTOTOOLS=	libltdl:15 libtool:13
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -103,6 +103,13 @@ MAKE_ENV+=	NOPORTDOCS=yes
 #CONFIGURE_ARGS+=--without-rlm_x99_token
 PLIST_SUB+=	TOKEN=""
 
+# rlm_perl does not build on 4.x
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	RLMPERL="@comment "
+.else
+PLIST_SUB+=	RLMPERL="@comment "
+.endif
+
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--with-pic
 .endif
@@ -146,13 +153,7 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.versanet dictionary.waverider dictionary.wispr \
 		dictionary.xedia dictionary.xylan dictionary.zyxel
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
-		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
 	@${RM} ${WRKSRC}/doc/Makefile.orig
 
 post-install:
@@ -160,7 +161,6 @@ post-install:
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
 .ifdef(WITH_MYSQL)
 	${INSTALL_DATA} \
 	${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql/db_mysql.sql \
