@@ -6,3 +6,5 @@ a 20-byte binary string. This operation delivers the result of
 operations since the last new or reset operation. Once the operation
 has been performed, the context must be reset before being used to
 calculate another digest value.
+
+WWW: http://search.cpan.org/dist/SHA/
