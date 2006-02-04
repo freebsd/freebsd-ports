@@ -7193,6 +7193,7 @@ opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
 openh323	ports/net/openh323
+openh323-112	ports/net/openh323-112
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
