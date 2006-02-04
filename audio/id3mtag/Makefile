@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	id3mtag
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	audio
 MASTER_SITES=	http://home.wanadoo.nl/squell/files/
 DISTNAME=	id3-${PORTVERSION}
