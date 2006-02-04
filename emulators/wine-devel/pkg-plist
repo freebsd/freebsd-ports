@@ -232,6 +232,7 @@ include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
 include/wine/windows/mscat.h
+include/wine/windows/mshtmcid.h
 include/wine/windows/mshtmdid.h
 include/wine/windows/mshtmhst.h
 include/wine/windows/mshtmhst.idl
@@ -394,6 +395,7 @@ include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/cfgmgr32.h
 include/wine/windows/ddk/ntddser.h
+include/wine/windows/ddk/ntddtape.h
 include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winsplp.h
 lib/libwine.so
