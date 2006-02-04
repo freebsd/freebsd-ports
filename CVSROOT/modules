@@ -2594,6 +2594,7 @@ freevo		ports/multimedia/freevo
 freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
+freqsdwn	ports/sysutils/freqsdwn
 freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
 fribidi		ports/converters/fribidi
