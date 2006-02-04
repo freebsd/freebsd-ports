@@ -123,6 +123,7 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_STRICT_HTTP "Be strictly HTTP compliant" off \
 		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
 		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
+		SQUID_CUSTOM_LOG "Enable custom log format" off \
 		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
@@ -273,6 +274,9 @@ CONFIGURE_ARGS+=	--disable-ident-lookups
 .endif
 .if defined(WITH_SQUID_USERAGENT_LOG)
 CONFIGURE_ARGS+=	--enable-useragent-log
+.endif
+.if defined(WITH_SQUID_CUSTOM_LOG)
+EXTRA_PATCHES+=		${PATCHDIR}/customlog-2.5.patch
 .endif
 .if defined(WITH_SQUID_ARP_ACL)
 CONFIGURE_ARGS+=	--enable-arp-acl

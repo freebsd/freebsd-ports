@@ -1,0 +1,1540 @@
+! This patch is sourced from http://devel.squid-cache.org/customlog/
+! Modified diff paths to apply cleanly
+
+Index: src/access_log.c
+diff -u src/access_log.c:1.15.6.8 src/access_log.c:1.15.6.3.2.14
+--- src/access_log.c:1.15.6.8	Tue Mar 29 18:17:46 2005
++++ src/access_log.c	Thu Sep  1 12:28:46 2005
+@@ -36,9 +36,6 @@
+ 
+ #include "squid.h"
+ 
+-static void accessLogSquid(AccessLogEntry * al);
+-static void accessLogCommon(AccessLogEntry * al);
+-static Logfile *logfile = NULL;
+ #if HEADERS_LOG
+ static Logfile *headerslog = NULL;
+ #endif
+@@ -234,8 +231,768 @@
+     return username_quote(name);
+ }
+ 
++static char *
++log_quoted_string(const char *str)
++{
++    char *out = xmalloc(strlen(str) * 2 + 1);
++    char *p = out;
++    while (*str) {
++	int l = strcspn(str, "\"\\\r\n\t");
++	memcpy(p, str, l);
++	str += l;
++	p += l;
++	switch (*str) {
++	case '\0':
++	    break;
++	case '\r':
++	    *p++ = '\\';
++	    *p++ = 'r';
++	    str++;
++	    break;
++	case '\n':
++	    *p++ = '\\';
++	    *p++ = 'n';
++	    str++;
++	    break;
++	case '\t':
++	    *p++ = '\\';
++	    *p++ = 't';
++	    str++;
++	    break;
++	default:
++	    *p++ = '\\';
++	    *p++ = *str;
++	    str++;
++	    break;
++	}
++    }
++    *p++ = '\0';
++    return out;
++}
++
++/*
++ * Bytecodes for the configureable logformat stuff
++ */
++typedef enum {
++    LFT_NONE,			/* dummy */
++    LFT_STRING,
++
++    LFT_CLIENT_IP_ADDRESS,
++    LFT_CLIENT_FQDN,
++/*LFT_CLIENT_PORT, */
++
++/*LFT_SERVER_IP_ADDRESS, */
++    LFT_SERVER_IP_OR_PEER_NAME,
++/*LFT_SERVER_PORT, */
++
++    LFT_LOCAL_IP,
++    LFT_LOCAL_PORT,
++/*LFT_LOCAL_NAME, */
++
++    LFT_TIME_SECONDS_SINCE_EPOCH,
++    LFT_TIME_SUBSECOND,
++    LFT_TIME_LOCALTIME,
++    LFT_TIME_GMT,
++    LFT_TIME_TO_HANDLE_REQUEST,
++
++    LFT_REQUEST_HEADER,
++    LFT_REQUEST_HEADER_ELEM,
++    LFT_REQUEST_ALL_HEADERS,
++
++    LFT_REPLY_HEADER,
++    LFT_REPLY_HEADER_ELEM,
++    LFT_REPLY_ALL_HEADERS,
++
++    LFT_USER_NAME,
++    LFT_USER_LOGIN,
++    LFT_USER_IDENT,
++/*LFT_USER_REALM, */
++/*LFT_USER_SCHEME, */
++
++    LFT_HTTP_CODE,
++/*LFT_HTTP_STATUS, */
++
++    LFT_SQUID_STATUS,
++/*LFT_SQUID_ERROR, */
++    LFT_SQUID_HIERARCHY,
++
++    LFT_MIME_TYPE,
++
++    LFT_REQUEST_METHOD,
++    LFT_REQUEST_URI,
++/*LFT_REQUEST_QUERY, * // * this is not needed. see strip_query_terms */
++    LFT_REQUEST_VERSION,
++
++/*LFT_REQUEST_SIZE_TOTAL, */
++/*LFT_REQUEST_SIZE_LINE, */
++/*LFT_REQUEST_SIZE_HEADERS, */
++/*LFT_REQUEST_SIZE_BODY, */
++/*LFT_REQUEST_SIZE_BODY_NO_TE, */
++
++    LFT_REPLY_SIZE_TOTAL,
++/*LFT_REPLY_SIZE_LINE, */
++/*LFT_REPLY_SIZE_HEADERS, */
++/*LFT_REPLY_SIZE_BODY, */
++/*LFT_REPLY_SIZE_BODY_NO_TE, */
++
++#ifdef HAVE_EXTACL_LOG
++    LFT_EXT_LOG,
++#endif
++
++    LFT_PERCENT			/* special string cases for escaped chars */
++} logformat_bcode_t;
++
++enum log_quote {
++    LOG_QUOTE_NONE = 0,
++    LOG_QUOTE_QUOTES,
++    LOG_QUOTE_BRAKETS,
++    LOG_QUOTE_URL,
++    LOG_QUOTE_RAW
++};
++struct _logformat_token {
++    logformat_bcode_t type;
++    union {
++	char *string;
++	struct {
++	    char *header;
++	    char *element;
++	    char separator;
++	} header;
++	char *timespec;
++    } data;
++    unsigned char width;
++    unsigned char precision;
++    enum log_quote quote:3;
++    unsigned int left:1;
++    unsigned int space:1;
++    unsigned int zero:1;
++    int divisor;
++    logformat_token *next;	/* todo: move from linked list to array */
++};
++
++struct logformat_token_table_entry {
++    const char *config;
++    logformat_bcode_t token_type;
++    int options;
++};
++
++struct logformat_token_table_entry logformat_token_table[] =
++{
++
++    {">a", LFT_CLIENT_IP_ADDRESS},
++/*{ ">p", LFT_CLIENT_PORT}, */
++    {">A", LFT_CLIENT_FQDN},
++
++/*{ "<a", LFT_SERVER_IP_ADDRESS }, */
++/*{ "<p", LFT_SERVER_PORT }, */
++    {"<A", LFT_SERVER_IP_OR_PEER_NAME},
++
++    {"la", LFT_LOCAL_IP},
++    {"lp", LFT_LOCAL_PORT},
++/*{ "lA", LFT_LOCAL_NAME }, */
++
++    {"ts", LFT_TIME_SECONDS_SINCE_EPOCH},
++    {"tu", LFT_TIME_SUBSECOND},
++    {"tl", LFT_TIME_LOCALTIME},
++    {"tg", LFT_TIME_GMT},
++    {"tr", LFT_TIME_TO_HANDLE_REQUEST},
++
++    {">h", LFT_REQUEST_HEADER},
++    {"<h", LFT_REPLY_HEADER},
++
++    {"un", LFT_USER_NAME},
++    {"ul", LFT_USER_LOGIN},
++/*{ "ur", LFT_USER_REALM }, */
++/*{ "us", LFT_USER_SCHEME }, */
++    {"ui", LFT_USER_IDENT},
++
++    {"Hs", LFT_HTTP_CODE},
++/*{ "Ht", LFT_HTTP_STATUS }, */
++
++    {"Ss", LFT_SQUID_STATUS},
++/*{ "Se", LFT_SQUID_ERROR }, */
++    {"Sh", LFT_SQUID_HIERARCHY},
++
++    {"mt", LFT_MIME_TYPE},
++
++    {"rm", LFT_REQUEST_METHOD},
++    {"ru", LFT_REQUEST_URI},	/* doesn't include the query-string */
++/* { "rq", LFT_REQUEST_QUERY }, * /     / * the query-string, INCLUDING the leading ? */
++    {">v", LFT_REQUEST_VERSION},
++    {"rv", LFT_REQUEST_VERSION},
++
++/*{ ">st", LFT_REQUEST_SIZE_TOTAL }, */
++/*{ ">sl", LFT_REQUEST_SIZE_LINE }, * / / * the request line "GET ... " */
++/*{ ">sh", LFT_REQUEST_SIZE_HEADERS }, */
++/*{ ">sb", LFT_REQUEST_SIZE_BODY }, */
++/*{ ">sB", LFT_REQUEST_SIZE_BODY_NO_TE }, */
++
++    {"<st", LFT_REPLY_SIZE_TOTAL},
++/*{ "<sl", LFT_REPLY_SIZE_LINE }, * /   / * the reply line (protocol, code, text) */
++/*{ "<sh", LFT_REPLY_SIZE_HEADERS }, */
++/*{ "<sb", LFT_REPLY_SIZE_BODY }, */
++/*{ "<sB", LFT_REPLY_SIZE_BODY_NO_TE }, */
++
++#ifdef HAVE_EXTACL_LOG
++    {"ea", LFT_EXT_LOG},
++#endif
++
++    {"%", LFT_PERCENT},
++
++    {NULL, LFT_NONE}		/* this must be last */
++};
++
++static void
++accessLogCustom(AccessLogEntry * al, customlog * log)
++{
++    logformat *lf;
++    Logfile *logfile;
++    logformat_token *fmt;
++    static MemBuf mb = MemBufNULL;
++    char tmp[1024];
++    String sb = StringNull;
++
++    memBufReset(&mb);
++
++    lf = log->logFormat;
++    logfile = log->logfile;
++    for (fmt = lf->format; fmt != NULL; fmt = fmt->next) {	/* for each token */
++	const char *out = NULL;
++	int quote = 0;
++	long int outint = 0;
++	int doint = 0;
++	int dofree = 0;
++	switch (fmt->type) {
++	case LFT_NONE:
++	    out = "";
++	    break;
++	case LFT_STRING:
++	    out = fmt->data.string;
++	    break;
++	case LFT_CLIENT_IP_ADDRESS:
++	    out = inet_ntoa(al->cache.caddr);
++	    break;
++
++	case LFT_CLIENT_FQDN:
++	    out = fqdncache_gethostbyaddr(al->cache.caddr, FQDN_LOOKUP_IF_MISS);
++	    if (!out)
++		out = inet_ntoa(al->cache.caddr);
++	    break;
++
++	    /* case LFT_CLIENT_PORT: */
++
++	    /* case LFT_SERVER_IP_ADDRESS: */
++
++	case LFT_SERVER_IP_OR_PEER_NAME:
++	    out = al->hier.host;
++	    break;
++
++	    /* case LFT_SERVER_PORT: */
++
++	case LFT_LOCAL_IP:
++	    if (al->request)
++		out = inet_ntoa(al->request->my_addr);
++	    break;
++
++	case LFT_LOCAL_PORT:
++	    if (al->request) {
++		outint = al->request->my_port;
++		doint = 1;
++	    }
++	    break;
++
++	case LFT_TIME_SECONDS_SINCE_EPOCH:
++	    outint = current_time.tv_sec;
++	    doint = 1;
++	    break;
++
++	case LFT_TIME_SUBSECOND:
++	    outint = current_time.tv_usec / fmt->divisor;
++	    doint = 1;
++	    break;
++
++
++	case LFT_TIME_LOCALTIME:
++	case LFT_TIME_GMT:
++	    {
++		const char *spec;
++		struct tm *t;
++		spec = fmt->data.timespec;
++		if (!spec)
++		    spec = "%d/%b/%Y:%H:%M:%S %z";
++		if (fmt->type == LFT_TIME_LOCALTIME)
++		    t = localtime(&squid_curtime);
++		else
++		    t = gmtime(&squid_curtime);
++		strftime(tmp, sizeof(tmp), spec, t);
++		out = tmp;
++	    }
++	    break;
++
++	case LFT_TIME_TO_HANDLE_REQUEST:
++	    outint = al->cache.msec;
++	    doint = 1;
++	    break;
++
++	case LFT_REQUEST_HEADER:
++	    if (al->request)
++		sb = httpHeaderGetByName(&al->request->header, fmt->data.header.header);
++	    out = strBuf(sb);
++	    quote = 1;
++	    break;
++
++	case LFT_REPLY_HEADER:
++	    if (al->reply)
++		sb = httpHeaderGetByName(&al->reply->header, fmt->data.header.header);
++	    out = strBuf(sb);
++	    quote = 1;
++	    break;
++
++	case LFT_REQUEST_HEADER_ELEM:
++	    if (al->request)
++		sb = httpHeaderGetByNameListMember(&al->request->header, fmt->data.header.header, fmt->data.header.element, fmt->data.header.separator);
++	    out = strBuf(sb);
++	    quote = 1;
++	    break;
++
++	case LFT_REPLY_HEADER_ELEM:
++	    if (al->reply)
++		sb = httpHeaderGetByNameListMember(&al->reply->header, fmt->data.header.header, fmt->data.header.element, fmt->data.header.separator);
++	    out = strBuf(sb);
++	    quote = 1;
++	    break;
++
++	case LFT_REQUEST_ALL_HEADERS:
++	    out = al->headers.request;
++	    quote = 1;
++	    break;
++
++	case LFT_REPLY_ALL_HEADERS:
++	    out = al->headers.reply;
++	    quote = 1;
++	    break;
++
++	case LFT_USER_NAME:
++	    out = accessLogFormatName(al->cache.authuser ?
++		al->cache.authuser : al->cache.rfc931);
++	    dofree = 1;
++	    break;
++
++	case LFT_USER_LOGIN:
++	    out = accessLogFormatName(al->cache.authuser);
++	    dofree = 1;
++	    break;
++
++	case LFT_USER_IDENT:
++	    out = accessLogFormatName(al->cache.rfc931);
++	    dofree = 1;
++	    break;
++
++	    /* case LFT_USER_REALM: */
++	    /* case LFT_USER_SCHEME: */
++
++	case LFT_HTTP_CODE:
++	    outint = al->http.code;
++	    doint = 1;
++	    break;
++
++	    /* case LFT_HTTP_STATUS:
++	     *           out = statusline->text;
++	     *     quote = 1;
++	     *     break;
++	     */
++
++	case LFT_SQUID_STATUS:
++	    out = log_tags[al->cache.code];
++	    break;
++
++	    /* case LFT_SQUID_ERROR: */
++
++	case LFT_SQUID_HIERARCHY:
++	    if (al->hier.ping.timedout)
++		memBufAppend(&mb, "TIMEOUT_", 8);
++	    out = hier_strings[al->hier.code];
++	    break;
++
++	case LFT_MIME_TYPE:
++	    out = al->http.content_type;
++	    break;
++
++	case LFT_REQUEST_METHOD:
++	    out = al->private.method_str;
++	    break;
++
++	case LFT_REQUEST_URI:
++	    out = al->url;
++	    break;
++
++	case LFT_REQUEST_VERSION:
++	    snprintf(tmp, sizeof(tmp), "%d.%d", (int) al->http.version.major, (int) al->http.version.minor);
++	    out = tmp;
++	    break;
++
++	    /*case LFT_REQUEST_SIZE_TOTAL: */
++	    /*case LFT_REQUEST_SIZE_LINE: */
++	    /*case LFT_REQUEST_SIZE_HEADERS: */
++	    /*case LFT_REQUEST_SIZE_BODY: */
++	    /*case LFT_REQUEST_SIZE_BODY_NO_TE: */
++
++	case LFT_REPLY_SIZE_TOTAL:
++	    outint = al->cache.size;
++	    doint = 1;
++	    break;
++
++	    /*case LFT_REPLY_SIZE_LINE: */
++	    /*case LFT_REPLY_SIZE_HEADERS: */
++	    /*case LFT_REPLY_SIZE_BODY: */
++	    /*case LFT_REPLY_SIZE_BODY_NO_TE: */
++
++#ifdef HAVE_EXTACL_LOG
++	case LFT_EXT_LOG:
++	    if (al->request)
++		out = strBuf(al->request->extacl_log);
++
++	    quote = 1;
++	    break;
++#endif
++
++	case LFT_PERCENT:
++	    out = "%";
++	    break;
++	}
++
++	if (doint) {
++	    snprintf(tmp, sizeof(tmp), "%0*ld", fmt->zero ? (int) fmt->width : 0, outint);
++	    out = tmp;
++	}
++	if (out && *out) {
++	    if (quote || fmt->quote != LOG_QUOTE_NONE) {
++		char *newout = NULL;
++		int newfree = 0;
++		switch (fmt->quote) {
++		case LOG_QUOTE_NONE:
++		    newout = rfc1738_escape_unescaped(out);
++		    break;
++		case LOG_QUOTE_QUOTES:
++		    newout = log_quoted_string(out);
++		    newfree = 1;
++		    break;
++		case LOG_QUOTE_BRAKETS:
++		    newout = log_quote(out);
++		    newfree = 1;
++		    break;
++		case LOG_QUOTE_URL:
++		    newout = rfc1738_escape(out);
++		    break;
++		case LOG_QUOTE_RAW:
++		    break;
++		}
++		if (newout) {
++		    if (dofree)
++			safe_free(out);
++		    out = newout;
++		    dofree = newfree;
++		}
++	    }
++	    if (fmt->width) {
++		if (fmt->left)
++		    memBufPrintf(&mb, "%-*s", (int) fmt->width, out);
++		else
++		    memBufPrintf(&mb, "%*s", (int) fmt->width, out);
++	    } else
++		memBufAppend(&mb, out, strlen(out));
++	} else {
++	    memBufAppend(&mb, "-", 1);
++	}
++	if (fmt->space)
++	    memBufAppend(&mb, " ", 1);
++	stringClean(&sb);
++	if (dofree)
++	    safe_free(out);
++    }
++    logfilePrintf(logfile, "%s\n", mb.buf);
++}
++
++/* parses a single token. Returns the token length in characters,
++ * and fills in the lt item with the token information.
++ * def is for sure null-terminated
++ */
++static int
++accessLogGetNewLogFormatToken(logformat_token * lt, char *def, enum log_quote *quote)
++{
++    char *cur = def;
++    struct logformat_token_table_entry *lte;
++    int l;
++
++    memset(lt, 0, sizeof(*lt));
++    l = strcspn(cur, "%");
++    if (l > 0) {
++	char *cp;
++	/* it's a string for sure, until \0 or the next % */
++	cp = xmalloc(l + 1);
++	xstrncpy(cp, cur, l + 1);
++	lt->type = LFT_STRING;
++	lt->data.string = cp;
++	while (l > 0) {
++	    switch(*cur) {
++	    case '"':
++		if (*quote == LOG_QUOTE_NONE)
++		    *quote = LOG_QUOTE_QUOTES;
++		else if (*quote == LOG_QUOTE_QUOTES)
++		    *quote = LOG_QUOTE_NONE;
++		break;
++	    case '[':
++	    	if (*quote == LOG_QUOTE_NONE)
++		    *quote = LOG_QUOTE_BRAKETS;
++		break;
++	    case ']':
++	    	if (*quote == LOG_QUOTE_BRAKETS)
++		    *quote = LOG_QUOTE_NONE;
++		break;
++	    }
++	    cur++;
++	    l--;
++	}
++	goto done;
++    }
++    if (!*cur)
++	goto done;
++    cur++;
++    switch (*cur) {
++    case '"':
++	lt->quote = LOG_QUOTE_QUOTES;
++	cur++;
++	break;
++    case '\'':
++	lt->quote = LOG_QUOTE_RAW;
++	cur++;
++	break;
++    case '[':
++	lt->quote = LOG_QUOTE_BRAKETS;
++	cur++;
++	break;
++    case '#':
++	lt->quote = LOG_QUOTE_URL;
++	cur++;
++	break;
++    default:
++    	lt->quote = *quote;
++	break;
++    }
++    if (*cur == '-') {
++	lt->left = 1;
++	cur++;
++    }
++    if (*cur == '0') {
++	lt->zero = 1;
++	cur++;
++    }
++    if (isdigit(*cur))
++	lt->width = strtol(cur, &cur, 10);
++    if (*cur == '.')
++	lt->precision = strtol(cur + 1, &cur, 10);
++    if (*cur == '{') {
++	char *cp;
++	cur++;
++	l = strcspn(cur, "}");
++	cp = xmalloc(l + 1);
++	xstrncpy(cp, cur, l + 1);
++	lt->data.string = cp;
++	cur += l;
++	if (*cur == '}')
++	    cur++;
++    }
++    lt->type = LFT_NONE;
++    for (lte = logformat_token_table; lte->config != NULL; lte++) {
++	if (strncmp(lte->config, cur, strlen(lte->config)) == 0) {
++	    lt->type = lte->token_type;
++	    cur += strlen(lte->config);
++	    break;
++	}
++    }
++    if (lt->type == LFT_NONE) {
++	fatalf("Can't parse configuration token: '%s'\n",
++	    def);
++    }
++    if (*cur == ' ') {
++	lt->space = 1;
++	cur++;
++    }
++  done:
++    switch (lt->type) {
++    case LFT_REQUEST_HEADER:
++    case LFT_REPLY_HEADER:
++	if (lt->data.string) {
++	    char *header = lt->data.string;
++	    char *cp = strchr(header, ':');
++	    if (cp) {
++		*cp++ = '\0';
++		if (*cp == ',' || *cp == ';' || *cp == ':')
++		    lt->data.header.separator = *cp++;
++		else
++		    lt->data.header.separator = ',';
++		lt->data.header.element = cp;
++		lt->type = (lt->type == LFT_REQUEST_HEADER) ?
++			    LFT_REQUEST_HEADER_ELEM :
++			    LFT_REPLY_HEADER_ELEM;
++	    }
++	    lt->data.header.header = header;
++	} else {
++	    lt->type = (lt->type == LFT_REQUEST_HEADER) ?
++			LFT_REQUEST_ALL_HEADERS :
++			LFT_REPLY_ALL_HEADERS;
++	    Config.onoff.log_mime_hdrs = 1;
++	}
++	break;
++    case LFT_CLIENT_FQDN:
++	Config.onoff.log_fqdn = 1;
++	break;
++    case LFT_TIME_SUBSECOND:
++	lt->divisor = 1000;
++	if (lt->precision) {
++	    int i;
++	    lt->divisor = 1000000;
++	    for (i = lt->precision; i > 1; i--)
++		lt->divisor /= 10;
++	    if (!lt->divisor)
++		lt->divisor = 0;
++	}
++	break;
++    default:
++	break;
++    }
++    return (cur - def);
++}
++
++int
++accessLogParseLogFormat(logformat_token ** fmt, char *def)
++{
++    char *cur, *eos;
++    logformat_token *new_lt, *last_lt;
++    enum log_quote quote = LOG_QUOTE_NONE;
++
++    debug(46, 1) ("accessLogParseLogFormat: got definition '%s'\n", def);
++
++    /* very inefficent parser, but who cares, this needs to be simple */
++    /* First off, let's tokenize, we'll optimize in a second pass.
++     * A token can either be a %-prefixed sequence (usually a dynamic
++     * token but it can be an escaped sequence), or a string. */
++    cur = def;
++    eos = def + strlen(def);
++    *fmt = new_lt = last_lt = xmalloc(sizeof(logformat_token));
++    cur += accessLogGetNewLogFormatToken(new_lt, cur, &quote);
++    while (cur < eos) {
++	new_lt = xmalloc(sizeof(logformat_token));
++	last_lt->next = new_lt;
++	last_lt = new_lt;
++	cur += accessLogGetNewLogFormatToken(new_lt, cur, &quote);
++    }
++    return 1;
++}
++
++void
++accessLogDumpLogFormat(StoreEntry * entry, const char *name, logformat * definitions)
++{
++    logformat_token *t;
++    logformat *format;
++    struct logformat_token_table_entry *te;
++    debug(46, 0) ("accessLogDumpLogFormat called\n");
++
++    for (format = definitions; format; format = format->next) {
++	debug(46, 0) ("Dumping logformat definition for %s\n", format->name);
++	storeAppendPrintf(entry, "logformat %s ", format->name);
++	for (t = format->format; t; t = t->next) {
++	    if (t->type == LFT_STRING)
++		storeAppendPrintf(entry, "%s", t->data.string);
++	    else {
++		char argbuf[256];
++		char *arg = NULL;
++		logformat_bcode_t type = t->type;
++
++		switch (type) {
++		    /* special cases */
++		case LFT_STRING:
++		    break;
++		case LFT_REQUEST_HEADER_ELEM:
++		case LFT_REPLY_HEADER_ELEM:
++		    if (t->data.header.separator != ',')
++			snprintf(argbuf, sizeof(argbuf), "%s:%c%s", t->data.header.header, t->data.header.separator, t->data.header.element);
++		    else
++			snprintf(argbuf, sizeof(argbuf), "%s:%s", t->data.header.header, t->data.header.element);
++
++		    arg = argbuf;
++		    type = (type == LFT_REQUEST_HEADER_ELEM) ?
++			    LFT_REQUEST_HEADER :
++			    LFT_REPLY_HEADER;
++		    break;
++
++		case LFT_REQUEST_ALL_HEADERS:
++		case LFT_REPLY_ALL_HEADERS:
++		    type = (type == LFT_REQUEST_ALL_HEADERS) ?
++			    LFT_REQUEST_HEADER :
++			    LFT_REPLY_HEADER;
++		    break;
++
++		default:
++		    if (t->data.string)
++			arg = t->data.string;
++		    break;
++		}
++		storeAppend(entry, "%", 1);
++		switch (t->quote) {
++		case LOG_QUOTE_QUOTES:
++		    storeAppend(entry, "\"", 1);
++		    break;
++		case LOG_QUOTE_BRAKETS:
++		    storeAppend(entry, "[", 1);
++		    break;
++		case LOG_QUOTE_URL:
++		    storeAppend(entry, "#", 1);
++		    break;
++		case LOG_QUOTE_RAW:
++		    storeAppend(entry, "'", 1);
++		    break;
++		case LOG_QUOTE_NONE:
++		    break;
++		}
++		if (t->left)
++		    storeAppend(entry, "-", 1);
++		if (t->zero)
++		    storeAppend(entry, "0", 1);
++		if (t->width)
++		    storeAppendPrintf(entry, "%d", (int) t->width);
++		if (t->precision)
++		    storeAppendPrintf(entry, ".%d", (int) t->precision);
++		if (arg)
++		    storeAppendPrintf(entry, "{%s}", arg);
++		for (te = logformat_token_table; te->config != NULL; te++) {
++		    if (te->token_type == t->type) {
++			storeAppendPrintf(entry, "%s", te->config);
++			break;
++		    }
++		}
++		if (t->space)
++		    storeAppend(entry, " ", 1);
++		assert(te->config != NULL);
++	    }
++	}
++    }
++    storeAppend(entry, "\n", 1);
++}
++
++void
++accessLogFreeLogFormat(logformat_token ** tokens)
++{
++    while (*tokens) {
++	logformat_token *token = *tokens;
++	*tokens = token->next;
++	safe_free(token->data.string);
++	xfree(token);
++    }
++}
++
+ static void
+-accessLogSquid(AccessLogEntry * al)
++accessLogSquid(AccessLogEntry * al, Logfile * logfile)
+ {
+     const char *client = NULL;
+     char *user = NULL;
+@@ -261,10 +1018,19 @@
+ 	al->hier.host,
+ 	al->http.content_type);
+     safe_free(user);
++    if (Config.onoff.log_mime_hdrs) {
++	char *ereq = log_quote(al->headers.request);
++	char *erep = log_quote(al->headers.reply);
++	logfilePrintf(logfile, " [%s] [%s]\n", ereq, erep);
++	safe_free(ereq);
++	safe_free(erep);
++    } else {
++	logfilePrintf(logfile, "\n");
++    }
+ }
+ 
+ static void
+-accessLogCommon(AccessLogEntry * al)
++accessLogCommon(AccessLogEntry * al, Logfile * logfile)
+ {
+     const char *client = NULL;
+     char *user1 = NULL, *user2 = NULL;
+@@ -288,11 +1054,21 @@
+ 	hier_strings[al->hier.code]);
+     safe_free(user1);
+     safe_free(user2);
++    if (Config.onoff.log_mime_hdrs) {
++	char *ereq = log_quote(al->headers.request);
++	char *erep = log_quote(al->headers.reply);
++	logfilePrintf(logfile, " [%s] [%s]\n", ereq, erep);
++	safe_free(ereq);
++	safe_free(erep);
++    } else {
++	logfilePrintf(logfile, "\n");
++    }
+ }
+ 
+ void
+-accessLogLog(AccessLogEntry * al)
++accessLogLog(AccessLogEntry * al, aclCheck_t * checklist)
+ {
++    customlog *log;
+     if (LogfileStatus != LOG_ENABLE)
+ 	return;
+     if (al->url == NULL)
+@@ -306,20 +1082,38 @@
+     if (al->hier.host[0] == '\0')
+ 	xstrncpy(al->hier.host, dash_str, SQUIDHOSTNAMELEN);
+ 
+-    if (Config.onoff.common_log)
+-	accessLogCommon(al);
+-    else
+-	accessLogSquid(al);
+-    if (Config.onoff.log_mime_hdrs) {
+-	char *ereq = log_quote(al->headers.request);
+-	char *erep = log_quote(al->headers.reply);
+-	logfilePrintf(logfile, " [%s] [%s]\n", ereq, erep);
+-	safe_free(ereq);
+-	safe_free(erep);
+-    } else {
+-	logfilePrintf(logfile, "\n");
++    for (log = Config.Log.accesslogs; log; log = log->next) {
++	if (checklist && log->aclList && aclMatchAclList(log->aclList, checklist) != 1)
++	    continue;
++	switch (log->type) {
++	case CLF_AUTO:
++	    if (Config.onoff.common_log)
++		accessLogCommon(al, log->logfile);
++	    else
++		accessLogSquid(al, log->logfile);
++	    break;
++	case CLF_SQUID:
++	    accessLogSquid(al, log->logfile);
++	    break;
++	case CLF_COMMON:
++	    accessLogCommon(al, log->logfile);
++	    break;
++	case CLF_CUSTOM:
++	    accessLogCustom(al, log);
++	    break;
++	case CLF_NONE:
++	    goto last;
++	default:
++	    fatalf("Unknown log format %d\n", log->type);
++	    break;
++	}
++	logfileFlush(log->logfile);
++	if (!checklist)
++	    break;
+     }
+-    logfileFlush(logfile);
++  last:
++    (void)0; /* NULL statement for label */
++
+ #if MULTICAST_MISS_STREAM
+     if (al->cache.code != LOG_TCP_MISS)
+ 	(void) 0;
+@@ -346,12 +1140,15 @@
+ void
+ accessLogRotate(void)
+ {
++    customlog *log;
+ #if FORW_VIA_DB
+     fvdbClear();
+ #endif
+-    if (NULL == logfile)
+-	return;
+-    logfileRotate(logfile);
++    for (log = Config.Log.accesslogs; log; log = log->next) {
++	if (log->logfile) {
++	    logfileRotate(log->logfile);
++	}
++    }
+ #if HEADERS_LOG
+     logfileRotate(headerslog);
+ #endif
+@@ -360,10 +1157,13 @@
+ void
+ accessLogClose(void)
+ {
+-    if (NULL == logfile)
+-	return;
+-    logfileClose(logfile);
+-    logfile = NULL;
++    customlog *log;
++    for (log = Config.Log.accesslogs; log; log = log->next) {
++	if (log->logfile) {
++	    logfileClose(log->logfile);
++	    log->logfile = NULL;
++	}
++    }
+ #if HEADERS_LOG
+     logfileClose(headerslog);
+     headerslog = NULL;
+@@ -383,11 +1183,14 @@
+ void
+ accessLogInit(void)
+ {
++    customlog *log;
+     assert(sizeof(log_tags) == (LOG_TYPE_MAX + 1) * sizeof(char *));
+-    if (strcasecmp(Config.Log.access, "none") == 0)
+-	return;
+-    logfile = logfileOpen(Config.Log.access, MAX_URL << 1, 1);
+-    LogfileStatus = LOG_ENABLE;
++    for (log = Config.Log.accesslogs; log; log = log->next) {
++	if (log->type == CLF_NONE)
++	    continue;
++	log->logfile = logfileOpen(log->filename, MAX_URL << 1, 1);
++	LogfileStatus = LOG_ENABLE;
++    }
+ #if HEADERS_LOG
+     headerslog = logfileOpen("/usr/local/squid/logs/headers.log", MAX_URL << 1, 0);
+     assert(NULL != headerslog);
+Index: src/cache_cf.c
+diff -u src/cache_cf.c:1.38.6.24 src/cache_cf.c:1.38.6.11.4.9
+--- src/cache_cf.c:1.38.6.24	Fri May  6 19:15:36 2005
++++ src/cache_cf.c	Thu May 26 21:34:13 2005
+@@ -60,6 +60,14 @@
+ static void dump_cachedir_option_readonly(StoreEntry * e, const char *option, SwapDir * sd);
+ static void parse_cachedir_option_maxsize(SwapDir * sd, const char *option, const char *value, int reconfiguring);
+ static void dump_cachedir_option_maxsize(StoreEntry * e, const char *option, SwapDir * sd);
++static void parse_logformat(logformat ** logformat_definitions);
++static void parse_access_log(customlog ** customlog_definitions);
++static void dump_logformat(StoreEntry * entry, const char *name, logformat * definitions);
++static void dump_access_log(StoreEntry * entry, const char *name, customlog * definitions);
++static void free_logformat(logformat ** definitions);
++static void free_access_log(customlog ** definitions);
++
++
+ static struct cache_dir_option common_cachedir_options[] =
+ {
+     {"read-only", parse_cachedir_option_readonly, dump_cachedir_option_readonly},
+@@ -2631,3 +2639,144 @@
+ 	return t;
+     }
+ }
++
++static void
++parse_logformat(logformat ** logformat_definitions)
++{
++    logformat *nlf;
++    char *name, *def;
++
++    if ((name = strtok(NULL, w_space)) == NULL)
++	self_destruct();
++    if ((def = strtok(NULL, "\r\n")) == NULL)
++	self_destruct();
++
++    debug(3, 1) ("Logformat for '%s' is '%s'\n", name, def);
++
++    nlf = xcalloc(1, sizeof(logformat));
++    nlf->name = xstrdup(name);
++    if (!accessLogParseLogFormat(&nlf->format, def))
++	self_destruct();
++    nlf->next = *logformat_definitions;
++    *logformat_definitions = nlf;
++}
++
++static void
++parse_access_log(customlog ** logs)
++{
++    const char *filename, *logdef_name;
++    customlog *cl;
++    logformat *lf;
++
++    cl = xcalloc(1, sizeof(*cl));
++
++    if ((filename = strtok(NULL, w_space)) == NULL)
++	self_destruct();
++
++    if (strcmp(filename, "none") == 0) {
++	cl->type = CLF_NONE;
++	goto done;
++    }
++    if ((logdef_name = strtok(NULL, w_space)) == NULL)
++	logdef_name = "auto";
++
++    debug(3, 9) ("Log definition name '%s' file '%s'\n", logdef_name, filename);
++
++    cl->filename = xstrdup(filename);
++
++    /* look for the definition pointer corresponding to this name */
++    lf = Config.Log.logformats;
++    while (lf != NULL) {
++	debug(3, 9) ("Comparing against '%s'\n", lf->name);
++	if (strcmp(lf->name, logdef_name) == 0)
++	    break;
++	lf = lf->next;
++    }
++    if (lf != NULL) {
++	cl->type = CLF_CUSTOM;
++	cl->logFormat = lf;
++    } else if (strcmp(logdef_name, "auto") == 0) {
++	cl->type = CLF_AUTO;
++    } else if (strcmp(logdef_name, "squid") == 0) {
++	cl->type = CLF_SQUID;
++    } else if (strcmp(logdef_name, "common") == 0) {
++	cl->type = CLF_COMMON;
++    } else {
++	debug(3, 0) ("Log format '%s' is not defined\n", logdef_name);
++	self_destruct();
++    }
++
++  done:
++    aclParseAclList(&cl->aclList);
++
++    while (*logs)
++	logs = &(*logs)->next;
++    *logs = cl;
++}
++
++static void
++dump_logformat(StoreEntry * entry, const char *name, logformat * definitions)
++{
++    accessLogDumpLogFormat(entry, name, definitions);
++}
++
++static void
++dump_access_log(StoreEntry * entry, const char *name, customlog * logs)
++{
++    customlog *log;
++    for (log = logs; log; log = log->next) {
++	storeAppendPrintf(entry, "%s ", name);
++	switch (log->type) {
++	case CLF_CUSTOM:
++	    storeAppendPrintf(entry, "%s %s", log->filename, log->logFormat->name);
++	    break;
++	case CLF_NONE:
++	    storeAppendPrintf(entry, "none");
++	    break;
++	case CLF_SQUID:
++	    storeAppendPrintf(entry, "%s squid", log->filename);
++	    break;
++	case CLF_COMMON:
++	    storeAppendPrintf(entry, "%s squid", log->filename);
++	    break;
++	case CLF_AUTO:
++	    if (log->aclList)
++		storeAppendPrintf(entry, "%s auto", log->filename);
++	    else
++		storeAppendPrintf(entry, "%s", log->filename);
++	    break;
++	case CLF_UNKNOWN:
++	    break;
++	}
++	if (log->aclList)
++	    dump_acl_list(entry, log->aclList);
++	storeAppendPrintf(entry, "\n");
++    }
++}
++
++static void
++free_logformat(logformat ** definitions)
++{
++    while (*definitions) {
++	logformat *format = *definitions;
++	*definitions = format->next;
++	accessLogFreeLogFormat(&format->format);
++	xfree(format);
++    }
++}
++
++static void
++free_access_log(customlog ** definitions)
++{
++    while (*definitions) {
++	customlog *log = *definitions;
++	*definitions = log->next;
++
++	log->logFormat = NULL;
++	log->type = CLF_UNKNOWN;
++	if (log->aclList)
++	    aclDestroyAclList(&log->aclList);
++	safe_free(log->filename);
++	xfree(log);
++    }
++}
+Index: src/cf.data.pre
+diff -u src/cf.data.pre:1.49.2.77 src/cf.data.pre:1.49.2.40.2.17
+--- src/cf.data.pre:1.49.2.77	Tue May 10 19:17:53 2005
++++ src/cf.data.pre	Thu Sep  1 12:28:46 2005
+@@ -833,16 +833,97 @@
+ 	(hard coded at 1 MB).
+ DOC_END
+ 
+-
+-NAME: cache_access_log
+-TYPE: string
+-DEFAULT: @DEFAULT_ACCESS_LOG@
+-LOC: Config.Log.access
++NAME: logformat
++TYPE: logformat
++LOC: Config.Log.logformats
++DEFAULT: none
+ DOC_START
+-	Logs the client request activity.  Contains an entry for
+-	every HTTP and ICP queries received. To disable, enter "none".
+-DOC_END
++	Usage:
++
++	logformat <name> <format specification>
++
++	Defines an access log format.
++
++	The <format specification> is a string with embedded % format codes
++	
++	% format codes all follow the same basic structure where all but
++	the formatcode is optional. Output strings are automatically escaped
++	as required according to their context and the output format
++	modifiers are usually not needed, but can be specified if an explicit
++	output format is desired.
++
++		% ["|[|'|#] [-] [[0]width] [{argument}] formatcode
++	
++		"	output in quoted string format
++		[	output in squid text log format as used by log_mime_hdrs
++		#	output in URL quoted format
++		'	output as-is
++
++		-	left aligned
++		width	field width. If starting with 0 then the
++			output is zero padded
++		{arg}	argument such as header name etc
++
++	Format codes:
++
++		>a	Client source IP address
++		>A	Client FQDN
++		<A	Server IP address or peer name
++		la	Local IP address (http_port)
++		lp	Local port number (http_port)
++		ts	Seconds since epoch
++		tu	subsecond time (milliseconds)
++		tl	Local time. Optional strftime format argument
++			default %d/%b/%Y:%H:%M:%S %z
++		tg	GMT time. Optional strftime format argument
++			default %d/%b/%Y:%H:%M:%S %z
++		tr	Response time (milliseconds)
++		>h	Request header. Optional header name argument
++			on the format header[:[separator]element]
++		<h	Reply header. Optional header name argument
++			as for >h
++		un	User name
++		ul	User login
++		ui	User ident
++		Hs	HTTP status code
++		Ss	Squid request status (TCP_MISS etc)
++		Sh	Squid hierarchy status (DEFAULT_PARENT etc)
++		mt	MIME content type
++		rm	Request method (GET/POST etc)
++		ru	Request URL
++		rv	Request protocol version
++		ea	Log string returned by external acl
++		<st	Reply size including HTTP headers
++		%	a literal % character
++
++logformat squid  %ts.%03tu %6tr %>a %Ss/%03Hs %<st %rm %ru %un %Sh/%<A %mt
++logformat squidmime  %ts.%03tu %6tr %>a %Ss/%03Hs %<st %rm %ru %un %Sh/%<A %mt [%>h] [%<h]
++logformat common %>a %ui %un [%tl] "%rm %ru HTTP/%rv" %Hs %<st %Ss:%Sh
++logformat combined %>a %ui %un [%tl] "%rm %ru HTTP/%rv" %Hs %<st "%{Referer}>h" "%{User-Agent}>h" %Ss:%Sh
++DOC_END
++
++NAME: access_log cache_access_log
++TYPE: access_log
++LOC: Config.Log.accesslogs
++DEFAULT: none
++DOC_START
++  These files log client request activities. Has a line every HTTP or
++  ICP request. The format is:
++  access_log <filepath> [<logformat name> [acl acl ...]]
++
++  Will log to the specified file using the specified format (which
++  must be defined in a logformat directive) those entries which match
++  ALL the acl's specified (which must be defined in acl clauses).
++  If no acl is specified, all requests will be logged to this file.
++  
++  To disable logging of a request use the filepath "none", in which case
++  a logformat name should not be specified.
+ 
++  To log the request via syslog specify a filepath of "syslog"
++NOCOMMENT_START
++access_log @DEFAULT_ACCESS_LOG@ squid
++NOCOMMENT_END
++DOC_END
+ 
+ NAME: cache_log
+ TYPE: string
+@@ -2429,6 +2510,17 @@
+ 	no limit imposed.
+ DOC_END
+ 
++NAME: log_access
++TYPE: acl_access
++LOC: Config.accessList.log
++DEFAULT: none
++COMMENT: allow|deny acl acl...
++DOC_START
++        This options allows you to control which requests gets logged
++	to access.log (see cache_access_log directive). Requests denied
++	for logging will also not be accounted for in performance counters.
++DOC_END
++
+ COMMENT_START
+  ADMINISTRATIVE PARAMETERS
+  -----------------------------------------------------------------------------
+Index: src/client_side.c
+diff -u src/client_side.c:1.47.2.61 src/client_side.c:1.47.2.31.2.10
+--- src/client_side.c:1.47.2.61	Wed Apr 20 19:14:36 2005
++++ src/client_side.c	Thu May 26 21:34:14 2005
+@@ -850,14 +850,18 @@
+ 	http->al.cache.code = http->log_type;
+ 	http->al.cache.msec = tvSubMsec(http->start, current_time);
+ 	if (request) {
+-	    Packer p;
+-	    MemBuf mb;
+-	    memBufDefInit(&mb);
+-	    packerToMemInit(&p, &mb);
+-	    httpHeaderPackInto(&request->header, &p);
++	    if (Config.onoff.log_mime_hdrs) {
++		Packer p;
++		MemBuf mb;
++		memBufDefInit(&mb);
++		packerToMemInit(&p, &mb);
++		httpHeaderPackInto(&request->header, &p);
++		http->al.headers.request = xstrdup(mb.buf);
++		packerClean(&p);
++		memBufClean(&mb);
++	    }
+ 	    http->al.http.method = request->method;
+ 	    http->al.http.version = request->http_ver;
+-	    http->al.headers.request = xstrdup(mb.buf);
+ 	    http->al.hier = request->hier;
+ 	    if (request->auth_user_request) {
+ 		if (authenticateUserRequestUsername(request->auth_user_request))
+@@ -867,12 +871,15 @@
+ 	    }
+ 	    if (conn->rfc931[0])
+ 		http->al.cache.rfc931 = conn->rfc931;
+-	    packerClean(&p);
+-	    memBufClean(&mb);
+ 	}
+-	accessLogLog(&http->al);
+-	clientUpdateCounters(http);
+-	clientdbUpdate(conn->peer.sin_addr, http->log_type, PROTO_HTTP, http->out.size);
++	http->al.request = request;
++	if (!http->acl_checklist)
++	    http->acl_checklist = clientAclChecklistCreate(Config.accessList.http, http);
++	if (!Config.accessList.log || aclCheckFast(Config.accessList.log, http->acl_checklist)) {
++	    accessLogLog(&http->al, http->acl_checklist);
++	    clientUpdateCounters(http);
++	    clientdbUpdate(conn->peer.sin_addr, http->log_type, PROTO_HTTP, http->out.size);
++	}
+     }
+     if (http->acl_checklist)
+ 	aclChecklistFree(http->acl_checklist);
+@@ -883,6 +890,11 @@
+     safe_free(http->al.headers.request);
+     safe_free(http->al.headers.reply);
+     safe_free(http->al.cache.authuser);
++    if (http->al.reply) {
++	httpReplyDestroy(http->al.reply);
++	http->al.reply = NULL;
++    }
++    http->al.request = NULL;
+     safe_free(http->redirect.location);
+     stringClean(&http->range_iter.boundary);
+     if ((e = http->entry)) {
+@@ -1981,6 +1993,7 @@
+     }
+     if (http->out.offset == 0) {
+ 	rep = clientBuildReply(http, buf, size);
++	http->al.reply = rep;
+ 	if (rep) {
+ 	    aclCheck_t *ch;
+ 	    int rv;
+@@ -2003,7 +2016,6 @@
+ 		http->entry = clientCreateStoreEntry(http, http->request->method,
+ 		    null_request_flags);
+ 		errorAppendEntry(http->entry, err);
+-		httpReplyDestroy(rep);
+ 		memFree(buf, MEM_CLIENT_SOCK_BUF);
+ 		return;
+ 	    }
+@@ -2038,7 +2050,6 @@
+ 		    http->entry = clientCreateStoreEntry(http, http->request->method,
+ 			null_request_flags);
+ 		    errorAppendEntry(http->entry, err);
+-		    httpReplyDestroy(rep);
+ 		    memFree(buf, MEM_CLIENT_SOCK_BUF);
+ 		    return;
+ 		}
+@@ -2086,7 +2097,6 @@
+ #if HEADERS_LOG
+ 	headersLog(0, 0, http->request->method, rep);
+ #endif
+-	httpReplyDestroy(rep);
+ 	rep = NULL;
+     } else {
+ 	memBufDefInit(&mb);
+Index: src/icp_v2.c
+diff -u src/icp_v2.c:1.5 src/icp_v2.c:1.5.60.1
+--- src/icp_v2.c:1.5	Fri May  4 06:39:12 2001
++++ src/icp_v2.c	Sat Jun 21 05:45:26 2003
+@@ -63,7 +63,7 @@
+     al.cache.size = len;
+     al.cache.code = logcode;
+     al.cache.msec = delay;
+-    accessLogLog(&al);
++    accessLogLog(&al, NULL);
+ }
+ 
+ void
+Index: src/logfile.c
+diff -u src/logfile.c:1.5.38.3 src/logfile.c:1.5.38.3.4.1
+--- src/logfile.c:1.5.38.3	Mon Jan 20 19:15:11 2003
++++ src/logfile.c	Wed Mar  2 12:50:03 2005
+@@ -39,33 +39,38 @@
+ Logfile *
+ logfileOpen(const char *path, size_t bufsz, int fatal_flag)
+ {
+-    int fd;
+-    Logfile *lf;
+-    fd = file_open(path, O_WRONLY | O_CREAT | O_TEXT);
+-    if (DISK_ERROR == fd) {
+-	if (ENOENT == errno && fatal_flag) {
+-	    fatalf("Cannot open '%s' because\n"
+-		"\tthe parent directory does not exist.\n"
+-		"\tPlease create the directory.\n", path);
+-	} else if (EACCES == errno && fatal_flag) {
+-	    fatalf("Cannot open '%s' for writing.\n"
+-		"\tThe parent directory must be writeable by the\n"
+-		"\tuser '%s', which is the cache_effective_user\n"
+-		"\tset in squid.conf.", path, Config.effectiveUser);
+-	} else {
+-	    debug(50, 1) ("logfileOpen: %s: %s\n", path, xstrerror());
+-	    return NULL;
++    Logfile *lf = xcalloc(1, sizeof(*lf));
++    xstrncpy(lf->path, path, MAXPATHLEN);
++    if (strcmp(path, "syslog") == 0) {
++	lf->flags.syslog = 1;
++	lf->syslog_priority = LOG_INFO;
++	lf->fd = -1;
++    } else  {
++	int fd = file_open(path, O_WRONLY | O_CREAT | O_TEXT);
++	if (DISK_ERROR == fd) {
++	    if (ENOENT == errno && fatal_flag) {
++		fatalf("Cannot open '%s' because\n"
++		    "\tthe parent directory does not exist.\n"
++		    "\tPlease create the directory.\n", path);
++	    } else if (EACCES == errno && fatal_flag) {
++		fatalf("Cannot open '%s' for writing.\n"
++		    "\tThe parent directory must be writeable by the\n"
++		    "\tuser '%s', which is the cache_effective_user\n"
++		    "\tset in squid.conf.", path, Config.effectiveUser);
++	    } else {
++		debug(50, 1) ("logfileOpen: %s: %s\n", path, xstrerror());
++		safe_free(lf);
++		return NULL;
++	    }
++	}
++	lf->fd = fd;
++	if (bufsz > 0) {
++	    lf->buf = xmalloc(bufsz);
++	    lf->bufsz = bufsz;
+ 	}
+     }
+-    lf = xcalloc(1, sizeof(*lf));
+-    lf->fd = fd;
+     if (fatal_flag)
+ 	lf->flags.fatal = 1;
+-    xstrncpy(lf->path, path, MAXPATHLEN);
+-    if (bufsz > 0) {
+-	lf->buf = xmalloc(bufsz);
+-	lf->bufsz = bufsz;
+-    }
+     return lf;
+ }
+ 
+@@ -73,7 +78,8 @@
+ logfileClose(Logfile * lf)
+ {
+     logfileFlush(lf);
+-    file_close(lf->fd);
++    if (lf->fd >= 0)
++	file_close(lf->fd);
+     if (lf->buf)
+ 	xfree(lf->buf);
+     xfree(lf);
+@@ -89,6 +95,8 @@
+     char from[MAXPATHLEN];
+     char to[MAXPATHLEN];
+     assert(lf->path);
++    if (lf->flags.syslog)
++	return;
+ #ifdef S_ISREG
+     if (stat(lf->path, &sb) == 0)
+ 	if (S_ISREG(sb.st_mode) == 0)
+@@ -120,6 +128,10 @@
+ void
+ logfileWrite(Logfile * lf, void *buf, size_t len)
+ {
++    if (lf->flags.syslog) {
++	syslog(lf->syslog_priority, "%s", (char *)buf);
++	return;
++    }
+     if (0 == lf->bufsz) {
+ 	/* buffering disabled */
+ 	logfileWriteWrapper(lf, buf, len);
+Index: src/protos.h
+diff -u src/protos.h:1.41.6.30 src/protos.h:1.41.6.14.2.9
+--- src/protos.h:1.41.6.30	Wed May 18 19:14:37 2005
++++ src/protos.h	Thu May 26 21:34:15 2005
+@@ -34,11 +34,14 @@
+ #ifndef SQUID_PROTOS_H
+ #define SQUID_PROTOS_H
+ 
+-extern void accessLogLog(AccessLogEntry *);
++extern void accessLogLog(AccessLogEntry *, aclCheck_t * checklist);
+ extern void accessLogRotate(void);
+ extern void accessLogClose(void);
+ extern void accessLogInit(void);
+ extern const char *accessLogTime(time_t);
++extern int accessLogParseLogFormat(logformat_token ** fmt, char *def);
++extern void accessLogDumpLogFormat(StoreEntry * entry, const char *name, logformat * definitions);
++extern void accessLogFreeLogFormat(logformat_token ** fmt);
+ extern void hierarchyNote(HierarchyLogEntry *, hier_code, const char *);
+ #if FORW_VIA_DB
+ extern void fvdbCountVia(const char *key);
+Index: src/structs.h
+diff -u src/structs.h:1.48.2.39 src/structs.h:1.48.2.11.2.12
+--- src/structs.h:1.48.2.39	Wed May  4 19:18:43 2005
++++ src/structs.h	Thu May 26 21:34:16 2005
+@@ -465,7 +465,6 @@
+     char *as_whois_server;
+     struct {
+ 	char *log;
+-	char *access;
+ 	char *store;
+ 	char *swap;
+ #if USE_USERAGENT_LOG
+@@ -477,6 +476,8 @@
+ #if WIP_FWD_LOG
+ 	char *forward;
+ #endif
++	logformat *logformats;
++	customlog *accesslogs;
+ 	int rotateNumber;
+     } Log;
+     char *adminEmail;
+@@ -619,6 +620,7 @@
+ 	acl_access *AlwaysDirect;
+ 	acl_access *ASlists;
+ 	acl_access *noCache;
++	acl_access *log;
+ #if SQUID_SNMP
+ 	acl_access *snmp;
+ #endif
+@@ -1057,6 +1059,8 @@
+ 	const char *method_str;
+     } private;
+     HierarchyLogEntry hier;
++    HttpReply *reply;
++    request_t *request;
+ };
+ 
+ struct _clientHttpRequest {
+@@ -2200,8 +2204,32 @@
+     size_t bufsz;
+     ssize_t offset;
+     struct {
+-	unsigned int fatal:1;
++	unsigned int fatal;
++	unsigned int syslog;
+     } flags;
++    int syslog_priority;
++};
++
++struct _logformat {
++    char *name;
++    logformat_token *format;
++    logformat *next;
++};
++
++struct _customlog {
++    char *filename;
++    acl_list *aclList;
++    logformat *logFormat;
++    Logfile *logfile;
++    customlog *next;
++    enum {
++	CLF_UNKNOWN,
++	CLF_AUTO,
++	CLF_CUSTOM,
++	CLF_SQUID,
++	CLF_COMMON,
++	CLF_NONE
++    } type;
+ };
+ 
+ struct cache_dir_option {
+Index: src/typedefs.h
+diff -u src/typedefs.h:1.25.6.8 src/typedefs.h:1.25.6.2.2.6
+--- src/typedefs.h:1.25.6.8	Sat Mar 26 18:16:17 2005
++++ src/typedefs.h	Thu May 26 21:34:16 2005
+@@ -209,6 +209,9 @@
+ typedef struct _storerepl_entry storerepl_entry_t;
+ typedef struct _diskd_queue diskd_queue;
+ typedef struct _Logfile Logfile;
++typedef struct _logformat_token logformat_token;
++typedef struct _logformat logformat;
++typedef struct _customlog customlog;
+ typedef struct _RemovalPolicy RemovalPolicy;
+ typedef struct _RemovalPolicyWalker RemovalPolicyWalker;
+ typedef struct _RemovalPurgeWalker RemovalPurgeWalker;
