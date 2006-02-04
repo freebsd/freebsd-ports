@@ -1,5 +1,5 @@
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.3 2006/02/01 02:15:42 itetcu Exp $
+# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.6 2006/02/03 10:18:25 itetcu Exp $
 #
 # for each PKGNAME or user option change an entry should be added in this file
 # each entry 
@@ -16,13 +16,14 @@ also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
-
 ###########################################################################
 # dspam-3.6.3
 #
 
-To manny things to note here, please see mail-dspam-devel/UPDATING and read
-UPGRADING and CHANGELOG and adjust your dspam.conf accordingly
+To manny things to note here, please see mail/dsapm-devel/UPDATING and read
+UPGRADING and CHANGELOG and adjust your dspam.conf accordingly; there are
+NEW DIRECTIVES (see dspam.conf.sample) so if you miss this dspam will have
+bad accuracy or could (possibly) crash.
 - you can now have the database drivers dynamically loaded at run time so
 you can select multiple drivers in the OPTIONS screen; see dspam.conf.
 - also algorithm selection is done exclusively via dspam.conf
