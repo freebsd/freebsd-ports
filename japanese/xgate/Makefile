@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xgate
-PORTVERSION=	3.5pl1
+PORTVERSION=	3.5pl3
 CATEGORIES=	japanese mail www java
 MASTER_SITES=	http://www.orangesoft.co.jp/xGate/download/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}
@@ -32,6 +32,8 @@ PORTDOCS=	AdminGuide_V3.5.pdf		\
 		PCUserGuide_V3.5.pdf		\
 		ReleaseNote_V3.5.pdf		\
 		ReleaseNote_V3.5PL1.pdf		\
+		ReleaseNote_V3.5PL2.pdf		\
+		ReleaseNote_V3.5PL3.pdf		\
 		UserGuide_V3.5.pdf		\
 		xGate32to35migration.pdf
 

@@ -5,4 +5,13 @@ o Provide mails to PC, mobile-phones and PDA with
   high security method.
 o Supported by Orangesoft Inc with low cost management.
 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+If you can use apache 2.2 and mod_proxy_ajp, add following
+lines to httpd.conf:
+
+LoadModule proxy_module libexec/apache22/mod_proxy.so
+LoadModule proxy_ajp_module libexec/apache22/mod_proxy_ajp.so
+ProxyPass /xgate/ ajp://localhost:8009/xgate/
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
 WWW:	http://www.orangesoft.co.jp/xGate/
