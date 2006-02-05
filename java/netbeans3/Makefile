@@ -31,14 +31,14 @@ IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${D
 
 .if ${OSVERSION} >= 500000
 post-patch:
-		@${CAT} ${FILESDIR}/bin_runide.sh.diff | ${PATCH} ${WRKSRC}/bin/runide.sh
-		@${RM} ${WRKSRC}/bin/runide.sh.orig
+	@${CAT} ${FILESDIR}/bin_runide.sh.diff | ${PATCH} ${WRKSRC}/bin/runide.sh
+	@${RM} ${WRKSRC}/bin/runide.sh.orig
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/netbeans3
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans3
-		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans3
-		@${LN} -sf ${PREFIX}/netbeans3/bin/runide.sh ${PREFIX}/bin/netbeans3
+	@${MKDIR} ${PREFIX}/netbeans3
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans3
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans3
+	@${LN} -sf ${PREFIX}/netbeans3/bin/runide.sh ${PREFIX}/bin/netbeans3
 
 .include <bsd.port.post.mk>
