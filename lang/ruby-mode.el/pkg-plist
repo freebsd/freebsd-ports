@@ -10,3 +10,5 @@ lib/xemacs/site-lisp/rubydb3x.el
 %%RUBY_ELISPDIR%%/ruby-mode.el
 %%RUBY_ELISPDIR%%/rubydb2x.el
 %%RUBY_ELISPDIR%%/rubydb3x.el
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
