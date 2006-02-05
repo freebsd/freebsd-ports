@@ -1,0 +1,12 @@
+The fpkg is Package Tool Wrapper for FreeBSD.
+It makes convenient in administration of package,
+like yum, apt-get, and dpkg. 
+
+* Display a list of files in package (list)
+* Display a package information (info)
+* Install package from ftp server (install)
+* Fetching package list (update)
+* Package name search on package list (search)
+* All text search on package list (allsearch)
+
+WWW: http://www.shimazu.org/fpkg/

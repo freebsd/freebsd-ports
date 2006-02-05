@@ -162,6 +162,7 @@
     SUBDIR += fonteditfs
     SUBDIR += foremost
     SUBDIR += fortunelock
+    SUBDIR += fpkg
     SUBDIR += freebsd-sha1
     SUBDIR += freebsd-sha256
     SUBDIR += freebsd-snapshot
