@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
