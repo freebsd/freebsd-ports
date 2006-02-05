@@ -161,4 +161,7 @@ do-install:
 	cd ${WRKSRC} && ${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${XDIR}/{}" \;
 	cd ${WRKSRC}/.programs && ${FIND} * -type f -exec ${INSTALL_PROGRAM} "{}" "${XDIR}/{}" \;
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
