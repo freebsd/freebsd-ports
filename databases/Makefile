@@ -130,6 +130,9 @@
     SUBDIR += mysql50-client
     SUBDIR += mysql50-scripts
     SUBDIR += mysql50-server
+    SUBDIR += mysql51-client
+    SUBDIR += mysql51-scripts
+    SUBDIR += mysql51-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlcc
     SUBDIR += mysqlcppapi
