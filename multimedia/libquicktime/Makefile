@@ -8,6 +8,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +16,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		dv.4:${PORTSDIR}/multimedia/libdv
 
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 WANT_GNOME=	yes
@@ -43,6 +42,14 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_reading.html qt4l_util.html qt4l_writing.html
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libavutil-CVS.so) || !exists(${LOCALBASE}/lib/libavformat.a)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+PLIST_SUB+=	FFMPEG=""
+.else
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	FFMPEG="@comment "
+.endif
 
 .if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK2)
 USE_GNOME+=	gtk20

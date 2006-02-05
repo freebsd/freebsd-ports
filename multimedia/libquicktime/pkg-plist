@@ -21,7 +21,7 @@ lib/libquicktime.so
 lib/libquicktime.so.0
 lib/libquicktime/lqt_audiocodec.so
 lib/libquicktime/lqt_dv.so
-lib/libquicktime/lqt_ffmpeg.so
+%%FFMPEG%%lib/libquicktime/lqt_ffmpeg.so
 %%LAME%%lib/libquicktime/lqt_lame.so
 lib/libquicktime/lqt_mjpeg.so
 lib/libquicktime/lqt_opendivx.so
