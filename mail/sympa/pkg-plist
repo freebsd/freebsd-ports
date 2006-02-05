@@ -1380,3 +1380,4 @@ www/icons/unknown.png
 @dirrm sympa/bin/Marc
 @dirrm sympa/bin
 @dirrm sympa
+@dirrmtry www/icons
