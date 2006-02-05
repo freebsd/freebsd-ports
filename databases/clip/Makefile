@@ -33,6 +33,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
