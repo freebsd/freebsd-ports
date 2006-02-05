@@ -6744,6 +6744,9 @@ mysql41-server	ports/databases/mysql41-server
 mysql50-client	ports/databases/mysql50-client
 mysql50-scripts	ports/databases/mysql50-scripts
 mysql50-server	ports/databases/mysql50-server
+mysql51-client	ports/databases/mysql51-client
+mysql51-scripts	ports/databases/mysql51-scripts
+mysql51-server	ports/databases/mysql51-server
 mysql_last_value	ports/databases/mysql_last_value
 mysqlcc		ports/databases/mysqlcc
 mysqlcppapi	ports/databases/mysqlcppapi
