@@ -22,3 +22,4 @@ www/data/rtgback.png
 www/data/view.php
 @dirrm contrib
 @dirrm etc/rtg
+@dirrmtry www/data
