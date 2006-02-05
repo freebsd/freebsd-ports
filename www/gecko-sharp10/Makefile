@@ -7,7 +7,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	http://go-mono.com/archive/1.0.3/
 
