@@ -134,7 +134,10 @@ share/locale/uk/LC_MESSAGES/balsa.mo
 share/locale/vi/LC_MESSAGES/balsa.mo
 share/locale/wa/LC_MESSAGES/balsa.mo
 share/locale/zh_CN/LC_MESSAGES/balsa.mo
+share/locale/zh_HK/LC_MESSAGES/balsa.mo
 share/locale/zh_TW/LC_MESSAGES/balsa.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/gnome/sounds/balsa
