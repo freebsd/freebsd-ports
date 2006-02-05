@@ -10,17 +10,23 @@ include/digikam/imagehistogram.h
 include/digikam/imageiface.h
 include/digikam/imagelevels.h
 include/digikam/imagepaniconwidget.h
+include/digikam/imagepannelwidget.h
 include/digikam/imageplugin.h
-include/digikam/imagepreviewwidget.h
 include/digikam/imageregionwidget.h
 include/digikam/imageselectionwidget.h
 include/digikam/imagewidget.h
+include/digikam/sidebar.h
+include/digikam/threadedfilter.h
 include/digikam/thumbbar.h
 include/digikam_export.h
 lib/kde3/digikamimageplugin_core.la
 lib/kde3/digikamimageplugin_core.so
-lib/kde3/kio_digikamio.la
-lib/kde3/kio_digikamio.so
+lib/kde3/kio_digikamalbums.la
+lib/kde3/kio_digikamalbums.so
+lib/kde3/kio_digikamdates.la
+lib/kde3/kio_digikamdates.so
+lib/kde3/kio_digikamsearch.la
+lib/kde3/kio_digikamsearch.so
 lib/kde3/kio_digikamtags.la
 lib/kde3/kio_digikamtags.so
 lib/kde3/kio_digikamthumbnail.la
@@ -30,55 +36,268 @@ lib/libdigikam.so
 lib/libdigikam.so.0
 share/applications/kde/showfoto.desktop
 share/applnk/Graphics/digikam.desktop
+share/apps/digikam/data/autolevels.png
 share/apps/digikam/data/browntone.png
 share/apps/digikam/data/bwgreen.png
 share/apps/digikam/data/bworange.png
 share/apps/digikam/data/bwred.png
 share/apps/digikam/data/bwyellow.png
+share/apps/digikam/data/centerheight.png
+share/apps/digikam/data/centerwidth.png
 share/apps/digikam/data/coldtone.png
+share/apps/digikam/data/duplicateheight.png
+share/apps/digikam/data/duplicatewidth.png
+share/apps/digikam/data/equalize.png
+share/apps/digikam/data/histogram-lin.png
+share/apps/digikam/data/histogram-log.png
+share/apps/digikam/data/image-full.png
+share/apps/digikam/data/image-selection.png
 share/apps/digikam/data/image_broken.png
 share/apps/digikam/data/neutralbw.png
+share/apps/digikam/data/nocenter.png
+share/apps/digikam/data/normalize.png
 share/apps/digikam/data/platinum.png
+share/apps/digikam/data/rating.png
 share/apps/digikam/data/selenium.png
 share/apps/digikam/data/sepia.png
+share/apps/digikam/data/stretchcontrast.png
 share/apps/digikam/digikam-splash.png
 share/apps/digikam/digikamimageplugin_core_ui.rc
 share/apps/digikam/digikamimagewindowui.rc
 share/apps/digikam/digikamui.rc
+share/apps/digikam/icons/crystalsvg/128x128/actions/crop.png
+share/apps/digikam/icons/crystalsvg/128x128/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/128x128/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/16x16/actions/crop.png
+share/apps/digikam/icons/crystalsvg/16x16/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/16x16/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/22x22/actions/crop.png
+share/apps/digikam/icons/crystalsvg/22x22/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/22x22/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/32x32/actions/crop.png
+share/apps/digikam/icons/crystalsvg/32x32/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/32x32/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/48x48/actions/crop.png
+share/apps/digikam/icons/crystalsvg/48x48/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/48x48/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/64x64/actions/crop.png
+share/apps/digikam/icons/crystalsvg/64x64/actions/fileopen.png
+share/apps/digikam/icons/crystalsvg/64x64/actions/rotate_cw.png
+share/apps/digikam/icons/crystalsvg/scalable/actions/crop.svgz
+share/apps/digikam/icons/crystalsvg/scalable/actions/fileopen.svgz
+share/apps/digikam/icons/crystalsvg/scalable/actions/rotate_cw.svgz
+share/apps/digikam/icons/hicolor/128x128/actions/addimagefolder.png
+share/apps/digikam/icons/hicolor/128x128/actions/adjusthsl.png
+share/apps/digikam/icons/hicolor/128x128/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfoldercomment.png
+share/apps/digikam/icons/hicolor/128x128/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/128x128/actions/autocorrection.png
+share/apps/digikam/icons/hicolor/128x128/actions/blurimage.png
+share/apps/digikam/icons/hicolor/128x128/actions/bwtonal.png
+share/apps/digikam/icons/hicolor/128x128/actions/contrast.png
+share/apps/digikam/icons/hicolor/128x128/actions/digitalcam.png
+share/apps/digikam/icons/hicolor/128x128/actions/editimage.png
+share/apps/digikam/icons/hicolor/128x128/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/128x128/actions/flip.png
+share/apps/digikam/icons/hicolor/128x128/actions/histogram.png
+share/apps/digikam/icons/hicolor/128x128/actions/imagecomment.png
+share/apps/digikam/icons/hicolor/128x128/actions/importfolders2albums.png
+share/apps/digikam/icons/hicolor/128x128/actions/invertimage.png
+share/apps/digikam/icons/hicolor/128x128/actions/ratiocrop.png
+share/apps/digikam/icons/hicolor/128x128/actions/redeyes.png
+share/apps/digikam/icons/hicolor/128x128/actions/resize_image.png
+share/apps/digikam/icons/hicolor/128x128/actions/sharpenimage.png
+share/apps/digikam/icons/hicolor/128x128/apps/digikam.png
+share/apps/digikam/icons/hicolor/16x16/actions/addimagefolder.png
+share/apps/digikam/icons/hicolor/16x16/actions/adjusthsl.png
+share/apps/digikam/icons/hicolor/16x16/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfoldercomment.png
+share/apps/digikam/icons/hicolor/16x16/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/16x16/actions/autocorrection.png
+share/apps/digikam/icons/hicolor/16x16/actions/blurimage.png
+share/apps/digikam/icons/hicolor/16x16/actions/bwtonal.png
+share/apps/digikam/icons/hicolor/16x16/actions/contrast.png
+share/apps/digikam/icons/hicolor/16x16/actions/digitalcam.png
+share/apps/digikam/icons/hicolor/16x16/actions/editimage.png
+share/apps/digikam/icons/hicolor/16x16/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/16x16/actions/flip.png
+share/apps/digikam/icons/hicolor/16x16/actions/histogram.png
+share/apps/digikam/icons/hicolor/16x16/actions/imagecomment.png
+share/apps/digikam/icons/hicolor/16x16/actions/importfolders2albums.png
+share/apps/digikam/icons/hicolor/16x16/actions/invertimage.png
+share/apps/digikam/icons/hicolor/16x16/actions/ratiocrop.png
+share/apps/digikam/icons/hicolor/16x16/actions/redeyes.png
+share/apps/digikam/icons/hicolor/16x16/actions/resize_image.png
+share/apps/digikam/icons/hicolor/16x16/actions/sharpenimage.png
+share/apps/digikam/icons/hicolor/16x16/apps/digikam.png
+share/apps/digikam/icons/hicolor/22x22/actions/addimagefolder.png
+share/apps/digikam/icons/hicolor/22x22/actions/adjusthsl.png
+share/apps/digikam/icons/hicolor/22x22/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfoldercomment.png
+share/apps/digikam/icons/hicolor/22x22/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/22x22/actions/autocorrection.png
+share/apps/digikam/icons/hicolor/22x22/actions/blurimage.png
+share/apps/digikam/icons/hicolor/22x22/actions/bwtonal.png
+share/apps/digikam/icons/hicolor/22x22/actions/contrast.png
+share/apps/digikam/icons/hicolor/22x22/actions/digitalcam.png
+share/apps/digikam/icons/hicolor/22x22/actions/editimage.png
+share/apps/digikam/icons/hicolor/22x22/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/22x22/actions/flip.png
+share/apps/digikam/icons/hicolor/22x22/actions/histogram.png
+share/apps/digikam/icons/hicolor/22x22/actions/imagecomment.png
+share/apps/digikam/icons/hicolor/22x22/actions/importfolders2albums.png
+share/apps/digikam/icons/hicolor/22x22/actions/invertimage.png
+share/apps/digikam/icons/hicolor/22x22/actions/ratiocrop.png
+share/apps/digikam/icons/hicolor/22x22/actions/redeyes.png
+share/apps/digikam/icons/hicolor/22x22/actions/resize_image.png
+share/apps/digikam/icons/hicolor/22x22/actions/sharpenimage.png
+share/apps/digikam/icons/hicolor/22x22/apps/digikam.png
 share/apps/digikam/icons/hicolor/32x32/actions/addimagefolder.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjusthsl.png
 share/apps/digikam/icons/hicolor/32x32/actions/adjustrgb.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfoldercomment.png
 share/apps/digikam/icons/hicolor/32x32/actions/albumfoldernew.png
-share/apps/digikam/icons/hicolor/32x32/actions/autolevels.png
+share/apps/digikam/icons/hicolor/32x32/actions/autocorrection.png
 share/apps/digikam/icons/hicolor/32x32/actions/blurimage.png
 share/apps/digikam/icons/hicolor/32x32/actions/bwtonal.png
 share/apps/digikam/icons/hicolor/32x32/actions/cameradownload.png
 share/apps/digikam/icons/hicolor/32x32/actions/contrast.png
 share/apps/digikam/icons/hicolor/32x32/actions/digitalcam.png
 share/apps/digikam/icons/hicolor/32x32/actions/editimage.png
-share/apps/digikam/icons/hicolor/32x32/actions/equalize.png
 share/apps/digikam/icons/hicolor/32x32/actions/exifinfo.png
 share/apps/digikam/icons/hicolor/32x32/actions/flip.png
 share/apps/digikam/icons/hicolor/32x32/actions/histogram.png
 share/apps/digikam/icons/hicolor/32x32/actions/imagecomment.png
 share/apps/digikam/icons/hicolor/32x32/actions/importfolders2albums.png
 share/apps/digikam/icons/hicolor/32x32/actions/invertimage.png
-share/apps/digikam/icons/hicolor/32x32/actions/normalize.png
 share/apps/digikam/icons/hicolor/32x32/actions/ratiocrop.png
 share/apps/digikam/icons/hicolor/32x32/actions/redeyes.png
 share/apps/digikam/icons/hicolor/32x32/actions/resize_image.png
 share/apps/digikam/icons/hicolor/32x32/actions/sharpenimage.png
-share/apps/digikam/icons/hicolor/32x32/actions/stretchcontrast.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-events.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-folder.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-people.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-places.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag.png
+share/apps/digikam/icons/hicolor/32x32/apps/digikam.png
+share/apps/digikam/icons/hicolor/48x48/actions/addimagefolder.png
+share/apps/digikam/icons/hicolor/48x48/actions/adjusthsl.png
+share/apps/digikam/icons/hicolor/48x48/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfoldercomment.png
+share/apps/digikam/icons/hicolor/48x48/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/48x48/actions/autocorrection.png
+share/apps/digikam/icons/hicolor/48x48/actions/blurimage.png
+share/apps/digikam/icons/hicolor/48x48/actions/bwtonal.png
+share/apps/digikam/icons/hicolor/48x48/actions/contrast.png
+share/apps/digikam/icons/hicolor/48x48/actions/digitalcam.png
+share/apps/digikam/icons/hicolor/48x48/actions/editimage.png
+share/apps/digikam/icons/hicolor/48x48/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/48x48/actions/flip.png
+share/apps/digikam/icons/hicolor/48x48/actions/histogram.png
+share/apps/digikam/icons/hicolor/48x48/actions/imagecomment.png
+share/apps/digikam/icons/hicolor/48x48/actions/importfolders2albums.png
+share/apps/digikam/icons/hicolor/48x48/actions/invertimage.png
+share/apps/digikam/icons/hicolor/48x48/actions/ratiocrop.png
+share/apps/digikam/icons/hicolor/48x48/actions/redeyes.png
+share/apps/digikam/icons/hicolor/48x48/actions/resize_image.png
+share/apps/digikam/icons/hicolor/48x48/actions/sharpenimage.png
+share/apps/digikam/icons/hicolor/48x48/apps/digikam.png
+share/apps/digikam/icons/hicolor/64x64/actions/addimagefolder.png
+share/apps/digikam/icons/hicolor/64x64/actions/adjusthsl.png
+share/apps/digikam/icons/hicolor/64x64/actions/adjustrgb.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfoldercomment.png
+share/apps/digikam/icons/hicolor/64x64/actions/albumfoldernew.png
+share/apps/digikam/icons/hicolor/64x64/actions/autocorrection.png
+share/apps/digikam/icons/hicolor/64x64/actions/blurimage.png
+share/apps/digikam/icons/hicolor/64x64/actions/bwtonal.png
+share/apps/digikam/icons/hicolor/64x64/actions/contrast.png
+share/apps/digikam/icons/hicolor/64x64/actions/digitalcam.png
+share/apps/digikam/icons/hicolor/64x64/actions/editimage.png
+share/apps/digikam/icons/hicolor/64x64/actions/exifinfo.png
+share/apps/digikam/icons/hicolor/64x64/actions/flip.png
+share/apps/digikam/icons/hicolor/64x64/actions/histogram.png
+share/apps/digikam/icons/hicolor/64x64/actions/imagecomment.png
+share/apps/digikam/icons/hicolor/64x64/actions/importfolders2albums.png
+share/apps/digikam/icons/hicolor/64x64/actions/invertimage.png
+share/apps/digikam/icons/hicolor/64x64/actions/ratiocrop.png
+share/apps/digikam/icons/hicolor/64x64/actions/redeyes.png
+share/apps/digikam/icons/hicolor/64x64/actions/resize_image.png
+share/apps/digikam/icons/hicolor/64x64/actions/sharpenimage.png
+share/apps/digikam/icons/hicolor/64x64/apps/digikam.png
+share/apps/digikam/icons/hicolor/scalable/actions/addimagefolder.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/adjustrgb.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfoldercomment.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/albumfoldernew.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/autocorrection.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/blurimage.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/bwtonal.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/contrast.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/editimage.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/exifinfo.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/flip.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/histogram.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/imagecomment.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/importfolders2albums.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/invertimage.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/ratiocrop.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/resize_image.svgz
+share/apps/digikam/icons/hicolor/scalable/actions/sharpenimage.svgz
 share/apps/digikam/themes/Clean
+share/apps/digikam/themes/Dark
+share/apps/digikam/themes/Dessert
 share/apps/digikam/themes/Dreary
 share/apps/digikam/themes/Marine
+share/apps/digikam/themes/OrangeCrush
+share/apps/digikam/themes/Sandy
 share/apps/digikam/tips
+share/apps/showfoto/icons/crystalsvg/128x128/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/128x128/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/16x16/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/16x16/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/22x22/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/22x22/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/32x32/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/32x32/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/48x48/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/48x48/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/64x64/actions/crop.png
+share/apps/showfoto/icons/crystalsvg/64x64/actions/rotate_cw.png
+share/apps/showfoto/icons/crystalsvg/scalable/actions/crop.svgz
+share/apps/showfoto/icons/crystalsvg/scalable/actions/rotate_cw.svgz
+share/apps/showfoto/icons/hicolor/128x128/actions/flip.png
+share/apps/showfoto/icons/hicolor/128x128/actions/histogram.png
+share/apps/showfoto/icons/hicolor/128x128/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/128x128/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/128x128/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/16x16/actions/flip.png
+share/apps/showfoto/icons/hicolor/16x16/actions/histogram.png
+share/apps/showfoto/icons/hicolor/16x16/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/16x16/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/16x16/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/22x22/actions/flip.png
+share/apps/showfoto/icons/hicolor/22x22/actions/histogram.png
+share/apps/showfoto/icons/hicolor/22x22/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/22x22/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/22x22/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/32x32/actions/flip.png
+share/apps/showfoto/icons/hicolor/32x32/actions/histogram.png
+share/apps/showfoto/icons/hicolor/32x32/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/32x32/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/32x32/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/48x48/actions/flip.png
+share/apps/showfoto/icons/hicolor/48x48/actions/histogram.png
+share/apps/showfoto/icons/hicolor/48x48/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/48x48/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/48x48/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/64x64/actions/flip.png
+share/apps/showfoto/icons/hicolor/64x64/actions/histogram.png
+share/apps/showfoto/icons/hicolor/64x64/actions/resize_image.png
+share/apps/showfoto/icons/hicolor/64x64/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/64x64/apps/showfoto.png
+share/apps/showfoto/icons/hicolor/scalable/actions/flip.svgz
+share/apps/showfoto/icons/hicolor/scalable/actions/histogram.svgz
+share/apps/showfoto/icons/hicolor/scalable/actions/resize_image.svgz
+share/apps/showfoto/icons/hicolor/scalable/actions/slideshow.svgz
 share/apps/showfoto/showfoto-splash.png
 share/apps/showfoto/showfotoui.rc
 share/icons/hicolor/128x128/apps/digikam.png
@@ -112,6 +331,7 @@ share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hu/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
+share/locale/ja/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/mk/LC_MESSAGES/digikam.mo
 share/locale/mt/LC_MESSAGES/digikam.mo
@@ -132,21 +352,94 @@ share/locale/sv/LC_MESSAGES/digikam.mo
 share/locale/ta/LC_MESSAGES/digikam.mo
 share/locale/tr/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
+share/mimelnk/image/x-raw.desktop
+share/services/digikamalbums.protocol
+share/services/digikamdates.protocol
 share/services/digikamimageplugin_core.desktop
-share/services/digikamio.protocol
+share/services/digikamsearch.protocol
 share/services/digikamtags.protocol
 share/services/digikamthumbnail.protocol
 share/servicetypes/digikamimageplugin.desktop
-@dirrm share/doc/HTML/en/digikam-0.7.4-apidocs/digikam/html
-@dirrm share/doc/HTML/en/digikam-0.7.4-apidocs/digikam/digikam/html
-@dirrm share/doc/HTML/en/digikam-0.7.4-apidocs/digikam/digikam
-@dirrm share/doc/HTML/en/digikam-0.7.4-apidocs/digikam
-@dirrm share/doc/HTML/en/digikam-0.7.4-apidocs
+@dirrm share/doc/HTML/en/digikam-0.8.1-apidocs/digikam/html
+@dirrm share/doc/HTML/en/digikam-0.8.1-apidocs/digikam/digikam/html
+@dirrm share/doc/HTML/en/digikam-0.8.1-apidocs/digikam/digikam
+@dirrm share/doc/HTML/en/digikam-0.8.1-apidocs/digikam
+@dirrm share/doc/HTML/en/digikam-0.8.1-apidocs
+@dirrm share/apps/showfoto/icons/hicolor/scalable/actions
+@dirrm share/apps/showfoto/icons/hicolor/scalable
+@dirrm share/apps/showfoto/icons/hicolor/64x64/apps
+@dirrm share/apps/showfoto/icons/hicolor/64x64/actions
+@dirrm share/apps/showfoto/icons/hicolor/64x64
+@dirrm share/apps/showfoto/icons/hicolor/48x48/apps
+@dirrm share/apps/showfoto/icons/hicolor/48x48/actions
+@dirrm share/apps/showfoto/icons/hicolor/48x48
+@dirrm share/apps/showfoto/icons/hicolor/32x32/apps
+@dirrm share/apps/showfoto/icons/hicolor/32x32/actions
+@dirrm share/apps/showfoto/icons/hicolor/32x32
+@dirrm share/apps/showfoto/icons/hicolor/22x22/apps
+@dirrm share/apps/showfoto/icons/hicolor/22x22/actions
+@dirrm share/apps/showfoto/icons/hicolor/22x22
+@dirrm share/apps/showfoto/icons/hicolor/16x16/apps
+@dirrm share/apps/showfoto/icons/hicolor/16x16/actions
+@dirrm share/apps/showfoto/icons/hicolor/16x16
+@dirrm share/apps/showfoto/icons/hicolor/128x128/apps
+@dirrm share/apps/showfoto/icons/hicolor/128x128/actions
+@dirrm share/apps/showfoto/icons/hicolor/128x128
+@dirrm share/apps/showfoto/icons/hicolor
+@dirrm share/apps/showfoto/icons/crystalsvg/scalable/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/scalable
+@dirrm share/apps/showfoto/icons/crystalsvg/64x64/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/64x64
+@dirrm share/apps/showfoto/icons/crystalsvg/48x48/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/48x48
+@dirrm share/apps/showfoto/icons/crystalsvg/32x32/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/32x32
+@dirrm share/apps/showfoto/icons/crystalsvg/22x22/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/22x22
+@dirrm share/apps/showfoto/icons/crystalsvg/16x16/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/16x16
+@dirrm share/apps/showfoto/icons/crystalsvg/128x128/actions
+@dirrm share/apps/showfoto/icons/crystalsvg/128x128
+@dirrm share/apps/showfoto/icons/crystalsvg
+@dirrm share/apps/showfoto/icons
 @dirrm share/apps/showfoto
 @dirrm share/apps/digikam/themes
+@dirrm share/apps/digikam/icons/hicolor/scalable/actions
+@dirrm share/apps/digikam/icons/hicolor/scalable
+@dirrm share/apps/digikam/icons/hicolor/64x64/apps
+@dirrm share/apps/digikam/icons/hicolor/64x64/actions
+@dirrm share/apps/digikam/icons/hicolor/64x64
+@dirrm share/apps/digikam/icons/hicolor/48x48/apps
+@dirrm share/apps/digikam/icons/hicolor/48x48/actions
+@dirrm share/apps/digikam/icons/hicolor/48x48
+@dirrm share/apps/digikam/icons/hicolor/32x32/apps
 @dirrm share/apps/digikam/icons/hicolor/32x32/actions
 @dirrm share/apps/digikam/icons/hicolor/32x32
+@dirrm share/apps/digikam/icons/hicolor/22x22/apps
+@dirrm share/apps/digikam/icons/hicolor/22x22/actions
+@dirrm share/apps/digikam/icons/hicolor/22x22
+@dirrm share/apps/digikam/icons/hicolor/16x16/apps
+@dirrm share/apps/digikam/icons/hicolor/16x16/actions
+@dirrm share/apps/digikam/icons/hicolor/16x16
+@dirrm share/apps/digikam/icons/hicolor/128x128/apps
+@dirrm share/apps/digikam/icons/hicolor/128x128/actions
+@dirrm share/apps/digikam/icons/hicolor/128x128
 @dirrm share/apps/digikam/icons/hicolor
+@dirrm share/apps/digikam/icons/crystalsvg/scalable/actions
+@dirrm share/apps/digikam/icons/crystalsvg/scalable
+@dirrm share/apps/digikam/icons/crystalsvg/64x64/actions
+@dirrm share/apps/digikam/icons/crystalsvg/64x64
+@dirrm share/apps/digikam/icons/crystalsvg/48x48/actions
+@dirrm share/apps/digikam/icons/crystalsvg/48x48
+@dirrm share/apps/digikam/icons/crystalsvg/32x32/actions
+@dirrm share/apps/digikam/icons/crystalsvg/32x32
+@dirrm share/apps/digikam/icons/crystalsvg/22x22/actions
+@dirrm share/apps/digikam/icons/crystalsvg/22x22
+@dirrm share/apps/digikam/icons/crystalsvg/16x16/actions
+@dirrm share/apps/digikam/icons/crystalsvg/16x16
+@dirrm share/apps/digikam/icons/crystalsvg/128x128/actions
+@dirrm share/apps/digikam/icons/crystalsvg/128x128
+@dirrm share/apps/digikam/icons/crystalsvg
 @dirrm share/apps/digikam/icons
 @dirrm share/apps/digikam/data
 @dirrm share/apps/digikam
