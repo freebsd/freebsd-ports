@@ -7,9 +7,10 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
-		http://freeradius.portal-to-web.de/ \
+		http://freeradius.portal-to-web.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
