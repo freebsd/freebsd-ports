@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Feb  2 13:29:46 2006
++++ Makefile.in	Thu Feb  2 13:33:57 2006
+@@ -351,8 +351,8 @@
+ 		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE) \
+ 	)
+ 	(cd $(DESTDIR)$(LIBDIR); \
+-		rm -f  libopenh323.@SHAREDLIBEXT@ ; \
+-		ln -sf $(OH323_FILE) libopenh323.@SHAREDLIBEXT@ \
++		rm -f  libopenh323.so ; \
++		ln -sf $(OH323_FILE) libopenh323.so \
+ 	)
+ 	( for dir in $(DESTDIR)$(LIBDIR) \
+ 		     $(DESTDIR)$(PREFIX)/include/openh323 \
