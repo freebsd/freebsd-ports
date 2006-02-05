@@ -2516,6 +2516,7 @@ fpc2		ports/lang/fpc2
 fpdf		ports/print/fpdf
 fpdns		ports/dns/fpdns
 fping		ports/net/fping
+fpkg		ports/sysutils/fpkg
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fprobe		ports/net-mgmt/fprobe
