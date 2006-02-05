@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.71
-PORTREVISION=	2
+PORTVERSION=	1.72
+#PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
@@ -20,7 +20,6 @@ COMMENT=	Anti-spam plugin for Postfix (written in C)
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	policyd.sh
 
 REALNAME=	${PKGNAME:C/-${PORTVERSION}.*//}
