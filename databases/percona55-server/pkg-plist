@@ -17,6 +17,10 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_drop_index
 %%NDB%%bin/ndb_drop_table
 %%NDB%%bin/ndb_mgm
+%%NDB%%bin/ndb_print_backup_file
+%%NDB%%bin/ndb_print_file
+%%NDB%%bin/ndb_print_schema_file
+%%NDB%%bin/ndb_print_sys_file
 %%NDB%%bin/ndb_restore
 %%NDB%%bin/ndb_select_all
 %%NDB%%bin/ndb_select_count
@@ -27,35 +31,37 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-%%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
-%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
-%%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
-%%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
-%%NDB%%include/mysql/ndb/mgmapi/ndb_logevent.h
-%%NDB%%include/mysql/ndb/mgmapi/ndbd_exit_codes.h
-%%NDB%%include/mysql/ndb/ndb_constants.h
-%%NDB%%include/mysql/ndb/ndb_init.h
-%%NDB%%include/mysql/ndb/ndb_types.h
-%%NDB%%include/mysql/ndb/ndb_version.h
-%%NDB%%include/mysql/ndb/ndbapi/Ndb.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbApi.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbBlob.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbDictionary.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbError.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbEventOperation.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbIndexOperation.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbIndexScanOperation.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbOperation.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbPool.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbRecAttr.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbReceiver.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbScanFilter.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbScanOperation.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbTransaction.hpp
-%%NDB%%include/mysql/ndb/ndbapi/ndbapi_limits.h
-%%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
-%%NDB%%include/mysql/ndb/ndbapi/ndb_opt_defaults.h
-%%NDB%%include/mysql/ndb/ndbapi/ndberror.h
+%%NDB%%bin/test_varpage
+%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters_debug.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_debug.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/ndb_logevent.h
+%%NDB%%include/mysql/storage/ndb/mgmapi/ndbd_exit_codes.h
+%%NDB%%include/mysql/storage/ndb/ndb_constants.h
+%%NDB%%include/mysql/storage/ndb/ndb_init.h
+%%NDB%%include/mysql/storage/ndb/ndb_types.h
+%%NDB%%include/mysql/storage/ndb/ndb_version.h
+%%NDB%%include/mysql/storage/ndb/ndbapi/Ndb.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbApi.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbBlob.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbDictionary.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbError.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbEventOperation.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexOperation.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexScanOperation.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexStat.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbOperation.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbPool.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbRecAttr.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbReceiver.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbScanFilter.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbScanOperation.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbTransaction.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/ndbapi_limits.h
+%%NDB%%include/mysql/storage/ndb/ndbapi/ndb_cluster_connection.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
+%%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
@@ -132,9 +138,10 @@ libexec/mysqld
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
-%%NDB%%@dirrm include/mysql/ndb/mgmapi
-%%NDB%%@dirrm include/mysql/ndb/ndbapi
-%%NDB%%@dirrm include/mysql/ndb
+%%NDB%%@dirrm include/mysql/storage/ndb/mgmapi
+%%NDB%%@dirrm include/mysql/storage/ndb/ndbapi
+%%NDB%%@dirrm include/mysql/storage/ndb
+%%NDB%%@dirrm include/mysql/storage
 @dirrmtry include/mysql
 @dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets

@@ -5,7 +5,6 @@ bin/mysql_find_rows
 bin/mysql_fix_extensions
 bin/mysql_secure_installation
 bin/mysql_setpermission
-bin/mysql_tableinfo
 bin/mysql_zap
 bin/mysqlaccess
 bin/mysqld_multi
