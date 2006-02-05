@@ -34,6 +34,11 @@ lib/X11/icons/PolarCursorTheme/cursors/cross_reverse
 lib/X11/icons/PolarCursorTheme/cursors/crossed_circle
 lib/X11/icons/PolarCursorTheme/cursors/crosshair
 lib/X11/icons/PolarCursorTheme/cursors/d9ce0ab605698f320427677b458ad60b
+lib/X11/icons/PolarCursorTheme/cursors/dnd-ask
+lib/X11/icons/PolarCursorTheme/cursors/dnd-copy
+lib/X11/icons/PolarCursorTheme/cursors/dnd-link
+lib/X11/icons/PolarCursorTheme/cursors/dnd-move
+lib/X11/icons/PolarCursorTheme/cursors/dnd-none
 lib/X11/icons/PolarCursorTheme/cursors/double_arrow
 lib/X11/icons/PolarCursorTheme/cursors/draft_large
 lib/X11/icons/PolarCursorTheme/cursors/draft_small
