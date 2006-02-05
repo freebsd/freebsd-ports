@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 USE_X_PREFIX=	yes
 LATEST_LINK=	gtk-sharp10
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
