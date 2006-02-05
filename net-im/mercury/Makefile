@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	1711_B04
+DISTVERSION=	1711_B05b
 PORTEPOCH=	3
 CATEGORIES=	net-im java
 MASTER_SITES=	${MASTER_SITE_LOCAL}		\
 		http://download.mercury.to/
 MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
-#DISTNAME=	${DISTVERSION}
-DISTNAME=	55	# DISTNAME changed to 10th Fibonacci number ;-)
+DISTNAME=	${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 # Maintainership available: drop me a line if interested
