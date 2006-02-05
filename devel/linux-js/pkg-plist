@@ -1,0 +1,8 @@
+bin/jscal
+bin/jstest
+include/linux/joystick.h
+@dirrm include/linux
+@cwd /boot/modules
+linux_js.ko
+@exec kldxref %D
+@unexec kldxref %D
