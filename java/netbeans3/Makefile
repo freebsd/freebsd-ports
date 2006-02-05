@@ -17,7 +17,7 @@ COMMENT=	A full-featured integrated environment for Java
 USE_BZIP2=	yes
 USE_JAVA=	1.4+
 NO_BUILD=	yes
-RESTRICTED=	"Restrictive license"
+RESTRICTED=	Restrictive license
 
 WRKSRC=		${WRKDIR}/netbeans
 
@@ -26,7 +26,7 @@ DOWNLOAD_URL?=	http://www.netbeans.org/download/release36/promoted/FCS/release36
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 .if ${OSVERSION} >= 500000
