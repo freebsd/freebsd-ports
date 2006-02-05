@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Class/DBI/LazyInflate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/LazyInflate/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/LazyInflate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/DBI
+@dirrmtry %%SITE_PERL%%/Class
