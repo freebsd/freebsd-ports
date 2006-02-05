@@ -7,6 +7,7 @@
 
 PORTNAME=	sazanami-ttf
 PORTVERSION=	20040629
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	efont/10087
@@ -52,6 +53,9 @@ do-install:
 	${LN} -s -f \
 		${PREFIX}/${FONTSDIR}/sazanami-mincho.ttf \
 		${LOCALBASE}/${LOCALFONTSDIR}/TrueType/sazanami-mincho.ttf
+	${MKDIR} ${PREFIX}/etc/fonts/conf.d
+	${INSTALL_DATA} ${FILESDIR}/3.sazanami-ttf.conf \
+			${PREFIX}/etc/fonts/conf.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for F in ${DOC_FILES:Mdoc/*}
@@ -62,6 +66,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	${X11BASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

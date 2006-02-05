@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+etc/fonts/conf.d/3.sazanami-ttf.conf
 %%FONTSDIR%%/fonts.alias.sazanami
 %%FONTSDIR%%/fonts.dir.sazanami
 %%FONTSDIR%%/sazanami-mincho.ttf
@@ -17,10 +18,13 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ayu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kappa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
 @exec mkdir -p %%LOCALFONTSDIR%%/TrueType
 @exec ln -s -f %D/%%FONTSDIR%%/sazanami-mincho.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
 @exec ln -s -f %D/%%FONTSDIR%%/sazanami-gothic.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
 @unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
 @unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
-@unexec rmdir %%LOCALFONTSDIR%%/TrueType 2> /dev/null || true
-@unexec rmdir %%LOCALFONTSDIR%% 2> /dev/null || true
+@dirrmtry %%LOCALFONTSDIR%%/TrueType
+@dirrmtry %%LOCALFONTSDIR%%
+@unexec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
+@unexec if [ -s %D/%%FONTSDIR%%/fonts.cache-1 ]; then rm -f %D/%%FONTSDIR%%/fonts.cache-1; fi
