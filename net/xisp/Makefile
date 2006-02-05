@@ -17,6 +17,8 @@ COMMENT=	A user-friendly X interface to pppd/chat
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
+BROKEN=		Installs into etc/ppp and doesn't clean it up
+
 USE_XPM=	yes
 
 MAN1=		xisp.1
