@@ -12,18 +12,17 @@ java 1.4.1-p10 for example to 1.4.1_110.
 
 --- jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx	Thu Sep  8 04:31:40 2005
 +++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx	Sat Oct 22 18:25:49 2005
-@@ -208,7 +208,16 @@
+@@ -208,7 +208,15 @@
              return false;
  #if defined(FREEBSD)        
        if (m_preRelease == Rel_FreeBSD) {
 -         m_nUpdateSpecial = *pCur;
 +           pCur++; //elemnate `p'
 +           if (pCur < pEnd && isdigit(*pCur))
-+               if (pCur < pEnd)
-+                   pCur ++;
++               pCur ++;
 +           int len = pCur - pLast -1; //elemenate `p'
 +		if (len >= 127)
-+                    return false;
++                   return false;
 +	strncpy(buf, (pLast+1), len); //elemenate `p'
 +	buf[len] = 0;
 +	m_nUpdateSpecial = atoi(buf)+100; //hack for FBSD

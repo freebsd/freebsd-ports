@@ -6,7 +6,7 @@
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 .if !defined(WITHOUT_JAVA) && defined(WITH_GNUGCJ)
-CONFIGURE_ARGS+=	--with-java=gij --with-ant-home=${LOCALBASE}/ant
+CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}/gcc41" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}" --disable-qadevooo
 .endif
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
