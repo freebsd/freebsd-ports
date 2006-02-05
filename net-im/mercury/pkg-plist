@@ -75,6 +75,8 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/View.xml
 %%INSTDIR%%/resources/AppData/Views/Default_CLGroup/Default.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLGroup/View.xml
+%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/collapsed.png
+%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/expanded.png
 %%INSTDIR%%/resources/AppData/Views/Default_Chat/Default.html
 %%INSTDIR%%/resources/AppData/Views/Default_Chat/View.xml
 %%INSTDIR%%/resources/AppData/Views/Default_ContactCard/View.xml
@@ -164,6 +166,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.png
 %%INSTDIR%%/resources/AppData/Winks/eTRzZjMrT0pmQnlwSHZZSlJzR2VBUi9xVmQ0PQ==/ufo.swf
 %%INSTDIR%%/resources/Images.zip
+%%INSTDIR%%/resources/UI/dialogs/AddGroup.xml
 %%INSTDIR%%/resources/UI/dialogs/Jabber_ContactSubscribed.xml
 %%INSTDIR%%/resources/UI/dialogs/Jabber_JoinMUC.xml
 %%INSTDIR%%/resources/UI/dialogs/RemoveContact.xml
