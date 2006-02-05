@@ -24,6 +24,8 @@ lib/kde3/digikamimageplugin_filmgrain.la
 lib/kde3/digikamimageplugin_filmgrain.so
 lib/kde3/digikamimageplugin_freerotation.la
 lib/kde3/digikamimageplugin_freerotation.so
+lib/kde3/digikamimageplugin_hotpixels.la
+lib/kde3/digikamimageplugin_hotpixels.so
 lib/kde3/digikamimageplugin_infrared.la
 lib/kde3/digikamimageplugin_infrared.so
 lib/kde3/digikamimageplugin_inpainting.la
@@ -38,6 +40,8 @@ lib/kde3/digikamimageplugin_perspective.la
 lib/kde3/digikamimageplugin_perspective.so
 lib/kde3/digikamimageplugin_raindrop.la
 lib/kde3/digikamimageplugin_raindrop.so
+lib/kde3/digikamimageplugin_refocus.la
+lib/kde3/digikamimageplugin_refocus.so
 lib/kde3/digikamimageplugin_restoration.la
 lib/kde3/digikamimageplugin_restoration.so
 lib/kde3/digikamimageplugin_sheartool.la
@@ -65,6 +69,7 @@ share/apps/digikam/digikamimageplugin_distortionfx_ui.rc
 share/apps/digikam/digikamimageplugin_emboss_ui.rc
 share/apps/digikam/digikamimageplugin_filmgrain_ui.rc
 share/apps/digikam/digikamimageplugin_freerotation_ui.rc
+share/apps/digikam/digikamimageplugin_hotpixels_ui.rc
 share/apps/digikam/digikamimageplugin_infrared_ui.rc
 share/apps/digikam/digikamimageplugin_inpainting_ui.rc
 share/apps/digikam/digikamimageplugin_inserttext_ui.rc
@@ -72,6 +77,7 @@ share/apps/digikam/digikamimageplugin_lensdistortion_ui.rc
 share/apps/digikam/digikamimageplugin_oilpaint_ui.rc
 share/apps/digikam/digikamimageplugin_perspective_ui.rc
 share/apps/digikam/digikamimageplugin_raindrop_ui.rc
+share/apps/digikam/digikamimageplugin_refocus_ui.rc
 share/apps/digikam/digikamimageplugin_restoration_ui.rc
 share/apps/digikam/digikamimageplugin_sheartool_ui.rc
 share/apps/digikam/digikamimageplugin_solarize_ui.rc
@@ -92,6 +98,7 @@ share/apps/digikam/icons/hicolor/32x32/actions/distortionfx.png
 share/apps/digikam/icons/hicolor/32x32/actions/embosstool.png
 share/apps/digikam/icons/hicolor/32x32/actions/filmgrain.png
 share/apps/digikam/icons/hicolor/32x32/actions/freerotation.png
+share/apps/digikam/icons/hicolor/32x32/actions/hotpixels.png
 share/apps/digikam/icons/hicolor/32x32/actions/infrared.png
 share/apps/digikam/icons/hicolor/32x32/actions/inpainting.png
 share/apps/digikam/icons/hicolor/32x32/actions/inserttext.png
@@ -99,6 +106,7 @@ share/apps/digikam/icons/hicolor/32x32/actions/lensdistortion.png
 share/apps/digikam/icons/hicolor/32x32/actions/oilpaint.png
 share/apps/digikam/icons/hicolor/32x32/actions/perspective.png
 share/apps/digikam/icons/hicolor/32x32/actions/raindrop.png
+share/apps/digikam/icons/hicolor/32x32/actions/refocus.png
 share/apps/digikam/icons/hicolor/32x32/actions/restoration.png
 share/apps/digikam/icons/hicolor/32x32/actions/shear.png
 share/apps/digikam/icons/hicolor/32x32/actions/solarizetool.png
@@ -119,6 +127,7 @@ share/apps/digikamimageplugins/data/color-picker-gray.png
 share/apps/digikamimageplugins/data/color-picker-white.png
 share/apps/digikamimageplugins/data/craters-pattern.png
 share/apps/digikamimageplugins/data/digikamimageplugins_banner_left.png
+share/apps/digikamimageplugins/data/digikamimageplugins_banner_right.png
 share/apps/digikamimageplugins/data/dried-pattern.png
 share/apps/digikamimageplugins/data/fabric-texture.png
 share/apps/digikamimageplugins/data/granit-pattern.png
@@ -177,30 +186,20 @@ share/locale/br/LC_MESSAGES/digikamimageplugins.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_antivignetting.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_blowup.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_border.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_channelmixer.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_charcoal.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_despeckle.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_distortionfx.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_freerotation.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_infrared.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_inpainting.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_perspective.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_raindrop.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_solarize.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_superimpose.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugin_unsharp.mo
-share/locale/ca/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/ca/LC_MESSAGES/digikamimageplugins.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
@@ -209,7 +208,6 @@ share/locale/cs/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_channelmixer.mo
-share/locale/cs/LC_MESSAGES/digikamimageplugin_charcoal.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_despeckle.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_distortionfx.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_emboss.mo
@@ -221,7 +219,6 @@ share/locale/cs/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_perspective.mo
-share/locale/cs/LC_MESSAGES/digikamimageplugin_raindrop.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_solarize.mo
@@ -229,10 +226,10 @@ share/locale/cs/LC_MESSAGES/digikamimageplugin_superimpose.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_unsharp.mo
 share/locale/cs/LC_MESSAGES/digikamimageplugin_whitebalance.mo
-share/locale/cs/LC_MESSAGES/digikamimageplugins.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/cy/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_channelmixer.mo
@@ -243,16 +240,19 @@ share/locale/cy/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/cy/LC_MESSAGES/digikamimageplugin_inpainting.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_perspective.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/cy/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_solarize.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_superimpose.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugin_unsharp.mo
+share/locale/cy/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/cy/LC_MESSAGES/digikamimageplugins.mo
 share/locale/da/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/da/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
@@ -369,6 +369,7 @@ share/locale/en_GB/LC_MESSAGES/digikamimageplugins.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/es/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_channelmixer.mo
@@ -379,11 +380,13 @@ share/locale/es/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/es/LC_MESSAGES/digikamimageplugin_inpainting.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_perspective.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/es/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_solarize.mo
 share/locale/es/LC_MESSAGES/digikamimageplugin_superimpose.mo
@@ -422,6 +425,7 @@ share/locale/et/LC_MESSAGES/digikamimageplugins.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/fr/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_channelmixer.mo
@@ -432,16 +436,19 @@ share/locale/fr/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/fr/LC_MESSAGES/digikamimageplugin_inpainting.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_perspective.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/fr/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_solarize.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_superimpose.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugin_unsharp.mo
+share/locale/fr/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/fr/LC_MESSAGES/digikamimageplugins.mo
 share/locale/ga/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/ga/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
@@ -516,23 +523,60 @@ share/locale/it/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/it/LC_MESSAGES/digikamimageplugin_unsharp.mo
 share/locale/it/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/it/LC_MESSAGES/digikamimageplugins.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_blowup.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_blurfx.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_border.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_channelmixer.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_charcoal.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_despeckle.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_distortionfx.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_emboss.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_filmgrain.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_freerotation.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_inpainting.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_inserttext.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_oilpaint.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_perspective.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_restoration.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_sheartool.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_solarize.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_superimpose.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_texture.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_unsharp.mo
+share/locale/ja/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_blowup.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_border.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_channelmixer.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_charcoal.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_despeckle.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_distortionfx.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_freerotation.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_inpainting.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_oilpaint.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_perspective.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_raindrop.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_restoration.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_sheartool.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_solarize.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_superimpose.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_texture.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugin_unsharp.mo
+share/locale/lt/LC_MESSAGES/digikamimageplugin_whitebalance.mo
 share/locale/lt/LC_MESSAGES/digikamimageplugins.mo
 share/locale/mt/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/mt/LC_MESSAGES/digikamimageplugin_charcoal.mo
@@ -547,6 +591,7 @@ share/locale/mt/LC_MESSAGES/digikamimageplugins.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/nb/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_channelmixer.mo
@@ -557,6 +602,7 @@ share/locale/nb/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/nb/LC_MESSAGES/digikamimageplugin_inpainting.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/nb/LC_MESSAGES/digikamimageplugin_oilpaint.mo
@@ -601,6 +647,7 @@ share/locale/nl/LC_MESSAGES/digikamimageplugins.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_adjustcurves.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_adjustlevels.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_antivignetting.mo
+share/locale/nn/LC_MESSAGES/digikamimageplugin_blowup.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_blurfx.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_border.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_channelmixer.mo
@@ -611,6 +658,7 @@ share/locale/nn/LC_MESSAGES/digikamimageplugin_emboss.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_filmgrain.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_freerotation.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_infrared.mo
+share/locale/nn/LC_MESSAGES/digikamimageplugin_inpainting.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_inserttext.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_lensdistortion.mo
 share/locale/nn/LC_MESSAGES/digikamimageplugin_oilpaint.mo
@@ -940,6 +988,7 @@ share/services/digikamimageplugin_distortionfx.desktop
 share/services/digikamimageplugin_emboss.desktop
 share/services/digikamimageplugin_filmgrain.desktop
 share/services/digikamimageplugin_freerotation.desktop
+share/services/digikamimageplugin_hotpixels.desktop
 share/services/digikamimageplugin_infrared.desktop
 share/services/digikamimageplugin_inpainting.desktop
 share/services/digikamimageplugin_inserttext.desktop
@@ -947,6 +996,7 @@ share/services/digikamimageplugin_lensdistortion.desktop
 share/services/digikamimageplugin_oilpaint.desktop
 share/services/digikamimageplugin_perspective.desktop
 share/services/digikamimageplugin_raindrop.desktop
+share/services/digikamimageplugin_refocus.desktop
 share/services/digikamimageplugin_restoration.desktop
 share/services/digikamimageplugin_sheartool.desktop
 share/services/digikamimageplugin_solarize.desktop
@@ -956,3 +1006,8 @@ share/services/digikamimageplugin_unsharp.desktop
 share/services/digikamimageplugin_whitebalance.desktop
 @dirrm share/apps/digikamimageplugins/data
 @dirrm share/apps/digikamimageplugins
+@dirrm share/apps/digikam/icons/hicolor/32x32/actions
+@dirrm share/apps/digikam/icons/hicolor/32x32
+@dirrm share/apps/digikam/icons/hicolor
+@dirrm share/apps/digikam/icons
+@dirrm share/apps/digikam
