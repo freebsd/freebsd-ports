@@ -19,6 +19,8 @@ COMMENT=	OpenGL demos distributed with Mesa
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
