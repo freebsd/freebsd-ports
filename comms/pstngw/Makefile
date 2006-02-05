@@ -15,14 +15,14 @@ DISTNAME=	pstngw_${PORTVERSION}
 MAINTAINER=	jacke@bofh.pl
 COMMENT=	Simple H.323-PSTN (POTS) gateway
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
 NOCLEANDEPENDS=	yes
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/pstngw
-MAKE_ENV+=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../../net/openh323/work/openh323
+MAKE_ENV+=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
+		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../../net/openh323-112/work/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 
 PLIST_FILES=	bin/pstngw

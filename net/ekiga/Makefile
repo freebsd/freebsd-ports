@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.98
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
 # note, we do not want to clean openh323, otherwise it has to build
 # it all over again which can take several hours.
@@ -50,8 +50,8 @@ MAN1=		gnomemeeting.1
 
 .include <bsd.port.pre.mk>
 
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib && make -V WRKSRC
-OPENH323DIR!=	cd ${PORTSDIR}/net/openh323 && make -V WRKSRC
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib152 && make -V WRKSRC
+OPENH323DIR!=	cd ${PORTSDIR}/net/openh323-112 && make -V WRKSRC
 
 .if ${ARCH} != "i386"
 BROKEN=		"Configure fails on !i386"

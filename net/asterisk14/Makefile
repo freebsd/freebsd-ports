@@ -45,8 +45,8 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 .include <bsd.port.pre.mk>
 
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib; make -V WRKSRC
-OPENH323DIR!=	cd ${PORTSDIR}/net/openh323; make -V WRKSRC
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib152; make -V WRKSRC
+OPENH323DIR!=	cd ${PORTSDIR}/net/openh323-112; make -V WRKSRC
 
 .if ${ARCH} != "i386"
 WITHOUT_H323=	1
@@ -56,8 +56,8 @@ WITHOUT_ZAPTEL=	1
 .if defined(WITHOUT_H323)
 PLIST_SUB+=	WITH_H323="@comment "
 .else
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
-		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build \
+		${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 PLIST_SUB+=	WITH_H323=""
 MAKE_ENV+=	WITH_H323=1
 .endif
