@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution-sharp
 PORTVERSION=	0.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -27,6 +27,14 @@ USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD}  's|evolution-shell-2.2|evolution-shell-2.6|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|.@EBOOK_SOVERSION@||g ; \
+		s|.@ECAL_SOVERSION@||g ; \
+		s|.@EDS_SOVERSION@||g' \
+		${WRKSRC}/evolution/evolution-sharp.dll.config.in
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
