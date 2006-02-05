@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTVERSION=	1.8.4.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
@@ -38,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
-PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
+PLIST_SUB+=	EPHY_VERSION="1.8"
 
 MAN1=		epiphany.1
 
