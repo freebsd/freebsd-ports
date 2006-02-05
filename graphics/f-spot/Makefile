@@ -8,7 +8,7 @@
 
 PORTNAME=	f-spot
 PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
@@ -33,6 +33,11 @@ USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} 's|target="liblcms.so.1"|target="liblcms.so"|g ; \
+	s|target="libexif.so.@EXIF_SOVERSION@"|target="libexif.so"|g' \
+	${WRKSRC}/src/f-spot.exe.config.in
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
