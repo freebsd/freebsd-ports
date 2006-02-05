@@ -1,0 +1,154 @@
+--- configure.ac.orig	Wed Feb  1 14:52:36 2006
++++ configure.ac	Wed Feb  1 15:04:55 2006
+@@ -136,7 +136,7 @@
+    x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
+                    ;;
+ 
+-   x86_64)	   MACHTYPE=x86_64 ;
++   x86_64|amd64)   MACHTYPE=x86_64 ;
+ 		   P_64BIT=1 ;
+                    LIB64=1 ;
+ 		   ;;
+@@ -276,7 +276,7 @@
+ 
+ AC_MSG_CHECKING(if linker accepts -Wreorder)
+ AC_LANG_CONFTEST([[int main(int ac,char **av) { return 0; }]])
+-$STDCXX $CXXFLAGS -Wreorder conftest.cc > /dev/null 2>&1
++$CXX $CXXFLAGS -Wreorder conftest.cc > /dev/null 2>&1
+ if test $? = 0 ; then
+   AC_MSG_RESULT(yes)
+   STDCXXFLAGS="$STDCXXFLAGS -Wreorder"
+@@ -289,7 +289,7 @@
+ # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
+ # if test $? = 0 ; then
+ #   AC_MSG_RESULT(yes)
+-#   STDCCFLAGS="$STDCCFLAGS -Woverloaded-virtual"
++#   STDCXXFLAGS="$STDCCFLAGS -Woverloaded-virtual"
+ # else
+ #   AC_MSG_RESULT(no)
+ # fi
+@@ -318,7 +318,7 @@
+   AC_MSG_RESULT(yes)
+ else
+   AC_MSG_RESULT(no)
+-  STDCXXFLAGS="$STDCCFLAGS -rtti"
++  STDCXXFLAGS="$STDCXXFLAGS -rtti"
+ fi
+ 
+ GCSECTIONS=0
+@@ -339,7 +339,7 @@
+   $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
+   if test $? = 0 ; then
+     AC_MSG_RESULT(yes)
+-    STDCCFLAGS="$STDCCFLAGS -ffunction-sections"
++    STDCXXFLAGS="$STDCXXFLAGS -ffunction-sections"
+     GCSECTIONS=1
+   else
+     AC_MSG_RESULT(no)
+@@ -355,7 +355,7 @@
+   dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
+   dnl if test $? = 0 ; then
+   dnl   AC_MSG_RESULT(yes)
+-  dnl   STDCCFLAGS="$STDCCFLAGS -fdata-sections"
++  dnl   STDCXXFLAGS="$STDCXXFLAGS -fdata-sections"
+   dnl   GCSECTIONS=1
+   dnl else
+   dnl   AC_MSG_RESULT(no)
+@@ -368,7 +368,7 @@
+   dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
+   dnl if test $? = 0 ; then
+   dnl   AC_MSG_RESULT(yes)
+-  dnl   STDCCFLAGS="$STDCCFLAGS -fvtable-gc"
++  dnl   STDCXXFLAGS="$STDCXXFLAGS -fvtable-gc"
+   dnl   GCSECTIONS=1
+   dnl else
+   dnl   AC_MSG_RESULT(no)
+@@ -687,18 +687,18 @@
+ dnl MSWIN_DISPLAY semaphore,Semaphore Support
+ dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
+ 
+-dnl Linux, Mac OS X use libpthread and -lpthread
+-dnl FreeBSD uses the -pthread compiler option and uses libc_r
++dnl FreeBSD >= 5.x, Linux, Mac OS X use libpthread and -lpthread
++dnl FreeBSD < 5.x uses the -pthread compiler option and uses libc_r
+ 
+ AC_CHECK_LIB(pthread, pthread_create, HAS_PTHREADS=yes, HAS_PTHREADS=no)
+ if test ${HAS_PTHREADS} = yes ; then
+-  ENDLDLIBS="$ENDLDLIBS -lpthread"
+-  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT"
++  ENDLDLIBS="$ENDLDLIBS ${PTHREAD_LIBS}"
++  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT ${PTHREAD_LIBS}"
+ else
+   if test ${OSTYPE} = FreeBSD ; then
+     HAS_PTHREADS=yes
+-    ENDLDLIBS="$ENDLDLIBS -pthread"
+-    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT -pthread"
++    ENDLDLIBS="$ENDLDLIBS ${PTHREAD_LIBS}"
++    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT ${PTHREAD_LIBS}"
+   fi
+ fi
+ 
+@@ -1251,7 +1251,7 @@
+ else
+   AC_CHECK_HEADERS(expat.h, HAS_EXPAT=1)
+   if test "${HAS_EXPAT:-unset}" != "unset" ; then
+-    AC_CHECK_LIB(expat, XML_ParserCreate, HAS_EXPAT=1, HAS_EXPAT=)
++    AC_SEARCH_LIBS(XML_ParserCreate, expat, HAS_EXPAT=1, HAS_EXPAT=)
+   else
+     AC_CHECK_FILE(/usr/local/include/expat.h, HAS_EXPAT=1)
+     if test "${HAS_EXPAT:-unset}" != "unset" ; then
+@@ -1426,7 +1426,8 @@
+   if test $HAS_IPV6 = no ; then
+     AC_MSG_RESULT(no)
+   else
+-    AC_TRY_COMPILE([#include <sys/socket.h>
++    AC_TRY_COMPILE([#include <stddef.h>
++		     #include <sys/socket.h>
+                      #include <netdb.h>],
+                      [getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
+     if test $HAS_IPV6 = no ; then
+@@ -1499,9 +1500,9 @@
+     AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext -laa)
+   fi
+ 
+-  dnl freeBSD SDL check
++  dnl FreeBSD SDL check
+   if test "${HAS_SDL:-unset}" = "unset" ; then
+-    AC_CHECK_FILE(/usr/local/include/SDL11/SDL.h, HAS_SDL=1)
++    AC_CHECK_FILE(SDL11/SDL.h, HAS_SDL=1)
+     if test "${HAS_SDL:-unset}" != "unset" ; then
+       SDLLIB=SDL-1.1
+     fi
+@@ -1525,7 +1526,7 @@
+ dnl ########################################################################
+ dnl check for video capture support.
+ dnl videodev.h on linux
+-dnl machine/ioctl_meteor on FreeBSD
++dnl machine/ioctl_meteor or dev/bktr/ioctl_meteor.h on FreeBSD
+ dnl i386/ioctl_meteor on OpenBSD
+ dnl dev/ic/bt8xx on NetBSD
+ 
+@@ -1551,9 +1552,10 @@
+     HAS_VIDEO_CAPTURE=1
+   else
+     AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
+-    dnl AC_CHECK_HEADER(machine/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
+-    dnl AC_CHECK_HEADER(i386/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
+-    dnl AC_CHECK_HEADER(dev/ic/bt8xx.h, HAS_VIDEO_CAPTURE=1)
++    AC_CHECK_HEADER(machine/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
++    AC_CHECK_HEADER(dev/bktr/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
++    AC_CHECK_HEADER(i386/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
++    AC_CHECK_HEADER(dev/ic/bt8xx.h, HAS_VIDEO_CAPTURE=1)
+     if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
+       AC_MSG_NOTICE(No Video Capture support)
+       AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
+@@ -2044,6 +2046,9 @@
+   AC_MSG_NOTICE(C++ exceptions enabled)
+   STDCCFLAGS="$STDCCFLAGS -fno-exceptions"
+ fi
++
++STDCCFLAGS="$CPPFLAGS $STDCCFLAGS"
++STDCXXFLAGS="$CPPFLAGS $STDCXXFLAGS"
+ 
+ dnl ########################################################################
+ dnl final declarations

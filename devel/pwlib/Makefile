@@ -6,39 +6,64 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.openh323.org/bin/ \
-		http://www.de.openh323.org/bin/ \
-		http://www.gnomemeeting.org/downloads/0.98.0/sources/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.voxgratia.org/releases/
+DISTFILES=	pwlib-v1_9_2-src-tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/pwlib_v1_9_2
 
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_OPENLDAP=	yes
-USE_AUTOTOOLS=	autoconf:253
-CONFIGURE_ENV=	OSRELEASE=${OSVERSION}
-ALL_TARGET=	optnoshared
-MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
-MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
+USE_AUTOTOOLS=	autoconf:259
+WANT_SDL=	yes
+USE_OPENSSL=	yes
+NO_FILTER_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502101
-ONLY_FOR_ARCHS=	i386
+# if explicitely asked for, depend upon it
+.if defined(WITH_SDL)
+USE_SDL+=	sdl
 .endif
 
-do-install:
-#	${INSTALL_PROGRAM} ${WRKSRC}/samples/simple/obj_${OPSYS}_${THE_MACHTYPE}_r/simph323 ${PREFIX}/bin
+# if explicitely disabled, do not depend upon it
+.if defined(WITHOUT_SDL)
+CONFIGURE_ARGS+=	--disable-sdl
+.endif
+
+# if nobody cares, use it if it is installed already
+.if !defined(WITHOUT_SDL) && !defined(WITH_SDL)
+.if ${HAVE_SDL:Msdl}
+USE_SDL+=       sdl
+.else
+CONFIGURE_ARGS+=	--disable-sdl
+.endif
+.endif
+
+.if !defined(WITHOUT_PLUGINS)
+CONFIGURE_ARGS+=	--enable-plugins
+.endif
+
+#disable OpenLDAP support in PWLIB
+.if defined(WITHOUT_LDAP)
+CONFIGURE_ARGS+=	--disable-openldap
+.else
+USE_OPENLDAP=	yes
+.endif
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib" STDCCFLAGS+="-I${LOCALBASE}"
+
+#.if ${OSVERSION} < 502101
+#ONLY_FOR_ARCHS=	i386
+#.endif
 
 .include <bsd.port.post.mk>
