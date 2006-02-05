@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program which uses QT
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build \
 		qmake:${PORTSDIR}/devel/qmake
 
 NOCLEANDEPENDS=	yes
@@ -27,8 +27,8 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 ALL_TARGET=	optnoshared
 MAKE_ENV=	QTDIR=${X11BASE} \
-		PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323
+		PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
+		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
 

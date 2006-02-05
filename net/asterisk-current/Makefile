@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	luigi@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit - head branch
 
-# --- BUIKD OPTIONS ---
+# --- BUILD OPTIONS ---
 # If you run "make -DPLAIN" you will only run the svn distribution
 # without any local change. Otherwise, you will use whatever
 # patch-* and src*.tgz that is in the files directory.
@@ -120,8 +120,8 @@ do-extract:
 
 .if defined(WITH_H323)
 # put in the prerequisites
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
-		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build \
+		${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 .endif
 
 .if defined(WITH_ZAPTEL)
