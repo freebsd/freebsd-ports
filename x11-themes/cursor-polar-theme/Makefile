@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cursor-polar-theme
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	27913-PolarCursorTheme
@@ -23,6 +23,6 @@ WRKSRC=		${WRKDIR}/PolarCursorTheme
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/icons/PolarCursorTheme/cursors
 	cd ${WRKSRC}/cursors \
-		&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/PolarCursorTheme/cursors
+	&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/PolarCursorTheme/cursors
 
 .include <bsd.port.mk>
