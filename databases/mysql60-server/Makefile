@@ -1,22 +1,23 @@
 # New ports collection makefile for:	MySQL-server
-# Date created:				Fri Apr 11 10:06:26 CET 2003
-# Whom:					Alex Dupre <sysadmin@alexdupre.com>
+# Date created:				28 Jan 2006
+# Whom:					Alex Dupre <ale@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.18
+PORTVERSION=	5.1.5
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-5.0
+MASTER_SITE_SUBDIR=	MySQL-5.1
 PKGNAMESUFFIX?=	-server
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql50-client
+SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
@@ -50,14 +51,17 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
-.if defined(WITHOUT_INNODB)
-CONFIGURE_ARGS+=--without-innodb
+.if !defined(WITHOUT_INNODB)
+CONFIGURE_ARGS+=--with-innodb
 .endif
 .if defined(WITH_ARCHIVE)
 CONFIGURE_ARGS+=--with-archive-storage-engine
 .endif
 .if defined(WITH_FEDERATED)
 CONFIGURE_ARGS+=--with-federated-storage-engine
+.endif
+.if defined(WITH_PARTITION)
+CONFIGURE_ARGS+=--with-partition
 .endif
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=--with-ndbcluster
@@ -109,11 +113,11 @@ CXXFLAGS+=	-fno-exceptions
 # MySQL-Server part
 .if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	50
+WANT_MYSQL_VER=	51
 
-LATEST_LINK=	mysql50-server
+LATEST_LINK=	mysql51-server
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.*
+CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.0.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -146,11 +150,12 @@ pre-fetch:
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
 	@${ECHO} "	WITH_FEDERATED=yes	Enable support for Federated Storage Engine."
+	@${ECHO} "	WITH_PARTITION=yes	Enable support for Partition Storage Engine."
 	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @zlib_dir@ @sql_server_dirs@ scripts @man_dirs@ support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @zlib_dir@ @sql_server_dirs@ @mysql_se_dirs@ @sql_server@ scripts @man_dirs@ support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
@@ -170,9 +175,9 @@ post-install:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-LATEST_LINK=	mysql50-client
+LATEST_LINK=	mysql51-client
 
-CONFLICTS=	mysql-client-3.* mysql-client-4.*
+CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.0.*
 
 MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
@@ -187,7 +192,7 @@ CONFIGURE_ARGS+=--without-server
 .if ${OSVERSION} < 500000
 PLIST_SUB+=	ZLIB=""
 .else
-PLIST_SUB+=     ZLIB="@comment "
+PLIST_SUB+=	ZLIB="@comment "
 .endif
 
 post-patch:
@@ -208,17 +213,17 @@ post-install: install-ldconfig-file
 .else
 # MySQL-Scripts part
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	50
+WANT_MYSQL_VER=	51
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql51
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
-LATEST_LINK=	mysql50-scripts
+LATEST_LINK=	mysql51-scripts
 
-CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.*
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.0.*
 
 MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
 		mysqld_multi.1 mysql_fix_privilege_tables.1
@@ -226,7 +231,7 @@ MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
 SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
 		mysql_secure_installation mysql_zap mysqlaccess \
 		mysql_convert_table_format mysql_find_rows mysqlhotcopy \
-		mysqldumpslow mysql_explain_log mysql_tableinfo mysqld_multi
+		mysqldumpslow mysql_explain_log mysqld_multi
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = scripts @man_dirs@|g" ${WRKSRC}/Makefile.in

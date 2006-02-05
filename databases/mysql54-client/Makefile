@@ -1,6 +1,6 @@
 # New ports collection makefile for:	MySQL-client
-# Date created:				Fri Apr 11 10:06:26 CET 2003
-# Whom:					Alex Dupre <sysadmin@alexdupre.com>
+# Date created:				28 Jan 2006
+# Whom:					Alex Dupre <ale@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	Multithreaded SQL database (client)
 
-MASTERDIR=	${.CURDIR}/../mysql50-server
+MASTERDIR=	${.CURDIR}/../mysql51-server
 
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
