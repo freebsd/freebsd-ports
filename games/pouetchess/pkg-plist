@@ -2,6 +2,8 @@ bin/pouetChess
 @unexec if cmp -s %D/etc/pouetChess.conf %D/etc/pouetChess.conf.sample; then rm -f %D/etc/pouetChess.conf; fi
 etc/pouetChess.conf.sample
 @exec if [ ! -f %D/etc/pouetChess.conf ]; then cp -p %D/etc/pouetChess.conf.sample %D/etc/pouetChess.conf; fi
+%%DATADIR%%/icons/pouetChess.bmp
+%%DATADIR%%/icons/pouetChess.png
 %%DATADIR%%/objets3d/cavalier.lwo
 %%DATADIR%%/objets3d/dame.lwo
 %%DATADIR%%/objets3d/fleche.lwo
@@ -28,6 +30,7 @@ etc/pouetChess.conf.sample
 %%DATADIR%%/textures/sol.jpg
 %%DATADIR%%/textures/titre.png
 %%DATADIR%%/textures/tux.png
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/objets3d
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%

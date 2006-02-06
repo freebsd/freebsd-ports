@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pouetchess
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	pouetChess_${PORTVERSION}
+DISTNAME=	pouetChess_0.11_src
 
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	An open-source 3D chess game
@@ -22,7 +21,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/pouetChess
+WRKSRC=		${WRKDIR}/pouetChess_0.11
 
 MAKE_ENV=	CXX="${CXX}"
 
@@ -45,7 +44,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CXXFLAGS.*+=/ d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|:=|+=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|$$| -I${X11BASE}/include|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|\($$(CXX)\) \(-MM\)|\1 $$(CXXFLAGS) \2|' ${WRKSRC}/Makefile
 
 	@${REINPLACE_CMD} -e 's|config\.ini|${PREFIX}/etc/pouetChess.conf|' ${WRKSRC}/src/globalInfos.cpp
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/globalInfos.h
@@ -56,7 +54,7 @@ do-install:
 	if [ ! -f ${PREFIX}/etc/pouetChess.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${PREFIX}/etc/pouetChess.conf; \
 	fi
-.for i in objets3d textures
+.for i in objets3d textures icons
 	${MKDIR} ${DATADIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/bin/data/${i}/* ${DATADIR}/${i}
 .endfor
