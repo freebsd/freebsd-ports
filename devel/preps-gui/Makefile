@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 libgnomeui
 USE_PGSQL=	yes
-USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	preps.schema
 
