@@ -2,3 +2,4 @@ etc/chpasswd/chpasswd.conf
 etc/chpasswd/chpasswd.log
 www/cgi-bin/chpasswd.cgi
 @dirrm etc/chpasswd
+@dirrmtry www/cgi-bin
