@@ -11,6 +11,38 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.3.20060203.1409
+#
+
+BugFixes:
+- accuracy fixes (esp. for FP dspam is much better that in 3.6.3 release)
+- safeguards for segfault when strange clamav behavior
+- for no output when using --classify in client/server mode
+- LOG_WARNING if truncating MySQL user/pass + plus othersmall fixes
+
+New features:
+- dspam_train: a true training and testing mechanism, useful for building
+pretrained databases or training a user with their own corpus. also provides
+a test jig for measuring efficiency/accuracy with a corpus over a
+configuration.
+- DeliveryHost for delivery to different hosts based on domain
+- ClassAlias options, useful if classifying things other than spam
+
+Removed features:
+- removed neural networking (NEURAL_NET), which was experimental, needed a
+rewrite, no support, and high maintenance
+
+Changed features:
+- changed names in dspam_stats; now displays TP (true positives),
+TN (true negatives), FN (false negatives), and FP (false positives).
+- dspam_corpus now uses default settings for features and training modes,
+instead of its own and now requires --spam or --nonspam arguments
+- the trainining buffer (Feature tb=n in dspam.conf) is now offby default
+- no signature on classify
+- ignore X-DSPAM-* in tokenizer code
+
+
+###########################################################################
 # dspam-devel-3.6.3
 #
 
@@ -102,7 +134,9 @@ you can select multiple drivers in the OPTIONS screen; see dspam.conf.
 and added MySQLSupressQuote option to compensate
 - read UPGRADING and CHANGELOG and adjust your dspam.conf accordingly
 - !!! WARNING !!! MaxMessageSize is also applied to ClamAV virus scanning.
-    Thanks to Patrick Hurrelmann <outi@bytephobia.de> for beta-testing and catching a few mistakes.
+    Thanks to Patrick Hurrelmann <outi@bytephobia.de> for beta-testing and
+catching a few mistakes.
+
 
 ###########################################################################
 # dspam-devel-3.5.2.20050725.0800
