@@ -1,4 +1,67 @@
+share/doc/HTML/da/digikamimageplugins/adjustcurves.docbook
+share/doc/HTML/da/digikamimageplugins/adjustlevels.docbook
+share/doc/HTML/da/digikamimageplugins/antivignetting.docbook
+share/doc/HTML/da/digikamimageplugins/blowup.docbook
+share/doc/HTML/da/digikamimageplugins/blurfx.docbook
+share/doc/HTML/da/digikamimageplugins/border.docbook
+share/doc/HTML/da/digikamimageplugins/channelmixer.docbook
+share/doc/HTML/da/digikamimageplugins/charcoal.docbook
+share/doc/HTML/da/digikamimageplugins/common
+share/doc/HTML/da/digikamimageplugins/despeckle.docbook
+share/doc/HTML/da/digikamimageplugins/distortionfx.docbook
+share/doc/HTML/da/digikamimageplugins/emboss.docbook
+share/doc/HTML/da/digikamimageplugins/filmgrain.docbook
+share/doc/HTML/da/digikamimageplugins/freerotation.docbook
+share/doc/HTML/da/digikamimageplugins/hotpixels.docbook
+share/doc/HTML/da/digikamimageplugins/index.cache.bz2
+share/doc/HTML/da/digikamimageplugins/index.docbook
+share/doc/HTML/da/digikamimageplugins/infrared.docbook
+share/doc/HTML/da/digikamimageplugins/inpainting.docbook
+share/doc/HTML/da/digikamimageplugins/inserttext.docbook
+share/doc/HTML/da/digikamimageplugins/lensdistortion.docbook
+share/doc/HTML/da/digikamimageplugins/oilpaint.docbook
+share/doc/HTML/da/digikamimageplugins/perspective.docbook
+share/doc/HTML/da/digikamimageplugins/raindrops.docbook
+share/doc/HTML/da/digikamimageplugins/refocus.docbook
+share/doc/HTML/da/digikamimageplugins/restoration.docbook
+share/doc/HTML/da/digikamimageplugins/sheartool.docbook
+share/doc/HTML/da/digikamimageplugins/solarizeimage.docbook
+share/doc/HTML/da/digikamimageplugins/superimpose.docbook
+share/doc/HTML/da/digikamimageplugins/texture.docbook
+share/doc/HTML/da/digikamimageplugins/unsharp.docbook
+share/doc/HTML/da/digikamimageplugins/whitebalance.docbook
+share/doc/HTML/de/digikamimageplugins/adjustcurves.docbook
+share/doc/HTML/de/digikamimageplugins/adjustlevels.docbook
+share/doc/HTML/de/digikamimageplugins/antivignetting.docbook
+share/doc/HTML/de/digikamimageplugins/blowup.docbook
+share/doc/HTML/de/digikamimageplugins/blurfx.docbook
+share/doc/HTML/de/digikamimageplugins/border.docbook
+share/doc/HTML/de/digikamimageplugins/channelmixer.docbook
 share/doc/HTML/de/digikamimageplugins/charcoal.docbook
+share/doc/HTML/de/digikamimageplugins/common
+share/doc/HTML/de/digikamimageplugins/despeckle.docbook
+share/doc/HTML/de/digikamimageplugins/distortionfx.docbook
+share/doc/HTML/de/digikamimageplugins/emboss.docbook
+share/doc/HTML/de/digikamimageplugins/filmgrain.docbook
+share/doc/HTML/de/digikamimageplugins/freerotation.docbook
+share/doc/HTML/de/digikamimageplugins/hotpixels.docbook
+share/doc/HTML/de/digikamimageplugins/index.cache.bz2
+share/doc/HTML/de/digikamimageplugins/index.docbook
+share/doc/HTML/de/digikamimageplugins/infrared.docbook
+share/doc/HTML/de/digikamimageplugins/inpainting.docbook
+share/doc/HTML/de/digikamimageplugins/inserttext.docbook
+share/doc/HTML/de/digikamimageplugins/lensdistortion.docbook
+share/doc/HTML/de/digikamimageplugins/oilpaint.docbook
+share/doc/HTML/de/digikamimageplugins/perspective.docbook
+share/doc/HTML/de/digikamimageplugins/raindrops.docbook
+share/doc/HTML/de/digikamimageplugins/refocus.docbook
+share/doc/HTML/de/digikamimageplugins/restoration.docbook
+share/doc/HTML/de/digikamimageplugins/sheartool.docbook
+share/doc/HTML/de/digikamimageplugins/solarizeimage.docbook
+share/doc/HTML/de/digikamimageplugins/superimpose.docbook
+share/doc/HTML/de/digikamimageplugins/texture.docbook
+share/doc/HTML/de/digikamimageplugins/unsharp.docbook
+share/doc/HTML/de/digikamimageplugins/whitebalance.docbook
 share/doc/HTML/en/digikamimageplugins/README
 share/doc/HTML/en/digikamimageplugins/adjustcurves.docbook
 share/doc/HTML/en/digikamimageplugins/adjustcurvesdialog.png
@@ -8,7 +71,6 @@ share/doc/HTML/en/digikamimageplugins/adjustlevelsdialog.png
 share/doc/HTML/en/digikamimageplugins/adjustlevelspreview.png
 share/doc/HTML/en/digikamimageplugins/antivignetting.docbook
 share/doc/HTML/en/digikamimageplugins/antivignettingdialog.png
-share/doc/HTML/en/digikamimageplugins/antivignettingdialog2.png
 share/doc/HTML/en/digikamimageplugins/antivignettingpreview.png
 share/doc/HTML/en/digikamimageplugins/blowup.docbook
 share/doc/HTML/en/digikamimageplugins/blowupdialog.png
@@ -64,6 +126,9 @@ share/doc/HTML/en/digikamimageplugins/filmgrain.docbook
 share/doc/HTML/en/digikamimageplugins/filmgrainpreview.png
 share/doc/HTML/en/digikamimageplugins/freerotation.docbook
 share/doc/HTML/en/digikamimageplugins/freerotationpreview.png
+share/doc/HTML/en/digikamimageplugins/hotpixels.docbook
+share/doc/HTML/en/digikamimageplugins/hotpixelsdialog.png
+share/doc/HTML/en/digikamimageplugins/hotpixelspreview.png
 share/doc/HTML/en/digikamimageplugins/index.cache.bz2
 share/doc/HTML/en/digikamimageplugins/index.docbook
 share/doc/HTML/en/digikamimageplugins/infrared.docbook
@@ -85,6 +150,13 @@ share/doc/HTML/en/digikamimageplugins/perspective.docbook
 share/doc/HTML/en/digikamimageplugins/perspectivepreview.png
 share/doc/HTML/en/digikamimageplugins/raindrops.docbook
 share/doc/HTML/en/digikamimageplugins/raindropspreview.png
+share/doc/HTML/en/digikamimageplugins/refocus-notsharpened.png
+share/doc/HTML/en/digikamimageplugins/refocus-refocus.png
+share/doc/HTML/en/digikamimageplugins/refocus-sharped.png
+share/doc/HTML/en/digikamimageplugins/refocus-unsharpmask.png
+share/doc/HTML/en/digikamimageplugins/refocus.docbook
+share/doc/HTML/en/digikamimageplugins/refocusdialog.png
+share/doc/HTML/en/digikamimageplugins/refocuspreview.png
 share/doc/HTML/en/digikamimageplugins/restoration.docbook
 share/doc/HTML/en/digikamimageplugins/restorationdialog.png
 share/doc/HTML/en/digikamimageplugins/restorationpreview.png
@@ -150,6 +222,7 @@ share/doc/HTML/it/digikamimageplugins/distortionfx.docbook
 share/doc/HTML/it/digikamimageplugins/emboss.docbook
 share/doc/HTML/it/digikamimageplugins/filmgrain.docbook
 share/doc/HTML/it/digikamimageplugins/freerotation.docbook
+share/doc/HTML/it/digikamimageplugins/hotpixels.docbook
 share/doc/HTML/it/digikamimageplugins/index.cache.bz2
 share/doc/HTML/it/digikamimageplugins/index.docbook
 share/doc/HTML/it/digikamimageplugins/infrared.docbook
@@ -159,6 +232,7 @@ share/doc/HTML/it/digikamimageplugins/lensdistortion.docbook
 share/doc/HTML/it/digikamimageplugins/oilpaint.docbook
 share/doc/HTML/it/digikamimageplugins/perspective.docbook
 share/doc/HTML/it/digikamimageplugins/raindrops.docbook
+share/doc/HTML/it/digikamimageplugins/refocus.docbook
 share/doc/HTML/it/digikamimageplugins/restoration.docbook
 share/doc/HTML/it/digikamimageplugins/sheartool.docbook
 share/doc/HTML/it/digikamimageplugins/solarizeimage.docbook
@@ -237,6 +311,7 @@ share/doc/HTML/pt/digikamimageplugins/distortionfx.docbook
 share/doc/HTML/pt/digikamimageplugins/emboss.docbook
 share/doc/HTML/pt/digikamimageplugins/filmgrain.docbook
 share/doc/HTML/pt/digikamimageplugins/freerotation.docbook
+share/doc/HTML/pt/digikamimageplugins/hotpixels.docbook
 share/doc/HTML/pt/digikamimageplugins/index.cache.bz2
 share/doc/HTML/pt/digikamimageplugins/index.docbook
 share/doc/HTML/pt/digikamimageplugins/infrared.docbook
@@ -246,6 +321,7 @@ share/doc/HTML/pt/digikamimageplugins/lensdistortion.docbook
 share/doc/HTML/pt/digikamimageplugins/oilpaint.docbook
 share/doc/HTML/pt/digikamimageplugins/perspective.docbook
 share/doc/HTML/pt/digikamimageplugins/raindrops.docbook
+share/doc/HTML/pt/digikamimageplugins/refocus.docbook
 share/doc/HTML/pt/digikamimageplugins/restoration.docbook
 share/doc/HTML/pt/digikamimageplugins/sheartool.docbook
 share/doc/HTML/pt/digikamimageplugins/solarizeimage.docbook
@@ -297,6 +373,7 @@ share/doc/HTML/sv/digikamimageplugins/distortionfx.docbook
 share/doc/HTML/sv/digikamimageplugins/emboss.docbook
 share/doc/HTML/sv/digikamimageplugins/filmgrain.docbook
 share/doc/HTML/sv/digikamimageplugins/freerotation.docbook
+share/doc/HTML/sv/digikamimageplugins/hotpixels.docbook
 share/doc/HTML/sv/digikamimageplugins/index.cache.bz2
 share/doc/HTML/sv/digikamimageplugins/index.docbook
 share/doc/HTML/sv/digikamimageplugins/infrared.docbook
@@ -306,6 +383,7 @@ share/doc/HTML/sv/digikamimageplugins/lensdistortion.docbook
 share/doc/HTML/sv/digikamimageplugins/oilpaint.docbook
 share/doc/HTML/sv/digikamimageplugins/perspective.docbook
 share/doc/HTML/sv/digikamimageplugins/raindrops.docbook
+share/doc/HTML/sv/digikamimageplugins/refocus.docbook
 share/doc/HTML/sv/digikamimageplugins/restoration.docbook
 share/doc/HTML/sv/digikamimageplugins/sheartool.docbook
 share/doc/HTML/sv/digikamimageplugins/solarizeimage.docbook
@@ -321,3 +399,4 @@ share/doc/HTML/sv/digikamimageplugins/whitebalance.docbook
 @dirrm share/doc/HTML/et/digikamimageplugins
 @dirrm share/doc/HTML/en/digikamimageplugins
 @dirrm share/doc/HTML/de/digikamimageplugins
+@dirrm share/doc/HTML/da/digikamimageplugins
