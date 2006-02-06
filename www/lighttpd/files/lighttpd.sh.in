@@ -4,8 +4,7 @@
 #
 # PROVIDE: lighttpd
 # REQUIRE: %%REQUIRE%%
-# BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable lighttpd:
 #
@@ -30,6 +29,13 @@ command_args="-f ${lighttpd_conf}"
 pidfile=/var/run/lighttpd.pid
 required_files=${lighttpd_conf}
 stop_postcmd=stop_postcmd
+restart_precmd="checkconfig"
+
+checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval "${command} ${command_args} -t"
+}
 
 stop_postcmd()
 {
