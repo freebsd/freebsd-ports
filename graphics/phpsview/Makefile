@@ -7,15 +7,21 @@
 
 PORTNAME=	phpsview
 PORTVERSION=	10.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://vinvin.dyndns.org/projects/
-MASTER_SITE_SUBDIR=	${REALNAME}
-DISTNAME=	${REALNAME}-${PORTVERSION}-bsd
+MASTER_SITES=	http://www.saillard.org/linux/pwc/old-releases/
+DISTNAME=	${REALNAME}-${PORTVERSION}
+
+PATCH_SITES=	http://vinvin.dyndns.org/projects/
+PATCHFILES=	${REALNAME}-${PORTVERSION}-bsd-0.06.patch.gz
+PATCH_DIST_STRIP=       -p1
 
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	Philips USB Cameras Utilities for NetBSD/FreeBSD
 
 REALNAME=	pwc
+
+USE_BZIP2=	yes
 
 .if defined(WITHOUT_X11)
 COMPONENTS=	phpsshot
