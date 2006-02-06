@@ -1,4 +1,4 @@
-The Numeric Extensions to Python (NumPy) give Python the number crunching
+The Numeric Extensions to Python give Python the number crunching
 power of numeric languages like Matlab and IDL while maintaining all of the
 advantages of the general-purpose programming language Python.
 
@@ -17,4 +17,7 @@ number of extensions that take advantage of these two new objects.
        + Fourier Transforms (FFTPACK)
        + Random Numbers (RANLIB)
 
-WWW: http://www.pfdubois.com/numpy/
+WWW: http://numeric.scipy.org/
+_____________
+Note: 	Development for Numeric has ceased, and users should transisition to
+	NumPy as quickly as possible. 

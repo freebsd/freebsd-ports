@@ -31,6 +31,9 @@
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.py
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/Matrix.pyo
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers/__init__.py
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.py
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyc
 %%PYTHON_SITELIBDIR%%/Numeric/Numeric.pyo
@@ -72,6 +75,7 @@
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
+@dirrm %%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/FFT
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric
