@@ -11,8 +11,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTVERSION=	0.6.5
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipsec-tools
