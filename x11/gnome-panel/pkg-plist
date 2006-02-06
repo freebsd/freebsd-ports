@@ -34,6 +34,7 @@ share/doc/panel-applet/left.png
 share/doc/panel-applet/multi-applets.html
 share/doc/panel-applet/panel-applet-Panel-Applet-GConf-Utilities.html
 share/doc/panel-applet/panel-applet.devhelp
+share/doc/panel-applet/panel-applet.devhelp2
 share/doc/panel-applet/panel-applet.html
 share/doc/panel-applet/panel-signals.html
 share/doc/panel-applet/right.png
@@ -371,26 +372,29 @@ share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
-@unexec /bin/rmdir %D/share/locale/zu/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/zu 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/yi/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/yi 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/xh/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/xh 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/sr@ije/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/sr@ije 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/rw 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/nso/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/nso 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/mr/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/mr 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/mi/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/mi 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/hy/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/hy 2>/dev/null || /usr/bin/true
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/nso/LC_MESSAGES
+@dirrmtry share/locale/nso
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrm share/gnome/panel/pixmaps
 @dirrm share/gnome/panel/glade
 @dirrm share/gnome/omf/workspace-switcher
