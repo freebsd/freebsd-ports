@@ -12268,6 +12268,7 @@ synergy 	ports/sysutils/synergy
 synonym		ports/mail/synonym
 sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
+sysgather	ports/sysutils/sysgather
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
 system-tools-backends	ports/sysutils/system-tools-backends
