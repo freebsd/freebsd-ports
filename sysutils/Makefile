@@ -521,6 +521,7 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += sysgather
     SUBDIR += syslog-ng
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
