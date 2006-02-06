@@ -9578,6 +9578,7 @@ pecl-memcache	ports/databases/pecl-memcache
 pecl-operator	ports/devel/pecl-operator
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
+pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-radius	ports/net/pecl-radius
 pecl-runkit	ports/devel/pecl-runkit
 pecl-sqlite	ports/databases/pecl-sqlite
