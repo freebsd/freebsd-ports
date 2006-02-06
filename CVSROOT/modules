@@ -8528,6 +8528,7 @@ p5-Net-AIM	ports/net-im/p5-Net-AIM
 p5-Net-AOLIM	ports/net-im/p5-Net-AOLIM
 p5-Net-Amazon	ports/net/p5-Net-Amazon
 p5-Net-BGP	ports/net/p5-Net-BGP
+p5-Net-BitTorrent-File	ports/net-p2p/p5-Net-BitTorrent-File
 p5-Net-Blogger	ports/net/p5-Net-Blogger
 p5-Net-CIDR	ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
