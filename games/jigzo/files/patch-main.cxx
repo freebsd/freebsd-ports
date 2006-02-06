@@ -1,8 +1,8 @@
---- main.cxx.orig	Sun Jan 15 12:24:51 2006
-+++ main.cxx	Wed Jan 18 02:24:47 2006
-@@ -24,6 +24,7 @@
-  * 
-  */
+--- main.cxx.orig	Sun Feb  5 04:41:46 2006
++++ main.cxx	Sun Feb  5 23:41:41 2006
+@@ -28,6 +28,7 @@
+ float BG_G = 0.0;
+ float BG_B = 0.0;
  
 +#include <unistd.h>
  #include <cstdio>
