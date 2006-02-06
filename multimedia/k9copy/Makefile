@@ -5,17 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	k9copy
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	multimedia kde
-MASTER_SITES=	http://k9copy.free.fr/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	triosoft@triosoft.com.ua
 COMMENT=	A DVD-9 to DVD-5 shrinking application for KDE
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-                dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-                vamps:${PORTSDIR}/multimedia/vamps
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		vamps:${PORTSDIR}/multimedia/vamps
 
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
