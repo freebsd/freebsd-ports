@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-fonts-75dpi
 PORTVERSION=	6.9.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XORG}
 MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
@@ -24,6 +25,9 @@ EXTRA_PATCHES=	${CF_PATCHES}
 
 XBUILD_DIRS=	fonts/encodings fonts/bdf/75dpi
 XINSTALL_DIRS=	fonts/bdf/75dpi
+
+post-install:
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/75dpi || true
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
