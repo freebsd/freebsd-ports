@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-SMTP
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -25,7 +25,7 @@ MAN3=		POE::Component::Client::SMTP.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	Perl 5.8 or newer required. Install lang/perl5.8 and try again.
+IGNORE=	perl 5.8 or newer required. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
