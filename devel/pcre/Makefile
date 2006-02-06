@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	6.5
+PORTVERSION=	6.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
