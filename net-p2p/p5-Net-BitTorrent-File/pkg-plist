@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Net/BitTorrent/File/.packlist
+%%SITE_PERL%%/Net/BitTorrent/File.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/Net/BitTorrent/File
+@dirrmtry %%SITE_PERL%%/mach/auto/Net/BitTorrent
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent
