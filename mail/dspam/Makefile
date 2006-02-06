@@ -127,7 +127,7 @@ DSPAM_HOME_MODE?=	0770
 
 MIN_OPTIONS_VER=	dspam-devel-3.6.3
 .ifdef(_OPTIONS_READ)
-OPTIONS_CMP!= pkg_version -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER}
+OPTIONS_CMP!= ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER}
 .	if ${OPTIONS_CMP} == "<"
 OPTIONS_MESSAGE=	"You have unsupported (old) OPTIONS, please do a 'make config; make'"
 .	endif
