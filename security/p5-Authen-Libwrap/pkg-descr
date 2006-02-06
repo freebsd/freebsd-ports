@@ -1,0 +1,6 @@
+The Authen::Libwrap module allows you to access the hosts_ctl()
+function from the popular TCP Wrappers security package.  This
+allows validation of network access from perl programs against
+the system-wide hosts.allow file.
+
+WWW: http://search.cpan.org/dist/Authen-Libwrap 

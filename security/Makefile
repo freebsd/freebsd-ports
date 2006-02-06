@@ -282,6 +282,7 @@
     SUBDIR += p5-Authen-CyrusSASL
     SUBDIR += p5-Authen-Htpasswd
     SUBDIR += p5-Authen-Krb5
+    SUBDIR += p5-Authen-Libwrap
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Authen-SASL
