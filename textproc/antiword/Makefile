@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	antiword
-PORTVERSION=	0.36.1
+PORTVERSION=	0.37
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	"An application to display Microsoft(tm) Word files"
+COMMENT=	An application to display Microsoft(tm) Word files
 
-USE_REINPLACE=	yes
 INSTALL_TARGET=	global_install
 
 MAN1=		antiword.1
