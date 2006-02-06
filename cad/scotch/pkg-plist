@@ -24,7 +24,6 @@ bin/mmk_m3
 bin/mord
 bin/mtst
 include/common.h
-include/common_integer.h
 include/scotch.h
 include/scotchf.h
 lib/libcommon.a
