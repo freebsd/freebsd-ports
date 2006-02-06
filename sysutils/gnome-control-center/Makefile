@@ -21,7 +21,6 @@ LIB_DEPENDS=	xklavier.10:${PORTSDIR}/x11/libxklavier
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	yes
@@ -49,7 +48,7 @@ WITH_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not build on 4.X"
+BROKEN=	Does not build on 4.X
 .endif
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""

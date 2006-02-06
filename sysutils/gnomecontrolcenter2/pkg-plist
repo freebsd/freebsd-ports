@@ -77,6 +77,8 @@ share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-slowkey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-stickykey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-togglekey.png
+share/gnome/control-center-2.0/pixmaps/acme-brightness.png
+share/gnome/control-center-2.0/pixmaps/acme-eject.png
 share/gnome/control-center-2.0/pixmaps/at-startup.png
 share/gnome/control-center-2.0/pixmaps/at-support.png
 share/gnome/control-center-2.0/pixmaps/bar-disabled.png
@@ -88,8 +90,6 @@ share/gnome/control-center-2.0/pixmaps/double-click-off.png
 share/gnome/control-center-2.0/pixmaps/double-click-on.png
 %%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-off.png
 %%ABOUTME%%share/gnome/control-center-2.0/pixmaps/gnome-about-me-bulb-on.png
-share/gnome/control-center-2.0/pixmaps/acme-brightness.png
-share/gnome/control-center-2.0/pixmaps/acme-eject.png
 share/gnome/control-center-2.0/pixmaps/gnome-speakernotes-muted.png
 share/gnome/control-center-2.0/pixmaps/gnome-speakernotes.png
 share/gnome/control-center-2.0/pixmaps/keyboard-bell.png
@@ -223,7 +223,7 @@ share/locale/zu/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/omf/control-center
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
-@unexec /bin/rmdir %D/share/gnome/gnome-background-properties 2>/dev/null || /usr/bin/true
+@dirrmtry share/gnome/gnome-background-properties
 @dirrm share/gnome/cursor-fonts
 @dirrm share/gnome/control-center-2.0/xrdb
 @dirrm share/gnome/control-center-2.0/pixmaps
