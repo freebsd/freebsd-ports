@@ -80,3 +80,4 @@ etc/mrtg/mrtg.cfg.sample
 @dirrm etc/mrtg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+@unexec rmdir /var/run/mrtg
