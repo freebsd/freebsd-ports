@@ -1,5 +1,3 @@
-%%IPPLANDIR%%/192.168.0.0-3
-%%IPPLANDIR%%/192.168.0.0
 %%IPPLANDIR%%/CHANGELOG
 %%IPPLANDIR%%/CONTRIBUTORS
 %%IPPLANDIR%%/DNS-USAGE
@@ -14,7 +12,6 @@
 %%IPPLANDIR%%/README
 %%IPPLANDIR%%/README.html
 %%IPPLANDIR%%/README.sgml
-%%IPPLANDIR%%/README.txt
 %%IPPLANDIR%%/README1st-WINDOWS.txt
 %%IPPLANDIR%%/TODO
 %%IPPLANDIR%%/TRANSLATIONS
@@ -22,8 +19,6 @@
 %%IPPLANDIR%%/UPGRADE
 %%IPPLANDIR%%/admin/changepassword.php
 %%IPPLANDIR%%/admin/changesettings.php
-%%IPPLANDIR%%/class.phpmailer.php
-%%IPPLANDIR%%/class.smtp.php
 %%IPPLANDIR%%/admin/deletebounds.php
 %%IPPLANDIR%%/admin/displayauditlog.php
 %%IPPLANDIR%%/admin/displayboundsform.php
@@ -56,8 +51,6 @@
 %%IPPLANDIR%%/adodb/adodb-time.zip
 %%IPPLANDIR%%/adodb/adodb-xmlschema.inc.php
 %%IPPLANDIR%%/adodb/adodb.inc.php
-%%IPPLANDIR%%/contrib/process-exports.txt
-%%IPPLANDIR%%/contrib/process-exports.pl
 %%IPPLANDIR%%/adodb/contrib/toxmlrpc.inc.php
 %%IPPLANDIR%%/adodb/cute_icons_for_site/adodb.gif
 %%IPPLANDIR%%/adodb/cute_icons_for_site/adodb2.gif
@@ -205,6 +198,8 @@
 %%IPPLANDIR%%/auth.php
 %%IPPLANDIR%%/class.dbflib.php
 %%IPPLANDIR%%/class.dnslib.php
+%%IPPLANDIR%%/class.phpmailer.php
+%%IPPLANDIR%%/class.smtp.php
 %%IPPLANDIR%%/class.templib.php
 %%IPPLANDIR%%/config.php
 %%IPPLANDIR%%/contrib/bind9_revzone.xsl
@@ -214,6 +209,8 @@
 %%IPPLANDIR%%/contrib/dumproute.sh
 %%IPPLANDIR%%/contrib/dumproute.txt
 %%IPPLANDIR%%/contrib/ipplan-poller.php
+%%IPPLANDIR%%/contrib/process-exports.pl
+%%IPPLANDIR%%/contrib/process-exports.txt
 %%IPPLANDIR%%/docu.css
 %%IPPLANDIR%%/gpl.html
 %%IPPLANDIR%%/images/square_green.jpg
@@ -238,6 +235,8 @@
 %%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/menudefs.php
 %%IPPLANDIR%%/menus/ACKNOWLEDGEMENTS
 %%IPPLANDIR%%/menus/CHANGELOG
@@ -453,6 +452,7 @@
 %%IPPLANDIR%%/messages.po
 %%IPPLANDIR%%/phpmailer.lang-en.php
 %%IPPLANDIR%%/schema.php
+%%IPPLANDIR%%/templates/customer/custtemplate-ripe.xsl
 %%IPPLANDIR%%/templates/ripe_assign-simple-1.0.xsl
 %%IPPLANDIR%%/templates/ripe_person_simple-1.0.xsl
 %%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
@@ -461,7 +461,6 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
-%%IPPLANDIR%%/templates/customer/custtemplate-ripe.xsl
 %%IPPLANDIR%%/themes/default.css
 %%IPPLANDIR%%/themes/pastel.css
 %%IPPLANDIR%%/user/Net/DNS.php
@@ -555,6 +554,8 @@
 @dirrm %%IPPLANDIR%%/menus/LOGOS
 @dirrm %%IPPLANDIR%%/menus/DUMPS
 @dirrm %%IPPLANDIR%%/menus
+@dirrm %%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/pt_BR
 @dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/pt
 @dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
