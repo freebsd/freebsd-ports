@@ -2,6 +2,7 @@ bin/antiword
 bin/kantiword
 %%DATADIR%%/8859-1.txt
 %%DATADIR%%/8859-10.txt
+%%DATADIR%%/8859-11.txt
 %%DATADIR%%/8859-13.txt
 %%DATADIR%%/8859-14.txt
 %%DATADIR%%/8859-15.txt
