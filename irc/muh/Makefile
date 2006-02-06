@@ -7,7 +7,7 @@
 
 PORTNAME=	muh
 PORTVERSION=	2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=muh
@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	"--enable-ipv6"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|=muh|=${PREFIX}/bin/muh|g" ${WRKSRC}/misc/muh-check
+	@${REINPLACE_CMD} -e "s/if( strlen( cfg.password ) == 13 /& || strlen( cfg.password ) == 28/" \
+		${WRKSRC}/src/muh.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/muh ${PREFIX}/bin
