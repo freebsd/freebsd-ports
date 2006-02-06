@@ -11,7 +11,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
 DISTNAME=	iiimf-src-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	Internet/Intranet Input Method Framework protocol library
@@ -20,7 +19,6 @@ ONLY_FOR_ARCHS=	i386
 
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=  yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15:env
 WANT_AUTOHEADER_VER=	259
@@ -31,7 +29,7 @@ BUILDDIR=	${WRKSRC}/lib/iiimp
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-IGNORE=	It is supported on FreeBSD 5.3 and later.
+IGNORE=	is supported on FreeBSD 5.3 and later only
 .endif
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
