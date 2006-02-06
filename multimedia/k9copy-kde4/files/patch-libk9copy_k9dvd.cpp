@@ -1,28 +1,15 @@
---- libk9copy/k9dvd.cpp.orig   Fri Dec  9 19:18:03 2005
-+++ libk9copy/k9dvd.cpp        Thu Jan  5 06:12:30 2006
-@@ -27,7 +27,11 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <unistd.h>
--#include <stdint.h>
-+#ifdef HAVE_STDINT_H
-+       #include <stdint.h>
-+#elif defined(HAVE_INTTYPES_H)
-+       #include <inttypes.h>
-+#endif
-
- #include "k9dvd.h"
- #include "k9dvdtitle.h"
-@@ -196,7 +200,7 @@
+--- libk9copy/k9dvd.cpp.orig   Mon Jan 16 10:40:01 2006
++++ libk9copy/k9dvd.cpp        Mon Jan 16 10:40:33 2006
+@@ -199,7 +199,7 @@
          return -1;
      }
 
 -    if ( fseek(filehandle, 32808, SEEK_SET )) {
 +    if ( fseek(filehandle, 32768, SEEK_SET )) {
          fclose(filehandle);
-         c.sprintf(tr2i18n("Couldn't seek in %s for title\n"), dvd_device);
+         c=i18n("Couldn't seek in %1 for title\n").arg( dvd_device);
          setError(c);
-@@ -204,12 +208,18 @@
+@@ -207,12 +207,19 @@
          return -1;
      }
 
@@ -39,6 +26,7 @@
 +    }
 +    snprintf( title, 32, "%s", tempBuf + 40 );
 +    i=32;
++
      }
 
      fclose (filehandle);
