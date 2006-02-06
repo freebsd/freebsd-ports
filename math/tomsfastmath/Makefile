@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomsfastmath
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	math
 MASTER_SITES=	http://libtomcrypt.org/tfm/files/
 DISTNAME=	tfm-${PORTVERSION}
@@ -19,14 +19,13 @@ MAKEFILE=	makefile
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
-USE_REINPLACE=	yes
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 post-patch:
