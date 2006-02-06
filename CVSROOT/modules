@@ -8670,6 +8670,7 @@ p5-POE-Component-Client-POP3	ports/mail/p5-POE-Component-Client-POP3
 p5-POE-Component-Client-Ping	ports/net/p5-POE-Component-Client-Ping
 p5-POE-Component-Client-SMTP	ports/mail/p5-POE-Component-Client-SMTP
 p5-POE-Component-Client-UserAgent	ports/www/p5-POE-Component-Client-UserAgent
+p5-POE-Component-ControlPort	ports/net/p5-POE-Component-ControlPort
 p5-POE-Component-DBIAgent	ports/databases/p5-POE-Component-DBIAgent
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
