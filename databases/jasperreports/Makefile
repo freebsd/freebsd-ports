@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jasperreports
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	databases print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 .endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
