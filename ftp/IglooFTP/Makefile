@@ -7,7 +7,7 @@
 
 PORTNAME=	IglooFTP
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://littleigloo.org/pub/iglooftp/
@@ -16,10 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use FTP client for X Window System
-
-IGNORE=		crashes at startup
-DEPRECATED=	${IGNORE}
-EXPIRATION_DATE=2006-02-04
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
