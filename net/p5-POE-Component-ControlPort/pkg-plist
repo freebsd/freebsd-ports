@@ -1,0 +1,7 @@
+%%SITE_PERL%%/POE/Component/ControlPort.pm
+%%SITE_PERL%%/POE/Component/ControlPort/Command.pm
+%%SITE_PERL%%/POE/Component/ControlPort/DefaultCommands.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/ControlPort/.packlist
+@dirrm %%SITE_PERL%%/POE/Component/ControlPort
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/ControlPort
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
