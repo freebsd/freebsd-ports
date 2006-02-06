@@ -122,7 +122,7 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #BROKEN=	Doesn't build on FreeBSD < 6.x
 #.endif
 
-.if (${MAMEMESS} == "mess" && ${ARCH} == "amd64")
+.if (${MAMEMESS} == "mess" && ${OSVERSION} >= 500000)
 USE_GCC=	3.4+
 .endif
 
