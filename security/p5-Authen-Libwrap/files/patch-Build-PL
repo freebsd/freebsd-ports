@@ -1,0 +1,34 @@
+Patch to automate linking against libwrap
+
+--- Build.PL	Tue Dec 16 20:39:54 2003
++++ Build.PL	Sun Feb  5 11:22:27 2006
+@@ -28,13 +28,8 @@
+     for my $libname( qw|libwrap.so libwrap.a| ) {
+         my $candidate = File::Spec->catfile( $prefix, 'lib', $libname );
+         if( -e $candidate && -f _ && -r _ ) {
+-            my $y_n = Module::Build->y_n(
+-                "do you want to link against $candidate?", "y"
+-            );
+-            if( $y_n ) {
+-                $lib_dir = File::Spec->catdir( $prefix, 'lib' );
+-                last;
+-            }
++        	$lib_dir = File::Spec->catdir( $prefix, 'lib' );
++        	last;
+         }
+     }
+ }
+@@ -43,13 +38,8 @@
+ for my $prefix( @prefixes ) {
+     my $candidate = File::Spec->catfile( $prefix, 'include', 'tcpd.h' );
+     if( -e $candidate && -f _ && -r _ ) {
+-        my $y_n = Module::Build->y_n(
+-            "do you want to use $candidate as your header?", "y"
+-        );
+-        if( $y_n ) {
+             $inc_dir = File::Spec->catdir( $prefix, 'include' );
+             last;
+-        }
+     }
+ }
+ 
