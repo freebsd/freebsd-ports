@@ -7,8 +7,9 @@
 
 PORTNAME=	scotch
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	cad science
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/453/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/464/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,23 +26,14 @@ F77?=		f77
 BINS=		acpl amk_ccc amk_fft2 amk_grf amk_hy amk_m2 amk_p2 atst	\
 		gcv gmap gmk_hy gmk_m2 gmk_m3 gmk_msh gmk_ub2 gmtst gord\
 		gotst gout gtst mcv mmk_m2 mmk_m3 mord mtst
-INCS=		common.h common_integer.h scotch.h scotchf.h
+INCS=		common.h scotch.h scotchf.h
 LIBS=		libcommon.a libscotch.a libscotcherr.a libscotcherrcom.a
 PORTDOCS=	scotch_user4.0.pdf
 EXAMPLES=	scotch_example.f
 
-MALLOC2FIX=	common/common.h libscotch/common.h
-
-post-extract:
-	${CP} -p ${BUILD_WRKSRC}/Make.inc/Makefile.inc.i686_pc_linux2	\
-		${BUILD_WRKSRC}/Make.inc/Makefile.inc.FreeBSD
-
 pre-configure:
-	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.FreeBSD	\
+	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.freebsd	\
 		${WRKSRC}/src/Makefile.inc
-	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|'		\
-		${MALLOC2FIX:S|^|${BUILD_WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${BINS:S|^|${INSTALL_WRKSRC}/|} ${PREFIX}/bin
