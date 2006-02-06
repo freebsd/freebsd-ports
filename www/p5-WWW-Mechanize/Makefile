@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--mech-dump --nolive
 
 MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
