@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	libchewing
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://chewing.csie.net/download/libchewing/
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Chewing intelligent phonetic input method library
-
-BROKEN=		Does not build
 
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/chewing
 
