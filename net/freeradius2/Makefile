@@ -7,7 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
