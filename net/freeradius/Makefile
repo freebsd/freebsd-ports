@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS=	KERBEROS	"With Kerberos support" off \
+		HEIMDAL		"With Heimdal Kerberos support" off \
 		LDAP		"With LDAP user database" off \
 		MYSQL		"With MySQL user database" off \
 		PGSQL		"With PostgreSQL use database" off \
@@ -46,8 +47,17 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
+WITH_KERBEROS=	yes
+.endif
+
 .ifdef(WITH_KERBEROS)
+.ifdef(WITH_HEIMDAL)
+LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+CONFIGURE_ARGS+=--enable-heimdal-krb5
+.else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+.endif
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=${LOCALBASE}/include
 PLIST_SUB+=	KRB5=""
