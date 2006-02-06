@@ -17,6 +17,7 @@
 %%DATADIR%%/chez.init
 %%DATADIR%%/cie1931.xyz
 %%DATADIR%%/cie1964.xyz
+%%DATADIR%%/clrnamdb.scm
 %%DATADIR%%/cltime.scm
 %%DATADIR%%/coerce.scm
 %%DATADIR%%/collect.scm
@@ -63,6 +64,7 @@
 %%DATADIR%%/html4each.scm
 %%DATADIR%%/htmlform.scm
 %%DATADIR%%/http-cgi.scm
+%%DATADIR%%/jscheme.init
 %%DATADIR%%/lineio.scm
 %%DATADIR%%/logical.scm
 %%DATADIR%%/macrotst.scm
@@ -81,11 +83,13 @@
 %%DATADIR%%/mwdenote.scm
 %%DATADIR%%/mwexpand.scm
 %%DATADIR%%/mwsynrul.scm
+%%DATADIR%%/nbs-iscc.txt
 %%DATADIR%%/ncbi-dna.scm
 %%DATADIR%%/null.scm
 %%DATADIR%%/obj2str.scm
 %%DATADIR%%/object.scm
 %%DATADIR%%/paramlst.scm
+%%DATADIR%%/peanosfc.scm
 %%DATADIR%%/phil-spc.scm
 %%DATADIR%%/plottest.scm
 %%DATADIR%%/pnm.scm
@@ -149,6 +153,7 @@
 %%DATADIR%%/synclo.scm
 %%DATADIR%%/synrul.scm
 %%DATADIR%%/t3.init
+%%DATADIR%%/timecore.scm
 %%DATADIR%%/timezone.scm
 %%DATADIR%%/top-refs.scm
 %%DATADIR%%/trace.scm
