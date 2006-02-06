@@ -30,6 +30,9 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
 
+USE_RC_SUBR=	mrtg_daemon.sh
+SUB_LIST+=	PERL=${PERL}
+
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ENV=	PERL=${PERL}
@@ -49,6 +52,9 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
+
+pre-install:
+		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
@@ -70,12 +76,17 @@ do-install:
 		done
 
 post-install:
+		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(BATCH)
 	@${ECHO} ""
 	@${ECHO} "############################################################################"
 	@${ECHO} "# Please create a MRTG config file in ${PREFIX}/etc/mrtg                  #"
 	@${ECHO} "# A configuration file can be automatically generated with cfgmaker        #"
 	@${ECHO} "# A sample configuration file is installed as mrtg.cfg.sample              #"
+	@${ECHO} "#                                                                          #"
+	@${ECHO} "# To enable MRTG in daemon mode, put the following to your /etc/rc.conf or #"
+	@${ECHO} "# /etc/rc.conf.local file:                                                 #"
+	@${ECHO} "#      mrtg_daemon_enable=\"YES\"                                            #"
 	@${ECHO} "############################################################################"
 .endif
 
