@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../gcc40/
+MASTERDIR=      ${.CURDIR}/../gcc41/
 PKGNAMESUFFIX=          -withfortran
 WITH_FORTRAN=	yes
 
