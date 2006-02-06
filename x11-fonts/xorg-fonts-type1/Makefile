@@ -27,6 +27,9 @@ EXTRA_PATCHES=	${CF_PATCHES}
 XBUILD_DIRS=	fonts/encodings fonts/scaled/Type1
 XINSTALL_DIRS=	fonts/scaled/Type1
 
+post-install:
+	@command fc-cache ${PREFIX}/lib/X11/fonts/Type1 || true
+
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xorg

@@ -58,5 +58,8 @@ lib/X11/fonts/Type1/l049033t.afm
 lib/X11/fonts/Type1/l049033t.pfa
 lib/X11/fonts/Type1/l049036t.afm
 lib/X11/fonts/Type1/l049036t.pfa
-@unexec rm %D/lib/X11/fonts/Type1/fonts.cache-1 2>/dev/null || /usr/bin/true
+@exec command fc-cache %D/lib/X11/fonts/Type1 2>/dev/null || true
+@unexec rm %D/lib/X11/fonts/Type1/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache %D/lib/X11/fonts/Type1 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/Type1/fonts.cache-1 -a ! -s %D/lib/X11/fonts/Type1/fonts.cache-1 ]; then rm %D/lib/X11/fonts/Type1/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/Type1

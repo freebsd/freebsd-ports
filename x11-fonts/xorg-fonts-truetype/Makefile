@@ -28,6 +28,9 @@ EXTRA_PATCHES=	${CF_PATCHES}
 XBUILD_DIRS=	fonts/encodings fonts/scaled/TTF
 XINSTALL_DIRS=	fonts/scaled/TTF
 
+post-install:
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/TTF || true
+
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xorg
