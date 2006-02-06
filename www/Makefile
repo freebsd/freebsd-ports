@@ -10,7 +10,6 @@
     SUBDIR += adblock-firefox
     SUBDIR += admuser
     SUBDIR += adzap
-    SUBDIR += adzap2squirm
     SUBDIR += amaya
     SUBDIR += amphetadesk
     SUBDIR += amyc
