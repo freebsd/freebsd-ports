@@ -8,6 +8,7 @@
 
 PORTNAME=	dasher
 PORTVERSION=	3.2.18
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,6 +19,7 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Information efficient text-entry interface
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
