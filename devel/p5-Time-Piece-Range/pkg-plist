@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Time/Piece/Range.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/Range/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece/Range
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Piece
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry %%SITE_PERL%%/Time/Piece
+@dirrmtry %%SITE_PERL%%/Time
