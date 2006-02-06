@@ -42,7 +42,6 @@ share/gnome/blackjack/Ameristar.rules
 share/gnome/blackjack/Atlantic_City.rules
 share/gnome/blackjack/Vegas_Downtown.rules
 share/gnome/blackjack/Vegas_Strip.rules
-@unexec [ -s %D/share/gnome/games/glines.scores ] || rm -f %D/share/gnome/games/glines.scores
 @unexec [ -s %D/share/gnome/games/glines.Large.scores ] || rm -f %D/share/gnome/games/glines.Large.scores
 @unexec [ -s %D/share/gnome/games/glines.Medium.scores ] || rm -f %D/share/gnome/games/glines.Medium.scores
 @unexec [ -s %D/share/gnome/games/glines.Small.scores ] || rm -f %D/share/gnome/games/glines.Small.scores
@@ -320,9 +319,9 @@ share/gnome/help/aisleriot/fr/streets_and_alleys.xml
 share/gnome/help/aisleriot/fr/ten_across.xml
 share/gnome/help/aisleriot/fr/thieves.xml
 share/gnome/help/aisleriot/fr/thirteen.xml
-share/gnome/help/aisleriot/fr/triple_peaks.xml
 share/gnome/help/aisleriot/fr/thumb_and_pouch.xml
 share/gnome/help/aisleriot/fr/treize.xml
+share/gnome/help/aisleriot/fr/triple_peaks.xml
 share/gnome/help/aisleriot/fr/union_square.xml
 share/gnome/help/aisleriot/fr/valentine.xml
 share/gnome/help/aisleriot/fr/westhaven.xml

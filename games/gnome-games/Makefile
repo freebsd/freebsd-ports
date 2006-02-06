@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnomegames2
-PORTVERSION=	2.12.2
+PORTVERSION=	2.12.3
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games/2.12
@@ -24,7 +24,6 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui \
 		librsvg2 desktopfileutils
 USE_AUTOTOOLS=	libtool:15
