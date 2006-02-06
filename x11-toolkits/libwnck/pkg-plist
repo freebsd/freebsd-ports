@@ -38,6 +38,7 @@ libdata/pkgconfig/libwnck-1.0.pc
 %%DOCSDIR%%/libwnck-wnck-enum-types.html
 %%DOCSDIR%%/libwnck-xutils.html
 %%DOCSDIR%%/libwnck.devhelp
+%%DOCSDIR%%/libwnck.devhelp2
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
@@ -114,7 +115,10 @@ share/locale/vi/LC_MESSAGES/libwnck.mo
 share/locale/wa/LC_MESSAGES/libwnck.mo
 share/locale/xh/LC_MESSAGES/libwnck.mo
 share/locale/zh_CN/LC_MESSAGES/libwnck.mo
+share/locale/zh_HK/LC_MESSAGES/libwnck.mo
 share/locale/zh_TW/LC_MESSAGES/libwnck.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
