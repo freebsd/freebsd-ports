@@ -825,6 +825,7 @@
     SUBDIR += p5-Date-Leapyear
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Date-Pcalc
+    SUBDIR += p5-Date-Range
     SUBDIR += p5-Date-Roman
     SUBDIR += p5-Date-Set
     SUBDIR += p5-Date-Simple
