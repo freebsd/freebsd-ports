@@ -806,6 +806,7 @@
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += roxen
+    SUBDIR += rssowl
     SUBDIR += rt2
     SUBDIR += rt3
     SUBDIR += rt3-elixus
