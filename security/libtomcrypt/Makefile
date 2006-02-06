@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
+
+PATCH_SITES=	http://libtomcrypt.org/files/patch-1.09/
+PATCHFILES=	lrw_process.c.patch
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
@@ -20,7 +23,6 @@ MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \
 		DATAPATH="${DOCSDIR}/pdf"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	library
 
 CFLAGS+=	-I${PREFIX}/include
@@ -32,7 +34,7 @@ OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_LIBTOMMATH) && defined(WITHOUT_TOMSFASTMATH)
-IGNORE=	You must choose either LibTomMath or TomsFastMath (or both)
+IGNORE=	you must choose either LibTomMath or TomsFastMath (or both)
 .endif
 
 .if !defined(WITHOUT_LIBTOMMATH)
