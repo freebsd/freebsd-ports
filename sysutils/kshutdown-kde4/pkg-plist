@@ -49,6 +49,7 @@ share/locale/pt_BR/LC_MESSAGES/kshutdown.mo
 share/locale/ru/LC_MESSAGES/kshutdown.mo
 share/locale/sk/LC_MESSAGES/kshutdown.mo
 share/locale/sv/LC_MESSAGES/kshutdown.mo
+share/locale/tr/LC_MESSAGES/kshutdown.mo
 share/locale/zh_CN/LC_MESSAGES/kshutdown.mo
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
