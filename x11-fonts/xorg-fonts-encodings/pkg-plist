@@ -50,5 +50,11 @@ lib/X11/fonts/encodings/suneu-greek.enc.gz
 lib/X11/fonts/encodings/tcvn-0.enc.gz
 lib/X11/fonts/encodings/tis620-2.enc.gz
 lib/X11/fonts/encodings/viscii1.1-1.enc.gz
+@unexec rm %D/lib/X11/fonts/encodings/large/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/encodings/large 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/encodings/large/fonts.cache-1 -a ! -s %D/lib/X11/fonts/encodings/large/fonts.cache-1 ]; then rm %D/lib/X11/fonts/encodings/large/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/encodings/large
+@unexec rm %D/lib/X11/fonts/encodings/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/encodings 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/encodings/fonts.cache-1 -a ! -s %D/lib/X11/fonts/encodings/fonts.cache-1 ]; then rm %D/lib/X11/fonts/encodings/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/encodings
