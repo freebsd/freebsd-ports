@@ -55,7 +55,6 @@ etc/raddb/realms.sample
 etc/raddb/snmp.conf.sample
 etc/raddb/sql.conf.sample
 etc/raddb/users.sample
-etc/rc.d/radiusd.sh
 lib/libeap-%%PORTVERSION%%.la
 lib/libeap-%%PORTVERSION%%.so
 lib/libeap.a
