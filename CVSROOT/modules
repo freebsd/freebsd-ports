@@ -7432,6 +7432,7 @@ p5-Authen-Captcha	ports/security/p5-Authen-Captcha
 p5-Authen-CyrusSASL	ports/security/p5-Authen-CyrusSASL
 p5-Authen-Htpasswd	ports/security/p5-Authen-Htpasswd
 p5-Authen-Krb5	ports/security/p5-Authen-Krb5
+p5-Authen-Libwrap	ports/security/p5-Authen-Libwrap
 p5-Authen-PAM	ports/security/p5-Authen-PAM
 p5-Authen-Radius	ports/security/p5-Authen-Radius
 p5-Authen-SASL	ports/security/p5-Authen-SASL
