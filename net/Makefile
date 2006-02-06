@@ -438,6 +438,7 @@
     SUBDIR += p5-OAI-Harvester
     SUBDIR += p5-POE-Component-Client-Keepalive
     SUBDIR += p5-POE-Component-Client-Ping
+    SUBDIR += p5-POE-Component-ControlPort
     SUBDIR += p5-POE-Component-Jabber
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RRDTool
