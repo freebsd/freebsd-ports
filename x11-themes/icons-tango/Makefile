@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icons-tango
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango-project.org/releases/
 DISTNAME=	tango-icon-theme-${PORTVERSION}
