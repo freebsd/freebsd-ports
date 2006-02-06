@@ -1,0 +1,7 @@
+Quite often, when dealing with dates, we don't just want to know
+information about one particular date, but about a range of dates. For
+example, we may wish to know whether a given date is in a particular
+range, or what the overlap is between one range and another.  This module
+lets you ask such questions.
+
+WWW: http://search.cpan.org/dist/Date-Range
