@@ -12,7 +12,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
 DISTNAME=	iiimf-src-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	Internet/Intranet Input Method Server Framework
@@ -26,7 +25,6 @@ USE_X_PREFIX=	yes
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_REINPLACE=  yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool gtk20
@@ -39,7 +37,7 @@ BUILDDIR=	${WRKSRC}/iiimgcf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-IGNORE=	It is supported on FreeBSD 5.3 and later.
+IGNORE=	is supported on FreeBSD 5.3 and later only
 .endif
 
 .if defined(WITH_DEBUG)

@@ -12,7 +12,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
 DISTNAME=	iiimf-src-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	IIIMF gnome input method switcher
@@ -22,7 +21,6 @@ ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 
 USE_BZIP2=	yes
-USE_REINPLACE=  yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool gconf2 libglade2 libgnomeui \
@@ -36,7 +34,7 @@ BUILDDIR=	${WRKSRC}/gnome-im-switcher
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-IGNORE=	It is supported on FreeBSD 5.3 and later.
+IGNORE=	is supported on FreeBSD 5.3 and later only
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
