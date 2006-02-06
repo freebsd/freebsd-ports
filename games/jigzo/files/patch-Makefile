@@ -1,24 +1,21 @@
---- Makefile.orig	Sun Jan 15 12:25:30 2006
-+++ Makefile	Wed Jan 18 02:10:53 2006
-@@ -9,8 +9,6 @@
- DEPENDS = $(SOURCES:.cxx=.d)
- OBJECTS = $(SOURCES:.cxx=.o)
- INCLFLAGS = -I/usr/include/SDL
--CXX = g++
--CXXFLAGS = -O2
+--- Makefile.orig	Sun Feb  5 04:41:46 2006
++++ Makefile	Sun Feb  5 23:05:34 2006
+@@ -1,8 +1,6 @@
+ PROGRAM = glpuzzle
  
- clean:
- 	rm -f $(OBJECTS) $(DEPENDS) $(PROGRAM)
-@@ -22,10 +20,10 @@
- 	@rm $@.tmp
- 	
- %.o: %.cxx
--	$(CXX) -c $(CXXFLAGS) $(INCLFLAGS) $< -o $@ 
-+	$(CXX) -c $(CXXFLAGS) $(CPPFLAGS) $< -o $@ 
+-CXXFLAGS = -O2 -Wall
+-INCLFLAGS = -I/usr/include/SDL
+-LIBSFLAGS = -lpthread -lGL -lpthread -lpng -ljpeg -lSDL
++LIBSFLAGS = $(LDFLAGS) -lGL -lpng -ljpeg
+ SOURCES = main.cxx Screen.cxx Texture.cxx Loader.cxx
+ 
+ ENABLE_SOUND = 1
+@@ -43,7 +41,7 @@
+ 	g++ -c $(CXXFLAGS) $(INCLFLAGS) $< -o $@ 
  
  $(PROGRAM): $(OBJECTS) 
--	$(CXX) $(OBJECTS) -lpthread -lSDL -lGL -lpthread -lpng -ljpeg -o $@
-+	$(CXX) $(OBJECTS) $(CXXFLAGS) $(LDFLAGS) -lGL -lpng -ljpeg -o $@
+-	g++ $(OBJECTS) $(LIBSFLAGS) -o $@
++	g++ $(OBJECTS) $(CXXFLAGS) $(CPPFLAGS) $(LIBSFLAGS) -o $@
  
  install: $(PROGRAM)
  	@echo Installing in $(PREFIX)

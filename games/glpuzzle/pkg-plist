@@ -2,48 +2,27 @@ bin/glpuzzle
 %%DATADIR%%/font/charmap.jpg
 %%DATADIR%%/font/charmap.map
 %%DATADIR%%/font/charmap.png
-%%DATADIR%%/puzzle-maps/bike-3x4.jpg
-%%DATADIR%%/puzzle-maps/bike-3x4.map
-%%DATADIR%%/puzzle-maps/bike-3x4.png
-%%DATADIR%%/puzzle-maps/bird-4x4.jpg
-%%DATADIR%%/puzzle-maps/bird-4x4.map
-%%DATADIR%%/puzzle-maps/bird-4x4.png
-%%DATADIR%%/puzzle-maps/blackberry-3x3.jpg
-%%DATADIR%%/puzzle-maps/blackberry-3x3.map
-%%DATADIR%%/puzzle-maps/blackberry-3x3.png
-%%DATADIR%%/puzzle-maps/castle-6x3.jpg
-%%DATADIR%%/puzzle-maps/castle-6x3.map
-%%DATADIR%%/puzzle-maps/castle-6x3.png
-%%DATADIR%%/puzzle-maps/clouds-4x4.jpg
-%%DATADIR%%/puzzle-maps/clouds-4x4.map
-%%DATADIR%%/puzzle-maps/clouds-4x4.png
-%%DATADIR%%/puzzle-maps/goat-4x3.jpg
-%%DATADIR%%/puzzle-maps/goat-4x3.map
-%%DATADIR%%/puzzle-maps/goat-4x3.png
-%%DATADIR%%/puzzle-maps/gorilla-4x3.jpg
-%%DATADIR%%/puzzle-maps/gorilla-4x3.map
-%%DATADIR%%/puzzle-maps/gorilla-4x3.png
-%%DATADIR%%/puzzle-maps/heli-4x3.jpg
-%%DATADIR%%/puzzle-maps/heli-4x3.map
-%%DATADIR%%/puzzle-maps/heli-4x3.png
-%%DATADIR%%/puzzle-maps/horse-4x3.jpg
-%%DATADIR%%/puzzle-maps/horse-4x3.map
-%%DATADIR%%/puzzle-maps/horse-4x3.png
-%%DATADIR%%/puzzle-maps/penguin-3x2.jpg
-%%DATADIR%%/puzzle-maps/penguin-3x2.map
-%%DATADIR%%/puzzle-maps/penguin-3x2.png
-%%DATADIR%%/puzzle-maps/penguins-5x5.jpg
-%%DATADIR%%/puzzle-maps/penguins-5x5.map
-%%DATADIR%%/puzzle-maps/penguins-5x5.png
-%%DATADIR%%/puzzle-maps/train-2x2.jpg
-%%DATADIR%%/puzzle-maps/train-2x2.map
-%%DATADIR%%/puzzle-maps/train-2x2.png
-%%DATADIR%%/puzzle-preview/preview.jpg
-%%DATADIR%%/puzzle-preview/preview.map
-%%DATADIR%%/puzzle-preview/preview.png
+%%DATADIR%%/image/arrow.png
+%%DATADIR%%/image/clouds-3x2.png
+%%DATADIR%%/image/leave.png
+%%DATADIR%%/puzzles/bike-3x4.pzl
+%%DATADIR%%/puzzles/bird-4x4.pzl
+%%DATADIR%%/puzzles/blackberry-3x3.pzl
+%%DATADIR%%/puzzles/castle-6x3.pzl
+%%DATADIR%%/puzzles/clouds-4x4.pzl
+%%DATADIR%%/puzzles/goat-4x3.pzl
+%%DATADIR%%/puzzles/gorilla-4x3.pzl
+%%DATADIR%%/puzzles/heli-4x3.pzl
+%%DATADIR%%/puzzles/horse-4x3.pzl
+%%DATADIR%%/puzzles/penguin-3x2.pzl
+%%DATADIR%%/puzzles/penguins-5x5.pzl
+%%DATADIR%%/puzzles/train-2x2.pzl
+%%DATADIR%%/sound/connect.wav
+%%DATADIR%%/sound/finish.wav
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/puzzle-preview
-@dirrm %%DATADIR%%/puzzle-maps
 @dirrm %%DATADIR%%/font
+@dirrm %%DATADIR%%/image
+@dirrm %%DATADIR%%/puzzles
+@dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%
