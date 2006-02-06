@@ -250,7 +250,6 @@ adstudio	ports/databases/adstudio
 adtool		ports/sysutils/adtool
 advancecomp	ports/archivers/advancecomp
 adzap		ports/www/adzap
-adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
 aestats		ports/games/aestats
@@ -4251,7 +4250,6 @@ ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
-ja-gn-gnspool	ports/japanese/gn-gnspool
 ja-gnome	ports/japanese/gnome
 ja-gnomelibs	ports/japanese/gnomelibs
 ja-gorua	ports/japanese/gorua

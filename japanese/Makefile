@@ -90,7 +90,6 @@
     SUBDIR += gd
     SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
-    SUBDIR += gn-gnspool
     SUBDIR += gnome
     SUBDIR += gnomelibs
     SUBDIR += gorua
