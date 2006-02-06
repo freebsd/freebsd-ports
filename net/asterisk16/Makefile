@@ -93,6 +93,12 @@ LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
 PLIST_SUB+=	WITH_FAX=""
 .endif
 
+.if ${OSVERSION} >= 500036
+PLIST_SUB+=	NEWGCC=""
+.else
+PLIST_SUB+=	NEWGCC="@comment "
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 

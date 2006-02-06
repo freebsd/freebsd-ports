@@ -342,7 +342,7 @@ lib/asterisk/modules/pbx_realtime.so
 lib/asterisk/modules/pbx_spool.so
 lib/asterisk/modules/res_adsi.so
 lib/asterisk/modules/res_agi.so
-lib/asterisk/modules/res_config_odbc.so
+%%NEWGCC%%lib/asterisk/modules/res_config_odbc.so
 lib/asterisk/modules/res_crypto.so
 lib/asterisk/modules/res_features.so
 lib/asterisk/modules/res_indications.so
