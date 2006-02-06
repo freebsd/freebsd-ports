@@ -7695,6 +7695,7 @@ p5-ConfigReader-Simple	ports/devel/p5-ConfigReader-Simple
 p5-Convert-ASCII-Armour	ports/converters/p5-Convert-ASCII-Armour
 p5-Convert-ASN1	ports/converters/p5-Convert-ASN1
 p5-Convert-BER	ports/converters/p5-Convert-BER
+p5-Convert-Bencode	ports/converters/p5-Convert-Bencode
 p5-Convert-BinHex	ports/converters/p5-Convert-BinHex
 p5-Convert-Binary-C	ports/converters/p5-Convert-Binary-C
 p5-Convert-IBM390	ports/converters/p5-Convert-IBM390
