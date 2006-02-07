@@ -3,78 +3,72 @@ bin/mktrackmodel
 bin/perlin
 bin/test-poly-opts
 bin/xracer
-share/doc/xracer/AUTHORS
-share/doc/xracer/ChangeLog
-share/doc/xracer/NEWS
-share/doc/xracer/README
-share/doc/xracer/README.html
-share/xracer/images/andre-logo.jpg
-share/xracer/images/beestripes1-large.jpg
-share/xracer/images/beestripes1.jpg
-share/xracer/images/clouds1.jpg
-share/xracer/images/clouds2-large.jpg
-share/xracer/images/clouds2.jpg
-share/xracer/images/clouds3.jpg
-share/xracer/images/clouds4.jpg
-share/xracer/images/clouds5.jpg
-share/xracer/images/craft1-back-side.jpg
-share/xracer/images/craft1-inner-side.jpg
-share/xracer/images/craft1-side.jpg
-share/xracer/images/craft1-under.jpg
-share/xracer/images/craft1-windscreen.jpg
-share/xracer/images/crillee14.jpg
-share/xracer/images/crillee24.jpg
-share/xracer/images/crillee36.jpg
-share/xracer/images/crillee48.jpg
-share/xracer/images/menus-bg.jpg
-share/xracer/images/mountains4-alpha.jpg
-share/xracer/images/mountains4.jpg
-share/xracer/images/powerup-autopilot-alpha.jpg
-share/xracer/images/powerup-autopilot.jpg
-share/xracer/images/powerup-energy-alpha.jpg
-share/xracer/images/powerup-energy.jpg
-share/xracer/images/powerup-faster-alpha.jpg
-share/xracer/images/powerup-faster.jpg
-share/xracer/images/powerup-shield-alpha.jpg
-share/xracer/images/powerup-shield.jpg
-share/xracer/images/skyscraper1.jpg
-share/xracer/images/snow1.jpg
-share/xracer/images/snow2.jpg
-share/xracer/images/snowtex1.jpg
-share/xracer/images/snowtex2.jpg
-share/xracer/images/snowtex3.jpg
-share/xracer/images/track1-large.jpg
-share/xracer/images/track1.jpg
-share/xracer/images/track2.jpg
-share/xracer/images/track3.jpg
-share/xracer/images/track5+left-fast+right-fast.jpg
-share/xracer/images/track5+left-fast+right-faster.jpg
-share/xracer/images/track5+left-fast+right-powerup.jpg
-share/xracer/images/track5+left-fast.jpg
-share/xracer/images/track5+left-faster+right-fast.jpg
-share/xracer/images/track5+left-faster+right-faster.jpg
-share/xracer/images/track5+left-faster+right-powerup.jpg
-share/xracer/images/track5+left-faster.jpg
-share/xracer/images/track5+left-powerup+right-fast.jpg
-share/xracer/images/track5+left-powerup+right-faster.jpg
-share/xracer/images/track5+left-powerup+right-powerup.jpg
-share/xracer/images/track5+left-powerup.jpg
-share/xracer/images/track5+right-fast.jpg
-share/xracer/images/track5+right-faster.jpg
-share/xracer/images/track5+right-powerup.jpg
-share/xracer/images/track5.jpg
-share/xracer/images/xracer-logo-3.jpg
-share/xracer/objects/start-lamp/start-lamp-green-texture.jpg
-share/xracer/objects/start-lamp/start-lamp-orange-texture.jpg
-share/xracer/objects/start-lamp/start-lamp-red-texture.jpg
-share/xracer/sounds/faster.wav
-share/xracer/sounds/powerup.wav
-share/xracer/sounds/wind.wav
-share/xracer/tracks/demo.trk.gz
-@dirrm share/xracer/tracks
-@dirrm share/xracer/sounds
-@dirrm share/xracer/objects/start-lamp
-@dirrm share/xracer/objects
-@dirrm share/xracer/images
-@dirrm share/xracer
-@dirrm share/doc/xracer
+%%DATADIR%%/images/andre-logo.jpg
+%%DATADIR%%/images/beestripes1-large.jpg
+%%DATADIR%%/images/beestripes1.jpg
+%%DATADIR%%/images/clouds1.jpg
+%%DATADIR%%/images/clouds2-large.jpg
+%%DATADIR%%/images/clouds2.jpg
+%%DATADIR%%/images/clouds3.jpg
+%%DATADIR%%/images/clouds4.jpg
+%%DATADIR%%/images/clouds5.jpg
+%%DATADIR%%/images/craft1-back-side.jpg
+%%DATADIR%%/images/craft1-inner-side.jpg
+%%DATADIR%%/images/craft1-side.jpg
+%%DATADIR%%/images/craft1-under.jpg
+%%DATADIR%%/images/craft1-windscreen.jpg
+%%DATADIR%%/images/crillee14.jpg
+%%DATADIR%%/images/crillee24.jpg
+%%DATADIR%%/images/crillee36.jpg
+%%DATADIR%%/images/crillee48.jpg
+%%DATADIR%%/images/menus-bg.jpg
+%%DATADIR%%/images/mountains4-alpha.jpg
+%%DATADIR%%/images/mountains4.jpg
+%%DATADIR%%/images/powerup-autopilot-alpha.jpg
+%%DATADIR%%/images/powerup-autopilot.jpg
+%%DATADIR%%/images/powerup-energy-alpha.jpg
+%%DATADIR%%/images/powerup-energy.jpg
+%%DATADIR%%/images/powerup-faster-alpha.jpg
+%%DATADIR%%/images/powerup-faster.jpg
+%%DATADIR%%/images/powerup-shield-alpha.jpg
+%%DATADIR%%/images/powerup-shield.jpg
+%%DATADIR%%/images/skyscraper1.jpg
+%%DATADIR%%/images/snow1.jpg
+%%DATADIR%%/images/snow2.jpg
+%%DATADIR%%/images/snowtex1.jpg
+%%DATADIR%%/images/snowtex2.jpg
+%%DATADIR%%/images/snowtex3.jpg
+%%DATADIR%%/images/track1-large.jpg
+%%DATADIR%%/images/track1.jpg
+%%DATADIR%%/images/track2.jpg
+%%DATADIR%%/images/track3.jpg
+%%DATADIR%%/images/track5+left-fast+right-fast.jpg
+%%DATADIR%%/images/track5+left-fast+right-faster.jpg
+%%DATADIR%%/images/track5+left-fast+right-powerup.jpg
+%%DATADIR%%/images/track5+left-fast.jpg
+%%DATADIR%%/images/track5+left-faster+right-fast.jpg
+%%DATADIR%%/images/track5+left-faster+right-faster.jpg
+%%DATADIR%%/images/track5+left-faster+right-powerup.jpg
+%%DATADIR%%/images/track5+left-faster.jpg
+%%DATADIR%%/images/track5+left-powerup+right-fast.jpg
+%%DATADIR%%/images/track5+left-powerup+right-faster.jpg
+%%DATADIR%%/images/track5+left-powerup+right-powerup.jpg
+%%DATADIR%%/images/track5+left-powerup.jpg
+%%DATADIR%%/images/track5+right-fast.jpg
+%%DATADIR%%/images/track5+right-faster.jpg
+%%DATADIR%%/images/track5+right-powerup.jpg
+%%DATADIR%%/images/track5.jpg
+%%DATADIR%%/images/xracer-logo-3.jpg
+%%DATADIR%%/objects/start-lamp/start-lamp-green-texture.jpg
+%%DATADIR%%/objects/start-lamp/start-lamp-orange-texture.jpg
+%%DATADIR%%/objects/start-lamp/start-lamp-red-texture.jpg
+%%DATADIR%%/sounds/faster.wav
+%%DATADIR%%/sounds/powerup.wav
+%%DATADIR%%/sounds/wind.wav
+%%DATADIR%%/tracks/demo.trk.gz
+@dirrm %%DATADIR%%/tracks
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/objects/start-lamp
+@dirrm %%DATADIR%%/objects
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
