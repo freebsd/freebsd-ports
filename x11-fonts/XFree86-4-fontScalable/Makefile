@@ -80,7 +80,7 @@ do-configure:
 	(cd ${WRKSRC} && \
 	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
 		${SPEEDO} ${TYPE1} ${CID} ${TT} \
-		-DMakeLocalFontDir=YES \
+		-DMakeLocalFontDir=NO \
 		-DFreeBSDBuildXscl=YES \
 		-DTOPDIR=.. -DCURDIR=.; \
 	 ${MAKE} Makefiles ; \
