@@ -1,0 +1,85 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openssh
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to enable openssh:
+#
+# openssh_enable (bool):	Set it to "YES" to enable openssh.
+#				Default is "NO".
+# openssh_flags (flags):	Set extra flags to openssh.
+#				Default is "". see sshd(1).
+# openssh_pidfile (path):	Set full path to pid file.
+#				Default is "/var/run/sshd.pid".
+#
+
+. %%RC_SUBR%%
+
+name="openssh"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/sshd
+extra_commands="reload"
+
+pidfile=${openssh_pidfile}
+
+start_precmd="${name}_checks"
+restart_precmd="${name}_checks"
+
+openssh_checks()
+{
+	if checkyesno sshd_enable ; then
+		err 1 "sshd_enable is set. Please set sshd_enable to NO in your rc.conf"
+	fi
+
+	if [ ! -f %%ETCSSH%%/ssh_host_key -o \
+		! -f %%ETCSSH%%/ssh_host_dsa_key -o \
+		! -f %%ETCSSH%%/ssh_host_rsa_key ]; then
+
+		umask 022
+
+		# Can't do anything if ssh is not installed
+		[ -x %%PREFIX%%/bin/ssh-keygen ] || {
+			err 1 "%%PREFIX%%/bin/ssh-keygen does not exist."
+		}
+
+		if [ -f %%ETCSSH%%/ssh_host_key ]; then
+			echo "You already have an RSA host key" \
+				"in %%ETCSSH%%/ssh_host_key"
+			echo "Skipping protocol version 1 RSA Key Generation"
+		else
+			%%PREFIX%%/bin/ssh-keygen -t rsa1 -b 1024 \
+				-f %%ETCSSH%%/ssh_host_key -N ''
+		fi
+
+		if [ -f %%ETCSSH%%/ssh_host_dsa_key ]; then
+			echo "You already have a DSA host key" \
+				"in %%ETCSSH%%/ssh_host_dsa_key"
+			echo "Skipping protocol version 2 DSA Key Generation"
+		else
+			%%PREFIX%%/bin/ssh-keygen -t dsa \
+				-f %%ETCSSH%%/ssh_host_dsa_key -N ''
+		fi
+
+		if [ -f %%ETCSSH%%/ssh_host_rsa_key ]; then
+			echo "You already have a RSA host key" \
+				"in %%ETCSSH%%/ssh_host_rsa_key"
+			echo "Skipping protocol version 2 RSA Key Generation"
+		else
+			%%PREFIX%%/bin/ssh-keygen -t rsa \
+				-f %%ETCSSH%%/ssh_host_rsa_key -N ''
+		fi
+
+	fi
+
+	eval "${command} -t"
+}
+
+load_rc_config $name
+
+: ${openssh_enable="NO"}
+: ${openssh_pidfile="/var/run/sshd.pid"}
+
+run_rc_command "$1"
