@@ -7,6 +7,7 @@
 
 PORTNAME=	freefem++
 DISTVERSION=	2.2-1
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
