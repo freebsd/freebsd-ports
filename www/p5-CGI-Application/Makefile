@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Application
-PORTVERSION=	3.1
+PORTVERSION=	4.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -16,7 +16,8 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Perl module intended to make it easier to create reusable web apps
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \
+		p5-Class-ISA>0:${PORTSDIR}/devel/p5-Class-ISA \
+		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
