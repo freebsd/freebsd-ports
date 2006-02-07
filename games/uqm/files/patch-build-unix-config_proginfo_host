@@ -1,25 +1,15 @@
---- build/unix/config_proginfo_host.orig	Fri May 13 17:22:09 2005
-+++ build/unix/config_proginfo_host	Mon Oct 24 23:26:50 2005
-@@ -80,7 +80,7 @@
+--- build/unix/config_proginfo_host.orig	Tue Feb  7 03:45:58 2006
++++ build/unix/config_proginfo_host	Tue Feb  7 03:48:21 2006
+@@ -102,7 +102,7 @@
  LIB_openal_CFLAGS=""
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
 -		LIB_openal_LDFLAGS="-L/usr/local/lib -pthread -lopenal"
 +		LIB_openal_LDFLAGS="-L${LOCALBASE}/lib -pthread -lopenal"
  		;;
- 	MINGW32*)
+ 	MINGW32*|CYGWIN*)
  		LIB_openal_LDFLAGS="-lopenal32"
-@@ -94,16 +94,16 @@
- 		;;
- esac
- LIB_openal_VERSION=""
--LIB_openal_DETECT="try_pkgconfig_lib openal openal"
--LIB_openal_DEPEND_DETECT_BIN="pkgconfig"
-+#LIB_openal_DETECT="try_pkgconfig_lib openal openal"
-+#LIB_openal_DEPEND_DETECT_BIN="pkgconfig"
- 
- 
- ### OpenGL ###
+@@ -124,8 +124,8 @@
  LIB_opengl_NAME="OpenGL"
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
@@ -28,9 +18,9 @@
 +		LIB_opengl_CFLAGS="-I${X11BASE}/include -D_THREAD_SAFE"
 +		LIB_opengl_LDFLAGS="-L${X11BASE}/lib -lX11 -lXext -pthread -lGL"
  		;;
- 	MINGW32*)
+ 	MINGW32*|CYGWIN*)
  		LIB_opengl_CFLAGS=""
-@@ -132,8 +132,8 @@
+@@ -154,8 +154,8 @@
  LIB_vorbisfile_NAME="vorbisfile"
  case "$HOST_SYSTEM" in
  	FreeBSD|OpenBSD)
@@ -39,5 +29,16 @@
 +		LIB_vorbisfile_CFLAGS="-I${LOCALBASE}/include"
 +		LIB_vorbisfile_LDFLAGS="-L${LOCALBASE}/lib -lvorbisfile -lvorbis"
  		;;
- 	MINGW32*)
+ 	MINGW32*|CYGWIN*)
  		LIB_vorbisfile_CFLAGS=""
+@@ -183,8 +183,8 @@
+ LIB_tremor_NAME="tremor"
+ case "$HOST_SYSTEM" in
+ 	FreeBSD|OpenBSD)
+-		LIB_tremor_CFLAGS="-I/usr/local/include"
+-		LIB_tremor_LDFLAGS="-L/usr/local/lib -lvorbisidec"
++		LIB_tremor_CFLAGS="-I${LOCALBASE}/include"
++		LIB_tremor_LDFLAGS="-L${LOCALBASE}/lib -lvorbisidec"
+ 		;;
+ 	Darwin)
+ 		# Assumed values - please let me know if you can verify this.

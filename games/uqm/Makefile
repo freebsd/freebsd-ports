@@ -13,7 +13,7 @@
 #
 
 PORTNAME=	uqm
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sc2
@@ -28,7 +28,6 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	image sdl
-USE_REINPLACE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 ONLY_FOR_ARCHS=	i386
@@ -58,29 +57,12 @@ LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
-.endif
-
-pre-everything::
-.ifdef(!WITH_VOICE || !WITH_MUSIC)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may specify the following options:"
-.endif
-.ifdef(!WITH_VOICE)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "-DWITH_VOICE"
-	@${ECHO_MSG} "  Installs the voice add-on (110MB)."
-.endif
-.ifdef(!WITH_MUSIC)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "-DWITH_MUSIC"
-	@${ECHO_MSG} "  Installs the music add-on (18MB) containing the original"
-	@${ECHO_MSG} "  3do music files. Note that there is music without this"
-	@${ECHO_MSG} "  add-on, but it's of lower quality."
+BROKEN=		does not compile
 .endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/content/packages
+	${RM} -rf ${WRKSRC}/content/CVS # seems to have erroneously slipped into release tarball
 	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-content.uqm ${WRKSRC}/content/packages/
 .ifdef(WITH_VOICE)
 	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-voice.uqm ${WRKSRC}/content/packages/
@@ -97,7 +79,9 @@ do-configure:
 .else
 	@${ECHO_MSG} CHOICE_sound_VALUE=\'mixsdl\' >> ${WRKSRC}/config.state
 .endif
+	@${ECHO_MSG} CHOICE_ovcodec_VALUE=\'standard\' >> ${WRKSRC}/config.state
 	@${ECHO_MSG} CHOICE_ioformat_VALUE=\'stdio_zip\' >> ${WRKSRC}/config.state
+	@${ECHO_MSG} CHOICE_accel_VALUE=\'asm\' >> ${WRKSRC}/config.state
 	@${ECHO_MSG} INPUT_install_prefix_VALUE=\'${PREFIX}\' >> ${WRKSRC}/config.state
 	@${ECHO_MSG} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/config.state
 	@${ECHO_MSG} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/config.state
