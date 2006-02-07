@@ -18,8 +18,6 @@ COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
 LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
 
-CONFLICTS=	atlas*
-
 DIST_SUBDIR=	lapack
 
 INSTALLS_SHLIB=	yes
