@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freevo
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freevo
@@ -16,6 +15,7 @@ MAINTAINER=	netcom@sauber.net
 COMMENT=	Open source digital jukebox
 
 NO_BUILD=	yes
+SUB_LIST+=	PORTVERSION=${PORTVERSION}
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/pyosd/__init__.py:${PORTSDIR}/misc/py-osd \
