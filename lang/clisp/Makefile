@@ -32,7 +32,7 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == ia64
-CONFIGURE_ARGS= --disable-mmap ${CONFIGURE_ARGS}
+CONFIGURE_ARGS+= --disable-mmap
 .endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
