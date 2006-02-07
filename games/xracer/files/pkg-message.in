@@ -1,0 +1,11 @@
+ =========================================================================
+ >>> XRACER INSTALLATION NOTES <<<
+ =========================================================================
+ The xracer data files have been installed into:
+	%%DATADIR%%
+ You'll NEED to set the enviroment variable XRACER_HOME to this directory
+ otherwise xracer will not work.
+
+ The xracer documentation has been installed into:
+	%%DOCSDIR%%
+ =========================================================================

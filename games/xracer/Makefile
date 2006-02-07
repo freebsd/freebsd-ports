@@ -7,49 +7,47 @@
 
 PORTNAME=	xracer
 PORTVERSION=	0.94
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://xracer.annexia.org/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
+MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-data${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Awesome WipeOut clone for OpenGL and X11!
-
-BROKEN=		"Unfetchable"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		glut.4:${PORTSDIR}/graphics/libglut
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-esd
 
+PORTDOCS=	AUTHORS README README.html
+
+SUB_FILES=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != i386 && ${ARCH} != "amd64"
-BROKEN=		"Does not build on ${ARCH}"
+BROKEN=		Does not build on ${ARCH}
 .endif
 
-
-post-patch:
+post-extract:
 	@${TOUCH} ${WRKSRC}/stamp-h.in
-
+	@cd ${WRKSRC} && \
+		${REINPLACE_CMD} -e 's|machine/joystick.h|sys/joystick.h|g' \
+			configure.in src/joystick/freebsd.c
+	${CHMOD} -R a=r ${WRKDIR}/${PORTNAME}-data
+	${CHMOD} -R +X ${WRKDIR}/${PORTNAME}-data
 post-install:
-	@${ECHO} "===>   Installing Tracks and Sound"
-	@${MKDIR} ${PREFIX}/share/xracer
-	${TAR} -C ${WRKDIR}/xracer-data -cf - . | \
-		${TAR} -C ${PREFIX}/share/xracer --unlink -xf -
-	@${CHMOD} -R 744 ${PREFIX}/share/xracer
-	@${CHMOD} -R a+X ${PREFIX}/share/xracer
+	@${MKDIR} ${DATADIR}
+	@${TAR} -C ${WRKDIR}/xracer-data -cf - . | \
+		${TAR} -C ${DATADIR} --unlink -xf -
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing Documentation"
-	@${MKDIR} ${PREFIX}/share/doc/xracer
-.for file in AUTHORS ChangeLog NEWS README README.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xracer
-.endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
