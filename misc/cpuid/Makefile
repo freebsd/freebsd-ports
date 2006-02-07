@@ -16,15 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU identification utility
 
 PLIST_FILES=	bin/cpuid
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-USE_GMAKE=	yes
-ALL_TARGET=	# empty
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,gcc,${CC},g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cpuid ${PREFIX}/bin
+	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.bak && \
+	    ${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
