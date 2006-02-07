@@ -22,7 +22,7 @@ LIB_DEPENDS=	polyp-simple:${PORTSDIR}/audio/polypaudio
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 PLUGIN=		polyp_sink
 PORTNAMESUFX=	polypaudio

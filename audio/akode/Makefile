@@ -20,7 +20,7 @@ COMMENT=	Default KDE audio backend
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 OPTIONS=	JACK "Jack output plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \

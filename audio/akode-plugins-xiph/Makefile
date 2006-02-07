@@ -25,7 +25,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 PLUGIN=		xiph_decoder
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}

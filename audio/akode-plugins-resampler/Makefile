@@ -22,7 +22,7 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 PLUGIN=		src_resampler
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
