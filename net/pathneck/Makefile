@@ -8,7 +8,8 @@
 PORTNAME=	pathneck
 PORTVERSION=	1.3
 CATEGORIES=	net
-MASTER_SITES=	http://gs274.sp.cs.cmu.edu/www/pathneck/
+MASTER_SITES=	http://gs274.sp.cs.cmu.edu/www/pathneck/ \
+		http://www.unixified.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	babak@farrokhi.net
@@ -18,8 +19,6 @@ PLIST_FILES=	sbin/pathneck \
 		sbin/get-choke
 PORTDOCS=	COPYING ChangeLog README
 MAKEFILE=	Makefile.bsd
-
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CC .=,CC ?=,' \
