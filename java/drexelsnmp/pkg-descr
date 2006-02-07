@@ -10,4 +10,4 @@ The package assumes familiarity with the SNMP protocol as detailed in RFC's
 illustrate its use for simple get/set operations (though a knowledge of the
 concepts of OIDs and SNMP datatypes is still required).
 
-WWW: http://edge.mcs.drexel.edu/GICL/people/sevy/snmp/
+WWW: http://gicl.cs.drexel.edu/people/sevy/snmp/
