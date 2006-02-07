@@ -1,26 +1,26 @@
---- rules_du_jour.orig	Sat Aug 28 23:45:23 2004
-+++ rules_du_jour	Tue Nov 30 21:16:05 2004
+--- rules_du_jour.orig	Mon Feb  6 20:56:55 2006
++++ rules_du_jour	Mon Feb  6 20:58:42 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
- # Version 1.18  Added kluge to specify configfile location: RDJ_CONFIGFILE.  Fixed SARE_HEADER version extraction.
+ # Version 1.28 Added SARE_STOCKS
  
  ##########################
-@@ -52,7 +52,7 @@
- # (my_rules_du_jour wrapper script is no longer recommended)
- # Reads persistent configuration files from /etc, if one exists.  
- # /etc/rulesdujour/config is the recommended configuration file location.
+@@ -51,7 +51,7 @@
+ # Read configuration file (my_rules_du_jour wrapper script is no longer recommended)
+ # /etc/rulesdujour/config is the recommended configuration file location but may
+ # be read from one of the following locations, including the RDJ_CONFIGFILE env variable. 
 -for i in ${RDJ_CONFIGFILE} /etc/rulesdujour/config /etc/rulesdujour /etc/mail/rulesdujour /etc/sysconfig/RulesDuJour /etc/sysconfig/rulesdujour ; do
 +for i in ${RDJ_CONFIGFILE} /usr/local/etc/rulesdujour/config /usr/local/etc/rulesdujour /usr/local/etc/mail/rulesdujour ; do
      [ -f "$i" ] && source $i ;
  done;
  
-@@ -138,7 +138,7 @@
- #### Here are settings for Tripwire. ####
- TRIPWIRE=0; # Index of Tripwire data into the arrays is 0
+@@ -140,7 +140,7 @@
+ 
+ TRIPWIRE=0;
                CF_URLS[0]="http://www.rulesemporium.com/rules/99_FVGT_Tripwire.cf";
 -             CF_FILES[0]="tripwire.cf";
 +             CF_FILES[0]="99_FVGT_Tripwire.cf";
               CF_NAMES[0]="TripWire";
  PARSE_NEW_VER_SCRIPTS[0]="${PERL} -ne 'print if /^\s*#.*(vers?|version|rev|revision)[:\.\s]*[0-9]/i;' | sort | ${TAIL}";
- #    CF_MUNGE_SCRIPTS[0]="nothing necessary for this ruleset.";
+ 
