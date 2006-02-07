@@ -9,7 +9,7 @@ PORTNAME=	prom-wl
 PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
+MASTER_SITES=	http://www.h6.dion.ne.jp/~nytheta/software/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Procmail reader for Wanderlust on GNU Emacs
