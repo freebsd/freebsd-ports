@@ -21,8 +21,7 @@ PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c \
-		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
 
 WRKSRC=		${WRKDIR}/ARPACK
 ALL_TARGET=	lib
@@ -31,8 +30,6 @@ BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
 
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-
-.include <bsd.port.pre.mk>
 
 pre-patch:
 	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
@@ -44,20 +41,14 @@ pre-build:
 
 do-install:
 	${INSTALL} ${WRKSRC}/libarpack.a ${PREFIX}/lib
-	(${MKDIR} ${WRKSRC}/include ;\
-	  cd ${WRKSRC}/include ;\
-	  f2c -C++ -P  ${WRKSRC}/SRC/*.f ;\
-	  f2c -C++ -P  ${WRKSRC}/BLAS/*.f ;\
-	  f2c -C++ -P  ${WRKSRC}/LAPACK/*.f ;\
-	  ${CAT} *.P | ${GREP} -v :ref: > arpack.h)
-	${INSTALL_DATA} ${WRKSRC}/include/arpack.h ${PREFIX}/include
 
 post-install:
 .if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${FILESDIR}/arpack.h ${PREFIX}/include
 	${MKDIR} ${DOCSDIR}
 	-${GZIP_CMD} ${GZIP} ${WRKSRC}/DOCUMENTS/ex-*.doc
 	${CP} ${WRKSRC}/DOCUMENTS/ex-*.doc.gz ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ug.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

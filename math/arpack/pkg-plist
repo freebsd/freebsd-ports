@@ -1,5 +1,5 @@
-include/arpack.h
 lib/libarpack.a
+%%PORTDOCS%%include/arpack.h
 %%PORTDOCS%%share/doc/arpack/ex-complex.doc.gz
 %%PORTDOCS%%share/doc/arpack/ex-nonsym.doc.gz
 %%PORTDOCS%%share/doc/arpack/ex-sym.doc.gz
