@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlwidgets
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/XMLWidgets/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
