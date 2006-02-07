@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	kupu
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.5
 CATEGORIES=	www zope
-MASTER_SITES=	http://kupu.oscom.org/midcom-serveattachmentguid-19cdb52c4a9a4be7720d0d694fcfe32d/
+MASTER_SITES=	http://kupu.oscom.org/midcom-serveattachmentguid-e73585dd09549cfe130f91177d889819/
 PKGNAMEPREFIX=	zope-
 
 MAINTAINER=	x@vex.net
 COMMENT=	A 'document-centric' client-side editor for Mozilla/IE
+
+RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/FileSystemSite/__init__.py:${PORTSDIR}/www/zope-FileSystemSite
 
 USE_ZOPE=	yes
 USE_PYTHON=	yes
