@@ -128,7 +128,7 @@ MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
 	fvwm.1 fvwm-root.1 fvwm-config.1 fvwm-bug.1 \
 	fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1 \
-	FvwmPerl.1 fvwm-perllib.1 FvwmProxy.1 FvwmWindowMenu.1 \
+	FvwmPerl.1 fvwm-perllib.1 FvwmProxy.1 FvwmTabs.1 FvwmWindowMenu.1 \
 	FvwmGtkDebug.1
 
 .if !defined(WITHOUT_ICONS)
