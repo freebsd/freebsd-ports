@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# Checks if the 'www' user and group exist. If they don't, then
+# Checks if the '%%USER%%' user and group exist. If they don't, then
 # an attempt is made to create both.
 #
-# $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat5/Attic/pkg-install,v 1.1 2003-08-13 11:39:38 znerd Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/pkg-install.in,v 1.1 2006-02-07 08:50:07 lawrance Exp $
 #
 
 # Make sure we're called during the 'make install' process
@@ -12,10 +12,10 @@ if [ "$2" != "PRE-INSTALL" ]; then
 fi
 
 # Set some constants
-USER=www
-GROUP=${USER}
 UID=80
 GID=${UID}
+USER=%%USER%%
+GROUP=%%GROUP%%
 
 # See if the group already exists
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then

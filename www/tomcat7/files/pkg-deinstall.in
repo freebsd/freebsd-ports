@@ -8,17 +8,19 @@
 # * Checks if the '%%USER%%' user exists. If it does, then it displays
 #   a message.
 #
-# $FreeBSD: /tmp/pcvs/ports/www/tomcat55/Attic/pkg-deinstall,v 1.3 2005-09-29 15:08:23 hq Exp $
+# $FreeBSD$
 #
+
+USER=%%USER%%
+PID_FILE=%%PID_FILE%%
 
 # Make sure we're in the right stage of the process
 if [ "$2" = "DEINSTALL" ]; then
 
 	# Kill the process if it is still running
-	PID_FILE=/var/run/tomcat5
 	if [ -s ${PID_FILE} ]; then
 		PID=`cat ${PID_FILE}`
-		echo -n ">> Killing Jakarta Tomcat process (${PID})..."
+		echo -n ">> Killing Tomcat process (${PID})..."
 		/bin/kill ${PID} > /dev/null 2> /dev/null
 		if [ $? -eq 0 ]; then
 			echo " [ DONE ]"
@@ -37,8 +39,8 @@ fi
 
 if [ "$2" = "POST-DEINSTALL" ]; then
 	# If the user exists, then display a message
-	if pw usershow "%%USER%%" 2>/dev/null 1>&2; then
-		echo "To delete the %%USER%% user permanently, use 'pw userdel %%USER%%'"
+	if pw usershow "${USER}" 2>/dev/null 1>&2; then
+		echo "To delete the ${USER} user permanently, use 'pw userdel ${USER}'"
 	fi
 fi
 
