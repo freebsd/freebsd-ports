@@ -105,7 +105,14 @@ java_command="%%LOCALBASE%%/bin/java \
 log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
 	2>> ${tomcat%%TOMCAT_VERSION%%_stderr_log} "
 
-procname="*java"
+# Subvert the check_pid_file procname check.
+if [ -f $pidfile ]; then
+  read rc_pid junk < $pidfile
+  if [ ! -z "$rc_pid" ]; then
+    procname=`ps -o command= $rc_pid | cut -d ' ' -f 1`
+  fi
+fi
+
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
 command="/usr/sbin/daemon"
