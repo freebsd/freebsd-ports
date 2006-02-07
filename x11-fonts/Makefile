@@ -24,6 +24,7 @@
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
     SUBDIR += etlfonts
+    SUBDIR += farsifonts
     SUBDIR += fontconfig
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
