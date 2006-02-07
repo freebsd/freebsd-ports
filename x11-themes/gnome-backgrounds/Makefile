@@ -25,8 +25,4 @@ USE_GNOME=	gnomeprefix gnometarget gnomehack intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|@install_sh@|@INSTALL@|g' \
-		${WRKSRC}/po/Makefile.in.in
-
 .include <bsd.port.mk>
