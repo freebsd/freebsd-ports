@@ -8,7 +8,7 @@
 PORTNAME=	libdnd
 PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://leb.net/OffiX/
+MASTER_SITES=	http://leb.net/offix/
 DISTNAME=	dnd.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
