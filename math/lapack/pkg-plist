@@ -1,7 +1,3 @@
-lib/libblas.a
-lib/libblas.so
-lib/libblas.so.2
-lib/libblas_p.a
 lib/liblapack.a
 lib/liblapack.so
 lib/liblapack.so.3

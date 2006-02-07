@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTNAME=	LAPACK
@@ -14,6 +15,10 @@ DISTFILES=	lapack.tgz manpages.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
+
+LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+
+CONFLICTS=	atlas*
 
 DIST_SUBDIR=	lapack
 
@@ -226,17 +231,13 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
 .if !defined(NO_PROFILE)
-	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas_p.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack_p.a ${PREFIX}/lib
 .endif
 .if ${PORTOBJFORMAT} == "elf"
-	${LN} -sf libblas.so.2 ${PREFIX}/lib/libblas.so
 	${LN} -sf liblapack.so.3 ${PREFIX}/lib/liblapack.so
 .else
-	${LN} -sf libblas.so.2.0 ${PREFIX}/lib/libblas.so
 	${LN} -sf liblapack.so.3.0 ${PREFIX}/lib/liblapack.so
 .endif
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
