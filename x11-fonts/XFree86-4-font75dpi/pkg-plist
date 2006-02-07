@@ -1896,4 +1896,8 @@ lib/X11/fonts/75dpi/timR24-ISO8859-3.pcf.gz
 lib/X11/fonts/75dpi/timR24-ISO8859-4.pcf.gz
 lib/X11/fonts/75dpi/timR24-ISO8859-9.pcf.gz
 lib/X11/fonts/75dpi/timR24.pcf.gz
+@exec command fc-cache -v %D/lib/X11/fonts/75dpi 2>/dev/null || true
+@unexec rm %D/lib/X11/fonts/75dpi/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/75dpi 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/75dpi/fonts.cache-1 -a ! -s %D/lib/X11/fonts/75dpi/fonts.cache-1 ]; then rm %D/lib/X11/fonts/75dpi/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/75dpi

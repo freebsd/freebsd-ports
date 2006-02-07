@@ -86,8 +86,22 @@
 %%TYPE1:%%lib/X11/fonts/Type1/l049033t.pfa
 %%TYPE1:%%lib/X11/fonts/Type1/l049036t.afm
 %%TYPE1:%%lib/X11/fonts/Type1/l049036t.pfa
+@exec command fc-cache -v %D/lib/X11/fonts/CID || true
+@exec command fc-cache -v %D/lib/X11/fonts/Speedo || true
+@exec command fc-cache -v %D/lib/X11/fonts/TTF || true
+@exec command fc-cache -v %D/lib/X11/fonts/Type1 || true
+@unexec rm %D/lib/X11/fonts/CID/fonts.cache-1 2>/dev/null || true
+@unexec rm %D/lib/X11/fonts/Speedo/fonts.cache-1 2>/dev/null || true
 @unexec rm %D/lib/X11/fonts/TTF/fonts.cache-1 2>/dev/null || true
 @unexec rm %D/lib/X11/fonts/Type1/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/CID || true
+@unexec command fc-cache -v %D/lib/X11/fonts/Speedo || true
+@unexec command fc-cache -v %D/lib/X11/fonts/TTF || true
+@unexec command fc-cache -v %D/lib/X11/fonts/Type1 || true
+@unexec if [ -e %D/lib/X11/fonts/CID/fonts.cache-1 -a ! -s %D/lib/X11/fonts/CID/fonts.cache-1 ]; then rm %D/lib/X11/fonts/CID/fonts.cache-1; fi
+@unexec if [ -e %D/lib/X11/fonts/Speedo/fonts.cache-1 -a ! -s %D/lib/X11/fonts/Speedo/fonts.cache-1 ]; then rm %D/lib/X11/fonts/Speedo/fonts.cache-1; fi
+@unexec if [ -e %D/lib/X11/fonts/TTF/fonts.cache-1 -a ! -s %D/lib/X11/fonts/TTF/fonts.cache-1 ]; then rm %D/lib/X11/fonts/TTF/fonts.cache-1; fi
+@unexec if [ -e %D/lib/X11/fonts/Type1/fonts.cache-1 -a ! -s %D/lib/X11/fonts/Type1/fonts.cache-1 ]; then rm %D/lib/X11/fonts/Type1/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/Speedo
 @dirrmtry lib/X11/fonts/Type1
 @dirrmtry lib/X11/fonts/CID
