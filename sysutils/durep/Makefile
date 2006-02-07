@@ -7,6 +7,7 @@
 
 PORTNAME=	durep
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.hibernaculum.net/download/ \
 		http://bsd.gubkin.ru/myports/
@@ -17,32 +18,29 @@ COMMENT=	Utility for monitoring disk usage in a more visual way than du
 RUN_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
 
 USE_PERL5=	yes
-NO_BUILD=	yes
-WWWDOCROOT?=	www/data
-WWWCGIROOT?=	www/cgi-bin
-DUREPCGI?=	${WWWCGIROOT}/durep
-DUREPFILES?=	${WWWDOCROOT}/durep
-DCGI=		${PREFIX}/${DUREPCGI}
-DFILES=		${PREFIX}/${DUREPFILES}
+WWWDOCROOT?=	www
+WWWSUBDIR?=	${PORTNAME}
+WWWDIR?=	${WWWDOCROOT}/${WWWSUBDIR}
+DIR?=		${PREFIX}/${WWWDIR}
 
 MAN1=		durep.1
-PLIST_FILES=	bin/durep ${DUREPCGI}/durep.cgi ${DUREPFILES}/style.css \
-		${DUREPFILES}/bar.png
-PLIST_DIRS=	${DUREPCGI} ${DUREPFILES}
+WWW_FILES=	durep.cgi style.css bar.png
+PLIST_FILES=	bin/durep ${WWW_FILES:S/^/${WWWDIR}\//}
+PLIST_DIRS=	${WWWDIR}
 PORTDOCS=	Artistic BUGS CHANGES README THANKS
 
-doc:
+do-build:
 	pod2man --center="Disk Usage Report Generator" --release="durep version ${PORTVERSION}" ${WRKSRC}/durep.pod > ${WRKSRC}/durep.1
 
-do-install:	doc
-	${INSTALL} -d ${DFILES} ${DCGI}
-	${INSTALL_SCRIPT} ${WRKSRC}/durep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/durep.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/durep.cgi ${DCGI}
-	${INSTALL_DATA} ${WRKSRC}/style.css ${WRKSRC}/bar.png ${DFILES}
+do-install:
+	${INSTALL} -d ${DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/durep ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/durep.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/durep.cgi ${DIR}/
+	${INSTALL_DATA} ${WRKSRC}/style.css ${WRKSRC}/bar.png ${DIR}/
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S/^/${WRKSRC}\//} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
