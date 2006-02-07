@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	4.2.0.0
+DISTVERSION=	4.3p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -19,18 +19,16 @@ DISTNAME=	# empty
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-OPENSSHVERSION=	4.2p1
-
 .if defined(OPENSSH_SNAPSHOT)
 PORTREVISION!=		date -v-1d +%Y%m%d
 NO_CHECKSUM=		yes
 MASTER_SITE_SUBDIR+=	snapshot
 DISTNAME+=		${PORTNAME}-SNAP-${PORTREVISION}
-WRKSRC=			${WRKDIR}/${PORTNAME}
 .else
-DISTNAME+=		${PORTNAME}-${OPENSSHVERSION}
-WRKSRC=			${WRKDIR}/${PORTNAME}-${OPENSSHVERSION}
+DISTNAME+=		${PORTNAME}-${DISTVERSION}
 .endif
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
@@ -54,24 +52,48 @@ PORTABLE_SUFFIX=	-portable
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
-OPTIONS=	SUID_SSH	"Enable suid SSH (Recommended off)"	off \
+OPTIONS=	PAM		"Enable pam(3) support"			on \
+		TCP_WRAPPERS	"Enable tcp_wrappers support"		on \
+		LIBEDIT		"Enable readline support to sftp(1)"	on \
+		KERBEROS	"Enable kerberos (autodetection)"	on \
+		SUID_SSH	"Enable suid SSH (Recommended off)"	off \
 		GSSAPI		"Enable GSSAPI support"			off \
-		OPENSSH_CHROOT	"Enable CHROOT support"			off
+		OPENSSH_CHROOT	"Enable CHROOT support"			off \
+		HPN		"Enable HPN-11 SSH/SCP patch"		off \
+		HPN_NONECIPHER	"Enable HPN-11 with None Cipher patch"	off \
+		OVERWRITE_BASE	"OpenSSH overwrite base"		off
 
 .include <bsd.port.pre.mk>
 
-.if exists(/usr/include/security/pam_modules.h)
+# Preserve deprecated OPENSSH_OVERWRITE_BASE settings
+.if defined(OPENSSH_OVERWRITE_BASE)
+WITH_OVERWRITE_BASE=	yes
+.endif
+
+.if !defined(WITHOUT_PAM) && exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-.if exists(/usr/include/tcpd.h)
+.if !defined(WITHOUT_TCP_WRAPPERS) && exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+=	--with-tcp-wrappers
+.endif
+
+.if !defined(WITHOUT_LIBEDIT)
+.if ${OSVERSION} > 500000
+CONFIGURE_ARGS+=	--with-libedit
+.else
+.if !defined(WITH_OVERWRITE_BASE)
+LIB_DEPENDS+=		edit.6:${PORTSDIR}/devel/libedit
+CONFIGURE_ARGS+=	--with-libedit=${LOCALBASE}
+.endif
+.endif
 .endif
 
 .if !defined(WITH_SUID_SSH)
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
+.if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
@@ -84,9 +106,10 @@ LDFLAGS=		# empty
 .else
 CONFLICTS+=		openssh-gssapi-*-[0-9]*
 CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
-.if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
+.if exists(/usr/include/krb5.h)
 CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
+.endif
 .endif
 .endif
 
@@ -94,24 +117,40 @@ EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 .endif
 
-.if defined(BATCH)
-EXTRA_PATCHES+=		${FILESDIR}/batch.patch
-.endif
-
 .if defined(WITH_OPENSSH_CHROOT)
 CFLAGS+=		-DCHROOT
 .endif
 
-.if defined(OPENSSH_OVERWRITE_BASE)
+.if defined(WITH_HPN)
+.if defined(WITH_HPN_NONECIPHER)
+IGNORE=			please, select only one HPN patch. Rerun 'make config'
+.endif
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
+PATCHFILES+=		openssh-${DISTVERSION}-hpn11.diff
+.endif
+
+.if defined(WITH_HPN_NONECIPHER)
+.if defined(WITH_HPN)
+IGNORE=			please, select only one HPN patch. Rerun 'make config'
+.endif
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
+PATCHFILES+=		openssh-${DISTVERSION}-hpn11-none.diff
+.endif
+
+.if defined(WITH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
 BASE_SUFFIX=		-overwrite-base
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man --localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
+USE_RC_SUBR=		yes
+SUB_FILES+=		openssh
+SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
-PKGMESSAGE=		pkg-message.empty
 .else
 .if exists(/var/empty)
 EMPTYDIR=		/var/empty
@@ -119,6 +158,8 @@ EMPTYDIR=		/var/empty
 EMPTYDIR=		${PREFIX}/empty
 .endif
 ETCSSH=			${PREFIX}/etc/ssh
+USE_RC_SUBR=		openssh
+SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		NOTBASE=""
 PLIST_SUB+=		BASE="@comment "
 .endif
@@ -127,15 +168,17 @@ PLIST_SUB+=		BASE="@comment "
 PLIST_SUB+=		EMPTYDIR="${EMPTYDIR}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 
+post-extract:
+.if defined(OPENSSH_SNAPSHOT)
+	@# rc.d script have same name of openssh snapshot dir
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${DISTVERSION}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 
-post-configure:
-	${SED} -e 's:__PREFIX__:${PREFIX}:g' \
-		${FILESDIR}/sshd.sh > ${WRKSRC}/sshd.sh
-
 pre-install:
-.if defined(OPENSSH_OVERWRITE_BASE)
+.if defined(WITH_OVERWRITE_BASE)
 	@${MKDIR} ${EMPTYDIR}
 .else
 	@${MKDIR} ${PREFIX}/empty
@@ -154,14 +197,23 @@ pre-install:
 .endfor
 
 post-install:
-.if !defined(OPENSSH_OVERWRITE_BASE)
-	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
-.endif
+.if !defined(WITH_OVERWRITE_BASE)
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
-.if !defined(OPENSSH_OVERWRITE_BASE)
-	@${CAT} ${PKGMESSAGE}
 .endif
+.if defined(WITH_OVERWRITE_BASE)
+	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
+	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
+.if ${OSVERSION} >= 700007
+	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/openssh
+	@${ECHO_CMD} "etc/rc.d/openssh" >> ${TMPPLIST}
+.else
+	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/openssh.sh
+	@${ECHO_CMD} "etc/rc.d/openssh.sh" >> ${TMPPLIST}
+.endif
+	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 test:	build
 	(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} TEST_SHELL=/bin/sh \
