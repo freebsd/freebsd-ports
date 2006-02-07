@@ -4,8 +4,6 @@
 @unexec if cmp -s %D/%%T%%/conf/server-noexamples.xml.config %D/%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-noexamples.xml.config; fi
 @unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; fi
 @unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; fi
-bin/tomcat4ctl
-etc/rc.d/020.jakarta-tomcat4.sh
 %%T%%/logs/stdout.log
 %%T%%/logs/stderr.log
 %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
@@ -970,7 +968,7 @@ etc/rc.d/020.jakarta-tomcat4.sh
 @exec mkdir %D/%%T%%/temp || true
 @exec mkdir %D/%%T%%/server/classes || true
 @exec mkdir %D/%%T%%/work || true
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/work
 @dirrmtry %%T%%/conf
 @dirrm %%T%%/logs
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage

@@ -195,7 +195,7 @@
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat41
     SUBDIR += jakarta-tomcat5
-    SUBDIR += jakarta-tomcat55
+    SUBDIR += tomcat55
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetspeed

@@ -6,6 +6,27 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060207:
+  AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41, 
+           www/jakarta-tomcat5, www/jakarta-tomcat55, and www/tomcat55
+  AUTHOR: lawrance@FreeBSD.org
+
+  The Tomcat ports listed above have been converted to use new-style
+  rc scripts.  In order to enable Tomcat, you must add:
+
+	tomcat{4,41,5,55}_enable="YES"
+
+  to your rc.conf.  Select the appropriate version number for your
+  installation.  When shutting down, the rc scripts will kill the
+  Tomcat process after a default timeout of 10 seconds.  This can be
+  changed by setting the tomcatXX_stop_timeout variable in rc.conf.
+
+  Tomcat 5.5 users please note that the rc variables have changed name
+  from jakarta_tomcat55_* to tomcat55_*.
+
+  The "tomcatctl" executable is no longer installed.  Please use the
+  rc scripts to control tomcat instead.
+
 20060202:
   AFFECTS: users of textproc/expat2
   AUTHOR: kuriyama@FreeBSD.org

@@ -6,7 +6,6 @@
 @unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
 bin/tomcat41ctl
-etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/LICENSE
 %%T%%/README.txt
 %%T%%/RELEASE-NOTES-4.1.txt
@@ -1488,7 +1487,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 @exec mkdir %D/%%T%%/shared/lib || true
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/common/classes ||true
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/work
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
