@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-backgrounds
-PORTVERSION=	2.12.2
+PORTVERSION=	2.12.3
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -24,5 +24,9 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnometarget gnomehack intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@install_sh@|@INSTALL@|g' \
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>
