@@ -20,7 +20,7 @@ COMMENT=	OSS output plugin for akode
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 PLUGIN=		oss_sink
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}

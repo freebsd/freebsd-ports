@@ -22,7 +22,7 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD=	/usr/bin/fetch
 
 PLUGIN=		jack_sink
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
