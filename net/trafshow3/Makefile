@@ -35,7 +35,6 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 .endif
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

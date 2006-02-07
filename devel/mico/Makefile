@@ -20,7 +20,6 @@ COMMENT=	Fully compliant implementation of CORBA2.4 with some CORBA3 features
 WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

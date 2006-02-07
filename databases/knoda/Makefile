@@ -23,7 +23,6 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 USE_AUTOTOOLS=	libtool:13:inc
-USE_REINPLACE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-hk_classes-dir=${LOCALBASE}/lib/hk_classes \

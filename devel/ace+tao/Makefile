@@ -23,7 +23,6 @@ TAO_VERSION=	1.4.2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 TESTS=		"@comment "

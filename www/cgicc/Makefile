@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.cgicc.org/
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A C++ class library for writing CGI applications
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

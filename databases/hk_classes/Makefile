@@ -15,7 +15,6 @@ COMMENT=	C++ Library for rapid development of database applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes

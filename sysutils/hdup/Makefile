@@ -23,7 +23,6 @@ RUN_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 		gpg:${PORTSDIR}/security/gnupg \
 		lzop:${PORTSDIR}/archivers/lzop
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
