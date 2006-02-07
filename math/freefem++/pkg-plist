@@ -190,6 +190,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/convect2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/dumptable.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/ex-vf.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/exception.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/fluidStruct.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/fluidStructAdapt.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/freeboundary-weak.edp
