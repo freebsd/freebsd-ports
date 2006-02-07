@@ -27,3 +27,4 @@ www/data/webmagick/gray_next.gif
 www/data/webmagick/gray_prev.gif
 www/data/webmagick/webmagick.js
 @dirrm www/data/webmagick
+@dirrmtry www/data
