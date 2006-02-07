@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_REINPLACE=	yes
 USE_SDL=	sdl mixer
+USE_DOS2UNIX=	src/*.cpp src/*.h
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -36,15 +36,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
-post-extract:
-	@${FIND} ${WRKSRC}/src -name "*.cpp" -o -name "*.h" | \
-		${XARGS} ${REINPLACE_CMD} -e "s|$$(${PRINTF} '\r')||g"
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/VCommon.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/image/tim_memory_crt.cpp
 	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs` |' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|endian.h|sys/endian.h|' ${WRKSRC}/src/VCommon.h
+	@${REINPLACE_CMD} -e '/LIBS/ s|\(-lSDL_mixer\)|\1 `${SDL_CONFIG} --libs`|' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
