@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	parsedxml
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/ParsedXML/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ParsedXML-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	x@Vex.Net
+MAINTAINER=	x@vex.net
 COMMENT=	Access and manipulate XML documents within Zope
 
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
