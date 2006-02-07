@@ -18,7 +18,6 @@ COMMENT=	Free, highly customizable PHP photo album
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 USE_PHP=	session pcre
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 DALBUM_DIR?=	www/photo
 

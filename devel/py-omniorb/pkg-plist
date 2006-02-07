@@ -16,13 +16,13 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so
 %%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.0
+%%PYTHON_SITELIBDIR%%/_omnicodesetsmodule.so.2.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so.2
 %%PYTHON_SITELIBDIR%%/_omnipymodule.so.2.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so
 %%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2
-%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2.0
+%%PYTHON_SITELIBDIR%%/_omnisslTPmodule.so.2.%%SONUM%%
 %%PYTHON_SITELIBDIR%%/omniORB.pth
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.py
 %%PYTHON_SITELIBDIR%%/omniORB/BiDirPolicy.pyc
@@ -303,6 +303,8 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/codesets.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.py
 %%PYTHON_SITELIBDIR%%/omniORB/interceptors.pyc
+%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.py
+%%PYTHON_SITELIBDIR%%/omniORB/minorCodes.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.py
 %%PYTHON_SITELIBDIR%%/omniORB/ir_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniORB/sslTP.py
@@ -469,6 +471,5 @@ include/omniORBpy.h
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS/CosCollection
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB/COS
 @dirrm %%PYTHON_SITELIBDIR%%/omniORB
-@dirrm %%PYTHON_SITELIBDIR%%/omniidl_be
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming__POA
 @dirrm %%PYTHON_SITELIBDIR%%/CosNaming

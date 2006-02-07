@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
-USE_REINPLACE=	yes
 
 # Don't compiled on != i386
 ONLY_FOR_ARCHS=	i386
