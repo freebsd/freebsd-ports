@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmidecode
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -18,7 +18,6 @@ COMMENT=	A tool for dumping DMI (SMBIOS) contents in human-readable format
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
 
