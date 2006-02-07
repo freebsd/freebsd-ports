@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lifetype
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lifetype
-DISTFILES=	plog-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		_all_plugins${EXTRACT_SUFX} \
 		_all_templates${EXTRACT_SUFX}
-EXTRACT_ONLY=	plog-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
@@ -30,7 +29,6 @@ WWWDOCROOT?=	www/data
 PLOGURL?=	lifetype
 WWWOWN?=	www
 WWWGRP?=	www
-WRKSRC=		${WRKDIR}/plog-${PORTVERSION}
 PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -60,7 +58,6 @@ post-extract:
 .endfor
 
 .if defined(WITH_BIG5)
-USE_REINPLACE=yes
 
 post-patch:
 	${FIND} ${WRKSRC}/templates -name "*.template" | \
