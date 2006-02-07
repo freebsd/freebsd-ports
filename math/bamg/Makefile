@@ -9,7 +9,9 @@ PORTNAME=	bamg
 PORTVERSION=	0.68
 PORTREVISION=	1
 CATEGORIES=	math science
-MASTER_SITES=	http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/
+MASTER_SITES=	http://pauillac.inria.fr/cdrom/ftp/bamg/	\
+		http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/	\
+		http://ftp.tuniv.szczecin.pl/pub/Linux/Scilab/INRIA/Gamma/bamg/
 .if !defined(NOPORTDOCS)
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} ${PORTNAME}.ps.gz
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
