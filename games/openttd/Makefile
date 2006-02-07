@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	0.4.0.1
+PORTVERSION=	0.4.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,8 +57,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${MAN6} ${MANPREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in Howto_compile_lng_files_from_CLI.txt Manual.txt console.txt landscape.html \
-	multiplayer.txt ottd-colour-palette.gif textcolor.txt tileh.png
+. for f in Howto_compile_lng_files_from_CLI.txt Manual.txt console.txt \
+	landscape.html landscape_grid.html multiplayer.txt \
+	ottd-colour-palette.gif ottd-colourtext-palette.png tileh.png
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 . endfor
 .endif
