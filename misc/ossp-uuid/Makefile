@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-libuuid-[0-9]*
