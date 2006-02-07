@@ -1,9 +1,9 @@
 bin/uqm
 lib/uqm/uqm
-%%DATADIR%%/content/packages/uqm-0.4.0-content.uqm
+%%DATADIR%%/content/packages/uqm-0.5.0-content.uqm
 %%DATADIR%%/content/version
-%%VOICEADDON%%%%DATADIR%%/content/packages/uqm-0.4.0-voice.uqm
-%%MUSICADDON%%%%DATADIR%%/content/packages/uqm-0.4.0-3domusic.uqm
+%%VOICEADDON%%%%DATADIR%%/content/packages/uqm-0.5.0-voice.uqm
+%%MUSICADDON%%%%DATADIR%%/content/packages/uqm-0.5.0-3domusic.uqm
 @dirrm %%DATADIR%%/content/packages
 @dirrm %%DATADIR%%/content
 @dirrm %%DATADIR%%
