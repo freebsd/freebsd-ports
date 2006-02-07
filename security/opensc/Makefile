@@ -8,7 +8,7 @@
 PORTNAME=	opensc
 PORTVERSION=	0.9.6
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.opensc.org/files/opensc/
+MASTER_SITES=	http://www.opensc-project.org/files/opensc/
 
 MAINTAINER=	simon@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API
