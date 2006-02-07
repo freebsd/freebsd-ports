@@ -5,7 +5,7 @@
 
 # PROVIDE: frox
 # REQUIRE: NETWORKING
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable frox:
@@ -24,19 +24,7 @@ command=%%PREFIX%%/sbin/frox
 pidfile=/var/run/frox.pid
 required_files=%%PREFIX%%/etc/frox.conf
 
-start_precmd=start_precmd
 stop_postcmd=stop_postcmd
-
-# if require start from inetd?
-start_precmd()
-{
-  if grep -iq '^[[:space:]]*frominetd[[:space:]]*yes' %%PREFIX%%/etc/frox.conf;
-  then
-	  return 1
-  else
-	  return 0
-  fi
-}
 
 stop_postcmd()
 {

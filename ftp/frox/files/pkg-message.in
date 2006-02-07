@@ -1,0 +1,15 @@
+**************************************************************************
+Don't forget to create %%PREFIX%%/etc/frox.conf.
+See an example in %%EXAMPLESDIR%%/frox.conf
+
+You can use frox by two ways:
+1) run as a daemon:
+Add `frox_enable="YES"' in /etc/rc.conf and run %%PREFIX%%/etc/rc.d/frox.sh
+
+2) run frox with inetd(8):
+* uncomment 'FromInetd yes' in your %%PREFIX%%/etc/frox.conf
+* add a line in /etc/inetd.conf:
+frox     stream  tcp     nowait  nobody    %%PREFIX%%/sbin/frox    frox
+* assign a port number for frox inside /etc/services (e.g. 2121):
+frox	2121/tcp
+**************************************************************************
