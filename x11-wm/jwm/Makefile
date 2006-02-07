@@ -9,7 +9,7 @@ PORTNAME=	jwm
 PORTVERSION=	1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/ \
-		http://bsdgeek.no-ip.org/jwm/
+		http://www.unixified.net/distfiles/
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Joe's Window Manager
@@ -20,7 +20,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
