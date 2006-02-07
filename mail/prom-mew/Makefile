@@ -9,7 +9,7 @@ PORTNAME=	prom-mew
 PORTVERSION=	1.93.4
 PORTREVISION=	1
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
+MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Procmail reader for Mew on GNU Emacs
@@ -17,6 +17,9 @@ COMMENT=	Procmail reader for Mew on GNU Emacs
 # This port requires Mew. But we can't decide which mew to depends, there is
 # NO RUN_DEPENDS mail/mew*.
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-04-07
 
 NO_BUILD=	yes
 
