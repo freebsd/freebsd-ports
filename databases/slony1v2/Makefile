@@ -7,6 +7,7 @@
 
 PORTNAME=	slony1
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
