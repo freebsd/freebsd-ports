@@ -8,6 +8,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -27,7 +28,6 @@ USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--disable-demos \
 		--enable-static=yes \

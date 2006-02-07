@@ -2402,10 +2402,10 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ/html
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ
 %%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs
-%%PORTDOCS%%@dirrmtry %D/share/doc/gtkmm-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry %D/share/devhelp/books/gtkmm-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry %D/share/devhelp/books
-%%PORTDOCS%%@dirrmtry %D/share/devhelp
+%%PORTDOCS%%@dirrmtry share/doc/gtkmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry share/devhelp/books/gtkmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry share/devhelp/books
+%%PORTDOCS%%@dirrmtry share/devhelp
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
 @dirrm lib/gtkmm-%%API_VERSION%%/proc
 @dirrm lib/gtkmm-%%API_VERSION%%/include
