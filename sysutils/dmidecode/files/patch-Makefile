@@ -1,14 +1,14 @@
---- Makefile.orig	Wed Jun 15 20:22:35 2005
-+++ Makefile	Fri Nov 25 20:31:58 2005
+--- Makefile.orig	Tue Feb  7 09:45:21 2006
++++ Makefile	Tue Feb  7 09:47:11 2006
 @@ -8,25 +8,25 @@
  #	Licensed under the GNU Public License.
  #
  
 -CC      = gcc
 -CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
--          -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline
+-          -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
 +CFLAGS+=	-W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
-+		-Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline
++		-Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef
 +CFLAGS+=	${CPPFLAGS}
  #CFLAGS += -DBIGENDIAN
  #CFLAGS += -DALIGNMENT_WORKAROUND
