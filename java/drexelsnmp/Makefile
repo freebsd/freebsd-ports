@@ -8,7 +8,7 @@
 PORTNAME=	drexelsnmp
 PORTVERSION=	1.4
 CATEGORIES=	java devel net-mgmt
-MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/snmp/
+MASTER_SITES=	http://gicl.cs.drexel.edu/people/sevy/snmp/
 DISTNAME=	source_${PORTVERSION}
 
 MAINTAINER=	anders@FreeBSD.org
