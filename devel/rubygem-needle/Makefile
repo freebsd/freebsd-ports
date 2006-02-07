@@ -8,10 +8,12 @@
 PORTNAME=	needle
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.lauschmusik.de/needle/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/7842/
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	Dependency-injection/inversion-of-control container
+
+FETCH_CMD=	/usr/bin/fetch -Rr
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
