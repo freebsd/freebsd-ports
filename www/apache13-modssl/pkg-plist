@@ -129,7 +129,6 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 www/data-dist/apache_pb.gif
-@exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
 www/data-dist/index.html.ca
 www/data-dist/index.html.cz
 www/data-dist/index.html.de
@@ -511,7 +510,6 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/urlmapping.html
 %%DOCSDIR%%/vhosts/index.html.html
 www/cgi-bin-dist/printenv
-@exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/test-cgi
 www/icons/README
 www/icons/a.gif
@@ -732,8 +730,10 @@ www/icons/uuencoded.png
 www/icons/world1.png
 www/icons/world2.png
 @exec mkdir -p %D/www/proxy
-@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
-@unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
+@exec [ -e %D/www/cgi-bin/ ] || ln -s %D/www/cgi-bin-dist %D/www/cgi-bin
+@exec [ -e %D/www/data/ ] || ln -s %D/www/data-dist %D/www/data
+@unexec if [ -L %D/www/cgi-bin ]; then if [ `readlink %D/www/cgi-bin` = %D/www/cgi-bin-dist ]; then rm -f %D/www/cgi-bin; fi; fi
+@unexec if [ -L %D/www/data ]; then if [ `readlink %D/www/data` = %D/www/data-dist ]; then rm -f %D/www/data; fi; fi
 @exec cd %D/etc/apache/ssl.crt && make >/dev/null 2>&1
 @unexec for i in %D/etc/apache/ssl.crt/[0-9a-fA-F]*.[0-9]*; do if [ -L $i ]; then rm -f $i; fi; done
 @dirrm etc/apache/ssl.crt
