@@ -46,6 +46,7 @@
 %%ZOPEPRODUCTDIR%%/Formulator/XMLToForm.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/__init__.py
 %%ZOPEPRODUCTDIR%%/Formulator/__init__.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/configure.zcml
 %%ZOPEPRODUCTDIR%%/Formulator/dtml/FieldHelpTopic.dtml
 %%ZOPEPRODUCTDIR%%/Formulator/dtml/fieldAdd.dtml
 %%ZOPEPRODUCTDIR%%/Formulator/dtml/fieldEdit.dtml
@@ -85,14 +86,15 @@
 %%ZOPEPRODUCTDIR%%/Formulator/homepage.html
 %%ZOPEPRODUCTDIR%%/Formulator/i18n/__init__.py
 %%ZOPEPRODUCTDIR%%/Formulator/i18n/__init__.pyc
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/dummymessageid.py
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/dummymessageid.pyc
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator-de.po
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator-fr.po
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator-nl.po
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/de/LC_MESSAGES/formulator.mo
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/de/LC_MESSAGES/formulator.po
 %%ZOPEPRODUCTDIR%%/Formulator/i18n/formulator.pot
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulatormessageid.py
-%%ZOPEPRODUCTDIR%%/Formulator/i18n/formulatormessageid.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/fr/LC_MESSAGES/formulator.mo
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/fr/LC_MESSAGES/formulator.po
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/nl/LC_MESSAGES/formulator.mo
+%%ZOPEPRODUCTDIR%%/Formulator/i18n/nl/LC_MESSAGES/formulator.po
+%%ZOPEPRODUCTDIR%%/Formulator/monkey.py
+%%ZOPEPRODUCTDIR%%/Formulator/monkey.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/refresh.txt
 %%ZOPEPRODUCTDIR%%/Formulator/tests/README.txt
 %%ZOPEPRODUCTDIR%%/Formulator/tests/__init__.py
@@ -134,6 +136,12 @@
 %%ZOPEPRODUCTDIR%%/Formulator/www/TextAreaField.gif
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/dtml
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/help
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/de/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/de
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/fr/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/fr
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/nl/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n/nl
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/tests
 @dirrm %%ZOPEPRODUCTDIR%%/Formulator/www
