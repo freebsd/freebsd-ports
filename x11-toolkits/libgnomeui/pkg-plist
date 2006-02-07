@@ -228,8 +228,11 @@ share/locale/wa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/xh/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/zu/LC_MESSAGES/libgnomeui-2.0.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/ku/LC_MESSAGES

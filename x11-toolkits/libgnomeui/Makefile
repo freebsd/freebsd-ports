@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/libgnomeui/Makefile,v 1.66 2005/09/07 04:43:08 marcus Exp $
 
 PORTNAME=	libgnomeui
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.12.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
