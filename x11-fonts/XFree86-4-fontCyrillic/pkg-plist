@@ -84,4 +84,8 @@ lib/X11/fonts/cyrillic/koinil2.pcf.gz
 lib/X11/fonts/cyrillic/proof9x16.pcf.gz
 lib/X11/fonts/cyrillic/screen8x16.pcf.gz
 lib/X11/fonts/cyrillic/screen8x16b.pcf.gz
+@exec command fc-cache -v %D/lib/X11/fonts/cyrillic 2>/dev/null || true
+@unexec rm %D/lib/X11/fonts/cyrillic/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/cyrillic 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/cyrillic/fonts.cache-1 -a ! -s %D/lib/X11/fonts/cyrillic/fonts.cache-1 ]; then rm %D/lib/X11/fonts/cyrillic/fonts.cache-1; fi
 @dirrmtry lib/X11/fonts/cyrillic

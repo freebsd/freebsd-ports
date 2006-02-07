@@ -7,6 +7,7 @@
 
 PORTNAME=	fontScalable
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -90,6 +91,12 @@ do-configure:
 pre-build:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
 	 ${MAKE} all)
+
+post-install:
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/CID || true
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/Speedo || true
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/TTF || true
+	@command fc-cache -v ${PREFIX}/lib/X11/fonts/Type1 || true
 
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xfree86-4
