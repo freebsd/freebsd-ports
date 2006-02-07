@@ -54,6 +54,7 @@
 %%SITE_PERL%%/DBIx/Class/Relationship/ManyToMany.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/ProxyMethods.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet.pm
+%%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource/Table.pm
@@ -61,6 +62,7 @@
 %%SITE_PERL%%/DBIx/Class/ResultSourceProxy/Table.pm
 %%SITE_PERL%%/DBIx/Class/Row.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
+%%SITE_PERL%%/DBIx/Class/Serialize.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Test/SQLite.pm

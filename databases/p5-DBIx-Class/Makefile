@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.05000
+PORTVERSION=	0.05002
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -26,7 +26,8 @@ BUILD_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-SQLite>=1.11:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
-		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find
+		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -55,11 +56,13 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Relationship::Base.3 \
 	DBIx::Class::Relationship::BelongsTo.3 \
 	DBIx::Class::ResultSet.3 \
+	DBIx::Class::ResultSetManager.3 \
 	DBIx::Class::ResultSource.3 \
 	DBIx::Class::ResultSource::Table.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
 	DBIx::Class::Schema.3 \
+	DBIx::Class::Serialize.3 \
 	DBIx::Class::Storage::DBI.3 \
 	DBIx::Class::Test::SQLite.3 \
 	DBIx::Class::UUIDColumns.3 \
