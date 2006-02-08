@@ -13,7 +13,8 @@ PORTNAME=	cool-gorilla
 PORTVERSION=	20030726
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://tmclaugh.freeshell.org/files/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tmclaugh
 DISTNAME=	ICON-CoolGorilla
 
 MAINTAINER=	tmclaugh@FreeBSD.org
