@@ -8,7 +8,7 @@
 PORTNAME=	gnarwl
 PORTVERSION=	3.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.oss.billiton.de/download/ \
+MASTER_SITES=	http://www.home.unix-ag.org/patrick/software/gnarwl/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 EXTRACT_SUFX=	.tgz
 
