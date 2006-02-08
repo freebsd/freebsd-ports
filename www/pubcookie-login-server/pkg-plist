@@ -1,0 +1,58 @@
+pubcookie/config.login.sample
+pubcookie/keyclient
+pubcookie/keyserver
+pubcookie/login/index.cgi
+pubcookie/login_templates.default/README
+pubcookie/login_templates.default/copyright
+pubcookie/login_templates.default/error
+pubcookie/login_templates.default/form_expired
+pubcookie/login_templates.default/images/check.gif
+pubcookie/login_templates.default/images/icon-excl.gif
+pubcookie/login_templates.default/images/icon-time.gif
+pubcookie/login_templates.default/login
+pubcookie/login_templates.default/login_auth_prob_uwsecurid
+pubcookie/login_templates.default/login_bad_auth
+pubcookie/login_templates.default/login_bad_auth_static_user
+pubcookie/login_templates.default/login_cache_creds_wrong
+pubcookie/login_templates.default/login_expired
+pubcookie/login_templates.default/login_next_prn
+pubcookie/login_templates.default/login_nolcookie
+pubcookie/login_templates.default/login_pass_form_field
+pubcookie/login_templates.default/login_pass_static
+pubcookie/login_templates.default/login_pinit
+pubcookie/login_templates.default/login_reauth
+pubcookie/login_templates.default/login_unauth_grant
+pubcookie/login_templates.default/login_user_form_field
+pubcookie/login_templates.default/login_user_hidden
+pubcookie/login_templates.default/login_user_static
+pubcookie/login_templates.default/login_uwsecurid
+pubcookie/login_templates.default/logo
+pubcookie/login_templates.default/logout_already_weblogin
+pubcookie/login_templates.default/logout_app
+pubcookie/login_templates.default/logout_app_custom
+pubcookie/login_templates.default/logout_part1
+pubcookie/login_templates.default/logout_part2
+pubcookie/login_templates.default/logout_postscript_still_others
+pubcookie/login_templates.default/logout_postscript_still_weblogin
+pubcookie/login_templates.default/logout_still_known
+pubcookie/login_templates.default/logout_still_weblogin
+pubcookie/login_templates.default/logout_time_remaining
+pubcookie/login_templates.default/logout_weblogin
+pubcookie/login_templates.default/nonpost_redirect
+pubcookie/login_templates.default/notok
+pubcookie/login_templates.default/notok_badagent
+pubcookie/login_templates.default/notok_form_multipart
+pubcookie/login_templates.default/notok_generic
+pubcookie/login_templates.default/notok_need_ssl
+pubcookie/login_templates.default/pinit_response1
+pubcookie/login_templates.default/pinit_response2
+pubcookie/login_templates.default/status
+pubcookie/login_templates.default/welcome_back
+pubcookie/starter.key
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm pubcookie/login_templates.default/images
+@dirrm pubcookie/login_templates.default
+@dirrmtry pubcookie/login
+@dirrmtry pubcookie/keys
+@dirrmtry pubcookie

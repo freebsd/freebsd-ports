@@ -768,6 +768,7 @@
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
     SUBDIR += pserv
+    SUBDIR += pubcookie-login-server
     SUBDIR += publicfile
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
