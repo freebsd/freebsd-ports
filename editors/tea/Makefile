@@ -21,7 +21,7 @@ USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=		TEA_ONLY "Build original GTK-only version" off \
+OPTIONS=		TEA_ONLY "Build original GTK-only version" on \
 			ASPELL "Build with GNU aspell support" on
 
 .include <bsd.port.pre.mk>
