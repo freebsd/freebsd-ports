@@ -5624,7 +5624,7 @@
 @dirrm %%GALLERY2DIR%%/install/locale/bg_BG
 @dirrm %%GALLERY2DIR%%/install/locale
 @dirrm %%GALLERY2DIR%%/install/images
-@dirrmtry %%GALLERYDIR%%/install
+@dirrmtry %%GALLERY2DIR%%/install
 @dirrm %%GALLERY2DIR%%/images
 @dirrm %%GALLERY2DIR%%/docs
-@dirrmtry %%GALLERYDIR%%
+@dirrmtry %%GALLERY2DIR%%
