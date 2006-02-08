@@ -193,6 +193,13 @@ LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
 .else
 CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
+
+.if defined(CANNA)
+PLIST_SUB+=		CANNA=""
+.else
+PLIST_SUB+=		CANNA="@comment "
+.endif
+
 SITE_INCLUDES+=		${LOCALBASE}/include
 SITE_LIBRARIES+=	${LOCALBASE}/lib
 
