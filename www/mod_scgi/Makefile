@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
 		http://bsdchat.com/dist/dryice/
@@ -17,7 +17,6 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
 USE_APACHE=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
 .include <bsd.port.pre.mk>
