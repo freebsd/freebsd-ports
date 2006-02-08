@@ -118,7 +118,7 @@ PLIST_SUB+=	TOKEN=""
 .if ${OSVERSION} < 500000
 PLIST_SUB+=	RLMPERL="@comment "
 .else
-PLIST_SUB+=	RLMPERL="@comment "
+PLIST_SUB+=	RLMPERL=""
 .endif
 
 .if ${ARCH} == "amd64"
