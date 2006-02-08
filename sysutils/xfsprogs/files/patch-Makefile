@@ -1,11 +1,11 @@
---- Makefile.orig	Fri Oct  7 12:51:32 2005
-+++ Makefile	Fri Oct  7 14:42:35 2005
-@@ -44,7 +44,7 @@
+--- Makefile.orig	Mon Jan 16 22:46:46 2006
++++ Makefile	Tue Feb  7 20:37:21 2006
+@@ -16,7 +16,7 @@
  	Logs/* built .census install.* install-dev.* *.gz
  
  SUBDIRS = include libxfs libxlog libxcmd libhandle libdisk \
--	copy db fsck growfs io logprint mkfile mkfs quota repair rtcp \
-+	db fsck growfs io logprint mkfile mkfs quota repair rtcp \
+-	copy db fsck growfs io logprint mkfs quota repair rtcp \
++	db fsck growfs io logprint mkfs quota repair rtcp \
  	m4 man doc po debian build
  
  default: $(CONFIGURE)
