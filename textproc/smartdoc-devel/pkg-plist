@@ -19,3 +19,4 @@ share/xml/smartdoc/catalog
 @dirrm %%EXAMPLESDIR%%/html4
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
