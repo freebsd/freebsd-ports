@@ -14,10 +14,8 @@ DISTNAME=	ircproxy-1.2.41d.pl2
 MAINTAINER=	jonaski@night-light.net
 COMMENT=	An IRC proxy server
 
-FORBIDDEN=	Sends email to authors after compilation
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${LOCALBASE}
+CONFIGURE_WRKSRC=	${WRKSRC}/config
 
 #
 # Copy the freebsd port setup file to automatically generate setup.h
@@ -34,5 +32,8 @@ pre-build:
 	fi;
 	${CHMOD} u+x ${WRKSRC}/pkg-install || exit 1
 	${CHMOD} u+x ${WRKSRC}/pkg-deinstall || exit 1
+
+post-configure:
+	@${REINPLACE_CMD} -e 's+^MAIL=+MAIL="/bin/true"+' ${WRKSRC}/sendreport.sh
 
 .include <bsd.port.mk>
