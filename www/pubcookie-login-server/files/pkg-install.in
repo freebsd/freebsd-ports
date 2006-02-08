@@ -1,0 +1,39 @@
+#!/bin/sh
+
+PREFIX=%%PREFIX%%
+CONF_FILES="%%CONF_FILES%%"
+CONF_DIRS="%%CONF_DIRS%%"
+
+case $2 in
+POST-INSTALL)
+	for cfgdir in ${CONF_DIRS}; do
+		mkdir -p ${PREFIX}/${cfgdir}
+	done
+	for cfgfile in ${CONF_FILES}; do
+		src=${cfgfile%:*}
+		dst=${cfgfile#*:}
+		if [ ! -e ${PREFIX}/${dst} ]; then
+			cp ${PREFIX}/${src} ${PREFIX}/${dst}
+		fi
+	done
+	;;
+DEINSTALL)
+	for cfgfile in ${CONF_FILES}; do
+		src=${cfgfile%:*}
+		dst=${cfgfile#*:}
+		if cmp -s ${PREFIX}/${dst} ${PREFIX}/${src} ; then
+			rm ${PREFIX}/${dst}
+		fi
+	done
+	for cfgdir in ${CONF_DIRS}; do
+		rmdir ${PREFIX}/${cfgdir} 2> /dev/null || true
+	done
+	;;
+POST-DEINSTALL)
+	# We have to do this twice because the directories need to be
+	# done the @dirrms are processed, but direcories may not yet be
+	# fully cleaned the first time. 
+	for cfgdir in ${CONF_DIRS}; do
+		rmdir ${PREFIX}/${cfgdir} 2> /dev/null || true
+	done
+esac

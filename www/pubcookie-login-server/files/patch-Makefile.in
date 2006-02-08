@@ -1,0 +1,51 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -375,7 +375,7 @@
+ install: $(KEY_DIR) @install_login@ @install_apache@ 
+ @IF_MOD@	$(INSTALL_BIN) keyclient $(PUBCOOKIE_DIR)
+ 
+-install-login: @no_login@ $(LOGIN_DIR) $(TEMPLATE_DIR) $(TEMPLATE_DIR).default $(LOGIN_TEMPLATES) $(LOGIN_IMG_DIR) $(TEMPLATE_DIR).default/images $(LOGIN_IMAGES) login_server
++install-login: @no_login@ $(LOGIN_DIR) $(TEMPLATE_DIR).default $(LOGIN_TEMPLATES) $(TEMPLATE_DIR).default/images $(LOGIN_IMAGES) login_server
+ 	@for file in $(INDEX_FILES); do \
+ 		echo $(INSTALL_BIN) $$file $(LOGIN_DIR); \
+ 		$(INSTALL_BIN) $$file $(LOGIN_DIR); \
+@@ -384,24 +384,10 @@
+ 		echo $(INSTALL_OTHER) $$file $(TEMPLATE_DIR).default; \
+ 		$(INSTALL_OTHER) $$file $(TEMPLATE_DIR).default; \
+ 	done
+-	@for file in $(LOGIN_TEMPLATES); do \
+-		bfile=`basename $$file`; \
+-		$(TEST) ! -f $(TEMPLATE_DIR)/$$bfile && \
+-		 	echo $(INSTALL_OTHER) $$file $(TEMPLATE_DIR) && \
+-			$(INSTALL_OTHER) $$file $(TEMPLATE_DIR); \
+-		true; \
+-	done
+ 	@for file in $(LOGIN_IMAGES); do \
+ 		echo $(INSTALL_OTHER) $$file $(TEMPLATE_DIR).default/images; \
+ 		$(INSTALL_OTHER) $$file $(TEMPLATE_DIR).default/images; \
+ 	done
+-	@for file in $(LOGIN_IMAGES); do \
+-		bfile=`basename $$file`; \
+-		$(TEST) ! -f $(LOGIN_IMG_DIR)/$$bfile && \
+-			echo $(INSTALL_OTHER) $$file $(LOGIN_IMG_DIR) && \
+-			$(INSTALL_OTHER) $$file $(LOGIN_IMG_DIR); \
+-		true; \
+-	done
+ 	@for file in $(KEYMGT_FILES); do \
+ 		echo $(INSTALL_BIN) $$file $(PUBCOOKIE_DIR); \
+ 		$(INSTALL_BIN) $$file $(PUBCOOKIE_DIR); \
+@@ -414,11 +400,6 @@
+ 	done
+ 	$(INSTALL_OTHER) doc/starter.key $(PUBCOOKIE_DIR)
+ 	$(INSTALL_OTHER) doc/config.login.sample $(PUBCOOKIE_DIR)
+-	@$(TEST) ! -f $(PUBCOOKIE_DIR)/config && \
+-		echo $(INSTALL_OTHER) doc/config.login.sample \
+-			 $(PUBCOOKIE_DIR)/config && \
+-		$(INSTALL_OTHER) doc/config.login.sample $(PUBCOOKIE_DIR)/config; \
+-		true
+ 
+ install-apache: @no_module@
+ 	@echo "Making all in module"

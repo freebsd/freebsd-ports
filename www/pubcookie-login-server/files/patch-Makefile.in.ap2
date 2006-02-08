@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Makefile.in.ap2.orig
++++ Makefile.in.ap2
+@@ -7,14 +7,14 @@
+ 
+ top_dir      = @APACHE_PREFIX@
+ 
+-top_srcdir   = @APACHE_PREFIX@
+-top_builddir = @APACHE_PREFIX@
++top_srcdir   = /usr/local/share/apache2
++top_builddir = /usr/local/share/apache2
+ 
+ include @APACHE_INSTALLBUILDDIR@/special.mk
+ 
+ 
+ DEFS=-DAPACHE -DAPACHE2 -DHAVE_CONFIG_H
+-INCLUDES=-I.
++INCLUDES=-I. -I/usr/local/include/apache2
+ 
+ all: local-shared-build @need_slib_clean@
+ 
