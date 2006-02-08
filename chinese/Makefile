@@ -97,6 +97,7 @@
     SUBDIR += p5-Lingua-ZH-TaBE
     SUBDIR += p5-Lingua-ZH-Toke
     SUBDIR += p5-Lingua-ZH-Wrap
+    SUBDIR += pcmanfm
     SUBDIR += pcmanx
     SUBDIR += php_doc-hk
     SUBDIR += php_doc-tw
