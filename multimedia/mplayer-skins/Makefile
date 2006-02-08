@@ -168,10 +168,6 @@ DETECTION_FILE=	${LOCALBASE}/${myDATADIR}/${PKGNAME}
 
 PLIST_SUB+=	PKGNAME="${PKGNAME}"
 
-.if defined(BATCH)
-WITH_SKIN_ALL=yes
-.endif	# BATCH
-
 #
 # Allskins
 #
@@ -188,7 +184,7 @@ ALLSKINS=	ABYSS ALIENMIND AVIFILE BLUECURVE BLUEHEART CANARY \
 		DEFAULT DEFAULT_SMALL
 
 # Build and install all skins (rather expensive)
-.if defined(WITH_SKIN_ALL)
+.if (defined(BATCH) && !defined(_OPTIONS_READ)) || defined(WITH_SKIN_ALL)
 .for f in ${ALLSKINS}
 WITH_SKIN_${f}=	yes
 .endfor
