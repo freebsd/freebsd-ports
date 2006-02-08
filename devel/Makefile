@@ -318,6 +318,7 @@
     SUBDIR += gettext-lint
     SUBDIR += getxml
     SUBDIR += gindent
+    SUBDIR += git
     SUBDIR += glade2
     SUBDIR += glademm
     SUBDIR += glib-java

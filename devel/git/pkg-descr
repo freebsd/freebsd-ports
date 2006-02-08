@@ -1,0 +1,11 @@
+GIT is a "directory content manager" designed to handle absolutely massive
+projects with speed and efficiency, and the release of the 2.6.12 (and later)
+versions of the Linux kernel as well as more and more other projects switching
+to it would indicate that it does this task well.
+
+GIT falls in the category of distributed source code management tools, similar
+to e.g. GNU Arch or Monotone (or, in the commercial world, BitKeeper). Every
+GIT working directory is a full-fledged repository with full revision tracking
+capabilities, not dependent on network access to a central server.
+
+WWW: http://git.or.cz/
