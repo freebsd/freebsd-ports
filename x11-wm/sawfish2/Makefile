@@ -7,7 +7,7 @@
 
 PORTNAME=	sawfish2
 PORTVERSION=	1.3
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,6 @@ GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
 WANT_GNOME=	yes
@@ -46,10 +45,5 @@ INFO=		sawfish
 post-patch:
 	@${REINPLACE_CMD} -e 's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[$$][(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-
-post-install:
-	install-info --section="X11 window manager" \
-	--entry="* sawfish: (sawfish).           sawfish programming manual" \
-	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

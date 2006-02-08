@@ -1,15 +1,12 @@
-
-$FreeBSD$
-
---- capplet/Makefile.in.orig	Mon Apr 29 21:43:11 2002
-+++ capplet/Makefile.in	Mon Apr 29 21:44:12 2002
+--- capplet/Makefile.in.orig	Sun Jan 12 21:30:41 2003
++++ capplet/Makefile.in	Wed Feb  8 04:25:14 2006
 @@ -26,8 +26,8 @@
  srcdir=@srcdir@
  VPATH=@srcdir@:@top_srcdir@
  
 -G_CC_DIR = $(GNOMEDIR)/share/control-center-2.0/capplets
 -G_PIXMAP_DIR = $(GNOMEDIR)/share/pixmaps
-+G_CC_DIR = $(GNOMEDIR)/share/gnome/control-center-2.0/capplets
++G_CC_DIR = $(GNOMEDIR)/share/gnome/applications
 +G_PIXMAP_DIR = $(GNOMEDIR)/share/gnome/pixmaps
  
  all :
