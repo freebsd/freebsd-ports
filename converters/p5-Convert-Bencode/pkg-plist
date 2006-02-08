@@ -1,3 +1,6 @@
 %%SITE_PERL%%/Convert/Bencode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Bencode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
+@dirrmtry %%SITE_PERL%%/auto/Convert
 @dirrmtry %%SITE_PERL%%/Convert
