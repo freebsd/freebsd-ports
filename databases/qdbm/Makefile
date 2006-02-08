@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.44
+PORTVERSION=	1.8.45
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -16,7 +16,6 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(SLAVEPORT)
@@ -56,7 +55,9 @@ post-install:
 
 .else
 
-LIB_DEPENDS+=	qdbm.12:${PORTSDIR}/databases/qdbm
+BUILD_DEPENDS+=	qdbm>=${PKGNAME:S/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-//}:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	qdbm:${PORTSDIR}/databases/qdbm
+RUN_DEPENDS+=	qdbm>=${PKGNAME:S/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-//}:${PORTSDIR}/databases/qdbm
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -84,7 +85,7 @@ CFLAGS+=		${PTHREAD_CFLAGS}
 
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
 .if ${PERL_LEVEL} < 500600
-IGNORE=	This port requires perl 5.6.0 or later, Install lang/perl5 then try again
+IGNORE=	this port requires perl 5.6.0 or later, Install lang/perl5 then try again
 .endif
 .endif
 
