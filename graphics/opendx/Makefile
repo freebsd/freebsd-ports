@@ -51,7 +51,8 @@ CONFIGURE_ARGS+=	--without-netcdf
 .endif
 
 .if !defined(WITHOUT_JAVA)
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
 RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:${PORTSDIR}/graphics/cosmoplayer
 CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar	\
@@ -85,13 +86,16 @@ post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
 .if !defined(WITHOUT_JAVA)
 	@${RM} ${PREFIX}/dx/java/server/bin/startserver.bat
-	@${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
+	${CHMOD} 0775 ${PREFIX}/dx/java/server/nets
+	${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
 	@${ECHO} "---------------------------------------------------------"	\
 		>> ${PKGMESSAGE}
 	@${ECHO} "Before starting ${PREFIX}/dx/java/server/bin/startserver"	\
 		>> ${PKGMESSAGE}
 	@${ECHO} "you must install the port graphics/opendx-samples."		\
 		>> ${PKGMESSAGE}
+.else
+	${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/}
 .endif
 	@${ECHO} "---------------------------------------------------------"	\
 		>> ${PKGMESSAGE}
