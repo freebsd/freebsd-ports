@@ -7,18 +7,14 @@ lib/%%FIREFOX%%/chrome/zh-CN.jar
 lib/%%FIREFOX%%/chrome/zh-CN.manifest
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
-lib/%%FIREFOX%%/searchplugins/yahoo-cn.src
-lib/%%FIREFOX%%/searchplugins/google.src
-lib/%%FIREFOX%%/searchplugins/amazondotcom.src
+lib/%%FIREFOX%%/searchplugins/baidu.gif
 lib/%%FIREFOX%%/searchplugins/baidu.src
+lib/%%FIREFOX%%/searchplugins/eBay-zh-CN.gif
 lib/%%FIREFOX%%/searchplugins/eBay-zh-CN.src
+lib/%%FIREFOX%%/searchplugins/taobao.png
 lib/%%FIREFOX%%/searchplugins/taobao.src
 lib/%%FIREFOX%%/searchplugins/yahoo-cn.gif
-lib/%%FIREFOX%%/searchplugins/google.gif
-lib/%%FIREFOX%%/searchplugins/amazondotcom.png
-lib/%%FIREFOX%%/searchplugins/baidu.gif
-lib/%%FIREFOX%%/searchplugins/eBay-zh-CN.gif
-lib/%%FIREFOX%%/searchplugins/taobao.png
+lib/%%FIREFOX%%/searchplugins/yahoo-cn.src
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html
