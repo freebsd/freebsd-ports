@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.12
 CATEGORIES=	archivers ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A Ruby module for reading and writing zip files
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	zlib
 
-WRKSRC=		${WRKDIR}/ruby${PORTNAME}
+WRKSRC=		${WRKDIR}/rubyzip-${PORTVERSION}
 NO_BUILD=	yes
 
 DOCS=		ChangeLog NEWS README TODO
@@ -28,7 +29,7 @@ EXAMPLES=	samples/*
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/zip
-	${INSTALL_DATA} ${WRKSRC}/zip/*.rb ${RUBY_SITELIBDIR}/zip/
+	${INSTALL_DATA} ${WRKSRC}/lib/zip/*.rb ${RUBY_SITELIBDIR}/zip
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
