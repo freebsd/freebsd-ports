@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/18256
+MASTER_SITE_SUBDIR=	${PORTNAME}/18847
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
+
+LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
@@ -22,8 +24,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GECKO=	firefox mozilla seamonkey
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-gecko_engine=${GECKO} \
-		--disable-ssl
+CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
