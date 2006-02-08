@@ -1,5 +1,6 @@
 etc/jails.conf.sample
-jails/addons/dellist.txt
+jails/addons/dellist4.txt
+jails/addons/dellist5.txt
 jails/addons/etc/login.conf
 jails/addons/etc/make.conf
 jails/addons/runme.sh
