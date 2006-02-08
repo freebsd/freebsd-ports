@@ -9,7 +9,8 @@ PORTNAME=	silkymail
 PORTVERSION=	1.1.10
 PORTREVISION=	1
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/SilkyMail/%SUBDIR%/
+MASTER_SITES=	http://alkoholix.tallence.de/FreeBSD/ports/distfiles-local/silkymail/%SUBDIR%/ \
+		ftp://ftp.cyrusoft.com/pub/SilkyMail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:S/./_/g}
 DISTNAME=       ${PORTNAME}
 EXTRACT_SUFX=   .tgz
@@ -17,11 +18,12 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	voisine@yahoo.com
 COMMENT=	A webmail system which accesses mail over IMAP
 
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+USE_PHP=	dba imap
+WANT_PHP_MOD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
-NO_PACKAGE=	"Requires IMAP/IMAP_SSL enabled in www/mod_php4"
+NO_PACKAGE=	requires GDBM support in databases/php4-dba, which is off by default
 
 SILKYMAILDIR=	${LOCALBASE}/www/${PORTNAME}
 
@@ -31,15 +33,9 @@ do-install:
 	@${CHOWN} www:www ${SILKYMAILDIR}/silkymail/imp/data
 
 pre-install:
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "c-client4.8"; then \
+	@if ! /usr/bin/ldd -a ${LOCALBASE}/lib/php/20020429/dba.so | ${GREP} -q -e "libgdbm.so"; then \
 	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure mod_php4 with IMAP or IMAP-SSL support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "gdbm.3"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure mod_php4 with GDBM support." ; \
+	    ${ECHO_MSG} "databases/php4-dba needs to be built with GDBM support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
