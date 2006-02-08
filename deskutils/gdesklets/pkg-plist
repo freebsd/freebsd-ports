@@ -1,5 +1,4 @@
 bin/gdesklets
-bin/gdesklets-display-thumbnailer
 lib/gdesklets/ctrlinfo
 lib/gdesklets/Controls/ArrayBuffer/__init__.py
 lib/gdesklets/Controls/ArrayBuffer/__init__.pyc
@@ -51,9 +50,6 @@ lib/gdesklets/Controls/URI/__init__.pyo
 lib/gdesklets/Controls/__init__.py
 lib/gdesklets/Controls/__init__.pyc
 lib/gdesklets/Controls/__init__.pyo
-lib/gdesklets/NullObject.py
-lib/gdesklets/NullObject.pyc
-lib/gdesklets/NullObject.pyo
 lib/gdesklets/Sensors/External/__init__.py
 lib/gdesklets/Sensors/External/__init__.pyc
 lib/gdesklets/Sensors/External/__init__.pyo
@@ -185,6 +181,9 @@ lib/gdesklets/display/TargetGauge.pyo
 lib/gdesklets/display/TargetGroup.py
 lib/gdesklets/display/TargetGroup.pyc
 lib/gdesklets/display/TargetGroup.pyo
+lib/gdesklets/display/TargetGroup2.py
+lib/gdesklets/display/TargetGroup2.pyc
+lib/gdesklets/display/TargetGroup2.pyo
 lib/gdesklets/display/TargetImage.py
 lib/gdesklets/display/TargetImage.pyc
 lib/gdesklets/display/TargetImage.pyo
@@ -575,6 +574,8 @@ share/locale/ja/LC_MESSAGES/gdesklets.mo
 share/locale/ko/LC_MESSAGES/gdesklets.mo
 share/locale/lt/LC_MESSAGES/gdesklets.mo
 share/locale/ms/LC_MESSAGES/gdesklets.mo
+share/locale/nb/LC_MESSAGES/gdesklets.mo
+share/locale/ne/LC_MESSAGES/gdesklets.mo
 share/locale/nl/LC_MESSAGES/gdesklets.mo
 share/locale/no/LC_MESSAGES/gdesklets.mo
 share/locale/pa/LC_MESSAGES/gdesklets.mo

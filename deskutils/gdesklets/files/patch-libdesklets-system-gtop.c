@@ -9,3 +9,13 @@
  
  typedef struct
  {
+@@ -1275,8 +1277,8 @@
+         tuple = PyTuple_New(len);
+
+         for(i = 0; i < len; ++i) {
+-            p = &glibtop_sys_siglist[i];
+             PyObject* d;
++            p = &glibtop_sys_siglist[i];
+
+             d = PyDict_New();
+             my_dict_add_and_decref(d, "number", PyI_L(p->number));
