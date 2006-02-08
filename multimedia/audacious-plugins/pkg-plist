@@ -39,6 +39,7 @@ lib/libaudacious.so
 lib/libaudacious.so.2
 libdata/pkgconfig/audacious.pc
 share/applications/audacious.desktop
+share/pixmaps/audacious.png
 %%DATADIR%%/Skins/Default/balance.png
 %%DATADIR%%/Skins/Default/cbuttons.png
 %%DATADIR%%/Skins/Default/eq_ex.png
