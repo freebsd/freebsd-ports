@@ -23,6 +23,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Helper.pm
 %%SITE_PERL%%/Catalyst/Log.pm
 %%SITE_PERL%%/Catalyst/Manual.pod
+%%SITE_PERL%%/Catalyst/Manual/About.pod
 %%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
 %%SITE_PERL%%/Catalyst/Manual/FAQ.pod
 %%SITE_PERL%%/Catalyst/Manual/Internals.pod
@@ -31,6 +32,8 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 %%SITE_PERL%%/Catalyst/Model.pm
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader.pm
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/YAML.pm
 %%SITE_PERL%%/Catalyst/Plugin/Static/Simple.pm
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
@@ -46,6 +49,7 @@ bin/catalyst.pl
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/ConfigLoader
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Static
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
