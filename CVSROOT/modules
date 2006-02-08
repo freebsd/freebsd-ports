@@ -4636,7 +4636,6 @@ jakarta-tomcat3	ports/www/jakarta-tomcat3
 jakarta-tomcat4	ports/www/jakarta-tomcat4
 jakarta-tomcat41	ports/www/jakarta-tomcat41
 jakarta-tomcat5	ports/www/jakarta-tomcat5
-jakarta-tomcat55	ports/www/jakarta-tomcat55
 jakelib2	ports/devel/jakelib2
 jalbum		ports/graphics/jalbum
 jam		ports/devel/jam
@@ -12571,6 +12570,7 @@ tolua++		ports/lang/tolua++
 tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
+tomcat55	ports/www/tomcat55
 tome		ports/games/tome
 tomsfastmath	ports/math/tomsfastmath
 toolame		ports/audio/toolame
