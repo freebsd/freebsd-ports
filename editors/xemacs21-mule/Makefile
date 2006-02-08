@@ -173,9 +173,6 @@ CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
 SITE_INCLUDES+=		${LOCALBASE}/include
 SITE_LIBRARIES+=	${LOCALBASE}/lib
 
-.if defined(CANNA)
-PLIST_FILES+=		lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
-.endif
 .if defined(PKGNAMEPREFIX)
 .if ${PKGNAMEPREFIX} == "ja-"
 PLIST_FILES+=		man/ja/man1/xemacs.1
