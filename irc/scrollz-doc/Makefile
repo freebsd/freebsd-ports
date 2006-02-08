@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.gwi.net/~jcoombs/
 MAINTAINER=	kurlon@hotmail.com
 COMMENT=	The docs for the scrollz irc client
 
+DEPRECATED=	Mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-03-25
+
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/scrollz
 	${INSTALL_MAN} ${WRKSRC}/ScrollZ.doc ${PREFIX}/share/doc/scrollz
