@@ -10385,6 +10385,7 @@ ptmalloc	ports/devel/ptmalloc
 ptoc		ports/lang/ptoc
 ptunnel		ports/net/ptunnel
 ptypes		ports/devel/ptypes
+pubcookie-login-server	ports/www/pubcookie-login-server
 publib		ports/devel/publib
 publicfile	ports/www/publicfile
 puf		ports/ftp/puf
