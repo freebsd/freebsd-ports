@@ -6,31 +6,29 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		11.0
+DISTVERSION=		12.0
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 
 MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
 
-BROKEN=			Size mismatch
-
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
-USE_GCC=		3.4
+USE_GCC=		3.3+
 USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=		TEA_ONLY "Build original GTK-only version" off \
-			ASPELL "Build with GNU aspell support" off
+			ASPELL "Build with GNU aspell support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TEA_ONLY)
-CONFIGURE_ARGS+=	--enable-tea
+.if !defined(WITH_TEA_ONLY)
+CONFIGURE_ARGS+=	--enable-chai
+USE_GNOME+=		gtksourceview
 .endif
 
 .if defined(WITH_ASPELL)
