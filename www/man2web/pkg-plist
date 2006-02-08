@@ -2,3 +2,4 @@
 bin/man2web
 %%CGIDIR%%/man2web
 etc/man2web.conf.default
+@dirrmtry %%CGIDIR%%
