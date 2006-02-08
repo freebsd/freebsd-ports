@@ -2165,3 +2165,4 @@ japanese/gn-gnspool||2006-02-06|Remove expired port
 www/adzap2squirm||2006-02-06|Remove expired port
 graphics/linux-bmrt||2006-02-06|Remove dead project
 www/jakarta-tomcat55|www/tomcat55|2006-02-07|Renamed (no longer a Jakarta project)
+comms/qtpcr||2006-02-08|Remove expired port
