@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
+MASTER_SITE_SUBDIR=	../by-authors/id/J/JR/JROBINSON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -32,6 +32,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint.3 \
 	HTML::Widget::Constraint::ASCII.3 \
 	HTML::Widget::Constraint::All.3 \
+	HTML::Widget::Constraint::AllOrNone.3 \
 	HTML::Widget::Constraint::Any.3 \
 	HTML::Widget::Constraint::Callback.3 \
 	HTML::Widget::Constraint::Date.3 \
@@ -39,6 +40,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Email.3 \
 	HTML::Widget::Constraint::Equal.3 \
 	HTML::Widget::Constraint::HTTP.3 \
+	HTML::Widget::Constraint::In.3 \
 	HTML::Widget::Constraint::Integer.3 \
 	HTML::Widget::Constraint::Length.3 \
 	HTML::Widget::Constraint::Maybe.3 \
@@ -53,6 +55,8 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Element::Hidden.3 \
 	HTML::Widget::Element::Password.3 \
 	HTML::Widget::Element::Radio.3 \
+	HTML::Widget::Element::RadioGroup.3 \
+	HTML::Widget::Element::Reset.3 \
 	HTML::Widget::Element::Select.3 \
 	HTML::Widget::Element::Span.3 \
 	HTML::Widget::Element::Submit.3 \
