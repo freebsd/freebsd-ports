@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Wed Feb  8 11:53:06 2006
++++ src/Makefile.in	Wed Feb  8 11:53:28 2006
+@@ -211,7 +211,6 @@
+ uim_la_LDFLAGS = -avoid-version \
+ 		     	  -rpath $(moduledir) \
+ 			  -module \
+-			  @LIBTOOL_EXPORT_OPTIONS@ \
+ 			  @SCIM_LIBS@ \
+ 			  @UIM_LIBS@
+ 
