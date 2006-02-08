@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Table
-PORTVERSION=	2.02
+PORTVERSION=	2.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -20,4 +20,10 @@ PERL_CONFIGURE=	yes
 MAN3=		HTML::Table.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
