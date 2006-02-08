@@ -345,6 +345,7 @@
     SUBDIR += mod_php5
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_proxy_html
+    SUBDIR += mod_pubcookie
     SUBDIR += mod_put
     SUBDIR += mod_python
     SUBDIR += mod_python3
