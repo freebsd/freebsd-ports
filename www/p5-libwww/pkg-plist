@@ -5,6 +5,7 @@ bin/lwp-download
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/.packlist
 %%SITE_PERL%%/Bundle/LWP.pm
 %%SITE_PERL%%/File/Listing.pm
 %%SITE_PERL%%/HTML/Form.pm
@@ -59,19 +60,18 @@ bin/lwp-rget
 %%SITE_PERL%%/WWW/RobotRules/AnyDBM_File.pm
 %%SITE_PERL%%/lwpcook.pod
 %%SITE_PERL%%/lwptut.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
-@dirrm %%SITE_PERL%%/WWW/RobotRules
+@dirrmtry %%SITE_PERL%%/WWW/RobotRules
 @dirrmtry %%SITE_PERL%%/WWW
-@dirrm %%SITE_PERL%%/Net/HTTP
+@dirrmtry %%SITE_PERL%%/Net/HTTP
 @dirrmtry %%SITE_PERL%%/Net
-@dirrm %%SITE_PERL%%/LWP/Authen
-@dirrm %%SITE_PERL%%/LWP/Protocol
+@dirrmtry %%SITE_PERL%%/LWP/Protocol
+@dirrmtry %%SITE_PERL%%/LWP/Authen
 @dirrmtry %%SITE_PERL%%/LWP
-@dirrm %%SITE_PERL%%/HTTP/Cookies
-@dirrm %%SITE_PERL%%/HTTP/Headers
-@dirrm %%SITE_PERL%%/HTTP/Request
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl
-@dirrmtry %%SITE_PERL%%/Bundle
-@dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/HTTP/Request
+@dirrmtry %%SITE_PERL%%/HTTP/Headers
+@dirrmtry %%SITE_PERL%%/HTTP/Cookies
 @dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
