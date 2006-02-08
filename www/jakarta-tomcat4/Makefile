@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www java
 MASTER_SITES=	http://distfiles.coredump.cn/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/liukang/
@@ -132,12 +132,6 @@ do-install:
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
 	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Creating PID file..."
-	@${TOUCH} ${PID_FILE}
-	@${CHOWN} ${TOMCAT_USER}:${TOMCAT_GROUP} ${PID_FILE}
-	@${CHMOD} 0600 ${PID_FILE}
 	@${ECHO_MSG} " [ DONE ]"
 
 post-install:
