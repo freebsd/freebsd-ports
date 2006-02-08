@@ -7,18 +7,14 @@ lib/%%FIREFOX%%/chrome/ko.jar
 lib/%%FIREFOX%%/chrome/ko.manifest
 lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 lib/%%FIREFOX%%/defaults/profile/bookmarks.html
-lib/%%FIREFOX%%/searchplugins/yahoo-kr.src
-lib/%%FIREFOX%%/searchplugins/google-ko.src
-lib/%%FIREFOX%%/searchplugins/daum-ko.src
-lib/%%FIREFOX%%/searchplugins/naver-ko.src
-lib/%%FIREFOX%%/searchplugins/amazondotcom.src
-lib/%%FIREFOX%%/searchplugins/creativecommons.src
-lib/%%FIREFOX%%/searchplugins/yahoo-kr.gif
-lib/%%FIREFOX%%/searchplugins/google-ko.gif
 lib/%%FIREFOX%%/searchplugins/daum-ko.gif
+lib/%%FIREFOX%%/searchplugins/daum-ko.src
+lib/%%FIREFOX%%/searchplugins/google-ko.gif
+lib/%%FIREFOX%%/searchplugins/google-ko.src
 lib/%%FIREFOX%%/searchplugins/naver-ko.gif
-lib/%%FIREFOX%%/searchplugins/amazondotcom.png
-lib/%%FIREFOX%%/searchplugins/creativecommons.png
+lib/%%FIREFOX%%/searchplugins/naver-ko.src
+lib/%%FIREFOX%%/searchplugins/yahoo-kr.gif
+lib/%%FIREFOX%%/searchplugins/yahoo-kr.src
 @unexec mv %D/lib/%%FIREFOX%%/browserconfig.properties.orig %D/lib/%%FIREFOX%%/browserconfig.properties
 @unexec mv %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js.orig %D/lib/%%FIREFOX%%/defaults/pref/firefox-l10n.js
 @unexec mv %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html.orig %D/lib/%%FIREFOX%%/defaults/profile/bookmarks.html

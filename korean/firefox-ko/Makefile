@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.5a
 CATEGORIES=	korean www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/firefox/ \
 		ftp://chinsan2.twbbs.org/distfiles/firefox/
