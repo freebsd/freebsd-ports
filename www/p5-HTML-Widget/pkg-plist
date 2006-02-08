@@ -3,6 +3,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/ASCII.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/All.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/AllOrNone.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Any.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Date.pm
@@ -10,6 +11,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/Email.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Equal.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/HTTP.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/In.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Integer.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Length.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Maybe.pm
@@ -24,6 +26,8 @@
 %%SITE_PERL%%/HTML/Widget/Element/Hidden.pm
 %%SITE_PERL%%/HTML/Widget/Element/Password.pm
 %%SITE_PERL%%/HTML/Widget/Element/Radio.pm
+%%SITE_PERL%%/HTML/Widget/Element/RadioGroup.pm
+%%SITE_PERL%%/HTML/Widget/Element/Reset.pm
 %%SITE_PERL%%/HTML/Widget/Element/Select.pm
 %%SITE_PERL%%/HTML/Widget/Element/Span.pm
 %%SITE_PERL%%/HTML/Widget/Element/Submit.pm
