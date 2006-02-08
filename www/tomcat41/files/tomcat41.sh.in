@@ -109,7 +109,7 @@ log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
 if [ -f $pidfile ]; then
   read rc_pid junk < $pidfile
   if [ ! -z "$rc_pid" ]; then
-    procname=`ps -o command= $rc_pid | cut -d ' ' -f 1`
+    procname=`ps -o comm= $rc_pid`
   fi
 fi
 
@@ -118,7 +118,14 @@ required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 command="/usr/sbin/daemon"
 flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${log_args}"
 
+start_precmd=pid_touch
 stop_cmd="tomcat%%TOMCAT_VERSION%%_stop"
+
+pid_touch ()
+{
+	touch $pidfile
+	chown $tomcat%%TOMCAT_VERSION%%_user $pidfile
+}
 
 tomcat%%TOMCAT_VERSION%%_stop() {
 	rc_pid=$(check_pidfile $pidfile $procname)
