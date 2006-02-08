@@ -1,6 +1,0 @@
-bin/amyc
-%%WITH_GTK%%bin/amycg
-share/locale/fr/LC_MESSAGES/amyc.mo
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale

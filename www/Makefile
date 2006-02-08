@@ -12,7 +12,6 @@
     SUBDIR += adzap
     SUBDIR += amaya
     SUBDIR += amphetadesk
-    SUBDIR += amyc
     SUBDIR += analog
     SUBDIR += aolserver
     SUBDIR += aolserver-openacs-pg
