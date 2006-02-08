@@ -1,11 +1,12 @@
---- Makefile.orig	Wed May 17 18:33:22 2000
-+++ Makefile	Fri Jun  2 17:38:38 2000
+--- Makefile.orig	Wed May 17 19:33:22 2000
++++ Makefile	Wed Feb  8 19:59:57 2006
 @@ -6,10 +6,17 @@
  
  include make.inc
  
+-all: install lib testing blas_testing timing blas_timing
 +.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
- all: install lib testing blas_testing timing blas_timing
++all: install lib testing timing
 +.else
 +all: install lib
 +.endif
@@ -15,7 +16,7 @@
 +.if defined(ENABLE_TESTING) && ${ENABLE_TESTING} == "YES"
 +lib: blaslib lapacklib tmglib fpmclr_.o
 +.else
-+lib: lapacklib blaslib
++lib: lapacklib
 +.endif
  
  clean: cleanlib cleantesting cleantiming
