@@ -3021,7 +3021,6 @@ glclock		ports/x11-clocks/glclock
 gld		ports/mail/gld
 gle		ports/graphics/gle
 glean		ports/graphics/glean
-glens		ports/science/glens
 glest		ports/games/glest
 glew		ports/graphics/glew
 glflow		ports/net/glflow
