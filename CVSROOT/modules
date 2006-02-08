@@ -7121,6 +7121,7 @@ octave		ports/math/octave
 octave-forge	ports/math/octave-forge
 ode		ports/devel/ode
 ode-devel	ports/devel/ode-devel
+ods2		ports/sysutils/ods2
 ods2reader	ports/emulators/ods2reader
 odsclient	ports/dns/odsclient
 offix-clipboard	ports/x11/offix-clipboard
