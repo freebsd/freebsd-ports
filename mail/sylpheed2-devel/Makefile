@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.2.0.b7
+PORTVERSION=	2.2.0.b8
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.2beta/ \
