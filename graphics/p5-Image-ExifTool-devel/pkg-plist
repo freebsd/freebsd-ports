@@ -3,7 +3,10 @@ bin/exiftool
 %%SITE_PERL%%/File/RandomAccess.pod
 %%SITE_PERL%%/Image/ExifTool.pm
 %%SITE_PERL%%/Image/ExifTool.pod
+%%SITE_PERL%%/Image/ExifTool/AFCP.pm
+%%SITE_PERL%%/Image/ExifTool/AIFF.pm
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
+%%SITE_PERL%%/Image/ExifTool/ASF.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
@@ -11,6 +14,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/CanonRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Casio.pm
 %%SITE_PERL%%/Image/ExifTool/DICOM.pm
+%%SITE_PERL%%/Image/ExifTool/DNG.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
 %%SITE_PERL%%/Image/ExifTool/FujiFilm.pm
@@ -43,6 +47,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/README
+%%SITE_PERL%%/Image/ExifTool/RIFF.pm
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
 %%SITE_PERL%%/Image/ExifTool/Shift.pl
@@ -53,7 +58,6 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/TagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/TagNames.pod
 %%SITE_PERL%%/Image/ExifTool/Unknown.pm
-%%SITE_PERL%%/Image/ExifTool/WAV.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
@@ -76,7 +80,10 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/models.html
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/AIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APP12.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/ASF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/BMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Canon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/CanonCustom.html
@@ -84,6 +91,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Casio.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Composite.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DICOM.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/DNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
@@ -112,13 +120,13 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PostScript.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sigma.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/SigmaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sony.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Unknown.html
-%%PORTDOCS%%%%DOCSDIR%%/TagNames/WAV.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/XMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/index.html
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool
