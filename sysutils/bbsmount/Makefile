@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://phoenix.inf.upol.cz/~jezberam/bbsmount/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
-MAINTAINER=	ejc@crackpot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical disk mounter for the Blackbox slit
 
 USE_X_PREFIX=	yes
