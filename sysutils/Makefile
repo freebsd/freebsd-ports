@@ -354,6 +354,7 @@
     SUBDIR += nwclient602
     SUBDIR += oak
     SUBDIR += obliterate
+    SUBDIR += ods2
     SUBDIR += open
     SUBDIR += openupsd
     SUBDIR += p5-File-Stat-Bits
