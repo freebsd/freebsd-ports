@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20060203
+PORTVERSION=	20060207
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ketas.life.ee/ports/ \
 		http://ketas.si.pri.ee/ports/
