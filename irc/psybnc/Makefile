@@ -9,9 +9,8 @@ PORTNAME=	psybnc
 PORTVERSION=	2.3.1
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://www.psychoid.lam3rz.de/ \
-		http://ircon.linux-de.org/files/ \
-		http://shell.reverse.net/irc/ 
+MASTER_SITES=	http://www.psyBNC.at/download/final/ \
+		http://psyBNC.info/download/final/
 DISTNAME=	psyBNC${PORTVERSION}
 
 MAINTAINER=	webmaster@topfx.com
@@ -25,7 +24,7 @@ USE_OPENSSL=	yes
 
 MAKE_ARGS=		PSYBASE=${PSYBASE} PREFIX=$(PREFIX)
 
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
