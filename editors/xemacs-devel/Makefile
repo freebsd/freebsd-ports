@@ -125,7 +125,10 @@ post-install::
 .for file in b2m ctags ellcc etags gnuclient ootags xemacs-${XEMACS_VER}
 	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
-	${RM} -f ${PREFIX}/bin/send-pr
+	${FIND} ${PREFIX}/lib/xemacs-${XEMACS_VER} -name \*.orig \
+		-exec ${RM} -f \{} \;
+	${RM} -f ${PREFIX}/bin/send-pr \
+		 ${PREFIX}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/modules/auto-autoloads.el~
 #.if defined(WANT_GTK)
 #	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
 #	@${ECHO_MSG} "the maintainer."
