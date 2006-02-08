@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 USE_PYTHON=	yes
 
 DEPRECATED=		dead project
-EXPIRATION_DATE=	2005-02-28
+EXPIRATION_DATE=	2006-02-28
 IGNORE=			does not run
 
 do-build:
