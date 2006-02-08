@@ -10892,7 +10892,6 @@ qtfw		ports/security/qtfw
 qtiplot		ports/math/qtiplot
 qtools		ports/mail/qtools
 qtorrent	ports/net-p2p/qtorrent
-qtpcr		ports/comms/qtpcr
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
 qtstalker	ports/finance/qtstalker
