@@ -1,0 +1,11 @@
+Pubcookie is an open-source package for intra-institutional
+single-sign-on end-user web authentication. More generally, it is an
+approach to identifying users as they browse to an institution's many
+websites that require authentication. It helps an institution reuse
+existing authentication services (like Kerberos, LDAP, or NIS), and it
+limits the exposure of end-user passwords by ensuring they're only sent
+to a trusted login service.
+
+This port contains the Apache module portion of the Pubcookie system.
+
+WWW: http://pubcookie.org/
