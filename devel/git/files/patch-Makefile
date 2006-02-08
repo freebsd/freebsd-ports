@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Jan 29 17:55:20 2006
++++ Makefile	Tue Feb  7 23:12:22 2006
+@@ -61,8 +61,8 @@
+ 
+ # CFLAGS and LDFLAGS are for the users to override from the command line.
+ 
+-CFLAGS = -g -O2 -Wall
+-LDFLAGS =
++#CFLAGS = -g -O2 -Wall
++#LDFLAGS =
+ ALL_CFLAGS = $(CFLAGS)
+ ALL_LDFLAGS = $(LDFLAGS)
+ 
