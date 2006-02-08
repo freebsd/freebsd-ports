@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	Catalyst
-PORTVERSION=	5.62
+PORTVERSION=	5.64
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lars@balker.dk
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Body>=0.5:${PORTSDIR}/www/p5-HTTP-Body \
 		p5-libwww>=5.801:${PORTSDIR}/www/p5-libwww \
-		p5-HTTP-Request-AsCGI>=0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+		p5-HTTP-Request-AsCGI>=0.5:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
 		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Module-Pluggable-Fast>=0.16:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-NEXT>=0:${PORTSDIR}/devel/p5-NEXT \
@@ -36,12 +36,12 @@ BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Test-NoWarnings>=0.082:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-Tree-Simple>=0:${PORTSDIR}/devel/p5-Tree-Simple \
+		p5-Tree-Simple>=1.15:${PORTSDIR}/devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-		p5-Module-Install>=0.45:${PORTSDIR}/devel/p5-Module-Install \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+		p5-Module-Install>=0.54:${PORTSDIR}/devel/p5-Module-Install \
+		p5-YAML>=0.55:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -71,6 +71,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Helper.3 \
 	Catalyst::Log.3 \
 	Catalyst::Manual.3 \
+	Catalyst::Manual::About.3 \
 	Catalyst::Manual::Cookbook.3 \
 	Catalyst::Manual::FAQ.3 \
 	Catalyst::Manual::Internals.3 \
@@ -79,6 +80,8 @@ MAN3=	Catalyst.3 \
 	Catalyst::Manual::Tutorial.3 \
 	Catalyst::Manual::WritingPlugins.3 \
 	Catalyst::Model.3 \
+	Catalyst::Plugin::ConfigLoader.3 \
+	Catalyst::Plugin::ConfigLoader::YAML.3 \
 	Catalyst::Plugin::Static::Simple.3 \
 	Catalyst::Request.3 \
 	Catalyst::Request::Upload.3 \
