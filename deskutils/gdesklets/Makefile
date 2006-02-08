@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.35.2
+PORTVERSION=	0.35.3
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.gdesklets.org/releases/ \
+MASTER_SITES=	http://www.gdesklets.org/downloads/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -39,7 +39,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-GCONF_SCHEMAS=	gdesklets-display-thumbnail.schemas
 MAN1=		gdesklets.1
 
 post-install:
