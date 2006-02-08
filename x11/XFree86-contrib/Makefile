@@ -18,7 +18,7 @@ COMMENT=	XFree86 contrib programs
 
 # Define FORCE_PACKAGE from the command line if you want to override
 # this and build a package
-NO_PACKAGE=	"Binary package distributed by XFree86 already"
+NO_PACKAGE=	Binary package distributed by XFree86 already
 USE_IMAKE=	yes
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/contrib
@@ -29,7 +29,7 @@ MAN1=		ico.1 listres.1 showfont.1 viewres.1 xbiff.1 xcalc.1 \
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
-IGNORE=		"Only for XFree86 version 3"
+IGNORE=		is only for XFree86 version 3
 .endif
 
 .include <bsd.port.post.mk>
