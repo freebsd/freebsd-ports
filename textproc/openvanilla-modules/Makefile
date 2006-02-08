@@ -21,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/scim-1.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textp
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15:env
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_PERL5_BUILD=	yes
 
 OPTIONS=	OVIMArray		"Array Input Module"		on \
 		OVIMBig5		"Big5 Input Module"		off \
