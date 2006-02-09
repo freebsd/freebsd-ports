@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -24,11 +25,8 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PYTHON_PATH=${LOCALBASE}/bin/python
 MAKE_ARGS+=	prefix="${PREFIX}"
-
-pre-patch:
-	${REINPLACE_CMD} "s|/usr/bin/python|${LOCALBASE}/bin/python|g" \
-		${WRKSRC}/git-merge-recursive.py
 
 .include <bsd.port.mk>
