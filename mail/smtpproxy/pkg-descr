@@ -3,4 +3,4 @@ client to a server running on another machine watching that the
 protocol is accomplished. If commands outside the specification are
 sent they are not forwarded to the server.
 
-WWW: http://quietsche-entchen.de/cgi-bin/wiki.cgi/proxies/smtp.proxy.yawk
+WWW: http://quietsche-entchen.de/cgi-bin/wiki.cgi/proxies/SmtpProxy
