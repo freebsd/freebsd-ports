@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
+MASTERDIR=	${.CURDIR}/../mew
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message interface to Emacs Window for mule
 
-# This is a slave port.
-MASTERDIR=	${.CURDIR}/../mew
+BROKEN=		"Not work on this emacs port"
+EXPIRATION_DATE=	2006-04-10
 
 # set emacs port
 USE_EMACS=	yes
