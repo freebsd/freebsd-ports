@@ -1,6 +1,6 @@
---- Config.orig	Thu Feb 17 12:18:46 2005
-+++ Config	Thu Feb 17 12:23:25 2005
-@@ -27,7 +27,7 @@
+--- Config.orig	Tue Feb  7 12:38:13 2006
++++ Config	Tue Feb  7 12:38:46 2006
+@@ -28,7 +28,7 @@
  
  ############################################################################
  # Location of compiler
@@ -9,7 +9,7 @@
  # Location of make program (GNU make required)
  MAKE         = gmake
  # Location of install program (GNU install or compatible required)
-@@ -36,7 +36,8 @@
+@@ -37,7 +37,8 @@
  # Base Compiler options for GCC.
  #BASECFLAGS   = -Wall -g
  #BASELDFLAGS  = -g
@@ -19,7 +19,7 @@
  BASELDFLAGS  = -g -O2
  BASE_LIBS    = -lcrypt
  
-@@ -57,9 +58,9 @@
+@@ -58,9 +59,9 @@
  # which points to ../../imap/c-client. This just reduces the amount of
  # noise output on each line when building the package.
  #
@@ -32,7 +32,7 @@
  CCLIENT_SSL_ENABLE  = true
  
  #
-@@ -79,12 +80,14 @@
+@@ -80,12 +81,14 @@
  # Following works with the mail/cclient port from FreeBSD
  #
  #CCLIENT_INCLUDE = -I/usr/local/include/c-client
@@ -48,7 +48,16 @@
  #CCLIENT_KERB_ENABLE = true
  
  ############################################################################
-@@ -123,12 +126,12 @@
+@@ -99,7 +102,7 @@
+ Z_LIB     = -lz
+ 
+ # LDAP (required if LDAP_ENABLE set)
+-LDAP_INCLUDE =
++LDAP_INCLUDE = -I${LOCALBASE}/include
+ LDAP_LIB     = -lldap
+ 
+ # Pam (required if CCLIENT_PAM_ENABLE set)
+@@ -128,12 +131,12 @@
  # DB definitions (required if SESSION_CACHE_ENABLE set)
  #
  # Following suitable for Redhat Linux which has DB 3 preinstalled

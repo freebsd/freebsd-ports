@@ -4,7 +4,6 @@ etc/rc.d/prayer.sh.sample
 prayer/help/CVS/Root
 prayer/help/CVS/Repository
 prayer/help/CVS/Entries
-prayer/help/CVS/Entries.Log
 prayer/help/compose/CVS/Root
 prayer/help/compose/CVS/Repository
 prayer/help/compose/CVS/Entries
@@ -14,7 +13,10 @@ prayer/help/compose/postponed.html
 prayer/help/compose/role_list.html
 prayer/help/abook_add.html
 prayer/help/abook_list.html
+prayer/help/abook_lookup.html
 prayer/help/abook_search.html
+prayer/help/abook_take.html
+prayer/help/abook_update.html
 prayer/help/abook_xfer.html
 prayer/help/attachments.html
 prayer/help/block.html
@@ -50,9 +52,12 @@ prayer/help/prefs/CVS/Repository
 prayer/help/prefs/CVS/Entries
 prayer/help/prefs/compose1.html
 prayer/help/prefs/compose2.html
+prayer/help/prefs/compose2.html.~1.2.~
 prayer/help/prefs/display1.html
+prayer/help/prefs/display1.html.~1.2.~
 prayer/help/prefs/folder.html
 prayer/help/prefs/general.html
+prayer/help/prefs/general.html.~1.2.~
 prayer/icons/CVS/Root
 prayer/icons/CVS/Repository
 prayer/icons/CVS/Entries
@@ -96,6 +101,7 @@ prayer/etc/prayer-accountd.cf-dist
 prayer/etc/motd.html
 prayer/etc/welcome.html
 prayer/sbin/prayer
+prayer/sbin/prayer-db-prune
 prayer/sbin/prayer-session
 prayer/sbin/prayer-ssl-prune
 prayer/sbin/prayer-sem-prune
@@ -130,4 +136,4 @@ prayer/sbin/prayer-cyclog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p /var/spool/prayer
 @exec chown -R prayer:prayer /var/spool/prayer
-@unexec rmdir /var/spool/prayer
+@dirrmtry /var/spool/prayer
