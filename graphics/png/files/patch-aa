@@ -38,11 +38,11 @@
 +libpng-config:
 +	( cat scripts/libpng-config-head.in; \
 +	echo prefix=\"${PREFIX}\"; \
-+	echo libdir=\"${PREFIX}${LIBDIR}\"; \
++	echo libdir=\"${LIBDIR}\"; \
 +	echo ccopts=\"${ccopts}\"; \
 +	echo cppflags=\"${cppflags}\"; \
-+	echo I_opts=\"-I${PREFIX}${INCSDIR}\"; \
-+	echo L_opts=\"-L${PREFIX}${LIBDIR}\"; \
++	echo I_opts=\"-I${INCSDIR}\"; \
++	echo L_opts=\"-L${LIBDIR}\"; \
 +	echo libs=\"-lpng -lz -lm\"; \
 +	echo ldopts=\"${ldopts}\"; \
 +	cat scripts/libpng-config-body.in ) > libpng-config
