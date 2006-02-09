@@ -1,0 +1,17 @@
+--- info/Makefile.orig	Mon Dec 27 13:00:04 2004
++++ info/Makefile	Tue Jan 31 23:32:37 2006
+@@ -15,12 +15,10 @@
+ ## EDIT THE FOLLOWINGS
+ ##
+ 
+-prefix=/usr/local
++prefix=${PREFIX}
+ infodir=$(prefix)/info
+ 
+-EMACS=emacs
+-#EMACS = xemacs
+-#EMACS = mule
++EMACS=${EMACS_CMD}
+ 
+ INSTALLINFO = `which install-info`
+ #INSTALLINFO = /usr/local/bin/install-info

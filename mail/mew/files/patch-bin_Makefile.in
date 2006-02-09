@@ -1,0 +1,37 @@
+--- bin/Makefile.in.orig	Thu Mar  6 19:42:22 2003
++++ bin/Makefile.in	Wed Feb  1 12:34:41 2006
+@@ -26,6 +26,8 @@
+ LIBS = @LIBS@
+ 
+ INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA = @INSTALL_DATA@
+ LN = ln
+ RM = rm -f
+ MKDIR = mkdir -p
+@@ -95,19 +97,19 @@
+ 	-@if [ ! -d $(bindir) ]; then \
+ 		$(MKDIR) $(bindir); \
+ 	fi
+-	$(INSTALL) -m 555 $(PRG1) $(bindir)
++	${INSTALL_PROGRAM} $(PRG1) $(bindir)
+ 	for f in $(ALT); do \
+ 	  $(RM) $(bindir)/$${f}; $(LN) $(bindir)/$(PRG1) $(bindir)/$${f}; done
+-	$(INSTALL) -m 555 $(PRG2) $(bindir)
+-	$(INSTALL) -m 555 $(PRG3) $(bindir)
++	${INSTALL_PROGRAM} $(PRG2) $(bindir)
++	${INSTALL_PROGRAM} $(PRG3) $(bindir)
+ 	-@if [ ! -d $(mandir) ]; then \
+ 		$(MKDIR) $(mandir); \
+ 	fi
+-	$(INSTALL) -m 444 $(MAN1) $(mandir)
++	${INSTALL_DATA} $(MAN1) $(mandir)
+ 	for f in $(MALT); do \
+ 	  $(RM) $(mandir)/$${f}; $(LN) $(mandir)/$(MAN1) $(mandir)/$${f}; done
+-	$(INSTALL) -m 444 $(MAN2) $(mandir)
+-	$(INSTALL) -m 444 $(MAN3) $(mandir)
++	${INSTALL_DATA} $(MAN2) $(mandir)
++	${INSTALL_DATA} $(MAN3) $(mandir)
+ 
+ ##
+ ## End of Makefile

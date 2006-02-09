@@ -1,0 +1,32 @@
+--- Makefile.in.orig	Wed Dec 22 11:19:14 2004
++++ Makefile.in	Wed Feb  1 12:46:58 2006
+@@ -26,9 +26,7 @@
+ ## Compile engines
+ ##
+ 
+-EMACS = emacs
+-#EMACS = xemacs
+-#EMACS = mule
++#EMACS = emacs
+ 
+ CHECK = xemacs
+ 
+@@ -36,16 +34,13 @@
+ ## A directory where mew*.el[c] will be installed.
+ ##
+ 
+-elispdir = $(prefix)/share/emacs/site-lisp/mew
+-#elispdir  = $(prefix)/lib/$(EMACS)/site-lisp
+-#elispdir = $(prefix)/lib/emacs
++elispdir = $(prefix)/${EMACS_SITE_LISPDIR}/mew
+ 
+ ##
+ ## A directory where etc file will be installed.
+ ##
+ 
+-etcdir = $(prefix)/share/emacs/site-lisp/mew/etc
+-#etcdir = $(prefix)/lib/$(EMACS)/etc/Mew
++etcdir = $(prefix)/${EMACS_SITE_LISPDIR}/mew/etc
+ 
+ ################################################################
+ ##
