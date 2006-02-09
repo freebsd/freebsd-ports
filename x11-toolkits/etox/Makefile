@@ -9,7 +9,8 @@ PORTNAME=	etox
 PORTVERSION=	0.9.0.004
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://enlightenment.freedesktop.org/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	An evas based text layout library
