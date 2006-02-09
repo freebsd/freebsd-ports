@@ -67,3 +67,6 @@ SIZE (qmail/qmail-smtpd-auth-0.31.tar.gz) = 8798
 MD5 (qmail/qmail-smtpd-auth-close3.patch) = 0ba66d73dcba1c68ed714b07e47abd3e
 SHA256 (qmail/qmail-smtpd-auth-close3.patch) = d933e871261d6740cebe5c21cad81146525cfe06a464e277979f61c1242b5ad4
 SIZE (qmail/qmail-smtpd-auth-close3.patch) = 520
+MD5 (qmail/tarpit.patch) = 49a2c0a445981deb09f3af73041d75f5
+SHA256 (qmail/tarpit.patch) = de94abbb71ef5d25e168725e435edd96ce3b14b7347440e0805dcb919b9d9604
+SIZE (qmail/tarpit.patch) = 3089
