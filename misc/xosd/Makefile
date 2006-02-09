@@ -15,14 +15,11 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
@@ -44,7 +41,8 @@ OPTIONS=	XMMS "Install XMMS-OSD plugin" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 PLIST_SUB=	WITH_XMMS=""
 .else
 CONFIGURE_ARGS=	--disable-new-plugin
@@ -52,10 +50,10 @@ PLIST_SUB=	WITH_XMMS="@comment "
 .endif
 
 pre-patch:
-	${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
-	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 .for f in src/libxosd/Makefile.in src/xmms_plugin/Makefile.in
-	${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
+	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
 .endfor
 
 .include <bsd.port.post.mk>
