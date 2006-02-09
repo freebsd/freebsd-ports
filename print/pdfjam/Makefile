@@ -7,6 +7,7 @@
 
 PORTNAME=	pdfjam
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
 		http://www.it.ca/~paul/src/
@@ -16,7 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	paul+ports@it.ca
 COMMENT=	Shell scripts to manipulate PDF files
 
-RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base \
+		bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -29,7 +31,7 @@ NO_BUILD=	yes
 post-patch:
 	@${LN} -s scripts ${WRKSRC}/bin
 .for FILE in ${PLIST_FILES}
-	@${SED} -i '' "1s:^#! /bin/sh:#!${SH}:;s:__LOCALBASE__:${LOCALBASE}:" ${WRKSRC}/${FILE}
+	@${SED} -i '' "1s:^#! /bin/sh:#!${LOCALBASE}/bin/bash:;s:__LOCALBASE__:${LOCALBASE}:" ${WRKSRC}/${FILE}
 .endfor
 
 do-install:
