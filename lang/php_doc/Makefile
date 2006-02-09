@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20051020
+PORTVERSION=	20060209
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -85,6 +85,11 @@ do-install:
 
 # this is for the maintainer only
 
+#
+# php_manual_fr.html.gz
+#
+# Download the files from http://au.php.net/distributions/manual/
+#
 makesum:
 	@> ${MD5_FILE}
 .for l in ${PHP_LANGS}
