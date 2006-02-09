@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Parser
 PORTVERSION=	3.49
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -33,11 +34,7 @@ MAN3=		HTML::Entities.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-
-post-patch:
-	${REINPLACE_CMD} -e '/require 5.006/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e '/open/s/", $$file/ $$file"/g' ${WRKSRC}/t/unicode.t
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
