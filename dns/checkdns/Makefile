@@ -8,9 +8,10 @@
 PORTNAME=	checkdns
 PORTVERSION=	0.5
 CATEGORIES=	dns
-MASTER_SITES=	http://www.enderunix.org/checkdns/
+MASTER_SITES=	http://www.enderunix.org/checkdns/ \
+		http://www.trunix.org/projeler/checkdns/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A domain name server analysis and reporting tool
 
 USE_REINPLACE=	yes
