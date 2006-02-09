@@ -5,16 +5,6 @@ bin/xfv
 lib/foxicons/a_32x32.png
 lib/foxicons/bak_16x16.png
 lib/foxicons/bak_32x32.png
-lib/foxicons/bigapp.png
-lib/foxicons/bigblockdev.png
-lib/foxicons/bigchardev.png
-lib/foxicons/bigdoc.png
-lib/foxicons/bigfolder.png
-lib/foxicons/bigfolderlocked.png
-lib/foxicons/bigfolderopen.png
-lib/foxicons/bigicons.png
-lib/foxicons/bigpipe.png
-lib/foxicons/bigsocket.png
 lib/foxicons/bmp_16x16.png
 lib/foxicons/bmp_32x32.png
 lib/foxicons/bug_16x16.png
@@ -32,10 +22,13 @@ lib/foxicons/core_16x16.png
 lib/foxicons/core_32x32.png
 lib/foxicons/deb_16x16.png
 lib/foxicons/deb_32x32.png
-lib/foxicons/details.png
+lib/foxicons/dia_16x16.png
+lib/foxicons/dia_32x32.png
 lib/foxicons/dirup.png
 lib/foxicons/djvu_16x16.png
 lib/foxicons/djvu_32x32.png
+lib/foxicons/doc_16x16.png
+lib/foxicons/doc_32x32.png
 lib/foxicons/dot_c_32x32.png
 lib/foxicons/dot_h_32x32.png
 lib/foxicons/dot_o_32x32.png
@@ -43,21 +36,14 @@ lib/foxicons/exe_16x16.png
 lib/foxicons/exe_32x32.png
 lib/foxicons/file_16x16.png
 lib/foxicons/file_32x32.png
-lib/foxicons/fileopen.png
-lib/foxicons/find_again.png
-lib/foxicons/fonts.png
 lib/foxicons/gif_16x16.png
 lib/foxicons/gif_32x32.png
 lib/foxicons/h_16x16.png
 lib/foxicons/h_32x32.png
 lib/foxicons/help_16x16.png
 lib/foxicons/help_32x32.png
-lib/foxicons/hidehidden.png
-lib/foxicons/home.png
 lib/foxicons/html_16x16.png
 lib/foxicons/html_32x32.png
-lib/foxicons/image_16x16.png
-lib/foxicons/image_32x32.png
 lib/foxicons/info_16x16.png
 lib/foxicons/info_32x32.png
 lib/foxicons/java_16x16.png
@@ -70,15 +56,6 @@ lib/foxicons/make_16x16.png
 lib/foxicons/make_32x32.png
 lib/foxicons/midi_16x16.png
 lib/foxicons/midi_32x32.png
-lib/foxicons/miniapp.png
-lib/foxicons/miniblockdev.png
-lib/foxicons/minichardev.png
-lib/foxicons/minidoc.png
-lib/foxicons/minifolder.png
-lib/foxicons/minifolderlocked.png
-lib/foxicons/minifolderopen.png
-lib/foxicons/minipipe.png
-lib/foxicons/minisocket.png
 lib/foxicons/move_big.png
 lib/foxicons/mp3_16x16.png
 lib/foxicons/mp3_32x32.png
@@ -86,6 +63,16 @@ lib/foxicons/news_16x16.png
 lib/foxicons/news_32x32.png
 lib/foxicons/o_16x16.png
 lib/foxicons/o_32x32.png
+lib/foxicons/odf_16x16.png
+lib/foxicons/odf_32x32.png
+lib/foxicons/odg_16x16.png
+lib/foxicons/odg_32x32.png
+lib/foxicons/odp_16x16.png
+lib/foxicons/odp_32x32.png
+lib/foxicons/ods_16x16.png
+lib/foxicons/ods_32x32.png
+lib/foxicons/odt_16x16.png
+lib/foxicons/odt_32x32.png
 lib/foxicons/package_16x16.png
 lib/foxicons/package_32x32.png
 lib/foxicons/pdf_16x16.png
@@ -96,24 +83,29 @@ lib/foxicons/postscript_16x16.png
 lib/foxicons/postscript_32x32.png
 lib/foxicons/ppt_16x16.png
 lib/foxicons/ppt_32x32.png
-lib/foxicons/print.png
 lib/foxicons/ps_16x16.png
 lib/foxicons/ps_32x32.png
-lib/foxicons/quit.png
 lib/foxicons/rpm_16x16.png
 lib/foxicons/rpm_32x32.png
-lib/foxicons/search.png
-lib/foxicons/shadowman_16x16.png
-lib/foxicons/shadowman_32x32.png
 lib/foxicons/shared_16x16.png
 lib/foxicons/shared_32x32.png
 lib/foxicons/shell_16x16.png
 lib/foxicons/shell_32x32.png
-lib/foxicons/showhidden.png
-lib/foxicons/smallicons.png
 lib/foxicons/so_32x32.png
 lib/foxicons/sound_16x16.png
 lib/foxicons/sound_32x32.png
+lib/foxicons/svg_16x16.png
+lib/foxicons/svg_32x32.png
+lib/foxicons/sxc_16x16.png
+lib/foxicons/sxc_32x32.png
+lib/foxicons/sxd_16x16.png
+lib/foxicons/sxd_32x32.png
+lib/foxicons/sxi_16x16.png
+lib/foxicons/sxi_32x32.png
+lib/foxicons/sxm_16x16.png
+lib/foxicons/sxm_32x32.png
+lib/foxicons/sxw_16x16.png
+lib/foxicons/sxw_32x32.png
 lib/foxicons/tcl_16x16.png
 lib/foxicons/tcl_32x32.png
 lib/foxicons/tex_16x16.png
@@ -122,24 +114,24 @@ lib/foxicons/text_16x16.png
 lib/foxicons/text_32x32.png
 lib/foxicons/tgz_16x16.png
 lib/foxicons/tgz_32x32.png
+lib/foxicons/tif_16x16.png
+lib/foxicons/tif_32x32.png
 lib/foxicons/tools_16x16.png
 lib/foxicons/tools_32x32.png
 lib/foxicons/vhdl_16x16.png
 lib/foxicons/vhdl_32x32.png
 lib/foxicons/video_16x16.png
 lib/foxicons/video_32x32.png
-lib/foxicons/visio_16x16.png
-lib/foxicons/visio_32x32.png
 lib/foxicons/vlog_16x16.png
 lib/foxicons/vlog_32x32.png
+lib/foxicons/vsd_16x16.png
+lib/foxicons/vsd_32x32.png
 lib/foxicons/wave_16x16.png
 lib/foxicons/wave_32x32.png
-lib/foxicons/word_16x16.png
-lib/foxicons/word_32x32.png
-lib/foxicons/work.png
 lib/foxicons/xbm_16x16.png
 lib/foxicons/xbm_32x32.png
-lib/foxicons/xfv.png
+lib/foxicons/xcf_16x16.png
+lib/foxicons/xcf_32x32.png
 lib/foxicons/xls_16x16.png
 lib/foxicons/xls_32x32.png
 lib/foxicons/xpm_16x16.png
@@ -148,15 +140,18 @@ lib/foxicons/zip_16x16.png
 lib/foxicons/zip_32x32.png
 lib/foxrc/Desktop
 share/locale/ca/LC_MESSAGES/xfe.mo
+share/locale/da/LC_MESSAGES/xfe.mo
 share/locale/de/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
+share/locale/no/LC_MESSAGES/xfe.mo
+share/locale/pl/LC_MESSAGES/xfe.mo
 share/locale/pt_BR/LC_MESSAGES/xfe.mo
 share/locale/pt_PT/LC_MESSAGES/xfe.mo
-share/locale/pl/LC_MESSAGES/xfe.mo
+share/locale/ru/LC_MESSAGES/xfe.mo
 share/locale/tr/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png
 share/pixmaps/xfi.png
@@ -164,7 +159,14 @@ share/pixmaps/xfq.png
 share/pixmaps/xfv.png
 @dirrm lib/foxicons
 @dirrm lib/foxrc
-@dirrm share/pixmaps
+@dirrmtry share/pixmaps
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
-@dirrmtry share/locale/pt_PT
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
