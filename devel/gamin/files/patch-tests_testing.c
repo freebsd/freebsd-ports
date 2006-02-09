@@ -1,6 +1,6 @@
---- tests/testing.c.orig	Fri Apr  8 15:09:45 2005
-+++ tests/testing.c	Fri Apr  8 15:09:57 2005
-@@ -424,9 +424,9 @@
+--- tests/testing.c.orig	Thu Oct 27 12:51:03 2005
++++ tests/testing.c	Tue Feb  7 08:10:40 2006
+@@ -486,9 +486,9 @@
              return (-1);
          }
          /*

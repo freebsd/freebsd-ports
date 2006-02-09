@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gamin
-PORTVERSION=	0.1.5
-PORTREVISION?=	3
+PORTVERSION=	0.1.7
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -17,7 +17,7 @@ COMMENT?=	A file and directory monitoring system
 USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS?=--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -31,10 +31,10 @@ USE_AUTOTOOLS=	libtool:15:inc
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
+	@${REINPLACE_CMD} "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/server/gam_conf.c
 
 .if !defined(GAMIN_SLAVE)
-tests: build
+regression-test: build
 	@${ECHO_MSG} "===> Running gamin regression tests"
 	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} tests)
