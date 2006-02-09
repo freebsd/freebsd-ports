@@ -26,6 +26,7 @@ EXTRACT_DEPENDS?=	${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${POR
 		zip:${PORTSDIR}/archivers/zip \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool
+BUILD_DEPENDS?=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS?=	nspr4:${PORTSDIR}/devel/nspr
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
