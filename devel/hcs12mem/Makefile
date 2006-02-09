@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	hc12mem
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://cml.mfk.net.pl/hc12mem/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		http://cml.mfk.net.pl/hc12mem/
+MASTER_SITE_SUBDIR=	hc12mem/:sf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,DEFAULT
 
 MAINTAINER=	mk@capri.pl
 COMMENT=	HCS12 MCU tool: erase,read,write,protect,unprotect FLASH/EEPROM
