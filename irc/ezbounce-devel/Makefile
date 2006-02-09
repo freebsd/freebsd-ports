@@ -8,14 +8,17 @@
 PORTNAME=	ezbounce
 PORTVERSION=	1.04.b
 CATEGORIES=	irc
-MASTER_SITES=	http://druglord.freelsd.org/ezbounce/
+MASTER_SITES=	http://druglord.freelsd.org/ezbounce/ \
+		http://ezbounce.dc-team.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	A highly configurable IRC Proxy
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+SUB_FILES=	pkg-message
 
 MAN1=		ezbounce.1
 
@@ -80,6 +83,6 @@ do-install:
 .endif
 
 .endif
-	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
