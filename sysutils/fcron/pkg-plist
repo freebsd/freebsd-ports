@@ -1,5 +1,6 @@
 bin/fcronsighup
 bin/fcrontab
+bin/fcrondyn
 etc/fcron.allow.dist
 etc/fcron.conf.dist
 etc/fcron.deny.dist

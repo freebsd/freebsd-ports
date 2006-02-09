@@ -5,6 +5,12 @@ to your /etc/rc.conf:
 	fcron_enable="YES"
 	cron_enable="NO"
 
+install the pam config files
+
+	mkdir -p %%PREFIX%%/etc/pam.d
+	cp %%EXAMPLESDIR%%/fcron.pam %%PREFIX%%/etc/pam.d/fcron
+	cp %%EXAMPLESDIR%%/fcrontab.pam %%PREFIX%%/etc/pam.d/fcrontab
+
 and move any jobs in /etc/crontab to the root fcrontab(5) file. See:
 
 %%EXAMPLESDIR%%

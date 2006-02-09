@@ -3,11 +3,13 @@
 if [ "$2" = PRE-INSTALL ]; then
 	user=fcron
 	group=fcron
+	uid=247
+	gid=247
 
 	if /usr/sbin/pw groupshow $group 2>/dev/null; then
 		echo "Using already existing group \"$group\"."
 	else
-		if /usr/sbin/pw groupadd $group; then
+		if /usr/sbin/pw groupadd $group -g $gid; then
 			echo "Added group \"$group\"."
 		else
 			echo "Unable to add group \"$group\"."
@@ -19,7 +21,7 @@ if [ "$2" = PRE-INSTALL ]; then
 	if /usr/sbin/pw usershow $user 2>/dev/null; then
 		echo "Using already existing user \"$user\"."
 	else
-		if /usr/sbin/pw useradd $user -g $group -c "fcron pseudo-user"; then
+		if /usr/sbin/pw useradd $user -u $uid -g $group -c "fcron pseudo-user"; then
 			echo "Added user \"$user\"."
 		else
 			echo "Unable to add user \"$user\"."
