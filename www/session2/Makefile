@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	session2
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	www python
 MASTER_SITES=	http://quixote.idyll.org/session2/ \
 		http://bsdchat.com/dist/dryice/
@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psy
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in CHANGES default.css README.html README.txt TODO
+.for docfile in ChangeLog default.css README.html README.txt TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
