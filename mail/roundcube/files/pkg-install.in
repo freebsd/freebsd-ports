@@ -1,5 +1,7 @@
 #! /bin/sh
 
+RCUBEROOT=%%RCUBEROOT%%
+
 case $2 in
 
 POST-INSTALL)
@@ -8,6 +10,11 @@ POST-INSTALL)
 	chown -R ${WWWOWN}:${WWWGRP} ${RCUBEROOT}/temp
 	for i in ${RCUBEROOT}/config/db.inc.php ${RCUBEROOT}/config/main.inc.php; do
 		[ -f ${i} ] || cp ${i}.dist ${i}
+	done
+	;;
+DEINSTALL)
+	for i in ${RCUBEROOT}/config/db.inc.php ${RCUBEROOT}/config/main.inc.php; do
+		if cmp -s ${i} ${i}.dist; then rm ${i}; fi
 	done
 	;;
 *)
