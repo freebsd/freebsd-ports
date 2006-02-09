@@ -64,4 +64,9 @@ pre-install:
 	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
+post-install:
+	@${PYTHON_CMD} -c "import py_compile;py_compile.compile('${PYTHON_SITELIBDIR}/CosNaming/__init__.py',None,'${PYTHON_SITELIBDIR}/CosNaming/__init__.pyc',True)"
+	@${PYTHON_CMD} -c "import py_compile;py_compile.compile('${PYTHON_SITELIBDIR}/CosNaming__POA/__init__.py',None,'${PYTHON_SITELIBDIR}/CosNaming__POA/__init__.pyc',True)"
+	@${PYTHON_CMD} -c "import py_compile;py_compile.compile('${PYTHON_SITELIBDIR}/omniidl_be/python.py',None,'${PYTHON_SITELIBDIR}/omniidl_be/python.pyc',True)"
+
 .include <bsd.port.mk>
