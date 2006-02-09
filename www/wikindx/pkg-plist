@@ -76,6 +76,7 @@
 %%WIKINDX%%/core/javascript/common.js
 %%WIKINDX%%/core/keyword/KEYWORD.php
 %%WIKINDX%%/core/list/LISTCOMMON.php
+%%WIKINDX%%/core/list/LISTMETADATACOMMON.php
 %%WIKINDX%%/core/list/LISTRESOURCES.php
 %%WIKINDX%%/core/list/LISTSOMERESOURCES.php
 %%WIKINDX%%/core/list/POWERSEARCHRESOURCES.php
@@ -158,6 +159,7 @@
 %%WIKINDX%%/core/styles/LOADSTYLE.php
 %%WIKINDX%%/core/styles/PARSESTYLE.php
 %%WIKINDX%%/core/styles/PARSEXML.php
+%%WIKINDX%%/core/styles/PREVIEWCITE.php
 %%WIKINDX%%/core/styles/PREVIEWSTYLE.php
 %%WIKINDX%%/core/styles/STYLEMAP.php
 %%WIKINDX%%/core/template/TEMPLATE.php
@@ -351,6 +353,26 @@
 %%WIKINDX%%/languages/en/MESSAGES.php
 %%WIKINDX%%/languages/en/SUCCESS.php
 %%WIKINDX%%/languages/en/description.txt
+%%WIKINDX%%/languages/pt/ABOUT.php
+%%WIKINDX%%/languages/pt/CONSTANTS.php
+%%WIKINDX%%/languages/pt/ERRORS.php
+%%WIKINDX%%/languages/pt/HELP.php
+%%WIKINDX%%/languages/pt/HELPCONFIG.php
+%%WIKINDX%%/languages/pt/HELPIMPORT.php
+%%WIKINDX%%/languages/pt/HELPSTYLE.php
+%%WIKINDX%%/languages/pt/MESSAGES.php
+%%WIKINDX%%/languages/pt/SUCCESS.php
+%%WIKINDX%%/languages/pt/description.txt
+%%WIKINDX%%/languages/ptbr/ABOUT.php
+%%WIKINDX%%/languages/ptbr/CONSTANTS.php
+%%WIKINDX%%/languages/ptbr/ERRORS.php
+%%WIKINDX%%/languages/ptbr/HELP.php
+%%WIKINDX%%/languages/ptbr/HELPCONFIG.php
+%%WIKINDX%%/languages/ptbr/HELPIMPORT.php
+%%WIKINDX%%/languages/ptbr/HELPSTYLE.php
+%%WIKINDX%%/languages/ptbr/MESSAGES.php
+%%WIKINDX%%/languages/ptbr/SUCCESS.php
+%%WIKINDX%%/languages/ptbr/description.txt
 %%WIKINDX%%/modules/MODULES
 %%WIKINDX%%/papers/PAPERS
 %%WIKINDX%%/rss.php
@@ -600,6 +622,8 @@
 @dirrm %%WIKINDX%%/styles
 @dirrm %%WIKINDX%%/papers
 @dirrm %%WIKINDX%%/modules
+@dirrm %%WIKINDX%%/languages/ptbr
+@dirrm %%WIKINDX%%/languages/pt
 @dirrm %%WIKINDX%%/languages/en
 @dirrm %%WIKINDX%%/languages
 @dirrm %%WIKINDX%%/files
