@@ -8,6 +8,7 @@
 
 PORTNAME=	autodia
 PORTVERSION=	2.02
+PORTREVISION= 	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 DISTNAME=	Autodia-${PORTVERSION}
@@ -16,7 +17,7 @@ MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatic Dia XML - from Source Code and Data
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Inline/Java.pm:${PORTSDIR}/devel/p5-Inline-Java \
+		p5-Inline-Java>=0:${PORTSDIR}/devel/p5-Inline-Java \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${SITE_PERL}/VCG.pm:${PORTSDIR}/graphics/p5-VCG \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
