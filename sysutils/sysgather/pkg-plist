@@ -2,3 +2,6 @@ bin/sysgather
 @unexec if cmp -s %D/etc/sysgather.conf %D/etc/sysgather.conf.default; then rm -f %D/etc/sysgather.conf; fi
 etc/sysgather.conf.default
 @exec [ -f %B/sysgather.conf ] || cp %B/%f %B/sysgather.conf
+%%EXAMPLESDIR%%/debian.conf
+%%EXAMPLESDIR%%/freebsd.conf
+@dirrm %%EXAMPLESDIR%%
