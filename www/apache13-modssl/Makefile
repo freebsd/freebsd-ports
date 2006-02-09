@@ -70,6 +70,14 @@ DOCUMENT_ROOT=	${APACHE_DOCUMENT_ROOT}
 .else
 DOCUMENT_ROOT=	${DATADIR}/data
 .endif
+.if defined(APACHE_CGIBIN_ROOT)
+CGIBIN_ROOT=	${APACHE_CGIBIN_ROOT}
+.else
+CGIBIN_ROOT=${DATADIR}/cgi-bin
+.endif
+DEFAULT_PATH?=	${PREFIX}/bin:/bin:/usr/bin
+APACHE_LOCALSTATE_DIR?=	/var
+APACHE_LOGFILE_DIR?=	${APACHE_LOCALSTATE_DIR}/log
 
 .if exists(${LOCALBASE}/include/fnmatch.h)
 check-depends::
@@ -89,21 +97,21 @@ PLIST_FILES+=	${APACHE_SH}
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
-APACHE_SUEXEC_CALLER?=www
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
 APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
 APACHE_SUEXEC_UIDMIN?=1000
 APACHE_SUEXEC_GIDMIN?=1000
+APACHE_SUEXEC_CALLER?=www
 APACHE_SUEXEC_SAFE_PATH?=/bin:/usr/bin:${PREFIX}/bin
 
 SUEXEC_CONF=	--enable-suexec \
-		--suexec-caller=${APACHE_SUEXEC_CALLER} \
 		--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
-		--suexec-logfile=${APACHE_SUEXEC_LOG} \
-		--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
+		--suexec-caller=${APACHE_SUEXEC_CALLER} \
 		--suexec-uidmin=${APACHE_SUEXEC_UIDMIN} \
 		--suexec-gidmin=${APACHE_SUEXEC_GIDMIN} \
+		--suexec-logfile=${APACHE_SUEXEC_LOG} \
+		--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
 		--suexec-safepath=${APACHE_SUEXEC_SAFE_PATH}
 
 .if defined(APACHE_SUEXEC_UMASK)
@@ -125,6 +133,11 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
+		--datadir=${DATADIR} \
+		--htdocsdir=${DOCUMENT_ROOT} \
+		--cgidir=${CGIBIN_ROOT} \
+		--localstatedir=${APACHE_LOCALSTATE_DIR} \
+		--logfiledir=${APACHE_LOGFILE_DIR} \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
@@ -156,8 +169,8 @@ HARD_SERVER_LIMIT=-DHARD_SERVER_LIMIT=512
 .endif
 
 OPTIM=		${HARD_SERVER_LIMIT} \
-		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
+		-DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
+		-DDEFAULT_PATH=\\"${DEFAULT_PATH}\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
 .if defined(APACHE_FD_SETSIZE)
@@ -317,6 +330,20 @@ pre-fetch:
 	@${ECHO_MSG} "				[default is /bin:/usr/bin:${PREFIX}/bin]"
 	@${ECHO_MSG} "  APACHE_SUEXEC_UMASK=umask	set the umask for the suEXEC'd script"
 	@${ECHO_MSG} "				[default is inherited from the Apache process]"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_DATADIR=path		set data directory PATH"
+	@${ECHO_MSG} "				[default is ${PREFIX}/www]"
+	@${ECHO_MSG} "  APACHE_CGIBIN_ROOT=path	set CGIBIN directory PATH"
+	@${ECHO_MSG} "				the default is derived from APACHE_DATADIR"
+	@${ECHO_MSG} "				[currently the default is ${DATADIR}/cgibin]"
+	@${ECHO_MSG} "  APACHE_DOCUMENT_ROOT=path	set documents directory PATH"
+	@${ECHO_MSG} "				the default is derived from APACHE_DATADIR"
+	@${ECHO_MSG} "				[currently the default is ${DATADIR}/data]"
+	@${ECHO_MSG} "  APACHE_LOCALSTATE_DIR=path	set modifiable data PATH"
+	@${ECHO_MSG} "				[default is /var]"
+	@${ECHO_MSG} "  APACHE_LOGFILE_DIR=path 	set logfile directory PATH"
+	@${ECHO_MSG} "				the default is derived from APACHE_LOCALSTATE_DIR"
+	@${ECHO_MSG} "				[currently the default is ${APACHE_LOCALSTATE_DIR}/log]"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  APACHE_HARD_SERVER_LIMIT=nr	Maximum number of Apache processes."
 	@${ECHO_MSG} "				[default is 512]"
