@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@rbt.ca
 COMMENT=	Text::WordDiff - Track changes between documents
 
-PERL_BUILD_DEPENDS=	Test-Simple:${PORTSDIR}/devel/p5-Test-Simple
-PERL_RUN_DEPENDS=	Algorithm-Diff:${PORTSDIR}/devel/p5-Algorithm-Diff \
-			Term-ANSIColor:${PORTSDIR}/devel/p5-Term-ANSIColor \
-			HTML-Entities:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_MODBUILD=	yes
 
