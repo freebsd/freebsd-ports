@@ -7,7 +7,6 @@
     SUBDIR += aqmoney
     SUBDIR += cbb
     SUBDIR += ccard
-    SUBDIR += emma
     SUBDIR += gnofin
     SUBDIR += gnomepm
     SUBDIR += gnucash
