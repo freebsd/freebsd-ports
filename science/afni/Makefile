@@ -27,6 +27,9 @@ EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Advanced Functional Neuro Imaging
 
+# does not compile on sparc64: "undefined reference to `_mcount'"
+NOT_FOR_ARCHS=	sparc64
+
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif
