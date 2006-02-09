@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtla
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://download.gna.org/xtla-el/ \
@@ -47,8 +47,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	install-info --dir ${PREFIX}/info/dir ${PREFIX}/info/xtla.info
 
 .include <bsd.port.mk>
