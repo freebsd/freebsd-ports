@@ -50,7 +50,7 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off
 
 .if defined(PHP_VER) && ${PHP_VER} == 5
-OPTIONS+=       SQLITE "Use SQLite backend" off
+OPTIONS+=	SQLITE "Use SQLite backend" off
 .endif
 
 .include <bsd.port.pre.mk>
