@@ -28,7 +28,7 @@ LISP_CMD=	""
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 LISP_CMD=	"lisp -noinit -batch"
 .else
-BOOT_VERSION=	0.9.8
+BOOT_VERSION=	${PORTVERSION}
 .endif
 
 USE_BZIP2=	yes
@@ -54,11 +54,10 @@ RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 .endif
 
 .if defined(BOOT_VERSION)
-MASTER_SITES+=	http://www.and.or.jp/sbcl/:boot
-BOOT_ARCH=	${ARCH}
+BOOT_ARCH=	${ARCH:S/i386/x86/}
 BOOT_OS=	${OPSYS:L}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH}-${BOOT_OS}
-DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:boot
+DISTFILES+=	${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
