@@ -36,7 +36,7 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 .if defined(WITH_XMBMON)
-RUN_DEPENDS+=	mbmon:${PORTSDIR}/sysutils/xmbmon
+RUN_DEPENDS+=	mbmon:${PORTSDIR}/sysutils/mbmon
 .endif
 
 post-patch:
