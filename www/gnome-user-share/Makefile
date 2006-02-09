@@ -20,8 +20,7 @@ LIB_DEPENDS=	howl:${PORTSDIR}/net/howl
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_APACHE=	yes
-APACHE_PORT=	www/apache20
+USE_APACHE=	2.0+
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -31,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	desktop_gnome_file_sharing.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/libexec/apache2|g' \
+	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/${APACHEMODDIR}|g' \
 		${WRKSRC}/dav_user.conf
 
 .include <bsd.port.mk>
