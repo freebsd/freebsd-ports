@@ -18,6 +18,7 @@ EXTRACT_DEPENDS=${GECKO_WRKSRC}/Makefile:${PORTSDIR}/${GECKO_PORTDIR}:configure 
 		zip:${PORTSDIR}/archivers/zip \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	nspr4:${PORTSDIR}/devel/nspr
 RUN_DEPENDS=	${GECKO}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
