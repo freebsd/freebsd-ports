@@ -47,6 +47,17 @@ CONF_FILES+=	${PC_BASE}/config.sample:${PC_BASE}/config
 
 # XXX Add Kerberos
 
+# XXX: more GNU_CONFIGURE hackery
+pre-configure:
+	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
+		| ${XARGS} -n 1 ${DIRNAME}); \
+	for _D in $${CONFIG_GUESS_DIRS}; do \
+		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${CHMOD} a+rx $${_D}/config.guess; \
+		${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${CHMOD} a+rx $${_D}/config.sub; \
+	done
+
 do-install:
 	${MKDIR} ${PC_DIR}/keys
 	${INSTALL_PROGRAM} ${WRKSRC}/keyclient ${PC_DIR}
