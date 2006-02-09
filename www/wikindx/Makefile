@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
-DISTNAME=	wikindx3_2_2
+DISTNAME=	wikindx3_2_3
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Bibliographic and quotations/notes management system
@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/wikindx3
 PHP4_PORT?=	www/mod_php4
 WIKINDX?=	www/data-dist/wikindx
 PLIST_SUB+=	WIKINDX=${WIKINDX}
-#SUB_FILES=	pkg-message
 ROOTFILES=	config.php index.php rss.php
 ROOTDIRS=	attachments core docs files languages modules \
 		papers styles templates update
@@ -42,8 +41,5 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .endif
-
-#post-install:
-#	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
