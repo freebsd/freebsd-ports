@@ -59,6 +59,17 @@ LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
 CONFIGURE_ARGS+=	--with-fcgi=${LOCALBASE}
 .endif
 
+# XXX: more GNU_CONFIGURE hackery
+pre-configure:
+	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
+		| ${XARGS} -n 1 ${DIRNAME}); \
+	for _D in $${CONFIG_GUESS_DIRS}; do \
+		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${CHMOD} a+rx $${_D}/config.guess; \
+		${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${CHMOD} a+rx $${_D}/config.sub; \
+	done
+
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
