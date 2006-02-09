@@ -34,7 +34,7 @@
 %%PYTHON_SITELIBDIR%%/session2/store/__init__.py
 %%PYTHON_SITELIBDIR%%/session2/store/__init__.pyc
 %%PYTHON_SITELIBDIR%%/session2/store/__init__.pyo
-%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/TODO
