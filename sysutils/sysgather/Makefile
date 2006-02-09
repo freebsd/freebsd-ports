@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysgather
-PORTVERSION=	1.0.b3
+PORTVERSION=	1.0.b5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/sysgather/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
