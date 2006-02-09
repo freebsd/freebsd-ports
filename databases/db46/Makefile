@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	db44
-PORTVERSION=	4.4.20
+PORTVERSION=	4.4.20.2
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
 PKGNAMESUFFIX?=
-DISTNAME?=	db-${PORTVERSION}
+DISTNAME=	db-4.4.20
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+PATCH_SITES=	http://www.sleepycat.com/update/4.4.20/
+PATCHFILES=	patch.4.4.20.1 patch.4.4.20.2
 PATCH_DIST_STRIP=	-d ..
+# * patch.4.4.20.1: -----------------------------------------------------------
+# Fix a bug that could cause a trap during recovery if multiple operations that
+# could remove the same extent were recovered. [#14061]
+# * patch.4.4.20.2: -----------------------------------------------------------
+# Fix a bug that could cause traps or hangs if the DB_TXN->set_name function is
+# used in a multithreaded application. [#14033]
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.4
@@ -26,7 +33,7 @@ INSTALLS_SHLIB=		yes
 USE_AUTOTOOLS=		libtool:15
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
-BDBVER=			${PORTVERSION:R}
+BDBVER=			${PORTVERSION:R:R}
 BDBMINOR=		${BDBVER:E:S/^\.//}
 BDBDIR=			BerkeleyDB.${BDBVER}
 CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
