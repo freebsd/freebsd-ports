@@ -15,6 +15,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-defs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-emacs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-emacs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-gnus.el
+%%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-gnus.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-lisp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-lisp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/xtla/xtla-site.el
