@@ -47,6 +47,7 @@ BARRIER_LOCALTIME_PATCH=	yes
     defined(SLAVE_TLS)
 BARRIER_OUTGOINGIP_PATCH=	yes
 BARRIER_RFC2821_PATCH=		yes
+BARRIER_TARPIT_PATCH=		yes
 .endif
 
 .if !defined(BARRIER_DNS_PATCH)
@@ -130,6 +131,9 @@ OPTIONS+=	DISCBOUNCES_PATCH "discard double-bounces" off
 .endif
 .if !defined(BARRIER_SPF_PATCH)
 OPTIONS+=	SPF_PATCH "Implement SPF checker" off
+.endif
+.if !defined(BARRIER_TARPIT_PATCH)
+OPTIONS+=	TARPIT_PATCH "Implement TARPIT functions" off
 .endif
 .if defined(SLAVE_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -404,6 +408,11 @@ PATCHFILES+=	qmail-1.03-qmtpc.patch
 .if defined(WITH_LOCALTIME_PATCH) && !defined(BARRIER_LOCALTIME_PATCH)
 PATCH_SITES+=	http://www.alib.jp/files/:localtime
 PATCHFILES+=	qmail-date-localtime.patch:localtime
+.endif
+
+.if defined(WITH_TARPIT_PATCH) && !defined(BARRIER_TARPIT_PATCH)
+PATCH_SITES+=	http://www.palomine.net/qmail/:tarpit
+PATCHFILES+=	tarpit.patch:tarpit
 .endif
 
 # Some default values, these can be modified by make command line
