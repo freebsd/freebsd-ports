@@ -100,6 +100,7 @@ share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-19.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-20.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-21.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-22.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
