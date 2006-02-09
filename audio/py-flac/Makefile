@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflac-${PORTVERSION}
 
-MAINTAINER=	bh@izb.knu.ac.kr
+MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	Python module that provides the Free Lossless Audio Codec interface
 
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac
