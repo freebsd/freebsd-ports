@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2006.01.01
+PORTVERSION=	2006.01.25
 CATEGORIES=	biology
-MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tar
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Multiple DNA/protein sequence alignment editor
@@ -30,9 +29,9 @@ CFLAGS+=	-D HAVE_DIRENT_H \
 		-D DEFAULT_HELPFILE=${PREFIX}/lib/X11/${PORTNAME}/seaview.help
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/seaview_align.sh ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/seaview_align.sh ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/X11/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/seaview.help ${PREFIX}/lib/X11/${PORTNAME}
 
 .include <bsd.port.mk>
