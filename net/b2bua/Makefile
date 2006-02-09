@@ -31,6 +31,10 @@ MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
 BROKEN=		"Does not compile on sparc64"
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		Infinite loop during build on amd64
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.${MACHINE_ARCH}/b2bua \
 		${PREFIX}/bin
