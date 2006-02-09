@@ -21,6 +21,12 @@ USE_GETOPT_LONG=	yes
 
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Coredump during runtime on amd64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(/etc\)|${PREFIX}\1|' \
 		${WRKSRC}/typespeed.h
@@ -28,4 +34,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
