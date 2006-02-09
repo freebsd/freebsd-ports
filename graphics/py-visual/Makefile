@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	visual
-PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTVERSION=	3.2.6
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.vpython.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -27,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	2.3+
-USE_REINPLACE=	yes
 USE_XLIB=	yes
 
 GNU_CONFIGURE=	yes
@@ -43,7 +41,7 @@ VPYTHON_SCRIPT=	bin/vpython.in
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+BROKEN=		does not compile
 .endif
 
 post-patch:
