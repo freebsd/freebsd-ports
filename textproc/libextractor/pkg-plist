@@ -1,6 +1,5 @@
 bin/extract
 include/extractor.h
-lib/libextractor.a
 lib/libextractor.so
 lib/libextractor.so.2
 lib/libextractor/libextractor_asf.so

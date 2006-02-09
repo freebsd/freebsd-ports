@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
+USE_GCC=	3.4+
 USE_GNOME=	glib20
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl
+USE_AUTOTOOLS=	libtool:15:inc libltdl:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -36,9 +36,13 @@ post-extract:
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/src/plugins/Makefile.*
+		${WRKSRC}/src/plugins/Makefile.* \
+		${WRKSRC}/src/plugins/exiv2/Makefile.* \
+		${WRKSRC}/src/plugins/rpm/Makefile.*
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^#ifdef EXV_HAVE_STDINT_H$$|#if EXV_HAVE_STDINT_H|' \
+		${WRKSRC}/src/plugins/exiv2/types.hpp
 
 check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
@@ -58,5 +62,14 @@ PLIST_SUB+=	VORBIS:=""
 .else
 PLIST_SUB+=	VORBIS:="@comment "
 .endif
+
+patch-autotools::
+	@(cd ${PATCH_WRKSRC}; \
+	for file in ${LIBTOOLFILES}; do \
+		${CP} $$file $$file.tmp; \
+		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
+			$$file.tmp > $$file; \
+		${RM} $$file.tmp; \
+	done);
 
 .include <bsd.port.post.mk>
