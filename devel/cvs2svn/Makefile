@@ -11,7 +11,7 @@ MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/25036/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	CVS to Subversion Repository Converter
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
