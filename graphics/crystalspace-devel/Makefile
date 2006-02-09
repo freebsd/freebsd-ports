@@ -7,11 +7,11 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
-DISTNAME=	cs-pseudo-stable-2005-09-03
+DISTNAME=	cs-pseudo-stable-2006-01-27
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free and portable 3D Game Development Kit
@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GL=		yes
-USE_REINPLACE=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
