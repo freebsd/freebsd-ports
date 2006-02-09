@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A strategy board game for 2 to 4 players
 
-USE_SDL=	image sdl
+USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
