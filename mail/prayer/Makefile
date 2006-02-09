@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.16
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
-# ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/prayer-1.0.8.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prayer Webmail System
@@ -19,9 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
 LIB_DEPENDS+=	${BERKELEYDB_LIB}:${PORTSDIR}/${BERKELEYDB_PORT}
 .endif
 
+USE_OPENLDAP=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS}"
 BERKELEYDB_PORT?=	databases/db42
