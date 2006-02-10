@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: redir
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following lines to /etc/rc.conf to enable redir:
+#
+# redir_enable (bool):		Set it to "YES" to enable redir.
+#				Default is "NO".
+# redir_flags (flags):		Set flags to redir.
+#				Default id "". see redir(1).
+#				Example: "--lport=80 --cport=3128 --syslog"
+#
+
+. %%RC_SUBR%%
+
+name="redir"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${redir_enable="NO"}
+: ${redir_flags=""}
+
+command=%%PREFIX%%/bin/redir
+command_args="${redir_flags} &"
+start_precmd="${name}_flags_check"
+
+redir_flags_check()
+{
+	if [ "${redir_flags}" = "" ]; then
+		err 1 "\$redir_flags are required. see redir(1)"
+	fi
+}
+
+run_rc_command "$1"
