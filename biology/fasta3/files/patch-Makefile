@@ -1,49 +1,33 @@
---- Makefile.orig	Mon May  7 11:36:23 2001
-+++ Makefile	Mon May  7 11:40:36 2001
-@@ -12,13 +12,13 @@
- 
- # use -DBIG_LIB64 to generate 64-bit offsets in map_db .xin files
- 
--CC= cc -O -std1
-+#CC= cc -O -std1
- #CC= insure -g -DDEBUG
- #CC= cc -g -DDEBUG -std1
- #CC= gcc -g -Wall
+--- Makefile.orig	Thu Feb  9 12:03:37 2006
++++ Makefile	Thu Feb  9 12:07:21 2006
+@@ -7,7 +7,7 @@
+ # in dropnfa.c  (wrp 3/19/1998)
  #
- # standard line for normal searching
--CFLAGS= -DM10_CONS -DUNIX -DTIMES -DHZ=60 -DBIGMEM -DMAX_WORKERS=4 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"fasta.bioch.virginia.edu/fasta/cgi"' -DIS_LITTLE_ENDIAN -DUSE_MMAP
-+CFLAGS+= -DM10_CONS -DUNIX -DTIMES -DHZ=60 -DBIGMEM -DMAX_WORKERS=4 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"fasta.bioch.virginia.edu/fasta/cgi"' -DIS_LITTLE_ENDIAN -DUSE_MMAP
+ 
+-CC= gcc -g -O3
++#CC= gcc -g -O3
+ #CC=gcc -Wall -pedantic -ansi -g -O
+ #CC = gcc -g -DDEBUG
+ #CC= /opt/parasoft/bin.linux2/insure -g -pg -DDEBUG
+@@ -21,7 +21,7 @@
+ #CFLAGS= -DSHOWSIM -DUNIX -DTIMES -DHZ=100 -DSFCHAR="'|'" -c -DMAX_WORKERS=2 -DTHR_EXIT=pthread_exit -DPROGRESS -DSUPERFAMNUM -DUSE_MMAP -D_REENTRANT -DBIG_LIB64 -D_LARGE_FILE_SOURCE -DUSE_FSEEKO -D_FILE_OFFSET_BITS=64 -DHAS_INTTYPES -DSAMP_STATS
+ 
+ # standard options
+-CFLAGS= -DSHOWSIM -DUNIX -DTIMES -DHZ=100 -DSFCHAR="':'" -c -DMAX_WORKERS=2 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"wrpx00.bioch.virginia.edu/fasta/cgi"' -DUSE_MMAP -D_REENTRANT -DHAS_INTTYPES -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -DUSE_FSEEKO -DSAMP_STATS -DPGM_DOC
++CFLAGS+= -DSHOWSIM -DUNIX -DTIMES -DHZ=100 -DSFCHAR="':'" -c -DMAX_WORKERS=2 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"wrpx00.bioch.virginia.edu/fasta/cgi"' -DUSE_MMAP -D_REENTRANT -DHAS_INTTYPES -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -DUSE_FSEEKO -DSAMP_STATS -DPGM_DOC
  # -I/usr/local/include/mysql -DMYSQL_DB 
- #(for mySQL databases)  (also requires change to Makefile33.common)
+ #
+ #(for mySQL databases)  (also requires change to Makefile34.common)
+@@ -35,10 +35,10 @@
  
-@@ -32,11 +32,15 @@
- HFLAGS= -o
- NFLAGS= -o
- 
--#for DEC Unix V4.0 
- THR_SUBS = pthr_subs
--THR_LIBS = -threads
-+THR_LIBS = -pthread
+ # for Linux
+ THR_SUBS = pthr_subs2
+-THR_LIBS = -lpthread
++#THR_LIBS = -lpthread
  THR_CC =
  
-+#for DEC Unix V4.0 
-+#THR_SUBS = pthr_subs
-+#THR_LIBS = -threads
-+#THR_CC =
-+#
- #for Sun
- #THR_SUBS = uthr_subs
- #THR_LIBS = -lthread
-@@ -53,9 +57,9 @@
- #THR_LIBS = -lpthreads
- #THR_CC =
- 
--XDIR = /seqprg/slib/bin
+-XDIR = /seqprg/bin
 +XDIR = ${PREFIX}/bin
  
- # renamed (fasta33)  programs
--include Makefile33.common
-+#include Makefile33.common
- # conventional (fasta3) names
--#include Makefile.common
-+include Makefile.common
+ DROPNFA_O = drop_nfa.o
+ DROPGSW_O = dropgsw.o

@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	fasta3
 # Date created:		29 January 2001
 # Whom:	      		Johann Visagie <johann@egenetics.com>
@@ -6,21 +7,25 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	33.t08.d4
+PORTVERSION=	34.t25.d4
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/
 DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
-COMMENT=	A collection of programs for searching DNA and protein databases, v3
+COMMENT=	A collection of programs for searching DNA and protein databases
 
-NO_CDROM=	May not be sold or incorporated into a commercial product
-WRKSRC=		${WRKDIR}/fasta3
-PKGMESSAGE=	${WRKDIR}/pkg-message
-FASTA3_DOCDIR=	${PREFIX}/share/doc/fasta3
-FASTA3_DOCS=	00README.1st README COPYRIGHT fasta3x.me fasta3x.doc \
-		readme.*
+NO_CDROM=	"May not be sold or incorporated into a commercial product"
+WRKSRC=		${WRKDIR}/${PORTNAME}
+SUB_FILES=	pkg-message
+
+MAKE_ENV+=	THR_LIBS=${PTHREAD_LIBS}
+
+FASTA3_DOCS=	README COPYRIGHT FASTA_LIST fasta3x.me fasta3x.doc \
+		fasta20.doc fasta_func.doc readme.* fasta.defaults
+DATA=		*.mat
+EXAMPLES=	*.aa *.lc *.seq
 
 MAN1=		fasta3.1 fastf3.1 fasts3.1 map_db.1 prss3.1
 MLINKS=		fasta3.1 tfasta3.1 fasta3.1 fastx3.1  fasta3.1 tfastx3.1  \
@@ -35,19 +40,24 @@ do-extract:
 	done
 
 post-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/fastlibs ${PREFIX}/etc/fastlibs.sample
+	${INSTALL_DATA} ${WRKSRC}/fastlibs ${PREFIX}/etc/fastlibs.sample
+	@ ${MKDIR} ${DATADIR}
+.for data in ${DATA}
+	${INSTALL_DATA} ${WRKSRC}/${data} ${DATADIR}
+.endfor
+	@ ${MKDIR} ${EXAMPLESDIR}
+.for ex in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${ex} ${EXAMPLESDIR}
+.endfor
 .for manpage in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/${manpage} ${MAN1PREFIX}/man/man1/
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${FASTA3_DOCDIR}
+	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ${FASTA3_DOCS}
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${FASTA3_DOCDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(BATCH)
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
