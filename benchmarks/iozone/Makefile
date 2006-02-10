@@ -27,15 +27,13 @@ ALL_TARGET=
 MAN1=		iozone.1
 PLIST_FILES=	bin/iozone
 
+OPTIONS=	THREADS "Enable threading (uses pthreads)"	on
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-OPTIONS=	THREADS "Enable threading (uses pthreads)"	on
-.endif
-
 .if defined (WITH_THREADS)
-CFLAGS+=	-pthread
-MAKE_ENV=	LDFLAGS=-lpthread
+CFLAGS+=	${PTHREAD_CFLAGS}
+MAKE_ENV=	LDFLAGS=${PTHREAD_LIBS}
 .else
 CFLAGS+=-DNO_THREADS
 .endif
