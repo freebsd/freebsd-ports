@@ -11,7 +11,7 @@ CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tdv94ped@cs.umu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A medical image conversion utility and library
 
 USE_AUTOTOOLS=	libtool:15

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	tdv94ped@cs.umu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
