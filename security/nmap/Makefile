@@ -17,7 +17,7 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
-DISTVERSION=	4.00
+DISTVERSION=	4.01
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
