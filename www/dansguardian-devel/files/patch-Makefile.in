@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Dec 16 09:25:29 2005
-+++ Makefile.in	Fri Dec 16 09:25:46 2005
-@@ -615,10 +615,10 @@
+--- Makefile.in.orig	Thu Feb  2 03:06:47 2006
++++ Makefile.in	Thu Feb  9 14:34:35 2006
+@@ -617,10 +617,12 @@
  
  
  install-data-local:
@@ -12,6 +12,8 @@
 +#		$(mkinstalldirs) $(DESTDIR)$(DGLOGLOCATION) && \
 +#		chown -R $(DGPROXYUSER):$(DGPROXYGROUP) $(DESTDIR)$(DGLOGLOCATION); \
 +#	fi
++	touch $(DGLOGLOCATION)/dansguardian.log
++	chown $(DGPROXYUSER):$(DGPROXYGROUP) $(DGLOGLOCATION)/dansguardian.log
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
