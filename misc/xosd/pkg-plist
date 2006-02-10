@@ -6,16 +6,15 @@ lib/libxosd.la
 lib/libxosd.so
 lib/libxosd.so.4
 share/aclocal/libxosd.m4
-share/xosd/bottom-left.png
-share/xosd/bottom-right.png
-share/xosd/bottom.png
-share/xosd/centre.png
-share/xosd/left.png
-share/xosd/right.png
-share/xosd/top-left.png
-share/xosd/top-right.png
-share/xosd/top.png
-@dirrm share/xosd
-@cwd %%X11BASE%%
+%%DATADIR%%/bottom-left.png
+%%DATADIR%%/bottom-right.png
+%%DATADIR%%/bottom.png
+%%DATADIR%%/centre.png
+%%DATADIR%%/left.png
+%%DATADIR%%/right.png
+%%DATADIR%%/top-left.png
+%%DATADIR%%/top-right.png
+%%DATADIR%%/top.png
+@dirrm %%DATADIR%%
 %%WITH_XMMS%%lib/xmms/General/libxmms_osd.la
 %%WITH_XMMS%%lib/xmms/General/libxmms_osd.so
