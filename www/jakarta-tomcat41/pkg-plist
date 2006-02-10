@@ -5,7 +5,6 @@
 @unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
 @unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
-bin/tomcat41ctl
 %%T%%/LICENSE
 %%T%%/README.txt
 %%T%%/RELEASE-NOTES-4.1.txt
