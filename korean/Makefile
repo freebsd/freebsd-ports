@@ -7,7 +7,6 @@
     SUBDIR += FreeWnn-server
     SUBDIR += a2ps
     SUBDIR += acroread
-    SUBDIR += acroread5-korfont
     SUBDIR += aleefonts-ttf
     SUBDIR += ami
     SUBDIR += baekmukfonts-bdf

@@ -203,7 +203,6 @@ acm		ports/games/acm
 acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
-acroread	ports/print/acroread
 acroread-de	ports/german/acroread
 acroread-dk	ports/print/dk-acroread
 acroread-es	ports/print/es-acroread
@@ -215,7 +214,6 @@ acroread-pt	ports/portuguese/acroread
 acroread-sv	ports/print/sv-acroread
 acroread-zhcn	ports/chinese/acroread-zh_CN
 acroread-zhtw	ports/chinese/acroread-zh_TW
-acroread5-commfont	ports/print/acroread5-commfont
 acroread7	ports/print/acroread7
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
@@ -4175,7 +4173,6 @@ ja-Wnn7-lib	ports/japanese/Wnn7-lib
 ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
 ja-acroread	ports/japanese/acroread
-ja-acroread5-jpnfont	ports/japanese/acroread5-jpnfont
 ja-addttfont	ports/japanese/addttfont
 ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
@@ -5043,7 +5040,6 @@ knzb		ports/news/knzb
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
-ko-acroread5-korfont	ports/korean/acroread5-korfont
 ko-aleefonts-ttf	ports/korean/aleefonts-ttf
 ko-ami		ports/korean/ami
 ko-baekmukfonts-bdf	ports/korean/baekmukfonts-bdf
@@ -14058,8 +14054,6 @@ zh-BBMan	ports/chinese/BBMan
 zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
-zh-acroread5-chsfont	ports/chinese/acroread5-chsfont
-zh-acroread5-chtfont	ports/chinese/acroread5-chtfont
 zh-arnettf	ports/chinese/arnettf
 zh-arphicttf	ports/chinese/arphicttf
 zh-aterm	ports/chinese/aterm
