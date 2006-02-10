@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t_coffee
-PORTVERSION=	3.18
+PORTVERSION=	3.27
 CATEGORIES=	biology
 MASTER_SITES=	http://igs-server.cnrs-mrs.fr/~cnotred/Packages/
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
@@ -25,25 +25,25 @@ MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
 MAKEFILE=	makefile
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/t_coffee ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/t_coffee ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ cd ${WRKSRC}/example && ${FIND} * \
 	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@ ${MKDIR} ${DATADIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/license.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DATADIR}
 	@ ${MKDIR} ${DATADIR}/html
-	@ ${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
+	${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not build on FreeBSD >= 6.x"
+.if ${OSVERSION} > 502126
+USE_GCC=3.3
 .endif
 
 .include <bsd.port.post.mk>
