@@ -9,9 +9,9 @@ PORTNAME=	libtabe
 PORTVERSION=	0.2.5
 PORTREVISION=	2
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
+MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/libtabe/devel/
 
-MAINTAINER=	kcwu@ck.tp.edu.tw
+MAINTAINER=	kcwu@csie.org
 COMMENT=	Unified library for Chinese text processing
 
 .if !defined(USE_DB2)
