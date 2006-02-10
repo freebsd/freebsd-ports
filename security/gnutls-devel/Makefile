@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls-devel
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		${MASTER_SITE_GNUPG} \
