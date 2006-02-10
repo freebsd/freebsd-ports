@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.23
-PORTREVISION=	2
+PORTVERSION=	4.24
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -31,12 +30,15 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos \
 		--without-motif --mandir=${PREFIX}/man
 
+OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
+		SETUID_HACKS "Install sonar hack suid so it can ping" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(XS_WITH_ALL_FORTUNES)
+.if defined(WITH_ALL_FORTUNES)
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
-.if defined(XS_WITH_SETUID_HACKS)
+.if defined(WITH_SETUID_HACKS)
 CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
@@ -92,6 +94,15 @@ pre-fetch:
 	@${ECHO} '    and cd ../xscreensaver-gnome.'
 	@${ECHO} ''
 	@sleep 2
+.if defined(XS_WITH_ALL_FORTUNES) || defined(XS_WITH_SETUID_HACKS)
+	@${ECHO} ""
+	@${ECHO} "************************************************"
+	@${ECHO} " Support for the old XS_WITH_* options has been"
+	@${ECHO} "    removed in favor of the OPTIONS method."
+	@${ECHO} "************************************************"
+	@${ECHO} ""
+	@sleep 5
+.endif
 .endif
 
 post-patch:
@@ -100,9 +111,6 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${X11BASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-	@ ${CP} ${WRKSRC}/driver/timers.c ${WRKSRC}/driver/timers.c.presed
-	@ ${SED} 334,343d ${WRKSRC}/driver/timers.c.presed > \
-		${WRKSRC}/driver/timers.c
 
 post-install:
 	@(if test -x ${X11BASE}/bin/xscreensaver-hacks/webcollage-helper; then \
