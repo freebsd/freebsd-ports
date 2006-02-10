@@ -1,0 +1,9 @@
+===============================================================================
+
+Because of a bug in the installer, you must create the destination directory
+manually before running the program, for instance:
+
+	mkdir ~/X-Plane
+	X-Plane-Net-Install
+
+===============================================================================
