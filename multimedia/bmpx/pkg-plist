@@ -1,28 +1,21 @@
+bin/bmpx-enqueue-uris
+bin/bmpx-enqueue-files
+bin/bmpx-play-files
+bin/bmpx-web
+bin/bmpx-web-ajax
 bin/bmpx-dbus-introspect
-bin/bmpx-dbus-query-lists
 bin/bmpx-dbus-system-control
+bin/bmpx-dbus-query-list
+bin/bmpx-medialib-browser
 bin/bmpx
-bin/bmpx-remote
-bin/hash_index
-bin/hash_table
-bin/hrel-demo
 %%PYTHON%%bin/bmpx-client-pygtk
 %%PYTHON%%bin/bmpty
 include/bmpx/dbus.h
-include/bmpx/file_utils.h
-include/bmpx/interfaces/plugin_interface_container.h
-include/bmpx/interfaces/plugin_interface_flow.h
-include/bmpx/interfaces/plugin_interface_plug_meta.h
-include/bmpx/interfaces/plugin_interface_transport.h
-include/bmpx/list.h
-include/bmpx/metadata.h
-include/bmpx/playlist.h
-include/bmpx/plugin.h
-include/bmpx/plugin_interfaces.h
-include/bmpx/sanity.h
-include/bmpx/uri.h
-include/bmpx/util.h
-include/bmpx/vfs.h
+include/libchroma/chroma-list-selection.h
+include/libchroma/chroma-list-column.h
+include/libchroma/chroma-list.h
+include/libchroma/chroma-vscrollbar.h
+include/libchroma/dnd.h
 include/libhrel/libhrel/attr_map.h
 include/libhrel/libhrel/avl_tree_index.h
 include/libhrel/libhrel/btree.h
@@ -31,17 +24,16 @@ include/libhrel/libhrel/hash_table.h
 include/libhrel/libhrel/misc.h
 include/libhrel/libhrel/relation.h
 include/libhrel/libhrel/relation_base.h
+include/libhrel/libhrel/relation_diff.h
+include/libhrel/libhrel/relation_intersect.h
 include/libhrel/libhrel/relation_project.h
 include/libhrel/libhrel/relation_restrict.h
 include/libhrel/libhrel/relation_sort.h
+include/libhrel/libhrel/relation_union.h
 include/libhrel/libhrel/stack.h
 include/libhrel/libhrel/tuple.h
 include/libhrel/libhrel/types.h
-include/libskinned/libskinned/bmp_button.h
-include/libskinned/libskinned/bmp_button_toggle.h
-include/libskinned/libskinned/bmp_slider.h
-include/libskinned/libskinned/bmp_tooltips.h
-include/libskinned/libskinned/bmp_window.h
+libexec/bmpx-bin
 lib/bmpx/plugins/container/libcontainer_folder.a
 lib/bmpx/plugins/container/libcontainer_folder.so
 lib/bmpx/plugins/container/libcontainer_folder.so.0
@@ -51,6 +43,9 @@ lib/bmpx/plugins/container/libcontainer_m3u.so.0
 lib/bmpx/plugins/container/libcontainer_pls.a
 lib/bmpx/plugins/container/libcontainer_pls.so
 lib/bmpx/plugins/container/libcontainer_pls.so.0
+lib/bmpx/plugins/container/libcontainer_query.a
+lib/bmpx/plugins/container/libcontainer_query.so
+lib/bmpx/plugins/container/libcontainer_query.so.0
 lib/bmpx/plugins/container/libcontainer_xspf.a
 lib/bmpx/plugins/container/libcontainer_xspf.so
 lib/bmpx/plugins/container/libcontainer_xspf.so.0
@@ -69,30 +64,36 @@ lib/bmpx/plugins/transport/libtransport_file.so.0
 lib/bmpx/plugins/transport/libtransport_http.a
 lib/bmpx/plugins/transport/libtransport_http.so
 lib/bmpx/plugins/transport/libtransport_http.so.0
+lib/bmpx/plugins/transport/libtransport_query.a
+lib/bmpx/plugins/transport/libtransport_query.so
+lib/bmpx/plugins/transport/libtransport_query.so.0
+lib/libchroma.a
+lib/libchroma.so
+lib/libchroma.so.0
 lib/libhrel.a
 lib/libhrel.so
 lib/libhrel.so.1
-lib/libskinned.a
-lib/libskinned.so.1
-lib/libskinned.so
-lib/libgoa.a
-lib/libxcs.a
 @comment %%PYTHON_XCHAT%%lib/xchat/plugins/bmpx-xchat.py
 libdata/pkgconfig/hrel.pc
+share/libhrel/examples/hrel-demo
 share/applications/bmpx.desktop
 share/applications/bmpx_enqueue.desktop
+share/applications/bmpx_play.desktop
 %%PYTHON%%share/bmpx-clients/pygtk/bmpx-client-image.png
 %%PYTHON%%share/bmpx-clients/pygtk/bmpx_client.glade
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx-medialib-browser.in
+%%PYTHON%%share/bmpx-clients/pygtk/bmpx_medialib_browser.glade
+%%DATADIR%%/bmpx-web/functions.js
+%%DATADIR%%/bmpx-web/header.png
 %%DATADIR%%/data/GPL.txt
-%%DATADIR%%/glade/bmpx-remote.glade
 %%DATADIR%%/glade/dialog_add_files.glade
-%%DATADIR%%/glade/dialog_add_url.glade
+%%DATADIR%%/glade/dialog_bookmarks.glade
 %%DATADIR%%/glade/dialog_export_tracklist.glade
 %%DATADIR%%/glade/dialog_file_info.glade
+%%DATADIR%%/glade/dialog_jump_to_track.glade
 %%DATADIR%%/glade/dialog_library.glade
-%%DATADIR%%/glade/dialog_new_list_from_selection.glade
 %%DATADIR%%/glade/dialog_preferences.glade
-%%DATADIR%%/glade/dialog_rename_tracklist.glade
+%%DATADIR%%/glade/dialog_streams.glade
 %%DATADIR%%/icons/themes/darksphere/icon_player_128.png
 %%DATADIR%%/icons/themes/darksphere/icon_player_16.png
 %%DATADIR%%/icons/themes/darksphere/icon_player_32.png
@@ -142,23 +143,18 @@ share/applications/bmpx_enqueue.desktop
 %%DATADIR%%/icons/tray-icons/tray-icon-exit.png
 %%DATADIR%%/icons/tray-icons/tray-icon-paused.png
 %%DATADIR%%/icons/tray-icons/tray-icon-playing.png
-%%DATADIR%%/images/about_logo.png
-%%DATADIR%%/images/appearance.png
-%%DATADIR%%/images/appearance_ia.png
+%%DATADIR%%/images/preferences/appearance.png
+%%DATADIR%%/images/preferences/eq.png
+%%DATADIR%%/images/preferences/playback.png
+%%DATADIR%%/images/preferences/playlist.png
+%%DATADIR%%/images/preferences/plugins.png
+%%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/audio.png
-%%DATADIR%%/images/eq.png
-%%DATADIR%%/images/eq_ia.png
-%%DATADIR%%/images/library-headerlogo.png
-%%DATADIR%%/images/logo-experimental.png
-%%DATADIR%%/images/mouse.png
-%%DATADIR%%/images/mouse_ia.png
-%%DATADIR%%/images/playback.png
-%%DATADIR%%/images/playback_ia.png
-%%DATADIR%%/images/playlist.png
-%%DATADIR%%/images/playlist_ia.png
-%%DATADIR%%/images/plugins.png
-%%DATADIR%%/images/plugins_ia.png
-%%DATADIR%%/images/preferences-logo.png
+%%DATADIR%%/images/header-bookmarks.png
+%%DATADIR%%/images/header-library.png
+%%DATADIR%%/images/header-streams.png
+%%DATADIR%%/images/icon-bookmark.png
+%%DATADIR%%/images/icon-playlist.png
 %%DATADIR%%/images/shoutcast.png
 %%DATADIR%%/images/splash.png
 %%DATADIR%%/images/wait.gif
@@ -181,22 +177,31 @@ share/applications/bmpx_enqueue.desktop
 %%DATADIR%%/skins/default/viscolor.txt
 %%DATADIR%%/skins/default/volume.bmp
 %%DATADIR%%/ui/main.ui
-%%DATADIR%%/ui/playlist.ui
+%%DATADIR%%/ui/plmanager.ui
+%%DATADIR%%/ui/tracklist.ui
 %%DATADIR%%/ui/trayicon.ui
 share/icons/hicolor/48x48/apps/bmpx.png
 share/locale/af/LC_MESSAGES/bmpx.mo
 share/locale/bg/LC_MESSAGES/bmpx.mo
+share/locale/cs/LC_MESSAGES/bmpx.mo
 share/locale/de/LC_MESSAGES/bmpx.mo
 share/locale/el/LC_MESSAGES/bmpx.mo
+share/locale/es/LC_MESSAGES/bmpx.mo
+share/locale/fi/LC_MESSAGES/bmpx.mo
 share/locale/fr/LC_MESSAGES/bmpx.mo
 share/locale/hu/LC_MESSAGES/bmpx.mo
 share/locale/ja/LC_MESSAGES/bmpx.mo
 share/locale/lt/LC_MESSAGES/bmpx.mo
 share/locale/pl/LC_MESSAGES/bmpx.mo
+share/locale/pt_BR/LC_MESSAGES/bmpx.mo
 share/locale/ru/LC_MESSAGES/bmpx.mo
+share/locale/sv/LC_MESSAGES/bmpx.mo
+share/locale/zh_CN/LC_MESSAGES/bmpx.mo
+@dirrm %%DATADIR%%/bmpx-web
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/skins/default
 @dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/images/preferences
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons/tray-icons
 @dirrm %%DATADIR%%/icons/themes/red
@@ -213,12 +218,12 @@ share/locale/ru/LC_MESSAGES/bmpx.mo
 @dirrm lib/bmpx/plugins/container
 @dirrm lib/bmpx/plugins
 @dirrm lib/bmpx
-@dirrm include/libskinned/libskinned
-@dirrm include/libskinned
+@dirrm include/libchroma
 @dirrm include/libhrel/libhrel
 @dirrm include/libhrel
-@dirrm include/bmpx/interfaces
 @dirrm include/bmpx
+@dirrm share/libhrel/examples
+@dirrm share/libhrel
 %%PYTHON%%@dirrm share/bmpx-clients/pygtk
 %%PYTHON%%@dirrm share/bmpx-clients
 @dirrmtry share/applications

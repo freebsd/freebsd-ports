@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.12.9
-PORTREVISION=	3
+PORTVERSION=	0.13
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
@@ -17,25 +16,32 @@ COMMENT=	Audio player
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		xine.15:${PORTSDIR}/multimedia/libxine \
-		curl.3:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl \
+		neon.25:${PORTSDIR}/www/neon
 
 USE_AUTOTOOLS=	libtool:15
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
-LIBTOOLFILES=	configure libhrel/configure libskinned/configure
+LIBTOOLFILES=	configure libhrel/configure \
+		libchroma/configure libskinned/configure
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-xine --disable-gst
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include  -D__BSD_VISIBLE ${PTHREAD_CFLAGS} -fPIC" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		bmpx.1
+
+.if !defined(WITHOUT_AMAZON)
+CONFIGURE_ARGS+=	--enable-amazon
+.endif
 
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--disable-dbus
