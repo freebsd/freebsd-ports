@@ -396,6 +396,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/mmencode
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/auto-autoloads.el
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/auto-autoloads.elc
 %%WITH_PGSQL%%lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/postgresql.ell
+%%WITH_LDAP%%lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/eldap.ell
 %%CANNA%%lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/canna_api.ell
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/movemail
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/profile

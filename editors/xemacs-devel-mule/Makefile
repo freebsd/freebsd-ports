@@ -64,7 +64,6 @@ CONFIGURE_ARGS=	--enable-mule \
 		--enable-sound=native \
 		--with-site-lisp \
 		--with-pop \
-		--with-ldap=no \
 		--with-infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--enable-clash-detection \
 		--enable-database=berkdb \
@@ -162,12 +161,21 @@ CONFIGURE_ARGS+=--with-athena=xaw
 .if exists(${LOCALBASE}/include/libpq-fe.h)
 WITH_PGSQL=	yes
 .endif
-
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 PLIST_SUB+=	WITH_PGSQL=""
 .else
 PLIST_SUB+=	WITH_PGSQL="@comment "
+.endif
+
+.if exists(${LOCALBASE}/include/ldap.h)
+WITH_LDAP=	yes
+.endif
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+PLIST_SUB+=	WITH_LDAP=""
+.else
+PLIST_SUB+=	WITH_LDAP="@comment "
 .endif
 
 BINNAMEEXT=		-mule
