@@ -3,7 +3,7 @@
 # Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam/Makefile,v 1.7 2006/02/03 09:57:32 itetcu Exp $
+# $Tecnik: ports/mail/dspam/Makefile,v 1.10 2006/02/09 22:20:22 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -106,7 +106,7 @@ STRIP=
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-CONFLICTS=	dspam-[0-9]*
+CONFLICTS=	dspam-devel-[0-9]*
 
 SIGNATURE_LIFE?=	15
 
@@ -123,15 +123,6 @@ DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
-
-
-MIN_OPTIONS_VER=	dspam-devel-3.6.3
-.ifdef(_OPTIONS_READ)
-OPTIONS_CMP!= ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER}
-.	if ${OPTIONS_CMP} == "<"
-OPTIONS_MESSAGE=	"You have unsupported (old) OPTIONS, please do a 'make config; make'"
-.	endif
-.endif
 
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
@@ -469,13 +460,7 @@ post-fetch:
 .	endif
 .endif
 
-pre-extract:
-.ifdef(OPTIONS_MESSAGE)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} ${OPTIONS_MESSAGE}
-	@${ECHO_CMD} ""
-	exit 1
-.endif
+pre-extract: check-options-version
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
@@ -495,32 +480,6 @@ pre-extract:
 .	endif
 	@${ECHO_CMD} ""
 	@sleep 5
-
-.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES SPAM_SUBJ \
-	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
-	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST \
-	POSTGRESQL73 POSTGRESQL74 GRAHAM_BAYES BURTON_BAYES RNB \
-	TEST_COND NO_BIAS CHI_SQUARE RPV
-.	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "Either:"
-	@${ECHO_CMD} "an old option ${old_opt} or an old"
-	@${ECHO_CMD} "OPTIONS config-file ${_OPTIONS_READ} has been detected !!!"
-	@${ECHO_CMD} "Trying to prevent self-shooting this port's make ends here."
-	@${ECHO_CMD} "You shold always read ${PORTSDIR}/UPDATING before installing/updating"
-	@${ECHO_CMD} "any port. Please remove/adjust your pkgtools.conf, environment and"
-	@${ECHO_CMD} "your make command-line and/or do 'make rmconfig' as appropiate."
-	@${ECHO_CMD} "But before read ${FILESDIR}/UPDATING"
-	@${ECHO_CMD} "as a lot of things have changed.
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} ""
-	@${FALSE}
-.	endif
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
@@ -681,5 +640,13 @@ post-install:
 	@${ECHO_CMD} "If you haven't defined NOPORTDOCS you can review this"
 	@${ECHO_CMD} "message in ${DOCSDIR}/README.FreeBSD"
 	@${ECHO_CMD}
+
+check-options-version:
+.ifdef(_OPTIONS_READ)
+	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
+	 then ${ECHO_CMD} "You have unsupported (old) OPTIONS, please do a 'make config; make'\n" \
+		exit 1; \
+	 fi)
+.endif
 
 .include <bsd.port.post.mk>
