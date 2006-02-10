@@ -98,6 +98,7 @@
     SUBDIR += dotproject
     SUBDIR += dpsearch
     SUBDIR += drupal
+    SUBDIR += drupal-pubcookie
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
