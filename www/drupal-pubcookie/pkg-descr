@@ -1,0 +1,8 @@
+The pubcookie Drupal module is an external authentication module that
+allows users to authenticate to Drupal using pubcookie.  Pubcookie is
+used single sign-on to web-based applications at a site.
+
+The module also provide LDAP integration to populate user profiles as
+users register.
+
+WWW: http://drupal.org/node/42589
