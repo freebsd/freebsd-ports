@@ -2169,3 +2169,9 @@ comms/qtpcr||2006-02-08|Remove expired port
 www/amyc||2006-02-08|Remove expired port
 science/glens||2006-02-08|Remove expired port
 finance/emma||2006-02-09|Remove expired port
+chinese/acroread5-chsfont||2006-02-09|Remove expired print/acroread and related ports
+chinese/acroread5-chtfont||2006-02-09|Remove expired print/acroread and related ports
+japanese/acroread5-jpnfont||2006-02-09|Remove expired print/acroread and related ports
+korean/acroread5-korfont||2006-02-09|Remove expired print/acroread and related ports
+print/acroread||2006-02-09|Remove expired print/acroread and related ports
+print/acroread5-commfont||2006-02-09|Remove expired print/acroread and related ports

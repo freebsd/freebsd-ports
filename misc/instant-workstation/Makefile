@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-workstation
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
@@ -18,7 +18,7 @@ BROKEN=		Incomplete pkg-plist
 
 USE_GHOSTSCRIPT_RUN=	yes
 
-RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
+RUN_DEPENDS=	acroread7:${PORTSDIR}/print/acroread7 \
 		bash:${PORTSDIR}/shells/bash2 \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
