@@ -9387,6 +9387,7 @@ pcl-cvs-emacs	ports/devel/pcl-cvs-emacs
 pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
 pclprint	ports/print/pclprint
+pcmanfm		ports/x11-fm/pcmanfm
 pcnfsd		ports/net/pcnfsd
 pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
