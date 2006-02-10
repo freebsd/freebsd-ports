@@ -3,7 +3,7 @@
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.26 2006/02/03 22:06:14 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.32 2006/02/08 18:50:32 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -21,7 +21,10 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.6.3
-SNAP_DATE=	.20060203.1409
+SNAP_DATE=	.20060208.1807
+_UPD_LINE_NO=	11
+
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.3.20060203.1409
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -34,8 +37,6 @@ MASTER_SITES=	http://dspam.irontec.com/sources/ \
 DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
-
-_UPD_LINE_NO=	31
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -124,14 +125,6 @@ DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
-
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.3.20060203.1409
-.ifdef(_OPTIONS_READ)
-OPTIONS_CMP!=		${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER}
-.	if ${OPTIONS_CMP} == "<"
-OPTIONS_MESSAGE=	"You have unsupported (old) OPTIONS, please do a 'make config; make'"
-.	endif
-.endif
 
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
@@ -453,13 +446,7 @@ pre-everything::
 	@sleep 5
 .endif
 
-pre-extract:
-.ifdef(OPTIONS_MESSAGE)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} ${OPTIONS_MESSAGE}
-	@${ECHO_CMD} ""
-	@exit 1
-.endif
+pre-extract:	check-options-version
 .ifndef(MAINT)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
@@ -481,32 +468,6 @@ pre-extract:
 	@${ECHO_CMD} ""
 	@sleep 5
 .endif
-
-.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES SPAM_SUBJ \
-	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
-	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST \
-	POSTGRESQL73 POSTGRESQL74 GRAHAM_BAYES BURTON_BAYES RNB \
-	TEST_COND NO_BIAS CHI_SQUARE RPV
-.	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "Either:"
-	@${ECHO_CMD} "an old option ${old_opt} or an old"
-	@${ECHO_CMD} "OPTIONS config-file ${_OPTIONS_READ} has been detected !!!"
-	@${ECHO_CMD} "Trying to prevent self-shooting this port's make ends here."
-	@${ECHO_CMD} "You shold always read ${PORTSDIR}/UPDATING before installing/updating"
-	@${ECHO_CMD} "any port. Please remove/adjust your pkgtools.conf, environment and"
-	@${ECHO_CMD} "your make command-line and/or do 'make rmconfig' as appropiate."
-	@${ECHO_CMD} "But before read ${FILESDIR}/UPDATING"
-	@${ECHO_CMD} "as a lot of things have changed.
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} ""
-	@${FALSE}
-.	endif
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
@@ -568,7 +529,7 @@ pre-configure:
 	@${FALSE}
 .endif
 .ifdef(SNAP_DATE)
-	@${ECHO_CMD} "You can safely ignore the following auto*  errors" 
+	@${ECHO_CMD} "You can safely ignore the following auto*  errors"
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 .endif
 
@@ -657,5 +618,13 @@ post-install:
 	@${ECHO_CMD} "If you haven't defined NOPORTDOCS you can review this"
 	@${ECHO_CMD} "message in ${DOCSDIR}/README.FreeBSD"
 	@${ECHO_CMD}
+
+check-options-version:
+.ifdef(_OPTIONS_READ)
+	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
+	 then ${ECHO_CMD} "You have unsupported (old) OPTIONS, please do a 'make config; make'\n" \
+			exit 1; \
+	 fi)
+.endif
 
 .include <bsd.port.post.mk>

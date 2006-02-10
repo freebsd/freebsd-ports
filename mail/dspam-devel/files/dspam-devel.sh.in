@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 # formerly $ FreeBSD: ports/mail/dspam-devel/files/dspam.rc,v 1.2 2005/02/25 03:09:26 leeym Exp $
-# $Tecnik: ports/mail/dspam-devel/files/dspam-devel.sh.in,v 1.5 2006/02/03 13:56:46 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/files/dspam-devel.sh.in,v 1.6 2006/02/07 20:42:07 itetcu Exp $
 
 # PROVIDE: dspam
 # REQUIRE: DAEMON %%MYSQL%% %%PGSQL%% %%CLAMD%%
