@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.3.2
+PORTVERSION=	2.9.5.0
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,12 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fcash@sd73.bc.ca
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		iconv.3:${PORTSDIR}/converters/libiconv
-		
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_GCC=	3.4+
+USE_ICONV=	yes
 
 USE_RC_SUBR=	dansguardian.sh
 
@@ -43,9 +42,9 @@ OPTIONS=	DG_APACHE  "Enable Apache support" on \
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
-NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
-NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
-RESTRICTED=	"${NO_PACKAGE}"
+NO_CDROM=	Commercial download is restricted.  Check ${DG_URL} for more info
+NO_PACKAGE=	Redistribution is restricted.  Check ${DG_URL} for more info
+RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
 
@@ -55,7 +54,7 @@ USE_APACHE=	1.3+
 
 .if defined(WITH_DG_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav=yes
-LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav:install
+LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
 .endif
 
 .if defined(WITH_DG_CLAMD)
@@ -64,11 +63,11 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 .endif
 
 .if defined(WITH_DG_ICAP)
-BROKEN=	"I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks"
+BROKEN=	I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
 .endif
 
 .if defined(WITH_DG_KASP)
-BROKEN=	"I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks"
+BROKEN=	I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
 .endif
 
 .if defined(WITH_DG_DMGR)

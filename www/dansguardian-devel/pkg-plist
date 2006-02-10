@@ -136,8 +136,7 @@ sbin/dansguardian
 %%DATADIR%%/scripts/systemv-init
 etc/dansguardian/authplugins/ident.conf
 etc/dansguardian/authplugins/ip.conf
-etc/dansguardian/authplugins/ntlm.conf
-etc/dansguardian/authplugins/proxy.conf
+etc/dansguardian/authplugins/proxy-basic.conf
 etc/dansguardian/lists/authplugins/ipgroups
 etc/dansguardian/lists/blacklists/ads/domains
 etc/dansguardian/lists/blacklists/ads/urls
@@ -223,9 +222,6 @@ etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
 etc/dansguardian/contentscanners/clamav.conf
 etc/dansguardian/contentscanners/clamdscan.conf
-etc/dansguardian/contentscanners/icapscan.conf
-etc/dansguardian/contentscanners/kavav.conf
-etc/dansguardian/contentscanners/kavdscan.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/scripts
