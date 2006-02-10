@@ -21,4 +21,10 @@ USE_PERL5=	yes
 
 MAN1=		sysgather.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+MAKE_ENV+=	PODCHECKER=true PODCHECKER_ARGS=
+.endif
+
+.include <bsd.port.post.mk>
