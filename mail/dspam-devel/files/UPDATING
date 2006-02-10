@@ -11,6 +11,18 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.3.20060208.1807
+#
+
+WebUI:
+- undo option for retraining
+- support for existing storeFragments option to recall message in history
+
+Documentation:
+- of all user preferences in the README.
+
+
+###########################################################################
 # dspam-devel-3.6.3.20060203.1409
 #
 
