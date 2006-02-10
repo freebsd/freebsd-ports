@@ -1,0 +1,8 @@
+The File::Append::TempFile module provides an OOP interface to appending
+data to files using a temporary file, in order to ensure the atomicity of
+the updates.  Care should be taken to ensure that no other applications
+try to modify the original file concurrently, since any changes made while
+appending the data may be lost.
+
+Author:		Peter Pentchev <roam@ringlet.net>
+WWW:		http://search.cpan.org/dist/File-Append-TempFile/

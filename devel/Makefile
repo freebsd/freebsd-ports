@@ -917,6 +917,7 @@
     SUBDIR += p5-ExtUtils-ParseXS
     SUBDIR += p5-ExtUtils-PkgConfig
     SUBDIR += p5-ExtUtils-XSBuilder
+    SUBDIR += p5-File-Append-TempFile
     SUBDIR += p5-File-BaseDir
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Binary
