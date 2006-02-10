@@ -23,8 +23,8 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
-BROKEN=		"Coredump during runtime on amd64 running OSVERSION >= 700000"
+.if ${OSVERSION} >= 700000
+BROKEN=		"Coredumps on FreeBSD >= 7.0"
 .endif
 
 post-patch:
