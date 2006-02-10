@@ -67,7 +67,6 @@ CONFIGURE_ARGS=	--with-x11 \
 		--with-png \
 		--with-tiff \
 		--with-xpm \
-		--with-ldap=no \
 		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
 		--with-database=berkdb \
