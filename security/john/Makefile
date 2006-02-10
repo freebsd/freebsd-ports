@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.6.40
+PORTVERSION=	1.7
 CATEGORIES=	security
-MASTER_SITES=	http://www.openwall.com/john/a/ \
+MASTER_SITES=	http://www.openwall.com/john/d/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
 
 MAINTAINER=	ehaupt@FreeBSD.org
