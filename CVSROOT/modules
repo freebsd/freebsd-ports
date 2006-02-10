@@ -8041,6 +8041,7 @@ p5-FastCGI	ports/www/p5-FastCGI
 p5-FastCGI-ProcManager	ports/www/p5-FastCGI-ProcManager
 p5-Fax-Hylafax-Client	ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find	ports/www/p5-Feed-Find
+p5-File-Append-TempFile	ports/devel/p5-File-Append-TempFile
 p5-File-BaseDir	ports/devel/p5-File-BaseDir
 p5-File-BasicFlock	ports/devel/p5-File-BasicFlock
 p5-File-Binary	ports/devel/p5-File-Binary
