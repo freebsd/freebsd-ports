@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rscheme
-PORTVERSION=	0.7.3.2
+PORTVERSION=	0.7.3.3
 CATEGORIES=	lang scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.rscheme.org/rs/b/${PORTVERSION}/32/
 DISTNAME=	rs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,12 +27,6 @@ MAKE_ENV=	REAL_PREFIX=${PREFIX}
 BOOTSTRAP_DIR=	${WRKDIR}/${DISTNAME}
 BOOTSTRAP_TARGET=	stage1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Coredump during build"
-.endif
-
 post-extract:
 	@${MKDIR} ${WRKSRC} ${WRKDIR}/build
 
@@ -50,4 +43,4 @@ do-install:
 	(cd ${WRKDIR}/build && ${TAR} -c -f - resource) \
 		| (cd ${DATADIR} && ${TAR} --unlink -x -f -)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
