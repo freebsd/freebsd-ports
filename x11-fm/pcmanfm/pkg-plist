@@ -1,0 +1,5 @@
+bin/pcmanfm
+%%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
