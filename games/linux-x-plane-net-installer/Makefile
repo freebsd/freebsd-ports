@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	linux-x-plane-net-installer
-PORTVERSION=	1.03
+PORTVERSION=	1.07
 CATEGORIES=	games linux
-MASTER_SITES=	http://dev.x-plane.com/installer/${PORTVERSION}-lin1/
+MASTER_SITES=	http://dev.x-plane.com/installer/${PORTVERSION}/
 DISTFILES=	X-Plane-Net-Install.gz
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -44,5 +44,8 @@ do-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/X-Plane-Net-Install ${PREFIX}/bin
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
