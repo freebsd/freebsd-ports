@@ -1,0 +1,20 @@
+--- Makefile.orig	Thu Feb  9 14:30:53 2006
++++ Makefile	Thu Feb  9 14:31:22 2006
+@@ -229,7 +229,7 @@
+ TESTOPTS := -r 44100 -t 30 -f 0 -g 0 -T 0
+ 
+ test: gbsplay
+-	@MD5=`LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./gbsplay -E b -o stdout $(TESTOPTS) examples/nightmode.gbs 1 | md5sum | cut -f1 -d\ `; \
++	@MD5=`LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./gbsplay -E b -o stdout $(TESTOPTS) examples/nightmode.gbs 1 | md5`; \
+ 	EXPECT="3e0b21573e742101581b503da3ddf2f5"; \
+ 	if [ "$$MD5" = "$$EXPECT" ]; then \
+ 		echo "Bigendian output ok"; \
+@@ -239,7 +239,7 @@
+ 		echo "  Got:      $$MD5" ; \
+ 		exit 1; \
+ 	fi
+-	@MD5=`LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./gbsplay -E l -o stdout $(TESTOPTS) examples/nightmode.gbs 1 | md5sum | cut -f1 -d\ `; \
++	@MD5=`LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./gbsplay -E l -o stdout $(TESTOPTS) examples/nightmode.gbs 1 | md5`; \
+ 	EXPECT="3e540a0bddc00cb1e0b7c4bf1a3708d7"; \
+ 	if [ "$$MD5" = "$$EXPECT" ]; then \
+ 		echo "Littleendian output ok"; \
