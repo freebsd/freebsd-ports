@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	1.33
+PORTVERSION=	1.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
@@ -25,8 +25,8 @@ MAN3=	Object::InsideOut.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>

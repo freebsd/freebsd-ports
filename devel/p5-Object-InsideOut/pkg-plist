@@ -1,6 +1,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut/.packlist
 %%SITE_PERL%%/Object/InsideOut.pm
-%%SITE_PERL%%/Object/InsideOut/Results.pm
+%%SITE_PERL%%/Object/InsideOut/Autoload.pm
+%%SITE_PERL%%/Object/InsideOut/Chained.pm
+%%SITE_PERL%%/Object/InsideOut/Cumulative.pm
+%%SITE_PERL%%/Object/InsideOut/Dump.pm
+%%SITE_PERL%%/Object/InsideOut/Dynamic.pm
+%%SITE_PERL%%/Object/InsideOut/Foreign.pm
+%%SITE_PERL%%/Object/InsideOut/Overload.pm
+%%SITE_PERL%%/Object/InsideOut/Universal.pm
 %%SITE_PERL%%/Object/InsideOut/Util.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
