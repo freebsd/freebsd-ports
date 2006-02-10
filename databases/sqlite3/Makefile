@@ -11,7 +11,7 @@
 # If you want to build the TCL wrapper, you have to define WITH_TCLWRAPPER=yes.
 
 PORTNAME=	sqlite
-PORTVERSION=	3.2.8
+PORTVERSION=	3.3.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -21,24 +21,23 @@ COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
-HAS_CONFIGURE=	YES
-USE_REINPLACE=	YES
 INSTALLS_SHLIB=	YES
-
+GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-PORTDOCS=	*
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
+
+OPTIONS=	TCLWRAPPER	"TCL wrapper for SQLITE" off
+
 DOCSDIR=	${PREFIX}/share/doc/sqlite3
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite3
-LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
+PORTDOCS=	*
 
 # Defaults, for building the docs:
 TCL_V?=		8.4
 MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
-
-OPTIONS=	TCLWRAPPER	"TCL wrapper for SQLITE" off
 
 .include <bsd.port.pre.mk>
 
