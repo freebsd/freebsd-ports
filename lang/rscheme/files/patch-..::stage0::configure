@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- ../stage0/configure	2001/07/31 06:44:55	1.1
-+++ ../stage0/configure	2001/07/31 06:45:13
-@@ -2837,7 +2837,7 @@
+--- ../stage0/configure.orig	Mon Jun 13 17:00:47 2005
++++ ../stage0/configure	Fri Feb 10 14:19:41 2006
+@@ -6608,7 +6608,7 @@
  #
  
- if $OPTIMIZE
+ if test "$OPTIMIZE" = true -a "$GNU_C" = true
 -then CFLAGS="$CFLAGS -O2"
 +then CFLAGS="$CFLAGS"
  fi
  
- echo $ac_n "checking if we should use hardware registers""... $ac_c" 1>&6
+ # HWREGS is broken on the latest GCC (3.3) on both
