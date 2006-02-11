@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Mon Apr 14 12:44:42 2003
++++ Makefile.in	Sat Feb 11 12:00:16 2006
+@@ -233,10 +233,8 @@
+ makeClientDirs::
+ 	-${INSTALL} -u ${SYSUSER} -g ${SYSGROUP} -m ${DIRMODE} \
+ 	    -idb hylafax.sw.client -dir \
+-	    ${BIN} ${LIBDATA} ${LIBEXEC} ${SBIN}
++	    ${LIBDATA}
+ makeServerDirs::
+-	-${INSTALL} -u ${SYSUSER} -g ${SYSGROUP} -m ${DIRMODE} \
+-	    -idb hylafax.sw.server -dir ${SBIN};
+ 	-${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m ${DIRMODE} \
+ 	    -idb hylafax.sw.server -dir ${SPOOL}
+ 	-${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m ${DIRMODE} \

@@ -190,6 +190,7 @@ hylafax/bin/faxrcvd
 hylafax/bin/mkcover
 hylafax/bin/notify
 hylafax/bin/notify-4.1
+hylafax/bin/notify.awk
 hylafax/bin/pcl2fax
 @unexec if [ -f %D/hylafax/bin/pdf2fax ]; then rm %D/hylafax/bin/pdf2fax; fi
 hylafax/bin/pdf2fax.gs
@@ -216,6 +217,7 @@ hylafax/config/class1.0
 hylafax/config/class2
 hylafax/config/class2.0
 hylafax/config/class2.1
+hylafax/config/conexant-1.0
 hylafax/config/digi
 hylafax/config/digi-2
 hylafax/config/digi-20

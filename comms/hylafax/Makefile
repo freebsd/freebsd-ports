@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.2.1
-PORTREVISION=	3
+PORTVERSION=	4.2.5
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -22,8 +21,6 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-
-BROKEN=		Configure fails
 
 DIST_SUBDIR=	hylafax
 
@@ -68,7 +65,7 @@ USE_REINPLACE=	yes
 MAN1=	edit-faxcover.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 \
 	hylafax-client.1 sendfax.1 sendpage.1 sgi2fax.1 textfmt.1
 
-MAN5=	cid.5f destctrls.5f dialrules.5f doneq.5f hosts.hfaxd.5f \
+MAN5=	callid.5f destctrls.5f dialrules.5f doneq.5f hosts.hfaxd.5f \
 	hylafax-config.5f hylafax-info.5f hylafax-log.5f hylafax-server.5f \
 	hylafax-shutdown.5f pagermap.5f pagesizes.5f recvq.5f sendq.5f \
 	status.5f tsi.5f typerules.5f xferfaxlog.5f
@@ -99,14 +96,19 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf-dist,' \
+		${WRKSRC}/hfaxd/Makefile.in
+	${REINPLACE_CMD} -e 's,-O typerules,-O typerules-dist -src typerules,' \
+		-e 's,-O pagesizes,-O pagesizes-dist -src pagesizes,' \
+		${WRKSRC}/util/Makefile.in
 
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
 	${CHMOD} 4555 ${SUID_EXES}
 	${INSTALL_SCRIPT} ${WRKDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d
-	if [ ! -f ${PREFIX}/lib/fax/hfaxd.conf ]; then ${CP} -p ${PREFIX}/lib/fax/hfaxd.conf-dist ${PREFIX}/lib/fax/hfaxd.conf; fi
-	if [ ! -f ${PREFIX}/lib/fax/pagesizes ]; then ${CP} -p ${PREFIX}/lib/fax/pagesizes-dist ${PREFIX}/lib/fax/pagesizes; fi
-	if [ ! -f ${PREFIX}/lib/fax/typerules ]; then ${CP} -p ${PREFIX}/lib/fax/typerules-dist ${PREFIX}/lib/fax/typerules; fi
+.for f in hfaxd.conf pagesizes typerules
+	if [ ! -f ${PREFIX}/lib/fax/${f} ]; then ${CP} -p ${PREFIX}/lib/fax/${f}-dist ${PREFIX}/lib/fax/${f}; fi
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
