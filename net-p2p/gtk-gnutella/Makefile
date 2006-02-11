@@ -24,8 +24,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-DISTVERSION=	0.96b
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -47,15 +46,15 @@ CONFIGURE_ARGS=	-Dyacc='bison -y' -Dofficial='true' -Dprefix=${PREFIX} \
 		-Dprivlib=${PREFIX}/share/gtk-gnutella \
 		-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale \
 		-Dcc='${CC}' -Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
-		-Doptimize='undef' -Dlibpth='/usr/lib ${LOCALBASE}/lib' \
-		-Dd_enablenls='define'
+		-Doptimize='undef' -Dlibpth='/usr/lib ${LOCALBASE}/lib'
 
 MAN1=		gtk-gnutella.1
 
-OPTIONS=	GTK2 "Build with gtk2 frontend" on \
-		TLS "enable GNU TLS encryption support" off \
-		IPV6 "enable IPv6 support" off \
-		DBUS "enable DBUS support" off \
+OPTIONS=	GTK2 "Build with GTK2 frontend" on \
+		TLS "Enable GNU TLS encryption support" on \
+		NLS "Enable native language support" on \
+		IPV6 "Enable IPv6 support" on \
+		DBUS "Enable D-BUS IPC support" off \
 		DEBUG "Build with debugging symbols" off \
 		PORTABILITY "Use the PATH variable at run-time" off
 
@@ -84,7 +83,24 @@ CONFIGURE_ARGS+=	-Dd_portable=true
 .if defined(WITH_TLS)
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .else
-CONFIGURE_ARGS+=	-Dd_gnutls=undef
+CONFIGURE_ARGS+=	-U d_gnutls
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	-U d_enablenls
+.else
+CONFIGURE_ARGS+=	-D d_enablenls
+LIB_DEPENDS+=		intl:${PORTSDIR}/devel/gettext
+PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/el/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/es/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/fr/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/hu/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/ja/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/nb/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/nl/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/uk/LC_MESSAGES/gtk-gnutella.mo \
+			share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 .endif
 
 .if !defined(WITH_IPV6)
