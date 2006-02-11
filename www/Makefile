@@ -619,6 +619,7 @@
     SUBDIR += p5-Kwiki-Archive-Rcs
     SUBDIR += p5-Kwiki-Archive-SVK
     SUBDIR += p5-Kwiki-Atom
+    SUBDIR += p5-Kwiki-Cache
     SUBDIR += p5-Kwiki-Diff
     SUBDIR += p5-Kwiki-Edit-RequireUserName
     SUBDIR += p5-Kwiki-GDGraphGenerator
