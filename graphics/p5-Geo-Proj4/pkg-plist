@@ -1,0 +1,8 @@
+%%SITE_PERL%%/mach/Geo/Proj4.pm
+%%SITE_PERL%%/mach/Geo/Proj4.pod
+%%SITE_PERL%%/mach/auto/Geo/Proj4/.packlist
+%%SITE_PERL%%/mach/auto/Geo/Proj4/Proj4.bs
+%%SITE_PERL%%/mach/auto/Geo/Proj4/Proj4.so
+@dirrm %%SITE_PERL%%/mach/auto/Geo/Proj4
+@dirrmtry %%SITE_PERL%%/mach/auto/Geo
+@dirrmtry %%SITE_PERL%%/mach/Geo
