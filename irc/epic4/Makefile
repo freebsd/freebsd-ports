@@ -21,11 +21,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-CONFLICTS=	epic5-*
+CONFLICTS=	epic5-[0-9]*
 
 GNU_CONFIGURE=	yes
 MAN1=		epic.1
 USE_OPENSSL=	yes
+
+OPTIONS=	IPV6	"IPv6 support"		on \
+		TCL	"TCL support"		on \
+		PERL	"Perl scripting support" off
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +55,7 @@ CONFIGURE_ARGS+=	--with-tcl
 #
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"Perl 5.6.1 or newer is required; we recommend perl 5.8.5"
+IGNORE=		requires perl 5.6.1 or newer; we recommend perl 5.8.5
 .endif
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
