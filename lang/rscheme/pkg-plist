@@ -9,6 +9,7 @@ include/rscheme/chektype.ci
 include/rscheme/chektype.h
 include/rscheme/clientyp.h
 include/rscheme/collectn.h
+include/rscheme/dynlink.h
 include/rscheme/gcadapt.h
 include/rscheme/gcclient1.ci
 include/rscheme/gcclient2.ci
@@ -78,6 +79,9 @@ share/rscheme/resource/modules/corelib.mx
 share/rscheme/resource/modules/debugger.doc
 share/rscheme/resource/modules/debugger.mif
 share/rscheme/resource/modules/debugger.mx
+share/rscheme/resource/modules/earley.doc
+share/rscheme/resource/modules/earley.mif
+share/rscheme/resource/modules/earley.mx
 share/rscheme/resource/modules/editinp.doc
 share/rscheme/resource/modules/editinp.mif
 share/rscheme/resource/modules/editinp.mx
