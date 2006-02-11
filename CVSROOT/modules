@@ -7247,6 +7247,7 @@ openwebmail	ports/mail/openwebmail
 openwebmail-devel	ports/mail/openwebmail-devel
 openzz		ports/devel/openzz
 opera		ports/www/opera
+opera-devel	ports/www/opera-devel
 ophoto		ports/graphics/ophoto
 opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
