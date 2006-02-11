@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Catalyst/View/TT/ControllerLocal.pm
+%%SITE_PERL%%/Catalyst/Helper/View/TTControllerLocal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT/ControllerLocal/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT/ControllerLocal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/TT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/View/TT
+@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst

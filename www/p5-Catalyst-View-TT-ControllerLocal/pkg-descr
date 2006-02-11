@@ -1,0 +1,22 @@
+Catalyst::View::TT::ControllerLocal is like a normal Catalyst TT View,
+but with template file names relative to the current Controller. So
+with a set of templates like:
+
+ ./root/edit.html
+ ./root/add.html
+ ./root/Frobniz/add.html
+
+and an action "add" in the Controller "MyApp::Controller::Frobniz", you
+set "$c->stash->{template}" to "add.html" in order for it to pick up
+the "./root/frobbiz/add.html" template.
+
+Setting the "$c->stash->{template}" from Controller "MyApp::Con-
+troller::Bogon" would instead pick the default template in
+"./root/add.html" (since there is no Bogon subdirectory under root).
+
+In addition, since there is no file "edit.html" except in the Frobniz
+directory, C::V::TT::ControllerLocal will default to looking for
+"edit.html" in ./root/ and ./root/base (or whatever you set MyApp->con-
+fig->{INCLUDE_PATH} to).
+
+WWW: http://search.cpan.org/dist/Catalyst-View-TT-ControllerLocal/
