@@ -8,11 +8,11 @@
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	20020902
 CATEGORIES=	net-im
 MASTER_SITES=	http://public.yahoo.com/~mmk/
-DISTNAME=	fbsd4.${PORTNAME}
+DISTNAME=	fbsd5.${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
@@ -25,32 +25,39 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=    c.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not run on FreeBSD 4.x
 .endif
 
 ONLY_FOR_ARCHS=	i386
 
 GETTEXT_MAJOR=	6
 
+post-patch:
+	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKDIR}/bin/ymessenger
+	@${CHMOD} +w ${WRKDIR}/share/ymessenger/ymessenger.bin
+	${ECHO} ${GETTEXT_MAJOR} | dd bs=1 count=1 conv=notrunc seek=43202 \
+		of=${WRKDIR}/share/ymessenger/ymessenger.bin
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/ymessenger
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/ymessenger.bin \
+	${INSTALL_PROGRAM} ${WRKDIR}/share/ymessenger/ymessenger.bin \
 		${PREFIX}/libexec/ymessenger
 	@(set -x; for i in yahoo_gnome.png yahoo_kde.xpm \
 		ymessenger.desktop ymessenger.kdelnk; do \
-	    ${INSTALL_DATA} ${WRKDIR}/bin/$$i \
+	    ${INSTALL_DATA} ${WRKDIR}/share/ymessenger/$$i \
 		    ${PREFIX}/libexec/ymessenger; \
 	    done)
 	${MKDIR} ${PREFIX}/lib/ymessenger
-	${INSTALL_DATA} ${WRKDIR}/lib/libgtkhtml.so.0 \
+	${INSTALL_DATA} ${WRKDIR}/lib/libgtkhtml.so.6 \
 		${PREFIX}/lib/ymessenger/
 
-post-patch:
-	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKDIR}/bin/ymessenger
-	@${CHMOD} +w ${WRKDIR}/bin/ymessenger.bin
-	${ECHO} ${GETTEXT_MAJOR} | dd bs=1 count=1 conv=notrunc seek=43202 \
-		of=${WRKDIR}/bin/ymessenger.bin
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+****** Post-installation instructions: How to run Yahoo Messenger ******
+
+In order to run ymessenger, you must add the following entries
+to /etc/libmap.conf:
+
+[ymessenger.bin]
+libgtkhtml.so.6 ymessenger/libgtkhtml.so.6
+libintl.so.4    libintl.so.6
+
+************************************************************************
