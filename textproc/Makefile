@@ -813,6 +813,7 @@
     SUBDIR += xmlindent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
+    SUBDIR += xmlprpr
     SUBDIR += xmlpull
     SUBDIR += xmlroff
     SUBDIR += xmlstarlet
