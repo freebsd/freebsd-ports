@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creating standalone HTML slideshows from Kwiki markup
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${SITE_PERL}/Kwiki/Cache.pm:${PORTSDIR}/www/p5-Kwiki-Cache
 
 PERL_CONFIGURE=	yes
 
