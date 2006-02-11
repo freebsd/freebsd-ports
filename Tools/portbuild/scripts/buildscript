@@ -24,11 +24,14 @@ umountprocfs() {
 cleanup() {
   status=$1
 
-  cd ${dir}
-  keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
-  distdir=$(make -V DISTDIR)
-  if [ -z "${keep_distfiles}" -a ! -z "${distdir}" ]; then
-    rm -rf ${distdir}/*
+  # Don't keep distfiles if 'make checksum' failed
+  if [ ${status} -ne 1 ]; then
+    cd ${dir}
+    keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
+    distdir=$(make -V DISTDIR)
+    if [ -z "${keep_distfiles}" -a ! -z "${distdir}" ]; then
+      rm -rf ${distdir}/*
+    fi
   fi
 
   if [ -e ${dir}/.keep ]; then
@@ -37,8 +40,12 @@ cleanup() {
     tar cfjC /tmp/work.tbz ${objdir}/.. work
   fi
 
-  cat /tmp/make.log${status}
+  if [ ${status} -gt 0 ]; then
+    cat /tmp/make.log${status}
+  fi
+
   echo 1 > /tmp/status
+  touch /.dirty
   echo "================================================================"
   echo -n "build of ${dir} ended at "
   date
@@ -65,8 +72,7 @@ add_pkg() {
       else
         if ! pkg_add $i; then
           echo "error in dependency $i, exiting"
-          echo "1" > /tmp/status
-          exit 1
+          cleanup 0
         fi
       fi
     done
@@ -80,22 +86,39 @@ del_pkg() {
   cd /tmp/depends
   export PKG_PATH=/tmp/depends
   if [ ! -z "${pkgs}" ]; then
-    unset delpkg
-    for i in $pkgs; do
-      base=$(basename $i .tgz)
-      base=$(basename $base .tbz)
-      if ! pkg_info -q -e $base; then
-        echo "skipping $base, already deleted"
-      else
-	delpkg="${base} ${delpkg}"
+    recursion=1
+    dellist=""
+    while [ $recursion -eq 1 ]; do
+      unset delpkg nextpkg
+      recursion=0
+      for i in $pkgs; do
+        base=$(basename $i .tgz)
+        base=$(basename $base .tbz)
+        if [ -s /var/db/pkg/${base}/+REQUIRED_BY ]; then
+          recursion=1
+          nextpkg="${base} ${nextpkg}"
+        else
+          delpkg="${base} ${delpkg}"
+        fi
+      done
+      pkgs="${nextpkg}"
+      if [ "$dellist" = "$delpkg" ]; then
+        echo "deleted list =\""$dellist"\", packages to delete ="\"$delpkg\"
+        echo "The following packages were left behind (perhaps your dependency list is incomplete):"
+        ls /var/db/pkg
+        echo "error in pkg_delete, exiting"
+        cleanup 0
+      else 
+        for j in ${delpkg}; do
+          echo "Deleting ${j}"
+          if ! (pkg_delete $j); then
+            echo "--> error in pkg_delete, exiting"
+            cleanup 0
+          fi
+        done
+        dellist=$delpkg
       fi
     done
-    echo "Deleting $delpkg"
-    if ! (echo ${delpkg} | xargs pkg_delete -f); then
-      echo "error in pkg_delete, exiting"
-      echo "1" > /tmp/status
-      exit 1
-    fi
   fi
 }
 
@@ -107,6 +130,13 @@ PD=$4
 FD=$5
 BD=$6
 RD=$7
+
+export PATH=/pkg/libexec/ccache/:$PATH
+export CCACHE_PATH=/usr/bin:/usr/local/bin
+export MALLOC_OPTIONS=AJ
+
+L=`echo ${LOCALBASE} | sed 's,^/,,'`
+X=`echo ${X11BASE} | sed 's,^/,,'`
 
 if [ $phase = 1 ]; then
 
@@ -121,10 +151,12 @@ if [ $phase = 1 ]; then
   echo "BUILD_DEPENDS=${BD}"
   echo "RUN_DEPENDS=${RD}"
 
-  add_pkg $FD
+  echo "prefixes: LOCALBASE=${L} X11BASE=${X}"
 
   #Allow ports to notice they're being run on bento
   export PACKAGE_BUILDING=1
+
+  add_pkg $FD
 
   cd $dir || exit 1
   pkgname=$(make package-name)
@@ -138,18 +170,41 @@ if [ $phase = 1 ]; then
     cleanup 1
   fi
 
+  del_pkg $FD
+
 else
+
+  # Files we do not care about changing between pre-build and post-cleanup
+  cat > /tmp/mtree.preexclude <<EOF
+./root/*
+./var/*
+./tmp/*
+./etc/make.conf.bak
+./etc/make.conf
+./work/*
+./compat/linux/proc
+./usr/share/man/cat*/*
+./usr/local/etc/apache/httpd.conf
+./usr/local/etc/apache2/httpd.conf
+EOF
+  # Record a "pristine" mtree.
+  mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
 
   cd $dir || exit 1
   pkgname=$(make package-name)
 
   echo "================================================================"
   echo "====================<phase 2: make extract>===================="
-  add_pkg ${ED}
+
+  # XXX The 'make fetch' stage is rerun by 'make extract' since there's
+  # no cookie for it (and nowhere to put a cookie during 'make fetch'
+  # anyway, since ${WRKDIR} isn't created yet)
+
+  add_pkg ${ED} ${FD}
   cd $dir
   /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make extract || cleanup 2
   cat /tmp/make.log2
-  del_pkg ${ED}
+  del_pkg ${ED} ${FD}
 
   echo "================================================================"
   echo "====================<phase 3: make patch>===================="
@@ -161,7 +216,22 @@ else
 
   echo "================================================================"
   echo "====================<phase 4: make build>===================="
+
   add_pkg ${BD}
+
+  # Files we do not care about changing between pre-build and post-cleanup
+  cat > /tmp/mtree.buildexclude <<EOF
+./var/log/*
+./tmp/*
+./work/*
+./compat/linux/proc
+./root/*
+./var/mail/*
+./var/tmp/*
+./usr/share/man/cat*/*
+EOF
+  # Record a "pristine" mtree.
+  mtree -X /tmp/mtree.buildexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.prebuild
 
   xvfb=0
   if which -s Xvfb; then
@@ -178,8 +248,26 @@ else
   cat /tmp/make.log4
 
   echo "================================================================"
-  echo "====================<phase 5: make package>===================="
+  echo "====================<phase 5: make test>===================="
+  cd $dir
+  /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make -k regression-test
+  cat /tmp/make.log5
+
+  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list.preinstall
+
+  if [ -s /tmp/list.preinstall ]; then
+    echo "================================================================"
+    echo "Fatal error: filesystem was touched prior to 'make install' phase"
+    cat /tmp/list.preinstall
+    echo "================================================================"
+    cleanup 0
+  fi
+
+  echo "================================================================"
+  echo "====================<phase 6: make install>===================="
+
   add_pkg ${RD}
+
   cat > /tmp/mtree.exclude <<EOF
 ./root/*
 ./var/*
@@ -190,64 +278,113 @@ else
 ./compat/linux/proc
 EOF
   mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
+
   cd $dir
-  if /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make package; then
-    cat /tmp/make.log5
+  if /pnohang $TIMEOUT /tmp/make.log6 ${pkgname} make install; then
+    cat /tmp/make.log6
+    echo "0" > /tmp/status
+  else
+    cleanup 6
+  fi
+
+  echo "================================================================"
+  echo "====================<phase 7: make package>===================="
+  cd $dir
+  if /pnohang $TIMEOUT /tmp/make.log7 ${pkgname} make package; then
+    cat /tmp/make.log7
     echo "0" > /tmp/status
     prefix=$(make -V PREFIX)
     del_pkg ${pkgname}
+  else
+    cleanup 7
+  fi
 
-    L=`echo ${LOCALBASE} | sed 's,^/,,'`
-    X=`echo ${X11BASE} | sed 's,^/,,'`
+  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list3
 
-    mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${L}/www/|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|${X}/(include|share)/pixmaps|${L}/lib/xemacs|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list3
-
-    if [ -s /tmp/list3 ]; then
-      cd /
-      grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
-      grep ' missing$' /tmp/list3 > /tmp/list5
-      grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
-      if [ "x${NOPLISTCHECK}" = "x" ]; then
-	if grep -qE 'usr/(local|X11R6)/(bin/|include/|man/|sbin/|share/|share/|lib/|libdata/|libexec/)' /tmp/list4; then
-          echo "1" > /tmp/status
-	fi
-	if [ -s /tmp/list5 ]; then
-	  echo "1" > /tmp/status
-	fi
+  # Compare the state of the filesystem now to before the 'make install' phase
+  if [ -s /tmp/list3 ]; then
+    cd /
+    grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
+    grep ' missing$' /tmp/list3 > /tmp/list5
+    grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
+    if [ "x${NOPLISTCHECK}" = "x" ]; then
+      if grep -vqE "($X|$L)/etc/" /tmp/list4; then
+        echo "1" > /tmp/status
       fi
-      echo "================================================================"
-    fi
-
-    # BUILD_DEPENDS need to be present at install-time, e.g. gmake
-    # Concatenate and remove duplicates
-    BRD=$(echo $BD $RD | tr ' ' '\n' | sort -u | tr '\n' ' ')
-    del_pkg ${BRD}
-    cd /var/db/pkg
-    if [ $(echo $(echo * | wc -c)) != 2 ]; then
-      echo "leftover packages:" *
-      del_pkg *
-    fi
-
-    echo
-    echo "=== Checking filesystem state"
-
-    if [ -s /tmp/list4 ]; then
-      echo "list of extra files and directories in / (not present before this port was installed but present after it was deinstalled)"
-      cat /tmp/list4
-    fi
-    if [ -s /tmp/list5 ]; then
-      echo "list of files present before this port was installed but missing after it was deinstalled)"
-      cat /tmp/list5
-    fi
-    if [ -s /tmp/list6 ]; then
-      echo "list of filesystem changes from before and after port installation and deinstallation"
-      cat /tmp/list6
-      if [ "x${NOPLISTCHECK}" = "x" ]; then
+      if [ -s /tmp/list5 ]; then
         echo "1" > /tmp/status
       fi
     fi
-  else
-    cleanup 5
+    echo "================================================================"
+  fi
+
+  echo
+  echo "=== Checking filesystem state"
+
+  if [ -s /tmp/list4 ]; then
+    echo "list of extra files and directories in / (not present before this port was installed but present after it was deinstalled)"
+    cat /tmp/list4
+  fi
+  if [ -s /tmp/list5 ]; then
+    echo "list of files present before this port was installed but missing after it was deinstalled)"
+    cat /tmp/list5
+  fi
+  if [ -s /tmp/list6 ]; then
+    echo "list of filesystem changes from before and after port installation and deinstallation"
+    cat /tmp/list6
+    if [ "x${NOPLISTCHECK}" = "x" ]; then
+      echo "1" > /tmp/status
+    fi
+  fi
+
+  # BUILD_DEPENDS and RUN_DEPENDS are both present at install-time (e.g. gmake)
+  # Concatenate and remove duplicates
+  BRD=$(echo $BD $RD | tr ' ' '\n' | sort -u | tr '\n' ' ')
+  del_pkg ${BRD}
+  cd /var/db/pkg
+  if [ $(echo $(echo * | wc -c)) != 2 ]; then
+    echo "leftover packages:" *
+    del_pkg *
+    echo "1" > /tmp/status
+    cleanup 0
+  fi
+
+  # Compare the state of the filesystem now to clean system (should again be clean)
+  mtree -X /tmp/mtree.preexclude -x -f /tmp/mtree.pristine -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list3
+
+  echo
+  echo "=== Checking filesystem state after all packages deleted"
+
+  if [ -s /tmp/list3 ]; then
+    cd /
+    grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
+    grep ' missing$' /tmp/list3 > /tmp/list5
+    grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
+    if [ "x${NOPLISTCHECK}" = "x" ]; then
+      if grep -vqE "($X|$L)/etc/" /tmp/list4; then
+        #echo "1" > /tmp/status
+      fi
+      if [ -s /tmp/list5 ]; then
+        #echo "1" > /tmp/status
+      fi
+    fi
+    echo "================================================================"
+
+    if [ -s /tmp/list4 ]; then
+      echo "list of extra files and directories in / (not present on clean system but present after everything was deinstalled)"
+      cat /tmp/list4
+      touch /.dirty
+    fi
+    if [ -s /tmp/list5 ]; then
+      echo "list of files present on clean system but missing after everything was deinstalled)"
+      cat /tmp/list5
+      touch /.dirty
+    fi
+    if [ -s /tmp/list6 ]; then
+      echo "list of filesystem changes from before and after all port installation/deinstallation"
+      cat /tmp/list6
+      touch /.dirty
+    fi
   fi
 
   if [ ${xvfb} = 1 ]; then
