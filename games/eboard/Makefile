@@ -7,7 +7,7 @@
 
 PORTNAME=	eboard
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 EXTRAS=		1pl2 2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,6 +29,13 @@ INSTALL_TARGET=	install install-man
 MAN1=	eboard-config.1 eboard-addtheme.1
 MAN6=	eboard.6
 
+DESKTOP_ENTRIES="eboard" \
+		"Play chess" \
+		"eboard.xpm" \
+		"eboard" \
+		"Application;Game;" \
+		false
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's,-O6,${CXXFLAGS},' \
 		${WRKSRC}/configure
@@ -46,5 +53,7 @@ post-install:
 	@cd ${WRKDIR}/eboard-extras-${extra} && ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
 	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install
 .endfor
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
 
 .include <bsd.port.mk>
