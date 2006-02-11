@@ -21,7 +21,7 @@ DISTNAME=	${PORTNAME}-stable-${PORTVERSION:S/.r/-rc/}-${YEAR}${MONTH}${DAY}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LATEST_LINK=	${PORTNAME}
+LATEST_LINK=	${PORTNAME}-stable
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
