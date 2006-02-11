@@ -1,0 +1,3 @@
+bin/gotthard
+@unexec if cmp -s %D/etc/gotthard.conf %D/etc/gotthard.conf.sample; then rm -f %D/etc/gotthard.conf; fi
+etc/gotthard.conf.sample
