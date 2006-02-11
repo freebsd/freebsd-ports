@@ -6,7 +6,7 @@
 
 PORTNAME=	libcaca
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 
@@ -23,14 +23,14 @@ CONFIGURE_ARGS=	--enable-ncurses --disable-doc
 MAN1=		caca-config.1 cacademo.1 cacaview.1
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--disable-imlib2 --disable-x11
+CONFIGURE_ARGS+=	--disable-x11
 .else
 USE_XLIB=	yes
+.endif
 .if defined(WITHOUT_IMLIB2)
 CONFIGURE_ARGS+=	--disable-imlib2
 .else
 LIB_DEPENDS+=		Imlib2.3:${PORTSDIR}/graphics/imlib2
-.endif
 .endif
 
 .include <bsd.port.pre.mk>
