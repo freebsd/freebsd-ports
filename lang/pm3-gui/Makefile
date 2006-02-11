@@ -13,15 +13,16 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-level GUI libraries for the PM3 Modula-3 distribution
 
-BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
+BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net \
+		/nonexistent:${PORTSDIR}/lang/pm3-base:configure
 RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
-DEPENDS=	${PORTSDIR}/lang/pm3-base:configure
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
 PLIST_SUB+=	SOVERSION=${SOVERSION} TARGET=${TARGET} \
 		TARGETDIR=${TARGETDIR} WORDSIZE=${WORDSIZE}
 USE_XLIB=	yes
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../pm3-base/work/pm3-${PORTVERSION}
 
 BUILDDIRS=	graphics/gr-libs/X11 \
