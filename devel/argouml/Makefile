@@ -17,7 +17,7 @@ DISTFILES+=	argomanual-${PORTVERSION}.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	philip.reynolds@rfc-networks.ie
+MAINTAINER=	phil@brassy.net
 COMMENT=	A UML design tool with cognitive support
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
