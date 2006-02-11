@@ -7,7 +7,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/	\
 		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
@@ -16,7 +16,7 @@ DISTNAME=	cdf${VER}-dist-cdf
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
-MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=ports	\
+MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu	\
 		FORTRAN=yes F77=${F77}
 INSTALLS_SHLIB=	yes
 
@@ -34,7 +34,6 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 pre-configure:
 .for def in ${DEFS}
 	${REINPLACE_CMD} -e 's|<path>|${PREFIX}|'		\
-		-e 's|/home/cdf/cdf30-dist|${PREFIX}|'		\
 		 ${WRKSRC}/src/definitions/definitions.${def}
 .endfor
 
