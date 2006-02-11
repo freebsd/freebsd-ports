@@ -138,6 +138,7 @@
     SUBDIR += gkrellmwireless
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
+    SUBDIR += globus4
     SUBDIR += gmdns
     SUBDIR += gnet
     SUBDIR += gnet-glib2
