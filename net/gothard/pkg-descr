@@ -1,0 +1,3 @@
+gotthard is a daemon which tunnels ssh sessions through a https proxy.
+
+WWW: http://www.nazgul.ch/dev.html
