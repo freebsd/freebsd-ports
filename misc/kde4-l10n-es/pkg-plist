@@ -365,10 +365,8 @@ share/doc/HTML/es/common/bottom2.png
 share/doc/HTML/es/common/bsd-license.html
 share/doc/HTML/es/common/docheadergears.png
 share/doc/HTML/es/common/doctop1.png
-share/doc/HTML/es/common/doctop1a-online.png
 share/doc/HTML/es/common/doctop1a.png
 share/doc/HTML/es/common/doctop1b.png
-share/doc/HTML/es/common/doctop2-online.png
 share/doc/HTML/es/common/doctop2.png
 share/doc/HTML/es/common/doxygen.css
 share/doc/HTML/es/common/favicon.ico
@@ -391,7 +389,6 @@ share/doc/HTML/es/common/kde-web.css
 share/doc/HTML/es/common/kde_gear_64.png
 share/doc/HTML/es/common/kde_logo.png
 share/doc/HTML/es/common/kde_logo_bg.png
-share/doc/HTML/es/common/kmenu.png
 share/doc/HTML/es/common/lgpl-license
 share/doc/HTML/es/common/lgpl-license.html
 share/doc/HTML/es/common/lgpl-translated.html
