@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIME::Types for Ruby
 
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=2006-04-07
+
 USE_RUBY=	yes
 
 NO_BUILD=	yes
