@@ -816,6 +816,7 @@
     SUBDIR += p5-Data-Taxonomy-Tags
     SUBDIR += p5-Data-TemporaryBag
     SUBDIR += p5-Data-TreeDumper
+    SUBDIR += p5-Data-Types
     SUBDIR += p5-Data-UUID
     SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-DayOfWeek
