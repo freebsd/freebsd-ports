@@ -1,15 +1,17 @@
---- frontpage/version5.0/apache2/mod_fpcgid.c.orig	Thu Jan  9 12:19:29 2003
-+++ frontpage/version5.0/apache2/mod_fpcgid.c	Wed Feb 12 10:30:45 2003
-@@ -121,8 +121,6 @@
+--- frontpage/version5.0/apache2/mod_fpcgid.c-orig	Fri Jun 27 15:18:28 2003
++++ frontpage/version5.0/apache2/mod_fpcgid.c	Tue Jan 17 18:01:02 2006
+@@ -120,8 +120,8 @@
+ #include <sys/stat.h>
  #include <sys/un.h> /* for sockaddr_un */
  
- 
--module AP_MODULE_DECLARE_DATA frontpage_module; 
 -
+-module AP_MODULE_DECLARE_DATA frontpage_module; 
++#include "mpm_common.h"
++#include "httpd.h"
+ 
  #if 0
  This section is not used in the FrontPage daemon.
- static int cgid_init(apr_pool_t *p, apr_pool_t *plog, apr_pool_t *ptemp, server_rec *main_server); 
-@@ -187,13 +185,6 @@
+@@ -187,13 +187,6 @@
  #define DEFAULT_CONNECT_ATTEMPTS  15
  #endif
  
@@ -23,7 +25,16 @@
  /* If a request includes query info in the URL (stuff after "?"), and
   * the query info does not contain "=" (indicative of a FORM submission),
   * then this routine is called to create the argument list to be passed
-@@ -755,21 +746,42 @@
+@@ -685,7 +678,7 @@
+                 /* Bad things happened. Everyone should have cleaned up. */
+                 ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_TOCLIENT, rc, r,
+                               "couldn't create child process: %d: %s", rc, 
+-                              apr_filename_of_pathname(r->filename));
++                              apr_filepath_name_get(r->filename));
+             }
+         }
+         frontpage_closePipeWrite(&pipe_info);
+@@ -755,9 +748,12 @@
  
  void* fpcreate_cgid_config(apr_pool_t *p, server_rec *s) 
  { 
@@ -31,21 +42,14 @@
 -    (cgid_server_conf *) apr_pcalloc(p, sizeof(cgid_server_conf)); 
 +    cgid_server_conf *c;
  
--    c->logname = NULL; 
--    c->logbytes = DEFAULT_LOGBYTES; 
--    c->bufbytes = DEFAULT_BUFBYTES; 
--    c->sockname = ap_server_root_relative(p, DEFAULT_SOCKET); 
--    return c; 
 +    c = (cgid_server_conf *) apr_pcalloc(p, sizeof(cgid_server_conf)); 
 +
 +    c->fp_status = -1;
 +    c->fp_admin_status = -1;
-+    c->logname = NULL; 
-+    c->logbytes = DEFAULT_LOGBYTES; 
-+    c->bufbytes = DEFAULT_BUFBYTES; 
-+    c->sockname = ap_server_root_relative(p, DEFAULT_SOCKET); 
-+    return c; 
- } 
+     c->logname = NULL; 
+     c->logbytes = DEFAULT_LOGBYTES; 
+     c->bufbytes = DEFAULT_BUFBYTES; 
+@@ -767,9 +763,27 @@
  
  void* fpmerge_cgid_config(apr_pool_t *p, void *basev, void *overridesv)
  { 
@@ -75,7 +79,7 @@
  } 
  
  static const char *set_scriptlog(cmd_parms *cmd, void *dummy, const char *arg) 
-@@ -823,8 +835,76 @@
+@@ -823,8 +837,76 @@
      return NULL; 
  } 
  
@@ -152,3 +156,64 @@
      AP_INIT_TAKE1("FPScriptLog", set_scriptlog, NULL, RSRC_CONF,
                    "the name of a log for script debugging info"),
      AP_INIT_TAKE1("FPScriptLogLength", set_scriptlog_length, NULL, RSRC_CONF,
+@@ -935,12 +1017,13 @@
+         apr_file_printf(f, "%s\n", sbuf); 
+ 
+     first = 1;
+-    APR_BRIGADE_FOREACH(e, bb) {
++    e = APR_BRIGADE_FIRST(bb);
++    while (e != APR_BRIGADE_SENTINEL(bb)) {
+         if (APR_BUCKET_IS_EOS(e)) {
+             break;
+         }
+         rv = apr_bucket_read(e, &buf, &len, APR_BLOCK_READ);
+-        if (!APR_STATUS_IS_SUCCESS(rv) || (len == 0)) {
++        if ((rv != APR_SUCCESS) || (len == 0)) {
+             break;
+         }
+         if (first) {
+@@ -949,6 +1032,7 @@
+         }
+         apr_file_write(f, buf, &len);
+         apr_file_puts("\n", f);
++        e = APR_BUCKET_NEXT(e);
+     }
+ 
+     if (script_err) {
+@@ -1036,14 +1120,16 @@
+     const char *buf;
+     apr_size_t len;
+     apr_status_t rv;
+-    APR_BRIGADE_FOREACH(e, bb) {
++    e = APR_BRIGADE_FIRST(bb);
++    while (e != APR_BRIGADE_SENTINEL(bb)) {
+         if (APR_BUCKET_IS_EOS(e)) {
+             break;
+         }
+         rv = apr_bucket_read(e, &buf, &len, APR_BLOCK_READ);
+-        if (!APR_STATUS_IS_SUCCESS(rv)) {
++        if (rv != APR_SUCCESS) {
+             break;
+         }
++        e = APR_BUCKET_NEXT(e);
+     }
+ }
+ 
+@@ -1179,7 +1265,8 @@
+             return rv;
+         }
+  
+-        APR_BRIGADE_FOREACH(bucket, bb) {
++        bucket = APR_BRIGADE_FIRST(bb);
++        while (bucket != APR_BRIGADE_SENTINEL(bb)) {
+             const char *data;
+             apr_size_t len;
+ 
+@@ -1223,6 +1310,7 @@
+                 /* silly script stopped reading, soak up remaining message */
+                 child_stopped_reading = 1;
+             }
++            bucket = APR_BUCKET_NEXT(bucket);
+         }
+         apr_brigade_cleanup(bb);
+     }

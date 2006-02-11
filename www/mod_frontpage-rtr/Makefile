@@ -9,12 +9,10 @@ CATEGORIES=	www
 
 MAINTAINER=	swhetzel@gmail.com
 
-WANT_APACHE=	13
-
-PKGMESSAGE=	${MASTERDIR}/pkg-message13
+USE_APACHE=	13
 
 .if defined(WITH_SSL)
-AP_PORT=	www/apache13-modssl
+APACHE_PORT=	www/apache13-modssl
 .endif
 
 MASTERDIR=	${.CURDIR}/../mod_frontpage2-rtr

@@ -9,4 +9,4 @@ Ports:
 Packages:
     mod_frontpage		(Apache 1.3 DSO module, not from Microsoft)
     mod_frontpage13		(Apache 1.3 DSO module from Ready-to-Run)
-    mod_frontpage2		(Apache 2.x DSO module from Ready-to-Run)
+    mod_frontpage2x		(Apache 2.x DSO module from Ready-to-Run)

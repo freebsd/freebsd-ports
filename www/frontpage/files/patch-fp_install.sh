@@ -1,5 +1,5 @@
 --- frontpage/version5.0/fp_install.sh.orig	Wed Jan 14 13:00:53 2004
-+++ frontpage/version5.0/fp_install.sh	Sun Feb  6 18:34:34 2005
++++ frontpage/version5.0/fp_install.sh	Tue Jan 17 19:48:11 2006
 @@ -13,7 +13,7 @@
  main() {
      initialize
@@ -137,26 +137,34 @@
      echo "Please read the following license agreement (which can be found"
      echo "in $licensefile"
      echo
-@@ -557,28 +552,36 @@
+@@ -553,32 +548,42 @@
+ }
+ 
+ #
+-# Find out if this is an Apache 1.3 or Apache 2.0 installation
++# Find out if this is an Apache 1.3 or Apache 2.x installation
  #
  getapachevers()
  {
 -    $echo "Which version of Apache will you be using? (1.3 or 2.0) ${nnl}"
 -    read ApacheVers
+-    while [ "$ApacheVers" != "1.3" -a "$ApacheVers" != "2.0" ]
 +    ApacheVers=""
-     while [ "$ApacheVers" != "1.3" -a "$ApacheVers" != "2.0" ]
++    while [ "$ApacheVers" != "1.3" -a "$ApacheVers" != "2.0" \
++	 -a "$ApacheVers" != "2.1" -a "$ApacheVers" != "2.2" ]
      do
 -      $echo "Please enter either '1.3' or '2.0'"
 -      $echo "Which version of Apache will you be using? (1.3 or 2.0) ${nnl}"
-+      $echo "Which version of Apache will you be using? (1.3 or 2.0) [${DEFAULTVERSION}] ${nnl}"
++      $echo "Which version of Apache will you be using? (1.3 or 2.x) [${DEFAULTVERSION}] ${nnl}"
        read ApacheVers
 +      if [ "$ApacheVers" = "" ]
 +      then
 +        ApacheVers=${DEFAULTVERSION}
 +      fi
-+      if [ "$ApacheVers" != "1.3" -a "$ApacheVers" != "2.0" ]
++      if [ "$ApacheVers" != "1.3" -a "$ApacheVers" != "2.0" \
++	-a "$ApacheVers" != "2.1" -a "$ApacheVers" != "2.2" ]
 +      then
-+        echo "Please enter either '1.3' or '2.0'"
++        echo "Please enter either 1.3, 2.0, 2.1 or 2.2"
 +      fi
      done
  
@@ -182,7 +190,58 @@
          read location
          if [ "$location" != "" ]
          then
-@@ -946,6 +949,56 @@
+@@ -586,27 +591,30 @@
+         fi
+ 
+ 	#
+-	# We don't change the 1.3 behavior, but 2.0 requires apachectl, so
++	# We don't change the 1.3 behavior, but 2.x requires apachectl, so
+ 	# we double check
+-	if [ "$ApacheVers" = "2.0" -a `basename $HttpdFile` != "apachectl" ]
+-	then
+-	    echo "Warning: The Apache control file you entered is not named 'apachectl'"
+-	    myprompt 'yYnN' "Are you sure this is correct? (y/n)" "Y"
+-
+-	    if [ "$answer" != "y" -a "$answer" != "Y" ]
+-	    then
+-		# Reset it
+-		HttpdFile=""
+-	    fi
+-	fi
+-
+-	if [ "$ApacheVers" = "1.3"  ]
+-	then
+-	   if [ ! -x "$HttpdFile" -o ! -f "$HttpdFile" ]
+-	   then
+-	    HttpdFile=""
+-	   fi
+-	fi
++	case "$ApacheVers" in
++	    2.?)
++		if [ `basename $HttpdFile` != "apachectl" ]
++		then
++		    echo "Warning: The Apache control file you entered is not named 'apachectl'"
++		    myprompt 'yYnN' "Are you sure this is correct? (y/n)" "Y"
++
++		    if [ "$answer" != "y" -a "$answer" != "Y" ]
++		    then
++			# Reset it
++			HttpdFile=""
++		    fi
++		fi
++		;;
++
++	    1.3)
++		if [ ! -x "$HttpdFile" -o ! -f "$HttpdFile" ]
++		then
++		    HttpdFile=""
++		fi
++		;;
++	esac
+ 
+     done
+     if [ "$ApacheVers" = "1.3" ] 
+@@ -946,6 +954,56 @@
      return $retval
  }
  
@@ -239,7 +298,7 @@
  # examine weX.cnf file, make sure it is a patched apache server
  verifywebserver()
  {
-@@ -964,27 +1017,22 @@
+@@ -964,27 +1022,22 @@
      port=$webport
      
      echo "Verifying web server configuration..."
@@ -278,7 +337,7 @@
      fi
  
      getdocroot $weconfigfile ||
-@@ -993,28 +1041,41 @@
+@@ -993,28 +1046,41 @@
          return 1
      }
  
@@ -336,7 +395,7 @@
          return 1
      fi
  
-@@ -1088,7 +1149,7 @@
+@@ -1088,7 +1154,7 @@
              echo "Skipping chown..."
          else
              servertype=`grep -i "^servertype:" $weconfigfile|sed -e 's/servertype://g'`
@@ -345,7 +404,7 @@
              then
                  echo "Skipping non patched-apache web $weconfigfile"
              else
-@@ -1120,10 +1181,9 @@
+@@ -1120,10 +1186,9 @@
      echo 
      echo "Processing webs in port $webport..."
      echo 
@@ -359,7 +418,7 @@
      configfiledir=`dirname $configfile`"/"
      
      getdocroot $weconfigfile ||
-@@ -1364,10 +1424,9 @@
+@@ -1364,10 +1429,9 @@
      port=$webport
      
      echo "Adding webs in port ${webport} to chown script..."
@@ -373,7 +432,7 @@
      configfiledir=`dirname $configfile`"/"
      getdocroot $weconfigfile ||
      {
-@@ -1474,11 +1533,16 @@
+@@ -1474,11 +1538,16 @@
  	configfile=$rootconfigfile
  	return
      fi
@@ -391,7 +450,7 @@
      done
      rootconfigfile=$configfile
  }
-@@ -1517,28 +1581,51 @@
+@@ -1517,28 +1586,51 @@
      
      getrootconfigfile
      httpdconfigfile=$configfile
@@ -449,7 +508,7 @@
      webowner=""
      until [ "$webowner" != "" ]
      do
-@@ -1553,6 +1640,12 @@
+@@ -1553,6 +1645,12 @@
      echo 
      getparam Group $configfile $port "Getting Group from "
      defgroup=$param
@@ -462,7 +521,7 @@
      webgroup=""
      until [ "$webgroup" != "" ]
      do
-@@ -1670,6 +1763,113 @@
+@@ -1670,6 +1768,113 @@
      return $retval
  }
  
@@ -576,7 +635,7 @@
  # Install a web on a multihosted server
  installvirtualwebs()
  {
-@@ -1684,17 +1884,7 @@
+@@ -1684,17 +1889,7 @@
          return $retval
      fi
      
@@ -595,7 +654,7 @@
      httpdconfigfile=$configfile
      
      getHttpRootDirective $configfile Port
-@@ -1792,12 +1982,17 @@
+@@ -1792,12 +1987,17 @@
          done
          
          webname="/"
@@ -615,7 +674,7 @@
          done
          
          servertype="apache-fp"
-@@ -1880,9 +2075,9 @@
+@@ -1880,9 +2080,9 @@
      echo
      
      servertype="apache-fp"
@@ -628,7 +687,7 @@
      configfiledir=`dirname $configfile`"/"
      
      getdocroot $weconfigfile ||
-@@ -1908,11 +2103,16 @@
+@@ -1908,11 +2108,16 @@
      while $echo "Enter the web name (CTRL-D if no more webs): ${nnl}" 
          read webname    
      do
@@ -646,7 +705,7 @@
          done
          
          case "$webname" in
-@@ -2113,42 +2313,43 @@
+@@ -2113,42 +2318,43 @@
      weconfigfile=$1
      
      servertype="apache-fp"
@@ -719,7 +778,7 @@
          fi
      else
         resconffile=$configfile
-@@ -2274,7 +2475,7 @@
+@@ -2274,7 +2480,7 @@
                                      print ARRAY[i] 
                                  }
                              }
@@ -728,7 +787,7 @@
      
      if [ "$param" = "" ]
      then
-@@ -2340,22 +2541,22 @@
+@@ -2340,22 +2546,22 @@
          # Apache 2.0
  	httpdmajor=2
          fpversionoption="apache-2.0"
@@ -761,7 +820,22 @@
  	return 0
      elif [ $rtc -ne 0 ]
      then
-@@ -2578,23 +2779,7 @@
+@@ -2403,10 +2609,11 @@
+     NEWHTTPD=$NEWHTTPDNEW
+     
+     # First check for Apache 2
+-    if [ "$ApacheVers" = "2.0"  ]
++    if [ "$ApacheVers" = "2.0" -o "$ApacheVers" = "2.1" \
++      -o "$ApacheVers" = "2.2" ]
+     then
+-      # It's Apache 2.0, check the details, and if ok, return.  We don't
+-      # ship a prebuilt Apache 2.0, nor is there a patch to install
++      # It's Apache 2.x, check the details, and if ok, return.  We don't
++      # ship a prebuilt Apache 2.x, nor is there a patch to install
+       checkVersion2 $installedApacheVers
+       rtc=$?
+       unset installedApacheVers
+@@ -2578,23 +2785,7 @@
  
  getModFpVersion1() 
  {
@@ -786,7 +860,7 @@
  }
  
  checkModFpSo1()
-@@ -2822,11 +3007,11 @@
+@@ -2822,11 +3013,11 @@
      echo "This version of FrontPage requires either:"
      echo "  Apache Version $sourceVersion"
      echo "or"
@@ -800,7 +874,7 @@
      echo "has been patched to work with FrontPage."
      myprompt 'yYnN' "Do you want to install this prebuilt version (y/n)" "N"
      if [ $answer = n ] || [ $answer = N ]
-@@ -2908,22 +3093,6 @@
+@@ -2908,22 +3099,6 @@
  
  installfpdso1()
  {
@@ -823,7 +897,7 @@
      echo "Using the Apache apxs utility to build mod_frontpage.so"
      CURPATH=$PATH
      PATH=$OLDPATH
-@@ -2933,7 +3102,7 @@
+@@ -2933,7 +3108,7 @@
         linux)   opts=-Wc,-Dlinux ;;
         *)       opts= ;;
      esac
@@ -832,7 +906,7 @@
      res=$?
      PATH=$CURPATH
      if [ $res -ne 0 ]
-@@ -2943,7 +3112,7 @@
+@@ -2943,7 +3118,7 @@
      
      echo "Using the Apache apxs utility to install mod_frontpage.so"
      PATH=$OLDPATH
@@ -841,7 +915,7 @@
      res=$?
      PATH=$CURPATH
      echo "Finished running the Apache apxs utility."
-@@ -2953,22 +3122,6 @@
+@@ -2953,22 +3128,6 @@
  
  installfpdso2()
  {
@@ -864,7 +938,7 @@
      echo "Using the Apache apxs utility to build mod_frontpage.so"
      CURPATH=$PATH
      PATH=$OLDPATH
-@@ -2978,7 +3131,7 @@
+@@ -2978,7 +3137,7 @@
         linux)   opts=-Wc,-Dlinux ;;
         *)       opts= ;;
      esac
@@ -873,7 +947,7 @@
      res=$?
      PATH=$CURPATH
      if [ $res -ne 0 ]
-@@ -2987,7 +3140,7 @@
+@@ -2987,7 +3146,7 @@
      fi
      echo "Using the Apache apxs utility to install mod_frontpage.so"
      PATH=$OLDPATH
