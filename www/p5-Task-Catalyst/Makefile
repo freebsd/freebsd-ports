@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	1.50
+PORTVERSION=	1.60
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.61:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst>=5.64:${PORTSDIR}/www/p5-Catalyst \
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Catalyst-Log-Log4perl>=0:${PORTSDIR}/www/p5-Catalyst-Log-Log4perl \
+		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-Catalyst-Plugin-HTML-Widget>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-HTML-Widget \
 		p5-Catalyst-Plugin-StackTrace>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-StackTrace \
 		p5-Catalyst-Plugin-Prototype>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Prototype \
@@ -33,14 +35,14 @@ BUILD_DEPENDS=	p5-Catalyst>=5.61:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-Authorization-ACL>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-ACL \
 		p5-Catalyst-Plugin-Authorization-Roles>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Plugin-I18N>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-I18N \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Catalyst-Plugin-XMLRPC>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-XMLRPC \
 		p5-Catalyst-Plugin-Pluggable>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Pluggable \
 		p5-Catalyst-Model-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC \
 		p5-Catalyst-Model-DBIC-Plain>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Plain \
 		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
