@@ -593,6 +593,7 @@ share/courier/sqwebmail/images/sm-wink2.png
 share/courier/sqwebmail/images/sqwebmail.css
 share/courier/sqwebmail/images/trash2.png
 share/courier/sqwebmail/images/uncancel.png
+share/courier/sqwebmail/images/wikifmt.html
 @dirrm share/courier/sqwebmail/images
 share/courier/sqwebmail/ldapsearch
 share/courier/sqwebmail/sendit.sh
