@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	swt
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200506271435
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200509290840
 
 MAINTAINER=	freebsd-eclipse@freebsd.org
 COMMENT=	Standard Widget Toolkit for Java
 
-SWT_VERSION=	3138
+SWT_VERSION=	3139
 NO_WRKSUBDIR=	yes
-# Someone with amd64 hardware must finish the amd64 support before it
-# is enabled
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
 MAKEFILE=	make_freebsd.mak
@@ -34,6 +32,24 @@ USE_JAVA=	yes
 USE_REINPLACE=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
+
+.if defined(WITHOUT_GNOMEVFS)
+MAKE_GNOME=
+USE_GNOME=	gtk20 pkgconfig
+.else
+MAKE_GNOME=	make_gnome
+USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
+PLIST_FILES+=	lib/libswt-gnome-gtk-%%BUILD%%.so
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+DISTNAME=	swt-${PORTVERSION}-gtk-linux-x86_64
+WITHOUT_CAIRO=	yes
+.else
+DISTNAME=	swt-${PORTVERSION}-gtk-linux-x86
+.endif
 
 .if !defined(WITHOUT_MOZILLA)
 PLIST_FILES+=	lib/libswt-mozilla-gtk-%%BUILD%%.so
@@ -56,23 +72,6 @@ MAKE_CAIRO=
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 MAKE_CAIRO=	make_cairo
 PLIST_FILES+=	lib/libswt-cairo-gtk-%%BUILD%%.so
-.endif
-
-.if defined(WITHOUT_GNOMEVFS)
-MAKE_GNOME=
-USE_GNOME=	gtk20 pkgconfig
-.else
-MAKE_GNOME=	make_gnome
-USE_GNOME=	gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
-PLIST_FILES+=	lib/libswt-gnome-gtk-%%BUILD%%.so
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64")
-DISTNAME=	swt-${PORTVERSION}-gtk-linux-x86_64
-.else
-DISTNAME=	swt-${PORTVERSION}-gtk-linux-x86
 .endif
 
 MAKE_ENV+=	BROWSER="${BROWSER}" \
