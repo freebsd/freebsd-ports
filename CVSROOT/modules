@@ -13730,6 +13730,7 @@ xmms-mailnotify	ports/audio/xmms-mailnotify
 xmms-midi	ports/audio/xmms-midi
 xmms-modplug	ports/audio/xmms-modplug
 xmms-mp3cue	ports/audio/xmms-mp3cue
+xmms-msa	ports/graphics/xmms-msa
 xmms-musepack	ports/audio/xmms-musepack
 xmms-nas	ports/audio/xmms-nas
 xmms-nebulus	ports/graphics/xmms-nebulus
