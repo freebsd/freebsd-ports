@@ -37,7 +37,7 @@ USE_RC_SUBR=	yes
 
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
-.error "Cool, you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing."
+IGNORE=	cannot install: you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing
 .endif
 # have no 'without-' flag
 CONFIGURE_ARGS+=--disable-gui
