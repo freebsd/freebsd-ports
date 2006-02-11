@@ -623,6 +623,7 @@
     SUBDIR += xmms-infinity
     SUBDIR += xmms-iris
     SUBDIR += xmms-jess
+    SUBDIR += xmms-msa
     SUBDIR += xmms-nebulus
     SUBDIR += xmms-paranormal
     SUBDIR += xmms-plazma
