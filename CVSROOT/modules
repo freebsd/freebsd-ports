@@ -3309,6 +3309,7 @@ gopher		ports/net/gopher
 gopod		ports/misc/gopod
 gorm		ports/devel/gorm
 gossip		ports/net-im/gossip
+gothard		ports/net/gothard
 gotmail		ports/mail/gotmail
 gourmet		ports/deskutils/gourmet
 gozer		ports/graphics/gozer
