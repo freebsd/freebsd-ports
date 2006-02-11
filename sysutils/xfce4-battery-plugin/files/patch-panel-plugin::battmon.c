@@ -1,6 +1,14 @@
---- panel-plugin/battmon.c.orig	Fri Sep 12 23:38:01 2003
-+++ panel-plugin/battmon.c	Fri Sep 12 23:38:24 2003
-@@ -362,6 +362,7 @@
+--- panel-plugin/battmon.c.orig	Sat Feb 11 23:43:01 2006
++++ panel-plugin/battmon.c	Sat Feb 11 23:43:07 2006
+@@ -33,6 +33,7 @@
+ 
+ #ifdef __FreeBSD__
+ #include <machine/apm_bios.h>
++#define APMDEVICE "/dev/apm"
+ #elif __OpenBSD__
+ #include <sys/param.h>
+ #include <machine/apmvar.h>
+@@ -362,6 +363,7 @@
  	
  	
  	if(charge < 0) charge = 0;
