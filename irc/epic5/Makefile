@@ -21,6 +21,10 @@ GNU_CONFIGURE=	yes
 MAN1=		epic5.1
 USE_OPENSSL=	yes
 
+OPTIONS=	IPV6	"IPv6 support"		on \
+		TCL	"TCL support"		on \
+		PERL	"Perl scripting support" off
+
 .include <bsd.port.pre.mk>
 
 ##  WITHOUT_IPV6:   disable IPv6 support
@@ -47,7 +51,7 @@ CONFIGURE_ARGS+=	--without-tcl
 #
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500601
-IGNORE=		Perl 5.6.1 or newer is required; we recommend perl 5.8.5
+IGNORE=		requires Perl 5.6.1 or newer; we recommend perl 5.8.5
 .endif
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
