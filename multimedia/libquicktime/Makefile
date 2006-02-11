@@ -43,7 +43,7 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libavutil-CVS.so) || !exists(${LOCALBASE}/lib/libavformat.a)
+.if exists(${LOCALBASE}/lib/libavutil-CVS.so)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
 PLIST_SUB+=	FFMPEG=""
 .else
