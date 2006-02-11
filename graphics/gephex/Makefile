@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
 		--without-FFMPEG --without-AVIFILE --without-MPEG3 \
 		--without-LIBPNG --without-SDL --without-SDL_IMAGE \
 		--without-SDL_TTF --without-AALIB --disable-static
-CONFIGURE_ENV=	"CFLAGS+=-I${LOCALBASE}/include LDFLAGS+=-L${LOCALBASE}/lib"
 USE_QT_VER=	3
 WANT_SDL=	yes
 INSTALLS_SHLIB=	yes
@@ -171,5 +170,12 @@ post-patch:
 			      s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_DOCS}|' ${WRKSRC}/Makefile.am
+
+# Compile contents of static libs with PIC, as they can be used in dynamic ones
+.if !empty(ARCH:M*64)
+	@(${FIND} -X ${WRKSRC} -name Makefile.am \! -regex '.*cpuinfo.*' | \
+		${XARGS} ${REINPLACE_CMD} -E -e \
+	"/^lib[[:alnum:]]+_a_SOURCES.*$$/{ h; s//AM_CFLAGS = -DPIC -fPIC/; G;}")
+.endif
 
 .include <bsd.port.post.mk>
