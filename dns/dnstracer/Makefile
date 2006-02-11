@@ -20,4 +20,12 @@ USE_GMAKE=	yes
 MAN8=		dnstracer.8
 PLIST_FILES=	bin/dnstracer
 
-.include <bsd.port.mk>
+OPTIONS=	IPV6 "With IPv6 support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+.include <bsd.port.post.mk>
