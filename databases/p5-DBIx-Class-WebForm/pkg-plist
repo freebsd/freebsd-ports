@@ -1,0 +1,3 @@
+%%SITE_PERL%%/DBIx/Class/WebForm.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx

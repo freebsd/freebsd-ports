@@ -209,6 +209,7 @@
     SUBDIR += p5-DBIx-Class
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-Schema-Loader
+    SUBDIR += p5-DBIx-Class-WebForm
     SUBDIR += p5-DBIx-ContextualFetch
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
