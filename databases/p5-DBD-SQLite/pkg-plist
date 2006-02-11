@@ -3,5 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/SQLite.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD       
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD            
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
