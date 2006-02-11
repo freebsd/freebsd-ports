@@ -64,11 +64,13 @@ CONFIGURE_ARGS+=	--without-xmlrpc-c-config
 PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
 # For 4.x systems.
-.if !exists(/usr/include/magic.h)
+.if (${OSREL} <= 4 || ${OSVERSION} <= 503000)
 BUILD_DEPENDS+=		${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
 .endif
 
 DEFAULT_ENCODING?=	euc_jp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
