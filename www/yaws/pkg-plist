@@ -1,6 +1,5 @@
 bin/yaws
 etc/yaws.conf.sample
-lib/erlang/lib/yaws-%%VERSION%%/ebin/dav.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_type_c.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_types.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws.app
@@ -12,11 +11,13 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_cgi.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_compile.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_config.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ctl.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dav.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_debug.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_pam.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rss.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
@@ -30,7 +31,6 @@ lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_dav.hrl
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
-lib/erlang/lib/yaws-%%VERSION%%/src/dav.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_types.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws.erl
@@ -49,6 +49,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_pam.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_rss.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_server.erl
@@ -58,6 +59,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_vsn.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
+%%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 www/yaws/END
 www/yaws/END2
 www/yaws/HEAD
@@ -259,7 +261,6 @@ www/yaws/urandom.yaws
 www/yaws/yaws-1.55_to_1.56.patch
 www/yaws/ybed.erl
 www/yaws/yman.yaws
-%%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 @dirrm www/yaws/ssi
 @dirrm www/yaws/shopingcart
 @dirrm www/yaws/icons/small
