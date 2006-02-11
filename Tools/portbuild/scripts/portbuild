@@ -244,11 +244,13 @@ if [ -f ${chroot}/.notready ]; then
   touch ${chroot}/.ready
 fi
 
-# Figure out jail IP addr
-#chrootpid=$(basename ${chroot})
-#ip1=$(($chrootpid /(256*256)))
-#ip2=$((($chrootpid - ($ip1*256*256)) /256))
-#ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
+if [ "${use_jail}" = "1" ]; then
+  # Figure out jail IP addr
+  chrootpid=$(basename ${chroot})
+  ip1=$(($chrootpid /(256*256)))
+  ip2=$((($chrootpid - ($ip1*256*256)) /256))
+  ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
+fi
 
 # Set up desired uname version
 echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
@@ -363,10 +365,13 @@ if [ "${error}" = 0 ]; then
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
 
-#  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
-#  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
-#  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
-  chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
+  if [ "${use_jail}" = 1 ]; then
+    ifconfig lo0 alias 127.${ip1}.${ip2}.${ip3}/32
+    jail -J ${chroot}/tmp/jail.id ${chroot} jail-${chrootpid} 127.${ip1}.${ip2}.${ip3} /usr/bin/env HTTP_PROXY=${http_proxy} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
+    ifconfig lo0 delete 127.${ip1}.${ip2}.${ip3}
+  else
+    chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
+  fi
 
   grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
