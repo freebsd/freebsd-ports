@@ -7591,6 +7591,7 @@ p5-Catalyst-Plugin-XMLRPC	ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
 p5-Catalyst-View-Mason	ports/www/p5-Catalyst-View-Mason
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
+p5-Catalyst-View-TT-ControllerLocal	ports/www/p5-Catalyst-View-TT-ControllerLocal
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net-mgmt/p5-Cflow
 p5-Chart-Graph	ports/graphics/p5-Chart-Graph
