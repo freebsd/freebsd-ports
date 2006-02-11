@@ -6,3 +6,5 @@ bin/vmware-toolbox-tcl
 %%INSTALLXSERVER4:%%etc/XF86Config-4_VMware
 %%INSTALLXSERVER4:%%lib/modules/drivers/vmware_drv.o_VMware
 %%INSTALLXVMMOUSE:%%lib/modules/input/vmmouse_drv.o_VMware
+%%INSTALLXSERVER4:%%@dirrmtry lib/modules/drivers
+%%INSTALLXVMMOUSE:%%@dirrmtry lib/modules/input
