@@ -97,6 +97,10 @@ PLIST_SUB+=	MAILOWN=${MAILOWN} MAILGRP=${MAILGRP} \
 SUB_LIST:=	${PLIST_SUB}
 SUB_FILES+=	pkg-install pkg-deinstall
 
+.if defined(WITH_AUTHPIPE_PROG)
+CONFIGURE_ARGS+=--with-pipeprog=${WITH_AUTHPIPE_PROG}
+.endif
+
 .else
 RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 CONFIGURE_ARGS+=--without-base --without-authpam
@@ -170,6 +174,12 @@ USE_RCORDER=	courier-authdaemond.sh
 .else
 USE_RC_SUBR=	courier-authdaemond.sh
 .endif
+
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD}	"	Set WITH_AUTHPIPE_PROG to a program you want to use instead of"
+	@${ECHO_CMD}	"	authProg for libauthpipe"
+	@${ECHO_CMD}
 .endif
 
 post-patch:
