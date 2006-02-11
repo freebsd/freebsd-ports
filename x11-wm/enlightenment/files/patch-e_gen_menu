@@ -1,24 +1,24 @@
---- scripts/e_gen_menu.orig	Fri Oct  1 02:31:47 2004
-+++ scripts/e_gen_menu	Tue Dec 21 02:34:02 2004
+--- scripts/e_gen_menu.orig	Sat Jan 28 08:39:47 2006
++++ scripts/e_gen_menu	Fri Feb 10 22:32:53 2006
 @@ -25,7 +25,7 @@
  ##############################################################################
  
  # Likely  prefixes
--$Prefixes = "/usr/local:/usr:/opt::/opt/kde:$ENV{'KDEDIR'}";
-+$Prefixes = "/usr/local:/usr/X11R6::/opt/kde:$ENV{'KDEDIR'}";
+-$Prefixes = "/usr/local:/usr:/opt:/opt/kde:$ENV{'KDEDIR'}";
++$Prefixes = "/usr/local:%%X11BASE%%:/opt/kde:$ENV{'KDEDIR'}";
  $Prefixes = RemoveDuplcates($Prefixes);
  
  # Where to look for GNOME2/KDE2,3 stuff
 @@ -53,7 +53,7 @@
  $loc1 = "" if ($loc1 eq $loc2);
  
- $EdirUser = "$ENV{'HOME'}/.enlightenment" unless $EdirUser;
+ $EdirUser = "$ENV{'HOME'}/.e16" unless $EdirUser;
 -$EdirRoot = "/usr/share/enlightenment" unless $EdirRoot;
 +$EdirRoot = "%%PREFIX%%/share/enlightenment" unless $EdirRoot;
  $EdirBin  = "/usr/bin" unless $EdirBin;
  
- $dbg      = "$ENV{'E_MENUGEN_DBG'}";
-@@ -112,7 +112,7 @@
+ $EdirIcons = "$EdirUser/icons";
+@@ -100,7 +100,7 @@
  	"x:Firefox:firefox",
  	"x:Galeon:galeon",
  	"x:Opera:opera",

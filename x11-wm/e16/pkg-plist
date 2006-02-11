@@ -1,37 +1,26 @@
+bin/e16
 bin/edox
 bin/eesh
-bin/enlightenment
 bin/epp
 bin/starte16
-etc/X11/dm/Sessions/enlightenment.desktop
+%%DATADIR%%/E-docs/exit1.png
+%%DATADIR%%/E-docs/exit2.png
+%%DATADIR%%/E-docs/next1.png
+%%DATADIR%%/E-docs/next2.png
+%%DATADIR%%/E-docs/prev1.png
+%%DATADIR%%/E-docs/prev2.png
+%%DATADIR%%/E-docs/title.png
 %%DATADIR%%/config/actionclasses.cfg
-%%DATADIR%%/config/actionclasses.cfg.ja
-%%DATADIR%%/config/actionclasses.cfg.ko
-%%DATADIR%%/config/actionclasses.cfg.pl
 %%DATADIR%%/config/backup-borders.cfg
 %%DATADIR%%/config/backup-colormodifiers.cfg
 %%DATADIR%%/config/backup-cursors.cfg
 %%DATADIR%%/config/backup-imageclasses.cfg
 %%DATADIR%%/config/backup-textclasses.cfg
 %%DATADIR%%/config/backup-tooltips.cfg
-%%DATADIR%%/config/control.cfg
+%%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
-%%DATADIR%%/config/icondefs.cfg
-%%DATADIR%%/config/keybindings.cfg
-%%DATADIR%%/config/keybindings.cfg.ja
-%%DATADIR%%/config/keybindings.cfg.ko
-%%DATADIR%%/config/keybindings.cfg.pl
-%%DATADIR%%/config/keybindings.gmc.cfg.ja
-%%DATADIR%%/config/keybindings.gmc.cfg.ko
-%%DATADIR%%/config/keybindings.gmc.cfg.pl
-%%DATADIR%%/config/keybindings.nogmc.cfg.ja
-%%DATADIR%%/config/keybindings.nogmc.cfg.ko
-%%DATADIR%%/config/keybindings.nogmc.cfg.pl
-%%DATADIR%%/config/keybindings.rh.cfg.pl
+%%DATADIR%%/config/matches.cfg
 %%DATADIR%%/config/menus.cfg
-%%DATADIR%%/config/menus.cfg.ja
-%%DATADIR%%/config/menus.cfg.ko
-%%DATADIR%%/config/menus.cfg.pl
 %%DATADIR%%/config/pix/about.png
 %%DATADIR%%/config/pix/apple.png
 %%DATADIR%%/config/pix/areas.png
@@ -88,28 +77,29 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/misc/E-GNOME
 %%DATADIR%%/misc/E-KDE
 %%DATADIR%%/misc/E16
-%%DATADIR%%/misc/starte16
 %%DATADIR%%/misc/Xclients.e-gnome
 %%DATADIR%%/misc/Xclients.e-kde
-%%DATADIR%%/misc/Xclients.enlightenment
+%%DATADIR%%/misc/Xclients.e16
 %%DATADIR%%/misc/e-gnome.desktop
 %%DATADIR%%/misc/e-kde.desktop
-%%DATADIR%%/misc/enlightenment.desktop
+%%DATADIR%%/misc/e16.desktop
+%%DATADIR%%/misc/starte16
 %%DATADIR%%/scripts/e_cache_clean
 %%DATADIR%%/scripts/e_cache_query
 %%DATADIR%%/scripts/e_gen_menu
+%%DATADIR%%/scripts/session.sh
 %%DATADIR%%/themes/winter/ABOUT/MAIN
-%%DATADIR%%/themes/winter/ABOUT/MAIN.ko
 %%DATADIR%%/themes/winter/ABOUT/bg.png
 %%DATADIR%%/themes/winter/ABOUT/vixar.ttf
 %%DATADIR%%/themes/winter/README
-%%DATADIR%%/themes/winter/README.ko
 %%DATADIR%%/themes/winter/backgrounds/backgrounds.cfg
 %%DATADIR%%/themes/winter/backgrounds/images/startup-bg.png
 %%DATADIR%%/themes/winter/backgrounds/images/winter_logo.png
 %%DATADIR%%/themes/winter/backgrounds/images/winter_ui.png
 %%DATADIR%%/themes/winter/backgrounds/images/winter_ui_blue.png
 %%DATADIR%%/themes/winter/backgrounds/images/winter_ui_green.png
+%%DATADIR%%/themes/winter/borders.cfg
+%%DATADIR%%/themes/winter/borders/AUTOSHADE/border.cfg
 %%DATADIR%%/themes/winter/borders/BORDERLESS/border.cfg
 %%DATADIR%%/themes/winter/borders/BORDER_ONLY/border.cfg
 %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/bl.png
@@ -119,7 +109,6 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images/tr.png
 %%DATADIR%%/themes/winter/borders/DEFAULT/border.cfg
 %%DATADIR%%/themes/winter/borders/DIALOG/border.cfg
-%%DATADIR%%/themes/winter/borders/DIALOG/border.cfg~
 %%DATADIR%%/themes/winter/borders/FIXED_SIZE/border.cfg
 %%DATADIR%%/themes/winter/borders/ICONBOX/border.cfg
 %%DATADIR%%/themes/winter/borders/MENU/border.cfg
@@ -134,6 +123,7 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/borders/PAGER/images/pb8.png
 %%DATADIR%%/themes/winter/borders/PAGER/images/pb9l.png
 %%DATADIR%%/themes/winter/borders/PAGER/images/pb9r.png
+%%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE/border.cfg
 %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT/border.cfg
 %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/border.cfg
 %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images/pb1.png
@@ -149,10 +139,8 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/borders/SHAPED/border.cfg
 %%DATADIR%%/themes/winter/borders/TRANSIENT/border.cfg
 %%DATADIR%%/themes/winter/borders/borders.cfg
-%%DATADIR%%/themes/winter/borders/borders.cfg.ko
 %%DATADIR%%/themes/winter/borders/common/Winter.Changelog
 %%DATADIR%%/themes/winter/borders/common/border.cfg
-%%DATADIR%%/themes/winter/borders/common/border.cfg.ko
 %%DATADIR%%/themes/winter/borders/common/images/border-bl-blue.png
 %%DATADIR%%/themes/winter/borders/common/images/border-bl.png
 %%DATADIR%%/themes/winter/borders/common/images/border-bottom-blue_alternative.png
@@ -190,22 +178,17 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/borders/common/images/ic_border-r.png
 %%DATADIR%%/themes/winter/borders/common/images/menu-border-bottom.png
 %%DATADIR%%/themes/winter/borders/common/images/menu-border-top.png
-%%DATADIR%%/themes/winter/borders.cfg
-%%DATADIR%%/themes/winter/borders.cfg.ko
-%%DATADIR%%/themes/winter/buttons/buttons.cfg
 %%DATADIR%%/themes/winter/buttons.cfg
-%%DATADIR%%/themes/winter/buttons.cfg.ko
+%%DATADIR%%/themes/winter/buttons/buttons.cfg
 %%DATADIR%%/themes/winter/colormodifiers.cfg
 %%DATADIR%%/themes/winter/common/images/blank.png
 %%DATADIR%%/themes/winter/common/images/blue_bar.png
 %%DATADIR%%/themes/winter/common/images/light_brushed.png
 %%DATADIR%%/themes/winter/coords/coords.cfg
-%%DATADIR%%/themes/winter/coords/coords.cfg.ko
-%%DATADIR%%/themes/winter/cursors/cursors.cfg
 %%DATADIR%%/themes/winter/cursors.cfg
+%%DATADIR%%/themes/winter/cursors/cursors.cfg
 %%DATADIR%%/themes/winter/desktops.cfg
 %%DATADIR%%/themes/winter/dialogs/dialogs.cfg
-%%DATADIR%%/themes/winter/dialogs/dialogs.cfg.ko
 %%DATADIR%%/themes/winter/dialogs/images/arrow-down.png
 %%DATADIR%%/themes/winter/dialogs/images/arrow-left.png
 %%DATADIR%%/themes/winter/dialogs/images/arrow-right.png
@@ -261,7 +244,6 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/dragbar/images/dragbar_horiz.png
 %%DATADIR%%/themes/winter/dragbar/images/dragbar_vert.png
 %%DATADIR%%/themes/winter/epplets/epplets.cfg
-%%DATADIR%%/themes/winter/epplets/epplets.cfg.ko
 %%DATADIR%%/themes/winter/epplets/images/ar_d1.png
 %%DATADIR%%/themes/winter/epplets/images/ar_d2.png
 %%DATADIR%%/themes/winter/epplets/images/ar_d3.png
@@ -348,11 +330,13 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/eterm/images/sb2.png
 %%DATADIR%%/themes/winter/eterm/images/t.png
 %%DATADIR%%/themes/winter/focuslist/focuslist.cfg
-%%DATADIR%%/themes/winter/focuslist/focuslist.cfg.ko
 %%DATADIR%%/themes/winter/focuslist/images/hbar.png
 %%DATADIR%%/themes/winter/focuslist/images/hbar2.png
+%%DATADIR%%/themes/winter/fonts.cfg
+%%DATADIR%%/themes/winter/fonts.cfg.ja
+%%DATADIR%%/themes/winter/fonts.cfg.ko
+%%DATADIR%%/themes/winter/fonts.cfg.pl
 %%DATADIR%%/themes/winter/iconbox/iconbox.cfg
-%%DATADIR%%/themes/winter/iconbox/iconbox.cfg.ko
 %%DATADIR%%/themes/winter/iconbox/images/base_.png
 %%DATADIR%%/themes/winter/iconbox/images/bg.png
 %%DATADIR%%/themes/winter/iconbox/images/blank.png
@@ -365,101 +349,66 @@ etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/themes/winter/iconbox/images/scroll-knob_clicked.png
 %%DATADIR%%/themes/winter/iconbox/images/unused.png
 %%DATADIR%%/themes/winter/imageclasses.cfg
-%%DATADIR%%/themes/winter/imageclasses.cfg.ko
+%%DATADIR%%/themes/winter/init.cfg
 %%DATADIR%%/themes/winter/init/images/btn3.png
 %%DATADIR%%/themes/winter/init/images/progress_bar.png
 %%DATADIR%%/themes/winter/init/images/text_bg.png
 %%DATADIR%%/themes/winter/init/init.cfg
-%%DATADIR%%/themes/winter/init/init.cfg.ko
-%%DATADIR%%/themes/winter/init.cfg
-%%DATADIR%%/themes/winter/init.cfg.ko
+%%DATADIR%%/themes/winter/menustyles.cfg
 %%DATADIR%%/themes/winter/menustyles/images/menu-arrow-sel.png
 %%DATADIR%%/themes/winter/menustyles/images/menu-arrow.png
 %%DATADIR%%/themes/winter/menustyles/images/menu-sel.png
 %%DATADIR%%/themes/winter/menustyles/menustyles.cfg
-%%DATADIR%%/themes/winter/menustyles/menustyles.cfg.ko
-%%DATADIR%%/themes/winter/menustyles.cfg
-%%DATADIR%%/themes/winter/menustyles.cfg.ko
 %%DATADIR%%/themes/winter/pager/images/p_bg.png
 %%DATADIR%%/themes/winter/pager/images/p_sel.png
 %%DATADIR%%/themes/winter/pager/images/p_win.png
 %%DATADIR%%/themes/winter/pager/pager.cfg
-%%DATADIR%%/themes/winter/pager/pager.cfg.ko
-%%DATADIR%%/themes/winter/slideouts/slideouts.cfg
 %%DATADIR%%/themes/winter/slideouts.cfg
-%%DATADIR%%/themes/winter/sound/sound.cfg
+%%DATADIR%%/themes/winter/slideouts/slideouts.cfg
 %%DATADIR%%/themes/winter/sound.cfg
+%%DATADIR%%/themes/winter/sound/sound.cfg
+%%DATADIR%%/themes/winter/tooltips.cfg
 %%DATADIR%%/themes/winter/tooltips/images/clear.png
 %%DATADIR%%/themes/winter/tooltips/images/tooltipbg.png
 %%DATADIR%%/themes/winter/tooltips/tooltips.cfg
-%%DATADIR%%/themes/winter/tooltips/tooltips.cfg.ko
-%%DATADIR%%/themes/winter/tooltips.cfg
-%%DATADIR%%/themes/winter/tooltips.cfg.ko
 %%DATADIR%%/themes/winter/ttfonts/COPYRIGHT.Vera
 %%DATADIR%%/themes/winter/ttfonts/LICENSE.Vera
 %%DATADIR%%/themes/winter/ttfonts/Vera.ttf
 %%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
-%%DATADIR%%/themes/winter/windowmatches.cfg
-share/locale/bg/LC_MESSAGES/enlightenment.mo
-share/locale/bs/LC_MESSAGES/enlightenment.mo
-share/locale/da/LC_MESSAGES/enlightenment.mo
-share/locale/de/LC_MESSAGES/enlightenment.mo
-share/locale/en_US/LC_MESSAGES/enlightenment.mo
-share/locale/es/LC_MESSAGES/enlightenment.mo
-share/locale/fr/LC_MESSAGES/enlightenment.mo
-share/locale/hu/LC_MESSAGES/enlightenment.mo
-share/locale/ja/LC_MESSAGES/enlightenment.mo
-share/locale/ko/LC_MESSAGES/enlightenment.mo
-share/locale/nl/LC_MESSAGES/enlightenment.mo
-share/locale/no/LC_MESSAGES/enlightenment.mo
-share/locale/pl/LC_MESSAGES/enlightenment.mo
-share/locale/pt/LC_MESSAGES/enlightenment.mo
-share/locale/pt_BR/LC_MESSAGES/enlightenment.mo
-share/locale/ru/LC_MESSAGES/enlightenment.mo
-share/locale/sv/LC_MESSAGES/enlightenment.mo
-share/locale/tr/LC_MESSAGES/enlightenment.mo
+share/xsessions/e16.desktop
+@dirrm %%DATADIR%%/E-docs
 @dirrm %%DATADIR%%/themes/winter/ABOUT
 @dirrm %%DATADIR%%/themes/winter/backgrounds/images
 @dirrm %%DATADIR%%/themes/winter/backgrounds
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS/images
+@dirrm %%DATADIR%%/themes/winter/borders/AUTOSHADE
 @dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
 @dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
 @dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT/images
 @dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG/images
 @dirrm %%DATADIR%%/themes/winter/borders/DIALOG
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE/images
 @dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX/images
 @dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
-@dirrm %%DATADIR%%/themes/winter/borders/MENU/images
 @dirrm %%DATADIR%%/themes/winter/borders/MENU
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY/images
 @dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
 @dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
 @dirrm %%DATADIR%%/themes/winter/borders/PAGER
+@dirrm %%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE
 @dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
 @dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
 @dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
 @dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED/images
 @dirrm %%DATADIR%%/themes/winter/borders/SHAPED
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT/images
 @dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
 @dirrm %%DATADIR%%/themes/winter/borders/common/images
 @dirrm %%DATADIR%%/themes/winter/borders/common
 @dirrm %%DATADIR%%/themes/winter/borders
-@dirrm %%DATADIR%%/themes/winter/buttons/images
 @dirrm %%DATADIR%%/themes/winter/buttons
 @dirrm %%DATADIR%%/themes/winter/common/images
 @dirrm %%DATADIR%%/themes/winter/common
-@dirrm %%DATADIR%%/themes/winter/coords/images
 @dirrm %%DATADIR%%/themes/winter/coords
 @dirrm %%DATADIR%%/themes/winter/cursors
 @dirrm %%DATADIR%%/themes/winter/dialogs/images
 @dirrm %%DATADIR%%/themes/winter/dialogs
-@dirrm %%DATADIR%%/themes/winter/dock/images
 @dirrm %%DATADIR%%/themes/winter/dock
 @dirrm %%DATADIR%%/themes/winter/dragbar/images
 @dirrm %%DATADIR%%/themes/winter/dragbar
@@ -477,9 +426,7 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrm %%DATADIR%%/themes/winter/menustyles
 @dirrm %%DATADIR%%/themes/winter/pager/images
 @dirrm %%DATADIR%%/themes/winter/pager
-@dirrm %%DATADIR%%/themes/winter/slideouts/images
 @dirrm %%DATADIR%%/themes/winter/slideouts
-@dirrm %%DATADIR%%/themes/winter/sound/samples
 @dirrm %%DATADIR%%/themes/winter/sound
 @dirrm %%DATADIR%%/themes/winter/tooltips/images
 @dirrm %%DATADIR%%/themes/winter/tooltips
@@ -494,5 +441,40 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrmtry etc/X11/dm/Sessions
 @dirrmtry etc/X11/dm
 @dirrmtry etc/X11
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/bg
+@dirrmtry share/locale/bs/LC_MESSAGES
+@dirrmtry share/locale/bs
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/xsessions
