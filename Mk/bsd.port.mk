@@ -1275,7 +1275,7 @@ PREFIX?=		${LOCALBASE}
 .endif
 
 .if defined(USE_LINUX_PREFIX)
-LDCONFIG_CMD?=				${LINUXBASE}/sbin/ldconfig
+LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
 LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG_CMD}
 .else
@@ -1523,7 +1523,7 @@ _OPENLDAP_FLAVOUR=
 .if ${WANT_OPENLDAP_VER} == 22
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
-LIB_DEPENDS+=		ldap-2.3.1:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .else
 BROKEN=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
@@ -1535,6 +1535,12 @@ DEFAULT_FAM_SYSTEM=	gamin
 FAM_SYSTEM_FAM=		fam.0:${PORTSDIR}/devel/fam
 FAM_SYSTEM_GAMIN=	fam.0:${PORTSDIR}/devel/gamin
 
+.if exists(${LOCALBASE}/libexec/gam_server)
+_HAVE_FAM_SYSTEM=	gamin
+.elif exists(${LOCALBASE}/bin/fam)
+_HAVE_FAM_SYSTEM=	fam
+.endif
+
 .if defined(WANT_FAM_SYSTEM)
 .if defined(WITH_FAM_SYSTEM) && ${WITH_FAM_SYSTEM}!=${WANT_FAM_SYSTEM}
 BROKEN=	The port wants to use ${WANT_FAM_SYSTEM} as its FAM system and you wish to use ${WITH_FAM_SYSTEM}
@@ -1543,8 +1549,18 @@ FAM_SYSTEM=	${WANT_FAM_SYSTEM}
 .elif defined(WITH_FAM_SYSTEM)
 FAM_SYSTEM=	${WITH_FAM_SYSTEM}
 .else
+.if defined(_HAVE_FAM_SYSTEM)
+FAM_SYSTEM=	${_HAVE_FAM_SYSTEM}
+.else
 FAM_SYSTEM=	${DEFAULT_FAM_SYSTEM}
+.endif
 .endif # WANT_FAM_SYSTEM
+
+.if defined(_HAVE_FAM_SYSTEM)
+.if ${_HAVE_FAM_SYSTEM}!= ${FAM_SYSTEM}
+BROKEN=	FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed and desired FAM system is ${FAM_SYSTEM}
+.endif
+.endif
 
 .if defined(FAM_SYSTEM_${FAM_SYSTEM:U})
 LIB_DEPENDS+=	${FAM_SYSTEM_${FAM_SYSTEM:U}}
@@ -1698,7 +1714,7 @@ X_FONTS_TTF_PORT=	${PORTSDIR}/x11/XFree86
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11/XFree86
 X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86
 .else
-.error Bad X_WINDOW_SYSTEM setting
+IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-3', 'xfree86-4', 'xorg'
 .endif
 
 .if defined(USE_IMAKE)
@@ -3231,12 +3247,12 @@ patch-dos2unix:
 .if defined(USE_DOS2UNIX)
 .if ${USE_DOS2UNIX:U}=="YES"
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-	@${FIND} -E ${WRKSRC} -type f -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i"" -e 's/[[:cntrl:]]*$$//'
+	@${FIND} ${WRKSRC} -type f -print0 | \
+			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
 .else
 .for f in ${USE_DOS2UNIX}
 	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
-	@${REINPLACE_CMD} -i"" -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
 .endfor
 .endif
 .else
@@ -4584,7 +4600,7 @@ misc-depends:
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
 _UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} ${PERL_BUILD_DEPENDS} ${PERL_RUN_DEPENDS}
-_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*),\1,} ${DEPENDS:C,:.*,,}
+_DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,} ${DEPENDS:C,:.*,,}
 
 all-depends-list:
 	@${ALL-DEPENDS-LIST}
@@ -5068,6 +5084,9 @@ add-plist-info:
 	@${LS} ${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${PREFIX}/::g >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
+	if [ "`${DIRNAME} $i`" != "." ]; then \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/info/`${DIRNAME} $i` 2> /dev/null || true" >> ${TMPPLIST}; \
+	fi
 .endfor
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
