@@ -4,7 +4,10 @@ include/paradox.h
 include/pxversion.h
 lib/libpx.a
 lib/libpx.so
-lib/libpx.so.5
+lib/libpx.so.6
 libdata/pkgconfig/pxlib.pc
 share/locale/de/LC_MESSAGES/pxlib.mo
 share/locale/es/LC_MESSAGES/pxlib.mo
+share/locale/fr/LC_MESSAGES/pxlib.mo
+@dirrm include
+@dirrm lib
