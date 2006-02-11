@@ -408,6 +408,7 @@
     SUBDIR += openacs-dotlrn
     SUBDIR += openvrml
     SUBDIR += opera
+    SUBDIR += opera-devel
     SUBDIR += osb-browser
     SUBDIR += osb-nrcit
     SUBDIR += osb-nrcore
