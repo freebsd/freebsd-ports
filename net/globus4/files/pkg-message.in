@@ -1,0 +1,24 @@
+
+To use the Globus Toolkit you must set add the GLOBUS_LOCATION variable
+to your environment:
+
+	GLOBUS_LOCATION=%%GLOBUS_LOCATION%%
+
+Administrators and developers, may also need to add the GPT_LOCATION
+variable to thier environment:
+
+	GPT_LOCATION=%%GLOBUS_LOCATION%%
+
+Appropriate lines must also be added to user PATHs:
+
+	PATH=${PATH}:${GLOBUS_LOCATION}/bin:${GLOBUS_LOCATION}/sbin
+
+To complete your globus installation, you must run:
+
+	%%GLOBUS_LOCATION%%/sbin/gpt-postinstall
+
+For more information on installation and configuration of the Globus
+Toolkit, please see the official documentation:
+
+http://www.globus.org/toolkit/docs/4.0/
+
