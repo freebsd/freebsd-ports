@@ -1,5 +1,5 @@
---- config.c.orig	Sun Apr 24 22:31:53 2005
-+++ config.c	Tue Jun 28 16:46:54 2005
+--- config.c.orig	Sun Aug 21 22:30:17 2005
++++ config.c	Thu Jan  5 18:49:36 2006
 @@ -686,7 +686,10 @@
     {
        if (strstr(ln2, "Apple Computer"))
@@ -12,7 +12,7 @@
        if (*major != -1)
        {
           *minor = GetIntVers(ln2+j, &i); j += i;
-@@ -1044,6 +1044,8 @@
+@@ -1041,6 +1044,8 @@
     {
        if (strstr(ln, "x86_64"))
           iret = 1;
@@ -21,7 +21,7 @@
        else if (strstr(ln, "ppc64"))
           iret = 2;
     }
-@@ -1229,7 +1232,9 @@
+@@ -1240,7 +1245,9 @@
     switch(OS)
     {
     case OSOSX:  /* don't know answer */
@@ -32,7 +32,7 @@
     case OSLinux:
        break;
     case OSSunOS:
-@@ -1494,9 +1499,9 @@
+@@ -1505,9 +1512,9 @@
           if (THREADS && OS == OSFreeBSD)
           {
              if (which == CPF77)
@@ -44,7 +44,7 @@
           }
           break;
        case OSSunOS4:
-@@ -2113,8 +2118,8 @@
+@@ -2124,8 +2131,8 @@
        if (OS == OSFreeBSD)
        {
           if (strstr(comp, "cc"))
@@ -55,7 +55,7 @@
        }
     }
     return(*comp ? comp : NULL);
-@@ -2756,7 +2761,7 @@
+@@ -2767,7 +2774,7 @@
        break;
     case IntP4:
        lf1 = l1 = 64;
@@ -64,7 +64,7 @@
        s1 = 0;
        s2 = 0;
        break;
-@@ -2860,6 +2865,7 @@
+@@ -2871,6 +2878,7 @@
        l1 = l2 = s1 = s2 = 0;
        lf2 = 4096;
     }
@@ -72,7 +72,7 @@
     if (lvl == 1)
     {
        if (AmSure) *AmSure = s1;
-@@ -2977,7 +2983,7 @@
+@@ -2988,7 +2996,7 @@
        else if (strstr(ln, "ia64")) la = LAIA64;
        else if ( strstr(ln, "i686") || strstr(ln, "i586") ||
                  strstr(ln, "i486") || strstr(ln, "i386") ||
@@ -81,7 +81,7 @@
     }
     return(la);
  }
-@@ -3006,6 +3012,9 @@
+@@ -3017,6 +3025,9 @@
     else
        sprintf(ln2,
           "cd CONFIG ; make IRunx86Info mydir=%s/CONFIG | fgrep cpu", TOPdir);
@@ -91,7 +91,7 @@
     if ( !CmndOneLine(NULL, ln2, ln) )
     {
        if (strstr(ln, "Pentium 4E64"))
-@@ -3047,12 +3056,22 @@
+@@ -3058,12 +3069,22 @@
           }
           break;
        case LASPARC: /* don't know */
@@ -114,13 +114,15 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -3060,15 +3079,36 @@
+@@ -3071,15 +3092,38 @@
        case LAX86:
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
 +//         mach = Use64Bits ? IntP4E64 : IntP4E; #EM64T
 +//         mach = IntP4E;                #prescott
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
++            else if (strstr(ln, "Pentium(R) D") && sizeof(void *)==4) mach = IntP4E;
++            else if (strstr(ln, "Pentium(R) D") && sizeof(void *)==8) mach = IntP4E64;
 +            else if (strstr(ln, "Pentium(R) Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
 +            else if (strstr(ln, "Pentium(R) 4")) mach = IntP4;
@@ -156,7 +158,7 @@
           }
           break;
        default:;
-@@ -3922,8 +3961,8 @@
+@@ -3933,8 +3977,8 @@
     }
     if (THREADS) /* add ncpu to ARCH */
     {
@@ -167,7 +169,7 @@
     }
     do
     {
-@@ -4371,7 +4410,7 @@
+@@ -4382,7 +4426,7 @@
     if (THREADS)
     {
        fprintf(fpout, " -DATL_NCPU=%d", ncpu);
