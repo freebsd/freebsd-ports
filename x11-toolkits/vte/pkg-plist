@@ -22,8 +22,14 @@ libexec/gnome-pty-helper
 %%DOCSDIR%%/VteTerminal.html
 %%DOCSDIR%%/VteTerminalAccessible.html
 %%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/vte.devhelp
 share/gnome/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
@@ -60,6 +66,7 @@ share/locale/it/LC_MESSAGES/vte.mo
 share/locale/ja/LC_MESSAGES/vte.mo
 share/locale/ka/LC_MESSAGES/vte.mo
 share/locale/ko/LC_MESSAGES/vte.mo
+share/locale/ku/LC_MESSAGES/vte.mo
 share/locale/ky/LC_MESSAGES/vte.mo
 share/locale/li/LC_MESSAGES/vte.mo
 share/locale/lt/LC_MESSAGES/vte.mo
@@ -102,6 +109,8 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm share/gnome/vte/termcap

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.11.17
+PORTVERSION=	0.11.18
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +18,6 @@ COMMENT=	Terminal widget with improved accessibility and I18N support
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
