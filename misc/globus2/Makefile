@@ -17,7 +17,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Globus Toolkit version ${GLOBUS_VER}
 
-DEPRECATED=     yes
+DEPRECATED=     GT2 is obsolete and does not build.  Consider net/globus4 instead
 EXPIRATION_DATE=        2006-03-01
 
 NOMANCOMPRESS=	yes
