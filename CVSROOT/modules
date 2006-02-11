@@ -12633,6 +12633,7 @@ transfig	ports/print/transfig
 translate	ports/misc/translate
 translator	ports/misc/translator
 transmission	ports/net-p2p/transmission
+transmission-gtk2	ports/net-p2p/transmission-gtk2
 transproxy	ports/www/transproxy
 transset-df	ports/x11-wm/transset-df
 tree		ports/sysutils/tree
