@@ -26,7 +26,7 @@ portloc=$(grep "^$pkgname|" ${index} | cut -f 2 -d \| | sed s,/usr/ports/,,)
 
 cd ${pb}/${arch}/${branch}
 if grep -q "^${portloc}|" failure; then
-    echo | mail -s "${pkgname} now builds on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+    echo | mail -s "${pkgname} now builds on ${arch} ${branch}" ${mailto}
     grep -v "^${portloc}|" failure > failure.new
     mv failure.new failure
 fi
