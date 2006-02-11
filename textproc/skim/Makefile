@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skim
-PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scim
@@ -51,7 +50,9 @@ do-configure:
 
 post-configure:
 	${REINPLACE_CMD} \
-		s,/usr/local/lib/pkgconfig,${PREFIX}/libdata/pkgconfig,g \
+		-e s,/usr/local/lib/pkgconfig,${PREFIX}/libdata/pkgconfig,g \
+		-e s,/usr/lib/pkgconfig,${PREFIX}/libdata/pkgconfig,g \
+		-e s,lib/pkgconfig,libdata/pkgconfig,g \
 		${WRKSRC}/cache/pkg.cache.py
 do-build:
 	@cd ${WRKSRC} && ./scons

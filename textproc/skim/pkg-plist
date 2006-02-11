@@ -113,6 +113,7 @@ share/locale/fr/LC_MESSAGES/skim.mo
 share/locale/it/LC_MESSAGES/skim.mo
 share/locale/ja/LC_MESSAGES/skim.mo
 share/locale/ko/LC_MESSAGES/skim.mo
+share/locale/pa/LC_MESSAGES/skim.mo
 share/locale/zh_CN/LC_MESSAGES/skim.mo
 share/locale/zh_TW/LC_MESSAGES/skim.mo
 share/services/skimconfiguredialog/kcm_skimplugin_configplugin_config.desktop
