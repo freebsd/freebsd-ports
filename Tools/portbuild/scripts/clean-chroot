@@ -3,10 +3,11 @@
 kill_procs()
 {
   dir=$1
+  mount=$2
 
   pids="XXX"
   while [ ! -z "${pids}" ]; do
-    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
+    pids=$(fstat -f "${dir}${mount}" | tail +2 | awk '{print $3}' | sort -u)
     if [ ! -z "${pids}" ]; then
       echo "Killing off pids in ${dir}"
       ps -p $pids
@@ -26,7 +27,7 @@ cleanup_mount() {
       umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
     fi
     if [ "${mdir}" = "${chroot}${mount}" ]; then
-      kill_procs ${chroot}${mount}
+      kill_procs ${chroot} ${mount}
       umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!" 
     fi
   fi
@@ -53,6 +54,11 @@ fi
 if [ `realpath ${chroot}` = "/" ]; then
   # Don't spam the root file system if something has gone wrong!
   exit 1
+fi
+
+if [ -f ${chroot}/tmp/jail.id ]; then
+  pgrep -lfj `awk '{print $1}' ${chroot}/tmp/jail.id`
+  pkill -j `awk '{print $1}' ${chroot}/tmp/jail.id`
 fi
 
 #umount ${chroot}/proc
