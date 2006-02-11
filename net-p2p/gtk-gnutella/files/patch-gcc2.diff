@@ -1,52 +1,12 @@
---- src/core/rx_inflate.h.orig	Tue Nov 22 22:47:05 2005
-+++ src/core/rx_inflate.h	Sat Nov 26 18:15:09 2005
-@@ -46,7 +46,7 @@
- struct rx_inflate_cb {
- 	void (*add_rx_inflated)(gpointer owner, gint amount);
- 	void (*inflate_error)(gpointer owner,
--			const gchar *reason, ...) G_GNUC_PRINTF(2, 3);
-+			const gchar *reason, ...) PRINTF_FUNC_PTR(2, 3);
- };
+--- src/lib/override.hoverride.h	Mon Feb  6 14:44:46 2006
++++ src/lib/override.h	Tue Jan 24 22:18:42 2006
+@@ -91,8 +91,8 @@
+ 		eject_("\nAssertion failure \"" STRINGIFY(x) "\" in " G_STRLOC "\n"); \
+ } G_STMT_END
  
- /**
---- src/core/rx_chunk.h.orig	Tue Nov 22 22:47:05 2005
-+++ src/core/rx_chunk.h	Sat Nov 26 18:15:09 2005
-@@ -45,7 +45,7 @@
-  */
- struct rx_chunk_cb {
- 	void (*chunk_error)(gpointer owner,
--			const gchar *reason, ...) G_GNUC_PRINTF(2, 3);
-+			const gchar *reason, ...) PRINTF_FUNC_PTR(2, 3);
- 	void (*chunk_end)(gpointer owner);
- };
++#define g_assert_not_reached()												\
++	eject_("\nCode should not have been reached in " G_STRLOC "\n");		\
+-#define g_assert_not_reached(x)												\
+-	eject_("\nCode should not be reached in " G_STRLOC "\n");				\
  
---- src/core/rx_link.h.orig	Tue Nov 22 22:47:05 2005
-+++ src/core/rx_link.h	Sat Nov 26 18:15:09 2005
-@@ -46,7 +46,7 @@
- struct rx_link_cb {
- 	void (*add_rx_given)(gpointer owner, gint amount);
- 	void (*read_error)(gpointer owner,
--			const gchar *reason, ...) G_GNUC_PRINTF(2, 3);
-+			const gchar *reason, ...) PRINTF_FUNC_PTR(2, 3);
- 	void (*got_eof)(gpointer owner);
- };
- 
---- src/common.h.orig	Tue Nov 22 22:47:03 2005
-+++ src/common.h	Sat Nov 26 18:15:08 2005
-@@ -366,6 +366,16 @@
- #define NON_NULL_PARAM(x) __attribute__((nonnull x))
- #else /* GCC < 3.3 */
- #define NON_NULL_PARAM(x)
-+#endif
-+
-+/**
-+ * This is the same G_GNUC_FORMAT() but for function pointers. Older versions
-+ * of GCC do not allow function attributes for function pointers.
-+ */
-+#if HAVE_GCC(3, 0)
-+#define PRINTF_FUNC_PTR(x, y) __attribute__((format(printf, (x), (y))))
-+#else /* GCC < 3.0 */
-+#define PRINTF_FUNC_PTR(x, y)
- #endif
- 
- /* Functions using this attribute cause a warning if the returned
+ #endif /* FAST_ASSERTIONS */
