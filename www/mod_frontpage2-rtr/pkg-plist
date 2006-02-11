@@ -1,3 +1,0 @@
-@unexec %D/sbin/apxs -e -A -n frontpage %D/libexec/%%APACHE%%/mod_frontpage.so
-libexec/%%APACHE%%/mod_frontpage.so
-@exec %D/sbin/apxs -e -a -n frontpage %D/libexec/%%APACHE%%/mod_frontpage.so

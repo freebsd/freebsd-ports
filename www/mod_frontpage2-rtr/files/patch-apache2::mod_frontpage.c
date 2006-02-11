@@ -1,6 +1,14 @@
---- frontpage/version5.0/apache2/mod_frontpage.c.orig	Thu Jan  9 12:19:30 2003
-+++ frontpage/version5.0/apache2/mod_frontpage.c	Wed Feb 12 11:29:29 2003
-@@ -578,6 +578,32 @@
+--- frontpage/version5.0/apache2/mod_frontpage.c-orig	Tue Dec  2 20:18:45 2003
++++ frontpage/version5.0/apache2/mod_frontpage.c	Tue Jan 17 18:01:02 2006
+@@ -62,7 +62,6 @@
+ #include <dirent.h>  
+ #include <errno.h>
+ #include <unistd.h>
+-#include "apr_compat.h" 
+ #include "apr_strings.h" 
+ #include "http_log.h"
+ 
+@@ -590,6 +589,32 @@
       * Thanks to Scot Hetzel (hetzels@westbend.net)
       */
      ap_add_version_component(p, "FrontPage/5.0.2.2635");
@@ -33,7 +41,47 @@
      return OK;
  }
  
-@@ -836,6 +862,27 @@
+@@ -781,20 +806,20 @@
+         return DECLINED;
+ 
+     /*
+-     * Note: ap_pstrdup allocates memory, but it checks for out of memory
++     * Note: apr_pstrdup allocates memory, but it checks for out of memory
+      * conditions - it will not return if out of memory.
+      */
+-    r->handler = ap_pstrdup(r->pool, "cgi-script");
+-    ap_table_set(r->notes, "alias-forced-type", r->handler);
++    r->handler = apr_pstrdup(r->pool, "cgi-script");
++    apr_table_set(r->notes, "alias-forced-type", r->handler);
+ 
+-    ap_table_set(r->subprocess_env, "FPEXE", ap_pstrdup(r->pool, szFpexe));
++    apr_table_set(r->subprocess_env, "FPEXE", apr_pstrdup(r->pool, szFpexe));
+     sprintf(szBuf, "%d", webroot.st_uid );
+-    ap_table_set(r->subprocess_env, "FPUID", ap_pstrdup(r->pool, szBuf));
++    apr_table_set(r->subprocess_env, "FPUID", apr_pstrdup(r->pool, szBuf));
+     sprintf(szBuf, "%d", webroot.st_gid );
+-    ap_table_set(r->subprocess_env, "FPGID", ap_pstrdup(r->pool, szBuf));
++    apr_table_set(r->subprocess_env, "FPGID", apr_pstrdup(r->pool, szBuf));
+ 
+-    ap_table_set(r->notes,"FPexecfilename", ap_pstrcat(r->pool, FPSTUB, NULL));
+-    r->filename = ap_pstrcat(r->pool, r->filename, szCgi, NULL);
++    apr_table_set(r->notes,"FPexecfilename", apr_pstrcat(r->pool, FPSTUB, NULL));
++    r->filename = apr_pstrcat(r->pool, r->filename, szCgi, NULL);
+ 
+     return OK;
+ }
+@@ -836,8 +861,8 @@
+         sprintf(szBuf, "/%04d", iLcid);
+ 
+     /* see the note in FrontPageAlias */
+-    execFilename =  ap_pstrcat(r->pool, FP, szDir, szBuf, szBase, NULL);
+-    ap_table_set(r->notes,"FPexecfilename", execFilename);
++    execFilename =  apr_pstrcat(r->pool, FP, szDir, szBuf, szBase, NULL);
++    apr_table_set(r->notes,"FPexecfilename", execFilename);
+     /* We need to set the finfo field now.  Otherwise Apache will set
+        the path_info field automatically but incorrectly, which will result 
+        in the wrong file being checked.
+@@ -849,6 +874,27 @@
  
  
  /*
@@ -61,7 +109,7 @@
   * This routine looks for shtml.exe, fpcount.exe, author.exe and admin.exe
   * in a URI, and if found we call FrontPageAlias() to check for a valid
   * FrontPage scenario.
-@@ -847,6 +894,7 @@
+@@ -860,6 +906,7 @@
  {
      char* szVti;
      char* szCgi;
@@ -69,7 +117,7 @@
  
      /*
       * Decline if we're improperly initialized.
-@@ -855,6 +903,13 @@
+@@ -868,6 +915,13 @@
          return DECLINED;
  
      /*
@@ -83,7 +131,7 @@
       * Check once for anything with _vti_bin.  This is much faster than
       * checking all our paths, because anything without this is definitely
       * not a FrontPage scenario.
-@@ -875,7 +930,7 @@
+@@ -888,7 +942,7 @@
          return FrontPageAlias(r, szCgi, AUTHOR);
      /*
       * Convert inadvertent shtml.dll to shtml.exe
@@ -92,7 +140,7 @@
       */
      if ((szCgi = strstr(szVti, SHTML2 )))
      {
-@@ -885,9 +940,17 @@
+@@ -898,9 +952,17 @@
      if ((szCgi = strstr(szVti, SHTML  )))
          return FrontPageAlias(r, szCgi, SHTML);
      if ((szCgi = strstr(szVti, ADMIN  )))
@@ -111,4 +159,21 @@
 +	}
      if ((szCgi = strstr(szVti, FPCOUNT)))
          return FrontPageAlias(r, szCgi, FPCOUNT);
+ 
+@@ -939,13 +1001,13 @@
+ static int FrontPageFixup(request_rec *r)
+ {
+ 
+-    if (!ap_table_get(r->notes, "FPexecfilename"))
++    if (!apr_table_get(r->notes, "FPexecfilename"))
+     {  
+         FrontPageXlate(r);
+     }
+-    if (ap_table_get(r->notes,"FPexecfilename"))
++    if (apr_table_get(r->notes,"FPexecfilename"))
+     {
+-        r->filename = (char*) ap_table_get(r->notes,"FPexecfilename");
++        r->filename = (char*) apr_table_get(r->notes,"FPexecfilename");
+         apr_stat(&r->finfo, r->filename, APR_FINFO_MIN, r->pool);
+     }
  

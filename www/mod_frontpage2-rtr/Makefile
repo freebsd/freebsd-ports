@@ -7,10 +7,10 @@
 
 PORTNAME=	mod_frontpage
 PORTVERSION=	5.0.2.2635
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# Requries manual fetch of files from http://www.rtr.com/
-PKGNAMESUFFIX=	${AP_VER}
+PKGNAMESUFFIX=	${AP_VERSION:S/+//}
 DISTFILES=	${FRONTPAGE}
 
 MAINTAINER=	swhetzel@gmail.com
@@ -22,34 +22,10 @@ DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
 
 ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc64
 
-USE_REINPLACE=	yes
-
-WANT_APACHE?=	2
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../apache20/Makefile.modules.3rd"
-.include "${.CURDIR}/../frontpage/Makefile.fp.common"
-
-.ifdef WITH_APACHE2
-FP_AP_VER=	2.0
-APACHE=		apache2
-.else
-FP_AP_VER=	1.3
-APACHE=		apache
-.endif
+PATCH_WRKSRC=	${WRKDIR}
 
 FPDIR=		frontpage/version${FP_VER}
-FP_INSTALL=	${FPDIR}/fp_install.sh
-FP_SETPERM=	${FPDIR}/set_default_perms.sh
 
-.ifdef WITH_MODFP_COMPAT
-FP_ARGS=	-DIMPROVED_MODFP_COMPAT
-.endif
-.ifdef WITH_DISABLED
-FP_ARGS+=	-DDEFAULT_TO_OFF
-.endif
-
-NO_WRKSUBDIR=	yes
 EXTRACT_FILES=	${FPDIR}/apache-fp/mod_frontpage.c \
 		${FPDIR}/apache2/mod_fpcgid.c \
 		${FPDIR}/apache2/mod_fpcgid.h \
@@ -57,8 +33,33 @@ EXTRACT_FILES=	${FPDIR}/apache-fp/mod_frontpage.c \
 		${FPDIR}/apache2/mod_frontpage.h \
 		${FPDIR}/apache2/mod_suexec.h
 
-PLIST_SUB+=	FP_VER=${FP_VER} \
-		APACHE=${APACHE}
+USE_APACHE?=	20+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+AP_EXTRAS=	-Wc,-DFreeBSD
+
+FP_SETPERM=	${FPDIR}/set_default_perms.sh
+
+.ifdef WITH_MODFP_COMPAT
+AP_EXTRAS+=	-DIMPROVED_MODFP_COMPAT
+.endif
+.ifdef WITH_DISAPLED
+AP_EXTRAS+=	-DDEFAULT_TO_OFF
+.endif
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../frontpage/Makefile.fp.common"
+
+.if ${APACHE_VERSION} >= 20
+FP_AP_VER=	2.0
+WRKSRC=		${WRKDIR}/${FPDIR}/apache2
+SRC_FILE=	mod_frontpage.c mod_fpcgid.c
+.else
+FP_AP_VER=	1.3
+WRKSRC=		${WRKDIR}/${FPDIR}/apache-fp
+PKGMESSAGE=	${MASTERDIR}/pkg-message13
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -68,22 +69,6 @@ do-extract:
 	then \
 		exit 1; \
 	fi
-
-do-build:
-.ifdef WITH_APACHE2
-	@${APXS} -c -Wc,-DFREEBSD ${FP_ARGS} ${WRKDIR}/${FPDIR}/apache2/mod_frontpage.c \
-		${WRKDIR}/${FPDIR}/apache2/mod_fpcgid.c
-.else
-	@(cd ${WRKDIR}/${FPDIR}/apache-fp && \
-		${APXS} -c -Wc,-DFREEBSD ${FP_ARGS} ${WRKDIR}/${FPDIR}/apache-fp/mod_frontpage.c)
-.endif
-
-do-install:
-.ifdef WITH_APACHE2
-	@${APXS} -i -a -n frontpage ${WRKDIR}/${FPDIR}/apache2/mod_frontpage.la
-.else
-	@${APXS} -i -a -n frontpage ${WRKDIR}/${FPDIR}/apache-fp/mod_frontpage.so
-.endif
 
 post-install:
 .if (${PREFIX} != "/usr/local")

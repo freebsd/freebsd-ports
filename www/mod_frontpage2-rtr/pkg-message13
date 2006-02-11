@@ -2,6 +2,13 @@
 
 1.)
 
+The Frontpage module has been added to your Apache httpd.conf file,
+as an inactive module.  To activate this module:
+
+	apxs -e -a -n frontpage mod_frontpage.so
+
+2.)
+
 Check your httpd.conf, if you have included a ResourceConfig and
 AccessConfig. If you do not have these files, you'll have to add
 these lines to make the frontpage extensions work properly. These
@@ -13,7 +20,7 @@ ResourceConfig /dev/null
 AccessConfig /dev/null
 
 
-2.)
+3.)
 
 You'll need to change the AllowOverride directive under the
 default web from None to at least "AuthConfig Limit Indexes Options".
@@ -32,7 +39,7 @@ You'll also need to change the AllowOverride Directive on all
 virtual hosts that you are going to enable with Frontpage Extentions.
 
 
-3.)
+4.)
 
 You can turn the extensions and the frontpage administration on/off
 per site in httpd.conf and per virtual server.
@@ -55,7 +62,7 @@ FrontPageAdminEnable    # Same as 'FrontPageAdmin On'
 FrontPageAdminDisable   # Same as 'FrontPageAdmin Off'
 
 
-4.)
+5.)
 
 If this is a fresh Apache install, you should remove the symbolic link
 to the %%PREFIX%%/www/data directory, and create a real directory.
@@ -64,7 +71,7 @@ rm %%PREFIX%%/www/data
 mkdir %%PREFIX%%/www/data
 
 
-5.)
+6.)
 
 After you have made these changes, you'll need to execute:
 
@@ -82,7 +89,7 @@ check the document root for .htaccess files.  Rename them, and then combine
 them with the .htaccess files created by the frontpage install.
 
 
-6.)
+7.)
 
 If you have installed the port in another PREFIX than "/usr/local"
 you have to create a symlink. Microsoft has hardcoded the local

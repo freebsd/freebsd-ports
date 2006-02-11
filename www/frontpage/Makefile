@@ -7,7 +7,7 @@
 
 PORTNAME=	frontpage
 PORTVERSION=	5.0.2.2635
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	# Needs to be manually fetched from http://www.rtr.com
 
