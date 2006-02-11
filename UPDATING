@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060212:
+  AFFECTS: users of mail/dcc-dccd
+  AUTHOR: ehaupt@FreeBSD.org
+
+  The midnight dccm and dccifd system log message has been changed to disclose
+  spam passed from whiteclnt-listed MX servers. MX servers should now be listed
+  in /var/dcc/whiteclnt with lines like:
+                mx      ip      10.2.3.4
+                mx      ip      10.5.6.0/28
+                mxdcc   ip      10.7.8.9
+  "MX" marks the IP address of one of your mail systems that should be ignored
+  in initial Received: headers and when reported by sendmail to dccm. "MXDCC"
+  marks IP addresss of your mail systems that run DCC clients and that will have
+  already reported mail to the DCC. Continue using "OK" whitelist entries for
+  mail systems that you trust to never send or forward unsolicited bulk email.
+  Allow custom DNS blacklist SMTP rejection messages. See -Bset:rej-msg=X in the
+  dccifd and dccm man pages.
+
 20060207:
   AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41, 
            www/jakarta-tomcat5, www/jakarta-tomcat55, and www/tomcat55
