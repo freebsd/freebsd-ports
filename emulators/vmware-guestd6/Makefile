@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
@@ -35,6 +35,16 @@ IS_INTERACTIVE=	yes
 .if defined(VMWARE_X_PORTS)
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+.if defined(WITH_VMWARE_GTK)
+PLIST_SUB+=	INSTALLXGTKTOOL:=""
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_XLIB=	yes
+USE_GNOME=	glib12 gtk12
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.else
+PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
+.endif
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
@@ -78,17 +88,6 @@ PLIST_SUB+=	INSTALLXVMMOUSE:=""
 PLIST_SUB+=	INSTALLXSERVER3:="@comment "
 PLIST_SUB+=	INSTALLXSERVER4:="@comment "
 PLIST_SUB+=	INSTALLXVMMOUSE:=""
-.endif
-
-.if defined(WITH_VMWARE_GTK)
-PLIST_SUB+=	INSTALLXGTKTOOL:=""
-USE_ICONV=	yes
-USE_GETTEXT=	yes
-USE_XLIB=	yes
-USE_GNOME=	glib12 gtk12
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.else
-PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
 .endif
 
 .else
@@ -178,6 +177,11 @@ do-install:
 .if defined(WITH_VMWARE_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-gtk ${X11BASE}/bin
 .endif
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+	if [ ! -d ${X11BASE}/lib/modules/input ] ; then \
+		${MKDIR} ${X11BASE}/lib/modules/input ; \
+	fi
+.endif
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 .if ${BITS} == 32
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware_4.5 ${X11BASE}/bin/XF86_VMware
@@ -192,6 +196,9 @@ do-install:
 .endif
 .elif ${X_WINDOW_SYSTEM:L} == xfree86-4
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
+	if [ ! -d ${X11BASE}/lib/modules/drivers ] ; then \
+		${MKDIR} ${X11BASE}/lib/modules/drivers ; \
+	fi
 .if ${BITS} == 32
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware

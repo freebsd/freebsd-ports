@@ -1,7 +1,7 @@
-sbin/vmware-checkvm
-sbin/vmware-guestd
 @unexec %D/etc/rc.d/vmware-guestd.sh forcestop 2>/dev/null || true
 etc/rc.d/vmware-guestd.sh
+sbin/vmware-checkvm
+sbin/vmware-guestd
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
 %%VMWARE_VMXNET:%%lib/vmware-tools/modules/vmxnet.ko
 %%VMWARE_KMODDIR:%%@dirrmtry lib/vmware-tools/modules
