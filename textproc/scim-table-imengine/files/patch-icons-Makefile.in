@@ -1,6 +1,6 @@
---- icons/Makefile.in.orig	Sun Oct 30 22:07:35 2005
-+++ icons/Makefile.in	Tue Nov  1 22:58:55 2005
-@@ -234,53 +234,7 @@
+--- icons/Makefile.in.orig	Thu Jan 12 02:00:26 2006
++++ icons/Makefile.in	Fri Feb 10 13:34:59 2006
+@@ -234,54 +234,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
@@ -14,6 +14,7 @@
 -			  CangJie3.png	\
 -			  Cantonese.png \
 -			  CantonHK.png	\
+-			  CNS11643.png	\
 -			  Quick.png	\
 -			  Stroke5.png	\
 -			  Dayi.png      \
