@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	xacpim
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://shapeshifter.se/code/xacpim/release/ \
-		http://0xcoffe.dk/mirror/xacpim/release/
+MASTER_SITES=	http://shapeshifter.se/pub/xacpim/
 
 MAINTAINER=	henriknj@0xmilk.org
 COMMENT=	Utility to display battery status and temperature on the root-display
@@ -21,6 +20,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
-IGNORE=		"4.x doesn\'t support ACPI"
+IGNORE=		does not work on 4.x (does not support ACPI)
 .endif
 .include <bsd.port.post.mk>
