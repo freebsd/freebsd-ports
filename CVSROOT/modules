@@ -8132,6 +8132,7 @@ p5-Geo-Distance	ports/math/p5-Geo-Distance
 p5-Geo-IP	ports/net/p5-Geo-IP
 p5-Geo-IPfree	ports/net/p5-Geo-IPfree
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
+p5-Geo-Proj4	ports/graphics/p5-Geo-Proj4
 p5-Geo-ShapeFile	ports/devel/p5-Geo-ShapeFile
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
 p5-Geography-Countries	ports/misc/p5-Geography-Countries
@@ -8309,6 +8310,7 @@ p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
 p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
 p5-Kwiki-Atom	ports/www/p5-Kwiki-Atom
+p5-Kwiki-Cache	ports/www/p5-Kwiki-Cache
 p5-Kwiki-Diff	ports/www/p5-Kwiki-Diff
 p5-Kwiki-Edit-RequireUserName	ports/www/p5-Kwiki-Edit-RequireUserName
 p5-Kwiki-GDGraphGenerator	ports/www/p5-Kwiki-GDGraphGenerator
