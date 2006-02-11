@@ -2,7 +2,6 @@ bin/httpd.tcl
 bin/httpdthread.tcl
 etc/tclhttpd.rc
 etc/tclhttpd.rc.default
-etc/rc.d/tclhttpd.sh
 lib/tclhttpd%%PORTVERSION%%/%%SHLIB_NAME%%
 lib/tclhttpd%%PORTVERSION%%/admin.tcl
 lib/tclhttpd%%PORTVERSION%%/auth.tcl
