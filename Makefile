@@ -76,11 +76,11 @@ fetchindex: ${INDEXDIR}/{INDEXFILE}.bz2
 	chmod a+r ${INDEXDIR}/${INDEXFILE}
 
 ${INDEXDIR}/{INDEXFILE}.bz2: .PHONY
-	@${FETCHINDEX} -o ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
+	@${FETCHINDEX} ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
 
 MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
 SETENV?=	/usr/bin/env
-FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am
+FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am -o
 INDEX_JOBS?=	2
 
 .if !defined(INDEX_VERBOSE)
@@ -122,7 +122,7 @@ ${INDEXDIR}/${INDEXFILE}:
 			echo; \
 		fi; \
 		exit 1); \
-	cat $${tmpdir}/${INDEXFILE}.desc.* | perl ${.CURDIR}/Tools/make_index | \
+	cat $${tmpdir}/${INDEXFILE}.desc.* | (cd ${.CURDIR} ; perl ${.CURDIR}/Tools/make_index) | \
 		sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e 's./..g' | \
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${INDEXDIR}/${INDEXFILE}.tmp; \
