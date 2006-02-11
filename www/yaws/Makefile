@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
+DISTNAME=	yaws-${PORTVERSION}pre
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A webserver for dynamic content written in Erlang
@@ -20,7 +21,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/yaws-${PORTVERSION}
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5
@@ -30,7 +31,7 @@ APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-extract:
