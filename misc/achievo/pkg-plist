@@ -565,4 +565,4 @@
 @dirrm %%ACHVODIR%%/atk/db
 @dirrm %%ACHVODIR%%/atk/attributes
 @dirrm %%ACHVODIR%%/atk
-@dirrm %%ACHVODIR%%
+@dirrmtry %%ACHVODIR%%
