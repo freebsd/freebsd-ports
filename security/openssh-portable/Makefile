@@ -127,7 +127,7 @@ IGNORE=			please, select only one HPN patch. Rerun 'make config'
 .endif
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-${DISTVERSION}-hpn11.diff
+PATCHFILES+=		openssh-4.3p1-hpn11.diff
 .endif
 
 .if defined(WITH_HPN_NONECIPHER)
@@ -136,7 +136,7 @@ IGNORE=			please, select only one HPN patch. Rerun 'make config'
 .endif
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-${DISTVERSION}-hpn11-none.diff
+PATCHFILES+=		openssh-4.3p1-hpn11-none.diff
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
