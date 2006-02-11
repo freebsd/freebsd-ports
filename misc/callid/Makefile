@@ -7,6 +7,7 @@
 
 PORTNAME=	callid
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.xs4all.nl/~possamai/callid/
 
