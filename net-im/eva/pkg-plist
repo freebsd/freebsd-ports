@@ -304,6 +304,7 @@ share/apps/eva/image/smiley/smiley.theme
 share/apps/eva/image/theme/addfriend.png
 share/apps/eva/image/theme/addgroup.png
 share/apps/eva/image/theme/admin.png
+share/apps/eva/image/theme/background.png
 share/apps/eva/image/theme/bold.png
 share/apps/eva/image/theme/changeuser.png
 share/apps/eva/image/theme/chat.png
@@ -313,12 +314,16 @@ share/apps/eva/image/theme/custom_smiley.png
 share/apps/eva/image/theme/delfriend.png
 share/apps/eva/image/theme/delgroup.png
 share/apps/eva/image/theme/details.png
+share/apps/eva/image/theme/details_basic_info.png
+share/apps/eva/image/theme/details_description.png
+share/apps/eva/image/theme/details_details.png
 share/apps/eva/image/theme/detailslogo.png
 share/apps/eva/image/theme/downloadgroup.png
 share/apps/eva/image/theme/downloadhistory.png
 share/apps/eva/image/theme/eva.png
 share/apps/eva/image/theme/eva.theme
 share/apps/eva/image/theme/evalogo.png
+share/apps/eva/image/theme/file_transfer.png
 share/apps/eva/image/theme/find.png
 share/apps/eva/image/theme/font.png
 share/apps/eva/image/theme/group.png
@@ -329,7 +334,9 @@ share/apps/eva/image/theme/italic.png
 share/apps/eva/image/theme/leave.png
 share/apps/eva/image/theme/login.mng
 share/apps/eva/image/theme/logo.png
+share/apps/eva/image/theme/memo.png
 share/apps/eva/image/theme/msg.png
+share/apps/eva/image/theme/msg_info.png
 share/apps/eva/image/theme/na.png
 share/apps/eva/image/theme/offline.png
 share/apps/eva/image/theme/online.png
@@ -341,6 +348,7 @@ share/apps/eva/image/theme/qq_shop.png
 share/apps/eva/image/theme/quickreply.png
 share/apps/eva/image/theme/quit.png
 share/apps/eva/image/theme/qun.png
+share/apps/eva/image/theme/qun_card.png
 share/apps/eva/image/theme/qunexit.png
 share/apps/eva/image/theme/qunlogo.png
 share/apps/eva/image/theme/refresh.png
@@ -348,12 +356,17 @@ share/apps/eva/image/theme/refreshbuddies.png
 share/apps/eva/image/theme/rename.png
 share/apps/eva/image/theme/screen_shot.png
 share/apps/eva/image/theme/search.png
+share/apps/eva/image/theme/send_image.png
+share/apps/eva/image/theme/setting_close.png
+share/apps/eva/image/theme/setting_open.png
 share/apps/eva/image/theme/settinglogo.png
 share/apps/eva/image/theme/shareholder.png
 share/apps/eva/image/theme/show_portrait.png
 share/apps/eva/image/theme/showall.png
 share/apps/eva/image/theme/showonline.png
 share/apps/eva/image/theme/smiley.png
+share/apps/eva/image/theme/sys_close.png
+share/apps/eva/image/theme/sys_open.png
 share/apps/eva/image/theme/sysmsg.png
 share/apps/eva/image/theme/sysoption.png
 share/apps/eva/image/theme/syssetting.png
@@ -368,9 +381,6 @@ share/apps/eva/servers
 share/apps/eva/sound/msg.wav
 share/apps/eva/sound/online.wav
 share/apps/eva/sound/system.wav
-share/doc/HTML/en/eva/common
-share/doc/HTML/en/eva/index.cache.bz2
-share/doc/HTML/en/eva/index.docbook
 share/icons/hicolor/128x128/apps/eva.png
 share/icons/hicolor/16x16/apps/eva.png
 share/icons/hicolor/22x22/apps/eva.png
@@ -378,7 +388,6 @@ share/icons/hicolor/32x32/apps/eva.png
 share/icons/hicolor/48x48/apps/eva.png
 share/icons/hicolor/64x64/apps/eva.png
 share/locale/zh_CN/LC_MESSAGES/eva.mo
-@dirrm share/doc/HTML/en/eva
 @dirrm share/apps/eva/sound
 @dirrm share/apps/eva/image/theme
 @dirrm share/apps/eva/image/smiley
