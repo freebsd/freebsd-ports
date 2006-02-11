@@ -7,9 +7,10 @@
 
 PORTNAME=	acroread
 PORTVERSION=	7.0.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0.5/jpn/
+MASTER_SITES=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/7.0.5/jpn/ \
+		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0.5/jpn/
 DISTNAME=	AdobeReader_jpn-7.0.5-1.i386
 DIST_SUBDIR=	acroread
 
