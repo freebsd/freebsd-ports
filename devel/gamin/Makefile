@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -19,8 +19,9 @@ USE_GNOME?=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 CONFLICTS=	fam-[0-9]*
 
@@ -28,6 +29,15 @@ CONFLICTS=	fam-[0-9]*
 USE_AUTOTOOLS=	libtool:15
 .else
 USE_AUTOTOOLS=	libtool:15:inc
+OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if !defined(GAMIN_SLAVE)
+.if defined(WITH_GAM_POLLER)
+CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
+.endif
 .endif
 
 post-patch:
@@ -43,4 +53,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
