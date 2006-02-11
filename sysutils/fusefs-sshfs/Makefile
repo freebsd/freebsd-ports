@@ -17,12 +17,10 @@ COMMENT=	Mount remote directories over ssh
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
-
-CONFLICTS=	fusefs-kmod-0.2.19*
+BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-USE_REINPLACE=	yes
 USE_GNOME=	glib20
 
 .include <bsd.port.pre.mk>
