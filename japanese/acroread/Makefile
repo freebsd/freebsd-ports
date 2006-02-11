@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	7.0.1
-PORTREVISION=	2
+PORTVERSION=	7.0.5
+PORTREVISION=	0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/jpn/
-DISTNAME=	AdbeRdr701_linux_jpn
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0.5/jpn/
+DISTNAME=	AdobeReader_jpn-7.0.5-1.i386
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader which allows view, print, and search PDF documents
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
 RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
 NO_PACKAGE=	"Use and redistribution with repackaging are not allowed"
-IS_INTERACTIVE=	yes
 CONFLICTS=	acroread-[0-9]* acroread[57]-[0-9]* \
 		ja-acroread5-[0-9]*
 ONLY_FOR_ARCHS=	amd64 i386
@@ -32,17 +30,18 @@ NO_BUILD=	yes
 PLIST_SUB=	ACRODIR=${ACRODIR} \
 		PLUGINDIR=${PLUGINDIR}
 SUB_FILES=	acroread
-SUB_LIST=	INSTALLDIR=${INSTALLDIR}
+SUB_LIST=	INSTALLDIR=${INSTALLDIR} \
+		LINUXBASE=${LINUXBASE}
 WRKSRC=		${WRKDIR}/AdobeReader
 
 ACRODIR=	Acrobat7
 PLUGINDIR=	lib/browser_linux_plugins
+POSTPROCESS=	${AWK} '/^  if \[ `uname -s` = \"Linux\" \] ; then/ { print "ReadTar=\"\"; SearchTar=\"\"; CustomTar=\"\"; return;" } /^AcroSerNum/ { print "ScriptDirectory=${WRKSRC}" } { print }'
 INSTALLDIR=	${PREFIX}/${ACRODIR}
-INSTALLEXEC=	${SETENV} UNAME_s=Linux \
+INSTALLEXEC=	${POSTPROCESS} < ./INSTALL | \
+			${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
-			InstallDir=${INSTALLDIR} \
-			PAGER=jless \
-			${SH} ./INSTALL
+			${SH} /dev/stdin --install_path=${INSTALLDIR}
 
 do-install:
 	${MKDIR} ${INSTALLDIR}
