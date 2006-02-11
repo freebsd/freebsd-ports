@@ -157,7 +157,6 @@
     SUBDIR += gofish
     SUBDIR += googolplex
     SUBDIR += gopher
-    SUBDIR += gothard
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += gsk
