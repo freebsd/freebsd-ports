@@ -38,8 +38,4 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_GLX=yes	Enable support for DRI rendering (may improve performance)"
 	@${ECHO_MSG} ""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \
-		${WRKSRC}/gnome-pty-helper/gnome-pty-helper.c
-
 .include <bsd.port.mk>
