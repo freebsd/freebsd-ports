@@ -7,6 +7,7 @@
 
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	www tcl83 tcl84
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	httpd
@@ -18,14 +19,14 @@ COMMENT=	An http-server implemented in TCL
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}
 
+USE_RC_SUBR=	tclhttpd.sh
 TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:S/.//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl="${LOCALBASE}/lib/tcl${TCL_DVER}" \
 		--with-tclinclude="${LOCALBASE}/include/tcl${TCL_DVER}"
 
-MAN1=	tclhttpd.1
-RCD=	${LOCALBASE}/etc/rc.d/tclhttpd.sh
+MAN1=		tclhttpd.1
 
 .include <bsd.port.pre.mk>
 SHLIB_NAME!=	${MAKE} -f "${FILESDIR}/Makefile.lib" -V SHLIB_NAME
@@ -33,6 +34,7 @@ PLIST_SUB+=	TCL_VER=${TCL_VER} PORTVERSION=${PORTVERSION} \
 		SHLIB_NAME=${SHLIB_NAME}
 MAKE_ENV+=	TCLSH_PROG=tclsh${TCL_DVER}
 SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER}
+SUB_LIST+=	TCL_DVER=${TCL_DVER}
 
 do-build:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -j 2 TCL_DVER="${TCL_DVER}" \
@@ -47,11 +49,7 @@ pre-install:
 	${MKDIR} ${PREFIX}/tclhttpd/custom
 
 post-install:
-	test -e ${RCD} || ${SED} \
-		"s%COMMAND_LINE%${LOCALBASE}/bin/tclsh${TCL_DVER} ${PREFIX}/bin/httpd.tcl%" \
-		< ${FILESDIR}/tclhttpd.sh > ${RCD}
 	${CHOWN} -R nobody ${DATADIR}${PORTVERSION}
-	${CHMOD} +x ${RCD}
 	${INSTALL_DATA} ${WRKSRC}/${SHLIB_NAME} \
 		${PREFIX}/lib/${PORTNAME}${PORTVERSION}/${SHLIB_NAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/httpd.tcl \

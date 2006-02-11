@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: tclhttpd
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable tclhttpd:
+#
+# tclhttpd_enable (bool):	Set it to "YES" to enable tclhttpd
+#				Default is "NO".
+#
+# tclhttpd_flags (str):		Arguments to be passed to tclhttpd.
+#				Default is "".
+#
+# tclhttpd_stdout_log(str):	Set to the location for the tclhttpd
+#				process log (standard out)
+#
+# tclhttpd_stderr_log (str):	Set to the location for the tclhttpd
+#				process log (standard error)
+
+. %%RC_SUBR%%
+
+name="tclhttpd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${tclhttpd_enable="NO"}
+: ${tclhttpd_flags=""}
+: ${tclhttpd_stdout_log="/var/log/tclhttpd-stdout.log"}
+: ${tclhttpd_stderr_log="/var/log/tclhttpd-stderr.log"}
+
+procname="%%LOCALBASE%%/bin/tclsh%%TCL_DVER%%"
+pidfile=/var/run/tclhttpd.pid
+log_args=">> ${tclhttpd_stdout_log} \
+	2>> ${tclhttpd_stderr_log} "
+command="/usr/sbin/daemon"
+flags="-p ${pidfile} %%LOCALBASE%%/bin/tclsh%%TCL_DVER%% %%PREFIX%%/bin/httpd.tcl ${tclhttpd_flags} ${log_args}"
+
+run_rc_command "$1"
