@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	fusefs
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-USE_REINPLACE=	yes
 TXT_DOCS=	how-fuse-works \
 		kernel.txt
 
