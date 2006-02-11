@@ -1,4 +1,4 @@
-scavenge is a utility to audit DNS records within an IP address range.
+Scavenge is a utility to analyze DNS records within an IP address range.
 It scans the range and classifies its findings into 4 categories:
 
     - Missing A records
@@ -6,7 +6,7 @@ It scans the range and classifies its findings into 4 categories:
     - Mismatched A/PTR records
     - Stale PTR records
 
-WWW: http://mark.foster.cc/pub/scavenge/
+WWW: http://mark.foster.cc/wiki/index.php/Scavenge
 
 - mdf
 mark@foster.cc
