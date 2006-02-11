@@ -18,6 +18,7 @@ COMMENT=	A free PHP class to generate PDF files with pure PHP
 
 USE_PHP=	zlib
 
+USE_DOS2UNIX=	yes
 FETCH_CMD=	/usr/bin/fetch -ARr -o ${DISTDIR}/${DISTFILES}
 NO_BUILD=	yes
 
@@ -27,7 +28,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FPDF_DIR=${FPDF_DIR}
 PLIST_SUB=	FPDF_DIR=${FPDF_DIR}
 
-EXT2CNV=	afm htm php txt
 DOCS=		FAQ.htm doc/* fpdf.css histo.htm install.txt tutoriel
 
 do-fetch:
@@ -37,11 +37,6 @@ do-fetch:
 	fi
 
 pre-patch:
-.for ext in ${EXT2CNV}
-	@for f in `${FIND} ${WRKSRC} -type f -name "*.${ext}"` ; do	\
-		${TR} -d '\r' < $$f > $$f.dos &&			\
-		${MV} $$f.dos $$f ; done
-.endfor
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 do-install:
