@@ -3042,6 +3042,7 @@ glmaze		ports/games/glmaze
 glob2		ports/games/glob2
 global		ports/devel/global
 globus2		ports/misc/globus2
+globus4		ports/net/globus4
 glom		ports/databases/glom
 glpk		ports/math/glpk
 glpuzzle	ports/games/glpuzzle
