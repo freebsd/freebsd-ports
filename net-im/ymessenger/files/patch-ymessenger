@@ -1,11 +1,10 @@
---- bin/ymessenger.orig	Mon May  6 23:06:27 2002
-+++ bin/ymessenger	Sat Aug 30 03:09:58 2003
-@@ -1,4 +1,5 @@
+--- bin/ymessenger.orig	Fri Oct  3 21:02:12 2003
++++ bin/ymessenger	Sat Jan  7 14:42:37 2006
+@@ -1,4 +1,4 @@
  #!/bin/sh
--LD_LIBRARY_PATH=/opt/ymessenger/lib:$LD_LIBRARY_PATH
+-LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 -export LD_LIBRARY_PATH
--exec /opt/ymessenger/bin/ymessenger.bin $@
-+LD_LIBRARY_PATH=%%PREFIX%%/lib/ymessenger:$LD_LIBRARY_PATH
-+LD_PRELOAD=/usr/lib/libc_r.so:/usr/lib/libc.so
+-exec /usr/local/share/ymessenger/ymessenger.bin $@
++LD_LIBRARY_PATH=%%PREFIX%%/lib:$LD_LIBRARY_PATH
 +export LD_LIBRARY_PATH LD_PRELOAD
 +exec %%PREFIX%%/libexec/ymessenger/ymessenger.bin $@
