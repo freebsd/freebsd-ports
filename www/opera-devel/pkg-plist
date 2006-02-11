@@ -1,0 +1,116 @@
+@comment $FreeBSD$
+bin/opera-devel
+%%DOCSDIR%%/LICENSE
+%%DATADIR%%/bin/missingsyms.so
+%%DATADIR%%/bin/opera
+%%DATADIR%%/bin/spellcheck.so
+%%DATADIR%%/bin/works
+%%DATADIR%%/chartables.bin
+%%DATADIR%%/config/opera6rc
+%%DATADIR%%/config/opera6rc.fixed
+%%DATADIR%%/html40_entities.dtd
+%%DATADIR%%/images/blank.gif
+%%DATADIR%%/images/drive.gif
+%%DATADIR%%/images/file.gif
+%%DATADIR%%/images/folder.gif
+%%DATADIR%%/images/link.gif
+%%DATADIR%%/images/opera.xpm
+%%DATADIR%%/images/opera_16x16.png
+%%DATADIR%%/images/opera_22x22.png
+%%DATADIR%%/images/opera_32x32.png
+%%DATADIR%%/images/opera_48x48.png
+%%DATADIR%%/images/operabanner.png
+%%DATADIR%%/ini/dialog.ini
+%%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/filehandler.ini
+%%DATADIR%%/ini/pluginpath.ini
+%%DATADIR%%/ini/spellcheck.ini
+%%DATADIR%%/ini/standard_keyboard.ini
+%%DATADIR%%/ini/standard_menu.ini
+%%DATADIR%%/ini/standard_mouse.ini
+%%DATADIR%%/ini/standard_toolbar.ini
+%%DATADIR%%/ini/unix_keyboard.ini
+%%DATADIR%%/ini/xmlentities.ini
+%%DATADIR%%/java/opera.jar
+%%DATADIR%%/java/opera.policy
+%%DATADIR%%/jsconsole.html
+%%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/en/default.adr
+%%DATADIR%%/locale/en/lngcode.txt
+%%DATADIR%%/locale/en/license.txt
+%%DATADIR%%/locale/en/search.ini
+%%DATADIR%%/locale/english.lng
+%%DATADIR%%/opera6.adr
+%%DATADIR%%/plugins/libnpp.so
+%%DATADIR%%/plugins/operapluginwrapper
+%%DATADIR%%/plugins/operaplugincleaner
+%%DATADIR%%/search.ini
+%%DATADIR%%/skin/standard_skin.zip
+%%DATADIR%%/skin/windows_skin.zip
+%%DATADIR%%/styles/OPF.css
+%%DATADIR%%/styles/about.css
+%%DATADIR%%/styles/cache.css
+%%DATADIR%%/styles/certinfo.css
+%%DATADIR%%/styles/config.css
+%%DATADIR%%/styles/contentblock.css
+%%DATADIR%%/styles/dir.css
+%%DATADIR%%/styles/drives.css
+%%DATADIR%%/styles/email.css
+%%DATADIR%%/styles/error.css
+%%DATADIR%%/styles/history.css
+%%DATADIR%%/styles/im.css
+%%DATADIR%%/styles/image.css
+%%DATADIR%%/styles/images/bar.png
+%%DATADIR%%/styles/images/center.png
+%%DATADIR%%/styles/images/opera.png
+%%DATADIR%%/styles/images/root.png
+%%DATADIR%%/styles/images/top.png
+%%DATADIR%%/styles/info.css
+%%DATADIR%%/styles/mime.css
+%%DATADIR%%/styles/mimehead.css
+%%DATADIR%%/styles/plugins.css
+%%DATADIR%%/styles/user/accessibility.css
+%%DATADIR%%/styles/user/contrastbw.css
+%%DATADIR%%/styles/user/contrastwb.css
+%%DATADIR%%/styles/user/debugwithoutline.css
+%%DATADIR%%/styles/user/disabletables.css
+%%DATADIR%%/styles/user/hidecertainsizes.css
+%%DATADIR%%/styles/user/hidenonlinkimages.css
+%%DATADIR%%/styles/user/imageandlinkonly.css
+%%DATADIR%%/styles/user/nostalgia.css
+%%DATADIR%%/styles/user/showstructure.css
+%%DATADIR%%/styles/user/textonly.css
+%%DATADIR%%/styles/user/userstyle.ini
+%%DATADIR%%/styles/wml.css
+%%DATADIR%%/svg-sebd.dat
+%%DATADIR%%/svg-se.dat
+%%DATADIR%%/svg-sabd.dat
+%%DATADIR%%/svg-sa.dat
+%%DATADIR%%/svg-mobd.dat
+%%DATADIR%%/svg-mo.dat
+
+%%GNOME%%share/gnome/apps/Internet/opera-devel.desktop
+%%GNOME%%share/gnome/pixmaps/opera-devel.xpm
+@dirrm %%DATADIR%%/styles/user
+@dirrm %%DATADIR%%/styles/images
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/skin
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/locale/en
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+
+%%KDE%%@cwd %%LOCALBASE%%
+%%KDE%%share/applnk/Internet/opera-devel.desktop
+%%KDE%%share/icons/hicolor/22x22/apps/opera-devel.png
+%%KDE%%share/icons/hicolor/32x32/apps/opera-devel.png
+%%KDE%%share/icons/hicolor/48x48/apps/opera-devel.png
+%%KDE%%share/icons/locolor/16x16/apps/opera-devel.png
+%%KDE%%share/icons/locolor/22x22/apps/opera-devel.png
+%%KDE%%share/icons/locolor/32x32/apps/opera-devel.png
