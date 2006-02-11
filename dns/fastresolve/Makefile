@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--with-bdb-lib=-ldb_cxx-4.2 --with-bdb-incdir=${LOCALBASE}/inclu
 LIB_DEPENDS+=	db-4.3:${PORTSDIR}/databases/db43
 CONFIGURE_ARGS=	--with-bdb-lib=-ldb_cxx-4.3 --with-bdb-incdir=${LOCALBASE}/include/db43
 .else
-.error WITH_BDB_VER must be one between 3, 4, 41, 42 or 43
+IGNORE=	cannot install: WITH_BDB_VER must be one of 3, 4, 41, 42 or 43
 .endif
 
 MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \

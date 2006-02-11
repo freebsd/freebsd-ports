@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
 BUILD_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
 RUN_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
 .else
-.error MI_ELISP_LANG should be "en" or "ja".
+IGNORE=	cannot install: MI_ELISP_LANG should be "en" or "ja"
 .endif
 MI_INDEX+=	mi-elisp.idx
 PLIST_SUB+=	MI_WITH_ELISP=""
