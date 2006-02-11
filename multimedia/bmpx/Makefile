@@ -16,7 +16,6 @@ COMMENT=	Audio player
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		xine.15:${PORTSDIR}/multimedia/libxine \
-		curl.3:${PORTSDIR}/ftp/curl \
 		neon.25:${PORTSDIR}/www/neon
 
 USE_AUTOTOOLS=	libtool:15
