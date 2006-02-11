@@ -7,6 +7,8 @@
 
 PKGNAMEPREFIX=	nl-
 
+COMMENT=	The Acrobat Reader7 (with Dutch Language Pack)
+
 ADOBE_LANG=	nld
 CMD_SUFFIX=	-nl
 MASTERDIR=	${.CURDIR}/../../print/acroread7
