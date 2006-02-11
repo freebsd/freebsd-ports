@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.4
+PORTVERSION=	0.5
+PORTREVISION?=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://download.m0k.org/${PORTNAME}/files/
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=mezz
 DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
-COMMENT=	A free BitTorrent client written from scratch in C
+COMMENT?=	A free BitTorrent client written from scratch in C
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 CFLAGS+=	-Wall -W ${CPPFLAGS}
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
+CONFIGURE_ARGS?=--prefix=${PREFIX} \
+		--disable-gtk
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude macosx \
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
+			--exclude macosx \
 			--exclude packageOSX.sh
 
-PLIST_FILES=	bin/transmissioncli
+PLIST_FILES?=	bin/transmissioncli
 PORTDOCS=	AUTHORS LICENSE NEWS README
 
 .if defined(WITHOUT_OPENSSL)
@@ -47,17 +50,22 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g' \
+		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g ; \
+		s|/usr/local/|${LOCALBASE}/|g ; s|/usr/X11R6/|${X11BASE}/|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g' \
-			${WRKSRC}/Jamrules
+		${WRKSRC}/Jamrules
 
 # jam -dx, it will giving a verbose of build.
 do-build:
 	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} jam -dx)
 
-do-install:
+.if !defined(SLAVE_PORT)
+do-install: docsfiles
 	${INSTALL_PROGRAM} ${WRKSRC}/transmissioncli ${PREFIX}/bin/
+.endif
+
+docsfiles:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
