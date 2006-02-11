@@ -1,0 +1,4 @@
+The script will create CRUD interface with paging and sort for all
+tables defined in the accessed database.
+
+WWW: http://search.cpan.org/dist/Catalyst-Example-InstantCRUD/
