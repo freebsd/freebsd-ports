@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Perl module for creating generic methods
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-PathTools

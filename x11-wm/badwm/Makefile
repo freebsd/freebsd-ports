@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		BadWM-${PORTVERSION}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Window manager based on evilwm
 
 DOCDIR=			share/doc/${PORTNAME}

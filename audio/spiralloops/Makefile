@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
 DISTNAME=	SpiralLoops-${PORTVERSION}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Loop-based sampler
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	1.4.1
 DISTNAME=	festvox_kedlpc8k
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	American English male voice, sampled at 8 kHz, for Festival
 
 RUN_DEPENDS=	\

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	festlex_CMU
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU American English pronunciation dictionary for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	GnuPG/:cpan gnupg-interface/:sf
 PKGNAMEPREFIX=	p5-
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:cpan,sf
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker

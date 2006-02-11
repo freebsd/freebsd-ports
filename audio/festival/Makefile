@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	${DISTNAME}-beta.tar.gz \
 		speech_tools-1.2.95-beta.tar.gz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual speech synthesis system
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \

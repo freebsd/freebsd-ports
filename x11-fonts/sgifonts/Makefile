@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/ \
 DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio

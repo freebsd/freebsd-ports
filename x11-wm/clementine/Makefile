@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, iconizing, and styles (unstable)
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \

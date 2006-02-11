@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_tll_di-2.0
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	American English female voice for Festival (no commercial use)
 
 RUN_DEPENDS=	\

@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
 EXTRACT_SUFX=	.py
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
 DEPRECATED=	"mastersite disappeared, no longer maintained by author"

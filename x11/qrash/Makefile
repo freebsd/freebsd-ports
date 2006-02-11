@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	X11/demos
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Animated musical demo for X11
 
 GNU_CONFIGURE=	yes

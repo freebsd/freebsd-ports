@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
 OPTIONS=	XINERAMA "use multiple monitors (XFree86 4 and X.org only)" off

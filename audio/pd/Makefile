@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 DISTNAME=	pd-0.37-1test1.src
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \

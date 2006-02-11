@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://trace.wisc.edu/pub/access_utils/unix/
 DISTNAME=	unwindows
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying utility which updates continuously
 
 ALL_TARGET=	dynamag

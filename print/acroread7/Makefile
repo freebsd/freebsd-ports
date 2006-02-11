@@ -16,7 +16,7 @@ EXTRACT_SUFX=
 DIST_SUBDIR=	acroread
 EXTRACT_ONLY=
 
-MAINTAINER?=	trevor@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	View, search and print PDF documents
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
@@ -31,6 +31,13 @@ ONLY_FOR_ARCHS=	amd64 i386
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	acroread7
 SUB_LIST+=	INSTDIR=${INSTDIR}
+
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64")
+ARCH=          i386
+RPMFLAGS+=     --ignorearch
+.endif
 
 do-build:
 	@kldstat -v | ${GREP} -E 'linux(aout|elf)' >/dev/null ||\
@@ -56,4 +63,4 @@ do-install:
 	# disable the PPKLite plugin as it requires an LDAP share lib
 	${CHMOD} 0 ${PREFIX}/${INSTDIR}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

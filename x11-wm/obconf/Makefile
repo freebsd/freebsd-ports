@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/obconf/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 BUILD_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox

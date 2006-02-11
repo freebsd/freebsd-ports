@@ -16,7 +16,7 @@ DISTFILES=	manual-docbook-${PORTVERSION}.tar.gz \
 		manual-text-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	csound
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound

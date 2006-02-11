@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
 MASTER_SITE_SUBDIR=	mcrypt
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \

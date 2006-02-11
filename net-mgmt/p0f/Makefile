@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
 ALL_TARGET=	all p0fq tools

@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralSynth/dload/
 DISTNAME=	SpiralSynth-${PORTVERSION}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk

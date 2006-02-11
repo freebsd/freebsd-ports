@@ -40,7 +40,7 @@ DISTFILES=	suse-release-9.1-0.i586.rpm \
 		termcap-2.0.8-876.i586.rpm \
 		freetype2-2.1.7-53.i586.rpm
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic packages for Linux mode from SUSE 9.1/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

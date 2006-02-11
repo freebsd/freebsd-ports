@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xcmail
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
 INSTALLS_SHLIB=	yes

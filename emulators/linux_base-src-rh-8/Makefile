@@ -37,7 +37,7 @@ DISTFILES=		\
 	texinfo-4.2-5.src.rpm
 EXTRACT_ONLY=
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		(L)GPL sources for linux_base-8, to comply with licences
 
 RUN_DEPENDS=		${LINUXBASE}/usr/src:${PORTSDIR}/emulators/linux_base-8

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 PKGNAMEPREFIX=	linux-
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

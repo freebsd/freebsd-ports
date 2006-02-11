@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes x11-wm
 MASTER_SITES=	http://jpj.net/~trevor/${PORTNAME}/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for sapphire
 
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \

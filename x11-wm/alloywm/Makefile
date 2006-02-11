@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.phatboydesigns.net/devel/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 
 HAS_CONFIGURE=	yes

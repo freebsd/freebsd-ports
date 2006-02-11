@@ -18,7 +18,7 @@ DISTNAME=	beonex-comm-${PORTVERSION}-stable-1-linux-i686
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=trevor
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Browser, HTML editor, mail and news client for use with Linux plugins
 
 RUN_DEPENDS=	\

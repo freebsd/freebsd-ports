@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No-frills, GTK-based Ogg Vorbis player
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis

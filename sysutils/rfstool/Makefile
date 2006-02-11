@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	rfstool-0.14-source
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read from a Reiser file system
 
 PLIST_FILES=	bin/rfstool

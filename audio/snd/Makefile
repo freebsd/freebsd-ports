@@ -12,7 +12,7 @@ CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.7:${PORTSDIR}/math/gsl

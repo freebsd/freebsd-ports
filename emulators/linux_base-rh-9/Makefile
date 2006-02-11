@@ -49,7 +49,7 @@ DISTFILES=	glibc-2.3.2-27.9.7.i386.rpm:new \
 		libgcc-3.2.2-5.i386.rpm \
 		freetype-2.1.3-6.i386.rpm
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

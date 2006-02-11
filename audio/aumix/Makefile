@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://jpj.net/~trevor/aumix/old/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio mixer for X11, terminal, or command line
 
 USE_BZIP2=	yes

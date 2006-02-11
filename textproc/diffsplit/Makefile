@@ -13,7 +13,7 @@ DISTNAME=	diffsplit
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits a unified diff into pieces which patch one file each
 
 NO_BUILD=	YES

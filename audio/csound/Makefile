@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/sound/csound/newest/ \
 DISTNAME=	Csound${PORTVERSION}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
@@ -52,7 +52,7 @@ post-build:
 	${ECHO_CMD} "thoroughly reviewed by the FreeBSD maintainer." >> ${PKGMESSAGE}
 
 post-patch:
-	@${REINPLACE_CMD} -i -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
+	@${REINPLACE_CMD} -i "" -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -i -e 's:<malloc.h>:<stdlib.h>:g' {} \;
 

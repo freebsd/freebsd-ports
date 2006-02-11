@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	1.4.1
 DISTNAME=	festvox_don
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	British English male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	\

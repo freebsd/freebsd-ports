@@ -13,7 +13,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	X.V11R3uwm
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11R3 window manager
 
 MAN1=		uwm.1
