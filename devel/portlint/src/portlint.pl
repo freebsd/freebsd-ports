@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.101 2006/01/22 00:44:29 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.107 2006/02/11 23:05:34 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -176,7 +176,7 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS INSTALLS_OMF
+	PLIST_FILES OPTIONS INSTALLS_OMF USE_KDELIBS_VER
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -667,7 +667,8 @@ sub checkplist {
 				"for more details.");
 		}
 
-		if ($_ =~ /\.la$/ && $makevar{USE_AUTOTOOLS} =~ 'libtool') {
+		if ($_ =~ /\.la$/ && $makevar{USE_AUTOTOOLS} =~ 'libtool' &&
+			!defined($makevar{USE_KDELIBS_VER})) {
 			&perror("WARN: $file [$.]: installing libtool archives, ".
 				"please use USE_AUTOTOOLS in Makefile if possible.  ".
 				"See http://www.FreeBSD.org/gnome/docs/porting.html ".
@@ -1313,6 +1314,7 @@ sub checkmakefile {
 
 	%deprecated = (
 			USE_MESA		=> 'USE_GL',
+			USE_RCORDER		=> 'USE_RC_SUBR',
 	);
 
 	@deplist = (\%autotools_deprecated, \%deprecated);
@@ -1346,7 +1348,8 @@ sub checkmakefile {
 	foreach my $i (qw(
 awk basename brandelf cat chmod chown cp cpio dialog dirname egrep expr
 false file find gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch
-pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
+pax perl printf rm rmdir pkg_add pkg_delete pkg_info pkg_version
+ruby sed sh sort touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
@@ -1358,6 +1361,7 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	$cmdnames{'python'} = '${PYTHON_CMD}';
 	$cmdnames{'strip'} = '${STRIP_CMD}';
 	$cmdnames{'unzip'} = '${UNZIP_CMD}';
+	$cmdnames{'pkg_create'} = '${PKG_CMD}';
 	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtool libtoolize)) {
 		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal|libtool/ ) ? "AUTO" : "" ) . "\U$i\E\}";
 	}
@@ -1723,6 +1727,12 @@ DIST_SUBDIR EXTRACT_ONLY
 			if ($verbose);
 		if ($tmp =~ /^PORTREVISION(.)?=/m) {
 			&perror("WARN: $file: new ports should not set PORTREVISION.");
+		}
+	} elsif (!$slaveport) {
+		print "OK: checking for PORTREVISION=0.\n" if ($verbose);
+		if ($tmp =~ /^PORTREVISION=\s*0/m) {
+			&perror("WARN: $file: Setting PORTREVISION to 0 is not ".
+				"necessary.");
 		}
 	}
 	if ($newport) {
@@ -2128,6 +2138,10 @@ MAINTAINER COMMENT
 		if ($addr !~ /^[^\@]+\@[\w\d\-\.]+$/) {
 			&perror("FATAL: $file: MAINTAINER address, $addr, does not appear to be a valid email address.");
 		}
+		if ($newport && $addr =~ /ports\@freebsd.org/i) {
+			&perror("WARN: $file: new ports should not be maintained by ".
+				"ports\@FreeBSD.org.");
+		}
 		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
 	} elsif ($whole !~ /\nMAINTAINER[?]?=/) {
 		&perror("FATAL: $file: no MAINTAINER listed.") unless ($slaveport && $makevar{MAINTAINER} ne '');
@@ -2524,6 +2538,28 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET PERL_RUN_DEPENDS PERL_BUILD_DEPENDS
 		&perror("FATAL: $file: USE_ANT is intended only for ports that ".
 			"build with Ant.  You should not override ``do-build'' when ".
 			"defining USE_ANT");
+	}
+
+	#
+	# check for deprecated use of USE_RC_SUBR, and current syntax
+	#
+	if ($tmp =~ /\nUSE_RC_SUBR=([\s]*)(.*)/) {
+		my $subr_value = $2;
+
+		if (($subr_value =~ /^yes$/i) ||
+			($subr_value =~ /^true$/i) ||
+			($subr_value =~ /^1$/)) {
+			&perror("FATAL: The value of the USE_RC_SUBR variable should ".
+				"be the name of the intended rc.d script, and there should ".
+				"be a corresponding file in the files/ directory.");
+		} else {
+			foreach my $i (split(/\s/, $subr_value)) {
+				if (! -f "files/$i.in") {
+					&perror("FATAL: $i listed in USE_RC_SUBR, ".
+						"but files/$i.in is missing.");
+				}
+			}
+		}
 	}
 
 	1;
