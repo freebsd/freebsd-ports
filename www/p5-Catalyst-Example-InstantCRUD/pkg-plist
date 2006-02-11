@@ -1,0 +1,21 @@
+%%SITE_PERL%%/Catalyst/Example/Controller/templates/destroy.tt
+%%SITE_PERL%%/Catalyst/Example/Controller/templates/edit.tt
+%%SITE_PERL%%/Catalyst/Example/Controller/templates/wrapper.tt
+%%SITE_PERL%%/Catalyst/Example/Controller/templates/list.tt
+%%SITE_PERL%%/Catalyst/Example/Controller/templates/view.tt
+%%SITE_PERL%%/Catalyst/Example/Controller/InstantCRUD.pm
+%%SITE_PERL%%/Catalyst/Example/InstantCRUD.pm
+%%SITE_PERL%%/Catalyst/Helper/Model/DBICform.pm
+%%SITE_PERL%%/Catalyst/Helper/Controller/InstantCRUD.pm
+bin/instantcrud.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Example/InstantCRUD/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Example/InstantCRUD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Example
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Example/Controller/templates
+@dirrmtry %%SITE_PERL%%/Catalyst/Example/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst/Example
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst
