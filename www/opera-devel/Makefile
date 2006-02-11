@@ -43,7 +43,7 @@ WITH_SHARED=	yes
 .elif ${OSVERSION} >= 500000
 OPERA_TYPE=	3
 WITH_SHARED=	yes
-.elifdef ${WITH_SHARED}
+.elifdef WITH_SHARED
 OPERA_TYPE=	2
 .else
 OPERA_TYPE=	1
