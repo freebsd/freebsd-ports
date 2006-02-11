@@ -8,20 +8,21 @@
 PORTNAME?=	openoffice.org
 PORTVERSION?=	2.0.${SNAPDATE}
 CATEGORIES+=	editors java
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
+		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_${OOOTAG}_source${EXTRACT_SUFX}
+DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_${OOOTAG}_source${EXTRACT_SUFX}
+EXTRACT_ONLY=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
@@ -39,7 +40,6 @@ USE_GNOME+=	libidl
 USE_KDELIBS_VER=        3
 .endif
 USE_XLIB=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -63,9 +63,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		155
+MILESTONE?=		156
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060203
+SNAPDATE=		20060211
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -131,7 +131,7 @@ LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
