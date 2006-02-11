@@ -13663,6 +13663,7 @@ xmlindent	ports/textproc/xmlindent
 xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
 xmlppm		ports/textproc/xmlppm
+xmlprpr		ports/textproc/xmlprpr
 xmlpull		ports/textproc/xmlpull
 xmlroff		ports/textproc/xmlroff
 xmlrpc++	ports/net/xmlrpc++
