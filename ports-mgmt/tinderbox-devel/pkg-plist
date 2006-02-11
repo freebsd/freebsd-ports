@@ -1,76 +1,87 @@
+tinderbox/scripts/README
+tinderbox/scripts/buildscript
+tinderbox/scripts/create
+tinderbox/scripts/ds.ph.dist
+tinderbox/scripts/enterbuild
 tinderbox/scripts/etc/rc.d/tinderd.sh
-tinderbox/scripts/upgrade/mig_shlib.sh
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-1.X_to_2.0.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.0.0_to_2.1.0.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.0_to_2.1.1.sql
-tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.1_to_2.2.0.sql
-tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
+tinderbox/scripts/lib/Build.pm
+tinderbox/scripts/lib/BuildPortsQueue.pm
+tinderbox/scripts/lib/Host.pm
+tinderbox/scripts/lib/Jail.pm
+tinderbox/scripts/lib/MakeCache.pm
+tinderbox/scripts/lib/Port.pm
+tinderbox/scripts/lib/PortFailPattern.pm
+tinderbox/scripts/lib/PortFailReason.pm
+tinderbox/scripts/lib/PortsTree.pm
+tinderbox/scripts/lib/TBConfig.pm
+tinderbox/scripts/lib/TinderObject.pm
+tinderbox/scripts/lib/TinderboxDS.pm
+tinderbox/scripts/lib/User.pm
+tinderbox/scripts/lib/enterbuild
+tinderbox/scripts/lib/setup-mysql.sh
+tinderbox/scripts/lib/setup-pgsql.sh
+tinderbox/scripts/lib/setup_shlib.sh
+tinderbox/scripts/lib/tinderbox_shlib.sh
+tinderbox/scripts/lib/tinderlib.pl
+tinderbox/scripts/makemake
 tinderbox/scripts/man/man1/tc-configCcache.1
 tinderbox/scripts/man/man1/tc-configDistfile.1
 tinderbox/scripts/man/man1/tc-configGet.1
 tinderbox/scripts/man/man1/tc-configJail.1
 tinderbox/scripts/man/man1/tc-configTinderd.1
 tinderbox/scripts/man/man1/tc-init.1
-tinderbox/scripts/www/Makefile
-tinderbox/scripts/www/Jail.php
-tinderbox/scripts/www/Port.php
-tinderbox/scripts/www/PortsTree.php
-tinderbox/scripts/www/TinderObject.php
-tinderbox/scripts/www/TinderboxDS.php
-tinderbox/scripts/www/inc_ds.php
-tinderbox/scripts/www/failures.php
-tinderbox/scripts/www/index.php
-tinderbox/scripts/www/lastbuilds.php
-tinderbox/scripts/www/showbuild.php
-tinderbox/scripts/www/showport.php
-tinderbox/scripts/www/inc_tinderbox.php
-tinderbox/scripts/www/tinderstyle.css
-tinderbox/scripts/www/Build.php
-tinderbox/scripts/lib/PortFailReason.pm
-tinderbox/scripts/lib/BuildPortsQueue.pm
-tinderbox/scripts/lib/Host.pm
-tinderbox/scripts/lib/Jail.pm
-tinderbox/scripts/lib/MakeCache.pm
-tinderbox/scripts/lib/Port.pm
-tinderbox/scripts/lib/PortsTree.pm
-tinderbox/scripts/lib/TBConfig.pm
-tinderbox/scripts/lib/TinderObject.pm
-tinderbox/scripts/lib/TinderboxDS.pm
-tinderbox/scripts/lib/User.pm
-tinderbox/scripts/lib/tinderlib.pl
-tinderbox/scripts/lib/tinderbox_shlib.sh
-tinderbox/scripts/lib/setup_shlib.sh
-tinderbox/scripts/lib/setup-mysql.sh
-tinderbox/scripts/lib/setup-pgsql.sh
-tinderbox/scripts/lib/enterbuild
-tinderbox/scripts/lib/PortFailPattern.pm
-tinderbox/scripts/lib/Build.pm
-tinderbox/scripts/www-exp/core/PortFailReason.php
+tinderbox/scripts/mkbuild
+tinderbox/scripts/mkjail
+tinderbox/scripts/pnohang.c
+tinderbox/scripts/portbuild
+tinderbox/scripts/rawenv.dist
+tinderbox/scripts/setup.sh
+tinderbox/scripts/tc
+tinderbox/scripts/tinderbox-mysql.schema
+tinderbox/scripts/tinderbox-pgsql.schema
+tinderbox/scripts/tinderbox.ph.dist
+tinderbox/scripts/tinderbuild
+tinderbox/scripts/tinderd
+tinderbox/scripts/upgrade.sh
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-1.X_to_2.0.0.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.0.0_to_2.1.0.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.0_to_2.1.1.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.1_to_2.2.0.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.2.0_to_2.3.0.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.2.0_to_2.3.0.sql
+tinderbox/scripts/upgrade/mig_shlib.sh
+tinderbox/scripts/www-exp/core/Build.php
 tinderbox/scripts/www-exp/core/BuildPortsQueue.php
 tinderbox/scripts/www-exp/core/Host.php
 tinderbox/scripts/www-exp/core/Jail.php
 tinderbox/scripts/www-exp/core/Port.php
+tinderbox/scripts/www-exp/core/PortFailReason.php
 tinderbox/scripts/www-exp/core/PortsTree.php
 tinderbox/scripts/www-exp/core/TinderObject.php
 tinderbox/scripts/www-exp/core/TinderboxDS.php
 tinderbox/scripts/www-exp/core/User.php
-tinderbox/scripts/www-exp/core/Build.php
-tinderbox/scripts/www-exp/module/modulePortFailureReasons.php
+tinderbox/scripts/www-exp/core/functions.php
+tinderbox/scripts/www-exp/inc_ds.php-dist
+tinderbox/scripts/www-exp/inc_tinderbox.php-dist
+tinderbox/scripts/www-exp/index.php
+tinderbox/scripts/www-exp/module/module.php
 tinderbox/scripts/www-exp/module/moduleBuildPorts.php
 tinderbox/scripts/www-exp/module/moduleBuilds.php
 tinderbox/scripts/www-exp/module/moduleHosts.php
+tinderbox/scripts/www-exp/module/modulePortFailureReasons.php
 tinderbox/scripts/www-exp/module/modulePorts.php
 tinderbox/scripts/www-exp/module/moduleSession.php
 tinderbox/scripts/www-exp/module/moduleTinderd.php
 tinderbox/scripts/www-exp/module/moduleUsers.php
-tinderbox/scripts/www-exp/module/module.php
-tinderbox/scripts/www-exp/templates/default/list_failure_reasons.tpl
+tinderbox/scripts/www-exp/templates/default/current_buildports.tpl
 tinderbox/scripts/www-exp/templates/default/describe_port.tpl
 tinderbox/scripts/www-exp/templates/default/display_login.tpl
 tinderbox/scripts/www-exp/templates/default/failed_buildports.tpl
 tinderbox/scripts/www-exp/templates/default/latest_buildports.tpl
 tinderbox/scripts/www-exp/templates/default/list_buildports.tpl
 tinderbox/scripts/www-exp/templates/default/list_builds.tpl
+tinderbox/scripts/www-exp/templates/default/list_failure_reasons.tpl
 tinderbox/scripts/www-exp/templates/default/list_tinderd_queue.tpl
 tinderbox/scripts/www-exp/templates/default/messages.inc
 tinderbox/scripts/www-exp/templates/default/please_login.tpl
@@ -78,41 +89,33 @@ tinderbox/scripts/www-exp/templates/default/tinderstyle.css
 tinderbox/scripts/www-exp/templates/default/user_admin.tpl
 tinderbox/scripts/www-exp/templates/default/user_permissions.tpl
 tinderbox/scripts/www-exp/templates/default/user_properties.tpl
-tinderbox/scripts/www-exp/templates/default/current_buildports.tpl
-tinderbox/scripts/www-exp/inc_ds.php-dist
-tinderbox/scripts/www-exp/inc_tinderbox.php-dist
-tinderbox/scripts/www-exp/index.php
-tinderbox/scripts/tinderbox-mysql.schema
-tinderbox/scripts/tc
-tinderbox/scripts/setup.sh
-tinderbox/scripts/rawenv.dist
-tinderbox/scripts/portbuild
-tinderbox/scripts/pnohang.c
-tinderbox/scripts/mkjail
-tinderbox/scripts/mkbuild
-tinderbox/scripts/makemake
-tinderbox/scripts/enterbuild
-tinderbox/scripts/ds.ph.dist
-tinderbox/scripts/create
-tinderbox/scripts/buildscript
-tinderbox/scripts/README
-tinderbox/scripts/upgrade.sh
-tinderbox/scripts/tinderd
-tinderbox/scripts/tinderbuild
-tinderbox/scripts/tinderbox.ph.dist
-tinderbox/scripts/tinderbox-pgsql.schema
+tinderbox/scripts/www/Build.php
+tinderbox/scripts/www/Jail.php
+tinderbox/scripts/www/Makefile
+tinderbox/scripts/www/Port.php
+tinderbox/scripts/www/PortsTree.php
+tinderbox/scripts/www/TinderObject.php
+tinderbox/scripts/www/TinderboxDS.php
+tinderbox/scripts/www/failures.php
+tinderbox/scripts/www/inc_ds.php
+tinderbox/scripts/www/inc_tinderbox.php
+tinderbox/scripts/www/index.php
+tinderbox/scripts/www/lastbuilds.php
+tinderbox/scripts/www/showbuild.php
+tinderbox/scripts/www/showport.php
+tinderbox/scripts/www/tinderstyle.css
 
-@dirrm tinderbox/scripts/www-exp/templates/default
-@dirrm tinderbox/scripts/www-exp/templates
-@dirrm tinderbox/scripts/www-exp/module
-@dirrm tinderbox/scripts/www-exp/core
-@dirrm tinderbox/scripts/www
-@dirrm tinderbox/scripts/upgrade
-@dirrm tinderbox/scripts/man/man1
-@dirrm tinderbox/scripts/man
-@dirrm tinderbox/scripts/lib
 @dirrm tinderbox/scripts/etc/rc.d
 @dirrm tinderbox/scripts/etc
+@dirrm tinderbox/scripts/lib
+@dirrm tinderbox/scripts/man
+@dirrm tinderbox/scripts/man/man1
+@dirrm tinderbox/scripts/upgrade
+@dirrm tinderbox/scripts/www
+@dirrm tinderbox/scripts/www-exp/core
+@dirrm tinderbox/scripts/www-exp/module
+@dirrm tinderbox/scripts/www-exp/templates/default
+@dirrm tinderbox/scripts/www-exp/templates
 @dirrmtry tinderbox/scripts/www-exp
 @dirrmtry tinderbox/scripts
 @dirrmtry tinderbox

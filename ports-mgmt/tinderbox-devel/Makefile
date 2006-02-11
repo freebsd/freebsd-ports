@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -28,8 +27,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL)
-IGNORE=        is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
+.if defined(WITHOUT_PGSQL) && defined(WITHOUT_MYSQL)
+BROKEN=	Tinderbox is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
 USE_PHP=	session
