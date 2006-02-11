@@ -7866,6 +7866,7 @@ p5-Data-Taxonomy-Tags	ports/devel/p5-Data-Taxonomy-Tags
 p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
 p5-Data-TreeDumper	ports/devel/p5-Data-TreeDumper
 p5-Data-TreeDumper-Renderer-DHTML	ports/www/p5-Data-TreeDumper-Renderer-DHTML
+p5-Data-Types	ports/devel/p5-Data-Types
 p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-Data-Validate-Domain	ports/dns/p5-Data-Validate-Domain
 p5-Date-Calc	ports/devel/p5-Date-Calc
