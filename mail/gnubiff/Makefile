@@ -14,12 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A mail notification program for Gnome
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		fam.0:${PORTSDIR}/devel/fam
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_GNOME=	intlhack libglade2 esound
 USE_GMAKE=	yes
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

@@ -15,8 +15,7 @@ MAINTAINER=	yds@CoolRat.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	fam:${PORTSDIR}/devel/fam \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
@@ -68,6 +67,8 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 
 .if defined(WITH_RCORDER)
 USE_RCORDER=	courier.sh

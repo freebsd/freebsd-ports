@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for fam from SGI
 
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
-
 # This isn't required to utilize full functionality
 #USE_GNOME=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 
 do-install:
 .for FILE in FamppEvents.hh FamppExceptions.hh fam.hh famStatic.hh handle.hh

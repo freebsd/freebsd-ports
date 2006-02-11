@@ -16,10 +16,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FAM bindings for Ruby
 
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 
 INSTALL_TARGET=	site-install
 

@@ -15,12 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
 
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
 		help2man:${PORTSDIR}/misc/help2man
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-largp"
 CONFIGURE_ARGS+=--datadir=${PREFIX}/share/doc
