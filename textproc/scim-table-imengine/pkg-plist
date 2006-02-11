@@ -9,6 +9,7 @@ share/locale/ko/LC_MESSAGES/scim-tables.mo
 share/locale/de/LC_MESSAGES/scim-tables.mo
 share/locale/fr/LC_MESSAGES/scim-tables.mo
 share/locale/it/LC_MESSAGES/scim-tables.mo
+share/locale/pa/LC_MESSAGES/scim-tables.mo
 %%SKIM%%@cwd %%LOCALBASE%%
 %%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.la
 %%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.so
@@ -21,6 +22,7 @@ share/locale/it/LC_MESSAGES/scim-tables.mo
 %%SKIM%%share/locale/ja/LC_MESSAGES/skim-scim-tables.mo
 %%SKIM%%share/locale/it/LC_MESSAGES/skim-scim-tables.mo
 %%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-tables.mo
+%%SKIM%%share/locale/pa/LC_MESSAGES/skim-scim-tables.mo
 %%SKIM%%share/apps/skim/pics/scim-tables.png
 %%SKIM%%@dirrmtry share/apps/skim/pics
 %%SKIM%%@dirrmtry share/apps/skim

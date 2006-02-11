@@ -1,0 +1,19 @@
+--- skim/setupui/generictableui.ui~	Wed Mar 23 11:53:02 2005
++++ skim/setupui/generictableui.ui	Fri Feb 10 13:45:14 2006
+@@ -336,16 +336,4 @@
+     </connection>
+ </connections>
+ <layoutdefaults spacing="6" margin="11"/>
+-<includehints>
+-    <includehint>skimeditshortcutbutton.h</includehint>
+-    <includehint>klineedit.h</includehint>
+-    <includehint>skimeditshortcutbutton.h</includehint>
+-    <includehint>klineedit.h</includehint>
+-    <includehint>skimeditshortcutbutton.h</includehint>
+-    <includehint>klineedit.h</includehint>
+-    <includehint>skimeditshortcutbutton.h</includehint>
+-    <includehint>klineedit.h</includehint>
+-    <includehint>skimeditshortcutbutton.h</includehint>
+-    <includehint>klineedit.h</includehint>
+-</includehints>
+ </UI>
