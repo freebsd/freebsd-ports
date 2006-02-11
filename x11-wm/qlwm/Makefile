@@ -12,7 +12,7 @@ PORTVERSION=	3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.alinden.mynetcologne.de/qlwm/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based window manager
 
 DOCDIR=		share/doc/${PORTNAME}

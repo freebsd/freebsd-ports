@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://handhelds.org/~mallum/downloadables/matchbox/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager suitable for low-resolution screens
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO

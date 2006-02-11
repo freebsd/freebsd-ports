@@ -11,7 +11,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

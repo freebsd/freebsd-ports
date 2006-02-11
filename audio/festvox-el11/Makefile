@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	1.4.1
 DISTNAME=	festvox_ellpc11k
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Castilian Spanish male voice for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	1.4.1
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for Festival
 
 NO_BUILD=	yes

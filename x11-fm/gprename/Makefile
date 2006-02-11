@@ -11,7 +11,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script for renaming multiple files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk:${PORTSDIR}/x11-toolkits/p5-Gtk

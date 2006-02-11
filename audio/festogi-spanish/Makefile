@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	OGIspanish-${PORTVERSION}
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mexican Spanish support for Festival
 
 RUN_DEPENDS=	\

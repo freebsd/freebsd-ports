@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdrawchem
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemical drawing program
 
 LIB_DEPENDS=	openbabel.1:${PORTSDIR}/science/openbabel

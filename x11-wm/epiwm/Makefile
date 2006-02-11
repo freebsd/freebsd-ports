@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another fast, small, configurable window manager
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \

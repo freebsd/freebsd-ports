@@ -11,7 +11,7 @@ CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 EXTRACT_ONLY=
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"

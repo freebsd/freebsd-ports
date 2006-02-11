@@ -12,7 +12,7 @@ CATEGORIES=		astro
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Scriptable space flight simulator for X
 
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \

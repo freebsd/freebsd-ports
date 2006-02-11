@@ -44,7 +44,7 @@ DISTFILES=	\
 	zlib-1.1.3-25.7.i386.rpm \
 	XFree86-libs-4.3.0-78.EL.tj.i386.rpm:x11
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic packages for Linux mode from Red Hat 7.3/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

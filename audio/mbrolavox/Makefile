@@ -9,7 +9,7 @@ PORTNAME=	mbrolavox
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
 VOICESCONF=	${.CURDIR}/voices.conf

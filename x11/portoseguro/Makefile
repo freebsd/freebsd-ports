@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}-alpha4
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launch applications by clicking on an icon bar
 
 CONFIGURE_ENV=	GTKCONFIG=${GTK_CONFIG}

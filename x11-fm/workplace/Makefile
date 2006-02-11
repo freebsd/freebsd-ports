@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	trevor
 PATCH_SITES=	http://people.freebsd.org/~trevor/ports/
 PATCHFILES=	workplace-1.0.a3+tj1.diff.gz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager and launcher
 
 GNU_CONFIGURE=	yes

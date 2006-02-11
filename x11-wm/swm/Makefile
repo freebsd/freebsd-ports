@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	a-src.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Window manager for low-memory systems, with title bars and shading
 
 BINS=		swm swmbg swmswitch

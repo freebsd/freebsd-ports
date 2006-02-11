@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	http://www.reza.net/rmap/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

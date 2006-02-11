@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

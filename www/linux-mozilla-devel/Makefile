@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA, news, and IRC client for Linux (unstable)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

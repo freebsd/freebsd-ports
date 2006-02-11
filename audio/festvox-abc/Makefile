@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_abc_di-2.0
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mexican Spanish male voice for Festival speech synthesis system
 
 RUN_DEPENDS=	\

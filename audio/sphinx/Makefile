@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cmusphinx
 DISTNAME=	sphinx2-0.4
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
 DEST=		${WRKSRC}/src/libsphinx2/

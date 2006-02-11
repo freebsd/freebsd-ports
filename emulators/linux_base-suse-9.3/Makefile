@@ -14,7 +14,7 @@ CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
 MASTER_SITE_SUBDIR=	i386/9.3/suse/i586 i386/update/9.3/rpm/i586/:update
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic packages for Linux mode from SUSE 9.3/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

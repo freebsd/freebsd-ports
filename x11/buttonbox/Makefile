@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xlib-based application launcher
 
 DOCDIR=		share/doc/${PORTNAME}

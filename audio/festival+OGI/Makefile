@@ -19,7 +19,7 @@ DISTFILES=	festival-${PORTVERSION}.tar.gz \
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	OGIfestpatch-1.4.1.2.tar.gz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \

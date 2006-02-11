@@ -13,7 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xcmail
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail client for X which supports POP and PGP
 
 LIB_DEPENDS=	Xclasses.1:${PORTSDIR}/x11-toolkits/xclasses

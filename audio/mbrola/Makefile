@@ -13,7 +13,7 @@ DISTNAME=	mbr301h
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR?=	mbrola-freebsd
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MBROLA voice synthesizer
 
 .include <bsd.port.pre.mk>

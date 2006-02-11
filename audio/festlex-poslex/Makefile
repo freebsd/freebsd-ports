@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	festlex_POSLEX
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English lexicon for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival

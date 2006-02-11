@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	festvox_rablpc8k
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	British English male voice, sampled at 8 kHz, for Festival
 
 RUN_DEPENDS=	\

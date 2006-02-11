@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.outguess.org/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	crypt/stego
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steganographic tool
 
 DOCDIR=		share/doc/outguess

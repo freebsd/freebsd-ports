@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-debian
 DISTFILES=	basedebs.tar:base util-linux-locales_2.11n-7_all.deb:util
 EXTRACT_ONLY=	basedebs.tar
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-gentoo* \

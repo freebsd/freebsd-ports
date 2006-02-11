@@ -42,7 +42,7 @@ DISTFILES=	\
 	libgcc-3.3.4-11.i586.rpm \
 	termcap-2.0.8-878.i586.rpm
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Basic packages for Linux mode from SUSE 9.2/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

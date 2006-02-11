@@ -12,7 +12,7 @@ CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 CONFLICTS=	XFree86-3.3.6*
 NO_WRKSUBDIR=	yes

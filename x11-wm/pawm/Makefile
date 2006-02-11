@@ -10,7 +10,7 @@ PORTVERSION=	1.9.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pleyades.net/pawm/files/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Puto Amo Window Manager
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2

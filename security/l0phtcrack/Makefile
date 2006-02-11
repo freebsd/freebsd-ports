@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
 DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cracks SAMBA or Windows NT passwords
 
 DOCDIR=		share/doc/${PORTNAME}

@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm portuguese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
