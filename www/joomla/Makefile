@@ -15,7 +15,7 @@ COMMENT=	A dynamic web content management system (CMS)
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql pcre xml zlib
+USE_PHP=	mysql pcre xml zlib session gd pdf
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
