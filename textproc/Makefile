@@ -808,6 +808,7 @@
     SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
+    SUBDIR += xmldiff
     SUBDIR += xmlenc
     SUBDIR += xmlformat
     SUBDIR += xmlindent
