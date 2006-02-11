@@ -87,6 +87,9 @@ while `true`; do
   . ${pb}/${arch}/portbuild.conf
   test -f ${pb}/${arch}/portbuild.${host} && . ${pb}/${arch}/portbuild.${host}
   
+  rm -f ${pb}/${arch}/${branch}/logs/${pkgname}.log ${pb}/${arch}/${branch}/logs/${pkgname}.log.bz2
+  rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log ${pb}/${arch}/${branch}/errors/${pkgname}.log.bz2
+
   echo "dispatching: ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
   ${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}
   error=$?
@@ -110,18 +113,18 @@ while `true`; do
     lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
     log=${pb}/${arch}/${branch}/logs/$pkgname.log
     if grep -q "even though it is marked BROKEN" ${log}; then
-      echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+      echo | mail -s "${pkgname} BROKEN but built on ${arch} ${branch}" ${mailto}
     fi
     if grep -q "^list of .*file" ${log}; then
       buildlogdir=$(realpath ${pb}/${arch}/${branch}/logs/)
       baselogdir=$(basename ${buildlogdir})
-      (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+      (sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" ${mailto}
     fi
   else
     log=${pb}/${arch}/${branch}/errors/${pkgname}.log
-    scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ssh -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" kris@FreeBSD.org krion@FreeBSD.org
+    scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ssh -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
     if ! grep -q "even though it is marked BROKEN" ${log}; then
-      tail -1000 ${log} | mail -s "${pkgname} failed on ${arch} ${branch}" kris@FreeBSD.org krion@FreeBSD.org
+      tail -1000 ${log} | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
     fi
     lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
   fi
