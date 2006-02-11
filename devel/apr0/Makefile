@@ -55,6 +55,8 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
 .else
 PKGNAMESUFFIX=	-nothr
 .endif
+.else
+CONFIGURE_ARGS+=	--enable-threads
 .endif
 
 .if defined(APR_UTIL_WITHOUT_GDBM)
