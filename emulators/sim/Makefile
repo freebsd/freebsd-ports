@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}hv35-2
 MAINTAINER=	mmendez@gmail.com
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
+BROKEN=		Incorrect pkg-plist (does not compile completely?)
+
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
 USE_GMAKE=	yes
