@@ -25,6 +25,8 @@ COMMENT=	Text-to-speech system with OGI residual LPC synthesizer
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
+BROKEN=		Touches filesystem prior to make install
+
 CONFLICTS=	festival-*
 DIST_SUBDIR=	festival
 
