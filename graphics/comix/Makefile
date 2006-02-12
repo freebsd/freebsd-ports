@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,30 +19,49 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 
 NO_BUILD=	yes
 USE_GNOME=	desktopfileutils pygtk2
+WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 DOCS=		COPYING ChangeLog README
-MAN1=		comix.1
+MAN1=		comix.1 comicthumb.1
+
+.include <bsd.port.pre.mk>
+
+.if (${HAVE_GNOME:Mnautilus2}!="" || defined(WITH_THUMBNAILS)) && !defined(WITHOUT_THUMBNAILS)
+USE_GNOME+=	gconf2
+#MAN1+=		comicthumb.1
+GCONF_SCHEMAS=	comicbook.schemas
+PLIST_SUB+=	THUMBNAILS:=""
+THUMBNAILS_ENABLED=yes
+.else
+PLIST_SUB+=	THUMBNAILS:="@comment "
+.endif
 
 post-extract:
-	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
+	@${FIND} ${WRKSRC} -name \*.gz | ${XARGS} ${GUNZIP_CMD}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|g ; s|1.gz|1|g' \
-		${WRKSRC}/install.py
+	@${REINPLACE_CMD} -e "s|share/man|man|g ; s|1.gz|1|g ; \
+		s|/usr/share/mime|${PREFIX}/share/mime|g ; \
+		s|'/usr'|'${PREFIX}'|g" \
+			${WRKSRC}/install.py
 
 do-install:
+.if defined(THUMBNAILS_ENABLED)
+	@${MKDIR} ${PREFIX}/share/mime/packages
 	@(cd ${WRKSRC} ; \
 		${PYTHON_CMD} install.py install --installdir ${PREFIX})
-	@${MKDIR} ${PREFIX}/share/mime/packages/
-	@${INSTALL_DATA} ${WRKSRC}/mime/${PORTNAME}.xml \
-		${PREFIX}/share/mime/packages/
+	@${INSTALL_DATA} ${WRKSRC}/mime/comicbook.schemas \
+		${PREFIX}/etc/gconf/schemas/
+.else
+	@(cd ${WRKSRC} ; \
+		${PYTHON_CMD} install.py install --installdir ${PREFIX} --no-mime)
+.endif
 
 post-install:
 	@-update-desktop-database
-	@-update-mime-database ${PREFIX}/share/mime
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
@@ -50,4 +69,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
