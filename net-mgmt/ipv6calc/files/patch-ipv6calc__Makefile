@@ -1,0 +1,11 @@
+--- ipv6calc/Makefile.orig	Mon Feb 13 07:07:30 2006
++++ ipv6calc/Makefile	Mon Feb 13 07:07:34 2006
+@@ -35,7 +35,7 @@
+ $(OBJS):	ipv6calc.h showinfo.h
+ 
+ libipv6calc.a:	
+-		cd ../ && make lib-make
++		cd ../ && ${MAKE} lib-make
+ 
+ ipv6calc:	$(OBJS) libipv6calc.a ../lib/ipv6calcoptions.h
+ 		$(CC) -o ipv6calc $(OBJS) $(GETOBJS) -lipv6calc -L../lib/ $(LDFLAGS)
