@@ -57,7 +57,7 @@ make_account() {
 		echo "You need a user \"${u}\"."
 		if which -s pw && yesno "Would you like me to create it" y
 		then
-			pw useradd ${u} -g ${g} -h - -s /sbin/nologin -c "${gcos}" || exit
+			pw useradd ${u} -g ${g} -c "${gcos}" -d /nonexistent -s /sbin/nologin -h - || exit
 			echo "Done."
 		else
 			echo "Please create it, and try again."
