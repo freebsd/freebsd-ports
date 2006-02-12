@@ -52,6 +52,12 @@ PLIST_SUB+=	EMACS_LOGO_MODE=""
 PLIST_SUB+=	EMACS_LOGO_MODE="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 pre-everything::
 .if !defined(EMACS_LOGO_MODE)
 	@${ECHO_MSG} ""
@@ -89,4 +95,4 @@ do-install:
 .ifdef defined(EMACS_LOGO_MODE)
 	cd ${WRKSRC}/emacs; ${SETENV} ${MAKE_ENV} ${GMAKE} install-emacs
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
