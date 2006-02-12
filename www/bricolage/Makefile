@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.8
+PORTVERSION=	1.10.0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -20,22 +20,29 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/${PERL_ARCH}/Cache/Mmap.pm:${PORTSDIR}/devel/p5-Cache-Mmap \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
+		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
 		${SITE_PERL}/Term/ReadPassword.pm:${PORTSDIR}/devel/p5-Term-ReadPassword \
+		${SITE_PERL}/${PERL_ARCH}/Text/LevenshteinXS.pm:${PORTSDIR}/devel/p5-Text-LevenshteinXS \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/Test/Class.pm:${PORTSDIR}/devel/p5-Test-Class \
+		${SITE_PERL}/Test/File/Contents.pm:${PORTSDIR}/devel/p5-Test-File-Contents \
 		${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
+		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
 		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/Text/Diff/HTML.pm:${PORTSDIR}/textproc/p5-Text-Diff-HTML \
+		${SITE_PERL}/Text/WordDiff.pm:${PORTSDIR}/textproc/p5-Text-WordDiff \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
@@ -50,13 +57,14 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 APXS?=		${LOCALBASE}/sbin/apxs
 
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
+MAKE_ENV+=	USE_DEFAULTS=freebsd
 
 # Used to determine which versions have perl scripts
 # that need to run for an upgrade. These should be listed
 # in the same order as found within inst/versions.txt
 #
 # Skip 1.8.5
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
@@ -134,6 +142,7 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::App::Event.3 Bric::App::Handler.3 Bric::App::MediaFunc.3 \
 		Bric::App::PreviewHandler.3 Bric::App::Session.3 Bric::App::Util.3 \
 		Bric::AssetEditing.3 Bric::Biz::ATType.3 Bric::Biz::Asset.3 \
+		Bric::Biz::Asset::Template.3 \
 		Bric::Biz::Asset::Business.3 Bric::Biz::Asset::Business::Media.3 \
 		Bric::Biz::Asset::Business::Media::Audio.3 \
 		Bric::Biz::Asset::Business::Media::Image.3 \
@@ -143,9 +152,11 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Biz::Asset::Business::Parts::Tile::Data.3 \
 		Bric::Biz::Asset::Business::Story.3 Bric::Biz::Asset::Formatting.3 \
 		Bric::Biz::AssetType.3 Bric::Biz::AssetType::Parts::Data.3 \
-		Bric::Biz::Category.3 Bric::Biz::Contact.3 Bric::Biz::Keyword.3 \
-		Bric::Biz::Org.3 Bric::Biz::Org::Parts::Addr.3 Bric::Biz::Org::Person.3 \
-		Bric::Biz::Org::Source.3 Bric::Biz::OutputChannel.3 \
+		Bric::Biz::Category.3 Bric::Biz::Contact.3 Bric::Biz::Element.3 \
+		Bric::Biz::Element::Container.3 Bric::Biz::Element::Field.3 \
+		Bric::Biz::ElementType.3 Bric::Biz::ElementType::Parts::FieldType.3 \
+		Bric::Biz::Keyword.3 Bric::Biz::Org.3 Bric::Biz::Org::Parts::Addr.3 \
+		Bric::Biz::Org::Person.3 Bric::Biz::Org::Source.3 Bric::Biz::OutputChannel.3 \
 		Bric::Biz::OutputChannel::Element.3 Bric::Biz::Person.3 \
 		Bric::Biz::Person::User.3 Bric::Biz::Site.3 Bric::Biz::Workflow.3 \
 		Bric::Biz::Workflow::Parts::Desk.3 Bric::Changes.3 Bric::Config.3 \
@@ -156,22 +167,21 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Dist::Resource.3 Bric::Dist::Server.3 Bric::Dist::ServerType.3 \
 		Bric::ElementAdmin.3 Bric::FAQ.3 Bric::HTMLTemplate.3 Bric::Hacker.3 \
 		Bric::License.3 Bric::SOAP.3 Bric::SOAP::Asset.3 Bric::SOAP::Auth.3 \
-		Bric::SOAP::Category.3 Bric::SOAP::Desk.3 Bric::SOAP::Element.3 \
-		Bric::SOAP::Handler.3 Bric::SOAP::Keyword.3 Bric::SOAP::Media.3 \
-		Bric::SOAP::MediaType.3 Bric::SOAP::Site.3 Bric::SOAP::Story.3 \
-		Bric::SOAP::Template.3 Bric::SOAP::User.3 Bric::SOAP::Util.3 \
-		Bric::SOAP::Workflow.3 Bric::Security.3 Bric::Templates.3 Bric::ToDo.3 \
+		Bric::SOAP::ATType.3 Bric::SOAP::Category.3 Bric::SOAP::Desk.3 \
+		Bric::SOAP::ElementType.3 Bric::SOAP::Handler.3 Bric::SOAP::Keyword.3 \
+		Bric::SOAP::Media.3 Bric::SOAP::MediaType.3 Bric::SOAP::OutputChannel.3 \
+		Bric::SOAP::Site.3 Bric::SOAP::Story.3 Bric::SOAP::Template.3 \
+		Bric::SOAP::User.3 Bric::SOAP::Util.3 Bric::SOAP::Workflow.3 \
+		Bric::Security.3 Bric::Templates.3 Bric::ToDo.3 \
 		Bric::Util::Alert.3 Bric::Util::AlertType.3 \
 		Bric::Util::AlertType::Parts::Rule.3 Bric::Util::Alerted.3 \
-		Bric::Util::Alerted::Parts::Sent.3 Bric::Util::Async.3 \
+		Bric::Util::Alerted::Parts::Sent.3 \
 		Bric::Util::Attribute.3 Bric::Util::Attribute::Action.3 \
-		Bric::Util::Attribute::AssetType.3 Bric::Util::Attribute::AssetTypeData.3 \
-		Bric::Util::Attribute::Category.3 Bric::Util::Attribute::Formatting.3 \
-		Bric::Util::Attribute::Grp.3 Bric::Util::Attribute::Media.3 \
-		Bric::Util::Attribute::MediaDataTile.3 Bric::Util::Attribute::Member.3 \
-		Bric::Util::Attribute::Person.3 Bric::Util::Attribute::Story.3 \
-		Bric::Util::Attribute::StoryDataTile.3 Bric::Util::Attribute::Workspace.3 \
-		Bric::Util::Burner.3 Bric::Util::Burner::Mason.3 \
+		Bric::Util::Attribute::Category.3 Bric::Util::Attribute::ElementType.3 \
+		Bric::Util::Attribute::FieldType.3 Bric::Util::Attribute::Grp.3 \
+		Bric::Util::Attribute::Member.3 Bric::Util::AuthInternal.3 \
+		Bric::Util::AuthLDAP.3 Bric::Util::Burner.3 Bric::Util::Burner::Mason.3 \
+		Bric::Util::Burner::PHP.3 \
 		Bric::Util::Burner::Template.3 Bric::Util::Burner::TemplateToolkit.3 \
 		Bric::Util::CharTrans.3 Bric::Util::Class.3 Bric::Util::Coll.3 \
 		Bric::Util::Coll::Action.3 Bric::Util::Coll::Addr.3 \
@@ -190,15 +200,16 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::Fault::Exception::DP.3 Bric::Util::Fault::Exception::GEN.3 \
 		Bric::Util::Fault::Exception::MNI.3 Bric::Util::Grp.3 \
 		Bric::Util::Grp::AlertType.3 Bric::Util::Grp::Asset.3 \
-		Bric::Util::Grp::AssetLanguage.3 Bric::Util::Grp::AssetType.3 \
-		Bric::Util::Grp::AssetVersion.3 Bric::Util::Grp::CategorySet.3 \
+		Bric::Util::Grp::AssetLanguage.3 Bric::Util::Grp::AssetVersion.3 \
+		Bric::Util::Grp::ATType.3 Bric::Util::Grp::CategorySet.3 \
 		Bric::Util::Grp::ContribType.3 Bric::Util::Grp::Desk.3 \
-		Bric::Util::Grp::Dest.3 Bric::Util::Grp::Element.3 \
+		Bric::Util::Grp::Dest.3 \
 		Bric::Util::Grp::ElementType.3 Bric::Util::Grp::Event.3 \
-		Bric::Util::Grp::Formatting.3 Bric::Util::Grp::Grp.3 \
+		Bric::Util::Grp::Grp.3 \
 		Bric::Util::Grp::Job.3 Bric::Util::Grp::Keyword.3 \
 		Bric::Util::Grp::Media.3 Bric::Util::Grp::MediaType.3 \
 		Bric::Util::Grp::Org.3 Bric::Util::Grp::OutputChannel.3 \
+		Bric::Util::Grp::SubelementType.3 Bric::Util::Grp::Template.3 \
 		Bric::Util::Grp::Parts::Member.3 \
 		Bric::Util::Grp::Parts::Member::Contrib.3 Bric::Util::Grp::Person.3 \
 		Bric::Util::Grp::Pref.3 Bric::Util::Grp::Site.3 Bric::Util::Grp::Source.3 \
@@ -217,7 +228,7 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::Time.3 Bric::Util::Trans::FS.3 Bric::Util::Trans::FTP.3 \
 		Bric::Util::Trans::Jabber.3 Bric::Util::Trans::Mail.3 \
 		Bric::Util::Trans::SFTP.3 Bric::Util::Trans::WebDAV.3 \
-		Bric::Util::UserPref.3 Bric::Util::WebDav.3
+		Bric::Util::UserPref.3
 
 SQLDIR=		${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 UPGRADEDIR=		${PREFIX}/bricolage/upgrade
