@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lipstik
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 PKGNAMEPREFIX=	kde-style-
