@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.5.2
-PORTREVISION=	0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Graph the life story of a file under CVS or RCS
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
@@ -27,18 +26,18 @@ EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 MORE_EXAMPLES=	README.Automatic_documentation checkoutlist commit_action.sh \
 		commitinfo cvswrappers tag_action.sh taginfo
 PLIST=		${WRKDIR}/pkg-plist
+SUB_FILES=      pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
 		--with-gd-lib=${LOCALBASE}/lib
+REINPLACE_ARGS=	-i ""
 
 pre-patch:
-	${MV} ${WRKSRC}/cvsgraph.conf ${WRKSRC}/cvsgraph.conf.orig
-	${SED} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
-		< ${WRKSRC}/cvsgraph.conf.orig > ${WRKSRC}/cvsgraph.conf
+	@${REINPLACE_CMD} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" ${WRKSRC}/cvsgraph.conf
 
 pre-install:
 	${ECHO_CMD} bin/cvsgraph > ${PLIST}
-	${ECHO_CMD} etc/cvsgraph.conf >> ${PLIST}
+	${ECHO_CMD} etc/cvsgraph.conf.sample >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
 	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
@@ -56,7 +55,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${PREFIX}/etc/cvsgraph.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/cvsgraph.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cvsgraph.conf.5 ${PREFIX}/man/man5
 .if !defined(NOPORTDOCS)
@@ -73,5 +72,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/automatic_documentation/${i} ${PREFIX}/share/examples/${PORTNAME}/automatic_documentation
 .endfor
 .endif
+
+post-install:
+	@${ECHO_CMD} " "
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
