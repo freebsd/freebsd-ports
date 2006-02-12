@@ -8,6 +8,12 @@ etc/dpsearch/acronym/ru.acr
 etc/dpsearch/cached.conf-dist
 etc/dpsearch/indexer.conf-dist
 etc/dpsearch/langmap.conf-dist
+etc/dpsearch/langmap/ab.cp1251.lm
+etc/dpsearch/langmap/ab.koi8-r.lm
+etc/dpsearch/langmap/ab.utf-8.lm
+etc/dpsearch/langmap/ady.cp1251.lm
+etc/dpsearch/langmap/ady.koi8-r.lm
+etc/dpsearch/langmap/ady.utf-8.lm
 etc/dpsearch/langmap/af.latin1.bible.lm
 etc/dpsearch/langmap/af.latin1.lm
 etc/dpsearch/langmap/af.utf-8.lm
@@ -18,6 +24,9 @@ etc/dpsearch/langmap/ar.cp1256.lm
 etc/dpsearch/langmap/ar.cp1256.quran.lm
 etc/dpsearch/langmap/ast.utf-8.lm
 etc/dpsearch/langmap/az.utf8.lm
+etc/dpsearch/langmap/ba.cp1251.lm
+etc/dpsearch/langmap/ba.koi8-r.lm
+etc/dpsearch/langmap/ba.utf-8.lm
 etc/dpsearch/langmap/be.cp1251.lm
 etc/dpsearch/langmap/bg.cp1251.bible.lm
 etc/dpsearch/langmap/bg.cp1251.lm
@@ -43,6 +52,7 @@ etc/dpsearch/langmap/csb.utf-8.lm
 etc/dpsearch/langmap/cv.utf-8.lm
 etc/dpsearch/langmap/cy.latin1.lm
 etc/dpsearch/langmap/cy.utf-8.lm
+etc/dpsearch/langmap/da.cp1252.lm
 etc/dpsearch/langmap/da.latin1.bible.lm
 etc/dpsearch/langmap/da.latin1.lm
 etc/dpsearch/langmap/de.latin1.bible.lm
@@ -111,6 +121,7 @@ etc/dpsearch/langmap/ja.sjis.lm
 etc/dpsearch/langmap/ja.utf-8.lit.lm
 etc/dpsearch/langmap/ja.utf-8.lm
 etc/dpsearch/langmap/jv.utf-8.lm
+etc/dpsearch/langmap/ka.geostd8.lm
 etc/dpsearch/langmap/ka.utf-8.lm
 etc/dpsearch/langmap/kk.utf-8.lm
 etc/dpsearch/langmap/ko.EUC-KR.lm
@@ -382,6 +393,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-howstore.ru.html
 %%DOCSDIR%%/dpsearch-html.en.html
 %%DOCSDIR%%/dpsearch-html.ru.html
+%%DOCSDIR%%/dpsearch-htmlparser-bodypatterns.en.html
+%%DOCSDIR%%/dpsearch-htmlparser-bodypatterns.ru.html
 %%DOCSDIR%%/dpsearch-htmlparser-comments.en.html
 %%DOCSDIR%%/dpsearch-htmlparser-comments.ru.html
 %%DOCSDIR%%/dpsearch-htmlparser-links.en.html
