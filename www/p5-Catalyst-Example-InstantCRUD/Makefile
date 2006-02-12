@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-DISTVERSION=	v0.0.5
+DISTVERSION=	v0.0.7
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/Z/ZB/ZBY
@@ -25,6 +25,8 @@ BUILD_DEPENDS=	\
 	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
 	p5-Catalyst-View-TT>=0.21:${PORTSDIR}/www/p5-Catalyst-View-TT \
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
+	p5-Catalyst-Plugin-DefaultEnd>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-DefaultEnd \
+	p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 	p5-Catalyst-Model-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC \
 	p5-DBIx-Class-Loader>=0:${PORTSDIR}/databases/p5-DBIx-Class-Loader \
 	p5-DBIx-Class-WebForm>=0.02:${PORTSDIR}/databases/p5-DBIx-Class-WebForm
