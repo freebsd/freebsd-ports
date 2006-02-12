@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A curses-based interface to the GNU Debugger
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
