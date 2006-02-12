@@ -1,0 +1,10 @@
+MINC (Medical Imaging NetCDF) is a medical imaging data format and an 
+associated set of tools and libraries. MINC was created in 1993 by Peter 
+Neelin at the McConnell Brain Imaging Centre of the Montreal Neurological 
+Institute. Many others have contributed to the design and implementation 
+MINC over the years.
+
+WWW: http://www.bic.mni.mcgill.ca/software/minc/
+
+Port maintainer: Jason W. Bacon
+		 bacon@smithers.neuro.mcw.edu

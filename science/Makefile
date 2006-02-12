@@ -43,6 +43,7 @@
     SUBDIR += mayavi
     SUBDIR += mbdyn
     SUBDIR += mcstas
+    SUBDIR += minc
     SUBDIR += mmtk
     SUBDIR += mpb
     SUBDIR += mpqc
