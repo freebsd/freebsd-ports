@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 PKGNAMEPREFIX=	kde-style-
