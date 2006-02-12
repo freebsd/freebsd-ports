@@ -105,17 +105,18 @@ tinderbox/scripts/www/showbuild.php
 tinderbox/scripts/www/showport.php
 tinderbox/scripts/www/tinderstyle.css
 
-@dirrm tinderbox/scripts/etc/rc.d
-@dirrm tinderbox/scripts/etc
-@dirrm tinderbox/scripts/lib
-@dirrm tinderbox/scripts/man
-@dirrm tinderbox/scripts/man/man1
-@dirrm tinderbox/scripts/upgrade
-@dirrm tinderbox/scripts/www
-@dirrm tinderbox/scripts/www-exp/core
-@dirrm tinderbox/scripts/www-exp/module
 @dirrm tinderbox/scripts/www-exp/templates/default
 @dirrm tinderbox/scripts/www-exp/templates
+@dirrm tinderbox/scripts/www-exp/module
+@dirrm tinderbox/scripts/www-exp/core
+@dirrm tinderbox/scripts/www
+@dirrm tinderbox/scripts/upgrade
+@dirrm tinderbox/scripts/man/man1
+@dirrm tinderbox/scripts/man
+@dirrm tinderbox/scripts/lib
+@dirrm tinderbox/scripts/etc/rc.d
+@dirrm tinderbox/scripts/etc
+
 @dirrmtry tinderbox/scripts/www-exp
 @dirrmtry tinderbox/scripts
 @dirrmtry tinderbox
