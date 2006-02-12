@@ -8,9 +8,7 @@
 PORTNAME=	mew
 PORTVERSION=	${MEW_VER}
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/release/ \
-		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/release/ \
-		${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -22,7 +20,7 @@ USE_PERL5_BUILD=yes
 MEW_MAJOR_VER?=	2
 
 # distfile version
-MEW_VER=	${MEW_MAJOR_VER}.2
+MEW_VER=	${MEW_MAJOR_VER}.3
 
 # document install directory by install-doc target
 MEW_DOCDIR?=	share/doc/${PORTNAME}${MEW_MAJOR_VER}
