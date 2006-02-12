@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.65
-PORTREVISION=	1
+PORTVERSION=	0.66
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
@@ -15,7 +14,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
