@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
+BROKEN=		Coredump during build
+
 ONLY_FOR_ARCHS=	i386 alpha powerpc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
