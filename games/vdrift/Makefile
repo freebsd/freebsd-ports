@@ -18,6 +18,8 @@ COMMENT=	Open source driving simulation
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
+BROKEN=		Touches filesystem before 'make install'
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
