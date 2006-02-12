@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	lib/xmms/Effect/libquix3dn.so
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
