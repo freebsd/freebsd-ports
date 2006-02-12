@@ -1,0 +1,15 @@
+Catalyst::Enzyme is a layer on top of the Catalyst framework providing
+CRUD functionality for Class::DBI models.
+
+Enzyme uses convention and configuration to provide e.g. extensible
+CRUD out-of-the-box, and a common way of dealing with error handling
+etc.
+
+It's not completely unlike Maypole in this regard. However, at this
+point Enzyme isn't as feature-rich as Maypole.
+
+Enzyme is one way of bringing many Catalyst modules and concepts
+together into a unified whole. There are other ways to do this
+(obviously. This is, like... uh, Perl).
+
+WWW: http://search.cpan.org/dist/Catalyst-Enzyme/

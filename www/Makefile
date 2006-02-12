@@ -501,6 +501,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst
     SUBDIR += p5-Catalyst-Engine-Apache
+    SUBDIR += p5-Catalyst-Enzyme
     SUBDIR += p5-Catalyst-Example-InstantCRUD
     SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
     SUBDIR += p5-Catalyst-Log-Log4perl
