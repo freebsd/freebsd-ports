@@ -18,6 +18,8 @@ COMMENT=	Programming language designed for especially complex processing texts
 
 LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils
 
+BROKEN=		Segfault during build
+
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
