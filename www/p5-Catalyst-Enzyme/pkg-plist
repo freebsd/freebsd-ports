@@ -1,0 +1,39 @@
+%%SITE_PERL%%/Catalyst/Enzyme.pm
+%%SITE_PERL%%/Catalyst/Enzyme/CRUD/Controller.pm
+%%SITE_PERL%%/Catalyst/Enzyme/CRUD/Model.pm
+%%SITE_PERL%%/Catalyst/Enzyme/CRUD/View.pm
+%%SITE_PERL%%/Catalyst/Enzyme/Controller.pm
+%%SITE_PERL%%/Catalyst/Helper/Controller/Enzyme/CRUD.pm
+%%SITE_PERL%%/Catalyst/Helper/Model/Enzyme/CDBI.pm
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT.pm
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/add.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/delete.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/edit.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/footer.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/form_macros.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/header.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/list.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/list_macros.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/pager.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/pager_macros.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/view.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base/view_macros.tt
+%%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static/css/enzyme.css
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Enzyme/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Enzyme
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static/css
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/static
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root/base
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT/root
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme/TT
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Enzyme
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model/Enzyme
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller/Enzyme
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/Enzyme/CRUD
+@dirrmtry %%SITE_PERL%%/Catalyst/Enzyme
+@dirrmtry %%SITE_PERL%%/Catalyst
