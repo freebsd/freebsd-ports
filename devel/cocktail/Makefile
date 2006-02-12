@@ -25,6 +25,10 @@ MAN2=		mtc.2
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
 
+.if ${OSVERSION} >= 700000
+BROKEN=		Segfault during build on FreeBSD >= 7.0
+.endif
+
 post-extract:
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.h
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.c
