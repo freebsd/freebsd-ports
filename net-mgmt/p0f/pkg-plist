@@ -1,0 +1,18 @@
+bin/p0f
+bin/p0frep
+bin/p0fq
+bin/sendack
+bin/sendack2
+bin/sendsyn
+etc/p0f/p0f.fp
+etc/p0f/p0fa.fp
+etc/p0f/p0fr.fp
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/KNOWN_BUGS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/win-memleak.txt
+@dirrm etc/p0f
+@dirrm %%DOCSDIR%%

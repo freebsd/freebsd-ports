@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	p0f
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Passive OS fingerprinting tool
 
 ALL_TARGET=	all p0fq tools
 DOCFILES=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
 MAN1=		p0f.1
-PLIST=		${WRKDIR}/pkg-plist
+#PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/p0f
 
 post-patch:
@@ -43,22 +42,6 @@ do-install:
 .for ii in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
 .endfor
-.endif
-
-pre-install:
-	@>${PLIST}
-.for ii in p0f p0frep p0fq sendack sendack2 sendsyn
-	${ECHO_CMD} bin/${ii} >> ${PLIST}
-.endfor
-.for ii in . a. r.
-	${ECHO_CMD} etc/p0f/p0f${ii}fp	>> ${PLIST}
-.endfor
-	${ECHO_CMD} "@dirrm etc/p0f" >> ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOCFILES}
-	${ECHO_CMD} share/doc/p0f/$i >> ${PLIST}
-.endfor
-	${ECHO_CMD} "@dirrm share/doc/p0f" >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>
