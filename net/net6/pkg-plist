@@ -1,7 +1,7 @@
 include/net6/address.hpp
 include/net6/client.hpp
-include/net6/connection.hpp
 include/net6/common.hpp
+include/net6/connection.hpp
 include/net6/default_accumulator.hpp
 include/net6/error.hpp
 include/net6/gettext_package.hpp
