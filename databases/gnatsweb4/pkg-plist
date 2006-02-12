@@ -17,3 +17,4 @@ etc/gnatsweb/gnatsweb-site.pl.default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/gnatsweb-site-example.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%CGI_DIR%%
