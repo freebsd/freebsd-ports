@@ -41,6 +41,14 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700000
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if ${OSVERSION} < 503000
 .if !exists(/usr/include/stdint.h)
 BROKEN=         "requires stdint.h"
