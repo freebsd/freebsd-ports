@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.alpha5
+DISTVERSION=	1.0.beta3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -15,36 +15,40 @@ MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	dovecot.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-shadow --with-pam \
-		--localstatedir=/var --with-ssl=openssl
+CONFIGURE_ARGS=	--without-shadow --localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	USE-WIKI-INSTEAD \
 		auth-protocol.txt auth.txt configuration.txt design.txt \
 		index.txt mail-storages.txt multiaccess.txt nfs.txt \
 		securecoding.txt variables.txt
+.else
+CONFIGURE_ARGS+=	--without-docs
+.endif
 
-OPTIONS=	SASL2		"SASL2 support"		off \
+OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
+		SASL2		"SASL2 support"		off \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off \
-		RCORDER		"RC Order support"	off
+		SQLITE		"SQLite support"	off
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} < 500038 ) || !defined(WITH_RCORDER)
-USE_RC_SUBR=	dovecot.sh
-.else
-USE_RCORDER=	dovecot.sh
+## kqueue(2) support
+#
+.if !defined(WITHOUT_KQUEUE)
+CONFIGURE_ARGS+=	--with-ioloop=kqueue --with-notify=kqueue
 .endif
 
 ## SASL2 support
@@ -93,10 +97,11 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-pre-configure:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/^\(SUBDIRS = src\) doc/\1/' \
-		${WRKSRC}/Makefile.in
+## SQLite Support
+#
+.if defined(WITH_SQLITE)
+USE_SQLITE=		3
+CONFIGURE_ARGS+=	--with-sqlite
 .endif
 
 post-build:
@@ -107,6 +112,8 @@ pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${DATADIR}
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \

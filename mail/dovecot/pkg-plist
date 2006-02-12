@@ -1,29 +1,43 @@
 @comment $FreeBSD$
 etc/dovecot-example.conf
-lib/dovecot/imap/libimap_quota_plugin.a
-lib/dovecot/imap/libimap_quota_plugin.la
-lib/dovecot/imap/libimap_quota_plugin.so
-lib/dovecot/imap/libquota_plugin.so
-lib/dovecot/imap/libtrash_plugin.so
+lib/dovecot/imap/lib01_convert_plugin.so
+lib/dovecot/imap/lib01_quota_plugin.so
+lib/dovecot/imap/lib01_zlib_plugin.a
+lib/dovecot/imap/lib01_zlib_plugin.la
+lib/dovecot/imap/lib01_zlib_plugin.so
+lib/dovecot/imap/lib02_imap_quota_plugin.a
+lib/dovecot/imap/lib02_imap_quota_plugin.la
+lib/dovecot/imap/lib02_imap_quota_plugin.so
+lib/dovecot/imap/lib02_trash_plugin.so
 @dirrm lib/dovecot/imap
-lib/dovecot/lda/libquota_plugin.so
-lib/dovecot/lda/libtrash_plugin.so
+lib/dovecot/pop3/lib01_convert_plugin.so
+@dirrm lib/dovecot/pop3
+lib/dovecot/lda/lib01_convert_plugin.so
+lib/dovecot/lda/lib01_quota_plugin.so
+lib/dovecot/lda/lib02_trash_plugin.so
 @dirrm lib/dovecot/lda
-lib/dovecot/libquota_plugin.a
-lib/dovecot/libquota_plugin.la
-lib/dovecot/libquota_plugin.so
-lib/dovecot/libtrash_plugin.a
-lib/dovecot/libtrash_plugin.la
-lib/dovecot/libtrash_plugin.so
+lib/dovecot/lib01_convert_plugin.a
+lib/dovecot/lib01_convert_plugin.la
+lib/dovecot/lib01_convert_plugin.so
+lib/dovecot/lib01_quota_plugin.a
+lib/dovecot/lib01_quota_plugin.la
+lib/dovecot/lib01_quota_plugin.so
+lib/dovecot/lib02_trash_plugin.a
+lib/dovecot/lib02_trash_plugin.la
+lib/dovecot/lib02_trash_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
-libexec/dovecot/deliver
+libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
+libexec/dovecot/gdbhelper
 libexec/dovecot/imap
 libexec/dovecot/imap-login
 libexec/dovecot/pop3
 libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
+libexec/dovecot/ssl-build-param
 @dirrm libexec/dovecot
 sbin/dovecot
 sbin/dovecotpw
+share/dovecot/mkcert.sh
+@dirrm share/dovecot
