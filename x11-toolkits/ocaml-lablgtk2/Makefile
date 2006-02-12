@@ -20,6 +20,8 @@ COMMENT=	An Objective Caml interface to GTK+ 2.x
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
