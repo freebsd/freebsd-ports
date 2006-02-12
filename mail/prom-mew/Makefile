@@ -18,6 +18,7 @@ COMMENT=	Procmail reader for Mew on GNU Emacs
 # NO RUN_DEPENDS mail/mew*.
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
+BROKEN=		Incomplete pkg-plist
 DEPRECATED=	mastersite disappeared, no longer maintained by author
 EXPIRATION_DATE=	2006-04-07
 
