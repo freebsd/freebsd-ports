@@ -25,7 +25,9 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN="The graphical boot requires rcorder which is only on FreeBSD 5 or greater."
+BROKEN=		The graphical boot requires rcorder which is only on FreeBSD 5 or greater.
+.else
+BROKEN=		Does not install
 .endif
 
 post-install:
