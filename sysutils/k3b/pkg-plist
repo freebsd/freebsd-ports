@@ -57,6 +57,7 @@ include/k3biso9660backend.h
 include/k3biso9660imagewritingjob.h
 include/k3bisooptions.h
 include/k3bjob.h
+include/k3bjobhandler.h
 include/k3blistview.h
 include/k3blistviewitemanimator.h
 include/k3bmd5job.h
