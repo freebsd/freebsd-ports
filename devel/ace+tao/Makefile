@@ -55,6 +55,10 @@ NOT_FOR_ARCHS+=	alpha
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not build on sparc64"
 .endif
