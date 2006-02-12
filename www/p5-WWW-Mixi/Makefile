@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mixi
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -28,10 +28,8 @@ MAN3=		WWW::Mixi.3 WWW::Mixi::Cookbook.3 WWW::Mixi::Mixi.3
 IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
 .elif ${PERL_LEVEL} > 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-RUN_DEPENDS+=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 .endif
 
 .include <bsd.port.post.mk>
