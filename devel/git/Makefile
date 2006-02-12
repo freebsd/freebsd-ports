@@ -17,6 +17,7 @@ COMMENT=	Distributed source code management tool
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_PERL5=	yes
 USE_PYTHON=	yes
