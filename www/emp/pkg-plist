@@ -1,4 +1,5 @@
 www/cgi-bin/emp.cgi
+@dirrmtry www/cgi-bin
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%EXAMPLESDIR%%/links.sample
 %%EXAMPLESDIR%%/emp.cfg
