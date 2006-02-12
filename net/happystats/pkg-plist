@@ -14,3 +14,4 @@ www/cgi-bin/happystats.cgi
 %%EXAMPLESDIR%%/happystats.postfix.xml
 %%EXAMPLESDIR%%/happystats.sendmail.xml
 @dirrm %%EXAMPLESDIR%%
+@dirrmtry www/cgi-bin

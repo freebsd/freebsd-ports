@@ -122,3 +122,4 @@
 @dirrm %%CVSMON%%/static/images
 @dirrm %%CVSMON%%/static
 @dirrmtry %%CVSMON%%
+@dirrmtry www/cgi-bin
