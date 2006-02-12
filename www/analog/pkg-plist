@@ -394,3 +394,4 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%IMGDIR%%
+@dirrmtry www/data
