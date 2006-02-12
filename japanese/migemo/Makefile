@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
 
+BROKEN=		Coredump during build
+
 .if !defined(EMACS_PORT_NAME)
 USE_AUTOTOOLS=	automake:14 autoconf:213
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am ${FILESDIR}/extra-patch-configure.in
