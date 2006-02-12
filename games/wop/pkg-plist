@@ -1,5 +1,7 @@
 bin/wop
-etc/woprc
+@unexec if cmp -s %D/etc/woprc %D/etc/woprc.sample; then rm -f %D/etc/woprc; fi
+etc/woprc.sample
+@exec if [ ! -f  %D/etc/woprc ]; then cp -p %D/etc/woprc.sample %D/etc/woprc; fi
 %%DATADIR%%/images/avatar/worm/remote_control/eyes_rc_left.pnm
 %%DATADIR%%/images/avatar/worm/remote_control/eyes_rc_right.pnm
 %%DATADIR%%/images/avatar/worm/remote_control/gun_rc_left.pnm
