@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A WikiWikiWeb clone using PHP
 
+BROKEN=		Does not build with read-only ports tree
+
 USE_PHP=	mbstring
 PHP4_PORT?=	www/mod_php4
 WANT_PHP_WEB=	yes
