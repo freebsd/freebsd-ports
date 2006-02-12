@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-pinyin
-PORTVERSION=	0.5.0
-PORTREVISION=	5
+PORTVERSION=	0.5.91
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -37,6 +36,27 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport"
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+.endif
+
+PLIST_SUB=	SKIM="@comment "
+
+pre-fetch:
+.if exists(${LOCALBASE}/bin/skim)
+	@${ECHO_MSG} "===>  Skim is detected, support enabled."
+.else
+	@${ECHO_MSG} "Define WITH_SKIM to enable skim support."
+.endif
+
+.if exists(${LOCALBASE}/bin/skim)
+WITH_SKIM=	yes
+.endif
+
+.if !defined(WITH_SKIM)
+CONFIGURE_ARGS+=--disable-skim-support
+.else
+BUILD_DEPENDS+=	skim:${PORTSDIR}/textproc/skim
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+PLIST_SUB=	SKIM="" PREFIX="${PREFIX}"
 .endif
 
 post-install:

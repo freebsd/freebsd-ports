@@ -3,6 +3,7 @@ lib/scim-1.0/SetupUI/pinyin-imengine-setup.so
 share/locale/de/LC_MESSAGES/scim-pinyin.mo
 share/locale/fr/LC_MESSAGES/scim-pinyin.mo
 share/locale/ko/LC_MESSAGES/scim-pinyin.mo
+share/locale/it/LC_MESSAGES/scim-pinyin.mo
 share/locale/ja/LC_MESSAGES/scim-pinyin.mo
 share/locale/zh_CN/LC_MESSAGES/scim-pinyin.mo
 share/locale/zh_TW/LC_MESSAGES/scim-pinyin.mo
@@ -12,6 +13,20 @@ share/scim/pinyin/pinyin_phrase_lib
 share/scim/pinyin/pinyin_table
 share/scim/pinyin/special_table
 share/scim/icons/smart-pinyin.png
+%%SKIM%%@cwd %%LOCALBASE%%
+%%SKIM%%lib/kde3/kcm_skimplugin_scim_smartpinyin.la
+%%SKIM%%lib/kde3/kcm_skimplugin_scim_smartpinyin.so
+%%SKIM%%share/services/skimconfiguredialog/skimplugin_scim_smartpinyin_config.desktop
+%%SKIM%%share/config.kcfg/smartpinyin.kcfg
+%%SKIM%%share/locale/zh_CN/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/zh_TW/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/de/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/fr/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/ja/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/it/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-pinyin.mo
+%%SKIM%%share/apps/skim/pics/smart-pinyin.png
+%%SKIM%%@cwd %%PREFIX%%
 @dirrmtry lib/scim-1.0/IMEngine
 @dirrmtry lib/scim-1.0/SetupUI
 @dirrm share/scim/pinyin
