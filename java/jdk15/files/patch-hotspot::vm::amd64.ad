@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../hotspot/src/cpu/amd64/vm/amd64.ad.orig	Wed Feb  8 15:18:24 2006
++++ ../../hotspot/src/cpu/amd64/vm/amd64.ad	Wed Feb  8 15:17:35 2006
+@@ -7246,7 +7246,7 @@
+ 
+   format %{ "negl    $dst\t# int" %}
+   opcode(0xF7, 0x03);  // Opcode F7 /3
+-  ins_encode(REX_reg(dst), OpcP, RM_opc_mem(secondary, dst));
++  ins_encode(REX_mem(dst), OpcP, RM_opc_mem(secondary, dst));
+   ins_pipe(ialu_reg);
+ %}
+ 
