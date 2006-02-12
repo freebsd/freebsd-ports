@@ -19,6 +19,8 @@ COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
