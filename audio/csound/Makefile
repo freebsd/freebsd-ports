@@ -19,6 +19,8 @@ COMMENT=	Sound synthesizer
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		Unfetchable
+
 RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
 NO_CDROM=	${RESTRICTED}
 NO_FTP=		${RESTRICTED}
