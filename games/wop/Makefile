@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wop
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://wormsofprey.org/download/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
@@ -15,12 +15,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Free real-time Worms game
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/imake-6
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
+USE_GCC=	3.4+
 
 MAKE_ENV=	"CXX=${CXX}"
 
@@ -29,7 +29,7 @@ DATAVERSION=	2005-12-21
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on < 5.x"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-global.hpp
 .endif
 
 post-patch:
@@ -39,11 +39,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|= g++|?= g++|g' ${WRKSRC}/sdlwidgets/Makefile ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/woprc|${PREFIX}/etc/woprc|' ${WRKSRC}/src/wopsettings.cpp
 	@${REINPLACE_CMD} -e 's|\./data|${DATADIR}|' ${WRKSRC}/woprc
+	@${REINPLACE_CMD} -e '/stdint.h/ d' ${WRKSRC}/src/attachableobject.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/wop ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/woprc ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/woprc ${PREFIX}/etc/woprc.sample
+	if [ ! -f ${PREFIX}/etc/woprc ]; then \
+		${INSTALL_DATA} ${WRKSRC}/woprc ${PREFIX}/etc; \
+	fi
 
+	@echo "Installing data files..."
 	@cd ${WRKDIR}/${PORTNAME}data-${DATAVERSION}; \
 		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; ; \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
