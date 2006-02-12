@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	dannyboy
 MAINTAINER=	dannyboy@FreeBSD.org
 COMMENT=	Locks a terminal while showing fortunes
 
+BROKEN=		Checksum mismatch
+
 USE_BZIP2=	yes
 
 MAN1=		fortunelock.1
