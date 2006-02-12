@@ -1,0 +1,18 @@
+--- ../../j2se/make/java/zip/FILES_c.gmk.orig	Wed Sep 10 19:43:01 2003
++++ ../../j2se/make/java/zip/FILES_c.gmk	Sat Feb 11 00:55:54 2006
+@@ -8,15 +8,4 @@
+ 	$(CTARGDIR)Inflater.c \
+ 	$(CTARGDIR)ZipFile.c \
+ 	$(CTARGDIR)ZipEntry.c \
+-	$(CTARGDIR)zadler32.c \
+-	$(CTARGDIR)zcrc32.c \
+-	$(CTARGDIR)deflate.c \
+-	$(CTARGDIR)trees.c \
+-	$(CTARGDIR)zutil.c \
+-	$(CTARGDIR)inflate.c \
+-	$(CTARGDIR)infblock.c \
+-	$(CTARGDIR)inftrees.c \
+-	$(CTARGDIR)infcodes.c \
+-	$(CTARGDIR)infutil.c \
+-	$(CTARGDIR)inffast.c \
+ 	$(CTARGDIR)zip_util.c
