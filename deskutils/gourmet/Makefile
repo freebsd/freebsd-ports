@@ -17,6 +17,8 @@ COMMENT=	GNOME recipe manager
 RUN_DEPENDS=	${LOCALBASE}/lib/libmk4py.so:${PORTSDIR}/databases/metakit \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

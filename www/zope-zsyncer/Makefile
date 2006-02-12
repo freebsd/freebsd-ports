@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@vex.net
 COMMENT=	Allows multiple Zopes to be synchronized via xmlrpc
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
