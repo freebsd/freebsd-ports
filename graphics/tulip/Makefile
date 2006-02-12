@@ -18,6 +18,8 @@ COMMENT=	A system dedicated to the visualization of huge graphs
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
+BROKEN=		Incorrect pkg-plist (does not compile completely?)
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
