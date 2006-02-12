@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${P
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 .endif
 
+BROKEN=		Does not compile
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
