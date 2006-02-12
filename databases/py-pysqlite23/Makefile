@@ -33,9 +33,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/setup.cfg
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e "s|pysqlite2-doc|${DOCSBASE}|" \
-		-e "s|.*build_docs\(\)\$$||" ${WRKSRC}/setup.py
+		-e "s/.*(cmdclass|extras_require) =.*//" \
+			${WRKSRC}/setup.py
 .else
-	@${REINPLACE_CMD} -E -e "s|.*build_docs\(\)\$$||" \
+	@${REINPLACE_CMD} -E -e "s/.*(cmdclass|extras_require) =.*//" \
 		-e "s|data_files = \[.*|data_files = []|" \
 		-e "s|.*glob.glob\(.*\).*||" \
 		-e "s|.*pysqlite2-doc/code.*||" \
