@@ -52,10 +52,6 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Plugins_Input_wma_iir.h
-.endif
-
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
