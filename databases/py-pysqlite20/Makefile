@@ -7,6 +7,7 @@
 
 PORTNAME=	pysqlite
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${PORTVERSION:C/\.[0-9]$//}/${PORTVERSION}/ \
 		${MASTER_SITE_GENTOO}
@@ -30,12 +31,17 @@ DOCSDIR=	${PREFIX}/${DOCSBASE}
 
 PORTDOCS=	*
 
-pre-configure:
+post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/setup.cfg
 .if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|pysqlite2-doc|${DOCSBASE}|" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -E -e "s|pysqlite2-doc|${DOCSBASE}|" \
+		-e "s|.*build_docs\(\)\$$||" ${WRKSRC}/setup.py
 .else
-	@${REINPLACE_CMD} -e "s|data_files = data_files,||" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -E -e "s|.*build_docs\(\)\$$||" \
+		-e "s|data_files = \[.*|data_files = []|" \
+		-e "s|.*glob.glob\(.*\).*||" \
+		-e "s|.*pysqlite2-doc/code.*||" \
+			${WRKSRC}/setup.py
 .endif
 
 post-install:
