@@ -16,6 +16,8 @@ COMMENT=	Bug-tracking system developed in PHP
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
+BROKEN=		Incorrect pkg-plist
+
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ctype pcre posix session tokenizer xml zlib
 .endif
