@@ -11,6 +11,17 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.3.20060211.0037
+#
+
+WebUI:
+- mass-retraining option
+
+dspam.conf:
+- HashRec sizes prime numbers for better spread
+
+
+###########################################################################
 # dspam-devel-3.6.3.20060208.1807
 #
 
