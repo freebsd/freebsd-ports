@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	operator
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -22,5 +22,8 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=	5
 BROKEN_WITH_PHP=	4
 PHP_MODNAME=	${PORTNAME}
+
+post-extract::
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
