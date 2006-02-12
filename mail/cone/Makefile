@@ -30,7 +30,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-C --without-db --prefix=${PREFIX} --exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	-C --without-db --with-certdb --prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash" LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include
