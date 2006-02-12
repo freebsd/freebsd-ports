@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 lthack
 USE_AUTOTOOLS=	libtool:13:inc
