@@ -11,4 +11,4 @@ for any device that allows the standard open, read, write, and close
 system calls.  Special support is necessary for some devices, such as
 serial lines, for setting up the speed, parity, data bits, etc.
 
-WWW: http://www.scsifaq.org/RMiller_Tools/index.html
+WWW: http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/dt.html
