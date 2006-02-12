@@ -16,6 +16,8 @@ COMMENT=	Calendar program for MHC
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 
 do-build:
