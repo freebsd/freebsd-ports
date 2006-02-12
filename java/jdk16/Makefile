@@ -332,5 +332,3 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
-
-EXTRACT_AFTER_ARGS+=	-x '*/zlib-*/*'
