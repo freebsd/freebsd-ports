@@ -20,6 +20,8 @@ LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
 		gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+BROKEN=		Configure fails
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
