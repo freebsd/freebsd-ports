@@ -6272,6 +6272,7 @@ mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mimir		ports/devel/mimir
+minc		ports/science/minc
 minder		ports/net-p2p/minder
 mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
