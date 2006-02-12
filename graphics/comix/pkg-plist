@@ -1,18 +1,23 @@
+%%THUMBNAILS:%%bin/comicthumb
 bin/comix
 share/applications/comix.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/48x48/apps/comix.png
 share/locale/de/LC_MESSAGES/comix.mo
 share/locale/es/LC_MESSAGES/comix.mo
 share/locale/pt_BR/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
-share/mime/application/x-cbr.xml
-share/mime/application/x-cbt.xml
-share/mime/application/x-cbz.xml
-share/mime/packages/comix.xml
+%%THUMBNAILS:%%share/mime/application/x-cbr.xml
+%%THUMBNAILS:%%share/mime/application/x-cbt.xml
+%%THUMBNAILS:%%share/mime/application/x-cbz.xml
+%%THUMBNAILS:%%share/mime/packages/comix.xml
 share/pixmaps/comix.png
+share/pixmaps/comix/cbr.png
+share/pixmaps/comix/cbt.png
+share/pixmaps/comix/cbz.png
 share/pixmaps/comix/stock-flip-horizontal-16.png
 share/pixmaps/comix/stock-flip-vertical-16.png
 share/pixmaps/comix/stock-rotate-180-16.png
@@ -21,7 +26,7 @@ share/pixmaps/comix/stock-rotate-90-16.png
 @dirrm share/pixmaps/comix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+%%THUMBNAILS:%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+%%THUMBNAILS:%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
