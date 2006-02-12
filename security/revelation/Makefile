@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix gnomehack desktopfileutils
 USE_PYTHON=	yes
 GCONF_SCHEMAS=	revelation.schemas revelation-applet.schemas
-USE_REINPLACE=	yes
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
