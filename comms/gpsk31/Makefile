@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.qsl.net/pg4i/download/
 MAINTAINER=	xride@x12.dk
 COMMENT=	A gtk psk31 client
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

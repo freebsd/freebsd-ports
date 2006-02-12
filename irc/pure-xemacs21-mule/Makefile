@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../pure-emacs20
 
+BROKEN=		Incomplete pkg-plist
+
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 LISPDIR=		${EMACS_LIBDIR}/site-packages/lisp/${PORTNAME}
