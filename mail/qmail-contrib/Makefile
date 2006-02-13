@@ -19,15 +19,13 @@ COMMENT=	Contributed programs for qmail
 
 USE_QMAIL_RUN=	yes
 
-NO_PACKAGE=	Unsure of djb\'s license
+NO_PACKAGE=	Unsure of djb's license
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 
-MAN1=		dot-forward.1 fastforward.1 printforward.1 setforward.1
-MAN1+=		newaliases.1 printmaillist.1 setmaillist.1 newinclude.1
-
-PLIST_SUB=	DOCDIR=${DOCDIR}
+MAN1=		dot-forward.1 fastforward.1 printforward.1 setforward.1 \
+		newaliases.1 printmaillist.1 setmaillist.1 newinclude.1
 
 PREFIX?=	${QMAIL_PREFIX}
 
@@ -40,37 +38,38 @@ WRKDF=		${WRKDIR}/dot-forward-${DF_VER}
 
 NO_MTREE=	yes
 
-USE_REINPLACE=	yes
+PORTDOCS=	ALIASES
 
 .include <bsd.port.pre.mk>
 
-.if (${PREFIX} == ${LOCALBASE})
-DOCDIR=		share/doc/qmail
-.else
-DOCDIR=		doc
+.if (${PREFIX} != ${LOCALBASE})
+DOCSDIR=	doc
 .endif
 
 pre-patch:
-	@cd ${WRKFF} \
-	&& ${PATCH} -s <${PATCHDIR}/extra-patch-newaliases
+	@${PATCH} -d ${WRKFF} -s <${PATCHDIR}/extra-patch-newaliases
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKFF}/conf-qmail
-	@${REINPLACE_CMD} -e '/cat/d' ${WRKFF}/hier.c
-	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKDF}/conf-cc
-	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_DIR}|" ${WRKDF}/conf-qmail
-	@${REINPLACE_CMD} -e '/cat/d' ${WRKDF}/hier.c
+	@${REINPLACE_CMD} -e "s|.var.qmail|${QMAIL_PREFIX}|" \
+		${WRKFF}/conf-qmail \
+		${WRKDF}/conf-qmail
+	@${REINPLACE_CMD} -e '/cat/d; s|doc/fastforward|${DOCSDIR}|g' \
+		${WRKFF}/hier.c \
+		${WRKDF}/hier.c
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" \
+		${WRKFF}/conf-cc \
+		${WRKDF}/conf-cc
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E 's|^(.*${DOCSDIR})|// \1|g' \
+		${WRKFF}/hier.c
+.endif
 
 do-build:
-	@cd ${WRKDIR}/dot-forward-${DF_VER} \
-	&& make ${ALL_TARGET}
-	@cd ${WRKDIR}/fastforward-${FF_VER} \
-	&& make ${ALL_TARGET}
+	@${MAKE} -C ${WRKDIR}/dot-forward-${DF_VER} ${ALL_TARGET}
+	@${MAKE} -C ${WRKDIR}/fastforward-${FF_VER} ${ALL_TARGET}
 
 do-install:
-	@cd ${WRKDIR}/dot-forward-${DF_VER} \
-	&& make ${INSTALL_TARGET}
-	@cd ${WRKDIR}/fastforward-${FF_VER} \
-	&& make ${INSTALL_TARGET}
+	@${MAKE} -C ${WRKDIR}/dot-forward-${DF_VER} ${INSTALL_TARGET}
+	@${MAKE} -C ${WRKDIR}/fastforward-${FF_VER} ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>
