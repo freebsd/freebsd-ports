@@ -1,6 +1,6 @@
 --- Makefile.orig	Thu Feb  2 00:08:41 2006
-+++ Makefile	Tue Feb 14 01:26:49 2006
-@@ -3,7 +3,7 @@
++++ Makefile	Tue Feb 14 01:53:31 2006
+@@ -3,26 +3,26 @@
  
  # Replace x86 by amd64 for a build on x86_64.
  # Use "nojit" for architectures that are not x86 or x86_64.
@@ -9,7 +9,12 @@
  
  # Change this to 0 if your system doesn't support RFC 2553 extensions
  HAS_RFC2553=1
-@@ -15,14 +15,14 @@
+ 
+ # Change this to 1 if your system has libpcap-0.9.4 or better 
+ # (WinPcap is used for Cygwin)
+-HAS_PCAP=1
++HAS_PCAP?=1
+ 
  # Current dynamips release
  VERSION=0.2.3c
  
