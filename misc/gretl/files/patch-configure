@@ -1,0 +1,30 @@
+--- configure.orig	Tue Dec 13 22:30:07 2005
++++ configure	Wed Feb  8 13:36:33 2006
+@@ -24725,27 +24725,6 @@
+   have_gnuplot=yes
+ fi
+ 
+-gnuplot_png=no
+-if test "$build_gui" = "yes" ; then
+-  echo "$as_me:$LINENO: checking for PNG support in gnuplot" >&5
+-echo $ECHO_N "checking for PNG support in gnuplot... $ECHO_C" >&6
+-  echo "set term png" | `which gnuplot` 2>/dev/null && gnuplot_png=yes
+-  if test "$gnuplot_png" = yes ; then
+-    echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-    cat >>confdefs.h <<\_ACEOF
+-#define GNUPLOT_PNG 1
+-_ACEOF
+-
+-  else
+-    echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-    echo
+-    echo "* gretl needs PNG support in gnuplot."
+-    echo "* The current version of gnuplot is available from www.gnuplot.info"
+-    exit
+-  fi
+-fi
+ 
+ 
+ 

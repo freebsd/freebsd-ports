@@ -20,15 +20,13 @@ LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
 		gmp.6:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-BROKEN=		Configure fails
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
