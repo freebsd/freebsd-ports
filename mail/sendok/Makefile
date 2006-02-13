@@ -14,12 +14,11 @@ MASTER_SITES=	http://peff.net/sendok/ \
 MAINTAINER=	zakj@nox.cx
 COMMENT=	Generates qmail email addresses with timed cookies
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+USE_QMAIL_RUN=	yes
 
 PLIST_FILES=	bin/sendok-check bin/sendok-create
 
 ALL_TARGET=	it
-QMAIL_DIR?=	/var/qmail
 
 post-patch:
 	@${ECHO_CMD} ${CC} ${CFLAGS} >${WRKSRC}/conf-cc
