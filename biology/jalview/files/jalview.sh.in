@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# Shell script to launch jalview using our javavm wrapper
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -Djava.ext.dirs="%%DATADIR%%" -cp "%%DATADIR%%/jalview.jar" jalview.bin.Jalview

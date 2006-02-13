@@ -1,0 +1,25 @@
+Jalview is a multiple alignment editor written in Java. It is used widely in a
+variety of web pages (e.g. the EBI Clustalw server and the Pfam protein domain
+database) and is also available as a general purpose alignment editor. 
+
+o Reads and writes alignments in a variety of formats 
+o Gaps can be inserted/deleted using the mouse.
+o Group editing (insertion deletion of gaps in groups of sequences).
+o Removal of gapped columns.
+o Align sequences using Web Services (Clustal, Muscle...)
+o Amino acid conservation analysis similar to that of AMAS.
+o Alignment sorting options (by name, tree order, percent identity, group).
+o UPGMA and NJ trees calculated and drawn based on percent identity distances.
+o Sequence clustering using principal component analysis.
+o Removal of redundant sequences.
+o Smith Waterman pairwise alignment of selected sequences.
+o Web based secondary structure prediction programs (JNet).
+o User predefined or custom colour schemes to colour alignments or groups.
+o Sequence feature retrieval and display on the alignment.
+o Print your alignment with colours and annotations.
+o Output alignments as HTML pages, images (PNG) or postscript (EPS).
+
+If you use Jalview in your work, please quote this publication. Clamp, M., et
+al. (2004), The Jalview Java Alignment Editor. Bioinformatics, 12, 426-7 
+
+WWW: http://www.jalview.org
