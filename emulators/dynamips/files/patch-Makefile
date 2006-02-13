@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan 30 19:09:47 2006
-+++ Makefile	Tue Feb 14 01:13:29 2006
+--- Makefile.orig	Thu Feb  2 00:08:41 2006
++++ Makefile	Tue Feb 14 01:26:49 2006
 @@ -3,7 +3,7 @@
  
  # Replace x86 by amd64 for a build on x86_64.
@@ -9,9 +9,9 @@
  
  # Change this to 0 if your system doesn't support RFC 2553 extensions
  HAS_RFC2553=1
-@@ -11,21 +11,21 @@
+@@ -15,14 +15,14 @@
  # Current dynamips release
- VERSION=0.2.3b
+ VERSION=0.2.3c
  
 -CC=gcc
 +CC?=gcc
@@ -27,16 +27,19 @@
  	-DARCH_INC_FILE=$(ARCH_INC_FILE) \
  	-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE \
  	-DHAS_RFC2553=$(HAS_RFC2553)
+@@ -30,8 +30,9 @@
+ PCAP_LIB=-lpcap
  
  ifeq ($(shell uname), FreeBSD)
 -   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf
 -   LIBS=-L/usr/local/lib -L. -lelf -pthread
-+   CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf $(PTHREAD_CFLAGS)
-+   LIBS=-L$(LOCALBASE)/lib -lelf $(PTHREAD_LIBS)
++   PTHREAD_LIBS?=-pthread
++   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf $(PTHREAD_CFLAGS)
++   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
  else
- ifeq ($(shell uname -o), Cygwin)
-    CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf
-@@ -61,17 +61,17 @@
+ ifeq ($(shell uname -s), Darwin)
+    CFLAGS+=-I/usr/local/include
+@@ -73,17 +74,17 @@
  #SOURCES += profiler.c
  #CFLAGS += -p -DPROFILE -DPROFILE_FILE=\"$(PROG).profile\"
  
@@ -57,7 +60,7 @@
  HDR += nojit_trans.h
  SOURCES += nojit_trans.c
  endif
-@@ -101,7 +101,7 @@
+@@ -123,7 +124,7 @@
  
  .PHONY: microcode
  microcode: 

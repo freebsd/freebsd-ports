@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.3b
-PORTREVISION=	1
+PORTVERSION=	0.2.3c
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
@@ -43,6 +42,15 @@ DYNAMIPS_ARCH=	"x86"
 DYNAMIPS_ARCH=	"amd64"
 .else
 DYNAMIPS_ARCH=	"nojit"
+.endif
+
+.if ${OSVERSION} < 500000
+#
+# Requires libpcap 0.9+
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/^HAS_PCAP=1/HAS_PCAP=0/' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>
