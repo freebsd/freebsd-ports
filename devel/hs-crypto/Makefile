@@ -24,7 +24,6 @@ BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
@@ -33,9 +32,7 @@ PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 504000
-BROKEN=		"Incorrect pkg-plist"
-.endif
+IGNORE=		is incompatible with current GHC, needs updating
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
