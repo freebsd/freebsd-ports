@@ -352,8 +352,8 @@ bin/icewmtray
 %%NLS%%share/locale/ko/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/icewm.mo
-%%NLS%%share/locale/no/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/icewm.mo
@@ -365,6 +365,7 @@ bin/icewmtray
 %%NLS%%share/locale/uk/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm %%DATADIR%%/themes/yellowmotif
 @dirrm %%DATADIR%%/themes/win95
