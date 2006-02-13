@@ -108,6 +108,7 @@
     SUBDIR += hyperlatex
     SUBDIR += ifhp
     SUBDIR += it-acroread
+    SUBDIR += jabref
     SUBDIR += jadetex
     SUBDIR += kaspaliste
     SUBDIR += kcdlabel
