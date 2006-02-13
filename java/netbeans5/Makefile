@@ -15,9 +15,10 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_BZIP2=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
-RESTRICTED=	"Restrictive license"
+RESTRICTED=	Restrictive license
 
 WRKSRC=		${WRKDIR}/netbeans
 
@@ -26,13 +27,13 @@ DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=1&lan
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/netbeans
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
-		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-		@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
+	@${MKDIR} ${PREFIX}/netbeans
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
+	@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
 
 .include <bsd.port.post.mk>
