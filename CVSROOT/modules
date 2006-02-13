@@ -4636,6 +4636,7 @@ jakarta-tomcat41	ports/www/jakarta-tomcat41
 jakarta-tomcat5	ports/www/jakarta-tomcat5
 jakelib2	ports/devel/jakelib2
 jalbum		ports/graphics/jalbum
+jalview		ports/biology/jalview
 jam		ports/devel/jam
 jama		ports/math/jama
 jamboree	ports/audio/jamboree
