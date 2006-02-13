@@ -235,6 +235,7 @@
     SUBDIR += gnomesudoku
     SUBDIR += gnubg
     SUBDIR += gnuchess
+    SUBDIR += gnudoku
     SUBDIR += gnugo
     SUBDIR += gnurobots
     SUBDIR += gnushogi

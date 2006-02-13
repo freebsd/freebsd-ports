@@ -1,0 +1,10 @@
+A free program for creating and solving Su Doku puzzles.
+
+You can use GNUDoku to challenge yourself, to compute solutions,
+or to verify your own solutions.
+
+A Su Doku puzzle is a 9x9 grid which must be filled with numbers
+between 1 and 9 such that each row, column, and 3x3 square contains
+all 9 numbers.
+
+WWW: http://icculus.org/~jcspray/GNUDoku/
