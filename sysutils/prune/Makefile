@@ -17,5 +17,7 @@ COMMENT=	Prune a file set according to a given age distribution
 MAN1=		prune.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/prune
+DEPRECATED=	Renamed into fileprine
+EXPIRATION_DATE=2006-03-14
 
 .include <bsd.port.mk>
