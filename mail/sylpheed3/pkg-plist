@@ -33,8 +33,9 @@ share/locale/sr/LC_MESSAGES/sylpheed.mo
 share/locale/sv/LC_MESSAGES/sylpheed.mo
 share/locale/tr/LC_MESSAGES/sylpheed.mo
 share/locale/uk/LC_MESSAGES/sylpheed.mo
+share/locale/vi/LC_MESSAGES/sylpheed.mo
 share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
+share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-2.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-3.html
@@ -89,6 +90,8 @@ share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed.mo
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-19.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-20.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-21.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-22.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-5.html
