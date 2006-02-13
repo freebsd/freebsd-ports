@@ -7,6 +7,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
@@ -14,22 +15,27 @@ MASTER_SITES=	http://download.berlios.de/ngircd/ \
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
+USE_RC_SUBR=	ngircd
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN5=		ngircd.conf.5
 MAN8=		ngircd.8
 
-.if exists(/usr/include/tcpd.h)
-WITH_TCP_WRAPPERS=	yes
-CONFIGURE_ARGS+=	--with-tcp-wrappers
-.endif
+OPTIONS=	TCP_WRAPPERS	"Enable TCP wrappers support"	on \
+		SYSLOG		"Enable SYSLOG support"		on \
+		ZLIB		"Enable ZLIB compression"	on \
+		IRCPLUS		"Enable IRC+ protocol"		on \
+		IDENT		"Enable IDENT (AUTH) protocol support"	off \
+		SNIFFER		"Enable IRC traffic sniffer"	off \
+		DEBUG		"Show additional debug output"	off
 
-.if defined(WITH_IDENT)
-LIB_DEPENDS+=		ident.0:${PORTSDIR}/security/libident
-CONFIGURE_ARGS+=	--with-ident
+.include <bsd.port.pre.mk>
+
+.if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCP_WRAPPERS)
+CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 .if defined(WITHOUT_SYSLOG)
@@ -40,31 +46,27 @@ CONFIGURE_ARGS+=	--without-syslog
 CONFIGURE_ARGS+=	--without-zlib
 .endif
 
-pre-configure:
-	@${ECHO_MSG} ""
-.if defined(WITH_TCP_WRAPPERS)
-	@${ECHO_MSG} "Enable TCP wrappers support"
-	@${ECHO_MSG} ""
+.if defined(WITHOUT_IRCPLUS)
+CONFIGURE_ARGS+=	--disable-ircplus
 .endif
+
 .if defined(WITH_IDENT)
-	@${ECHO_MSG} "Enable ident support"
-	@${ECHO_MSG} ""
+LIB_DEPENDS+=		ident.0:${PORTSDIR}/security/libident
+CONFIGURE_ARGS+=	--with-ident
 .endif
-.if defined(WITHOUT_SYSLOG)
-	@${ECHO_MSG} "Disable syslog support"
-	@${ECHO_MSG} ""
+
+.if defined(WITH_SNIFFER)
+CONFIGURE_ARGS+=	--enable-sniffer
 .endif
-.if defined(WITHOUT_ZLIB)
-	@${ECHO_MSG} "Disable zlib suppot"
-	@${ECHO_MSG} ""
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

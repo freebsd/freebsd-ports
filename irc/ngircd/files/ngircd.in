@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ngircd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run ngircd:
+#
+# ngircd_enable (bool):		Set it to "YES" to enable ngircd.
+#				Default is "NO".
+# ngircd_conf (file):		Set local of config file.
+#				Default is "%%PREFIX%%/etc/ngircd.conf".
+# ngircd_flags (flags):		Set extra flags here. More options in ngircd(1)
+#				Default is empty "".
+#
+
+. %%RC_SUBR%%
+
+name="ngircd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${ngircd_enable="NO"}
+: ${ngircd_conf="%%PREFIX%%/etc/ngircd.conf"}
+: ${ngircd_flags=""}
+
+required_files="${ngircd_conf}"
+command=%%PREFIX%%/sbin/ngircd
+command_args="-f ${ngircd_conf} ${ngircd_flags}"
+
+run_rc_command "$1"
