@@ -1,6 +1,6 @@
 --- samples/Makefile.in.orig	Fri Oct 28 12:49:37 2005
-+++ samples/Makefile.in	Tue Nov  1 21:48:15 2005
-@@ -17,10 +17,10 @@
++++ samples/Makefile.in	Mon Feb 13 23:53:09 2006
+@@ -17,10 +17,12 @@
  
  install-startup-rc-d:
  	$(INSTALL) -d $(sysconfdir)/rc.d
@@ -9,7 +9,9 @@
 -	$(INSTALL) rc.d-spmd $(sysconfdir)/rc.d/spmd
 -	$(INSTALL) rc.d-racoon2 $(sysconfdir)/rc.d/racoon2
 +	$(INSTALL) rc.d-iked $(sysconfdir)/rc.d/iked.sh
++.if defined (WITH_KINK)
 +	$(INSTALL) rc.d-kinkd $(sysconfdir)/rc.d/kinkd.sh
++.endif
 +	$(INSTALL) rc.d-spmd $(sysconfdir)/rc.d/spmd.sh
 +	$(INSTALL) rc.d-racoon2 $(sysconfdir)/rc.d/racoon2.sh
  

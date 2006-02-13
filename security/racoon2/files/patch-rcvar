@@ -1,0 +1,33 @@
+--- samples/rc.d-iked.in.orig	Tue Feb  7 02:19:19 2006
++++ samples/rc.d-iked.in	Tue Feb  7 02:19:19 2006
+@@ -14,7 +14,7 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="iked"
+-rcvar=$name
++rcvar=`set_rcvar`
+ command="@sbindir@/${name}"
+ extra_commands="reload"
+ required_vars="spmd"
+--- samples/rc.d-kinkd.in.orig	Tue Feb  7 02:19:19 2006
++++ samples/rc.d-kinkd.in	Tue Feb  7 02:19:19 2006
+@@ -14,7 +14,7 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="kinkd"
+-rcvar=$name
++rcvar=`set_rcvar`
+ command="@sbindir@/${name}"
+ extra_commands="reload"
+ required_vars="spmd"
+--- samples/rc.d-spmd.in.orig	Tue Feb  7 02:19:19 2006
++++ samples/rc.d-spmd.in	Tue Feb  7 02:19:19 2006
+@@ -13,7 +13,7 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="spmd"
+-rcvar=$name
++rcvar=`set_rcvar`
+ command="@sbindir@/${name}"
+ extra_commands="reload"
+ pidfile="/var/run/${name}.pid"

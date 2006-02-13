@@ -1,12 +1,12 @@
 sbin/iked
-sbin/kinkd
+%%KINK%%sbin/kinkd
 sbin/spmd
 sbin/spmdctl
 sbin/pskgen
 etc/racoon2.conf.sample
 etc/rc.d/iked.sh
 etc/rc.d/spmd.sh
-etc/rc.d/kinkd.sh
+%%KINK%%etc/rc.d/kinkd.sh
 etc/rc.d/racoon2.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
