@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log4j
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.13
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
@@ -25,8 +25,7 @@ PORTDOCS=	*
 .endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${MKDIR} ${JAVAJARDIR}
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/dist/lib/log4j-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
