@@ -7,7 +7,7 @@
 
 PORTNAME=	tochnog
 PORTVERSION=	20010211
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tochnog
@@ -24,21 +24,17 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
-# This port installs some plugins into a directory which is owned by the
-# the cad/linux-gid port, but it doesn't adds a dependency to linux-gid,
-# since tochnog can be used standalone.
-# The right thing to do would be to add a slave port which installs the
-# plugins only. The slave port would have to depend upon linux-gid and
-# tochnog.
-
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 
-GIDDIR?=	share/gid
-PLIST_SUB+=	GIDDIR=${GIDDIR}
+# You can set GIDDIR to share/gid to install the scripts to be used
+# with the cad/linux-gid port, otherwise they can be linked to the data
+# directory to avoid polluting the port space.
 
-GID_PREFIX?=	${LOCALBASE}/${GIDDIR}/problemtypes
+GIDDIR?=	share/${PORTNAME}
+PLIST_SUB+=	GIDDIR=${GIDDIR}
+GID_PTYPES=	${PREFIX}/${GIDDIR}/problemtypes
 
 .ifdef WITH_THREADS
 BLAS_LIBS?=	-L${LOCALBASE}/lib -lptf77blas -latlas_r
@@ -55,7 +51,7 @@ pre-everything::
 	@${ECHO_MSG} "make WITH_THREADS=yes for threaded version"
 .endif
 
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
 	s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
 	s,%%SUPERLU%%,${SUPERLU},g ; \
@@ -76,13 +72,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tochnog ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/tochnog/tools/aba2tn ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/tools/*.awk ${PREFIX}/bin
-	${MKDIR} ${GID_PREFIX}/tochnog.gid
+	${MKDIR} ${GID_PTYPES}/tochnog.gid
 	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.cnd	\
-	  ${GID_PREFIX}/tochnog.gid
+	  ${GID_PTYPES}/tochnog.gid
 	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.mat	\
-	  ${GID_PREFIX}/tochnog.gid
+	  ${GID_PTYPES}/tochnog.gid
 	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.ba*	\
-	  ${GID_PREFIX}/tochnog.gid
+	  ${GID_PTYPES}/tochnog.gid
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	@${RM} -f ${WRKDIR}/tochnog/test/*.orig
