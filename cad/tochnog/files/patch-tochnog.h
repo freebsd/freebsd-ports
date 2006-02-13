@@ -1,31 +1,32 @@
---- tochnog.h.orig	Sat Jul 12 13:05:15 2003
-+++ tochnog.h	Sat Jul 12 15:29:05 2003
-@@ -17,12 +17,25 @@
+--- tochnog.h.orig	Sun Feb 11 05:05:27 2001
++++ tochnog.h	Fri Feb  3 15:15:51 2006
+@@ -17,12 +17,17 @@
      Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
  
 -#include <iostream.h>
 +#include <iostream>
-+// C++ iostream compatibility stuff
-+using std::ios;
-+using std::cout;
-+using std::cin;
-+using std::flush;
-+//end iostream compatibility stuff
++// C++ headers
++#include <iostream>
++#include <fstream>
++#include <iomanip>
++using namespace std;
 +
++// C headers
  #include <assert.h>
  #include <ctype.h>
  #include <float.h>
 -#include <fstream.h>
 -#include <iomanip.h>
-+#include <fstream>
-+// C++ fstream compatibility stuff
-+using std::ifstream;
-+using std::ofstream;
-+using std::fstream;
-+//end fstream compatibility stuff
-+
-+#include <iomanip>
  #include <math.h>
  #include <limits.h>
  #include <stdio.h>
+@@ -48,6 +53,8 @@
+   VERSION_MACRO,        // mesh for control_macro
+   MVERSION              // maximum number of versions, this must be the last item
+ }; 
++
++#define TOCHNOG_VERSION "July_25_2002"
+ 
+   // constants
+ #define MCHAR 100  // maximum length of names

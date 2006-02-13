@@ -1,5 +1,5 @@
 --- makefile.orig	Sun Aug 19 12:31:52 2001
-+++ makefile	Wed Jun 18 12:57:01 2003
++++ makefile	Fri Feb  3 16:41:08 2006
 @@ -1,6 +1,7 @@
  #  ***********  fortran 2 c *******************
  # Set F2C (for unix -lf2c and for MS windows to f2c.lib)
@@ -29,7 +29,7 @@
 -COMPILER_FLAGS= -c -O2 -w-
 +COMPILER_C=$(CC)
 +COMPILER_CPP=$(CXX)
-+COMPILER_FLAGS=$(CXXFLAGS) -c
++COMPILER_FLAGS=$(CFLAGS) -c
  OBJ=obj
 -LINK_FLAGS_BEFORE= -l$(F2C)
 +LINK_FLAGS_BEFORE= -l$(F2C) -L%%LOCALBASE%%/lib
@@ -58,7 +58,7 @@
  
  # single and multi-processor windows; borland c++ compiler
  # set SYS_FILE above to syswin32 for multi-processor
-@@ -101,18 +102,23 @@
+@@ -101,17 +102,22 @@
  	"LINK_FLAGS_AFTER= /link $(F2C) $(PROFILE) /OUT:tochnog.exe"
  
  # single processor linux; gnu gcc compiler
@@ -72,22 +72,22 @@
 -	"COMPILER_C=gcc" \
 -	"COMPILER_CPP=g++" \
 -	"COMPILER_FLAGS= -ansi -c -O2 -Wall $(PROFILE) $(ALL_INCLUDE)" \
-+	"COMPILER_FLAGS= -c ${CXXFLAGS} $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} $(ALL_INCLUDE)" \
  	"LINK_FLAGS_BEFORE=" \
- 	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) -static -lm -o tochnog"
- 
+-	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) -static -lm -o tochnog"
++	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) -lm -o tochnog"
++
 +# Multithreaded FreeBSD
 +freebsd_parallel:
 +	make tochnog \
 +	"SYS_FILE=sysposix" \
 +	"OBJ=o" \
-+	"COMPILER_FLAGS= -c ${CXXFLAGS} %%PTHREAD_CFLAGS%% -D_REENTRANT $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} %%PTHREAD_CFLAGS%% -D_REENTRANT $(ALL_INCLUDE)" \
 +	"LINK_FLAGS_BEFORE=" \
-+	"LINK_FLAGS_AFTER=  $(ALL_LIB) %%PTHREAD_LIBS%% -static -lm -o tochnog"
-+
++	"LINK_FLAGS_AFTER=  $(ALL_LIB) %%PTHREAD_LIBS%% -lm -o tochnog"
+ 
  # multi processor linux; gnu gcc compiler
  linux: 
- 	make tochnog \
 @@ -375,7 +381,7 @@
  	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)hyperela.$(SRC_CPP)
  
