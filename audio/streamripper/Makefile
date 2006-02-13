@@ -6,16 +6,26 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.61.16
+PORTVERSION=	1.61.17
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	streamripper
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Splits SHOUTcast stream into tracks
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
+
+USE_ICONV=	yes
+
+OPTIONS=	VORBIS "Include Ogg Vorbis codec support" on
+
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_VORBIS)
+LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -24,4 +34,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_FILES=	bin/streamripper
 MAN1=		streamripper.1
 
-.include <bsd.port.mk>
+pre-install:
+		@${CHMOD} +x ${WRKSRC}/install-sh
+
+.include <bsd.port.post.mk>
