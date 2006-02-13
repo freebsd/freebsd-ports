@@ -7,7 +7,6 @@
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
 CATEGORIES=	shells
-FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
@@ -17,8 +16,9 @@ MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
 VERSION=	2006-01-24
-RESTRICTED=    "Source recipient must acknowledge license"
+RESTRICTED=	Source recipient must acknowledge license
 
+FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
 FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
@@ -27,16 +27,21 @@ MAKE_ENV+=	LDFLAGS=-static
 .endif
 
 MAN1=		ksh93.1
-INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} >= 600000)
+INSTALLROOT=	${WRKSRC}/arch/freebsd${OSREL:R}.${ARCH}
+.else
+INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
+.endif
+
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=	Does not compile on sparc64
 .endif
 
 do-build:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${SH} bin/package make
+	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALLROOT}/bin/ksh ${PREFIX}/bin/ksh93
