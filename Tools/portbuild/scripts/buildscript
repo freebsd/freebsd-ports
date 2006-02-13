@@ -111,7 +111,7 @@ del_pkg() {
       else 
         for j in ${delpkg}; do
           echo "Deleting ${j}"
-          if ! (pkg_delete $j); then
+          if ! (pkg_delete -f $j); then
             echo "--> error in pkg_delete, exiting"
             cleanup 0
           fi
@@ -156,24 +156,6 @@ if [ $phase = 1 ]; then
   #Allow ports to notice they're being run on bento
   export PACKAGE_BUILDING=1
 
-  add_pkg $FD
-
-  cd $dir || exit 1
-  pkgname=$(make package-name)
-  echo "================================================================"
-  echo "====================<phase 1: make checksum>===================="
-
-  if /pnohang $TIMEOUT /tmp/make.log1 ${pkgname} make checksum; then
-    cat /tmp/make.log1
-    echo "0" > /tmp/status
-  else
-    cleanup 1
-  fi
-
-  del_pkg $FD
-
-else
-
   # Files we do not care about changing between pre-build and post-cleanup
   cat > /tmp/mtree.preexclude <<EOF
 ./root/*
@@ -190,21 +172,38 @@ EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
 
+  add_pkg $FD
+
+  cd $dir || exit 1
+  pkgname=$(make package-name)
+  echo "================================================================"
+  echo "====================<phase 1: make checksum>===================="
+
+  if /pnohang $TIMEOUT /tmp/make.log1 ${pkgname} make checksum; then
+    cat /tmp/make.log1
+    echo "0" > /tmp/status
+  else
+    cleanup 1
+  fi
+
+else
+
   cd $dir || exit 1
   pkgname=$(make package-name)
 
   echo "================================================================"
   echo "====================<phase 2: make extract>===================="
 
-  # XXX The 'make fetch' stage is rerun by 'make extract' since there's
-  # no cookie for it (and nowhere to put a cookie during 'make fetch'
-  # anyway, since ${WRKDIR} isn't created yet)
-
-  add_pkg ${ED} ${FD}
+  add_pkg ${ED}
   cd $dir
   /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make extract || cleanup 2
   cat /tmp/make.log2
-  del_pkg ${ED} ${FD}
+  del_pkg ${ED}
+
+  # Fetch depends still need to be here for 'make extract' since that target
+  # always reruns 'make fetch' due to the lack of fetch cookie (and no place
+  # to put it since WRKDIR isn't created by 'make fetch')
+  del_pkg $FD
 
   echo "================================================================"
   echo "====================<phase 3: make patch>===================="
@@ -229,6 +228,8 @@ EOF
 ./var/mail/*
 ./var/tmp/*
 ./usr/share/man/cat*/*
+./usr/local/etc/apache/httpd.conf
+./usr/local/etc/apache2/httpd.conf
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.buildexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.prebuild
