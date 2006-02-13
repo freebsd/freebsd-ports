@@ -6,6 +6,8 @@
 @dirrmtry lib/xemacs/site-packages/man
 @exec mkdir -p %D/lib/xemacs/site-packages/pkginfo
 @dirrmtry lib/xemacs/site-packages/pkginfo
+@exec mkdir -p %D/lib/xemacs/site-packages/lisp
+@dirrmtry lib/xemacs/site-packages/lisp
 @dirrmtry lib/xemacs/site-packages
 @exec mkdir -p %D/lib/xemacs/mule-packages/etc
 @dirrmtry lib/xemacs/mule-packages/etc
