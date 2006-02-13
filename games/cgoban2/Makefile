@@ -25,7 +25,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/cgoban2 %%DATADIR%%/cgoban.jar
+PLIST_FILES=	bin/cgoban2 %%DATADIR%%/cgoban.jar share/pixmaps/cgoban2.png
 PLIST_DIRS=	%%DATADIR%%
 
 ICON=		org/igoweb/go/swing/images/tool1.png
