@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	superlu
-PORTVERSION=	3.0.20041202
+DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
-MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
-		http://crd.lbl.gov/~xiaoye/
-DISTNAME=	${PORTNAME}_3.0
+MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/
+DISTNAME=	${PORTNAME}_${P_VERSION}
 .ifndef NOPORTDOCS
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz simax95.ps.gz
 .endif
-DIST_SUBDIR=	superlu
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -22,8 +21,9 @@ COMMENT=	A library of routines for performing sparse factorization
 
 LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
 
+P_VERSION=	3.0
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/SuperLU_3.0
+WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
 ALL_TARGET=	superlulib
 
 BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
@@ -48,7 +48,8 @@ post-patch:
 .endfor
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libsuperlu.* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libsuperlu_${P_VERSION}.a \
+		${PREFIX}/lib/libsuperlu.a
 	@${MKDIR} ${PREFIX}/include/superlu
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/superlu
 .if !defined(NOPORTDOCS)
