@@ -1,11 +1,11 @@
 --- Makefile.orig	Mon Jan 30 19:09:47 2006
-+++ Makefile	Tue Jan 31 01:38:09 2006
++++ Makefile	Tue Feb 14 01:13:29 2006
 @@ -3,7 +3,7 @@
  
  # Replace x86 by amd64 for a build on x86_64.
  # Use "nojit" for architectures that are not x86 or x86_64.
 -ARCH=x86
-+DYNAMIPS_ARCH=x86
++DYNAMIPS_ARCH?=x86
  
  # Change this to 0 if your system doesn't support RFC 2553 extensions
  HAS_RFC2553=1

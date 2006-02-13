@@ -7,6 +7,7 @@
 
 PORTNAME=	dynamips
 PORTVERSION=	0.2.3b
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
@@ -16,6 +17,7 @@ COMMENT=	Cisco 7200 Simulator
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
 USE_GMAKE=	yes
+USE_GCC=	3.2+
 ALL_TARGET=	${PORTNAME}
 MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}\
