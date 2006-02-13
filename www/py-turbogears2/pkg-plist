@@ -21,6 +21,7 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/js/__init__.py
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/js/__init__.pyc
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/quickstart/ProjectName.egg-info/sqlobject.txt
+%%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/quickstart/README.txt.source
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/quickstart/__init__.py
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/quickstart/__init__.pyc
 %%PYTHON_SITELIBDIR%%/TurboGears-%%PORTVERSION%%-%%EGGEXT%%/turbogears/quickstart/dev.cfg.source
