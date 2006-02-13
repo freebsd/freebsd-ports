@@ -16,10 +16,9 @@ COMMENT=	An automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
-USE_GCC=	3.3	# netgen-4.4 is BROKEN with gcc-3.4 on 5.3-STABLE.
+USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_REINPLACE=	yes
 
 ALL_TARGET=	ng
 
@@ -35,7 +34,7 @@ DIRTCL=		demoapp ngsolve ngtcltk
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"internal gcc error (Bug 23159)"
+BROKEN=		internal gcc error (Bug 23159)
 .endif
 
 TK_VER?=	8.4
