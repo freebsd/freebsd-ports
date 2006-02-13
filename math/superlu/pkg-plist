@@ -1,13 +1,14 @@
-include/superlu/Cnames.h
 include/superlu/colamd.h
-include/superlu/csp_defs.h
-include/superlu/dcomplex.h
-include/superlu/dsp_defs.h
-include/superlu/scomplex.h
-include/superlu/ssp_defs.h
+include/superlu/old_colamd.h
+include/superlu/slu_Cnames.h
+include/superlu/slu_cdefs.h
+include/superlu/slu_dcomplex.h
+include/superlu/slu_ddefs.h
+include/superlu/slu_scomplex.h
+include/superlu/slu_sdefs.h
+include/superlu/slu_util.h
+include/superlu/slu_zdefs.h
 include/superlu/supermatrix.h
-include/superlu/util.h
-include/superlu/zsp_defs.h
 lib/libsuperlu.a
 @dirrm include/superlu
 %%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz

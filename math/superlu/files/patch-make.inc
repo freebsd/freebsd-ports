@@ -1,26 +1,6 @@
---- make.inc.orig	Thu Jan 22 09:45:17 2004
-+++ make.inc	Thu Apr  1 20:34:07 2004
-@@ -16,14 +16,15 @@
- #
- #  The machine (platform) identifier to append to the library names
- #
--PLAT = _solaris
-+#PLAT =
- 
- #
- #  The name of the libraries to be created/linked to
- #
--TMGLIB       = tmglib$(PLAT).a
--SUPERLULIB   = superlu$(PLAT).a
--BLASLIB      = ../blas$(PLAT).a
-+TMGLIB       = libtmg.a
-+SUPERLULIB   = libsuperlu.a
-+BLASDEF	     = -DUSE_VENDOR_BLAS
-+BLASLIB      = %%BLAS_LIBS%%
- 
- #
- #  The archiver and the flag(s) to use when building archive (library)
-@@ -33,12 +34,12 @@
+--- make.inc.orig	Sun Jan  1 18:52:00 2006
++++ make.inc	Sat Feb  4 19:25:37 2006
+@@ -29,12 +29,12 @@
  ARCHFLAGS    = cr
  RANLIB       = ranlib
  

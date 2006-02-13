@@ -1,24 +1,24 @@
-			SuperLU (Version 2.0)
+			SuperLU (Version 3.0)
 			=====================
 
-SuperLU contains a set of subroutines to solve a sparse linear system
-A*X=B. It uses Gaussian elimination with partial pivoting (GEPP).
-The columns of A may be preordered before factorization; the
-preordering for sparsity is completely separate from the factorization.
+SuperLU is a general purpose library for the direct solution of large, 
+sparse, nonsymmetric systems of linear equations on high performance 
+machines. The library is written in C and is callable from either C or 
+Fortran. The library routines will perform an LU decomposition with 
+partial pivoting and triangular system solves through forward and back 
+substitution. The LU factorization routines can handle non-square matrices 
+but the triangular solves are performed only for square matrices. The 
+matrix columns may be preordered (before factorization) either through 
+library or user supplied routines. This preordering for sparsity is 
+completely separate from the factorization. Working precision iterative 
+refinement subroutines are provided for improved backward stability. 
+Routines are also provided to equilibrate the system, estimate the 
+condition number, calculate the relative backward error, and estimate 
+error bounds for the refined solutions.
 
-SuperLU is implemented in ANSI C, and must be compiled with standard
-ANSI C compilers. It provides functionality for both real and complex
-matrices, in both single and double precision. The file names for the
-single-precision real version start with letter "s" (such as sgstrf.c);
-the file names for the double-precision real version start with letter "d"
-(such as dgstrf.c); the file names for the single-precision complex
-version start with letter "c" (such as cgstrf.c); the file names
-for the double-precision complex version start with letter "z"
-(such as zgstrf.c).
+WWW: http://crd.lbl.gov/~xiaoye/SuperLU/
 
-WWW: http://www.nersc.gov/~xiaoye/SuperLU/
-
-Authors:	Jim Demmel      demmel@cs.berkeley.edu
-		John Gilbert    gilbert@parc.xerox.com
-		Xiaoye S. Li    xiaoye@cs.berkeley.edu
+Developers:	Sherry Li
+		Jim Demmel
+		John Gilbert
 NOTE: This library has to be linked with BLAS or a compatible library.
