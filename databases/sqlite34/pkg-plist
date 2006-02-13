@@ -1,14 +1,14 @@
 bin/sqlite3
-%%WITH_TCL%%bin/tclsqlite3
+%%WITH_TCLWRAPPER%%bin/tclsqlite3
 include/sqlite3.h
 lib/libsqlite3.a
 lib/libsqlite3.so
 lib/libsqlite3.so.8
 libdata/pkgconfig/sqlite3.pc
-%%WITH_TCL%%lib/sqlite/libtclsqlite3.so.8
-%%WITH_TCL%%lib/sqlite/libtclsqlite3.so
-%%WITH_TCL%%lib/sqlite/libtclsqlite3.a
-%%WITH_TCL%%lib/sqlite/pkgIndex.tcl
-%%WITH_TCL%%@dirrm lib/sqlite
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.so.8
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.so
+%%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite3.a
+%%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
+%%WITH_TCLWRAPPER%%@dirrm lib/sqlite
 %%EXAMPLESDIR%%/example.tcl
 @dirrm %%EXAMPLESDIR%%
