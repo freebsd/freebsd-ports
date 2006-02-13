@@ -1,0 +1,49 @@
+--- dox/netpipe.1.orig	Wed Jul  7 01:56:25 2004
++++ dox/netpipe.1	Mon Feb 13 19:59:57 2006
+@@ -26,7 +26,7 @@
+ .IB E valuator
+ 
+ .SH SYNOPSIS
+-.B NPtcp
++.B "NPtcp|NPtcp6"
+ [\c
+ .BI \-h \ receiver_hostname\fR\c
+ ]
+@@ -124,9 +124,9 @@
+ 
+ 
+ 
+-.SH TESTING TCP
++.SH TESTING TCP/TCP6
+ .PP
+-NPtcp can now be launched in two ways, by manually starting NPtcp on
++NPtcp can now be launched in two ways, by manually starting NPtcp or NPtcp6 on
+ both systems or by using a nplaunch script.  To manually start NPtcp,
+ the NetPIPE receiver must be 
+ started first on the remote system using the command:
+@@ -145,7 +145,12 @@
+ .Ee
+ .PP
+ Any options used must be the same on both sides.
+-
++The \-P parameter can be used to override the default port number.
++This is helpful when running several streams through a router to a
++single endpoint.
++.PP
++The NPtcp6 program is launched in a similar manner.
++.PP
+ The nplaunch script uses ssh to launch the remote receiver
+ before starting the local transmitter.  To use rsh, simply change
+ the nplaunch script.
+@@ -366,6 +371,11 @@
+ .I -p 
+ .I 0
+ .B .
++.ne 3
++
++.TP
++.BI \-P \ \fIport\fR
++Set the port number used by the TCP and TCP6 tests to \fIport\fR.
+ .ne 3
+ 
+ .TP

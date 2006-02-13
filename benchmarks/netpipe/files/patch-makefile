@@ -11,3 +11,16 @@
  SRC        = ./src
  
  # For MPI, mpicc will set up the proper include and library paths
+@@ -81,7 +81,11 @@
+ 
+ 
+ tcp: $(SRC)/tcp.c $(SRC)/netpipe.c $(SRC)/netpipe.h 
+-	$(CC) $(CFLAGS) $(SRC)/netpipe.c $(SRC)/tcp.c -DTCP  -o NPtcp -I$(SRC)
++	$(CC) $(CFLAGS) $(SRC)/netpipe.c $(SRC)/tcp.c -DTCP -o NPtcp -I$(SRC)
++
++tcp6: $(SRC)/tcp.c $(SRC)/netpipe.c $(SRC)/netpipe.h 
++	$(CC) $(CFLAGS) $(SRC)/netpipe.c $(SRC)/tcp6.c -DTCP6 \
++		-o NPtcp6 -I$(SRC)
+ 
+ memcpy: $(SRC)/memcpy.c $(SRC)/netpipe.c $(SRC)/netpipe.h
+ 	$(CC) $(CFLAGS) $(SRC)/netpipe.c $(SRC)/memcpy.c \

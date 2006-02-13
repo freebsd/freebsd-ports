@@ -1,0 +1,49 @@
+Index: dox/README
+===================================================================
+RCS file: /cvs/gnn/Personal/Code/Networking/NetPIPE/dox/README,v
+retrieving revision 1.1
+retrieving revision 1.3
+diff -u -r1.1 -r1.3
+--- dox/README	9 Sep 2004 08:29:35 -0000	1.1
++++ dox/README	27 Sep 2004 11:26:17 -0000	1.3
+@@ -85,6 +85,7 @@
+   make shmem      (1-sided library for Cray and SGI systems)
+ 
+   make tcp
++  make tcp6       (for IPv6 enabled systems)
+   make gm         (for Myrinet cards, you will need to set some paths)
+   make shmem      (1-sided library for Cray and SGI systems)
+   make gpshmem    (SHMEM interface for other machines)
+@@ -145,7 +146,10 @@
+         -2: Bi-directional communications.  Transmit in both directions
+             simultaneously.
+ 
+-   TCP
++        -P: Set the port number used by TCP to something other than
++            default.
++
++   TCP 
+    ---
+ 
+       Compile NetPIPE using 'make tcp'
+@@ -157,6 +161,20 @@
+ 
+       local_host>  nplaunch NPtcp -h remote_host [options]
+ 
++   TCP6
++   ----
++
++      Compile NetPIPE using 'make tcp6'
++
++      remote_host> NPtcp6 [options]
++      local_host>  NPtcp6 -h remote_host [options]
++
++                       OR
++
++      local_host>  nplaunch NPtcp6 -h remote_host [options]
++
++
++
+    MPICH
+    -----
+ 
