@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	4.1
+PORTVERSION=	5.0
 CATEGORIES=	java devel
 MASTER_SITES=
-DISTNAME=	netbeans-4_1
+DISTNAME=	netbeans-5_0
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -17,22 +17,22 @@ COMMENT=	A full-featured integrated environment for Java
 USE_BZIP2=	yes
 USE_JAVA=	1.4+
 NO_BUILD=	yes
-RESTRICTED=	"Restrictive license"
+RESTRICTED=	Restrictive license
 
 WRKSRC=		${WRKDIR}/netbeans
 
-DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=1&lang=1&rv=4.1&b_bt=2
+DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?type=5.0&p=1&a=bsd&os=1&lang=1&rv=5.0&b_bt=2
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/netbeans
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
-		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-		@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
+	@${MKDIR} ${PREFIX}/netbeans
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
+	@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
 
 .include <bsd.port.post.mk>
