@@ -1,0 +1,10 @@
+NOTE: This is the first public release, there's probably a higher than
+average chance of random bugs and shortcomings: you've been warned.
+
+This is a Catalyst Model for DBIx::Class::Schema-based Models. See the
+documentation for Catalyst::Helper::Model::DBIC::Schema and
+Catalyst::Helper::Model::DBIC::SchemaLoader for information on
+generating these Models via Helper scripts. The latter of the two will
+also generated a DBIx::Class::Schema::Loader-based Schema class for you.
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-DBIC-Schema/
