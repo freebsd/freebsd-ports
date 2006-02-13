@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	winefish
-DISTVERSION=	1.3.2.6f
+DISTVERSION=	1.3.2.6
 CATEGORIES=	editors print
-MASTER_SITES=	http://download.berlios.de/winefish/
+MASTER_SITES=	http://download.berlios.de/winefish/ \
+		http://nivi.interfree.it/distfiles/winefish/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@email.it
@@ -21,6 +22,9 @@ RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		latex:${PORTSDIR}/print/teTeX \
 		tidy:${PORTSDIR}/www/tidy \
 		xpdf:${PORTSDIR}/graphics/xpdf
+
+MAN1=		winefish.1
+MANCOMPRESSED=	no
 
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
@@ -52,5 +56,9 @@ CONFIGURE_ARGS+=	--with-unikey-gtk
 
 post-install:
 	-@update-desktop-database
+.if defined(NOPORTDOCS)
+	${RM} ${DOCSDIR}/${PORTNAME}.html
+	${RMDIR} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
