@@ -50,7 +50,7 @@ check: build
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/wand/magick-wand.h)
-LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK:=""
 .else
 PLIST_SUB+=	IMAGEMAGICK:="@comment "
