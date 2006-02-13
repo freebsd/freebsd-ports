@@ -7,6 +7,7 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://rubyforge.lauschmusik.de/instiki/	\
 		http://rubyforge.planetargon.com/instiki/	\
@@ -33,6 +34,9 @@ SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 RUBY_SHEBANG_FILES=instiki
 
 INSTIKIPORT?=	2500
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 pre-install:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
