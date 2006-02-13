@@ -7,45 +7,31 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/Implementation/Zugriff.html
 %%PORTDOCS%%%%DOCSDIR%%/Roadmap
 %%PORTDOCS%%%%DOCSDIR%%/de/DDV_Kurzregeln.pdf
+%%PORTDOCS%%%%DOCSDIR%%/de/DDV_Kurzregeln.tex
 %%PORTDOCS%%%%DOCSDIR%%/de/DDV_Turnierregeln.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Dateien.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Dateien.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/Einfuehrung.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Einfuehrung.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/FAQ.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/Fehler.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Fehler.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/DDV_Turnierregeln.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Konzept.pdf
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Konzept.tex
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Regeln.pdf
+%%PORTDOCS%%%%DOCSDIR%%/de/FreeDoko_Regeln.tex
 %%PORTDOCS%%%%DOCSDIR%%/de/GPL.de
-%%PORTDOCS%%%%DOCSDIR%%/de/Konfiguration.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Konfiguration.txt
 %%PORTDOCS%%%%DOCSDIR%%/de/Kurzregeln.pdf
 %%PORTDOCS%%%%DOCSDIR%%/de/Kurzregeln.tex
-%%PORTDOCS%%%%DOCSDIR%%/de/Kurzregeln.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/LIESMICH.SuSE
-%%PORTDOCS%%%%DOCSDIR%%/de/LIESMICH.Windows
-%%PORTDOCS%%%%DOCSDIR%%/de/LIESMICH.gtkmm_2.4
 %%PORTDOCS%%%%DOCSDIR%%/de/LIESMICH.html
 %%PORTDOCS%%%%DOCSDIR%%/de/LIESMICH.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/MinGW32.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/Planung.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Planung.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/Regeln.pdf
-%%PORTDOCS%%%%DOCSDIR%%/de/Regeln.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/FAQ.pdf
-%%PORTDOCS%%%%DOCSDIR%%/en/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/README.Windows
+%%PORTDOCS%%%%DOCSDIR%%/de/SuSE
+%%PORTDOCS%%%%DOCSDIR%%/de/Windows
+%%PORTDOCS%%%%DOCSDIR%%/de/compiling.Windows
+%%PORTDOCS%%%%DOCSDIR%%/de/subversion
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_concept.pdf
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_concept.tex
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_rules.pdf
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_rules.tex
 %%PORTDOCS%%%%DOCSDIR%%/en/README.html
 %%PORTDOCS%%%%DOCSDIR%%/en/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/configuration.pdf
-%%PORTDOCS%%%%DOCSDIR%%/en/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/introduction.pdf
-%%PORTDOCS%%%%DOCSDIR%%/en/introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/rules.pdf
-%%PORTDOCS%%%%DOCSDIR%%/en/rules.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/Windows
 %%PORTDOCS%%%%DOCSDIR%%/en/shortrules.pdf
 %%PORTDOCS%%%%DOCSDIR%%/en/shortrules.tex
-%%PORTDOCS%%%%DOCSDIR%%/en/shortrules.txt
 %%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/configuration.html
@@ -55,6 +41,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/network_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/_template.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/ai_config.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/bug_report.html
@@ -65,46 +52,59 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/keys.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/last_trick.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/menu.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/network_config.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/party_finished.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/party_points.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/party_settings.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/about.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/about.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/bug_report.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/cardset_license.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/cardset_license.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/changelog.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/changelog.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/current_trick.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/current_trick.small.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/full_trick.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/generate_error.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/generate_error.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/last_trick.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/last_trick.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/license.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/license.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/main_window.game.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/main_window.game.small.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/main_window.start.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/main_window.start.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/party_points.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/party_points.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/party_settings.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/party_settings.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/player_config.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/player_config.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/reservation.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/reservation.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/reservation.solo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/reservation.solo.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/announcements.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/announcements.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/announcements.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/dollen.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/dollen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/dollen.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/informations.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/informations.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/informations.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/marriage.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/marriage.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/marriage.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/poverty.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/poverty.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/poverty.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/solo.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/solo.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/solo.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/specialpoints.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/specialpoints.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/specialpoints.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/swines.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/swines.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/swines.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/tournament.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/tournament.small.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/rules/tournament.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/splash.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/symbols/contra.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/operation/pictures/symbols/five_nines.png
@@ -179,6 +179,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/shortrules.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/shortrules.ps
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/de/toc.short.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/de/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/credits.html
@@ -186,6 +187,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/operation/ai_config.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/operation/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/operation/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/rules.html
@@ -198,13 +200,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/manual/pictures/FreeDoko.icon.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/pictures/flags/de.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual/pictures/flags/gb.gif
-%%DATADIR%%/ai/normal
-%%DATADIR%%/ai/normal.pro
-%%DATADIR%%/ai/novice
-%%DATADIR%%/ai/novice.pro
-%%DATADIR%%/ai/profi
-%%DATADIR%%/ai/profi.pro
-%%DATADIR%%/ai/standard
 %%DATADIR%%/backgrounds/table.png
 %%DATADIR%%/cardsets/Altenburg/License
 %%DATADIR%%/cardsets/Altenburg/french/backs/penguin.png
@@ -304,6 +299,7 @@ bin/freedoko
 %%DATADIR%%/translations/de/text.bug_report
 %%DATADIR%%/translations/de/text.cards
 %%DATADIR%%/translations/de/text.chat
+%%DATADIR%%/translations/de/text.gtkmm.menu
 %%DATADIR%%/translations/de/text.gui
 %%DATADIR%%/translations/de/text.help
 %%DATADIR%%/translations/de/text.menu
@@ -312,12 +308,14 @@ bin/freedoko
 %%DATADIR%%/translations/de/text.rules
 %%DATADIR%%/translations/de/text.settings
 %%DATADIR%%/translations/de/text.versions
+%%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/en/text
 %%DATADIR%%/translations/en/text.aiconfig
 %%DATADIR%%/translations/en/text.basistypes
 %%DATADIR%%/translations/en/text.bug_report
 %%DATADIR%%/translations/en/text.cards
 %%DATADIR%%/translations/en/text.chat
+%%DATADIR%%/translations/en/text.gtkmm.menu
 %%DATADIR%%/translations/en/text.gui
 %%DATADIR%%/translations/en/text.help
 %%DATADIR%%/translations/en/text.menu
@@ -327,6 +325,7 @@ bin/freedoko
 %%DATADIR%%/translations/en/text.settings
 %%DATADIR%%/translations/en/text.versions
 @dirrm %%DATADIR%%/translations/en
+@dirrm %%DATADIR%%/translations/de-alt
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/rules
@@ -341,7 +340,6 @@ bin/freedoko
 @dirrm %%DATADIR%%/cardsets/Altenburg
 @dirrm %%DATADIR%%/cardsets
 @dirrm %%DATADIR%%/backgrounds
-@dirrm %%DATADIR%%/ai
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pictures/flags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pictures
