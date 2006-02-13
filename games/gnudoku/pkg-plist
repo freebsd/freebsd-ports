@@ -1,0 +1,5 @@
+bin/GNUDoku
+share/applications/GNUDoku.desktop
+share/pixmaps/GNUDoku.png
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
