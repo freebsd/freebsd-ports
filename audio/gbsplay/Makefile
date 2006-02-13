@@ -7,6 +7,7 @@
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cgarbs.de/stuff/ \
 		http://download.berlios.de/gbsplay/ \
@@ -17,7 +18,6 @@ PKGNAMEPREFIX?=
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT?=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--disable-nas
 .endif
 
 post-patch: gbsplay-post-patch
+	@${REINPLACE_CMD} -e 's|^\(default.*\)test|\1|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/include|${LOCALBASE}/include|; \
 		 s|/usr/local/lib|${LOCALBASE}/lib|; \
