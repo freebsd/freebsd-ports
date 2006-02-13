@@ -17,15 +17,12 @@ COMMENT=	Firewall Builder GUI and policy compilers
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	fwbuilder.6:${PORTSDIR}/security/libfwbuilder
 
-.if !exists(/usr/include/getopt.h)
-USE_GETOPT_LONG=	yes
-.endif
-
 USE_QT_VER=	3
 
 QTDIR?=		${X11BASE}
 
 USE_OPENSSL=	yes
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
