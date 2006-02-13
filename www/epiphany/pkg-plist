@@ -68,6 +68,10 @@ share/gnome/epiphany/art/epiphany-entry.png
 share/gnome/epiphany/art/epiphany-history.png
 share/gnome/epiphany/art/epiphany-popup-hidden.png
 share/gnome/epiphany/art/hand-open.png
+share/gnome/epiphany/chrome/branding/brand.dtd
+share/gnome/epiphany/chrome/branding/brand.properties
+share/gnome/epiphany/chrome/epiphany.manifest
+share/gnome/epiphany/chrome/global/about.xhtml
 share/gnome/epiphany/default-prefs.js
 share/gnome/epiphany/epiphany-bookmark-editor-ui.xml
 share/gnome/epiphany/epiphany-bookmarks-html.xsl
@@ -224,6 +228,9 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/help/epiphany/C
 @dirrm share/gnome/help/epiphany
 @dirrm share/gnome/epiphany/glade
+@dirrm share/gnome/epiphany/chrome/global
+@dirrm share/gnome/epiphany/chrome/branding
+@dirrm share/gnome/epiphany/chrome
 @dirrm share/gnome/epiphany/art
 @dirrm share/gnome/epiphany
 @dirrm %%DOCSDIR%%
