@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libapreq2
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
-DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
@@ -24,16 +23,16 @@ CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS}
 USE_APACHE=	yes
 
 .if defined (WITH_MODPERL2)
-PKGNAMEPREFIX=	p5-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+PKGNAMEPREFIX+=	p5-
+
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-CONFIGURE_ARGS+=	--enable-perl-glue
 USE_PERL5=	yes
-PLIST_SUB+=	WITH_MODPERL2=""
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_[0-9]+//}
+CONFIGURE_ARGS+=	--enable-perl-glue
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		APR::Request.3 \
 		APR::Request::Apache2.3 \
@@ -47,8 +46,10 @@ MAN3=		APR::Request.3 \
 		Apache2::Upload.3 \
 		Apache2::Request.3
 
+PLIST_SUB+=	WITH_MODPERL2=""
+
 post-configure:
-	cd ${CONFIGURE_WRKSRC}/glue/perl && \
+	cd ${WRKSRC}/glue/perl && \
 		${PERL5} Makefile.PL -apxs ${APXS} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .else
