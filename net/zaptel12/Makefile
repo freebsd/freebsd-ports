@@ -43,7 +43,7 @@ post-patch:
 		${WRKSRC}/test/ztmonitor.c ${WRKSRC}/test/zttool.c \
 		${WRKSRC}/ztcfg/ztcfg.c
 
-pre-install:
+pre-su-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${PKGMESSAGE}
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/zaptel.sh > \
