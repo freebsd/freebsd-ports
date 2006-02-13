@@ -44,13 +44,10 @@ DYNAMIPS_ARCH=	"amd64"
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 600029
 #
 # Requires libpcap 0.9+
-USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/^HAS_PCAP=1/HAS_PCAP=0/' ${WRKSRC}/Makefile
+MAKE_ENV=	HAS_PCAP=0
 .endif
 
 .include <bsd.port.post.mk>
