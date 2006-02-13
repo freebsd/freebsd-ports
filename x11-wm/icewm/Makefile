@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.23
-PORTREVISION=	1
+PORTVERSION=	1.2.25
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,6 @@ COMMENT=	Window Manager designed for speed, usability and consistency
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_ICONV=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -90,7 +88,7 @@ STARTUP_PIXMAP=		icewm-logo.xpm
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls --disable-i18n
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
@@ -102,6 +100,9 @@ post-extract:
 	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
 post-patch:
+.for file in configure
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/${file}
+.endfor
 .for file in src/gnome2.cc
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/control|${X11BASE}/share/gnome/control|g ; \
