@@ -5,39 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=		badwm
-PORTVERSION=		0.06
-PORTREVISION=	1
-CATEGORIES=		x11-wm
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	badwm
+PORTVERSION=	0.1.1
+PORTEPOCH=	1
+CATEGORIES=	x11-wm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		BadWM-${PORTVERSION}
+DISTNAME=	BadWM-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Window manager based on evilwm
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Window manager based on evilwm
 
-DOCDIR=			share/doc/${PORTNAME}
-DOCS=		AUTHORS COPYING ChangeLog INSTALL LICENSE README THANKS TODO
-PLIST=			${WRKDIR}/pkg-plist
-USE_AUTOTOOLS=	autoconf:253
-USE_GMAKE=		y
-USE_X_PREFIX=		y
+USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-post-extract:
-# Avoid having to audit this huge file.
-	${RM} ${WRKSRC}/configure
+MAN1=		BadWM.1
+MAN5=		BadWMrc.5
+MLINKS=		BadWM.1 badwm.1 \
+		BadWMrc.5 badwmrc.5
+PORTDOCS=	${DOCS}
+PLIST_FILES=	bin/BadWM bin/badwm
 
-pre-install:
-	${ECHO_CMD} bin/badwm > ${PLIST}
-.if !defined(NOPORTDOCS)
-.for ii in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}/${ii} >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-.endif
+DOCS=		AUTHORS ChangeLog INSTALL LICENSE README THANKS TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<getopt\.h>|<unistd.h>|g' ${WRKSRC}/src/main.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/BadWM ${PREFIX}/bin/badwm
+	${INSTALL_PROGRAM} ${WRKSRC}/src/BadWM ${PREFIX}/bin
+	${LN} -sf BadWM ${PREFIX}/bin/badwm
+	${INSTALL_MAN} ${WRKSRC}/man/BadWM.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/BadWMrc.5 ${MAN5PREFIX}/man/man5
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCS}
