@@ -16,6 +16,10 @@ COMMENT=	A core event abstraction library
 
 LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas
 
+.if !exists(/usr/include/getopt.h)
+USE_GETOPT_LONG=	yes
+.endif
+
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
