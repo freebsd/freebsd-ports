@@ -29,6 +29,7 @@
     SUBDIR += gperiodic
     SUBDIR += grappa
     SUBDIR += hmmer
+    SUBDIR += jalview
     SUBDIR += kinemage
     SUBDIR += lamarc
     SUBDIR += libgenome
