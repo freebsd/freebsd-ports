@@ -1,0 +1,16 @@
+JabRef is an open source bibliography reference manager. The native file
+format used by JabRef is BibTeX, the standard LaTeX bibliography format.
+As such it can also be considered a BibTeX editor.
+
+JabRef runs on the Java VM (version 1.4.2 or greater).
+
+Some of its features:
+
+ o Search and fetch references from Medline/PubMed and CiteSeer
+ o Search, classify and sort entries in your BibTeX files
+ o import and export of references in various formats
+ o launch external viewers and insert citations into LyX and Kile 
+ o automatically generate BibTeX keys
+ o customize (add your own) BibTeX fields
+
+WWW: http://jabref.sf.net
