@@ -340,8 +340,10 @@ PLIST_SUB+=	EXTERNAL_TODO="@comment "
 
 .endif
 
-.if defined(WITH_SMTP_AUTH_PATCH)
-MASTER_SITES+=	http://members.elysium.pl/brush/qmail-smtpd-auth/dist/:smtp_auth
+.if defined(WITH_SMTP_AUTH_PATCH) && !defined(BARRIER_SMTP_AUTH_PATCH)
+MASTER_SITES+=	http://members.elysium.pl/brush/qmail-smtpd-auth/dist/:smtp_auth \
+		${MASTER_SITE_LOCAL:S/$/:smtp_auth/}
+MASTER_SITE_SUBDIR+=	garga/qmail/:smtp_auth
 DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
 EXTRACT_ONLY+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz
 MASTER_SITES+=	http://tomclegg.net/qmail/:close3
