@@ -7,6 +7,7 @@
 
 PORTNAME=	omniORB
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -50,6 +51,8 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
+	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${PYTHON_SITELIBDIR}/omniidl')"
+	@${PYTHON_CMD} -c "import compileall; compileall.compile_dir('${PYTHON_SITELIBDIR}/omniidl_be')"
 .for manpage in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MANPREFIX}/man/man1
 .endfor

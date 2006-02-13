@@ -212,20 +212,33 @@ libdata/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1.0
 %%PYTHON_SITELIBDIR%%/omniidl/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlast.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlast.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idltype.py
+%%PYTHON_SITELIBDIR%%/omniidl/idltype.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlutil.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlutil.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlvisitor.py
+%%PYTHON_SITELIBDIR%%/omniidl/idlvisitor.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/main.py
+%%PYTHON_SITELIBDIR%%/omniidl/main.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/output.py
-@unexec rm -f %B/*.pyc
+%%PYTHON_SITELIBDIR%%/omniidl/output.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/__init__.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/ast.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/ast.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/call.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/call.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/config.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/config.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/cxx.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/cxx.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/descriptor.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/descriptor.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/__init__.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/dynskel/main.py
@@ -255,13 +268,17 @@ libdata/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tie.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/header/tie.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/id.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/id.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/iface.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/iface.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/__init__.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/main.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/main.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/template.py
-@unexec rm -f %B/*.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/impl/template.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/output.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/cxx/output.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/__init__.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/skel/main.py
@@ -280,11 +297,12 @@ libdata/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/types.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/util.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/cxx/util.pyc
-@unexec rm -f %B/*.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/dump.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/dump.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/example.py
+%%PYTHON_SITELIBDIR%%/omniidl_be/example.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/interactive.py
-@unexec rm -f %B/*.pyc
+%%PYTHON_SITELIBDIR%%/omniidl_be/interactive.pyc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
