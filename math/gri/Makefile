@@ -6,47 +6,44 @@
 #
 
 PORTNAME=	gri
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.10
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	gri-${PORTVERSION}-arch-indep
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christopher.illies@ki.se
 COMMENT=	An extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_PERL5_BUILD=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	YES
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-.if defined(NOPORTDOCS)
-ALL_TARGET=	gri
-INSTALL_TARGET=	install-bin
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick	\
+		dvips:${PORTSDIR}/print/dvipsk-tetex
 .endif
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-FreeBSD
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+REINPLACE_ARGS=	-Ei.bak
+MAKE_ENV+=	MAKEINFOFLAGS=--no-split
 
 MAN1=	gri.1 gri_merge.1 gri_unpage.1
 .if !defined(NOPORTDOCS)
 INFO=		gri
 .endif
 
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/*.info* ${WRKSRC}/doc/info
-	@${MV} -f ${WRKSRC}/doc/gri-manpage.1 ${WRKSRC}/doc/gri.1
-
 post-patch:
-	@${REINPLACE_CMD} -e "s/makeinfo/makeinfo --no-split/" ${WRKSRC}/doc/Makefile
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/^(DIST_)?SUBDIRS/s/doc//' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MANPREFIX}/man/man1
-.endfor
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/doc/gri.info ${PREFIX}/info
+	${INSTALL_MAN} ${WRKSRC}/doc/gri-manpage.1 ${MANPREFIX}/man/man1/gri.1
+	${INSTALL_MAN} ${WRKSRC}/doc/gri_merge.1-skel ${MANPREFIX}/man/man1/gri_merge.1
+	${INSTALL_MAN} ${WRKSRC}/doc/gri_unpage.1-skel ${MANPREFIX}/man/man1/gri_unpage.1
+	${INSTALL_DATA} ${WRKSRC}/doc/gri.info* ${PREFIX}/info
 .endif
 
 .include <bsd.port.mk>

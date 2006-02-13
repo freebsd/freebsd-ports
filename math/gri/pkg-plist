@@ -1,12 +1,7 @@
 bin/gri
 bin/gri_merge
 bin/gri_unpage
-bin/gri-%%PORTVERSION%%
-%%DATADIR%%/%%PORTVERSION%%/startup.msg
-%%DATADIR%%/%%PORTVERSION%%/gri.cmd
-%%DATADIR%%/%%PORTVERSION%%/logo.dat
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/cmdrefcard.ps
 %%PORTDOCS%%%%DOCSDIR%%/html/AboutGriMode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Acknowledgments.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AdjustingCharacterPosition.html
@@ -59,6 +54,7 @@ bin/gri-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/html/Extras.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FEM-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/FEM.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/FEM.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FEM.png
 %%PORTDOCS%%%%DOCSDIR%%/html/FancyPlot.html
@@ -188,56 +184,69 @@ bin/gri-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/html/Write.html
 %%PORTDOCS%%%%DOCSDIR%%/html/X-Y.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example1-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example1.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example10-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example10.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example10.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example10color-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example10color.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example10color.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example10color.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example11-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example11.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example11.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example11.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example12-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example12.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example12.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example12.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example13-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example13.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example13.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example13.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example2-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example2.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example3-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example3.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example3.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example4-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example4.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example4.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example5-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example5.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example5.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example6-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example6.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example6.png
-%%PORTDOCS%%%%DOCSDIR%%/html/example6color-tiny.png
-%%PORTDOCS%%%%DOCSDIR%%/html/example6color.html
-%%PORTDOCS%%%%DOCSDIR%%/html/example6color.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example6histogram-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example6histogram.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example6histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example6histogram.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example7-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example7.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example7.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example8-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example8.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example8.png
 %%PORTDOCS%%%%DOCSDIR%%/html/example9-tiny.png
+%%PORTDOCS%%%%DOCSDIR%%/html/example9.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/example9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/example9.png
 %%PORTDOCS%%%%DOCSDIR%%/html/examples
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/linux-install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/logo.gri
 %%PORTDOCS%%%%DOCSDIR%%/html/logo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/mac-install.html
@@ -263,14 +272,11 @@ bin/gri-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/html/tst_suite/tst_rpn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tst_suite/tst_var_syn.html
 %%PORTDOCS%%%%DOCSDIR%%/html/uncompiled-unix.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/screenshots
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tst_suite
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/refcard.ps
+share/emacs/site-lisp/gri-mode.el
 %%PORTDOCS%%%%EXAMPLESDIR%%/FEM.gri
 %%PORTDOCS%%%%EXAMPLESDIR%%/FEM.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/FEM.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.gri
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.ps
@@ -299,8 +305,6 @@ bin/gri-%%PORTVERSION%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/example5.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/example6.gri
 %%PORTDOCS%%%%EXAMPLESDIR%%/example6.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/example6color.gri
-%%PORTDOCS%%%%EXAMPLESDIR%%/example6color.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/example6histogram.gri
 %%PORTDOCS%%%%EXAMPLESDIR%%/example6histogram.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/example6image.dat
@@ -323,7 +327,15 @@ bin/gri-%%PORTVERSION%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/example9a.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/example9b.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/logo.gri
-%%PORTDOCS%%%%EXAMPLESDIR%%/logo.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/model.elements
 %%PORTDOCS%%%%EXAMPLESDIR%%/model.nodes
+%%DATADIR%%/gri.cmd
+%%DATADIR%%/logo.dat
+%%DATADIR%%/startup.msg
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tst_suite
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/screenshots
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
