@@ -6,46 +6,45 @@
 #
 
 PORTNAME=	aewm
-PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
+MASTER_SITES=	http://www.red-bean.com/~decklin/software/aewm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-GTKCLIENTS=	aemenu-gtk aepanel-gtk
-XAWCLIENTS=	set-gnome-pda \
-		aesession \
-		aemenu-xaw \
-		aepanel-xaw
-DOCDIR=		share/doc/${PORTNAME}
-DOCS=		ChangeLog README TODO DESIGN LICENSE
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${X11BASE}"
-MAN1=		aewm.1 aeclients.1
-PLIST=		${WRKDIR}/pkg-plist
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i '' -E
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${X11BASE}"
+
+MAN1=		aeclients.1 aewm.1
+
+GTKCLIENTS=	aemenu-gtk aepanel-gtk
+XAWCLIENTS=	aemenu-xaw aepanel-xaw aesession set-gnome-pda
 
 .include <bsd.port.pre.mk>
+
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX=	-gtk
+.else
 .endif
 
-do-patch:
-	${REINPLACE_CMD} 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
-		${WRKSRC}/src/aewm.h
-	${REINPLACE_CMD} 's:clients::g' ${WRKSRC}/Makefile
-.if ${HAVE_GNOME:Mgtk20}!=""
-	${REINPLACE_CMD} 's:gtk-config:${GTK_CONFIG}:g' \
-		${WRKSRC}/clients/Makefile
-	${REINPLACE_CMD} 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
-		${WRKSRC}/clients/lib/aeclients.h
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_XFT)
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+MAKE_ENV+=	DEFINES="-DXFT" \
+		EXTRA_INC="`pkg-config --cflags xft`" \
+		EXTRA_LIBS="`pkg-config --libs xft`"
 .endif
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIR/s|clients||g' ${WRKSRC}/Makefile
+.for i in clients/lib/aeclients.h src/aewm.h
+	@${REINPLACE_CMD} -e 's|/etc/X11/|${PREFIX}/etc/|g' ${WRKSRC}/${i}
+.endfor
 
 post-build:
 .if ${HAVE_GNOME:Mgtk20}!=""
@@ -56,30 +55,7 @@ post-build:
 		${XAWCLIENTS}
 .endif
 
-pre-install:
-	${RM} -f ${PLIST}
-.for i in aewm aemenu aepanel ${XAWCLIENTS}
-	${ECHO_CMD} bin/${i} >> ${PLIST}
-.endfor
-.if ${HAVE_GNOME:Mgtk20}!=""
-.for i in ${GTKCLIENTS}
-	${ECHO_CMD} bin/${i} >> ${PLIST}
-.endfor
-.endif
-	${ECHO_CMD} share/examples/aewm/aewmrc.sample >> ${PLIST}
-	${ECHO_CMD} share/examples/aewm/clientsrc.sample >> ${PLIST}
-	${ECHO_CMD} etc/aewmrc >> ${PLIST}
-	${ECHO_CMD} etc/clientsrc >> ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-.endif
-	${ECHO_CMD} @dirrm share/examples/aewm >> ${PLIST}
-
 do-install:
-	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aewm ${PREFIX}/bin
 .for i in ${XAWCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
@@ -88,24 +64,28 @@ do-install:
 .for i in ${GTKCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
-	cd ${PREFIX}/bin && ${LN} -s aemenu-gtk aemenu && \
-		${LN} -s aepanel-gtk aepanel
+	${LN} -sf aemenu-gtk ${PREFIX}/bin/aemenu
+	${LN} -sf aepanel-gtk ${PREFIX}/bin/aepanel
 .else
-	cd ${PREFIX}/bin && ${LN} -s aemenu-xaw aemenu && \
-		${LN} -s aepanel-xaw aepanel
+	${LN} -sf aemenu-xaw ${PREFIX}/bin/aemenu
+	${LN} -sf aepanel-xaw ${PREFIX}/bin/aepanel
 .endif
-	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/aewmrc.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/aewmrc.sample ${PREFIX}/etc/aewmrc
-	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample \
-		${PREFIX}/etc/clientsrc
 	${INSTALL_MAN} ${WRKSRC}/src/aewm.1x ${MANPREFIX}/man/man1/aewm.1
 	${INSTALL_MAN} ${WRKSRC}/clients/aeclients.1x \
 		${MANPREFIX}/man/man1/aeclients.1
+	@${MKDIR} ${PREFIX}/etc/aewm
+	${INSTALL_DATA} ${WRKSRC}/src/aewmrc.sample ${PREFIX}/etc/aewm
+	${INSTALL_DATA} ${WRKSRC}/clients/clientsrc.sample ${PREFIX}/etc/aewm
+.if !exists(${PREFIX}/etc/aewm/aewmrc)
+	cd ${PREFIX}/etc/aewm && ${CP} aewmrc.sample aewmrc
+.endif
+.if !exists(${PREFIX}/etc/aewm/clientsrc)
+	cd ${PREFIX}/etc/aewm && ${CP} clientsrc.sample clientsrc
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+.for i in DESIGN LICENSE NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
