@@ -19,11 +19,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
+NO_PACKAGE=	"Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override"
+
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-NO_PACKAGE=	runtime performance heavily depends on building environment
 
 .include <bsd.port.pre.mk>
 
@@ -77,6 +78,12 @@ ANSWER=	${ANSWER_${ARCH}}
 EXTRA_PATCHES+=	${FILESDIR}/timing_tolerance-patch
 .endif
 
+.if defined(WITH_STATICLIB)
+PLIST_SUB=      WITH_STATICLIB=""
+.else
+PLIST_SUB=      WITH_STATICLIB="@comment "
+.endif
+
 pre-configure:
 	@${ECHO_MSG} "Warning:"
 	@${ECHO_MSG} "Building this port can take long time"
@@ -84,9 +91,10 @@ pre-configure:
 	@${ECHO_MSG} "And sometimes stop building for Athlon."
 	@${ECHO_MSG} "In this case please retype make or rebuild whole atlas."
 	@${ECHO_MSG}
+pre-build:
 .if !defined(PORTS_ARCH)
 	@${ECHO_MSG} "Warning:"
-	@${ECHO_MSG} "If your arch is not correctly detected, you can specify" 
+	@${ECHO_MSG} "If your arch is not correctly detected, you can specify"
 	@${ECHO_MSG} "by yourself."
 	@${ECHO_MSG} "for example : make PORTS_ARCH=P5Int"
 	@${ECHO_MSG} "Available architectures for x86 are:"
@@ -119,12 +127,6 @@ do-configure:
 
 ATLAS_LIBS1=libalapack libatlas libcblas libf77blas libtstatlas
 ATLAS_LIBS2=libptcblas libptf77blas
-.if defined(WITH_STATICLIB)
-PLIST_SUB=      WITH_STATICLIB=""
-.else
-PLIST_SUB=      WITH_STATICLIB="@comment "
-.endif
-
 do-build:
 # make lapack
 .if ! exists(${WRKDIR}/lapack/Makefile)
