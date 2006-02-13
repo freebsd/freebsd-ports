@@ -47,6 +47,9 @@ lib/mysql/libmysqlclient.so.14
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.14
+%%ZLIB%%lib/mysql/libz.a
+%%ZLIB%%lib/mysql/libz.so
+%%ZLIB%%lib/mysql/libz.so.3
 %%DATADIR%%/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
 @dirrm lib/mysql
