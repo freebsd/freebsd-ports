@@ -130,6 +130,7 @@
     SUBDIR += mx4j
     SUBDIR += netbeans
     SUBDIR += netbeans3
+    SUBDIR += netbeans4
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit

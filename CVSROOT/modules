@@ -6853,6 +6853,7 @@ netams		ports/net-mgmt/netams
 netatalk	ports/net/netatalk
 netbeans	ports/java/netbeans
 netbeans3	ports/java/netbeans3
+netbeans4	ports/java/netbeans4
 netcat		ports/net/netcat
 netcdf		ports/science/netcdf
 netcomponents	ports/java/netcomponents
