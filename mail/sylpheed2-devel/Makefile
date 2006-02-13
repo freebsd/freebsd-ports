@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.2.0.rc0
+PORTVERSION=	2.2.0
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.2beta/ \
+MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.rc0/rc/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-LATEST_LINK=	${PORTNAME}2-devel
+LATEST_LINK=	${PORTNAME}22
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
