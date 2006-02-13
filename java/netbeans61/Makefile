@@ -15,7 +15,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
 USE_BZIP2=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 RESTRICTED=	Restrictive license
 

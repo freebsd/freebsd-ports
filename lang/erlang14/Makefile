@@ -31,8 +31,8 @@ COMMENT=	A functional programming language from Ericsson
 # ${JAVA_HOME}/bin is added to the PATH, using the *_ENV macros.
 
 .if !defined(WITHOUT_JAVA)
-USE_JAVA=	1.4+
-JAVA_BUILD=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 # Make sure ${JAVA_HOME}/bin is in the path
 CONFIGURE_ENV+= PATH=${PATH}:${JAVA_HOME}/bin
 MAKE_ENV+=      PATH=${PATH}:${JAVA_HOME}/bin
