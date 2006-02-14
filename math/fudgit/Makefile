@@ -9,8 +9,7 @@ PORTNAME=	Fudgit
 PORTVERSION=	2.41
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.physics.mcgill.ca/pub/Fudgit/
-DISTNAME=	Fudgit_${PORTVERSION}
+MASTER_SITES=	http://ftp.chg.ru/pub/math/Fudgit/
 DISTFILES=	fudgit_${PORTVERSION}.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
@@ -18,6 +17,7 @@ COMMENT=	Multi-purpose data-processing and fitting program
 
 USE_GMAKE=	yes
 MAN1=		fudgit.1
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin
