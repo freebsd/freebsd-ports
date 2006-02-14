@@ -22,7 +22,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
 USE_XLIB=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
 MAN1=		wgoto.1 win.1 wreplace.1 Tag.1 mktags.1 Man.1
 
 PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
@@ -34,6 +33,12 @@ PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
 		Credits fonts mouse
 TUTEDOCS=	hello.c start typescript
 TUTESHS=	findword script send_to_gary
+
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500000)
+BROKEN=		Requires more recent libc
+.endif
 
 post-patch:
 	cd  ${WRKSRC}/tools/win; ${REINPLACE_CMD} -e 's," in " __FUNCTION__ "()",,' \
@@ -61,4 +66,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
