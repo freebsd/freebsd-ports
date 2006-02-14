@@ -194,6 +194,7 @@
     SUBDIR += frikqcc
     SUBDIR += frotz
     SUBDIR += frozenbubble
+    SUBDIR += ftjava
     SUBDIR += fuhquake
     SUBDIR += galaxis
     SUBDIR += galaxyhack
