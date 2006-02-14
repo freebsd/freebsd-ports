@@ -2646,7 +2646,6 @@ ftpmap		ports/security/ftpmap
 ftpmirror	ports/ftp/ftpmirror
 ftpproxy	ports/ftp/ftpproxy
 ftpq		ports/ftp/ftpq
-ftpsearch	ports/ftp/ftpsearch
 ftptool		ports/ftp/ftptool
 ftrace		ports/sysutils/ftrace
 ftrack		ports/mail/ftrack
