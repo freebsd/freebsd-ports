@@ -19,8 +19,6 @@ RUN_DEPENDS=	${X11BASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor
 
 NO_BUILD=	yes
 USE_LINUX_PREFIX=	yes
-PLIST_FILES=	usr/share/icons/hicolor
-PLIST_DIRS=	usr/share/icons
 
 do-install:
 	${INSTALL} -d ${PREFIX}/usr/share/icons
