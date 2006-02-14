@@ -1,7 +1,7 @@
+@unexec %D/etc/rc.d/sockd.sh forcestop 2>/dev/null || true
 bin/socksify
 etc/sockd.conf.example
 etc/socks.conf.example
-etc/rc.d/sockd.sh-dist
 include/socks.h
 lib/libdsocks.so
 lib/libdsocks.so.1
@@ -9,7 +9,6 @@ lib/libsocks.a
 lib/libsocks.so
 lib/libsocks.so.1
 sbin/sockd
-%%PORTDOCS%%%%DOCSDIR%%/README.msproxy
 %%PORTDOCS%%%%DOCSDIR%%/README.socksify
 %%PORTDOCS%%%%DOCSDIR%%/README.survey
 %%PORTDOCS%%%%DOCSDIR%%/README.usage

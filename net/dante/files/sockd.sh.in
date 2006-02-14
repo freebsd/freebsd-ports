@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sockd
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable sockd:
+#
+#sockd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=sockd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/sockd
+pidfile=/var/run/sockd.pid
+required_files=%%PREFIX%%/etc/sockd.conf
+
+sockd_enable=${sockd_enable:-"NO"}
+sockd_flags=${sockd_flags:-"-D"}
+
+load_rc_config $name
+run_rc_command "$1"
