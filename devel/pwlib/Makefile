@@ -8,11 +8,12 @@
 PORTNAME=	pwlib
 PORTVERSION=	1.9.2
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTFILES=	pwlib-v1_9_2-src-tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@energistic.com
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -59,11 +60,11 @@ CONFIGURE_ARGS+=	--disable-openldap
 USE_OPENLDAP=	yes
 .endif
 
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+CFLAGS+=	-fPIC
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib"
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib" STDCCFLAGS+="-I${LOCALBASE}"
-
-#.if ${OSVERSION} < 502101
-#ONLY_FOR_ARCHS=	i386
-#.endif
 
 .include <bsd.port.post.mk>
