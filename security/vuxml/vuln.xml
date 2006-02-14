@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d7c1d00d-9d2e-11da-8c1d-000e0c2e438a">
+    <topic>ipfw -- IP fragment denial of service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_2</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>The firewall maintains a pointer to layer 4 header
+	  information in the event that it needs to send a TCP reset
+	  or ICMP error message to discard packets.  Due to incorrect
+	  handling of IP fragments, this pointer fails to get
+	  initialized.</p>
+	<p>Impact:</p>
+	<p>An attacker can cause the firewall to crash by sending ICMP
+	  IP fragments to or through firewalls which match any reset,
+	  reject or unreach actions.</p>
+	<p>Workaround:</p>
+	<p>Change any reset, reject or unreach actions to deny. It
+	  should be noted that this will result in packets being
+	  silently discarded.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0054</cvename>
+      <freebsdsa>SA-06:04</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-11</discovery>
+      <entry>2006-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1613db79-8e52-11da-8426-000fea0a9611">
     <topic>kpopup -- local root exploit and local denial of service</topic>
     <affects>
