@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gok
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	accessibility sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -22,7 +21,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
