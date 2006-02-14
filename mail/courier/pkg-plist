@@ -13,10 +13,12 @@
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/aliases
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/esmtpacceptmailfor.dir
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/esmtppercentrelay.dir
+@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/filters
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0750 -d %D/etc/courier/filters/active
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/shared
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/shared.tmp
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0755 -d %D/etc/courier/smtpaccess
+@exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/added
 @exec install -o %%MAILOWN%% -g %%MAILGRP%% -m 0700 -d %D/etc/courier/webadmin/removed
 @unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
@@ -495,6 +497,7 @@ share/courier/rootcerts/verisign-time-stamping-authority.pem
 share/courier/rootcerts/visa-ecommerce-root.pem
 share/courier/rootcerts/xramp-global-certification-authority.pem
 @dirrm share/courier/rootcerts
+share/courier/sharedindexupdate
 share/courier/sqwebmail/cleancache.pl
 share/courier/sqwebmail/html/en-us/CHARSET
 share/courier/sqwebmail/html/en-us/ISPELLDICT
@@ -733,5 +736,23 @@ share/courier/sqwebmail/webgpg
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
 @exec chown %%MAILOWN%%:%%MAILGRP%% %D/sbin/showmodules
+@exec chmod 0555 %D/libexec/courier
+@exec chmod 0555 %D/libexec/courier/modules
+@exec chmod 0555 %D/libexec/courier/modules/dsn
+@exec chmod 0555 %D/libexec/courier/modules/esmtp
+%%WITHFAX%%@exec chmod 0555 %D/libexec/courier/modules/fax
+@exec chmod 0555 %D/libexec/courier/modules/local
+%%WITHUUCP%%@exec chmod 0555 %D/libexec/courier/modules/uucp
+@exec chmod 0555 %D/libexec/courier/webmail
+@exec chmod 0555 %D/libexec/filters
+@exec chmod 0555 %D/share/courier
+@exec chmod 0555 %D/share/courier/couriermlm
+@exec chmod 0555 %D/share/courier/courierwebadmin
+%%WITHFAX%%@exec chmod 0555 %D/share/courier/faxmail
+@exec chmod 0555 %D/share/courier/rootcerts
+@exec chmod 0555 %D/share/courier/sqwebmail
+@exec chmod 0555 %D/share/courier/sqwebmail/html
+@exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
+@exec chmod 0555 %D/share/courier/sqwebmail/images
 @unexec echo y | crontab -u %%CACHEOWN%% -r 2>/dev/null || true
 @unexec rm -rf %%CALENDIR%% %%CACHEDIR%% 2>/dev/null || true

@@ -38,3 +38,11 @@
 	Documentation (if installed locally) is located in
 	%%DOCSDIR%%/ otherwise see
 	http://www.Courier-MTA.org/
+
+	If you are planning to serve shared maildirs, then
+	you should create a cron job that runs at regular
+	intervals (once every few hours is fine) that
+	executes the following script to update the
+	shared folder index:
+
+		%%PREFIX%%/share/courier/sharedindexupdate
