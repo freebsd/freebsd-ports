@@ -19,6 +19,8 @@ COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
+IGNORE=		"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
+
 LATEST_LINK=	${PORTNAME}22
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
