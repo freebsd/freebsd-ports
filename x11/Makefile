@@ -85,7 +85,6 @@
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
     SUBDIR += gxset
-    SUBDIR += gyroscope
     SUBDIR += idesk
     SUBDIR += imwheel
     SUBDIR += kb2mb2

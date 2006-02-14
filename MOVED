@@ -2177,3 +2177,4 @@ print/acroread||2006-02-09|Remove expired print/acroread and related ports
 print/acroread5-commfont||2006-02-09|Remove expired print/acroread and related ports
 chinese/pcmanfm|x11-fm/pcmanfm|2006-02-09|Move to new category
 www/gnuinfo||2006-02-14|Remove expired port
+x11/gyroscope||2006-02-14|Remove expired port
