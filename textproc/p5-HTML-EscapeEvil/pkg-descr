@@ -1,0 +1,5 @@
+HTML::EscapeEvil is a Perl module that will escape HTML tags considered
+evil (useful for user inut filtering).  It is somewhat similar to
+HTML::TagFilter, but escapes tags instead of removing them.
+
+WWW: http://search.cpan.org/dist/HTML-EscapeEvil/
