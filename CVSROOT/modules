@@ -3738,7 +3738,6 @@ hlserver-opfor	ports/games/hlserver-opfor
 hlserver-psychostats	ports/games/hlserver-psychostats
 hlserver-si	ports/games/hlserver-si
 hlserver-ts	ports/games/hlserver-ts
-hlserver-tsc	ports/games/hlserver-tsc
 hlserver-vs	ports/games/hlserver-vs
 hlserver-wasteland	ports/games/hlserver-wasteland
 hlserver-wizwars	ports/games/hlserver-wizwars

@@ -283,7 +283,6 @@
     SUBDIR += hlserver-psychostats
     SUBDIR += hlserver-si
     SUBDIR += hlserver-ts
-    SUBDIR += hlserver-tsc
     SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
