@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_frontpage
 PORTVERSION=	5.0.2.2635
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	# Requries manual fetch of files from http://www.rtr.com/
 PKGNAMESUFFIX=	${AP_VERSION:S/+//}
@@ -37,7 +37,7 @@ USE_APACHE?=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-AP_EXTRAS=	-Wc,-DFreeBSD
+AP_EXTRAS=	-Wc,-DFREEBSD
 
 FP_SETPERM=	${FPDIR}/set_default_perms.sh
 
