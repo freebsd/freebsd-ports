@@ -1,6 +1,7 @@
 bin/scim-make-table
 lib/scim-1.0/IMEngine/table.so
 lib/scim-1.0/SetupUI/table-imengine-setup.so
+man/man1/scim-make-table.1
 share/scim/icons/table.png
 share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
 share/locale/zh_TW/LC_MESSAGES/scim-tables.mo
