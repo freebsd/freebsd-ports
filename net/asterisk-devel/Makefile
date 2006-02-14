@@ -1,99 +1,160 @@
-# New ports collection makefile for:	asterisk
-# Date created:				17 October 2003
-# Whom:					Maxim Sobolev <sobomax@portaone.com>
+# New ports collection makefile for:	asterisk-current
+# Date created:				15 January 2006
+# Whom:					Luigi Rizzo
 #
 # $FreeBSD$
 #
 
-PORTNAME=	asterisk
-PORTVERSION=	1.2.3
+PORTNAME=	asterisk-devel
+PORTVERSION=	1.4	# the head branch
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+MASTER_SITES=	# none, we fetch directly from svn (or cvs)
+DISTFILES=	# none
 
-MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	An Open Source PBX and telephony toolkit
+MAINTAINER=	luigi@FreeBSD.org
+COMMENT=	An Open Source PBX and telephony toolkit - head branch
 
-PATCHFILES=	asterisk122_codec_negotiation-20060125.diff.gz
-PATCH_SITES=	http://www.portaone.com/~bamby/public/
+# --- BUILD OPTIONS ---
+#
+# If you run "make -DPLAIN" you will only run the svn distribution
+# without any local change. Otherwise, you will use whatever
+# patch-* and src*.tgz that is in the files directory.
+# If you run "make -DNO_FETCH" you will not update the sources from
+# the latest version in the svn repository.
+#
+# Other options are available with "make config", below.
+#
+# In general, the original asterisk code has some tests in the Makefiles
+# to check whether certain packages are installed, and use them in case,
+# without giving the user a chance to override the decision.
+# Only in a limited number of cases (zaptel, libpri...) there are
+# WITHOUT_FOO Makefile variables to disable the use of a given package.
+# The options below are designed with the above in mind.
+#
+# DEVELBSD	use the bsd-specific modifications that are not
+#		integrated yet in the trunk.
+#		If unset, use trunk, but it is not guaranteed to
+#		compile cleanly on FreeBSD
+#
+# ZAPTEL	support for the ZAPTEL drivers. Strictly speaking,
+#		you would need that only with analog or ISDN telephony
+#		cards, but a lot of functionality in asterisk relies on
+#		this driver, so you might have a hard time without it.
+#
+# PRI		support for ISDN PRI channels. Not necessary unless you
+#		have this cards.
+#
+# NEWT		make sure newt is installed, if you want to compile astman.
+#
+# SPEEX		make sure it has speex, additional codec.
+#
+# H323		make sure the openh323 packages are installed.
+#		this is not tested, at the moment.
+#
+# Database support at the moment includes odbc, pgsql, sqlite and tds
+# but there is no option to configure them.
 
-BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
-		newt.51:${PORTSDIR}/devel/newt \
-		curl.3:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+OPTIONS=	\
+		DEVELBSD	"BSD development version" off \
+		ZAPTEL	"Zaptel (you probably want it)" on \
+		PRI	"PRI support (normally off)" off \
+		H323	"OpenH323 support (default off)" off \
+		NEWT	"newt library, required for astman" off \
+		SPEEX	"speex library, optional codec" off \
 
-ONLY_FOR_ARCHS=	i386 sparc64 amd64
+# Do not try on other architectures, no idea how it works.
+ONLY_FOR_ARCHS=	i386	# maybe more but it is untested.
 
-GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/editline
+# We are working against -current, so it is not meant to be
+# installed or packaged automatically.
+
+RESTRICTED=	experimental version
+NO_INSTALL=	"not meant to install"
+NO_PACKAGE=	not meant to build a package
+
+EXTRA_SOUNDS = \
+	ftp://213.156.62.146/pub/linux/asterisk/sounds/it/it_mm_sounds_20041110.tar.gz
+
+# local components
+# The code uses gmake and flex/bison.
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_RC_SUBR=	asterisk.sh
-USE_REINPLACE=	yes
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MKDIR="${MKDIR}" \
-		PWLIBDIR=${PWLIBDIR} \
-		OPENH323DIR=${OPENH323DIR} \
-		OSVERSION=${OSVERSION} \
-		CXX="${CXX}"
 
-MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
+# Editline use autoconf, but the configure is there already,
+# so these are just reminders.
+# GNU_CONFIGURE=	yes
+# CONFIGURE_WRKSRC=	${WRKSRC}/editline
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.pre.mk>	# need to include this before testing options.
 
-PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib; make -V WRKSRC
-OPENH323DIR!=	cd ${PORTSDIR}/net/openh323; make -V WRKSRC
+# Targets for the fetch command.
 
-.if ${ARCH} != "i386"
-WITHOUT_H323=	1
-WITHOUT_ZAPTEL=	1
+FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+.if defined(WITH_DEVELBSD)
+# use the FreeBSD-specific version
+LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/bsd
+REMOTE_REPO= http://svn.digium.com/svn/asterisk/team/rizzo/base
+.else
+# use the main version.
+LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/asterisk
+REMOTE_REPO= http://svn.digium.com/svn/asterisk/trunk/asterisk
+.endif
+REPO_CMD=  \
+	if [ -f asterisk ] ; then \
+		svn update ${REMOTE_REPO} . ; else \
+	svn checkout ${REMOTE_REPO} . ; fi
+
+do-fetch:
+	${MKDIR} ${LOCAL_REPO}
+	[ "x${NO_FETCH}" != "x" ] || (cd ${LOCAL_REPO}; ${REPO_CMD} )
+
+.if defined(PLAIN)	# disable any local patches
+do-patch:
+	@echo "Local patches disabled, to check the FreeBSD compliance"
+	@echo "of the standard asterisk distribution."
 .endif
 
-.if defined(WITHOUT_H323)
-PLIST_SUB+=	WITH_H323="@comment "
+do-extract:
+	${MKDIR} ${WRKDIR}
+	@echo "Copying main repository"
+	${CP} -Rp ${LOCAL_REPO} ${WRKSRC}
+.if defined(PLAIN)
+	@echo "Not extracting local distributions"
 .else
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
-		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
-PLIST_SUB+=	WITH_H323=""
-MAKE_ENV+=	WITH_H323=1
+	@echo "Extracting local distributions"
+	(cd ${WRKSRC}; \
+	for fn in ${FILESDIR}/src*.tgz ; do [ ! -f $${fn} ] || tar xvzf $${fn} ; done )
 .endif
 
-.if defined(WITHOUT_ZAPTEL)
-PLIST_SUB+=	WITH_ZAPTEL="@comment "
-MAKE_ENV+=	WITHOUT_ZAPTEL=1
-.else
-BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+.if defined(WITH_H323)
+# this is untested.
+# put in the prerequisites
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build \
+		${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
+.endif
+
+.if defined(WITH_ZAPTEL)
+# first, put in the prerequisites.
+BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
-PLIST_SUB+=	WITH_ZAPTEL=""
-MAKE_ENV+=	WITH_ZAPTEL=1
-.endif
-
-#
-# WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
-# similarly
-.if defined(WITHOUT_ODBC)
-PLIST_SUB+=	WITH_ODBC="@comment "
+# now look at pri (no pri if no zaptel)
+.if defined(WITH_PRI)
+LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
 .else
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-PLIST_SUB+=	WITH_ODBC=""
-MAKE_ENV+=	WITH_ODBC=1
+MAKE_ENV+=	WITHOUT_PRI=1
 .endif
-
-.if defined(WITHOUT_FAX)
-PLIST_SUB+=	WITH_FAX="@comment "
 .else
-MAKE_ENV+=	WITH_FAX=1
-LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
-PLIST_SUB+=	WITH_FAX=""
+MAKE_ENV+=	WITHOUT_ZAPTEL=1
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+.if defined(WITH_NEWT)
+# newt is required for astmon
+LIB_DEPENDS+=	newt.51:${PORTSDIR}/devel/newt
+.endif
+
+.if defined(WITH_SPEEX)
+# support for additional codecs
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+.endif
 
 .include <bsd.port.post.mk>
