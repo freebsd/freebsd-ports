@@ -9,14 +9,11 @@ PORTNAME=	mutemix
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
+MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
-
-DEPRECATED=	"mastersite disappeared, no longer maintained by author"
-EXPIRATION_DATE=	2005-12-31
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
