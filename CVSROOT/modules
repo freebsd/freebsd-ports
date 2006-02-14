@@ -9598,6 +9598,7 @@ pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
 pecl-operator	ports/devel/pecl-operator
 pecl-panda	ports/print/pecl-panda
+pecl-paradox	ports/databases/pecl-paradox
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-radius	ports/net/pecl-radius
