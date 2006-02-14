@@ -20,9 +20,9 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.3
-SNAP_DATE=	.20060211.0037
-_UPD_LINE_NO=	10
+PORTVER_MAJ=	3.6.4
+#SNAP_DATE=	.20060211.0037
+_UPD_LINE_NO=	9
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.3.20060203.1409
 
