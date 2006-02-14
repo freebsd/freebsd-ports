@@ -10766,7 +10766,6 @@ pychm		ports/textproc/pychm
 pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pydbx		ports/databases/pydbx
-pyfind		ports/sysutils/pyfind
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
 pykawari	ports/games/pykawari
