@@ -101,7 +101,7 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 @exec mkdir -p %D/src/redhat/RPMS/i486
 @exec mkdir -p %D/src/redhat/RPMS/i586
 @exec mkdir -p %D/src/redhat/RPMS/i686
-@exec mkdir -p $D/src/redhat/RPMS/ia64
+@exec mkdir -p %D/src/redhat/RPMS/ia64
 @exec mkdir -p %D/src/redhat/RPMS/noarch
 @exec mkdir -p %D/src/redhat/RPMS/sparc
 @exec mkdir -p %D/src/redhat/RPMS/sparcv9
