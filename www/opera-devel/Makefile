@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://snapshot.opera.com/unix/${OPERA_VER}-${OPERA_REL}/intel-freebsd/
 PKGNAMESUFFIX=	-devel
@@ -25,28 +26,32 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
-.ifndef(WITHOUT_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+OPTIONS=	SHARED	"Use a shared Qt library (instead of static)"	${QT_PRESENT} \
+		ASPELL	"Use the aspell library for spell checking"	on
+
+.if exists(${X11BASE}/lib/libqt-mt.prl)
+QT_PRESENT=	on
+.else
+QT_PRESENT=	off
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 600000
 OPERA_TYPE=	4
-WITH_SHARED=	yes
 .elif ${OSVERSION} >= 500000
 OPERA_TYPE=	3
-WITH_SHARED=	yes
-.elifdef WITH_SHARED
-OPERA_TYPE=	2
 .else
-OPERA_TYPE=	1
+OPERA_TYPE=	2
+.endif
+
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
 .if defined(WITH_SHARED)
@@ -54,6 +59,14 @@ OPERA_LIB=	shared
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 .else
 OPERA_LIB=	static
+OPERA_TYPE=	1
+.endif
+
+.if ${OPERA_TYPE} == 1 && ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
+.endif
 .endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
@@ -66,18 +79,6 @@ PLIST_SUB+=	GNOME="@comment "
 PLIST_SUB+=	KDE=""
 .else
 PLIST_SUB+=	KDE="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_ASPELL) || !defined(WITH_SHARED)
-	@${ECHO_CMD} '===> The following options are available for this port:'
-	@${ECHO_CMD} '===>'
-.if !defined(WITHOUT_ASPELL)
-	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
-.endif
-.if !defined(WITH_SHARED)
-	@${ECHO_CMD} '===> Define WITH_SHARED to use a shared Qt library.'
-.endif
 .endif
 
 post-patch:
