@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.04.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/stable/1_0x/
 
@@ -26,10 +27,18 @@ PORTDOCS=	*
 CONFIGURE_ARGS=	--disable-bluerfsearch
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|%zd|%d|g' -e 's|%zi|%i|g' \
+		${WRKSRC}/common/phone/at/atgen.c \
+		${WRKSRC}/common/phone/obex/obexgen.c \
+		${WRKSRC}/gammu/depend/nokia/dct3trac/wmx-gsm.c
+.endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's@ installdocs@@g' \
 		${WRKSRC}/cfg/Makefile.glo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
