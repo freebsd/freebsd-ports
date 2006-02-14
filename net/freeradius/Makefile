@@ -21,7 +21,7 @@ LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 
-USE_RC_SUBR=	radiusd
+USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:13
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -47,6 +47,10 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CFLAGS+=	-fPIC
+.endif
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
 WITH_KERBEROS=	yes
