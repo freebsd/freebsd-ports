@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.107 2006/02/11 23:05:34 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.110 2006/02/14 03:19:10 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -176,7 +176,8 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS INSTALLS_OMF USE_KDELIBS_VER
+	PLIST_FILES OPTIONS INSTALLS_OMF USE_KDELIBS_VER USE_GETTEXT
+	USE_RC_SUBR
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -701,6 +702,11 @@ sub checkplist {
 				"porting guide at ".
 				"http://www.FreeBSD.org/gnome/docs/porting.html ".
 				"for more details)");
+		}
+
+		if ($_ =~ m|\.mo$| && $makevar{USE_GETTEXT} eq '') {
+			&perror("WARN: $file [$.]: installing gettext translation files, ".
+				"please define USE_GETTEXT as appropriate");
 		}
 
 		if ($autoinfo && $_ =~ /\.info$/) {
@@ -2544,19 +2550,34 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET PERL_RUN_DEPENDS PERL_BUILD_DEPENDS
 	# check for deprecated use of USE_RC_SUBR, and current syntax
 	#
 	if ($tmp =~ /\nUSE_RC_SUBR=([\s]*)(.*)/) {
-		my $subr_value = $2;
+		my $subr_value = $makevar{USE_RC_SUBR};
+		if ($subr_value eq '') {
+			$subr_value = $2;
+		}
 
 		if (($subr_value =~ /^yes$/i) ||
 			($subr_value =~ /^true$/i) ||
 			($subr_value =~ /^1$/)) {
-			&perror("FATAL: The value of the USE_RC_SUBR variable should ".
-				"be the name of the intended rc.d script, and there should ".
-				"be a corresponding file in the files/ directory.");
+			&perror("FATAL: $file: The value of the USE_RC_SUBR variable ".
+				"should be the name of the intended rc.d script, and there ".
+				"should be a corresponding file in the files/ directory.");
 		} else {
 			foreach my $i (split(/\s/, $subr_value)) {
-				if (! -f "files/$i.in") {
-					&perror("FATAL: $i listed in USE_RC_SUBR, ".
+				my $mvar;
+				if ($i =~ /\$\{([^}]+)\}/) {
+					$mvar = $1;
+					if (defined($makevar{$mvar})) {
+						$i = $makevar{$mvar};
+					} else {
+						$i = &getMakevar($mvar);
+					}
+				}
+				if ($i ne '' && ! -f "files/$i.in") {
+					&perror("FATAL: $file: $i listed in USE_RC_SUBR, ".
 						"but files/$i.in is missing.");
+				} elsif ($i eq '' && $mvar ne '') {
+					&perror("WARN: $file: possible undefined make variable ".
+						"$mvar used as the value for USE_RC_SUBR.");
 				}
 			}
 		}
@@ -2730,6 +2751,16 @@ EOF
 				"found. if so, use $cmdnames{$i}.");
 		}
 	}
+}
+
+sub get_makevar {
+		my($mvar) = @_;
+		my($cmd, $result);
+
+		$cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", $mvar);
+		$result = `$cmd`;
+
+		return chomp $result;
 }
 
 sub is_predefined {
