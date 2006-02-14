@@ -11,6 +11,16 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.4
+#
+
+- dspam_train: support for training using an index file to define the order
+of ham/spam
+
+- dspam_stats: OR --> OCA
+
+
+###########################################################################
 # dspam-devel-3.6.3.20060211.0037
 #
 

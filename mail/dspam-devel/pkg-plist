@@ -75,7 +75,6 @@ libdata/pkgconfig/dspam.pc
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
