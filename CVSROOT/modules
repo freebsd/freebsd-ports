@@ -2636,7 +2636,6 @@ ftjam		ports/devel/ftjam
 ftjava		ports/games/ftjava
 ftnchek		ports/devel/ftnchek
 ftp-tls		ports/ftp/ftp-tls
-ftp4all		ports/ftp/ftp4all
 ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
 ftpd-tls	ports/ftp/ftpd-tls
