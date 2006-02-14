@@ -2817,7 +2817,6 @@ gdesklets-ebichuclock	ports/x11-clocks/gdesklets-ebichuclock
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-irc	ports/irc/gdesklets-irc
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
-gdesklets-praytime	ports/x11-clocks/gdesklets-praytime
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-sensor-displayconstraints	ports/deskutils/gdesklets-sensor-displayconstraints
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
