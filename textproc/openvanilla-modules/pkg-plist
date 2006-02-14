@@ -1,0 +1,24 @@
+%%OVIMArray%%lib/openvanilla/OVIMArray.so
+%%OVIMArray%%lib/openvanilla/OVIMArray/ArrayShortCode.cin
+%%OVIMArray%%lib/openvanilla/OVIMArray/ArraySpecial.cin
+%%OVIMArray%%lib/openvanilla/OVIMArray/array30.cin
+%%OVIMBig5%%lib/openvanilla/OVIMBig5.so
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric.so
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/cj.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/ehq.cin
+%%OVIMGeneric%%lib/openvanilla/OVIMGeneric/iroha.cin
+%%OVIMPOJ_Holo%%lib/openvanilla/OVIMPOJ-Holo.so
+%%OVIMPOJ_Holo%%lib/openvanilla/OVIMPOJ-Holo/poj-holo.cin
+%%OVIMPhonetic%%lib/openvanilla/OVIMPhonetic.so
+%%OVIMRoman%%lib/openvanilla/OVIMRoman.so
+%%OVIMTibetan%%lib/openvanilla/OVIMTibetan.so
+%%OVIMUnicode%%lib/openvanilla/OVIMUnicode.so
+%%OVIMUnicode%%@dirrmtry lib/openvanilla/OVIMUnicode
+%%OVIMTibetan%%@dirrmtry lib/openvanilla/OVIMTibetan
+%%OVIMRoman%%@dirrmtry lib/openvanilla/OVIMRoman
+%%OVIMPhonetic%%@dirrmtry lib/openvanilla/OVIMPhonetic
+%%OVIMPOJ_Holo%%@dirrmtry lib/openvanilla/OVIMPOJ-Holo
+%%OVIMGeneric%%@dirrmtry lib/openvanilla/OVIMGeneric
+%%OVIMBig5%%@dirrmtry lib/openvanilla/OVIMBig5
+%%OVIMArray%%@dirrmtry lib/openvanilla/OVIMArray
+@dirrmtry lib/openvanilla
