@@ -21,7 +21,6 @@
     SUBDIR += gdesklets-clock
     SUBDIR += gdesklets-countdown
     SUBDIR += gdesklets-ebichuclock
-    SUBDIR += gdesklets-praytime
     SUBDIR += glclock
     SUBDIR += gtubeclock
     SUBDIR += kdetoys3
