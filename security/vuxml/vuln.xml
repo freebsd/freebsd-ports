@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dade3316-9d31-11da-8c1d-000e0c2e438a">
+    <topic>IEEE 802.11 -- buffer overflow</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_3</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>An integer overflow in the handling of corrupt IEEE 802.11
+	  beacon or probe response frames when scanning for existing
+	  wireless networks can result in the frame overflowing a
+	  buffer.</p>
+	<p>Impact:</p>
+	<p>An attacker able broadcast a carefully crafted beacon or
+	  probe response frame may be able to execute arbitrary code
+	  within the context of the FreeBSD kernel on any system
+	  scanning for wireless networks.</p>
+	<p>Workaround:</p>
+	<p>No workaround is available, but systems without IEEE 802.11
+	  hardware or drivers loaded are not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0226</cvename>
+      <freebsdsa>SA-06:05</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-18</discovery>
+      <entry>2006-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7c1d00d-9d2e-11da-8c1d-000e0c2e438a">
     <topic>ipfw -- IP fragment denial of service</topic>
     <affects>
