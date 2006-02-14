@@ -3,6 +3,7 @@ bin/prelude-manager
 etc/prelude-manager/prelude-manager.conf-dist
 include/prelude-manager/prelude-manager.h
 lib/prelude-manager/filters/idmef-criteria.so
+lib/prelude-manager/reports/db.so
 lib/prelude-manager/reports/debug.so
 lib/prelude-manager/reports/relaying.so
 lib/prelude-manager/reports/textmod.so
@@ -14,6 +15,7 @@ lib/prelude-manager/reports/xmlmod.so
 @dirrm lib/prelude-manager/filters
 @dirrm lib/prelude-manager
 @dirrm include/prelude-manager
-@unexec rmdir %D/etc/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/etc/prelude-manager`` to remove any configuration files left." | fmt
-@unexec rmdir /var/run/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/run/prelude-manager`` to remove any files left." | fmt
-@unexec rmdir /var/spool/prelude-manager 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/spool/prelude-manager`` to remove any files left." | fmt
+@dirrmtry etc/prelude-manager
+@dirrmtry /var/run/prelude-manager
+@dirrmtry /var/spool/prelude-manager
+@unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-manager, /var/run/prelude-manager and /var/spool/prelude-manager directories to clean up any files left." | fmt
