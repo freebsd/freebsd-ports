@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dante
-PORTVERSION=	1.1.15
+PORTVERSION=	1.1.19
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
@@ -24,13 +24,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 INSTALLS_SHLIB=	yes
 
+USE_RC_SUBR=	sockd.sh
+
 MAN5=	sockd.conf.5 socks.conf.5
 MAN8=	sockd.8
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${PREFIX}/etc/socks.conf.example
 	@${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${PREFIX}/etc/sockd.conf.example
-	@${INSTALL_SCRIPT} ${FILESDIR}/sockd.sh ${PREFIX}/etc/rc.d/sockd.sh-dist
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 555 ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${DOCSDIR}
