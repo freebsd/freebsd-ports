@@ -2622,7 +2622,6 @@ frozenbubble	ports/games/frozenbubble
 fsbackup	ports/sysutils/fsbackup
 fsh		ports/security/fsh
 fsmgenerator	ports/devel/fsmgenerator
-fspanel		ports/x11/fspanel
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
 fsplib		ports/net/fsplib
