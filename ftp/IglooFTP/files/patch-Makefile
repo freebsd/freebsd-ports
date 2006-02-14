@@ -1,37 +1,19 @@
---- Makefile.orig	Thu Apr 15 11:05:15 1999
-+++ Makefile	Fri May 28 18:43:37 1999
-@@ -1,14 +1,15 @@
+--- Makefile.orig	Thu Apr 15 18:05:15 1999
++++ Makefile	Tue Feb 14 16:19:17 2006
+@@ -1,9 +1,9 @@
  SHELL=/bin/sh
--CC = gcc
--C_FLAGS = -Wall -g -O2 -m486 -fno-strength-reduce
+ CC = gcc
+ C_FLAGS = -Wall -g -O2 -m486 -fno-strength-reduce
 -GTK_CFLAGS = `gtk-config --cflags`
 -GTK_LIBS = `gtk-config --libs` 
 -LFLAGS = $(GTK_LIBS) -lresolv -lXmu -lXt -lSM -lICE
-+CC?= gcc
-+C_FLAGS = $(CFLAGS)
-+# -Wall -g -O2 -m486 -fno-strength-reduce
 +GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
 +GTK_LIBS = `$(GTK_CONFIG) --libs` 
 +LFLAGS = $(GTK_LIBS) -lXmu -lXt -lSM -lICE
  PROGNAME = IglooFTP
  PROGNAME-STATIC = IglooFTP-static
  VERSION = 0.6.1
- VERSION_DATE = 1999
--DESTDIR = /usr/local
-+DESTDIR?= ${PREFIX}
- BIN_PATH = $(DESTDIR)/bin
- MAN_PATH = $(DESTDIR)/man
- SHARE_PATH = $(DESTDIR)/share/$(PROGNAME)
-@@ -16,6 +17,8 @@
- RPM_BUILDPATH = /usr/src/redhat
- CODE_LINES = `cat *.c *.h | grep -ch -e "[[:alpha:]|[:punct:]]"` 
- 
-+all: $(PROGNAME)
-+
- $(PROGNAME): main.o GTKmisc.o menu.o toolbar.o connectbar.o statusbar.o\
- 	dirlist.o ftplist.o queue.o log.o console.o dialog.o chmod.o\
- 	version.o custom.o string.o pixmaps.o color.o cursor.o\
-@@ -50,14 +53,14 @@
+@@ -50,14 +50,14 @@
  	@if ! test -e $(SHARE_PATH)/app_ass; then \
  	echo "Making $(SHARE_PATH)/app_ass directory ..."; mkdir -m 0755 $(SHARE_PATH)/app_ass; \
  	else :; fi;
@@ -54,7 +36,7 @@
  
  
  
-@@ -111,7 +114,7 @@
+@@ -111,7 +111,7 @@
  	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
  	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
  	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h

@@ -21,6 +21,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
+ALL_TARGET=	# empty
+MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}
+
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500000)
+BROKEN=		Requires more recent libc
+.endif
 
 post-extract:
 	@${RM} ${WRKSRC}/../share/docs/LICENSE~
@@ -32,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
