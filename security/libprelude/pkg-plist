@@ -46,12 +46,13 @@ include/libprelude/prelude-option-wide.h
 include/libprelude/prelude-option.h
 include/libprelude/prelude-plugin.h
 include/libprelude/prelude-string.h
+include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
 include/libprelude/variable.h
 lib/libprelude.a
 lib/libprelude.so
-lib/libprelude.so.4
+lib/libprelude.so.6
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prelude/Prelude.bs
@@ -114,4 +115,5 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libprelude
 @dirrm etc/prelude/default
-@unexec %D/etc/prelude 2> /dev/null || true
+@dirrmtry etc/prelude/profile
+@dirrmtry etc/prelude
