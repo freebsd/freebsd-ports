@@ -7,15 +7,16 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.17.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTFILES=	openh323-v1_17_3-src-tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steve@energistic.com
 COMMENT=	A H323 Video Conferencing library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		pt_FreeBSD_x86_r.1:${PORTSDIR}/devel/pwlib
+		pt_r.1:${PORTSDIR}/devel/pwlib
 
 WRKSRC=	${WRKDIR}/openh323_v1_17_3
 

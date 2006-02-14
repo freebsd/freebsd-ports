@@ -1,5 +1,5 @@
---- openh323u.mak.in.orig	Thu Feb  2 12:39:34 2006
-+++ openh323u.mak.in	Thu Feb  2 12:39:51 2006
+--- openh323u.mak.in.orig	Mon Jan  3 07:25:51 2005
++++ openh323u.mak.in	Tue Feb 14 22:41:55 2006
 @@ -203,6 +203,10 @@
  OH323_INCDIR = $(OPENH323DIR)/include
  endif # PREFIX
@@ -11,3 +11,12 @@
  ifndef OH323_LIBDIR
  OH323_LIBDIR = $(OPENH323DIR)/lib
  endif # OH323_LIBDIR
+@@ -216,7 +220,7 @@
+ OH323_SUFFIX = $(OBJ_SUFFIX)
+ endif # NOTRACE
+ 
+-OH323_BASE  = h323_$(PLATFORM_TYPE)_$(OH323_SUFFIX)$(LIB_TYPE)
++OH323_BASE  = h323_$(OH323_SUFFIX)$(LIB_TYPE)
+ OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX)
+ 
+ LDFLAGS	    += -L$(OH323_LIBDIR)
