@@ -540,6 +540,7 @@
     SUBDIR += senken
     SUBDIR += senso
     SUBDIR += sex
+    SUBDIR += sfbol
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += six
