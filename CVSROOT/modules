@@ -11735,6 +11735,7 @@ setquota	ports/sysutils/setquota
 settitle	ports/x11/settitle
 sex		ports/games/sex
 seyon		ports/comms/seyon
+sfbol		ports/games/sfbol
 sfio		ports/devel/sfio
 sformat		ports/sysutils/sformat
 sfront		ports/audio/sfront
