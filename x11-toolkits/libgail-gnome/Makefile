@@ -31,4 +31,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not build on 4.X
+.endif
+
+.include <bsd.port.post.mk>
