@@ -1,5 +1,7 @@
-Asterisk is an Open Source PBX and telephony toolkit.  It is, in a
-sense, middleware between Internet and telephony channels on the bottom,
-and Internet and telephony applications at the top.
+This port is for the head branch of Asterisk, an open source PBX.
+It is meant as a convenience to developers who want to test the
+FreeBSD compliance of the main development branch and to support
+FreeBSD-specific patches that may not find room in the original
+distribution.
 
 WWW: http://www.asteriskpbx.com
