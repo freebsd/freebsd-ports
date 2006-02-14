@@ -1,0 +1,9 @@
+Commons IO is a library of utilities to assist with developing IO functionality.
+
+There are three main areas included:
+
+    * Utility classes - with static methods to perform common tasks
+    * Filters - various implementations of file filters
+    * Streams - useful stream, reader and writer implementations
+
+WWW: http://jakarta.apache.org/commons/io/

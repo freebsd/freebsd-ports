@@ -405,6 +405,7 @@
     SUBDIR += ixlib
     SUBDIR += jakarta-commons-chain
     SUBDIR += jakarta-commons-configuration
+    SUBDIR += jakarta-commons-io
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += java-util-concurrent
