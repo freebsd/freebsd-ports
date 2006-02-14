@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-httpclient
-DISTVERSION=	3.0-rc4
+DISTVERSION=	3.0
 CATEGORIES=	java www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/httpclient/source
