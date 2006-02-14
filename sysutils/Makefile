@@ -448,7 +448,6 @@
     SUBDIR += pwgen
     SUBDIR += pwgen2
     SUBDIR += pwsafe
-    SUBDIR += pyfind
     SUBDIR += qlogtools
     SUBDIR += qtpkg
     SUBDIR += radeontool
