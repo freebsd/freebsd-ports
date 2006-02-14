@@ -37,7 +37,9 @@ CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
 .endif
 
 .if defined(WITH_CJK)
-PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/
+PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
+                ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
+                http://bsdchat.com/dist/firefly-cjk-patchset/
 PATCHFILES+=	cjk-freetype-2.1.10-20051219.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
