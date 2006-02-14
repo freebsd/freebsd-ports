@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-large-files --without-rlm_sql_unixodbc \
 		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
 		--without-rlm_sql_db2
+MAKE_ARGS+=	LDFLAGS=-L${LOCALBASE}/lib
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
