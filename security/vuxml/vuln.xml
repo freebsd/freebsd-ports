@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="52ba7713-9d42-11da-8c1d-000e0c2e438a">
+    <topic>pf -- IP fragment handling panic</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_4</lt></range>
+	<range><gt>5.4</gt><lt>5.4_10</lt></range>
+	<range><gt>5.3</gt><lt>5.3_25</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>A logic bug in pf's IP fragment cache may result in a packet
+	  fragment being inserted twice, violating a kernel
+	  invariant.</p>
+	<p>Impact:</p>
+	<p>By sending carefully crafted sequence of IP packet fragments,
+  	  a remote attacker can cause a system running pf with a ruleset
+	  containing a 'scrub fragment crop' or 'scrub fragment
+	  drop-ovl' rule to crash.</p>
+	<p>Workaround:</p>
+	<p>Do not use 'scrub fragment crop' or 'scrub fragment drop-ovl'
+	  rules on systems running pf.  In most cases, such rules can be
+	  replaced by 'scrub fragment reassemble' rules; see the
+	  pf.conf(5) manual page for more details.</p>
+
+	<p>Systems which do not use pf, or use pf but do not use the aforementioned
+	  rules, are not affected by this issue.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0381</cvename>
+      <freebsdsa>SA-06:07</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-25</discovery>
+      <entry>2006-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a4f2aca-9d40-11da-8c1d-000e0c2e438a">
     <topic>FreeBSD -- Local kernel memory disclosure</topic>
     <affects>
