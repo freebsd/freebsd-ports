@@ -1,0 +1,4 @@
+usr/share/icons/hicolor
+@dirrm usr/share/icons
+@dirrmtry usr/share
+@dirrmtry usr
