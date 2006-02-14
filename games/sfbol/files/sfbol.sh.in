@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+HOME_DIR="${HOME}/SFB_Online_XP"
+export JAVA_VERSION="%%JAVA_VERSION%%"
+
+if [ -d ${HOME_DIR} ]; then
+	cd ${HOME_DIR} && exec ${HOME_DIR}/SFB_Online_XP
+else
+	cd ${HOME} && exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/install40.jar"
+fi
+
