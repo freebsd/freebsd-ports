@@ -1,0 +1,11 @@
+--- ./html/Elements/Callback.orig	Tue Feb 14 10:25:51 2006
++++ ./html/Elements/Callback	Tue Feb 14 10:26:55 2006
+@@ -27,7 +27,7 @@
+ <%init>
+ # checks for inode change time for each callback directory
+ my $new_check = join(
+-    $;, map { $_->[1] => (stat("$_->[1]/Callbacks"))[10] } $m->interp->resolver->comp_root_array
++    $;, map { $_->[1] => (stat("$_->[1]/Callbacks"))[10] } $m->interp->comp_root_array
+ ) or return;
+ 
+ $Page = $m->callers(1)->path unless ($Page);
