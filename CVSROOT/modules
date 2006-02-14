@@ -6166,7 +6166,6 @@ mdf2iso		ports/sysutils/mdf2iso
 mdh		ports/deskutils/mdh
 mdk		ports/lang/mdk
 mdnsd		ports/dns/mdnsd
-mdw		ports/www/mdw
 meanwhile	ports/net-im/meanwhile
 meanwhile-gaim	ports/net-im/meanwhile-gaim
 mediawiki	ports/www/mediawiki
