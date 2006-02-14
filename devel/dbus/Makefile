@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.60
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS?=--disable-gtk \
 		--disable-qt \
 		--disable-mono \
 		--disable-mono-docs \
+		--localstatedir=/var \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \
@@ -77,7 +78,7 @@ post-install:
 .if defined(PKGNAMEPREFIX)
 .if ${PKGNAMEPREFIX}==${PYTHON_PKGNAMEPREFIX} && ${OSVERSION} < 500000
 # Ignore for py-dbus
-IGNORE=	Does not build on 4.X
+IGNORE=	does not build on 4.X
 .endif
 .endif
 

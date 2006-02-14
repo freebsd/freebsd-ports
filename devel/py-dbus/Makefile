@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--enable-python \
 		--disable-mono-docs \
 		--disable-gtk \
 		--disable-qt3 \
+		--localstatedir=/var \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \
