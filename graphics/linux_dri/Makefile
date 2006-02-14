@@ -8,7 +8,11 @@
 PORTNAME=	linux_dri
 PORTVERSION=	4.4.0
 CATEGORIES=	graphics linux
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
+MASTER_SITES=	\
+		http://netmirror.org/mirror/xfree86.org/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
+		ftp://ftp.belnet.be/mirror/ftp.xfree86.org/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
+		ftp://ftp.gwdg.de/pub/xfree86/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
+		ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc21/:x \
 		http://people.freebsd.org/~anholt/dri/files/:anholt
 DISTFILES=	Xbin.tgz:x \
 		Xmod.tgz:x \
