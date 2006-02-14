@@ -20,6 +20,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		rsync:${PORTSDIR}/net/rsync
 
+CONFLICTS=	git-[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 

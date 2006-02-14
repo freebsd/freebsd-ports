@@ -19,6 +19,8 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	cogito-[0-9]* git-4.*
+
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_ICONV=	yes
