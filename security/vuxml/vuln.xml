@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfb71c00-9d44-11da-8c1d-000e0c2e438a">
+    <topic>FreeBSD -- Infinite loop in SACK handling</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>5.4</gt><lt>5.4_11</lt></range>
+	<range><gt>5.3</gt><lt>5.3_26</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>When insufficient memory is available to handle an
+	  incoming selective acknowledgement, the TCP/IP stack may
+	  enter an infinite loop.</p>
+	<p>Impact:</p>
+	<p>By opening a TCP connection and sending a carefully crafted
+	  series of packets, an attacker may be able to cause a denial
+	  of service.</p>
+	<p>Workaround:</p>
+	<p>On FreeBSD 5.4, the net.inet.tcp.sack.enable sysctl can be used to
+	  disable the use of SACK:</p>
+	<p># sysctl net.inet.tcp.sack.enable=0</p>
+	<p>No workaround is available for FreeBSD 5.3.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0433</cvename>
+      <freebsdsa>SA-06:08</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-02-01</discovery>
+      <entry>2006-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52ba7713-9d42-11da-8c1d-000e0c2e438a">
     <topic>pf -- IP fragment handling panic</topic>
     <affects>
