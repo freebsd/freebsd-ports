@@ -30,7 +30,7 @@ MAN1=		ksh93.1
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 600000)
+.if (${OSVERSION} < 600000)
 INSTALLROOT=	${WRKSRC}/arch/freebsd${OSREL:R}.${ARCH}
 .else
 INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
