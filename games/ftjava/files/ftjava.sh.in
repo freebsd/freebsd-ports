@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+HOME_DIR=${HOME}/.ftjava
+CLASSPATH=".:%%DATADIR%%/xerces.jar:%%DATADIR%%/activation.jar:%%DATADIR%%/mail.jar:/%%DATADIR%%/pop3.jar"
+export JAVA_VERSION="%%JAVA_VERSION%%"
+
+[ ! -d ${HOME_DIR}/OutgoingGames ] && \
+	mkdir -p ${HOME_DIR}/OutgoingGames
+
+[ ! -d ${HOME_DIR}/IncomingGames ] && \
+	mkdir -p ${HOME_DIR}/IncomingGames
+
+[ ! -d ${HOME_DIR}/Images ] && \
+	ln -s %%DATADIR%%/Images ${HOME_DIR}/Images
+
+[ ! -d ${HOME_DIR}/Ships ] && \
+        ln -s %%DATADIR%%/Ships ${HOME_DIR}/Ships
+
+[ ! -d ${HOME_DIR}/fjava ] && \
+	mkdir -p ${HOME_DIR}/ftjava
+
+[ ! -d ${HOME_DIR}/ftjava/gui ] && \
+	ln -s %%DATADIR%%/ftjava/gui ${HOME_DIR}/ftjava/gui
+
+[ ! -d ${HOME_DIR}/ftjava/html ] && \
+        ln -s %%DATADIR%%/ftjava/html ${HOME_DIR}/ftjava/html
+
+[ ! -d ${HOME_DIR}/ftjava/mailman ] && \
+        ln -s %%DATADIR%%/ftjava/mailman ${HOME_DIR}/ftjava/mailman
+
+[ ! -d ${HOME_DIR}/ftjava/std ] && \
+        ln -s %%DATADIR%%/ftjava/std ${HOME_DIR}/ftjava/std
+
+[ ! -d ${HOME_DIR}/ftjava/util ] && \
+        ln -s %%DATADIR%%/ftjava/util ${HOME_DIR}/ftjava/util
+
+cd ${HOME_DIR} &&
+	exec %%LOCALBASE%%/bin/java -cp ${CLASSPATH} ftjava.gui.FTJava "${@}"
