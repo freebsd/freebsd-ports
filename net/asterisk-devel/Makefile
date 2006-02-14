@@ -91,13 +91,13 @@ USE_BISON=	yes
 
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 .if defined(WITH_DEVELBSD)
-# use the FreeBSD-specific version
-LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/bsd
-REMOTE_REPO= http://svn.digium.com/svn/asterisk/team/rizzo/base
+    # use the FreeBSD-specific version
+    LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/bsd
+    REMOTE_REPO= http://svn.digium.com/svn/asterisk/team/rizzo/base
 .else
-# use the main version.
-LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/asterisk
-REMOTE_REPO= http://svn.digium.com/svn/asterisk/trunk/asterisk
+    # use the main version.
+    LOCAL_REPO= ${PORTSDIR}/distfiles/ast-svn/asterisk
+    REMOTE_REPO= http://svn.digium.com/svn/asterisk/trunk
 .endif
 REPO_CMD=  \
 	if [ -f asterisk ] ; then \
