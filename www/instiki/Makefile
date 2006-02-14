@@ -14,7 +14,7 @@ MASTER_SITES=	http://rubyforge.lauschmusik.de/instiki/	\
 		http://rubyforge.org/frs/download.php/5350/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kelley@insidesystems.net
+MAINTAINER=	arsptr@optusnet.com.au
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 NO_BUILD=	yes
