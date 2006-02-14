@@ -5901,7 +5901,6 @@ linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
 linux_base-rh-9	ports/emulators/linux_base-rh-9
-linux_base-src-rh-7.3	ports/emulators/linux_base-src-rh-7.3
 linux_base-suse-9.1	ports/emulators/linux_base-suse-9.1
 linux_base-suse-9.2	ports/emulators/linux_base-suse-9.2
 linux_base-suse-9.3	ports/emulators/linux_base-suse-9.3
