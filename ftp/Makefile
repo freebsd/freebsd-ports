@@ -29,7 +29,6 @@
     SUBDIR += ftpmirror
     SUBDIR += ftpproxy
     SUBDIR += ftpq
-    SUBDIR += ftpsearch
     SUBDIR += ftptool
     SUBDIR += gftp
     SUBDIR += gnusget
