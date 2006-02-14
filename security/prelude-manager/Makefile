@@ -5,16 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS+=	prelude.4:${PORTSDIR}/security/libprelude \
-		preludedb.1:${PORTSDIR}/security/libpreludedb \
+LIB_DEPENDS+=	prelude.6:${PORTSDIR}/security/libprelude \
+		preludedb.2:${PORTSDIR}/security/libpreludedb \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GPG=	yes
