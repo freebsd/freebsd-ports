@@ -1,12 +1,11 @@
 @comment $FreeBSD$
 bin/prelude-lml
-etc/prelude-lml/ruleset/checkpoint.rules
-etc/prelude-lml/ruleset/ipso.rules
-etc/prelude-lml/ruleset/zywall.rules
-etc/prelude-lml/ruleset/zyxel.rules
+etc/prelude-lml/plugins.rules-dist
+etc/prelude-lml/prelude-lml.conf-dist
 etc/prelude-lml/ruleset/apc-emu.rules
 etc/prelude-lml/ruleset/arbor.rules
 etc/prelude-lml/ruleset/arpwatch.rules
+etc/prelude-lml/ruleset/checkpoint.rules
 etc/prelude-lml/ruleset/cisco-pix.rules
 etc/prelude-lml/ruleset/cisco-router.rules
 etc/prelude-lml/ruleset/cisco-vpn.rules
@@ -18,6 +17,8 @@ etc/prelude-lml/ruleset/honeyd.rules
 etc/prelude-lml/ruleset/httpd.rules
 etc/prelude-lml/ruleset/ipchains.rules
 etc/prelude-lml/ruleset/ipfw.rules
+etc/prelude-lml/ruleset/ipso.rules
+etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/modsecurity.rules
 etc/prelude-lml/ruleset/ms-sql.rules
 etc/prelude-lml/ruleset/nagios.rules
@@ -26,6 +27,7 @@ etc/prelude-lml/ruleset/netapp-ontap.rules
 etc/prelude-lml/ruleset/netfilter.rules
 etc/prelude-lml/ruleset/netscreen.rules
 etc/prelude-lml/ruleset/ntsyslog.rules
+etc/prelude-lml/ruleset/openhostapd.rules
 etc/prelude-lml/ruleset/pam.rules
 etc/prelude-lml/ruleset/pcanywhere.rules
 etc/prelude-lml/ruleset/pcre.rules
@@ -43,16 +45,15 @@ etc/prelude-lml/ruleset/sudo.rules
 etc/prelude-lml/ruleset/tripwire.rules
 etc/prelude-lml/ruleset/vigor.rules
 etc/prelude-lml/ruleset/vpopmail.rules
-etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/webmin.rules
 etc/prelude-lml/ruleset/wu-ftp.rules
-etc/prelude-lml/prelude-lml.conf-dist
-etc/prelude-lml/plugins.rules-dist
+etc/prelude-lml/ruleset/zywall.rules
+etc/prelude-lml/ruleset/zyxel.rules
 include/prelude-lml/prelude-lml.h
 lib/prelude-lml/debug.so
 lib/prelude-lml/pcre.so
-@dirrmtry etc/prelude-lml/ruleset
-@unexec rmdir %D/etc/prelude-lml 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/prelude-lml`` to remove any configuration files left." | fmt
 @dirrm include/prelude-lml
 @dirrm lib/prelude-lml
-@unexec rmdir /var/spool/prelude-lml 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/spool/prelude-lml`` to remove any logfile metadata files left." | fmt
+@dirrmtry etc/prelude-lml/ruleset
+@dirrmtry etc/prelude-lml 
+@unexec echo "If you are permanently removing this port, you should remove ${PKG_PREFIX}/etc/prelude-lml and /var/spool/prelude-lml directories to clean up any configuration and logfile metadata files left." | fmt
