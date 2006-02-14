@@ -4,24 +4,22 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.4:${PORTSDIR}/security/libprelude
-
-BROKEN=		Unfetchable
+LIB_DEPENDS=	prelude.6:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
-USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=		%%PREFIX%%/lib \
+			%%PREFIX%%/lib/libpreludedb/plugins/format
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_PERL)
@@ -46,6 +44,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-mysql
 PLIST_SUB+=		WITH_MYSQL=""
+LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=		WITH_MYSQL="@comment "
@@ -55,6 +54,7 @@ PLIST_SUB+=		WITH_MYSQL="@comment "
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-pgsql
 PLIST_SUB+=		WITH_PGSQL=""
+LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 PLIST_SUB+=		WITH_PGSQL="@comment "
