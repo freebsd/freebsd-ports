@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Data-FormValidator
-PORTVERSION=		4.12
+PORTVERSION=		4.13
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -36,8 +36,9 @@ MAN3=		Data::FormValidator.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+# fails a lot of tests with 5.6.X, so require 5.8.X
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
