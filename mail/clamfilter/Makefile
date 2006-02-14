@@ -8,18 +8,18 @@
 PORTNAME=	clamfilter
 PORTVERSION=	0.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ensita.net/products/clamfilter/
+MASTER_SITES=	http://www.ensita.net/products/clamfilter/ \
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	sead@mail.ru
 COMMENT=	A small, efficient clamav content filter for Postfix
 
 RUN_DEPENDS=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 PLIST_FILES=	bin/clamfilter
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
