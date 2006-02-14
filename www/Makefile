@@ -243,7 +243,6 @@
     SUBDIR += man2web
     SUBDIR += mapedit
     SUBDIR += mathopd
-    SUBDIR += mdw
     SUBDIR += mediawiki
     SUBDIR += mediawiki13
     SUBDIR += mediawiki14
