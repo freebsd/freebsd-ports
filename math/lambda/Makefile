@@ -9,7 +9,7 @@
 PORTNAME=	lambda
 PORTVERSION=	0.1.4
 CATEGORIES=	math
-MASTER_SITES=	http://66.47.116.75/~demo/lambda/
+MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lambda calculus interpreter
