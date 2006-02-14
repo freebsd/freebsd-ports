@@ -16,22 +16,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A WikiWikiWeb clone using PHP
 
-BROKEN=		Does not build with read-only ports tree
-
 USE_PHP=	mbstring
 PHP4_PORT?=	www/mod_php4
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PLIST_SUB+=	PMWIKIDIR=${PMWIKIDIR}
+SUB_LIST+=	PMWIKIDIR=${PMWIKIDIR}
+SUB_FILES=	pkg-message
 
 pre-fetch:
 .if !defined(PMWIKIDIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define PMWIKIDIR to override default of 'www/data/pmwiki'."
+	@${ECHO_MSG} "Define PMWIKIDIR to override default of ${PMWIKIDIR}."
 	@${ECHO_MSG} ""
 .endif
 
@@ -39,18 +38,10 @@ PMWIKIDIR?=	www/data/pmwiki
 WWWUSER?=	www
 WWWGROUP?=	www
 
-post-configure:
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%PMWIKIDIR%%#${PMWIKIDIR}#g' pkg-message > ${PKGMESSAGE}
-
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/${PMWIKIDIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PMWIKIDIR}
 	@${CHOWN} ${WWWUSER}:${WWWGROUP} ${PREFIX}/${PMWIKIDIR}
-
-pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | ${SED} -e 's|^|${PMWIKIDIR}/|' > ${PLIST} \
-	&& ${FIND} -d * -type d | ${SED} -e 's|^|@dirrm ${PMWIKIDIR}/|' >> ${PLIST} \
-	&& ${ECHO_MSG} "@unexec rmdir ${PMWIKIDIR} 2>/dev/null || true" >> ${PLIST}
 
 post-install:
 	@${MKDIR} -m 775 ${PREFIX}/${PMWIKIDIR}/wiki.d
