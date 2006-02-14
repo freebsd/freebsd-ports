@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a4f2aca-9d40-11da-8c1d-000e0c2e438a">
+    <topic>FreeBSD -- Local kernel memory disclosure</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Problem description:</p>
+	<p>A buffer allocated from the kernel stack may not be completely
+	  initialized before being copied to userland. [CVE-2006-0379]</p>
+	<p>A logic error in computing a buffer length may allow too much
+	  data to be copied into userland. [CVE-2006-0380]</p>
+	<p>Impact:</p>
+	<p>Portions of kernel memory may be disclosed to local users.
+	  Such memory might contain sensitive information, such as
+	  portions of the file cache or terminal buffers.  This
+	  information might be directly useful, or it might be
+	  leveraged to obtain elevated privileges in some way.  For
+	  example, a terminal buffer might include a user-entered
+	  password.</p>
+	<p>Workaround:</p>
+	<p>No workaround is available.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0379</cvename>
+      <cvename>CVE-2006-0380</cvename>
+      <freebsdsa>SA-06:06</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-01-25</discovery>
+      <entry>2006-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dade3316-9d31-11da-8c1d-000e0c2e438a">
     <topic>IEEE 802.11 -- buffer overflow</topic>
     <affects>
