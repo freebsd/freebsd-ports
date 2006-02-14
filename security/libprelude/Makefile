@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
@@ -13,11 +13,8 @@ COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
-USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
