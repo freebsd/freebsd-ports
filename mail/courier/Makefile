@@ -7,6 +7,7 @@
 
 PORTNAME=	courier
 PORTVERSION=	0.52.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -59,16 +60,15 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_SUBMAKE=	yes
-USE_PERL5=	yes
+USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_PERL5=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
-USE_FAM=	yes
-WANT_FAM_SYSTEM=fam
+USE_SUBMAKE=	yes
 
 .if defined(WITH_RCORDER)
 USE_RCORDER=	courier.sh
@@ -118,7 +118,7 @@ PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
 		CACHEOWN="${CACHEOWN}" CACHEDIR="${CACHEDIR}" \
 		CALENDIR="${CALENDIR}" LOCALSTATEDIR="${LOCALSTATEDIR}"
 SUB_LIST:=	${PLIST_SUB}
-SUB_FILES+=	pkg-install pkg-message crontab
+SUB_FILES+=	pkg-install pkg-message crontab sharedindexupdate
 
 OPTIONS+=LDAP "LDAP-based mail aliasing support"
 .if (exists(${LOCALBASE}/lib/libldap.a) && exists(${LOCALBASE}/lib/liblber.a)) || defined(WITH_LDAP)
@@ -272,6 +272,8 @@ pre-patch:
 	@${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|^PROG=\./|PROG=exec ./|g' \
+		${WRKSRC}/courier/module.*/courier.config
 	@${REINPLACE_CMD} -e 's|@datadir@|@sysconfdir@|g' \
 		${WRKSRC}/*/mk*cert.* \
 		${WRKSRC}/*/*/mk*cert.*
@@ -321,7 +323,8 @@ post-build:
 post-install:
 	@${LN} -f ${SYSCONFDIR}/maildrop ${SYSCONFDIR}/maildropfilter
 	@${INSTALL_DATA} /dev/null ${SYSCONFDIR}/locallowercase
-	@${INSTALL_DATA} ${WRKDIR}/crontab ${PREFIX}/etc/courier/
+	@${INSTALL_DATA} ${WRKDIR}/crontab ${SYSCONFDIR}/
+	@${INSTALL_SCRIPT} ${WRKDIR}/sharedindexupdate ${DATADIR}/
 .for file in ${OWNER0}
 	@-${CHOWN} -Rh ${BINOWN}:${BINGRP} ${PREFIX}/${file}
 .endfor

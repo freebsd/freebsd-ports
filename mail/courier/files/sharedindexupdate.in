@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $NetBSD: sharedindexupdate.sh,v 1.2 2005/02/18 22:12:50 jlam Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/files/sharedindexupdate.in,v 1.1 2006-02-14 12:00:05 lawrance Exp $
+#
+# This script updates the index of shared folders on the system and is
+# only needed if Courier-IMAP or SqWebMail used to serve mail and shared
+# folders are used.  If so, then this script should be run regularly as a
+# system process to ensure the shared folder index is kept up-to-date.
+#
+# The courier-authlib package must be separately installed to provide the
+# "authenumerate" program used in this script.
+
+prefix="%%PREFIX%%"
+exec_prefix="${prefix}"
+sysconfdir="${prefix}/etc/courier"
+sbindir="${exec_prefix}/sbin"
+
+rm -rf ${sysconfdir}/shared.tmp
+mkdir ${sysconfdir}/shared.tmp || exit 1
+
+test -x ${sbindir}/authenumerate || exit 1
+${sbindir}/authenumerate > ${sysconfdir}/shared.tmp/.tmplist || exit 1
+${sbindir}/sharedindexsplit ${sysconfdir}/shared.tmp 1 < ${sysconfdir}/shared.tmp/.tmplist || exit 1
+rm -f ${sysconfdir}/shared.tmp/.tmplist
+${sbindir}/sharedindexinstall
