@@ -1,4 +1,4 @@
-To enable postfix rcNG startup script please add postfix_enable="YES" in
+To enable postfix rc.d startup script please add postfix_enable="YES" in
 your rc.conf
 
 If you not need sendmail anymore, please add in your rc.conf:
