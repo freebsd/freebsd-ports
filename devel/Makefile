@@ -460,6 +460,7 @@
     SUBDIR += libdaemon
     SUBDIR += libdict
     SUBDIR += libdlmalloc
+    SUBDIR += libdnsres
     SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libdwarf
