@@ -18,7 +18,6 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_drop_table
 %%NDB%%bin/ndb_mgm
 %%NDB%%bin/ndb_print_backup_file
-%%NDB%%bin/ndb_print_file
 %%NDB%%bin/ndb_print_schema_file
 %%NDB%%bin/ndb_print_sys_file
 %%NDB%%bin/ndb_restore
@@ -31,7 +30,6 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-%%NDB%%bin/test_varpage
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters_debug.h
@@ -62,6 +60,7 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_cluster_connection.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
+lib/mysql/libcsv.a
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
