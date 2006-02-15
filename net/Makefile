@@ -649,6 +649,7 @@
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socks5
+    SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
     SUBDIR += ssldump
