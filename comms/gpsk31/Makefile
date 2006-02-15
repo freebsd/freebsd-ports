@@ -6,13 +6,12 @@
 
 PORTNAME=	gpsk31
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	xride@x12.dk
 COMMENT=	A gtk psk31 client
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
