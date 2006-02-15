@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	0.8.5
+PORTVERSION=	1.1.0
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://cheeseshop.python.org/packages/source/r/roundup/ \
 		http://bsdchat.com/dist/dryice/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 
