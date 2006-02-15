@@ -22,9 +22,16 @@ load_rc_config $name
 
 : ${mrtg_daemon_flags="--pid-file $mrtg_daemon_pidfile --lock-file /var/run/mrtg/lockfile --confcache-file /var/run/mrtg/confcache --user $mrtg_daemon_user --group $mrtg_daemon_user --daemon $mrtg_daemon_config"}
 
+start_precmd="mrtg_daemon_precmd"
+
 command="%%PREFIX%%/bin/mrtg"
 command_interpreter="%%PERL%%"
 pidfile=${mrtg_daemon_pidfile}
+
+mrtg_daemon_precmd()
+{
+       rm -f /var/run/mrtg/lockfile /var/run/mrtg/confcache $mrtg_daemon_pidfile
+}
 
 run_rc_command "$1"
 
