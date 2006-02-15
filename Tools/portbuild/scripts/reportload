@@ -11,6 +11,19 @@ if [ -f ${pb}/${arch}/portbuild.$(hostname) ]; then
     . ${pb}/${arch}/portbuild.$(hostname)
 fi
 
-num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
+# Look for exceptional conditions
+error=0
+for i in squid disk; do
+  if [ -f ${scratchdir}/.${i} ]; then
+    error=1
+  fi
+done
+
+if [ ${error} = 0 ]; then
+  num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
+else
+  num=ERR
+fi
+
 echo -n "$num "
 uptime
