@@ -1,208 +1,87 @@
---- ../MailScanner-install-4.49.7.orig/docs/man/MailScanner.conf.5	Wed Jan  4 13:36:45 2006
-+++ docs/man/MailScanner.conf.5	Wed Jan  4 13:46:12 2006
+--- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.conf.5	Tue Feb  7 13:45:33 2006
++++ docs/man/MailScanner.conf.5	Tue Feb  7 13:58:52 2006
 @@ -1,4 +1,4 @@
--.TH "MailScanner.conf" "5" "4.42.9" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.49.7" "Julian Field" "Mail"
+-.TH "MailScanner.conf" "5" "4.50.1" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.50.15" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
-@@ -326,6 +326,23 @@
- .br 
- If more messages are found in the queue than this, then switch to an "accelerated" mode of processing messages. This will cause it to stop scanning messages in strict date order, but in the order it finds them in the queue. If your queue is bigger than this size a lot of the time, then some messages could be greatly delayed. So treat this option as "in emergency only".
+@@ -423,6 +423,12 @@
+ The maximum length of time the "unrar" command is allowed to run for 1 RAR archive (in seconds)
  
-+
-+.TP 
-+\fBScan Messages\fR
-+Default: yes
-+.br 
-+
-+.br 
-+If this is set to yes, then email messages passing through MailScanner will be processed and checked, and all the other options in this file will be used to control what checks are made on the message. If this is set to no, then email messages will NOT be processed or checked *at all*, and so any viruses or other problems will be ignored.
-+
-+.TP 
-+\fBReject Messages\fR
+ .TP 
++\fBFind UU\-Encoded Files\fR
 +Default: no
 +.br 
-+
-+.br 
-+You may not want to receive mail from certain addresses and/or to certain addresses. If so, you can do this with your email transport (sendmail, Postfix, etc) but that will just send a one\-line message which is not helpful to the user sending the message. If this is set to yes, then the message set by the "Rejection Report" will be sent instead, and the incoming message will be deleted. If you want to store a copy of the original incoming message then use the "Archive Mail" setting to archive a copy of it. The purpose of this option is to set it to be a ruleset, so that you can reject messages from a few offending addresses where you need to  send a polite reply instead of just a brief 1\-line rejection message.
-+
- .TP 
- \fBMaximum Attachments Per Message\fR
- Default: 200
-@@ -819,6 +836,36 @@
- Do you want to allow <Form> tags in email messages? This is a bad idea as these are used as scams to pursuade people to part with credit card information and other personal data. This can also be the filename of a ruleset.
- .SH "Attachment filename checking"
- .TP 
-+\fBAllow Filenames\fR
-+Default:
-+.br 
-+
-+.br 
-+Allow any attachment filenames matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filename of a ruleset.
-+.br 
-+
-+.br 
-+To simplify web\-based configuration systems, there are now two extra settings here. They are both intended for use with normal rulesets that you would expect to find in %rules\-dir%. The first gives a list of patterns to match against the attachment filenames, and a filename is allowed if it matches any of these patterns. The second gives the the equivalent list for patterns that are used to deny filenames. If either of these match at all, then filename.rules.conf is ignored  for that filename. So you can easily have a set like this:
-+.br 
-+
-+.br 
-+Allow Filenames = \.txt$ \.pdf$
-+.br 
-+Deny  Filenames = \.com$ \.exe$ \.cpl$ \.pif$
-+.br 
-+
-+.br 
-+which is a lot simpler than having to handle filename.rules.conf! It is far simpler when you want to change the allowed+denied list for different domains/addresses, as you can use the filename of a simple ruleset here instead.
++A few viruses store their infected data in UU\-encoded files, to try to catch out virus scanners. This rarely succeeds at all. Setting this option to yes means that you can apply filename and filetype checks to the contents of UU\-encoded files. This may occasionally be  useful, in which case you should set to yes. This can also be the filename of a ruleset.
 +
 +.TP 
-+\fBDeny Filenames\fR
-+Default: 
-+.br 
-+
-+.br 
-+Deny any attachment filenames matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filename of a ruleset.
-+
-+.TP 
- \fBFilename Rules\fR
- Default: %etc\-dir%/filename.rules.conf
- .br 
-@@ -827,6 +874,36 @@
- File in which to store the attachment filename ruleset. This can be a ruleset allowing different filename rules to apply to different users or domains. The syntax of this file is described in section "Attachment Filename Ruleset".
- 
- .TP 
-+\fBAllow Filetypes\fR
-+Default: 
-+.br 
-+
-+.br 
-+Allow any attachment filetypes matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filetype of a ruleset.
-+.br 
-+
-+.br 
-+To simplify web\-based configuration systems, there are now two extra settings here. They are both intended for use with normal rulesets that you would expect to find in %rules\-dir%. The first gives a list of patterns to match against the attachment filetypes, and a filetype is allowed if it matches any of these patterns. The second gives the the equivalent list for patterns that are used to deny filetypes. If either of these match at all, then filetype.rules.conf is ignored for that filetype. So you can easily have a set like this:
-+.br 
-+
-+.br 
-+Allow Filetypes = \.txt$ \.pdf$
-+.br 
-+Deny  Filetypes = \.com$ \.exe$ \.cpl$ \.pif$
-+.br 
-+
-+.br 
-+which is a lot simpler than having to handle filetype.rules.conf! It is far simpler when you want to change the allowed+denied list for different domains/addresses, as you can use the filetype of a simple ruleset here instead.
-+
-+.TP 
-+\fBDeny Filetypes\fR
-+Default: 
-+.br 
-+
-+.br 
-+Deny any attachment filetypes matching any of the patters listed here. If this setting is empty, it is ignored and no matches are made. This can also be the filetype of a ruleset.
-+
-+.TP 
- \fBFiletype Rules\fR
- Default: %etc\-dir%/filetype.rules.conf
- .br 
-@@ -853,6 +930,15 @@
- There is no point quarantining most viruses these days, so if you set this to "no" then no infections listed in your "Silent Viruses" setting will be quarantined, even if you have chosen to quarantine infections in general. This is currently set to "yes" so the behaviour is the same as it was in in previous versions. This can also be the filename of a ruleset.
- 
- .TP 
-+\fBQuarantine Modified Body\fR
-+Default: no
-+.br 
-+
-+.br 
-+Do you want to store copies of messages which have been disarmed by having their HTML modified at all? This can also be the filename of a ruleset.
-+
-+
-+.TP 
- \fBQuarantine Whole Message\fR
+ \fBBlock Encrypted Messages\fR
  Default: no
  .br 
-@@ -885,6 +971,16 @@
- .br 
- Set where to find all the strings used so they can be translated into your local language. This can also be the filename of a ruleset so you can produce different languages for different messages.
- 
-+
-+.TP 
-+\fBRejection Report\fR
-+Default: %reports\-dir%/rejection.report.txt
-+.br 
-+
-+.br 
-+Set where to find the message text sent to users who triggered the ruleset you are using with the "Reject Message" option.
-+
-+
+@@ -521,7 +527,7 @@
+ .SH "Virus scanning and vulnerability testing"
  .TP 
- \fBDeleted Bad Filename Message Report\fR
- Default: %reports\-dir%/deleted.filename.message.txt
-@@ -1701,12 +1797,64 @@
+ \fBVirus Scanning\fR
+-Default: yes
++Default: auto
  .br 
  
  .br 
--# The Bayesian database rebuild and expiry may take a 2 or 3 minutes
--# to complete. During this time you can either wait, or simply
--# disable SpamAssassin checks until it has completed.
--WaitDuringBayesRebuild = no
-+The Bayesian database rebuild and expiry may take a 2 or 3 minutes to complete. During this time you can either wait, or simply disable SpamAssassin checks until it has completed.
-+
-+
+@@ -529,7 +535,7 @@
+ .br 
+ NOTE: Switching this to no completely disables all virus\-scanning functionality. If you just want to switch of actual virus scanning, then set "Virus Scanners = none" instead.
+ .br 
+-If you want to be able to switch scanning on/off for different users or different domains, set this to the filename of a ruleset.
++If you want to be able to switch scanning on/off for different users or different domains, set this to the filename of a ruleset. If you set this to auto then it searches for and uses every available installed virus scanner.
  
-+.SH "Custom Spam Scanner Plugin"
+ .TP 
+ \fBVirus Scanners\fR
+@@ -1682,7 +1688,7 @@
+ .SH "SpamAssassin"
+ .TP 
+ \fBUse SpamAssassin\fR
+-Default: no
++Default: yes
+ .br 
+ 
+ .br 
+@@ -2113,6 +2119,22 @@
+ .RE
+ 
+ .TP 
++\fBSpamAssassin Cache Timings\fR
++Default: 1800,300,10800,172800,600
++.br 
++Do not change this unless you absolutely have to, these numbers have been carefully calculated. They affect the length of time that different types of message are stored in the SpamAssassin cache which can be configured earlier in this file (look for "Cache"). The numbers are all set in seconds. They are:
++.br 
++1. Non\-Spam cache lifetime                           = 30 minutes
++.br 
++2. Spam (low scoring) cache lifetime                 = 5 minutes
++.br 
++3. High\-Scoring spam cache lifetime                  = 3 hours
++.br 
++4. Viruses cache lifetime                            = 2 days
++.br 
++5. How often to check the cache for expired messages = 10 minutes
++
 +.TP 
-+\fBUse Custom Spam Scanner\fR
+ \fBDebug\fR
+ Default: no
+ .br 
+@@ -2167,6 +2189,15 @@
+ 
+ .br 
+ The value of the option is actually never used, but it is evaluated at the end of processing a batch of messages. It is designed to be used in conjunction with a Custom Function. The Custom Function should then be written to have a "side effect" of doing something useful such as logging lots of information about the batch of messages to a file or an SQL database. 
++
++
++.TP 
++\fBAlways Looked Up Last After Batch\fR
 +Default: no
 +.br 
++
++.br 
++This option is intended for people who want to log per\-batch information. This is evaluated after the "Always Looked Up Last" configuration option for each message in the batch. This is looked up once for the entire batch. Its value is completely ignored, it is purely there to have side effects. If you want to use it, read CustomConfig.pm. 
  
-+.br 
-+Use the Custom Spam Scanner. This is code you will have to write yourself, a function called "GenericSpamScanner" stored in the file "MailScanner/lib/MailScanner/CustomFunctions/GenericSpamScanner.pm". A sample function is given in the correct file in the distribution. This sample function also includes code to show you how to make it run an external program to produce a spam score. This can also be the filename of a ruleset. The function will be passed
-+.br 
-+.RS 7
-+.IP  \(bu 4
-+$IP		\- the numeric IP address of the system on the remote end of the SMTP connections
-+.IP  \(bu 4
-+$From	\- the address of the envelope sender of the message
-+.IP  \(bu 4
-+$To		\- a perl reference to the envelope recipients of the message
-+.IP  \(bu 4
-+$Message	\- a perl reference to the list of line of the message
-+.RE
-+.br 
-+
-+
-+.TP 
-+\fBMax Custom Spam Scanner Size\fR
-+Default: 20000
-+.br 
-+
-+.br 
-+How much of the message should be passed tot he Custom Spam Scanner. Most spam tools only need the first 20kbytes of the message to determine if it is spam or not. Passing more than is necessary only slows things down. This can also be the filename of a ruleset.
-+
-+.TP 
-+\fBCustom Spam Scanner Timeout\fR
-+Default: 20
-+.br 
-+
-+.br 
-+How long should the custom spam scanner take to run? If it takes more seconds than this, then it should be considered to have crashed and should be killed. This stops denial\-of\-service attacks.
-+
-+
-+.TP 
-+\fBMax Custom Spam Scanner Timeouts\fR
-+Default: 10
-+.br 
-+
-+.br 
-+If the Custom Spam Scanner times out more times in a row than this, then it will be marked as "unavailable" until MailScanner next re\-starts itself.
-+
-+.TP 
-+\fBCustom Spam Scanner Timeout History\fR
-+Default: 20
-+.br 
-+
-+.br 
-+The total number of Custom Spam Scanner attempts during which "Max Custom Spam Scanner Timeouts" will cause the Custom Spam Scanner to be marked as "unavailable". See the previous comment for more information. The default values of 10 and 20 mean that 10 timeouts in any sequence of 20 attempts will trigger the behaviour described above, until the next periodic restart (see "Restart Every").
- .SH "What to do with spam"
  .TP 
- \fBSpam Actions\fR
+ \fBDeliver in Background\fR

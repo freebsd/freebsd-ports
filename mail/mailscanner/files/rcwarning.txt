@@ -1,0 +1,15 @@
+*************************************************************************
+	    _  _____ _____ _____ _   _ _____ ___ ___  _   _ 	
+	   / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |
+	  / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |
+	 / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |
+	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|
+							
+
+  The MailScanner port uses new start/stop scripts according to rc.subr 
+  standard. Your old scripts will be overwritten after you press ENTER.
+  To start mailscanner and your mta, please put the correct statements in 
+  your rc.conf. For examples/syntax please look at mailscanner.sh and
+  mta.sh in your rc.d directory.
+ 
+*************************************************************************

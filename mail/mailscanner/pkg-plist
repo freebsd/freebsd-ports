@@ -11,8 +11,6 @@ etc/MailScanner/phishing.safe.sites.conf.sample
 etc/MailScanner/spam.assassin.prefs.conf.sample
 etc/MailScanner/spam.lists.conf.sample
 etc/MailScanner/virus.scanners.conf.sample
-etc/rc.d/mailscanner.sh.sample
-etc/rc.d/mta.sh.sample
 lib/MailScanner/MailScanner.pm
 lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
@@ -121,7 +119,6 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/ca/stored.content.message.txt.sample
 %%DATADIR%%/reports/ca/stored.filename.message.txt.sample
 %%DATADIR%%/reports/ca/stored.virus.message.txt.sample
-@exec mkdir -p %D/%%DATADIR%%/reports/cat
 %%DATADIR%%/reports/cy+en/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
@@ -146,7 +143,6 @@ libexec/MailScanner/vexira-wrapper.sample
 %%DATADIR%%/reports/cy+en/stored.content.message.txt.sample
 %%DATADIR%%/reports/cy+en/stored.filename.message.txt.sample
 %%DATADIR%%/reports/cy+en/stored.virus.message.txt.sample
-%%DATADIR%%/reports/cz.tar.gz.sample
 %%DATADIR%%/reports/cz/deleted.content.message.txt.sample
 %%DATADIR%%/reports/cz/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/cz/deleted.virus.message.txt.sample
@@ -529,7 +525,6 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.3.1.0
 %%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/install/tcp
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
 %%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch3.txt
@@ -580,12 +575,13 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/users.shtml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/qmail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/install/tcp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install/mcp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/install
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/phishingnet.info
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%SPAMASSASSIN%%%%SPAMASSASSIN_SYMLINK%%@exec [ -e %D/etc/mail/spamassassin/mailscanner.cf ] ||  ln -s %D/etc/MailScanner/spam.assassin.prefs.conf %D/etc/mail/spamassassin/mailscanner.cf
+%%SPAMASSASSIN%%%%SPAMASSASSIN_SYMLINK%%@unexec [ -L %D/etc/mail/spamassassin/mailscanner.cf ] &&  rm -f %D/etc/mail/spamassassin/mailscanner.cf
 @dirrm %%DATADIR%%/reports/sk
 @dirrm %%DATADIR%%/reports/se
 @dirrm %%DATADIR%%/reports/ro
@@ -600,7 +596,6 @@ libexec/MailScanner/vexira-wrapper.sample
 @dirrm %%DATADIR%%/reports/de
 @dirrm %%DATADIR%%/reports/cz
 @dirrm %%DATADIR%%/reports/cy+en
-@dirrm %%DATADIR%%/reports/cat
 @dirrm %%DATADIR%%/reports/ca
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%

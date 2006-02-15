@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.49.7
+PORTVERSION=	4.50.15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -29,17 +29,23 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 	${SITE_PERL}/Net/Ident.pm:${PORTSDIR}/net/p5-Net-Ident \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
+
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
-		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
-		${LOCALBASE}/bin/unace:${PORTSDIR}/archivers/unace \
-		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
+		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+
+OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
+		CLAMAV "Install ClamAV" on \
+		CLAMAVMODULE "Install ClamAV Module" off \
+		BDC "Install BitDefender" off
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
@@ -57,6 +63,45 @@ MLINKS=		MailScanner.8 mailscanner.8 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SPAMASSASSIN)
+RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+PLIST_SUB+=	SPAMASSASSIN=""
+.else
+PLIST_SUB+=	SPAMASSASSIN="@comment "
+.endif
+
+# backwards compatibility
+.if defined(NO_SPAMASSASSIN_SYMLINK)
+WITHOUT_SPAMASSASSIN_SYMLINK=${NO_SPAMASSASSIN_SYMLINK}
+.endif
+
+.if defined(WITHOUT_SPAMASSASSIN_SYMLINK)
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
+.else
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
+.endif
+
+.if defined(WITH_CLAMAV)
+RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
+.endif
+
+.if defined(WITH_CLAMAVMODULE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mail/ClamAV.pm:${PORTSDIR}/mail/p5-Mail-ClamAV
+.endif
+
+.if defined(WITH_CLAMAV)||defined(WITH_CLAMAVMODULE)
+RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
+		unrar:${PORTSDIR}/archivers/unrar \
+		zoo:${PORTSDIR}/archivers/zoo \
+		unarj:${PORTSDIR}/archivers/unarj \
+		unace:${PORTSDIR}/archivers/unace \
+		lha:${PORTSDIR}/archivers/lha
+.endif
+
+.if defined(WITH_BDC)
+RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
+.endif
+
 DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
@@ -70,6 +115,8 @@ USRLOCAL_FILES_LIB=	\
 		kavdaemonclient-wrapper mcafee-autoupdate \
 		nod32-autoupdate rav-autoupdate \
 		rav-wrapper sophos-autoupdate
+
+USE_RC_SUBR=	mailscanner.sh mta.sh
 
 post-extract:
 	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
@@ -172,13 +219,7 @@ do-install:
 	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	#
-	# Step 5: Install Start/Stop scripts
-	#
-	${INSTALL_SCRIPT} ${FILESDIR}/mailscanner.sh \
-		${PREFIX}/etc/rc.d/mailscanner.sh.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/mta.sh ${PREFIX}/etc/rc.d/mta.sh.sample
-	#
-	# Step 6: Docs & Manpages
+	# Step 5: Docs & Manpages
 	#
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -235,30 +276,31 @@ do-install:
 	done
 	@${CAT} ${PKGMESSAGE}
 
-.if !defined(NO_SPAMASSASSIN_SYMLINK)
 post-install:
-	@if [ -d ${PREFIX}/etc/mail/spamassassin ]; then \
-		if [ ! -r ${PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then \
-			if [ ! -r ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ]; then \
-				${CP} ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf.sample ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf; \
-			fi; \
-			${ECHO} ${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
-			${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
-		else \
-			${ECHO} "File ${PREFIX}/etc/mail/spamassassin/mailscanner.cf already exists!"; \
-		fi; \
-	fi
+.if defined(WITH_SPAMASSASSIN) && !defined(WITHOUT_SPAMASSASSIN_SYMLINK)
+	@if [ ! -r ${PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then \
+		${ECHO} ${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+		${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+	else \
+		${ECHO} "File ${PREFIX}/etc/mail/spamassassin/mailscanner.cf already exists!"; \
+	fi;
+.endif
+	# Display warning about new start/stop scripts
+	@${CAT} ${FILESDIR}/rcwarning.txt
+.if !defined(BATCH)
+	@${ECHO} Press ENTER to continue...
+	@read a
 .endif
 
-renew-wrapper: install
+renew-wrapper: configure
 	# Renew virus wrapper scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-wrapper ${PREFIX}/libexec/MailScanner
 
-renew-autoupdate: install
+renew-autoupdate: configure
 	# Renew autoupdate scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-autoupdate ${PREFIX}/libexec/MailScanner
 
-renew-reports: install
+renew-reports: configure
 	# Renew reports
 	cd ${WRKSRC}/etc/reports/en && ${FIND} * -type f ! -name "*.orig" \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/reports/en/{}  \;

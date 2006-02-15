@@ -1,0 +1,41 @@
+#! /bin/sh
+
+# PROVIDE: mailscanner
+# REQUIRE: mta
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mailscanner:
+# mailscanner_enable (bool):      Set to "NO" by default.
+#                                 Set it to "YES" to enable mailscanner
+# mailscanner_configfile (path):  Set to "%%PREFIX%%/etc/MailScanner/MailScanner.conf" by default.
+# mailscanner_pidfile (path):     Set to "/var/run/MailScanner.pid" by default.
+#
+
+. %%RC_SUBR%%
+
+name="mailscanner"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${mailscanner_enable="NO"}
+: ${mailscanner_configfile="%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
+: ${mailscanner_pidfile="/var/run/MailScanner.pid"}
+
+command="%%PREFIX%%/libexec/MailScanner/MailScanner"
+pidfile=${mailscanner_pidfile}
+command_args="${mailscanner_configfile}"
+
+required_files="${mailscanner_configfile}"
+
+_ms_start_precmd() {
+	# Quietly try to raise the open_files limit
+	#
+	ulimit -n 2000 >/dev/null 2>&1
+}
+
+start_precmd=_ms_start_precmd
+
+run_rc_command "$1"
+
