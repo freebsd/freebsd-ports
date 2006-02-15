@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Module/Install/Build.pm
 %%SITE_PERL%%/Module/Install/AutoInstall.pm
 %%SITE_PERL%%/Module/Install/Compiler.pm
+%%SITE_PERL%%/Module/Install/External.pm
 %%SITE_PERL%%/Module/Install/Makefile.pm
 %%SITE_PERL%%/Module/Install/Bundle.pm
 %%SITE_PERL%%/Module/Install/Run.pm
