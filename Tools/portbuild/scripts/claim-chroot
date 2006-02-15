@@ -2,6 +2,12 @@
 
 # usage: claim-chroot ${arch} ${branch} ${pkgname}
 
+# This script cannot output anything except the name of the successfully
+# claimed chroot.  In case of error, just exit.
+
+# XXX Return the string "chroot=*" and look for that in pdispatch to make
+# this more robust
+
 # configurable variables
 pb=/var/portbuild
 
@@ -13,7 +19,6 @@ shift
 . ${pb}/scripts/buildenv
 
 buildroot=${scratchdir}
-error=0
 
 branch=$1
 shift
@@ -23,6 +28,30 @@ buildenv ${pb} ${arch} ${branch}
 pkgname=$(basename $1 ${PKGSUFFIX})
 
 chrootdir=${buildroot}/${branch}/chroot
+
+# Perform initial sanity check
+
+if [ ! -z "${squid_dir}" ]; then
+  /usr/local/sbin/squid -k check 2> /dev/null
+  status=$?
+  if [ "${status}" != "0" ]; then
+    touch ${scratchdir}/.squid
+    /usr/local/etc/rc.d/squid.sh start > /dev/null &
+    exit 1
+  else
+    rm -f ${scratchdir}/.squid
+  fi
+fi
+
+# Check for enough disk space
+df=$(df -k ${scratchdir} | tail -1 | awk '{print $4}')
+
+if [ ${df} -lt 102400 ]; then
+  touch ${scratchdir}/.disk
+  exit 1
+else
+  rm -f ${scratchdir}/.disk
+fi
 
 found=0
 # Look for pre-existing chroot directories that are populated and unused
