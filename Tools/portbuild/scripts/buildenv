@@ -41,6 +41,12 @@ buildenv () {
 	export INDEXFILE=INDEX-6
 	export X_WINDOW_SYSTEM=xorg
 	    ;;
+	x6-exp)
+    	export PKGSUFFIX=.tbz
+    	export PKGZIPCMD=bzip2
+	export INDEXFILE=INDEX-6
+	export X_WINDOW_SYSTEM=xorg
+	    ;;
 	x7)
     	export PKGSUFFIX=.tbz
     	export PKGZIPCMD=bzip2
