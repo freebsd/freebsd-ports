@@ -2187,3 +2187,4 @@ games/hlserver-tsc||2006-02-14|Remove expired port
 sysutils/pyfind||2006-02-14|Remove expired port
 www/mdw||2006-02-14|Remove expired port
 x11-clocks/gdesklets-praytime||2006-02-14|Remove expired port
+www/p5-Bundle-Catalyst||2006-02-15|Replaced by www/p5-Task-Catalyst

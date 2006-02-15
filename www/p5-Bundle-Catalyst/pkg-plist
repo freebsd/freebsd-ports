@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Bundle/Catalyst.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Catalyst/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle
-@dirrmtry %%SITE_PERL%%/Bundle
