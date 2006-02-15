@@ -7,8 +7,8 @@
 
 PORTNAME=	prozilla
 PORTVERSION=	2.0.3
-PORTREVISION=	1
-CATEGORIES=	ftp
+PORTREVISION=	2
+CATEGORIES=	ftp net
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
 MAINTAINER=	alejandro@varnet.biz
@@ -25,5 +25,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		proz.1
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${FILESDIR}/pkg-message
+
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>
