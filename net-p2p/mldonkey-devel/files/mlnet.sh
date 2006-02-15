@@ -13,6 +13,7 @@
 #
 #mlnet_enable="YES"
 #mlnet_user=""
+#mlnet_flags=""
 #mlnet_logfile=""
 #
 
@@ -20,40 +21,49 @@
 
 name="mlnet"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/bin/mlnet"
-procname="%%PREFIX%%/bin/mlnet-real"
+command="%%PREFIX%%/bin/${name}"
+procname="%%PREFIX%%/bin/${name}-real"
 
-## hardcoded, cannot override
-mlnet_pidfile="${HOME}/.mldonkey/mlnet.pid"
+load_rc_config "${name}"
+: ${mlnet_enable="NO"}
+: ${mlnet_user="$(whoami)"}
+: ${mlnet_flags=""}
+: ${mlnet_logfile=""}
+
+pidfile="$(eval echo ~${mlnet_user}/.mldonkey/$(basename ${procname}).pid)"
+required_dirs="$(eval echo ~${mlnet_user})"
 
 mlnet_check_vars()
 {
-  if [ -z "${mlnet_user}" ]; then
-    mlnet_user=$(whoami)
+  if [ "x${mlnet_user}" = "xroot" ]; then
+    warn "You have to set mlnet_user to a non-root user for security reasons"
+    return 1
   fi
 
-  if [ "x${mlnet_user}" = "xroot" ]; then
-    err 1 "You have to set mlnet_user to a non-root user for security reasons"
-  fi
+  return 0
 }
 
+start_precmd="mlnet_check_vars"
 start_cmd="start_cmd"
 start_cmd()
 {
-  mlnet_check_vars
   if [ -n "${mlnet_logfile}" ]; then
     mlnet_logcommand="-log_file ${mlnet_logfile}"
   fi
 
-  su -l ${mlnet_user} -c "${command} \
+  if [ "x${mlnet_user}" = "x$(whoami)" ]; then
+    eval "${command} \
 	${mlnet_logcommand} \
 	${mlnet_flags} \
 	>/dev/null &"
+  else
+    su -l ${mlnet_user} -c "${command} \
+	${mlnet_logcommand} \
+	${mlnet_flags} \
+	>/dev/null &"
+  fi
 }
 
-load_rc_config "${name}"
-: ${mlnet_enable="NO"}
-: ${mlnet_user=""}
-: ${mlnet_logfile=""}
+stop_precmd="mlnet_check_vars"
 
 run_rc_command "$1"
