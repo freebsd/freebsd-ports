@@ -1,8 +1,37 @@
---- ../MailScanner-install-4.49.7.orig/docs/man/MailScanner.8	Wed Jan  4 13:36:45 2006
-+++ docs/man/MailScanner.8	Wed Jan  4 13:46:07 2006
-@@ -1,4 +1,4 @@
--.TH "MailScanner" "8" "4.42.9" "Julian Field" "Mail"
-+.TH "MailScanner" "8" "4.49.7" "Julian Field" "Mail"
+--- ../MailScanner-install-4.50.15.orig/docs/man/MailScanner.8	Tue Feb  7 14:24:40 2006
++++ docs/man/MailScanner.8	Tue Feb  7 15:51:55 2006
+@@ -1,10 +1,10 @@
+-.TH "MailScanner" "8" "4.49.7" "Julian Field" "Mail"
++.TH "MailScanner" "8" "4.50.15" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner \- Virus/Spam Scanner for Sendmail, Exim and Postfix
+ .SH "SYNOPSIS"
+ .LP 
+-\fBMailScanner\fR [\fI\-v\fR] [\fIconfigfile\fR]
++\fBMailScanner\fR [\fI\-v\fR] [\fI\-\-lint\fR] [\fI\-\-debug\fR] [\fI\-\-debug\-sa\fR] [\fI\-\-help\fR]  [\fIconfigfile\fR] 
+ 
+ .SH "DESCRIPTION"
+ .LP 
+@@ -29,6 +29,21 @@
+ \fB\-v\fR
+ Prints version information for Mailscanner and all used perl\-modules.
+ 
++.TP 
++\fB\-\-lint\fR
++Checks config file, print what virus scanners you have chosen to use and check SpamAssassin configuration as well.
++
++.TP 
++\fB\-\-debug\fR
++Starts MailScanner in debug mode. See MailScanner.conf "Debug=yes".
++
++.TP 
++\fB\-\-debug\-sa\fR
++Starts MailScanner in debug spamassassin mode. See MailScanner.conf "Debug SpamAssassin=yes".
++
++.TP 
++\fB\-\-lint\fR
++Test MailScanner config and SpamAssassin config.
+ .SH "MTA SETUP"
+ .LP 
+ It is important that your MTA only queues incoming mail and does not deliver it automatically. You need two mail queues (incoming and outgoing). Moreover you should setup two instances of your MTA. One that accepts incoming mail and puts it to an incoming queue and one that sends out mail that resides in the outgoing queue. 

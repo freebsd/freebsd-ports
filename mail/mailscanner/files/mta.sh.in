@@ -1,0 +1,142 @@
+#!/bin/sh
+#
+# mta.sh - start multiple MTA instances, e.g. for MailScanner
+
+# PROVIDE: mta
+# REQUIRE: LOGIN cleanvar
+# BEFORE:
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mta at boot-up time:
+# mta_enable (bool):      Set to "NO" by default.
+#                         Set it to "YES" to enable mta
+# mta_type (str):         Type of MTA (sendmail, exim, unknown), defaults to "sendmail"
+# mta_profiles (string):  Undefined by default. Define your profiles here.
+# mta_flags (str):        Set to "" by default.
+#                         Extra flags passed to start command.
+# mta_program (str):      Path to program, defaults depending on $mta_type
+#			  either to "/usr/sbin/sendmail" or "/usr/local/sbin/exim"
+# mta_configfile (str):   Config file, defaults depending on $mta_type either
+#			  to "/etc/mail/sendmail.cf" or "/usr/local/etc/exim/configure"
+# mta_pidfile (str):      PID file, defaults depending on $mta_type either
+#			  to "/var/run/sendmail.pid" or "/var/run/exim.pid"
+#
+
+#
+# Examples:
+#
+# Exim, 2 instances (for MailScanner):
+#
+# mta_enable="YES"
+# mta_type="exim"
+# mta_profiles="incoming outgoing"
+# mta_incoming_configfile="/usr/local/etc/exim/configure.in"
+# mta_incoming_flags="-bd"
+# mta_incoming_pidfile="/var/run/exim_in.pid"
+# mta_outgoing_configfile="/usr/local/etc/exim/configure.out"
+# mta_outgoing_flags="-q15m"
+# mta_outgoing_pidfile="/var/run/exim_out.pid"
+#
+# Sendmail, 3 instances (for MailScanner):
+#
+# mta_enable="YES"
+# mta_type="sendmail"
+# mta_profiles="incoming outgoing submitqueue"
+# mta_incoming_flags="-L sm-mta-in -bd -OPrivacyOptions=noetrn -OQueueDirectory=/var/spool/mqueue.in -ODeliveryMode=queueonly"
+# mta_incoming_pidfile="/var/run/sendmail_in.pid"
+# mta_outgoing_flags="-L sm-mta-out -q15m"
+# mta_outgoing_pidfile="/var/run/sendmail_out.pid"
+# mta_submitqueue_flags="-L sm-msp-queue -Ac -q15m"
+# mta_submitqueue_pidfile="/var/spool/clientmqueue/sm-client.pid"
+#
+
+. %%RC_SUBR%%
+
+name="mta"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${mta_enable="NO"}
+: ${mta_type="sendmail"}
+: ${mta_flags=""}
+
+case "${mta_type}" in
+
+	sendmail)
+		_mta_program="/usr/sbin/sendmail"
+		_mta_configfile="/etc/mail/sendmail.cf"
+		_mta_pidfile="/var/run/sendmail.pid"
+		;;
+
+	exim)
+		_mta_program="/usr/local/sbin/exim"
+		_mta_configfile="/usr/local/etc/exim/configure"
+		_mta_pidfile="/var/run/exim.pid"
+		;;
+esac
+
+: ${mta_program=${_mta_program}}
+: ${mta_configfile=${_mta_configfile}}
+: ${mta_pidfile=${_mta_pidfile}}
+
+# support SIGHUP to reparse configuration file
+extra_commands="reload"
+
+# command and arguments
+command="${mta_program}"
+
+if [ -n "${2}" -o -n "$profile" ]; then
+	profile=${profile-$2}
+	export profile
+	if [ "x${mta_profiles}" != "x" ]; then
+		eval mta_configfile=\${mta_${profile}_configfile}
+		[ "x${mta_configfile}" = "x" ] && {
+			echo "You must define a configuration file (mta_${profile}_configfile)"
+			exit 1
+		}
+		eval mta_enable=\${mta_${profile}_enable:-YES}
+		eval mta_flags=\${mta_${profile}_flags:-${mta_flags}}
+		eval mta_configfile=\${mta_${profile}_configfile:-${mta_configfile}}
+		eval mta_pidfile=\${mta_${profile}_pidfile:-${mta_pidfile}}
+		pidfile="${_pidprefix}.${profile}.pid"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${mta_profiles}" != "x" ]; then
+	for profile in ${mta_profiles}; do
+		echo "===> mta profile: ${profile}"
+		$0 $1 $profile
+		retcode=$?
+		if [ "$?" -ne 0 ]; then
+			failed="${profile} ({$retcode}) ${failed}"
+		else
+			success="${profile} ${success}"
+		fi
+	done
+	exit 0
+	fi
+fi
+
+
+pidfile=${mta_pidfile}
+required_files="${mta_configfile}"
+
+# select correct command arguments
+case "${mta_type}" in
+
+	sendmail)
+		command_args="-C'${mta_configfile}' -OPidFile='${pidfile}'"
+		;;
+
+	exim)
+		command_args="-C '${mta_configfile}' -oP '${pidfile}'"
+		;;
+
+	*)
+		command_args=""
+		;;
+esac
+run_rc_command "$1"
