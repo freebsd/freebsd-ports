@@ -9,7 +9,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
 LIB_DEPENDS+=	prelude.6:${PORTSDIR}/security/libprelude \
