@@ -91,14 +91,22 @@ while `true`; do
   rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log ${pb}/${arch}/${branch}/errors/${pkgname}.log.bz2
 
   echo "dispatching: ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
-  ${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}
+  (${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1) | tee ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log
   error=$?
+
+  if grep -q " failed unexpectedly on " ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log; then
+    cat ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log | mail -s "${pkgname} failed uncleanly on ${arch} ${branch}" ${mailto}
+  else
+    rm ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log
+  fi
   
   # Pull in the results of the build from the client
   
   scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${pb}/${arch}/${branch}/logs/${pkgname}.log
   (ssh -a -n ${client_user}@${host} test -f ${chroot}/tmp/work.tbz ) && scp ${client_user}@${host}:${chroot}/tmp/work.tbz ${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
   
+  # XXX Set dirty flag if any of the scp's fail
+
   mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
   ssh -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
     tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
@@ -133,9 +141,11 @@ while `true`; do
   
   lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/releasemachine ${arch} ${host}
 
+  # XXX Set a dirty variable earlier and check here
   if grep -q "^build of .*ended at" ${pb}/${arch}/${branch}/logs/${pkgname}.log; then
     exit ${error}
   else
     echo "Build of ${pkgname} in ${host}:/${chroot} failed uncleanly, rebuilding"
+    sleep 120
   fi
 done
