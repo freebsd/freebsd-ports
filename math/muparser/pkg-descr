@@ -1,0 +1,6 @@
+muParser is an extensible high performance math parser library written in C++.
+It is based on transforming an expression into a bytecode and precalculating
+constant parts of it.
+
+Author:	Ingo Berg <ingo_berg@gmx.de>
+WWW:	http://muparser.sourceforge.net/

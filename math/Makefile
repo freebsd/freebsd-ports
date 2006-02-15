@@ -130,6 +130,7 @@
     SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mupad
+    SUBDIR += muparser
     SUBDIR += naturalmath
     SUBDIR += nauty
     SUBDIR += ndiff
