@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/
 
@@ -65,6 +65,9 @@ CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L/${LOCALBASE}/lib
 .endif
 
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|-D_XOPEN_SOURCE=600||' ${WRKSRC}/configure.in
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc
