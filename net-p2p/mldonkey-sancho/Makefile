@@ -7,7 +7,7 @@
 
 PORTNAME=	sancho
 DISTVERSION=	0.9.4-23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://sancho-gui.sourceforge.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dl/tmp94
@@ -24,8 +24,8 @@ BUILD_DEPENDS=	\
 	${JAVALIBDIR}/trove.jar:${PORTSDIR}/java/trove4j \
 	${JAVALIBDIR}/jsch.jar:${PORTSDIR}/net/jsch
 RUN_DEPENDS=	\
-	${LOCALBASE}/eclipse/plugins/org.eclipse.core.runtime_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
-	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.core.runtime_${ECLIPSE_VERSION}.2.jar:${PORTSDIR}/java/eclipse \
+	${LOCALBASE}/eclipse/plugins/org.eclipse.osgi_${ECLIPSE_VERSION}.2.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/plugins/org.eclipse.jface_${ECLIPSE_VERSION}.1.jar:${PORTSDIR}/java/eclipse \
 	${LOCALBASE}/eclipse/startup.jar:${PORTSDIR}/java/eclipse \
 	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
