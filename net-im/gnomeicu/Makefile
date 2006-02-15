@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomeicu2
-PORTVERSION=	0.99.5
-PORTREVISION=	4
+PORTVERSION=	0.99.9
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomeicu
@@ -23,8 +22,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel lthack libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
-USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 GCONF_SCHEMAS=	gnomeicu.schemas
 
