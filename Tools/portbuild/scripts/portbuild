@@ -27,83 +27,21 @@ copypkg()
 	cp ${pb}/${arch}/${branch}/packages/All/${from} ${to}
     else
 	if [ ! -z "${http_proxy}" ]; then
-		env HTTP_PROXY=${http_proxy} fetch -m -o ${to} http://${host}/errorlogs/${arch}-${branch}-packages-latest/All/${from}
+	    env HTTP_PROXY=${http_proxy} fetch -m -o ${to} http://${host}/errorlogs/${arch}-${branch}-packages-latest/All/${from}
 	else
 	    fetch -m -o ${to} http://${host}/errorlogs/${arch}-${branch}-packages-latest/All/${from}
 	fi
     fi
 }
 
-kill_procs()
-{
-  dir=$1
-
-  pids="XXX"
-  while [ ! -z "${pids}" ]; do
-    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
-    if [ ! -z "${pids}" ]; then
-      echo "Killing off pids in ${dir}"
-      ps -p $pids
-      kill -KILL ${pids} 2> /dev/null
-      sleep 2
-    fi
-  done
-}
-
-cleanup_mount() {
-  chroot=$1
-  mount=$2
-
-  if [ -d ${chroot}${mount} ]; then
-    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
-    if [ "${mdir}" = "MOUNT" ]; then
-      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
-    fi
-    if [ "${mdir}" = "${chroot}${mount}" ]; then
-      kill_procs ${chroot}${mount}
-      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
-    fi
-  fi
-}
-
-cleanup()
+bailout()
 {
   chroot=$1
-  noclean=$2
+  clean=$2
   error=$3
-  cleandirs=$4
-  pkgname=$5
+  pkgname=$4
 
-  #umount ${chroot}/proc
-
-  echo ARCH=${arch}
-  if [ ${arch} = "i386" ]; then
-    cleanup_mount ${chroot} /compat/linux/proc
-  fi
-
-  cleanup_mount ${chroot} /a/ports
-  cleanup_mount ${chroot} /usr/src
-  cleanup_mount ${chroot} /dev
-  test -d ${chroot}/root/.ccache && cleanup_mount ${chroot} /root/.ccache
-
-  if [ $noclean = 0 -o $error = 0 ]; then
-    rm -rf ${chroot}/tmp/*
-    for dir in ${cleandirs}; do
-      if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
-        chflags -R noschg ${chroot}${dir}
-        rm -rf ${chroot}${dir} >/dev/null 2>&1
-      fi
-    done
-    chroot ${chroot} /sbin/ldconfig -R
-    if [ ${arch} = "i386" ]; then
-	chroot ${chroot} /sbin/ldconfig -aout -R
-    fi
-    rm -rf ${chroot}/var/db/pkg/*
-    rm ${chroot}/used/${pkgname}
-    rmdir ${chroot}/used
-  fi
-
-  echo -n "$pkgname done on $(hostname) at "
+  echo -n "$pkgname failed unexpectedly on $(hostname) at "
   date
 
   exit $error
@@ -255,8 +193,7 @@ fi
 # Set up desired uname version
 echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
-#trap "cleanup ${chroot} ${clean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15
-trap "exit 255" 1 2 3 9 10 11 15
+trap "bailout ${chroot} ${clean} ${error} ${pkgname}" 1 2 3 9 10 11 15
 
 rm -rf ${chroot}/tmp/*
 cd ${chroot}/tmp
@@ -344,6 +281,12 @@ while [ $# -gt 0 ]; do
   if [ ! -f ${chroot}/tmp/depends/$1 ]; then
     echo "copying package $1 for ${pkgname}"
     copypkg ${pb} ${master} $1 ${chroot}/tmp/depends "${http_proxy}"
+
+    # Test for copy failure and bail
+    if [ ! -f ${chroot}/tmp/depends/$1 ]; then
+      echo "ERROR: Couldn't copy $1"
+      bailout ${chroot} ${clean} 255 ${pkgname}
+    fi
   fi
   shift
 done
