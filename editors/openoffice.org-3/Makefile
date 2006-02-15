@@ -6,18 +6,23 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.0.1
+PORTVERSION?=	2.0.2.rc1
 CATEGORIES+=	editors java
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
-		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
+		http://openoffice.lunarshells.com/sources/ \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
+		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_${PORTVERSION}_src.tar.gz
+DISTFILES+=	OOo_2.0.2rc1_src.tar.gz
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
-EXTRACT_ONLY=	OOo_${PORTVERSION}_src.tar.gz
+.if defined(WITH_GNUGCJ)
+DISTFILES+=     ${ANT_DISTFILE}:antbin
+.endif
+EXTRACT_ONLY=	OOo_2.0.2rc1_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -58,7 +63,7 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-OOOTAG?=		OOA680_m1
+OOOTAG?=		OOB680_m1
 INSTALLATION_BASEDIR?=	openoffice.org-${PORTVERSION}
 EXECBASE?=		openoffice.org-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org2.0
@@ -75,7 +80,7 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 .if defined(WITH_GNUGCJ)
-BUILD_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
+#BUILD_DEPENDS+=	${LOCALBASE}/bin/gcc41:${PORTSDIR}/lang/gcc41-wgcj
 BROKEN=	"still work in progress"
 .else
 BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
@@ -85,8 +90,8 @@ BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 .if defined(WITH_GNUGCJ)
-CC=	ccache gcc41
-CXX=	ccache g++41
+CC=	ccache ${LOCALBASE}/gcc41/bin/gcc
+CXX=	ccache ${LOCALBASE}/gcc41/bin/g++
 .else
 CC=	ccache gcc-ooo
 CXX=	ccache g++-ooo
@@ -94,8 +99,8 @@ CXX=	ccache g++-ooo
 .endif #WITH_CCACHE
 .if !defined(WITH_CCACHE)
 .if defined(WITH_GNUGCJ)
-CC=	gcc41
-CXX=	g++41
+CC=	${LOCALBASE}/gcc41/bin/gcc
+CXX=	${LOCALBASE}/gcc41/bin/g++
 .else
 CC=	gcc-ooo
 CXX=	g++-ooo
@@ -109,25 +114,39 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison2:${PORTSDIR}/devel/bison2 \
 		imake:${X_IMAKE_PORT}
-.if !defined(WITHOUT_JAVA)
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
+.if !defined(WITHOUT_JAVA) && !defined(WITH_GNUGCJ)
+BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .else
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
+.if defined(WITH_GNUGCJ)
+ANT_DISTFILE=   apache-ant-${ANT_VERSION}-bin.tar.bz2
+ANT_VERSION=	1.6.5
+.endif
 .if !defined(WITH_GPC)
 LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 .endif
+
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
-ANT?=		${LOCALBASE}/bin/ant
-ZIP?=		${PREFIX}/bin/zip
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
+USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --with-system-freetype --enable-crashdump=yes --enable-symbols=SMALL
+
+.if (${OSVERSION} <= 492000)
+EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
+.endif
+.if defined(WITH_GNUGCJ)
+EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches
+.endif
+#.if defined(WITH_TTF_BYTECODE_ENABLED)
+#EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
+#.endif
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -149,11 +168,8 @@ pre-everything::
 .endif
 
 post-extract:
-#.if defined(WITH_TTF_BYTECODE_ENABLED)
-#	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/optpatch-freetype
-#.endif
-.if (${OSVERSION} <= 492000)
-	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/fbsd4-workaroundpatch
+.if defined(WITH_GNUGCJ)
+	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
