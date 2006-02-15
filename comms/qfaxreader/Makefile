@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	qfaxreader
-DISTVERSION=	0.3RC5
+DISTVERSION=	0.3RC7
 CATEGORIES=	comms graphics print
 MASTER_SITES=	http://oss.thel.ro/${PORTNAME}/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -36,7 +36,7 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .include  <bsd.port.post.mk>
