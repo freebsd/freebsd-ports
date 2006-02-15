@@ -34,6 +34,60 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12f9d9e9-9e1e-11da-b410-000e0c2e438a">
+    <topic>phpicalendar -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpicalendar</name>
+	<range><lt>2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Francesco Ongaro reports that phpicalendar is vulnerable for
+	  a cross site scripting attack.  The vulnerability is caused by
+	  improper validation of the index.php file allowing attackers
+	  to include an arbitrary file with the .php extension</p>
+      </body>
+    </description>
+    <references>
+      <bid>15193</bid>
+      <cvename>CVE-2005-3366</cvename>
+      <url>http://www.ush.it/2005/10/25/php-icalendar-css/</url>
+    </references>
+    <dates>
+      <discovery>2005-10-25</discovery>
+      <entry>2006-02-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f1f163ce-9e09-11da-b410-000e0c2e438a">
+    <topic>phpicalendar -- file disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpicalendar</name>
+	<range><lt>2.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpicalendar team reports that there is an
+	  unspecified vulnerability within phpicalendar.  This
+	  seems to be a file disclosure vulnerability caused by
+	  improper checking of the template parsing function.
+	  This would allow an attacker to disclose any file
+	  readable by the user under which the webserver runs.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://phpicalendar.net/forums/viewtopic.php?t=396</url>
+    </references>
+    <dates>
+      <discovery>2006-02-08</discovery>
+      <entry>2006-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dfb71c00-9d44-11da-8c1d-000e0c2e438a">
     <topic>FreeBSD -- Infinite loop in SACK handling</topic>
     <affects>
