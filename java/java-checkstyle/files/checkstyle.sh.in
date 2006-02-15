@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/checkstyle.jar:%%JAVAJARDIR%%/checkstyle-optional.jar" com.puppycrawl.tools.checkstyle.Main "$@"
