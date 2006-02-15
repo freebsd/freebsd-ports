@@ -519,7 +519,6 @@
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
     SUBDIR += sylpheed2
-    SUBDIR += sylpheed2-devel
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += sympa5
