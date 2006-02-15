@@ -76,6 +76,7 @@ bin/git-relink
 bin/git-repack
 bin/git-repo-config
 bin/git-request-pull
+bin/git-rerere
 bin/git-reset
 bin/git-resolve
 bin/git-rev-list
@@ -85,6 +86,7 @@ bin/git-send-pack
 bin/git-sh-setup
 bin/git-shell
 bin/git-shortlog
+bin/git-show
 bin/git-show-branch
 bin/git-show-index
 bin/git-ssh-fetch
@@ -110,7 +112,6 @@ bin/git-whatchanged
 bin/git-write-tree
 bin/gitk
 share/git-core/python/gitMergeCommon.py
-share/git-core/python/subprocess.py
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg
 share/git-core/templates/hooks/commit-msg
