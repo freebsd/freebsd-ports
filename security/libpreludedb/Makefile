@@ -8,7 +8,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
 LIB_DEPENDS=	prelude.6:${PORTSDIR}/security/libprelude

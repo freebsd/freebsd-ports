@@ -8,7 +8,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for Prelude NIDS
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
