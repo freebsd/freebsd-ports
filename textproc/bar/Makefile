@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bar
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.theiling.de/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
