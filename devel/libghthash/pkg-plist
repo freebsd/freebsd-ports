@@ -1,4 +1,0 @@
-include/ght_hash_table.h
-lib/libghthash.a
-lib/libghthash.so
-lib/libghthash.so.5
