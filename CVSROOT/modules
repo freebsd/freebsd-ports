@@ -6674,6 +6674,7 @@ munin-main	ports/sysutils/munin-main
 munin-node	ports/sysutils/munin-node
 mup		ports/print/mup
 mupad		ports/math/mupad
+muparser	ports/math/muparser
 mupen64		ports/emulators/mupen64
 mupen64-base	ports/emulators/mupen64-base
 mupen64-dummyaudio	ports/emulators/mupen64-dummyaudio
