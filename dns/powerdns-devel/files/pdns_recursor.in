@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/dns/powerdns-devel/files/Attic/pdns_recursor.in,v 1.1 2006-02-15 12:56:37 ehaupt Exp $
 #
 
 # PROVIDE: pdns_recursor

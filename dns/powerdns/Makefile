@@ -7,8 +7,10 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.19
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://downloads.powerdns.com/releases/
+MASTER_SITES=	http://downloads.powerdns.com/releases/ \
+		http://mirrors.evolva.ro/powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
@@ -18,10 +20,9 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
-USE_REINPLACE=	YES
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	YES
-CXXFLAGS+=	-I${LOCALBASE}/include 
+CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
@@ -38,18 +39,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500037
-USE_RCORDER=	pdns.sh
-RC_DIR=		/etc/rc.d
-RC_SUFX=
-.else
-USE_RC_SUBR+=	pdns.sh
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-.endif
-
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
+USE_RC_SUBR+=	pdns
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -102,11 +92,7 @@ PLIST_SUB+=		WITHSQLLITE="@comment "
 .endif
 
 .if defined(POWERDNS_WITH_RECURSOR)
-.if ${OSVERSION} >= 500037
-USE_RCORDER+=	pdns_recursor.sh
-.else
-USE_RC_SUBR+=	pdns_recursor.sh
-.endif
+USE_RC_SUBR+=	pdns_recursor
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
 .else
@@ -118,7 +104,7 @@ PLIST_SUB+=		RECURSOR="@comment "
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
 		/usr/include/ucontext.h
 .if ${UCONTEXT} == ""
-BROKEN=		"setcontext for recursor not found or FreeBSD version lower than 5.0"
+BROKEN=		setcontext for recursor not found or FreeBSD version lower than 5.0
 .endif
 .endif
 .endif
