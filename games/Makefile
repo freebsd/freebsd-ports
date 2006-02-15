@@ -629,7 +629,6 @@
     SUBDIR += vavoom
     SUBDIR += vdrift
     SUBDIR += vectoroids
-    SUBDIR += virt
     SUBDIR += viruskiller
     SUBDIR += volleyball
     SUBDIR += vor

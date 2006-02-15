@@ -12959,7 +12959,6 @@ vim6+ruby	ports/editors/vim6+ruby
 vino		ports/net/vino
 vipec		ports/cad/vipec
 vips		ports/graphics/vips
-virt		ports/games/virt
 virtualmin	ports/sysutils/virtualmin
 virtualpaper	ports/print/virtualpaper
 viruskiller	ports/games/viruskiller
