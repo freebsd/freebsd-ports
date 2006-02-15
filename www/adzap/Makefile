@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20060115
+PORTVERSION=	20060203
 CATEGORIES=	www perl5
 MASTER_SITES=	http://adzapper.sourceforge.net/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/adzap
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 
 SUB_FILES=	adzap.conf pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
