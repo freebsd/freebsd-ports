@@ -1,0 +1,58 @@
+bin/a2x
+bin/asciidoc
+etc/asciidoc/asciidoc.conf
+etc/asciidoc/docbook-xsl/chunked.xsl
+etc/asciidoc/docbook-xsl/common.xsl
+etc/asciidoc/docbook-xsl/fo.xsl
+etc/asciidoc/docbook-xsl/htmlhelp.xsl
+etc/asciidoc/docbook-xsl/manpage.xsl
+etc/asciidoc/docbook-xsl/xhtml.xsl
+etc/asciidoc/docbook.conf
+etc/asciidoc/filters/code-filter.conf
+etc/asciidoc/filters/code-filter.py
+etc/asciidoc/help.conf
+etc/asciidoc/html4.conf
+etc/asciidoc/images/icons/callouts/1.png
+etc/asciidoc/images/icons/callouts/10.png
+etc/asciidoc/images/icons/callouts/11.png
+etc/asciidoc/images/icons/callouts/12.png
+etc/asciidoc/images/icons/callouts/13.png
+etc/asciidoc/images/icons/callouts/14.png
+etc/asciidoc/images/icons/callouts/15.png
+etc/asciidoc/images/icons/callouts/2.png
+etc/asciidoc/images/icons/callouts/3.png
+etc/asciidoc/images/icons/callouts/4.png
+etc/asciidoc/images/icons/callouts/5.png
+etc/asciidoc/images/icons/callouts/6.png
+etc/asciidoc/images/icons/callouts/7.png
+etc/asciidoc/images/icons/callouts/8.png
+etc/asciidoc/images/icons/callouts/9.png
+etc/asciidoc/images/icons/caution.png
+etc/asciidoc/images/icons/example.png
+etc/asciidoc/images/icons/home.png
+etc/asciidoc/images/icons/important.png
+etc/asciidoc/images/icons/next.png
+etc/asciidoc/images/icons/note.png
+etc/asciidoc/images/icons/prev.png
+etc/asciidoc/images/icons/tip.png
+etc/asciidoc/images/icons/up.png
+etc/asciidoc/images/icons/warning.png
+etc/asciidoc/linuxdoc.conf
+etc/asciidoc/stylesheets/docbook-xsl.css
+etc/asciidoc/stylesheets/xhtml-deprecated-manpage.css
+etc/asciidoc/stylesheets/xhtml-deprecated.css
+etc/asciidoc/stylesheets/xhtml11-manpage.css
+etc/asciidoc/stylesheets/xhtml11-quirks.css
+etc/asciidoc/stylesheets/xhtml11.css
+etc/asciidoc/text.conf
+etc/asciidoc/xhtml-deprecated-css.conf
+etc/asciidoc/xhtml-deprecated.conf
+etc/asciidoc/xhtml11-quirks.conf
+etc/asciidoc/xhtml11.conf
+@dirrm etc/asciidoc/docbook-xsl
+@dirrm etc/asciidoc/filters
+@dirrm etc/asciidoc/images/icons/callouts
+@dirrm etc/asciidoc/images/icons
+@dirrm etc/asciidoc/images
+@dirrm etc/asciidoc/stylesheets
+@dirrm etc/asciidoc

@@ -17,6 +17,7 @@
     SUBDIR += antiword
     SUBDIR += archmage
     SUBDIR += ascii2pdf
+    SUBDIR += asciidoc
     SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += az-aspell
