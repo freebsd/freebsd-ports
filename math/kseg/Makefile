@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kseg
-PORTVERSION=	0.402
+PORTVERSION=	0.403
 PORTEPOCH=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.mit.edu/~ibaran/
@@ -14,13 +14,19 @@ MASTER_SITES=	http://www.mit.edu/~ibaran/
 MAINTAINER=	kcwu@csie.org
 COMMENT=	A simulator of euclidean geometry
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} QTDIR="${QT_PREFIX}"
 
 pre-patch:
-	${REINPLACE_CMD} -e "s@\$$(QTDIR)@${QT_PREFIX}@; s@^CC =@#CC =@; s@-O2@${CFLAGS} ${PTHREAD_CFLAGS}@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
-	${REINPLACE_CMD} -e "s@-lqt@-lqt-mt ${PTHREAD_LIBS}@; " ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^CONFIG/s/$$/ thread/' ${WRKSRC}/${PORTNAME}.pro
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+	-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kseg ${PREFIX}/bin

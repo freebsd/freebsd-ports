@@ -44,7 +44,9 @@ lib/X11/kseg/kseg_help_ja.html
 lib/X11/kseg/kseg_help_nl.html
 lib/X11/kseg/kseg_help_pt.html
 lib/X11/kseg/kseg_help_ru.html
+lib/X11/kseg/kseg_help_tc.html
 lib/X11/kseg/kseg_help_tr.html
+lib/X11/kseg/kseg_help_zh.html
 lib/X11/kseg/kseg_hu.qm
 lib/X11/kseg/kseg_it.qm
 lib/X11/kseg/kseg_ja.qm
@@ -52,6 +54,8 @@ lib/X11/kseg/kseg_nb.qm
 lib/X11/kseg/kseg_nl.qm
 lib/X11/kseg/kseg_pt.qm
 lib/X11/kseg/kseg_ru.qm
+lib/X11/kseg/kseg_tc.qm
 lib/X11/kseg/kseg_tr.qm
+lib/X11/kseg/kseg_zh.qm
 @dirrm %%EXAMPLESDIR%%
 @dirrm lib/X11/kseg
