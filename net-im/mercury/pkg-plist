@@ -62,8 +62,9 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Themes/.keep_me
 %%INSTDIR%%/resources/AppData/Views/ColorExample_GroupView/Example.html
 %%INSTDIR%%/resources/AppData/Views/ColorExample_GroupView/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_DP.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_MSNName.html
+%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_SI.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/D1.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/DP_SI.html
 %%INSTDIR%%/resources/AppData/Views/Default_CLContact/Email.html
@@ -179,6 +180,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/menu/RSS.xml
 %%INSTDIR%%/resources/menu/Tray.xml
 %%INSTDIR%%/resources/menu/XMPP.xml
+%%INSTDIR%%/resources/scripts/xmms-info.sh
 %%INSTDIR%%/resources/settings/Default_Account.xml
 %%INSTDIR%%/resources/settings/Default_Global.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
@@ -193,6 +195,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/text/RSSFeeds.xml
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 @dirrm %%INSTDIR%%/resources/text
+@dirrm %%INSTDIR%%/resources/scripts
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
