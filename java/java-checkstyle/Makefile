@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	checkstyle
-PORTVERSION=	3.5
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,26 +26,24 @@ USE_JIKES=	no
 
 PLIST=	${WRKDIR}/PLIST
 
-STYLEDIR=	${JAVASHAREDIR}/${PORTNAME}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/checkstyle %%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-optional.jar \
-		${STYLEDIR:S,${PREFIX}/,,}/examples/conf/sun_checks.xml
+		%%DATADIR%%/examples/conf/sun_checks.xml
 .if !defined(NOPORTDOCS)
 BUILDDIR=	${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	README LICENSE* TODO RIGHTS* docs
+PORTDOCS=	README LICENSE* RIGHTS* docs
 .endif
 
-do-configure:
-	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%JAVAJARDIR%%,${JAVAJARDIR},g' \
-		${FILESDIR}/checkstyle.sh > ${WRKSRC}/checkstyle
+SUB_FILES=	checkstyle.sh
 
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
 	@${FIND} ${BUILDDIR}/contrib/ -type f -print | \
-		${SED} "s,^${BUILDDIR}/contrib,${STYLEDIR:S,${PREFIX}/,,}," >> ${PLIST}
+		${SED} "s,^${BUILDDIR}/contrib,${DATADIR:S,${PREFIX}/,,}," >> ${PLIST}
 	@${FIND} ${BUILDDIR}/contrib/ -type d -print | ${SORT} -r | \
-		${SED} -e "s,^${BUILDDIR}/contrib,@dirrm ${STYLEDIR:S,${PREFIX}/,,}," >> ${PLIST}
+		${SED} -e "s,^${BUILDDIR}/contrib,@dirrm ${DATADIR:S,${PREFIX}/,,}," >> ${PLIST}
 
 do-install: do-install-jar do-install-data do-install-apidocs \
 		do-install-script
@@ -57,10 +54,10 @@ do-install-jar:
 	@${INSTALL_DATA} ${BUILDDIR}/${PORTNAME}-optional-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}-optional.jar
 
 do-install-data:
-	@${MKDIR} ${STYLEDIR}
-	@${CP} -r ${BUILDDIR}/contrib/* ${STYLEDIR}
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${STYLEDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sun_checks.xml ${STYLEDIR}/examples/conf/
+	@${MKDIR} ${DATADIR}
+	@${CP} -r ${BUILDDIR}/contrib/* ${DATADIR}
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/sun_checks.xml ${DATADIR}/examples/conf/
 
 do-install-apidocs:
 .if !defined(NOPORTDOCS)
@@ -72,6 +69,6 @@ do-install-apidocs:
 .endif
 
 do-install-script:
-	@${INSTALL_SCRIPT} ${WRKSRC}/checkstyle ${PREFIX}/bin/checkstyle
+	@${INSTALL_SCRIPT} ${WRKDIR}/checkstyle.sh ${PREFIX}/bin/checkstyle
 
 .include <bsd.port.mk>
