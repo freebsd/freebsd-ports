@@ -7,9 +7,9 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.58
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
-DISTNAME=	yaws-${PORTVERSION}pre
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A webserver for dynamic content written in Erlang

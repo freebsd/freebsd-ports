@@ -29,6 +29,7 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_dav.hrl
+lib/erlang/lib/yaws-%%VERSION%%/priv/epam
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
