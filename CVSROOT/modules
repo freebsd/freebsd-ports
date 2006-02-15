@@ -5416,6 +5416,7 @@ libdjvu++	ports/graphics/libdjvu++
 libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
 libdnet		ports/net/libdnet
+libdnsres	ports/devel/libdnsres
 libdockapp	ports/x11-wm/libdockapp
 libdomainkeys	ports/mail/libdomainkeys
 libdrm		ports/graphics/libdrm
