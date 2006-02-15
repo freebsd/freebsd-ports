@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.60
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -21,7 +21,7 @@ USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	dbus
 USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--disable-gtk \
 		--disable-python \
@@ -31,7 +31,7 @@ CONFIGURE_ARGS?=--disable-gtk \
 		--disable-mono-docs \
 		--localstatedir=/var \
 		--with-system-pid-file=/var/run/dbus.pid \
-		--with-system-socket=/var/run/dbus \
+		--with-system-socket=/var/run/dbus.pipe \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
@@ -42,7 +42,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	QT "Enable Qt client support" off
 
 PLIST_SUB=	VERSION="1.0"
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 		dbus-monitor.1 dbus-send.1
@@ -61,18 +60,31 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/dbus.sh > ${WRKSRC}/dbus.sh
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/tools/run-with-tmp-session-bus.sh
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' \
 		${WRKSRC}/bus/session.conf.in
 
+.if !defined(DBUS_SLAVE)
+pre-su-install:
+	@for i in 15 9 ; do \
+		if [ -f /var/run/dbus.pid ]; then \
+			kill -$${i} $$(${CAT} /var/run/dbus.pid) 2>/dev/null || ${TRUE} ; \
+			sleep 3 ; \
+		fi ; \
+	done
+	@if [ -f /var/run/dbus.pid ]; then \
+		${RM} -f /var/run/dbus.pid ; \
+	fi
+	@if [ -S /var/run/dbus ]; then \
+		${RM} -f /var/run/dbus ; \
+	fi
+.endif
+
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/dbus.sh ${PREFIX}/etc/rc.d
 	${MKDIR} ${X11BASE}/share/dbus-1/services
 .else
 .if defined(PKGNAMEPREFIX)

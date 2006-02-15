@@ -6,7 +6,6 @@ bin/dbus-monitor
 bin/dbus-send
 etc/dbus-1/session.conf
 etc/dbus-1/system.conf
-etc/rc.d/dbus.sh
 %%QT%%include/dbus-%%VERSION%%/dbus/connection.h
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
