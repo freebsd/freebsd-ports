@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="432bf98d-9e25-11da-b410-000e0c2e438a">
+    <topic>kpdf -- heap based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>kdegraphics</name>
+	<range><lt>3.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The KDE team reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20060202-1.txt">
+	  <p>kpdf, the KDE pdf viewer, shares code with xpdf. xpdf
+	    contains a heap based buffer overflow in the splash
+	    rasterizer engine that can crash kpdf or even execute
+	    arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0301</cvename>
+      <url>http://www.kde.org/info/security/advisory-20060202-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-02-02</discovery>
+      <entry>2006-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb33981a-7ac6-11da-bf72-00123f589060">
     <topic>perl, webmin, usermin -- perl format string integer wrap vulnerability</topic>
     <affects>
