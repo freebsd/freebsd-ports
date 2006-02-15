@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--enable-python \
 		--disable-qt3 \
 		--localstatedir=/var \
 		--with-system-pid-file=/var/run/dbus.pid \
-		--with-system-socket=/var/run/dbus \
+		--with-system-socket=/var/run/dbus.pipe \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
