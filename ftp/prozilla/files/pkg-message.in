@@ -1,0 +1,11 @@
+==============================================================================
+
+ProZilla has been installed!
+
+The libprozilla header files are now installed in a "prozilla" subdirectory to
+avoid problems caused by the file named "common.h".
+
+Now to compile a program that uses libprozilla you have to add the
+"-I%%PREFIX%%/include/prozilla" flag to the compiler.
+
+==============================================================================
