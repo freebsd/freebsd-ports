@@ -97,12 +97,12 @@ del_pkg() {
         if [ -s /var/db/pkg/${base}/+REQUIRED_BY ]; then
           recursion=1
           nextpkg="${base} ${nextpkg}"
-        else
+        elif [ -d /var/db/pkg/${base}/ ]; then
           delpkg="${base} ${delpkg}"
         fi
       done
       pkgs="${nextpkg}"
-      if [ "$dellist" = "$delpkg" ]; then
+      if [ "$dellist" != "" -a "$dellist" = "$delpkg" ]; then
         echo "deleted list =\""$dellist"\", packages to delete ="\"$delpkg\"
         echo "The following packages were left behind (perhaps your dependency list is incomplete):"
         ls /var/db/pkg
@@ -303,6 +303,7 @@ EOF
   mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType )" > /tmp/list3
 
   # Compare the state of the filesystem now to before the 'make install' phase
+  dirty=0
   if [ -s /tmp/list3 ]; then
     cd /
     grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
@@ -311,9 +312,11 @@ EOF
     if [ "x${NOPLISTCHECK}" = "x" ]; then
       if grep -vqE "($X|$L)/etc/" /tmp/list4; then
         echo "1" > /tmp/status
+        dirty=1
       fi
-      if [ -s /tmp/list5 ]; then
+      if [ -s /tmp/list5 -o -s /tmp/list6 ]; then
         echo "1" > /tmp/status
+        dirty=1
       fi
     fi
     echo "================================================================"
@@ -333,9 +336,9 @@ EOF
   if [ -s /tmp/list6 ]; then
     echo "list of filesystem changes from before and after port installation and deinstallation"
     cat /tmp/list6
-    if [ "x${NOPLISTCHECK}" = "x" ]; then
-      echo "1" > /tmp/status
-    fi
+  fi
+  if [ "${dirty}" = 1 ]; then
+    cleanup 0
   fi
 
   # BUILD_DEPENDS and RUN_DEPENDS are both present at install-time (e.g. gmake)
