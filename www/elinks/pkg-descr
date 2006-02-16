@@ -15,5 +15,7 @@ So far elinks adds the following to links:
      unhistory 
      support for editing textareas in external editor 
      ability to switch off document-specific colors 
+     Spidermonkey-based ECMAScript support
+     Syntax highlighting for HTML, RSS, and XBEL
 
 WWW: http://elinks.or.cz/
