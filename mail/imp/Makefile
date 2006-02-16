@@ -105,7 +105,7 @@ RUN_DEPENDS+=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 REINPLACE_ARGS=	-i.beforeIMP
 
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -158,9 +158,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
 .endif
 
 .if ${APACHE_VERSION} >= 20
-HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
+HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes/
 .else
-HORDE_INC=	${LOCALBASE}/etc/horde
+HORDE_INC=	${LOCALBASE}/etc/horde/
 .endif
 
 pre-everything::
