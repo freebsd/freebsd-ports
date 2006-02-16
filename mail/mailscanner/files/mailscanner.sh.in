@@ -23,7 +23,7 @@ load_rc_config $name
 : ${mailscanner_configfile="%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
 : ${mailscanner_pidfile="/var/run/MailScanner.pid"}
 
-command="%%PREFIX%%/libexec/MailScanner/MailScanner"
+command="%%PREFIX%%/sbin/mailscanner"
 pidfile=${mailscanner_pidfile}
 command_args="${mailscanner_configfile}"
 
@@ -36,6 +36,8 @@ _ms_start_precmd() {
 }
 
 start_precmd=_ms_start_precmd
+
+procname="MailScanner"
 
 run_rc_command "$1"
 

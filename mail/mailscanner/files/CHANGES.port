@@ -1,0 +1,26 @@
+Version 4.50.15_1
+=================
+- The MailScanner binary is now put into /usr/local/sbin allowing for
+  easy use of the command-line options for debugging etc.
+- From this version on all ports will contain this Change Log.
+- The following scripts are now installed by the port as well (into
+  /usr/local/libexec/MailScanner):
+	- analyse_SpamAssassin_cache
+	- clean.SA.cache (use this for manual clean or in crontab)
+	- clean.quarantine (use this for manual clean or in crontab)
+	- update_phishing_sites (use this for manual updates)
+	- update_phishing_sites.cron (use this in crontab)
+	- update_virus_scanners.cron (ise this in crontab)
+- The latter two can/should be used in your crontab for updating those
+  components. These scripts introduce a random delay for updating (can
+  be configured in rc.conf).
+- Fixed a small bug in mailscanner.sh script. Status/Stop was not
+  always working.
+
+Version 4.50.15
+===============
+- Upgrade to MailScanner 4.50.15-1
+- Start/Stop scripts are now rc.subr compliant. Please adjust your config!
+- The port now optionally installs Spamassassin, ClamAV and Bitdefender.
+- make renew-wrapper, renew-autoupdate and renew-reports now depend on 
+  configure instead of on install allowing their usage after a portupgrade.
