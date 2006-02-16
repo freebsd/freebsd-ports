@@ -7,5 +7,9 @@ share/doc/prom-wl/byte-compile
 share/examples/prom-wl/dot.emacs
 share/examples/prom-wl/dot.procmailrc
 @dirrm lib/xemacs/site-packages/lisp/prom-wl
+@dirrmtry lib/xemacs/site-packages/lisp
+@dirrmtry lib/xemacs/site-packages/pkginfo
+@dirrmtry lib/xemacs/site-packages
+@dirrmtry lib/xemacs
 @dirrm share/doc/prom-wl
 @dirrm share/examples/prom-wl
