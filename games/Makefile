@@ -759,7 +759,6 @@
     SUBDIR += xscavenger
     SUBDIR += xscorch
     SUBDIR += xscrabble
-    SUBDIR += xshipwars-client
     SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
