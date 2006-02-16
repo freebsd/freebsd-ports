@@ -1,0 +1,7 @@
+PCL-CVS is a front-end to CVS.  It integrates the most frequently
+used CVS commands into emacs.
+
+For VC users, PCL-CVS can be thought of as a VC-dired specially designed
+for CVS.  PCL-CVS is not a replacement for VC and is supposed to interact
+well with it.  It provides a global view of your project and allows
+execution of cvs commands on several files at a time.
