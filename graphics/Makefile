@@ -67,7 +67,6 @@
     SUBDIR += dc20pack
     SUBDIR += dc3play
     SUBDIR += dcraw
-    SUBDIR += deep_zoom
     SUBDIR += demeter
     SUBDIR += devil
     SUBDIR += dia
