@@ -3789,6 +3789,7 @@ hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
+hsqldb		ports/databases/hsqldb
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
 hte		ports/editors/hte
