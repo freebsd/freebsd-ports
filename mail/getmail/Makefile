@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.5.3
+PORTVERSION=	4.5.4
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
 		http://mirrors.closedsrc.org/getmail/
