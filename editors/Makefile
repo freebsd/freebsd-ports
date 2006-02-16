@@ -12,7 +12,6 @@
     SUBDIR += apel
     SUBDIR += apel-emacs19
     SUBDIR += apel-emacs20
-    SUBDIR += apel-mule
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
@@ -22,7 +21,6 @@
     SUBDIR += bitedit
     SUBDIR += bitmap
     SUBDIR += bitmap-emacs20
-    SUBDIR += bitmap-mule
     SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
@@ -34,7 +32,6 @@
     SUBDIR += cooledit
     SUBDIR += cream
     SUBDIR += custom-emacs
-    SUBDIR += custom-mule
     SUBDIR += dedit
     SUBDIR += doxymacs
     SUBDIR += dte
@@ -56,7 +53,6 @@
     SUBDIR += flim113
     SUBDIR += flim113-emacs19
     SUBDIR += flim113-emacs20
-    SUBDIR += flim113-mule
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
@@ -140,7 +136,6 @@
     SUBDIR += semi113
     SUBDIR += semi113-emacs19
     SUBDIR += semi113-emacs20
-    SUBDIR += semi113-mule
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += spe

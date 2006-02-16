@@ -407,7 +407,6 @@ apcupsd		ports/sysutils/apcupsd
 apel		ports/editors/apel
 apel-emacs19	ports/editors/apel-emacs19
 apel-emacs20	ports/editors/apel-emacs20
-apel-mule	ports/editors/apel-mule
 apg		ports/security/apg
 apinger		ports/net/apinger
 apollon		ports/net-p2p/apollon
@@ -760,7 +759,6 @@ bitlbee		ports/irc/bitlbee
 bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
-bitmap-mule	ports/editors/bitmap-mule
 bitstream-vera	ports/x11-fonts/bitstream-vera
 bjfilter360	ports/print/bjfilter360
 bjfilter850	ports/print/bjfilter850
@@ -1424,7 +1422,6 @@ cursor-bluecurve-theme	ports/x11-themes/cursor-bluecurve-theme
 cursor-jimmac-theme	ports/x11-themes/cursor-jimmac-theme
 cursor-polar-theme	ports/x11-themes/cursor-polar-theme
 custom-emacs	ports/editors/custom-emacs
-custom-mule	ports/editors/custom-mule
 cutecom		ports/comms/cutecom
 cutils		ports/devel/cutils
 cutlass		ports/security/cutlass
@@ -2419,7 +2416,6 @@ flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flim113		ports/editors/flim113
 flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
-flim113-mule	ports/editors/flim113-mule
 flip		ports/graphics/flip
 flite		ports/audio/flite
 floatator	ports/misc/floatator
@@ -11698,7 +11694,6 @@ semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
 semi113		ports/editors/semi113
 semi113-emacs19	ports/editors/semi113-emacs19
 semi113-emacs20	ports/editors/semi113-emacs20
-semi113-mule	ports/editors/semi113-mule
 sendemail	ports/net/sendemail
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
