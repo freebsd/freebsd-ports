@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28c9243a-72ed-11da-8c1d-000e0c2e438a">
+    <topic>phpbb -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<name>zh-phpbb-tw</name>
+	<range><lt>2.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple vulnerabilities have been reported within phpbb.
+	  phpbb is proven vulnerable to:</p>
+	<ul>
+	  <li>script insertion,</li>
+	  <li>bypassing of protetion mechanisms,</li>
+	  <li>multiple cross site scripting vulnerabilities,</li>
+	  <li>SQL injection,</li>
+	  <li>arbitrary code execution</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <bid>15170</bid>
+      <bid>15243</bid>
+      <cvename>CVE-2005-3310</cvename>
+      <cvename>CVE-2005-3415</cvename>
+      <cvename>CVE-2005-3416</cvename>
+      <cvename>CVE-2005-3417</cvename>
+      <cvename>CVE-2005-3418</cvename>
+      <cvename>CVE-2005-3419</cvename>
+      <cvename>CVE-2005-3420</cvename>
+      <cvename>CVE-2005-3536</cvename>
+      <cvename>CVE-2005-3537</cvename>
+      <mlist msgid="20051022132217.10390.qmail@securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=113017003617987</mlist>
+      <url>http://www.hardened-php.net/advisory_172005.75.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-24</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="486aff57-9ecd-11da-b410-000e0c2e438a">
     <topic>postgresql -- character conversion and tsearch2 vulnerabilities</topic>
     <affects>
