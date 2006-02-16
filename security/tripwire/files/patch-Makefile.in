@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Thu Dec  1 19:24:47 2005
++++ Makefile.in	Fri Jan  6 15:06:24 2006
+@@ -536,7 +536,6 @@
+ 
+ install-data-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am:
+ 

@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Tue Nov 22 23:02:50 2005
++++ man/Makefile.in	Fri Jan  6 13:51:14 2006
+@@ -152,7 +152,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+-SUBDIRS = man4 man5 man8
++SUBDIRS = man5 man8
+ all: all-recursive
+ 
+ .SUFFIXES:
