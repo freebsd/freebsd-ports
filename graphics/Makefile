@@ -19,7 +19,6 @@
     SUBDIR += agg
     SUBDIR += ale
     SUBDIR += allegrogl
-    SUBDIR += animabob
     SUBDIR += aoi
     SUBDIR += aqsis
     SUBDIR += autotrace
