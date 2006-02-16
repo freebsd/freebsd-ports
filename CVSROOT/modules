@@ -11508,6 +11508,7 @@ rubygem-rake	ports/devel/rubygem-rake
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rgl	ports/devel/rubygem-rgl
 rubygem-rscm	ports/devel/rubygem-rscm
+rubygem-snmp	ports/net-mgmt/rubygem-snmp
 rubygem-stream	ports/devel/rubygem-stream
 rubygem-switchtower	ports/sysutils/rubygem-switchtower
 rubygem-syntax	ports/textproc/rubygem-syntax
