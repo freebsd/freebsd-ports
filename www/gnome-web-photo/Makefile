@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gnome-web-photo
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_GECKO=	firefox seamonkey
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomevfs2 gnomehack
