@@ -26,7 +26,7 @@ PORT_SETUPEL=	pcl-cvs-setup.el
 
 # emacs port setup
 USE_EMACS=	yes
-EMACS_PORT_NAME=	emacs20
+EMACS_PORT_NAME?=	emacs20
 ELIB_PORT_SUFFIX?=	-${EMACS_PORT_NAME}
 
 # target name for make build
