@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Stem-Snowball
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Lingua::Stem::Snowball - Perl interface to Snowball stemmers
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	Lingua::Stem::Snowball.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"This port requires perl 5.6 or newer"
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8.0 or later.  Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
