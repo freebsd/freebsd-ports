@@ -1,0 +1,21 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-compat.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-compat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-edit.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-edit.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-log.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-log.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-status.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/cvs-status.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-defs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-defs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-info.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-info.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-parse.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-parse.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-startup.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-util.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs-util.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs/pcl-cvs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/%%PORT_SETUPEL%%
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/pcl-cvs
