@@ -6,6 +6,8 @@ provides the ability to read the SDR and print sensor values, display
 the contents of the SEL, print FRU information, read and set LAN
 configuration parameters, and perform chassis power control."
 
-Currently only LAN and LANPlus interfaces are supported on FreeBSD.
+FreeBSD has ipmi(4) driver for in-band IPMI operations in
+7-current after 2006-02-12. On older systems only out-of-band
+LAN and LANPlus interfaces are supported.
 
 WWW: http://ipmitool.sourceforge.net/
