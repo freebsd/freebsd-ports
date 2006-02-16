@@ -1,50 +1,18 @@
---- Makefile.in.bak	Tue Jan 24 11:36:21 2006
-+++ Makefile.in	Tue Jan 24 11:40:17 2006
-@@ -657,18 +657,13 @@
- 
- install-exec-hook :
- 	if test "x$(DESTDIR)" != x; then \
--		install -d -m 755 $(DESTDIR)/etc/linm && \
--		install -d -m 755 $(DESTDIR)/usr/share/locale/ko/LC_MESSAGES && \
--		install -d -m 755 $(DESTDIR)/etc/profile.d \
-+		install -d -m 755 $(DESTDIR)/$(sysconfdir)/linm && \
-+		install -d -m 755 $(DESTDIR)/$(datadir)/locale/ko/LC_MESSAGES \
- 	; fi
- 
--	if test -w $(DESTDIR)/etc/profile.d ; then \
--		install -c -m 755 $(top_srcdir)/sh/linm_alias.sh $(DESTDIR)/etc/profile.d \
--	; fi
--
--	if ! test -d $(DESTDIR)/etc/linm ; then \
--		if test -w $(DESTDIR)/etc ; then \
--			mkdir $(DESTDIR)/etc/linm \
-+	if ! test -d $(DESTDIR)/$(sysconfdir)/linm ; then \
-+		if test -w $(DESTDIR)/$(sysconfdir) ; then \
-+			mkdir $(DESTDIR)/$(sysconfdir)/linm \
- 		; fi \
- 	; fi 
- 
-@@ -676,20 +671,12 @@
- 		install -c -m 644 $(top_srcdir)/sh/default.cfg \
+--- Makefile.in.orig	Tue Jan 31 01:14:27 2006
++++ Makefile.in	Thu Feb 16 15:16:59 2006
+@@ -673,15 +673,7 @@
  					$(top_srcdir)/sh/colorset.cfg \
  					$(top_srcdir)/sh/keyset.cfg \
--					$(DESTDIR)/etc/linm \
+ 					$(DESTDIR)$(LINM_CFGPATH) \
 -	; else \
 -		if ! test -d ~/.linm ; then \
--			mkdir ~/.linm \
+-			install -d -m 755 ~/.linm \
 -		; fi && \
 -		install -c -m 644 $(top_srcdir)/sh/default.cfg \
 -					$(top_srcdir)/sh/colorset.cfg \
 -					$(top_srcdir)/sh/keyset.cfg \
 -					~/.linm \
-+					$(DESTDIR)/$(sysconfdir)/linm \
- 	; fi
+	; fi
  
--	if test -w $(DESTDIR)/usr/share/locale/ko/LC_MESSAGES; then \
-+	if test -w $(DESTDIR)/$(datadir)/locale/ko/LC_MESSAGES; then \
- 		install -c -m 644	$(top_srcdir)/locale/linm_euckr.mo $(top_srcdir)/locale/linm_utf8.mo \
--				$(DESTDIR)/usr/share/locale/ko/LC_MESSAGES \
-+				$(DESTDIR)/$(datadir)/locale/ko/LC_MESSAGES \
- 	; fi
- 
- uninstall-hook :
+ 	if ! test -d $(DESTDIR)$(KO_LOCALE_FILEPATH) ; then \
+ 		install -d -m 755 $(DESTDIR)$(KO_LOCALE_FILEPATH) \
