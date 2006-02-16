@@ -361,7 +361,7 @@
 %%IMPDIR%%/thread.php
 %%IMPDIR%%/view.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%HORDE_INC%%/httpd-imp.conf
+%%HORDE_INC%%httpd-imp.conf
 @dirrm %%IMPDIR%%/themes/sun
 @dirrm %%IMPDIR%%/themes/simplex
 @dirrm %%IMPDIR%%/themes/postnuke
