@@ -15,6 +15,7 @@ COMMENT=	Online multi-player gaming for the Nintendo GameCube
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
+ONLY_FOR_ARCHS=	i386
 USE_XLIB=	YES
 WRKSRC=		${WRKDIR}/WarpPipe-0.3.5-bsd
 NO_BUILD=	YES
