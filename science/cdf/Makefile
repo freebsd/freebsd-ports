@@ -7,11 +7,12 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/	\
 		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
 DISTNAME=	cdf${VER}-dist-cdf
+DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
