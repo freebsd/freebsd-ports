@@ -4605,6 +4605,7 @@ jakarta-commons-codec	ports/java/jakarta-commons-codec
 jakarta-commons-collections	ports/java/jakarta-commons-collections
 jakarta-commons-configuration	ports/devel/jakarta-commons-configuration
 jakarta-commons-dbcp	ports/java/jakarta-commons-dbcp
+jakarta-commons-dbutils	ports/databases/jakarta-commons-dbutils
 jakarta-commons-digester	ports/textproc/jakarta-commons-digester
 jakarta-commons-discovery	ports/java/jakarta-commons-discovery
 jakarta-commons-httpclient	ports/java/jakarta-commons-httpclient
