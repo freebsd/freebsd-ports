@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.95.1
+PORTVERSION=	1.95.7
 CATEGORIES+=	net games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/tt++
-PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt
+PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt chat_protocol.txt
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
 .ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
-.for i in FAQ README TODO CREDITS BUGS docs/tintin19.txt
+.for i in FAQ README TODO CREDITS BUGS docs/tintin19.txt docs/chat_protocol.txt
 	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 .endif
