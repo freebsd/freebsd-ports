@@ -3,6 +3,7 @@
 #
 # $FreeBSD$
 
+# This file originally was repocopied from: ports/security/tripwire/files/twpol.txt,v 1.3 2005/08/09 18:24:15 cy Exp
 
 #
 # This is the example Tripwire Policy file.  It is intended as a place to
@@ -184,7 +185,9 @@ SIG_HI        = 100 ;                # Critical files that are significant point
 
 
 #
-# FreeBSD Kernel
+ifelse(eval(FREEBSD_VERSION<=4),1,`# FreeBSD Kernel
+',`# FreeBSD Kernel and boot code
+')dnl
 #
 
 (
@@ -192,15 +195,17 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
-  # /boot is used by FreeBSD 5.X+
-  /boot					-> $(SEC_CRIT) ;
-  # /kernel is used by FreeBSD 4.X
+ifelse(eval(FREEBSD_VERSION<=4),1,`dnl /kernel is used by FreeBSD <=4.X
   /kernel				-> $(SEC_CRIT) ;
   /kernel.old				-> $(SEC_CRIT) ;
   /kernel.GENERIC			-> $(SEC_CRIT) ;
+',eval(FREEBSD_VERSION>=5),1,`dnl /boot is used by FreeBSD >=5.X
+  /boot					-> $(SEC_CRIT) ;
+')
 }
 
 
+ifelse(eval(FREEBSD_VERSION<=4),1,`dnl /modules and /lkm are used by FreeBSD <=4.X
 #
 # FreeBSD Modules
 #
@@ -210,12 +215,17 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
-  # /modules is used by FreeBSD 4.X
+')
+ifelse(eval(FREEBSD_VERSION<=3),1,`dnl /lkm is used by FreeBSD 2.X and 3.X
+  /lkm				-> $(SEC_CRIT) (recurse = true) ;
+',eval(FREEBSD_VERSION<=4),1,`dnl /modules is used by FreeBSD 4.X
   /modules				-> $(SEC_CRIT) (recurse = true) ;
   /modules.old				-> $(SEC_CRIT) (recurse = true) ;
-  # /lkm is used by FreeBSD 2.X and 3.X
-  # /lkm				-> $(SEC_CRIT) (recurse = true) ; # uncomment if using lkm kld
+')
+dnl FreeBSD >=5.X puts modules in /boot/kernel
+ifelse(eval(FREEBSD_VERSION<=4),1,`dnl /modules and /lkm are used by FreeBSD <=4.X
 }
+')dnl
 
 
 #
@@ -255,7 +265,7 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   severity = $(SIG_HI)
 )
 {
-  # XXX Do we really need to verify the integrity of /dev on 5.X?
+ifelse(eval(FREEBSD_VERSION<=4),1,`dnl /dev is devfs on FreeBSD >= 5.X
   /dev					-> $(Device) (recurse = true) ;
   !/dev/vga ;
   !/dev/dri ;
@@ -300,6 +310,7 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   /dev/ttypu				-> $(SEC_TTY) ;
   /dev/ttypv				-> $(SEC_TTY) ;
   /dev/cuaa0				-> $(SEC_TTY) ;	# modem
+')
 }
 
 
@@ -415,6 +426,7 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   ! /usr/share/man/cat9 ;
   ! /usr/share/man/catl ;
   ! /usr/share/man/catn ;
+ifelse(eval(FREEBSD_VERSION<=4),1,`
   /usr/share/perl/man			-> $(SEC_CONFIG) ;
   !/usr/share/perl/man/whatis ;
   !/usr/share/perl/man/.glimpse_filenames ;
@@ -428,19 +440,7 @@ SIG_HI        = 100 ;                # Critical files that are significant point
   !/usr/share/perl/man/.glimpse_turbo ;
   /usr/share/perl/man/man3		-> $(SEC_CRIT) (recurse = true) ;
   ! /usr/share/perl/man/cat3 ;
-  /usr/local/lib/perl5/5.00503/man	-> $(SEC_CONFIG) ;
-  ! /usr/local/lib/perl5/5.00503/man/whatis ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_filters ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_filetimes ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_messages ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_statistics ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_index ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_turbo ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_partitions ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_filenames ;
-  ! /usr/local/lib/perl5/5.00503/man/.glimpse_filenames_index ;
-  /usr/local/lib/perl5/5.00503/man/man3		-> $(SEC_CRIT) (recurse = true) ;
-  ! /usr/local/lib/perl5/5.00503/man/cat3 ;
+')dnl
 }
 
 

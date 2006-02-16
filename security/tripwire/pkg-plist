@@ -2,8 +2,6 @@ sbin/tripwire
 sbin/twadmin
 sbin/twprint
 sbin/siggen
-share/doc/tripwire/README
-share/doc/tripwire/Release_Notes
 share/doc/tripwire/COPYING
 share/doc/tripwire/TRADEMARK
 share/doc/tripwire/policyguide.txt
