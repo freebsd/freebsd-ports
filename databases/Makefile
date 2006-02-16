@@ -68,6 +68,7 @@
     SUBDIR += grass-i18n
     SUBDIR += gtksql
     SUBDIR += hk_classes
+    SUBDIR += hsqldb
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
     SUBDIR += isql-viewer
