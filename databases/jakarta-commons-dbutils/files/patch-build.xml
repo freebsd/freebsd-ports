@@ -1,0 +1,20 @@
+# use installed junit, instead of unnecessarily downloading and and building a custom one (which didn't work anyway)
+*** build.xml.old	Sun Jan  1 09:43:41 2006
+--- build.xml	Sun Jan  1 09:32:51 2006
+***************
+*** 139,152 ****
+      </javadoc>
+    </target>
+    <target name="get-deps" unless="noget" depends="init">
+-     <get dest="${libdir}/junit-3.8.1.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/junit/jars/junit-3.8.1.jar">
+-     </get>
+-     <get dest="${libdir}/junit-3.8.1.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/junit/jars/junit-3.8.1.jar">
+-     </get>
+-     <get dest="${libdir}/ant-1.5.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/ant/jars/ant-1.5.jar">
+-     </get>
+-     <get dest="${libdir}/ant-optional-1.5.jar" usetimestamp="true" ignoreerrors="true" src="http://www.ibiblio.org/maven/ant/jars/ant-optional-1.5.jar">
+-     </get>
+    </target>
+    <target name="install-maven">
+      <get dest="${user.home}/maven-install-latest.jar" usetimestamp="true" src="${repo}/maven/maven-install-latest.jar">
+--- 139,144 ----
