@@ -18,8 +18,6 @@ COMMENT=	Procmail reader for Wanderlust on GNU Emacs
 # depends, there is NO RUN_DEPENDS mail/wanderlust-*.
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-BROKEN=		Incomplete pkg-plist
-
 NO_BUILD=	yes
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
