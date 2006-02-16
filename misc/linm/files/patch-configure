@@ -1,0 +1,28 @@
+--- configure.orig	Thu Feb 16 15:55:08 2006
++++ configure	Thu Feb 16 15:56:04 2006
+@@ -29097,9 +29097,9 @@
+ fi
+ 
+ 
+-# Check whether --enable-configpath or --disable-configpath was given.
+-if test "${enable_configpath+set}" = set; then
+-  enableval="$enable_configpath"
++# Check whether --enable-cfgpath or --disable-cfgpath was given.
++if test "${enable_cfgpath+set}" = set; then
++  enableval="$enable_cfgpath"
+   enable_cfgpath=${enableval}
+ else
+   enable_cfgpath=default
+@@ -29125,9 +29125,9 @@
+ 
+ 
+ 
+-# Check whether --enable-configpath or --disable-configpath was given.
+-if test "${enable_configpath+set}" = set; then
+-  enableval="$enable_configpath"
++# Check whether --enable-kolocalepath or --disable-kolocalepath was given.
++if test "${enable_kolocalepath+set}" = set; then
++  enableval="$enable_kolocalepath"
+   enable_kolocalepath=${enableval}
+ else
+   enable_kolocalepath=default

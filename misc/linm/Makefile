@@ -8,36 +8,35 @@
 PORTNAME=	linm
 PORTVERSION=	${LINM_VER}.1
 CATEGORIES=	misc shells
-MASTER_SITES=	http://kldp.net/frs/download.php/3116/ \
-		ftp://ftp.kr.freebsd.org/pub/kldp.net/download/mls/1.LinMUnstable/LinM${LINM_VER}/
+MASTER_SITES=	http://kldp.net/frs/download.php/3152/ \
+		ftp://ftp.kr.freebsd.org/pub/kldp.net/download/mls/1.LinMStable/LinM${LINM_VER}/
 DISTNAME=	linm_${LINM_VER}-1
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Clone of Mdir, mc-style terminal file manager
 
+LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_ICONV=	yes
 USE_OPENSSL=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=  CPPFLAGS=-I${LOCALBASE}/include
-
 # does not work now
 #.if defined(WITHOUT_NLS)
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "
 #.else
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 #.endif
 
-LINM_VER=	0.7.6
-WRKSRC=		${WRKDIR}/linm-${LINM_VER}
+CONFIGURE_ARGS+= --enable-cfgpath="${PREFIX}/etc/linm" --enable-kolocalepath="${PREFIX}/share/locale/ko/LC_MESSAGES"
 
-post-patch:
-	@${REINPLACE_CMD} -e "s:/etc/linm:${PREFIX}/etc/linm:" "${WRKSRC}/src/ncurses/main_ncurces.cpp"
+LINM_VER=	0.7.7
+WRKSRC=		${WRKDIR}/linm-${LINM_VER}
 
 post-install:
 .if !defined (NOPORTDOCS)
