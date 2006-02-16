@@ -1,3 +1,0 @@
-To use pcl-cvs, put the following setup into your ~/.emacs:
-
-        (require 'pcl-cvs-setup)

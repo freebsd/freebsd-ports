@@ -10,7 +10,6 @@
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel
-    SUBDIR += apel-emacs19
     SUBDIR += apel-emacs20
     SUBDIR += asedit
     SUBDIR += axe
@@ -31,7 +30,6 @@
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
-    SUBDIR += custom-emacs
     SUBDIR += dedit
     SUBDIR += doxymacs
     SUBDIR += dte
@@ -51,7 +49,6 @@
     SUBDIR += flim-emacs20
     SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
-    SUBDIR += flim113-emacs19
     SUBDIR += flim113-emacs20
     SUBDIR += fpc-ide
     SUBDIR += fte
@@ -134,7 +131,6 @@
     SUBDIR += semi-emacs20
     SUBDIR += semi-xemacs21-mule
     SUBDIR += semi113
-    SUBDIR += semi113-emacs19
     SUBDIR += semi113-emacs20
     SUBDIR += setedit
     SUBDIR += slime
