@@ -11,7 +11,7 @@ CATEGORIES+=	net games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	jhp@cocoja.holywar.net
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	A client program to help playing muds (devel version)
 
 LATEST_LINK=	${PORTNAME}-devel
