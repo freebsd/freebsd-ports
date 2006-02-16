@@ -11,5 +11,8 @@
   To start mailscanner and your mta, please put the correct statements in 
   your rc.conf. For examples/syntax please look at mailscanner.sh and
   mta.sh in your rc.d directory.
+
+  Please: Also have a look at CHANGES.port in your MailScanner 
+  doc dir (see above).
  
 *************************************************************************

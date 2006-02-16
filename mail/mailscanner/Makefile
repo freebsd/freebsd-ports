@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.50.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -38,9 +39,9 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
-		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+		bash:${PORTSDIR}/shells/bash \
+		tnef:${PORTSDIR}/converters/tnef \
+		wget:${PORTSDIR}/ftp/wget
 
 OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 		CLAMAV "Install ClamAV" on \
@@ -144,6 +145,21 @@ do-build:
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/bin/update_virus_scanners
 	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
+		${WRKSRC}/bin/cron/update_virus_scanners.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		${WRKSRC}/bin/update_phishing_sites
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
+		${WRKSRC}/bin/cron/update_phishing_sites.cron
+	${PERL} -pi -e \
+		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
+		${WRKSRC}/bin/clean.SA.cache
+	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
@@ -168,19 +184,36 @@ do-build:
 .endfor
 
 do-install:
-	# Step 1: Install libexec files
+	#
+	# Step 1: Install bin files
+	#
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
+	${LN} -s ${LOCALBASE}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
+	#
+	# Step 2: Install libexec files
 	#
 	${MKDIR} ${PREFIX}/libexec/MailScanner
 	${CHMOD} -R ${BINMODE} ${PREFIX}/libexec/MailScanner
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/libexec/MailScanner
 	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
 	cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/analyse_SpamAssassin_cache \
+		${PREFIX}/libexec/MailScanner/analyse_SpamAssassin_cache
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.SA.cache \
+		${PREFIX}/libexec/MailScanner/clean.SA.cache
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.quarantine \
+		${PREFIX}/libexec/MailScanner/clean.quarantine
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
+		${PREFIX}/libexec/MailScanner/update_phishing_sites
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_phishing_sites.cron \
+		${PREFIX}/libexec/MailScanner/update_phishing_sites.cron
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_virus_scanners \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
+		${PREFIX}/libexec/MailScanner/update_virus_scanners.cron
 	#
-	# Step 2: Install etc files
+	# Step 3: Install etc files
 	#
 	${MKDIR} ${PREFIX}/etc/MailScanner
 	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner
@@ -200,7 +233,7 @@ do-install:
 		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
 .endfor
 	#
-	# Step 3: Install files in share
+	# Step 4: Install files in share
 	#
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
@@ -210,7 +243,7 @@ do-install:
 		-o \( -type f ! -name "*.orig" -exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
-	# Step 4: Install lib
+	# Step 5: Install lib
 	#
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
@@ -219,11 +252,12 @@ do-install:
 	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	#
-	# Step 5: Docs & Manpages
+	# Step 6: Docs & Manpages
 	#
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/CHANGES.port ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
 	cd ${WRKSRC}/docs && \
 		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \

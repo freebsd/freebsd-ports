@@ -49,7 +49,13 @@ lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
 lib/MailScanner/MailScanner/notes.txt
-libexec/MailScanner/MailScanner
+libexec/MailScanner/analyse_SpamAssassin_cache
+libexec/MailScanner/clean.SA.cache
+libexec/MailScanner/clean.quarantine
+libexec/MailScanner/update_phishing_sites
+libexec/MailScanner/update_phishing_sites.cron
+libexec/MailScanner/update_virus_scanners
+libexec/MailScanner/update_virus_scanners.cron
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
 libexec/MailScanner/avg-autoupdate.sample
@@ -92,9 +98,10 @@ libexec/MailScanner/symscanengine-autoupdate.sample
 libexec/MailScanner/symscanengine-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
-libexec/MailScanner/update_virus_scanners
 libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/vexira-wrapper.sample
+sbin/mailscanner
+sbin/MailScanner
 %%DATADIR%%/reports/ca/rejection.report.txt.sample
 %%DATADIR%%/reports/ca/deleted.content.message.txt.sample
 %%DATADIR%%/reports/ca/deleted.filename.message.txt.sample
@@ -461,6 +468,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/Book.Dec04-Aug05.pdf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.port
 %%PORTDOCS%%%%DOCSDIR%%/FreeBSD.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
