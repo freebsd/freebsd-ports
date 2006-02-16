@@ -48,6 +48,11 @@ CONFIGURE_ARGS+=	--disable-dbus
 LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 .endif
 
+.if !defined(WITHOUT_GCONF)
+USE_GNOME+=	gconf2
+CONFIGURE_ARGS+=	--enable-gconf
+.endif
+
 .if defined(WITHOUT_PERL)
 CONFIGURE_ARGS+=	--disable-perl
 .else
