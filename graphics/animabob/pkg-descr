@@ -1,9 +1,0 @@
-This package contains programs and utilities that are useful for
-viewing large 2D and 3D data sets. They are best used at the tail
-end of the visualization process, after the data has been post-processed,
-scaled, and rasterized.
-
-WWW: http://gfs.lcse.umn.edu/~grant/AnimaBob/
-
-- Igor Pokrovsky
-tiamat@comset.net

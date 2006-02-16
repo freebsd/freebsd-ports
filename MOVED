@@ -2200,3 +2200,4 @@ editors/flim113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and
 editors/semi113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
 devel/pcl-cvs-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
 editors/custom-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
+graphics/animabob||2006-02-16|Remove expired port
