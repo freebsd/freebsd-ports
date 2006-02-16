@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e34d0c2e-9efb-11da-b410-000e0c2e438a">
+    <topic>rssh -- privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>rssh</name>
+	<range><lt>2.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pizzashack reports:</p>
+	<blockquote cite="http://www.pizzashack.org/rssh/security.shtml">
+	  <p>Max Vozeler has reported a problem whereby rssh can
+	    allow users who have shell access to systems where rssh
+	    is installed (and rssh_chroot_helper is installed SUID)
+	    to gain root access to the system, due to the ability to
+	    chroot to arbitrary locations. There are a lot of
+	    potentially mitigating factors, but to be safe you should
+	    upgrade immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>16050</bid>
+      <cvename>CVE-2005-3345</cvename>
+      <url>http://www.pizzashack.org/rssh/security.shtml</url>
+    </references>
+    <dates>
+      <discovery>2005-12-18</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d38e1810-9ef7-11da-b410-000e0c2e438a">
     <topic>tor -- malicious tor server can locate a hidden service</topic>
     <affects>
