@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="592815da-9eed-11da-b410-000e0c2e438a">
+    <topic>mantis -- "view_filters_page.php" cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>mantis</name>
+	<range><lt>1.0.0a4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>r0t reports:</p>
+	<blockquote cite="http://pridels.blogspot.com/2005/12/mantis-bugtracking-system-xss-vuln.html">
+	  <p>Mantis contains a flaw that allows a remote cross site
+	    scripting attack.  This flaw exists because input passed to
+	    "target_field" parameter in "view_filters_page.php" is not
+	    properly sanitised before being returned to the user.  This
+	    could allow a user to create a specially crafted URL that
+	    would execute arbitrary code in a user's browser within the
+	    trust relationship between the browser and the server,
+	    leading to a loss of integrity.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-4238</cvename>
+      <url>http://pridels.blogspot.com/2005/12/mantis-bugtracking-system-xss-vuln.html</url>
+    </references>
+    <dates>
+      <discovery>2005-12-13</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28c9243a-72ed-11da-8c1d-000e0c2e438a">
     <topic>phpbb -- multiple vulnerabilities</topic>
     <affects>
