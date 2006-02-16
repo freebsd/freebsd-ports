@@ -6,12 +6,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteService.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Dumper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Callback.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Exporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Reactor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Value.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Watch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Bus.pm
@@ -24,9 +24,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/MethodReturn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/MethodCall.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/Error.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/ExportingObjects.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockConnection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/UsingObjects.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/ExportingObjects.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding
