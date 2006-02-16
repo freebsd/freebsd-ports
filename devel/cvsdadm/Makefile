@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsdadm
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
@@ -22,6 +22,8 @@ PORTDOCS=	cvsdadm.README
 
 PLIST_FILES=	bin/cvsdadm
 
+MAN1=	cvsdadm.1
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,#!/usr/bin/perl,#! ${PERL}," ${WRKSRC}/cvsdadm
 
@@ -32,5 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsdadm ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cvsdadm.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
