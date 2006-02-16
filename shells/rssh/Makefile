@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	enigmatyc@laposte.net
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e34d0c2e-9efb-11da-b410-000e0c2e438a.html
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
