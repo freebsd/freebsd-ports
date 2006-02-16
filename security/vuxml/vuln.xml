@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1b725079-9ef6-11da-b410-000e0c2e438a">
+    <topic>sudo -- arbitrary command execution</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.6.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy reports:</p>
+	<blockquote cite="http://www.courtesan.com/sudo/alerts/bash_env.html">
+	  <p>The bash shell uses the value of the PS4 environment
+	    variable (after expansion) as a prefix for commands run
+	    in execution trace mode. Execution trace mode (xtrace) is
+	    normally set via bash's -x command line option or
+	    interactively by running "set -o xtrace". However, it may
+	    also be enabled by placing the string "xtrace" in the
+	    SHELLOPTS environment variable before bash is started.</p>
+	  <p>A malicious user with sudo access to a shell script that
+	    uses bash can use this feature to run arbitrary commands
+	    for each line of the script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>15191</bid>
+      <cvename>CVE-2005-2959</cvename>
+      <url>http://www.courtesan.com/sudo/alerts/bash_env.html</url>
+    </references>
+    <dates>
+      <discovery>2005-10-25</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a78299e7-9ef3-11da-b410-000e0c2e438a">
     <topic>libtomcrypt -- weak signature scheme with ECC keys</topic>
     <affects>
