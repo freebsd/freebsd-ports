@@ -405,7 +405,6 @@ apc		ports/math/apc
 apcpwr		ports/sysutils/apcpwr
 apcupsd		ports/sysutils/apcupsd
 apel		ports/editors/apel
-apel-emacs19	ports/editors/apel-emacs19
 apel-emacs20	ports/editors/apel-emacs20
 apg		ports/security/apg
 apinger		ports/net/apinger
@@ -1421,7 +1420,6 @@ cursive		ports/games/cursive
 cursor-bluecurve-theme	ports/x11-themes/cursor-bluecurve-theme
 cursor-jimmac-theme	ports/x11-themes/cursor-jimmac-theme
 cursor-polar-theme	ports/x11-themes/cursor-polar-theme
-custom-emacs	ports/editors/custom-emacs
 cutecom		ports/comms/cutecom
 cutils		ports/devel/cutils
 cutlass		ports/security/cutlass
@@ -2414,7 +2412,6 @@ flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
 flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flim113		ports/editors/flim113
-flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
 flip		ports/graphics/flip
 flite		ports/audio/flite
@@ -9392,7 +9389,6 @@ pcfclock	ports/sysutils/pcfclock
 pcgen		ports/games/pcgen
 pchar		ports/net/pchar
 pciutils	ports/sysutils/pciutils
-pcl-cvs-emacs	ports/devel/pcl-cvs-emacs
 pcl-cvs-emacs20	ports/devel/pcl-cvs-emacs20
 pclock		ports/x11-clocks/pclock
 pclprint	ports/print/pclprint
@@ -11692,7 +11688,6 @@ semi		ports/editors/semi
 semi-emacs20	ports/editors/semi-emacs20
 semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
 semi113		ports/editors/semi113
-semi113-emacs19	ports/editors/semi113-emacs19
 semi113-emacs20	ports/editors/semi113-emacs20
 sendemail	ports/net/sendemail
 sendfile	ports/net/sendfile
