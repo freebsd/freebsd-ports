@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	security pear
 
 MAINTAINER=	antonio@php.net
@@ -23,8 +22,6 @@ OPTIONS=	PEAR_FILE_PASSWD "PEAR::File_Passwd support" off \
 		PEAR_MDB "PEAR::MDB support" off \
 		PEAR_AUTH_RADIUS "PEAR::Auth_RADIUS support" off \
 		PEAR_FILE_SMBPASSWD "PEAR::File_SMBPasswd support" off
-
-USE_REINPLACE=	yes
 
 CATEGORY=	Auth
 FILES=		Auth.php Auth/Auth.php Container.php Container/DB.php \
