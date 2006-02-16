@@ -2190,3 +2190,8 @@ x11-clocks/gdesklets-praytime||2006-02-14|Remove expired port
 www/p5-Bundle-Catalyst||2006-02-15|Replaced by www/p5-Task-Catalyst
 games/xgolgo||2006-02-15|Remove expired port
 games/virt||2006-02-15|Remove expired port
+editors/apel-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
+editors/bitmap-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
+editors/flim113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
+editors/semi113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
+editors/custom-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
