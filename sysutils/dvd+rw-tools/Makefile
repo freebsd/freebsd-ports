@@ -8,7 +8,8 @@ PORTNAME=	dvd+rw-tools
 PORTVERSION=	6.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
+MASTER_SITES=	http://www.franksworld.org/dist/dvd+rw/ \
+		http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
 
 MAINTAINER=	chuck@pkix.net
