@@ -71,6 +71,7 @@
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
     SUBDIR += isql-viewer
+    SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
