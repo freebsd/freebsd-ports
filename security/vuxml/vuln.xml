@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a78299e7-9ef3-11da-b410-000e0c2e438a">
+    <topic>libtomcrypt -- weak signature scheme with ECC keys</topic>
+    <affects>
+      <package>
+	<name>libtomcrypt</name>
+	<range><le>1.02</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Secure Science Corporation reports that libtomcrypt is
+	  vulnerable to a weak signature scheme.  This allows an
+	  attacker to create a valid random signature and use that to
+	  sign arbitrary messages without requiring the private key.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="4276CC31.9000307@securescience.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111540819703204</mlist>
+    </references>
+    <dates>
+      <discovery>2005-05-01</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="592815da-9eed-11da-b410-000e0c2e438a">
     <topic>mantis -- "view_filters_page.php" cross site scripting vulnerability</topic>
     <affects>
