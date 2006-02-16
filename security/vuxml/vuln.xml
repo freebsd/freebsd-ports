@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="486aff57-9ecd-11da-b410-000e0c2e438a">
+    <topic>postgresql -- character conversion and tsearch2 vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql</name>
+	<range><ge>7.2.0</ge><lt>7.2.8</lt></range>
+	<range><ge>7.3.0</ge><lt>7.3.10</lt></range>
+	<range><ge>7.4.0</ge><lt>7.4.8</lt></range>
+	<range><ge>8.0.0</ge><lt>8.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The postgresql development team reports:</p>
+	  <blockquote cite="http://www.postgresql.org/about/news.315">
+	    <p>The more severe of the two errors is that the functions
+	      that support client-to-server character set conversion
+	      can be called from SQL commands by unprivileged users,
+	      but these functions are not designed to be safe against
+	      malicious choices of argument values.  This problem exists
+	      in PostgreSQL 7.3.* through 8.0.*.  The recommended fix is
+	      to disable public EXECUTE access for these functions.  This
+	      does not affect normal usage of the functions for character
+	      set conversion, but it will prevent misuse.</p>
+	    <p>The other error is that the contrib/tsearch2 module
+	      misdeclares several functions as returning type "internal"
+	      when they do not have any "internal" argument.  This breaks
+	      the type safety of "internal" by allowing users to
+	      construct SQL commands that invoke other functions accepting
+	      "internal" arguments.  The consequences of this have not been
+	      investigated in detail, but it is certainly at least possible
+	      to crash the backend.</p>
+	  </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1409</cvename>
+      <cvename>CAN-2005-1410</cvename>
+      <url>http://www.postgresql.org/about/news.315</url>
+    </references>
+    <dates>
+      <discovery>2005-05-02</discovery>
+      <entry>2006-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6447303-9ec9-11da-b410-000e0c2e438a">
     <topic>heartbeat -- insecure temporary file creation vulnerability</topic>
     <affects>
