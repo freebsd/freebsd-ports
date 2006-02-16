@@ -13890,7 +13890,6 @@ xscreensaver-gnome-hacks	ports/x11/xscreensaver-gnome-hacks
 xscreensaver-kde	ports/x11/xscreensaver-kde
 xscreensaver.app	ports/x11/xscreensaver.app
 xsel		ports/x11/xsel
-xshipwars-client	ports/games/xshipwars-client
 xshisen		ports/games/xshisen
 xshogi		ports/games/xshogi
 xshttpd		ports/www/xshttpd
