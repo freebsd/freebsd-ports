@@ -19,18 +19,13 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/openbox
+CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -export-dynamic"
 DOCS=		ABOUT-NLS AUTHORS COPYING README TODO
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_X_PREFIX=	yes
-
-pre-configure:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} 
-	@${ECHO_CMD} Waiting ten seconds--press control-C to cancel build.
-	@sleep 10
 
 pre-install:
 	${ECHO_CMD} bin/obconf > ${PLIST}
