@@ -99,6 +99,7 @@ libdata/pkgconfig/dspam.pc
 %%CGI%%www/vhosts/dspam/templates/nav_alerts.html
 %%CGI%%www/vhosts/dspam/templates/nav_analysis.html
 %%CGI%%www/vhosts/dspam/templates/nav_error.html
+%%CGI%%www/vhosts/dspam/templates/nav_fragment.html
 %%CGI%%www/vhosts/dspam/templates/nav_history.html
 %%CGI%%www/vhosts/dspam/templates/nav_performance.html
 %%CGI%%www/vhosts/dspam/templates/nav_preferences.html
