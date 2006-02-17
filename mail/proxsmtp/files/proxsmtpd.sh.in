@@ -26,6 +26,5 @@ load_rc_config ${name}
 required_files="${proxsmtpd_conf}"
 command=%%PREFIX%%/sbin/proxsmtpd
 command_args="-f ${proxsmtpd_conf}"
-sig_stop=-KILL
 
 run_rc_command "$1"
