@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	science
 MASTER_SITES=	http://mbdyn.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=	--with-mpi=no
 .endif
 
 .if defined(WITH_METIS)
+BROKEN=		Does not compile with metis enabled
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 CONFIGURE_ARGS+=	--with-metis=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
@@ -54,7 +55,7 @@ CONFIGURE_ARGS+=	--with-metis=no
 .endif
 
 .if defined(WITH_GINAC)
-IGNORE=		"You enabled GiNaC-support, which isn't implemented yet"
+IGNORE=		you enabled GiNaC-support, which is not implemented yet
 #BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=	--with-ginac=no
 .endif
 
 .if defined(WITH_TCL)
-IGNORE=		"You enabled Tcl-support, which isn't implemented yet"
+IGNORE=		you enabled Tcl-support, which is not implemented yet
 LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcl=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
@@ -72,11 +73,11 @@ CONFIGURE_ARGS+=	--with-tcl=no
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
