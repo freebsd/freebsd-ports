@@ -20,8 +20,10 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.6.3
+PORTVER_MAJ=	3.6.4
 #SNAP_DATE=	.20051211.2134
+
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.4
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -42,10 +44,6 @@ OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
 OPTIONS+=	DAEMON "Daemonize dspam; speaks LMTP or DLMTP" on
-
-## algorithm options
-OPTIONS+=	NEURAL_NET "Enable neural networking" off
-
 #
 OPTIONS+=	CLAMAV "Enable clamav support" on
 OPTIONS+=	CLAMAV_DEVEL "Enable clamav support" off
@@ -87,8 +85,8 @@ OPTIONS+=	POSTFIX_MBC "Dspam as mailbox_command in Postfix" off
 OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
-OPTIONS+=	TRAIN_SCRIPT "Install trainning script (needs perl)" off
 
+USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -163,16 +161,11 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 
 .ifdef(WITH_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-RC_SUFX=	.sh
-USE_RC_SUBR=	${PORTNAME}${RC_SUFX}
+USE_RC_SUBR=	${PORTNAME}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
-.endif
-
-.ifdef(WITH_NEURAL_NET)
-CONFIGURE_ARGS+=	--enable-neural-networking
 .endif
 
 .ifdef(WITH_CLAMAV) && defined(WITH_CLAMAV_LOCAL)
@@ -422,15 +415,8 @@ PLIST_SUB+=	CGI="@comment "
 _SED_SCRIPT+=	-e '/%%CGI%%/D'
 .endif
 
-.ifdef(WITH_TRAIN_SCRIPT)
-USE_PERL5=	yes
-PLIST_SUB+=	TRAIN_SCRIPT=""
-.else
-PLIST_SUB+=	TRAIN_SCRIPT="@comment "
-.endif
-
 MAN1=	dspam.1 dspam_clean.1 dspam_corpus.1 dspam_dump.1 dspam_merge.1 \
-	dspam_stats.1
+	dspam_stats.1 dspam_train.1
 MAN3=	libdspam.3
 MLINKS=		libdspam.3 dspam_init.3
 MLINKS+=	libdspam.3 dspam_create.3
@@ -446,21 +432,17 @@ _DOCSL=	courier.txt exim.txt markov.txt mysql_drv.txt ora_drv.txt \
 	pgsql_drv.txt pop3filter.txt postfix.txt qmail.txt relay.txt \
 	sendmail.txt sqlite_drv.txt
 
-.ifndef(MAINT)
 pre-everything::
+.ifndef(MAINT)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
 	@${GREP} -B 1 -A ${_UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
 	@${ECHO_CMD} ""
 	@sleep 5
-.else # maintainer only
-post-fetch:
-.	ifndef(STOP)
-#.		include "/root/ports/upd"
-.	endif
 .endif
 
-pre-extract: check-options-version
+pre-extract:	check-options-version
+.ifndef(MAINT)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
@@ -480,6 +462,7 @@ pre-extract: check-options-version
 .	endif
 	@${ECHO_CMD} ""
 	@sleep 5
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|where @a-14 > to_days(created_on);|where @a-${SIGNATURE_LIFE} > to_days(created_on);|' \
@@ -494,10 +477,7 @@ post-patch:
 		${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
 	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|" \
 		 ${WRKSRC}/src/tools.sqlite_drv/purge-3.sql
-
-.ifdef(WITH_TRAIN_SCRIPT)
-	 @${REINPLACE_CMD} -e "s^%%PERL%%^${PERL}^; s^%%DSPAM_PATH%%^${PREFIX}/bin^" ${WRKSRC}/scripts/train.pl
-.endif
+	@${REINPLACE_CMD} -e "s^%%PERL%%^${PERL}^; s^%%DSPAM_PATH%%^${PREFIX}/bin^" ${WRKSRC}/scripts/train.pl
 
 pre-configure:
 	@${ECHO_CMD}
@@ -509,11 +489,6 @@ pre-configure:
 .if ${_DBDRV}==""
 	@${ECHO_CMD}
 	@${ECHO_CMD} "You need to enable at least one database back-end."
-	@${FALSE}
-.endif
-.if defined(WITH_NEURAL_NET) && \
-	!( defined(USE_MYSQL) || defined(WITH_POSTGRESQL) )
-	@${ECHO_CMD} "You need MySQL or POSTGRESQL to use neural networking."
 	@${FALSE}
 .endif
 .if defined(WITH_VIRT_USERS) && !(defined(USE_MYSQL) || \
@@ -568,7 +543,6 @@ post-install:
 		${INSTALL_DATA} mysql_objects-4.1.sql \
 			mysql_objects-space.sql \
 			mysql_objects-speed.sql \
-			neural.sql \
 			purge-4.1.sql purge.sql \
 			virtual_user_aliases.sql \
 			virtual_users.sql ${EXAMPLESDIR}/mysql
@@ -606,11 +580,6 @@ post-install:
 		${INSTALL_DATA} admins ${CGI_PATH}/admins.sample
 	${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/webui/cgi-bin/templates && \
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
-.endif
-
-.ifdef(WITH_TRAIN_SCRIPT)
-	cd ${WRKSRC}/scripts && \
-		${INSTALL_SCRIPT} train.pl ${PREFIX}/bin/dspam_train
 .endif
 
 	@${SED} ${_SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
