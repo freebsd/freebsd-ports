@@ -1,4 +1,6 @@
 bin/mbdyn
+bin/2vec2phi
+bin/trim
 bin/autopilot
 bin/c81merge
 bin/c81test
