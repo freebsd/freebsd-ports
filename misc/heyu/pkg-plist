@@ -2,6 +2,6 @@ bin/dawndusk
 bin/heyu
 bin/heyuhelper
 bin/makesched
-share/examples/heyu/x10config.sample
-share/examples/heyu/x10sched.conf.sample
-@dirrm share/examples/heyu
+%%EXAMPLESDIR%%/x10config.sample
+%%EXAMPLESDIR%%/x10sched.conf.sample
+@dirrm %%EXAMPLESDIR%%
