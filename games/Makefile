@@ -91,7 +91,6 @@
     SUBDIR += childsplay_plugins
     SUBDIR += chromium
     SUBDIR += circuslinux
-    SUBDIR += civ2demo
     SUBDIR += clanbomber
     SUBDIR += columns
     SUBDIR += concentration
