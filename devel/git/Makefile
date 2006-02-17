@@ -18,7 +18,7 @@ BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-[0-9]* git-4.*
 
