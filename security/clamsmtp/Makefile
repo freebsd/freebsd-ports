@@ -7,6 +7,7 @@
 
 PORTNAME=	clamsmtp
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
 
@@ -15,9 +16,9 @@ COMMENT=	An ClamAV anti-virus SMTP Filter
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	clamsmtpd.sh
 SUB_LIST=	CLAMAV_PID_DIR=${CLAMAV_PID_DIR}
+SUB_FILES+=	pkg-message
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -26,10 +27,31 @@ CLAMAV_PID_DIR?=	/var/run/clamav
 MAN5=		clamsmtpd.conf.5
 MAN8=		clamsmtpd.8
 
-PORTDOCS=	*
+PORTDOCS=	README
 
-.if exists(${LOCALBASE}/sbin/clamd)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
+OPTIONS=	LOCAL_CLAMAV "RUN_DEPEND on security/clamav" on
+OPTIONS+=	LOCAL_CLAMAV_DEVEL "RUN_DEPEND on security/clamav-devel" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LOCAL_CLAMAV)
+RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
+.endif
+
+.if defined(WITH_LOCAL_CLAMAV_DEVEL)
+RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
+.endif
+
+.if defined(WITH_LOCAL_CLAMAV) || defined(WITH_LOCAL_CLAMAV_DEVEL)
+SUB_LIST+=	CLAMD=clamd
+.else
+SUB_LIST+=	CLAMD=
+.endif
+
+pre-extract:
+.if defined(WITH_LOCAL_CLAMAV) && defined(WITH_LOCAL_CLAMAV_DEVEL)
+	@${ECHO_CMD} "Please select only one clamav port"
+	exit 1
 .endif
 
 post-patch:
@@ -40,8 +62,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/virus_action.sh ${DOCSDIR}
 .endif
-	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/virus_action.sh ${EXAMPLESDIR}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
