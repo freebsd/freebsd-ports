@@ -1,8 +1,6 @@
 bin/tor
 bin/tor-resolve
-bin/torctl
 bin/torify
-etc/rc.d/tor.sh
 etc/tor/tor-tsocks.conf.sample
 etc/tor/torrc.sample
 @dirrm etc/tor
