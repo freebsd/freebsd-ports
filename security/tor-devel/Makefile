@@ -1,18 +1,18 @@
 # ports collection makefile for:	tor-devel
 # Date created:				2005.10.20
-# Whom:					eol1@yahoo.com
+# Whom:					peter.thoenen@yahoo.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.12
+PORTVERSION=	0.1.1.13
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
-MAINTAINER=	eol1@yahoo.com
+MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
@@ -20,8 +20,10 @@ LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
+
+USE_RC_SUBR=	tor
+SUB_FILES=	pkg-message
+PKG_MESSAGE=	${WRKSRC}/pkg-message
 
 CONFLICTS=	tor-[0-9]*
 
@@ -33,19 +35,16 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/contrib/torctl.in
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E \
 		-e 's!-g -O2!!' \
 		-e 's!-O2!!'
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tor.sh ${PREFIX}/etc/rc.d/tor.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/torctl ${PREFIX}/bin/torctl
 	@${MKDIR} /var/run/tor
 	@${CHOWN} _tor:_tor /var/run/tor
 	@${TOUCH} /var/log/tor
@@ -54,4 +53,5 @@ post-install:
 	@${MKDIR} /var/db/tor/data
 	@${CHOWN} -R _tor:_tor /var/db/tor
 	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>

@@ -1,7 +1,0 @@
-
-*********************** WARNING! WARNING! WARNING! ***********************
-The tor startup script has been converted to rc_subr format now.  You 
-have to set at least the tor_enable variable if you want tor to be started 
-automatically at boot time!
-**************************************************************************
-
