@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	3dm
-PORTVERSION=	2.04.00.011
+PORTVERSION=	2.04.00.014
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.3.0.1/
-DISTNAME=	3DM2-freebsd_5.4-9.3.0.1
+MASTER_SITES=	http://www.3ware.com/download/Escalade9000Series/9.3.0.3/
+DISTNAME=	3DM2-freebsd_5.4-9.3.0.3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
