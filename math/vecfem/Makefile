@@ -34,5 +34,5 @@ pre-fetch:
 	@${ECHO_MSG} "Building ${PORTNAME}-${PORTVERSION} with MPI support"
 .endif
 
-.include <Makefile.inc>
+.include "${.CURDIR}/Makefile.inc"
 .include <bsd.port.mk>
