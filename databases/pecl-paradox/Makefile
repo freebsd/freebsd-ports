@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paradox
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
