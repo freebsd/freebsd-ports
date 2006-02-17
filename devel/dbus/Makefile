@@ -21,7 +21,6 @@ USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	dbus
 USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--disable-gtk \
 		--disable-python \
@@ -39,6 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(DBUS_SLAVE)
+USE_RC_SUBR=	dbus
 OPTIONS=	QT "Enable Qt client support" off
 
 PLIST_SUB=	VERSION="1.0"
