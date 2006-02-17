@@ -1,0 +1,12 @@
+sbin/l4ip
+etc/l4ip.conf
+%%EXAMPLESDIR%%/apache1.conf
+%%EXAMPLESDIR%%/apache2.conf
+%%EXAMPLESDIR%%/dns1.conf
+%%EXAMPLESDIR%%/dns2.conf
+%%EXAMPLESDIR%%/ftp1.conf
+%%EXAMPLESDIR%%/ftp2.conf
+%%EXAMPLESDIR%%/ldap.conf
+%%EXAMPLESDIR%%/ldap1.conf
+%%EXAMPLESDIR%%/ldap2.conf
+@dirrm %%EXAMPLESDIR%%

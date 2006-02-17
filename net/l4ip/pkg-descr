@@ -1,0 +1,24 @@
+The idea is that IPFilter in its current state can already do a simple L4
+round-robin in its NAT rules. However, it does not detect or sense when a
+service and/or host is down. It will continue to send requests to a downed
+service/host.
+
+However, IPFilter lets us add and remove rules on-the-fly so it should be
+possible to build a daemon that lets you specify "clusters". In each cluster
+you would specify its members/hosts and services. As well as a health-check
+for the service to determine its current state.
+
+Once a service was deemed "up" we would add a Round-Robin rule to the NAT
+table, and naturally, the reverse once we detect a service as being "down".
+
+In addition to this, this program can optionally add ipf rules to log for RST
+(reset) packets coming from the members of your clusters. In the situations
+where the software/port goes down, but the host itself is still working, we
+would detect failure instantly. (Since the forwarded connections to the service
+would trigger a RST packet back). If this option is enabled, l4ip spawns the
+"ipmon" command to monitor for the "log" entries given when such a packet is
+detected. l4ip will then mark the service down. This is an add-on feature and
+is strictly not necessary for functional usage. It is currently only supported
+for TCP.
+
+WWW: http://www.lundman.net/unix/l4ip.php
