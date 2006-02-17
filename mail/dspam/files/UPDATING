@@ -17,6 +17,46 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-3.6.4
+#
+
+BugFixes:
+- accuracy fixes (esp. for FP dspam is much better that in 3.6.3 release)
+- safeguards for segfault when strange clamav behavior
+- for no output when using --classify in client/server mode
+- LOG_WARNING if truncating MySQL user/pass + plus othersmall fixes
+
+New features:
+- dspam_train: a true training and testing mechanism, useful for building
+pretrained databases or training a user with their own corpus. also provides
+a test jig for measuring efficiency/accuracy with a corpus over a
+configuration; support for training using an index file to define the order
+of ham/spam
+- DeliveryHost for delivery to different hosts based on domain
+- ClassAlias options, useful if classifying things other than spam
+- WebUI: undo option for retraining
+- WebUI: support for existing storeFragments option to recall message in
+history
+- WebUI: mass-retraining option
+- Documentation: of all user preferences in the README
+
+Changed features:
+- dspam-statrs: changed names; now displays TP (true positives),
+TN (true negatives), FN (false negatives), and FP (false positives),
+OCA (Overall Accuracy)
+- dspam_corpus now uses default settings for features and training modes,
+instead of its own and now requires --spam or --nonspam arguments
+- the trainining buffer (Feature tb=n in dspam.conf) is now offby default
+- dspam.conf: HashRec sizes prime numbers for better spread
+- no signature on classify
+- ignore X-DSPAM-* in tokenizer code
+
+Removed features:
+- removed neural networking (NEURAL_NET), which was experimental, needed a
+rewrite, had no support and high maintenance
+
+
+###########################################################################
 # dspam-3.6.3
 #
 
