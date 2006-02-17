@@ -8,17 +8,18 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.12
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
-
 PKGNAMEPREFIX=	linux-
-DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+
+DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -79,10 +80,14 @@ do-configure:
 
 .for ii in lib/linux-beonex/plugins lib/netscape-linux/plugins lib/flash \
 	lib/linux-mozilla/plugins lib/linux-netscape*/plugins \
+	lib/acroread/usr/local/Adobe/Acrobat7.0/Browser/intellinux \
+	lib/linux-flashplugin7 \
 	lib/linux-flashplugin6 \
-	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
-	linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla
+	linux-blackdown-jdk1.4.2/jre/plugin/i386/mozilla \
+	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla
 	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
+		>> ${WRKDIR}/linkfarm
+	${ECHO_CMD} -n " ${X11BASE}/${ii}/*" \
 		>> ${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
 		>> ${WRKDIR}/linkfarm
