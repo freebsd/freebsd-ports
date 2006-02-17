@@ -7,7 +7,6 @@
 # North America
 #
 35.2,	-80.9,	"ftp2.FreeBSD.org"	# Charlotte, NC 
-37.23,	-80.41	"ftp3.FreeBSD.org"	# Blacksburg, VA (Va Tech)
 38.6,	-77.0,	"ftp4.FreeBSD.org"	# Arlington, VA (atinc.com)
 39.6, -104.8,	"anoncvs1/cvsup14.FreeBSD.org"	# Denver, CO (ViaWest.net)
 43.6,	-83.9,	"ftp5.FreeBSD.org"	# Mt. Pleasant, MI (C-Mich U)
