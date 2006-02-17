@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)/v\1.\2.b\3/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	L4 and Health-Check project for IPFilter
+COMMENT=	L4 health check daemon for IPFILTER
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
@@ -24,7 +24,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/l4ip ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/l4ip.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/l4ip.conf ${PREFIX}/etc/l4ip.conf.sample
+.if !exists(${PREFIX}/etc/l4ip.conf)
+	${CP} ${PREFIX}/etc/l4ip.conf.sample ${PREFIX}/etc/l4ip.conf
+.endif
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL} ${WRKSRC}/../samples/*.conf ${EXAMPLESDIR}
 

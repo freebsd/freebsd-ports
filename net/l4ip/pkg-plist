@@ -1,5 +1,7 @@
 sbin/l4ip
-etc/l4ip.conf
+@unexec if cmp -s %D/etc/l4ip.conf %D/etc/l4ip.conf.sample; then rm -f %D/etc/l4ip.conf; fi
+etc/l4ip.conf.sample
+@exec [ -f %B/l4ip.conf ] || cp %B/%f %B/l4ip.conf
 %%EXAMPLESDIR%%/apache1.conf
 %%EXAMPLESDIR%%/apache2.conf
 %%EXAMPLESDIR%%/dns1.conf
