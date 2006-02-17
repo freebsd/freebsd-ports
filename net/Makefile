@@ -221,6 +221,7 @@
     SUBDIR += kphone
     SUBDIR += krdesktop
     SUBDIR += l2tpd
+    SUBDIR += l4ip
     SUBDIR += lam
     SUBDIR += lam7
     SUBDIR += lambdamoo
