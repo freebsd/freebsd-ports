@@ -8,9 +8,10 @@
 PORTNAME=	bing
 PORTVERSION=	1.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.freenix.org/reseau/
+MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/ \
+		ftp://ftp.ens.fr/pub/unix/syst/ \
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A point-to-point bandwith measurement tool
 
 MAN8=		bing.8
