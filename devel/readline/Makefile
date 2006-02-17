@@ -26,9 +26,15 @@ USE_REINPLACE=	yes
 INFO=		readline rluserman history
 MAN3=		readline.3 history.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=	Does not compile on sparc64
+.endif
+
 pre-configure:
 .if !defined(WITHOUT_TERMCAP)
 	${REINPLACE_CMD} "s/SHOBJ_LDFLAGS =/SHOBJ_LDFLAGS = -ltermcap/" ${WRKSRC}/shlib/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
