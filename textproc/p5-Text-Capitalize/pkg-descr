@@ -1,0 +1,13 @@
+Text::Capitalize provides a few different flavors of procedures for
+title-like formatting for strings.
+
+For the "capitalize" function Title-like (written by Stanislaw Y.
+Pusep) formatting consists of ensuring that the first letter of
+each word is uppercase, and that the rest is lowercase.
+
+The "capitalize_title" function tries to get closer to English title
+capitalization rules where only the "important" words are supposed
+to be capitalized. There are also some customization features
+provided to allow the user to choose variant rules.
+
+WWW: http://search.cpan.org/dist/Text-Capitalize/
