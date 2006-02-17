@@ -9,13 +9,17 @@ PORTNAME?=	xmame
 PORTVERSION?=	0.103
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://x.mame.net/download/:xmame \
+MASTER_SITES=	http://www.franksworld.org/dist/xmame/:xmame \
+		http://x.mame.net/download/:xmame \
 		http://www.energyhq.es.eu.org/files/:xmame \
 		http://www.energyhq.be/files/:xmame \
 		http://www.pkix.net/mirror/x.mame.net/:xmame \
+		http://www.franksworld.org/dist/xmame/:history \
 		http://www.arcade-history.com/download/:history \
 		http://www.energyhq.es.eu.org/files/:history \
+		http://www.franksworld.org/dist/xmame/:highscore \
 		http://www.mameworld.net/highscore/:highscore \
+		http://www.franksworld.org/dist/xmame/:cheat \
 		http://cheat.retrogames.com/:cheat
 DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
