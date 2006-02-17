@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty
-PORTVERSION=	0.51228
+PORTVERSION=	0.60213
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -17,10 +17,11 @@ COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
 BUILD_DEPENDS=	\
 		p5-Apache-Session>0:${PORTSDIR}/www/p5-Apache-Session \
-		p5-App-CLI>=0.02:${PORTSDIR}/devel/p5-App-CLI \
+		p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
 		p5-Cache-Cache>0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Container>0:${PORTSDIR}/devel/p5-Class-Container \
 		p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
 		p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -42,18 +43,19 @@ BUILD_DEPENDS=	\
 		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Hook-LexWrap>0:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		p5-Jifty-DBI>0.06:${PORTSDIR}/databases/p5-Jifty-DBI \
-		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON-Syck>=0.05:${PORTSDIR}/textproc/p5-JSON-Syck \
 		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Module-Install>=0.50:${PORTSDIR}/devel/p5-Module-Install \
 		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Module-Pluggable>=2.95:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
 		p5-Pod-Simple>0:${PORTSDIR}/textproc/p5-Pod-Simple \
 		p5-String-Koremutake>0:${PORTSDIR}/textproc/p5-String-Koremutake \
-		p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base \
+		p5-Test-Base>=0.44:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
 		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-HTML-Lint>0:${PORTSDIR}/www/p5-HTML-Lint \
 		p5-Test-WWW-Mechanize>0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 		p5-Time-modules>0:${PORTSDIR}/devel/p5-Time-modules \
@@ -64,67 +66,12 @@ BUILD_DEPENDS=	\
 		p5-version>0:${PORTSDIR}/devel/p5-version \
 		p5-XML-Writer>0:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-XPath>0:${PORTSDIR}/textproc/p5-XML-XPath \
-		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML-Syck>=0.27:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	\
-	Email::Send::Jifty::Test.3 \
-	Jifty.3 \
-	Jifty::Action.3 \
-	Jifty::Action::Autocomplete.3 \
-	Jifty::Action::Record.3 \
-	Jifty::Action::Record::Create.3 \
-	Jifty::Action::Record::Delete.3 \
-	Jifty::Action::Record::Update.3 \
-	Jifty::Action::Redirect.3 \
-	Jifty::Bootstrap.3 \
-	Jifty::ClassLoader.3 \
-	Jifty::Collection.3 \
-	Jifty::Config.3 \
-	Jifty::Continuation.3 \
-	Jifty::CurrentUser.3 \
-	Jifty::Everything.3 \
-	Jifty::Handle.3 \
-	Jifty::Handler.3 \
-	Jifty::I18N.3 \
-	Jifty::JSON.3 \
-	Jifty::JSON::Converter.3 \
-	Jifty::JSON::Parser.3 \
-	Jifty::LetMe.3 \
-	Jifty::Logger.3 \
-	Jifty::Manual::AccessControl.3 \
-	Jifty::Manual::Glossary.3 \
-	Jifty::Manual::Tutorial.3 \
-	Jifty::Model::Schema.3 \
-	Jifty::Notification.3 \
-	Jifty::Object.3 \
-	Jifty::Record.3 \
-	Jifty::Request.3 \
-	Jifty::Request::Mapper.3 \
-	Jifty::Response.3 \
-	Jifty::Result.3 \
-	Jifty::RightsFrom.3 \
-	Jifty::Script::App.3 \
-	Jifty::Script::FastCGI.3 \
-	Jifty::Script::Help.3 \
-	Jifty::Script::Model.3 \
-	Jifty::Script::Schema.3 \
-	Jifty::Script::Server.3 \
-	Jifty::Server.3 \
-	Jifty::Test::WWW::Mechanize.3 \
-	Jifty::Upgrade.3 \
-	Jifty::Util.3 \
-	Jifty::Web.3 \
-	Jifty::Web::Form::Clickable.3 \
-	Jifty::Web::Form::Element.3 \
-	Jifty::Web::Form::Field.3 \
-	Jifty::Web::Form::Field::Text.3 \
-	Jifty::Web::Form::Link.3 \
-	Jifty::Web::PageRegion.3 \
-	Jifty::Web::Session.3
-
+.include "Makefile.man"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500803
