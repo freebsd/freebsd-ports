@@ -3,31 +3,32 @@
 # $FreeBSD$
 #
 # PROVIDE: clamsmtpd
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON %%CLAMD%%
 # KEYWORD: FreeBSD
 #
-# Add the fellowing line to /etc/rc.conf to enable clamsmtpd:
+# Add the fellowing line to /etc/rc.conf.local or /etc/rc.conf
+# to enable clamsmtpd:
 #
 # clamsmtpd_enable="YES"
+#
+# Set clamsmtpd_debug to something other that 0 if you need
 #
 
 . %%RC_SUBR%%
 
 name="clamsmtpd"
-rcvar=`set_rcvar`
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
+command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid} -d ${clamsmtpd_debug}"
+pidfile=${clamsmtpd_pid}
 sig_stop=-KILL
 
 load_rc_config ${name}
 
-clamsmtpd_enable=${clamsmtpd_enable-"NO"}
-clamsmtpd_conf=${clamsmtpd_conf-"%%PREFIX%%/etc/clamsmtpd.conf"}
-clamsmtpd_pid=${clamsmtpd_pid-"%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
-clamsmtpd_debug=${clamsmtpd_debug-"0"}
-
-command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
-
-pidfile=${clamsmtpd_pid}
+: ${clamsmtpd_enable="NO"}
+: ${clamsmtpd_conf="%%PREFIX%%/etc/clamsmtpd.conf"}
+: ${clamsmtpd_pid="%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
+: ${clamsmtpd_debug="0"}
 
 run_rc_command "$1"

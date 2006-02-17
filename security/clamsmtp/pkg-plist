@@ -2,3 +2,5 @@
 @unexec [ ! -f %%CLAMAV_PID_DIR%%/clamsmtpd.pid ] || %%PREFIX%%/etc/rc.d/clamsmtpd.sh stop || true
 sbin/clamsmtpd
 etc/clamsmtpd.conf-sample
+%%EXAMPLESDIR%%/virus_action.sh
+@dirrm %%EXAMPLESDIR%%
