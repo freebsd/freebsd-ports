@@ -8,7 +8,8 @@
 PORTNAME=	postilion
 PORTVERSION=	0.9.3c
 CATEGORIES=	mail tk83
-MASTER_SITES=	http://www.postilion.org/
+MASTER_SITES=	http://www.postilion.org/software/Postilion/
+DISTNAME=	${PORTNAME}-current
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail client with the NeXt look
@@ -18,6 +19,7 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 RUN_DEPENDS=	${LOCALBASE}/lib/Img1.2/pkgIndex.tcl:${PORTSDIR}/graphics/libimg
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS=	PORTVERSION="${PORTVERSION}" LOCALBASE="${LOCALBASE}" \
 		MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" \
