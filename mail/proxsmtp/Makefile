@@ -7,11 +7,12 @@
 
 PORTNAME=	proxsmtp
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/proxsmtp/
 
 MAINTAINER=	saturnero@gufi.org
-COMMENT=	A flexible SMTP filter which can act also as trasparent proxy
+COMMENT=	A flexible SMTP filter which can act also as transparent proxy
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
