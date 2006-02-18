@@ -5776,6 +5776,7 @@ linrad		ports/comms/linrad
 linux-XFree86-libs	ports/x11/linux-XFree86-libs
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
+linux-adobesvg	ports/graphics/linux-adobesvg
 linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net-p2p/linux-agsatellite
 linux-alienarena	ports/games/linux-alienarena
