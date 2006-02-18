@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	db4o
-PORTVERSION=	${REALVERSION}.18
+PORTVERSION=	${REALVERSION}.20
 CATEGORIES=	databases
 MASTER_SITES=	http://www.db4o.com/downloads/
 PKGNAMESUFFIX=	-mono
@@ -31,11 +31,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc/; ${FIND} api \
-	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
 	@cd ${WRKSRC}/doc/; ${FIND} tutorial \
-	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+		| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
 	@${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
+.include <bsd.port.post.mk>
