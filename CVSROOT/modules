@@ -9138,6 +9138,7 @@ p5-Unicode-Lite	ports/converters/p5-Unicode-Lite
 p5-Unicode-Map	ports/converters/p5-Unicode-Map
 p5-Unicode-Map8	ports/converters/p5-Unicode-Map8
 p5-Unicode-MapUTF8	ports/converters/p5-Unicode-MapUTF8
+p5-Unicode-Normalize	ports/textproc/p5-Unicode-Normalize
 p5-Unicode-RecursiveDowngrade	ports/converters/p5-Unicode-RecursiveDowngrade
 p5-Unicode-String	ports/converters/p5-Unicode-String
 p5-Unicode-UTF8simple	ports/converters/p5-Unicode-UTF8simple
