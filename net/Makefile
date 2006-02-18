@@ -461,6 +461,7 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-URI
+    SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-X500-DN
     SUBDIR += p5-XPC
