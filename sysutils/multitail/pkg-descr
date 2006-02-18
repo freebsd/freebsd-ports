@@ -1,9 +1,15 @@
-Multitail lets you view one or multiple files like the original tail program.
-The difference is that this program creates multiple windows on your console
-(with ncurses). It can also use colors while displaying the logfiles for faster
-recognizing which lines are important and which are not. It is optimized for
-terminal-sessions through slow links. It is possible to define for each window
-(or for all) what lines should be displayed, by using regular expressions.
+MultiTail lets you view one or multiple files like the original tail program.
+The difference is that it creates multiple windows on your console (with
+ncurses). It can also monitor wildcards: if another file matching the wildcard
+has a more recent modification date, it will automatically switch to that file.
+That way you can, for example, monitor a complete directory of files. Merging
+of 2 or even more logfiles is possible. It can also use colors while displaying
+the logfiles (through regular expressions), for faster recognition of what is
+important and what not. It can also filter lines (again with regular
+expressions). It has interactive menus for editing given regular expressions
+and deleting and adding windows. One can also have windows with the output of
+shell scripts and other software. When viewing the output of external software,
+MultiTail can mimic the functionality of tools like 'watch' and such.
 
 WWW: http://www.vanheusden.com/multitail/
 
