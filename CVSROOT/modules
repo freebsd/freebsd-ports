@@ -8480,6 +8480,7 @@ p5-Math-FixedPrecision	ports/math/p5-Math-FixedPrecision
 p5-Math-GMP	ports/math/p5-Math-GMP
 p5-Math-GSL	ports/math/p5-Math-GSL
 p5-Math-Interpolate	ports/math/p5-Math-Interpolate
+p5-Math-Intersection-StraightLine	ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination	ports/math/p5-Math-LinearCombination
 p5-Math-Logic	ports/math/p5-Math-Logic
 p5-Math-Matrix	ports/math/p5-Math-Matrix
