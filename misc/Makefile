@@ -323,6 +323,7 @@
     SUBDIR += orville-write
     SUBDIR += ossp-uuid
     SUBDIR += otter
+    SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-IntSpan
     SUBDIR += p5-Array-PrintCols
