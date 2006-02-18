@@ -8311,6 +8311,7 @@ p5-Interpolation	ports/lang/p5-Interpolation
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-Iterator	ports/devel/p5-Iterator
 p5-Iterator-DBI	ports/databases/p5-Iterator-DBI
+p5-Iterator-IO	ports/devel/p5-Iterator-IO
 p5-Iterator-Util	ports/devel/p5-Iterator-Util
 p5-JSON		ports/converters/p5-JSON
 p5-JSON-Syck	ports/textproc/p5-JSON-Syck
