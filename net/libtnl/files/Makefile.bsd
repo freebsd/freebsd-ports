@@ -1,0 +1,67 @@
+LIB=			tnl
+CXXFLAGS+=		-I../libtomcrypt -w -g -fpermissive -DNO_IPX_SUPPORT -DTNL_OS_LINUX -DTNL_DEBUG -D_TNL_ENABLE_LOGGING
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	5
+SRCS=	        assert.cpp\
+				asymmetricKey.cpp\
+				bitStream.cpp\
+				byteBuffer.cpp\
+				certificate.cpp\
+				clientPuzzle.cpp\
+				connectionStringTable.cpp\
+				dataChunker.cpp\
+				eventConnection.cpp\
+				ghostConnection.cpp\
+				huffmanStringProcessor.cpp\
+				log.cpp\
+				netBase.cpp\
+				netConnection.cpp\
+				netInterface.cpp\
+				netObject.cpp\
+				netStringTable.cpp\
+				platform.cpp\
+				random.cpp\
+				rpc.cpp\
+				symmetricCipher.cpp\
+				tnlMethodDispatch.cpp\
+				journal.cpp\
+				udp.cpp\
+				vector.cpp
+INCS=			tnl.h \
+				tnlNetBase.h \
+				tnlAssert.h \
+				tnlNetConnection.h \
+				tnlAsymmetricKey.h \
+				tnlNetEvent.h \
+				tnlBitSet.h \
+				tnlNetInterface.h \
+				tnlBitStream.h \
+				tnlNetObject.h \
+				tnlByteBuffer.h \
+				tnlNetStringTable.h \
+				tnlCertificate.h \
+				tnlNonce.h \
+				tnlClientPuzzle.h \
+				tnlPlatform.h \
+				tnlConnectionStringTable.h \
+				tnlRPC.h \
+				tnlDataChunker.h \
+				tnlRandom.h \
+				tnlEndian.h \
+				tnlString.h \
+				tnlEventConnection.h \
+				tnlSymmetricCipher.h \
+				tnlGhostConnection.h \
+				tnlThread.h \
+				tnlHuffmanStringProcessor.h \
+				tnlTypes.h \
+				tnlJournal.h \
+				tnlUDP.h \
+				tnlLog.h \
+				tnlVector.h \
+				tnlMethodDispatch.h
+INCLUDEDIR=		${PREFIX}/include/tnl
+LIBDIR=			${PREFIX}/lib
+
+.include <bsd.lib.mk>
+
