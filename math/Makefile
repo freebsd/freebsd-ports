@@ -172,6 +172,7 @@
     SUBDIR += p5-Math-GMP
     SUBDIR += p5-Math-GSL
     SUBDIR += p5-Math-Interpolate
+    SUBDIR += p5-Math-Intersection-StraightLine
     SUBDIR += p5-Math-LinearCombination
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-Math-Matrix
