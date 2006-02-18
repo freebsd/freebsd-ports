@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.02000
+PORTVERSION=	0.02001
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@balker.dk
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
 
-BUILD_DEPENDS=	p5-DBIx-Class>=0.05000:${PORTSDIR}/databases/p5-DBIx-Class \
+BUILD_DEPENDS=	p5-DBIx-Class>=0.05006:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-Lingua-EN-Inflect>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced \
