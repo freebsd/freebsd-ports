@@ -1,8 +1,5 @@
 lib/mono/1.0/db4o.dll
-lib/mono/1.0/db4o.dll.config
-lib/mono/1.0/db4o.dll.mdb
-lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
-
+lib/mono/gac/db4o/5.0.20.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/MSDN.css
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.Db4o.Main.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.Db4o.configure.html
@@ -26,6 +23,7 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.query_overload_1.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.query_overload_2.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.query_overload_3.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.query_overloads.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.rollback.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.set.html
@@ -61,11 +59,13 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.discardFreeSpace.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.encrypt.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.exceptionsOnNotStorable.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.flushFileBuffers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.freespace.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.generateUUIDs.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.generateVersionNumbers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.getMessageSender.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.internStrings.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.io.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.lockDatabaseFile.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.markTransient.html
@@ -160,6 +160,10 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oCallback.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oCallbackMembers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oCallbackMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.Equals.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.GetHashCode.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.ToString.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.flattenSign.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.getLongPart.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.getSignaturePart.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ext.Db4oUUID.html
@@ -336,9 +340,53 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapter.sync.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapter.write_overload_1.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapter.write_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapterConstructor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapterConstructor1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapterConstructor2.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapterMembers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.RandomAccessFileAdapterMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.open.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.write_overload_1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.write_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterConstructor1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter._delegate.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.close.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.getLength.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.read_overload_1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.read_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.seek.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.sync.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.write_overload_1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.write_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor2.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterFields.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.close.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.getLength.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.open.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.read_overload_1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.read_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.seek.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.sync.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.write_overload_1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.write_overloads.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor2.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor3.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor4.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.cryptHierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ioHierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.messaging.MessageRecipient.html
@@ -384,6 +432,8 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.Predicate.extentType.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.Predicate.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateConstructor.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateConstructor1.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateConstructor2.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateFields.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateMembers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.PredicateMethods.html
@@ -394,6 +444,10 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.Query.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.Query.orderAscending.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.Query.orderDescending.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparator.compare.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparatorMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparatorMethods.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryMembers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryMethods.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.html
@@ -436,6 +490,10 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClass.useConstructor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassMembers.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassMethods.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicate.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicate.match.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicateMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicateMethods.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectConstructor.getParameterTypes.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectConstructor.html
 %%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectConstructor.newInstance.html
@@ -543,63 +601,6 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/api/treenodedot.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/treenodeminus.gif
 %%PORTDOCS%%%%DOCSDIR%%/api/treenodeplus.gif
-
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.ObjectContainer.query_overload_3.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.QConFalse.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.QConFalseConstructor1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.QConFalseMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.config.Configuration.flushFileBuffers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.open.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.write_overload_1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapter.write_overloads.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterConstructor1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.SafeSyncIoAdapterMethods.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter._delegate.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.close.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.getLength.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.read_overload_1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.read_overloads.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.seek.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.sync.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.write_overload_1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapter.write_overloads.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterConstructor2.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterFields.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.VanillaIoAdapterMethods.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.close.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.getLength.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.open.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.read_overload_1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.read_overloads.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.seek.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.sync.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.write_overload_1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapter.write_overloads.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor1.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor2.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor3.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterConstructor4.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.XTeaEncryptionFileAdapterMethods.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.crypt.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.io.cryptHierarchy.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparator.compare.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparator.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparatorMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.query.QueryComparatorMethods.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicate.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicate.match.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicateMembers.html
-%%PORTDOCS%%%%DOCSDIR%%/api/com.db4o.reflect.ReflectClassPredicateMethods.html
-
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/db4o-5.0-tutorial.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/db4o-tutorial-chapters/src/com/db4o/f1/ExampleRunner.cs
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/db4o-tutorial-chapters/src/com/db4o/f1/Util.cs
@@ -700,7 +701,6 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/docs/querygraph/3.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/docs/racecar.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/index.html
-
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/docs/querygraph
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/db4o-tutorial-console/src
@@ -719,5 +719,5 @@ lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/mono/gac/db4o/5.0.18.0__6199cd4f203aa8eb
+@dirrm lib/mono/gac/db4o/5.0.20.0__6199cd4f203aa8eb
 @dirrm lib/mono/gac/db4o
