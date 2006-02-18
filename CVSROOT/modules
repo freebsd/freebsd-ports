@@ -8992,6 +8992,7 @@ p5-Test-MockObject	ports/devel/p5-Test-MockObject
 p5-Test-NoWarnings	ports/devel/p5-Test-NoWarnings
 p5-Test-Pod	ports/devel/p5-Test-Pod
 p5-Test-Pod-Coverage	ports/devel/p5-Test-Pod-Coverage
+p5-Test-RandomResults	ports/devel/p5-Test-RandomResults
 p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Strict	ports/devel/p5-Test-Strict
