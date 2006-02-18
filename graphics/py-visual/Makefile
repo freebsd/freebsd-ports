@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	visual
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.vpython.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
