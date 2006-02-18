@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Geo/Caching.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Caching/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Caching
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrm %%SITE_PERL%%/Geo

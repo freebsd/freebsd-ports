@@ -1,0 +1,4 @@
+Provides an object interface to query Geocaching.com
+
+WWW: http://search.cpan.org/dist/Geo-Caching
+Author: Casey Lee <cplee@cplee.org>
