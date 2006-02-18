@@ -1,14 +1,27 @@
---- kiklib/configure.orig	Fri Jun 20 10:53:24 2003
-+++ kiklib/configure	Fri Jun 20 10:54:08 2003
-@@ -7174,11 +7174,6 @@
-     top_srcdir="$ac_dots$ac_given_srcdir" ;;
-   esac
+--- kiklib/configure.orig	Sun Feb 19 02:28:35 2006
++++ kiklib/configure	Sun Feb 19 03:03:42 2006
+@@ -7261,11 +7261,7 @@
+ 	if test "$kik_cv_mingw32" = yes ; then
+ 		kik_cv_pty=win32
+ 	else
+-		if test -c /dev/ptmx ; then
+-			kik_cv_pty=streams
+-		else
+-			kik_cv_pty=bsd
+-		fi
++		kik_cv_pty=bsd
+ 	fi
+ fi
  
+@@ -7535,11 +7531,6 @@
+   *) # Relative path.
+     srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
+     top_srcdir="$ac_dots$ac_given_srcdir" ;;
+-  esac
+-
 -  case "$ac_given_INSTALL" in
 -  [/$]*) INSTALL="$ac_given_INSTALL" ;;
 -  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--  esac
--
+   esac
+ 
    echo creating "$ac_file"
-   rm -f "$ac_file"
-   configure_input="Generated automatically from `echo $ac_file_in|sed 's%.*/%%'` by configure."
