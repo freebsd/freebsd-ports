@@ -34,16 +34,16 @@ lib/zhcon/input/wbh.mb
 lib/zhcon/input/winpy.mb
 lib/zhcon/input/winsp.mb
 lib/zhcon/input/winzm.mb
-%%NLS%%share/locale/ja/LC_MESSAGES/zhcon.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/zhcon.mo
-%%NLS%%share/locale/zh_CN.EUC/LC_MESSAGES/zhcon.mo
-%%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
-%%NLS%%share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
-%%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
-%%NLS%%@dirrmtry share/locale/zh_CN.GBK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN.GBK
-%%NLS%%@dirrmtry share/locale/zh_CN.EUC/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN.EUC
+share/locale/ja/LC_MESSAGES/zhcon.mo
+share/locale/ko/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.EUC/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
+share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
+@dirrmtry share/locale/zh_CN.GBK/LC_MESSAGES
+@dirrmtry share/locale/zh_CN.GBK
+@dirrmtry share/locale/zh_CN.EUC/LC_MESSAGES
+@dirrmtry share/locale/zh_CN.EUC
 @dirrm lib/zhcon/input
 @dirrm lib/zhcon/font
 @dirrm lib/zhcon
