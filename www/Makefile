@@ -552,6 +552,7 @@
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
+    SUBDIR += p5-Geo-Caching
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple
