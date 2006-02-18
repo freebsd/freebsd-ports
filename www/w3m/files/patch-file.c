@@ -1,5 +1,5 @@
---- file.c	Sun Oct  9 22:12:16 2005
-+++ file.c	Sun Oct  9 22:11:10 2005
+--- file.c.orig	Sun Feb 19 01:37:44 2006
++++ file.c	Sun Feb 19 01:39:59 2006
 @@ -262,7 +262,8 @@
  {
      return (type == NULL || type[0] == '\0' ||
@@ -10,3 +10,12 @@
  }
  
  static int
+@@ -7891,7 +7892,7 @@
+ 	    uf->scheme = SCM_LOCAL;
+     }
+     UFhalfclose(uf);
+-    uf->stream = newFileStream(f1, (void (*)())pclose);
++    uf->stream = newFileStream(f1, (void (*)())fclose);
+ }
+ 
+ static FILE *
