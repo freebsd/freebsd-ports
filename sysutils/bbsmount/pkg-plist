@@ -1,11 +1,5 @@
-bin/tkmsg
 bin/bbsmount
-share/bbtools/bbsmount.bb
-share/bbtools/bbsmount.bb-sample
-share/bbtools/bbsmount.nobb
-share/bbtools/bbsmount.style
-share/bbtools/README.bbsmount
-%%DATADIR%%/examples/bbsmount.bb.ex
+%%EXAMPLESDIR%%/bbsmount.bb.ex
 %%DATADIR%%/images/notfound.xpm
 %%DATADIR%%/images/mountedcd.xpm
 %%DATADIR%%/images/mounteddisk.xpm
@@ -15,7 +9,9 @@ share/bbtools/README.bbsmount
 %%DATADIR%%/images/unmounteddisk.xpm
 %%DATADIR%%/images/unmounted.xpm
 %%DATADIR%%/images/unmountedzip.xpm
+@unexec f=%D/share/bbtools/bbsmount.bb; if cmp -s $f $f-sample; then rm -f $f; fi
+@unexec rm -f %D/share/bbtools/bbsmount.bb-sample
+@dirrm %%EXAMPLESDIR%%
 @dirrmtry share/bbtools
-@dirrmtry %%DATADIR%%/examples
 @dirrmtry %%DATADIR%%/images
 @dirrmtry %%DATADIR%%
