@@ -2776,6 +2776,7 @@ gcl		ports/lang/gcl
 gcolor		ports/graphics/gcolor
 gcolor2		ports/graphics/gcolor2
 gcombust	ports/sysutils/gcombust
+gcompmgr	ports/x11-wm/gcompmgr
 gcompris2	ports/games/gcompris2
 gconf		ports/devel/gconf
 gconf-editor	ports/sysutils/gconf-editor
