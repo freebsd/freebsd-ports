@@ -70,6 +70,7 @@ MAN1=		nmapfe.1
 MLINKS=		nmapfe.1 xnmap.1
 
 USE_GNOME=	gtk20
+USE_GCC=	3.2+
 
 CONFIGURE_ARGS+=--without-openssl
 
