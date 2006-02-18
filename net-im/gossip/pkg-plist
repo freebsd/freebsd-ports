@@ -4,22 +4,13 @@ share/gnome/applications/gossip.desktop
 share/gnome/gossip/channel-old4.png
 share/gnome/gossip/chat.glade
 share/gnome/gossip/connect.glade
-share/gnome/gossip/emoticon-face1.png
-share/gnome/gossip/emoticon-face10.png
-share/gnome/gossip/emoticon-face11.png
-share/gnome/gossip/emoticon-face12.png
-share/gnome/gossip/emoticon-face2.png
-share/gnome/gossip/emoticon-face3.png
-share/gnome/gossip/emoticon-face4.png
-share/gnome/gossip/emoticon-face5.png
-share/gnome/gossip/emoticon-face6.png
-share/gnome/gossip/emoticon-face7.png
-share/gnome/gossip/emoticon-face8.png
-share/gnome/gossip/emoticon-face9.png
+share/gnome/gossip/file-transfer.glade
 share/gnome/gossip/gossip-about.png
+share/gnome/gossip/gossip-account.dtd
 share/gnome/gossip/gossip-available.png
 share/gnome/gossip/gossip-away.png
 share/gnome/gossip/gossip-busy.png
+share/gnome/gossip/gossip-chatroom.dtd
 share/gnome/gossip/gossip-contact-groups.dtd
 share/gnome/gossip/gossip-extended-away.png
 share/gnome/gossip/gossip-group-message.png
@@ -41,6 +32,11 @@ share/gnome/gossip/protocols/gossip-protocol.dtd
 share/gnome/gossip/protocols/icq.protocol
 share/gnome/gossip/protocols/msn.protocol
 share/gnome/gossip/protocols/yahoo.protocol
+share/gnome/help/gossip/C/figures/gossip_first_start_window.png
+share/gnome/help/gossip/C/figures/gossip_roster.png
+share/gnome/help/gossip/C/gossip.xml
+share/gnome/help/gossip/C/legal.xml
+share/gnome/omf/gossip/gossip-C.omf
 share/gnome/pixmaps/gossip.png
 share/gnome/sounds/gossip/chat1.wav
 share/gnome/sounds/gossip/chat2.wav
@@ -69,6 +65,7 @@ share/locale/lt/LC_MESSAGES/gossip.mo
 share/locale/ml/LC_MESSAGES/gossip.mo
 share/locale/ms/LC_MESSAGES/gossip.mo
 share/locale/nb/LC_MESSAGES/gossip.mo
+share/locale/ne/LC_MESSAGES/gossip.mo
 share/locale/nl/LC_MESSAGES/gossip.mo
 share/locale/no/LC_MESSAGES/gossip.mo
 share/locale/pl/LC_MESSAGES/gossip.mo
@@ -82,7 +79,14 @@ share/locale/sv/LC_MESSAGES/gossip.mo
 share/locale/tr/LC_MESSAGES/gossip.mo
 share/locale/uk/LC_MESSAGES/gossip.mo
 share/locale/zh_CN/LC_MESSAGES/gossip.mo
+share/locale/zh_HK/LC_MESSAGES/gossip.mo
 share/locale/zh_TW/LC_MESSAGES/gossip.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrm share/gnome/omf/gossip
+@dirrm share/gnome/help/gossip/C/figures
+@dirrm share/gnome/help/gossip/C
+@dirrm share/gnome/help/gossip
 @dirrm share/gnome/sounds/gossip
 @dirrm share/gnome/gossip/protocols
 @dirrm share/gnome/gossip
