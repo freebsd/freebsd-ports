@@ -8736,6 +8736,7 @@ p5-Params-Validate	ports/devel/p5-Params-Validate
 p5-Parse-CPAN-Packages	ports/devel/p5-Parse-CPAN-Packages
 p5-Parse-FixedLength	ports/textproc/p5-Parse-FixedLength
 p5-Parse-PerlConfig	ports/devel/p5-Parse-PerlConfig
+p5-Parse-PhoneNumber	ports/textproc/p5-Parse-PhoneNumber
 p5-Parse-RecDescent	ports/devel/p5-Parse-RecDescent
 p5-Parse-Syslog	ports/textproc/p5-Parse-Syslog
 p5-Parse-Yapp	ports/devel/p5-Parse-Yapp
