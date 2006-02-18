@@ -20,44 +20,37 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Thu Dec 22 18:47:08 2005
-+++ patches/src680/apply	Wed Jan 11 19:30:14 2006
-@@ -64,6 +64,8 @@
+--- patches/src680/apply.orig	Fri Feb 17 03:20:55 2006
++++ patches/src680/apply	Sat Feb 18 08:52:04 2006
+@@ -67,6 +67,8 @@
  Gentoo64: GentooBase, 64bit
  # Win32
- Win32 : Win32Common, NovellOnly, NovellOnlyWin32
+ Win32 : Win32Common, NovellOnly, NovellOnlyWin32, NovellSplash
 +# FreeBSD
 +FreeBSD : LinuxCommon, NotDebian
- 
- # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
- 
-@@ -306,9 +308,9 @@
+ # translate.org.za
+ translate-org-za-linux: translate-org-za-common, translate-org-za-splash, LinuxCommon, Common, Lockdown
+ translate-org-za-win32: translate-org-za-common, translate-org-za-splash, Win32Common, Common
+@@ -314,7 +316,7 @@
  
  [ Shrink ]
  # strip 450k of .comment sections - i#57063
 -size-strip.diff
 +# size-strip.diff
- # save 1.7Mb of (shared) memory for non-asian locales
--cws-i18nshrink.diff
-+# cws-i18nshrink.diff
  
  
  [ QuickStarter ]
-@@ -557,7 +559,7 @@
- # Fix missing __cxa_guard_acquire/__cxa_guard_release - #34676 (for FC3)
- sal-cxa-guard.diff
+@@ -635,11 +637,11 @@
+ 
+ [ BuildBits <= src680-m156 < oob680-m1 ]
+ # do not pack any potential .orig files with ppds
+-psprint_config-no-orig-m156.diff
++# psprint_config-no-orig-m156.diff
+ 
+ [ BuildBits > src680-m156 >= oob680-m1 ]
  # do not pack any potential .orig files with ppds
 -psprint_config-no-orig.diff
-+#psprint_config-no-orig.diff #don't apply for FBSD patch (workaround)
- # Fix ODK Java bits
- odk-java-wizpanel.diff
- # add possibility to set ARCH_FLAGS when building libnas
-@@ -665,7 +667,7 @@
- # declared, i#58972, CWS gcc41
- buildfix-gcc41-friend-decl-configmgr.diff
- buildfix-gcc41-friend-decl-desktop.diff
--buildfix-gcc41-friend-decl-i18npool.diff
-+# buildfix-gcc41-friend-decl-i18npool.diff
- buildfix-gcc41-friend-decl-svx.diff
- buildfix-gcc41-friend-decl-sw.diff
- # fixes usage of the String classes; I wonder how it could work in the past :-)
++# psprint_config-no-orig.diff
+ 
+ [ BuildBits < oob680-m1 ]
+ # add possibility to set ARCH_FLAGS when building portaudio, i#53387
