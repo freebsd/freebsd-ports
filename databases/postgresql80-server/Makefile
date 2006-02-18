@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	8.0.6
+PORTVERSION?=	8.0.7
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -19,7 +19,9 @@ MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-7.[0-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]*
+		${PORTNAME}${PKGNAMESUFFIX}-7.[0-9]* \
+		${PORTNAME}-client-8.[1-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-8.[1-9]*
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
