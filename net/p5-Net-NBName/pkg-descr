@@ -1,0 +1,5 @@
+Net::NBName is a class that allows you to perform simple NetBIOS Name
+Service Requests in your Perl code. It performs these NetBIOS operations over
+TCP/IP using Perl's built-in socket support.
+
+WWW: http://search.cpan.org/dist/Net-NBName/
