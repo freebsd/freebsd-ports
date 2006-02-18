@@ -1204,6 +1204,7 @@
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
+    SUBDIR += p5-Test-RandomResults
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Strict
