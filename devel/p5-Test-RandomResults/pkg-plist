@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/RandomResults.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/RandomResults/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/RandomResults
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
