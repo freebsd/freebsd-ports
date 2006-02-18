@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	oinkmaster
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,11 +17,10 @@ COMMENT=	Help you update your snort rules after each update
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-PLIST_FILES=	bin/oinkmaster etc/oinkmaster.conf
+PLIST_FILES=	bin/oinkmaster etc/oinkmaster.conf.sample
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README
@@ -44,7 +42,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster.pl ${PREFIX}/bin/oinkmaster
-	${INSTALL_DATA} ${WRKSRC}/oinkmaster.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/oinkmaster.conf ${PREFIX}/etc/oinkmaster.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
