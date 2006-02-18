@@ -327,23 +327,24 @@ libexec/cone
 %%DATADIR%%/rootcerts/verisign-time-stamping-authority.pem
 %%DATADIR%%/rootcerts/visa-ecommerce-root.pem
 %%DATADIR%%/rootcerts/xramp-global-certification-authority.pem
+%%DATADIR%%/c2744.html
+%%DATADIR%%/c2782.html
+%%DATADIR%%/cone13ldapaddressbook.html
+%%DATADIR%%/http.handler
+%%DATADIR%%/https.handler
 %%DATADIR%%/search.html
 %%DATADIR%%/smap1.html
 %%DATADIR%%/store.html
 %%DATADIR%%/synchronous.html
-%%DATADIR%%/c2708.html
-%%DATADIR%%/c2746.html
-%%DATADIR%%/http.handler
-%%DATADIR%%/https.handler
-%%DATADIR%%/x12343.html
-%%DATADIR%%/x12549.html
-%%DATADIR%%/x12885.html
-%%DATADIR%%/x13156.html
-%%DATADIR%%/x13399.html
-%%DATADIR%%/x13503.html
-%%DATADIR%%/x13745.html
-%%DATADIR%%/x14119.html
-%%DATADIR%%/x14130.html
+%%DATADIR%%/x12379.html
+%%DATADIR%%/x12585.html
+%%DATADIR%%/x12921.html
+%%DATADIR%%/x13192.html
+%%DATADIR%%/x13435.html
+%%DATADIR%%/x13539.html
+%%DATADIR%%/x13781.html
+%%DATADIR%%/x14168.html
+%%DATADIR%%/x14179.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/rootcerts
