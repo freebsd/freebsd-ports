@@ -7315,6 +7315,7 @@ p5-AI-Pathfinding-AStar	ports/devel/p5-AI-Pathfinding-AStar
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
 p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-AcePerl	ports/biology/p5-AcePerl
+p5-Acme-ButFirst	ports/misc/p5-Acme-ButFirst
 p5-Acme-Monta	ports/www/p5-Acme-Monta
 p5-AddressBook	ports/net/p5-AddressBook
 p5-Agent	ports/devel/p5-Agent
