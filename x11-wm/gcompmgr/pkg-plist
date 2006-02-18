@@ -1,0 +1,7 @@
+bin/gcompmgr
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+@dirrm %%DOCSDIR%%
