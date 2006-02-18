@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Test-Inline
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	2.103
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -17,13 +16,35 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Test::Inline - Inlining your tests next to the code being tested
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
+		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
+		${SITE_PERL}/Algorithm/Dependency.pm:${PORTSDIR}/devel/p5-Algorithm-Dependency \
+		${SITE_PERL}/File/Flat.pm:${PORTSDIR}/devel/p5-File-Flat \
+		${SITE_PERL}/Pod/Tests.pm:${PORTSDIR}/devel/p5-Pod-Tests
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		pod2test.1
-MAN3=		Pod::Tests.3 Pod::Tests::Tutorial.3 Test::Inline.3 Test::Inline::Tutorial.3
+MAN1=	inline2test.1
+MAN3=	Test::Inline.3 \
+	Test::Inline::Content.3 \
+	Test::Inline::Content::Default.3 \
+	Test::Inline::Content::Legacy.3 \
+	Test::Inline::Content::Simple.3 \
+	Test::Inline::Extract.3 \
+	Test::Inline::IO::File.3 \
+	Test::Inline::Script.3 \
+	Test::Inline::Section.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl5.6 due to dependencies
+.endif
+
+.include <bsd.port.post.mk>

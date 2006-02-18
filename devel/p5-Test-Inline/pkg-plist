@@ -1,12 +1,18 @@
-bin/pod2test
-%%SITE_PERL%%/Test/Inline/Tutorial.pod
+bin/inline2test
 %%SITE_PERL%%/Test/Inline.pm
-%%SITE_PERL%%/Pod/Tests.pm
-%%SITE_PERL%%/Pod/Tests/Tutorial.pod
+%%SITE_PERL%%/Test/Inline/Content.pm
+%%SITE_PERL%%/Test/Inline/Content/Default.pm
+%%SITE_PERL%%/Test/Inline/Content/Legacy.pm
+%%SITE_PERL%%/Test/Inline/Content/Simple.pm
+%%SITE_PERL%%/Test/Inline/Extract.pm
+%%SITE_PERL%%/Test/Inline/IO/File.pm
+%%SITE_PERL%%/Test/Inline/Script.pm
+%%SITE_PERL%%/Test/Inline/Section.pm
+%%SITE_PERL%%/Test/Inline/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Inline/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Inline
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/Inline/IO
+@dirrm %%SITE_PERL%%/Test/Inline/Content
 @dirrm %%SITE_PERL%%/Test/Inline
 @dirrmtry %%SITE_PERL%%/Test
-@dirrm %%SITE_PERL%%/Pod/Tests
-@dirrmtry %%SITE_PERL%%/Pod
