@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.20
+PORTVERSION=	3.21
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -19,6 +19,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GECKO=	firefox mozilla seamonkey
 PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
