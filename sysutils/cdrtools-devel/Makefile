@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a04
+PORTVERSION=	2.01.01a07
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -17,7 +17,7 @@ COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
 
 CONFLICTS=	cdrtools-[0-9]*
 
-MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
+MAN1=		btcflash.1 cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 MAN8=		isoinfo.8 mkisofs.8
 MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 		mkisofs.8 mkhybrid.8
@@ -94,10 +94,10 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-.for i in README.rscsi include/deflts.h cdda2wav/cdda2wav.1 \
+.for i in README.rscsi btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
 	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl cdrecord/defaults.c \
-	librscg/scsi-remote.c readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl \
-	scgcheck/scgcheck.1
+	include/deflts.h librscg/scsi-remote.c readcd/readcd.1 \
+	rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
@@ -109,6 +109,8 @@ post-patch:
 		${WRKDIR}/pkg-message
 
 do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/btcflash/OBJ/${CDRTLSTARGET}/btcflash \
+		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
 		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
@@ -130,6 +132,7 @@ do-install:
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${CDRTLSTARGET}/scgcheck \
 		${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/btcflash/btcflash.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${PREFIX}/man/man1
