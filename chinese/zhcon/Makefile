@@ -17,18 +17,9 @@ COMMENT=	A fast Console Chinese System which supports framebuffer device
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
-
-.if !defined(WITHOUT_NLS)
+# Don't bother to add ".if !defined(WITHOUT_NLS)", zhcon requires libintl
 USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-BROKEN=		"Does not compile without gettext"
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 MAN1=		zhcon.1
 
