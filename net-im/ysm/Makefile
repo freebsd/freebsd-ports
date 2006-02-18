@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ysm
-PORTVERSION=	7.2.9.6
+PORTVERSION=	7.2.9.8
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ysmv7
@@ -16,7 +16,6 @@ MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 USE_ICONV=	yes
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
