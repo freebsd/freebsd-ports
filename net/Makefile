@@ -403,6 +403,7 @@
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-MovableType
+    SUBDIR += p5-Net-NBName
     SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-Packet
     SUBDIR += p5-Net-ParseWhois
