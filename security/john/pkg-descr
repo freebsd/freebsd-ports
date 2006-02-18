@@ -1,12 +1,8 @@
-John the Ripper is a UNIX password cracker, currently available for UNIX
-(tested with Linux x86, FreeBSD x86, Solaris 2.x SPARC, OSF/1 Alpha), DOS,
-WinNT/Win95.
-
-    John the Ripper supports the following cracking modes:
-    - wordlist with or without rules;
-    - "single crack", makes use of the login/GECOS information;
-    - incremental, tries all character combinations;
-    - external, allows you to define your own cracking mode.
-    - MD5 based password files support
+John the Ripper is a fast password cracker, currently available for many flavors
+of Unix (11 are officially supported, not counting different architectures),
+DOS, Win32, BeOS, and OpenVMS.  Its primary purpose is to detect weak Unix
+passwords.  Besides several crypt(3) password hash types most commonly found on
+various Unix flavors, supported out of the box are Kerberos/AFS and Windows
+NT/2000/XP LM hashes, plus many more with contributed patches.
 
 WWW: http://www.openwall.com/john/
