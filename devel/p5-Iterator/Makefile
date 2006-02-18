@@ -16,6 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A general-purpose iterator class
 
 BUILD_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Iterator.3
 

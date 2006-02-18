@@ -17,6 +17,7 @@ COMMENT=	Object interface for GPS waypoints
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/Time/CTime.pm:${PORTSDIR}/devel/p5-Time-modules
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Geo::Cache.3 \
 	Geo::Gpx.3

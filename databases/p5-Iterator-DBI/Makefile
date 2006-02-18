@@ -16,6 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	An iterator for returning DBI query results
 
 BUILD_DEPENDS=	${SITE_PERL}/Iterator.pm:${PORTSDIR}/devel/p5-Iterator
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Iterator::DBI.3
 
