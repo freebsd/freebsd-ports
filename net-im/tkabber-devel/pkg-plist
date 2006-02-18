@@ -86,12 +86,9 @@ bin/tkabber
 %%DATADIR%%/msgs/uk.msg
 %%DATADIR%%/muc.tcl
 %%DATADIR%%/negotiate.tcl
-%%DATADIR%%/pixmaps/amibulb/browser/aim.gif
-%%DATADIR%%/pixmaps/amibulb/browser/icq.gif
-%%DATADIR%%/pixmaps/amibulb/browser/msn.gif
-%%DATADIR%%/pixmaps/amibulb/browser/user.gif
-%%DATADIR%%/pixmaps/amibulb/browser/yahoo.gif
+%%DATADIR%%/pixmaps.tcl
 %%DATADIR%%/pixmaps/amibulb/docking/tkabber.ico
+%%DATADIR%%/pixmaps/amibulb/icondef.xml
 %%DATADIR%%/pixmaps/amibulb/roster/available-away.gif
 %%DATADIR%%/pixmaps/amibulb/roster/available-chat.gif
 %%DATADIR%%/pixmaps/amibulb/roster/available-dnd.gif
@@ -99,6 +96,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/amibulb/roster/available.gif
 %%DATADIR%%/pixmaps/amibulb/roster/group-closed.gif
 %%DATADIR%%/pixmaps/amibulb/roster/group-opened.gif
+%%DATADIR%%/pixmaps/amibulb/roster/icondef.xml
 %%DATADIR%%/pixmaps/amibulb/roster/invisible.gif
 %%DATADIR%%/pixmaps/amibulb/roster/stalker.gif
 %%DATADIR%%/pixmaps/amibulb/roster/unavailable.gif
@@ -107,16 +105,6 @@ bin/tkabber
 %%DATADIR%%/pixmaps/amibulb/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/amibulb/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/amibulb/tkabber/toolbar-show-online.gif
-%%DATADIR%%/pixmaps/default/browser/aim.gif
-%%DATADIR%%/pixmaps/default/browser/conference.gif
-%%DATADIR%%/pixmaps/default/browser/gg.gif
-%%DATADIR%%/pixmaps/default/browser/icq.gif
-%%DATADIR%%/pixmaps/default/browser/jud.gif
-%%DATADIR%%/pixmaps/default/browser/message.gif
-%%DATADIR%%/pixmaps/default/browser/msn.gif
-%%DATADIR%%/pixmaps/default/browser/user.gif
-%%DATADIR%%/pixmaps/default/browser/weather.gif
-%%DATADIR%%/pixmaps/default/browser/yahoo.gif
 %%DATADIR%%/pixmaps/default/docking/available-away.gif
 %%DATADIR%%/pixmaps/default/docking/available-chat.gif
 %%DATADIR%%/pixmaps/default/docking/available-dnd.gif
@@ -129,6 +117,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/docking/message.gif
 %%DATADIR%%/pixmaps/default/docking/tkabber.ico
 %%DATADIR%%/pixmaps/default/docking/unavailable.gif
+%%DATADIR%%/pixmaps/default/icondef.xml
 %%DATADIR%%/pixmaps/default/roster/available-away.gif
 %%DATADIR%%/pixmaps/default/roster/available-chat.gif
 %%DATADIR%%/pixmaps/default/roster/available-dnd.gif
@@ -141,51 +130,51 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/roster/invisible.gif
 %%DATADIR%%/pixmaps/default/roster/stalker.gif
 %%DATADIR%%/pixmaps/default/roster/unavailable.gif
-%%DATADIR%%/pixmaps/default/services/aim_away.xpm
-%%DATADIR%%/pixmaps/default/services/aim_chat.xpm
-%%DATADIR%%/pixmaps/default/services/aim_dnd.xpm
-%%DATADIR%%/pixmaps/default/services/aim_offline.xpm
-%%DATADIR%%/pixmaps/default/services/aim_online.xpm
-%%DATADIR%%/pixmaps/default/services/aim_xa.xpm
+%%DATADIR%%/pixmaps/default/services/aim_away.gif
+%%DATADIR%%/pixmaps/default/services/aim_chat.gif
+%%DATADIR%%/pixmaps/default/services/aim_dnd.gif
+%%DATADIR%%/pixmaps/default/services/aim_offline.gif
+%%DATADIR%%/pixmaps/default/services/aim_online.gif
+%%DATADIR%%/pixmaps/default/services/aim_xa.gif
 %%DATADIR%%/pixmaps/default/services/gg_away.gif
 %%DATADIR%%/pixmaps/default/services/gg_chat.gif
 %%DATADIR%%/pixmaps/default/services/gg_dnd.gif
 %%DATADIR%%/pixmaps/default/services/gg_offline.gif
 %%DATADIR%%/pixmaps/default/services/gg_online.gif
 %%DATADIR%%/pixmaps/default/services/gg_xa.gif
-%%DATADIR%%/pixmaps/default/services/icq_away.xpm
-%%DATADIR%%/pixmaps/default/services/icq_chat.xpm
-%%DATADIR%%/pixmaps/default/services/icq_dnd.xpm
-%%DATADIR%%/pixmaps/default/services/icq_offline.xpm
-%%DATADIR%%/pixmaps/default/services/icq_online.xpm
-%%DATADIR%%/pixmaps/default/services/icq_xa.xpm
+%%DATADIR%%/pixmaps/default/services/icq_away.gif
+%%DATADIR%%/pixmaps/default/services/icq_chat.gif
+%%DATADIR%%/pixmaps/default/services/icq_dnd.gif
+%%DATADIR%%/pixmaps/default/services/icq_offline.gif
+%%DATADIR%%/pixmaps/default/services/icq_online.gif
+%%DATADIR%%/pixmaps/default/services/icq_xa.gif
 %%DATADIR%%/pixmaps/default/services/jud.gif
-%%DATADIR%%/pixmaps/default/services/msn_away.xpm
-%%DATADIR%%/pixmaps/default/services/msn_chat.xpm
-%%DATADIR%%/pixmaps/default/services/msn_dnd.xpm
-%%DATADIR%%/pixmaps/default/services/msn_offline.xpm
-%%DATADIR%%/pixmaps/default/services/msn_online.xpm
-%%DATADIR%%/pixmaps/default/services/msn_xa.xpm
-%%DATADIR%%/pixmaps/default/services/rss_away.xpm
-%%DATADIR%%/pixmaps/default/services/rss_chat.xpm
-%%DATADIR%%/pixmaps/default/services/rss_dnd.xpm
-%%DATADIR%%/pixmaps/default/services/rss_offline.xpm
-%%DATADIR%%/pixmaps/default/services/rss_online.xpm
-%%DATADIR%%/pixmaps/default/services/rss_xa.xpm
-%%DATADIR%%/pixmaps/default/services/sms.xpm
+%%DATADIR%%/pixmaps/default/services/msn_away.gif
+%%DATADIR%%/pixmaps/default/services/msn_chat.gif
+%%DATADIR%%/pixmaps/default/services/msn_dnd.gif
+%%DATADIR%%/pixmaps/default/services/msn_offline.gif
+%%DATADIR%%/pixmaps/default/services/msn_online.gif
+%%DATADIR%%/pixmaps/default/services/msn_xa.gif
+%%DATADIR%%/pixmaps/default/services/rss_away.gif
+%%DATADIR%%/pixmaps/default/services/rss_chat.gif
+%%DATADIR%%/pixmaps/default/services/rss_dnd.gif
+%%DATADIR%%/pixmaps/default/services/rss_offline.gif
+%%DATADIR%%/pixmaps/default/services/rss_online.gif
+%%DATADIR%%/pixmaps/default/services/rss_xa.gif
+%%DATADIR%%/pixmaps/default/services/sms.gif
 %%DATADIR%%/pixmaps/default/services/weather_away.gif
 %%DATADIR%%/pixmaps/default/services/weather_chat.gif
 %%DATADIR%%/pixmaps/default/services/weather_dnd.gif
 %%DATADIR%%/pixmaps/default/services/weather_offline.gif
 %%DATADIR%%/pixmaps/default/services/weather_online.gif
 %%DATADIR%%/pixmaps/default/services/weather_xa.gif
-%%DATADIR%%/pixmaps/default/services/yahoo_away.xpm
-%%DATADIR%%/pixmaps/default/services/yahoo_chat.xpm
-%%DATADIR%%/pixmaps/default/services/yahoo_dnd.xpm
-%%DATADIR%%/pixmaps/default/services/yahoo_offline.xpm
-%%DATADIR%%/pixmaps/default/services/yahoo_online.xpm
-%%DATADIR%%/pixmaps/default/services/yahoo_xa.xpm
-%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark.xpm
+%%DATADIR%%/pixmaps/default/services/yahoo_away.gif
+%%DATADIR%%/pixmaps/default/services/yahoo_chat.gif
+%%DATADIR%%/pixmaps/default/services/yahoo_dnd.gif
+%%DATADIR%%/pixmaps/default/services/yahoo_offline.gif
+%%DATADIR%%/pixmaps/default/services/yahoo_online.gif
+%%DATADIR%%/pixmaps/default/services/yahoo_xa.gif
+%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-badsigned.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-encrypted.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-signed.gif
@@ -202,6 +191,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-online.gif
+%%DATADIR%%/pixmaps/feather22/icondef.xml
 %%DATADIR%%/pixmaps/feather22/roster/available-away.gif
 %%DATADIR%%/pixmaps/feather22/roster/available-chat.gif
 %%DATADIR%%/pixmaps/feather22/roster/available-dnd.gif
@@ -209,14 +199,6 @@ bin/tkabber
 %%DATADIR%%/pixmaps/feather22/roster/available.gif
 %%DATADIR%%/pixmaps/feather22/roster/invisible.gif
 %%DATADIR%%/pixmaps/feather22/roster/unavailable.gif
-%%DATADIR%%/pixmaps/gabber/browser/aim.gif
-%%DATADIR%%/pixmaps/gabber/browser/conference.gif
-%%DATADIR%%/pixmaps/gabber/browser/icq.gif
-%%DATADIR%%/pixmaps/gabber/browser/jud.gif
-%%DATADIR%%/pixmaps/gabber/browser/message.gif
-%%DATADIR%%/pixmaps/gabber/browser/msn.gif
-%%DATADIR%%/pixmaps/gabber/browser/user.gif
-%%DATADIR%%/pixmaps/gabber/browser/yahoo.gif
 %%DATADIR%%/pixmaps/gabber/docking/available-away.gif
 %%DATADIR%%/pixmaps/gabber/docking/available-chat.gif
 %%DATADIR%%/pixmaps/gabber/docking/available-dnd.gif
@@ -228,6 +210,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/gabber/docking/message.gif
 %%DATADIR%%/pixmaps/gabber/docking/tkabber.ico
 %%DATADIR%%/pixmaps/gabber/docking/unavailable.gif
+%%DATADIR%%/pixmaps/gabber/icondef.xml
 %%DATADIR%%/pixmaps/gabber/roster/available-away.gif
 %%DATADIR%%/pixmaps/gabber/roster/available-chat.gif
 %%DATADIR%%/pixmaps/gabber/roster/available-dnd.gif
@@ -237,51 +220,48 @@ bin/tkabber
 %%DATADIR%%/pixmaps/gabber/roster/conference-unavailable.gif
 %%DATADIR%%/pixmaps/gabber/roster/group-closed.gif
 %%DATADIR%%/pixmaps/gabber/roster/group-opened.gif
+%%DATADIR%%/pixmaps/gabber/roster/invisible.gif
 %%DATADIR%%/pixmaps/gabber/roster/stalker.gif
 %%DATADIR%%/pixmaps/gabber/roster/unavailable.gif
-%%DATADIR%%/pixmaps/gabber/services/aim_away.xpm
-%%DATADIR%%/pixmaps/gabber/services/aim_chat.xpm
-%%DATADIR%%/pixmaps/gabber/services/aim_dnd.xpm
-%%DATADIR%%/pixmaps/gabber/services/aim_offline.xpm
-%%DATADIR%%/pixmaps/gabber/services/aim_online.xpm
-%%DATADIR%%/pixmaps/gabber/services/aim_xa.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_away.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_chat.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_dnd.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_offline.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_online.xpm
-%%DATADIR%%/pixmaps/gabber/services/icq_xa.xpm
+%%DATADIR%%/pixmaps/gabber/services/aim_away.gif
+%%DATADIR%%/pixmaps/gabber/services/aim_chat.gif
+%%DATADIR%%/pixmaps/gabber/services/aim_dnd.gif
+%%DATADIR%%/pixmaps/gabber/services/aim_offline.gif
+%%DATADIR%%/pixmaps/gabber/services/aim_online.gif
+%%DATADIR%%/pixmaps/gabber/services/aim_xa.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_away.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_chat.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_dnd.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_offline.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_online.gif
+%%DATADIR%%/pixmaps/gabber/services/icq_xa.gif
 %%DATADIR%%/pixmaps/gabber/services/jud.gif
-%%DATADIR%%/pixmaps/gabber/services/msn_away.xpm
-%%DATADIR%%/pixmaps/gabber/services/msn_chat.xpm
-%%DATADIR%%/pixmaps/gabber/services/msn_dnd.xpm
-%%DATADIR%%/pixmaps/gabber/services/msn_offline.xpm
-%%DATADIR%%/pixmaps/gabber/services/msn_online.xpm
-%%DATADIR%%/pixmaps/gabber/services/msn_xa.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_away.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_chat.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_dnd.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_offline.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_online.xpm
-%%DATADIR%%/pixmaps/gabber/services/rss_xa.xpm
-%%DATADIR%%/pixmaps/gabber/services/sms.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_away.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_chat.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_dnd.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_offline.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_online.xpm
-%%DATADIR%%/pixmaps/gabber/services/yahoo_xa.xpm
+%%DATADIR%%/pixmaps/gabber/services/msn_away.gif
+%%DATADIR%%/pixmaps/gabber/services/msn_chat.gif
+%%DATADIR%%/pixmaps/gabber/services/msn_dnd.gif
+%%DATADIR%%/pixmaps/gabber/services/msn_offline.gif
+%%DATADIR%%/pixmaps/gabber/services/msn_online.gif
+%%DATADIR%%/pixmaps/gabber/services/msn_xa.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_away.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_chat.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_dnd.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_offline.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_online.gif
+%%DATADIR%%/pixmaps/gabber/services/rss_xa.gif
+%%DATADIR%%/pixmaps/gabber/services/sms.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_away.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_chat.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_dnd.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_offline.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_online.gif
+%%DATADIR%%/pixmaps/gabber/services/yahoo_xa.gif
 %%DATADIR%%/pixmaps/gabber/tkabber/toolbar-add-user.gif
 %%DATADIR%%/pixmaps/gabber/tkabber/toolbar-disco.gif
 %%DATADIR%%/pixmaps/gabber/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/gabber/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/gabber/tkabber/toolbar-show-online.gif
-%%DATADIR%%/pixmaps/gush/browser/aim.gif
-%%DATADIR%%/pixmaps/gush/browser/icq.gif
-%%DATADIR%%/pixmaps/gush/browser/msn.gif
-%%DATADIR%%/pixmaps/gush/browser/user.gif
-%%DATADIR%%/pixmaps/gush/browser/yahoo.gif
 %%DATADIR%%/pixmaps/gush/docking/tkabber.ico
+%%DATADIR%%/pixmaps/gush/icondef.xml
 %%DATADIR%%/pixmaps/gush/roster/available-away.gif
 %%DATADIR%%/pixmaps/gush/roster/available-chat.gif
 %%DATADIR%%/pixmaps/gush/roster/available-dnd.gif
@@ -305,6 +285,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/icq/docking/available.gif
 %%DATADIR%%/pixmaps/icq/docking/invisible.gif
 %%DATADIR%%/pixmaps/icq/docking/unavailable.gif
+%%DATADIR%%/pixmaps/icq/icondef.xml
 %%DATADIR%%/pixmaps/icq/roster/available-away.gif
 %%DATADIR%%/pixmaps/icq/roster/available-chat.gif
 %%DATADIR%%/pixmaps/icq/roster/available-dnd.gif
@@ -322,13 +303,6 @@ bin/tkabber
 %%DATADIR%%/pixmaps/icq/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/icq/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/icq/tkabber/toolbar-show-online.gif
-%%DATADIR%%/pixmaps/jajc/browser/aim.gif
-%%DATADIR%%/pixmaps/jajc/browser/conference.gif
-%%DATADIR%%/pixmaps/jajc/browser/icq.gif
-%%DATADIR%%/pixmaps/jajc/browser/jud.gif
-%%DATADIR%%/pixmaps/jajc/browser/msn.gif
-%%DATADIR%%/pixmaps/jajc/browser/user.gif
-%%DATADIR%%/pixmaps/jajc/browser/yahoo.gif
 %%DATADIR%%/pixmaps/jajc/docking/available-away.gif
 %%DATADIR%%/pixmaps/jajc/docking/available-chat.gif
 %%DATADIR%%/pixmaps/jajc/docking/available-dnd.gif
@@ -336,6 +310,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/jajc/docking/available.gif
 %%DATADIR%%/pixmaps/jajc/docking/tkabber.ico
 %%DATADIR%%/pixmaps/jajc/docking/unavailable.gif
+%%DATADIR%%/pixmaps/jajc/icondef.xml
 %%DATADIR%%/pixmaps/jajc/roster/available-away.gif
 %%DATADIR%%/pixmaps/jajc/roster/available-chat.gif
 %%DATADIR%%/pixmaps/jajc/roster/available-dnd.gif
@@ -348,37 +323,38 @@ bin/tkabber
 %%DATADIR%%/pixmaps/jajc/roster/group_closed.gif
 %%DATADIR%%/pixmaps/jajc/roster/group_opened.gif
 %%DATADIR%%/pixmaps/jajc/roster/unavailable.gif
-%%DATADIR%%/pixmaps/jajc/services/aim_away.xpm
-%%DATADIR%%/pixmaps/jajc/services/aim_chat.xpm
-%%DATADIR%%/pixmaps/jajc/services/aim_dnd.xpm
-%%DATADIR%%/pixmaps/jajc/services/aim_offline.xpm
-%%DATADIR%%/pixmaps/jajc/services/aim_online.xpm
-%%DATADIR%%/pixmaps/jajc/services/aim_xa.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_away.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_chat.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_dnd.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_offline.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_online.xpm
-%%DATADIR%%/pixmaps/jajc/services/icq_xa.xpm
+%%DATADIR%%/pixmaps/jajc/services/aim_away.gif
+%%DATADIR%%/pixmaps/jajc/services/aim_chat.gif
+%%DATADIR%%/pixmaps/jajc/services/aim_dnd.gif
+%%DATADIR%%/pixmaps/jajc/services/aim_offline.gif
+%%DATADIR%%/pixmaps/jajc/services/aim_online.gif
+%%DATADIR%%/pixmaps/jajc/services/aim_xa.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_away.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_chat.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_dnd.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_offline.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_online.gif
+%%DATADIR%%/pixmaps/jajc/services/icq_xa.gif
 %%DATADIR%%/pixmaps/jajc/services/jud.gif
-%%DATADIR%%/pixmaps/jajc/services/msn_away.xpm
-%%DATADIR%%/pixmaps/jajc/services/msn_chat.xpm
-%%DATADIR%%/pixmaps/jajc/services/msn_dnd.xpm
-%%DATADIR%%/pixmaps/jajc/services/msn_offline.xpm
-%%DATADIR%%/pixmaps/jajc/services/msn_online.xpm
-%%DATADIR%%/pixmaps/jajc/services/msn_xa.xpm
-%%DATADIR%%/pixmaps/jajc/services/sms.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_away.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_chat.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_dnd.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_offline.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_online.xpm
-%%DATADIR%%/pixmaps/jajc/services/yahoo_xa.xpm
+%%DATADIR%%/pixmaps/jajc/services/msn_away.gif
+%%DATADIR%%/pixmaps/jajc/services/msn_chat.gif
+%%DATADIR%%/pixmaps/jajc/services/msn_dnd.gif
+%%DATADIR%%/pixmaps/jajc/services/msn_offline.gif
+%%DATADIR%%/pixmaps/jajc/services/msn_online.gif
+%%DATADIR%%/pixmaps/jajc/services/msn_xa.gif
+%%DATADIR%%/pixmaps/jajc/services/sms.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_away.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_chat.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_dnd.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_offline.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_online.gif
+%%DATADIR%%/pixmaps/jajc/services/yahoo_xa.gif
 %%DATADIR%%/pixmaps/jajc/tkabber/toolbar-add-user.gif
 %%DATADIR%%/pixmaps/jajc/tkabber/toolbar-disco.gif
 %%DATADIR%%/pixmaps/jajc/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/jajc/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/jajc/tkabber/toolbar-show-online.gif
+%%DATADIR%%/pixmaps/jarl/icondef.xml
 %%DATADIR%%/pixmaps/jarl/roster/available-away.gif
 %%DATADIR%%/pixmaps/jarl/roster/available-chat.gif
 %%DATADIR%%/pixmaps/jarl/roster/available-dnd.gif
@@ -386,16 +362,6 @@ bin/tkabber
 %%DATADIR%%/pixmaps/jarl/roster/available.gif
 %%DATADIR%%/pixmaps/jarl/roster/invisible.gif
 %%DATADIR%%/pixmaps/jarl/roster/unavailable.gif
-%%DATADIR%%/pixmaps/kroc/browser/aim.gif
-%%DATADIR%%/pixmaps/kroc/browser/conference.gif
-%%DATADIR%%/pixmaps/kroc/browser/gg.gif
-%%DATADIR%%/pixmaps/kroc/browser/icq.gif
-%%DATADIR%%/pixmaps/kroc/browser/jud.gif
-%%DATADIR%%/pixmaps/kroc/browser/message.gif
-%%DATADIR%%/pixmaps/kroc/browser/msn.gif
-%%DATADIR%%/pixmaps/kroc/browser/user.gif
-%%DATADIR%%/pixmaps/kroc/browser/weather.gif
-%%DATADIR%%/pixmaps/kroc/browser/yahoo.gif
 %%DATADIR%%/pixmaps/kroc/docking/available-away.gif
 %%DATADIR%%/pixmaps/kroc/docking/available-chat.gif
 %%DATADIR%%/pixmaps/kroc/docking/available-dnd.gif
@@ -404,6 +370,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/kroc/docking/invisible.gif
 %%DATADIR%%/pixmaps/kroc/docking/tkabber.ico
 %%DATADIR%%/pixmaps/kroc/docking/unavailable.gif
+%%DATADIR%%/pixmaps/kroc/icondef.xml
 %%DATADIR%%/pixmaps/kroc/roster/available-away.gif
 %%DATADIR%%/pixmaps/kroc/roster/available-chat.gif
 %%DATADIR%%/pixmaps/kroc/roster/available-dnd.gif
@@ -416,50 +383,51 @@ bin/tkabber
 %%DATADIR%%/pixmaps/kroc/roster/invisible.gif
 %%DATADIR%%/pixmaps/kroc/roster/stalker.gif
 %%DATADIR%%/pixmaps/kroc/roster/unavailable.gif
-%%DATADIR%%/pixmaps/kroc/services/aim_away.xpm
-%%DATADIR%%/pixmaps/kroc/services/aim_chat.xpm
-%%DATADIR%%/pixmaps/kroc/services/aim_dnd.xpm
-%%DATADIR%%/pixmaps/kroc/services/aim_offline.xpm
-%%DATADIR%%/pixmaps/kroc/services/aim_online.xpm
-%%DATADIR%%/pixmaps/kroc/services/aim_xa.xpm
+%%DATADIR%%/pixmaps/kroc/roster/unsubscribed.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_away.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_chat.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_dnd.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_offline.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_online.gif
+%%DATADIR%%/pixmaps/kroc/services/aim_xa.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_away.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_chat.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_dnd.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_offline.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_online.gif
 %%DATADIR%%/pixmaps/kroc/services/gg_xa.gif
-%%DATADIR%%/pixmaps/kroc/services/icq_away.xpm
-%%DATADIR%%/pixmaps/kroc/services/icq_chat.xpm
-%%DATADIR%%/pixmaps/kroc/services/icq_dnd.xpm
-%%DATADIR%%/pixmaps/kroc/services/icq_offline.xpm
-%%DATADIR%%/pixmaps/kroc/services/icq_online.xpm
-%%DATADIR%%/pixmaps/kroc/services/icq_xa.xpm
+%%DATADIR%%/pixmaps/kroc/services/icq_away.gif
+%%DATADIR%%/pixmaps/kroc/services/icq_chat.gif
+%%DATADIR%%/pixmaps/kroc/services/icq_dnd.gif
+%%DATADIR%%/pixmaps/kroc/services/icq_offline.gif
+%%DATADIR%%/pixmaps/kroc/services/icq_online.gif
+%%DATADIR%%/pixmaps/kroc/services/icq_xa.gif
 %%DATADIR%%/pixmaps/kroc/services/jud.gif
-%%DATADIR%%/pixmaps/kroc/services/msn_away.xpm
-%%DATADIR%%/pixmaps/kroc/services/msn_chat.xpm
-%%DATADIR%%/pixmaps/kroc/services/msn_dnd.xpm
-%%DATADIR%%/pixmaps/kroc/services/msn_offline.xpm
-%%DATADIR%%/pixmaps/kroc/services/msn_online.xpm
-%%DATADIR%%/pixmaps/kroc/services/msn_xa.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_away.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_chat.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_dnd.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_offline.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_online.xpm
-%%DATADIR%%/pixmaps/kroc/services/rss_xa.xpm
-%%DATADIR%%/pixmaps/kroc/services/sms.xpm
+%%DATADIR%%/pixmaps/kroc/services/msn_away.gif
+%%DATADIR%%/pixmaps/kroc/services/msn_chat.gif
+%%DATADIR%%/pixmaps/kroc/services/msn_dnd.gif
+%%DATADIR%%/pixmaps/kroc/services/msn_offline.gif
+%%DATADIR%%/pixmaps/kroc/services/msn_online.gif
+%%DATADIR%%/pixmaps/kroc/services/msn_xa.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_away.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_chat.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_dnd.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_offline.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_online.gif
+%%DATADIR%%/pixmaps/kroc/services/rss_xa.gif
+%%DATADIR%%/pixmaps/kroc/services/sms.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_away.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_chat.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_dnd.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_offline.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_online.gif
 %%DATADIR%%/pixmaps/kroc/services/weather_xa.gif
-%%DATADIR%%/pixmaps/kroc/services/yahoo_away.xpm
-%%DATADIR%%/pixmaps/kroc/services/yahoo_chat.xpm
-%%DATADIR%%/pixmaps/kroc/services/yahoo_dnd.xpm
-%%DATADIR%%/pixmaps/kroc/services/yahoo_offline.xpm
-%%DATADIR%%/pixmaps/kroc/services/yahoo_online.xpm
-%%DATADIR%%/pixmaps/kroc/services/yahoo_xa.xpm
+%%DATADIR%%/pixmaps/kroc/services/yahoo_away.gif
+%%DATADIR%%/pixmaps/kroc/services/yahoo_chat.gif
+%%DATADIR%%/pixmaps/kroc/services/yahoo_dnd.gif
+%%DATADIR%%/pixmaps/kroc/services/yahoo_offline.gif
+%%DATADIR%%/pixmaps/kroc/services/yahoo_online.gif
+%%DATADIR%%/pixmaps/kroc/services/yahoo_xa.gif
 %%DATADIR%%/pixmaps/kroc/tkabber/gpg-badsigned.gif
 %%DATADIR%%/pixmaps/kroc/tkabber/gpg-encrypted.gif
 %%DATADIR%%/pixmaps/kroc/tkabber/gpg-signed.gif
@@ -475,11 +443,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/kroc/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/kroc/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/kroc/tkabber/toolbar-show-online.gif
-%%DATADIR%%/pixmaps/psi/browser/aim.gif
-%%DATADIR%%/pixmaps/psi/browser/icq.gif
-%%DATADIR%%/pixmaps/psi/browser/msn.gif
-%%DATADIR%%/pixmaps/psi/browser/user.gif
-%%DATADIR%%/pixmaps/psi/browser/yahoo.gif
+%%DATADIR%%/pixmaps/psi/icondef.xml
 %%DATADIR%%/pixmaps/psi/roster/available-away.gif
 %%DATADIR%%/pixmaps/psi/roster/available-chat.gif
 %%DATADIR%%/pixmaps/psi/roster/available-dnd.gif
@@ -513,6 +477,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/highlight.tcl
 %%DATADIR%%/plugins/chat/history.tcl
 %%DATADIR%%/plugins/chat/info_commands.tcl
+%%DATADIR%%/plugins/chat/insert_nick.tcl
 %%DATADIR%%/plugins/chat/irc_commands.tcl
 %%DATADIR%%/plugins/chat/logger.tcl
 %%DATADIR%%/plugins/chat/me_command.tcl
@@ -533,6 +498,7 @@ bin/tkabber
 %%DATADIR%%/plugins/general/conferenceinfo.tcl
 %%DATADIR%%/plugins/general/conferences.tcl
 %%DATADIR%%/plugins/general/headlines.tcl
+%%DATADIR%%/plugins/general/jitworkaround.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
 %%DATADIR%%/plugins/general/offline.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
@@ -637,7 +603,6 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps/icq/roster
 @dirrm %%DATADIR%%/pixmaps/icq/tkabber
 @dirrm %%DATADIR%%/pixmaps/icq
-@dirrm %%DATADIR%%/pixmaps/default/browser
 @dirrm %%DATADIR%%/pixmaps/default/docking
 @dirrm %%DATADIR%%/pixmaps/default/roster
 @dirrm %%DATADIR%%/pixmaps/default/services
@@ -645,23 +610,19 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps/default
 @dirrm %%DATADIR%%/pixmaps/feather22/roster
 @dirrm %%DATADIR%%/pixmaps/feather22
-@dirrm %%DATADIR%%/pixmaps/gabber/browser
 @dirrm %%DATADIR%%/pixmaps/gabber/docking
 @dirrm %%DATADIR%%/pixmaps/gabber/roster
 @dirrm %%DATADIR%%/pixmaps/gabber/services
 @dirrm %%DATADIR%%/pixmaps/gabber/tkabber
 @dirrm %%DATADIR%%/pixmaps/gabber
-@dirrm %%DATADIR%%/pixmaps/gush/browser
 @dirrm %%DATADIR%%/pixmaps/gush/docking
 @dirrm %%DATADIR%%/pixmaps/gush/roster
 @dirrm %%DATADIR%%/pixmaps/gush/tkabber
 @dirrm %%DATADIR%%/pixmaps/gush
-@dirrm %%DATADIR%%/pixmaps/amibulb/browser
 @dirrm %%DATADIR%%/pixmaps/amibulb/docking
 @dirrm %%DATADIR%%/pixmaps/amibulb/roster
 @dirrm %%DATADIR%%/pixmaps/amibulb/tkabber
 @dirrm %%DATADIR%%/pixmaps/amibulb
-@dirrm %%DATADIR%%/pixmaps/jajc/browser
 @dirrm %%DATADIR%%/pixmaps/jajc/docking
 @dirrm %%DATADIR%%/pixmaps/jajc/roster
 @dirrm %%DATADIR%%/pixmaps/jajc/services
@@ -669,13 +630,11 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps/jajc
 @dirrm %%DATADIR%%/pixmaps/jarl/roster
 @dirrm %%DATADIR%%/pixmaps/jarl
-@dirrm %%DATADIR%%/pixmaps/kroc/browser
 @dirrm %%DATADIR%%/pixmaps/kroc/docking
 @dirrm %%DATADIR%%/pixmaps/kroc/roster
 @dirrm %%DATADIR%%/pixmaps/kroc/services
 @dirrm %%DATADIR%%/pixmaps/kroc/tkabber
 @dirrm %%DATADIR%%/pixmaps/kroc
-@dirrm %%DATADIR%%/pixmaps/psi/browser
 @dirrm %%DATADIR%%/pixmaps/psi/roster
 @dirrm %%DATADIR%%/pixmaps/psi/tkabber
 @dirrm %%DATADIR%%/pixmaps/psi
