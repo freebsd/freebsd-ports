@@ -1,0 +1,5 @@
+bin/glob2
+share/applications/glob2.desktop
+%%DATADIR%%/glob2-icon-48x48.png
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
