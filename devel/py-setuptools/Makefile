@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setuptools
-PORTVERSION=	0.6a9
+PORTVERSION=	0.6a10
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ USE_ZIP=	yes
 DIST_SUBDIR=	python
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 
 post-install:
 .if !defined(NOPORTDOCS)
