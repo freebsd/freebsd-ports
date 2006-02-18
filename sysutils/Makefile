@@ -437,6 +437,7 @@
     SUBDIR += procmap
     SUBDIR += progsreiserfs
     SUBDIR += prune
+    SUBDIR += psearch
     SUBDIR += psgconf
     SUBDIR += pslist
     SUBDIR += psmisc
