@@ -331,6 +331,7 @@
     SUBDIR += libx3dtk
     SUBDIR += linplasma
     SUBDIR += linux-ac3d
+    SUBDIR += linux-adobesvg
     SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
