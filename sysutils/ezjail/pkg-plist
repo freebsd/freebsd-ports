@@ -4,7 +4,7 @@ bin/ezjail-admin
 %%EXAMPLESDIR%%/default/etc/make.conf
 %%EXAMPLESDIR%%/default/ezjail.flavour
 %%EXAMPLESDIR%%/default/usr/local/etc/sudoers
-@dirrmtry etc/ezjail/
+@dirrm etc/ezjail/
 @dirrm %%EXAMPLESDIR%%/default/usr/local/etc/
 @dirrm %%EXAMPLESDIR%%/default/usr/local/
 @dirrm %%EXAMPLESDIR%%/default/usr/
