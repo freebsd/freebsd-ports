@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	petsc
-PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTVERSION=	2.3.1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
-DISTNAME=	v${PORTVERSION}-${PATCHLEVEL}.${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-p${PATCHLEVEL}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
-PATCHLEVEL=	36
+RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
+
+PATCHLEVEL=	7
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
-USE_REINPLACE=		yes
 CONFIGURE_SCRIPT=	config/configure.py
 CONFIGURE_LOG=		configure.log
 CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
 			PETSC_DIR=${WRKSRC}
-CONFIGURE_ARGS=		--prefix=${PREFIX} --CFLAGS="${CFLAGS}"			\
-			--CXX_CXXFLAGS="${CXXFLAGS}" --FFLAGS="${FFLAGS}"	\
-			--with-python=1 ---with-shared=1
-ALL_TARGET=		all python
+CONFIGURE_ARGS=		--prefix=${PREFIX}/${PFX} --COPTFLAGS="${CFLAGS}"	\
+			--CXXOPTFLAGS="${CXXFLAGS}" --FOPTFLAGS="${FFLAGS}"	\
+			--with-shared=1
+ALL_TARGET=		all
 MAKEFILE=		makefile
 MAKE_ENV=		PETSC_DIR=${WRKSRC}
 
@@ -37,13 +37,12 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=		yes
-CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include				\
+CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include	\
 			--with-x-library=${X11BASE}/lib/libX11.so
 .endif
 
 FFLAGS?=	-O2
-PFX=		${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PFX}
+PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 
@@ -51,12 +50,6 @@ PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
 LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
 LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lg2c -lm"
 CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
-.endif
-
-.if !defined(WITHOUT_SUPERLU)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
-CONFIGURE_ARGS+=	--with-superlu-include=${LOCALBASE}/include/superlu	\
-			--with-superlu-lib=${LOCALBASE}/lib/libsuperlu.a
 .endif
 
 .if !defined(WITHOUT_UMFPACK)
@@ -78,23 +71,33 @@ MPIDIR=		${LOCALBASE}/mpich
 
 .include <bsd.port.pre.mk>
 
-.if exists(${MPIDIR}/bin/mpiCC)
+.if exists(${MPIDIR}/bin/mpiCC) && !defined(WITHOUT_MPI)
 WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
+. if exists(${LOCALBASE}/include/mpi.h)
+BROKEN=		Cannot build with mpich when lam7 is installed - set WITHOUT_MPI or deinstall lam7
+. endif
 PKGNAMESUFFIX+=		-mpich
 BUILD_DEPENDS+=		${MPIDIR}/bin/mpiCC:${PORTSDIR}/net/mpich
 RUN_DEPENDS+=		${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich
 CONFIGURE_ARGS+=	--with-mpi-dir=${LOCALBASE}/mpich
 CONFLICTS=		petsc-2*
-PLIST_SUB+=		MPI=""
+PLIST_SUB+=		MPIUNI="@comment "
 .else
 CONFIGURE_ARGS+=	--with-mpi=0
 CONFLICTS=		petsc-mpich-2*
 WITHOUT_BS95=		yes
 WITHOUT_PARMETIS=	yes
 WITHOUT_SPOOLES=	yes
-PLIST_SUB+=		MPI="@comment "
+WITHOUT_SUPERLU=	yes
+PLIST_SUB+=		MPIUNI=""
+.endif
+
+.if !defined(WITHOUT_SUPERLU) && !defined(WITHOUT_BLASLAPACK)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
+CONFIGURE_ARGS+=	--with-superlu-include=${LOCALBASE}/include/superlu	\
+			--with-superlu-lib=${LOCALBASE}/lib/libsuperlu.a
 .endif
 
 .if defined(WITHOUT_BS95)
@@ -109,27 +112,27 @@ CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/include	\
 CONFIGURE_ARGS+=	--with-parmetis=0
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/parmetis/libparmetis.a:${PORTSDIR}/math/parmetis
-LIBPARMETIS=	"${LOCALBASE}/lib/parmetis/libparmetis.a	${LOCALBASE}/lib/parmetis/libmetis.a"
 CONFIGURE_ARGS+=	--with-parmetis=1					\
 			--with-parmetis-include=${LOCALBASE}/include/parmetis	\
-			--with-parmetis-lib=[${LOCALBASE}/lib/parmetis/libparmetis.a,${LOCALBASE}/lib/parmetis/libmetis.a,${LIBDIR}/libm.a]
+			--with-parmetis-lib=[${LOCALBASE}/lib/parmetis/libparmetis.a,${LOCALBASE}/lib/parmetis/libmetis.a]
 .endif
 
-#.if exists(${LIBBLACS})
-#WITH_BLACS=	yes
-#.endif
-#.if defined(WITH_BLACS)
-#BUILD_DEPENDS+=	${LIBBLACS}:${PORTSDIR}/math/blacs
-#CONFIGURE_ARGS+=	--with_mumps=1		\
-#			--with-blacs-lib=1
-#. if exists(${LIBSCALAPACK})
-#WITH_SCALAPACK=	yes
-#. endif
-#. if defined(WITH_SCALAPACK)
-#BUILD_DEPENDS+=	${LIBSCALAPACK}:${PORTSDIR}/math/scalapack
-#CONFIGURE_ARGS+=	--with-scalapack-lib=1
-#. endif
-#.endif
+.if exists(${LIBBLACS})
+WITH_BLACS=	yes
+.endif
+.if defined(WITH_BLACS) && !defined(WITH_MPI)
+BUILD_DEPENDS+=	${LIBBLACS}:${PORTSDIR}/math/blacs
+CONFIGURE_ARGS+=	--with_mumps=0	\
+			--with-blacs-include=${LOCALBASE}/include	\
+			--with-blacs-lib=[${LOCALBASE}/lib/libblacs.a,${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a]
+. if exists(${LIBSCALAPACK})
+WITH_SCALAPACK=	yes
+. endif
+. if defined(WITH_SCALAPACK)
+BUILD_DEPENDS+=	${LIBSCALAPACK}:${PORTSDIR}/math/scalapack
+CONFIGURE_ARGS+=	--with-scalapack-dir=${LOCALBASE}
+. endif
+.endif
 
 #.if exists(${LOCALBASE}/bin/lgrind)
 #WITH_LGRIND=	yes
@@ -139,14 +142,14 @@ CONFIGURE_ARGS+=	--with-parmetis=1					\
 #RUN_DEPENDS+=	lgrind:${PORTSDIR}/print/lgrind
 #.endif
 
-#.if exists(${LOCALBASE}/lib/libnetcdf.so)
-#WITH_NETCDF=	yes
-#.endif
-#.if defined(WITH_NETCDF)
-#LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
-#CONFIGURE_ENV+=	NETCDF_INCLUDE=${LOCALBASE}/include	\
-#		NETCDF_LIB=${LOCALBASE}/lib
-#.endif
+.if exists(${LOCALBASE}/lib/libnetcdf.so)
+WITH_NETCDF=	yes
+.endif
+.if defined(WITH_NETCDF)
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+CONFIGURE_ENV+=	PNETCDF_INCLUDE=${LOCALBASE}/include	\
+		PNETCDF_LIB=${LOCALBASE}/lib
+.endif
 
 .if exists(${LOCALBASE}/bin/svn)
 WITH_SVN=	yes
@@ -167,7 +170,7 @@ RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .if !defined(WITHOUT_SPOOLES)
 . if exists(${LOCALBASE}/lib/libspooles.a)	\
   && !exists(${LOCALBASE}/include/spooles/MPI/spoolesMPI.h)
-BROKEN=	"Please deinstall spooles and reinstall spooles-mpich"
+BROKEN=		Please deinstall spooles and reinstall spooles-mpich
 . else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles-mpich
 . endif
@@ -179,6 +182,9 @@ pre-everything::
 	@${ECHO_MSG}
 .if !defined (WITH_MPI)
 	@${ECHO_MSG} "Define WITH_MPI to use mpich."
+	@${ECHO_MSG} "Note: this is not compatible with Python bindings!"
+.elif !defined (WITHOUT_MPI)
+	@${ECHO_MSG} "Define WITHOUT_MPI to not use mpich."
 .endif
 .if !defined (WITH_SVN)
 	@${ECHO_MSG} "Define WITH_SVN to use subversion."
@@ -198,9 +204,9 @@ pre-everything::
 .if !defined (WITHOUT_SPOOLES)
 	@${ECHO_MSG} "Define WITHOUT_SPOOLES to remove SPOOLES support."
 .endif
-.if !defined (WITHOUT_SUPERLU)
-	@${ECHO_MSG} "Define WITHOUT_SUPERLU to remove SuperLU support."
-.endif
+#.if !defined (WITHOUT_SUPERLU)
+#	@${ECHO_MSG} "Define WITHOUT_SUPERLU to remove SuperLU support."
+#.endif
 .if !defined (WITHOUT_UMFPACK)
 	@${ECHO_MSG} "Define WITHOUT_UMFPACK to remove UMFPACK support."
 .endif
@@ -211,6 +217,9 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"	\
 			-e "s|AMD/Lib|${LOCALBASE}/lib|"	\
 		${WRKSRC}/python/PETSc/packages/UMFPACK.py
+	@${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh93|"	\
+		${WRKSRC}/bin/popup
+	@${RM} ${WRKSRC}/bin/popup.bak
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bin
