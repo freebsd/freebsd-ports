@@ -14266,3 +14266,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 rast		ports/textproc/rast
+trac-accountmanager	ports/www/trac-accountmanager
