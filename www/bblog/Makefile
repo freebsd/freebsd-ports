@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bblog
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A elegant personal publishing system with Smarty
 
 USE_PHP=	mysql pcre session
