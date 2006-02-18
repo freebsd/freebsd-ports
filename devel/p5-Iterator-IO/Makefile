@@ -16,6 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Filesystem and stream iterators
 
 BUILD_DEPENDS=	${SITE_PERL}/Iterator.pm:${PORTSDIR}/devel/p5-Iterator
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=	Iterator::IO.3
 
