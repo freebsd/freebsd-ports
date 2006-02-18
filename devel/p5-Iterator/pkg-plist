@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator
