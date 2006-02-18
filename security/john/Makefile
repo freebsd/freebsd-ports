@@ -7,6 +7,7 @@
 
 PORTNAME=	john
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/d/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/
@@ -14,10 +15,9 @@ MASTER_SITES=	http://www.openwall.com/john/d/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
-USE_REINPLACE=	yes
-
 DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
-PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README RULES
+PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
+		RULES CONTACT CREDITS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

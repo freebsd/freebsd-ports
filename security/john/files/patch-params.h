@@ -1,6 +1,6 @@
---- params.h.orig	Sat Dec 31 04:21:22 2005
-+++ params.h	Sat Dec 31 04:25:13 2005
-@@ -22,15 +22,15 @@
+--- params.h.orig	Mon Jan  9 15:33:18 2006
++++ params.h	Sat Feb 18 19:02:07 2006
+@@ -22,12 +22,12 @@
   * will probably want to set this to 1 for their builds of John.
   */
  #ifndef JOHN_SYSTEMWIDE
@@ -14,11 +14,7 @@
 +#define JOHN_SYSTEMWIDE_EXEC		"%%PREFIX%%/bin/john"
  #endif
  #ifndef JOHN_SYSTEMWIDE_HOME
--#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
-+#define JOHN_SYSTEMWIDE_HOME		"%%DATADIR%%"
- #endif
- #define JOHN_PRIVATE_HOME		"~/.john"
- #endif
+ #define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
 @@ -74,8 +74,8 @@
  /*
   * File names.
