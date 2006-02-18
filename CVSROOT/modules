@@ -8136,6 +8136,7 @@ p5-Games-Tournament-RoundRobin	ports/games/p5-Games-Tournament-RoundRobin
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
+p5-Geo-Cache	ports/misc/p5-Geo-Cache
 p5-Geo-Distance	ports/math/p5-Geo-Distance
 p5-Geo-IP	ports/net/p5-Geo-IP
 p5-Geo-IPfree	ports/net/p5-Geo-IPfree
