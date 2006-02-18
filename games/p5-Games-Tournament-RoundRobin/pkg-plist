@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Games/League/Member.pm
+%%SITE_PERL%%/Games/Tournament/RoundRobin.pm
+@dirrm %%SITE_PERL%%/Games/Tournament
+@dirrm %%SITE_PERL%%/Games/League
+@dirrmtry %%SITE_PERL%%/Games
