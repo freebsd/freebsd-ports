@@ -7,7 +7,9 @@
 PORTNAME=	NetPIPE
 PORTVERSION=	3.6.2
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
+MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
