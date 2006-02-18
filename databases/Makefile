@@ -235,6 +235,7 @@
     SUBDIR += p5-GDBM
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-Ima-DBI
+    SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
