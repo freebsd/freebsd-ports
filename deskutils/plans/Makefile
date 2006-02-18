@@ -1,4 +1,3 @@
-#
 # New ports collection makefile for:	plans
 # Date created:				2004-12-17
 # Whom:					Edwin Groothuis <edwin@mavetju.org>
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.5.5
+PORTVERSION=	7.6
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
