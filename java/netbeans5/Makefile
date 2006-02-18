@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netbeans
+PORTNAME=	netbeans4
 PORTVERSION=	4.1
 CATEGORIES=	java devel
 MASTER_SITES=
