@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cisco_conf
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	ciscoconf-${PORTVERSION}
@@ -18,6 +18,8 @@ COMMENT=	Simple configuration editor for Cisco devices
 RUN_DEPENDS=	${LOCALBASE}/bin/joe:${PORTSDIR}/editors/joe
 
 WRKSRC=		${WRKDIR}/ciscoconf
+
+DOCSDIR=	${PREFIX}/share/doc/ciscoconf
 
 NO_BUILD=	YES
 
