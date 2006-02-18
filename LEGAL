@@ -44,6 +44,7 @@ acroread/AdbeRdr70_linux_jpn.tar.gz japanese/acroread	Must fill out redistributi
 						http://www.adobe.com/products/acrobat/distribute.html
 actx-*			games/actx		Contains commercial character
 						data
+adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to
 						author
 aestats-*		games/aestats		Commercial use is prohibited
