@@ -10353,6 +10353,7 @@ ps2eps		ports/print/ps2eps
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psdim		ports/print/psdim
+psearch		ports/sysutils/psearch
 pserv		ports/www/pserv
 psgconf		ports/sysutils/psgconf
 psgml		ports/editors/psgml
