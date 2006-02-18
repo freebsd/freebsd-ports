@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pythoncad
-PORTVERSION=	27
+PORTVERSION=	28
 CATEGORIES=	cad
 MASTER_SITES=	http://www.pythoncad.org/releases/
 DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
-USE_BZIP2=	yes
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gtkpycad.py ${PREFIX}/bin/gtkpycad
