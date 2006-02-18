@@ -80,6 +80,12 @@ post-patch:
 	@${MV} ${WRKSRC}/port/freebsd/Makefile.set.sed \
 		${WRKSRC}/port/freebsd/Makefile.set
 
+	@${SED} -e "s/^#ifdef __sparcv9/#if defined(sun) \&\& defined(_SOCKLEN_T) \&\& defined(__sparcv9)/" \
+		${WRKSRC}/lib/irs/getaddrinfo.c > \
+		${WRKSRC}/lib/irs/getaddrinfo.c.sed
+	@${MV} ${WRKSRC}/lib/irs/getaddrinfo.c.sed \
+		${WRKSRC}/lib/irs/getaddrinfo.c
+
 .if defined(PORT_REPLACES_BASE_BIND8)
 .for dir in nslookup nsupdate
 	@${SED} -e "s#{DESTBIN}#{DESTSBIN}#g" \
