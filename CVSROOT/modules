@@ -14270,3 +14270,4 @@ zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 rast		ports/textproc/rast
 trac-accountmanager	ports/www/trac-accountmanager
+trac-webadmin	ports/www/trac-webadmin
