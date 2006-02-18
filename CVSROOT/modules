@@ -8041,6 +8041,7 @@ p5-ExtUtils-PkgConfig	ports/devel/p5-ExtUtils-PkgConfig
 p5-ExtUtils-XSBuilder	ports/devel/p5-ExtUtils-XSBuilder
 p5-F77		ports/lang/p5-F77
 p5-FAQ-OMatic	ports/www/p5-FAQ-OMatic
+p5-FSA-Rules	ports/devel/p5-FSA-Rules
 p5-FastCGI	ports/www/p5-FastCGI
 p5-FastCGI-ProcManager	ports/www/p5-FastCGI-ProcManager
 p5-Fax-Hylafax-Client	ports/comms/p5-Fax-Hylafax-Client
