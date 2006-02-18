@@ -253,6 +253,7 @@
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
     SUBDIR += libtcp4u
+    SUBDIR += libtnl
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += libvncserver
