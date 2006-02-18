@@ -893,6 +893,7 @@
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
+    SUBDIR += trac-webadmin
     SUBDIR += transproxy
     SUBDIR += twhttpd
     SUBDIR += twig
