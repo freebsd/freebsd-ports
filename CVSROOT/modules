@@ -5673,6 +5673,7 @@ libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
+libtnl		ports/net/libtnl
 libtomcrypt	ports/security/libtomcrypt
 libtommath	ports/math/libtommath
 libtool13	ports/devel/libtool13
