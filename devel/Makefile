@@ -1010,6 +1010,7 @@
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Iterator
     SUBDIR += p5-Iterator-IO
+    SUBDIR += p5-Iterator-Misc
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-List-Cycle
     SUBDIR += p5-List-Group
