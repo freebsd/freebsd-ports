@@ -12382,6 +12382,7 @@ tcpview		ports/net/tcpview
 tcpwatch	ports/net/tcpwatch
 tcpxtract	ports/net/tcpxtract
 tcsh-bofh	ports/shells/tcsh-bofh
+tcsh_nls	ports/shells/tcsh_nls
 tcshrc		ports/shells/tcshrc
 tct		ports/sysutils/tct
 tdb		ports/databases/tdb
