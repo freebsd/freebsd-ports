@@ -7,6 +7,7 @@
 
 PORTNAME=	frost
 PORTVERSION=	1.2.0.20051020
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -49,6 +50,7 @@ DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
 DATA_FILES=	config/boards.xml.default \
+		jtc.ico \
 		themes/themepack.zip
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -64,6 +66,11 @@ PLIST_FILES+=	%%DATADIR%%/${file}
 PLIST_DIRS+=	\
 		%%JAR_DIR%% \
 		%%DATADIR%%
+
+DESKTOP_ENTRIES=	"Frost" "A Freenet Client" \
+			"${JAVASHAREDIR}/${PORTNAME}/jtc.ico" \
+			"frost" "Application;P2P;Internet;" \
+			false
 
 pre-everything::
 .ifndef(WITH_JDK15)
