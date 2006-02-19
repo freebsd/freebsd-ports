@@ -3576,6 +3576,7 @@ gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
 gtksourceview	ports/x11-toolkits/gtksourceview
+gtksourceview-sharp	ports/x11-toolkits/gtksourceview-sharp
 gtkspell2	ports/textproc/gtkspell2
 gtksql		ports/databases/gtksql
 gtkstep		ports/x11-themes/gtkstep
