@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Jul 12 18:42:55 2005
-+++ configure.in	Tue Jul 26 19:19:40 2005
-@@ -909,6 +909,21 @@
+--- configure.in.orig	Mon Jan 30 15:45:07 2006
++++ configure.in	Sun Feb 19 07:00:42 2006
+@@ -967,6 +967,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -15,52 +15,10 @@
 +	samba_cv_struct_sigevent=yes,samba_cv_struct_sigevent=no)])
 +if test x"$samba_cv_struct_sigevent" = x"yes"; then
 +   AC_DEFINE(HAVE_STRUCT_SIGEVENT,1,[Whether we have the struct sigevent])
-+   AC_CHECK_MEMBERS([struct sigevent.sigev_value.sival_ptr,struct sigevent.sigev_value.sigval_ptr],,,
++   AC_CHECK_MEMBERS([struct sigevent.sigev_value.sival_ptr,struct sigevent.sigev_value.sigval_ptr], , ,
 +	[#include <signal.h>])
 +fi
 +
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -4104,30 +4119,28 @@
- 
- 	case "$host_os" in
- 	*)
--		AC_CHECK_LIB(rt,aio_read,[AIO_LIBS="$ACL_LIBS -lrt"])
-+		ac_cv_save_LIBS=$LIBS
-+		AC_SEARCH_LIBS(aio_read, [rt], [
-+			if test "$ac_cv_search_aio_read" != "none required"; then
-+				LIBS="$LIBS $ac_cv_search_aio_read"
-+			fi
-+		])
- 		AC_CACHE_CHECK([for asynchronous io support],samba_cv_HAVE_AIO,[
--		aio_LIBS=$LIBS
--		LIBS="$LIBS -lrt"
- 		AC_TRY_LINK([#include <sys/types.h>
- #include <aio.h>],
- [ struct aiocb a; return aio_read(&a);],
--samba_cv_HAVE_AIO=yes,samba_cv_HAVE_AIO=no)
--		LIBS=$aio_LIBS])
-+samba_cv_HAVE_AIO=yes,samba_cv_HAVE_AIO=no)])
- 		AC_CACHE_CHECK([for 64-bit asynchronous io support],samba_cv_HAVE_AIO64,[
--		aio_LIBS=$LIBS
--		LIBS="$LIBS -lrt"
- 		AC_TRY_LINK([#include <sys/types.h>
- #include <aio.h>],
- [ struct aiocb64 a; return aio_read64(&a);],
--samba_cv_HAVE_AIO64=yes,samba_cv_HAVE_AIO64=no)
--		LIBS=$aio_LIBS])
-+samba_cv_HAVE_AIO64=yes,samba_cv_HAVE_AIO64=no)])
-+		
- 		if test x"$samba_cv_HAVE_AIO64" = x"yes"; then
- 			AC_DEFINE(HAVE_AIOCB64,1,[Whether 64 bit aio is available])
--			AC_DEFINE(WITH_AIO, 1, [Using asynchronous io])
--			LIBS="$LIBS -lrt"
-+			AC_DEFINE(WITH_AIO,1,[Using asynchronous io])
- 		elif test x"$samba_cv_HAVE_AIO" = x"yes"; then
--			AC_DEFINE(WITH_AIO, 1, [Using asynchronous io])
--			LIBS="$LIBS -lrt"
-+			AC_DEFINE(WITH_AIO,1,[Using asynchronous io])
- 		fi
-             ;;
-         esac

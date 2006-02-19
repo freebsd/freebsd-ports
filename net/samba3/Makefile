@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.21a
+PORTVERSION?=		3.0.21b
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -20,7 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
-#GNU_CONFIGURE=		yes
+GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf:259 autoheader:259
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
@@ -36,7 +36,8 @@ SAMBA_LOCKDIR?=		${VARDIR}/db/samba
 SAMBA_PRIVATE?=		${PREFIX}/private
 SAMBA_CONFDIR?=		${PREFIX}/etc
 SAMBA_SWATDIR=		${PREFIX}/share/swat
-SAMBA_LIBDIR=		${PREFIX}/lib
+SAMBA_LIB=		lib
+SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 RC_DIR=			${PREFIX}/etc/rc.d
 SAMBA_CONFIG=		${SAMBA_CONFDIR}/smb.conf
 
@@ -54,24 +55,7 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
-.if defined(SAMBA_SUBPORT)
-# Switch off all extra functionality
-CONFIGURE_ARGS+=	--disable-cups
-
-CONFIGURE_ARGS+=	--without-ldap
-CONFIGURE_ARGS+=	--without-krb5
-CONFIGURE_ARGS+=	--without-ads
-
-CONFIGURE_ARGS+=	--without-winbind
-
-CONFIGURE_ARGS+=	--without-syslog
-CONFIGURE_ARGS+=	--without-quotas
-CONFIGURE_ARGS+=	--without-utmp
-CONFIGURE_ARGS+=	--without-ldapsam
-CONFIGURE_ARGS+=	--without-pam
-CONFIGURE_ARGS+=	--without-pam_smbpass
-CONFIGURE_ARGS+=	--without-aio-support
-.else
+.if !defined(SAMBA_SUBPORT)
 # Samba server itself
 OPTIONS=	LDAP		"With LDAP support" on \
 		ADS		"With Active Directory support" off \
@@ -94,8 +78,19 @@ OPTIONS=	LDAP		"With LDAP support" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(SAMBA_SUBPORT)
+.if defined(SAMBA_SUBPORT)
+# Switch off all extra functionality
+CONFIGURE_ARGS+=	--disable-cups --without-winbind --without-syslog \
+			--without-quotas --without-utmp --without-ldapsam \
+			--without-pam --without-pam_smbpass --without-aio-support
 
+# Dirty hack to work around usage of OPTIONS in slave ports
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.else
+# Samba server itself
 USE_RC_SUBR=		yes
 
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
@@ -187,7 +182,7 @@ CONFIGURE_ARGS+=	--without-ldapsam
 .endif
 
 .if defined(WANT_EXPSAM_MODULES) && !empty(WANT_EXPSAM_MODULES)
-WANT_EXPSAM_MODULES!=	${ECHO_CMD} ${WANT_EXPSAM_MODULES} | ${SED} -e 's/ /,/g'
+WANT_EXPSAM_MODULES!=	${ECHO_CMD} ${WANT_EXPSAM_MODULES} | ${SED} -E 's/ +/,/g'
 CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 .endif
 # SAM
@@ -195,7 +190,7 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=	rpc_echo idmap_ad idmap_rid charset_weird
 .endif
-WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -e 's/ /,/g'
+WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
 CONFIGURE_ARGS+=	--with-shared-modules=${WANT_EXP_MODULES}
 .endif
 
@@ -225,7 +220,12 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
+# !SAMBA_SUBPORT
+.endif
 
+###
+### Common part for port and it's subports
+###
 # For 4.8 - 4.11 combination of Kerberos and OpenLDAP is broken
 # due the conflict between system and OpenSSL port libcrypto libraries
 .if ${OSVERSION} > 470103 && ${OSVERSION} < 500000
@@ -265,6 +265,8 @@ CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
+.if !defined(SAMBA_SUBPORT)
+# Samba server itself
 MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbcquotas.1 \
 		smbget.1 smbsh.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 \
@@ -316,7 +318,7 @@ post-patch:
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
 pre-install:
-	-@${FIND} ${SAMBA_LIBDIR} -type f 2>/dev/null | ${SORT} | ${SED} -e 's|^${PREFIX}||; s|^/||' >> ${WRKDIR}/.PLIST.exclude
+	-@${FIND} ${SAMBA_LIBDIR}/samba -type f 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' >> ${WRKDIR}/.PLIST.exclude
 
 post-install:
 .for sect in 1 5 7 8
@@ -342,14 +344,18 @@ post-install:
 .if defined(WITH_WINBIND_NSS)
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
+	${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
+	${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/pam_winbind.so ${SAMBA_LIBDIR}
+	${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
+	${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
 .endif
 # Lib
-	@${FIND} ${SAMBA_LIBDIR} -type f | ${SED} -e 's|^${PREFIX}||; s|^/||' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
+	@${FIND} ${SAMBA_LIBDIR}/samba -type f | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
 	@for d in `${FIND} ${SAMBA_LIBDIR}/samba -type d | ${SORT} -r`; do \
 	    ${ECHO_CMD} "@unexec ${RMDIR} $$d 2>/dev/null || true" >> ${TMPPLIST}; \
 	done
