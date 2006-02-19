@@ -1,0 +1,14 @@
+*** ruby-ext/extconf.rb.in.orig	Thu Nov 21 09:04:16 2002
+--- ruby-ext/extconf.rb.in	Mon Feb 20 08:26:42 2006
+***************
+*** 1,7 ****
+--- 1,9 ----
+  #!@@MHC_RUBY_PATH@@ -Ke
+  # -*- ruby -*-
+  
++ if '@@MHC_DISABLE_PALM@@' == ''
+  require 'mkmf'
++ end
+  
+  ################################################################
+  # crate make file.
