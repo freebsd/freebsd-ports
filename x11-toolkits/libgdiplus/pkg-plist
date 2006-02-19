@@ -1,0 +1,4 @@
+lib/libgdiplus.a
+lib/libgdiplus.so
+lib/libgdiplus.so.0
+libdata/pkgconfig/libgdiplus.pc
