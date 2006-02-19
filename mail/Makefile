@@ -527,6 +527,7 @@
     SUBDIR += teapop
     SUBDIR += teapop-devel
     SUBDIR += thunderbird
+    SUBDIR += thunderbird-dictionaries
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda
