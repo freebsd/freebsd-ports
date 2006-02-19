@@ -158,7 +158,7 @@ lib/libpt_r.so.1
 lib/libpt_r.so.1.9
 lib/libpt_r.so.1.9.2
 lib/pwlib/devices/sound/oss_pwplugin.so
-lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
+%%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 @dirrm lib/pwlib/devices/sound
 @dirrm lib/pwlib/devices/videoinput
 @dirrm lib/pwlib/devices
