@@ -49,4 +49,12 @@
  	(cd $(DESTDIR)$(mandir)/man8 && $(LN_S) sshd2.8 sshd.8)
  
  clean-up-old:
-
+@@ -1075,7 +1058,7 @@
+ 	-chown root $(DESTDIR)$(bindir)/ssh-signer2
+ 	-chmod $(SSH_SIGNER_INSTALL_MODE) $(DESTDIR)$(bindir)/ssh-signer2
+ 
+-install-data-hook: make-install-dirs generate-host-key install-symlinks
++install-data-hook: make-install-dirs install-symlinks
+ 	-@if test '!' -f $(DESTDIR)$(etcdir)/sshd2_config ; then \
+ 	 echo Installing $(DESTDIR)$(etcdir)/sshd2_config ; \
+ 	 $(INSTALL_DATA) $(srcdir)/sshd2_config \
