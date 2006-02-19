@@ -1,0 +1,7 @@
+Oryx is an object persistence framework which supports both object-relational
+mapping as well as DMB style databases and as such is not coupled with any
+particular storage back-end. In other words, you should be able to
+swap out an RDMBS with a DBM style database (and vice versa) without
+changing your persistent classes at all.
+
+WWW: http://search.cpan.org/dist/Oryx/

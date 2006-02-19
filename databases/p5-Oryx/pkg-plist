@@ -1,0 +1,55 @@
+%%SITE_PERL%%/Oryx.pm
+%%SITE_PERL%%/Oryx/Association.pm
+%%SITE_PERL%%/Oryx/Association/Array.pm
+%%SITE_PERL%%/Oryx/Association/Hash.pm
+%%SITE_PERL%%/Oryx/Association/Reference.pm
+%%SITE_PERL%%/Oryx/Attribute.pm
+%%SITE_PERL%%/Oryx/Class.pm
+%%SITE_PERL%%/Oryx/DBI.pm
+%%SITE_PERL%%/Oryx/DBI/Association.pm
+%%SITE_PERL%%/Oryx/DBI/Association/Array.pm
+%%SITE_PERL%%/Oryx/DBI/Association/Hash.pm
+%%SITE_PERL%%/Oryx/DBI/Association/Reference.pm
+%%SITE_PERL%%/Oryx/DBI/Attribute.pm
+%%SITE_PERL%%/Oryx/DBI/Class.pm
+%%SITE_PERL%%/Oryx/DBI/Method.pm
+%%SITE_PERL%%/Oryx/DBI/Parent.pm
+%%SITE_PERL%%/Oryx/DBI/Util.pm
+%%SITE_PERL%%/Oryx/DBI/Util/Pg.pm
+%%SITE_PERL%%/Oryx/DBI/Util/SQLite.pm
+%%SITE_PERL%%/Oryx/DBI/Util/mysql.pm
+%%SITE_PERL%%/Oryx/DBM.pm
+%%SITE_PERL%%/Oryx/DBM/Association.pm
+%%SITE_PERL%%/Oryx/DBM/Association/Array.pm
+%%SITE_PERL%%/Oryx/DBM/Association/Hash.pm
+%%SITE_PERL%%/Oryx/DBM/Association/Reference.pm
+%%SITE_PERL%%/Oryx/DBM/Attribute.pm
+%%SITE_PERL%%/Oryx/DBM/Class.pm
+%%SITE_PERL%%/Oryx/DBM/Method.pm
+%%SITE_PERL%%/Oryx/DBM/Parent.pm
+%%SITE_PERL%%/Oryx/DBM/Util.pm
+%%SITE_PERL%%/Oryx/Manual/Guts.pod
+%%SITE_PERL%%/Oryx/MetaClass.pm
+%%SITE_PERL%%/Oryx/Parent.pm
+%%SITE_PERL%%/Oryx/Schema.pm
+%%SITE_PERL%%/Oryx/Value.pm
+%%SITE_PERL%%/Oryx/Value/Binary.pm
+%%SITE_PERL%%/Oryx/Value/Boolean.pm
+%%SITE_PERL%%/Oryx/Value/Complex.pm
+%%SITE_PERL%%/Oryx/Value/DateTime.pm
+%%SITE_PERL%%/Oryx/Value/Float.pm
+%%SITE_PERL%%/Oryx/Value/Integer.pm
+%%SITE_PERL%%/Oryx/Value/Oid.pm
+%%SITE_PERL%%/Oryx/Value/String.pm
+%%SITE_PERL%%/Oryx/Value/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx/.packlist
+@dirrm %%SITE_PERL%%/Oryx/DBI/Association
+@dirrm %%SITE_PERL%%/Oryx/DBM/Association
+@dirrm %%SITE_PERL%%/Oryx/Association
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx
+@dirrm %%SITE_PERL%%/Oryx/DBI/Util
+@dirrm %%SITE_PERL%%/Oryx/Manual
+@dirrm %%SITE_PERL%%/Oryx/Value
+@dirrm %%SITE_PERL%%/Oryx/DBI
+@dirrm %%SITE_PERL%%/Oryx/DBM
+@dirrm %%SITE_PERL%%/Oryx
