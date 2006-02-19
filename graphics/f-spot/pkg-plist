@@ -37,11 +37,13 @@ share/locale/nb/LC_MESSAGES/f-spot.mo
 share/locale/nl/LC_MESSAGES/f-spot.mo
 share/locale/no/LC_MESSAGES/f-spot.mo
 share/locale/pl/LC_MESSAGES/f-spot.mo
+share/locale/pt_BR/LC_MESSAGES/f-spot.mo
 share/locale/ru/LC_MESSAGES/f-spot.mo
 share/locale/rw/LC_MESSAGES/f-spot.mo
 share/locale/sr/LC_MESSAGES/f-spot.mo
 share/locale/sr@Latn/LC_MESSAGES/f-spot.mo
 share/locale/sv/LC_MESSAGES/f-spot.mo
+share/locale/vi/LC_MESSAGES/f-spot.mo
 share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/locale/rw/LC_MESSAGES

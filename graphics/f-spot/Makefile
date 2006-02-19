@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.23 2006/01/11 00:29:47 tmclau02 Exp $
+#   $Id: Makefile,v 1.26 2006/02/15 02:36:17 tmclau02 Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTVERSION=	0.1.8
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
@@ -25,7 +24,7 @@ RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
 
 USE_BZIP2=	yes
-USE_SQLITE=	2
+USE_SQLITE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -36,8 +35,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} 's|target="liblcms.so.1"|target="liblcms.so"|g ; \
-	s|target="libexif.so.@EXIF_SOVERSION@"|target="libexif.so"|g' \
-	${WRKSRC}/src/f-spot.exe.config.in
+		s|target="libexif.so.@EXIF_SOVERSION@"|target="libexif.so"|g' \
+		${WRKSRC}/src/f-spot.exe.config.in
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
