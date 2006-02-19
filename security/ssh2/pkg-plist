@@ -19,9 +19,6 @@ bin/ssh-probe2
 bin/ssh-signer
 bin/ssh-signer2
 bin/ssh2
-etc/rc.d/sshd2.sh.sample
-@exec if [ "`grep ssh /etc/inetd.conf | grep -v ^#ssh`" = "" ] & [ ! -f %B/sshd2.sh ]; then cp %B/%f %B/sshd2.sh; fi
-@unexec if [ -f %B/sshd2.sh ]; then echo "If permanently deleting this package, %B/sshd2.sh must be removed manually."; fi
 @unexec if cmp -s %D/etc/ssh2/sshd2_config %D/etc/ssh2/sshd2_config.example; then rm -f %D/etc/ssh2/sshd2_config; fi
 etc/ssh2/sshd2_config.example
 @exec [ -f %B/sshd2_config ] || cp %B/%f %B/sshd2_config
@@ -35,7 +32,6 @@ etc/ssh2/subconfig/host_int.example
 etc/ssh2/subconfig/user.example
 @exec [ -d %D/etc/ssh2/hostkeys ] || mkdir %D/etc/ssh2/hostkeys
 @exec [ -d %D/etc/ssh2/knownhosts ] || mkdir %D/etc/ssh2/knownhosts
-@exec if [ ! -f %D/etc/ssh2/hostkey ]; then umask 022; echo "Generating host key."; %D/bin/ssh-keygen2 -P -t dsa "DSA hostkey" %D/etc/ssh2/hostkey;  fi
 sbin/sshd
 sbin/sshd-check-conf
 sbin/sshd2

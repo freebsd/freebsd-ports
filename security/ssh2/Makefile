@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
@@ -45,8 +45,8 @@ CONFLICTS=	openssh-* ssh-* ssh2-[0-9]*
 .endif
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 MANCOMPRESSED=	no
+USE_RC_SUBR=	sshd2.sh
 
 MAN1=		ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 scp2.1 sftp2.1 \
 		sshregex.1 ssh-probe2.1 ssh-dummy-shell.1
@@ -87,7 +87,7 @@ EXTRA_PATCHES+=		${FILESDIR}/kerberos-patch-apps::ssh::ssh2_config \
 
 .if !defined(WITHOUT_X11)
 BUILD_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT}
-RUN_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT} 
+RUN_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT}
 USE_XLIB=		yes
 PLIST_SUB+=		WITH_X11:=""
 .else
@@ -140,15 +140,14 @@ post-patch:
 		${WRKSRC}/apps/ssh/ssh_dummy_shell.out
 	@${REINPLACE_CMD} -E -e 's|(^TESTS.+)(t-filecopy)|\1|g' \
 		${WRKSRC}/apps/ssh/tests/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|(^ETCDIR=).+|\1${PREFIX}\/etc\/ssh2|; \
-		s|(^SBINDIR=).+|\1${PREFIX}\/sbin|' \
-		${WRKSRC}/startup/solaris/sshd2
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
 		${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
 
+pre-install:
+# Make sure there's no startup script left over from a previous installation.
+	@${RM} -f ${PREFIX}/etc/rc.d/sshd2.sh
+
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/startup/solaris/sshd2 \
-		${PREFIX}/etc/rc.d/sshd2.sh.sample
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${EXAMPLES}
 	@${INSTALL_DATA} ${WRKSRC}/$i ${EXAMPLESDIR}
@@ -159,13 +158,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
-	@if [ "`${GREP} ssh /etc/inetd.conf | ${GREP} -v ^#ssh`" = "" ]; then \
-	    if [ ! -f ${PREFIX}/etc/rc.d/sshd2.sh ]; then \
-		${ECHO_CMD} "Installing ${PREFIX}/etc/sshd2.sh startup file."; \
-		${INSTALL_SCRIPT} ${WRKSRC}/startup/solaris/sshd2 \
-			${PREFIX}/etc/rc.d/sshd2.sh; \
-	    fi; \
-	fi
 	@${CAT} ${WRKDIR}/pkg-message
 
 test:	build

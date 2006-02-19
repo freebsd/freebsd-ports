@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sshd2
+# REQUIRE: LOGIN
+#
+# Available configuration variables for sshd2 are:
+#
+# sshd2_enable (bool):	Set to "YES" to enable sshd2. Defaults to "NO".
+# sshd2_flags (flags):	Extra flags to sshd2 (see sshd2(8)). Defaults to "".
+# sshd2_port (port):	Listening port of sshd2. Defaults to "22".
+#
+# Add at least the following line to /etc/rc.conf or /etc/rc.conf.local to
+# enable sshd2:
+#
+# sshd2_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="sshd2"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+command_args="2> /dev/null"
+required_files=/usr/local/etc/ssh2/${name}_config
+keygen_cmd="sshd2_keygen"
+start_precmd="sshd2_precmd"
+extra_commands="keygen reload"
+
+sshd2_keygen()
+{
+	(
+	umask 022
+	if [ -f %%PREFIX%%/etc/ssh2/hostkey ]; then
+		echo "You already have a host key in" \
+		    "%%PREFIX%%/etc/ssh2/hostkey."
+		echo "Skipping key generation."
+	else
+		%%PREFIX%%/bin/ssh-keygen2 -P -t dsa -c "DSA hostkey" \
+		    %%PREFIX%%/etc/ssh2/hostkey
+	fi
+	)
+}
+
+sshd2_precmd()
+{
+	if [ ! -f %%PREFIX%%/etc/ssh2/hostkey ]; then
+		run_rc_command keygen
+	fi
+
+	rc_flags="${rc_flags} -p ${sshd2_port}"
+}
+
+load_rc_config $name
+
+: ${sshd2_enable="NO"}
+: ${sshd2_port="22"}
+
+pidfile=/var/run/${name}_${sshd2_port}.pid
+
+run_rc_command "$1"
