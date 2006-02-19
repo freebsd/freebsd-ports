@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Bundle-Sledge
-PORTVERSION=	0.03
-PORTREVISION=	2
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bundle
@@ -53,7 +52,9 @@ MAN3=		Bundle::Sledge.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again.
+.elseif ${PERL_LEVEL} < 500801
 JCODE=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm
 .else
 JCODE=	${SITE_PERL}/Jcode.pm
