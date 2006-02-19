@@ -61,6 +61,7 @@
     SUBDIR += gtkmm24
     SUBDIR += gtkscintilla
     SUBDIR += gtksourceview
+    SUBDIR += gtksourceview-sharp
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
