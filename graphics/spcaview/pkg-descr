@@ -10,15 +10,18 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 	Vendor	Device	Product Name
 	------	------	------------
 	0x041e	0x403a  Creative webcam nx pro
-	0x04fc  0x0561  FlexiCam B100
+	0x046d  0x0928  Logitech QuickCam Express II
+	0x046d  0x092c  Logitech QuickCam chat
 	0x0572	0x0041  Creative webcam notebook PD1170
 	0x060b	0xa001	Maxell CompactPC Camera PM3
 	0x0733	0x0401  Intel CS330
+	0x0923  0x010f  Che-ez! Webbie(NHJ)
+	0x0923  0x010f  SNAKE EYE SI-8480/8481
+	0x0923  0x010f  PC CAM CP03(global sources)
+	0x0923  0x010f  WEB Camera PBC0006(persol)
 	0x0ac8	0x301b  LOAS MCM-H06SL
-	0x0ac8	0x301b  sanwa CMS-V11
-	0x0c45  0x6025  LOAS MCM-S02SL ( 352x288 not worked )
-	0x0c45  0x6025  VGA WEB CAMERA "WEB CAM." ( 352x288 not worked )
+	0x0c45  0x6025  LOAS MCM-S02SL
 	0x0c45	0x6029  Raccoon AM-ST3
 	0xabcd	0xcdee	SIGMA-APO Petcam
 
-WWW: http://www2.starcat.ne.jp/~takam/bsd/NetBSD.html#spca561
+WWW: http://www.medias.ne.jp/~takam/bsd/NetBSD.html#spca561
