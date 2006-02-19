@@ -1,0 +1,11 @@
+RRDTool::OO is an object-oriented interface to Tobi Oetiker's round robin
+database tool rrdtool. It uses rrdtool's RRDs module to get access to rrdtool's
+shared library.
+
+RRDTool::OO tries to marry rrdtool's database engine with the dwimminess and
+whipuptitude Perl programmers take for granted. Using RRDTool::OO abstracts
+away implementation details of the RRD engine, uses easy to memorize named
+parameters and sets meaningful defaults for parameters not needed in simple
+cases.
+
+WWW: http://search.cpan.org/dist/RRDTool-OO/
