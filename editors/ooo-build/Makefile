@@ -14,7 +14,7 @@ DISTFILES+=	${OOOBUILD_SOURCE} ${OOO_CAIRO} \
 
 MAINTAINER=	maho@FreeBSD.org
 
-#DEVELOPER_VER=	yes #you must be an expert or guru to activate this 
+#DEVELOPER_VER=	yes #you must be an expert or guru to activate this
 .if defined(DEVELOPER_VER)
 OOOBUILD_VERSION=2.0.2.${MILESTONE}
 MILESTONE=	156
@@ -24,7 +24,7 @@ OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
 OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
-OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.bz2
+OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
@@ -35,7 +35,7 @@ OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_CAIRO=	cairo-1.0.2.tar.gz
 OOO_MDBTOOLS=	mdbtools-0.6pre1.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
-OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.bz2
+OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .endif
@@ -66,6 +66,10 @@ pre-configure:
 #extract some goodies
 	cd ${WRKSRC} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_EXTRA_ARTWORK}
 	#cd ${WRKDIR} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_OPENCLIPART}
+.if defined(DEVELOPER_VER)
+	@${MKDIR} ${WRKSRC}/external_images
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CRYSTAL_IMAGES} ${WRKSRC}/external_images
+.endif
 #apply FreeBSD specifc (?) patches for ooo-build :(
 #	@cd ${WRKSRC} ; ${PATCH} < ${.CURDIR}/files/cairo-patch
 #	@cd ${WRKSRC} ; ${PATCH} < ${.CURDIR}/files/patch-i18npool
