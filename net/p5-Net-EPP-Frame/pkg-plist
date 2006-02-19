@@ -1,0 +1,24 @@
+%%SITE_PERL%%/Net/EPP/Frame.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Check.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Create.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Delete.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Info.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Login.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Logout.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Renew.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Update.pm
+%%SITE_PERL%%/Net/EPP/Frame/Greeting.pm
+%%SITE_PERL%%/Net/EPP/Frame/Hello.pm
+%%SITE_PERL%%/Net/EPP/Frame/ObjectSpec.pm
+%%SITE_PERL%%/Net/EPP/Frame/Response.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Frame/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/Frame
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command
+@dirrm %%SITE_PERL%%/Net/EPP/Frame
+@dirrmtry %%SITE_PERL%%/Net/EPP
+@dirrmtry %%SITE_PERL%%/Net
