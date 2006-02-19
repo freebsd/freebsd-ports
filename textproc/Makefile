@@ -291,6 +291,7 @@
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-Apache-XBEL
     SUBDIR += p5-Bloom-Filter
+    SUBDIR += p5-CQL-Parser
     SUBDIR += p5-CSS-SAC
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Chess-PGN-Parse
