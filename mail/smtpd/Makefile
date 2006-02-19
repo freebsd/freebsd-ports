@@ -7,67 +7,42 @@
 
 PORTNAME=	smtpd
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
-MASTER_SITES=	http://www.netsw.org/net/ip/firewall/proxy/smtpd/ \
-		ftp://ftp.obtuse.com/pub/smtpd/
+MASTER_SITES=	http://www.netsw.org/net/ip/firewall/proxy/smtpd/
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	ftp://ftp.42.org/pub/OLD/p/ \
+		ftp://ftp.cdpa.nsysu.edu.tw/BSD/NetBSD/packages/distfiles/
 PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Obtuse smtpd/smtpfwdd, part of the Juniper firewall toolkit
 
-#  Directory where smtpd will chroot to, and put the received mail
-#  If you change it here, change also patches/patch-aa
-SPOOLBASE=	/var/smtpd
-
-post-patch:
-	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.tmp
-	@${SED} s+!!SPOOLBASE!!+${SPOOLBASE}+g < ${WRKSRC}/Makefile.tmp \
-	                                    > ${WRKSRC}/Makefile
+USE_RC_SUBR=	smtpd
+SUB_FILES=	pkg-message
+SPOOLBASE?=	/var/smtpd
+PLIST_SUB+=	SPOOLBASE=${SPOOLBASE}
+SUB_LIST+=	SPOOLBASE=${SPOOLBASE}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/smtpd
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/smtpd
-
-	@${ECHO_CMD} "Creating spool directories..."
-	@${MKDIR} ${SPOOLBASE}
-	@${CHOWN} root:uucp ${SPOOLBASE}
-	@${CHMOD} 0710 ${SPOOLBASE}
-
-	@${MKDIR} ${SPOOLBASE}/mqueue
-	@${CHOWN} uucp:uucp ${SPOOLBASE}/mqueue
-	@${CHMOD} 0700 ${SPOOLBASE}/mqueue
-
-	@${MKDIR} ${SPOOLBASE}/etc
-	@${CHOWN} root:uucp ${SPOOLBASE}/etc
-	@${CHMOD} 0710 ${SPOOLBASE}/etc
-.if !defined(BATCH)
-	@${CP} -p /etc/resolv.conf ${SPOOLBASE}/etc
-	@${CP} -p /etc/localtime ${SPOOLBASE}/etc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
+	@${ECHO_CMD} "Creating spool directories..."
+	@${INSTALL} -d -o root -g uucp -m 710 ${SPOOLBASE}
+	@${INSTALL} -d -o uucp -g uucp -m 700 ${SPOOLBASE}/mqueue
+	@${INSTALL} -d -o root -g uucp -m 710 ${SPOOLBASE}/etc
+.if !defined(BATCH)
+	@${INSTALL_DATA} /etc/resolv.conf ${SPOOLBASE}/etc
+	@${INSTALL_DATA} /etc/localtime ${SPOOLBASE}/etc
+.endif
 	@${ECHO_CMD} "Copying examples..."
-	@${INSTALL} ${COPY} -g uucp -o root -m 0640		\
-		${WRKSRC}/antirelay_check_rules_example	\
+	@${INSTALL_DATA} ${WRKSRC}/antirelay_check_rules_example \
 		${SPOOLBASE}/etc/antirelay_check_rules.example
-	@${INSTALL} ${COPY} -g uucp -o root -m 0640		\
-		${WRKSRC}/antispam_check_rules.example	\
-		${SPOOLBASE}/etc
-	@${INSTALL} ${COPY} -g uucp -o root -m 0640		\
-		${WRKSRC}/smtpd_check_rules.example	\
-		${SPOOLBASE}/etc
-
-	@${ECHO_CMD} "Creating startup file..."
-	@${SED} s+!!PREFIX!!+${PREFIX}+		\
-		< ${FILESDIR}/smtpd.sh		\
-		> ${PREFIX}/etc/rc.d/smtpd.sh
-	@${CHMOD} 0700 ${PREFIX}/etc/rc.d/smtpd.sh
-	@${CHOWN} 0:0 ${PREFIX}/etc/rc.d/smtpd.sh
-
-	@${ECHO_CMD} "Done!"
-
+	@${INSTALL_DATA} ${WRKSRC}/antispam_check_rules.example ${SPOOLBASE}/etc
+	@${INSTALL_DATA} ${WRKSRC}/smtpd_check_rules.example ${SPOOLBASE}/etc
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

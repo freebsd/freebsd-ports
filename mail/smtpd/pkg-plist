@@ -1,21 +1,10 @@
 sbin/smtpd
 sbin/smtpfwdd
-etc/rc.d/smtpd.sh
-share/doc/smtpd/README
-@dirrm share/doc/smtpd
-@exec mkdir /var/smtpd
-@exec chown root:uucp /var/smtpd
-@exec chmod 0710 /var/smtpd
-@cwd /var/smtpd
-@exec mkdir mqueue
-@exec chown uucp:uucp mqueue
-@exec chmod 0700 mqueue
-@exec mkdir etc
-@exec chown root:uucp etc
-@exec chmod 0710 etc
-@exec cp -p /etc/resolv.conf etc
-@exec cp -p /etc/localtime etc
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
+@cwd %%SPOOLBASE%%
 etc/antirelay_check_rules.example
 etc/antispam_check_rules.example
 etc/smtpd_check_rules.example
-@unexec echo "You may want to remove /var/smtpd manually"
+@dirrmtry mqueue
+@unexec echo "You may want to remove %%SPOOLBASE%% manually"
