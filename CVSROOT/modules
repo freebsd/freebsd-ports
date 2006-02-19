@@ -575,6 +575,7 @@ autossh		ports/security/autossh
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
 avahi		ports/net/avahi
+avahi-sharp	ports/net/avahi-sharp
 avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
