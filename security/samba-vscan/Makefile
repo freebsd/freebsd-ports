@@ -7,6 +7,7 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.6b
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	openantivirus
@@ -15,19 +16,35 @@ MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
+
+OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
+		VSCAN_CLAMAV "for use with Clam AntiVirus Daemon" off \
+		VSCAN_FPROTD "for use with F-Prot Daemon" off \
+		VSCAN_FSAV "for use with F-Secure AntiVirus" off \
+		VSCAN_ICAP "for use with an ICAP anti-virus" off \
+		VSCAN_KAVP "for use with Kaspersky AntiVirus" off \
+		VSCAN_MKSD "for use with mks32" off \
+		VSCAN_NAI "for use with NAI/McAfee uvscan" off \
+		VSCAN_OAV "for use with OpenAntiVirus.org ScannerDaemon" off \
+		VSCAN_SOPHOS "for use with Sophos" off \
+		VSCAN_TREND "for use with Trend Micro FileScanner" off
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
 .endif
 
 USE_AUTOTOOLS=	autoconf:259
 USE_BZIP2=	yes
-SAMBA_WRKSRC=	`cd ${PORTSDIR}/net/${VSCAN_SAMBA_PORT}; make -V WRKSRC`
+VSCAN_SAMBA_PORT?=	samba3
+SAMBA_WRKSRC!=	${MAKE} -C ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT} -V WRKSRC
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-samba-source=${SAMBA_WRKSRC}
-ETCDIR=		${PREFIX}/etc/samba-vscan
-PKGMESSAGE=	${WRKDIR}/pkg-message
-VSCAN_SAMBA_PORT?=samba3
+ETCDIR=		etc/samba-vscan
+SUB_FILES=	pkg-message
+VFSDIR?=	lib/samba/vfs
+VSCAN_NAME=
+VSCAN_CONF=
+ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
@@ -35,16 +52,93 @@ VSCAN_SAMBA_PORT?=samba3
 EXTRA_PATCHES=${FILESDIR}/extra_patch-*
 .endif
 
-.if ${VSCAN_SAMBA_PORT} == "samba3"
-PLIST_SUB=	VFSDIR=lib/samba/vfs
-.else
-PLIST_SUB=	VFSDIR=lib/samba
+.if ${VSCAN_SAMBA_PORT} != "samba3"
+VFSDIR=lib/samba
 .endif
+
+.if defined(WITH_VSCAN_ANTIVIR)
+ALL_TARGET+=antivir
+VSCAN_NAME+=vscan-antivir.so
+VSCAN_CONF+=antivir/vscan-antivir.conf
+.endif
+
+.if defined(WITH_VSCAN_CLAMAV)
+ALL_TARGET+=clamav
+VSCAN_NAME+=vscan-clamav.so
+VSCAN_CONF+=clamav/vscan-clamav.conf
+.endif
+
+.if defined(WITH_VSCAN_FPROTD)
+ALL_TARGET+=fprotd
+VSCAN_NAME+=vscan-fprotd.so
+VSCAN_CONF+=fprot/vscan-fprotd.conf
+.endif
+
+.if defined(WITH_VSCAN_FSAV)
+ALL_TARGET+=fsav
+VSCAN_NAME+=vscan-fsav.so
+VSCAN_CONF+=f-secure/vscan-fsav.conf
+.endif
+
+.if defined(WITH_VSCAN_ICAP)
+ALL_TARGET+=icap
+VSCAN_NAME+=vscan-icap.so
+VSCAN_CONF+=icap/vscan-icap.conf
+.endif
+
+.if defined(WITH_VSCAN_KAVP)
+ALL_TARGET+=kavp
+VSCAN_NAME+=vscan-kavp.so
+VSCAN_CONF+=kaspersky/vscan-kavp.conf
+.endif
+
+.if defined(WITH_VSCAN_MKSD)
+ALL_TARGET+=mksd
+VSCAN_NAME+=vscan-mksd.so
+VSCAN_CONF+=mks/vscan-mks32.conf
+.endif
+
+.if defined(WITH_VSCAN_NAI)
+ALL_TARGET+=nai
+VSCAN_NAME+=vscan-mcdaemon.so
+VSCAN_CONF+=nai/vscan-mcdaemon.conf
+.endif
+
+.if defined(WITH_VSCAN_OAV)
+ALL_TARGET+=oav
+VSCAN_NAME+=vscan-oav.so
+VSCAN_CONF+=openantivirus/vscan-oav.conf
+.endif
+
+.if defined(WITH_VSCAN_SOPHOS)
+ALL_TARGET+=sophos
+VSCAN_NAME+=vscan-sophos.so
+VSCAN_CONF+=sophos/vscan-sophos.conf
+.endif
+
+.if defined(WITH_VSCAN_TREND)
+ALL_TARGET+=trend
+VSCAN_NAME+=vscan-trend.so
+VSCAN_CONF+=trend/vscan-trend.conf
+.endif
+
+PLIST_FILES+=	${VSCAN_NAME:S|^|${VFSDIR}/|} \
+		${VSCAN_CONF:S|^|${ETCDIR}/|:C|(.*/).*/(.*.conf)|\1\2|}
+PLIST_DIRS=	${ETCDIR} ${VFSDIR}
 
 pre-configure:
 .if ${VSCAN_SAMBA_PORT} == "samba3"
 		@cd ${SAMBA_WRKSRC}; make proto 2>&1 > /dev/null
 .endif
+
+do-install:
+.for i in ${VSCAN_NAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/${VFSDIR}
+.endfor
+	@${MKDIR} ${PREFIX}/${ETCDIR}
+.for i in ${VSCAN_CONF}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${ETCDIR}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -53,16 +147,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${PREFIX}/etc/samba-vscan
-	@${INSTALL_DATA} ${WRKSRC}/clamav/vscan-clamav.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/fprot/vscan-fprotd.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/icap/vscan-icap.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/kaspersky/vscan-kavp.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/mks/vscan-mks32.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/openantivirus/vscan-oav.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sophos/vscan-sophos.conf ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/trend/vscan-trend.conf ${ETCDIR}
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g;" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
