@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	zoidberg
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	shells perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://zoidberg.student.utwente.nl/downloads/Zoidberg/
@@ -52,4 +52,10 @@ MAN3=	Bundle::Zoidberg.3 \
 post-install:
 	@${ECHO_CMD} ${PREFIX}/bin/zoid >> /etc/shells
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6+, install lang/perl5.8 and try again.
+.endif
+
+.include <bsd.port.post.mk>
