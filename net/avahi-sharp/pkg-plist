@@ -1,0 +1,9 @@
+lib/mono/avahi-sharp/avahi-sharp.dll
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll.config
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll.mdb
+lib/pkgconfig/avahi-sharp.pc
+@dirrm lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5
+@dirrm lib/mono/gac/avahi-sharp
+@dirrm lib/mono/avahi-sharp
+
