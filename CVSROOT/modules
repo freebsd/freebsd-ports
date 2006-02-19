@@ -8804,6 +8804,7 @@ p5-RDF-Simple	ports/textproc/p5-RDF-Simple
 p5-RDFStore	ports/textproc/p5-RDFStore
 p5-RIFF-Info	ports/multimedia/p5-RIFF-Info
 p5-RPC-XML	ports/net/p5-RPC-XML
+p5-RRDTool-OO	ports/devel/p5-RRDTool-OO
 p5-RTF-Parser	ports/textproc/p5-RTF-Parser
 p5-RTF-Tokenizer	ports/textproc/p5-RTF-Tokenizer
 p5-RTF-Writer	ports/textproc/p5-RTF-Writer
