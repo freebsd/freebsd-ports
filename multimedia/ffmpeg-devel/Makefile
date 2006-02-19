@@ -436,11 +436,11 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_X264)
-	@${ECHO_MSG} 'Define WITH_VORBIS to enable X264 codec'
+	@${ECHO_MSG} 'Define WITH_X264 to enable X264 codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_XVID)
-	@${ECHO_MSG} 'Define WITH_VORBIS to enable XVID codec'
+	@${ECHO_MSG} 'Define WITH_XVID to enable XVID codec'
 	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
