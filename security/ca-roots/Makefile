@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ca-roots
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 DISTFILES=	# none
 
