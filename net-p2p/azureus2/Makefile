@@ -19,13 +19,13 @@ COMMENT=	A BitTorrent client written in Java
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
 		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
 RUN_DEPENDS=	\
 		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
@@ -35,13 +35,14 @@ JAVA_OS=	native
 USE_ANT=	yes
 USE_JIKES=	no
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
+USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
 # build classpath from BUILD_DEPENDS
+MAKE_ENV=	LANG=C
 CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} bin/${PORTNAME}
