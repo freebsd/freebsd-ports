@@ -262,7 +262,6 @@ lib/mono/1.0/xsd.exe.mdb
 lib/mono/2.0/Accessibility.dll
 lib/mono/2.0/ByteFX.Data.dll
 lib/mono/2.0/Commons.Xml.Relaxng.dll
-lib/mono/2.0/FirebirdSql.Data.Firebird.dll
 lib/mono/2.0/I18N.CJK.dll
 lib/mono/2.0/I18N.MidEast.dll
 lib/mono/2.0/I18N.Other.dll

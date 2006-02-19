@@ -3,11 +3,11 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.53 2006/01/03 03:33:54 tmclau02 Exp $
+#   $Id: Makefile,v 1.55 2006/02/05 03:04:28 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.12.1
+PORTVERSION=	1.1.13.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ COMMENT=	An open source implementation of .NET Development Framework
 
 CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
@@ -78,6 +77,10 @@ tests: build
 	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} test)
 
+post-configure:
+	${REINPLACE_CMD} -e 's|share\/man|man|g' \
+		${WRKSRC}/mcs/jay/Makefile
+
 pre-su-install:
 	${MKDIR} ${X11BASE}/lib/mono/1.0
 	${MKDIR} ${X11BASE}/lib/mono/2.0
@@ -85,6 +88,11 @@ pre-su-install:
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mono/handles/semdel ${PREFIX}/bin/mono-semdel
-	@${SETENV} MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
+	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
+	@${SETENV} G_DEBUG=""  MONO_SHARED_DIR_PORT="${WRKSRC}/runtime" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
+
+pre-clean:
+	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${MONO_SHARED_DIR}" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
+	@${SETENV} G_DEBUG="" MONO_SHARED_DIR_PORT="${WRKSRC}/runtime" ${SH} ${WRKSRC}/runtime/semdel-wrapper 2> /dev/null || true
 
 .include <bsd.port.post.mk>
