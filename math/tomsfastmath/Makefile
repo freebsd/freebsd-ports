@@ -14,6 +14,8 @@ DISTNAME=	tfm-${PORTVERSION}
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Portable fixed precision math library for fast exponentiations
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 USE_BZIP2=	yes
@@ -29,6 +31,7 @@ BROKEN=		Does not build on sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/fp_montgomery_reduce.c
+	@${REINPLACE_CMD} -e 's|
+||' ${WRKSRC}/fp_montgomery_reduce.c
 
 .include <bsd.port.post.mk>
