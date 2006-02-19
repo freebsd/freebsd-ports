@@ -6,7 +6,7 @@
 # the FreeBSD ports system.
 #
 # $FreeBSD$
-#   $Id: bsd.mono.mk,v 1.7 2005/11/15 03:09:57 tmclau02 Exp $
+#   $Id: bsd.mono.mk,v 1.10 2006/02/16 00:37:15 tmclau02 Exp $
 #
 
 # Set the location of the .wapi directory so we write to a location we
@@ -15,10 +15,12 @@ MONO_SHARED_DIR=${WRKDIR}
 CONFIGURE_ENV+=MONO_SHARED_DIR="${MONO_SHARED_DIR}"
 MAKE_ENV+=MONO_SHARED_DIR="${MONO_SHARED_DIR}"
 
+# Set the location that webaps served bp XSP should use.
+XSP_DOCROOT=${PREFIX}/www/xsp
 
 # Clean up the semaphore produced by the .wapi
 post-install: mono-semdel
 pre-clean: mono-semdel
 
 mono-semdel:
-	@${SETENV} MONO_SHARED_DIR="${MONO_SHARED_DIR}" ${LOCALBASE}/bin/mono-semdel 2> /dev/null || true
+	@${SETENV} G_DEBUG="" MONO_SHARED_DIR="${MONO_SHARED_DIR}" ${LOCALBASE}/bin/mono-semdel 2> /dev/null || true
