@@ -1,3 +1,5 @@
+To enable smtpfwdd via rc.d script please add smtpd_enable="YES" 
+in your rc.conf.
 
 You must follow the next steps, as root, in order to finish the installation:
 
@@ -17,15 +19,15 @@ You must follow the next steps, as root, in order to finish the installation:
    sendmail configuration.
 
 3) Add smtpd to your inetd.conf:
-	smtp stream tcp nowait root /usr/local/sbin/smtpd smtpd
+	smtp stream tcp nowait root %%PREFIX%%/sbin/smtpd smtpd
 
 4) smtpd runs in a chrooted environment, so you must feed this environment
    with any configuration file it needs.  Make a copy of /etc/resolv.conf
-   and /etc/localtime to /var/smtpd/etc.  If you ever change any of these
+   and /etc/localtime to %%SPOOLBASE%%/etc.  If you ever change any of these
    files, remember to change the copies also.  Do not make a symbolic
    link, as it will not work in the chrooted environment.
 
-5) Create your own /var/smtpd/etc/smtpd_check_rules.  There are some
+5) Create your own %%SPOOLBASE%%/etc/smtpd_check_rules.  There are some
    examples in that directory.  If have any problem, take a look at
    http://www.obtuse.com/juniper-docs/man/smtpd_address_check.html.
 

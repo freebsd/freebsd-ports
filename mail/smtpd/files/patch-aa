@@ -14,7 +14,7 @@
  #
  # The chroot directory
 -SPOOLDIR = /usr/spool/smtpd
-+SPOOLDIR = !!SPOOLBASE!!
++SPOOLDIR = ${SPOOLBASE}
  # Where to store messages, relative to SPOOLDIR above.
 -SPOOLSUBDIR = .
 +SPOOLSUBDIR = mqueue

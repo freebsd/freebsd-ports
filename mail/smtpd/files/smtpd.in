@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: smtpd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run smtpd:
+#
+# smtpd_enable (bool):		Set it to "YES" to enable smtpd.
+#				Default is "NO".
+#
+
+. %%RC_SUBR%%
+
+name="smtpd"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/smtpfwdd
+
+load_rc_config ${name}
+
+: ${smtpd_enable="NO"}
+
+run_rc_command "$1"
