@@ -539,6 +539,7 @@
     SUBDIR += p5-Catalyst-Plugin-SubRequest
     SUBDIR += p5-Catalyst-Plugin-Textile
     SUBDIR += p5-Catalyst-Plugin-XMLRPC
+    SUBDIR += p5-Catalyst-View-GraphViz
     SUBDIR += p5-Catalyst-View-HTML-Template
     SUBDIR += p5-Catalyst-View-Mason
     SUBDIR += p5-Catalyst-View-TT
