@@ -8567,6 +8567,7 @@ p5-Net-Dict	ports/net/p5-Net-Dict
 p5-Net-Divert	ports/net/p5-Net-Divert
 p5-Net-Domain-ExpireDate	ports/dns/p5-Net-Domain-ExpireDate
 p5-Net-Domain-TLD	ports/dns/p5-Net-Domain-TLD
+p5-Net-EPP-Frame	ports/net/p5-Net-EPP-Frame
 p5-Net-FTP-Common	ports/ftp/p5-Net-FTP-Common
 p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
