@@ -3,14 +3,13 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.43 2006/01/11 03:11:16 tmclau02 Exp $
+#   $Id: Makefile,v 1.45 2006/02/15 17:16:54 tmclau02 Exp $
 #
 
 PORTNAME=	muine
-PORTVERSION=	0.8.3
-PORTREVISION=	10
+PORTVERSION=	0.8.4
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://muine.gooeylinux.org/
+MASTER_SITES=	http://muine-player.org/releases/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based Gnome audio player
@@ -18,7 +17,8 @@ COMMENT=	Mono based Gnome audio player
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		gdbm:${PORTSDIR}/databases/gdbm \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 BUILD_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 		${LOCALBASE}/lib/mono/dbus-sharp/dbus-sharp.dll:${PORTSDIR}/devel/dbus-sharp
 RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
@@ -55,6 +55,8 @@ USE_GSTREAMER+=	gconf
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/dbus-1.0|(prefix)/share/dbus-1|g' \
 		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e 's|libmusicbrainz.so.4|libmusicbrainz.so|g' \
+		${WRKSRC}/src/muine.exe.config.in
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/muine/plugins
