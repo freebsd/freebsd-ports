@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/RRDTool/OO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDTool/OO/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDTool/OO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDTool
+@dirrmtry %%SITE_PERL%%/RRDTool
