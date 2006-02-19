@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
 		http://www.balabit.com/downloads/syslog-ng/1.6/src/old/
 
 MAINTAINER=	vince@blue-box.net
-COMMENT=	A powerfull syslogd replacement
+COMMENT=	A powerful syslogd replacement
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
 
