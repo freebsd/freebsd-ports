@@ -1,0 +1,42 @@
+--- plugins/Makefile.in.orig	Wed Feb 15 02:50:49 2006
++++ plugins/Makefile.in	Wed Feb 15 10:42:55 2006
+@@ -503,7 +503,8 @@
+ 	done
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(LTLIBRARIES) $(DATA)
++#all-am: Makefile $(LTLIBRARIES) $(DATA)
++all-am:
+ 
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(muinelibdir) $(DESTDIR)$(plugindir)
+@@ -551,7 +552,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-muinelibLTLIBRARIES install-pluginDATA
++#install-data-am: install-muinelibLTLIBRARIES install-pluginDATA
+ 
+ install-exec-am:
+ 
+@@ -602,14 +603,14 @@
+ TrayIcon.dll: $(TRAY_ICON_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
+ 	$(CSC) -target:library $(LIBFLAGS) -out:$@ $(TRAY_ICON_CSFILES) $(TRAY_ICON_EXTRA_CSFILES) $(ASSEMBLIES) $(TRAY_ICON_EXTRA_ASSEMBLIES) $(TRAY_ICON_RESOURCES)
+ 
+-InotifyPlugin.dll: $(INOTIFY_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
+-	$(CSC) -unsafe -target:library $(LIBFLAGS) -out:$@ $(INOTIFY_CSFILES) $(ASSEMBLIES) $(INOTIFY_EXTRA_ASSEMBLIES)
++#InotifyPlugin.dll: $(INOTIFY_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
++#	$(CSC) -unsafe -target:library $(LIBFLAGS) -out:$@ $(INOTIFY_CSFILES) $(ASSEMBLIES) $(INOTIFY_EXTRA_ASSEMBLIES)
+ 
+-InotifyPlugin.dll.config: $(srcdir)/InotifyPlugin.dll.config.in
+-	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
+-	< $^ > $@
++#InotifyPlugin.dll.config: $(srcdir)/InotifyPlugin.dll.config.in
++#	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
++#	< $^ > $@
+ 
+-all: DashboardPlugin.dll TrayIcon.dll InotifyPlugin.dll
++all: DashboardPlugin.dll TrayIcon.dll
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

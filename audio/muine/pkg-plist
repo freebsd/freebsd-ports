@@ -39,6 +39,7 @@ share/locale/ko/LC_MESSAGES/muine.mo
 share/locale/lt/LC_MESSAGES/muine.mo
 share/locale/ms/LC_MESSAGES/muine.mo
 share/locale/nb/LC_MESSAGES/muine.mo
+share/locale/ne/LC_MESSAGES/muine.mo
 share/locale/nl/LC_MESSAGES/muine.mo
 share/locale/no/LC_MESSAGES/muine.mo
 share/locale/pl/LC_MESSAGES/muine.mo
@@ -47,12 +48,15 @@ share/locale/pt_BR/LC_MESSAGES/muine.mo
 share/locale/ro/LC_MESSAGES/muine.mo
 share/locale/ru/LC_MESSAGES/muine.mo
 share/locale/rw/LC_MESSAGES/muine.mo
+share/locale/sk/LC_MESSAGES/muine.mo
 share/locale/sr/LC_MESSAGES/muine.mo
 share/locale/sr@Latn/LC_MESSAGES/muine.mo
 share/locale/sv/LC_MESSAGES/muine.mo
+share/locale/uk/LC_MESSAGES/muine.mo
+share/locale/vi/LC_MESSAGES/muine.mo
 share/locale/zh_CN/LC_MESSAGES/muine.mo
-@dirrm lib/muine/plugins
-@dirrm lib/muine
+@dirrmtry lib/muine/plugins
+@dirrmtry lib/muine
 @dirrm lib/mono/muine
 @dirrm lib/mono/gac/muine-plugin/1.0.0.0__e6bf890338fa2913
 @dirrm lib/mono/gac/muine-plugin
