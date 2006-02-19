@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: mpd
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING syslogd
 # KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable mpd:
@@ -11,7 +11,7 @@
 # mpd_enable="YES"
 #
 
-mpd_flags="-b"
+mpd_flags="${mpd_flags:--b}"
 mpd_enable="${mpd_enable-NO}"
 
 . %%RC_SUBR%%
