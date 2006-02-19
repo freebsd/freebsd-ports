@@ -19,15 +19,9 @@ COMMENT=	The official distributed.net v2 personal proxy
 # There's a "b" suffix on the version, but not the directory
 WRKSRC=		${WRKDIR}/proxyper${PORTVERSION:S/b$//}-freebsd-x86
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386
-
-.if ${OSVERSION} < 300000
-IGNORE=		"This port requires FreeBSD 3.X or greater."
-.endif
 
 USE_RC_SUBR=	yes
 NO_BUILD=	yes
