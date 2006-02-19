@@ -19,7 +19,7 @@
 
    <target name="compile" depends="init" description="compile the source " >
      <!-- Compile the java code from ${src} into ${build} -->
-     <javac srcdir="." destdir="${build}" fork="yes" memoryMaximumSize="64m">
+     <javac srcdir="." destdir="${build}" fork="yes" memoryMaximumSize="512m">
        <include name="**/*.java"/>
        <exclude name="**/Win32*.java"/>
        <exclude name="**/swt/osx/**"/>
