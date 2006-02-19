@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.cgsecurity.org/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A BIOS password recovery tool
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
 

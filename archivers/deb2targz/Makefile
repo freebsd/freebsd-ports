@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for converting a Debian .deb file to a .tar.gz
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/deb2targz

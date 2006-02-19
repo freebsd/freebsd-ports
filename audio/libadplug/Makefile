@@ -20,7 +20,6 @@ LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
 
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${LOCALBASE}/include

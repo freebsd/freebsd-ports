@@ -18,7 +18,6 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15:inc
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \

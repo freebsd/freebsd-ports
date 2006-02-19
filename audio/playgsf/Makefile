@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4+
 

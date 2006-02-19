@@ -20,7 +20,6 @@ LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \
 
 USE_AUTOTOOLS=	libtool:13
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

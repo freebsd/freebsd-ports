@@ -24,8 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 INSTALL_TARGET=	setup
 
-USE_REINPLACE=	yes
-
 PLIST_FILES=	bin/qmail-rblchk bin/getsenderip \
 		%%EXAMPLESDIR%%/spam-report.sh %%EXAMPLESDIR%%/rbllist.sh \
 		%%EXAMPLESDIR%%/dot-qmail-storeip

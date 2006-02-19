@@ -16,7 +16,6 @@ COMMENT=	Merges patch-rejects and runs a merge program to verify the changes
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 PORTDOCS=	CHANGELOG README vimrc
 PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp

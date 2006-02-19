@@ -18,8 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/bsdsfv
 PORTDOCS=	MANUAL
 
-USE_REINPLACE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(INSTALL_PREFIX =\).*$$|\1 ${PREFIX}|g' \
 		${WRKSRC}/Makefile

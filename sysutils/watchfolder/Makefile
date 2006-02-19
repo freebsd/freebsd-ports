@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Watch folders for new files and process them
 
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc $$(OPT)|${CC} ${CFLAGS}|' \

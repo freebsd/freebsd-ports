@@ -19,7 +19,6 @@ COMMENT=	A pager (like less) which has support for windows and binary files
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 
 PLIST_FILES=	bin/most

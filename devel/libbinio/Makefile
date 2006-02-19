@@ -16,7 +16,6 @@ COMMENT=	Binary I/O stream class library
 
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${LOCALBASE}/include

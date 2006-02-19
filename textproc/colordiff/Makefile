@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to colorize diff output
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 MAN1=		colordiff.1

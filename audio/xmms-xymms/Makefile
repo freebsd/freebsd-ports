@@ -19,7 +19,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	gtk12
 

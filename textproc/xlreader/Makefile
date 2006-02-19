@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xls spread sheets to tab delimited CSV or SQL inserts
 
-USE_REINPLACE=	yes
 PLIST_FILES=	bin/xlreader
 
 post-patch:

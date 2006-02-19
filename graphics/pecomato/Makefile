@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line picture metadata processor
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 
 MAKEFILE=	Makefile.unix

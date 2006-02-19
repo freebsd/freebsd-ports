@@ -15,7 +15,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Cyrus-Imap to Maildir++ conversion utility
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 
 ALL_TARGET=	build
 

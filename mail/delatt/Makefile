@@ -16,7 +16,6 @@ COMMENT=	Strip attachments from email
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/delatt

@@ -18,7 +18,6 @@ COMMENT?=	Utility to cap/uncap an iPod
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAKE_ARGS+=	CC="${CC}"
 

@@ -15,7 +15,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line offline credit card validator/analyzer
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/ccard
 MAN1=		ccard.1

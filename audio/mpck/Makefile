@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

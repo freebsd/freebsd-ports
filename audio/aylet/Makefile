@@ -14,7 +14,6 @@ PKGNAMEPREFIX?=
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for the .ay audio file format
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 

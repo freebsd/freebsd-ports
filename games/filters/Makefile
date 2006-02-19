@@ -17,7 +17,6 @@ COMMENT=	A collection of filters, including B1FF and the Swedish Chef
 CONFLICTS=	talkfilters-* jive-* chef-*
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 ALL_TARGET+=	samples

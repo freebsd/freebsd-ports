@@ -16,7 +16,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		gbsplay:${PORTSDIR}/audio/gbsplay
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	glib12
 
 CONFIGURE_ARGS=	--disable-nas
