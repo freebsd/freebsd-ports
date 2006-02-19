@@ -242,6 +242,7 @@
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mysql
     SUBDIR += p5-Mysql-Diff
+    SUBDIR += p5-Oryx
     SUBDIR += p5-POE-Component-DBIAgent
     SUBDIR += p5-POE-Component-EasyDBI
     SUBDIR += p5-POE-Component-LaDBI
