@@ -32,6 +32,7 @@
     SUBDIR += asterisk-oh323
     SUBDIR += atmsupport
     SUBDIR += avahi
+    SUBDIR += avahi-sharp
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
