@@ -17,6 +17,8 @@ PATCHFILES=	lrw_process.c.patch
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 MAKE_ARGS=	DESTDIR="${PREFIX}" LIBPATH="/lib" INCPATH="/include" \

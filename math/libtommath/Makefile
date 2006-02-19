@@ -14,6 +14,8 @@ DISTNAME=	ltm-${PORTVERSION}
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable mathematical routines
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 USE_BZIP2=	yes
