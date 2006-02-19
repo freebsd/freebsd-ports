@@ -7,6 +7,7 @@
 
 PORTNAME=	gensig
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.geekthing.com/~robf/ware/gensig/ \
 		http://www.ooblick.com/software/gensig/
@@ -21,10 +22,4 @@ USE_GETOPT_LONG=	yes
 
 MAN1=		gensig.1 cattag.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700013
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
