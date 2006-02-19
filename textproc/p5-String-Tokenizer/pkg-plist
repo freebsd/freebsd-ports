@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/Tokenizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Tokenizer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Tokenizer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
