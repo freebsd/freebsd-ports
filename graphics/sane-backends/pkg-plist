@@ -2,62 +2,118 @@ bin/gamma4scanimage
 bin/sane-config
 bin/sane-find-scanner
 bin/scanimage
-etc/sane.d/abaton.conf
-etc/sane.d/agfafocus.conf
-etc/sane.d/apple.conf
-etc/sane.d/artec.conf
-etc/sane.d/artec_eplus48u.conf
-etc/sane.d/avision.conf
-etc/sane.d/bh.conf
-etc/sane.d/canon.conf
-etc/sane.d/canon630u.conf
-etc/sane.d/coolscan.conf
-etc/sane.d/coolscan2.conf
-etc/sane.d/dc210.conf
-etc/sane.d/dc240.conf
-etc/sane.d/dc25.conf
-etc/sane.d/dll.conf
-etc/sane.d/dmc.conf
-etc/sane.d/epson.conf
-etc/sane.d/fujitsu.conf
-etc/sane.d/genesys.conf
-%%GPHOTO2%%etc/sane.d/gphoto2.conf
-etc/sane.d/gt68xx.conf
-etc/sane.d/hp.conf
-etc/sane.d/hp4200.conf
-etc/sane.d/hp5400.conf
-etc/sane.d/ibm.conf
-etc/sane.d/leo.conf
-etc/sane.d/lexmark.conf
-etc/sane.d/ma1509.conf
-etc/sane.d/matsushita.conf
-etc/sane.d/microtek.conf
-etc/sane.d/microtek2.conf
-etc/sane.d/mustek.conf
-etc/sane.d/mustek_usb.conf
-etc/sane.d/nec.conf
-etc/sane.d/net.conf
-etc/sane.d/pie.conf
-etc/sane.d/plustek.conf
-etc/sane.d/plustek_pp.conf
-etc/sane.d/ricoh.conf
-etc/sane.d/s9036.conf
-etc/sane.d/saned.conf
-etc/sane.d/sceptre.conf
-etc/sane.d/sharp.conf
-etc/sane.d/sm3840.conf
-etc/sane.d/snapscan.conf
-etc/sane.d/sp15c.conf
-etc/sane.d/st400.conf
-etc/sane.d/tamarack.conf
-etc/sane.d/teco1.conf
-etc/sane.d/teco2.conf
-etc/sane.d/teco3.conf
-etc/sane.d/test.conf
-etc/sane.d/u12.conf
-etc/sane.d/umax.conf
-etc/sane.d/umax1220u.conf
-etc/sane.d/umax_pp.conf
+@unexec if cmp -s %D/etc/sane.d/abaton.conf %D/etc/sane.d/dist/abaton.conf; then rm -f %D/etc/sane.d/abaton.conf; fi
+@unexec if cmp -s %D/etc/sane.d/agfafocus.conf %D/etc/sane.d/dist/agfafocus.conf; then rm -f %D/etc/sane.d/agfafocus.conf; fi
+@unexec if cmp -s %D/etc/sane.d/apple.conf %D/etc/sane.d/dist/apple.conf; then rm -f %D/etc/sane.d/apple.conf; fi
+@unexec if cmp -s %D/etc/sane.d/artec.conf %D/etc/sane.d/dist/artec.conf; then rm -f %D/etc/sane.d/artec.conf; fi
+@unexec if cmp -s %D/etc/sane.d/artec_eplus48u.conf %D/etc/sane.d/dist/artec_eplus48u.conf; then rm -f %D/etc/sane.d/artec_eplus48u.conf; fi
+@unexec if cmp -s %D/etc/sane.d/avision.conf %D/etc/sane.d/dist/avision.conf; then rm -f %D/etc/sane.d/avision.conf; fi
+@unexec if cmp -s %D/etc/sane.d/bh.conf %D/etc/sane.d/dist/bh.conf; then rm -f %D/etc/sane.d/bh.conf; fi
+@unexec if cmp -s %D/etc/sane.d/canon.conf %D/etc/sane.d/dist/canon.conf; then rm -f %D/etc/sane.d/canon.conf; fi
+@unexec if cmp -s %D/etc/sane.d/canon630u.conf %D/etc/sane.d/dist/canon630u.conf; then rm -f %D/etc/sane.d/canon630u.conf; fi
+@unexec if cmp -s %D/etc/sane.d/coolscan.conf %D/etc/sane.d/dist/coolscan.conf; then rm -f %D/etc/sane.d/coolscan.conf; fi
+@unexec if cmp -s %D/etc/sane.d/coolscan2.conf %D/etc/sane.d/dist/coolscan2.conf; then rm -f %D/etc/sane.d/coolscan2.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dc210.conf %D/etc/sane.d/dist/dc210.conf; then rm -f %D/etc/sane.d/dc210.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dc240.conf %D/etc/sane.d/dist/dc240.conf; then rm -f %D/etc/sane.d/dc240.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dc25.conf %D/etc/sane.d/dist/dc25.conf; then rm -f %D/etc/sane.d/dc25.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dll.conf %D/etc/sane.d/dist/dll.conf; then rm -f %D/etc/sane.d/dll.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dmc.conf %D/etc/sane.d/dist/dmc.conf; then rm -f %D/etc/sane.d/dmc.conf; fi
+@unexec if cmp -s %D/etc/sane.d/epson.conf %D/etc/sane.d/dist/epson.conf; then rm -f %D/etc/sane.d/epson.conf; fi
+@unexec if cmp -s %D/etc/sane.d/fujitsu.conf %D/etc/sane.d/dist/fujitsu.conf; then rm -f %D/etc/sane.d/fujitsu.conf; fi
+@unexec if cmp -s %D/etc/sane.d/genesys.conf %D/etc/sane.d/dist/genesys.conf; then rm -f %D/etc/sane.d/genesys.conf; fi
+%%GPHOTO2%%@unexec if cmp -s %D/etc/sane.d/gphoto2.conf %D/etc/sane.d/dist/gphoto2.conf; then rm -f %D/etc/sane.d/gphoto2.conf; fi
+@unexec if cmp -s %D/etc/sane.d/gt68xx.conf %D/etc/sane.d/dist/gt68xx.conf; then rm -f %D/etc/sane.d/gt68xx.conf; fi
+@unexec if cmp -s %D/etc/sane.d/hp.conf %D/etc/sane.d/dist/hp.conf; then rm -f %D/etc/sane.d/hp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/hp4200.conf %D/etc/sane.d/dist/hp4200.conf; then rm -f %D/etc/sane.d/hp4200.conf; fi
+@unexec if cmp -s %D/etc/sane.d/hp5400.conf %D/etc/sane.d/dist/hp5400.conf; then rm -f %D/etc/sane.d/hp5400.conf; fi
+@unexec if cmp -s %D/etc/sane.d/ibm.conf %D/etc/sane.d/dist/ibm.conf; then rm -f %D/etc/sane.d/ibm.conf; fi
+@unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
+@unexec if cmp -s %D/etc/sane.d/lexmark.conf %D/etc/sane.d/dist/lexmark.conf; then rm -f %D/etc/sane.d/lexmark.conf; fi
+@unexec if cmp -s %D/etc/sane.d/ma1509.conf %D/etc/sane.d/dist/ma1509.conf; then rm -f %D/etc/sane.d/ma1509.conf; fi
+@unexec if cmp -s %D/etc/sane.d/matsushita.conf %D/etc/sane.d/dist/matsushita.conf; then rm -f %D/etc/sane.d/matsushita.conf; fi
+@unexec if cmp -s %D/etc/sane.d/microtek.conf %D/etc/sane.d/dist/microtek.conf; then rm -f %D/etc/sane.d/microtek.conf; fi
+@unexec if cmp -s %D/etc/sane.d/microtek2.conf %D/etc/sane.d/dist/microtek2.conf; then rm -f %D/etc/sane.d/microtek2.conf; fi
+@unexec if cmp -s %D/etc/sane.d/mustek.conf %D/etc/sane.d/dist/mustek.conf; then rm -f %D/etc/sane.d/mustek.conf; fi
+@unexec if cmp -s %D/etc/sane.d/mustek_usb.conf %D/etc/sane.d/dist/mustek_usb.conf; then rm -f %D/etc/sane.d/mustek_usb.conf; fi
+@unexec if cmp -s %D/etc/sane.d/nec.conf %D/etc/sane.d/dist/nec.conf; then rm -f %D/etc/sane.d/nec.conf; fi
+@unexec if cmp -s %D/etc/sane.d/net.conf %D/etc/sane.d/dist/net.conf; then rm -f %D/etc/sane.d/net.conf; fi
+@unexec if cmp -s %D/etc/sane.d/pie.conf %D/etc/sane.d/dist/pie.conf; then rm -f %D/etc/sane.d/pie.conf; fi
+@unexec if cmp -s %D/etc/sane.d/plustek.conf %D/etc/sane.d/dist/plustek.conf; then rm -f %D/etc/sane.d/plustek.conf; fi
+@unexec if cmp -s %D/etc/sane.d/plustek_pp.conf %D/etc/sane.d/dist/plustek_pp.conf; then rm -f %D/etc/sane.d/plustek_pp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/ricoh.conf %D/etc/sane.d/dist/ricoh.conf; then rm -f %D/etc/sane.d/ricoh.conf; fi
+@unexec if cmp -s %D/etc/sane.d/s9036.conf %D/etc/sane.d/dist/s9036.conf; then rm -f %D/etc/sane.d/s9036.conf; fi
+@unexec if cmp -s %D/etc/sane.d/saned.conf %D/etc/sane.d/dist/saned.conf; then rm -f %D/etc/sane.d/saned.conf; fi
+@unexec if cmp -s %D/etc/sane.d/sceptre.conf %D/etc/sane.d/dist/sceptre.conf; then rm -f %D/etc/sane.d/sceptre.conf; fi
+@unexec if cmp -s %D/etc/sane.d/sharp.conf %D/etc/sane.d/dist/sharp.conf; then rm -f %D/etc/sane.d/sharp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/sm3840.conf %D/etc/sane.d/dist/sm3840.conf; then rm -f %D/etc/sane.d/sm3840.conf; fi
+@unexec if cmp -s %D/etc/sane.d/snapscan.conf %D/etc/sane.d/dist/snapscan.conf; then rm -f %D/etc/sane.d/snapscan.conf; fi
+@unexec if cmp -s %D/etc/sane.d/sp15c.conf %D/etc/sane.d/dist/sp15c.conf; then rm -f %D/etc/sane.d/sp15c.conf; fi
+@unexec if cmp -s %D/etc/sane.d/st400.conf %D/etc/sane.d/dist/st400.conf; then rm -f %D/etc/sane.d/st400.conf; fi
+@unexec if cmp -s %D/etc/sane.d/tamarack.conf %D/etc/sane.d/dist/tamarack.conf; then rm -f %D/etc/sane.d/tamarack.conf; fi
+@unexec if cmp -s %D/etc/sane.d/teco1.conf %D/etc/sane.d/dist/teco1.conf; then rm -f %D/etc/sane.d/teco1.conf; fi
+@unexec if cmp -s %D/etc/sane.d/teco2.conf %D/etc/sane.d/dist/teco2.conf; then rm -f %D/etc/sane.d/teco2.conf; fi
+@unexec if cmp -s %D/etc/sane.d/teco3.conf %D/etc/sane.d/dist/teco3.conf; then rm -f %D/etc/sane.d/teco3.conf; fi
+@unexec if cmp -s %D/etc/sane.d/test.conf %D/etc/sane.d/dist/test.conf; then rm -f %D/etc/sane.d/test.conf; fi
+@unexec if cmp -s %D/etc/sane.d/u12.conf %D/etc/sane.d/dist/u12.conf; then rm -f %D/etc/sane.d/u12.conf; fi
+@unexec if cmp -s %D/etc/sane.d/umax.conf %D/etc/sane.d/dist/umax.conf; then rm -f %D/etc/sane.d/umax.conf; fi
+@unexec if cmp -s %D/etc/sane.d/umax1220u.conf %D/etc/sane.d/dist/umax1220u.conf; then rm -f %D/etc/sane.d/umax1220u.conf; fi
+@unexec if cmp -s %D/etc/sane.d/umax_pp.conf %D/etc/sane.d/dist/umax_pp.conf; then rm -f %D/etc/sane.d/umax_pp.conf; fi
+etc/sane.d/dist/abaton.conf
+etc/sane.d/dist/agfafocus.conf
+etc/sane.d/dist/apple.conf
+etc/sane.d/dist/artec.conf
+etc/sane.d/dist/artec_eplus48u.conf
+etc/sane.d/dist/avision.conf
+etc/sane.d/dist/bh.conf
+etc/sane.d/dist/canon.conf
+etc/sane.d/dist/canon630u.conf
+etc/sane.d/dist/coolscan.conf
+etc/sane.d/dist/coolscan2.conf
+etc/sane.d/dist/dc210.conf
+etc/sane.d/dist/dc240.conf
+etc/sane.d/dist/dc25.conf
+etc/sane.d/dist/dll.conf
+etc/sane.d/dist/dmc.conf
+etc/sane.d/dist/epson.conf
+etc/sane.d/dist/fujitsu.conf
+etc/sane.d/dist/genesys.conf
+%%GPHOTO2%%etc/sane.d/dist/gphoto2.conf
+etc/sane.d/dist/gt68xx.conf
+etc/sane.d/dist/hp.conf
+etc/sane.d/dist/hp4200.conf
+etc/sane.d/dist/hp5400.conf
+etc/sane.d/dist/ibm.conf
+etc/sane.d/dist/leo.conf
+etc/sane.d/dist/lexmark.conf
+etc/sane.d/dist/ma1509.conf
+etc/sane.d/dist/matsushita.conf
+etc/sane.d/dist/microtek.conf
+etc/sane.d/dist/microtek2.conf
+etc/sane.d/dist/mustek.conf
+etc/sane.d/dist/mustek_usb.conf
+etc/sane.d/dist/nec.conf
+etc/sane.d/dist/net.conf
+etc/sane.d/dist/pie.conf
+etc/sane.d/dist/plustek.conf
+etc/sane.d/dist/plustek_pp.conf
+etc/sane.d/dist/ricoh.conf
+etc/sane.d/dist/s9036.conf
+etc/sane.d/dist/saned.conf
+etc/sane.d/dist/sceptre.conf
+etc/sane.d/dist/sharp.conf
+etc/sane.d/dist/sm3840.conf
+etc/sane.d/dist/snapscan.conf
+etc/sane.d/dist/sp15c.conf
+etc/sane.d/dist/st400.conf
+etc/sane.d/dist/tamarack.conf
+etc/sane.d/dist/teco1.conf
+etc/sane.d/dist/teco2.conf
+etc/sane.d/dist/teco3.conf
+etc/sane.d/dist/test.conf
+etc/sane.d/dist/u12.conf
+etc/sane.d/dist/umax.conf
+etc/sane.d/dist/umax1220u.conf
+etc/sane.d/dist/umax_pp.conf
 include/sane/sane.h
 include/sane/saneopts.h
 lib/libsane.a
@@ -301,4 +357,5 @@ sbin/saned
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sane
 @dirrm include/sane
-@dirrm etc/sane.d
+@dirrm etc/sane.d/dist
+@dirrmtry etc/sane.d
