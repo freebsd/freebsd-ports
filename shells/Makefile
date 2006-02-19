@@ -26,6 +26,7 @@
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += tcsh-bofh
+    SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh
     SUBDIR += viewglob
