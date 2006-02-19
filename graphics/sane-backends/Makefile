@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/download.php/1347/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -26,7 +27,6 @@ OPTIONS=	USB "USB support" on \
 		GPHOTO2 "gPhoto2 support" off
 
 USE_GNOME=	gnometarget
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -41,24 +41,32 @@ INSTALLS_SHLIB=	yes
 .if defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--disable-libusb
 .else
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-translations
-PLIST_SUB+=	NLS="@comment "
+PLIST_SUB+=		NLS="@comment "
 .else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
 .endif
 
 .if defined(WITH_GPHOTO2)
-LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
-PLIST_SUB+=	GPHOTO2=""
+LIB_DEPENDS+=		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+PLIST_SUB+=		GPHOTO2=""
 .else
 CONFIGURE_ARGS+=	--with-gphoto2=no
-PLIST_SUB+=	GPHOTO2="@comment "
+PLIST_SUB+=		GPHOTO2="@comment "
 .endif
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "*** ATTENTION ***"
+	@${ECHO} ""
+	@${ECHO} "Old versions then 1.0.17_1 do not check if you change config files."
+	@${ECHO} "If it's your case, press CTRL+C and copy your config files."
+	@${ECHO} ""
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

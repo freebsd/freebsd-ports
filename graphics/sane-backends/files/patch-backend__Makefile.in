@@ -1,0 +1,11 @@
+--- ./backend/Makefile.in.orig	Sun Feb 19 18:30:27 2006
++++ ./backend/Makefile.in	Sun Feb 19 18:32:47 2006
+@@ -244,6 +244,8 @@
+ 	    $(INSTALL_DATA) $(srcdir)/$${cfg} $(DESTDIR)$(configdir)/$${cfg} \
+               || exit 1; \
+ 	  fi; \
++	  if test ! -d $(DESTDIR)$(configdir)/dist; then $(MKDIR) $(DESTDIR)$(configdir)/dist; fi; \
++	  $(INSTALL_DATA) $(srcdir)/$${cfg} $(DESTDIR)$(configdir)/dist/$${cfg} ; \
+ 	done
+ 	for dir in $(FIRMWARE_DIRS) ; do \
+ 	   $(MKDIR) $(DESTDIR)$(datadir)/sane/$${dir} ; \
