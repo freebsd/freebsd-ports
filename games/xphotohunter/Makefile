@@ -14,6 +14,7 @@ MASTER_SITES=	http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	A game looking for the difference between two pictures
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
