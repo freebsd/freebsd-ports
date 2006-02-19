@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Catalyst/Helper/View/GraphView.pm
+%%SITE_PERL%%/Catalyst/Helper/View/GraphViz.pm
+%%SITE_PERL%%/Catalyst/View/GraphViz.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/GraphViz/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/GraphViz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst
