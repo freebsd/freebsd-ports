@@ -1,0 +1,19 @@
+%%SITE_PERL%%/CQL/AndNode.pm
+%%SITE_PERL%%/CQL/BooleanNode.pm
+%%SITE_PERL%%/CQL/Lexer.pm
+%%SITE_PERL%%/CQL/ModifierSet.pm
+%%SITE_PERL%%/CQL/Node.pm
+%%SITE_PERL%%/CQL/NotNode.pm
+%%SITE_PERL%%/CQL/OrNode.pm
+%%SITE_PERL%%/CQL/Parser.pm
+%%SITE_PERL%%/CQL/Prefix.pm
+%%SITE_PERL%%/CQL/PrefixNode.pm
+%%SITE_PERL%%/CQL/ProxNode.pm
+%%SITE_PERL%%/CQL/Relation.pm
+%%SITE_PERL%%/CQL/TermNode.pm
+%%SITE_PERL%%/CQL/Token.pm
+%%SITE_PERL%%/CQL/Utils.pm
+%%SITE_PERL%%/CQL/Visitor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL-Parser/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CQL-Parser
+@dirrm %%SITE_PERL%%/CQL
