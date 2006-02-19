@@ -80,6 +80,7 @@
     SUBDIR += libbonoboui
     SUBDIR += libbonobouimm
     SUBDIR += libgail-gnome
+    SUBDIR += libgdiplus
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintuimm
     SUBDIR += libgnomeui
