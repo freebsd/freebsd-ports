@@ -19,7 +19,7 @@ samba 2.X (that's only an example):
 
 If you are using samba 3.X:
 
-Edit /etc/smb.conf and add the following entry (that's only an example):
+Edit %%PREFIX%%/etc/smb.conf and add the following entry (that's only an example):
   [vscan]
       comment = virus-protected /tmp directory
       path = /tmp
