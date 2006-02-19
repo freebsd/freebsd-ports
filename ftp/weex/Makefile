@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A non-interactive FTP client
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 MANCOMPRESSED=	no
 
 PORTDOCS=	ChangeLog README

@@ -16,7 +16,6 @@ COMMENT=	Test your typing speed, and get your fingers\' CPS
 
 MAN1=		typespeed.1
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LFLAGS="${LDFLAGS}"

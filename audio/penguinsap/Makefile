@@ -13,8 +13,6 @@ MASTER_SITES=	http://critical.ch/distfiles/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line Atari(TM) .sap player
 
-USE_REINPLACE=	yes
-
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 CXXFLAGS+=	--no-exceptions
 

@@ -15,7 +15,6 @@ COMMENT=	A command line utility for stalking users
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/wuzzah
 MAN1=		wuzzah.1

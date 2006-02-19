@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Disk formatting type autodetector
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/disktype

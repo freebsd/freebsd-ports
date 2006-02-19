@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to test and create .sfv files
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/pure-sfv

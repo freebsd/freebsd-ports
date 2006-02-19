@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl script that checks links on web sites
 
 USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/linklint

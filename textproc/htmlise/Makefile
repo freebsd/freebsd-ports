@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/stuff/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Formats plain text as HTML
 
-USE_REINPLACE=	yes
-
 TABSIZE?=	8
 
 SRC=		htmlise tables markup inline

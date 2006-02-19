@@ -14,7 +14,6 @@ MASTER_SITES=	http://tardy.sourceforge.net/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

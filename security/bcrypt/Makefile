@@ -13,8 +13,6 @@ MASTER_SITES=	http://bcrypt.sourceforge.net/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A cross-plattform blowfish encryption utility
 
-USE_REINPLACE=	yes
-
 ALL_TARGET=	${PORTNAME}
 
 LDFLAGS+=	-lz

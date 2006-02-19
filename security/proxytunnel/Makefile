@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 
 ALL_TARGET=	${PORTNAME}
 

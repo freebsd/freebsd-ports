@@ -14,7 +14,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A file recovery tool which recovers deleted files from a block device
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 
 MAN1=		dupemap.1 magicrescue.1 magicsort.1

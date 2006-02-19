@@ -16,7 +16,6 @@ COMMENT=	A squid redirect script for filtering web banners
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 WWW_ROOT?=	www
