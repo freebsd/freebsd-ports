@@ -52,6 +52,9 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/libsmbclient/get_auth_data_fn.h
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/Makefile
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/README
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/bsd-strlcat.c
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/bsd-strlcpy.c
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/bsd-strlfunc.h
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/opendir_smbsh.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/select.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbsh.c
@@ -68,6 +71,7 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/libsmbclient/testread.c
 %%EXAMPLESDIR%%/libsmbclient/testsmbc.c
 %%EXAMPLESDIR%%/libsmbclient/teststat.c
+%%EXAMPLESDIR%%/libsmbclient/teststat2.c
 %%EXAMPLESDIR%%/libsmbclient/testutime.c
 %%EXAMPLESDIR%%/libsmbclient/tree.c
 @dirrm %%EXAMPLESDIR%%/libsmbclient/smbwrapper
