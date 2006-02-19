@@ -1,5 +1,5 @@
---- camel-object.c.orig	Sun Feb 19 17:04:42 2006
-+++ camel-object.c	Sun Feb 19 17:06:06 2006
+--- camel/camel-object.c.orig	Sun Feb 19 17:04:42 2006
++++ camel/camel-object.c	Sun Feb 19 17:06:06 2006
 @@ -454,7 +454,7 @@ cobject_state_read(CamelObject *obj, FIL
  		}
  		
