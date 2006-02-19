@@ -7592,6 +7592,7 @@ p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
 p5-Catalyst-Plugin-SubRequest	ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile	ports/www/p5-Catalyst-Plugin-Textile
 p5-Catalyst-Plugin-XMLRPC	ports/www/p5-Catalyst-Plugin-XMLRPC
+p5-Catalyst-View-GraphViz	ports/www/p5-Catalyst-View-GraphViz
 p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
 p5-Catalyst-View-Mason	ports/www/p5-Catalyst-View-Mason
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
