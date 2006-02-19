@@ -12485,6 +12485,7 @@ thttpd-st	ports/www/thttpd-st
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
 thunderbird	ports/mail/thunderbird
+thunderbird-dictionaries	ports/mail/thunderbird-dictionaries
 ticker.app	ports/sysutils/ticker.app
 tide		ports/devel/tide
 tidy		ports/www/tidy
