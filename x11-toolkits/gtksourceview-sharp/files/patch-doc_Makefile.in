@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue Jun 29 15:13:37 2004
++++ doc/Makefile.in	Mon Sep 20 01:06:15 2004
+@@ -181,7 +181,7 @@
+ @ENABLE_MONODOC_FALSE@TARGETS = 
+ @ENABLE_MONODOC_TRUE@TARGETS = gtksourceview-sharp-docs.zip gtksourceview-sharp-docs.tree gtksourceview-sharp-docs.source
+ @ENABLE_MONODOC_FALSE@docsdir = $(datadir)
+-@ENABLE_MONODOC_TRUE@docsdir = `$(MONODOC) --get-sourcesdir`
++@ENABLE_MONODOC_TRUE@docsdir = $(libdir)/monodoc/sources
+ @ENABLE_MONODOC_FALSE@docs_DATA = 
+ @ENABLE_MONODOC_TRUE@docs_DATA = $(TARGETS)
+ ASSEMBLER = $(MONODOC) --assemble

@@ -1,0 +1,39 @@
+--- Makefile.in.orig	Sun Jul 17 17:55:59 2005
++++ Makefile.in	Sun Jul 17 18:26:33 2005
+@@ -178,9 +178,9 @@
+ SUBDIRS = gtksourceview sample doc 
+ DISTCLEANFILES = gtksourceview-sharp-2.0.pc
+ EXTRA_DIST = nemerle.lang vbnet.lang gtksourceview-sharp-2.0.pc.in gtk-sharp.snk
+-extra_langdir = $(gtksourceview_prefix)/share/gtksourceview-1.0/language-specs
++extra_langdir = $(prefix)/share/gnome/gtksourceview-1.0/language-specs
+ extra_lang_DATA = nemerle.lang vbnet.lang
+-pkgconfigdir = $(prefix)/lib/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gtksourceview-sharp-2.0.pc
+ all: all-recursive
+ 
+@@ -221,15 +221,15 @@
+ gtksourceview-sharp-2.0.pc: $(top_builddir)/config.status $(srcdir)/gtksourceview-sharp-2.0.pc.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ uninstall-info-am:
+-install-extra_langDATA: $(extra_lang_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(extra_langdir)" || $(mkdir_p) "$(DESTDIR)$(extra_langdir)"
+-	@list='$(extra_lang_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(extra_langDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(extra_langdir)/$$f'"; \
+-	  $(extra_langDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(extra_langdir)/$$f"; \
+-	done
++#install-extra_langDATA: $(extra_lang_DATA)
++#	@$(NORMAL_INSTALL)
++#	test -z "$(extra_langdir)" || $(mkdir_p) "$(DESTDIR)$(extra_langdir)"
++#	@list='$(extra_lang_DATA)'; for p in $$list; do \
++#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++#	  f=$(am__strip_dir) \
++#	  echo " $(extra_langDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(extra_langdir)/$$f'"; \
++#	  $(extra_langDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(extra_langdir)/$$f"; \
++#	done
+ 
+ uninstall-extra_langDATA:
+ 	@$(NORMAL_UNINSTALL)
