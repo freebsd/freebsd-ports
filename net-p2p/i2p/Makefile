@@ -7,17 +7,18 @@
 
 PORTNAME=	i2p
 PORTVERSION=	0.6.1.9
+PORTREVISION=	1
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymous network
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
-USE_RC_SUBR=	yes
-USE_REINPLACE=	yes
+USE_RC_SUBR=	i2p.sh
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
@@ -75,9 +76,6 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|./i2prouter[[:space:]]+start||' \
 		${WRKSRC}/installer/resources/postinstall.sh
-# rc.d
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" \
-		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -87,9 +85,6 @@ do-install:
 # update
 	@${INSTALL_DATA} ${WRKSRC}/i2pupdate.zip \
 		${DATADIR}/
-# rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
-		${PREFIX}/etc/rc.d
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
 		${PREFIX}/sbin/i2prouter
