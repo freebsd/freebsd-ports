@@ -1,0 +1,6 @@
+HP48xgcc is a C cross-compiler.  It is a program that runs on your computer
+and translates C code into objects that can be executed on the HP48.  It is
+based on (well, that's an understatement) the GNU C compiler (gcc) and thus
+it supports complete C language, not just some subset.
+
+WWW: http://hp48xgcc.sourceforge.net/
