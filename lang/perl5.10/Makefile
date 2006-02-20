@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -19,12 +18,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/tobez\//} \
 		http://www.tobez.org/download/port-mirrors/lang/perl58/
-PATCHFILES=	defined-or-5.8.7.bz2 sprintf-5.8.7.patch.bz2
+PATCHFILES=	defined-or-5.8.8.bz2
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.7
+PERL_VER=	5.8.8
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -54,6 +53,8 @@ MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	-Doptimize="-g" -DDEBUGGING
+STRIP=
+STRIP_CMD=	${TRUE}
 .else
 CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
 .endif
@@ -132,7 +133,6 @@ BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-USE_REINPLACE=	yes
 
 pre-fetch:
 	@${ECHO} ""
@@ -161,9 +161,15 @@ post-patch:
 		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
+.if defined(WITH_THREADS)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
 		${WRKSRC}/hints/freebsd.sh
+.else
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
+		-e 's|%%PTHREAD_CFLAGS%%||g;' \
+		${WRKSRC}/hints/freebsd.sh
+.endif
 
 pre-install:
 	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
@@ -186,5 +192,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 	@fmt ${PKGMESSAGE}
 .endif
+
+rebuild-xs:
+	${LOCALBASE}/portupgrade -f `(${FIND} ${PKG_DBDIR}/p5*/+CONTENTS | \
+		${XARGS} ${GREP} -El 'site_perl.*\.so' | \
+		${SED} -e 's!/var/db/pkg/!!; s!/+CONTENTS!!;')`
 
 .include <bsd.port.post.mk>
