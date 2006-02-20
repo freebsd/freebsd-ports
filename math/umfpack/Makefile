@@ -57,7 +57,7 @@ do-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	build
+regression-test:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} hb )
 .endif
 
