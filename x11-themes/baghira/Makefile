@@ -17,6 +17,8 @@ COMMENT=	An Aqua like window decoration and widget style for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-release
 
+BROKEN=		Incorrect pkg-plist
+
 #EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=	yes
