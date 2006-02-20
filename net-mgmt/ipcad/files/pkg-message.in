@@ -1,7 +1,10 @@
 ===========================================================================
 
-To configure this package, customize ${PREFIX}/etc/ipcad.conf from
-${PREFIX}/etc/ipcad.conf.sample, then start `ipcad -rds`
+To enable rc.d script to startup ipcad, please add ipcad_enable="YES"
+in your rc.conf
+
+To configure this package, customize %%PREFIX%%/etc/ipcad.conf from
+%%PREFIX%%/etc/ipcad.conf.sample, then start via rc.d script
 You should be able to do `rsh localhost sh ip accounting` after that.
 
 ===========================================================================
