@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	switchtower
-PORTVERSION=	0.10.0
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7932/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/8664/
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines
