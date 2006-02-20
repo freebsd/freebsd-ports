@@ -7,20 +7,28 @@
 
 PORTNAME=	xmlprpr
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://software.decisionsoft.com/software/
+MASTER_SITES=	http://software.decisionsoft.com/software/ \
+		http://www.it.ca/~paul/src/
 DISTFILES=	xmlpp.pl
-EXTRACT_ONLY=
 
 MAINTAINER=	paul+ports@it.ca
-COMMENT=	A XML pretty printer
+COMMENT=	An XML pretty printer
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/xmlprpr
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e '1s:/usr/bin/perl:${PERL}:' ${WRKSRC}/xmlpp.pl
+
 do-install:
-	${INSTALL_SCRIPT} ${_DISTDIR}/${_DISTFILES} ${PREFIX}/bin/xmlprpr
+	${INSTALL_SCRIPT} ${WRKSRC}/xmlpp.pl ${PREFIX}/bin/xmlprpr
 
 .include <bsd.port.mk>
