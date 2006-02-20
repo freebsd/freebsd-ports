@@ -21,8 +21,6 @@ COMMENT=	English lexicon for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
-BROKEN=		Incorrect pkg-plist
-
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
