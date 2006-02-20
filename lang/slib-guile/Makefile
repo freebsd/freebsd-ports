@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 		guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not install
+
 NO_BUILD=	yes
 
 do-install:
