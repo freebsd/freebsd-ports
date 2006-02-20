@@ -4799,6 +4799,7 @@ k3b		ports/sysutils/k3b
 k3b-i18n	ports/misc/k3b-i18n
 k3bmonkeyaudioplugin	ports/audio/k3bmonkeyaudioplugin
 k3d		ports/graphics/k3d
+k3dsurf		ports/math/k3dsurf
 k9copy		ports/multimedia/k9copy
 kaddressbook-plugins	ports/misc/kaddressbook-plugins
 kaffe		ports/java/kaffe
