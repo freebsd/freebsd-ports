@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9cd52bc6-a213-11da-b410-000e0c2e438a">
+    <topic>abiword -- stack based buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>abiword</name>
+	<range><lt>2.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chris Evans reports that AbiWord is vulnerable to multiple
+	  stack-based buffer overflow vulnerabilities.  This
+	  is caused by improper checking of the user-supplied data
+	  before it is being copied to an too small buffer.  The
+	  vulnerability is triggered when someone is importing RTF
+	  files.</p>
+      </body>
+    </description>
+    <references>
+      <bid>15096</bid>
+      <cvename>CAN-2005-2972</cvename>
+      <url>http://scary.beasts.org/security/CESA-2005-006.txt</url>
+      <url>http://www.abisource.com/changelogs/2.2.11.phtml</url>
+    </references>
+    <dates>
+      <discovery>2005-10-14</discovery>
+      <entry>2006-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17c2a61e-a20b-11da-b410-000e0c2e438a">
     <topic>pinentry -- local privilege escalation</topic>
     <affects>
