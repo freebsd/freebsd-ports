@@ -18,6 +18,7 @@ include/gigabase/pagepool.h
 include/gigabase/query.h
 include/gigabase/rectangle.h
 include/gigabase/reference.h
+include/gigabase/rtree.h
 include/gigabase/selection.h
 include/gigabase/stdtp.h
 include/gigabase/sync.h

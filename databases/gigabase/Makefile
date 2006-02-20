@@ -7,6 +7,7 @@
 
 PORTNAME=	gigabase
 PORTVERSION=	3.45
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
@@ -21,5 +22,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS?=--prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/rtree.h ${PREFIX}/include/${PORTNAME}
 
 .include <bsd.port.mk>
