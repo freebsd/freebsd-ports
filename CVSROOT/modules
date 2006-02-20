@@ -933,6 +933,7 @@ buttonbox	ports/x11/buttonbox
 bvi		ports/editors/bvi
 bwbasic		ports/lang/bwbasic
 bwidget		ports/x11-toolkits/bwidget
+bwm-ng		ports/net-mgmt/bwm-ng
 byaccj		ports/devel/byaccj
 bygfoot		ports/games/bygfoot
 bzflag		ports/games/bzflag
