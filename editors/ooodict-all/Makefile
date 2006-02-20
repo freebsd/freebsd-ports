@@ -18,6 +18,8 @@ DISTFILES+=	${THESDIST}
 MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 EXTRACT_ONLY=
 
