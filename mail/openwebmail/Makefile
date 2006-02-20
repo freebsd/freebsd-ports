@@ -18,6 +18,8 @@ COMMENT=	A webmail system designed to manage big mail folder files efficiently
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS?=	${PORTNAME}-devel-[0-9]*
 
 USE_PERL5=	yes
