@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b89dda1a-a206-11da-b410-000e0c2e438a">
+    <topic>squid -- dns lookup spoofing</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Squid team reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_query">
+	  <p>Malicious users may spoof DNS lookups if the DNS client UDP
+	    port (random, assigned by OS at startup) is unfiltered and
+	    your network is not protected from IP spoofing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-1519</cvename>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_query</url>
+    </references>
+    <dates>
+      <discovery>2006-02-FIXME</discovery>
+      <entry>2006-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b2b4b4d-a07c-11da-be0a-000c6ec775d9">
     <topic>postgresql81-server -- SET ROLE privilege escalation</topic>
     <affects>
