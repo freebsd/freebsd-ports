@@ -8,12 +8,10 @@
 PORTNAME=	openh323-112
 PORTVERSION=	1.12.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/ \
-		http://www.de.openh323.org/bin/ \
-		http://www.gnomemeeting.org/downloads/0.98.0/sources/
+MASTER_SITES=	http://www.openh323.org/bin/ 
 DISTNAME=	${NAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	db@db.net
 COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib152:build
