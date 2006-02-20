@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060620:
+  AFFECTS: users of lang/perl5.8
+  AUTHOR: tobez@FreeBSD.org
+
+  lang/perl5.8 has been updated to 5.8.8.  You should update everything
+  depending on perl.  The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8.  Please see
+  its manual page for details.
+
 20060220:
   AFFECTS: users of x11-wm/enlightenment
   AUTHOR: vanilla@FreeBSD.org
