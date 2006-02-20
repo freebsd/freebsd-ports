@@ -7,35 +7,35 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-japanese
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
-		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-Japan1-0:${PORTSDIR}/print/adobe-cmaps \
+		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
+SUB_FILES=	dot.xpdfrc
+SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR}
+
 INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \
 		EUC-JP.unicodeMap Shift-JIS.unicodeMap \
-		README dot.xpdfrc
+		README
+ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 
 .if defined(WITHOUT_X11)
 BROKEN=		"Broken dependency when WITHOUT_X11 set"
 .endif
 
-do-build:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	        -e 's|%%X11BASE%%|${X11BASE}|g' \
-	        -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${FILESDIR}/dot.xpdfrc > ${WRKSRC}/dot.xpdfrc
-
 do-install:
 	${MKDIR} ${PREFIX}/share/xpdf/japanese
+	${INSTALL_DATA} ${WRKDIR}/dot.xpdfrc ${PREFIX}/share/xpdf/japanese
 .for i in ${INSTALL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/xpdf/japanese
 .endfor
