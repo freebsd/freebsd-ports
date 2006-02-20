@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	intlhack
 
+MAN1=		scim-make-table.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
