@@ -1,5 +1,5 @@
---- install.sh.orig	Mon Nov 14 07:48:04 2005
-+++ install.sh	Sat Nov 26 15:53:03 2005
+--- install.sh.orig	Sun Feb 19 22:58:34 2006
++++ install.sh	Sun Feb 19 23:34:13 2006
 @@ -381,7 +381,7 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -9,7 +9,7 @@
  		cpf='-f'
  		if test "$verbose" -gt '1'
  		then
-@@ -757,12 +757,11 @@
+@@ -771,12 +771,11 @@
      debug_msg 0 "in generate_wrapper()"
  
      case "${machine}:${os}" in
@@ -26,7 +26,7 @@
  	    wrapper_sunjava_machine="i386"
  	;;
  
-@@ -792,7 +791,7 @@
+@@ -806,7 +805,7 @@
  		error 'os'
  	;;
      esac
@@ -35,7 +35,7 @@
  
      wrapper_contain="#!/bin/sh
  
-@@ -844,6 +843,10 @@
+@@ -865,6 +864,10 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -46,7 +46,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -851,8 +854,8 @@
+@@ -872,8 +875,8 @@
  fi
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
@@ -57,7 +57,7 @@
          if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
      fi
  fi
-@@ -867,65 +870,16 @@
+@@ -888,69 +891,16 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -70,10 +70,14 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	java-1.5.0-sun-1.5.0.06 \\
+-	java-1.5.0-sun-1.5.0.06/jre \\
 -	java-1.5.0-sun-1.5.0.05 \\
 -	java-1.5.0-sun-1.5.0.05/jre \\
 -	java-1.5.0-sun-1.5.0.04 \\
 -	java-1.5.0-sun-1.5.0.04/jre \\
+-	jre1.5.0_06 \\
+-	jdk1.5.0_06/jre \\
 -	jre1.5.0_05 \\
 -	jdk1.5.0_05/jre \\
 -	jre1.5.0_04 \\
@@ -131,7 +135,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -976,11 +930,8 @@
+@@ -1001,11 +951,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -145,7 +149,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1018,7 +969,7 @@
+@@ -1055,7 +1002,7 @@
  };
  
  // Opera package classes get all permissions
@@ -154,7 +158,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1086,7 +1037,7 @@
+@@ -1123,7 +1070,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -163,7 +167,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1124,7 +1075,7 @@
+@@ -1161,7 +1108,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
@@ -172,7 +176,7 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1165,9 +1116,6 @@
+@@ -1202,9 +1149,6 @@
  	mkdir $mkdirv $mkdirp $share_dir/ini/
  	chmod $chmodv 755 $share_dir/ini
  	cp $cpv $cpf $cpR ini/* $share_dir/ini/
@@ -182,54 +186,46 @@
      fi
  
      # Support old way
-@@ -1232,27 +1180,6 @@
-     mkdir $mkdirv $mkdirp $plugin_dir/
-     chmod $chmodv 755 $plugin_dir
- 
--    if test -f plugins/operamotifwrapper
--    then
--	cp $cpv $cpf plugins/operamotifwrapper $plugin_dir/
--	chmod $chmodv 755 $plugin_dir/operamotifwrapper
--	plugin_support='yes'
--    fi
--
--    if test -f plugins/operamotifwrapper-1
--    then
--	cp $cpv $cpf plugins/operamotifwrapper-1 $plugin_dir/
--	chmod $chmodv 755 $plugin_dir/operamotifwrapper-1
--	plugin_support='yes'
--    fi
--
--    if test -f plugins/operamotifwrapper-2
--    then
--	cp $cpv $cpf plugins/operamotifwrapper-2 $plugin_dir/
--	chmod $chmodv 755 $plugin_dir/operamotifwrapper-2
--	plugin_support='yes'
--    fi
--
-     if test -f plugins/operamotifwrapper-3
-     then
- 	cp $cpv $cpf plugins/operamotifwrapper-3 $plugin_dir/
-@@ -1260,13 +1187,6 @@
+@@ -1274,35 +1218,11 @@
+ 	chmod $chmodv 755 $plugin_dir/operapluginwrapper
  	plugin_support='yes'
-     fi
- 
--    if test -f plugins/operamotifwrapper-4
--    then
--	cp $cpv $cpf plugins/operamotifwrapper-4 $plugin_dir/
--	chmod $chmodv 755 $plugin_dir/operamotifwrapper-4
--	plugin_support='yes'
--    fi
+     else
+-	if test -f plugins/operamotifwrapper; then
+-	    cp $cpv $cpf plugins/operamotifwrapper $plugin_dir/
+-	    chmod $chmodv 755 $plugin_dir/operamotifwrapper
+-	    plugin_support='yes'
+-	fi
 -
-     if test -f plugins/libnpp.so
-     then
- 	cp $cpv $cpf plugins/libnpp.so $plugin_dir/
-@@ -1300,49 +1220,13 @@
+-	if test -f plugins/operamotifwrapper-1; then
+-	    cp $cpv $cpf plugins/operamotifwrapper-1 $plugin_dir/
+-	    chmod $chmodv 755 $plugin_dir/operamotifwrapper-1
+-	    plugin_support='yes'
+-	fi
+-
+-	if test -f plugins/operamotifwrapper-2; then
+-	    cp $cpv $cpf plugins/operamotifwrapper-2 $plugin_dir/
+-	    chmod $chmodv 755 $plugin_dir/operamotifwrapper-2
+-	    plugin_support='yes'
+-	fi
+-
+ 	if test -f plugins/operamotifwrapper-3; then
+ 	    cp $cpv $cpf plugins/operamotifwrapper-3 $plugin_dir/
+ 	    chmod $chmodv 755 $plugin_dir/operamotifwrapper-3
+ 	    plugin_support='yes'
+ 	fi
+-
+-	if test -f plugins/operamotifwrapper-4; then
+-	    cp $cpv $cpf plugins/operamotifwrapper-4 $plugin_dir/
+-	    chmod $chmodv 755 $plugin_dir/operamotifwrapper-4
+-	    plugin_support='yes'
+-	fi
+     fi # operapluginwrapper
  
-     if test -z "${OPERADESTDIR}"
-     then
--	# System wide configuration files
--	config_dir="/etc"
+     if test -f plugins/libnpp.so
+@@ -1344,42 +1264,13 @@
+ 	    *)				config_dir="/etc";;
+ 	esac
+ 
 -	if can_write_to "$config_dir"
 -	then
 -	    echo
@@ -265,38 +261,78 @@
 -
  	if test "${bool_icons}" -ne 0
  	then
--	    icons
- 	    gnome
- 	    kde 3
--	    kde 2
--	    kde1
--	    mandrake
+-	    xdg
++	    gnome
++	    kde 3
  	fi
  
      fi # OPERADESTDIR
-@@ -1391,15 +1275,16 @@
- {
+@@ -1429,19 +1320,19 @@
      # arg1 = location
+     # arg2 = type
  
--    desktop_file="$1/opera.desktop"
-+    desktop_file="$1/linux-opera.desktop"
+-    desktop_file="${1}/opera.desktop"
++    desktop_file="${1}/linux-opera.desktop"
+     desktop_contain='[Desktop Entry]'
  
-     desktop_contain='[Desktop Entry]
+     if test ${2}; then
+ 	if test "${2}" = "xdg"; then
+ 	    desktop_contain="${desktop_contain}
+ Version=1.0
+-TryExec=opera"
++TryExec=linux-opera"
+ 	fi
+ 
+ 	desktop_contain="${desktop_contain}
+ Encoding=UTF-8
 -Name=Opera
 +Name=Opera (linux version)
- Comment=Web Browser
+ Name[af]=opera
+ Name[eo]=Opero
+ Name[zu]=I Opera
+@@ -1465,7 +1356,7 @@
+ GenericName[ven]=Buronza ya Webu
+ GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
+ GenericName[zu]=Umkhangeli zincwadi we Web
+-Exec=opera %u
++Exec=linux-opera %u
+ Terminal=false"
+ 
+ # Application is not a category, according to
+@@ -1480,25 +1371,26 @@
+ 	if test "${2}" = "xdg"; then
+ 	    desktop_contain="${desktop_contain}
+ Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
+-Icon=opera.png"
++Icon=linux-opera.png"
+ 	else
+ 	    desktop_contain="${desktop_contain}
+-Icon=opera"
++Icon=linux-opera"
+ 	fi
+ 
+ 	desktop_contain="${desktop_contain}
+ MimeType=text/html;text/xml;application/xhtml+xml"
+     else
+ 	desktop_contain="${desktop_contain}
+-Name=Opera
 -Exec=opera
 -Icon=opera.xpm
++Name=Opera (linux version)
 +Exec=linux-opera
 +Icon=linux-opera.xpm
- Terminal=0
--Type=Application'
+ Terminal=0"
+     fi
+ 
+     desktop_contain="${desktop_contain}
+ Comment=Web Browser
+-Type=Application"
 +Type=Application
-+Categories=Application;Network;WebBrowser;'
++Categories=Application;Network;WebBrowser;"
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1487,88 +1372,26 @@
+@@ -1586,88 +1478,26 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -404,7 +440,7 @@
  }
  
  kde()
-@@ -1576,58 +1399,46 @@
+@@ -1675,58 +1505,46 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
