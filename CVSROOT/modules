@@ -7318,6 +7318,7 @@ p4delta		ports/devel/p4delta
 p4genpatch	ports/devel/p4genpatch
 p4v		ports/devel/p4v
 p54u		ports/net/p54u
+p5-AI-Categorizer	ports/textproc/p5-AI-Categorizer
 p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-Genetic	ports/math/p5-AI-Genetic
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
