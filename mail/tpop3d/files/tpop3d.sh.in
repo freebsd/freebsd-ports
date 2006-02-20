@@ -3,7 +3,6 @@
 
 # PROVIDE: tpop3d
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD
 
 #
 # Add the following line to /etc/rc.conf to enable tpop3d:

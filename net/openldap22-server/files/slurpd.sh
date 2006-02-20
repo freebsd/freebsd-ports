@@ -6,7 +6,7 @@
 # PROVIDE: slurpd
 # REQUIRE: slapd
 # BEFORE:
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable slurpd:
 #

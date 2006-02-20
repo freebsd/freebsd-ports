@@ -4,7 +4,7 @@
 # PROVIDE: watchquagga
 # REQUIRE: netif routing mountcritlocal quagga
 # BEFORE:  NETWORKING
-# KEYWORD: FreeBSD NetBSD
+# KEYWORD: NetBSD
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:

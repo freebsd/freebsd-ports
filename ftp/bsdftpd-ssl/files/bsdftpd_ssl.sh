@@ -3,7 +3,7 @@
 # PROVIDE: bsdftpd_ssl
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # You need to set "bsdftpd_ssl_enable=YES" in either /etc/rc.conf,

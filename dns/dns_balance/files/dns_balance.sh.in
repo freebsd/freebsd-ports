@@ -4,7 +4,6 @@
 #
 # PROVIDE: dns_balance
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 
 . %%RC_SUBR%%
 

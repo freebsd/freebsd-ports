@@ -5,7 +5,6 @@
 
 # PROVIDE: estctrl
 # REQUIRE: est
-# KEYWORD: FreeBSD
 
 # Define estctrl_* variables in one of these files:
 #	/etc/rc.conf

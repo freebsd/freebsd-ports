@@ -6,7 +6,7 @@
 # PROVIDE: jabber_users_agent
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Define these jabber_users_agent_* variables in one of these files:
 #       /etc/rc.conf

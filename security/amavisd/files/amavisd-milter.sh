@@ -5,7 +5,7 @@
 
 # PROVIDE: amavisd-milter
 # BEFORE: amavisd mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 prefix=%%PREFIX%%
 

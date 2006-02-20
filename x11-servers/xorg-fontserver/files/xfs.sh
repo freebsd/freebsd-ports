@@ -1,12 +1,11 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/x11-servers/xorg-fontserver/files/Attic/xfs.sh,v 1.2 2006-01-05 17:08:06 lesi Exp $
+# $FreeBSD: /tmp/pcvs/ports/x11-servers/xorg-fontserver/files/Attic/xfs.sh,v 1.3 2006-02-20 20:47:50 dougb Exp $
 #
 
 # PROVIDE: xfs
 # REQUIRE: cleartmp ldconfig
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD
 
 # The following variables are provided to control startup of X font server in
 # rc configuration file (eg /etc/rc.conf):

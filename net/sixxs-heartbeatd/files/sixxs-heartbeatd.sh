@@ -5,7 +5,6 @@
 
 # PROVIDE: sixxs-heartbeatd
 # REQUIRE: NETWORKING
-# KEYWORD: FreeBSD
 
 #
 # Add the following lines to /etc/rc.conf to enable sixxs-heartbeatd:

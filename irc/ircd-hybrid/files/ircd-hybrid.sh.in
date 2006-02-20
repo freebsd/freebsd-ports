@@ -3,7 +3,7 @@
 # PROVIDE: ircd-hybrid
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # To get ircd-hybrid enabled at boot, add the following lines to /etc/rc.conf :
 # ircd_hybrid_enable (bool):    Set to "NO" by default.

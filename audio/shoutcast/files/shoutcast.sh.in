@@ -4,7 +4,7 @@
 # PROVIDE: shoutcast
 # REQUIRE: LOGIN
 # BEFORE:
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 

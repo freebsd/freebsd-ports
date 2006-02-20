@@ -3,7 +3,7 @@
 
 # PROVIDE: mlnet
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 mlnet_enable=${mlnet_enable:-"NO"}
 mlnet_http_port=${mlnet_http_port:-"4080"}

@@ -5,7 +5,7 @@
 
 # PROVIDE: vpb-driver
 # REQUIRE: NETWORKING
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #	we load the vpb-driver after the network is fully loaded
 #       (for VOIP?)
 

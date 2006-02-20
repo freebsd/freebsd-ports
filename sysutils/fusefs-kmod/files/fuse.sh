@@ -3,7 +3,7 @@
 
 # PROVIDE: fusefs
 # REQUIRE: sysctl
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 [ -z "${fusefs_enable}" ]	&& fusefs_enable="NO"
 

@@ -5,7 +5,7 @@
 
 # PROVIDE: cyrus_smlacapd_backend
 # REQUIRE: DAEMON cyrus_pwcheck
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable cyrus_smlacapd_backend:

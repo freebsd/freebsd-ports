@@ -4,7 +4,6 @@
 #
 # PROVIDE: tac_plus
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable the TACACS+ daemon:
 #

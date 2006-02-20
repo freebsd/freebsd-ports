@@ -3,7 +3,6 @@
 
 # PROVIDE: symon
 # REQUIRE: NETWORKING SERVERS
-# KEYWORD: FreeBSD
 
 . %%RC_SUBR%%
 

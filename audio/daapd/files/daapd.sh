@@ -3,7 +3,7 @@
 
 # PROVIDE: daapd
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these daapd_* variables in one of these files:
 #       /etc/rc.conf

@@ -5,7 +5,6 @@
 
 # PROVIDE: oops
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 
 . "%%RC_SUBR%%"
 

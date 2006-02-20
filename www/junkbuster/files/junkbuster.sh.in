@@ -3,7 +3,6 @@
 # PROVIDE: junkbuster
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD
 
 #
 # Add the following lines to /etc/rc.conf to enable junkbuster:

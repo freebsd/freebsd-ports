@@ -6,7 +6,6 @@
 # PROVIDE: bigsister
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD
 
 . %%RC_SUBR%%
 

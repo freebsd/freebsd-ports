@@ -4,7 +4,7 @@
 #
 # PROVIDE: binkd 
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Define these binkd_* variables in one of these files:
 #       /etc/rc.conf

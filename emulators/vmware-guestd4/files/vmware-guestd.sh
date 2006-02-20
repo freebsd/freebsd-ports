@@ -6,7 +6,6 @@
 # PROVIDE: vmware-guestd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD
 
 PREFIX=%%PREFIX%%
 . %%RC_SUBR%%

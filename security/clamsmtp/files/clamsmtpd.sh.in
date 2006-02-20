@@ -4,7 +4,6 @@
 #
 # PROVIDE: clamsmtpd
 # REQUIRE: DAEMON %%CLAMD%%
-# KEYWORD: FreeBSD
 #
 # Add the fellowing line to /etc/rc.conf.local or /etc/rc.conf
 # to enable clamsmtpd:

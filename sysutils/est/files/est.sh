@@ -6,7 +6,6 @@
 # PROVIDE: est
 # REQUIRE: abi
 # BEFORE: securelevel
-# KEYWORD: FreeBSD
 
 # Define est_* variables in one of these files:
 #	/etc/rc.conf

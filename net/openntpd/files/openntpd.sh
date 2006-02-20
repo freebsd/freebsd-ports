@@ -6,7 +6,7 @@
 # PROVIDE: openntpd
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD nojail
+# KEYWORD: nojail
 
 . %%RC_SUBR%%
 

@@ -4,7 +4,6 @@
 #
 # PROVIDE: mdnsresponder
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Howl's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
 #

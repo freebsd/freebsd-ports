@@ -6,7 +6,7 @@
 # PROVIDE: widentd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD startup and shutdown
+# KEYWORD: shutdown
 #
 prefix=%%PREFIX%%
 

@@ -1,6 +1,6 @@
---- bin/sms.orig	Sun Apr 17 12:56:51 2005
-+++ bin/sms	Sun Apr 17 12:58:09 2005
-@@ -1,21 +1,27 @@
+--- bin/sms.orig	Thu Jan 30 05:31:18 2003
++++ bin/sms	Mon Feb 20 12:39:53 2006
+@@ -1,21 +1,26 @@
 -#! /bin/sh
 -# This script can be used to start/stop smsd 
 -# as a daemon in Linux and Solaris.
@@ -10,7 +10,6 @@
 +#
 +# PROVIDE: smsd 
 +# REQUIRE: DAEMON
-+# KEYWORD: FreeBSD
 +#
 +# Add the following line to %%PREFIX%%/etc/rc.conf to enable smsd:
 +#

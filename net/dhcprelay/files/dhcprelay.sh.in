@@ -1,10 +1,9 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/dhcprelay/files/Attic/dhcprelay.sh.in,v 1.1 2005-11-15 11:26:44 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/dhcprelay/files/Attic/dhcprelay.sh.in,v 1.2 2006-02-20 20:47:22 dougb Exp $
 #
 # PROVIDE: dhcprelay
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable dhcrelay:
 #

@@ -6,7 +6,7 @@
 # PROVIDE: pop3proxyd
 # REQUIRE: LOGIN
 # BEFORE: mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable pop3proxyd:

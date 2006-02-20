@@ -4,7 +4,7 @@
 # PROVIDE: musicpd
 # REQUIRE:
 # BEFORE:
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable mpd:
 #

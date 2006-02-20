@@ -5,7 +5,6 @@
 # PROVIDE: netustad
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Note:
 # If you are running an rcNG-System (i.e. FreeBSD 5 and later or after

@@ -2,7 +2,7 @@
 #
 # PROVIDE: gnump3d
 # REQUIRE: DAEMON NETWORKING LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 . %%RC_SUBR%%
 

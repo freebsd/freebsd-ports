@@ -6,7 +6,6 @@
 # PROVIDE: totd
 # REQUIRE: SERVERS
 # BEFORE:  DAEMON
-# KEYWORD: FreeBSD
 #
 # NOTE for FreeBSD 5.0+:
 # If you want this script to start with the base rc scripts

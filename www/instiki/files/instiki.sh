@@ -2,7 +2,6 @@
 #
 # PROVIDE: instiki
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable instiki:
 # instiki_enable (bool):      Set to "NO" by default

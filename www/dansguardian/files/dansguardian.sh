@@ -4,7 +4,7 @@
 # PROVIDE: dansguardian
 # REQUIRE: DAEMON squid
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these dansguardian_* variables in one of these files:
 #       /etc/rc.conf
