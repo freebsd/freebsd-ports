@@ -1,5 +1,5 @@
---- xmldiff.pl.orig	Sat Feb 11 08:32:29 2006
-+++ xmldiff.pl	Sat Feb 11 08:32:38 2006
+--- xmldiff.pl.orig	Sun Oct  9 11:59:04 2005
++++ xmldiff.pl	Sun Oct  9 11:59:37 2005
 @@ -7,12 +7,12 @@
  # 
  
