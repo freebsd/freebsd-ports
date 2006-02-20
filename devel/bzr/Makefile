@@ -12,10 +12,10 @@ MASTER_SITES=	http://www.bazaar-ng.org/pkg/
 MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
-MAINTAINER=	lulf@kerneled.org
+MAINTAINER=	lulf@stud.ntnu.no
 COMMENT=	A Python implementation of the GNU arch RCS protocol by Canonical
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
