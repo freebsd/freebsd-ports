@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/ggo
+%%DATADIR%%/gGo.jar
+%%DATADIR%%/LiquidLnF.jar
+%%DATADIR%%/ggohelp.jar
+%%DATADIR%%/jh.jar
+%%DATADIR%%/kunststoff.jar
+%%DATADIR%%/metouia.jar
+%%DATADIR%%/plastic.jar
+%%DATADIR%%/playerdb.jar
+%%DATADIR%%/skinlf.jar
+%%DATADIR%%/themepack.zip
+@dirrm %%DATADIR%%
