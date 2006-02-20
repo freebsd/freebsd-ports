@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="17c2a61e-a20b-11da-b410-000e0c2e438a">
+    <topic>pinentry -- local privilege escalation</topic>
+    <affects>
+      <package>
+	<name>pinentry</name>
+	<name>pinentry-curses</name>
+	<name>pinentry-gtk</name>
+	<name>pinentry-gtk2</name>
+	<name>pinentry-qt</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200601-01.xml">
+	  <p>Tavis Ormandy of the Gentoo Linux Security Audit Team has
+	    discovered that the pinentry ebuild incorrectly sets the
+	    permissions of the pinentry binaries upon installation, so
+	    that the sgid bit is set making them execute with the
+	    privileges of group ID 0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200601-01.xml</url>
+    </references>
+    <dates>
+      <discovery>2006-01-03</discovery>
+      <entry>2006-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b89dda1a-a206-11da-b410-000e0c2e438a">
     <topic>squid -- dns lookup spoofing</topic>
     <affects>
@@ -57,7 +90,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE9-dns_query</url>
     </references>
     <dates>
-      <discovery>2006-02-FIXME</discovery>
+      <discovery>2005-05-11</discovery>
       <entry>2006-02-20</entry>
     </dates>
   </vuln>
