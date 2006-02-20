@@ -62,8 +62,12 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="9cd52bc6-a213-11da-b410-000e0c2e438a">
-    <topic>abiword -- stack based buffer overflow vulnerabilities</topic>
+    <topic>abiword, koffice -- stack based buffer overflow vulnerabilities</topic>
     <affects>
+      <package>
+	<name>koffice</name>
+	<range><gt>1.2.0</gt><lt>1.4.1_1,1</lt></range>
+      </package>
       <package>
 	<name>abiword</name>
 	<range><lt>2.2.11</lt></range>
@@ -84,10 +88,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CAN-2005-2972</cvename>
       <url>http://scary.beasts.org/security/CESA-2005-006.txt</url>
       <url>http://www.abisource.com/changelogs/2.2.11.phtml</url>
+      <url>http://www.kde.org/info/security/advisory-20051011-1.txt</url>
     </references>
     <dates>
       <discovery>2005-10-14</discovery>
       <entry>2006-02-20</entry>
+      <modified>2006-02-20</modified>
     </dates>
   </vuln>
 
