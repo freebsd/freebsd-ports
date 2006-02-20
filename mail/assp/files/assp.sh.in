@@ -5,7 +5,7 @@
 
 # PROVIDE: assp
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 . %%RC_SUBR%%
 

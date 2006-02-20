@@ -4,7 +4,6 @@
 #
 # PROVIDE: devhelp
 # REQUIRE: ldconfig
-# KEYWORD: FreeBSD
 
 . /etc/rc.subr
 

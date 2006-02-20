@@ -4,7 +4,7 @@
 
 # PROVIDE: iiimd
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 prefix=%%PREFIX%%
 

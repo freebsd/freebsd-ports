@@ -6,7 +6,7 @@
 # PROVIDE: slapd
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: securelevel
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable slapd:

@@ -6,7 +6,6 @@
 # PROVIDE: lookupd
 # REQUIRE: mountcritlocal
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD
 
 #
 # Add the following lines to /etc/rc.conf to enable lookupd:

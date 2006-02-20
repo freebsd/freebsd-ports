@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/devel/cvsnt/files/Attic/cvslockd.sh.in,v 1.1 2005-04-19 19:03:52 fjoe Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/cvsnt/files/Attic/cvslockd.sh.in,v 1.2 2006-02-20 20:46:54 dougb Exp $
 #
 # PROVIDE: cvslockd
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 . %%RC_SUBR%%
 

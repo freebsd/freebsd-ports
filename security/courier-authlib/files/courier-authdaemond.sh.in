@@ -5,7 +5,7 @@
 # PROVIDE: courier_authdaemond
 # REQUIRE: DAEMON mysql ldconfig
 # BEFORE: mail imap
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 prefix="%%PREFIX%%"
 exec_prefix="${prefix}"

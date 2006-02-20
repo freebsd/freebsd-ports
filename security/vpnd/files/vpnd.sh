@@ -3,7 +3,7 @@
 # PROVIDE: vpnd
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 # 
 # Note:
 # Set "vpnd_enable=yes" in either /etc/rc.conf, /etc/rc.conf.local or

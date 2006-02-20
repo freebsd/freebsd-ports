@@ -1,10 +1,10 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/comms/ltmdm/files/Attic/ltmdm.sh.in,v 1.1 2005-04-18 15:20:08 vs Exp $
+# $FreeBSD: /tmp/pcvs/ports/comms/ltmdm/files/Attic/ltmdm.sh.in,v 1.2 2006-02-20 20:46:49 dougb Exp $
 
 # PROVIDE: ltmdm
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these ltmdm_* variables in one of these files:
 #       /etc/rc.conf

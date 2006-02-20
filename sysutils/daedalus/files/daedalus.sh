@@ -2,7 +2,6 @@
 #
 # PROVIDE: daedalus
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable daedalus:
 # daedalus_enable (bool):      Set to "NO" by default.

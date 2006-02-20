@@ -6,7 +6,7 @@
 # PROVIDE: rbldnsd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable rbldnsd:
 #

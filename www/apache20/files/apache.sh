@@ -6,7 +6,7 @@
 # PROVIDE: apache2
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable apache2:

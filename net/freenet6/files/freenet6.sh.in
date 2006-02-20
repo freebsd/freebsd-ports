@@ -7,7 +7,7 @@
 # PROVIDE: freenet6
 # REQUIRE: NETWORKING
 # BEFORE: SERVERS
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 
 #

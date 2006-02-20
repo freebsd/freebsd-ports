@@ -5,7 +5,7 @@
 
 # PROVIDE: uptimec
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Uptimec is enabled by default, if you have configuration file
 #

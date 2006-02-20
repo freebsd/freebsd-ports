@@ -6,7 +6,7 @@
 # PROVIDE: dspampd
 # REQUIRE: LOGIN %%CLAMAV%% %%DSPAM%%
 # BEFORE: mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf[.local] to enable dspampd:

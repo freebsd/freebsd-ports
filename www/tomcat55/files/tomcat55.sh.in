@@ -6,7 +6,7 @@
 # PROVIDE: tomcat%%TOMCAT_VERSION%%
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Configuration settings for tomcat%%TOMCAT_VERSION%% in /etc/rc.conf:

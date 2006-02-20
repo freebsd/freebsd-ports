@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.6 2005-12-30 23:37:16 girgen Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.7 2006-02-20 20:47:50 dougb Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 prefix=%%PREFIX%%
 

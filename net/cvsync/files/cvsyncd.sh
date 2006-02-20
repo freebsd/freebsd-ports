@@ -4,7 +4,6 @@
 #
 # PROVIDE: cvsyncd
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD
 #
 cvsyncd_enable=${cvsyncd_enable-"NO"}
 cvsyncd_pidfile=${cvsyncd_pidfile-"/var/run/cvsyncd.pid"}

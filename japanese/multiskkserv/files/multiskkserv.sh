@@ -5,7 +5,6 @@
 
 # PROVIDE: multiskkserv
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD
 
 #
 # Add the following lines to /etc/rc.conf to enable multiskkserv:

@@ -6,7 +6,7 @@
 # PROVIDE: rotorouter
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable rotorouter:
 #

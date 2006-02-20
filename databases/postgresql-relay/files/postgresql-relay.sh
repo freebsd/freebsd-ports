@@ -6,7 +6,7 @@
 # PROVIDE: postgresql-relay
 # REQUIRE: LOGIN
 # AFTER: postgresql
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable spamd:

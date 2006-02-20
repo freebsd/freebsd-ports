@@ -3,7 +3,6 @@
 #
 # PROVIDE: dictd
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable dictd:
 #

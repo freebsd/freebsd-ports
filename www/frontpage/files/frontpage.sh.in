@@ -5,7 +5,6 @@
 # PROVIDE: frontpage
 # REQUIRE: DAEMON
 # BEFORE: apache apache20 apache21 apache22
-# KEYWORD: FreeBSD
 
 # Define the following frontpage_* variables in one of the following:
 #       /etc/rc.conf

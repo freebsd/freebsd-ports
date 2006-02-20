@@ -3,7 +3,6 @@
 #
 # PROVIDE: dnrd
 # REQUIRE: DAEMON NETWORKING SERVERS
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable dnrd:
 #

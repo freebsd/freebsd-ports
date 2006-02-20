@@ -6,7 +6,7 @@
 # PROVIDE: zeo
 # REQUIRE: DAEMON
 # BEFORE: zope
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 prefix=%%PREFIX%%
 

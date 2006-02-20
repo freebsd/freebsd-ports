@@ -4,7 +4,6 @@
 #
 # PROVIDE: mpd
 # REQUIRE: NETWORKING syslogd
-# KEYWORD: FreeBSD
 #
 # Add the following line to /etc/rc.conf to enable mpd:
 #

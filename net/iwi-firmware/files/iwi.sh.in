@@ -6,7 +6,7 @@
 # PROVIDE: %%DRIVERNAME%%
 # REQUIRE: mountcritlocal
 # BEFORE:  ipfilter
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable `%%DRIVERNAME%%':
 #

@@ -4,7 +4,7 @@
 #
 # PROVIDE: openupsd
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 openupsd_enable=${openupsd_enable:-"NO"}
 

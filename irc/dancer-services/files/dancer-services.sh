@@ -4,7 +4,6 @@
 #
 
 # PROVIDE: dancer-services
-# KEYWORD: FreeBSD
 
 . %%RC_SUBR%%
 

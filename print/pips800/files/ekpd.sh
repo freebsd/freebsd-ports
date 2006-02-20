@@ -6,7 +6,7 @@
 # PROVIDE: ekpd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these ekpd_* variables in one of these files:
 #	/etc/rc.conf

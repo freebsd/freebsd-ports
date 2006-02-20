@@ -3,7 +3,7 @@
 
 # PROVIDE: ganglia
 # REQIORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # XXX: This should really be two seperate scripts with rcorder
 # dependencies, but we can't do that at the moment and gmetad doesn't

@@ -4,7 +4,7 @@
 # PROVIDE: vncreflector
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 _etcdir="%%PREFIX%%/etc/vncreflector"
 

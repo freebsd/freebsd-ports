@@ -6,7 +6,7 @@
 # PROVIDE: scanlogd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 
 prefix=%%PREFIX%%

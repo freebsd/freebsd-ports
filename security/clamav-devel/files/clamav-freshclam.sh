@@ -6,7 +6,7 @@
 # PROVIDE: freshclam
 # REQUIRE: LOGIN clamd
 # BEFORE: mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable the freshclam daemon:

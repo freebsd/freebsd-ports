@@ -3,7 +3,7 @@
 # PROVIDE: be-agent
 # REQUIRE: LOGIN
 # BEFORE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable be-agent:

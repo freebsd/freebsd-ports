@@ -5,7 +5,6 @@
 #
 # PROVIDE: mrtg_daemon
 # REQUIRE: DAEMON bsnmpd snmpd
-# KEYWORD: FreeBSD
 
 .  %%RC_SUBR%%
 

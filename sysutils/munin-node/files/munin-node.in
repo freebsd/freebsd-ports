@@ -4,7 +4,6 @@
 # PROVIDE: munin-node
 # REQUIRE: DAEMON
 # BEFORE:  cron
-# KEYWORD: FreeBSD
 
 #
 # Add the following lines to /etc/rc.conf to enable munin-node:

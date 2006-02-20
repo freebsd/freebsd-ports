@@ -5,7 +5,7 @@
 # PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN abi
 # BEFORE:  securelevel
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable `%%PORTNAME%%':
 #

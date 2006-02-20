@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/dns/powerdns/files/Attic/pdns_recursor.in,v 1.1 2006-02-15 12:56:37 ehaupt Exp $
+# $FreeBSD: /tmp/pcvs/ports/dns/powerdns/files/Attic/pdns_recursor.in,v 1.2 2006-02-20 20:46:57 dougb Exp $
 #
 
 # PROVIDE: pdns_recursor
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable pdns_recursor:

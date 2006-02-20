@@ -6,7 +6,7 @@
 # PROVIDE: pips
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these pips_* variables in one of these files:
 #	/etc/rc.conf

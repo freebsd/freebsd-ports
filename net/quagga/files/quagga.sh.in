@@ -4,7 +4,7 @@
 # PROVIDE: quagga
 # REQUIRE: netif routing mountcritlocal
 # BEFORE:  NETWORKING
-# KEYWORD: FreeBSD NetBSD
+# KEYWORD: NetBSD
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:

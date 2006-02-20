@@ -6,7 +6,7 @@
 # PROVIDE: saslauthd1
 # REQUIRE: DAEMON
 # BEFORE: mail imap
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 
 prefix=%%PREFIX%%

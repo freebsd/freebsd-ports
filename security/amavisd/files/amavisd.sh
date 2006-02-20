@@ -5,7 +5,7 @@
  
 # PROVIDE: amavisd
 # BEFORE: mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 prefix=%%PREFIX%%
 

@@ -4,7 +4,7 @@
 #
 # PROVIDE: proxyper
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 proxyper_enable=${proxyper_enable:-"NO"}
 

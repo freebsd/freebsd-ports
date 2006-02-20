@@ -1,10 +1,10 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/www/dansguardian-devel/files/Attic/dansguardian.sh.in,v 1.1 2005-12-27 23:02:10 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/dansguardian-devel/files/Attic/dansguardian.sh.in,v 1.2 2006-02-20 20:47:47 dougb Exp $
 
 # PROVIDE: dansguardian
 # REQUIRE: NETWORKING SERVERS squid
 # BEFORE:  DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Define these dansguardian_* variables in one of these files:
 #       /etc/rc.conf

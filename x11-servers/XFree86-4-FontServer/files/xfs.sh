@@ -6,7 +6,6 @@
 # PROVIDE: xfs
 # REQUIRE: cleartmp ldconfig
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD
 
 # The following variables are provided to control startup of X font server in
 # rc configuration file (eg /etc/rc.conf):
