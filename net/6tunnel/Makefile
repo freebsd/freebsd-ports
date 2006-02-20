@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://toxygen.net/6tunnel/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}rc2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	TCP proxy for applications that don't speak IPv6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
