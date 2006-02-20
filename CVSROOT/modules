@@ -10115,6 +10115,7 @@ portfwd		ports/net/portfwd
 portlet-api	ports/devel/portlet-api
 portlint	ports/devel/portlint
 portmanager	ports/sysutils/portmanager
+portmaster	ports/sysutils/portmaster
 portmk		ports/devel/portmk
 portmon		ports/net-mgmt/portmon
 portoseguro	ports/x11/portoseguro
