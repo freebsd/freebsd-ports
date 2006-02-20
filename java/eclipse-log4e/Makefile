@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	log4e
-PORTVERSION=	0.7.6
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	java
 MASTER_SITES=	http://log4e.jayefem.de/download/eclipse3/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	de.jayefem.${PORTNAME}_${PORTVERSION}
+DISTNAME=	de.jayefem.${PORTNAME}_free_${PORTVERSION}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
@@ -25,8 +24,13 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
+		@${MKDIR} -p ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
 		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+		@(cd ${WRKSRC}; ${FIND} -s features plugins -not -type d) \
+			| ${SED} -ne 's,^,eclipse/,p' >> ${TMPPLIST}
+		@(cd ${WRKSRC}; ${FIND} -s -d features plugins -type d) \
+			| ${GREP} -vE 'plugins$$|features$$' \
+			| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
