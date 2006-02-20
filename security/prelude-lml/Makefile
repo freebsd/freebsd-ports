@@ -6,6 +6,7 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS+=	prelude.6:${PORTSDIR}/security/libprelude \
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=	libtool:15:inc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
