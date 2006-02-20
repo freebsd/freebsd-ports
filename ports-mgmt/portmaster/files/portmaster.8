@@ -1,0 +1,130 @@
+.\" Copyright (c) 2006 Doug Barton dougb@FreeBSD.org
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd February 20, 2006
+.Dt PORTMASTER 8
+.Os
+.Sh NAME
+.Nm portmaster
+.Nd manage your ports
+.Sh SYNOPSIS
+.Nm
+.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Ar name of port directory in /var/db/pkg
+.Pp
+.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Ar glob pattern from /var/db/pkg
+.Pp
+.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Fl p Ar port directory in /usr/ports
+.Pp
+.Op Fl Canv [f|i] [D|d] m Ar arguments for make
+.Op Ar full path to /usr/ports/foo/bar
+.Pp
+.Op Fl Cnv [f|i] [D|d] m Ar arguments for make
+.Op Fl r Ar name/glob of port in /var/db/pkg
+.Pp
+.Op Fl h
+.Pp
+.Op Fl l
+.Pp
+.Sh DESCRIPTION
+The
+.Nm
+utility is a simple tool for managing your ports.
+It uses no external database to track what you
+have installed,
+rather it uses the existing ports infrastructure,
+including what is located in
+.Pa /var/db/pkg .
+The focus of this tool is to keep the dependency
+tracking information for your ports up to date,
+which allows you to update a specific port without
+having to update all of the ports
+.Dq above
+it.
+In the rare case where you do need to recompile
+ports which depend on a port you are updating,
+the -r option exists to accomplish this.
+.Pp
+The options are as follows:
+.Bl -tag -width F1
+.It Fl C
+Prevents 'make clean' being run in port directory
+.It Fl a
+check all ports, update as necessary
+.It Fl n
+do not launch child process to update dependencies
+.It Fl v
+verbose output
+.It Fl f
+always rebuild ports (overrides -i)
+.It Fl i
+interactive update mode
+.It Fl D
+prevents cleaning of distfiles
+.It Fl d
+always clean distfiles
+.It Fl p Ar port directory in /usr/ports
+Specify the full path to a port directory
+.It Fl m Ar arguments for make
+any arguments to supply to
+.Xr make 1
+.It Fl r Ar name/glob of port in /var/db/pkg
+rebuild port, and all ports that depend on it
+.It Fl h
+display help file
+.It Fl l
+list all installed ports by category
+.El
+.Sh FILES
+.Bl -tag -width ".Pa $HOME/.portmaster.rc" -compact
+.It Pa /etc/portmaster.rc
+.It Pa $HOME/.portmaster.rc
+Optional system and user configuration files.
+The variables set in the script's getopts routine
+can be specified in these files to enable those options.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+The following is an example of a typical usage
+of the
+.Nm
+command:
+.Pp
+.Dl "portmaster fooport-1.23"
+.Dl "portmaster fooport"
+.Dl "portmaster -p /usr/ports/foo/fooport"
+.Dl "portmaster foo/fooport"
+.Dl "portmaster -r fooport-1.23"
+.Sh SEE ALSO
+.Xr make 1
+.Xr ports 7
+.Sh AUTHORS
+This
+manual page was written by
+.An Doug Barton <dougb@Freebsd.org> .
