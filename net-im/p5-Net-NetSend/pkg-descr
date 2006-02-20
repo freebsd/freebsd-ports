@@ -4,4 +4,4 @@ This is a pure Perl implementation
 that approximates the "net send" command on Windows.
 
 Author:	Florian Greb <greb@cpan.org>
-WWW:	http://search.cpan.org/~greb/Net-NetSend-0.12/
+WWW:	http://search.cpan.org/dist/Net-NetSend/

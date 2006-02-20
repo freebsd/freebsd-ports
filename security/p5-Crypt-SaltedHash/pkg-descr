@@ -3,4 +3,4 @@ salted (or seeded) hashes of clear text data. The original formalization of
 this concept comes from RFC-3112 and is extended by the use of different
 digital agorithms.
 
-WWW: http://search.cpan.org/dist/Crypt-SaltedHash
+WWW: http://search.cpan.org/dist/Crypt-SaltedHash/

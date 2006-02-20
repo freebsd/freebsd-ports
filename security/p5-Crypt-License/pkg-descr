@@ -10,4 +10,4 @@ attached encrypted module is loaded and the seconds remaining until License
 expiration are returned or now() in the case of no expiration. Undef is
 returned for an expired license (module fails to load).
 
-WWW: http://search.cpan.org/dist/Crypt-License
+WWW: http://search.cpan.org/dist/Crypt-License/

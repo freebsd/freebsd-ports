@@ -6,4 +6,4 @@ suited for data load balancing.
 If you prefer a fast implementation, you might want to
 consider Digest::Pearson instead.
 
-WWW: http://search.cpan.org/dist/Digest-Pearson-PurePerl
+WWW: http://search.cpan.org/dist/Digest-Pearson-PurePerl/

@@ -11,4 +11,4 @@ We simply provide a little wrapper around Text::CSV_XS to streamline
 the common case scenario. (Or at least my common case scenario; feel
 free to write your own wrapper if this one doesn't do what you want).
 
-WWW: http://search.cpan.org/search?dist=Text-CSV-Simple
+WWW: http://search.cpan.org/dist/Text-CSV-Simple/

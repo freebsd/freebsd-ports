@@ -20,4 +20,4 @@ processor in order to hack on the sources. This is of no concern
 for you if you only want to use the module, the preprocessed
 output is always included in the distribution.
 
-WWW: http://search.cpan.org/dist/Crypt-DES_PP
+WWW: http://search.cpan.org/dist/Crypt-DES_PP/

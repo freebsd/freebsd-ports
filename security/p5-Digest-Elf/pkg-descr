@@ -2,4 +2,4 @@ Digest::Elf provides an XS based implementation of the ElfHash algorithm.
 ElfHash generates resonably 32 bit integer value from a string in a
 reasonably short period of time.
 
-WWW: http://search.cpan.org/dist/Digest-Elf
+WWW: http://search.cpan.org/dist/Digest-Elf/

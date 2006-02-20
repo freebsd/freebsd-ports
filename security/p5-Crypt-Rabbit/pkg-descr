@@ -2,4 +2,4 @@ Rabbit is a new stream cipher based on the properties of counter assisted
 stream ciphers, invented by Martin Boesgaard, Mette Vesterager,
 Thomas Pedersen, Jesper Christiansen, and Ove Scavenius of Cryptico A/S.
 
-WWW: http://search.cpan.org/dist/Crypt-Rabbit
+WWW: http://search.cpan.org/dist/Crypt-Rabbit/

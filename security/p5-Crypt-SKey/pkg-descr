@@ -9,4 +9,4 @@ of these functions by exporting them in the same manner as `compute' in
 the above example.
 Most S/Key systems use MD4 hashing, but a few (notably OPIE) use MD5.
 
-WWW: http://search.cpan.org/dist/Crypt-SKey
+WWW: http://search.cpan.org/dist/Crypt-SKey/

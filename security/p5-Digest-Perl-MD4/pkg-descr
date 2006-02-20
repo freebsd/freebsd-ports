@@ -3,4 +3,4 @@ implementation of MD4 (like `Digest::Perl::MD5'). Because of this, it is
 slow but avoids platform specific complications. For efficiency you
 should use `Digest::MD4' instead of this module if it is available.
 
-WWW: http://search.cpan.org/dist/Digest-Perl-MD4
+WWW: http://search.cpan.org/dist/Digest-Perl-MD4/

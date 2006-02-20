@@ -3,4 +3,4 @@ designed by Lawrie Brown, Josef Pieprzyk, and Jennifer Seberry. The default
 key length in this implementation is 128 bits. Loki97 was one of the 15
 candidates for the AES.
 
-WWW: http://search.cpan.org/dist/Crypt-Loki97
+WWW: http://search.cpan.org/dist/Crypt-Loki97/

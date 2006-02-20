@@ -7,4 +7,4 @@ what would mainly be processing 16 bytes at a time. This code is part of an
 ongoing effort to clone portions of the Apple iTMS in Perl for portability. 
 See www.hymn-project.org for prior efforts by others.
 
-WWW: http://search.cpan.org/dist/Crypt-AppleTwoFish
+WWW: http://search.cpan.org/dist/Crypt-AppleTwoFish/

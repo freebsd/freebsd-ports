@@ -11,5 +11,5 @@ servers. This module implements a subclass of the XML::LibXML::Document
 module that simplifies the process of creation of these frames. It is 
 designed to be used alongside the Net::EPP::Client module.
 
-WWW: http://search.cpan.org/dist/Net-EPP-Frame
+WWW: http://search.cpan.org/dist/Net-EPP-Frame/
 Author: Gavin Brown <epp@centralnic.com>

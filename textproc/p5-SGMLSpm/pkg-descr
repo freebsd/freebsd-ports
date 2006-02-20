@@ -1,4 +1,4 @@
 This distribution contains SGMLS.pm, a perl5 class library for parsing
 the output from James Clark's SGMLS and NSGMLS parsers.
 
-WWW: http://search.cpan.org/search?dist=SGMLSpm
+WWW: http://search.cpan.org/dist/SGMLSpm/

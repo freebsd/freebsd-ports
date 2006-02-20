@@ -4,4 +4,4 @@ input a message of arbitrary length and produces as output a 32-bit
 "message digest" of the input in the form of an unsigned long integer.
 See http://burtleburtle.net/bob/hash/doobs.html for more information.
 
-WWW: http://search.cpan.org/dist/Digest-JHash
+WWW: http://search.cpan.org/dist/Digest-JHash/

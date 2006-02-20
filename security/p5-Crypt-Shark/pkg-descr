@@ -2,4 +2,4 @@ Shark is 64-bit block cipher that accepts a 128-bit key. It was
 designed by Vincent Rijmen, Joan Daemen, Bart Preneel, Antoon
 Bosselaers, and Erik De Win.
 
-WWW: http://search.cpan.org/dist/Crypt-Shark
+WWW: http://search.cpan.org/dist/Crypt-Shark/
