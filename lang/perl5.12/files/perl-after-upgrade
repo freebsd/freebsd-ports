@@ -411,7 +411,7 @@ sub might_need_to_fix
 		return 1;
 	}
 	for ($pkg->lines) {
-		if (/^\@pkgdep\s+perl-($fuzzy_source)\S*\s*$/) {
+		if (/^\@pkgdep\s+perl-(threaded-)?($fuzzy_source)\S*\s*$/) {
 			return 1;
 		}
 	}
@@ -581,10 +581,10 @@ while (my $pkg = $db->next) {
 		}
 		if (/^\@cwd\s+(\S+)\s*$/) {
 			$prefix = $1;
-		} elsif (/^\@pkgdep\s+perl-($fuzzy_source)\S*\s*$/) {
-			if ($target ne $1) {
-				my $perlver = $1;
-				s|perl-\Q$perlver\E|perl-$target|;
+		} elsif (/^\@pkgdep\s+perl-(threaded-)?($fuzzy_source)\S*\s*$/) {
+			if ($target ne $2) {
+				my $perlver = $2;
+				s|perl-(threaded-)?\Q$perlver\E|perl-$target|;
 			}
 		}
 		my $old = $_;
