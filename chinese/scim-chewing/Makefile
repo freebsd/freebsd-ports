@@ -18,6 +18,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

@@ -18,6 +18,8 @@ COMMENT=	QuickTime Utilities
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
+BROKEN=		Does not build
+
 USE_GNOME=	glib12
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
