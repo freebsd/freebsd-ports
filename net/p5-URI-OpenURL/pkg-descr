@@ -18,5 +18,5 @@ included in a ContextObject. The other five entities - ReferringEntity,
 Requester, Resolver, ServiceType and Referrer - hold information about the 
 context of the reference and are optional.
 
-WWW: http://search.cpan.org/dist/URI-OpenURL
+WWW: http://search.cpan.org/dist/URI-OpenURL/
 Author: Tim Brody <tdb01r@ecs.soton.ac.uk>

@@ -5,4 +5,4 @@ of the app makes an assertion about the necessary roles.
 If the user is a member in all of the required roles access is granted.
 Otherwise, access is denied.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authorization-Roles
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authorization-Roles/

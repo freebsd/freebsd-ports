@@ -4,7 +4,7 @@ have an intersection point, the coordinates of the point are the
 returnvalue. If the given lines have infinite intersection points, -1 is 
 returned.
 
-WWW: http://search.cpan.org/dist/Math-Intersection-StraightLine
+WWW: http://search.cpan.org/dist/Math-Intersection-StraightLine/
 Author: Renee Baecker <module@renee-baecker.de>
 
 -- 

@@ -5,4 +5,4 @@ module if it is available. This module is only usefull for
 computers where you cannot install "Digest::MD5" (e.g. lack of a
 C-Compiler).
 
-WWW: http://search.cpan.org/dist/Digest-Perl-MD5
+WWW: http://search.cpan.org/dist/Digest-Perl-MD5/

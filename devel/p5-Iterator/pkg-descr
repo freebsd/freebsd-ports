@@ -15,5 +15,5 @@ Iterator.pm provides a class that simplifies creation and use of these
 iterator objects. Other Iterator:: modules (see "SEE ALSO") provide many 
 general-purpose and special-purpose iterator functions.
 
-WWW: http://search.cpan.org/dist/Iterator
+WWW: http://search.cpan.org/dist/Iterator/
 Author: Eric J. Roode <roode@cpan.org>

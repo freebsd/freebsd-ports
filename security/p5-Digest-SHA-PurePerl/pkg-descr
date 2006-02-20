@@ -7,4 +7,4 @@ Digest::SHA::PurePerl is written entirely in Perl.  If your platform
 has a C compiler, you should install the functionally-equivalent
 (but much faster) Digest::SHA module.
 
-WWW: http://search.cpan.org/dist/Digest-SHA-PurePerl
+WWW: http://search.cpan.org/dist/Digest-SHA-PurePerl/

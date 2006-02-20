@@ -4,4 +4,4 @@ provides such an interface for POE applications. By default, it
 provides a fairly limited set of commands but is easily extended 
 to provide whatever command set you require.
 
-WWW: http://search.cpan.org/dist/POE-Component-ControlPort
+WWW: http://search.cpan.org/dist/POE-Component-ControlPort/

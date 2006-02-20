@@ -16,5 +16,5 @@ some gene randomly changes value, resulting in a different individual. If
 all is well defined, after a few generations, the population should 
 converge on a "good-enough" solution to the problem being tackled.
 
-WWW: http://search.cpan.org/dist/AI-Genetic
+WWW: http://search.cpan.org/dist/AI-Genetic/
 Author: Ala Qumsieh <aqumsieh@cpan.org>

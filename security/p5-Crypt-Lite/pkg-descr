@@ -11,4 +11,4 @@ are able to make double or tripple-encryption with any data to increase
 the security. Decryption works also on hashes that have been encrypted
 on a foreign host (try this with an unpatched IDEA installation ;-).
 
-WWW: http://search.cpan.org/dist/Crypt-Lite
+WWW: http://search.cpan.org/dist/Crypt-Lite/

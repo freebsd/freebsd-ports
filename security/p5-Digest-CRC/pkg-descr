@@ -1,4 +1,4 @@
 The Digest::CRC module calculates CRC sums of all sorts. It contains wrapper
 functions with the correct parameters for CRC-CCITT, CRC-16 and CRC-32.
 
-WWW: http://search.cpan.org/dist/Digest-CRC
+WWW: http://search.cpan.org/dist/Digest-CRC/

@@ -20,4 +20,4 @@ as one of the NESSIE winners for Message Authentication Codes, along
 with UMAC, TTMAC and HMAC. The current NESSIE specification chooses the
 AES as block cipher.
 
-WWW: http://search.cpan.org/dist/Digest-EMAC
+WWW: http://search.cpan.org/dist/Digest-EMAC/

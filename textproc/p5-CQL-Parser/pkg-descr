@@ -16,7 +16,7 @@ the CQL statement. This data structure can then be used by a client
 application to analyze the statement, and possibly turn it into a query 
 for a local repository.
 
-WWW: http://search.cpan.org/dist/CQL-Parser
+WWW: http://search.cpan.org/dist/CQL-Parser/
 Authors:
     * Ed Summers - ehs at pobox dot com
     * Brian Cassidy - brian.cassidy at gmail dot com

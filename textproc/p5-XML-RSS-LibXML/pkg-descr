@@ -3,4 +3,4 @@ XML::RSS' XML::Parser (expat), while trying to keep interface
 compatibility with XML::RSS.
 
 Author:	Daisuke Maki <dmaki@cpan.org>
-WWW:	http://search.cpan.org/dist/XML-RSS-LibXML
+WWW:	http://search.cpan.org/dist/XML-RSS-LibXML/

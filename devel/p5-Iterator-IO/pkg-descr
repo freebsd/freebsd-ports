@@ -1,5 +1,5 @@
 This module provides filesystem and stream iterator functions. See the 
 Iterator module for more information about how to use iterators.
 
-WWW: http://search.cpan.org/dist/Iterator-DBI
+WWW: http://search.cpan.org/dist/Iterator-DBI/
 Author: Eric J. Roode <roode@cpan.org>
