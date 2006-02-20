@@ -7,7 +7,7 @@
 
 PORTNAME=		afbinit
 PORTVERSION=		1.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		sysutils graphics
 MASTER_SITES=		${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/contrib/a/afbinit
@@ -22,18 +22,18 @@ MAINTAINER=		marius@FreeBSD.org
 COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
 ONLY_FOR_ARCHS=		sparc64
-USE_REINPLACE=		yes
+USE_RC_SUBR=		afbinit.sh
 WRKSRC=			${WRKDIR}/${DISTNAME:S/_/-/}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 MAN8=			afbinit.8
 
 post-patch:
-.for i in afbinit.c debian/afbinit.8 debian/afbinit.init
+.for i in afbinit.c debian/afbinit.8
 	@${REINPLACE_CMD} -E -e 's|\/usr\/lib|${DATADIR}|g; \
 		s|(\/dev\/fb\[)[0-3]+(\])|\10-7\2|g; \
-		s|\/etc\/init.d\/afb|${PREFIX}/etc/afbinit.sh|g; \
-		s|\/usr\/sbin|${PREFIX}/sbin|g' ${WRKSRC}/${i}
+		s|\/etc\/init.d\/afb|${PREFIX}/etc/rc.d/afbinit\{,.sh\}|g' \
+		${WRKSRC}/${i}
 .endfor
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
@@ -44,8 +44,6 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/afbinit ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/debian/afbinit.8 ${PREFIX}/man/man8
-	@${INSTALL_SCRIPT} ${WRKSRC}/debian/afbinit.init \
-		${PREFIX}/etc/rc.d/afbinit.sh
 	@${INSTALL} -d ${DATADIR}
 
 post-install:
