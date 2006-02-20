@@ -6,6 +6,7 @@ share/doctools/tmac/thesis.me
 share/doctools/tmac/tbl.me
 share/doctools/tmac/srefs
 share/doctools/tmac/sh.me
+share/doctools/tmac/safe
 share/doctools/tmac/s
 share/doctools/tmac/refer.me
 share/doctools/tmac/ptx
@@ -186,6 +187,7 @@ share/doctools/font/devpost/postscript/forms.ps
 share/doctools/font/devpost/postscript/fatcourier.ps
 share/doctools/font/devpost/postscript/draw.ps
 share/doctools/font/devpost/postscript/dpost.ps
+share/doctools/font/devpost/postscript/cutmarks.ps
 share/doctools/font/devpost/postscript/color.ps
 share/doctools/font/devpost/postscript/baseline.ps
 share/doctools/font/devpost/postscript/aps.ps

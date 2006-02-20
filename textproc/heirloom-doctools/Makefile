@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	heirloom-doctools
-PORTVERSION=	0.0.051202
+PORTVERSION=	0.0.060208
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	heirloom/
@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
-
-BROKEN=		Incorrect pkg-plist
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -46,7 +44,7 @@ MAN1+=		vgrind.1 troff.1 tbl.1 sortbib.1 \
 		picpack.1 pic.1 otfdump.1 nroff.1 \
 		neqn.1 lookbib.1 grap.1 \
 		eqn.1 checknr.1 addbib.1
-MAN7+=		mpictures.7 mcolor.7
+MAN7+=		eqnchar.7 mpictures.7 mcolor.7
 MLINKS+=	lookbib.1 indxbib.1 \
 		eqn.1 checkeq.1
 

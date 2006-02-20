@@ -1,5 +1,5 @@
 --- ./ptx/Makefile.mk.orig	Tue Nov  8 06:40:54 2005
-+++ ./ptx/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./ptx/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -13,7 +13,7 @@
  install:
  	$(INSTALL) -c ptx $(ROOT)$(BINDIR)/ptx
@@ -9,8 +9,8 @@
  	test -d $(ROOT)$(LIBDIR) || mkdir -p $(ROOT)$(LIBDIR)
  	$(INSTALL) -c -m 644 eign $(ROOT)$(LIBDIR)/eign
  
---- ./troff/troff.d/tmac.d/Makefile.mk.orig	Mon Nov  7 00:24:37 2005
-+++ ./troff/troff.d/tmac.d/Makefile.mk	Mon Dec  5 23:29:02 2005
+--- ./troff/troff.d/tmac.d/Makefile.mk.orig	Mon Dec  5 07:59:40 2005
++++ ./troff/troff.d/tmac.d/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -17,9 +17,9 @@
  	do \
  		$(INSTALL) -c -m 644 $$i $(ROOT)$(MACDIR)/$$i || exit; \
@@ -24,9 +24,9 @@
  
  clean:
  	rm -f andoc bib doc e m s pm
---- ./troff/troff.d/Makefile.mk.orig	Wed Nov 30 02:13:34 2005
-+++ ./troff/troff.d/Makefile.mk	Mon Dec  5 23:29:02 2005
-@@ -28,8 +28,8 @@
+--- ./troff/troff.d/Makefile.mk.orig	Thu Dec 22 08:23:54 2005
++++ ./troff/troff.d/Makefile.mk	Tue Feb 21 06:44:24 2006
+@@ -29,8 +29,8 @@
  	$(STRIP) $(ROOT)$(BINDIR)/ta
  	$(INSTALL) -c otfdump $(ROOT)$(BINDIR)/otfdump
  	$(STRIP) $(ROOT)$(BINDIR)/otfdump
@@ -37,9 +37,9 @@
  
  clean:
  	rm -f $(OBJ) draw.o ta.o troff ta otfdump otfdump.o otfdump_version.o \
---- ./troff/nroff.d/Makefile.mk.orig	Wed Nov 30 02:13:28 2005
-+++ ./troff/nroff.d/Makefile.mk	Mon Dec  5 23:29:02 2005
-@@ -20,7 +20,7 @@
+--- ./troff/nroff.d/Makefile.mk.orig	Tue Dec  6 09:37:06 2005
++++ ./troff/nroff.d/Makefile.mk	Tue Feb 21 06:44:24 2006
+@@ -21,7 +21,7 @@
  install:
  	$(INSTALL) -c nroff $(ROOT)$(BINDIR)/nroff
  	$(STRIP) $(ROOT)$(BINDIR)/nroff
@@ -49,12 +49,10 @@
  clean:
  	rm -f $(OBJ) nroff core log *~
 --- ./refer/Makefile.mk.orig	Thu Oct 27 07:45:08 2005
-+++ ./refer/Makefile.mk	Mon Dec  5 23:29:02 2005
-@@ -73,12 +73,12 @@
- 	$(INSTALL) -c papers/Rv7man $(ROOT)$(REFDIR)/papers/Rv7man
- 	$(INSTALL) -c papers/runinv $(ROOT)$(REFDIR)/papers/runinv
++++ ./refer/Makefile.mk	Tue Feb 21 06:44:24 2006
+@@ -75,10 +75,10 @@
  	cd $(ROOT)$(REFDIR)/papers && PATH=$(ROOT)$(REFDIR):$$PATH ./runinv
-	for i in addbib.1b lookbib.1b refer.1b roffbib.1b sortbib.1b; \
+ 	for i in addbib.1b lookbib.1b refer.1b roffbib.1b sortbib.1b; \
  	do \
 -		$(INSTALL) -c -m 644 $$i $(ROOT)$(MANDIR)/man1b/$$i || exit; \
 +		$(INSTALL) -c -m 644 $$i $(ROOT)$(MANDIR)/man1/$${i%b} || exit; \
@@ -67,7 +65,7 @@
  clean:
  	rm -f $(ROBJ) refer $(AOBJ) addbib $(LOBJ) lookbib \
 --- ./checknr/Makefile.mk.orig	Mon Nov  7 11:50:52 2005
-+++ ./checknr/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./checknr/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -13,7 +13,7 @@
  install:
  	$(INSTALL) -c checknr $(ROOT)$(BINDIR)/checknr
@@ -78,7 +76,7 @@
  clean:
  	rm -f $(OBJ) checknr core log *~
 --- ./grap/Makefile.mk.orig	Sun Nov  6 06:56:11 2005
-+++ ./grap/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./grap/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -20,7 +20,7 @@
  	$(STRIP) $(ROOT)$(BINDIR)/grap
  	test -d $(ROOT)$(LIBDIR) || mkdir -p $(ROOT)$(LIBDIR)
@@ -89,7 +87,7 @@
  clean:
  	rm -f $(OBJ) grapl.c grap.c y.tab.h grap core log *~
 --- ./eqn/checkeq.d/Makefile.mk.orig	Tue Aug 16 09:21:32 2005
-+++ ./eqn/checkeq.d/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./eqn/checkeq.d/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -14,8 +14,8 @@
  install:
  	$(INSTALL) -c checkeq $(ROOT)$(BINDIR)/checkeq
@@ -102,7 +100,7 @@
  clean:
  	rm -f $(OBJ) checkeq core log *~
 --- ./eqn/neqn.d/Makefile.mk.orig	Tue Aug 16 09:21:17 2005
-+++ ./eqn/neqn.d/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./eqn/neqn.d/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -24,8 +24,8 @@
  install:
  	$(INSTALL) -c neqn $(ROOT)$(BINDIR)/neqn
@@ -114,21 +112,25 @@
  
  clean:
  	rm -f $(OBJ) neqn e.c e.def core log *~
---- ./eqn/eqn.d/Makefile.mk.orig	Tue Aug 16 09:21:06 2005
-+++ ./eqn/eqn.d/Makefile.mk	Mon Dec  5 23:29:02 2005
-@@ -25,8 +25,8 @@
+--- ./eqn/eqn.d/Makefile.mk.orig	Fri Dec  9 10:58:44 2005
++++ ./eqn/eqn.d/Makefile.mk	Tue Feb 21 06:46:07 2006
+@@ -25,10 +25,10 @@
  	test -d $(ROOT)$(BINDIR) || mkdir -p $(ROOT)$(BINDIR)
  	$(INSTALL) -c eqn $(ROOT)$(BINDIR)/eqn
  	$(STRIP) $(ROOT)$(BINDIR)/eqn
 -	test -d $(ROOT)$(MANDIR)/man1b || mkdir -p $(ROOT)$(MANDIR)/man1b
+-	test -d $(ROOT)$(MANDIR)/man7b || mkdir -p $(ROOT)$(MANDIR)/man7b
 -	$(INSTALL) -c -m 644 eqn.1b $(ROOT)$(MANDIR)/man1b/eqn.1b
+-	$(INSTALL) -c -m 644 eqnchar.7b $(ROOT)$(MANDIR)/man7b/eqnchar.7b
 +	test -d $(ROOT)$(MANDIR)/man1 || mkdir -p $(ROOT)$(MANDIR)/man1
++	test -d $(ROOT)$(MANDIR)/man7 || mkdir -p $(ROOT)$(MANDIR)/man7
 +	$(INSTALL) -c -m 644 eqn.1b $(ROOT)$(MANDIR)/man1/eqn.1
++	$(INSTALL) -c -m 644 eqnchar.7b $(ROOT)$(MANDIR)/man7/eqnchar.7
  
  clean:
  	rm -f $(OBJ) eqn e.c e.def core log *~
 --- ./soelim/Makefile.mk.orig	Tue Aug 16 09:22:46 2005
-+++ ./soelim/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./soelim/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -13,7 +13,7 @@
  install:
  	$(INSTALL) -c soelim $(ROOT)$(BINDIR)/soelim
@@ -139,7 +141,7 @@
  clean:
  	rm -f $(OBJ) soelim core log *~
 --- ./tbl/Makefile.mk.orig	Thu Sep 15 19:36:47 2005
-+++ ./tbl/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./tbl/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -14,7 +14,7 @@
  install:
  	$(INSTALL) -c tbl $(ROOT)$(BINDIR)/tbl
@@ -150,7 +152,7 @@
  clean:
  	rm -f $(OBJ) tbl core log *~
 --- ./picpack/Makefile.mk.orig	Thu Sep 22 02:50:35 2005
-+++ ./picpack/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./picpack/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -13,7 +13,7 @@
  install:
  	$(INSTALL) -c picpack $(ROOT)$(BINDIR)/picpack
@@ -161,7 +163,7 @@
  clean:
  	rm -f $(OBJ) picpack core log *~
 --- ./vgrind/Makefile.mk.orig	Thu Oct 27 07:46:35 2005
-+++ ./vgrind/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./vgrind/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -26,7 +26,7 @@
  	$(INSTALL) -c vfontedpr $(ROOT)$(LIBDIR)/vfontedpr
  	$(STRIP) $(ROOT)$(LIBDIR)/vfontedpr
@@ -172,7 +174,7 @@
  clean:
  	rm -f $(OBJ) vfontedpr vgrind retest retest.o core log *~
 --- ./pic/Makefile.mk.orig	Tue Oct 18 08:48:45 2005
-+++ ./pic/Makefile.mk	Mon Dec  5 23:29:02 2005
++++ ./pic/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -19,7 +19,7 @@
  install:
  	$(INSTALL) -c pic $(ROOT)$(BINDIR)/pic
