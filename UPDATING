@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060220:
+  AFFECTS: users of x11-wm/enlightenment
+  AUTHOR: vanilla@FreeBSD.org
+
+  enlightenment 0.16 change binary name from 'enlightenment' to 'e16'.
+  you should change it on your .xinit file.
+ 
 20060212:
   AFFECTS: users of mail/dcc-dccd
   AUTHOR: ehaupt@FreeBSD.org
