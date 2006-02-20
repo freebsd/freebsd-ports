@@ -249,6 +249,7 @@ gap/*			math/gap		Do not sell for profit
 gentoo-linux/stage1-*	emulators/linux_base-gentoo-stage1 Binaries
 						licensed under GNU GPL without
 						accompanying source
+gGo-*.tar.gz		games/ggo		Redistribution is restricted
 ghostscript/*		print/ghostscript-afpl	Can only be distributed for free
 gibi-*			french/gibi		Only free for use in conjunction with
 						french/aster.  For any other purpose,
