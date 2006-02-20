@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh-gui
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,26 +15,31 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end for ssh which can open multiple xterms
 
-RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
-
 USE_GNOME=	gtk12
-USE_PERL5_BUILD=yes
+
 ALL_TARGET=	ssh-gui
 
-DOC_FILES=	README
+PLIST_FILES=	bin/ssh-gui
+PORTDOCS=	README
+
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/bin/ssh) && !exists(${LOCALBASE}/bin/ssh)
+RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh-portable
+.endif
 
 post-patch:
-	@${PERL} -pi.orig -e "s|^CC=.+$$||;s|(CFLAGS)=-Wall|\1\+=|; \
-		s|glib-config|${GLIB_CONFIG}|;s|gtk-config|${GTK_CONFIG}|" \
+	@${REINPLACE_CMD} -E -e "s|(CC)=.*|\1=${CC}|" -e "s|(CFLAGS)=-Wall|\1\+=|" \
+		-e "s|glib-config|${GLIB_CONFIG}|" -e "s|gtk-config|${GTK_CONFIG}|" \
 		${BUILD_WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+
+post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
