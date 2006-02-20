@@ -1,0 +1,8 @@
+This script provides a simple way to manage your ports.
+
+It uses the existing ports infrastructure to track
+dependencies, and to keep those dependencies up
+to date.
+
+Because portmaster is written in /bin/sh, it needs
+no other interpreted languages installed.
