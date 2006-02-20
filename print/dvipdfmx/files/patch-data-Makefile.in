@@ -1,11 +1,20 @@
---- data/Makefile.in.orig	Mon Jun  7 21:31:01 2004
-+++ data/Makefile.in	Mon Jun  7 21:31:24 2004
-@@ -61,7 +61,7 @@
- PACKAGE = @PACKAGE@
- VERSION = @VERSION@
- 
+--- data/Makefile.in.orig	Mon Jun 27 20:57:15 2005
++++ data/Makefile.in	Mon Nov 28 23:59:39 2005
+@@ -57,7 +57,7 @@
+ pkgdataDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(pkgdata_DATA)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgdatadir = $(datadir)/texmf/dvipdfm
 +pkgdatadir = $(datadir)/dvipdfm
- pkgdata_DATA = CMap config
- DIST_COMMON = Makefile.in $(pkgdata_DATA)
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -135,7 +135,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pkgdata_DATA = CMap config
++pkgdata_DATA = config
+ EXTRA_DIST = $(pkgdata_DATA)
+ all: all-am
+ 

@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20050201
-PORTREVISION=	2
+PORTVERSION=	20050831
+PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
 DIST_SUBDIR=	dvipdfmx
-
-PATCH_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/patch/
-PATCHFILES=	mpost-c-20050201.diff tfm-c-20050201.diff
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
@@ -21,34 +18,34 @@ COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		paper:${PORTSDIR}/print/libpaper
-RUN_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
+RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX-base
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFLOCALDIR}
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFDIR}
 PLIST_SUB=	DVIPDFMDIR=${DVIPDFMDIR} \
 		FONTMAPDIR=${FONTMAPDIR} \
 		FONTCMAPDIR=${FONTCMAPDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		ADOBECMAPDIR=${ADOBECMAPDIR}
 
-TEXMFLOCALDIR=	share/texmf-local
-TEXMFLOCAL_LSR=	${TEXMFLOCALDIR}/ls-R
-DVIPDFMDIR=	${TEXMFLOCALDIR}/dvipdfm
-FONTMAPDIR=	${TEXMFLOCALDIR}/fonts/map/dvipdfm
-FONTCMAPDIR=	${TEXMFLOCALDIR}/fonts/cmap/dvipdfm
-ADOBECMAPDIR=	${LOCALBASE}/share/ghostscript/Resource
+TEXMFDIR=	share/texmf
+DVIPDFMDIR=	${TEXMFDIR}/dvipdfm
+FONTMAPDIR=	${TEXMFDIR}/fonts/map/dvipdfm
+FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap/dvipdfm
+ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+pre-install:
+	${RM} -f ${WRKSRC}/data/config/dvipdfmx.cfg.orig \
+		${WRKSRC}/data/config/cid-x.map
+
 post-install:
+	${MV} ${PREFIX}/${TEXMFDIR}/dvipdfm/config/glyphlist.txt \
+		${LOCALBASE}/${FONTMAPDIR}/glyphlist.txt
 	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
-	${MV} ${LOCALBASE}/${DVIPDFMDIR}/config/cid-x.map \
+	${INSTALL_DATA} ${FILESDIR}/cid-x.map.in \
 		${LOCALBASE}/${FONTMAPDIR}/cid-x.map
-	${MV} ${LOCALBASE}/${DVIPDFMDIR}/CMap/glyphlist.txt \
-		${LOCALBASE}/${DVIPDFMDIR}/config/glyphlist.txt
-	${MV} ${LOCALBASE}/${DVIPDFMDIR}/CMap \
-		${LOCALBASE}/${FONTCMAPDIR}/CMap
 	${LN} -s -f ${ADOBECMAPDIR} \
 		${LOCALBASE}/${FONTCMAPDIR}/adobe-cmaps
 	${MKTEXLSR}
