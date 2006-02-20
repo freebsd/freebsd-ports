@@ -26,4 +26,8 @@ share/doc/yatex/yatexe.tex
 share/doc/yatex/yatexref.eng
 @dirrm lib/xemacs/site-packages/lisp/yatex
 @dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs/site-packages/lisp
+@dirrmtry lib/xemacs/site-packages/info
+@dirrmtry lib/xemacs/site-packages/pkginfo
+@dirrmtry lib/xemacs/site-packages
 @dirrm share/doc/yatex
