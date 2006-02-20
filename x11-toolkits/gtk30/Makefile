@@ -51,8 +51,8 @@ PLIST_SUB=	GTK_VERSION="${GTK_VERSION}"
 # on the command-line.
 # Set to minimum if you want to send in a backtrace; set
 # to yes if you want to know what gtk thinks it's doing.
-.if defined(WITH_DEBUG)
-.if ${WITH_DEBUG:L} == "no"
+.if defined(WITH_DEBUG) || defined(WITHOUT_DEBUG)
+.if defined(WITHOUT_DEBUG) || ${WITH_DEBUG:L} == "no"
 CONFIGURE_ARGS+=	--enable-debug=no
 .else
 .if ${WITH_DEBUG:L} == "yes"
@@ -81,7 +81,7 @@ pre-everything::
 .if !defined(WITH_DEBUG)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Enable or disable debugging with the following knob"
-	@${ECHO_MSG} "WITH_DEBUG=[no|minimum|yes]"
+	@${ECHO_MSG} "WITH_DEBUG=[no|minimum|yes] or WITHOUT_DEBUG=yes"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Default is minimum"
 	@${ECHO_MSG}
