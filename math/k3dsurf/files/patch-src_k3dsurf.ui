@@ -1,0 +1,9 @@
+--- src/k3dsurf.ui.orig	Sat Dec 10 19:33:43 2005
++++ src/k3dsurf.ui	Sun Feb 19 23:28:43 2006
+@@ -16329,6 +16329,5 @@
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+ <includehints>
+-    <includehint>connectwidget.h</includehint>
+ </includehints>
+ </UI>

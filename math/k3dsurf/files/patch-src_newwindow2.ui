@@ -1,0 +1,9 @@
+--- src/newwindow2.ui.orig	Wed Jul 27 00:16:36 2005
++++ src/newwindow2.ui	Sun Feb 19 23:29:30 2006
+@@ -104,6 +104,5 @@
+ </slots>
+ <layoutdefaults spacing="6" margin="11"/>
+ <includehints>
+-    <includehint>connectwidget.h</includehint>
+ </includehints>
+ </UI>

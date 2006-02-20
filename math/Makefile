@@ -95,6 +95,7 @@
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += javaview
+    SUBDIR += k3dsurf
     SUBDIR += kaskade
     SUBDIR += koctave
     SUBDIR += kseg
