@@ -8,13 +8,12 @@
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.08
 CATEGORIES=	math
-MASTER_SITES=	http://libtomcrypt.org/tfm/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cperciva/libtom
 DISTNAME=	tfm-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Portable fixed precision math library for fast exponentiations
-
-BROKEN=		"Does not fetch"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile

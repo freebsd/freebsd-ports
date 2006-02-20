@@ -8,13 +8,12 @@
 PORTNAME=	libtommath
 PORTVERSION=	0.38
 CATEGORIES=	math
-MASTER_SITES=	http://math.libtomcrypt.org/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cperciva/libtom
 DISTNAME=	ltm-${PORTVERSION}
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable mathematical routines
-
-BROKEN=		"Does not fetch"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
