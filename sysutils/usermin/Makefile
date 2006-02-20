@@ -54,11 +54,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/lib/usermin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/usermin
-	@${SED} -e "s=%%RC_SUBR%%=${RC_SUBR}=" \
-		-e "s=%%PREFIX%%=${PREFIX}=" \
-		-e "s=%%PERL5%%=${PERL}=" \
-		< ${FILESDIR}/usermin.sh.sample > ${PREFIX}/etc/rc.d/usermin.sh
-	@${CHMOD} 555 ${PREFIX}/etc/rc.d/usermin.sh
 
 post-install:
 	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
