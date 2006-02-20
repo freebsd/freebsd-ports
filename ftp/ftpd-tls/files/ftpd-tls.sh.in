@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ftpd-tls
+# REQUIRE: LOGIN
+#
+# Available configuration variables for ftpd-tls are:
+#
+# ftpd_tls_enable (bool):	Set to "YES" to enable ftpd-tls.
+#				Defaults to "NO".
+# ftpd_tls_flags (flags):	Extra flags to ftpd-tls (see ftpd-tls(8)).
+#				Defaults to "-U -l".
+#
+# Add at least the following line to /etc/rc.conf or /etc/rc.conf.local to
+# enable ftpd-tls:
+#
+# ftpd_tls_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="ftpd_tls"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/libexec/ftpd-tls
+command_args="> /dev/null"
+start_precmd="ftpd_tls_precmd"
+pidfile="/var/run/ftpd-tls.pid"
+
+ftpd_tls_precmd()
+{
+	rc_flags="${rc_flags} -D"
+}
+
+load_rc_config $name
+
+: ${ftpd_tls_enable="NO"}
+: ${ftpd_tls_flags="-U -l"}
+
+run_rc_command "$1"
