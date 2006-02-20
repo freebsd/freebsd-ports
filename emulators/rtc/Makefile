@@ -15,6 +15,8 @@ DISTFILES=	# none
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Kernel module which provides /dev/rtc device support
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/files
 
 NO_FETCH=	yes
