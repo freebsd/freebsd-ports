@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	adobe-cmaps
-PORTVERSION=	200204
+PORTVERSION=	20051206
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.gyve.org/pub/gs-cjk/ \
-		http://www.matsusaka-u.ac.jp/mirror/gs-cjk/
-DIST_SUBDIR=	ghostscript
+MASTER_SITES=	ftp://ftp.oreilly.com/pub/examples/nutshell/cjkv/adobe/
+DISTFILES=	ac15.tar.Z ag15.tar.Z \
+		ai0.tar.Z aj16.tar.Z \
+		aj20.tar.Z ak12.tar.Z rksj-cmaps.tar.Z
+DIST_SUBDIR=	adobe
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe CMap collection
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-RESOURCE=	${PREFIX}/share/ghostscript/Resource
+PLIST_SUB=	CMAPDIR=${CMAPDIR}
+INSTDIRS=	ac15 ag15 ai0 aj16 aj20 ak12 rksj-cmaps
+CMAPDIR=	share/fonts/${PORTNAME}
+
+post-extract:
+	${RM} -f ${WRKDIR}/ag15/.nfsFA55
 
 do-install:
-	@${MKDIR} ${RESOURCE}/CIDFont
-	@${MKDIR} ${RESOURCE}/Font
-	@cd ${WRKSRC} && ${FIND} . \! -name '.*' \
-		| ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${RESOURCE}
+	${MKDIR} ${PREFIX}/${CMAPDIR}
+	cd ${WRKDIR} && \
+		${TAR} cf - ${INSTDIRS} | \
+		(cd ${PREFIX}/${CMAPDIR} && ${TAR} xf - )
 
 .include <bsd.port.mk>
