@@ -137,6 +137,8 @@
 %%RCUBEDIR%%/program/localization/cz/messages.inc
 %%RCUBEDIR%%/program/localization/da/labels.inc
 %%RCUBEDIR%%/program/localization/da/messages.inc
+%%RCUBEDIR%%/program/localization/de_CH/labels.inc
+%%RCUBEDIR%%/program/localization/de_CH/messages.inc
 %%RCUBEDIR%%/program/localization/de_DE/labels.inc
 %%RCUBEDIR%%/program/localization/de_DE/messages.inc
 %%RCUBEDIR%%/program/localization/ee/labels.inc
@@ -168,6 +170,8 @@
 %%RCUBEDIR%%/program/localization/lv/messages.inc
 %%RCUBEDIR%%/program/localization/nb_NO/labels.inc
 %%RCUBEDIR%%/program/localization/nb_NO/messages.inc
+%%RCUBEDIR%%/program/localization/nl_BE/labels.inc
+%%RCUBEDIR%%/program/localization/nl_BE/messages.inc
 %%RCUBEDIR%%/program/localization/nl_NL/labels.inc
 %%RCUBEDIR%%/program/localization/nl_NL/messages.inc
 %%RCUBEDIR%%/program/localization/nn_NO/labels.inc
@@ -360,6 +364,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/pl
 @dirrm %%RCUBEDIR%%/program/localization/nn_NO
 @dirrm %%RCUBEDIR%%/program/localization/nl_NL
+@dirrm %%RCUBEDIR%%/program/localization/nl_BE
 @dirrm %%RCUBEDIR%%/program/localization/nb_NO
 @dirrm %%RCUBEDIR%%/program/localization/lv
 @dirrm %%RCUBEDIR%%/program/localization/ja
@@ -375,6 +380,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/el
 @dirrm %%RCUBEDIR%%/program/localization/ee
 @dirrm %%RCUBEDIR%%/program/localization/de_DE
+@dirrm %%RCUBEDIR%%/program/localization/de_CH
 @dirrm %%RCUBEDIR%%/program/localization/da
 @dirrm %%RCUBEDIR%%/program/localization/cz
 @dirrm %%RCUBEDIR%%/program/localization/cn
