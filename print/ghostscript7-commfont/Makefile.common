@@ -6,21 +6,24 @@ PKGNAMESUFFIX=	-gnu
 DISTNAME=	# nonexistent
 DISTFILES=	# empty
 
-MAINTAINER?=	mita@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU ghostscript with CJK font support
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
-		${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
+		${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-GSLIB_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}/lib
+GSLIB_DIR=	share/ghostscript/${PORTVERSION}/lib
+GSRES_DIR=	share/ghostscript/Resource
+CMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 PLIST_SUB=	GS_VERSION=${PORTVERSION} SHAREMODE=${SHAREMODE}
 
 .if defined(COMMFONT)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-commfont
 PLIST=		${PKGDIR}/pkg-plist.common
+PLIST_SUB+=	GSRES_DIR=${GSRES_DIR}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps.pre_sed:${PORTSDIR}/print/ghostscript-gnu-commfont
 PLIST_SUB+=	CIDFNMAP="${CIDFNMAP}"
@@ -29,46 +32,47 @@ CATEGORIES:=	japanese ${CATEGORIES}
 COMMENT=	GNU ghostscript with Japanese font support
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-jpnfont
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts
 CIDFNMAP=	CIDFnmap.jp
 .elif defined(KORFONT)
 CATEGORIES:=	korean ${CATEGORIES}
 COMMENT=	GNU ghostscript with Korean font support
 PKGNAMEPREFIX=	ko-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-korfont
-RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/Munhwa-Bold:${PORTSDIR}/korean/munhwafonts-cid
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/CIDFont/Munhwa-Bold:${PORTSDIR}/korean/munhwafonts-cid
 CIDFNMAP=	CIDFnmap.ko
 .endif
 .endif
 
 .include <bsd.port.pre.mk>
-do-configure:
 .if !defined(COMMFONT)
-	${SED} -e 's:%%LOCALBASE%%:${LOCALBASE}:g' \
-	       -e 's:%%X11BASE%%:${X11BASE}:g' \
-		${FILESDIR}/${CIDFNMAP} > ${WRKSRC}/${CIDFNMAP}
+SUB_FILES+=	${CIDFNMAP}
 .endif
 
 do-install:
 .if defined(COMMFONT)
-	${MV} ${GSLIB_DIR}/gs_init.ps  ${GSLIB_DIR}/gs_init.ps.pre_sed
-	${SED} -e "s:^%.*(a4):(a4):" ${GSLIB_DIR}/gs_init.ps.pre_sed > \
-		${GSLIB_DIR}/gs_init.ps
+	${MKDIR} -p ${PREFIX}/${GSRES_DIR}/CMap
+	cd ${PREFIX}/${GSRES_DIR}/CMap && \
+		${LN} -s -f `${FIND} ${CMAPDIR} -type f -a \! -name \*.txt` .
+	${MV} ${PREFIX}/${GSLIB_DIR}/gs_init.ps  ${PREFIX}/${GSLIB_DIR}/gs_init.ps.pre_sed
+	${SED} -e "s:^%.*(a4):(a4):" ${PREFIX}/${GSLIB_DIR}/gs_init.ps.pre_sed > \
+		${PREFIX}/${GSLIB_DIR}/gs_init.ps
 .else
-	${INSTALL_DATA} ${WRKSRC}/${CIDFNMAP} ${GSLIB_DIR}
-	${MV} ${GSLIB_DIR}/CIDFnmap  ${GSLIB_DIR}/CIDFnmap.orig
-	${GREP} -v -e "${CIDFNMAP}" ${GSLIB_DIR}/CIDFnmap.orig > \
-		${GSLIB_DIR}/CIDFnmap
-	${ECHO_CMD} '(${CIDFNMAP}) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
-	${CHMOD} ${SHAREMODE} ${GSLIB_DIR}/CIDFnmap
+	${INSTALL_DATA} ${WRKSRC}/${CIDFNMAP} ${PREFIX}/${GSLIB_DIR}
+	${CP} ${PREFIX}/${GSLIB_DIR}/CIDFnmap  ${PREFIX}/${GSLIB_DIR}/CIDFnmap.orig
+	(	${GREP} -v -e "${CIDFNMAP}" ${PREFIX}/${GSLIB_DIR}/CIDFnmap.orig;\
+		${ECHO_CMD} '(${CIDFNMAP}) .runlibfile'; \
+	) > ${PREFIX}/${GSLIB_DIR}/CIDFnmap
 .endif
 
-post-install:
 .if defined(KORFONT)
+post-install:
+	${MKDIR} ${LOCALBASE}/share/ghostscript/Resource/CIDFont
 .for i in Munhwa-Bold Munhwa-Regular MunhwaGothic-Bold MunhwaGothic-Regular
-	${LN} -sf ${PREFIX}/share/ghostscript/fonts/${i} \
-		${PREFIX}/share/ghostscript/Resource/CIDFont/${i}
+	${LN} -sf ${LOCALBASE}/share/fonts/CIDFont/${i} \
+		${LOCALBASE}/share/ghostscript/Resource/CIDFont/${i}
 	${ECHO_CMD} "share/ghostscript/Resource/CIDFont/${i}" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec /bin/rmdir %D/share/ghostscript/Resource/CIDFont 2> /dev/null || true" >> ${TMPPLIST}
 .endfor
 .endif
 

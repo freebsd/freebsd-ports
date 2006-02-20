@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 share/ghostscript/%%GS_VERSION%%/lib/%%CIDFNMAP%%
 @exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap  %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig
 @exec /usr/bin/grep -v -e '%%CIDFNMAP%%' %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig > %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
