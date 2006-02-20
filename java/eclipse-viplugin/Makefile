@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	viPlugin
-PORTVERSION=	1.13.1
+PORTVERSION=	1.13.2
 CATEGORIES=	java devel editors
 MASTER_SITES=	http://www.satokar.com/viplugin/files/
 PKGNAMEPREFIX=	eclipse-
@@ -17,8 +17,6 @@ MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Vi like keybinding Eclipse plugin FREETRIAL Version
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
-
-BROKEN=		Unfetchable
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
