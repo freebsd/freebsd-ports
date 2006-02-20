@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e319da0b-a228-11da-b410-000e0c2e438a">
+    <topic>gedit -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>gedit</name>
+	<range><lt>2.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yan Feng reports a format string vulnerability in gedit.
+	  This vulnerability could cause a denial of service with a
+	  binary file that contains format string characters within
+	  the filename.  It had been reported that web browsers
+	  and email clients can be configured to provide a filename as
+	  an argument to gedit.:</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-1686</cvename>
+      <mlist msgid="20050520202628.12260.qmail@www.securityfocus.com">:http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111661117701398</mlist>
+    </references>
+    <dates>
+      <discovery>2005-05-20</discovery>
+      <entry>2006-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07ead557-a220-11da-b410-000e0c2e438a">
     <topic>WebCalendar -- unauthorized access vulnerability</topic>
     <affects>
