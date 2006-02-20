@@ -31,7 +31,6 @@ BROKEN=		Does not build on sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|
-||' ${WRKSRC}/fp_montgomery_reduce.c
+	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/fp_montgomery_reduce.c
 
 .include <bsd.port.post.mk>
