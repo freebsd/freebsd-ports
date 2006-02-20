@@ -27,6 +27,7 @@
     SUBDIR += braa
     SUBDIR += bsd-airtools
     SUBDIR += bsnmpd
+    SUBDIR += bwm-ng
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += cfgstoragemk
