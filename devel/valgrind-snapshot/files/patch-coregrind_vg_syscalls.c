@@ -1,5 +1,5 @@
---- coregrind/vg_syscalls.c.orig	Thu Oct 20 12:23:18 2005
-+++ coregrind/vg_syscalls.c	Thu Oct 20 12:24:04 2005
+--- coregrind/vg_syscalls.c.orig	Fri Jul 16 19:21:08 2004
++++ coregrind/vg_syscalls.c	Mon Feb 20 13:57:37 2006
 @@ -1369,6 +1369,38 @@
  					 &tst->m_eflags,
  					 arg1, arg2);
@@ -76,7 +76,17 @@
  #endif
  
  PRE(setresgid)
-@@ -6827,6 +6882,9 @@
+@@ -3431,8 +3486,7 @@
+ 		     arg3, sizeof(struct shmid_ds) );
+       break;
+    case IPC_SET:
+-   case IPC_RMID:
+-      SYSCALL_TRACK( pre_mem_read, tid, "shmctl(IPC_SET or IPC_RMID,buf)",
++      SYSCALL_TRACK( pre_mem_read, tid, "shmctl(IPC_SET,buf)",
+ 		     arg3, sizeof(struct shmid_ds) );
+       break;
+    }
+@@ -6827,6 +6881,9 @@
     SYSBA(kldstat,		False),
     SYSB_(kldfirstmod,		False),
     SYSBA(__getcwd,		False),
