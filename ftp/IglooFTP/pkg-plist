@@ -1,58 +1,58 @@
 bin/IglooFTP
-share/IglooFTP/app_ass/app_ass.GNOME
-share/IglooFTP/app_ass/app_ass.KDE
-share/IglooFTP/app_ass/app_ass.default
-share/IglooFTP/bookmarks/default.bmk
-%%PORTDOCS%%share/IglooFTP/docs/AUTHORS
-%%PORTDOCS%%share/IglooFTP/docs/BUGS
-%%PORTDOCS%%share/IglooFTP/docs/COPYRIGHT
-share/IglooFTP/docs/ChangeLog
-share/IglooFTP/docs/LICENSE
-share/IglooFTP/docs/README
-%%PORTDOCS%%share/IglooFTP/docs/THANKS
-%%PORTDOCS%%share/IglooFTP/docs/TODO
-share/IglooFTP/docs/welcome.msg
-share/IglooFTP/gtkrc
-share/IglooFTP/html/default.html
-share/IglooFTP/html/images/amazon_mini.gif
-share/IglooFTP/html/images/banner.gif
-share/IglooFTP/html/images/bannerbg.gif
-share/IglooFTP/html/images/bannerbg_bottom.gif
-share/IglooFTP/html/images/bgsnow.gif
-share/IglooFTP/html/images/bookshelf.gif
-share/IglooFTP/html/images/hopbanner.gif
-share/IglooFTP/html/images/hot100.jpg
-share/IglooFTP/html/images/iglooftp.gif
-share/IglooFTP/html/images/iglooftp_now1.gif
-share/IglooFTP/html/images/iglooftp_now8.gif
-share/IglooFTP/html/images/join.gif
-share/IglooFTP/html/images/nav_books.gif
-share/IglooFTP/html/images/nav_booksG.gif
-share/IglooFTP/html/images/nav_download.gif
-share/IglooFTP/html/images/nav_downloadG.gif
-share/IglooFTP/html/images/nav_home.gif
-share/IglooFTP/html/images/nav_homeG.gif
-share/IglooFTP/html/images/nav_link.gif
-share/IglooFTP/html/images/nav_linkG.gif
-share/IglooFTP/html/images/nav_museum.gif
-share/IglooFTP/html/images/nav_museumG.gif
-share/IglooFTP/html/images/nav_news.gif
-share/IglooFTP/html/images/nav_newsG.gif
-share/IglooFTP/html/images/nav_search.gif
-share/IglooFTP/html/images/nav_searchG.gif
-share/IglooFTP/html/images/nav_soft.gif
-share/IglooFTP/html/images/nav_softG.gif
-share/IglooFTP/html/images/nav_tut.gif
-share/IglooFTP/html/images/nav_tutG.gif
-share/IglooFTP/html/images/search.gif
-share/IglooFTP/html/images/softwares.jpg
-share/IglooFTP/html/images/viglooftp.gif
-share/IglooFTP/xpm/iglooftp.xpm
-share/IglooFTP/xpm/little_igloo.xpm
-@dirrm share/IglooFTP/app_ass
-@dirrm share/IglooFTP/bookmarks
-@dirrm share/IglooFTP/docs
-@dirrm share/IglooFTP/html/images
-@dirrm share/IglooFTP/html
-@dirrm share/IglooFTP/xpm
-@dirrm share/IglooFTP
+%%DATADIR%%/app_ass/app_ass.GNOME
+%%DATADIR%%/app_ass/app_ass.KDE
+%%DATADIR%%/app_ass/app_ass.default
+%%DATADIR%%/bookmarks/default.bmk
+%%PORTDOCS%%%%DATADIR%%/docs/AUTHORS
+%%PORTDOCS%%%%DATADIR%%/docs/BUGS
+%%PORTDOCS%%%%DATADIR%%/docs/COPYRIGHT
+%%DATADIR%%/docs/ChangeLog
+%%DATADIR%%/docs/LICENSE
+%%DATADIR%%/docs/README
+%%PORTDOCS%%%%DATADIR%%/docs/THANKS
+%%PORTDOCS%%%%DATADIR%%/docs/TODO
+%%DATADIR%%/docs/welcome.msg
+%%DATADIR%%/gtkrc
+%%DATADIR%%/html/default.html
+%%DATADIR%%/html/images/amazon_mini.gif
+%%DATADIR%%/html/images/banner.gif
+%%DATADIR%%/html/images/bannerbg.gif
+%%DATADIR%%/html/images/bannerbg_bottom.gif
+%%DATADIR%%/html/images/bgsnow.gif
+%%DATADIR%%/html/images/bookshelf.gif
+%%DATADIR%%/html/images/hopbanner.gif
+%%DATADIR%%/html/images/hot100.jpg
+%%DATADIR%%/html/images/iglooftp.gif
+%%DATADIR%%/html/images/iglooftp_now1.gif
+%%DATADIR%%/html/images/iglooftp_now8.gif
+%%DATADIR%%/html/images/join.gif
+%%DATADIR%%/html/images/nav_books.gif
+%%DATADIR%%/html/images/nav_booksG.gif
+%%DATADIR%%/html/images/nav_download.gif
+%%DATADIR%%/html/images/nav_downloadG.gif
+%%DATADIR%%/html/images/nav_home.gif
+%%DATADIR%%/html/images/nav_homeG.gif
+%%DATADIR%%/html/images/nav_link.gif
+%%DATADIR%%/html/images/nav_linkG.gif
+%%DATADIR%%/html/images/nav_museum.gif
+%%DATADIR%%/html/images/nav_museumG.gif
+%%DATADIR%%/html/images/nav_news.gif
+%%DATADIR%%/html/images/nav_newsG.gif
+%%DATADIR%%/html/images/nav_search.gif
+%%DATADIR%%/html/images/nav_searchG.gif
+%%DATADIR%%/html/images/nav_soft.gif
+%%DATADIR%%/html/images/nav_softG.gif
+%%DATADIR%%/html/images/nav_tut.gif
+%%DATADIR%%/html/images/nav_tutG.gif
+%%DATADIR%%/html/images/search.gif
+%%DATADIR%%/html/images/softwares.jpg
+%%DATADIR%%/html/images/viglooftp.gif
+%%DATADIR%%/xpm/iglooftp.xpm
+%%DATADIR%%/xpm/little_igloo.xpm
+@dirrm %%DATADIR%%/app_ass
+@dirrm %%DATADIR%%/bookmarks
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/html/images
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/xpm
+@dirrm %%DATADIR%%

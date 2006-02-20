@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
