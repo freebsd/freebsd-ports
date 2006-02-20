@@ -7,7 +7,7 @@
 
 PORTNAME=	ftpd-tls
 PORTVERSION=	20031008
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/
 
@@ -16,9 +16,13 @@ COMMENT=	Ftp server supporting FTP AUTH TLS
 
 GNU_CONFIGURE=	YES
 USE_OPENSSL=	YES
-USE_REINPLACE=	YES
+USE_RC_SUBR=	ftpd-tls.sh
 
 MAN8=		ftpd-tls.8
+
+CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -26,24 +30,16 @@ MAN8=		ftpd-tls.8
 BROKEN=		"Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())"
 .endif
 
-CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-PKGMESSAGE=		${WRKDIR}/pkg-message
-
 post-patch:
 .for i in README.TLS ftpd.8.TLS pathnames.h tlsutil.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g; s|%%DOCSDIR%%|${DOCSDIR}|g' \
 		${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/ftpd-tls.sh > \
-		${WRKDIR}/ftpd-tls.sh
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpd ${PREFIX}/libexec/ftpd-tls
 	@${INSTALL_MAN} ${WRKSRC}/ftpd.8.TLS ${PREFIX}/man/man8/ftpd-tls.8
-	@${INSTALL_SCRIPT} ${WRKDIR}/ftpd-tls.sh \
-		${PREFIX}/etc/rc.d/ftpd-tls.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in README.TLS draft-murray-auth-ftp-ssl-09.txt
@@ -57,6 +53,10 @@ do-install:
 .if (!exists(${PREFIX}/etc/ftpd-tls/ftpusers)) && (exists(/etc/ftpusers))
 	@${INSTALL_DATA} /etc/ftpusers ${PREFIX}/etc/ftpd-tls
 .endif
+
+pre-install:
+# Make sure there's no startup script left over from a previous installation.
+	@${RM} -f ${PREFIX}/etc/rc.d/ftpd-tls.sh
 
 post-install:
 	@${CAT} ${WRKDIR}/pkg-message

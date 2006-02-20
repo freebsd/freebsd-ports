@@ -1,11 +1,17 @@
 ===========================================================================
 
-Depending on how you would like to start ftpd-tls(8) either copy the
-sample start-up script %%PREFIX%%/etc/rc.d/ftpd-tls.sh.sample to
-%%PREFIX%%/etc/rc.d/ftpd-tls.sh or add the following two entries to
-your /etc/inetd.conf:
-ftp stream tcp  nowait root %%PREFIX%%/libexec/ftpd-tls ftpd-tls -Ul
-ftp stream tcp6 nowait root %%PREFIX%%/libexec/ftpd-tls ftpd-tls -Ul
+Depending on how you would like to start ftpd-tls(8) you have two choices:
+1) Add the following line to /etc/rc.conf or /etc/rc.conf.local:
+
+ftpd_tls_enable="YES"
+
+For further available configuration variables when using this method see
+%%PREFIX%%/etc/rc.d/ftpd-tls{,.sh}.
+
+2) Add the following entries to your /etc/inetd.conf:
+
+ftp stream tcp  nowait root %%PREFIX%%/libexec/ftpd-tls ftpd-tls -U -l
+ftp stream tcp6 nowait root %%PREFIX%%/libexec/ftpd-tls ftpd-tls -U -l
 
 See %%DOCSDIR%%/README.TLS and the openssl(1) manual
 page for further information on how to generate the certificates and
