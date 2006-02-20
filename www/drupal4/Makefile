@@ -7,14 +7,17 @@
 
 PORTNAME=	drupal
 PORTVERSION=	4.6.5
-PORTREVISION=	2
+PORTREVISION=	2006010502
 CATEGORIES=	www
-MASTER_SITES=	http://drupal.org/files/projects/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     brooks
+DIST_SUBDIR=    drupal
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
 
 USE_PHP=	gd pcre session xml
+WANT_PHP_WEB=	yes
 
 .include <bsd.port.pre.mk>
 
