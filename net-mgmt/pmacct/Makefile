@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.0rc2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -18,7 +18,7 @@ GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.10.0
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
