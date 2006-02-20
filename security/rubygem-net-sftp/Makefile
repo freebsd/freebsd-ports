@@ -13,7 +13,7 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/7928/
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	Implementation of the SFTP client protocol
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-1.0.7.gemspec:${PORTSDIR}/security/rubygem-net-ssh
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-1.0.8.gemspec:${PORTSDIR}/security/rubygem-net-ssh
 
 post-install:
 	@${ECHO} "You may safely ignore any 'Skipping require of dynamic string' messages."
