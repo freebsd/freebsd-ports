@@ -18,6 +18,8 @@ COMMENT=	Example files for IBM's OpenDX
 BUILD_DEPENDS=	dx:${PORTSDIR}/graphics/opendx
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Changes permissions on installed file usr/local/dx/java/server/nets
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	SHELL=/bin/sh
