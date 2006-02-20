@@ -28,6 +28,8 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig
 .endif
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
