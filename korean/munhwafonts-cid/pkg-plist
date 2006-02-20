@@ -1,34 +1,10 @@
-share/ghostscript/fonts/CMap/Adobe-Korea1-0
-share/ghostscript/fonts/CMap/Adobe-Korea1-1
-share/ghostscript/fonts/CMap/Adobe-Korea1-2
-share/ghostscript/fonts/CMap/KSC-EUC-H
-share/ghostscript/fonts/CMap/KSC-EUC-V
-share/ghostscript/fonts/CMap/KSC-H
-share/ghostscript/fonts/CMap/KSC-Johab-H
-share/ghostscript/fonts/CMap/KSC-Johab-V
-share/ghostscript/fonts/CMap/KSC-V
-share/ghostscript/fonts/CMap/KSCms-UHC-H
-share/ghostscript/fonts/CMap/KSCms-UHC-HW-H
-share/ghostscript/fonts/CMap/KSCms-UHC-HW-V
-share/ghostscript/fonts/CMap/KSCms-UHC-V
-share/ghostscript/fonts/CMap/KSCpc-EUC-H
-share/ghostscript/fonts/CMap/KSCpc-EUC-V
-share/ghostscript/fonts/CMap/UniKS-UCS2-H
-share/ghostscript/fonts/CMap/UniKS-UCS2-V
-share/ghostscript/fonts/CMap/UniKS-UTF8-H
-share/ghostscript/fonts/CMap/UniKS-UTF8-V
-share/ghostscript/fonts/CMap/UniKS-UTF16-H
-share/ghostscript/fonts/CMap/UniKS-UTF16-V
-share/ghostscript/fonts/CMap/UniKS-UTF32-H
-share/ghostscript/fonts/CMap/UniKS-UTF32-V
-share/ghostscript/fonts/Munhwa-Bold
-share/ghostscript/fonts/Munhwa-Bold-KSC-EUC-H.gsf
-share/ghostscript/fonts/Munhwa-Regular
-share/ghostscript/fonts/Munhwa-Regular-KSC-EUC-H.gsf
-share/ghostscript/fonts/MunhwaGothic-Bold
-share/ghostscript/fonts/MunhwaGothic-Bold-KSC-EUC-H.gsf
-share/ghostscript/fonts/MunhwaGothic-Regular
-share/ghostscript/fonts/MunhwaGothic-Regular-KSC-EUC-H.gsf
-@dirrm share/ghostscript/fonts/CMap
-@dirrmtry share/ghostscript/fonts
-@dirrmtry share/ghostscript
+@comment $FreeBSD$
+%%FONTSDIR%%/Munhwa-Bold
+%%FONTSDIR%%/Munhwa-Bold-KSC-EUC-H.gsf
+%%FONTSDIR%%/Munhwa-Regular
+%%FONTSDIR%%/Munhwa-Regular-KSC-EUC-H.gsf
+%%FONTSDIR%%/MunhwaGothic-Bold
+%%FONTSDIR%%/MunhwaGothic-Bold-KSC-EUC-H.gsf
+%%FONTSDIR%%/MunhwaGothic-Regular
+%%FONTSDIR%%/MunhwaGothic-Regular-KSC-EUC-H.gsf
+@dirrmtry %%FONTSDIR%%
