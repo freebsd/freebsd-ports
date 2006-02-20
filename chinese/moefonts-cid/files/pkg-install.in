@@ -1,7 +1,8 @@
 #!/bin/sh
+# $FreeBSD$
 
 GSVER=`gs --version`
-GSDIR=${PREFIX}/share/ghostscript
+GSDIR=%%PREFIX%%/share/ghostscript
 FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
 
 # Run just once.
