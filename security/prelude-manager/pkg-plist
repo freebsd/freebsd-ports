@@ -2,11 +2,17 @@
 bin/prelude-manager
 etc/prelude-manager/prelude-manager.conf-dist
 include/prelude-manager/prelude-manager.h
+lib/prelude-manager/filters/idmef-criteria.la
 lib/prelude-manager/filters/idmef-criteria.so
-lib/prelude-manager/reports/db.so
+%%WITH_DB%%lib/prelude-manager/reports/db.la
+%%WITH_DB%%lib/prelude-manager/reports/db.so
+lib/prelude-manager/reports/debug.la
 lib/prelude-manager/reports/debug.so
+lib/prelude-manager/reports/relaying.la
 lib/prelude-manager/reports/relaying.so
+lib/prelude-manager/reports/textmod.la
 lib/prelude-manager/reports/textmod.so
+lib/prelude-manager/reports/xmlmod.la
 lib/prelude-manager/reports/xmlmod.so
 %%DATADIR%%/xmlmod/idmef-message.dtd
 @dirrm %%DATADIR%%/xmlmod
