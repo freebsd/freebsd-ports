@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="07ead557-a220-11da-b410-000e0c2e438a">
+    <topic>WebCalendar -- unauthorized access vulnerability</topic>
+    <affects>
+      <package>
+	<name>WebCalendar</name>
+	<range><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports that WebCalendar is affected by
+	 an unauthorized access vulnerability.  The vulnerability
+	 is caused by improper checking of the authentication
+	 mechanism before access is being permitted to the
+	 "assistant_edit.php" file.</p>
+      </body>
+    </description>
+    <references>
+      <bid>14072</bid>
+      <cvename>CAN-2005-2320</cvename>
+    </references>
+    <dates>
+      <discovery>2005-06-27</discovery>
+      <entry>2006-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9cd52bc6-a213-11da-b410-000e0c2e438a">
     <topic>abiword -- stack based buffer overflow vulnerabilities</topic>
     <affects>
