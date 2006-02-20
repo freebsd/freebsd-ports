@@ -65,7 +65,9 @@
 %%DATADIR%%/htmlform.scm
 %%DATADIR%%/http-cgi.scm
 %%DATADIR%%/jscheme.init
+%%DATADIR%%/limit.scm
 %%DATADIR%%/lineio.scm
+%%DATADIR%%/linterp.scm
 %%DATADIR%%/logical.scm
 %%DATADIR%%/macrotst.scm
 %%DATADIR%%/macscheme.init
@@ -142,6 +144,7 @@
 %%DATADIR%%/srfi-2.scm
 %%DATADIR%%/srfi-8.scm
 %%DATADIR%%/srfi-9.scm
+%%DATADIR%%/srfi-61.scm
 %%DATADIR%%/srfi.scm
 %%DATADIR%%/stdio.scm
 %%DATADIR%%/strcase.scm
