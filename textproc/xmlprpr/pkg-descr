@@ -9,5 +9,4 @@ renamed so as not to conflict with an xmlpp already in the ports tree.
 
 WWW: http://software.decisionsoft.com/tools.html
 
-- Paul Chvostek
-paul+ports@it.ca
+- Paul Chvostek <paul+ports@it.ca>
