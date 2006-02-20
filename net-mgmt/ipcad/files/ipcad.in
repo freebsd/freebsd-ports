@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ipcad
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run ipcad:
+#
+# ipcad_enable (bool):		Set it to "YES" to enable ipcad.
+#				Default is "NO".
+# ipcad_conf (file):		Set local of config file.
+#				Default is "%%PREFIX%%/etc/ipcad.conf".
+#
+
+. %%RC_SUBR%%
+
+name="ipcad"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${ipcad_enable="NO"}
+: ${ipcad_conf="%%PREFIX%%/etc/ipcad.conf"}
+: ${ipcad_flags=""}
+
+required_files="${ipcad_conf}"
+command=%%PREFIX%%/bin/ipcad
+command_args="-rds -c ${ipcad_conf}"
+
+run_rc_command "$1"

@@ -7,6 +7,7 @@
 
 PORTNAME=	ipcad
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
 		http://ipcad.sourceforge.net/	\
@@ -16,10 +17,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export modes
 
+USE_RC_SUBR=	ipcad
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 MANCOMPRESSED=	no
-MAN5=	ipcad.conf.5
-MAN8=	ipcad.8
-USE_REINPLACE=	yes
+MAN5=		ipcad.conf.5
+MAN8=		ipcad.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
@@ -27,12 +31,8 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/ipcad
-	@${SED} -e "s=!!PREFIX!!=${PREFIX}=g" \
-		< ${FILESDIR}/ipcad.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/ipcad.sh
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/etc/rc.d/ipcad.sh
-	${INSTALL_MAN} ${WRKSRC}/ipcad.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/ipcad.conf.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/ipcad.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ipcad.conf.5 ${MANPREFIX}/man/man5
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
