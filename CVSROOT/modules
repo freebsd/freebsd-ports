@@ -3761,6 +3761,7 @@ howl		ports/net/howl
 howm		ports/deskutils/howm
 hoz		ports/sysutils/hoz
 hp2xx		ports/print/hp2xx
+hp48xgcc	ports/devel/hp48xgcc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/net/hping
