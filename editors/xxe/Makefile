@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	xxe
-PORTVERSION=	3.0p1
+PORTVERSION=	3.1.0
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/
 PKGNAMESUFFIX=	-std
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	A validating XML editor featuring a word processor-like view
-
-BROKEN=		Unfetchable
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5
