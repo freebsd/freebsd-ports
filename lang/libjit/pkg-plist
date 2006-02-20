@@ -2,6 +2,7 @@ include/jit/jit-apply.h
 include/jit/jit-block.h
 include/jit/jit-common.h
 include/jit/jit-context.h
+include/jit/jit-debugger.h
 include/jit/jit-defs.h
 include/jit/jit-dump.h
 include/jit/jit-dynamic.h

@@ -2,67 +2,67 @@ bin/csunit
 bin/ilinstall
 bin/jsrun
 lib/cscc/lib/0.81.0.1407/ICSharpCode.SharpZipLib.dll
-lib/cscc/lib/2.0.3600.0/Accessibility.dll
-lib/cscc/lib/2.0.3600.0/DotGNU.Images.dll
-lib/cscc/lib/2.0.3600.0/DotGNU.Misc.dll
-lib/cscc/lib/2.0.3600.0/DotGNU.SSL.dll
-lib/cscc/lib/2.0.3600.0/DotGNU.Terminal.dll
-lib/cscc/lib/2.0.3600.0/DotGNU.XmlRpc.dll
-lib/cscc/lib/2.0.3600.0/I18N.CJK.dll
-lib/cscc/lib/2.0.3600.0/I18N.MidEast.dll
-lib/cscc/lib/2.0.3600.0/I18N.Other.dll
-lib/cscc/lib/2.0.3600.0/I18N.Rare.dll
-lib/cscc/lib/2.0.3600.0/I18N.West.dll
-lib/cscc/lib/2.0.3600.0/I18N.dll
-lib/cscc/lib/2.0.3600.0/ISymWrapper.dll
-lib/cscc/lib/2.0.3600.0/OpenSystem.C.dll
-lib/cscc/lib/2.0.3600.0/OpenSystem.Platform.dll
-lib/cscc/lib/2.0.3600.0/System.Configuration.Install.dll
-lib/cscc/lib/2.0.3600.0/System.Deployment.dll
-lib/cscc/lib/2.0.3600.0/System.Design.dll
-lib/cscc/lib/2.0.3600.0/System.Drawing.Postscript.dll
-lib/cscc/lib/2.0.3600.0/System.Drawing.Win32.dll
-lib/cscc/lib/2.0.3600.0/System.Drawing.Xsharp.dll
-lib/cscc/lib/2.0.3600.0/System.Drawing.dll
-lib/cscc/lib/2.0.3600.0/System.EnterpriseServices.dll
-lib/cscc/lib/2.0.3600.0/System.Net.IrDA.dll
-lib/cscc/lib/2.0.3600.0/System.Windows.Forms.Themes.XP.dll
-lib/cscc/lib/2.0.3600.0/System.Windows.Forms.dll
-lib/cscc/lib/2.0.3600.0/System.Xml.dll
-lib/cscc/lib/2.0.3600.0/System.dll
-lib/cscc/lib/2.0.3600.0/Xsharp.dll
-lib/cscc/lib/2.0.3600.0/ca/I18N.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.Configuration.Install.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.Drawing.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.Net.IrDA.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.Windows.Forms.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.Xml.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/System.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/Xsharp.resources.dll
-lib/cscc/lib/2.0.3600.0/ca/mscorlib.resources.dll
-lib/cscc/lib/2.0.3600.0/cstest.dll
-lib/cscc/lib/2.0.3600.0/csunit.exe
-lib/cscc/lib/2.0.3600.0/de/I18N.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.Configuration.Install.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.Drawing.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.Net.IrDA.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.Windows.Forms.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.Xml.resources.dll
-lib/cscc/lib/2.0.3600.0/de/System.resources.dll
-lib/cscc/lib/2.0.3600.0/de/Xsharp.resources.dll
-lib/cscc/lib/2.0.3600.0/de/mscorlib.resources.dll
-lib/cscc/lib/2.0.3600.0/ilinstall.exe
-lib/cscc/lib/2.0.3600.0/mscorlib.dll
-lib/cscc/lib/2.0.3600.0/pinvoke.map
-lib/cscc/lib/2.0.3600.0/sysglobl.dll
-lib/cscc/lib/8.0.1200.0/Microsoft.JScript.dll
-lib/cscc/lib/8.0.1200.0/Microsoft.VisualBasic.dll
-lib/cscc/lib/8.0.1200.0/Microsoft.VisualC.dll
-lib/cscc/lib/8.0.1200.0/Microsoft.Vsa.dll
-lib/cscc/lib/8.0.1200.0/ca/Microsoft.VisualBasic.resources.dll
-lib/cscc/lib/8.0.1200.0/cscompmgd.dll
-lib/cscc/lib/8.0.1200.0/de/Microsoft.VisualBasic.resources.dll
-lib/cscc/lib/8.0.1200.0/jsrun.exe
+lib/cscc/lib/2.0.0.0/Accessibility.dll
+lib/cscc/lib/2.0.0.0/DotGNU.Images.dll
+lib/cscc/lib/2.0.0.0/DotGNU.Misc.dll
+lib/cscc/lib/2.0.0.0/DotGNU.SSL.dll
+lib/cscc/lib/2.0.0.0/DotGNU.Terminal.dll
+lib/cscc/lib/2.0.0.0/DotGNU.XmlRpc.dll
+lib/cscc/lib/2.0.0.0/I18N.CJK.dll
+lib/cscc/lib/2.0.0.0/I18N.MidEast.dll
+lib/cscc/lib/2.0.0.0/I18N.Other.dll
+lib/cscc/lib/2.0.0.0/I18N.Rare.dll
+lib/cscc/lib/2.0.0.0/I18N.West.dll
+lib/cscc/lib/2.0.0.0/I18N.dll
+lib/cscc/lib/2.0.0.0/ISymWrapper.dll
+lib/cscc/lib/2.0.0.0/OpenSystem.C.dll
+lib/cscc/lib/2.0.0.0/OpenSystem.Platform.dll
+lib/cscc/lib/2.0.0.0/System.Configuration.Install.dll
+lib/cscc/lib/2.0.0.0/System.Deployment.dll
+lib/cscc/lib/2.0.0.0/System.Design.dll
+lib/cscc/lib/2.0.0.0/System.Drawing.Postscript.dll
+lib/cscc/lib/2.0.0.0/System.Drawing.Win32.dll
+lib/cscc/lib/2.0.0.0/System.Drawing.Xsharp.dll
+lib/cscc/lib/2.0.0.0/System.Drawing.dll
+lib/cscc/lib/2.0.0.0/System.EnterpriseServices.dll
+lib/cscc/lib/2.0.0.0/System.Net.IrDA.dll
+lib/cscc/lib/2.0.0.0/System.Windows.Forms.Themes.XP.dll
+lib/cscc/lib/2.0.0.0/System.Windows.Forms.dll
+lib/cscc/lib/2.0.0.0/System.Xml.dll
+lib/cscc/lib/2.0.0.0/System.dll
+lib/cscc/lib/2.0.0.0/Xsharp.dll
+lib/cscc/lib/2.0.0.0/ca/I18N.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.Configuration.Install.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.Drawing.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.Net.IrDA.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.Windows.Forms.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.Xml.resources.dll
+lib/cscc/lib/2.0.0.0/ca/System.resources.dll
+lib/cscc/lib/2.0.0.0/ca/Xsharp.resources.dll
+lib/cscc/lib/2.0.0.0/ca/mscorlib.resources.dll
+lib/cscc/lib/2.0.0.0/cstest.dll
+lib/cscc/lib/2.0.0.0/csunit.exe
+lib/cscc/lib/2.0.0.0/de/I18N.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.Configuration.Install.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.Drawing.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.Net.IrDA.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.Windows.Forms.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.Xml.resources.dll
+lib/cscc/lib/2.0.0.0/de/System.resources.dll
+lib/cscc/lib/2.0.0.0/de/Xsharp.resources.dll
+lib/cscc/lib/2.0.0.0/de/mscorlib.resources.dll
+lib/cscc/lib/2.0.0.0/ilinstall.exe
+lib/cscc/lib/2.0.0.0/mscorlib.dll
+lib/cscc/lib/2.0.0.0/pinvoke.map
+lib/cscc/lib/2.0.0.0/sysglobl.dll
+lib/cscc/lib/8.0.50727.42/Microsoft.JScript.dll
+lib/cscc/lib/8.0.50727.42/Microsoft.VisualBasic.dll
+lib/cscc/lib/8.0.50727.42/Microsoft.VisualC.dll
+lib/cscc/lib/8.0.50727.42/Microsoft.Vsa.dll
+lib/cscc/lib/8.0.50727.42/ca/Microsoft.VisualBasic.resources.dll
+lib/cscc/lib/8.0.50727.42/cscompmgd.dll
+lib/cscc/lib/8.0.50727.42/de/Microsoft.VisualBasic.resources.dll
+lib/cscc/lib/8.0.50727.42/jsrun.exe
 lib/cscc/lib/Accessibility.dll
 lib/cscc/lib/DotGNU.Images.dll
 lib/cscc/lib/DotGNU.Misc.dll
@@ -131,12 +131,12 @@ lib/cscc/lib/sysglobl.dll
 share/cscc/config/machine.default
 @dirrm share/cscc/config
 @dirrmtry share/cscc
-@dirrmtry lib/cscc/lib/8.0.1200.0/de
-@dirrmtry lib/cscc/lib/8.0.1200.0/ca
-@dirrmtry lib/cscc/lib/8.0.1200.0
-@dirrmtry lib/cscc/lib/2.0.3600.0/de
-@dirrmtry lib/cscc/lib/2.0.3600.0/ca
-@dirrmtry lib/cscc/lib/2.0.3600.0
+@dirrmtry lib/cscc/lib/8.0.50727.42/de
+@dirrmtry lib/cscc/lib/8.0.50727.42/ca
+@dirrmtry lib/cscc/lib/8.0.50727.42
+@dirrmtry lib/cscc/lib/2.0.0.0/de
+@dirrmtry lib/cscc/lib/2.0.0.0/ca
+@dirrmtry lib/cscc/lib/2.0.0.0
 @dirrmtry lib/cscc/lib/0.81.0.1407
 @dirrmtry lib/cscc/lib/ca
 @dirrmtry lib/cscc/lib/de
