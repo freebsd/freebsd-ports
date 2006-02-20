@@ -566,3 +566,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%CONTRIB%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry www/data
