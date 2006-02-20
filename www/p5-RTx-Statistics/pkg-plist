@@ -1,0 +1,60 @@
+%%RTPLIST%%/local/lib/RTx/Statistics.pm
+%%RTPLIST%%/local/lib/auto/RTx/Statistics/.packlist
+%%RTPLIST%%/share/html/RTx/Statistics/UserTest/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/UserTest/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/ControlsAsTable/UpdatePage
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/ControlsAsTable/ControlBox
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/GraphBox
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/Tabs
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/CollectionAsTable/Row
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/CollectionAsTable/Header
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/CollectionAsTable/ParseFormat
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/DateSelectRow
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/StatColumnMap
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/SelectMultiQueue
+%%RTPLIST%%/share/html/RTx/Statistics/Elements/DurationAsString
+%%RTPLIST%%/share/html/RTx/Statistics/CallsMultiQueue/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/CallsMultiQueue/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/DayOfWeek/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/DayOfWeek/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/TimeToResolve/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/TimeToResolve/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/CallsQueueDay/Results.tsv
+%%RTPLIST%%/share/html/RTx/Statistics/CallsQueueDay/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/CallsQueueDay/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/OpenStalled/Results.tsv
+%%RTPLIST%%/share/html/RTx/Statistics/OpenStalled/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/OpenStalled/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/DurationAsString
+%%RTPLIST%%/share/html/RTx/Statistics/Resolution/Elements/Chart
+%%RTPLIST%%/share/html/RTx/Statistics/Resolution/index.html
+%%RTPLIST%%/share/html/RTx/Statistics/FAQ/index.html
+%%RTPLIST%%/share/html/Callbacks/kStatistics/Elements/Tabs/Default
+@dirrm %%RTPLIST%%/local/lib/RTx
+@dirrm %%RTPLIST%%/local/lib/auto/RTx/Statistics
+@dirrm %%RTPLIST%%/local/lib/auto/RTx
+@dirrm %%RTPLIST%%/share/html/Callbacks/kStatistics/Elements/Tabs
+@dirrm %%RTPLIST%%/share/html/Callbacks/kStatistics/Elements
+@dirrm %%RTPLIST%%/share/html/Callbacks/kStatistics
+@dirrm %%RTPLIST%%/share/html/Callbacks
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/FAQ
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/Resolution/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/Resolution
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/OpenStalled/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/OpenStalled
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/CallsQueueDay/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/CallsQueueDay
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/TimeToResolve/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/TimeToResolve
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/DayOfWeek/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/DayOfWeek
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/CallsMultiQueue/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/CallsMultiQueue
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/Elements/CollectionAsTable
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/Elements/ControlsAsTable
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/UserTest/Elements
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics/UserTest
+@dirrm %%RTPLIST%%/share/html/RTx/Statistics
+@dirrm %%RTPLIST%%/share/html/RTx
