@@ -9,7 +9,9 @@ PORTNAME=	sgmlformat
 PORTVERSION=	1.7
 PORTREVISION=	2
 CATEGORIES=	textproc print
-MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
+#MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
