@@ -23,6 +23,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/logoODYSSEE.png
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_bubble.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_bump.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_demomenu.jpg
@@ -48,6 +49,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000015.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000016.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000017.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000018.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_odykill.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_optflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_paint.jpg
@@ -115,6 +117,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x79.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_rela.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/functions_type.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__displays.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__drawing.html
