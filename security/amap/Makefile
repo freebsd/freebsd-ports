@@ -26,10 +26,10 @@ PORTDOCS=	README TODO CHANGES AMAP-LIB-INTERFACE
 PLIST_SUB=	AMAPLIBDIR=lib/${PORTNAME} AMAPINCDIR=include/${PORTNAME}
 
 CONF_DIR=	${PREFIX}/etc/${PORTNAME}
-CONF_FILES=	appdefs.resp appdefs.rpc appdefs.trig
+LOCAL_CONF_FILES=	appdefs.resp appdefs.rpc appdefs.trig
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${CONF_DIR}"
+SUB_LIST=	CONF_FILES="${LOCAL_CONF_FILES}" CONF_DIR="${CONF_DIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -51,7 +51,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/${PORTNAME}
 .	endfor
 	${MKDIR} ${CONF_DIR}
-.	for i in ${CONF_FILES}
+.	for i in ${LOCAL_CONF_FILES}
 		${INSTALL_DATA} ${WRKSRC}/${i} ${CONF_DIR}/${i}.default
 .	endfor
 	${INSTALL_MAN} ${WRKSRC}/amap.1 ${MANPREFIX}/man/man1

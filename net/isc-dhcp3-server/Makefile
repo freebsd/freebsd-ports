@@ -137,7 +137,7 @@ PORTDOCS=	LICENSE README RELNOTES
 .endif
 .if ${SUBSYS} == client
 BIN_FILES=	dhclient
-CONF_FILES=	dhclient.conf
+LOCAL_CONF_FILES=	dhclient.conf
 SAMP_FILES=	client/dhclient.conf
 DATA_FILES=	dhclient.leases
 .elif ${SUBSYS} == server
@@ -329,7 +329,7 @@ install-sample-files:
 .endfor
 
 create-conf-files:
-.for f in ${CONF_FILES}
+.for f in ${LOCAL_CONF_FILES}
 .if !exists(${CONF_DIR}/${f})
 	@${TOUCH} ${CONF_DIR}/${f}
 .endif

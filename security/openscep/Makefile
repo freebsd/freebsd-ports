@@ -31,10 +31,10 @@ CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 CONF_DIR=	${PREFIX}/etc/${PORTNAME}
-CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
+LOCAL_CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
 
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
-SUB_LIST=	CONF_DIR="${CONF_DIR}" CONF_FILES="${CONF_FILES}"
+SUB_LIST=	CONF_DIR="${CONF_DIR}" CONF_FILES="${LOCAL_CONF_FILES}"
 
 MAN1=		derdump.1 \
 		scep.1 \
