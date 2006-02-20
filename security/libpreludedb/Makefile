@@ -5,6 +5,7 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
@@ -16,10 +17,10 @@ LIB_DEPENDS=	prelude.6:${PORTSDIR}/security/libprelude
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_AUTOTOOLS=		libtool:15:inc
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib \
-			%%PREFIX%%/lib/libpreludedb/plugins/format
+			%%PREFIX%%/lib/libpreludedb/plugins/formats
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_PERL)
@@ -58,6 +59,16 @@ LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--disable-pgsql
 PLIST_SUB+=		WITH_PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=		yes
+CONFIGURE_ARGS+=	--enable-sqlite3
+PLIST_SUB+=		WITH_SQLITE=""
+LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
+.else
+CONFIGURE_ARGS+=	--disable-sqlite3
+PLIST_SUB+=		WITH_SQLITE="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)

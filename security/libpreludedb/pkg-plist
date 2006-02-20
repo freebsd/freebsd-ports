@@ -11,12 +11,18 @@ include/libpreludedb/preludedb-error.h
 include/libpreludedb/preludedb.h
 lib/libpreludedb.so.2
 lib/libpreludedb.so
-lib/libpreludedb.a
+lib/libpreludedb.la
 lib/libpreludedb/plugins/formats/classic.so
+lib/libpreludedb/plugins/formats/classic.la
 %%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
+%%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.la
 %%WITH_MYSQL%%@dirrmtry lib/libpreludedb/plugins/sql
 %%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
+%%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.la
 %%WITH_PGSQL%%@dirrmtry lib/libpreludedb/plugins/sql
+%%WITH_SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
+%%WITH_SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.la
+%%WITH_SQLITE%%@dirrmtry lib/libpreludedb/plugins/sql
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.bs
