@@ -8817,6 +8817,7 @@ p5-RRDTool-OO	ports/devel/p5-RRDTool-OO
 p5-RTF-Parser	ports/textproc/p5-RTF-Parser
 p5-RTF-Tokenizer	ports/textproc/p5-RTF-Tokenizer
 p5-RTF-Writer	ports/textproc/p5-RTF-Writer
+p5-RTx-Statistics	ports/www/p5-RTx-Statistics
 p5-Rcs	ports/devel/p5-Rcs
 p5-Rcs-Agent	ports/devel/p5-Rcs-Agent
 p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
