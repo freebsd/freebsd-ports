@@ -18,6 +18,8 @@ BUILD_DEPENDS=	\
 		potrace:${PORTSDIR}/graphics/potrace \
 		updmap:${PORTSDIR}/print/teTeX-base
 
+BROKEN=		Installs files before 'make install'
+
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
