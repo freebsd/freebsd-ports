@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20060620:
+20060220:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
 
