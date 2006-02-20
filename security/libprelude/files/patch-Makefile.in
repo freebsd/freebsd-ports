@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Jan 10 16:15:30 2006
-+++ Makefile.in	Tue Jan 10 16:15:49 2006
-@@ -308,7 +308,7 @@
+--- Makefile.in.orig	Sat Jan 28 18:06:10 2006
++++ Makefile.in	Mon Jan 30 15:04:06 2006
+@@ -310,7 +310,7 @@
  target_vendor = @target_vendor@
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
  ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
@@ -9,3 +9,72 @@
  EXTRA_DIST = HACKING.README LICENSE.README client.conf global.conf idmef-client.conf tls.conf
  bin_SCRIPTS = $(top_builddir)/libprelude-config
  distuninstallcheck_listfiles = find . -type f -print | grep -v 'perl' | grep -v '3pm'
+@@ -832,61 +832,13 @@
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir);
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/default;
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/profile;
+-	@if test -f $(DESTDIR)$(prelude_config_dir)/default/client.conf; then							\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(prelude_config_dir)/default/client.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(prelude_config_dir)/default/client.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_srcdir)/client.conf $(DESTDIR)$(prelude_config_dir)/default/client.conf-dist;		\
+-        else															\
+-                $(INSTALL) -m 644 $(top_srcdir)/client.conf $(DESTDIR)$(prelude_config_dir)/default;				\
+-        fi
+-
+-	@if test -f $(DESTDIR)$(prelude_config_dir)/default/global.conf; then							\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(prelude_config_dir)/default/global.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(prelude_config_dir)/default/global.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_srcdir)/global.conf $(DESTDIR)$(prelude_config_dir)/default/global.conf-dist;		\
+-        else															\
+-                $(INSTALL) -m 644 $(top_srcdir)/global.conf $(DESTDIR)$(prelude_config_dir)/default;				\
+-        fi															
+-
+-	@if test -f $(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf; then						\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf already exist...";				\
+-                echo "Installing default configuration in $(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf-dist";	\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_srcdir)/idmef-client.conf $(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf-dist; \
+-        else															\
+-                $(INSTALL) -m 644 $(top_srcdir)/idmef-client.conf $(DESTDIR)$(prelude_config_dir)/default;			\
+-        fi
+-
+-	@if test -f $(DESTDIR)$(prelude_config_dir)/default/tls.conf; then							\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(prelude_config_dir)/default/tls.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(prelude_config_dir)/default/tls.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(prelude_config_dir)/default/tls.conf-dist;			\
+-        else															\
+-                $(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(prelude_config_dir)/default;				\
+-	fi
++	$(INSTALL) -m 644 $(top_srcdir)/client.conf $(DESTDIR)$(prelude_config_dir)/default/client.conf-dist;
++
++	$(INSTALL) -m 644 $(top_srcdir)/global.conf $(DESTDIR)$(prelude_config_dir)/default/global.conf-dist;
++
++	$(INSTALL) -m 644 $(top_srcdir)/idmef-client.conf $(DESTDIR)$(prelude_config_dir)/default/idmef-client.conf-dist;
++
++	$(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(prelude_config_dir)/default/tls.conf-dist;
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(prelude_config_dir)/default/client.conf
