@@ -363,6 +363,7 @@
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem
+    SUBDIR += hp48xgcc
     SUBDIR += hptools
     SUBDIR += hs-alex
     SUBDIR += hs-buddha

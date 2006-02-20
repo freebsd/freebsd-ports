@@ -1,0 +1,82 @@
+--- Makefile.orig	Thu Nov  7 18:58:32 1996
++++ Makefile	Mon Feb 20 18:49:33 2006
+@@ -34,19 +34,20 @@
+ CLASS_SRC = ./class
+ MKDIRHIER = mkdir -p
+ 
+-INSTLIB = $(ROOT)/usr/lib/gcc-lib/saturn-local-hp48/$(GCC_VERSION)
+-INSTBIN = $(ROOT)/usr/bin
+-INSTPUB = $(ROOT)/usr/saturn-local-hp48
++INSTLIB = $(ROOT)/lib/gcc-lib/saturn-local-hp48/$(GCC_VERSION)
++INSTBIN = $(ROOT)/bin
++INSTPUB = $(ROOT)/saturn-local-hp48
+ 
+ PUBDIRS  := $(shell find $(shell cat make.pubfiles) -prune -type d)
+ PUBFILES := $(shell find $(shell cat make.pubfiles) -prune -type f)
+ 
+ default: usr-tree
+ 
+-build-lib: usr-tree FORCE
++build-lib: usr-tree1 FORCE
+ 	$(MAKE) -C lib-source install \
+ 	LIBDIR=$(INSTLIB) HPDIR=$(INSTPUB)/download \
+-	CC="$(INSTBIN)/xgcc -B$(INSTLIB)/ -I../../include"
++	CC="$(INSTBIN)/xgcc -B$(INSTLIB)/ -I../../include" \
++	CFLAGS="" CP="$(INSTALL_DATA)"
+ 
+ zip: hp48xgcc-$(VERSION_TAG).zip
+ 
+@@ -57,17 +58,18 @@
+ 	elsif(!-e $$t && -e "$$t$(EXE)") { unlink "$$t$(EXE)"; } }'
+ 	$(MAKE) -C $(GCC_SRC) $(GCC_MAKE_ARGS) xgcc cc1 cccp
+ 	$(MAKE) -e -C $(CLASS_SRC)
+-	$(MAKE) usr-tree1
++	$(MAKE) -e -C objdump
+ 
+ usr-tree1: $(INSTLIB) $(INSTBIN) public-files \
+ 	  $(INSTBIN)/xgcc$(EXE) $(INSTLIB)/cc1$(EXE) $(INSTLIB)/specs \
+-	  $(INSTLIB)/ld$(EXE) $(INSTLIB)/as$(EXE) $(INSTLIB)/cpp$(EXE)
++	  $(INSTLIB)/ld$(EXE) $(INSTLIB)/as$(EXE) $(INSTLIB)/cpp$(EXE) \
++	  $(INSTBIN)/objdump
+ 
+ $(addprefix $(INSTPUB)/,$(PUBDIRS)):
+ 	$(INSTALL) -d $@
+ 
+ $(addprefix $(INSTPUB)/,$(PUBFILES)): $(INSTPUB)/%: %
+-	$(INSTALL) $? $@
++	$(INSTALL_DATA) $? $@
+ 
+ public-files: $(addprefix $(INSTPUB)/,$(PUBDIRS)) \
+ 	      $(addprefix $(INSTPUB)/,$(PUBFILES))
+@@ -76,22 +78,25 @@
+ 	cd $(ROOT) && zip -uyr $@ usr
+ 
+ $(INSTBIN)/xgcc$(EXE): $(GCC_SRC)/xgcc$(EXE)
+-	$(INSTALL) $? $@
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB)/cc1$(EXE): $(GCC_SRC)/cc1$(EXE)
+-	$(INSTALL) $? $@
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB)/cpp$(EXE): $(GCC_SRC)/cccp$(EXE)
+-	$(INSTALL) $? $@
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB)/ld$(EXE): $(CLASS_SRC)/clld$(EXE)
+-	$(INSTALL) $? $@
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB)/as$(EXE): $(CLASS_SRC)/class$(EXE)
+-	$(INSTALL) $? $@
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB)/specs: gcc-target/specs
+-	$(INSTALL) gcc-target/specs $@
++	$(INSTALL_DATA) gcc-target/specs $@
++
++$(INSTBIN)/objdump: objdump/objdump
++	$(INSTALL_PROG) $? $@
+ 
+ $(INSTLIB) $(INSTBIN):
+ 	$(INSTALL) -d $@	

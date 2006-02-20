@@ -1,0 +1,155 @@
+bin/objdump
+bin/xgcc
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/as
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/cc1
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/cpp
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/crt0.o
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/ld
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libc.slo
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libcore.slo
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libgcc.slo
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libgraph.slo
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/libm.slo
+lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%/specs
+@dirrm lib/gcc-lib/saturn-local-hp48/%%GCC_VER%%
+@dirrm lib/gcc-lib/saturn-local-hp48
+@dirrmtry lib/gcc-lib
+saturn-local-hp48/doc/hp48xgcc.htm
+saturn-local-hp48/doc/old-hp48xgcc.doc
+@dirrm saturn-local-hp48/doc
+saturn-local-hp48/download/GCCLDD
+saturn-local-hp48/download/libc.sl
+saturn-local-hp48/download/libcore.sl
+saturn-local-hp48/download/libgcc.sl
+saturn-local-hp48/download/libgraph.sl
+saturn-local-hp48/download/libm.sl
+@dirrm saturn-local-hp48/download
+saturn-local-hp48/include/hp48/core.h
+saturn-local-hp48/include/hp48/fb.h
+saturn-local-hp48/include/hp48/lcd.h
+saturn-local-hp48/include/hp48/main.h
+saturn-local-hp48/include/hp48/object.h
+saturn-local-hp48/include/hp48/stack.h
+saturn-local-hp48/include/hp48/types.h
+saturn-local-hp48/include/sys/cdefs.h
+saturn-local-hp48/include/sys/types.h
+saturn-local-hp48/include/features.h
+saturn-local-hp48/include/float.h
+saturn-local-hp48/include/huge_val.h
+saturn-local-hp48/include/limits.h
+saturn-local-hp48/include/malloc.h
+saturn-local-hp48/include/math.h
+saturn-local-hp48/include/stdarg.h
+saturn-local-hp48/include/stddef.h
+saturn-local-hp48/include/stdio.h
+saturn-local-hp48/include/stdlib.h
+saturn-local-hp48/include/string.h
+saturn-local-hp48/include/values.h
+@dirrm saturn-local-hp48/include/sys
+@dirrm saturn-local-hp48/include/hp48
+@dirrm saturn-local-hp48/include
+saturn-local-hp48/lib-source/Makefile
+saturn-local-hp48/lib-source/dos-make.bat
+saturn-local-hp48/lib-source/gccldd/GCCLDD.s
+saturn-local-hp48/lib-source/gccldd/Makefile
+saturn-local-hp48/lib-source/include/gx.h
+saturn-local-hp48/lib-source/include/rom.h
+saturn-local-hp48/lib-source/libc/Makefile
+saturn-local-hp48/lib-source/libc/stack.S
+saturn-local-hp48/lib-source/libc/string_c.c
+saturn-local-hp48/lib-source/libcore/Makefile
+saturn-local-hp48/lib-source/libcore/coreleft.S
+saturn-local-hp48/lib-source/libcore/memory.S
+saturn-local-hp48/lib-source/libgcc/Makefile
+saturn-local-hp48/lib-source/libgcc/floatlib.S
+saturn-local-hp48/lib-source/libgcc/lib0.S
+saturn-local-hp48/lib-source/libgcc/libgcc1.S
+saturn-local-hp48/lib-source/libgraph/Makefile
+saturn-local-hp48/lib-source/libgraph/__fb.c
+saturn-local-hp48/lib-source/libgraph/detect.S
+saturn-local-hp48/lib-source/libgraph/font.c
+saturn-local-hp48/lib-source/libgraph/lcd.S
+saturn-local-hp48/lib-source/libm/Makefile
+saturn-local-hp48/lib-source/libm/README
+saturn-local-hp48/lib-source/libm/acos.S
+saturn-local-hp48/lib-source/libm/acosh.S
+saturn-local-hp48/lib-source/libm/asin.S
+saturn-local-hp48/lib-source/libm/asinh.S
+saturn-local-hp48/lib-source/libm/atan.S
+saturn-local-hp48/lib-source/libm/atan2.S
+saturn-local-hp48/lib-source/libm/atanh.S
+saturn-local-hp48/lib-source/libm/ceil.S
+saturn-local-hp48/lib-source/libm/cos.S
+saturn-local-hp48/lib-source/libm/cosh.S
+saturn-local-hp48/lib-source/libm/exp.S
+saturn-local-hp48/lib-source/libm/expm1.S
+saturn-local-hp48/lib-source/libm/fabs.S
+saturn-local-hp48/lib-source/libm/floor.S
+saturn-local-hp48/lib-source/libm/hypot.S
+saturn-local-hp48/lib-source/libm/lgamma.c
+saturn-local-hp48/lib-source/libm/log.S
+saturn-local-hp48/lib-source/libm/log10.S
+saturn-local-hp48/lib-source/libm/log1p.S
+saturn-local-hp48/lib-source/libm/sin.S
+saturn-local-hp48/lib-source/libm/sinh.S
+saturn-local-hp48/lib-source/libm/sqrt.S
+saturn-local-hp48/lib-source/libm/tan.S
+saturn-local-hp48/lib-source/libm/tanh.S
+saturn-local-hp48/lib-source/libmalloc/Makefile
+saturn-local-hp48/lib-source/libmalloc/malloc.c
+saturn-local-hp48/lib-source/make.def
+saturn-local-hp48/lib-source/stub/Makefile
+saturn-local-hp48/lib-source/stub/crt0.S
+@dirrm saturn-local-hp48/lib-source/stub
+@dirrm saturn-local-hp48/lib-source/libmalloc
+@dirrm saturn-local-hp48/lib-source/libm
+@dirrm saturn-local-hp48/lib-source/libgraph
+@dirrm saturn-local-hp48/lib-source/libgcc
+@dirrm saturn-local-hp48/lib-source/libcore
+@dirrm saturn-local-hp48/lib-source/libc
+@dirrm saturn-local-hp48/lib-source/include
+@dirrm saturn-local-hp48/lib-source/gccldd
+@dirrm saturn-local-hp48/lib-source
+saturn-local-hp48/samples/Makefile
+saturn-local-hp48/samples/asm-test/Makefile
+saturn-local-hp48/samples/asm-test/len1.S
+saturn-local-hp48/samples/asm-test/len2.S
+saturn-local-hp48/samples/asm-test/len3.S
+saturn-local-hp48/samples/c++-hello/Makefile
+saturn-local-hp48/samples/c++-hello/hello.cc
+saturn-local-hp48/samples/download/README
+saturn-local-hp48/samples/float/Makefile
+saturn-local-hp48/samples/float/mandel.c
+saturn-local-hp48/samples/func/Makefile
+saturn-local-hp48/samples/func/external.c
+saturn-local-hp48/samples/func/function.c
+saturn-local-hp48/samples/hello/Makefile
+saturn-local-hp48/samples/hello/hello.c
+saturn-local-hp48/samples/lcd/Makefile
+saturn-local-hp48/samples/lcd/lcdtest.c
+saturn-local-hp48/samples/lib-test/Makefile
+saturn-local-hp48/samples/lib-test/addr_of.c
+saturn-local-hp48/samples/lib-test/bug.c
+saturn-local-hp48/samples/lib-test/cmp.c
+saturn-local-hp48/samples/lib-test/coreleft.c
+saturn-local-hp48/samples/lib-test/fortytwo.c
+saturn-local-hp48/samples/lib-test/inc.c
+saturn-local-hp48/samples/lib-test/layout.cc
+saturn-local-hp48/samples/lib-test/len.c
+saturn-local-hp48/samples/lib-test/reverse.c
+saturn-local-hp48/samples/make.def
+saturn-local-hp48/samples/mandel/Makefile
+saturn-local-hp48/samples/mandel/mandel.c
+saturn-local-hp48/samples/math/Makefile
+saturn-local-hp48/samples/math/gamma.c
+@dirrm saturn-local-hp48/samples/math
+@dirrm saturn-local-hp48/samples/mandel
+@dirrm saturn-local-hp48/samples/lib-test
+@dirrm saturn-local-hp48/samples/lcd
+@dirrm saturn-local-hp48/samples/hello
+@dirrm saturn-local-hp48/samples/func
+@dirrm saturn-local-hp48/samples/float
+@dirrm saturn-local-hp48/samples/download
+@dirrm saturn-local-hp48/samples/c++-hello
+@dirrm saturn-local-hp48/samples/asm-test
+@dirrm saturn-local-hp48/samples
