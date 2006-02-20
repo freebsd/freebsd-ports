@@ -1,10 +1,10 @@
 @comment $FreeBSD$
 bin/libprelude-config
 bin/prelude-adduser
-etc/prelude/default/client.conf
-etc/prelude/default/global.conf
-etc/prelude/default/idmef-client.conf
-etc/prelude/default/tls.conf
+etc/prelude/default/client.conf-dist
+etc/prelude/default/global.conf-dist
+etc/prelude/default/idmef-client.conf-dist
+etc/prelude/default/tls.conf-dist
 include/libprelude/common.h
 include/libprelude/daemonize.h
 include/libprelude/idmef-additional-data.h
@@ -50,7 +50,7 @@ include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
 include/libprelude/variable.h
-lib/libprelude.a
+lib/libprelude.la
 lib/libprelude.so
 lib/libprelude.so.6
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Prelude.pm
