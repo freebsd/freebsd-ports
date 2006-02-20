@@ -1,0 +1,35 @@
+%%SITE_PERL%%/AI/Categorizer.pm
+%%SITE_PERL%%/AI/Categorizer/Category.pm
+%%SITE_PERL%%/AI/Categorizer/Collection.pm
+%%SITE_PERL%%/AI/Categorizer/Collection/DBI.pm
+%%SITE_PERL%%/AI/Categorizer/Collection/Files.pm
+%%SITE_PERL%%/AI/Categorizer/Collection/InMemory.pm
+%%SITE_PERL%%/AI/Categorizer/Collection/SingleFile.pm
+%%SITE_PERL%%/AI/Categorizer/Document.pm
+%%SITE_PERL%%/AI/Categorizer/Document/SMART.pm
+%%SITE_PERL%%/AI/Categorizer/Document/Text.pm
+%%SITE_PERL%%/AI/Categorizer/Document/XML.pm
+%%SITE_PERL%%/AI/Categorizer/Experiment.pm
+%%SITE_PERL%%/AI/Categorizer/FeatureSelector.pm
+%%SITE_PERL%%/AI/Categorizer/FeatureSelector/DocFrequency.pm
+%%SITE_PERL%%/AI/Categorizer/FeatureVector.pm
+%%SITE_PERL%%/AI/Categorizer/Hypothesis.pm
+%%SITE_PERL%%/AI/Categorizer/KnowledgeSet.pm
+%%SITE_PERL%%/AI/Categorizer/Learner.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/Boolean.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/DecisionTree.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/Guesser.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/KNN.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/NaiveBayes.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/Rocchio.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/SVM.pm
+%%SITE_PERL%%/AI/Categorizer/Learner/Weka.pm
+%%SITE_PERL%%/AI/Categorizer/ObjectSet.pm
+%%SITE_PERL%%/AI/Categorizer/Storable.pm
+%%SITE_PERL%%/AI/Categorizer/Util.pm
+@dirrm %%SITE_PERL%%/AI/Categorizer/Learner
+@dirrm %%SITE_PERL%%/AI/Categorizer/FeatureSelector
+@dirrm %%SITE_PERL%%/AI/Categorizer/Document
+@dirrm %%SITE_PERL%%/AI/Categorizer/Collection
+@dirrm %%SITE_PERL%%/AI/Categorizer
+@dirrmtry %%SITE_PERL%%/AI
