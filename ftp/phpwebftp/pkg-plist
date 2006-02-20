@@ -55,6 +55,7 @@
 %%PHPWEBFTPDIR%%/include/language/spanish.lang.php
 %%PHPWEBFTPDIR%%/include/language/swedish.lang.php
 %%PHPWEBFTPDIR%%/include/language/turkish.lang.php
+%%PHPWEBFTPDIR%%/include/language/ukrainian.lang.php
 %%PHPWEBFTPDIR%%/include/functions.inc.php
 %%PHPWEBFTPDIR%%/include/index.html
 %%PHPWEBFTPDIR%%/include/script.js
@@ -62,7 +63,6 @@
 %%PHPWEBFTPDIR%%/setpermission.php
 %%PHPWEBFTPDIR%%/style/cm.css
 %%PHPWEBFTPDIR%%/style/index.html
-%%PHPWEBFTPDIR%%/tmp/index.html
 @dirrm %%PHPWEBFTPDIR%%/img
 @dirrm %%PHPWEBFTPDIR%%/include/language
 @dirrm %%PHPWEBFTPDIR%%/include
