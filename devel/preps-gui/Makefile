@@ -19,6 +19,8 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
+BROKEN=		Removes /usr/X11R6/share/pixmaps directory
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gconf2 libgnomeui
