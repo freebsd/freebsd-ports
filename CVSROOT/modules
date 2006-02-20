@@ -9118,6 +9118,7 @@ p5-Time-Period	ports/devel/p5-Time-Period
 p5-Time-Piece	ports/devel/p5-Time-Piece
 p5-Time-Piece-MySQL	ports/databases/p5-Time-Piece-MySQL
 p5-Time-Piece-Range	ports/devel/p5-Time-Piece-Range
+p5-Time-Progress	ports/devel/p5-Time-Progress
 p5-Time-modules	ports/devel/p5-Time-modules
 p5-TimeDate	ports/devel/p5-TimeDate
 p5-Tk		ports/x11-toolkits/p5-Tk
