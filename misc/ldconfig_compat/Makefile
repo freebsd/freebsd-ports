@@ -7,7 +7,7 @@
 
 PORTNAME=	ldconfig_compat
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -34,9 +34,9 @@ LOCAL_PREFIXES=	${PREFIX}
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/bsd.ldconfig.mk"
 
-.if !(${OSVERSION} < 504105 || \
-	(${OSVERSION} >= 700000 && ${OSVERSION} < 700012) || \
-	(${OSVERSION} >= 600000 && ${OSVERSION} < 600104))
+.if !( ${OSVERSION} < 504105 || \
+	( ${OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
+	( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 ) )
 IGNORE=		isn't needed (part of base rc.d)
 .endif
 
