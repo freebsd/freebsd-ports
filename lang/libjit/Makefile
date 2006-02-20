@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libjit
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
@@ -15,7 +15,6 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:13:inc
-USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 
@@ -25,7 +24,7 @@ MAN3=		libjit.3
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} ==  "sparc64"
-BROKEN=		"Segfault during build"
+BROKEN=		Segfault during build
 .endif
 
 post-patch:
@@ -34,10 +33,10 @@ post-patch:
 		${WRKSRC}/config.h.in
 .endif
 
-post-configure: 	 
-.if ${OSVERSION} >=     502123 && ${ARCH} != "amd64" 	 
+post-configure:
+.if ${OSVERSION} >=     502123 && ${ARCH} != "amd64"
 	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
-		${WRKSRC}/libtool 	 
+		${WRKSRC}/libtool
 .endif
 
 .include <bsd.port.post.mk>

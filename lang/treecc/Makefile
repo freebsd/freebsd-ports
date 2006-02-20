@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treecc
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		treecc.1
 INFO=		treecc
-PLIST_FILES=	bin/treecc
+PLIST_FILES=	bin/treecc lib/libtreecc.a
 
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-lib/cscc/lib/2.0.3600.0/libc.dll
-lib/cscc/lib/2.0.3600.0/libm.dll
-lib/cscc/lib/2.0.3600.0/libpthread.dll
+lib/cscc/lib/2.0.0.0/libc.dll
+lib/cscc/lib/2.0.0.0/libm.dll
+lib/cscc/lib/2.0.0.0/libpthread.dll
 lib/cscc/lib/libc.dll
 lib/cscc/lib/libm.dll
 lib/cscc/lib/libpthread.dll
@@ -126,6 +126,6 @@ share/cscc/include/xlocale.h
 @dirrmtry share/cscc/include/arpa
 @dirrmtry share/cscc/include
 @dirrmtry share/cscc
-@dirrmtry lib/cscc/lib/2.0.3600.0
+@dirrmtry lib/cscc/lib/2.0.0.0
 @dirrmtry lib/cscc/lib
 @dirrmtry lib/cscc

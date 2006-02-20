@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
+
 NOT_FOR_ARCHS=	sparc64
 
 .if !defined(WITHOUT_X11)
@@ -26,7 +27,6 @@ USE_XLIB=	yes
 USE_GCC=	3.4
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--enable-threads=posix
 
@@ -60,6 +60,12 @@ CONFIGURE_ARGS+=	--without-libffi \
 PLIST_SUB=	I386="@comment "
 .else
 PLIST_SUB=	I386=""
+.endif
+
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	IS4X="@comment " ISNOT4X=""
+.else
+PLIST_SUB+=	IS4X="" ISNOT4X="@comment "
 .endif
 
 post-everything::
