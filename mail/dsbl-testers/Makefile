@@ -37,12 +37,12 @@ post-patch:
 # as dictated by port's rules
 BINARY_FILES=	auth-relaytest formmailtest httptest relaytest \
 		getcookie socks4test socks5test spamtrap
-CONF_FILES=	conf/dsbl.conf
+LOCAL_CONF_FILES=	conf/dsbl.conf
 
 do-install:
 	cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} ${BINARY_FILES} ${PREFIX}/bin && \
-		${INSTALL_DATA} ${CONF_FILES} ${PREFIX}/etc
+		${INSTALL_DATA} ${LOCAL_CONF_FILES} ${PREFIX}/etc
 	cd ${WRKSRC}/man && \
 		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5

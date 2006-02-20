@@ -159,7 +159,7 @@ MIME_TYPES=	elm.mimetypes
 MIME_CSETS=	elm.mimecharsets
 TERM_INFO=	elm.terminalinfo
 ELM_RC=		elm.rc
-CONF_FILES=	${MIME_TYPES} ${MIME_CSETS} ${TERM_INFO} ${ELM_RC}
+LOCAL_CONF_FILES=	${MIME_TYPES} ${MIME_CSETS} ${TERM_INFO} ${ELM_RC}
 DOC_FILES=	MIME.txt README.ME+ \
 		doc/Alias.fmtd doc/Config.fmtd doc/Cover.fmtd \
 		doc/Form.fmtd doc/Ref.fmtd doc/Users.fmtd
@@ -238,7 +238,7 @@ create-install-dirs:
 	@${MKDIR} ${CONF_DIR} ${LIB_DIR} ${SHLIB_DIR}
 
 backup-conf-files:
-.for file in ${CONF_FILES}
+.for file in ${LOCAL_CONF_FILES}
 	@if [ -f ${LIB_DIR}/${file} ]; then \
 		${MV} ${LIB_DIR}/${file} ${CONF_DIR}/${file}.orig; \
 	elif [ -f ${CONF_DIR}/${file} ]; then \
@@ -271,13 +271,13 @@ install-mime-types:
 	@${INSTALL_DATA} ${FILESDIR}/${MIME_TYPES} ${CONF_DIR}/${MIME_TYPES}
 
 install-conf-files:
-.for file in ${CONF_FILES}
+.for file in ${LOCAL_CONF_FILES}
 	@${INSTALL_DATA} ${CONF_DIR}/${file} ${CONF_DIR}/${file}-dist
 .endfor
 
 # for instance, don't restore obsolete files :( except elm.rc :)
 restore-conf-files:
-.for file in ${ELM_RC} # ${CONF_FILES}
+.for file in ${ELM_RC} # ${LOCAL_CONF_FILES}
 	@if [ -f ${CONF_DIR}/${file}.orig ]; then \
 		${MV} ${CONF_DIR}/${file}.orig ${CONF_DIR}/${file}; \
 	fi
