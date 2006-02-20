@@ -6,6 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}
+PORTREVISION=	1
 
 COMMFONT=	yes
 

@@ -1,0 +1,23 @@
+% $FreeBSD$
+% Japanese Truetype Fonts
+/Default-Mincho	(%%LOCALBASE%%/share/fonts/TrueType/ipam.ttf) 1 ;
+/Default-Gothic	(%%LOCALBASE%%/share/fonts/TrueType/ipag.ttf) 1 ;
+
+%
+% Convenient aliases for PS files on Japanese PostScript printer
+%
+/Adobe-Japan1		/Default-Mincho	;
+/Ryumin-Light		/Default-Mincho	;
+/Ryumin-Light-H		/Default-Mincho	;
+/Ryumin-Light-V		/Default-Mincho	;
+/GothicBBB-Medium	/Default-Gothic	;
+/GothicBBB-Medium-H	/Default-Gothic	;
+/GothicBBB-Medium-V	/Default-Gothic	;
+/HeiseiMin-W3H		/Default-Mincho	;
+/HeiseiKakuGo-W5H	/Default-Gothic	;
+/FutoMinA101-Bold	/Default-Mincho	;
+/FutoMinA101-Bold-H	/Default-Mincho	;
+/FutoMinA101-Bold-V	/Default-Mincho	;
+/FutoGoB101-Bold	/Default-Gothic	;
+/FutoGoB101-Bold-H	/Default-Gothic	;
+/FutoGoB101-Bold-V	/Default-Gothic	;
