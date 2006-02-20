@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jus@security.za.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to easily removes files and directories
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple

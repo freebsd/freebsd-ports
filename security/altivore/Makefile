@@ -12,7 +12,7 @@ MASTER_SITES=	http://samy.kerneled.org/stuff/
 DISTNAME=	altivore
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	jus@security.za.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 
 RESTRICTED=	License does not allow redistribution in any form\
