@@ -19,9 +19,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcblas.a:${PORTSDIR}/math/atlas
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
 ALL_TARGET=	lib
 
+CBLAS_LIBS?=	-L${LOCALBASE}/lib -lcblas -latlas
+
 post-extract:
 	${CP}	${WRKDIR}/${DISTNAME}/AMD/Make/Make.linux	\
 		${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
+
+pre-build:
+	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ;	\
+	s+%%CFLAGS%%+${CFLAGS}+ ;		\
+	s+%%LOCALBASE%%+${LOCALBASE}+ ;		\
+	s+%%CBLAS_LIBS%%+${CBLAS_LIBS}+ ;'	\
+	 ${WRKDIR}/${DISTNAME}/AMD/Make/Make.freebsd
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Lib/libamd.a ${PREFIX}/lib
@@ -47,4 +56,15 @@ do-install:
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
-.include <bsd.port.mk>
+.if defined(MAINTAINER_MODE)
+test:	build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} hb )
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
