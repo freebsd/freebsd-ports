@@ -8,16 +8,16 @@
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.09
 CATEGORIES=	security
-MASTER_SITES=	http://libtomcrypt.org/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cperciva/libtom
 DISTNAME=	crypt-${PORTVERSION}
 
-PATCH_SITES=	http://libtomcrypt.org/files/patch-1.09/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	cperciva/libtom
 PATCHFILES=	lrw_process.c.patch
 
 MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
-
-BROKEN=		"Does not fetch"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
