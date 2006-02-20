@@ -7,7 +7,7 @@
 
 PORTNAME=	moefonts-cid
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/moefonts-cid/ \
 		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
@@ -18,11 +18,15 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOE CIDFonts converted by Adobe
 
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
-
-NO_BUILD=	YES
+RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
 
 USE_GHOSTSCRIPT_RUN=	yes
+NO_BUILD=	YES
+SUB_FILES=	pkg-install pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
+ADOBECMAPDIR=   ${LOCALBASE}/share/fonts/adobe-cmaps
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes

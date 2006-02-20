@@ -1,7 +1,8 @@
 #!/bin/sh
+# $FreeBSD$
 
-GSVER=7.06
-GSDIR=${PKG_PREFIX}/share/ghostscript
+GSVER=`gs --version`
+GSDIR=%%PREFIX%%/share/ghostscript
 FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
 FONTMAPTMP=${FONTMAP}.tmp
 
