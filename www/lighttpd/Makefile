@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/
 
@@ -33,7 +34,7 @@ OPTIONS=	OPENSSL		"Enable SSL support"	on  \
 .include <bsd.port.pre.mk>
 
 # Default REQUIRE to rc.d script
-_REQUIRE=	DEAMON
+_REQUIRE=	DAEMON
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
