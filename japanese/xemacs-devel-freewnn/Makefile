@@ -12,6 +12,8 @@ COMMENT=	XEmacs(beta version) text editor(SJ3, SKK and FreeWnn)
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
 
+BROKEN=		Incomplete pkg-plist
+
 FREEWNN=	yes
 
 .include	"${MASTERDIR}/Makefile"
