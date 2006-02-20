@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		net python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,9 @@ USE_PYTHON=		2.1+
 USE_PYDISTUTILS=	yes
 PYSETUP=		python/setup.py
 
-GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-python
+
+WITHOUT_ADS=		yes
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
@@ -33,8 +34,8 @@ do-build:
 
 post-install:
 	-@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/shares/python/* \
+	${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}
+	${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/scripts/shares/python/* \
 	    ${EXAMPLESDIR}
 
 .include "${MASTERDIR}/Makefile"
