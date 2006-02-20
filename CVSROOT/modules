@@ -739,6 +739,7 @@ bindtest	ports/net/bindtest
 bing		ports/net/bing
 binkd		ports/net/binkd
 bins		ports/www/bins
+binup		ports/sysutils/binup
 bioapi		ports/security/bioapi
 bioapitool	ports/security/bioapitool
 biojava		ports/biology/biojava
