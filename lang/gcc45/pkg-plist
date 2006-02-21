@@ -15,10 +15,6 @@ include/ssp/string.h
 include/ssp/stdio.h
 include/ssp/unistd.h
 include/omp.h
-include/omp_lib.f90
-include/omp_lib.h
-%%FORTRAN%%include/omp_lib.mod
-%%FORTRAN%%include/omp_lib_kinds.mod
 @dirrm include/ssp
 info/gcc%%SUFFIX%%/dir
 %%FORTRAN%%bin/gfortran%%SUFFIX%%
