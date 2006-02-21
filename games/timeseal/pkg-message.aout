@@ -1,0 +1,13 @@
+===============================================================================
+
+timeseal requires a.out support, which is provided by the a.out kernel module.
+
+To load the kernel module immediately, type the following command:
+
+	kldload aout
+
+To load the kernel module at boot, add the following line to /boot/loader.conf:
+
+	aout_load="YES"
+
+===============================================================================
