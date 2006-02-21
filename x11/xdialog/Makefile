@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
@@ -17,9 +17,8 @@ COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk12
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
