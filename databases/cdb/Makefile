@@ -15,6 +15,10 @@ COMMENT=	A fast lookup database library & utilities
 
 ALL_TARGET=	it
 
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
 	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
