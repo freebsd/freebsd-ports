@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	fsplib
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsp
@@ -22,8 +22,8 @@ do-build:
 	@cd ${WRKSRC} && scons prefix=${PREFIX}
 
 do-install:
-	@cd ${WRKSRC} && scons prefix=${PREFIX} install
-	${FIND} ${PREFIX}/include/  -name .sconsign -exec ${RM} {} \;
-	${FIND} ${PREFIX}/lib/  -name .sconsign -exec ${RM} {} \;
+	@cd ${WRKSRC} && scons prefix=${PREFIX} ${INSTALL_TARGET}
+	@${FIND} ${PREFIX}/include/ -name .sconsign -exec ${RM} {} \;
+	@${FIND} ${PREFIX}/lib/ -name .sconsign -exec ${RM} {} \;
 
 .include <bsd.port.mk>
