@@ -9,8 +9,7 @@ PORTNAME=	cplay
 PORTVERSION=	1.49
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
-		http://www.tf.hut.fi/~flu/cplay/old/
+MASTER_SITES=	http://mask.tf.hut.fi/~flu/hacks/cplay/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end for various audio players
