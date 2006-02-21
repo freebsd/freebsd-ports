@@ -93,5 +93,6 @@
     SUBDIR += uulib
     SUBDIR += vda2fbd
     SUBDIR += xdeview
+    SUBDIR += ytnef
 
 .include <bsd.port.subdir.mk>
