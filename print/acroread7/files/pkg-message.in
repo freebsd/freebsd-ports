@@ -1,0 +1,4 @@
+====
+To run this, set ADOBE_LANG=%%ADOBE_LANG%% and use %%PREFIX%%/bin/acroread.
+(when LANG is set, ADOBE_LANG will be set appropriately)
+====

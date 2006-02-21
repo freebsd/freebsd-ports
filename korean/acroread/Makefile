@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	7.0.5
+PORTREVISION=	0
 CATEGORIES=	korean print linux
 
 MASTERDIR=	${.CURDIR}/../../print/acroread7
-
-ADOBE_LANG=	kor
-CMD_SUFFIX=	-ko
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	KOR
 
 .include "${MASTERDIR}/Makefile"

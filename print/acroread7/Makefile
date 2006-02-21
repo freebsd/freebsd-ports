@@ -6,61 +6,86 @@
 #
 
 PORTNAME=	acroread7
-PORTVERSION=	7.0.1
+PORTVERSION?=	7.0.5
+PORTREVISION?=	1
 CATEGORIES?=	print linux
-MASTER_SITES=	\
-	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/${ADOBE_LANG}/ \
-	ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/${ADOBE_LANG}/
-DISTNAME=	AdobeReader_${ADOBE_LANG}-7.0.1-1.i386.rpm
-EXTRACT_SUFX=
+MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/ \
+		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/
+DISTNAME=	# redefined below
 DIST_SUBDIR=	acroread
-EXTRACT_ONLY=
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	View, search and print PDF documents
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
+RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroreadwrapper \
+		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
 RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
-ADOBE_LANG?=	enu
-INSTDIR=	lib/${PKGNAMEPREFIX}acroread
-NO_FILTER_SHLIBS=	yes
+NO_PACKAGE=	"Use and redistribution with repackaging are not allowed"
 ONLY_FOR_ARCHS=	amd64 i386
-PLIST=		${WRKDIR}/plist
-SUB_FILES=	acroread7
-SUB_LIST+=	INSTDIR=${INSTDIR}
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
+PLIST=		${PKGDIR}/pkg-plist.${PORTVERSION}
+PLIST_SUB=	ACRODIR=${ACRODIR} \
+		PLUGINDIR=${PLUGINDIR} \
+		ADOBE_LANG=${ADOBE_LANG:U} \
+		LOCALE_NAME=${LOCALE_NAME}
+SUB_FILES=	ln mv rm pkg-message
+SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+WRKSRC=		${WRKDIR}/AdobeReader
 
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64")
-ARCH=          i386
-RPMFLAGS+=     --ignorearch
+.if ${PORTVERSION} == 7.0.5
+VERSIONDIR=	${PORTVERSION}
+DISTNAME=	AdobeReader_${ADOBE_LANG:L}-${PORTVERSION}-1.i386
+POSTPROCESS=	> /dev/null
+.else
+VERSIONDIR=	7.0
+DISTNAME=	AdbeRdr701_linux_${ADOBE_LANG:L}
+IS_INTERACTIVE=	yes
 .endif
+LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
+		esp:es_ES fra:fr_FR ita:it_IT jpn:ja_JP kor:ko_KR \
+		nld:nl_NL nor:nb_NO ptb:pt_BR suo:fi_FI sve:sv_SE
 
-do-build:
-	@kldstat -v | ${GREP} -E 'linux(aout|elf)' >/dev/null ||\
-		{ ${ECHO_MSG} "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
-		  exit 1; }
-	@${RM} -rf ${WRKSRC}
-	${MKDIR} ${WRKSRC}/${INSTDIR}
-	@${ECHO} bin/acroread7${CMD_SUFFIX} > ${PLIST}
-	cd ${WRKSRC}/${INSTDIR}; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} | ${CPIO} -id
-	cd ${WRKSRC}; \
-		${FIND} ${INSTDIR} -type l -o -type f >> ${PLIST}; \
-		${FIND} -d ${INSTDIR} -type d \
-		| ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+ADOBE_LANG?=	ENU
+.for L in ${ADOBE_LANG:L}
+LOCALE_NAME=	${LANGCODE:M${L}\:*:C/.*\://}
+LANG_${L:U}=	""
+.endfor
+.for L in ${LANGCODE:C/\:.*//:U}
+LANG_${L}?=	"@comment "
+PLIST_SUB+=	LANG_${L}=${LANG_${L}}
+.endfor
+.if ${ADOBE_LANG:U} == ENU
+LANG_NONENU?=	"@comment "
+.endif
+PLIST_SUB+=	LANG_NONENU=${LANG_NONENU}
+
+ACRODIR=	Adobe/Acrobat7.0/${ADOBE_LANG:U}
+PLUGINDIR=	lib/browser_linux_plugins
+INSTALLDIR=	${PREFIX}/${ACRODIR}
+INSTALLEXEC=	${SETENV} UNAME_s=Linux \
+			InstallDir=${INSTALLDIR} \
+			UNAME_r="Linux Compatibility on FreeBSD" \
+			${SH} ./INSTALL --install_path=${INSTALLDIR} ${POSTPROCESS}
 
 do-install:
-	@cd ${WRKSRC} && ${FIND} ${INSTDIR} | ${CPIO} -dlmp ${LOCALBASE}
-	@${FIND} ${LOCALBASE}/${INSTDIR} -type d -exec ${CHMOD} 755 \{\} \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/acroread7 \
-		${PREFIX}/bin/acroread7${CMD_SUFFIX}
-	@${ECHO_MSG} "Be sure to read the license agreement in"
-	@${ECHO_MSG} "${PREFIX}/${INSTDIR}/usr/local/Adobe/Acrobat7.0/Reader/Legal/${ADOBE_LANG:U}/license_${ADOBE_LANG:U}_uc.txt"
-	# disable the PPKLite plugin as it requires an LDAP share lib
-	${CHMOD} 0 ${PREFIX}/${INSTDIR}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
+	@${MKDIR} ${INSTALLDIR}
+	@${MKDIR} ${WRKDIR}/bin
+	@${INSTALL_SCRIPT} \
+		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
+		${WRKDIR}/bin
+	@${ECHO_CMD} Installing...
+	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC}
+	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
+	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
 
-.include <bsd.port.post.mk>
+.if ${ADOBE_LANG:U} == ENU
+post-install:
+	@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.mk>
