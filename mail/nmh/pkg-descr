@@ -12,4 +12,4 @@ nmh is not a single comprehensive program, you may freely intersperse
 nmh commands with other shells commands, or write custom scripts which
 utilize these commands in flexible ways.
 
-WWW: http://www.mhost.com/nmh/
+WWW: http://savannah.nongnu.org/projects/nmh/
