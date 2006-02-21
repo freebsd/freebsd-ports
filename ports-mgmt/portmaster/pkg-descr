@@ -1,8 +1,24 @@
-This script provides a simple way to manage your ports.
+This script provides a simple way to manage your ports.  It uses the existing
+ports infrastructure to track dependencies, and to keep those dependencies
+up to date.
 
-It uses the existing ports infrastructure to track
-dependencies, and to keep those dependencies up
-to date.
+Because portmaster is written in /bin/sh, it needs no other languages installed.
 
-Because portmaster is written in /bin/sh, it needs
-no other interpreted languages installed.
+Portmaster has the following features:
+  * User can specify the port to upgrade (or install) either by directory
+    in /usr/ports (whether the port is already installed or not), or by
+    directory in /var/db/pkg
+  * Updates and repairs (as needed) entries for dependencies in both +CONTENTS
+    and +REQUIRED_BY files for both the port that is being updated, and any
+    ports that depend on it
+  * Runs make config
+  * Recursively checks and upgrades (or installs) all dependencies
+  * User can force upgrades of all dependent ports
+  * Runs make clean before starting the build (can be disabled)
+  * Offers the user the opportunity to delete stale distfiles
+  * Supports /usr/ports/MOVED
+  * Supports non-default settings of PORTSDIR and PKG_DBDIR
+  * Interactive update mode (prompts for each update)
+  * Option to rebuild port, and ports that depend on it
+
+WWW: http://dougbarton.us/portmaster.html
