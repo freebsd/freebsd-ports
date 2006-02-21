@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}${PORTVERSION:E}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	seanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber AIM Transport module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
