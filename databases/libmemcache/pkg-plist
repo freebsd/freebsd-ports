@@ -1,5 +1,7 @@
+include/memcache/_buffer.h
+include/memcache/buffer.h
+@dirrm include/memcache
 include/memcache.h
-lib/libmemcache.so.1.2
-lib/libmemcache.so.1
+lib/libmemcache.so.4
 lib/libmemcache.so
 lib/libmemcache.a
