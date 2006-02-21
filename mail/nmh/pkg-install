@@ -8,8 +8,8 @@ case "$2" in
     echo "Enabling setgid for ${PKG_PREFIX}/bin/inc"
     chmod g+s ${PKG_PREFIX}/bin/inc
 
-    for file in ${PKG_PREFIX}/etc/nmh/*.default ; do
-      b=`basename $file .default`
+    for file in ${PKG_PREFIX}/etc/nmh/*-dist ; do
+      b=`basename $file -dist`
       if [ \! -f ${PKG_PREFIX}/etc/nmh/$b ] ; then
 	cp $file ${PKG_PREFIX}/etc/nmh/$b
 	chmod u+w ${PKG_PREFIX}/etc/nmh/$b

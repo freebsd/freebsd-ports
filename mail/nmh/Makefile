@@ -52,18 +52,19 @@
 #
 
 PORTNAME=	nmh
-PORTVERSION=	1.0.4
-PORTREVISION=	4
+PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
+MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	scott+ports@sabami.seaslug.org
 COMMENT=	A cleaned up MH mailer suite
 
+GNU_CONFIGURE=  yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOCONF_VER=259
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh
 .ifdef NMH_EDITOR
@@ -96,19 +97,21 @@ CONFIGURE_ARGS+= ${NMH_EXTRA_CONFIGURE_ARGS}
 
 CFLAGS+= -D${NMH_LOCKING}
 
-MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
-	inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
-	mhn.1 mhparam.1 mhpath.1 mhshow.1 mhstore.1 msgchk.1 msh.1 \
+MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 \
+	folder.1 folders.1 forw.1 inc.1 install-mh.1 mark.1 \
+	mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 mhn.1 \
+	mhparam.1 mhpath.1 mhshow.1 mhstore.1 msgchk.1 msh.1 \
 	next.1 nmh.1 packf.1 pick.1 prev.1 prompter.1 rcvdist.1 \
 	rcvpack.1 rcvstore.1 rcvtty.1 refile.1 repl.1 rmf.1 rmm.1 \
-	scan.1 send.1 sendfiles.1 show.1 slocal.1 sortm.1 \
-	vmh.1 whatnow.1 whom.1
+	scan.1 send.1 sendfiles.1 show.1 slocal.1 \
+	sortm.1 whatnow.1 whom.1
 
 MAN5=	mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
-	mh-sequence.5 mh-tailor.5
+	mh-sequence.5 mh-tailor.5 mts.conf.5
+
 MLINKS=	mh-profile.5 mh_profile.5
 
-MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
+MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 mh-mts.8 post.8
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|autoconf|${AUTOCONF}|;\

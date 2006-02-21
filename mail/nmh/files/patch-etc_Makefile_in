@@ -1,0 +1,28 @@
+--- etc/Makefile.in	Tue Nov  8 08:58:08 2005
++++ ../../work-save2/nmh-1.2/etc/Makefile.in	Sat Feb 18 21:24:51 2006
+@@ -23,6 +23,7 @@
+ 
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+ INSTALL_DATA    = @INSTALL_DATA@
+ 
+ # Path to search for programs to handle MIME
+@@ -85,7 +86,7 @@
+ install-bin-files:
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
+ 	for script in $(GENERATED_BIN_FILES); do \
+-	  $(INSTALL_PROGRAM) $$script $(DESTDIR)$(bindir)/$$script; \
++	  $(INSTALL_SCRIPT) $$script $(DESTDIR)$(bindir)/$$script; \
+ 	done
+ 
+ install-etc-files:
+@@ -113,7 +115,8 @@
+ 	  else \
+ 	    $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file; \
+ 	  fi; \
++	  $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file-dist; \
+ 	done
+ 
+ uninstall: uninstall-bin-files uninstall-etc-files
+ 
