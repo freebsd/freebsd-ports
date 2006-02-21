@@ -11,6 +11,7 @@
     SUBDIR += abntex
     SUBDIR += acrobatviewer
     SUBDIR += acroread7
+    SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
     SUBDIR += afm
     SUBDIR += alignmargins
