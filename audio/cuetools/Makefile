@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	cuetools
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/cuetools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for working with cue files and toc files
 
-USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
