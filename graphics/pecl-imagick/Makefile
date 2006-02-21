@@ -7,7 +7,7 @@
 
 PORTNAME=	imagick
 PORTVERSION=	0.9.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,12 +17,21 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to manipulate images
 
-LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
+
+OPTIONS=	GM "Use GraphicsMagick backend" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GM)
+LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick
+.else
+LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
+CONFIGURE_ARGS+=--with-imagick-gm
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -30,4 +39,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
