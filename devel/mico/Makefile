@@ -10,9 +10,6 @@ PORTVERSION=	2.3.11
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/:src \
-		http://www.ciam.ru/~sem/FreeBSD/:docs
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
-		doc-html.tar.gz:docs
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Fully compliant implementation of CORBA2.4 with some CORBA3 features
@@ -115,9 +112,6 @@ MAN8=		ird.8 micod.8 nsd.8
 .if ${OSVERSION} < 500000
 NOT_FOR_ARCHS=	alpha
 .endif
-
-post-extract:
-	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure.in
