@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.6.0
+DISTVERSION=	3.0.0Beta2
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
+DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-i386
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An optimizer for PHP code
@@ -25,25 +25,20 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include <bsd.port.pre.mk>
 
 # Check for FreeBSD version
-.if ${OSVERSION} < 400000
-IGNORE=		this port is for FreeBSD 4 or above
-.else
 .if ${OSVERSION} < 500000
-VER=		4.3
+IGNORE=		this port is for FreeBSD 5 or above
 .else
+.if ${OSVERSION} < 600000
 VER=		5.4
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
-.endif
+.else
+VER=		6.0
 .endif
 # Check for ZendOptimizer sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
-manually.\n\
-Please access http://www.zend.com/store/free_download.php?pid=13\n\
-with a web browser, read the license and click the \"I ACCEPT\" button.\n\
+manually from the http://www.zend.com/free_download/optimizer URL.\n\
 Download the source file, ${DISTNAME}${EXTRACT_SUFX},\n\
 and place it in ${DISTDIR}.\n
 .endif
