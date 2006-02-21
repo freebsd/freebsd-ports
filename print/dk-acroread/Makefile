@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	7.0.1
+PORTREVISION=	1
 PKGNAMEPREFIX=	dk-
 
-ADOBE_LANG=	dan
-CMD_SUFFIX=	-dk
 MASTERDIR=	${.CURDIR}/../../print/acroread7
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	DAN
 
 .include "${MASTERDIR}/Makefile"

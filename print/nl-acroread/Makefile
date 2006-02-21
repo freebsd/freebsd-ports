@@ -4,14 +4,13 @@
 #
 # $FreeBSD$
 #
-
+PORTVERSION=	7.0.1
+PORTREVISION=	1
 PKGNAMEPREFIX=	nl-
 
-COMMENT=	The Acrobat Reader7 (with Dutch Language Pack)
-
-ADOBE_LANG=	nld
-CMD_SUFFIX=	-nl
 MASTERDIR=	${.CURDIR}/../../print/acroread7
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	NLD
 
 .include "${MASTERDIR}/Makefile"

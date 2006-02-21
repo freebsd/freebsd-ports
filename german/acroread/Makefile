@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	7.0.5
+PORTREVISION=	1
 CATEGORIES=	german print linux
 MASTERDIR=	${.CURDIR}/../../print/acroread7
-
-ADOBE_LANG=	deu
-CMD_SUFFIX=	-de
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	DEU
 
 .include "${MASTERDIR}/Makefile"

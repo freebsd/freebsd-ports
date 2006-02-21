@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	chinese print linux
 PKGNAMEPREFIX=	zh_TW-
 
 MASTERDIR=	${.CURDIR}/../../print/acroread7
-
-ADOBE_LANG=	cht
-CMD_SUFFIX=	-zh_TW
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	CHT
 
 .include "${MASTERDIR}/Makefile"

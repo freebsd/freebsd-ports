@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	7.0.5
+PORTREVISION=	1
 CATEGORIES=	french print linux
-MASTERDIR=	${.CURDIR}/../../print/acroread7
 
-ADOBE_LANG=	fra
-CMD_SUFFIX=	-fr
+MASTERDIR=	${.CURDIR}/../../print/acroread7
 MD5_FILE=	${.CURDIR}/distinfo
+
+ADOBE_LANG=	FRA
 
 .include "${MASTERDIR}/Makefile"
