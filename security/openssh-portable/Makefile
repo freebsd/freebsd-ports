@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	4.3p2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \

@@ -11,7 +11,7 @@
 #				Default is "NO".
 # openssh_flags (flags):	Set extra flags to openssh.
 #				Default is "". see sshd(1).
-# openssh_pidfile (path):	Set full path to pid file.
+# openssh_pidfile (file):	Set full path to pid file.
 #				Default is "/var/run/sshd.pid".
 #
 
@@ -20,20 +20,20 @@
 name="openssh"
 rcvar=${name}_enable
 
+load_rc_config ${name}
+
+: ${openssh_enable="NO"}
+: ${openssh_pidfile="/var/run/sshd.pid"}
+
 command=%%PREFIX%%/sbin/sshd
-extra_commands="reload"
-
-pidfile=${openssh_pidfile}
-
+extra_commands="reload keygen"
 start_precmd="${name}_checks"
 restart_precmd="${name}_checks"
+keygen_cmd="${name}_keygen"
+pidfile=${openssh_pidfile}
 
-openssh_checks()
+openssh_keygen()
 {
-	if checkyesno sshd_enable ; then
-		err 1 "sshd_enable is set. Please set sshd_enable to NO in your rc.conf"
-	fi
-
 	if [ ! -f %%ETCSSH%%/ssh_host_key -o \
 		! -f %%ETCSSH%%/ssh_host_dsa_key -o \
 		! -f %%ETCSSH%%/ssh_host_rsa_key ]; then
@@ -73,13 +73,16 @@ openssh_checks()
 		fi
 
 	fi
-
-	eval "${command} -t"
 }
 
-load_rc_config $name
+openssh_checks()
+{
+	if checkyesno sshd_enable ; then
+		err 1 "sshd_enable is set. Please set sshd_enable to NO in your rc.conf"
+	fi
 
-: ${openssh_enable="NO"}
-: ${openssh_pidfile="/var/run/sshd.pid"}
+	run_rc_command keygen
+	eval "${command} -t"
+}
 
 run_rc_command "$1"
