@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_backhand
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.omniti.com/mod_backhand/ \
 		http://people.FreeBSD.org/~seanc/ports/mod_backhand/
