@@ -15,10 +15,6 @@ COMMENT=	A fast lookup database library & utilities
 
 ALL_TARGET=	it
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
 	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
@@ -35,4 +31,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
