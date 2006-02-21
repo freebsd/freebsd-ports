@@ -8,7 +8,7 @@
 PORTNAME=	mbrola
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-MASTER_SITES?=	ftp://tcts.fpms.ac.be/pub/mbrola/freebsd/
+MASTER_SITES?=	http://www.tcts.fpms.ac.be/synthesis/mbrola/bin/freebsd/
 DISTNAME=	mbr301h
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR?=	mbrola-freebsd

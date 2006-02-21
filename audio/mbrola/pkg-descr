@@ -4,4 +4,4 @@ capabilities."  The audio/mbrola port is for i386 only and requires
 FreeBSD 3.x compatibility; the linux-mbrola port is for alpha, i386,
 ppc or sparc64 and requires Linux compatibility.
 
-WWW:  http://tcts.fpms.ac.be/synthesis
+WWW:	http://www.tcts.fpms.ac.be/synthesis/
