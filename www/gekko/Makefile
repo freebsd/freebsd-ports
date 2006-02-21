@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gekko
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.12
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
+DIST_SUBDIR=	gekkoware
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Open Source solution for your Web Content Management
