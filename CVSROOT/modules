@@ -14085,6 +14085,7 @@ yorick-doc	ports/lang/yorick-doc
 yptransitd	ports/net/yptransitd
 ysm		ports/net-im/ysm
 ytalk		ports/net/ytalk
+ytnef		ports/converters/ytnef
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yuzu		ports/mail/yuzu
