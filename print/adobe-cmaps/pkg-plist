@@ -201,3 +201,4 @@
 @dirrm %%CMAPDIR%%/ak12
 @dirrm %%CMAPDIR%%/rksj-cmaps
 @dirrmtry %%CMAPDIR%%
+@dirrmtry share/fonts

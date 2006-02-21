@@ -8,3 +8,4 @@
 %%FONTSDIR%%/MunhwaGothic-Regular
 %%FONTSDIR%%/MunhwaGothic-Regular-KSC-EUC-H.gsf
 @dirrmtry %%FONTSDIR%%
+@dirrmtry share/fonts
