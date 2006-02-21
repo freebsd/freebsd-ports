@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.mor-pah.net/code/ \
 		http://www.deepmagic.org.uk/
 
-MAINTAINER=	vaida.bogdan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deepmagic Information Gathering Tool
 
 BROKEN=		unfetchable
