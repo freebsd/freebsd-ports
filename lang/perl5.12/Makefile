@@ -194,7 +194,7 @@ post-install:
 .endif
 
 rebuild-xs:
-	${LOCALBASE}/portupgrade -f `(${FIND} ${PKG_DBDIR}/p5*/+CONTENTS | \
+	${LOCALBASE}/sbin/portupgrade -f `(${FIND} ${PKG_DBDIR}/p5*/+CONTENTS | \
 		${XARGS} ${GREP} -El 'site_perl.*\.so' | \
 		${SED} -e 's!/var/db/pkg/!!; s!/+CONTENTS!!;')`
 
