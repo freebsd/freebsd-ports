@@ -9,7 +9,8 @@ PORTNAME=	xglobe
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	astro
-MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
