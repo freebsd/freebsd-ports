@@ -1,5 +1,36 @@
 bin/schema
 bin/wsdl
+include/wsdl/schemaparser/Attribute.h
+include/wsdl/schemaparser/AttributeGroup.h
+include/wsdl/schemaparser/ComplexType.h
+include/wsdl/schemaparser/Constraint.h
+include/wsdl/schemaparser/ContentModel.h
+include/wsdl/schemaparser/Element.h
+include/wsdl/schemaparser/Group.h
+include/wsdl/schemaparser/Schema.h
+include/wsdl/schemaparser/SchemaParser.h
+include/wsdl/schemaparser/SchemaParserException.h
+include/wsdl/schemaparser/SchemaValidator.h
+include/wsdl/schemaparser/SimpleType.h
+include/wsdl/schemaparser/TypeContainer.h
+include/wsdl/schemaparser/TypesTable.h
+include/wsdl/schemaparser/XSDType.h
+include/wsdl/wsdlparser/Binding.h
+include/wsdl/wsdlparser/Message.h
+include/wsdl/wsdlparser/Operation.h
+include/wsdl/wsdlparser/PortType.h
+include/wsdl/wsdlparser/Service.h
+include/wsdl/wsdlparser/Soap.h
+include/wsdl/wsdlparser/WsdlElement.h
+include/wsdl/wsdlparser/WsdlException.h
+include/wsdl/wsdlparser/WsdlExtension.h
+include/wsdl/wsdlparser/WsdlInvoker.h
+include/wsdl/wsdlparser/WsdlParser.h
+include/wsdl/xmlpull/Qname.h
+include/wsdl/xmlpull/XmlPullParser.h
+include/wsdl/xmlpull/XmlPullParserException.h
+include/wsdl/xmlpull/XmlSerializer.h
+include/wsdl/xmlpull/XmlUtils.h
 lib/libschema.a
 lib/libschema.so
 lib/libschema.so.0
@@ -9,3 +40,17 @@ lib/libwsdl.so.0
 lib/libxmlpull.a
 lib/libxmlpull.so
 lib/libxmlpull.so.0
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/wsdlpull.html
+%%DATADIR%%/http.xsd
+%%DATADIR%%/mime.xsd
+%%DATADIR%%/schema.dtd
+%%DATADIR%%/soap-encoding.xsd
+%%DATADIR%%/soap.xsd
+%%DATADIR%%/wsdl10.xsd
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/wsdl/xmlpull
+@dirrm include/wsdl/wsdlparser
+@dirrm include/wsdl/schemaparser
+@dirrm include/wsdl
