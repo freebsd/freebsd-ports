@@ -1,5 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/spread.so
-%%RUBY_SITELIBDIR%%/spread_nonblock.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/flooder.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/user.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
