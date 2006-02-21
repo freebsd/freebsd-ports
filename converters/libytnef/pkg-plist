@@ -1,0 +1,9 @@
+include/mapi.h
+include/mapidefs.h
+include/mapitags.h
+include/tnef-errors.h
+include/tnef-types.h
+include/ytnef.h
+lib/libytnef.a
+lib/libytnef.so
+lib/libytnef.so.0
