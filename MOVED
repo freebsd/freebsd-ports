@@ -2204,3 +2204,4 @@ graphics/animabob||2006-02-16|Remove expired port
 graphics/deep_zoom||2006-02-16|Remove expired port
 games/xshipwars-client||2006-02-16|Remove expired port
 games/civ2demo||2006-02-17|Remove expired port
+converters/libytnef|devel/libytnef|2006-02-21|Move to accurate category
