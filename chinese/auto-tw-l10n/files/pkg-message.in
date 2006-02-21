@@ -1,14 +1,19 @@
-*************************************************************
+**************************************************************************
 
 English Instructions:
- Please tell your users to merge their old dotfiles with
- the new ones, in
- %%PREFIX%%/share/skel/zh_TW.Big5/dot.*
+ Please tell your users to merge their old dotfiles with the new ones, in
+ 	%%PREFIX%%/share/skel/zh_TW.Big5/dot.*
 
-*************************************************************
+ For future adduser
+	# adduser -k /usr/local/share/skel/zh_TW.Big5
+
+**************************************************************************
 
 中文繁體說明:
- 請告知您的使用者比對他們的舊設定跟新設定, 在
+ 請告知您的使用者比對他們的舊設定跟新設定，放在
  %%PREFIX%%/share/skel/zh_TW.Big5/dot.*
 
-*************************************************************
+ 若之後新增使用者的話，請用下面類似方式：
+	# adduser -k /usr/local/share/skel/zh_TW.Big5
+
+************************************************************************** 
