@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	teapot
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Full-screen curses based spread sheet program
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="" LIBS="-lcurses -lm" \
