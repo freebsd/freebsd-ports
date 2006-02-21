@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cdb
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5a
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.fan.gr.jp/~kaz/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,14 +23,9 @@ USE_RUBY_EXTCONF=	yes
 
 CDB_PORTDIR=	${PORTSDIR}/databases/cdb
 
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (needs to link against shared libraries)"
-.endif
 
 post-extract:
 	${RM} -f ${WRKSRC}/cdb
