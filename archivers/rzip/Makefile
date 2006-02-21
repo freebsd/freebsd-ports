@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rzip
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rzip.samba.org/ftp/rzip/
 
