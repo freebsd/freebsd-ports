@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	dejavu
-PORTVERSION=	2.2
+DISTVERSION=	2.3-1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-ttf-${PORTVERSION}
+DISTNAME=	${PORTNAME}-ttf-${DISTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
@@ -19,6 +19,7 @@ COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-ttf-2.3
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
