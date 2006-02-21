@@ -9,7 +9,7 @@ PORTNAME=	acroreadwrapper
 PORTVERSION=	0.0.20060220
 CATEGORIES=	print
 MASTER_SITES=	# empty
-DISTNAME=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wrapper script for Adobe Reader
