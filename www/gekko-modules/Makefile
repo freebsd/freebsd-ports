@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	gekko-modules
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.12
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
 DISTFILES=	#
+DIST_SUBDIR=	gekkoware
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Gekko's modules
 
 RUN_DEPENDS=	${LOCALBASE}/www/data-dist/gekko/conf.php:${PORTSDIR}/www/gekko
 
-DIST_SUBDIR=	gekko
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 GEKKODIR?=	www/data-dist/gekko
@@ -51,7 +51,7 @@ PLIST_SUB+=	BACKUP="@comment "
 .endif
 
 .if !defined(WITHOUT_BLOG)
-DISTFILES+=	blog-0.5.7.module.tgz
+DISTFILES+=	blog-0.5.9.module.tgz
 PLIST_SUB+=	BLOG=""
 FLAG_MODULE=	true
 .else
@@ -59,7 +59,7 @@ PLIST_SUB+=	BLOG="@comment "
 .endif
 
 .if !defined(WITHOUT_CATEGORIES)
-DISTFILES+=	categories-0.5.7.module.tgz
+DISTFILES+=	categories-0.5.9.module.tgz
 PLIST_SUB+=	CATEGORIES=""
 FLAG_MODULE=	true
 .else
@@ -83,7 +83,7 @@ PLIST_SUB+=	CONTACT="@comment "
 .endif
 
 .if !defined(WITHOUT_DOWNLOADS)
-DISTFILES+=	downloads-0.2.module.tgz
+DISTFILES+=	downloads-0.4.module.tgz
 PLIST_SUB+=	DOWNLOADS=""
 FLAG_MODULE=	true
 .else
@@ -91,7 +91,7 @@ PLIST_SUB+=	DOWNLOADS="@comment "
 .endif
 
 .if !defined(WITHOUT_FILES)
-DISTFILES+=	files-0.5.8.module.tgz
+DISTFILES+=	files-0.5.9.module.tgz
 PLIST_SUB+=	FILES=""
 FLAG_MODULE=	true
 .else
@@ -99,7 +99,7 @@ PLIST_SUB+=	FILES="@comment "
 .endif
 
 .if !defined(WITHOUT_FORUMS)
-DISTFILES+=	forums-0.5.9.module.tgz
+DISTFILES+=	forums-0.5.11.module.tgz
 PLIST_SUB+=	FORUMS=""
 FLAG_MODULE=	true
 .else
@@ -107,7 +107,7 @@ PLIST_SUB+=	FORUMS="@comment "
 .endif
 
 .if !defined(WITHOUT_FRIENDS)
-DISTFILES+=	friends-0.1.module.tgz
+DISTFILES+=	friends-0.2.module.tgz
 PLIST_SUB+=	FRIENDS=""
 FLAG_MODULE=	true
 .else
@@ -115,7 +115,7 @@ PLIST_SUB+=	FRIENDS="@comment "
 .endif
 
 .if !defined(WITHOUT_GALLERY)
-DISTFILES+=	gallery-0.5.8.module.tgz
+DISTFILES+=	gallery-0.5.10.module.tgz
 PLIST_SUB+=	GALLERY=""
 FLAG_MODULE=	true
 .else
@@ -123,7 +123,7 @@ PLIST_SUB+=	GALLERY="@comment "
 .endif
 
 .if !defined(WITHOUT_NEWS)
-DISTFILES+=	news-0.5.7.module.tgz
+DISTFILES+=	news-0.5.9.module.tgz
 PLIST_SUB+=	NEWS=""
 FLAG_MODULE=	true
 .else
@@ -131,7 +131,7 @@ PLIST_SUB+=	NEWS="@comment "
 .endif
 
 .if !defined(WITHOUT_PAGES)
-DISTFILES+=	pages-0.5.6.module.tgz
+DISTFILES+=	pages-0.5.8.module.tgz
 PLIST_SUB+=	PAGES=""
 FLAG_MODULE=	true
 .else
@@ -139,7 +139,7 @@ PLIST_SUB+=	PAGES="@comment "
 .endif
 
 .if !defined(WITHOUT_POLLS)
-DISTFILES+=	polls-0.5.7.module.tgz
+DISTFILES+=	polls-0.5.9.module.tgz
 PLIST_SUB+=	POLLS=""
 FLAG_MODULE=	true
 .else

@@ -121,6 +121,8 @@
 %%BLOG%%%%GEKKODIR%%/modules/blog/package.xml
 %%BLOG%%%%GEKKODIR%%/modules/blog/admin.panel.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/mod_categories.inc.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/ca/main.php
+%%BLOG%%%%GEKKODIR%%/modules/blog/lang/ca/core.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/main.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/lang/es/core.php
 %%BLOG%%%%GEKKODIR%%/modules/blog/main.inc.php
@@ -129,6 +131,8 @@
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/admin.inc.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.lib.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.act.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/ca/core.php
+%%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/ca/main.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/core.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/lang/es/main.php
 %%CATEGORIES%%%%GEKKODIR%%/modules/categories/main.inc.php
@@ -193,6 +197,8 @@
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.lib.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.act.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/main.inc.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/main.php
+%%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/ca/core.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/main.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/lang/es/core.php
 %%GALLERY%%%%GEKKODIR%%/modules/gallery/package.xml
@@ -326,9 +332,11 @@
 %%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup/lang
 %%BACKUP%%@dirrm %%GEKKODIR%%/modules/backup
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/blocks
+%%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/ca
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang/es
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog/lang
 %%BLOG%%@dirrm %%GEKKODIR%%/modules/blog
+%%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/ca
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang/es
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories/lang
 %%CATEGORIES%%@dirrm %%GEKKODIR%%/modules/categories
@@ -354,6 +362,7 @@
 %%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang/es
 %%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends/lang
 %%FRIENDS%%@dirrm %%GEKKODIR%%/modules/friends
+%%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/ca
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang/es
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/lang
 %%GALLERY%%@dirrm %%GEKKODIR%%/modules/gallery/blocks
