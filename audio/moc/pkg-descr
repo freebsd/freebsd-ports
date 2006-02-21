@@ -7,6 +7,6 @@ because the next file to be played is pre-cached while playing the current
 file.
 
 Supported file formats are: MP3, Ogg Vorbis, FLAC, Musepack (mpc), Speex, WAVE,
-AIFF, AU, SVX, Sphere Nist WAV, IRCAM SF, Creative VOC.
+AIFF, AU, SVX, Sphere Nist WAV, IRCAM SF, Creative VOC, AAC, MP4, Real, WMA.
 
 WWW: http://moc.daper.net/

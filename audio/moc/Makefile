@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moc
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -26,6 +26,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	JACK "JACK support" off \
 		MP3 "MP3 support" on \
+		FFMPEG "FFMPEG support" off \
 		MUSEPACK "Musepack (mpc) support" off \
 		VORBIS "Ogg Vorbis support" on \
 		FLAC "FLAC support" off \
@@ -36,8 +37,8 @@ OPTIONS=	JACK "JACK support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.if ${OSVERSION} < 500000
+IGNORE=		requires C99 string functions in libc
 .endif
 
 .if defined(WITH_JACK)
@@ -64,7 +65,7 @@ CONFIGURE_ARGS+=	--without-musepack
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-PLIST_FILES+=	lib/moc/decoder_plugins/libogg_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif
@@ -74,6 +75,12 @@ LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-flac
+.endif
+
+.if defined(WITH_FFMPEG)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+.else
+CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
 .if defined(WITH_SNDFILE)
