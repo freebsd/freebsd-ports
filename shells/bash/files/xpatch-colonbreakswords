@@ -2,8 +2,8 @@
 # new shopt `colonbreakswords'
 # http://lists.gnu.org/archive/html/bug-bash/2004-10/msg00190.html
 #
---- bashline.c.orig	Wed Oct 13 18:39:13 2004
-+++ bashline.c	Wed Oct 13 19:02:53 2004
+--- bashline.c.orig	Sat Nov  5 18:07:02 2005
++++ bashline.c	Wed Dec 28 19:44:28 2005
 @@ -212,6 +212,11 @@
     host list. */
  int perform_hostname_completion = 1;
@@ -16,7 +16,7 @@
  /* If non-zero, we don't do command completion on an empty line. */
  int no_empty_command_completion;
  
-@@ -222,6 +227,7 @@
+@@ -222,7 +227,8 @@
  
  static char *bash_completer_word_break_characters = " \t\n\"'@><=;|&(:";
  static char *bash_nohostname_word_break_characters = " \t\n\"'><=;|&(:";
@@ -25,7 +25,8 @@
 +/* ))) */
  
  static rl_hook_func_t *old_rl_startup_hook = (rl_hook_func_t *)NULL;
-@@ -323,6 +329,80 @@
+ 
+@@ -325,6 +331,80 @@
    return (old_value);
  }
  
@@ -106,7 +107,7 @@
  /* Called once from parse.y if we are going to use readline. */
  void
  initialize_readline ()
-@@ -479,8 +559,12 @@
+@@ -485,8 +565,12 @@
       completion is enabled. */
    enable_hostname_completion (perform_hostname_completion);
  
@@ -120,9 +121,9 @@
    rl_filename_quoting_function = bash_quote_filename;
    rl_filename_dequoting_function = bash_dequote_filename;
    rl_char_is_quoted_p = char_is_quoted;
---- builtins/shopt.def.orig	Wed Oct 13 19:07:57 2004
-+++ builtins/shopt.def	Wed Oct 13 19:10:37 2004
-@@ -82,6 +82,8 @@
+--- builtins/shopt.def.orig	Wed Dec 28 19:38:09 2005
++++ builtins/shopt.def	Wed Dec 28 19:44:28 2005
+@@ -83,6 +83,8 @@
  extern int hist_verify, history_reediting, perform_hostname_completion;
  extern int no_empty_command_completion;
  extern int force_fignore;
@@ -131,7 +132,7 @@
  extern int enable_hostname_completion __P((int));
  #endif
  
-@@ -120,6 +122,9 @@
+@@ -121,6 +123,9 @@
    { "checkwinsize", &check_window_size, (shopt_set_func_t *)NULL },
  #if defined (HISTORY)
    { "cmdhist", &command_oriented_history, (shopt_set_func_t *)NULL },
@@ -141,9 +142,9 @@
  #endif
    { "dotglob", &glob_dot_filenames, (shopt_set_func_t *)NULL },
    { "execfail", &no_exit_on_failed_exec, (shopt_set_func_t *)NULL },
---- doc/bash.1.orig	Wed Oct 13 19:49:55 2004
-+++ doc/bash.1	Wed Oct 13 19:53:28 2004
-@@ -7866,6 +7866,18 @@
+--- doc/bash.1.orig	Wed Dec 28 19:38:09 2005
++++ doc/bash.1	Wed Dec 28 19:44:28 2005
+@@ -7972,6 +7972,18 @@
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  .TP 8
@@ -162,9 +163,9 @@
  .B dotglob
  If set, 
  .B bash
---- doc/bashref.texi.orig	Wed Oct 13 19:53:45 2004
-+++ doc/bashref.texi	Wed Oct 13 19:56:27 2004
-@@ -3577,6 +3577,11 @@
+--- doc/bashref.texi.orig	Wed Dec 28 19:38:09 2005
++++ doc/bashref.texi	Wed Dec 28 19:44:28 2005
+@@ -3598,6 +3598,11 @@
  command in the same history entry.  This allows
  easy re-editing of multi-line commands.
  

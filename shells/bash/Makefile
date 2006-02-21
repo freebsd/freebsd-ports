@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		bash
-PORTVERSION=		3.0.${PATCHLEVEL}
-PORTREVISION=		1
+PORTVERSION=		3.1.${PATCHLEVEL:S/^0//g}
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			http://cnswww.cns.cwru.edu/~chet/%SUBDIR%/:faq \
@@ -20,7 +19,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/:bash
-.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
+.for patch in		01 02 03 04 05 06 07 08 09 10
 PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
 PATCHLEVEL=		${patch}
 .endfor
@@ -42,7 +41,6 @@ EXTRA_PATCHES+=		${PATCHDIR}/xpatch-colonbreakswords
 MAN1=			bash.1 bashbug.1
 INFO=			bash
 
-USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 
 .if !defined(NOPORTDOCS)
@@ -60,12 +58,12 @@ CONFIGURE_ARGS=		--without-bash-malloc \
 .if !defined(WITHOUT_NLS)
 WITHOUT_NLS=yes
 .endif
-CONFIGURE_ARGS+= --enable-static-link
+CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=	-static
 .else
-CONFIGURE_ARGS+= --enable-static-link=no
+CONFIGURE_ARGS+=	--enable-static-link=no
 .endif
-			
+
 .if defined(WITHOUT_HELP)
 CONFIGURE_ARGS+=	--disable-help-builtin
 PLIST_SUB+=		HELP="@comment "
@@ -94,10 +92,6 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600006
-CONFIGURE_ARGS+=	--with-installed-readline
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1

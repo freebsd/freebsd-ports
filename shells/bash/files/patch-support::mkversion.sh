@@ -1,5 +1,5 @@
---- support/mkversion.sh.orig	Tue Oct 12 11:20:53 2004
-+++ support/mkversion.sh	Tue Oct 12 11:21:10 2004
+--- support/mkversion.sh.orig	Sat Sep 11 11:08:31 2004
++++ support/mkversion.sh	Wed Dec 28 20:15:34 2005
 @@ -67,7 +67,7 @@
  # increment the build version if that's what's required
  

@@ -1,5 +1,5 @@
---- config-top.h.orig	Tue Aug  5 16:36:12 2003
-+++ config-top.h	Mon Oct 11 16:55:40 2004
+--- config-top.h.orig	Wed Dec 28 19:52:23 2005
++++ config-top.h	Wed Dec 28 19:54:12 2005
 @@ -52,18 +52,18 @@
  /* The default value of the PATH variable. */
  #ifndef DEFAULT_PATH_VALUE
@@ -18,7 +18,7 @@
  
  /* Default primary and secondary prompt strings. */
 -#define PPROMPT "\\s-\\v\\$ "
-+#define PPROMPT "\\u@\\h\\$ "
++#define PPROMPT "[\\u@\\h \\w]\\$ "
  #define SPROMPT "> "
  
  /* Undefine this if you don't want the ksh-compatible behavior of reprinting
