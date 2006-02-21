@@ -19,16 +19,16 @@
 name="clamsmtpd"
 rcvar=${name}_enable
 
+: ${clamsmtpd_enable="NO"}
+: ${clamsmtpd_conf="%%PREFIX%%/etc/clamsmtpd.conf"}
+: ${clamsmtpd_pid="%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
+
+load_rc_config ${name}
+
 command=%%PREFIX%%/sbin/${name}
 command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
 required_files=${clamsmtpd_conf}
 pidfile=${clamsmtpd_pid}
 sig_stop=-KILL
-
-load_rc_config ${name}
-
-: ${clamsmtpd_enable="NO"}
-: ${clamsmtpd_conf="%%PREFIX%%/etc/clamsmtpd.conf"}
-: ${clamsmtpd_pid="%%CLAMAV_PID_DIR%%/clamsmtpd.pid"}
 
 run_rc_command "$1"

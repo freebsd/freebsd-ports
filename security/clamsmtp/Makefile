@@ -7,7 +7,7 @@
 
 PORTNAME=	clamsmtp
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
 
