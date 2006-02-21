@@ -1,0 +1,7 @@
+====
+This wrapper script supports the following options not to be passed
+to the acroread actually:
+
+--install-plugin:    install PDF plugin
+--deinstall-plugin:  deinstall PDF plugin
+====

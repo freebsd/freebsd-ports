@@ -1,0 +1,82 @@
+#!%%LINUXBASE%%/bin/sh
+# $FreeBSD$
+
+ADOBE_LANG=`echo "${ADOBE_LANG}" | tr a-z A-Z`
+
+case ${LANG} in
+af_*)	: ${ADOBE_LANG:=ENU} ;;
+am_*)	: ${ADOBE_LANG:=ENU} ;;
+be_*)	: ${ADOBE_LANG:=ENU} ;;
+ca_*)	: ${ADOBE_LANG:=ENU} ;;
+da_*)	: ${ADOBE_LANG:=DAN} ;;
+de_*)	: ${ADOBE_LANG:=DEU} ;;
+el_*)	: ${ADOBE_LANG:=ENU} ;;
+en_*)	: ${ADOBE_LANG:=ENU} ;;
+es_*)	: ${ADOBE_LANG:=ESP} ;;
+et_*)	: ${ADOBE_LANG:=ENU} ;;
+eu_*)	: ${ADOBE_LANG:=ENU} ;;
+fi_*)	: ${ADOBE_LANG:=SUO} ;;
+fr_*)	: ${ADOBE_LANG:=FRA} ;;
+he_*)	: ${ADOBE_LANG:=ENU} ;;
+hi_*)	: ${ADOBE_LANG:=ENU} ;;
+hr_*)	: ${ADOBE_LANG:=ENU} ;;
+hu_*)	: ${ADOBE_LANG:=ENU} ;;
+hy_*)	: ${ADOBE_LANG:=ENU} ;;
+is_*)	: ${ADOBE_LANG:=ENU} ;;
+it_*)	: ${ADOBE_LANG:=ITA} ;;
+ja_*)	: ${ADOBE_LANG:=JPN} ;;
+kk_*)	: ${ADOBE_LANG:=ENU} ;;
+ko_*)	: ${ADOBE_LANG:=KOR} ;;
+la_*)	: ${ADOBE_LANG:=ENU} ;;
+lt_*)	: ${ADOBE_LANG:=ENU} ;;
+nl_*)	: ${ADOBE_LANG:=NLD} ;;
+no_*)	: ${ADOBE_LANG:=NOR} ;;
+pl_*)	: ${ADOBE_LANG:=ENU} ;;
+pt_*)	: ${ADOBE_LANG:=PTB} ;;
+ro_*)	: ${ADOBE_LANG:=ENU} ;;
+ru_*)	: ${ADOBE_LANG:=ENU} ;;
+sk_*)	: ${ADOBE_LANG:=ENU} ;;
+sl_*)	: ${ADOBE_LANG:=ENU} ;;
+sr_*)	: ${ADOBE_LANG:=ENU} ;;
+sv_*)	: ${ADOBE_LANG:=SVE} ;;
+tr_*)	: ${ADOBE_LANG:=ENU} ;;
+uk_*)	: ${ADOBE_LANG:=ENU} ;;
+zh_CN.*): ${ADOBE_LANG:=CHS} ;;
+zh_HK.*): ${ADOBE_LANG:=CHS} ;;
+zh_TW.*): ${ADOBE_LANG:=CHT} ;;
+*)	: ${ADOBE_LANG:=ENU} ;;
+esac
+
+case ${ADOBE_LANG} in
+CHS) : ${GDK_USE_XFT:=0}; export GDK_USE_XFT ;;
+CHT) : ${GDK_USE_XFT:=0}; export GDK_USE_XFT ;;
+JPN) : ${GTK_IM_MODULE:=xim}; export GTK_IM_MODULE ;;
+KOR) : ${GDK_USE_XFT:=0}; export GDK_USE_XFT ;;
+esac
+
+case $1 in
+--install-plugin)
+	echo "installing PDF plugin..."
+	echo "%%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
+	mkdir -p %%PREFIX%%/%%PLUGINDIR%%
+	ln -s -f %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
+	%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
+	exit 0
+;;
+--deinstall-plugin)
+	echo "deinstalling PDF plugin..."
+	rm -f %%PREFIX%%/%%PLUGINDIR%%/nppdf.so
+	rmdir %%PREFIX%%/%%PLUGINDIR%% 2> /dev/null || true
+	exit 0
+;;
+esac
+
+UNAME_s=Linux; export UNAME_s
+if [ -x %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/bin/acroread ]; then
+	exec %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/bin/acroread "$@"
+elif [ -x %%PREFIX%%/%%ACRODIR%%/ENU/bin/acroread ]; then
+	exec %%PREFIX%%/%%ACRODIR%%/ENU/bin/acroread "$@"
+else
+	echo "!fatal: acroread binary not found."
+	exit 1
+fi
