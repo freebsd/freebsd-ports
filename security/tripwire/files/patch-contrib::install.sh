@@ -1,5 +1,5 @@
 --- contrib/install.sh.orig	Thu Sep 15 20:12:39 2005
-+++ contrib/install.sh	Mon Feb 13 16:18:22 2006
++++ contrib/install.sh	Tue Feb 21 08:22:10 2006
 @@ -162,12 +162,6 @@
  # Default installation script configuration file.
  INSTALL_CONFIG_FILE="./install/install.cfg"
@@ -31,3 +31,53 @@
  
  for i in $loosefiles; do
  	eval "eval \"\$$i\""
+@@ -719,6 +711,7 @@
+ ## Generate tripwire configuration file.
+ ##=======================================================
+ 
++[ ! -f "$TXT_CFG" -o "$CLOBBER" = "false" ] && {
+ echo
+ echo "----------------------------------------------"
+ echo "Generating Tripwire configuration file..."
+@@ -757,6 +750,7 @@
+ fi
+ 
+ chmod 640 "$TXT_CFG"
++}
+ 
+ ##=======================================================
+ ## Create signed tripwire configuration file.
+@@ -826,20 +820,21 @@
+ echo "----------------------------------------------"
+ echo "Customizing default policy file..."
+ 
+-sed '/@@section GLOBAL/,/@@section FS/  {
+-  s?^\(TWROOT=\).*$?TWDOCS='\""$TWDOCS"\"';?
+-  s?^\(TWBIN=\).*$?\1'\""$TWBIN"\"';?
+-  s?^\(TWPOL=\).*$?\1'\""$TWPOLICY"\"';?
+-  s?^\(TWDB=\).*$?\1'\""$TWDB"\"';?
+-  s?^\(TWSKEY=\).*$?\1'\""$TWSITEKEYDIR"\"';?
+-  s?^\(TWLKEY=\).*$?\1'\""$TWLOCALKEYDIR"\"';?
+-  s?^\(TWREPORT=\).*$?\1'\""$TWREPORT"\"';?
+-  s?^\(HOSTNAME=\).*$?\1'"$HOST_NAME"';?
+-}' "${TWPOLICY}/${POLICYSRC}" > "${TXT_POL}.tmp"
+-
+ # copy the tmp file back over the default policy
+ [ -f "${TXT_POL}" ] && cp "${TXT_POL}" "${TXT_POL}.bak"
+-mv "${TXT_POL}.tmp" "${TXT_POL}"
++[ ! -f "${TXT_POL}" -o "$CLOBBER" = "true" ] && {
++	sed '/@@section GLOBAL/,/@@section FS/  {
++	  s?^\(TWROOT=\).*$?TWDOCS='\""$TWDOCS"\"';?
++	  s?^\(TWBIN=\).*$?\1'\""$TWBIN"\"';?
++	  s?^\(TWPOL=\).*$?\1'\""$TWPOLICY"\"';?
++	  s?^\(TWDB=\).*$?\1'\""$TWDB"\"';?
++	  s?^\(TWSKEY=\).*$?\1'\""$TWSITEKEYDIR"\"';?
++	  s?^\(TWLKEY=\).*$?\1'\""$TWLOCALKEYDIR"\"';?
++	  s?^\(TWREPORT=\).*$?\1'\""$TWREPORT"\"';?
++	  s?^\(HOSTNAME=\).*$?\1'"$HOST_NAME"';?
++	}' "${TWPOLICY}/${POLICYSRC}" > "${TXT_POL}"
++}
++
+ rm -f "${TWPOLICY}/${POLICYSRC}"
+ 
+ # reset rights on the policy files to 640
