@@ -37,7 +37,7 @@
 %%LIBDIR%%/compat/pam_ssh.so
 %%LIBDIR%%/compat/pam_tacplus.so
 %%LIBDIR%%/compat/pam_unix.so
-%%USE_LDCONFIG%%libdata/ldconfig/compat4x
+%%USE_LDCONFIG%%%%AMD64NA%%libdata/ldconfig/compat4x
 %%USE_LDCONFIG%%%%AMD64_ONLY%%libdata/ldconfig32/compat4x
 %%AMD64_ONLY%%@exec %%LDCONFIG_LIB32%% -m %D/%%LIBDIR%%/compat
 @dirrmtry %%LIBDIR%%/compat
