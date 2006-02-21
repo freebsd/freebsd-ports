@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libticables
-PORTVERSION=	3.9.2
+PORTVERSION=	3.9.7
 CATEGORIES=	comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -17,6 +17,7 @@ COMMENT=	TI calculator link cables library
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
