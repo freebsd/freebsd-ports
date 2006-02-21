@@ -4,3 +4,6 @@ SIZE (ncftpd-2.8.2-freebsd4.8-i386-export.tar.gz) = 379724
 MD5 (ncftpd-2.8.2-freebsd5.3-i386-export.tar.gz) = 5d55c58cda7e9a846a695ba0aca48c49
 SHA256 (ncftpd-2.8.2-freebsd5.3-i386-export.tar.gz) = 1b8e7e335325f2b6f65a7628b05e7c23ddf93b168a9dee484f1be87ea6b29a3f
 SIZE (ncftpd-2.8.2-freebsd5.3-i386-export.tar.gz) = 383029
+MD5 (ncftpd-2.8.2-freebsd6.0-i386-export.tar.gz) = 2b2e0727fe7039e86ab09f8bd9d8e97a
+SHA256 (ncftpd-2.8.2-freebsd6.0-i386-export.tar.gz) = b6508ee7b3b5d78bf9edba72e957b70d9754896ba6164110eb68ec54f9416331
+SIZE (ncftpd-2.8.2-freebsd6.0-i386-export.tar.gz) = 383490

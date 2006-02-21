@@ -8,10 +8,11 @@
 PORTNAME=	ncftpd
 PORTVERSION=	2.8.2
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
+		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -19,16 +20,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 LICENSE=	shareware
-RESTRICTED=	"30 day evaluation license"
+RESTRICTED=	30 day evaluation license
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
+.if ${OSVERSION} >= 600000
+BINVER=		6.0
+.elif ${OSVERSION} >= 500000
 BINVER=		5.3
 .elif ${OSVERSION} >= 480000
 BINVER=		4.8
 .else
-BROKEN=		"FreeBSD version too old"
+BROKEN=		FreeBSD version too old
 .endif
 
 do-install:
