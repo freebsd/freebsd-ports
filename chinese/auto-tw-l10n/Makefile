@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	chinese
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
@@ -33,9 +33,6 @@ pre-install:
 	@${FIND} ${WRKSRC} -name "*.in" -delete
 
 do-install:
-	@# Temporary hack before adduser is modified
-	@#	For future adduser
-	@#	adduser -l10n -v $HOME
 	${MKDIR} ${PREFIX}/share/skel/zh_TW.Big5
 	${CP} ${WRKSRC}/* ${PREFIX}/share/skel/zh_TW.Big5
 
