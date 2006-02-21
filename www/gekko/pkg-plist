@@ -5,6 +5,7 @@
 %%GEKKODIR%%/dbconf.php
 %%GEKKODIR%%/index.php
 %%GEKKODIR%%/install/lang/es/main.php
+%%GEKKODIR%%/install/lang/ca/main.php
 %%GEKKODIR%%/install/tpl/index.tpl
 %%GEKKODIR%%/install/patch/0.4.2.php
 %%GEKKODIR%%/install/.htaccess
@@ -15,12 +16,19 @@
 %%GEKKODIR%%/js/rtbEditor.js
 %%GEKKODIR%%/js/index.html
 %%GEKKODIR%%/lang/es/main.php
+%%GEKKODIR%%/lang/ca/main.php
 %%GEKKODIR%%/lang/lang_db.inc.php
 %%GEKKODIR%%/lang/.htaccess
 %%GEKKODIR%%/lang/index.html
+%%GEKKODIR%%/lib/db/mysql.driver
+%%GEKKODIR%%/lib/php/preview.php
+%%GEKKODIR%%/lib/php/rtbframe.php
+%%GEKKODIR%%/lib/php/iconlist.php
+%%GEKKODIR%%/lib/php/uploadimage.php
+%%GEKKODIR%%/lib/plugins/antibot.php
+%%GEKKODIR%%/lib/plugins/msiepngfix.php
 %%GEKKODIR%%/lib/core.lib.php
 %%GEKKODIR%%/lib/database.lib.php
-%%GEKKODIR%%/lib/db/mysql.driver
 %%GEKKODIR%%/lib/ftp.lib.php
 %%GEKKODIR%%/lib/remote.lib.php
 %%GEKKODIR%%/lib/file.lib.php
@@ -29,10 +37,6 @@
 %%GEKKODIR%%/lib/auth.inc.php
 %%GEKKODIR%%/lib/actions.lib.php
 %%GEKKODIR%%/lib/format.lib.php
-%%GEKKODIR%%/lib/php/preview.php
-%%GEKKODIR%%/lib/php/rtbframe.php
-%%GEKKODIR%%/lib/php/iconlist.php
-%%GEKKODIR%%/lib/php/uploadimage.php
 %%GEKKODIR%%/lib/cache.lib.php
 %%GEKKODIR%%/lib/compression.lib.php
 %%GEKKODIR%%/lib/feeder.lib.php
@@ -44,8 +48,6 @@
 %%GEKKODIR%%/lib/.htaccess
 %%GEKKODIR%%/lib/index.html
 %%GEKKODIR%%/lib/calendar.lib.php
-%%GEKKODIR%%/lib/plugins/antibot.php
-%%GEKKODIR%%/lib/plugins/msiepngfix.php
 %%GEKKODIR%%/lib/accesscontrol.lib.php
 %%GEKKODIR%%/media/smileys/default/smile.png
 %%GEKKODIR%%/media/smileys/default/package.xml
@@ -120,14 +122,6 @@
 %%GEKKODIR%%/media/avatars/support_jark.png
 %%GEKKODIR%%/media/avatars/turtey.gif
 %%GEKKODIR%%/media/avatars/joe_cool.jpg
-%%GEKKODIR%%/media/powered-by-gekko-2.png
-%%GEKKODIR%%/media/powered-by-gekko.png
-%%GEKKODIR%%/media/powered-by-mysql.gif
-%%GEKKODIR%%/media/powered-by-php.gif
-%%GEKKODIR%%/media/valid-xhtml10.png
-%%GEKKODIR%%/media/gekko-logo.png
-%%GEKKODIR%%/media/button-rss.gif
-%%GEKKODIR%%/media/button-atom.gif
 %%GEKKODIR%%/media/icons/default/16/about.png
 %%GEKKODIR%%/media/icons/default/16/default.png
 %%GEKKODIR%%/media/icons/default/16/conf.png
@@ -315,108 +309,135 @@
 %%GEKKODIR%%/media/icons/default/license.txt
 %%GEKKODIR%%/media/icons/default/readme.txt
 %%GEKKODIR%%/media/icons/default/thanks.to
+%%GEKKODIR%%/media/powered-by-gekko-2.png
+%%GEKKODIR%%/media/powered-by-gekko.png
+%%GEKKODIR%%/media/powered-by-mysql.gif
+%%GEKKODIR%%/media/powered-by-php.gif
+%%GEKKODIR%%/media/valid-xhtml10.png
+%%GEKKODIR%%/media/gekko-logo.png
+%%GEKKODIR%%/media/button-rss.gif
+%%GEKKODIR%%/media/button-atom.gif
 %%GEKKODIR%%/media/blank.gif
 %%GEKKODIR%%/media/favicon.png
 %%GEKKODIR%%/media/powered-by-gimp.png
 %%GEKKODIR%%/media/index.html
 %%GEKKODIR%%/media/.htaccess
-%%GEKKODIR%%/modules/users/main.inc.php
-%%GEKKODIR%%/modules/users/user.panel.php
-%%GEKKODIR%%/modules/users/main.lib.php
-%%GEKKODIR%%/modules/users/admin.inc.php
-%%GEKKODIR%%/modules/users/main.act.php
 %%GEKKODIR%%/modules/users/lang/es/welcome.letter
 %%GEKKODIR%%/modules/users/lang/es/resetpasswd.letter
 %%GEKKODIR%%/modules/users/lang/es/core.php
 %%GEKKODIR%%/modules/users/lang/es/main.php
 %%GEKKODIR%%/modules/users/lang/es/conf.php
-%%GEKKODIR%%/modules/users/package.xml
+%%GEKKODIR%%/modules/users/lang/ca/welcome.letter
+%%GEKKODIR%%/modules/users/lang/ca/main.php
+%%GEKKODIR%%/modules/users/lang/ca/resetpasswd.letter
+%%GEKKODIR%%/modules/users/lang/ca/conf.php
+%%GEKKODIR%%/modules/users/lang/ca/core.php
 %%GEKKODIR%%/modules/users/blocks/whoami.php
+%%GEKKODIR%%/modules/users/main.inc.php
+%%GEKKODIR%%/modules/users/user.panel.php
+%%GEKKODIR%%/modules/users/main.lib.php
+%%GEKKODIR%%/modules/users/admin.inc.php
+%%GEKKODIR%%/modules/users/main.act.php
+%%GEKKODIR%%/modules/users/package.xml
 %%GEKKODIR%%/modules/users/mod_conf.inc.php
 %%GEKKODIR%%/modules/users/module.inc.php
-%%GEKKODIR%%/modules/admin/main.inc.php
 %%GEKKODIR%%/modules/admin/lang/es/main.php
 %%GEKKODIR%%/modules/admin/lang/es/core.php
+%%GEKKODIR%%/modules/admin/lang/ca/main.php
+%%GEKKODIR%%/modules/admin/lang/ca/core.php
+%%GEKKODIR%%/modules/admin/main.inc.php
 %%GEKKODIR%%/modules/admin/user.panel.php
 %%GEKKODIR%%/modules/admin/package.xml
 %%GEKKODIR%%/modules/admin/module.inc.php
-%%GEKKODIR%%/modules/menu-editor/admin.inc.php
-%%GEKKODIR%%/modules/menu-editor/main.act.php
-%%GEKKODIR%%/modules/menu-editor/main.lib.php
 %%GEKKODIR%%/modules/menu-editor/blocks/menu-loader.php
 %%GEKKODIR%%/modules/menu-editor/lang/es/core.php
 %%GEKKODIR%%/modules/menu-editor/lang/es/main.php
+%%GEKKODIR%%/modules/menu-editor/lang/ca/main.php
+%%GEKKODIR%%/modules/menu-editor/lang/ca/core.php
+%%GEKKODIR%%/modules/menu-editor/admin.inc.php
+%%GEKKODIR%%/modules/menu-editor/main.act.php
+%%GEKKODIR%%/modules/menu-editor/main.lib.php
 %%GEKKODIR%%/modules/menu-editor/admin.panel.php
 %%GEKKODIR%%/modules/menu-editor/package.xml
 %%GEKKODIR%%/modules/menu-editor/module.inc.php
-%%GEKKODIR%%/modules/packages/admin.inc.php
-%%GEKKODIR%%/modules/packages/main.act.php
 %%GEKKODIR%%/modules/packages/lang/es/core.php
 %%GEKKODIR%%/modules/packages/lang/es/main.php
+%%GEKKODIR%%/modules/packages/lang/ca/main.php
+%%GEKKODIR%%/modules/packages/lang/ca/core.php
+%%GEKKODIR%%/modules/packages/admin.inc.php
+%%GEKKODIR%%/modules/packages/main.act.php
 %%GEKKODIR%%/modules/packages/admin.panel.php
 %%GEKKODIR%%/modules/packages/main.lib.php
 %%GEKKODIR%%/modules/packages/package.xml
 %%GEKKODIR%%/modules/packages/module.inc.php
+%%GEKKODIR%%/modules/groups/lang/es/main.php
+%%GEKKODIR%%/modules/groups/lang/es/core.php
+%%GEKKODIR%%/modules/groups/lang/ca/main.php
+%%GEKKODIR%%/modules/groups/lang/ca/core.php
+%%GEKKODIR%%/modules/groups/run/wizard.php
 %%GEKKODIR%%/modules/groups/admin.inc.php
 %%GEKKODIR%%/modules/groups/main.act.php
 %%GEKKODIR%%/modules/groups/main.lib.php
-%%GEKKODIR%%/modules/groups/lang/es/main.php
-%%GEKKODIR%%/modules/groups/lang/es/core.php
 %%GEKKODIR%%/modules/groups/package.xml
-%%GEKKODIR%%/modules/groups/run/wizard.php
 %%GEKKODIR%%/modules/groups/module.inc.php
+%%GEKKODIR%%/modules/conf/lang/es/core.php
+%%GEKKODIR%%/modules/conf/lang/es/main.php
+%%GEKKODIR%%/modules/conf/lang/es/conf.php
+%%GEKKODIR%%/modules/conf/lang/ca/main.php
+%%GEKKODIR%%/modules/conf/lang/ca/conf.php
+%%GEKKODIR%%/modules/conf/lang/ca/core.php
+%%GEKKODIR%%/modules/conf/blocks/style-chooser.php
 %%GEKKODIR%%/modules/conf/admin.inc.php
 %%GEKKODIR%%/modules/conf/main.lib.php
 %%GEKKODIR%%/modules/conf/main.act.php
 %%GEKKODIR%%/modules/conf/core.lib.php
 %%GEKKODIR%%/modules/conf/admin.panel.php
-%%GEKKODIR%%/modules/conf/lang/es/core.php
-%%GEKKODIR%%/modules/conf/lang/es/main.php
-%%GEKKODIR%%/modules/conf/lang/es/conf.php
 %%GEKKODIR%%/modules/conf/package.xml
 %%GEKKODIR%%/modules/conf/mod_conf.inc.php
 %%GEKKODIR%%/modules/conf/module.inc.php
-%%GEKKODIR%%/modules/blocks/admin.inc.php
-%%GEKKODIR%%/modules/blocks/main.lib.php
-%%GEKKODIR%%/modules/blocks/main.act.php
 %%GEKKODIR%%/modules/blocks/blocks/test.php
 %%GEKKODIR%%/modules/blocks/blocks/weather.php
 %%GEKKODIR%%/modules/blocks/blocks/news_reader.php
 %%GEKKODIR%%/modules/blocks/blocks/thumb.php
 %%GEKKODIR%%/modules/blocks/blocks/powered_by.php
 %%GEKKODIR%%/modules/blocks/blocks/calendar.php
-%%GEKKODIR%%/modules/blocks/core.inc.php
 %%GEKKODIR%%/modules/blocks/lang/es/main.php
 %%GEKKODIR%%/modules/blocks/lang/es/core.php
 %%GEKKODIR%%/modules/blocks/lang/es/weather.block.php
+%%GEKKODIR%%/modules/blocks/lang/ca/main.php
+%%GEKKODIR%%/modules/blocks/lang/ca/core.php
+%%GEKKODIR%%/modules/blocks/lang/ca/weather.block.php
+%%GEKKODIR%%/modules/blocks/run/getvars.php
+%%GEKKODIR%%/modules/blocks/admin.inc.php
+%%GEKKODIR%%/modules/blocks/main.lib.php
+%%GEKKODIR%%/modules/blocks/main.act.php
+%%GEKKODIR%%/modules/blocks/core.inc.php
 %%GEKKODIR%%/modules/blocks/admin.panel.php
 %%GEKKODIR%%/modules/blocks/package.xml
-%%GEKKODIR%%/modules/blocks/run/getvars.php
 %%GEKKODIR%%/modules/blocks/module.inc.php
-%%GEKKODIR%%/modules/.htaccess
-%%GEKKODIR%%/modules/index.html
+%%GEKKODIR%%/modules/modules/lang/es/core.php
+%%GEKKODIR%%/modules/modules/lang/es/main.php
+%%GEKKODIR%%/modules/modules/lang/ca/main.php
+%%GEKKODIR%%/modules/modules/lang/ca/core.php
 %%GEKKODIR%%/modules/modules/admin.inc.php
 %%GEKKODIR%%/modules/modules/main.lib.php
 %%GEKKODIR%%/modules/modules/main.act.php
-%%GEKKODIR%%/modules/modules/lang/es/core.php
-%%GEKKODIR%%/modules/modules/lang/es/main.php
 %%GEKKODIR%%/modules/modules/admin.panel.php
 %%GEKKODIR%%/modules/modules/package.xml
 %%GEKKODIR%%/modules/modules/module.inc.php
+%%GEKKODIR%%/modules/.htaccess
+%%GEKKODIR%%/modules/index.html
 %%GEKKODIR%%/robots.txt
 %%GEKKODIR%%/runscript.php
 %%GEKKODIR%%/temp/.htaccess
-%%GEKKODIR%%/templates/default/css/default/buttonbg.png
-%%GEKKODIR%%/templates/default/css/default/buttondiv.png
-%%GEKKODIR%%/templates/default/css/default/block-u.png
 %%GEKKODIR%%/templates/default/css/default/logo-top.png
-%%GEKKODIR%%/templates/default/css/default/bgtitle.png
-%%GEKKODIR%%/templates/default/css/default/toplink.png
-%%GEKKODIR%%/templates/default/css/default/framebg.png
 %%GEKKODIR%%/templates/default/css/default/logo-top-gekko.png
+%%GEKKODIR%%/templates/default/css/default/bgtitle.png
 %%GEKKODIR%%/templates/default/css/default/bodybg.png
+%%GEKKODIR%%/templates/default/css/default/block-u.png
+%%GEKKODIR%%/templates/default/css/default/toplink.png
+%%GEKKODIR%%/templates/default/css/default/containerbg.jpg
 %%GEKKODIR%%/templates/default/packages/index.admin.tpl
-%%GEKKODIR%%/templates/default/default.css
 %%GEKKODIR%%/templates/default/blocks/blocks.form.tpl
 %%GEKKODIR%%/templates/default/blocks/default.block
 %%GEKKODIR%%/templates/default/blocks/index.admin.tpl
@@ -451,16 +472,19 @@
 %%GEKKODIR%%/templates/default/menu-editor/index.admin.tpl
 %%GEKKODIR%%/templates/default/menu-editor/menu-editor.form.tpl
 %%GEKKODIR%%/templates/default/menu-editor/link-editor.form.tpl
+%%GEKKODIR%%/templates/default/default.css
 %%GEKKODIR%%/templates/.htaccess
 %%GEKKODIR%%/templates/index.html
 @dirrm %%GEKKODIR%%/data
 @dirrm %%GEKKODIR%%/install/lang/es
+@dirrm %%GEKKODIR%%/install/lang/ca
 @dirrm %%GEKKODIR%%/install/lang
 @dirrm %%GEKKODIR%%/install/tpl
 @dirrm %%GEKKODIR%%/install/patch
 @dirrm %%GEKKODIR%%/install
 @dirrm %%GEKKODIR%%/js
 @dirrm %%GEKKODIR%%/lang/es
+@dirrm %%GEKKODIR%%/lang/ca
 @dirrm %%GEKKODIR%%/lang
 @dirrm %%GEKKODIR%%/lib/db
 @dirrm %%GEKKODIR%%/lib/php
@@ -476,32 +500,41 @@
 @dirrm %%GEKKODIR%%/media/icons
 @dirrm %%GEKKODIR%%/media
 @dirrm %%GEKKODIR%%/modules/users/lang/es
+@dirrm %%GEKKODIR%%/modules/users/lang/ca
 @dirrm %%GEKKODIR%%/modules/users/lang
 @dirrm %%GEKKODIR%%/modules/users/blocks
 @dirrm %%GEKKODIR%%/modules/users
 @dirrm %%GEKKODIR%%/modules/admin/lang/es
+@dirrm %%GEKKODIR%%/modules/admin/lang/ca
 @dirrm %%GEKKODIR%%/modules/admin/lang
 @dirrm %%GEKKODIR%%/modules/admin
 @dirrm %%GEKKODIR%%/modules/menu-editor/blocks
 @dirrm %%GEKKODIR%%/modules/menu-editor/lang/es
+@dirrm %%GEKKODIR%%/modules/menu-editor/lang/ca
 @dirrm %%GEKKODIR%%/modules/menu-editor/lang
 @dirrm %%GEKKODIR%%/modules/menu-editor
 @dirrm %%GEKKODIR%%/modules/packages/lang/es
+@dirrm %%GEKKODIR%%/modules/packages/lang/ca
 @dirrm %%GEKKODIR%%/modules/packages/lang
 @dirrm %%GEKKODIR%%/modules/packages
 @dirrm %%GEKKODIR%%/modules/groups/lang/es
+@dirrm %%GEKKODIR%%/modules/groups/lang/ca
 @dirrm %%GEKKODIR%%/modules/groups/lang
 @dirrm %%GEKKODIR%%/modules/groups/run
 @dirrm %%GEKKODIR%%/modules/groups
 @dirrm %%GEKKODIR%%/modules/conf/lang/es
+@dirrm %%GEKKODIR%%/modules/conf/lang/ca
 @dirrm %%GEKKODIR%%/modules/conf/lang
+@dirrm %%GEKKODIR%%/modules/conf/blocks
 @dirrm %%GEKKODIR%%/modules/conf
 @dirrm %%GEKKODIR%%/modules/blocks/blocks
 @dirrm %%GEKKODIR%%/modules/blocks/lang/es
+@dirrm %%GEKKODIR%%/modules/blocks/lang/ca
 @dirrm %%GEKKODIR%%/modules/blocks/lang
 @dirrm %%GEKKODIR%%/modules/blocks/run
 @dirrm %%GEKKODIR%%/modules/blocks
 @dirrm %%GEKKODIR%%/modules/modules/lang/es
+@dirrm %%GEKKODIR%%/modules/modules/lang/ca
 @dirrm %%GEKKODIR%%/modules/modules/lang
 @dirrm %%GEKKODIR%%/modules/modules
 @dirrm %%GEKKODIR%%/modules
