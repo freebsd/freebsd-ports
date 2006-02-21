@@ -8,7 +8,8 @@
 PORTNAME=	xflame
 PORTVERSION=	1.1.1
 CATEGORIES=	games
-MASTER_SITES=	http://linux.rice.edu/~rahul/xflame/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A cool animated flame
