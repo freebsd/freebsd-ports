@@ -5739,6 +5739,7 @@ libxml2		ports/textproc/libxml2
 libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
 libyahoo2	ports/net-im/libyahoo2
+libytnef	ports/converters/libytnef
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net-im/licq
