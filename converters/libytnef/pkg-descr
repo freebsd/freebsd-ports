@@ -1,0 +1,17 @@
+This is the library needed to YTNEF aaplication
+
+This program decodes those annoying application/ms-tnef MIME attachments that
+Microsoft mail servers helpfully use to encapsulate your already MIME encoded
+attachments.
+
+Due to the proliferation of Microsoft Outlook and Exchange mail servers,
+more and more mail is encapsulated into this format.
+
+The YTNEF program allows one to unpack the attachments which were encapsulated
+into the YTNEF attachment.  Thus alleviating the need to use Microsoft Outlook
+to view them.
+
+Now supports winmail.dat Outlook files
+
+Author: Randall Hand <randall.hand@gmail.com> 	
+WWW:	http://ytnef.sourceforge.net/
