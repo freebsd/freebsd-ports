@@ -7,9 +7,8 @@
 
 CATEGORIES=	chinese editors
 
-PATCH_SITES=	ftp://bbs.ilc.edu.tw/chinsan/patch/ \
-		http://bbs.ilc.edu.tw/~chinsan/ports/joe2/ \
-		ftp://news.giga.net.tw/chinsan/patch/
+PATCH_SITES=	http://chinsan2.twbbs.org/distfiles/ \
+		ftp://chinsan2.twbbs.org/distfiles/
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
