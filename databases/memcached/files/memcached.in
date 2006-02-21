@@ -18,15 +18,14 @@
 . %%RC_SUBR%%
 
 name="memcached"
-rcvar=`set_rcvar`
+rcvar=${name}_enable
 
-load_rc_config $name
+load_rc_config ${name}
 
 : ${memcached_enable="NO"}
-: ${memcached_flags=""}
 : ${memcached_user="nobody"}
 
 command=%%PREFIX%%/bin/memcached
-command_args="-d -u ${memcached_user} ${memcached_flags}"
+command_args="-d -u ${memcached_user}"
 
 run_rc_command "$1"
