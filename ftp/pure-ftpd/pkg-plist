@@ -5,7 +5,6 @@ etc/pure-ftpd.conf.sample
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
 etc/pureftpd-pgsql.conf.sample
-etc/rc.d/pure-ftpd.sh
 sbin/pure-authd
 sbin/pure-config.pl
 sbin/pure-ftpd

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.20
-PORTREVISION=	4
+PORTVERSION=	1.0.21
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
@@ -24,9 +24,8 @@ MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	pure-ftpd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-everything \
 			--with-paranoidmsg \
@@ -47,7 +46,8 @@ OPTIONS=	LDAP	"Support for users in LDAP directories" off \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
 		THROTTLING	"Bandwidth throttling" off \
 		BANNER	"Show ${PORTNAME} welcome upon session start" on \
-		UPLOADSCRIPT "Support uploadscript daemon" off
+		UPLOADSCRIPT "Support uploadscript daemon" off \
+		UTF8	"Support for charset conversion (expreimental)" off
 
 .include <bsd.port.pre.mk>
 
@@ -109,6 +109,12 @@ CONFIGURE_ARGS+=	--without-banner
 CONFIGURE_ARGS+=	--with-uploadscript
 .endif
 
+# RFC 2640 charset conversion requested?
+.if defined(WITH_UTF8)
+USE_ICONV=	YES
+CONFIGURE_ARGS+=	--with-rfc2640
+.endif
+
 .if ${OSVERSION} > 500000
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
 .else
@@ -155,9 +161,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
-		< ${FILESDIR}/pure-ftpd.sh.sample > ${WRKDIR}/pure-ftpd.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/pure-ftpd.sh ${PREFIX}/etc/rc.d
 .if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
