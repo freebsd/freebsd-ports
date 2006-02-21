@@ -1,11 +1,11 @@
---- builtins/Makefile.in.orig	Mon Oct 11 15:32:28 2004
-+++ builtins/Makefile.in	Mon Oct 11 15:32:58 2004
-@@ -177,7 +177,7 @@
+--- builtins/Makefile.in.orig	Wed Dec 28 19:49:25 2005
++++ builtins/Makefile.in	Wed Dec 28 19:50:01 2005
+@@ -178,7 +178,7 @@
  
  install-help:
  	@-if test -n "${HELPDIR}" && test -d helpfiles ; then \
 -		test -d ${HELPDIR} || ${SHELL} ${MKDIRS} $(DESTDIR)$(HELPDIR) ;\
 +		test -d ${DESTDIR}${HELPDIR} || ${SHELL} ${MKDIRS} $(DESTDIR)$(HELPDIR) ;\
- 		( cd helpfiles ; \
- 		  for f in *; do \
+ 		( for f in helpfiles/*; do \
  			echo installing $$f; \
+ 			${INSTALL_DATA} $$f $(DESTDIR)$(HELPDIR); \

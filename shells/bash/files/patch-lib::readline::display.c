@@ -4,9 +4,9 @@
 # http://lists.gnu.org/archive/html/bug-bash/2004-11/msg00220.html
 # http://lists.gnu.org/archive/html/bug-bash/2004-11/msg00266.html
 #
---- lib/readline/display.c.orig	2004-11-18 16:24:46.000000000 +0000
-+++ lib/readline/display.c	2004-11-18 17:12:32.904903404 +0000
-@@ -572,11 +572,10 @@
+--- lib/readline/display.c.orig	Wed Nov 30 17:05:02 2005
++++ lib/readline/display.c	Wed Dec 28 20:13:15 2005
+@@ -594,11 +594,10 @@
  
    /* inv_lbreaks[i] is where line i starts in the buffer. */
    inv_lbreaks[newlines = 0] = 0;
