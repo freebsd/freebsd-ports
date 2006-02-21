@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	0.2
+PORTVERSION=	1.0
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.rubynet.org/modules/net/spread/
+MASTER_SITES=	http://www.omniti.com/~george/rb_spread/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	rb_${PORTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
@@ -17,10 +18,9 @@ COMMENT=	Ruby interface to the Spread library
 
 LIB_DEPENDS=	tspread.1:${PORTSDIR}/net/spread
 
-BROKEN=		Unfetchable
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 
 INSTALL_TARGET=	site-install
 
