@@ -12519,6 +12519,7 @@ tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
 timelimit	ports/sysutils/timelimit
 timer-applet	ports/deskutils/timer-applet
+timeseal	ports/games/timeseal
 timidity	ports/audio/timidity
 timidity++	ports/audio/timidity++
 timidity++-emacs	ports/audio/timidity++-emacs
