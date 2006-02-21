@@ -6,32 +6,24 @@
 #
 
 PORTNAME=	libmemcache
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.4.0.rc2
 CATEGORIES=	databases
-MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/libmemcache/
+MASTER_SITES=	http://people.FreeBSD.org/~seanc/libmemcache/
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The C library for accessing a memcache cluster
 
-BUILD_DEPENDS=	pmk:${PORTSDIR}/devel/pmk
-
 USE_BZIP2=	yes
 
 INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
+GNU_CONFIGURE=	yes
 
 OPTIONS=	DEBUG	"Build with debugging turned on" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_DEBUG)
-PMKARGS=	-e debug
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
-do-configure:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/pmk ${PMKARGS}
-
-post-install:
-	# only files named lib*.so.[0-9] enter ld-elf.so.hints
-	${LN} -sf ${PREFIX}/lib/libmemcache.so.1.2 ${PREFIX}/lib/libmemcache.so.1
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
