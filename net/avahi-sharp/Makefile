@@ -28,6 +28,7 @@ AVAHI_SLAVE=	yes
 USE_GNOME=	gnomehack gnometarget
 CONFIGURE_ARGS= --with-distro=freebsd \
 		--with-dbus-system-address=unix:path=/var/run/dbus \
+		--disable-gtk \
 		--disable-qt3 \
 		--disable-qt4 \
 		--disable-python \
