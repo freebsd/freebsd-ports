@@ -2898,6 +2898,7 @@ ggsd		ports/net/ggsd
 ggv		ports/print/ggv
 ggz-client-libs	ports/games/ggz-client-libs
 ggz-gtk-client	ports/games/ggz-gtk-client
+ggz-gtk-games	ports/games/ggz-gtk-games
 ggz-sdl-games	ports/games/ggz-sdl-games
 ggz-txt-client	ports/games/ggz-txt-client
 ghasher		ports/sysutils/ghasher
