@@ -1,12 +1,12 @@
-lib/X11/fonts/farsifonts/elham.ttf
-lib/X11/fonts/farsifonts/fonts.dir
-lib/X11/fonts/farsifonts/homa.ttf
-lib/X11/fonts/farsifonts/koodak.ttf
-lib/X11/fonts/farsifonts/nazli.ttf
-lib/X11/fonts/farsifonts/nazlib.ttf
-lib/X11/fonts/farsifonts/roya.ttf
-lib/X11/fonts/farsifonts/royab.ttf
-lib/X11/fonts/farsifonts/terafik.ttf
-lib/X11/fonts/farsifonts/terafikb.ttf
-lib/X11/fonts/farsifonts/titr.ttf
-@dirrm lib/X11/fonts/farsifonts
+%%FONTSDIR%%/elham.ttf
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/homa.ttf
+%%FONTSDIR%%/koodak.ttf
+%%FONTSDIR%%/nazli.ttf
+%%FONTSDIR%%/nazlib.ttf
+%%FONTSDIR%%/roya.ttf
+%%FONTSDIR%%/royab.ttf
+%%FONTSDIR%%/terafik.ttf
+%%FONTSDIR%%/terafikb.ttf
+%%FONTSDIR%%/titr.ttf
+@dirrm %%FONTSDIR%%
