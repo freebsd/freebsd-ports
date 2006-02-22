@@ -8,13 +8,12 @@
 PORTNAME=	regm
 PORTVERSION=	1.0
 CATEGORIES=	mail python
-MASTER_SITES=	http://perso.linuxfr.org/jdumont/regm/
+MASTER_SITES=	http://hamete.org/regm/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Extract messages from a mailbox using regular expressions
 
 PLIST_FILES=	bin/regm
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
