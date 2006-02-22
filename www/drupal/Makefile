@@ -7,7 +7,7 @@
 
 PORTNAME=	drupal
 PORTVERSION=	4.6.5
-PORTREVISION=	2006010502
+PORTREVISION=	2006010503
 CATEGORIES=	www
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     brooks
@@ -16,59 +16,60 @@ DIST_SUBDIR=    drupal
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
 
+DRUPAL_PORT=	yes
+
 USE_PHP=	gd pcre session xml
 WANT_PHP_WEB=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS+=	MYSQL "MySQL database support" on \
+		PGSQL "PostgreSQL database support" off
 
-.if exists(${LOCALBASE}/lib/libpq.so)
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
-.endif
-
-.if !defined(DRUPDIR)
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define DRUPDIR to override default of 'www/drupal'."
-	@${ECHO_MSG} ""
-.endif
-
-DRUPDIR?=	www/drupal
 WWWOWN?=	www
 WWWGRP?=	www
 
 NO_BUILD=	yes
 DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
-PLIST_SUB+=	DRUPDIR=${DRUPDIR}
-SUB_LIST+=	DRUPDIR=${DRUPDIR}
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-do-install:
-	${MKDIR} ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/.htaccess ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/cron.php ${PREFIX}/${DRUPDIR}
-	${CP} -R ${WRKSRC}/database ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/favicon.ico ${PREFIX}/${DRUPDIR}
-	${CP} -R ${WRKSRC}/includes ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/index.php ${PREFIX}/${DRUPDIR}
-	${CP} -R ${WRKSRC}/misc ${PREFIX}/${DRUPDIR}
-	${CP} -R ${WRKSRC}/modules ${PREFIX}/${DRUPDIR}
-	${CP} -R ${WRKSRC}/scripts ${PREFIX}/${DRUPDIR}
-	${MKDIR} ${PREFIX}/${DRUPDIR}/sites/default
-	${CP} ${WRKSRC}/sites/default/settings.php ${PREFIX}/${DRUPDIR}/sites/default/settings.php-dist
-	@if [ ! -f ${PREFIX}/${DRUPDIR}/sites/default/settings.php ]; then \
-		${CP} -p ${PREFIX}/${DRUPDIR}/sites/default/settings.php-dist ${PREFIX}/${DRUPDIR}/sites/default/settings.php ; \
-	fi
-	${CP} -R ${WRKSRC}/themes ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/update.php ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/xmlrpc.php ${PREFIX}/${DRUPDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DRUPDIR}/doc
-	${CP} ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${DRUPDIR}/doc
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL)
+# XXX: should be "USE_PHP+=mysql", but the depends are added too early
+# by bsd.php.mk
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/mysql.so:${PORTSDIR}/${mysql_DEPENDS}
 .endif
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DRUPDIR}
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+.endif
+
+do-install:
+	${MKDIR} ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/.htaccess ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/cron.php ${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/database ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/favicon.ico ${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/includes ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/index.php ${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/misc ${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/modules ${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/scripts ${DRUPAL_DIR}
+	${MKDIR} ${DRUPAL_DIR}/sites/default
+	${CP} ${WRKSRC}/sites/default/settings.php ${DRUPAL_DIR}/sites/default/settings.php-dist
+	@if [ ! -f ${DRUPAL_DIR}/sites/default/settings.php ]; then \
+		${CP} -p ${DRUPAL_DIR}/sites/default/settings.php-dist ${DRUPAL_DIR}/sites/default/settings.php ; \
+	fi
+	${CP} -R ${WRKSRC}/themes ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/update.php ${DRUPAL_DIR}
+	${CP} ${WRKSRC}/xmlrpc.php ${DRUPAL_DIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${CP} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DRUPAL_DIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
+.include "${.CURDIR}/bsd.drupal.mk"
 .include <bsd.port.post.mk>
