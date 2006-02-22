@@ -11,7 +11,7 @@
 +CC      ?= gcc
 +CFLAGS	+= -g -Wall -pedantic $(DEFS)
 +LDFLAGS	+= -g -Wall -pedantic
- DEFS    = -DSTDC_HEADERS -DHAVE_STRDUP #-DDEBUG
+ DEFS    = -DSTDC_HEADERS -DHAVE_LIMITS_H # -DDEBUG
 -RM	= rm -f
 +RM	?= rm -f
  INSTALL	= install
@@ -19,7 +19,7 @@
  COMMON_OBJS		= utils.o
 @@ -16,8 +16,8 @@
  PACKAGE	= mkbold-mkitalic
- VERSION	= 0.06
+ VERSION	= 0.11
  DESTDIR	=
 -prefix	= /usr/local
 -bindir	= ${prefix}/bin
@@ -31,8 +31,8 @@
 @@ -36,7 +36,7 @@
  
  install: all
- 	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
--	$(INSTALL) -m 755 $(TARGETS) $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 0755 $(TARGETS) $(DESTDIR)$(bindir)
 +	$(BSD_INSTALL_PROGRAM) $(TARGETS) $(DESTDIR)$(bindir)
  
  dist:
