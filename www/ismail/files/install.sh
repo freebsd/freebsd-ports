@@ -10,8 +10,8 @@
 # Install the required files
 for file in `cat pkg-plist | grep -v @ | grep ISMAILDIR | sed 's,%%[A-Z]*%%,,g'`; do
         dir=`echo "${file}" | sed 's,/[^/]*$,/,g'`
-       if [ -d %%WRKSRC%%/ISMail/${dir} ]; then
+       if [ -d %%WRKSRC%%/ismail/${dir} ]; then
                 %%MKDIR%% %%INSTALLDIR%%/${dir}
        fi
-       %%INSTALL_DATA%% %%WRKSRC%%/ISMail/${file} %%INSTALLDIR%%/${file}
+       %%INSTALL_SCRIPT%%  %%WRKSRC%%/ismail/${file} %%INSTALLDIR%%/${file}
 done
