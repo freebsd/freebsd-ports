@@ -1,0 +1,35 @@
+# A Perforce Change Specification.
+#
+#  Change:      The change number. 'new' on a new changelist.  Read-only.
+#  Date:        The date this specification was last modified.  Read-only.
+#  Client:      The client on which the changelist was created.  Read-only.
+#  User:        The user who created the changelist. Read-only.
+#  Status:      Either 'pending' or 'submitted'. Read-only.
+#  Description: Comments about the changelist.  Required.
+#  Jobs:        What opened jobs are to be closed by this changelist.
+#               You may delete jobs from this list.  (New changelists only.)
+#  Files:       What opened files from the default changelist are to be added
+#               to this changelist.  You may delete files from this list.
+#               (New changelists only.)
+
+Change:	new
+
+Client:	brooks_pagefault
+
+User:	brooks
+
+Status:	new
+
+Description:
+	Correct pkg-descr and port creation date.  Remove bogus
+	contents of $FreeBSD$
+	PR:		
+	Submitted by:	
+	Reviewed by:	
+	Approved by:	
+	Obtained from:	
+	MFP4 after:	
+
+Files:
+	//depot/user/brooks/ports/drupal-textile/Makefile	# edit
+	//depot/user/brooks/ports/drupal-textile/pkg-descr	# edit

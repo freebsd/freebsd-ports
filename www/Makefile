@@ -99,6 +99,7 @@
     SUBDIR += dpsearch
     SUBDIR += drupal
     SUBDIR += drupal-pubcookie
+    SUBDIR += drupal-textile
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
