@@ -12513,6 +12513,7 @@ tide		ports/devel/tide
 tidy		ports/www/tidy
 tidy-devel	ports/www/tidy-devel
 tidy-lib	ports/www/tidy-lib
+tiemu2		ports/emulators/tiemu2
 tif22pnm	ports/graphics/tif22pnm
 tiff		ports/graphics/tiff
 tiff2png	ports/graphics/tiff2png
