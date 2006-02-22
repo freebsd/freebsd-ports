@@ -22,15 +22,15 @@ include/slapi-plugin.h
 lib/liblber.a
 lib/liblber.so
 lib/liblber-2.3.so
-lib/liblber-2.3.so.1
+lib/liblber-2.3.so.2
 lib/libldap.a
 lib/libldap.so
 lib/libldap-2.3.so
-lib/libldap-2.3.so.1
+lib/libldap-2.3.so.2
 lib/libldap_r.a
 lib/libldap_r.so
 lib/libldap_r-2.3.so
-lib/libldap_r-2.3.so.1
+lib/libldap_r-2.3.so.2
 @comment share/openldap/ucdata/case.dat
 @comment share/openldap/ucdata/cmbcl.dat
 @comment share/openldap/ucdata/comp.dat
