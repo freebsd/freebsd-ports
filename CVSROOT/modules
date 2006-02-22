@@ -3522,6 +3522,7 @@ gtk-flat-theme	ports/x11-themes/gtk-flat-theme
 gtk-flat-theme2	ports/x11-themes/gtk-flat-theme2
 gtk-gnutella	ports/net-p2p/gtk-gnutella
 gtk-gopod	ports/misc/gtk-gopod
+gtk-gray-theme	ports/x11-themes/gtk-gray-theme
 gtk-imonc	ports/sysutils/gtk-imonc
 gtk-industrial-theme	ports/x11-themes/gtk-industrial-theme
 gtk-knocker	ports/security/gtk-knocker
