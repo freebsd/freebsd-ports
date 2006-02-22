@@ -1,5 +1,5 @@
---- tumgreyspfsupp.py.orig	Wed Aug 31 21:39:42 2005
-+++ tumgreyspfsupp.py	Wed Aug 31 21:41:24 2005
+--- tumgreyspfsupp.py.orig	Thu Feb  2 18:48:25 2006
++++ tumgreyspfsupp.py	Wed Feb 22 10:20:40 2006
 @@ -10,15 +10,15 @@
  
  
@@ -14,10 +14,10 @@
 -		'greylistDir' : '/var/local/lib/tumgreyspf/data',
 -		'blackholeDir' : '/var/local/lib/tumgreyspf/blackhole',
 -		'spfqueryPath' : '/usr/local/lib/tumgreyspf/spfquery',
-+		'configPath' : 'file:///%%TUMGREYSPF_DIR%%/config',
++		'configPath' : 'file://%%TUMGREYSPF_DIR%%/config',
 +		'greylistDir' : '%%TUMGREYSPF_DIR%%/data',
 +		'blackholeDir' : '%%TUMGREYSPF_DIR%%/blackhole',
-+		'spfqueryPath' : '%%PREFIX%%/bin/spfquery',
++		'spfqueryPath' : '%%LOCALBASE%%/bin/spfquery',
+ 		'ignoreLastByte' : 0,
  		}
- 
  

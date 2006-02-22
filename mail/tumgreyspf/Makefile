@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/
 
@@ -18,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 
 USE_PYTHON=	2.1+
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 TUMGREYSPF_DIR?=	/var/db/${PORTNAME}
 TUMGREYSPF_USER?=	nobody
@@ -47,7 +45,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%TUMGREYSPF_DIR%%|${TUMGREYSPF_DIR}|g" \
-		${WRKSRC}/tumgreyspfsupp.py ${WRKSRC}/tumgreyspf.conf
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/tumgreyspfsupp.py \
+		${WRKSRC}/tumgreyspf.conf
 	@${GREP} -r "env python" ${WRKSRC} | ${CUT} -d: -f1 | \
 		${XARGS} ${REINPLACE_CMD} -e "s|env python|env ${PYTHON_CMD}|"
 
