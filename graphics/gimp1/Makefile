@@ -30,7 +30,7 @@ DEPRECATED=	New stable release 2.0 can be installed via graphics/gimp port
 
 NO_LATEST_LINK=	yes
 
-CONFLICTS=	gimp-2.* gimp-gnome-2.*
+CONFLICTS=	gimp-2.* gimp-gnome-2.* gimpshop-[0-9]*
 
 #SHLIBVER?=	${PORTVERSION:S/1.2.//g}
 SHLIBVER?=	2

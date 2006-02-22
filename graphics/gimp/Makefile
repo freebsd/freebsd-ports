@@ -29,7 +29,7 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-CONFLICTS=	gimp-1.*
+CONFLICTS=	gimp-1.* gimpshop-[0-9]*
 
 SHLIBVER?=	200
 
