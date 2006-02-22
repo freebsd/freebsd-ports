@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.3.11
+DISTVERSION=		2.3.19
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -87,10 +87,10 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.1:${PORTSDIR}/net/openldap23-sasl-client
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.2:${PORTSDIR}/net/openldap23-sasl-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
 .else
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.1:${PORTSDIR}/net/openldap23-client
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.3.so.2:${PORTSDIR}/net/openldap23-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
 
@@ -258,7 +258,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 BDBLIB=			db3.3
 .else
-IGNORE=			: WITH_BDB_VER must be 3, 4, 41 or 42
+IGNORE=			: WITH_BDB_VER must be 3, 4, 41, 42 or 43
 .endif
 
 LIB_DEPENDS+=		${BDBLIB}:${PORTSDIR}/databases/db${WITH_BDB_VER}
