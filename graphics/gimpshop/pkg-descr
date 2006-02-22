@@ -1,19 +1,16 @@
-The GIMP is designed to provide an intuitive graphical interface to a
-variety of image editing operations. Here is a list of the GIMP's 
-major features:
+GIMPshop is a fork of GIMP which changes the layout of the user interface
+to resemble Adobe Photoshop.
 
- Image editing
- -------------
+The Gimp's menu structure and naming conventions are a constant source
+of frustration for those who are familiar with Photoshop.
+The main purpose for GIMPshop is to make the Gimp accessible to the
+many Adobe Photoshop users out there.
+GIMP's tools, options, windows, and menus have been renamed and
+reorganized to closely resemble Adobe Photoshop's menu structure and
+naming conventions. Many of the menu options and even whole menus were
+recreated to faithfully reproduce a Photoshop-like experience. After
+running GIMPshop, you'll find that Photoshop and the GIMP are strikingly
+similar.
+Longtime Photoshop users should feel very comfortable using GIMPshop.
 
-   *  Selection tools including rectangle, ellipse, free, fuzzy, bezier 
-      and intelligent.
-   *  Transformation tools including rotate, scale, shear and flip.
-   *  Painting tools including bucket, brush, airbrush, clone, convolve,
-      blend and text.
-   *  Effects filters (such as blur, edge detect).
-   *  Channel & color operations (such as add, composite, decompose).
-   *  Plug-ins which allow for the easy addition of new file formats and
-      new effect filters.
-   *  Multiple undo/redo.
-
-WWW: http://www.gimp.org/
+WWW: http://plasticbugs.com/?page_id=294
