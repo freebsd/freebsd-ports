@@ -5,31 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		clamav
-PORTVERSION=		0.3.1
-CATEGORIES=		security python
-MASTER_SITES=		http://xael.org/norman/python/pyclamav/
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		py${PORTNAME}-${PORTVERSION}
+PORTNAME=	clamav
+PORTVERSION=	0.3.2
+CATEGORIES=	security python
+MASTER_SITES=	http://xael.org/norman/python/pyclamav/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=		mnag@FreeBSD.org
-COMMENT=		A python binding to libclamav written in C
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	A python binding to libclamav written in C
 
-LIB_DEPENDS=		clamav.1:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
 
-DIST_SUBDIR=		python
-USE_PYTHON=		yes
+DIST_SUBDIR=	python
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
 
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-DOCSDIR?=		${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR?=		${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR?=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|stat64|stat|g' ${WRKSRC}/pyclamav.c
