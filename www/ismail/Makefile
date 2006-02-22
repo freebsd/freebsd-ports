@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ismail
-PORTVERSION=	2.0.p4
+PORTVERSION=	2.0
 CATEGORIES=	www mail
-MASTER_SITES=	ftp://ftp.verbotenplanet.net/ISMail/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
+MASTER_SITES=	ftp://ftp.insidesystems.net/ISMail/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kelley@insidesystems.net
 COMMENT=	PHP-based webmail client
@@ -34,8 +34,9 @@ PORT_EXAMPLES= mysql4.schema pgsql.schema
 
 LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
 
-SED_SCRIPT=	-e 's,%%INSTALL_DATA%%,${INSTALL_DATA},g' \
+SED_SCRIPT=	-e 's,%%INSTALL_SCRIPT%%,${INSTALL_SCRIPT},g' \
 		-e 's,%%MKDIR%%,${MKDIR},g' \
+		-e 's,%%CHOWN%%,${CHOWN},g' \
 		-e 's,%%WRKSRC%%,${WRKSRC},g' \
 		-e 's,%%ISMAILDIR%%,${ISMAILDIR},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -69,7 +70,7 @@ pre-install:
 
 do-install:
 	${SH} ${WRKDIR}/install.sh
-	${CHMOD} -R 644 ${INSTALLDIR}
+	${CHOWN} -R www:www ${INSTALLDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOC_FILES}
