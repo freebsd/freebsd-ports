@@ -85,8 +85,8 @@ CONFIGURE_ARGS+=	--disable-cups --without-winbind --without-syslog \
 			--without-pam --without-pam_smbpass --without-aio-support
 
 # Dirty hack to work around usage of OPTIONS in slave ports
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if exists(${.CURDIR}/Makefile.inc)
+.include "${.CURDIR}/Makefile.inc"
 .endif
 
 .else
