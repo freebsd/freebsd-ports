@@ -8,8 +8,8 @@ PORTNAME=	ksocrat
 PORTVERSION=	3.2.1
 PORTREVISION=	1
 CATEGORIES=	russian kde
-MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
-		http://core.inec.ru/~az/
+MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/
+
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \

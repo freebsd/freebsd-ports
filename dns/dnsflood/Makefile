@@ -15,7 +15,6 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	DNS flood detector
 
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/dns_flood_detector
 

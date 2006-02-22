@@ -8,8 +8,7 @@
 PORTNAME=	le
 PORTVERSION=	1.12.5
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/ \
-		http://core.inec.ru/~az/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/le/
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Text editor

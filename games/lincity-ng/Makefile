@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_SDL=	sdl mixer image ttf gfx
 USE_GNOME=	libxml2
-USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libphysfs=${PREFIX}

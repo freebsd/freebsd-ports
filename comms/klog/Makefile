@@ -17,7 +17,6 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_KDELIBS_VER=3
 
 .include <bsd.port.mk>
