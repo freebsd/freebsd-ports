@@ -6,6 +6,32 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060221:
+  AFFECTS: users of print/acroread7 and the localized versions
+  AUTHOR: hrs@FreeBSD.org
+
+  installation directory of print/acroread7 and the slave ports
+  have been changed to ${PREFIX}/Adobe/Acrobat7.0/${ADOBE_LANG}.
+  ${ADOBE_LANG} is one of CHS,CHT,DAN,DEU,ENU,ESP,FRA,ITA,JPN,KOR,
+  NLD,NOR,PTB,SUO,SVE and represents language used in the UI (FRA means
+  French version and it is installed by french/acroread, for example).
+  To configure the UI language, navigate to Edit->Preferences->International->
+  Application Language, set it to "Choose at application startup" and
+  restart the program.
+
+  The command filename is ${PREFIX}/bin/acroread as before (this is
+  a script installed by print/acroreadwrapper now), and if multiple
+  versions are installed, one of them will be selected according to
+  ${ADOBE_LANG} environment variable.  If ${ADOBE_LANG} is not set,
+  it will be automatically set by using ${LANG}; this means when
+  LANG=fr_FR.ISO8859-15, ADOBE_LANG will be FRA and the French version
+  will be invoked by ${PREFIX}/bin/acroread.  You can set ADOBE_LANG
+  manually, too.
+
+  Also, if you want to activate the PDF plugin, use --install-plugin
+  option in ${PREFIX}/bin/acroread.  For more detail, see
+  print/acroreadwrapper/pkg-message.
+
 20060220:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
