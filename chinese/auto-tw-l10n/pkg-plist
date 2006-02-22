@@ -10,5 +10,4 @@ share/skel/zh_TW.Big5/dot.muttrc
 share/skel/zh_TW.Big5/dot.vimrc
 share/skel/zh_TW.Big5/dot.xinitrc
 share/skel/zh_TW.Big5/make.conf
-share/skel/zh_TW.Big5/outta-port.supfile
 @dirrmtry share/skel/zh_TW.Big5
