@@ -670,3 +670,5 @@ pfpro-*			finance/pfpro		Only available for customers
 simian-*                devel/simian            Have to agree to
 						license before download.
 xGate/*			japanese/xgate		Requested by Orangesoft Inc
+tw_cli-*		sysutils/tw_cli		Redistribution forbidden by
+						license.

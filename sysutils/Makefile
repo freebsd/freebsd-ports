@@ -547,6 +547,7 @@
     SUBDIR += tree
     SUBDIR += ttyload
     SUBDIR += tua
+    SUBDIR += tw_cli
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy
     SUBDIR += ucspi-ssl
