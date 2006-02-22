@@ -1,11 +1,11 @@
---- Configure.orig	Sun Jul 17 00:07:33 2005
-+++ Configure	Sun Jul 17 00:07:50 2005
-@@ -84,7 +84,7 @@
+--- Configure.orig	Sun Jan 15 18:38:43 2006
++++ Configure	Wed Feb 22 18:10:48 2006
+@@ -89,7 +89,7 @@
  		CC = gcc
  		CFLAGS = -g -O \$(DFLAGS) -Wall
  		LIBS = -lm -lc
--		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD
-+		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD -DLOCKDIR=\"/var/spool/lock\"
+-		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD $CM17AFLAG
++		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD -DLOCKDIR=\"/var/spool/lock\" $CM17AFLAG
  EoF
  	;;
      sco*)
