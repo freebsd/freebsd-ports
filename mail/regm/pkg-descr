@@ -3,7 +3,7 @@ mailbox using a regular expression.  There are advanced options to
 specify multiple regular expressions, different output formats,
 and more.
 
-WWW: http://perso.linuxfr.org/jdumont/regm/
+WWW: http://hamete.org/regm/
 
 - Pete
 petef@databits.net
