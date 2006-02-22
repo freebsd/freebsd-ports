@@ -9102,6 +9102,7 @@ p5-Text-VimColor	ports/textproc/p5-Text-VimColor
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-WordDiff	ports/textproc/p5-Text-WordDiff
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
+p5-Text-vCard	ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
 p5-Tie-Array-Sorted	ports/devel/p5-Tie-Array-Sorted
 p5-Tie-Cache	ports/devel/p5-Tie-Cache
