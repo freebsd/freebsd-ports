@@ -159,6 +159,7 @@
     SUBDIR += gimp-pmosaic
     SUBDIR += gimp-ufraw
     SUBDIR += gimp1
+    SUBDIR += gimpshop
     SUBDIR += giram
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
