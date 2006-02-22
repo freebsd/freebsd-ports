@@ -7,24 +7,11 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/:full \
-		ftp://download1.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download2.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download4.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download6.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download7.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download9.gamershell.com/pub/pc/games/gamershell/demo/:full \
-		ftp://download11.gamershell.com/pub/pc/gamershell/demo/:full \
-		ftp://download12.gamershell.com/pub/pc/gamershell/demo/:full \
-		ftp://download12.gamershell.com/pub/pc/gamershell/patch/:patch1 \
-		http://offload1.icculus.org/~ravage/alienarena2006/:patch2
+MASTER_SITES=	http://www.forsakenweb.com/gamepage/loaders/games/
 PKGNAMEPREFIX=	linux-
-DISTFILES=	${PORTNAME}-${PORTVERSION}-x86.run:full \
-		aa2k6-update-12-30.tar.gz:patch1 \
-		${PORTNAME}-${PORTVERSION}-i386-update-12-30.tar.gz:patch2 \
-		${PORTNAME}-${PORTVERSION}-x86_64-update-12-30.tar.gz:patch2
+DISTFILES=	${PORTNAME}-${PORTVERSION}-x86.run
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Alien Arena 2006 (Linux version)
@@ -37,8 +24,8 @@ USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-RESTRICTED=	"Redistribution is limited, see license"
-NO_PACKAGE=	"Package will be 150MB, set FORCE_PACKAGE if you really want to build it"
+RESTRICTED=	Redistribution is limited, see license
+NO_PACKAGE=	Package will be 150MB, set FORCE_PACKAGE if you really want to build it
 
 ALIENDIR=	${PREFIX}/lib/${PORTNAME}
 ALIENDIR_REL=	${ALIENDIR:S,^${PREFIX}/,,}
@@ -74,21 +61,17 @@ RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
 
 .if ${ARCH} == "i386"
 ENGINE_ARCH=	x86
-SDL_ARCH=	i386
 .elif ${ARCH} == "amd64"
 ENGINE_ARCH=	x86_64
-SDL_ARCH=	x86_64
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		${TAIL} -c +8778 ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-x86.run | ${TAR} xfz -
-	@${TAR} xfj ${WRKSRC}/alienarena-2006-data.tar.bz2 -C ${WRKSRC}
+		${TAIL} -c +8814 ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-x86.run | ${TAR} xfz -
+	@${TAR} xfj ${WRKSRC}/alienarena-2006ge-data.tar.bz2 -C ${WRKSRC}
 
 	@${CP} -R ${WRKSRC}/engine/${ENGINE_ARCH}/* ${WRKSRC}
-	@${TAR} xfz ${_DISTDIR}/aa2k6-update-12-30.tar.gz -C ${WRKSRC}
-	@${TAR} xfz ${_DISTDIR}/${PORTNAME}-${PORTVERSION}-${SDL_ARCH}-update-12-30.tar.gz -C ${WRKSRC}
 
 pre-install:
 	@${RM} -f ${PLIST}
