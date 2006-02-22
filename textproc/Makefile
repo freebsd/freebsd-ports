@@ -471,6 +471,7 @@
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-WordDiff
     SUBDIR += p5-Text-Wrapper
+    SUBDIR += p5-Text-vCard
     SUBDIR += p5-Time-Human
     SUBDIR += p5-Tk-XMLViewer
     SUBDIR += p5-Tree-Nary
