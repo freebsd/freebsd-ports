@@ -12760,6 +12760,7 @@ tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
+tw_cli		ports/sysutils/tw_cli
 twander		ports/x11-fm/twander
 twelf		ports/lang/twelf
 twhttpd		ports/www/twhttpd
