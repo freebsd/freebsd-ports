@@ -1,0 +1,9 @@
+sbin/dnsmasq
+etc/dnsmasq.conf.example
+%%EXAMPLESDIR%%/dnslist/dhcp.css
+%%EXAMPLESDIR%%/dnslist/dnslist.pl
+%%EXAMPLESDIR%%/dnslist/dnslist.tt2
+%%EXAMPLESDIR%%/dynamic-dnsmasq/dynamic-dnsmasq.pl
+@dirrm %%EXAMPLESDIR%%/dnslist
+@dirrm %%EXAMPLESDIR%%/dynamic-dnsmasq
+@dirrm %%EXAMPLESDIR%%
