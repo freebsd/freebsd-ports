@@ -15,6 +15,7 @@
     SUBDIR += clearlooks-themes-extras
     SUBDIR += colorstep
     SUBDIR += cursor-bluecurve-theme
+    SUBDIR += cursor-grounation-theme
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
     SUBDIR += cursor-polar-theme
