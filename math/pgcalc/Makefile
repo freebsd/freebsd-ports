@@ -11,12 +11,11 @@ CATEGORIES=	math kde
 MASTER_SITES=	http://www.pgcalc.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerfull scientific skinnable calculator
+COMMENT=	A powerful scientific skinnable calculator
 
 USE_QT_VER=	3
 USE_KDELIBS_VER= 3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -26,7 +25,7 @@ OPTIONS=	ARTS "Build with aRts support" on
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 500000)
-BROKEN=		"Does not build with gcc2 and can't link with gcc3"
+BROKEN=		Does not build with gcc2 and cannot link with gcc3
 .endif
 
 .if !defined(WITH_ARTS)
