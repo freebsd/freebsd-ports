@@ -1671,6 +1671,11 @@ share/xsl/docbook/params/xref.label-title.separator.xml
 share/xsl/docbook/params/xref.properties.xml
 share/xsl/docbook/params/xref.title-page.separator.xml
 share/xsl/docbook/params/xref.with.number.and.title.xml
+share/xsl/docbook/profiling/ChangeLog
+share/xsl/docbook/profiling/profile-mode.xsl
+share/xsl/docbook/profiling/profile.xsl
+share/xsl/docbook/profiling/strip-attributes.xsl
+share/xsl/docbook/profiling/xsl2profile.xsl
 share/xsl/docbook/template/ChangeLog
 share/xsl/docbook/template/README
 share/xsl/docbook/template/biblioentry.xsl
@@ -1736,6 +1741,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/xhtml
 @dirrm share/xsl/docbook/template
 @dirrm share/xsl/docbook/params
+@dirrm share/xsl/docbook/profiling
 @dirrm share/xsl/docbook/manpages
 @dirrm share/xsl/docbook/lib
 @dirrm share/xsl/docbook/javahelp

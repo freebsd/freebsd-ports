@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.69.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -29,7 +30,7 @@ XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	common fo extensions html htmlhelp images \
-		javahelp lib manpages params template xhtml
+		javahelp lib manpages params profiling template xhtml
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
