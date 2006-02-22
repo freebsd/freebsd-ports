@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
 		http://edt1023.sayya.org/misc/
@@ -23,7 +23,8 @@ USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-USE_REINPLACE=	YES
+
+CONFIGURE_ENV+=	"--new_gtk_im=Y"
 
 MAN1=		gcin.1 gcin2tab.1
 
