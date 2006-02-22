@@ -7,19 +7,17 @@
 #
 
 PORTNAME=	argtable
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
@@ -28,7 +26,7 @@ MLINKS=		argtable2.3 argtable.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g ; \
-		 s|: install-dist_exampleDATA|:|g' ${WRKSRC}/Makefile.in
+		 s|^install-data-am: |install-data-am: #|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/argtable2.3 ${MAN3PREFIX}/man/man3
