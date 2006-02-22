@@ -16,7 +16,6 @@ COMMENT=	A programming text editor
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-win32
-USE_REINPLACE=	yes
 
 OPTIONS=	CURSES	"Build with ncurses support"	on \
 		NLS	"Native language support"	on \

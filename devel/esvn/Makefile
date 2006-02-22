@@ -25,7 +25,6 @@ ESVNDOCS=	html-docs html-docs/common html-docs/common/admon html-docs/common/nav
 
 WRKSRC=		${WRKDIR}/${ESVN_DIST}
 
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes

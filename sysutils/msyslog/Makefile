@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_RC_SUBR=	msyslogd.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INSTALLS_SHLIB=	yes

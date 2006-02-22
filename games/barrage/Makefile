@@ -20,7 +20,6 @@ USE_GETOPT_LONG=yes
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 

@@ -13,8 +13,6 @@ MASTER_SITES=	http://royale.zerezo.com/irssistats/
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Generate IRC statistics based on irssi logs
 
-USE_REINPLACE=	yes
-
 MAKE_ARGS+=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}" EXAMPLESDIR="${EXAMPLESDIR}" PREFIX="${PREFIX}" \
 		CC="${CC}" CFLAGS="${CFLAGS}"
 

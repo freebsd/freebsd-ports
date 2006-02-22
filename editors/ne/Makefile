@@ -9,8 +9,8 @@ PORTNAME=	ne
 PORTVERSION=	1.42
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/ \
-		${MASTER_SITE_GENTOO} \
-		http://core.inec.ru/~az/
+		${MASTER_SITE_GENTOO}
+
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	az@FreeBSD.org

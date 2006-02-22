@@ -17,7 +17,6 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Codespace-frugal STL implementation
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 HAS_CONFIGURE=	yes
