@@ -1,25 +1,18 @@
-# New ports collection makefile for:    The GIMP
-# Date created:         Mon Nov 18 21:28:43 CST 1996
-# Whom:                 erich@FreeBSD.org
+# New ports collection makefile for: GIMPshop
+# Date created:		Thu Feb 16 20:45:20 BRDT 2006
+# Whom:			Rainer Alves <rainer.alves@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gimp
+PORTNAME=	gimpshop
 PORTVERSION=	2.2.10
-PORTEPOCH=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
-		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
+MASTER_SITES=	http://www.plasticbugs.com/blogimg/
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNU Image Manipulation Program
+MAINTAINER=	rainer.alves@gmail.com
+COMMENT=	GIMP fork resembling Adobe Photoshop
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		aa.1:${PORTSDIR}/graphics/aalib \
@@ -29,15 +22,15 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-CONFLICTS=	gimp-1.*
+CONFLICTS=	gimp-1.* gimp-2.* gimp-gnome-2.*
 
 SHLIBVER?=	200
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
@@ -51,7 +44,7 @@ CONFIGURE_ARGS=	--disable-perl \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/gimp-${PORTVERSION}
 
 MAN1=	gimp.1 gimp-2.2.1 gimp-remote.1 gimp-remote-2.2.1 gimptool-2.0.1
 MAN5=	gimprc.5 gimprc-2.2.5
@@ -97,7 +90,7 @@ CONFIGURE_ARGS+=	--enable-mp
 USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
-PKGNAMESUFFIX:=		-gnome
+# PKGNAMESUFFIX:=	-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes
 .else
