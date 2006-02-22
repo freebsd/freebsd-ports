@@ -1,153 +1,154 @@
-%%DRUPDIR%%/.htaccess
-%%DRUPDIR%%/cron.php
-%%DRUPDIR%%/database/database.mysql
-%%DRUPDIR%%/database/database.pgsql
-%%DRUPDIR%%/database/updates.inc
-%%PORTDOCS%%%%DRUPDIR%%/doc/CHANGELOG.txt
-%%PORTDOCS%%%%DRUPDIR%%/doc/INSTALL.txt
-%%PORTDOCS%%%%DRUPDIR%%/doc/LICENSE.txt
-%%PORTDOCS%%%%DRUPDIR%%/doc/MAINTAINERS.txt
-%%DRUPDIR%%/favicon.ico
-%%DRUPDIR%%/includes/bootstrap.inc
-%%DRUPDIR%%/includes/common.inc
-%%DRUPDIR%%/includes/database.inc
-%%DRUPDIR%%/includes/database.mysql.inc
-%%DRUPDIR%%/includes/database.pgsql.inc
-%%DRUPDIR%%/includes/file.inc
-%%DRUPDIR%%/includes/image.inc
-%%DRUPDIR%%/includes/locale.inc
-%%DRUPDIR%%/includes/menu.inc
-%%DRUPDIR%%/includes/module.inc
-%%DRUPDIR%%/includes/pager.inc
-%%DRUPDIR%%/includes/session.inc
-%%DRUPDIR%%/includes/tablesort.inc
-%%DRUPDIR%%/includes/theme.inc
-%%DRUPDIR%%/includes/xmlrpc.inc
-%%DRUPDIR%%/includes/xmlrpcs.inc
-%%DRUPDIR%%/index.php
-%%DRUPDIR%%/misc/arrow-asc.png
-%%DRUPDIR%%/misc/arrow-desc.png
-%%DRUPDIR%%/misc/blog.png
-%%DRUPDIR%%/misc/drupal.css
-%%DRUPDIR%%/misc/druplicon-small.png
-%%DRUPDIR%%/misc/druplicon.png
-%%DRUPDIR%%/misc/forum-closed.png
-%%DRUPDIR%%/misc/forum-default.png
-%%DRUPDIR%%/misc/forum-hot-new.png
-%%DRUPDIR%%/misc/forum-hot.png
-%%DRUPDIR%%/misc/forum-new.png
-%%DRUPDIR%%/misc/forum-sticky.png
-%%DRUPDIR%%/misc/menu-collapsed.png
-%%DRUPDIR%%/misc/menu-expanded.png
-%%DRUPDIR%%/misc/menu-leaf.png
-%%DRUPDIR%%/misc/powered-by-drupal-dark.png
-%%DRUPDIR%%/misc/powered-by-drupal-light.png
-%%DRUPDIR%%/misc/powered-by-drupal.png
-%%DRUPDIR%%/misc/print.css
-%%DRUPDIR%%/misc/watchdog-error.png
-%%DRUPDIR%%/misc/watchdog-warning.png
-%%DRUPDIR%%/misc/xml.png
-%%DRUPDIR%%/modules/aggregator.module
-%%DRUPDIR%%/modules/archive.module
-%%DRUPDIR%%/modules/block.module
-%%DRUPDIR%%/modules/blog.module
-%%DRUPDIR%%/modules/blogapi.module
-%%DRUPDIR%%/modules/book.module
-%%DRUPDIR%%/modules/comment.module
-%%DRUPDIR%%/modules/contact.module
-%%DRUPDIR%%/modules/drupal.module
-%%DRUPDIR%%/modules/filter.module
-%%DRUPDIR%%/modules/forum.module
-%%DRUPDIR%%/modules/help.module
-%%DRUPDIR%%/modules/legacy.module
-%%DRUPDIR%%/modules/locale.module
-%%DRUPDIR%%/modules/menu.module
-%%DRUPDIR%%/modules/node.module
-%%DRUPDIR%%/modules/page.module
-%%DRUPDIR%%/modules/path.module
-%%DRUPDIR%%/modules/ping.module
-%%DRUPDIR%%/modules/poll.module
-%%DRUPDIR%%/modules/profile.module
-%%DRUPDIR%%/modules/queue.module
-%%DRUPDIR%%/modules/search.module
-%%DRUPDIR%%/modules/statistics.module
-%%DRUPDIR%%/modules/story.module
-%%DRUPDIR%%/modules/system.module
-%%DRUPDIR%%/modules/taxonomy.module
-%%DRUPDIR%%/modules/throttle.module
-%%DRUPDIR%%/modules/tracker.module
-%%DRUPDIR%%/modules/upload.module
-%%DRUPDIR%%/modules/user.module
-%%DRUPDIR%%/modules/watchdog.module
-%%DRUPDIR%%/scripts/code-clean.sh
-%%DRUPDIR%%/scripts/code-style.pl
-%%DRUPDIR%%/scripts/cron-curl.sh
-%%DRUPDIR%%/scripts/cron-lynx.sh
-%%DRUPDIR%%/scripts/prefix.sh
-@unexec if cmp -s %D/%%DRUPDIR%%/sites/default/settings.php-dist %D/%%DRUPDIR%%/sites/default/settings.php; then rm -f %D/%%DRUPDIR%%/sites/default/settings.php; fi
-%%DRUPDIR%%/sites/default/settings.php-dist
-@exec if [ ! -f %D/%%DRUPDIR%%/sites/default/settings.php ] ; then cp -p %D/%F %B/settings.php; fi
-%%DRUPDIR%%/themes/bluemarine/logo.png
-%%DRUPDIR%%/themes/bluemarine/screenshot.png
-%%DRUPDIR%%/themes/bluemarine/style.css
-%%DRUPDIR%%/themes/bluemarine/xtemplate.xtmpl
-%%DRUPDIR%%/themes/chameleon/background.png
-%%DRUPDIR%%/themes/chameleon/chameleon.theme
-%%DRUPDIR%%/themes/chameleon/common.css
-%%DRUPDIR%%/themes/chameleon/logo.png
-%%DRUPDIR%%/themes/chameleon/marvin/bullet.png
-%%DRUPDIR%%/themes/chameleon/marvin/druplicon-watermark.png
-%%DRUPDIR%%/themes/chameleon/marvin/logo.png
-%%DRUPDIR%%/themes/chameleon/marvin/screenshot.png
-%%DRUPDIR%%/themes/chameleon/marvin/style.css
-%%DRUPDIR%%/themes/chameleon/screenshot.png
-%%DRUPDIR%%/themes/chameleon/style.css
-%%DRUPDIR%%/themes/engines/xtemplate/xtemplate.engine
-%%DRUPDIR%%/themes/engines/xtemplate/xtemplate.inc
-%%DRUPDIR%%/themes/pushbutton/arrow-next-hover.png
-%%DRUPDIR%%/themes/pushbutton/arrow-next-visited.png
-%%DRUPDIR%%/themes/pushbutton/arrow-next.png
-%%DRUPDIR%%/themes/pushbutton/arrow-prev-hover.png
-%%DRUPDIR%%/themes/pushbutton/arrow-prev-visited.png
-%%DRUPDIR%%/themes/pushbutton/arrow-prev.png
-%%DRUPDIR%%/themes/pushbutton/arrow-up-hover.png
-%%DRUPDIR%%/themes/pushbutton/arrow-up-visited.png
-%%DRUPDIR%%/themes/pushbutton/arrow-up.png
-%%DRUPDIR%%/themes/pushbutton/background.png
-%%DRUPDIR%%/themes/pushbutton/forum-container.jpg
-%%DRUPDIR%%/themes/pushbutton/forum-link.png
-%%DRUPDIR%%/themes/pushbutton/header-a.jpg
-%%DRUPDIR%%/themes/pushbutton/header-b.jpg
-%%DRUPDIR%%/themes/pushbutton/header-c.png
-%%DRUPDIR%%/themes/pushbutton/icon-block.png
-%%DRUPDIR%%/themes/pushbutton/icon-comment.png
-%%DRUPDIR%%/themes/pushbutton/logo-active.jpg
-%%DRUPDIR%%/themes/pushbutton/logo-background.jpg
-%%DRUPDIR%%/themes/pushbutton/logo-hover.jpg
-%%DRUPDIR%%/themes/pushbutton/logo.png
-%%DRUPDIR%%/themes/pushbutton/screenshot.png
-%%DRUPDIR%%/themes/pushbutton/style.css
-%%DRUPDIR%%/themes/pushbutton/tabs-off.png
-%%DRUPDIR%%/themes/pushbutton/tabs-on.png
-%%DRUPDIR%%/themes/pushbutton/tabs-option-hover.png
-%%DRUPDIR%%/themes/pushbutton/tabs-option-off.png
-%%DRUPDIR%%/themes/pushbutton/tabs-option-on.png
-%%DRUPDIR%%/themes/pushbutton/xtemplate.xtmpl
-%%DRUPDIR%%/update.php
-%%DRUPDIR%%/xmlrpc.php
-@dirrm %%DRUPDIR%%/themes/pushbutton
-@dirrm %%DRUPDIR%%/themes/engines/xtemplate
-@dirrm %%DRUPDIR%%/themes/engines
-@dirrm %%DRUPDIR%%/themes/chameleon/marvin
-@dirrm %%DRUPDIR%%/themes/chameleon
-@dirrm %%DRUPDIR%%/themes/bluemarine
-@dirrm %%DRUPDIR%%/themes
-@dirrmtry %%DRUPDIR%%/sites/default
-@dirrmtry %%DRUPDIR%%/sites
-@dirrm %%DRUPDIR%%/scripts
-@dirrm %%DRUPDIR%%/modules
-@dirrm %%DRUPDIR%%/misc
-@dirrm %%DRUPDIR%%/includes
-%%PORTDOCS%%@dirrm %%DRUPDIR%%/doc
-@dirrm %%DRUPDIR%%/database
-@unexec rmdir %D/%%DRUPDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%DRUPDIR%% and its contents manually.")
+%%DRUPAL_BASE%%/.htaccess
+%%DRUPAL_BASE%%/cron.php
+%%DRUPAL_BASE%%/database/database.mysql
+%%DRUPAL_BASE%%/database/database.pgsql
+%%DRUPAL_BASE%%/database/updates.inc
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS.txt
+%%DRUPAL_BASE%%/favicon.ico
+%%DRUPAL_BASE%%/includes/bootstrap.inc
+%%DRUPAL_BASE%%/includes/common.inc
+%%DRUPAL_BASE%%/includes/database.inc
+%%DRUPAL_BASE%%/includes/database.mysql.inc
+%%DRUPAL_BASE%%/includes/database.pgsql.inc
+%%DRUPAL_BASE%%/includes/file.inc
+%%DRUPAL_BASE%%/includes/image.inc
+%%DRUPAL_BASE%%/includes/locale.inc
+%%DRUPAL_BASE%%/includes/menu.inc
+%%DRUPAL_BASE%%/includes/module.inc
+%%DRUPAL_BASE%%/includes/pager.inc
+%%DRUPAL_BASE%%/includes/session.inc
+%%DRUPAL_BASE%%/includes/tablesort.inc
+%%DRUPAL_BASE%%/includes/theme.inc
+%%DRUPAL_BASE%%/includes/xmlrpc.inc
+%%DRUPAL_BASE%%/includes/xmlrpcs.inc
+%%DRUPAL_BASE%%/index.php
+%%DRUPAL_BASE%%/misc/arrow-asc.png
+%%DRUPAL_BASE%%/misc/arrow-desc.png
+%%DRUPAL_BASE%%/misc/blog.png
+%%DRUPAL_BASE%%/misc/drupal.css
+%%DRUPAL_BASE%%/misc/druplicon-small.png
+%%DRUPAL_BASE%%/misc/druplicon.png
+%%DRUPAL_BASE%%/misc/forum-closed.png
+%%DRUPAL_BASE%%/misc/forum-default.png
+%%DRUPAL_BASE%%/misc/forum-hot-new.png
+%%DRUPAL_BASE%%/misc/forum-hot.png
+%%DRUPAL_BASE%%/misc/forum-new.png
+%%DRUPAL_BASE%%/misc/forum-sticky.png
+%%DRUPAL_BASE%%/misc/menu-collapsed.png
+%%DRUPAL_BASE%%/misc/menu-expanded.png
+%%DRUPAL_BASE%%/misc/menu-leaf.png
+%%DRUPAL_BASE%%/misc/powered-by-drupal-dark.png
+%%DRUPAL_BASE%%/misc/powered-by-drupal-light.png
+%%DRUPAL_BASE%%/misc/powered-by-drupal.png
+%%DRUPAL_BASE%%/misc/print.css
+%%DRUPAL_BASE%%/misc/watchdog-error.png
+%%DRUPAL_BASE%%/misc/watchdog-warning.png
+%%DRUPAL_BASE%%/misc/xml.png
+%%DRUPAL_BASE%%/modules/aggregator.module
+%%DRUPAL_BASE%%/modules/archive.module
+%%DRUPAL_BASE%%/modules/block.module
+%%DRUPAL_BASE%%/modules/blog.module
+%%DRUPAL_BASE%%/modules/blogapi.module
+%%DRUPAL_BASE%%/modules/book.module
+%%DRUPAL_BASE%%/modules/comment.module
+%%DRUPAL_BASE%%/modules/contact.module
+%%DRUPAL_BASE%%/modules/drupal.module
+%%DRUPAL_BASE%%/modules/filter.module
+%%DRUPAL_BASE%%/modules/forum.module
+%%DRUPAL_BASE%%/modules/help.module
+%%DRUPAL_BASE%%/modules/legacy.module
+%%DRUPAL_BASE%%/modules/locale.module
+%%DRUPAL_BASE%%/modules/menu.module
+%%DRUPAL_BASE%%/modules/node.module
+%%DRUPAL_BASE%%/modules/page.module
+%%DRUPAL_BASE%%/modules/path.module
+%%DRUPAL_BASE%%/modules/ping.module
+%%DRUPAL_BASE%%/modules/poll.module
+%%DRUPAL_BASE%%/modules/profile.module
+%%DRUPAL_BASE%%/modules/queue.module
+%%DRUPAL_BASE%%/modules/search.module
+%%DRUPAL_BASE%%/modules/statistics.module
+%%DRUPAL_BASE%%/modules/story.module
+%%DRUPAL_BASE%%/modules/system.module
+%%DRUPAL_BASE%%/modules/taxonomy.module
+%%DRUPAL_BASE%%/modules/throttle.module
+%%DRUPAL_BASE%%/modules/tracker.module
+%%DRUPAL_BASE%%/modules/upload.module
+%%DRUPAL_BASE%%/modules/user.module
+%%DRUPAL_BASE%%/modules/watchdog.module
+%%DRUPAL_BASE%%/scripts/code-clean.sh
+%%DRUPAL_BASE%%/scripts/code-style.pl
+%%DRUPAL_BASE%%/scripts/cron-curl.sh
+%%DRUPAL_BASE%%/scripts/cron-lynx.sh
+%%DRUPAL_BASE%%/scripts/prefix.sh
+@unexec if cmp -s %D/%%DRUPAL_BASE%%/sites/default/settings.php-dist %D/%%DRUPAL_BASE%%/sites/default/settings.php; then rm -f %D/%%DRUPAL_BASE%%/sites/default/settings.php; fi
+%%DRUPAL_BASE%%/sites/default/settings.php-dist
+@exec if [ ! -f %D/%%DRUPAL_BASE%%/sites/default/settings.php ] ; then cp -p %D/%F %B/settings.php; fi
+%%DRUPAL_BASE%%/themes/bluemarine/logo.png
+%%DRUPAL_BASE%%/themes/bluemarine/screenshot.png
+%%DRUPAL_BASE%%/themes/bluemarine/style.css
+%%DRUPAL_BASE%%/themes/bluemarine/xtemplate.xtmpl
+%%DRUPAL_BASE%%/themes/chameleon/background.png
+%%DRUPAL_BASE%%/themes/chameleon/chameleon.theme
+%%DRUPAL_BASE%%/themes/chameleon/common.css
+%%DRUPAL_BASE%%/themes/chameleon/logo.png
+%%DRUPAL_BASE%%/themes/chameleon/marvin/bullet.png
+%%DRUPAL_BASE%%/themes/chameleon/marvin/druplicon-watermark.png
+%%DRUPAL_BASE%%/themes/chameleon/marvin/logo.png
+%%DRUPAL_BASE%%/themes/chameleon/marvin/screenshot.png
+%%DRUPAL_BASE%%/themes/chameleon/marvin/style.css
+%%DRUPAL_BASE%%/themes/chameleon/screenshot.png
+%%DRUPAL_BASE%%/themes/chameleon/style.css
+%%DRUPAL_BASE%%/themes/engines/xtemplate/xtemplate.engine
+%%DRUPAL_BASE%%/themes/engines/xtemplate/xtemplate.inc
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-next-hover.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-next-visited.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-next.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-prev-hover.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-prev-visited.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-prev.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-up-hover.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-up-visited.png
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-up.png
+%%DRUPAL_BASE%%/themes/pushbutton/background.png
+%%DRUPAL_BASE%%/themes/pushbutton/forum-container.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/forum-link.png
+%%DRUPAL_BASE%%/themes/pushbutton/header-a.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/header-b.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/header-c.png
+%%DRUPAL_BASE%%/themes/pushbutton/icon-block.png
+%%DRUPAL_BASE%%/themes/pushbutton/icon-comment.png
+%%DRUPAL_BASE%%/themes/pushbutton/logo-active.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/logo-background.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/logo-hover.jpg
+%%DRUPAL_BASE%%/themes/pushbutton/logo.png
+%%DRUPAL_BASE%%/themes/pushbutton/screenshot.png
+%%DRUPAL_BASE%%/themes/pushbutton/style.css
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-off.png
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-on.png
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-option-hover.png
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-option-off.png
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-option-on.png
+%%DRUPAL_BASE%%/themes/pushbutton/xtemplate.xtmpl
+%%DRUPAL_BASE%%/update.php
+%%DRUPAL_BASE%%/xmlrpc.php
+@dirrm %%DRUPAL_BASE%%/themes/pushbutton
+@dirrm %%DRUPAL_BASE%%/themes/engines/xtemplate
+@dirrm %%DRUPAL_BASE%%/themes/engines
+@dirrm %%DRUPAL_BASE%%/themes/chameleon/marvin
+@dirrm %%DRUPAL_BASE%%/themes/chameleon
+@dirrm %%DRUPAL_BASE%%/themes/bluemarine
+@dirrm %%DRUPAL_BASE%%/themes
+@dirrmtry %%DRUPAL_BASE%%/sites/default
+@dirrmtry %%DRUPAL_BASE%%/sites
+@dirrm %%DRUPAL_BASE%%/scripts
+@dirrmtry %%DRUPAL_BASE%%/modules
+@dirrm %%DRUPAL_BASE%%/misc
+@dirrm %%DRUPAL_BASE%%/includes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DRUPAL_BASE%%/database
+@dirrmtry %%DRUPAL_BASE%%
+@unexec (test -d %D/%%DRUPAL_BASE%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%DRUPAL_BASE%% and its contents manually.")) || true
