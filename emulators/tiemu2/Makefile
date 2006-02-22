@@ -22,6 +22,7 @@ LIB_DEPENDS=	ticalcs.9:${PORTSDIR}/devel/libticalcs \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
+USE_X_PREFIX=	yes
 
 MAN1=		tiemu.1
 
