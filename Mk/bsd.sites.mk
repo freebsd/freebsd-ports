@@ -1172,9 +1172,7 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.uk.xemacs.org/sites/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.us.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://xemacs.xmundo.net/pub/mirrors/xemacs/%SUBDIR%/ \
-	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
-	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 .endif
 
