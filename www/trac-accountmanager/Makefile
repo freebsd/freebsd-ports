@@ -7,6 +7,7 @@
 
 PORTNAME=	accountmanagerplugin
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	www devel python
 #MASTER_SITES=	http://trac-hacks.org/download/accountmanagerplugin.zip
 MASTER_SITES=	http://dist.bsdlab.org/
