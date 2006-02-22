@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.00
+PORTVERSION=	8.05
 CATEGORIES=	graphics
 MASTER_SITES=	http://bsd.gubkin.ru/myports/ \
 		http://www.piwebs.com/distfiles/${PORTNAME}/
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	infofarmer@gmail.com
 COMMENT=	Decoder for RAW files from digital cameras
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -23,7 +23,7 @@ MAN1=		dcraw.1
 PLIST_FILES=	bin/dcraw
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dcraw ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dcraw.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
