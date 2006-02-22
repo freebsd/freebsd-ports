@@ -108,6 +108,7 @@
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += svr4_base
+    SUBDIR += tiemu2
     SUBDIR += tkhfs
     SUBDIR += tuxnes
     SUBDIR += twin
