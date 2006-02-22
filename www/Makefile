@@ -406,6 +406,7 @@
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
     SUBDIR += openvrml
+    SUBDIR += openxmldir
     SUBDIR += opera
     SUBDIR += opera-devel
     SUBDIR += osb-browser
