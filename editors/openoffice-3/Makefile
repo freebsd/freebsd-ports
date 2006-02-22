@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.0.2.rc1
+PORTVERSION?=	2.0.2.rc2
 CATEGORIES+=	editors java
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680_m${MILESTONE}/&,} \
 		http://openoffice.lunarshells.com/sources/ \
@@ -15,14 +15,14 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_2.0.2rc1_src.tar.gz
+DISTFILES+=	OOo_2.0.2rc2_src.tar.gz
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_2.0.2rc1_src.tar.gz
+EXTRACT_ONLY=	OOo_2.0.2rc2_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -63,7 +63,7 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-OOOTAG?=		OOB680_m1
+OOOTAG?=		OOB680_m2
 INSTALLATION_BASEDIR?=	openoffice.org-${PORTVERSION}
 EXECBASE?=		openoffice.org-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org2.0
