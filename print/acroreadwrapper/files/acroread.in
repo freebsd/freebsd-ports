@@ -58,15 +58,15 @@ case $1 in
 --install-plugin)
 	echo "installing PDF plugin..."
 	echo "%%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
-	mkdir -p %%PREFIX%%/%%PLUGINDIR%%
+	mkdir -p /../%%PREFIX%%/%%PLUGINDIR%%
 	ln -s -f %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
-	%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
+	/../%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
 	exit 0
 ;;
 --deinstall-plugin)
 	echo "deinstalling PDF plugin..."
-	rm -f %%PREFIX%%/%%PLUGINDIR%%/nppdf.so
-	rmdir %%PREFIX%%/%%PLUGINDIR%% 2> /dev/null || true
+	rm -f /../%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
+	rmdir /../%%PREFIX%%/%%PLUGINDIR%% 2> /dev/null || true
 	exit 0
 ;;
 esac
