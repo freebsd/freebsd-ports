@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
 DISTFILES=	\
@@ -15,7 +15,7 @@ DISTFILES=	\
 		latin-euro-standards-1.07-pkg.tar.gz \
 		latin-unity-1.16-pkg.tar.gz \
 		leim-1.22-pkg.tar.gz \
-		locale-1.21-pkg.tar.gz \
+		locale-1.22-pkg.tar.gz \
 		lookup-1.15-pkg.tar.gz \
 		mule-base-1.47-pkg.tar.gz \
 		mule-ucs-1.14-pkg.tar.gz \
