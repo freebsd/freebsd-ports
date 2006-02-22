@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svnmailer
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subvers
 
 USE_PYTHON=		2.3+
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=		yes
 
 PORTDOCS=	index.html perlig.css perlig.jpg perlig_docs.css \
 		perlig_offline.css right.gif up.gif
