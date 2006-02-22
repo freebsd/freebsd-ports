@@ -171,6 +171,7 @@ sbin/popfile.sh
 %%DATADIR%%/skins/oceanblue/common-bottom.thtml
 %%DATADIR%%/skins/oceanblue/common-middle.thtml
 %%DATADIR%%/skins/oceanblue/common-top.thtml
+%%DATADIR%%/skins/oceanblue/ie6.css
 %%DATADIR%%/skins/oceanblue/style.css
 %%DATADIR%%/skins/orange/style.css
 %%DATADIR%%/skins/orangecream/style.css
