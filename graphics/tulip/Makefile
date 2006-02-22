@@ -18,8 +18,6 @@ COMMENT=	A system dedicated to the visualization of huge graphs
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-BROKEN=		Incorrect pkg-plist (does not compile completely?)
-
 USE_BZIP2=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
@@ -32,6 +30,12 @@ CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
 		--with-qt-libraries=${QT_PREFIX}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
+# libOSMesa, installed by the xorg-libraries-6.9.0 port is causing
+# /usr/X11R6/lib/libOSMesa.so: undefined reference to `driDispatchRemapTable'
+# during the configure step which results in tlprender not being build.
+# So we remove it from pkg-plist and disable it here to make sure it does not
+# get build somehow, causing plist problems
+CONFIGURE_ARGS+=	--disable-tlprender
 INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \

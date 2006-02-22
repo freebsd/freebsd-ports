@@ -1,5 +1,4 @@
 bin/Tulip
-bin/tlprender
 bin/tulip-config
 include/tulip/Array.h
 include/tulip/Bezier.h
