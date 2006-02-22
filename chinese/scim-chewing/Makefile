@@ -11,19 +11,16 @@ PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	SCIM chewing Chinese input methods
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not build
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-D__STDC_ISO_10646__"
 
