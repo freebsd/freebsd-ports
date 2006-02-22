@@ -1,0 +1,130 @@
+lib/ggz/ggz.ccheckers
+lib/ggz/ggz.chess
+lib/ggz/ggz.combat
+lib/ggz/ggz.dots
+lib/ggz/ggz.ggzcards
+lib/ggz/ggz.hastings
+lib/ggz/ggz.reversi
+lib/ggz/ggz.spades
+lib/ggz/ggz.ttt
+share/ggz/ccheckers/pixmaps/Dragon/blue.png
+share/ggz/ccheckers/pixmaps/Dragon/board.png
+share/ggz/ccheckers/pixmaps/Dragon/cyan.png
+share/ggz/ccheckers/pixmaps/Dragon/green.png
+share/ggz/ccheckers/pixmaps/Dragon/hole.png
+share/ggz/ccheckers/pixmaps/Dragon/purple.png
+share/ggz/ccheckers/pixmaps/Dragon/red.png
+share/ggz/ccheckers/pixmaps/Dragon/yellow.png
+share/ggz/ccheckers/pixmaps/Electric/blue.png
+share/ggz/ccheckers/pixmaps/Electric/board.png
+share/ggz/ccheckers/pixmaps/Electric/cyan.png
+share/ggz/ccheckers/pixmaps/Electric/green.png
+share/ggz/ccheckers/pixmaps/Electric/hole.png
+share/ggz/ccheckers/pixmaps/Electric/purple.png
+share/ggz/ccheckers/pixmaps/Electric/red.png
+share/ggz/ccheckers/pixmaps/Electric/yellow.png
+share/ggz/ccheckers/pixmaps/default/blue.png
+share/ggz/ccheckers/pixmaps/default/board.png
+share/ggz/ccheckers/pixmaps/default/cyan.png
+share/ggz/ccheckers/pixmaps/default/green.png
+share/ggz/ccheckers/pixmaps/default/hole.png
+share/ggz/ccheckers/pixmaps/default/purple.png
+share/ggz/ccheckers/pixmaps/default/red.png
+share/ggz/ccheckers/pixmaps/default/yellow.png
+share/ggz/ccheckers/pixmaps/templates/README
+share/ggz/ccheckers/pixmaps/templates/blue.svg
+share/ggz/ccheckers/pixmaps/templates/board.svg
+share/ggz/ccheckers/pixmaps/templates/cyan.svg
+share/ggz/ccheckers/pixmaps/templates/green.svg
+share/ggz/ccheckers/pixmaps/templates/hole.svg
+share/ggz/ccheckers/pixmaps/templates/purple.svg
+share/ggz/ccheckers/pixmaps/templates/red.svg
+share/ggz/ccheckers/pixmaps/templates/yellow.svg
+share/ggz/chess/pixmaps/bishop_b.svg
+share/ggz/chess/pixmaps/bishop_w.svg
+share/ggz/chess/pixmaps/king_b.svg
+share/ggz/chess/pixmaps/king_w.svg
+share/ggz/chess/pixmaps/knight_b.svg
+share/ggz/chess/pixmaps/knight_w.svg
+share/ggz/chess/pixmaps/pawn_b.svg
+share/ggz/chess/pixmaps/pawn_w.svg
+share/ggz/chess/pixmaps/queen_b.svg
+share/ggz/chess/pixmaps/queen_w.svg
+share/ggz/chess/pixmaps/rook_b.svg
+share/ggz/chess/pixmaps/rook_w.svg
+share/ggz/combat/maps/8x8.127742
+share/ggz/combat/maps/Bridge.127237
+share/ggz/combat/maps/Checkers+Options.5003353
+share/ggz/combat/maps/Checkers.4227780237
+share/ggz/combat/maps/Corridors.1483793000
+share/ggz/combat/maps/Default.127898
+share/ggz/combat/maps/In_The_Wild.33347979
+share/ggz/combat/maps/Island_I.1321921533
+share/ggz/combat/maps/Island_II.1321922021
+share/ggz/combat/maps/Isles.3312569487
+share/ggz/combat/maps/Pipes.1854974081
+share/ggz/combat/maps/Plenty_of_options.8183865
+share/ggz/combat/maps/Small.4176275962
+share/ggz/combat/pixmaps/default/bomb.png
+share/ggz/combat/pixmaps/default/captain.png
+share/ggz/combat/pixmaps/default/colonel.png
+share/ggz/combat/pixmaps/default/flag.png
+share/ggz/combat/pixmaps/default/general.png
+share/ggz/combat/pixmaps/default/lieutenant.png
+share/ggz/combat/pixmaps/default/major.png
+share/ggz/combat/pixmaps/default/marshall.png
+share/ggz/combat/pixmaps/default/miner.png
+share/ggz/combat/pixmaps/default/scout.png
+share/ggz/combat/pixmaps/default/sergeant.png
+share/ggz/combat/pixmaps/default/spy.png
+share/ggz/hastings/pixmaps/bayeux.png
+share/ggz/hastings/pixmaps/frame_black.png
+share/ggz/hastings/pixmaps/frame_ll.png
+share/ggz/hastings/pixmaps/frame_lr.png
+share/ggz/hastings/pixmaps/frame_ul.png
+share/ggz/hastings/pixmaps/frame_ur.png
+share/ggz/hastings/pixmaps/haroldsreturn.png
+share/ggz/hastings/pixmaps/map.png
+share/ggz/hastings/pixmaps/newmanblue.png
+share/ggz/hastings/pixmaps/newmangreen.png
+share/ggz/hastings/pixmaps/newmanred.png
+share/ggz/hastings/pixmaps/newmanyellow.png
+share/ggz/hastings/pixmaps/shadow.png
+share/ggz/pixmaps/cards-1.png
+share/ggz/pixmaps/cards-b1.png
+share/ggz/reversi/pixmaps/black.svg
+share/ggz/reversi/pixmaps/dot.svg
+share/ggz/reversi/pixmaps/enemydot.svg
+share/ggz/reversi/pixmaps/white.svg
+share/ggz/tictactoe/pixmaps/o.svg
+share/ggz/tictactoe/pixmaps/x.svg
+share/locale/de/LC_MESSAGES/chess.mo
+share/locale/de/LC_MESSAGES/chinese-checkers.mo
+share/locale/de/LC_MESSAGES/combat.mo
+share/locale/de/LC_MESSAGES/common.mo
+share/locale/de/LC_MESSAGES/dots.mo
+share/locale/de/LC_MESSAGES/ggzcards.mo
+share/locale/de/LC_MESSAGES/hastings.mo
+share/locale/de/LC_MESSAGES/reversi.mo
+share/locale/de/LC_MESSAGES/spades.mo
+share/locale/de/LC_MESSAGES/tictactoe.mo
+@dirrm lib/ggz
+@dirrm share/ggz/tictactoe/pixmaps
+@dirrm share/ggz/tictactoe
+@dirrm share/ggz/reversi/pixmaps
+@dirrm share/ggz/reversi
+@dirrm share/ggz/pixmaps
+@dirrm share/ggz/hastings/pixmaps
+@dirrm share/ggz/hastings
+@dirrm share/ggz/combat/pixmaps/default
+@dirrm share/ggz/combat/pixmaps
+@dirrm share/ggz/combat/maps
+@dirrm share/ggz/combat
+@dirrm share/ggz/chess/pixmaps
+@dirrm share/ggz/chess
+@dirrm share/ggz/ccheckers/pixmaps/templates
+@dirrm share/ggz/ccheckers/pixmaps/default
+@dirrm share/ggz/ccheckers/pixmaps/Electric
+@dirrm share/ggz/ccheckers/pixmaps/Dragon
+@dirrm share/ggz/ccheckers/pixmaps
+@dirrm share/ggz/ccheckers
