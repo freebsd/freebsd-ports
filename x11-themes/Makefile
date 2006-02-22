@@ -16,6 +16,7 @@
     SUBDIR += colorstep
     SUBDIR += cursor-bluecurve-theme
     SUBDIR += cursor-jimmac-theme
+    SUBDIR += cursor-neutral-theme
     SUBDIR += cursor-polar-theme
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
