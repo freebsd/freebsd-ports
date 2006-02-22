@@ -88,6 +88,7 @@ sbin/wzdftpd
 %%DATADIR%%/modules/libwzd_sfv.so
 %%PERL%%%%DATADIR%%/modules/libwzd_perl.so
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.so
+%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.so
 @dirrm %%DATADIR%%/modules/
 @dirrm %%DATADIR%%/backends/
 @dirrm %%DATADIR%%/
