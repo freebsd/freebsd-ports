@@ -23,7 +23,10 @@ share/doc/HTML/de/k3b/select_audiofiles.png
 share/doc/HTML/de/k3b/select_project.png
 share/doc/HTML/de/k3b/video-encoding.docbook
 share/doc/HTML/es/k3b/audiocd-howto.docbook
+share/doc/HTML/es/k3b/cdcloning_dialog.png
+share/doc/HTML/es/k3b/cdcloning_reading.png
 share/doc/HTML/es/k3b/cdcopy-howto.docbook
+share/doc/HTML/es/k3b/cdcopy_reading.png
 share/doc/HTML/es/k3b/commands.docbook
 share/doc/HTML/es/k3b/common
 share/doc/HTML/es/k3b/index.cache.bz2
@@ -118,6 +121,10 @@ share/doc/HTML/sv/k3b/index.docbook
 share/doc/HTML/sv/k3b/select_audiofiles.png
 share/doc/HTML/sv/k3b/select_project.png
 share/doc/HTML/sv/k3b/video-encoding.docbook
+share/locale/af/LC_MESSAGES/k3b.mo
+share/locale/af/LC_MESSAGES/k3bsetup.mo
+share/locale/af/LC_MESSAGES/libk3b.mo
+share/locale/af/LC_MESSAGES/libk3bdevice.mo
 share/locale/bg/LC_MESSAGES/k3b.mo
 share/locale/bg/LC_MESSAGES/k3bsetup.mo
 share/locale/bg/LC_MESSAGES/libk3b.mo
@@ -238,6 +245,10 @@ share/locale/ru/LC_MESSAGES/k3b.mo
 share/locale/ru/LC_MESSAGES/k3bsetup.mo
 share/locale/ru/LC_MESSAGES/libk3b.mo
 share/locale/ru/LC_MESSAGES/libk3bdevice.mo
+share/locale/se/LC_MESSAGES/k3b.mo
+share/locale/se/LC_MESSAGES/k3bsetup.mo
+share/locale/se/LC_MESSAGES/libk3b.mo
+share/locale/se/LC_MESSAGES/libk3bdevice.mo
 share/locale/sl/LC_MESSAGES/k3b.mo
 share/locale/sl/LC_MESSAGES/k3bsetup.mo
 share/locale/sl/LC_MESSAGES/libk3b.mo
@@ -278,6 +289,8 @@ share/locale/zh_CN/LC_MESSAGES/libk3bdevice.mo
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
 @dirrmtry share/locale/ro/LC_MESSAGES
 @dirrmtry share/locale/ro
 @dirrmtry share/locale/pt/LC_MESSAGES
