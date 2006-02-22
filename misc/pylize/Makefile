@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	pylize
-PORTVERSION=	1.2.1.b
-CATEGORIES=	misc
-MASTER_SITES=	http://www.chrisarndt.de/en/software/pylize/download/
+PORTVERSION=	1.3.b
+CATEGORIES=	misc textproc
+MASTER_SITES=	http://www.chrisarndt.de/en/software/pylize/download/ \
+		http://bsdchat.com/dist/dryice/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@dryice.name
 COMMENT=	A presentation generation tool
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/HTMLgen.py:${PORTSDIR}/www/py-HTMLgen \
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/HTMLgen.py:${PORTSDIR}/www/py-HTMLgen \
 		${PYTHON_SITELIBDIR}/em.py:${PORTSDIR}/textproc/py-empy
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.0+
 
 PLIST_FILES=	bin/pylize
 
