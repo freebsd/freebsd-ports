@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	rlpr
-PORTVERSION=	2.05
+PORTVERSION=	2.06
 CATEGORIES=	print net
-MASTER_SITES=	ftp://www.truffula.com/pub/
+MASTER_SITES=	http://truffula.com/rlpr/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
 
-#LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
-
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
+# rlpr supports gettext/libintl, but does not currently come with ANY
+# translation .po files. When this changes, it would make sense to
+# enable the use of gettext in this port:
+#USE_GETTEXT=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
-CONFIGURE_ENV=	CPPFLAGS="-I${FILESDIR}"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
 USE_REINPLACE=	yes
 
