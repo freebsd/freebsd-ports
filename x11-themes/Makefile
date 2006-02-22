@@ -64,6 +64,7 @@
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-engines2
+    SUBDIR += gtk-envy-theme
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-flat-theme2
     SUBDIR += gtk-industrial-theme
