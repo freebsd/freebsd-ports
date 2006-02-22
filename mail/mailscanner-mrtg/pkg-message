@@ -15,7 +15,7 @@
 
 	2. mailscanner-mrtg will run without snmpd but in order to
 	see all statistics you should install the net-snmp 
-	daemon located at %%PORTSDIR%%/net/net-snmp
+	daemon located at %%PORTSDIR%%/net-mgmt/net-snmp
 
 	3. Moreover make sure your crontab calls mailscanner-mrtg every
 	five Minutes:
