@@ -1,5 +1,5 @@
---- configure.orig	Sat Jan 14 18:08:41 2006
-+++ configure	Sat Jan 14 18:12:44 2006
+--- configure.orig	Wed Feb 22 21:25:55 2006
++++ configure	Wed Feb 22 21:34:26 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -21,16 +21,16 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
-@@ -70,7 +70,7 @@
+@@ -74,7 +74,7 @@
  QT_IM='N'
  for i in qt3 qt4
  do
--  QT_IM_DIR=/usr/lib/$i/plugins/lib/inputmethods
-+  QT_IM_DIR=$prefix/lib/$i/plugins/lib/inputmethods
+-  QT_IM_DIR=/usr/lib/$i/plugins/$LIB/inputmethods
++  QT_IM_DIR=$prefix/lib/$i/plugins/$LIB/inputmethods
    echo "testing if you have QT_IM_MODULE dir:$QT_IM_DIR support"
    if [ -d  $QT_IM_DIR ]; then
      QT_IM='Y'
-@@ -88,7 +88,7 @@
+@@ -92,7 +92,7 @@
  
  bindir=$prefix/bin
  datadir=$prefix/share
@@ -39,7 +39,7 @@
  libdir=$prefix/lib
  includedir=$prefix/include
  optdir=/opt
-@@ -101,8 +101,8 @@
+@@ -105,8 +105,8 @@
    GCIN_SETUP_DESKTOP=/opt/gnome/share/control-center-2.0/capplets
    GCIN_SETUP_DESKTOP_rpm='$(optdir)/gnome/share/control-center-2.0/capplets'
  else
@@ -50,7 +50,7 @@
  fi
  
  
-@@ -111,21 +111,13 @@
+@@ -115,14 +115,6 @@
    grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
  fi
  
@@ -65,15 +65,16 @@
  
  OPTFLAGS="-g"
  if [ $prefix = /usr ]; then
-   OPTFLAGS="-O"
+@@ -130,7 +122,7 @@
  fi
+ 
  
 -echo "CC=gcc" > config.mak
 +echo "CC=$CC" > config.mak
  echo "MAKE=$MAKE" >> config.mak
  echo "GTKINC=$GTKINC" >> config.mak
  echo "prefix=$prefix" >> config.mak
-@@ -145,8 +137,8 @@
+@@ -150,8 +142,8 @@
  echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
  echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
  echo "OPTFLAGS=$OPTFLAGS" >> config.mak
