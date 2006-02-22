@@ -21,22 +21,26 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig
-CONFIGURE_ARGS+=	--without-pam --without-pgsql
+CONFIGURE_ARGS+=	--without-pam --without-pgsql --disable-bonjour
+CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	UTF8 "Enable UTF8 support" off \
 		TCL "Enable TCL support" off \
-		SSL "Enable OpenSSL support" on \
-		GNUTLS "Enable gnutls support" off \
+		SSL "Enable OpenSSL support" off \
+		GNUTLS "Enable gnutls support" on \
 		IPV6 "Enable IPv6 support" on \
 		PERL "Enable PERL support" off \
-		MYSQL "Enable MYSQL backend" off
+		MYSQL "Enable MYSQL backend" off \
+		AVAHI "Enable Zeroconf support using Avahi" on \
+		HOWL "Enable Zeroconf support using Howl" off
 
 MAN1=	siteconfig.1 \
 	siteuptime.1 \
 	sitewho.1 \
-     	wzd-config.1
+	wzd-config.1
 MAN8=	wzdftpd.8
 
 .include <bsd.port.pre.mk>
@@ -88,6 +92,24 @@ CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
+.if defined(WITH_AVAHI) || defined(WITH_HOWL)
+PLIST_SUB+=	ZEROCONF=""
+.else
+PLIST_SUB+=	ZEROCONF="@comment "
+.endif
+
+.if defined(WITH_AVAHI) && !defined(WITH_HOWL)
+LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus \
+		avahi-core.3:${PORTSDIR}/net/avahi
+CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
+.endif
+
+.if defined(WITH_HOWL) && !defined(WITH_AVAHI)
+CFLAGS+=	-I${LOCALBASE}/include/howl
+LIB_DEPENDS+=	howl.0:${PORTSDIR}/net/howl
+CONFIGURE_ARGS+=	--with-zeroconf --enable-howl
+.endif
+
 PORTDOCS=	AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst ChangeLog
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
@@ -95,6 +117,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|@HAVE_PERL_TRUE@|#|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
