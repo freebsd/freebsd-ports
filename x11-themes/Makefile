@@ -67,6 +67,7 @@
     SUBDIR += gtk-envy-theme
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-flat-theme2
+    SUBDIR += gtk-gray-theme
     SUBDIR += gtk-industrial-theme
     SUBDIR += gtk-lila-theme
     SUBDIR += gtk-lila-theme-extras

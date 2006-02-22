@@ -1,0 +1,329 @@
+share/gnome/themes/Gray-Flat/metacity-1/button-close-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-close-pressed.png
+share/gnome/themes/Gray-Flat/metacity-1/button-close-unfocused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-maximize-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-maximize-pressed.png
+share/gnome/themes/Gray-Flat/metacity-1/button-maximize-unfocused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-menu-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-menu-pressed.png
+share/gnome/themes/Gray-Flat/metacity-1/button-menu-unfocused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-minimize-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/button-minimize-pressed.png
+share/gnome/themes/Gray-Flat/metacity-1/button-minimize-unfocused.png
+share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-left-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-mid-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/frame-bottom-right-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/frame-left-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/frame-right-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-left-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-left-shaded-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-mid-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-mid-shaded-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-right-focused.png
+share/gnome/themes/Gray-Flat/metacity-1/titlebar-right-shaded-focused.png
+share/gnome/themes/Gray/metacity-1/button-close-focused.png
+share/gnome/themes/Gray/metacity-1/button-close-pressed.png
+share/gnome/themes/Gray/metacity-1/button-close-unfocused.png
+share/gnome/themes/Gray/metacity-1/button-maximize-focused.png
+share/gnome/themes/Gray/metacity-1/button-maximize-pressed.png
+share/gnome/themes/Gray/metacity-1/button-maximize-unfocused.png
+share/gnome/themes/Gray/metacity-1/button-menu-focused.png
+share/gnome/themes/Gray/metacity-1/button-menu-pressed.png
+share/gnome/themes/Gray/metacity-1/button-menu-unfocused.png
+share/gnome/themes/Gray/metacity-1/button-minimize-focused.png
+share/gnome/themes/Gray/metacity-1/button-minimize-pressed.png
+share/gnome/themes/Gray/metacity-1/button-minimize-unfocused.png
+share/gnome/themes/Gray/metacity-1/frame-bottom-left-focused.png
+share/gnome/themes/Gray/metacity-1/frame-bottom-mid-focused.png
+share/gnome/themes/Gray/metacity-1/frame-bottom-right-focused.png
+share/gnome/themes/Gray/metacity-1/frame-left-focused.png
+share/gnome/themes/Gray/metacity-1/frame-right-focused.png
+share/gnome/themes/Gray/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Gray/metacity-1/titlebar-left-focused.png
+share/gnome/themes/Gray/metacity-1/titlebar-left-shaded-focused.png
+share/gnome/themes/Gray/metacity-1/titlebar-mid-focused.png
+share/gnome/themes/Gray/metacity-1/titlebar-mid-shaded-focused.png
+share/gnome/themes/Gray/metacity-1/titlebar-right-focused.png
+share/gnome/themes/Gray/metacity-1/titlebar-right-shaded-focused.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-down.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-left.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-right-norm.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-right-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-right.png
+share/themes/Gray-Flat/gtk-2.0/Arrows/arrow-up.png
+share/themes/Gray-Flat/gtk-2.0/Buttons/button-default.png
+share/themes/Gray-Flat/gtk-2.0/Buttons/button-insensitive.png
+share/themes/Gray-Flat/gtk-2.0/Buttons/button-normal.png
+share/themes/Gray-Flat/gtk-2.0/Buttons/button-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Buttons/button-pressed.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/check1.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/check2.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/check3.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/check4.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/checklight.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/highlight.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/option1.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/option2.png
+share/themes/Gray-Flat/gtk-2.0/Check-Radio/option4.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-active.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-arrow-insens.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-arrow-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-arrow.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-inactive.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-normal.png
+share/themes/Gray-Flat/gtk-2.0/Combo/combo-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Frame-Gap/frame-gap-end.png
+share/themes/Gray-Flat/gtk-2.0/Frame-Gap/frame-gap-start.png
+share/themes/Gray-Flat/gtk-2.0/Frame-Gap/frame1.png
+share/themes/Gray-Flat/gtk-2.0/Frame-Gap/frame2.png
+share/themes/Gray-Flat/gtk-2.0/Handles/handle-h.png
+share/themes/Gray-Flat/gtk-2.0/Handles/handle-v.png
+share/themes/Gray-Flat/gtk-2.0/Lines/line-h.png
+share/themes/Gray-Flat/gtk-2.0/Lines/line-v.png
+share/themes/Gray-Flat/gtk-2.0/ListHeaders/list_header-insens.png
+share/themes/Gray-Flat/gtk-2.0/ListHeaders/list_header-prelight.png
+share/themes/Gray-Flat/gtk-2.0/ListHeaders/list_header-pressed.png
+share/themes/Gray-Flat/gtk-2.0/ListHeaders/list_header.png
+share/themes/Gray-Flat/gtk-2.0/Menu-Menubar/menu.png
+share/themes/Gray-Flat/gtk-2.0/Menu-Menubar/menubar-item.png
+share/themes/Gray-Flat/gtk-2.0/Menu-Menubar/menubar.png
+share/themes/Gray-Flat/gtk-2.0/Menu-Menubar/menuitem.png
+share/themes/Gray-Flat/gtk-2.0/Menu-Menubar/menuline.png
+share/themes/Gray-Flat/gtk-2.0/Others/focus.png
+share/themes/Gray-Flat/gtk-2.0/Others/null.png
+share/themes/Gray-Flat/gtk-2.0/Others/ruler.png
+share/themes/Gray-Flat/gtk-2.0/Panel/panel-bg.png
+share/themes/Gray-Flat/gtk-2.0/Panel/panelbutton1.png
+share/themes/Gray-Flat/gtk-2.0/Panel/panelbutton2.png
+share/themes/Gray-Flat/gtk-2.0/Panel/panelbutton3.png
+share/themes/Gray-Flat/gtk-2.0/Panel/panelbutton4.png
+share/themes/Gray-Flat/gtk-2.0/ProgressBar/progressbar-horiz.png
+share/themes/Gray-Flat/gtk-2.0/ProgressBar/trough-progressbar-horiz.png
+share/themes/Gray-Flat/gtk-2.0/ProgressBar/trough-progressbar-vert.png
+share/themes/Gray-Flat/gtk-2.0/Range/null.png
+share/themes/Gray-Flat/gtk-2.0/Range/slider-horiz-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Range/slider-horiz.png
+share/themes/Gray-Flat/gtk-2.0/Range/slider-vert-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Range/slider-vert.png
+share/themes/Gray-Flat/gtk-2.0/Range/trough-horizontal.png
+share/themes/Gray-Flat/gtk-2.0/Range/trough-vertical.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/scroll-thumb-horiz.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/scroll-thumb-vert.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-horiz-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-horiz-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-horiz.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-vert-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-vert-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/slider-vert.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-down-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-down-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-down.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-left-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-left-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-left.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-right-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-right-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-right.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-up-insens.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-up-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/stepper-up.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/trough-scrollbar-horiz.png
+share/themes/Gray-Flat/gtk-2.0/Scrollbars/trough-scrollbar-vert.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/entry-shadow-in.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/shadow-etched-out.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/shadow-in.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/shadow-none.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/shadow-out.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/text-entry.png
+share/themes/Gray-Flat/gtk-2.0/Shadows/text.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-down-disable.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-down-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-down.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-up-disable.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-up-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin-up.png
+share/themes/Gray-Flat/gtk-2.0/Spin/spin.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/notebook.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/null.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-bottom-active.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-bottom.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-left-active.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-left.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-right-active.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-right.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-top-active.png
+share/themes/Gray-Flat/gtk-2.0/Tabs/tab-top.png
+share/themes/Gray-Flat/gtk-2.0/Toolbar/toolbar.png
+share/themes/Gray-Flat/gtk-2.0/Toolbar/toolbutton-normal.png
+share/themes/Gray-Flat/gtk-2.0/Toolbar/toolbutton-prelight.png
+share/themes/Gray-Flat/gtk-2.0/Toolbar/toolbutton-pressed.png
+share/themes/Gray-Flat/gtk-2.0/Toolbar/toolbutton-toggled.png
+share/themes/Gray-Flat/gtk-2.0/gtkrc
+share/themes/Gray-Flat/gtk-2.0/menubar.rc
+share/themes/Gray-Flat/gtk-2.0/panel.rc
+share/themes/Gray-Flat/index.theme
+share/themes/Gray/gtk-2.0/Arrows/arrow-down.png
+share/themes/Gray/gtk-2.0/Arrows/arrow-left.png
+share/themes/Gray/gtk-2.0/Arrows/arrow-right-norm.png
+share/themes/Gray/gtk-2.0/Arrows/arrow-right-prelight.png
+share/themes/Gray/gtk-2.0/Arrows/arrow-right.png
+share/themes/Gray/gtk-2.0/Arrows/arrow-up.png
+share/themes/Gray/gtk-2.0/Buttons/button-default.png
+share/themes/Gray/gtk-2.0/Buttons/button-insensitive.png
+share/themes/Gray/gtk-2.0/Buttons/button-normal.png
+share/themes/Gray/gtk-2.0/Buttons/button-prelight.png
+share/themes/Gray/gtk-2.0/Buttons/button-pressed.png
+share/themes/Gray/gtk-2.0/Check-Radio/check1.png
+share/themes/Gray/gtk-2.0/Check-Radio/check2.png
+share/themes/Gray/gtk-2.0/Check-Radio/check3.png
+share/themes/Gray/gtk-2.0/Check-Radio/check4.png
+share/themes/Gray/gtk-2.0/Check-Radio/checklight.png
+share/themes/Gray/gtk-2.0/Check-Radio/highlight.png
+share/themes/Gray/gtk-2.0/Check-Radio/option1.png
+share/themes/Gray/gtk-2.0/Check-Radio/option2.png
+share/themes/Gray/gtk-2.0/Check-Radio/option4.png
+share/themes/Gray/gtk-2.0/Combo/combo-active.png
+share/themes/Gray/gtk-2.0/Combo/combo-arrow-insens.png
+share/themes/Gray/gtk-2.0/Combo/combo-arrow-prelight.png
+share/themes/Gray/gtk-2.0/Combo/combo-arrow.png
+share/themes/Gray/gtk-2.0/Combo/combo-inactive.png
+share/themes/Gray/gtk-2.0/Combo/combo-normal.png
+share/themes/Gray/gtk-2.0/Combo/combo-prelight.png
+share/themes/Gray/gtk-2.0/Frame-Gap/frame-gap-end.png
+share/themes/Gray/gtk-2.0/Frame-Gap/frame-gap-start.png
+share/themes/Gray/gtk-2.0/Frame-Gap/frame1.png
+share/themes/Gray/gtk-2.0/Frame-Gap/frame2.png
+share/themes/Gray/gtk-2.0/Handles/handle-h.png
+share/themes/Gray/gtk-2.0/Handles/handle-v.png
+share/themes/Gray/gtk-2.0/Lines/line-h.png
+share/themes/Gray/gtk-2.0/Lines/line-v.png
+share/themes/Gray/gtk-2.0/ListHeaders/list_header-insens.png
+share/themes/Gray/gtk-2.0/ListHeaders/list_header-prelight.png
+share/themes/Gray/gtk-2.0/ListHeaders/list_header-pressed.png
+share/themes/Gray/gtk-2.0/ListHeaders/list_header.png
+share/themes/Gray/gtk-2.0/Menu-Menubar/menu.png
+share/themes/Gray/gtk-2.0/Menu-Menubar/menubar-item.png
+share/themes/Gray/gtk-2.0/Menu-Menubar/menubar.png
+share/themes/Gray/gtk-2.0/Menu-Menubar/menuitem.png
+share/themes/Gray/gtk-2.0/Menu-Menubar/menuline.png
+share/themes/Gray/gtk-2.0/Others/focus.png
+share/themes/Gray/gtk-2.0/Others/null.png
+share/themes/Gray/gtk-2.0/Others/ruler.png
+share/themes/Gray/gtk-2.0/Panel/panel-bg.png
+share/themes/Gray/gtk-2.0/Panel/panelbutton1.png
+share/themes/Gray/gtk-2.0/Panel/panelbutton2.png
+share/themes/Gray/gtk-2.0/Panel/panelbutton3.png
+share/themes/Gray/gtk-2.0/Panel/panelbutton4.png
+share/themes/Gray/gtk-2.0/ProgressBar/progressbar-horiz.png
+share/themes/Gray/gtk-2.0/ProgressBar/trough-progressbar-horiz.png
+share/themes/Gray/gtk-2.0/ProgressBar/trough-progressbar-vert.png
+share/themes/Gray/gtk-2.0/Range/null.png
+share/themes/Gray/gtk-2.0/Range/slider-horiz-prelight.png
+share/themes/Gray/gtk-2.0/Range/slider-horiz.png
+share/themes/Gray/gtk-2.0/Range/slider-vert-prelight.png
+share/themes/Gray/gtk-2.0/Range/slider-vert.png
+share/themes/Gray/gtk-2.0/Range/trough-horizontal.png
+share/themes/Gray/gtk-2.0/Range/trough-vertical.png
+share/themes/Gray/gtk-2.0/Scrollbars/scroll-thumb-horiz.png
+share/themes/Gray/gtk-2.0/Scrollbars/scroll-thumb-vert.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-horiz-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-horiz-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-horiz.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-vert-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-vert-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/slider-vert.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-down-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-down-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-down.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-left-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-left-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-left.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-right-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-right-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-right.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-up-insens.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-up-prelight.png
+share/themes/Gray/gtk-2.0/Scrollbars/stepper-up.png
+share/themes/Gray/gtk-2.0/Scrollbars/trough-scrollbar-horiz.png
+share/themes/Gray/gtk-2.0/Scrollbars/trough-scrollbar-vert.png
+share/themes/Gray/gtk-2.0/Shadows/entry-shadow-in.png
+share/themes/Gray/gtk-2.0/Shadows/shadow-etched-out.png
+share/themes/Gray/gtk-2.0/Shadows/shadow-in.png
+share/themes/Gray/gtk-2.0/Shadows/shadow-none.png
+share/themes/Gray/gtk-2.0/Shadows/shadow-out.png
+share/themes/Gray/gtk-2.0/Shadows/text-entry.png
+share/themes/Gray/gtk-2.0/Shadows/text.png
+share/themes/Gray/gtk-2.0/Spin/spin-down-disable.png
+share/themes/Gray/gtk-2.0/Spin/spin-down-prelight.png
+share/themes/Gray/gtk-2.0/Spin/spin-down.png
+share/themes/Gray/gtk-2.0/Spin/spin-up-disable.png
+share/themes/Gray/gtk-2.0/Spin/spin-up-prelight.png
+share/themes/Gray/gtk-2.0/Spin/spin-up.png
+share/themes/Gray/gtk-2.0/Spin/spin.png
+share/themes/Gray/gtk-2.0/Tabs/notebook.png
+share/themes/Gray/gtk-2.0/Tabs/null.png
+share/themes/Gray/gtk-2.0/Tabs/tab-bottom-active.png
+share/themes/Gray/gtk-2.0/Tabs/tab-bottom.png
+share/themes/Gray/gtk-2.0/Tabs/tab-left-active.png
+share/themes/Gray/gtk-2.0/Tabs/tab-left.png
+share/themes/Gray/gtk-2.0/Tabs/tab-right-active.png
+share/themes/Gray/gtk-2.0/Tabs/tab-right.png
+share/themes/Gray/gtk-2.0/Tabs/tab-top-active.png
+share/themes/Gray/gtk-2.0/Tabs/tab-top.png
+share/themes/Gray/gtk-2.0/Toolbar/toolbar.png
+share/themes/Gray/gtk-2.0/Toolbar/toolbutton-normal.png
+share/themes/Gray/gtk-2.0/Toolbar/toolbutton-prelight.png
+share/themes/Gray/gtk-2.0/Toolbar/toolbutton-pressed.png
+share/themes/Gray/gtk-2.0/Toolbar/toolbutton-toggled.png
+share/themes/Gray/gtk-2.0/gtkrc
+share/themes/Gray/gtk-2.0/menubar.rc
+share/themes/Gray/gtk-2.0/panel.rc
+share/themes/Gray/index.theme
+@dirrm share/themes/Gray/gtk-2.0/Toolbar
+@dirrm share/themes/Gray/gtk-2.0/Tabs
+@dirrm share/themes/Gray/gtk-2.0/Spin
+@dirrm share/themes/Gray/gtk-2.0/Shadows
+@dirrm share/themes/Gray/gtk-2.0/Scrollbars
+@dirrm share/themes/Gray/gtk-2.0/Range
+@dirrm share/themes/Gray/gtk-2.0/ProgressBar
+@dirrm share/themes/Gray/gtk-2.0/Panel
+@dirrm share/themes/Gray/gtk-2.0/Others
+@dirrm share/themes/Gray/gtk-2.0/Menu-Menubar
+@dirrm share/themes/Gray/gtk-2.0/ListHeaders
+@dirrm share/themes/Gray/gtk-2.0/Lines
+@dirrm share/themes/Gray/gtk-2.0/Handles
+@dirrm share/themes/Gray/gtk-2.0/Frame-Gap
+@dirrm share/themes/Gray/gtk-2.0/Combo
+@dirrm share/themes/Gray/gtk-2.0/Check-Radio
+@dirrm share/themes/Gray/gtk-2.0/Buttons
+@dirrm share/themes/Gray/gtk-2.0/Arrows
+@dirrm share/themes/Gray/gtk-2.0
+@dirrm share/themes/Gray-Flat/gtk-2.0/Toolbar
+@dirrm share/themes/Gray-Flat/gtk-2.0/Tabs
+@dirrm share/themes/Gray-Flat/gtk-2.0/Spin
+@dirrm share/themes/Gray-Flat/gtk-2.0/Shadows
+@dirrm share/themes/Gray-Flat/gtk-2.0/Scrollbars
+@dirrm share/themes/Gray-Flat/gtk-2.0/Range
+@dirrm share/themes/Gray-Flat/gtk-2.0/ProgressBar
+@dirrm share/themes/Gray-Flat/gtk-2.0/Panel
+@dirrm share/themes/Gray-Flat/gtk-2.0/Others
+@dirrm share/themes/Gray-Flat/gtk-2.0/Menu-Menubar
+@dirrm share/themes/Gray-Flat/gtk-2.0/ListHeaders
+@dirrm share/themes/Gray-Flat/gtk-2.0/Lines
+@dirrm share/themes/Gray-Flat/gtk-2.0/Handles
+@dirrm share/themes/Gray-Flat/gtk-2.0/Frame-Gap
+@dirrm share/themes/Gray-Flat/gtk-2.0/Combo
+@dirrm share/themes/Gray-Flat/gtk-2.0/Check-Radio
+@dirrm share/themes/Gray-Flat/gtk-2.0/Buttons
+@dirrm share/themes/Gray-Flat/gtk-2.0/Arrows
+@dirrm share/themes/Gray-Flat/gtk-2.0
+@dirrm share/themes/Gray-Flat
+@dirrm share/themes/Gray
+@dirrmtry share/themes
+@dirrm share/gnome/themes/Gray/metacity-1
+@dirrm share/gnome/themes/Gray-Flat/metacity-1
+@dirrm share/gnome/themes/Gray-Flat
+@dirrm share/gnome/themes/Gray
+@dirrmtry share/gnome/themes
+@dirrmtry share/gnome
