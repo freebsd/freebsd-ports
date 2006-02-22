@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	13.3
+PORTVERSION=	14
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
@@ -41,7 +41,6 @@ DISTFILES=	\
 		erc-0.19-pkg.tar.gz \
 		escreen-1.01-pkg.tar.gz \
 		eshell-1.10-pkg.tar.gz \
-		ess-1.16-pkg.tar.gz \
 		eterm-1.17-pkg.tar.gz \
 		eudc-1.39-pkg.tar.gz \
 		footnote-1.16-pkg.tar.gz \
