@@ -1,2 +1,2 @@
 %%PYTHON_SITELIBDIR%%/TracAccountManager-%%VERSION%%-py%%PYVER%%.egg
-@unexec %%SED%% -i -e '/TracAccountManager-%%VERSION%%-py%%PYVER%%.egg/d' %D/%%PYTHON_SITELIBDIR%%/easy-install.pth
+@unexec %%SED%% -i '' -e '/TracAccountManager-%%VERSION%%-py%%PYVER%%.egg/d' %D/%%PYTHON_SITELIBDIR%%/easy-install.pth
