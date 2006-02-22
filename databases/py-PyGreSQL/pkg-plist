@@ -1,5 +1,5 @@
-%%PORTDOCS%%%%DOCSDIR%%/Announce
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/announce.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PYTHON_SITELIBDIR%%/_pg.so
 %%PYTHON_SITELIBDIR%%/pg.py
 %%PYTHON_SITELIBDIR%%/pg.pyc
