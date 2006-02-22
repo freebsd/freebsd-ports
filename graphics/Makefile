@@ -309,7 +309,6 @@
     SUBDIR += libgnomecanvasmm
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
-    SUBDIR += libgrass5
     SUBDIR += libimg
     SUBDIR += libkexif
     SUBDIR += libkipi

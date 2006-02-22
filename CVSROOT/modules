@@ -5513,7 +5513,6 @@ libgnugetopt	ports/devel/libgnugetopt
 libgpg-error	ports/security/libgpg-error
 libgphoto2	ports/graphics/libgphoto2
 libgpod		ports/audio/libgpod
-libgrass5	ports/graphics/libgrass5
 libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
 libgsf-gnome	ports/devel/libgsf-gnome
