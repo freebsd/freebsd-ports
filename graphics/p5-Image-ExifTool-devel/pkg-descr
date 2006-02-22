@@ -2,14 +2,14 @@ ExifTool is a highly customizable Perl script and module for reading and
 writing meta information in images.
 
 ExifTool reads EXIF, GPS, IPTC, XMP, GeoTIFF, ICC Profile and Photoshop
-IRB and ID3 meta information from JPG, JP2, TIFF, GIF, BMP, PICT, QTIF, PNG,
-MNG, JNG, MIFF, PPM, PGM, PBM, XMP, EPS, PS, AI, PDF, PSD, DCM, ACR, THM,
-CRW, CR2, MRW, NEF, PEF, ORF, RAF, SRF, MOS, X3F and DNG images, MP3 and WAV
-audio files, and AVI, MOV and MP4 videos.  ExifTool also extracts
-information from the maker notes of many digital cameras by various
-manufacturers including Canon, Casio, FujiFilm, JVC/Victor, Kodak, Leaf,
-Minolta/Konica-Minolta, Nikon, Olympus/Epson, Panasonic/Leica, Pentax/Asahi,
-Ricoh, Sanyo and Sigma/Foveon.
+IRB and ID3 meta information from JPG, JP2, TIFF, GIF, BMP, PICT, QTIF,
+PNG, MNG, JNG, MIFF, PPM, PGM, PBM, XMP, EPS, PS, AI, PDF, PSD, DCM,
+ACR, THM, CRW, CR2, MRW, NEF, PEF, ORF, RAF, RAW, SRF, MOS, X3F and DNG
+images, MP3 and WAV audio files, and AVI, MOV and MP4 videos.  ExifTool
+also extracts information from the maker notes of many digital cameras
+by various manufacturers including Canon, Casio, FujiFilm, JVC/Victor,
+Kodak, Leaf, Minolta/Konica-Minolta, Nikon, Olympus/Epson,
+Panasonic/Leica, Pentax/Asahi, Ricoh, Sanyo and Sigma/Foveon.
 
 ExifTool writes EXIF, GPS, IPTC, XMP and MakerNotes meta information to
 JPEG, TIFF, GIF, CRW, THM, CR2, NEF, PEF and DNG images.

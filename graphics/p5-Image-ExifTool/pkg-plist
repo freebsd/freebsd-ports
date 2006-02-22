@@ -28,6 +28,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
+%%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
@@ -104,6 +105,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JVC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Jpeg2000.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Kodak.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/KyoceraRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Leaf.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MNG.html
