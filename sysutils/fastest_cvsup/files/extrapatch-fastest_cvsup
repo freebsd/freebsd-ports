@@ -1,0 +1,27 @@
+--- fastest_cvsup	2006/01/13 13:24:38	1.1
++++ fastest_cvsup	2006/01/13 13:43:08
+@@ -526,9 +526,9 @@
+ 
+     if ( $VERBOSE ) { # print pretty display
+ 
+-      my $ms = sprintf("%.2f", 1000 * $time_taken); # time in ms
++      $time{$server} = 1000 * $time_taken ; # time in ms
+       print $SERVER_RESULT, "server replied: $reply\n";
+-      print $SERVER_RESULT, "time taken: $ms ms\n";
++      print $SERVER_RESULT, "time taken: " . sprintf("%.2f",$time{$server}) . " ms\n";
+ 
+     }
+   }
+@@ -547,9 +547,9 @@
+ 
+   if ( $VERBOSE ) {
+     print "\n", $GENERAL_INFO, "Speed Daemons:\n" if $fastest[0]; # just checking ;)
+-    print $SERVER_RESULT, "1st: $fastest[0]\n" if $fastest[0];
+-    print $SERVER_RESULT, "2nd: $fastest[1]\n" if $fastest[1];
+-    print $SERVER_RESULT, "3rd: $fastest[2]\n" if $fastest[2];
++    printf("%s1st: %-24s %.2f ms\n", $SERVER_RESULT, $fastest[0], $time{$fastest[0]}) if $fastest[0];
++    printf("%s2st: %-24s %.2f ms\n", $SERVER_RESULT, $fastest[1], $time{$fastest[1]}) if $fastest[1];
++    printf("%s3st: %-24s %.2f ms\n", $SERVER_RESULT, $fastest[2], $time{$fastest[2]}) if $fastest[2];
+   }
+   else {  # otherwise just output the fastest.
+     print $fastest[0];

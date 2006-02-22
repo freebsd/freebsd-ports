@@ -7,7 +7,7 @@
 
 PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 
@@ -20,7 +20,13 @@ USE_PERL5=	yes
 MAN7=		fastest_cvsup.7
 PLIST_FILES=	bin/fastest_cvsup
 
+OPTIONS=	ROUNDTRIP	"Build with round-trip patch" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ROUNDTRIP)
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-fastest_cvsup
+.endif
 
 .if ${PERL_LEVEL} < 500805
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
