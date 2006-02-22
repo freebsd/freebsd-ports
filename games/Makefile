@@ -207,6 +207,7 @@
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-gtk-client
     SUBDIR += ggz-gtk-games
+    SUBDIR += ggz-kde-client
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
     SUBDIR += gillo
