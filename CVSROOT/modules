@@ -7257,6 +7257,7 @@ openvpn-admin	ports/security/openvpn-admin
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openwebmail-devel	ports/mail/openwebmail-devel
+openxmldir	ports/www/openxmldir
 openzz		ports/devel/openzz
 opera		ports/www/opera
 opera-devel	ports/www/opera-devel
