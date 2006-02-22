@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	0.22.3
+PORTVERSION=	0.22.4
 #PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,7 +36,9 @@ START_SCRIPTS_SUB= DATADIR=${DATADIR}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_POPFILE_SSL)
-RUN_DEPENDS+=  ${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+# POPFile v0.22.4 works with IO::Socket::SSL version 0.96 but not 0.97.
+#RUN_DEPENDS+=  ${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+IGNORE=		does not work with IO::Socket::SSL version 0.97
 .endif
 
 .if defined(WITH_POPFILE_XMLRPC)
