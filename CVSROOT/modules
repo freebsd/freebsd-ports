@@ -1842,6 +1842,7 @@ drumpiler	ports/audio/drumpiler
 drupal		ports/www/drupal
 drupal-ldap_integration	ports/security/drupal-ldap_integration
 drupal-pubcookie	ports/www/drupal-pubcookie
+drupal-textile	ports/www/drupal-textile
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
