@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	bf2c
-PORTVERSION=    1.2.3
-CATEGORIES=     lang
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	1.2.3
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=bf2c
 
-MAINTAINER=     ports@FreeBSD.org
-COMMENT=        Optimizing BrainF*ck to C compiler
+MAINTAINER=	r.c.ladan@student.tue.nl
+COMMENT=	Optimizing BrainF*ck to C compiler
 
-USE_GMAKE=      yes
+USE_GMAKE=yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bf2c ${PREFIX}/bin
