@@ -1420,6 +1420,7 @@ curlpp		ports/ftp/curlpp
 curly		ports/sysutils/curly
 cursive		ports/games/cursive
 cursor-bluecurve-theme	ports/x11-themes/cursor-bluecurve-theme
+cursor-grounation-theme	ports/x11-themes/cursor-grounation-theme
 cursor-jimmac-theme	ports/x11-themes/cursor-jimmac-theme
 cursor-neutral-theme	ports/x11-themes/cursor-neutral-theme
 cursor-polar-theme	ports/x11-themes/cursor-polar-theme
