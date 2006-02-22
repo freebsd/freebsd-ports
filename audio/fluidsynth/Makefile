@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7a
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	fluid
@@ -14,12 +14,14 @@ MASTER_SITE_SUBDIR=	fluid
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-lash --disable-ladcca
 INSTALLS_SHLIB=	yes
 
 MAN1=		fluidsynth.1
@@ -40,7 +42,7 @@ CONFIGURE_ARGS+=	--enable-ladspa
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O2| |g ; \
+	@${REINPLACE_CMD} -e 's| -O2 | |g ; \
 		 s|== "yes"|= "yes"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
