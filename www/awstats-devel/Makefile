@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	webmaster@lightningfire.net
+MAINTAINER=	webmaster@shopcusa.com
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
@@ -21,7 +21,14 @@ USE_PERL5_RUN=	yes
 
 SUB_FILES=	pkg-message
 
+OPTIONS=	IPV6 "Enable IPV6 for use with IPv6 Plugin" Off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_IPV6)
+RUN_DEPENDS+=	${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP
+RUN_DEPENDS+=	${SITE_PERL}/mach/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+.endif
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
@@ -71,19 +78,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/tooltips_w/*.txt ${PREFIX}/www/awstats/cgi-bin/lang/tooltips_w
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/*.txt ${PREFIX}/www/awstats/cgi-bin/lang
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/awstats/cgi-bin/lib
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/decodeutfkeys.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoip.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoipfree.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/graphapplet.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hostinfo.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/ipv6.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/rawlog.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timehires.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timezone.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/tooltips.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/urlalias.pm ${PREFIX}/www/awstats/cgi-bin/plugins
-	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/userinfo.pm ${PREFIX}/www/awstats/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/*.pm ${PREFIX}/www/awstats/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${PREFIX}/www/awstats/cgi-bin/plugins/example
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/css/* ${PREFIX}/www/awstats/css
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/awstats/icons/browser

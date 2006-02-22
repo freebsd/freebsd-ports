@@ -143,9 +143,14 @@ www/awstats/cgi-bin/lib/search_engines.pm
 www/awstats/cgi-bin/lib/status_http.pm
 www/awstats/cgi-bin/lib/status_smtp.pm
 www/awstats/cgi-bin/lib/worms.pm
+www/awstats/cgi-bin/plugins/clusterinfo.pm
 www/awstats/cgi-bin/plugins/decodeutfkeys.pm
 www/awstats/cgi-bin/plugins/example/example.pm
 www/awstats/cgi-bin/plugins/geoip.pm
+www/awstats/cgi-bin/plugins/geoip_city_maxmind.pm
+www/awstats/cgi-bin/plugins/geoip_isp_maxmind.pm
+www/awstats/cgi-bin/plugins/geoip_org_maxmind.pm
+www/awstats/cgi-bin/plugins/geoip_region_maxmind.pm
 www/awstats/cgi-bin/plugins/geoipfree.pm
 www/awstats/cgi-bin/plugins/graphapplet.pm
 www/awstats/cgi-bin/plugins/hashfiles.pm
