@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.5.9
-PORTREVISION=	3
+PORTVERSION=	0.7.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,54 +14,38 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical score editor
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
-
-GNU_CONFIGURE=	yes
-PLIST=		${WRKDIR}/pkg-plist
-SHARED=		denemo.conf denemo.keymaprc english.keymaprc french.keymaprc
-DOCS=		AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
-DOCDIR=		share/doc/${PORTNAME}
-USE_BISON=	yes
-USE_GETOPT_LONG=yes
-USE_GETTEXT=	yes
-USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget gtk20 libxml2
+USE_BISON=	yes
+USE_GETTEXT=	yes
+USE_GETOPT_LONG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		does not compile on sparc64
 .endif
 
-pre-patch:
-.for ii in analysis_highlighting.c easylyparser.c easylyparser.y \
-	lyparserfuncs.c lyparserfuncs.h main.c playback.c print.c
-	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
-	${SED} -e "s:<wait.h:<sys/wait.h:g ; s:setkey:dsetkey:g" \
-		< ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e 's|CXXFLAGS="$$CFLAGS|CXXFLAGS="$$DENEMO_CFLAGS|g' \
+		-e 's|-Wall -O2|-Wall $$CXXFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|denemo/denemo|denemo|g" ${WRKSRC}/src/kbd-custom.cpp
+	@${REINPLACE_CMD} -e "s|^setkey|dsetkey|g" ${WRKSRC}/src/lyparserfuncs.cpp
+	@${REINPLACE_CMD} -e "s| setkey| dsetkey|g" ${WRKSRC}/src/lyparserfuncs.h
+	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/m4/gettext.m4 \
+		${WRKSRC}/ltmain.sh ${WRKSRC}/src/file.cpp ${WRKSRC}/src/lyparser.cpp \
+		${WRKSRC}/src/lyparser.y
 
-pre-install:
-	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
-.for i in ${SHARED}
-	${ECHO_CMD} share/denemo/$i >> ${PLIST}
-.endfor
-.for i in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}/$i >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-	${ECHO_CMD} @dirrm share/denemo >> ${PLIST}
-
-do-install:
-	${MKDIR} ${PREFIX}/share/denemo
-	${INSTALL_PROGRAM} ${WRKSRC}/denemo ${PREFIX}/bin
-.for i in ${SHARED}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DATADIR}
-.endfor
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for i in AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
