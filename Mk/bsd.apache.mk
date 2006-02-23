@@ -28,7 +28,7 @@ APACHE_SUPPORTED_VERSION=	13 20 21 22
 AP_PORT_IS_SERVER=	YES
 .elif ${USE_APACHE:L} == apr
 APR_DEPS=			YES
-.elif ${USE_APACHE:C/\.//:C/\+//:M[12][310]} != ""
+.elif ${USE_APACHE:C/\.//:C/\+//:M[12][3210]} != ""
 AP_PORT_IS_MODULE=	YES
 
 #### for backward compatibility
