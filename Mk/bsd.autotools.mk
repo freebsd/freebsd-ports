@@ -29,19 +29,16 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 # Entry point into the autotools system
 #---------------------------------------------------------------------------
 #
-# USE_AUTOTOOLS= tool:version[:inc | :env]  ...
+# USE_AUTOTOOLS= tool:version[:env]  ...
 #
 # 'tool' can currently be one of:
 #	libtool, libltdl, autoconf, autoheader, automake, aclocal
 #
 # 'version' is tool dependent
 #
-# ':inc' is for libtool only, and is used to modify the patch-autotools
-#	target to use the relevant included version of libtool
-#
-# ':env' is for autoconf/autoheader/automake/aclocal and is used to
-#	specify that the environment variables are needed, but the relevant
-#	tool should NOT be run as part of the run-autotools target
+# ':env' is used to pecify that the environment variables are needed,
+#	but the relevant tool should NOT be run as part of the
+#	run-autotools target
 #
 # XXX: there is currently no sanity checking of the supplied variables
 #	other than to detect actually available versions.  This should
@@ -64,8 +61,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # LIBTOOLFLAGS=<value>
 #	- Arguments passed to libtool during configure step
-#	  Currently defaults to "--disable-ltlibs", but this will be going
-#	  away when libtool .la files are brought back
 #
 # LIBTOOLFILES=<list-of-files>
 #	- A list of files to patch during libtool pre-configuration
@@ -78,6 +73,12 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 .for item in ${USE_AUTOTOOLS}
 AUTOTOOL_${item:C/^([^:]+).*/\1/}${item:M*\:*\:*:C/^[^:]+:[^:]+:([^:]+)/_\1/}= ${item:C/^[^:]+:([^:]+).*/\1/}
 .endfor
+
+# XXX: temporary to highlight any missed ports in the conversion
+#
+.if defined(AUTOTOOL_libtool_inc)
+BROKEN+=libtool:${AUTOTOOL_libtool_inc}:inc construct no longer available
+.endif
 
 #---------------------------------------------------------------------------
 # AUTOMAKE/ACLOCAL
@@ -182,11 +183,6 @@ GNU_CONFIGURE?=			YES
 AUTOTOOL_libtool_env=	${AUTOTOOL_libtool}
 .endif
 
-.if defined(AUTOTOOL_libtool_inc)
-GNU_CONFIGURE?=			YES
-AUTOTOOL_libtool_env=	${AUTOTOOL_libtool_inc}
-.endif
-
 .if defined(AUTOTOOL_libtool_env)
 LIBTOOL_VERSION=		${AUTOTOOL_libtool_env}
 
@@ -198,26 +194,18 @@ BROKEN+=	Unknown LIBTOOL version: ${LIBTOOL_VERSION}
 
 # Set up the libtool environment
 #
-LIBTOOL=			${LOCALBASE}/bin/libtool${LIBTOOL_VERSION}
-LIBTOOLIZE=			${LOCALBASE}/bin/libtoolize${LIBTOOL_VERSION}
-LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool${LIBTOOL_VERSION}
-LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool${LIBTOOL_VERSION}
-LIBTOOL_M4=			${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4
+LIBTOOL=			${LOCALBASE}/bin/libtool
+LIBTOOLIZE=			${LOCALBASE}/bin/libtoolize
+LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool
+LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool
+LIBTOOL_M4=			${LOCALBASE}/share/aclocal/libtool.m4
 LTMAIN=				${LIBTOOL_SHAREDIR}/ltmain.sh
-. if ${LIBTOOL_VERSION} == 13
-LTCONFIG=			${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}
-. else
-LTCONFIG=			${TRUE}
-. endif
-LIBTOOL_PATH=		${LIBTOOL_LIBEXECDIR}:
-LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} LIBTOOL_M4=${LIBTOOL_M4} LTCONFIG=${LTCONFIG}
+LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} LIBTOOL_M4=${LIBTOOL_M4}
 
 LIBTOOL_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
 
-# XXX: do we really need this?
-#
-LIBTOOLFLAGS?=		--disable-ltlibs
+LIBTOOLFLAGS?=		# default to empty
 
 . if defined(AUTOTOOL_autoconf)
 LIBTOOLFILES?=		aclocal.m4
@@ -232,7 +220,7 @@ LIBTOOLFILES?=		configure
 # Now that we've got our environments defined for autotools, add them
 # in so that the rest of the world can handle them
 #
-AUTOTOOLS_PATH=	${AUTOMAKE_PATH}${AUTOCONF_PATH}${LIBTOOL_PATH}
+AUTOTOOLS_PATH=	${AUTOMAKE_PATH}${AUTOCONF_PATH}
 AUTOTOOLS_VARS=	${AUTOMAKE_VARS} ${AUTOCONF_VARS} ${LIBTOOL_VARS}
 
 .if defined(AUTOTOOLS_PATH) && (${AUTOTOOLS_PATH} != "")
@@ -322,21 +310,11 @@ run-autotools-autoheader:
 
 .if !target(patch-autotools)
 patch-autotools::
-. if defined(AUTOTOOL_libtool_inc)
+. if defined(AUTOTOOL_libtool)
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
-			   -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
-. elif defined(AUTOTOOL_libtool)
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
-			     -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+		${SED} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 			     -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
 			$$file.tmp > $$file; \
 		${RM} $$file.tmp; \
