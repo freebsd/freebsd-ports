@@ -8,8 +8,8 @@
 PORTNAME=	csound
 PORTVERSION=	4.23
 CATEGORIES=	audio
-MASTER_SITES=	ftp://sunsite.univie.ac.at/pub/sound/csound/newest/ \
-		ftp://ftp.cs.bath.ac.uk/pub/dream/newest/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Csound${PORTVERSION}
 DIST_SUBDIR=	csound
 
@@ -18,8 +18,6 @@ COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
-
-BROKEN=		Unfetchable
 
 RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
 NO_CDROM=	${RESTRICTED}
