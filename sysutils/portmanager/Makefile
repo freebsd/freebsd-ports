@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
@@ -21,7 +21,6 @@ MAN3=		libMG.3 MGdbAdd.3 MGdbCreate.3 MGdbDelete.3 \
 
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=		install info
 
