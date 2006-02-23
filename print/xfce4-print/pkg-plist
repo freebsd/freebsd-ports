@@ -1,7 +1,13 @@
 bin/xfprint-manager
 bin/xfprint4
+lib/xfce4/mcs-plugins/xfprint_plugin.a
+lib/xfce4/mcs-plugins/xfprint_plugin.la
 lib/xfce4/mcs-plugins/xfprint_plugin.so
+%%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
+%%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.la
 %%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
+%%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.a
+%%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.la
 %%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.so
 share/applications/xfprint.desktop
 share/applications/xfprint-manager.desktop

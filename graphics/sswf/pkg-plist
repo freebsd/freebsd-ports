@@ -6,6 +6,7 @@ include/sswf/libsswf-version.h
 include/sswf/libsswf.h
 lib/libsswf-1.7.2.so
 lib/libsswf.a
+lib/libsswf.la
 lib/libsswf.so
 %%DATADIR%%/AUTHORS.txt
 %%DATADIR%%/CHANGES.txt

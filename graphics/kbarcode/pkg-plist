@@ -1,4 +1,5 @@
 bin/kbarcode
+lib/kde3/kfile_kbarcode.a
 lib/kde3/kfile_kbarcode.la
 lib/kde3/kfile_kbarcode.so
 share/applnk/Applications/KBarcode/kbarcode-batch.desktop

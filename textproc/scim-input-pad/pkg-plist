@@ -1,6 +1,9 @@
 bin/scim-input-pad
+lib/scim-1.0/Helper/input-pad.a
+lib/scim-1.0/Helper/input-pad.la
 lib/scim-1.0/Helper/input-pad.so
 lib/libscim-input-pad.a
+lib/libscim-input-pad.la
 lib/libscim-input-pad.so
 lib/libscim-input-pad.so.0
 share/locale/de/LC_MESSAGES/scim-input-pad.mo

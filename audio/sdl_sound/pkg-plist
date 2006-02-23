@@ -1,6 +1,8 @@
 bin/playsound
 include/SDL11/SDL_sound.h
 lib/libSDL_sound-1.0.so.1
+lib/libSDL_sound-1.0.so
 lib/libSDL_sound.a
+lib/libSDL_sound.la
 lib/libSDL_sound.so
 @dirrmtry include/SDL11

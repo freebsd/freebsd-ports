@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkdatabox2
 PORTVERSION=	0.2.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
 DISTNAME=	gtkdatabox-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 CONFLICTS=	gtkdatabox-0.1.*

@@ -7,7 +7,7 @@
 
 PORTNAME=	ignorance
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ DEPRECATED=	The author has taken down his site and has ceased developing this pr
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 SUB_FILES=	pkg-message

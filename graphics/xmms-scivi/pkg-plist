@@ -1,3 +1,4 @@
+lib/xmms/Visualization/scivi.la
 lib/xmms/Visualization/scivi.so
 %%DATADIR%%/presets/array1.scv
 %%DATADIR%%/presets/mines.scv

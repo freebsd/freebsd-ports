@@ -7,6 +7,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.7.r1
+PORTREVISION=	1
 CATEGORIES=	java devel
 #MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 MASTER_SITES=	http://www.kaffe.org/~robilad/
@@ -28,10 +29,8 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_ICONV=	yes
-LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \

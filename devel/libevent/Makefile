@@ -7,6 +7,7 @@
 
 PORTNAME=	libevent
 PORTVERSION=	1.1a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
@@ -14,7 +15,6 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

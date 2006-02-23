@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Thu Jan 15 08:29:17 2004
++++ Makefile.in	Sun Jan 22 20:04:25 2006
+@@ -168,3 +168,3 @@
+ 
+-libXRes_la_LIBADD = @RESOURCE_EXT_LIBS@ @X_LIBS@
++libXRes_la_LIBADD = @RESOURCEEXT_LIBS@ @XRES_LIBS@
+ 

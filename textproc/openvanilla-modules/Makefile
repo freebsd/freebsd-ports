@@ -7,6 +7,7 @@
 
 PORTNAME=	openvanilla-modules
 PORTVERSION=	0.7.1.20050902
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/

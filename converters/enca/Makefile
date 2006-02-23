@@ -7,6 +7,7 @@
 
 PORTNAME=	enca
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://kf.fyz.fce.vutbr.cz/~yeti/Ftp/enca/
 
@@ -17,7 +18,7 @@ USE_GNOME=	pkgconfig
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-engines
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
@@ -17,7 +17,7 @@ COMMENT=	Theme engine for gtk+ toolkits
 
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 
 THEMES=		metal notif pixmap raleigh redmond95
 

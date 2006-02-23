@@ -4,8 +4,10 @@ etc/ggi/libggigcp.conf.dist
 include/ggi/gcp-defs.h
 include/ggi/gcp.h
 include/ggi/internal/gcp.h
+lib/ggi/gcp/default/color_gcp.la
 lib/ggi/gcp/default/color_gcp.so
 lib/libggigcp.a
+lib/libggigcp.la
 lib/libggigcp.so
 lib/libggigcp.so.1
 @dirrm lib/ggi/gcp/default

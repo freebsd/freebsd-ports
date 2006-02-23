@@ -16,7 +16,7 @@ COMMENT=	Very powerful batch file renamer for KDE3
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}

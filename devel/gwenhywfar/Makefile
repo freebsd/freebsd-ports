@@ -7,6 +7,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	1.13.2
+PORTREVISION=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	Multi-platform helper library for networking and security applications
 OPTIONS=	SSLDEBUG "Enable gwenhywfar SSL debug (if SSL enabled)" off \
 		MEMDEBUG "Enable memory debugger statistic" off
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

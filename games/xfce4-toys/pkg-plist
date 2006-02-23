@@ -1,4 +1,6 @@
 bin/xfce4-tips
+lib/xfce4/panel-plugins/libeyes.a
+lib/xfce4/panel-plugins/libeyes.la
 lib/xfce4/panel-plugins/libeyes.so
 share/locale/af/LC_MESSAGES/xfce4-toys.mo
 share/locale/ar/LC_MESSAGES/xfce4-toys.mo

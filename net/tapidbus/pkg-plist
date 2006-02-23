@@ -1,5 +1,5 @@
 include/tapidbus-0.2/tapidbus/tapidbus.h
-lib/libtapidbus-0.2.a
+lib/libtapidbus-0.2.la
 lib/libtapidbus-0.2.so
 lib/libtapidbus-0.2.so.0
 libdata/pkgconfig/tapidbus-0.2.pc

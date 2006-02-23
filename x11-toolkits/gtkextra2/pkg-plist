@@ -45,6 +45,7 @@ include/gtkextra-2.0/gtkextra/gtkpsfont.h
 include/gtkextra-2.0/gtkextra/gtksheet.h
 include/gtkextra-2.0/gtkextra/gtktogglecombo.h
 lib/libgtkextra-x11-2.0.a
+lib/libgtkextra-x11-2.0.la
 lib/libgtkextra-x11-2.0.so
 lib/libgtkextra-x11-2.0.so.1
 libdata/pkgconfig/gtkextra-2.0.pc

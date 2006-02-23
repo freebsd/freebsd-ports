@@ -1,3 +1,4 @@
+lib/libkbirthday.a
 lib/libkbirthday.la
 lib/libkbirthday.so
 share/apps/kicker/applets/kbirthday.desktop

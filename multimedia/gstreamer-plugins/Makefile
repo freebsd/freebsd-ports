@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.11
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -34,7 +34,7 @@ USE_GNOME+=	gnomehack \
 		gnometarget \
 		pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 GST_PLUGIN?=	base
 
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \

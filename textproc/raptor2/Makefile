@@ -8,6 +8,7 @@
 
 PORTNAME=	raptor
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GETOPT_LONG=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
 		--with-pkg-config=${LOCALBASE}/bin/pkg-config \

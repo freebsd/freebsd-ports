@@ -7,6 +7,7 @@
 
 PORTNAME=	distcache
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/

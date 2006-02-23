@@ -77,12 +77,15 @@ include/GraphicsMagick/wand/wand_api.h
 %%DATADIR%%/config/type-windows.mgk
 %%DATADIR%%/config/type.mgk
 lib/libGraphicsMagick++.a
+lib/libGraphicsMagick++.la
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.1
 lib/libGraphicsMagick.a
+lib/libGraphicsMagick.la
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.1
 lib/libGraphicsMagickWand.a
+lib/libGraphicsMagickWand.la
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.0
 libdata/pkgconfig/GraphicsMagick++.pc

@@ -1,11 +1,13 @@
 bin/libusb-config
 include/usb.h
 include/usbpp.h
-lib/libusb-0.1.so.8
 lib/libusb-0.1.so
-lib/libusb.so
+lib/libusb-0.1.so.8
 lib/libusb.a
-lib/libusbpp-0.1.so.8
+lib/libusb.la
+lib/libusb.so
 lib/libusbpp-0.1.so
-lib/libusbpp.so
+lib/libusbpp-0.1.so.8
 lib/libusbpp.a
+lib/libusbpp.la
+lib/libusbpp.so

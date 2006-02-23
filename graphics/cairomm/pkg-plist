@@ -9,6 +9,7 @@ include/cairomm-1.0/cairomm/pattern.h
 include/cairomm-1.0/cairomm/refptr.h
 include/cairomm-1.0/cairomm/surface.h
 lib/libcairomm-1.0.a
+lib/libcairomm-1.0.la
 lib/libcairomm-1.0.so
 lib/libcairomm-1.0.so.0
 libdata/pkgconfig/cairomm-1.0.pc

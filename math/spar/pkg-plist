@@ -26,11 +26,20 @@ include/spar/sl_util.h
 include/spar/sl_vector.h
 include/spar/sl_version.h
 lib/libspar.a
+lib/libspar.la
 lib/libspar.so
 lib/libspar.so.5
+lib/spar/solve_c.a
+lib/spar/solve_c.la
 lib/spar/solve_c.so
+lib/spar/solve_q.a
+lib/spar/solve_q.la
 lib/spar/solve_q.so
+lib/spar/zsolve_c.a
+lib/spar/zsolve_c.la
 lib/spar/zsolve_c.so
+lib/spar/zsolve_q.a
+lib/spar/zsolve_q.la
 lib/spar/zsolve_q.so
 share/spar/modules_config
 @dirrm include/spar

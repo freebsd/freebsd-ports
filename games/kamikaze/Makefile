@@ -12,9 +12,9 @@ MASTER_SITES=	http://kamikaze.coolprojects.org/download/
 MAINTAINER=	spillner@kde.org
 COMMENT=	Multiplayer bomberman-style game for KDE
 
-USE_KDELIBS_VER=	3
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-server
+USE_KDELIBS_VER=3
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--disable-server
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ENV=	glibpath="${GLIB_CONFIG}" \

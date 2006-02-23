@@ -1,5 +1,9 @@
 bin/xfwm4
+lib/xfce4/mcs-plugins/workspaces_plugin.a
+lib/xfce4/mcs-plugins/workspaces_plugin.la
 lib/xfce4/mcs-plugins/workspaces_plugin.so
+lib/xfce4/mcs-plugins/xfwm4_plugin.a
+lib/xfce4/mcs-plugins/xfwm4_plugin.la
 lib/xfce4/mcs-plugins/xfwm4_plugin.so
 share/applications/xfce-wm-settings.desktop
 share/applications/xfce-workspaces-settings.desktop

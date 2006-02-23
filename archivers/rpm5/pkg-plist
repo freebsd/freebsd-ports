@@ -25,7 +25,6 @@ include/rpm/rpmspec.h
 include/rpm/rpmurl.h
 include/rpm/stringbuf.h
 include/rpm/ugid.h
-lib/libbeecrypt.a
 lib/libbeecrypt.la
 lib/libbeecrypt.so
 lib/libbeecrypt.so.4

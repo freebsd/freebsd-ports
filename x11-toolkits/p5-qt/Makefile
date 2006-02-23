@@ -8,6 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.008
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -23,12 +24,11 @@ COMMENT=	A set of Perl bindings for the Qt toolkit
 
 USE_GL=		yes
 USE_QT_VER=	3
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	bin/pqtapi bin/pqtsh bin/puic include/smoke.h \
-		lib/libsmokeqt.a lib/libsmokeqt.so lib/libsmokeqt.so.3
+		lib/libsmokeqt.la lib/libsmokeqt.so lib/libsmokeqt.so.3
 
 MAN1=	puic.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

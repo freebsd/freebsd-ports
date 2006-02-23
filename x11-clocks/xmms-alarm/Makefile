@@ -18,7 +18,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/xmms/General/libalarm.so
 

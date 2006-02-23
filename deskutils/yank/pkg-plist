@@ -1,4 +1,5 @@
 bin/yank
+lib/yank/plugins/%%PORTVERSION%%/libPgp5.a
 lib/yank/plugins/%%PORTVERSION%%/libPgp5.la
 lib/yank/plugins/%%PORTVERSION%%/libPgp5.so
 share/gnome/apps/Applications/yank.desktop

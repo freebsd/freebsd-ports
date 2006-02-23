@@ -38,6 +38,7 @@ include/svzconfig.h
 @dirrm include/libserveez/codec
 @dirrm include/libserveez
 lib/libserveez.a
+lib/libserveez.la
 lib/libserveez.so
 lib/libserveez.so.0
 share/aclocal/serveez.m4

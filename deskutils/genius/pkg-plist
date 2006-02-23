@@ -14,6 +14,8 @@ include/genius/mpzextra.h
 include/genius/plug_api.h
 include/genius/structs.h
 include/genius/utype.h
+lib/genius/libtestplugin.a
+lib/genius/libtestplugin.la
 lib/genius/libtestplugin.so
 libexec/genius-readline-helper-fifo
 share/gnome/application-registry/genius.applications

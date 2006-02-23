@@ -3,6 +3,7 @@ include/ppd.h
 include/ppdenums.h
 include/ppdmacros.h
 lib/libppd.a
+lib/libppd.la
 lib/libppd.so
 lib/libppd.so.1
 share/postscript/ppd/generic-printer.ppd

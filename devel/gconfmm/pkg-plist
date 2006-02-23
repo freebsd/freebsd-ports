@@ -18,6 +18,7 @@ lib/gconfmm-2.0/include/gconfmmconfig.h
 lib/gconfmm-2.0/proc/m4/convert.m4
 lib/gconfmm-2.0/proc/m4/convert_gconfmm.m4
 lib/libgconfmm-2.0.a
+lib/libgconfmm-2.0.la
 lib/libgconfmm-2.0.so
 lib/libgconfmm-2.0.so.1
 libdata/pkgconfig/gconfmm-2.0.pc

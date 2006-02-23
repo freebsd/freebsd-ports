@@ -7,6 +7,7 @@
 
 PORTNAME=	xls2xml
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://arturo.directmail.org/filters/archive/
@@ -18,7 +19,7 @@ COMMENT=	A utility for converting MS Excel files to XML
 LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 		xml.5:${PORTSDIR}/textproc/libxml
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,9 +1,10 @@
 @comment $FreeBSD$
 bin/opencdk-config
 include/opencdk.h
-lib/libopencdk.so.8
-lib/libopencdk.so
 lib/libopencdk.a
+lib/libopencdk.la
+lib/libopencdk.so
+lib/libopencdk.so.8
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

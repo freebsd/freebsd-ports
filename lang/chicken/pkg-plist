@@ -10,9 +10,11 @@ include/c_defaults.h
 include/chicken-config.h
 include/chicken.h
 lib/libchicken.a
+lib/libchicken.la
 lib/libchicken.so
 lib/libchicken.so.0
 lib/libuchicken.a
+lib/libuchicken.la
 lib/libuchicken.so
 lib/libuchicken.so.0
 %%DATADIR%%/banner.scm

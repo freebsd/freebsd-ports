@@ -1,9 +1,11 @@
 bin/mlview
 bin/mlviewctl
 lib/libmlview.a
+lib/libmlview.la
 lib/libmlview.so
 lib/libmlview.so.8
 lib/libmlviewdbusclient.a
+lib/libmlviewdbusclient.la
 lib/libmlviewdbusclient.so.8
 lib/libmlviewdbusclient.so
 share/gnome/applications/mlview.desktop

@@ -1,6 +1,7 @@
 bin/etox-config
 include/Etox.h
 lib/libetox.a
+lib/libetox.la
 lib/libetox.so
 lib/libetox.so.0
 libdata/pkgconfig/etox.pc

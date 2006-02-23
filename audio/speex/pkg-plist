@@ -11,6 +11,7 @@ include/speex_callbacks.h
 include/speex_header.h
 include/speex_stereo.h
 lib/libspeex.a
+lib/libspeex.la
 lib/libspeex.so
 lib/libspeex.so.3
 libdata/pkgconfig/speex.pc

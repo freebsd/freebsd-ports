@@ -20,7 +20,7 @@ COMMENT=	A file alteration monitor
 
 CFLAGS+=		-Wno-deprecated
 
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:13:inc
+USE_AUTOTOOLS=	automake:15 autoconf:253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -38,6 +38,8 @@ pre-configure:
 	@${RM} -f ${WRKSRC}/Makefile.am.orig
 	@${RM} -f ${WRKSRC}/fam/mntent*
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
+	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
+		-e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

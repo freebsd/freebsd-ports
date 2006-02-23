@@ -4,6 +4,7 @@ include/libzvt-2.0/libzvt/lists.h
 include/libzvt-2.0/libzvt/vt.h
 include/libzvt-2.0/libzvt/vtx.h
 lib/libzvt-2.0.a
+lib/libzvt-2.0.la
 lib/libzvt-2.0.so
 lib/libzvt-2.0.so.0
 libdata/pkgconfig/libzvt-2.0.pc

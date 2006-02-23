@@ -7,6 +7,7 @@ bin/pybliographic
 bin/pybtex
 include/bibtex.h
 lib/libbibtex.a
+lib/libbibtex.la
 lib/libbibtex.so
 lib/libbibtex.so.1
 lib/pybliographer/_bibtexmodule.so

@@ -23,9 +23,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if defined(WITH_PLUGIN)
 FORBIDDEN=	Vulnerabilities in the browser plugin
-LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
-		gtk12.2:$(PORTSDIR)/x11-toolkits/gtk12 \
-		nspr4.1:$(PORTSDIR)/devel/nspr
+USE_GNOME+=	gtk12
+LIB_DEPENDS=	nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \

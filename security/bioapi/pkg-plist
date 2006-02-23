@@ -17,18 +17,23 @@ include/bsp_schema.h
 include/installdefs.h
 include/cssmtype.h
 lib/libbioapi100.a
+lib/libbioapi100.la
 lib/libbioapi100.so
 lib/libbioapi100.so.0
 lib/libbioapi_dummy100.a
+lib/libbioapi_dummy100.la
 lib/libbioapi_dummy100.so
 lib/libbioapi_dummy100.so.0
 lib/libbioapi_mds300.a
+lib/libbioapi_mds300.la
 lib/libbioapi_mds300.so
 lib/libbioapi_mds300.so.0
 lib/libmds_util.a
+lib/libmds_util.la
 lib/libmds_util.so
 lib/libmds_util.so.0
 lib/libpwbsp.a
+lib/libpwbsp.la
 lib/libpwbsp.so
 lib/libpwbsp.so.0
 @cwd /

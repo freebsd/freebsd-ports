@@ -4,6 +4,7 @@ include/libgsf-1/gsf-gnome/gsf-output-bonobo.h
 include/libgsf-1/gsf-gnome/gsf-output-gnomevfs.h
 include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
 lib/libgsf-gnome-1.a
+lib/libgsf-gnome-1.la
 lib/libgsf-gnome-1.so
 lib/libgsf-gnome-1.so.113
 libdata/pkgconfig/libgsf-gnome-1.pc

@@ -9,6 +9,7 @@ etc/privman/privman.conf
 include/msghdr.h
 include/privman.h
 lib/libprivman.a
+lib/libprivman.la
 lib/libprivman.so
 lib/libprivman.so.2
 @dirrm etc/privman

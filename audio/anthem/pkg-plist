@@ -6,6 +6,7 @@ include/anthem/kde/FlagComboBox.h
 include/anthem/kde/PortWidget.h
 include/anthem/kde/SnapWidget.h
 lib/libtse3kdeui.a
+lib/libtse3kdeui.la
 lib/libtse3kdeui.so
 lib/libtse3kdeui.so.0
 share/applnk/Multimedia/anthem.desktop

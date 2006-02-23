@@ -20,6 +20,7 @@ include/jasper/jas_types.h
 include/jasper/jas_version.h
 include/jasper/jasper.h
 lib/libjasper.a
+lib/libjasper.la
 lib/libjasper.so
 lib/libjasper.so.4
 %%PORTDOCS%%%%DOCSDIR%%/README

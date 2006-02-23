@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.grumz.net/grumz/
 
@@ -16,7 +16,7 @@ COMMENT=	Extension for Nautilus to configure programs to launch on files
 
 USE_GNOME=	nautilus2 intlhack pygtk2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

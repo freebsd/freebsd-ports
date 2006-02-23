@@ -14,7 +14,6 @@ MAINTAINER=	robert@rs.tarrant.tx.us
 COMMENT=	General purpose string library for C
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig

@@ -16,8 +16,11 @@ include/libgnome-2.0/libgnome/gnome-url.h
 include/libgnome-2.0/libgnome/gnome-util.h
 include/libgnome-2.0/libgnome/libgnome.h
 include/libgnome-2.0/libgnome/libgnometypebuiltins.h
+lib/bonobo/monikers/libmoniker_extra_2.a
+lib/bonobo/monikers/libmoniker_extra_2.la
 lib/bonobo/monikers/libmoniker_extra_2.so
 lib/libgnome-2.a
+lib/libgnome-2.la
 lib/libgnome-2.so
 lib/libgnome-2.so.0
 libdata/bonobo/servers/GNOME_Moniker_std.server

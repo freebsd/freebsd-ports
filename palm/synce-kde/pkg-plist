@@ -5,6 +5,7 @@ include/rakisyncfactory.h
 include/rakisyncplugin.h
 include/rapiwrapper.h
 include/rra.h
+lib/kde3/kio_rapip.a
 lib/kde3/kio_rapip.la
 lib/kde3/kio_rapip.so
 share/applnk/Utilities/raki.desktop

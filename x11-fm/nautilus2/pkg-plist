@@ -11,9 +11,11 @@ include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
 lib/libnautilus-extension.a
+lib/libnautilus-extension.la
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
 lib/libnautilus-private.a
+lib/libnautilus-private.la
 lib/libnautilus-private.so
 lib/libnautilus-private.so.2
 libdata/bonobo/servers/Nautilus_shell.server

@@ -668,14 +668,6 @@ sub checkplist {
 				"for more details.");
 		}
 
-		if ($_ =~ /\.la$/ && $makevar{USE_AUTOTOOLS} =~ 'libtool' &&
-			!defined($makevar{USE_KDELIBS_VER})) {
-			&perror("WARN: $file [$.]: installing libtool archives, ".
-				"please use USE_AUTOTOOLS in Makefile if possible.  ".
-				"See http://www.FreeBSD.org/gnome/docs/porting.html ".
-				"for a way to completely eliminate .la files.");
-		}
-
 		if ($_ =~ /\%gconf.*\.xml/ || $_ =~ /gconf.*\.schemas?/) {
 			&perror("FATAL: $file [$.]: explicitly listing \%gconf key files ".
 				"or GConf schema files in the plist is not supported. ".

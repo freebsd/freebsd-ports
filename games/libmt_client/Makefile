@@ -7,7 +7,7 @@
 
 PORTNAME=		libmt_client
 PORTVERSION=		0.1.98
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	maitretarot
@@ -18,7 +18,7 @@ COMMENT=		Client-side library of MaitreTarot, a Tarot card game
 LIB_DEPENDS=		maitretarot.0:${PORTSDIR}/games/libmaitretarot
 
 USE_BZIP2=		yes
-USE_AUTOTOOLS=		libtool:13:inc
+GNU_CONFIGURE=		yes
 USE_GNOME=		glib20 libxml2 lthack
 INSTALLS_SHLIB=		yes
 

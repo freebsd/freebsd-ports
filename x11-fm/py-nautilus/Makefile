@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/nautilus-python/${PORTVERSION:R}/
@@ -21,7 +22,7 @@ LIB_DEPENDS=	nautilus-extension:${PORTSDIR}/x11-fm/nautilus2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	gmime
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v1.0/
 
@@ -15,11 +16,10 @@ COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-2.1.*
 USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_GNOME=	glib12
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CFLAGS+=	-L${LOCALBASE}/lib # req'd to find iconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

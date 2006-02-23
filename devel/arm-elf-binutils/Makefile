@@ -19,12 +19,9 @@ COMMENT=	GNU binutils for vanilla ARM cross-development
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${PKGNAMEPREFIX:S/-$//}
 CONFIGURE_ARGS=	--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
-LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
-		gas/configure gprof/configure intl/configure ld/configure \
-		libiberty/configure opcodes/configure
 MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}c++filt.1 \
 		${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}ld.1 \

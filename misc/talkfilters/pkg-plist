@@ -19,5 +19,6 @@ bin/warez
 bin/wrap
 include/talkfilters.h
 lib/libtalkfilters.a
+lib/libtalkfilters.la
 lib/libtalkfilters.so
 lib/libtalkfilters.so.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.28
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 
 MAINTAINER=	ports@FreeBSD.org
@@ -48,7 +48,7 @@ MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd1.8
 
 USE_RC_SUBR=	YES
 
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 AUTOMAKE_ARGS=	--add-missing --include-deps
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \

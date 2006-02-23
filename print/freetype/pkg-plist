@@ -13,6 +13,7 @@ include/freetype1/freetype/ftxpost.h
 include/freetype1/freetype/ftxsbit.h
 include/freetype1/freetype/ftxwidth.h
 lib/libttf.a
+lib/libttf.la
 lib/libttf.so
 lib/libttf.so.4
 @dirrm include/freetype1/freetype

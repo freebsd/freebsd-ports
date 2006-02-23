@@ -34,23 +34,12 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 .endif
 
+GNU_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
-
-.else
-USE_AUTOTOOLS=	libtool:15
 .endif
 
 pre-patch:

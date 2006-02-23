@@ -1,3 +1,4 @@
+lib/libkcube.a
 lib/libkcube.la
 lib/libkcube.so
 lib/libkcube.so.1

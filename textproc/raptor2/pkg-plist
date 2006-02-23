@@ -2,6 +2,7 @@ bin/rapper
 bin/raptor-config
 include/raptor.h
 lib/libraptor.a
+lib/libraptor.la
 lib/libraptor.so
 lib/libraptor.so.2
 libdata/pkgconfig/raptor.pc

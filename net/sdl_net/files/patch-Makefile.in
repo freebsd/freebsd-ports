@@ -1,14 +1,12 @@
-
-$FreeBSD$
-
---- Makefile.in	2001/04/06 13:15:50	1.1
-+++ Makefile.in	2001/04/06 13:16:13
-@@ -89,7 +89,7 @@
- 
- lib_LTLIBRARIES = libSDL_net.la
+--- Makefile.in.orig	Thu Mar  6 22:49:11 2003
++++ Makefile.in	Sun Jan 22 13:34:45 2006
+@@ -91,3 +91,3 @@
  
 -libSDL_netincludedir = $(includedir)/SDL
 +libSDL_netincludedir = $(includedir)/SDL11
  libSDL_netinclude_HEADERS =  	SDL_net.h
- 
+@@ -102,3 +102,3 @@
+ libSDL_net_la_LIBADD = @INETLIB@
+-libSDL_net_la_LDFLAGS =  	-release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_net_la_LDFLAGS =  			-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
  

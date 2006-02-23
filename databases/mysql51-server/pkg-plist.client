@@ -45,12 +45,15 @@ include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
 include/mysql/typelib.h
 lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.15
 lib/mysql/libmysqlclient_r.a
+lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.15
 %%ZLIB%%lib/mysql/libz.a
+%%ZLIB%%lib/mysql/libz.la
 %%ZLIB%%lib/mysql/libz.so
 %%ZLIB%%lib/mysql/libz.so.3
 %%DATADIR%%/mysql_fix_privilege_tables.sql

@@ -5,5 +5,6 @@ bin/cimindent
 include/cim.h
 lib/libcim-atr.a
 lib/libcim.a
+lib/libcim.la
 lib/libcim.so
 lib/libcim.so.3

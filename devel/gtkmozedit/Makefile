@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkmozedit
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel editors www
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +18,7 @@ COMMENT=	Text editor widget based on Mozilla's editing functionality
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_GECKO=	mozilla
 

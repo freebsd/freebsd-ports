@@ -24,10 +24,16 @@ include/popular/uds.h
 include/popular/util.h
 include/popular/xlog.h
 lib/popular/libpdm_any-1.5.5.so
+lib/popular/libpdm_any.a
+lib/popular/libpdm_any.la
 lib/popular/libpdm_any.so
 lib/popular/libpdm_master-1.5.5.so
+lib/popular/libpdm_master.a
+lib/popular/libpdm_master.la
 lib/popular/libpdm_master.so
 %%WITH_DB4%%lib/popular/libpdm_db4-1.5.5.so
+%%WITH_DB4%%lib/popular/libpdm_db4.a
+%%WITH_DB4%%lib/popular/libpdm_db4.la
 %%WITH_DB4%%lib/popular/libpdm_db4.so
 sbin/pcheckd
 sbin/pproxy

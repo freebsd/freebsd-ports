@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off

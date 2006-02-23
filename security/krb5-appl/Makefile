@@ -25,8 +25,7 @@ USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
-GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_ARGS?=	--enable-shared --enable-static
 CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \

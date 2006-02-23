@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	6.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -19,7 +20,7 @@ COMMENT=	Perl Compatible Regular Expressions library
 CONFLICTS?=	pcre-utf8-[0-9]*
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)

@@ -7,6 +7,7 @@
 
 PORTNAME=	epeg
 PORTVERSION=	0.9.0.005
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -15,7 +16,7 @@ COMMENT=	An IMMENSELY FAST JPEG thumbnailer library API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_GETOPT_LONG=	yes
 INSTALLS_SHLIB=	yes

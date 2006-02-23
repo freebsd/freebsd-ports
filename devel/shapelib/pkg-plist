@@ -1,5 +1,6 @@
 include/shapefil.h
 lib/libshp.a
+lib/libshp.la
 lib/libshp.so
 lib/libshp.so.1
 share/doc/shapelib/dbf_api.html

@@ -3,6 +3,7 @@ bin/pawd
 etc/amd.conf-sample
 etc/lostaltmail.conf-sample
 lib/libamu.a
+lib/libamu.la
 lib/libamu.so
 lib/libamu.so.4
 sbin/am-eject

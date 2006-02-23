@@ -68,6 +68,7 @@ include/gtkhtml-2.0/libgtkhtml/view/htmlevent.h
 include/gtkhtml-2.0/libgtkhtml/view/htmlselection.h
 include/gtkhtml-2.0/libgtkhtml/view/htmlview.h
 lib/libgtkhtml-2.a
+lib/libgtkhtml-2.la
 lib/libgtkhtml-2.so
 lib/libgtkhtml-2.so.0
 libdata/pkgconfig/libgtkhtml-2.0.pc

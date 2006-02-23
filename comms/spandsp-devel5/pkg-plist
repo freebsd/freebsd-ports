@@ -51,6 +51,7 @@ include/spandsp/v42bis.h
 include/spandsp/v8.h
 include/spandsp/vector.h
 lib/libspandsp.a
+lib/libspandsp.la
 lib/libspandsp.so
 lib/libspandsp.so.0
 %%DATADIR%%/global-tones.xml

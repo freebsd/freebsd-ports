@@ -4,6 +4,7 @@ include/libsexy/sexy-spell-entry.h
 include/libsexy/sexy-url-label.h
 include/libsexy/sexy.h
 lib/libsexy.a
+lib/libsexy.la
 lib/libsexy.so
 lib/libsexy.so.1
 libdata/pkgconfig/libsexy.pc

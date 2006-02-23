@@ -15,6 +15,7 @@ include/gnet-glib2/udp.h
 include/gnet-glib2/unix.h
 include/gnet-glib2/url.h
 lib/libgnet-glib2.a
+lib/libgnet-glib2.la
 lib/libgnet-glib2.so
 lib/libgnet-glib2.so.7
 libdata/pkgconfig/gnet-glib2.pc

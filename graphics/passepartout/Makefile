@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 

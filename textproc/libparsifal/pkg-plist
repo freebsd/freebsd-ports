@@ -10,6 +10,7 @@ include/libparsifal/xmlsbuf.h
 include/libparsifal/xmlvect.h
 lib/libparsifal-%%VERSION%%.so
 lib/libparsifal.a
+lib/libparsifal.la
 lib/libparsifal.so
 %%PORTDOCS%%%%DOCSDIR%%/conformance.html
 %%PORTDOCS%%%%DOCSDIR%%/csrchtml/canonxml_c.html

@@ -20,7 +20,7 @@ RUN_DEPENDS=	callgrind:${PORTSDIR}/devel/callgrind
 ONLY_FOR_ARCHS=	i386
 CONFLICTS=	kdesdk3-[0-9]*
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes

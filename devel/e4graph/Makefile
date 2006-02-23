@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} --enable-tcl \
 		--with-expat=${LOCALBASE} --enable-xml
@@ -50,6 +50,7 @@ post-patch:
 		s|gcc -shared|$$(CC) -shared|g ; \
 		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 			${WRKSRC}/configure
+	@${CHMOD} +x ${WRKSRC}/scripts/ltconfig
 
 post-install:
 .for file in testcore testcores

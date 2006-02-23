@@ -1,8 +1,10 @@
 lib/gtk-2.0/%%GTK_VER%%/engines/libqtengine.a
+lib/gtk-2.0/%%GTK_VER%%/engines/libqtengine.la
 lib/gtk-2.0/%%GTK_VER%%/engines/libqtengine.so
 share/gtk-qt-engine/kde-index.theme
 share/themes/Qt/gtk-2.0/gtkrc
 @cwd %%LOCALBASE%%
+lib/kde3/kcm_kcmgtk.a
 lib/kde3/kcm_kcmgtk.la
 lib/kde3/kcm_kcmgtk.so
 share/applnk/Settings/LookNFeel/kcmgtk.desktop

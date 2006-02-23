@@ -21,6 +21,6 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

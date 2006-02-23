@@ -7,7 +7,7 @@
 
 PORTNAME=	cal3d
 DISTVERSION=	${CAL3DVER}_pre20050823
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -26,14 +26,13 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	pkgconfig
 USE_GCC=	3.2+
-USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15:inc
+USE_AUTOTOOLS=	automake:19 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CXX="${CXX}"
-CONFIGURE_ARGS=	--disable-static
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -52,5 +51,9 @@ pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 	cd ${WRKSRC} && ${AUTOHEADER}
 	cd ${WRKSRC} && ${LIBTOOLIZE} --automake --force
+
+# XXX: handle slight differences between 6.x and 5.x/4.x
+post-install:
+	@${RM} -f ${PREFIX}/lib/libcal3d.a
 
 .include <bsd.port.mk>

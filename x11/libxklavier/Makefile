@@ -7,6 +7,7 @@
 
 PORTNAME=	libxklavier
 PORTVERSION=	2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack libxml2
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ARGS=	--disable-doxygen \
 		--with-xkb-base=${X11BASE}/lib/X11/xkb

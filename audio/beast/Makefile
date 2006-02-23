@@ -7,7 +7,7 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.6/ \
 		http://beast.gtk.org/beast-ftp/v0.6/
@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomecanvas
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DENODATA=255" \
 		LDFLAGS="-L${LOCALBASE}/lib"

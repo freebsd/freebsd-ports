@@ -29,7 +29,7 @@ RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
 MAN1=		electricsheep.1

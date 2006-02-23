@@ -23,6 +23,7 @@ include/xmlsec0/xmlsec/xmlenc.h
 include/xmlsec0/xmlsec/xmlsec.h
 include/xmlsec0/xmlsec/xmltree.h
 lib/libxmlsec.a
+lib/libxmlsec.la
 lib/libxmlsec.so
 lib/libxmlsec.so.0
 libdata/pkgconfig/xmlsec.pc

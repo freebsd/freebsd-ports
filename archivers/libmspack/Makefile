@@ -7,7 +7,7 @@
 
 PORTNAME=	libmspack
 PORTVERSION=	0.0.20040308
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
@@ -17,7 +17,7 @@ COMMENT=	A library for Microsoft compression formats
 
 USE_REINPLACE=		yes
 USE_GETOPT_LONG=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

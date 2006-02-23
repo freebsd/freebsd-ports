@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>
 .include <bsd.port.mk>

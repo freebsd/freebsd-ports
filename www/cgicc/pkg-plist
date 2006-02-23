@@ -24,6 +24,7 @@ include/cgicc/HTTPResponseHeader.h
 include/cgicc/HTTPStatusHeader.h
 include/cgicc/MStreamable.h
 lib/libcgicc.a
+lib/libcgicc.la
 lib/libcgicc.so
 lib/libcgicc.so.5
 %%PORTDOCS%%%%DOCSDIR%%/COPYING-source.html

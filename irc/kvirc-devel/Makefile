@@ -7,7 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
@@ -20,13 +20,12 @@ COMMENT=	IRC client for QT and KDE
 
 CONFLICTS=	kdenetwork-3.5.[0-9]*
 
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=		yes
+USE_AUTOTOOLS=	libtool:15
+INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 PLIST_SUB=		VER=${PORTVERSION}

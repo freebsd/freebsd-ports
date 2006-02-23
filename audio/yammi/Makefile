@@ -25,7 +25,7 @@ OPTIONS=	ARTS "Arts backend support" on \
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix='' --enable-threading=yes --enable-mt=yes

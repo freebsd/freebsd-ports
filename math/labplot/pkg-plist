@@ -1,10 +1,13 @@
 bin/LabPlot
 bin/labplot
-lib/libLabPlotcephes.so.6
-lib/libLabPlotcephes.so
 lib/libLabPlotcephes.a
-lib/libLabPlot.so.6
+lib/libLabPlotcephes.la
+lib/libLabPlotcephes.so
+lib/libLabPlotcephes.so.6
+lib/libLabPlot.a
+lib/libLabPlot.la
 lib/libLabPlot.so
+lib/libLabPlot.so.6
 share/doc/HTML/de/LabPlot/index.docbook
 share/doc/HTML/de/LabPlot/small_pics
 share/doc/HTML/de/labplot

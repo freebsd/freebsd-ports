@@ -134,9 +134,11 @@ lib/apache2/apr.exp
 lib/apache2/aprutil.exp
 lib/apache2/apu-config
 lib/apache2/libapr-0.a
+lib/apache2/libapr-0.la
 lib/apache2/libapr-0.so
 lib/apache2/libapr-0.so.9
 lib/apache2/libaprutil-0.a
+lib/apache2/libaprutil-0.la
 lib/apache2/libaprutil-0.so
 lib/apache2/libaprutil-0.so.9
 libexec/apache2/httpd.exp

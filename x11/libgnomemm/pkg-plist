@@ -8,6 +8,7 @@ include/libgnomemm-2.0/libgnomemm/private/program_p.h
 include/libgnomemm-2.0/libgnomemm/program.h
 include/libgnomemm-2.0/libgnomemm/wrap_init.h
 lib/libgnomemm-2.0.a
+lib/libgnomemm-2.0.la
 lib/libgnomemm-2.0.so
 lib/libgnomemm-2.0.so.1
 lib/libgnomemm-2.0/include/libgnomemmconfig.h

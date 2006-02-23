@@ -18,7 +18,7 @@ COMMENT=	A powerful Bible study application for KDE3
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

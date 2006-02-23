@@ -6,7 +6,7 @@
 
 PORTNAME=	synce-multisync_plugin
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -21,7 +21,7 @@ RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync
 USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE} \
 			--with-librra=${LOCALBASE} \

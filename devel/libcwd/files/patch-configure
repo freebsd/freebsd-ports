@@ -1,0 +1,8 @@
+--- configure.orig	Tue May 31 03:06:27 2005
++++ configure	Tue Jan 24 17:51:36 2006
+@@ -22699,5 +22699,2 @@
+ PCHOPTS=
+-if test "$cw_cv_prog_CXX_pch" = "yes"; then
+-  PCHOPTS="-include pch.h"
+-fi
+ 

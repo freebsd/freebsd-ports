@@ -4,6 +4,7 @@ include/jni.h
 include/jni_system_specific.h
 lib/libsablevm-%%PORTVERSION%%.so
 lib/libsablevm.a
+lib/libsablevm.la
 lib/libsablevm.so
 lib/sablevm/awt/font.properties
 lib/sablevm/logging.properties

@@ -18,6 +18,7 @@ include/sary/str.h
 include/sary/text.h
 include/sary/writer.h
 lib/libsary.a
+lib/libsary.la
 lib/libsary.so
 lib/libsary.so.10
 libdata/pkgconfig/sary.pc

@@ -1,8 +1,11 @@
 %%PYTHON_SITELIBDIR%%/gst/__init__.py
 %%PYTHON_SITELIBDIR%%/gst/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gst/_gst.la
 %%PYTHON_SITELIBDIR%%/gst/_gst.so
+%%PYTHON_SITELIBDIR%%/gst/interfaces.la
 %%PYTHON_SITELIBDIR%%/gst/interfaces.so
+%%PYTHON_SITELIBDIR%%/gst/play.la
 %%PYTHON_SITELIBDIR%%/gst/play.so
 libdata/pkgconfig/gst-python-0.8.pc
 share/gst-python/2.0/defs/gst-extrafuncs.defs

@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 MAN1=		exiv2.1

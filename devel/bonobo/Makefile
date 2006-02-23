@@ -23,8 +23,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix oaf gnomehier gnomeprint
 GNOME_HTML_DIR=	${PREFIX}/share/doc/bonobo
 INSTALLS_SHLIB=	yes
-#USE_LIBTOOL=	yes
-#LIBTOOLFILES=	configure libefs/configure
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

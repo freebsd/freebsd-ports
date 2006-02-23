@@ -7,7 +7,7 @@
 
 PORTNAME=	libspectrum
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse-emulator
@@ -17,7 +17,7 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 USE_PERL5_BUILD=	yes
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3=		libspectrum.3

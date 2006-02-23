@@ -1,3 +1,5 @@
+lib/xfce4/panel-plugins/libxmms_plugin.a
+lib/xfce4/panel-plugins/libxmms_plugin.la
 lib/xfce4/panel-plugins/libxmms_plugin.so
 share/xfce4/xmms-plugin/xmms-plugin-prev.png
 share/xfce4/xmms-plugin/xmms-plugin-play.png

@@ -18,7 +18,7 @@ COMMENT=	An educational typing tutor starring Tux the Linux Penguin
 USE_SDL=	image mixer sdl
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 

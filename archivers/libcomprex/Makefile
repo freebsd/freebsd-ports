@@ -8,6 +8,7 @@
 
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,9 +19,9 @@ COMMENT=	Transparently handles automatic compression and decompression of files
 
 #LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
-LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 INSTALLS_SHLIB=	yes

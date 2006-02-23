@@ -17,9 +17,8 @@ COMMENT=	A visual client for UPS system NUT
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt \
-		--program-transform-name=''
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--enable-mt --program-transform-name=''
 
 post-patch:
 	@${REINPLACE_CMD} -E \

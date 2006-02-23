@@ -7,6 +7,7 @@
 
 PORTNAME=	openspc
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://membres.lycos.fr/pixels/
 DISTNAME=	OpenSPC-${PORTVERSION}
@@ -16,11 +17,11 @@ COMMENT=	A command line player for .spc and .zst files
 
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 
 PORTDOCS=	README
-PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so lib/libOpenSPC.so.3 \
-		lib/libOpenSPC.la lib/libOpenSPC.a
+PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so \
+		lib/libOpenSPC.so.3 lib/libOpenSPC.la lib/libOpenSPC.a
 
 .if !defined(NOPORTDOCS)
 post-install:

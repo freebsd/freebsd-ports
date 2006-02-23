@@ -3,6 +3,7 @@ bin/ofxconnect
 bin/ofxdump
 include/libofx/libofx.h
 lib/libofx.a
+lib/libofx.la
 lib/libofx.so
 lib/libofx.so.2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

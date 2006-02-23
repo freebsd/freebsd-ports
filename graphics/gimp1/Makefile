@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -40,10 +40,9 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE==	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${MPEG_WRKSRC}" \

@@ -1,4 +1,5 @@
 bin/easysok
+lib/easysok.a
 lib/easysok.la
 lib/easysok.so
 share/applnk/Games/TacticStrategy/easysok.desktop

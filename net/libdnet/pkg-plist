@@ -1,6 +1,7 @@
 %%MASTER%%bin/dnet-config
 %%MASTER%%sbin/dnet
 %%MASTER%%lib/libdnet.a
+%%MASTER%%lib/libdnet.la
 %%MASTER%%lib/libdnet.so
 %%MASTER%%lib/libdnet.so.1
 %%MASTER%%include/dnet/addr.h

@@ -7,6 +7,7 @@ include/sdom.h
 include/shandler.h
 include/sxpath.h
 lib/libsablot.a
+lib/libsablot.la
 lib/libsablot.so
 lib/libsablot.so.%%SHLIB_MAJOR%%
 %%PORTDOCS%%%%DOCSDIR%%/DEBUGGER

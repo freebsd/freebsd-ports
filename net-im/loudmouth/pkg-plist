@@ -8,6 +8,7 @@ include/loudmouth-1.0/loudmouth/lm-ssl.h
 include/loudmouth-1.0/loudmouth/lm-utils.h
 include/loudmouth-1.0/loudmouth/loudmouth.h
 lib/libloudmouth-1.a
+lib/libloudmouth-1.la
 lib/libloudmouth-1.so
 lib/libloudmouth-1.so.0
 libdata/pkgconfig/loudmouth-1.0.pc

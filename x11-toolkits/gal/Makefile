@@ -7,7 +7,7 @@
 
 PORTNAME=	gal
 PORTVERSION=	0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.24
@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
 USE_ICONV=	yes
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -7,7 +7,7 @@
 
 PORTNAME=	roadrunner
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.codefactory.se/pub/RoadRunner/source/roadrunner/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable BEEP protocol implementation
 
 USE_GNOME=	glib20 libxml2 pkgconfig
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	lineak_xosdplugin
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
@@ -23,11 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-prefix=''
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		lineak_xosdplugin.1
-PLIST_FILES=	lib/lineakd/plugins/xosdplugin.so
+PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
+		lib/lineakd/plugins/xosdplugin.so
 
 .include <bsd.port.pre.mk>
 

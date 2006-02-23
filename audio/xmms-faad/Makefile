@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -25,7 +25,7 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOTOOLS=	automake:15 autoheader:253 autoconf:253 libtool:13:inc
+USE_AUTOTOOLS=	automake:15 autoheader:253 autoconf:253 libtool:15
 AUTOMAKE_ARGS=		--add-missing
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk12
@@ -39,7 +39,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_GTK" \
 
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
 MD5_FILE=	${PORTSDIR}/audio/faad/distinfo
-PLIST_FILES=	lib/xmms/Input/libmp4.so
+PLIST_FILES=	lib/xmms/Input/libmp4.a \
+		lib/xmms/Input/libmp4.la \
+		lib/xmms/Input/libmp4.so
 
 BUILD_WRKSRC=	${WRKSRC}/plugins/xmms/src
 INSTALL_WRKSRC=	${WRKSRC}/plugins/xmms/src
@@ -55,7 +57,7 @@ post-patch:
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
-		${WRKSRC}/aclocal.m4
+		-e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 # CFLAGS safeness
 	@${FIND} ${WRKSRC} -type f -name Makefile.am | \
 		${XARGS} -n 5 -x \

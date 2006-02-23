@@ -1,9 +1,14 @@
 bin/xchat
 bin/xchat-gnome
+%%PERL%%lib/xchat/plugins/perl.la
 %%PERL%%lib/xchat/plugins/perl.so
+%%PYTHON%%lib/xchat/plugins/python.la
 %%PYTHON%%lib/xchat/plugins/python.so
+%%TCL%%lib/xchat/plugins/tcl.la
 %%TCL%%lib/xchat/plugins/tcl.so
+lib/xchat/plugins/notification.la
 lib/xchat/plugins/notification.so
+lib/xchat/plugins/urlscraper.la
 lib/xchat/plugins/urlscraper.so
 share/applications/xchat-gnome.desktop
 share/applications/xchat.desktop

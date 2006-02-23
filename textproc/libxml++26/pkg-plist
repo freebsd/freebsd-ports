@@ -27,6 +27,7 @@ include/libxml++-%%API_VERSION%%/libxml++/parsers/textreader.h
 include/libxml++-%%API_VERSION%%/libxml++/validators/dtdvalidator.h
 include/libxml++-%%API_VERSION%%/libxml++/validators/validator.h
 lib/libxml++-%%VERSION%%.a
+lib/libxml++-%%VERSION%%.la
 lib/libxml++-%%VERSION%%.so
 lib/libxml++-%%VERSION%%.so.2
 libdata/pkgconfig/libxml++-%%API_VERSION%%.pc

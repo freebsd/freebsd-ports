@@ -9,8 +9,11 @@ include/apreq2/apreq_parser.h
 include/apreq2/apreq_util.h
 include/apreq2/apreq_version.h
 lib/libapreq2.a
+lib/libapreq2.la
 lib/libapreq2.so
 lib/libapreq2.so.7
+libexec/apache2/mod_apreq2.a
+libexec/apache2/mod_apreq2.la
 libexec/apache2/mod_apreq2.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/DummyVersions.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm

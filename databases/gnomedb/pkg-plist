@@ -34,8 +34,11 @@ include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-table-editor.h
 include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-util.h
 include/libgnomedb-%%VERSION%%/gnome-db/gnome-db-window.h
 include/libgnomedb-%%VERSION%%/gnome-db/gnome-db.h
+lib/bonobo/monikers/libdatabase_moniker.a
+lib/bonobo/monikers/libdatabase_moniker.la
 lib/bonobo/monikers/libdatabase_moniker.so
 lib/libgnomedb.a
+lib/libgnomedb.la
 lib/libgnomedb.so
 lib/libgnomedb.so.0
 share/doc/gnomedb/libgnomedb-decl.txt

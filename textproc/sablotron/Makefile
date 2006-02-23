@@ -7,6 +7,7 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
@@ -31,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBTOOL=${LIBTOOL} \
 		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 
 MAN1=	sabcmd.1

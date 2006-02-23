@@ -9,6 +9,7 @@ include/chewing/hash.h
 include/chewing/userphrase.h
 include/chewing/zuin.h
 lib/libchewing.a
+lib/libchewing.la
 lib/libchewing.so
 lib/libchewing.so.2
 libdata/pkgconfig/chewing.pc

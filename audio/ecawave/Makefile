@@ -16,11 +16,10 @@ COMMENT=	Simple graphical audio file editor
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
-GNU_CONFIGURE=	yes
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=  yes
 USE_REINPLACE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS:S/"//g}

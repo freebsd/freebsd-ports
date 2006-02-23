@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-nsf
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		http://critical.ch/distfiles/
@@ -17,14 +18,16 @@ COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 CFLAGS+=	-fPIC
 
-PLIST_FILES=	lib/xmms/Input/libnsf.so lib/xmms/Input/libnsf.la
+PLIST_FILES=	lib/xmms/Input/libnsf.a \
+		lib/xmms/Input/libnsf.la \
+		lib/xmms/Input/libnsf.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \

@@ -7,7 +7,7 @@
 
 PORTNAME=	libvisual-plugins
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libvisual
@@ -20,7 +20,7 @@ LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_XLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

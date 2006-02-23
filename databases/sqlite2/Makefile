@@ -8,7 +8,6 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.8.17
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -18,7 +17,6 @@ COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints

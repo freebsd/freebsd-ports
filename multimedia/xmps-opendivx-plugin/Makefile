@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-opendivx-plugin
 PORTVERSION=	0.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/ \
 		http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
@@ -21,12 +21,14 @@ LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-PLIST_FILES=	lib/xmps/codecs/video/libopendivx.so \
+PLIST_FILES=	lib/xmps/codecs/video/libopendivx.a \
+		lib/xmps/codecs/video/libopendivx.la \
+		lib/xmps/codecs/video/libopendivx.so \
 		lib/xmps/codecs/video/libopendivx.so.${LIB_VERSION}
 
 LIB_VERSION=	0

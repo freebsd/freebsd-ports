@@ -1,6 +1,7 @@
 include/libgksu1.2/gksu-context.h
 include/libgksu1.2/gksu.h
 lib/libgksu1.2.a
+lib/libgksu1.2.la
 lib/libgksu1.2.so
 lib/libgksu1.2.so.0
 lib/libgksu1.2/gksu-run-helper

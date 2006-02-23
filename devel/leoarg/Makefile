@@ -8,6 +8,7 @@
 
 PORTNAME=	leoarg
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://kingleo.home.pages.at/development/cpp/
 DISTNAME=	LeoArg-${PORTVERSION}
@@ -16,11 +17,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class for parsing command lines
 
 USE_GNOME=	gnometarget lthack
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFLAGS=	--disable-ltlibs --disable-static
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	include/LeoArg.hh lib/libLeoArg.so lib/libLeoArg.so.2 \
+PLIST_FILES=	include/LeoArg.hh lib/libLeoArg.a lib/libLeoArg.la \
+		lib/libLeoArg.so lib/libLeoArg.so.2 \
 		${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
 .if !defined(NOPORTDOCS)
 EXAMPLES=	Makefile demo.sh leoargmain.cpp

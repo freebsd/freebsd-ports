@@ -1,6 +1,6 @@
---- Makefile.orig	Mon May  9 15:32:45 2005
-+++ Makefile	Mon May  9 15:35:03 2005
-@@ -1,29 +1,31 @@
+--- Makefile.orig	Tue Apr 19 15:38:18 2005
++++ Makefile	Fri Feb  3 20:09:51 2006
+@@ -1,7 +1,7 @@
  ## deprecated in favour of AUTORECONF
 -#ACLOCAL = aclocal
 -#AUTOMAKE = automake --add-missing --copy
@@ -9,19 +9,16 @@
 -#AUTOCONF = autoconf
 +ACLOCAL = aclocal19
 +AUTOMAKE = automake19 --add-missing --copy
-+LIBTOOLIZE = libtoolize15 --force --copy
++LIBTOOLIZE = libtoolize --force --copy
 +AUTOHEADER = autoheader259
 +AUTOCONF = autoconf259
  #CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
- #             $(LIBTOOLIZE) && \
- #             $(AUTOHEADER) && \
- #             $(AUTOMAKE) && \
- #             $(AUTOCONF)
+@@ -12,3 +12,3 @@
  
 -AUTORECONF = autoreconf
 +AUTORECONF = autoreconf259
  BOOTSTRAP = $(AUTORECONF) --install --force
- INTL_CMD = glib-gettextize -f && intltoolize --copy --force --automake
+@@ -16,12 +16,14 @@
  
 -CONFIG_FLAGS = --prefix=/usr --sysconfdir=/etc --localstatedir=/var
 +CONFIG_FLAGS = --prefix=%%PREFIX%% --sysconfdir=%%LOCALBASE%%/etc --localstatedir=/var
@@ -42,6 +39,4 @@
 -CONFIGDIRS = $(BUILDDIRS) leif/m17n_le leif/thai_le_sun
 +CONFIGDIRS = $(BUILDDIRS)
 +#CONFIGDIRS = $(BUILDDIRS) leif/m17n_le leif/thai_le_sun
- 
- all: compile
  

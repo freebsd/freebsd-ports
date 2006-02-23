@@ -50,12 +50,15 @@ include/orbit-2.0/orbit/util/basic_types.h
 include/orbit-2.0/orbit/util/orbit-genrand.h
 include/orbit-2.0/orbit/util/orbit-util.h
 lib/libORBit-2.a
+lib/libORBit-2.la
 lib/libORBit-2.so
 lib/libORBit-2.so.0
 lib/libORBit-imodule-2.a
+lib/libORBit-imodule-2.la
 lib/libORBit-imodule-2.so
 lib/libORBit-imodule-2.so.0
 lib/libORBitCosNaming-2.a
+lib/libORBitCosNaming-2.la
 lib/libORBitCosNaming-2.so
 lib/libORBitCosNaming-2.so.0
 lib/libname-server-2.a

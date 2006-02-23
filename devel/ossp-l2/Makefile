@@ -18,7 +18,6 @@ COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN1=		l2-config.1 l2tool.1

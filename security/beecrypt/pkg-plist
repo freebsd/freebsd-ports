@@ -46,6 +46,7 @@ include/beecrypt/sha_k.h
 include/beecrypt/timestamp.h
 include/beecrypt/win.h
 lib/libbeecrypt.a
+lib/libbeecrypt.la
 lib/libbeecrypt.so
 lib/libbeecrypt.so.10
 @dirrm include/beecrypt

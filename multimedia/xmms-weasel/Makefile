@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-weasel
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +18,11 @@ COMMENT=	A XMMS plugin to hide the player
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+
+PLIST_FILES=	lib/xmms/General/libweasel.la \
+		lib/xmms/General/libweasel.so
 
 .include <bsd.port.mk>

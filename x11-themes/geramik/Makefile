@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/lib/gtk/themes/engines/libqtpixmap.so:${PORTSDIR}/x11-to
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 

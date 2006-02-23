@@ -7,6 +7,7 @@
 
 PORTNAME=	privman
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.isso.sparta.com/opensource/privman/downloads/
 
@@ -14,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that makes it easy for programs to use privilege separation
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

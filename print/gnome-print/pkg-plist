@@ -27,6 +27,7 @@ include/gnome-1.0/libgnomeprint/gnome-printer.h
 include/gnome-1.0/libgnomeprint/gnome-rfont.h
 include/gnome-1.0/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
+lib/libgnomeprint.la
 lib/libgnomeprint.so
 lib/libgnomeprint.so.16
 share/gnome/fonts/README.binaries

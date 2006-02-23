@@ -1,4 +1,5 @@
 bin/kdiff3
+lib/kde3/libkdiff3part.a
 lib/kde3/libkdiff3part.la
 lib/kde3/libkdiff3part.so
 share/applnk/Development/kdiff3.desktop

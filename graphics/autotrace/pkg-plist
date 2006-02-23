@@ -6,6 +6,7 @@ include/autotrace/input.h
 include/autotrace/output.h
 include/autotrace/types.h
 lib/libautotrace.a
+lib/libautotrace.la
 lib/libautotrace.so
 lib/libautotrace.so.3
 libdata/pkgconfig/autotrace.pc

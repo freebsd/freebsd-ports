@@ -1,0 +1,6 @@
+--- panel-plugin/Makefile.in.orig	Tue May 17 10:47:05 2005
++++ panel-plugin/Makefile.in	Sun Jan 22 13:27:40 2006
+@@ -229,3 +229,2 @@
+ libnetload_la_LIBADD = \
+-	@LIBGTOP_LIBS@							    \
+     @SOLLIBS@                                   \

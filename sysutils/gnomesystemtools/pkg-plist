@@ -3,6 +3,8 @@ bin/services-admin
 bin/shares-admin
 bin/time-admin
 bin/users-admin
+lib/nautilus/extensions-1.0/libnautilus-gst-shares.a
+lib/nautilus/extensions-1.0/libnautilus-gst-shares.la
 lib/nautilus/extensions-1.0/libnautilus-gst-shares.so
 libdata/pkgconfig/gnome-system-tools.pc
 share/gnome-system-tools/interfaces/boot.glade

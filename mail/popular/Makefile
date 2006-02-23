@@ -7,6 +7,7 @@
 
 PORTNAME=	popular
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
 
@@ -16,7 +17,7 @@ COMMENT=	Suite of programs for setting up large POP3 server systems
 BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 PDM_MODULES=	any master

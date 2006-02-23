@@ -8,6 +8,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -16,7 +17,7 @@ COMMENT=	A PDF rendering library
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-zlib \

@@ -7,6 +7,7 @@ include/punycode.h
 include/stringprep.h
 include/tld.h
 lib/libidn.a
+lib/libidn.la
 lib/libidn.so
 lib/libidn.so.16
 libdata/pkgconfig/libidn.pc

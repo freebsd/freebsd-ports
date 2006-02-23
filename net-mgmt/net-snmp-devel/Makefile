@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -30,7 +31,6 @@ USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_RC_SUBR=	yes
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	#empty
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
 .endif
@@ -211,8 +211,8 @@ post-patch: patch-autoconf patch-script-files patch-startup-files
 
 patch-autoconf:
 	@${AWK} '/@synopsis/,/taken from libtool.m4/' ${WRKSRC}/aclocal.m4 > ${WRKSRC}/aclocal.m4.tmp
-	@${CAT} ${LOCALBASE}/share/aclocal/libtool15.m4 >> ${WRKSRC}/aclocal.m4.tmp
-	@${CP} ${LOCALBASE}/share/libtool15/ltmain.sh ${WRKSRC}
+	@${CAT} ${LIBTOOL_M4} >> ${WRKSRC}/aclocal.m4.tmp
+	@${CP} ${LTMAIN} ${WRKSRC}
 	@${MV} ${WRKSRC}/aclocal.m4.tmp ${WRKSRC}/aclocal.m4
 
 patch-script-files:

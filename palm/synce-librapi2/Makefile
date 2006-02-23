@@ -21,7 +21,6 @@ MAN1=		pcp.1 pls.1 pmkdir.1 pmv.1 prm.1 prmdir.1 prun.1 pstatus.1 rapiconfig.1 s
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13
 USE_ICONV=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}

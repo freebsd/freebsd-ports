@@ -12,10 +12,14 @@ include/gnome-media/profiles/audio-profile.h
 include/gnome-media/profiles/audio-profiles-edit.h
 include/gnome-media/profiles/gnome-media-profiles.h
 lib/libcddb-slave2.a
+lib/libcddb-slave2.la
 lib/libcddb-slave2.so
 lib/libcddb-slave2.so.0
+lib/libglade/2.0/libgnome-media-profiles.a
+lib/libglade/2.0/libgnome-media-profiles.la
 lib/libglade/2.0/libgnome-media-profiles.so
 lib/libgnome-media-profiles.a
+lib/libgnome-media-profiles.la
 lib/libgnome-media-profiles.so
 lib/libgnome-media-profiles.so.0
 libdata/bonobo/servers/GNOME_Media_CDDBSlave2.server

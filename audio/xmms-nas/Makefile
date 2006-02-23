@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-nas
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 
@@ -18,8 +19,10 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	lib/xmms/Output/libnas.so
+PLIST_FILES=	lib/xmms/Output/libnas.a \
+		lib/xmms/Output/libnas.la \
+		lib/xmms/Output/libnas.so
 
 .include <bsd.port.mk>

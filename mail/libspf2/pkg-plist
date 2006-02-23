@@ -22,5 +22,6 @@ include/spf2/spf_response.h
 include/spf2/spf_server.h
 @dirrm include/spf2
 lib/libspf2.a
+lib/libspf2.la
 lib/libspf2.so
 lib/libspf2.so.2

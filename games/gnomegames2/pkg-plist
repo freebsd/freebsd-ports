@@ -18,7 +18,11 @@ bin/sol
 etc/sound/events/gnibbles.soundlist
 etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
+lib/gnome-stones/objects/libgnome-stones.a
+lib/gnome-stones/objects/libgnome-stones.la
 lib/gnome-stones/objects/libgnome-stones.so
+lib/gnome-stones/objects/libgnomekoban.a
+lib/gnome-stones/objects/libgnomekoban.la
 lib/gnome-stones/objects/libgnomekoban.so
 share/gnome/applications/blackjack.desktop
 share/gnome/applications/freecell.desktop

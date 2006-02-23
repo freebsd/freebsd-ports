@@ -44,6 +44,7 @@ include/libart-2.0/libart_lgpl/art_vpath_svp.h
 include/libart-2.0/libart_lgpl/libart-features.h
 include/libart-2.0/libart_lgpl/libart.h
 lib/libart_lgpl_2.a
+lib/libart_lgpl_2.la
 lib/libart_lgpl_2.so
 lib/libart_lgpl_2.so.5
 libdata/pkgconfig/libart-2.0.pc

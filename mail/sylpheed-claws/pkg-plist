@@ -198,7 +198,11 @@ include/sylpheed-claws/undo.h
 include/sylpheed-claws/unmime.h
 include/sylpheed-claws/vcard.h
 include/sylpheed-claws/wizard.h
+lib/sylpheed-claws/plugins/dillo_viewer.a
+lib/sylpheed-claws/plugins/dillo_viewer.la
 lib/sylpheed-claws/plugins/dillo_viewer.so
+lib/sylpheed-claws/plugins/trayicon.a
+lib/sylpheed-claws/plugins/trayicon.la
 lib/sylpheed-claws/plugins/trayicon.so
 libdata/pkgconfig/sylpheed-claws.pc
 @dirrm include/sylpheed-claws/common

@@ -7,6 +7,7 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.galgenberg.net/distfiles/:qf \
 		ftp://ftp.idsoftware.com/idstuff/quake2/source/:id \

@@ -8,6 +8,7 @@
 
 PORTNAME=	metacity
 PORTVERSION=	2.12.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -22,7 +23,7 @@ CONFLICTS=	expocity-[0-9]*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-render

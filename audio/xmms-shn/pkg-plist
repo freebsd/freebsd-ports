@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+lib/xmms/Input/libshn.la
 lib/xmms/Input/libshn.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

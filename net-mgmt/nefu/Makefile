@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --without-html \
 			--without-shelltests
 
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libtool:15
 OPTIONS=	LDAP "Enable OpenLDAP support" off
 
 MAN1=		nefu.1

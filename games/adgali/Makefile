@@ -8,6 +8,7 @@
 
 PORTNAME=	adgali
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
@@ -23,7 +24,7 @@ USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,0 +1,7 @@
+--- src/Makefile.in.orig	Sun Sep 24 16:03:46 2000
++++ src/Makefile.in	Sun Jan 22 20:12:48 2006
+@@ -88,3 +88,3 @@
+ DEFS = @DEFS@ -DBUILDING_SDLGUI_DLL
+-libSDL_gui_la_LDFLAGS = -release $(SDLGUI_VERSION)
++libSDL_gui_la_LDFLAGS = 
+ libSDL_gui_la_LIBADD = -lSDL_ttf

@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	OPTIM="${CFLAGS}"
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-float
 
 MAN1=		pfe.1

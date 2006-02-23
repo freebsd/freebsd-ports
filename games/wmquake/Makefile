@@ -13,10 +13,9 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 MAINTAINER=	q@galgenberg.net
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
 
-LIB_DEPENDS+=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk12
 
 PLIST_FILES=	bin/wmquake
 

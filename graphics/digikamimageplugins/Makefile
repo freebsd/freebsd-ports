@@ -7,6 +7,7 @@
 
 PORTNAME=	digikamimageplugins
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
@@ -17,7 +18,7 @@ COMMENT=	Collection of image editor plugins for Digikam
 LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes

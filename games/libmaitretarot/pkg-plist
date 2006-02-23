@@ -1,4 +1,5 @@
 include/maitretarot.h
 lib/libmaitretarot.a
+lib/libmaitretarot.la
 lib/libmaitretarot.so
 lib/libmaitretarot.so.0

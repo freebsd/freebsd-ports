@@ -7,6 +7,7 @@
 
 PORTNAME=	slashexec
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	guifications
@@ -19,9 +20,9 @@ BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-PLIST_FILES=	lib/gaim/se.so
+PLIST_FILES=	lib/gaim/se.la lib/gaim/se.so
 
 .include <bsd.port.mk>

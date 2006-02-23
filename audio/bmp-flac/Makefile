@@ -23,8 +23,7 @@ PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-##GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${X11BASE}"

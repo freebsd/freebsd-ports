@@ -1,6 +1,7 @@
 include/dotconf++/dotconfpp.h
 include/dotconf++/mempool.h
 lib/libdotconfpp.a
+lib/libdotconfpp.la
 lib/libdotconfpp.so
 lib/libdotconfpp.so.0
 @dirrm include/dotconf++

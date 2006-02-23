@@ -14,9 +14,11 @@ etc/esd.conf.default
 @exec [ -f %B/esd.conf ] || cp %B/%f %B/esd.conf
 include/esd.h
 lib/libesd.a
+lib/libesd.la
 lib/libesd.so
 lib/libesd.so.2
 lib/libesddsp.a
+lib/libesddsp.la
 lib/libesddsp.so
 lib/libesddsp.so.2
 libdata/pkgconfig/esound.pc

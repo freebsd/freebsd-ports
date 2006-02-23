@@ -22,7 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:213 libtool:13
+USE_AUTOTOOLS=	automake:15:env autoconf:253 libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -O -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -52,10 +52,12 @@ post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
 
+
 pre-configure:
 	@(cd ${WRKSRC} && ${ACLOCAL} && \
 	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} --add-missing && \
 	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} -i)
+	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 do-install:
 # exes

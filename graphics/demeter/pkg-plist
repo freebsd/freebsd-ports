@@ -39,21 +39,27 @@ include/Demeter/Vector.h
 include/Demeter/config.h
 @dirrm include/Demeter
 lib/libDemeter.a
+lib/libDemeter.la
 lib/libDemeter.so
 lib/libDemeter.so.0
 %%WITH_LIBXML2%%lib/libDemeterElevationLoader.a
+%%WITH_LIBXML2%%lib/libDemeterElevationLoader.la
 %%WITH_LIBXML2%%lib/libDemeterElevationLoader.so
 %%WITH_LIBXML2%%lib/libDemeterElevationLoader.so.0
 %%WITH_OSG%%lib/libDemeterOSG.a
+%%WITH_OSG%%lib/libDemeterOSG.la
 %%WITH_OSG%%lib/libDemeterOSG.so
 %%WITH_OSG%%lib/libDemeterOSG.so.0
 %%WITH_LIBXML2%%lib/libDemeterTextureLoader.a
+%%WITH_LIBXML2%%lib/libDemeterTextureLoader.la
 %%WITH_LIBXML2%%lib/libDemeterTextureLoader.so
 %%WITH_LIBXML2%%lib/libDemeterTextureLoader.so.0
 %%WITH_GDAL%%lib/libGDALElevationLoader.a
+%%WITH_GDAL%%lib/libGDALElevationLoader.la
 %%WITH_GDAL%%lib/libGDALElevationLoader.so
 %%WITH_GDAL%%lib/libGDALElevationLoader.so.0
 %%WITH_SDL%%lib/libSDLTextureLoader.a
+%%WITH_SDL%%lib/libSDLTextureLoader.la
 %%WITH_SDL%%lib/libSDLTextureLoader.so
 %%WITH_SDL%%lib/libSDLTextureLoader.so.0
 %%SAMPLE_DATA%%%%EXAMPLESDIR%%/%%SAMPLE_DATA_SUBDIR%%/Llano.terrain

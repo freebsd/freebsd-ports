@@ -1,6 +1,7 @@
 include/lrdf.h
 include/lrdf_types.h
 lib/liblrdf.a
+lib/liblrdf.la
 lib/liblrdf.so
 lib/liblrdf.so.2
 libdata/pkgconfig/lrdf.pc

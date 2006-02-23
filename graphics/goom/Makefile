@@ -7,6 +7,7 @@
 
 PORTNAME=	goom
 PORTVERSION=	2k4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15:inc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-sdltest --enable-static
@@ -38,14 +38,5 @@ pre-everything::
 	@${ECHO} "Define WITH_XMMS to build goom xmms visualization plugin"
 	@${ECHO} ""
 .endif
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 .include <bsd.port.mk>

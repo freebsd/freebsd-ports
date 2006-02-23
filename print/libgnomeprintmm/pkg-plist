@@ -14,6 +14,7 @@ include/libgnomeprintmm-%%API_VERSION%%/libgnomeprintmm/private/job_p.h
 include/libgnomeprintmm-%%API_VERSION%%/libgnomeprintmm/types.h
 include/libgnomeprintmm-%%API_VERSION%%/libgnomeprintmm/wrap_init.h
 lib/libgnomeprintmm-%%VERSION%%.a
+lib/libgnomeprintmm-%%VERSION%%.la
 lib/libgnomeprintmm-%%VERSION%%.so
 lib/libgnomeprintmm-%%VERSION%%.so.2
 lib/libgnomeprintmm-%%API_VERSION%%/include/libgnomeprintmmconfig.h

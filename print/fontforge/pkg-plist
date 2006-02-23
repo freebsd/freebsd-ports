@@ -1,10 +1,8 @@
 bin/fontforge
 bin/sfddiff
-lib/libgdraw.a
 lib/libgdraw.la
 lib/libgdraw.so
 lib/libgdraw.so.1
-lib/libgunicode.a
 lib/libgunicode.la
 lib/libgunicode.so
 lib/libgunicode.so.2

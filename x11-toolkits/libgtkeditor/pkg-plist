@@ -13,6 +13,7 @@ lib/gtkeditor/perl-scanner.so
 lib/gtkeditor/scheme-scanner.so
 lib/gtkeditor/sml-scanner.so
 lib/libgtkeditor.a
+lib/libgtkeditor.la
 lib/libgtkeditor.so
 lib/libgtkeditor.so.0
 @dirrm lib/gtkeditor

@@ -19,5 +19,6 @@ include/id3/writers.h
 lib/libid3-3.8.so
 lib/libid3-3.8.so.3
 lib/libid3.a
+lib/libid3.la
 lib/libid3.so
 @dirrm include/id3

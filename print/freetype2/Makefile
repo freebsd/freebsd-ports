@@ -7,7 +7,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP=""
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_REINPLACE=	yes
 LIBTOOLFILES=	builds/unix/configure

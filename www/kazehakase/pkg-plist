@@ -9,7 +9,7 @@ etc/kazehakase/kzrc
 etc/kazehakase/mozilla/encodings.xml
 etc/kazehakase/proxyrc
 etc/kazehakase/smartbookmarks.xml
-lib/libkazehakase.a
+lib/libkazehakase.la
 lib/libkazehakase.so
 lib/libkazehakase.so.0
 share/gnome/applications/kazehakase.desktop

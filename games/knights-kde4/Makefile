@@ -17,10 +17,10 @@ COMMENT=	A KDE chess interface (gnuchess/crafty)
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	XML2POT=${TRUE} PO2XML=${TRUE}
 
 post-patch:

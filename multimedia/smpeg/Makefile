@@ -7,7 +7,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
 		${MASTER_SITE_GENTOO}
@@ -19,7 +19,7 @@ COMMENT=	A free MPEG1 video player library with sound support
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	GLBASE="${X11BASE}" \

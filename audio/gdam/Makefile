@@ -7,7 +7,7 @@
 
 PORTNAME=	gdam
 PORTVERSION=	0.942
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,11 +23,11 @@ MAN1=		gdamcli.1 gdamladspapluginscanner.1 gdam123.1 gdam-launcher.1 gdam-server
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lglib -lgtk|-lglib12 -lgtk12|' ${WRKSRC}/skin/foreign/xmmsvis/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lglib -lgtk|-lglib-12 -lgtk-12|' ${WRKSRC}/skin/foreign/xmmsvis/Makefile.in
 
 .include <bsd.port.mk>

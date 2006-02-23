@@ -7,7 +7,7 @@
 
 PORTNAME=	OpenSP
 PORTVERSION=	1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openjade
@@ -19,7 +19,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_ICONV=	yes
 USE_REINPLACE=	YES
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade

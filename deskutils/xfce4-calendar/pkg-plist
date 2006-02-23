@@ -1,4 +1,6 @@
 bin/xfcalendar
+lib/xfce4/mcs-plugins/xfcalendar_plugin.a
+lib/xfce4/mcs-plugins/xfcalendar_plugin.la
 lib/xfce4/mcs-plugins/xfcalendar_plugin.so
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop

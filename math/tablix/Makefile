@@ -7,6 +7,7 @@
 
 PORTNAME=	tablix2
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	math www
 MASTER_SITES=	http://www.tablix.org/releases/stable/
 
@@ -18,10 +19,9 @@ RUN_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 
 PVM_ROOT=	${PREFIX}/lib/pvm
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

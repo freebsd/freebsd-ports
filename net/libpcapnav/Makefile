@@ -15,7 +15,7 @@ MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	A libpcap wrapper library
 
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

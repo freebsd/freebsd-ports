@@ -1,2 +1,4 @@
+lib/xfce4/panel-plugins/libgenmon.a
+lib/xfce4/panel-plugins/libgenmon.la
 lib/xfce4/panel-plugins/libgenmon.so
 @dirrmtry lib/xfce4/panel-plugins

@@ -1,5 +1,6 @@
 include/gtkdatabox.h
 include/gtkdataboxmarshal.h
+lib/libgtkdatabox-0.2.4.so
 lib/libgtkdatabox-0.2.4.so.5
 lib/libgtkdatabox.a
 lib/libgtkdatabox.la

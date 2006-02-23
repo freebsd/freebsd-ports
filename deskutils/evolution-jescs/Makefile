@@ -8,6 +8,7 @@
 
 PORTNAME=	jescs
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PKGNAMEPREFIX}${PORTNAME}/2.4
@@ -25,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

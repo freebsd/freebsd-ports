@@ -65,6 +65,8 @@ include/libcwd/smart_ptr.h
 include/libcwd/strerrno.h
 include/libcwd/struct_debug_tsd.h
 include/libcwd/type_info.h
+lib/libcwd.a
+lib/libcwd.la
 lib/libcwd.so.99
 lib/libcwd.so
 libdata/pkgconfig/libcwd.pc

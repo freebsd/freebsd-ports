@@ -17,6 +17,7 @@ include/gnet-2.0/unix.h
 include/gnet-2.0/uri.h
 lib/gnet-2.0/include/gnetconfig.h
 lib/libgnet-2.0.a
+lib/libgnet-2.0.la
 lib/libgnet-2.0.so
 lib/libgnet-2.0.so.0
 libdata/pkgconfig/gnet-2.0.pc

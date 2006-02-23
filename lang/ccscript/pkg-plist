@@ -1,6 +1,7 @@
 bin/ccscript
 include/cc++2/cc++/script.h
 lib/libccscript2.a
+lib/libccscript2.la
 lib/libccscript2.so
 lib/libccscript2-0.6.so
 lib/libccscript2-0.6.so.3

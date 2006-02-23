@@ -7,6 +7,7 @@
 
 PORTNAME=	freeipmi
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
 
@@ -20,7 +21,6 @@ LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

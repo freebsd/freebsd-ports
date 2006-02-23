@@ -1,5 +1,9 @@
 bin/scim-make-table
+lib/scim-1.0/IMEngine/table.a
+lib/scim-1.0/IMEngine/table.la
 lib/scim-1.0/IMEngine/table.so
+lib/scim-1.0/SetupUI/table-imengine-setup.a
+lib/scim-1.0/SetupUI/table-imengine-setup.la
 lib/scim-1.0/SetupUI/table-imengine-setup.so
 share/scim/icons/table.png
 share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
@@ -11,6 +15,7 @@ share/locale/fr/LC_MESSAGES/scim-tables.mo
 share/locale/it/LC_MESSAGES/scim-tables.mo
 share/locale/pa/LC_MESSAGES/scim-tables.mo
 %%SKIM%%@cwd %%LOCALBASE%%
+%%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.a
 %%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.la
 %%SKIM%%lib/kde3/kcm_skimplugin_scim_tables.so
 %%SKIM%%share/services/skimconfiguredialog/skimplugin_scim_table_config.desktop

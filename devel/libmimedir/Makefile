@@ -15,7 +15,6 @@ COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:13
 USE_BISON=	yes
 
 INSTALLS_SHLIB=	yes

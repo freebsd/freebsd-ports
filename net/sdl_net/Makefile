@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_net
 PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
@@ -18,8 +18,7 @@ COMMENT=	A small sample cross-platform networking library
 USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-configure:

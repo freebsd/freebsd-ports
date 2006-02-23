@@ -1,14 +1,5 @@
 --- beecrypt/configure.orig	Wed Feb 13 16:03:22 2002
 +++ beecrypt/configure	Thu Mar  4 14:49:35 2004
-@@ -5473,7 +5473,7 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='%%LOCALBASE%%/bin/libtool13'
- 
- # Prevent multiple expansion
- 
 @@ -6914,7 +6914,7 @@
    fi
  else

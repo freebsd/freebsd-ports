@@ -8,6 +8,7 @@ bin/edje_test
 bin/edje_thumb
 include/Edje.h
 lib/libedje.a
+lib/libedje.la
 lib/libedje.so
 lib/libedje.so.5
 libdata/pkgconfig/edje.pc

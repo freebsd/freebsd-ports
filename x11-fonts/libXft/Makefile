@@ -7,6 +7,7 @@
 
 PORTNAME=	libXft
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
@@ -20,7 +21,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 

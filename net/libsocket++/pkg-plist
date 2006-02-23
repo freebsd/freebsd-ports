@@ -1,4 +1,5 @@
 lib/libsocket++.a
+lib/libsocket++.la
 lib/libsocket++.so.1
 lib/libsocket++.so
 include/socket++/fork.h

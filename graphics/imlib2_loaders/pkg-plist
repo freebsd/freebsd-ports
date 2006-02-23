@@ -1,5 +1,15 @@
+lib/imlib2/loaders/ani.a
+lib/imlib2/loaders/ani.la
 lib/imlib2/loaders/ani.so
+lib/imlib2/loaders/db.a
+lib/imlib2/loaders/db.la
 lib/imlib2/loaders/db.so
+lib/imlib2/loaders/eet.a
+lib/imlib2/loaders/eet.la
 lib/imlib2/loaders/eet.so
+lib/imlib2/loaders/ico.a
+lib/imlib2/loaders/ico.la
 lib/imlib2/loaders/ico.so
+lib/imlib2/loaders/xcf.a
+lib/imlib2/loaders/xcf.la
 lib/imlib2/loaders/xcf.so

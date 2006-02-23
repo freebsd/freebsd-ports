@@ -6,11 +6,11 @@
  
 -        AC_CHECK_LIB(gtk, gtk_widget_new,
 -                X_LIBS="$X_LIBS -lgtk -lgdk -lglib $x_libs -lm",
-+        AC_CHECK_LIB(gtk12, gtk_widget_new,
-+                X_LIBS="$X_LIBS -lgtk12 -lgdk12 -lglib12 $x_libs -lm",
++        AC_CHECK_LIB(gtk-12, gtk_widget_new,
++                X_LIBS="$X_LIBS -lgtk-12 -lgdk-12 -lglib-12 $x_libs -lm",
                  [AC_MSG_ERROR(Can not link with gtk/gdk/glib)],
 -                -lgdk -lglib $x_libs -lm)
-+                -lgdk12 -lglib12 $x_libs -lm)
++                -lgdk-12 -lglib-12 $x_libs -lm)
  
          CFLAGS="$saved_cflags"
          LDFLAGS="$saved_ldflags"

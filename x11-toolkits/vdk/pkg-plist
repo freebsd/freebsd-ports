@@ -96,6 +96,7 @@ include/vdk2/vdk/vdktypes.h
 include/vdk2/vdk/vdkutils.h
 include/vdk2/vdk/widcontain.h
 lib/libvdk.a
+lib/libvdk.la
 lib/libvdk.so
 lib/libvdk.so.6
 libdata/pkgconfig/vdk-2.x.pc

@@ -31,5 +31,6 @@ include/ldns/wire2host.h
 include/ldns/zone.h
 lib/libldns-1.0.1.so
 lib/libldns.a
+lib/libldns.la
 lib/libldns.so
 @dirrm include/ldns

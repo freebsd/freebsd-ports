@@ -25,17 +25,22 @@ include/gettext-po.h
 include/libintl.h
 @exec /bin/mkdir -p %D/lib/gettext
 lib/libasprintf.a
+lib/libasprintf.la
 lib/libasprintf.so
 lib/libasprintf.so.0
 lib/libgettextlib-%%VERSION%%.so
 lib/libgettextlib.a
+lib/libgettextlib.la
 lib/libgettextlib.so
 lib/libgettextpo.a
+lib/libgettextpo.la
 lib/libgettextpo.so
 lib/libgettextpo.so.1
+lib/libgettextsrc.la
 lib/libgettextsrc-%%VERSION%%.so
 lib/libgettextsrc.so
 lib/libintl.a
+lib/libintl.la
 lib/libintl.so
 lib/libintl.so.6
 libdata/gettext-tools/hostname

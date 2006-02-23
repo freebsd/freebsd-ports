@@ -2,6 +2,7 @@ bin/prepsdb_tool
 include/preps/sendmsg.h
 include/preps/version.h
 lib/libpreps.a
+lib/libpreps.la
 lib/libpreps.so
 lib/libpreps.so.2
 %%DATADIR%%/assign.msg

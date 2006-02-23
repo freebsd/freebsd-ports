@@ -1,30 +1,27 @@
 @comment $FreeBSD$
-bin/libtool%%BUILD_VERSION%%
-bin/libtoolize%%BUILD_VERSION%%
-libexec/libtool%%BUILD_VERSION%%/libtool
-libexec/libtool%%BUILD_VERSION%%/libtoolize
-share/aclocal/libtool%%BUILD_VERSION%%.m4
-share/aclocal/ltdl%%BUILD_VERSION%%.m4
-share/libtool%%BUILD_VERSION%%/config.guess
-share/libtool%%BUILD_VERSION%%/config.sub
-share/libtool%%BUILD_VERSION%%/install-sh
-share/libtool%%BUILD_VERSION%%/libltdl/COPYING.LIB
-share/libtool%%BUILD_VERSION%%/libltdl/Makefile.am
-share/libtool%%BUILD_VERSION%%/libltdl/Makefile.in
-share/libtool%%BUILD_VERSION%%/libltdl/README
-share/libtool%%BUILD_VERSION%%/libltdl/acinclude.m4
-share/libtool%%BUILD_VERSION%%/libltdl/aclocal.m4
-share/libtool%%BUILD_VERSION%%/libltdl/config-h.in
-share/libtool%%BUILD_VERSION%%/libltdl/config.guess
-share/libtool%%BUILD_VERSION%%/libltdl/config.sub
-share/libtool%%BUILD_VERSION%%/libltdl/configure
-share/libtool%%BUILD_VERSION%%/libltdl/configure.ac
-share/libtool%%BUILD_VERSION%%/libltdl/install-sh
-share/libtool%%BUILD_VERSION%%/libltdl/ltdl.c
-share/libtool%%BUILD_VERSION%%/libltdl/ltdl.h
-share/libtool%%BUILD_VERSION%%/libltdl/ltmain.sh
-share/libtool%%BUILD_VERSION%%/libltdl/missing
-share/libtool%%BUILD_VERSION%%/ltmain.sh
-@dirrm share/libtool%%BUILD_VERSION%%/libltdl
-@dirrm share/libtool%%BUILD_VERSION%%
-@dirrm libexec/libtool%%BUILD_VERSION%%
+bin/libtool
+bin/libtoolize
+share/aclocal/libtool.m4
+share/aclocal/ltdl.m4
+share/libtool/config.guess
+share/libtool/config.sub
+share/libtool/install-sh
+share/libtool/libltdl/COPYING.LIB
+share/libtool/libltdl/Makefile.am
+share/libtool/libltdl/Makefile.in
+share/libtool/libltdl/README
+share/libtool/libltdl/acinclude.m4
+share/libtool/libltdl/aclocal.m4
+share/libtool/libltdl/config-h.in
+share/libtool/libltdl/config.guess
+share/libtool/libltdl/config.sub
+share/libtool/libltdl/configure
+share/libtool/libltdl/configure.ac
+share/libtool/libltdl/install-sh
+share/libtool/libltdl/ltdl.c
+share/libtool/libltdl/ltdl.h
+share/libtool/libltdl/ltmain.sh
+share/libtool/libltdl/missing
+share/libtool/ltmain.sh
+@dirrm share/libtool/libltdl
+@dirrm share/libtool

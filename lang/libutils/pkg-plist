@@ -3,6 +3,7 @@ include/gfnmatch.h
 include/lists.h
 include/util.h
 lib/libutils.a
+lib/libutils.la
 lib/libutils.so
 lib/libutils.so.1
 share/aclocal/libutils.m4

@@ -119,6 +119,7 @@ include/libetpan/pop3driver_types.h
 include/libetpan/pop3storage.h
 include/libetpan.h
 lib/libetpan.a
+lib/libetpan.la
 lib/libetpan.so
 lib/libetpan.so.6
 @dirrm include/libetpan

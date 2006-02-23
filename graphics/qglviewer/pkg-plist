@@ -42,6 +42,7 @@ include/qglviewer/QSceneTreeRenderer.h
 include/qglviewer/QStereoCtrl.h
 include/qglviewer/QToggleButton.h
 lib/libqglviewer.a
+lib/libqglviewer.la
 lib/libqglviewer.so
 lib/libqglviewer.so.4
 %%PORTDOCS%%share/doc/qglviewer/AUTHORS

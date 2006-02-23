@@ -6,7 +6,7 @@
 
 PORTNAME=	kbirthday
 PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 		http://freshmeat.net/redir/kbirthday/32531/url_tgz/
@@ -14,12 +14,11 @@ MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	KDE kicker-applet that reminds you of birthdays and anniversaries
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 # may or may not solve the alpha compilation issue....
 CONFIGURE_ARGS=	--with-pic
 

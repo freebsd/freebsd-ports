@@ -7,6 +7,7 @@
 
 PORTNAME=	libstrfunc
 PORTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,6 @@ COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
 
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN3=	\

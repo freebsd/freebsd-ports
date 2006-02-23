@@ -16,6 +16,7 @@ include/clamav.h
 lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.a
+lib/libclamav.la
 libdata/pkgconfig/libclamav.pc
 @unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
 etc/clamd.conf.default

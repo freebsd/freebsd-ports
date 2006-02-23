@@ -9,6 +9,7 @@ include/gnl/gnltimeline.h
 include/gnl/gnltypes.h
 include/gnl/gnlversion.h
 lib/gstreamer-0.8/libgnl.a
+lib/gstreamer-0.8/libgnl.la
 lib/gstreamer-0.8/libgnl.so
 lib/gstreamer-0.8/libgnl.so.0
 libdata/pkgconfig/gnonlin.pc

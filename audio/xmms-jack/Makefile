@@ -6,6 +6,7 @@
 
 PORTNAME=	jack
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-jack
@@ -23,10 +24,12 @@ WRKSRC=		${WRKDIR}/xmms-jack
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-PLIST_FILES=	lib/xmms/Output/libjackout.so
+PLIST_FILES=	lib/xmms/Output/libjackout.a \
+		lib/xmms/Output/libjackout.la \
+		lib/xmms/Output/libjackout.so
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

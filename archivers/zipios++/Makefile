@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 # port don't strictly need it, but Wesnoth use it so must we
 USE_GCC=	3.4
-USE_AUTOTOOLS=	automake:19:env libtool:15:inc
+USE_AUTOTOOLS=	automake:19:env
 CONFIGURE_ARGS+=--disable-static
 USE_REINPLACE=	yes
 

@@ -28,7 +28,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:13
+USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 LIBTOOL_VARS=	--force --automake
 
@@ -52,6 +52,7 @@ IGNORE=	does not compile on FreeBSD 4.x (missing swprintf in libc)
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
+	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 post-patch:
 	@${REINPLACE_CMD} "s#\$$(DESTDIR)\$$(htmldir)#${DOCSDIR}/html#" ${WRKSRC}/docs/Makefile.am

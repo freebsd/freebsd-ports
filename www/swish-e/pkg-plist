@@ -3,6 +3,7 @@ bin/swish-e
 bin/swish-filter-test
 include/swish-e.h
 lib/libswish-e.a
+lib/libswish-e.la
 lib/libswish-e.so
 lib/libswish-e.so.2
 lib/swish-e/perl/SWISH/Filters/Doc2txt.pm

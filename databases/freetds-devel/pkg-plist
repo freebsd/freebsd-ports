@@ -22,19 +22,23 @@ include/tdsconvert.h
 include/tdssrv.h
 include/tdsver.h
 lib/libct.a
+lib/libct.la
 lib/libct.so
 lib/libct.so.3
 lib/libsybdb.a
+lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
 lib/libtds.a
+lib/libtds.la
 lib/libtds.so
 lib/libtds.so.4
 lib/libtdssrv.a
+lib/libtdssrv.la
 lib/libtdssrv.so
 lib/libtdssrv.so.2
-%%ODBC%%lib/libtdsodbc.so.0
 %%ODBC%%lib/libtdsodbc.so
+%%ODBC%%lib/libtdsodbc.so.0
 @comment %%ODBC%%lib/libtdsodbc.a
 %%PORTDOCS%%%%DOCSDIR%%/userguide/gfdl-11.htm
 %%PORTDOCS%%%%DOCSDIR%%/userguide/index.htm

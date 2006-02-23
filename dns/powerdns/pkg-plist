@@ -2,15 +2,19 @@ bin/pdns_control
 bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
+%%WITHMYSQL%%lib/libgmysqlbackend.a
 %%WITHMYSQL%%lib/libgmysqlbackend.so
 %%WITHMYSQL%%lib/libgmysqlbackend.so.0
+%%WITHSQLLITE%%lib/libgsqlitebackend.a
 %%WITHSQLLITE%%lib/libgsqlitebackend.so
 %%WITHSQLLITE%%lib/libgsqlitebackend.so.0
+%%WITHLDAP%%lib/libldapbackend.a
 %%WITHLDAP%%lib/libldapbackend.so
 %%WITHLDAP%%lib/libldapbackend.so.0
-%%WITHLDAP%%lib/libldapbackend.a
-lib/libpipebackend.so.0
+lib/libpipebackend.a
+lib/libpipebackend.la
 lib/libpipebackend.so
+lib/libpipebackend.so.0
 %%RECURSOR%%sbin/pdns_recursor
 @unexec if cmp -s %D/etc/pdns.conf %D/etc/pdns.conf-dist; then rm -f %D/etc/pdns.conf; fi
 etc/pdns.conf-dist

@@ -140,8 +140,11 @@ include/libecasound/two-stage-linear-envelope.h
 include/libecasoundc/eca-control-interface.h
 include/libecasoundc/ecasoundc.h
 lib/libecasound.a
+lib/libecasound.la
 lib/libecasoundc.a
+lib/libecasoundc.la
 lib/libkvutils.a
+lib/libkvutils.la
 %%DATADIR%%/ecasound.el
 %%DATADIR%%/ecasoundrc
 %%DATADIR%%/effect_presets

@@ -17,7 +17,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--with-kde
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_KDELIBS_VER=	3

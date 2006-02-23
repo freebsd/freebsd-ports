@@ -39,7 +39,7 @@ RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 .else
 MAKE_ARGS+=	NO_GUI=yes
 .endif
-USE_AUTOTOOLS=	autoconf:213 libtool:13
+USE_AUTOTOOLS=	autoconf:213 libtool:15
 .if defined(NO_AUTOKEY) && defined(PACKAGE_BUILDING)
 INGORE =	"cannot be build in batch mode whithout automated DES key generation"
 .endif

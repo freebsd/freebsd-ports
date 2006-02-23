@@ -182,6 +182,7 @@ include/jakelib2/win32config.h
 @dirrm include/jakelib2/util
 @dirrm include/jakelib2
 lib/libjake2.a
+lib/libjake2.la
 lib/libjake2.so
 lib/libjake2.so.1
 share/aclocal/jakelib2.m4

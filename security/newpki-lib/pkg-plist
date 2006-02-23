@@ -48,6 +48,7 @@ include/newpki/mString.h
 include/newpki/mVector.h
 include/newpki/newpki_threads.h
 lib/libnewpki.a
+lib/libnewpki.la
 lib/libnewpki.so
 lib/libnewpki.so.2
 %%NLS%%share/locale/fr/LC_MESSAGES/newpki-lib.mo

@@ -1,3 +1,5 @@
+lib/nautilus/extensions-1.0/libnautilus-open-terminal.a
+lib/nautilus/extensions-1.0/libnautilus-open-terminal.la
 lib/nautilus/extensions-1.0/libnautilus-open-terminal.so
 share/locale/bg/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ca/LC_MESSAGES/nautilus-open-terminal.mo

@@ -17,6 +17,7 @@ include/see/try.h
 include/see/type.h
 include/see/value.h
 lib/libsee.a
+lib/libsee.la
 lib/libsee.so
 lib/libsee.so.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

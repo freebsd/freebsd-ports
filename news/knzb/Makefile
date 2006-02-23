@@ -18,12 +18,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/uudeview:${PORTSDIR}/converters/uudeview
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/knzb
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_QT_VER=	3
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f

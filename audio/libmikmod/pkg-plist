@@ -1,6 +1,7 @@
 bin/libmikmod-config
 include/mikmod.h
 lib/libmikmod.a
+lib/libmikmod.la
 lib/libmikmod.so
 lib/libmikmod.so.2
 share/aclocal/libmikmod.m4

@@ -7,7 +7,6 @@
 
 PORTNAME=	eris
 PORTVERSION=	1.3.9
-PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	worldforge
@@ -20,7 +19,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		wfmath-0.3.3:${PORTSDIR}/math/wfmath \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack

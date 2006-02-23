@@ -20,11 +20,9 @@ WRKSRC=		${WRKDIR}/binutils-CVS/src
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --with-gnu-ld --with-gnu-as \
 		--with-gcc --without-x11
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
-		gas/configure gprof/configure ld/configure opcodes/configure
 MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
 		${PKGNAMEPREFIX}objdump.1 \
 		${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}size.1 \

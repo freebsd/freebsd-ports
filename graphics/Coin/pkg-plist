@@ -675,7 +675,7 @@ include/Inventor/threads/SbThreadAutoLock.h
 include/Inventor/threads/SbTypedStorage.h
 include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
-lib/libCoin.a
+lib/libCoin.la
 lib/libCoin.so
 lib/libCoin.so.44
 %%DATADIR%%/conf/coin-default.cfg

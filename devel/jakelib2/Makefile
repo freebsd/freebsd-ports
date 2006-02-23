@@ -8,6 +8,7 @@
 
 PORTNAME=	jakelib2
 PORTVERSION=	2.0.0.s
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jakelib.org/lib/jakelib2/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
@@ -17,7 +18,6 @@ COMMENT=	A cross platform C++ class library with a Java-like API
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

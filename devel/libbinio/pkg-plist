@@ -4,6 +4,7 @@ include/libbinio/binstr.h
 include/libbinio/binwrap.h
 @dirrm include/libbinio
 lib/libbinio.a
+lib/libbinio.la
 lib/libbinio.so
 lib/libbinio.so.1
 libdata/pkgconfig/libbinio.pc

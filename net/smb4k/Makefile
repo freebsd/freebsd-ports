@@ -7,6 +7,7 @@
 
 PORTNAME=		smb4k
 PORTVERSION=		0.6.4
+PORTREVISION=	1
 CATEGORIES=		net kde
 MASTER_SITES=		http://download.berlios.de/smb4k/
 
@@ -19,14 +20,13 @@ RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
 USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
 DOCSDIR=		share/doc/HTML/en/${PORTNAME}
 PLIST_SUB=		DOCSDIR=${DOCSDIR}
 
-USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.pre.mk>

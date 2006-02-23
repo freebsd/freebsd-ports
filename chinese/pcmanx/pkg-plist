@@ -1,5 +1,5 @@
 bin/pcmanx
-lib/libpcmanx_core.a
+lib/libpcmanx_core.la
 lib/libpcmanx_core.so
 lib/libpcmanx_core.so.0
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo

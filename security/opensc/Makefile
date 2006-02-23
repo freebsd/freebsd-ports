@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/opensc/
 
@@ -17,7 +18,6 @@ USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

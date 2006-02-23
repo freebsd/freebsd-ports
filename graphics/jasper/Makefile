@@ -7,6 +7,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.701.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -19,8 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
-USE_AUTOTOOLS=	libtool:15
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --enable-static

@@ -24,8 +24,7 @@ USE_GNOME=	gnomehack gnometarget gtk20 lthack
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
-LIBTOOLFLAGS=	# none
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-ipv6
 

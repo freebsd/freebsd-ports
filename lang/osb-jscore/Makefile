@@ -17,7 +17,7 @@ COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
 BROKEN=		Does not build
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes

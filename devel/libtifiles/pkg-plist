@@ -21,6 +21,7 @@ include/tilp/types92p.h
 include/tilp/typesv2.h
 include/tilp/typesxx.h
 lib/libtifiles.a
+lib/libtifiles.la
 lib/libtifiles.so
 lib/libtifiles.so.6
 libdata/pkgconfig/tifiles.pc

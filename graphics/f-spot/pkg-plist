@@ -3,12 +3,15 @@ lib/f-spot/SemWeb.dll
 lib/f-spot/f-spot.exe
 lib/f-spot/f-spot.exe.config
 lib/f-spot/libfspot.a
+lib/f-spot/libfspot.la
 lib/f-spot/libfspot.so
 lib/f-spot/libfspot.so.0
 lib/f-spot/libfspoteog.a
+lib/f-spot/libfspoteog.la
 lib/f-spot/libfspoteog.so
 lib/f-spot/libfspoteog.so.0
 lib/f-spot/libfspotjpegtran.a
+lib/f-spot/libfspotjpegtran.la
 lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libfspotjpegtran.so.0
 lib/f-spot/libgphoto2-sharp.dll

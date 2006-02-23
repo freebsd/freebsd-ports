@@ -7,7 +7,7 @@
 
 PORTNAME=	iiimf-le-xcin
 PORTVERSION=	0.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
 EXTRACT_SUFX=	-11.src.rpm

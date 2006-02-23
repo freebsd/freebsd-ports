@@ -7,6 +7,7 @@
 
 PORTNAME=	ccaudio
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
@@ -18,7 +19,7 @@ LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes
@@ -34,8 +35,5 @@ post-patch:
 		's|<stdint\.h>|<stdlib.h>|g' ${WRKSRC}/src/dtmf.cpp
 	@${REINPLACE_CMD} -e \
 		's|@CXXFLAGS@|& $$(g_711_CXXFLAGS)|' ${WRKSRC}/dso/Makefile.in
-
-pre-configure:
-	@${CP} ${LTMAIN} ${WRKSRC}/config
 
 .include <bsd.port.post.mk>

@@ -297,6 +297,7 @@ lib/gdesklets/libdesklets/system/Swap.pyo
 lib/gdesklets/libdesklets/system/__init__.py
 lib/gdesklets/libdesklets/system/__init__.pyc
 lib/gdesklets/libdesklets/system/__init__.pyo
+lib/gdesklets/libdesklets/system/gtop.la
 lib/gdesklets/libdesklets/system/gtop.so
 lib/gdesklets/main/AboutDialog.py
 lib/gdesklets/main/AboutDialog.pyc
@@ -532,8 +533,11 @@ lib/gdesklets/utils/logger.pyo
 lib/gdesklets/utils/pwstore.py
 lib/gdesklets/utils/pwstore.pyc
 lib/gdesklets/utils/pwstore.pyo
+lib/gdesklets/utils/svg.la
 lib/gdesklets/utils/svg.so
+lib/gdesklets/utils/systray.la
 lib/gdesklets/utils/systray.so
+lib/gdesklets/utils/tiling.la
 lib/gdesklets/utils/tiling.so
 lib/gdesklets/utils/typeconverter.py
 lib/gdesklets/utils/typeconverter.pyc
@@ -544,6 +548,7 @@ lib/gdesklets/utils/vfs.pyo
 lib/gdesklets/utils/wallpaper.py
 lib/gdesklets/utils/wallpaper.pyc
 lib/gdesklets/utils/wallpaper.pyo
+lib/gdesklets/utils/x11.la
 lib/gdesklets/utils/x11.so
 lib/gdesklets/utils/xdr.py
 lib/gdesklets/utils/xdr.pyc

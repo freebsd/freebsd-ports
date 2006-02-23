@@ -15,7 +15,7 @@ MAINTAINER=	hank@millerfarm.com
 COMMENT=	Recipe database for cooks
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 OPTIONS=	SQLITE "Support for SQLite backend" on \

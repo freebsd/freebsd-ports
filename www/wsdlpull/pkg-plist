@@ -32,12 +32,15 @@ include/wsdl/xmlpull/XmlPullParserException.h
 include/wsdl/xmlpull/XmlSerializer.h
 include/wsdl/xmlpull/XmlUtils.h
 lib/libschema.a
+lib/libschema.la
 lib/libschema.so
 lib/libschema.so.0
 lib/libwsdl.a
+lib/libwsdl.la
 lib/libwsdl.so
 lib/libwsdl.so.0
 lib/libxmlpull.a
+lib/libxmlpull.la
 lib/libxmlpull.so
 lib/libxmlpull.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

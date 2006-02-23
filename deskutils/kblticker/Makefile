@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		mich@FreeBSD.org
 COMMENT=		KDE bloglines notifier
 
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_GMAKE=		yes
 USE_KDELIBS_VER=	3
 

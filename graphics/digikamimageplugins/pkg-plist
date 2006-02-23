@@ -1,59 +1,88 @@
+lib/kde3/digikamimageplugin_adjustcurves.a
 lib/kde3/digikamimageplugin_adjustcurves.la
 lib/kde3/digikamimageplugin_adjustcurves.so
+lib/kde3/digikamimageplugin_adjustlevels.a
 lib/kde3/digikamimageplugin_adjustlevels.la
 lib/kde3/digikamimageplugin_adjustlevels.so
+lib/kde3/digikamimageplugin_antivignetting.a
 lib/kde3/digikamimageplugin_antivignetting.la
 lib/kde3/digikamimageplugin_antivignetting.so
+lib/kde3/digikamimageplugin_blowup.a
 lib/kde3/digikamimageplugin_blowup.la
 lib/kde3/digikamimageplugin_blowup.so
+lib/kde3/digikamimageplugin_blurfx.a
 lib/kde3/digikamimageplugin_blurfx.la
 lib/kde3/digikamimageplugin_blurfx.so
+lib/kde3/digikamimageplugin_border.a
 lib/kde3/digikamimageplugin_border.la
 lib/kde3/digikamimageplugin_border.so
+lib/kde3/digikamimageplugin_channelmixer.a
 lib/kde3/digikamimageplugin_channelmixer.la
 lib/kde3/digikamimageplugin_channelmixer.so
+lib/kde3/digikamimageplugin_charcoal.a
 lib/kde3/digikamimageplugin_charcoal.la
 lib/kde3/digikamimageplugin_charcoal.so
+lib/kde3/digikamimageplugin_despeckle.a
 lib/kde3/digikamimageplugin_despeckle.la
 lib/kde3/digikamimageplugin_despeckle.so
+lib/kde3/digikamimageplugin_distortionfx.a
 lib/kde3/digikamimageplugin_distortionfx.la
 lib/kde3/digikamimageplugin_distortionfx.so
+lib/kde3/digikamimageplugin_emboss.a
 lib/kde3/digikamimageplugin_emboss.la
 lib/kde3/digikamimageplugin_emboss.so
+lib/kde3/digikamimageplugin_filmgrain.a
 lib/kde3/digikamimageplugin_filmgrain.la
 lib/kde3/digikamimageplugin_filmgrain.so
+lib/kde3/digikamimageplugin_freerotation.a
 lib/kde3/digikamimageplugin_freerotation.la
 lib/kde3/digikamimageplugin_freerotation.so
+lib/kde3/digikamimageplugin_hotpixels.a
 lib/kde3/digikamimageplugin_hotpixels.la
 lib/kde3/digikamimageplugin_hotpixels.so
+lib/kde3/digikamimageplugin_infrared.a
 lib/kde3/digikamimageplugin_infrared.la
 lib/kde3/digikamimageplugin_infrared.so
+lib/kde3/digikamimageplugin_inpainting.a
 lib/kde3/digikamimageplugin_inpainting.la
 lib/kde3/digikamimageplugin_inpainting.so
+lib/kde3/digikamimageplugin_inserttext.a
 lib/kde3/digikamimageplugin_inserttext.la
 lib/kde3/digikamimageplugin_inserttext.so
+lib/kde3/digikamimageplugin_lensdistortion.a
 lib/kde3/digikamimageplugin_lensdistortion.la
 lib/kde3/digikamimageplugin_lensdistortion.so
+lib/kde3/digikamimageplugin_oilpaint.a
 lib/kde3/digikamimageplugin_oilpaint.la
 lib/kde3/digikamimageplugin_oilpaint.so
+lib/kde3/digikamimageplugin_perspective.a
 lib/kde3/digikamimageplugin_perspective.la
 lib/kde3/digikamimageplugin_perspective.so
+lib/kde3/digikamimageplugin_raindrop.a
 lib/kde3/digikamimageplugin_raindrop.la
 lib/kde3/digikamimageplugin_raindrop.so
+lib/kde3/digikamimageplugin_refocus.a
 lib/kde3/digikamimageplugin_refocus.la
 lib/kde3/digikamimageplugin_refocus.so
+lib/kde3/digikamimageplugin_restoration.a
 lib/kde3/digikamimageplugin_restoration.la
 lib/kde3/digikamimageplugin_restoration.so
+lib/kde3/digikamimageplugin_sheartool.a
 lib/kde3/digikamimageplugin_sheartool.la
 lib/kde3/digikamimageplugin_sheartool.so
+lib/kde3/digikamimageplugin_solarize.a
 lib/kde3/digikamimageplugin_solarize.la
 lib/kde3/digikamimageplugin_solarize.so
+lib/kde3/digikamimageplugin_superimpose.a
 lib/kde3/digikamimageplugin_superimpose.la
 lib/kde3/digikamimageplugin_superimpose.so
+lib/kde3/digikamimageplugin_texture.a
 lib/kde3/digikamimageplugin_texture.la
 lib/kde3/digikamimageplugin_texture.so
+lib/kde3/digikamimageplugin_unsharp.a
 lib/kde3/digikamimageplugin_unsharp.la
 lib/kde3/digikamimageplugin_unsharp.so
+lib/kde3/digikamimageplugin_whitebalance.a
 lib/kde3/digikamimageplugin_whitebalance.la
 lib/kde3/digikamimageplugin_whitebalance.so
 share/apps/digikam/digikamimageplugin_adjustcurves_ui.rc
@@ -1006,8 +1035,3 @@ share/services/digikamimageplugin_unsharp.desktop
 share/services/digikamimageplugin_whitebalance.desktop
 @dirrm share/apps/digikamimageplugins/data
 @dirrm share/apps/digikamimageplugins
-@dirrm share/apps/digikam/icons/hicolor/32x32/actions
-@dirrm share/apps/digikam/icons/hicolor/32x32
-@dirrm share/apps/digikam/icons/hicolor
-@dirrm share/apps/digikam/icons
-@dirrm share/apps/digikam

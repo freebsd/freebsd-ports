@@ -15,11 +15,10 @@ COMMENT=	User authentication and password changing daemon utility
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
-USE_REINPLACE=	YES
-GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
-USE_GETTEXT=	YES
-USE_AUTOTOOLS=	libtool:15:inc
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'

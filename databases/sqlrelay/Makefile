@@ -7,6 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -112,8 +113,7 @@ IF_FREETDS=	"@comment "
 .endif
 
 .if defined(WITH_GTK) && ${WITH_GTK:L} != no
-LIB_DEPENDS+=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
+USE_GNOME+=		gtk12
 CONFIGURE_ARGS+=	--with-gtk-prefix="${X11BASE}"
 IF_GTK=		""
 .else

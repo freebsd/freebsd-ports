@@ -38,9 +38,11 @@ include/idn/util.h
 include/idn/version.h
 @dirrm include/idn
 lib/libidnkit.a
+lib/libidnkit.la
 lib/libidnkit.so
 lib/libidnkit.so.1
 lib/libidnkitlite.a
+lib/libidnkitlite.la
 lib/libidnkitlite.so
 lib/libidnkitlite.so.1
 lib/libidnkitres.a

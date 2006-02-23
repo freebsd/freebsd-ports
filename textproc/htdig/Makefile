@@ -7,7 +7,7 @@
 
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://htdig.sourceforge.net/files/ \
 		http://www.htdig.org/files/ \
@@ -21,8 +21,6 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
-
-USE_AUTOTOOLS=	libtool:15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \

@@ -1,4 +1,4 @@
 include/tap.h
 lib/libtap.a
-lib/libtap.so.0
 lib/libtap.so
+lib/libtap.so.0

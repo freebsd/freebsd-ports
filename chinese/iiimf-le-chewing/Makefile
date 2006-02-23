@@ -7,7 +7,7 @@
 
 PORTNAME=	iiimf-le-chewing
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://chewing.csie.net/download/iiimf/
@@ -21,7 +21,6 @@ RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
 
 USE_XLIB=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"

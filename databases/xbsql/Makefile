@@ -6,6 +6,7 @@
 
 PORTNAME=	xbsql
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rekallrevealed.org/packages/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +17,7 @@ COMMENT=	An SQL wrapper for the XBase DBMS library
 LIB_DEPENDS=	xbase-2.0.0:${PORTSDIR}/databases/xbase
 
 USE_BISON=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

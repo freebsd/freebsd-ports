@@ -65,6 +65,7 @@ lib/deskbar-applet/handlers/web_address.pyo
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.py
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyc
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyo
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.la
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.so
 %%PYTHON_SITELIBDIR%%/deskbar/filewatcher.py
 %%PYTHON_SITELIBDIR%%/deskbar/filewatcher.pyc
@@ -72,6 +73,7 @@ lib/deskbar-applet/handlers/web_address.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/_gnomedesktop.la
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/_gnomedesktop.so
 %%PYTHON_SITELIBDIR%%/deskbar/handler.py
 %%PYTHON_SITELIBDIR%%/deskbar/handler.pyc
@@ -88,6 +90,7 @@ lib/deskbar-applet/handlers/web_address.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/iconentry/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/iconentry/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/iconentry/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/iconentry/_iconentry.la
 %%PYTHON_SITELIBDIR%%/deskbar/iconentry/_iconentry.so
 %%PYTHON_SITELIBDIR%%/deskbar/indexer.py
 %%PYTHON_SITELIBDIR%%/deskbar/indexer.pyc
@@ -95,6 +98,7 @@ lib/deskbar-applet/handlers/web_address.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/keybinder/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/keybinder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/keybinder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/keybinder/_keybinder.la
 %%PYTHON_SITELIBDIR%%/deskbar/keybinder/_keybinder.so
 %%PYTHON_SITELIBDIR%%/deskbar/locale_utils.py
 %%PYTHON_SITELIBDIR%%/deskbar/locale_utils.pyc

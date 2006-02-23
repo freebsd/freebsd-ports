@@ -1,6 +1,7 @@
 bin/zvbi-ntsc-cc
 include/libzvbi.h
 lib/libzvbi.a
+lib/libzvbi.la
 lib/libzvbi.so
 lib/libzvbi.so.8
 libdata/pkgconfig/zvbi-0.2.pc

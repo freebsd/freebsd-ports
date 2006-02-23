@@ -7,6 +7,7 @@
 
 PORTNAME=		mimir
 PORTVERSION=		2.14
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.ru.nl/pub/vb/
 
@@ -16,6 +17,5 @@ COMMENT=		Data-structure library used by the Elan Programming Environment
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=		libtool:13:inc
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@ include/panda/functions.h
 include/panda/legacy.h
 include/panda/objects.h
 lib/libpanda.a
+lib/libpanda.la
 lib/libpanda.so
 lib/libpanda.so.0
 libdata/pkgconfig/panda.pc

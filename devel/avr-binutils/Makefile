@@ -21,13 +21,10 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=avr
+GNU_CONFIGURE=	yes
 .if (${MACHINE_ARCH} == "amd64")
 MACHINE_ARCH=	x86_64
 .endif
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
-		gas/configure gprof/configure intl/configure ld/configure \
-		libiberty/configure opcodes/configure
 
 MAN1=	\
 		avr-addr2line.1 \

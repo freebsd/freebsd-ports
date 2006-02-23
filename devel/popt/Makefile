@@ -7,6 +7,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \
@@ -21,7 +22,7 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -18,7 +18,7 @@ COMMENT=	Jigsaw puzzle game for KDE
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_REINPLACE=		yes
 
 post-patch:

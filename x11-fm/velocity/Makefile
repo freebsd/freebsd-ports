@@ -16,7 +16,7 @@ MAINTAINER=	ryan.moe@fastfreedom.net
 COMMENT=	GNOME file and desktop manager
 
 WRKSRC=		${WRKDIR}/velocity-0.1.0
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

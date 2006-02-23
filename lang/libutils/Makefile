@@ -8,7 +8,7 @@
 
 PORTNAME=	libutils
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://sunsite.dk/projects/Tensile/ \
 		http://unixpages.org/distfiles/

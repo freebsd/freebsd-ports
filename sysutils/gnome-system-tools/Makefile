@@ -8,6 +8,7 @@
 
 PORTNAME=	gnomesystemtools
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-system-tools/1.4
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack nautilus2
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-services
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

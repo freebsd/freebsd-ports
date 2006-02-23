@@ -1,21 +1,17 @@
---- configure.orig	Sat Mar 21 14:08:57 1998
-+++ configure	Mon Aug  4 21:49:44 2003
-@@ -1559,7 +1559,8 @@
-   if test "x$LTSTATIC" = xno; then
-     disable_static="--disable-static"
+--- configure.orig	Sat Mar 21 19:08:57 1998
++++ configure	Sat Jan 21 09:22:46 2006
+@@ -1531,3 +1531,2 @@
+   USELIBTOOL="yes"
+-  LIBTOOL="./libtool"
+   O="lo"
+@@ -1561,3 +1560,4 @@
    fi
 -  $srcdir/ltconfig $disable_shared $disable_static $srcdir/ltmain.sh
 +  pic_flag="-fPIC"
 +  $ac_aux_dir/ltconfig $disable_shared $disable_static $ac_aux_dir/ltmain.sh
  fi
- 
- # Select memory manager depending on user input.
-@@ -1647,7 +1648,7 @@
- # Extract the library version ID from jpeglib.h.
- echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
+@@ -1649,3 +1649,3 @@
  echo "configure:1650: checking libjpeg version number" >&5
 -JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
 +JPEG_LIB_VERSION=9
  echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
- 
- 

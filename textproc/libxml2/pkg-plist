@@ -50,6 +50,7 @@ include/libxml2/libxml/xpath.h
 include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
 lib/libxml2.a
+lib/libxml2.la
 lib/libxml2.so
 lib/libxml2.so.5
 libdata/pkgconfig/libxml-2.0.pc

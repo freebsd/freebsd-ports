@@ -2,22 +2,30 @@ include/gnome-python-2.0/pygnomevfs.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/_bonobo.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/_bonobo.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/activation.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/activation.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/ui.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/ui.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gconf.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gconf.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnome.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnome.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvas.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/ui.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/ui.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfs.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomecanvas.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomecanvas.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomevfs.so
 libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/bonobo/bonobo-application.py
@@ -69,4 +77,5 @@ share/pygtk/2.0/defs/ui.defs
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
 @dirrm include/gnome-python-2.0
 @cwd %%X11BASE%%
+lib/gnome-vfs-2.0/modules/libpythonmethod.la
 lib/gnome-vfs-2.0/modules/libpythonmethod.so

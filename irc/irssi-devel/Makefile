@@ -17,10 +17,8 @@ COMMENT=	A modular IRC client with many features
 
 CONFLICTS=	irssi-0.8*
 
-GNU_CONFIGURE=	yes
-
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 

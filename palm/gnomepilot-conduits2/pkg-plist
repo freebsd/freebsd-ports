@@ -1,7 +1,17 @@
+lib/gnome-pilot/conduits/libemail_conduit.a
+lib/gnome-pilot/conduits/libemail_conduit.la
 lib/gnome-pilot/conduits/libemail_conduit.so
+lib/gnome-pilot/conduits/libexpense_conduit.a
+lib/gnome-pilot/conduits/libexpense_conduit.la
 lib/gnome-pilot/conduits/libexpense_conduit.so
+lib/gnome-pilot/conduits/libmal_conduit.a
+lib/gnome-pilot/conduits/libmal_conduit.la
 lib/gnome-pilot/conduits/libmal_conduit.so
+lib/gnome-pilot/conduits/libmemo_file_conduit.a
+lib/gnome-pilot/conduits/libmemo_file_conduit.la
 lib/gnome-pilot/conduits/libmemo_file_conduit.so
+lib/gnome-pilot/conduits/libtime_conduit.a
+lib/gnome-pilot/conduits/libtime_conduit.la
 lib/gnome-pilot/conduits/libtime_conduit.so
 share/gnome/gnome-pilot/conduits/expense.conduit
 share/gnome/gnome-pilot/conduits/mal.conduit

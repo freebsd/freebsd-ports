@@ -3,6 +3,7 @@ bin/recode
 include/recode.h
 include/recodext.h
 lib/librecode.a
+lib/librecode.la
 lib/librecode.so
 lib/librecode.so.3
 share/locale/da/LC_MESSAGES/recode.mo

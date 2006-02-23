@@ -10,6 +10,7 @@ include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
 lib/libortp.a
+lib/libortp.la
 lib/libortp.so
 lib/libortp.so.2
 libdata/pkgconfig/ortp.pc

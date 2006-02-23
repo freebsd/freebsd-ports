@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack gconf2 intlhack
 USE_SQLITE=	2
 USE_GMAKE=	yes
 USE_X_PREFIX=   yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

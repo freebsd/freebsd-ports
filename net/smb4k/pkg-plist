@@ -39,11 +39,15 @@ include/smb4ksharewidget.h
 include/smb4kshellio.h
 include/smb4ksuperuseroptions.h
 include/smb4kuser.h
+lib/kde3/konqsidebar_smb4k.a
+lib/kde3/konqsidebar_smb4k.la
 lib/kde3/konqsidebar_smb4k.so
 lib/libsmb4kcore.a
+lib/libsmb4kcore.la
 lib/libsmb4kcore.so
 lib/libsmb4kcore.so.0
 lib/libsmb4kwidgets.a
+lib/libsmb4kwidgets.la
 lib/libsmb4kwidgets.so
 lib/libsmb4kwidgets.so.0
 share/applications/kde/smb4k.desktop

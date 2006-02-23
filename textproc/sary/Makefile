@@ -7,6 +7,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://sary.sourceforge.net/
 
@@ -15,7 +16,7 @@ COMMENT=	A suffix array library and tools, which provide fast full-text search
 
 USE_GNOME=	glib20 gnomehack gnometarget
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		sary.1	mksary.1

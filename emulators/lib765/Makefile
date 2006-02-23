@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 MAINTAINER=	kemm@in-line.ru
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)

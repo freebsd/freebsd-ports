@@ -7,7 +7,7 @@
 
 PORTNAME=	qnxstyle
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	${KDELOOKITEM}-${PORTNAME}-${PORTVERSION}
@@ -19,14 +19,15 @@ KDELOOKITEM=	1444
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-PLIST_FILES=	lib/kde3/plugins/styles/qnx.so \
+PLIST_FILES=	lib/kde3/plugins/styles/qnx.a \
 		lib/kde3/plugins/styles/qnx.la \
+		lib/kde3/plugins/styles/qnx.so \
 		share/apps/kstyle/themes/qnx.themerc
 
 post-patch:

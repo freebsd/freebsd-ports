@@ -30,7 +30,7 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL11 -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
@@ -137,7 +137,6 @@ PLIST_SUB+=	XVID="@comment "
 
 post-patch:
 	${TOUCH} -f ${WRKSRC}/bootstrapped
-	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 # don't compile or use libmp4v2
 	@${REINPLACE_CMD} -e 's|mp4v2||; s|gnu||; s|mp4av||' \
 		${WRKSRC}/lib/Makefile.in

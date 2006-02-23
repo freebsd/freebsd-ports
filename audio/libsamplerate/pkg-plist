@@ -1,6 +1,7 @@
 bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
+lib/libsamplerate.la
 lib/libsamplerate.so
 lib/libsamplerate.so.1
 libdata/pkgconfig/samplerate.pc

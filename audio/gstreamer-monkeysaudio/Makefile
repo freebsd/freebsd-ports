@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-monkeysaudio
@@ -19,7 +19,7 @@ COMMENT=	GStreamer plugin for monkeysaudio files
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	lthack gnomehack gnomeprefix
 USE_GSTREAMER=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

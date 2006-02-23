@@ -7,6 +7,7 @@
 
 PORTNAME=	tclreadline
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel tcl80 tcl82 tcl83 tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tclreadline
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	tclreadline
 MAINTAINER=	darius@dons.net.au
 COMMENT=	GNU readline for TCL
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 MANN=		tclreadline.n
 

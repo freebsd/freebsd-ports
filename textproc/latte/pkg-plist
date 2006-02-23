@@ -19,6 +19,7 @@ include/latte/restorer.h
 include/latte/shdeque.h
 include/latte/shstring.h
 lib/liblatte.a
+lib/liblatte.la
 lib/liblatte.so
 lib/liblatte.so.5
 share/emacs/site-lisp/latte.el

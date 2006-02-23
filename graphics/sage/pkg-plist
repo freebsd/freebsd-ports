@@ -1,4 +1,5 @@
 lib/libsage.a
+lib/libsage.la
 lib/libsage.so
 lib/libsage.so.1
 include/sage/sage.h

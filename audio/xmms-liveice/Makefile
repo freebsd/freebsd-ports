@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-liveice
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://star.arm.ac.uk/~spm/software/
 DISTNAME=	liveice-xmms
@@ -23,6 +23,6 @@ WRKSRC=		${WRKDIR}/LiveIce-1.0.0
 PLIST_FILES=	lib/xmms/Effect/libliveice.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

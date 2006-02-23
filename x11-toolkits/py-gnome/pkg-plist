@@ -1,9 +1,16 @@
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_cappletmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_cappletmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gladegnomemodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gladegnomemodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomemodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomemodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomeuimodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomeuimodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkhtmlmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkhtmlmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkxmhtmlmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkxmhtmlmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_zvtmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_zvtmodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/__init__.pyc

@@ -7,6 +7,7 @@
 
 PORTNAME=	evas
 PORTVERSION=	0.9.9.023
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		eet.9:${PORTSDIR}/devel/eet
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_FREETYPE2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget

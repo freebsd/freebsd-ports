@@ -17,9 +17,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
-GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget lthack
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

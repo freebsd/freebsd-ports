@@ -17,12 +17,12 @@ COMMENT=	Tegaki Online MOji-ninshiki Engine
 
 USE_GNOME=	lthack gnomehack
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 PLIST_DIRS=	include/tomoe share/tomoe
 PLIST_FILES=	bin/tomoe bin/tomoe1 include/tomoe/tomoe.h \
-		lib/libtomoe.a lib/libtomoe.so lib/libtomoe.so.1 \
+		lib/libtomoe.a lib/libtomoe.la \
+		lib/libtomoe.so lib/libtomoe.so.1 \
 		libdata/pkgconfig/tomoe.pc \
 		share/tomoe/all.tdic share/tomoe/hiragana.tdic
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libtap
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nik
@@ -16,7 +17,6 @@ MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN3=		tap.3

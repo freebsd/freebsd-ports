@@ -7,7 +7,7 @@
 
 PORTNAME=	expocity
 PORTVERSION=	2.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -22,7 +22,7 @@ CONFLICTS=	metacity*
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -76,7 +76,7 @@ FIND_SETI_BINARY=(cd ${WRKSRC}/client; make -V CLIENT_PROG)
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/missing
-	cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/libtool${LIBTOOL_VERSION}/libltdl -I m4
+	cd ${WRKSRC}; ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl -I m4
 
 do-install:
 	${MKDIR} ${BOINC_HOME}/projects/${SETI_SITE}

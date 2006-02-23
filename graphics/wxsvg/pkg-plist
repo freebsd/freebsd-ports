@@ -183,6 +183,7 @@ include/wxSVG/svgctrl.h
 include/wxXML/xml.h
 include/wxXML/xmlhelpr.h
 lib/libwxsvg.a
+lib/libwxsvg.la
 lib/libwxsvg.so
 lib/libwxsvg.so.0
 @dirrm include/wxXML

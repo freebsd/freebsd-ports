@@ -18,7 +18,6 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-0.9.17
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=	libtool:15:inc
 
 .include <bsd.port.pre.mk>
 

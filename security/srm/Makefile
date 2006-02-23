@@ -16,7 +16,6 @@ COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
 
 MAN1=		srm.1
 PLIST_FILES=	bin/srm

@@ -4,6 +4,8 @@ lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/libxml2.py
 lib/%%PYTHON_VERSION%%/site-packages/libxml2.pyc
 lib/%%PYTHON_VERSION%%/site-packages/libxml2.pyo
+lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.a
+lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.la
 lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/attribs.py

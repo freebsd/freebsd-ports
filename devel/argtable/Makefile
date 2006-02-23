@@ -8,6 +8,7 @@
 
 PORTNAME=	argtable
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
 USE_GNOME=	gnometarget
-USE_GETOPT_LONG=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_GETOPT_LONG=yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3=		argtable2.3

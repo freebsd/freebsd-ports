@@ -1,6 +1,9 @@
 lib/evolution/%%EVO_VERSION%%/libwcapcalendar.a
+lib/evolution/%%EVO_VERSION%%/libwcapcalendar.la
 lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so
 lib/evolution/%%EVO_VERSION%%/libwcapcalendar.so.0
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.a
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.la
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
 libdata/bonobo/servers/GNOME_Evolution_SunOne_Storage.server

@@ -7,6 +7,7 @@
 
 PORTNAME=	tkXwin
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -20,7 +21,6 @@ LIB_DEPENDS=	tcl${SHORT_TK_VER}:${PORTSDIR}/lang/tcl${SHORT_TK_VER} \
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \

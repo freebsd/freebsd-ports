@@ -7,6 +7,7 @@
 
 PORTNAME=	xymms
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,12 +20,15 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
-PLIST_FILES=	lib/xmms/Input/libxymms.so %%EXAMPLESDIR%%/sample.gym
+PLIST_FILES=	lib/xmms/Input/libxymms.a \
+		lib/xmms/Input/libxymms.la \
+		lib/xmms/Input/libxymms.so \
+		%%EXAMPLESDIR%%/sample.gym
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 post-patch:

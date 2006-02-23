@@ -30,6 +30,7 @@ include/mysql++/tiny_int.h
 include/mysql++/type_info.h
 include/mysql++/vallist.h
 lib/libmysqlpp.a
+lib/libmysqlpp.la
 lib/libmysqlpp.so
 lib/libmysqlpp.so.2
 %%PORTDOCS%%%%DOCSDIR%%/mysqlpp-refman.pdf

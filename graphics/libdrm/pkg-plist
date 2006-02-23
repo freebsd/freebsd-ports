@@ -12,6 +12,7 @@ include/drm/via_3d_reg.h
 include/drm/via_drm.h
 include/xf86drm.h
 lib/libdrm.a
+lib/libdrm.la
 lib/libdrm.so
 lib/libdrm.so.2
 libdata/pkgconfig/libdrm.pc

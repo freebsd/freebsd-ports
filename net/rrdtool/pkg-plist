@@ -2,9 +2,11 @@ bin/rrdtool
 bin/rrdcgi
 bin/rrdupdate
 lib/librrd.a
+lib/librrd.la
 lib/librrd.so
 lib/librrd.so.2
 lib/librrd_th.a
+lib/librrd_th.la
 lib/librrd_th.so
 lib/librrd_th.so.2
 include/rrd.h

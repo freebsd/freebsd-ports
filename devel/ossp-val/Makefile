@@ -22,7 +22,6 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
-USE_AUTOTOOLS=	libtool:15
 
 MAN1=	val-config.1
 MAN3=	val.3

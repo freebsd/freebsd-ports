@@ -18,7 +18,7 @@ LIB_DEPENDS=	newpki.2:${PORTSDIR}/security/newpki-lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

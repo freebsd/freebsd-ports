@@ -26,9 +26,11 @@ include/tiffio.h
 include/tiffio.hxx
 include/tiffvers.h
 lib/libtiff.a
+lib/libtiff.la
 lib/libtiff.so
 lib/libtiff.so.4
 lib/libtiffxx.a
+lib/libtiffxx.la
 lib/libtiffxx.so
 lib/libtiffxx.so.4
 %%PORTDOCS%%%%DOCSDIR%%/TIFFTechNote2.html

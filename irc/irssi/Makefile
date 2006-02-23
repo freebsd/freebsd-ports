@@ -16,10 +16,9 @@ COMMENT?=	A modular IRC client with many features
 
 CONFLICTS=	irssi-devel-[0-9]*
 
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-module
 

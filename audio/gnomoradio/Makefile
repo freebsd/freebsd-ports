@@ -7,7 +7,7 @@
 
 PORTNAME=		gnomoradio
 PORTVERSION=		0.15.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,8 @@ USE_GCC=		3.4+
 USE_GNOME=		gnomehack gnomeprefix
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=		libtool:15
+LIBTOOLFLAGS=		--tag=CXX
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -35,12 +36,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \
 		s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
-
-patch-autotools::
-	@for file in ${LIBTOOLFILES}; do \
-		${REINPLACE_CMD} -e \
-			'/^ltmain=/ s|$$ac_aux_dir/ltmain\.sh|${LTMAIN}|g' \
-			${PATCH_WRKSRC}/$$file; \
-	done
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -16,7 +17,7 @@ COMMENT=	A console audio player designed to be powerful and easy to use
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		mocp.1
@@ -50,7 +51,8 @@ CONFIGURE_ARGS+=	--without-jack
 .if defined(WITH_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
-PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libmp3_decoder.la \
+		lib/moc/decoder_plugins/libmp3_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-mp3
 .endif
@@ -58,21 +60,24 @@ CONFIGURE_ARGS+=	--without-mp3
 .if defined(WITH_MUSEPACK)
 LIB_DEPENDS+=	mpcdec.3:${PORTSDIR}/audio/libmpcdec \
 		tag_c.0:${PORTSDIR}/audio/taglib
-PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.la \
+		lib/moc/decoder_plugins/libmusepack_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-musepack
 .endif
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libvorbis_decoder.la \
+		lib/moc/decoder_plugins/libvorbis_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif
 
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
-PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libflac_decoder.la \
+		lib/moc/decoder_plugins/libflac_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif
@@ -85,14 +90,16 @@ CONFIGURE_ARGS+=	--without-ffmpeg
 
 .if defined(WITH_SNDFILE)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
-PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libsndfile_formats_decoder.la \
+		lib/moc/decoder_plugins/libsndfile_formats_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-sndfile
 .endif
 
 .if defined(WITH_SPEEX)
 LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
-PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.so
+PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.la \
+		lib/moc/decoder_plugins/libspeex_decoder.so
 .else
 CONFIGURE_ARGS+=	--without-speex
 .endif

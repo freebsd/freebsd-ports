@@ -1,3 +1,5 @@
 @comment $FreeBSD$
+lib/xfce4/panel-plugins/libclipman.a
+lib/xfce4/panel-plugins/libclipman.la
 lib/xfce4/panel-plugins/libclipman.so
 @dirrmtry lib/xfce4/panel-plugins

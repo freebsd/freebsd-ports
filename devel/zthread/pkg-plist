@@ -1,6 +1,7 @@
 bin/zthread-config
 lib/libZThread-2.3.so
 lib/libZThread-2.3.so.1
+lib/libZThread.la
 lib/libZThread.so
 share/aclocal/pthread.m4
 share/aclocal/zthread.m4

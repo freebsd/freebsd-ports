@@ -8,7 +8,7 @@
 
 PORTNAME=	vx68k
 PORTVERSION=	1.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.hypercore.co.jp/vx68k/${PORTNAME}-${PORTVERSION:R}/
 
@@ -23,7 +23,6 @@ USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 LIBTOOLFILES=	configure vx68k-gtk/configure
-#LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	vx68k.1

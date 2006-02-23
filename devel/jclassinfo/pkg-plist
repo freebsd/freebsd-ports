@@ -12,6 +12,7 @@ include/jclass/manifest.h
 include/jclass/types.h
 lib/jclass/include/jclassconfig.h
 lib/libjclass.a
+lib/libjclass.la
 lib/libjclass.so
 lib/libjclass.so.3
 libdata/pkgconfig/jclass.pc

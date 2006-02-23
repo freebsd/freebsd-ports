@@ -8,6 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.1.13.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/ \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +23,7 @@ USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 LIBTOOLFILES=	configure libgc/configure
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"

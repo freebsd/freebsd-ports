@@ -3,9 +3,11 @@ bin/type1afm
 include/t1lib.h
 %%X11%%include/t1libx.h
 lib/libt1.a
+lib/libt1.la
 lib/libt1.so
 lib/libt1.so.5
 %%X11%%lib/libt1x.a
+%%X11%%lib/libt1x.la
 %%X11%%lib/libt1x.so
 %%X11%%lib/libt1x.so.5
 %%PORTDOCS%%%%DOCSDIR%%/t1lib_doc.pdf

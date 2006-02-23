@@ -7,6 +7,7 @@
 
 PORTNAME=	xpk
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 		http://www.energyhq.es.eu.org/files/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

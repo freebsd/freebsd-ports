@@ -6,6 +6,7 @@ include/libdaemon/dnonblock.h
 include/libdaemon/dpid.h
 include/libdaemon/dsignal.h
 lib/libdaemon.a
+lib/libdaemon.la
 lib/libdaemon.so
 lib/libdaemon.so.2
 libdata/pkgconfig/libdaemon.pc

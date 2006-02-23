@@ -4,12 +4,15 @@ include/totem/1/plparser/totem-disc.h
 include/totem/1/plparser/totem-pl-parser-builtins.h
 include/totem/1/plparser/totem-pl-parser.h
 %%MOZILLA%%lib/browser_plugins/libtotem_mozilla.a
+%%MOZILLA%%lib/browser_plugins/libtotem_mozilla.la
 %%MOZILLA%%lib/browser_plugins/libtotem_mozilla.so
 %%MOZILLA%%lib/browser_plugins/libtotem_mozilla.xpt
 lib/libtotem-plparser.a
+lib/libtotem-plparser.la
 lib/libtotem-plparser.so
 lib/libtotem-plparser.so.1
 lib/nautilus/extensions-1.0/libtotem-properties-page.a
+lib/nautilus/extensions-1.0/libtotem-properties-page.la
 lib/nautilus/extensions-1.0/libtotem-properties-page.so
 lib/nautilus/extensions-1.0/libtotem-properties-page.so.0
 libdata/pkgconfig/totem-plparser.pc

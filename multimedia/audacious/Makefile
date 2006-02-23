@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/
 DISTNAME=	audacious-${PORTVERSION}
@@ -21,8 +22,7 @@ USE_GNOME=	gtk20 libglade2
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
-LIBTOOLFILES=	configure
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

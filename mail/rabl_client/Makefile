@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.nuclearelephant.com/projects/rabl/sources/ \
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Reactive Autonomous Blackhole List client
 
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"

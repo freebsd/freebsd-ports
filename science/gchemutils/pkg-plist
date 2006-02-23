@@ -17,7 +17,7 @@ include/gcu/gcu/crystalatom.h
 include/gcu/gcu/crystalline.h
 include/gcu/gcu/crystalcleavage.h
 include/gcu/gcu/gtkchem3dviewer.h
-lib/libgcu.a
+lib/libgcu.la
 lib/libgcu.so
 lib/libgcu.so.4
 libdata/bonobo/servers/gchem3d.server

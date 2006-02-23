@@ -7,7 +7,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.opensync.org/attachment/wiki/download/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 libxml2
 USE_REINPLACE=	yes

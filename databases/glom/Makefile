@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomeextras
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

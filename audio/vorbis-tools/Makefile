@@ -21,7 +21,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

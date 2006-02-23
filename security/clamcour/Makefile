@@ -17,7 +17,7 @@ BUILD_DEPENDS=	courier-config:${PORTSDIR}/mail/courier
 LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
 
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ARGS=	--with-clamav-config=${LOCALBASE}/bin \

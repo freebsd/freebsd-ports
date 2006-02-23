@@ -7,6 +7,7 @@
 
 PORTNAME=	swish-e
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://swish-e.org/distribution/
 
@@ -14,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"

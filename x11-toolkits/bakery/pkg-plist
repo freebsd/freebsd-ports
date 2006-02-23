@@ -26,6 +26,7 @@ include/bakery-%%API_VERSION%%/bakery/View/View_Composite.h
 include/bakery-%%API_VERSION%%/bakery/bakery.h
 include/bakery-%%API_VERSION%%/bakery/init.h
 lib/libbakery-%%VERSION%%.a
+lib/libbakery-%%VERSION%%.la
 lib/libbakery-%%VERSION%%.so
 lib/libbakery-%%VERSION%%.so.16
 libdata/pkgconfig/bakery-%%API_VERSION%%.pc

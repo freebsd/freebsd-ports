@@ -44,6 +44,7 @@ include/obby/serialise/token.hpp
 lib/libobby-0.3.so
 lib/libobby-0.3.so.0
 lib/libobby.a
+lib/libobby.la
 lib/libobby.so
 libdata/pkgconfig/obby-0.3.pc
 %%NLS%%share/locale/de/LC_MESSAGES/obby.mo

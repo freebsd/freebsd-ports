@@ -20,7 +20,7 @@ PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="`${PCRE_CONFIG} --cflags`" \
 		LDFLAGS="`${PCRE_CONFIG} --libs`"

@@ -7,6 +7,7 @@
 
 PORTNAME=	libofx
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-fxt
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +18,11 @@ COMMENT=	Surround/Echo effect plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 
-PLIST_FILES=	lib/xmms/Effect/libfxt.so
+PLIST_FILES=	lib/xmms/Effect/libfxt.la \
+		lib/xmms/Effect/libfxt.so
 
 .include <bsd.port.mk>

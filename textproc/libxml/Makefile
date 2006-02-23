@@ -7,7 +7,7 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libxml/1.8
@@ -18,7 +18,7 @@ COMMENT=	XML parser library for GNOME
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:

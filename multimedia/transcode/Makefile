@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -28,9 +29,8 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
 WANT_SDL=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

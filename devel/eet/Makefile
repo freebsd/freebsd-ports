@@ -7,6 +7,7 @@
 
 PORTNAME=	eet
 PORTVERSION=	0.9.10.023
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -15,7 +16,7 @@ COMMENT=	Enlightenment Data Handling Library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -33,6 +33,7 @@ include/gtkextra/gtkpsfont.h
 include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
+lib/libgtkextra.la
 lib/libgtkextra.so
 lib/libgtkextra.so.17
 share/aclocal/gtkextra.m4

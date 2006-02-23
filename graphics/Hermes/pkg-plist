@@ -8,6 +8,7 @@ include/Hermes/H_Types.h
 include/Hermes/Hermes.h
 include/Hermes/Types.h
 lib/libHermes.a
+lib/libHermes.la
 lib/libHermes.so
 lib/libHermes.so.1
 @dirrm include/Hermes

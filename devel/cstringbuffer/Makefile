@@ -13,7 +13,7 @@ MASTER_SITES=	# disappeared
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-like IO for strings
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 MAN3=		csb.3
 MANCOMPRESSED=	no

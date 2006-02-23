@@ -6,6 +6,7 @@ include/linc-1.0/linc/linc-server.h
 include/linc-1.0/linc/linc-types.h
 include/linc-1.0/linc/linc.h
 lib/liblinc.a
+lib/liblinc.la
 lib/liblinc.so
 lib/liblinc.so.1
 libdata/pkgconfig/linc.pc

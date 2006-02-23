@@ -5,12 +5,15 @@ include/anthy/anthy.h
 include/anthy/dicutil.h
 include/anthy/input.h
 lib/libanthy.a
+lib/libanthy.la
 lib/libanthy.so
 lib/libanthy.so.1
 lib/libanthydic.a
+lib/libanthydic.la
 lib/libanthydic.so
 lib/libanthydic.so.1
 lib/libanthyinput.a
+lib/libanthyinput.la
 lib/libanthyinput.so
 lib/libanthyinput.so.0
 libdata/pkgconfig/anthy.pc

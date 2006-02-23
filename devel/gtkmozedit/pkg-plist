@@ -105,7 +105,7 @@ include/libgtkmozedit-1/gtkmozedit/gme-observer.h
 include/libgtkmozedit-1/gtkmozedit/gme-supports.h
 include/libgtkmozedit-1/gtkmozedit/gme-web-browser.h
 include/libgtkmozedit-1/gtkmozedit/gtkmozedit.h
-lib/libgtkmozedit-1.a
+lib/libgtkmozedit-1.la
 lib/libgtkmozedit-1.so
 lib/libgtkmozedit-1.so.0
 libdata/pkgconfig/gtkmozedit-1.pc

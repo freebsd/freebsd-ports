@@ -1,3 +1,5 @@
+lib/scim-1.0/IMEngine/uim.a
+lib/scim-1.0/IMEngine/uim.la
 lib/scim-1.0/IMEngine/uim.so
 share/scim/icons/scim-uim.png
 @dirrmtry lib/scim-1.0/IMEngine

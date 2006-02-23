@@ -1,3 +1,5 @@
+lib/xmms/General/libstatusdocklet.a
+lib/xmms/General/libstatusdocklet.la
 lib/xmms/General/libstatusdocklet.so
 share/locale/de/LC_MESSAGES/xmms-status-plugin.mo
 share/locale/fr/LC_MESSAGES/xmms-status-plugin.mo

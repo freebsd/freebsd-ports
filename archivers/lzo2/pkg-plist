@@ -12,6 +12,7 @@ include/lzo/lzoconf.h
 include/lzo/lzodefs.h
 include/lzo/lzoutil.h
 lib/liblzo2.a
+lib/liblzo2.la
 lib/liblzo2.so
 lib/liblzo2.so.2
 %%PORTDOCS%%%%DOCSDIR%%/LZO.FAQ

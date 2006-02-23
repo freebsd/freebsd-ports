@@ -7,6 +7,7 @@
 
 PORTNAME=	libieee1284
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyberelk.net/tim/data/libieee1284/stable/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IEEE1284 communications library
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -36,6 +37,7 @@ MAN3=	libieee1284.3 parport.3 parport_list.3 ieee1284_find_ports.3 \
 PLIST_FILES=	bin/libieee1284_test \
 		include/ieee1284.h \
 		lib/libieee1284.a \
+		lib/libieee1284.la \
 		lib/libieee1284.so \
 		lib/libieee1284.so.5
 

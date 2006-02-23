@@ -7,7 +7,7 @@
 
 PORTNAME=	guile-gnome
 PORTVERSION=	0.20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits gnome scheme
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20
@@ -19,7 +19,7 @@ COMMENT=	Guile binding library for GNOME
 LIB_DEPENDS=	guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix bonobo gtkhtml libglade
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-bonobo --with-gtkhtml --without-gal \

@@ -7,6 +7,7 @@
 
 PORTNAME=	SoXt
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
 USE_GL=		yes
 USE_MOTIF=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
 # avoid renaming of soxt-config and soxt-config.1

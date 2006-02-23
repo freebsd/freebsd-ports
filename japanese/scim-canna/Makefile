@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-canna
 PORTVERSION=	1.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	scim-imengine/18849
@@ -23,7 +23,7 @@ USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.7
-PORTREVISION?=	2
+PORTREVISION?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -25,10 +25,9 @@ CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 CONFLICTS=	fam-[0-9]*
 
-.if defined(GAMIN_SLAVE)
-USE_AUTOTOOLS=	libtool:15
-.else
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
+
+.if !defined(GAMIN_SLAVE)
 OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off
 .endif
 

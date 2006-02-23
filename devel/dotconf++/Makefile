@@ -7,7 +7,7 @@
 
 PORTNAME=	dotconfpp
 PORTVERSION=	0.0.4a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://voodoo.com.ua/dotconfpp/

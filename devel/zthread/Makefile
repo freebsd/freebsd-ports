@@ -7,6 +7,7 @@
 
 PORTNAME=	zthread
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,6 @@ DISTNAME=	ZThread-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A platform-independent object-oriented C++ threading library
 
-USE_AUTOTOOLS=	libtool:15:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ftime --disable-static
 USE_GMAKE=	yes
@@ -35,9 +35,6 @@ USE_GCC=	3.3+
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
-
-pre-configure:
-	@${CP} ${LTMAIN} ${WRKSRC}
 
 post-install:
 	@${FIND} ${PREFIX}/include/zthread -type f | \

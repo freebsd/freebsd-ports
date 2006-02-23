@@ -27,6 +27,7 @@ include/lineak/pluginmanager.h
 lib/liblineak.so.8
 lib/liblineak.so
 lib/liblineak.a
+lib/liblineak.la
 @exec mkdir -p %D/lib/lineakd/plugins
 %%EXAMPLESDIR%%/lineakd.conf.example
 @dirrm %%EXAMPLESDIR%%

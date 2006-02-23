@@ -6,9 +6,11 @@ bin/xml2ag
 include/autoopts/options.h
 include/autoopts/usage-txt.h
 lib/libguileopts.a
+lib/libguileopts.la
 lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
+lib/libopts.la
 lib/libopts.so
 lib/libopts.so.27
 libdata/pkgconfig/autoopts.pc

@@ -11,10 +11,17 @@ include/gconf/2/gconf/gconf-listeners.h
 include/gconf/2/gconf/gconf-schema.h
 include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
+%%LDAP%%lib/GConf/2/libgconfbackend-evoldap.a
+%%LDAP%%lib/GConf/2/libgconfbackend-evoldap.la
 %%LDAP%%lib/GConf/2/libgconfbackend-evoldap.so
+lib/GConf/2/libgconfbackend-oldxml.a
+lib/GConf/2/libgconfbackend-oldxml.la
 lib/GConf/2/libgconfbackend-oldxml.so
+lib/GConf/2/libgconfbackend-xml.a
+lib/GConf/2/libgconfbackend-xml.la
 lib/GConf/2/libgconfbackend-xml.so
 lib/libgconf-2.a
+lib/libgconf-2.la
 lib/libgconf-2.so
 lib/libgconf-2.so.4
 libdata/pkgconfig/gconf-2.0.pc

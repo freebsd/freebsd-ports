@@ -7,7 +7,7 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://czauner.onlineloop.com/pub/FreeBSD/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	pop3lite
 PORTVERSION=	0.2.4a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,14 +17,11 @@ COMMENT=	A flexible, modular RFC-compliant POP3 daemon
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN5=		pop3lite.conf.5
 MAN8=		pop3lite.8
 INFO=		pop3lite-admin
-
-pre-build:
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 .include <bsd.port.mk>

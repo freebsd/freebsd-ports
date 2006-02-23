@@ -1,3 +1,5 @@
+lib/xfce4/panel-plugins/libsystray.a
+lib/xfce4/panel-plugins/libsystray.la
 lib/xfce4/panel-plugins/libsystray.so
 @dirrmtry lib/xfce4/panel-plugins
 @dirrmtry lib/xfce4

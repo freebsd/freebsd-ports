@@ -2,6 +2,7 @@ bin/epsilon
 bin/epsilon-config
 include/Epsilon.h
 lib/libepsilon.a
+lib/libepsilon.la
 lib/libepsilon.so
 lib/libepsilon.so.0
 libdata/pkgconfig/epsilon.pc

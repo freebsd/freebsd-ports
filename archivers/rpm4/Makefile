@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
@@ -21,7 +21,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=  yes
+LIBTOOLFILES=	configure db3/configure db/dist/configure popt/configure \
+		beecrypt/configure
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -56,6 +58,12 @@ MAN8=	rpm.8 rpm2cpio.8 rpmbuild.8
 PORTDOCS=	*
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' \
 		${WRKSRC}/configure ${WRKSRC}/beecrypt/configure
@@ -71,4 +79,4 @@ post-install:
 	# Run package installation script
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

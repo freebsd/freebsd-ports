@@ -2,6 +2,7 @@ bin/ghex2
 include/gtkhex/gtkhex.h
 include/gtkhex/hex-document.h
 lib/libgtkhex.a
+lib/libgtkhex.la
 lib/libgtkhex.so
 lib/libgtkhex.so.0
 libdata/pkgconfig/gtkhex.pc

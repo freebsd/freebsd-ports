@@ -4,9 +4,11 @@ bin/Etcolors.sh
 bin/Eterm
 bin/Etmenu.sh
 lib/libEterm.a
+lib/libEterm.la
 lib/libEterm.so
 lib/libEterm.so.8
 lib/libmej.a
+lib/libmej.la
 lib/libmej.so
 lib/libmej.so.8
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

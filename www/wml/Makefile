@@ -18,12 +18,11 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
 		PERL_ARCH="${PERL_ARCH}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 LIBTOOLFILES=	wml_backend/p2_mp4h/configure
 PLIST_SUB+=	ARCH=${PERL_ARCH}
 

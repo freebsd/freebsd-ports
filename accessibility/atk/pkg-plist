@@ -25,6 +25,7 @@ include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
 lib/libatk-1.0.a
+lib/libatk-1.0.la
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
 libdata/pkgconfig/atk.pc

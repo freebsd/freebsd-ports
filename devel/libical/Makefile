@@ -7,7 +7,7 @@
 
 PORTNAME=	libical
 PORTVERSION=	0.24
-PORTREVISION=	2
+PORTREVISION=	3
 DISTFILES=	${DISTNAME}.RC4${EXTRACT_SUFX}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	freeassociation
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes

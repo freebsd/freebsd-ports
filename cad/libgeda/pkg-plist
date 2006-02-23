@@ -8,8 +8,9 @@ include/libgeda/struct.h
 include/libgeda/libgeda.h
 include/libgeda/i_vars.h
 include/libgeda/papersizes.h
-lib/libgeda.so.23
-lib/libgeda.so
 lib/libgeda.a
+lib/libgeda.la
+lib/libgeda.so
+lib/libgeda.so.23
 libdata/pkgconfig/libgeda.pc
 @dirrm include/libgeda

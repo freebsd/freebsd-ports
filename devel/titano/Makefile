@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs libglade
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

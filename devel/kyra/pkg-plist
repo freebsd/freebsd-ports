@@ -66,6 +66,7 @@ include/Kyra/util/glstring.h
 include/Kyra/util/gltypes.h
 include/Kyra/util/glutil.h
 lib/libkyra.a
+lib/libkyra.la
 lib/libkyra.so
 lib/libkyra.so.0
 share/aclocal/kyra.m4

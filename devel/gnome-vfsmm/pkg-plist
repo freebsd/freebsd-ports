@@ -43,6 +43,7 @@ lib/gnome-vfsmm-%%API_VERSION%%/include/libgnomevfsmmconfig.h
 lib/gnome-vfsmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/gnome-vfsmm-%%API_VERSION%%/proc/m4/convert_gnome_vfsmm.m4
 lib/libgnomevfsmm-%%VERSION%%.a
+lib/libgnomevfsmm-%%VERSION%%.la
 lib/libgnomevfsmm-%%VERSION%%.so
 lib/libgnomevfsmm-%%VERSION%%.so.1
 libdata/pkgconfig/gnome-vfsmm-%%API_VERSION%%.pc

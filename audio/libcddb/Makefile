@@ -8,6 +8,7 @@
 
 PORTNAME=	libcddb
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library to access data on a CDDB server
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-cdio

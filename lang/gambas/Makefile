@@ -6,6 +6,7 @@
 
 PORTNAME=		gambas
 PORTVERSION=		1.0.14
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +17,10 @@ COMMENT=		Gambas Almost Means BASic
 LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl	\
 			ml.0:${PORTSDIR}/math/ldouble
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=		libltdl:15 libtool:15
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes
-LIBTOOLFILES=		configure libltdl/configure
-LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
 CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-conv-libraries=${LOCALBASE}/lib		\

@@ -7,7 +7,7 @@
 
 PORTNAME=	libgeda
 PORTVERSION=	20050313
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -19,7 +19,7 @@ COMMENT=	gEDA tools base utility library
 LIB_DEPENDS=	gdgeda.6:${PORTSDIR}/graphics/libgdgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes

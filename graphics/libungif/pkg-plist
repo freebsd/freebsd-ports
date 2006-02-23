@@ -30,6 +30,7 @@ bin/rgb2gif
 bin/text2gif
 include/gif_lib.h
 lib/libungif.a
+lib/libungif.la
 lib/libungif.so
 lib/libungif.so.5
 %%PORTDOCS%%%%DOCSDIR%%/GifFileType.png

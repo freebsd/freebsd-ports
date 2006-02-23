@@ -18,6 +18,7 @@ include/gltt/GLTTPixmapFont.h
 include/gltt/GLTTboolean.h
 include/gltt/GLTTminmax.h
 lib/libgltt.a
+lib/libgltt.la
 lib/libgltt.so
 lib/libgltt.so.0
 @dirrm include/gltt

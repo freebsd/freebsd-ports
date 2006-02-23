@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk-prefix="${X11BASE}" \
 		--x-includes="${X11BASE}/include" \
 		--x-libraries="${X11BASE}/lib"

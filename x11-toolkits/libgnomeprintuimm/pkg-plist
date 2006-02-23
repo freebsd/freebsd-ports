@@ -14,6 +14,7 @@ include/libgnomeprintuimm-%%API_VERSION%%/libgnomeprintuimm/private/printdialog_
 include/libgnomeprintuimm-%%API_VERSION%%/libgnomeprintuimm/types.h
 include/libgnomeprintuimm-%%API_VERSION%%/libgnomeprintuimm/wrap_init.h
 lib/libgnomeprintuimm-%%VERSION%%.a
+lib/libgnomeprintuimm-%%VERSION%%.la
 lib/libgnomeprintuimm-%%VERSION%%.so
 lib/libgnomeprintuimm-%%VERSION%%.so.3
 lib/libgnomeprintuimm-%%API_VERSION%%/include/libgnomeprintuimmconfig.h

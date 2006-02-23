@@ -15,7 +15,7 @@ COMMENT=	ADIF compatible logging application
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 

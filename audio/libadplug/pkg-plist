@@ -50,5 +50,6 @@ include/adplug/xsm.h
 lib/libadplug-1.5.1.so
 lib/libadplug-1.5.1.so.0
 lib/libadplug.a
+lib/libadplug.la
 lib/libadplug.so
 @dirrm include/adplug

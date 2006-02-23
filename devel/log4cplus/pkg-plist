@@ -38,6 +38,7 @@ include/log4cplus/streams.h
 include/log4cplus/syslogappender.h
 include/log4cplus/tstring.h
 lib/liblog4cplus.a
+lib/liblog4cplus.la
 lib/liblog4cplus.so
 lib/liblog4cplus.so.2
 @dirrm include/log4cplus/spi

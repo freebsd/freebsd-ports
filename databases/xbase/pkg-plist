@@ -28,5 +28,6 @@ include/xbase/xtypes.h
 lib/libxbase-2.0.so
 lib/libxbase-2.0.so.0
 lib/libxbase.a
+lib/libxbase.la
 lib/libxbase.so
 @dirrm include/xbase

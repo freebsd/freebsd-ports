@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A crossword puzzle application
 
-LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
 
 GNU_CONFIGURE=	yes
 

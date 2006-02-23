@@ -8,6 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	gapi2-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool libgnomeui
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

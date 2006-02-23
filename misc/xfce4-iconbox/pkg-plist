@@ -1,4 +1,6 @@
 bin/xfce4-iconbox
+lib/xfce4/mcs-plugins/xfce4-iconbox_settings.a
+lib/xfce4/mcs-plugins/xfce4-iconbox_settings.la
 lib/xfce4/mcs-plugins/xfce4-iconbox_settings.so
 share/applications/xfce-iconbox-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-iconbox.png

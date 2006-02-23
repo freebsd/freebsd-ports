@@ -8,13 +8,14 @@
 
 PORTNAME=	nautilus-locked-folder
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils security
 MASTER_SITES=	http://www.ids.org.au/~jam6/locked-folders/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	nautilus2
@@ -22,7 +23,9 @@ PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
 		LDFLASG="-L${LOCALBASE}/lib -L${X11BASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \
 		LIBS="-lssl"
-PLIST_FILES=	lib/nautilus/extensions-1.0/libnautilus-locked-folder.so
+PLIST_FILES=	lib/nautilus/extensions-1.0/libnautilus-locked-folder.a \
+		lib/nautilus/extensions-1.0/libnautilus-locked-folder.la \
+		lib/nautilus/extensions-1.0/libnautilus-locked-folder.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/icons/hicolor/32x32/stock/data/|${X11BASE}/share/icons/hicolor/32x32/stock/data/|' \

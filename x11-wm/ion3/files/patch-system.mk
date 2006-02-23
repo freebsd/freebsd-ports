@@ -23,7 +23,7 @@
  # OSes only have an _ancient_ 1.3.x libtool that _will_ _not_ _work even
  # though a lot of libltdl-using apps require 1.4.3.
 -LIBTOOL=libtool
-+LIBTOOL=$(LOCALBASE)/bin/libtool15 --tag=CC
++LIBTOOL=$(LOCALBASE)/bin/libtool --tag=CC
  
  # Settings for compiling and linking to ltdl
 -LTDL_INCLUDES=

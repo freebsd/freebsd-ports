@@ -7,6 +7,7 @@
 
 PORTNAME=	obby
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 
@@ -21,7 +22,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-libgmp-prefix=${LOCALBASE} --without-howl
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=	libtool:15
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

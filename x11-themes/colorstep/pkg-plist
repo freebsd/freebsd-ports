@@ -1,4 +1,5 @@
 lib/gtk/themes/engines/libcolorstep.a
+lib/gtk/themes/engines/libcolorstep.la
 lib/gtk/themes/engines/libcolorstep.so
 share/themes/ColorStep/ICON.png
 share/themes/ColorStep/README.html

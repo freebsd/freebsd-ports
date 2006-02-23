@@ -23,7 +23,7 @@ include/Inventor/Qt/viewers/SoQtPlaneViewer.h
 include/Inventor/Qt/viewers/SoQtViewer.h
 include/Inventor/Qt/widgets/SoQtPopupMenu.h
 include/Inventor/Qt/widgets/SoQtThumbWheel.h
-lib/libSoQt.a
+lib/libSoQt.la
 lib/libSoQt.so
 lib/libSoQt.so.22
 share/Coin/conf/soqt-default.cfg

@@ -7,6 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -18,7 +19,8 @@ COMMENT=	Library for keyword extraction
 USE_GCC=	3.4+
 USE_GNOME=	glib20
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool:15:inc libltdl:15
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

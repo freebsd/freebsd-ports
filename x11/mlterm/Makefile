@@ -7,7 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,8 @@ COMMENT=	Multilingual X11 terminal emulator
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 lthack
-USE_AUTOTOOLS=	libtool:13:inc
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
@@ -80,9 +81,8 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
 post-configure:
-	${CP} ${WRKSRC}/libtool ${WRKSRC}/kiklib/
-	${CP} ${WRKSRC}/libtool ${WRKSRC}/mkf/
-	${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
+	@${CP} ${LIBTOOL} ${WRKSRC}
+	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
 		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
 
 post-install:

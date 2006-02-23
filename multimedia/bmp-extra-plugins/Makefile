@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://wrzask.pl/files/
 
@@ -22,7 +22,7 @@ USE_GNOME=	libglade2 esound
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} \
 		--with-vorbis=${LOCALBASE}

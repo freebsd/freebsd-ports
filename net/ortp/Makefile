@@ -7,6 +7,7 @@
 
 PORTNAME=	ortp
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.linphone.org/ortp/sources/
 
@@ -14,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A Real-time Transport Protocol (RTP) stack
 
 USE_GNOME=	glib20 pkgconfig gnomehack
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 INSTALLS_SHLIB=	yes
 

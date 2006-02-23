@@ -8,7 +8,7 @@
 
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -19,11 +19,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		svg.1:${PORTSDIR}/graphics/libsvg \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
 INSTALLS_SHLIB=	yes
 PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.a \
+		lib/libsvg-cairo.la \
 		lib/libsvg-cairo.so \
 		lib/libsvg-cairo.so.1 \
 		libdata/pkgconfig/libsvg-cairo.pc

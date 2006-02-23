@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --disable-examples
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

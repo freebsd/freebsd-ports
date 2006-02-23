@@ -50,7 +50,7 @@ USE_GNOME+=	gtk20
 CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-2.0"
 .else
 USE_GNOME+=	gtk12
-CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread12"
+CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-12"
 CONFIGURE_ARGS+=--disable-gtk20
 .endif
 .endif

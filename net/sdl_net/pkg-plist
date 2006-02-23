@@ -1,4 +1,5 @@
 include/SDL11/SDL_net.h
 lib/libSDL_net.a
+lib/libSDL_net.la
 lib/libSDL_net.so
 lib/libSDL_net.so.0

@@ -4,8 +4,11 @@ include/gnome-speech-1.0/gnome-speech/GNOME_Speech.h
 include/gnome-speech-1.0/gnome-speech/gnome-speech.h
 include/gnome-speech-1.0/gnome-speech/speaker.h
 lib/libgnomespeech.a
+lib/libgnomespeech.la
 lib/libgnomespeech.so
 lib/libgnomespeech.so.7
+lib/orbit-2.0/GNOME_Speech_module.a
+lib/orbit-2.0/GNOME_Speech_module.la
 lib/orbit-2.0/GNOME_Speech_module.so
 libdata/bonobo/servers/GNOME_Speech_SynthesisDriver_Festival.server
 libdata/pkgconfig/gnome-speech-1.0.pc

@@ -1,4 +1,5 @@
 include/epplet.h
 lib/libepplet.a
+lib/libepplet.la
 lib/libepplet.so
 lib/libepplet.so.1

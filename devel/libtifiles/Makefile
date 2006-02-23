@@ -7,6 +7,7 @@
 
 PORTNAME=	libtifiles
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -14,7 +15,6 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
 
-GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15

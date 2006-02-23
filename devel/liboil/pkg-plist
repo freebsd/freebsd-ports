@@ -13,6 +13,7 @@ include/liboil-%%VERSION%%/liboil/liboilrandom.h
 include/liboil-%%VERSION%%/liboil/liboiltest.h
 include/liboil-%%VERSION%%/liboil/liboiltypes.h
 lib/liboil-%%VERSION%%.a
+lib/liboil-%%VERSION%%.la
 lib/liboil-%%VERSION%%.so
 lib/liboil-%%VERSION%%.so.1
 libdata/pkgconfig/liboil-%%VERSION%%.pc

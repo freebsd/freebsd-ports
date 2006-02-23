@@ -8,6 +8,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cxx --enable-production \

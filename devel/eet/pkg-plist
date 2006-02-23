@@ -4,5 +4,6 @@ bin/eet_bench
 include/Eet.h
 libdata/pkgconfig/eet.pc
 lib/libeet.a
+lib/libeet.la
 lib/libeet.so
 lib/libeet.so.9

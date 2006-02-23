@@ -7,6 +7,7 @@
 
 PORTNAME=		libsrs2
 PORTVERSION=		1.0.18
+PORTREVISION=	1
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libsrs2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	srs
@@ -16,7 +17,6 @@ COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

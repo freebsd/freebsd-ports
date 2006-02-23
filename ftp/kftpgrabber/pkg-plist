@@ -1,9 +1,12 @@
 bin/kftpgrabber
 include/kftpgrabber/kftpbookmarkimportplugin.h
+lib/kde3/kftpimportplugin_gftp.a
 lib/kde3/kftpimportplugin_gftp.la
 lib/kde3/kftpimportplugin_gftp.so
+lib/kde3/kftpimportplugin_ncftp.a
 lib/kde3/kftpimportplugin_ncftp.la
 lib/kde3/kftpimportplugin_ncftp.so
+lib/libkftpinterfaces.a
 lib/libkftpinterfaces.la
 lib/libkftpinterfaces.so
 lib/libkftpinterfaces.so.0

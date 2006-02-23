@@ -5,9 +5,11 @@ etc/xdg/menus/ggz.menu
 include/ggzcore.h
 include/ggzmod.h
 lib/libggzcore.a
+lib/libggzcore.la
 lib/libggzcore.so
 lib/libggzcore.so.8
 lib/libggzmod.a
+lib/libggzmod.la
 lib/libggzmod.so
 lib/libggzmod.so.4
 share/desktop-directories/ggz-games.directory

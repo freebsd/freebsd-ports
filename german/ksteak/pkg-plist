@@ -1,4 +1,5 @@
 bin/ksteak
+lib/libksteakplugin.a
 lib/libksteakplugin.la
 lib/libksteakplugin.so
 lib/libksteakplugin.so.0

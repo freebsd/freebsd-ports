@@ -4,6 +4,7 @@ bin/istanbul
 %%PYTHON_SITELIBDIR%%/istanbul/configure/config.py
 %%PYTHON_SITELIBDIR%%/istanbul/extern/__init__.py
 %%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon/__init__.py
+%%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon/pytrayicon.la
 %%PYTHON_SITELIBDIR%%/istanbul/extern/pytrayicon/pytrayicon.so
 %%PYTHON_SITELIBDIR%%/istanbul/main/__init__.py
 %%PYTHON_SITELIBDIR%%/istanbul/main/main.py

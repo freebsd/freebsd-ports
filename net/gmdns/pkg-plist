@@ -4,6 +4,7 @@ include/gmdns/gmdns-service-query.h
 include/gmdns/gmdns-service.h
 include/gmdns/gmdns.h
 lib/libgmdns.a
+lib/libgmdns.la
 lib/libgmdns.so
 lib/libgmdns.so.0
 libdata/pkgconfig/gmdns.pc

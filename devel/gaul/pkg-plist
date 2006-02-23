@@ -30,12 +30,15 @@ include/gaul/table_util.h
 include/gaul/timer_util.h
 include/gaul.h
 lib/libgaul.a
+lib/libgaul.la
 lib/libgaul.so
 lib/libgaul.so.0
 lib/libgaul_util.a
+lib/libgaul_util.la
 lib/libgaul_util.so
 lib/libgaul_util.so.0
 lib/libnn_util.a
+lib/libnn_util.la
 lib/libnn_util.so
 lib/libnn_util.so.0
 @dirrm include/gaul

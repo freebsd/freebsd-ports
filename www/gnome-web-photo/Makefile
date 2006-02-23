@@ -17,7 +17,7 @@ COMMENT=	Tool to generate full-size image files and thumbnails
 
 USE_BZIP2=	yes
 USE_GECKO=	firefox seamonkey
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

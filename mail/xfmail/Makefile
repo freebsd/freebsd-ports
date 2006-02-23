@@ -23,11 +23,10 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 USE_BZIP2=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>

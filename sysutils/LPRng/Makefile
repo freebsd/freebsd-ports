@@ -22,7 +22,7 @@ COMMENT=	An Enhanced Printer Spooler
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+INSTALLS_SHLIB=	yes
 
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SYSCONFDIR="${SYSCONFDIR}"

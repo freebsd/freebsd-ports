@@ -1,9 +1,12 @@
 bin/klaptop_acpi_helper
 bin/klaptop_check
+lib/kde3/kcm_laptop.a
 lib/kde3/kcm_laptop.la
 lib/kde3/kcm_laptop.so
+lib/kde3/kded_klaptopdaemon.a
 lib/kde3/kded_klaptopdaemon.la
 lib/kde3/kded_klaptopdaemon.so
+lib/libkcmlaptop.a
 lib/libkcmlaptop.la
 lib/libkcmlaptop.so
 lib/libkcmlaptop.so.0

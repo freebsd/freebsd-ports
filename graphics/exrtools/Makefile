@@ -18,7 +18,7 @@ LIB_DEPENDS=	Half:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 

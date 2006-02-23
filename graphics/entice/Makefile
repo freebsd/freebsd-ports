@@ -20,7 +20,7 @@ LIB_DEPENDS=	esmart_thumb.0:${PORTSDIR}/graphics/esmart
 BROKEN=		Does not compile
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

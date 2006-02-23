@@ -7,7 +7,7 @@
 
 PORTNAME=	ecore
 PORTVERSION=	0.9.9.023
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -21,7 +21,7 @@ USE_GETOPT_LONG=	yes
 .endif
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes

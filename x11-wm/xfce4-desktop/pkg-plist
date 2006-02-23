@@ -40,8 +40,14 @@ etc/xdg/xfce4/desktop/menu.xml.sv
 etc/xdg/xfce4/desktop/menu.xml.uk
 etc/xdg/xfce4/desktop/menu.xml.vi
 etc/xdg/xfce4/desktop/menu.xml.zh_TW
+lib/xfce4/mcs-plugins/backdrop_settings.a
+lib/xfce4/mcs-plugins/backdrop_settings.la
 lib/xfce4/mcs-plugins/backdrop_settings.so
+lib/xfce4/modules/xfce4_desktop_menu.a
+lib/xfce4/modules/xfce4_desktop_menu.la
 lib/xfce4/modules/xfce4_desktop_menu.so
+lib/xfce4/panel-plugins/libdesktopmenu.a
+lib/xfce4/panel-plugins/libdesktopmenu.la
 lib/xfce4/panel-plugins/libdesktopmenu.so
 share/applications/xfce-backdrop-settings.desktop
 share/applications/xfce-menueditor.desktop

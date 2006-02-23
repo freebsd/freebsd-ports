@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-flat-theme2
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	gtk2flat
@@ -19,7 +19,7 @@ COMMENT=	A port of the Flat GTK+ engine to GTK+ 2.0
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 

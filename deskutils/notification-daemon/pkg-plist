@@ -1,4 +1,8 @@
+lib/notification-daemon-1.0/engines/libbubble.a
+lib/notification-daemon-1.0/engines/libbubble.la
 lib/notification-daemon-1.0/engines/libbubble.so
+lib/notification-daemon-1.0/engines/libstandard.a
+lib/notification-daemon-1.0/engines/libstandard.la
 lib/notification-daemon-1.0/engines/libstandard.so
 libexec/notification-daemon
 share/dbus-1/services/notification-daemon.service

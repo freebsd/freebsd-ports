@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim-xmms-remote
 PORTVERSION=	1.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	guifications
@@ -22,7 +22,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 post-patch:

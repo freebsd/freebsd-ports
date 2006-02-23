@@ -14,6 +14,6 @@
        done
  
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
-+      echo $libdirs @x_ldflags@ -lgtk@LT_RELEASE@ -lgdk@LT_RELEASE@ $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
++      echo $libdirs @x_ldflags@ -lgtk-@LT_RELEASE@ -lgdk-@LT_RELEASE@ $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
  fi      
  

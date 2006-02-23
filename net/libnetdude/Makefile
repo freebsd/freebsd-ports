@@ -16,7 +16,7 @@ COMMENT=	A library for manipulating libpcap/tcpdump trace files
 
 LIB_DEPENDS=	pcapnav.0:${PORTSDIR}/net/libpcapnav
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}

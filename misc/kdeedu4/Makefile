@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE}
 

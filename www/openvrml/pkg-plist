@@ -19,9 +19,11 @@ include/openvrml/openvrml/system.h
 include/openvrml/openvrml/viewer.h
 include/openvrml/openvrml/vrml97node.h
 lib/libopenvrml-gl.a
+lib/libopenvrml-gl.la
 lib/libopenvrml-gl.so
 lib/libopenvrml-gl.so.6
 lib/libopenvrml.a
+lib/libopenvrml.la
 lib/libopenvrml.so
 lib/libopenvrml.so.5
 libdata/pkgconfig/openvrml-gl.pc

@@ -7,14 +7,13 @@
 
 PORTNAME=	fxscintilla
 PORTVERSION=	1.63
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
-
-GNU_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes

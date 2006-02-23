@@ -7,6 +7,7 @@
 
 PORTNAME=	eq
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	equ
@@ -22,9 +23,10 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	lib/xmms/Effect/libeq.so
+PLIST_FILES=	lib/xmms/Effect/libeq.la \
+		lib/xmms/Effect/libeq.so
 
 OPTIONS=	OPTIMIZED_CFLAGS "use optimized C flags" on \
 		EXT_INSTRUCTIONS "use MMX/SSE/SSE2 instructions if available" on

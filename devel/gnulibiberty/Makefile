@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/libiberty
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 CONFLICTS=	freelibiberty-*
 

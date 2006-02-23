@@ -34,8 +34,11 @@ include/libbonoboui-2.0/bonobo/bonobo-zoomable.h
 include/libbonoboui-2.0/libbonoboui.h
 lib/bonobo-2.0/samples/bonobo-sample-controls-2
 lib/libbonoboui-2.a
+lib/libbonoboui-2.la
 lib/libbonoboui-2.so
 lib/libbonoboui-2.so.0
+lib/libglade/2.0/libbonobo.a
+lib/libglade/2.0/libbonobo.la
 lib/libglade/2.0/libbonobo.so
 libdata/bonobo/servers/Bonobo_Sample_Controls.server
 libdata/bonobo/servers/CanvDemo.server

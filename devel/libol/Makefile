@@ -14,7 +14,6 @@ MAINTAINER=	vince@blue-box.net
 COMMENT=	Library needed by syslog-ng
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 USE_GCC=	3.3+
 

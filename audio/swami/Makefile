@@ -23,7 +23,7 @@ LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt \
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_REINPLACE=		yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=		yes
 USE_GNOME=		gnomelibs gnometarget
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

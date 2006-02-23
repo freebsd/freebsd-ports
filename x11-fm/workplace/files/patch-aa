@@ -7,15 +7,15 @@
 -        echo $ac_n "checking for gtk_widget_new in -lgtk""... $ac_c" 1>&6
 -echo "configure:1812: checking for gtk_widget_new in -lgtk" >&5
 -ac_lib_var=`echo gtk'_'gtk_widget_new | sed 'y%./+-%__p_%'`
-+        echo $ac_n "checking for gtk_widget_new in -lgtk12""... $ac_c" 1>&6
-+echo "configure:1812: checking for gtk_widget_new in -lgtk12" >&5
-+ac_lib_var=`echo gtk12'_'gtk_widget_new | sed 'y%./+-%__p_%'`
++        echo $ac_n "checking for gtk_widget_new in -lgtk-12""... $ac_c" 1>&6
++echo "configure:1812: checking for gtk_widget_new in -lgtk-12" >&5
++ac_lib_var=`echo gtk-12'_'gtk_widget_new | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgtk -lgdk -lglib $x_libs -lm $LIBS"
-+LIBS="-lgtk12 -lgdk12 -lglib12 $x_libs -lm $LIBS"
++LIBS="-lgtk-12 -lgdk-12 -lglib-12 $x_libs -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 1820 "configure"
  #include "confdefs.h"
@@ -24,7 +24,7 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  X_LIBS="$X_LIBS -lgtk -lgdk -lglib $x_libs -lm"
-+  X_LIBS="$X_LIBS -lgtk12 -lgdk12 -lglib12 $x_libs -lm"
++  X_LIBS="$X_LIBS -lgtk-12 -lgdk-12 -lglib-12 $x_libs -lm"
  else
    echo "$ac_t""no" 1>&6
  { echo "configure: error: Can not link with gtk/gdk/glib" 1>&2; exit 1; }

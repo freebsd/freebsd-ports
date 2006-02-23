@@ -22,7 +22,8 @@ LOGDIR?=	/var/log
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:15 libtool:13
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
@@ -128,6 +129,7 @@ PLIST_SUB+=	RLMPERL=""
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--with-pic
+CFLAGS+=	-fPIC
 .endif
 
 INSTALLS_SHLIB=	yes

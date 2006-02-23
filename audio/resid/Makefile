@@ -7,6 +7,7 @@
 
 PORTNAME=	resid
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

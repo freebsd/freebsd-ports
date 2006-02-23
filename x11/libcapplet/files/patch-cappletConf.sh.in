@@ -1,0 +1,7 @@
+--- cappletConf.sh.in.orig	Wed Jul 10 05:42:31 2002
++++ cappletConf.sh.in	Sun Jan 22 21:22:31 2006
+@@ -1,3 +1,3 @@
+ CAPPLET_LIBDIR="-Wl,-E -L%%X11BASE%%/lib -L%%LOCALBASE%%/lib"
+-CAPPLET_LIBS="-lcapplet -Wl,-E -lXpm -ljpeg -lgnomeui -lart_lgpl -lgdk_imlib -ltiff -lungif -lpng -lz -lSM -lICE -lgtk12 -lgdk12 -lgmodule12 -lXext -lX11 -lgnome -lgnomesupport -lintl -lesd -lgnugetopt -laudiofile -lm -lglib12 -L%%LOCALBASE%%/lib -lORBitCosNaming -lORBit -lIIOP -lORBitutil -lglib12 -lwrap -lm -lgnorba"
++CAPPLET_LIBS="-lcapplet -Wl,-E -lXpm -ljpeg -lgnomeui -lart_lgpl -lgdk_imlib -ltiff -lungif -lpng -lz -lSM -lICE -lgtk-12 -lgdk-12 -lgmodule-12 -lXext -lX11 -lgnome -lgnomesupport -lintl -lesd -lgnugetopt -laudiofile -lm -lglib-12 -L%%LOCALBASE%%/lib -lORBitCosNaming -lORBit -lIIOP -lORBitutil -lglib-12 -lwrap -lm -lgnorba"
+ CAPPLET_INCLUDEDIR="-I%%X11BASE%%/include/libcapplet1 -I%%X11BASE%%/include/gnome-1.0 -I%%X11BASE%%/include -DNEED_GNOMESUPPORT_H -I%%X11BASE%%/lib/gnome-libs/include -I%%LOCALBASE%%/include/glib12 -I%%LOCALBASE%%/include/orbit-1.0 -I%%LOCALBASE%%/include -I%%X11BASE%%/include/gtk12"

@@ -1,3 +1,5 @@
+lib/xfce4/panel-plugins/libxkb.a
+lib/xfce4/panel-plugins/libxkb.la
 lib/xfce4/panel-plugins/libxkb.so
 share/xfce4/xkb/flags/ae.png
 share/xfce4/xkb/flags/am.png

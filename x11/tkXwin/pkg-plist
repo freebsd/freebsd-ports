@@ -1,4 +1,4 @@
-lib/libtkXwin.a
+lib/libtkXwin.la
 lib/libtkXwin.so
 lib/libtkXwin.so.1
 @cd %%LOCALBASE%%

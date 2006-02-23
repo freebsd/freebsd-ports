@@ -18,12 +18,15 @@ lib/libbonobomm-2.0/proc/m4/convert.m4
 lib/libbonobomm-2.0/proc/m4/convert_libbonobo.m4
 lib/libbonobomm-2.0/proc/m4/corbamethod.m4
 lib/libbonobomm_generated_skels-1.3.a
+lib/libbonobomm_generated_skels-1.3.la
 lib/libbonobomm_generated_skels-1.3.so
 lib/libbonobomm_generated_skels-1.3.so.9
 lib/libbonobomm_generated_stubs-1.3.a
+lib/libbonobomm_generated_stubs-1.3.la
 lib/libbonobomm_generated_stubs-1.3.so
 lib/libbonobomm_generated_stubs-1.3.so.9
 lib/libbonobomm_servers-1.3.a
+lib/libbonobomm_servers-1.3.la
 lib/libbonobomm_servers-1.3.so
 lib/libbonobomm_servers-1.3.so.9
 libdata/pkgconfig/libbonobomm-2.0.pc

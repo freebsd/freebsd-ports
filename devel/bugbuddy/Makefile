@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop gnomemenus \
 		desktopfileutils gnomedocutils
 GNOME_DESKTOP_VERSION=2

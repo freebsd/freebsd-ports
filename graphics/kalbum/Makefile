@@ -16,7 +16,7 @@ COMMENT=		Create albums from a collection of images
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_REINPLACE=		yes
 
 post-patch:

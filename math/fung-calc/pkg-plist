@@ -41,9 +41,11 @@ include/fung-calc/statinfo.h
 include/fung-calc/statplotgraph.h
 include/fung-calc/whiskerplot.h
 include/fung-calc/zerofunction.h
+lib/libfungcalc.a
 lib/libfungcalc.la
 lib/libfungcalc.so
 lib/libfungcalc.so.1
+lib/libfungcalcui.a
 lib/libfungcalcui.la
 lib/libfungcalcui.so
 lib/libfungcalcui.so.1

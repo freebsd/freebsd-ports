@@ -17,11 +17,10 @@ COMMENT=	KDEGUI for octave
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ARGS+=--program-transform-name=koctave3
 

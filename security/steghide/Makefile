@@ -21,9 +21,8 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:13
-GNU_CONFIGURE=	yes
 USE_GCC=	3.4
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
@@ -38,7 +37,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install-data-am\: install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
-	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL},' \
+	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \
 		${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's,-O2,${CFLAGS},' ${WRKSRC}/configure
 

@@ -26,6 +26,7 @@ include/fame_syntax_mpeg1.h
 include/fame_syntax_mpeg4.h
 include/fame_version.h
 lib/libfame.a
+lib/libfame.la
 lib/libfame.so
 lib/libfame-0.9.so
 lib/libfame-0.9.so.1

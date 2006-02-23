@@ -18,7 +18,7 @@ COMMENT=	A collection of plug-ins to cryptographic engines
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgpgme03.so.9:${PORTSDIR}/security/gpgme03 \
 		gpg-agent:${PORTSDIR}/security/gnupg-devel
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

@@ -13,10 +13,10 @@ MASTER_SITES=	http://www.draves.org/bomb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive display hack for SVGAlib or X
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libquicktime.a:${PORTSDIR}/multimedia/libquicktime
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound	\
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		vga.1:${PORTSDIR}/graphics/svgalib
+		vga.1:${PORTSDIR}/graphics/svgalib \
+		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
 USE_REINPLACE=	yes
 MAKE_ENV=	SCM_CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
@@ -28,6 +28,7 @@ pre-configure:
 .for fi in Makefile bomb-${PORTVERSION}-1.spec
 	${REINPLACE_CMD} -e 's|/usr/lib/bomb|${DATADIR}|;			\
 	s|/home/spot/src/quicktime4linux-1.1.9/quicktime|${LOCALBASE}/lib|;	\
+	s|..QTDIR./libquicktime.a|-lquicktime|;					\
 	s|/usr/X11R6/lib|${X11BASE}/lib -L${LOCALBASE}/lib|;			\
 	s|-lpthread|${PTHREAD_LIBS}|;						\
 	s|/usr/bin/bomb|${PREFIX}/bin/bomb|;					\

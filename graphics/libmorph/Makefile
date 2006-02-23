@@ -7,6 +7,7 @@
 
 PORTNAME=	libmorph
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
@@ -15,7 +16,7 @@ COMMENT=	A library for loading (and saving) 3d modeller object files
 
 CONFLICTS=	xmorph*
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

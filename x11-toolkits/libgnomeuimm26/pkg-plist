@@ -51,6 +51,7 @@ include/libgnomeuimm-%%API_VERSION%%/libgnomeuimm/ui-items-icon.h
 include/libgnomeuimm-%%API_VERSION%%/libgnomeuimm/ui-items-stock.h
 include/libgnomeuimm-%%API_VERSION%%/libgnomeuimm/wrap_init.h
 lib/libgnomeuimm-%%VERSION%%.a
+lib/libgnomeuimm-%%VERSION%%.la
 lib/libgnomeuimm-%%VERSION%%.so
 lib/libgnomeuimm-%%VERSION%%.so.1
 lib/libgnomeuimm-%%API_VERSION%%/include/libgnomeuimmconfig.h

@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
@@ -19,7 +19,7 @@ COMMENT=	GNOME 2 multi-format document viewer
 LIB_DEPENDS=	poppler.0:${PORTSDIR}/graphics/poppler
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

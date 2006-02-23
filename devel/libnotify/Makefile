@@ -7,6 +7,7 @@
 
 PORTNAME=	libnotify
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/libnotify/
 
@@ -18,7 +19,6 @@ LIB_DEPENDS=	dbus-1.2:${PORTSDIR}/devel/dbus \
 
 USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -7,6 +7,7 @@
 
 PORTNAME=		elan
 PORTVERSION=		1.7b
+PORTREVISION=	1
 CATEGORIES=		lang
 MASTER_SITES=		ftp://ftp.cs.ru.nl/pub/vb/
 DISTNAME=		${PORTNAME}-1.7-beta
@@ -23,7 +24,6 @@ MAN1=			elancc.1
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=		libtool:13:inc
 
 .include <bsd.port.pre.mk>
 

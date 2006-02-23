@@ -1,6 +1,7 @@
 bin/libIDL-config-2
 include/libIDL-2.0/libIDL/IDL.h
 lib/libIDL-2.a
+lib/libIDL-2.la
 lib/libIDL-2.so
 lib/libIDL-2.so.0
 libdata/pkgconfig/libIDL-2.0.pc

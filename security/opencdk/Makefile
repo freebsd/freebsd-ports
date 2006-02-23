@@ -7,6 +7,7 @@
 
 PORTNAME=	opencdk
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/ \
@@ -21,7 +22,7 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}

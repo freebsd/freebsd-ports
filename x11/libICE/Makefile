@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
 

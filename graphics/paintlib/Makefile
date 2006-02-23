@@ -7,6 +7,7 @@
 
 PORTNAME=	paintlib
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.paintlib.de/paintlib/
 
@@ -19,7 +20,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-SDL --disable-dfb

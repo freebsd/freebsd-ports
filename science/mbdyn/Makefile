@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 CONFIGURE_ARGS+=	--program-prefix='' --with-umfpack=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/UMFPACK ${PTHREAD_CFLAGS}
 LDFLAGS+=	-lm -L${LOCALBASE}/lib ${PTHREAD_LIBS}

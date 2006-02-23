@@ -1,4 +1,5 @@
 bin/kshutdown
+lib/kde3/kshutdownlockout_panelapplet.a
 lib/kde3/kshutdownlockout_panelapplet.la
 lib/kde3/kshutdownlockout_panelapplet.so
 share/applications/kshutdown.desktop

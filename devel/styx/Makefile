@@ -8,7 +8,7 @@
 
 PORTNAME=	styx
 PORTVERSION=	1.6.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 
@@ -17,7 +17,7 @@ COMMENT=	A scanner/parser generator
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}

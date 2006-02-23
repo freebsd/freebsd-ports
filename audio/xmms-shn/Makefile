@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-shn
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/source/
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

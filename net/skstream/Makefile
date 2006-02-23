@@ -17,7 +17,7 @@ COMMENT=	An iostream based C++ socket library
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

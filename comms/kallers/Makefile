@@ -6,7 +6,7 @@
 
 PORTNAME=	kallers
 PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms kde
 MASTER_SITES=	http://www.nadmm.com/kallers/src/
 
@@ -17,7 +17,7 @@ USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_TARGET=
 
 post-patch:

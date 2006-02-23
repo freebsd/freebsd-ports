@@ -13,6 +13,7 @@ include/smpeg/MPEGsystem.h
 include/smpeg/MPEGvideo.h
 include/smpeg/smpeg.h
 lib/libsmpeg.a
+lib/libsmpeg.la
 lib/libsmpeg.so
 lib/libsmpeg.so.1
 share/aclocal/smpeg.m4

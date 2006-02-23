@@ -16,7 +16,7 @@ COMMENT=	Display various information right on your desktop
 EXTRA_PATCHES=	${.CURDIR}/../../comms/kallers/files/patch-configure
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

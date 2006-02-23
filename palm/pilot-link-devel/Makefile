@@ -7,7 +7,7 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.11.8
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	${MASTER_SITE_GENTOO}
@@ -19,7 +19,7 @@ COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
 USE_ICONV=	yes
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 TCL_VER?=	8.4

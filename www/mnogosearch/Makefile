@@ -7,6 +7,7 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=	3.2.35
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -19,9 +20,8 @@ MAN5=		indexer.conf.5
 INSTALLS_SHLIB=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \

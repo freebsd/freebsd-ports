@@ -146,6 +146,7 @@ include/vmime/utility/urlUtils.hpp
 include/vmime/vmime.hpp
 include/vmime/word.hpp
 lib/libvmime.a
+lib/libvmime.la
 lib/libvmime.so
 lib/libvmime.so.0
 libdata/pkgconfig/vmime.pc

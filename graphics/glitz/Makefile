@@ -8,6 +8,7 @@
 
 PORTNAME=	glitz
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -17,7 +18,7 @@ COMMENT=	OpenGL image compositing library
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \

@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi terminal based on aterm
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

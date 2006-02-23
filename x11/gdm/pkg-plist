@@ -21,7 +21,11 @@ etc/gdm/modules/factory-AccessDwellMouseEvents
 @unexec if cmp -s %D/etc/gdm/modules/AccessKeyMouseEvents %D/etc/gdm/modules/factory-AccessKeyMouseEvents; then rm -f %D/etc/gdm/modules/AccessKeyMouseEvents; fi
 etc/gdm/modules/factory-AccessKeyMouseEvents
 @exec [ -f %B/AccessKeyMouseEvents ] || cp %B/%f %B/AccessKeyMouseEvents
+lib/gtk-2.0/modules/libdwellmouselistener.a
+lib/gtk-2.0/modules/libdwellmouselistener.la
 lib/gtk-2.0/modules/libdwellmouselistener.so
+lib/gtk-2.0/modules/libkeymouselistener.a
+lib/gtk-2.0/modules/libkeymouselistener.la
 lib/gtk-2.0/modules/libkeymouselistener.so
 %%PAM_MISC%%libexec/gdmaskpass
 libexec/gdmchooser

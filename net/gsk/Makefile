@@ -7,6 +7,7 @@
 
 PORTNAME=	gsk
 PORTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	A C library for writing servers
 
 USE_GNOME=	glib20 gnomehack gnometarget
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS+=	--disable-gtk-doc

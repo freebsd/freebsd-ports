@@ -25,7 +25,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget pygtk2 pkgconfig pygnome2
 USE_GSTREAMER=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs-build

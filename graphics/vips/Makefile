@@ -22,8 +22,7 @@ LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3 \
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

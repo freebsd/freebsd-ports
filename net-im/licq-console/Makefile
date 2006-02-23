@@ -7,7 +7,7 @@
 
 PORTNAME=	console
 PORTVERSION=	${CONSOLE_LICQ_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
@@ -15,7 +15,7 @@ LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
@@ -24,7 +24,8 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	lib/licq/licq_console.so
+PLIST_FILES=	lib/licq/licq_console.la \
+		lib/licq/licq_console.so
 
 .include <bsd.port.pre.mk>
 

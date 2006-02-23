@@ -7,7 +7,7 @@
 
 PORTNAME=	gnet
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 PKGNAMESUFFIX=	2
@@ -18,7 +18,7 @@ COMMENT=	A simple network library built upon Glib-2
 USE_GNOME=	gnomehack glib20
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${DOCSDIR}

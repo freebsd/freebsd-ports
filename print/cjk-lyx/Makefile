@@ -45,7 +45,7 @@ USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 OPTIONS=	QT "Compile with qt instead of xforms (recommended)" ON \
 		ASPELL "Compile with aspell support" ON \

@@ -2,6 +2,7 @@ bin/gnomesu
 include/libgnomesu-1.0/libgnomesu/gnomesu-auth-dialog.h
 include/libgnomesu-1.0/libgnomesu/libgnomesu.h
 lib/libgnomesu.a
+lib/libgnomesu.la
 lib/libgnomesu.so
 lib/libgnomesu.so.2
 libdata/pkgconfig/libgnomesu-1.0.pc

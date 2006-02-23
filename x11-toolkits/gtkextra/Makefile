@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkextra
 PORTVERSION=	0.99.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtkextra.sourceforge.net/src/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

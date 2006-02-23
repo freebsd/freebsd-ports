@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -15,11 +15,10 @@ MASTER_SITE_SUBDIR=	net-snmp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-USE_AUTOTOOLS=	autoconf:213 libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CFLAGS+=	-fPIC
 
 CONFIGURE_ARGS+=	--enable-shared \

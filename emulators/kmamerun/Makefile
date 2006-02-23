@@ -17,7 +17,7 @@ COMMENT=	KDE frontend for M.A.M.E. (Multiple Arcade Machine Emulator)
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	openjade
 PORTVERSION=	1.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,8 @@ COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_GMAKE=	YES
-USE_AUTOTOOLS=	libtool:13:inc
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade

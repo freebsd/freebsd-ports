@@ -69,9 +69,11 @@ lib/aspell-%%VER%%/spell
 lib/aspell-%%VER%%/split.kbd
 lib/aspell-%%VER%%/standard.kbd
 lib/libaspell.a
+lib/libaspell.la
 lib/libaspell.so
 lib/libaspell.so.16
 lib/libpspell.a
+lib/libpspell.la
 lib/libpspell.so
 lib/libpspell.so.16
 %%DATADIR%%/ccpp.amf

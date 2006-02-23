@@ -29,6 +29,7 @@ include/libcroco-%%VERSION%%/libcroco/cr-utils.h
 include/libcroco-%%VERSION%%/libcroco/libcroco-config.h
 include/libcroco-%%VERSION%%/libcroco/libcroco.h
 lib/libcroco-%%VERSION%%.a
+lib/libcroco-%%VERSION%%.la
 lib/libcroco-%%VERSION%%.so
 lib/libcroco-%%VERSION%%.so.3
 libdata/pkgconfig/libcroco-%%VERSION%%.pc

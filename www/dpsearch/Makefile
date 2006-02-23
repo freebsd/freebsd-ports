@@ -7,6 +7,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.37
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.newsa.ru/ \
 		http://www.dataparksearch.org/
@@ -18,7 +19,7 @@ COMMENT=	Open source search engine for Internet and Intranet sites
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \

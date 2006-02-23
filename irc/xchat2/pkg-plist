@@ -1,8 +1,12 @@
 bin/xchat
 bin/xchat-remote
+%%DBUS%%lib/xchat/plugins/dbus.la
 %%DBUS%%lib/xchat/plugins/dbus.so
+%%PERL%%lib/xchat/plugins/perl.la
 %%PERL%%lib/xchat/plugins/perl.so
+%%PYTHON%%lib/xchat/plugins/python.la
 %%PYTHON%%lib/xchat/plugins/python.so
+%%TCL%%lib/xchat/plugins/tcl.la
 %%TCL%%lib/xchat/plugins/tcl.so
 share/applications/xchat.desktop
 share/locale/de/LC_MESSAGES/xchat.mo

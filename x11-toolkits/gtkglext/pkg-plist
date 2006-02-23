@@ -36,9 +36,11 @@ include/gtkglext-1.0/gtk/gtkglwidget.h
 @dirrm include/gtkglext-1.0
 lib/gtkglext-1.0/include/gdkglext-config.h
 lib/libgdkglext-x11-1.0.a
+lib/libgdkglext-x11-1.0.la
 lib/libgdkglext-x11-1.0.so
 lib/libgdkglext-x11-1.0.so.2
 lib/libgtkglext-x11-1.0.a
+lib/libgtkglext-x11-1.0.la
 lib/libgtkglext-x11-1.0.so
 lib/libgtkglext-x11-1.0.so.2
 @dirrm lib/gtkglext-1.0/include

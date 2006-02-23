@@ -15,6 +15,7 @@ include/xmorph/warp-gtk.h
 include/xmorph/warp.h
 include/xmorph/warp2.h
 lib/libmorph.a
+lib/libmorph.la
 lib/libmorph.so
 lib/libmorph.so.1
 %%PORTDOCS%%%%EXAMPLESDIR%%/AA/README

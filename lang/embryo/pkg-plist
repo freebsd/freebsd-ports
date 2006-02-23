@@ -3,6 +3,7 @@ bin/embryo_cc
 bin/embryo-config
 include/Embryo.h
 lib/libembryo.a
+lib/libembryo.la
 lib/libembryo.so
 lib/libembryo.so.9
 libdata/pkgconfig/embryo.pc

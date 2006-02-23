@@ -7,6 +7,7 @@
 
 PORTNAME=	libicq
 PORTVERSION=	0.33
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.sourceforge.net/libicq/ \
 		${MASTER_SITE_LOCAL}

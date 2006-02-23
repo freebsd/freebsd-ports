@@ -9,6 +9,7 @@ include/metacity-1/metacity-private/theme-parser.h
 include/metacity-1/metacity-private/theme.h
 include/metacity-1/metacity-private/util.h
 lib/libmetacity-private.a
+lib/libmetacity-private.la
 lib/libmetacity-private.so
 lib/libmetacity-private.so.0
 libdata/pkgconfig/libmetacity-private.pc

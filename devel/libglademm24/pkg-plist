@@ -5,6 +5,7 @@ include/libglademm-%%API_VERSION%%/libglademm/variablesmap.h
 include/libglademm-%%API_VERSION%%/libglademm/wrap_init.h
 include/libglademm-%%API_VERSION%%/libglademm/xml.h
 lib/libglademm-%%VERSION%%.a
+lib/libglademm-%%VERSION%%.la
 lib/libglademm-%%VERSION%%.so
 lib/libglademm-%%VERSION%%.so.1
 lib/libglademm-%%API_VERSION%%/include/libglademmconfig.h

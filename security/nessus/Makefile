@@ -32,7 +32,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
 WANT_GNOME=	yes

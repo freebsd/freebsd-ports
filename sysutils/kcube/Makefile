@@ -7,7 +7,7 @@
 
 PORTNAME=	kcube
 PORTVERSION=	0.61
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.tuxed.de/kcube/download/
 
@@ -15,10 +15,9 @@ MAINTAINER=	mranner@inode.at
 COMMENT=	Another cpu load kicker applet for KDE
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 
 post-patch:

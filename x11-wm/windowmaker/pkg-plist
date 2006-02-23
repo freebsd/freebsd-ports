@@ -102,6 +102,7 @@ lib/libWINGs.a
 lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
+lib/libwraster.la
 lib/libwraster.so
 lib/libwraster.so.4
 libdata/pkgconfig/WINGs.pc

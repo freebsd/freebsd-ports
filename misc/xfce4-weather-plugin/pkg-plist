@@ -1,3 +1,5 @@
+lib/xfce4/panel-plugins/libweather.a
+lib/xfce4/panel-plugins/libweather.la
 lib/xfce4/panel-plugins/libweather.so
 share/xfce4/weather/icons/liquid/1.png
 share/xfce4/weather/icons/liquid/10.png

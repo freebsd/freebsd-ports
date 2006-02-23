@@ -7,7 +7,7 @@
 
 PORTNAME=	recode
 PORTVERSION=	3.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext

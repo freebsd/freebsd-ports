@@ -23,8 +23,8 @@ lib/gtkwave/reader_vcd.a
 lib/gtkwave/reader_vcd.la
 lib/gtkwave/reader_vcd.so
 lib/gtkwave/reader_vcd.so.0
-lib/gtkwave/libformat.la
 lib/gtkwave/libformat.a
+lib/gtkwave/libformat.la
 @dirrm lib/gtkwave
 %%PORTDOCS%%%%DOCSDIR%%/data_format.png
 %%PORTDOCS%%%%DOCSDIR%%/edit_menu.png

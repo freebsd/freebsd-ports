@@ -1,4 +1,6 @@
 bin/rhythmbox
+lib/bonobo/librb-nautilus-context-menu.a
+lib/bonobo/librb-nautilus-context-menu.la
 lib/bonobo/librb-nautilus-context-menu.so
 libdata/bonobo/servers/GNOME_Rhythmbox.server
 libdata/bonobo/servers/Rhythmbox_Nautilus_Context_Menu.server

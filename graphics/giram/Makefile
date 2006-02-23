@@ -7,7 +7,7 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.giram.org/downloads/
 
@@ -17,11 +17,10 @@ COMMENT=	A POV-Ray oriented modeller
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds
 
 USE_X_PREFIX=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
-LIBTOOLFLAGS=	# none
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		INTLTOOL_PERL="${PERL}"

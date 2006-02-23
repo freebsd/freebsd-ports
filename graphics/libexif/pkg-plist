@@ -12,6 +12,7 @@ include/libexif/exif-mnote-data.h
 include/libexif/exif-tag.h
 include/libexif/exif-utils.h
 lib/libexif.a
+lib/libexif.la
 lib/libexif.so
 lib/libexif.so.12
 libdata/pkgconfig/libexif.pc

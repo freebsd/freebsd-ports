@@ -8,12 +8,15 @@ include/pcre_stringpiece.h
 include/pcrecpparg.h
 include/pcrecpp.h
 lib/libpcre.a
+lib/libpcre.la
 lib/libpcre.so
 lib/libpcre.so.0
 lib/libpcrecpp.a
+lib/libpcrecpp.la
 lib/libpcrecpp.so
 lib/libpcrecpp.so.0
 lib/libpcreposix.a
+lib/libpcreposix.la
 lib/libpcreposix.so
 lib/libpcreposix.so.0
 libdata/pkgconfig/libpcre.pc

@@ -7,7 +7,7 @@
 
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

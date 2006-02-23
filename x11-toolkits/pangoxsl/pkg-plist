@@ -1,5 +1,6 @@
 include/pangoxsl/pangoxsl/pango-xsl-attributes.h
 lib/libpangoxsl-1.0.a
+lib/libpangoxsl-1.0.la
 lib/libpangoxsl-1.0.so
 lib/libpangoxsl-1.0.so.600
 libdata/pkgconfig/pangoxsl.pc

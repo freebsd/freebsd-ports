@@ -49,6 +49,7 @@ include/paragui/pgwidgetlist.h
 include/paragui/pgwidgetlistex.h
 include/paragui/pgwindow.h
 lib/libparagui.a
+lib/libparagui.la
 lib/libparagui.so
 lib/libparagui.so.%%SHLIB_VER%%
 libdata/pkgconfig/paragui.pc

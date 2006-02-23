@@ -11,9 +11,11 @@ include/med_outils.h
 include/med_proto.h
 include/med_utils.h
 lib/libmed.a
+lib/libmed.la
 lib/libmed.so
 lib/libmed.so.1
 lib/libmedC.a
+lib/libmedC.la
 lib/libmedC.so
 lib/libmedC.so.1
 %%EXAMPLESDIR%%/testc/test1

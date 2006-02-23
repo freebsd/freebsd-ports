@@ -7,6 +7,7 @@
 
 PORTNAME=	link-grammar
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -17,7 +18,7 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 DOCS=		LICENSE README
 

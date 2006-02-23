@@ -7,7 +7,7 @@
 
 PORTNAME=	libadplug
 PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -19,7 +19,7 @@ COMMENT=	AdLib emulator library supporting many formats
 LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
 
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -5,7 +5,7 @@
  CC	        = @CC@
  # version number is prefixed by a 0 for a better shared library version number
 -LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) $(SHVFLAGS) -o
-+LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -release $(VERSION).0 -version-info 4 -o
++LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -version-info 4 -o
  LIB_EXTENSION   = la
  LIB_VERSION     =
  LIB_LDCONFIG_CMD = $(LIBTOOL) --mode=finish $(libdir)

@@ -5,6 +5,7 @@ include/libglade-2.0/glade/glade-parser.h
 include/libglade-2.0/glade/glade-xml.h
 include/libglade-2.0/glade/glade.h
 lib/libglade-2.0.a
+lib/libglade-2.0.la
 lib/libglade-2.0.so
 lib/libglade-2.0.so.0
 libdata/pkgconfig/libglade-2.0.pc

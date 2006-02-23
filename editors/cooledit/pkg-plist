@@ -4,6 +4,7 @@ bin/coolman
 bin/coolproject
 bin/smalledit
 lib/libCw.a
+lib/libCw.la
 lib/libCw.so
 lib/libCw.so.1
 %%DATADIR%%/c_utils.py

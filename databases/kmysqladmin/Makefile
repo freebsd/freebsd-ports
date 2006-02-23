@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 MAINTAINER=	bananaz@bk.ru
 COMMENT=	A graphical frontend for administration of mysql servers
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_XLIB=	yes
 USE_QT_VER=	3

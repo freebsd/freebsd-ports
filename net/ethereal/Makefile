@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.10.14
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
@@ -69,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtk2
 .endif
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -18,7 +19,7 @@ COMMENT=	Internationalized Domain Names command line tool
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.berlios.de/segfaultskde/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick launcher for Open Office
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes

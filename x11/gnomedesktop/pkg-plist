@@ -3,6 +3,7 @@ include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
 include/gnome-desktop-2.0/libgnomeui/gnome-ditem-edit.h
 include/gnome-desktop-2.0/libgnomeui/gnome-hint.h
 lib/libgnome-desktop-2.a
+lib/libgnome-desktop-2.la
 lib/libgnome-desktop-2.so
 lib/libgnome-desktop-2.so.2
 libdata/pkgconfig/gnome-desktop-2.0.pc

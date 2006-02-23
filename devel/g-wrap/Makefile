@@ -8,7 +8,7 @@
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.3.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
 		http://people.freebsd.org/~sobomax/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/lang/slib-guile
 
 INFO=		g-wrap
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

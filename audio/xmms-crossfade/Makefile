@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-crossfade
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/
 
@@ -16,7 +17,7 @@ COMMENT=	XMMS Output plugin for crossfading between songs
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

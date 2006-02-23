@@ -8,7 +8,7 @@
 
 PORTNAME=	libyahoo2
 PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnometarget
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnomekeyring
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui

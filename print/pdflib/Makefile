@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
@@ -17,13 +18,10 @@ COMMENT=	A C library for dynamically generating PDF
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-java=no \
-		--with-py=no \
-		--with-tcl=no
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--with-java=no --with-py=no --with-tcl=no
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes

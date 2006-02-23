@@ -6,6 +6,7 @@
 
 PORTNAME=	howl
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
@@ -15,7 +16,7 @@ COMMENT=	Zeroconf/Bonjour(tm) implementation
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_GETOPT_LONG=yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

@@ -37,11 +37,9 @@ LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
 
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
-LIBTOOLFLAGS=	--enable-ltlibs
-LIBTOOLFILES=	configure rasqal/configure
+GNU_CONFIGURE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include/db${WITH_BDB_VER} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

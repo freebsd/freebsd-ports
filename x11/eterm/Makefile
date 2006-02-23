@@ -7,7 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		ast.2:${PORTSDIR}/devel/libast
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--enable-mmx
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm

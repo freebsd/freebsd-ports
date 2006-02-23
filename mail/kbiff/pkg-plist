@@ -1,4 +1,5 @@
 bin/kbiff
+lib/kbiff.a
 lib/kbiff.la
 lib/kbiff.so
 share/applnk/Internet/kbiff.desktop

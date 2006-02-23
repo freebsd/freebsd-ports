@@ -8,6 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/2.8
@@ -27,7 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libglade2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib

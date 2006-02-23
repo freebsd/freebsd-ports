@@ -21,7 +21,6 @@ MAN5=		indexer.conf.5
 
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
 APACHE_COMPAT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

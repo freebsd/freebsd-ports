@@ -8,6 +8,7 @@ include/libpanelappletmm-%%API_VERSION%%/libpanelappletmm/private/applet_p.h
 include/libpanelappletmm-%%API_VERSION%%/libpanelappletmm/private/enums_p.h
 include/libpanelappletmm-%%API_VERSION%%/libpanelappletmm/wrap_init.h
 lib/libpanelappletmm-%%VERSION%%.a
+lib/libpanelappletmm-%%VERSION%%.la
 lib/libpanelappletmm-%%VERSION%%.so
 lib/libpanelappletmm-%%VERSION%%.so.1
 lib/libpanelappletmm-%%API_VERSION%%/include/libpanelappletmmconfig.h

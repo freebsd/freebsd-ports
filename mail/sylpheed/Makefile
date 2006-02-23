@@ -7,7 +7,6 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	1.0.6
-PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v1.0/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +23,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 NO_LATEST_LINK=	yes
 
@@ -118,9 +117,6 @@ post-patch:
 		${WRKSRC}/${i}
 .endfor
 .endif
-
-pre-build:
-	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)

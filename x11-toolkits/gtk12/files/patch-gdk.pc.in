@@ -6,5 +6,5 @@
  Requires: glib
 -Libs: -L${libdir} @x_ldflags@ -lgdk @INTLLIBS@ @GDK_WLIBS@ @x_libs@ -lm
 -Cflags: -I${includedir}/gtk-1.2 @x_cflags@
-+Libs: -L${libdir} @x_ldflags@ -lgdk12 @INTLLIBS@ @GDK_WLIBS@ @x_libs@ -lm
++Libs: -L${libdir} @x_ldflags@ -lgdk-12 @INTLLIBS@ @GDK_WLIBS@ @x_libs@ -lm
 +Cflags: -I${includedir} @x_cflags@

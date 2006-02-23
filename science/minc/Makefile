@@ -17,6 +17,7 @@
 
 PORTNAME=	minc
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	http://www.bic.mni.mcgill.ca/software/distribution/packages/ \
 		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
@@ -27,8 +28,11 @@ COMMENT=	Medical Imaging NetCDF
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
 
 INSTALLS_SHLIB=	yes
-
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-static=yes --enable-shared=yes
 
 # Build parameters
 #WRKSRC=		${WRKDIR}/minc-${PORTVERSION}
@@ -67,12 +71,8 @@ MAN1=	dcm2mnc.1 \
 	voxeltoworld.1 \
 	xfmconcat.1 \
 	xfminvert.1
-MAN3=	ParseArgv.3
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAN3=	ParseArgv.3
 
 post-install:
 	${CAT} ${PKGMESSAGE}

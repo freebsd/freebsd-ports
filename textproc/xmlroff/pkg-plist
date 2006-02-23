@@ -31,6 +31,7 @@ include/libfo-0.3/util/fo-hash-table.h
 include/libfo-0.3/util/fo-image.h
 include/libfo-0.3/util/fo-pixbuf.h
 lib/libfo-0.3.a
+lib/libfo-0.3.la
 lib/libfo-0.3.so
 lib/libfo-0.3.so.306
 libdata/pkgconfig/libfo-0.3.pc

@@ -18,7 +18,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 gnomehack gnometarget
 USE_ICONV=	yes
 USE_REINPLACE=	yes
@@ -26,6 +26,7 @@ INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	include/svg.h \
 		lib/libsvg.a \
+		lib/libsvg.la \
 		lib/libsvg.so \
 		lib/libsvg.so.1 \
 		libdata/pkgconfig/libsvg.pc

@@ -8,6 +8,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.2.4.1
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.org.uk/downloads/${PORTVERSION}/
@@ -29,7 +30,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 MAN1=		scribus.1
