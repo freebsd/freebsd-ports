@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		cvsps:${PORTSDIR}/devel/cvsps \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
