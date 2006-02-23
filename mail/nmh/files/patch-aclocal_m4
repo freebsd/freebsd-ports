@@ -1,0 +1,12 @@
+diff -ru ./aclocal.m4 ../../work-save/nmh-1.2/aclocal.m4
+--- ./aclocal.m4	Wed Dec 14 16:45:36 2005
++++ ../../work-save/nmh-1.2/aclocal.m4	Wed Feb 22 15:37:56 2006
+@@ -44,7 +44,7 @@
+ dnl the right header files.)
+ AC_DEFUN(NMH_CHECK_DBM,
+ [
+-if test "x$1" == "x"; then
++if test "x$1" = "x"; then
+    nmh_libs=
+    dnl this is just for the benefit of AC_CACHE_CHECK's message
+    nmh_testname=libc
