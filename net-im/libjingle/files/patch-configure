@@ -1,0 +1,65 @@
+--- configure.orig	Wed Feb 22 15:57:11 2006
++++ configure	Wed Feb 22 16:04:40 2006
+@@ -6353,7 +6353,7 @@
+       fi
+       ;;
+ 
+-    hpux*)
++    hpux* | freebsd*)
+       # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
+       # not for PA HP-UX.
+       case "$host_cpu" in
+@@ -6416,7 +6416,7 @@
+       lt_prog_compiler_static='-Bstatic'
+       ;;
+ 
+-    linux*)
++    linux* | freebsd*)
+       case $CC in
+       icc* | ecc*)
+ 	lt_prog_compiler_wl='-Wl,'
+@@ -10793,7 +10793,7 @@
+ 	lt_prog_compiler_pic_CXX=-Kconform_pic
+       fi
+       ;;
+-    hpux*)
++    hpux* | freebsd*)
+       # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
+       # not for PA HP-UX.
+       case "$host_cpu" in
+@@ -13230,7 +13230,7 @@
+       fi
+       ;;
+ 
+-    hpux*)
++    hpux* | freebsd*)
+       # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
+       # not for PA HP-UX.
+       case "$host_cpu" in
+@@ -13293,7 +13293,7 @@
+       lt_prog_compiler_static_F77='-Bstatic'
+       ;;
+ 
+-    linux*)
++    linux* | freebsd*)
+       case $CC in
+       icc* | ecc*)
+ 	lt_prog_compiler_wl_F77='-Wl,'
+@@ -15568,7 +15568,7 @@
+       fi
+       ;;
+ 
+-    hpux*)
++    hpux* | freebsd)
+       # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
+       # not for PA HP-UX.
+       case "$host_cpu" in
+@@ -15631,7 +15631,7 @@
+       lt_prog_compiler_static_GCJ='-Bstatic'
+       ;;
+ 
+-    linux*)
++    linux* | freebsd*)
+       case $CC in
+       icc* | ecc*)
+ 	lt_prog_compiler_wl_GCJ='-Wl,'
