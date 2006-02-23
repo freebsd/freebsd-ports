@@ -16,6 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Account for network lag in FICS chess games
 
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 STRIP=		# strip(1) does not support a.out binaries
 PLIST_FILES=	bin/timeseal
