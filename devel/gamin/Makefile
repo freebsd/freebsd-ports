@@ -7,7 +7,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.7
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
