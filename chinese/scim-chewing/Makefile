@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-chewing
-PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTVERSION=	0.2.1
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
