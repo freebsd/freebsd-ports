@@ -13,9 +13,9 @@ MASTER_SITES=	http://tinderbox.marcuscom.com/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Port build tinderbox system
 
-PERL_RUN_DEPENDS=	Digest-MD5:${PORTSDIR}/security/p5-Digest-MD5 \
-			Net-SMTP:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
 		cvsup:${PORTSDIR}/net/cvsup-without-gui
 
 OPTIONS=	PGSQL "With pgsql" On \
@@ -37,13 +37,13 @@ USE_PHP=	session
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 USE_PHP+=	pgsql
-PERL_RUN_DEPENDS+=	DBD-Pg:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if defined(WITH_MYSQL)
 USE_PHP+=	mysql
 USE_MYSQL=	yes
-PERL_RUN_DEPENDS+=	DBD-mysql:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"

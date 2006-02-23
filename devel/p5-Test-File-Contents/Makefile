@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@rbt.ca
 COMMENT=	Test routines for examining the contents of files
 
-PERL_BUILD_DEPENDS=	Test-More:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	yes
 
