@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
@@ -20,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Di
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 MAN8=		rkhunter.8
 MANCOMPRESSED=	no
@@ -30,7 +28,7 @@ PORTDOCS=	CHANGELOG README WISHLIST
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 do-install:
