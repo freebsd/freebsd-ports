@@ -5695,7 +5695,6 @@ libtifiles	ports/devel/libtifiles
 libtnl		ports/net/libtnl
 libtomcrypt	ports/security/libtomcrypt
 libtommath	ports/math/libtommath
-libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
 libtorrent	ports/net-p2p/libtorrent
 libtranslate	ports/textproc/libtranslate
