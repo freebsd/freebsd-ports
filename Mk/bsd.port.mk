@@ -3302,7 +3302,7 @@ do-patch:
 
 .if !target(run-autotools)
 run-autotools:
-	${DO_NADA}
+	@${DO_NADA}
 .endif
 
 # Configure
