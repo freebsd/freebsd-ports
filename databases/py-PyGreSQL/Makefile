@@ -7,6 +7,7 @@
 
 PORTNAME=	PyGreSQL
 PORTVERSION=	3.8
+PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
