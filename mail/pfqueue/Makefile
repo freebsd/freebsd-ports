@@ -7,7 +7,7 @@
 
 PORTNAME=	pfqueue
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		pfqueue.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" \
+		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|PFQ_SONAME "0.0.0"|PFQ_SONAME "0"|' \
+		${WRKSRC}/libpfq/pfqlib.c
 
 .include <bsd.port.mk>
