@@ -62,6 +62,7 @@
     SUBDIR += kpopup
     SUBDIR += libicq
     SUBDIR += libicq2000
+    SUBDIR += libjingle
     SUBDIR += libmsn
     SUBDIR += libyahoo2
     SUBDIR += licq
