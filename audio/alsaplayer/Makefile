@@ -7,7 +7,7 @@
 
 PORTNAME=	alsaplayer
 PORTVERSION=	0.99.75
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/people/andy/ \
 		http://www.alsaplayer.org/
@@ -23,7 +23,7 @@ USE_GNOME=	glib12 gnomehack gnometarget
 WANT_GNOME=	yes
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \

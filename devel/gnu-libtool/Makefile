@@ -16,6 +16,9 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Generic shared library support script (GNU unmodified)
 
+DEPRECATED=	devel/libtool15 is now stock and should be used instead
+EXPIRATION_DATE=2006-06-01
+
 PREFIX?=	${LOCALBASE}/gnu-autotools
 
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	esmart
 PORTVERSION=	0.9.0.005
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -17,7 +17,8 @@ COMMENT=	Evas smart objects development libraries
 LIB_DEPENDS=	epsilon.0:${PORTSDIR}/graphics/epsilon
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

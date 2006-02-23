@@ -3,6 +3,7 @@ include/libps/pslib-mp.h
 include/libps/pslib.h
 include/libps/psversion.h
 lib/libps.a
+lib/libps.la
 lib/libps.so
 lib/libps.so.2
 libdata/pkgconfig/libps.pc

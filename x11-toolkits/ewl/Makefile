@@ -7,6 +7,7 @@
 
 PORTNAME=	ewl
 PORTVERSION=	0.0.4.005
+PORTREVISION=	1
 pORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
@@ -21,7 +22,7 @@ LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
 		ecore.1:${PORTSDIR}/x11/ecore
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes

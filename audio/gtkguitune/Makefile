@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/harpin_floh/mysoft/
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A guitar (and other instruments) tuner for GTK
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
 
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes

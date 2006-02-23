@@ -1,4 +1,5 @@
 bin/taxipilot
+lib/libEXT_wavpo.a
 lib/libEXT_wavpo.la
 lib/libEXT_wavpo.so
 lib/libEXT_wavpo.so.0

@@ -1,6 +1,7 @@
 include/icc34.h
 include/lcms.h
 lib/liblcms.a
+lib/liblcms.la
 lib/liblcms.so
 lib/liblcms.so.1
 libdata/pkgconfig/lcms.pc

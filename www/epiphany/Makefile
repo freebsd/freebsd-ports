@@ -25,7 +25,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GECKO=	firefox mozilla seamonkey
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils \
 		libgnomeprintui
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes

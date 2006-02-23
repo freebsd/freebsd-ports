@@ -150,9 +150,11 @@ include/gal-%%VERSION%%/gal/widgets/gal-combo-text.h
 include/gal-%%VERSION%%/gal/widgets/widget-color-combo.h
 include/gal-%%VERSION%%/gal/widgets/widget-pixmap-combo.h
 lib/libgal-%%SHLIBVERSION%%.a
+lib/libgal-%%SHLIBVERSION%%.la
 lib/libgal-%%SHLIBVERSION%%.so
 lib/libgal-%%SHLIBVERSION%%.so.0
 lib/libgal-a11y-%%SHLIBVERSION%%.a
+lib/libgal-a11y-%%SHLIBVERSION%%.la
 lib/libgal-a11y-%%SHLIBVERSION%%.so
 lib/libgal-a11y-%%SHLIBVERSION%%.so.0
 libdata/pkgconfig/gal-%%VERSION%%.pc

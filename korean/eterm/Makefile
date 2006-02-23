@@ -7,7 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanya
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
-USE_AUTOTOOLS=	libtool:13:inc
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" LOCALBASE="${LOCALBASE}"

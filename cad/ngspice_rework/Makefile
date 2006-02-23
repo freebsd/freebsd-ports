@@ -17,7 +17,6 @@ MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A circuit simulator derived from spice3f5
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--disable-debug

@@ -16,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool to generate secure, random passwords
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 post-patch:

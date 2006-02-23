@@ -7,8 +7,8 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.5
-PORTREVISION?=	2
-CATEGORIES?=	net dns
+PORTREVISION?=	3
+CATEGORIES=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
 MAINTAINER?=	gnome@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 
 USE_GNOME?=	gnomehack ltverhack glib20
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-address=unix:path=/var/run/dbus \

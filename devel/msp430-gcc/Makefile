@@ -32,13 +32,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--enable-languages=c --disable-nls \
 		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
-LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}cpp.1 ${PKGNAMEPREFIX}gcov.1
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \

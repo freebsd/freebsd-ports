@@ -16,7 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	FreeNet client library and command-line tools for shell scripting
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME:L}
 

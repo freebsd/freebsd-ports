@@ -7,6 +7,7 @@
 
 PORTNAME=	twolame
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
@@ -17,7 +18,7 @@ COMMENT=	MPEG Audio Layer 2 encoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 MAN1=		twolame.1

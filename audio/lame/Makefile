@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR=	lame
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	ISO code based fast MP3 encoder kit
 
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 

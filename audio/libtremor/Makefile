@@ -18,13 +18,14 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:13
+USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
 	@cd ${WRKSRC} && ${LIBTOOLIZE} --automake
+	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 	@cd ${WRKSRC} && ${AUTOMAKE} --add-missing
 	@cd ${WRKSRC} && ${AUTOCONF}
 

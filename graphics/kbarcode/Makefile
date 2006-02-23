@@ -7,7 +7,7 @@
 
 PORTNAME=	kbarcode
 PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,10 @@ COMMENT=	A barcode and label printing application for KDE
 
 RUN_DEPENDS=	barcode:${PORTSDIR}/graphics/barcode
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \

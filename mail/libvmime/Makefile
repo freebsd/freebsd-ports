@@ -7,6 +7,7 @@
 
 PORTNAME=	libvmime
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vmime
@@ -18,12 +19,11 @@ COMMENT=	An all-in-one Internet mail library
 #LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
 LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 
-GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GCC=	3.3+
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

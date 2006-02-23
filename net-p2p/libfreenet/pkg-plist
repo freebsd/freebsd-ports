@@ -16,6 +16,7 @@ include/libfreenet/twofish.h
 include/libfreenet/uri.h
 include/libfreenet/util.h
 lib/libfreenet.a
+lib/libfreenet.la
 lib/libfreenet.so
 lib/libfreenet.so.1
 @dirrm include/libfreenet

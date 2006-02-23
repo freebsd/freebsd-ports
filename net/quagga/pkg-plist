@@ -1,7 +1,7 @@
 sbin/bgpd
-%%ISISD_SBIN%%
+%%ISISD%%sbin/isisd
 sbin/ospf6d
-%%OSPFAPI_SBIN%%
+%%OSPFAPI%%sbin/ospfclient
 sbin/ospfd
 sbin/ripd
 sbin/ripngd
@@ -9,12 +9,15 @@ sbin/watchquagga
 sbin/zebra
 bin/vtysh
 lib/libospf.a
+lib/libospf.la
 lib/libospf.so
 lib/libospf.so.0
-%%OSPFAPI_LIBA%%
-%%OSPFAPI_LIBSO%%
-%%OSPFAPI_LIBSO0%%
+%%OSPFAPI%%lib/libospfapiclient.a
+%%OSPFAPI%%lib/libospfapiclient.la
+%%OSPFAPI%%lib/libospfapiclient.so
+%%OSPFAPI%%lib/libospfapiclient.so.0
 lib/libzebra.a
+lib/libzebra.la
 lib/libzebra.so
 lib/libzebra.so.0
 include/quagga/buffer.h
@@ -34,7 +37,7 @@ include/quagga/md5.h
 include/quagga/memory.h
 include/quagga/memtypes.h
 include/quagga/network.h
-%%OSPFAPI_HEADER%%
+%%OSPFAPI%%include/quagga/ospfapi/ospf_apiclient.h
 include/quagga/ospfd/ospf_api.h
 include/quagga/ospfd/ospf_asbr.h
 include/quagga/ospfd/ospf_dump.h
@@ -66,15 +69,15 @@ include/quagga/zclient.h
 include/quagga/zebra.h
 %%EXAMPLESDIR%%/bgpd.conf.sample
 %%EXAMPLESDIR%%/bgpd.conf.sample2
-%%ISISD_CONF%%
+%%ISISD%%%%EXAMPLESDIR%%/isisd.conf.sample
 %%EXAMPLESDIR%%/ospf6d.conf.sample
 %%EXAMPLESDIR%%/ospfd.conf.sample
 %%EXAMPLESDIR%%/ripd.conf.sample
 %%EXAMPLESDIR%%/ripngd.conf.sample
 %%EXAMPLESDIR%%/vtysh.conf.sample
 %%EXAMPLESDIR%%/zebra.conf.sample
-%%OSPFAPI_PATH%%
 @dirrm include/quagga/ospfd
+%%OSPFAPI%%@dirrm include/quagga/ospfapi
 @dirrm include/quagga
 @dirrm share/examples/quagga
 @dirrm etc/quagga

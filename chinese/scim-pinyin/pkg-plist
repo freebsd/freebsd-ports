@@ -1,4 +1,8 @@
+lib/scim-1.0/IMEngine/pinyin.a
+lib/scim-1.0/IMEngine/pinyin.la
 lib/scim-1.0/IMEngine/pinyin.so
+lib/scim-1.0/SetupUI/pinyin-imengine-setup.a
+lib/scim-1.0/SetupUI/pinyin-imengine-setup.la
 lib/scim-1.0/SetupUI/pinyin-imengine-setup.so
 share/locale/de/LC_MESSAGES/scim-pinyin.mo
 share/locale/fr/LC_MESSAGES/scim-pinyin.mo

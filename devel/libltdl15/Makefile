@@ -18,5 +18,6 @@ INSTALL_WRKSRC=	${WRKSRC}/libltdl
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 LATEST_LINK=	libltdl15
+INFO=		# empty
 
 .include "${MASTERDIR}/Makefile"

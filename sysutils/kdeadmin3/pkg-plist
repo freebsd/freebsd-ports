@@ -2,10 +2,13 @@ bin/kcron
 bin/kpackage
 bin/kuser
 bin/secpolicy
+lib/kde3/kcm_knetworkconfmodule.a
 lib/kde3/kcm_knetworkconfmodule.la
 lib/kde3/kcm_knetworkconfmodule.so
+lib/kde3/kfile_deb.a
 lib/kde3/kfile_deb.la
 lib/kde3/kfile_deb.so
+lib/kde3/kfile_rpm.a
 lib/kde3/kfile_rpm.la
 lib/kde3/kfile_rpm.so
 libdata/pkgconfig/system-tools-backends.pc

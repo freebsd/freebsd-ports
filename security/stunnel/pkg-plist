@@ -1,7 +1,8 @@
 etc/rc.d/stunnel.sh
 etc/stunnel/stunnel.conf-sample
-lib/libstunnel.so
 lib/libstunnel.a
+lib/libstunnel.la
+lib/libstunnel.so
 sbin/stunnel
 sbin/stunnel3
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.html

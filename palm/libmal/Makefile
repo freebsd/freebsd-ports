@@ -17,7 +17,7 @@ COMMENT=	A library encapsulating malsync
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_GMAKE=	YES
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	YES

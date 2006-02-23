@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-musepack
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.slik.org/musepack/
 
@@ -20,7 +20,7 @@ PLIST_FILES=	lib/xmms/Input/xmms-mpegplus-1.8.0.so
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>

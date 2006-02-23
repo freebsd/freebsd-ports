@@ -23,12 +23,14 @@ USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-PLIST_FILES=	lib/scim-1.0/1.4.0/Helper/tomoe.so \
+PLIST_FILES=	lib/scim-1.0/1.4.0/Helper/tomoe.a \
+		lib/scim-1.0/1.4.0/Helper/tomoe.la \
+		lib/scim-1.0/1.4.0/Helper/tomoe.so \
 		share/locale/ja/LC_MESSAGES/scim-tomoe.mo \
 		share/scim/icons/scim-tomoe.png
 

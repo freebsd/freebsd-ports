@@ -7,6 +7,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/libgksu1.2/
 DISTNAME=	${PORTNAME}1.2-${PORTVERSION}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
 USE_GNOME=	pkgconfig glib20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

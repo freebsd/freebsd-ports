@@ -7,6 +7,7 @@
 
 PORTNAME=	libticalcs
 PORTVERSION=	4.5.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -19,7 +20,6 @@ LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
-GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

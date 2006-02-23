@@ -1,4 +1,5 @@
 lib/libwxmozilla_gtk2-2.4.a
+lib/libwxmozilla_gtk2-2.4.la
 lib/libwxmozilla_gtk2-2.4.so
 lib/libwxmozilla_gtk2-2.4.so.0
 include/wxmozilla/wxMozilla.h
@@ -12,4 +13,6 @@ libdata/pkgconfig/wxmozilla.pc
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.py
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/mozillac.a
+%%PYTHON_SITELIBDIR%%/wxPython/mozillac.la
 %%PYTHON_SITELIBDIR%%/wxPython/mozillac.so

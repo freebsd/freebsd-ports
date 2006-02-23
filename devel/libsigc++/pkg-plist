@@ -20,6 +20,7 @@ include/sigc++-1.0/sigc++/thread.h
 include/sigc++-1.0/sigc++/type.h
 include/sigc++-1.0/sigc++config.h
 lib/libsigc.a
+lib/libsigc.la
 lib/libsigc.so
 lib/libsigc.so.1
 share/aclocal/sigc++.m4

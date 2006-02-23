@@ -7,6 +7,7 @@
 
 PORTNAME?=	tidy
 PORTVERSION=	051026
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -25,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 .else
-USE_AUTOTOOLS=	automake:15 autoconf:213 libtool:13
+USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
 AUTOMAKE_ARGS+=	-a -c --foreign
 CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
@@ -63,7 +64,8 @@ patch-autotools::
 .if defined(WITH_SHLIB)
 	@(cd ${WRKSRC}				\
 	&& ${LIBTOOLIZE} --force --copy		\
-	&& ${ACLOCAL})
+	&& ${ACLOCAL}				\
+	&& ${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' aclocal.m4)
 	@(cd ${PATCH_WRKSRC};			\
 	for ltf in ${LIBTOOLFILES}; do		\
 		${CP} $$ltf $$ltf.tmp;	\

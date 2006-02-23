@@ -8,6 +8,7 @@
 
 PORTNAME=	libosip
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
@@ -17,7 +18,6 @@ COMMENT=	A low layer of SIP implementation
 
 USE_REINPLACE=	yes
 USE_AUTOTOOLS=	libtool:15
-#LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
 
 MAN1=	osip.1

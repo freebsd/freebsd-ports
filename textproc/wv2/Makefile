@@ -20,7 +20,7 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} --disable-debug
 
 USE_GNOME=	gnometarget libgsf
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

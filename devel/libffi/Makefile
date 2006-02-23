@@ -7,13 +7,14 @@
 
 PORTNAME=	libffi
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
 
 MAINTAINER=	horance@freera.net
 COMMENT=	Foreign Function Interface
 
-USE_AUTOTOOLS=	libtool:13:inc
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	# empty
 

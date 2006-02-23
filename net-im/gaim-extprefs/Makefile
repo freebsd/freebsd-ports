@@ -7,6 +7,7 @@
 
 PORTNAME=	gaim-extprefs
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gaim-extprefs
@@ -18,14 +19,13 @@ BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--enable-static=no
 CFLAGS+=	"-fPIC"
 
-PLIST_FILES=	lib/gaim/libextprefs.so
+PLIST_FILES=	lib/gaim/libextprefs.la lib/gaim/libextprefs.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-g3//' ${WRKSRC}/configure

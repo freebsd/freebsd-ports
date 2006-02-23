@@ -8,6 +8,7 @@
 
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,6 @@ COMMENT=	Shows information about Java class, dependencies and more
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	pkgconfig gnomehack
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

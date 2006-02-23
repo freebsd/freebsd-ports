@@ -15,7 +15,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Little logical game for KDE
 
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes

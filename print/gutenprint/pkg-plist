@@ -6,6 +6,7 @@ bin/gimpprint-config
 %%CUPS%%etc/cups/command.types
 include/gimp-print/gimp-print.h
 lib/libgimpprint.a
+lib/libgimpprint.la
 lib/libgimpprint.so
 lib/libgimpprint.so.2
 %%CUPS%%libexec/cups/backend/canon

@@ -15,9 +15,11 @@ include/osip/smsgtypes.h
 include/osip/thread.h
 include/osip/urls.h
 lib/libfsmtl.a
+lib/libfsmtl.la
 lib/libfsmtl.so
 lib/libfsmtl.so.9
 lib/libosip.a
+lib/libosip.la
 lib/libosip.so
 lib/libosip.so.9
 @dirrm include/osip

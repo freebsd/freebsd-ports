@@ -13,7 +13,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.6.23
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -25,7 +25,7 @@ COMMENT?=	XML parser library for GNOME
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack gnometarget pkgconfig
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

@@ -17,7 +17,6 @@ MAN1=		synce.1
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
 

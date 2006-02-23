@@ -24,9 +24,11 @@ include/gsmlib/gsm_sorted_sms_store.h
 include/gsmlib/gsm_unix_serial.h
 include/gsmlib/gsm_util.h
 lib/libgsmext.a
+lib/libgsmext.la
 lib/libgsmext.so
 lib/libgsmext.so.1
 lib/libgsmme.a
+lib/libgsmme.la
 lib/libgsmme.so
 lib/libgsmme.so.1
 %%NLS%%share/locale/de/LC_MESSAGES/gsmlib.mo

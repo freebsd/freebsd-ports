@@ -13,6 +13,7 @@ include/libcob/screenio.h
 include/libcob/strings.h
 include/libcob/termio.h
 lib/libcob.a
+lib/libcob.la
 lib/libcob.so
 lib/libcob.so.1
 %%NLS%%share/locale/ja/LC_MESSAGES/open-cobol.mo

@@ -82,6 +82,7 @@ include/freetype2/freetype/tttags.h
 include/freetype2/freetype/ttunpat.h
 include/ft2build.h
 lib/libfreetype.a
+lib/libfreetype.la
 lib/libfreetype.so
 lib/libfreetype.so.9
 libdata/pkgconfig/freetype2.pc

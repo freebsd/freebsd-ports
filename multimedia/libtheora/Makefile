@@ -7,6 +7,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.0.a4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a4/alpha4/}
@@ -20,7 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \

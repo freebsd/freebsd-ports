@@ -8,7 +8,7 @@
 
 PORTNAME=	Maaate
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
@@ -17,7 +17,7 @@ COMMENT=	MPEG audio analysis toolkit
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -5,6 +5,7 @@ bin/cole_isfs_fast
 bin/cole_tree
 include/cole/cole.h
 lib/libcole.a
+lib/libcole.la
 lib/libcole.so
 lib/libcole.so.2
 share/aclocal/cole.m4

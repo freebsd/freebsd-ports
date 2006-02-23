@@ -19,7 +19,6 @@ COMMENT=	An extension of libSigC++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

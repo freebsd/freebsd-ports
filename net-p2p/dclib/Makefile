@@ -9,6 +9,7 @@
 PORTNAME=	dclib
 PORTVERSION=	0.3.7
 CATEGORIES=	net-p2p
+CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
@@ -23,8 +24,6 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
-
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:

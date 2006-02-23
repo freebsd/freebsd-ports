@@ -26,9 +26,11 @@ lib/libbonobouimm-2.0/include/libbonobouimmconfig.h
 lib/libbonobouimm-2.0/proc/m4/convert.m4
 lib/libbonobouimm-2.0/proc/m4/convert_libbonoboui.m4
 lib/libbonobouimm_servers-1.3.a
+lib/libbonobouimm_servers-1.3.la
 lib/libbonobouimm_servers-1.3.so
 lib/libbonobouimm_servers-1.3.so.7
 lib/libbonobouimm_widgets-1.3.a
+lib/libbonobouimm_widgets-1.3.la
 lib/libbonobouimm_widgets-1.3.so
 lib/libbonobouimm_widgets-1.3.so.7
 libdata/bonobo/servers/Bonobomm_Sample_Controls.server

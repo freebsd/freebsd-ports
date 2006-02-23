@@ -19,7 +19,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 HAS_MONKEYS=	yes
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GSTREAMER=	ogg gconf
 USE_GNOME=	gnomehack gnomeprefix librsvg2 libgnomeui \

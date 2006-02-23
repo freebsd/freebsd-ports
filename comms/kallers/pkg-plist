@@ -1,4 +1,5 @@
 bin/kallers
+lib/kallers.a
 lib/kallers.la
 lib/kallers.so
 share/applnk/Toys/kallers.desktop

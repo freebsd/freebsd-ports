@@ -1,5 +1,7 @@
+lib/kde3/kcm_knemo.a
 lib/kde3/kcm_knemo.la
 lib/kde3/kcm_knemo.so
+lib/kde3/kded_knemod.a
 lib/kde3/kded_knemod.la
 lib/kde3/kded_knemod.so
 share/applnk/Settings/Network/kcm_knemo.desktop

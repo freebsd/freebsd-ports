@@ -81,12 +81,15 @@ include/H5pubconf.h
 include/H5public.h
 include/hdf5.h
 lib/libhdf5.a
+lib/libhdf5.la
 lib/libhdf5.settings
 lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
+lib/libhdf5_cpp.la
 lib/libhdf5_cpp.settings
 lib/libhdf5_hl.a
+lib/libhdf5_hl.la
 lib/libhdf5_hl.so
 lib/libhdf5_hl.so.0
 %%EXAMPLESDIR%%/c/h5_attribute.c

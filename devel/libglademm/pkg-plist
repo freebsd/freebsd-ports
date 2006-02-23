@@ -5,6 +5,7 @@ include/libglademm-2.0/libglademm/variablesmap.h
 include/libglademm-2.0/libglademm/wrap_init.h
 include/libglademm-2.0/libglademm/xml.h
 lib/libglademm-2.0.a
+lib/libglademm-2.0.la
 lib/libglademm-2.0.so
 lib/libglademm-2.0.so.1
 lib/libglademm-2.0/include/libglademmconfig.h

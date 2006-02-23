@@ -7,6 +7,7 @@
 
 PORTNAME=	libident
 PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://people.via.ecp.fr/~rem/libident/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
 USE_GNOME=	gnometarget lthack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3=		ident.3

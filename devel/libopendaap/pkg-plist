@@ -1,6 +1,7 @@
 include/daap/client.h
 include/daap/portability.h
 lib/libopendaap.a
+lib/libopendaap.la
 lib/libopendaap.so
 lib/libopendaap.so.0
 libdata/pkgconfig/opendaap.pc

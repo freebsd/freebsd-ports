@@ -1,8 +1,6 @@
---- configure.in.orig	Fri Jul 16 00:52:52 2004
-+++ configure.in	Sun Aug 29 22:09:21 2004
-@@ -21,9 +21,9 @@
- dnl ---------------------------------------------------
- dnl Check standard libraries
+--- configure.in.orig	Tue Nov 22 06:30:25 2005
++++ configure.in	Wed Jan 25 00:38:57 2006
+@@ -23,5 +23,5 @@
  dnl
 -AC_CHECK_LIB(dl, dlopen,,[AC_MSG_ERROR([dl library is not found])],)
 +dnl AC_CHECK_LIB(dl, dlopen,,[AC_MSG_ERROR([dl library is not found])],)
@@ -10,11 +8,7 @@
 -AC_CHECK_LIB(pthread, pthread_create,,[AC_MSG_ERROR([pthread library is not found])],)
 +dnl AC_CHECK_LIB(pthread, pthread_create,,[AC_MSG_ERROR([pthread library is not found])],)
  
- dnl ---------------------------------------------------
- dnl Find X
-@@ -50,9 +50,13 @@
- dnl Find FLTK
- dnl
+@@ -52,5 +52,9 @@
  
 +saved_LIBS="${LIBS}"
 +
@@ -25,14 +19,13 @@
 -AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" have_fltk=true])
 +AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL -lstdc++" have_fltk=true])
  AM_CONDITIONAL(BUILD_SHOW, test x$have_fltk = xtrue)
- 
- dnl ---------------------------------------------------
-@@ -61,7 +65,7 @@
- 
- saved_LIBS="$LIBS"
+@@ -63,3 +67,3 @@
  
 -AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
 +dnl AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
  AC_CHECK_LIB(tiff,TIFFOpen,,[AC_MSG_ERROR([libtiff not found])],)
- 
- TIFF_LIBS="$LIBS"
+@@ -100,3 +104,3 @@
+ AC_ARG_ENABLE(selfcontained,
+-AS_HELP_STRING([--enable-selfcontained],[Build for a selfcontained setup]),
++AC_HELP_STRING([--enable-selfcontained],[Build for a selfcontained setup]),
+ [case "${enableval}" in

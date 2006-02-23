@@ -7,6 +7,7 @@
 
 PORTNAME=	openspc
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://staff.xmms.org/zinx/misc/tmp/
@@ -20,10 +21,11 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Input/openspc.so
+PLIST_FILES=	lib/xmms/Input/openspc.la \
+		lib/xmms/Input/openspc.so
 
 ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

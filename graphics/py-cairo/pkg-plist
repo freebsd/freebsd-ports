@@ -2,7 +2,9 @@ include/pycairo/pycairo.h
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/cairo/_cairo.la
 %%PYTHON_SITELIBDIR%%/cairo/_cairo.so
+%%SVG%%%%PYTHON_SITELIBDIR%%/cairo/svg.la
 %%SVG%%%%PYTHON_SITELIBDIR%%/cairo/svg.so
 libdata/pkgconfig/pycairo.pc
 @dirrm %%PYTHON_SITELIBDIR%%/cairo

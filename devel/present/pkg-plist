@@ -4,6 +4,7 @@ include/libpresent-1/libpresent/present-presentation.h
 include/libpresent-1/libpresent/present-slide.h
 include/libpresent-1/libpresent/present-text.h
 lib/libpresent.a
+lib/libpresent.la
 lib/libpresent.so
 lib/libpresent.so.0
 libdata/pkgconfig/libpresent-1.pc

@@ -11,6 +11,7 @@ include/speex/speex_preprocess.h
 include/speex/speex_stereo.h
 include/speex/speex_types.h
 lib/libspeex.a
+lib/libspeex.la
 lib/libspeex.so
 lib/libspeex.so.3
 libdata/pkgconfig/speex.pc

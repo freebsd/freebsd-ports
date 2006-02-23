@@ -15,6 +15,7 @@ include/gnet/udp.h
 include/gnet/unix.h
 include/gnet/url.h
 lib/libgnet.a
+lib/libgnet.la
 lib/libgnet.so
 lib/libgnet.so.1
 libdata/pkgconfig/gnet.pc

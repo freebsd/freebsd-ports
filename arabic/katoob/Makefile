@@ -17,11 +17,11 @@ COMMENT=	Light-weight, bidirectional editor for arabic texts
 
 MAN1=		katoob.1
 
-USE_GMAKE=		yes
-USE_X_PREFIX=		yes
-USE_GNOME=		gnomeprefix gnomehack gtk20
-USE_AUTOTOOLS=	libtool:13:inc
-USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_AUTOTOOLS=	libtool:15
+USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>

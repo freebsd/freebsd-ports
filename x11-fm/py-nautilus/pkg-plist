@@ -1,4 +1,6 @@
+lib/nautilus-python/nautilus.la
 lib/nautilus-python/nautilus.so
+lib/nautilus/extensions-1.0/libnautilus-python.la
 lib/nautilus/extensions-1.0/libnautilus-python.so
 libdata/pkgconfig/nautilus-python.pc
 %%DOCSDIR%%/README

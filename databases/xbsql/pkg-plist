@@ -1,5 +1,6 @@
 bin/xql
 include/xbsql.h
 lib/libxbsql.a
+lib/libxbsql.la
 lib/libxbsql.so
 lib/libxbsql.so.0

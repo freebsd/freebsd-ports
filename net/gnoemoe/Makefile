@@ -21,7 +21,7 @@ USE_GNOME=	gnomeprefix gtksourceview libglade2 libgnomeui vte
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 post-patch:

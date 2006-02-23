@@ -8,7 +8,7 @@
 
 PORTNAME=	xmlpp
 PORTVERSION=	0.7a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://0xff.at/download/gpl/
 
@@ -18,7 +18,7 @@ COMMENT=	XML Parser and Validator
 USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \

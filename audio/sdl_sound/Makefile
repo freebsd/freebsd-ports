@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A SDL audio library and player for some popular sound file formats
 
 USE_SDL=	sdl
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

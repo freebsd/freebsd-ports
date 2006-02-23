@@ -10,6 +10,7 @@ include/agl_video.h
 lib/libadgali-0.2.so
 lib/libadgali-0.2.so.0
 lib/libadgali.a
+lib/libadgali.la
 lib/libadgali.so
 share/aclocal/adgali.m4
 %%PORTDOCS%%%%DOCSDIR%%/adgali025.png

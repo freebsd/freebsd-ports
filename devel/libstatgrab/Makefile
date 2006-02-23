@@ -7,6 +7,7 @@
 
 PORTNAME=	libstatgrab
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -20,9 +21,8 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 
 DIST_SUBDIR=	i-scream
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 
 MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \

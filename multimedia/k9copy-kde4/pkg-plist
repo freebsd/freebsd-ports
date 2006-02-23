@@ -10,6 +10,7 @@ include/k9dvdprogress.h
 include/k9dvdsize.h
 include/k9dvdtitle.h
 include/k9ifo.h
+lib/libk9copy.a
 lib/libk9copy.la
 lib/libk9copy.so
 lib/libk9copy.so.0

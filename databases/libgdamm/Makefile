@@ -25,20 +25,11 @@ USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack libgda2
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
 BROKEN=	"Does not build with libgda-1.3.91"
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-		$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \

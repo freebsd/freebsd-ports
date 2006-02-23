@@ -1,8 +1,10 @@
 bin/xfce4-mixer
-lib/xfce4/modules/libxfce4mixer.a
+lib/xfce4/modules/libxfce4mixer.la
 lib/xfce4/modules/libxfce4mixer.so
 lib/xfce4/modules/libxfce4mixer.so.0
+lib/xfce4/mcs-plugins/sound_settings.la
 lib/xfce4/mcs-plugins/sound_settings.so
+lib/xfce4/panel-plugins/libmixer.la
 lib/xfce4/panel-plugins/libmixer.so
 share/applications/xfce-mixer-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-mixer.png

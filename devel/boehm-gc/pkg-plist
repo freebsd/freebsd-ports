@@ -24,9 +24,11 @@ include/gc_pthread_redirects.h
 include/gc_typed.h
 include/leak_detector.h
 lib/libgc.a
+lib/libgc.la
 lib/libgc.so
 lib/libgc.so.1
 lib/libgccpp.a
+lib/libgccpp.la
 lib/libgccpp.so
 lib/libgccpp.so.1
 share/doc/gc/README

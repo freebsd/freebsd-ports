@@ -7,6 +7,7 @@ include/verbiste-0.1/verbiste/Trie.h
 include/verbiste-0.1/verbiste/c-api.h
 include/verbiste-0.1/verbiste/misc-types.h
 lib/libverbiste-0.1.a
+lib/libverbiste-0.1.la
 lib/libverbiste-0.1.so
 lib/libverbiste-0.1.so.0
 libdata/pkgconfig/verbiste-0.1.pc

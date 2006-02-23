@@ -8,6 +8,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.10,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.7/
@@ -28,7 +29,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \

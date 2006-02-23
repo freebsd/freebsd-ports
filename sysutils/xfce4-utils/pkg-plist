@@ -7,6 +7,8 @@ bin/xfrun4
 bin/xftaskbar4
 bin/xfterm4
 etc/xdg/xfce4/xinitrc
+lib/xfce4/mcs-plugins/xftaskbar_plugin.a
+lib/xfce4/mcs-plugins/xftaskbar_plugin.la
 lib/xfce4/mcs-plugins/xftaskbar_plugin.so
 share/applications/xfce-taskbar-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-logo.png

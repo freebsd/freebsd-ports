@@ -8,6 +8,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -27,7 +28,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier glib20 pango libxml2 \
 		libartlgpl2 ltverhack
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

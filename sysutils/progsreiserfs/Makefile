@@ -7,7 +7,7 @@
 
 PORTNAME=	progsreiserfs
 PORTVERSION=	0.3.1.r8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
-GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

@@ -1,10 +1,11 @@
 bin/uprecords
+etc/rc.d/uptimed.sh.sample
 etc/uptimed.conf-dist
 lib/libuptimed.a
+lib/libuptimed.la
 lib/libuptimed.so
 lib/libuptimed.so.0
 sbin/uptimed
-etc/rc.d/uptimed.sh.sample
 www/cgi-bin/uprecords.cgi
 www/cgi-bin/uprecords.conf
 www/cgi-bin/uprecords.footer

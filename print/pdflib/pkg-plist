@@ -1,9 +1,12 @@
 bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
+lib/libpdf.la
 lib/libpdf.so
 lib/libpdf.so.7
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.a
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.la
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so.0
 %%DATADIR%%/fonts/pdflib.upr

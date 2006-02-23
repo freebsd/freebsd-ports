@@ -89,10 +89,13 @@ include/gtkhtml-1.1/gtkhtml/htmltypes.h
 include/gtkhtml-1.1/gtkhtml/htmlundo-action.h
 include/gtkhtml-1.1/gtkhtml/htmlundo.h
 include/gtkhtml-1.1/gtkhtml/htmlvspace.h
+lib/bonobo/plugin/libstorage_http.a
+lib/bonobo/plugin/libstorage_http.la
 lib/bonobo/plugin/libstorage_http.so
-lib/libgtkhtml-1.1.so.3
 lib/libgtkhtml-1.1.a
+lib/libgtkhtml-1.1.la
 lib/libgtkhtml-1.1.so
+lib/libgtkhtml-1.1.so.3
 libdata/pkgconfig/gtkhtml-1.1.pc
 share/doc/gtkhtml/gtkhtml-decl.txt
 share/doc/gtkhtml/gtkhtml-sections.txt

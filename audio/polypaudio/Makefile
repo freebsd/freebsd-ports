@@ -22,8 +22,8 @@ WANT_GNOME=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-# Needs libtool archive (.la) files for libltdl
-USE_AUTOTOOLS=	libltdl:15 libtool:15:inc
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

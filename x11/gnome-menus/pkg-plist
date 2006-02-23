@@ -4,8 +4,11 @@ etc/xdg/menus/preferences.menu
 etc/xdg/menus/settings.menu
 include/gnome-menus/gmenu-tree.h
 lib/libgnome-menu.a
+lib/libgnome-menu.la
 lib/libgnome-menu.so
 lib/libgnome-menu.so.2
+%%PYTHON_SITELIBDIR%%/gmenu.a
+%%PYTHON_SITELIBDIR%%/gmenu.la
 %%PYTHON_SITELIBDIR%%/gmenu.so
 libdata/pkgconfig/libgnome-menu.pc
 share/gnome/desktop-directories/Accessibility.directory

@@ -7,6 +7,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.2r1
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/src/:src \
 		ftp://ftp.ncsa.uiuc.edu/HDF/HDF/Documentation/HDF4.2r0/:doc \
@@ -20,13 +21,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/libtool15:${PORTSDIR}/devel/libtool15
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		sz.2:${PORTSDIR}/science/szip
 
 CONFLICTS=	netcdf-*
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"
 USE_REINPLACE=	yes

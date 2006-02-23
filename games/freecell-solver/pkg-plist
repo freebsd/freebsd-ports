@@ -11,6 +11,7 @@ include/freecell-solver/fcs_enums.h
 include/freecell-solver/fcs_move.h
 include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
+lib/libfreecell-solver.la
 lib/libfreecell-solver.so
 lib/libfreecell-solver.so.5
 %%DATADIR%%/presetrc

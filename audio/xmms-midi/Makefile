@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-midi
 PORTVERSION=	0.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
 				http://dl.kel.wormulon.net/xmms-midi/
@@ -19,6 +19,10 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
+
+PLIST_FILES=	lib/xmms/Input/libmid.a \
+		lib/xmms/Input/libmid.la \
+		lib/xmms/Input/libmid.so
 
 .include <bsd.port.mk>

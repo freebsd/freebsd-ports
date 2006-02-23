@@ -21,10 +21,10 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNUTOOLS)
-.for tool in autoconf213 autoconf253 autoconf259 automake14 automake15 automake19 \
-		libtool13 libtool15
+.for tool in autoconf213 autoconf253 autoconf259 automake14 automake15 automake19
 RUN_DEPENDS+=	${tool}:${PORTSDIR}/devel/${tool}
 .endfor
+RUN_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool15
 .for tool in autoconf automake libtool
 RUN_DEPENDS+=	${LOCALBASE}/gnu-autotools/bin/${tool}:${PORTSDIR}/devel/gnu-${tool}
 .endfor

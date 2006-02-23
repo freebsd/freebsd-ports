@@ -9,6 +9,7 @@ include/ncnf_notif.h
 include/ncnf_constr.h
 include/ncnf_ql.h
 lib/libncnf.a
+lib/libncnf.la
 lib/libncnf.so
 lib/libncnf.so.3
 %%PORTDOCS%%%%DOCSDIR%%/ncnf-validator-syntax.txt

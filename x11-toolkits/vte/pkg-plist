@@ -4,6 +4,7 @@ include/vte/reaper.h
 include/vte/vte.h
 include/vte/vteaccess.h
 lib/libvte.a
+lib/libvte.la
 lib/libvte.so
 lib/libvte.so.8
 lib/vte/decset

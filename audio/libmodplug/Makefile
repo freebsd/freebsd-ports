@@ -7,6 +7,7 @@
 
 PORTNAME=	libmodplug
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	modplug-xmms
@@ -17,7 +18,7 @@ COMMENT=	ModPlug mod-like music shared libraries
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \

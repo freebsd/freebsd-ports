@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/netsnmpc.la
 %%PYTHON_SITELIBDIR%%/netsnmpc.so
 %%PYTHON_SITELIBDIR%%/netsnmp.py
 %%PYTHON_SITELIBDIR%%/yapsnmp.py

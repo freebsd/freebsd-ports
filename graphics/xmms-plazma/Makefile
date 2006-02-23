@@ -19,9 +19,10 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl
+GNU_CONFIGURE=	yes
 
-USE_AUTOTOOLS=	libtool:13:inc
-
-PLIST_FILES=	lib/xmms/Visualization/libplazma.so
+PLIST_FILES=	lib/xmms/Visualization/libplazma.a \
+		lib/xmms/Visualization/libplazma.la \
+		lib/xmms/Visualization/libplazma.so
 
 .include <bsd.port.mk>

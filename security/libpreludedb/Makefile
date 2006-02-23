@@ -17,7 +17,7 @@ LIB_DEPENDS=	prelude.6:${PORTSDIR}/security/libprelude
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15:inc
+GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib \
 			%%PREFIX%%/lib/libpreludedb/plugins/formats

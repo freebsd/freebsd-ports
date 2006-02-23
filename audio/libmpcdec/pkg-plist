@@ -7,6 +7,7 @@ include/mpcdec/reader.h
 include/mpcdec/requant.h
 include/mpcdec/streaminfo.h
 lib/libmpcdec.a
+lib/libmpcdec.la
 lib/libmpcdec.so
 lib/libmpcdec.so.3
 @dirrm include/mpcdec

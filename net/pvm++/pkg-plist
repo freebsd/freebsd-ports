@@ -19,6 +19,7 @@ include/pvm++/task.ii
 include/pvm++/taskset.hh
 include/pvm++/types.hh
 lib/libpvm++.a
+lib/libpvm++.la
 lib/libpvm++.so
 lib/libpvm++.so.1
 share/aclocal/pvm++.m4

@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
@@ -29,7 +30,7 @@ OPTIONS+=	FPX "Build FPX backend -- broken on non-i386 systems" \
 
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 MAN1=	GraphicsMagick++-config.1 \
 	GraphicsMagick-config.1 \

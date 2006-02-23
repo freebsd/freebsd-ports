@@ -1,5 +1,6 @@
 include/popt.h
 lib/libpopt.a
+lib/libpopt.la
 lib/libpopt.so
 lib/libpopt.so.0
 %%NLS%%share/locale/cs/LC_MESSAGES/popt.mo

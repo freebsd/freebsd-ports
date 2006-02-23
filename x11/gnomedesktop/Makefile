@@ -8,6 +8,7 @@
 
 PORTNAME=	gnomedesktop
 PORTVERSION=	2.12.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.12
@@ -28,7 +29,7 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project" \
 		--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

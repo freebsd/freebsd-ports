@@ -91,12 +91,15 @@ include/styx/xml_test_cim.h
 include/styx/xmllit_lim.h
 @dirrm include/styx
 lib/libdstyx.a
+lib/libdstyx.la
 lib/libdstyx.so
 lib/libdstyx.so.2
 lib/libdxml.a
+lib/libdxml.la
 lib/libdxml.so
 lib/libdxml.so.1
 lib/libxstyx.a
+lib/libxstyx.la
 lib/libxstyx.so
 lib/libxstyx.so.2
 %%PORTDOCS%%%%DOCSDIR%%/bin__cim.htm

@@ -1,6 +1,6 @@
+lib/libmodplug.la
 lib/libmodplug.so.0
 lib/libmodplug.so
-lib/libmodplug.la
 libdata/pkgconfig/libmodplug.pc
 include/libmodplug/stdafx.h
 include/libmodplug/sndfile.h

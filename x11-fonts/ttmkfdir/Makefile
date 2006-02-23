@@ -17,14 +17,14 @@ COMMENT=	Create fonts.scale file for use with TrueType font server
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_AUTOTOOLS=	libtool:13:env
+USE_AUTOTOOLS=	libtool:15:env
 PLIST_FILES=	bin/ttmkfdir
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}" CXX="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin

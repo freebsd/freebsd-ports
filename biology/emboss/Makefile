@@ -7,6 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
@@ -27,7 +28,6 @@ CONFLICTS=	qmail-ldap2-* digest-*
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes

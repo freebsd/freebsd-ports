@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/1.8
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GECKO=	firefox mozilla seamonkey
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

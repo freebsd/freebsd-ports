@@ -1,4 +1,6 @@
 bin/ximian-connector-setup-%%VERSION%%
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.a
+lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.la
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.urls
 libdata/bonobo/servers/GNOME_Evolution_Exchange_Storage_%%VERSION%%.server

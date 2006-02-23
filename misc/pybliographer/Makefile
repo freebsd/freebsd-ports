@@ -7,7 +7,7 @@
 
 PORTNAME=	pybliographer
 PORTVERSION=	1.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pybliographer/1.0
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolki
 USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

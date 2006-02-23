@@ -37,10 +37,7 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-languages="c,c++,objc"
 CONFIGURE_ARGS+=	--with-cpu="${DEFAULT_CPU}"
 .endif
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFILES=	configure etc/configure gcc/configure libiberty/configure \
-		libobjc/configure texinfo/configure \
-		texinfo/testsuite/configure
+GNU_CONFIGURE=	yes
 MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cccp.1
 
 .include <bsd.port.pre.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	libbnr
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	devel mail
 MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/libbnr/sources/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/${PORTNAME}
 

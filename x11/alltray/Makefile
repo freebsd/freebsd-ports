@@ -7,7 +7,7 @@
 
 PORTNAME=	alltray
 PORTVERSION=	0.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alltray
@@ -17,7 +17,7 @@ COMMENT=	Dock any application with no native tray icon
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
@@ -33,12 +33,5 @@ post-patch:
 		${WRKSRC}/src/gnome_theme.c
 	@${REINPLACE_CMD} -e 's|liballtray\.so\.0\.0\.0|liballtray.so.0|; \
 		s|/usr/lib|${PREFIX}/lib|' ${WRKSRC}/src/child.c
-
-patch-autotools::
-	@for file in ${LIBTOOLFILES}; do \
-		${REINPLACE_CMD} -e \
-			'/^ltmain=/ s|$$ac_aux_dir/ltmain\.sh|${LTMAIN}|g' \
-			${PATCH_WRKSRC}/$$file; \
-	done
 
 .include <bsd.port.mk>

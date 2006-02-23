@@ -17,7 +17,6 @@ COMMENT=	A generic and extensible framework for serialization
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 MAN1=		xds-config.1

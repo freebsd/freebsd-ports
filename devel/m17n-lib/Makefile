@@ -7,6 +7,7 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 USE_XLIB=	yes
 USE_GNOME=	gnometarget libxml2 pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

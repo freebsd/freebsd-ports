@@ -17,11 +17,10 @@ COMMENT=	Simple KDE-base financial manager
 LIB_DEPENDS=	qhacc.7:${PORTSDIR}/finance/qhacc
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_KDELIBS_VER=	3
-USE_PERL5_BUILD=	yes
+USE_KDELIBS_VER=3
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qhacc-config=${X11BASE}/bin
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

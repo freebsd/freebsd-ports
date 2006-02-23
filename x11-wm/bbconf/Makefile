@@ -7,6 +7,7 @@
 
 PORTNAME=	bbconf
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,15 +18,19 @@ COMMENT=	Configurator for the Blackbox window manager
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbconf.1
 PORTDOCS=	AUTHORS ChangeLog README README.html TODO
 PLIST_FILES=	bin/bbconf \
+		lib/bbconf/plugins/libbbconf.la \
 		lib/bbconf/plugins/libbbconf.so \
+		lib/bbconf/plugins/libkeybindings.la \
 		lib/bbconf/plugins/libkeybindings.so \
+		lib/bbconf/plugins/libmenu.la \
 		lib/bbconf/plugins/libmenu.so \
+		lib/bbconf/plugins/libthemes.la \
 		lib/bbconf/plugins/libthemes.so
 PLIST_DIRS=	lib/bbconf/plugins lib/bbconf
 

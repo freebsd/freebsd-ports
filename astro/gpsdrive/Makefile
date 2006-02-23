@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	http://www.gpsdrive.cc/           \
 		http://gpsdrive.teachlinux.com/
@@ -22,7 +22,7 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool:15:inc
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \

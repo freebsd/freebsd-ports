@@ -20,7 +20,7 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 NO_PACKAGE=	Distribution in binary form is prohibited
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:13
+USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}

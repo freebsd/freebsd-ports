@@ -38,6 +38,7 @@ lib/libgnomecanvasmm-2.0/include/libgnomecanvasmmconfig.h
 lib/libgnomecanvasmm-2.0/proc/m4/convert.m4
 lib/libgnomecanvasmm-2.0/proc/m4/convert_libgnomecanvasmm.m4
 lib/libgnomecanvasmm-2.0.a
+lib/libgnomecanvasmm-2.0.la
 lib/libgnomecanvasmm-2.0.so
 lib/libgnomecanvasmm-2.0.so.1
 libdata/pkgconfig/libgnomecanvasmm-2.0.pc

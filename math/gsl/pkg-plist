@@ -216,9 +216,11 @@ include/gsl/gsl_version.h
 include/gsl/gsl_wavelet.h
 include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
+lib/libgsl.la
 lib/libgsl.so
 lib/libgsl.so.7
 lib/libgslcblas.a
+lib/libgslcblas.la
 lib/libgslcblas.so
 lib/libgslcblas.so.0
 libdata/pkgconfig/gsl.pc

@@ -7,6 +7,7 @@ lib/monodoc/sources/muine-docs.source
 lib/monodoc/sources/muine-docs.tree
 lib/monodoc/sources/muine-docs.zip
 lib/muine/libmuine.a
+lib/muine/libmuine.la
 lib/muine/libmuine.so
 lib/muine/libmuine.so.0
 lib/muine/muine.exe

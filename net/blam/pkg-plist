@@ -4,6 +4,7 @@ lib/blam/RSS.NET.dll
 lib/blam/blam.exe
 lib/blam/blam.exe.config
 lib/blam/libblam.a
+lib/blam/libblam.la
 lib/blam/libblam.so
 lib/blam/libblam.so.0
 share/gnome/applications/blam.desktop

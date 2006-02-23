@@ -1,4 +1,5 @@
 bin/nautilus-actions-config
+lib/nautilus/extensions-1.0/libnautilus-actions.la
 lib/nautilus/extensions-1.0/libnautilus-actions.so
 share/applications/nact.desktop
 share/locale/de/LC_MESSAGES/nautilus-actions.mo

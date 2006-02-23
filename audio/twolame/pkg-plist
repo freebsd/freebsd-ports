@@ -1,6 +1,7 @@
 bin/twolame
 include/twolame.h
 lib/libtwolame.a
+lib/libtwolame.la
 lib/libtwolame.so
 lib/libtwolame.so.0
 libdata/pkgconfig/twolame.pc

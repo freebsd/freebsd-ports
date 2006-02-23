@@ -12,16 +12,16 @@
  	libsa=""
  	if test "$lib_glib" = "yes"; then
 -		libsp="$libsp -lglib"
-+		libsp="$libsp -lglib@LT_RELEASE@"
++		libsp="$libsp -lglib-@LT_RELEASE@"
  	fi
  	if test "$lib_gthread" = "yes"; then
 -		libsp="-lgthread $libsp"
-+		libsp="-lgthread@LT_RELEASE@ $libsp"
++		libsp="-lgthread-@LT_RELEASE@ $libsp"
  		libsa="$libsa @G_THREAD_LIBS@"
  	fi
  	if test "$lib_gmodule" = "yes"; then
 -		libsp="@G_MODULE_LDFLAGS@ -lgmodule $libsp"
-+		libsp="@G_MODULE_LDFLAGS@ -lgmodule@LT_RELEASE@ $libsp"
++		libsp="@G_MODULE_LDFLAGS@ -lgmodule-@LT_RELEASE@ $libsp"
  		libsa="$libsa @G_MODULE_LIBS@"
  	fi
  	echo -L@libdir@ $libsp $libsa

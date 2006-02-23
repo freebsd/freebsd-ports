@@ -15,7 +15,7 @@ COMMENT=	A free AFS client implementation
 
 USE_XLIB=	yes
 USE_RC_SUBR=	arla.sh
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 CONFIGURE_ARGS+=--with-krb5=/usr
 .endif
 
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 
 MAKE_ENV+=	OSVERSION=${OSVERSION}

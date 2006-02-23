@@ -2,6 +2,7 @@ include/libgksuui1.0/gksuui.h
 include/libgksuui1.0/gksuui-dialog.h
 include/libgksuui1.0/gksuui-convenience.h
 lib/libgksuui1.0.a
+lib/libgksuui1.0.la
 lib/libgksuui1.0.so
 lib/libgksuui1.0.so.1
 libdata/pkgconfig/libgksuui1.0.pc

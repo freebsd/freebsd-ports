@@ -49,9 +49,14 @@ include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
 include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
+lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.a
+lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.la
 lib/gtk-2.0/%%GTK_VERSION%%/filesystems/libgnome-vfs.so
+lib/libglade/2.0/libgnome.a
+lib/libglade/2.0/libgnome.la
 lib/libglade/2.0/libgnome.so
 lib/libgnomeui-2.a
+lib/libgnomeui-2.la
 lib/libgnomeui-2.so
 lib/libgnomeui-2.so.0
 libdata/pkgconfig/libgnomeui-2.0.pc

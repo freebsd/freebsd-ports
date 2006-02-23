@@ -143,6 +143,7 @@ include/OpenSP/types.h
 include/OpenSP/xnew.h
 lib/charset.alias
 lib/libosp.a
+lib/libosp.la
 lib/libosp.so
 lib/libosp.so.3
 %%PORTDOCS%%%%DOCSDIR%%/archform.htm

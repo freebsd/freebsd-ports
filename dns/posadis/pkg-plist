@@ -23,10 +23,16 @@ include/posadis-%%VERSION%%/updates.h
 include/posadis-%%VERSION%%/vector.h
 include/posadis-%%VERSION%%/zones.h
 include/posadis-%%VERSION%%/zonetransfer.h
+%%FAM%%lib/posadis/fam.a
+%%FAM%%lib/posadis/fam.la
 %%FAM%%lib/posadis/fam.so
 %%FAM%%lib/posadis/fam.so.0
+lib/posadis/localhost.a
+lib/posadis/localhost.la
 lib/posadis/localhost.so
 lib/posadis/localhost.so.0
+lib/posadis/revmap.a
+lib/posadis/revmap.la
 lib/posadis/revmap.so
 lib/posadis/revmap.so.0
 lib/posadis-%%VERSION%%/include/posadis-config.h

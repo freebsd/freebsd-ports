@@ -89,6 +89,7 @@ include/mifluz/unac.h
 include/mifluz/xa.h
 include/mifluz/xa_ext.h
 lib/libmifluz.a
+lib/libmifluz.la
 lib/libmifluz.so
 lib/libmifluz.so.0
 @dirrm include/mifluz

@@ -24,9 +24,11 @@ include/log4c/priority.h
 include/log4c/rc.h
 include/log4c/version.h
 lib/liblog4c.a
+lib/liblog4c.la
 lib/liblog4c.so
 lib/liblog4c.so.2
 lib/liblog4c_examples.a
+lib/liblog4c_examples.la
 lib/liblog4c_examples.so
 lib/liblog4c_examples.so.0
 share/aclocal/log4c.m4

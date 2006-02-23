@@ -7,9 +7,11 @@ include/shisa.h
 include/shishi-int.h
 include/shishi.h
 lib/libshisa.a
+lib/libshisa.la
 lib/libshisa.so
 lib/libshisa.so.0
 lib/libshishi.a
+lib/libshishi.la
 lib/libshishi.so
 lib/libshishi.so.0
 libdata/pkgconfig/shishi.pc

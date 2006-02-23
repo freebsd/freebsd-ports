@@ -1,4 +1,4 @@
-lib/gtk/themes/engines/libwhistler.a
+lib/gtk/themes/engines/libwhistler.la
 lib/gtk/themes/engines/libwhistler.so
 share/themes/WhistlerK/ICON.png
 share/themes/WhistlerK/README.html

@@ -8,6 +8,7 @@
 
 PORTNAME=	autogen
 PORTVERSION=	5.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU:S/$/:gnu/}
@@ -22,7 +23,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
 INSTALLS_SHLIB=	yes
 

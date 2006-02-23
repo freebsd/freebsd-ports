@@ -16,5 +16,6 @@ include/msn/switchboardserver.h
 include/msn/util.h
 @dirrm include/msn
 lib/libmsn.a
+lib/libmsn.la
 lib/libmsn.so
 lib/libmsn.so.0

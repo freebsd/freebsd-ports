@@ -7,7 +7,7 @@
 
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lingoteach
@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	lingoteach
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
 
-USE_GMAKE=		yes
-USE_GNOME=		gnomehack gnometarget libxml2
-USE_AUTOTOOLS=	libtool:13:inc
-INSTALLS_SHLIB=		yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget libxml2
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
 .if defined(WITH_COMP)
 CONFIGURE_ARGS+=	--with-compression

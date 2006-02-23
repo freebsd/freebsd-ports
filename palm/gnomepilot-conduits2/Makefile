@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomepilot-conduits2
 PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-pilot-conduits/2.0
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnome
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

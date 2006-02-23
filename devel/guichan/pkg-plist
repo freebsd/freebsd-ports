@@ -45,12 +45,15 @@ include/guichan/widgets/textfield.hpp
 include/guichan/widgets/window.hpp
 include/guichan/x.hpp
 lib/libguichan.a
+lib/libguichan.la
 lib/libguichan.so
 lib/libguichan.so.0
 lib/libguichan_opengl.a
+lib/libguichan_opengl.la
 lib/libguichan_opengl.so
 lib/libguichan_opengl.so.0
 lib/libguichan_sdl.a
+lib/libguichan_sdl.la
 lib/libguichan_sdl.so
 lib/libguichan_sdl.so.0
 @dirrm include/guichan/widgets

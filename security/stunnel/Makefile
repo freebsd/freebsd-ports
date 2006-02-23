@@ -7,7 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -18,7 +18,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
-USE_AUTOTOOLS=	libtool:15
 USE_RC_SUBR=	YES
 
 GNU_CONFIGURE=	yes

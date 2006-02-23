@@ -662,13 +662,13 @@ include/xfce4/xfc/version.hh
 include/xfce4/xfc/xfccore.hh
 include/xfce4/xfc/xfcglade.hh
 include/xfce4/xfc/xfcui.hh
-lib/libXFCcore-4.3.a
+lib/libXFCcore-4.3.la
 lib/libXFCcore-4.3.so
 lib/libXFCcore-4.3.so.1
-lib/libXFCglade-4.3.a
+lib/libXFCglade-4.3.la
 lib/libXFCglade-4.3.so
 lib/libXFCglade-4.3.so.1
-lib/libXFCui-4.3.a
+lib/libXFCui-4.3.la
 lib/libXFCui-4.3.so
 lib/libXFCui-4.3.so.1
 libdata/pkgconfig/xfccore-4.3.pc

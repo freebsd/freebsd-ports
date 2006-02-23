@@ -1,6 +1,7 @@
 bin/minidom-config
 include/minidom/minidom.h
 lib/libminidom.a
+lib/libminidom.la
 lib/libminidom.so
 lib/libminidom.so.1
 @dirrm include/minidom

@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.4
@@ -22,7 +22,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2 gnomehack
 

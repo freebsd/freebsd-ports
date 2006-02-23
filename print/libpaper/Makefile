@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.3/-3/}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A library providing routines for paper size management
 
-USE_AUTOTOOLS=	libtool:15:inc
-INSTALLS_SHLIB=	Yes
-USE_GETOPT_LONG=Yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_GETOPT_LONG=yes
 CONFIGURE_ARGS=	--build=${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.3//}

@@ -27,6 +27,7 @@ include/sigc++-1.2/sigc++/signal.h
 include/sigc++-1.2/sigc++/slot.h
 include/sigc++-1.2/sigc++/trait.h
 lib/libsigc-1.2.a
+lib/libsigc-1.2.la
 lib/libsigc-1.2.so
 lib/libsigc-1.2.so.5
 lib/sigc++-1.2/include/sigcconfig.h

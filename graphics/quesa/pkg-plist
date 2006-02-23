@@ -22,6 +22,7 @@ include/quesalib/QuesaTransform.h
 include/quesalib/QuesaView.h
 include/quesalib/QuesaViewer.h
 lib/libquesa.a
+lib/libquesa.la
 lib/libquesa.so
 lib/libquesa.so.0
 %%WITH_QUESA_EXAMPLES%%%%EXAMPLESDIR%%/Images/1.tga

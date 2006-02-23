@@ -1,5 +1,7 @@
 bin/sodipodi
 lib/sodipodi/extensions/ill2svg.pl
+lib/sodipodi/modules/libxmleditor.a
+lib/sodipodi/modules/libxmleditor.la
 lib/sodipodi/modules/libxmleditor.so
 share/gnome/applications/sodipodi.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

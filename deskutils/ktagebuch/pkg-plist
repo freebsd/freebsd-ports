@@ -1,9 +1,12 @@
 bin/ktagebuch
+lib/kde3/ktagebuch_mood.a
 lib/kde3/ktagebuch_mood.la
 lib/kde3/ktagebuch_mood.so
+lib/libfilesystem.a
 lib/libfilesystem.la
 lib/libfilesystem.so
 lib/libfilesystem.so.1
+lib/libktagebuch.a
 lib/libktagebuch.la
 lib/libktagebuch.so
 lib/libktagebuch.so.1

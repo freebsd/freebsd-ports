@@ -7,7 +7,7 @@
 
 PORTNAME=	baghira
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +17,13 @@ COMMENT=	An Aqua like window decoration and widget style for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-release
 
-BROKEN=		Incorrect pkg-plist
-
 #EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+USE_AUTOTOOLS=	libtool:15
 
 # XXX - Workaround for a badly rolled tarball.
 #pre-configure:

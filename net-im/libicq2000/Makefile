@@ -7,7 +7,7 @@
 
 PORTNAME=	libicq2000
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	An opensource C++ library to support icq2000/2001 protocol
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
-USE_AUTOTOOLS=	libtool:15:inc
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-static
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

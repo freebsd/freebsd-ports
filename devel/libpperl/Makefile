@@ -7,6 +7,7 @@
 
 PORTNAME=	libpperl
 PORTVERSION=	20051214
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~kbyanc/ \
 		http://www.posi.net/software/libpperl/
@@ -18,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig
 USE_PERL5=	yes
 

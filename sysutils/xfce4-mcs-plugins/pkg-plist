@@ -1,7 +1,17 @@
+lib/xfce4/mcs-plugins/display_plugin.a
+lib/xfce4/mcs-plugins/display_plugin.la
 lib/xfce4/mcs-plugins/display_plugin.so
+lib/xfce4/mcs-plugins/keyboard_plugin.a
+lib/xfce4/mcs-plugins/keyboard_plugin.la
 lib/xfce4/mcs-plugins/keyboard_plugin.so
+lib/xfce4/mcs-plugins/mouse_plugin.a
+lib/xfce4/mcs-plugins/mouse_plugin.la
 lib/xfce4/mcs-plugins/mouse_plugin.so
+lib/xfce4/mcs-plugins/screensaver_plugin.a
+lib/xfce4/mcs-plugins/screensaver_plugin.la
 lib/xfce4/mcs-plugins/screensaver_plugin.so
+lib/xfce4/mcs-plugins/ui_plugin.a
+lib/xfce4/mcs-plugins/ui_plugin.la
 lib/xfce4/mcs-plugins/ui_plugin.so
 share/applications/xfce-ui-settings.desktop
 share/applications/xfce-keyboard-settings.desktop

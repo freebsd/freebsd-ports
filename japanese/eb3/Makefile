@@ -7,7 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	3.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
@@ -61,7 +61,7 @@ DIST_SUBDIR=	eb
 
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-nls \

@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/vpython
+%%PYTHON_SITELIBDIR%%/cvisualmodule.la
 %%PYTHON_SITELIBDIR%%/cvisualmodule.so
 %%PYTHON_SITELIBDIR%%/cvisualmodule.so.1
 %%PYTHON_SITELIBDIR%%/visual/__init__.py

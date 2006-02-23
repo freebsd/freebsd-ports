@@ -7,7 +7,7 @@
 
 PORTNAME=	mifluz
 PORTVERSION=	0.23.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,8 @@ COMMENT=	C++ library to build and query a full text inverted index
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--without-unac
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --without-unac
 INSTALLS_SHLIB=	yes
 
 USE_BISON=	yes

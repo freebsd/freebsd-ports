@@ -6,7 +6,7 @@
 
 PORTNAME=		ktagebuch
 PORTVERSION=		0.74
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
@@ -20,7 +20,7 @@ EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 

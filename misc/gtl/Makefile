@@ -20,7 +20,6 @@ RESTRICTED=	License forbids redistribution (source or binary)
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 USE_GNOME=	lthack
 USE_GCC=	3.3	# Won't build with 3.4
 

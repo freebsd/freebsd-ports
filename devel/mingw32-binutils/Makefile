@@ -36,7 +36,7 @@ PATCH_DIST_STRIP=	-p1
 
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-win32-registry \

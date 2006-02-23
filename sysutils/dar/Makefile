@@ -7,6 +7,7 @@
 
 PORTNAME=	dar
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -15,7 +16,7 @@ MAINTAINER=	ebrandi@fugspbr.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0

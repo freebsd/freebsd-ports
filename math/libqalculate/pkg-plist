@@ -13,6 +13,7 @@ include/libqalculate/Unit.h
 include/libqalculate/BuiltinFunctions.h
 include/libqalculate/qalculate.h
 lib/libqalculate.a
+lib/libqalculate.la
 lib/libqalculate.so
 lib/libqalculate.so.0
 libdata/pkgconfig/libqalculate.pc

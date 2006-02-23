@@ -320,6 +320,8 @@ include/inti-1.0/inti/utf-string.h
 lib/inti-1.0/include/inti-config.h
 @dirrm lib/inti-1.0/include
 @dirrm lib/inti-1.0
+lib/libinti-1.0.a
+lib/libinti-1.0.la
 lib/libinti-1.0.so
 lib/libinti-1.0.so.9
 libdata/pkgconfig/inti-1.0.pc

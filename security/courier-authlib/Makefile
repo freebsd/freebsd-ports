@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -35,9 +35,10 @@ OPTIONS+=	GDBM	"Use gdbm instead of system bdb"	off
 
 .else	# !defined(PKGNAMESUFFIX)
 
+USE_AUTOTOOLS=	libltdl:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_SUBMAKE=	yes

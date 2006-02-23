@@ -1,3 +1,5 @@
+lib/gtk-2.0/2.4.0/immodules/im-iiim.a
+lib/gtk-2.0/2.4.0/immodules/im-iiim.la
 lib/gtk-2.0/2.4.0/immodules/im-iiim.so
 @exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

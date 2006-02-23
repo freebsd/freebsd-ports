@@ -13,10 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	triosoft@triosoft.com.ua
 COMMENT=	KDE app that searches and synchronizes two directories
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator
 

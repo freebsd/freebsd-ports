@@ -6,5 +6,6 @@ include/js.h
 include/jsint.h
 include/jsconfig.h
 lib/libjs.a
+lib/libjs.la
 lib/libjs.so
 lib/libjs.so.0

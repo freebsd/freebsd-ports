@@ -1,5 +1,6 @@
 bin/showimage
 include/SDL11/SDL_image.h
 lib/libSDL_image.a
+lib/libSDL_image.la
 lib/libSDL_image.so
 lib/libSDL_image.so.10

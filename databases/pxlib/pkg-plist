@@ -3,6 +3,7 @@ include/paradox-mp.h
 include/paradox.h
 include/pxversion.h
 lib/libpx.a
+lib/libpx.la
 lib/libpx.so
 lib/libpx.so.6
 libdata/pkgconfig/pxlib.pc

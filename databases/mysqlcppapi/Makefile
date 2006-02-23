@@ -7,7 +7,7 @@
 
 PORTNAME=	mysqlcppapi
 PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mysqlcppapi
@@ -17,7 +17,6 @@ COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 

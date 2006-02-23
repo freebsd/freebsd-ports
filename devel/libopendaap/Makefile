@@ -7,6 +7,7 @@
 
 PORTNAME=	libopendaap
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
@@ -16,7 +17,7 @@ COMMENT=	C lib used to connect to iTunes(R) music shares
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN3=		libopendaap.3

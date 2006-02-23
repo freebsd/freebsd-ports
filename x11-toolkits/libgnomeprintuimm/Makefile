@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnomeprintuimm
 PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
@@ -27,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeprintui
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.5" API_VERSION="2.6"
@@ -36,14 +36,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|2\.0|2.6|' ${WRKSRC}/tools/m4/Makefile.in
 	@${REINPLACE_CMD} -e "s|\(-lglibmm\)|-L\$$(GMM_PROCDIR)/../.. \1|" \
 		${WRKSRC}/tools/extra_defs_gen/Makefile.in
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 .include <bsd.port.mk>

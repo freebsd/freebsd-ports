@@ -1,2 +1,4 @@
+lib/xfce4/panel-plugins/libwavelan.a
+lib/xfce4/panel-plugins/libwavelan.la
 lib/xfce4/panel-plugins/libwavelan.so
 @dirrmtry lib/xfce4/panel-plugins

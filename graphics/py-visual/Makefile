@@ -7,6 +7,7 @@
 
 PORTNAME=	visual
 PORTVERSION=	3.2.7
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.vpython.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +25,6 @@ RUN_DEPENDS=	${PYNUMERIC}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	2.3+
 USE_XLIB=	yes
 

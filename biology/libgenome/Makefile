@@ -8,6 +8,7 @@
 
 PORTNAME=	libgenome
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.wisc.edu/~darling/libgenome/releases/
 DISTNAME=	libGenome-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

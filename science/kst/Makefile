@@ -6,7 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	0.99
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 post-patch:

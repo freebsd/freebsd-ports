@@ -26,7 +26,7 @@ DEPRECATED=	"Development ceased"
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

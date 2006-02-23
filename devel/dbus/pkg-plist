@@ -31,12 +31,15 @@ include/dbus-%%VERSION%%/dbus/dbus.h
 %%QT%%include/dbus-%%VERSION%%/dbus/server.h
 include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
+lib/libdbus-1.la
 lib/libdbus-1.so
 lib/libdbus-1.so.2
 lib/libdbus-glib-1.a
+lib/libdbus-glib-1.la
 lib/libdbus-glib-1.so
 lib/libdbus-glib-1.so.2
 %%QT%%lib/libdbus-qt-1.a
+%%QT%%lib/libdbus-qt-1.la
 %%QT%%lib/libdbus-qt-1.so
 %%QT%%lib/libdbus-qt-1.so.2
 libdata/pkgconfig/dbus-1.pc

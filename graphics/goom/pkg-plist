@@ -11,6 +11,7 @@ include/goom/goomsl.h
 include/goom/goomsl_hash.h
 include/goom/goomsl_heap.h
 lib/libgoom2.a
+lib/libgoom2.la
 lib/libgoom2.so
 lib/libgoom2.so.0
 libdata/pkgconfig/libgoom2.pc

@@ -3,6 +3,7 @@ bin/agrep
 include/tre/regex.h
 include/tre/tre-config.h
 lib/libtre.a
+lib/libtre.la
 lib/libtre.so
 lib/libtre.so.6
 libdata/pkgconfig/tre.pc

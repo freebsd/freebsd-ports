@@ -312,12 +312,15 @@ lib/ImageMagick/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/filters/analyze.la
 %%MODULES%%lib/ImageMagick/modules-%%QBIT%%/filters/analyze.so
 lib/libMagick++.a
+lib/libMagick++.la
 lib/libMagick++.so
 lib/libMagick++.so.9
 lib/libMagick.a
+lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.9
 lib/libWand.a
+lib/libWand.la
 lib/libWand.so
 lib/libWand.so.9
 libdata/pkgconfig/ImageMagick++.pc

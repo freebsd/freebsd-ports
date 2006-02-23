@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-sndfile
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/xmms_sndfile/
 DISTNAME=	xmms_sndfile-${PORTVERSION}
@@ -21,8 +22,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

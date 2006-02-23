@@ -29,7 +29,6 @@ INFO=		ecl ecldev
 USE_GMAKE=	YES
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS=	libtool:13
 CONFIGURE_ARGS=	--with-asdf --with-tcp --with-system-gmp --enable-boehm=included
 
 # We need to tell ECL where to find the GMP includes

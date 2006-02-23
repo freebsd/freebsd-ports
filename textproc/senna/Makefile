@@ -7,6 +7,7 @@
 
 PORTNAME=	senna
 PORTVERSION=	0.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://dev.razil.jp/archive/senna/

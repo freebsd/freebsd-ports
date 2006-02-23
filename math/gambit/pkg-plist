@@ -18,5 +18,6 @@ bin/gambit-nfg-simpdiv
 bin/gambit-nfg2html
 bin/gambit-nfg2tex
 lib/libgambit.a
+lib/libgambit.la
 lib/libgambit.so
 lib/libgambit.so.0

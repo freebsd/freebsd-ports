@@ -1,7 +1,8 @@
 bin/apollon
 lib/libapollon.a
-lib/libapollon.so.0
+lib/libapollon.la
 lib/libapollon.so
+lib/libapollon.so.0
 share/locale/de/LC_MESSAGES/apollon.mo
 share/locale/es/LC_MESSAGES/apollon.mo
 share/locale/fr/LC_MESSAGES/apollon.mo

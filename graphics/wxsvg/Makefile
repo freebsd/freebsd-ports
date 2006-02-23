@@ -20,7 +20,7 @@ RUN_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
 INSTALLS_SHLIB=	yes
 WX_CONFIG=	wxgtk2-2.6-config
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	libartlgpl2
 
 post-patch:

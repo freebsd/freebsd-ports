@@ -12,6 +12,7 @@ include/jmorecfg.h
 include/jpegint.h
 include/jpeglib.h
 lib/libjpeg.a
+lib/libjpeg.la
 lib/libjpeg.so
 lib/libjpeg.so.9
 %%PORTDOCS%%%%DOCSDIR%%/README

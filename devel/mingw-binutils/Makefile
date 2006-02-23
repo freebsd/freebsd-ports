@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=i386-mingw32msvc
 
 MAN1=	i386-mingw32msvc-addr2line.1 \

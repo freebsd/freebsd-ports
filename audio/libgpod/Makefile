@@ -14,14 +14,13 @@ MASTER_SITE_SUBDIR=	gtkpod
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A library for direct access of iPod's contents
 
-BROKEN=		Configure fails
-
-USE_GETTEXT=		yes
-USE_REINPLACE=		yes
-INSTALLS_SHLIB=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GNOME=	glib20
+USE_GETTEXT=	yes
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
 	@${REINPLACE_CMD} -e \

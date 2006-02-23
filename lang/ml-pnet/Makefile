@@ -19,7 +19,7 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include "${.CURDIR}/../pnet/Makefile.pnet"

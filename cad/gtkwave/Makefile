@@ -8,6 +8,7 @@
 
 PORTNAME=	gtkwave
 PORTVERSION=	2.0.0.p5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/amulet/gtkwave/2.0/
@@ -20,7 +21,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave

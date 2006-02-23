@@ -27,7 +27,7 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libxslt
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 CONFIGURE_ARGS=	--with-popt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
@@ -53,15 +53,6 @@ CONFIGURE_ARGS+=	--with-gnome-vfs
 .else
 CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 post-install:
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1

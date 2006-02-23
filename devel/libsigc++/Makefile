@@ -7,6 +7,7 @@
 
 PORTNAME=	libsigc++
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S/$/:gnome/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -17,9 +18,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack
+USE_REINPLACE=	yes
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's#^sh libtool#${LIBTOOL}#' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

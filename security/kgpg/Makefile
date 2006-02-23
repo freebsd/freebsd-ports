@@ -19,7 +19,7 @@ RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
 CONFLICTS=		kdeutils-3.[2-4].*
 
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_KDELIBS_VER=	3
 USE_REINPLACE=		yes
 

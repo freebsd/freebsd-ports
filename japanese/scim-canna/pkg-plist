@@ -1,4 +1,8 @@
+lib/scim-1.0/IMEngine/canna.a
+lib/scim-1.0/IMEngine/canna.la
 lib/scim-1.0/IMEngine/canna.so
+lib/scim-1.0/SetupUI/canna-imengine-setup.a
+lib/scim-1.0/SetupUI/canna-imengine-setup.la
 lib/scim-1.0/SetupUI/canna-imengine-setup.so
 share/locale/ja/LC_MESSAGES/scim-canna.mo
 share/scim/icons/scim-canna.png

@@ -13,6 +13,7 @@ include/tilp/tikeys.h
 include/tilp/tnode.h
 include/tilp/update.h
 lib/libticalcs.a
+lib/libticalcs.la
 lib/libticalcs.so
 lib/libticalcs.so.9
 libdata/pkgconfig/ticalcs.pc

@@ -29,9 +29,11 @@ include/mysql/sslopt-longopts.h
 include/mysql/sslopt-usage.h
 include/mysql/sslopt-vars.h
 lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.10
 lib/mysql/libmysqlclient_r.a
+lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.10
 @dirrm include/mysql

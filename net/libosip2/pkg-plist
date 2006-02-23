@@ -43,12 +43,14 @@ include/osip2/osip_mt.h
 include/osip2/osip_fifo.h
 include/osip2/osip_condv.h
 include/osip2/osip_time.h
-lib/libosipparser2.so.3
-lib/libosipparser2.so
-lib/libosipparser2.a
-lib/libosip2.so.3
-lib/libosip2.so
 lib/libosip2.a
+lib/libosip2.la
+lib/libosip2.so
+lib/libosip2.so.3
+lib/libosipparser2.a
+lib/libosipparser2.la
+lib/libosipparser2.so
+lib/libosipparser2.so.3
 libdata/pkgconfig/libosip2.pc
 @dirrm include/osipparser2/headers
 @dirrm include/osipparser2

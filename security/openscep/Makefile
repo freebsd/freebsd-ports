@@ -7,6 +7,7 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
@@ -17,7 +18,7 @@ USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_APACHE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

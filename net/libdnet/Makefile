@@ -7,6 +7,7 @@
 
 PORTNAME=	libdnet
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +21,6 @@ COMMENT?=	A simple interface to low level networking routines
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
 
 SLAVE_DIRS=	net/py-libdnet
 

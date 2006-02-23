@@ -1,9 +1,11 @@
 bin/pixie
+lib/libpixie_misc.a
+lib/libpixie_misc.la
 lib/libpixie_misc.so.1
 lib/libpixie_misc.so
-lib/libpixie_misc.la
-lib/pixie.so
+lib/pixie.a
 lib/pixie.la
+lib/pixie.so
 share/applnk/Graphics/pixie.desktop
 share/applnk/Graphics/pixie-mini.desktop
 share/apps/konqueror/servicemenus/konqPixie.desktop

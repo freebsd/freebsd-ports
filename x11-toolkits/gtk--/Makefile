@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	1.2.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtkmm/1.2
@@ -23,14 +23,17 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome \
 		--with-sigc-prefix=${LOCALBASE}
 
 post-install:
+.for lib in gdkmm gtkmm
+	@${RM} ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/lib${lib}.la
+	@${MV} ${PREFIX}/lib/lib${lib}.a ${PREFIX}/lib/lib${lib}-1.2.a
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

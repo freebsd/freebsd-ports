@@ -18,6 +18,7 @@ include/exo-0.3/exo/exo-toolbars-view.h
 include/exo-0.3/exo/exo-xsession-client.h
 include/exo-0.3/exo/exo.h
 lib/libexo-0.3.a
+lib/libexo-0.3.la
 lib/libexo-0.3.so
 lib/libexo-0.3.so.0
 %%PYTHON%%lib/python2.4/site-packages/exo-0.3/_exo.so

@@ -36,7 +36,7 @@ pre-configure:
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g;' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g; s|-lgtk|-lgtk12|g;' \
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g; s|-lgtk|-lgtk-12|g;' \
 			${WRKSRC}/Makefile.in
 pre-build:
 	@${REINPLACE_CMD} -e 's|MAXHEV=60, MAXLIT=60|MAXHEV=90, MAXLIT=90|g;' \

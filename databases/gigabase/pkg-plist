@@ -25,9 +25,11 @@ include/gigabase/sync.h
 include/gigabase/timeseries.h
 include/gigabase/wwwapi.h
 lib/libcligb_r.a
+lib/libcligb_r.la
 lib/libcligb_r.so
 lib/libcligb_r.so.2
 lib/libgigabase_r.a
+lib/libgigabase_r.la
 lib/libgigabase_r.so
 lib/libgigabase_r.so.2
 @dirrm include/gigabase

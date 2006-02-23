@@ -45,6 +45,7 @@ include/gn/gnStringTools.h
 include/gn/gnTranslator.h
 include/gn/gnVersion.h
 lib/libGenome.a
+lib/libGenome.la
 lib/libGenome.so
 lib/libGenome.so.0
 %%PORTDOCS%%%%DOCSDIR%%/GNPREC_8H-source.html

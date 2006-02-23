@@ -18,10 +18,10 @@ include/wv/libole2/ms-ole-summary.h
 include/wv/libole2/ms-ole.h
 include/wv/wv.h
 include/wv/wvexporter.h
-lib/libwv.a
-lib/libwv.so
 lib/libwv-1.0.so
 lib/libwv-1.0.so.0
+lib/libwv.la
+lib/libwv.so
 libdata/pkgconfig/wv-1.0.pc
 share/wv/patterns/100.gif
 share/wv/patterns/101.gif

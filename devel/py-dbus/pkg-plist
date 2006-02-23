@@ -8,7 +8,11 @@ lib/%%PYTHON_VERSION%%/site-packages/dbus/_dbus.pyo
 lib/%%PYTHON_VERSION%%/site-packages/dbus/_util.py
 lib/%%PYTHON_VERSION%%/site-packages/dbus/_util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/dbus/_util.pyo
+lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_bindings.a
+lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_bindings.la
 lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_bindings.so
+lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_glib_bindings.a
+lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_glib_bindings.la
 lib/%%PYTHON_VERSION%%/site-packages/dbus/dbus_glib_bindings.so
 lib/%%PYTHON_VERSION%%/site-packages/dbus/decorators.py
 lib/%%PYTHON_VERSION%%/site-packages/dbus/decorators.pyc

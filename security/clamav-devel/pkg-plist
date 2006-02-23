@@ -13,9 +13,10 @@ etc/rc.d/clamav-freshclam%%RC_SUFX%%
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
-lib/libclamav.so.1
-lib/libclamav.so
 lib/libclamav.a
+lib/libclamav.la
+lib/libclamav.so
+lib/libclamav.so.1
 libdata/pkgconfig/libclamav.pc
 @unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
 etc/clamd.conf.default

@@ -7,6 +7,7 @@
 
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/
 
@@ -15,7 +16,7 @@ COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef* filters-*
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

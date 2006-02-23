@@ -1,4 +1,5 @@
 bin/kbibtex
+lib/kde3/libkbibtexpart.a
 lib/kde3/libkbibtexpart.la
 lib/kde3/libkbibtexpart.so
 share/applnk/Office/kbibtex.desktop

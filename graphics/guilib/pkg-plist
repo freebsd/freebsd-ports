@@ -13,6 +13,7 @@ include/GUI/GUI_termwin.h
 include/GUI/GUI_widget.h
 include/GUI/GUI_widgets.h
 lib/libGUI.a
+lib/libGUI.la
 lib/libGUI.so
 lib/libGUI.so.0
 @dirrm include/GUI

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	0.9.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
@@ -23,7 +23,6 @@ RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

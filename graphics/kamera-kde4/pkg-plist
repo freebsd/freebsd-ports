@@ -1,5 +1,7 @@
+lib/kde3/kcm_kamera.a
 lib/kde3/kcm_kamera.la
 lib/kde3/kcm_kamera.so
+lib/kde3/kio_kamera.a
 lib/kde3/kio_kamera.la
 lib/kde3/kio_kamera.so
 share/applications/kde/kamera.desktop

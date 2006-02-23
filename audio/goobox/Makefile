@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libglade2 libbonobo \
 		gnomedocutils
 USE_GSTREAMER=	cdparanoia gconf
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

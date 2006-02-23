@@ -3,6 +3,7 @@ include/libkexif/kexifdialog.h
 include/libkexif/kexifutils.h
 include/libkexif/kexifwidget.h
 include/libkexif/libkexif_export.h
+lib/libkexif.a
 lib/libkexif.la
 lib/libkexif.so
 lib/libkexif.so.1

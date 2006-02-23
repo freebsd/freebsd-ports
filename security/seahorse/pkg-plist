@@ -1,11 +1,16 @@
 bin/seahorse
 bin/seahorse-agent
 bin/seahorse-pgp-preferences
+%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.a
+%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.la
 %%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
 %%GEDIT%%lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
 lib/libseahorse-internal.a
+lib/libseahorse-internal.la
 lib/libseahorse-internal.so
 lib/libseahorse-internal.so.0
+%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.a
+%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.la
 %%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.so
 share/gnome/applications/seahorse-pgp-preferences.desktop
 share/gnome/applications/seahorse.desktop

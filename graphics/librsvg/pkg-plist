@@ -14,6 +14,7 @@ include/librsvg-1/librsvg/rsvg-paint-server.h
 include/librsvg-1/librsvg/rsvg-path.h
 include/librsvg-1/librsvg/rsvg.h
 lib/librsvg.a
+lib/librsvg.la
 lib/librsvg.so
 lib/librsvg.so.1
 share/aclocal/librsvg.m4

@@ -37,9 +37,11 @@ include/libmarlin/marlin-undoable.h
 include/libmarlin/marlin-utils.h
 include/libmarlin/marlin-x-utils.h
 lib/libmarlinx.a
+lib/libmarlinx.la
 lib/libmarlinx.so
 lib/libmarlinx.so.0
 lib/libmarlin.a
+lib/libmarlin.la
 lib/libmarlin.so
 lib/libmarlin.so.0
 share/gnome/applications/marlin.desktop

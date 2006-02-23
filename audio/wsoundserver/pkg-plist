@@ -6,5 +6,6 @@ bin/wsoundplay
 bin/wsoundserver
 include/wsound.h
 lib/libwsound.a
+lib/libwsound.la
 lib/libwsound.so
 lib/libwsound.so.1

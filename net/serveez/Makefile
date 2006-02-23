@@ -8,7 +8,7 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/serveez/ \
 		http://www.textsure.net/~ela/download/
@@ -22,7 +22,7 @@ GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes

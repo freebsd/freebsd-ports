@@ -31,6 +31,7 @@ include/dvbpsi/pmt.h
 include/dvbpsi/psi.h
 include/dvbpsi/sdt.h
 lib/libdvbpsi.a
+lib/libdvbpsi.la
 lib/libdvbpsi.so
 lib/libdvbpsi.so.4
 @dirrm include/dvbpsi

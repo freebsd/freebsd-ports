@@ -7,13 +7,14 @@
 
 PORTNAME=	xapian-core
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.oligarchy.co.uk/xapian/${PORTVERSION}/
 
 MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	A probabilistic text search database engine
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:

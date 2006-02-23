@@ -4,6 +4,7 @@ bin/sndfile-play
 bin/sndfile-regtest
 include/sndfile.h
 lib/libsndfile.a
+lib/libsndfile.la
 lib/libsndfile.so
 lib/libsndfile.so.1
 libdata/pkgconfig/sndfile.pc

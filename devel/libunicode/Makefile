@@ -7,7 +7,7 @@
 
 PORTNAME=	libunicode
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libunicode/0.4
@@ -18,7 +18,7 @@ COMMENT=	A library for manipulating Unicode characters and strings
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome

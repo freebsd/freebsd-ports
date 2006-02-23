@@ -7,7 +7,7 @@
 
 PORTNAME=		libchipcard-kde
 PORTVERSION=		0.9
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		devel kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libchipcard
@@ -18,7 +18,7 @@ COMMENT=		KDE tools for LibChipCard
 LIB_DEPENDS=		chipcard.20:${PORTSDIR}/devel/libchipcard:install
 
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
 			--with-applnk-dir=${PREFIX}/share/applnk/Utilities \

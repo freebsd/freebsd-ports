@@ -136,10 +136,15 @@ lib/sfs
 lib/sfs-%%SFS_VERSION%%/aiod
 lib/sfs-%%SFS_VERSION%%/connect
 lib/sfs-%%SFS_VERSION%%/libarpc.a
+lib/sfs-%%SFS_VERSION%%/libarpc.la
 lib/sfs-%%SFS_VERSION%%/libasync.a
+lib/sfs-%%SFS_VERSION%%/libasync.la
 lib/sfs-%%SFS_VERSION%%/libsfscrypt.a
+lib/sfs-%%SFS_VERSION%%/libsfscrypt.la
 lib/sfs-%%SFS_VERSION%%/libsfsmisc.a
+lib/sfs-%%SFS_VERSION%%/libsfsmisc.la
 lib/sfs-%%SFS_VERSION%%/libsvc.a
+lib/sfs-%%SFS_VERSION%%/libsvc.la
 lib/sfs-%%SFS_VERSION%%/listen
 lib/sfs-%%SFS_VERSION%%/mallock.o
 lib/sfs-%%SFS_VERSION%%/moduled

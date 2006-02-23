@@ -3,6 +3,7 @@ include/ucl/ucl.h
 include/ucl/ucl_asm.h
 include/ucl/uclconf.h
 lib/libucl.a
+lib/libucl.la
 lib/libucl.so
 lib/libucl.so.1
 @dirrm include/ucl

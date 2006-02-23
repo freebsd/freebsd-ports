@@ -10,6 +10,7 @@ etc/openscep/openscep.ldif.default
 etc/openscep/openscep.schema.default
 etc/openscep/slapd.conf.default
 lib/libscep.a
+lib/libscep.la
 lib/libscep.so
 lib/libscep.so.4
 sbin/cafingerprint

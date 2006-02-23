@@ -8,7 +8,7 @@
 
 PORTNAME=	libnova
 PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
 USE_GNOME=	gnometarget lthack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

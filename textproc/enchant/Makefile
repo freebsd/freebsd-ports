@@ -7,6 +7,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.abisource.com/downloads/enchant/${PORTVERSION}/
 #		${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +19,7 @@ COMMENT=	Dictionary/spellchecking framework
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_AUTOTOOLS=  libtool:15
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget glib20 ltverhack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

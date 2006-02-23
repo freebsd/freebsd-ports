@@ -8,6 +8,7 @@
 
 PORTNAME=	libdbi
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
 
 USE_REINPLACE=		yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=		yes
 
 post-patch:

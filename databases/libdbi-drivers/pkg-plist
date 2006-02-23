@@ -1,8 +1,20 @@
+%%MYSQL%%lib/dbd/libmysql.a
+%%MYSQL%%lib/dbd/libmysql.la
 %%MYSQL%%lib/dbd/libmysql.so
+%%PGSQL%%lib/dbd/libpgsql.a
+%%PGSQL%%lib/dbd/libpgsql.la
 %%PGSQL%%lib/dbd/libpgsql.so
+%%SQLITE2%%lib/dbd/libsqlite.a
+%%SQLITE2%%lib/dbd/libsqlite.la
 %%SQLITE2%%lib/dbd/libsqlite.so
+%%SQLITE3%%lib/dbd/libsqlite3.a
+%%SQLITE3%%lib/dbd/libsqlite3.la
 %%SQLITE3%%lib/dbd/libsqlite3.so
+%%FIREBIRD%%lib/dbd/libfirebird.a
+%%FIREBIRD%%lib/dbd/libfirebird.la
 %%FIREBIRD%%lib/dbd/libfirebird.so
+%%FREETDS%%lib/dbd/libfreetds.a
+%%FREETDS%%lib/dbd/libfreetds.la
 %%FREETDS%%lib/dbd/libfreetds.so
 @dirrmtry lib/dbd
 %%MYSQL%%%%DOCSDIR%%/dbd_mysql.pdf

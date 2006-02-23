@@ -21,11 +21,14 @@ include/mpeg4ip.h
 include/mpeg4ip_config.h
 include/mpeg4ip_version.h
 lib/libmp4av.a
+lib/libmp4av.la
 lib/libmp4av.so
 lib/libmp4av.so.0
 lib/libmp4v2.a
+lib/libmp4v2.la
 lib/libmp4v2.so
 lib/libmp4v2.so.0
 lib/libmpeg4ip_gnu.a
+lib/libmpeg4ip_gnu.la
 lib/libmpeg4ip_gnu.so
 lib/libmpeg4ip_gnu.so.0

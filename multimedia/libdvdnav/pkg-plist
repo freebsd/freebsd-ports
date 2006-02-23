@@ -10,6 +10,7 @@ include/dvdnav/nav_print.h
 include/dvdnav/nav_read.h
 include/dvdnav/nav_types.h
 lib/libdvdnav.a
+lib/libdvdnav.la
 lib/libdvdnav.so
 lib/libdvdnav.so.4
 share/aclocal/dvdnav.m4

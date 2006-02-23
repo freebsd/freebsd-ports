@@ -2,6 +2,7 @@ bin/enca
 bin/enconv
 include/enca.h
 lib/libenca.a
+lib/libenca.la
 lib/libenca.so
 lib/libenca.so.4
 libdata/pkgconfig/enca.pc

@@ -9,7 +9,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
@@ -40,7 +40,6 @@ MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 post-extract:
 	@${CP} ${DISTDIR}/jpegexiforient.c ${WRKSRC}/
 	@${CP} ${DISTDIR}/exifautotran.txt ${WRKSRC}/exifautotran
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c

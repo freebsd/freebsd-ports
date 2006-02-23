@@ -7,6 +7,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/
 
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	EXAMPLES "With example programs" Off

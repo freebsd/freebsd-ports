@@ -7,6 +7,7 @@ include/cairo/cairo-ps.h
 %%X11%%include/cairo/cairo-xlib.h
 include/cairo/cairo.h
 lib/libcairo.a
+lib/libcairo.la
 lib/libcairo.so
 lib/libcairo.so.2
 libdata/pkgconfig/cairo.pc

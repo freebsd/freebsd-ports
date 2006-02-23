@@ -39,10 +39,12 @@ include/cc++2/cc++/zstream.h
 lib/libccext2-1.3.so
 lib/libccext2-1.3.so.1
 lib/libccext2.a
+lib/libccext2.la
 lib/libccext2.so
 lib/libccgnu2-1.3.so
 lib/libccgnu2-1.3.so.1
 lib/libccgnu2.a
+lib/libccgnu2.la
 lib/libccgnu2.so
 libdata/pkgconfig/libccext2.pc
 libdata/pkgconfig/libccgnu2.pc

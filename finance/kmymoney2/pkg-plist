@@ -30,9 +30,11 @@ include/kmymoney/mymoneyutils.h
 include/kmymoney/statementinterface.h
 include/kmymoney/viewinterface.h
 lib/libkmm_mymoney.a
-lib/libkmm_plugin.a
+lib/libkmm_mymoney.la
 lib/libkmm_mymoney.so
 lib/libkmm_mymoney.so.1
+lib/libkmm_plugin.a
+lib/libkmm_plugin.la
 lib/libkmm_plugin.so
 lib/libkmm_plugin.so.0
 share/applications/kde/kmymoney2.desktop

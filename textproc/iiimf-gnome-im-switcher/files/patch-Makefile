@@ -9,7 +9,7 @@
 -#AUTOCONF = autoconf
 +ACLOCAL = aclocal19
 +AUTOMAKE = automake19 --add-missing --copy
-+LIBTOOLIZE = libtoolize15 --force --copy
++LIBTOOLIZE = libtoolize --force --copy
 +AUTOHEADER = autoheader259
 +AUTOCONF = autoconf259
  #CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \

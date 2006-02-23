@@ -1,20 +1,44 @@
---- Makefile.in	2000/09/25 10:39:41	1.1
-+++ Makefile.in	2000/09/25 10:39:44
-@@ -77,6 +77,8 @@
- USE_SYMBOL_UNDERSCORE = @USE_SYMBOL_UNDERSCORE@
- VERSION = @VERSION@
+--- Makefile.in.orig	Thu Jun  1 16:51:56 2000
++++ Makefile.in	Tue Jan 24 18:39:03 2006
+@@ -79,3 +79,5 @@
  
+-SUBDIRS = tools scanners tktext-port
 +AM_MAKEFLAGS = GTK_CFLAGS="$(CFLAGS) $(GTK_CFLAGS)"
 +
- SUBDIRS = tools scanners tktext-port
++SUBDIRS = tools scanners
  
- lib_LTLIBRARIES = libgtkeditor.la
-@@ -86,7 +88,7 @@
+@@ -86,5 +88,5 @@
  
- libgtkeditor_la_LIBADD = tktext-port/gtktextlayout.lo tktext-port/gtktext.lo tktext-port/gtktextdisplay.lo tktext-port/gtktextbtree.lo tktext-port/gtktextbuffer.lo tktext-port/gtktexttag.lo tktext-port/gtktextmark.lo tktext-port/gtktexttypes.lo tktext-port/gstring.lo tktext-port/gbsearch.lo tktext-port/gtktextchild.lo tktext-port/gtktexttagtable.lo tktext-port/gtktextiter.lo tktext-port/gtktextsegment.lo
+-libgtkeditor_la_LIBADD = tktext-port/gtktextlayout.lo tktext-port/gtktext.lo tktext-port/gtktextdisplay.lo tktext-port/gtktextbtree.lo tktext-port/gtktextbuffer.lo tktext-port/gtktexttag.lo tktext-port/gtktextmark.lo tktext-port/gtktexttypes.lo tktext-port/gstring.lo tktext-port/gbsearch.lo tktext-port/gtktextchild.lo tktext-port/gtktexttagtable.lo tktext-port/gtktextiter.lo tktext-port/gtktextsegment.lo
++libgtkeditor_la_LIBADD = 
  
 -libgtkeditor_la_LDFLAGS = `gtk-config --libs` -lunicode
 +libgtkeditor_la_LDFLAGS = $(GTK_LIBS) -lunicode
  testapp_LDADD = libgtkeditor.la
- static_testapp_LDADD = libgtkeditor.la scanners/c-scanner.so
- debugapp_LDADD = libgtkeditor.la
+@@ -103,3 +105,3 @@
+ 
+-libgtkeditor_la_SOURCES =  	gtkeditor.c 	highlight.c 	edit.c 	scanner.c
++libgtkeditor_la_SOURCES =  	gtkeditor.c 	highlight.c 	edit.c 	scanner.c gtktextlayout.c gtktext.c gtktextdisplay.c gtktextbtree.c gtktextbuffer.c gtktexttag.c gtktextmark.c gtktexttypes.c gstring.c gbsearch.c gtktextchild.c gtktexttagtable.c gtktextiter.c gtktextsegment.c
+ 
+@@ -115,3 +117,3 @@
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -I. -I$(srcdir) -Itktext-port
+ CPPFLAGS = @CPPFLAGS@
+@@ -119,11 +121,7 @@
+ LIBS = @LIBS@
+-libgtkeditor_la_DEPENDENCIES =  tktext-port/gtktextlayout.lo \
+-tktext-port/gtktext.lo tktext-port/gtktextdisplay.lo \
+-tktext-port/gtktextbtree.lo tktext-port/gtktextbuffer.lo \
+-tktext-port/gtktexttag.lo tktext-port/gtktextmark.lo \
+-tktext-port/gtktexttypes.lo tktext-port/gstring.lo \
+-tktext-port/gbsearch.lo tktext-port/gtktextchild.lo \
+-tktext-port/gtktexttagtable.lo tktext-port/gtktextiter.lo \
+-tktext-port/gtktextsegment.lo
+-libgtkeditor_la_OBJECTS =  gtkeditor.lo highlight.lo edit.lo scanner.lo
++
++libgtkeditor_la_OBJECTS =  gtkeditor.lo highlight.lo edit.lo scanner.lo \
++gtktextlayout.lo gtktext.lo gtktextdisplay.lo gtktextbtree.lo \
++gtktextbuffer.lo gtktexttag.lo gtktextmark.lo gtktexttypes.lo gstring.lo \
++gbsearch.lo gtktextchild.lo gtktexttagtable.lo gtktextiter.lo gtktextsegment.lo
+ PROGRAMS =  $(noinst_PROGRAMS)

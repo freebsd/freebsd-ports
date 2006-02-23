@@ -1,5 +1,6 @@
 include/regexx.hh
 include/split.hh
 lib/libregexx.a
+lib/libregexx.la
 lib/libregexx.so
 lib/libregexx.so.2

@@ -7,6 +7,7 @@
 
 PORTNAME=	commoncpp2
 PORTVERSION=	1.3.21
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,9 +24,9 @@ USE_GNOME+=	libxml2
 CONFIGURE_ARGS=	--without-libxml2
 .endif
 
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_DOXYGEN=no
@@ -36,9 +37,4 @@ INFO=		commoncpp2
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@${CP} ${LTMAIN} ${WRKSRC}/autoconf
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

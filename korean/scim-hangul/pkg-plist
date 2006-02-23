@@ -1,4 +1,6 @@
+lib/scim-1.0/IMEngine/hangul.la
 lib/scim-1.0/IMEngine/hangul.so
+lib/scim-1.0/SetupUI/hangul-imengine-setup.la
 lib/scim-1.0/SetupUI/hangul-imengine-setup.so
 share/locale/de/LC_MESSAGES/scim-hangul.mo
 share/locale/fr/LC_MESSAGES/scim-hangul.mo

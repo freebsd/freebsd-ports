@@ -18,7 +18,7 @@ COMMENT=		Scriptable space flight simulator for X
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
 			png.5:${PORTSDIR}/graphics/png
 
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 PLIST=			${WRKDIR}/plist
 PORTDOCS=		AUTHORS CelestiaKeyAssignments.txt ChangeLog \
 			coding-standards.html devguide.txt \

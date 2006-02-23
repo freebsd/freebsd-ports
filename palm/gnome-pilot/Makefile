@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomepilot2
 PORTVERSION=	2.0.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-pilot/2.0
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}

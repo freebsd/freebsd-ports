@@ -19,7 +19,7 @@ LIB_DEPENDS=	fftw3.3:${PORTSDIR}/math/fftw3
 USE_X_PREFIX=	yes
 USE_GNOME=	esound imlib gnomehack gnometarget gnomeprefix
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

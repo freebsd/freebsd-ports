@@ -91,5 +91,6 @@ include/Ipv4PrefixPatricia.hh
 include/artslocal.h
 include/caida_t.h
 lib/libArts.a
+lib/libArts.la
 lib/libArts.so
 lib/libArts.so.0

@@ -7,6 +7,7 @@
 
 PORTNAME=	cole
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://arturo.directmail.org/filters/archive/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	sobomax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free C OLE library
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

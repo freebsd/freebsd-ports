@@ -1,13 +1,5 @@
 --- hdf/src/Makefile.in.orig	Wed Dec 10 14:13:16 2003
 +++ hdf/src/Makefile.in	Tue Mar 15 16:30:15 2005
-@@ -82,6 +82,7 @@
- LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
- LIBOBJS = @LIBOBJS@
- LIBS = @LIBS@
-+LIBTOOL = %%LOCALBASE%%/bin/libtool15
- LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
- MAINT = @MAINT@
 @@ -89,7 +90,7 @@
  MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
  MAKEINFO = @MAKEINFO@

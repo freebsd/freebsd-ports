@@ -11,9 +11,10 @@ include/libkipi/plugin.h
 include/libkipi/pluginloader.h
 include/libkipi/uploadwidget.h
 include/libkipi/version.h
+lib/libkipi.a
 lib/libkipi.la
-lib/libkipi.so.1
 lib/libkipi.so
+lib/libkipi.so.1
 libdata/pkgconfig/libkipi.pc
 share/apps/kipi/data/banner_left.png
 share/icons/hicolor/16x16/apps/kipi.png

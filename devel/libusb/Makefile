@@ -7,7 +7,7 @@
 
 PORTNAME=	libusb
 PORTVERSION=	0.1.10a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Library giving userland programs access to USB devices
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-build-docs
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ include/gnotime/qofsession.h
 include/gnotime/qofsql.h
 include/gnotime/sql_parser.h
 lib/libqofsql.a
+lib/libqofsql.la
 lib/libqofsql.so
 lib/libqofsql.so.0
 share/gnome/applications/gnotime.desktop

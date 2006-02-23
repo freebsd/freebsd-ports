@@ -21,7 +21,7 @@ bin/djvuxmlparser
 include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
 %%X11%%lib/djvulibre/plugins/nsdejavu.so
-lib/libdjvulibre.a
+lib/libdjvulibre.la
 lib/libdjvulibre.so
 lib/libdjvulibre.so.16
 share/djvu/languages.xml

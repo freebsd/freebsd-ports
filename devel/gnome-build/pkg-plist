@@ -9,14 +9,14 @@ include/gnome-build-1.0/gbf/gbf-tree-data.h
 include/gnome-build-1.0/gbf/gbf-widgets.h
 include/gnome-build-1.0/gbf/glue-plugin.h
 lib/gnome-build-1.0/backends/gbf-am.server
-lib/gnome-build-1.0/backends/libgbf-am.a
+lib/gnome-build-1.0/backends/libgbf-am.la
 lib/gnome-build-1.0/backends/libgbf-am.so
 lib/gnome-build-1.0/backends/libgbf-am.so.0
-lib/libgbf-1.a
+lib/libgbf-1.la
 lib/libgbf-1.so
 lib/libgbf-1.so.0
-lib/libgbf-widgets-1.a
 lib/libgbf-widgets-1.so
+lib/libgbf-widgets-1.la
 lib/libgbf-widgets-1.so.0
 libdata/pkgconfig/gnome-build-1.0.pc
 share/gnome/gnome-build/GBF/AmFiles.pm

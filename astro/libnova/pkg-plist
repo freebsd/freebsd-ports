@@ -34,5 +34,6 @@ include/libnova/hyperbolic_motion.h
 lib/libnova-0.11.so
 lib/libnova-0.11.so.0
 lib/libnova.a
+lib/libnova.la
 lib/libnova.so
 @dirrm include/libnova/

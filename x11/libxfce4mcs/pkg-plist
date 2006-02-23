@@ -3,9 +3,11 @@ include/xfce4/libxfce4mcs/mcs-client-enum-types.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h
 lib/libxfce4mcs-client.a
+lib/libxfce4mcs-client.la
 lib/libxfce4mcs-client.so
 lib/libxfce4mcs-client.so.2
 lib/libxfce4mcs-manager.a
+lib/libxfce4mcs-manager.la
 lib/libxfce4mcs-manager.so
 lib/libxfce4mcs-manager.so.2
 libdata/pkgconfig/libxfce4mcs-manager-1.0.pc

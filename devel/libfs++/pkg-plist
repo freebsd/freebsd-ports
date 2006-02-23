@@ -5,6 +5,7 @@ include/fs++/file_t.h
 include/fs++/general-impl.h
 include/fs++/general.h
 lib/libfs++.a
+lib/libfs++.la
 lib/libfs++.so
 lib/libfs++.so.0
 @dirrm include/fs++

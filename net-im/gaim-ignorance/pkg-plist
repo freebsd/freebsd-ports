@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+lib/gaim/ignorance.la
 lib/gaim/ignorance.so
 %%EXAMPLESDIR%%/ignorance
 @unexec if cmp -s %D/etc/gaim/ignorance.conf %D/etc/gaim/ignorance.conf.sample; then rm -f %D/etc/gaim/ignorance.conf;fi

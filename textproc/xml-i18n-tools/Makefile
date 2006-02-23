@@ -17,7 +17,7 @@ COMMENT=	Xml internationalization support for GNOME, and others
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 CONFLICTS=	intltool-*
 

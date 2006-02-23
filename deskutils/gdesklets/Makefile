@@ -7,7 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.35.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.org/downloads/ \
 		http://www.pycage.de/download/${PORTNAME}/ \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack librsvg2 pygnomeextras

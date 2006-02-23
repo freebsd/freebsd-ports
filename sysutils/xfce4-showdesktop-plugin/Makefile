@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-showdesktop-plugin
 PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

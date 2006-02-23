@@ -21,7 +21,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack libglade2 gnomehier
 

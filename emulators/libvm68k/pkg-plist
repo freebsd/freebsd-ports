@@ -8,6 +8,7 @@ include/vm68k/processor.h
 include/vm68k/size.h
 include/vm68k/types.h
 lib/libvm68k.a
+lib/libvm68k.la
 lib/libvm68k.so
 lib/libvm68k.so.4
 @dirrm include/vm68k

@@ -7,7 +7,7 @@
 
 PORTNAME=	orbitcpp
 PORTVERSION=	1.3.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +18,7 @@ COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack lthack orbit2
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -30,9 +30,11 @@ include/cdio/util.h
 include/cdio/version.h
 include/cdio/xa.h
 lib/libcdio.a
+lib/libcdio.la
 lib/libcdio.so
 lib/libcdio.so.6
 lib/libiso9660.a
+lib/libiso9660.la
 lib/libiso9660.so
 lib/libiso9660.so.4
 libdata/pkgconfig/libcdio.pc

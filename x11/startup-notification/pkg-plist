@@ -5,6 +5,7 @@ include/startup-notification-1.0/libsn/sn-monitor.h
 include/startup-notification-1.0/libsn/sn-util.h
 include/startup-notification-1.0/libsn/sn.h
 lib/libstartup-notification-1.a
+lib/libstartup-notification-1.la
 lib/libstartup-notification-1.so
 lib/libstartup-notification-1.so.0
 libdata/pkgconfig/libstartup-notification-1.0.pc

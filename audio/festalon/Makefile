@@ -17,7 +17,7 @@ COMMENT?=	A command line player for .nsf and .hes audio files
 
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

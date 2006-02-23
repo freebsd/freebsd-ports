@@ -1,4 +1,5 @@
 bin/kxmleditor
+lib/libkxmleditorpart.a
 lib/libkxmleditorpart.la
 lib/libkxmleditorpart.so
 lib/libkxmleditorpart.so.1

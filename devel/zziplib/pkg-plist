@@ -20,9 +20,11 @@ include/zzip/stdint.h
 include/zzip/wrap.h
 include/zzip/zzip.h
 lib/libzzip.a
+lib/libzzip.la
 lib/libzzip.so
 lib/libzzip.so.10
 lib/libzzipwrap.a
+lib/libzzipwrap.la
 lib/libzzipwrap.so
 lib/libzzipwrap.so.10
 libdata/pkgconfig/zzip-zlib-config.pc

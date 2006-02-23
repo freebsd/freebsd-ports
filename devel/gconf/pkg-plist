@@ -15,11 +15,15 @@ include/gconf/1/gconf/gconf-listeners.h
 include/gconf/1/gconf/gconf-schema.h
 include/gconf/1/gconf/gconf-value.h
 include/gconf/1/gconf/gconf.h
+lib/GConf/1/libgconfbackend-xml.a
+lib/GConf/1/libgconfbackend-xml.la
 lib/GConf/1/libgconfbackend-xml.so
 lib/libgconf-1.a
+lib/libgconf-1.la
 lib/libgconf-1.so
 lib/libgconf-1.so.1
 lib/libgconf-gtk-1.a
+lib/libgconf-gtk-1.la
 lib/libgconf-gtk-1.so
 lib/libgconf-gtk-1.so.1
 libdata/pkgconfig/gconf.pc

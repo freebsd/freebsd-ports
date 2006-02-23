@@ -28,7 +28,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 		LIBS="`${CAT} ${ORACLE_HOME}/lib/sysliblist`"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

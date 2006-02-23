@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
-USE_AUTOTOOLS=	libtool:13
 INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_DJBFFT) && !defined(PACKAGE_BUILDING)
@@ -29,6 +28,12 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-djbfft
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
 .endif
 
 MAN1=	a52dec.1 extract_a52.1
@@ -58,9 +63,6 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(fftc4.h)|djbfft/\1|' ${WRKSRC}/liba52/imdct.c
 .endif
 
-post-configure:
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
-
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -70,4 +72,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/a52dec
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 
@@ -15,7 +15,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 

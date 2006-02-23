@@ -7,6 +7,7 @@
 
 PORTNAME=	latte
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.latte.org/ \
 		ftp://ftp.brasslantern.com/pub/zanshin/latte/
@@ -17,7 +18,7 @@ COMMENT=	Simple language for marking up text in a very expressive way
 USE_BISON=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:213 libtool:13:inc
+USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

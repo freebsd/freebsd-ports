@@ -7,7 +7,7 @@
 
 PORTNAME=	x11amp
 PORTVERSION=	0.9.b1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
 		ftp://ftp.sci-nnov.ru/pub/FreeBSD/ports/distfiles/
@@ -18,8 +18,7 @@ COMMENT=	X11-based MP3 player with nice graphical interface
 
 USE_XLIB=	yes
 USE_GNOME=	gtk12 esound
-USE_AUTOTOOLS=	libtool:15
-LIBTOOLFILES=	configure libx11amp/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -27,5 +26,6 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-extract:
 	@${CP} ${FILESDIR}/main.xpm ${WRKSRC}/x11amp/defskin
+	@${CHMOD} a+x ${WRKSRC}/ltconfig
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/src/
 
@@ -15,7 +15,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	RFC_RECURSION	"Change SPF recursion to 20 (as per RFC)"	off \

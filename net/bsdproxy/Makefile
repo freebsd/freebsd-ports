@@ -13,9 +13,8 @@ MASTER_SITES=	http://daveb.net/bsdproxy/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A TCP proxy, demonstrating use of the kevent(2)/kqueue(2) API
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
-
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib12
 
 DOCS=		README
 

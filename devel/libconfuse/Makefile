@@ -7,6 +7,7 @@
 
 PORTNAME=	libconfuse
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/

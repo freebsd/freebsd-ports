@@ -8,7 +8,7 @@
 
 PORTNAME=	tdb
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trivial Database
 
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 INSTALLS_SHLIB=		yes
 
 MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \

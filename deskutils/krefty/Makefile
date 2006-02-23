@@ -6,7 +6,7 @@
 
 PORTNAME=	krefty
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://codeworks.gnomedia.com/krefty/
 
@@ -14,7 +14,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Quick Reference sheets for KDE
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 

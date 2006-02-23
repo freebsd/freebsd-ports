@@ -15,6 +15,7 @@ include/fontconfig/fcfreetype.h
 include/fontconfig/fcprivate.h
 include/fontconfig/fontconfig.h
 lib/libfontconfig.a
+lib/libfontconfig.la
 lib/libfontconfig.so
 lib/libfontconfig.so.1
 libdata/pkgconfig/fontconfig.pc

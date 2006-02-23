@@ -11,6 +11,7 @@ include/rts_system.h
 include/rts_term.h
 include/rts_texts.h
 lib/liberts.a
+lib/liberts.la
 lib/liberts.so
 lib/liberts.so.1
 %%DATADIR%%/prelude/elan0.ppe

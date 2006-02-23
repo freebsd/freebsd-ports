@@ -1,8 +1,9 @@
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
+lib/gtk-2.0/modules/libgail.la
 lib/gtk-2.0/modules/libgail.so
-lib/libgailutil.a
+lib/libgailutil.la
 lib/libgailutil.so
 lib/libgailutil.so.17
 libdata/pkgconfig/gail.pc

@@ -74,9 +74,11 @@ libdata/pkgconfig/apr-util-1.pc
 lib/apr.exp
 lib/aprutil.exp
 lib/libapr-1.a
+lib/libapr-1.la
 lib/libapr-1.so
 lib/libapr-1.so.2
 lib/libaprutil-1.a
+lib/libaprutil-1.la
 lib/libaprutil-1.so
 lib/libaprutil-1.so.2
 @dirrm build-1

@@ -1,8 +1,9 @@
 bin/faked
 bin/fakeroot
-lib/libfakeroot.a
-lib/libfakeroot.so
 lib/libfakeroot-0.so
+lib/libfakeroot.a
+lib/libfakeroot.la
+lib/libfakeroot.so
 @dirrmtry man/sv/man1
 @dirrmtry man/sv
 @dirrmtry man/fr/man1

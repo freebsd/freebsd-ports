@@ -7,6 +7,7 @@
 
 PORTNAME=	mpfr
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 
@@ -15,7 +16,7 @@ COMMENT=	A library for multiple-precision floating-point computations
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} \
 		--enable-shared
 INSTALLS_SHLIB=	yes

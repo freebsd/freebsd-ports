@@ -7,6 +7,7 @@
 
 PORTNAME=	openct
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc.org/files/ \
 		http://www.opensc.org/files/old/
@@ -14,7 +15,8 @@ MASTER_SITES=	http://www.opensc.org/files/ \
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A middleware framework for smart card terminals
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes

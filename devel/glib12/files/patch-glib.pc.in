@@ -6,6 +6,6 @@
  Version: @VERSION@
 -Libs: -L${libdir} -lglib
 -Cflags: -I${includedir}/glib-1.2 -I${libdir}/glib/include 
-+Libs: -L${libdir} -lglib12
++Libs: -L${libdir} -lglib-12
 +Cflags: -I${includedir}
  

@@ -17,7 +17,7 @@ COMMENT=	Linux Infared Remote Control
 USE_XLIB=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

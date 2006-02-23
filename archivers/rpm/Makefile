@@ -7,7 +7,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
@@ -20,7 +20,7 @@ CONFLICTS=	rpm-4.*
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:13:inc
+USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

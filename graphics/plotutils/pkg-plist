@@ -11,12 +11,15 @@ include/plotcompat.h
 include/plotter.h
 include/xmi.h
 lib/libplot.a
+lib/libplot.la
 lib/libplot.so
 lib/libplot.so.4
 lib/libplotter.a
+lib/libplotter.la
 lib/libplotter.so
 lib/libplotter.so.4
 lib/libxmi.a
+lib/libxmi.la
 lib/libxmi.so
 lib/libxmi.so.1
 share/libplot/README

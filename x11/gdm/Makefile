@@ -7,7 +7,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.8.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.8
@@ -22,7 +22,7 @@ INSTALLS_OMF=	yes
 USE_RC_SUBR=	gdm.sh
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-html-dir=${GNOME_HTML_DIR} \

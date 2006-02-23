@@ -7,6 +7,7 @@
 
 PORTNAME=		libspf2
 PORTVERSION=		1.0.4
+PORTREVISION=	1
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
@@ -20,8 +21,6 @@ LATEST_LINK=		libspf2-10
 
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	libtool:15
-
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

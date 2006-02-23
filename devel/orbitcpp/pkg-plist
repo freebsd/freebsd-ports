@@ -37,12 +37,15 @@ include/orbitcpp-2.0/services/name/CosNaming-cpp-common.h
 include/orbitcpp-2.0/services/name/CosNaming-cpp-stubs.h
 include/orbitcpp-2.0/services/name/CosNaming.h
 lib/libORBit-2-cpp.a
+lib/libORBit-2-cpp.la
 lib/libORBit-2-cpp.so
 lib/libORBit-2-cpp.so.9
 lib/libORBitCosNaming-2-cpp.a
+lib/libORBitCosNaming-2-cpp.la
 lib/libORBitCosNaming-2-cpp.so
 lib/libORBitCosNaming-2-cpp.so.9
 lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.a
+lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.la
 lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.so
 lib/orbit-2.0/idl-backends/libORBit-idl-backend-cpp.so.9
 libdata/pkgconfig/ORBit-2.0-cpp.pc

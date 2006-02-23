@@ -37,6 +37,7 @@ include/mysqlcppapi/windows_includes.h
 lib/libmysqlcppapi-1.9.so
 lib/libmysqlcppapi-1.9.so.4
 lib/libmysqlcppapi.a
+lib/libmysqlcppapi.la
 lib/libmysqlcppapi.so
 libdata/pkgconfig/mysqlcppapi-2.0.pc
 @dirrm include/mysqlcppapi/smartpointer

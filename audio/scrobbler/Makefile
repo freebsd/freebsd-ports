@@ -6,7 +6,7 @@
 
 PORTNAME?=	scrobbler
 PORTVERSION=	0.3.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
 		http://www.pipian.com/stuffforchat/
@@ -23,7 +23,7 @@ CONFLICTS=	bmp-scrobbler-[0-9]* \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -36,14 +36,16 @@ WITH_BMP=	yes
 
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-PLIST_FILES+=	lib/xmms/General/libxmms_scrobbler.so
+PLIST_FILES+=	lib/xmms/General/libxmms_scrobbler.la \
+		lib/xmms/General/libxmms_scrobbler.so
 .else
 CONFIGURE_ARGS+=	--disable-xmms-plugin
 .endif
 
 .if defined(WITH_BMP)
 LIB_DEPENDS+=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-PLIST_FILES+=	lib/bmp/General/libbmp_scrobbler.so
+PLIST_FILES+=	lib/bmp/General/libbmp_scrobbler.la \
+		lib/bmp/General/libbmp_scrobbler.so
 .else
 CONFIGURE_ARGS+=	--disable-bmp-plugin
 .endif

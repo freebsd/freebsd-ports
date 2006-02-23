@@ -7,7 +7,7 @@
 
 PORTNAME=	gnet
 PORTVERSION=	1.1.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 PKGNAMESUFFIX=	-glib2
@@ -17,7 +17,7 @@ COMMENT=	A simple network library built upon Glib-2
 
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack glib20
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-glib2
 

@@ -65,6 +65,7 @@ include/ewl/ewl_tree2.h
 include/ewl/ewl_widget.h
 include/ewl/ewl_window.h
 lib/libewl.a
+lib/libewl.la
 lib/libewl.so
 lib/libewl.so.0
 libdata/pkgconfig/ewl.pc

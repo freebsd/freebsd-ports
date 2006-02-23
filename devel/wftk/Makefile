@@ -7,7 +7,7 @@
 
 PORTNAME=	wftk
 PORTVERSION=	0.7.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/wftk/
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 OPTIONS=	SDL_MIXER	"music and sound support"	off
 
 USE_FREETYPE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

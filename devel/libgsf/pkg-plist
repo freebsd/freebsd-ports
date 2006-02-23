@@ -44,6 +44,7 @@ include/libgsf-1/gsf/gsf-timestamp.h
 include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
+lib/libgsf-1.la
 lib/libgsf-1.so
 lib/libgsf-1.so.113
 libdata/pkgconfig/libgsf-1.pc

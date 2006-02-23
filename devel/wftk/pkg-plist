@@ -59,9 +59,9 @@ include/wftk-0.7/wftk/marshal.h
 include/wftk-0.7/wftk/mapinit.h
 include/wftk-0.7/wftk/string_hash_map.h
 include/wftk-0.7/wftk/version.h
-lib/libwftk-0.7.so.2
-lib/libwftk-0.7.so
 lib/libwftk-0.7.la
+lib/libwftk-0.7.so
+lib/libwftk-0.7.so.2
 libdata/pkgconfig/wftk-0.7.pc
 @dirrm include/wftk-0.7/wftk
 @dirrm include/wftk-0.7

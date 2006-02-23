@@ -1,13 +1,5 @@
 --- mfhdf/libsrc/Makefile.in.orig	Wed Feb  9 18:35:08 2005
 +++ mfhdf/libsrc/Makefile.in	Wed Mar 16 12:05:19 2005
-@@ -82,6 +82,7 @@
- LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
- LIBOBJS = @LIBOBJS@
- LIBS = @LIBS@
-+LIBTOOL = %%LOCALBASE%%/bin/libtool15
- LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
- MAINT = @MAINT@
 @@ -89,7 +90,7 @@
  MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
  MAKEINFO = @MAKEINFO@

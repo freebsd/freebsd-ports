@@ -19,6 +19,7 @@ include/eb/text.h
 include/eb/zio.h
 @dirrm include/eb
 lib/libeb.a
+lib/libeb.la
 lib/libeb.so
 lib/libeb.so.10
 share/aclocal/eb4.m4

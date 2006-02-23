@@ -6,6 +6,7 @@ include/yahoo_fn.h
 include/yahoo_httplib.h
 include/yahoo_list.h
 lib/libyahoo2.a
+lib/libyahoo2.la
 lib/libyahoo2.so
 lib/libyahoo2.so.9
 libdata/pkgconfig/libyahoo2.pc

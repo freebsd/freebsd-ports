@@ -2,9 +2,11 @@ bin/myodbc3m
 bin/myodbc3i
 lib/libmyodbc3-%%VER%%.so
 lib/libmyodbc3.a
+lib/libmyodbc3.la
 lib/libmyodbc3.so
 lib/libmyodbc3.so.0
 lib/libmyodbc3_r-%%VER%%.so
 lib/libmyodbc3_r.a
+lib/libmyodbc3_r.la
 lib/libmyodbc3_r.so
 lib/libmyodbc3_r.so.0

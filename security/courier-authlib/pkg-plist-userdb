@@ -5,6 +5,8 @@ sbin/userdb
 sbin/userdb-test-cram-md5
 sbin/userdbpw
 sbin/vchkpw2userdb
+lib/courier-authlib/libauthuserdb.a
+lib/courier-authlib/libauthuserdb.la
 lib/courier-authlib/libauthuserdb.so
 lib/courier-authlib/libauthuserdb.so.0
 

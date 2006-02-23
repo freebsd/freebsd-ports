@@ -19,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

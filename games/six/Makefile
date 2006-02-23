@@ -13,9 +13,9 @@ MASTER_SITES=	http://six.retes.hu/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE HEX clone
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \

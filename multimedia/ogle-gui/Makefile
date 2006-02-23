@@ -30,7 +30,7 @@ USE_GNOME=	gnomehack \
 WANT_GNOME=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \

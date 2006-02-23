@@ -8,7 +8,6 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.10.4
-PORTREVISION=	0
 CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
@@ -22,7 +21,7 @@ MAN8=		dictd.8
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -7,6 +7,7 @@
 
 PORTNAME=	libart_lgpl2
 PORTVERSION=	2.3.17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.3
@@ -19,7 +20,7 @@ COMMENT=	Library for high-performance 2D graphics
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFLICTS=	libart-[0-9]*
 

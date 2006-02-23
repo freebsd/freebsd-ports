@@ -22,7 +22,7 @@ BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 USE_XLIB=	yes
 .endif
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \

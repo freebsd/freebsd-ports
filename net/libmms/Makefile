@@ -7,7 +7,7 @@
 
 PORTNAME=	libmms
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,6 @@ COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig glib20
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 pre-configure:

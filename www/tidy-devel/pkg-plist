@@ -7,6 +7,8 @@ include/tidy/platform.h
 include/tidy/tidy.h
 include/tidy/tidyenum.h
 %%SHLIB%%lib/libtidy-0.99.so.0
+%%SHLIB%%lib/libtidy-0.99.so
+%%SHLIB%%lib/libtidy.la
 %%SHLIB%%lib/libtidy.so
 lib/libtidy.a
 %%PORTDOCS%%%%DOCSDIR%%/Overview.html

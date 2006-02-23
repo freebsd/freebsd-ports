@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.0.50
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/rrdtool-1.0.x/
 
@@ -19,9 +20,8 @@ MAKE_ENV=	PERL=${PERL}
 CONFLICTS=	rrdtool-1.2*
 LATEST_LINK=	rrdtool10
 
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
 		--program-transform-name=''

@@ -1,3 +1,5 @@
+lib/xfce4/panel-plugins/libxfcexmms.a
+lib/xfce4/panel-plugins/libxfcexmms.la
 lib/xfce4/panel-plugins/libxfcexmms.so
 share/xfce4-xmms-controller-plugin/eject.png
 share/xfce4-xmms-controller-plugin/next.png

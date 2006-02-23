@@ -3,12 +3,15 @@ bin/anjuta-bin
 bin/anjuta_import.sh
 bin/anjuta_launcher
 lib/anjuta/libanjuta_clsGen.a
+lib/anjuta/libanjuta_clsGen.la
 lib/anjuta/libanjuta_clsGen.so
 lib/anjuta/libanjuta_clsGen.so.0
 lib/anjuta/libanjuta_patch.a
+lib/anjuta/libanjuta_patch.la
 lib/anjuta/libanjuta_patch.so
 lib/anjuta/libanjuta_patch.so.0
 lib/anjuta/libanjuta_sample1.a
+lib/anjuta/libanjuta_sample1.la
 lib/anjuta/libanjuta_sample1.so
 lib/anjuta/libanjuta_sample1.so.0
 %%PORTDOCS%%share/doc/anjuta/AUTHORS

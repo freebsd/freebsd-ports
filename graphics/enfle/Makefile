@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20010130
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-all-plugins \
 		--enable-plugins-dir \

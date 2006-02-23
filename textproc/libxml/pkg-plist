@@ -19,6 +19,7 @@ include/gnome-xml/xmlIO.h
 include/gnome-xml/xmlmemory.h
 include/gnome-xml/xpath.h
 lib/libxml.a
+lib/libxml.la
 lib/libxml.so
 lib/libxml.so.5
 libdata/pkgconfig/libxml.pc

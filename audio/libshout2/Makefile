@@ -7,6 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	2.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	pkgconfig
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 CONFLICTS=	libshout-1.0.7
 USE_REINPLACE=	yes
 

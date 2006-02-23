@@ -1,6 +1,6 @@
 bin/gnome-keyring-daemon
 include/gnome-keyring-1/gnome-keyring.h
-lib/libgnome-keyring.a
+lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
 libdata/pkgconfig/gnome-keyring-1.pc

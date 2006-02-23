@@ -35,7 +35,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's#gtk-config#gtk12-config#g' \
+	${REINPLACE_CMD} -e 's#gtk-config#${GTK_CONFIG}#g' \
 		${CONFIGURE_WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \
 		${WRKSRC}/Makefile.gnustep

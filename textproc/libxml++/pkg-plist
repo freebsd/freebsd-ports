@@ -23,6 +23,7 @@ include/libxml++-1.0/libxml++/parsers/domparser.h
 include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
 lib/libxml++-1.0.a
+lib/libxml++-1.0.la
 lib/libxml++-1.0.so
 lib/libxml++-1.0.so.1
 libdata/pkgconfig/libxml++-1.0.pc

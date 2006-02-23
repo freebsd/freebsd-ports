@@ -7,7 +7,7 @@
 
 PORTNAME=	arts++
 PORTVERSION=	1.1.a11
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 USE_GCC=	2.95
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \

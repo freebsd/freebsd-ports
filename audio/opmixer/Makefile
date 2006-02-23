@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	optronic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
 
 DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes

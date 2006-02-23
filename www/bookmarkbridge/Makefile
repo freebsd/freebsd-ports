@@ -19,7 +19,6 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mt --program-prefix="" \
 		--with-libxml2-include="${LOCALBASE}/include/libxml2"

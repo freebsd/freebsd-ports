@@ -7,7 +7,7 @@
 
 PORTNAME=	SoQt
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/ \
 		ftp://ftp.coin3d.org/pub/coin/src/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Coin.44:${PORTSDIR}/graphics/Coin
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${X11BASE}

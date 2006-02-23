@@ -7,7 +7,7 @@
 
 PORTNAME=	libxfce4util
 PORTVERSION=	4.2.3.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://www.ca-us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
-USE_AUTOTOOLS=	libtool:15
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc

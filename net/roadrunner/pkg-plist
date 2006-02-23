@@ -27,6 +27,7 @@ include/roadrunner-1.0/librr/tcp/rr-tcpconnection.h
 include/roadrunner-1.0/librr/tcp/rr-tcpfilter.h
 include/roadrunner-1.0/librr/tcp/rr-tcplistener.h
 lib/librr-0.9.a
+lib/librr-0.9.la
 lib/librr-0.9.so
 lib/librr-0.9.so.0
 libdata/pkgconfig/roadrunner.pc

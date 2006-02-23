@@ -1,3 +1,4 @@
+lib/gtk-2.0/2.4.0/engines/libxfce.la
 lib/gtk-2.0/2.4.0/engines/libxfce.so
 share/themes/Xfce-4.0/gtk-2.0/gtkrc
 share/themes/Xfce-4.0/ICON.png

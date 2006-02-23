@@ -22,7 +22,7 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes

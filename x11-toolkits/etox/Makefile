@@ -7,7 +7,7 @@
 
 PORTNAME=	etox
 PORTVERSION=	0.9.0.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vanilla
@@ -20,7 +20,7 @@ LIB_DEPENDS=	evas.1:${PORTSDIR}/graphics/evas \
 		edb.1:${PORTSDIR}/databases/edb
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

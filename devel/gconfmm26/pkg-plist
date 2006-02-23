@@ -18,6 +18,7 @@ lib/gconfmm-%%API_VERSION%%/include/gconfmmconfig.h
 lib/gconfmm-%%API_VERSION%%/proc/m4/convert.m4
 lib/gconfmm-%%API_VERSION%%/proc/m4/convert_gconfmm.m4
 lib/libgconfmm-%%VERSION%%.a
+lib/libgconfmm-%%VERSION%%.la
 lib/libgconfmm-%%VERSION%%.so
 lib/libgconfmm-%%VERSION%%.so.1
 libdata/pkgconfig/gconfmm-%%API_VERSION%%.pc

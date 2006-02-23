@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Foreign function call libraries
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 NOT_FOR_ARCHS=	sparc64
 
 MAN3=		avcall.3 callback.3 trampoline.3 trampoline_r.3 vacall.3

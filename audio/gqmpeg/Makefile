@@ -28,7 +28,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	autoconf:213 libtool:13
+USE_AUTOTOOLS=	autoconf:213 libtool:15
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

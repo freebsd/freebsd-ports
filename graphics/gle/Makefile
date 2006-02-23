@@ -7,7 +7,7 @@
 
 PORTNAME=	gle
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linas.org/gle/pub/ \
@@ -23,7 +23,7 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
 
 MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \

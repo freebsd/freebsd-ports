@@ -6,6 +6,7 @@
 
 PORTNAME=	qhull
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
 DISTNAME=	${PORTNAME}-2003.1
@@ -16,7 +17,7 @@ COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)

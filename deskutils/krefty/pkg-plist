@@ -1,4 +1,5 @@
 bin/krefty
+lib/kde3/libkreftypart.a
 lib/kde3/libkreftypart.la
 lib/kde3/libkreftypart.so
 share/applnk/Utilities/krefty.desktop

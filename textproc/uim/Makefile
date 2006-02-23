@@ -7,6 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
@@ -20,7 +21,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget glib20
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 

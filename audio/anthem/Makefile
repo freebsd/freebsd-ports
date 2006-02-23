@@ -6,7 +6,7 @@
 
 PORTNAME=	anthem
 PORTVERSION=	0.0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
@@ -16,10 +16,9 @@ COMMENT=	A KDE midi sequencer
 
 LIB_DEPENDS=	tse3:${PORTSDIR}/audio/tse3
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -36,4 +35,10 @@ post-configure:
 		${WRKSRC}/anthem/tse3/kdeui/Makefile \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>

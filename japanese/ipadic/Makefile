@@ -16,9 +16,8 @@ COMMENT=	Japanese Morphological Dictionary for ChaSen
 
 BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
-GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/chasenrc \

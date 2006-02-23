@@ -11,6 +11,7 @@ include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
 lib/libpanel-applet-2.a
+lib/libpanel-applet-2.la
 lib/libpanel-applet-2.so
 lib/libpanel-applet-2.so.0
 libdata/bonobo/servers/GNOME_ClockApplet_Factory.server

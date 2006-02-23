@@ -1,7 +1,11 @@
 bin/nautilus-sendto
+lib/gaim/nautilus.la
 lib/gaim/nautilus.so
+lib/nautilus-sendto/plugins/libevolution.la
 lib/nautilus-sendto/plugins/libevolution.so
+lib/nautilus-sendto/plugins/libgaim.la
 lib/nautilus-sendto/plugins/libgaim.so
+lib/nautilus/extensions-1.0/libnautilus-sendto.la
 lib/nautilus/extensions-1.0/libnautilus-sendto.so
 share/gnome/nautilus-sendto/glade/nautilus-sendto-force.glade
 share/gnome/nautilus-sendto/glade/nautilus-sendto.glade

@@ -15,7 +15,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

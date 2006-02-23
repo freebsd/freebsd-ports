@@ -25,7 +25,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s@CC = gcc@CC = ${CC}@g; \
 		s@-O3 -ansi -Wall@${CFLAGS} -Wall@g; \
 		s@PREFIX = /usr/local@PREFIX = ${PREFIX}@g; \
-		s@gtk-config@${GTK_CONFIG}@g; s@-lgtk@-lgtk12@g; \
+		s@gtk-config@${GTK_CONFIG}@g; s@-lgtk@-lgtk-1.2@g; \
 		s@-c -g kmem -m 2755 -o root@-s -c -g kmem -m 2755 -o root@g" \
 		${WRKSRC}/Makefile
 

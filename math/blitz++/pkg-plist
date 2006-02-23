@@ -161,6 +161,7 @@ include/random/mt.h
 include/random/normal.h
 include/random/uniform.h
 lib/libblitz.a
+lib/libblitz.la
 lib/libblitz.so
 lib/libblitz.so.0
 libdata/pkgconfig/blitz.pc

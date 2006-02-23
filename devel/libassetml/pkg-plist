@@ -1,6 +1,6 @@
 bin/assetml-query
 include/libassetml-1.0/libassetml/assetml.h
-lib/libassetml.a
+lib/libassetml.la
 lib/libassetml.so
 lib/libassetml.so.0
 libdata/pkgconfig/libassetml.pc

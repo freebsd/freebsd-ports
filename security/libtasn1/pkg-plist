@@ -2,6 +2,7 @@
 bin/libtasn1-config
 include/libtasn1.h
 lib/libtasn1.a
+lib/libtasn1.la
 lib/libtasn1.so
 lib/libtasn1.so.2
 libdata/pkgconfig/libtasn1.pc

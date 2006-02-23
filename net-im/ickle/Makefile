@@ -16,16 +16,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICQ2000 protocol implementation
 
-LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		icq2000.5:${PORTSDIR}/net-im/libicq2000
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}

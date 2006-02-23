@@ -7,6 +7,7 @@
 
 PORTNAME=	jmp
 PORTVERSION=	0.49
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -37,7 +38,6 @@ CFLAGS+=	-DJMPDEBUG -g
 CFLAGS+=	-O3
 .endif
 
-USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
@@ -55,7 +55,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
 INSTALLS_SHLIB=	yes
 
-PLIST_FILES=	lib/libjmp.so lib/libjmp.so.0 \
+PLIST_FILES=	lib/libjmp.la lib/libjmp.so lib/libjmp.so.0 \
 		share/locale/de/LC_MESSAGES/jmp.mo \
 		share/locale/sv/LC_MESSAGES/jmp.mo
 

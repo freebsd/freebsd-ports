@@ -21,7 +21,6 @@ COMMENT=	The GNU Gregorian calendar program
 USE_GETTEXT=	yes
 # required to rebuild info files if needed.
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
 GNU_CONFIGURE=	yes
 
 INFO=		gcal

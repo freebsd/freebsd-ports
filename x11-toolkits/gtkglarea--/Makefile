@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkglareamm
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME}
@@ -18,12 +18,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GtkGLArea-- is a wrapper for the GtkGLArea widget
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
+LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_GL=		yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

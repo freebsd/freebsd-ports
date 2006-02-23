@@ -8,6 +8,7 @@
 
 PORTNAME=	gedit
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.12
@@ -23,7 +24,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack \
 		libgnomeprintui libgnomeui eel2 gtksourceview desktopfileutils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

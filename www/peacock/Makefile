@@ -18,6 +18,6 @@ COMMENT=	A GUI-based HTML Editor for GTK+/GNOME
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui gtksourceview gtkhtml3
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

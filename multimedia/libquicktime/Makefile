@@ -8,7 +8,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,12 +21,16 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		dv.4:${PORTSDIR}/multimedia/libdv
 
+# XXX: doesn't detect this properly, even if installed, so remove
+#      it from the dependency chain for now
+#	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+
 INSTALLS_SHLIB=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 WANT_GNOME=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-firewire --with-x

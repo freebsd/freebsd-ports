@@ -7,6 +7,7 @@
 
 PORTNAME=	mimelib
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	icqmail
@@ -16,7 +17,7 @@ COMMENT=	C++ class library for manipulating messages in MIME format
 
 CONFLICTS=	kdenetwork-3.1.*
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -532,7 +532,6 @@
     SUBDIR += libtecla
     SUBDIR += libticalcs
     SUBDIR += libtifiles
-    SUBDIR += libtool13
     SUBDIR += libtool15
     SUBDIR += libukcprog
     SUBDIR += libunicode

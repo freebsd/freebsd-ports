@@ -45,6 +45,7 @@ include/eel-2/eel/eel-wrap-table.h
 include/eel-2/eel/eel-xml-extensions.h
 include/eel-2/eel/eel.h
 lib/libeel-2.a
+lib/libeel-2.la
 lib/libeel-2.so
 lib/libeel-2.so.2
 libdata/pkgconfig/eel-2.0.pc

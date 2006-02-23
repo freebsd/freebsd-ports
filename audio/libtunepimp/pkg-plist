@@ -6,6 +6,7 @@ include/tunepimp/tp_c.h
 include/tunepimp/track.h
 include/tunepimp/tunepimp.h
 lib/libtunepimp.a
+lib/libtunepimp.la
 lib/libtunepimp.so
 lib/libtunepimp.so.2
 @dirrm include/tunepimp

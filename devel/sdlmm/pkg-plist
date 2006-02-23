@@ -18,6 +18,7 @@ include/SDLmm/sdlmm_surface.h
 include/SDLmm/sdlmm_timer.h
 include/SDLmm/sdlmm_videoinfo.h
 lib/libSDLmm.a
+lib/libSDLmm.la
 lib/libSDLmm.so
 lib/libSDLmm.so.8
 share/aclocal/sdlmm.m4

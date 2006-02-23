@@ -41,6 +41,7 @@ include/cal3d/tinystr.h
 include/cal3d/tinyxml.h
 include/cal3d/vector.h
 @dirrm include/cal3d
+lib/libcal3d.la
 lib/libcal3d.so
 lib/libcal3d.so.11
 libdata/pkgconfig/cal3d.pc

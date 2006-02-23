@@ -7,6 +7,7 @@ include/libglabels/xml-paper.h
 include/libglabels/xml-template.h
 include/libglabels/xml.h
 lib/libglabels.a
+lib/libglabels.la
 lib/libglabels.so
 lib/libglabels.so.1
 share/gnome/application-registry/glabels.applications

@@ -4,6 +4,7 @@ bin/oobacktrace
 bin/ooef
 bin/oowhereis
 lib/liboo2c.a
+lib/liboo2c.la
 lib/liboo2c.so
 lib/liboo2c.so.3
 lib/oo2c/emacs/o2-default.el

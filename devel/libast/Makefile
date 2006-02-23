@@ -7,7 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes

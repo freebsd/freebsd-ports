@@ -1,5 +1,6 @@
 include/shmap.h
 include/shmap_config.h
 lib/libshmap.a
+lib/libshmap.la
 lib/libshmap.so
 lib/libshmap.so.0

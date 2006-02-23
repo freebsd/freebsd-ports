@@ -1,4 +1,5 @@
 bin/kooka
+lib/libkscan.a
 lib/libkscan.la
 lib/libkscan.so
 lib/libkscan.so.1

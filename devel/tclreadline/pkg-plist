@@ -1,6 +1,7 @@
 include/tclreadline.h
 lib/libtclreadline-%%VERSION%%.so
 lib/libtclreadline.a
+lib/libtclreadline.la
 lib/libtclreadline.so
 lib/tclreadline%%VERSION%%/pkgIndex.tcl
 lib/tclreadline%%VERSION%%/tclreadlineCompleter.tcl

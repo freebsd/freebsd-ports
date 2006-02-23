@@ -7,7 +7,7 @@
 
 PORTNAME=	libmad
 PORTVERSION=	0.15.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	mad
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Libmad library (part of MAD project)
 
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debugging \

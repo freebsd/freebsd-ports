@@ -7,7 +7,7 @@
 
 PORTNAME=	vdk
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdklib
@@ -18,7 +18,7 @@ COMMENT=	C++ wrapper for GTK+ toolkit
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 INSTALLS_SHLIB=	yes

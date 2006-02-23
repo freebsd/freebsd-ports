@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -24,7 +24,6 @@ USE_GMAKE=		yes
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=		configure
 
 MAN1=		vtysh.1
@@ -80,11 +79,9 @@ SCRIPTS_ENV=	PREFIX=${PREFIX} PKG_PREFIX=${PREFIX} \
 
 .if defined(WITH_ISISD) && !defined(WITHOUT_ISISD)
 CONFIGURE_ARGS+=--enable-isisd
-PLIST_SUB+=	ISISD_SBIN=sbin/isisd
-PLIST_SUB+=	ISISD_CONF=%%EXAMPLESDIR%%/isisd.conf.sample
+PLIST_SUB+=	ISISD=""
 .else
-PLIST_SUB+=	ISISD_SBIN="@comment"
-PLIST_SUB+=	ISISD_CONF="@comment"
+PLIST_SUB+=	ISISD="@comment "
 .endif
 MAN8+=		isisd.8
 
@@ -98,19 +95,9 @@ CONFIGURE_ARGS+=--enable-nssa
 
 .if defined(WITH_OSPF_OPAQUE_LSA) && !defined(WITHOUT_OSPF_OPAQUE_LSA)
 CONFIGURE_ARGS+=--enable-opaque-lsa
-PLIST_SUB+=	OSPFAPI_HEADER="include/quagga/ospfapi/ospf_apiclient.h"
-PLIST_SUB+=	OSPFAPI_PATH="@dirrm include/quagga/ospfapi"
-PLIST_SUB+=	OSPFAPI_LIBA="lib/libospfapiclient.a"
-PLIST_SUB+=	OSPFAPI_LIBSO="lib/libospfapiclient.so"
-PLIST_SUB+=	OSPFAPI_LIBSO0="lib/libospfapiclient.so.0"
-PLIST_SUB+=	OSPFAPI_SBIN="sbin/ospfclient"
+PLIST_SUB+=	OSPFAPI=""
 .else
-PLIST_SUB+=	OSPFAPI_HEADER="@comment"
-PLIST_SUB+=	OSPFAPI_PATH="@comment"
-PLIST_SUB+=	OSPFAPI_LIBA="@comment"
-PLIST_SUB+=	OSPFAPI_LIBSO="@comment"
-PLIST_SUB+=	OSPFAPI_LIBSO0="@comment"
-PLIST_SUB+=	OSPFAPI_SBIN="@comment"
+PLIST_SUB+=	OSPFAPI="@comment "
 .endif
 
 .if defined(WITH_RTADV) && !defined(WITHOUT_RTADV)

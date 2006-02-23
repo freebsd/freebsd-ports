@@ -6,7 +6,7 @@
 
 PORTNAME=		istanbul
 PORTVERSION=		0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		multimedia
 MASTER_SITES=		http://live.hujjat.org/
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/gst/__init__.py:${PORTSDIR}/multimedia/py-g
 
 USE_GNOME=		pygtk2
 USE_GMAKE=		yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_PYTHON=		2.4+
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes

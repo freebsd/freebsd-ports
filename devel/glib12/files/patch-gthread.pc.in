@@ -5,5 +5,5 @@
  Requires: glib
  Version: @VERSION@
 -Libs: -L${libdir} -lgthread @G_THREAD_LIBS@
-+Libs: -L${libdir} -lgthread12 @G_THREAD_LIBS@
++Libs: -L${libdir} -lgthread-12 @G_THREAD_LIBS@
  Cflags: @G_THREAD_CFLAGS@

@@ -8,6 +8,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/18847
@@ -17,15 +18,14 @@ COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GECKO=	firefox mozilla seamonkey
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
-
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAN1=		kazehakase.1

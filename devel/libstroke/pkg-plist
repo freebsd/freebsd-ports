@@ -1,9 +1,11 @@
 %%GS%%include/gstroke.h
 include/stroke.h
 %%GS%%lib/libgstroke.a
+%%GS%%lib/libgstroke.la
 %%GS%%lib/libgstroke.so
 %%GS%%lib/libgstroke.so.0
 lib/libstroke.a
+lib/libstroke.la
 lib/libstroke.so
 lib/libstroke.so.0
 share/aclocal/libgstroke.m4

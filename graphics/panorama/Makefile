@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+		gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_BZIP2=	yes
 USE_BISON=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	spandsp
 DISTVERSION=	0.0.2pre20
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/${PORTNAME}-${DISTVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/pre.*$//}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

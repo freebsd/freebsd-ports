@@ -5,6 +5,7 @@ include/xls2xml/param.h
 include/xls2xml/xls2xml.h
 include/xls2xml/xmldoc.h
 lib/libxls2xml.a
+lib/libxls2xml.la
 lib/libxls2xml.so
 lib/libxls2xml.so.1
 @dirrm include/xls2xml

@@ -7,7 +7,7 @@
 
 PORTNAME=	gdkxft
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,6 @@ USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv" \
@@ -47,9 +46,9 @@ CONFIGURE_ARGS+=	--without-gnome
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config --prefix|$$GTK_CONFIG --prefix|g ; \
-		 s|libgdk.la|libgdk12.so|g ; \
-		 s|libgdk.so|libgdk12.so|g ; \
-		 s|GDK_DLOPEN_NAME=.*$$|GDK_DLOPEN_NAME="libgdk12.so"|g' \
+		 s|libgdk.la|libgdk-12.so|g ; \
+		 s|libgdk.so|libgdk-12.so|g ; \
+		 s|GDK_DLOPEN_NAME=.*$$|GDK_DLOPEN_NAME="libgdk-12.so"|g' \
 			${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|src capplet|src @BUILD_CAPPLET_TRUE@capplet|g ; \

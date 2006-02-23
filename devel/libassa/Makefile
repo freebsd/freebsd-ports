@@ -8,6 +8,7 @@
 
 PORTNAME=	libassa
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	An C++ networking library and application framework
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-html-docs --disable-static
 INSTALLS_SHLIB=	yes
 

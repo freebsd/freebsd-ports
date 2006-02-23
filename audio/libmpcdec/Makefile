@@ -7,6 +7,7 @@
 
 PORTNAME=	libmpcdec
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 
@@ -16,7 +17,6 @@ COMMENT=	High quality audio compression format
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

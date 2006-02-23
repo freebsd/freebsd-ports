@@ -2,6 +2,7 @@ bin/doodle
 bin/doodled
 include/doodle.h
 lib/libdoodle.a
+lib/libdoodle.la
 lib/libdoodle.so
 lib/libdoodle.so.2
 share/locale/de/LC_MESSAGES/doodle.mo

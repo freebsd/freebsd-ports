@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include

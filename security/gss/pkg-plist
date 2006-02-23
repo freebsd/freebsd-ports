@@ -3,6 +3,7 @@ include/gss/api.h
 include/gss/ext.h
 include/gss.h
 lib/libgss.a
+lib/libgss.la
 lib/libgss.so
 lib/libgss.so.0
 libdata/pkgconfig/gss.pc

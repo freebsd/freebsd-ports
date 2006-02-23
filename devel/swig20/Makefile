@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-USE_AUTOTOOLS=	autoconf:253:env libtool:13
+USE_AUTOTOOLS=	autoconf:253:env libtool:15
 
 VER=		${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}

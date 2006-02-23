@@ -139,6 +139,7 @@ include/gal-1.0/gal/widgets/gtk-combo-text.h
 include/gal-1.0/gal/widgets/widget-color-combo.h
 include/gal-1.0/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
+lib/libgal.la
 lib/libgal.so
 lib/libgal.so.23
 libdata/pkgconfig/gal.pc

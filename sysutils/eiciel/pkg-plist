@@ -1,4 +1,6 @@
 bin/eiciel
+lib/nautilus/extensions-1.0/libeiciel-nautilus.a
+lib/nautilus/extensions-1.0/libeiciel-nautilus.la
 lib/nautilus/extensions-1.0/libeiciel-nautilus.so
 share/gnome/eiciel/doc/C/eiciel.xml
 share/gnome/eiciel/doc/C/figures/altres-default.png

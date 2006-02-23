@@ -68,6 +68,7 @@ include/sigc++-%%API_VERSION%%/sigc++/trackable.h
 include/sigc++-%%API_VERSION%%/sigc++/type_traits.h
 include/sigc++-%%API_VERSION%%/sigc++/visit_each.h
 lib/libsigc-%%VERSION%%.a
+lib/libsigc-%%VERSION%%.la
 lib/libsigc-%%VERSION%%.so
 lib/libsigc-%%VERSION%%.so.0
 lib/sigc++-%%API_VERSION%%/include/sigc++config.h

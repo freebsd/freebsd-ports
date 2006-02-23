@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-

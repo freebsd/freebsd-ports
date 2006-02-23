@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-chewing
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-D__STDC_ISO_10646__"
 

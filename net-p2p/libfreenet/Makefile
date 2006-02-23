@@ -8,7 +8,7 @@
 
 PORTNAME=	libfreenet
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://thalassocracy.org/libfreenet/
 
@@ -18,7 +18,7 @@ COMMENT=	Freenet library written in C
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 INSTALLS_SHLIB=	yes
 

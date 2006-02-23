@@ -174,22 +174,27 @@ include/net-snmp/utilities.h
 include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
+lib/libnetsnmp.la
 lib/libnetsnmp.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmp.so.%%SHLIB_VERSION%% %B/libnetsnmp.so
 @unexec rm -f %B/libnetsnmp.so 2> /dev/null || true
 lib/libnetsnmpagent.a
+lib/libnetsnmpagent.la
 lib/libnetsnmpagent.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmpagent.so.%%SHLIB_VERSION%% %B/libnetsnmpagent.so
 @unexec rm -f %B/libnetsnmpagent.so 2> /dev/null || true
 lib/libnetsnmphelpers.a
+lib/libnetsnmphelpers.la
 lib/libnetsnmphelpers.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmphelpers.so.%%SHLIB_VERSION%% %B/libnetsnmphelpers.so
 @unexec rm -f %B/libnetsnmphelpers.so 2> /dev/null || true
 lib/libnetsnmpmibs.a
+lib/libnetsnmpmibs.la
 lib/libnetsnmpmibs.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmpmibs.so.%%SHLIB_VERSION%% %B/libnetsnmpmibs.so
 @unexec rm -f %B/libnetsnmpmibs.so 2> /dev/null || true
 lib/libnetsnmptrapd.a
+lib/libnetsnmptrapd.la
 lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 @exec ln -fs libnetsnmptrapd.so.%%SHLIB_VERSION%% %B/libnetsnmptrapd.so
 @unexec rm -f %B/libnetsnmptrapd.so 2> /dev/null || true

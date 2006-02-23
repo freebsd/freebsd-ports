@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.60
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME?=	gnomehack glib20 libxml2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS?=--disable-gtk \

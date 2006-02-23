@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE crossword puzzle game
 
-USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
+USE_KDELIBS_VER=3
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

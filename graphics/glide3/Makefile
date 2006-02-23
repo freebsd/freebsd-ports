@@ -7,7 +7,7 @@
 
 PORTNAME=	glide3
 PORTVERSION=	20020113
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
@@ -21,7 +21,7 @@ USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/Glide3
 USE_X_PREFIX=		yes
 INSTALLS_SHLIB=		yes
-USE_AUTOTOOLS=	automake:14 autoconf:253 libtool:13:inc
+USE_AUTOTOOLS=	automake:14 autoconf:253 libtool:15
 AUTOMAKE_ARGS=		-a
 USE_GMAKE=		yes
 MAKEFILE=		makefile.autoconf
@@ -46,6 +46,7 @@ PKGNAMESUFFIX=	-v5
 .endif
 
 pre-configure:
-	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
+	@cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
+	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,7 @@
 bin/simage-config
 include/simage.h
 lib/libsimage.a
+lib/libsimage.la
 lib/libsimage.so
 lib/libsimage.so.26
 share/Coin/conf/simage-default.cfg

@@ -18,6 +18,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 INSTALLS_SHLIB=	yes
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

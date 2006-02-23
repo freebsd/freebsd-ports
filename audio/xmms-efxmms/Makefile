@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-efxmms
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	efxmms
@@ -21,8 +22,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	lib/xmms/Effect/libefx.so
+PLIST_FILES=	lib/xmms/Effect/libefx.la \
+		lib/xmms/Effect/libefx.so
 
 .include <bsd.port.mk>

@@ -8,6 +8,7 @@
 
 PORTNAME=	libparsifal
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
@@ -16,7 +17,7 @@ COMMENT=	Lightweight XML Parser
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

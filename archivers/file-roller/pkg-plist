@@ -1,5 +1,9 @@
 bin/file-roller
+lib/bonobo/libfile-roller-component.a
+lib/bonobo/libfile-roller-component.la
 lib/bonobo/libfile-roller-component.so
+lib/nautilus/extensions-1.0/libnautilus-fileroller.a
+lib/nautilus/extensions-1.0/libnautilus-fileroller.la
 lib/nautilus/extensions-1.0/libnautilus-fileroller.so
 libdata/bonobo/servers/File_Roller_Component.server
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

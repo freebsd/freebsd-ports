@@ -25,7 +25,7 @@ EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	| ${CPIO} -i
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	crashecho.1 \

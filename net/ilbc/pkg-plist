@@ -1,7 +1,8 @@
 include/ilbc/iLBC_decode.h
 include/ilbc/iLBC_encode.h
 include/ilbc/iLBC_define.h
-lib/libilbc.so.0
-lib/libilbc.so
 lib/libilbc.a
+lib/libilbc.la
+lib/libilbc.so
+lib/libilbc.so.0
 @dirrm include/ilbc

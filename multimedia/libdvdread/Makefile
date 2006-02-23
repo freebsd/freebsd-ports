@@ -17,7 +17,6 @@ COMMENT=	This is needed by ogle, which is a DVD player that supports DVD menus
 LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -41,9 +40,6 @@ post-patch:
 # update this in sync with libdvdcss shared library version
 	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so).2|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/dvdread/dvd_input.c
-
-post-configure:
-	@${LN} -sf ${LIBTOOL} ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)

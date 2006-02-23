@@ -30,6 +30,7 @@ include/link-grammar/tokenize.h
 include/link-grammar/utilities.h
 include/link-grammar/word-file.h
 lib/liblink-grammar.a
+lib/liblink-grammar.la
 lib/liblink-grammar.so
 lib/liblink-grammar.so.5
 libdata/pkgconfig/link-grammar.pc

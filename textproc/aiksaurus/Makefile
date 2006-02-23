@@ -7,7 +7,7 @@
 
 PORTNAME=	aiksaurus
 PORTVERSION=	1.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aiksaurus
@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_GNOME?=	gnomehack gnometarget
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
 .include <bsd.port.mk>

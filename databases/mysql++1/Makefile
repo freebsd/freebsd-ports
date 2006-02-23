@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7.40
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}
@@ -16,8 +17,8 @@ COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --includedir=${PREFIX}/include/mysql++ \
+CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
+		--includedir=${PREFIX}/include/mysql++ \
 		--disable-examples
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes

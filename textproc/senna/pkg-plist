@@ -1,6 +1,7 @@
 bin/senna-cfg
 include/senna/senna.h
 lib/libsenna.a
+lib/libsenna.la
 lib/libsenna.so
 lib/libsenna.so.0
 @dirrm include/senna

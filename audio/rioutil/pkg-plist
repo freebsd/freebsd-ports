@@ -1,5 +1,6 @@
 bin/rioutil
 include/rio.h
 lib/librioutil.a
+lib/librioutil.la
 lib/librioutil.so
 lib/librioutil.so.5

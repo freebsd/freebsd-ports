@@ -20,6 +20,7 @@ include/mac/MACLib.h
 include/mac/MACProgressHelper.h
 include/mac/MACUtils.h
 @dirrm include/mac
-lib/libmac.so.2
-lib/libmac.so
 lib/libmac.a
+lib/libmac.la
+lib/libmac.so
+lib/libmac.so.2

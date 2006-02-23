@@ -8,6 +8,7 @@
 
 PORTNAME=	f-spot
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
@@ -27,7 +28,7 @@ USE_BZIP2=	yes
 USE_SQLITE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

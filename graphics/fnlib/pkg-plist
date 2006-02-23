@@ -2,6 +2,7 @@ etc/fnrc
 include/Fnlib.h
 include/Fnlib_types.h
 lib/libFnlib.a
+lib/libFnlib.la
 lib/libFnlib.so
 lib/libFnlib.so.0.5
 share/fnlib_fonts/e/fontinfo

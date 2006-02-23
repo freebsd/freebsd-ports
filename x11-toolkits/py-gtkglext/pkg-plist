@@ -2,6 +2,7 @@ libdata/pkgconfig/pygtkglext-1.0.pc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/_gdkgl.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/_gdkgl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/ext.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/ext.pyc
@@ -9,6 +10,7 @@ libdata/pkgconfig/pygtkglext-1.0.pc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/_gtkgl.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/_gtkgl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/apputils.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/apputils.pyc

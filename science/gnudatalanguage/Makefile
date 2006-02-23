@@ -36,7 +36,7 @@ LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot	\
 		readline.5:${PORTSDIR}/devel/readline
 
 USE_XLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -83,8 +83,8 @@ CONFIGURE_ARGS+=--with-hdf=no
 
 .if !defined(WITHOUT_PYTHON) || defined(BUILD_PYTHON_MODULE)
 USE_PYTHON=	2.3+
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray	\
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray	\
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/numarray:${PORTSDIR}/math/py-numarray \
 		${PYTHON_SITELIBDIR}/matplotlib:${PORTSDIR}/math/py-matplotlib
 CONFIGURE_ENV+=	PYTHON_VERSION=${_PYTHON_VERSION}
 CONFIGURE_ARGS+=--with-python=${PYTHONBASE}

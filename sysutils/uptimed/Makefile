@@ -6,6 +6,7 @@
 
 PORTNAME=	uptimed
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.robertjohnkaper.com/downloads/uptimed/ \
 		http://people.fruitsalad.org/tap/distfiles/
@@ -16,7 +17,6 @@ COMMENT=	Rob Kaper's uptime daemon
 
 PREFIX=		${LOCALBASE}
 
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}

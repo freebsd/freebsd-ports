@@ -6,7 +6,7 @@
 
 PORTNAME=	qtpixmap
 PORTVERSION=	0.28
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cpdrummond.freeuk.com/
 DISTNAME=	QtPixmap-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
 
 .if !defined(WITHOUT_GTK1)

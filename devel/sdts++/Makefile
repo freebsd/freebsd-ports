@@ -7,7 +7,6 @@
 
 PORTNAME=	sdts++
 PORTVERSION=	1.5.1
-PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 		http://lychnobite.org/sdts/
@@ -17,11 +16,11 @@ COMMENT=	C++ library for SDTS related development
 
 LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
+MAKE_ARGS=	CXX="${CXX}"
 
 INFO=		sdts++
 

@@ -25,7 +25,7 @@ USE_XLIB=	yes
 .endif
 
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--enable-threads=posix

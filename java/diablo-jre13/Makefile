@@ -21,8 +21,8 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 .if !defined(WITHOUT_PLUGIN)
 FORBIDDEN=	Vulnerabilities in the browser plugin
-RUN_DEPENDS+=	${LOCALBASE}/lib/libglib12.so:${PORTSDIR}/devel/glib12 \
-		${X11BASE}/lib/libgtk12.so:${PORTSDIR}/x11-toolkits/gtk12 \
+RUN_DEPENDS+=	${LOCALBASE}/lib/libglib-12.so:${PORTSDIR}/devel/glib12 \
+		${X11BASE}/lib/libgtk-12.so:${PORTSDIR}/x11-toolkits/gtk12 \
 		${LOCALBASE}/lib/libnspr4.so:${PORTSDIR}/devel/nspr
 .endif
 .if defined(WITH_JAPANESE_FONTS)

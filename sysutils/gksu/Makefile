@@ -19,7 +19,7 @@ LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack gconf2 intlhack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

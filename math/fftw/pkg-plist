@@ -1,9 +1,11 @@
 %%DEF%%include/fftw.h
 %%DEF%%include/rfftw.h
 lib/lib%%FFTW_SUFX%%fftw.a
+lib/lib%%FFTW_SUFX%%fftw.la
 lib/lib%%FFTW_SUFX%%fftw.so
 lib/lib%%FFTW_SUFX%%fftw.so.2
 lib/lib%%FFTW_SUFX%%rfftw.a
+lib/lib%%FFTW_SUFX%%rfftw.la
 lib/lib%%FFTW_SUFX%%rfftw.so
 lib/lib%%FFTW_SUFX%%rfftw.so.2
 %%DEF%%%%PORTDOCS%%%%DOCSDIR%%/fftw.ps

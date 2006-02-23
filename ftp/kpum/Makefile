@@ -18,8 +18,8 @@ COMMENT=	KDE pureftpd user manager
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

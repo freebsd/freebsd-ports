@@ -19,7 +19,6 @@ COMMENT=	A smartcard development library
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:15:inc
 
 WRKSRC=		${WRKDIR}/pcsc-lite-1.2.9-beta9
 INSTALLS_SHLIB=	yes

@@ -1,6 +1,7 @@
 include/lingoteach/lingdefs.h
 include/lingoteach/lingoteach.h
 lib/liblingoteach.a
+lib/liblingoteach.la
 lib/liblingoteach.so
 lib/liblingoteach.so.3
 libdata/pkgconfig/liblingoteach.pc

@@ -14,10 +14,15 @@ include/pygtk/pygtk.h
 %%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyc
 %%PYTHON_SITELIBDIR%%/gtk-1.2/GtkExtra.pyo
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gdkimlibmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gdkimlibmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkglmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkglmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/_libglademodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/_libglademodule.so
+%%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.la
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gdkpixbufmodule.so
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.py
 %%PYTHON_SITELIBDIR%%/gtk-1.2/gtk.pyc

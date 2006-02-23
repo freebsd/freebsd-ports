@@ -1,6 +1,8 @@
 bin/kuickshow
+lib/kde3/kuickshow.a
 lib/kde3/kuickshow.la
 lib/kde3/kuickshow.so
+lib/libkdeinit_kuickshow.a
 lib/libkdeinit_kuickshow.la
 lib/libkdeinit_kuickshow.so
 share/applications/kde/kuickshow.desktop

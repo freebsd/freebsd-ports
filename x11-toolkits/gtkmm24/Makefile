@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--disable-demos \
@@ -50,14 +50,5 @@ CONFIGURE_ARGS+=--disable-docs
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
 		${WRKSRC}/Makefile.in
-
-patch-autotools::
-	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
-	done);
 
 .include <bsd.port.mk>

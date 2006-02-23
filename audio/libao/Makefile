@@ -7,6 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ao/src/
 
@@ -15,7 +16,7 @@ COMMENT=	Portable audio output library
 
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

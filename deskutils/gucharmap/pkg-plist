@@ -13,7 +13,7 @@ include/gucharmap/gucharmap-table.h
 include/gucharmap/gucharmap-unicode-info.h
 include/gucharmap/gucharmap-window.h
 include/gucharmap/gucharmap.h
-lib/libgucharmap.a
+lib/libgucharmap.la
 lib/libgucharmap.so
 lib/libgucharmap.so.4
 libdata/pkgconfig/gucharmap.pc

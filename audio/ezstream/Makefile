@@ -18,7 +18,7 @@ LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=  yes
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib

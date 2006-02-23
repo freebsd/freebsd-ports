@@ -1,3 +1,5 @@
+lib/libevolutionglue.a
+lib/libevolutionglue.la
 lib/libevolutionglue.so
 lib/mono/evolution-sharp/evolution-sharp.dll
 lib/mono/gac/evolution-sharp/2.0.0.0__457eed85bd9370df/evolution-sharp.dll

@@ -1,4 +1,8 @@
+lib/scim-1.0/IMEngine/chewing.a
+lib/scim-1.0/IMEngine/chewing.la
 lib/scim-1.0/IMEngine/chewing.so
+lib/scim-1.0/SetupUI/chewing-imengine-setup.a
+lib/scim-1.0/SetupUI/chewing-imengine-setup.la
 lib/scim-1.0/SetupUI/chewing-imengine-setup.so
 share/scim/icons/scim-chewing.png
 @dirrmtry lib/scim-1.0/IMEngine

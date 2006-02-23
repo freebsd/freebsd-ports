@@ -19,6 +19,7 @@ include/net6/user.hpp
 lib/libnet6-1.2.so
 lib/libnet6-1.2.so.0
 lib/libnet6.a
+lib/libnet6.la
 lib/libnet6.so
 libdata/pkgconfig/net6-1.2.pc
 %%NLS%%share/locale/de/LC_MESSAGES/net6.mo

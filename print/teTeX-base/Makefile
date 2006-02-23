@@ -29,10 +29,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.4:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GHOSTSCRIPT_RUN=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
 		--without-texinfo \
 		--without-texi2html \

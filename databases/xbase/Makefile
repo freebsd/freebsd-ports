@@ -6,6 +6,7 @@
 
 PORTNAME=	xbase
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rekallrevealed.org/packages/
 EXTRACT_SUFX=	.tgz

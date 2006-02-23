@@ -39,7 +39,7 @@ INSTALLS_SHLIB=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-db-includedir=${LOCALBASE}/include/db4 \
 		--with-db-libdir=${LOCALBASE}/lib --with-db-lib=db4 \

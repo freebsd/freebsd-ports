@@ -7,7 +7,7 @@
 
 PORTNAME=	prepstools
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 
@@ -20,7 +20,6 @@ USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 gconf2 glib20 libgnomeui
-USE_AUTOTOOLS=	libtool:15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -21,7 +21,7 @@ LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
 WRKSRC=         ${WRKDIR}/vh_plugins-0.1
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/include/verlihub
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/verlihub -I${LOCALBASE}/include/mysql"

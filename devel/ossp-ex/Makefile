@@ -18,7 +18,6 @@ COMMENT=	OSSP ex is a small exception handling library for use in C
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

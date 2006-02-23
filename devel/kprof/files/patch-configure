@@ -1,8 +1,37 @@
---- configure.orig	Thu Nov 11 20:46:33 2004
-+++ configure	Thu Nov 11 20:48:03 2004
-@@ -6097,155 +6097,239 @@
- fi
+--- configure.orig	Tue Jun 18 18:26:05 2002
++++ configure	Sat Feb 18 22:35:41 2006
+@@ -3755,13 +3755,2 @@
  
+-# Actually configure libtool.  ac_aux_dir is where install-sh is found.
+-AR="$AR" LTCC="$CC" CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+-MAGIC="$MAGIC" LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+-LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" STRIP="$STRIP" \
+-AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
+-objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+-deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
+-|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+-
+ # Reload cache, that may have been modified by ltconfig
+@@ -3790,16 +3779,2 @@
+ LIBTOOL_DEPS=$LIBTOOL_DEPS" $ac_aux_dir/ltcf-cxx.sh"
+-lt_save_CC="$CC"
+-lt_save_CFLAGS="$CFLAGS"
+-AR="$AR" LTCC="$CC" CC="$CXX" CXX="$CXX" CFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" \
+-MAGIC="$MAGIC" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+-LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" STRIP="$STRIP" \
+-AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
+-objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+-deplibs_check_method="$deplibs_check_method" \
+-file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
+-|| { echo "configure: error: libtool tag configuration failed" 1>&2; exit 1; }
+-CC="$lt_save_CC"
+-CFLAGS="$lt_save_CFLAGS"
+ 
+@@ -6099,151 +6074,235 @@
  
 -echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
 -echo "configure:6102: checking for pthread_create in -lpthread" >&5
@@ -68,12 +97,6 @@
 +cat >>conftest.$ac_ext <<_ACEOF
 +/* end confdefs.h.  */
  
--fi
--if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
--  echo "$ac_t""yes" 1>&6
--  LIBPTHREAD="-lpthread" 
--else
--  echo "$ac_t""no" 1>&6
 +/* Override any gcc2 internal prototype to avoid an error.  */
 +#ifdef __cplusplus
 +extern "C"
@@ -127,6 +150,13 @@
 +if test `eval echo '${'$as_ac_Lib'}'` = yes; then
 +  LIBPTHREAD="$PTHREAD_LIBS_save"
  fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  LIBPTHREAD="-lpthread" 
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
  
 +     LDFLAGS="$kde_save_LDFLAGS"
 +     LIBS="$kde_save_LIBS"
@@ -135,12 +165,16 @@
 +    fi
 +  fi
  
--
 -    # Check whether --enable-kernel-threads or --disable-kernel-threads was given.
 -if test "${enable_kernel_threads+set}" = set; then
 -  enableval="$enable_kernel_threads"
 -  kde_use_kernthreads=$enableval
--else
++  if test -z "$LIBPTHREAD"; then
++    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
++echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
 -  kde_use_kernthreads=no
 -fi
 -
@@ -169,12 +203,7 @@
 -if test -z "$ac_err"; then
 -  rm -rf conftest*
 -  eval "ac_cv_header_$ac_safe=yes"
-+  if test -z "$LIBPTHREAD"; then
-+    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
-+echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
- else
+-else
 -  echo "$ac_err" >&5
 -  echo "configure: failed program was:" >&5
 -  cat conftest.$ac_ext >&5
@@ -239,25 +268,6 @@
 -  cat conftest.$ac_ext >&5
 -  rm -rf conftest*
 -  eval "ac_cv_lib_$ac_lib_var=no"
--fi
--rm -f conftest*
--LIBS="$ac_save_LIBS"
--
--fi
--if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
--  echo "$ac_t""yes" 1>&6
--  LIBPTHREAD="-llthread -llgcc_r"
--else
--  echo "$ac_t""no" 1>&6
--fi
--         if test "x$LIBPTHREAD" = "x"; then
--          kde_use_kernthreads=no
--        else
--          USE_THREADS="-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads"
--        fi
--      fi
--    else 
--      USE_THREADS=""
 +   builtin and then its argument prototype would still apply.  */
 +char pthread_create ();
 +int
@@ -305,8 +315,25 @@
 +echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
 +if test $ac_cv_lib_pthread_pthread_create = yes; then
 +  LIBPTHREAD="-lpthread"
-+fi
-+
+ fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+ 
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-  LIBPTHREAD="-llthread -llgcc_r"
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-         if test "x$LIBPTHREAD" = "x"; then
+-          kde_use_kernthreads=no
+-        else
+-          USE_THREADS="-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads"
+-        fi
+-      fi
+-    else 
+-      USE_THREADS=""
 +  fi
 +
 +    if test -z "$LIBPTHREAD" ; then
@@ -377,14 +404,8 @@
 +	
 +	USE_THREADS=""
        if test -z "$LIBPTHREAD"; then
-         
- echo $ac_n "checking whether $CXX supports -pthread""... $ac_c" 1>&6
-@@ -6306,7 +6390,7 @@
- fi
- 
+@@ -6308,3 +6367,3 @@
        fi
 -    fi
 +    
  
-     case $host_os in
-  	solaris*)

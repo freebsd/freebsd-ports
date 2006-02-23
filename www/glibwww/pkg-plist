@@ -1,6 +1,7 @@
 etc/glibwwwConf.sh
 include/glibwww/glibwww.h
 lib/libglibwww.a
+lib/libglibwww.la
 lib/libglibwww.so
 lib/libglibwww.so.1
 @dirrm include/glibwww

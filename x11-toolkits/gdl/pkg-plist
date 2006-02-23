@@ -16,6 +16,7 @@ include/libgdl-1.0/gdl/gdl-tools.h
 include/libgdl-1.0/gdl/gdl.h
 include/libgdl-1.0/gdl/libgdltypebuiltins.h
 lib/libgdl-1.a
+lib/libgdl-1.la
 lib/libgdl-1.so
 lib/libgdl-1.so.0
 libdata/pkgconfig/gdl-1.0.pc

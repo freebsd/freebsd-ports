@@ -7,6 +7,7 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -18,7 +19,7 @@ COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack gnometarget lthack
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-jpeg --without-tiff
 INSTALLS_SHLIB=	yes
 

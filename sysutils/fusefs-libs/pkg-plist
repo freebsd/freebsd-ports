@@ -6,9 +6,10 @@ include/fuse/fuse_lowlevel_compat.h
 include/fuse/fuse_opt.h
 include/fuse/fuse_kernel.h
 include/fuse.h
-lib/libfuse.so.2
-lib/libfuse.so
 lib/libfuse.a
+lib/libfuse.la
+lib/libfuse.so
+lib/libfuse.so.2
 libdata/pkgconfig/fuse.pc
 @dirrm include/fuse
 %%PORTDOCS%%%%DOCSDIR%%/libs/how-fuse-works

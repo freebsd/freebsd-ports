@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
 		gnomedesktop
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-nautilus-view=no \

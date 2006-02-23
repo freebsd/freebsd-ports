@@ -2,6 +2,7 @@ bin/build-guile-gtk
 bin/build-guile-gtk-1.2
 include/guile-gtk.h
 lib/libguilegtk-1.2.a
+lib/libguilegtk-1.2.la
 lib/libguilegtk-1.2.so
 lib/libguilegtk-1.2.so.0
 share/guile-gtk/gdk-1.2.defs

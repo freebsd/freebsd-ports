@@ -7,6 +7,7 @@
 
 PORTNAME=	liboil
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/
 
@@ -15,7 +16,7 @@ COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	glib20
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc

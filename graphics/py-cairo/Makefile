@@ -8,6 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,7 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pygtk
 
 .include <bsd.port.pre.mk>

@@ -13,6 +13,7 @@ include/xfce4/libxfce4util/xfce-miscutils.h
 include/xfce4/libxfce4util/xfce-rc.h
 include/xfce4/libxfce4util/xfce-resource.h
 lib/libxfce4util.a
+lib/libxfce4util.la
 lib/libxfce4util.so
 lib/libxfce4util.so.1
 libdata/pkgconfig/libxfce4util-1.0.pc

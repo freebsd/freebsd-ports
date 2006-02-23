@@ -28,6 +28,7 @@ include/xapian/types.h
 include/xapian/valueiterator.h
 include/xapian/version.h
 lib/libxapian.a
+lib/libxapian.la
 lib/libxapian.so
 lib/libxapian.so.8
 share/aclocal/xapian.m4

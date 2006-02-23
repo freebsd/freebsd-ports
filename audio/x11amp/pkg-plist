@@ -4,17 +4,24 @@ include/x11amp/configfile.h
 include/x11amp/plugin.h
 include/x11amp/x11ampctrl.h
 lib/libx11amp.a
+lib/libx11amp.la
 lib/libx11amp.so
 lib/libx11amp.so.9
+lib/x11amp/Effect/libtest.la
 lib/x11amp/Effect/libtest.so
+lib/x11amp/Effect/libvoice.la
 lib/x11amp/Effect/libvoice.so
+lib/x11amp/General/libir.la
 lib/x11amp/General/libir.so
+lib/x11amp/Input/libmikmod.la
 lib/x11amp/Input/libmikmod.so
+lib/x11amp/Input/libmpg123.la
 lib/x11amp/Input/libmpg123.so
+lib/x11amp/Input/libwav.la
 lib/x11amp/Input/libwav.so
-lib/x11amp/Output/libOSS.a
+lib/x11amp/Output/libOSS.la
 lib/x11amp/Output/libOSS.so
-lib/x11amp/Output/libesdout.a
+lib/x11amp/Output/libesdout.la
 lib/x11amp/Output/libesdout.so
 share/x11amp/wmx11amp.xpm
 @dirrm share/x11amp

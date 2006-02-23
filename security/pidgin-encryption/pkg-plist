@@ -1,3 +1,5 @@
+lib/gaim/encrypt.a
+lib/gaim/encrypt.la
 lib/gaim/encrypt.so
 %%NLS%%share/locale/cs/LC_MESSAGES/gaim-encryption.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gaim-encryption.mo

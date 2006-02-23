@@ -34,6 +34,7 @@ include/dar/tuyau.hpp
 include/dar/user_interaction.hpp
 include/dar/wrapperlib.hpp
 lib/libdar.a
+lib/libdar.la
 lib/libdar.so
 lib/libdar.so.3
 %%DATADIR%%/FAQ

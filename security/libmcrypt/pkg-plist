@@ -1,6 +1,7 @@
 bin/libmcrypt-config
 include/mcrypt.h
 lib/libmcrypt.a
+lib/libmcrypt.la
 lib/libmcrypt.so
 lib/libmcrypt.so.8
 @exec mkdir -p %D/lib/libmcrypt

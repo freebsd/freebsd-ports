@@ -17,6 +17,7 @@ include/wbxml_tree.h
 include/wbxml_tree_clb_wbxml.h
 include/wbxml_tree_clb_xml.h
 lib/libwbxml2.a
+lib/libwbxml2.la
 lib/libwbxml2.so
 lib/libwbxml2.so.0
 share/doc/wbxml2-0.9.0/AUTHORS

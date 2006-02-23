@@ -1,2 +1,4 @@
+lib/xfce4/panel-plugins/libtaskbar.a
+lib/xfce4/panel-plugins/libtaskbar.la
 lib/xfce4/panel-plugins/libtaskbar.so
 @dirrmtry lib/xfce4/panel-plugins

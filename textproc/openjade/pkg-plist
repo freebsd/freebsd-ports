@@ -1,12 +1,15 @@
 @comment $FreeBSD$
 bin/openjade
 lib/libogrove.a
+lib/libogrove.la
 lib/libogrove.so
 lib/libogrove.so.0
 lib/libospgrove.a
+lib/libospgrove.la
 lib/libospgrove.so
 lib/libospgrove.so.0
 lib/libostyle.a
+lib/libostyle.la
 lib/libostyle.so
 lib/libostyle.so.0
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove openjade/catalog

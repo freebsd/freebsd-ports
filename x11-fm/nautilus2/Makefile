@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus2
 PORTVERSION=	2.12.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.12
@@ -26,7 +27,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop eel2 \
 		librsvg2 desktopfileutils
 GNOME_DESKTOP_VERSION=2
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -liconv" \

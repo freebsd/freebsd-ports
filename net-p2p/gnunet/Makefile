@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.6b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -20,18 +20,16 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_AUTOTOOLS=	libltdl:15 libtool:13:inc
+USE_AUTOTOOLS=	libltdl:15
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 lthack
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
-
 INSTALLS_SHLIB=	yes
-
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-ltdl-install --with-crypto
 LDFLAGS+=	-L${LOCALBASE}/lib

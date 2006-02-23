@@ -1,5 +1,6 @@
 include/gtkspell-2.0/gtkspell/gtkspell.h
 lib/libgtkspell.a
+lib/libgtkspell.la
 lib/libgtkspell.so
 lib/libgtkspell.so.0
 libdata/pkgconfig/gtkspell-2.0.pc

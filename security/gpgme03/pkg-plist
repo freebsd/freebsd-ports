@@ -1,6 +1,7 @@
 bin/gpgme03-config
 include/gpgme03/gpgme.h
 lib/libgpgme03.a
+lib/libgpgme03.la
 lib/libgpgme03.so
 lib/libgpgme03.so.9
 share/aclocal/gpgme03.m4

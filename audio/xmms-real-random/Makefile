@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-real-random
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kingleo.home.pages.at/development/stuff/
 DISTNAME=	real_random-${PORTVERSION}
@@ -16,19 +17,20 @@ COMMENT=	REAL shuffle mode for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS='${CFLAGS}'
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CC="${CC}"
+
+PLIST_FILES=	lib/xmms/General/libreal_random.la \
+		lib/xmms/General/libreal_random.so
 
 post-patch:
-.for Makefile in Makefile.am Makefile.in
-	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/${Makefile}
-.endfor
+	@${REINPLACE_CMD} -e 's#-lpthread#${PTHREAD_LIBS}#' \
+		-e 's#gcc#$${CC}#' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

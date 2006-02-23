@@ -16,7 +16,6 @@ COMMENT=	Common error values for all GnuPG components
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
-USE_AUTOTOOLS=	libtool:15:inc
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -7,7 +7,7 @@
 
 PORTNAME=	physfs
 PORTVERSION=	1.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
 

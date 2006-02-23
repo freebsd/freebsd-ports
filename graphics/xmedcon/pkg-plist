@@ -41,6 +41,7 @@ include/xmedcon/m-xtract.h
 include/xmedcon/medcon.h
 @dirrm include/xmedcon
 lib/libmdc.a
+lib/libmdc.la
 lib/libmdc.so
 lib/libmdc.so.2
 share/aclocal/xmedcon.m4

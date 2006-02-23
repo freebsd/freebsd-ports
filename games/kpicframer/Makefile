@@ -17,7 +17,7 @@ LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_GMAKE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -9,15 +9,6 @@
    --disable-nls           do not use Native Language Support"
  ac_help="$ac_help
    --with-included-gettext use the GNU gettext library included here"
-@@ -6138,7 +6140,7 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='%%LOCALBASE%%/bin/libtool13'
- 
- # Prevent multiple expansion
- 
 @@ -7381,6 +7383,8 @@
  #  AC_DEFINE(HAVE_GZSEEK)
  #fi

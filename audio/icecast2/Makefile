@@ -24,7 +24,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 USE_RC_SUBR=	icecast2.sh
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

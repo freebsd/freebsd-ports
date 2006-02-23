@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -29,7 +29,9 @@ INSTALLS_SHLIB=	yes
 CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 LIB_VERSION=	0
-PLIST_FILES=	lib/xmps/codecs/video/libwin32.so \
+PLIST_FILES=	lib/xmps/codecs/video/libwin32.a \
+		lib/xmps/codecs/video/libwin32.la \
+		lib/xmps/codecs/video/libwin32.so \
 		lib/xmps/codecs/video/libwin32.so.${LIB_VERSION}
 
 post-patch:

@@ -7,7 +7,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	1.2.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/glib/1.2
@@ -16,10 +16,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib12
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -34,5 +33,9 @@ post-patch:
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/glib-config ${PREFIX}/bin/glib12-config
+.for lib in glib gmodule gthread
+	@${RM} ${PREFIX}/lib/lib${lib}.la ${PREFIX}/lib/lib${lib}.so
+	@${MV} ${PREFIX}/lib/lib${lib}.a ${PREFIX}/lib/lib${lib}-12.a
+.endfor
 
 .include <bsd.port.mk>

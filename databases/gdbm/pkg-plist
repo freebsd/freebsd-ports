@@ -3,8 +3,10 @@ include/gdbm.h
 %%GDBM_COMPAT%%include/dbm.h
 %%GDBM_COMPAT%%include/ndbm.h
 lib/libgdbm.a
+lib/libgdbm.la
 lib/libgdbm.so
 lib/libgdbm.so.3
 %%GDBM_COMPAT%%lib/libgdbm_compat.a
+%%GDBM_COMPAT%%lib/libgdbm_compat.la
 %%GDBM_COMPAT%%lib/libgdbm_compat.so
 %%GDBM_COMPAT%%lib/libgdbm_compat.so.3

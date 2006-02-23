@@ -8,6 +8,7 @@
 
 PORTNAME=	libosip2
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
@@ -17,7 +18,7 @@ COMMENT=	A low layer of SIP implementation
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 INSTALLS_SHLIB=	yes
 

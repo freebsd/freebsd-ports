@@ -20,7 +20,7 @@ LIB_DEPENDS=	newpki.2:${PORTSDIR}/security/newpki-lib \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget

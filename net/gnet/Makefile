@@ -7,6 +7,7 @@
 
 PORTNAME=	gnet
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
@@ -15,7 +16,7 @@ COMMENT=	A simple network library built upon Glib
 
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack glib12
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	gnet-config.1

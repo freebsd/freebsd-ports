@@ -1,6 +1,8 @@
 bin/krusader
+lib/kde3/kio_iso.a
 lib/kde3/kio_iso.la
 lib/kde3/kio_iso.so
+lib/kde3/kio_krarc.a
 lib/kde3/kio_krarc.la
 lib/kde3/kio_krarc.so
 share/applnk/Applications/krusader.desktop

@@ -2,8 +2,10 @@ bin/faad
 include/faad.h
 include/mp4ff.h
 lib/libfaad.a
+lib/libfaad.la
 lib/libfaad.so
 lib/libfaad.so.0
 lib/libmp4ff.a
+lib/libmp4ff.la
 lib/libmp4ff.so
 lib/libmp4ff.so.0

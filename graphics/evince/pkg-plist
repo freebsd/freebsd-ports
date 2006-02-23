@@ -1,6 +1,7 @@
 bin/evince
 bin/evince-thumbnailer
 %%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.a
+%%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.la
 %%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.so
 %%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.so.0
 share/gnome/applications/evince.desktop

@@ -15,7 +15,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An easy-to-use library for strong hashes such as MD5 and SHA1
 
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}" --enable-static \

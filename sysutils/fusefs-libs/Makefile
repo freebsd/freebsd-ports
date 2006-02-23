@@ -6,6 +6,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -15,10 +16,9 @@ DISTNAME=	fuse-${PORTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	FUSE allows filesystem implementation in userspace
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig

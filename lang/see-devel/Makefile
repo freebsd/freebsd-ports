@@ -7,6 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		http://mirror.arcticnetwork.ca/pub/FreeBSD/distfiles/ \
@@ -28,11 +29,10 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_ZIP=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"

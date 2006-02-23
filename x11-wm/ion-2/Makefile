@@ -8,6 +8,7 @@
 
 PORTNAME=	ion-2
 PORTVERSION=	20040729
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 
@@ -18,7 +19,8 @@ LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
-USE_AUTOTOOLS=	libltdl:15 libtool:15
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	DEFINES="${IONDEFINES}"

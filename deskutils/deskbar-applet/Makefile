@@ -8,6 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -21,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnomeextras
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--disable-beagle
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -22,10 +22,12 @@ include/reiserfs/tree.h
 lib/libdal-0.3.so
 lib/libdal-0.3.so.0
 lib/libdal.a
+lib/libdal.la
 lib/libdal.so
 lib/libreiserfs-0.3.so
 lib/libreiserfs-0.3.so.0
 lib/libreiserfs.a
+lib/libreiserfs.la
 lib/libreiserfs.so
 sbin/cpfs.reiserfs
 sbin/fsck.reiserfs

@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOTOOLS=	libtool:13
 USE_GCC=	2.95
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}

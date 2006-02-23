@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose tool for parameter handling in C++
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:13
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

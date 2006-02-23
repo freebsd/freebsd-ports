@@ -16,7 +16,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	KDE frontend to ssh
 
 USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

@@ -11,10 +11,10 @@ include/libwpd-0.8/libwpd/WPXStream.h
 include/libwpd-0.8/libwpd/WPXString.h
 include/libwpd-0.8/libwpd/libwpd.h
 include/libwpd-0.8/libwpd/libwpd_types.h
-lib/libwpd-0.8.a
+lib/libwpd-0.8.la
 lib/libwpd-0.8.so
 lib/libwpd-0.8.so.8
-lib/libwpd-stream-0.8.a
+lib/libwpd-stream-0.8.la
 lib/libwpd-stream-0.8.so
 lib/libwpd-stream-0.8.so.8
 libdata/pkgconfig/libwpd-0.8.pc

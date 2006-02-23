@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-uade
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/uade/uade/
 DISTNAME=	uade-${PORTVERSION}
@@ -21,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:13
+USE_AUTOTOOLS=	libtool:15
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \

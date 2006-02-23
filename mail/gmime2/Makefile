@@ -7,7 +7,7 @@
 
 PORTNAME=	gmime
 PORTVERSION=	2.1.19
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -19,7 +19,7 @@ CONFLICTS=	gmime-1.0.*
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no

@@ -7,7 +7,7 @@
 
 PORTNAME=	njs
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -18,11 +18,12 @@ COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
 CONFLICTS=	js-1.5.*
 
-USE_AUTOTOOLS=	libtool:13:inc
 .if defined(NOPORTDOCS)
 USE_REINPLACE=	yes
 .endif
+
 INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-shared
 
 SUB_FILES=	pkg-message

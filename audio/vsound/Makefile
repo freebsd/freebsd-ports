@@ -7,7 +7,7 @@
 
 PORTNAME=	vsound
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zorg.org/vsound/
 
@@ -17,7 +17,7 @@ COMMENT=	Utility for capturing audio streams from programs with OSS output
 BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:

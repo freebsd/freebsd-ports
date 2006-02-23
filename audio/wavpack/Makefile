@@ -7,6 +7,7 @@
 
 PORTNAME=	wavpack
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kwm
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	kwm
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
 
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

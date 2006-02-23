@@ -30,8 +30,9 @@ include/gmime/gmime-stream-null.h
 include/gmime/gmime-stream.h
 include/gmime/gmime-utils.h
 include/gmime/internet-address.h
-lib/libgmime.so.1
-lib/libgmime.so
 lib/libgmime.a
+lib/libgmime.la
+lib/libgmime.so
+lib/libgmime.so.1
 share/aclocal/gmime.m4
 @dirrm include/gmime

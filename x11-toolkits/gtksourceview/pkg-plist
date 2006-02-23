@@ -11,6 +11,7 @@ include/gtksourceview-1.0/gtksourceview/gtksourcetagtable.h
 include/gtksourceview-1.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-1.0/gtksourceview/gtksourceview.h
 lib/libgtksourceview-1.0.a
+lib/libgtksourceview-1.0.la
 lib/libgtksourceview-1.0.so
 lib/libgtksourceview-1.0.so.0
 libdata/pkgconfig/gtksourceview-1.0.pc

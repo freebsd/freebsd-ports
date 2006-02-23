@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
@@ -21,7 +21,6 @@ INFO=		sfs
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_AUTOTOOLS=	libtool:13:inc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs \

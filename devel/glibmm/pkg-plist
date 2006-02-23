@@ -113,9 +113,11 @@ lib/glibmm-%%API_VERSION%%/proc/pm/Property.pm
 lib/glibmm-%%API_VERSION%%/proc/pm/Util.pm
 lib/glibmm-%%API_VERSION%%/proc/pm/WrapParser.pm
 lib/libglibmm-%%VERSION%%.a
+lib/libglibmm-%%VERSION%%.la
 lib/libglibmm-%%VERSION%%.so
 lib/libglibmm-%%VERSION%%.so.1
 lib/libglibmm_generate_extra_defs-%%VERSION%%.a
+lib/libglibmm_generate_extra_defs-%%VERSION%%.la
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1
 libdata/pkgconfig/glibmm-%%API_VERSION%%.pc

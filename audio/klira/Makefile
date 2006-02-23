@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GSTREAMER=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 EXTRA_PATCHES= ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure

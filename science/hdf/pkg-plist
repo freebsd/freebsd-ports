@@ -75,9 +75,11 @@ include/tbbt.h
 include/vattr.h
 include/vg.h
 lib/libdf.a
+lib/libdf.la
 lib/libdf.so
 lib/libdf.so.1
 lib/libmfhdf.a
+lib/libmfhdf.la
 lib/libmfhdf.so
 lib/libmfhdf.so.2
 %%PORTDOCS%%%%DOCSDIR%%/HDF41r5_SpecDG.pdf

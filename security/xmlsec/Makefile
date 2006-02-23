@@ -8,7 +8,7 @@
 
 PORTNAME=	xmlsec
 PORTVERSION=	0.0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_OPENSSL=	yes
 USE_GNOME=	gnomehack libxslt
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 

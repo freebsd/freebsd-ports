@@ -17,7 +17,7 @@ COMMENT=	Beep Media Player do-this-on-song-change plugin
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 
 PLIST_FILES=	lib/bmp/General/libsong_change.so
 

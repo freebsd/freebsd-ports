@@ -8,6 +8,7 @@ include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-unit-selector.h
 include/libgnomeprintui-2.2/libgnomeprintui/libgnomeprintui-enum-types.h
 lib/libgnomeprintui-2-2.a
+lib/libgnomeprintui-2-2.la
 lib/libgnomeprintui-2-2.so
 lib/libgnomeprintui-2-2.so.0
 libdata/pkgconfig/libgnomeprintui-2.2.pc

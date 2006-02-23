@@ -7,7 +7,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.4.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
 USE_GNOME=	lthack
 USE_XLIB=	yes
-USE_AUTOTOOLS=	libtool:13:inc
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 

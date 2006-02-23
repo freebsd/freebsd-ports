@@ -12,6 +12,7 @@ etc/openslp/slp.spi.default
 etc/rc.d/001slpd.sh
 include/slp.h
 lib/libslp.a
+lib/libslp.la
 lib/libslp.so
 lib/libslp.so.1
 sbin/slpd

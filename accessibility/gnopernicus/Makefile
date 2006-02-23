@@ -8,6 +8,7 @@
 
 PORTNAME=	gnopernicus
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.12
@@ -24,7 +25,7 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	SED="${SED}"
