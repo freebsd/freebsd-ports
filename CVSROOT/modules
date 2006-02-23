@@ -11878,6 +11878,7 @@ sitescooper	ports/palm/sitescooper
 six		ports/games/six
 sixxs-aiccu	ports/net/sixxs-aiccu
 sixxs-heartbeatd	ports/net/sixxs-heartbeatd
+sjeng		ports/games/sjeng
 sjog		ports/sysutils/sjog
 sk-aspell	ports/textproc/sk-aspell
 skadns		ports/dns/skadns
