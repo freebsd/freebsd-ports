@@ -44,9 +44,9 @@ OPTIONS=
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/Makefile.common"
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+.if ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 ) || ${ARCH} == "sparc64"
 IGNORE=	core dumps at runtime
-.endif # ${ARCH} == "alpha" && ${OSVERSION} < 500035
+.endif # ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 ) || ${ARCH} == "sparc64"
 
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
