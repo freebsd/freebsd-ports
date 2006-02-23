@@ -16,6 +16,7 @@ etc/mimedefang/sa-mimedefang.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/README.SECURITY
 %%PORTDOCS%%%%DOCSDIR%%/README.TRU64
 %%PORTDOCS%%%%DOCSDIR%%/README.IRIX
+%%PORTDOCS%%%%DOCSDIR%%/README.VEXIRA
 %%PORTDOCS%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
 %%PORTDOCS%%%%EXAMPLESDIR%%/stream-by-domain-filter
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
