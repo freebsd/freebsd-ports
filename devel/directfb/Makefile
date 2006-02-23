@@ -9,7 +9,7 @@ PORTNAME=	directfb
 PORTVERSION=	0.9.16
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.directfb.org/download/DirectFB/
+MASTER_SITES=	http://www.directfb.org/downloads/Old/
 DISTNAME=	DirectFB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
