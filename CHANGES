@@ -22,9 +22,6 @@ The following changes affecting ports developers were introduced:
 
   * New USE_DOS2UNIX variable for converting DOS linefeeds to UNIX
 
-  * New variables PERL_RUN_DEPENDS and PERL_BUILD_DEPENDS which take
-    module:portdir tuples
-
   * Variables like BROKEN and FORBIDDEN should no longer be quoted
 
   * New NOFETCHFILES variable to prevent downloading from MASTER_SITES
