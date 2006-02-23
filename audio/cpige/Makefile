@@ -10,7 +10,7 @@ DISTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Icecast/Shoutcast stream ripper
 
 USE_GMAKE=	yes
