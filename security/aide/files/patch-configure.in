@@ -1,0 +1,24 @@
+--- configure.in.orig	Sat Feb 18 04:46:41 2006
++++ configure.in	Wed Feb 22 20:26:01 2006
+@@ -362,7 +362,9 @@
+ 	AIDE_FSTAT_FUNC="fstat"
+ 	AIDE_STAT_TYPE="stat"
+ 	AIDE_OFF_TYPE="off_t"
+-	AIDE_BLKCNT_TYPE="blkcnt_t"
++	AC_CHECK_TYPES(blkcnt_t,
++		AIDE_BLKCNT_TYPE="blkcnt_t",
++		AIDE_BLKCNT_TYPE="int32_t"),
+ 	AIDE_READDIR_FUNC="readdir"
+ 	AIDE_READDIR_R_FUNC="readdir_r"
+ 	compoptionstring="${compoptionstring}WITH_LSTAT\\n"
+@@ -373,7 +375,9 @@
+ 	AIDE_FSTAT_FUNC="fstat"
+ 	AIDE_STAT_TYPE="stat"
+ 	AIDE_OFF_TYPE="off_t"
+-	AIDE_BLKCNT_TYPE="blkcnt_t"
++	AC_CHECK_TYPES(blkcnt_t,
++		AIDE_BLKCNT_TYPE="blkcnt_t",
++		AIDE_BLKCNT_TYPE="int32_t"),
+ 	AIDE_READDIR_FUNC="readdir"
+ 	AIDE_READDIR_R_FUNC="readdir_r"
+ 	compoptionstring="${compoptionstring}WITH_LSTAT\\n"

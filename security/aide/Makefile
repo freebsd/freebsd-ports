@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aide
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.tut.fi/~rammer/
@@ -20,12 +19,14 @@ LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
 USE_GMAKE=	yes
 USE_BISON=	yes
+USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
 		--with-config_file=${PREFIX}/etc/aide.conf
 
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		aide.1
 MAN5=		aide.conf.5
