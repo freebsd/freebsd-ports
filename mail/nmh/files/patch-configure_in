@@ -1,0 +1,12 @@
+diff -ru ./configure.in ../../work-save/nmh-1.2/configure.in
+--- ./configure.in	Wed Dec 14 16:45:36 2005
++++ ../../work-save/nmh-1.2/configure.in	Wed Feb 22 15:37:20 2006
+@@ -603,7 +603,7 @@
+ dnl CHECK FOR NDBM.H
+ dnl ----------------
+ 
+-AC_CHECK_HEADERS(db1/ndbm.h gdbm/ndbm.h db.h, break, )
++AC_CHECK_HEADERS(db1/ndbm.h ndbm.h gdbm/ndbm.h db.h, break, )
+ 
+ dnl --------------
+ dnl CHECK FOR NDBM
