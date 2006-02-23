@@ -36,6 +36,7 @@
  ****************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
 
@@ -48,7 +49,8 @@ main(int argc, char **argv)
 {
 	char	*buf;
 	char	path[MAXPATH] = "/proc/";
-	int	mfd, bytes, size = MINBUF;
+	int	mfd, bytes;
+	size_t	size = MINBUF;
 	
 	if (argc != 2) {
 		fprintf(stderr, "usage: procmap {<pid> | curproc}\n");
