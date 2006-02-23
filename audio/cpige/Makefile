@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	cpige
-DISTVERSION=	1.3-1
+DISTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
-MAKE_ARGS=	CC="${CC}" CLIBS="${LDFLAGS}" CFLAGS="${CFLAGS}"
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-1//}
-PLIST_FILES=	bin/${PORTNAME}
+USE_GMAKE=	yes
+
+MAKE_ARGS=	CC="${CC}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-1//}
+PLIST_FILES=	bin/cpige
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
