@@ -546,6 +546,7 @@
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += six
+    SUBDIR += sjeng
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += slune
