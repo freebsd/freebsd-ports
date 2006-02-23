@@ -1,14 +1,5 @@
 --- proto.c.bak	22 Feb 2006 23:22:04 -0000	1.75
 +++ proto.c	23 Feb 2006 01:20:53 -0000	1.76
-@@ -23,7 +23,7 @@
-  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-  * SUCH DAMAGE.
-  *
-- * $FreeBSD: /tmp/pcvs/ports/net/csup/files/Attic/patch-proto.c,v 1.1 2006-02-23 01:25:09 mux Exp $
-+ * $FreeBSD: /tmp/pcvs/ports/net/csup/files/Attic/patch-proto.c,v 1.1 2006-02-23 01:25:09 mux Exp $
-  */
- 
- #include <sys/param.h>
 @@ -196,15 +196,15 @@ proto_greet(struct config *config)
  		if (msg == NULL)
  			goto bad;
