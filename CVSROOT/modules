@@ -5544,6 +5544,7 @@ libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
 libjbigi	ports/math/libjbigi
+libjingle	ports/net-im/libjingle
 libjit		ports/lang/libjit
 libkexif	ports/graphics/libkexif
 libkipi		ports/graphics/libkipi
