@@ -8,14 +8,14 @@
 PORTNAME=	noegnud
 PORTVERSION=	0.8.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION:C/(.\..*)\..*/\1/}_data-extras/
 PKGNAMESUFFIX=	-addons
 DISTFILES=	${DISTNAME}_data-tileset-absurd${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	The addons (tilesets and sound themes) for noeGNUd
 
+USE_BZIP2=	yes
 PLIST=		${WRKDIR}/pkg-plist
 OPTIONS=	TILESET_ABSURD		"absurd tileset"		on \
 		TILESET_ITAKURA		"itakura tileset"		off \

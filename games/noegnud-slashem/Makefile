@@ -8,12 +8,12 @@
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:noegnud,slashem/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:noegnud \
-			slashem/:slashem
+MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
+		${MASTER_SITE_SOURCEFORGE:S/$/:slashem/}
+MASTER_SITE_SUBDIR=	slashem/:slashem
 PKGNAMESUFFIX=	-slashem
 DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud \
-		se006e4f8${EXTRACT_SUFX}:slashem
+		se006e4f8.tar.gz:slashem
 EXTRACT_ONLY=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
@@ -26,6 +26,7 @@ USE_BISON=	yes
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	se006e4f8

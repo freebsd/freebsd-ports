@@ -8,9 +8,9 @@
 PORTNAME=	noegnud
 PORTVERSION=	0.8.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:noegnud,nethack/}
-MASTER_SITE_SUBDIR=	${PORTNAME}/:noegnud	\
-			nethack/:nethack
+MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION}/:noegnud	\
+		${MASTER_SITE_SOURCEFORGE:S/$/:nethack/}
+MASTER_SITE_SUBDIR=	nethack/:nethack
 PKGNAMESUFFIX=	-nethack
 DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}:noegnud	\
 		nethack-343-src.tgz:nethack
@@ -26,6 +26,7 @@ USE_BISON=	yes
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/variants
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	nh343
