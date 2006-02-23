@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	thunderbird-dictionaries
-PORTVERSION=	20060219
+PORTVERSION=	20060220
 CATEGORIES=	mail
 MASTER_SITES=	http://mozdev.dns4.com/dictionaries/ \
 		http://ftp.heanet.ie/pub/mozdev/dictionaries/ \
@@ -42,6 +42,7 @@ DE_DE_FILE=	spell-de-DE.xpi
 EL_FILE=	spell-el.xpi
 EN_AU_FILE=	spell-en-AU.xpi
 EN_CA_FILE=	spell-en-CA.xpi
+EN_GB_FILE=	spell-en-GB.xpi
 EN_NZ_FILE=	spell-en-NZ.xpi
 ES_ES_FILE=	spell-es-ES.xpi
 ES_MX_FILE=	spell-es-MX.xpi
@@ -128,8 +129,8 @@ WITH_DICT_ALL=yes
 
 # All available dictionaries
 ALLDICTS=	AF_ZA BG CA CS CY_GB DA DE_AT DE_CH DE_DE EL EN_AU EN_CA \
-		EN_NZ ES_ES ES_MX FO FR_FR GA GL HE_IL HR HU IA IT LA LT \
-		LV_LV MI MS NB NL NN PL PT PT_BR RO RU SK SL SV \
+		EN_GB EN_NZ ES_ES ES_MX FO FR_FR GA GL HE_IL HR HU IA IT \
+		LA LT LV_LV MI MS NB NL NN PL PT PT_BR RO RU SK SL SV \
 		UK ZU_ZA
 
 # this dictionary requires special handling in do-install

@@ -22,6 +22,8 @@
 %%EN_AU%%lib/thunderbird/components/myspell/en-AU.dic
 %%EN_CA%%lib/thunderbird/components/myspell/en-CA.aff
 %%EN_CA%%lib/thunderbird/components/myspell/en-CA.dic
+%%EN_GB%%lib/thunderbird/components/myspell/en-GB.aff
+%%EN_GB%%lib/thunderbird/components/myspell/en-GB.dic
 %%EN_NZ%%lib/thunderbird/components/myspell/en-NZ.aff
 %%EN_NZ%%lib/thunderbird/components/myspell/en-NZ.dic
 %%ES_ES%%lib/thunderbird/components/myspell/es-ES.aff
@@ -80,5 +82,5 @@
 %%SV%%lib/thunderbird/components/myspell/sv.dic
 %%UK%%lib/thunderbird/components/myspell/uk.aff
 %%UK%%lib/thunderbird/components/myspell/uk.dic
-%%ZU_ZA%%lib/thunderbird/components/myspell/zu-ZU.aff
-%%ZU_ZA%%lib/thunderbird/components/myspell/zu-ZU.dic
+%%ZU_ZA%%lib/thunderbird/components/myspell/zu-ZA.aff
+%%ZU_ZA%%lib/thunderbird/components/myspell/zu-ZA.dic
