@@ -1,3 +1,4 @@
+@unexec cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample && rm -f %D/%%WEBFRONTDIR%%/conf.php
 %%WEBFRONTDIR%%/auth.php
 %%WEBFRONTDIR%%/class.TemplatePower.inc.php
 %%WEBFRONTDIR%%/cluster_legend.html
@@ -65,5 +66,5 @@
 @dirrm %%WEBFRONTDIR%%/templates/Rocks/images
 @dirrm %%WEBFRONTDIR%%/templates/Rocks
 @dirrm %%WEBFRONTDIR%%/templates
-@unexec if cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample ; then rm -f %D/%%WEBFRONTDIR%%/conf.php; fi
-@unexec rmdir %D/%%WEBFRONTDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")
+@dirrmtry rmdir %D/%%WEBFRONTDIR%%
+@unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true
