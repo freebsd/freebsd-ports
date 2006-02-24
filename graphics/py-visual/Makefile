@@ -44,6 +44,10 @@ VPYTHON_SCRIPT=	bin/vpython.in
 BROKEN=		does not compile
 .endif
 
+.if ${ARCH} == amd64
+IGNORE=		loops infinitely during build
+.endif
+
 post-patch:
 	@cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e 's|%%PYTHONBASE%%|${PYTHONBASE}|g' \
