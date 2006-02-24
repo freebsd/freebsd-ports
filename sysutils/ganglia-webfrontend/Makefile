@@ -7,7 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -88,13 +88,15 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 build-plist:
+	${RM} ${PLIST}
+	@${ECHO_CMD} '@unexec cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample && rm -f %D/%%WEBFRONTDIR%%/conf.php' >> ${PLIST}
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|%%WEBFRONTDIR%%|' | \
-	    ${SORT} > ${PLIST}
+	    ${SORT} >> ${PLIST}
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type d | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|@dirrm %%WEBFRONTDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
-	@${ECHO} '@unexec if cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample ; then rm -f %D/%%WEBFRONTDIR%%/conf.php; fi' >> ${PLIST}
-	@${ECHO} '@unexec rmdir %D/%%WEBFRONTDIR%% 2>/dev/null || (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry rmdir %D/%%WEBFRONTDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true' >> ${PLIST}
 
 .include <bsd.port.mk>
