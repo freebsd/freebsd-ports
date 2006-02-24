@@ -7,7 +7,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.06
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.gigavenue.com/mirrors/ruby/ \
 		http://www.maxmind.com/download/geoip/api/ruby/
