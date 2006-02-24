@@ -26,7 +26,6 @@ share/pixmaps/preps.png
 %%DATADIR%%/gnome/help/preps/C/figures/statedit.png
 %%DATADIR%%/gnome/help/preps/C/figures/useredit.png
 @dirrm share/gnome/omf/preps
-@dirrm share/pixmaps
 @dirrm %%DATADIR%%/gnome/help/preps/C/figures
 @dirrm %%DATADIR%%/gnome/help/preps/C
 @dirrm %%DATADIR%%/gnome/help/preps

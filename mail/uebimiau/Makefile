@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-any
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	UebiMiau is a simple yet efficient WebMail written in PHP
 
-BROKEN=		Incomplete pkg-plist
-
 WRKSRC=		${WRKDIR}/webmail
 
 USE_ZIP=	yes
