@@ -6,6 +6,38 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060223:
+  AFFECTS: all ports using libtool as part of the build process
+  AUTHOR: ade@FreeBSD.org
+
+  The way in which ports that require libtool to build has been
+  completely reworked to bring the ports system in line with other
+  environments, such as Linux, and pkgsrc.
+
+  devel/libtool13 no longer exists.  devel/libtool15 has been modified
+  to (a) install in the canonical locations and (b) remove a number
+  of long-standing FreeBSD-specific patches that resulted in a very
+  different libtool than is present on other systems.
+
+  The main visible change will be that a large number of ports have
+  had their plists modified (we now install libtool .la archives)
+  and, as such, PORTREVISIONS have been bumped on ~2000 ports (roughly
+  1/7th of the tree).
+
+  Unfortunately, there is no simple upgrade path.  Short of removing
+  all packages and reinstalling from scratch, the only other viable
+  alternative would be careful use of portupgrade.  Given the large
+  number of different ways in which libtool is used by other ports
+  in the tree, this is a process that is likely to vary considerably
+  from system to system, and as such, folks should be very mindful
+  of running automatic updating software, such as portupgrade, making
+  extensive use of the -n flag (and equivalents for other updaters)
+  to see what will actually be rebuilt, before actually performing
+  the upgrade.
+
+  The good news is that the system now in place will make the handling
+  of libtool-using ports considerably easier going forward.
+
 20060221:
   AFFECTS: users of print/acroread7 and the localized versions
   AUTHOR: hrs@FreeBSD.org
