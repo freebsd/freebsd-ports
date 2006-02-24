@@ -2,3 +2,4 @@ etc/admuser/admuser.conf
 etc/admuser/admuser.log
 www/cgi-bin/admuser.cgi
 @dirrm etc/admuser
+@dirrmtry www/cgi-bin
