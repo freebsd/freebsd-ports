@@ -24,8 +24,6 @@ LIB_DEPENDS=	Magick.9:${PORTSDIR}/graphics/ImageMagick \
 		gmp.6:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
 
-BROKEN=		Incorrect pkg-plist
-
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget libxml2 libxslt
@@ -34,7 +32,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd ${PTHREAD_LIBS}" \
 		CPPFLAGS="${PTHREAD_CFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--with-dxl-includes=-I${LOCALBASE}/dx/include
+# we need to add -lDX, because there is undefined reference to _dxfImportBin_FP
+# in libDXL.so (_dxfImportBin_FP is defined in libDX.so)
+CONFIGURE_ARGS=	--with-dxl-includes=-I${LOCALBASE}/dx/include \
+		"--with-dxl=-lDXL -lDX"
 INSTALLS_SHLIB=	yes
 
 # The tk module is built by default, but you can disable this by defining
