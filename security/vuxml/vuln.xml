@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="af9018b6-a4f5-11da-bb41-0011433a9404">
+    <topic>squirrelmail -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squirrelmail</name>
+	<range><lt>1.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple vulnerabilities has been discovered since 1.4.5,
+	  including IMAP injection as well as some XSS issues.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0377</cvename>
+      <cvename>CVE-2006-0195</cvename>
+      <cvename>CVE-2006-0188</cvename>
+    </references>
+    <dates>
+      <discovery>2006-02-23</discovery>
+      <entry>2006-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e319da0b-a228-11da-b410-000e0c2e438a">
     <topic>gedit -- format string vulnerability</topic>
     <affects>
