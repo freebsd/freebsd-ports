@@ -38,3 +38,5 @@ www/data/ftplocate/readme.zhtw.html
 @dirrm www/cgi-bin/ftplocate/desc
 @dirrm www/cgi-bin/ftplocate/cache
 @dirrm www/cgi-bin/ftplocate
+@dirrmtry www/cgi-bin
+@dirrmtry www/data
