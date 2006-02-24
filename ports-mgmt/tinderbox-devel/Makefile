@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	andreas@syndrom23.de
 COMMENT=	Port build tinderbox system
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
