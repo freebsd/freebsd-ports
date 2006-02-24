@@ -7,7 +7,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/	\
 		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix/
@@ -53,7 +53,7 @@ post-install:
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
-test:	build
+regression-test:	build
 	(cd ${BUILD_WRKSRC} ;	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
