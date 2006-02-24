@@ -8,7 +8,8 @@
 PORTNAME=	fpkg
 PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.shimazu.org/fpkg/
+MASTER_SITES=	http://voodoo.bawue.com/download/ \
+		http://www.shimazu.org/fpkg/
 EXTRACT_SUFX=
 
 MAINTAINER=	y.shimazu@nifty.com
