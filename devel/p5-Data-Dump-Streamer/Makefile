@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Dif
 		${SITE_PERL}/B/Utils.pm:${PORTSDIR}/devel/p5-Module-Info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	DDS
 
