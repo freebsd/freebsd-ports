@@ -20,6 +20,8 @@ COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
 #BROKEN=	ja patch is not applied.
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETTEXT=	YES
 
 CONFLICTS=	squirrelmail-1.*
