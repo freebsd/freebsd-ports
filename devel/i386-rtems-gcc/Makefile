@@ -25,19 +25,29 @@ COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} >= 700000
-#BROKEN=		"Configure fails on FreeBSD >= 7.0"
-#.endif
-
 .if ${ARCH} == "amd64"
-BROKEN=		"Configure fails on amd64"
+BROKEN=		Configure fails on amd64
 .endif
 
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
 .if ${RTEMS_ARCH} == m68k && ${ARCH} != "i386"
-BROKEN=		"Internal compiler error during build on !i386"
+BROKEN=		Internal compiler error during build on !i386
+.else
+BROKEN=		Does not compile on i386
+.endif
+
+.if ${RTEMS_ARCH} == sh
+BROKEN=		Does not build
+.endif
+
+.if ${RTEMS_ARCH} == arm && ${ARCH} == "sparc64"
+BROKEN=		Configure fails on sparc64
+.endif
+
+.if ${RTEMS_ARCH} == powerpc && ${ARCH} == "sparc64"
+BROKEN=		Configure fails on sparc64
 .endif
 
 GCCVERSION=	3.2.3
