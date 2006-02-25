@@ -15,6 +15,8 @@ DISTNAME=	${APP_TITLE}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 2.x, an open-source J2EE application server
 
+BROKEN=		Broken by www/jakarta-tomcat4/files/startup.sh removal
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 
