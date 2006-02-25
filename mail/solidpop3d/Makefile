@@ -9,8 +9,9 @@ PORTNAME=	solidpop3d
 PORTVERSION=	0.15
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://solidpop3d.pld.org.pl/ \
-		ftp://207.176.230.192/
+MASTER_SITES=	http://pld.ouraynet.com/software/solidpop3d/ \
+		http://fr2.rpmfind.net/linux/PLD/software/solidpop3d/ \
+		http://www.netsw.org/net/mail/transport/pop/
 DISTNAME=	solid-pop3d-${PORTVERSION}
 
 MAINTAINER=	drkangel@drkangel.org

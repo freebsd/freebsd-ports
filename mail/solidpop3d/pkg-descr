@@ -18,5 +18,3 @@ checked for buffer overflow leaks and file races. None have been found as for
 now. All operations on files are done with user privileges. There is no SUID
 APOP secrets database management program (as in QPOP). Each user can specify
 his secret in his own home directory.
-
-WWW: http://solidpop3d.pld.org.pl/
