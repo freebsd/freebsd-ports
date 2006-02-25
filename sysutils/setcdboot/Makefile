@@ -16,6 +16,12 @@ COMMENT=	Mark a file bootable within a DEC Alpha ISO-9660 image
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/setcdboot
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600100 && ${OSVERSION} < 700000
+BROKEN=		Does not compile on FreeBSD 6.x
+.endif
+
 do-fetch:
 
 do-extract:
@@ -28,4 +34,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/setcdboot ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
