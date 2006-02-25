@@ -18,6 +18,8 @@ COMMENT=	Spanish messages and documentation for KDE3
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
+BROKEN=		Incorrect pkg-plist
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
