@@ -21,6 +21,8 @@ RUN_DEPENDS+=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_
 
 NO_CDROM=	"unsure to sell for profit"
 
+BROKEN=		Incomplete pkg-plist
+
 USE_LINUX=		yes
 ONLY_FOR_ARCHS=		i386
 

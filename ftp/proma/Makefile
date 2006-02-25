@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Administrating a ProFTPd server storing users in a MySQL database
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 
 MYADMDIR?=	www/data/proma
