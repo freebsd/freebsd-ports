@@ -8,7 +8,8 @@
 PORTNAME=	xsmbrowser
 PORTVERSION=	3.4.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.public.iastate.edu/~chadspen/
+MASTER_SITES=	http://nuxo1.free.fr/logiciel_reseau/visu_reso/ \
+		http://mirror.uni-c.dk/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
