@@ -18,4 +18,3 @@
 %%MIGEMO%%share/migemo/user-dict.sample
 %%MIGEMO%%share/migemo/regex-dict.sample
 %%MIGEMO%%@dirrm share/migemo
-%%ELISP%%@dirrmtry %%EMACS_SITE_LISPDIR%%
