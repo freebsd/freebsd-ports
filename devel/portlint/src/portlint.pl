@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.110 2006/02/14 03:19:10 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.112 2006/02/25 06:12:35 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -176,8 +176,7 @@ my @varlist =  qw(
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
-	PLIST_FILES OPTIONS INSTALLS_OMF USE_KDELIBS_VER USE_GETTEXT
-	USE_RC_SUBR
+	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
