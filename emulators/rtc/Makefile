@@ -7,15 +7,13 @@
 
 PORTNAME=	rtc
 PORTVERSION=	2004.02.24.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Kernel module which provides /dev/rtc device support
-
-BROKEN=		Incomplete pkg-plist
 
 WRKSRC=		${WRKDIR}/files
 
@@ -29,7 +27,8 @@ DEVDIR=		${LINUXBASE}/dev
 
 STARTUP=	rtc.sh
 MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
-PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" RTC_H_DIR="${RTC_H_DIR}"
+PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" \
+		RTC_H_DIR="${RTC_H_DIR}"
 
 SRC_BASE?=	/usr/src
 
@@ -37,6 +36,12 @@ SRC_BASE?=	/usr/src
 
 .if ${OSVERSION} < 400013
 IGNORE=		needs a system more recent than 400013
+.endif
+
+.if ${OSVERSION} < 500104
+PLIST_SUB+=	MAKEDEV=""
+.else
+PLIST_SUB+=	MAKEDEV="@comment "
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -53,8 +58,6 @@ pre-install:
 	${MKDIR} ${KMODDIR}
 
 post-install:
-	${RM} -f ${DEVDIR}/rtc
-	-mknod /dev/rtc c ${CDEV_MAJOR} 0
 	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
 	${MKDIR} ${PREFIX}/share/examples/rtc
 	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/
