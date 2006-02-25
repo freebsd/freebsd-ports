@@ -30,7 +30,7 @@ USE_OPENLDAP=	yes
 USE_BISON=	yes
 # Clear configure target so we stop getting binaries prefixed with i386-portbld-freebsd46
 CONFIGURE_TARGET=
-GNU_CONFIGURE=	YES
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	OSTYPE=${OPSYS} \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTLIBDIR=${PWLIBDIR} \
