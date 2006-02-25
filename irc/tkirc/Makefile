@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkirc
-PORTVERSION=	2.43
+PORTVERSION=	2.46
 CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://ftp.netsplit.de/pub/tcltk/
 DISTNAME=	${PORTNAME}${PORTVERSION}
