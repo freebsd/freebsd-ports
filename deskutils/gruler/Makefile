@@ -16,7 +16,7 @@ COMMENT=	A customizable screen ruler for GNOME
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_REINPLACE=	yes

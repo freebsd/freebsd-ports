@@ -8,7 +8,7 @@
 
 PORTNAME=	inti-gconf
 PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	inti
@@ -20,7 +20,7 @@ LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
 USE_GNOME=	gconf2 gnomehack gnomeprefix
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
