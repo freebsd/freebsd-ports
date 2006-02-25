@@ -100,6 +100,11 @@ PLIST_SUB+=	MPI="" LAM="@comment " MPICH_VER=1.2.6
 BROKEN=	Does not compile with gcc-2.95
 .endif
 
+.if ${OSVERSION} <= 504103
+EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/bsdtar
+TAR=		${LOCALBASE}/bin/bsdtar
+.endif
+
 .if exists(${LOCALBASE}/bin/mico-config)
 MICO_VER=	`${LOCALBASE}/bin/mico-config --version`
 .else
