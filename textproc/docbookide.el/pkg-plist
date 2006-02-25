@@ -12,3 +12,5 @@ lib/xemacs/site-lisp/docbookide/docbookide.el
 lib/xemacs/site-lisp/docbookide/make-regexp.el
 @dirrm share/emacs/site-lisp/docbookide
 @dirrm lib/xemacs/site-lisp/docbookide
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
