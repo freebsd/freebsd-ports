@@ -22,6 +22,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
