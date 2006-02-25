@@ -9,18 +9,18 @@ PORTNAME=		bash
 PORTVERSION=		3.1.${PATCHLEVEL:S/^0//g}
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
-			http://cnswww.cns.cwru.edu/~chet/%SUBDIR%/:faq \
-			ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash,faq
+			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
 MASTER_SITE_SUBDIR=	${PORTNAME}/:bash,faq
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:bash
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
-PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/:bash
+PATCH_SITES=		${MASTER_SITE_GNU} \
+			ftp://ftp.cwru.edu/pub/%SUBDIR%/
+PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/
 .for patch in		01 02 03 04 05 06 07 08 09 10
-PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
+PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}
 PATCHLEVEL=		${patch}
 .endfor
 
