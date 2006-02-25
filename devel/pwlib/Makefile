@@ -67,7 +67,7 @@ CFLAGS+=	-fPIC
 .if (${ARCH} == "i386") || (${ARCH} == "ia64")
 PLIST_SUB+=	BSDVIDEO=""
 .else
-PLIST_SUB+=	BSDVIDEO="@comment"
+PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib"
