@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/
+MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
+		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
