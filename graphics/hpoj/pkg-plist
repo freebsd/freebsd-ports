@@ -10,7 +10,6 @@ sbin/ptal-printd
 sbin/ptal-photod
 sbin/ptal-init
 sbin/ptal-cups
-lib/sane/libsane-hpoj.so.1
 lib/libhpojip.so
 lib/libhpojip.so.0
 lib/libptal.so

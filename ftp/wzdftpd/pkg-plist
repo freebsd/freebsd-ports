@@ -77,8 +77,8 @@ include/wzdftpd/libwzd.h
 include/wzdftpd/libwzd_pv.h
 include/wzdftpd/libwzd_socket.h
 include/wzdftpd/libwzd_tls.h
-lib/libwzd_core.la
 lib/libwzd_core.a
+lib/libwzd_core.la
 lib/libwzd_core.so
 lib/libwzd_core.so.1
 lib/libwzd.a
@@ -102,6 +102,8 @@ sbin/wzdftpd
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.a
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.la
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.so
+%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.a
+%%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.la
 %%ZEROCONF%%%%DATADIR%%/modules/libwzd_zeroconf.so
 @dirrm %%DATADIR%%/modules/
 @dirrm %%DATADIR%%/backends/
