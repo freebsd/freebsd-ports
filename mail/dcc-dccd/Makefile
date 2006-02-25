@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
+BROKEN=		Unfetchable
+
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 MANCOMPRESSED=	yes
