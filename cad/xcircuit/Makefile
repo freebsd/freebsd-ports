@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.4.11
+PORTVERSION=	3.4.16
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
-
-BROKEN=		Size mismatch
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
