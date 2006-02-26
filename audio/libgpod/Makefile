@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	gtkpod
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A library for direct access of iPod's contents
 
-USE_GNOME=	glib20
+USE_GNOME=	gtk20
 USE_GETTEXT=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
