@@ -16,6 +16,7 @@ MAINTAINER=	stephane@FreeBSD.org
 COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
