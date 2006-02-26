@@ -31,7 +31,6 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		Wand.9:${PORTSDIR}/graphics/ImageMagick
-PATCH_DEPENDS=	libtool15:${PORTSDIR}/devel/libtool15
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -43,6 +42,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
