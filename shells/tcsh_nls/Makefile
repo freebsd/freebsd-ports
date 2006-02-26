@@ -63,8 +63,8 @@ NLS_CATALOGS=	de_DE.ISO8859-1:de_AT.UTF-8 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-IGNORE=		needs FreeBSD 7
+.if (${OSVERSION} >= 700000 && ${OSVERSION} < 700014) || ${OSVERSION} < 600105
+IGNORE=		needs FreeBSD 6.1 or 7
 .endif
 
 do-fetch:
