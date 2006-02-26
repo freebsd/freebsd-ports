@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Tiny/turbo/throttling HTTP server
 
+BROKEN=		Incomplete pkg-plist
+
 IGNOREFILES=	notes.html
 
 GNU_CONFIGURE=	yes

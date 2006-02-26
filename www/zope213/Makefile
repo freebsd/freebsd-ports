@@ -16,6 +16,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}29.sh zeo29.sh
 LATEST_LINK=	zope29
