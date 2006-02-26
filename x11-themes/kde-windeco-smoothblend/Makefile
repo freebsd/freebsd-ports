@@ -7,7 +7,7 @@
 
 PORTNAME=	smoothblend
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.p0z3r.org/downloads/
 PKGNAMEPREFIX=	kde-windeco-
@@ -21,7 +21,7 @@ CONFLICTS=	kdeartwork-3.5.[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/smooth-blend-${PORTVERSION}
 
 .include <bsd.port.mk>

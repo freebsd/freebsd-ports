@@ -7,7 +7,7 @@
 
 PORTNAME=	knifty
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://kde-look.org/content/files/
 PKGNAMEPREFIX=	kde-windeco-
@@ -19,7 +19,7 @@ COMMENT=	Lightweight KDE window decoration
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

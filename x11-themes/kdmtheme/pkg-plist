@@ -1,3 +1,4 @@
+lib/kde3/kcm_kdmtheme.a
 lib/kde3/kcm_kdmtheme.la
 lib/kde3/kcm_kdmtheme.so
 share/applications/kde/kdmtheme.desktop

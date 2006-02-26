@@ -7,6 +7,7 @@
 
 PORTNAME=	phase
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.usermode.org/code/
 
@@ -17,7 +18,7 @@ CONFLICTS=	kdeartwork-3.4.*
 
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
