@@ -7,6 +7,7 @@
 
 PORTNAME=	pks
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,6 @@ MAINTAINER=	gtodd@bellanet.org
 COMMENT=	PGP Public Key Server
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
-
-BROKEN=		Incomplete pkg-plist
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
@@ -28,7 +27,6 @@ MAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib SUBDIRS=
 USE_RC_SUBR=	pksd.sh
 MAN5=		pksd.conf.5
 MAN8=		pks-intro.8 pksclient.8 pksd.8 pksdctl.8
-USE_REINPLACE=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 
 # remove embedded sleepycat, remove associated build commands, make
@@ -41,7 +39,6 @@ post-patch:
 			  ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pksd.sh ${PREFIX}/etc/rc.d/pksd.sh
 	${INSTALL_DATA} ${WRKSRC}/pksd.conf ${PREFIX}/etc/pksd.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

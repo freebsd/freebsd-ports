@@ -7,15 +7,13 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for the Lucent LT Winmodem chipset
-
-BROKEN=		Incomplete pkg-plist
 
 ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
@@ -27,7 +25,7 @@ LTMDM_DEV_MAJOR		?= 228
 LTMDM_OBJ_VERSION	?= 600
 
 .if defined(WITH_595_OBJ)
-MAKE_ARGS	= LTMDM_OBJ_VERSION=595
+MAKE_ARGS=	LTMDM_OBJ_VERSION=595
 .endif
 
 MAKE_ARGS+=	LTMDM_DEV_MAJOR=${LTMDM_DEV_MAJOR}
@@ -58,7 +56,6 @@ pre-fetch:
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/sys/modules/ltmdm/ltmdm.ko ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/ltmdm.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
