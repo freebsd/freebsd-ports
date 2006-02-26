@@ -65,6 +65,10 @@ share/locale/tr/LC_MESSAGES/ld.mo
 share/locale/tr/LC_MESSAGES/opcodes.mo
 share/locale/zh_CN/LC_MESSAGES/bfd.mo
 share/locale/zh_CN/LC_MESSAGES/binutils.mo
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrm arm-elf/bin
 @dirrm arm-elf/lib/ldscripts
 @dirrm arm-elf/lib
