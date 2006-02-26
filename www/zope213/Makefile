@@ -7,6 +7,7 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
@@ -16,9 +17,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_RC_SUBR=	${PORTNAME}29.sh zeo29.sh
 LATEST_LINK=	zope29
 
@@ -69,9 +69,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}29.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/zeo29.sh         ${PREFIX}/etc/rc.d
-
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 
