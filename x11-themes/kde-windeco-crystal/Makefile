@@ -7,6 +7,7 @@
 
 PORTNAME=	kde-windeco-crystal
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.saschahlusiak.de/linux/
 DISTNAME=	crystal-${PORTVERSION}
@@ -17,6 +18,6 @@ COMMENT=	Transparent KDE window decoration
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

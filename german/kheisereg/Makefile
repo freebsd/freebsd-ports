@@ -6,7 +6,7 @@
 
 PORTNAME=		kheisereg
 PORTVERSION=		0.8
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		german kde
 MASTER_SITES=		http://www.gantz-edv.de/kheisereg/
 
@@ -17,7 +17,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_REINPLACE=		yes
 
 post-patch:

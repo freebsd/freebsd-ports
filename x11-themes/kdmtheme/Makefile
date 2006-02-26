@@ -7,7 +7,7 @@
 
 PORTNAME=	kdmtheme
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://smileaf.org/files/
 DISTNAME=	kdmtheme-${PORTVERSION}
@@ -18,9 +18,8 @@ COMMENT=	KDM Theme Manager
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDEBASE_VER=3
-
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 post-install:

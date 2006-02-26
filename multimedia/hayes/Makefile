@@ -6,7 +6,7 @@
 
 PORTNAME=		hayes
 PORTVERSION=		1.4
-PORTREVISION=	4
+PORTREVISION=		5
 CATEGORIES=		multimedia kde
 MASTER_SITES=		http://www.hakubi.us/hayes/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=		noatun:${PORTSDIR}/multimedia/kdemultimedia3
 USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_REINPLACE=		yes
 CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
 

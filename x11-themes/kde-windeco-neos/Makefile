@@ -7,7 +7,7 @@
 
 PORTNAME=	neos
 PORTVERSION=	0.2b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://perso.wanadoo.fr/chamayou/
 PKGNAMEPREFIX=	kde-windeco-
@@ -18,7 +18,7 @@ COMMENT=	KDE window decoration
 
 USE_BZIP2=      yes
 USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/kwin-${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
