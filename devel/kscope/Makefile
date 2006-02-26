@@ -22,8 +22,7 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 USE_KDEBASE_VER=3
-
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
