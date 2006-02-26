@@ -1,5 +1,7 @@
+lib/kde3/kstyle_tiblit_config.a
 lib/kde3/kstyle_tiblit_config.la
 lib/kde3/kstyle_tiblit_config.so
+lib/kde3/plugins/styles/tiblit.a
 lib/kde3/plugins/styles/tiblit.la
 lib/kde3/plugins/styles/tiblit.so
 share/apps/kdisplay/color-schemes/Tiblit-Blue.kcsrc
