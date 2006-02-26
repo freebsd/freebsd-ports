@@ -190,3 +190,4 @@
 @dirrm %%PHPUADIR%%/templates
 @dirrm %%PHPUADIR%%/wap
 @dirrm %%PHPUADIR%%
+@dirrmtry www/data
