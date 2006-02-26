@@ -71,6 +71,10 @@ MPIDIR=		${LOCALBASE}/mpich
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+WITHOUT_SUPERLU=	yes
+.endif
+
 .if exists(${MPIDIR}/bin/mpiCC) && !defined(WITHOUT_MPI)
 WITH_MPI=	yes
 .endif
