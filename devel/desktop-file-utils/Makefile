@@ -7,7 +7,7 @@
 
 PORTNAME=		desktop-file-utils
 PORTVERSION=		0.10
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		devel
 MASTER_SITES=		http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -36,11 +36,16 @@ MIMEDIRS=		${PORT_MIMEDIRS} \
 			/usr/share/applications \
 			/usr/share/gnome/applications
 
+RMDIRS=			${PORT_MIMEDIRS} \
+			${LOCALBASE}/share/gnome \
+			${X11BASE}/share/gnome
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/eggdirfuncs.c
 	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}| ;\
+		s|%%RMDIRS%%|${RMDIRS}| ; \
 		s|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
 		< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${SED} -e 's|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
