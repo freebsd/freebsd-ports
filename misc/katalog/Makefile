@@ -7,7 +7,7 @@
 
 PORTNAME=	katalog
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc kde
 MASTER_SITES=	http://salvaste.altervista.org/
 
@@ -16,7 +16,7 @@ COMMENT=	CD organizer for KDE
 
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_REINPLACE=	yes
 
 post-patch:
