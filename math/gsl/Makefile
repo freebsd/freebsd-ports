@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GSLREF}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	jon.drews@gmail.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 INSTALLS_SHLIB=	yes
