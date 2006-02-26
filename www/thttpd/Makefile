@@ -7,7 +7,7 @@
 
 PORTNAME=	thttpd
 PORTVERSION=	2.25b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://atreides.freenix.no/~anders/
@@ -17,8 +17,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Tiny/turbo/throttling HTTP server
-
-BROKEN=		Incomplete pkg-plist
 
 IGNOREFILES=	notes.html
 
@@ -57,7 +55,6 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/extras/htpasswd.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/extras/syslogtocern.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKDIR}/thttpd.conf.sample ${PREFIX}/etc/thttpd.conf.sample
-	@${INSTALL_SCRIPT} ${WRKDIR}/thttpd.sh ${PREFIX}/etc/rc.d/thttpd.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/notes.html ${DOCSDIR}/
