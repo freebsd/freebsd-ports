@@ -14,6 +14,8 @@ DISTNAME=	qadsl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable and Tiscali Internet
 
+BROKEN=		Incomplete pkg-plist
+
 USE_RC_SUBR=	qadsl.sh
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

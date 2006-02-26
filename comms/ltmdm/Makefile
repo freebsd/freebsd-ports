@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for the Lucent LT Winmodem chipset
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
