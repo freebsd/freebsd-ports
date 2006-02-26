@@ -7,7 +7,7 @@
 
 PORTNAME=	tiblit
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/
 PKGNAMEPREFIX=	kde-style-
@@ -18,7 +18,7 @@ COMMENT=	KDE style focused on customization
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
