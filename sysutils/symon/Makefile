@@ -7,15 +7,13 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.72
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
 MAINTAINER=	q@galgenberg.net
 COMMENT=	Performance and information monitoring tool
 
-BROKEN=		Incomplete pkg-plist
-
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
@@ -66,12 +64,6 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
-.if !defined(WITHOUT_SYMON)
-	${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symon.sh ${PREFIX}/etc/rc.d/symon.sh
-.endif
-.if !defined(WITHOUT_SYMUX)
-	${INSTALL_SCRIPT} -m 555 ${WRKDIR}/symux.sh ${PREFIX}/etc/rc.d/symux.sh
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
