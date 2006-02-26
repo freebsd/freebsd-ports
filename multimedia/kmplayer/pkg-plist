@@ -1,11 +1,15 @@
 bin/kmplayer
 bin/kxvplayer
+lib/kde3/kmplayer.a
 lib/kde3/kmplayer.la
 lib/kde3/kmplayer.so
+lib/kde3/libkmplayerpart.a
 lib/kde3/libkmplayerpart.la
 lib/kde3/libkmplayerpart.so
+lib/libkdeinit_kmplayer.a
 lib/libkdeinit_kmplayer.la
 lib/libkdeinit_kmplayer.so
+lib/libkmplayercommon.a
 lib/libkmplayercommon.la
 lib/libkmplayercommon.so
 share/applications/kde/kmplayer.desktop

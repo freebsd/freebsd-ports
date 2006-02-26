@@ -7,6 +7,7 @@
 
 PORTNAME=	kmplayer
 DISTVERSION=	0.9.1b
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/
@@ -22,7 +23,7 @@ USE_KDEBASE_VER=3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
