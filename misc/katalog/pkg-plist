@@ -1,10 +1,13 @@
 bin/katalogdcop
 bin/katalogservice
 include/katalogdcopinterface.h
+lib/kde3/kfile_katalog.a
 lib/kde3/kfile_katalog.la
 lib/kde3/kfile_katalog.so
+lib/kde3/kio_katalogslave.a
 lib/kde3/kio_katalogslave.la
 lib/kde3/kio_katalogslave.so
+lib/libkatalog.a
 lib/libkatalog.la
 lib/libkatalog.so
 lib/libkatalog.so.0
