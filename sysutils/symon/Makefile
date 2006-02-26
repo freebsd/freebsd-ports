@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 MAINTAINER=	q@galgenberg.net
 COMMENT=	Performance and information monitoring tool
 
+BROKEN=		Incomplete pkg-plist
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message

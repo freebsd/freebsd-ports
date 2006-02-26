@@ -16,6 +16,8 @@ COMMENT=	PGP Public Key Server
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
 		--sysconfdir=${EXAMPLESDIR} \
