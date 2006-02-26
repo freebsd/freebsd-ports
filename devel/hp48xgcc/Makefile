@@ -8,8 +8,8 @@
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:hp/}:hp \
-		ftp://ftp.gnu.org/old-gnu/gcc/:gcc \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:hp/} \
+		ftp://ftp.gnu.org/old-gnu/gcc/:gcc
 MASTER_SITE_SUBDIR=	${PORTNAME}/:hp
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:hp \
