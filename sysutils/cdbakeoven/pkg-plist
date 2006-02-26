@@ -1,4 +1,5 @@
 bin/cdbakeoven
+lib/kde3/libkcm_cdbosettings.a
 lib/kde3/libkcm_cdbosettings.la
 lib/kde3/libkcm_cdbosettings.so
 share/applnk/Settings/CDBakeOven/.directory
