@@ -9,7 +9,9 @@ PORTNAME=	gimpshop
 PORTVERSION=	2.2.10
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.plasticbugs.com/blogimg/
+MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marcus
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	rainer.alves@gmail.com
