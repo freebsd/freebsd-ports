@@ -7,6 +7,7 @@
 
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:hp/} \
 		ftp://ftp.gnu.org/old-gnu/gcc/:gcc

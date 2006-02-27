@@ -153,3 +153,4 @@ saturn-local-hp48/samples/math/gamma.c
 @dirrm saturn-local-hp48/samples/c++-hello
 @dirrm saturn-local-hp48/samples/asm-test
 @dirrm saturn-local-hp48/samples
+@dirrm saturn-local-hp48
