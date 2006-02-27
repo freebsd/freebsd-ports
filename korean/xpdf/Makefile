@@ -7,6 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-korean
@@ -15,27 +16,27 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
-		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-Korea1-0:${PORTSDIR}/print/adobe-cmaps \
+		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		${X11BASE}/lib/X11/fonts/TrueType/UnBatang.ttf:${PORTSDIR}/korean/unfonts-ttf
 
+NO_BUILD=	yes
 USE_X_PREFIX=	yes
+SUB_FILES=	dot.xpdfrc
+SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR}
+
+ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 INSTALL_FILES=	Adobe-Korea1.cidToUnicode ISO-2022-KR.unicodeMap \
-		README dot.xpdfrc
+		README
 
 .if defined(WITHOUT_X11)
 BROKEN=		Broken dependency when WITHOUT_X11 set
 .endif
 
-do-build:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	        -e 's|%%X11BASE%%|${X11BASE}|g' \
-	        -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${FILESDIR}/dot.xpdfrc > ${WRKSRC}/dot.xpdfrc
-
 do-install:
-	${MKDIR} ${PREFIX}/share/xpdf/korean
+	${MKDIR} ${DATADIR}/korean
+	${INSTALL_DATA} ${WRKDIR}/dot.xpdfrc ${DATADIR}/korean
 .for i in ${INSTALL_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/xpdf/korean
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}/korean
 .endfor
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

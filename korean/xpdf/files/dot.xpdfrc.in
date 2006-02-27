@@ -1,8 +1,9 @@
 #Korean PDF resources
+# $FreeBSD$
 cidToUnicode	Adobe-Korea1	%%PREFIX%%/share/xpdf/korean/Adobe-Korea1.cidToUnicode
 unicodeMap	ISO-2022-KR	%%PREFIX%%/share/xpdf/korean/ISO-2022-KR.unicodeMap
-cMapDir		Adobe-Korea1	%%LOCALBASE%%/share/ghostscript/Resource/CMap
-toUnicodeDir			%%LOCALBASE%%/share/ghostscript/Resource/CMap
+cMapDir		Adobe-Korea1	%%ADOBECMAPDIR%%
+toUnicodeDir			%%ADOBECMAPDIR%%
 displayNamedCIDFontTT	Batang		"%%X11BASE%%/lib/X11/fonts/TrueType/UnBatang.ttf"
 displayNamedCIDFontTT	Batang,Bold	"%%X11BASE%%/lib/X11/fonts/TrueType/UnBatangBold.ttf"
 displayNamedCIDFontTT	Dotum		"%%X11BASE%%/lib/X11/fonts/TrueType/UnDotum.ttf"
