@@ -19,7 +19,7 @@ apcupsd_enable=${apcupsd_enable:-YES}
 apcupsd_program=${apcupsd_program:-${PREFIX}/sbin/apcupsd}
 apcupsd_flags=${apcupsd_flags:-"--kill-on-powerfail"}
 apcupsd_pidfile=${apcupsd_pidfile:-/var/run/apcupsd.pid}
-apcupsd_lockfile=${apcupsd_pidfile:-/var/spool/lock/apcupsd.lock}
+apcupsd_lockfile=${apcupsd_lockfile:-/var/spool/lock/apcupsd.lock}
 
 case $1 in
     start)
