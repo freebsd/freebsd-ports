@@ -208,6 +208,7 @@ acroread-dk	ports/print/dk-acroread
 acroread-es	ports/print/es-acroread
 acroread-fi	ports/print/fi-acroread
 acroread-fr	ports/french/acroread
+acroread-ko	ports/korean/acroread
 acroread-nl	ports/print/nl-acroread
 acroread-no	ports/print/no-acroread
 acroread-pt	ports/portuguese/acroread
@@ -1103,6 +1104,7 @@ childsplay	ports/games/childsplay
 childsplay_plugins	ports/games/childsplay_plugins
 chillispot	ports/net-mgmt/chillispot
 chimera		ports/www/chimera
+chinese_docproj	ports/chinese/docproj
 chipmunk	ports/cad/chipmunk
 chipvault	ports/cad/chipvault
 chk4mail	ports/mail/chk4mail
@@ -8613,6 +8615,7 @@ p5-Net-Jabber	ports/net-im/p5-Net-Jabber
 p5-Net-LibIDN	ports/dns/p5-Net-LibIDN
 p5-Net-MSN	ports/net-im/p5-Net-MSN
 p5-Net-MovableType	ports/net/p5-Net-MovableType
+p5-Net-NBName	ports/net/p5-Net-NBName
 p5-Net-NetSend	ports/net-im/p5-Net-NetSend
 p5-Net-Netmask	ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup	ports/dns/p5-Net-Nslookup
