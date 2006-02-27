@@ -1,21 +1,15 @@
-@cwd /etc/ppp
-ip-down
-ip-up
-
-@exec mkdir -p %D/peers
-peers/xisp_cuaa0
-peers/xisp_cuaa1
-peers/xisp_cuaa2
-peers/xisp_cuaa3
-peers/xisp_umodem
-peers/xisp_dialer
-
-@cwd /usr/X11R6
 bin/xisp
 bin/xispid
 bin/xisprccv
-
-@cwd /usr/local
-@exec mkdir -p %D/libexec
+etc/ppp/ip-down.xisp
+etc/ppp/ip-up.xisp
+etc/ppp/peers/xisp_cuaa0
+etc/ppp/peers/xisp_cuaa1
+etc/ppp/peers/xisp_cuaa2
+etc/ppp/peers/xisp_cuaa3
+etc/ppp/peers/xisp_dialer
+etc/ppp/peers/xisp_umodem
 libexec/xispdial
 libexec/xispterm
+@dirrm etc/ppp/peers
+@dirrmtry etc/ppp
