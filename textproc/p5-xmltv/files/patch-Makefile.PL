@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Mon Oct 25 02:33:47 2004
-+++ Makefile.PL	Fri Nov 26 15:29:30 2004
-@@ -466,14 +466,14 @@
+--- Makefile.PL.orig	Mon Feb 27 15:53:11 2006
++++ Makefile.PL	Mon Feb 27 15:56:50 2006
+@@ -537,14 +537,14 @@ END
  	# Guess a default value for {install} based on whether
  	# prerequisites were found.
  	#
@@ -17,7 +17,7 @@
  	# Need to set {install} for each component by prompting.
  	foreach my $info (@opt_components) {
  	    my $missing = $info->{missing};
-@@ -502,8 +502,8 @@
+@@ -573,8 +573,8 @@ END
  		die;
  	    }
  	
@@ -28,3 +28,14 @@
  	}
      }
  }
+@@ -778,8 +778,8 @@ END
+     }
+ 
+     # Remove existing non-working 'uninstall' target.
+-    $inherited =~ s!^uninstall\s:.*$!!m
+-      or die "no uninstall target in: $inherited";
++    $inherited =~ s!^uninstall\s::?.*?\n\t+.*$!!m;
++    $inherited =~ s!^uninstall\s:.*$!!m;
+ 
+     # For each *_install create a corresponding _uninstall.
+     my $targets = ::targets($inherited);
