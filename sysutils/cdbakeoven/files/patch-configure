@@ -1,0 +1,57 @@
+--- configure.orig	Sat Jun  1 17:20:55 2002
++++ configure	Mon Feb 27 08:13:26 2006
+@@ -4061,14 +4061,2 @@
+ 
+-
+-# Actually configure libtool.  ac_aux_dir is where install-sh is found.
+-AR="$AR" LTCC="$CC" CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+-MAGIC_CMD="$MAGIC_CMD" LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+-LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" STRIP="$STRIP" \
+-AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
+-objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+-deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
+-|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+-
+ # Reload cache, that may have been modified by ltconfig
+@@ -4082,5 +4070,4 @@
+ 
+-
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh $ac_aux_dir/ltcf-c.sh"
++LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
+ 
+@@ -4092,32 +4079,2 @@
+ exec 5>>./config.log
+-
+-
+-
+-LIBTOOL_DEPS=$LIBTOOL_DEPS" $ac_aux_dir/ltcf-cxx.sh"
+-lt_save_CC="$CC"
+-lt_save_CFLAGS="$CFLAGS"
+-AR="$AR" LTCC="$CC" CC="$CXX" CXX="$CXX" CFLAGS="$CXXFLAGS" CPPFLAGS="$CPPFLAGS" \
+-MAGIC_CMD="$MAGIC_CMD" LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+-LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" STRIP="$STRIP" \
+-AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
+-objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+-deplibs_check_method="$deplibs_check_method" \
+-file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
+-|| { echo "configure: error: libtool tag configuration failed" 1>&2; exit 1; }
+-CC="$lt_save_CC"
+-CFLAGS="$lt_save_CFLAGS"
+-
+-# Redirect the config.log output again, so that the ltconfig log is not
+-# clobbered by the next message.
+-exec 5>>./config.log
+-
+-
+-
+-
+-
+-
+-
+-
+ 
