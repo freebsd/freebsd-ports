@@ -15,6 +15,7 @@ lib/libhpojip.so.0
 lib/libptal.so
 lib/libptal.so.0
 lib/libsane-hpoj.so
+lib/libsane-hpoj.so.1
 include/hpojip.h
 include/ptal.h
 etc/rc.d/020.ptal-init.sh.sample
