@@ -47,5 +47,8 @@ share/locale/ta/LC_MESSAGES/bluefish.mo
 share/locale/tr/LC_MESSAGES/bluefish.mo
 share/locale/zh_CN/LC_MESSAGES/bluefish.mo
 share/locale/zh_TW/LC_MESSAGES/bluefish.mo
+share/mime/application/bluefish-project.xml
 share/mime/packages/bluefish.xml
 @dirrm share/bluefish
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
