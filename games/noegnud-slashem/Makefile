@@ -46,7 +46,7 @@ pre-everything::
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/se006e4f8${EXTRACT_SUFX} ${WRKSRC}/tarballs
+	@${CP} ${DISTDIR}/se006e4f8.tar.gz ${WRKSRC}/tarballs
 	(cd ${WRKSRC} && ${MAKE} slashem-0.0.6E4F8)
 
 post-patch:
