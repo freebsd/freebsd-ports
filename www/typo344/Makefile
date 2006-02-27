@@ -7,25 +7,27 @@
 
 PORTNAME=	typo3
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 
-MAINTAINER=	tux@pinguru.net
+MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The typo3 content management system
 
 NO_BUILD=	yes
-USE_PHP=	mysql pcre xml
+USE_PHP=	mysql pcre xml session ctype
 WANT_PHP_WEB=	yes
 
 TYPO3DIR=	www/${DISTNAME}
 SITEDIR?=	www/typo3
 SITESRC=	${WRKDIR}/${EDITION}-${PORTVERSION}
 
-EDITION=	dummy
 .if defined(WITH_EDITION) && (${WITH_EDITION} == "quickstart" || ${WITH_EDITION} == "testsite")
 EDITION=	${WITH_EDITION}
+.else
+EDITION=	dummy
 .endif
 
 .if make(makesum)
@@ -50,6 +52,9 @@ USE_PHP+=	gd
 .if defined(WITH_ZLIB)
 USE_PHP+=	zlib
 .endif
+
+# Include bsd.php.mk because use USE_PHP after bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 .if defined(WITH_IMAGICK)
 LIB_DEPENDS+=	Magick.9:${PORTSDIR}/graphics/ImageMagick
