@@ -87,7 +87,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/voting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/whining.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x3196.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x3190.html
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
@@ -197,6 +197,7 @@
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla.procmailrc
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_email_append.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_ldapsync.rb
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/bzdbcopy.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugcount
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugids
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/buglist
@@ -435,12 +436,12 @@
 %%BUGZILLADIR%%/template/en/default/list/change-columns.html.tmpl
 %%BUGZILLADIR%%/template/en/default/list/edit-multiple.html.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list-simple.html.tmpl
+%%BUGZILLADIR%%/template/en/default/list/list.atom.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list.csv.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list.ics.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list.js.tmpl
 %%BUGZILLADIR%%/template/en/default/list/list.rdf.tmpl
-%%BUGZILLADIR%%/template/en/default/list/list.rss.tmpl
 %%BUGZILLADIR%%/template/en/default/list/quips.html.tmpl
 %%BUGZILLADIR%%/template/en/default/list/server-push.html.tmpl
 %%BUGZILLADIR%%/template/en/default/list/table.html.tmpl
