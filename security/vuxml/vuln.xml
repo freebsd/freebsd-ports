@@ -34,6 +34,31 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="46f7b598-a781-11da-906a-fde5cdde365e">
+    <topic>bugzilla -- multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>2.*</ge><lt>2.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Some vulnerabilities have been reported in Bugzilla,
+	  which can be exploited by malicious users to conduct SQL injection
+	  attacks, and by malicious people to disclose sensitive information
+	  and conduct script insertion attacks.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.bugzilla.org/security/2.18.4/</url>
+    </references>
+    <dates>
+      <discovery>2006-02-20</discovery>
+      <entry>2006-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af9018b6-a4f5-11da-bb41-0011433a9404">
     <topic>squirrelmail -- multiple vulnerabilities</topic>
     <affects>
