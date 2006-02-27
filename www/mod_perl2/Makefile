@@ -57,6 +57,12 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${APACHE_VERSION} >= 21
+PLIST_SUB=	THREADMUTEX=""
+.else
+PLIST_SUB=	THREADMUTEX="@comment "
+.endif
+
 pre-everything::
 .if ${APACHE_VERSION} >= 21
 	@${ECHO} "************************************************************"

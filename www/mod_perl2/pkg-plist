@@ -70,6 +70,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Status.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Table.pm
+%%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/ThreadMutex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/URI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Util.pm
@@ -208,6 +209,8 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String/String.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table/Table.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table/Table.so
+%%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.so
+%%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI/URI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI/URI.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/UUID/UUID.bs
@@ -304,6 +307,7 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/UUID
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI
+%%THREADMUTEX%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status
@@ -329,6 +333,6 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/APR
-@dirrm include/apache2/modules/perl
-@dirrmtry include/apache2/modules
-@dirrmtry include/apache2
+@dirrm %%APACHEINCLUDEDIR%%/modules/perl
+@dirrmtry %%APACHEINCLUDEDIR%%/modules
+@dirrmtry %%APACHEINCLUDEDIR%%
