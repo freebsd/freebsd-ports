@@ -175,39 +175,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="17c2a61e-a20b-11da-b410-000e0c2e438a">
-    <topic>pinentry -- local privilege escalation</topic>
-    <affects>
-      <package>
-	<name>pinentry</name>
-	<name>pinentry-curses</name>
-	<name>pinentry-gtk</name>
-	<name>pinentry-gtk2</name>
-	<name>pinentry-qt</name>
-	<range><gt>0</gt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Tavis Ormandy reports:</p>
-	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200601-01.xml">
-	  <p>Tavis Ormandy of the Gentoo Linux Security Audit Team has
-	    discovered that the pinentry ebuild incorrectly sets the
-	    permissions of the pinentry binaries upon installation, so
-	    that the sgid bit is set making them execute with the
-	    privileges of group ID 0.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.gentoo.org/security/en/glsa/glsa-200601-01.xml</url>
-    </references>
-    <dates>
-      <discovery>2006-01-03</discovery>
-      <entry>2006-02-20</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="0b2b4b4d-a07c-11da-be0a-000c6ec775d9">
     <topic>postgresql81-server -- SET ROLE privilege escalation</topic>
     <affects>
