@@ -7,6 +7,7 @@
 
 PORTNAME=	htree
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	ftp://ftp.rucus.ru.ac.za/pub/FreeBSD/distfiles/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
