@@ -182,7 +182,12 @@
 %%GSRES_DIR%%/CMap/HK-RKSJ-H
 %%GSRES_DIR%%/CMap/KSC2-RKSJ-H
 %%GSRES_DIR%%/CMap/TCVN-RKSJ-H
+%%GSRES_DIR%%/CMap/Adobe-CNS1-UCS2
+%%GSRES_DIR%%/CMap/Adobe-GB1-UCS2
+%%GSRES_DIR%%/CMap/Adobe-Japan1-UCS2
+%%GSRES_DIR%%/CMap/Adobe-Korea1-UCS2
 @dirrm %%GSRES_DIR%%/CMap
+@dirrmtry %%GSRES_DIR%%
 @exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed
 @exec /usr/bin/sed -e 's:^%.*(a4):(a4):g' %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed > %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps
 @unexec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps
