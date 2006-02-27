@@ -1,12 +1,14 @@
---- Makefile.orig	Sun Mar  7 17:37:41 2004
-+++ Makefile	Sun Feb 22 06:14:06 2004
-@@ -13,11 +13,11 @@
+--- Makefile.orig	Sun Nov  6 22:38:22 2005
++++ Makefile	Mon Feb 27 08:22:22 2006
+@@ -12,12 +12,12 @@
+ #  Compilation/installation vars (global for all following sections) |
  #=====================================================================
  #
- CC         = gcc
+-CC         = gcc
 -PREFIX     = /usr/local
 -X11PREFIX  = /usr/X11R6
-+PREFIX     = ${LOCALBASE}
++CC         ?= gcc
++PREFIX     = %%PREFIX%%
 +X11PREFIX  = ${X11BASE}
  INCX11     = $(X11PREFIX)/include
  LIBX11     = $(X11PREFIX)/lib
@@ -16,7 +18,7 @@
  MODEM_DEV  = modem
  MODEM_PATH = /dev/$(MODEM_DEV)
 @@ -29,26 +29,26 @@
- # Normal (i.e. SuSE-[678].x) vars; for SuSE-5.x use the lines which
+ # Normal (i.e. SuSE-[6789].x) vars; for SuSE-5.x use the lines which
  # DO NOT include -lcrypt for EXTRALIBS and -DGLIBC2 for EXTRADEFS.
  #-------------------------------------------------------------------
 -BINX11     = $(X11PREFIX)/bin
@@ -60,7 +62,7 @@
  #
  # Debian vars (if your Debian distribution is relatively
  # old and does not use glibc2, use the lines which DO NOT
-@@ -209,29 +209,29 @@
+@@ -208,29 +208,29 @@
  #
  # FreeBSD vars
  #-------------
@@ -93,7 +95,7 @@
 +VARRUN     = /var/run
 +USRLIBPPP  = $(PREFIX)/libexec
 +MANDIR     = $(PREFIX)/man/man1
-+ETCPPP     = /etc/ppp
++ETCPPP     = ${PREFIX}/etc/ppp
 +OPTSDIR    = $(ETCPPP)
 +INSTPPPDIR = $(ETCPPP)
 +PPPDLCKDIR = /var/spool/lock
@@ -101,7 +103,7 @@
 +GROUP      = dialer
 +CHAT_PATH  = /usr/bin
 +PPPD_PATH  = /usr/sbin
-+CCFLAGS    = -Wall -O -DUSE_OPENSSL
++CCFLAGS    ?= -Wall -O -DUSE_OPENSSL
 +EXTRALIBS  = -lcrypto
 +LINKX11    = -Wl,-R$(LIBX11)
 +LINKFORMS  = -L$(LIBFORMS) -lforms
@@ -113,9 +115,18 @@
  #
  #=====================================================================
  #                    Program configuration options                   |
-@@ -407,23 +407,32 @@
+@@ -399,30 +399,39 @@
+ 	  mv -f $(DESTDIR)$(INSTPPPDIR)/ip-up \
+ 	  $(DESTDIR)$(INSTPPPDIR)/ip-up.bak; fi
  	$(INSTALL) -g $(GROUP) -m 750 -o root \
- 	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down
+-	  ip-up.install $(DESTDIR)$(INSTPPPDIR)/ip-up
++	  ip-up.install $(DESTDIR)$(INSTPPPDIR)/ip-up.xisp
+ 	if [ -f $(DESTDIR)$(INSTPPPDIR)/ip-down ]; then \
+ 	  mv -f $(DESTDIR)$(INSTPPPDIR)/ip-down \
+ 	  $(DESTDIR)$(INSTPPPDIR)/ip-down.bak; fi
+ 	$(INSTALL) -g $(GROUP) -m 750 -o root \
+-	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down
++	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down.xisp
  	rm -f ip-up.install ip-down.install
 -	sed -e sM__DEVICEM$(MODEM_PATH)M \
 -	  < xisp.peers.device > xisp_$(MODEM_DEV)
@@ -153,7 +164,7 @@
  
  clean:
  	rm -f *.o xisp xispdial xisprccv xispterm xispid xisp.xpm xisp.1
-@@ -435,10 +444,12 @@
+@@ -434,10 +443,12 @@
  	  $(DESTDIR)$(USRLOCAL)/xisprccv \
  	  $(DESTDIR)$(USRLOCAL)/xispid \
  	  $(DESTDIR)$(MANDIR)/xisp.1 \

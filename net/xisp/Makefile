@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xisp
-PORTVERSION=	2.7p1
+PORTVERSION=	2.7p4
 CATEGORIES=	net
 MASTER_SITES=	http://xisp.hellug.gr/release/
 
@@ -17,10 +17,15 @@ COMMENT=	A user-friendly X interface to pppd/chat
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-BROKEN=		Installs into etc/ppp and doesn't clean it up
-
 USE_XPM=	yes
+USE_X_PREFIX=	yes
+
+MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
 MAN1=		xisp.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
