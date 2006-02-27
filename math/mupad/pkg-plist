@@ -1,3 +1,11 @@
+bin/mmg
+bin/mmg32
+bin/mupad
+bin/mupad32
+bin/xmupad
+bin/xmupad32
+bin/xvc2jvx
+bin/xvc2jvx32
 MuPAD-3.2.0/LICENSE
 MuPAD-3.2.0/packages/Combinat/AUTHORS
 MuPAD-3.2.0/packages/Combinat/BUGS
