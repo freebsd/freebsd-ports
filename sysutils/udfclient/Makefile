@@ -8,7 +8,8 @@
 PORTNAME=	udfclient
 PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
+MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
+		${MASTER_SITE_NETBSD}
 DISTNAME=	UDFclient.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
