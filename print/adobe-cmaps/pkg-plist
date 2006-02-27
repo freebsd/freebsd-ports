@@ -187,6 +187,10 @@
 %%CMAPDIR%%/rksj-cmaps/KSC-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/KSC2-RKSJ-H
 %%CMAPDIR%%/rksj-cmaps/TCVN-RKSJ-H
+%%CMAPDIR%%/tounicode/Adobe-CNS1-UCS2
+%%CMAPDIR%%/tounicode/Adobe-GB1-UCS2
+%%CMAPDIR%%/tounicode/Adobe-Japan1-UCS2
+%%CMAPDIR%%/tounicode/Adobe-Korea1-UCS2
 @dirrm %%CMAPDIR%%/ac15/CMap
 @dirrm %%CMAPDIR%%/ac15
 @dirrm %%CMAPDIR%%/ag15/CMap
@@ -200,5 +204,6 @@
 @dirrm %%CMAPDIR%%/ak12/CMap
 @dirrm %%CMAPDIR%%/ak12
 @dirrm %%CMAPDIR%%/rksj-cmaps
+@dirrm %%CMAPDIR%%/tounicode
 @dirrmtry %%CMAPDIR%%
 @dirrmtry share/fonts

@@ -19,3 +19,6 @@ SIZE (adobe/ak12.tar.Z) = 789739
 MD5 (adobe/rksj-cmaps.tar.Z) = 98b26cb513014491ed401dd2bb03535a
 SHA256 (adobe/rksj-cmaps.tar.Z) = 5bf8e30c95c899f6ee4dff08c934f38b510cc79930124b85117255d926d9029d
 SIZE (adobe/rksj-cmaps.tar.Z) = 40873
+MD5 (adobe/tounicode.tar.Z) = aa6817065bb0a799219f9bd452c91622
+SHA256 (adobe/tounicode.tar.Z) = 408ef3e2d64f80e0f60174b48c012c1135061b9ca480afc091ccd4e3704ca6f1
+SIZE (adobe/tounicode.tar.Z) = 358897
