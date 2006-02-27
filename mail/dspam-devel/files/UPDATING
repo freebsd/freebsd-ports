@@ -11,6 +11,14 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.4_1 (Added post-factum, mega libtool commit)
+#
+
+No functional changes, PORTREVISION bump for plist chage because now we
+install .la files.
+
+
+###########################################################################
 # dspam-devel-3.6.4
 #
 

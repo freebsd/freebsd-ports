@@ -3,7 +3,7 @@
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.34 2006/02/11 09:26:54 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.36 2006/02/26 02:23:16 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -22,7 +22,7 @@ COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.6.4
 #SNAP_DATE=	.20060211.0037
-_UPD_LINE_NO=	9
+_UPD_LINE_NO=	7
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.3.20060203.1409
 
