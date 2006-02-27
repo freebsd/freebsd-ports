@@ -95,7 +95,7 @@
      case $l in
        -L*) lpaths="$lpaths $l" ;;
 -      -l*) test x"$l" != x"-lgtk" && xlibs="$xlibs $l" ;;
-+      -l*) test x"$l" != x"-lgtk12" && xlibs="$xlibs $l" ;;
++      -l*) test x"$l" != x"-lgtk-12" && xlibs="$xlibs $l" ;;
          *) xlf="$xlf $l" ;;
      esac
    done
@@ -105,14 +105,14 @@
      LDFLAGS="$LDFLAGS $gtk_ll"
 -    echo "$as_me:$LINENO: checking for gtk_init in -lgtk" >&5
 -echo $ECHO_N "checking for gtk_init in -lgtk... $ECHO_C" >&6
-+    echo "$as_me:$LINENO: checking for gtk_init in -lgtk12" >&5
-+echo $ECHO_N "checking for gtk_init in -lgtk12... $ECHO_C" >&6
++    echo "$as_me:$LINENO: checking for gtk_init in -lgtk-12" >&5
++echo $ECHO_N "checking for gtk_init in -lgtk-12... $ECHO_C" >&6
  if test "${ac_cv_lib_gtk_gtk_init+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgtk $GTK_EXTRA_LIBS $LIBS"
-+LIBS="-lgtk12 $GTK_EXTRA_LIBS $LIBS"
++LIBS="-lgtk-12 $GTK_EXTRA_LIBS $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
@@ -121,7 +121,7 @@
  echo "${ECHO_T}$ac_cv_lib_gtk_gtk_init" >&6
  if test $ac_cv_lib_gtk_gtk_init = yes; then
 -  GTK_LIBS="$gtk_ll -lgtk $GTK_EXTRA_LIBS"
-+  GTK_LIBS="$gtk_ll -lgtk12 $GTK_EXTRA_LIBS"
++  GTK_LIBS="$gtk_ll -lgtk-12 $GTK_EXTRA_LIBS"
  else
  
  tc_pkg_err="yes"
