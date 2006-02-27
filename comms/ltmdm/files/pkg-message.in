@@ -5,3 +5,13 @@
 * source update.  To do this reinstall the port.                              *
 *                                                                             *
 *******************************************************************************
+To use these drivers, make sure that you have loaded the ltmdm kernel
+module, by doing
+
+	# kldload ltmdm
+
+or adding
+
+	ltmdm_load="YES"
+
+to your /boot/loader.conf.

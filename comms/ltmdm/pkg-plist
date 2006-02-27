@@ -1,1 +1,18 @@
-@unexec sh %D/etc/rc.d/ltmdm.sh stop || true
+@cwd %%KMODDIR%%
+ltmdm.ko
+%%FREEBSD5%%@unexec kldxref %D
+%%FREEBSD4%%@cwd /dev
+%%FREEBSD4%%@exec umask 7
+%%FREEBSD4%%@exec mknod /dev/cual0 c %%MAJOR%% 128 uucp:dialer
+%%FREEBSD4%%@exec mknod /dev/cuail0 c %%MAJOR%% 160 uucp:dialer
+%%FREEBSD4%%@exec mknod /dev/cuall0 c %%MAJOR%% 192 uucp:dialer
+%%FREEBSD4%%@exec umask 77
+%%FREEBSD4%%@exec mknod /dev/ttyl0 c %%MAJOR%% 0 uucp:dialer
+%%FREEBSD4%%@exec mknod /dev/ttyil0 c %%MAJOR%% 32 uucp:dialer
+%%FREEBSD4%%@exec mknod /dev/ttyll0 c %%MAJOR%% 64 uucp:dialer
+%%FREEBSD4%%@unexec rm -f /dev/cual0
+%%FREEBSD4%%@unexec rm -f /dev/cuail0
+%%FREEBSD4%%@unexec rm -f /dev/cuall0
+%%FREEBSD4%%@unexec rm -f /dev/ttyl0
+%%FREEBSD4%%@unexec rm -f /dev/ttyil0
+%%FREEBSD4%%@unexec rm -f /dev/ttyll0
