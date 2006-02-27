@@ -6,7 +6,7 @@ include/inti-1.0/inti/inti-gconf.h
 @dirrm include/inti-1.0/inti/gconf
 lib/inti-1.0/include/inti-gconf-config.h
 lib/libinti-gconf-1.0.a
-lib/libinti-gconf-1.0.l
+lib/libinti-gconf-1.0.la
 lib/libinti-gconf-1.0.so
 lib/libinti-gconf-1.0.so.6
 libdata/pkgconfig/inti-gconf-1.0.pc
