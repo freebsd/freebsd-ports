@@ -2,14 +2,15 @@ bin/jigdo-file
 bin/jigdo-lite
 bin/jigdo-mirror
 %%SUB_GUI%%bin/jigdo
-share/jigdo/debian-mirrors.jigdo
-%%SUB_GUI%%share/jigdo/COPYING
-%%SUB_GUI%%share/jigdo/pixmaps/close.png
-%%SUB_GUI%%share/jigdo/pixmaps/jigdo-logo.png
-%%SUB_GUI%%share/jigdo/pixmaps/pause.png
-%%SUB_GUI%%share/jigdo/pixmaps/progress-green.png
-%%SUB_GUI%%share/jigdo/pixmaps/restart.png
-%%SUB_GUI%%share/jigdo/pixmaps/start.png
-%%SUB_GUI%%share/jigdo/pixmaps/stop.png
-%%SUB_GUI%%@dirrm share/jigdo/pixmaps
-@dirrm share/jigdo
+%%DATADIR%%/debian-mirrors.jigdo
+%%SUB_GUI%%%%DATADIR%%/COPYING
+%%SUB_GUI%%%%DATADIR%%/pixmaps/close.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/jigdo-logo.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/pause.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/progress-green.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/restart.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/start.png
+%%SUB_GUI%%%%DATADIR%%/pixmaps/stop.png
+%%SUB_GUI%%@dirrm %%DATADIR%%/pixmaps
+%%NLS%%share/locale/de/LC_MESSAGES/jigdo.mo
+@dirrm %%DATADIR%%
