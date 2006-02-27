@@ -1,3 +1,4 @@
+# $FreeBSD$
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
 CATEGORIES=	print
