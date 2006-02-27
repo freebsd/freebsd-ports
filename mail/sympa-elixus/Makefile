@@ -14,8 +14,6 @@ COMMENT=	An electronic mailing list manager with elixus.org patches
 BUILD_DEPENDS=	${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
-BROKEN=		Incomplete pkg-plist
-
 MASTERDIR=	${.CURDIR}/../../mail/sympa
 MD5_FILE=	${.CURDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files

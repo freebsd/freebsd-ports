@@ -378,6 +378,24 @@ sympa/sample/sympa.conf
 sympa/sample/topics.fr.conf
 sympa/sample/topics.hu.conf
 sympa/sample/wwsympa.conf
+www/icons/back.png
+www/icons/begin.png
+www/icons/binary.png
+www/icons/down.png
+www/icons/end.png
+www/icons/folder.open.png
+www/icons/folder.png
+www/icons/image2.png
+www/icons/left.png
+www/icons/link.png
+www/icons/locked.png
+www/icons/logo-s-lock.png
+www/icons/logo-s.png
+www/icons/movie.png
+www/icons/right.png
+www/icons/sound1.png
+www/icons/text.png
+www/icons/unknown.png
 @dirrm sympa/spool/tmp
 @dirrm sympa/spool/task
 @dirrm sympa/spool/outgoing
@@ -414,3 +432,4 @@ sympa/sample/wwsympa.conf
 @dirrm sympa/bin/Marc
 @dirrm sympa/bin
 @dirrm sympa
+@dirrmtry www/icons
