@@ -11,5 +11,6 @@ if [ "x$2" != "xDEINSTALL" ]; then
   exit 0
 fi
 
+cp ${FONTMAP} ${FONTMAPTMP}
 sed -e "/^\/MOE.*/d" ${FONTMAP} > ${FONTMAPTMP}
 mv -f ${FONTMAPTMP} ${FONTMAP}
