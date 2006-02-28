@@ -200,22 +200,6 @@ avr/lib/libscanf_min.a
 bin/avr-man
 share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/LICENSE
-share/doc/avr-libc/examples/demo/Makefile
-share/doc/avr-libc/examples/demo/demo.c
-share/doc/avr-libc/examples/demo/iocompat.h
-share/doc/avr-libc/examples/largedemo/Makefile
-share/doc/avr-libc/examples/largedemo/largedemo.c
-share/doc/avr-libc/examples/stdiodemo/Makefile
-share/doc/avr-libc/examples/stdiodemo/defines.h
-share/doc/avr-libc/examples/stdiodemo/hd44780.c
-share/doc/avr-libc/examples/stdiodemo/hd44780.h
-share/doc/avr-libc/examples/stdiodemo/lcd.c
-share/doc/avr-libc/examples/stdiodemo/lcd.h
-share/doc/avr-libc/examples/stdiodemo/stdiodemo.c
-share/doc/avr-libc/examples/stdiodemo/uart.c
-share/doc/avr-libc/examples/stdiodemo/uart.h
-share/doc/avr-libc/examples/twitest/Makefile
-share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm avr/include/util
 @dirrm avr/include/compat
 @dirrm avr/include/avr
@@ -223,9 +207,4 @@ share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
-@dirrm share/doc/avr-libc/examples/twitest
-@dirrm share/doc/avr-libc/examples/stdiodemo
-@dirrm share/doc/avr-libc/examples/largedemo
-@dirrm share/doc/avr-libc/examples/demo
-@dirrm share/doc/avr-libc/examples
 @dirrm share/doc/avr-libc
