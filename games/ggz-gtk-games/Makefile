@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-gtk-games
 PORTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
