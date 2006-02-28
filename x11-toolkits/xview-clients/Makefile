@@ -19,9 +19,10 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
-PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:build
+PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:patch
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+USE_IMAKE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
