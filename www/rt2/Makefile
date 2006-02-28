@@ -7,7 +7,7 @@
 
 PORTNAME=	rt2
 PORTVERSION=	2.0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 DISTNAME=	rt-${PORTVERSION:S/./-/g}
@@ -71,12 +71,12 @@ MAN3=		RT::Links.3 RT::Watchers.3 RT::Group.3 RT::Keyword.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${DB_TYPE} == "Pg"
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.if ${PERL_LEVEL} < 500800
+IGNORE=		dependencies require perl 5.8.0 or later. Install lang/perl5.8 and try again
 .endif
+
+.if ${DB_TYPE} == "Pg"
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server

@@ -305,13 +305,12 @@ rt2/lib/RT/Action/README.hackers
 rt2/lib/RT/Action/ResolveMembers.pm
 rt2/lib/RT/Action/NotifyAsComment.pm
 rt2/lib/RT/Action/Autoreply.pm
-rt2/lib/auto/RT/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RT/.packlist
 rt2/README
+@dirrmtry lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RT
 @dirrm rt2/local/WebRT/html
 @dirrm rt2/local/WebRT
 @dirrm rt2/local
-@dirrm rt2/lib/auto/RT
-@dirrm rt2/lib/auto
 @dirrm rt2/lib/RT/Interface
 @dirrm rt2/lib/RT/Condition
 @dirrm rt2/lib/RT/Action
