@@ -8,6 +8,7 @@ include/musicbrainz/mb_c.h
 include/musicbrainz/musicbrainz.h
 include/musicbrainz/queries.h
 lib/libmusicbrainz.a
+lib/libmusicbrainz.la
 lib/libmusicbrainz.so
 lib/libmusicbrainz.so.2
 @dirrm include/musicbrainz/bitzi

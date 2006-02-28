@@ -16,7 +16,6 @@ COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
 CONFLICTS=	libmusicbrainz-*
 
-BROKEN=		Does not build
 DEPRECATED=	Surpassed by audio/libmusicbrainz
 EXPIRATION_DATE=2006-03-14
 
