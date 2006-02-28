@@ -8,7 +8,8 @@
 PORTNAME=	exiv2
 PORTVERSION=	0.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://home.arcor.de/ahuggel/exiv2/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
