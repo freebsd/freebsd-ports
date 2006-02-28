@@ -16,8 +16,6 @@ DISTNAME=	BasiliskII_src_22112005
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
-BROKEN=		Does not compile
-
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
