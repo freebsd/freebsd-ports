@@ -301,102 +301,106 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%GTKSPELL%%lib/ocaml/stublibs/dlllablgtkspell.so
 %%PANEL%%lib/ocaml/stublibs/dlllablpanel.so
 %%RSVG%%lib/ocaml/stublibs/dlllablrsvg.so
-%%EXAMPLESDIR%%/GL/gears.ml
-%%EXAMPLESDIR%%/GL/morph3d.ml
-%%EXAMPLESDIR%%/GL/planet.ml
-%%EXAMPLESDIR%%/GL/scene.ml
-%%EXAMPLESDIR%%/GL/simple.ml
-%%EXAMPLESDIR%%/GL/texturesurf.ml
-%%EXAMPLESDIR%%/GL/tutorial-2.ml
-%%EXAMPLESDIR%%/GL/tutorial-3.ml
-%%EXAMPLESDIR%%/GL/tutorial-4.ml
-%%EXAMPLESDIR%%/GL/tutorial-5.ml
-%%EXAMPLESDIR%%/action.ml
-%%EXAMPLESDIR%%/buttons.ml
-%%EXAMPLESDIR%%/calc.ml
-%%EXAMPLESDIR%%/calendar.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-arrowhead.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-curve.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-features.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-fifteen.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-primitives.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-richtext.ml
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/flower.png
-%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/toroid.png
-%%EXAMPLESDIR%%/clist.ml
-%%EXAMPLESDIR%%/combo.ml
-%%EXAMPLESDIR%%/combobox.ml
-%%EXAMPLESDIR%%/counter.ml
-%%EXAMPLESDIR%%/csview.ml
-%%EXAMPLESDIR%%/dcalendar.ml
-%%EXAMPLESDIR%%/drawing.ml
-%%EXAMPLESDIR%%/druid.ml
-%%EXAMPLESDIR%%/editor.ml
-%%EXAMPLESDIR%%/editor2.ml
-%%EXAMPLESDIR%%/entry.ml
-%%EXAMPLESDIR%%/entrycompletion.ml
-%%EXAMPLESDIR%%/events.ml
-%%EXAMPLESDIR%%/events2.ml
-%%EXAMPLESDIR%%/expander.ml
-%%EXAMPLESDIR%%/fifteen.ml
-%%EXAMPLESDIR%%/filechooser.ml
-%%EXAMPLESDIR%%/fixed_editor.ml
-%%EXAMPLESDIR%%/fixpoint.ml
-%%EXAMPLESDIR%%/giotest.ml
-%%GLADE%%%%EXAMPLESDIR%%/glade/glade_demo.ml
-%%GLADE%%%%EXAMPLESDIR%%/glade/gladecalc.ml
-%%GLADE%%%%EXAMPLESDIR%%/glade/project1.glade
-%%GLADE%%%%EXAMPLESDIR%%/glade/project1.gladep
-%%GLADE%%%%EXAMPLESDIR%%/glade/project2.glade
-%%GLADE%%%%EXAMPLESDIR%%/glade/project2.gladep
-%%EXAMPLESDIR%%/hello.ml
-%%EXAMPLESDIR%%/iconview.ml
-%%EXAMPLESDIR%%/image.ml
-%%EXAMPLESDIR%%/image256x256.rgb
-%%EXAMPLESDIR%%/kaimono.ml
-%%EXAMPLESDIR%%/label.ml
-%%EXAMPLESDIR%%/lissajous.ml
-%%EXAMPLESDIR%%/nihongo.ml
-%%EXAMPLESDIR%%/notebook.ml
-%%PANEL%%%%EXAMPLESDIR%%/panel/README
-%%PANEL%%%%EXAMPLESDIR%%/panel/applet.ml
-%%PANEL%%%%EXAMPLESDIR%%/panel/lablgtk_applet.server
-%%EXAMPLESDIR%%/pixview.ml
-%%EXAMPLESDIR%%/pousse.ml
-%%EXAMPLESDIR%%/progressbar.ml
-%%EXAMPLESDIR%%/radiobuttons.ml
-%%EXAMPLESDIR%%/rpn.ml
-%%RSVG%%%%EXAMPLESDIR%%/rsvg/floppy.svg
-%%RSVG%%%%EXAMPLESDIR%%/rsvg/test_rsvg.ml
-%%EXAMPLESDIR%%/scrolledwin.ml
-%%EXAMPLESDIR%%/signal_override.ml
-%%EXAMPLESDIR%%/socket.ml
-%%EXAMPLESDIR%%/spell.ml
-%%EXAMPLESDIR%%/test.xpm
-%%EXAMPLESDIR%%/testdnd.ml
-%%EXAMPLESDIR%%/testgtk.ml
-%%EXAMPLESDIR%%/text/Makefile
-%%EXAMPLESDIR%%/text/floppybuddy.gif
-%%EXAMPLESDIR%%/text/gtk-logo-rgb.gif
-%%EXAMPLESDIR%%/text/test.txt
-%%EXAMPLESDIR%%/text/test_text.ml
-%%EXAMPLESDIR%%/text/text-demo.ml
-%%EXAMPLESDIR%%/text/unicode_table.ml
-%%EXAMPLESDIR%%/text/unicode_viewer.ml
-%%EXAMPLESDIR%%/timer.ml
-%%EXAMPLESDIR%%/toolbar.ml
-%%EXAMPLESDIR%%/tree.ml
-%%EXAMPLESDIR%%/tree_model.ml
-%%EXAMPLESDIR%%/tree_store.ml
-%%EXAMPLESDIR%%/tron.ml
-@dirrm %%EXAMPLESDIR%%/text
-%%RSVG%%@dirrm %%EXAMPLESDIR%%/rsvg
-%%PANEL%%@dirrm %%EXAMPLESDIR%%/panel
-%%GLADE%%@dirrm %%EXAMPLESDIR%%/glade
-%%GNOMECANVAS%%@dirrm %%EXAMPLESDIR%%/canvas
-@dirrm %%EXAMPLESDIR%%/GL
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/examples/ocaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/gears.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/morph3d.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/planet.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/scene.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/simple.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/texturesurf.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-2.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-3.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-4.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-5.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/action.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/buttons.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/calc.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/calendar.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-arrowhead.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-curve.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-features.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-fifteen.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-primitives.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-richtext.ml
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/flower.png
+%%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/toroid.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/clist.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/combo.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/combobox.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/counter.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/csview.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/dcalendar.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/drawing.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/druid.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/editor.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/editor2.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/entry.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/entrycompletion.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/events.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/events2.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/expander.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/fifteen.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/filechooser.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/fixed_editor.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/fixpoint.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/giotest.ml
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/glade_demo.ml
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/gladecalc.ml
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/project1.glade
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/project1.gladep
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/project2.glade
+%%PORTDOCS%%%%GLADE%%%%EXAMPLESDIR%%/glade/project2.gladep
+%%PORTDOCS%%%%EXAMPLESDIR%%/hello.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/iconview.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/image.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/image256x256.rgb
+%%PORTDOCS%%%%EXAMPLESDIR%%/kaimono.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/label.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/lissajous.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/nihongo.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/notebook.ml
+%%PORTDOCS%%%%PANEL%%%%EXAMPLESDIR%%/panel/README
+%%PORTDOCS%%%%PANEL%%%%EXAMPLESDIR%%/panel/applet.ml
+%%PORTDOCS%%%%PANEL%%%%EXAMPLESDIR%%/panel/lablgtk_applet.server
+%%PORTDOCS%%%%EXAMPLESDIR%%/pixview.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/pousse.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/progressbar.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/radiobuttons.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpn.ml
+%%PORTDOCS%%%%RSVG%%%%EXAMPLESDIR%%/rsvg/floppy.svg
+%%PORTDOCS%%%%RSVG%%%%EXAMPLESDIR%%/rsvg/test_rsvg.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/scrolledwin.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/signal_override.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/socket.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/spell.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/testdnd.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/testgtk.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/floppybuddy.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/gtk-logo-rgb.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/test.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/test_text.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/text-demo.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/unicode_table.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/text/unicode_viewer.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/timer.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/toolbar.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_model.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree_store.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tron.ml
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/text
+%%PORTDOCS%%%%RSVG%%@dirrm %%EXAMPLESDIR%%/rsvg
+%%PORTDOCS%%%%PANEL%%@dirrm %%EXAMPLESDIR%%/panel
+%%PORTDOCS%%%%GLADE%%@dirrm %%EXAMPLESDIR%%/glade
+%%PORTDOCS%%%%GNOMECANVAS%%@dirrm %%EXAMPLESDIR%%/canvas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/GL
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry share/examples/ocaml
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/ocaml
 @dirrmtry lib/ocaml/stublibs
 @dirrm lib/ocaml/lablgtk2
 @dirrmtry lib/ocaml
