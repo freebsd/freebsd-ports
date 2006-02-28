@@ -138,8 +138,6 @@ post-install:
 	done
 .if !defined(NOPORTDOCS)
 	${GMAKE} -C ${WRKSRC} install-doc
-	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKDIR}/doc/doc/* ${DOCSDIR}/html
 .endif
 
 .include <bsd.port.post.mk>
