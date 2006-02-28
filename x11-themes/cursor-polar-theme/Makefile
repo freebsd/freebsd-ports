@@ -8,7 +8,8 @@
 PORTNAME=	cursor-polar-theme
 PORTVERSION=	1.3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/content/files/ \
+		http://dl.droso.net/FreeBSD/distfiles/
 DISTNAME=	27913-PolarCursorTheme
 
 MAINTAINER=	decept0@gmail.com
