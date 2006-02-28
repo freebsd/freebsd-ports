@@ -30,4 +30,5 @@ share/doc/yatex/yatexref.eng
 @dirrmtry lib/xemacs/site-packages/info
 @dirrmtry lib/xemacs/site-packages/pkginfo
 @dirrmtry lib/xemacs/site-packages
+@dirrmtry lib/xemacs
 @dirrm share/doc/yatex
