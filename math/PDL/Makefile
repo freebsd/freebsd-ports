@@ -32,6 +32,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		yes
 PERL_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAKE_ENV+=	PERL5LIB=${WRKSRC}/blib/lib
 PLIST_DIRS=	${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline
 PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/Pdlpp.pm \
@@ -53,7 +55,7 @@ pre-extract:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=	"test script t/flexraw.t fails all 26 tests"
+BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
 
 .if ${PERL_LEVEL} < 500601
