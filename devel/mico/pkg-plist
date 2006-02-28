@@ -333,86 +333,6 @@ lib/libmicoir2.3.11.so.1
 %%MICO_X11%%lib/libmicox2.3.11.so.1
 lib/mico-setup.csh
 lib/mico-setup.sh
-%%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
-%%PORTDOCS%%%%DOCSDIR%%/html/doc.css
-%%PORTDOCS%%%%DOCSDIR%%/html/doc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/footnode.html
-%%PORTDOCS%%%%DOCSDIR%%/html/images.aux
-%%PORTDOCS%%%%DOCSDIR%%/html/images.bbl
-%%PORTDOCS%%%%DOCSDIR%%/html/images.log
-%%PORTDOCS%%%%DOCSDIR%%/html/images.pl
-%%PORTDOCS%%%%DOCSDIR%%/html/images.tex
-%%PORTDOCS%%%%DOCSDIR%%/html/img1.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img10.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img11.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img12.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img13.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img14.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img15.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img16.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img17.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img18.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img19.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img2.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img20.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img21.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img22.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img23.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img24.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img3.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img4.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img5.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img6.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img7.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img8.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/img9.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/internals.pl
-%%PORTDOCS%%%%DOCSDIR%%/html/labels.pl
-%%PORTDOCS%%%%DOCSDIR%%/html/node1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node11.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node12.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node13.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node14.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node15.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node16.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node17.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node18.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node19.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node20.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node21.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node22.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node23.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node24.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node25.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node26.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node27.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node28.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node29.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node30.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node31.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node32.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node33.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node34.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node35.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node36.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node37.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node38.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node39.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node40.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node41.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node42.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node43.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node44.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/node9.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/MakeVars
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
@@ -1237,7 +1157,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bench
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/mico/transport
 @dirrm include/mico/security
