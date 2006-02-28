@@ -30,7 +30,7 @@
 +    # FreeBSD jails map the outgoing IP to the jail IP - we need to
 +    # allow the real IP unless we want the test to run forever.
 +    if test "`sysctl 2>/dev/null -n security.jail.jailed`" = 1 \
-+    || `ps -ostate $$ | tail -n1 | grep >/dev/null J` ; then
++    || ps -ostate= -p $$ | grep -q J; then
 +	addopts="--float"
 +	if test "x`ifconfig | grep inet`" = x ; then
 +	    echo "###"
