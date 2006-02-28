@@ -39,6 +39,7 @@ include/osb/JavaScriptCore/types.h
 include/osb/JavaScriptCore/ustring.h
 include/osb/JavaScriptCore/value.h
 lib/libjscore.a
+lib/libjscore.la
 lib/libjscore.so
 lib/libjscore.so.0
 libdata/pkgconfig/osb-jscore.pc
