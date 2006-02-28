@@ -6,7 +6,7 @@
 #   $Id: Makefile,v 1.2 2006/02/15 19:15:40 tmclau02 Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp
 
@@ -48,6 +48,7 @@ post-patch:
 		s|@PACKAGE_VERSION@|${PORTVERSION}|g' \
 		${WRKSRC}/avahi-sharp.pc.in
 	@${CP} ${WRKSRC}/avahi-sharp.pc.in ${WRKSRC}/avahi-sharp.pc
+	@${CP} ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config.in ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/avahi-sharp.pc  ${PREFIX}/libdata/pkgconfig/
