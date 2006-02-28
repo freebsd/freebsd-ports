@@ -7,7 +7,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.gigavenue.com/mirrors/ruby/ \
 		http://www.maxmind.com/download/geoip/api/ruby/
@@ -28,7 +28,7 @@ DOCS=	README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
