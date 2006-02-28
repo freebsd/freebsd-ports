@@ -43,8 +43,8 @@ PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == ia64
-BROKEN=		"Configure fails on i386 and ia64"
+.if ${ARCH} == ia64
+BROKEN=		Configure fails on ia64
 .endif
 
 # Have
