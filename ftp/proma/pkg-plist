@@ -17,3 +17,4 @@
 @dirrm %%MYADMDIR%%/pages
 @dirrm %%MYADMDIR%%/libs
 @dirrm %%MYADMDIR%%
+@dirrmtry www/data
