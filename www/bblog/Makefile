@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A elegant personal publishing system with Smarty
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PHP=	mysql pcre session
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
