@@ -1,3 +1,4 @@
+%%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.semi
 %%EMACS_PACKAGESDIR%%/lisp/semi/ChangeLog
 %%EMACS_PACKAGESDIR%%/lisp/semi/NEWS
 %%EMACS_PACKAGESDIR%%/lisp/semi/README.en
