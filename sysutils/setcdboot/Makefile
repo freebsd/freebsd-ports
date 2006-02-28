@@ -18,10 +18,6 @@ PLIST_FILES=	bin/setcdboot
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600100 && ${OSVERSION} < 700000
-BROKEN=		Does not compile on FreeBSD 6.x
-.endif
-
 do-fetch:
 
 do-extract:
