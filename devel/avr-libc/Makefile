@@ -7,6 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -28,8 +29,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig
 .endif
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -50,11 +49,29 @@ CFLAGS=		-O
 CXXFLAGS=	-O
 
 do-install:
-		${RM} -f ${TMPPLIST}; ${CAT} ${PLIST_DOC} ${PLIST} > ${TMPPLIST}
+		${RM} -f ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
+		 ${FIND} . -type f \
+		  \( -name '*.html' -or -name '*.css' -or \
+		     -name '*.jpg' -or -name '*.png' \) |\
+		 ${SORT} |\
+		 ${SED} -e 's|^\.|share/doc/avr-libc/avr-libc-user-manual|' \
+		 >> ${TMPPLIST})
+		(cd ${BUILD_WRKSRC}/doc/api/man/man3 && \
+		 ${FIND} . -type f |\
+		 ${SORT} |\
+		 ${SED} -e 's|^\.|share/doc/avr-libc/man/man3|' \
+		 >> ${TMPPLIST})
+		${CAT} ${PLIST_DOC} >> ${TMPPLIST}
+.else
+		-${MKDIR} ${DOCSDIR}
+.endif
+		${CAT} ${PLIST} >> ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
-			${PREFIX}/share/doc/avr-libc
+			${DOCSDIR}
 
 .include <bsd.port.mk>
