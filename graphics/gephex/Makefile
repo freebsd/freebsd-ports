@@ -30,6 +30,7 @@ WANT_SDL=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//g}
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		gephex-engine.1 gephex-gui.1 gephex.1
 
@@ -171,12 +172,5 @@ post-patch:
 			      s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_DOCS}|' ${WRKSRC}/Makefile.am
-
-# Compile contents of static libs with PIC, as they can be used in dynamic ones
-.if !empty(ARCH:M*64)
-	@(${FIND} -X ${WRKSRC} -name Makefile.am \! -regex '.*cpuinfo.*' | \
-		${XARGS} ${REINPLACE_CMD} -E -e \
-	"/^lib[[:alnum:]]+_a_SOURCES.*$$/{ h; s//AM_CFLAGS = -DPIC -fPIC/; G;}")
-.endif
 
 .include <bsd.port.post.mk>
