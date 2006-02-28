@@ -6,6 +6,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
@@ -19,8 +20,6 @@ COMMENT=	An Objective Caml interface to GTK+ 2.x
 
 BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
-
-BROKEN=		Incomplete pkg-plist
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
@@ -40,12 +39,6 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/lib/ocaml
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	\
-		COPYING \
-		README
-.endif
 
 .include <bsd.port.pre.mk>
 
