@@ -7,6 +7,7 @@
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/semi-1.14-for-flim-1.14/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/semi/semi-1.14-for-flim-1.14/
