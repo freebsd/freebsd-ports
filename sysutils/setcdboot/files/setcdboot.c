@@ -62,7 +62,7 @@ struct ptable_ent {
 
 /* XXX these should be in the system headers */
 #include <osreldate.h>
-#if __FreeBSD_version < 700003
+#if __FreeBSD_version < 600032
 static __inline int
 isonum_722(u_char *p)
 {
