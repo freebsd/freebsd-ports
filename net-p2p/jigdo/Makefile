@@ -37,7 +37,7 @@ NOT_FOR_ARCHS+=	alpha
 
 .if defined(WITH_GUI)
 CONFIGURE_ARGS+=	--with-gui
-LIB_DEPENDS+=	gtk-x11-2.0:\${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 MAN1+=	jigdo.1
 PLIST_SUB+=	SUB_GUI=""
 .else
