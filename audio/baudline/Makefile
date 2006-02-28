@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	audio linux
 # We have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
@@ -18,8 +18,6 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
