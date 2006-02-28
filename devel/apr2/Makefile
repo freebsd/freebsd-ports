@@ -143,16 +143,17 @@ pre-configure:
 .endfor
 
 run-autotools::
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf
+	cd ${WRKDIR}/apr-${PORTVERSION} ; \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
-	${RM} -fr xml/expat
+		${RM} -fr xml/expat
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
-		${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
-		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
+		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
-		${SETENV} ${SCRIPTS_ENV} ${SH} \
+		${SETENV} ${CONFIGURE_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
 do-configure:
