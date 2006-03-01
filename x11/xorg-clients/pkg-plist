@@ -808,4 +808,7 @@ lib/X11/xsm/system.xsm
 @dirrm lib/X11/icons/handhelds
 @dirrm lib/X11/icons
 @dirrm lib/X11/xinit
-@dirrmtry lib/X11/fonts/util
+@unexec rm %D/lib/X11/fonts/util/fonts.cache-1 2>/dev/null || true
+@unexec command fc-cache -v %D/lib/X11/fonts/util 2>/dev/null || true
+@unexec if [ -e %D/lib/X11/fonts/util/fonts.cache-1 -a ! -s %D/lib/X11/fonts/util/fonts.cache-1 ]; then rm %D/lib/X11/fonts/util/fonts.cache-1; fi
+@dirrm lib/X11/fonts/util
