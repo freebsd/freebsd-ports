@@ -144,6 +144,9 @@ EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .if defined(WITH_GNUGCJ)
 EXTRA_PATCHES+=	${FILESDIR}/gcj-cws_jaxpapi ${FILESDIR}/gcj-patches
 .endif
+.if defined(WITHOUT_MOZILLA)
+EXTRA_PATCHES+=	${FILESDIR}/moz-patch_i59729 #cws pj50
+.endif
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
 #EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
 #.endif
