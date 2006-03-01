@@ -7,14 +7,13 @@
 
 PORTNAME=	sim
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}hv35-2
 
-MAINTAINER=	mmendez@gmail.com
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
-
-BROKEN=		Incorrect pkg-plist (does not compile completely?)
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
@@ -55,8 +54,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
 .endfor
 
-	@${MKDIR} ${PREFIX}/${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${PREFIX}/${DATADIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
