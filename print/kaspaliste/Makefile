@@ -17,7 +17,7 @@ COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
 USE_PGSQL=		yes
 USE_KDEBASE_VER=	3
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:15
 USE_GMAKE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
