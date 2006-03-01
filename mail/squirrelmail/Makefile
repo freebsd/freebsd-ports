@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION?=	1.4.5
-PORTREVISION?=	3
+PORTVERSION?=	1.4.6
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		all_locales-${PORTVERSION}-20050904${EXTRACT_SUFX}
+		all_locales-${PORTVERSION}-20060221${EXTRACT_SUFX}
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER?=	simond@irrelevant.org
@@ -24,7 +23,6 @@ USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 .ifdef WITH_DATABASE
 WANT_PHP_PEAR=	yes
@@ -64,15 +62,7 @@ slaveport-post-patch:
 
 post-patch: slaveport-post-patch
 .ifndef PATCH_DEBUG
-	@${RM} -f ${WRKSRC}/config/config_default.php.orig \
-		  ${WRKSRC}/src/configtest.php.orig \
-		  ${WRKSRC}/src/search.php.orig \
-		  ${WRKSRC}/class/mime/Rfc822Header.class.php.orig \
-		  ${WRKSRC}/functions/imap_messages.php.orig \
-		  ${WRKSRC}/plugins/listcommands/setup.php.orig \
-		  ${WRKSRC}/class/mime/Message.class.php.orig \
-		  ${WRKSRC}/class/deliver/Deliver.class.php.orig \
-		  ${WRKSRC}/functions/imap_general.php.orig
+	@${RM} -f ${WRKSRC}/config/config_default.php.orig
 .endif
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
 		${MASTERDIR}/pkg-install > ${PKGINSTALL}
