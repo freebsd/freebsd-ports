@@ -22,10 +22,11 @@ load_rc_config $name
 : ${jabber_pyicq_enable="NO"}
 : ${jabber_pyicq_dir="%%PREFIX%%/lib/jabber/pyicq"}
 : ${jabber_pyicq_piddir="/var/jabberd/pid"}
+: ${jabber_pyicq_user="jabber"}
 
-pidfile="${jabber_pyicq_piddir}/pyicq.pid"
+pidfile="${jabber_pyicq_piddir}/PyICQt.pid"
 command_interpreter="%%PYTHON_CMD%%"
-command="${jabber_pyicq_dir}/main.py"
-command_args="-o pid=${pidfile} &"
+command="${jabber_pyicq_dir}/PyICQt.py"
+command_args="-b -o pid=${pidfile}"
 
 run_rc_command "$1"
