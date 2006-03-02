@@ -9,7 +9,7 @@ PORTNAME=	quickml
 PORTVERSION=	0.7
 PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	http://namazu.org/%7esatoru/quickml/
+MASTER_SITES=	http://0xcc.net/quickml/
 
 MAINTAINER=	yaizawa@mdbl.sfc.keio.ac.jp
 COMMENT=	An easy-to-use mailing list system
