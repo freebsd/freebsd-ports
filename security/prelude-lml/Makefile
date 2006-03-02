@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-lml
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
+		http://www.prelude-ids.org/download/releases/old/
 
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
