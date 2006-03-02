@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax software
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
+BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm \
+		gawk:${PORTSDIR}/lang/gawk
 
 # no dependency on ghostscript because we don't know which
 # version the user prefers
