@@ -100,23 +100,23 @@ sbin/gpt_save_flavor
 sbin/gpt_sort_filelist
 sbin/gpt_version
 share/globus_aclocal
-share/gpt/aclocal/Makefile_am.frg
-share/gpt/aclocal/bootstrap.frg
-share/gpt/aclocal/configure_in.frg
-share/gpt/aclocal/gpt_autoconf_macros.m4
-share/gpt/aclocal/pkg_data_src_gpt_in.frg
-share/gpt/aclocal/top_Makefile_am.frg
-share/gpt/amdir/data.am
-share/gpt/amdir/filelist.am
-share/gpt/amdir/header.am
-share/gpt/amdir/libs.am
-share/gpt/amdir/ltlib.am
-share/gpt/amdir/mans.am
-share/gpt/amdir/pkgdata_Makefile.am
-share/gpt/amdir/progs.am
-share/gpt/amdir/scripts.am
-share/gpt/amdir/subdirs.am
-share/gpt/config.guess
+%%DATADIR%%/aclocal/Makefile_am.frg
+%%DATADIR%%/aclocal/bootstrap.frg
+%%DATADIR%%/aclocal/configure_in.frg
+%%DATADIR%%/aclocal/gpt_autoconf_macros.m4
+%%DATADIR%%/aclocal/pkg_data_src_gpt_in.frg
+%%DATADIR%%/aclocal/top_Makefile_am.frg
+%%DATADIR%%/amdir/data.am
+%%DATADIR%%/amdir/filelist.am
+%%DATADIR%%/amdir/header.am
+%%DATADIR%%/amdir/libs.am
+%%DATADIR%%/amdir/ltlib.am
+%%DATADIR%%/amdir/mans.am
+%%DATADIR%%/amdir/pkgdata_Makefile.am
+%%DATADIR%%/amdir/progs.am
+%%DATADIR%%/amdir/scripts.am
+%%DATADIR%%/amdir/subdirs.am
+%%DATADIR%%/config.guess
 share/gpt_amdir
 @dirrm etc/gpt/dtd
 @dirrm etc/gpt
@@ -129,8 +129,8 @@ share/gpt_amdir
 @dirrm lib/perl/Grid/GPT
 @dirrm lib/perl/Grid
 @dirrm lib/perl
-@dirrm share/gpt/aclocal
-@dirrm share/gpt/amdir
-@dirrm share/gpt
+@dirrm %%DATADIR%%/aclocal
+@dirrm %%DATADIR%%/amdir
+@dirrm %%DATADIR%%
 @exec PATH=%%LOCALBASE%%/bin:${PATH} GPT_LOCATION=%D %D/sbin/gpt-config -probe -perl=%%PERL%%
 @unexec echo "Configuration information saved.  If you will *NOT* use this package" && echo "anymore, please remove /var/db/gpt and its contents manually."

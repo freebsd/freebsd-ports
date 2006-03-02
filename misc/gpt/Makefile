@@ -9,13 +9,13 @@ PORTNAME=	gpt
 PORTVERSION=	3.2
 PORTREVISION=	1
 CATEGORIES=	misc archivers devel parallel
-MASTER_SITES=	http://www-unix.globus.org/ftppub/gt4/4.0/4.0.0/gpt/
+MASTER_SITES=	ftp://ftp.globus.org/pub/gt4/4.0/4.0.0/gpt/
 DISTNAME=	gpt-${PORTVERSION}autotools2004-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grid Packaging Tools (used to install Globus)
 
-CONFLICTS=	gpt-3.1
+CONFLICTS=	gpt-3.1*
 
 RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
@@ -27,10 +27,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
 
-BROKEN=		Broken distinfo
-
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}autotools2004
 NO_BUILD=	yes
 
@@ -56,7 +53,7 @@ FIX_VAR_FILES=	${WRKSRC}/packaging_tools/perl/GPT/Localize.pm \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not build"
+BROKEN=		Does not build
 .endif
 
 post-patch:
