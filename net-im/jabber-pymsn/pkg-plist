@@ -1,49 +1,56 @@
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pymsn.xml %D/etc/jabber-pymsn.xml; then rm -f %D/etc/jabber-pymsn.xml; fi
 %%EXAMPLESDIR%%/etc/jabber-pymsn.xml
 @exec [ -f %D/etc/jabber-pymsn.xml ] || cp %B/%f %D/etc/jabber-pymsn.xml
-lib/jabber/pymsn/avatar.py
-lib/jabber/pymsn/baseproto/__init__.py
-lib/jabber/pymsn/baseproto/glue.py
-@unexec if cmp -s %D/lib/jabber/pymsn/config.py.sample %D/lib/jabber/pymsn/config.py; then rm -f %D/lib/jabber/pymsn/config.py; fi
-lib/jabber/pymsn/config.py.sample
-@exec [ -f %D/lib/jabber/pymsn/config.py ] || cp %B/%f %D/lib/jabber/pymsn/config.py
-lib/jabber/pymsn/contact.py
-lib/jabber/pymsn/debug.py
-lib/jabber/pymsn/disco.py
-lib/jabber/pymsn/groupchat.py
-lib/jabber/pymsn/housekeep.py
-lib/jabber/pymsn/jabw.py
-lib/jabber/pymsn/lang.py
-lib/jabber/pymsn/legacy/__init__.py
-lib/jabber/pymsn/legacy/defaultAvatar.png
-lib/jabber/pymsn/legacy/defaultJabberAvatar.png
-lib/jabber/pymsn/legacy/glue.py
-lib/jabber/pymsn/legacy/legacylist.py
-lib/jabber/pymsn/legacy/msnw.py
-lib/jabber/pymsn/main.py
-lib/jabber/pymsn/misciq.py
-lib/jabber/pymsn/register.py
-lib/jabber/pymsn/session.py
-lib/jabber/pymsn/tlib/__init__.py
-lib/jabber/pymsn/tlib/domish.py
-lib/jabber/pymsn/tlib/jabber/__init__.py
-lib/jabber/pymsn/tlib/jabber/client.py
-lib/jabber/pymsn/tlib/jabber/component.py
-lib/jabber/pymsn/tlib/jabber/jid.py
-lib/jabber/pymsn/tlib/jabber/jstrports.py
-lib/jabber/pymsn/tlib/jabber/xmpp_stringprep.py
-lib/jabber/pymsn/tlib/msn.py
-lib/jabber/pymsn/tlib/msnp11chl.py
-lib/jabber/pymsn/tlib/msnp2p.py
-lib/jabber/pymsn/tlib/xmlstream.py
-lib/jabber/pymsn/tlib/xmlw.py
-lib/jabber/pymsn/utils.py
-lib/jabber/pymsn/xdb.py
-lib/jabber/pymsn/xmlconfig.py
-@dirrm lib/jabber/pymsn/tlib/jabber
-@dirrm lib/jabber/pymsn/tlib
-@dirrm lib/jabber/pymsn/legacy
-@dirrm lib/jabber/pymsn/baseproto
+lib/jabber/pymsn/PyMSNt.py
+lib/jabber/pymsn/data/defaultJabberAvatar.png
+lib/jabber/pymsn/data/defaultMSNAvatar.png
+lib/jabber/pymsn/src/avatar.py
+lib/jabber/pymsn/src/baseproto/__init__.py
+lib/jabber/pymsn/src/baseproto/glue.py
+lib/jabber/pymsn/src/config.py
+lib/jabber/pymsn/src/contact.py
+lib/jabber/pymsn/src/debug.py
+lib/jabber/pymsn/src/disco.py
+lib/jabber/pymsn/src/ft.py
+lib/jabber/pymsn/src/groupchat.py
+lib/jabber/pymsn/src/housekeep.py
+lib/jabber/pymsn/src/jabw.py
+lib/jabber/pymsn/src/lang.py
+lib/jabber/pymsn/src/legacy/__init__.py
+lib/jabber/pymsn/src/legacy/glue.py
+lib/jabber/pymsn/src/main.py
+lib/jabber/pymsn/src/misciq.py
+lib/jabber/pymsn/src/register.py
+lib/jabber/pymsn/src/session.py
+lib/jabber/pymsn/src/tlib/__init__.py
+lib/jabber/pymsn/src/tlib/domish.py
+lib/jabber/pymsn/src/tlib/jabber/__init__.py
+lib/jabber/pymsn/src/tlib/jabber/client.py
+lib/jabber/pymsn/src/tlib/jabber/component.py
+lib/jabber/pymsn/src/tlib/jabber/jid.py
+lib/jabber/pymsn/src/tlib/jabber/jstrports.py
+lib/jabber/pymsn/src/tlib/jabber/xmpp_stringprep.py
+lib/jabber/pymsn/src/tlib/msn/__init__.py
+lib/jabber/pymsn/src/tlib/msn/msn.py
+lib/jabber/pymsn/src/tlib/msn/msnft.py
+lib/jabber/pymsn/src/tlib/msn/msnp11chl.py
+lib/jabber/pymsn/src/tlib/msn/msnw.py
+lib/jabber/pymsn/src/tlib/msn/test_msn.py
+lib/jabber/pymsn/src/tlib/msn/test_msnw.py
+lib/jabber/pymsn/src/tlib/socks5.py
+lib/jabber/pymsn/src/tlib/throttle.py
+lib/jabber/pymsn/src/tlib/xmlstream.py
+lib/jabber/pymsn/src/tlib/xmlw.py
+lib/jabber/pymsn/src/utils.py
+lib/jabber/pymsn/src/xdb.py
+lib/jabber/pymsn/src/xmlconfig.py
+@dirrm lib/jabber/pymsn/src/tlib/msn
+@dirrm lib/jabber/pymsn/src/tlib/jabber
+@dirrm lib/jabber/pymsn/src/tlib
+@dirrm lib/jabber/pymsn/src/legacy
+@dirrm lib/jabber/pymsn/src/baseproto
+@dirrm lib/jabber/pymsn/src
+@dirrm lib/jabber/pymsn/data
 @dirrm lib/jabber/pymsn
 @dirrmtry lib/jabber
 @dirrm %%EXAMPLESDIR%%/etc
