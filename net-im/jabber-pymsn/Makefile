@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/config-example.xml
 	@${REINPLACE_CMD} -i "" 's|../config.xml|${PREFIX}/etc/jabber-pymsn.xml|g' \
 		${WRKSRC}/src/xmlconfig.py
-	@${REINPLACE_CMD} -i "" -e 's|spooldir = ""|spooldir = "/tmp/jabber-pymsn"|g' \
+	@${REINPLACE_CMD} -i "" -e 's|spooldir = ""|spooldir = "/var/spool/jabber"|g' \
 				-e 's|pid = ""|pid = "/var/jabberd/pid/PyMSNt.pid"|g' \
 		${WRKSRC}/src/config.py
 	@${REINPLACE_CMD} -i "" 's|"config.xml"|"${PREFIX}/etc/jabber-pymsn.xml"|' \
