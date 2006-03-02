@@ -7,9 +7,11 @@ share/gxine/pixmaps/wizards.png
 share/gxine/pixmaps/splash.png
 share/gxine/mediamarks
 share/gnome/apps/Multimedia/gxine.desktop
-lib/gxine/gxineplugin.so
 lib/gxine/gxineplugin.a
 lib/gxine/gxineplugin.la
+lib/gxine/gxineplugin.so
+lib/browser_plugins/gxineplugin.a
+lib/browser_plugins/gxineplugin.la
 lib/browser_plugins/gxineplugin.so
 @dirrm share/gxine/pixmaps
 @dirrm share/gxine
