@@ -4,10 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
+		http://www.prelude-ids.org/download/releases/old/
 
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
@@ -65,6 +65,7 @@ PLIST_SUB+=		WITH_PGSQL="@comment "
 USE_SQLITE=		yes
 CONFIGURE_ARGS+=	--enable-sqlite3
 PLIST_SUB+=		WITH_SQLITE=""
+LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
 LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
 CONFIGURE_ARGS+=	--disable-sqlite3
