@@ -5,25 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=		elan
-PORTVERSION=		1.7b
-PORTREVISION=	1
-CATEGORIES=		lang
-MASTER_SITES=		ftp://ftp.cs.ru.nl/pub/vb/
-DISTNAME=		${PORTNAME}-1.7-beta
+PORTNAME=	elan
+PORTVERSION=	1.7c
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.cs.ru.nl/pub/vb/
+DISTNAME=	${PORTNAME}-1.7
 
-MAINTAINER=		ed@fxq.nl
-COMMENT=		Compiler for the Elan Programming Environment
+MAINTAINER=	ed@fxq.nl
+COMMENT=	Compiler for the Elan Programming Environment
 
-LIB_DEPENDS=		dcg:${PORTSDIR}/devel/mimir
+LIB_DEPENDS=	dcg:${PORTSDIR}/devel/mimir
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-1.7
+WRKSRC=	${WRKDIR}/${DISTNAME}
 
-MAN1=			elancc.1
+MAN1=	elancc.1
 
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
