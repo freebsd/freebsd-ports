@@ -7,21 +7,21 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rafan@infor.org
 COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 
-MD5_FILE=	${.CURDIR}/../../editors/xemacs21-mule/distinfo
-PLIST=		${.CURDIR}/pkg-plist
+MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
+
+PLIST_FILES+=	lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5/Emacs \
+		lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5/sample.emacs
+PLIST_DIRS+=	lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5 \
+		lib/xemacs-${XEMACS_VER}/etc/app-defaults \
+		lib/xemacs-${XEMACS_VER}/etc \
+		lib/xemacs-${XEMACS_VER}
+
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-XEMACS_MAJOR_VER=	21
 WITH_XCIN25=	yes
-
-# xemacs21-mule-common needs this.
-WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs21-mule/work
-
-SLAVE_PORT=	yes
-MASTER_PORT=	editors/xemacs21-mule
 
 post-install::
 	@${MKDIR} ${PREFIX}/lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5
@@ -29,4 +29,4 @@ post-install::
 	@${INSTALL_DATA} ${.CURDIR}/../xemacs/files/sample.emacs ${PREFIX}/lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5
 	@${CAT} ${PKGMESSAGE}
 
-.include	"${.CURDIR}/../../editors/xemacs21-mule/Makefile"
+.include	"${MASTERDIR}/Makefile"
