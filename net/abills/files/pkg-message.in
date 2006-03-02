@@ -2,7 +2,7 @@
 ************************************************************
 
 For configuration and upgrade, please read file:
-%%PREFIX%%/abills/docs/index.html
+%%PREFIX%%/abills/docs/index.htm
 
 NOTE: please look for changes in abills.sql when upgrading!
 
