@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyicq
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
@@ -18,7 +17,8 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Python ICQ-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py::${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -29,32 +29,35 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
-PORTDOCS=	COPYING README TODO
+PORTDOCS=	COPYING README NEWS
 
 post-extract:
 	@${FIND} ${WRKSRC}/src -type d -name '.svn' | ${XARGS} ${RM} -rf
 
 post-patch:
 	@${REINPLACE_CMD} -e '/spooldir/s|\.|/var/spool/jabber|' \
-		-e '/pid/s|PyICQt.pid|/var/jabberd/pid/${PORTNAME}.pid|' \
-		-e '/<debugOn>/s|<debugOn>|<!--<debugOn>-->|' \
+		-e '/pid/s|PyICQt.pid|/var/jabberd/pid/PyICQt.pid|' \
 		${WRKSRC}/config_example.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${WRKSRC}/src/main.py
+	@${REINPLACE_CMD} -i "" 's|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+		${WRKSRC}/PyICQt.py
 	@${RM} ${WRKSRC}/src/main.py.*
-	@${MV} ${WRKSRC}/src/config.py ${WRKSRC}/src/config.py.sample
 
 do-install:
-	${INSTALL} -d ${INST_DIR}
-	${CP} -pPR ${WRKSRC}/src/* ${INST_DIR}/
-	${CHMOD} 755 ${INST_DIR}/main.py
-	[ -f ${INST_DIR}/config.py ] || ${CP} ${INST_DIR}/config.py.sample ${INST_DIR}/config.py
+	${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
+	${INSTALL_SCRIPT} ${WRKSRC}/PyICQt.py ${INST_DIR}
+	${INSTALL_DATA} ${WRKSRC}/data/defaultAIMAvatar.png ${INST_DIR}/data
+	${INSTALL_DATA} ${WRKSRC}/data/defaultICQAvatar.png ${INST_DIR}/data
+	@${CP} -Rv ${WRKSRC}/src/* ${INST_DIR}/src
+	@${FIND} ${INST_DIR}/src/ -type d -exec ${CHMOD} 755 "{}" \;
+	@${FIND} ${INST_DIR}/src/ -type f -exec ${CHMOD} 644 "{}" \;
 	@${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${EXAMPLESDIR}/etc/jabber-pyicq.xml
 	[ -f ${PREFIX}/etc/jabber-pyicq.xml ] || ${CP} ${EXAMPLESDIR}/etc/jabber-pyicq.xml ${PREFIX}/etc/jabber-pyicq.xml
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 .for portdoc in ${PORTDOCS}
-	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/
 .endfor
 .endif
