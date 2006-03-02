@@ -50,7 +50,6 @@ include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
 include/libprelude/variable.h
-lib/libprelude.a
 lib/libprelude.la
 lib/libprelude.so
 lib/libprelude.so.6
