@@ -20,6 +20,8 @@ USE_PYTHON=		yes
 USE_REINPLACE=		yes
 USE_OPENSSL=		yes
 
+BROKEN=			Hard-codes libc_r linkage
+
 # Customizable settings
 RUNASUSER?=		www
 RUNASUID?=		80
