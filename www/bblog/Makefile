@@ -7,29 +7,28 @@
 
 PORTNAME=	bBlog
 PORTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bblog
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A elegant personal publishing system with Smarty
 
-BROKEN=		Incomplete pkg-plist
-
 USE_PHP=	mysql pcre session
-PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-TMPDIR?=	blog
-WRKSRC=		${WRKDIR}
-WWWDOCROOT?=	www/data-dist
-BBLOGURL?=	bblog
+WRKSRC=		${WRKDIR}/${PORTNAME:L}
+WWWDOCROOT?=	www
+BBLOGURL?=	${PORTNAME:L}
 WWWOWN?=	www
 WWWGRP?=	www
 BBLOGDIR?=	${WWWDOCROOT}/${BBLOGURL}
-PLIST=		${WRKDIR}/pkg-plist
+
+SUB_FILES=	pkg-message
+SUB_LIST=	BBLOGURL=${BBLOGURL} BBLOGDIR=${BBLOGDIR}
+PLIST_SUB=	WWWDOCROOT=${WWWDOCROOT} BBLOGURL=${BBLOGURL}
 
 OPTIONS=	GD		"With GD Support" on \
 		IMAGICK		"With ImageMagick Support" off
@@ -49,30 +48,21 @@ pre-patch:
 	@${ECHO_CMD} "Without GD or ImageMagick support. No thumbnails will be generated at all."
 .endif
 
-pre-install:
-	cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${GREP} -v _done. | \
-		${GREP} -v '.PLIST' | \
-		${SED} -e 's|^./||;s|^|${BBLOGDIR}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${BBLOGDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${BBLOGDIR} >> ${PLIST}
-
 do-install:
-	@${MKDIR} ${PREFIX}/${BBLOGDIR}
+	@${MKDIR} ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${BBLOGDIR}
+	@${CHGRP} -R ${WWWGRP} ${PREFIX}/${BBLOGDIR}
 	@${CHMOD} 755 ${PREFIX}/${BBLOGDIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${BBLOGDIR}
-	@${RM} ${PREFIX}/${BBLOGDIR}/.PLIST*
-	@${RM} ${PREFIX}/${BBLOGDIR}/.*done*
-#	@${CP} -R ${WRKSRC}/${BBLOGURL}/ ${PREFIX}/${BBLOGDIR}
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/bblog/install.php
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/bblog/compiled_templates/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/bblog/cache/
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/bblog/cache/favorites.xml
-	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/bblog/config.php
+.for f in archives.php documentation.txt htaccess-cleanurls index.php item rss.php search.php section
+	${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${BBLOGDIR}
+.endfor
+	@${CP} -Rv ${WRKSRC}/* ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/compiled_templates/
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/cache/
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/cache/favorites.xml
+	@${CHMOD} 775 ${PREFIX}/${BBLOGDIR}/${PORTNAME:L}/config.php
 
 post-install:
-	@${SED} -e 's|%%BBLOGURL%%|${BBLOGURL}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
