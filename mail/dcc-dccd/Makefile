@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.27
+PORTVERSION=	1.3.29
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -16,9 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
-BROKEN=		Unfetchable
-
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 MANCOMPRESSED=	yes
 MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
@@ -54,7 +51,7 @@ MILTERBASE=	/usr
 WITH_SENDMAIL=	yes
 .else
 .if !defined(WITHOUT_SENDMAIL)
-BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes or WITHOUT_SENDMAIL=yes"
+IGNORE=		base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes or WITHOUT_SENDMAIL=yes
 .endif
 .endif
 .else
@@ -109,5 +106,11 @@ post-build:
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
+
+post-install:
+.if !exists(${PREFIX}/dcc/map)
+	${CP} ${PREFIX}/dcc/map ${PREFIX}/dcc/map.dist
+	@${CHOWN} ${DCCUSER} ${PREFIX}/dcc/map.dist
+.endif
 
 .include <bsd.port.post.mk>
