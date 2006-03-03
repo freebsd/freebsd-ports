@@ -1,3 +1,33 @@
+@unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.dist; then rm -f %D/dcc/dcc_conf; fi
+dcc/dcc_conf.dist
+@exec [ -f %B/dcc_conf ] || cp %B/%f %B/dcc_conf
+@unexec if cmp -s %D/dcc/flod %D/dcc/flod.dist; then rm -f %D/dcc/flod; fi
+dcc/flod.dist
+@exec [ -f %B/flod ] || cp %B/%f %B/flod
+@unexec if cmp -s %D/dcc/grey_flod %D/dcc/grey_flod.dist; then rm -f %D/dcc/grey_flod; fi
+dcc/grey_flod.dist
+@exec [ -f %B/grey_flod ] || cp %B/%f %B/grey_flod
+@unexec if cmp -s %D/dcc/grey_whitelist %D/dcc/grey_whitelist.dist; then rm -f %D/dcc/grey_whitelist; fi
+dcc/grey_whitelist.dist
+@exec [ -f %B/grey_whitelist ] || cp %B/%f %B/grey_whitelist
+@unexec if cmp -s %D/dcc/ids %D/dcc/ids.dist; then rm -f %D/dcc/ids; fi
+dcc/ids.dist
+@exec [ -f %B/ids ] || cp %B/%f %B/ids
+@unexec if cmp -s %D/dcc/map %D/dcc/map.dist; then rm -f %D/dcc/map; fi
+dcc/map.dist
+@exec [ -f %B/map ] || cp %B/%f %B/map
+@unexec if cmp -s %D/dcc/map.txt %D/dcc/map.txt.dist; then rm -f %D/dcc/map.txt; fi
+dcc/map.txt.dist
+@exec [ -f %B/map.txt ] || cp %B/%f %B/map.txt
+@unexec if cmp -s %D/dcc/whiteclnt %D/dcc/whiteclnt.dist; then rm -f %D/dcc/whiteclnt; fi
+dcc/whiteclnt.dist
+@exec [ -f %B/whiteclnt ] || cp %B/%f %B/whiteclnt
+@unexec if cmp -s %D/dcc/whitecommon %D/dcc/whitecommon.dist; then rm -f %D/dcc/whitecommon; fi
+dcc/whitecommon.dist
+@exec [ -f %B/whitecommon ] || cp %B/%f %B/whitecommon
+@unexec if cmp -s %D/dcc/whitelist %D/dcc/whitelist.dist; then rm -f %D/dcc/whitelist; fi
+dcc/whitelist.dist
+@exec [ -f %B/whitelist ] || cp %B/%f %B/whitelist
 bin/cdcc
 bin/dccif-test
 bin/dccproc
@@ -9,12 +39,6 @@ dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
-@unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.dist; then rm -f %D/dcc/dcc_conf; fi
-dcc/dcc_conf.dist
-dcc/flod
-dcc/grey_flod
-dcc/grey_whitelist
-dcc/ids
 dcc/libexec/cron-dccd
 %%WITH_DCCIFD%%dcc/libexec/dccifd
 %%WITH_SENDMAIL%%dcc/libexec/dccm
@@ -40,12 +64,7 @@ dcc/libexec/stats-get
 dcc/libexec/stop-dccd
 dcc/libexec/updatedcc
 dcc/libexec/wlist
-dcc/map
-dcc/map.txt
-dcc/whiteclnt
-dcc/whitecommon
-dcc/whitelist
 @dirrm dcc/log
 @dirrm dcc/libexec
 @dirrm dcc/cgi-bin
-@dirrm dcc
+@dirrmtry dcc

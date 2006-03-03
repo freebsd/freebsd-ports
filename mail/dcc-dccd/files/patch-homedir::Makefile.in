@@ -1,6 +1,6 @@
---- homedir/Makefile.in.orig	Tue Aug  2 18:04:26 2005
-+++ homedir/Makefile.in	Sat Sep 17 13:42:56 2005
-@@ -45,11 +45,7 @@
+--- homedir/Makefile.in.orig	Thu Sep  8 09:57:07 2005
++++ homedir/Makefile.in	Wed Mar  1 07:39:11 2006
+@@ -51,15 +51,11 @@
  	  $(HINSTALL) -m 755 -d $(INST_HOMEDIR); fi
  	if test ! -d $(INST_HOMEDIR)/log; then \
  	  $(HINSTALL) -m 710 -d $(INST_HOMEDIR)/log; fi
@@ -13,3 +13,25 @@
  	for nm in flod grey_flod whitelist grey_whitelist \
  		whiteclnt whitecommon; do \
  	  if test ! -f $(INST_HOMEDIR)/$$nm; then \
+-		$(HINSTALL) -m 644 $$nm $(INST_HOMEDIR)/$$nm; fi; \
++		$(HINSTALL) -m 644 $$nm $(INST_HOMEDIR)/$$nm.dist; fi; \
+ 	  done
+ 	@if test ! -f $(INST_HOMEDIR)/ids \
+ 		 -a ! -f $(INST_HOMEDIR)/map \
+@@ -67,11 +63,11 @@
+ 	  PASSWD1=`ps|cksum|tr ' 	' 'xy'`; \
+ 	  PASSWD2=`ps|cksum|tr ' 	' 'yx'`; \
+ 	  umask 077; \
+-	  sed -e "s/secret1/$$PASSWD1/" map.txt >$(INST_HOMEDIR)/map.txt; \
++	  sed -e "s/secret1/$$PASSWD1/" map.txt >$(INST_HOMEDIR)/map.txt.dist; \
+ 	  sed -e "s/secret1/$$PASSWD1/" -e "s/secret2/$$PASSWD2/" ids \
+-		>$(INST_HOMEDIR)/ids; \
++		>$(INST_HOMEDIR)/ids.dist; \
+ 	  ${DEPTH}/cdcc/cdcc -qh $(INST_HOMEDIR) 'new map; load -' \
+-		<$(INST_HOMEDIR)/map.txt >/dev/null; \
+-	  set +e; chown $(DCC_SUID) $(INST_HOMEDIR)/map.txt \
+-			$(INST_HOMEDIR)/map $(INST_HOMEDIR)/ids; \
++		<$(INST_HOMEDIR)/map.txt.dist >/dev/null; \
++	  set +e; chown $(DCC_SUID) $(INST_HOMEDIR)/map.txt.dist \
++			$(INST_HOMEDIR)/map $(INST_HOMEDIR)/ids.dist; \
+ 	fi
