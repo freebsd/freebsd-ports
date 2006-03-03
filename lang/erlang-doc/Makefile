@@ -7,13 +7,16 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	r10b9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.se/doc/doc-5.4.12/pdf/:release \
 		http://erlang.org/download/:erlangorg \
 		http://www.erlang.se/doc/:erlangse \
 		http://www.sics.se/~joe/thesis/:joe \
-		http://www.st.se/telecom/eng/projects/:stse
+		http://www.st.se/telecom/eng/projects/:stse \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=     olgeni/:local
 DISTFILES=	appmon-2.1.5.pdf:release \
 		asn1-1.4.4.9.pdf:release \
 		compiler-4.3.11.pdf:release \
@@ -71,7 +74,7 @@ DISTFILES=	appmon-2.1.5.pdf:release \
 		erlang-book-part1.pdf:erlangorg \
 		programming_rules.pdf:erlangse \
 		armstrong_thesis_2003.pdf:joe \
-		master_thesis_patterns.pdf:stse
+		master_thesis_patterns.pdf:local
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=
 
