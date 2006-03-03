@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	2.0.2b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 
@@ -19,7 +19,7 @@ USE_APACHE=	20
 LATEST_LINK=	mod_auth_pgsql2
 
 AP_INC?=	${LOCALBASE}/include
-AP_LIBS?=	${LOCALBASE}/lib -lpq
+AP_LIB?=	${LOCALBASE}/lib -lpq
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=	mod_auth_pgsql.html
