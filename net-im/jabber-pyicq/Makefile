@@ -18,7 +18,7 @@ COMMENT=	Python ICQ-Transport for Jabber
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py::${PORTSDIR}/graphics/py-imaging
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
