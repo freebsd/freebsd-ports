@@ -7,6 +7,7 @@
 
 PORTNAME=	i2p
 PORTVERSION=	0.6.1.12
+PORTREVISION=	1
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	http://dev.i2p.net/i2p/
 
@@ -56,13 +57,15 @@ DOC_DIRS=	\
 		net/ \
 		org/ \
 		resources/
+
+.ifndef(NOPORTDOCS)
 PORTDOCS=	${DOC_FILES} \
 		${DOC_DIRS}
+.endif
 
 PLIST_DIRS=	\
 		%%DATADIR%%
 PLIST_FILES=	\
-		etc/rc.d/${PORTNAME}.sh \
 		sbin/i2prouter \
 		%%DATADIR%%/i2p.tar.bz2 \
 		%%DATADIR%%/i2pupdate.zip
