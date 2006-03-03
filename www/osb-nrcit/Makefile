@@ -20,7 +20,7 @@ LIB_DEPENDS=	nrcore.0:${PORTSDIR}/www/osb-nrcore \
 
 USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>
 
