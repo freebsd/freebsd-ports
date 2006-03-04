@@ -7,7 +7,7 @@
 
 PORTNAME=	simulavr
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,9 +32,15 @@ CONFIGURE_ARGS=	--disable-versioned-doc
 MAN1=		simulavr.1 simulavr-disp.1
 INFO=		simulavr
 
-post-install:
-		@${ECHO} "Removing obsolete files after installation:"
-		${RM} -f ${PREFIX}/share/doc/simulavr/html/simulavr_ovr.html
+do-install:
+		${RM} -f ${TMPPLIST}
+		(cd ${BUILD_WRKSRC}/doc/internals_html && \
+		 ${FIND} . -type f \( -name '*.html' -or -name '*.css' \) |\
+		${SORT} |\
+		${SED} -e 's|^\.|share/doc/simulavr/internals_html|' \
+		>> ${TMPPLIST})
+		${CAT} ${PLIST} >> ${TMPPLIST}
+		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
 .include <bsd.port.pre.mk>
 
