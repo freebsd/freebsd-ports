@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	6.0.2
-PORTREVISION=	1
+PORTVERSION=	6.0.3
 CATEGORIES=	print
 MASTER_SITES=	http://pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
@@ -33,9 +32,7 @@ CONFIGURE_ARGS+=--with-perl=no
 PLIST_SUB=	PERL="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 .include <bsd.port.pre.mk>
 

@@ -1,3 +1,4 @@
+bin/pdfimage
 bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
