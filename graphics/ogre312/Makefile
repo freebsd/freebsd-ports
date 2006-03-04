@@ -19,8 +19,7 @@ LIB_DEPENDS=	zzip.10:${PORTSDIR}/devel/zziplib \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
 WRKSRC=		${WRKDIR}/ogrenew
-CONFIGURE_ARGS=	--disable-cg --program-transform-name=
-USE_REINPLACE=	YES
+CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GCC=	3.4
@@ -38,22 +37,6 @@ post-patch:
 		s|-lGL -lGLU|-L${X11BASE}/lib &|g; \
 		s|GLSUPPORT_CFLAGS=\$$SDL_CFLAGS|GLSUPPORT_CFLAGS="-I${X11BASE}/include \$$SDL_CFLAGS"|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '\
-		s|\(-L$$(top_builddir)/OgreMain/src\)\([$$ ]*\)|\1/.libs\2|; \
-		s|\$$(INSTALL_PROGRAM) .libs/|\$$(INSTALL_PROGRAM) |' \
-		${WRKSRC}/Samples/*/src/Makefile.in \
-		${WRKSRC}/Tools/*/src/Makefile.in
-	@${REINPLACE_CMD} -e '\
-		s|\(-L$$(top_builddir)/OgreMain/src\)\([$$ ]*\)|\1/.libs\2|' \
-		${WRKSRC}/PlatformManagers/SDL/src/Makefile.in \
-		${WRKSRC}/PlugIns/BSPSceneManager/src/Makefile.in \
-		${WRKSRC}/PlugIns/CgProgramManager/src/Makefile.in \
-		${WRKSRC}/PlugIns/EXRCodec/src/Makefile.in \
-		${WRKSRC}/PlugIns/OctreeSceneManager/src/Makefile.in \
-		${WRKSRC}/PlugIns/ParticleFX/src/Makefile.in \
-		${WRKSRC}/RenderSystems/GL/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|-L$$(top_builddir)/Samples/Common/CEGUIRenderer/src|&/.libs|' \
-		${WRKSRC}/Samples/Gui/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|<CEGUI/|<|g' \
 		${WRKSRC}/Samples/Gui/src/Gui.cpp \
 		${WRKSRC}/Samples/Common/CEGUIRenderer/include/OgreCEGUIResourceProvider.h \
@@ -62,6 +45,12 @@ post-patch:
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUIRenderer.cpp \
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUIResourceProvider.cpp \
 		${WRKSRC}/Samples/Common/CEGUIRenderer/src/OgreCEGUITexture.cpp
+	@${REINPLACE_CMD} -e 's| -Wl,-z,defs||' \
+		${WRKSRC}/PlatformManagers/SDL/src/Makefile.in \
+		${WRKSRC}/PlugIns/BSPSceneManager/src/Makefile.in \
+		${WRKSRC}/PlugIns/ParticleFX/src/Makefile.in \
+		${WRKSRC}/PlugIns/OctreeSceneManager/src/Makefile.in \
+		${WRKSRC}/RenderSystems/GL/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Samples/Terrain/src/Makefile.in
 	@${REINPLACE_CMD} -e '\
