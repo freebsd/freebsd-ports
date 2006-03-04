@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6107efb9-aae3-11da-aea1-000854d03344">
+    <topic>gtar -- invalid headers buffer overflow</topic>
+    <affects>
+      <package>
+	<name>gtar</name>
+	<range><lt>1.15.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GNU tar is vulnerable to a buffer overflow, caused by
+	  improper bounds checking of the PAX extended headers. By
+	  tricking an user into processing a specially crafted tar
+	  archive, this could be exploited to execute arbitrary
+	  code with the privileges of the user.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16764</bid>
+      <cvename>CVE-2006-0300</cvename>
+    </references>
+    <dates>
+      <discovery>2006-02-22</discovery>
+      <entry>2006-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="46f7b598-a781-11da-906a-fde5cdde365e">
     <topic>bugzilla -- multiple vulnerability</topic>
     <affects>
