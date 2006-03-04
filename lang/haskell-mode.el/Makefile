@@ -8,7 +8,8 @@
 PORTNAME=	haskell-mode
 PORTVERSION=	2.1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
+MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/ \
+		http://macemacsjp.sourceforge.jp/package/20051117/GPL/
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	An Emacs lisp mode for editing haskell programs
