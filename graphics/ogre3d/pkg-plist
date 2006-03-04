@@ -196,12 +196,16 @@ include/OGRE/OgreViewport.h
 include/OGRE/OgreWireBoundingBox.h
 include/OGRE/OgreZip.h
 include/OGRE/asm_math.h
+lib/OGRE/Plugin_BSPSceneManager.a
 lib/OGRE/Plugin_BSPSceneManager.la
 lib/OGRE/Plugin_BSPSceneManager.so
+lib/OGRE/Plugin_OctreeSceneManager.a
 lib/OGRE/Plugin_OctreeSceneManager.la
 lib/OGRE/Plugin_OctreeSceneManager.so
+lib/OGRE/Plugin_ParticleFX.a
 lib/OGRE/Plugin_ParticleFX.la
 lib/OGRE/Plugin_ParticleFX.so
+lib/OGRE/RenderSystem_GL.a
 lib/OGRE/RenderSystem_GL.la
 lib/OGRE/RenderSystem_GL.so
 lib/libCEGUIOgreRenderer.a
@@ -212,6 +216,7 @@ lib/libOgreMain.a
 lib/libOgreMain.la
 lib/libOgreMain.so
 lib/libOgreMain.so.9
+lib/libOgrePlatform.a
 lib/libOgrePlatform.la
 lib/libOgrePlatform.so
 libdata/pkgconfig/CEGUI-OGRE.pc
