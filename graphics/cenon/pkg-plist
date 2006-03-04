@@ -246,6 +246,7 @@ Local/Applications/Cenon.app/stamp.make
 @dirrm Local/Applications/Cenon.app/Resources/German.lproj
 @dirrm Local/Applications/Cenon.app/Resources
 @dirrm Local/Applications/Cenon.app
+@dirrmtry Local/Applications
 Local/Library/Cenon/Devices/din/.dir.tiff
 Local/Library/Cenon/Devices/din/sm_1000.dev
 Local/Library/Cenon/Devices/din/excellon.dev
@@ -454,3 +455,4 @@ Local/Library/Cenon/.dir.tiff
 %%FULL%%@dirrm Local/Library/Cenon/Documentation/SinkingMetrics.cenon
 %%FULL%%@dirrm Local/Library/Cenon/Documentation
 @dirrm Local/Library/Cenon
+@dirrmtry Local/Library
