@@ -22,7 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/sys/modules/ltmdm
 NO_WRKSUBDIR=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-NO_PACKAGE=	"Should be recompiled for a particular FreeBSD kernel"
+RESTRICTED=	"Unknown license type for binary object file ltmdmobj.o"
 
 LTMDM_DEV_MAJOR?=	228
 LTMDM_OBJ_VERSION?=	600
