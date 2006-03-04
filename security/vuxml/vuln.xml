@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="594ad3c5-a39b-11da-926c-0800209adf0e">
+    <topic>SSH.COM SFTP server -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>ssh2</name>
+	<range><lt>3.2.9.1_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SSH Communications Security Corp reports a format string
+	  vulnerability in their SFTP server. This vulnerability could
+	  cause a user with SCP/SFTP access only to get permission to
+	  execute also other commands. It could also allow user A to
+	  create a special file that when accessed by user B allows
+	  user A to execute commands as user B.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0705</cvename>
+      <bid>16640</bid>
+      <url>http://www.ssh.com/company/newsroom/article/715/</url>
+      <url>http://www.frsirt.com/english/advisories/2006/0554</url>
+      <url>http://securitytracker.com/id?1015619</url>
+      <url>http://secunia.com/advisories/18828</url>
+      <url>http://xforce.iss.net/xforce/xfdb/24651</url>
+    </references>
+    <dates>
+      <discovery>2006-02-13</discovery>
+      <entry>2006-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6107efb9-aae3-11da-aea1-000854d03344">
     <topic>gtar -- invalid headers buffer overflow</topic>
     <affects>
