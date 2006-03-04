@@ -1,5 +1,5 @@
---- extensions/transformiix/source/base/Double.cpp.orig	Mon Feb  6 15:40:52 2006
-+++ extensions/transformiix/source/base/Double.cpp	Mon Feb  6 15:51:01 2006
+--- content/xslt/src/base/txDouble.cpp.orig	Mon Feb  6 15:40:52 2006
++++ content/xslt/src/base/txDouble.cpp	Mon Feb  6 15:51:01 2006
 @@ -52,11 +52,16 @@
  //A trick to handle IEEE floating point exceptions on FreeBSD - E.D.
  #ifdef __FreeBSD__
