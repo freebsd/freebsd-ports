@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
