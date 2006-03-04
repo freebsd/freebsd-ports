@@ -3,8 +3,6 @@ Local/Applications/oolite.app/library_paths.openapp
 Local/Applications/oolite.app/Resources/Info-gnustep.plist
 Local/Applications/oolite.app/Resources/oolite.desktop
 Local/Applications/oolite.app/stamp.make
-Local/Applications/oolite.app/Contents/Resources/AIs/dockingAI.plist
-Local/Applications/oolite.app/Contents/Resources/Info-Oolite.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/route2sunskimAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/sunSkimExitAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/risingShuttleAI.plist
@@ -15,8 +13,10 @@ Local/Applications/oolite.app/Contents/Resources/AIs/pirateAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/thargoidAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/timebombAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/collectLootAI.plist
+Local/Applications/oolite.app/Contents/Resources/AIs/enteringTraderAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/route2patrolAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/stationAI.plist
+Local/Applications/oolite.app/Contents/Resources/AIs/dockingAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/exitingTraderAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/interceptAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/nullAI.plist
@@ -30,11 +30,16 @@ Local/Applications/oolite.app/Contents/Resources/AIs/shuttleAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/escortAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/scavengerAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/planetPatrolAI.plist
+Local/Applications/oolite.app/Contents/Resources/AIs/crewroles.plist
+Local/Applications/oolite.app/Contents/Resources/AIs/hardMissileAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/rockHermitAI.plist
+Local/Applications/oolite.app/Contents/Resources/AIs/enteringPirateAI.plist
 Local/Applications/oolite.app/Contents/Resources/AIs/buoyAI.plist
 Local/Applications/oolite.app/Contents/Resources/Sounds/afterburner2.ogg
+Local/Applications/oolite.app/Contents/Resources/Sounds/ecm.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/guiclick.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/hit.ogg
+Local/Applications/oolite.app/Contents/Resources/Sounds/scoop.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/bigbang.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/boop.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/buy.ogg
@@ -49,12 +54,13 @@ Local/Applications/oolite.app/Contents/Resources/Sounds/laserhits.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/hullbang.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/trumblesqueal.ogg
 Local/Applications/oolite.app/Contents/Resources/Sounds/laser.ogg
-Local/Applications/oolite.app/Contents/Resources/Sounds/ecm.ogg
+Local/Applications/oolite.app/Contents/Resources/Sounds/witchabort.ogg
 Local/Applications/oolite.app/Contents/Resources/Textures/asteroid.png
 Local/Applications/oolite.app/Contents/Resources/Textures/cobra1_redux.png
 Local/Applications/oolite.app/Contents/Resources/Textures/pod2_redux.png
 Local/Applications/oolite.app/Contents/Resources/Textures/asciitext.png
 Local/Applications/oolite.app/Contents/Resources/Textures/viperi_redux.png
+Local/Applications/oolite.app/Contents/Resources/Textures/trumblebox.png
 Local/Applications/oolite.app/Contents/Resources/Textures/cobra3_redux.png
 Local/Applications/oolite.app/Contents/Resources/Textures/boa2_left.png
 Local/Applications/oolite.app/Contents/Resources/Textures/python_redux2.png
@@ -87,12 +93,12 @@ Local/Applications/oolite.app/Contents/Resources/Textures/MorayMED_top.png
 Local/Applications/oolite.app/Contents/Resources/Textures/qbomb.png
 Local/Applications/oolite.app/Contents/Resources/Textures/worm_skin.png
 Local/Applications/oolite.app/Contents/Resources/Textures/boa2_redux.png
+Local/Applications/oolite.app/Contents/Resources/Textures/boa2_rear.png
 Local/Applications/oolite.app/Contents/Resources/Textures/barrel_metal.png
-Local/Applications/oolite.app/Contents/Resources/Textures/placard.png
 Local/Applications/oolite.app/Contents/Resources/Textures/transporter_redux.png
 Local/Applications/oolite.app/Contents/Resources/Textures/moray_redux1.png
-Local/Applications/oolite.app/Contents/Resources/Textures/boa2_rear.png
 Local/Applications/oolite.app/Contents/Resources/Textures/adder_redux.png
+Local/Applications/oolite.app/Contents/Resources/Textures/placard.png
 Local/Applications/oolite.app/Contents/Resources/Textures/boa2_right.png
 Local/Applications/oolite.app/Contents/Resources/Textures/flare256.png
 Local/Applications/oolite.app/Contents/Resources/Textures/compass.png
@@ -164,6 +170,7 @@ Local/Applications/oolite.app/Contents/Resources/Models/thargoid_redux.dat
 Local/Applications/oolite.app/Contents/Resources/Models/sidewinder_redux.dat
 Local/Applications/oolite.app/Contents/Resources/Models/cobra1_redux.dat
 Local/Applications/oolite.app/Contents/Resources/Models/shuttle_redux.dat
+Local/Applications/oolite.app/Contents/Resources/Models/icostextured.dat
 Local/Applications/oolite.app/Contents/Resources/Models/new_coriolis.dat
 Local/Applications/oolite.app/Contents/Resources/Models/missile.dat
 Local/Applications/oolite.app/Contents/Resources/Models/boulder.dat
@@ -211,6 +218,7 @@ Local/Applications/oolite.app/Contents/Resources/Images/greendot.png
 Local/Applications/oolite.app/Contents/Resources/Images/zoom.png
 Local/Applications/oolite.app/Contents/Resources/Music/BlueDanube.ogg
 Local/Applications/oolite.app/Contents/Resources/Music/OoliteTheme.ogg
+Local/Applications/oolite.app/Contents/Resources/Info-Oolite.plist
 @dirrm Local/Applications/oolite.app/Resources
 @dirrm Local/Applications/oolite.app/Contents/Resources/AIs
 @dirrm Local/Applications/oolite.app/Contents/Resources/Sounds

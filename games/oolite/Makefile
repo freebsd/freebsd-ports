@@ -6,19 +6,24 @@
 #
 
 PORTNAME=	oolite
-PORTVERSION=	1.55
+PORTVERSION=	${OOLITE_BASE_VERSION}.${OOLITE_SRC_VERSION}
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/oolite-linux/ \
-		ftp://ftp.alioth.net/oolite/
-DISTFILES=	${PORTNAME}-src-${PORTVERSION}-1${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}-1${EXTRACT_SUFX}
+MASTER_SITES=	http://download.berlios.de/oolite-linux/old/ \
+		ftp://ftp.alioth.net/oolite/old/
+DISTFILES=	${PORTNAME}-src-${OOLITE_BASE_VERSION}-${OOLITE_SRC_VERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-data-${OOLITE_BASE_VERSION}-${OOLITE_DATA_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Trade and combat space simulator, clone of Elite
 
+OOLITE_BASE_VERSION=	1.62
+OOLITE_SRC_VERSION=	3
+OOLITE_DATA_VERSION=	3
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-src
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
-USE_REINPLACE=	yes
 USE_SDL=	mixer image gfx
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
