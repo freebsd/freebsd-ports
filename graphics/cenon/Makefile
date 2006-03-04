@@ -17,7 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A vector graphics tool for GNUstep
 
-PREFIX=		${LOCALBASE}/GNUstep
+GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
+PREFIX=		${GNUSTEP_PREFIX}
 NO_MTREE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -47,6 +48,7 @@ post-extract:
 	@${FIND} ${WRKSRC}/Library -name COPYING -delete
 
 post-install:
+	-@${MKDIR} ${PREFIX}/Local/Library
 .if defined(WITH_FULL_LIBRARY)
 	${TAR} xyvf ${_DISTDIR}/CenonLibrary-${PORTVERSION}-1${EXTRACT_SUFX} \
 		-C ${PREFIX}/Local/Library --exclude COPYING
