@@ -353,7 +353,6 @@
     SUBDIR += slimeforest
     SUBDIR += slirc
     SUBDIR += slrn
-    SUBDIR += squirrelmail
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += stardict2-dict-ja
