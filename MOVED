@@ -2207,3 +2207,4 @@ games/civ2demo||2006-02-17|Remove expired port
 converters/libytnef|devel/libytnef|2006-02-21|Move to accurate category
 graphics/libgrass5||2006-02-22|Remove expired port
 devel/libtool13||2006-02-23|Remove defunct libtool
+japanese/squirrelmail|mail/squirrelmail|2006-03-05|Integrated to mail/squirrelmail
