@@ -9,7 +9,9 @@ PORTNAME=	audacious
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://audacious-media-player.org/release/
+MASTER_SITES=	http://audacious-media-player.org/release/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	novel
 DISTNAME=	audacious-${PORTVERSION}
 EXTRACT_SUFX=.tgz
 
