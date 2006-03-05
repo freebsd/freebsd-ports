@@ -17,13 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose tool for parameter handling in C++
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
+.if ( ${OSVERSION} >= 502126 &&  ${OSVERSION} < 600000 )
+USE_GCC=	3.3
 .endif
 
 .include <bsd.port.post.mk>
