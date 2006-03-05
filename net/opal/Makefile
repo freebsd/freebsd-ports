@@ -27,9 +27,15 @@ USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" BUILDTIME="YES"
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+CFLAGS+=	-fPIC
+.endif
+
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" BUILDTIME="YES"
 NO_FILTER_SHLIBS=	yes
 ALL_TARGET=	optshared
 MAKE_ENV=	BUILDTIME="YES"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
