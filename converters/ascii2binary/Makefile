@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ascii2binary
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 DISTNAME=	${PORTNAME}
@@ -16,33 +16,15 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
-		LIBS="-lintl"
-MAKE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
-		LIBS="-lintl"
-USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/ascii2binary bin/binary2ascii		\
-		%%NLS%%share/locale/fr/LC_MESSAGES/ascii2binary.mo
+PLIST_FILES=	bin/ascii2binary bin/binary2ascii
 
 MAN1=		ascii2binary.1 binary2ascii.1
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB=	NLS="@comment "
-.else
-PLIST_SUB=	NLS=""
-.endif
-
 pre-configure:
-.if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e 's|cp -r locale|#cp -r locale|' ${WRKSRC}/Makefile
-.endif
-
-post-install:
-	@${FIND} ${PREFIX}/share/locale -name ascii2binary.po -delete
+	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
