@@ -17,6 +17,8 @@ COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
+BROKEN=		Incomplete dependency list
+
 # note, we do not want to clean openh323, otherwise it has to build
 # it all over again which can take several hours.
 NOCLEANDEPENDS=	yes

@@ -19,6 +19,8 @@ COMMENT=	Equivalence's H323 GateKeeper for OpenH323 OhPhone and NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
+BROKEN=		Incomplete dependency list
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NOCLEANDEPENDS=	yes
