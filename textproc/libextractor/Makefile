@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.9
-PORTREVISION=	1
+PORTVERSION=	0.5.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
 USE_GCC=	3.4+
