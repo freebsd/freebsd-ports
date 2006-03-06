@@ -36,6 +36,12 @@ MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
 		INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		Configure fails on !i386
+.endif
+
 post-extract: .SILENT
 # Extract GCC distribution separately because of USE_ZIP/.tar.gz conflict
 	cd ${WRKDIR} && ${GZIP_CMD} -dc \
@@ -56,4 +62,4 @@ do-configure:
 	cd ${GCC_DIR} && ./configure --target=saturn-local-hp48 \
 		--prefix=${PREFIX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
