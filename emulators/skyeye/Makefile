@@ -23,7 +23,13 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.2.0
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binary/skyeye ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
