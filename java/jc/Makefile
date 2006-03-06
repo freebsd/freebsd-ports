@@ -18,6 +18,8 @@ COMMENT=	JVM that converts class files to C source and compiles them with GCC
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+NO_PACKAGE=	Takes too many resources to build
+
 MAN1=		jc.1
 
 USE_JAVA=	yes
