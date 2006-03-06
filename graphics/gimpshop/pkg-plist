@@ -375,10 +375,14 @@ libexec/gimp/2.2/plug-ins/zealouscrop
 %%PYTHON:%%libexec/gimp/2.2/python/gimpfu.py
 %%PYTHON:%%libexec/gimp/2.2/python/gimpfu.pyc
 %%PYTHON:%%libexec/gimp/2.2/python/gimpfu.pyo
+%%PYTHON:%%libexec/gimp/2.2/python/gimpmodule.a
+%%PYTHON:%%libexec/gimp/2.2/python/gimpmodule.la
 %%PYTHON:%%libexec/gimp/2.2/python/gimpmodule.so
 %%PYTHON:%%libexec/gimp/2.2/python/gimpplugin.py
 %%PYTHON:%%libexec/gimp/2.2/python/gimpplugin.pyc
 %%PYTHON:%%libexec/gimp/2.2/python/gimpplugin.pyo
+%%PYTHON:%%libexec/gimp/2.2/python/gimpprocbrowsermodule.a
+%%PYTHON:%%libexec/gimp/2.2/python/gimpprocbrowsermodule.la
 %%PYTHON:%%libexec/gimp/2.2/python/gimpprocbrowsermodule.so
 %%PYTHON:%%libexec/gimp/2.2/python/gimpshelf.py
 %%PYTHON:%%libexec/gimp/2.2/python/gimpshelf.pyc
