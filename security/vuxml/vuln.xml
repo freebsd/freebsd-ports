@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ssh2</name>
+	<name>ssh2-nox11</name>
 	<range><lt>3.2.9.1_5</lt></range>
       </package>
     </affects>
@@ -64,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-02-13</discovery>
       <entry>2006-03-04</entry>
+      <modified>2006-03-06</modified>
     </dates>
   </vuln>
 
