@@ -7,6 +7,7 @@
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
+PORTREVISION=	1
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
@@ -47,10 +48,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/bin/eperl
 	${INSTALL_MAN} ${WRKSRC}/eperl.1 ${PREFIX}/man/man1/eperl.1
 .if !defined(NOPORTDOCS)
-	@if [ ! -d ${PREFIX}/share/examples/eperl ]; then \
-		${MKDIR} ${PREFIX}/share/examples/eperl; \
+	@if [ ! -d ${EXAMPLESDIR} ]; then \
+		${MKDIR} ${EXAMPLESDIR}; \
 	fi
-	${CP} ${WRKSRC}/eg/* ${PREFIX}/share/examples/eperl/
+	${CP} ${WRKSRC}/eg/* ${EXAMPLESDIR}/
 .endif
 .if defined(INSTALL_ALSO_AS_SSSL)
 	@if [ ! -d ${PREFIX}/www/cgi-bin ]; then \
