@@ -10,4 +10,6 @@ MASTERDIR=	${.CURDIR}/../../editors/speedbar
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs20
 
+BROKEN=		Incorrect pkg-plist
+
 .include "${MASTERDIR}/Makefile"
