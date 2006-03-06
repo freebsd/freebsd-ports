@@ -1,5 +1,9 @@
 bin/gillo3
 %%DATADIR%%/attract.rgb
+%%DATADIR%%/ball.ac
+%%DATADIR%%/ballx2.ac
+%%DATADIR%%/ballx200.ac
+%%DATADIR%%/ball.rgb
 %%DATADIR%%/balleffectblue.rgb
 %%DATADIR%%/balleffectred.rgb
 %%DATADIR%%/boing.wav
@@ -20,6 +24,7 @@ bin/gillo3
 %%DATADIR%%/field.ac
 %%DATADIR%%/field.rgb
 %%DATADIR%%/field_out.ac
+%%DATADIR%%/field_out_bup.ac
 %%DATADIR%%/fourcar_choice.rgb
 %%DATADIR%%/game1.mod
 %%DATADIR%%/gillo.rgb

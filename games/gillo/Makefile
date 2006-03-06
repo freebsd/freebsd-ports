@@ -39,6 +39,8 @@ do-build:
 	${JAM} -dx -sPREFIX=${PREFIX}
 
 do-install:
-	cd ${WRKSRC} && ${JAM} -dx -sPREFIX=${PREFIX} install
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gillo3 ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.* ${DATADIR}
 
 .include <bsd.port.mk>
