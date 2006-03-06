@@ -8,14 +8,11 @@
 PORTNAME=	fortunelock
 PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cx.capsi.com/src/fortunelock/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dannyboy
 
 MAINTAINER=	dannyboy@FreeBSD.org
 COMMENT=	Locks a terminal while showing fortunes
-
-BROKEN=		Checksum mismatch
 
 USE_BZIP2=	yes
 
