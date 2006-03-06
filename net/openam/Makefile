@@ -19,6 +19,8 @@ COMMENT=	H323 Answer Machine
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
 
+BROKEN=		Incomplete dependency list
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NOCLEANDEPENDS=	yes
