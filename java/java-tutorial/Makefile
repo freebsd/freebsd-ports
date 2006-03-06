@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jdk-tutorial
-PORTVERSION=	2005.04.15
+PORTVERSION=	2006.03.06
 CATEGORIES=	java devel
 MASTER_SITES=	http://java.sun.com/docs/books/tutorialNB/download/
 .if defined(WITH_EXTRAS)
@@ -16,13 +16,11 @@ DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
 DISTNAME=	tutorial
 .endif
 
-MAINTAINER=	ringworm01@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Java 2 SDK tutorial
 
-BROKEN=		Size mismatch
-
 NO_WRKSUBDIR=	yes
-RESTRICTED=	"This software is under license and export control."
+RESTRICTED=	This software is under license and export control.
 NO_BUILD=	yes
 USE_ZIP=	yes
 PORTDOCS=	*
