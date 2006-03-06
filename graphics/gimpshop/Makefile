@@ -7,7 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		${MASTER_SITE_LOCAL}
