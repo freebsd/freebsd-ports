@@ -17,6 +17,8 @@ COMMENT=	The GGZ Gaming Zone - KDE Client
 
 LIB_DEPENDS=	ggzcore.8:${PORTSDIR}/games/ggz-client-libs
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 USE_GMAKE=	yes
