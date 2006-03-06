@@ -28,6 +28,8 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		Incomplete pkg-plist
+
 .if !exists(/usr/src/sys)
 IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
