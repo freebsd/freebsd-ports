@@ -14,6 +14,8 @@ DISTFILES+=	${OOOBUILD_SOURCE} ${OOO_CAIRO} \
 
 MAINTAINER=	maho@FreeBSD.org
 
+BROKEN=		Unfetchable
+
 #DEVELOPER_VER=	yes #you must be an expert or guru to activate this
 .if defined(DEVELOPER_VER)
 OOOBUILD_VERSION=2.0.2.${MILESTONE}
