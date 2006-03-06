@@ -17,6 +17,8 @@ COMMENT=	A very artistic X window manager
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
+BROKEN=		Incomplete pkg-plist
+
 DATADIR=	${PREFIX}/share/e16
 
 CONFLICTS=	x11-wm/enlightenment-devel-[0-9]*
