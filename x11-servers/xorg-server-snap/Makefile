@@ -98,6 +98,7 @@ PLIST_SUB+=	PPC_NA=""
 .endif
 
 .if ${ARCH} == sparc64
+BROKEN=		Does not compile on sparc64
 PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64_NA="@comment "
 MAN4+=		apm.4x \
