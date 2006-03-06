@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
+BROKEN=		Size mismatch
+
 VERSION=	2006-01-24
 RESTRICTED=	Source recipient must acknowledge license
 
