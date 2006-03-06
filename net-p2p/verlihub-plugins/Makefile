@@ -28,9 +28,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/verlihub
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
-post-patch:
-	@${CAT} ${PKGDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
-
 post-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/extra
@@ -45,8 +42,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/basic/stats/.libs/libstats_pi.so ${DATADIR}/libstats_pi.so
 	${INSTALL_DATA} ${WRKSRC}/extra/lua/src/.libs/liblua_pi.so ${DATADIR}/extra/liblua_pi.so
 	${INSTALL_DATA} ${WRKSRC}/extra/perl/src/.libs/libperl_pi.so ${DATADIR}/extra/libperl_pi.so
-
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
