@@ -7,6 +7,7 @@
 
 PORTNAME=		bash
 PORTVERSION=		3.1.${PATCHLEVEL:S/^0//g}
+PORTREVISION=		1
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -89,7 +90,8 @@ CPPFLAGS+=		${PTHREAD_CFLAGS} \
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
+			LDFLAGS="${LDFLAGS}" \
+			YACC="${YACC}"
 
 .include <bsd.port.pre.mk>
 
