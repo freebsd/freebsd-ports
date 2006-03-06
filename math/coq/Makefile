@@ -19,6 +19,8 @@ COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		Does not build
+
 USE_GMAKE=	yes
 ALL_TARGET=	world
 WITH_IDE=	yes
