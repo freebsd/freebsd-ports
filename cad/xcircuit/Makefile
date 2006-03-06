@@ -14,6 +14,8 @@ MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
