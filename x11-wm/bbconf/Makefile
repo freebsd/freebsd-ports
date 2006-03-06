@@ -34,6 +34,12 @@ PLIST_FILES=	bin/bbconf \
 		lib/bbconf/plugins/libthemes.so
 PLIST_DIRS=	lib/bbconf/plugins lib/bbconf
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile on amd64
+.endif
+
 post-patch:
 	@${PERL} -pi -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 	@${PERL} -pi -e 's|-O2 ||g ; \
@@ -47,4 +53,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
