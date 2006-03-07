@@ -45,8 +45,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 CONFIGURE_ARGS+=	--disable-timeout
 .endif
 
-.if ${OSVERSION} < 500000 || ${ARCH} != "i386"
-BROKEN=		"Does not compile on 4.x or on !i386"
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
 .endif
 
 .if !defined(WITH_NOCLIENTS)
