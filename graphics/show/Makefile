@@ -9,7 +9,8 @@ PORTNAME=	show
 PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ibiblio.org/propaganda/
+MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
+		http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
