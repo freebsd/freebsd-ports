@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"crashes after a short time"
+IGNORE=		crashes after a short time
 .endif
 
 do-install:
