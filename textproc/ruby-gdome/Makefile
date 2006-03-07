@@ -28,10 +28,6 @@ INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Coredump during build on amd64"
-.endif
-
 post-extract:
 	${RM} -rf ${WRKSRC}/examples-ruby/CVS
 

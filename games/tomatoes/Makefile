@@ -47,10 +47,6 @@ SDL_LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 post-patch:
 .for file in include/font.h
 	cd ${WRKSRC} && ${CP} ${file} ${file}.bak \

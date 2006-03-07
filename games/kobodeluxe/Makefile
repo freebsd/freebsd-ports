@@ -28,10 +28,6 @@ OPTIONS=	OPENGL "OpenGL rendering layer (experimental)" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 .if defined(WITH_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=	--enable-opengl
