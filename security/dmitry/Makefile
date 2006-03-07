@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.mor-pah.net/code/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deepmagic Information Gathering Tool
 
-BROKEN=		unfetchable
-
 HAS_CONFIGURE=	yes
 
 MAN1=		dmitry.1
