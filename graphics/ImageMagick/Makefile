@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	6.2.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
