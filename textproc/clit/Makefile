@@ -8,9 +8,10 @@
 PORTNAME=	clit
 PORTVERSION=	${MAJ_VER}.${MIN_VER}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.convertlit.com/\
-		http://math.libtomcrypt.org/files/:ltm
-DISTFILES=	clit${MAJ_VER}${MIN_VER}src.zip \
+MASTER_SITES=	http://www.convertlit.com/:clit \
+		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/:clit \
+		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/:ltm
+DISTFILES=	clit${MAJ_VER}${MIN_VER}src.zip:clit \
 		ltm-0.33.tar.bz2:ltm
 EXTRACT_ONLY=	clit${MAJ_VER}${MIN_VER}src.zip
 
