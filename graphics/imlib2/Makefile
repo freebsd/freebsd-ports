@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.2.1.010
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15

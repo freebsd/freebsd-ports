@@ -36,6 +36,9 @@ lib/imlib2/loaders/gif.so
 lib/imlib2/loaders/jpeg.a
 lib/imlib2/loaders/jpeg.la
 lib/imlib2/loaders/jpeg.so
+lib/imlib2/loaders/id3.a
+lib/imlib2/loaders/id3.la
+lib/imlib2/loaders/id3.so
 lib/imlib2/loaders/lbm.a
 lib/imlib2/loaders/lbm.la
 lib/imlib2/loaders/lbm.so
