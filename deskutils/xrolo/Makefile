@@ -28,10 +28,4 @@ USE_IMAKE=	yes
 MAN1=		xrolo.1
 PLIST_FILES=	bin/xrolo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 504100
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
