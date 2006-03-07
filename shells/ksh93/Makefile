@@ -15,9 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
-BROKEN=		Size mismatch
-
-VERSION=	2006-01-24
+VERSION=	2006-02-14
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
@@ -32,11 +30,7 @@ MAN1=		ksh93.1
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 600000)
 INSTALLROOT=	${WRKSRC}/arch/freebsd${OSREL:R}.${ARCH}
-.else
-INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=	Does not compile on sparc64
