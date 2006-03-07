@@ -14,8 +14,6 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
-BROKEN=		"is unfetchable"
-
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
 IGNORE=		requires kernel source (/usr/src/sys) to build
