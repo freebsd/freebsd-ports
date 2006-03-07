@@ -6,6 +6,7 @@
 
 PORTNAME=	xmms-ladspa
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/ladspa/ \
 		${MASTER_SITE_LOCAL}

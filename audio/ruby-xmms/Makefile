@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

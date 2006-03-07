@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/  \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \

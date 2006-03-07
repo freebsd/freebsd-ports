@@ -7,6 +7,7 @@
 
 PORTNAME=	masqmail
 PORTVERSION=	0.2.20
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://innominate.org/kurth/masqmail/download/
 

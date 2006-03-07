@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/:src \
 

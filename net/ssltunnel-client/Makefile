@@ -10,7 +10,7 @@
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.15
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-client

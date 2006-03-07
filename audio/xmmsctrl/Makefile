@@ -7,6 +7,7 @@
 
 PORTNAME=	xmmsctrl
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://user.it.uu.se/~adavid/utils/
 

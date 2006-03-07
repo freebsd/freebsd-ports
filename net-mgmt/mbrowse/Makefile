@@ -7,7 +7,7 @@
 
 PORTNAME=	mbrowse
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kill-9.org/mbrowse/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://ftp.welcomes-you.com/pub/xfmail/release/%SUBDIR%/	\

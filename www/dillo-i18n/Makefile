@@ -16,7 +16,7 @@
 # On FreeBSD 4 with OpenSSL 0.9.7d, the configure script refuses to enable
 # ssl at all and on FreeBSD 5 and up, linking is broken.
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-i18n
 
 PATCH_SITES=	http://teki.jpn.ph/pc/software/

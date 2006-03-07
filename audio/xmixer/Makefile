@@ -7,7 +7,7 @@
 
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://mpx.freeshell.net/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/1.1.5/&,} \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/stable/1.1.5/ \

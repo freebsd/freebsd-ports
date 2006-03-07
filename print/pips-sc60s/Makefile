@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON Stylus C60 Series
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-fishmatic
 PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmg
 PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ductape.net/~reeve/downloads/
 DISTNAME=	wmG-${PORTVERSION}

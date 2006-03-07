@@ -7,7 +7,7 @@
 
 PORTNAME=	lodju
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	graphics
 MASTER_SITES=	http://liw.iki.fi/liw/lodju/tarballs/
 

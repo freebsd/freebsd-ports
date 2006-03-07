@@ -7,7 +7,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/stegdetect/ \
 		http://www.outguess.org/

@@ -8,7 +8,7 @@
 
 PORTNAME=	xbill
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/
 

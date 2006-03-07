@@ -7,6 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/0.4/
 PKGNAMESUFFIX=	-sdlaudio

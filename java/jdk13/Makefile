@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
 #		  http://www.eyesbeyond.com/freebsddom/java/jdk13.html

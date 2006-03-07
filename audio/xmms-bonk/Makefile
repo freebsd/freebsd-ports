@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-bonk
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 DISTNAME=	bonk-xmms-${PORTVERSION}

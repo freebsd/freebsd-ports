@@ -8,7 +8,7 @@
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	20020902
 CATEGORIES=	net-im
 MASTER_SITES=	http://public.yahoo.com/~mmk/

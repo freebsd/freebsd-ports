@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd

@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdrip
 PORTVERSION=	0.52.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}

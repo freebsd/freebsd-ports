@@ -7,7 +7,7 @@
 
 PORTNAME=	netype
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	${PORTNAME}-0.1.0

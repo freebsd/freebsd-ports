@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	gtk-bluecurve-theme
+PORTREVISION=	1
 
 COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes
 

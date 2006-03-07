@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkdps
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
 DISTNAME=	gtkDPS-${PORTVERSION}

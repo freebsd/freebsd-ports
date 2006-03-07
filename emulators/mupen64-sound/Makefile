@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/${PORTVERSION}/
 PKGNAMESUFFIX=	-sound

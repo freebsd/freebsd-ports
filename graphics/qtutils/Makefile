@@ -8,7 +8,7 @@
 
 PORTNAME=	qtutils
 PORTVERSION=	0.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.flyn.org/projects/qtutils/
 

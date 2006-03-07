@@ -7,6 +7,7 @@
 
 PORTNAME=	spca5xx
 PORTVERSION=	20060101
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/ \
 		http://mxhaard.free.fr/spca50x/Download/oldrelease/

@@ -7,7 +7,7 @@
 
 PORTNAME=	sndstretch
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.geocities.com/harpin_floh/mysoft/
 PKGNAMEPREFIX=	xmms-

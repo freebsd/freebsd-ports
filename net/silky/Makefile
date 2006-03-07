@@ -7,7 +7,7 @@
 
 PORTNAME=	silky
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/

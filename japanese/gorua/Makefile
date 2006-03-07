@@ -7,6 +7,7 @@
 
 PORTNAME=	gorua
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	roadmap
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-plazma
 DISTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://membres.lycos.fr/diablolight/
 

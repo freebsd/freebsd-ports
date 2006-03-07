@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 

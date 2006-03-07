@@ -7,6 +7,7 @@
 
 PORTNAME=	ooodict
 PORTVERSION=	1.20051119
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ \
 		ftp://ftp.t.ring.gr.jp/pub/misc/openoffice/contrib/dictionaries/ \

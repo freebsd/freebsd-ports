@@ -6,6 +6,7 @@
 #
 
 PORTNAME?=	bluecurve-themes
+PORTREVISION?=	0
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jylefort@FreeBSD.org

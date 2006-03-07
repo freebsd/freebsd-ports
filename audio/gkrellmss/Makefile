@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmss
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 

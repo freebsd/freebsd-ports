@@ -7,7 +7,7 @@
 
 PORTNAME=	indubstrial
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome.org/~jdub/2004/indubstrial/
 

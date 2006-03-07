@@ -7,6 +7,7 @@
 
 PORTNAME=	wormux
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

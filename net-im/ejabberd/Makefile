@@ -7,7 +7,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/ \
 		http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/

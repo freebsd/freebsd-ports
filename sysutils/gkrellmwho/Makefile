@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwho
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/
 

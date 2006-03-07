@@ -6,7 +6,7 @@
 
 PORTNAME=	ghemical
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

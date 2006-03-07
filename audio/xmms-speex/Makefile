@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-speex
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://jzb.rapanden.dk/pub/
 DISTNAME=	speex-xmms-${PORTVERSION}

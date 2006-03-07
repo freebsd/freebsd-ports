@@ -7,7 +7,7 @@
 
 PORTNAME=	hat
 PORTVERSION=	2.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-

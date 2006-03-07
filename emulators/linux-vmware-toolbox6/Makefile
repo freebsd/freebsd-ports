@@ -7,7 +7,6 @@
 
 PORTNAME=	vmware-toolbox
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-#PORTREVISION=	0
 CATEGORIES=	emulators linux
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMEPREFIX=	linux-

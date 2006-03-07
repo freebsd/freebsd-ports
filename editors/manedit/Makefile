@@ -7,6 +7,7 @@
 
 PORTNAME=	manedit
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 

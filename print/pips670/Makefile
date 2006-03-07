@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-670C
 
