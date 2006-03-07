@@ -1,83 +1,84 @@
 bin/xmms2
-bin/xmms2d
-bin/xmms2-launcher
 bin/xmms2-et
+bin/xmms2-launcher
+%%FAM%%bin/xmms2-mlib-updater
+bin/xmms2d
 include/xmms2/xmms/xmms_config.h
 include/xmms2/xmms/xmms_decoder.h
 include/xmms2/xmms/xmms_decoderplugin.h
-include/xmms2/xmms/xmms_effectplugin.h
-include/xmms2/xmms/xmms_outputplugin.h
 include/xmms2/xmms/xmms_defs.h
 include/xmms2/xmms/xmms_effect.h
+include/xmms2/xmms/xmms_effectplugin.h
 include/xmms2/xmms/xmms_error.h
 include/xmms2/xmms/xmms_ipc.h
 include/xmms2/xmms/xmms_log.h
 include/xmms2/xmms/xmms_medialib.h
 include/xmms2/xmms/xmms_object.h
 include/xmms2/xmms/xmms_output.h
+include/xmms2/xmms/xmms_outputplugin.h
 include/xmms2/xmms/xmms_plsplugins.h
 include/xmms2/xmms/xmms_plugin.h
 include/xmms2/xmms/xmms_sample.h
 include/xmms2/xmms/xmms_transport.h
 include/xmms2/xmms/xmms_transportplugin.h
-include/xmms2/xmmsc/xmmsc_sockets.h
 include/xmms2/xmmsc/xmmsc_asyncns.h
+include/xmms2/xmmsc/xmmsc_errorcodes.h
+include/xmms2/xmmsc/xmmsc_idnumbers.h
 include/xmms2/xmmsc/xmmsc_inline.h
+include/xmms2/xmmsc/xmmsc_ipc_msg.h
+include/xmms2/xmmsc/xmmsc_ipc_transport.h
+include/xmms2/xmmsc/xmmsc_sockets.h
 include/xmms2/xmmsc/xmmsc_stdbool.h
 include/xmms2/xmmsc/xmmsc_stdint.h
 include/xmms2/xmmsc/xmmsc_stringport.h
 include/xmms2/xmmsc/xmmsc_unistd.h
-include/xmms2/xmmsc/xmmsc_errorcodes.h
-include/xmms2/xmmsc/xmmsc_idnumbers.h
-include/xmms2/xmmsc/xmmsc_ipc_msg.h
-include/xmms2/xmmsc/xmmsc_ipc_transport.h
 include/xmms2/xmmsc/xmmsc_util.h
 include/xmms2/xmmsclient/xmmsclient-cf.h
 include/xmms2/xmmsclient/xmmsclient-ecore.h
 include/xmms2/xmmsclient/xmmsclient-glib.h
 include/xmms2/xmmsclient/xmmsclient-qt.h
 include/xmms2/xmmsclient/xmmsclient.h
-lib/libxmmsclient-glib.a
-lib/libxmmsclient-glib.so
 %%ECORE%%lib/libxmmsclient-ecore.a
 %%ECORE%%lib/libxmmsclient-ecore.so
+lib/libxmmsclient-glib.a
+lib/libxmmsclient-glib.so
 lib/libxmmsclient.a
 lib/libxmmsclient.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/xmmsclient.so
+%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient_glib.so
+%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient.so
 %%CURL%%lib/xmms2/libxmms_curl_http.so
 lib/xmms2/libxmms_diskwrite.so
 lib/xmms2/libxmms_eq.so
-%%SID%%lib/xmms2/libxmms_sid.so
-%%MUSEPACK%%lib/xmms2/libxmms_musepack.so
-%%JACK%%lib/xmms2/libxmms_jack.so
 %%FAAD%%lib/xmms2/libxmms_faad.so
 %%FLAC%%lib/xmms2/libxmms_flac.so
-%%MODPLUG%%lib/xmms2/libxmms_modplug.so
-%%SAMBA%%lib/xmms2/libxmms_samba.so
-lib/xmms2/libxmms_null.so
-%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient_glib.so
-%%RUBY%%%%RUBY_SITELIBDIR%%/xmmsclient.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/xmmsclient.so
 lib/xmms2/libxmms_file.so
+%%GNOMEVFS%%lib/xmms2/libxmms_gnomevfs.so
 lib/xmms2/libxmms_html.so
+%%JACK%%lib/xmms2/libxmms_jack.so
 lib/xmms2/libxmms_m3u.so
 lib/xmms2/libxmms_mad.so
+%%MODPLUG%%lib/xmms2/libxmms_modplug.so
+%%MUSEPACK%%lib/xmms2/libxmms_musepack.so
+lib/xmms2/libxmms_null.so
 lib/xmms2/libxmms_oss.so
-lib/xmms2/libxmms_vorbisfile.so
 lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
+%%SAMBA%%lib/xmms2/libxmms_samba.so
+%%SID%%lib/xmms2/libxmms_sid.so
+lib/xmms2/libxmms_vorbisfile.so
 lib/xmms2/libxmms_wave.so
-%%ECORE%%libdata/pkgconfig/xmms2-client-ecore.pc
-libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client-ecore.pc
+libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
-@dirrm include/xmms2/xmms
-@dirrm include/xmms2/xmmsc
-@dirrm include/xmms2/xmmsclient
-@dirrm include/xmms2
-@dirrm lib/xmms2
 @dirrm %%DATADIR%%/scripts/startup.d
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
+@dirrm lib/xmms2
+@dirrm include/xmms2/xmmsclient
+@dirrm include/xmms2/xmmsc
+@dirrm include/xmms2/xmms
+@dirrm include/xmms2

@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	xmms2
-PORTVERSION=	0.2.d.2
+PORTVERSION=	0.2.d.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.2DrBombay
+DISTNAME=	${PORTNAME}-0.2DrCox
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Rewrite of xmms as a client/server system (developer release)
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		mad.2:${PORTSDIR}/audio/libmad \
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_PYTHON=	yes
+USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20
+USE_SQLITE=	3
 INSTALLS_SHLIB=	yes
 
 MAN1=		xmms2.1
@@ -52,6 +52,7 @@ PLIST_SUB+=	SID="@comment "
 
 .if defined(WITH_PYTHON_BINDINGS)
 BUILD_DEPENDS+=	pyrex:${PORTSDIR}/devel/pyrex
+USE_PYTHON_RUN=	yes
 PLIST_SUB+=	PYTHON=""
 .else
 EXCLUDE+=	python
@@ -132,17 +133,49 @@ EXCLUDE+=	samba
 PLIST_SUB+=	SAMBA="@comment "
 .endif
 
+.if defined(WITH_GNOMEVFS)
+USE_GNOME+=	gnomevfs2
+PLIST_SUB+=	GNOMEVFS=""
+.else
+EXCLUDE+=	gnomevfs
+PLIST_SUB+=	GNOMEVFS="@comment "
+.endif
+
+.if defined(WITH_FAM)
+USE_FAM=	yes
+WANT_FAM_SYSTEM=gamin
+PLIST_SUB+=	FAM=""
+.else
+EXCLUDE+=	medialib-updater
+PLIST_SUB+=	FAM="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
+BROKEN=	Does not build on FreeBSD < 5.x
+.endif
+
+pre-everything::
+.if defined(WITH_SAMBA)
+	@${ECHO_MSG} "WARNING: Samba plugin is experimental and not fully working"
+	@${ECHO_MSG} ""
+.endif
+.if defined(WITH_GNOMEVFS)
+	@${ECHO_MSG} "WARNING: Gnome VFS plugin is experimental and not fully working"
+	@${ECHO_MSG} ""
+.endif
+.if defined(WITH_FAM)
+	@${ECHO_MSG} "WARNING: Fam plugin is experimental and not fully working"
+	@${ECHO_MSG} ""
 .endif
 
 do-build:
 	cd ${WRKSRC} && \
 		scons CC=${CC} LINKFLAGS="${LDFLAGS}" CCFLAGS="${CFLAGS}" \
 		LIBPATH=${LOCALBASE}/lib CPPPATH=${LOCALBASE}/include \
-		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig EXCLUDE="${EXCLUDE}"
+		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig EXCLUDE="${EXCLUDE}" \
+		PREFIX="${PREFIX}"
 
 do-install:
 	@cd ${WRKSRC} && scons install
