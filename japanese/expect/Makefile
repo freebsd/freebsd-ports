@@ -15,8 +15,6 @@ COMMENT=	A sophisticated scripter based on Japanized tcl/tk
 
 LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 
-BROKEN=		Does not compile
-
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
