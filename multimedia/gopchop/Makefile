@@ -8,7 +8,7 @@
 
 PORTNAME=	gopchop
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://outflux.net/unix/software/GOPchop/download/

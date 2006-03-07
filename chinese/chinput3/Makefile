@@ -7,7 +7,7 @@
 
 PORTNAME=	chinput
 PORTVERSION=	3.0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 

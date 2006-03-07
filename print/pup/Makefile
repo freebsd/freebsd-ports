@@ -7,7 +7,7 @@
 
 PORTNAME=	pup
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://download.sourceforge.net/pup/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src

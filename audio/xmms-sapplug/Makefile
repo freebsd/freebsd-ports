@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		ftp://ftp.atari.art.pl/stuff/audio/8bit-music-archive/sap/plugins/xmms/

@@ -7,7 +7,7 @@
 
 PORTNAME=	konverter
 DISTVERSION=	0.92-beta1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.kraus.tk/projects/konverter/sources/
 

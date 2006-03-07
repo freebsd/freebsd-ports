@@ -7,7 +7,7 @@
 
 PORTNAME=	gwave
 PORTVERSION=	20030804
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.unc.edu/~tell/dist/ \
 		http://geda.seul.org/dist/

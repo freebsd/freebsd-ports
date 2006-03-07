@@ -7,6 +7,7 @@
 
 PORTNAME=	gtksee
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/gtksee/
 

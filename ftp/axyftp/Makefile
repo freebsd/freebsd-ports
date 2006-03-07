@@ -7,7 +7,7 @@
 
 PORTNAME=	axyftp
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
 		ftp://ftp.netsw.org/net/ip/filetrans/ftp/axyftp/ \

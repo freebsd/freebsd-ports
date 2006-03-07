@@ -7,6 +7,7 @@
 
 PORTNAME=	instant-tinderbox
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 DISTFILES=
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-skins
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/Skins/
 DISTFILES=	AbsoluteE_Xmms.zip \

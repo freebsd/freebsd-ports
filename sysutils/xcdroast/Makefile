@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/:src \

@@ -7,6 +7,7 @@
 
 PORTNAME=	traindirector
 PORTVERSION=	1.19c
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://xtsl.free.fr/119c/
 DISTNAME=	traindir-${PORTVERSION}-src

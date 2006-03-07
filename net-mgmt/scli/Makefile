@@ -7,7 +7,7 @@
 
 PORTNAME=	scli
 PORTVERSION=	0.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 

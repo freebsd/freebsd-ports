@@ -8,7 +8,7 @@
 
 PORTNAME=	pfinger
 PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.xelia.ch/unix/pfinger/
 

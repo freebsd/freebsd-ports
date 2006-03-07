@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-cdread
 PORTVERSION=	0.14a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 

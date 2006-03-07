@@ -7,7 +7,7 @@
 
 PORTNAME=	linpopup
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src

@@ -7,7 +7,7 @@
 
 PORTNAME=	ldvd
 PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp-master.debian-unofficial.org/contrib/vedran/ldvd/${PORTVERSION}/
 

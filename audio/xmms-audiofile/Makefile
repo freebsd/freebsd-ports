@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-audiofile
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.68k.org/~michael/xmms/
 

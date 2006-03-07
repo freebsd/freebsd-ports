@@ -7,7 +7,7 @@
 
 PORTNAME=	trommler
 PORTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
 DISTNAME=	trommler.3.4

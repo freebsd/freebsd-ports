@@ -7,6 +7,7 @@
 
 PORTNAME=	xferstats
 PORTVERSION=	2.16
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkabale
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://sf.gds.tuwien.ac.at/3/g/gt/gtkabale/
 

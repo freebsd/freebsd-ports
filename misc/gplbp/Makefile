@@ -7,7 +7,7 @@
 
 PORTNAME=	gplbp
 PORTVERSION=	0.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/
 

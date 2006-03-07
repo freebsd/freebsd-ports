@@ -7,7 +7,7 @@
 
 PORTNAME=	xsu
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://xsu.freax.eu.org/files/
 

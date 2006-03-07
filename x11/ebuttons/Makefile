@@ -7,7 +7,7 @@
 
 PORTNAME=	E-buttons
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.moodfarm.demon.co.uk/download/
 EXTRACT_SUFX=	.tgz

@@ -7,6 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.84.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://unixpages.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

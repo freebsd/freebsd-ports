@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-kj
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
 DISTNAME=	kint_xmms-${PORTVERSION}

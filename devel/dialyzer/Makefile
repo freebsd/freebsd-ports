@@ -7,6 +7,7 @@
 
 PORTNAME=	dialyzer
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.it.uu.se/research/group/hipe/dialyzer/snapshots/
 

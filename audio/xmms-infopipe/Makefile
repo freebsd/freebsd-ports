@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-infopipe
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.beastwithin.org/users/wwwwolf/code/xmms/
 MASTER_SITE_SUBDIR=	${PORTNAME}

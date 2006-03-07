@@ -7,7 +7,7 @@
 
 PORTNAME=	jags
 PORTVERSION=	0.20.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sumpan.campus.luth.se/software/jags/download/

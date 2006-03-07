@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

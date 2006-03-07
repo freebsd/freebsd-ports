@@ -7,7 +7,7 @@
 
 PORTNAME=	polypaudio
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/polypaudio/
 

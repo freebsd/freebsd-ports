@@ -6,6 +6,7 @@
 
 PORTNAME=	yahoo
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/yahoo-transport-2/
 PKGNAMEPREFIX=	jabber-

@@ -7,7 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://home.ircnet.de/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-gui-gtk-urlslave

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-mp3cue
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://brianvictor.tripod.com/
 DISTNAME=	XMMS-mp3cue-${PORTVERSION}

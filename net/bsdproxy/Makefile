@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdproxy
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://daveb.net/bsdproxy/
 

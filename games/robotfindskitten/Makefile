@@ -7,6 +7,7 @@
 
 PORTNAME=	robotfindskitten
 PORTVERSION=	1600003.248b
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://robotfindskitten.org/download/POSIX/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

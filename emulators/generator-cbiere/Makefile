@@ -7,6 +7,7 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35.r2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ghostwhitecrab.com/generator/ \

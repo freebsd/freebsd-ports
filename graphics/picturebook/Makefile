@@ -7,7 +7,7 @@
 
 PORTNAME=	picturebook
 PORTVERSION=	20010422
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture

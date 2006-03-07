@@ -7,7 +7,7 @@
 
 PORTNAME=	TekNap
 PORTVERSION=	1.3.g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://got.net/~brian/teknap/ \
 		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
