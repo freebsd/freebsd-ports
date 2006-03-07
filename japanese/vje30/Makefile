@@ -7,7 +7,7 @@
 
 PORTNAME=	vje
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	${CD_MOUNTPTS:S,^,file:,:S,$,/freebsd/,} \
 		${CD_MOUNTPTS:S,^,file:,:S,$,/source/delta/:source,} \

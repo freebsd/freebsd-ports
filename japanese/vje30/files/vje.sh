@@ -12,9 +12,9 @@
 name=vjed
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/vje30/bin/vjed
-
 required_files=%%PREFIX%%/etc/vje30/vje.cfg
+start_precmd='/sbin/ldconfig -m %%PREFIX%%/lib/compat'
+command=%%PREFIX%%/vje30/bin/vjed
 
 [ -z "$vjed_enable" ] && vjed_enable=NO
 
