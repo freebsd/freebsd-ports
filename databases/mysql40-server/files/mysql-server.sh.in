@@ -4,8 +4,7 @@
 #
 
 # PROVIDE: mysql
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
