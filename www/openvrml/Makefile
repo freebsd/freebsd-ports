@@ -46,10 +46,6 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on ${ARCH}"
-.endif
-
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on ${OPSYS}-${OSREL}"
 .endif

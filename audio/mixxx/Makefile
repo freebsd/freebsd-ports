@@ -47,10 +47,6 @@ IGNORE=	does not compile on FreeBSD 4.x, due to lack of pselect() in libc
 IGNORE= does not compile on FreeBSD < 5.3, due to lack of round() in libm
 .endif
 
-.if ${OSVERSION} >= 600000 && ${ARCH} == "amd64"
-BROKEN=	"does not build"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}&| ; \
