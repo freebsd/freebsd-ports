@@ -20,14 +20,8 @@ WRKSRC=		${WRKDIR}/props
 USE_IMAKE=	yes
 MAKE_ARGS=	INFOFILES=""
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 		${MKDIR} ${X11BASE}/lib/X11/locale/C/props; \
 		${INSTALL_DATA} ${WRKSRC}/C/* ${X11BASE}/lib/X11/locale/C/props
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
