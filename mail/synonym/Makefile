@@ -8,7 +8,7 @@
 PORTNAME=	synonym
 PORTVERSION=	0.4.3
 CATEGORIES=	mail security
-MASTER_SITES=	http://www.modulo.ro/source/
+MASTER_SITES=	http://www.modulo.ro/opencms/opencms/system/galleries/download/
 DISTNAME=	${PORTNAME}-0.4-3
 
 MAINTAINER=	nork@FreeBSD.org
