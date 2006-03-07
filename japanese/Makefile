@@ -381,7 +381,6 @@
     SUBDIR += vflib
     SUBDIR += vftool
     SUBDIR += vje30
-    SUBDIR += vje30-trial
     SUBDIR += w3
     SUBDIR += w3m
     SUBDIR += w3m-img
