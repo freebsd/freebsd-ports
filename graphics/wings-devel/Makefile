@@ -30,8 +30,8 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 504001
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
