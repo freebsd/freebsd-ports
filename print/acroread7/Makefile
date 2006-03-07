@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	acroread7
-PORTVERSION?=	7.0.5
-PORTREVISION?=	1
+PORTVERSION?=	7.0.1
+PORTREVISION?=	0
+PORTEPOCH?=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/

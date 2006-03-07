@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060307:
+  AFFECTS: users of print/acroread7 and the localized versions
+  AUTHOR: hrs@FreeBSD.org
+
+  Unfortunately, it turns out that printing feature of Adobe
+  Reader 7.0.5 does not work with FreeBSD's Linux emulation
+  environment for now.  Although English, French, German,
+  Japanese, and Korean version of the port were updated to
+  7.0.5 on 2006/02/21, these changes have been reverted consequently.
+
+  Please update the packages installed (normal upgrading procedure
+  by using portupgrade(1) and so on should work).  I am sorry for the
+  confusion.
+
 20060302:
   AFFECTS: net-im/jabber-pyicq and net-im/jabber-pymsn
   AUTHOR: garga@FreeBSD.org
