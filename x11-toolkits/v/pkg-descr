@@ -8,7 +8,4 @@ toolkits on both environments).
 Full documentation, many code examples, and the V toolkit for Windows
 systems is available at the V web site:
 
-Documentation (in TeX format) will also be installed under
-/usr/X11R6/share/doc/v.
-
-WWW: http://objectcentral.com/
+WWW: http://vgui.sf.net
