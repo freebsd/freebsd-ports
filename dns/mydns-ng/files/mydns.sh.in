@@ -4,8 +4,7 @@
 #
 
 # PROVIDE: mydns
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: DAEMON mysql postgresql
 # KEYWORD: shutdown
 
 #
