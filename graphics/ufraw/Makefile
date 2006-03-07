@@ -31,7 +31,7 @@ MAN1=			ufraw.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 600000
+.if ${OSVERSION} < 504105
 BROKEN=			"Needs memmem(3)"
 .endif
 
