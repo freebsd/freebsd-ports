@@ -24,16 +24,10 @@ USE_REINPLACE=	yes
 
 MAN1=		nip2.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's/^EXTRA_DIST = scraps bootstrap doc/EXTRA_DIST = scraps bootstrap/' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} '535,538s/^/#/' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
