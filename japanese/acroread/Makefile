@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	7.0.5
-PORTREVISION=	2
+PORTVERSION=	7.0.1
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	japanese print
 
 MASTERDIR=	${.CURDIR}/../../print/acroread7

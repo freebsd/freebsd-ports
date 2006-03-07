@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	7.0.5
+PORTVERSION=	7.0.1
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	korean print linux
 
 MASTERDIR=	${.CURDIR}/../../print/acroread7

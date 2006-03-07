@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	7.0.5
-PORTREVISION=	1
+PORTVERSION=	7.0.1
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	german print linux
 MASTERDIR=	${.CURDIR}/../../print/acroread7
 MD5_FILE=	${.CURDIR}/distinfo
