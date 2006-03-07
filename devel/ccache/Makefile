@@ -9,7 +9,7 @@ PORTNAME=	ccache
 PORTVERSION=	2.4
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
+MASTER_SITES=	http://samba.org/ftp/ccache/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
