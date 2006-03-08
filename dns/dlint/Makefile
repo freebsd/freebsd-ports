@@ -9,13 +9,12 @@
 PORTNAME=	dlint
 PORTVERSION=	1.4.0
 CATEGORIES=	dns
-MASTER_SITES=	http://www.domtools.com/pub/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/dns/
 DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 MAN8=		dlint.8
 
