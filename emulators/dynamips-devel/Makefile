@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.3c
+PORTVERSION=	0.2.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 
@@ -47,7 +47,11 @@ DYNAMIPS_ARCH=	"nojit"
 .if ${OSVERSION} < 600029
 #
 # Requires libpcap 0.9+
-MAKE_ENV=	HAS_PCAP=0
+MAKE_ENV+=	HAS_PCAP=0
+.endif
+
+.if ${OSVERSION} >= 700013
+MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
 .endif
 
 .include <bsd.port.post.mk>
