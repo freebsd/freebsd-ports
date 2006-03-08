@@ -8,7 +8,7 @@ PORTNAME=	kcheckers
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://wibix.de/aw_downloads/kcheckers/
+MASTER_SITES=	http://wibix.de/infusions/pro_download_panel/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
@@ -16,7 +16,6 @@ COMMENT=	Qt version of the classic boardgame checkers
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 PLIST_FILES=	bin/kcheckers %%DATADIR%%/kcheckers.pdn
