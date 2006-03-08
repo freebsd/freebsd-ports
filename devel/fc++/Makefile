@@ -9,7 +9,7 @@
 PORTNAME=	fc++
 PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cc.gatech.edu/~yannis/fc++/
+MASTER_SITES=	http://www-static.cc.gatech.edu/~yannis/fc++/
 DISTNAME=	FC++.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
