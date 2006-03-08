@@ -9,15 +9,14 @@ PORTNAME=	xteddy
 PORTVERSION=	2.0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.itn.liu.se/~stegu/xteddy/
+MASTER_SITES=	http://staffwww.itn.liu.se/~stegu/xteddy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cuddlesome teddy for the X desktop
 
-NO_CDROM=	"Can only be distributed for free"
+NO_CDROM=	Can only be distributed for free
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
