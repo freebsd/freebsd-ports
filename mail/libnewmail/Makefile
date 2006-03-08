@@ -9,7 +9,7 @@ PORTNAME=	libnewmail
 PORTVERSION=	0.3
 PORTREVISION=	8
 CATEGORIES=	mail
-MASTER_SITES=	http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
+MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic mail checking library
@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-doxygen --disable-lynx
