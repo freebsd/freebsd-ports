@@ -9,7 +9,7 @@ PORTNAME=	giblib
 PORTVERSION=	1.2.4
 PORTREVISION=	2
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	A utility library that includes a wrapper for imlib2
