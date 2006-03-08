@@ -7,23 +7,23 @@
 
 PORTNAME=	icebreaker
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.mattdm.org/icebreaker/1.2.x/
+MASTER_SITES=	http://mattdm.org/icebreaker/1.2.x/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game similar to Jezzball or Barrack
 
-
 USE_SDL=	mixer sdl
 USE_GMAKE=	yes
-MAKE_ENV=	prefix="${PREFIX}" \
+MAKE_ENV+=	prefix="${PREFIX}" \
 		highscoredir="${PREFIX}/share/icebreaker/scores" \
 		mandir="${PREFIX}/man" \
 		CHMOD="${CHMOD}" \
 		CHOWN="${CHOWN}" \
-		MKDIR="${MKDIR}"
+		MKDIR="${MKDIR}" \
+		CC="${CC}"
 
 MAN6=		${PORTNAME}.6
 
