@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/scrot
-%%PORTDOCS%%share/doc/scrot/AUTHORS
-%%PORTDOCS%%share/doc/scrot/ChangeLog
-%%PORTDOCS%%share/doc/scrot/README
-%%PORTDOCS%%share/doc/scrot/TODO
-%%PORTDOCS%%@dirrm share/doc/scrot
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
