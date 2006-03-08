@@ -1,76 +1,31 @@
---- Makefile.orig	Thu Feb  2 00:08:41 2006
-+++ Makefile	Tue Feb 14 01:53:31 2006
-@@ -3,26 +3,26 @@
- 
- # Replace x86 by amd64 for a build on x86_64.
- # Use "nojit" for architectures that are not x86 or x86_64.
--ARCH=x86
-+DYNAMIPS_ARCH?=x86
- 
- # Change this to 0 if your system doesn't support RFC 2553 extensions
- HAS_RFC2553=1
- 
- # Change this to 1 if your system has libpcap-0.9.4 or better 
+--- Makefile.orig	Tue Feb 14 23:54:17 2006
++++ Makefile	Wed Mar  8 22:54:11 2006
+@@ -12,6 +12,9 @@
  # (WinPcap is used for Cygwin)
--HAS_PCAP=1
-+HAS_PCAP?=1
+ HAS_PCAP?=1
  
++# Change this to 1 if your system has posix_memalign
++HAS_POSIX_MEMALIGN?=0
++
  # Current dynamips release
- VERSION=0.2.3c
+ VERSION=0.2.4
  
--CC=gcc
-+CC?=gcc
- LD=ld
- RM=rm
- TAR=tar
- CP=cp
- LEX=flex
--ARCH_INC_FILE=\"$(ARCH)_trans.h\"
--CFLAGS=-g -Wall -O3 -fomit-frame-pointer -DJIT_ARCH=\"$(ARCH)\" \
-+ARCH_INC_FILE=\"$(DYNAMIPS_ARCH)_trans.h\"
-+CFLAGS+=-g -Wall -O3 -fomit-frame-pointer -DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" \
- 	-DARCH_INC_FILE=$(ARCH_INC_FILE) \
+@@ -25,14 +28,15 @@
+ CFLAGS+=-g -Wall -O3 -fomit-frame-pointer -DJIT_ARCH=\"$(DYNAMIPS_ARCH)\" \
+ 	-DARCH_INC_FILE=$(ARCH_INC_FILE) -DDYNAMIPS_VERSION=\"$(VERSION)\" \
  	-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE \
- 	-DHAS_RFC2553=$(HAS_RFC2553)
-@@ -30,8 +30,9 @@
+-	-DHAS_RFC2553=$(HAS_RFC2553)
++	-DHAS_RFC2553=$(HAS_RFC2553) -DHAS_POSIX_MEMALIGN=$(HAS_POSIX_MEMALIGN)
+ 
  PCAP_LIB=-lpcap
  
  ifeq ($(shell uname), FreeBSD)
--   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf
--   LIBS=-L/usr/local/lib -L. -lelf -pthread
-+   PTHREAD_LIBS?=-pthread
-+   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf $(PTHREAD_CFLAGS)
-+   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
+    PTHREAD_LIBS?=-pthread
+-   CFLAGS+=-I/usr/local/include -I/usr/local/include/libelf $(PTHREAD_CFLAGS)
+-   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
++   LOCALBASE?=/usr/local
++   CFLAGS+=-I$(LOCALBASE)/include -I$(LOCALBASE)/include/libelf $(PTHREAD_CFLAGS)
++   LIBS=-L$(LOCALBASE)/lib -L. -lelf $(PTHREAD_LIBS)
  else
  ifeq ($(shell uname -s), Darwin)
     CFLAGS+=-I/usr/local/include
-@@ -73,17 +74,17 @@
- #SOURCES += profiler.c
- #CFLAGS += -p -DPROFILE -DPROFILE_FILE=\"$(PROG).profile\"
- 
--ifeq ($(ARCH),x86)
-+ifeq ($(DYNAMIPS_ARCH),x86)
- HDR += x86-codegen.h x86_trans.h
- SOURCES += x86_trans.c
- endif
- 
--ifeq ($(ARCH),amd64)
-+ifeq ($(DYNAMIPS_ARCH),amd64)
- HDR += x86-codegen.h amd64-codegen.h amd64_trans.h
- SOURCES += amd64_trans.c
- endif
- 
--ifeq ($(ARCH),nojit)
-+ifeq ($(DYNAMIPS_ARCH),nojit)
- HDR += nojit_trans.h
- SOURCES += nojit_trans.c
- endif
-@@ -123,7 +124,7 @@
- 
- .PHONY: microcode
- microcode: 
--	@$(CC) -Wall -o rom2c rom2c.c $(LIBS)
-+	@$(CC) -Wall $(CFLAGS) -o rom2c rom2c.c $(LIBS)
- 	@./rom2c microcode microcode_dump.inc
- 
- .PHONY: clean
