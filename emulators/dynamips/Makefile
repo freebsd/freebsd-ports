@@ -39,7 +39,7 @@ do-install:
 .if ${ARCH} == "i386"
 DYNAMIPS_ARCH=	"x86"
 .elif ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"amd64"
+DYNAMIPS_ARCH=	"nojit"	# JIT does not work on amd64 for some reason
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
