@@ -47,7 +47,8 @@ MAN8=	wzdftpd.8
 
 .if defined(WITH_UTF8)
 USE_ICONV=	yes
-CONFIGURE_ARGS+=	--enable-utf8
+.else
+CONFIGURE_ARGS+=	--disable-utf8
 .endif
 
 .if defined(WITH_TCL)
