@@ -7,4 +7,4 @@ request a mail spool auto-detection for users without any
 libnewmail specific configuration. The library offers a clean
 API to implement your own mail checking plugins.
 
-WWW: http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
+WWW: http://0pointer.de/lennart/projects/libnewmail/
