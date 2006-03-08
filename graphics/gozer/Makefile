@@ -8,10 +8,10 @@
 PORTNAME=	gozer
 PORTVERSION=	0.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A commandline text rendering utility that creates images from arbitrary text
+COMMENT=	Commandline text rendering utility - creates images from text
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
