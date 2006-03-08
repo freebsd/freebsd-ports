@@ -1,9 +1,9 @@
 bin/icebreaker
-share/icebreaker/crash.wav
-share/icebreaker/icebreaker_48.bmp
-share/icebreaker/ouch.wav
-share/icebreaker/penguin.bmp
-share/icebreaker/penguinicon_32.bmp
-share/icebreaker/scores/icebreaker.scores
-@dirrm share/icebreaker/scores
-@dirrm share/icebreaker
+%%DATADIR%%/crash.wav
+%%DATADIR%%/icebreaker_48.bmp
+%%DATADIR%%/ouch.wav
+%%DATADIR%%/penguin.bmp
+%%DATADIR%%/penguinicon_32.bmp
+%%DATADIR%%/scores/icebreaker.scores
+@dirrm %%DATADIR%%/scores
+@dirrm %%DATADIR%%

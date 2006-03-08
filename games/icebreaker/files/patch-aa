@@ -1,18 +1,15 @@
-
-$FreeBSD$
-
---- Makefile.orig	Fri Jul 27 05:45:10 2001
-+++ Makefile	Mon Jul 30 14:25:37 2001
-@@ -1,6 +1,7 @@
- CC=gcc
+--- Makefile.orig	Wed Mar  8 15:04:42 2006
++++ Makefile	Wed Mar  8 15:04:46 2006
+@@ -1,6 +1,6 @@
+-CC=gcc
  
 -SDLCONFIG=sdl-config
 +SDLCONFIG=$(SDL_CONFIG)
 +CC?=gcc
  
  ifndef prefix
-   #prefix=/usr/local
-@@ -17,7 +18,7 @@
+   prefix=/usr/local
+@@ -21,16 +21,16 @@
  endif
  
  ifndef OPTIMIZE
@@ -20,8 +17,10 @@ $FreeBSD$
 +  OPTIMIZE=
  endif
  
- CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(prefix)/share/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
-@@ -26,7 +27,7 @@
+-CFLAGS=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
++CFLAGS+=-Wall $(OPTIMIZE) $(SDL_CFLAGS) -DDATAPREFIX=\"$(datadir)/icebreaker\" -DHISCOREPREFIX=\"$(highscoredir)\"
+ 
+ SRC=icebreaker.c cursor.c grid.c laundry.c line.c penguin.c sound.c \
      level.c intro.c text.c status.c transition.c hiscore.c dialog.c \
      options.c fullscreen.c
  
@@ -30,7 +29,7 @@ $FreeBSD$
  SDL_LIB=$(SDL_LDFLAGS) $(SDL_MIXER) 
  SDL_CFLAGS := $(shell $(SDLCONFIG) --cflags)
  SDL_LDFLAGS := $(shell $(SDLCONFIG) --libs)
-@@ -100,17 +101,17 @@
+@@ -103,17 +103,17 @@
  	   sed 's/\$$VERDATE/$(VERDATE)/' > $@
  
  install: all
@@ -38,12 +37,13 @@ $FreeBSD$
 -	mkdir -p $(prefix)/share/icebreaker
 -	mkdir -p $(highscoredir)
 -	mkdir -p $(mandir)/man6
-+	$(MKDIR) $(prefix)/share/icebreaker
-+	$(MKDIR) $(highscoredir)
- 
+-
 -	install -m 644 *.wav *.bmp $(prefix)/share/icebreaker
 -	install -g games -s -m 2755 icebreaker $(prefix)/bin
 -	install -m 644 icebreaker.6 $(mandir)/man6
++	$(MKDIR) $(prefix)/share/icebreaker
++	$(MKDIR) $(highscoredir)
++
 +	$(BSD_INSTALL_DATA) *.wav *.bmp $(prefix)/share/icebreaker
 +	$(BSD_INSTALL_PROGRAM) icebreaker $(prefix)/bin
 +	$(BSD_INSTALL_MAN) icebreaker.6 $(mandir)/man6
