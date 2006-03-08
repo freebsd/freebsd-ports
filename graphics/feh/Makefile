@@ -8,7 +8,7 @@
 PORTNAME=	feh
 PORTVERSION=	1.3.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	An image viewer that utilizes Imlib2
