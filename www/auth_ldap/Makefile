@@ -14,6 +14,10 @@ MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to authenticate against an LDAP directory
 
+FORBIDDEN=	Contains multiple format strings vulnerabilities
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-04-08
+
 USE_OPENLDAP=	yes
 USE_APACHE=	yes
 GNU_CONFIGURE=	yes
