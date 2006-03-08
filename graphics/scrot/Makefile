@@ -8,7 +8,7 @@
 PORTNAME=	scrot
 PORTVERSION=	0.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
+MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A screen capture utility that utilizes Imlib2
