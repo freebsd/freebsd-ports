@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+	<vuln vid="948921ad-afbc-11da-bad9-02e081235dab">
+		<topic>GnuPG does not detect injection of unsigned data</topic>
+		<affects>
+			<package>
+				<name>gnupg</name>
+				<range>
+					<lt>1.4.2.2</lt>
+				</range>
+			</package>
+		</affects>
+		<description>
+			<body xmlns="http://www.w3.org/1999/xhtml">
+				<p>Werner Koch reports:</p>
+				<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000216.html">
+					<p>In the aftermath of the false positive signature verfication bug
+						(announced 2006-02-15) more thorough testing of the fix has been
+						done and another vulnerability has been detected.
+
+						This new problem affects the use of *gpg* for verification of
+						signatures which are _not_ detached signatures.  The problem also
+						affects verification of signatures embedded in encrypted messages;
+						i.e. standard use of gpg for mails.</p>
+				</blockquote>
+			</body>
+		</description>
+		<references>
+			<cvename>CVE-2006-0049</cvename>
+			<mlist msgid="87d5gvh2kr.fsf@wheatstone.g10code.de">http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000216.html</mlist>
+		</references>
+		<dates>
+			<discovery>2006-03-09</discovery>
+			<entry>2006-03-10</entry>
+		</dates>
+	</vuln>
   <vuln vid="104beb63-af4d-11da-8414-0013d4a4a40e">
     <topic>mplayer -- heap overflow in the ASF demuxer</topic>
     <affects>
