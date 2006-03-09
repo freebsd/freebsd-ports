@@ -9,7 +9,7 @@ PORTNAME=	qadsl
 PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://savannah.gnu.org/download/alive/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/alive/
 DISTNAME=	qadsl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
