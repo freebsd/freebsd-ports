@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="104beb63-af4d-11da-8414-0013d4a4a40e">
+    <topic>mplayer -- heap overflow in the ASF demuxer</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<range><lt>0.99.7_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mplayer team reports:</p>
+	<blockquote cite="http://www.mplayerhq.hu/design7/news.html#vuln13">
+	  <p>A potential buffer overflow was found in the ASF demuxer.
+	    Arbitrary remote code execution is possible (under the user ID
+	    running the player) when streaming an ASF file from a malicious
+	    server or local code execution (under the user ID running the
+	    player) if a malicious ASF file is played locally.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0579</cvename>
+      <url>http://www.mplayerhq.hu/design7/news.html#vuln13</url>
+      <url>http://secunia.com/advisories/18718</url>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=122029</url>
+    </references>
+    <dates>
+      <discovery>2006-02-15</discovery>
+      <entry>2006-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="594ad3c5-a39b-11da-926c-0800209adf0e">
     <topic>SSH.COM SFTP server -- format string vulnerability</topic>
     <affects>
