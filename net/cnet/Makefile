@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cnet
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10
 CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/
 EXTRACT_SUFX=	.tgz
