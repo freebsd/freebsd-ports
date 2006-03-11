@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.58
+PORTVERSION=	2.59
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/
-DISTFILES=	${PORTNAME}.pl-${PORTVERSION}.gz
+MASTER_SITES=	http://www.red-bean.com/cvs2cl/
+DISTFILES=	${PORTNAME}.pl
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,11 +23,12 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/${PORTNAME}
+	@${MKDIR} ${WRKSRC}
 
 do-build:
-	pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
+	@${SED} -e "s^exec perl -w -x^exec /usr/local/bin/perl -w -x^; s^#!perl -w^#!/usr/local/bin/perl -w^ " \
+		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/${PORTNAME}
+	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
