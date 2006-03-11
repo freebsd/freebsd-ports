@@ -84,7 +84,7 @@ do-install:
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
 	${BRANDELF} -t Linux ${INSTALLDIR}/Reader/intellinux/bin/acroread
 
-.if ${ADOBE_LANG:U} == ENU
+.if ${ADOBE_LANG:U} != ENU
 post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
