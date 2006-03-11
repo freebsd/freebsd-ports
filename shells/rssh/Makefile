@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssh
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.2
 CATEGORIES=	shells security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	enigmatyc@laposte.net
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/e34d0c2e-9efb-11da-b410-000e0c2e438a.html
-
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		rssh.1
 MAN5=		rssh.conf.5
@@ -42,14 +39,14 @@ CONFIGURE_ARGS+=--with-rdist=${LOCALBASE}/bin/rdist6
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -E -e 's,(\$$\(DESTDIR\)\$$\(sysconfdir\)/\$$\$$f),\1.dist,g' \
+	@${REINPLACE_CMD} -E -e 's,(\$$\(DESTDIR\)\$$\(sysconfdir\)/\$$\$$f),\1.dist,g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
 	@${ECHO_MSG} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/${PORTNAME} /etc/shells.bak; \
-	 ${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
+		${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
 	@${RM} /etc/shells.bak
 
 .include <bsd.port.post.mk>
