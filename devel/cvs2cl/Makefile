@@ -18,19 +18,21 @@ COMMENT=	CVS-log-message-to-ChangeLog conversion script
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 MANCOMPRESSED=	no
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}
 
-do-build:
-	@${SED} -e "s^exec perl -w -x^exec /usr/local/bin/perl -w -x^; s^#!perl -w^#!/usr/local/bin/perl -w^ " \
-		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/${PORTNAME}
-	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
+post-patch:
+	@${REINPLACE_CMD} -e "s|exec perl -w -x|exec ${PERL} -w -x|" \
+		-e "s|#!perl -w|#!${PERL} -w|" ${WRKSRC}/${PORTNAME}
 
 do-install:
+	@pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
 
