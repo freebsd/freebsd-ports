@@ -15,6 +15,7 @@ include/libast/url.h
 include/libast/avl_tree.h
 include/libast/iterator_if.h
 include/libast/map_if.h
+include/libast/mbuff.h
 include/libast/objpair.h
 include/libast/sysdefs.h
 include/libast/vector_if.h
