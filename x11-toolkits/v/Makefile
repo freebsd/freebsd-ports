@@ -10,6 +10,8 @@ PORTVERSION=	1.90
 CATEGORIES=	x11-toolkits devel graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vgui
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}a-patch${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
@@ -19,6 +21,7 @@ WRKSRC=		${WRKDIR}/home/vgui
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
+USE_DOS2UNIX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -45,7 +48,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libVx.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/libVxgl.a ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/include/v
-	${INSTALL_DATA} ${WRKSRC}/includex/v/* ${PREFIX}/include/v
+	${INSTALL_DATA} ${WRKSRC}/includex/v/*.h ${PREFIX}/include/v
+	${INSTALL_DATA} ${WRKSRC}/includex/v/*.cxx ${PREFIX}/include/v
 
 post-install:
 	${RANLIB} ${PREFIX}/lib/libVx.a
