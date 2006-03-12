@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.112 2006/02/25 06:12:35 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.114 2006/03/12 19:19:47 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 8;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -2173,7 +2173,7 @@ MAINTAINER COMMENT
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
 EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
-FETCH_DEPENDS DEPENDS DEPENDS_TARGET PERL_RUN_DEPENDS PERL_BUILD_DEPENDS
+FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	);
 
 	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)?DEPENDS/) {
