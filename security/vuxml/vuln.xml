@@ -34,6 +34,77 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a308e8e-b1b4-11da-b2fb-000e0c2e438a">
+    <topic>openssh -- remote denial of service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>5.4</gt><lt>5.4_12</lt></range>
+	<range><gt>5.3</gt><lt>5.3_27</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description:</h1>
+	<p>Because OpenSSH and OpenPAM have conflicting designs (one is event-
+	  driven while the other is callback-driven), it is necessary for
+	  OpenSSH to fork a child process to handle calls to the PAM framework.
+	  However, if the unprivileged child terminates while PAM authentication
+	  is under way, the parent process incorrectly believes that the PAM
+	  child also terminated.  The parent process then terminates, and the
+	  PAM child is left behind.</p>
+	<p>Due to the way OpenSSH performs internal accounting, these orphaned
+	  PAM children are counted as pending connections by the master OpenSSH
+	  server process.  Once a certain number of orphans has accumulated, the
+	  master decides that it is overloaded and stops accepting client
+	  connections.</p>
+	<h1>Impact:</h1>
+	<p>By repeatedly connecting to a vulnerable server, waiting for
+	  a password prompt, and closing the connection, an attacker can
+	  cause OpenSSH to stop accepting client connections until the
+	  system restarts or an administrator manually kills the orphaned
+	  PAM processes.</p>
+	<h1>Workaround:</h1>
+	<p>The following command will show a list of orphaned PAM
+	  processes:</p>
+	<pre># pgrep -lf 'sshd.*\[pam\]'</pre>
+	<p>The following command will kill orphaned PAM processes:</p>
+	<pre># pkill -f 'sshd.*\[pam\]'</pre>
+	<p>To prevent OpenSSH from leaving orphaned PAM processes behind,
+	  perform one of the following:</p>
+	<ol>
+	  <li>
+	    <p>Disable PAM authentication in OpenSSH.  Users will still
+	      be able to log in using their Unix password, OPIE or SSH
+	      keys.</p>
+	    <p>To do this, execute the following commands as root:</p>
+	    <pre># echo 'UsePAM no' >>/etc/ssh/sshd_config</pre>
+	    <pre># echo 'PasswordAuthentication yes' >>/etc/ssh/sshd_config</pre>
+	    <pre># /etc/rc.d/sshd restart</pre>
+          </li>
+	  <li>
+	    <p>If disabling PAM is not an option - if, for instance, you use
+	      RADIUS authentication, or store user passwords in an SQL database -
+	      you may instead disable privilege separation.  However, this may
+	      leave OpenSSH vulnerable to hitherto unknown bugs, and should be
+	      considered a last resort.</p>
+	    <p>To do this, execute the following commands as root:</p>
+	    <pre># echo 'UsePrivilegeSeparation no' >>/etc/ssh/sshd_config</pre>
+	    <pre># /etc/rc.d/sshd restart</pre>
+	  </li>
+	</ol>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0883</cvename>
+      <freebsdsa>SA-06:09</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-03-01</discovery>
+      <entry>2006-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="948921ad-afbc-11da-bad9-02e081235dab">
     <topic>GnuPG does not detect injection of unsigned data</topic>
     <affects>
