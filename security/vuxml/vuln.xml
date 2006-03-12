@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6111ecb8-b20d-11da-b2fb-000e0c2e438a">
+    <topic>nfs -- remote denial of service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_5</lt></range>
+	<range><gt>5.4</gt><lt>5.4_12</lt></range>
+	<range><gt>5.3</gt><lt>5.3_27</lt></range>
+	<range><gt>4.11</gt><lt>4.11_15</lt></range>
+	<range><gt>4.10</gt><lt>4.10_21</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem description:</h1>
+	<p>A part of the NFS server code charged with handling incoming
+	  RPC messages via TCP had an error which, when the server
+	  received a message with a zero-length payload, would cause a
+	  NULL pointer dereference which results in a kernel panic.  The
+	  kernel will only process the RPC messages if a userland nfsd
+	  daemon is running.</p>
+	<h1>Impact:</h1>
+	<p>The NULL pointer deference allows a remote attacker capable
+	  of sending RPC messages to an affected FreeBSD system to crash
+	  the FreeBSD system.</p>
+	<h1>Workaround:</h1>
+	<ol>
+	  <li>
+	    <p>Disable the NFS server: set the nfs_server_enable
+	      variable to "NO" in /etc/rc.conf, and reboot.</p>
+	    <p>Alternatively, if there are no active NFS clients (as
+	      listed by the showmount(8) utility), simply killing the
+	      mountd and nfsd processes should suffice.</p>
+	  </li>
+	  <li>
+	    <p>Add firewall rules to block RPC traffic to the NFS server
+	      from untrusted hosts.</p>
+	  </li>
+	</ol>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0900</cvename>
+      <freebsdsa>SA-06:10</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-03-01</discovery>
+      <entry>2006-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a308e8e-b1b4-11da-b2fb-000e0c2e438a">
     <topic>openssh -- remote denial of service</topic>
     <affects>
