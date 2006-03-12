@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# PROVIDE: xbms
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# xbms_enable (bool):	Set to NO by default.
+#			Set it to YES to enable xbms.
+#
+
+. %%RC_SUBR%%
+
+name="xbms"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/$[name}.conf
+
+load_rc_config $name
+
+: ${xbms_enable="NO"}
+
+run_rc_command "$1"
