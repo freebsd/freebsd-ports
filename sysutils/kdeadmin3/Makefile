@@ -8,6 +8,7 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -31,6 +32,8 @@ post-patch:
 	${REINPLACE_CMD} -e \
 	's|pkgconfigdir =.*|pkgconfigdir = ${LOCALBASE}/libdata/pkgconfig|g' \
 		${WRKSRC}/knetworkconf/backends/Makefile.in
+	${REINPLACE_CMD} -e 's|INDEX-5|${INDEXFILE}|g' \
+		${WRKSRC}/kpackage/fbsdInterface.cpp
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>
