@@ -7,6 +7,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Squid log analyzer and HTML report generator
 
-USE_REINPLACE=	yes
+PATCH_SITES=	http://sarg.sourceforge.net/
+PATCHFILES=	datafile.patch lastlog.patch
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=gcc
 CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
