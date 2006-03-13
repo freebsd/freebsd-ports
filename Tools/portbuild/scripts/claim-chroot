@@ -84,7 +84,7 @@ while [ ${found} != 1 ]; do
     mkdir ${chroot}/used/used
     touch ${chroot}/used/used/${pkgname}
     umount ${chroot}/used
-    mount /dev/${unit} ${chroot}/
+    mount -o async /dev/${unit} ${chroot}/
   else
     chrootnum=$(($chrootnum+1))
     chroot=${chrootdir}/${chrootnum}
