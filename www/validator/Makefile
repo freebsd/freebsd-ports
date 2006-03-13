@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -107,7 +107,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Requires Perl 5.6.0 or better to run
+IGNORE=		requires Perl 5.6.0 or better to run
 .endif
 
 .include <bsd.port.post.mk>
