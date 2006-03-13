@@ -1,0 +1,13 @@
+--- doc/dirmngr.texi.orig	Sat Sep  3 19:46:41 2005
++++ doc/dirmngr.texi	Sun Mar 12 14:55:51 2006
+@@ -32,8 +32,8 @@
+ 
+ @dircategory GNU Utilities
+ @direntry
+-* dirmngr: (gnupg).        X.509 CRL and OCSP server.
+-* dirmngr-client: (gnupg). X.509 CRL and OCSP client.
++* dirmngr: (dirmngr).        X.509 CRL and OCSP server.
++* dirmngr-client: (dirmngr). X.509 CRL and OCSP client.
+ @end direntry
+ 
+ @c
