@@ -15,11 +15,11 @@ EXTRACT_ONLY=
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
 
-BROKEN=		Tries to use java before it's present
-
 IGNOREFILES=	install40.jar
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
+JAVA_RUN=	jre
+JAVA_EXTRACT=	jre
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
@@ -38,7 +38,7 @@ DESKTOP_ENTRIES=	"SFBOL" "Star Fleet Battles Online" \
 
 RESTRICTED=	Commerical software.  Licenses does not allow redistribution.
 
-post-patch:
+post-extract:
 	@cd ${WRKDIR} && ${JAR} -xf ${DISTDIR}/${DISTFILES} D_/SFBOL/dist/core.jar 2>/dev/null | ${TRUE}
 	@cd ${WRKDIR} && ${JAR} -xf D_/SFBOL/dist/core.jar sfbicon.ico
 
