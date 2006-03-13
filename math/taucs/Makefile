@@ -16,9 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas \
-		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
+BUILD_DEPENDS=	${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack \
 		${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
+LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas
 
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes

@@ -1,6 +1,6 @@
---- config/FreeBSD.mk.orig	Wed Aug 27 15:22:40 2003
-+++ config/FreeBSD.mk	Wed Aug 27 15:24:30 2003
-@@ -9,11 +9,11 @@
+--- config/FreeBSD.mk.orig	Fri Aug 29 00:13:38 2003
++++ config/FreeBSD.mk	Mon Mar 13 11:38:31 2006
+@@ -9,15 +9,15 @@
  DEFFLG=-D
  
  FC        ?= f77
@@ -14,6 +14,11 @@
  COUTFLG   = -o
  
  LD        = $(CC) 
+-LDFLAGS   = $(CFLAGS) -static
++LDFLAGS   = $(CFLAGS)
+ LOUTFLG   = $(COUTFLG)
+ 
+ AR        = ar cr
 @@ -26,10 +26,10 @@
  RANLIB    = ranlib
  RM        = rm -rf
