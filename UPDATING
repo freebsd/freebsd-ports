@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060313:
+  AFFECTS: users of multimedia/vcdimager and security/dirmngr
+  AUTHOR: nork@FreeBSD.org
+
+  These versions of the ports which have been installed in your
+  system accidentally installed some malformed entries to
+  $LOCALBASE/info/dir, which prevent them from being upgraded
+  to the latest versions.  Please remove the following entries
+  manually from $LOCALBASE/info/dir before upgrading them to
+  vcdimager-0.7.23_2 (and later) and dirmngr-0.9.3_2 (and later)
+  respectively.
+
+  multimedia/vcdimager
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * VCDImager: (vcdimager).           GNU Video CD imaging utilities
+  * cdxa2mpeg: (vcdimager)cdxa2mpeg.  Strip RIFF/CD-XA container
+  * vcd-info:  (vcdimager)vcd-info.   Video CD diagnostic tool
+  * vcdimager: (vcdimager)vcdimager.  Video CD simple formatter
+  * vcdxbuild: (vcdimager)vcdxbuild.  Video CD XML formatter
+  * vcdxgen:   (vcdimager)vcdxgen.    Video CD XML template generator
+  * vcdxminfo: (vcdimager)vcdxminfo.  Display MPEG stream properties
+  * vcdxrip:   (vcdxrip).             Video CD Ripping tool
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  security/dirmngr
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  * dirmngr: (gnupg).         X.509 CRL and OCSP server.
+  * dirmngr-client: (gnupg).  X.509 CRL and OCSP client.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 20060307:
   AFFECTS: users of print/acroread7 and the localized versions
   AUTHOR: hrs@FreeBSD.org
