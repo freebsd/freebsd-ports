@@ -59,7 +59,7 @@ PSVIEWER?=	gv
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} < 5.0
+.if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
 
