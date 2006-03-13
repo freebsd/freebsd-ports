@@ -166,8 +166,10 @@ if [ $phase = 1 ]; then
 ./work/*
 ./compat/linux/proc
 ./usr/share/man/cat*/*
-./usr/local/etc/apache/httpd.conf
-./usr/local/etc/apache2/httpd.conf
+./usr/local/etc/apache
+./usr/local/etc/apache2
+./usr/local/news
+./usr/local/share/xml
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
@@ -228,8 +230,10 @@ else
 ./var/mail/*
 ./var/tmp/*
 ./usr/share/man/cat*/*
-./usr/local/etc/apache/httpd.conf
-./usr/local/etc/apache2/httpd.conf
+./usr/local/etc/apache
+./usr/local/etc/apache2
+./usr/local/news
+./usr/local/share/xml
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.buildexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.prebuild
