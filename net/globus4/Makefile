@@ -22,7 +22,7 @@ COMMENT=	Grid computing toolkit
 
 CONFLICTS=	globus-2*
 
-BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
