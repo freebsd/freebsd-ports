@@ -91,14 +91,14 @@ while `true`; do
   rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log ${pb}/${arch}/${branch}/errors/${pkgname}.log.bz2
 
   echo "dispatching: ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
-  (${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1) | tee ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log
+  ${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1
   error=$?
 
-  if grep -q " failed unexpectedly on " ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log; then
-    cat ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log | mail -s "${pkgname} failed uncleanly on ${arch} ${branch}" ${mailto}
-  else
-    rm ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log
-  fi
+  #if grep -q " failed unexpectedly on " ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log; then
+  #  cat ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log | mail -s "${pkgname} failed uncleanly on ${arch} ${branch}" ${mailto}
+  #else
+  #  rm ${pb}/${arch}/${branch}/logs/${pkgname}.pre.log
+  #fi
   
   # Pull in the results of the build from the client
   
