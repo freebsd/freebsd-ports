@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-prime
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	scim-imengine/17192
@@ -18,8 +18,6 @@ COMMENT=	SCIM IMEngine module using PRIME
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 		prime:${PORTSDIR}/japanese/prime
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Does not build
 
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes

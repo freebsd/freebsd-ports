@@ -1,4 +1,8 @@
+lib/scim-1.0/IMEngine/prime.a
+lib/scim-1.0/IMEngine/prime.la
 lib/scim-1.0/IMEngine/prime.so
+lib/scim-1.0/SetupUI/prime-imengine-setup.a
+lib/scim-1.0/SetupUI/prime-imengine-setup.la
 lib/scim-1.0/SetupUI/prime-imengine-setup.so
 share/locale/ja/LC_MESSAGES/scim-prime.mo
 share/scim/icons/scim-prime.png
