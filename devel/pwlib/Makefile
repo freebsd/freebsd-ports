@@ -7,18 +7,19 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.9.2
+PORTREVISION=	2
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
-DISTFILES=	pwlib-v1_9_2-src-tar.gz
+DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
+EXTRACT_SUFX=	tar.gz
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=	${WRKDIR}/pwlib_v1_9_2
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -27,6 +28,13 @@ WANT_SDL=	yes
 USE_OPENSSL=	yes
 NO_FILTER_SHLIBS=	yes
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		SDLLIBDIR="${LOCALBASE}/lib" PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		SDLLIBDIR="${LOCALBASE}/lib" STDCCFLAGS+="-I${LOCALBASE}"
 
 .include <bsd.port.pre.mk>
 
@@ -43,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-sdl
 # if nobody cares, use it if it is installed already
 .if !defined(WITHOUT_SDL) && !defined(WITH_SDL)
 .if ${HAVE_SDL:Msdl}
-USE_SDL+=       sdl
+USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
@@ -69,8 +77,5 @@ PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
-
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib"
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" SDLLIBDIR="${LOCALBASE}/lib" STDCCFLAGS+="-I${LOCALBASE}"
 
 .include <bsd.port.post.mk>
