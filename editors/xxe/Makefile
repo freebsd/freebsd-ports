@@ -24,6 +24,8 @@ RESTRICTED=	"Licensee may not distribute the Software"
 BINS=		convertdoc csscheck deploywebstart dtdtoxsd dtdvalid \
 		xsdvalid xxe
 
+PLIST_SUB=	XXE=${DISTNAME}
+
 post-extract:
 		@${SED} -e 's,%%JAVA_HOME%%,${JAVA_HOME},' \
 			-e 's,%%PREFIX%%,${PREFIX},' \
