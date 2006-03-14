@@ -398,11 +398,11 @@
 @dirrm %%CACTIDIR%%/include/jscalendar/lang
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
-@dirrm %%CACTIDIR%%/include
+@dirrmtry %%CACTIDIR%%/include
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
 @dirrm %%CACTIDIR%%/docs/pdf
 @dirrm %%CACTIDIR%%/docs/html/images
 @dirrm %%CACTIDIR%%/docs/html
 @dirrm %%CACTIDIR%%/docs
-@dirrm %%CACTIDIR%%
+@dirrmtry %%CACTIDIR%%
