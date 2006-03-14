@@ -6,38 +6,35 @@
 #
 
 PORTNAME=	openam
-PORTVERSION=	1.1.17
-PORTREVISION=	2
+PORTVERSION=	1.1.18
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/ \
-		http://www.de.openh323.org/bin/ \
-		http://www.ru.openh323.org/bin/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://www.voxgratia.org/releases/
+DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
+EXTRACT_SUFX=	tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Answer Machine
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
+LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
-BROKEN=		Incomplete dependency list
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-NOCLEANDEPENDS=	yes
-
-USE_BISON=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	optnoshared
-MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib152/work/pwlib \
-		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323-112/work/openh323
-THE_MACHTYPE=	${ARCH:S/i386/x86/}
-MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
+ALL_TARGET=	optshared
+MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \
+		OPENH323DIR=${LOCALBASE}/share/openh323 \
+		SYSLIBDIR=${LOCALBASE}/lib
+MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${ARCH:S/i386/x86/} \
+		OSRELEASE=${OSVERSION} CPLUS=${CXX}
+
+PLIST_SUB=	PORTNAME=${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/openh323
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/openam ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/openh323/openam
-	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${PREFIX}/share/doc/openh323/openam
-	${INSTALL_DATA} ${WRKSRC}/sample_message.wav ${PREFIX}/share/doc/openh323/openam
-	${INSTALL_DATA} ${WRKSRC}/sample_message_g7231.wav ${PREFIX}/share/doc/openh323/openam
+	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/openam ${PREFIX}/bin
+	@${MKDIR} ${DOCSDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sample_message.wav ${DOCSDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sample_message_g7231.wav ${DOCSDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
