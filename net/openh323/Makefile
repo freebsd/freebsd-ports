@@ -7,10 +7,11 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.17.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
-DISTFILES=	openh323-v1_17_3-src-tar.gz
+DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
+EXTRACT_SUFX=	tar.gz
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	A H323 Video Conferencing library
@@ -18,7 +19,7 @@ COMMENT=	A H323 Video Conferencing library
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pt_r.1:${PORTSDIR}/devel/pwlib
 
-WRKSRC=	${WRKDIR}/openh323_v1_17_3
+WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -27,15 +28,16 @@ USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+ALL_TARGET=	optshared
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" BUILDTIME="YES"
+MAKE_ENV=	BUILDTIME="YES"
+NO_FILTER_SHLIBS=	yes
+
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
-
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" BUILDTIME="YES"
-NO_FILTER_SHLIBS=	yes
-ALL_TARGET=	optshared
-MAKE_ENV=	BUILDTIME="YES"
 
 .include <bsd.port.post.mk>
