@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	The official Macromedia Flash Player for Linux Mozilla and Netscape 6+
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/83421018-b3ef-11da-a32d-000c6ec775d9.html
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes

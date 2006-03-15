@@ -17,6 +17,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@brandon.dvalentine.com
 COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/83421018-b3ef-11da-a32d-000c6ec775d9.html
+
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	"Redistribution not allowed"
