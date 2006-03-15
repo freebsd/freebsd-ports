@@ -8644,6 +8644,7 @@ p5-Net-Rendezvous	ports/net/p5-Net-Rendezvous
 p5-Net-Rsh	ports/net/p5-Net-Rsh
 p5-Net-SAP	ports/net/p5-Net-SAP
 p5-Net-SCP	ports/net/p5-Net-SCP
+p5-Net-SCP-Expect	ports/net/p5-Net-SCP-Expect
 p5-Net-SDP	ports/net/p5-Net-SDP
 p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SMPP	ports/net/p5-Net-SMPP
