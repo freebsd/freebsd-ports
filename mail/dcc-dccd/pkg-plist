@@ -63,6 +63,7 @@ dcc/libexec/start-grey
 dcc/libexec/stats-get
 dcc/libexec/stop-dccd
 dcc/libexec/updatedcc
+dcc/libexec/uninstalldcc
 dcc/libexec/wlist
 @dirrm dcc/log
 @dirrm dcc/libexec
