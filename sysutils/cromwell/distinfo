@@ -1,0 +1,6 @@
+MD5 (cromwell-snapshot-20060308.tar.bz2) = 2a2cb2d059e7b663faee99404751ede5
+SHA256 (cromwell-snapshot-20060308.tar.bz2) = 2dc344bb72ed7d0a21dfb15125d758d46a86e0aab0e3e49c6cecdfdfa1c0631e
+SIZE (cromwell-snapshot-20060308.tar.bz2) = 991871
+MD5 (cromwell-ufs.diff) = a73e22b9717d61e5b4d2c9517a308dee
+SHA256 (cromwell-ufs.diff) = bcfce0638cf5279f6bb3110a3cfc594daee434be5450596ddf14a149296315c1
+SIZE (cromwell-ufs.diff) = 81387
