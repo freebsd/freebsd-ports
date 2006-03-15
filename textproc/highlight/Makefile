@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.2.10
+PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
@@ -19,7 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_GCC=	3.4
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
@@ -38,6 +36,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/highlight|${DATADIR}|' ${WRKSRC}/datadir.cpp
@@ -46,8 +48,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../man/${MAN1}.gz ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../extensions.conf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../scriptre.conf ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../filetypes.conf ${DATADIR}
 	@${MKDIR} ${DATADIR}/helpmsg
 	${INSTALL_DATA} ${WRKSRC}/../helpmsg/* ${DATADIR}/helpmsg
 	@${MKDIR} ${DATADIR}/langDefs
@@ -56,7 +57,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../themes/* ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS ChangeLog INSTALL README
+.for i in AUTHORS ChangeLog INSTALL README README_DE README_ES README_INDENT \
+	README_REGEX TODO
 	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
