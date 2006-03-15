@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,6 @@ OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
 CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
@@ -100,7 +99,7 @@ post-install::
 	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
 .for i in dot-qmail-bogofilter-default \
-	mailfilter.example procmailrc.example
+	mailfilter.example procmailrc.example vm-bogofilter.el
 	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/${i}
 .endfor
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
