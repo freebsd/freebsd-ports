@@ -34,8 +34,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
 BDBVER=			${PORTVERSION:R:R}
-BDBMINOR=		${BDBVER:E:S/^\.//}
-BDBDIR=			BerkeleyDB.${BDBVER}
 CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
 			--enable-cxx --enable-dynamic \
 			--enable-rpc \
