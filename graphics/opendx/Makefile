@@ -95,8 +95,6 @@ post-install:
 		>> ${PKGMESSAGE}
 	@${ECHO} "you must install the port graphics/opendx-samples."		\
 		>> ${PKGMESSAGE}
-.else
-	${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/}
 .endif
 	@${ECHO} "---------------------------------------------------------"	\
 		>> ${PKGMESSAGE}
