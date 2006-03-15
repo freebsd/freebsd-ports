@@ -1,0 +1,7 @@
+The ADAPTIVE Communication Environment (ACE) is an object-oriented
+(OO) toolkit that implements fundamental design patterns for
+communication software.  ACE provides a rich set of reusable C++
+wrappers and frameworks that perform common communication software
+tasks across a range of OS platforms.
+
+WWW: http://www.cs.wustl.edu/~schmidt/ACE.html

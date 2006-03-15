@@ -1,0 +1,110 @@
+--- ./ACEXML/apps/svcconf/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ACEXML/apps/svcconf/Makefile.in	Mon Mar 13 20:36:39 2006
+@@ -356,7 +356,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ nobase_include_HEADERS = $(am__append_2)
+--- ./ACEXML/common/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ACEXML/common/Makefile.in	Mon Mar 13 20:36:47 2006
+@@ -357,7 +357,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ lib_LTLIBRARIES = libACEXML.la
+--- ./ACEXML/parser/parser/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ACEXML/parser/parser/Makefile.in	Mon Mar 13 20:36:55 2006
+@@ -346,7 +346,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ lib_LTLIBRARIES = libACEXML_Parser.la
+--- ./ace/QoS/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ace/QoS/Makefile.in	Mon Mar 13 20:37:02 2006
+@@ -354,7 +354,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ @BUILD_QOS_TRUE@lib_LTLIBRARIES = libACE_QoS.la
+--- ./ace/SSL/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ace/SSL/Makefile.in	Mon Mar 13 20:37:10 2006
+@@ -358,7 +358,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ @BUILD_SSL_TRUE@lib_LTLIBRARIES = libACE_SSL.la
+--- ./ace/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./ace/Makefile.in	Mon Mar 13 20:37:16 2006
+@@ -1946,7 +1946,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ DEFAULT_INCLUDES = 
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+--- ./Kokyu/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./Kokyu/Makefile.in	Mon Mar 13 20:37:24 2006
+@@ -349,7 +349,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ SUBDIRS = \
+--- ./protocols/ace/HTBP/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./protocols/ace/HTBP/Makefile.in	Mon Mar 13 20:37:31 2006
+@@ -349,7 +349,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ lib_LTLIBRARIES = libACE_HTBP.la
+--- ./protocols/ace/RMCast/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./protocols/ace/RMCast/Makefile.in	Mon Mar 13 20:37:37 2006
+@@ -360,7 +360,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ @BUILD_THREADS_TRUE@lib_LTLIBRARIES = libACE_RMCast.la
+--- ./protocols/ace/TMCast/Makefile.in.orig	Mon Mar 13 20:35:58 2006
++++ ./protocols/ace/TMCast/Makefile.in	Mon Mar 13 20:37:46 2006
+@@ -350,7 +350,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-pkgconfigdir = @libdir@/pkgconfig
++pkgconfigdir = @prefix@/libdata/pkgconfig
+ ACE_BUILDDIR = $(top_builddir)
+ ACE_ROOT = $(top_srcdir)
+ @BUILD_EXCEPTIONS_TRUE@@BUILD_THREADS_TRUE@lib_LTLIBRARIES = libACE_TMCast.la

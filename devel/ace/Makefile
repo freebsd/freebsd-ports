@@ -6,15 +6,43 @@
 #
 
 PORTNAME=	ace
-PORTVERSION=	${ACE_VERSION}
-PKGNAMESUFFIX=
+PORTVERSION=	5.5
+CATEGORIES=	devel
+MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
+		http://deuce.doc.wustl.edu/old_distribution/ \
+		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
+DISTNAME=	ACE-${PORTVERSION}
+
+MAINTAINER=	sem@FreeBSD.org
 
 COMMENT=	The Adaptive Communication Environment for C++
 
 CONFLICTS=	ace+tao-5*
 
-WITHOUT_TAO=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--program-transform-name s,^,ace-,
+USE_GNOME=	pkgconfig
 
-MASTERDIR=	${.CURDIR}/../ace+tao
+WRKSRC=		${WRKDIR}/ACE_wrappers
+BUILD_WRKSRC=	${WRKSRC}/objdir
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-.include "${MASTERDIR}/Makefile"
+MAN1=		ace-gperf.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not support
+.endif
+
+post-extract:
+	@${MKDIR} ${BUILD_WRKSRC}
+
+do-configure:
+	@cd ${BUILD_WRKSRC}; \
+	${CONFIGURE_ENV} ../${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
+.include <bsd.port.post.mk>
