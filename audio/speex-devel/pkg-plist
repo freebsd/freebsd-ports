@@ -1,5 +1,6 @@
 bin/speexdec
 bin/speexenc
+include/speex/pcm_wrapper.h
 include/speex/speex.h
 include/speex/speex_bits.h
 include/speex/speex_callbacks.h
