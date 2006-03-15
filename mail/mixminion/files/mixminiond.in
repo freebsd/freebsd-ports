@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# REQUIRE: NETWORKING SERVERS USR
+# BEFORE: LOGIN
+#
+# Add the following lines to /etc/rc.conf to enable mixminiond
+#
+# mixminiond_enable (bool):	Set to "NO" by default
+#				Set it to "YES" to enable mixminiond
+# mixminiond_conf (str):	Points to your mixminiond conf file
+#				Default: %%PREFIX%%/etc/mixminiond.conf
+# mixminiond_user (str):	Mixminiond user. Default _mixminion
+#
+
+. %%RC_SUBR%%
+
+name="mixminiond"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${mixminiond_enable="NO"}
+: ${mixminiond_conf="%%PREFIX%%/etc/mixminiond.conf"}
+: ${mixminiond_user="_mixminion"}
+: ${mixminiond_pidfile="/var/run/mixminion/mixminion.pid"}
+
+required_files=${mixminiond_conf}
+required_dirs=/var/spool/mixminion
+command="%%PREFIX%%/bin/${name}"
+extra_commands="reload republish DELKEYS stats upgrade"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+republish_cmd="${name}_republish"
+DELKEYS_cmd="${name}_DELKEYS"
+stats_cmd="${name}_stats"
+
+mixminiond_start() {
+	su ${mixminiond_user} -c "${command} start -f ${mixminiond_conf} --daemon"
+}
+
+mixminiond_stop() {
+	${command} stop -f ${mixminiond_conf}
+	run_rc_command poll
+}
+
+mixminiond_reload() {
+	${command} server-reload -f ${mixminiond_conf}
+}
+
+mixminiond_republish() {
+	${command} republish -f ${mixminiond_conf}
+}
+
+mixminiond_DELKEYS() {
+	${command} DELKEYS -f ${mixminiond_conf}
+}
+
+mixminiond_stats() {
+	${command} stats -f ${mixminiond_conf}
+}
+
+run_rc_command "$1"
