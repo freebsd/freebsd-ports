@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
@@ -18,13 +18,19 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	session	pcre
+USE_PHP=	session	pcre sqlite
 WANT_PHP_WEB=	yes
+DEFAULT_PHP_VER=5
+BROKEN_WITH_PHP=4
 NO_BUILD=	yes
 
 PFW_PREFIX?=	${PREFIX}/www/pfw
 SUB_FILES=	pkg-message
 SUB_LIST=	PFW_PREFIX=${PFW_PREFIX}
+
+BINFILES=	commandwrapper.sh packetfilter.sh
+CPDIRS=		lib web include test
+PORTDOCS=	INSTALL README README_TEST
 
 .include <bsd.port.pre.mk>
 
@@ -33,14 +39,26 @@ IGNORE=		pf is only in 5.x and newer
 .endif
 
 do-install:
-.for dir in lib web
+	${MKDIR} ${PFW_PREFIX}
+	${INSTALL_DATA} ${WRKSRC}/include.inc.php ${PFW_PREFIX}
+.for dir in ${CPDIRS}
 	@${MKDIR} ${PFW_PREFIX}/${dir}
 	@${CP} -Rv ${WRKSRC}/${dir}/* ${PFW_PREFIX}/${dir}
 .endfor
-	@${CP} -v ${WRKSRC}/INSTALL ${WRKSRC}/README ${PFW_PREFIX}
 	@${MKDIR} ${PFW_PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/pfctlwrapper.sh.remote ${PFW_PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/pfctlwrapper.sh ${PFW_PREFIX}/bin
+.for f in ${BINFILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PFW_PREFIX}/bin
+.endfor
+	@${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/docs/sql/sqlite.sql ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+. for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
+. endfor
+.endif
+	${MKDIR} ${PFW_PREFIX}/conf
+	${CHOWN} www:www ${PFW_PREFIX}/conf
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
