@@ -1,10 +1,6 @@
 %%COMPILERDIR%%/bin/codecov
 %%COMPILERDIR%%/bin/fortcom
 %%COMPILERDIR%%/bin/fpp
-%%COMPILERDIR%%/bin/ifc
-%%COMPILERDIR%%/bin/ifc.cfg
-%%COMPILERDIR%%/bin/ifcbin
-%%COMPILERDIR%%/bin/ifcbin.cfg
 %%COMPILERDIR%%/bin/ifort
 %%COMPILERDIR%%/bin/ifort.cfg
 %%COMPILERDIR%%/bin/ifortbin

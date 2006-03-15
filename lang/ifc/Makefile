@@ -1,6 +1,6 @@
 # New ports collection makefile for:    ifc
 # Date created:         Oct 30, 2001
-# Whom:                 chat95@mbox.kyoto-inet.or.jp
+# Whom:                 NAKATA Maho <maho@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -23,9 +23,9 @@ PATCH_DEPENDS=		${LINUX_BASE_PORT}
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
-RESTRICTED=	Intel forbids any redistribution
-NO_PACKAGE=	${RESTRICTED}
-NO_CDROM=	${RESTRICTED}
+RESTRICTED=	"Intel forbids any redistribution"
+NO_PACKAGE=	"${RESTRICTED}"
+NO_CDROM=	"${RESTRICTED}"
 
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools*
@@ -38,7 +38,7 @@ COMPILERDIR=	intel_fc_80
 PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
 PATCH_WRKSRC=	${WRKSRC}/opt/${COMPILERDIR}
 
-MAN1=		ifc.1 ifort.1
+MAN1=		ifort.1
 MANPREFIX=	${PREFIX}/${COMPILERDIR}/
 
 IFC_SITE=	http://www.intel.com/software/products/compilers/
@@ -55,7 +55,7 @@ IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
-IGNORE=	Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again
+IGNORE=	go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again
 .endif
 .endfor
 
@@ -93,10 +93,15 @@ pre-patch: intel-patch
 		${XARGS} -0 ${CHMOD} a-x,og-w
 .endfor
 	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
+#remove files
+	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/bin/ifc
+	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/bin/ifcbin
+	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/bin/ifc.cfg
+	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/man/man1/ifc.1
 
 post-patch:
 # Correct some paths and patch some files
-.for i in ifc ifort ifortvars.csh ifortvars.sh ifc.cfg ifort.cfg
+.for i in ifort ifortvars.csh ifortvars.sh ifort.cfg
 	@${REINPLACE_CMD} -i "" -e 's:%%ICC_LOCALBASE%%:${LOCALBASE}:g; \
 		s:\<INSTALLDIR\>:${PREFIX}/${COMPILERDIR}:g; \
 		s:man -w:manpath -q:g' ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
@@ -110,16 +115,15 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:\<installpackageid\>:${DISTNAME}:g' \
 		${WRKSRC}/opt/${COMPILERDIR}/doc/fsupport
 .endif
-.for i in ifc.orig ifort.orig
+.for i in ifort.orig
 	@${RM} -f ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Provide a more FreeBSD'ish compile environment
-.for i in ifc.cfg ifort.cfg
+.for i in ifort.cfg
 	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n-nothreads\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${IFCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
-	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s ifc.cfg ifcbin.cfg \
-		&& ${LN} -s ifort.cfg ifortbin.cfg
+	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s ifort.cfg ifortbin.cfg
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
@@ -130,7 +134,7 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 
 do-build:
 # Use the Linux ABI for the binaries
-.for i in codecov fortcom fpp ifcbin ifortbin profmerge proforder profrun pronto_tool tselect xiar xild
+.for i in codecov fortcom fpp ifortbin profmerge proforder profrun pronto_tool tselect xiar xild
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Fix unresolved references
@@ -204,6 +208,7 @@ post-install:
 	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
 	@${ECHO} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
 	@${ECHO} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
+	@${ECHO} "Invoking ${PKGNAME} by ifort, not ifc"
 	@${ECHO}
 	@${ECHO} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
 	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
