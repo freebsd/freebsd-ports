@@ -1,0 +1,18 @@
+--- libSNL/src/makefile.orig	Mon Feb 20 13:50:59 2006
++++ libSNL/src/makefile	Mon Feb 20 13:52:03 2006
+@@ -14,11 +14,11 @@
+ 
+ libName = libSNL.so.0.2
+ 
+-export cflags = -Wall -g
+-export cname = g++
++export cflags = -fPIC -Wall -g
++export cname = c++
+ 
+-CXXFLAGS := $(cflags)
+-CFLAGS := $(cflags)
++CXXFLAGS ?= $(cflags)
++CFLAGS ?= $(cflags)
+ 
+ libSNL:     $(objFiles)
+ 	        $(cname) $(cflags) -fPIC -shared -o $(libName) $(objFiles)
