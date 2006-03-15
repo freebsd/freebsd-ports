@@ -1,5 +1,3 @@
 Yaxi contains a (currently non-validating) XML parser (SAX, DOM methods, pull
 parser in the works), a complete XPath implementation and a (still incomplete)
 XSL implementation.
-
-WWW: http://mattam.ath.cx/progs/yaxi.html
