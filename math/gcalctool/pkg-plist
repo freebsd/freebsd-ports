@@ -7,6 +7,13 @@ share/gnome/help/gcalctool/C/figures/gcalctool_menu_symbol.png
 share/gnome/help/gcalctool/C/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/C/gcalctool.xml
 share/gnome/help/gcalctool/C/legal.xml
+share/gnome/help/gcalctool/bg/figures/gcalctool_advanced_window.png
+share/gnome/help/gcalctool/bg/figures/gcalctool_basic_window.png
+share/gnome/help/gcalctool/bg/figures/gcalctool_financial_window.png
+share/gnome/help/gcalctool/bg/figures/gcalctool_menu_symbol.png
+share/gnome/help/gcalctool/bg/figures/gcalctool_scientific_window.png
+share/gnome/help/gcalctool/bg/gcalctool.xml
+share/gnome/help/gcalctool/bg/legal.xml
 share/gnome/help/gcalctool/de/figures/gcalctool_basic_window.png
 share/gnome/help/gcalctool/de/figures/gcalctool_financial_window.png
 share/gnome/help/gcalctool/de/figures/gcalctool_menu_symbol.png
@@ -68,6 +75,7 @@ share/gnome/help/gcalctool/zh_TW/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/zh_TW/gcalctool.xml
 share/gnome/help/gcalctool/zh_TW/legal.xml
 share/gnome/omf/gcalctool/gcalctool-C.omf
+share/gnome/omf/gcalctool/gcalctool-bg.omf
 share/gnome/omf/gcalctool/gcalctool-de.omf
 share/gnome/omf/gcalctool/gcalctool-es.omf
 share/gnome/omf/gcalctool/gcalctool-fr.omf
@@ -169,6 +177,8 @@ share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
 @dirrm share/gnome/help/gcalctool/es
 @dirrm share/gnome/help/gcalctool/de/figures
 @dirrm share/gnome/help/gcalctool/de
+@dirrm share/gnome/help/gcalctool/bg/figures
+@dirrm share/gnome/help/gcalctool/bg
 @dirrm share/gnome/help/gcalctool/C/figures
 @dirrm share/gnome/help/gcalctool/C
 @dirrm share/gnome/help/gcalctool
