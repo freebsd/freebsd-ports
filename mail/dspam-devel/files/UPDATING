@@ -11,6 +11,24 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.4.20060315.1518
+#
+
+New feature:
+- support for reading from multiple mysql servers; support for separate
+read/write servers to be used with mysql_drv; see dspam.conf
+- SYSLOG options knob: log to via syslog if "on" or in flat file if "off"
+- dspam_stats: -t for displaying a total of all stats included in the 
+original query
+
+Bugfixes:
+- fixed a bug causing --deliver=summary to return no output when used in
+dspamc
+- fixed a segfault which can occur if TrainingMode is not specified in
+dspam.conf
+
+
+###########################################################################
 # dspam-devel-3.6.4_1 (Added post-factum, mega libtool commit)
 #
 

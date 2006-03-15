@@ -3,7 +3,7 @@
 # Whom:			Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
 #
 # $FreeBSD$
-# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.36 2006/02/26 02:23:16 itetcu Exp $
+# $Tecnik: ports/mail/dspam-devel/Makefile,v 1.38 2006/03/15 17:55:09 itetcu Exp $
 #
 
 # Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
@@ -13,7 +13,6 @@
 
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
-PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
 
@@ -21,10 +20,10 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.6.4
-#SNAP_DATE=	.20060211.0037
-_UPD_LINE_NO=	7
+SNAP_DATE=	.20060315.1518
+_UPD_LINE_NO=	17
 
-MIN_OPTIONS_VER=	${PORTNAME}-3.6.3.20060203.1409
+MIN_OPTIONS_VER=	${PORTNAME}-3.6.4.20060315.1518
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
@@ -39,7 +38,8 @@ WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
 
 ## debug / log / admin options
-OPTIONS=	DEBUG "Enable debugging logging" on
+OPTIONS=	SYSLOG "Logs via syslog" on
+OPTIONS+=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
@@ -114,6 +114,7 @@ SIGNATURE_LIFE?=	15
 
 _VAR_DIR=	/var
 LOG_DIR?=	${_VAR_DIR}/log/dspam
+LOGFILE?=	${LOG_DIR}/dspam.log
 
 DSPAM_MODE?=	4510
 DSPAM_OWNER?=	root
@@ -146,6 +147,13 @@ _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
 		-e '/^%%FreeBSD/D' \
 		-e '/^%%Tecnik%%/D'
+
+.ifdef(WITH_SYSLOG)
+CONFIGURE_ARGS+=	--enable-syslog
+.else
+CONFIGURE_ARGS+=	--disable-syslog
+CONFIGURE_ARGS+=	--with-logfile=${LOGFILE}
+.endif
 
 .ifdef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -460,6 +468,9 @@ pre-extract:	check-options-version
 	@${ECHO_CMD} "DSPAM_HOME_GROUP=${DSPAM_HOME_GROUP}"
 	@${ECHO_CMD} "DSPAM_HOME_MODE=${DSPAM_HOME_MODE} (default: 0770)"
 	@${ECHO_CMD} "LOG_DIR=${LOG_DIR} (default: ${_VAR_DIR}/log/dspam)"
+.	ifndef(WITH_SYSLOG)
+	@${ECHO_CMD} "LOGFILE=${LOGFILE} (default: ${_VAR_DIR}/log/dspam/dspam.log)"
+.	endif
 .	ifdef(WITH_CGI)
 		@${ECHO_CMD} "Define CGI_PATH before make-ing if you need the CGI files"
 		@${ECHO_CMD} "installed in other place that this installation's default"
@@ -529,7 +540,9 @@ pre-configure:
 	@${FALSE}
 .endif
 .ifdef(SNAP_DATE)
+	@${ECHO_CMD}
 	@${ECHO_CMD} "You can safely ignore the following auto*  errors"
+	@${ECHO_CMD}
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
 .endif
 
