@@ -87,9 +87,6 @@
 %%PYTHON_SITELIBDIR%%/Scientific/IO/__init__.py
 %%PYTHON_SITELIBDIR%%/Scientific/IO/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/IO/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/Installation.py
-%%PYTHON_SITELIBDIR%%/Scientific/Installation.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/Installation.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/MPI/IO.py
 %%PYTHON_SITELIBDIR%%/Scientific/MPI/IO.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/MPI/IO.pyo
@@ -114,18 +111,6 @@
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.py
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.py
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.py
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.py
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.pyo
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.py
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.py
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.pyo
@@ -174,6 +159,9 @@
 %%PYTHON_SITELIBDIR%%/Scientific/Visualization/__init__.py
 %%PYTHON_SITELIBDIR%%/Scientific/Visualization/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Visualization/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/Visualization/PyMOL.py
+%%PYTHON_SITELIBDIR%%/Scientific/Visualization/PyMOL.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/Visualization/PyMOL.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/%%PYTHON_PLATFORM%%/Scientific_netcdf.so
 %%PYTHON_SITELIBDIR%%/Scientific/__init__.py
 %%PYTHON_SITELIBDIR%%/Scientific/__init__.pyc
@@ -252,7 +240,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Threading
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Statistics
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Signals
-@dirrm %%PYTHON_SITELIBDIR%%/Scientific/QtWidgets
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Physics
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/MPI
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/IO
