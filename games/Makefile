@@ -482,6 +482,7 @@
     SUBDIR += pysol
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music
+    SUBDIR += pysycache
     SUBDIR += pythonchess
     SUBDIR += q15
     SUBDIR += linux-quake3
