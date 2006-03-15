@@ -616,6 +616,7 @@ babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
 bacula-client	ports/sysutils/bacula-client
+bacula-client-devel	ports/sysutils/bacula-client-devel
 bacula-server	ports/sysutils/bacula-server
 bacula-server-devel	ports/sysutils/bacula-server-devel
 badwm		ports/x11-wm/badwm
