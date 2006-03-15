@@ -9666,6 +9666,7 @@ pen		ports/net/pen
 pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
 penguinsap	ports/audio/penguinsap
+penguintv	ports/net/penguintv
 pentix		ports/games/pentix
 penv		ports/sysutils/penv
 peps		ports/graphics/peps
