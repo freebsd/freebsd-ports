@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://people.via.ecp.fr/~titer/handbrake/
 DISTNAME=	HandBrake-${PORTVERSION}-src
 
-MAINTAINER=	thompsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \

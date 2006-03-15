@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	passive
 
-MAINTAINER=	thompsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
