@@ -504,6 +504,7 @@
     SUBDIR += perldap
     SUBDIR += pfflowd
     SUBDIR += pfinger
+    SUBDIR += phamm
     SUBDIR += php4-ldap
     SUBDIR += php4-rrdtool
     SUBDIR += php4-sockets

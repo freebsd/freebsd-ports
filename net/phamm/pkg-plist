@@ -1,0 +1,245 @@
+@unexec if cmp -s %D/%%PHAMMDIR%%/config.inc.php %D/%%PHAMMDIR%%/config.inc.php.sample ; then rm -f %D/%%PHAMMDIR%%/config.inc.php ; fi
+%%PHAMMDIR%%/config.inc.php.sample
+@exec [ -f %B/config.inc.php ] || cp -f %B/%f %B/config.inc.php
+%%PHAMMDIR%%/en_GB.php
+%%PHAMMDIR%%/functions/add_domain.php
+%%PHAMMDIR%%/functions/checkAuth.php
+%%PHAMMDIR%%/functions/checkLogin.php
+%%PHAMMDIR%%/functions/checkObject.php
+%%PHAMMDIR%%/functions/checkSyntax.php
+%%PHAMMDIR%%/functions/domain_modify.php
+%%PHAMMDIR%%/functions/form_add_domain.php
+%%PHAMMDIR%%/functions/form_add_domain_2.php
+%%PHAMMDIR%%/functions/form_login.php
+%%PHAMMDIR%%/functions/form_modify.php
+%%PHAMMDIR%%/functions/generic.php
+%%PHAMMDIR%%/functions/host_color.php
+%%PHAMMDIR%%/functions/initials.php
+%%PHAMMDIR%%/functions/isAdmin.php
+%%PHAMMDIR%%/functions/isPostmaster.php
+%%PHAMMDIR%%/functions/language_selector.php
+%%PHAMMDIR%%/functions/loadLanguage.php
+%%PHAMMDIR%%/functions/load_plugins.php
+%%PHAMMDIR%%/functions/menu_plugins.php
+%%PHAMMDIR%%/functions/password_hash.php
+%%PHAMMDIR%%/functions/password_valid.php
+%%PHAMMDIR%%/functions/phamm_date.php
+%%PHAMMDIR%%/functions/phamm_log.php
+%%PHAMMDIR%%/functions/phamm_set_var.php
+%%PHAMMDIR%%/functions/php_error_level.php
+%%PHAMMDIR%%/functions/plugin_templates.php
+%%PHAMMDIR%%/functions/print_message.php
+%%PHAMMDIR%%/functions/randstr.php
+%%PHAMMDIR%%/functions/refresh.php
+%%PHAMMDIR%%/functions/scale_level.php
+%%PHAMMDIR%%/functions/self_values.php
+%%PHAMMDIR%%/functions/true_false_box.php
+%%PHAMMDIR%%/functions/tryBind.php
+%%PHAMMDIR%%/functions/tryLogin.php
+%%PHAMMDIR%%/index.php
+%%PHAMMDIR%%/locales/CVS/Entries
+%%PHAMMDIR%%/locales/CVS/Repository
+%%PHAMMDIR%%/locales/CVS/Root
+%%PHAMMDIR%%/locales/CVS/Tag
+%%PHAMMDIR%%/locales/README.locales
+%%PHAMMDIR%%/locales/TRANSLATORS
+%%PHAMMDIR%%/locales/check_lang_files.php
+%%PHAMMDIR%%/locales/de_DE.php
+%%PHAMMDIR%%/locales/es_ES.php
+%%PHAMMDIR%%/locales/fr_FR.php
+%%PHAMMDIR%%/locales/hu_HU.php
+%%PHAMMDIR%%/locales/id_ID.php
+%%PHAMMDIR%%/locales/it_IT.php
+%%PHAMMDIR%%/locales/plugins/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/CVS/Root
+%%PHAMMDIR%%/locales/plugins/CVS/Tag
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Root
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Tag
+%%PHAMMDIR%%/locales/plugins/pdns/de_DE.php
+%%PHAMMDIR%%/locales/plugins/pdns/id_ID.php
+%%PHAMMDIR%%/locales/plugins/pdns/it_IT.php
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Root
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Tag
+%%PHAMMDIR%%/locales/plugins/radius/en_GB.php
+%%PHAMMDIR%%/locales/pt_BR.php
+%%PHAMMDIR%%/locales/ru_RU.php
+%%PHAMMDIR%%/plugins/mail/add_domain.php
+%%PHAMMDIR%%/plugins/mail/config.inc.php
+%%PHAMMDIR%%/plugins/mail/config.inc.php.template
+%%PHAMMDIR%%/plugins/mail/en_GB.php
+%%PHAMMDIR%%/plugins/mail/functions/add_alias.php
+%%PHAMMDIR%%/plugins/mail/functions/add_domain_mail.php
+%%PHAMMDIR%%/plugins/mail/functions/add_mail.php
+%%PHAMMDIR%%/plugins/mail/functions/alias_count.php
+%%PHAMMDIR%%/plugins/mail/functions/alias_list.php
+%%PHAMMDIR%%/plugins/mail/functions/alias_modify_group.php
+%%PHAMMDIR%%/plugins/mail/functions/alias_values.php
+%%PHAMMDIR%%/plugins/mail/functions/domain_quota_used.php
+%%PHAMMDIR%%/plugins/mail/functions/domains_list.php
+%%PHAMMDIR%%/plugins/mail/functions/domains_modify_group.php
+%%PHAMMDIR%%/plugins/mail/functions/form_add_alias.php
+%%PHAMMDIR%%/plugins/mail/functions/form_add_alias_2.php
+%%PHAMMDIR%%/plugins/mail/functions/form_add_mail.php
+%%PHAMMDIR%%/plugins/mail/functions/form_add_mail_2.php
+%%PHAMMDIR%%/plugins/mail/functions/is_catch_all.php
+%%PHAMMDIR%%/plugins/mail/functions/is_domain_mail.php
+%%PHAMMDIR%%/plugins/mail/functions/mail_count.php
+%%PHAMMDIR%%/plugins/mail/functions/mail_list.php
+%%PHAMMDIR%%/plugins/mail/functions/mail_modify_group.php
+%%PHAMMDIR%%/plugins/mail/functions/mail_values.php
+%%PHAMMDIR%%/plugins/mail/functions/maildrop_del.php
+%%PHAMMDIR%%/plugins/mail/functions/maildrop_list.php
+%%PHAMMDIR%%/plugins/mail/functions/modify_alias.php
+%%PHAMMDIR%%/plugins/mail/functions/modify_mail.php
+%%PHAMMDIR%%/plugins/mail/functions/quota_formatting.php
+%%PHAMMDIR%%/plugins/mail/info.php
+%%PHAMMDIR%%/plugins/mail/main.php
+%%PHAMMDIR%%/plugins/mail/welcome_message.txt
+%%PHAMMDIR%%/plugins/pdns/TODO
+%%PHAMMDIR%%/plugins/pdns/add_domain.php
+%%PHAMMDIR%%/plugins/pdns/config.inc.php
+%%PHAMMDIR%%/plugins/pdns/config.inc.php.template
+%%PHAMMDIR%%/plugins/pdns/en_GB.php
+%%PHAMMDIR%%/plugins/pdns/functions.php
+%%PHAMMDIR%%/plugins/pdns/info.php
+%%PHAMMDIR%%/plugins/pdns/main.php
+%%PHAMMDIR%%/plugins/pdns/templates/mytemplate.php.template
+%%PHAMMDIR%%/plugins/radius/README.radius
+%%PHAMMDIR%%/plugins/radius/add_domain.php
+%%PHAMMDIR%%/plugins/radius/config.inc.php.template
+%%PHAMMDIR%%/plugins/radius/en_GB.php
+%%PHAMMDIR%%/plugins/radius/functions/account_count.php
+%%PHAMMDIR%%/plugins/radius/functions/account_list.php
+%%PHAMMDIR%%/plugins/radius/functions/account_modify_group.php
+%%PHAMMDIR%%/plugins/radius/functions/account_values.php
+%%PHAMMDIR%%/plugins/radius/functions/add_account.php
+%%PHAMMDIR%%/plugins/radius/functions/add_realm.php
+%%PHAMMDIR%%/plugins/radius/functions/form_add_account.php
+%%PHAMMDIR%%/plugins/radius/functions/form_add_account_2.php
+%%PHAMMDIR%%/plugins/radius/functions/form_add_realm.php
+%%PHAMMDIR%%/plugins/radius/functions/form_add_realm_2.php
+%%PHAMMDIR%%/plugins/radius/functions/is_realm_account.php
+%%PHAMMDIR%%/plugins/radius/functions/modify_account.php
+%%PHAMMDIR%%/plugins/radius/functions/realms_list.php
+%%PHAMMDIR%%/plugins/radius/functions/realms_modify_group.php
+%%PHAMMDIR%%/plugins/radius/info.php
+%%PHAMMDIR%%/plugins/radius/main.php
+%%PHAMMDIR%%/plugins/radius_stats/README.radius_stats
+%%PHAMMDIR%%/plugins/radius_stats/config.inc.php.template
+%%PHAMMDIR%%/plugins/radius_stats/csv_export.php
+%%PHAMMDIR%%/plugins/radius_stats/en_GB.php
+%%PHAMMDIR%%/plugins/radius_stats/functions/form_accounting.php
+%%PHAMMDIR%%/plugins/radius_stats/functions/select_accounting.php
+%%PHAMMDIR%%/plugins/radius_stats/info.php
+%%PHAMMDIR%%/plugins/radius_stats/main.php
+%%PHAMMDIR%%/plugins/rates/config.inc.php.template
+%%PHAMMDIR%%/plugins/rates/en_GB.php
+%%PHAMMDIR%%/plugins/rates/functions.php
+%%PHAMMDIR%%/plugins/rates/info.php
+%%PHAMMDIR%%/plugins/rates/main.php
+%%PHAMMDIR%%/plugins/whoami/functions.php
+%%PHAMMDIR%%/plugins/whoami/info.php
+%%PHAMMDIR%%/plugins/whoami/main.php
+%%PHAMMDIR%%/tools/cleaner-for-demosite.sh
+%%PHAMMDIR%%/tools/cleaner.sh
+%%PHAMMDIR%%/tools/config.inc.php.live
+%%PHAMMDIR%%/tools/config.live.diff
+%%PHAMMDIR%%/tools/init-ldif
+%%PHAMMDIR%%/tools/insert-ldap
+%%PHAMMDIR%%/tools/make_single_lib.sh
+%%PHAMMDIR%%/tools/migrate.sh
+%%PHAMMDIR%%/tools/mod-ldap
+%%PHAMMDIR%%/tools/phamm-rotate
+%%PHAMMDIR%%/tools/save-manager-ldap
+%%PHAMMDIR%%/tools/save-phamm-ldap
+%%PHAMMDIR%%/tools/test.sh
+%%PHAMMDIR%%/tools/virtual.sh
+%%PHAMMDIR%%/web/functions.js
+%%PHAMMDIR%%/web/pngfix.js
+%%PHAMMDIR%%/www-data/img/phamm_100.png
+%%PHAMMDIR%%/www-data/img/phamm_icon.png
+%%PHAMMDIR%%/www-data/index.php
+%%PHAMMDIR%%/www-data/logout.php
+%%PHAMMDIR%%/www-data/main.php
+%%PHAMMDIR%%/www-data/robots.txt
+%%PHAMMDIR%%/www-data/setup.php
+%%PHAMMDIR%%/www-data/style/phamm/footer.html.php
+%%PHAMMDIR%%/www-data/style/phamm/header.html.php
+%%PHAMMDIR%%/www-data/style/phamm/img/FALSE.png
+%%PHAMMDIR%%/www-data/style/phamm/img/TRUE.png
+%%PHAMMDIR%%/www-data/style/phamm/img/navigation.png
+%%PHAMMDIR%%/www-data/style/phamm/main.css
+%%EXAMPLESDIR%%/amavisd.conf
+%%EXAMPLESDIR%%/authldaprc
+%%EXAMPLESDIR%%/fork/fork.pl
+%%EXAMPLESDIR%%/gnarwl.cfg
+%%EXAMPLESDIR%%/main.cf
+%%EXAMPLESDIR%%/main.cf.mxbackup
+%%EXAMPLESDIR%%/main.cf.mxbackup.withoutprimary
+%%EXAMPLESDIR%%/master.cf
+%%EXAMPLESDIR%%/pdns.conf
+%%EXAMPLESDIR%%/phamm.acl
+%%EXAMPLESDIR%%/phamm.conf
+%%EXAMPLESDIR%%/pureftpd-ldap.conf
+%%EXAMPLESDIR%%/sample-htaccess-apache2
+%%EXAMPLESDIR%%/sample-location-apache2
+%%EXAMPLESDIR%%/sample-mail.ldif
+%%EXAMPLESDIR%%/sample-main.ldif
+%%EXAMPLESDIR%%/sample-pdns.ldif
+%%EXAMPLESDIR%%/sample-pureftpd.ldif
+%%EXAMPLESDIR%%/sample-samba.ldif
+%%EXAMPLESDIR%%/sample-squid.ldif
+%%EXAMPLESDIR%%/sasl/main.cf
+%%EXAMPLESDIR%%/sasl/master.cf
+%%EXAMPLESDIR%%/sasl/saslauthd
+%%EXAMPLESDIR%%/sasl/saslauthd.conf
+%%EXAMPLESDIR%%/sasl/smtpd.conf
+%%EXAMPLESDIR%%/schema/ISPEnv2.schema
+%%EXAMPLESDIR%%/schema/amavis.schema
+%%EXAMPLESDIR%%/schema/dnsdomain2.schema
+%%EXAMPLESDIR%%/schema/phamm.schema
+%%EXAMPLESDIR%%/schema/pureftpd.schema
+%%EXAMPLESDIR%%/schema/radius.schema
+%%EXAMPLESDIR%%/schema/samba.schema
+%%EXAMPLESDIR%%/slapd.conf
+%%EXAMPLESDIR%%/smbldap-populate.patch
+%%EXAMPLESDIR%%/smbldap-useradd.patch
+%%EXAMPLESDIR%%/smbldap.conf
+%%EXAMPLESDIR%%/squid.conf
+@dirrm %%EXAMPLESDIR%%/schema
+@dirrm %%EXAMPLESDIR%%/sasl
+@dirrm %%EXAMPLESDIR%%/fork
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%PHAMMDIR%%/www-data/style/phamm/img
+@dirrm %%PHAMMDIR%%/www-data/style/phamm
+@dirrm %%PHAMMDIR%%/www-data/style
+@dirrm %%PHAMMDIR%%/www-data/img
+@dirrm %%PHAMMDIR%%/www-data
+@dirrm %%PHAMMDIR%%/web
+@dirrm %%PHAMMDIR%%/tools
+@dirrm %%PHAMMDIR%%/plugins/whoami
+@dirrm %%PHAMMDIR%%/plugins/rates
+@dirrm %%PHAMMDIR%%/plugins/radius_stats/functions
+@dirrm %%PHAMMDIR%%/plugins/radius_stats
+@dirrm %%PHAMMDIR%%/plugins/radius/functions
+@dirrm %%PHAMMDIR%%/plugins/radius
+@dirrm %%PHAMMDIR%%/plugins/pdns/templates
+@dirrm %%PHAMMDIR%%/plugins/pdns
+@dirrm %%PHAMMDIR%%/plugins/mail/functions
+@dirrm %%PHAMMDIR%%/plugins/mail
+@dirrm %%PHAMMDIR%%/plugins
+@dirrm %%PHAMMDIR%%/locales/plugins/radius/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/radius
+@dirrm %%PHAMMDIR%%/locales/plugins/pdns/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/pdns
+@dirrm %%PHAMMDIR%%/locales/plugins/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins
+@dirrm %%PHAMMDIR%%/locales/CVS
+@dirrm %%PHAMMDIR%%/locales
+@dirrm %%PHAMMDIR%%/functions
+@dirrmtry %%PHAMMDIR%%
