@@ -6063,6 +6063,7 @@ madbomber	ports/games/madbomber
 madman		ports/audio/madman
 madplay		ports/audio/madplay
 maelstrom	ports/games/maelstrom
+mafft		ports/biology/mafft
 magic		ports/cad/magic
 magiccube4d	ports/games/magiccube4d
 magicfilter	ports/print/magicfilter
