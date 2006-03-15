@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.4.12
+ERTS_VSN=	5.4.13
 OTP_LIBS=	appmon-2.1.5 \
 		asn1-1.4.4.9 \
-		compiler-4.3.11 \
+		compiler-4.3.12 \
 		cosEvent-2.1 \
 		cosEventDomain-1.1 \
 		cosFileTransfer-1.1.2 \
@@ -14,34 +14,34 @@ OTP_LIBS=	appmon-2.1.5 \
 		crypto-1.4 \
 		debugger-3.0.1 \
 		edoc-0.6.8 \
-		erl_interface-3.5.4 \
+		erl_interface-3.5.5 \
 		et-1.0 \
 		gs-1.5.4 \
-		hipe-3.5.4 \
+		hipe-3.5.5 \
 		ic-4.2.9 \
-		inets-4.6.2 \
+		inets-4.7.2 \
 		jinterface-1.3 \
-		kernel-2.10.12 \
-		megaco-3.2.3 \
+		kernel-2.10.13 \
+		megaco-3.3 \
 		mnemosyne-1.2.5.1 \
-		mnesia-4.2.3 \
+		mnesia-4.2.5 \
 		mnesia_session-1.1.5 \
 		observer-0.9.6.2 \
-		odbc-2.0.5 \
+		odbc-2.0.6 \
 		orber-3.6.2 \
-		os_mon-1.8 \
+		os_mon-2.0 \
 		otp_mibs-1.0.4 \
 		parsetools-1.3.2 \
 		pman-2.5.2 \
 		runtime_tools-1.5.1.1 \
 		sasl-2.1.1 \
-		snmp-4.6.1 \
-		ssh-0.9 \
-		ssl-3.0.10 \
-		stdlib-1.13.11 \
+		snmp-4.7.1 \
+		ssh-0.9.1 \
+		ssl-3.0.11 \
+		stdlib-1.13.12 \
 		syntax_tools-1.4.3 \
 		toolbar-1.2.1 \
-		tools-2.4.6 \
+		tools-2.4.7 \
 		tv-2.1.2 \
 		webtool-0.8.2 \
 		xmerl-1.0.3

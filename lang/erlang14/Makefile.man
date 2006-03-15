@@ -123,6 +123,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	erl_error.3 \
 	erl_eterm.3 \
 	erl_eval.3 \
+	erl_expand_records.3 \
 	erl_format.3 \
 	erl_global.3 \
 	erl_id_trans.3 \
@@ -297,11 +298,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	webtool.3 \
 	win32reg.3 \
 	wrap_log_reader.3 \
-	xmerl.3 \
-	xmerl_eventp.3 \
-	xmerl_scan.3 \
-	xmerl_xpath.3 \
-	xmerl_xs.3 \
 	xref.3 \
 	yecc.3 \
 	zlib.3
