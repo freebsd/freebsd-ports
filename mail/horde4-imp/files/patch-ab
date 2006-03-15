@@ -1,16 +1,14 @@
---- config/servers.php.dist.orig	Sun Dec 12 07:36:51 2004
-+++ config/servers.php.dist	Fri Dec 24 00:27:59 2004
-@@ -47,7 +47,7 @@
-  *
-  * folders: The folder path for the IMAP server.
-  *          Common values:
-- *            UW-IMAP               'mail/'  (note the trailing slash)
-+ *            UW-IMAP               'Mail/'  (note the trailing slash)
-  *            Cyrus, Courier-IMAP   'INBOX.' (note the trailing dot)
-  *            dovecot               ''
-  *
-@@ -174,14 +174,16 @@
+--- config/servers.php.dist.orig	Tue Feb  7 08:50:24 2006
++++ config/servers.php.dist	Wed Mar  8 22:01:53 2006
+@@ -204,14 +204,21 @@
  
+ /* Example configurations: */
+ 
++/* FreeBSD port note: see also
++<http://wiki.horde.org/ImpUWIMAPNamespaces>
++<http://wiki.horde.org/ImpImapConfig>
++*/
++
  $servers['imap'] = array(
      'name' => 'IMAP Server',
 -    'server' => 'imap.example.com',
@@ -19,11 +17,8 @@
      'hordeauth' => false,
 -    'protocol' => 'imap/notls',
 -    'port' => 143,
--    'folders' => 'mail/',
 +    'protocol' => '%%PROTOCOL%%',
 +    'port' => %%IMAPPORT%%,
-+    'folders' => 'Mail/',
-     'namespace' => '',
      'maildomain' => 'example.com',
 -    'smtphost' => 'smtp.example.com',
 +//  'smtphost' => 'smtp.example.com',

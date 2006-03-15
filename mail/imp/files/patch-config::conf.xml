@@ -1,5 +1,5 @@
---- config/conf.xml.orig	Mon Nov 22 09:40:29 2004
-+++ config/conf.xml	Mon Nov 29 11:51:54 2004
+--- config/conf.xml.orig	Sat Jan 14 17:52:34 2006
++++ config/conf.xml	Sun Mar 12 18:24:46 2006
 @@ -6,11 +6,11 @@
     <configheader>External Utilities</configheader>
     <configstring name="spellchecker" required="false" desc="Enter the location
@@ -14,12 +14,12 @@
     <configmultienum name="gnupg_keyserver" required="false" desc="The address of
     the public PGP keyserver(s) to use.">wwwkeys.pgp.net
      <values>
-@@ -23,7 +23,7 @@
-    connecting to the PGP keyserver. Timeouts are not supported on all
-    systems.">10</configstring>
+@@ -25,7 +25,7 @@
     <configstring name="openssl_cafile" required="false" desc="The location of
--   the root certificates bundle.">/somewhere/ca-bundle.crt</configstring>
-+   the root certificates bundle.">/usr/local/etc/ssl.crt/ca-bundle.crt</configstring>
+    the root certificates bundle, e.g. /etc/ssl/certs. See
+    http://www.php.net/manual/en/ref.openssl.php#openssl.cert.verification for
+-   details."/>
++   details.">/usr/local/etc/ssl.crt/ca-bundle.crt</configstring>
     <configstring name="openssl_binary" required="false" desc="The location of
-    the OpenSSL binary on your system. This program is REQUIRED to import
-    personal S/MIME certificate information, as there is no native PHP function
+    the OpenSSL binary on your system, e.g. /usr/bin/openssl. This program is
+    REQUIRED to import personal S/MIME certificate information, as there is no
