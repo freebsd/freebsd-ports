@@ -501,6 +501,7 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pen
+    SUBDIR += penguintv
     SUBDIR += perldap
     SUBDIR += pfflowd
     SUBDIR += pfinger
