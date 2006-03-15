@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -21,7 +20,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
