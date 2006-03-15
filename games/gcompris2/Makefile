@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris2
-PORTVERSION=	7.0.3
-PORTREVISION=	3
+PORTVERSION=	7.3.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -28,31 +27,50 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
 
 INFO=		gcompris
 
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	Does not build on 4.X
+IGNORE=	does not build on 4.X
+.endif
+
+.if !defined(DISPLAY)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+.if !defined(PACKAGE_BUILDING)
+CONFIGURE_ENV+=	DISPLAY="localhost:1001"
+.endif
 .endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
+
+.if !defined(DISPLAY)
+pre-configure:
+	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
+		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
+		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
+	fi
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@sleep 5
+
+post-configure:
+	@if [ -f ${WRKDIR}/.Xvfb.pid ]; then \
+		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
+		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
+	fi
+.endif
 
 .include <bsd.port.post.mk>

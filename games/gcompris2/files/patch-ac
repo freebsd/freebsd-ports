@@ -1,6 +1,6 @@
---- Makefile.in.bak	Thu Jan 29 07:52:30 2004
-+++ Makefile.in	Mon Feb  2 22:15:58 2004
-@@ -671,7 +671,7 @@
+--- Makefile.in.orig	Sun Mar 12 13:00:25 2006
++++ Makefile.in	Sun Mar 12 13:01:44 2006
+@@ -748,7 +748,7 @@ info: info-recursive
  
  info-am:
  
@@ -9,19 +9,19 @@
  	install-data-local install-iconDATA
  
  install-exec-am:
-@@ -733,13 +733,13 @@
+@@ -811,13 +811,13 @@ install-data-local:
  	@$(NORMAL_INSTALL)
- 	if test -d @PACKAGE_DATA_DIR@; then \
- 	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude CVS --exclude .xvpics --exclude "*.assetml" * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "Makefile.in*" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude CVS --exclude .xvpics --exclude "*.assetml" * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+ 	if test -d $(srcdir)/$(PACKAGE_DATA_DIR); then \
+ 	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR); \
+-	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude CVS --exclude .xvpics --exclude "*.assetml" * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
++	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in*" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude CVS --exclude .xvpics --exclude "*.assetml" * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:
- 	if test -d @PACKAGE_DATA_DIR@; then \
- 	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
--	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "Makefile.in" --exclude "Makefile" --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
-+	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude "Makefile.in*" --exclude "Makefile" --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
+ 	if test -d $(PACKAGE_DATA_DIR); then \
+ 	  $(mkinstalldirs) $(distdir)/$(PACKAGE_DATA_DIR); \
+-	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "Makefile" --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
++	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in*" --exclude "Makefile" --exclude "*~" --exclude ".*" --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
  	fi
  
  clean-local:
