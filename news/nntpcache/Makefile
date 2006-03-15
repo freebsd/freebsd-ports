@@ -6,21 +6,15 @@
 #
 
 PORTNAME=	nntpcache
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2
+PORTREVISION=	0
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
-		ftp://ftp.ntua.gr/pub/net/news/nntpcache/ \
-		http://public.www.planetmirror.com/pub/nntpcache/
+MASTER_SITES=	http://www.nntpcache.com/pub/nntpcache/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
 USE_AUTOTOOLS=	automake:15:env
-
-.if defined(WITH_LDAP) || defined(WITH_LDAP2)
-USE_OPENLDAP=	yes
-.endif
 
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
@@ -32,11 +26,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
 
 AUTHINFO_EXT=	authinfo_pam.ext
+USE_RC_SUBR=	nntpcached
+
+OPTIONS=	LDAP "OpenLDAP support" off \
+		RADIUS "RADIUS support" off \
+		SPAMPHOBIA "Spamphobia NoCeM support" off
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_RADIUS)
 CONFIGURE_ARGS+=	--with-authinfo-radius
 AUTHINFO_EXT+=		authinfo_radius.ext
 .endif
+
 .if defined(WITH_LDAP) || defined(WITH_LDAP2)
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-authinfo-ldap
 CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${PREFIX}/lib -L${LOCALBASE}/lib
@@ -47,39 +51,28 @@ CONFIGURE_ARGS+=	--program-transform-name=''
 
 NNTPSPOOLDIR?=	${SPOOLDIR}/${PORTNAME}
 PLIST_SUB+=	SPOOLDIR=${NNTPSPOOLDIR}
-CPIO=		cpio --quiet -pdum -R
+CPIO_CMD=	${CPIO} --quiet -pdum -R
 MAN8=		nntpcached.8 newshound.8
-DOCS=		AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
+PORTDOCS=	AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
 
-pre-everything::
-.if !defined(BATCH)
-	@${ECHO_MSG} "To enable LDAP support use either:"
-	@${ECHO_MSG} "	WITH_LDAP - OpenLDAP support"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "To disable radius support use WITHOUT_RADIUS"
+.if defined(WITH_SPAMPHOBIA)
+PATCH_SITES+=	http://people.freebsd.org/~leeym/:SPAMPHOBIA
+PATCHFILES+=	${DISTNAME}-spamphobia.diff.gz:SPAMPHOBIA
 .endif
 
 post-configure:
 	@cd ${WRKSRC}/src && ${GMAKE} ${AUTHINFO_EXT}
 
 post-install:
-	@ ${MKDIR} ${PREFIX}/etc/rc.d
-	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${FILESDIR}/nntpcached.rc \
-	  > ${WRKDIR}/nntpcached.sh
-.if !defined(BATCH)
-	@ ${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/nntpcached.sh startup file"
-.endif
-	@ ${INSTALL_SCRIPT} -m 751 ${WRKDIR}/nntpcached.sh \
-	  ${PREFIX}/etc/rc.d
 	@ ${MKDIR} ${NNTPSPOOLDIR} && ${CHMOD} 750 ${NNTPSPOOLDIR}
 	@ ${CP} ${PREFIX}/etc/${PORTNAME}/VERSION ${NNTPSPOOLDIR} && \
 	  ${CHMOD} 640 ${NNTPSPOOLDIR}/VERSION
 	@ ${CHOWN} -R news:news ${NNTPSPOOLDIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${FIND} ${DOCS} \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@ cd ${WRKSRC} && ${FIND} ${PORTDOCS} \
+	  | ${CPIO_CMD} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
