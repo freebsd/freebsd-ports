@@ -82,10 +82,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
 PKG_CONFIG?=${LOCALBASE}/bin/pkg-config
 
