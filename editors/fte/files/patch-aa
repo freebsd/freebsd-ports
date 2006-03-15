@@ -1,5 +1,5 @@
---- src/fte-unix.mak.orig	Sat Jan  8 21:15:19 2005
-+++ src/fte-unix.mak	Mon Jul 11 19:47:52 2005
+--- src/fte-unix.mak	Sun Nov 13 12:47:25 2005
++++ src/fte-unix.mak	Tue Feb 28 12:29:41 2006
 @@ -5,9 +5,9 @@
  
  #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
@@ -12,7 +12,7 @@
  
  PRIMARY = xfte
  
-@@ -36,22 +36,21 @@
+@@ -40,22 +40,22 @@
  
  #gcc/g++
  COPTIONS = -Wall -Wpointer-arith -Wconversion -Wwrite-strings \
@@ -24,9 +24,9 @@
  # try this for smaller/faster code and less dependencies
 -CC       = g++ -fno-rtti -fno-exceptions
 -LD       = g++ -fno-rtti -fno-exceptions
--
 +CC       = $(CXX)
-+LD	 = $(CXX)
++LD      = $(CXX)
+ 
  
  # choose your os here
  
@@ -41,27 +41,27 @@
  
  #######################################################################
  # HP/UX
-@@ -141,8 +140,8 @@
+@@ -145,8 +145,8 @@
  #OPTIMIZE = -O2
  #OPTIMIZE = -O2 -s
  
--CCFLAGS  = $(OPTIMIZE) $(I18NOPTIONS) $(APPOPTIONS) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
+-CCFLAGS  = $(OPTIMIZE) $(I18NOPTIONS) $(APPOPTIONS) $(USE_XICON) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
 -LDFLAGS  = $(OPTIMIZE) $(LIBDIR) $(XLIBDIR) $(QLIBDIR) $(MLIBDIR)
 +CCFLAGS  = $(CPPFLAGS) $(CXXFLAGS) $(CFLAGS) $(I18NOPTIONS) $(APPOPTIONS) $(COPTIONS) -DUNIX $(UOS) $(INCDIR) $(XINCDIR) $(QINCDIR) $(MINCDIR) $(SINCDIR)
 +LDFLAGS  += $(LIBDIR) $(XLIBDIR) $(MLIBDIR)
  
  OEXT     = o
  
-@@ -154,7 +153,7 @@
+@@ -158,7 +158,7 @@
  # Need -lXt below if USE_XTINIT is defined
- XLIBS    = -lX11 $(SOCKETLIB)
+ XLIBS    = -lX11 $(SOCKETLIB) $(XPMLIB)
  #-lmpatrol -lelf
 -VLIBS    = -lgpm -lncurses
 +VLIBS    = -lncurses
  # -ltermcap outdated by ncurses
  NLIBS    = -lncurses
  SLIBS    = -lslang
-@@ -227,6 +226,6 @@
+@@ -231,6 +231,6 @@
  #
  # include dependency files if they exist
  #
