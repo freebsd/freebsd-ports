@@ -4,7 +4,7 @@ RCS file: /cvsroot/sbcl/sbcl/src/code/debug-int.lisp,v
 retrieving revision 1.101
 diff -u -r1.101 debug-int.lisp
 --- src/code/debug-int.lisp	28 Sep 2005 13:42:24 -0000	1.101
-+++ src/code/debug-int.lisp	26 Jan 2006 01:59:07 -0000
++++ src/code/debug-int.lisp	27 Feb 2006 10:52:45 -0000
 @@ -559,6 +559,9 @@
  
  (defconstant sb!vm::nargs-offset #.sb!vm::ecx-offset)
@@ -31,21 +31,21 @@ diff -u -r1.101 debug-int.lisp
 Index: src/runtime/bsd-os.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/bsd-os.c,v
-retrieving revision 1.31
-diff -u -r1.31 bsd-os.c
---- src/runtime/bsd-os.c	22 Jan 2006 18:55:07 -0000	1.31
-+++ src/runtime/bsd-os.c	26 Jan 2006 01:59:07 -0000
+retrieving revision 1.36
+diff -u -r1.36 bsd-os.c
+--- src/runtime/bsd-os.c	21 Feb 2006 23:40:36 -0000	1.36
++++ src/runtime/bsd-os.c	27 Feb 2006 10:52:45 -0000
 @@ -53,6 +53,8 @@
  
  #ifdef __FreeBSD__
  #include <sys/sysctl.h>
 +#include <link.h>
 +#include <dlfcn.h>
+ #include <osreldate.h>
  
  static void freebsd_init();
- #endif /* __FreeBSD__ */
-@@ -311,6 +313,25 @@
-         fast_bzero_pointer = fast_bzero_base;
+@@ -310,6 +312,25 @@
+         fast_bzero_pointer = fast_bzero_detect;
      }
  #endif /* LISP_FEATURE_X86 */
 +    /* extract lowermost address from linkmap */
@@ -73,10 +73,10 @@ diff -u -r1.31 bsd-os.c
 Index: src/runtime/globals.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/globals.c,v
-retrieving revision 1.18
-diff -u -r1.18 globals.c
---- src/runtime/globals.c	14 Jul 2005 15:41:11 -0000	1.18
-+++ src/runtime/globals.c	26 Jan 2006 01:59:07 -0000
+retrieving revision 1.19
+diff -u -r1.19 globals.c
+--- src/runtime/globals.c	21 Feb 2006 22:59:33 -0000	1.19
++++ src/runtime/globals.c	27 Feb 2006 10:52:45 -0000
 @@ -16,6 +16,7 @@
  #include <stdio.h>
  #include <sys/types.h>
@@ -103,11 +103,11 @@ diff -u -r1.18 globals.c
 Index: src/runtime/globals.h
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/globals.h,v
-retrieving revision 1.25
-diff -u -r1.25 globals.h
---- src/runtime/globals.h	14 Jul 2005 15:41:11 -0000	1.25
-+++ src/runtime/globals.h	26 Jan 2006 01:59:07 -0000
-@@ -99,4 +99,7 @@
+retrieving revision 1.26
+diff -u -r1.26 globals.h
+--- src/runtime/globals.h	21 Feb 2006 22:59:33 -0000	1.26
++++ src/runtime/globals.h	27 Feb 2006 10:52:46 -0000
+@@ -108,4 +108,7 @@
  
  #endif /* LANGUAGE_ASSEMBLY */
  

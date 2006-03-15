@@ -529,23 +529,12 @@ lib/sbcl/sb-simple-streams/test-data.tmp
 lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sbcl.core
-lib/sbcl/systems/asdf-install.asd
-lib/sbcl/systems/sb-aclrepl.asd
-lib/sbcl/systems/sb-bsd-sockets.asd
-lib/sbcl/systems/sb-cltl2.asd
-lib/sbcl/systems/sb-grovel.asd
-lib/sbcl/systems/sb-md5.asd
-lib/sbcl/systems/sb-posix.asd
-lib/sbcl/systems/sb-rotate-byte.asd
-lib/sbcl/systems/sb-rt.asd
-lib/sbcl/systems/sb-simple-streams.asd
 @exec mkdir -p %D/lib/sbcl/site-systems
 @exec mkdir -p %D/lib/sbcl/sb-posix/test-lab
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/sbcl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/asdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-@dirrm lib/sbcl/systems
 @dirrm lib/sbcl/site-systems
 @dirrm lib/sbcl/sb-sprof
 @dirrm lib/sbcl/sb-simple-streams
