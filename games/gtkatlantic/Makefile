@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports-stable/games/gtkatlantic/Makefile,v 1.1 2006/03/04 21:36:29 ahze Exp $
 
 PORTNAME=	gtkatlantic
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	http://gtkatlantic.gradator.net/downloads/v0.4/
 
@@ -18,7 +17,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
