@@ -7,6 +7,7 @@
 
 PORTNAME=	monitord
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/
 
@@ -16,6 +17,6 @@ COMMENT=	Service that restarts other standalone services
 MAN8=		monitord.8
 
 post-install:
-	@${CP} ${WRKSRC}/monitord.conf.sample ${PREFIX}/etc/monitord.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/monitord.conf.sample ${PREFIX}/etc/monitord.conf.sample
 
 .include <bsd.port.mk>
