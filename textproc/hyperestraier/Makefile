@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports-stable/textproc/hyperestraier/Makefile,v 1.1 2006/03/04 21:43:08 ahze Exp $
 
 PORTNAME=	hyperestraier
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,6 @@ LIB_DEPENDS=	qdbm.12:${PORTSDIR}/databases/qdbm
 
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

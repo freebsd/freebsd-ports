@@ -11,7 +11,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.1.0
+lib/libestraier.so.8.2.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
@@ -113,6 +113,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000042.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000043.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000044.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000045.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000046.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000023.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000024.html
@@ -149,6 +151,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000055.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000056.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000057.html
+%%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000058.html
+%%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Document.src/M000059.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.src/M000001.html
 %%DATADIR%%/doc/rubypureapi/classes/EstraierPure/Node.src/M000002.html
@@ -196,7 +200,9 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubypureapi/index.html
 %%DATADIR%%/doc/rubypureapi/rdoc-style.css
 %%DATADIR%%/doc/uguide-en.html
+%%DATADIR%%/doc/uguide-en.html~
 %%DATADIR%%/doc/uguide-ja.html
+%%DATADIR%%/doc/uguide-ja.html~
 %%DATADIR%%/estraier.idl
 %%DATADIR%%/estresult.dtd
 %%DATADIR%%/estseek.conf
@@ -206,6 +212,7 @@ libexec/estseek.cgi
 %%DATADIR%%/filter/estfxmantotxt
 %%DATADIR%%/filter/estfxmsotohtml
 %%DATADIR%%/filter/estfxpdftohtml
+%%DATADIR%%/filter/estfxxdwtotxt
 %%DATADIR%%/filter/estwnetxpnd
 %%DATADIR%%/increm/estseek-form.html
 %%DATADIR%%/increm/estseek-frame.html
