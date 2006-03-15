@@ -3,7 +3,7 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/seamonkey/Makefile,v 1.35 2005/11/28 19:28:49 ahze Exp $
+#    $MCom: ports-stable/www/seamonkey/Makefile,v 1.1 2006/03/09 21:26:46 ahze Exp $
 #
 
 PORTNAME=	seamonkey
