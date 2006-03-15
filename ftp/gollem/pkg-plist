@@ -14,6 +14,7 @@
 %%GOLLEMDIR%%/config/prefs.php
 %%GOLLEMDIR%%/config/prefs.php.dist
 %%GOLLEMDIR%%/index.php
+%%GOLLEMDIR%%/js/stripe.js
 %%GOLLEMDIR%%/lib/Auth/gollem.php
 %%GOLLEMDIR%%/lib/Block/tree_menu.php
 %%GOLLEMDIR%%/lib/Gollem.php
@@ -25,6 +26,7 @@
 %%GOLLEMDIR%%/lib/version.php
 %%GOLLEMDIR%%/locale/bg_BG/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/cs_CZ/LC_MESSAGES/gollem.mo
+%%GOLLEMDIR%%/locale/da_DK/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/de_DE/LC_MESSAGES/gollem.mo
 %%GOLLEMDIR%%/locale/en_US/help.xml
 %%GOLLEMDIR%%/locale/es_ES/LC_MESSAGES/gollem.mo
@@ -51,6 +53,7 @@
 %%GOLLEMDIR%%/po/README
 %%GOLLEMDIR%%/po/bg_BG.po
 %%GOLLEMDIR%%/po/cs_CZ.po
+%%GOLLEMDIR%%/po/da_DK.po
 %%GOLLEMDIR%%/po/de_DE.po
 %%GOLLEMDIR%%/po/es_ES.po
 %%GOLLEMDIR%%/po/fi_FI.po
@@ -74,18 +77,19 @@
 %%GOLLEMDIR%%/templates/common-header.inc
 %%GOLLEMDIR%%/templates/javascript/open_quota_win.js
 %%GOLLEMDIR%%/templates/javascript/open_selectlist_win.js
-%%GOLLEMDIR%%/templates/login/login.inc
-%%GOLLEMDIR%%/templates/login/nologin.inc
-%%GOLLEMDIR%%/templates/manager/empty_dir.inc
-%%GOLLEMDIR%%/templates/manager/header.inc
+%%GOLLEMDIR%%/templates/login/javascript.inc
+%%GOLLEMDIR%%/templates/login/login.html
 %%GOLLEMDIR%%/templates/manager/javascript.inc
 %%GOLLEMDIR%%/templates/manager/manager.html
-%%GOLLEMDIR%%/templates/menu.inc
+%%GOLLEMDIR%%/templates/menu.html
+%%GOLLEMDIR%%/templates/prefs/columnselect.html
 %%GOLLEMDIR%%/templates/prefs/columnselect.inc
+%%GOLLEMDIR%%/templates/prefs/columnselect.js
 %%GOLLEMDIR%%/templates/quota/quota.html
 %%GOLLEMDIR%%/templates/selectlist/javascript.inc
 %%GOLLEMDIR%%/templates/selectlist/selectlist.html
 %%GOLLEMDIR%%/test.php
+%%GOLLEMDIR%%/themes/brown/screen.css
 %%GOLLEMDIR%%/themes/graphics/cd.png
 %%GOLLEMDIR%%/themes/graphics/clipboard.png
 %%GOLLEMDIR%%/themes/graphics/copy.png
@@ -108,6 +112,7 @@
 @dirrm %%GOLLEMDIR%%/themes/purple
 @dirrm %%GOLLEMDIR%%/themes/graphics/manager
 @dirrm %%GOLLEMDIR%%/themes/graphics
+@dirrm %%GOLLEMDIR%%/themes/brown
 @dirrm %%GOLLEMDIR%%/themes
 @dirrm %%GOLLEMDIR%%/templates/selectlist
 @dirrm %%GOLLEMDIR%%/templates/quota
@@ -149,6 +154,8 @@
 @dirrm %%GOLLEMDIR%%/locale/en_US
 @dirrm %%GOLLEMDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%GOLLEMDIR%%/locale/de_DE
+@dirrm %%GOLLEMDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%GOLLEMDIR%%/locale/da_DK
 @dirrm %%GOLLEMDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%GOLLEMDIR%%/locale/cs_CZ
 @dirrm %%GOLLEMDIR%%/locale/bg_BG/LC_MESSAGES
@@ -159,6 +166,7 @@
 @dirrm %%GOLLEMDIR%%/lib/Block
 @dirrm %%GOLLEMDIR%%/lib/Auth
 @dirrm %%GOLLEMDIR%%/lib
+@dirrm %%GOLLEMDIR%%/js
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%GOLLEMDIR%%/config
 @dirrmtry %%GOLLEMDIR%%
