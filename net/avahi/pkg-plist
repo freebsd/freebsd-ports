@@ -9,6 +9,7 @@ bin/avahi-resolve-address
 bin/avahi-resolve-host-name
 etc/avahi/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
+etc/avahi/hosts
 etc/avahi/services/ssh.service
 etc/dbus-1/system.d/avahi-dbus.conf
 etc/rc.d/avahi-daemon.sh
@@ -49,7 +50,7 @@ lib/libavahi-common.so.3
 lib/libavahi-core.a
 lib/libavahi-core.la
 lib/libavahi-core.so
-lib/libavahi-core.so.3
+lib/libavahi-core.so.4
 lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
