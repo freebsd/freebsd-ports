@@ -20,14 +20,11 @@
 %%ZOPEPRODUCTDIR%%/ZSyncer/diff.txt
 %%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Add.dtml
 %%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Approval.dtml
-%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Diff.dtml
 %%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Edit.dtml
 %%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Folder.dtml
 %%ZOPEPRODUCTDIR%%/ZSyncer/dtml/Sync.dtml
-%%ZOPEPRODUCTDIR%%/ZSyncer/dtml/SyncFolder.dtml
 %%ZOPEPRODUCTDIR%%/ZSyncer/help/ZSyncer.stx
 %%ZOPEPRODUCTDIR%%/ZSyncer/msg.txt
-%%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins/README.txt
 %%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins/get_zsyncer_status_for_objects.py
 %%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins/zsyncer_delete.py
 %%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins/zsyncer_diff.zpt
@@ -39,8 +36,6 @@
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/framework.pyc
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/runalltests.pyc
-%%ZOPEPRODUCTDIR%%/ZSyncer/tests/testConnectionMgr.py
-%%ZOPEPRODUCTDIR%%/ZSyncer/tests/testConnectionMgr.pyc
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/test_ConnectionMgr.py
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/test_ConnectionMgr.pyc
 %%ZOPEPRODUCTDIR%%/ZSyncer/tests/test_ZSyncer.py
@@ -60,15 +55,11 @@
 %%ZOPEPRODUCTDIR%%/ZSyncer/www/zsyncer_missing.gif
 %%ZOPEPRODUCTDIR%%/ZSyncer/www/zsyncer_ok.gif
 %%ZOPEPRODUCTDIR%%/ZSyncer/www/zsyncer_outdated.gif
-%%ZOPEPRODUCTDIR%%/ZSyncer/xmlrpclibBasicAuth.py
-%%ZOPEPRODUCTDIR%%/ZSyncer/xmlrpclibBasicAuth.pyc
 %%ZOPEPRODUCTDIR%%/ZSyncer/zsyncer_icon.gif
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/www
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/tests
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skins/zsyncer_skins
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skins
-@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skin/zsyncer_skins
-@dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/skin
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/help
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/dtml
 @dirrm %%ZOPEPRODUCTDIR%%/ZSyncer/Extensions
