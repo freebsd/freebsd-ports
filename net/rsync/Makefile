@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org//pub/%SUBDIR%/ \
@@ -25,7 +25,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .endif
 
 USE_RC_SUBR=	rsyncd.sh
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--disable-debug \
@@ -45,6 +44,7 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 
 .if !defined(WITHOUT_TIMELIMIT)
 EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
+PATCH_STRIP=	-p1
 .endif
 
 .include <bsd.port.pre.mk>
