@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	bcwipe
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	security
-MASTER_SITES=	http://www.jetico.com/linux/
+MASTER_SITES=	http://www.jetico.com/linux/ \
+		http://bsd.desa-hosting.de/distfiles/security/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dako@desa-hosting.de
 COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
 
 NO_CDROM=	yes
-USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DOS_FreeBSD
 
