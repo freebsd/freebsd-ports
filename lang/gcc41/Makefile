@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.1.0
-PORTREVISION=	20060217
+PORTVERSION=	4.1.1
+PORTREVISION=	20060310
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -22,12 +22,12 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.1
 
 .if defined(WITH_FORTRAN)
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmpfr.a:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+		mpfr.1:${PORTSDIR}/math/mpfr
 .endif
 
-CONFLICTS=	gcc-4.2.*
-LATEST_LINK?=	gcc41${PKGNAMESUFFIX}
+SUFFIX=		41
+LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
 NOT_FOR_ARCHS=	alpha
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -36,7 +36,6 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 .if defined(WITH_JAVA_AWT)
 USE_GNOME=	gtk20
-USE_X11=	yes
 .endif
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -60,7 +59,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		41
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-nls \
@@ -73,17 +71,11 @@ CONFIGURE_ARGS+=	--disable-nls \
 CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_JAVA_AWT)
 CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk #--enable-gtk-cairo=yes
-WANT_SHAREDLIBS=yes	# We need this at the moment.
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
-.if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+=	--enable-shared
+ALL_TARGET=	bootstrap-lean
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${TARGLIB}
-.else
-CONFIGURE_ARGS+=	--disable-shared
-.endif
-ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -107,6 +99,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if ! defined(WITHOUT_JAVA)
+CONFLICTS=	gcc-4.1.*
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
