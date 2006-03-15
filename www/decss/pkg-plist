@@ -1,7 +1,7 @@
 bin/decss
-share/doc/decss/FAQ
-share/doc/decss/README
-share/doc/decss/decss-now.png
-share/doc/decss/decss_mirror.html
-share/doc/decss/original_pigdog_article.txt
-@dirrm share/doc/decss
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/README
+%%DOCSDIR%%/decss-now.png
+%%DOCSDIR%%/decss_mirror.html
+%%DOCSDIR%%/original_pigdog_article.txt
+@dirrm %%DOCSDIR%%
