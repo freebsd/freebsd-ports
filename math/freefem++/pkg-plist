@@ -121,7 +121,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/load/gmres.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/include.tar.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/lex.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/lgfem.hpp
@@ -163,6 +162,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FEComplex.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG2.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/Laplace-lagrange-mult.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/Laplace.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1P2h.edp
