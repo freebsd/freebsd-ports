@@ -1,14 +1,14 @@
---- configure.orig	Sat Dec 31 13:22:23 2005
-+++ configure	Sat Dec 31 13:30:51 2005
-@@ -1053,6 +1053,7 @@
-   --enable-python       build python bindings
-   --enable-selinux      build with SELinux support
-   --enable-dnotify      build with dnotify support (linux only)
-+  --enable-kqueue       build with kqueue support (FreeBSD only)
+--- configure.orig	Mon Feb 27 23:35:09 2006
++++ configure	Mon Feb 27 23:35:39 2006
+@@ -1057,6 +1057,7 @@ Optional Features:
+   --enable-python         build python bindings
+   --enable-selinux        build with SELinux support
+   --enable-dnotify        build with dnotify support (linux only)
++  --enable-kqueue         build with kqueue support (FreeBSD only)
    --enable-shared[=PKGS]
                            build shared libraries [default=yes]
    --enable-static[=PKGS]
-@@ -4500,7 +4501,7 @@
+@@ -4533,7 +4534,7 @@ if test "x$GCC" = "xyes"; then
  
    case " $CFLAGS " in
    *[\ \	]-Wfloat-equal[\ \	]*) ;;
@@ -17,7 +17,7 @@
    esac
  
    case " $CFLAGS " in
-@@ -28240,6 +28241,31 @@
+@@ -27231,6 +27232,31 @@ if test x$have_dnotify = xyes; then
  
  cat >>confdefs.h <<\_ACEOF
  #define DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX 1
