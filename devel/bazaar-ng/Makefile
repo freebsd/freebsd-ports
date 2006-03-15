@@ -8,8 +8,8 @@
 PORTNAME=	bazaar-ng
 PORTVERSION=	0.7
 CATEGORIES=	devel
-MASTER_SITES=	http://voodoo.bawue.com/download/ \
-		http://www.bazaar-ng.org/pkg/
+MASTER_SITES=	http://bazaar-vcs.org/pkg/ \
+		http://voodoo.bawue.com/download/
 MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
