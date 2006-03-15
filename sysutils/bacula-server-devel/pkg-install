@@ -1,0 +1,58 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+if [ -z "${BACULA_DIR}" ]; then
+	BACULA_DIR=/var/db/bacula
+fi
+
+# Always add lines in /etc/services
+grep -q "bacula-dir" /etc/services
+if [ "$?" != "0" ]; then
+    echo "# Bacula port start
+bacula-dir      9101/tcp   #Bacula director daemon
+bacula-fd       9102/tcp   #Bacula file daemon
+bacula-sd       9103/tcp   #Bacula storage daemon
+# Bacule port end" >> /etc/services
+fi
+
+case $2 in
+POST-INSTALL)
+	# Install UID/GID
+	USER=bacula
+	GROUP=${USER}
+	UID=910
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+		if pw usermod ${USER} -d ${BACULA_DIR} -G operator
+		then
+			echo "Changed home directory of \"${USER}\" to \"${BACULA_DIR}\""
+		else
+			echo "Changing home directory of \"${USER}\" to \"${BACULA_DIR}\" failed..."
+			exit 1
+		fi
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -G operator -h - \
+			-d ${BACULA_DIR} -s /sbin/nologin -c "Bacula Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+	chown -R ${USER}:${GROUP} ${BACULA_DIR}
+	;;
+esac

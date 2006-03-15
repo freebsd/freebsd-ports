@@ -35,6 +35,7 @@
     SUBDIR += autopsy
     SUBDIR += bacula-client
     SUBDIR += bacula-server
+    SUBDIR += bacula-server-devel
     SUBDIR += barry
     SUBDIR += battfink
     SUBDIR += bbapm
