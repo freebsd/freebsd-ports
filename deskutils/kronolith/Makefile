@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
 		ftp://ftp.planetmirror.com/pub/horde/kronolith/			\
@@ -22,25 +22,18 @@ DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Kronolith is the Horde calendar application
 
-#----------------------------------------------------------------------------
-# You may define this option:
-#
-# - WITH_MCAL:	you want to use the MCAL driver (deprecated, and only for PHP4).
-#
-#----------------------------------------------------------------------------
-
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_PHP=	yes	# modules set by Horde, but needed to get PHP_VER
-USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 
 REINPLACE_ARGS=	-i ""
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES docs/TODO docs/UPGRADING
 CONFFILE=	keywords.php menu.php prefs.php
-SUB_DIRS=	config lib locale po scripts templates themes
+SUB_DIRS=	config js lib locale po scripts templates themes
 
 LHORDEDIR?=	www/horde
 LKRONOLITHDIR?=	${LHORDEDIR}/kronolith
@@ -53,7 +46,6 @@ PLIST_SUB=	KRONOLITHDIR=${LKRONOLITHDIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/|
 
 KRONOLITHDIR=	${PREFIX}/${LKRONOLITHDIR}
 CONFDIR=	${KRONOLITHDIR}/config
-VAR_CAL=	/var/calendar
 
 .include <bsd.port.pre.mk>
 
@@ -63,14 +55,10 @@ HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
 HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
-.if exists(${LOCALBASE}/sbin/htpasswd)
-HTPASSWD=	${LOCALBASE}/sbin/htpasswd
-.else
-HTPASSWD=	${LOCALBASE}/bin/htpasswd
-.endif
-
 pre-configure:
-	@${RM} ${WRKSRC}/config/conf.xml.orig
+	@(cd ${WRKSRC}/scripts &&	\
+		${FIND} . -name "*.php" -exec	\
+		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; )
 	@${SED} -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:"	\
 		${FILESDIR}/httpd.conf.kronolith > ${WRKDIR}/httpd-kronolith.conf
 
@@ -97,30 +85,6 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITH_MCAL) && (${PHP_VER} == 4)
-	@if [ ! -d ${VAR_CAL} ]; then \
-	  ${ECHO_MSG} "===> Creating ${VAR_CAL}" ; \
-	  ${MKDIR} ${VAR_CAL} ; \
-	  ${CHMOD} 1777 ${VAR_CAL} ; \
-	fi
-. if !defined(BATCH)
-	@if [ ! -f ${LOCALBASE}/etc/mpasswd ] ; then \
-	  ${ECHO_MSG} "===> Creating ${LOCALBASE}/etc/mpasswd" ; \
-	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
-	  (read PASSCAL;						\
-	   ${HTPASSWD} -bc ${LOCALBASE}/etc/mpasswd www $${PASSCAL}; \
-	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.xml) \
-	elif ! ${GREP} -q -e "^www" ${LOCALBASE}/etc/mpasswd ; then \
-	  ${ECHO_MSG} "===> Adding www into ${LOCALBASE}/etc/mpasswd" ; \
-	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
-	  (read PASSCAL;						\
-	   ${HTPASSWD} -b ${LOCALBASE}/etc/mpasswd www $${PASSCAL} ; \
-	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.xml) \
-	else \
-	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:www_cal_password:" ${CONFDIR}/conf.xml ; \
-	fi
-. endif
-.endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
