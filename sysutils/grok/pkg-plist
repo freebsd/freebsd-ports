@@ -1,0 +1,4 @@
+bin/grok
+@unexec if cmp -s %D/etc/grok.conf.sample %D/etc/grok.conf; then rm -f %D/etc/grok.conf; fi
+etc/grok.conf.sample
+@exec if [ ! -f %D/etc/grok.conf ] ; then cp -p %D/%F %B/grok.conf; fi

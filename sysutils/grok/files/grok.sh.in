@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: grok 
+# REQUIRE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable grok:
+# grok_enable (bool):            Set to "NO" by default.
+#                                Set it to "YES" to enable grok 
+# grok_config (path):            Set to "%%PREFIX%%/etc/grok.conf" by default.
+#
+
+. %%RC_SUBR%%
+
+name="grok"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${grok_enable="NO"}
+: ${grok_config="%%PREFIX%%/etc/grok.conf"}
+
+command_interpreter=%%PERL%%
+command=%%PREFIX%%/bin/grok
+command_args="-f $grok_config -b -d"
+
+run_rc_command "$1"
