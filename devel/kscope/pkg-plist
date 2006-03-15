@@ -5,8 +5,8 @@ bin/kscope
 %%DOCSDIR%%/index.docbook
 %%DOCSDIR%%/main_window.png
 %%DOCSDIR%%/options.png
-%%DOCSDIR%%/project_files.png
 %%DOCSDIR%%/project_new.png
+%%DOCSDIR%%/project_files.png
 %%DOCSDIR%%/project_open.png
 %%DOCSDIR%%/query_dlg.png
 %%DOCSDIR%%/query_filter.png
@@ -16,7 +16,7 @@ share/icons/locolor/16x16/apps/kscope.png
 share/icons/hicolor/32x32/apps/kscope.png
 share/icons/locolor/32x32/apps/kscope.png
 share/icons/hicolor/16x16/apps/kscope.png
-share/applnk/Utilities/kscope.desktop
+share/applnk/Development/kscope.desktop
 share/apps/kscope/kscopeui.rc
 share/apps/kscope/kscope_config
 share/apps/kscope/pics/file_ro.png
@@ -25,6 +25,9 @@ share/apps/kscope/pics/file_save.png
 share/apps/kscope/pics/query_locked.png
 share/apps/kscope/pics/query_unlocked.png
 share/apps/kscope/pics/tab_list.png
+share/apps/kscope/pics/call_graph.png
+share/apps/kscope/pics/called_tree.png
+share/apps/kscope/pics/calling_tree.png
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/hicolor/16x16/apps
