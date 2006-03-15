@@ -1,0 +1,65 @@
+--- config_office/configure	2006-02-24 23:17:16.000000000 +0100
++++ config_office/configure	2006-02-25 08:53:26.000000000 +0100
+@@ -19833,13 +19833,13 @@
+ echo "$as_me:$LINENO: checking whether to include PPDs" >&5
+ echo $ECHO_N "checking whether to include PPDs... $ECHO_C" >&6
+ if test "$without_ppds" = "yes"; then
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+   WITHOUT_PPDS=YES
+   SCPDEFS="$SCPDEFS -DWITHOUT_PPDS"
++else
++  echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
+ fi
+ 
+ 
+@@ -19847,13 +19847,13 @@
+ echo "$as_me:$LINENO: checking whether to include AFMs" >&5
+ echo $ECHO_N "checking whether to include AFMs... $ECHO_C" >&6
+ if test "$without_afms" = "yes"; then
+-  echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-else
+   echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6
+   WITHOUT_AFMS=YES
+   SCPDEFS="$SCPDEFS -DWITHOUT_AFMS"
++else
++  echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
+ fi
+ 
+ 
+--- config_office/configure.in	2006-02-24 23:17:16.000000000 +0100
++++ config_office/configure.in	2006-02-25 08:52:23.000000000 +0100
+@@ -4172,22 +4172,22 @@
+ 
+ AC_MSG_CHECKING([whether to include PPDs])
+ if test "$without_ppds" = "yes"; then
+-  AC_MSG_RESULT([yes])
+-else
+   AC_MSG_RESULT([no])
+   WITHOUT_PPDS=YES
+   SCPDEFS="$SCPDEFS -DWITHOUT_PPDS"
++else
++  AC_MSG_RESULT([yes])
+ fi
+ AC_SUBST(WITHOUT_PPDS)
+ AC_SUBST(SCPDEFS)
+ 
+ AC_MSG_CHECKING([whether to include AFMs])
+ if test "$without_afms" = "yes"; then
+-  AC_MSG_RESULT([yes])
+-else
+   AC_MSG_RESULT([no])
+   WITHOUT_AFMS=YES
+   SCPDEFS="$SCPDEFS -DWITHOUT_AFMS"
++else
++  AC_MSG_RESULT([yes])
+ fi
+ AC_SUBST(WITHOUT_AFMS)
+ AC_SUBST(SCPDEFS)

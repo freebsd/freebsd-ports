@@ -6,14 +6,10 @@
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 .if !defined(WITHOUT_JAVA) && defined(WITH_GNUGCJ)
-CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}/gcc41" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}" --disable-qadevooo
+CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
 .endif
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
-.endif
-
-.if !defined(WITH_GPC)
-CONFIGURE_ARGS+=	--enable-libart 
 .endif
 
 .if defined(WITH_KDE)
@@ -90,10 +86,11 @@ pre-fetch:
 	@${ECHO} "make LOCALIZED_LANG=xx" 
 	@${ECHO} "while xx can be one of the following"
 	@${ECHO} "af ar be-BY bg br bn bn-BD bn-IN bs ca cs cy da de el"
-	@${ECHO} "en-GB en-US en-ZA eo es et eu fi fr ga gl gu-IN he hi-IN"
-	@${ECHO} "hr hu it ja km kn-IN ko lo lt lv mk ms ne nb nl nn nr"
-	@${ECHO} "ns pa-IN pl pt pt-BR ru rw sk sl sh-YU sr-CS ss st sv"
-	@${ECHO} "sw sw-TZ sx ta-IN th tn tr ts ve vi xh zh-CN zh-TW zu"
+	@${ECHO} "en-GB en-US en-ZA eo es et eu fa fi fr ga gl gu-IN he"
+	@${ECHO} "hi-IN hr hu it ja km kn-IN ko lo lt lv mk ms ne nb nl"
+	@${ECHO} "nn nr ns pa-IN pl pt pt-BR ru rw sk sl sh-YU sr-CS ss"
+	@${ECHO} "st sv sw sw-TZ sx ta-IN th tn tr ts ve vi xh zh-CN"
+	@${ECHO} "zh-TW zu"
 	@${ECHO} "Default: en-US"
 #XXX currently broken
 #.if !defined(WITHOUT_JAVA)
