@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- agi/Makefile.orig	Thu Jan 12 15:42:07 2006
-+++ agi/Makefile	Thu Jan 12 15:44:39 2006
+--- agi/Makefile.orig	Sun Jan 22 17:53:44 2006
++++ agi/Makefile	Sun Jan 22 17:55:53 2006
 @@ -11,7 +11,9 @@
  # the GNU General Public License
  #
  
--AGIS=agi-test.agi eagi-test eagi-sphinx-test
-+AGIS_BIN=eagi-test eagi-sphinx-test
+-AGIS=agi-test.agi eagi-test eagi-sphinx-test xagi-test
++AGIS_BIN=eagi-test eagi-sphinx-test xagi-test
 +AGIS_SCR=agi-test.agi
 +AGIS=$(AGIS_SCR) $(AGIS_BIN)
  
