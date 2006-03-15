@@ -1,0 +1,27 @@
+--- Makefile.orig	Mon Mar 13 22:31:49 2006
++++ Makefile	Mon Mar 13 22:32:44 2006
+@@ -1,9 +1,6 @@
+ # Makefile for gxmms2 and gkrellxmms2
+ 
+ # Installation directory
+-PREFIX=/usr/local
+-KRELLPREFIX=/usr
+-
+ ALLFILES=gkrellxmms2/*.c gkrellxmms2/*.h gkrellxmms2/*.xpm gmedialib/*.c gmedialib/*.h gmedialib/*.xpm gtrackinfo/*.c gtrackinfo/*.h gxmms2src/*.c gxmms2src/*.h gxmms2src/*.xpm sdecode/*.c sdecode/*.h xmms2ctrl/*.c xmms2ctrl/*.h Makefile README README.gxmms2 README.gkrellxmms2 COPYING CHANGELOG
+ 
+ GTK_CFLAGS=`pkg-config gtk+-2.0 --cflags`
+@@ -11,12 +8,10 @@
+ XMMS2_CFLAGS=`pkg-config xmms2-client xmms2-client-glib --cflags`
+ XMMS2_LIB=`pkg-config xmms2-client xmms2-client-glib --libs`
+ 
+-CFLAGS=-O2 -Wall -fPIC $(GTK_CFLAGS) $(XMMS2_CFLAGS) -I.
+-LIBS=$(GTK_LIB) $(XMMS2_LIB)
++CFLAGS+=$(GTK_CFLAGS) $(XMMS2_CFLAGS) -I.
++LIBS+=$(GTK_LIB) $(XMMS2_LIB)
+ 
+ KRELLLFLAGS=-shared
+-
+-CC=gcc
+ 
+ OBJS = gxmms2.o xmms2ctrl.o trackinfo.o gtrackinfo.o gmlplaylist.o gmedialib.o gmlbrowser.o gmlsearch.o gmlplaylists.o gmladdfiles.o sdecode.o wejpscroller.o statusdisplay.o wejpconfig.o eggtrayicon.o
+ 
