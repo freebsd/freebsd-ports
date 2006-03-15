@@ -10,7 +10,7 @@ PORTNAME=	pylize
 PORTVERSION=	1.3.b
 CATEGORIES=	misc textproc
 MASTER_SITES=	http://www.chrisarndt.de/en/software/pylize/download/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	dryice@dryice.name

@@ -9,7 +9,7 @@ PORTNAME=	session2
 PORTVERSION=	0.6.1
 CATEGORIES=	www python
 MASTER_SITES=	http://quixote.idyll.org/session2/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	session2-${PORTVERSION}
 
 MAINTAINER=	dryice@dryice.name

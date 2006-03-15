@@ -9,7 +9,7 @@ PORTNAME=	tcping
 PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.linuxco.de/tcping/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Do a TCP connect to the given IP/port combination

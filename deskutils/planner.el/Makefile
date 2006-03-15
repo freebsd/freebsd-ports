@@ -9,7 +9,7 @@ PORTNAME=	planner.el
 PORTVERSION=	3.31
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
-		http://bsdchat.com/dist/dryice/
+		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	planner-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
