@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getdp
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -59,7 +59,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	install
+regression-test:	install
 	cd ${WRKSRC}/demos && ${PORTNAME} test.pro -solve MagSta_phi
 .endif
 
