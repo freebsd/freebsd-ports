@@ -1,0 +1,28 @@
+bin/mafft
+bin/disttbfast
+bin/dndblast
+bin/dndfast7
+bin/dndpre
+bin/dndpre2
+bin/dvtditr
+bin/f2cl
+bin/getlag
+bin/mafft-profile
+bin/pairalign
+bin/pairlocalalign
+bin/score
+bin/setcore
+bin/sextet5
+bin/splitseq
+bin/tbfast
+bin/tbfast2
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%EXAMPLESDIR%%/sample
+%%EXAMPLESDIR%%/sample.fftns2
+%%EXAMPLESDIR%%/sample.fftnsi
+%%EXAMPLESDIR%%/sample.gins1
+%%EXAMPLESDIR%%/sample.ginsi
+%%EXAMPLESDIR%%/sample.lins1
+%%EXAMPLESDIR%%/sample.linsi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

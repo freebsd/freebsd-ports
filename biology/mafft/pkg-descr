@@ -1,0 +1,12 @@
+MAFFT offers a range of multiple alignment strategies, L-INS-i
+(accurate; recommended for <200 sequences), FFT-NS-i (standard speed and
+accuracy), FFT-NS-2 (fast; recommended for >2,000 sequences), etc.
+According to BAliBASE and other benchmark tests, L-INS-i is one of the
+most accurate methods currently available.
+
+MAFFT has been described:
+K. Katoh, K. Misawa, K. Kuma and T. Miyata (Nucleic Acids Res. 30:
+3059-3066, 2002) MAFFT: a novel method for rapid multiple sequence
+alignment based on fast Fourier transform. 
+
+WWW: http://www.biophys.kyoto-u.ac.jp/~katoh/programs/align/mafft/
