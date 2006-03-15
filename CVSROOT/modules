@@ -5680,6 +5680,7 @@ libsrs2		ports/mail/libsrs2
 libssh2		ports/security/libssh2
 libstatgrab	ports/devel/libstatgrab
 libstocks	ports/finance/libstocks
+libstree	ports/textproc/libstree
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
 libsvg		ports/graphics/libsvg
