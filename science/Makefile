@@ -18,6 +18,7 @@
     SUBDIR += devisor
     SUBDIR += dft++
     SUBDIR += euler
+    SUBDIR += fastcap
     SUBDIR += felt
     SUBDIR += flounder
     SUBDIR += gave

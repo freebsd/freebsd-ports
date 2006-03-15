@@ -1,0 +1,20 @@
+FastCap computes self and mutual capacitances between ideal
+conductors of arbitrary shapes, orientations and sizes.
+The conductors can be embedded in a dielectric region composed
+of any number of constant-permittivity regions of any shape and
+size.
+
+The algorithm used in FastCap is an acceleration of the
+boundary-element technique for solving the integral equation
+associated with the multiple-conductor, multiple-dielectric
+capacitance extraction problem.  The linear system resulting
+from the boundary-element discretization is solved using a
+generalized conjugate residual algorithm with a fast multipole
+algorithm to efficiently compute the iterates.
+
+--------------------- 
+This version of fastcap has been cleaned up and enhanced by Stephen R.
+Whiteley of Whitleley Research Inc.
+--------------------- 
+
+WWW:	http://www.rle.mit.edu/cpg/research_codes.htm
