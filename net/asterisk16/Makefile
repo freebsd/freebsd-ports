@@ -7,18 +7,21 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz\
+		asterisk124_codec_negotiation-20060202_2-${BRIVER}.diff.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	fjoe/
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
-
-PATCHFILES=	asterisk124_codec_negotiation-20060202_2.diff.gz
-PATCH_SITES=	http://www.portaone.com/~bamby/public/
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
@@ -28,6 +31,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
+BRIVER=		bristuff-0.3.0-PRE-1l
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
