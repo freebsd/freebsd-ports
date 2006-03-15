@@ -3401,6 +3401,7 @@ gringotts	ports/security/gringotts
 grip		ports/audio/grip
 grisbi		ports/finance/grisbi
 grn		ports/news/grn
+grok		ports/sysutils/grok
 gromacs		ports/science/gromacs
 gromit		ports/x11/gromit
 groovy		ports/lang/groovy
