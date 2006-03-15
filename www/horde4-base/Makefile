@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -43,7 +43,7 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 # - WITHOUT_FTP:	if you do not need the VFS FTP driver.
 #
-# - WITH_MCAL:		if you plan to install Kronolith with mcal (deprecated).
+# - WITH_MCAL:		for mcal authentication back-end (deprecated).
 #
 # - WITH_IMSP:		use IMSP as a preferences backend.
 #
@@ -93,8 +93,8 @@ CONFLICTS=	horde-2.*
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+
+USE_GETTEXT=	yes	# Already implied by USE_PHP =gettext, to pet portlint
 USE_PHP=	ctype gettext session
-USE_REINPLACE=	yes
 SUB_FILES=	pkg-message pkg-deinstall pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -214,7 +214,7 @@ DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
 		docs/PERFORMANCE docs/RELEASE_NOTES docs/SECURITY docs/TODO \
 		docs/TRANSLATIONS docs/UPGRADING
-CONFFILE=	conf.php mime_drivers.php motd.php nls.php prefs.php registry.php
+CONFFILE=	conf.php hooks.php mime_drivers.php motd.php nls.php prefs.php registry.php
 SUB_DIRS=	admin config js lib locale po scripts services templates themes util
 
 LHORDEDIR?=	www/horde
@@ -304,6 +304,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g"	\
 		${WRKSRC}/docs/INSTALL
 	@${RM} ${SEDIN2RM:S|^|${WRKSRC}/|:S|$|.beforeHorde|}
+	@(cd ${WRKSRC}/scripts &&	\
+		${FIND} . -name "*.php" -exec	\
+		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; && \
+		${FIND} . -name "*.beforeHorde" -delete)
 
 pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB)
