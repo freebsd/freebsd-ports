@@ -22,7 +22,6 @@ PORTDOCS=	index.html
 PLIST_FILES=	sbin/rinetd
 
 USE_RC_SUBR=	rinetd.sh
-USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E "s,(/etc/rinetd.conf),${PREFIX}\1," \
