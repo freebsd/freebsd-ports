@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/releases/
+MASTER_SITES=	http://cairographics.org/releases/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -23,7 +24,7 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--enable-pdf \
 		--enable-ps
 USE_GNOME=	gnometarget gnomehack ltverhack
-USE_AUTOTOOLS=  libtool:15
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
