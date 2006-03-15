@@ -8,12 +8,11 @@
 PORTNAME=	perlftlib
 PORTVERSION=	1.2
 CATEGORIES=	print perl5
-MASTER_SITES=	http://www.io.com/~kazushi/xtt/ \
-		${MASTER_SITE_PORTS_JP} \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to use the FreeType library from the perl language
 
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
