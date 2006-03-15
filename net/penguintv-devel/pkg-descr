@@ -1,0 +1,22 @@
+PenguinTV is not just another RSS feed reader. It is designed from
+the ground up to work seamlessly with podcasts and video blogs,
+allowing you to easily enjoy the audio, music, and video published
+around the web in RSS format.
+
+Until now, the only solutions for listening to podcasts on Linux
+have been clunky apps and unreliable bash scripts. Many solutions
+require the user to browse file directories named by date to find
+media files. With the large amount of information in podcasts and
+videos, a user needs help to keep track of everything.
+
+PenguinTV eliminates all of these problems with a light-weight but
+powerful interface that shows you what you need to know, and hides
+what you don't. You can immediately see what you've watched, what's
+available to view, and which media are downloading. You don't have
+to worry about where files are stored, what their names are, or
+what format they are in. Rather than try to reinvent the wheel by
+coding its own media player, PenguinTV launches the media player
+of your choice to view your downloads.
+
+WWW: http://penguintv.sourceforge.net/
+Author: Owen Williams <ywwg@usa.net>
