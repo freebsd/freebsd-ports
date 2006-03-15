@@ -10988,7 +10988,6 @@ queue-repair	ports/mail/queue-repair
 quftp		ports/ftp/quftp
 quick-lounge-applet	ports/misc/quick-lounge-applet
 quickml		ports/mail/quickml
-quickpics	ports/graphics/quickpics
 quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
 quit		ports/games/quit
@@ -12506,7 +12505,6 @@ thevalley	ports/games/thevalley
 thinglaunch	ports/x11/thinglaunch
 thinice		ports/x11-themes/thinice
 thoteditor	ports/editors/thoteditor
-threeDS		ports/graphics/threeDS
 throttle	ports/sysutils/throttle
 throttled	ports/net/throttled
 thrulay		ports/benchmarks/thrulay
