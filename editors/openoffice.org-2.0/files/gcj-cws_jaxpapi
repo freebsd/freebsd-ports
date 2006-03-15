@@ -1,0 +1,1088 @@
+Index: external/prj/d.lst
+===================================================================
+RCS file: /cvs/util/external/prj/d.lst,v
+retrieving revision 1.21
+retrieving revision 1.21.18.1
+diff -u -r1.21 -r1.21.18.1
+--- external/prj/d.lst	24 Nov 2004 15:13:13 -0000	1.21
++++ external/prj/d.lst	17 Jan 2006 10:39:46 -0000	1.21.18.1
+@@ -24,8 +24,6 @@
+ ..\%__SRC%\bin\*.zip %_DEST%\pck%_EXT%\*.zip
+ ..\common.pro\bin\*.zip %_DEST%\pck%_EXT%\*.zip
+ ..\common\xt.jar %_DEST%\bin%_EXT%\xt.jar
+-..\common\jaxp.jar %_DEST%\bin%_EXT%\jaxp.jar
+-..\common\parser.jar %_DEST%\bin%_EXT%\parser.jar
+ 
+ ..\audio\rtufiles\lib\audio\libaudio.a %_DEST%\lib%_EXT%\libaudio.a
+ ..\audio\rtufiles\lib\audio\*.h %_DEST%\inc%_EXT%\audio\*
+Index: filter/source/config/fragments/makefile.mk
+===================================================================
+RCS file: /cvs/framework/filter/source/config/fragments/makefile.mk,v
+retrieving revision 1.16
+retrieving revision 1.16.16.1
+diff -u -r1.16 -r1.16.16.1
+--- filter/source/config/fragments/makefile.mk	14 Dec 2005 14:48:16 -0000	1.16
++++ filter/source/config/fragments/makefile.mk	17 Jan 2006 11:03:31 -0000	1.16.16.1
+@@ -156,11 +156,7 @@
+ MERGE:=python ../tools/merge/pyAltFCFGMerge
+ .ELSE
+ MERGE    := $(JAVAI) -jar $(CLASSDIR)$/FCFGMerge.jar
+-.IF "$(JDK)" == "gcj"
+-XALANCLASS=$(SOLARBINDIR)/xalan.jar
+-CLASSPATH:=$(CLASSPATH)$(PATH_SEPERATOR){$(subst,%Z*Z%,$(PATH_SEPERATOR) $(XALANCLASS:s/ /%Z*Z%/))}
+-.ENDIF
+-PACKLANG := $(JAVAI) org.apache.xalan.xslt.Process -XSL langfilter.xsl
++PACKLANG := $(JAVAI) $(JAVACPS) $(SOLARBINDIR)/xalan.jar org.apache.xalan.xslt.Process -XSL langfilter.xsl
+ .ENDIF
+ 
+ # -----------------------------------------------------------------------------
+Index: filter/source/config/tools/utils/makefile.mk
+===================================================================
+RCS file: /cvs/framework/filter/source/config/tools/utils/makefile.mk,v
+retrieving revision 1.5
+retrieving revision 1.5.92.1
+diff -u -r1.5 -r1.5.92.1
+--- filter/source/config/tools/utils/makefile.mk	8 Sep 2005 21:39:14 -0000	1.5
++++ filter/source/config/tools/utils/makefile.mk	17 Jan 2006 11:03:44 -0000	1.5.92.1
+@@ -51,8 +51,8 @@
+                     juh.jar         \
+                     jut.jar         \
+                     java_uno.jar    \
+-                    jaxp.jar        \
+-                    parser.jar
++                    xml-apis.jar    \
++                    xercesImpl.jar
+ 
+ JAVACLASSFILES  =   \
+                     $(CLASSDIR)$/$(PACKAGE)$/AnalyzeStartupLog.class              \
+Index: helpcontent2/settings.pmk
+===================================================================
+RCS file: /cvs/documentation/helpcontent2/settings.pmk,v
+retrieving revision 1.5
+retrieving revision 1.5.106.1
+diff -u -r1.5 -r1.5.106.1
+--- helpcontent2/settings.pmk	29 Apr 2005 09:14:07 -0000	1.5
++++ helpcontent2/settings.pmk	17 Jan 2006 12:52:53 -0000	1.5.106.1
+@@ -1,5 +1,5 @@
+ 
+-my_cp:=$(CLASSPATH)$(PATH_SEPERATOR)$(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/unoil.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/ridl.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/jurt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/jut.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xmlsearch.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xmlhelp.jar
++my_cp:=$(CLASSPATH)$(PATH_SEPERATOR)$(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/unoil.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/ridl.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/jurt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/jut.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xmlsearch.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xmlhelp.jar
+ 
+ .IF "$(SYSTEM_DB)" == "YES"
+ my_cp!:=$(my_cp)$(PATH_SEPERATOR)$(DB_JAR)
+Index: officecfg/org/openoffice/configuration/FileHelper.java
+===================================================================
+RCS file: /cvs/util/officecfg/org/openoffice/configuration/FileHelper.java,v
+retrieving revision 1.2
+retrieving revision 1.2.88.1
+diff -u -r1.2 -r1.2.88.1
+--- officecfg/org/openoffice/configuration/FileHelper.java	8 Sep 2005 14:42:51 -0000	1.2
++++ officecfg/org/openoffice/configuration/FileHelper.java	17 Jan 2006 11:28:49 -0000	1.2.88.1
+@@ -62,7 +62,7 @@
+ 		File aFile = new File(sSource);
+ 		
+ 		try {
+-			absPath = aFile.getAbsoluteFile().toURL().toString();
++			absPath = aFile.getAbsolutePath();
+ 		} catch (Exception e)
+         {
+             e.printStackTrace();            
+Index: officecfg/org/openoffice/configuration/Generator.java
+===================================================================
+RCS file: /cvs/util/officecfg/org/openoffice/configuration/Generator.java,v
+retrieving revision 1.2
+retrieving revision 1.2.902.1
+diff -u -r1.2 -r1.2.902.1
+--- officecfg/org/openoffice/configuration/Generator.java	5 Jul 2001 08:04:36 -0000	1.2
++++ officecfg/org/openoffice/configuration/Generator.java	17 Jan 2006 11:28:50 -0000	1.2.902.1
+@@ -18,7 +18,7 @@
+     public Generator() throws Exception
+     {
+         // set the driver for xt
+-        System.setProperty("com.jclark.xsl.sax.parser", "com.sun.xml.parser.Parser");
++        System.setProperty("com.jclark.xsl.sax.parser", "org.apache.xerces.parsers.SAXParser");
+     }    
+ 
+ 	/**
+Index: officecfg/org/openoffice/configuration/XMLDefaultGenerator.java
+===================================================================
+RCS file: /cvs/util/officecfg/org/openoffice/configuration/XMLDefaultGenerator.java,v
+retrieving revision 1.4
+retrieving revision 1.4.88.1
+diff -u -r1.4 -r1.4.88.1
+--- officecfg/org/openoffice/configuration/XMLDefaultGenerator.java	8 Sep 2005 14:43:34 -0000	1.4
++++ officecfg/org/openoffice/configuration/XMLDefaultGenerator.java	17 Jan 2006 11:28:50 -0000	1.4.88.1
+@@ -36,12 +36,10 @@
+ 
+ import org.xml.sax.*;
+ import org.w3c.dom.*;
+-import com.sun.xml.tree.XmlDocument;
+ import org.xml.sax.SAXException;
+ import org.xml.sax.SAXParseException;
+ import javax.xml.parsers.SAXParserFactory;
+ import javax.xml.parsers.SAXParser;
+-import com.sun.xml.tree.*;
+ import java.util.*;
+ import java.io.*;
+ import com.jclark.xsl.sax.Driver;
+@@ -65,7 +63,7 @@
+ 	public XMLDefaultGenerator(String sourceFile) throws Exception
+     {
+         // set the driver for xt
+-        System.setProperty("com.jclark.xsl.sax.parser", "com.sun.xml.parser.Parser");
++        System.setProperty("com.jclark.xsl.sax.parser", "org.apache.xerces.parsers.SAXParser");
+         evaluateSchema(sourceFile);
+     }
+ 
+Index: readlicense_oo/util/makefile.pmk
+===================================================================
+RCS file: /cvs/installation/readlicense/util/makefile.pmk,v
+retrieving revision 1.10
+retrieving revision 1.10.12.1
+diff -u -r1.10 -r1.10.12.1
+--- readlicense_oo/util/makefile.pmk	25 Oct 2005 10:43:44 -0000	1.10
++++ readlicense_oo/util/makefile.pmk	17 Jan 2006 11:15:07 -0000	1.10.12.1
+@@ -70,7 +70,7 @@
+ $(MISC)$/readme%.html :
+     @+-$(MKDIR) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=html file=$@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=html file=$@
+ .ELSE
+ 	sed 's|xmlns:xt="http://www.jclark.com/xt"||;s|extension-element-prefixes="xt"||;s|.*xt:document.*||;s|<xsl:output method = "HTML" doctype-public = "-//W3C//DTD HTML 3.2//EN" />|<xsl:output method="html" doctype-public="-//W3C//DTD HTML 3.2//EN" />|' < ..$/readme.xsl | xsltproc -o $@ \
+ 	         --stringparam os1 $(OS) \
+@@ -86,7 +86,7 @@
+ $(MISC)$/readme%.txt :
+     @+-$(MKDIR) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=text file=$@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $(subst,_$(@:b:s/_/./:e:s/.//), $(COMMONMISC)$/$(TARGET)$/$(@:b).xrm) ..$/readme.xsl os1=$(OS) gui1=$(GUI) cp1=$(CPUNAME) com1=$(COM) lang1=$(@:b:s/_/./:e:s/.//) type=text file=$@
+ .ELSE
+ 	sed 's|xmlns:xt="http://www.jclark.com/xt"||;s|extension-element-prefixes="xt"||;s|.*xt:document.*||;s|<xsl:output method = "HTML" doctype-public = "-//W3C//DTD HTML 3.2//EN" />|<xsl:output method="text" />|' < ..$/readme.xsl | xsltproc -o $@ \
+ 	         --stringparam os1 $(OS) \
+Index: scripting/java/build.xml
+===================================================================
+RCS file: /cvs/framework/scripting/java/build.xml,v
+retrieving revision 1.32
+retrieving revision 1.32.18.1
+diff -u -r1.32 -r1.32.18.1
+--- scripting/java/build.xml	9 Sep 2005 01:54:21 -0000	1.32
++++ scripting/java/build.xml	17 Jan 2006 11:15:56 -0000	1.32.18.1
+@@ -65,15 +65,11 @@
+ 
+   <path id="idesupport.class.path">
+     <pathelement path="${jardir}"/>
+-    <!-- <pathelement path="${solar.jar}/jaxp.jar"/>
+-    <pathelement path="${solar.jar}/parser.jar"/>
+-    <pathelement path="${install.dir}/xerces.jar"/> -->
+   </path>
+ 
+   <path id="openide.class.path">
+     <pathelement path="${jardir}"/>
+     <pathelement path="${solar.jar}/openide.jar"/>
+-    <!-- <pathelement path="${install.dir}/xerces.jar"/> -->
+   </path>
+     
+   <path id="netbeans.editor.support.classpath">
+Index: solenv/bin/modules/installer/javainstaller.pm
+===================================================================
+RCS file: /cvs/tools/solenv/bin/modules/installer/javainstaller.pm,v
+retrieving revision 1.22
+retrieving revision 1.21.184.2
+diff -u -r1.22 -r1.21.184.2
+--- solenv/bin/modules/installer/javainstaller.pm	13 Jan 2006 15:01:29 -0000	1.22
++++ solenv/bin/modules/installer/javainstaller.pm	18 Jan 2006 12:05:44 -0000	1.21.184.2
+@@ -494,14 +494,14 @@
+ 
+ 	# The variable CLASSPATH has to contain:
+ 	# $installsdk/classes:$installsdk/classes/setupsdk.jar:
+-	# $installsdk/classes/parser.jar:$installsdk/classes/jaxp.jar:
++	# $installsdk/classes/xercesImpl.jar:$installsdk/classes/xml-apis.jar:
+ 	# $installsdk/classes/ldapjdk.jar:$directory
+ 	
+ 	my @additional_classpath = ();
+ 	push(@additional_classpath, "$installsdk\/classes");
+ 	push(@additional_classpath, "$installsdk\/installsdk.jar");
+-	push(@additional_classpath, "$installsdk\/classes\/parser.jar");
+-	push(@additional_classpath, "$installsdk\/classes\/jaxp.jar");
++	push(@additional_classpath, "$installsdk\/classes\/xml-apis.jar");
++	push(@additional_classpath, "$installsdk\/classes\/xercesImpl.jar");
+ 	push(@additional_classpath, "$directory");
+ 
+ 	my $newclasspathstring = "";
+Index: solenv/inc/tg_config.mk
+===================================================================
+RCS file: /cvs/tools/solenv/inc/tg_config.mk,v
+retrieving revision 1.6
+retrieving revision 1.6.184.1
+diff -u -r1.6 -r1.6.184.1
+--- solenv/inc/tg_config.mk	8 Sep 2005 09:42:41 -0000	1.6
++++ solenv/inc/tg_config.mk	17 Jan 2006 11:10:09 -0000	1.6.184.1
+@@ -62,12 +62,12 @@
+ 	-$(MKDIRHIER) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+ .IF "$(NO_INSPECTION)"==""
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.configuration.Inspector $<
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.configuration.Inspector $<
+ .ENDIF			# "$(NO_INSPECTION)"==""
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/schema_val.xsl $(@:d)$*.val componentName=$(PACKAGE).$*
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/sanity.xsl $(@:d)$*.san 
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/schema_trim.xsl $(@:d)$*.tmp
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/schema_val.xsl $(@:d)$*.val componentName=$(PACKAGE).$*
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/sanity.xsl $(@:d)$*.san 
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/schema_trim.xsl $(@:d)$*.tmp
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
+ .ELSE
+ # xsltproc already validates against the dtd.  For additional validation,
+ # org.openoffice.configuration.Inspector should be replaced and the
+@@ -101,7 +101,7 @@
+     @+echo -------------+ creating locale dependent resource bundles
+ 	-$(MKDIRHIER) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/resource.xsl $@ locale={$(subst,$/$(PACKAGEDIR)$/$(@:f), $(subst,$(PROCESSOUT)$/registry$/res$/, $@))}
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/resource.xsl $@ locale={$(subst,$/$(PACKAGEDIR)$/$(@:f), $(subst,$(PROCESSOUT)$/registry$/res$/, $@))}
+ .ELSE
+ 	$(XSLTPROC) -o $@ \
+ 	            --stringparam locale {$(subst,$/$(PACKAGEDIR)$/$(@:f), $(subst,$(PROCESSOUT)$/registry$/res$/, $@))} \
+@@ -129,11 +129,11 @@
+ 	-$(MKDIRHIER) $(@:d) 
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+ .IF "$(NO_INSPECTION)"==""
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.configuration.Inspector $<
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.configuration.Inspector $<
+ .ENDIF			# "$(NO_INSPECTION)"==""
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/data_val.xsl $(@:d)$*.val xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$*.tmp xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/data_val.xsl $(@:d)$*.val xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$*.tmp xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
+ .ELSE
+ # xsltproc already validates against the dtd.  For additional validation,
+ # org.openoffice.configuration.Inspector should be replaced and the
+@@ -170,8 +170,8 @@
+     @+echo -------------+ creating locale dependent entries
+ 	-$(MKDIRHIER) $(@:d)
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$*.tmp xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema locale={$(subst,$/$(PACKAGEDIR)$/$(@:f), $(subst,$(PROCESSOUT)$/registry$/res$/, $@))}	
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$*.tmp xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs schemaRoot=$(XCSROOT)$/registry$/schema locale={$(subst,$/$(PACKAGEDIR)$/$(@:f), $(subst,$(PROCESSOUT)$/registry$/res$/, $@))}	
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$*.tmp $@
+ .ELSE
+ 	$(XSLTPROC) -o $(@:d)$*.tmp \
+ 	            --stringparam xcs $(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$*.xcs \
+@@ -206,8 +206,8 @@
+     @+echo -------------+ creating a module file
+ 	-$(MKDIRHIER) $(@:d) 
+ .IF "$(XSLTPROC)"=="NO_XSLTPROC"
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=com.sun.xml.parser.Parser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$(@:f:s/.xcu/.tmp/) xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$(<:b).xcs schemaRoot=$(XCSROOT)$/registry$/schema module={$(subst,$(<:b)-, $(*))}
+-	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/jaxp.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/parser.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=com.sun.xml.parser.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$(@:f:s/.xcu/.tmp/) $@
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xt.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/cfgimport.jar -Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver $< $(XSLDIR)$/alllang.xsl $(@:d)$(@:f:s/.xcu/.tmp/) xcs=$(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$(<:b).xcs schemaRoot=$(XCSROOT)$/registry$/schema module={$(subst,$(<:b)-, $(*))}
++	$(JAVAI) $(JAVACPS) $(SOLARBINDIR)$/xml-apis.jar$(PATH_SEPERATOR)$(SOLARBINDIR)$/xercesImpl.jar$(PATH_SEPERATOR)$(PROCESSORDIR)$/schema.jar -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl org.openoffice.helper.PrettyPrinter $(@:d)$(@:f:s/.xcu/.tmp/) $@
+ .ELSE
+ 	$(XSLTPROC) -o $(@:d)$(@:f:s/.xcu/.tmp/) \
+ 	            --stringparam xcs $(XCSROOT)$/registry$/schema$/$(PACKAGEDIR)$/$(<:b).xcs \
+Index: toolkit/test/accessibility/jawb.mf
+===================================================================
+RCS file: /cvs/gsl/toolkit/test/accessibility/jawb.mf,v
+retrieving revision 1.4
+retrieving revision 1.4.178.1
+diff -u -r1.4 -r1.4.178.1
+--- toolkit/test/accessibility/jawb.mf	23 Jul 2004 14:26:57 -0000	1.4
++++ toolkit/test/accessibility/jawb.mf	17 Jan 2006 11:03:18 -0000	1.4.178.1
+@@ -1,3 +1,3 @@
+ Manifest-Version: 1.0
+ Main-Class: AccessibilityWorkBench
+-Class-Path: classes.jar ridl.jar unoil.jar jurt.jar juh.jar java_uno.jar xt.jar jaxp.jar
++Class-Path: classes.jar ridl.jar unoil.jar jurt.jar juh.jar java_uno.jar xt.jar xml-apis.jar
+Index: xmerge/source/xmerge/build.xml
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/build.xml,v
+retrieving revision 1.2
+retrieving revision 1.2.4.1
+diff -u -r1.2 -r1.2.4.1
+--- xmerge/source/xmerge/build.xml	24 Oct 2005 17:57:33 -0000	1.2
++++ xmerge/source/xmerge/build.xml	17 Jan 2006 10:54:44 -0000	1.2.4.1
+@@ -58,9 +58,8 @@
+     <property file="../inc/antbuild.properties"/>
+         
+     <path id="classpath">
+-        <pathelement location="${solar.jar}/parser.jar"/>
+-        <pathelement location="${solar.jar}/jaxp.jar"/>
+-        <pathelement location="${solar.jar}/xerces.jar"/>    
++        <pathelement location="${solar.jar}/xml-apis.jar"/>
++        <pathelement location="${solar.jar}/xercesImpl.jar"/>    
+         <pathelement location="${solar.jar}/unoil.jar"/>
+         <pathelement location="${solar.jar}/ridl.jar"/>
+         <pathelement location="${solar.jar}/jurt.jar"/>
+@@ -96,7 +95,7 @@
+                 <attribute name="Specification-Vendor" value="OpenOffice.org"/>
+                 <attribute name="Specification-Version" value="0.6.0"/>
+                 <attribute name="Implementation-Version" value="#IMPL-VERSION#"/>
+-                <attribute name="Class-Path" value="jaxp.jar parser.jar"/>
++                <attribute name="Class-Path" value="xml-apis.jar xercesImpl.jar"/>
+             </manifest>
+          </jar>
+     </target>
+Index: xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentSerializerImpl.java
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/java/org/openoffice/xmerge/converter/xml/xslt/DocumentSerializerImpl.java,v
+retrieving revision 1.3
+retrieving revision 1.2.4.1
+diff -u -r1.3 -r1.2.4.1
+Index: xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/build.xml
+===================================================================
+RCS file: /cvs/xml/xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/build.xml,v
+retrieving revision 1.2
+retrieving revision 1.2.4.1
+diff -u -r1.2 -r1.2.4.1
+--- xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/build.xml	24 Oct 2005 18:23:20 -0000	1.2
++++ xmerge/source/xmerge/java/org/openoffice/xmerge/util/registry/build.xml	17 Jan 2006 10:55:00 -0000	1.2.4.1
+@@ -79,9 +79,8 @@
+     <!-- classpath settings for javac tasks -->
+     <path id="classpath">
+         <pathelement location="${build.class}"/>
+-        <pathelement location="${solar.jar}/parser.jar"/>
+-        <pathelement location="${solar.jar}/jaxp.jar"/>
+-        <pathelement location="${solar.jar}/xerces.jar"/>
++        <pathelement location="${solar.jar}/xml-apis.jar"/>
++        <pathelement location="${solar.jar}/xercesImpl.jar"/>
+     </path>
+ 
+     <!-- set whether we want to compile with or without deprecation -->
+Index: xmerge/util/build.xml
+===================================================================
+RCS file: /cvs/xml/xmerge/util/build.xml,v
+retrieving revision 1.9
+retrieving revision 1.9.4.1
+diff -u -r1.9 -r1.9.4.1
+--- xmerge/util/build.xml	24 Oct 2005 18:23:52 -0000	1.9
++++ xmerge/util/build.xml	17 Jan 2006 10:55:05 -0000	1.9.4.1
+@@ -39,9 +39,8 @@
+     <property name="javadoc.dir" location="${build.dir}/javadoc"/>
+     
+     <path id="classpath">
+-        <pathelement location="${solar.jar}/parser.jar"/>
+-        <pathelement location="${solar.jar}/jaxp.jar"/>
+-        <pathelement location="${solar.jar}/xerces.jar"/>    
++        <pathelement location="${solar.jar}/xml-apis.jar"/>
++        <pathelement location="${solar.jar}/xercesImpl.jar"/>    
+         <pathelement location="${solar.jar}/unoil.jar"/>
+         <pathelement location="${solar.jar}/ridl.jar"/>
+         <pathelement location="${solar.jar}/jurt.jar"/>
+Index: xmerge/util/xmerge.mf
+===================================================================
+RCS file: /cvs/xml/xmerge/util/xmerge.mf,v
+retrieving revision 1.1
+retrieving revision 1.1.24.1
+diff -u -r1.1 -r1.1.24.1
+--- xmerge/util/xmerge.mf	7 Mar 2002 16:45:23 -0000	1.1
++++ xmerge/util/xmerge.mf	17 Jan 2006 10:55:11 -0000	1.1.24.1
+@@ -1,6 +1,6 @@
+ Manifest-Version: 1.0
+ Main-Class: org.openoffice.xmerge.test.Driver
+-Class-Path: jaxp.jar parser.jar
++Class-Path: xml-apis.jar xercesImpl.jar
+ Specification-Title: OpenOffice XMerge Framework
+ Specification-Vendor: OpenOffice.org
+ Specification-Version: 0.6.0
+Index: xmerge/workben/build.xml
+===================================================================
+RCS file: /cvs/xml/xmerge/workben/build.xml,v
+retrieving revision 1.3
+retrieving revision 1.3.8.1
+diff -u -r1.3 -r1.3.8.1
+--- xmerge/workben/build.xml	9 Sep 2005 11:50:54 -0000	1.3
++++ xmerge/workben/build.xml	17 Jan 2006 10:55:13 -0000	1.3.8.1
+@@ -60,9 +60,8 @@
+     <!-- classpath settings for javac tasks -->
+     <path id="classpath">
+         <pathelement location="${build.class}"/>
+-        <pathelement location="${solar.jar}/parser.jar"/>
+-        <pathelement location="${solar.jar}/jaxp.jar"/>
+-        <pathelement location="${solar.jar}/xerces.jar"/>
++        <pathelement location="${solar.jar}/xml-apis.jar"/>
++        <pathelement location="${solar.jar}/xercesImpl.jar"/>
+     </path>
+ 
+     <!-- set wether we want to compile with or without deprecation -->
+Index: xmlhelp/source/com/sun/star/help/GCJFileURLStreamHandler.java
+===================================================================
+RCS file: /cvs/util/xmlhelp/source/com/sun/star/help/GCJFileURLStreamHandler.java,v
+retrieving revision 1.2
+retrieving revision 1.2.2.1
+diff -u -r1.2 -r1.2.2.1
+--- xmlhelp/source/com/sun/star/help/GCJFileURLStreamHandler.java	16 Jan 2006 12:35:17 -0000	1.2
++++ xmlhelp/source/com/sun/star/help/GCJFileURLStreamHandler.java	19 Jan 2006 09:43:59 -0000	1.2.2.1
+@@ -43,12 +43,12 @@
+ import java.net.URLConnection;
+ import java.util.HashMap;
+ 
+-public class FileURLStreamHandler
++public class GCJFileURLStreamHandler
+ 	extends gnu.java.net.protocol.file.Handler {
+ 
+ 	private static HashMap cache = new HashMap();
+ 
+-	FileURLStreamHandler() {
++	GCJFileURLStreamHandler() {
+ 	}
+ 
+ 	public URLConnection openConnection(URL url) throws IOException {
+Index: xmlhelp/source/com/sun/star/help/HelpCompiler.java
+===================================================================
+RCS file: /cvs/util/xmlhelp/source/com/sun/star/help/HelpCompiler.java,v
+retrieving revision 1.12
+retrieving revision 1.11.4.2
+diff -u -r1.12 -r1.11.4.2
+--- xmlhelp/source/com/sun/star/help/HelpCompiler.java	16 Jan 2006 12:35:49 -0000	1.12
++++ xmlhelp/source/com/sun/star/help/HelpCompiler.java	18 Jan 2006 12:08:35 -0000	1.11.4.2
+@@ -38,6 +38,7 @@
+ import java.io.ByteArrayInputStream;
+ import java.io.File;
+ import java.io.IOException;
++import java.io.ByteArrayOutputStream;
+ import java.io.InputStreamReader;
+ import java.io.UnsupportedEncodingException;
+ import java.net.MalformedURLException;
+@@ -49,16 +50,20 @@
+ import java.util.LinkedList;
+ import java.util.List;
+ 
++import javax.xml.parsers.DocumentBuilder;
++import javax.xml.parsers.DocumentBuilderFactory;
++
+ import org.w3c.dom.Document;
+ import org.w3c.dom.Element;
+ import org.w3c.dom.Node;
+ import org.w3c.dom.NodeList;
+ import org.w3c.dom.Text;
++import org.w3c.dom.traversal.DocumentTraversal;
++import org.w3c.dom.traversal.NodeFilter;
++import org.w3c.dom.traversal.TreeWalker;
++import org.w3c.dom.traversal.NodeIterator;
+ import org.xml.sax.InputSource;
+ 
+-import com.sun.xml.tree.TreeWalker;
+-import com.sun.xml.tree.XmlDocument;
+-
+ public class HelpCompiler {
+ 
+ 	private static final String makeRelPrefix = ".." + File.separator;
+@@ -98,25 +103,25 @@
+ 
+ 	}
+ 
+-	private Object[] switchFind(Node node) {
++	private Object[] switchFind(Document doc) {
+ 		HashSet hs = new HashSet();
+-		Node next;
+-		TreeWalker tw = new TreeWalker(node);
+-		while ((next = tw.getNextElement("switchinline")) != null) {
+-			Element el = (Element) next;
+-			if (!el.getAttribute("select").equals("appl"))
+-				continue;
+-
+-			NodeList nl = el.getChildNodes();
+-			for (int i = 0; i < nl.getLength(); ++i) {
+-				if (nl.item(i).getNodeName().equals("caseinline")) {
+-					String appl = ((Element) nl.item(i)).getAttribute("select");
+-					hs.add(appl);
+-				} else if (nl.item(i).getNodeName().equals("defaultinline")) {
+-					hs.add("DEFAULT");
+-				}
+-			}
+-		}
++
++                NodeList nodelist = doc.getElementsByTagName("switchinline");
++
++		for (int j = 0; j < nodelist.getLength(); ++j) {
++			Element el = (Element) nodelist.item(j);
++			if (el.getAttribute("select").equals("appl")) {
++				NodeList nl = el.getChildNodes();
++                       		for (int i = 0; i < nl.getLength(); ++i) {
++                               		if (nl.item(i).getNodeName().equals("caseinline")) {
++                                       		String appl = ((Element) nl.item(i)).getAttribute("select");
++                                       		hs.add(appl);
++                               		} else if (nl.item(i).getNodeName().equals("defaultinline")) {
++                                       		hs.add("DEFAULT");
++					}
++                               	}
++                	}
++                }
+ 
+ 		hs.add("DEFAULT");
+ 		return hs.toArray();
+@@ -129,6 +134,9 @@
+ 		NodeList nl = node.getChildNodes();
+ 		for (int i = 0; i < nl.getLength(); ++i) {
+ 			Node n = nl.item(i);
++                        if (n == null) {
++                                continue;
++                        }
+ 			if ((n.getNodeName().equals("switchinline")
+ 				|| n.getNodeName().equals("switch"))
+ 				&& ((Element) n).getAttribute("select").equals("appl")) {
+@@ -168,93 +176,119 @@
+ 		return parent;
+ 	}
+ 
+-	public boolean compile() throws UnsupportedEncodingException {
+-		// we now have the jaroutputstream, which will contain the document.
+-		// now determine the document as a dom tree in variable docResolved
+-		File inputFil = new File(inputFile);
+-        
+-        // HelpCompiler.getSourceDocument() takes a string that resembles an URL. 
+-        // Using inputFil.toURL() is way to expensive here, 
+-        // because it checks the filesystem to find out if inputFil
+-        // might be a directory. This takes a lot of time if working from
+-        // Windows via NFS on remote volumes. We "know" that inputfil is
+-        // a file anyway.
+-        String path;
+-        if ( File.separatorChar == '\\' ) {
+-            path = "file:/";
+-            path += inputFil.getAbsolutePath();
+-            path = path.replace('\\','/');
++	static byte[] docToBytes(Document doc) throws IOException {
++		ByteArrayOutputStream baos = new ByteArrayOutputStream();
++
++		java.lang.reflect.Constructor con;
++		java.lang.reflect.Method meth;
++		String domImpl = doc.getClass().getName();
++
++        /*
++         * We may have multiple XML parsers in the Classpath.
++         * Depending on which one is first, the actual type of
++         * doc may vary.  Need a way to find out which API is being
++         * used and use an appropriate serialization method.
++         */
++        try {
++            // First of all try for JAXP 1.0
++            if (domImpl.equals("com.sun.xml.tree.XmlDocument")) {
++                Class jaxpDoc = Class.forName("com.sun.xml.tree.XmlDocument");
++
++                // The method is in the XMLDocument class itself, not a helper
++                meth = jaxpDoc.getMethod("write",
++                            new Class[] { Class.forName("java.io.OutputStream") } );
++
++                meth.invoke(doc, new Object [] { baos } );
++         }
++         else if (domImpl.equals("org.apache.crimson.tree.XmlDocument")) {
++                       Class crimsonDoc = Class.forName("org.apache.crimson.tree.XmlDocument");
++                       // The method is in the XMLDocument class itself, not a helper
++                meth = crimsonDoc.getMethod("write",
++                            new Class[] { Class.forName("java.io.OutputStream") } );
++
++                meth.invoke(doc, new Object [] { baos } );
++         }
++         else if (domImpl.equals("gnu.xml.dom.DomDocument")) {
++                Class gnuSer = Class.forName("gnu.xml.dom.ls.DomLSSerializer");
++
++                // Get the serialize method
++                meth = gnuSer.getMethod("serialize",
++                            new Class [] { Class.forName("org.w3c.dom.Node"),
++                                                       Class.forName("java.io.OutputStream") } );
++
++                // Get an instance
++                               Object serializer = gnuSer.newInstance();
++
++                // Now call serialize to write the document
++                meth.invoke(serializer, new Object [] { doc, baos } );
++         }
++         else if (domImpl.equals("org.apache.xerces.dom.DocumentImpl")
++            || domImpl.equals("org.apache.xerces.dom.DeferredDocumentImpl")) {
++                // Try for Xerces
++                Class xercesSer =
++                        Class.forName("org.apache.xml.serialize.XMLSerializer");
++
++                // Get the OutputStream constructor
++                // May want to use the OutputFormat parameter at some stage too
++                con = xercesSer.getConstructor(new Class []
++                        { Class.forName("java.io.OutputStream"),
++                          Class.forName("org.apache.xml.serialize.OutputFormat") } );
++
++
++                // Get the serialize method
++                meth = xercesSer.getMethod("serialize",
++                            new Class [] { Class.forName("org.w3c.dom.Document") } );
++
++
++                // Get an instance
++                Object serializer = con.newInstance(new Object [] { baos, null } );
++
++
++                // Now call serialize to write the document
++                meth.invoke(serializer, new Object [] { doc } );
++            }
++            else {
++                // We don't have another parser
++                throw new IOException("No appropriate API (JAXP/Xerces) to serialize XML document: " + domImpl);
++            }
+         }
+-        else {
+-            path = "file:" + inputFil.getAbsolutePath();
++        catch (ClassNotFoundException cnfe) {
++            throw new IOException(cnfe.toString());
++        }
++        catch (Exception e) {
++            // We may get some other errors, but the bottom line is that
++            // the steps being executed no longer work
++            throw new IOException(e.toString());
+         }
+-		byte[] embResolved = getSourceDocument(path);
+ 
+-		// now add path to the document
+-		// resolve the dom
+-		if (embResolved == null) {
+-            String sourcePath;
+-    		try {
+-	    		sourcePath = inputFil.getCanonicalPath();
+-    		} catch (IOException e3) {
+-    			sourcePath = inputFil.getAbsolutePath();
+-	    	}
+-			System.err.println("ERROR: file not existing: " + sourcePath);
+-			System.exit(1);
+-		}
++        byte bytes[] = baos.toByteArray();
+ 
+-		ByteArrayInputStream inByte = new ByteArrayInputStream(embResolved);
+-		InputStreamReader inread;
+-		try {
+-			inread = new InputStreamReader(inByte, "UTF8");
+-		} catch (UnsupportedEncodingException e) {
+-			System.err.println(
+-				"ERROR: unsupported Encoding '"
+-					+ inputFile
+-					+ "': "
+-					+ e.getMessage());
+-			return false;
+-		}
++        return bytes;
++    }
+ 
+-		InputSource inputSource = new InputSource(inread);
+-		inputSource.setEncoding("UTF8");
+-		Document docResolvedOrg = null;
+-		try {
+-			docResolvedOrg = XmlDocument.createXmlDocument(inputSource, false);
+-		} catch (Exception e) {
+-			System.err.println(
+-				"ERROR: XmlDocument.createXmlDocument() failed for '"
+-					+ inputFile
+-					+ "': "
+-					+ e.getMessage());
+-			return false;
+-		}
++    public class myparser {
++    	HashSet hidlist = null;
++        HashSet extendedHelpText = null;
++        Hashtable keywords = null;
++        Hashtable helptexts = null;
++        String documentId = null;
++        String fileName = null;
++        String title = null;
++
++        public myparser(String indocumentId, String infileName, String intitle) {
++            hidlist = new HashSet();
++            extendedHelpText = new HashSet();
++            keywords = new Hashtable();
++            helptexts = new Hashtable();
++            documentId = indocumentId;
++            fileName = infileName;
++        	title = intitle;
++        }
+ 
+-		// now find all applications for which one has to compile
+-		String documentId = null;
+-		String fileName = null;
+-		String title = null;
+-		// returns all applications for which one has to compile
+-		Object[] applications = switchFind(docResolvedOrg);
+-        
+-        for (int i = 0; i < applications.length; ++i) {
+-			String appl = (String) applications[i];
+-            // returns a clone of the document with swich-cases resolved
+-			Element docResolved =
+-				(Element) clone(docResolvedOrg.getDocumentElement(), appl);
+-			// now determine the id of the document, which is part of the
+-			// bookmark - tag (HID)
+-			Node test;
+-			TreeWalker treewalker = new TreeWalker(docResolved);
+-			// a number to determine the anchor of the whole stuff
+-			HashSet hidlist = new HashSet();
+-			HashSet extendedHelpText = new HashSet();
+-			Hashtable keywords = new Hashtable();
+-			Hashtable helptexts = new Hashtable();
+-            
+-			while ((test = treewalker.getNext()) != null) {
+-				if (fileName == null
+-					&& test.getNodeName().equals("filename")) {
++        public void traverse( Node parentNode ) {
++            // traverse all nodes that belong to the parent
++			for(Node test=parentNode.getFirstChild(); test!=null; test=test.getNextSibling()) {
++				if (fileName == null && test.getNodeName().equals("filename")) {
+ 					NodeList list = test.getChildNodes();
+ 					Node node = list.item(0);
+ 					if (node.getNodeType() == Node.TEXT_NODE)
+@@ -332,15 +366,102 @@
+ 					if (!extendedHelpText.isEmpty())
+ 						extendedHelpText = new HashSet();
+ 				}
+-			} // now save the info
++                  // traverse children
++                  traverse(test);
++                }
++          }
++    }
++
++    public boolean compile() throws UnsupportedEncodingException, java.io.IOException {
++           // we now have the jaroutputstream, which will contain the document.
++           // now determine the document as a dom tree in variable docResolved
++           String absolutePath;
++           String sourcePath;
++           File inputFil = new File(inputFile);
++           try {
++                   absolutePath = inputFil.getCanonicalPath();
++           } catch (IOException e3) {
++                   absolutePath = inputFil.getAbsolutePath();
++           }
++           try {
++                   sourcePath = new File(src).getCanonicalPath();
++           } catch (IOException e3) {
++                   sourcePath = new File(inputFile).getAbsolutePath();
++           }
++
++           byte[] embResolved = null;
++           try {
++                   embResolved = getSourceDocument(inputFil.toURL().toExternalForm());
++           } catch (MalformedURLException e4) {
++                   System.err.println(
++                           "ERROR: malformed URL '" + inputFile + "': " + e4.getMessage());
++                   return false;
++           }
++
++           // now add path to the document
++           // resolve the dom
++           if (embResolved == null) {
++                   System.err.println("ERROR: file not existing: " + sourcePath);
++                   System.exit(1);
++           }
++
++           ByteArrayInputStream inByte = new ByteArrayInputStream(embResolved);
++           InputStreamReader inread;
++           try {
++                   inread = new InputStreamReader(inByte, "UTF8");
++           } catch (UnsupportedEncodingException e) {
++                   System.err.println(
++                           "ERROR: unsupported Encoding '"
++                                   + inputFile
++                                   + "': "
++                                   + e.getMessage());
++                   return false;
++		   }
++
++           InputSource inputSource = new InputSource(inread);
++           inputSource.setEncoding("UTF8");
++           Document docResolvedOrg = null;
++           try {
++                   //System.err.println("Compiling " + inputFile);
++                   DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
++                   dFactory.setValidating(false);
++                   DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
++                   docResolvedOrg = dBuilder.parse(inputSource);
++           } catch (Exception e) {
++                   System.err.println(
++                           "ERROR: XmlDocument.createXmlDocument() failed for '"
++                                   + inputFile
++                                   + "': "
++                                   + e.getMessage());
++                   return false;
++           }
++
++           // now find all applications for which one has to compile
++           String documentId = null;
++           String fileName = null;
++           String title = null;
++           // returns all applications for which one has to compile
++           Object[] applications = switchFind(docResolvedOrg);
++
++		   for (int i = 0; i < applications.length; ++i) {
++               String appl = (String) applications[i];
++               // returns a clone of the document with swich-cases resolved
++               Element docResolved =
++                       (Element) clone(docResolvedOrg.getDocumentElement(), appl);
++
++               myparser aparser = new myparser(documentId, fileName, title);
++               aparser.traverse(docResolved);
++               documentId = aparser.documentId;
++               fileName = aparser.fileName;
++               title = aparser.title;
+ 
+ 			addEntryToJarFile(
+ 				appl,
+ 				"text",
+-				docResolved.toString().getBytes("UTF8"));
+-			addEntryToJarFile(appl, "hidlist", hidlist);
+-			addEntryToJarFile(appl, "helptexts", helptexts);
+-			addEntryToJarFile(appl, "keywords", keywords);
++                docToBytes(docResolved.getOwnerDocument()));
++            addEntryToJarFile(appl, "hidlist", aparser.hidlist);
++            addEntryToJarFile(appl, "helptexts", aparser.helptexts);
++            addEntryToJarFile(appl, "keywords", aparser.keywords);
+ 		} // end iteration over all applications
+ 
+ 		try {
+Index: xmlhelp/source/com/sun/star/help/HelpIndexer.java
+===================================================================
+RCS file: /cvs/util/xmlhelp/source/com/sun/star/help/HelpIndexer.java,v
+retrieving revision 1.16
+retrieving revision 1.16.20.1
+diff -u -r1.16 -r1.16.20.1
+--- xmlhelp/source/com/sun/star/help/HelpIndexer.java	25 Oct 2005 11:24:55 -0000	1.16
++++ xmlhelp/source/com/sun/star/help/HelpIndexer.java	17 Jan 2006 11:20:47 -0000	1.16.20.1
+@@ -46,7 +46,6 @@
+ import java.util.*;
+ 
+ import org.w3c.dom.*;
+-import com.sun.xml.tree.*;
+ import org.xml.sax.*;
+ import javax.xml.parsers.*;
+ import com.jclark.xsl.sax.*;
+@@ -246,7 +245,10 @@
+ 					in.setEncoding("UTF8");
+ 					Document docResolved = null;
+ 					try {
+-						docResolved = XmlDocument.createXmlDocument(in, false);
++						DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
++						dFactory.setValidating(false);
++						DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
++						docResolved = dBuilder.parse(in);
+ 					} catch (Exception e) {
+ 						if (docResolved == null)
+ 							System.err.println("Nullpointer");
+Index: xmlhelp/source/com/sun/star/help/makefile.mk
+===================================================================
+RCS file: /cvs/util/xmlhelp/source/com/sun/star/help/makefile.mk,v
+retrieving revision 1.21
+retrieving revision 1.21.2.1
+diff -u -r1.21 -r1.21.2.1
+--- xmlhelp/source/com/sun/star/help/makefile.mk	16 Jan 2006 12:42:15 -0000	1.21
++++ xmlhelp/source/com/sun/star/help/makefile.mk	19 Jan 2006 14:48:36 -0000	1.21.2.1
+@@ -42,7 +42,7 @@
+ 
+ .INCLUDE : settings.mk
+ 
+-JARFILES 		= jaxp.jar parser.jar xt.jar unoil.jar ridl.jar jurt.jar jut.jar xmlsearch.jar
++JARFILES 		= xml-apis.jar xercesImpl.jar xt.jar unoil.jar ridl.jar jurt.jar jut.jar xmlsearch.jar
+ EXTRAJARFILES 	= 
+ 
+ .IF "$(SYSTEM_DB)" == "YES"
+Index: XmlSearch/src/com/sun/xmlsearch/makefile.mk
+===================================================================
+RCS file: /cvs/util/XmlSearch/src/com/sun/xmlsearch/makefile.mk,v
+retrieving revision 1.5
+retrieving revision 1.5.6.1
+diff -u -r1.5 -r1.5.6.1
+--- XmlSearch/src/com/sun/xmlsearch/makefile.mk	25 Oct 2005 11:11:58 -0000	1.5
++++ XmlSearch/src/com/sun/xmlsearch/makefile.mk	17 Jan 2006 10:54:03 -0000	1.5.6.1
+@@ -3,9 +3,9 @@
+ #*    $Workfile:$
+ #*
+ #*    Creation date     KR 28.06.99
+-#*    last change       $Author: hr $ $Date: 2005/10/25 11:11:58 $
++#*    last change       $Author: cmc $ $Date: 2006/01/17 10:54:03 $
+ #*
+-#*    $Revision: 1.5 $
++#*    $Revision: 1.5.6.1 $
+ #*
+ #*    $Logfile:$
+ #*
+@@ -21,8 +21,7 @@
+ 
+ .INCLUDE : settings.mk
+ 
+-JARFILES 		=  jaxp.jar parser.jar xt.jar
+-#EXTRAJARFILES 		=  jaxp.jar parser.jar xt.jar  
++JARFILES 		=  xpi-apis.jar xercesImpl.jar xt.jar
+ 
+ JAVAFILES		= $(subst,$(CLASSDIR)$/$(PACKAGE)$/, $(subst,.class,.java $(JAVACLASSFILES))) 
+ 
+Index: XmlSearch/src/com/sun/xmlsearch/tree/TreeBuilder.java
+===================================================================
+RCS file: /cvs/util/XmlSearch/src/com/sun/xmlsearch/tree/TreeBuilder.java,v
+retrieving revision 1.2
+retrieving revision 1.2.12.1
+diff -u -r1.2 -r1.2.12.1
+--- XmlSearch/src/com/sun/xmlsearch/tree/TreeBuilder.java	9 Sep 2005 16:41:49 -0000	1.2
++++ XmlSearch/src/com/sun/xmlsearch/tree/TreeBuilder.java	17 Jan 2006 10:54:04 -0000	1.2.12.1
+@@ -46,7 +46,8 @@
+ import org.xml.sax.HandlerBase;
+ import org.xml.sax.AttributeList;
+ import org.xml.sax.InputSource;
+-import com.sun.xml.parser.Parser;
++import javax.xml.parsers.SAXParserFactory;
++import javax.xml.parsers.SAXParser;
+ import com.sun.xmlsearch.util.IntegerArray;
+ import com.jclark.xsl.om.*;
+ 
+@@ -610,22 +611,29 @@
+ 		}
+     } // end of SubstitutedElement
+ 
++    private SAXParser getParser() throws org.xml.sax.SAXException, javax.xml.parsers.ParserConfigurationException
++    {
++        SAXParserFactory spf = SAXParserFactory.newInstance();
++        spf.setValidating(false);
++        return spf.newSAXParser();
++    }
++
+     private static final int InitStackSize = 256;
+     private static final Name EmptyName = null;
+-    private Parser _parser = new Parser();
++    private SAXParser _parser = null;
+     private Hashtable _names = new Hashtable(256);
+   
+     private NameTable _nameTable;
+     private NamespacePrefixMap _nsMap;
+   
+-    public TreeBuilder() {
++    public TreeBuilder() throws org.xml.sax.SAXException, javax.xml.parsers.ParserConfigurationException {
+ 		this(new NameTableImpl());
+     }
+ 
+-    public TreeBuilder(NameTable nameTable) {
++    public TreeBuilder(NameTable nameTable) throws org.xml.sax.SAXException, javax.xml.parsers.ParserConfigurationException {
++		_parser = getParser();
+ 		_nameTable = nameTable;
+ 		_nsMap = _nameTable.getEmptyNamespacePrefixMap();
+-		_parser.setFastStandalone(true);
+     }
+ 
+     public Node makeSubstituteElement(Name name, Node2[] children, Node original) {
+@@ -917,9 +925,8 @@
+     
+     public synchronized Node getRoot(InputSource input) {
+ 		try {
+-			_parser.setDocumentHandler(this);
+ 			// long start = System.currentTimeMillis();
+-			_parser.parse(input);
++			_parser.parse(input, this);
+ 			/*
+ 			  System.out.println((System.currentTimeMillis()-start)
+ 			  +" msec parse");
+Index: XmlSearch/src/com/sun/xmlsearch/util/Configuration.java
+===================================================================
+RCS file: /cvs/util/XmlSearch/src/com/sun/xmlsearch/util/Configuration.java,v
+retrieving revision 1.2
+retrieving revision 1.2.12.1
+diff -u -r1.2 -r1.2.12.1
+--- XmlSearch/src/com/sun/xmlsearch/util/Configuration.java	9 Sep 2005 16:45:09 -0000	1.2
++++ XmlSearch/src/com/sun/xmlsearch/util/Configuration.java	17 Jan 2006 10:54:05 -0000	1.2.12.1
+@@ -40,8 +40,8 @@
+ import java.util.Vector;
+ import java.net.URL;
+ import org.w3c.dom.*;
+-import com.sun.xml.tree.XmlDocument;
+-import com.sun.xml.parser.Resolver;
++import javax.xml.parsers.DocumentBuilder;
++import javax.xml.parsers.DocumentBuilderFactory; 
+ import org.xml.sax.InputSource;
+ 
+ public final class Configuration {
+@@ -68,14 +68,19 @@
+     }
+ 
+     public static Element parse(URL location) throws Exception {
+-	InputSource input = Resolver.createInputSource(location, true);
+-	XmlDocument document = XmlDocument.createXmlDocument(input, false);
++	DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
++        dFactory.setValidating(false);
++        DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
++        Document document = dBuilder.parse(location.openStream());
+ 	return document.getDocumentElement();
+     }
+ 
+     public static Element parse(byte[] xmlBytes) throws Exception {
+ 	ByteArrayInputStream input = new ByteArrayInputStream(xmlBytes);
+-	XmlDocument document = XmlDocument.createXmlDocument(input, false);
++        DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
++        dFactory.setValidating(false);
++        DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
++        Document document = dBuilder.parse(input);
+ 	return document.getDocumentElement();
+     }
+ 
+Index: XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexBuilder.java
+===================================================================
+RCS file: /cvs/util/XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexBuilder.java,v
+retrieving revision 1.7
+retrieving revision 1.7.12.1
+diff -u -r1.7 -r1.7.12.1
+--- XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexBuilder.java	9 Sep 2005 16:52:56 -0000	1.7
++++ XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexBuilder.java	17 Jan 2006 10:54:06 -0000	1.7.12.1
+@@ -42,15 +42,17 @@
+ import java.net.URL;
+ import org.xml.sax.InputSource;
+ import org.xml.sax.HandlerBase;
+-import com.sun.xml.parser.Resolver;
+-import com.sun.xml.tree.XmlDocument;
+ import com.sun.xmlsearch.tree.*;
+ import com.sun.xmlsearch.util.*;
+ import com.sun.xmlsearch.db.*;
+ import com.sun.xmlsearch.xml.XmlIndex;
+ 
+-import com.sun.xml.parser.Parser;
+-import com.sun.xml.parser.ValidatingParser;
++import javax.xml.parsers.DocumentBuilder;
++import javax.xml.parsers.DocumentBuilderFactory;
++import javax.xml.parsers.SAXParserFactory;
++import javax.xml.parsers.SAXParser;
++import org.xml.sax.Parser;
++import org.w3c.dom.Document;
+ 
+ import com.jclark.xsl.om.*;
+ import com.jclark.xsl.sax.*;
+@@ -465,8 +467,10 @@
+ 	public void indexDocument(URL docURL, String title) throws Exception {
+ 		InputSource source = new InputSource(docURL.openStream());
+ 		source.setSystemId(docURL.toString());
+-		Parser sourceParser = new Parser();
+-		sourceParser.setFastStandalone(true);
++                SAXParserFactory spf = SAXParserFactory.newInstance();
++                spf.setValidating(false);
++                SAXParser saxParser = spf.newSAXParser();
++                Parser sourceParser = saxParser.getParser();
+ 		XMLProcessorEx sourceLoader = new XMLProcessorImpl(sourceParser);
+ 		//	long start = System.currentTimeMillis();
+ 		Node root =
+@@ -545,8 +549,10 @@
+ 		}
+ 		// System.out.println(stylesheetUrl.toString());
+ 		InputStream stylesheetStream = stylesheetUrl.openStream();
+-		XmlDocument sheet =
+-			XmlDocument.createXmlDocument(stylesheetStream, false);
++                DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
++                dFactory.setValidating(false);
++                DocumentBuilder dBuilder = dFactory.newDocumentBuilder();
++                Document sheet = dBuilder.parse(stylesheetStream);
+ 		return _transformEngine.createTransform(sheet);
+ 	}
+ 
+Index: XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexer.java
+===================================================================
+RCS file: /cvs/util/XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexer.java,v
+retrieving revision 1.2
+retrieving revision 1.2.12.1
+diff -u -r1.2 -r1.2.12.1
+--- XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexer.java	9 Sep 2005 16:53:09 -0000	1.2
++++ XmlSearch/src/com/sun/xmlsearch/xml/indexer/XmlIndexer.java	17 Jan 2006 10:54:07 -0000	1.2.12.1
+@@ -39,8 +39,6 @@
+ import java.io.*;
+ import java.util.*;
+ 
+-import com.sun.xml.tree.XmlDocument;
+-import com.sun.xml.parser.Resolver;
+ import org.w3c.dom.*;
+ import org.xml.sax.InputSource;
+ import org.xml.sax.SAXException;
