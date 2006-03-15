@@ -8,6 +8,7 @@ bin/testPlugin
 etc/nfsen-dist.conf
 @exec [ -f %D/etc/nfsen.conf ] || cp %D/etc/nfsen-dist.conf %D/etc/nfsen.conf
 etc/nfsen-shell-param
+libexec/%%PORTNAME%%/CopyRecursive.pm
 libexec/%%PORTNAME%%/GenGraph.pl
 libexec/%%PORTNAME%%/Log.pm
 libexec/%%PORTNAME%%/NfConf.pm
