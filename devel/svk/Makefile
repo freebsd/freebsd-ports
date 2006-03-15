@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/SVN/Mirror.pm:${PORTSDIR}/devel/p5-SVN-Mirror \
 		${SITE_PERL}/Algorithm/Annotate.pm:${PORTSDIR}/devel/p5-Algorithm-Annotate \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
-		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
+		p5-Class-Autouse>=1.15:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Data/Hierarchy.pm:${PORTSDIR}/devel/p5-Data-Hierarchy \
+		p5-Data-Hierarchy>=0.21:${PORTSDIR}/devel/p5-Data-Hierarchy \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
@@ -30,18 +30,16 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/IO/Pager.pm:${PORTSDIR}/devel/p5-IO-Pager \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
-		${SITE_PERL}/${PERL_ARCH}/PerlIO/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eol \
-		${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
-		${SITE_PERL}/PerlIO/via/symlink.pm:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
+		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
+		p5-PerlIO-via-dynamic>=0.11:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
+		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
-		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple \
+		p5-SVN-Simple>=0.27:${PORTSDIR}/devel/p5-SVN-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML>=0.38:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_REINPLACE=	yes
 
 PERL_CONFIGURE=	yes
 
@@ -111,12 +109,12 @@ MAN3=		SVK.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		This program only support perl 5.8.0 or above
+IGNORE=		this program only support perl 5.8.0 or above
 .endif
 
 .if ${PERL_LEVEL} < 500807
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+BUILD_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.10:${PORTSDIR}/devel/p5-Encode
 .endif
 
 pre-everything::
