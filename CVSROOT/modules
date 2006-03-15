@@ -3664,6 +3664,7 @@ gxmame		ports/emulators/gxmame
 gxmessage	ports/deskutils/gxmessage
 gxmlviewer	ports/textproc/gxmlviewer
 gxmms		ports/multimedia/gxmms
+gxmms2		ports/audio/gxmms2
 gxset		ports/x11/gxset
 gyach		ports/net-im/gyach
 gzrecover	ports/archivers/gzrecover
