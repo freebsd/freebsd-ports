@@ -55,8 +55,4 @@ pre-configure:
 post-install:
 	${LN} -s Library/Makefiles ${PREFIX}/System/
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-NO_PACKAGE=	yes
-.endif
-
 .include <bsd.port.post.mk>
